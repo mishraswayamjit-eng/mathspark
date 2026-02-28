@@ -4,9 +4,9 @@ import { prisma } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
+  // Lazy init — avoids "Missing API key" crash during Next.js build-time page collection
+  const resend = new Resend(process.env.RESEND_API_KEY ?? '');
   const ip = req.headers.get('x-forwarded-for')?.split(',')[0] ?? 'unknown';
   if (!checkRateLimit(`forgot:${ip}`, 5, 60_000)) {
     return NextResponse.json({ error: 'Too many requests.' }, { status: 429 });

@@ -5,14 +5,14 @@ import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rateLimit';
 
-const razorpay = new Razorpay({
-  key_id:     process.env.RAZORPAY_KEY_ID     ?? '',
-  key_secret: process.env.RAZORPAY_KEY_SECRET ?? '',
-});
-
 // POST /api/payment/create-order
 // Body: { subscriptionId, studentId }
 export async function POST(req: Request) {
+  // Lazy init — avoids constructor crash during Next.js build-time page collection
+  const razorpay = new Razorpay({
+    key_id:     process.env.RAZORPAY_KEY_ID     ?? '',
+    key_secret: process.env.RAZORPAY_KEY_SECRET ?? '',
+  });
   const session = await getServerSession(authOptions);
   if (!session?.user?.id) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
