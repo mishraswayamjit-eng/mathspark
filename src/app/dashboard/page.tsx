@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import ProgressBar from '@/components/ProgressBar';
 import DuoButton from '@/components/DuoButton';
+import Sparky from '@/components/Sparky';
 import type { DashboardData } from '@/types';
 
 const TOPIC_ORDER = [
