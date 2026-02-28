@@ -7,6 +7,7 @@ export interface Student {
   name: string;
   grade: number;
   createdAt: string;
+  parentEmail?: string | null;
 }
 
 export interface Topic {

@@ -9,13 +9,15 @@ generator client {
 }
 
 model Student {
-  id        String    @id @default(cuid())
-  name      String
-  grade     Int       @default(4)
-  createdAt DateTime  @default(now())
-  progress  Progress[]
-  attempts  Attempt[]
-  chatSessions ConversationSession[]
+  id               String    @id @default(cuid())
+  name             String
+  grade            Int       @default(4)
+  createdAt        DateTime  @default(now())
+  parentEmail      String?                       // for weekly email reports
+  lastReportSentAt DateTime?                     // rate-limit on-demand sends
+  progress         Progress[]
+  attempts         Attempt[]
+  chatSessions     ConversationSession[]
 }
 
 model Topic {

@@ -170,10 +170,14 @@ export default function ProfilePage() {
   const [newName,       setNewName]       = useState('');
   const [shareOpen,     setShareOpen]     = useState(false);
   const [parentEmail,   setParentEmail]   = useState('');
+  const [sending,       setSending]       = useState(false);
+  const [toast,         setToast]         = useState<{ msg: string; ok: boolean } | null>(null);
+  const [studentId,     setStudentId]     = useState('');
 
   useEffect(() => {
     const id = localStorage.getItem('mathspark_student_id');
     if (!id) { router.replace('/start'); return; }
+    setStudentId(id);
 
     const name = localStorage.getItem('mathspark_student_name') ?? '';
     setStudentName(name);
@@ -221,26 +225,53 @@ export default function ProfilePage() {
     router.replace('/start');
   }
 
-  function openShare() {
-    if (!data) return;
-    const { stats, topics } = data;
-    const strongest = [...topics]
-      .filter((t) => t.attempted > 0)
-      .sort((a, b) => (b.correct / (b.attempted || 1)) - (a.correct / (a.attempted || 1)))[0];
-    const accuracy = stats.totalAttempted > 0
-      ? Math.round((stats.totalSolved / stats.totalAttempted) * 100) : 0;
-    const body =
-      `Hi! Here's ${studentName}'s MathSpark Weekly Report 🌟\n\n` +
-      `✅ Questions Solved: ${stats.totalSolved}\n` +
-      `🔥 Day Streak: ${stats.streakDays}\n` +
-      `⭐ Topics Mastered: ${stats.topicsMastered}/16\n` +
-      `🎯 Accuracy: ${accuracy}%\n` +
-      (strongest ? `\n💪 Strongest Area: ${TOPIC_SHORT[strongest.id] ?? strongest.name}\n` : '') +
-      `\nKeep up the amazing work!\n— MathSpark`;
-    const to = parentEmail.trim();
-    const url = `mailto:${to}?subject=${encodeURIComponent(`MathSpark Report — ${studentName}`)}&body=${encodeURIComponent(body)}`;
-    window.open(url);
+  function showToast(msg: string, ok: boolean) {
+    setToast({ msg, ok });
+    setTimeout(() => setToast(null), 4000);
+  }
+
+  async function saveParentEmail(email: string) {
+    const trimmed = email.trim();
+    localStorage.setItem('mathspark_parent_email', trimmed);
+    setParentEmail(trimmed);
+    if (studentId) {
+      await fetch('/api/student', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ studentId, parentEmail: trimmed }),
+      });
+    }
+  }
+
+  async function sendReport() {
+    if (!studentId) return;
+    setSending(true);
     setShareOpen(false);
+    try {
+      const res = await fetch('/api/reports/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ studentId }),
+      });
+      const json = await res.json() as { success?: boolean; sentTo?: string; error?: string };
+      if (json.success) {
+        showToast(`Report sent to ${json.sentTo}! ✉️`, true);
+      } else {
+        showToast(json.error ?? 'Failed to send. Try again.', false);
+      }
+    } catch {
+      showToast('Network error. Please try again.', false);
+    } finally {
+      setSending(false);
+    }
+  }
+
+  function handleSendClick() {
+    if (!parentEmail.trim()) {
+      setShareOpen(true); // open email setup modal first
+    } else {
+      sendReport();
+    }
   }
 
   // ── Loading ──────────────────────────────────────────────────────────────────
@@ -288,6 +319,13 @@ export default function ProfilePage() {
   return (
     <div className="min-h-screen bg-gray-50 pb-8">
 
+      {/* ── Toast notification ──────────────────────────────────────────── */}
+      {toast && (
+        <div className={`fixed top-4 left-1/2 -translate-x-1/2 z-[80] px-5 py-3 rounded-full shadow-xl font-bold text-sm text-white animate-pop-in pointer-events-none ${toast.ok ? 'bg-[#58CC02]' : 'bg-[#FF4B4B]'}`}>
+          {toast.msg}
+        </div>
+      )}
+
       {/* ── Edit name modal ──────────────────────────────────────────────── */}
       {editingName && (
         <div className="fixed inset-0 bg-black/60 z-[70] flex items-center justify-center p-4">
@@ -319,23 +357,30 @@ export default function ProfilePage() {
             <div className="flex items-center gap-3 mb-1">
               <Sparky mood="happy" size={40} />
               <div>
-                <h3 className="font-extrabold text-gray-800 text-lg">Share with Parent</h3>
-                <p className="text-gray-400 text-sm">Send your weekly progress report via email</p>
+                <h3 className="font-extrabold text-gray-800 text-lg">Send Report to Parent</h3>
+                <p className="text-gray-400 text-sm">A beautiful HTML email will be sent instantly</p>
               </div>
             </div>
             <input
               type="email"
               value={parentEmail}
-              onChange={(e) => {
-                setParentEmail(e.target.value);
-                localStorage.setItem('mathspark_parent_email', e.target.value);
-              }}
+              onChange={(e) => setParentEmail(e.target.value)}
               className="w-full border-2 border-gray-200 rounded-2xl px-4 py-3 text-base font-medium text-gray-800 outline-none focus:border-[#1CB0F6] mt-4 mb-4 transition-colors"
               placeholder="parent@email.com"
             />
             <div className="flex gap-2">
               <DuoButton variant="white" onClick={() => setShareOpen(false)}>Cancel</DuoButton>
-              <DuoButton variant="green" onClick={openShare} fullWidth>Open Email App 📧</DuoButton>
+              <DuoButton
+                variant="green"
+                fullWidth
+                loading={sending}
+                onClick={async () => {
+                  await saveParentEmail(parentEmail);
+                  sendReport();
+                }}
+              >
+                Send Report 📧
+              </DuoButton>
             </div>
           </div>
         </div>
@@ -455,11 +500,12 @@ export default function ProfilePage() {
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest">Weekly Report</h2>
           <button
-            onClick={() => setShareOpen(true)}
+            onClick={handleSendClick}
+            disabled={sending}
             style={{ minHeight: 0 }}
-            className="text-xs font-bold text-[#1CB0F6] bg-blue-50 rounded-full px-3 py-1.5 hover:bg-blue-100 transition-colors"
+            className="text-xs font-bold text-[#1CB0F6] bg-blue-50 rounded-full px-3 py-1.5 hover:bg-blue-100 transition-colors disabled:opacity-50"
           >
-            📧 Share with parent
+            {sending ? '⏳ Sending…' : '📧 Send to parent'}
           </button>
         </div>
 
@@ -582,6 +628,20 @@ export default function ProfilePage() {
             </div>
           </div>
 
+          <SettingRow
+            icon="👨‍👩‍👧"
+            label="Parent's email"
+            sublabel={parentEmail || 'Not set — tap to add'}
+            control={
+              <button
+                onClick={() => setShareOpen(true)}
+                style={{ minHeight: 0 }}
+                className="text-xs font-bold text-[#1CB0F6] bg-blue-50 px-3 py-1.5 rounded-full"
+              >
+                {parentEmail ? 'Change' : 'Set up'}
+              </button>
+            }
+          />
           <SettingRow
             icon="🔔"
             label="Daily reminders"
