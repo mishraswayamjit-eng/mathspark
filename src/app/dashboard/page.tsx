@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import ProgressBar from '@/components/ProgressBar';
-import Sparky from '@/components/Sparky';
 import DuoButton from '@/components/DuoButton';
 import type { DashboardData } from '@/types';
 
@@ -44,9 +43,32 @@ export default function DashboardPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-white">
-        <div className="animate-sparky-bounce">
-          <Sparky mood="thinking" size={100} />
+      <div className="min-h-screen bg-white animate-pulse">
+        {/* Header skeleton */}
+        <div className="bg-[#131F24] px-4 pt-8 pb-5 h-24" />
+        {/* Stats row skeleton */}
+        <div className="grid grid-cols-3 gap-3 px-4 -mt-3 mb-6">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="h-24 bg-gray-100 rounded-2xl" />
+          ))}
+        </div>
+        {/* Button skeleton */}
+        <div className="px-4 mb-6">
+          <div className="h-12 bg-gray-100 rounded-2xl" />
+        </div>
+        {/* Chart skeleton */}
+        <div className="px-4 mb-6">
+          <div className="h-4 w-24 bg-gray-100 rounded mb-3" />
+          <div className="h-36 bg-gray-100 rounded-2xl" />
+        </div>
+        {/* Topic rows skeleton */}
+        <div className="px-4">
+          <div className="h-4 w-24 bg-gray-100 rounded mb-3" />
+          <div className="grid grid-cols-2 gap-2">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <div key={i} className="h-12 bg-gray-100 rounded-xl" />
+            ))}
+          </div>
         </div>
       </div>
     );
@@ -65,7 +87,7 @@ export default function DashboardPage() {
   const maxBar = Math.max(...weeklyData.map((d) => d.count), 1);
 
   return (
-    <div className="min-h-screen bg-white pb-8">
+    <div className="min-h-screen bg-white pb-8 animate-fade-in">
       {/* Dark header */}
       <div className="bg-[#131F24] px-4 pt-8 pb-5 flex items-center justify-between">
         <div>

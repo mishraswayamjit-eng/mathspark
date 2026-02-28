@@ -1,8 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import katex from 'katex';
-import 'katex/dist/katex.min.css';
 
 interface KatexRendererProps {
   latex: string;
@@ -19,16 +17,21 @@ export default function KatexRenderer({
 
   useEffect(() => {
     if (!ref.current || !latex) return;
-    try {
-      katex.render(latex, ref.current, {
-        displayMode,
-        throwOnError: false,
-        strict: false,
-        trust: false,
-      });
-    } catch {
-      if (ref.current) ref.current.textContent = latex;
-    }
+    Promise.all([
+      import('katex'),
+      import('katex/dist/katex.min.css' as string),
+    ]).then(([{ default: katex }]) => {
+      try {
+        katex.render(latex, ref.current!, {
+          displayMode,
+          throwOnError: false,
+          strict: false,
+          trust: false,
+        });
+      } catch {
+        if (ref.current) ref.current.textContent = latex;
+      }
+    });
   }, [latex, displayMode]);
 
   if (!latex) return null;

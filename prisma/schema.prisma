@@ -51,6 +51,9 @@ model Question {
   misconceptionD String    @default("")
   source         String    @default("hand_crafted")
   attempts       Attempt[]
+
+  @@index([topicId])
+  @@index([topicId, difficulty])
 }
 
 model Progress {
@@ -78,6 +81,10 @@ model Attempt {
   hintUsed    Int      @default(0)
   timeTakenMs Int      @default(0)
   createdAt   DateTime @default(now())
+
+  @@index([studentId])
+  @@index([questionId])
+  @@index([studentId, createdAt])
 }
 
 model ConversationSession {
@@ -89,6 +96,8 @@ model ConversationSession {
   createdAt DateTime      @default(now())
   updatedAt DateTime      @updatedAt
   messages  ChatMessage[]
+
+  @@index([studentId])
 }
 
 model ChatMessage {
@@ -98,4 +107,6 @@ model ChatMessage {
   role      String              // "user" | "assistant"
   content   String
   createdAt DateTime            @default(now())
+
+  @@index([sessionId])
 }

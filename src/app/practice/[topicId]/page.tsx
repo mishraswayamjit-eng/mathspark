@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import { track } from '@vercel/analytics';
 import QuestionCard from '@/components/QuestionCard';
 import HintSystem from '@/components/HintSystem';
 import StepByStep from '@/components/StepByStep';
@@ -416,8 +417,63 @@ export default function PracticePage() {
   const [showXpFloat,  setShowXpFloat]  = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
 
+  // Offline resilience
+  const [isOnline, setIsOnline] = useState(true);
+
   const advanceTimer    = useRef<ReturnType<typeof setTimeout> | null>(null);
   const sessionSavedRef = useRef(false);
+
+  // ── Offline attempt queue helpers ──────────────────────────────────────────
+  interface AttemptPayload {
+    studentId: string; questionId: string; topicId: string;
+    selected: string; isCorrect: boolean; hintUsed: number;
+  }
+
+  function queueAttempt(p: AttemptPayload) {
+    const q: AttemptPayload[] = JSON.parse(localStorage.getItem('mathspark_attempt_queue') ?? '[]');
+    localStorage.setItem('mathspark_attempt_queue', JSON.stringify([...q, p]));
+  }
+
+  function flushAttemptQueue() {
+    const q: AttemptPayload[] = JSON.parse(localStorage.getItem('mathspark_attempt_queue') ?? '[]');
+    if (!q.length) return;
+    Promise.all(
+      q.map((p) =>
+        fetch('/api/attempts', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(p),
+        }),
+      ),
+    )
+      .then(() => localStorage.removeItem('mathspark_attempt_queue'))
+      .catch(() => {});
+  }
+
+  function submitAttempt(payload: AttemptPayload) {
+    if (navigator.onLine) {
+      fetch('/api/attempts', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(payload),
+      }).catch(() => queueAttempt(payload));
+    } else {
+      queueAttempt(payload);
+    }
+  }
+
+  // ── Online / offline listeners ─────────────────────────────────────────────
+  useEffect(() => {
+    const goOffline = () => setIsOnline(false);
+    const goOnline  = () => { setIsOnline(true); flushAttemptQueue(); };
+    window.addEventListener('offline', goOffline);
+    window.addEventListener('online',  goOnline);
+    return () => {
+      window.removeEventListener('offline', goOffline);
+      window.removeEventListener('online',  goOnline);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // ── Save session data when lesson completes ────────────────────────────────
   useEffect(() => {
@@ -429,6 +485,7 @@ export default function PracticePage() {
       ? Math.round((correct / allResults.length) * 100)
       : 0;
     saveSessionData(topicId, accuracy);
+    track('lesson_completed', { topicId, accuracy });
   }, [phase, results, reviewResults, topicId]);
 
   // ── Helpers ────────────────────────────────────────────────────────────────
@@ -444,7 +501,20 @@ export default function PracticePage() {
 
     Promise.all([
       fetch('/api/topics').then((r) => r.json()),
-      fetch(`/api/questions/lesson?topicId=${topicId}&studentId=${sid}&count=${LESSON_SIZE}`).then((r) => r.json()),
+      fetch(`/api/questions/lesson?topicId=${topicId}&studentId=${sid}&count=${LESSON_SIZE}`)
+        .then((r) => r.json())
+        .then((qs: Question[]) => {
+          // Cache for offline use
+          localStorage.setItem(`mathspark_offline_q_${topicId}`, JSON.stringify(qs));
+          return qs;
+        })
+        .catch(() => {
+          // Network failure — try offline cache
+          const raw = localStorage.getItem(`mathspark_offline_q_${topicId}`);
+          const cached: Question[] = raw ? (JSON.parse(raw) as Question[]) : [];
+          if (cached.length > 0) setIsOnline(false);
+          return cached;
+        }),
     ]).then(([topics, qs]: [Array<{ id: string; name: string }>, Question[]]) => {
       const t = topics.find((x) => x.id === topicId);
       setTopicName(t?.name ?? topicId);
@@ -555,21 +625,20 @@ export default function PracticePage() {
     if (isReviewing) setReviewResults((prev) => [...prev, result]);
     else             setResults((prev) => [...prev, result]);
 
-    // Record attempt (fire-and-forget)
+    // Record attempt (offline-aware)
     if (studentId) {
-      fetch('/api/attempts', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({
-          studentId,
-          questionId: currentQuestion.id,
-          topicId,
-          selected: key,
-          isCorrect: correct,
-          hintUsed: hintLevel,
-        }),
-      }).catch(() => {});
+      submitAttempt({
+        studentId,
+        questionId: currentQuestion.id,
+        topicId,
+        selected: key,
+        isCorrect: correct,
+        hintUsed: hintLevel,
+      });
     }
+
+    // Analytics
+    track('question_answered', { topicId, correct });
 
     // Auto-advance for correct answers
     if (correct) {
@@ -711,6 +780,13 @@ export default function PracticePage() {
           {muted ? '🔇' : '🔊'}
         </button>
       </div>
+
+      {/* ── Offline banner ── */}
+      {!isOnline && (
+        <div className="bg-amber-50 border-b border-amber-200 px-4 py-2 text-xs font-bold text-amber-700 text-center">
+          📶 You&apos;re offline — practising with cached questions!
+        </div>
+      )}
 
       {/* ── Journey circles / Review badge ── */}
       {isReviewing ? (

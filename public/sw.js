@@ -1,8 +1,8 @@
-// MathSpark Service Worker — v1
-// Handles future push notifications and offline caching
+// MathSpark Service Worker — v2
+// Handles offline caching for static assets and lesson API
 
-const CACHE_NAME = 'mathspark-v1';
-const STATIC_ASSETS = ['/manifest.json'];
+const CACHE_NAME = 'mathspark-v2';
+const STATIC_ASSETS = ['/manifest.json', '/icon'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -22,9 +22,25 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Network-first fetch strategy
+// Fetch strategy
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+
+  // Network-first + cache fallback for lesson API (5-min stale)
+  if (event.request.url.includes('/api/questions/lesson')) {
+    event.respondWith(
+      fetch(event.request)
+        .then((res) => {
+          const clone = res.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          return res;
+        })
+        .catch(() => caches.match(event.request).then((r) => r ?? Response.error())),
+    );
+    return;
+  }
+
+  // Network-first for everything else
   event.respondWith(
     fetch(event.request).catch(() =>
       caches.match(event.request).then((r) => r ?? Response.error()),
@@ -32,15 +48,15 @@ self.addEventListener('fetch', (event) => {
   );
 });
 
-// Future: push notification handler
+// Push notification handler
 self.addEventListener('push', (event) => {
   if (!event.data) return;
   const { title, body, icon } = event.data.json();
   event.waitUntil(
     self.registration.showNotification(title, {
       body,
-      icon: icon ?? '/icons/icon-192x192.png',
-      badge: '/icons/icon-72x72.png',
+      icon: icon ?? '/icon',
+      badge: '/icon',
     }),
   );
 });

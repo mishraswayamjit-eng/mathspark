@@ -277,9 +277,37 @@ export default function ProfilePage() {
   // ── Loading ──────────────────────────────────────────────────────────────────
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-white gap-4">
-        <div className="animate-sparky-bounce"><Sparky mood="thinking" size={100} /></div>
-        <p className="text-gray-400 font-bold text-sm">Loading your profile…</p>
+      <div className="min-h-screen bg-gray-50 animate-pulse">
+        {/* Avatar + name header skeleton */}
+        <div className="bg-[#131F24] pt-10 pb-6 px-4">
+          <div className="flex items-center gap-4">
+            <div className="w-20 h-20 rounded-full bg-white/20 flex-shrink-0" />
+            <div className="flex-1 space-y-2">
+              <div className="h-6 bg-white/20 rounded-xl w-36" />
+              <div className="h-4 bg-white/10 rounded-xl w-48" />
+            </div>
+          </div>
+          <div className="mt-4 h-8 bg-white/10 rounded-full w-28" />
+        </div>
+        {/* Stats 2×2 grid skeleton */}
+        <div className="bg-white px-4 py-5 border-b border-gray-100">
+          <div className="h-3 bg-gray-100 rounded w-20 mb-4" />
+          <div className="h-16 bg-gray-100 rounded-2xl mb-5" />
+          <div className="grid grid-cols-2 gap-3">
+            {[0, 1, 2, 3].map((i) => (
+              <div key={i} className="h-20 bg-gray-100 rounded-2xl" />
+            ))}
+          </div>
+        </div>
+        {/* Badge grid skeleton */}
+        <div className="bg-white px-4 py-5 mt-2 border-b border-gray-100">
+          <div className="h-3 bg-gray-100 rounded w-24 mb-4" />
+          <div className="grid grid-cols-5 gap-3">
+            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
+              <div key={i} className="h-14 bg-gray-100 rounded-full" />
+            ))}
+          </div>
+        </div>
       </div>
     );
   }
@@ -317,7 +345,7 @@ export default function ProfilePage() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-8">
+    <div className="min-h-screen bg-gray-50 pb-8 animate-fade-in">
 
       {/* ── Toast notification ──────────────────────────────────────────── */}
       {toast && (
