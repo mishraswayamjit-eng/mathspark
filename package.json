@@ -17,12 +17,16 @@
     "@vercel/analytics": "^1.4.1",
     "resend": "^3.5.0",
     "@prisma/client": "^5.14.0",
+    "bcryptjs": "^2.4.3",
     "katex": "^0.16.10",
     "next": "^14.2.3",
+    "next-auth": "^4.24.7",
+    "razorpay": "^2.9.2",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/katex": "^0.16.7",
     "@types/node": "^20",
     "@types/react": "^18",

@@ -147,7 +147,51 @@ async function main() {
 
   console.log(`\n✓ ${done} questions seeded (${skipped} skipped)\n`);
 
-  // ── 3. Quick sanity check ─────────────────────────────────────────────────
+  // ── 3. Upsert subscription plans ──────────────────────────────────────────
+  const SUBSCRIPTION_PLANS = [
+    {
+      id: 'plan_starter_monthly', name: 'Starter', tier: 1,
+      priceINR: 50000, durationDays: 30, dailyLimitMinutes: 60, aiChatDailyLimit: 5,
+      features: JSON.stringify({ practice:true,chapters:true,hints:true,stepByStep:true,progressTracking:true,diagnosticQuiz:false,adaptiveEngine:false,dashboard:false,misconceptionFeedback:false,badges:false,streaks:false,aiTutor:true,mockTest:false,parentDashboard:false }),
+    },
+    {
+      id: 'plan_advanced_monthly', name: 'Advanced', tier: 2,
+      priceINR: 150000, durationDays: 30, dailyLimitMinutes: 300, aiChatDailyLimit: 25,
+      features: JSON.stringify({ practice:true,chapters:true,hints:true,stepByStep:true,progressTracking:true,diagnosticQuiz:true,adaptiveEngine:true,dashboard:false,misconceptionFeedback:true,badges:false,streaks:false,aiTutor:true,mockTest:false,parentDashboard:false }),
+    },
+    {
+      id: 'plan_unlimited_monthly', name: 'Unlimited', tier: 3,
+      priceINR: 500000, durationDays: 30, dailyLimitMinutes: 1440, aiChatDailyLimit: 100,
+      features: JSON.stringify({ practice:true,chapters:true,hints:true,stepByStep:true,progressTracking:true,diagnosticQuiz:true,adaptiveEngine:true,dashboard:true,misconceptionFeedback:true,badges:true,streaks:true,aiTutor:true,mockTest:true,parentDashboard:true }),
+    },
+    {
+      id: 'plan_starter_annual', name: 'Starter Annual', tier: 1,
+      priceINR: 480000, durationDays: 365, dailyLimitMinutes: 60, aiChatDailyLimit: 5,
+      features: JSON.stringify({ practice:true,chapters:true,hints:true,stepByStep:true,progressTracking:true,diagnosticQuiz:false,adaptiveEngine:false,dashboard:false,misconceptionFeedback:false,badges:false,streaks:false,aiTutor:true,mockTest:false,parentDashboard:false }),
+    },
+    {
+      id: 'plan_advanced_annual', name: 'Advanced Annual', tier: 2,
+      priceINR: 1440000, durationDays: 365, dailyLimitMinutes: 300, aiChatDailyLimit: 25,
+      features: JSON.stringify({ practice:true,chapters:true,hints:true,stepByStep:true,progressTracking:true,diagnosticQuiz:true,adaptiveEngine:true,dashboard:false,misconceptionFeedback:true,badges:false,streaks:false,aiTutor:true,mockTest:false,parentDashboard:false }),
+    },
+    {
+      id: 'plan_unlimited_annual', name: 'Unlimited Annual', tier: 3,
+      priceINR: 4800000, durationDays: 365, dailyLimitMinutes: 1440, aiChatDailyLimit: 100,
+      features: JSON.stringify({ practice:true,chapters:true,hints:true,stepByStep:true,progressTracking:true,diagnosticQuiz:true,adaptiveEngine:true,dashboard:true,misconceptionFeedback:true,badges:true,streaks:true,aiTutor:true,mockTest:true,parentDashboard:true }),
+    },
+    {
+      id: 'plan_advanced_weekly', name: 'Advanced Weekly', tier: 2,
+      priceINR: 49900, durationDays: 7, dailyLimitMinutes: 300, aiChatDailyLimit: 25,
+      features: JSON.stringify({ practice:true,chapters:true,hints:true,stepByStep:true,progressTracking:true,diagnosticQuiz:true,adaptiveEngine:true,dashboard:false,misconceptionFeedback:true,badges:false,streaks:false,aiTutor:true,mockTest:false,parentDashboard:false }),
+    },
+  ];
+  for (const plan of SUBSCRIPTION_PLANS) {
+    const { id, ...data } = plan;
+    await prisma.subscription.upsert({ where: { id }, update: data, create: { id, ...data } });
+  }
+  console.log(`✓ ${SUBSCRIPTION_PLANS.length} subscription plans seeded`);
+
+  // ── 4. Quick sanity check ─────────────────────────────────────────────────
   const counts = await prisma.$queryRaw<Array<{ topicId: string; cnt: bigint }>>`
     SELECT topicId, COUNT(*) as cnt FROM Question GROUP BY topicId ORDER BY topicId
   `;

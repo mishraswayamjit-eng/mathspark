@@ -8,18 +8,105 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Student {
+// ── Parent (account holder, pays for subscription) ─────────────────────────
+
+model Parent {
   id               String    @id @default(cuid())
+  email            String    @unique
+  passwordHash     String
   name             String
-  grade            Int       @default(4)
+  phone            String?
+  resetToken       String?
+  resetTokenExpiry DateTime?
+  children         Student[]
+  orders           Order[]
   createdAt        DateTime  @default(now())
-  parentEmail      String?                       // for weekly email reports
-  lastReportSentAt DateTime?                     // rate-limit on-demand sends
-  progress         Progress[]
-  attempts         Attempt[]
-  chatSessions     ConversationSession[]
-  mockTests        MockTest[]
+  updatedAt        DateTime  @updatedAt
 }
+
+// ── Subscription plans ─────────────────────────────────────────────────────
+
+model Subscription {
+  id                String    @id @default(cuid())
+  name              String
+  tier              Int
+  priceINR          Int       // stored in paise (₹500 = 50000)
+  durationDays      Int
+  dailyLimitMinutes Int
+  aiChatDailyLimit  Int
+  features          String    // JSON blob
+  isActive          Boolean   @default(true)
+  students          Student[]
+  orders            Order[]
+}
+
+// ── Student ────────────────────────────────────────────────────────────────
+
+model Student {
+  id                      String        @id @default(cuid())
+  name                    String
+  grade                   Int           @default(4)
+  createdAt               DateTime      @default(now())
+  parentEmail             String?                         // legacy — for weekly email reports
+  lastReportSentAt        DateTime?                       // rate-limit on-demand sends
+  // ── New parent/subscription fields ──
+  parentId                String?
+  parent                  Parent?       @relation(fields: [parentId], references: [id])
+  subscriptionId          String?
+  subscription            Subscription? @relation(fields: [subscriptionId], references: [id])
+  dailyUsageMinutes       Int           @default(0)
+  lastActiveDate          DateTime?
+  aiChatMessagesUsedToday Int           @default(0)
+  // ── Relations ──
+  progress                Progress[]
+  attempts                Attempt[]
+  chatSessions            ConversationSession[]
+  mockTests               MockTest[]
+  usageLogs               UsageLog[]
+  orders                  Order[]
+}
+
+// ── Order (payment record) ─────────────────────────────────────────────────
+
+model Order {
+  id                String       @id @default(cuid())
+  parentId          String
+  parent            Parent       @relation(fields: [parentId], references: [id])
+  subscriptionId    String
+  subscription      Subscription @relation(fields: [subscriptionId], references: [id])
+  studentId         String
+  student           Student      @relation(fields: [studentId], references: [id])
+  amountPaise       Int
+  currency          String       @default("INR")
+  paymentMethod     String
+  paymentStatus     String       // "pending" | "paid" | "failed"
+  razorpayOrderId   String?
+  razorpayPaymentId String?
+  invoiceNumber     String       @unique
+  receiptUrl        String?
+  startsAt          DateTime
+  expiresAt         DateTime
+  createdAt         DateTime     @default(now())
+
+  @@index([parentId])
+  @@index([studentId])
+}
+
+// ── Usage tracking ─────────────────────────────────────────────────────────
+
+model UsageLog {
+  id                 String   @id @default(cuid())
+  studentId          String
+  student            Student  @relation(fields: [studentId], references: [id])
+  date               DateTime @db.Date
+  minutesUsed        Int      @default(0)
+  questionsAttempted Int      @default(0)
+  aiChatMessages     Int      @default(0)
+
+  @@unique([studentId, date])
+}
+
+// ── Topic ──────────────────────────────────────────────────────────────────
 
 model Topic {
   id            String     @id
@@ -28,6 +115,8 @@ model Topic {
   questions     Question[]
   progress      Progress[]
 }
+
+// ── Question ───────────────────────────────────────────────────────────────
 
 model Question {
   id             String    @id
@@ -60,6 +149,8 @@ model Question {
   @@index([topicId, difficulty])
 }
 
+// ── Progress ───────────────────────────────────────────────────────────────
+
 model Progress {
   id        String   @id @default(cuid())
   studentId String
@@ -74,17 +165,19 @@ model Progress {
   @@unique([studentId, topicId])
 }
 
+// ── Attempt ────────────────────────────────────────────────────────────────
+
 model Attempt {
-  id          String   @id @default(cuid())
-  studentId   String
-  student     Student  @relation(fields: [studentId], references: [id])
-  questionId  String
-  question    Question @relation(fields: [questionId], references: [id])
-  selected    String   // "A" | "B" | "C" | "D"
-  isCorrect   Boolean
+  id                String   @id @default(cuid())
+  studentId         String
+  student           Student  @relation(fields: [studentId], references: [id])
+  questionId        String
+  question          Question @relation(fields: [questionId], references: [id])
+  selected          String   // "A" | "B" | "C" | "D"
+  isCorrect         Boolean
   hintUsed          Int      @default(0)
   timeTakenMs       Int      @default(0)
-  misconceptionType String?  // misconception text shown when wrong, for adaptive boosting
+  misconceptionType String?
   createdAt         DateTime @default(now())
 
   @@index([studentId])
@@ -92,6 +185,8 @@ model Attempt {
   @@index([studentId, createdAt])
   @@index([studentId, misconceptionType])
 }
+
+// ── Chat ───────────────────────────────────────────────────────────────────
 
 model ConversationSession {
   id        String        @id @default(cuid())
@@ -117,11 +212,13 @@ model ChatMessage {
   @@index([sessionId])
 }
 
+// ── Mock Tests ─────────────────────────────────────────────────────────────
+
 model MockTest {
   id             String             @id @default(cuid())
   studentId      String
   student        Student            @relation(fields: [studentId], references: [id])
-  type           String             // "quick" | "half" | "full"
+  type           String             // "quick" | "half" | "full" | "ipm" | "pyq"
   totalQuestions Int
   timeLimitMs    Int
   startedAt      DateTime           @default(now())

@@ -15,11 +15,15 @@ export default function BottomNav() {
   const pathname = usePathname();
   const router   = useRouter();
 
-  // Hide on landing, onboarding, admin seed screens, and test engine pages
+  // Hide on landing, auth, parent, student, pricing, onboarding, seed, and test engine pages
   if (
     pathname === '/' ||
     pathname === '/start' ||
     pathname === '/seed' ||
+    pathname === '/pricing' ||
+    pathname.startsWith('/auth/') ||
+    pathname.startsWith('/parent/') ||
+    pathname.startsWith('/student/') ||
     (pathname.startsWith('/test/') && pathname !== '/test/')
   ) return null;
 

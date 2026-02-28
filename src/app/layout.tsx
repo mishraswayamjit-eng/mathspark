@@ -3,6 +3,7 @@ import './globals.css';
 import BottomNav from '@/components/BottomNav';
 import ServiceWorkerRegistrar from '@/components/ServiceWorkerRegistrar';
 import AddToHomeScreen from '@/components/AddToHomeScreen';
+import SessionProvider from '@/components/SessionProvider';
 import { Analytics } from '@vercel/analytics/next';
 
 export const viewport: Viewport = {
@@ -38,13 +39,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="bg-[#131F24] min-h-screen font-sans">
-        <main className="bg-white max-w-lg mx-auto min-h-screen pb-20">
-          {children}
-        </main>
-        <BottomNav />
-        <AddToHomeScreen />
-        <ServiceWorkerRegistrar />
-        <Analytics />
+        <SessionProvider>
+          <main className="bg-white max-w-lg mx-auto min-h-screen pb-20">
+            {children}
+          </main>
+          <BottomNav />
+          <AddToHomeScreen />
+          <ServiceWorkerRegistrar />
+          <Analytics />
+        </SessionProvider>
       </body>
     </html>
   );
