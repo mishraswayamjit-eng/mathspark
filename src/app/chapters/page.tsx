@@ -272,8 +272,23 @@ export default function ChaptersPage() {
         </p>
       </div>
 
+      {/* ── Mock test entry card ────────────────────────────────────────── */}
+      <div className="px-4 pt-3">
+        <button
+          onClick={() => router.push('/test')}
+          className="w-full bg-[#1a2f3a] border border-white/10 rounded-2xl px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-all"
+        >
+          <span className="text-2xl">📝</span>
+          <div className="text-left flex-1">
+            <p className="text-white font-extrabold text-sm leading-tight">IPM Mock Test</p>
+            <p className="text-white/50 text-xs">Timed · No hints · Full paper simulation</p>
+          </div>
+          <span className="text-white/40 text-sm">→</span>
+        </button>
+      </div>
+
       {/* ── Topic grid ──────────────────────────────────────────────────── */}
-      <div className="px-4 pt-2">
+      <div className="px-4 pt-0">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {sortedTopics.map((topic, idx) => {
             const prev         = sortedTopics[idx - 1];

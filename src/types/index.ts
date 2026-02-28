@@ -149,3 +149,59 @@ export interface TopicNode {
   crownLevel: CrownLevel;
   prerequisiteLabel: string;
 }
+
+// ── Mock test types ───────────────────────────────────────────────────────────
+
+export type TestType = 'quick' | 'half' | 'full';
+
+export interface TestConfig {
+  type: TestType;
+  topicIds?: string[];
+  studentId: string;
+}
+
+export interface MockTest {
+  id: string;
+  studentId: string;
+  type: TestType;
+  totalQuestions: number;
+  timeLimitMs: number;
+  startedAt: string;
+  completedAt?: string | null;
+  score?: number | null;
+  accuracy?: number | null;
+  status: 'in_progress' | 'completed' | 'abandoned';
+}
+
+export interface MockTestResponse {
+  id: string;
+  mockTestId: string;
+  questionId: string;
+  question?: Question;
+  questionNumber: number;
+  selectedAnswer?: string | null;
+  isCorrect?: boolean | null;
+  timeTakenMs: number;
+  flagged: boolean;
+  answeredAt?: string | null;
+}
+
+export interface MockTestDetail extends MockTest {
+  responses: MockTestResponse[];
+}
+
+export interface TopicResult {
+  topicId: string;
+  topicName: string;
+  correct: number;
+  total: number;
+  accuracy: number;
+  avgTimeMs: number;
+}
+
+export interface Recommendation {
+  type: 'priority' | 'speed' | 'strength';
+  topicId: string;
+  topicName: string;
+  reason: string;
+}

@@ -6,6 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 const NAV = [
   { href: '/chapters',  emoji: '🏠', label: 'Home'    },
   { href: '/practice',  emoji: '📚', label: 'Learn'   },
+  { href: '/test',      emoji: '📝', label: 'Test'    },
   { href: '/chat',      emoji: '💬', label: 'Chat'    },
   { href: '/profile',   emoji: '👤', label: 'Profile' },
 ];
@@ -14,8 +15,13 @@ export default function BottomNav() {
   const pathname = usePathname();
   const router   = useRouter();
 
-  // Hide on landing, onboarding, and admin seed screens
-  if (pathname === '/' || pathname === '/start' || pathname === '/seed') return null;
+  // Hide on landing, onboarding, admin seed screens, and test engine pages
+  if (
+    pathname === '/' ||
+    pathname === '/start' ||
+    pathname === '/seed' ||
+    (pathname.startsWith('/test/') && pathname !== '/test/')
+  ) return null;
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-white z-50 shadow-[0_-2px_10px_rgba(0,0,0,0.08)]">

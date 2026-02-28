@@ -412,9 +412,14 @@ export default function StartPage() {
         </div>
       )}
 
-      <DuoButton variant="green" fullWidth onClick={() => router.push('/chapters')}>
-        Start Learning! 🌟
-      </DuoButton>
+      <div className="space-y-3">
+        <DuoButton variant="green" fullWidth onClick={() => router.push('/chapters')}>
+          Start Learning 📚
+        </DuoButton>
+        <DuoButton variant="blue" fullWidth onClick={() => router.push('/test')}>
+          Take a Mock Test 📝
+        </DuoButton>
+      </div>
     </div>
   );
 }

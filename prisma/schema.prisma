@@ -18,6 +18,7 @@ model Student {
   progress         Progress[]
   attempts         Attempt[]
   chatSessions     ConversationSession[]
+  mockTests        MockTest[]
 }
 
 model Topic {
@@ -51,6 +52,7 @@ model Question {
   misconceptionD String    @default("")
   source         String    @default("hand_crafted")
   attempts       Attempt[]
+  mockTestResponses MockTestResponse[]
 
   @@index([topicId])
   @@index([topicId, difficulty])
@@ -111,4 +113,39 @@ model ChatMessage {
   createdAt DateTime            @default(now())
 
   @@index([sessionId])
+}
+
+model MockTest {
+  id             String             @id @default(cuid())
+  studentId      String
+  student        Student            @relation(fields: [studentId], references: [id])
+  type           String             // "quick" | "half" | "full"
+  totalQuestions Int
+  timeLimitMs    Int
+  startedAt      DateTime           @default(now())
+  completedAt    DateTime?
+  score          Int?
+  accuracy       Float?
+  status         String             @default("in_progress") // "in_progress" | "completed" | "abandoned"
+  responses      MockTestResponse[]
+
+  @@index([studentId])
+  @@index([studentId, status])
+}
+
+model MockTestResponse {
+  id             String    @id @default(cuid())
+  mockTestId     String
+  mockTest       MockTest  @relation(fields: [mockTestId], references: [id])
+  questionId     String
+  question       Question  @relation(fields: [questionId], references: [id])
+  questionNumber Int
+  selectedAnswer String?
+  isCorrect      Boolean?
+  timeTakenMs    Int       @default(0)
+  flagged        Boolean   @default(false)
+  answeredAt     DateTime?
+
+  @@index([mockTestId])
+  @@index([questionId])
 }

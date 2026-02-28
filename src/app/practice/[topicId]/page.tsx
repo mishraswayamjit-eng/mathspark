@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { track } from '@vercel/analytics';
 import QuestionCard from '@/components/QuestionCard';
 import HintSystem from '@/components/HintSystem';
@@ -21,6 +21,7 @@ const HEARTS_MAX     = 5;
 const XP_CORRECT     = 20;
 const XP_REVIEW      = 10;
 const AUTO_ADVANCE_MS = 2000;
+const SPEED_DRILL_MS  = 90_000; // 90 seconds per question
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -388,9 +389,11 @@ function WrongPanel({
 // ── Main component ────────────────────────────────────────────────────────────
 
 export default function PracticePage() {
-  const params   = useParams();
-  const router   = useRouter();
-  const topicId  = params.topicId as string;
+  const params        = useParams();
+  const router        = useRouter();
+  const searchParams  = useSearchParams();
+  const topicId       = params.topicId as string;
+  const isSpeedMode   = searchParams.get('mode') === 'speed';
   const { playCorrect, playWrong, playStreak, muted, toggleMute } = useSounds();
 
   // ── Core state ─────────────────────────────────────────────────────────────
@@ -425,6 +428,12 @@ export default function PracticePage() {
 
   // Similar question (fetched on wrong answer for "Practice Similar" button)
   const [similarQ, setSimilarQ] = useState<Question | null>(null);
+
+  // Speed drill timer
+  const [speedRemaining,   setSpeedRemaining]   = useState<number>(SPEED_DRILL_MS);
+  const [speedTimedOut,    setSpeedTimedOut]    = useState(false);
+  const speedTimerRef      = useRef<ReturnType<typeof setInterval> | null>(null);
+  const currentQuestionRef = useRef<Question | null>(null);
 
   // Offline resilience
   const [isOnline, setIsOnline] = useState(true);
@@ -516,6 +525,44 @@ export default function PracticePage() {
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // ── Speed drill countdown ──────────────────────────────────────────────────
+  useEffect(() => {
+    if (!isSpeedMode || phase !== 'answering') {
+      if (speedTimerRef.current) { clearInterval(speedTimerRef.current); speedTimerRef.current = null; }
+      return;
+    }
+    setSpeedRemaining(SPEED_DRILL_MS);
+    setSpeedTimedOut(false);
+    const start = Date.now();
+    speedTimerRef.current = setInterval(() => {
+      const elapsed = Date.now() - start;
+      const left    = Math.max(0, SPEED_DRILL_MS - elapsed);
+      setSpeedRemaining(left);
+      if (left <= 0) {
+        clearInterval(speedTimerRef.current!);
+        speedTimerRef.current = null;
+        setSpeedTimedOut(true); // Handled via effect below
+      }
+    }, 200);
+    return () => { if (speedTimerRef.current) { clearInterval(speedTimerRef.current); speedTimerRef.current = null; } };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSpeedMode, phase, qIndex, reviewIndex]);
+
+  // Keep a stable ref to current question for timeout handler
+  useEffect(() => { currentQuestionRef.current = currentQuestion ?? null; });
+
+  // When speed timer expires, auto-submit a wrong answer
+  useEffect(() => {
+    if (!speedTimedOut || phase !== 'answering') return;
+    setSpeedTimedOut(false);
+    const q = currentQuestionRef.current;
+    if (!q) return;
+    // Pick an answer that is NOT the correct one
+    const wrongKey = (['A', 'B', 'C', 'D'] as AnswerKey[]).find((k) => k !== q.correctAnswer) ?? 'A';
+    handleAnswer(wrongKey, false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [speedTimedOut]);
 
   // ── Save session data when lesson completes ────────────────────────────────
   useEffect(() => {
@@ -763,6 +810,9 @@ export default function PracticePage() {
     setReviewIndex(0);
     setShowConfetti(false);
     setSimilarQ(null);
+    setSpeedTimedOut(false);
+    setSpeedRemaining(SPEED_DRILL_MS);
+    if (speedTimerRef.current) { clearInterval(speedTimerRef.current); speedTimerRef.current = null; }
     sessionSavedRef.current = false;
     prefetchRef.current    = null;
     isFetchingRef.current  = false;
@@ -902,6 +952,19 @@ export default function PracticePage() {
         />
       </div>
 
+      {/* Speed drill timer bar */}
+      {isSpeedMode && phase === 'answering' && (
+        <div className="h-2 bg-gray-100 relative">
+          <div
+            className={`h-full transition-all duration-200 ${
+              speedRemaining > 60_000 ? 'bg-[#58CC02]' :
+              speedRemaining > 30_000 ? 'bg-[#FF9600]' : 'bg-[#FF4B4B]'
+            }`}
+            style={{ width: `${(speedRemaining / SPEED_DRILL_MS) * 100}%` }}
+          />
+        </div>
+      )}
+
       {/* ── Question area (scrollable, padded for bottom panel) ── */}
       <div
         className="flex-1 overflow-y-auto px-4 py-4 space-y-4"
@@ -911,6 +974,8 @@ export default function PracticePage() {
         <div className={`inline-flex items-center gap-2 text-xs font-extrabold px-3 py-1.5 rounded-full border ${accentCls}`}>
           {isReviewing
             ? `🔁 Review question ${reviewIndex + 1} of ${reviewQueue.length}`
+            : isSpeedMode
+            ? `⚡ Speed Drill — Q${qIndex + 1} of ${LESSON_SIZE}`
             : `Question ${qIndex + 1} of ${LESSON_SIZE}`}
           {streak >= 3 && !isReviewing && (
             <span className="text-orange-500 font-extrabold">🔥 {streak}</span>
