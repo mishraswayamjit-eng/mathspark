@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   title: 'MathSpark — Grade 4 Math',
   description: 'Fun, safe math learning and IPM exam prep for Grade 4 students',
   manifest: '/manifest.json',
-  themeColor: '#3b82f6',
+  themeColor: '#58CC02',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50 min-h-screen font-sans">
-        <main className="max-w-lg mx-auto min-h-screen pb-20">
+      <body className="bg-[#131F24] min-h-screen font-sans">
+        <main className="bg-white max-w-lg mx-auto min-h-screen pb-20">
           {children}
         </main>
         <BottomNav />

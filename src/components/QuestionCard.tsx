@@ -46,19 +46,27 @@ export default function QuestionCard({
     { key: 'D', text: question.option4 },
   ];
 
+  function badgeStyle(key: AnswerKey): string {
+    const base = 'w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-extrabold';
+    if (!answered) return `${base} bg-gray-100 text-gray-600`;
+    if (key === question.correctAnswer) return `${base} bg-[#58CC02] text-white`;
+    if (key === selected) return `${base} bg-[#FF4B4B] text-white`;
+    return `${base} bg-gray-100 text-gray-400`;
+  }
+
   function optionStyle(key: AnswerKey): string {
-    const base = 'w-full text-left rounded-2xl px-4 py-4 min-h-[56px] transition-all duration-200 border-2 flex items-center gap-3';
-    if (!answered) return `${base} bg-white border-gray-200 hover:border-blue-400 hover:bg-blue-50 cursor-pointer`;
-    if (key === question.correctAnswer) return `${base} bg-green-50 border-green-500`;
-    if (key === selected) return `${base} bg-red-50 border-red-400`;
-    return `${base} bg-white border-gray-100 opacity-50`;
+    const base = 'w-full text-left rounded-2xl px-4 py-4 min-h-[64px] transition-all duration-200 border-2 flex items-center gap-3';
+    if (!answered) return `${base} bg-white border-gray-200 hover:border-[#1CB0F6] hover:bg-blue-50 cursor-pointer`;
+    if (key === question.correctAnswer) return `${base} bg-green-50 border-[#58CC02]`;
+    if (key === selected) return `${base} bg-red-50 border-[#FF4B4B]`;
+    return `${base} bg-white border-gray-100 opacity-40`;
   }
 
   return (
     <div className="space-y-4">
       {/* Question text */}
-      <div className="bg-white rounded-2xl p-5 shadow-sm">
-        <p className="text-lg font-medium text-gray-800 leading-relaxed">
+      <div className="bg-white rounded-2xl p-5 shadow-md border border-gray-100">
+        <p className="text-lg font-bold text-gray-800 leading-relaxed">
           {question.questionText}
         </p>
         {question.questionLatex && (
@@ -66,7 +74,7 @@ export default function QuestionCard({
             <KatexRenderer latex={question.questionLatex} displayMode className="block" />
           </div>
         )}
-        <p className="mt-2 text-xs text-gray-400 uppercase tracking-wide">
+        <p className="mt-2 text-xs text-gray-400 uppercase tracking-wide font-semibold">
           {question.subTopic} · {question.difficulty}
         </p>
       </div>
@@ -80,23 +88,13 @@ export default function QuestionCard({
             onClick={() => onAnswer(key, key === question.correctAnswer)}
             className={optionStyle(key)}
           >
-            <span
-              className={`w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-bold ${
-                answered && key === question.correctAnswer
-                  ? 'bg-green-500 text-white'
-                  : answered && key === selected
-                  ? 'bg-red-400 text-white'
-                  : 'bg-gray-100 text-gray-600'
-              }`}
-            >
-              {key}
-            </span>
-            <span className="text-gray-800 text-base">{text}</span>
+            <span className={badgeStyle(key)}>{key}</span>
+            <span className="text-gray-800 text-base font-semibold">{text}</span>
             {answered && key === question.correctAnswer && (
-              <span className="ml-auto text-green-600 font-bold">✓</span>
+              <span className="ml-auto text-[#58CC02] font-bold text-lg">✓</span>
             )}
             {answered && key === selected && key !== question.correctAnswer && (
-              <span className="ml-auto text-red-500 font-bold">✗</span>
+              <span className="ml-auto text-[#FF4B4B] font-bold text-lg">✗</span>
             )}
           </button>
         ))}
@@ -104,3 +102,6 @@ export default function QuestionCard({
     </div>
   );
 }
+
+// Re-export LABELS for external use
+export { LABELS };

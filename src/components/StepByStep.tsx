@@ -14,28 +14,31 @@ export default function StepByStep({ steps }: StepByStepProps) {
   if (!steps || steps.length === 0) return null;
 
   return (
-    <div className="rounded-2xl border border-blue-200 overflow-hidden">
+    <div className="rounded-2xl border border-blue-100 overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full flex items-center justify-between px-4 py-3 bg-blue-50 text-blue-700 font-semibold text-sm"
+        className="w-full flex items-center justify-between px-4 py-3 bg-[#1CB0F6] text-white font-extrabold text-sm rounded-xl"
       >
         <span>📖 See step-by-step solution</span>
         <span className="text-lg">{open ? '▲' : '▼'}</span>
       </button>
 
       {open && (
-        <div className="divide-y divide-blue-100 bg-white">
+        <div className="divide-y divide-blue-50 bg-white">
           {steps.map((step, i) => (
-            <div key={step.step ?? i} className="px-4 py-3">
-              <p className="text-xs font-bold text-blue-500 uppercase tracking-wide mb-1">
-                Step {step.step ?? i + 1}
-              </p>
-              <p className="text-gray-700 text-sm leading-relaxed">{step.text}</p>
-              {step.latex && (
-                <div className="mt-2 p-2 bg-green-50 rounded-lg overflow-x-auto">
-                  <KatexRenderer latex={step.latex} displayMode />
-                </div>
-              )}
+            <div key={step.step ?? i} className="px-4 py-3 flex gap-3">
+              {/* Numbered circle */}
+              <div className="w-6 h-6 rounded-full bg-[#1CB0F6] text-white flex items-center justify-center text-xs font-extrabold flex-shrink-0 mt-0.5">
+                {step.step ?? i + 1}
+              </div>
+              <div className="flex-1">
+                <p className="text-gray-700 text-sm leading-relaxed font-medium">{step.text}</p>
+                {step.latex && (
+                  <div className="mt-2 p-3 bg-green-50 border-l-4 border-[#58CC02] rounded-r-xl overflow-x-auto">
+                    <KatexRenderer latex={step.latex} displayMode />
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>

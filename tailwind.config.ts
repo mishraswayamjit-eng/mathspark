@@ -9,7 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Nunito', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        duo: {
+          green:        '#58CC02',
+          'green-dark': '#46a302',
+          blue:         '#1CB0F6',
+          'blue-dark':  '#0a98dc',
+          orange:       '#FF9600',
+          'orange-dark':'#cc7800',
+          red:          '#FF4B4B',
+          'red-dark':   '#cc3333',
+          gold:         '#FFC800',
+          dark:         '#131F24',
+        },
       },
     },
   },

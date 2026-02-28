@@ -29,11 +29,11 @@ const TOPIC_SHORT: Record<string, string> = {
 // Pattern: L→C→R→R→C→L→L→C→R→R→C→L→L→C→R→C
 const NODE_X_PCT = [22, 50, 78, 78, 50, 22, 22, 50, 78, 78, 50, 22, 22, 50, 78, 50];
 
-const NODE_SPACING     = 130;
-const NODE_TOP_OFFSET  = 20;
-const NODE_NORMAL      = 72;
-const NODE_CURRENT     = 88;
-const DAILY_GOAL       = 10;
+const NODE_SPACING    = 130;
+const NODE_TOP_OFFSET = 20;
+const NODE_NORMAL     = 72;
+const NODE_CURRENT    = 88;
+const DAILY_GOAL      = 10;
 
 const CROWN_COLORS = ['', '#CD7F32', '#C0C0C0', '#FFD700', '#9B59B6', '#00BCD4'];
 
@@ -103,7 +103,6 @@ function buildTopicNodes(topics: TopicWithProgress[]): TopicNode[] {
       state = 'not_started';
     }
 
-    // First unlocked, non-completed node becomes 'current'
     if (!currentSet && state !== 'locked' && state !== 'completed') {
       state = 'current';
       currentSet = true;
@@ -117,7 +116,7 @@ function buildTopicNodes(topics: TopicWithProgress[]): TopicNode[] {
 
 function getHearts(): number {
   if (typeof window === 'undefined') return 5;
-  const today = new Date().toDateString();
+  const today     = new Date().toDateString();
   const savedDate = localStorage.getItem('mathspark_hearts_date');
   if (savedDate !== today) {
     localStorage.setItem('mathspark_hearts', '5');
@@ -158,19 +157,16 @@ export default function ChaptersPage() {
   // ── Loading skeleton ─────────────────────────────────────────────────────────
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-sky-400 to-sky-100">
-        {/* TopBar skeleton */}
-        <div className="sticky top-0 z-50 h-14 bg-sky-500/90 backdrop-blur-sm flex items-center justify-between px-4">
-          <div className="h-6 w-28 rounded-full bg-white/30 animate-pulse" />
+      <div className="min-h-screen bg-gradient-to-b from-[#131F24] to-[#1a3040]">
+        <div className="sticky top-0 z-50 h-14 bg-[#131F24]/90 backdrop-blur-sm flex items-center justify-between px-4">
+          <div className="h-6 w-28 rounded-full bg-white/20 animate-pulse" />
           <div className="flex gap-3">
             {[1,2,3,4].map((n) => (
-              <div key={n} className="h-6 w-12 rounded-full bg-white/30 animate-pulse" />
+              <div key={n} className="h-6 w-12 rounded-full bg-white/20 animate-pulse" />
             ))}
           </div>
         </div>
-        {/* Goal banner skeleton */}
-        <div className="mx-4 mt-3 h-16 rounded-2xl bg-white/30 animate-pulse" />
-        {/* Node skeletons */}
+        <div className="mx-4 mt-3 h-16 rounded-2xl bg-white/10 animate-pulse" />
         <div className="relative mx-2 mt-4" style={{ height: 5 * NODE_SPACING }}>
           {[22, 50, 78, 50, 22].map((x, i) => (
             <div
@@ -182,7 +178,7 @@ export default function ChaptersPage() {
                 transform: 'translateX(-50%)',
                 width: NODE_NORMAL, height: NODE_NORMAL,
                 borderRadius: '50%',
-                background: 'rgba(255,255,255,0.3)',
+                background: 'rgba(255,255,255,0.15)',
               }}
             />
           ))}
@@ -195,21 +191,21 @@ export default function ChaptersPage() {
   function TopBar() {
     const initial = studentName ? studentName[0].toUpperCase() : '?';
     return (
-      <div className="sticky top-0 z-50 h-14 bg-sky-500/90 backdrop-blur-sm flex items-center justify-between px-4">
+      <div className="sticky top-0 z-50 h-14 bg-[#131F24]/95 backdrop-blur-sm flex items-center justify-between px-4">
         <div className="flex items-center gap-2">
           <span className="text-xl animate-bounce">🌟</span>
-          <span className="font-bold text-white text-base tracking-tight">MathSpark</span>
+          <span className="font-extrabold text-white text-base tracking-tight">MathSpark</span>
         </div>
         <div className="flex items-center gap-3">
           {/* Streak */}
-          <div className="flex items-center gap-1 bg-white/20 rounded-full px-2 py-0.5">
+          <div className="flex items-center gap-1 bg-white/15 rounded-full px-2.5 py-1">
             <span className="text-sm">🔥</span>
-            <span className="text-white text-xs font-bold">{streakDays}</span>
+            <span className="text-white text-xs font-extrabold">{streakDays}</span>
           </div>
           {/* XP */}
-          <div className="flex items-center gap-1 bg-white/20 rounded-full px-2 py-0.5">
+          <div className="flex items-center gap-1 bg-white/15 rounded-full px-2.5 py-1">
             <span className="text-sm">💎</span>
-            <span className="text-white text-xs font-bold">{xp}</span>
+            <span className="text-white text-xs font-extrabold">{xp}</span>
           </div>
           {/* Hearts */}
           <div className="flex items-center gap-0.5">
@@ -217,12 +213,12 @@ export default function ChaptersPage() {
               <span
                 key={h}
                 className="text-sm transition-opacity duration-300"
-                style={{ opacity: h <= hearts ? 1 : 0.25 }}
+                style={{ opacity: h <= hearts ? 1 : 0.2 }}
               >❤️</span>
             ))}
           </div>
           {/* Avatar */}
-          <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center font-bold text-sm text-yellow-900 border-2 border-white">
+          <div className="w-8 h-8 rounded-full bg-[#FFC800] flex items-center justify-center font-extrabold text-sm text-yellow-900 border-2 border-white">
             {initial}
           </div>
         </div>
@@ -238,14 +234,12 @@ export default function ChaptersPage() {
     const dashOffset = circ * (1 - progress);
 
     return (
-      <div className="mx-4 mt-3 bg-white/80 backdrop-blur-sm rounded-2xl px-4 py-2 flex items-center gap-3 shadow-sm">
+      <div className="mx-4 mt-3 bg-[#1e2d38] rounded-2xl px-4 py-2 flex items-center gap-3 shadow-sm">
         <svg width="52" height="52" viewBox="0 0 52 52">
-          {/* Background ring */}
-          <circle cx="26" cy="26" r={r} fill="none" stroke="#e5e7eb" strokeWidth="5" />
-          {/* Progress ring */}
+          <circle cx="26" cy="26" r={r} fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="5" />
           <circle
             cx="26" cy="26" r={r} fill="none"
-            stroke={goalMet ? '#22c55e' : '#facc15'}
+            stroke={goalMet ? '#58CC02' : '#FFC800'}
             strokeWidth="5"
             strokeLinecap="round"
             strokeDasharray={circ}
@@ -253,16 +247,15 @@ export default function ChaptersPage() {
             transform="rotate(-90 26 26)"
             style={{ transition: 'stroke-dashoffset 0.6s ease' }}
           />
-          {/* Center text */}
-          <text x="26" y="30" textAnchor="middle" fontSize="11" fontWeight="bold" fill={goalMet ? '#16a34a' : '#854d0e'}>
+          <text x="26" y="30" textAnchor="middle" fontSize="11" fontWeight="bold" fill={goalMet ? '#58CC02' : '#FFC800'}>
             {goalMet ? '✓' : todayCorrect}
           </text>
         </svg>
         <div>
-          <p className="text-sm font-semibold text-gray-700">
-            {goalMet ? 'Daily goal met! 🎯' : `${todayCorrect} / ${DAILY_GOAL} correct answers today`}
+          <p className="text-sm font-extrabold text-white">
+            {goalMet ? 'Daily goal met! 🎯' : `${todayCorrect} / ${DAILY_GOAL} correct today`}
           </p>
-          <p className="text-xs text-gray-400">{goalMet ? 'Amazing work today!' : 'Keep going!'}</p>
+          <p className="text-xs text-white/50 font-medium">{goalMet ? 'Amazing work today!' : 'Keep going!'}</p>
         </div>
       </div>
     );
@@ -272,20 +265,20 @@ export default function ChaptersPage() {
   function ConnectingPath() {
     const segments: ReactElement[] = [];
     for (let i = 0; i < nodes.length - 1; i++) {
-      const x1  = NODE_X_PCT[i];
-      const x2  = NODE_X_PCT[i + 1];
-      const r1  = nodes[i].state     === 'current' ? NODE_CURRENT / 2 : NODE_NORMAL / 2;
-      const r2  = nodes[i + 1].state === 'current' ? NODE_CURRENT / 2 : NODE_NORMAL / 2;
-      const y1  = NODE_TOP_OFFSET + i       * NODE_SPACING + r1;
-      const y2  = NODE_TOP_OFFSET + (i + 1) * NODE_SPACING + r2;
+      const x1   = NODE_X_PCT[i];
+      const x2   = NODE_X_PCT[i + 1];
+      const r1   = nodes[i].state     === 'current' ? NODE_CURRENT / 2 : NODE_NORMAL / 2;
+      const r2   = nodes[i + 1].state === 'current' ? NODE_CURRENT / 2 : NODE_NORMAL / 2;
+      const y1   = NODE_TOP_OFFSET + i       * NODE_SPACING + r1;
+      const y2   = NODE_TOP_OFFSET + (i + 1) * NODE_SPACING + r2;
       const midY = (y1 + y2) / 2;
-      const cx  = (x1 + x2) / 2;
+      const cx   = (x1 + x2) / 2;
       segments.push(
         <path
           key={i}
           d={`M ${x1} ${y1} Q ${cx} ${midY} ${x2} ${y2}`}
           fill="none"
-          stroke="rgba(255,255,255,0.4)"
+          stroke="rgba(255,255,255,0.3)"
           strokeWidth="0.8"
           strokeDasharray="3 4"
         />
@@ -310,11 +303,11 @@ export default function ChaptersPage() {
     const size      = isCurrent ? NODE_CURRENT : NODE_NORMAL;
 
     const bgClass = {
-      completed:   'bg-green-500  border-green-600',
-      current:     'bg-yellow-400 border-yellow-500 ring-4 ring-yellow-200 animate-pulse',
-      practicing:  'bg-amber-400  border-amber-500',
-      not_started: 'bg-white      border-blue-300',
-      locked:      'bg-gray-200   border-gray-300  opacity-70',
+      completed:   'bg-[#131F24] border-gray-600',
+      current:     'bg-[#58CC02] border-[#46a302] ring-4 ring-green-300 animate-pulse',
+      practicing:  'bg-[#1CB0F6] border-[#0a98dc]',
+      not_started: 'bg-white border-gray-300',
+      locked:      'bg-gray-700 border-gray-600 opacity-60',
     }[state];
 
     const top  = NODE_TOP_OFFSET + index * NODE_SPACING;
@@ -329,19 +322,28 @@ export default function ChaptersPage() {
       }
     }
 
+    const innerEmoji = state === 'locked'
+      ? '🔒'
+      : state === 'completed'
+      ? '✓'
+      : TOPIC_EMOJI[topic.id] ?? '📚';
+
+    const innerColor = (state === 'completed' || state === 'current' || state === 'practicing' || state === 'locked')
+      ? 'text-white'
+      : 'text-gray-700';
+
     return (
       <div
         className="absolute flex flex-col items-center"
         style={{ left: `${left}%`, top, transform: 'translateX(-50%)' }}
       >
-        {/* Main circle */}
         <button
           onClick={handleClick}
-          className={`flex items-center justify-center border-4 rounded-full font-bold text-2xl transition-transform active:scale-95 ${bgClass}`}
+          className={`flex items-center justify-center border-4 rounded-full font-bold text-2xl transition-transform active:scale-95 ${bgClass} ${innerColor}`}
           style={{ width: size, height: size, minHeight: 48 }}
           aria-label={topic.name}
         >
-          {state === 'locked' ? '🔒' : TOPIC_EMOJI[topic.id] ?? '📚'}
+          {innerEmoji}
         </button>
 
         {/* Crown dots */}
@@ -350,7 +352,7 @@ export default function ChaptersPage() {
             {[1,2,3,4,5].map((level) => (
               <div
                 key={level}
-                className="w-2 h-2 rounded-full border border-gray-300"
+                className="w-2 h-2 rounded-full border border-gray-400"
                 style={{
                   background: level <= crownLevel ? CROWN_COLORS[crownLevel] : 'transparent',
                 }}
@@ -361,14 +363,14 @@ export default function ChaptersPage() {
 
         {/* Short label */}
         <span
-          className={`mt-1 text-xs text-white drop-shadow leading-tight text-center max-w-[80px] ${isCurrent ? 'font-bold' : 'font-medium'}`}
+          className={`mt-1 text-xs text-white drop-shadow leading-tight text-center max-w-[80px] ${isCurrent ? 'font-extrabold' : 'font-semibold'}`}
         >
           {TOPIC_SHORT[topic.id] ?? topic.name}
         </span>
 
         {/* START HERE badge */}
         {isCurrent && (
-          <span className="mt-1 bg-white text-yellow-600 text-[10px] font-bold rounded-full px-2 py-0.5 shadow">
+          <span className="mt-1 bg-[#58CC02] text-white text-[10px] font-extrabold rounded-full px-2 py-0.5 shadow">
             START HERE
           </span>
         )}
@@ -380,7 +382,7 @@ export default function ChaptersPage() {
   function LockedTooltip({ msg }: { msg: string }) {
     return (
       <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 pointer-events-none">
-        <div className="bg-gray-800 text-white rounded-full px-4 py-2 shadow-lg text-sm font-medium whitespace-nowrap">
+        <div className="bg-gray-800 text-white rounded-full px-4 py-2 shadow-lg text-sm font-bold whitespace-nowrap animate-pop-in">
           🔒 {msg}
         </div>
       </div>
@@ -389,7 +391,7 @@ export default function ChaptersPage() {
 
   // ── Main render ───────────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-400 to-sky-100">
+    <div className="min-h-screen bg-gradient-to-b from-[#131F24] to-[#1a3040]">
       <TopBar />
       <DailyGoalBanner />
       <div className="relative mx-2 mt-4" style={{ height: pathHeight }}>
