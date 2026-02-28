@@ -4,7 +4,8 @@ const nextConfig = {
     // Without this, Vercel's file tracer misses dynamically-referenced files and
     // fs.readFileSync returns ENOENT at runtime.
     outputFileTracingIncludes: {
-      '/api/seed': ['./data/**/*'],
+      '/api/seed':      ['./data/**/*'],
+      '/api/seed-test': ['./data/**/*'],
     },
   },
 };

@@ -3,6 +3,7 @@
   "framework": "nextjs",
   "functions": {
     "src/app/api/seed/route.ts":            { "maxDuration": 300 },
+    "src/app/api/seed-test/route.ts":       { "maxDuration": 60  },
     "src/app/api/chat/route.ts":            { "maxDuration": 60  },
     "src/app/api/reports/weekly/route.ts":  { "maxDuration": 60  },
     "src/app/api/reports/send/route.ts":                        { "maxDuration": 30  },

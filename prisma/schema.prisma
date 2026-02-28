@@ -57,6 +57,11 @@ model Student {
   dailyUsageMinutes       Int           @default(0)
   lastActiveDate          DateTime?
   aiChatMessagesUsedToday Int           @default(0)
+  // ── Gamification ──
+  currentStreak           Int           @default(0)
+  longestStreak           Int           @default(0)
+  totalDaysPracticed      Int           @default(0)
+  badges                  String        @default("[]") // JSON array of badge IDs
   // ── Relations ──
   progress                Progress[]
   attempts                Attempt[]

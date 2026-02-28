@@ -3,13 +3,33 @@
 import { useState } from 'react';
 
 type Status = 'idle' | 'running' | 'done' | 'error';
+type TestStatus = 'idle' | 'running' | 'done' | 'error';
 
 export default function SeedPage() {
-  const [secret,   setSecret]   = useState('');
-  const [status,   setStatus]   = useState<Status>('idle');
-  const [seeded,   setSeeded]   = useState(0);
-  const [total,    setTotal]    = useState(2505);
-  const [message,  setMessage]  = useState('');
+  const [secret,     setSecret]     = useState('');
+  const [status,     setStatus]     = useState<Status>('idle');
+  const [seeded,     setSeeded]     = useState(0);
+  const [total,      setTotal]      = useState(2505);
+  const [message,    setMessage]    = useState('');
+  const [testStatus, setTestStatus] = useState<TestStatus>('idle');
+  const [testMsg,    setTestMsg]    = useState('');
+
+  async function runTestSeed() {
+    if (!secret.trim()) { setTestMsg('Enter your SEED_SECRET first.'); setTestStatus('error'); return; }
+    setTestStatus('running');
+    setTestMsg('Hashing passwords & seeding test users…');
+    try {
+      const res  = await fetch(`/api/seed-test?secret=${encodeURIComponent(secret)}`);
+      const data = await res.json();
+      if (!res.ok) { setTestMsg(data.error ?? 'Something went wrong.'); setTestStatus('error'); return; }
+      const s = data.seeded;
+      setTestMsg(`Done! ${s.parents} parents · ${s.students} students · ${s.orders} orders · ${s.progress} progress rows · ${s.usageLogs} usage logs`);
+      setTestStatus('done');
+    } catch (err) {
+      setTestMsg(`Network error: ${err}`);
+      setTestStatus('error');
+    }
+  }
 
   async function runSeed() {
     if (!secret.trim()) { setMessage('Enter your SEED_SECRET first.'); return; }
@@ -118,6 +138,35 @@ export default function SeedPage() {
       <p className="text-xs text-gray-400 text-center">
         This page is safe to run multiple times — it uses upsert so no duplicates.
       </p>
+
+      {/* ── Test User Seed ── */}
+      <div className="w-full border-t border-gray-200 pt-6 space-y-3">
+        <p className="text-sm font-bold text-gray-700 text-center">Load Test Users</p>
+        <p className="text-xs text-gray-400 text-center">
+          5 families · 10 students · subscriptions, orders, progress &amp; streaks.<br />
+          All parent passwords: <code className="bg-gray-100 px-1 rounded">test1234</code>
+        </p>
+
+        {testStatus === 'running' ? (
+          <div className="text-center text-sm text-gray-500 animate-pulse">{testMsg}</div>
+        ) : testStatus === 'done' ? (
+          <div className="text-center text-sm text-green-600 font-semibold">✓ {testMsg}</div>
+        ) : (
+          <>
+            {testMsg && (
+              <p className={`text-sm text-center ${testStatus === 'error' ? 'text-red-500' : 'text-gray-500'}`}>
+                {testMsg}
+              </p>
+            )}
+            <button
+              onClick={runTestSeed}
+              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-2xl text-sm transition-colors"
+            >
+              Load Test Users →
+            </button>
+          </>
+        )}
+      </div>
     </div>
   );
 }
