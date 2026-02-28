@@ -174,7 +174,7 @@ export async function generateMockPaper(
   const usedIds = new Set<string>();
 
   // First pass: try to get exact difficulty distribution per topic
-  for (const [topicId, qCount] of topicDist) {
+  for (const [topicId, qCount] of Array.from(topicDist.entries())) {
     const topicQuestions: QRow[] = [];
 
     // Calculate how many of each difficulty to pick for this topic
