@@ -4,6 +4,8 @@ import { useEffect, useState, type ReactElement } from 'react';
 import { useRouter } from 'next/navigation';
 import type { DashboardData, TopicWithProgress, TopicNode, CrownLevel, NodeState } from '@/types';
 import Sparky from '@/components/Sparky';
+import NudgeBubble from '@/components/NudgeBubble';
+import { computeNudge, markMasteryShown, type Nudge } from '@/lib/nudges';
 
 // ─── Topic metadata ────────────────────────────────────────────────────────────
 
@@ -136,6 +138,7 @@ export default function ChaptersPage() {
   const [hearts,      setHearts]      = useState(5);
   const [studentName, setStudentName] = useState('');
   const [lockedMsg,   setLockedMsg]   = useState<string | null>(null);
+  const [nudge,       setNudge]       = useState<Nudge | null>(null);
 
   useEffect(() => {
     const id = localStorage.getItem('mathspark_student_id');
@@ -144,7 +147,17 @@ export default function ChaptersPage() {
     setHearts(getHearts());
     fetch(`/api/dashboard?studentId=${id}`)
       .then((r) => r.json())
-      .then((d: DashboardData) => { setData(d); setLoading(false); });
+      .then((d: DashboardData) => {
+        setData(d);
+        setLoading(false);
+        // Compute nudge after data arrives
+        const n = computeNudge({
+          streakDays:     d.stats.streakDays,
+          topicsMastered: d.stats.topicsMastered,
+          topics:         d.topics,
+        });
+        if (n) setNudge(n);
+      });
   }, [router]);
 
   // Computed values
@@ -154,6 +167,23 @@ export default function ChaptersPage() {
   const goalMet      = todayCorrect >= DAILY_GOAL;
   const streakDays   = data?.stats.streakDays ?? 0;
   const pathHeight   = TOPIC_ORDER.length * NODE_SPACING + NODE_TOP_OFFSET + 120;
+
+  // "Recommended for you" — up to 3 cards: in-progress first, then next unlocked
+  const recommended = data
+    ? [
+        // 1. Practicing (started but not mastered), sorted by lowest accuracy first
+        ...data.topics
+          .filter((t) => t.mastery === 'Practicing')
+          .sort((a, b) =>
+            a.correct / Math.max(a.attempted, 1) - b.correct / Math.max(b.attempted, 1),
+          )
+          .slice(0, 2),
+        // 2. Next current node (not_started + unlocked)
+        ...(nodes.find((n) => n.state === 'current' && n.topic.attempted === 0)
+          ? [nodes.find((n) => n.state === 'current' && n.topic.attempted === 0)!.topic]
+          : []),
+      ].slice(0, 3)
+    : [];
 
   // ── Loading skeleton ─────────────────────────────────────────────────────────
   if (loading) {
@@ -399,7 +429,59 @@ export default function ChaptersPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#131F24] to-[#1a3040]">
       <TopBar />
+
+      {/* Nudge bubble — floats below top bar */}
+      {nudge && (
+        <NudgeBubble
+          nudge={nudge}
+          onDismiss={() => {
+            if (nudge.mood === 'celebrating') {
+              // Mark mastery shown so we don't re-show this celebration
+              const topic = data?.topics.find((t) => t.mastery === 'Mastered' &&
+                nudge.message.includes(TOPIC_SHORT[t.id] ?? t.name));
+              if (topic) markMasteryShown(topic.id);
+            }
+            setNudge(null);
+          }}
+        />
+      )}
+
       <DailyGoalBanner />
+
+      {/* Recommended for you */}
+      {recommended.length > 0 && (
+        <div className="mx-4 mt-3">
+          <p className="text-white/60 text-[11px] font-extrabold uppercase tracking-widest mb-2">
+            Recommended for you
+          </p>
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
+            {recommended.map((t) => {
+              const pct = t.attempted > 0 ? Math.round(t.correct / t.attempted * 100) : null;
+              return (
+                <button
+                  key={t.id}
+                  onClick={() => router.push(`/practice/${t.id}`)}
+                  className="flex-shrink-0 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl px-4 py-3 text-left transition-colors active:scale-95"
+                  style={{ minHeight: 0 }}
+                >
+                  <span className="text-xl">{TOPIC_EMOJI[t.id] ?? '📚'}</span>
+                  <p className="text-white font-extrabold text-xs mt-1">
+                    {TOPIC_SHORT[t.id] ?? t.name}
+                  </p>
+                  {pct !== null && (
+                    <p className="text-white/50 text-[10px] font-semibold">
+                      {pct}% accuracy
+                    </p>
+                  )}
+                  {pct === null && (
+                    <p className="text-[#58CC02] text-[10px] font-semibold">Start now →</p>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Crown legend */}
       <div className="mx-4 mt-3 flex items-center justify-between">

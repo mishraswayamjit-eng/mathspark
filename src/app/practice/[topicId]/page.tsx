@@ -10,6 +10,7 @@ import Confetti from '@/components/Confetti';
 import DuoButton from '@/components/DuoButton';
 import { useSounds } from '@/hooks/useSounds';
 import type { Question, AnswerKey } from '@/types';
+import { saveSessionData } from '@/lib/nudges';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -415,7 +416,20 @@ export default function PracticePage() {
   const [showXpFloat,  setShowXpFloat]  = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
 
-  const advanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const advanceTimer    = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const sessionSavedRef = useRef(false);
+
+  // ── Save session data when lesson completes ────────────────────────────────
+  useEffect(() => {
+    if (phase !== 'complete' || sessionSavedRef.current) return;
+    sessionSavedRef.current = true;
+    const allResults = [...results, ...reviewResults];
+    const correct    = allResults.filter((r) => r.wasCorrect).length;
+    const accuracy   = allResults.length > 0
+      ? Math.round((correct / allResults.length) * 100)
+      : 0;
+    saveSessionData(topicId, accuracy);
+  }, [phase, results, reviewResults, topicId]);
 
   // ── Helpers ────────────────────────────────────────────────────────────────
   const isReviewing      = phase === 'reviewing';
@@ -583,6 +597,7 @@ export default function PracticePage() {
     setReviewQueue([]);
     setReviewIndex(0);
     setShowConfetti(false);
+    sessionSavedRef.current = false;
 
     // Reload questions
     const sid = studentId;

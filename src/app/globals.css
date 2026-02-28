@@ -77,8 +77,14 @@ button {
   display: none;
 }
 
+@keyframes slide-down {
+  from { transform: translateX(-50%) translateY(-16px); opacity: 0; }
+  to   { transform: translateX(-50%) translateY(0);     opacity: 1; }
+}
+
 .animate-sparky-bounce  { animation: sparky-bounce 1s ease-in-out infinite; }
 .animate-sparky-dance   { animation: sparky-dance  0.5s ease-in-out infinite; }
 .animate-sparky-wave    { animation: sparky-wave   1s ease-in-out infinite; }
-.animate-slide-up       { animation: slide-up 0.3s ease-out; }
-.animate-pop-in         { animation: pop-in  0.35s ease-out; }
+.animate-slide-up       { animation: slide-up   0.3s  ease-out; }
+.animate-slide-down     { animation: slide-down 0.28s ease-out; }
+.animate-pop-in         { animation: pop-in     0.35s ease-out; }
