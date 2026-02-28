@@ -8,7 +8,7 @@ export default function SeedPage() {
   const [secret,   setSecret]   = useState('');
   const [status,   setStatus]   = useState<Status>('idle');
   const [seeded,   setSeeded]   = useState(0);
-  const [total,    setTotal]    = useState(2345);
+  const [total,    setTotal]    = useState(2505);
   const [message,  setMessage]  = useState('');
 
   async function runSeed() {
@@ -31,7 +31,7 @@ export default function SeedPage() {
         }
 
         setSeeded(data.seeded ?? 0);
-        setTotal(data.total  ?? 2345);
+        setTotal(data.total  ?? 2505);
         setMessage(data.message ?? '');
 
         if (data.done) {
@@ -55,7 +55,7 @@ export default function SeedPage() {
       <div className="text-5xl">🌱</div>
       <h1 className="text-2xl font-bold text-gray-800 text-center">Seed MathSpark Database</h1>
       <p className="text-gray-500 text-sm text-center">
-        This page loads all 2,345 questions into the database.<br />
+        This page loads all 2,505 questions into the database.<br />
         Run it once after your first Vercel deploy.
       </p>
 
