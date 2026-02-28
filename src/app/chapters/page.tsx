@@ -3,6 +3,7 @@
 import { useEffect, useState, type ReactElement } from 'react';
 import { useRouter } from 'next/navigation';
 import type { DashboardData, TopicWithProgress, TopicNode, CrownLevel, NodeState } from '@/types';
+import Sparky from '@/components/Sparky';
 
 // ─── Topic metadata ────────────────────────────────────────────────────────────
 
@@ -193,7 +194,9 @@ export default function ChaptersPage() {
     return (
       <div className="sticky top-0 z-50 h-14 bg-[#131F24]/95 backdrop-blur-sm flex items-center justify-between px-4">
         <div className="flex items-center gap-2">
-          <span className="text-xl animate-bounce">🌟</span>
+          <div className="animate-sparky-bounce">
+            <Sparky mood="happy" size={30} />
+          </div>
           <span className="font-extrabold text-white text-base tracking-tight">MathSpark</span>
         </div>
         <div className="flex items-center gap-3">
@@ -255,7 +258,9 @@ export default function ChaptersPage() {
           <p className="text-sm font-extrabold text-white">
             {goalMet ? 'Daily goal met! 🎯' : `${todayCorrect} / ${DAILY_GOAL} correct today`}
           </p>
-          <p className="text-xs text-white/50 font-medium">{goalMet ? 'Amazing work today!' : 'Keep going!'}</p>
+          <p className="text-xs text-white/50 font-medium">
+            {goalMet ? 'Amazing work, keep it up!' : 'Complete 2 lessons to reach your goal!'}
+          </p>
         </div>
       </div>
     );
@@ -303,10 +308,10 @@ export default function ChaptersPage() {
     const size      = isCurrent ? NODE_CURRENT : NODE_NORMAL;
 
     const bgClass = {
-      completed:   'bg-[#131F24] border-gray-600',
-      current:     'bg-[#58CC02] border-[#46a302] ring-4 ring-green-300 animate-pulse',
+      completed:   'bg-[#58CC02] border-[#46a302]',
+      current:     'bg-[#FFC800] border-[#CC9900] ring-4 ring-yellow-200 animate-pulse',
       practicing:  'bg-[#1CB0F6] border-[#0a98dc]',
-      not_started: 'bg-white border-gray-300',
+      not_started: 'bg-white border-blue-200',
       locked:      'bg-gray-700 border-gray-600 opacity-60',
     }[state];
 
@@ -328,9 +333,10 @@ export default function ChaptersPage() {
       ? '✓'
       : TOPIC_EMOJI[topic.id] ?? '📚';
 
-    const innerColor = (state === 'completed' || state === 'current' || state === 'practicing' || state === 'locked')
-      ? 'text-white'
-      : 'text-gray-700';
+    const innerColor =
+      state === 'current'                                           ? 'text-gray-800' :
+      state === 'completed' || state === 'practicing' || state === 'locked' ? 'text-white' :
+      'text-gray-600';
 
     return (
       <div
@@ -346,20 +352,20 @@ export default function ChaptersPage() {
           {innerEmoji}
         </button>
 
-        {/* Crown dots */}
-        {crownLevel > 0 && (
-          <div className="flex gap-1 mt-1">
-            {[1,2,3,4,5].map((level) => (
-              <div
-                key={level}
-                className="w-2 h-2 rounded-full border border-gray-400"
-                style={{
-                  background: level <= crownLevel ? CROWN_COLORS[crownLevel] : 'transparent',
-                }}
-              />
-            ))}
-          </div>
-        )}
+        {/* Crown stars */}
+        <div className="flex gap-0.5 mt-1">
+          {[1,2,3,4,5].map((level) => (
+            <span
+              key={level}
+              className="text-[11px] leading-none select-none"
+              style={{
+                color: level <= crownLevel ? CROWN_COLORS[crownLevel] : 'rgba(255,255,255,0.18)',
+                textShadow: level <= crownLevel ? `0 0 6px ${CROWN_COLORS[crownLevel]}` : 'none',
+                filter: level <= crownLevel ? 'drop-shadow(0 0 2px rgba(0,0,0,0.3))' : 'none',
+              }}
+            >★</span>
+          ))}
+        </div>
 
         {/* Short label */}
         <span
@@ -370,7 +376,7 @@ export default function ChaptersPage() {
 
         {/* START HERE badge */}
         {isCurrent && (
-          <span className="mt-1 bg-[#58CC02] text-white text-[10px] font-extrabold rounded-full px-2 py-0.5 shadow">
+          <span className="mt-1 bg-[#FFC800] text-gray-800 text-[10px] font-extrabold rounded-full px-2 py-0.5 shadow-md">
             START HERE
           </span>
         )}
@@ -394,12 +400,31 @@ export default function ChaptersPage() {
     <div className="min-h-screen bg-gradient-to-b from-[#131F24] to-[#1a3040]">
       <TopBar />
       <DailyGoalBanner />
+
+      {/* Crown legend */}
+      <div className="mx-4 mt-3 flex items-center justify-between">
+        <span className="text-white/70 text-xs font-bold uppercase tracking-widest">Learning Path</span>
+        <div className="flex items-center gap-2">
+          {([
+            ['#CD7F32','Bronze'],['#C0C0C0','Silver'],['#FFD700','Gold'],
+            ['#9B59B6','Purple'],['#00BCD4','Diamond'],
+          ] as [string,string][]).map(([color, label]) => (
+            <div key={label} className="flex items-center gap-0.5">
+              <span className="text-[10px]" style={{ color, textShadow: `0 0 4px ${color}` }}>★</span>
+              <span className="text-[9px] text-white/40 font-semibold">{label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="relative mx-2 mt-4" style={{ height: pathHeight }}>
         <ConnectingPath />
         {nodes.map((node, i) => (
           <TopicNodeButton key={node.topic.id} node={node} index={i} />
         ))}
       </div>
+      {/* Bottom padding so last node isn't clipped behind nav */}
+      <div className="h-8" />
       {lockedMsg && <LockedTooltip msg={lockedMsg} />}
     </div>
   );
