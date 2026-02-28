@@ -1,0 +1,26 @@
+{
+  "name": "MathSpark — Grade 4 Math",
+  "short_name": "MathSpark",
+  "description": "Fun, safe math learning and IPM exam prep for Grade 4 students",
+  "start_url": "/chapters",
+  "display": "standalone",
+  "background_color": "#131F24",
+  "theme_color": "#58CC02",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "kids"],
+  "lang": "en-IN"
+}

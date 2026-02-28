@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   description: 'Fun, safe math learning and IPM exam prep for Grade 4 students',
   manifest: '/manifest.json',
   themeColor: '#58CC02',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'MathSpark',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
