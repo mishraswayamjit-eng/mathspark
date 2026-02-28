@@ -48,6 +48,20 @@ button {
   to   { transform: translateY(0);    }
 }
 
+@keyframes xp-float {
+  0%   { transform: translateY(0)     scale(1);   opacity: 1; }
+  60%  { transform: translateY(-60px) scale(1.3); opacity: 1; }
+  100% { transform: translateY(-90px) scale(1);   opacity: 0; }
+}
+
+@keyframes count-up-pulse {
+  0%, 100% { transform: scale(1);    }
+  50%       { transform: scale(1.15); }
+}
+
+.animate-xp-float   { animation: xp-float 1.4s ease-out forwards; }
+.animate-count-pulse { animation: count-up-pulse 0.15s ease-in-out; }
+
 @keyframes pop-in {
   0%   { transform: scale(0.5); }
   80%  { transform: scale(1.1); }
