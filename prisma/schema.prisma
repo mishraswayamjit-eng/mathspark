@@ -1,8 +1,7 @@
 // Switched from SQLite → PostgreSQL (Neon) for Vercel deployment
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")   // pooled URL (pgBouncer) — used by the app
-  directUrl = env("DIRECT_URL")     // direct URL — used by prisma db push/migrate
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 generator client {
