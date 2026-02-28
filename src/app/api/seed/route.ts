@@ -3,6 +3,8 @@ import { prisma } from '@/lib/db';
 import * as fs from 'fs';
 import * as path from 'path';
 
+export const dynamic = 'force-dynamic';
+
 // ---------------------------------------------------------------------------
 // Topic definitions (mirrors prisma/seed.ts)
 // ---------------------------------------------------------------------------
@@ -59,6 +61,7 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: 'Wrong secret.' }, { status: 401 });
   }
 
+  try {
   const page = parseInt(searchParams.get('page') ?? '0', 10);
 
   // ── Load seed JSON ────────────────────────────────────────────────────────
@@ -147,4 +150,11 @@ export async function GET(req: Request) {
       ? `All ${questions.length} questions seeded!`
       : `Seeded ${seeded}/${questions.length}`,
   });
+  } catch (err) {
+    console.error('[seed] Error on page', new URL(req.url).searchParams.get('page'), err);
+    return NextResponse.json(
+      { error: `Seed failed: ${err instanceof Error ? err.message : String(err)}` },
+      { status: 500 },
+    );
+  }
 }
