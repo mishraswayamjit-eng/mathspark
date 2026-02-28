@@ -7,7 +7,7 @@ const NAV = [
   { href: '/chapters',  emoji: '🏠', label: 'Home'    },
   { href: '/practice',  emoji: '📚', label: 'Learn'   },
   { href: '/chat',      emoji: '💬', label: 'Chat'    },
-  { href: '/dashboard', emoji: '👤', label: 'Profile' },
+  { href: '/profile',   emoji: '👤', label: 'Profile' },
 ];
 
 export default function BottomNav() {

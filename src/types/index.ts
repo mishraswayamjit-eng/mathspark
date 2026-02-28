@@ -87,6 +87,25 @@ export interface DashboardData {
   weakestTopicId: string | null;
 }
 
+// ── Profile types ─────────────────────────────────────────────────────────────
+
+export interface ProfileStats {
+  totalSolved: number;
+  totalAttempted: number;
+  topicsMastered: number;
+  streakDays: number;
+  maxConsecutiveCorrect: number;
+  fastCorrects: number;        // correct answers completed in < 10 seconds
+}
+
+export interface ProfileData {
+  student: Student;
+  stats: ProfileStats;
+  topics: TopicWithProgress[];
+  weeklyData: Array<{ date: string; count: number }>;
+  weakestTopicId: string | null;
+}
+
 // ── Chat types ───────────────────────────────────────────────────────────────
 
 export type ChatRole = 'user' | 'assistant';
