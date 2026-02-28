@@ -30,6 +30,7 @@ export async function calculateMastery(
 
 /**
  * Recalculate and persist mastery + aggregate counts for a student/topic pair.
+ * Also exported as updateMastery to match the spec interface.
  */
 export async function updateProgress(studentId: string, topicId: string): Promise<void> {
   const [mastery, all] = await Promise.all([
@@ -49,3 +50,6 @@ export async function updateProgress(studentId: string, topicId: string): Promis
     create: { studentId, topicId, attempted, correct, mastery },
   });
 }
+
+/** Alias matching the task spec. */
+export const updateMastery = updateProgress;

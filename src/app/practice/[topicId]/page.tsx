@@ -441,6 +441,38 @@ export default function PracticePage() {
   const advanceTimer    = useRef<ReturnType<typeof setTimeout> | null>(null);
   const sessionSavedRef = useRef(false);
 
+  // ── Adaptive fetching refs ──────────────────────────────────────────────────
+  // Stable ref for studentId so callbacks never capture a stale closure.
+  const studentIdRef   = useRef<string | null>(null);
+  // Pre-fetched next question (filled immediately after user answers).
+  const prefetchRef    = useRef<Question | null>(null);
+  const isFetchingRef  = useRef(false);
+
+  // Fetch one adaptive question from the server.
+  const fetchOneAdaptive = useCallback(async (): Promise<Question | null> => {
+    const sid = studentIdRef.current;
+    if (!sid) return null;
+    try {
+      const res = await fetch(
+        `/api/questions/next?topicId=${topicId}&studentId=${sid}`,
+      );
+      if (!res.ok) return null;
+      return (await res.json()) as Question;
+    } catch {
+      return null;
+    }
+  }, [topicId]);
+
+  // Kick off a background prefetch of the next question.
+  const prefetchNext = useCallback(() => {
+    if (isFetchingRef.current || prefetchRef.current) return;
+    isFetchingRef.current = true;
+    fetchOneAdaptive().then((q) => {
+      prefetchRef.current  = q;
+      isFetchingRef.current = false;
+    });
+  }, [fetchOneAdaptive]);
+
   // ── Offline attempt queue helpers ──────────────────────────────────────────
   interface AttemptPayload {
     studentId: string; questionId: string; topicId: string;
@@ -512,38 +544,30 @@ export default function PracticePage() {
   const currentSlotIndex = isReviewing ? reviewIndex : qIndex;
 
   // ── Boot ───────────────────────────────────────────────────────────────────
+  // Fetch one adaptive question at a time. Questions are served by the adaptive
+  // engine (/api/questions/next) which reads today's DB attempts to determine
+  // difficulty, avoid repeats, and honour streak adjustments.
   useEffect(() => {
     const sid = localStorage.getItem('mathspark_student_id');
     if (!sid) { router.replace('/start'); return; }
     setStudentId(sid);
+    studentIdRef.current = sid;
 
     Promise.all([
       fetch('/api/topics').then((r) => r.json()),
-      fetch(`/api/questions/lesson?topicId=${topicId}&studentId=${sid}&count=${LESSON_SIZE}`)
-        .then((r) => r.json())
-        .then((qs: Question[]) => {
-          // Cache for offline use
-          localStorage.setItem(`mathspark_offline_q_${topicId}`, JSON.stringify(qs));
-          return qs;
-        })
-        .catch(() => {
-          // Network failure — try offline cache
-          const raw = localStorage.getItem(`mathspark_offline_q_${topicId}`);
-          const cached: Question[] = raw ? (JSON.parse(raw) as Question[]) : [];
-          if (cached.length > 0) setIsOnline(false);
-          return cached;
-        }),
-    ]).then(([topics, qs]: [Array<{ id: string; name: string }>, Question[]]) => {
-      const t = topics.find((x) => x.id === topicId);
-      setTopicName(t?.name ?? topicId);
-
-      if (!Array.isArray(qs) || qs.length === 0) {
-        router.replace('/chapters');
-        return;
-      }
-      setQuestions(qs);
-      setPhase('answering');
-    });
+      // First question from the adaptive engine
+      fetch(`/api/questions/next?topicId=${topicId}&studentId=${sid}`)
+        .then((r) => { if (!r.ok) throw new Error('fetch failed'); return r.json() as Promise<Question>; }),
+    ])
+      .then(([topics, firstQ]: [Array<{ id: string; name: string }>, Question]) => {
+        const t = topics.find((x) => x.id === topicId);
+        setTopicName(t?.name ?? topicId);
+        setQuestions([firstQ]);
+        setPhase('answering');
+        // Immediately prefetch the second question
+        prefetchNext();
+      })
+      .catch(() => router.replace('/chapters'));
 
     return () => {
       if (advanceTimer.current) clearTimeout(advanceTimer.current);
@@ -552,6 +576,9 @@ export default function PracticePage() {
   }, [topicId]);
 
   // ── Advance to next question ───────────────────────────────────────────────
+  // Questions are fetched one at a time from the adaptive engine.
+  // We pre-fetch the next question as soon as the user answers, so the advance
+  // is instant in the common case; a brief loading screen covers the rare miss.
   const advance = useCallback((heartsNow: number) => {
     if (advanceTimer.current) clearTimeout(advanceTimer.current);
     setSelected(null);
@@ -573,8 +600,9 @@ export default function PracticePage() {
         setPhase('no_hearts');
         return;
       }
-      const nextQ = qIndex + 1;
-      if (nextQ >= questions.length) {
+      const nextIdx = qIndex + 1;
+      if (nextIdx >= LESSON_SIZE) {
+        // Lesson complete
         if (reviewQueueRef.current.length > 0) {
           setPhase('review_intro');
         } else {
@@ -582,11 +610,33 @@ export default function PracticePage() {
           setPhase('complete');
         }
       } else {
-        setQIndex(nextQ);
-        setPhase('answering');
+        // Consume pre-fetched question or fetch synchronously
+        const prefetched   = prefetchRef.current;
+        prefetchRef.current = null;
+        isFetchingRef.current = false;
+
+        if (prefetched) {
+          setQuestions((prev) => [...prev, prefetched]);
+          setQIndex(nextIdx);
+          setPhase('answering');
+        } else {
+          // Fetch now (loading state covers the gap)
+          setPhase('loading');
+          fetchOneAdaptive().then((q) => {
+            if (!q) {
+              // No more questions — end lesson early
+              setShowConfetti(true);
+              setPhase('complete');
+              return;
+            }
+            setQuestions((prev) => [...prev, q]);
+            setQIndex(nextIdx);
+            setPhase('answering');
+          });
+        }
       }
     }
-  }, [isReviewing, reviewIndex, qIndex, questions.length]);
+  }, [isReviewing, reviewIndex, qIndex, fetchOneAdaptive]);
 
   // ── Handle answer ──────────────────────────────────────────────────────────
   function handleAnswer(key: AnswerKey, correct: boolean) {
@@ -660,6 +710,12 @@ export default function PracticePage() {
     // Analytics
     track('question_answered', { topicId, correct });
 
+    // Pre-fetch next adaptive question now (during result display window)
+    // so advance() finds it ready and shows no loading gap.
+    if (!isReviewing && qIndex + 1 < LESSON_SIZE) {
+      prefetchNext();
+    }
+
     // Auto-advance for correct answers
     if (correct) {
       advanceTimer.current = setTimeout(() => advance(newHearts), AUTO_ADVANCE_MS);
@@ -687,17 +743,16 @@ export default function PracticePage() {
     setReviewIndex(0);
     setShowConfetti(false);
     sessionSavedRef.current = false;
+    prefetchRef.current    = null;
+    isFetchingRef.current  = false;
 
-    // Reload questions
-    const sid = studentId;
-    if (!sid) return;
     setPhase('loading');
-    fetch(`/api/questions/lesson?topicId=${topicId}&studentId=${sid}&count=${LESSON_SIZE}`)
-      .then((r) => r.json())
-      .then((qs: Question[]) => {
-        setQuestions(qs);
-        setPhase('answering');
-      });
+    fetchOneAdaptive().then((q) => {
+      if (!q) { router.replace('/chapters'); return; }
+      setQuestions([q]);
+      setPhase('answering');
+      prefetchNext();
+    });
   }
 
   // ── Full-screen phases ─────────────────────────────────────────────────────
@@ -815,7 +870,7 @@ export default function PracticePage() {
           <span className="text-gray-400 text-xs font-semibold">{reviewIndex + 1} / {reviewQueue.length}</span>
         </div>
       ) : (
-        <LessonJourney total={Math.min(LESSON_SIZE, questions.length)} currentIdx={qIndex} results={results} />
+        <LessonJourney total={LESSON_SIZE} currentIdx={qIndex} results={results} />
       )}
 
       {/* Progress bar */}
@@ -835,7 +890,7 @@ export default function PracticePage() {
         <div className={`inline-flex items-center gap-2 text-xs font-extrabold px-3 py-1.5 rounded-full border ${accentCls}`}>
           {isReviewing
             ? `🔁 Review question ${reviewIndex + 1} of ${reviewQueue.length}`
-            : `Question ${qIndex + 1} of ${Math.min(LESSON_SIZE, questions.length)}`}
+            : `Question ${qIndex + 1} of ${LESSON_SIZE}`}
           {streak >= 3 && !isReviewing && (
             <span className="text-orange-500 font-extrabold">🔥 {streak}</span>
           )}
