@@ -1,25 +1,30 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { generateMockPaper } from '@/lib/mockTest';
-import type { TestType } from '@/types';
+import type { TestType, PYQYear } from '@/types';
 
 // POST /api/mock-tests
-// Body: { studentId, type, topicIds? }
+// Body: { studentId, type, topicIds?, year? }
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { studentId, type, topicIds } = body as {
+    const { studentId, type, topicIds, year } = body as {
       studentId: string;
       type: TestType;
       topicIds?: string[];
+      year?: PYQYear;
     };
 
     if (!studentId || !type) {
       return NextResponse.json({ error: 'studentId and type required' }, { status: 400 });
     }
 
-    if (!['quick', 'half', 'full'].includes(type)) {
+    if (!['quick', 'half', 'full', 'ipm', 'pyq'].includes(type)) {
       return NextResponse.json({ error: 'Invalid test type' }, { status: 400 });
+    }
+
+    if (type === 'pyq' && !year) {
+      return NextResponse.json({ error: 'year required for pyq type' }, { status: 400 });
     }
 
     // Check for existing in-progress test
@@ -32,7 +37,7 @@ export async function POST(req: Request) {
     }
 
     // Generate paper
-    const paper = await generateMockPaper(studentId, type, topicIds);
+    const paper = await generateMockPaper(studentId, type, topicIds, year);
 
     // Create MockTest + all responses
     const mockTest = await prisma.mockTest.create({

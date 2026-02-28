@@ -51,6 +51,8 @@ model Question {
   misconceptionC String    @default("")
   misconceptionD String    @default("")
   source         String    @default("hand_crafted")
+  year           Int?      // PYQ questions: 2016 | 2017 | 2018 | 2019
+  questionNumber Int?      // PYQ questions: original exam order (1-40)
   attempts       Attempt[]
   mockTestResponses MockTestResponse[]
 

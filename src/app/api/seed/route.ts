@@ -68,7 +68,8 @@ export async function GET(req: Request) {
   }
   const { questions } = JSON.parse(fs.readFileSync(dataPath, 'utf-8')) as {
     questions: Array<{
-      id: string; subTopic?: string; difficulty?: string; questionText?: string;
+      id: string; topicId?: string; year?: number; questionNumber?: number;
+      subTopic?: string; difficulty?: string; questionText?: string;
       questionLatex?: string; options?: Array<{ id: string; text: string }>;
       correctAnswer?: string; hints?: string[]; stepByStep?: unknown[];
       misconceptions?: Record<string, string>; source?: string;
@@ -92,7 +93,7 @@ export async function GET(req: Request) {
     await prisma.$transaction(
       batch.map((q) => {
         const f = {
-          topicId:       getTopicId(q.id),
+          topicId:       q.topicId ?? getTopicId(q.id),
           subTopic:      q.subTopic      ?? '',
           difficulty:    q.difficulty    ?? 'Medium',
           questionText:  q.questionText  ?? '',
@@ -111,6 +112,8 @@ export async function GET(req: Request) {
           misconceptionC: q.misconceptions?.['C'] ?? '',
           misconceptionD: q.misconceptions?.['D'] ?? '',
           source:         q.source        ?? 'auto_generated',
+          year:           q.year          ?? null,
+          questionNumber: q.questionNumber ?? null,
         };
         return prisma.question.upsert({ where: { id: q.id }, update: f, create: { id: q.id, ...f } });
       }),

@@ -43,6 +43,8 @@ export interface Question {
   misconceptionC: string;
   misconceptionD: string;
   source: string;
+  year?: number | null;
+  questionNumber?: number | null;
 }
 
 export interface Progress {
@@ -152,12 +154,14 @@ export interface TopicNode {
 
 // ── Mock test types ───────────────────────────────────────────────────────────
 
-export type TestType = 'quick' | 'half' | 'full';
+export type TestType = 'quick' | 'half' | 'full' | 'ipm' | 'pyq';
+export type PYQYear = 2016 | 2017 | 2018 | 2019;
 
 export interface TestConfig {
   type: TestType;
   topicIds?: string[];
   studentId: string;
+  year?: PYQYear;  // for type === 'pyq'
 }
 
 export interface MockTest {

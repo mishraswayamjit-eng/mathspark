@@ -64,6 +64,9 @@ async function main() {
     metadata: { totalQuestions: number };
     questions: Array<{
       id: string;
+      topicId?: string;          // explicit for PYQ questions
+      year?: number;             // PYQ: 2016-2019
+      questionNumber?: number;   // PYQ: original exam order
       subTopic?: string;
       difficulty?: string;
       questionText?: string;
@@ -100,9 +103,10 @@ async function main() {
 
     await prisma.$transaction(
       batch.map((q) => {
-        const topicId       = getTopicId(q.id);
-        const options       = q.options        ?? [];
-        const hints         = q.hints          ?? [];
+        // PYQ questions carry an explicit topicId in the JSON
+        const topicId        = q.topicId ?? getTopicId(q.id);
+        const options        = q.options        ?? [];
+        const hints          = q.hints          ?? [];
         const misconceptions = q.misconceptions ?? {};
 
         const fields = {
@@ -125,6 +129,8 @@ async function main() {
           misconceptionC: misconceptions['C'] ?? '',
           misconceptionD: misconceptions['D'] ?? '',
           source:         q.source        ?? 'auto_generated',
+          year:           q.year          ?? null,
+          questionNumber: q.questionNumber ?? null,
         };
 
         return prisma.question.upsert({
