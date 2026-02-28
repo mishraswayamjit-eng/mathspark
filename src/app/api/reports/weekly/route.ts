@@ -3,8 +3,6 @@ import { Resend } from 'resend';
 import { prisma } from '@/lib/db';
 import { buildReportEmail, type ReportTopic } from '@/lib/emailReport';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const TOPIC_ORDER = [
   'ch01-05','ch06','ch07-08','ch09-10','ch11','ch12',
   'ch13','ch14','ch15','ch16','ch17','ch18','ch19','ch20','ch21','dh',
@@ -36,6 +34,7 @@ function computeStreak(attempts: Array<{ isCorrect: boolean; createdAt: Date }>)
 // GET /api/reports/weekly — called by Vercel Cron (Sunday 04:30 UTC = 10:00 AM IST)
 // Protected by Authorization: Bearer {CRON_SECRET}
 export async function GET(req: Request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   // Verify cron secret
   const auth = req.headers.get('authorization');
   const cronSecret = process.env.CRON_SECRET;
