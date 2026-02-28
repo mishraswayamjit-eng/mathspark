@@ -94,3 +94,9 @@ button {
   to   { opacity: 1; transform: translateY(0);   }
 }
 .animate-fade-in { animation: fade-in 0.25s ease-out; }
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+.animate-marquee { animation: marquee 28s linear infinite; }
