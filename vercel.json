@@ -1,0 +1,9 @@
+{
+  "buildCommand": "prisma generate && prisma db push && next build",
+  "framework": "nextjs",
+  "functions": {
+    "src/app/api/seed/route.ts": {
+      "maxDuration": 300
+    }
+  }
+}

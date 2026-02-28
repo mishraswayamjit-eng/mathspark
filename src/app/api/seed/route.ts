@@ -1,0 +1,132 @@
+import { NextResponse } from 'next/server';
+import { prisma } from '@/lib/db';
+import * as fs from 'fs';
+import * as path from 'path';
+
+// ---------------------------------------------------------------------------
+// Topic definitions (mirrors prisma/seed.ts)
+// ---------------------------------------------------------------------------
+const TOPICS = [
+  { id: 'ch01-05', name: 'Number System & Place Value',    chapterNumber: '1-5'  },
+  { id: 'ch06',    name: 'Factors & Multiples',             chapterNumber: '6'    },
+  { id: 'ch07-08', name: 'Fractions',                       chapterNumber: '7-8'  },
+  { id: 'ch09-10', name: 'Operations & BODMAS',             chapterNumber: '9-10' },
+  { id: 'ch11',    name: 'Decimal Fractions',               chapterNumber: '11'   },
+  { id: 'ch12',    name: 'Decimal Units of Measurement',    chapterNumber: '12'   },
+  { id: 'ch13',    name: 'Algebraic Expressions',           chapterNumber: '13'   },
+  { id: 'ch14',    name: 'Equations',                       chapterNumber: '14'   },
+  { id: 'ch15',    name: 'Puzzles & Magic Squares',         chapterNumber: '15'   },
+  { id: 'ch16',    name: 'Sequence & Series',               chapterNumber: '16'   },
+  { id: 'ch17',    name: 'Measurement of Time & Calendar',  chapterNumber: '17'   },
+  { id: 'ch18',    name: 'Angles',                          chapterNumber: '18'   },
+  { id: 'ch19',    name: 'Triangles',                       chapterNumber: '19'   },
+  { id: 'ch20',    name: 'Quadrilaterals',                  chapterNumber: '20'   },
+  { id: 'ch21',    name: 'Circle',                          chapterNumber: '21'   },
+  { id: 'dh',      name: 'Data Handling & Graphs',          chapterNumber: 'DH'   },
+];
+
+function getTopicId(questionId: string): string {
+  const upper = questionId.toUpperCase();
+  if (upper.startsWith('Q_DH_')) return 'dh';
+  const match = upper.match(/^Q_CH(\d+)_/);
+  if (!match) return 'ch11';
+  const n = parseInt(match[1], 10);
+  if (n <= 5)             return 'ch01-05';
+  if (n === 6)            return 'ch06';
+  if (n === 7 || n === 8) return 'ch07-08';
+  if (n === 9 || n === 10) return 'ch09-10';
+  return `ch${String(n).padStart(2, '0')}`;
+}
+
+const PAGE_SIZE = 75; // questions per API call — safe for Vercel's 300s limit
+
+// ---------------------------------------------------------------------------
+// GET /api/seed?secret=xxx&page=0
+// page=0 → seeds topics + first batch of questions
+// page=N → seeds next batch
+// ---------------------------------------------------------------------------
+export async function GET(req: Request) {
+  // ── Auth ─────────────────────────────────────────────────────────────────
+  const secret = process.env.SEED_SECRET;
+  if (!secret) {
+    return NextResponse.json(
+      { error: 'SEED_SECRET env var not set. Add it in Vercel → Settings → Environment Variables.' },
+      { status: 500 },
+    );
+  }
+  const { searchParams } = new URL(req.url);
+  if (searchParams.get('secret') !== secret) {
+    return NextResponse.json({ error: 'Wrong secret.' }, { status: 401 });
+  }
+
+  const page = parseInt(searchParams.get('page') ?? '0', 10);
+
+  // ── Load seed JSON ────────────────────────────────────────────────────────
+  const dataPath = path.join(process.cwd(), 'data', 'mathspark_complete_seed.json');
+  if (!fs.existsSync(dataPath)) {
+    return NextResponse.json({ error: 'Seed file not found. Make sure data/mathspark_complete_seed.json is committed.' }, { status: 500 });
+  }
+  const { questions } = JSON.parse(fs.readFileSync(dataPath, 'utf-8')) as {
+    questions: Array<{
+      id: string; subTopic?: string; difficulty?: string; questionText?: string;
+      questionLatex?: string; options?: Array<{ id: string; text: string }>;
+      correctAnswer?: string; hints?: string[]; stepByStep?: unknown[];
+      misconceptions?: Record<string, string>; source?: string;
+    }>;
+  };
+
+  // ── Page 0: upsert all 16 topics ─────────────────────────────────────────
+  if (page === 0) {
+    await Promise.all(
+      TOPICS.map((t) =>
+        prisma.topic.upsert({ where: { id: t.id }, update: t, create: t }),
+      ),
+    );
+  }
+
+  // ── Seed this page of questions ───────────────────────────────────────────
+  const start = page * PAGE_SIZE;
+  const batch = questions.slice(start, start + PAGE_SIZE);
+
+  if (batch.length > 0) {
+    await prisma.$transaction(
+      batch.map((q) => {
+        const f = {
+          topicId:       getTopicId(q.id),
+          subTopic:      q.subTopic      ?? '',
+          difficulty:    q.difficulty    ?? 'Medium',
+          questionText:  q.questionText  ?? '',
+          questionLatex: q.questionLatex ?? '',
+          option1:       q.options?.[0]?.text ?? '',
+          option2:       q.options?.[1]?.text ?? '',
+          option3:       q.options?.[2]?.text ?? '',
+          option4:       q.options?.[3]?.text ?? '',
+          correctAnswer: q.correctAnswer  ?? 'A',
+          hint1:         q.hints?.[0]     ?? '',
+          hint2:         q.hints?.[1]     ?? '',
+          hint3:         q.hints?.[2]     ?? '',
+          stepByStep:    JSON.stringify(q.stepByStep ?? []),
+          misconceptionA: q.misconceptions?.['A'] ?? '',
+          misconceptionB: q.misconceptions?.['B'] ?? '',
+          misconceptionC: q.misconceptions?.['C'] ?? '',
+          misconceptionD: q.misconceptions?.['D'] ?? '',
+          source:         q.source        ?? 'auto_generated',
+        };
+        return prisma.question.upsert({ where: { id: q.id }, update: f, create: { id: q.id, ...f } });
+      }),
+    );
+  }
+
+  const seeded = Math.min(start + PAGE_SIZE, questions.length);
+  const done   = seeded >= questions.length;
+
+  return NextResponse.json({
+    done,
+    seeded,
+    total:    questions.length,
+    nextPage: done ? null : page + 1,
+    message:  done
+      ? `All ${questions.length} questions seeded!`
+      : `Seeded ${seeded}/${questions.length}`,
+  });
+}
