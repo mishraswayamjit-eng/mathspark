@@ -7,7 +7,7 @@ interface HintSystemProps {
   hint1: string;
   hint2: string;
   hint3: string;
-  level: number;             // 0 = none, 1 = strategic, 2 = procedural, 3 = worked
+  level: number;           // 0 = none shown, 1 = strategic, 2 = procedural, 3 = worked example
   onLevelUp: (next: number) => void;
 }
 
@@ -16,12 +16,12 @@ export default function HintSystem({ hint1, hint2, hint3, level, onLevelUp }: Hi
 
   return (
     <div className="rounded-2xl bg-[#FFF9E6] border-2 border-[#FF9600] p-4 space-y-3 relative">
-      {/* Sparky thinking — top right */}
+      {/* Sparky thinking */}
       <div className="absolute -top-5 right-3">
         <Sparky mood="thinking" size={48} />
       </div>
 
-      {/* Level 1 — strategic (auto-shown on wrong) */}
+      {/* Level 1 — strategic hint (auto-shown after wrong answer) */}
       {level >= 1 && hint1 && (
         <div>
           <p className="text-xs font-extrabold text-[#cc7800] uppercase tracking-wide mb-1">
@@ -31,7 +31,7 @@ export default function HintSystem({ hint1, hint2, hint3, level, onLevelUp }: Hi
         </div>
       )}
 
-      {/* Level 2 — procedural */}
+      {/* Level 2 — procedural hint */}
       {level >= 2 && hint2 && (
         <div className="border-t border-[#FFD9A0] pt-3">
           <p className="text-xs font-extrabold text-[#cc7800] uppercase tracking-wide mb-1">
@@ -51,15 +51,15 @@ export default function HintSystem({ hint1, hint2, hint3, level, onLevelUp }: Hi
         </div>
       )}
 
-      {/* Buttons to reveal next level */}
+      {/* Progressive reveal buttons */}
       {level === 1 && hint2 && (
         <DuoButton variant="orange" fullWidth onClick={() => onLevelUp(2)}>
-          Need more help?
+          Need more help? 🤔
         </DuoButton>
       )}
       {level === 2 && hint3 && (
         <DuoButton variant="orange" fullWidth onClick={() => onLevelUp(3)}>
-          Show me how
+          Show me how 📝
         </DuoButton>
       )}
     </div>

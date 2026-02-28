@@ -5,6 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { track } from '@vercel/analytics';
 import QuestionCard from '@/components/QuestionCard';
 import HintSystem from '@/components/HintSystem';
+import KatexRenderer from '@/components/KatexRenderer';
 import StepByStep from '@/components/StepByStep';
 import Sparky from '@/components/Sparky';
 import Confetti from '@/components/Confetti';
@@ -19,7 +20,7 @@ const LESSON_SIZE    = 10;
 const HEARTS_MAX     = 5;
 const XP_CORRECT     = 20;
 const XP_REVIEW      = 10;
-const AUTO_ADVANCE_MS = 1500;
+const AUTO_ADVANCE_MS = 2000;
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -355,22 +356,39 @@ function WrongPanel({
   misconception:  string;
   onGotIt:        () => void;
 }) {
+  const textHasLatex = correctText.includes('\\');
   return (
     <div className="px-4 py-4 flex items-start gap-3">
       <div className="flex-shrink-0">
         <Sparky mood="encouraging" size={72} />
       </div>
       <div className="flex-1 space-y-2">
-        <p className="text-sm font-extrabold text-[#FF4B4B] uppercase tracking-wide">No worries! Here&#39;s how it works…</p>
+        <p className="text-sm font-extrabold text-[#FF4B4B] uppercase tracking-wide">
+          No worries! Here&#39;s how it works…
+        </p>
+
+        {/* Correct answer box */}
         <div className="bg-white rounded-xl px-3 py-2 border border-red-100">
           <p className="text-xs text-gray-500 font-semibold">Correct answer ({correctAnswer})</p>
-          <p className="text-sm text-gray-800 font-bold leading-snug">{correctText}</p>
+          {textHasLatex ? (
+            <div className="mt-1">
+              <KatexRenderer latex={correctText} displayMode={false} />
+            </div>
+          ) : (
+            <p className="text-sm text-gray-800 font-bold leading-snug">{correctText}</p>
+          )}
         </div>
+
+        {/* Common mistake box */}
         {misconception && (
-          <p className="text-xs text-gray-600 font-medium">
-            <span className="font-extrabold">💡</span> {misconception}
-          </p>
+          <div className="bg-amber-50 border border-amber-200 rounded-xl px-3 py-2">
+            <p className="text-[11px] font-extrabold text-amber-700 uppercase tracking-wide">
+              💡 Common mistake
+            </p>
+            <p className="text-xs text-gray-700 font-medium leading-snug mt-0.5">{misconception}</p>
+          </div>
         )}
+
         <DuoButton variant="red" fullWidth onClick={onGotIt}>
           Got it!
         </DuoButton>
@@ -591,7 +609,7 @@ export default function PracticePage() {
     const CORRECT_MSGS = ['Great job! ⭐', 'You got it! 🎯', 'Excellent! 🧠', 'Well done! 🌟', 'Awesome! 🎉'];
     let msg = correct
       ? CORRECT_MSGS[Math.floor(Math.random() * CORRECT_MSGS.length)]
-      : "Not quite — let's think about this! 💭";
+      : "Not quite — let's think about this together! 💭";
     if (correct && newStreak === 3) msg = "You're on fire! 🔥";
     if (correct && newStreak === 5) msg = 'Unstoppable! ⚡';
     if (correct && newStreak === 10) msg = 'Math wizard! 🧙';
@@ -605,6 +623,8 @@ export default function PracticePage() {
       setTimeout(() => setShowXpFloat(false), 1500);
     } else {
       playWrong();
+      // Auto-show hint level 1 after a wrong answer
+      setHintLevel(1);
     }
 
     // Queue wrong answer for review (main lesson only)
@@ -838,7 +858,13 @@ export default function PracticePage() {
               level={hintLevel}
               onLevelUp={(n) => { setHintLevel(n); setHintUsed(true); }}
             />
-            <StepByStep steps={currentQuestion.stepByStep} />
+            <StepByStep
+              steps={currentQuestion.stepByStep}
+              onGotIt={() => {
+                if (advanceTimer.current) clearTimeout(advanceTimer.current);
+                advance(hearts);
+              }}
+            />
           </>
         )}
       </div>

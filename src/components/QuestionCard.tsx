@@ -1,7 +1,9 @@
 'use client';
 
 import KatexRenderer from './KatexRenderer';
-import type { AnswerKey, Question } from '@/types';
+import type { AnswerKey, Difficulty, Question } from '@/types';
+
+// ── Message banks ─────────────────────────────────────────────────────────────
 
 const CORRECT_MESSAGES = [
   'Great job! ⭐',
@@ -24,14 +26,30 @@ export function randomWrong() {
   return WRONG_MESSAGES[Math.floor(Math.random() * WRONG_MESSAGES.length)];
 }
 
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+/** Returns true if a string contains LaTeX markup (backslash commands). */
+function hasLatex(text: string): boolean {
+  return text.includes('\\');
+}
+
+/** Color tokens for each difficulty level. */
+function difficultyColors(d: Difficulty) {
+  if (d === 'Easy') return { dot: 'bg-[#58CC02]', label: 'text-[#46a302]', bg: 'bg-green-50' };
+  if (d === 'Hard') return { dot: 'bg-[#FF4B4B]', label: 'text-[#cc3333]', bg: 'bg-red-50' };
+  return { dot: 'bg-[#FF9600]', label: 'text-[#cc7800]', bg: 'bg-amber-50' }; // Medium
+}
+
+// ── Component ─────────────────────────────────────────────────────────────────
+
+export const LABELS: AnswerKey[] = ['A', 'B', 'C', 'D'];
+
 interface QuestionCardProps {
   question: Question;
   answered: boolean;
   selected: AnswerKey | null;
   onAnswer: (key: AnswerKey, isCorrect: boolean) => void;
 }
-
-const LABELS: AnswerKey[] = ['A', 'B', 'C', 'D'];
 
 export default function QuestionCard({
   question,
@@ -46,55 +64,89 @@ export default function QuestionCard({
     { key: 'D', text: question.option4 },
   ];
 
-  function badgeStyle(key: AnswerKey): string {
-    const base = 'w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-extrabold';
+  const diff = difficultyColors(question.difficulty);
+
+  // ── Style builders ──────────────────────────────────────────────────────────
+
+  function badgeCls(key: AnswerKey): string {
+    const base =
+      'w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-extrabold transition-all duration-200';
     if (!answered) return `${base} bg-gray-100 text-gray-600`;
-    if (key === question.correctAnswer) return `${base} bg-[#58CC02] text-white`;
+    if (key === question.correctAnswer)
+      return `${base} bg-[#58CC02] text-white animate-pop-in`;
     if (key === selected) return `${base} bg-[#FF4B4B] text-white`;
     return `${base} bg-gray-100 text-gray-400`;
   }
 
-  function optionStyle(key: AnswerKey): string {
-    const base = 'w-full text-left rounded-2xl px-4 py-4 min-h-[64px] transition-all duration-200 border-2 flex items-center gap-3';
-    if (!answered) return `${base} bg-white border-gray-200 hover:border-[#1CB0F6] hover:bg-blue-50 cursor-pointer`;
-    if (key === question.correctAnswer) return `${base} bg-green-50 border-[#58CC02]`;
-    if (key === selected) return `${base} bg-red-50 border-[#FF4B4B]`;
+  function cardCls(key: AnswerKey): string {
+    const base =
+      'w-full text-left rounded-2xl px-4 py-4 min-h-[56px] border-2 flex items-center gap-3 transition-all duration-200 shadow-sm';
+    if (!answered)
+      return `${base} bg-white border-gray-200 hover:border-[#1CB0F6] hover:bg-blue-50 hover:shadow-md cursor-pointer`;
+    if (key === question.correctAnswer)
+      return `${base} bg-green-50 border-[#58CC02] shadow-md`;
+    if (key === selected)
+      return `${base} bg-red-50 border-[#FF4B4B]`;
     return `${base} bg-white border-gray-100 opacity-40`;
   }
 
   return (
     <div className="space-y-4">
-      {/* Question text */}
+      {/* ── Question card ─────────────────────────────────────────────── */}
       <div className="bg-white rounded-2xl p-5 shadow-md border border-gray-100">
-        <p className="text-lg font-bold text-gray-800 leading-relaxed">
+
+        {/* SubTopic + Difficulty tags at TOP */}
+        <div className="flex items-center gap-2 mb-3 flex-wrap">
+          <div className={`flex items-center gap-1.5 px-2.5 py-0.5 rounded-full ${diff.bg}`}>
+            <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${diff.dot}`} />
+            <span className={`text-[11px] font-extrabold uppercase tracking-wide ${diff.label}`}>
+              {question.difficulty}
+            </span>
+          </div>
+          <span className="text-[11px] font-semibold text-gray-400 truncate max-w-[200px]">
+            {question.subTopic}
+          </span>
+        </div>
+
+        {/* Question text (min 18px) */}
+        <p className="text-[18px] font-bold text-gray-800 leading-relaxed">
           {question.questionText}
         </p>
+
+        {/* LaTeX expression below text (if present) */}
         {question.questionLatex && (
-          <div className="mt-3 overflow-x-auto">
+          <div className="mt-3 overflow-x-auto p-3 bg-gray-50 rounded-xl border border-gray-100">
             <KatexRenderer latex={question.questionLatex} displayMode className="block" />
           </div>
         )}
-        <p className="mt-2 text-xs text-gray-400 uppercase tracking-wide font-semibold">
-          {question.subTopic} · {question.difficulty}
-        </p>
       </div>
 
-      {/* Options */}
+      {/* ── Answer options ────────────────────────────────────────────── */}
       <div className="space-y-3">
         {options.map(({ key, text }) => (
           <button
             key={key}
             disabled={answered}
             onClick={() => onAnswer(key, key === question.correctAnswer)}
-            className={optionStyle(key)}
+            className={cardCls(key)}
           >
-            <span className={badgeStyle(key)}>{key}</span>
-            <span className="text-gray-800 text-base font-semibold">{text}</span>
-            {answered && key === question.correctAnswer && (
-              <span className="ml-auto text-[#58CC02] font-bold text-lg">✓</span>
-            )}
+            {/* Letter badge */}
+            <span className={badgeCls(key)}>
+              {answered && key === question.correctAnswer ? '✓' : key}
+            </span>
+
+            {/* Option text — KaTeX if LaTeX markers detected */}
+            <span className="flex-1 text-left text-gray-800 text-base font-semibold leading-snug">
+              {hasLatex(text) ? (
+                <KatexRenderer latex={text} displayMode={false} />
+              ) : (
+                text
+              )}
+            </span>
+
+            {/* Wrong-answer indicator */}
             {answered && key === selected && key !== question.correctAnswer && (
-              <span className="ml-auto text-[#FF4B4B] font-bold text-lg">✗</span>
+              <span className="ml-auto text-[#FF4B4B] font-bold text-xl flex-shrink-0">✗</span>
             )}
           </button>
         ))}
@@ -102,6 +154,3 @@ export default function QuestionCard({
     </div>
   );
 }
-
-// Re-export LABELS for external use
-export { LABELS };
