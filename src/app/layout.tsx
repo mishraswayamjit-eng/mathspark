@@ -1,9 +1,13 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import BottomNav from '@/components/BottomNav';
 import ServiceWorkerRegistrar from '@/components/ServiceWorkerRegistrar';
 import AddToHomeScreen from '@/components/AddToHomeScreen';
 import { Analytics } from '@vercel/analytics/next';
+
+export const viewport: Viewport = {
+  themeColor: '#58CC02',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mathspark.vercel.app'),
@@ -14,7 +18,6 @@ export const metadata: Metadata = {
   description:
     'Adaptive math learning and IPM exam prep for Grade 4. 2,345 questions with hints and step-by-step solutions. Free & child-safe.',
   manifest: '/manifest.json',
-  themeColor: '#58CC02',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',

@@ -3,6 +3,8 @@ import { Resend } from 'resend';
 import { prisma } from '@/lib/db';
 import { buildReportEmail, type ReportTopic } from '@/lib/emailReport';
 
+export const dynamic = 'force-dynamic';
+
 const TOPIC_ORDER = [
   'ch01-05','ch06','ch07-08','ch09-10','ch11','ch12',
   'ch13','ch14','ch15','ch16','ch17','ch18','ch19','ch20','ch21','dh',
