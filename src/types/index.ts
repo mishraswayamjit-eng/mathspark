@@ -86,3 +86,12 @@ export interface DashboardData {
   weeklyData: Array<{ date: string; count: number }>;
   weakestTopicId: string | null;
 }
+
+export type CrownLevel = 0 | 1 | 2 | 3 | 4 | 5;
+export type NodeState = 'locked' | 'not_started' | 'practicing' | 'current' | 'completed';
+export interface TopicNode {
+  topic: TopicWithProgress;
+  state: NodeState;
+  crownLevel: CrownLevel;
+  prerequisiteLabel: string;
+}
