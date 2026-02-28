@@ -71,7 +71,7 @@ export async function GET(req: Request) {
   }
   const { questions } = JSON.parse(fs.readFileSync(dataPath, 'utf-8')) as {
     questions: Array<{
-      id: string; topicId?: string; year?: number; questionNumber?: number;
+      id: string; year?: number; questionNumber?: number;
       subTopic?: string; difficulty?: string; questionText?: string;
       questionLatex?: string; options?: Array<{ id: string; text: string }>;
       correctAnswer?: string; hints?: string[]; stepByStep?: unknown[];
@@ -111,7 +111,7 @@ export async function GET(req: Request) {
     await prisma.$transaction(
       batch.map((q) => {
         const f = {
-          topicId:       q.topicId ?? getTopicId(q.id),
+          topicId:       getTopicId(q.id),
           subTopic:      q.subTopic      ?? '',
           difficulty:    q.difficulty    ?? 'Medium',
           questionText:  q.questionText  ?? '',
