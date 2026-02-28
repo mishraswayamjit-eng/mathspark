@@ -29,6 +29,9 @@ function LoginForm() {
 
     if (result?.ok) {
       router.push(callbackUrl);
+    } else if (result?.error === 'Configuration') {
+      setError('Server configuration error — NEXTAUTH_SECRET or NEXTAUTH_URL may not be set in Vercel env vars.');
+      setLoading(false);
     } else {
       setError('Incorrect email or password. Please try again.');
       setLoading(false);
