@@ -73,7 +73,7 @@ async function checkRateLimit(studentId: string): Promise<boolean> {
       createdAt: { gte: today },
     },
   });
-  return count < 50;
+  return count < 20;
 }
 
 // ── POST /api/chat ────────────────────────────────────────────────────────────
@@ -94,7 +94,7 @@ export async function POST(req: Request) {
   const allowed = await checkRateLimit(studentId);
   if (!allowed) {
     return Response.json(
-      { error: 'Daily limit of 50 messages reached. Come back tomorrow! 🌟' },
+      { error: 'Sparky needs to recharge! Keep practicing questions and chat again tomorrow 🔋' },
       { status: 429 },
     );
   }
