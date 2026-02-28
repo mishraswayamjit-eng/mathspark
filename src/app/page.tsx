@@ -137,7 +137,7 @@ export default function LandingPage() {
               <div className="text-4xl mb-2">{score === 3 ? '🏆' : score >= 2 ? '🎉' : '💪'}</div>
               <p className="text-white font-extrabold text-xl">{score}/3 correct!</p>
               <p className="text-white/60 text-sm mt-1 mb-4">
-                {score === 3 ? 'Perfect score! You're ready to master IPM!' : 'Great effort! Practice makes perfect.'}
+                {score === 3 ? "Perfect score! You're ready to master IPM!" : 'Great effort! Practice makes perfect.'}
               </p>
               <Link
                 href="/pricing"

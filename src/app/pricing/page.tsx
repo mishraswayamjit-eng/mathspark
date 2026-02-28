@@ -87,10 +87,10 @@ const PLANS = [
 
 const FAQS = [
   { q: 'Is there a free trial?',            a: 'Yes! All plans come with a 3-day free trial. No payment required to start.' },
-  { q: 'Can I switch plans?',               a: 'Yes, upgrade or downgrade anytime. We'll prorate the difference automatically.' },
-  { q: 'What happens when my plan expires?',a: 'You keep all your progress but can't practice new questions until you renew.' },
+  { q: 'Can I switch plans?',               a: "Yes, upgrade or downgrade anytime. We'll prorate the difference automatically." },
+  { q: 'What happens when my plan expires?',a: "You keep all your progress but can't practice new questions until you renew." },
   { q: 'Do you offer sibling discounts?',   a: 'Yes! Get 50% off for a second child on the same parent account.' },
-  { q: 'Can I get a refund?',               a: 'Full refund within 7 days if you're not satisfied — no questions asked.' },
+  { q: 'Can I get a refund?',               a: "Full refund within 7 days if you're not satisfied — no questions asked." },
 ];
 
 const COMPARISON_ROWS = [
