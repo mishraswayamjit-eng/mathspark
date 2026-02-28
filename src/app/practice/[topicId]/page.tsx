@@ -348,13 +348,11 @@ function CorrectPanel({
 function WrongPanel({
   correctAnswer,
   correctText,
-  misconception,
   onGotIt,
 }: {
-  correctAnswer:  AnswerKey;
-  correctText:    string;
-  misconception:  string;
-  onGotIt:        () => void;
+  correctAnswer: AnswerKey;
+  correctText:   string;
+  onGotIt:       () => void;
 }) {
   const textHasLatex = correctText.includes('\\');
   return (
@@ -378,16 +376,6 @@ function WrongPanel({
             <p className="text-sm text-gray-800 font-bold leading-snug">{correctText}</p>
           )}
         </div>
-
-        {/* Common mistake box */}
-        {misconception && (
-          <div className="bg-amber-50 border border-amber-200 rounded-xl px-3 py-2">
-            <p className="text-[11px] font-extrabold text-amber-700 uppercase tracking-wide">
-              💡 Common mistake
-            </p>
-            <p className="text-xs text-gray-700 font-medium leading-snug mt-0.5">{misconception}</p>
-          </div>
-        )}
 
         <DuoButton variant="red" fullWidth onClick={onGotIt}>
           Got it!
@@ -435,6 +423,9 @@ export default function PracticePage() {
   const [showXpFloat,  setShowXpFloat]  = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
 
+  // Similar question (fetched on wrong answer for "Practice Similar" button)
+  const [similarQ, setSimilarQ] = useState<Question | null>(null);
+
   // Offline resilience
   const [isOnline, setIsOnline] = useState(true);
 
@@ -477,6 +468,7 @@ export default function PracticePage() {
   interface AttemptPayload {
     studentId: string; questionId: string; topicId: string;
     selected: string; isCorrect: boolean; hintUsed: number;
+    misconceptionType?: string | null;
   }
 
   function queueAttempt(p: AttemptPayload) {
@@ -695,6 +687,10 @@ export default function PracticePage() {
     if (isReviewing) setReviewResults((prev) => [...prev, result]);
     else             setResults((prev) => [...prev, result]);
 
+    // Compute misconception text for the chosen wrong answer
+    const misconceptionKey  = `misconception${key}` as keyof Question;
+    const misconceptionType = !correct ? ((currentQuestion[misconceptionKey] as string) || null) : null;
+
     // Record attempt (offline-aware)
     if (studentId) {
       submitAttempt({
@@ -704,7 +700,19 @@ export default function PracticePage() {
         selected: key,
         isCorrect: correct,
         hintUsed: hintLevel,
+        misconceptionType,
       });
+    }
+
+    // On wrong answer: fetch a similar question in the background
+    if (!correct) {
+      setSimilarQ(null);
+      fetch(
+        `/api/questions/similar?subTopic=${encodeURIComponent(currentQuestion.subTopic)}&questionId=${currentQuestion.id}`,
+      )
+        .then((r) => (r.ok ? r.json() : null))
+        .then((q: Question | null) => { if (q) setSimilarQ(q); })
+        .catch(() => {});
     }
 
     // Analytics
@@ -723,6 +731,18 @@ export default function PracticePage() {
   }
 
   function handleGotIt() {
+    setSimilarQ(null);
+    advance(hearts);
+  }
+
+  function handlePracticeSimilar() {
+    if (!similarQ) return;
+    const q = similarQ;
+    setSimilarQ(null);
+    if (advanceTimer.current) clearTimeout(advanceTimer.current);
+    // Inject the similar question as the next question via the prefetch slot
+    prefetchRef.current   = q;
+    isFetchingRef.current = false;
     advance(hearts);
   }
 
@@ -742,6 +762,7 @@ export default function PracticePage() {
     setReviewQueue([]);
     setReviewIndex(0);
     setShowConfetti(false);
+    setSimilarQ(null);
     sessionSavedRef.current = false;
     prefetchRef.current    = null;
     isFetchingRef.current  = false;
@@ -903,9 +924,20 @@ export default function PracticePage() {
           onAnswer={handleAnswer}
         />
 
-        {/* Hints shown while in result/wrong */}
+        {/* Wrong-answer smart feedback */}
         {phase === 'result' && !lastCorrect && (
           <>
+            {/* Blue misconception box — shown before hints */}
+            {misconceptionText && (
+              <div className="bg-blue-50 border border-blue-200 rounded-2xl px-4 py-3">
+                <p className="text-[11px] font-extrabold text-blue-700 uppercase tracking-wide mb-1">
+                  💡 Common mistake
+                </p>
+                <p className="text-sm text-gray-700 font-medium leading-snug">
+                  {misconceptionText}
+                </p>
+              </div>
+            )}
             <HintSystem
               hint1={currentQuestion.hint1}
               hint2={currentQuestion.hint2}
@@ -918,7 +950,9 @@ export default function PracticePage() {
               onGotIt={() => {
                 if (advanceTimer.current) clearTimeout(advanceTimer.current);
                 advance(hearts);
+                setSimilarQ(null);
               }}
+              onPracticeSimilar={similarQ ? handlePracticeSimilar : undefined}
             />
           </>
         )}
@@ -947,7 +981,6 @@ export default function PracticePage() {
             <WrongPanel
               correctAnswer={currentQuestion.correctAnswer}
               correctText={correctOptionText}
-              misconception={misconceptionText}
               onGotIt={handleGotIt}
             />
           )}

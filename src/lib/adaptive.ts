@@ -57,7 +57,7 @@ export async function getNextQuestion(studentId: string, topicId: string) {
   tomorrowStart.setDate(tomorrowStart.getDate() + 1);
 
   // Parallel DB reads
-  const [allQuestions, sessionAttempts, progress] = await Promise.all([
+  const [allQuestions, sessionAttempts, progress, misconceptionAttempts] = await Promise.all([
     prisma.question.findMany({ where: { topicId } }),
 
     prisma.attempt.findMany({
@@ -73,7 +73,29 @@ export async function getNextQuestion(studentId: string, topicId: string) {
     prisma.progress.findUnique({
       where: { studentId_topicId: { studentId, topicId } },
     }),
+
+    // Track subTopics where the student has 3+ misconception-tagged wrong attempts
+    prisma.attempt.findMany({
+      where: {
+        studentId,
+        misconceptionType: { not: null },
+        question: { topicId },
+      },
+      select: { question: { select: { subTopic: true } } },
+    }),
   ]);
+
+  // Compute boosted subTopics (3+ misconception attempts → higher priority)
+  const subTopicMiscCounts = new Map<string, number>();
+  for (const a of misconceptionAttempts) {
+    const st = a.question.subTopic;
+    subTopicMiscCounts.set(st, (subTopicMiscCounts.get(st) ?? 0) + 1);
+  }
+  const boostedSubTopics = new Set(
+    Array.from(subTopicMiscCounts.entries())
+      .filter(([, count]) => count >= 3)
+      .map(([st]) => st),
+  );
 
   // Filter out already-seen questions
   const seenIds  = new Set(sessionAttempts.map((a) => a.questionId));
@@ -102,10 +124,18 @@ export async function getNextQuestion(studentId: string, topicId: string) {
     targetDiff = clampDiff(DIFFICULTIES.indexOf(targetDiff) + 1);
   }
 
-  // ── Step 5–6: Pick with fallback ─────────────────────────────────────────
+  // ── Step 5–6: Pick with fallback (boosted subTopics get priority) ─────────
+  function pickWithBoost(pool: typeof available) {
+    if (boostedSubTopics.size > 0) {
+      const boosted = pool.filter((q) => boostedSubTopics.has(q.subTopic));
+      if (boosted.length > 0) return pickBest(boosted);
+    }
+    return pickBest(pool);
+  }
+
   // Try target difficulty first
   const atTarget = available.filter((q) => q.difficulty === targetDiff);
-  const picked   = pickBest(atTarget);
+  const picked   = pickWithBoost(atTarget);
   if (picked) return picked;
 
   // Fallback: adjacent difficulties (closer first)
@@ -116,12 +146,12 @@ export async function getNextQuestion(studentId: string, topicId: string) {
 
   for (const d of fallbacks) {
     const pool = available.filter((q) => q.difficulty === d);
-    const p    = pickBest(pool);
+    const p    = pickWithBoost(pool);
     if (p) return p;
   }
 
   // Fallback: any unseen question
-  if (available.length > 0) return pickBest(available);
+  if (available.length > 0) return pickWithBoost(available);
 
   // Absolute fallback: session exhausted — pick from full set
   return pickBest(allQuestions);

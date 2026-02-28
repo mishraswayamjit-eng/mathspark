@@ -8,9 +8,11 @@ interface StepByStepProps {
   steps: StepItem[];
   /** Called when student clicks "Got it! Next Question →" after reading the solution. */
   onGotIt?: () => void;
+  /** If provided, shows a "Practice Similar Question" button alongside Got it. */
+  onPracticeSimilar?: () => void;
 }
 
-export default function StepByStep({ steps, onGotIt }: StepByStepProps) {
+export default function StepByStep({ steps, onGotIt, onPracticeSimilar }: StepByStepProps) {
   const [open, setOpen] = useState(false);
 
   if (!steps || steps.length === 0) return null;
@@ -50,15 +52,25 @@ export default function StepByStep({ steps, onGotIt }: StepByStepProps) {
             </div>
           ))}
 
-          {/* "Got it" call-to-action */}
-          {onGotIt && (
-            <div className="px-4 py-4 bg-gray-50 border-t border-green-50">
-              <button
-                onClick={onGotIt}
-                className="w-full min-h-[56px] bg-[#58CC02] hover:bg-[#5bd800] active:bg-[#46a302] text-white font-extrabold text-base rounded-2xl py-3 transition-colors flex items-center justify-center gap-2 shadow-sm"
-              >
-                Got it! Next Question →
-              </button>
+          {/* Action buttons */}
+          {(onGotIt || onPracticeSimilar) && (
+            <div className="px-4 py-4 bg-gray-50 border-t border-green-50 space-y-2">
+              {onPracticeSimilar && (
+                <button
+                  onClick={onPracticeSimilar}
+                  className="w-full min-h-[52px] bg-[#1CB0F6] hover:bg-[#22bfff] active:bg-[#0a98dc] text-white font-extrabold text-sm rounded-2xl py-3 transition-colors flex items-center justify-center gap-2 shadow-sm"
+                >
+                  🔁 Practice Similar Question
+                </button>
+              )}
+              {onGotIt && (
+                <button
+                  onClick={onGotIt}
+                  className="w-full min-h-[52px] bg-[#58CC02] hover:bg-[#5bd800] active:bg-[#46a302] text-white font-extrabold text-base rounded-2xl py-3 transition-colors flex items-center justify-center gap-2 shadow-sm"
+                >
+                  Got it! Next Question →
+                </button>
+              )}
             </div>
           )}
         </div>

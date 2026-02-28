@@ -78,13 +78,15 @@ model Attempt {
   question    Question @relation(fields: [questionId], references: [id])
   selected    String   // "A" | "B" | "C" | "D"
   isCorrect   Boolean
-  hintUsed    Int      @default(0)
-  timeTakenMs Int      @default(0)
-  createdAt   DateTime @default(now())
+  hintUsed          Int      @default(0)
+  timeTakenMs       Int      @default(0)
+  misconceptionType String?  // misconception text shown when wrong, for adaptive boosting
+  createdAt         DateTime @default(now())
 
   @@index([studentId])
   @@index([questionId])
   @@index([studentId, createdAt])
+  @@index([studentId, misconceptionType])
 }
 
 model ConversationSession {
