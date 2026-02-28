@@ -76,6 +76,14 @@ export interface DiagnosticResult {
   status: 'Strong' | 'Learning' | 'NotYet';
 }
 
+export interface RecentSession {
+  topicId:   string;
+  topicName: string;
+  attempted: number;
+  correct:   number;
+  createdAt: string; // ISO timestamp of most recent attempt in session
+}
+
 export interface DashboardData {
   student: Student;
   stats: {
@@ -85,7 +93,9 @@ export interface DashboardData {
   };
   topics: TopicWithProgress[];
   weeklyData: Array<{ date: string; count: number }>;
-  weakestTopicId: string | null;
+  weakestTopicId:   string | null;
+  weakestTopicName: string | null;
+  recentActivity:   RecentSession[];
 }
 
 // ── Profile types ─────────────────────────────────────────────────────────────
