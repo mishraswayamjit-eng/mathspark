@@ -48,7 +48,7 @@ export function markMasteryShown(topicId: string): void {
   if (typeof window === 'undefined') return;
   const shown = getMasteryShown();
   shown.add(topicId);
-  localStorage.setItem('mathspark_mastery_shown', JSON.stringify([...shown]));
+  localStorage.setItem('mathspark_mastery_shown', JSON.stringify(Array.from(shown)));
 }
 
 // ── Nudge computation ─────────────────────────────────────────────────────────
