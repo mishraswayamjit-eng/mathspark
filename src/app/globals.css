@@ -54,6 +54,15 @@ button {
   100% { transform: scale(1);   }
 }
 
+/* Hide scrollbar while keeping scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 .animate-sparky-bounce  { animation: sparky-bounce 1s ease-in-out infinite; }
 .animate-sparky-dance   { animation: sparky-dance  0.5s ease-in-out infinite; }
 .animate-sparky-wave    { animation: sparky-wave   1s ease-in-out infinite; }

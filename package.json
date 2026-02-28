@@ -13,6 +13,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.36.3",
     "@prisma/client": "^5.14.0",
     "katex": "^0.16.10",
     "next": "^14.2.3",

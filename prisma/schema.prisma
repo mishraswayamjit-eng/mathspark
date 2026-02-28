@@ -15,6 +15,7 @@ model Student {
   createdAt DateTime  @default(now())
   progress  Progress[]
   attempts  Attempt[]
+  chatSessions ConversationSession[]
 }
 
 model Topic {
@@ -75,4 +76,24 @@ model Attempt {
   hintUsed    Int      @default(0)
   timeTakenMs Int      @default(0)
   createdAt   DateTime @default(now())
+}
+
+model ConversationSession {
+  id        String        @id @default(cuid())
+  studentId String
+  student   Student       @relation(fields: [studentId], references: [id])
+  mode      String        @default("general") // "quiz"|"topic"|"homework"|"general"
+  topicId   String?
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  messages  ChatMessage[]
+}
+
+model ChatMessage {
+  id        String              @id @default(cuid())
+  sessionId String
+  session   ConversationSession @relation(fields: [sessionId], references: [id])
+  role      String              // "user" | "assistant"
+  content   String
+  createdAt DateTime            @default(now())
 }

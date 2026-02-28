@@ -87,6 +87,30 @@ export interface DashboardData {
   weakestTopicId: string | null;
 }
 
+// ── Chat types ───────────────────────────────────────────────────────────────
+
+export type ChatRole = 'user' | 'assistant';
+export type ChatMode = 'general' | 'quiz' | 'topic' | 'homework';
+
+export interface ChatMessage {
+  id: string;
+  sessionId: string;
+  role: ChatRole;
+  content: string;
+  createdAt: string;
+}
+
+export interface ConversationSession {
+  id: string;
+  studentId: string;
+  mode: ChatMode;
+  topicId?: string;
+  createdAt: string;
+  messages: ChatMessage[];
+}
+
+// ── Chapter node types ────────────────────────────────────────────────────────
+
 export type CrownLevel = 0 | 1 | 2 | 3 | 4 | 5;
 export type NodeState = 'locked' | 'not_started' | 'practicing' | 'current' | 'completed';
 export interface TopicNode {
