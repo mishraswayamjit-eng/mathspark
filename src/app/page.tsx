@@ -162,8 +162,8 @@ function StatCard({ prefix = '', target, suffix = '', label, inView }: {
 }) {
   const count = useCountUp(target, inView);
   return (
-    <div className="text-center py-5 px-2">
-      <div className="text-3xl sm:text-4xl font-extrabold text-white tabular-nums">
+    <div className="text-center py-5 px-2 overflow-hidden">
+      <div className="text-xl sm:text-3xl font-extrabold text-white tabular-nums leading-none truncate">
         {prefix}{target === 0 ? '0' : count.toLocaleString('en-IN')}{suffix}
       </div>
       <div className="text-white/40 text-xs sm:text-sm mt-1.5 leading-tight">{label}</div>
@@ -230,7 +230,7 @@ export default function LandingPage() {
   }, [status, router]);
 
   return (
-    <div className="min-h-screen bg-[#131F24] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#131F24] text-white">
 
       {/* ── NAV ─────────────────────────────────────────────────────────────── */}
       <nav className="sticky top-0 z-50 bg-[#131F24]/95 backdrop-blur-sm border-b border-white/5 px-4 py-3 flex items-center justify-between">
@@ -361,10 +361,15 @@ export default function LandingPage() {
         </SectionFade>
         <SectionFade delay={100}>
           <div className="overflow-x-auto rounded-2xl border border-white/10">
-            <table className="w-full text-sm min-w-[560px]">
+            <table className="w-full text-sm min-w-[600px]">
+              <colgroup>
+                <col className="w-[30%]" />
+                <col className="w-[28%]" />
+                <col className="w-[42%]" />
+              </colgroup>
               <thead>
                 <tr className="bg-white/5 border-b border-white/10">
-                  <th className="text-left px-4 py-3 text-white/40 font-semibold text-xs w-[38%]"></th>
+                  <th className="text-left px-4 py-3 text-white/40 font-semibold text-xs"></th>
                   <th className="px-4 py-3 text-white/45 font-semibold text-center text-xs">
                     Private Tutor<br /><span className="font-normal text-white/25">₹1,500–2,000/hr</span>
                   </th>
