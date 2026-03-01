@@ -198,8 +198,15 @@ export async function POST(req: Request) {
   }));
   history.push({ role: 'user', content: message.trim() });
 
+  // Guard: API key must exist before we even open the stream
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    console.error('[chat] ANTHROPIC_API_KEY is not set');
+    return Response.json({ error: 'AI tutor is not configured. Set ANTHROPIC_API_KEY in Vercel env vars.' }, { status: 503 });
+  }
+
   // Call Anthropic with streaming
-  const anthropic         = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const anthropic         = new Anthropic({ apiKey });
   const currentSessionId  = session.id;
   const encoder           = new TextEncoder();
   let   fullResponse      = '';
@@ -229,9 +236,12 @@ export async function POST(req: Request) {
             data: { sessionId: currentSessionId, role: 'assistant', content: fullResponse },
           });
         }
-      } catch (err) {
-        console.error('Anthropic stream error:', err);
-        const fallback = "I'm having a little trouble thinking right now! 🤔 Could you try again in a moment?";
+      } catch (err: unknown) {
+        const e = err as { status?: number; message?: string };
+        console.error('[chat] Anthropic error:', e.status, e.message, err);
+        // Surface the real error code so it's visible in the UI during development
+        const errDetail = e.status ? ` (Anthropic ${e.status}: ${e.message})` : ` (${String(err)})`;
+        const fallback  = `Sparky had trouble connecting to the AI.${errDetail}`;
         controller.enqueue(encoder.encode(fallback));
         await prisma.chatMessage.create({
           data: { sessionId: currentSessionId, role: 'assistant', content: fallback },
