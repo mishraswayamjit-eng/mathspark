@@ -336,7 +336,7 @@ export default function StartPage() {
     ];
     const initial = displayName ? displayName[0].toUpperCase() : (name[0] ?? '?').toUpperCase();
 
-    async function handleJoinLeague() {
+    const handleJoinLeague = async () => {
       const trimmed = displayName.trim().slice(0, 20) || name.trim().slice(0, 20);
       if (!trimmed) return;
       if (studentId) {
