@@ -9,6 +9,11 @@ export const dynamic = 'force-dynamic';
 // Topic definitions (mirrors prisma/seed.ts)
 // ---------------------------------------------------------------------------
 
+/** Strip null bytes — PostgreSQL rejects \x00 in text columns (error 22021) */
+function s(str: string | undefined | null): string {
+  return (str ?? '').replace(/\x00/g, '');
+}
+
 /** Derive grade from topicId: gradeN → N; ch-series / dh → 4 */
 function getTopicGrade(topicId: string): number {
   const m = topicId.match(/^grade(\d)$/);
@@ -133,27 +138,27 @@ export async function GET(req: Request) {
     await prisma.$transaction(
       batch.map((q) => {
         const f = {
-          topicId:       getTopicId(q.id),
-          subTopic:      q.subTopic      ?? '',
-          difficulty:    q.difficulty    ?? 'Medium',
-          questionText:  q.questionText  ?? '',
-          questionLatex: q.questionLatex ?? '',
-          option1:       q.options?.[0]?.text ?? '',
-          option2:       q.options?.[1]?.text ?? '',
-          option3:       q.options?.[2]?.text ?? '',
-          option4:       q.options?.[3]?.text ?? '',
-          correctAnswer: q.correctAnswer  ?? 'A',
-          hint1:         q.hints?.[0]     ?? '',
-          hint2:         q.hints?.[1]     ?? '',
-          hint3:         q.hints?.[2]     ?? '',
-          stepByStep:    JSON.stringify(q.stepByStep ?? []),
-          misconceptionA: q.misconceptions?.['A'] ?? '',
-          misconceptionB: q.misconceptions?.['B'] ?? '',
-          misconceptionC: q.misconceptions?.['C'] ?? '',
-          misconceptionD: q.misconceptions?.['D'] ?? '',
-          source:         q.source        ?? 'auto_generated',
-          year:           q.year          ?? null,
-          questionNumber: q.questionNumber ?? null,
+          topicId:        getTopicId(q.id),
+          subTopic:       s(q.subTopic),
+          difficulty:     s(q.difficulty)    || 'Medium',
+          questionText:   s(q.questionText),
+          questionLatex:  s(q.questionLatex),
+          option1:        s(q.options?.[0]?.text),
+          option2:        s(q.options?.[1]?.text),
+          option3:        s(q.options?.[2]?.text),
+          option4:        s(q.options?.[3]?.text),
+          correctAnswer:  s(q.correctAnswer)  || 'A',
+          hint1:          s(q.hints?.[0]),
+          hint2:          s(q.hints?.[1]),
+          hint3:          s(q.hints?.[2]),
+          stepByStep:     s(JSON.stringify(q.stepByStep ?? [])),
+          misconceptionA: s(q.misconceptions?.['A']),
+          misconceptionB: s(q.misconceptions?.['B']),
+          misconceptionC: s(q.misconceptions?.['C']),
+          misconceptionD: s(q.misconceptions?.['D']),
+          source:         s(q.source)         || 'auto_generated',
+          year:           q.year              ?? null,
+          questionNumber: q.questionNumber    ?? null,
         };
         return prisma.question.upsert({ where: { id: q.id }, update: f, create: { id: q.id, ...f } });
       }),
