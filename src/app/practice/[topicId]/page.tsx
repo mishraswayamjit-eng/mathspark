@@ -493,9 +493,9 @@ export default function PracticePage() {
 
   // BUG 1 FIX: Register each new question in the seen-IDs set the moment it is displayed.
   useEffect(() => {
-    const id = isReviewing ? reviewQueue[reviewIndex]?.id : questions[qIndex]?.id;
+    const id = phase === 'reviewing' ? reviewQueue[reviewIndex]?.id : questions[qIndex]?.id;
     if (id) seenQuestionIdsRef.current.add(id);
-  }, [isReviewing, reviewQueue, reviewIndex, questions, qIndex]);
+  }, [phase, reviewQueue, reviewIndex, questions, qIndex]);
 
   // BUG 2 FIX: Reset the advance guard when a new answering phase begins.
   useEffect(() => {
