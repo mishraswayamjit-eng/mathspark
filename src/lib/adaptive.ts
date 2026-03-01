@@ -49,7 +49,11 @@ function pickBest<T extends { source: string }>(pool: T[]): T | null {
  *  5. Prefer hand_crafted over auto_generated at the same difficulty.
  *  6. Fall back to adjacent difficulties, then any unseen, then reset pool.
  */
-export async function getNextQuestion(studentId: string, topicId: string) {
+export async function getNextQuestion(
+  studentId: string,
+  topicId: string,
+  clientExcludeIds: string[] = [],
+) {
   // Session window: midnight today → midnight tomorrow
   const todayStart = new Date();
   todayStart.setHours(0, 0, 0, 0);
@@ -97,8 +101,11 @@ export async function getNextQuestion(studentId: string, topicId: string) {
       .map(([st]) => st),
   );
 
-  // Filter out already-seen questions
-  const seenIds  = new Set(sessionAttempts.map((a) => a.questionId));
+  // Filter out already-seen questions (DB attempts + client-provided IDs)
+  const seenIds  = new Set([
+    ...sessionAttempts.map((a) => a.questionId),
+    ...clientExcludeIds,
+  ]);
   const available = allQuestions.filter((q) => !seenIds.has(q.id));
 
   // ── Step 3: Base difficulty from mastery ─────────────────────────────────
@@ -153,6 +160,12 @@ export async function getNextQuestion(studentId: string, topicId: string) {
   // Fallback: any unseen question
   if (available.length > 0) return pickWithBoost(available);
 
-  // Absolute fallback: session exhausted — pick from full set
-  return pickBest(allQuestions);
+  // Absolute fallback: session exhausted — pick from full set but still
+  // respect client-provided IDs (those are in-flight in the current lesson)
+  const clientExclude = new Set(clientExcludeIds);
+  const notInLesson   = allQuestions.filter((q) => !clientExclude.has(q.id));
+  if (notInLesson.length > 0) return pickBest(notInLesson);
+
+  // Truly exhausted — caller will show completion screen
+  return null;
 }

@@ -7,12 +7,14 @@ export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const topicId   = searchParams.get('topicId');
   const studentId = searchParams.get('studentId');
+  const excludeParam = searchParams.get('exclude') ?? '';
+  const excludeIds   = excludeParam ? excludeParam.split(',').filter(Boolean) : [];
 
   if (!topicId || !studentId) {
     return NextResponse.json({ error: 'topicId and studentId required' }, { status: 400 });
   }
 
-  const q = await getNextQuestion(studentId, topicId);
+  const q = await getNextQuestion(studentId, topicId, excludeIds);
 
   if (!q) {
     return NextResponse.json({ error: 'No more questions available' }, { status: 404 });

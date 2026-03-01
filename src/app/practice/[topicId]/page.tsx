@@ -443,21 +443,34 @@ export default function PracticePage() {
 
   // ── Adaptive fetching refs ──────────────────────────────────────────────────
   // Stable ref for studentId so callbacks never capture a stale closure.
-  const studentIdRef   = useRef<string | null>(null);
+  const studentIdRef      = useRef<string | null>(null);
   // Pre-fetched next question (filled immediately after user answers).
-  const prefetchRef    = useRef<Question | null>(null);
-  const isFetchingRef  = useRef(false);
+  const prefetchRef       = useRef<Question | null>(null);
+  const isFetchingRef     = useRef(false);
+  // BUG 2 FIX: Guard against double-advance (two "Got it!" buttons, timer + tap, etc.)
+  const isAdvancingRef    = useRef(false);
+  // BUG 1 FIX: Track every question ID served in this lesson so we never repeat.
+  const seenQuestionIdsRef = useRef<Set<string>>(new Set());
+  // Fetch with 5s timeout + retry tracking
+  const [fetchRetry, setFetchRetry] = useState(false);
 
   // Fetch one adaptive question from the server.
+  // Passes the full set of seen question IDs so the server excludes them too.
   const fetchOneAdaptive = useCallback(async (): Promise<Question | null> => {
     const sid = studentIdRef.current;
     if (!sid) return null;
     try {
-      const res = await fetch(
-        `/api/questions/next?topicId=${topicId}&studentId=${sid}`,
-      );
+      const excludeParam = Array.from(seenQuestionIdsRef.current).join(',');
+      const url = `/api/questions/next?topicId=${topicId}&studentId=${sid}${excludeParam ? `&exclude=${excludeParam}` : ''}`;
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 5000);
+      const res = await fetch(url, { signal: controller.signal });
+      clearTimeout(timer);
       if (!res.ok) return null;
-      return (await res.json()) as Question;
+      const q = (await res.json()) as Question;
+      // Client-side duplicate guard: reject if we've already shown this question
+      if (seenQuestionIdsRef.current.has(q.id)) return null;
+      return q;
     } catch {
       return null;
     }
@@ -468,10 +481,32 @@ export default function PracticePage() {
     if (isFetchingRef.current || prefetchRef.current) return;
     isFetchingRef.current = true;
     fetchOneAdaptive().then((q) => {
-      prefetchRef.current  = q;
+      // Reject the prefetch if it's already in our seen set (race with DB timing)
+      if (q && seenQuestionIdsRef.current.has(q.id)) {
+        prefetchRef.current  = null;
+      } else {
+        prefetchRef.current  = q;
+      }
       isFetchingRef.current = false;
     });
   }, [fetchOneAdaptive]);
+
+  // BUG 1 FIX: Register each new question in the seen-IDs set the moment it is displayed.
+  useEffect(() => {
+    if (currentQuestion) {
+      seenQuestionIdsRef.current.add(currentQuestion.id);
+    }
+  // currentQuestion reference changes each time qIndex or reviewIndex changes
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentQuestion?.id]);
+
+  // BUG 2 FIX: Reset the advance guard when a new answering phase begins.
+  useEffect(() => {
+    if (phase === 'answering') {
+      isAdvancingRef.current = false;
+      setFetchRetry(false);
+    }
+  }, [phase, qIndex, reviewIndex]);
 
   // ── Offline attempt queue helpers ──────────────────────────────────────────
   interface AttemptPayload {
@@ -619,6 +654,10 @@ export default function PracticePage() {
   // We pre-fetch the next question as soon as the user answers, so the advance
   // is instant in the common case; a brief loading screen covers the rare miss.
   const advance = useCallback((heartsNow: number) => {
+    // BUG 2 FIX: Prevent double-advance from two "Got it!" buttons, timer+tap, etc.
+    if (isAdvancingRef.current) return;
+    isAdvancingRef.current = true;
+
     if (advanceTimer.current) clearTimeout(advanceTimer.current);
     setSelected(null);
     setLastCorrect(false);
@@ -649,13 +688,14 @@ export default function PracticePage() {
           setPhase('complete');
         }
       } else {
-        // Consume pre-fetched question or fetch synchronously
-        const prefetched   = prefetchRef.current;
-        prefetchRef.current = null;
+        // BUG 1 FIX: Validate the prefetched question is not a duplicate before using it.
+        const prefetched = prefetchRef.current;
+        const prefetchedIsValid = prefetched && !seenQuestionIdsRef.current.has(prefetched.id);
+        prefetchRef.current   = null;
         isFetchingRef.current = false;
 
-        if (prefetched) {
-          setQuestions((prev) => [...prev, prefetched]);
+        if (prefetchedIsValid) {
+          setQuestions((prev) => [...prev, prefetched!]);
           setQIndex(nextIdx);
           setPhase('answering');
         } else {
@@ -663,7 +703,7 @@ export default function PracticePage() {
           setPhase('loading');
           fetchOneAdaptive().then((q) => {
             if (!q) {
-              // No more questions — end lesson early
+              // Topic exhausted — end lesson with a celebration
               setShowConfetti(true);
               setPhase('complete');
               return;
@@ -671,6 +711,11 @@ export default function PracticePage() {
             setQuestions((prev) => [...prev, q]);
             setQIndex(nextIdx);
             setPhase('answering');
+          }).catch(() => {
+            // Fetch failed — show retry option instead of a dead screen
+            setFetchRetry(true);
+            setPhase('loading');
+            isAdvancingRef.current = false;
           });
         }
       }
@@ -814,8 +859,10 @@ export default function PracticePage() {
     setSpeedRemaining(SPEED_DRILL_MS);
     if (speedTimerRef.current) { clearInterval(speedTimerRef.current); speedTimerRef.current = null; }
     sessionSavedRef.current = false;
-    prefetchRef.current    = null;
-    isFetchingRef.current  = false;
+    prefetchRef.current      = null;
+    isFetchingRef.current    = false;
+    isAdvancingRef.current   = false;
+    seenQuestionIdsRef.current = new Set();
 
     setPhase('loading');
     fetchOneAdaptive().then((q) => {
@@ -830,11 +877,32 @@ export default function PracticePage() {
 
   if (phase === 'loading') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-white gap-4">
-        <div className="animate-sparky-bounce">
-          <Sparky mood="thinking" size={100} />
-        </div>
-        <p className="text-gray-400 font-semibold">Loading your lesson…</p>
+      <div className="flex flex-col items-center justify-center min-h-screen bg-white gap-4 px-6">
+        {fetchRetry ? (
+          <>
+            <Sparky mood="encouraging" size={100} />
+            <p className="text-gray-600 font-bold text-center">Oops! Let&apos;s try again 🔄</p>
+            <DuoButton variant="blue" onClick={() => {
+              setFetchRetry(false);
+              isAdvancingRef.current = false;
+              fetchOneAdaptive().then((q) => {
+                if (!q) { setShowConfetti(true); setPhase('complete'); return; }
+                setQuestions((prev) => [...prev, q]);
+                setQIndex((prev) => prev + 1);
+                setPhase('answering');
+              }).catch(() => setFetchRetry(true));
+            }}>
+              Retry →
+            </DuoButton>
+          </>
+        ) : (
+          <>
+            <div className="animate-sparky-bounce">
+              <Sparky mood="thinking" size={100} />
+            </div>
+            <p className="text-gray-400 font-semibold">Loading your lesson…</p>
+          </>
+        )}
       </div>
     );
   }
