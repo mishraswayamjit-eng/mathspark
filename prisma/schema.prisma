@@ -182,8 +182,9 @@ model Attempt {
   isCorrect         Boolean
   hintUsed          Int      @default(0)
   timeTakenMs       Int      @default(0)
-  misconceptionType String?
-  createdAt         DateTime @default(now())
+  misconceptionType    String?
+  watchedWalkthrough   Boolean  @default(false)
+  createdAt            DateTime @default(now())
 
   @@index([studentId])
   @@index([questionId])

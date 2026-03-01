@@ -7,6 +7,7 @@ import QuestionCard from '@/components/QuestionCard';
 import HintSystem from '@/components/HintSystem';
 import KatexRenderer from '@/components/KatexRenderer';
 import StepByStep from '@/components/StepByStep';
+import AnimatedWalkthrough from '@/components/AnimatedWalkthrough';
 import Sparky from '@/components/Sparky';
 import Confetti from '@/components/Confetti';
 import DuoButton from '@/components/DuoButton';
@@ -454,6 +455,11 @@ export default function PracticePage() {
   // Fetch with 5s timeout + retry tracking
   const [fetchRetry, setFetchRetry] = useState(false);
 
+  // Animated walkthrough
+  const [showWalkthrough,    setShowWalkthrough]    = useState(false);
+  const [walkthroughClosed,  setWalkthroughClosed]  = useState(false);
+  const [sparkyToast,        setSparkyToast]        = useState(false);
+
   // Fetch one adaptive question from the server.
   // Passes the full set of seen question IDs so the server excludes them too.
   const fetchOneAdaptive = useCallback(async (): Promise<Question | null> => {
@@ -660,6 +666,9 @@ export default function PracticePage() {
     setLastCorrect(false);
     setHintLevel(0);
     setHintUsed(false);
+    setShowWalkthrough(false);
+    setWalkthroughClosed(false);
+    setSparkyToast(false);
 
     if (isReviewing) {
       const nextRev = reviewIndex + 1;
@@ -852,6 +861,9 @@ export default function PracticePage() {
     setReviewIndex(0);
     setShowConfetti(false);
     setSimilarQ(null);
+    setShowWalkthrough(false);
+    setWalkthroughClosed(false);
+    setSparkyToast(false);
     setSpeedTimedOut(false);
     setSpeedRemaining(SPEED_DRILL_MS);
     if (speedTimerRef.current) { clearInterval(speedTimerRef.current); speedTimerRef.current = null; }
@@ -1054,6 +1066,19 @@ export default function PracticePage() {
           onAnswer={handleAnswer}
         />
 
+        {/* Watch Solution button — correct answers */}
+        {phase === 'result' && lastCorrect && (
+          <button
+            onClick={() => {
+              if (advanceTimer.current) clearTimeout(advanceTimer.current);
+              setShowWalkthrough(true);
+            }}
+            className="btn-sparkle w-full min-h-[52px] bg-gradient-to-r from-violet-500 to-indigo-500 text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-md"
+          >
+            <span className="sparkle-icon">🎬</span> Watch Solution
+          </button>
+        )}
+
         {/* Wrong-answer smart feedback */}
         {phase === 'result' && !lastCorrect && (
           <>
@@ -1084,9 +1109,51 @@ export default function PracticePage() {
               }}
               onPracticeSimilar={similarQ ? handlePracticeSimilar : undefined}
             />
+
+            {/* Watch Solution button — wrong answers (between solution view and next button) */}
+            <button
+              onClick={() => setShowWalkthrough(true)}
+              className="btn-sparkle w-full min-h-[52px] bg-gradient-to-r from-violet-500 to-indigo-500 text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-md"
+            >
+              <span className="sparkle-icon">🎬</span> Watch Solution
+            </button>
+
+            {/* "Ask Sparky" — shown after watching walkthrough */}
+            {walkthroughClosed && (
+              <button
+                onClick={() => setSparkyToast(true)}
+                className="w-full min-h-[48px] border-2 border-[#1CB0F6] text-[#1CB0F6] font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2"
+              >
+                Still confused? 💬 Ask Sparky
+              </button>
+            )}
           </>
         )}
       </div>
+
+      {/* ── Animated Walkthrough overlay ── */}
+      {showWalkthrough && (
+        <AnimatedWalkthrough
+          question={currentQuestion}
+          studentAnswer={selected}
+          onClose={() => {
+            setShowWalkthrough(false);
+            setWalkthroughClosed(true);
+          }}
+        />
+      )}
+
+      {/* ── Sparky toast ── */}
+      {sparkyToast && (
+        <div
+          className="fixed bottom-52 left-0 right-0 z-[200] px-6 pointer-events-none"
+          style={{ maxWidth: '512px', margin: '0 auto' }}
+        >
+          <div className="bg-[#131F24] text-white rounded-2xl px-4 py-3 font-bold text-sm text-center animate-slide-up shadow-xl">
+            ✨ Sparky chat is launching soon — stay tuned!
+          </div>
+        </div>
+      )}
 
       {/* ── Sliding bottom panel ── */}
       {phase === 'result' && (
