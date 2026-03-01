@@ -20,6 +20,13 @@ function getTopicGrade(topicId: string): number {
   return m ? parseInt(m[1], 10) : 4;
 }
 
+/**
+ * Derive topicId from question ID when no explicit topicId is in the JSON.
+ * PYQ questions (PYQ_YYYY_QNN) → 'grade4' (Grade 4 IPM past papers pool).
+ * ch-series questions → mapped by chapter number.
+ * Everything else → 'ch11' fallback.
+ */
+
 const TOPICS = [
   // Grade 4 curriculum chapters
   { id: 'ch01-05', name: 'Number System & Place Value',    chapterNumber: '1-5'  },
@@ -51,13 +58,14 @@ const TOPICS = [
 
 function getTopicId(questionId: string): string {
   const upper = questionId.toUpperCase();
-  if (upper.startsWith('Q_DH_')) return 'dh';
+  if (upper.startsWith('Q_DH_'))  return 'dh';
+  if (upper.startsWith('PYQ_'))   return 'grade4'; // real IPM Std.4 past papers
   const match = upper.match(/^Q_CH(\d+)_/);
   if (!match) return 'ch11';
   const n = parseInt(match[1], 10);
-  if (n <= 5)             return 'ch01-05';
-  if (n === 6)            return 'ch06';
-  if (n === 7 || n === 8) return 'ch07-08';
+  if (n <= 5)              return 'ch01-05';
+  if (n === 6)             return 'ch06';
+  if (n === 7 || n === 8)  return 'ch07-08';
   if (n === 9 || n === 10) return 'ch09-10';
   return `ch${String(n).padStart(2, '0')}`;
 }
@@ -93,7 +101,7 @@ export async function GET(req: Request) {
   }
   const { questions } = JSON.parse(fs.readFileSync(dataPath, 'utf-8')) as {
     questions: Array<{
-      id: string; year?: number; questionNumber?: number;
+      id: string; topicId?: string; year?: number; questionNumber?: number;
       subTopic?: string; difficulty?: string; questionText?: string;
       questionLatex?: string; options?: Array<{ id: string; text: string }>;
       correctAnswer?: string; hints?: string[]; stepByStep?: unknown[];
@@ -138,7 +146,7 @@ export async function GET(req: Request) {
     await prisma.$transaction(
       batch.map((q) => {
         const f = {
-          topicId:        getTopicId(q.id),
+          topicId:        q.topicId ?? getTopicId(q.id), // prefer explicit topicId from JSON
           subTopic:       s(q.subTopic),
           difficulty:     s(q.difficulty)    || 'Medium',
           questionText:   s(q.questionText),

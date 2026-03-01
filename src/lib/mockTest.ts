@@ -62,6 +62,15 @@ export const TOPIC_NAMES: Record<string, string> = {
   'ch20':    'Quadrilaterals',
   'ch21':    'Circle',
   'dh':      'Data Handling & Graphs',
+  // IPM past-paper pools (Grades 2–9)
+  'grade2':  'Grade 2 — IPM Practice',
+  'grade3':  'Grade 3 — IPM Practice',
+  'grade4':  'Grade 4 — IPM Past Papers',
+  'grade5':  'Grade 5 — IPM Practice',
+  'grade6':  'Grade 6 — IPM Practice',
+  'grade7':  'Grade 7 — IPM Practice',
+  'grade8':  'Grade 8 — IPM Practice',
+  'grade9':  'Grade 9 — IPM Practice',
 };
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
