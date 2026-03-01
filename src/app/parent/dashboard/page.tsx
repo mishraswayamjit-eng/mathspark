@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { isUnlimitedPlan } from '@/lib/usageLimits';
 
 interface Child {
   id:                      string;
@@ -101,8 +102,9 @@ export default function ParentDashboard() {
         ) : (
           <div className="space-y-3">
             {children.map((child) => {
-              const limit   = child.subscription?.dailyLimitMinutes ?? 60;
-              const usedPct = Math.min(100, Math.round((child.dailyUsageMinutes / limit) * 100));
+              const limit      = child.subscription?.dailyLimitMinutes ?? 60;
+              const unlimited  = isUnlimitedPlan(limit);
+              const usedPct    = unlimited ? 100 : Math.min(100, Math.round((child.dailyUsageMinutes / limit) * 100));
               const lastActive = child.lastActiveDate
                 ? new Date(child.lastActiveDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })
                 : 'Never';
@@ -121,12 +123,15 @@ export default function ParentDashboard() {
                       <div className="mt-3">
                         <div className="flex justify-between text-xs text-white/40 mb-1">
                           <span>Today&apos;s usage</span>
-                          <span>{child.dailyUsageMinutes} / {limit} min</span>
+                          {unlimited
+                            ? <span className="text-[#58CC02] font-extrabold">Unlimited ♾️</span>
+                            : <span>{child.dailyUsageMinutes} / {limit} min</span>
+                          }
                         </div>
                         <div className="w-full bg-white/10 rounded-full h-1.5">
                           <div
-                            className={`h-1.5 rounded-full transition-all ${usedPct >= 100 ? 'bg-[#FF4B4B]' : usedPct >= 75 ? 'bg-[#FF9600]' : 'bg-[#58CC02]'}`}
-                            style={{ width: `${usedPct}%` }}
+                            className={`h-1.5 rounded-full transition-all ${unlimited ? 'bg-[#58CC02]' : usedPct >= 100 ? 'bg-[#FF4B4B]' : usedPct >= 75 ? 'bg-[#FF9600]' : 'bg-[#58CC02]'}`}
+                            style={{ width: unlimited ? '100%' : `${usedPct}%` }}
                           />
                         </div>
                       </div>

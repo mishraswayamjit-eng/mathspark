@@ -13,14 +13,24 @@ export async function GET(req: Request) {
     const studentId = searchParams.get('studentId');
     if (!studentId) return NextResponse.json({ error: 'studentId required' }, { status: 400 });
 
-    const student = await prisma.student.findUnique({
-      where:  { id: studentId },
-      select: {
-        dailyUsageMinutes: true,
-        lastActiveDate:    true,
-        subscription: { select: { dailyLimitMinutes: true } },
-      },
-    });
+    const [student, lifetimeCount, todayAttemptCount] = await Promise.all([
+      prisma.student.findUnique({
+        where:  { id: studentId },
+        select: {
+          dailyUsageMinutes: true,
+          lastActiveDate:    true,
+          subscription: { select: { dailyLimitMinutes: true } },
+        },
+      }),
+      prisma.attempt.count({ where: { studentId } }),
+      prisma.attempt.count({
+        where: {
+          studentId,
+          createdAt: { gte: (() => { const d = new Date(); d.setUTCHours(0,0,0,0); return d; })() },
+        },
+      }),
+    ]);
+
     if (!student) return NextResponse.json({ error: 'Student not found' }, { status: 404 });
 
     const today    = new Date();
@@ -37,7 +47,13 @@ export async function GET(req: Request) {
     const allowed   = isUnlimitedPlan(limit) || isPracticeAllowed(used, limit);
     const remaining = isUnlimitedPlan(limit) ? null : Math.max(0, limit - used);
 
-    return NextResponse.json({ allowed, used, limit, remaining });
+    const trial = {
+      isSubscribed:      student.subscription !== null,
+      lifetimeQuestions: lifetimeCount,
+      todayQuestions:    todayAttemptCount,
+    };
+
+    return NextResponse.json({ allowed, used, limit, remaining, trial });
   } catch (err) {
     console.error('[usage/check]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

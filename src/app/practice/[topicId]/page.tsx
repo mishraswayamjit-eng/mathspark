@@ -38,7 +38,14 @@ type Phase =
   | 'review_intro'
   | 'reviewing'
   | 'complete'
-  | 'usage_limit';
+  | 'usage_limit'
+  | 'trial_limit';
+
+interface TrialStatus {
+  isSubscribed:      boolean;
+  lifetimeQuestions: number;
+  todayQuestions:    number;
+}
 
 type BonusMode = 'off' | 'searching' | 'answering' | 'result' | 'unavailable';
 
@@ -371,66 +378,144 @@ function CorrectPanel({
   feedback,
   streak,
   onContinue,
+  onWatchSolution,
+  onTrySimilar,
+  canTrySimilar,
 }: {
-  feedback:   string;
-  streak:     number;
-  onContinue: () => void;
+  feedback:        string;
+  streak:          number;
+  onContinue:      () => void;
+  onWatchSolution: () => void;
+  onTrySimilar:    () => void;
+  canTrySimilar:   boolean;
 }) {
   return (
-    <div className="px-4 py-4 flex items-start gap-3">
-      <div className="animate-sparky-dance flex-shrink-0">
-        <Sparky mood="celebrating" size={72} />
+    <div className="px-4 pt-4 pb-6 space-y-3">
+      <div className="flex items-center gap-3">
+        <div className="animate-sparky-dance flex-shrink-0">
+          <Sparky mood="celebrating" size={56} />
+        </div>
+        <div>
+          {streak >= 3 && (
+            <p className="text-xs font-extrabold text-white/80 uppercase tracking-wide mb-0.5">
+              🔥 {streak} in a row!
+            </p>
+          )}
+          <p className="text-lg font-extrabold text-white leading-tight">{feedback}</p>
+        </div>
       </div>
-      <div className="flex-1 space-y-2">
-        {streak >= 3 && (
-          <div className="text-xs font-extrabold text-white/80 uppercase tracking-wide">
-            🔥 {streak} in a row!
-          </div>
-        )}
-        <p className="text-lg font-extrabold text-white leading-tight">{feedback}</p>
-        <DuoButton variant="white" fullWidth onClick={onContinue}>
-          CONTINUE →
-        </DuoButton>
-      </div>
+      <button
+        onClick={onWatchSolution}
+        className="btn-sparkle w-full min-h-[44px] bg-white/20 border border-white/40 text-white font-extrabold text-sm rounded-2xl py-2 flex items-center justify-center gap-2"
+      >
+        <span className="sparkle-icon">🎬</span> Watch Solution
+      </button>
+      {canTrySimilar && (
+        <button
+          onClick={onTrySimilar}
+          className="w-full min-h-[44px] bg-white/10 border border-white/30 text-white font-extrabold text-sm rounded-2xl py-2 flex items-center justify-center gap-2"
+        >
+          🔄 Try a Similar Question
+        </button>
+      )}
+      <DuoButton variant="white" fullWidth onClick={onContinue}>
+        Continue →
+      </DuoButton>
     </div>
   );
 }
 
 function WrongPanel({
-  correctAnswer,
-  correctText,
+  question,
+  selected,
   onGotIt,
+  hintLevel,
+  onHintLevelUp,
+  onWatchSolution,
+  onTrySimilar,
+  canTrySimilar,
 }: {
-  correctAnswer: AnswerKey;
-  correctText:   string;
-  onGotIt:       () => void;
+  question:        Question;
+  selected:        AnswerKey | null;
+  onGotIt:         () => void;
+  hintLevel:       number;
+  onHintLevelUp:   (n: number) => void;
+  onWatchSolution: () => void;
+  onTrySimilar:    () => void;
+  canTrySimilar:   boolean;
 }) {
-  const textHasLatex = correctText.includes('\\');
+  const optionKey     = selected ? (`misconception${selected}` as keyof Question) : null;
+  const misconception = optionKey ? (question[optionKey] as string) : '';
+  const correctIdx    = ['A', 'B', 'C', 'D'].indexOf(question.correctAnswer);
+  const correctText   = question[`option${correctIdx + 1}` as keyof Question] as string;
+  const textHasLatex  = correctText.includes('\\');
+
   return (
-    <div className="px-4 py-4 flex items-start gap-3">
-      <div className="flex-shrink-0">
-        <Sparky mood="encouraging" size={72} />
-      </div>
-      <div className="flex-1 space-y-2">
-        <p className="text-sm font-extrabold text-[#FF4B4B] uppercase tracking-wide">
-          No worries! Here&#39;s how it works…
-        </p>
-
-        {/* Correct answer box */}
-        <div className="bg-white rounded-xl px-3 py-2 border border-red-100">
-          <p className="text-xs text-gray-500 font-semibold">Correct answer ({correctAnswer})</p>
-          {textHasLatex ? (
-            <div className="mt-1">
-              <KatexRenderer latex={correctText} displayMode={false} />
-            </div>
-          ) : (
-            <p className="text-sm text-gray-800 font-bold leading-snug">{correctText}</p>
-          )}
+    <div className="px-4 pt-4 pb-6 space-y-3">
+      {/* Header row */}
+      <div className="flex items-center gap-3">
+        <div className="flex-shrink-0">
+          <Sparky mood="encouraging" size={56} />
         </div>
+        <div>
+          <p className="text-sm font-extrabold text-[#FF4B4B] uppercase tracking-wide">
+            No worries! Here&#39;s how it works…
+          </p>
+          <div className="bg-white rounded-xl px-3 py-2 border border-red-100 mt-1.5">
+            <p className="text-xs text-gray-500 font-semibold">Correct answer ({question.correctAnswer})</p>
+            {textHasLatex ? (
+              <div className="mt-1"><KatexRenderer latex={correctText} displayMode={false} /></div>
+            ) : (
+              <p className="text-sm text-gray-800 font-bold leading-snug">{correctText}</p>
+            )}
+          </div>
+        </div>
+      </div>
 
-        <DuoButton variant="red" fullWidth onClick={onGotIt}>
-          Got it!
-        </DuoButton>
+      {/* Misconception box */}
+      {misconception && (
+        <div className="bg-blue-50 border border-blue-200 rounded-2xl px-4 py-3">
+          <p className="text-[11px] font-extrabold text-blue-700 uppercase tracking-wide mb-1">
+            💡 Common mistake
+          </p>
+          <p className="text-sm text-gray-700 font-medium leading-snug">{misconception}</p>
+        </div>
+      )}
+
+      {/* Step-by-step inline */}
+      <StepByStep steps={question.stepByStep} />
+
+      {/* Hints */}
+      <HintSystem
+        hint1={question.hint1}
+        hint2={question.hint2}
+        hint3={question.hint3}
+        level={hintLevel}
+        onLevelUp={onHintLevelUp}
+      />
+
+      {/* Action strip */}
+      <div className="space-y-2 pt-1">
+        {canTrySimilar && (
+          <button
+            onClick={onTrySimilar}
+            className="w-full min-h-[48px] bg-[#58CC02] hover:bg-[#5bd800] text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-sm"
+          >
+            🔄 Try a Similar Question
+          </button>
+        )}
+        <button
+          onClick={onWatchSolution}
+          className="btn-sparkle w-full min-h-[44px] bg-gradient-to-r from-violet-500 to-indigo-500 text-white font-extrabold text-sm rounded-2xl py-2 flex items-center justify-center gap-2 shadow-md"
+        >
+          <span className="sparkle-icon">🎬</span> Watch Solution
+        </button>
+        <button
+          onClick={onGotIt}
+          className="w-full min-h-[44px] border border-gray-200 text-gray-500 font-semibold text-sm rounded-2xl py-2 flex items-center justify-center bg-white"
+        >
+          Got it, move on →
+        </button>
       </div>
     </div>
   );
@@ -527,6 +612,12 @@ export default function PracticePage() {
   const [usageInfo, setUsageInfo] = useState<{ used: number; limit: number }>({ used: 0, limit: 0 });
   const heartbeatRef      = useRef<ReturnType<typeof setInterval> | null>(null);
   const heartbeatPhaseRef = useRef(false);
+
+  // ── Trial gate ──────────────────────────────────────────────────────────────
+  const [trialStatus, setTrialStatus]           = useState<TrialStatus | null>(null);
+  const trialStatusRef                          = useRef<TrialStatus | null>(null);
+  const [sessionQuestionsAnswered, setSessionQuestionsAnswered] = useState(0);
+  const sessionQuestionsAnsweredRef             = useRef(0);
 
   // Fetch one adaptive question from the server.
   // Passes the full set of seen question IDs so the server excludes them too.
@@ -745,17 +836,32 @@ export default function PracticePage() {
     Promise.all([
       // Gate check — fails open (allowed: true) so API errors never block students
       fetch(`/api/usage/check?studentId=${sid}`)
-        .then((r) => r.ok ? r.json() : { allowed: true, used: 0, limit: 0 })
-        .catch(() => ({ allowed: true, used: 0, limit: 0 })),
+        .then((r) => r.ok ? r.json() : { allowed: true, used: 0, limit: 0, trial: null })
+        .catch(() => ({ allowed: true, used: 0, limit: 0, trial: null })),
       fetch('/api/topics').then((r) => r.json()),
       // First question from the adaptive engine
       fetch(`/api/questions/next?topicId=${topicId}&studentId=${sid}`)
         .then((r) => { if (!r.ok) throw new Error('fetch failed'); return r.json() as Promise<Question>; }),
     ])
-      .then(([usageData, topics, firstQ]: [{ allowed: boolean; used: number; limit: number }, Array<{ id: string; name: string }>, Question]) => {
+      .then(([usageData, topics, firstQ]: [{ allowed: boolean; used: number; limit: number; trial: TrialStatus | null }, Array<{ id: string; name: string }>, Question]) => {
         const t = topics.find((x) => x.id === topicId);
         setTopicName(t?.name ?? topicId);
         setUsageInfo({ used: usageData.used, limit: usageData.limit });
+
+        // Store trial status
+        const trialData = usageData.trial ?? null;
+        trialStatusRef.current = trialData;
+        setTrialStatus(trialData);
+
+        // Trial gate: soft-blocked (exhausted + already used daily free question)
+        if (trialData && !trialData.isSubscribed) {
+          const softBlocked = trialData.lifetimeQuestions >= 10 && trialData.todayQuestions >= 1;
+          if (softBlocked) {
+            setPhase('trial_limit');
+            return;
+          }
+        }
+
         if (!usageData.allowed) {
           setPhase('usage_limit');
           return;
@@ -781,6 +887,16 @@ export default function PracticePage() {
     // BUG 2 FIX: Prevent double-advance from two "Got it!" buttons, timer+tap, etc.
     if (isAdvancingRef.current) return;
     isAdvancingRef.current = true;
+
+    // Trial gate: if student has used 10+ questions total, show trial_limit
+    const ts = trialStatusRef.current;
+    if (ts && !ts.isSubscribed) {
+      const lifetimeNow = ts.lifetimeQuestions + sessionQuestionsAnsweredRef.current;
+      if (lifetimeNow >= 10) {
+        setPhase('trial_limit');
+        return;
+      }
+    }
 
     if (advanceTimer.current) clearTimeout(advanceTimer.current);
     setSelected(null);
@@ -927,6 +1043,10 @@ export default function PracticePage() {
       });
     }
 
+    // Track session question count (for trial gate)
+    sessionQuestionsAnsweredRef.current += 1;
+    setSessionQuestionsAnswered(sessionQuestionsAnsweredRef.current);
+
     // Analytics
     track('question_answered', { topicId, correct });
 
@@ -1022,6 +1142,10 @@ export default function PracticePage() {
     setBonusFeedback(msg);
 
     if (correct) playCorrect(); else { playWrong(); setBonusHintLevel(1); }
+
+    // Track bonus questions toward trial count
+    sessionQuestionsAnsweredRef.current += 1;
+    setSessionQuestionsAnswered(sessionQuestionsAnsweredRef.current);
 
     if (studentId) {
       submitAttempt({
@@ -1226,6 +1350,47 @@ export default function PracticePage() {
     );
   }
 
+  if (phase === 'trial_limit') {
+    const wasExhaustedAtBoot = (trialStatus?.lifetimeQuestions ?? 0) >= 10;
+    const totalUsed = (trialStatus?.lifetimeQuestions ?? 0) + sessionQuestionsAnswered;
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-white pb-8">
+        <div className="animate-sparky-bounce">
+          <Sparky mood="encouraging" size={120} />
+        </div>
+        <div className="text-center space-y-3">
+          <h2 className="text-2xl font-extrabold text-gray-800">
+            {wasExhaustedAtBoot ? 'Come back tomorrow! ⏰' : 'Amazing start! 🎉'}
+          </h2>
+          <p className="text-gray-500 font-medium leading-relaxed">
+            {wasExhaustedAtBoot
+              ? "You've used your free daily question. Subscribe to practice anytime!"
+              : `You've answered ${totalUsed} questions — your free trial is complete! Subscribe to keep your streak going.`
+            }
+          </p>
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 text-left">
+            <p className="text-xs font-extrabold text-amber-700 uppercase tracking-wide mb-2">Unlock with a subscription:</p>
+            <ul className="space-y-1.5 text-sm text-gray-600">
+              {['Unlimited daily practice', 'Hints + step-by-step solutions', 'Progress tracking & badges', 'Full IPM mock tests'].map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <span className="text-[#58CC02]">✅</span> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="w-full max-w-sm space-y-3">
+          <DuoButton variant="blue" fullWidth onClick={() => router.push('/pricing')}>
+            Upgrade Now 🚀
+          </DuoButton>
+          <DuoButton variant="white" fullWidth onClick={() => router.push('/chapters')}>
+            {wasExhaustedAtBoot ? 'Back to chapters' : 'Come back tomorrow for 1 free question'}
+          </DuoButton>
+        </div>
+      </div>
+    );
+  }
+
   // ── Question screen (answering | result | reviewing) ──────────────────────
 
   if (!currentQuestion) return null;
@@ -1234,10 +1399,6 @@ export default function PracticePage() {
   const pct = isReviewing
     ? Math.round((reviewResults.length / reviewQueue.length) * 100)
     : Math.round((qIndex / LESSON_SIZE) * 100);
-
-  const optionKey = `misconception${selected}` as keyof Question;
-  const misconceptionText = selected && currentQuestion[optionKey] as string || '';
-  const correctOptionText = currentQuestion[`option${['A','B','C','D'].indexOf(currentQuestion.correctAnswer) + 1}` as keyof Question] as string;
 
   // Bonus helpers
   const bonusOptKey      = bonusSelected ? `misconception${bonusSelected}` as keyof Question : null;
@@ -1316,10 +1477,31 @@ export default function PracticePage() {
         </div>
       )}
 
+      {/* ── Trial banner ── */}
+      {trialStatus && !trialStatus.isSubscribed && (() => {
+        const lifetimeNow = trialStatus.lifetimeQuestions + sessionQuestionsAnswered;
+        const questionsLeft = Math.max(0, 10 - lifetimeNow);
+        if (trialStatus.lifetimeQuestions >= 10) {
+          return (
+            <div className="bg-blue-50 border-b border-blue-200 px-4 py-2 text-xs font-bold text-blue-700 text-center flex items-center justify-center gap-2">
+              🎁 Your free daily question — <button onClick={() => router.push('/pricing')} className="underline">Upgrade for unlimited</button>
+            </div>
+          );
+        }
+        if (questionsLeft <= 3 && questionsLeft > 0) {
+          return (
+            <div className="bg-orange-50 border-b border-orange-200 px-4 py-2 text-xs font-bold text-orange-700 text-center flex items-center justify-center gap-2">
+              ⚡ {questionsLeft} free question{questionsLeft > 1 ? 's' : ''} left — <button onClick={() => router.push('/pricing')} className="underline">Upgrade to continue</button>
+            </div>
+          );
+        }
+        return null;
+      })()}
+
       {/* ── Question area (scrollable, padded for bottom panel) ── */}
       <div
         className="flex-1 overflow-y-auto px-4 py-4 space-y-4"
-        style={{ paddingBottom: phase === 'result' ? '220px' : '80px' }}
+        style={{ paddingBottom: phase === 'result' ? '72vh' : '80px' }}
       >
         {/* Question label with color accent */}
         <div className={`inline-flex items-center gap-2 text-xs font-extrabold px-3 py-1.5 rounded-full border ${accentCls}`}>
@@ -1339,90 +1521,6 @@ export default function PracticePage() {
           selected={selected}
           onAnswer={handleAnswer}
         />
-
-        {/* Correct-answer actions */}
-        {phase === 'result' && lastCorrect && (
-          <div className="space-y-2">
-            <button
-              onClick={() => {
-                if (advanceTimer.current) clearTimeout(advanceTimer.current);
-                setShowWalkthrough(true);
-              }}
-              className="btn-sparkle w-full min-h-[52px] bg-gradient-to-r from-violet-500 to-indigo-500 text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-md"
-            >
-              <span className="sparkle-icon">🎬</span> Watch Solution
-            </button>
-            <button
-              onClick={() => {
-                if (advanceTimer.current) clearTimeout(advanceTimer.current);
-                requestBonus(currentQuestion, true);
-              }}
-              className="w-full min-h-[44px] border-2 border-[#58CC02] text-[#58CC02] font-extrabold text-sm rounded-2xl py-2 flex items-center justify-center gap-2"
-            >
-              🔄 Try a Similar Question
-            </button>
-          </div>
-        )}
-
-        {/* Wrong-answer smart feedback */}
-        {phase === 'result' && !lastCorrect && (
-          <>
-            {/* Blue misconception box — shown before hints */}
-            {misconceptionText && (
-              <div className="bg-blue-50 border border-blue-200 rounded-2xl px-4 py-3">
-                <p className="text-[11px] font-extrabold text-blue-700 uppercase tracking-wide mb-1">
-                  💡 Common mistake
-                </p>
-                <p className="text-sm text-gray-700 font-medium leading-snug">
-                  {misconceptionText}
-                </p>
-              </div>
-            )}
-            <HintSystem
-              hint1={currentQuestion.hint1}
-              hint2={currentQuestion.hint2}
-              hint3={currentQuestion.hint3}
-              level={hintLevel}
-              onLevelUp={(n) => { setHintLevel(n); setHintUsed(true); }}
-            />
-            <StepByStep
-              steps={currentQuestion.stepByStep}
-              onGotIt={() => {
-                if (advanceTimer.current) clearTimeout(advanceTimer.current);
-                advance(hearts);
-              }}
-            />
-
-            {/* Wrong-answer action strip */}
-            <div className="space-y-2">
-              {/* Primary: Try Similar (prominent green) */}
-              <button
-                onClick={() => requestBonus(currentQuestion, false)}
-                className="w-full min-h-[52px] bg-[#58CC02] hover:bg-[#5bd800] text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-sm"
-              >
-                🔄 Try a Similar Question
-              </button>
-
-              {/* Watch Solution */}
-              <button
-                onClick={() => setShowWalkthrough(true)}
-                className="btn-sparkle w-full min-h-[48px] bg-gradient-to-r from-violet-500 to-indigo-500 text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-md"
-              >
-                <span className="sparkle-icon">🎬</span> Watch Solution
-              </button>
-
-              {/* Ask Sparky — shown after walkthrough closes */}
-              {walkthroughClosed && (
-                <button
-                  onClick={() => setSparkyToast(true)}
-                  className="w-full min-h-[44px] border-2 border-[#1CB0F6] text-[#1CB0F6] font-extrabold text-sm rounded-2xl py-2 flex items-center justify-center gap-2"
-                >
-                  Still confused? 💬 Ask Sparky
-                </button>
-              )}
-            </div>
-          </>
-        )}
       </div>
 
       {/* ── Animated Walkthrough overlay ── */}
@@ -1438,27 +1536,38 @@ export default function PracticePage() {
         />
       )}
 
-      {/* ── Sparky toast ── */}
-      {sparkyToast && (
+      {/* ── Sparky chat bubble (floating RHS, visible during result phase) ── */}
+      {phase === 'result' && (
         <div
-          className="fixed bottom-52 left-0 right-0 z-[200] px-6 pointer-events-none"
-          style={{ maxWidth: '512px', margin: '0 auto' }}
+          className="fixed right-3 z-[65] animate-slide-up"
+          style={{ bottom: 'calc(72vh + 12px)', animationDelay: '1.2s', animationFillMode: 'backwards' }}
         >
-          <div className="bg-[#131F24] text-white rounded-2xl px-4 py-3 font-bold text-sm text-center animate-slide-up shadow-xl">
-            ✨ Sparky chat is launching soon — stay tuned!
-          </div>
+          <button
+            onClick={() => router.push('/chat')}
+            className="flex flex-col items-end gap-1"
+            aria-label="Ask Sparky"
+          >
+            <div className="bg-white rounded-2xl shadow-xl px-3 py-2 border border-gray-100 max-w-[130px]">
+              <p className="text-xs font-bold text-gray-700 text-center leading-snug">
+                {lastCorrect ? 'Keep it up! 🎉' : 'Need help? 💬'}
+              </p>
+            </div>
+            <div className={`rounded-full p-1.5 shadow-lg ${lastCorrect ? 'bg-[#58CC02]' : 'bg-[#1CB0F6]'}`}>
+              <Sparky mood={lastCorrect ? 'celebrating' : 'encouraging'} size={32} />
+            </div>
+          </button>
         </div>
       )}
 
       {/* ── Sliding bottom panel ── */}
       {phase === 'result' && (
         <div
-          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] animate-slide-up ${
+          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] animate-slide-up overflow-y-auto ${
             lastCorrect
               ? 'bg-[#58CC02]'
               : 'bg-[#FFF0F0] border-t-2 border-[#FF4B4B]'
           }`}
-          style={{ minHeight: '180px' }}
+          style={{ maxHeight: '72vh' }}
         >
           {lastCorrect ? (
             <CorrectPanel
@@ -1468,12 +1577,26 @@ export default function PracticePage() {
                 if (advanceTimer.current) clearTimeout(advanceTimer.current);
                 advance(hearts);
               }}
+              onWatchSolution={() => {
+                if (advanceTimer.current) clearTimeout(advanceTimer.current);
+                setShowWalkthrough(true);
+              }}
+              onTrySimilar={() => {
+                if (advanceTimer.current) clearTimeout(advanceTimer.current);
+                requestBonus(currentQuestion, true);
+              }}
+              canTrySimilar={bonusMode === 'off'}
             />
           ) : (
             <WrongPanel
-              correctAnswer={currentQuestion.correctAnswer}
-              correctText={correctOptionText}
+              question={currentQuestion}
+              selected={selected}
               onGotIt={handleGotIt}
+              hintLevel={hintLevel}
+              onHintLevelUp={(n) => { setHintLevel(n); setHintUsed(true); }}
+              onWatchSolution={() => setShowWalkthrough(true)}
+              onTrySimilar={() => requestBonus(currentQuestion, false)}
+              canTrySimilar={bonusMode === 'off'}
             />
           )}
         </div>
