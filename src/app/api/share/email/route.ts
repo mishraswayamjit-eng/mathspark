@@ -6,8 +6,7 @@ import type {
   StreakCardData, MasteredCardData,
 } from '@/components/ShareCard';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const FROM   = process.env.RESEND_FROM_EMAIL ?? 'MathSpark <achievements@mathspark.in>';
+const FROM    = process.env.RESEND_FROM_EMAIL ?? 'MathSpark <achievements@mathspark.in>';
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://mathspark.in';
 
 // POST /api/share/email
@@ -15,6 +14,7 @@ const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://mathspark.in';
 // Sends a beautifully formatted HTML achievement email to the parent.
 export async function POST(req: Request) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const { studentId, cardType, cardData } = await req.json() as {
       studentId: string;
       cardType:  string;
