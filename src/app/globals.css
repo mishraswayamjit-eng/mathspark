@@ -138,3 +138,15 @@ button {
 
 .btn-sparkle { animation: sparkle-glow 2.4s ease-in-out infinite; }
 .btn-sparkle .sparkle-icon { display: inline-block; animation: sparkle-icon 2.4s ease-in-out infinite; }
+
+@keyframes slide-from-right {
+  from { transform: translateX(48px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+.animate-slide-from-right { animation: slide-from-right 0.35s ease-out; }
+
+@keyframes spin-refresh {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.animate-spin-refresh { display: inline-block; animation: spin-refresh 0.7s linear infinite; }

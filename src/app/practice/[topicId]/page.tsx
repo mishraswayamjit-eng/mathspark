@@ -23,6 +23,8 @@ const XP_CORRECT     = 20;
 const XP_REVIEW      = 10;
 const AUTO_ADVANCE_MS = 2000;
 const SPEED_DRILL_MS  = 90_000; // 90 seconds per question
+const MAX_BONUS_PER_LESSON = 5;
+const MAX_BONUS_PER_ORIGIN = 2;
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -34,6 +36,8 @@ type Phase =
   | 'review_intro'
   | 'reviewing'
   | 'complete';
+
+type BonusMode = 'off' | 'searching' | 'answering' | 'result' | 'unavailable';
 
 interface QuestionResult {
   questionId:    string;
@@ -428,7 +432,7 @@ export default function PracticePage() {
   const [showConfetti, setShowConfetti] = useState(false);
 
   // Similar question (fetched on wrong answer for "Practice Similar" button)
-  const [similarQ, setSimilarQ] = useState<Question | null>(null);
+  // similarQ removed — replaced by bonus question system
 
   // Speed drill timer
   const [speedRemaining,   setSpeedRemaining]   = useState<number>(SPEED_DRILL_MS);
@@ -459,6 +463,19 @@ export default function PracticePage() {
   const [showWalkthrough,    setShowWalkthrough]    = useState(false);
   const [walkthroughClosed,  setWalkthroughClosed]  = useState(false);
   const [sparkyToast,        setSparkyToast]        = useState(false);
+
+  // ── Bonus "Repeat Similar" question system ──────────────────────────────────
+  const [bonusMode,      setBonusMode]      = useState<BonusMode>('off');
+  const [bonusQuestion,  setBonusQuestion]  = useState<Question | null>(null);
+  const [bonusSelected,  setBonusSelected]  = useState<AnswerKey | null>(null);
+  const [bonusCorrect,   setBonusCorrect]   = useState(false);
+  const [bonusFeedback,  setBonusFeedback]  = useState('');
+  const [bonusHintLevel, setBonusHintLevel] = useState(0);
+  const [bonusHintUsed,  setBonusHintUsed]  = useState(false);
+  const bonusServedRef         = useRef(0);
+  const bonusCountByOriginRef  = useRef(new Map<string, number>());
+  const bonusOriginRef         = useRef<Question | null>(null);
+  const bonusOriginCorrectRef  = useRef(false);
 
   // Fetch one adaptive question from the server.
   // Passes the full set of seen question IDs so the server excludes them too.
@@ -516,6 +533,8 @@ export default function PracticePage() {
     studentId: string; questionId: string; topicId: string;
     selected: string; isCorrect: boolean; hintUsed: number;
     misconceptionType?: string | null;
+    isBonusQuestion?: boolean;
+    parentQuestionId?: string | null;
   }
 
   function queueAttempt(p: AttemptPayload) {
@@ -669,6 +688,10 @@ export default function PracticePage() {
     setShowWalkthrough(false);
     setWalkthroughClosed(false);
     setSparkyToast(false);
+    setBonusMode('off');
+    setBonusQuestion(null);
+    setBonusSelected(null);
+    bonusOriginRef.current = null;
 
     if (isReviewing) {
       const nextRev = reviewIndex + 1;
@@ -802,17 +825,6 @@ export default function PracticePage() {
       });
     }
 
-    // On wrong answer: fetch a similar question in the background
-    if (!correct) {
-      setSimilarQ(null);
-      fetch(
-        `/api/questions/similar?subTopic=${encodeURIComponent(currentQuestion.subTopic)}&questionId=${currentQuestion.id}`,
-      )
-        .then((r) => (r.ok ? r.json() : null))
-        .then((q: Question | null) => { if (q) setSimilarQ(q); })
-        .catch(() => {});
-    }
-
     // Analytics
     track('question_answered', { topicId, correct });
 
@@ -829,19 +841,117 @@ export default function PracticePage() {
   }
 
   function handleGotIt() {
-    setSimilarQ(null);
     advance(hearts);
   }
 
-  function handlePracticeSimilar() {
-    if (!similarQ) return;
-    const q = similarQ;
-    setSimilarQ(null);
+  // ── Bonus "Repeat Similar" system ─────────────────────────────────────────
+
+  function requestBonus(originQuestion: Question, wasOriginCorrect: boolean) {
+    const originCount = bonusCountByOriginRef.current.get(originQuestion.id) ?? 0;
+    if (originCount >= MAX_BONUS_PER_ORIGIN) return;
+    if (bonusServedRef.current >= MAX_BONUS_PER_LESSON) return;
+
     if (advanceTimer.current) clearTimeout(advanceTimer.current);
-    // Inject the similar question as the next question via the prefetch slot
-    prefetchRef.current   = q;
-    isFetchingRef.current = false;
+    bonusOriginRef.current       = originQuestion;
+    bonusOriginCorrectRef.current = wasOriginCorrect;
+    setBonusMode('searching');
+    track('similar_question_requested', { topicId, questionId: originQuestion.id });
+
+    const excludeParam = Array.from(seenQuestionIdsRef.current).join(',');
+    fetch(
+      `/api/questions/similar` +
+      `?questionId=${originQuestion.id}` +
+      `&subTopic=${encodeURIComponent(originQuestion.subTopic)}` +
+      `&topicId=${originQuestion.topicId}` +
+      `&difficulty=${originQuestion.difficulty}` +
+      `&wasCorrect=${wasOriginCorrect}` +
+      `&exclude=${excludeParam}`,
+    )
+      .then((r) => (r.ok ? r.json() : null))
+      .then((q: Question | null) => {
+        if (!q) {
+          setBonusMode('unavailable');
+          track('similar_question_unavailable', {
+            topicId, questionId: originQuestion.id, subTopic: originQuestion.subTopic,
+          });
+          return;
+        }
+        seenQuestionIdsRef.current.add(q.id);
+        setBonusQuestion(q);
+        setBonusSelected(null);
+        setBonusCorrect(false);
+        setBonusFeedback('');
+        setBonusHintLevel(0);
+        setBonusHintUsed(false);
+        setBonusMode('answering');
+        bonusServedRef.current += 1;
+        bonusCountByOriginRef.current.set(
+          originQuestion.id,
+          (bonusCountByOriginRef.current.get(originQuestion.id) ?? 0) + 1,
+        );
+        track('similar_question_served', {
+          topicId, originalId: originQuestion.id, bonusId: q.id,
+        });
+      })
+      .catch(() => setBonusMode('unavailable'));
+  }
+
+  function handleBonusAnswer(key: AnswerKey) {
+    if (!bonusQuestion) return;
+    const correct   = key === bonusQuestion.correctAnswer;
+    const newStreak = correct ? streak + 1 : 0;
+    const earnedXp  = correct ? XP_CORRECT : 0;
+    const heartLost = !correct && !bonusHintUsed;
+    const newHearts = heartLost ? hearts - 1 : hearts;
+
+    setBonusSelected(key);
+    setBonusCorrect(correct);
+    setBonusMode('result');
+    setStreak(newStreak);
+    setXp((x) => x + earnedXp);
+    if (heartLost) setHearts(newHearts);
+
+    const CORRECT_MSGS = ['Great job! ⭐', 'You got it! 🎯', 'Excellent! 🧠', 'Well done! 🌟', 'Awesome! 🎉'];
+    let msg = correct
+      ? CORRECT_MSGS[Math.floor(Math.random() * CORRECT_MSGS.length)]
+      : "Not quite — let's think about this together! 💭";
+    if (correct && newStreak === 3) msg = "You're on fire! 🔥";
+    if (correct && newStreak === 5) msg = 'Unstoppable! ⚡';
+    setBonusFeedback(msg);
+
+    if (correct) playCorrect(); else { playWrong(); setBonusHintLevel(1); }
+
+    if (studentId) {
+      submitAttempt({
+        studentId,
+        questionId:      bonusQuestion.id,
+        topicId,
+        selected:        key,
+        isCorrect:       correct,
+        hintUsed:        bonusHintLevel,
+        isBonusQuestion: true,
+        parentQuestionId: bonusOriginRef.current?.id ?? null,
+      });
+    }
+  }
+
+  function handleBonusGotIt() {
+    setBonusMode('off');
+    setBonusQuestion(null);
+    setBonusSelected(null);
+    bonusOriginRef.current = null;
     advance(hearts);
+  }
+
+  function handleBonusOneMore() {
+    if (!bonusOriginRef.current) return;
+    const originId    = bonusOriginRef.current.id;
+    const originCount = bonusCountByOriginRef.current.get(originId) ?? 0;
+    if (originCount >= MAX_BONUS_PER_ORIGIN || bonusServedRef.current >= MAX_BONUS_PER_LESSON) {
+      handleBonusGotIt();
+      return;
+    }
+    requestBonus(bonusOriginRef.current, bonusOriginCorrectRef.current);
   }
 
   // ── Reset / retry ──────────────────────────────────────────────────────────
@@ -860,10 +970,15 @@ export default function PracticePage() {
     setReviewQueue([]);
     setReviewIndex(0);
     setShowConfetti(false);
-    setSimilarQ(null);
     setShowWalkthrough(false);
     setWalkthroughClosed(false);
     setSparkyToast(false);
+    setBonusMode('off');
+    setBonusQuestion(null);
+    setBonusSelected(null);
+    bonusServedRef.current = 0;
+    bonusCountByOriginRef.current.clear();
+    bonusOriginRef.current = null;
     setSpeedTimedOut(false);
     setSpeedRemaining(SPEED_DRILL_MS);
     if (speedTimerRef.current) { clearInterval(speedTimerRef.current); speedTimerRef.current = null; }
@@ -974,6 +1089,15 @@ export default function PracticePage() {
   const misconceptionText = selected && currentQuestion[optionKey] as string || '';
   const correctOptionText = currentQuestion[`option${['A','B','C','D'].indexOf(currentQuestion.correctAnswer) + 1}` as keyof Question] as string;
 
+  // Bonus helpers
+  const bonusOptKey      = bonusSelected ? `misconception${bonusSelected}` as keyof Question : null;
+  const bonusMisconText  = bonusOptKey && bonusQuestion ? bonusQuestion[bonusOptKey] as string : '';
+  const bonusCorrectText = bonusQuestion ? bonusQuestion[`option${['A','B','C','D'].indexOf(bonusQuestion.correctAnswer) + 1}` as keyof Question] as string : '';
+  const canOneMore = bonusOriginRef.current
+    ? (bonusCountByOriginRef.current.get(bonusOriginRef.current.id) ?? 0) < MAX_BONUS_PER_ORIGIN &&
+      bonusServedRef.current < MAX_BONUS_PER_LESSON
+    : false;
+
   return (
     <div className="flex flex-col bg-white min-h-screen">
       {/* Confetti */}
@@ -1066,17 +1190,28 @@ export default function PracticePage() {
           onAnswer={handleAnswer}
         />
 
-        {/* Watch Solution button — correct answers */}
+        {/* Correct-answer actions */}
         {phase === 'result' && lastCorrect && (
-          <button
-            onClick={() => {
-              if (advanceTimer.current) clearTimeout(advanceTimer.current);
-              setShowWalkthrough(true);
-            }}
-            className="btn-sparkle w-full min-h-[52px] bg-gradient-to-r from-violet-500 to-indigo-500 text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-md"
-          >
-            <span className="sparkle-icon">🎬</span> Watch Solution
-          </button>
+          <div className="space-y-2">
+            <button
+              onClick={() => {
+                if (advanceTimer.current) clearTimeout(advanceTimer.current);
+                setShowWalkthrough(true);
+              }}
+              className="btn-sparkle w-full min-h-[52px] bg-gradient-to-r from-violet-500 to-indigo-500 text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-md"
+            >
+              <span className="sparkle-icon">🎬</span> Watch Solution
+            </button>
+            <button
+              onClick={() => {
+                if (advanceTimer.current) clearTimeout(advanceTimer.current);
+                requestBonus(currentQuestion, true);
+              }}
+              className="w-full min-h-[44px] border-2 border-[#58CC02] text-[#58CC02] font-extrabold text-sm rounded-2xl py-2 flex items-center justify-center gap-2"
+            >
+              🔄 Try a Similar Question
+            </button>
+          </div>
         )}
 
         {/* Wrong-answer smart feedback */}
@@ -1105,28 +1240,37 @@ export default function PracticePage() {
               onGotIt={() => {
                 if (advanceTimer.current) clearTimeout(advanceTimer.current);
                 advance(hearts);
-                setSimilarQ(null);
               }}
-              onPracticeSimilar={similarQ ? handlePracticeSimilar : undefined}
             />
 
-            {/* Watch Solution button — wrong answers (between solution view and next button) */}
-            <button
-              onClick={() => setShowWalkthrough(true)}
-              className="btn-sparkle w-full min-h-[52px] bg-gradient-to-r from-violet-500 to-indigo-500 text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-md"
-            >
-              <span className="sparkle-icon">🎬</span> Watch Solution
-            </button>
-
-            {/* "Ask Sparky" — shown after watching walkthrough */}
-            {walkthroughClosed && (
+            {/* Wrong-answer action strip */}
+            <div className="space-y-2">
+              {/* Primary: Try Similar (prominent green) */}
               <button
-                onClick={() => setSparkyToast(true)}
-                className="w-full min-h-[48px] border-2 border-[#1CB0F6] text-[#1CB0F6] font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2"
+                onClick={() => requestBonus(currentQuestion, false)}
+                className="w-full min-h-[52px] bg-[#58CC02] hover:bg-[#5bd800] text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-sm"
               >
-                Still confused? 💬 Ask Sparky
+                🔄 Try a Similar Question
               </button>
-            )}
+
+              {/* Watch Solution */}
+              <button
+                onClick={() => setShowWalkthrough(true)}
+                className="btn-sparkle w-full min-h-[48px] bg-gradient-to-r from-violet-500 to-indigo-500 text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-md"
+              >
+                <span className="sparkle-icon">🎬</span> Watch Solution
+              </button>
+
+              {/* Ask Sparky — shown after walkthrough closes */}
+              {walkthroughClosed && (
+                <button
+                  onClick={() => setSparkyToast(true)}
+                  className="w-full min-h-[44px] border-2 border-[#1CB0F6] text-[#1CB0F6] font-extrabold text-sm rounded-2xl py-2 flex items-center justify-center gap-2"
+                >
+                  Still confused? 💬 Ask Sparky
+                </button>
+              )}
+            </div>
           </>
         )}
       </div>
@@ -1140,6 +1284,7 @@ export default function PracticePage() {
             setShowWalkthrough(false);
             setWalkthroughClosed(true);
           }}
+          onSimilar={() => requestBonus(currentQuestion, lastCorrect)}
         />
       )}
 
@@ -1180,6 +1325,147 @@ export default function PracticePage() {
               correctText={correctOptionText}
               onGotIt={handleGotIt}
             />
+          )}
+        </div>
+      )}
+
+      {/* ── Bonus "Repeat Similar" overlay ─────────────────────────────────── */}
+      {bonusMode !== 'off' && (
+        <div
+          className="fixed inset-0 bg-white z-[80] flex flex-col max-w-lg mx-auto animate-slide-from-right"
+        >
+          {/* Header */}
+          <div className="bg-[#131F24] px-4 py-3 flex items-center gap-3 flex-shrink-0">
+            <button
+              onClick={handleBonusGotIt}
+              className="text-white/70 hover:text-white font-bold text-sm min-h-[44px] min-w-[44px] flex items-center gap-1"
+            >
+              ← Back
+            </button>
+            <div className="flex-1 min-w-0">
+              <p className="text-white font-extrabold text-sm truncate">{topicName}</p>
+            </div>
+            <HeartsBar hearts={hearts} />
+          </div>
+
+          {/* Amber bonus banner */}
+          <div className="bg-amber-50 border-b border-amber-200 px-4 py-2 flex items-center gap-2 flex-shrink-0">
+            <span>⭐</span>
+            <p className="text-amber-700 font-extrabold text-sm">Bonus Question — Same concept, different numbers!</p>
+          </div>
+
+          {/* Searching */}
+          {bonusMode === 'searching' && (
+            <div className="flex-1 flex flex-col items-center justify-center gap-4 px-6">
+              <div className="animate-sparky-bounce">
+                <Sparky mood="thinking" size={80} />
+              </div>
+              <p className="text-gray-500 font-semibold text-center">Finding a similar question…</p>
+            </div>
+          )}
+
+          {/* Unavailable */}
+          {bonusMode === 'unavailable' && (
+            <div className="flex-1 flex flex-col items-center justify-center gap-4 px-6">
+              <Sparky mood="encouraging" size={80} />
+              <p className="text-gray-700 font-bold text-center text-lg leading-snug">
+                You&apos;ve practiced all similar questions!<br />Let&apos;s keep going 💪
+              </p>
+              <DuoButton variant="green" onClick={handleBonusGotIt}>
+                Next Question →
+              </DuoButton>
+            </div>
+          )}
+
+          {/* Bonus question screen */}
+          {(bonusMode === 'answering' || bonusMode === 'result') && bonusQuestion && (
+            <>
+              <div
+                className="flex-1 overflow-y-auto px-4 py-4 space-y-4"
+                style={{ paddingBottom: bonusMode === 'result' ? '200px' : '80px' }}
+              >
+                {/* Bonus label */}
+                <div className="inline-flex items-center gap-2 text-xs font-extrabold px-3 py-1.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                  ⭐ Bonus Question
+                </div>
+
+                {/* Question card — amber border */}
+                <div className="relative">
+                  <div className="absolute -top-2 -left-1 z-10 bg-amber-400 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow-sm">
+                    ⭐ Bonus
+                  </div>
+                  <div className="border-2 border-amber-300 rounded-2xl overflow-hidden">
+                    <QuestionCard
+                      question={bonusQuestion}
+                      answered={bonusMode === 'result'}
+                      selected={bonusSelected}
+                      onAnswer={(key) => handleBonusAnswer(key)}
+                    />
+                  </div>
+                </div>
+
+                {/* Wrong bonus: misconception + hints + solution */}
+                {bonusMode === 'result' && !bonusCorrect && (
+                  <>
+                    {bonusMisconText && (
+                      <div className="bg-blue-50 border border-blue-200 rounded-2xl px-4 py-3">
+                        <p className="text-[11px] font-extrabold text-blue-700 uppercase tracking-wide mb-1">💡 Common mistake</p>
+                        <p className="text-sm text-gray-700 font-medium leading-snug">{bonusMisconText}</p>
+                      </div>
+                    )}
+                    <HintSystem
+                      hint1={bonusQuestion.hint1}
+                      hint2={bonusQuestion.hint2}
+                      hint3={bonusQuestion.hint3}
+                      level={bonusHintLevel}
+                      onLevelUp={(n) => { setBonusHintLevel(n); setBonusHintUsed(true); }}
+                    />
+                    <StepByStep steps={bonusQuestion.stepByStep} />
+                  </>
+                )}
+              </div>
+
+              {/* Bonus bottom panel */}
+              {bonusMode === 'result' && (
+                <div
+                  className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[90] animate-slide-up ${
+                    bonusCorrect
+                      ? 'bg-[#58CC02]'
+                      : 'bg-[#FFF0F0] border-t-2 border-[#FF4B4B]'
+                  }`}
+                  style={{ minHeight: '160px' }}
+                >
+                  <div className="px-4 pt-4 pb-6 space-y-3">
+                    <p className={`font-extrabold text-base ${bonusCorrect ? 'text-white' : 'text-[#FF4B4B]'}`}>
+                      {bonusFeedback}
+                    </p>
+                    {bonusCorrect && (
+                      <p className="text-white/80 text-xs font-semibold">
+                        ✅ {bonusQuestion.correctAnswer}: {bonusCorrectText}
+                      </p>
+                    )}
+                    {!bonusCorrect && canOneMore && (
+                      <button
+                        onClick={handleBonusOneMore}
+                        className="w-full min-h-[48px] bg-white/30 border border-white/40 text-[#FF4B4B] font-extrabold text-sm rounded-2xl flex items-center justify-center gap-2"
+                      >
+                        🔄 One More?
+                      </button>
+                    )}
+                    <button
+                      onClick={handleBonusGotIt}
+                      className={`w-full min-h-[48px] rounded-2xl font-extrabold text-sm flex items-center justify-center gap-2 ${
+                        bonusCorrect
+                          ? 'bg-white/20 text-white border border-white/40'
+                          : 'bg-white text-gray-700'
+                      }`}
+                    >
+                      Back to Lesson →
+                    </button>
+                  </div>
+                </div>
+              )}
+            </>
           )}
         </div>
       )}

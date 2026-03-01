@@ -184,6 +184,8 @@ model Attempt {
   timeTakenMs       Int      @default(0)
   misconceptionType    String?
   watchedWalkthrough   Boolean  @default(false)
+  isBonusQuestion      Boolean  @default(false)
+  parentQuestionId     String?
   createdAt            DateTime @default(now())
 
   @@index([studentId])

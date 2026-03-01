@@ -10,6 +10,7 @@ interface AnimatedWalkthroughProps {
   question:      Question;
   studentAnswer: AnswerKey | null;
   onClose:       () => void;
+  onSimilar?:    () => void;  // "Practice This Concept Again"
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -28,8 +29,8 @@ function tokenize(text: string): string[] {
 // ── Simple view (0–1 steps) ───────────────────────────────────────────────────
 
 function SimpleView({
-  question, studentAnswer, onClose,
-}: { question: Question; studentAnswer: AnswerKey | null; onClose: () => void }) {
+  question, studentAnswer, onClose, onSimilar,
+}: { question: Question; studentAnswer: AnswerKey | null; onClose: () => void; onSimilar?: () => void }) {
   const correctText = optionText(question, question.correctAnswer);
   const wasWrong    = studentAnswer && studentAnswer !== question.correctAnswer;
   const misconKey   = studentAnswer ? `misconception${studentAnswer}` as keyof Question : null;
@@ -73,9 +74,19 @@ function SimpleView({
           </div>
         )}
 
+        {onSimilar && (
+          <button
+            onClick={() => { onClose(); onSimilar(); }}
+            className="w-full min-h-[52px] rounded-2xl bg-[#58CC02] hover:bg-[#5bd800] text-white font-extrabold text-sm mt-2 flex items-center justify-center gap-2"
+          >
+            🔄 Practice This Concept Again
+          </button>
+        )}
         <button
           onClick={onClose}
-          className="w-full min-h-[52px] rounded-2xl bg-[#58CC02] text-white font-extrabold text-base mt-2"
+          className={`w-full min-h-[48px] rounded-2xl font-extrabold text-base mt-2 ${
+            onSimilar ? 'bg-gray-100 text-gray-600' : 'bg-[#58CC02] text-white'
+          }`}
         >
           Got it! ✓
         </button>
@@ -178,17 +189,17 @@ function StepSlide({
 // ── Main component ────────────────────────────────────────────────────────────
 
 export default function AnimatedWalkthrough({
-  question, studentAnswer, onClose,
+  question, studentAnswer, onClose, onSimilar,
 }: AnimatedWalkthroughProps) {
   const steps = question.stepByStep ?? [];
 
-  // Simple view when no multi-step solution exists
   if (steps.length <= 1) {
     return (
       <SimpleView
         question={question}
         studentAnswer={studentAnswer}
         onClose={onClose}
+        onSimilar={onSimilar}
       />
     );
   }
@@ -199,6 +210,7 @@ export default function AnimatedWalkthrough({
       studentAnswer={studentAnswer}
       steps={steps}
       onClose={onClose}
+      onSimilar={onSimilar}
     />
   );
 }
@@ -206,7 +218,7 @@ export default function AnimatedWalkthrough({
 // ── Walkthrough Player (multi-step) ──────────────────────────────────────────
 
 function WalkthroughPlayer({
-  question, studentAnswer, steps, onClose,
+  question, studentAnswer, steps, onClose, onSimilar,
 }: AnimatedWalkthroughProps & { steps: StepItem[] }) {
   const totalSteps = steps.length;
 
@@ -308,40 +320,52 @@ function WalkthroughPlayer({
         </div>
 
         {/* ── Controls ── */}
-        <div className="border-t border-gray-100 px-5 py-4 flex items-center gap-3 bg-white">
-          {/* Back */}
-          <button
-            onClick={goPrev}
-            disabled={isFirst}
-            className="min-h-[48px] px-4 rounded-2xl border-2 border-gray-200 font-bold text-gray-500 disabled:opacity-30 flex items-center gap-1 hover:bg-gray-50 transition-colors"
-          >
-            ◀ Back
-          </button>
-
-          {/* Pause / Play */}
-          <button
-            onClick={() => setIsPaused((p) => !p)}
-            className="min-h-[48px] px-4 rounded-2xl bg-gray-100 font-bold text-gray-600 flex items-center gap-1 hover:bg-gray-200 transition-colors"
-          >
-            {isPaused ? '▶ Play' : '⏸ Pause'}
-          </button>
-
-          {/* Next or Got it */}
-          {isLast ? (
+        <div className="border-t border-gray-100 px-5 pt-3 pb-4 bg-white space-y-2">
+          {/* "Practice Again" — prominent on last step if onSimilar provided */}
+          {isLast && onSimilar && (
             <button
-              onClick={onClose}
-              className="flex-1 min-h-[48px] rounded-2xl bg-[#58CC02] hover:bg-[#5bd800] active:bg-[#46a302] text-white font-extrabold text-base flex items-center justify-center gap-1 shadow-sm transition-colors"
+              onClick={() => { onClose(); onSimilar(); }}
+              className="w-full min-h-[52px] rounded-2xl bg-[#58CC02] hover:bg-[#5bd800] text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors"
             >
-              Got it! ✓
-            </button>
-          ) : (
-            <button
-              onClick={goNext}
-              className="flex-1 min-h-[48px] rounded-2xl bg-[#1CB0F6] hover:bg-[#22bfff] active:bg-[#0a98dc] text-white font-extrabold text-base flex items-center justify-center gap-1 shadow-sm transition-colors"
-            >
-              Next ▶
+              🔄 Practice This Concept Again
             </button>
           )}
+
+          {/* Nav row */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={goPrev}
+              disabled={isFirst}
+              className="min-h-[48px] px-4 rounded-2xl border-2 border-gray-200 font-bold text-gray-500 disabled:opacity-30 flex items-center gap-1 hover:bg-gray-50 transition-colors"
+            >
+              ◀ Back
+            </button>
+            <button
+              onClick={() => setIsPaused((p) => !p)}
+              className="min-h-[48px] px-4 rounded-2xl bg-gray-100 font-bold text-gray-600 flex items-center gap-1 hover:bg-gray-200 transition-colors"
+            >
+              {isPaused ? '▶ Play' : '⏸ Pause'}
+            </button>
+            {isLast ? (
+              <button
+                onClick={onClose}
+                className={`flex-1 min-h-[48px] rounded-2xl font-extrabold text-base flex items-center justify-center gap-1 transition-colors ${
+                  onSimilar
+                    ? 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    : 'bg-[#58CC02] hover:bg-[#5bd800] text-white shadow-sm'
+                }`}
+              >
+                Got it! ✓
+              </button>
+            ) : (
+              <button
+                onClick={goNext}
+                className="flex-1 min-h-[48px] rounded-2xl bg-[#1CB0F6] hover:bg-[#22bfff] active:bg-[#0a98dc] text-white font-extrabold text-base flex items-center justify-center gap-1 shadow-sm transition-colors"
+              >
+                Next ▶
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>

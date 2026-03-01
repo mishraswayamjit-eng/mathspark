@@ -1,34 +1,31 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/db';
+import { findSimilarQuestion } from '@/lib/similarQuestion';
 
 export const dynamic = 'force-dynamic';
 
-// GET /api/questions/similar?subTopic=...&questionId=...
-// Returns a random question from the same subTopic (preferring auto_generated).
+// GET /api/questions/similar
+// Params: questionId, subTopic (required), topicId, difficulty, wasCorrect, exclude (comma-sep IDs)
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
-  const subTopic  = searchParams.get('subTopic');
-  const questionId = searchParams.get('questionId');
+  const questionId  = searchParams.get('questionId')  ?? '';
+  const subTopic    = searchParams.get('subTopic')    ?? '';
+  const topicId     = searchParams.get('topicId')     ?? '';
+  const difficulty  = searchParams.get('difficulty')  ?? 'Medium';
+  const wasCorrect  = searchParams.get('wasCorrect')  === 'true';
+  const excludeIds  = (searchParams.get('exclude') ?? '').split(',').filter(Boolean);
 
   if (!subTopic) {
     return NextResponse.json({ error: 'subTopic required' }, { status: 400 });
   }
 
-  const candidates = await prisma.question.findMany({
-    where: {
-      subTopic,
-      ...(questionId ? { id: { not: questionId } } : {}),
-    },
-  });
+  const q = await findSimilarQuestion(
+    { questionId, subTopic, topicId, difficulty, wasCorrect },
+    excludeIds,
+  );
 
-  if (candidates.length === 0) {
-    return NextResponse.json({ error: 'No similar questions found' }, { status: 404 });
+  if (!q) {
+    return NextResponse.json({ error: 'No similar question found' }, { status: 404 });
   }
-
-  // Prefer auto_generated so the student sees a fresh example
-  const autoGen = candidates.filter((q) => q.source === 'auto_generated');
-  const pool    = autoGen.length > 0 ? autoGen : candidates;
-  const q       = pool[Math.floor(Math.random() * pool.length)];
 
   let stepByStep: unknown[] = [];
   try { stepByStep = JSON.parse(q.stepByStep); } catch { stepByStep = []; }
