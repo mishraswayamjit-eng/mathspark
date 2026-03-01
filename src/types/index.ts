@@ -209,3 +209,63 @@ export interface Recommendation {
   topicName: string;
   reason: string;
 }
+
+// ── Leaderboard / League types ────────────────────────────────────────────
+
+export type LeagueTier = 1 | 2 | 3 | 4 | 5;
+export type LeagueTierName = 'Bronze' | 'Silver' | 'Gold' | 'Diamond' | 'Champion';
+export type AwardType = 'most_improved' | 'speed_demon' | 'accuracy_king' | 'explorer';
+
+export interface LeagueMember {
+  studentId:   string;
+  displayName: string;   // falls back to first name
+  avatarColor: string;
+  weeklyXP:    number;
+  rank:        number;   // live rank computed at query time
+  isMe:        boolean;
+  promoted:    boolean;
+  demoted:     boolean;
+}
+
+export interface LeagueData {
+  leagueId:    string;
+  leagueName:  LeagueTierName;
+  tier:        LeagueTier;
+  weekStart:   string;  // ISO
+  weekEnd:     string;  // ISO
+  members:     LeagueMember[];
+  myRank:      number;
+  myWeeklyXP:  number;
+  totalMembers: number;
+  promoteCount: number;
+  demoteCount:  number;
+}
+
+export interface WeeklyAwardData {
+  awardType: AwardType;
+  value:     string;
+  studentId: string;
+  displayName: string;
+}
+
+export interface LastWeekResult {
+  league:      LeagueData | null;
+  myRank:      number | null;
+  promoted:    boolean;
+  demoted:     boolean;
+  awards:      WeeklyAwardData[];
+  myPromotion: { from: LeagueTierName; to: LeagueTierName } | null;
+}
+
+export interface PublicProfile {
+  studentId:        string;
+  displayName:      string;
+  avatarColor:      string;
+  currentLeagueTier: number;
+  totalLifetimeXP:  number;
+  totalSolved:      number;
+  topicsMastered:   number;
+  currentStreak:    number;
+  joinedAt:         string;
+  awards:           WeeklyAwardData[];
+}

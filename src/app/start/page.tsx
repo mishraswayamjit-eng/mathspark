@@ -35,7 +35,7 @@ const TOPIC_NAMES: Record<string, string> = {
   'ch20':    'Quadrilaterals',
 };
 
-type Step = 'welcome' | 'name' | 'quiz' | 'results';
+type Step = 'welcome' | 'name' | 'quiz' | 'results' | 'displayName';
 type Diff  = 'Easy' | 'Medium' | 'Hard';
 
 function nextDiff(d: Diff, up: boolean): Diff {
@@ -67,11 +67,15 @@ function useCountUp(target: number, active: boolean): number {
 export default function StartPage() {
   const router = useRouter();
 
-  const [step,      setStep]      = useState<Step>('welcome');
-  const [name,      setName]      = useState('');
-  const [studentId, setStudentId] = useState<string | null>(null);
-  const [loading,   setLoading]   = useState(false);
-  const [error,     setError]     = useState('');
+  const [step,         setStep]        = useState<Step>('welcome');
+  const [name,         setName]        = useState('');
+  const [studentId,    setStudentId]   = useState<string | null>(null);
+  const [loading,      setLoading]     = useState(false);
+  const [error,        setError]       = useState('');
+  const [pendingRoute, setPendingRoute] = useState<'/chapters' | '/test'>('/chapters');
+  const [displayName,  setDisplayName] = useState('');
+  const [avatarColor,  setAvatarColor] = useState('#3B82F6');
+  const [dnError,      setDnError]     = useState('');
 
   // Quiz state
   const [question,     setQuestion]     = useState<Question | null>(null);
@@ -126,6 +130,8 @@ export default function StartPage() {
       localStorage.setItem('mathspark_student_id',   student.id);
       localStorage.setItem('mathspark_student_name', student.name);
       setStudentId(student.id);
+      setDisplayName(name.trim().slice(0, 20));
+      setAvatarColor(student.avatarColor ?? '#3B82F6');
       setStep('quiz');
       await fetchQuestion(PLAN[0].topicId, 'Medium', []);
     } catch {
@@ -321,6 +327,92 @@ export default function StartPage() {
     );
   }
 
+  // ── Screen 5: Display name + avatar (shown before navigating away) ──────────
+  if (step === 'displayName') {
+    const AVATAR_COLORS = [
+      '#FF9600','#58CC02','#1CB0F6','#FF4B4B',
+      '#9B59B6','#00BCD4','#FFC800','#FF69B4',
+      '#3B82F6','#10B981','#F59E0B','#EF4444',
+    ];
+    const initial = displayName ? displayName[0].toUpperCase() : (name[0] ?? '?').toUpperCase();
+
+    async function handleJoinLeague() {
+      const trimmed = displayName.trim().slice(0, 20) || name.trim().slice(0, 20);
+      if (!trimmed) return;
+      if (studentId) {
+        await fetch('/api/student', {
+          method: 'PATCH',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ studentId, displayName: trimmed, avatarColor }),
+        }).catch(() => {/* non-critical */});
+      }
+      router.push(pendingRoute);
+    }
+
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-[#131F24]">
+        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5">
+          <div className="text-center">
+            <div
+              className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white mx-auto mb-3 border-4 border-white/30 shadow-lg"
+              style={{ backgroundColor: avatarColor }}
+            >
+              {initial}
+            </div>
+            <h2 className="text-2xl font-extrabold text-gray-800">Join the League! 🏆</h2>
+            <p className="text-gray-400 text-sm font-medium mt-1">
+              Pick a leaderboard name and colour
+            </p>
+          </div>
+
+          {/* Display name input */}
+          <div>
+            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Your leaderboard name</label>
+            <input
+              type="text"
+              autoFocus
+              value={displayName}
+              onChange={(e) => { setDisplayName(e.target.value); setDnError(''); }}
+              onKeyDown={(e) => e.key === 'Enter' && handleJoinLeague()}
+              placeholder={name.trim().slice(0, 20)}
+              maxLength={20}
+              className="w-full mt-1.5 text-xl font-bold text-center border-b-4 border-[#1CB0F6] bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
+            />
+            {dnError && <p className="text-[#FF4B4B] text-xs font-semibold text-center mt-1">{dnError}</p>}
+          </div>
+
+          {/* Colour swatches */}
+          <div>
+            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Avatar colour</label>
+            <div className="flex flex-wrap gap-2 mt-2">
+              {AVATAR_COLORS.map((c) => (
+                <button
+                  key={c}
+                  onClick={() => setAvatarColor(c)}
+                  style={{ backgroundColor: c, minHeight: 0 }}
+                  className={`w-9 h-9 rounded-full transition-all active:scale-95 ${
+                    avatarColor === c ? 'ring-4 ring-offset-2 ring-gray-800 scale-110' : ''
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+
+          <DuoButton variant="green" fullWidth onClick={handleJoinLeague} loading={loading}>
+            Let&apos;s go! 🚀
+          </DuoButton>
+          <button
+            onClick={() => router.push(pendingRoute)}
+            style={{ minHeight: 0 }}
+            className="w-full text-center text-gray-400 text-sm font-semibold py-1 hover:text-gray-600 transition-colors"
+          >
+            Skip for now →
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   // ── Screen 4: Results ─────────────────────────────────────────────────────
   const results  = computeResults();
   const strong   = results.filter((r) => r.status === 'Strong');
@@ -413,10 +505,10 @@ export default function StartPage() {
       )}
 
       <div className="space-y-3">
-        <DuoButton variant="green" fullWidth onClick={() => router.push('/chapters')}>
+        <DuoButton variant="green" fullWidth onClick={() => { setPendingRoute('/chapters'); setStep('displayName'); }}>
           Start Learning 📚
         </DuoButton>
-        <DuoButton variant="blue" fullWidth onClick={() => router.push('/test')}>
+        <DuoButton variant="blue" fullWidth onClick={() => { setPendingRoute('/test'); setStep('displayName'); }}>
           Take a Mock Test 📝
         </DuoButton>
       </div>

@@ -11,12 +11,17 @@
     "src/app/api/payment/create-order/route.ts":               { "maxDuration": 30  },
     "src/app/api/payment/verify/route.ts":                     { "maxDuration": 30  },
     "src/app/api/payment/webhook/route.ts":                    { "maxDuration": 30  },
-    "src/app/api/auth/register/route.ts":                      { "maxDuration": 30  }
+    "src/app/api/auth/register/route.ts":                      { "maxDuration": 30  },
+    "src/app/api/cron/process-leagues/route.ts":               { "maxDuration": 300 }
   },
   "crons": [
     {
       "path":     "/api/reports/weekly",
       "schedule": "30 4 * * 0"
+    },
+    {
+      "path":     "/api/cron/process-leagues",
+      "schedule": "59 18 * * 0"
     }
   ]
 }

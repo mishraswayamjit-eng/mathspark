@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { addWeeklyXP } from '@/lib/leaderboard';
 
 // POST /api/mock-tests/[testId]/submit
 // Idempotent — re-submitting returns existing results
@@ -65,6 +66,11 @@ export async function POST(
         },
       }),
     ]);
+
+    // Award XP: 15 per correct answer
+    if (correct > 0) {
+      await addWeeklyXP(mockTest.studentId, correct * 15).catch(() => {/* non-critical */});
+    }
 
     return NextResponse.json({ testId });
   } catch (err) {

@@ -161,13 +161,15 @@ export default function ProfilePage() {
   const [studentName,   setStudentName]   = useState('');
 
   // settings
-  const [muted,         setMuted]         = useState(false);
-  const [dailyGoal,     setDailyGoal]     = useState('2');
-  const [notifications, setNotifications] = useState(false);
+  const [muted,               setMuted]               = useState(false);
+  const [dailyGoal,           setDailyGoal]           = useState('2');
+  const [notifications,       setNotifications]       = useState(false);
+  const [hiddenFromLeaderboard, setHiddenFromLeaderboard] = useState(false);
 
   // UI
   const [editingName,   setEditingName]   = useState(false);
   const [newName,       setNewName]       = useState('');
+  const [newDisplayName, setNewDisplayName] = useState('');
   const [shareOpen,       setShareOpen]       = useState(false);
   const [parentEmail,     setParentEmail]     = useState('');
   const [parentWhatsApp,  setParentWhatsApp]  = useState('');
@@ -184,6 +186,7 @@ export default function ProfilePage() {
     const name = localStorage.getItem('mathspark_student_name') ?? '';
     setStudentName(name);
     setNewName(name);
+    setNewDisplayName(localStorage.getItem('mathspark_display_name') ?? name);
     setMuted(localStorage.getItem('mathspark_muted') === 'true');
     setDailyGoal(localStorage.getItem('mathspark_daily_goal') ?? '2');
     setNotifications(localStorage.getItem('mathspark_notifications') === 'true');
@@ -196,12 +199,34 @@ export default function ProfilePage() {
       .catch(() => setLoading(false));
   }, [router]);
 
-  function saveName() {
+  async function saveName() {
     const trimmed = newName.trim();
     if (!trimmed) return;
     localStorage.setItem('mathspark_student_name', trimmed);
     setStudentName(trimmed);
+    // Also save displayName
+    const dnTrimmed = newDisplayName.trim().slice(0, 20);
+    if (dnTrimmed) localStorage.setItem('mathspark_display_name', dnTrimmed);
     setEditingName(false);
+    if (studentId) {
+      await fetch('/api/student', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ studentId, name: trimmed, displayName: dnTrimmed || trimmed }),
+      }).catch(() => {/* non-critical */});
+    }
+  }
+
+  async function toggleHidden() {
+    const next = !hiddenFromLeaderboard;
+    setHiddenFromLeaderboard(next);
+    if (studentId) {
+      await fetch('/api/student', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ studentId, hiddenFromLeaderboard: next }),
+      }).catch(() => {/* non-critical */});
+    }
   }
 
   function toggleMuted() {
@@ -382,16 +407,25 @@ export default function ProfilePage() {
         <div className="fixed inset-0 bg-black/60 z-[70] flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl p-6 w-full max-w-xs shadow-2xl animate-pop-in">
             <h3 className="font-extrabold text-gray-800 text-lg mb-1">Change your name</h3>
-            <p className="text-gray-400 text-sm mb-4">What should Sparky call you?</p>
+            <p className="text-gray-400 text-sm mb-3">What should Sparky call you?</p>
             <input
               type="text"
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && saveName()}
-              className="w-full border-2 border-blue-200 rounded-2xl px-4 py-3 text-base font-bold text-gray-800 outline-none focus:border-[#1CB0F6] mb-4 transition-colors"
+              className="w-full border-2 border-blue-200 rounded-2xl px-4 py-3 text-base font-bold text-gray-800 outline-none focus:border-[#1CB0F6] mb-3 transition-colors"
               placeholder="Your first name"
               autoFocus
               maxLength={30}
+            />
+            <p className="text-xs font-extrabold text-gray-400 uppercase tracking-wide mb-1">Leaderboard name</p>
+            <input
+              type="text"
+              value={newDisplayName}
+              onChange={(e) => setNewDisplayName(e.target.value)}
+              className="w-full border-2 border-gray-200 rounded-2xl px-4 py-3 text-base font-bold text-gray-800 outline-none focus:border-[#1CB0F6] mb-4 transition-colors"
+              placeholder="Max 20 chars"
+              maxLength={20}
             />
             <div className="flex gap-2">
               <DuoButton variant="white" onClick={() => setEditingName(false)}>Cancel</DuoButton>
@@ -717,6 +751,26 @@ export default function ProfilePage() {
             label="Daily reminders"
             sublabel="Practice notifications"
             control={<Toggle on={notifications} onToggle={toggleNotifications} />}
+          />
+          <SettingRow
+            icon="🙈"
+            label="Hide from leaderboard"
+            sublabel={hiddenFromLeaderboard ? 'Your profile is hidden' : 'Others can see your rank'}
+            control={<Toggle on={hiddenFromLeaderboard} onToggle={toggleHidden} />}
+          />
+          <SettingRow
+            icon="💬"
+            label="Sparky Chat"
+            sublabel="Ask Sparky anything!"
+            control={
+              <a
+                href="/chat"
+                className="text-xs font-extrabold text-[#1CB0F6] bg-blue-50 rounded-full px-3 py-1.5 hover:bg-blue-100 transition-colors"
+                style={{ minHeight: 0 }}
+              >
+                → Open
+              </a>
+            }
           />
         </div>
 

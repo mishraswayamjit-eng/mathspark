@@ -4,18 +4,18 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
 const NAV = [
-  { href: '/chapters',  emoji: '🏠', label: 'Home'    },
-  { href: '/practice',  emoji: '📚', label: 'Learn'   },
-  { href: '/test',      emoji: '📝', label: 'Test'    },
-  { href: '/chat',      emoji: '💬', label: 'Chat'    },
-  { href: '/profile',   emoji: '👤', label: 'Profile' },
+  { href: '/chapters',    emoji: '🏠', label: 'Home'    },
+  { href: '/practice',    emoji: '📚', label: 'Learn'   },
+  { href: '/test',        emoji: '📝', label: 'Test'    },
+  { href: '/leaderboard', emoji: '🏆', label: 'League'  },
+  { href: '/profile',     emoji: '👤', label: 'Profile' },
 ];
 
 export default function BottomNav() {
   const pathname = usePathname();
   const router   = useRouter();
 
-  // Hide on landing, auth, parent, student, pricing, onboarding, seed, and test engine pages
+  // Hide on landing, auth, parent, student, pricing, onboarding, seed, test engine pages, and public profiles
   if (
     pathname === '/' ||
     pathname === '/start' ||
@@ -24,6 +24,7 @@ export default function BottomNav() {
     pathname.startsWith('/auth/') ||
     pathname.startsWith('/parent/') ||
     pathname.startsWith('/student/') ||
+    pathname.startsWith('/profile/') ||    // public profiles (e.g. /profile/abc123)
     (pathname.startsWith('/test/') && pathname !== '/test/')
   ) return null;
 

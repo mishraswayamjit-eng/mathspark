@@ -63,6 +63,12 @@ model Student {
   longestStreak           Int           @default(0)
   totalDaysPracticed      Int           @default(0)
   badges                  String        @default("[]") // JSON array of badge IDs
+  // ── League / Social ──
+  displayName             String?
+  avatarColor             String        @default("#3B82F6")
+  currentLeagueTier       Int           @default(1)
+  totalLifetimeXP         Int           @default(0)
+  hiddenFromLeaderboard   Boolean       @default(false)
   // ── Relations ──
   progress                Progress[]
   attempts                Attempt[]
@@ -70,6 +76,8 @@ model Student {
   mockTests               MockTest[]
   usageLogs               UsageLog[]
   orders                  Order[]
+  leagueMemberships       LeagueMembership[]
+  weeklyAwards            WeeklyAward[]
 }
 
 // ── Order (payment record) ─────────────────────────────────────────────────
@@ -108,6 +116,7 @@ model UsageLog {
   minutesUsed        Int      @default(0)
   questionsAttempted Int      @default(0)
   aiChatMessages     Int      @default(0)
+  xpEarned           Int      @default(0)
 
   @@unique([studentId, date])
 }
@@ -256,4 +265,44 @@ model MockTestResponse {
 
   @@index([mockTestId])
   @@index([questionId])
+}
+
+// ── League / Social ────────────────────────────────────────────────────────
+
+model League {
+  id        String             @id @default(cuid())
+  name      String             // "Bronze" | "Silver" | "Gold" | "Diamond" | "Champion"
+  tier      Int                // 1–5
+  weekStart DateTime           // Monday 00:00 IST expressed as UTC
+  weekEnd   DateTime           // Sunday 23:59:59 IST expressed as UTC
+  members   LeagueMembership[]
+
+  @@index([tier, weekStart])
+}
+
+model LeagueMembership {
+  id        String  @id @default(cuid())
+  studentId String
+  student   Student @relation(fields: [studentId], references: [id])
+  leagueId  String
+  league    League  @relation(fields: [leagueId], references: [id])
+  weeklyXP  Int     @default(0)
+  rank      Int?                // null during week; set by cron at week-end
+  promoted  Boolean @default(false)
+  demoted   Boolean @default(false)
+
+  @@unique([studentId, leagueId])
+  @@index([leagueId, weeklyXP])
+}
+
+model WeeklyAward {
+  id        String   @id @default(cuid())
+  studentId String
+  student   Student  @relation(fields: [studentId], references: [id])
+  weekStart DateTime
+  awardType String   // "most_improved" | "speed_demon" | "accuracy_king" | "explorer"
+  value     String   // e.g. "+240 XP jump", "avg 7s", "94% accuracy", "8 topics"
+
+  @@index([weekStart])
+  @@index([studentId])
 }
