@@ -239,9 +239,7 @@ export async function POST(req: Request) {
       } catch (err: unknown) {
         const e = err as { status?: number; message?: string };
         console.error('[chat] Anthropic error:', e.status, e.message, err);
-        // Surface the real error code so it's visible in the UI during development
-        const errDetail = e.status ? ` (Anthropic ${e.status}: ${e.message})` : ` (${String(err)})`;
-        const fallback  = `Sparky had trouble connecting to the AI.${errDetail}`;
+        const fallback  = "I'm having a little trouble thinking right now! 🤔 Could you try again in a moment?";
         controller.enqueue(encoder.encode(fallback));
         await prisma.chatMessage.create({
           data: { sessionId: currentSessionId, role: 'assistant', content: fallback },
