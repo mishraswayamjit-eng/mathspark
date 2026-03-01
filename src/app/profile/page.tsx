@@ -168,11 +168,13 @@ export default function ProfilePage() {
   // UI
   const [editingName,   setEditingName]   = useState(false);
   const [newName,       setNewName]       = useState('');
-  const [shareOpen,     setShareOpen]     = useState(false);
-  const [parentEmail,   setParentEmail]   = useState('');
-  const [sending,       setSending]       = useState(false);
-  const [toast,         setToast]         = useState<{ msg: string; ok: boolean } | null>(null);
-  const [studentId,     setStudentId]     = useState('');
+  const [shareOpen,       setShareOpen]       = useState(false);
+  const [parentEmail,     setParentEmail]     = useState('');
+  const [parentWhatsApp,  setParentWhatsApp]  = useState('');
+  const [savingContact,   setSavingContact]   = useState(false);
+  const [sending,         setSending]         = useState(false);
+  const [toast,           setToast]           = useState<{ msg: string; ok: boolean } | null>(null);
+  const [studentId,       setStudentId]       = useState('');
 
   useEffect(() => {
     const id = localStorage.getItem('mathspark_student_id');
@@ -186,6 +188,7 @@ export default function ProfilePage() {
     setDailyGoal(localStorage.getItem('mathspark_daily_goal') ?? '2');
     setNotifications(localStorage.getItem('mathspark_notifications') === 'true');
     setParentEmail(localStorage.getItem('mathspark_parent_email') ?? '');
+    setParentWhatsApp(localStorage.getItem('mathspark_parent_whatsapp') ?? '');
 
     fetch(`/api/profile?studentId=${id}`)
       .then((r) => r.json())
@@ -240,6 +243,26 @@ export default function ProfilePage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ studentId, parentEmail: trimmed }),
       });
+    }
+  }
+
+  async function saveParentContact() {
+    setSavingContact(true);
+    const emailTrimmed = parentEmail.trim();
+    const waTrimmed    = parentWhatsApp.trim();
+    localStorage.setItem('mathspark_parent_email',    emailTrimmed);
+    localStorage.setItem('mathspark_parent_whatsapp', waTrimmed);
+    try {
+      await fetch('/api/student', {
+        method:  'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ studentId, parentEmail: emailTrimmed, parentWhatsApp: waTrimmed }),
+      });
+      showToast('Contact saved! ✓', true);
+    } catch {
+      showToast('Could not save. Please try again.', false);
+    } finally {
+      setSavingContact(false);
     }
   }
 
@@ -656,20 +679,39 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          <SettingRow
-            icon="👨‍👩‍👧"
-            label="Parent's email"
-            sublabel={parentEmail || 'Not set — tap to add'}
-            control={
-              <button
-                onClick={() => setShareOpen(true)}
+          {/* Parent contact section */}
+          <div className="py-4 border-b border-gray-100">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-xl">👨‍👩‍👧</span>
+              <p className="font-bold text-gray-700 text-sm">Parent contact</p>
+            </div>
+            <div className="space-y-2 ml-9">
+              <input
+                type="email"
+                value={parentEmail}
+                onChange={(e) => setParentEmail(e.target.value)}
+                placeholder="parent@email.com"
+                className="w-full border-2 border-gray-200 rounded-xl px-3 py-2 text-sm font-medium text-gray-800 outline-none focus:border-[#1CB0F6] transition-colors"
                 style={{ minHeight: 0 }}
-                className="text-xs font-bold text-[#1CB0F6] bg-blue-50 px-3 py-1.5 rounded-full"
+              />
+              <input
+                type="tel"
+                value={parentWhatsApp}
+                onChange={(e) => setParentWhatsApp(e.target.value)}
+                placeholder="+91 98XXX XXXXX (WhatsApp)"
+                className="w-full border-2 border-gray-200 rounded-xl px-3 py-2 text-sm font-medium text-gray-800 outline-none focus:border-[#25D366] transition-colors"
+                style={{ minHeight: 0 }}
+              />
+              <button
+                onClick={saveParentContact}
+                disabled={savingContact}
+                style={{ minHeight: 0 }}
+                className="px-4 py-2 rounded-xl bg-[#58CC02] text-white text-xs font-extrabold disabled:opacity-60"
               >
-                {parentEmail ? 'Change' : 'Set up'}
+                {savingContact ? 'Saving…' : 'Save contact ✓'}
               </button>
-            }
-          />
+            </div>
+          </div>
           <SettingRow
             icon="🔔"
             label="Daily reminders"

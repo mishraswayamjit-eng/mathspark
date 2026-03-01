@@ -5,6 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import Confetti from '@/components/Confetti';
 import DuoButton from '@/components/DuoButton';
 import KatexRenderer from '@/components/KatexRenderer';
+import ShareSheet from '@/components/ShareSheet';
 import type { MockTestDetail, MockTestResponse, TopicResult, Recommendation } from '@/types';
 
 // ── Topic metadata ────────────────────────────────────────────────────────────
@@ -204,8 +205,17 @@ export default function TestResultsPage() {
   const [loading,       setLoading]      = useState(true);
   const [showConfetti,  setShowConfetti] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('topics');
+  const [showShare,     setShowShare]    = useState(false);
+  const [shareInfo,     setShareInfo]    = useState({ studentId: '', studentName: '', parentEmail: '', parentWhatsApp: '' });
 
   useEffect(() => {
+    setShareInfo({
+      studentId:      localStorage.getItem('mathspark_student_id')      ?? '',
+      studentName:    localStorage.getItem('mathspark_student_name')    ?? '',
+      parentEmail:    localStorage.getItem('mathspark_parent_email')    ?? '',
+      parentWhatsApp: localStorage.getItem('mathspark_parent_whatsapp') ?? '',
+    });
+
     async function load() {
       try {
         const res = await fetch(`/api/mock-tests/${testId}`);
@@ -269,6 +279,27 @@ export default function TestResultsPage() {
     <div className="min-h-screen bg-white pb-8">
       {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
 
+      {/* ── Share sheet ───────────────────────────────────────────────────── */}
+      {showShare && shareInfo.studentId && (
+        <ShareSheet
+          card={{ type: 'mocktest', data: {
+            studentName: shareInfo.studentName || 'Student',
+            score,
+            totalQ: total,
+            pct,
+            gradeLabel: grade.label,
+            strongTopic: topicResults.length > 0 ? topicResults[topicResults.length - 1].topicName : 'Mixed',
+            weakTopic:   topicResults.length > 0 ? topicResults[0].topicName : 'Mixed',
+            timeUsedMs:  timeUsedMs ?? 0,
+            timeLimitMs: test.timeLimitMs,
+          }}}
+          studentId={shareInfo.studentId}
+          parentEmail={shareInfo.parentEmail || undefined}
+          parentWhatsApp={shareInfo.parentWhatsApp || undefined}
+          onClose={() => setShowShare(false)}
+        />
+      )}
+
       {/* ── Score header ─────────────────────────────────────────────────── */}
       <div className="bg-gradient-to-b from-[#131F24] to-[#1a3040] px-4 pt-8 pb-6 text-center">
         <ScoreRing pct={pct} score={score} total={total} />
@@ -277,10 +308,17 @@ export default function TestResultsPage() {
           {pct}% accuracy
           {timeUsedMs != null && ` · ${formatTime(timeUsedMs)} used`}
         </p>
-        <div className="mt-2">
+        <div className="mt-2 flex items-center justify-center gap-2">
           <span className="inline-block bg-white/10 text-white/80 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wide">
             {test.type === 'quick' ? 'Quick Test' : test.type === 'half' ? 'Half Paper' : 'Full IPM Paper'}
           </span>
+          <button
+            onClick={() => setShowShare(true)}
+            style={{ minHeight: 0 }}
+            className="bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold px-3 py-1 rounded-full transition-colors"
+          >
+            📤 Share
+          </button>
         </div>
       </div>
 

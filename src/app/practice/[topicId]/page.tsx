@@ -15,6 +15,7 @@ import { useSounds } from '@/hooks/useSounds';
 import type { Question, AnswerKey } from '@/types';
 import { saveSessionData } from '@/lib/nudges';
 import { formatMinutes, isUnlimitedPlan } from '@/lib/usageLimits';
+import ShareSheet from '@/components/ShareSheet';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -50,6 +51,13 @@ interface QuestionResult {
 }
 
 // ── Card accent colors (visual variety per question slot) ─────────────────────
+
+const TOPIC_EMOJI: Record<string, string> = {
+  'ch01-05': '🔢', 'ch06': '🔑', 'ch07-08': '🍕', 'ch09-10': '➗',
+  'ch11': '📊', 'ch12': '📏', 'ch13': '🔤', 'ch14': '⚖️',
+  'ch15': '🧩', 'ch16': '🔢', 'ch17': '🕐', 'ch18': '📐',
+  'ch19': '🔺', 'ch20': '⬜', 'ch21': '⭕', 'dh': '📈',
+};
 
 const CARD_ACCENTS = [
   'bg-blue-50 text-blue-700 border-blue-200',
@@ -212,6 +220,7 @@ function LessonCompleteScreen({
   hasReviewMistakes,
   onContinue,
   onReviewMistakes,
+  shareData,
 }: {
   mainResults:       QuestionResult[];
   reviewResults:     QuestionResult[];
@@ -219,6 +228,14 @@ function LessonCompleteScreen({
   hasReviewMistakes: boolean;
   onContinue:        () => void;
   onReviewMistakes:  () => void;
+  shareData?: {
+    studentId:    string;
+    studentName:  string;
+    topicName:    string;
+    topicEmoji:   string;
+    parentEmail:  string;
+    parentWhatsApp: string;
+  };
 }) {
   const allResults  = [...mainResults, ...reviewResults];
   const correct     = allResults.filter((r) => r.wasCorrect).length;
@@ -246,9 +263,27 @@ function LessonCompleteScreen({
   const dash = circ * (pct / 100);
 
   const wrongOnes = allResults.filter((r) => !r.wasCorrect);
+  const [showShare, setShowShare] = useState(false);
 
   return (
     <div className="flex flex-col items-center px-6 py-8 gap-6 bg-white min-h-screen pb-24">
+      {showShare && shareData && (
+        <ShareSheet
+          card={{ type: 'lesson', data: {
+            studentName: shareData.studentName,
+            topicName:   shareData.topicName,
+            topicEmoji:  shareData.topicEmoji,
+            correct,
+            total,
+            xp:          totalXp,
+            date:        new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
+          }}}
+          studentId={shareData.studentId}
+          parentEmail={shareData.parentEmail || undefined}
+          parentWhatsApp={shareData.parentWhatsApp || undefined}
+          onClose={() => setShowShare(false)}
+        />
+      )}
       <Confetti />
 
       {/* Sparky celebrating */}
@@ -316,6 +351,14 @@ function LessonCompleteScreen({
           <DuoButton variant="blue" fullWidth onClick={onReviewMistakes}>
             Review mistakes 📚
           </DuoButton>
+        )}
+        {shareData && (
+          <button
+            onClick={() => setShowShare(true)}
+            className="w-full min-h-[48px] rounded-full border-2 border-gray-200 font-extrabold text-gray-500 text-sm hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+          >
+            📤 Share with Parents
+          </button>
         )}
       </div>
     </div>
@@ -406,6 +449,7 @@ export default function PracticePage() {
   // ── Core state ─────────────────────────────────────────────────────────────
   const [studentId,   setStudentId]   = useState<string | null>(null);
   const [topicName,   setTopicName]   = useState('');
+  const [shareInfo,   setShareInfo]   = useState({ studentName: '', parentEmail: '', parentWhatsApp: '' });
   const [questions,   setQuestions]   = useState<Question[]>([]);
   const [phase,       setPhase]       = useState<Phase>('loading');
 
@@ -692,6 +736,11 @@ export default function PracticePage() {
     if (!sid) { router.replace('/start'); return; }
     setStudentId(sid);
     studentIdRef.current = sid;
+    setShareInfo({
+      studentName:    localStorage.getItem('mathspark_student_name')    ?? '',
+      parentEmail:    localStorage.getItem('mathspark_parent_email')    ?? '',
+      parentWhatsApp: localStorage.getItem('mathspark_parent_whatsapp') ?? '',
+    });
 
     Promise.all([
       // Gate check — fails open (allowed: true) so API errors never block students
@@ -1112,6 +1161,14 @@ export default function PracticePage() {
         totalXp={xp}
         hasReviewMistakes={hasReviewMistakes}
         onContinue={() => router.push('/chapters')}
+        shareData={studentId ? {
+          studentId,
+          studentName:    shareInfo.studentName,
+          topicName,
+          topicEmoji:     TOPIC_EMOJI[topicId] ?? '📚',
+          parentEmail:    shareInfo.parentEmail,
+          parentWhatsApp: shareInfo.parentWhatsApp,
+        } : undefined}
         onReviewMistakes={() => {
           // Restart lesson in review-only mode with wrong ones
           const wrongs = [...results, ...reviewResults].filter((r) => !r.wasCorrect);
