@@ -14,15 +14,22 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
 
-        const parent = await prisma.parent.findUnique({
-          where: { email: credentials.email.toLowerCase().trim() },
-        });
-        if (!parent) return null;
+        try {
+          const parent = await prisma.parent.findUnique({
+            where: { email: credentials.email.toLowerCase().trim() },
+          });
+          if (!parent) return null;
 
-        const valid = await bcrypt.compare(credentials.password, parent.passwordHash);
-        if (!valid) return null;
+          const valid = await bcrypt.compare(credentials.password, parent.passwordHash);
+          if (!valid) return null;
 
-        return { id: parent.id, email: parent.email, name: parent.name };
+          return { id: parent.id, email: parent.email, name: parent.name };
+        } catch (err) {
+          console.error('[authorize] DB error:', err);
+          // Re-throw so NextAuth surfaces a Configuration error rather than
+          // silently returning "Incorrect email or password"
+          throw err;
+        }
       },
     }),
   ],
