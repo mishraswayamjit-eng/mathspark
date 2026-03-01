@@ -9,8 +9,8 @@ import Confetti from '@/components/Confetti';
 import DuoButton from '@/components/DuoButton';
 import type { Question, AnswerKey, DiagnosticAnswer } from '@/types';
 
-// ── Diagnostic plan — 9 topics, 15 questions total ───────────────────────────
-const PLAN = [
+// ── Diagnostic plan — 9 topics, 15 questions total (Grade 4) ─────────────────
+const GRADE4_PLAN = [
   { topicId: 'ch11',    count: 2 },
   { topicId: 'ch09-10', count: 2 },
   { topicId: 'ch07-08', count: 2 },
@@ -21,7 +21,7 @@ const PLAN = [
   { topicId: 'ch13',    count: 1 },
   { topicId: 'ch19',    count: 1 },
 ];
-const TOTAL = PLAN.reduce((s, p) => s + p.count, 0); // 15
+const TOTAL = 15; // always 15 diagnostic questions
 
 const TOPIC_NAMES: Record<string, string> = {
   'ch01-05': 'Number System',
@@ -33,9 +33,21 @@ const TOPIC_NAMES: Record<string, string> = {
   'ch18':    'Angles',
   'ch19':    'Triangles',
   'ch20':    'Quadrilaterals',
+  'grade2':  'Grade 2 IPM',
+  'grade3':  'Grade 3 IPM',
+  'grade4':  'Grade 4 IPM',
+  'grade5':  'Grade 5 IPM',
+  'grade6':  'Grade 6 IPM',
+  'grade7':  'Grade 7 IPM',
+  'grade8':  'Grade 8 IPM',
+  'grade9':  'Grade 9 IPM',
 };
 
-type Step = 'welcome' | 'name' | 'quiz' | 'results' | 'displayName';
+const GRADE_EMOJI: Record<number, string> = {
+  2: '🌱', 3: '🌿', 4: '🌳', 5: '🍀', 6: '⭐', 7: '🌟', 8: '🏆', 9: '🎯',
+};
+
+type Step = 'welcome' | 'name' | 'gradeSelect' | 'quiz' | 'results' | 'displayName';
 type Diff  = 'Easy' | 'Medium' | 'Hard';
 
 function nextDiff(d: Diff, up: boolean): Diff {
@@ -76,6 +88,10 @@ export default function StartPage() {
   const [displayName,  setDisplayName] = useState('');
   const [avatarColor,  setAvatarColor] = useState('#3B82F6');
   const [dnError,      setDnError]     = useState('');
+  const [selectedGrade, setSelectedGrade] = useState<number | null>(null);
+
+  // Active diagnostic plan (set after grade selection)
+  const [activePlan, setActivePlan]   = useState(GRADE4_PLAN);
 
   // Quiz state
   const [question,     setQuestion]     = useState<Question | null>(null);
@@ -115,7 +131,7 @@ export default function StartPage() {
     }
   }, []);
 
-  // ── Create student + start quiz ───────────────────────────────────────────
+  // ── Create student → go to grade selection ────────────────────────────────
   async function handleStart() {
     if (!name.trim()) return;
     setLoading(true);
@@ -132,10 +148,37 @@ export default function StartPage() {
       setStudentId(student.id);
       setDisplayName(name.trim().slice(0, 20));
       setAvatarColor(student.avatarColor ?? '#3B82F6');
-      setStep('quiz');
-      await fetchQuestion(PLAN[0].topicId, 'Medium', []);
+      setStep('gradeSelect');
     } catch {
       setError('Something went wrong. Please try again!');
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // ── Confirm grade + start diagnostic quiz ─────────────────────────────────
+  async function handleGradeConfirm() {
+    if (!selectedGrade || !studentId) return;
+    setLoading(true);
+    try {
+      // Save grade to server
+      await fetch('/api/student', {
+        method: 'PATCH',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ studentId, grade: selectedGrade }),
+      }).catch(() => {/* non-critical */});
+
+      // Save to localStorage
+      localStorage.setItem('mathspark_student_grade', String(selectedGrade));
+
+      // Build diagnostic plan based on grade
+      const plan = selectedGrade === 4
+        ? GRADE4_PLAN
+        : [{ topicId: `grade${selectedGrade}`, count: TOTAL }];
+      setActivePlan(plan);
+
+      setStep('quiz');
+      await fetchQuestion(plan[0].topicId, 'Medium', []);
     } finally {
       setLoading(false);
     }
@@ -149,7 +192,7 @@ export default function StartPage() {
 
     const newAnswers: DiagnosticAnswer[] = [
       ...answers,
-      { topicId: PLAN[planIdx].topicId, questionId: question.id, isCorrect },
+      { topicId: activePlan[planIdx].topicId, questionId: question.id, isCorrect },
     ];
     setAnswers(newAnswers);
 
@@ -176,7 +219,7 @@ export default function StartPage() {
     const newCount = countInTopic + 1;
     const newSeen  = [...seenIds, question!.id];
 
-    if (currentAnswers.length >= TOTAL || planIdx >= PLAN.length) {
+    if (currentAnswers.length >= TOTAL || planIdx >= activePlan.length) {
       setShowConfetti(true);
       setStep('results');
       return;
@@ -185,10 +228,10 @@ export default function StartPage() {
     let nextPlanIdx = planIdx;
     let nextCount   = newCount;
 
-    if (newCount >= PLAN[planIdx].count) {
+    if (newCount >= activePlan[planIdx].count) {
       nextPlanIdx = planIdx + 1;
       nextCount   = 0;
-      if (nextPlanIdx >= PLAN.length) {
+      if (nextPlanIdx >= activePlan.length) {
         setShowConfetti(true);
         setStep('results');
         return;
@@ -199,15 +242,15 @@ export default function StartPage() {
     setCountInTopic(nextCount);
     setDifficulty(newDiff);
     setSeenIds(newSeen);
-    await fetchQuestion(PLAN[nextPlanIdx].topicId, newDiff, newSeen);
+    await fetchQuestion(activePlan[nextPlanIdx].topicId, newDiff, newSeen);
   }
 
-  // ── Compute results for ALL 9 topics ─────────────────────────────────────
+  // ── Compute results for all diagnostic topics ────────────────────────────
   // Strong   = all answered correctly (1/1 or 2/2)
   // Learning = at least one correct but not all (1/2)
   // NotYet   = 0 correct OR not tested
   function computeResults() {
-    return PLAN.map(({ topicId }) => {
+    return activePlan.map(({ topicId }) => {
       const topicAnswers = answers.filter((a) => a.topicId === topicId);
       const correct = topicAnswers.filter((a) => a.isCorrect).length;
       const total   = topicAnswers.length;
@@ -289,7 +332,53 @@ export default function StartPage() {
     );
   }
 
-  // ── Screen 3: Diagnostic Quiz ─────────────────────────────────────────────
+  // ── Screen 3: Grade Selection ─────────────────────────────────────────────
+  if (step === 'gradeSelect') {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-[#131F24]">
+        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5">
+          <div className="text-center space-y-1">
+            <div className="text-5xl">🎓</div>
+            <h2 className="text-2xl font-extrabold text-gray-800">What grade are you in?</h2>
+            <p className="text-gray-400 text-sm font-medium">
+              We&apos;ll pick the right questions for you!
+            </p>
+          </div>
+
+          {/* 4×2 grade grid */}
+          <div className="grid grid-cols-4 gap-2">
+            {[2, 3, 4, 5, 6, 7, 8, 9].map((g) => (
+              <button
+                key={g}
+                onClick={() => setSelectedGrade(g)}
+                style={{ minHeight: 0 }}
+                className={`flex flex-col items-center justify-center rounded-2xl py-3 px-2 border-2 transition-all active:scale-95 ${
+                  selectedGrade === g
+                    ? 'bg-[#1CB0F6] border-[#0a98dc] text-white shadow-md scale-105'
+                    : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-[#1CB0F6]'
+                }`}
+              >
+                <span className="text-xl leading-none">{GRADE_EMOJI[g]}</span>
+                <span className="text-xs font-extrabold mt-1">Gr {g}</span>
+              </button>
+            ))}
+          </div>
+
+          <DuoButton
+            variant="green"
+            fullWidth
+            onClick={handleGradeConfirm}
+            loading={loading}
+            disabled={!selectedGrade}
+          >
+            Let&apos;s go! 🚀
+          </DuoButton>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Screen 4: Diagnostic Quiz ─────────────────────────────────────────────
   if (step === 'quiz') {
     const qNum = answers.length + 1;
     const pct  = (answers.length / TOTAL) * 100;

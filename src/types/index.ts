@@ -14,6 +14,7 @@ export interface Topic {
   id: string;
   name: string;
   chapterNumber: string;
+  grade: number;
 }
 
 export interface StepItem {
@@ -98,6 +99,7 @@ export interface DashboardData {
   weakestTopicId:   string | null;
   weakestTopicName: string | null;
   recentActivity:   RecentSession[];
+  subscriptionTier: number; // 0=free, 1=Starter, 2=Advanced, 3=Unlimited
 }
 
 // ── Profile types ─────────────────────────────────────────────────────────────

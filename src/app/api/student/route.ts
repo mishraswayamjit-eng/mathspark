@@ -12,8 +12,9 @@ export async function PATCH(req: Request) {
     displayName?: string;
     avatarColor?: string;
     hiddenFromLeaderboard?: boolean;
+    grade?: number;
   };
-  const { studentId, parentEmail, parentWhatsApp, name, displayName, avatarColor, hiddenFromLeaderboard } = body;
+  const { studentId, parentEmail, parentWhatsApp, name, displayName, avatarColor, hiddenFromLeaderboard, grade } = body;
 
   if (!studentId) {
     return NextResponse.json({ error: 'studentId required' }, { status: 400 });
@@ -25,6 +26,7 @@ export async function PATCH(req: Request) {
   if (typeof name           !== 'undefined' && name.trim()) data.name = name.trim();
   if (typeof avatarColor    !== 'undefined') data.avatarColor = avatarColor;
   if (typeof hiddenFromLeaderboard !== 'undefined') data.hiddenFromLeaderboard = hiddenFromLeaderboard;
+  if (typeof grade !== 'undefined' && grade >= 2 && grade <= 9) data.grade = grade;
 
   if (typeof displayName !== 'undefined') {
     const trimmed = displayName.trim().slice(0, 20);

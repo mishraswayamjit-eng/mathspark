@@ -7,7 +7,15 @@ const prisma = new PrismaClient();
 // ---------------------------------------------------------------------------
 // Topic definitions — matches CLAUDE.md exactly
 // ---------------------------------------------------------------------------
+
+/** Derive grade from topicId: gradeN → N; ch-series / dh → 4 */
+function getTopicGrade(topicId: string): number {
+  const m = topicId.match(/^grade(\d)$/);
+  return m ? parseInt(m[1], 10) : 4;
+}
+
 const TOPIC_MAP: Record<string, { id: string; name: string; chapterNumber: string }> = {
+  // Grade 4 curriculum chapters
   'ch01-05': { id: 'ch01-05', name: 'Number System & Place Value',    chapterNumber: '1-5'  },
   'ch06':    { id: 'ch06',    name: 'Factors & Multiples',             chapterNumber: '6'    },
   'ch07-08': { id: 'ch07-08', name: 'Fractions',                       chapterNumber: '7-8'  },
@@ -24,6 +32,15 @@ const TOPIC_MAP: Record<string, { id: string; name: string; chapterNumber: strin
   'ch20':    { id: 'ch20',    name: 'Quadrilaterals',                  chapterNumber: '20'   },
   'ch21':    { id: 'ch21',    name: 'Circle',                          chapterNumber: '21'   },
   'dh':      { id: 'dh',      name: 'Data Handling & Graphs',          chapterNumber: 'DH'   },
+  // IPM past-paper pools (Grades 2–9)
+  'grade2':  { id: 'grade2',  name: 'Grade 2 — IPM Practice',         chapterNumber: 'G2'   },
+  'grade3':  { id: 'grade3',  name: 'Grade 3 — IPM Practice',         chapterNumber: 'G3'   },
+  'grade4':  { id: 'grade4',  name: 'Grade 4 — IPM Past Papers',      chapterNumber: 'G4'   },
+  'grade5':  { id: 'grade5',  name: 'Grade 5 — IPM Practice',         chapterNumber: 'G5'   },
+  'grade6':  { id: 'grade6',  name: 'Grade 6 — IPM Practice',         chapterNumber: 'G6'   },
+  'grade7':  { id: 'grade7',  name: 'Grade 7 — IPM Practice',         chapterNumber: 'G7'   },
+  'grade8':  { id: 'grade8',  name: 'Grade 8 — IPM Practice',         chapterNumber: 'G8'   },
+  'grade9':  { id: 'grade9',  name: 'Grade 9 — IPM Practice',         chapterNumber: 'G9'   },
 };
 
 // ---------------------------------------------------------------------------
@@ -83,12 +100,13 @@ async function main() {
   const questions = data.questions;
   console.log(`\n🌱 Starting MathSpark seed — ${questions.length} questions\n`);
 
-  // ── 1. Upsert topics (16 total, fast) ─────────────────────────────────────
+  // ── 1. Upsert topics (16 ch-series + 8 grade-pool = 24 total) ─────────────
   for (const topic of Object.values(TOPIC_MAP)) {
+    const grade = getTopicGrade(topic.id);
     await prisma.topic.upsert({
       where:  { id: topic.id },
-      update: { name: topic.name, chapterNumber: topic.chapterNumber },
-      create: topic,
+      update: { name: topic.name, chapterNumber: topic.chapterNumber, grade },
+      create: { ...topic, grade },
     });
   }
   console.log(`✓ ${Object.keys(TOPIC_MAP).length} topics seeded`);

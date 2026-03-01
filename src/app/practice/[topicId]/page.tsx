@@ -16,6 +16,7 @@ import type { Question, AnswerKey } from '@/types';
 import { saveSessionData } from '@/lib/nudges';
 import { formatMinutes, isUnlimitedPlan } from '@/lib/usageLimits';
 import ShareSheet from '@/components/ShareSheet';
+import { isGradeAccessible, getTopicGrade } from '@/lib/gradeAccess';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -220,6 +221,12 @@ function NoHeartsScreen({
   );
 }
 
+interface GradeUpCta {
+  grade:   number;
+  type:    'full' | 'sample' | 'locked';
+  onPress: () => void;
+}
+
 function LessonCompleteScreen({
   mainResults,
   reviewResults,
@@ -228,6 +235,7 @@ function LessonCompleteScreen({
   onContinue,
   onReviewMistakes,
   shareData,
+  gradeUpCta,
 }: {
   mainResults:       QuestionResult[];
   reviewResults:     QuestionResult[];
@@ -235,6 +243,7 @@ function LessonCompleteScreen({
   hasReviewMistakes: boolean;
   onContinue:        () => void;
   onReviewMistakes:  () => void;
+  gradeUpCta?:       GradeUpCta;
   shareData?: {
     studentId:    string;
     studentName:  string;
@@ -351,6 +360,26 @@ function LessonCompleteScreen({
       )}
 
       <div className="w-full space-y-3">
+        {/* Grade level-up CTA — shown first when pct >= 80 */}
+        {gradeUpCta && (
+          gradeUpCta.type === 'full' ? (
+            <DuoButton variant="blue" fullWidth onClick={gradeUpCta.onPress}>
+              Level Up to Grade {gradeUpCta.grade}! 🚀
+            </DuoButton>
+          ) : gradeUpCta.type === 'sample' ? (
+            <DuoButton variant="blue" fullWidth onClick={gradeUpCta.onPress}>
+              Try Grade {gradeUpCta.grade} — 5 Free Questions 🔓
+            </DuoButton>
+          ) : (
+            <button
+              onClick={gradeUpCta.onPress}
+              className="w-full min-h-[48px] rounded-full border-2 border-amber-200 font-extrabold text-amber-600 text-sm hover:bg-amber-50 transition-colors"
+            >
+              Upgrade to unlock Grade {gradeUpCta.grade} 🔒
+            </button>
+          )
+        )}
+
         <DuoButton variant="green" fullWidth onClick={onContinue}>
           Continue to chapters 🎯
         </DuoButton>
@@ -529,6 +558,8 @@ export default function PracticePage() {
   const searchParams  = useSearchParams();
   const topicId       = params.topicId as string;
   const isSpeedMode   = searchParams.get('mode') === 'speed';
+  const isSampleMode  = searchParams.get('sample') === 'true';
+  const SAMPLE_LIMIT  = 5;
   const { playCorrect, playWrong, playStreak, muted, toggleMute } = useSounds();
 
   // ── Core state ─────────────────────────────────────────────────────────────
@@ -887,6 +918,12 @@ export default function PracticePage() {
     // BUG 2 FIX: Prevent double-advance from two "Got it!" buttons, timer+tap, etc.
     if (isAdvancingRef.current) return;
     isAdvancingRef.current = true;
+
+    // Sample mode gate: max 5 questions
+    if (isSampleMode && sessionQuestionsAnsweredRef.current >= SAMPLE_LIMIT) {
+      setPhase('trial_limit');
+      return;
+    }
 
     // Trial gate: if student has used 10+ questions total, show trial_limit
     const ts = trialStatusRef.current;
@@ -1278,12 +1315,41 @@ export default function PracticePage() {
 
   if (phase === 'complete') {
     const hasReviewMistakes = reviewResults.some((r) => !r.wasCorrect);
+
+    // Compute grade progression CTA
+    const allR         = [...results, ...reviewResults];
+    const correctCount = allR.filter((r) => r.wasCorrect).length;
+    const pctScore     = allR.length > 0 ? Math.round((correctCount / allR.length) * 100) : 100;
+    const topicGrade   = getTopicGrade(topicId);
+    const studentGrade = parseInt(
+      typeof window !== 'undefined' ? (localStorage.getItem('mathspark_student_grade') ?? '4') : '4',
+      10,
+    );
+    const subTier = parseInt(
+      typeof window !== 'undefined' ? (localStorage.getItem('mathspark_subscription_tier') ?? '0') : '0',
+      10,
+    );
+
+    let gradeUpCta: GradeUpCta | undefined;
+    if (pctScore >= 80 && topicGrade < 9) {
+      const nextGrade = topicGrade + 1;
+      const access    = isGradeAccessible(nextGrade, studentGrade, subTier);
+      if (access.full) {
+        gradeUpCta = { grade: nextGrade, type: 'full', onPress: () => router.push(`/practice/grade${nextGrade}`) };
+      } else if (access.sample) {
+        gradeUpCta = { grade: nextGrade, type: 'sample', onPress: () => router.push(`/practice/grade${nextGrade}?sample=true`) };
+      } else {
+        gradeUpCta = { grade: nextGrade, type: 'locked', onPress: () => router.push('/pricing') };
+      }
+    }
+
     return (
       <LessonCompleteScreen
         mainResults={results}
         reviewResults={reviewResults}
         totalXp={xp}
         hasReviewMistakes={hasReviewMistakes}
+        gradeUpCta={gradeUpCta}
         onContinue={() => router.push('/chapters')}
         shareData={studentId ? {
           studentId,

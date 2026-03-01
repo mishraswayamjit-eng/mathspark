@@ -84,7 +84,10 @@ export async function GET(req: Request) {
   }
 
   const [student, progress, attempts, allTopics] = await Promise.all([
-    prisma.student.findUnique({ where: { id: studentId } }),
+    prisma.student.findUnique({
+      where:   { id: studentId },
+      include: { subscription: { select: { tier: true } } },
+    }),
     prisma.progress.findMany({ where: { studentId }, include: { topic: true } }),
     prisma.attempt.findMany({
       where: { studentId },
@@ -130,9 +133,10 @@ export async function GET(req: Request) {
       streakDays:     computeStreak(attempts),
     },
     topics,
-    weeklyData:      computeWeeklyData(attempts),
-    weakestTopicId:  weakest?.id ?? topics[0]?.id ?? null,
+    weeklyData:       computeWeeklyData(attempts),
+    weakestTopicId:   weakest?.id ?? topics[0]?.id ?? null,
     weakestTopicName: weakest?.name ?? null,
-    recentActivity:  computeRecentActivity(attempts, topicMap),
+    recentActivity:   computeRecentActivity(attempts, topicMap),
+    subscriptionTier: (student as { subscription?: { tier: number } | null }).subscription?.tier ?? 0,
   });
 }

@@ -8,7 +8,15 @@ export const dynamic = 'force-dynamic';
 // ---------------------------------------------------------------------------
 // Topic definitions (mirrors prisma/seed.ts)
 // ---------------------------------------------------------------------------
+
+/** Derive grade from topicId: gradeN → N; ch-series / dh → 4 */
+function getTopicGrade(topicId: string): number {
+  const m = topicId.match(/^grade(\d)$/);
+  return m ? parseInt(m[1], 10) : 4;
+}
+
 const TOPICS = [
+  // Grade 4 curriculum chapters
   { id: 'ch01-05', name: 'Number System & Place Value',    chapterNumber: '1-5'  },
   { id: 'ch06',    name: 'Factors & Multiples',             chapterNumber: '6'    },
   { id: 'ch07-08', name: 'Fractions',                       chapterNumber: '7-8'  },
@@ -25,6 +33,15 @@ const TOPICS = [
   { id: 'ch20',    name: 'Quadrilaterals',                  chapterNumber: '20'   },
   { id: 'ch21',    name: 'Circle',                          chapterNumber: '21'   },
   { id: 'dh',      name: 'Data Handling & Graphs',          chapterNumber: 'DH'   },
+  // IPM past-paper pools (Grades 2–9)
+  { id: 'grade2',  name: 'Grade 2 — IPM Practice',         chapterNumber: 'G2'   },
+  { id: 'grade3',  name: 'Grade 3 — IPM Practice',         chapterNumber: 'G3'   },
+  { id: 'grade4',  name: 'Grade 4 — IPM Past Papers',      chapterNumber: 'G4'   },
+  { id: 'grade5',  name: 'Grade 5 — IPM Practice',         chapterNumber: 'G5'   },
+  { id: 'grade6',  name: 'Grade 6 — IPM Practice',         chapterNumber: 'G6'   },
+  { id: 'grade7',  name: 'Grade 7 — IPM Practice',         chapterNumber: 'G7'   },
+  { id: 'grade8',  name: 'Grade 8 — IPM Practice',         chapterNumber: 'G8'   },
+  { id: 'grade9',  name: 'Grade 9 — IPM Practice',         chapterNumber: 'G9'   },
 ];
 
 function getTopicId(questionId: string): string {
@@ -79,12 +96,17 @@ export async function GET(req: Request) {
     }>;
   };
 
-  // ── Page 0: upsert all 16 topics + 7 subscription plans ─────────────────
+  // ── Page 0: upsert all 24 topics + 7 subscription plans ─────────────────
   if (page === 0) {
     await Promise.all(
-      TOPICS.map((t) =>
-        prisma.topic.upsert({ where: { id: t.id }, update: t, create: t }),
-      ),
+      TOPICS.map((t) => {
+        const grade = getTopicGrade(t.id);
+        return prisma.topic.upsert({
+          where:  { id: t.id },
+          update: { ...t, grade },
+          create: { ...t, grade },
+        });
+      }),
     );
 
     const PLANS = [

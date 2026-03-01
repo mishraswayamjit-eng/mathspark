@@ -127,6 +127,7 @@ model Topic {
   id            String     @id
   name          String
   chapterNumber String
+  grade         Int        @default(4)   // 2-9; ch-series and dh = 4
   questions     Question[]
   progress      Progress[]
 }
@@ -273,11 +274,12 @@ model League {
   id        String             @id @default(cuid())
   name      String             // "Bronze" | "Silver" | "Gold" | "Diamond" | "Champion"
   tier      Int                // 1–5
+  grade     Int                @default(4)  // students compete within same grade
   weekStart DateTime           // Monday 00:00 IST expressed as UTC
   weekEnd   DateTime           // Sunday 23:59:59 IST expressed as UTC
   members   LeagueMembership[]
 
-  @@index([tier, weekStart])
+  @@index([tier, grade, weekStart])
 }
 
 model LeagueMembership {

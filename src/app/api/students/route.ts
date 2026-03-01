@@ -7,9 +7,9 @@ const AVATAR_COLORS = [
   '#3B82F6', '#10B981', '#F59E0B', '#EF4444',
 ];
 
-// POST /api/students   body: { name: string }
+// POST /api/students   body: { name: string; grade?: number }
 export async function POST(req: Request) {
-  const { name } = await req.json();
+  const { name, grade } = await req.json();
 
   if (!name || typeof name !== 'string' || !name.trim()) {
     return NextResponse.json({ error: 'name is required' }, { status: 400 });
@@ -17,8 +17,10 @@ export async function POST(req: Request) {
 
   const avatarColor = AVATAR_COLORS[Math.floor(Math.random() * AVATAR_COLORS.length)];
 
+  const gradeValue = typeof grade === 'number' && grade >= 2 && grade <= 9 ? grade : 4;
+
   const student = await prisma.student.create({
-    data: { name: name.trim(), avatarColor },
+    data: { name: name.trim(), avatarColor, grade: gradeValue },
   });
 
   return NextResponse.json(student, { status: 201 });

@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "purpose": "Test seed data for MathSpark",
-    "families": 5,
-    "students": 10,
-    "subscriptions": 10,
-    "orders": 10,
-    "usageLogs": 70,
+    "purpose": "Test seed data for MathSpark — includes Grade 4 students + multi-grade students (Gr 2–9)",
+    "families": 10,
+    "students": 18,
+    "subscriptions": 16,
+    "orders": 16,
+    "usageLogs": 109,
     "note": "All data is fictional. Passwords are 'test1234' hashed with bcrypt."
   },
   "parents": [
@@ -53,7 +53,13 @@
       "passwordPlain": "test1234",
       "passwordHash": "$2b$12$LJ3m5Z1qX9K2vN8wY7gZ3eR4tU6yI0oP2aS4dF6gH8jK0lZ3xC5v",
       "children": ["student_008", "student_009", "student_010"]
-    }
+    },
+
+    { "id": "parent_006", "name": "Meera Sharma",  "email": "meera@mathspark.test",  "phone": "+919876543201" },
+    { "id": "parent_007", "name": "Rajesh Kumar",  "email": "rajesh@mathspark.test",  "phone": "+919876543202" },
+    { "id": "parent_008", "name": "Sunita Patel",  "email": "sunita@mathspark.test",  "phone": "+919876543203" },
+    { "id": "parent_009", "name": "Vikram Nair",   "email": "vikram@mathspark.test",  "phone": "+919876543204" },
+    { "id": "parent_010", "name": "Deepa Joshi",   "email": "deepa@mathspark.test",   "phone": "+919876543205" }
   ],
   "students": [
     {
@@ -155,6 +161,55 @@
       "subscriptionName": "Starter",
       "profile": "Youngest sibling. Just enrolled 3 days ago. Completed diagnostic. Needs foundation work.",
       "pin": "3333"
+    },
+
+    {
+      "id": "student_test_gr2", "name": "Aarav",  "displayName": "AaravGr2",
+      "grade": 2, "parentId": "parent_006", "subscriptionTier": 0,
+      "avatarColor": "#EF4444", "currentLeagueTier": 1, "totalLifetimeXP": 120,
+      "profile": "Grade 2 student, Free plan — tests grade-2 IPM pool + basic access rules."
+    },
+    {
+      "id": "student_test_gr3", "name": "Priya",  "displayName": "PriyaGr3",
+      "grade": 3, "parentId": "parent_006", "subscriptionTier": 1,
+      "avatarColor": "#F97316", "currentLeagueTier": 2, "totalLifetimeXP": 340,
+      "profile": "Grade 3 student, Starter plan — tests grade-3 pool + 1-grade-above sample access."
+    },
+    {
+      "id": "student_test_gr4", "name": "Rahul",  "displayName": "RahulGr4",
+      "grade": 4, "parentId": "parent_007", "subscriptionTier": 2,
+      "avatarColor": "#EAB308", "currentLeagueTier": 3, "totalLifetimeXP": 860,
+      "profile": "Grade 4 student, Advanced plan — tests ch-series + grade4 pool + grade5/6 access."
+    },
+    {
+      "id": "student_test_gr5", "name": "Sneha",  "displayName": "SnehaGr5",
+      "grade": 5, "parentId": "parent_008", "subscriptionTier": 3,
+      "avatarColor": "#22C55E", "currentLeagueTier": 4, "totalLifetimeXP": 1240,
+      "profile": "Grade 5 student, Unlimited plan — grade5 mastered, tests grade-up CTA to grade6."
+    },
+    {
+      "id": "student_test_gr6", "name": "Arjun",  "displayName": "ArjunGr6",
+      "grade": 6, "parentId": "parent_008", "subscriptionTier": 0,
+      "avatarColor": "#06B6D4", "currentLeagueTier": 1, "totalLifetimeXP": 80,
+      "profile": "Grade 6 student, Free plan — tests grade-6 IPM pool + locked access to higher grades."
+    },
+    {
+      "id": "student_test_gr7", "name": "Kavya",  "displayName": "KavyaGr7",
+      "grade": 7, "parentId": "parent_009", "subscriptionTier": 1,
+      "avatarColor": "#8B5CF6", "currentLeagueTier": 2, "totalLifetimeXP": 450,
+      "profile": "Grade 7 student, Starter plan — grade6 mastered, grade7 practicing, grade8 sample."
+    },
+    {
+      "id": "student_test_gr8", "name": "Dhruv",  "displayName": "DhruvGr8",
+      "grade": 8, "parentId": "parent_010", "subscriptionTier": 2,
+      "avatarColor": "#EC4899", "currentLeagueTier": 3, "totalLifetimeXP": 980,
+      "profile": "Grade 8 student, Advanced plan — grade7+8 mastered, grade9 access unlocked."
+    },
+    {
+      "id": "student_test_gr9", "name": "Ananya", "displayName": "AnanyaG9",
+      "grade": 9, "parentId": "parent_010", "subscriptionTier": 3,
+      "avatarColor": "#14B8A6", "currentLeagueTier": 5, "totalLifetimeXP": 2100,
+      "profile": "Grade 9 student, Unlimited plan — top tier, all grades mastered, no grade-up CTA."
     }
   ],
   "orders": [
@@ -317,6 +372,49 @@
       "invoiceNumber": "MS-2026-00010",
       "startsAt": "2026-02-26T00:00:00Z",
       "expiresAt": "2026-03-28T00:00:00Z"
+    },
+
+    {
+      "id": "order_gr3", "parentId": "parent_006", "studentId": "student_test_gr3",
+      "subscriptionTier": 1, "amountPaise": 49900, "currency": "INR", "paymentMethod": "upi",
+      "razorpayOrderId": "order_gr3_rzp", "razorpayPaymentId": "pay_gr3_rzp",
+      "invoiceNumber": "MS-2026-00011",
+      "startsAt": "2026-02-01T00:00:00Z", "expiresAt": "2026-03-01T00:00:00Z"
+    },
+    {
+      "id": "order_gr4", "parentId": "parent_007", "studentId": "student_test_gr4",
+      "subscriptionTier": 2, "amountPaise": 99900, "currency": "INR", "paymentMethod": "card",
+      "razorpayOrderId": "order_gr4_rzp", "razorpayPaymentId": "pay_gr4_rzp",
+      "invoiceNumber": "MS-2026-00012",
+      "startsAt": "2026-02-01T00:00:00Z", "expiresAt": "2027-02-01T00:00:00Z"
+    },
+    {
+      "id": "order_gr5", "parentId": "parent_008", "studentId": "student_test_gr5",
+      "subscriptionTier": 3, "amountPaise": 149900, "currency": "INR", "paymentMethod": "netbanking",
+      "razorpayOrderId": "order_gr5_rzp", "razorpayPaymentId": "pay_gr5_rzp",
+      "invoiceNumber": "MS-2026-00013",
+      "startsAt": "2026-01-15T00:00:00Z", "expiresAt": "2027-01-15T00:00:00Z"
+    },
+    {
+      "id": "order_gr7", "parentId": "parent_009", "studentId": "student_test_gr7",
+      "subscriptionTier": 1, "amountPaise": 49900, "currency": "INR", "paymentMethod": "upi",
+      "razorpayOrderId": "order_gr7_rzp", "razorpayPaymentId": "pay_gr7_rzp",
+      "invoiceNumber": "MS-2026-00014",
+      "startsAt": "2026-02-15T00:00:00Z", "expiresAt": "2026-03-15T00:00:00Z"
+    },
+    {
+      "id": "order_gr8", "parentId": "parent_010", "studentId": "student_test_gr8",
+      "subscriptionTier": 2, "amountPaise": 99900, "currency": "INR", "paymentMethod": "card",
+      "razorpayOrderId": "order_gr8_rzp", "razorpayPaymentId": "pay_gr8_rzp",
+      "invoiceNumber": "MS-2026-00015",
+      "startsAt": "2026-01-01T00:00:00Z", "expiresAt": "2027-01-01T00:00:00Z"
+    },
+    {
+      "id": "order_gr9", "parentId": "parent_010", "studentId": "student_test_gr9",
+      "subscriptionTier": 3, "amountPaise": 149900, "currency": "INR", "paymentMethod": "upi",
+      "razorpayOrderId": "order_gr9_rzp", "razorpayPaymentId": "pay_gr9_rzp",
+      "invoiceNumber": "MS-2026-00016",
+      "startsAt": "2026-01-01T00:00:00Z", "expiresAt": "2027-01-01T00:00:00Z"
     }
   ],
   "progress": [
@@ -406,7 +504,37 @@
     {"studentId":"student_009","topicId":"ch20","attempted":5,"correct":2,"mastery":"NotStarted"},
 
     {"studentId":"student_010","topicId":"ch11","attempted":3,"correct":1,"mastery":"NotStarted"},
-    {"studentId":"student_010","topicId":"ch01-05","attempted":5,"correct":3,"mastery":"Practicing"}
+    {"studentId":"student_010","topicId":"ch01-05","attempted":5,"correct":3,"mastery":"Practicing"},
+
+    {"studentId":"student_test_gr2","topicId":"grade2","attempted":22,"correct":14,"mastery":"Practicing"},
+
+    {"studentId":"student_test_gr3","topicId":"grade3","attempted":30,"correct":20,"mastery":"Practicing"},
+    {"studentId":"student_test_gr3","topicId":"grade2","attempted":15,"correct":13,"mastery":"Mastered"},
+
+    {"studentId":"student_test_gr4","topicId":"ch01-05","attempted":40,"correct":36,"mastery":"Mastered"},
+    {"studentId":"student_test_gr4","topicId":"ch06","attempted":35,"correct":30,"mastery":"Mastered"},
+    {"studentId":"student_test_gr4","topicId":"ch07-08","attempted":28,"correct":22,"mastery":"Practicing"},
+    {"studentId":"student_test_gr4","topicId":"ch09-10","attempted":20,"correct":10,"mastery":"Practicing"},
+    {"studentId":"student_test_gr4","topicId":"ch11","attempted":10,"correct":3,"mastery":"NotStarted"},
+    {"studentId":"student_test_gr4","topicId":"grade4","attempted":18,"correct":14,"mastery":"Practicing"},
+
+    {"studentId":"student_test_gr5","topicId":"grade5","attempted":45,"correct":40,"mastery":"Mastered"},
+    {"studentId":"student_test_gr5","topicId":"grade4","attempted":30,"correct":26,"mastery":"Mastered"},
+    {"studentId":"student_test_gr5","topicId":"grade6","attempted":12,"correct":8,"mastery":"Practicing"},
+
+    {"studentId":"student_test_gr6","topicId":"grade6","attempted":18,"correct":10,"mastery":"Practicing"},
+
+    {"studentId":"student_test_gr7","topicId":"grade6","attempted":20,"correct":17,"mastery":"Mastered"},
+    {"studentId":"student_test_gr7","topicId":"grade7","attempted":35,"correct":28,"mastery":"Practicing"},
+    {"studentId":"student_test_gr7","topicId":"grade8","attempted":5,"correct":2,"mastery":"NotStarted"},
+
+    {"studentId":"student_test_gr8","topicId":"grade7","attempted":40,"correct":35,"mastery":"Mastered"},
+    {"studentId":"student_test_gr8","topicId":"grade8","attempted":50,"correct":43,"mastery":"Mastered"},
+    {"studentId":"student_test_gr8","topicId":"grade9","attempted":15,"correct":9,"mastery":"Practicing"},
+
+    {"studentId":"student_test_gr9","topicId":"grade7","attempted":30,"correct":26,"mastery":"Mastered"},
+    {"studentId":"student_test_gr9","topicId":"grade8","attempted":45,"correct":40,"mastery":"Mastered"},
+    {"studentId":"student_test_gr9","topicId":"grade9","attempted":60,"correct":55,"mastery":"Mastered"}
   ],
   "usageLogs": [
     {"studentId":"student_001","date":"2026-02-23","minutesUsed":52,"questionsAttempted":18,"aiChatMessages":3},
@@ -468,7 +596,55 @@
     {"studentId":"student_009","date":"2026-03-01","minutesUsed":40,"questionsAttempted":14,"aiChatMessages":4},
 
     {"studentId":"student_010","date":"2026-02-28","minutesUsed":12,"questionsAttempted":5,"aiChatMessages":1},
-    {"studentId":"student_010","date":"2026-03-01","minutesUsed":18,"questionsAttempted":8,"aiChatMessages":2}
+    {"studentId":"student_010","date":"2026-03-01","minutesUsed":18,"questionsAttempted":8,"aiChatMessages":2},
+
+    {"studentId":"student_test_gr2","date":"2026-03-02","minutesUsed":12,"questionsAttempted":8,"aiChatMessages":0,"xpEarned":40},
+    {"studentId":"student_test_gr2","date":"2026-03-01","minutesUsed":18,"questionsAttempted":14,"aiChatMessages":0,"xpEarned":60},
+    {"studentId":"student_test_gr2","date":"2026-02-28","minutesUsed":10,"questionsAttempted":6,"aiChatMessages":0,"xpEarned":20},
+
+    {"studentId":"student_test_gr3","date":"2026-03-02","minutesUsed":25,"questionsAttempted":18,"aiChatMessages":2,"xpEarned":100},
+    {"studentId":"student_test_gr3","date":"2026-03-01","minutesUsed":30,"questionsAttempted":22,"aiChatMessages":3,"xpEarned":120},
+    {"studentId":"student_test_gr3","date":"2026-02-28","minutesUsed":20,"questionsAttempted":15,"aiChatMessages":1,"xpEarned":80},
+    {"studentId":"student_test_gr3","date":"2026-02-27","minutesUsed":22,"questionsAttempted":16,"aiChatMessages":2,"xpEarned":90},
+
+    {"studentId":"student_test_gr4","date":"2026-03-02","minutesUsed":40,"questionsAttempted":30,"aiChatMessages":5,"xpEarned":200},
+    {"studentId":"student_test_gr4","date":"2026-03-01","minutesUsed":45,"questionsAttempted":35,"aiChatMessages":4,"xpEarned":220},
+    {"studentId":"student_test_gr4","date":"2026-02-28","minutesUsed":38,"questionsAttempted":28,"aiChatMessages":3,"xpEarned":180},
+    {"studentId":"student_test_gr4","date":"2026-02-27","minutesUsed":42,"questionsAttempted":32,"aiChatMessages":6,"xpEarned":200},
+    {"studentId":"student_test_gr4","date":"2026-02-26","minutesUsed":35,"questionsAttempted":25,"aiChatMessages":2,"xpEarned":160},
+
+    {"studentId":"student_test_gr5","date":"2026-03-02","minutesUsed":55,"questionsAttempted":42,"aiChatMessages":8,"xpEarned":280},
+    {"studentId":"student_test_gr5","date":"2026-03-01","minutesUsed":60,"questionsAttempted":45,"aiChatMessages":10,"xpEarned":300},
+    {"studentId":"student_test_gr5","date":"2026-02-28","minutesUsed":50,"questionsAttempted":38,"aiChatMessages":7,"xpEarned":260},
+    {"studentId":"student_test_gr5","date":"2026-02-27","minutesUsed":58,"questionsAttempted":44,"aiChatMessages":9,"xpEarned":290},
+    {"studentId":"student_test_gr5","date":"2026-02-26","minutesUsed":52,"questionsAttempted":40,"aiChatMessages":6,"xpEarned":270},
+    {"studentId":"student_test_gr5","date":"2026-02-25","minutesUsed":48,"questionsAttempted":36,"aiChatMessages":5,"xpEarned":240},
+    {"studentId":"student_test_gr5","date":"2026-02-24","minutesUsed":55,"questionsAttempted":42,"aiChatMessages":8,"xpEarned":280},
+
+    {"studentId":"student_test_gr6","date":"2026-03-02","minutesUsed":8,"questionsAttempted":5,"aiChatMessages":0,"xpEarned":20},
+    {"studentId":"student_test_gr6","date":"2026-03-01","minutesUsed":15,"questionsAttempted":10,"aiChatMessages":0,"xpEarned":60},
+
+    {"studentId":"student_test_gr7","date":"2026-03-02","minutesUsed":28,"questionsAttempted":20,"aiChatMessages":2,"xpEarned":120},
+    {"studentId":"student_test_gr7","date":"2026-03-01","minutesUsed":32,"questionsAttempted":24,"aiChatMessages":3,"xpEarned":140},
+    {"studentId":"student_test_gr7","date":"2026-02-28","minutesUsed":25,"questionsAttempted":18,"aiChatMessages":1,"xpEarned":100},
+    {"studentId":"student_test_gr7","date":"2026-02-27","minutesUsed":30,"questionsAttempted":22,"aiChatMessages":2,"xpEarned":130},
+    {"studentId":"student_test_gr7","date":"2026-02-26","minutesUsed":26,"questionsAttempted":19,"aiChatMessages":1,"xpEarned":110},
+
+    {"studentId":"student_test_gr8","date":"2026-03-02","minutesUsed":48,"questionsAttempted":36,"aiChatMessages":6,"xpEarned":240},
+    {"studentId":"student_test_gr8","date":"2026-03-01","minutesUsed":52,"questionsAttempted":40,"aiChatMessages":7,"xpEarned":260},
+    {"studentId":"student_test_gr8","date":"2026-02-28","minutesUsed":44,"questionsAttempted":33,"aiChatMessages":5,"xpEarned":220},
+    {"studentId":"student_test_gr8","date":"2026-02-27","minutesUsed":50,"questionsAttempted":38,"aiChatMessages":8,"xpEarned":250},
+    {"studentId":"student_test_gr8","date":"2026-02-26","minutesUsed":45,"questionsAttempted":34,"aiChatMessages":4,"xpEarned":230},
+    {"studentId":"student_test_gr8","date":"2026-02-25","minutesUsed":48,"questionsAttempted":36,"aiChatMessages":6,"xpEarned":240},
+    {"studentId":"student_test_gr8","date":"2026-02-24","minutesUsed":42,"questionsAttempted":32,"aiChatMessages":5,"xpEarned":210},
+
+    {"studentId":"student_test_gr9","date":"2026-03-02","minutesUsed":65,"questionsAttempted":50,"aiChatMessages":12,"xpEarned":360},
+    {"studentId":"student_test_gr9","date":"2026-03-01","minutesUsed":70,"questionsAttempted":55,"aiChatMessages":15,"xpEarned":400},
+    {"studentId":"student_test_gr9","date":"2026-02-28","minutesUsed":60,"questionsAttempted":46,"aiChatMessages":10,"xpEarned":320},
+    {"studentId":"student_test_gr9","date":"2026-02-27","minutesUsed":68,"questionsAttempted":52,"aiChatMessages":13,"xpEarned":380},
+    {"studentId":"student_test_gr9","date":"2026-02-26","minutesUsed":62,"questionsAttempted":47,"aiChatMessages":11,"xpEarned":340},
+    {"studentId":"student_test_gr9","date":"2026-02-25","minutesUsed":65,"questionsAttempted":50,"aiChatMessages":12,"xpEarned":360},
+    {"studentId":"student_test_gr9","date":"2026-02-24","minutesUsed":58,"questionsAttempted":44,"aiChatMessages":9,"xpEarned":320}
   ],
   "streaks": {
     "student_001": {"currentStreak": 7, "longestStreak": 14, "totalDaysPracticed": 28},
@@ -480,7 +656,16 @@
     "student_007": {"currentStreak": 2, "longestStreak": 2, "totalDaysPracticed": 2},
     "student_008": {"currentStreak": 15, "longestStreak": 15, "totalDaysPracticed": 22},
     "student_009": {"currentStreak": 7, "longestStreak": 12, "totalDaysPracticed": 20},
-    "student_010": {"currentStreak": 2, "longestStreak": 2, "totalDaysPracticed": 2}
+    "student_010": {"currentStreak": 2, "longestStreak": 2, "totalDaysPracticed": 2},
+
+    "student_test_gr2": {"currentStreak": 3,  "longestStreak": 5,  "totalDaysPracticed": 12},
+    "student_test_gr3": {"currentStreak": 4,  "longestStreak": 7,  "totalDaysPracticed": 22},
+    "student_test_gr4": {"currentStreak": 5,  "longestStreak": 12, "totalDaysPracticed": 35},
+    "student_test_gr5": {"currentStreak": 7,  "longestStreak": 18, "totalDaysPracticed": 48},
+    "student_test_gr6": {"currentStreak": 2,  "longestStreak": 4,  "totalDaysPracticed": 8},
+    "student_test_gr7": {"currentStreak": 5,  "longestStreak": 10, "totalDaysPracticed": 28},
+    "student_test_gr8": {"currentStreak": 7,  "longestStreak": 14, "totalDaysPracticed": 42},
+    "student_test_gr9": {"currentStreak": 7,  "longestStreak": 21, "totalDaysPracticed": 55}
   },
   "badges": {
     "student_001": ["first_steps","sharp_shooter","equation_expert","chapter_champion","century"],
@@ -492,7 +677,16 @@
     "student_007": ["first_steps"],
     "student_008": ["first_steps","sharp_shooter","chapter_champion","century","on_fire"],
     "student_009": ["first_steps","sharp_shooter","chapter_champion","century"],
-    "student_010": ["first_steps"]
+    "student_010": ["first_steps"],
+
+    "student_test_gr2": ["first_correct", "streak_3"],
+    "student_test_gr3": ["first_correct", "streak_3", "streak_7", "topic_mastered"],
+    "student_test_gr4": ["first_correct", "streak_3", "streak_7", "topic_mastered", "accuracy_king"],
+    "student_test_gr5": ["first_correct", "streak_3", "streak_7", "streak_14", "topic_mastered", "accuracy_king", "speed_demon"],
+    "student_test_gr6": ["first_correct", "streak_3"],
+    "student_test_gr7": ["first_correct", "streak_3", "streak_7", "topic_mastered"],
+    "student_test_gr8": ["first_correct", "streak_3", "streak_7", "streak_14", "topic_mastered", "accuracy_king"],
+    "student_test_gr9": ["first_correct", "streak_3", "streak_7", "streak_14", "streak_21", "topic_mastered", "accuracy_king", "speed_demon", "explorer"]
   },
   "testLoginCredentials": {
     "note": "Use these to test the app. All parent passwords are 'test1234'",
@@ -501,7 +695,16 @@
       {"email": "priya.mehta@outlook.com", "password": "test1234", "children": ["Vivaan (Advanced)", "Ishika (Advanced)"]},
       {"email": "amit.patel@yahoo.com", "password": "test1234", "children": ["Arjun (Starter — hits daily limit)"]},
       {"email": "sneha.iyer@gmail.com", "password": "test1234", "children": ["Saanvi (Unlimited — power user, 23-day streak)", "Dhruv (Starter — just started)"]},
-      {"email": "vikram.reddy@hotmail.com", "password": "test1234", "children": ["Meera (Advanced)", "Kabir (Advanced)", "Tara (Starter — brand new)"]}
-    ]
+      {"email": "vikram.reddy@hotmail.com", "password": "test1234", "children": ["Meera (Advanced)", "Kabir (Advanced)", "Tara (Starter — brand new)"]},
+      {"email": "meera@mathspark.test", "password": "test1234", "children": ["Aarav Gr2 (Free)", "Priya Gr3 (Starter)"]},
+      {"email": "rajesh@mathspark.test", "password": "test1234", "children": ["Rahul Gr4 (Advanced)"]},
+      {"email": "sunita@mathspark.test", "password": "test1234", "children": ["Sneha Gr5 (Unlimited)", "Arjun Gr6 (Free)"]},
+      {"email": "vikram@mathspark.test", "password": "test1234", "children": ["Kavya Gr7 (Starter)"]},
+      {"email": "deepa@mathspark.test", "password": "test1234", "children": ["Dhruv Gr8 (Advanced)", "Ananya Gr9 (Unlimited)"]}
+    ],
+    "devQuickLogin": {
+      "note": "Visit /dev to instantly log in as any test student without a parent account",
+      "url": "/dev"
+    }
   }
 }

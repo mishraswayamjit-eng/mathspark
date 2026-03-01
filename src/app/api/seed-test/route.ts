@@ -18,6 +18,8 @@ interface TestParent {
 interface TestStudent {
   id: string; name: string; grade: number; parentId: string;
   subscriptionTier: number;
+  displayName?: string; avatarColor?: string;
+  currentLeagueTier?: number; totalLifetimeXP?: number;
 }
 interface TestOrder {
   id: string; parentId: string; studentId: string; subscriptionTier: number;
@@ -30,6 +32,7 @@ interface TestProgress {
 }
 interface TestUsageLog {
   studentId: string; date: string; minutesUsed: number; questionsAttempted: number; aiChatMessages: number;
+  xpEarned?: number;
 }
 interface TestStreak {
   currentStreak: number; longestStreak: number; totalDaysPracticed: number;
@@ -86,6 +89,10 @@ export async function GET(req: Request) {
           longestStreak:      streak.longestStreak,
           totalDaysPracticed: streak.totalDaysPracticed,
           badges,
+          ...(s.displayName       !== undefined && { displayName:      s.displayName }),
+          ...(s.avatarColor       !== undefined && { avatarColor:      s.avatarColor }),
+          ...(s.currentLeagueTier !== undefined && { currentLeagueTier: s.currentLeagueTier }),
+          ...(s.totalLifetimeXP   !== undefined && { totalLifetimeXP:  s.totalLifetimeXP }),
         },
         create: {
           id: s.id, name: s.name, grade: s.grade, parentId: s.parentId, subscriptionId,
@@ -93,6 +100,10 @@ export async function GET(req: Request) {
           longestStreak:      streak.longestStreak,
           totalDaysPracticed: streak.totalDaysPracticed,
           badges,
+          ...(s.displayName       !== undefined && { displayName:      s.displayName }),
+          ...(s.avatarColor       !== undefined && { avatarColor:      s.avatarColor }),
+          ...(s.currentLeagueTier !== undefined && { currentLeagueTier: s.currentLeagueTier }),
+          ...(s.totalLifetimeXP   !== undefined && { totalLifetimeXP:  s.totalLifetimeXP }),
         },
       });
     }
@@ -134,8 +145,8 @@ export async function GET(req: Request) {
     for (const ul of data.usageLogs) {
       await prisma.usageLog.upsert({
         where:  { studentId_date: { studentId: ul.studentId, date: new Date(ul.date) } },
-        update: { minutesUsed: ul.minutesUsed, questionsAttempted: ul.questionsAttempted, aiChatMessages: ul.aiChatMessages },
-        create: { studentId: ul.studentId, date: new Date(ul.date), minutesUsed: ul.minutesUsed, questionsAttempted: ul.questionsAttempted, aiChatMessages: ul.aiChatMessages },
+        update: { minutesUsed: ul.minutesUsed, questionsAttempted: ul.questionsAttempted, aiChatMessages: ul.aiChatMessages, ...(ul.xpEarned !== undefined && { xpEarned: ul.xpEarned }) },
+        create: { studentId: ul.studentId, date: new Date(ul.date), minutesUsed: ul.minutesUsed, questionsAttempted: ul.questionsAttempted, aiChatMessages: ul.aiChatMessages, ...(ul.xpEarned !== undefined && { xpEarned: ul.xpEarned }) },
       });
     }
 

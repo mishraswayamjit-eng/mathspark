@@ -64,19 +64,19 @@ export async function ensureCurrentWeekLeague(studentId: string) {
 
   if (existing) return existing;
 
-  // Get student's current tier
+  // Get student's current tier and grade
   const student = await prisma.student.findUnique({
     where:  { id: studentId },
-    select: { currentLeagueTier: true },
+    select: { currentLeagueTier: true, grade: true },
   });
-  const tier = student?.currentLeagueTier ?? 1;
-  const name = TIER_NAMES[tier] ?? 'Bronze';
+  const tier  = student?.currentLeagueTier ?? 1;
+  const grade = student?.grade ?? 4;
+  const name  = TIER_NAMES[tier] ?? 'Bronze';
 
-  // Find a non-full league for this tier + week
-  // (_count in where is not supported in all Prisma versions, so fetch + filter)
+  // Find a non-full league for this tier + grade + week
   const league = await (async () => {
     const candidates = await prisma.league.findMany({
-      where:   { tier, weekStart },
+      where:   { tier, grade, weekStart },
       include: { _count: { select: { members: true } } },
     });
     return candidates.find((l) => l._count.members < MAX_LEAGUE_SIZE) ?? null;
@@ -85,7 +85,7 @@ export async function ensureCurrentWeekLeague(studentId: string) {
   const leagueId = league
     ? league.id
     : (await prisma.league.create({
-        data: { name, tier, weekStart, weekEnd },
+        data: { name, tier, grade, weekStart, weekEnd },
       })).id;
 
   const membership = await prisma.leagueMembership.create({

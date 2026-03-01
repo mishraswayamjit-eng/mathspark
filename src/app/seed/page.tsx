@@ -9,7 +9,7 @@ export default function SeedPage() {
   const [secret,  setSecret]  = useState('');
   const [status,  setStatus]  = useState<Status>('idle');
   const [seeded,  setSeeded]  = useState(0);
-  const [total,   setTotal]   = useState(2505);
+  const [total,   setTotal]   = useState(6797);
   const [message, setMessage] = useState('');
 
   // ── Test users seed (completely independent) ────────────────────────────────
@@ -70,7 +70,7 @@ export default function SeedPage() {
           <span className="text-3xl">🌱</span>
           <div>
             <p className="font-bold text-gray-800">Seed Questions</p>
-            <p className="text-xs text-gray-400">Loads all 2,505 questions into the database</p>
+            <p className="text-xs text-gray-400">Loads all 6,797 questions (Grades 2–9) into the database</p>
           </div>
         </div>
 
@@ -125,7 +125,7 @@ export default function SeedPage() {
           <span className="text-3xl">👨‍👩‍👧‍👦</span>
           <div>
             <p className="font-bold text-gray-800">Load Test Users</p>
-            <p className="text-xs text-gray-400">5 families · 10 students · subscriptions, orders, progress &amp; streaks</p>
+            <p className="text-xs text-gray-400">10 families · 18 students (Gr 2–9) · subscriptions, orders, progress &amp; streaks</p>
           </div>
         </div>
 
@@ -168,6 +168,7 @@ export default function SeedPage() {
             <div>
               <p className="font-bold text-blue-700 text-sm">Test users loaded!</p>
               <p className="text-xs text-gray-500 mt-0.5">{testMessage}</p>
+              <a href="/dev" className="text-xs text-blue-600 underline mt-1 inline-block">Quick-login switcher →</a>
             </div>
           </div>
         )}
