@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { FREE_DAILY_MINUTES, isUnlimitedPlan } from '@/lib/usageLimits';
 
 export const dynamic = 'force-dynamic';
 
@@ -49,8 +50,13 @@ export async function POST(req: Request) {
       });
     }
 
-    const limit     = student.subscription?.dailyLimitMinutes ?? 60;
-    const newUsed   = lastStr !== todayStr ? 1 : (student.dailyUsageMinutes + 1);
+    const limit   = student.subscription?.dailyLimitMinutes ?? FREE_DAILY_MINUTES;
+    const newUsed = lastStr !== todayStr ? 1 : (student.dailyUsageMinutes + 1);
+
+    if (isUnlimitedPlan(limit)) {
+      return NextResponse.json({ allowed: true, used: newUsed, limit, remaining: null });
+    }
+
     const remaining = Math.max(0, limit - newUsed);
     const allowed   = remaining > 0;
 

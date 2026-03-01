@@ -14,6 +14,7 @@ import DuoButton from '@/components/DuoButton';
 import { useSounds } from '@/hooks/useSounds';
 import type { Question, AnswerKey } from '@/types';
 import { saveSessionData } from '@/lib/nudges';
+import { formatMinutes, isUnlimitedPlan } from '@/lib/usageLimits';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -35,7 +36,8 @@ type Phase =
   | 'no_hearts'
   | 'review_intro'
   | 'reviewing'
-  | 'complete';
+  | 'complete'
+  | 'usage_limit';
 
 type BonusMode = 'off' | 'searching' | 'answering' | 'result' | 'unavailable';
 
@@ -477,6 +479,11 @@ export default function PracticePage() {
   const bonusOriginRef         = useRef<Question | null>(null);
   const bonusOriginCorrectRef  = useRef(false);
 
+  // ── Usage tracking ──────────────────────────────────────────────────────────
+  const [usageInfo, setUsageInfo] = useState<{ used: number; limit: number }>({ used: 0, limit: 0 });
+  const heartbeatRef      = useRef<ReturnType<typeof setInterval> | null>(null);
+  const heartbeatPhaseRef = useRef(false);
+
   // Fetch one adaptive question from the server.
   // Passes the full set of seen question IDs so the server excludes them too.
   const fetchOneAdaptive = useCallback(async (): Promise<Question | null> => {
@@ -527,6 +534,11 @@ export default function PracticePage() {
       setFetchRetry(false);
     }
   }, [phase, qIndex, reviewIndex]);
+
+  // Keep heartbeatPhaseRef in sync so the interval callback knows whether to fire.
+  useEffect(() => {
+    heartbeatPhaseRef.current = ['answering', 'result', 'review_intro', 'reviewing'].includes(phase);
+  }, [phase]);
 
   // ── Offline attempt queue helpers ──────────────────────────────────────────
   interface AttemptPayload {
@@ -582,6 +594,38 @@ export default function PracticePage() {
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // ── Usage heartbeat: 60s interval, counts practice minutes ─────────────────
+  useEffect(() => {
+    if (!studentId) return;
+
+    const interval = setInterval(async () => {
+      // Only send heartbeat when actively in lesson (not on loading/limit/complete)
+      if (!heartbeatPhaseRef.current) return;
+      try {
+        const res = await fetch('/api/usage/heartbeat', {
+          method:  'POST',
+          headers: { 'content-type': 'application/json' },
+          body:    JSON.stringify({ studentId }),
+        });
+        if (res.ok) {
+          const data = await res.json() as { allowed: boolean; used: number; limit: number };
+          setUsageInfo({ used: data.used, limit: data.limit });
+          if (!data.allowed) setPhase('usage_limit');
+        }
+      } catch { /* ignore transient network errors */ }
+    }, 60_000);
+
+    heartbeatRef.current = interval;
+    return () => {
+      clearInterval(interval);
+      heartbeatRef.current = null;
+      // Best-effort beacon on tab close/navigate so the last partial minute is counted
+      if (heartbeatPhaseRef.current && navigator.sendBeacon) {
+        navigator.sendBeacon('/api/usage/heartbeat', JSON.stringify({ studentId }));
+      }
+    };
+  }, [studentId]); // run once per student session
 
   // ── Speed drill countdown ──────────────────────────────────────────────────
   useEffect(() => {
@@ -650,14 +694,23 @@ export default function PracticePage() {
     studentIdRef.current = sid;
 
     Promise.all([
+      // Gate check — fails open (allowed: true) so API errors never block students
+      fetch(`/api/usage/check?studentId=${sid}`)
+        .then((r) => r.ok ? r.json() : { allowed: true, used: 0, limit: 0 })
+        .catch(() => ({ allowed: true, used: 0, limit: 0 })),
       fetch('/api/topics').then((r) => r.json()),
       // First question from the adaptive engine
       fetch(`/api/questions/next?topicId=${topicId}&studentId=${sid}`)
         .then((r) => { if (!r.ok) throw new Error('fetch failed'); return r.json() as Promise<Question>; }),
     ])
-      .then(([topics, firstQ]: [Array<{ id: string; name: string }>, Question]) => {
+      .then(([usageData, topics, firstQ]: [{ allowed: boolean; used: number; limit: number }, Array<{ id: string; name: string }>, Question]) => {
         const t = topics.find((x) => x.id === topicId);
         setTopicName(t?.name ?? topicId);
+        setUsageInfo({ used: usageData.used, limit: usageData.limit });
+        if (!usageData.allowed) {
+          setPhase('usage_limit');
+          return;
+        }
         setQuestions([firstQ]);
         setPhase('answering');
         // Immediately prefetch the second question
@@ -1073,6 +1126,46 @@ export default function PracticePage() {
           setPhase('review_intro');
         }}
       />
+    );
+  }
+
+  if (phase === 'usage_limit') {
+    const tierLimit = usageInfo.limit;
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-white pb-8">
+        <div className="animate-sparky-bounce">
+          <Sparky mood="encouraging" size={120} />
+        </div>
+        <div className="text-center space-y-3">
+          <h2 className="text-2xl font-extrabold text-gray-800">
+            Daily practice limit reached! ⏰
+          </h2>
+          <p className="text-gray-500 font-medium leading-relaxed">
+            You&apos;ve practiced for{' '}
+            <span className="font-extrabold text-gray-700">{formatMinutes(usageInfo.used)}</span>
+            {!isUnlimitedPlan(tierLimit) && tierLimit > 0 && (
+              <> out of <span className="font-extrabold text-gray-700">{formatMinutes(tierLimit)}</span></>
+            )}{' '}
+            today. Come back tomorrow — every day you practice, you get stronger! 💪
+          </p>
+          {!isUnlimitedPlan(tierLimit) && (
+            <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 text-left">
+              <p className="text-xs font-extrabold text-amber-700 uppercase tracking-wide mb-1">Want more practice time?</p>
+              <p className="text-sm text-gray-600">Upgrade your plan to unlock longer daily sessions and unlimited practice.</p>
+            </div>
+          )}
+        </div>
+        <div className="w-full max-w-sm space-y-3">
+          {!isUnlimitedPlan(tierLimit) && (
+            <DuoButton variant="blue" fullWidth onClick={() => router.push('/parent/dashboard')}>
+              Upgrade Plan 🚀
+            </DuoButton>
+          )}
+          <DuoButton variant="white" fullWidth onClick={() => router.push('/chapters')}>
+            Back to chapters
+          </DuoButton>
+        </div>
+      </div>
     );
   }
 

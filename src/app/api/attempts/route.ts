@@ -16,16 +16,26 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
   }
 
-  const attempt = await prisma.attempt.create({
-    data: {
-      studentId, questionId, selected, isCorrect,
-      hintUsed, timeTakenMs, misconceptionType,
-      isBonusQuestion, parentQuestionId,
-    },
-  });
+  const today = new Date();
+  today.setUTCHours(0, 0, 0, 0);
 
-  // Recalculate + persist mastery
-  await updateProgress(studentId, topicId);
+  const [attempt] = await Promise.all([
+    prisma.attempt.create({
+      data: {
+        studentId, questionId, selected, isCorrect,
+        hintUsed, timeTakenMs, misconceptionType,
+        isBonusQuestion, parentQuestionId,
+      },
+    }),
+    // Increment questionsAttempted in today's usage log
+    prisma.usageLog.upsert({
+      where:  { studentId_date: { studentId, date: today } },
+      update: { questionsAttempted: { increment: 1 } },
+      create: { studentId, date: today, questionsAttempted: 1 },
+    }),
+    // Recalculate + persist mastery
+    updateProgress(studentId, topicId),
+  ]);
 
   return NextResponse.json(attempt, { status: 201 });
 }
