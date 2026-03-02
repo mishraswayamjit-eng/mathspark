@@ -94,6 +94,7 @@ export async function computeTopicMastery(studentId: string): Promise<TopicMaste
       question: { select: { topicId: true, subTopic: true } },
     },
     orderBy: { createdAt: 'desc' },
+    take: 200,
   });
 
   const entries: TopicMasteryEntry[] = [];

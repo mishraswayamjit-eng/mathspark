@@ -36,12 +36,13 @@ export async function GET(req: Request) {
   });
   const seenIds = recent.map((a) => a.questionId);
 
-  // Fetch unseen questions first; fallback to all if not enough
+  // Fetch unseen questions; if not enough, include seen ones too
   let pool = await prisma.question.findMany({
     where: { topicId, id: { notIn: seenIds } },
+    take: count * 3,
   });
   if (pool.length < count) {
-    pool = await prisma.question.findMany({ where: { topicId } });
+    pool = await prisma.question.findMany({ where: { topicId }, take: count * 3 });
   }
 
   // Group by difficulty and shuffle each group

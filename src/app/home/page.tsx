@@ -344,7 +344,7 @@ export default function HomePage() {
         <div className="grid grid-cols-3 gap-3">
           {[
             { emoji: '⚡', label: 'Quick Practice', sub: '5 min', href: topPriorityUrl, bg: 'bg-blue-50', accent: '#1CB0F6' },
-            { emoji: '🧠', label: 'Flashcards',     sub: '3 min', href: '/chapters',    bg: 'bg-purple-50', accent: '#9B59B6' },
+            { emoji: '📚', label: 'Learn',           sub: 'Topics', href: '/chapters',  bg: 'bg-purple-50', accent: '#9B59B6' },
             { emoji: '📝', label: 'Mock Test',       sub: '15 min', href: '/test',       bg: 'bg-green-50', accent: '#58CC02' },
           ].map((action) => (
             <Link key={action.label} href={action.href}
