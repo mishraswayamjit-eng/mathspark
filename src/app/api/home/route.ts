@@ -119,6 +119,18 @@ export async function GET(req: Request) {
     : null;
   const trialActive = trialDaysLeft !== null && trialDaysLeft > 0;
 
+  // Analytics fields: Prisma Json? returns objects directly; handle legacy string values too
+  function safeJson<T>(val: unknown, fallback: T): T {
+    if (!val) return fallback;
+    if (typeof val === 'string') { try { return JSON.parse(val) as T; } catch { return fallback; } }
+    return val as T;
+  }
+  const parsedMastery    = safeJson(analytics?.topicMastery,    [] as unknown[]);
+  const parsedReadiness  = safeJson(analytics?.examReadiness,   {} as Record<string, unknown>);
+  const parsedPriorities = safeJson(analytics?.topicPriorities, [] as unknown[]);
+  const parsedPlan       = safeJson(analytics?.dailyPlan,       [] as unknown[]);
+  const parsedNudges     = safeJson(analytics?.nudges,          [] as unknown[]);
+
   return NextResponse.json({
     student: {
       id:            student.id,
@@ -136,11 +148,11 @@ export async function GET(req: Request) {
     },
     streak,
     todayCorrect,
-    topicMastery:    (analytics?.topicMastery    ?? []),
-    examReadiness:   (analytics?.examReadiness   ?? {}),
-    topicPriorities: (analytics?.topicPriorities ?? []),
-    dailyPlan:       (analytics?.dailyPlan       ?? []),
-    nudges:          (analytics?.nudges          ?? []),
+    topicMastery:    parsedMastery,
+    examReadiness:   parsedReadiness,
+    topicPriorities: parsedPriorities,
+    dailyPlan:       parsedPlan,
+    nudges:          parsedNudges,
     recentActivity,
   });
 }

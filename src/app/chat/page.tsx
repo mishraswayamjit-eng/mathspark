@@ -5,25 +5,37 @@ import { useRouter } from 'next/navigation';
 import Sparky from '@/components/Sparky';
 import type { ChatMessage } from '@/types';
 
-// ── Quick reply chips ─────────────────────────────────────────────────────────
+// ── Quick reply chips — grade-aware ───────────────────────────────────────────
 
-const QUICK_REPLIES = [
-  { label: 'Quiz me! 🎯',            message: 'Quiz me on something from my recent topics!' },
-  { label: 'Explain decimals 📊',    message: 'Can you explain decimals to me in a simple way?' },
-  { label: 'Help with homework 📝',  message: "I'm stuck on my homework. Can you help me?" },
+const QUICK_REPLIES_BASE = [
+  { label: 'Quiz me! 🎯',                message: 'Quiz me on something from my recent topics!' },
+  { label: 'Help with homework 📝',       message: "I'm stuck on my homework. Can you help me?" },
   { label: 'What should I practice? 🤔', message: 'What topic should I practice next?' },
-  { label: 'Fractions 🍕',           message: 'Help me understand fractions better!' },
-  { label: 'BODMAS 🧮',              message: 'Can you explain BODMAS with an example?' },
 ];
+
+const QUICK_REPLIES_BY_GRADE: Record<number, Array<{ label: string; message: string }>> = {
+  2: [{ label: 'Counting 🔢', message: 'Help me understand counting and numbers!' }, { label: 'Addition ➕', message: 'Can you explain addition with examples?' }],
+  3: [{ label: 'Multiplication ✖️', message: 'Help me with multiplication tables!' }, { label: 'Fractions 🍕', message: 'Help me understand fractions!' }],
+  4: [{ label: 'Decimals 📊', message: 'Can you explain decimals to me in a simple way?' }, { label: 'BODMAS 🧮', message: 'Can you explain BODMAS with an example?' }],
+  5: [{ label: 'Percentages %', message: 'Help me understand percentages!' }, { label: 'Algebra 🔤', message: 'Can you explain algebra basics?' }],
+  6: [{ label: 'Ratios ⚖️', message: 'Help me understand ratios and proportions!' }, { label: 'Geometry 📐', message: 'Can you explain geometry concepts?' }],
+  7: [{ label: 'Linear equations 📝', message: 'Help me solve linear equations!' }, { label: 'Integers 🔢', message: 'Can you explain integers?' }],
+  8: [{ label: 'Quadratics ²', message: 'Help me understand quadratic equations!' }, { label: 'Statistics 📊', message: 'Can you explain statistics?' }],
+  9: [{ label: 'Trigonometry 📐', message: 'Help me understand trigonometry!' }, { label: 'Polynomials 🔤', message: 'Can you explain polynomials?' }],
+};
+
+function getQuickReplies(grade: number) {
+  return [...QUICK_REPLIES_BASE, ...(QUICK_REPLIES_BY_GRADE[grade] ?? QUICK_REPLIES_BY_GRADE[4])];
+}
 
 // ── Proactive nudge logic ─────────────────────────────────────────────────────
 
-function getOpeningMessage(name: string, lastPracticeDate: string | null, streakDays: number): string {
+function getOpeningMessage(name: string, grade: number, lastPracticeDate: string | null, streakDays: number): string {
   const today = new Date().toDateString();
   const yesterday = new Date(Date.now() - 86400000).toDateString();
 
   if (!lastPracticeDate) {
-    return `Hi ${name}! 🌟 I'm Sparky, your math buddy! I love helping with Grade 4 math. What would you like to explore today?`;
+    return `Hi ${name}! 🌟 I'm Sparky, your math buddy! I love helping with Grade ${grade} math. What would you like to explore today?`;
   }
   if (lastPracticeDate !== today && lastPracticeDate !== yesterday) {
     return `Hey ${name}! I missed you! 🔥 Want to keep your streak going? Let's solve some math together!`;
@@ -92,6 +104,7 @@ export default function ChatPage() {
 
   const [studentId,    setStudentId]    = useState<string | null>(null);
   const [studentName,  setStudentName]  = useState('');
+  const [studentGrade, setStudentGrade] = useState(4);
   const [sessionId,    setSessionId]    = useState<string | null>(null);
   const [messages,     setMessages]     = useState<Array<{ role: 'user' | 'assistant'; content: string; id: string }>>([]);
   const [input,        setInput]        = useState('');
@@ -110,11 +123,13 @@ export default function ChatPage() {
 
   // Boot: load student + session history + proactive nudge
   useEffect(() => {
-    const sid  = localStorage.getItem('mathspark_student_id');
-    const name = localStorage.getItem('mathspark_student_name') ?? '';
+    const sid   = localStorage.getItem('mathspark_student_id');
+    const name  = localStorage.getItem('mathspark_student_name') ?? '';
+    const grade = parseInt(localStorage.getItem('mathspark_student_grade') ?? '4', 10);
     if (!sid) { router.replace('/start'); return; }
     setStudentId(sid);
     setStudentName(name);
+    setStudentGrade(isNaN(grade) ? 4 : grade);
 
     // Try to load recent session history
     fetch(`/api/chat/history?studentId=${sid}`)
@@ -131,14 +146,14 @@ export default function ChatPage() {
           // No history — show proactive opening message
           const lastPractice = localStorage.getItem('mathspark_last_practice') ?? null;
           const streak = parseInt(localStorage.getItem('mathspark_streak') ?? '0', 10);
-          const opening = getOpeningMessage(name || 'friend', lastPractice, streak);
+          const opening = getOpeningMessage(name || 'friend', isNaN(grade) ? 4 : grade, lastPractice, streak);
           setMessages([{ id: 'opening', role: 'assistant', content: opening }]);
         }
         setInitialized(true);
       })
       .catch(() => {
         // Fallback opening on error
-        const opening = getOpeningMessage(name || 'friend', null, 0);
+        const opening = getOpeningMessage(name || 'friend', isNaN(grade) ? 4 : grade, null, 0);
         setMessages([{ id: 'opening', role: 'assistant', content: opening }]);
         setInitialized(true);
       });
@@ -310,7 +325,7 @@ export default function ChatPage() {
       {!isLoading && !rateLimited && (
         <div className="px-4 pb-2 flex-shrink-0">
           <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
-            {QUICK_REPLIES.map((qr) => (
+            {getQuickReplies(studentGrade).map((qr) => (
               <button
                 key={qr.label}
                 onClick={() => sendMessage(qr.message)}

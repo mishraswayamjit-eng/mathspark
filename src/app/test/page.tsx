@@ -85,7 +85,14 @@ const PYQ_YEARS: Array<{
 
 export default function TestConfigPage() {
   const router = useRouter();
-  const [selected,          setSelected]          = useState<TestType>('ipm');
+  // Default to 'ipm' for Grade 4, 'quick' for all other grades.
+  // Initialise synchronously from localStorage to avoid a FOUC where the
+  // Grade 4-only IPM Blueprint is briefly shown to non-Grade-4 students.
+  const [selected, setSelected] = useState<TestType>(() => {
+    if (typeof window === 'undefined') return 'ipm';
+    const g = parseInt(localStorage.getItem('mathspark_student_grade') ?? '4', 10);
+    return g === 4 ? 'ipm' : 'quick';
+  });
   const [loading,           setLoading]           = useState(false);
   const [pyqLoading,        setPyqLoading]        = useState<PYQYear | null>(null);
   const [megaLoading,       setMegaLoading]       = useState(false);
@@ -101,8 +108,6 @@ export default function TestConfigPage() {
     if (!id) { router.replace('/start'); return; }
     setStudentId(id);
     setStudentGrade(isNaN(grade) ? 4 : grade);
-    // IPM Blueprint is Grade 4 only — auto-switch selection for other grades
-    if (grade !== 4) setSelected('quick');
 
     // Check trial status from localStorage (fast, synchronous)
     const trialExpires = localStorage.getItem('mathspark_trial_expires');
@@ -209,7 +214,7 @@ export default function TestConfigPage() {
             <Sparky mood="thinking" size={48} />
           </div>
           <div>
-            <h1 className="text-2xl font-extrabold text-white">IPM Mock Test</h1>
+            <h1 className="text-2xl font-extrabold text-white">{isGrade4 ? 'IPM Mock Test' : 'Mock Test'}</h1>
             <p className="text-white/60 text-sm font-medium">No hints · Timed · Full simulation</p>
           </div>
         </div>
@@ -387,7 +392,7 @@ export default function TestConfigPage() {
               <p className="text-white font-extrabold text-sm mb-1">Pro Feature</p>
               <p className="text-white/55 text-xs mb-3 text-center px-8">Start your free trial to unlock the Ultimate Challenge</p>
               <button
-                onClick={() => router.push('/start')}
+                onClick={() => router.push('/pricing')}
                 className="bg-[#FF9600] border-b-[3px] border-[#cc7800] text-white font-extrabold px-5 py-2 rounded-2xl text-xs active:translate-y-[2px] active:border-b-0 transition-all"
               >
                 Unlock with Pro Trial →

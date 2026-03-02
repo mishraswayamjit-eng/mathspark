@@ -229,7 +229,7 @@ export default function ChaptersPage() {
   const studentGrade     = data.student.grade ?? 4;
   const subscriptionTier = data.subscriptionTier ?? 0;
   const streakDays       = data.stats.streakDays;
-  const xp               = data.stats.totalSolved * 10;
+  const xp               = data.stats.totalLifetimeXP;
   const todayCorrect     = data.weeklyData?.[data.weeklyData.length - 1]?.count ?? 0;
   const goalMet          = todayCorrect >= DAILY_GOAL;
 
@@ -535,7 +535,13 @@ export default function ChaptersPage() {
                   {treeNodes.map((node) => (
                     <button
                       key={node.id}
-                      onClick={() => router.push(`/practice/${node.dbTopicId}${isSample ? '?sample=true' : ''}`)}
+                      onClick={() => {
+                        const qp = new URLSearchParams();
+                        if (node.subTopicKey) qp.set('subTopic', node.subTopicKey);
+                        if (isSample) qp.set('sample', 'true');
+                        const qs = qp.toString() ? `?${qp.toString()}` : '';
+                        router.push(`/practice/${node.dbTopicId}${qs}`);
+                      }}
                       className="w-full text-left bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-[#1CB0F6] active:scale-[0.97] transition-all duration-150 flex flex-col gap-2"
                     >
                       <div className="flex items-start justify-between gap-1">

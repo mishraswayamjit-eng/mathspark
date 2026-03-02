@@ -153,8 +153,8 @@ export default function ProfilePage() {
         setSessionLengthMins(s.sessionLengthMins ?? 15);
         setPreferredPracticeTime(s.preferredPracticeTime ?? '');
         setHiddenFromLeaderboard(s.hiddenFromLeaderboard ?? false);
-        setFocusTopics(JSON.parse(s.focusTopics ?? '[]'));
-        setConfidentTopics(JSON.parse(s.confidentTopics ?? '[]'));
+        try { setFocusTopics(JSON.parse(s.focusTopics ?? '[]')); } catch { setFocusTopics([]); }
+        try { setConfidentTopics(JSON.parse(s.confidentTopics ?? '[]')); } catch { setConfidentTopics([]); }
         setParentEmail(s.parentEmail ?? '');
         setParentWhatsApp(s.parentWhatsApp ?? '');
         setLoading(false);
@@ -253,9 +253,17 @@ export default function ProfilePage() {
 
   async function changeGrade(g: number) {
     setGrade(g);
+    setFocusTopics([]);
+    setConfidentTopics([]);
     localStorage.setItem('mathspark_student_grade', String(g));
-    await patchStudent({ grade: g });
+    await patchStudent({ grade: g, focusTopics: [], confidentTopics: [] });
     showToast(`Grade changed to ${g} ✓`, true);
+    // Invalidate brain analytics so the new grade's topics are recomputed
+    fetch('/api/brain/recompute', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ studentId }),
+    }).catch(() => {});
   }
 
   function logout() {
@@ -485,7 +493,7 @@ export default function ProfilePage() {
           />
           <SettingRow
             icon="🔔" label="Daily reminders"
-            sublabel="Practice notifications"
+            sublabel="Coming soon"
             control={<Toggle on={notifications} onToggle={toggleNotifications} />}
           />
           <SettingRow

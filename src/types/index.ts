@@ -93,6 +93,7 @@ export interface DashboardData {
     totalSolved: number;
     topicsMastered: number;
     streakDays: number;
+    totalLifetimeXP: number;
   };
   topics: TopicWithProgress[];
   weeklyData: Array<{ date: string; count: number }>;

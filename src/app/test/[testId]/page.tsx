@@ -177,8 +177,10 @@ export default function TestEnginePage() {
   const [loading,        setLoading]        = useState(true);
   const [showNavigator,  setShowNavigator]  = useState(false);
   const [showSubmitModal,setShowSubmitModal] = useState(false);
+  const [showQuitModal,  setShowQuitModal]  = useState(false);
   const [submitting,     setSubmitting]     = useState(false);
   const [autoSubmitted,  setAutoSubmitted]  = useState(false);
+  const [isOffline,      setIsOffline]      = useState(false);
 
   const questionStartRef = useRef<number>(Date.now());
   const patchQueueRef    = useRef<Array<() => Promise<void>>>([]);
@@ -222,16 +224,33 @@ export default function TestEnginePage() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [remaining, autoSubmitted, test, loading]);
 
-  // Flush PATCH queue
-  async function flushQueue() {
+  // Flush PATCH queue — peek first, only shift on success so offline items stay for retry
+  const flushQueue = useCallback(async () => {
     if (flushingRef.current || patchQueueRef.current.length === 0) return;
     flushingRef.current = true;
     while (patchQueueRef.current.length > 0) {
-      const fn = patchQueueRef.current.shift()!;
-      await fn().catch(() => {/* silent */});
+      const fn = patchQueueRef.current[0]; // peek — don't remove yet
+      try {
+        await fn();
+        patchQueueRef.current.shift(); // remove only after confirmed success
+      } catch {
+        break; // network gone — leave item at front, stop until reconnect
+      }
     }
     flushingRef.current = false;
-  }
+  }, []);
+
+  // Retry queued saves when connectivity returns; track offline state for banner
+  useEffect(() => {
+    function handleOnline()  { setIsOffline(false); flushQueue(); }
+    function handleOffline() { setIsOffline(true); }
+    window.addEventListener('online',  handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online',  handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, [flushQueue]);
 
   // Save response (debounced via queue)
   const saveResponse = useCallback((questionNumber: number, data: {
@@ -247,7 +266,7 @@ export default function TestEnginePage() {
       }).then(() => {/* ok */})
     );
     flushQueue();
-  }, [testId]);
+  }, [testId, flushQueue]);
 
   // Navigate to a question
   function navigateTo(num: number) {
@@ -263,14 +282,13 @@ export default function TestEnginePage() {
 
   // Select answer
   function selectAnswer(questionNumber: number, answer: AnswerKey) {
-    setResponses((prev) => prev.map((r) =>
-      r.questionNumber === questionNumber
-        ? { ...r, selectedAnswer: r.selectedAnswer === answer ? null : answer }
-        : r,
-    ));
+    // Compute toggle from current state once so both UI and server get the same value
     const current = responses.find((r) => r.questionNumber === questionNumber);
-    const newAnswer = current?.selectedAnswer === answer ? undefined : answer;
-    saveResponse(questionNumber, { selectedAnswer: newAnswer });
+    const newSelection = current?.selectedAnswer === answer ? null : answer;
+    setResponses((prev) => prev.map((r) =>
+      r.questionNumber === questionNumber ? { ...r, selectedAnswer: newSelection } : r,
+    ));
+    saveResponse(questionNumber, { selectedAnswer: newSelection ?? undefined });
   }
 
   // Toggle flag
@@ -286,7 +304,9 @@ export default function TestEnginePage() {
   async function handleSubmit() {
     setShowSubmitModal(false);
     setSubmitting(true);
-    // Flush remaining time
+    // Drain any queued answer saves first
+    await flushQueue();
+    // Record final time on current question
     const elapsed = Date.now() - questionStartRef.current;
     if (elapsed > 500) {
       await fetch(`/api/mock-tests/${testId}/response`, {
@@ -322,10 +342,10 @@ export default function TestEnginePage() {
   const answered   = responses.filter((r) => r.selectedAnswer).length;
   const totalQ     = test.totalQuestions;
 
-  // Timer color
+  // Timer color: red < 1 min, amber 1–5 min, orange 5–10 min, gray otherwise
   const timerColor =
     remaining !== null && remaining <= 60_000   ? 'text-[#FF4B4B]' :
-    remaining !== null && remaining <= 300_000  ? 'text-[#FF4B4B]' :
+    remaining !== null && remaining <= 300_000  ? 'text-[#FF9600]' :
     remaining !== null && remaining <= 600_000  ? 'text-[#FF9600]' :
     'text-gray-700';
   const timerPulse = remaining !== null && remaining <= 60_000 ? 'animate-pulse' : '';
@@ -343,11 +363,7 @@ export default function TestEnginePage() {
       <div className="sticky top-0 z-50 bg-white border-b border-gray-100 px-4 py-3 flex items-center gap-3">
         {/* Back / quit */}
         <button
-          onClick={() => {
-            if (window.confirm('Leave the test? Your progress is saved — you can resume later.')) {
-              router.push('/test');
-            }
-          }}
+          onClick={() => setShowQuitModal(true)}
           className="text-gray-400 text-xl leading-none mr-1 flex-shrink-0"
         >
           ←
@@ -371,6 +387,13 @@ export default function TestEnginePage() {
           </div>
         )}
       </div>
+
+      {/* Offline banner */}
+      {isOffline && (
+        <div className="bg-amber-500 text-white text-xs font-extrabold text-center py-1.5 px-4 flex-shrink-0">
+          ⚠️ No internet — answers queued, will sync on reconnect
+        </div>
+      )}
 
       {/* ── Question area ────────────────────────────────────────────────── */}
       <div className="flex-1 px-4 pt-4 pb-4 overflow-y-auto">
@@ -468,18 +491,6 @@ export default function TestEnginePage() {
         )}
       </div>
 
-      {/* Submit button (always visible when not on last Q) */}
-      {currentNum !== totalQ && (
-        <div className="px-4 pb-4 bg-white">
-          <button
-            onClick={() => setShowSubmitModal(true)}
-            className="w-full min-h-[48px] rounded-2xl border-2 border-[#58CC02] text-[#58CC02] font-extrabold text-sm hover:bg-green-50 transition-colors"
-          >
-            Submit Test ✓
-          </button>
-        </div>
-      )}
-
       {/* Navigator overlay */}
       {showNavigator && (
         <QuestionNavigator
@@ -498,6 +509,32 @@ export default function TestEnginePage() {
           onConfirm={handleSubmit}
           submitting={submitting}
         />
+      )}
+
+      {/* Quit confirmation modal */}
+      {showQuitModal && (
+        <div className="fixed inset-0 z-[90] bg-black/60 flex items-center justify-center px-4">
+          <div className="bg-white rounded-3xl p-6 w-full max-w-sm space-y-4 shadow-2xl">
+            <h3 className="font-extrabold text-gray-800 text-xl text-center">Leave the test?</h3>
+            <p className="text-gray-500 text-sm text-center">
+              Your progress is saved — you can resume from where you left off.
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => setShowQuitModal(false)}
+                className="flex-1 min-h-[48px] rounded-2xl border-2 border-gray-200 font-extrabold text-gray-600 hover:bg-gray-50 transition-colors"
+              >
+                Keep going
+              </button>
+              <button
+                onClick={() => router.push('/test')}
+                className="flex-1 min-h-[48px] rounded-2xl bg-gray-800 font-extrabold text-white hover:bg-gray-700 transition-colors"
+              >
+                Leave
+              </button>
+            </div>
+          </div>
+        </div>
       )}
 
       {/* Submitting overlay */}

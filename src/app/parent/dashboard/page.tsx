@@ -19,8 +19,14 @@ interface Child {
 
 function PlanBadge({ sub }: { sub: Child['subscription'] }) {
   if (!sub) return <span className="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full font-semibold">No plan</span>;
-  const colors = ['', 'bg-green-100 text-green-700', 'bg-blue-100 text-blue-700', 'bg-purple-100 text-purple-700'];
-  return <span className={`text-xs ${colors[sub.tier] ?? colors[1]} px-2 py-0.5 rounded-full font-semibold`}>{sub.name}</span>;
+  const colors: Record<number, string> = {
+    1: 'bg-green-100 text-green-700',
+    2: 'bg-blue-100 text-blue-700',
+    3: 'bg-purple-100 text-purple-700',
+    4: 'bg-cyan-100 text-cyan-700',
+    5: 'bg-amber-100 text-amber-700',
+  };
+  return <span className={`text-xs ${colors[sub.tier] ?? 'bg-gray-100 text-gray-500'} px-2 py-0.5 rounded-full font-semibold`}>{sub.name}</span>;
 }
 
 export default function ParentDashboard() {
@@ -49,10 +55,11 @@ export default function ParentDashboard() {
     );
   }
 
-  function loginAsChild(childId: string, childName: string) {
-    localStorage.setItem('mathspark_student_id',   childId);
-    localStorage.setItem('mathspark_student_name', childName);
-    router.push('/chapters');
+  function loginAsChild(childId: string, childName: string, childGrade: number) {
+    localStorage.setItem('mathspark_student_id',    childId);
+    localStorage.setItem('mathspark_student_name',  childName);
+    localStorage.setItem('mathspark_student_grade', String(childGrade));
+    router.push('/home');
   }
 
   return (
@@ -142,7 +149,7 @@ export default function ParentDashboard() {
                     </div>
 
                     <button
-                      onClick={() => loginAsChild(child.id, child.name)}
+                      onClick={() => loginAsChild(child.id, child.name, child.grade)}
                       className="bg-[#58CC02] hover:bg-[#46a302] text-white text-xs font-extrabold px-3 py-2 rounded-xl transition-colors whitespace-nowrap"
                     >
                       Practice →

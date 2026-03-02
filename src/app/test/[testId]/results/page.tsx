@@ -19,6 +19,15 @@ const TOPIC_NAMES: Record<string, string> = {
   'ch17':    'Time & Calendar',            'ch18': 'Angles',
   'ch19':    'Triangles',                  'ch20': 'Quadrilaterals',
   'ch21':    'Circle',                     'dh':   'Data Handling',
+  // Grade pool topics
+  'grade2':  'Grade 2 Practice',
+  'grade3':  'Grade 3 Practice',
+  'grade4':  'Grade 4 IPM Pool',
+  'grade5':  'Grade 5 Practice',
+  'grade6':  'Grade 6 Practice',
+  'grade7':  'Grade 7 Practice',
+  'grade8':  'Grade 8 Practice',
+  'grade9':  'Grade 9 Practice',
 };
 
 const TOPIC_EMOJI: Record<string, string> = {
@@ -26,6 +35,9 @@ const TOPIC_EMOJI: Record<string, string> = {
   'ch11': '📊', 'ch12': '📏', 'ch13': '🔤', 'ch14': '⚖️',
   'ch15': '🧩', 'ch16': '🔢', 'ch17': '🕐', 'ch18': '📐',
   'ch19': '🔺', 'ch20': '⬜', 'ch21': '⭕', 'dh': '📈',
+  'grade2': '🌱', 'grade3': '🌿', 'grade4': '🎯',
+  'grade5': '⭐', 'grade6': '🌟', 'grade7': '🏆',
+  'grade8': '🔥', 'grade9': '💎',
 };
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -100,13 +112,15 @@ function ScoreRing({ pct, score, total }: { pct: number; score: number; total: n
   const r = 54;
   const circ = 2 * Math.PI * r;
   const dash = circ * (pct / 100);
+  const color = pct >= 70 ? '#58CC02' : pct >= 40 ? '#FF9600' : '#FF4B4B';
+  const trackColor = pct >= 70 ? '#E5F9CC' : pct >= 40 ? '#FFF3CD' : '#FFE4E4';
 
   return (
     <div className="relative inline-flex items-center justify-center">
       <svg width="140" height="140" className="-rotate-90">
-        <circle cx="70" cy="70" r={r} fill="none" stroke="#E5F9CC" strokeWidth="12" />
+        <circle cx="70" cy="70" r={r} fill="none" stroke={trackColor} strokeWidth="12" />
         <circle
-          cx="70" cy="70" r={r} fill="none" stroke="#58CC02" strokeWidth="12"
+          cx="70" cy="70" r={r} fill="none" stroke={color} strokeWidth="12"
           strokeDasharray={`${dash} ${circ}`}
           strokeLinecap="round"
           style={{ transition: 'stroke-dasharray 1.2s ease-out' }}
@@ -310,7 +324,7 @@ export default function TestResultsPage() {
         </p>
         <div className="mt-2 flex items-center justify-center gap-2">
           <span className="inline-block bg-white/10 text-white/80 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wide">
-            {test.type === 'quick' ? 'Quick Test' : test.type === 'half' ? 'Half Paper' : 'Full IPM Paper'}
+            {test.type === 'quick' ? 'Quick Test' : test.type === 'half' ? 'Half Paper' : test.type === 'ipm' ? 'IPM Blueprint' : test.type === 'pyq' ? 'Past Year Paper' : test.type === 'mega' ? 'Mega Final' : 'Full Paper'}
           </span>
           <button
             onClick={() => setShowShare(true)}

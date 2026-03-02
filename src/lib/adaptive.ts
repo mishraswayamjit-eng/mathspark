@@ -53,6 +53,7 @@ export async function getNextQuestion(
   studentId: string,
   topicId: string,
   clientExcludeIds: string[] = [],
+  subTopicKey: string = '',
 ) {
   // Session window: midnight today → midnight tomorrow
   const todayStart = new Date();
@@ -60,15 +61,20 @@ export async function getNextQuestion(
   const tomorrowStart = new Date(todayStart);
   tomorrowStart.setDate(tomorrowStart.getDate() + 1);
 
+  // Build optional subTopic filter
+  const subTopicFilter = subTopicKey
+    ? { subTopic: { contains: subTopicKey, mode: 'insensitive' as const } }
+    : {};
+
   // Parallel DB reads
   const [allQuestions, sessionAttempts, progress, misconceptionAttempts] = await Promise.all([
-    prisma.question.findMany({ where: { topicId } }),
+    prisma.question.findMany({ where: { topicId, ...subTopicFilter } }),
 
     prisma.attempt.findMany({
       where: {
         studentId,
         createdAt: { gte: todayStart, lt: tomorrowStart },
-        question: { topicId },
+        question: { topicId, ...subTopicFilter },
       },
       orderBy: { createdAt: 'asc' },
       select: { questionId: true, isCorrect: true },
@@ -83,7 +89,7 @@ export async function getNextQuestion(
       where: {
         studentId,
         misconceptionType: { not: null },
-        question: { topicId },
+        question: { topicId, ...subTopicFilter },
       },
       select: { question: { select: { subTopic: true } } },
     }),

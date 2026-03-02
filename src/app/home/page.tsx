@@ -282,31 +282,54 @@ export default function HomePage() {
         )}
 
         {/* ── EXAM READINESS RING ────────────────────────────────────── */}
-        <Link href="/chapters">
-          <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center gap-4 cursor-pointer hover:shadow-md transition-shadow">
-            <ReadinessRing score={readinessScore} trend={readinessTrend} />
-            <div className="flex-1 space-y-1.5">
-              <p className="font-extrabold text-gray-800 text-base leading-tight">Exam Readiness</p>
-              {examReadiness?.predictedMin != null ? (
-                <p className="text-sm font-semibold text-gray-600">
-                  📊 Predicted {examReadiness.predictedMin}–{examReadiness.predictedMax} / 40
-                </p>
-              ) : null}
-              {examReadiness?.daysUntilExam != null ? (
-                <p className="text-sm font-semibold text-gray-500">
-                  📅 {examReadiness.daysUntilExam} days to exam
-                </p>
-              ) : (
-                <Link href="/profile" className="text-sm font-semibold text-[#1CB0F6] hover:underline">
-                  Set exam date →
-                </Link>
-              )}
-              {readinessScore === 0 && topicMastery.filter(t => t.attemptsCount > 0).length === 0 && (
-                <p className="text-xs text-gray-400 font-medium">Practice to see your score!</p>
-              )}
-            </div>
-          </div>
-        </Link>
+        {(() => {
+          const hasAttempts = topicMastery.some(t => t.attemptsCount > 0);
+          if (!hasAttempts) {
+            return (
+              <Link href="/chapters">
+                <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center gap-4 cursor-pointer hover:shadow-md transition-shadow">
+                  {/* Empty state ring — gray with ? */}
+                  <svg width="120" height="120" viewBox="0 0 120 120" className="shrink-0">
+                    <circle cx="60" cy="60" r="50" stroke="#e5e7eb" strokeWidth="10" fill="none" />
+                    <text x="60" y="56" textAnchor="middle" fontSize="22" fontWeight="800" fill="#d1d5db">?</text>
+                    <text x="60" y="72" textAnchor="middle" fontSize="9" fill="#9ca3af">Not started</text>
+                  </svg>
+                  <div className="flex-1 space-y-1.5">
+                    <p className="font-extrabold text-gray-800 text-base leading-tight">Exam Readiness</p>
+                    <p className="text-sm font-medium text-gray-400">Answer questions to unlock your readiness score!</p>
+                    <span className="inline-block text-xs font-extrabold text-white bg-[#58CC02] rounded-full px-3 py-1.5">
+                      Start Practicing →
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            );
+          }
+          return (
+            <Link href="/chapters">
+              <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center gap-4 cursor-pointer hover:shadow-md transition-shadow">
+                <ReadinessRing score={readinessScore} trend={readinessTrend} />
+                <div className="flex-1 space-y-1.5">
+                  <p className="font-extrabold text-gray-800 text-base leading-tight">Exam Readiness</p>
+                  {examReadiness?.predictedMin != null ? (
+                    <p className="text-sm font-semibold text-gray-600">
+                      📊 Predicted {examReadiness.predictedMin}–{examReadiness.predictedMax} / 40
+                    </p>
+                  ) : null}
+                  {examReadiness?.daysUntilExam != null ? (
+                    <p className="text-sm font-semibold text-gray-500">
+                      📅 {examReadiness.daysUntilExam} days to exam
+                    </p>
+                  ) : (
+                    <Link href="/profile" className="text-sm font-semibold text-[#1CB0F6] hover:underline">
+                      Set exam date →
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </Link>
+          );
+        })()}
 
         {/* ── TODAY'S PLAN ───────────────────────────────────────────── */}
         <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">

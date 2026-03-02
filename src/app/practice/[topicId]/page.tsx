@@ -40,7 +40,8 @@ type Phase =
   | 'reviewing'
   | 'complete'
   | 'usage_limit'
-  | 'trial_limit';
+  | 'trial_limit'
+  | 'error';
 
 interface TrialStatus {
   isSubscribed:      boolean;
@@ -559,6 +560,7 @@ export default function PracticePage() {
   const topicId       = params.topicId as string;
   const isSpeedMode   = searchParams.get('mode') === 'speed';
   const isSampleMode  = searchParams.get('sample') === 'true';
+  const subTopicParam = searchParams.get('subTopic') ?? '';
   const SAMPLE_LIMIT  = 5;
   const { playCorrect, playWrong, playStreak, muted, toggleMute } = useSounds();
 
@@ -657,7 +659,8 @@ export default function PracticePage() {
     if (!sid) return null;
     try {
       const excludeParam = Array.from(seenQuestionIdsRef.current).join(',');
-      const url = `/api/questions/next?topicId=${topicId}&studentId=${sid}${excludeParam ? `&exclude=${excludeParam}` : ''}`;
+      const subTopicEncoded = subTopicParam ? `&subTopic=${encodeURIComponent(subTopicParam)}` : '';
+      const url = `/api/questions/next?topicId=${topicId}&studentId=${sid}${subTopicEncoded}${excludeParam ? `&exclude=${excludeParam}` : ''}`;
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), 5000);
       const res = await fetch(url, { signal: controller.signal });
@@ -670,7 +673,7 @@ export default function PracticePage() {
     } catch {
       return null;
     }
-  }, [topicId]);
+  }, [topicId, subTopicParam]);
 
   // Kick off a background prefetch of the next question.
   const prefetchNext = useCallback(() => {
@@ -736,13 +739,16 @@ export default function PracticePage() {
       .catch(() => {});
   }
 
-  function submitAttempt(payload: AttemptPayload) {
+  function submitAttempt(payload: AttemptPayload, onXpAwarded?: (xp: number) => void) {
     if (navigator.onLine) {
       fetch('/api/attempts', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload),
-      }).catch(() => queueAttempt(payload));
+      })
+        .then((r) => r.ok ? r.json() : null)
+        .then((data) => { if (onXpAwarded && data?.xpAwarded) onXpAwarded(data.xpAwarded); })
+        .catch(() => queueAttempt(payload));
     } else {
       queueAttempt(payload);
     }
@@ -825,8 +831,9 @@ export default function PracticePage() {
     setSpeedTimedOut(false);
     const q = currentQuestionRef.current;
     if (!q) return;
-    // Pick an answer that is NOT the correct one
-    const wrongKey = (['A', 'B', 'C', 'D'] as AnswerKey[]).find((k) => k !== q.correctAnswer) ?? 'A';
+    // Pick a random answer that is NOT the correct one
+    const wrongOptions = (['A', 'B', 'C', 'D'] as AnswerKey[]).filter((k) => k !== q.correctAnswer);
+    const wrongKey = wrongOptions[Math.floor(Math.random() * wrongOptions.length)];
     handleAnswer(wrongKey, false);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [speedTimedOut]);
@@ -871,7 +878,7 @@ export default function PracticePage() {
         .catch(() => ({ allowed: true, used: 0, limit: 0, trial: null })),
       fetch('/api/topics').then((r) => r.json()),
       // First question from the adaptive engine
-      fetch(`/api/questions/next?topicId=${topicId}&studentId=${sid}`)
+      fetch(`/api/questions/next?topicId=${topicId}&studentId=${sid}${subTopicParam ? `&subTopic=${encodeURIComponent(subTopicParam)}` : ''}`)
         .then((r) => { if (!r.ok) throw new Error('fetch failed'); return r.json() as Promise<Question>; }),
     ])
       .then(([usageData, topics, firstQ]: [{ allowed: boolean; used: number; limit: number; trial: TrialStatus | null }, Array<{ id: string; name: string }>, Question]) => {
@@ -902,7 +909,7 @@ export default function PracticePage() {
         // Immediately prefetch the second question
         prefetchNext();
       })
-      .catch(() => router.replace('/chapters'));
+      .catch(() => setPhase('error'));
 
     return () => {
       if (advanceTimer.current) clearTimeout(advanceTimer.current);
@@ -1037,8 +1044,6 @@ export default function PracticePage() {
     if (correct) {
       if (newStreak === 3 || newStreak === 5) playStreak();
       else playCorrect();
-      setShowXpFloat(true);
-      setTimeout(() => setShowXpFloat(false), 1500);
     } else {
       playWrong();
       // Auto-show hint level 1 after a wrong answer
@@ -1067,17 +1072,27 @@ export default function PracticePage() {
     const misconceptionKey  = `misconception${key}` as keyof Question;
     const misconceptionType = !correct ? ((currentQuestion[misconceptionKey] as string) || null) : null;
 
-    // Record attempt (offline-aware)
+    // Record attempt (offline-aware); show XP float only when server confirms XP was awarded
     if (studentId) {
-      submitAttempt({
-        studentId,
-        questionId: currentQuestion.id,
-        topicId,
-        selected: key,
-        isCorrect: correct,
-        hintUsed: hintLevel,
-        misconceptionType,
-      });
+      submitAttempt(
+        {
+          studentId,
+          questionId: currentQuestion.id,
+          topicId,
+          selected: key,
+          isCorrect: correct,
+          hintUsed: hintLevel,
+          misconceptionType,
+        },
+        correct
+          ? (awarded) => {
+              if (awarded > 0) {
+                setShowXpFloat(true);
+                setTimeout(() => setShowXpFloat(false), 1500);
+              }
+            }
+          : undefined,
+      );
     }
 
     // Track session question count (for trial gate)
@@ -1262,6 +1277,25 @@ export default function PracticePage() {
 
   // ── Full-screen phases ─────────────────────────────────────────────────────
 
+  if (phase === 'error') {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-white pb-8">
+        <div className="animate-sparky-bounce">
+          <Sparky mood="thinking" size={120} />
+        </div>
+        <div className="text-center space-y-2">
+          <h2 className="text-2xl font-extrabold text-gray-800">📭 No questions available yet</h2>
+          <p className="text-gray-500 font-medium">
+            This lesson doesn&apos;t have questions yet. Check back soon!
+          </p>
+        </div>
+        <DuoButton variant="white" fullWidth onClick={() => router.push('/chapters')}>
+          Back to Chapters →
+        </DuoButton>
+      </div>
+    );
+  }
+
   if (phase === 'loading') {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-white gap-4 px-6">
@@ -1404,7 +1438,7 @@ export default function PracticePage() {
         </div>
         <div className="w-full max-w-sm space-y-3">
           {!isUnlimitedPlan(tierLimit) && (
-            <DuoButton variant="blue" fullWidth onClick={() => router.push('/parent/dashboard')}>
+            <DuoButton variant="blue" fullWidth onClick={() => router.push('/pricing')}>
               Upgrade Plan 🚀
             </DuoButton>
           )}

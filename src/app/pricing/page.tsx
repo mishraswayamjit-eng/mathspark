@@ -18,7 +18,7 @@ const PLANS = [
     ctaClass:'bg-[#58CC02] hover:bg-[#46a302]',
     popular: false,
     features: [
-      '2,505+ practice questions',
+      '6,797+ practice questions',
       '1 hour / day',
       '3-level hint system',
       'Step-by-step solutions',
@@ -51,10 +51,10 @@ const PLANS = [
       'Diagnostic quiz',
       'Adaptive difficulty engine',
       'Misconception feedback',
+      'Mock test mode',
       '25 AI tutor chats / day',
     ],
     locked: [
-      'Mock test mode',
       'Full dashboard & analytics',
       'Parent dashboard',
       'Badges & streaks',
@@ -86,7 +86,7 @@ const PLANS = [
 ];
 
 const FAQS = [
-  { q: 'Is there a free trial?',            a: 'Yes! All plans come with a 3-day free trial. No payment required to start.' },
+  { q: 'Is there a free trial?',            a: 'Yes! All plans come with a 7-day free trial. No payment required to start.' },
   { q: 'Can I switch plans?',               a: "Yes, upgrade or downgrade anytime. We'll prorate the difference automatically." },
   { q: 'What happens when my plan expires?',a: "You keep all your progress but can't practice new questions until you renew." },
   { q: 'Do you offer sibling discounts?',   a: 'Yes! Get 50% off for a second child on the same parent account.' },
@@ -94,7 +94,7 @@ const FAQS = [
 ];
 
 const COMPARISON_ROWS = [
-  { feature: 'Practice questions',      starter: '2,505+',   advanced: '2,505+',   unlimited: '2,505+' },
+  { feature: 'Practice questions',      starter: '6,797+',   advanced: '6,797+',   unlimited: '6,797+' },
   { feature: 'Daily time limit',        starter: '1 hour',   advanced: '5 hours',  unlimited: 'Unlimited' },
   { feature: 'Hint system',             starter: true,        advanced: true,        unlimited: true },
   { feature: 'Step-by-step solutions',  starter: true,        advanced: true,        unlimited: true },
@@ -104,7 +104,7 @@ const COMPARISON_ROWS = [
   { feature: 'Misconception feedback',  starter: false,       advanced: true,        unlimited: true },
   { feature: 'Progress tracking',       starter: true,        advanced: true,        unlimited: true },
   { feature: 'Full dashboard',          starter: false,       advanced: false,       unlimited: true },
-  { feature: 'Mock test mode',          starter: false,       advanced: false,       unlimited: true },
+  { feature: 'Mock test mode',          starter: false,       advanced: true,        unlimited: true },
   { feature: 'Parent dashboard',        starter: false,       advanced: false,       unlimited: true },
   { feature: 'Badges & streaks',        starter: false,       advanced: false,       unlimited: true },
 ];
@@ -210,7 +210,7 @@ export default function PricingPage() {
               >
                 Start Free Trial →
               </Link>
-              <p className="text-center text-gray-400 text-xs mt-1.5">3-day free trial · No card required</p>
+              <p className="text-center text-gray-400 text-xs mt-1.5">7-day free trial · No card required</p>
             </div>
           </div>
         ))}
@@ -292,7 +292,7 @@ export default function PricingPage() {
         >
           Start Free Trial →
         </Link>
-        <p className="text-white/30 text-xs mt-2">3-day free trial · No card required · Cancel anytime</p>
+        <p className="text-white/30 text-xs mt-2">7-day free trial · No card required · Cancel anytime</p>
       </div>
     </div>
   );

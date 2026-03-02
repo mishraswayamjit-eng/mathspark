@@ -128,9 +128,10 @@ export async function GET(req: Request) {
   return NextResponse.json({
     student,
     stats: {
-      totalSolved:    attempts.filter((a) => a.isCorrect).length,
-      topicsMastered: progress.filter((p) => p.mastery === 'Mastered').length,
-      streakDays:     computeStreak(attempts),
+      totalSolved:      attempts.filter((a) => a.isCorrect).length,
+      topicsMastered:   progress.filter((p) => p.mastery === 'Mastered').length,
+      streakDays:       computeStreak(attempts),
+      totalLifetimeXP:  (student as unknown as { totalLifetimeXP?: number }).totalLifetimeXP ?? 0,
     },
     topics,
     weeklyData:       computeWeeklyData(attempts),

@@ -23,9 +23,12 @@ function formatDate(iso: string): string {
 
 function TypeBadge({ type }: { type: string }) {
   const cfg =
-    type === 'quick' ? { label: 'Quick',   bg: 'bg-blue-100',   text: 'text-blue-700' } :
-    type === 'half'  ? { label: 'Half',    bg: 'bg-amber-100',  text: 'text-amber-700' } :
-                       { label: 'Full IPM',bg: 'bg-green-100',  text: 'text-green-700' };
+    type === 'quick' ? { label: 'Quick',    bg: 'bg-blue-100',   text: 'text-blue-700' } :
+    type === 'half'  ? { label: 'Half',     bg: 'bg-amber-100',  text: 'text-amber-700' } :
+    type === 'ipm'   ? { label: 'IPM',      bg: 'bg-purple-100', text: 'text-purple-700' } :
+    type === 'pyq'   ? { label: 'PYQ',      bg: 'bg-indigo-100', text: 'text-indigo-700' } :
+    type === 'mega'  ? { label: 'Mega',     bg: 'bg-pink-100',   text: 'text-pink-700' } :
+                       { label: 'Full',     bg: 'bg-green-100',  text: 'text-green-700' };
   return (
     <span className={`text-xs font-extrabold px-2 py-0.5 rounded-full ${cfg.bg} ${cfg.text}`}>
       {cfg.label}
