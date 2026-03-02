@@ -367,7 +367,7 @@ async function getRecentlySeenIds(studentId: string, days: number): Promise<stri
 export async function generateMegaTest(studentId: string, grade: number) {
   const { getTopicsForGrade } = await import('@/data/topicTree');
   const topics = getTopicsForGrade(grade).map((t) => t.dbTopicId);
-  const uniqueTopics = [...new Set(topics)];
+  const uniqueTopics = Array.from(new Set(topics));
 
   const recentIds = await getRecentlySeenIds(studentId, 30);
 
