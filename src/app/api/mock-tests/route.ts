@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
-import { generateMockPaper } from '@/lib/mockTest';
+import { generateMockPaper, generateMegaTest } from '@/lib/mockTest';
 import type { TestType, PYQYear } from '@/types';
 
 // POST /api/mock-tests
@@ -8,18 +8,19 @@ import type { TestType, PYQYear } from '@/types';
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { studentId, type, topicIds, year } = body as {
+    const { studentId, type, topicIds, year, grade } = body as {
       studentId: string;
       type: TestType;
       topicIds?: string[];
       year?: PYQYear;
+      grade?: number;
     };
 
     if (!studentId || !type) {
       return NextResponse.json({ error: 'studentId and type required' }, { status: 400 });
     }
 
-    if (!['quick', 'half', 'full', 'ipm', 'pyq'].includes(type)) {
+    if (!['quick', 'half', 'full', 'ipm', 'pyq', 'mega'].includes(type)) {
       return NextResponse.json({ error: 'Invalid test type' }, { status: 400 });
     }
 
@@ -36,8 +37,20 @@ export async function POST(req: Request) {
       return NextResponse.json({ testId: existing.id, resumed: true });
     }
 
-    // Generate paper
-    const paper = await generateMockPaper(studentId, type, topicIds, year);
+    // Generate paper — mega uses its own generator
+    let studentGrade = grade;
+    if (type === 'mega' && !studentGrade) {
+      // Derive grade from topicIds (e.g. 'grade5' → 5) or fetch from DB
+      if (topicIds?.[0]?.startsWith('grade')) {
+        studentGrade = parseInt(topicIds[0].replace('grade', ''), 10) || 4;
+      } else {
+        const student = await prisma.student.findUnique({ where: { id: studentId }, select: { grade: true } });
+        studentGrade = student?.grade ?? 4;
+      }
+    }
+    const paper = type === 'mega'
+      ? await generateMegaTest(studentId, studentGrade ?? 4)
+      : await generateMockPaper(studentId, type, topicIds, year);
 
     // Create MockTest + all responses
     const mockTest = await prisma.mockTest.create({

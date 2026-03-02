@@ -85,12 +85,15 @@ const PYQ_YEARS: Array<{
 
 export default function TestConfigPage() {
   const router = useRouter();
-  const [selected,     setSelected]     = useState<TestType>('ipm');
-  const [loading,      setLoading]      = useState(false);
-  const [pyqLoading,   setPyqLoading]   = useState<PYQYear | null>(null);
-  const [error,        setError]        = useState('');
-  const [studentId,    setStudentId]    = useState<string | null>(null);
-  const [studentGrade, setStudentGrade] = useState<number>(4);
+  const [selected,          setSelected]          = useState<TestType>('ipm');
+  const [loading,           setLoading]           = useState(false);
+  const [pyqLoading,        setPyqLoading]        = useState<PYQYear | null>(null);
+  const [megaLoading,       setMegaLoading]       = useState(false);
+  const [error,             setError]             = useState('');
+  const [studentId,         setStudentId]         = useState<string | null>(null);
+  const [studentGrade,      setStudentGrade]      = useState<number>(4);
+  const [subscriptionTier,  setSubscriptionTier]  = useState<number>(0);
+  const [trialActive,       setTrialActive]       = useState(false);
 
   useEffect(() => {
     const id    = localStorage.getItem('mathspark_student_id');
@@ -100,9 +103,29 @@ export default function TestConfigPage() {
     setStudentGrade(isNaN(grade) ? 4 : grade);
     // IPM Blueprint is Grade 4 only — auto-switch selection for other grades
     if (grade !== 4) setSelected('quick');
+
+    // Check trial status from localStorage (fast, synchronous)
+    const trialExpires = localStorage.getItem('mathspark_trial_expires');
+    if (trialExpires) {
+      setTrialActive(new Date(trialExpires) > new Date());
+    }
+
+    // Fetch subscription tier + authoritative trial from home API
+    fetch(`/api/home?studentId=${id}`)
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (data?.student?.subscriptionTier != null) {
+          setSubscriptionTier(data.student.subscriptionTier);
+        }
+        if (data?.student?.trialExpiresAt) {
+          setTrialActive(new Date(data.student.trialExpiresAt) > new Date());
+        }
+      })
+      .catch(() => {});
   }, [router]);
 
   const isGrade4 = studentGrade === 4;
+  const IS_MEGA_ACCESSIBLE = subscriptionTier >= 2 || trialActive;
 
   // Start a synthetic test (quick / half / ipm / full)
   async function handleStart() {
@@ -146,6 +169,26 @@ export default function TestConfigPage() {
     } catch {
       setError('Something went wrong. Please try again!');
       setPyqLoading(null);
+    }
+  }
+
+  // Start a Mega Final test
+  async function handleMega() {
+    if (!studentId) return;
+    setMegaLoading(true);
+    setError('');
+    try {
+      const res = await fetch('/api/mock-tests', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ studentId, type: 'mega', topicIds: [`grade${studentGrade}`] }),
+      });
+      if (!res.ok) throw new Error('Failed to create test');
+      const { testId } = await res.json();
+      router.push(`/test/${testId}`);
+    } catch {
+      setError('Something went wrong. Please try again!');
+      setMegaLoading(false);
     }
   }
 
@@ -299,6 +342,84 @@ export default function TestConfigPage() {
             ? 'Actual questions from 2016–2019 IPM papers · In original exam order'
             : 'IPM past papers are for Grade 4 students · Practice with synthetic papers above'}
         </p>
+      </div>
+
+      {/* ── Section: Mega Final ─────────────────────────────────────────────── */}
+      <div className="px-4 mt-6">
+        <div className="flex items-center gap-2 mb-3">
+          <p className="text-xs font-extrabold text-white/40 uppercase tracking-widest">
+            Mega Final Experience
+          </p>
+        </div>
+
+        {/* Timed Mega Final card */}
+        <div className="relative mb-3">
+          <div className={`bg-gradient-to-br from-[#1a2040] to-[#0d1a20] border-2 ${IS_MEGA_ACCESSIBLE ? 'border-[#9B59B6]' : 'border-white/10'} rounded-2xl p-4 space-y-3`}>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <span className="text-2xl">🏆</span>
+                <div>
+                  <p className="text-white font-extrabold text-sm leading-tight">THE ULTIMATE CHALLENGE</p>
+                  <p className="text-white/50 text-[11px]">Full Mega Mock · 15 Qs · 45 min</p>
+                </div>
+              </div>
+              <span className="text-[9px] font-bold px-2 py-1 rounded-full bg-[#9B59B6]/20 text-[#9B59B6] border border-[#9B59B6]/30 shrink-0">
+                PRO
+              </span>
+            </div>
+            <div className="space-y-1">
+              <p className="text-white/50 text-[11px]">✦ Grade {studentGrade}-specific · Hard difficulty only</p>
+              <p className="text-white/50 text-[11px]">✦ No repeats · No hints · Full simulation</p>
+              <p className="text-white/50 text-[11px]">✦ Detailed performance report after</p>
+            </div>
+            <DuoButton variant="green" fullWidth loading={megaLoading} onClick={handleMega}>
+              Begin Mega Final 🚀
+            </DuoButton>
+          </div>
+
+          {/* Frosted overlay for non-subscribers */}
+          {!IS_MEGA_ACCESSIBLE && (
+            <div
+              className="absolute inset-0 rounded-2xl flex flex-col items-center justify-center"
+              style={{ backdropFilter: 'blur(6px)', background: 'rgba(13,26,32,0.75)' }}
+            >
+              <span className="text-3xl mb-2">🔒</span>
+              <p className="text-white font-extrabold text-sm mb-1">Pro Feature</p>
+              <p className="text-white/55 text-xs mb-3 text-center px-8">Start your free trial to unlock the Ultimate Challenge</p>
+              <button
+                onClick={() => router.push('/start')}
+                className="bg-[#FF9600] border-b-[3px] border-[#cc7800] text-white font-extrabold px-5 py-2 rounded-2xl text-xs active:translate-y-[2px] active:border-b-0 transition-all"
+              >
+                Unlock with Pro Trial →
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Untimed Challenge card */}
+        <div className="relative">
+          <div className={`bg-white/5 border ${IS_MEGA_ACCESSIBLE ? 'border-white/20' : 'border-white/5'} rounded-2xl p-4`}>
+            <div className="flex items-center justify-between mb-2">
+              <div>
+                <p className="text-white font-extrabold text-sm">MEGA CHALLENGE MODE</p>
+                <p className="text-white/40 text-[11px]">Untimed · Random hard questions</p>
+              </div>
+              <span className="text-[9px] font-bold px-2 py-1 rounded-full bg-[#9B59B6]/20 text-[#9B59B6] border border-[#9B59B6]/30 shrink-0">
+                PRO
+              </span>
+            </div>
+            <DuoButton variant="blue" fullWidth loading={false} onClick={handleMega}>
+              Start Challenge ⚡
+            </DuoButton>
+          </div>
+
+          {!IS_MEGA_ACCESSIBLE && (
+            <div
+              className="absolute inset-0 rounded-2xl"
+              style={{ backdropFilter: 'blur(4px)', background: 'rgba(13,26,32,0.6)' }}
+            />
+          )}
+        </div>
       </div>
 
       {/* View history link */}

@@ -156,7 +156,7 @@ export interface TopicNode {
 
 // ── Mock test types ───────────────────────────────────────────────────────────
 
-export type TestType = 'quick' | 'half' | 'full' | 'ipm' | 'pyq';
+export type TestType = 'quick' | 'half' | 'full' | 'ipm' | 'pyq' | 'mega';
 export type PYQYear = 2016 | 2017 | 2018 | 2019;
 
 export interface TestConfig {

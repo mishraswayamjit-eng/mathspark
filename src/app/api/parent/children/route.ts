@@ -43,6 +43,9 @@ export async function POST(req: Request) {
     if (!name?.trim()) {
       return NextResponse.json({ error: 'Child name is required.' }, { status: 400 });
     }
+    if (!grade || grade < 2 || grade > 9) {
+      return NextResponse.json({ error: 'Grade must be between 2 and 9.' }, { status: 400 });
+    }
 
     const count = await prisma.student.count({ where: { parentId: session.user.id } });
     if (count >= 5) {
@@ -52,7 +55,7 @@ export async function POST(req: Request) {
     const child = await prisma.student.create({
       data: {
         name:     name.trim().slice(0, 60),
-        grade:    grade ?? 4,
+        grade,
         parentId: session.user.id,
       },
     });

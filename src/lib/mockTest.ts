@@ -351,4 +351,52 @@ export async function generateMockPaper(
   };
 }
 
+// ── Helpers for Mega test ─────────────────────────────────────────────────────
+
+async function getRecentlySeenIds(studentId: string, days: number): Promise<string[]> {
+  const since = new Date(Date.now() - days * 86400000);
+  const attempts = await prisma.attempt.findMany({
+    where: { studentId, createdAt: { gte: since } },
+    select: { questionId: true },
+  });
+  return [...new Set(attempts.map((a) => a.questionId))];
+}
+
+// ── Mega Test Generator ───────────────────────────────────────────────────────
+
+export async function generateMegaTest(studentId: string, grade: number) {
+  const { getTopicsForGrade } = await import('@/data/topicTree');
+  const topics = getTopicsForGrade(grade).map((t) => t.dbTopicId);
+  const uniqueTopics = [...new Set(topics)];
+
+  const recentIds = await getRecentlySeenIds(studentId, 30);
+
+  const questions = await prisma.question.findMany({
+    where: {
+      topicId: { in: uniqueTopics },
+      difficulty: 'Hard',
+      id: { notIn: recentIds.length > 0 ? recentIds : ['__none__'] },
+    },
+    select: {
+      id: true, topicId: true, difficulty: true, source: true,
+      questionText: true, questionLatex: true,
+      option1: true, option2: true, option3: true, option4: true,
+      correctAnswer: true, hint1: true, hint2: true, hint3: true,
+      stepByStep: true,
+      misconceptionA: true, misconceptionB: true, misconceptionC: true, misconceptionD: true,
+      subTopic: true,
+    },
+    take: 50,
+    orderBy: { id: 'asc' },
+  });
+
+  const shuffled = shuffle(questions).slice(0, 15);
+
+  return {
+    questions: shuffled.map((q) => ({ ...q, stepByStep: JSON.parse(q.stepByStep ?? '[]') })),
+    timeLimitMs:    45 * 60 * 1000,
+    totalQuestions: shuffled.length,
+  };
+}
+
 export { ALL_TOPIC_IDS };

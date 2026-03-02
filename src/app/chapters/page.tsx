@@ -39,7 +39,10 @@ function sortTopics(topics: TopicWithProgress[]): TopicWithProgress[] {
   return [...topics].sort((a, b) => {
     const wDiff = masteryWeight(a.mastery) - masteryWeight(b.mastery);
     if (wDiff !== 0) return wDiff;
-    // Within same mastery group, keep canonical CH_TOPIC_ORDER
+    // Within same mastery group, sort weakest (lowest accuracy) first
+    const accA = a.attempted > 0 ? a.correct / a.attempted : 0.5;
+    const accB = b.attempted > 0 ? b.correct / b.attempted : 0.5;
+    if (Math.abs(accA - accB) > 0.01) return accA - accB;
     return CH_TOPIC_ORDER.indexOf(a.id) - CH_TOPIC_ORDER.indexOf(b.id);
   });
 }
@@ -370,6 +373,75 @@ export default function ChaptersPage() {
           );
         })}
       </div>
+
+      {/* ── Syllabus Coverage Bar ────────────────────────────────────────── */}
+      {(() => {
+        const gradeTopics = selectedGrade === 4
+          ? data.topics.filter((t) => CH_TOPIC_ORDER.includes(t.id))
+          : data.topics.filter((t) => t.id === `grade${selectedGrade}`);
+        const started = gradeTopics.filter((t) => t.attempted >= 5).length;
+        const total   = gradeTopics.length || 1;
+        const pct     = Math.round(started / total * 100);
+        return (
+          <div className="px-4 pb-3">
+            <div className="flex items-center justify-between text-[11px] font-extrabold text-gray-400 uppercase tracking-wide mb-1.5">
+              <span>Syllabus Coverage</span>
+              <span>{started} / {total} topics started</span>
+            </div>
+            <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+              <div
+                className="h-full rounded-full transition-all duration-700"
+                style={{
+                  width: `${pct}%`,
+                  background: 'linear-gradient(to right, #1CB0F6, #58CC02)',
+                }}
+              />
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* ── Recommended Topics (from weak + low-coverage topics) ──────────── */}
+      {selectedGrade === (data.student.grade ?? 4) && (() => {
+        const gradeTopics = selectedGrade === 4
+          ? data.topics.filter((t) => CH_TOPIC_ORDER.includes(t.id))
+          : data.topics.filter((t) => t.id === `grade${selectedGrade}`);
+        // Sort by accuracy ascending, pick top 2 weak topics with attempts
+        const weak = [...gradeTopics]
+          .filter((t) => t.attempted > 0 && t.mastery !== 'Mastered')
+          .sort((a, b) => (a.correct / Math.max(a.attempted, 1)) - (b.correct / Math.max(b.attempted, 1)))
+          .slice(0, 2);
+        if (!weak.length) return null;
+        return (
+          <div className="px-4 pb-3">
+            <p className="text-[11px] font-extrabold uppercase tracking-widest mb-2 text-gray-500">
+              🎯 Recommended for You
+            </p>
+            <div className="space-y-2">
+              {weak.map((t) => {
+                const pct = t.attempted > 0 ? Math.round(t.correct / t.attempted * 100) : 0;
+                const emoji = TOPIC_EMOJI[t.id] ?? '📚';
+                return (
+                  <button
+                    key={t.id}
+                    onClick={() => router.push(`/practice/${t.id}`)}
+                    className="w-full flex items-center gap-3 bg-[#1a2d35] rounded-xl px-3 py-3 border-l-4 border-[#58CC02] active:scale-[0.98] transition-all text-left"
+                  >
+                    <span className="text-xl shrink-0">{emoji}</span>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-white font-extrabold text-sm truncate">{t.name}</p>
+                      <p className="text-white/50 text-xs font-medium">
+                        {pct}% accuracy · {t.attempted} attempts
+                      </p>
+                    </div>
+                    <span className="text-[#58CC02] text-xs font-extrabold shrink-0">Practice →</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })()}
 
       {/* ── Mock test entry card ────────────────────────────────────────── */}
       <div className="px-4 pt-1">

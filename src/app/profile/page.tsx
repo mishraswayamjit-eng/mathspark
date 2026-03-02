@@ -2,124 +2,15 @@
 
 import { useEffect, useState, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
-import type { ProfileData } from '@/types';
-import Sparky from '@/components/Sparky';
+import Link from 'next/link';
 import DuoButton from '@/components/DuoButton';
+import { getTopicsForGrade } from '@/data/topicTree';
 
-// ─── Constants ─────────────────────────────────────────────────────────────────
-
-const TOPIC_ORDER = [
-  'ch01-05','ch06','ch07-08','ch09-10','ch11','ch12',
-  'ch13','ch14','ch15','ch16','ch17','ch18','ch19','ch20','ch21','dh',
-];
-
-const TOPIC_SHORT: Record<string, string> = {
-  'ch01-05': 'Numbers',   'ch06': 'Factors',    'ch07-08': 'Fractions', 'ch09-10': 'Operations',
-  'ch11': 'Decimals',     'ch12': 'Measures',    'ch13': 'Algebra',      'ch14': 'Equations',
-  'ch15': 'Puzzles',      'ch16': 'Sequences',   'ch17': 'Time',         'ch18': 'Angles',
-  'ch19': 'Triangles',    'ch20': 'Quadrilaterals', 'ch21': 'Circle',    'dh': 'Data',
-};
-
-const AVATAR_COLORS = [
-  '#FF9600','#58CC02','#1CB0F6','#FF4B4B',
-  '#9B59B6','#00BCD4','#FFC800','#FF69B4',
-];
-
-// ─── Badge definitions ─────────────────────────────────────────────────────────
-
-interface Badge {
-  id: string;
-  emoji: string;
-  name: string;
-  desc: string;
-  color: string;
-  earned: boolean;
-}
-
-function computeBadges(data: ProfileData): Badge[] {
-  const { stats, topics } = data;
-
-  const geoMastered   = ['ch18','ch19','ch20','ch21'].every(
-    (id) => topics.find((t) => t.id === id)?.mastery === 'Mastered',
-  );
-  const puzzleMastered = ['ch15','ch16'].every(
-    (id) => topics.find((t) => t.id === id)?.mastery === 'Mastered',
-  );
-  const allGoldPlus = stats.topicsMastered >= 16 && topics.every((t) => {
-    const pct = t.attempted > 0 ? t.correct / t.attempted : 0;
-    return pct >= 0.8 || t.mastery === 'Mastered';
-  });
-
-  return [
-    { id: 'first_steps',    emoji: '🌱', name: 'First Steps',    color: '#58CC02', desc: 'Started your learning journey',       earned: stats.totalAttempted > 0                     },
-    { id: 'sharp_shooter',  emoji: '🎯', name: 'Sharp Shooter',  color: '#1CB0F6', desc: '10 correct answers in a row',          earned: stats.maxConsecutiveCorrect >= 10             },
-    { id: 'week_warrior',   emoji: '🔥', name: 'Week Warrior',   color: '#FF9600', desc: '7-day learning streak',                earned: stats.streakDays >= 7                        },
-    { id: 'century_club',   emoji: '💯', name: 'Century Club',   color: '#FFC800', desc: '100 questions answered correctly',      earned: stats.totalSolved >= 100                     },
-    { id: 'champion',       emoji: '🏆', name: 'Champion',       color: '#FFC800', desc: '5 topics mastered',                   earned: stats.topicsMastered >= 5                    },
-    { id: 'superstar',      emoji: '⭐', name: 'Superstar',      color: '#9B59B6', desc: 'All 16 topics mastered',               earned: stats.topicsMastered >= 16                   },
-    { id: 'speed_demon',    emoji: '⚡', name: 'Speed Demon',    color: '#FFC800', desc: '5 correct answers under 10 seconds',   earned: stats.fastCorrects >= 5                      },
-    { id: 'geometry_guru',  emoji: '📐', name: 'Geometry Guru',  color: '#1CB0F6', desc: 'All geometry topics mastered',         earned: geoMastered                                  },
-    { id: 'puzzle_master',  emoji: '🧩', name: 'Puzzle Master',  color: '#FF9600', desc: 'Mastered Puzzles & Sequences',         earned: puzzleMastered                               },
-    { id: 'ipm_ready',      emoji: '🎓', name: 'IPM Ready',      color: '#58CC02', desc: 'All topics at gold+ level',            earned: allGoldPlus                                  },
-  ];
-}
-
-// ─── Sub-components ────────────────────────────────────────────────────────────
-
-function StatCard({ emoji, label, value, sub, color, animated = false }: {
-  emoji: string; label: string; value: string; sub?: string; color: string; animated?: boolean;
-}) {
-  return (
-    <div className="bg-gray-50 rounded-2xl p-3 border border-gray-100">
-      <div className="flex items-center gap-1.5 mb-1">
-        <span className={`text-lg ${animated ? 'animate-sparky-bounce' : ''}`}>{emoji}</span>
-        <span className="text-[10px] font-extrabold text-gray-400 uppercase tracking-wide leading-tight">{label}</span>
-      </div>
-      <p className="text-2xl font-extrabold leading-none" style={{ color }}>{value}</p>
-      {sub && <p className="text-[11px] text-gray-400 font-medium mt-1">{sub}</p>}
-    </div>
-  );
-}
-
-function BadgeTile({ badge }: { badge: Badge }) {
-  return (
-    <div className="flex flex-col items-center gap-1" title={badge.desc}>
-      <div
-        className="w-14 h-14 rounded-full flex items-center justify-center text-2xl relative border-2 transition-all"
-        style={badge.earned ? {
-          backgroundColor: `${badge.color}18`,
-          borderColor: badge.color,
-          boxShadow: `0 0 12px ${badge.color}55`,
-        } : {
-          backgroundColor: '#f3f4f6',
-          borderColor: '#e5e7eb',
-        }}
-      >
-        <span className={badge.earned ? '' : 'opacity-15'}>{badge.emoji}</span>
-        {!badge.earned && (
-          <span className="absolute inset-0 flex items-center justify-center text-gray-400 text-base font-extrabold">?</span>
-        )}
-        {badge.earned && (
-          <div
-            className="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full flex items-center justify-center border border-white"
-            style={{ backgroundColor: badge.color }}
-          >
-            <span className="text-white text-[8px] font-extrabold">✓</span>
-          </div>
-        )}
-      </div>
-      <span className={`text-[9px] font-bold text-center leading-tight px-0.5 ${badge.earned ? 'text-gray-700' : 'text-gray-400'}`}>
-        {badge.name}
-      </span>
-    </div>
-  );
-}
+// ── Sub-components ────────────────────────────────────────────────────────────
 
 function Toggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
   return (
-    <button
-      onClick={onToggle}
-      style={{ minHeight: 0 }}
+    <button onClick={onToggle} style={{ minHeight: 0 }}
       className={`relative w-12 h-6 rounded-full transition-colors flex-shrink-0 ${on ? 'bg-[#58CC02]' : 'bg-gray-200'}`}
       aria-label="toggle"
     >
@@ -145,88 +36,176 @@ function SettingRow({ icon, label, sublabel, control }: {
   );
 }
 
-function formatDate(dateStr: string) {
-  return new Date(dateStr).toLocaleDateString('en-IN', {
-    day: 'numeric', month: 'long', year: 'numeric',
-  });
+function PillSelector<T extends string | number>({
+  options, value, onChange, label,
+}: { options: T[]; value: T; onChange: (v: T) => void; label: (v: T) => string }) {
+  return (
+    <div className="flex flex-wrap gap-1.5">
+      {options.map((opt) => (
+        <button
+          key={String(opt)}
+          onClick={() => onChange(opt)}
+          style={{ minHeight: 0 }}
+          className={`px-3 py-1.5 rounded-full text-xs font-extrabold transition-all active:scale-95 ${
+            value === opt
+              ? 'bg-[#58CC02] text-white shadow-sm'
+              : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+          }`}
+        >
+          {label(opt)}
+        </button>
+      ))}
+    </div>
+  );
 }
 
-// ─── Page ──────────────────────────────────────────────────────────────────────
+function Card({ title, children }: { title?: string; children: ReactNode }) {
+  return (
+    <div className="bg-white px-4 py-4 mt-2 border-b border-gray-100">
+      {title && <h2 className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-3">{title}</h2>}
+      {children}
+    </div>
+  );
+}
+
+const LEAGUE_TIER_NAMES = ['', 'Bronze', 'Silver', 'Gold', 'Diamond', 'Champion'];
+const LEAGUE_TIER_EMOJIS = ['', '🥉', '🥈', '🥇', '💎', '👑'];
+
+// ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function ProfilePage() {
   const router = useRouter();
 
-  const [data,          setData]          = useState<ProfileData | null>(null);
-  const [loading,       setLoading]       = useState(true);
-  const [studentName,   setStudentName]   = useState('');
+  // Student meta
+  const [studentId,   setStudentId]   = useState('');
+  const [name,        setName]        = useState('');
+  const [grade,       setGrade]       = useState(4);
+  const [avatarColor, setAvatarColor] = useState('#3B82F6');
+  const [createdAt,   setCreatedAt]   = useState('');
+  const [streakDays,  setStreakDays]  = useState(0);
+  const [leagueTier,  setLeagueTier]  = useState(1);
 
-  // settings
-  const [muted,               setMuted]               = useState(false);
-  const [dailyGoal,           setDailyGoal]           = useState('2');
-  const [notifications,       setNotifications]       = useState(false);
-  const [hiddenFromLeaderboard, setHiddenFromLeaderboard] = useState(false);
+  // Identity
+  const [editingName,    setEditingName]    = useState(false);
+  const [newName,        setNewName]        = useState('');
+  const [newDisplayName, setNewDisplayName] = useState('');
+  const [city,           setCity]           = useState('');
+
+  // Exam goals
+  const [examName,    setExamName]    = useState('IPM 2027');
+  const [examDate,    setExamDate]    = useState('');
+  const [targetScore, setTargetScore] = useState<number | null>(null);
+  const [savingExam,  setSavingExam]  = useState(false);
+
+  // Preferences
+  const [dailyGoalMins,          setDailyGoalMins]          = useState(20);
+  const [sessionLengthMins,      setSessionLengthMins]      = useState(15);
+  const [preferredPracticeTime,  setPreferredPracticeTime]  = useState('');
+  const [muted,                  setMuted]                  = useState(false);
+  const [notifications,          setNotifications]          = useState(false);
+  const [hiddenFromLeaderboard,  setHiddenFromLeaderboard]  = useState(false);
+
+  // Focus areas
+  const [focusTopics,     setFocusTopics]     = useState<string[]>([]);
+  const [confidentTopics, setConfidentTopics] = useState<string[]>([]);
+
+  // Parent settings
+  const [parentEmail,    setParentEmail]    = useState('');
+  const [parentWhatsApp, setParentWhatsApp] = useState('');
+  const [savingContact,  setSavingContact]  = useState(false);
 
   // UI
-  const [editingName,   setEditingName]   = useState(false);
-  const [newName,       setNewName]       = useState('');
-  const [newDisplayName, setNewDisplayName] = useState('');
-  const [shareOpen,       setShareOpen]       = useState(false);
-  const [parentEmail,     setParentEmail]     = useState('');
-  const [parentWhatsApp,  setParentWhatsApp]  = useState('');
-  const [savingContact,   setSavingContact]   = useState(false);
-  const [sending,         setSending]         = useState(false);
-  const [toast,           setToast]           = useState<{ msg: string; ok: boolean } | null>(null);
-  const [studentId,       setStudentId]       = useState('');
+  const [loading, setLoading]   = useState(true);
+  const [toast,   setToast]     = useState<{ msg: string; ok: boolean } | null>(null);
+
+  function showToast(msg: string, ok: boolean) {
+    setToast({ msg, ok });
+    setTimeout(() => setToast(null), 3500);
+  }
 
   useEffect(() => {
     const id = localStorage.getItem('mathspark_student_id');
     if (!id) { router.replace('/start'); return; }
     setStudentId(id);
 
-    const name = localStorage.getItem('mathspark_student_name') ?? '';
-    setStudentName(name);
-    setNewName(name);
-    setNewDisplayName(localStorage.getItem('mathspark_display_name') ?? name);
+    // Restore local prefs
     setMuted(localStorage.getItem('mathspark_muted') === 'true');
-    setDailyGoal(localStorage.getItem('mathspark_daily_goal') ?? '2');
     setNotifications(localStorage.getItem('mathspark_notifications') === 'true');
-    setParentEmail(localStorage.getItem('mathspark_parent_email') ?? '');
-    setParentWhatsApp(localStorage.getItem('mathspark_parent_whatsapp') ?? '');
 
+    // Fetch student data
     fetch(`/api/profile?studentId=${id}`)
       .then((r) => r.json())
-      .then((d: ProfileData) => { setData(d); setLoading(false); })
+      .then((d) => {
+        const s = d.student ?? d;
+        setName(s.name ?? '');
+        setNewName(s.name ?? '');
+        setNewDisplayName(s.displayName ?? s.name ?? '');
+        setGrade(s.grade ?? 4);
+        setAvatarColor(s.avatarColor ?? '#3B82F6');
+        setCreatedAt(s.createdAt ?? '');
+        setStreakDays(d.stats?.streakDays ?? 0);
+        setLeagueTier(s.currentLeagueTier ?? 1);
+        setCity(s.city ?? '');
+        setExamName(s.examName ?? 'IPM 2027');
+        setExamDate(s.examDate ? s.examDate.split('T')[0] : '');
+        setTargetScore(s.targetScore ?? null);
+        setDailyGoalMins(s.dailyGoalMins ?? 20);
+        setSessionLengthMins(s.sessionLengthMins ?? 15);
+        setPreferredPracticeTime(s.preferredPracticeTime ?? '');
+        setHiddenFromLeaderboard(s.hiddenFromLeaderboard ?? false);
+        setFocusTopics(JSON.parse(s.focusTopics ?? '[]'));
+        setConfidentTopics(JSON.parse(s.confidentTopics ?? '[]'));
+        setParentEmail(s.parentEmail ?? '');
+        setParentWhatsApp(s.parentWhatsApp ?? '');
+        setLoading(false);
+      })
       .catch(() => setLoading(false));
   }, [router]);
 
+  async function patchStudent(fields: Record<string, unknown>) {
+    if (!studentId) return;
+    await fetch('/api/student', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ studentId, ...fields }),
+    }).catch(() => {});
+  }
+
   async function saveName() {
-    const trimmed = newName.trim();
-    if (!trimmed) return;
-    localStorage.setItem('mathspark_student_name', trimmed);
-    setStudentName(trimmed);
-    // Also save displayName
-    const dnTrimmed = newDisplayName.trim().slice(0, 20);
-    if (dnTrimmed) localStorage.setItem('mathspark_display_name', dnTrimmed);
+    const t = newName.trim();
+    if (!t) return;
+    localStorage.setItem('mathspark_student_name', t);
+    setName(t);
     setEditingName(false);
-    if (studentId) {
-      await fetch('/api/student', {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ studentId, name: trimmed, displayName: dnTrimmed || trimmed }),
-      }).catch(() => {/* non-critical */});
+    await patchStudent({ name: t, displayName: newDisplayName.trim().slice(0, 20) || t });
+    showToast('Name updated ✓', true);
+  }
+
+  async function saveExam() {
+    setSavingExam(true);
+    await patchStudent({ examName, examDate: examDate || undefined, targetScore });
+    setSavingExam(false);
+    showToast('Exam goal saved ✓', true);
+  }
+
+  async function saveParentContact() {
+    setSavingContact(true);
+    localStorage.setItem('mathspark_parent_email', parentEmail.trim());
+    localStorage.setItem('mathspark_parent_whatsapp', parentWhatsApp.trim());
+    try {
+      await patchStudent({ parentEmail: parentEmail.trim(), parentWhatsApp: parentWhatsApp.trim() });
+      showToast('Contact saved ✓', true);
+    } catch {
+      showToast('Could not save. Try again.', false);
+    } finally {
+      setSavingContact(false);
     }
   }
 
   async function toggleHidden() {
     const next = !hiddenFromLeaderboard;
     setHiddenFromLeaderboard(next);
-    if (studentId) {
-      await fetch('/api/student', {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ studentId, hiddenFromLeaderboard: next }),
-      }).catch(() => {/* non-critical */});
-    }
+    await patchStudent({ hiddenFromLeaderboard: next });
   }
 
   function toggleMuted() {
@@ -235,554 +214,424 @@ export default function ProfilePage() {
     localStorage.setItem('mathspark_muted', String(next));
   }
 
-  function updateDailyGoal(val: string) {
-    setDailyGoal(val);
-    localStorage.setItem('mathspark_daily_goal', val);
-  }
-
   function toggleNotifications() {
     const next = !notifications;
     setNotifications(next);
     localStorage.setItem('mathspark_notifications', String(next));
   }
 
+  async function updateDailyGoal(mins: number) {
+    setDailyGoalMins(mins);
+    await patchStudent({ dailyGoalMins: mins });
+  }
+
+  async function updateSessionLength(mins: number) {
+    setSessionLengthMins(mins);
+    await patchStudent({ sessionLengthMins: mins });
+  }
+
+  async function updatePracticeTime(t: string) {
+    setPreferredPracticeTime(t);
+    await patchStudent({ preferredPracticeTime: t });
+  }
+
+  async function toggleFocus(topicId: string) {
+    const next = focusTopics.includes(topicId)
+      ? focusTopics.filter((t) => t !== topicId)
+      : [...focusTopics, topicId];
+    setFocusTopics(next);
+    await patchStudent({ focusTopics: next });
+  }
+
+  async function toggleConfident(topicId: string) {
+    const next = confidentTopics.includes(topicId)
+      ? confidentTopics.filter((t) => t !== topicId)
+      : [...confidentTopics, topicId];
+    setConfidentTopics(next);
+    await patchStudent({ confidentTopics: next });
+  }
+
+  async function changeGrade(g: number) {
+    setGrade(g);
+    localStorage.setItem('mathspark_student_grade', String(g));
+    await patchStudent({ grade: g });
+    showToast(`Grade changed to ${g} ✓`, true);
+  }
+
   function logout() {
-    Object.keys(localStorage)
-      .filter((k) => k.startsWith('mathspark_'))
-      .forEach((k) => localStorage.removeItem(k));
+    Object.keys(localStorage).filter((k) => k.startsWith('mathspark_')).forEach((k) => localStorage.removeItem(k));
     router.replace('/start');
   }
 
-  function showToast(msg: string, ok: boolean) {
-    setToast({ msg, ok });
-    setTimeout(() => setToast(null), 4000);
-  }
-
-  async function saveParentEmail(email: string) {
-    const trimmed = email.trim();
-    localStorage.setItem('mathspark_parent_email', trimmed);
-    setParentEmail(trimmed);
-    if (studentId) {
-      await fetch('/api/student', {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ studentId, parentEmail: trimmed }),
-      });
-    }
-  }
-
-  async function saveParentContact() {
-    setSavingContact(true);
-    const emailTrimmed = parentEmail.trim();
-    const waTrimmed    = parentWhatsApp.trim();
-    localStorage.setItem('mathspark_parent_email',    emailTrimmed);
-    localStorage.setItem('mathspark_parent_whatsapp', waTrimmed);
-    try {
-      await fetch('/api/student', {
-        method:  'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify({ studentId, parentEmail: emailTrimmed, parentWhatsApp: waTrimmed }),
-      });
-      showToast('Contact saved! ✓', true);
-    } catch {
-      showToast('Could not save. Please try again.', false);
-    } finally {
-      setSavingContact(false);
-    }
-  }
-
-  async function sendReport() {
-    if (!studentId) return;
-    setSending(true);
-    setShareOpen(false);
-    try {
-      const res = await fetch('/api/reports/send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ studentId }),
-      });
-      const json = await res.json() as { success?: boolean; sentTo?: string; error?: string };
-      if (json.success) {
-        showToast(`Report sent to ${json.sentTo}! ✉️`, true);
-      } else {
-        showToast(json.error ?? 'Failed to send. Try again.', false);
-      }
-    } catch {
-      showToast('Network error. Please try again.', false);
-    } finally {
-      setSending(false);
-    }
-  }
-
-  function handleSendClick() {
-    if (!parentEmail.trim()) {
-      setShareOpen(true); // open email setup modal first
-    } else {
-      sendReport();
-    }
-  }
-
-  // ── Loading ──────────────────────────────────────────────────────────────────
+  // ── Loading skeleton ──────────────────────────────────────────────────────
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 animate-pulse">
-        {/* Avatar + name header skeleton */}
+      <div className="min-h-screen bg-gray-50 animate-pulse pb-24">
         <div className="bg-[#131F24] pt-10 pb-6 px-4">
           <div className="flex items-center gap-4">
-            <div className="w-20 h-20 rounded-full bg-white/20 flex-shrink-0" />
-            <div className="flex-1 space-y-2">
+            <div className="w-20 h-20 rounded-full bg-white/20" />
+            <div className="space-y-2 flex-1">
               <div className="h-6 bg-white/20 rounded-xl w-36" />
               <div className="h-4 bg-white/10 rounded-xl w-48" />
             </div>
           </div>
-          <div className="mt-4 h-8 bg-white/10 rounded-full w-28" />
         </div>
-        {/* Stats 2×2 grid skeleton */}
-        <div className="bg-white px-4 py-5 border-b border-gray-100">
-          <div className="h-3 bg-gray-100 rounded w-20 mb-4" />
-          <div className="h-16 bg-gray-100 rounded-2xl mb-5" />
-          <div className="grid grid-cols-2 gap-3">
-            {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="h-20 bg-gray-100 rounded-2xl" />
-            ))}
+        {[0,1,2,3].map((i) => (
+          <div key={i} className="bg-white mt-2 px-4 py-6 border-b border-gray-100">
+            <div className="h-3 bg-gray-100 rounded w-24 mb-4" />
+            <div className="h-12 bg-gray-100 rounded-2xl" />
           </div>
-        </div>
-        {/* Badge grid skeleton */}
-        <div className="bg-white px-4 py-5 mt-2 border-b border-gray-100">
-          <div className="h-3 bg-gray-100 rounded w-24 mb-4" />
-          <div className="grid grid-cols-5 gap-3">
-            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-              <div key={i} className="h-14 bg-gray-100 rounded-full" />
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
     );
   }
 
-  if (!data) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-white gap-4 p-8">
-        <Sparky mood="encouraging" size={80} />
-        <p className="text-gray-500 font-bold text-center">Couldn't load your profile. Please try again.</p>
-        <DuoButton variant="blue" onClick={() => router.refresh()}>Retry</DuoButton>
-      </div>
-    );
-  }
+  const initial    = name ? name[0].toUpperCase() : '?';
+  const tierName   = LEAGUE_TIER_NAMES[leagueTier] ?? 'Bronze';
+  const tierEmoji  = LEAGUE_TIER_EMOJIS[leagueTier] ?? '🥉';
+  const memberSince = createdAt
+    ? new Date(createdAt).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })
+    : '';
 
-  const { student, stats, topics, weeklyData } = data;
-  const displayName = studentName || student.name;
-  const initial     = displayName ? displayName[0].toUpperCase() : '?';
-  const avatarColor = AVATAR_COLORS[initial.charCodeAt(0) % AVATAR_COLORS.length];
-  const xp          = stats.totalSolved * 10;
-  const accuracy    = stats.totalAttempted > 0
-    ? Math.round((stats.totalSolved / stats.totalAttempted) * 100) : 0;
-  const badges      = computeBadges(data);
-  const maxBar      = Math.max(...weeklyData.map((d) => d.count), 1);
-  const earned      = badges.filter((b) => b.earned).length;
+  const gradeTopics = getTopicsForGrade(grade);
 
-  const strongest = [...topics]
-    .filter((t) => t.attempted > 0)
-    .sort((a, b) => (b.correct / (b.attempted || 1)) - (a.correct / (a.attempted || 1)))[0];
-  const weakest = [...topics]
-    .filter((t) => t.attempted > 0 && t.mastery !== 'Mastered')
-    .sort((a, b) => (a.correct / (a.attempted || 1)) - (b.correct / (b.attempted || 1)))[0];
-
-  const sortedTopics = [...topics].sort(
-    (a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id),
-  );
+  const examDaysLeft = examDate
+    ? Math.max(0, Math.ceil((new Date(examDate).getTime() - Date.now()) / 86400000))
+    : null;
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-8 animate-fade-in">
+    <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
 
-      {/* ── Toast notification ──────────────────────────────────────────── */}
+      {/* ── Toast ─────────────────────────────────────────────────────────── */}
       {toast && (
         <div className={`fixed top-4 left-1/2 -translate-x-1/2 z-[80] px-5 py-3 rounded-full shadow-xl font-bold text-sm text-white animate-pop-in pointer-events-none ${toast.ok ? 'bg-[#58CC02]' : 'bg-[#FF4B4B]'}`}>
           {toast.msg}
         </div>
       )}
 
-      {/* ── Edit name modal ──────────────────────────────────────────────── */}
+      {/* ── Edit name modal ────────────────────────────────────────────────── */}
       {editingName && (
         <div className="fixed inset-0 bg-black/60 z-[70] flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl p-6 w-full max-w-xs shadow-2xl animate-pop-in">
-            <h3 className="font-extrabold text-gray-800 text-lg mb-1">Change your name</h3>
-            <p className="text-gray-400 text-sm mb-3">What should Sparky call you?</p>
-            <input
-              type="text"
-              value={newName}
-              onChange={(e) => setNewName(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && saveName()}
-              className="w-full border-2 border-blue-200 rounded-2xl px-4 py-3 text-base font-bold text-gray-800 outline-none focus:border-[#1CB0F6] mb-3 transition-colors"
-              placeholder="Your first name"
-              autoFocus
-              maxLength={30}
-            />
-            <p className="text-xs font-extrabold text-gray-400 uppercase tracking-wide mb-1">Leaderboard name</p>
-            <input
-              type="text"
-              value={newDisplayName}
-              onChange={(e) => setNewDisplayName(e.target.value)}
-              className="w-full border-2 border-gray-200 rounded-2xl px-4 py-3 text-base font-bold text-gray-800 outline-none focus:border-[#1CB0F6] mb-4 transition-colors"
-              placeholder="Max 20 chars"
-              maxLength={20}
-            />
+          <div className="bg-white rounded-3xl p-6 w-full max-w-xs shadow-2xl animate-pop-in space-y-4">
+            <h3 className="font-extrabold text-gray-800 text-lg">Change your name</h3>
+            <div className="space-y-2">
+              <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Your name</label>
+              <input
+                type="text" autoFocus value={newName}
+                onChange={(e) => setNewName(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && saveName()}
+                placeholder="First name"
+                className="w-full border-2 border-blue-200 rounded-2xl px-4 py-3 text-base font-bold text-gray-800 outline-none focus:border-[#1CB0F6]"
+                maxLength={30}
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Leaderboard name</label>
+              <input
+                type="text" value={newDisplayName}
+                onChange={(e) => setNewDisplayName(e.target.value)}
+                placeholder="Max 20 chars"
+                className="w-full border-2 border-gray-200 rounded-2xl px-4 py-3 text-base font-bold text-gray-800 outline-none focus:border-[#1CB0F6]"
+                maxLength={20}
+              />
+            </div>
             <div className="flex gap-2">
               <DuoButton variant="white" onClick={() => setEditingName(false)}>Cancel</DuoButton>
-              <DuoButton variant="green" onClick={saveName} fullWidth>Save ✓</DuoButton>
+              <DuoButton variant="green" fullWidth onClick={saveName}>Save ✓</DuoButton>
             </div>
           </div>
         </div>
       )}
 
-      {/* ── Share modal ─────────────────────────────────────────────────── */}
-      {shareOpen && (
-        <div className="fixed inset-0 bg-black/60 z-[70] flex items-end justify-center">
-          <div className="bg-white rounded-t-3xl p-6 w-full max-w-lg animate-slide-up shadow-2xl">
-            <div className="flex items-center gap-3 mb-1">
-              <Sparky mood="happy" size={40} />
-              <div>
-                <h3 className="font-extrabold text-gray-800 text-lg">Send Report to Parent</h3>
-                <p className="text-gray-400 text-sm">A beautiful HTML email will be sent instantly</p>
-              </div>
-            </div>
-            <input
-              type="email"
-              value={parentEmail}
-              onChange={(e) => setParentEmail(e.target.value)}
-              className="w-full border-2 border-gray-200 rounded-2xl px-4 py-3 text-base font-medium text-gray-800 outline-none focus:border-[#1CB0F6] mt-4 mb-4 transition-colors"
-              placeholder="parent@email.com"
-            />
-            <div className="flex gap-2">
-              <DuoButton variant="white" onClick={() => setShareOpen(false)}>Cancel</DuoButton>
-              <DuoButton
-                variant="green"
-                fullWidth
-                loading={sending}
-                onClick={async () => {
-                  await saveParentEmail(parentEmail);
-                  sendReport();
-                }}
-              >
-                Send Report 📧
-              </DuoButton>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ── 1. Profile Header ────────────────────────────────────────────── */}
+      {/* ── 1. Identity Header ─────────────────────────────────────────────── */}
       <div className="bg-[#131F24] pt-10 pb-6 px-4">
         <div className="flex items-center gap-4">
-          {/* Avatar */}
           <div
-            className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white border-4 border-white/30 shadow-lg flex-shrink-0"
+            className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white border-4 border-white/30 shadow-lg shrink-0"
             style={{ backgroundColor: avatarColor }}
           >
             {initial}
           </div>
           <div className="flex-1 min-w-0">
-            <h1 className="text-2xl font-extrabold text-white truncate">{displayName}</h1>
-            <p className="text-white/60 text-sm font-semibold">Grade {student.grade} · Math Explorer</p>
-            <p className="text-white/35 text-xs font-medium mt-0.5">
-              Member since {formatDate(student.createdAt)}
+            <h1 className="text-2xl font-extrabold text-white truncate">{name}</h1>
+            <p className="text-white/60 text-sm font-semibold">
+              Grade {grade}{city ? ` · ${city}` : ''}
             </p>
+            <div className="flex items-center gap-2 mt-1">
+              <span className="text-white/50 text-xs font-medium">
+                {tierEmoji} {tierName} League
+              </span>
+              {streakDays > 0 && (
+                <span className="text-orange-400 text-xs font-extrabold">🔥 {streakDays}-day streak</span>
+              )}
+            </div>
+            {memberSince && (
+              <p className="text-white/30 text-xs font-medium mt-0.5">Member since {memberSince}</p>
+            )}
           </div>
         </div>
         <button
           onClick={() => setEditingName(true)}
           style={{ minHeight: 0 }}
-          className="mt-4 bg-white/15 hover:bg-white/25 active:bg-white/10 text-white text-sm font-bold rounded-full px-4 py-2 transition-colors"
+          className="mt-4 bg-white/15 hover:bg-white/25 text-white text-sm font-bold rounded-full px-4 py-2 transition-colors"
         >
           ✏️ Edit name
         </button>
       </div>
 
-      {/* ── 2. Stats Section ─────────────────────────────────────────────── */}
-      <div className="bg-white px-4 py-5 border-b border-gray-100">
-        <h2 className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-4">Your Stats</h2>
-
-        {/* Big XP */}
-        <div className="flex items-center gap-3 mb-5 p-4 bg-[#FFF9E6] rounded-2xl border border-yellow-200">
-          <div
-            className="text-5xl font-extrabold tabular-nums"
-            style={{ color: '#FFC800', textShadow: '0 2px 10px rgba(255,200,0,0.35)' }}
-          >
-            {xp.toLocaleString()}
-          </div>
-          <div className="flex-1">
-            <p className="text-sm font-extrabold text-gray-700">Total XP 💎</p>
-            <p className="text-xs text-gray-400 font-medium">{stats.totalSolved} correct × 10 pts each</p>
-          </div>
-        </div>
-
-        {/* Stats grid */}
-        <div className="grid grid-cols-2 gap-3">
-          <StatCard
-            emoji={stats.streakDays >= 3 ? '🔥' : '📅'}
-            label="Day Streak"
-            value={`${stats.streakDays}`}
-            sub={stats.streakDays >= 7 ? 'Week Warrior! 🏅' : stats.streakDays >= 3 ? 'On fire! Keep going!' : 'Start a streak today!'}
-            color={stats.streakDays >= 3 ? '#FF9600' : '#1CB0F6'}
-            animated={stats.streakDays >= 3}
-          />
-          <StatCard
-            emoji="⭐"
-            label="Topics Mastered"
-            value={`${stats.topicsMastered}/16`}
-            sub={stats.topicsMastered === 16 ? 'Complete! 🎓' : `${16 - stats.topicsMastered} left to master`}
-            color="#58CC02"
-          />
-          <StatCard
-            emoji="✅"
-            label="Questions Solved"
-            value={`${stats.totalSolved}`}
-            sub={stats.totalSolved >= 100 ? 'Century Club! 💯' : `${Math.max(0, 100 - stats.totalSolved)} to join 💯`}
-            color="#1CB0F6"
-          />
-          <StatCard
-            emoji="🎯"
-            label="Accuracy"
-            value={`${accuracy}%`}
-            sub={accuracy >= 80 ? 'Excellent! 🌟' : accuracy >= 60 ? 'Good work!' : 'Keep practicing!'}
-            color={accuracy >= 80 ? '#58CC02' : accuracy >= 60 ? '#FF9600' : '#FF4B4B'}
-          />
-        </div>
-      </div>
-
-      {/* ── 3. Badge Case ────────────────────────────────────────────────── */}
-      <div className="bg-white px-4 py-5 mt-2 border-b border-gray-100">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest">Badge Case</h2>
-          <div className="flex items-center gap-1.5">
-            <div className="h-2 w-2 rounded-full bg-[#58CC02]" />
-            <span className="text-xs font-bold text-gray-500">{earned} / {badges.length} earned</span>
-          </div>
-        </div>
-        <div className="grid grid-cols-5 gap-3">
-          {badges.map((badge) => (
-            <BadgeTile key={badge.id} badge={badge} />
-          ))}
-        </div>
-
-        {/* Next badge hint */}
-        {(() => {
-          const next = badges.find((b) => !b.earned);
-          return next ? (
-            <div className="mt-4 bg-gray-50 rounded-xl px-3 py-2.5 flex items-center gap-2">
-              <span className="text-base opacity-40">{next.emoji}</span>
-              <div>
-                <p className="text-xs font-extrabold text-gray-600">Next: {next.name}</p>
-                <p className="text-[11px] text-gray-400 font-medium">{next.desc}</p>
-              </div>
-            </div>
-          ) : null;
-        })()}
-      </div>
-
-      {/* ── 4. Weekly Report ─────────────────────────────────────────────── */}
-      <div className="bg-white px-4 py-5 mt-2 border-b border-gray-100">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest">Weekly Report</h2>
-          <button
-            onClick={handleSendClick}
-            disabled={sending}
-            style={{ minHeight: 0 }}
-            className="text-xs font-bold text-[#1CB0F6] bg-blue-50 rounded-full px-3 py-1.5 hover:bg-blue-100 transition-colors disabled:opacity-50"
-          >
-            {sending ? '⏳ Sending…' : '📧 Send to parent'}
-          </button>
-        </div>
-
-        {/* Activity chart */}
-        <div className="bg-gray-50 rounded-2xl p-4 mb-4">
-          <div className="flex items-end gap-1.5 h-20 mb-1">
-            {weeklyData.map(({ date, count }) => (
-              <div key={date} className="flex-1 flex flex-col items-center gap-1">
-                <div
-                  className="w-full rounded-t-sm transition-all duration-700"
-                  style={{
-                    background: count > 0
-                      ? 'linear-gradient(to top, #46a302, #58CC02)'
-                      : 'transparent',
-                    height: `${(count / maxBar) * 64}px`,
-                    minHeight: count > 0 ? '4px' : '0',
-                  }}
-                />
-                <span className="text-[10px] text-gray-400 font-semibold">{date}</span>
-              </div>
-            ))}
-          </div>
-          <p className="text-[11px] text-gray-400 text-center font-medium">Correct answers per day</p>
-        </div>
-
-        {/* Strongest & weakest */}
-        <div className="grid grid-cols-2 gap-3 mb-4">
-          {strongest ? (
-            <div className="bg-green-50 border border-green-200 rounded-2xl p-3">
-              <p className="text-[10px] text-green-600 font-extrabold uppercase tracking-wide">💪 Strongest</p>
-              <p className="text-sm font-extrabold text-gray-800 mt-1 truncate">
-                {TOPIC_SHORT[strongest.id] ?? strongest.name}
-              </p>
-              <p className="text-xs text-green-600 font-bold mt-0.5">
-                {strongest.attempted > 0 ? Math.round(strongest.correct / strongest.attempted * 100) : 0}% accurate
-              </p>
-            </div>
-          ) : (
-            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-3 flex items-center justify-center">
-              <p className="text-xs text-gray-400 text-center font-medium">Start practicing!</p>
-            </div>
-          )}
-          {weakest ? (
-            <div className="bg-orange-50 border border-orange-200 rounded-2xl p-3">
-              <p className="text-[10px] text-orange-600 font-extrabold uppercase tracking-wide">📈 Needs Work</p>
-              <p className="text-sm font-extrabold text-gray-800 mt-1 truncate">
-                {TOPIC_SHORT[weakest.id] ?? weakest.name}
-              </p>
-              <p className="text-xs text-orange-600 font-bold mt-0.5">
-                {weakest.attempted > 0 ? Math.round(weakest.correct / weakest.attempted * 100) : 0}% accurate
-              </p>
-            </div>
-          ) : strongest ? (
-            <div className="bg-green-50 border border-green-200 rounded-2xl p-3 flex items-center justify-center">
-              <p className="text-xs text-green-600 text-center font-bold">All mastered! 🎉</p>
-            </div>
-          ) : null}
-        </div>
-
-        {/* Topics practiced this week */}
-        {sortedTopics.filter((t) => t.attempted > 0).length > 0 && (
+      {/* ── 2. My Exam ─────────────────────────────────────────────────────── */}
+      <Card title="My Exam">
+        <div className="space-y-3">
           <div>
-            <p className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-2">Topics practiced</p>
-            <div className="flex flex-wrap gap-1.5">
-              {sortedTopics.filter((t) => t.attempted > 0).map((t) => {
-                const pct = t.attempted > 0 ? Math.round(t.correct / t.attempted * 100) : 0;
-                const color = t.mastery === 'Mastered' ? '#58CC02' : t.attempted > 0 ? '#FF9600' : '#9CA3AF';
-                return (
-                  <div
-                    key={t.id}
-                    className="flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-bold"
-                    style={{ backgroundColor: `${color}18`, color, border: `1px solid ${color}40` }}
-                  >
-                    <span>{TOPIC_SHORT[t.id] ?? t.name}</span>
-                    <span className="opacity-70">· {pct}%</span>
-                  </div>
-                );
-              })}
-            </div>
+            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Exam name</label>
+            <input
+              type="text" value={examName}
+              onChange={(e) => setExamName(e.target.value)}
+              placeholder="e.g. IPM 2027"
+              className="w-full mt-1.5 border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-[#1CB0F6]"
+            />
           </div>
-        )}
-      </div>
-
-      {/* ── 5. Settings ──────────────────────────────────────────────────── */}
-      <div className="bg-white px-4 py-5 mt-2">
-        <h2 className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-2">Settings</h2>
-
-        <div>
-          <SettingRow
-            icon="🔊"
-            label="Sound effects"
-            sublabel={muted ? 'Sounds are off' : 'Sounds are on'}
-            control={<Toggle on={!muted} onToggle={toggleMuted} />}
-          />
-
-          {/* Daily goal selector */}
-          <div className="flex items-center justify-between py-3.5 border-b border-gray-100">
-            <div className="flex items-center gap-3">
-              <span className="text-xl">🎯</span>
-              <div>
-                <p className="font-bold text-gray-700 text-sm">Daily goal</p>
-                <p className="text-xs text-gray-400 font-medium">Lessons per day</p>
-              </div>
-            </div>
-            <div className="flex gap-1.5">
-              {(['1','2','3','5'] as const).map((n) => (
+          <div>
+            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Exam date</label>
+            <input
+              type="date" value={examDate}
+              onChange={(e) => setExamDate(e.target.value)}
+              className="w-full mt-1.5 border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-[#1CB0F6]"
+            />
+            {examDaysLeft !== null && (
+              <p className="text-xs text-[#1CB0F6] font-semibold mt-1">
+                📅 {examDaysLeft} days to exam
+              </p>
+            )}
+          </div>
+          <div>
+            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide mb-1.5 block">Target score (out of 40)</label>
+            <div className="flex gap-2">
+              {[25, 30, 35, 38].map((s) => (
                 <button
-                  key={n}
-                  onClick={() => updateDailyGoal(n)}
+                  key={s}
+                  onClick={() => setTargetScore(s)}
                   style={{ minHeight: 0 }}
-                  className={`w-9 h-9 rounded-full text-xs font-extrabold transition-all ${
-                    dailyGoal === n
-                      ? 'bg-[#58CC02] text-white shadow-md scale-110'
+                  className={`flex-1 py-2 rounded-xl text-sm font-extrabold transition-all ${
+                    targetScore === s
+                      ? 'bg-[#58CC02] text-white shadow-sm'
                       : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                   }`}
                 >
-                  {n}
+                  {s}
+                </button>
+              ))}
+            </div>
+          </div>
+          <button
+            onClick={saveExam}
+            disabled={savingExam}
+            style={{ minHeight: 0 }}
+            className="px-4 py-2 rounded-xl bg-[#58CC02] text-white text-xs font-extrabold disabled:opacity-60"
+          >
+            {savingExam ? 'Saving…' : 'Save goals ✓'}
+          </button>
+        </div>
+      </Card>
+
+      {/* ── 3. My Goals ────────────────────────────────────────────────────── */}
+      <Card title="My Goals">
+        <div className="space-y-4">
+          <div>
+            <p className="text-sm font-bold text-gray-700 mb-2">Daily practice</p>
+            <PillSelector
+              options={[10, 20, 30, 45]}
+              value={dailyGoalMins}
+              onChange={updateDailyGoal}
+              label={(v) => `${v} min`}
+            />
+          </div>
+          <div>
+            <p className="text-sm font-bold text-gray-700 mb-2">Session length</p>
+            <PillSelector
+              options={[5, 10, 15, 25]}
+              value={sessionLengthMins}
+              onChange={updateSessionLength}
+              label={(v) => `${v} min`}
+            />
+          </div>
+        </div>
+      </Card>
+
+      {/* ── 4. My Preferences ─────────────────────────────────────────────── */}
+      <Card title="My Preferences">
+        <div>
+          <p className="text-sm font-bold text-gray-700 mb-2">Best time to practice</p>
+          <div className="flex gap-2 mb-4">
+            {[['morning', 'Morning 🌅'], ['afternoon', 'Afternoon ☀️'], ['evening', 'Evening 🌙']].map(([v, l]) => (
+              <button
+                key={v}
+                onClick={() => updatePracticeTime(v)}
+                style={{ minHeight: 0 }}
+                className={`flex-1 py-2 rounded-xl text-xs font-extrabold transition-all ${
+                  preferredPracticeTime === v
+                    ? 'bg-[#1CB0F6] text-white shadow-sm'
+                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                }`}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
+          <SettingRow
+            icon="🔊" label="Sound effects"
+            sublabel={muted ? 'Sounds are off' : 'Sounds are on'}
+            control={<Toggle on={!muted} onToggle={toggleMuted} />}
+          />
+          <SettingRow
+            icon="🔔" label="Daily reminders"
+            sublabel="Practice notifications"
+            control={<Toggle on={notifications} onToggle={toggleNotifications} />}
+          />
+          <SettingRow
+            icon="🙈" label="Hide from leaderboard"
+            sublabel={hiddenFromLeaderboard ? 'Your profile is hidden' : 'Others can see your rank'}
+            control={<Toggle on={hiddenFromLeaderboard} onToggle={toggleHidden} />}
+          />
+        </div>
+      </Card>
+
+      {/* ── 5. Focus Areas ────────────────────────────────────────────────── */}
+      <Card title="Focus Areas">
+        <p className="text-xs text-gray-400 font-medium mb-3">These help Sparky prioritise your practice 🧠</p>
+
+        <div className="mb-4">
+          <p className="text-sm font-bold text-gray-700 mb-2">📌 Topics I Find Hard</p>
+          <div className="flex flex-wrap gap-1.5">
+            {gradeTopics.slice(0, 10).map((t) => (
+              <button
+                key={t.id}
+                onClick={() => toggleFocus(t.id)}
+                style={{ minHeight: 0 }}
+                className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-extrabold transition-all ${
+                  focusTopics.includes(t.id)
+                    ? 'bg-[#FF4B4B] text-white'
+                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                }`}
+              >
+                <span>{t.emoji}</span>
+                <span>{t.name.split(' ')[0]}</span>
+                {focusTopics.includes(t.id) && <span>×</span>}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <p className="text-sm font-bold text-gray-700 mb-2">💪 Topics I&apos;m Confident In</p>
+          <div className="flex flex-wrap gap-1.5">
+            {gradeTopics.slice(0, 10).map((t) => (
+              <button
+                key={t.id}
+                onClick={() => toggleConfident(t.id)}
+                style={{ minHeight: 0 }}
+                className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-extrabold transition-all ${
+                  confidentTopics.includes(t.id)
+                    ? 'bg-[#58CC02] text-white'
+                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                }`}
+              >
+                <span>{t.emoji}</span>
+                <span>{t.name.split(' ')[0]}</span>
+                {confidentTopics.includes(t.id) && <span>×</span>}
+              </button>
+            ))}
+          </div>
+        </div>
+      </Card>
+
+      {/* ── 6. Parent Settings ────────────────────────────────────────────── */}
+      <Card title="Parent Settings">
+        <div className="space-y-3">
+          <div>
+            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Parent email</label>
+            <input
+              type="email" value={parentEmail}
+              onChange={(e) => setParentEmail(e.target.value)}
+              placeholder="parent@email.com"
+              className="w-full mt-1.5 border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-[#1CB0F6]"
+            />
+          </div>
+          <div>
+            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">WhatsApp number</label>
+            <input
+              type="tel" value={parentWhatsApp}
+              onChange={(e) => setParentWhatsApp(e.target.value)}
+              placeholder="+91 98XXX XXXXX"
+              className="w-full mt-1.5 border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-[#25D366]"
+            />
+          </div>
+          <button
+            onClick={saveParentContact}
+            disabled={savingContact}
+            style={{ minHeight: 0 }}
+            className="px-4 py-2 rounded-xl bg-[#58CC02] text-white text-xs font-extrabold disabled:opacity-60"
+          >
+            {savingContact ? 'Saving…' : 'Save contact ✓'}
+          </button>
+        </div>
+      </Card>
+
+      {/* ── 7. Account ────────────────────────────────────────────────────── */}
+      <Card title="Account">
+        <div className="space-y-3">
+          {/* Change Grade */}
+          <div>
+            <p className="text-sm font-bold text-gray-700 mb-2">Change Grade</p>
+            <div className="grid grid-cols-4 gap-2">
+              {[2,3,4,5,6,7,8,9].map((g) => (
+                <button
+                  key={g}
+                  onClick={() => changeGrade(g)}
+                  style={{ minHeight: 0 }}
+                  className={`py-2 rounded-xl text-xs font-extrabold transition-all ${
+                    grade === g
+                      ? 'bg-[#1CB0F6] text-white shadow-sm'
+                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  }`}
+                >
+                  Gr {g}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Parent contact section */}
-          <div className="py-4 border-b border-gray-100">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-xl">👨‍👩‍👧</span>
-              <p className="font-bold text-gray-700 text-sm">Parent contact</p>
+          {/* Subscription */}
+          <div className="flex items-center justify-between py-2">
+            <div>
+              <p className="text-sm font-bold text-gray-700">Subscription</p>
+              <p className="text-xs text-gray-400 font-medium">Current plan</p>
             </div>
-            <div className="space-y-2 ml-9">
-              <input
-                type="email"
-                value={parentEmail}
-                onChange={(e) => setParentEmail(e.target.value)}
-                placeholder="parent@email.com"
-                className="w-full border-2 border-gray-200 rounded-xl px-3 py-2 text-sm font-medium text-gray-800 outline-none focus:border-[#1CB0F6] transition-colors"
-                style={{ minHeight: 0 }}
-              />
-              <input
-                type="tel"
-                value={parentWhatsApp}
-                onChange={(e) => setParentWhatsApp(e.target.value)}
-                placeholder="+91 98XXX XXXXX (WhatsApp)"
-                className="w-full border-2 border-gray-200 rounded-xl px-3 py-2 text-sm font-medium text-gray-800 outline-none focus:border-[#25D366] transition-colors"
-                style={{ minHeight: 0 }}
-              />
-              <button
-                onClick={saveParentContact}
-                disabled={savingContact}
-                style={{ minHeight: 0 }}
-                className="px-4 py-2 rounded-xl bg-[#58CC02] text-white text-xs font-extrabold disabled:opacity-60"
-              >
-                {savingContact ? 'Saving…' : 'Save contact ✓'}
-              </button>
-            </div>
+            <Link href="/pricing" className="text-xs font-extrabold text-[#1CB0F6] bg-blue-50 rounded-full px-3 py-1.5">
+              Upgrade →
+            </Link>
           </div>
-          <SettingRow
-            icon="🔔"
-            label="Daily reminders"
-            sublabel="Practice notifications"
-            control={<Toggle on={notifications} onToggle={toggleNotifications} />}
-          />
-          <SettingRow
-            icon="🙈"
-            label="Hide from leaderboard"
-            sublabel={hiddenFromLeaderboard ? 'Your profile is hidden' : 'Others can see your rank'}
-            control={<Toggle on={hiddenFromLeaderboard} onToggle={toggleHidden} />}
-          />
-          <SettingRow
-            icon="💬"
-            label="Sparky Chat"
-            sublabel="Ask Sparky anything!"
-            control={
-              <a
-                href="/chat"
-                className="text-xs font-extrabold text-[#1CB0F6] bg-blue-50 rounded-full px-3 py-1.5 hover:bg-blue-100 transition-colors"
-                style={{ minHeight: 0 }}
-              >
-                → Open
-              </a>
-            }
-          />
-        </div>
 
-        {/* Logout */}
-        <div className="mt-6 mb-2">
-          <DuoButton variant="red" fullWidth onClick={logout}>
-            Log out
-          </DuoButton>
-        </div>
-        <p className="text-center text-xs text-gray-300 font-medium">MathSpark · Grade 4 Math · v1.0</p>
-      </div>
+          {/* Sparky Chat */}
+          <div className="flex items-center justify-between py-2 border-t border-gray-100">
+            <div className="flex items-center gap-2">
+              <span className="text-lg">💬</span>
+              <p className="text-sm font-bold text-gray-700">Sparky Chat</p>
+            </div>
+            <Link href="/chat" className="text-xs font-extrabold text-[#1CB0F6] bg-blue-50 rounded-full px-3 py-1.5">
+              → Open
+            </Link>
+          </div>
 
+          <div className="pt-2">
+            <DuoButton variant="red" fullWidth onClick={logout}>
+              Log out
+            </DuoButton>
+          </div>
+        </div>
+      </Card>
+
+      <p className="text-center text-xs text-gray-300 font-medium py-4">MathSpark · Grade {grade} Math · v1.0</p>
     </div>
   );
 }

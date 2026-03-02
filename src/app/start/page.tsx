@@ -9,19 +9,32 @@ import Confetti from '@/components/Confetti';
 import DuoButton from '@/components/DuoButton';
 import type { Question, AnswerKey, DiagnosticAnswer } from '@/types';
 
-// ── Diagnostic plan — 9 topics, 15 questions total (Grade 4) ─────────────────
-const GRADE4_PLAN = [
-  { topicId: 'ch11',    count: 2 },
-  { topicId: 'ch09-10', count: 2 },
-  { topicId: 'ch07-08', count: 2 },
-  { topicId: 'ch06',    count: 2 },
-  { topicId: 'ch01-05', count: 2 },
-  { topicId: 'ch18',    count: 2 },
-  { topicId: 'ch20',    count: 1 },
-  { topicId: 'ch13',    count: 1 },
-  { topicId: 'ch19',    count: 1 },
-];
-const TOTAL = 15; // always 15 diagnostic questions
+// ── Diagnostic plan — grade-aware ─────────────────────────────────────────────
+
+interface DiagnosticPlan {
+  topicId: string;
+  count: number;
+}
+
+function getDiagnosticPlan(grade: number): DiagnosticPlan[] {
+  if (grade === 4) {
+    return [
+      { topicId: 'ch11',    count: 2 },
+      { topicId: 'ch09-10', count: 2 },
+      { topicId: 'ch07-08', count: 2 },
+      { topicId: 'ch06',    count: 2 },
+      { topicId: 'ch01-05', count: 2 },
+      { topicId: 'ch18',    count: 2 },
+      { topicId: 'ch20',    count: 1 },
+      { topicId: 'ch13',    count: 1 },
+      { topicId: 'ch19',    count: 1 },
+    ];
+  }
+  // All other grades: single grade pool, 15 questions
+  return [{ topicId: `grade${grade}`, count: 15 }];
+}
+
+const TOTAL = 15;
 
 const TOPIC_NAMES: Record<string, string> = {
   'ch01-05': 'Number System',
@@ -47,7 +60,13 @@ const GRADE_EMOJI: Record<number, string> = {
   2: '🌱', 3: '🌿', 4: '🌳', 5: '🍀', 6: '⭐', 7: '🌟', 8: '🏆', 9: '🎯',
 };
 
-type Step = 'welcome' | 'name' | 'gradeSelect' | 'quiz' | 'results' | 'displayName';
+const GRADE_QUESTION_COUNTS: Record<number, string> = {
+  2: '420+', 3: '520+', 4: '1,200+', 5: '680+',
+  6: '720+', 7: '780+', 8: '850+',   9: '900+',
+};
+
+// Step order: welcome → gradeSelect → name → quiz → results → displayName
+type Step = 'welcome' | 'gradeSelect' | 'name' | 'quiz' | 'results' | 'displayName';
 type Diff  = 'Easy' | 'Medium' | 'Hard';
 
 function nextDiff(d: Diff, up: boolean): Diff {
@@ -55,7 +74,6 @@ function nextDiff(d: Diff, up: boolean): Diff {
   return d === 'Hard' ? 'Medium' : 'Easy';
 }
 
-// ── Count-up animation ────────────────────────────────────────────────────────
 function useCountUp(target: number, active: boolean): number {
   const [value, setValue] = useState(0);
   useEffect(() => {
@@ -74,24 +92,25 @@ function useCountUp(target: number, active: boolean): number {
   return value;
 }
 
-// ── Main component ────────────────────────────────────────────────────────────
-
 export default function StartPage() {
   const router = useRouter();
 
-  const [step,         setStep]        = useState<Step>('welcome');
-  const [name,         setName]        = useState('');
-  const [studentId,    setStudentId]   = useState<string | null>(null);
-  const [loading,      setLoading]     = useState(false);
-  const [error,        setError]       = useState('');
-  const [pendingRoute, setPendingRoute] = useState<'/chapters' | '/test'>('/chapters');
-  const [displayName,  setDisplayName] = useState('');
-  const [avatarColor,  setAvatarColor] = useState('#3B82F6');
-  const [dnError,      setDnError]     = useState('');
+  const [step,          setStep]         = useState<Step>('welcome');
   const [selectedGrade, setSelectedGrade] = useState<number | null>(null);
+  const [name,          setName]         = useState('');
+  const [parentEmail,   setParentEmail]  = useState('');
+  const [studentId,     setStudentId]    = useState<string | null>(null);
+  const [loading,       setLoading]      = useState(false);
+  const [error,         setError]        = useState('');
+  const [pendingRoute,  setPendingRoute] = useState<'/home' | '/test'>('/home');
+  const [displayName,   setDisplayName]  = useState('');
+  const [avatarColor,   setAvatarColor]  = useState('#3B82F6');
+  const [dnError,       setDnError]      = useState('');
+  const [trialDaysLeft, setTrialDaysLeft] = useState<number | null>(null);
+  const [trialExpiry,   setTrialExpiry]  = useState<string | null>(null);
 
-  // Active diagnostic plan (set after grade selection)
-  const [activePlan, setActivePlan]   = useState(GRADE4_PLAN);
+  // Active diagnostic plan (set when grade confirmed in gradeSelect step)
+  const [activePlan, setActivePlan] = useState<DiagnosticPlan[]>([]);
 
   // Quiz state
   const [question,     setQuestion]     = useState<Question | null>(null);
@@ -104,16 +123,11 @@ export default function StartPage() {
   const [answers,      setAnswers]      = useState<DiagnosticAnswer[]>([]);
   const [showConfetti, setShowConfetti] = useState(false);
 
-  // Count-up for results screen
   const totalCorrect = answers.filter((a) => a.isCorrect).length;
   const countUp      = useCountUp(totalCorrect, step === 'results');
 
   // ── Fetch one diagnostic question ─────────────────────────────────────────
-  const fetchQuestion = useCallback(async (
-    topicId: string,
-    diff: Diff,
-    seen: string[],
-  ) => {
+  const fetchQuestion = useCallback(async (topicId: string, diff: Diff, seen: string[]) => {
     setLoading(true);
     setAnswered(false);
     setSelected(null);
@@ -131,54 +145,45 @@ export default function StartPage() {
     }
   }, []);
 
-  // ── Create student → go to grade selection ────────────────────────────────
+  // ── Create student + start quiz ───────────────────────────────────────────
   async function handleStart() {
-    if (!name.trim()) return;
+    if (!name.trim() || !selectedGrade) return;
     setLoading(true);
     setError('');
     try {
       const res = await fetch('/api/students', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ name: name.trim() }),
+        body: JSON.stringify({
+          name:        name.trim(),
+          grade:       selectedGrade,
+          parentEmail: parentEmail.trim() || undefined,
+        }),
       });
       const student = await res.json();
-      localStorage.setItem('mathspark_student_id',   student.id);
-      localStorage.setItem('mathspark_student_name', student.name);
+      localStorage.setItem('mathspark_student_id',    student.id);
+      localStorage.setItem('mathspark_student_name',  student.name);
+      localStorage.setItem('mathspark_student_grade', String(selectedGrade));
       setStudentId(student.id);
       setDisplayName(name.trim().slice(0, 20));
       setAvatarColor(student.avatarColor ?? '#3B82F6');
-      setStep('gradeSelect');
-    } catch {
-      setError('Something went wrong. Please try again!');
-    } finally {
-      setLoading(false);
-    }
-  }
 
-  // ── Confirm grade + start diagnostic quiz ─────────────────────────────────
-  async function handleGradeConfirm() {
-    if (!selectedGrade || !studentId) return;
-    setLoading(true);
-    try {
-      // Save grade to server
-      await fetch('/api/student', {
-        method: 'PATCH',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ studentId, grade: selectedGrade }),
-      }).catch(() => {/* non-critical */});
+      if (student.trialExpiresAt) {
+        const days = Math.max(0, Math.ceil(
+          (new Date(student.trialExpiresAt).getTime() - Date.now()) / 86400000,
+        ));
+        setTrialDaysLeft(days);
+        setTrialExpiry(new Date(student.trialExpiresAt).toLocaleDateString('en-IN', {
+          day: 'numeric', month: 'long', year: 'numeric',
+        }));
+      }
 
-      // Save to localStorage
-      localStorage.setItem('mathspark_student_grade', String(selectedGrade));
-
-      // Build diagnostic plan based on grade
-      const plan = selectedGrade === 4
-        ? GRADE4_PLAN
-        : [{ topicId: `grade${selectedGrade}`, count: TOTAL }];
+      const plan = getDiagnosticPlan(selectedGrade);
       setActivePlan(plan);
-
       setStep('quiz');
       await fetchQuestion(plan[0].topicId, 'Medium', []);
+    } catch {
+      setError('Something went wrong. Please try again!');
     } finally {
       setLoading(false);
     }
@@ -196,7 +201,6 @@ export default function StartPage() {
     ];
     setAnswers(newAnswers);
 
-    // Record attempt (fire-and-forget — also updates mastery via updateProgress)
     fetch('/api/attempts', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -208,7 +212,7 @@ export default function StartPage() {
         isCorrect,
         hintUsed:   0,
       }),
-    }).catch(() => {/* ignore — non-critical */});
+    }).catch(() => {});
 
     setTimeout(() => advance(isCorrect, newAnswers), 1200);
   }
@@ -245,10 +249,6 @@ export default function StartPage() {
     await fetchQuestion(activePlan[nextPlanIdx].topicId, newDiff, newSeen);
   }
 
-  // ── Compute results for all diagnostic topics ────────────────────────────
-  // Strong   = all answered correctly (1/1 or 2/2)
-  // Learning = at least one correct but not all (1/2)
-  // NotYet   = 0 correct OR not tested
   function computeResults() {
     return activePlan.map(({ topicId }) => {
       const topicAnswers = answers.filter((a) => a.topicId === topicId);
@@ -257,36 +257,23 @@ export default function StartPage() {
       const status: 'Strong' | 'Learning' | 'NotYet' =
         total > 0 && correct === total ? 'Strong'   :
         correct > 0                    ? 'Learning' : 'NotYet';
-      return {
-        topicId,
-        name: TOPIC_NAMES[topicId] ?? topicId,
-        correct,
-        total,
-        status,
-      };
+      return { topicId, name: TOPIC_NAMES[topicId] ?? topicId, correct, total, status };
     });
   }
-
-  // ── Render ────────────────────────────────────────────────────────────────
 
   // ── Screen 1: Welcome ─────────────────────────────────────────────────────
   if (step === 'welcome') {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center gap-8 bg-gradient-to-b from-[#131F24] to-[#1a7a20]">
-        <div className="text-[96px] leading-none select-none" role="img" aria-label="sparkles">
-          ✨
-        </div>
+        <div className="text-[96px] leading-none select-none" role="img" aria-label="sparkles">✨</div>
         <div className="space-y-3">
-          <h1 className="text-3xl font-extrabold text-white leading-tight">
-            Welcome to MathSpark!
-          </h1>
+          <h1 className="text-3xl font-extrabold text-white leading-tight">Welcome to MathSpark!</h1>
           <p className="text-white/80 text-lg leading-relaxed">
-            Let&#39;s find out what you already know —<br />
-            it&#39;ll be quick and fun!
+            Let&#39;s find out what you already know —<br />it&#39;ll be quick and fun!
           </p>
         </div>
         <div className="w-full space-y-3">
-          <DuoButton variant="blue" fullWidth onClick={() => setStep('name')}>
+          <DuoButton variant="blue" fullWidth onClick={() => setStep('gradeSelect')}>
             Let&#39;s Go! 🚀
           </DuoButton>
           <p className="text-white/50 text-sm font-medium">Takes about 5 minutes</p>
@@ -295,57 +282,20 @@ export default function StartPage() {
     );
   }
 
-  // ── Screen 2: Name ────────────────────────────────────────────────────────
-  if (step === 'name') {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-[#131F24]">
-        <div className="relative bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-6">
-          {/* Sparky peeking over the card */}
-          <div className="absolute -top-8 right-4 animate-sparky-wave">
-            <Sparky mood="encouraging" size={64} />
-          </div>
-          <h2 className="text-2xl font-extrabold text-gray-800 text-center pt-4">
-            What should I call you? 😊
-          </h2>
-          <input
-            type="text"
-            autoFocus
-            value={name}
-            onChange={(e) => { setName(e.target.value); setError(''); }}
-            onKeyDown={(e) => e.key === 'Enter' && name.trim() && handleStart()}
-            placeholder="Your first name"
-            maxLength={30}
-            className="w-full text-2xl font-bold text-center border-b-4 border-[#1CB0F6] bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
-          />
-          {error && <p className="text-[#FF4B4B] text-sm text-center font-semibold">{error}</p>}
-          <DuoButton
-            variant="green"
-            fullWidth
-            onClick={handleStart}
-            loading={loading}
-            disabled={!name.trim()}
-          >
-            Continue →
-          </DuoButton>
-        </div>
-      </div>
-    );
-  }
-
-  // ── Screen 3: Grade Selection ─────────────────────────────────────────────
+  // ── Screen 2: Grade Selection (now FIRST, before name) ────────────────────
   if (step === 'gradeSelect') {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-[#131F24]">
         <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5">
           <div className="text-center space-y-1">
             <div className="text-5xl">🎓</div>
-            <h2 className="text-2xl font-extrabold text-gray-800">What grade are you in?</h2>
+            <h2 className="text-2xl font-extrabold text-gray-800">Which grade are you in?</h2>
             <p className="text-gray-400 text-sm font-medium">
-              We&apos;ll pick the right questions for you!
+              We&apos;ll personalise everything — topics, difficulty, and mock tests
             </p>
           </div>
 
-          {/* 4×2 grade grid */}
+          {/* 2×4 grade grid */}
           <div className="grid grid-cols-4 gap-2">
             {[2, 3, 4, 5, 6, 7, 8, 9].map((g) => (
               <button
@@ -360,6 +310,9 @@ export default function StartPage() {
               >
                 <span className="text-xl leading-none">{GRADE_EMOJI[g]}</span>
                 <span className="text-xs font-extrabold mt-1">Gr {g}</span>
+                <span className="text-[9px] font-semibold opacity-60 mt-0.5">
+                  {GRADE_QUESTION_COUNTS[g]}
+                </span>
               </button>
             ))}
           </div>
@@ -367,12 +320,71 @@ export default function StartPage() {
           <DuoButton
             variant="green"
             fullWidth
-            onClick={handleGradeConfirm}
-            loading={loading}
+            onClick={() => selectedGrade && setStep('name')}
             disabled={!selectedGrade}
           >
-            Let&apos;s go! 🚀
+            Next →
           </DuoButton>
+        </div>
+      </div>
+    );
+  }
+
+  // ── Screen 3: Name + optional parent email ────────────────────────────────
+  if (step === 'name') {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-[#131F24]">
+        <div className="relative bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5">
+          <div className="absolute -top-8 right-4 animate-sparky-wave">
+            <Sparky mood="encouraging" size={64} />
+          </div>
+          <h2 className="text-2xl font-extrabold text-gray-800 text-center pt-4">
+            What should I call you? 😊
+          </h2>
+
+          {/* Name input */}
+          <div>
+            <input
+              type="text"
+              autoFocus
+              value={name}
+              onChange={(e) => { setName(e.target.value); setError(''); }}
+              onKeyDown={(e) => e.key === 'Enter' && name.trim() && handleStart()}
+              placeholder="Your first name"
+              maxLength={30}
+              className="w-full text-2xl font-bold text-center border-b-4 border-[#1CB0F6] bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
+            />
+          </div>
+
+          {/* Parent email (optional) */}
+          <div className="space-y-1">
+            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">
+              Parent&apos;s email
+            </label>
+            <input
+              type="email"
+              value={parentEmail}
+              onChange={(e) => setParentEmail(e.target.value)}
+              placeholder="parent@email.com"
+              className="w-full border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-[#1CB0F6] transition-colors"
+            />
+            <p className="text-[11px] text-gray-400 font-medium">For weekly progress reports 📧</p>
+          </div>
+
+          {error && <p className="text-[#FF4B4B] text-sm text-center font-semibold">{error}</p>}
+
+          <DuoButton variant="green" fullWidth onClick={handleStart} loading={loading} disabled={!name.trim()}>
+            Start Quiz →
+          </DuoButton>
+
+          <button
+            onClick={handleStart}
+            disabled={loading || !name.trim()}
+            style={{ minHeight: 0 }}
+            className="w-full text-center text-gray-400 text-sm font-semibold py-1 hover:text-gray-600 transition-colors disabled:opacity-40"
+          >
+            Skip email →
+          </button>
         </div>
       </div>
     );
@@ -416,7 +428,7 @@ export default function StartPage() {
     );
   }
 
-  // ── Screen 5: Display name + avatar (shown before navigating away) ──────────
+  // ── Screen 5: Display name + avatar ──────────────────────────────────────
   if (step === 'displayName') {
     const AVATAR_COLORS = [
       '#FF9600','#58CC02','#1CB0F6','#FF4B4B',
@@ -433,10 +445,10 @@ export default function StartPage() {
           method: 'PATCH',
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify({ studentId, displayName: trimmed, avatarColor }),
-        }).catch(() => {/* non-critical */});
+        }).catch(() => {});
       }
       router.push(pendingRoute);
-    }
+    };
 
     return (
       <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-[#131F24]">
@@ -454,9 +466,10 @@ export default function StartPage() {
             </p>
           </div>
 
-          {/* Display name input */}
           <div>
-            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Your leaderboard name</label>
+            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">
+              Your leaderboard name
+            </label>
             <input
               type="text"
               autoFocus
@@ -470,9 +483,10 @@ export default function StartPage() {
             {dnError && <p className="text-[#FF4B4B] text-xs font-semibold text-center mt-1">{dnError}</p>}
           </div>
 
-          {/* Colour swatches */}
           <div>
-            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Avatar colour</label>
+            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">
+              Avatar colour
+            </label>
             <div className="flex flex-wrap gap-2 mt-2">
               {AVATAR_COLORS.map((c) => (
                 <button
@@ -502,7 +516,7 @@ export default function StartPage() {
     );
   }
 
-  // ── Screen 4: Results ─────────────────────────────────────────────────────
+  // ── Screen 6: Results ─────────────────────────────────────────────────────
   const results  = computeResults();
   const strong   = results.filter((r) => r.status === 'Strong');
   const learning = results.filter((r) => r.status === 'Learning');
@@ -520,18 +534,23 @@ export default function StartPage() {
         <h2 className="text-2xl font-extrabold text-gray-800">
           Wow {name}, you already know so much! 🎉
         </h2>
-        {/* Animated count-up */}
         <div className="inline-flex items-baseline gap-2 bg-[#FFF9E6] border-2 border-[#FFC800] rounded-2xl px-6 py-3">
-          <span className="text-4xl font-extrabold text-[#131F24] tabular-nums">
-            {countUp}
-          </span>
-          <span className="text-gray-600 font-semibold text-base">
-            out of {TOTAL} correct!
-          </span>
+          <span className="text-4xl font-extrabold text-[#131F24] tabular-nums">{countUp}</span>
+          <span className="text-gray-600 font-semibold text-base">out of {TOTAL} correct!</span>
         </div>
       </div>
 
-      {/* ✅ Green — "You nailed it!" (show first) */}
+      {/* Trial banner */}
+      {trialDaysLeft !== null && trialDaysLeft > 0 && (
+        <div className="bg-amber-50 border-2 border-[#FF9600] rounded-2xl px-4 py-3 text-center">
+          <p className="font-extrabold text-amber-800 text-base">🎉 7-Day Pro Trial Activated!</p>
+          <p className="text-amber-600 text-xs font-medium mt-0.5">
+            Expires on {trialExpiry} · {trialDaysLeft} days left
+          </p>
+        </div>
+      )}
+
+      {/* ✅ Strong */}
       {strong.length > 0 && (
         <div>
           <h3 className="text-sm font-extrabold text-[#46a302] uppercase tracking-wide mb-2">
@@ -539,10 +558,7 @@ export default function StartPage() {
           </h3>
           <div className="space-y-2">
             {strong.map((r) => (
-              <div
-                key={r.topicId}
-                className="bg-green-50 border-2 border-[#58CC02] rounded-2xl px-4 py-3 flex justify-between items-center"
-              >
+              <div key={r.topicId} className="bg-green-50 border-2 border-[#58CC02] rounded-2xl px-4 py-3 flex justify-between items-center">
                 <span className="font-bold text-gray-800">{r.name}</span>
                 <span className="text-[#46a302] font-extrabold">{r.correct}/{r.total}</span>
               </div>
@@ -551,7 +567,7 @@ export default function StartPage() {
         </div>
       )}
 
-      {/* 🟡 Amber — "Getting there!" */}
+      {/* 🟡 Learning */}
       {learning.length > 0 && (
         <div>
           <h3 className="text-sm font-extrabold text-[#cc7800] uppercase tracking-wide mb-2">
@@ -559,10 +575,7 @@ export default function StartPage() {
           </h3>
           <div className="space-y-2">
             {learning.map((r) => (
-              <div
-                key={r.topicId}
-                className="bg-amber-50 border-2 border-[#FF9600] rounded-2xl px-4 py-3 flex justify-between items-center"
-              >
+              <div key={r.topicId} className="bg-amber-50 border-2 border-[#FF9600] rounded-2xl px-4 py-3 flex justify-between items-center">
                 <span className="font-bold text-gray-800">{r.name}</span>
                 <span className="text-[#cc7800] font-extrabold">{r.correct}/{r.total}</span>
               </div>
@@ -571,7 +584,7 @@ export default function StartPage() {
         </div>
       )}
 
-      {/* ⬜ Gray — "Let's explore!" (0 correct or untested) */}
+      {/* ⬜ Not Yet */}
       {notYet.length > 0 && (
         <div>
           <h3 className="text-sm font-extrabold text-gray-400 uppercase tracking-wide mb-2">
@@ -579,10 +592,7 @@ export default function StartPage() {
           </h3>
           <div className="space-y-2">
             {notYet.map((r) => (
-              <div
-                key={r.topicId}
-                className="bg-gray-50 border-2 border-gray-200 rounded-2xl px-4 py-3 flex justify-between items-center"
-              >
+              <div key={r.topicId} className="bg-gray-50 border-2 border-gray-200 rounded-2xl px-4 py-3 flex justify-between items-center">
                 <span className="font-bold text-gray-800">{r.name}</span>
                 <span className="text-gray-400 font-extrabold text-sm">
                   {r.total > 0 ? `${r.correct}/${r.total}` : 'Not tested yet'}
@@ -594,7 +604,7 @@ export default function StartPage() {
       )}
 
       <div className="space-y-3">
-        <DuoButton variant="green" fullWidth onClick={() => { setPendingRoute('/chapters'); setStep('displayName'); }}>
+        <DuoButton variant="green" fullWidth onClick={() => { setPendingRoute('/home'); setStep('displayName'); }}>
           Start Learning 📚
         </DuoButton>
         <DuoButton variant="blue" fullWidth onClick={() => { setPendingRoute('/test'); setStep('displayName'); }}>

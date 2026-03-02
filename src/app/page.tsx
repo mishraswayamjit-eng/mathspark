@@ -226,7 +226,7 @@ export default function LandingPage() {
     if (status === 'loading') return;
     if (status === 'authenticated') { router.replace('/parent/dashboard'); return; }
     const id = localStorage.getItem('mathspark_student_id');
-    if (id) router.replace('/chapters');
+    if (id) router.replace('/home');
   }, [status, router]);
 
   return (

@@ -8,7 +8,7 @@ export default function AddChildPage() {
   const router         = useRouter();
   const { status }     = useSession();
   const [name,    setName]    = useState('');
-  const [grade,   setGrade]   = useState(4);
+  const [grade,   setGrade]   = useState<number | null>(null);
   const [loading, setLoading] = useState(false);
   const [error,   setError]   = useState('');
 
@@ -26,7 +26,7 @@ export default function AddChildPage() {
       const res  = await fetch('/api/parent/children', {
         method:  'POST',
         headers: { 'content-type': 'application/json' },
-        body:    JSON.stringify({ name: name.trim(), grade }),
+        body:    JSON.stringify({ name: name.trim(), grade: grade ?? 4 }),
       });
       const data = await res.json();
 
@@ -72,10 +72,11 @@ export default function AddChildPage() {
               Grade
             </label>
             <select
-              value={grade} onChange={(e) => setGrade(Number(e.target.value))}
+              value={grade ?? ''} onChange={(e) => setGrade(Number(e.target.value))}
               className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white outline-none focus:border-[#58CC02]"
             >
-              {[3, 4, 5].map((g) => (
+              <option value="" disabled className="bg-[#131F24]">Select grade</option>
+              {[2, 3, 4, 5, 6, 7, 8, 9].map((g) => (
                 <option key={g} value={g} className="bg-[#131F24]">Grade {g}</option>
               ))}
             </select>
@@ -84,7 +85,7 @@ export default function AddChildPage() {
           {error && <p className="text-[#FF4B4B] text-sm text-center font-semibold">{error}</p>}
 
           <button
-            type="submit" disabled={loading}
+            type="submit" disabled={loading || !grade}
             className="w-full bg-[#58CC02] hover:bg-[#46a302] disabled:opacity-50 text-white font-extrabold py-4 rounded-2xl text-lg transition-colors"
           >
             {loading ? 'Creating…' : 'Add Child →'}

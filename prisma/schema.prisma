@@ -69,6 +69,18 @@ model Student {
   currentLeagueTier       Int           @default(1)
   totalLifetimeXP         Int           @default(0)
   hiddenFromLeaderboard   Boolean       @default(false)
+  // ── Brain Engine / Personalization ──
+  trialExpiresAt          DateTime?
+  examName                String?
+  examDate                DateTime?
+  dailyGoalMins           Int           @default(20)
+  targetScore             Int?
+  focusTopics             String        @default("[]")   // JSON: string[] topicIds
+  confidentTopics         String        @default("[]")   // JSON: string[] topicIds
+  city                    String?
+  preferredPracticeTime   String?       // "morning"|"afternoon"|"evening"
+  sessionLengthMins       Int           @default(15)
+  analytics               StudentAnalytics?
   // ── Relations ──
   progress                Progress[]
   attempts                Attempt[]
@@ -266,6 +278,21 @@ model MockTestResponse {
 
   @@index([mockTestId])
   @@index([questionId])
+}
+
+// ── Student Analytics (Brain Engine output) ────────────────────────────────
+
+model StudentAnalytics {
+  id              String   @id @default(cuid())
+  studentId       String   @unique
+  student         Student  @relation(fields: [studentId], references: [id])
+  topicMastery    Json?    // TopicMasteryEntry[]
+  examReadiness   Json?    // ExamReadinessResult
+  topicPriorities Json?    // TopicPriority[]
+  dailyPlan       Json?    // DailyPlanItem[]
+  nudges          Json?    // Nudge[]
+  lastComputedAt  DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 }
 
 // ── League / Social ────────────────────────────────────────────────────────
