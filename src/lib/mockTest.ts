@@ -359,7 +359,7 @@ async function getRecentlySeenIds(studentId: string, days: number): Promise<stri
     where: { studentId, createdAt: { gte: since } },
     select: { questionId: true },
   });
-  return [...new Set(attempts.map((a) => a.questionId))];
+  return Array.from(new Set(attempts.map((a) => a.questionId)));
 }
 
 // ── Mega Test Generator ───────────────────────────────────────────────────────
