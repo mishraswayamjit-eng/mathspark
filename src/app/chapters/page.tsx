@@ -7,6 +7,7 @@ import Sparky from '@/components/Sparky';
 import NudgeBubble from '@/components/NudgeBubble';
 import { computeNudge, markMasteryShown, type Nudge } from '@/lib/nudges';
 import { getAccessibleGrades, isGradeAccessible } from '@/lib/gradeAccess';
+import { getTopicsForGrade, type TopicNode } from '@/data/topicTree';
 
 // ── Topic metadata ─────────────────────────────────────────────────────────────
 
@@ -183,7 +184,12 @@ export default function ChaptersPage() {
   const [loading,       setLoading]       = useState(true);
   const [hearts,        setHearts]        = useState(5);
   const [nudge,         setNudge]         = useState<Nudge | null>(null);
-  const [selectedGrade, setSelectedGrade] = useState<number>(4);
+  // Read from localStorage immediately to avoid Grade 4 flash for non-Grade-4 students
+  const [selectedGrade, setSelectedGrade] = useState<number>(() => {
+    if (typeof window === 'undefined') return 4;
+    const stored = parseInt(localStorage.getItem('mathspark_student_grade') ?? '4', 10);
+    return stored >= 2 && stored <= 9 ? stored : 4;
+  });
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const [lockedGradeTarget, setLockedGradeTarget] = useState<number | null>(null);
   const gradeTabsRef = useRef<HTMLDivElement>(null);
@@ -192,10 +198,6 @@ export default function ChaptersPage() {
     const id = localStorage.getItem('mathspark_student_id');
     if (!id) { router.replace('/start'); return; }
     setHearts(getHearts());
-
-    // Initialise selectedGrade from localStorage
-    const storedGrade = parseInt(localStorage.getItem('mathspark_student_grade') ?? '4', 10);
-    if (storedGrade >= 2 && storedGrade <= 9) setSelectedGrade(storedGrade);
 
     fetch(`/api/dashboard?studentId=${id}`)
       .then((r) => r.json())
@@ -511,40 +513,56 @@ export default function ChaptersPage() {
             )}
           </>
         ) : (
-          // Other grades: single large topic card + lower-grade tiles
+          // Other grades: topicTree lesson cards + lower-grade tiles
           <>
-            {/* Main grade topic */}
-            {topicsForGrade.length > 0 ? (
-              <div className="space-y-3">
-                {topicsForGrade.map((topic) => {
-                  const access = isGradeAccessible(selectedGrade, studentGrade, subscriptionTier);
-                  const isSample = access.sample;
-                  return (
+            {/* Lesson grid from topicTree */}
+            {(() => {
+              const treeNodes: TopicNode[] = getTopicsForGrade(selectedGrade);
+              const access = isGradeAccessible(selectedGrade, studentGrade, subscriptionTier);
+              const isSample = access.sample;
+              const poolTopic = topicsForGrade[0]; // the single gradeN DB topic (for correct count)
+
+              if (!treeNodes.length) {
+                return (
+                  <div className="text-center py-12 text-gray-400">
+                    <p className="font-semibold">No lessons available yet for Grade {selectedGrade}</p>
+                  </div>
+                );
+              }
+
+              return (
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                  {treeNodes.map((node) => (
                     <button
-                      key={topic.id}
-                      onClick={() => router.push(`/practice/${topic.id}${isSample ? '?sample=true' : ''}`)}
-                      className="w-full text-left bg-gradient-to-r from-[#131F24] to-[#1a3040] rounded-2xl p-5 flex items-center gap-4 active:scale-[0.98] transition-all shadow-lg"
+                      key={node.id}
+                      onClick={() => router.push(`/practice/${node.dbTopicId}${isSample ? '?sample=true' : ''}`)}
+                      className="w-full text-left bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-[#1CB0F6] active:scale-[0.97] transition-all duration-150 flex flex-col gap-2"
                     >
-                      <span className="text-4xl">{GRADE_EMOJI[selectedGrade]}</span>
-                      <div className="flex-1">
-                        <p className="text-white font-extrabold text-base">{topic.name}</p>
-                        <p className="text-white/60 text-xs mt-0.5">
-                          {isSample ? '5 free preview questions 🔓' : `${topic.correct} correct · ${
-                            topic.mastery === 'Mastered' ? '✅ Mastered' :
-                            topic.mastery === 'Practicing' ? '🟡 In progress' : 'Not started'
-                          }`}
-                        </p>
+                      <div className="flex items-start justify-between gap-1">
+                        <span className="text-3xl leading-none select-none">{node.emoji}</span>
+                        {isSample && (
+                          <span className="inline-flex items-center text-[11px] font-extrabold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 border border-blue-200">
+                            Preview 🔓
+                          </span>
+                        )}
                       </div>
-                      <span className="text-white/40 text-lg">→</span>
+                      <p className="text-sm font-extrabold text-gray-800 leading-snug line-clamp-2">
+                        {node.name}
+                      </p>
+                      <p className="text-[11px] text-gray-400 font-semibold">
+                        {poolTopic ? `${poolTopic.correct} solved in pool` : 'Not started'}
+                      </p>
+                      <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                        <div
+                          className="h-full rounded-full bg-[#1CB0F6]"
+                          style={{ width: poolTopic && poolTopic.mastery === 'Mastered' ? '100%' : poolTopic && poolTopic.mastery === 'Practicing' ? '50%' : '0%' }}
+                        />
+                      </div>
                     </button>
-                  );
-                })}
-              </div>
-            ) : (
-              <div className="text-center py-12 text-gray-400">
-                <p className="font-semibold">No questions available yet for Grade {selectedGrade}</p>
-              </div>
-            )}
+                  ))}
+                </div>
+              );
+            })()}
 
             {/* Also accessible: lower grades */}
             {lowerGrades.length > 0 && (

@@ -13,27 +13,28 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: 'topicId required' }, { status: 400 });
   }
 
-  // Try requested difficulty first
-  let q = await prisma.question.findFirst({
+  // Fetch a pool of candidates, then randomly select one so each session gets different questions
+  let pool = await prisma.question.findMany({
     where: {
       topicId,
       difficulty: difficulty as 'Easy' | 'Medium' | 'Hard',
       id: { notIn: excludeIds },
     },
-    orderBy: { id: 'asc' },
+    take: 80,
   });
 
   // Fallback to any difficulty in this topic
-  if (!q) {
-    q = await prisma.question.findFirst({
+  if (!pool.length) {
+    pool = await prisma.question.findMany({
       where: { topicId, id: { notIn: excludeIds } },
-      orderBy: { id: 'asc' },
+      take: 80,
     });
   }
 
-  if (!q) {
+  if (!pool.length) {
     return NextResponse.json({ error: 'No question found' }, { status: 404 });
   }
 
+  const q = pool[Math.floor(Math.random() * pool.length)];
   return NextResponse.json({ ...q, stepByStep: JSON.parse(q.stepByStep ?? '[]') });
 }

@@ -49,22 +49,15 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: 'Student not found' }, { status: 404 });
   }
 
-  // Recompute analytics if missing or stale (> 1 hour)
+  // Recompute analytics if missing or stale (> 1 hour) — fire-and-forget, never block response
   const ONE_HOUR = 60 * 60 * 1000;
   const isStale = !student.analytics ||
     Date.now() - new Date(student.analytics.lastComputedAt).getTime() > ONE_HOUR;
 
   if (isStale) {
-    try {
-      await recomputeStudentAnalytics(studentId);
-      // Re-fetch after recompute
-      const refreshed = await prisma.studentAnalytics.findUnique({ where: { studentId } });
-      if (refreshed) {
-        Object.assign(student, { analytics: refreshed });
-      }
-    } catch (err) {
-      console.error('[api/home] recompute failed:', err);
-    }
+    recomputeStudentAnalytics(studentId).catch((err) =>
+      console.error('[api/home] background recompute failed:', err),
+    );
   }
 
   // Streak + today's correct
