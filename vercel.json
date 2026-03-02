@@ -1,27 +1,16 @@
 {
   "buildCommand": "prisma generate && prisma db push --accept-data-loss && next build",
-  "framework": "nextjs",
   "functions": {
-    "src/app/api/seed/route.ts":            { "maxDuration": 60  },
-    "src/app/api/seed-test/route.ts":       { "maxDuration": 60  },
-    "src/app/api/chat/route.ts":            { "maxDuration": 60  },
-    "src/app/api/reports/weekly/route.ts":  { "maxDuration": 60  },
-    "src/app/api/reports/send/route.ts":                        { "maxDuration": 30  },
-    "src/app/api/mock-tests/[testId]/submit/route.ts":          { "maxDuration": 60  },
-    "src/app/api/payment/create-order/route.ts":               { "maxDuration": 30  },
-    "src/app/api/payment/verify/route.ts":                     { "maxDuration": 30  },
-    "src/app/api/payment/webhook/route.ts":                    { "maxDuration": 30  },
-    "src/app/api/auth/register/route.ts":                      { "maxDuration": 30  },
-    "src/app/api/cron/process-leagues/route.ts":               { "maxDuration": 60  }
-  },
-  "crons": [
-    {
-      "path":     "/api/reports/weekly",
-      "schedule": "30 4 * * 0"
-    },
-    {
-      "path":     "/api/cron/process-leagues",
-      "schedule": "59 18 * * 0"
-    }
-  ]
+    "src/app/api/seed/route.ts":                          { "maxDuration": 60 },
+    "src/app/api/seed-test/route.ts":                     { "maxDuration": 60 },
+    "src/app/api/chat/route.ts":                          { "maxDuration": 60 },
+    "src/app/api/reports/weekly/route.ts":                { "maxDuration": 60 },
+    "src/app/api/reports/send/route.ts":                  { "maxDuration": 30 },
+    "src/app/api/mock-tests/[testId]/submit/route.ts":    { "maxDuration": 60 },
+    "src/app/api/payment/create-order/route.ts":          { "maxDuration": 30 },
+    "src/app/api/payment/verify/route.ts":                { "maxDuration": 30 },
+    "src/app/api/payment/webhook/route.ts":               { "maxDuration": 30 },
+    "src/app/api/auth/register/route.ts":                 { "maxDuration": 30 },
+    "src/app/api/cron/process-leagues/route.ts":          { "maxDuration": 60 }
+  }
 }
