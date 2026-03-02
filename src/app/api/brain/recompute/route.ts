@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { recomputeStudentAnalytics } from '@/lib/brain/recompute';
+import { validateStudentAccess } from '@/lib/validateStudent';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 30;
@@ -12,6 +13,9 @@ export async function POST(req: Request) {
     if (!studentId || typeof studentId !== 'string') {
       return NextResponse.json({ error: 'studentId required' }, { status: 400 });
     }
+    const err = await validateStudentAccess(studentId);
+    if (err) return NextResponse.json({ error: err }, { status: err === 'Student not found' ? 404 : 403 });
+
     await recomputeStudentAnalytics(studentId);
     return NextResponse.json({ ok: true });
   } catch (err) {

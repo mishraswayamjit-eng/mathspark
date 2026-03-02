@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { isClean } from '@/lib/profanityFilter';
+import { validateStudentAccess } from '@/lib/validateStudent';
 
 // PATCH /api/student — update mutable student fields
 export async function PATCH(req: Request) {
@@ -30,6 +31,11 @@ export async function PATCH(req: Request) {
     return NextResponse.json({ error: 'studentId required' }, { status: 400 });
   }
 
+  const accessErr = await validateStudentAccess(studentId);
+  if (accessErr) {
+    return NextResponse.json({ error: accessErr }, { status: accessErr === 'Student not found' ? 404 : 403 });
+  }
+
   const data: Record<string, unknown> = {};
 
   if (typeof body.parentEmail    !== 'undefined') data.parentEmail    = body.parentEmail    || null;
@@ -54,6 +60,15 @@ export async function PATCH(req: Request) {
     const trimmed = (body.displayName ?? '').trim().slice(0, 20);
     if (trimmed && !isClean(trimmed)) {
       return NextResponse.json({ error: 'Display name contains inappropriate content.' }, { status: 422 });
+    }
+    if (trimmed) {
+      const taken = await prisma.student.findFirst({
+        where:  { displayName: trimmed, id: { not: studentId } },
+        select: { id: true },
+      });
+      if (taken) {
+        return NextResponse.json({ error: 'That name is already taken — try adding a number or emoji!' }, { status: 409 });
+      }
     }
     data.displayName = trimmed || null;
   }
