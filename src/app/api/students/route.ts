@@ -21,18 +21,17 @@ export async function POST(req: Request) {
   // 7-day trial for new onboarding students
   const trialExpiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
 
-  const data: Record<string, unknown> = {
-    name:         name.trim(),
-    avatarColor,
-    grade:        gradeValue,
-    trialExpiresAt,
-  };
-
-  if (parentEmail && typeof parentEmail === 'string' && parentEmail.trim()) {
-    data.parentEmail = parentEmail.trim();
-  }
-
-  const student = await prisma.student.create({ data });
+  const student = await prisma.student.create({
+    data: {
+      name:          name.trim(),
+      avatarColor,
+      grade:         gradeValue,
+      trialExpiresAt,
+      ...(parentEmail && typeof parentEmail === 'string' && parentEmail.trim()
+        ? { parentEmail: parentEmail.trim() }
+        : {}),
+    },
+  });
 
   return NextResponse.json(student, { status: 201 });
 }
