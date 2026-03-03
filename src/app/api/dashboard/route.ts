@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { getTopicsCached } from '@/lib/topicCache';
 import type { RecentSession } from '@/types';
 
 const TOPIC_ORDER = [
@@ -97,8 +98,9 @@ export async function GET(req: Request) {
         question: { select: { topicId: true } },
       },
       orderBy: { createdAt: 'desc' },
+      take: 300,
     }),
-    prisma.topic.findMany(),
+    getTopicsCached(),
   ]);
 
   if (!student) return NextResponse.json({ error: 'Student not found' }, { status: 404 });
@@ -125,19 +127,26 @@ export async function GET(req: Request) {
     (a, b) => (a.correct / Math.max(a.attempted, 1)) - (b.correct / Math.max(b.attempted, 1)),
   )[0];
 
-  return NextResponse.json({
-    student,
-    stats: {
-      totalSolved:      attempts.filter((a) => a.isCorrect).length,
-      topicsMastered:   progress.filter((p) => p.mastery === 'Mastered').length,
-      streakDays:       computeStreak(attempts),
-      totalLifetimeXP:  (student as unknown as { totalLifetimeXP?: number }).totalLifetimeXP ?? 0,
+  return NextResponse.json(
+    {
+      student,
+      stats: {
+        totalSolved:      attempts.filter((a) => a.isCorrect).length,
+        topicsMastered:   progress.filter((p) => p.mastery === 'Mastered').length,
+        streakDays:       computeStreak(attempts),
+        totalLifetimeXP:  (student as unknown as { totalLifetimeXP?: number }).totalLifetimeXP ?? 0,
+      },
+      topics,
+      weeklyData:       computeWeeklyData(attempts),
+      weakestTopicId:   weakest?.id ?? topics[0]?.id ?? null,
+      weakestTopicName: weakest?.name ?? null,
+      recentActivity:   computeRecentActivity(attempts, topicMap),
+      subscriptionTier: (student as { subscription?: { tier: number } | null }).subscription?.tier ?? 0,
     },
-    topics,
-    weeklyData:       computeWeeklyData(attempts),
-    weakestTopicId:   weakest?.id ?? topics[0]?.id ?? null,
-    weakestTopicName: weakest?.name ?? null,
-    recentActivity:   computeRecentActivity(attempts, topicMap),
-    subscriptionTier: (student as { subscription?: { tier: number } | null }).subscription?.tier ?? 0,
-  });
+    {
+      headers: {
+        'Cache-Control': 's-maxage=30, stale-while-revalidate=120',
+      },
+    },
+  );
 }

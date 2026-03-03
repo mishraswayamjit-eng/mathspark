@@ -165,6 +165,12 @@ function Skeleton() {
         <div className="h-7 w-56 rounded-xl bg-gray-100 animate-pulse mb-1" />
         <div className="h-4 w-36 rounded-xl bg-gray-100 animate-pulse" />
       </div>
+      {/* Grade tab placeholders */}
+      <div className="flex gap-2 px-4 pb-3 overflow-x-auto no-scrollbar">
+        {Array.from({ length: 8 }, (_, i) => (
+          <div key={i} className="flex-shrink-0 h-8 w-14 rounded-full bg-gray-100 animate-pulse" />
+        ))}
+      </div>
       {/* Grid skeleton */}
       <div className="px-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
         {Array.from({ length: 16 }, (_, i) => (
@@ -199,11 +205,44 @@ export default function ChaptersPage() {
     if (!id) { router.replace('/start'); return; }
     setHearts(getHearts());
 
+    const CACHE_KEY = `mathspark_dashboard_${id}`;
+    const CACHE_TTL = 5 * 60 * 1000;
+
+    // Check cache first
+    try {
+      const cached = localStorage.getItem(CACHE_KEY);
+      if (cached) {
+        const { data: cachedData, ts } = JSON.parse(cached) as { data: DashboardData; ts: number };
+        if (Date.now() - ts < CACHE_TTL) {
+          setData(cachedData);
+          setLoading(false);
+          const serverGrade = cachedData.student.grade;
+          if (serverGrade >= 2 && serverGrade <= 9) {
+            setSelectedGrade(serverGrade);
+            localStorage.setItem('mathspark_student_grade', String(serverGrade));
+          }
+          localStorage.setItem('mathspark_subscription_tier', String(cachedData.subscriptionTier ?? 0));
+          const n = computeNudge({
+            streakDays:     cachedData.stats.streakDays,
+            topicsMastered: cachedData.stats.topicsMastered,
+            topics:         cachedData.topics,
+          });
+          if (n) setNudge(n);
+          return;
+        }
+      }
+    } catch { /* ignore parse errors */ }
+
+    // Cache miss — fetch from API
     fetch(`/api/dashboard?studentId=${id}`)
       .then((r) => r.json())
       .then((d: DashboardData) => {
         setData(d);
         setLoading(false);
+        // Store in cache
+        try {
+          localStorage.setItem(CACHE_KEY, JSON.stringify({ data: d, ts: Date.now() }));
+        } catch { /* ignore storage errors */ }
         // Sync grade from server (source of truth)
         const serverGrade = d.student.grade;
         if (serverGrade >= 2 && serverGrade <= 9) {

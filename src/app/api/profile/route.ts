@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { getTopicsCached } from '@/lib/topicCache';
 
 const TOPIC_ORDER = [
   'ch01-05','ch06','ch07-08','ch09-10','ch11','ch12',
@@ -50,8 +51,9 @@ export async function GET(req: Request) {
       where: { studentId },
       select: { isCorrect: true, createdAt: true, timeTakenMs: true },
       orderBy: { createdAt: 'asc' }, // asc for consecutive-streak computation
+      take: 300,
     }),
-    prisma.topic.findMany(),
+    getTopicsCached(),
   ]);
 
   if (!student) {
@@ -89,18 +91,25 @@ export async function GET(req: Request) {
     .filter((t) => t.attempted > 0 && t.mastery !== 'Mastered')
     .sort((a, b) => (a.correct / a.attempted) - (b.correct / b.attempted))[0];
 
-  return NextResponse.json({
-    student,
-    stats: {
-      totalSolved:            correctAttempts.length,
-      totalAttempted:         attempts.length,
-      topicsMastered:         progress.filter((p) => p.mastery === 'Mastered').length,
-      streakDays:             computeStreakDays(correctAttempts),
-      maxConsecutiveCorrect:  maxConsecutive,
-      fastCorrects,
+  return NextResponse.json(
+    {
+      student,
+      stats: {
+        totalSolved:            correctAttempts.length,
+        totalAttempted:         attempts.length,
+        topicsMastered:         progress.filter((p) => p.mastery === 'Mastered').length,
+        streakDays:             computeStreakDays(correctAttempts),
+        maxConsecutiveCorrect:  maxConsecutive,
+        fastCorrects,
+      },
+      topics,
+      weeklyData:     computeWeeklyData(attempts),
+      weakestTopicId: weakest?.id ?? topics[0]?.id ?? null,
     },
-    topics,
-    weeklyData:     computeWeeklyData(attempts),
-    weakestTopicId: weakest?.id ?? topics[0]?.id ?? null,
-  });
+    {
+      headers: {
+        'Cache-Control': 's-maxage=60, stale-while-revalidate=300',
+      },
+    },
+  );
 }

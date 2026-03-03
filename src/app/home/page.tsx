@@ -129,14 +129,6 @@ function TopicBar({ entry }: { entry: TopicMasteryEntry }) {
   );
 }
 
-function SkeletonCard() {
-  return (
-    <div className="bg-white rounded-2xl p-4 animate-pulse space-y-3 border border-gray-100">
-      <div className="h-3 bg-gray-200 rounded w-24" />
-      <div className="h-16 bg-gray-200 rounded-xl" />
-    </div>
-  );
-}
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 
@@ -160,9 +152,32 @@ export default function HomePage() {
     const dismissedKey = `dismissed_nudge_${new Date().toDateString()}`;
     setNudgeDismissed(localStorage.getItem(dismissedKey) === 'true');
 
+    const CACHE_KEY = `mathspark_home_${id}`;
+    const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+    // Check cache first
+    try {
+      const cached = localStorage.getItem(CACHE_KEY);
+      if (cached) {
+        const { data: cachedData, ts } = JSON.parse(cached) as { data: HomeData; ts: number };
+        if (Date.now() - ts < CACHE_TTL) {
+          setData(cachedData);
+          setLoading(false);
+          return; // Use cached data, skip fetch
+        }
+      }
+    } catch { /* ignore parse errors */ }
+
+    // Cache miss — fetch from API
     fetch(`/api/home?studentId=${id}`)
       .then((r) => r.json())
-      .then((d: HomeData) => setData(d))
+      .then((d: HomeData) => {
+        setData(d);
+        // Store in cache
+        try {
+          localStorage.setItem(CACHE_KEY, JSON.stringify({ data: d, ts: Date.now() }));
+        } catch { /* ignore storage errors */ }
+      })
       .catch(() => {})
       .finally(() => setLoading(false));
   }, [router]);
@@ -184,14 +199,60 @@ export default function HomePage() {
   if (loading || !data) {
     return (
       <div className="min-h-screen bg-gray-50 pb-24">
-        {/* Header skeleton */}
-        <div className="bg-[#131F24] px-4 py-4 flex items-center justify-between animate-pulse">
-          <div className="h-5 bg-white/20 rounded w-24" />
-          <div className="h-8 bg-white/20 rounded-full w-20" />
-          <div className="h-8 bg-white/20 rounded-full w-16" />
+        {/* Header */}
+        <div className="bg-[#131F24] px-4 py-3 flex items-center justify-between">
+          <div className="h-4 bg-white/20 rounded w-20 animate-pulse" />
+          <div className="h-7 bg-white/20 rounded-full w-16 animate-pulse" />
+          <div className="h-8 bg-white/20 rounded-full w-14 animate-pulse" />
         </div>
-        <div className="px-4 py-6 space-y-4 max-w-lg mx-auto">
-          {[0, 1, 2, 3, 4].map((i) => <SkeletonCard key={i} />)}
+        <div className="max-w-lg mx-auto px-4 pt-5 space-y-4">
+          {/* Greeting */}
+          <div className="space-y-1.5 animate-pulse">
+            <div className="h-5 bg-gray-200 rounded w-48" />
+            <div className="h-3.5 bg-gray-200 rounded w-32" />
+          </div>
+          {/* Readiness ring card */}
+          <div className="bg-white rounded-2xl p-4 border border-gray-100 flex items-center gap-4 animate-pulse">
+            <div className="w-[120px] h-[120px] rounded-full bg-gray-200 shrink-0" />
+            <div className="flex-1 space-y-2">
+              <div className="h-4 bg-gray-200 rounded w-28" />
+              <div className="h-3.5 bg-gray-200 rounded w-36" />
+              <div className="h-3.5 bg-gray-200 rounded w-24" />
+            </div>
+          </div>
+          {/* Today's plan card */}
+          <div className="bg-white rounded-2xl p-4 border border-gray-100 animate-pulse">
+            <div className="h-3.5 bg-gray-200 rounded w-24 mb-4" />
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="flex items-center gap-3 py-3 border-b border-gray-100 last:border-0">
+                <div className="w-6 h-6 rounded-full bg-gray-200 shrink-0" />
+                <div className="w-6 h-6 rounded bg-gray-200 shrink-0" />
+                <div className="flex-1 space-y-1">
+                  <div className="h-3.5 bg-gray-200 rounded w-3/4" />
+                  <div className="h-2.5 bg-gray-200 rounded w-1/2" />
+                </div>
+                <div className="h-5 bg-gray-200 rounded-full w-10 shrink-0" />
+              </div>
+            ))}
+          </div>
+          {/* Quick actions */}
+          <div className="grid grid-cols-3 gap-3 animate-pulse">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="bg-white rounded-2xl p-3 h-20 border border-gray-100" />
+            ))}
+          </div>
+          {/* Strengths & gaps card */}
+          <div className="bg-white rounded-2xl p-4 border border-gray-100 animate-pulse">
+            <div className="h-3.5 bg-gray-200 rounded w-20 mb-4" />
+            {[0, 1, 2, 3].map((i) => (
+              <div key={i} className="flex items-center gap-3 py-1.5">
+                <div className="w-6 h-6 rounded bg-gray-200 shrink-0" />
+                <div className="w-28 h-3 bg-gray-200 rounded shrink-0" />
+                <div className="flex-1 h-2 bg-gray-200 rounded-full" />
+                <div className="w-9 h-3 bg-gray-200 rounded shrink-0" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );

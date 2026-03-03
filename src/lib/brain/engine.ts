@@ -60,6 +60,15 @@ export interface Nudge {
   priority: number;
 }
 
+// ── StudentRecord: passed from recompute to avoid redundant DB fetches ────────
+
+interface StudentRecord {
+  grade: number;
+  examDate: Date | null;
+  focusTopics: string;
+  currentStreak: number;
+}
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 function clamp(v: number, min: number, max: number): number {
@@ -73,14 +82,18 @@ function mean(arr: number[]): number {
 
 // ── a) computeTopicMastery ────────────────────────────────────────────────────
 
-export async function computeTopicMastery(studentId: string): Promise<TopicMasteryEntry[]> {
-  const student = await prisma.student.findUnique({
+export async function computeTopicMastery(
+  studentId: string,
+  student?: StudentRecord,
+): Promise<TopicMasteryEntry[]> {
+  // If student record not provided, fetch it (for standalone calls)
+  const resolvedStudent = student ?? await prisma.student.findUnique({
     where: { id: studentId },
     select: { grade: true, focusTopics: true },
   });
-  if (!student) return [];
+  if (!resolvedStudent) return [];
 
-  const grade = student.grade ?? 4;
+  const grade = resolvedStudent.grade ?? 4;
   const topics = getTopicsForGrade(grade);
 
   const allAttempts = await prisma.attempt.findMany({
@@ -155,9 +168,11 @@ export async function computeTopicMastery(studentId: string): Promise<TopicMaste
 
 export async function computeExamReadiness(
   studentId: string,
+  student?: StudentRecord,
   masteries?: TopicMasteryEntry[],
 ): Promise<ExamReadinessResult> {
-  const student = await prisma.student.findUnique({
+  // If student record not provided, fetch it (for standalone calls)
+  const resolvedStudent = student ?? await prisma.student.findUnique({
     where: { id: studentId },
     select: { grade: true, examDate: true },
   });
@@ -174,22 +189,38 @@ export async function computeExamReadiness(
   const avgMastery = mean(m.map((t) => t.mastery));
   const syllabusCoverage = m.filter((t) => t.attemptsCount >= 5).length / m.length;
 
-  const recentMocks = await prisma.mockTest.findMany({
-    where: { studentId, status: 'completed' },
-    orderBy: { completedAt: 'desc' },
-    take: 5,
-    select: { score: true, totalQuestions: true },
-  });
+  // Collapse 3 separate attempt queries into one parallel pair
+  const twoWeeksAgo = new Date(Date.now() - 14 * 86400000);
+  const oneWeekAgo  = new Date(Date.now() - 7  * 86400000);
+
+  const [recentMocks, twoWeekAttempts] = await Promise.all([
+    prisma.mockTest.findMany({
+      where: { studentId, status: 'completed' },
+      orderBy: { completedAt: 'desc' },
+      take: 5,
+      select: { score: true, totalQuestions: true },
+    }),
+    prisma.attempt.findMany({
+      where: { studentId, createdAt: { gte: twoWeeksAgo } },
+      select: { isCorrect: true, createdAt: true },
+    }),
+  ]);
+
+  // Partition in JS: avoids two extra round-trips
+  const recentWeekAttempts = twoWeekAttempts.filter(
+    (a) => new Date(a.createdAt) >= oneWeekAgo,
+  );
+  const priorWeekAttempts = twoWeekAttempts.filter(
+    (a) => new Date(a.createdAt) < oneWeekAgo,
+  );
+  const activeDays = new Set(
+    twoWeekAttempts.map((a) => new Date(a.createdAt).toDateString()),
+  ).size;
+
   const mockPerformance = recentMocks.length > 0
     ? mean(recentMocks.map((t) => (t.score ?? 0) / Math.max(t.totalQuestions, 1)))
     : 0;
 
-  const twoWeeksAgo = new Date(Date.now() - 14 * 86400000);
-  const recentAttempts = await prisma.attempt.findMany({
-    where: { studentId, createdAt: { gte: twoWeeksAgo } },
-    select: { createdAt: true },
-  });
-  const activeDays = new Set(recentAttempts.map((a) => new Date(a.createdAt).toDateString())).size;
   const consistency = clamp(activeDays / 14, 0, 1);
 
   const rawScore = avgMastery * 0.35 + syllabusCoverage * 0.25 + mockPerformance * 0.25 + consistency * 0.15;
@@ -199,19 +230,7 @@ export async function computeExamReadiness(
   const predictedMin = Math.max(0, Math.round(predicted - 4));
   const predictedMax = Math.min(40, Math.round(predicted + 4));
 
-  // Trend: compare recent week vs prior week mastery
-  const oneWeekAgo  = new Date(Date.now() - 7  * 86400000);
-  const twoWeeksAgoDate = new Date(Date.now() - 14 * 86400000);
-
-  const recentWeekAttempts = await prisma.attempt.findMany({
-    where: { studentId, createdAt: { gte: oneWeekAgo } },
-    select: { isCorrect: true },
-  });
-  const priorWeekAttempts = await prisma.attempt.findMany({
-    where: { studentId, createdAt: { gte: twoWeeksAgoDate, lt: oneWeekAgo } },
-    select: { isCorrect: true },
-  });
-
+  // Trend: compare recent week vs prior week accuracy (partitioned from the single query above)
   const recentAcc = recentWeekAttempts.length > 0
     ? recentWeekAttempts.filter((a) => a.isCorrect).length / recentWeekAttempts.length
     : null;
@@ -226,7 +245,7 @@ export async function computeExamReadiness(
     else if (diff < -0.05) trend = 'declining';
   }
 
-  const examDate = student?.examDate;
+  const examDate = resolvedStudent?.examDate;
   const daysUntilExam = examDate
     ? Math.ceil((new Date(examDate).getTime() - Date.now()) / 86400000)
     : null;
@@ -241,17 +260,19 @@ export async function computeExamReadiness(
 
 export async function computeTopicPriorities(
   studentId: string,
+  student?: StudentRecord,
   masteries?: TopicMasteryEntry[],
 ): Promise<TopicPriority[]> {
-  const student = await prisma.student.findUnique({
+  // If student record not provided, fetch it (for standalone calls)
+  const resolvedStudent = student ?? await prisma.student.findUnique({
     where: { id: studentId },
     select: { grade: true, focusTopics: true },
   });
 
   const m = masteries ?? (await computeTopicMastery(studentId));
-  const focusTopics: string[] = JSON.parse(student?.focusTopics ?? '[]');
+  const focusTopics: string[] = JSON.parse(resolvedStudent?.focusTopics ?? '[]');
 
-  const gradeTopics = getTopicsForGrade(student?.grade ?? 4);
+  const gradeTopics = getTopicsForGrade(resolvedStudent?.grade ?? 4);
   const maxExamWeight = Math.max(...gradeTopics.map((t) => t.examWeight), 1);
 
   const priorities: TopicPriority[] = m.map((entry) => {
@@ -300,9 +321,11 @@ export async function computeTopicPriorities(
 
 export async function generateDailyPlan(
   studentId: string,
+  student?: StudentRecord,
   masteries?: TopicMasteryEntry[],
 ): Promise<DailyPlanItem[]> {
-  const priorities = await computeTopicPriorities(studentId, masteries);
+  // Pass student through to computeTopicPriorities to avoid a redundant fetch
+  const priorities = await computeTopicPriorities(studentId, student, masteries);
   const items: DailyPlanItem[] = [];
 
   if (priorities[0]) {
@@ -380,17 +403,19 @@ export async function generateDailyPlan(
 
 export async function generateNudges(
   studentId: string,
+  student?: StudentRecord,
   masteries?: TopicMasteryEntry[],
 ): Promise<Nudge[]> {
-  const student = await prisma.student.findUnique({
+  // If student record not provided, fetch it (for standalone calls)
+  const resolvedStudent = student ?? await prisma.student.findUnique({
     where: { id: studentId },
     select: { grade: true, examDate: true, currentStreak: true },
   });
 
   const m = masteries ?? (await computeTopicMastery(studentId));
-  const priorities = await computeTopicPriorities(studentId, m);
+  const priorities = await computeTopicPriorities(studentId, resolvedStudent ?? undefined, m);
   const topPriorityDbTopicId = priorities[0]?.dbTopicId ?? 'ch11';
-  const streak = student?.currentStreak ?? 0;
+  const streak = resolvedStudent?.currentStreak ?? 0;
 
   const nudges: Nudge[] = [];
 
@@ -412,31 +437,49 @@ export async function generateNudges(
     });
   }
 
-  // Rule 2: Topic with accuracy drop
+  // Rule 2: Topic with accuracy drop — batch query instead of N+1
   if (m.length > 0) {
-    const recentWeekAgo = new Date(Date.now() - 7 * 86400000);
-    const priorWeekAgo  = new Date(Date.now() - 14 * 86400000);
-    for (const entry of m) {
+    const twoWeeksAgo = new Date(Date.now() - 14 * 86400000);
+    const oneWeekAgo  = new Date(Date.now() - 7  * 86400000);
+
+    // Check top 5 topics max to bound the query scope
+    const topicsToCheck = m.slice(0, 5);
+    const topicDbIds = topicsToCheck
+      .map((entry) => {
+        const node = TOPIC_TREE.find((t) => t.id === entry.topicId);
+        return node?.dbTopicId;
+      })
+      .filter((id): id is string => Boolean(id));
+
+    // ONE batch query instead of N+1 per topic
+    const batchAttempts = await prisma.attempt.findMany({
+      where: {
+        studentId,
+        createdAt: { gte: twoWeeksAgo },
+        question: { topicId: { in: topicDbIds } },
+      },
+      select: {
+        isCorrect: true,
+        createdAt: true,
+        question: { select: { topicId: true } },
+      },
+    });
+
+    // Group in JS by topicId + week
+    for (const entry of topicsToCheck) {
       if (nudges.length >= 3) break;
       const node = TOPIC_TREE.find((t) => t.id === entry.topicId);
       if (!node) continue;
 
-      const recentAttempts = await prisma.attempt.findMany({
-        where: {
-          studentId,
-          createdAt: { gte: recentWeekAgo },
-          question: { topicId: node.dbTopicId },
-        },
-        select: { isCorrect: true },
-      });
-      const priorAttempts = await prisma.attempt.findMany({
-        where: {
-          studentId,
-          createdAt: { gte: priorWeekAgo, lt: recentWeekAgo },
-          question: { topicId: node.dbTopicId },
-        },
-        select: { isCorrect: true },
-      });
+      const topicAttempts = batchAttempts.filter(
+        (a) => a.question.topicId === node.dbTopicId,
+      );
+      const recentAttempts = topicAttempts.filter(
+        (a) => new Date(a.createdAt) >= oneWeekAgo,
+      );
+      const priorAttempts = topicAttempts.filter(
+        (a) => new Date(a.createdAt) < oneWeekAgo,
+      );
 
       if (recentAttempts.length >= 5 && priorAttempts.length >= 5) {
         const recentAcc = recentAttempts.filter((a) => a.isCorrect).length / recentAttempts.length;
@@ -477,8 +520,8 @@ export async function generateNudges(
   }
 
   // Rule 4: Exam countdown
-  if (nudges.length < 3 && student?.examDate) {
-    const readiness = await computeExamReadiness(studentId, m);
+  if (nudges.length < 3 && resolvedStudent?.examDate) {
+    const readiness = await computeExamReadiness(studentId, resolvedStudent ?? undefined, m);
     if (readiness.daysUntilExam !== null && readiness.daysUntilExam < 30 && readiness.score < 60) {
       nudges.push({
         id: 'nudge_exam',

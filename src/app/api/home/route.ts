@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { recomputeStudentAnalytics } from '@/lib/brain/recompute';
+import { getTopicsCached } from '@/lib/topicCache';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 30;
@@ -28,22 +29,32 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: 'studentId required' }, { status: 400 });
   }
 
-  const student = await prisma.student.findUnique({
-    where: { id: studentId },
-    select: {
-      id: true,
-      name: true,
-      grade: true,
-      avatarColor: true,
-      examDate: true,
-      examName: true,
-      dailyGoalMins: true,
-      trialExpiresAt: true,
-      createdAt: true,
-      subscription: { select: { tier: true, name: true } },
-      analytics: true,
-    },
-  });
+  // Parallelize all 3 DB queries simultaneously
+  const [student, attempts, allTopics] = await Promise.all([
+    prisma.student.findUnique({
+      where: { id: studentId },
+      select: {
+        id: true,
+        name: true,
+        grade: true,
+        avatarColor: true,
+        examDate: true,
+        examName: true,
+        dailyGoalMins: true,
+        trialExpiresAt: true,
+        createdAt: true,
+        subscription: { select: { tier: true, name: true } },
+        analytics: true,
+      },
+    }),
+    prisma.attempt.findMany({
+      where: { studentId },
+      select: { isCorrect: true, createdAt: true, question: { select: { topicId: true } } },
+      orderBy: { createdAt: 'desc' },
+      take: 300,
+    }),
+    getTopicsCached(),
+  ]);
 
   if (!student) {
     return NextResponse.json({ error: 'Student not found' }, { status: 404 });
@@ -60,13 +71,6 @@ export async function GET(req: Request) {
     );
   }
 
-  // Streak + today's correct
-  const attempts = await prisma.attempt.findMany({
-    where: { studentId },
-    select: { isCorrect: true, createdAt: true, question: { select: { topicId: true } } },
-    orderBy: { createdAt: 'desc' },
-  });
-
   const streak = computeStreak(attempts);
 
   const todayStr = new Date().toDateString();
@@ -76,7 +80,6 @@ export async function GET(req: Request) {
 
   // Recent activity
   const recentAttempts = attempts.slice(0, 50);
-  const allTopics = await prisma.topic.findMany({ select: { id: true, name: true } });
   const topicMap = new Map(allTopics.map((t) => [t.id, t.name]));
 
   const groups = new Map<string, {
@@ -131,28 +134,35 @@ export async function GET(req: Request) {
   const parsedPlan       = safeJson(analytics?.dailyPlan,       [] as unknown[]);
   const parsedNudges     = safeJson(analytics?.nudges,          [] as unknown[]);
 
-  return NextResponse.json({
-    student: {
-      id:            student.id,
-      name:          student.name,
-      grade:         student.grade,
-      avatarColor:   student.avatarColor,
-      trialExpiresAt: trialExpiresAt?.toISOString() ?? null,
-      trialDaysLeft,
-      trialActive,
-      subscriptionTier,
-      subscriptionName,
-      examDate:     student.examDate?.toISOString() ?? null,
-      examName:     student.examName ?? null,
-      dailyGoalMins: student.dailyGoalMins,
+  return NextResponse.json(
+    {
+      student: {
+        id:            student.id,
+        name:          student.name,
+        grade:         student.grade,
+        avatarColor:   student.avatarColor,
+        trialExpiresAt: trialExpiresAt?.toISOString() ?? null,
+        trialDaysLeft,
+        trialActive,
+        subscriptionTier,
+        subscriptionName,
+        examDate:     student.examDate?.toISOString() ?? null,
+        examName:     student.examName ?? null,
+        dailyGoalMins: student.dailyGoalMins,
+      },
+      streak,
+      todayCorrect,
+      topicMastery:    parsedMastery,
+      examReadiness:   parsedReadiness,
+      topicPriorities: parsedPriorities,
+      dailyPlan:       parsedPlan,
+      nudges:          parsedNudges,
+      recentActivity,
     },
-    streak,
-    todayCorrect,
-    topicMastery:    parsedMastery,
-    examReadiness:   parsedReadiness,
-    topicPriorities: parsedPriorities,
-    dailyPlan:       parsedPlan,
-    nudges:          parsedNudges,
-    recentActivity,
-  });
+    {
+      headers: {
+        'Cache-Control': 's-maxage=30, stale-while-revalidate=120',
+      },
+    },
+  );
 }

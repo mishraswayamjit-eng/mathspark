@@ -76,10 +76,18 @@ const LEAGUE_TIER_EMOJIS = ['', '🥉', '🥈', '🥇', '💎', '👑'];
 export default function ProfilePage() {
   const router = useRouter();
 
-  // Student meta
-  const [studentId,   setStudentId]   = useState('');
-  const [name,        setName]        = useState('');
-  const [grade,       setGrade]       = useState(4);
+  // Student meta — initialised from localStorage for fast-paint header
+  const [studentId,   setStudentId]   = useState(() =>
+    typeof window !== 'undefined' ? (localStorage.getItem('mathspark_student_id') ?? '') : ''
+  );
+  const [name,        setName]        = useState(() =>
+    typeof window !== 'undefined' ? (localStorage.getItem('mathspark_student_name') ?? '') : ''
+  );
+  const [grade,       setGrade]       = useState<number>(() => {
+    if (typeof window === 'undefined') return 4;
+    const g = parseInt(localStorage.getItem('mathspark_student_grade') ?? '4', 10);
+    return g >= 2 && g <= 9 ? g : 4;
+  });
   const [avatarColor, setAvatarColor] = useState('#3B82F6');
   const [createdAt,   setCreatedAt]   = useState('');
   const [streakDays,  setStreakDays]  = useState(0);
@@ -273,21 +281,38 @@ export default function ProfilePage() {
 
   // ── Loading skeleton ──────────────────────────────────────────────────────
   if (loading) {
+    const skeletonInitial = name ? name[0].toUpperCase() : '?';
     return (
-      <div className="min-h-screen bg-gray-50 animate-pulse pb-24">
+      <div className="min-h-screen bg-gray-50 pb-24">
+        {/* Identity header — real data from localStorage, no pulse */}
         <div className="bg-[#131F24] pt-10 pb-6 px-4">
           <div className="flex items-center gap-4">
-            <div className="w-20 h-20 rounded-full bg-white/20" />
-            <div className="space-y-2 flex-1">
-              <div className="h-6 bg-white/20 rounded-xl w-36" />
-              <div className="h-4 bg-white/10 rounded-xl w-48" />
+            <div
+              className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white border-4 border-white/30 shadow-lg shrink-0"
+              style={{ backgroundColor: avatarColor }}
+            >
+              {skeletonInitial}
+            </div>
+            <div className="flex-1 min-w-0">
+              {name ? (
+                <>
+                  <h1 className="text-2xl font-extrabold text-white truncate">{name}</h1>
+                  <p className="text-white/60 text-sm font-semibold">Grade {grade}</p>
+                </>
+              ) : (
+                <div className="space-y-2">
+                  <div className="h-6 bg-white/20 rounded-xl w-36 animate-pulse" />
+                  <div className="h-4 bg-white/10 rounded-xl w-48 animate-pulse" />
+                </div>
+              )}
             </div>
           </div>
         </div>
+        {/* Card skeletons */}
         {[0,1,2,3].map((i) => (
           <div key={i} className="bg-white mt-2 px-4 py-6 border-b border-gray-100">
-            <div className="h-3 bg-gray-100 rounded w-24 mb-4" />
-            <div className="h-12 bg-gray-100 rounded-2xl" />
+            <div className="h-3 bg-gray-100 rounded w-24 mb-4 animate-pulse" />
+            <div className="h-12 bg-gray-100 rounded-2xl animate-pulse" />
           </div>
         ))}
       </div>
