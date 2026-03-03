@@ -94,6 +94,11 @@ export default function FlashcardsPage() {
       .then((data) => {
         setDecks(data.decks ?? []);
         setStats(data.stats ?? null);
+        // Cache due count for BottomNav badge
+        const dueDeck = (data.decks ?? []).find((d: FlashcardDeck) => d.id === 'due');
+        if (dueDeck) {
+          try { localStorage.setItem('mathspark_cards_due', String(dueDeck.dueCount)); } catch {}
+        }
       })
       .catch(() => {})
       .finally(() => setLoading(false));

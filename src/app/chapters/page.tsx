@@ -109,40 +109,54 @@ function MiniProgressBar({ correct, attempted, mastery }: { correct: number; att
 function TopicCard({
   topic,
   onClick,
+  onFlashcards,
 }: {
   topic: TopicWithProgress;
   onClick: () => void;
+  onFlashcards?: () => void;
 }) {
   const emoji = TOPIC_EMOJI[topic.id] ?? '📚';
 
   return (
-    <button
-      onClick={onClick}
-      className="w-full text-left bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-[#1CB0F6] active:scale-[0.97] transition-all duration-150 flex flex-col gap-2"
-    >
+    <div className="w-full text-left bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-[#1CB0F6] transition-all duration-150 flex flex-col gap-2">
       {/* Emoji + mastery badge row */}
-      <div className="flex items-start justify-between gap-1">
+      <button onClick={onClick} className="flex items-start justify-between gap-1 active:scale-[0.97] transition-all">
         <span className="text-3xl leading-none select-none">{emoji}</span>
         <MasteryBadge mastery={topic.mastery} />
-      </div>
+      </button>
 
       {/* Topic name */}
-      <p className="text-sm font-extrabold text-gray-800 leading-snug line-clamp-2">
-        {topic.name}
-      </p>
+      <button onClick={onClick} className="active:scale-[0.97] transition-all text-left">
+        <p className="text-sm font-extrabold text-gray-800 leading-snug line-clamp-2">
+          {topic.name}
+        </p>
+      </button>
 
-      {/* Questions solved */}
-      <p className="text-[11px] text-gray-400 font-semibold">
-        {topic.correct} question{topic.correct !== 1 ? 's' : ''} solved
-      </p>
+      {/* Questions solved + flashcard link */}
+      <div className="flex items-center justify-between">
+        <p className="text-[11px] text-gray-400 font-semibold">
+          {topic.correct} question{topic.correct !== 1 ? 's' : ''} solved
+        </p>
+        {onFlashcards && (
+          <button
+            onClick={(e) => { e.stopPropagation(); onFlashcards(); }}
+            style={{ minHeight: 0 }}
+            className="text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full px-2 py-0.5 hover:bg-emerald-100 transition-colors"
+          >
+            🃏 Cards
+          </button>
+        )}
+      </div>
 
       {/* Mini progress bar */}
-      <MiniProgressBar
-        correct={topic.correct}
-        attempted={topic.attempted}
-        mastery={topic.mastery}
-      />
-    </button>
+      <button onClick={onClick} className="w-full active:scale-[0.97] transition-all">
+        <MiniProgressBar
+          correct={topic.correct}
+          attempted={topic.attempted}
+          mastery={topic.mastery}
+        />
+      </button>
+    </div>
   );
 }
 
@@ -484,8 +498,23 @@ export default function ChaptersPage() {
         );
       })()}
 
-      {/* ── Mock test entry card ────────────────────────────────────────── */}
+      {/* ── Flashcard review banner ─────────────────────────────────────── */}
       <div className="px-4 pt-1">
+        <button
+          onClick={() => router.push('/flashcards')}
+          className="w-full bg-gradient-to-r from-[#1E293B] to-[#1a2d40] border border-emerald-500/20 rounded-2xl px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-all"
+        >
+          <span className="text-2xl">🃏</span>
+          <div className="text-left flex-1">
+            <p className="text-white font-extrabold text-sm leading-tight">Sparky&apos;s Flashcards</p>
+            <p className="text-emerald-400/70 text-xs">Tap · Flip · Master concepts</p>
+          </div>
+          <span className="text-emerald-400 text-sm font-bold">Review →</span>
+        </button>
+      </div>
+
+      {/* ── Mock test entry card ────────────────────────────────────────── */}
+      <div className="px-4 pt-0">
         <button
           onClick={() => router.push('/test')}
           className="w-full bg-[#1a2f3a] border border-white/10 rounded-2xl px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-all"
@@ -523,6 +552,7 @@ export default function ChaptersPage() {
                     <TopicCard
                       topic={topic}
                       onClick={() => router.push(`/practice/${topic.id}`)}
+                      onFlashcards={() => router.push(`/flashcards/session?deck=${topic.id}&mode=classic`)}
                     />
                   </Fragment>
                 );
