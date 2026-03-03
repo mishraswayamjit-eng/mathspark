@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { StreakProgress } from '@/components/flashcard/StreakMilestone';
 import type { FlashcardDeck, FlashcardStats } from '@/types';
 
 // ── Mastery ring SVG ─────────────────────────────────────────────────────────
@@ -220,6 +221,25 @@ export default function FlashcardsPage() {
                 </span>
               </div>
             </div>
+
+            {/* Streak progress toward next milestone */}
+            {stats.studyStreak > 0 && stats.milestoneProgress && (
+              <StreakProgress
+                streak={stats.studyStreak}
+                nextMilestone={stats.milestoneProgress.nextMilestone}
+                progress={stats.milestoneProgress.progress}
+              />
+            )}
+
+            {/* Streak multiplier badge */}
+            {stats.streakMultiplier > 1 && (
+              <div className="flex items-center justify-center gap-1.5 bg-amber-500/10 border border-amber-500/20 rounded-xl px-3 py-1.5">
+                <span className="text-xs">🔥</span>
+                <span className="text-xs font-bold text-[#FBBF24]">
+                  {stats.streakMultiplier}x XP Multiplier Active
+                </span>
+              </div>
+            )}
           </div>
         )}
 

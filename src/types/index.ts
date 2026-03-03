@@ -322,4 +322,17 @@ export interface FlashcardStats {
   studyStreak: number;        // consecutive days reviewing
   newCardsToday: number;      // new cards introduced today
   maxNewPerDay: number;       // daily cap (5)
+  streakMultiplier: number;   // 1.0–1.5x based on streak length
+  milestoneProgress: {
+    current: number;          // current streak days
+    target: number;           // next milestone target days
+    progress: number;         // 0–1 toward next milestone
+    nextMilestone: {
+      days: number;
+      emoji: string;
+      title: string;
+      description: string;
+      xpBonus: number;
+    } | null;
+  } | null;
 }

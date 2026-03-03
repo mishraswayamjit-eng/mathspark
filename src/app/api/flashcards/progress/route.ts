@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { computeCardXP } from '@/lib/flashcardXP';
 
 export const dynamic = 'force-dynamic';
 
@@ -77,6 +78,9 @@ export async function POST(req: Request) {
     const reachedMastery = newBox === 5 && oldBox < 5;
     const reachedStrong = newBox >= 3 && oldBox < 3;
 
+    // Compute XP for this card
+    const cardXP = computeCardXP(correct, leveledUp, reachedMastery, reachedStrong);
+
     return NextResponse.json({
       ok: true,
       oldBox,
@@ -89,6 +93,8 @@ export async function POST(req: Request) {
       wasNew,
       nextReviewAt: progress.nextReviewAt,
       streakOnCard: progress.streakOnCard,
+      xpEarned: cardXP.xp,
+      xpBreakdown: cardXP.breakdown,
     });
   } catch (err) {
     console.error('[flashcards/progress] Error:', err);

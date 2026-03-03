@@ -35,12 +35,14 @@ function SpeedComplete({
   answered,
   correctCount,
   maxStreak,
+  sessionXP,
   onPlayAgain,
   onDone,
 }: {
   answered: number;
   correctCount: number;
   maxStreak: number;
+  sessionXP: { total: number; streakMultiplier: number; streakBonus: number } | null;
   onPlayAgain: () => void;
   onDone: () => void;
 }) {
@@ -59,9 +61,18 @@ function SpeedComplete({
         {correctCount >= 20 ? 'Lightning Fast!' : correctCount >= 12 ? 'Speed Demon!' : correctCount >= 6 ? 'Quick Thinker!' : 'Good Effort!'}
       </h1>
 
-      {/* Big number */}
-      <p className="text-5xl font-black text-[#FBBF24] tabular-nums mb-1">{correctCount}</p>
-      <p className="text-xs text-[#64748B] uppercase tracking-wider mb-6">correct in 60s</p>
+      {/* Big number + XP */}
+      <p className="text-5xl font-black text-[#FBBF24] tabular-nums mb-0.5">{correctCount}</p>
+      <p className="text-xs text-[#64748B] uppercase tracking-wider mb-1">correct in 60s</p>
+      {sessionXP && sessionXP.total > 0 && (
+        <div className="flex items-center gap-1.5 mb-5">
+          <span className="text-sm font-black text-[#34D399]">+{sessionXP.total} XP</span>
+          {sessionXP.streakBonus > 0 && (
+            <span className="text-[10px] text-[#FBBF24]">({sessionXP.streakMultiplier}x streak)</span>
+          )}
+        </div>
+      )}
+      {(!sessionXP || sessionXP.total <= 0) && <div className="mb-5" />}
 
       {/* Stats grid */}
       <div className="grid grid-cols-4 gap-2 w-full max-w-sm mb-6">
@@ -135,6 +146,9 @@ export default function SpeedRoundSession({ deckId }: SpeedRoundSessionProps) {
 
   // Session
   const sessionSavedRef = useRef(false);
+
+  // XP tracking
+  const [sessionXP, setSessionXP] = useState<{ total: number; streakMultiplier: number; streakBonus: number } | null>(null);
 
   // ── Load deck ──────────────────────────────────────────────────────────────
 
@@ -217,7 +231,14 @@ export default function SpeedRoundSession({ deckId }: SpeedRoundSessionProps) {
         cardsCorrect: correctCount,
         duration: 60,
       }),
-    }).catch(() => {});
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.ok && data.xp) {
+          setSessionXP({ total: data.xp.total, streakMultiplier: data.xp.streakMultiplier, streakBonus: data.xp.streakBonus });
+        }
+      })
+      .catch(() => {});
   }, [phase, answered, correctCount, playMastery]);
 
   // ── Handle answer ──────────────────────────────────────────────────────────
@@ -325,6 +346,7 @@ export default function SpeedRoundSession({ deckId }: SpeedRoundSessionProps) {
         answered={answered}
         correctCount={correctCount}
         maxStreak={maxStreak}
+        sessionXP={sessionXP}
         onPlayAgain={() => {
           sessionSavedRef.current = false;
           setCurrentIndex(0);
@@ -335,6 +357,7 @@ export default function SpeedRoundSession({ deckId }: SpeedRoundSessionProps) {
           setTimeRemaining(ROUND_DURATION_MS);
           setCountdownNum(3);
           setFlashColor(null);
+          setSessionXP(null);
           setPhase('loading');
           loadDeck();
         }}

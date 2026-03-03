@@ -10,8 +10,10 @@ import QuizBlitzSession from '@/components/flashcard/QuizBlitzSession';
 import SpeedRoundSession from '@/components/flashcard/SpeedRoundSession';
 import TapMatchSession from '@/components/flashcard/TapMatchSession';
 import WarmUpSession from '@/components/flashcard/WarmUpSession';
+import { XPPopup, StreakMilestoneCelebration } from '@/components/flashcard/StreakMilestone';
 import { useSounds } from '@/hooks/useSounds';
 import type { FlashCard } from '@/types';
+import type { StreakMilestone } from '@/lib/flashcardXP';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -82,6 +84,7 @@ function SessionComplete({
   cardsCorrect,
   duration,
   transitions,
+  sessionXP,
   onDone,
   onRestart,
 }: {
@@ -89,6 +92,7 @@ function SessionComplete({
   cardsCorrect: number;
   duration: number;
   transitions: BoxTransition[];
+  sessionXP: { total: number; base: number; streakMultiplier: number; streakBonus: number; milestoneBonus: number } | null;
   onDone: () => void;
   onRestart: () => void;
 }) {
@@ -130,6 +134,28 @@ function SessionComplete({
           ? 'Nice progress — keep reviewing!'
           : "Practice makes perfect — you'll get there!"}
       </p>
+
+      {/* XP earned banner */}
+      {sessionXP && sessionXP.total > 0 && (
+        <div className="w-full max-w-xs mb-4 animate-pop-in">
+          <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl px-4 py-3 text-center">
+            <p className="text-3xl font-black text-[#34D399] tabular-nums">+{sessionXP.total} XP</p>
+            <div className="flex items-center justify-center gap-2 mt-1 flex-wrap">
+              <span className="text-[10px] text-[#94A3B8]">Base: {sessionXP.base}</span>
+              {sessionXP.streakBonus > 0 && (
+                <span className="text-[10px] text-[#FBBF24]">
+                  Streak {sessionXP.streakMultiplier}x: +{sessionXP.streakBonus}
+                </span>
+              )}
+              {sessionXP.milestoneBonus > 0 && (
+                <span className="text-[10px] text-[#A78BFA]">
+                  Milestone: +{sessionXP.milestoneBonus}
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Stats grid */}
       <div className="grid grid-cols-3 gap-3 w-full max-w-xs mb-5">
@@ -272,6 +298,16 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
   const [showConfetti, setShowConfetti] = useState(false);
   const [sessionStreak, setSessionStreak] = useState(0);
 
+  // XP tracking
+  const [accumulatedXP, setAccumulatedXP] = useState(0);
+  const [lastXP, setLastXP] = useState(0);
+  const [xpTrigger, setXpTrigger] = useState(0);
+  const accumulatedBonusRef = useRef(0); // level-up/mastery bonuses for session API
+  const [sessionXP, setSessionXP] = useState<{
+    total: number; base: number; streakMultiplier: number; streakBonus: number; milestoneBonus: number;
+  } | null>(null);
+  const [streakMilestone, setStreakMilestone] = useState<StreakMilestone | null>(null);
+
   // ── Load deck ──────────────────────────────────────────────────────────────
 
   useEffect(() => {
@@ -319,8 +355,19 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
         cardsReviewed: completed,
         cardsCorrect: correctCount,
         duration,
+        bonusXP: accumulatedBonusRef.current,
       }),
-    }).catch(() => {});
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.ok) {
+          setSessionXP(data.xp ?? null);
+          if (data.streak?.achievedMilestone) {
+            setStreakMilestone(data.streak.achievedMilestone);
+          }
+        }
+      })
+      .catch(() => {});
   }, [startTime, completed, correctCount]);
 
   // ── Card response handlers ────────────────────────────────────────────────
@@ -357,6 +404,16 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
               reachedMastery: data.reachedMastery,
             };
             setTransitions((prev) => [...prev, transition]);
+
+            // Track XP
+            if (data.xpEarned > 0) {
+              setAccumulatedXP((prev) => prev + data.xpEarned);
+              setLastXP(data.xpEarned);
+              setXpTrigger(Date.now());
+              // Track bonus XP (level-up + mastery) for session multiplier
+              const bonus = (data.xpBreakdown?.levelUpBonus ?? 0) + (data.xpBreakdown?.masteryBonus ?? 0);
+              if (bonus > 0) accumulatedBonusRef.current += bonus;
+            }
 
             // Celebrations
             if (data.reachedMastery) {
@@ -444,20 +501,33 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
   if (phase === 'complete') {
     const duration = Math.round((Date.now() - startTime) / 1000);
     return (
-      <SessionComplete
-        cardsReviewed={completed}
-        cardsCorrect={correctCount}
-        duration={duration}
-        transitions={transitions}
-        onDone={() => router.push('/flashcards')}
-        onRestart={() => {
-          sessionSavedRef.current = false;
-          setCurrentIndex(0);
-          setCompleted(0);
-          setCorrectCount(0);
-          setTransitions([]);
-          setSessionStreak(0);
-          setPhase('loading');
+      <>
+        {streakMilestone && (
+          <StreakMilestoneCelebration
+            milestone={streakMilestone}
+            streak={streakMilestone.days}
+            onDismiss={() => setStreakMilestone(null)}
+          />
+        )}
+        <SessionComplete
+          cardsReviewed={completed}
+          cardsCorrect={correctCount}
+          duration={duration}
+          transitions={transitions}
+          sessionXP={sessionXP}
+          onDone={() => router.push('/flashcards')}
+          onRestart={() => {
+            sessionSavedRef.current = false;
+            setCurrentIndex(0);
+            setCompleted(0);
+            setCorrectCount(0);
+            setTransitions([]);
+            setSessionStreak(0);
+            setAccumulatedXP(0);
+            setLastXP(0);
+            setSessionXP(null);
+            accumulatedBonusRef.current = 0;
+            setPhase('loading');
 
           const sid = localStorage.getItem('mathspark_student_id');
           const grade = localStorage.getItem('mathspark_student_grade') || '4';
@@ -476,6 +546,7 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
             .catch(() => router.replace('/flashcards'));
         }}
       />
+      </>
     );
   }
 
@@ -505,6 +576,12 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
             {deckName}
           </h2>
           <div className="flex items-center gap-2">
+            {accumulatedXP > 0 && (
+              <span className="text-xs font-bold text-[#34D399] tabular-nums relative">
+                {accumulatedXP} XP
+                <XPPopup xp={lastXP} triggerKey={xpTrigger} />
+              </span>
+            )}
             {sessionStreak >= 3 && (
               <span className="text-xs font-bold text-amber-400 animate-pulse">
                 🔥{sessionStreak}

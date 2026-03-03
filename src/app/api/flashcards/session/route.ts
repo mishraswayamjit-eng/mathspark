@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { computeSessionXP, getAchievedMilestone, getMilestoneProgress } from '@/lib/flashcardXP';
 
 export const dynamic = 'force-dynamic';
 
@@ -27,6 +28,49 @@ export async function POST(req: Request) {
       );
     }
 
+    // ── Compute study streak for XP multiplier ───────────────────────────
+    const todayStart = new Date();
+    todayStart.setHours(0, 0, 0, 0);
+
+    // Count consecutive days with flashcard sessions (walk backwards)
+    let dailyStreak = 0;
+    const day = new Date(todayStart);
+    // Include today if this session counts
+    for (let i = 0; i < 365; i++) {
+      const dayStart = new Date(day);
+      const dayEnd = new Date(day);
+      dayEnd.setDate(dayEnd.getDate() + 1);
+
+      const count = await prisma.flashcardSession.count({
+        where: {
+          studentId,
+          createdAt: { gte: dayStart, lt: dayEnd },
+        },
+      });
+
+      // For today (i=0), count this session as contributing
+      if (count > 0 || i === 0) {
+        dailyStreak++;
+        day.setDate(day.getDate() - 1);
+      } else {
+        break;
+      }
+    }
+
+    // ── Compute session XP ───────────────────────────────────────────────
+    const bonusXP = body.bonusXP ?? 0; // accumulated per-card bonuses from level-ups
+    const { totalXP, baseXP, streakMultiplier, streakBonus } = computeSessionXP(
+      cardsCorrect ?? 0,
+      cardsReviewed,
+      dailyStreak,
+      bonusXP,
+    );
+
+    // Check streak milestone
+    const achievedMilestone = getAchievedMilestone(dailyStreak);
+    const milestoneXP = achievedMilestone?.xpBonus ?? 0;
+    const finalXP = totalXP + milestoneXP;
+
     const session = await prisma.flashcardSession.create({
       data: {
         studentId,
@@ -34,11 +78,39 @@ export async function POST(req: Request) {
         cardsReviewed,
         cardsCorrect: cardsCorrect ?? 0,
         duration: duration ?? 0,
-        xpEarned: 0,
+        xpEarned: finalXP,
       },
     });
 
-    return NextResponse.json({ ok: true, sessionId: session.id });
+    // ── Update student's lifetime XP ─────────────────────────────────────
+    try {
+      await prisma.student.update({
+        where: { id: studentId },
+        data: { totalLifetimeXP: { increment: finalXP } },
+      });
+    } catch {
+      // totalLifetimeXP field may not exist yet — non-blocking
+    }
+
+    const milestoneProgress = getMilestoneProgress(dailyStreak);
+
+    return NextResponse.json({
+      ok: true,
+      sessionId: session.id,
+      xp: {
+        total: finalXP,
+        base: baseXP,
+        streakMultiplier,
+        streakBonus,
+        milestoneBonus: milestoneXP,
+      },
+      streak: {
+        days: dailyStreak,
+        achievedMilestone: achievedMilestone ?? null,
+        nextMilestone: milestoneProgress.milestone,
+        progress: milestoneProgress.progress,
+      },
+    });
   } catch (err) {
     console.error('[flashcards/session] Error:', err);
     return NextResponse.json({ error: 'Internal error' }, { status: 500 });

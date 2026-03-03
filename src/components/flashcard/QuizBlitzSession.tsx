@@ -52,6 +52,7 @@ function QuizComplete({
   maxCombo,
   duration,
   transitions,
+  sessionXP,
   onPlayAgain,
   onDone,
 }: {
@@ -61,6 +62,7 @@ function QuizComplete({
   maxCombo: number;
   duration: number;
   transitions: BoxTransition[];
+  sessionXP: { total: number; streakMultiplier: number; streakBonus: number } | null;
   onPlayAgain: () => void;
   onDone: () => void;
 }) {
@@ -82,9 +84,18 @@ function QuizComplete({
         {pct >= 80 ? 'Quiz Master!' : pct >= 60 ? 'Great Blitz!' : 'Good Try!'}
       </h1>
 
-      {/* Score */}
-      <p className="text-4xl font-black text-[#FBBF24] tabular-nums mb-1">{score}</p>
-      <p className="text-xs text-[#64748B] uppercase tracking-wider mb-6">points</p>
+      {/* Score + XP */}
+      <p className="text-4xl font-black text-[#FBBF24] tabular-nums mb-0.5">{score}</p>
+      <p className="text-xs text-[#64748B] uppercase tracking-wider mb-1">points</p>
+      {sessionXP && sessionXP.total > 0 && (
+        <div className="flex items-center gap-1.5 mb-5">
+          <span className="text-sm font-black text-[#34D399]">+{sessionXP.total} XP</span>
+          {sessionXP.streakBonus > 0 && (
+            <span className="text-[10px] text-[#FBBF24]">({sessionXP.streakMultiplier}x streak)</span>
+          )}
+        </div>
+      )}
+      {(!sessionXP || sessionXP.total <= 0) && <div className="mb-5" />}
 
       {/* Stats grid */}
       <div className="grid grid-cols-4 gap-2 w-full max-w-sm mb-5">
@@ -190,6 +201,10 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
   const [startTime] = useState(() => Date.now());
   const sessionSavedRef = useRef(false);
 
+  // XP tracking
+  const [sessionXP, setSessionXP] = useState<{ total: number; streakMultiplier: number; streakBonus: number } | null>(null);
+  const accumulatedBonusRef = useRef(0);
+
   // Points animation
   const [pointsPopup, setPointsPopup] = useState<{ points: number; key: number } | null>(null);
 
@@ -266,8 +281,16 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
         cardsReviewed: questions.length,
         cardsCorrect: correctCount,
         duration,
+        bonusXP: accumulatedBonusRef.current,
       }),
-    }).catch(() => {});
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.ok && data.xp) {
+          setSessionXP({ total: data.xp.total, streakMultiplier: data.xp.streakMultiplier, streakBonus: data.xp.streakBonus });
+        }
+      })
+      .catch(() => {});
   }, [startTime, questions.length, correctCount]);
 
   // ── Handle answer ──────────────────────────────────────────────────────────
@@ -313,6 +336,9 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
                   reachedMastery: data.reachedMastery,
                 },
               ]);
+              // Track bonus XP for session multiplier
+              const bonus = (data.xpBreakdown?.levelUpBonus ?? 0) + (data.xpBreakdown?.masteryBonus ?? 0);
+              if (bonus > 0) accumulatedBonusRef.current += bonus;
             }
           })
           .catch(() => {});
@@ -446,6 +472,7 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
         maxCombo={maxCombo}
         duration={duration}
         transitions={transitions}
+        sessionXP={sessionXP}
         onPlayAgain={() => {
           sessionSavedRef.current = false;
           setCurrentIndex(0);
@@ -456,6 +483,8 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
           setTransitions([]);
           setIsAnswered(false);
           setSelectedOption(null);
+          setSessionXP(null);
+          accumulatedBonusRef.current = 0;
           setPhase('loading');
 
           const sid = localStorage.getItem('mathspark_student_id');

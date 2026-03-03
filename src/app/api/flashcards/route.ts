@@ -5,6 +5,7 @@ import {
   getTopicsForGradeFlashcards,
   getTopicColor,
 } from '@/data/flashcardData';
+import { getStreakMultiplier, getMilestoneProgress, getAchievedMilestone } from '@/lib/flashcardXP';
 
 export const dynamic = 'force-dynamic';
 
@@ -166,6 +167,10 @@ export async function GET(req: Request) {
     },
   });
 
+  // ── Streak economy data ────────────────────────────────────────────────
+  const milestoneProgress = getMilestoneProgress(studyStreak);
+  const streakMultiplier = getStreakMultiplier(studyStreak);
+
   return NextResponse.json({
     decks: [...specialDecks, ...decks],
     stats: {
@@ -175,6 +180,13 @@ export async function GET(req: Request) {
       studyStreak,
       newCardsToday,
       maxNewPerDay: 5,
+      streakMultiplier,
+      milestoneProgress: {
+        current: milestoneProgress.current,
+        target: milestoneProgress.target,
+        progress: milestoneProgress.progress,
+        nextMilestone: milestoneProgress.milestone,
+      },
     },
   });
 }
