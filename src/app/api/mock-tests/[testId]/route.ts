@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 
+function safeParseSteps(json: string | null): unknown[] {
+  try { return JSON.parse(json ?? '[]'); } catch { return []; }
+}
+
 // GET /api/mock-tests/[testId]?studentId=xxx
 export async function GET(
   req: Request,
@@ -42,11 +46,6 @@ export async function GET(
     // Auth: verify requesting student owns this test
     if (requestingStudentId && mockTest.studentId !== requestingStudentId) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
-    }
-
-    // Parse stepByStep JSON for each question (safe parse — never crash on bad data)
-    function safeParseSteps(json: string | null): unknown[] {
-      try { return JSON.parse(json ?? '[]'); } catch { return []; }
     }
 
     const result = {
