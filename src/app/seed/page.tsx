@@ -12,10 +12,11 @@ interface FixReport {
   dryRun: boolean;
   written: boolean;
   stats: {
-    total: number; tagged: number; skippedG4Ch: number;
+    total: number; tagged: number;
     byMethod: Record<string, number>;
     emptyCorrectAnswer: number; emptyOptions: number; totalUnusable: number; usableNonG4: number;
     emptyCorrectBySource: Record<string, number>; emptyOptsBySource: Record<string, number>;
+    dbUpdated: number; pendingUpdates: number;
   };
   gradeReport: Record<string, { topic: string; label: string; count: number }[]>;
 }
@@ -99,7 +100,9 @@ export default function SeedPage() {
       const data = await res.json();
       if (!res.ok) { setFixMessage(data.error ?? 'Something went wrong.'); setFixStatus('error'); return; }
       setFixReport(data as FixReport);
-      setFixMessage(dryRun ? 'Dry-run complete — no changes written.' : 'Seed JSON updated! Re-seed the DB to apply.');
+      setFixMessage(dryRun
+        ? `Dry-run complete — ${(data as FixReport).stats.pendingUpdates} updates pending.`
+        : `Done! ${(data as FixReport).stats.dbUpdated} questions updated in DB.`);
       setFixStatus('done');
     } catch (err) {
       setFixMessage(`Network error: ${err}`);
@@ -330,7 +333,7 @@ export default function SeedPage() {
           <span className="text-3xl">🏷️</span>
           <div>
             <p className="font-bold text-gray-800">Fix SubTopics</p>
-            <p className="text-xs text-gray-400">Re-tags seed JSON subtopics to match curriculum lesson structure (Grades 2–9)</p>
+            <p className="text-xs text-gray-400">Re-tags question subtopics in DB to match curriculum lessons (Grades 2–9)</p>
           </div>
         </div>
 
@@ -382,7 +385,7 @@ export default function SeedPage() {
                 {/* Method breakdown */}
                 <div className="bg-gray-50 rounded-xl px-3 py-2 text-xs space-y-1">
                   <p className="font-bold text-gray-700">Classification</p>
-                  <p>Tagged: <b>{fixReport.stats.tagged}</b> · Skipped G4 ch-series: <b>{fixReport.stats.skippedG4Ch}</b></p>
+                  <p>Tagged: <b>{fixReport.stats.tagged}</b> · DB updated: <b>{fixReport.stats.dbUpdated || fixReport.stats.pendingUpdates}</b></p>
                   <p>
                     ID stem: <b>{fixReport.stats.byMethod.id_stem}</b> ·
                     Keyword: <b>{fixReport.stats.byMethod.keyword}</b> ·

@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import * as fs from 'fs';
-import * as path from 'path';
+import { prisma } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
@@ -191,15 +190,17 @@ function buildKeywordRules(): Record<number, Rule[]> {
 
 // ─── Classification logic ────────────────────────────────────────────────────
 
-interface SeedQuestion {
+interface DBQuestion {
   id: string;
-  topicId?: string;
-  subTopic?: string;
-  questionText?: string;
-  options?: Array<{ id: string; text: string }> | string[];
-  correctAnswer?: string;
-  source?: string;
-  [key: string]: unknown;
+  topicId: string;
+  subTopic: string;
+  questionText: string;
+  option1: string;
+  option2: string;
+  option3: string;
+  option4: string;
+  correctAnswer: string;
+  source: string;
 }
 
 function extractIdStem(id: string): string | null {
@@ -207,8 +208,8 @@ function extractIdStem(id: string): string | null {
   return m ? m[1] : null;
 }
 
-function classifyQuestion(
-  q: SeedQuestion,
+function classifyDBQuestion(
+  q: DBQuestion,
   grade: number,
   rules: Record<number, Rule[]>,
 ): { key: string; method: string } {
@@ -219,14 +220,8 @@ function classifyQuestion(
     if (mapped) return { key: mapped, method: 'id_stem' };
   }
 
-  // Strategy 2: Keyword matching
-  const text = [
-    q.questionText || '',
-    ...(q.options || []).map((o: unknown) =>
-      typeof o === 'string' ? o : (o as { text?: string })?.text || '',
-    ),
-    q.subTopic || '',
-  ].join(' ');
+  // Strategy 2: Keyword matching on question text + options
+  const text = [q.questionText, q.option1, q.option2, q.option3, q.option4, q.subTopic].join(' ');
 
   const gradeRules = rules[grade];
   if (gradeRules) {
@@ -243,6 +238,7 @@ function classifyQuestion(
 }
 
 // ─── GET /api/fix-subtopics?secret=xxx[&dryRun=true] ────────────────────────
+// Reads questions from DB, classifies them, updates subTopic directly in DB.
 
 export async function GET(req: Request) {
   const secret = process.env.SEED_SECRET;
@@ -257,14 +253,24 @@ export async function GET(req: Request) {
   const dryRun = searchParams.get('dryRun') === 'true';
 
   try {
-    const dataPath = path.join(process.cwd(), 'data', 'mathspark_complete_seed.json');
-    if (!fs.existsSync(dataPath)) {
-      return NextResponse.json({ error: 'Seed file not found.' }, { status: 500 });
-    }
-
-    const raw = fs.readFileSync(dataPath, 'utf-8');
-    const data = JSON.parse(raw) as { questions: SeedQuestion[] };
-    const questions = data.questions;
+    // Fetch all non-ch-series questions from DB
+    const questions = await prisma.question.findMany({
+      where: {
+        topicId: { startsWith: 'grade' },
+      },
+      select: {
+        id: true,
+        topicId: true,
+        subTopic: true,
+        questionText: true,
+        option1: true,
+        option2: true,
+        option3: true,
+        option4: true,
+        correctAnswer: true,
+        source: true,
+      },
+    });
 
     const keywordRules = buildKeywordRules();
 
@@ -272,7 +278,6 @@ export async function GET(req: Request) {
     const stats = {
       total: questions.length,
       tagged: 0,
-      skippedG4Ch: 0,
       byMethod: { id_stem: 0, keyword: 0, fallback: 0 } as Record<string, number>,
       byGrade: {} as Record<number, Record<string, number>>,
       emptyCorrectAnswer: 0,
@@ -280,20 +285,14 @@ export async function GET(req: Request) {
       emptyCorrectBySource: {} as Record<string, number>,
       emptyOptsBySource: {} as Record<string, number>,
       totalUnusable: 0,
+      dbUpdated: 0,
     };
 
     const brokenIds = new Set<string>();
+    const updates: { id: string; newSubTopic: string }[] = [];
 
     for (const q of questions) {
-      const topicId = q.topicId || '';
-
-      // Skip ch-series (already properly tagged)
-      if (topicId.startsWith('ch') || topicId === 'dh') {
-        stats.skippedG4Ch++;
-        continue;
-      }
-
-      const gradeMatch = topicId.match(/^grade(\d+)$/);
+      const gradeMatch = q.topicId.match(/^grade(\d+)$/);
       if (!gradeMatch) continue;
       const grade = parseInt(gradeMatch[1], 10);
 
@@ -304,19 +303,23 @@ export async function GET(req: Request) {
           (stats.emptyCorrectBySource[q.source || 'unknown'] || 0) + 1;
         brokenIds.add(q.id);
       }
-      if (!q.options || q.options.length === 0) {
+      if (!q.option1) {
         stats.emptyOptions++;
         stats.emptyOptsBySource[q.source || 'unknown'] =
           (stats.emptyOptsBySource[q.source || 'unknown'] || 0) + 1;
         brokenIds.add(q.id);
       }
 
-      // Classify and re-tag
-      const { key, method } = classifyQuestion(q, grade, keywordRules);
+      // Classify
+      const { key, method } = classifyDBQuestion(q, grade, keywordRules);
       const gradeSubtopics = GRADE_SUBTOPICS[grade] || [];
       const label = gradeSubtopics.find((s) => s.key === key)?.label || key;
 
-      q.subTopic = label;
+      // Track update if subTopic changed
+      if (q.subTopic !== label) {
+        updates.push({ id: q.id, newSubTopic: label });
+      }
+
       stats.tagged++;
       stats.byMethod[method] = (stats.byMethod[method] || 0) + 1;
 
@@ -325,6 +328,23 @@ export async function GET(req: Request) {
     }
 
     stats.totalUnusable = brokenIds.size;
+
+    // Apply updates to DB (batched)
+    if (!dryRun && updates.length > 0) {
+      const BATCH = 100;
+      for (let i = 0; i < updates.length; i += BATCH) {
+        const batch = updates.slice(i, i + BATCH);
+        await prisma.$transaction(
+          batch.map((u) =>
+            prisma.question.update({
+              where: { id: u.id },
+              data: { subTopic: u.newSubTopic },
+            }),
+          ),
+        );
+        stats.dbUpdated += batch.length;
+      }
+    }
 
     // Build per-grade distribution report
     const gradeReport: Record<string, { topic: string; label: string; count: number }[]> = {};
@@ -338,18 +358,12 @@ export async function GET(req: Request) {
       }));
     }
 
-    // Write if not dry run
-    if (!dryRun) {
-      fs.writeFileSync(dataPath, JSON.stringify(data, null, 2), 'utf-8');
-    }
-
     return NextResponse.json({
       dryRun,
       written: !dryRun,
       stats: {
         total: stats.total,
         tagged: stats.tagged,
-        skippedG4Ch: stats.skippedG4Ch,
         byMethod: stats.byMethod,
         emptyCorrectAnswer: stats.emptyCorrectAnswer,
         emptyCorrectBySource: stats.emptyCorrectBySource,
@@ -357,6 +371,8 @@ export async function GET(req: Request) {
         emptyOptsBySource: stats.emptyOptsBySource,
         totalUnusable: stats.totalUnusable,
         usableNonG4: stats.tagged - stats.totalUnusable,
+        dbUpdated: stats.dbUpdated,
+        pendingUpdates: updates.length,
       },
       gradeReport,
     });
