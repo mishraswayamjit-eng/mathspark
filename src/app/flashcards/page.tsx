@@ -153,7 +153,7 @@ export default function FlashcardsPage() {
   const specialDecks = decks.filter((d) => ['due', 'quick', 'mental_math'].includes(d.id));
   const topicDecks = decks.filter((d) => !['due', 'quick', 'mental_math'].includes(d.id));
 
-  function openDeck(deckId: string, mode: 'classic' | 'quiz' = 'classic') {
+  function openDeck(deckId: string, mode: string = 'classic') {
     router.push(`/flashcards/session?deck=${deckId}&mode=${mode}`);
   }
 
@@ -244,30 +244,70 @@ export default function FlashcardsPage() {
           </div>
         )}
 
-        {/* ── Quiz Blitz entry ────────────────────────────────────────────── */}
+        {/* ── Game Modes ───────────────────────────────────────────────────── */}
         {!loading && decks.length > 0 && (
-          <button
-            onClick={() => openDeck('quick', 'quiz')}
-            className="w-full rounded-2xl p-4 text-left transition-all active:scale-[0.98] animate-quiz-glow"
-            style={{
-              background: 'linear-gradient(135deg, #1E293B 0%, #312E81 50%, #1E293B 100%)',
-              border: '1px solid rgba(139,92,246,0.3)',
-            }}
-          >
-            <div className="flex items-center gap-3">
-              <span className="text-3xl animate-quiz-icon">⚡</span>
-              <div className="flex-1">
-                <p className="text-base font-black text-[#F1F5F9]">Quiz Blitz</p>
-                <p className="text-xs text-[#A78BFA]">
-                  MCQ speed round · Combo streaks · Beat the clock!
-                </p>
+          <div className="space-y-2">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-[#64748B] px-1">
+              Game Modes
+            </h2>
+
+            {/* Quiz Blitz */}
+            <button
+              onClick={() => openDeck('quick', 'quiz')}
+              className="w-full rounded-2xl p-3.5 text-left transition-all active:scale-[0.98] animate-quiz-glow"
+              style={{
+                background: 'linear-gradient(135deg, #1E293B 0%, #312E81 50%, #1E293B 100%)',
+                border: '1px solid rgba(139,92,246,0.3)',
+              }}
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-2xl animate-quiz-icon">⚡</span>
+                <div className="flex-1">
+                  <p className="text-sm font-black text-[#F1F5F9]">Quiz Blitz</p>
+                  <p className="text-[11px] text-[#A78BFA]">MCQ · Combos · 12s per card</p>
+                </div>
+                <span className="text-[10px] font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>GO</span>
               </div>
-              <div className="flex flex-col items-center gap-0.5">
-                <span className="text-2xl">🏆</span>
-                <span className="text-[10px] font-bold text-amber-400">GO</span>
+            </button>
+
+            {/* Speed Round */}
+            <button
+              onClick={() => openDeck('quick', 'speed')}
+              className="w-full rounded-2xl p-3.5 text-left transition-all active:scale-[0.98]"
+              style={{
+                background: 'linear-gradient(135deg, #1E293B 0%, #7F1D1D 50%, #1E293B 100%)',
+                border: '1px solid rgba(239,68,68,0.3)',
+              }}
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🔥</span>
+                <div className="flex-1">
+                  <p className="text-sm font-black text-[#F1F5F9]">Speed Round</p>
+                  <p className="text-[11px] text-red-300/70">60 seconds · Answer as many as you can!</p>
+                </div>
+                <span className="text-[10px] font-bold text-red-400 bg-red-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>60s</span>
               </div>
-            </div>
-          </button>
+            </button>
+
+            {/* Tap Match */}
+            <button
+              onClick={() => openDeck('quick', 'match')}
+              className="w-full rounded-2xl p-3.5 text-left transition-all active:scale-[0.98]"
+              style={{
+                background: 'linear-gradient(135deg, #1E293B 0%, #064E3B 50%, #1E293B 100%)',
+                border: '1px solid rgba(52,211,153,0.3)',
+              }}
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🧩</span>
+                <div className="flex-1">
+                  <p className="text-sm font-black text-[#F1F5F9]">Tap Match</p>
+                  <p className="text-[11px] text-emerald-300/70">Match fronts to backs · Memory game</p>
+                </div>
+                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>NEW</span>
+              </div>
+            </button>
+          </div>
         )}
 
         {/* ── Topic decks ─────────────────────────────────────────────────── */}

@@ -211,3 +211,27 @@ button {
   50%      { opacity: 0.5; }
 }
 .animate-timer-urgent { animation: timer-urgent 0.5s ease-in-out infinite; }
+
+/* ── Tap Match animations ──────────────────────────────────────────────── */
+
+@keyframes match-success {
+  0%   { transform: scale(1); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.4); }
+  50%  { transform: scale(1.05); box-shadow: 0 0 12px 4px rgba(52, 211, 153, 0.3); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+.animate-match-success { animation: match-success 0.5s ease-out; }
+
+@keyframes match-shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-4px); }
+  40%      { transform: translateX(4px); }
+  60%      { transform: translateX(-2px); }
+  80%      { transform: translateX(2px); }
+}
+.animate-match-shake { animation: match-shake 0.4s ease-in-out; }
+
+@keyframes tile-flip {
+  0%   { transform: rotateY(0deg); }
+  100% { transform: rotateY(180deg); }
+}
+.animate-tile-flip { animation: tile-flip 0.3s ease-in-out; }

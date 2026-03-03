@@ -7,6 +7,8 @@ import ProgressDots from '@/components/flashcard/ProgressDots';
 import Confetti from '@/components/Confetti';
 import Sparky from '@/components/Sparky';
 import QuizBlitzSession from '@/components/flashcard/QuizBlitzSession';
+import SpeedRoundSession from '@/components/flashcard/SpeedRoundSession';
+import TapMatchSession from '@/components/flashcard/TapMatchSession';
 import { useSounds } from '@/hooks/useSounds';
 import type { FlashCard } from '@/types';
 
@@ -225,6 +227,16 @@ export default function FlashcardSessionPage() {
   // ── Quiz Blitz Mode ────────────────────────────────────────────────────────
   if (mode === 'quiz') {
     return <QuizBlitzSession deckId={deckId} />;
+  }
+
+  // ── Speed Round Mode ──────────────────────────────────────────────────────
+  if (mode === 'speed') {
+    return <SpeedRoundSession deckId={deckId} />;
+  }
+
+  // ── Tap Match Mode ────────────────────────────────────────────────────────
+  if (mode === 'match') {
+    return <TapMatchSession deckId={deckId} />;
   }
 
   // ── Classic Flip Mode (below) ──────────────────────────────────────────────
