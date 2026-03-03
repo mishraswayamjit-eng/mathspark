@@ -40,13 +40,9 @@ export async function POST(
         : false,
     }));
 
-    // Compute score + accuracy
-    const answered = graded.filter((r) => {
-      const resp = mockTest.responses.find((x) => x.id === r.id);
-      return resp?.selectedAnswer != null;
-    });
+    // Compute score + accuracy (exam-standard: correct / total questions)
     const correct  = graded.filter((r) => r.isCorrect).length;
-    const accuracy = answered.length > 0 ? correct / answered.length : 0;
+    const accuracy = mockTest.totalQuestions > 0 ? correct / mockTest.totalQuestions : 0;
 
     // Update each response isCorrect in a transaction
     await prisma.$transaction([

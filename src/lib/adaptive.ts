@@ -1,4 +1,4 @@
-import { prisma } from './db';
+import { prisma, USABLE_QUESTION_FILTER } from './db';
 import type { Difficulty } from '@/types';
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -68,7 +68,7 @@ export async function getNextQuestion(
 
   // Parallel DB reads
   const [allQuestions, sessionAttempts, progress, misconceptionAttempts] = await Promise.all([
-    prisma.question.findMany({ where: { topicId, ...subTopicFilter } }),
+    prisma.question.findMany({ where: { topicId, ...subTopicFilter, ...USABLE_QUESTION_FILTER } }),
 
     prisma.attempt.findMany({
       where: {

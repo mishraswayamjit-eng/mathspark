@@ -22,7 +22,7 @@ const TOPIC_NAMES: Record<string, string> = {
   // Grade pool topics
   'grade2':  'Grade 2 Practice',
   'grade3':  'Grade 3 Practice',
-  'grade4':  'Grade 4 IPM Pool',
+  'grade4':  'Grade 4 IPM Practice',
   'grade5':  'Grade 5 Practice',
   'grade6':  'Grade 6 Practice',
   'grade7':  'Grade 7 Practice',
@@ -232,7 +232,8 @@ export default function TestResultsPage() {
 
     async function load() {
       try {
-        const res = await fetch(`/api/mock-tests/${testId}`);
+        const sid = localStorage.getItem('mathspark_student_id') ?? '';
+        const res = await fetch(`/api/mock-tests/${testId}?studentId=${encodeURIComponent(sid)}`);
         if (!res.ok) { router.replace('/test'); return; }
         const data: MockTestDetail = await res.json();
         setTest(data);

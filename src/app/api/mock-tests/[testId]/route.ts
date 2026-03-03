@@ -1,13 +1,15 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 
-// GET /api/mock-tests/[testId]
+// GET /api/mock-tests/[testId]?studentId=xxx
 export async function GET(
-  _req: Request,
+  req: Request,
   { params }: { params: { testId: string } },
 ) {
   try {
     const { testId } = params;
+    const { searchParams } = new URL(req.url);
+    const requestingStudentId = searchParams.get('studentId');
 
     const mockTest = await prisma.mockTest.findUnique({
       where: { id: testId },
@@ -37,13 +39,22 @@ export async function GET(
       return NextResponse.json({ error: 'Test not found' }, { status: 404 });
     }
 
-    // Parse stepByStep JSON for each question
+    // Auth: verify requesting student owns this test
+    if (requestingStudentId && mockTest.studentId !== requestingStudentId) {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+    }
+
+    // Parse stepByStep JSON for each question (safe parse — never crash on bad data)
+    function safeParseSteps(json: string | null): unknown[] {
+      try { return JSON.parse(json ?? '[]'); } catch { return []; }
+    }
+
     const result = {
       ...mockTest,
       responses: mockTest.responses.map((r) => ({
         ...r,
         question: r.question
-          ? { ...r.question, stepByStep: JSON.parse(r.question.stepByStep ?? '[]') }
+          ? { ...r.question, stepByStep: safeParseSteps(r.question.stepByStep) }
           : undefined,
       })),
     };

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { Suspense, useEffect, useState, useCallback, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import FlashCardComponent from '@/components/flashcard/FlashCard';
 import ProgressDots from '@/components/flashcard/ProgressDots';
@@ -248,6 +248,21 @@ function SessionComplete({
 // ── Main Session Page ────────────────────────────────────────────────────────
 
 export default function FlashcardSessionPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-[#0F172A] flex flex-col items-center justify-center">
+          <div className="text-5xl animate-sparky-bounce mb-4">🃏</div>
+          <p className="text-[#94A3B8] text-sm">Loading session...</p>
+        </div>
+      }
+    >
+      <FlashcardSessionInner />
+    </Suspense>
+  );
+}
+
+function FlashcardSessionInner() {
   const searchParams = useSearchParams();
   const deckId = searchParams.get('deck') ?? 'quick';
   const mode = searchParams.get('mode') ?? 'classic';

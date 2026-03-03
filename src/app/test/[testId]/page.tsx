@@ -190,7 +190,8 @@ export default function TestEnginePage() {
   useEffect(() => {
     async function load() {
       try {
-        const res = await fetch(`/api/mock-tests/${testId}`);
+        const sid = localStorage.getItem('mathspark_student_id') ?? '';
+        const res = await fetch(`/api/mock-tests/${testId}?studentId=${encodeURIComponent(sid)}`);
         if (!res.ok) { router.replace('/test'); return; }
         const data: MockTestDetail = await res.json();
         if (data.status === 'completed') {
@@ -271,9 +272,9 @@ export default function TestEnginePage() {
   // Navigate to a question
   function navigateTo(num: number) {
     if (!test || num < 1 || num > test.totalQuestions) return;
-    // Track time on current question
+    // Track time on current question — always record (even sub-second)
     const elapsed = Date.now() - questionStartRef.current;
-    if (elapsed > 500) {
+    if (elapsed > 0) {
       saveResponse(currentNum, { additionalTimeMs: elapsed });
     }
     questionStartRef.current = Date.now();
@@ -308,7 +309,7 @@ export default function TestEnginePage() {
     await flushQueue();
     // Record final time on current question
     const elapsed = Date.now() - questionStartRef.current;
-    if (elapsed > 500) {
+    if (elapsed > 0) {
       await fetch(`/api/mock-tests/${testId}/response`, {
         method: 'PATCH',
         headers: { 'content-type': 'application/json' },

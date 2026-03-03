@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/db';
+import { prisma, USABLE_QUESTION_FILTER } from '@/lib/db';
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -38,11 +38,11 @@ export async function GET(req: Request) {
 
   // Fetch unseen questions; if not enough, include seen ones too
   let pool = await prisma.question.findMany({
-    where: { topicId, id: { notIn: seenIds } },
+    where: { topicId, id: { notIn: seenIds }, ...USABLE_QUESTION_FILTER },
     take: count * 3,
   });
   if (pool.length < count) {
-    pool = await prisma.question.findMany({ where: { topicId }, take: count * 3 });
+    pool = await prisma.question.findMany({ where: { topicId, ...USABLE_QUESTION_FILTER }, take: count * 3 });
   }
 
   // Group by difficulty and shuffle each group
@@ -72,6 +72,10 @@ export async function GET(req: Request) {
   }
 
   return NextResponse.json(
-    final.map((q) => ({ ...q, stepByStep: JSON.parse(q.stepByStep ?? '[]') })),
+    final.map((q) => {
+      let stepByStep: unknown[] = [];
+      try { stepByStep = JSON.parse(q.stepByStep ?? '[]'); } catch { /* malformed seed data */ }
+      return { ...q, stepByStep };
+    }),
   );
 }

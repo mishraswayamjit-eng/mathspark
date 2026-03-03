@@ -28,50 +28,63 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'year required for pyq type' }, { status: 400 });
     }
 
-    // Check for existing in-progress test
-    const existing = await prisma.mockTest.findFirst({
-      where: { studentId, status: 'in_progress' },
-      orderBy: { startedAt: 'desc' },
+    // Validate studentId exists
+    const student = await prisma.student.findUnique({
+      where: { id: studentId },
+      select: { id: true, grade: true },
     });
-    if (existing) {
-      return NextResponse.json({ testId: existing.id, resumed: true });
+    if (!student) {
+      return NextResponse.json({ error: 'Student not found' }, { status: 404 });
     }
 
-    // Generate paper — mega uses its own generator
-    let studentGrade = grade;
-    if (type === 'mega' && !studentGrade) {
-      // Derive grade from topicIds (e.g. 'grade5' → 5) or fetch from DB
-      if (topicIds?.[0]?.startsWith('grade')) {
-        studentGrade = parseInt(topicIds[0].replace('grade', ''), 10) || 4;
-      } else {
-        const student = await prisma.student.findUnique({ where: { id: studentId }, select: { grade: true } });
-        studentGrade = student?.grade ?? 4;
+    // Validate mega grade range
+    const effectiveGrade = grade ?? (topicIds?.[0]?.startsWith('grade') ? parseInt(topicIds[0].replace('grade', ''), 10) : student.grade) ?? 4;
+    if (type === 'mega' && (effectiveGrade < 2 || effectiveGrade > 9)) {
+      return NextResponse.json({ error: 'Invalid grade for mega test (must be 2-9)' }, { status: 400 });
+    }
+
+    // Check for existing in-progress test (inside serializable transaction to prevent race)
+    const result = await prisma.$transaction(async (tx) => {
+      const existing = await tx.mockTest.findFirst({
+        where: { studentId, status: 'in_progress' },
+        orderBy: { startedAt: 'desc' },
+      });
+      if (existing) {
+        return { testId: existing.id, resumed: true };
       }
-    }
-    const paper = type === 'mega'
-      ? await generateMegaTest(studentId, studentGrade ?? 4)
-      : await generateMockPaper(studentId, type, topicIds, year);
 
-    // Create MockTest + all responses
-    const mockTest = await prisma.mockTest.create({
-      data: {
-        studentId,
-        type,
-        totalQuestions: paper.questions.length,
-        timeLimitMs: paper.timeLimitMs,
-        status: 'in_progress',
-        responses: {
-          createMany: {
-            data: paper.questions.map((q, idx) => ({
-              questionId: q.id,
-              questionNumber: idx + 1,
-            })),
+      // Generate paper — mega uses its own generator
+      const paper = type === 'mega'
+        ? await generateMegaTest(studentId, effectiveGrade)
+        : await generateMockPaper(studentId, type, topicIds, year, student.grade);
+
+      if (paper.questions.length === 0) {
+        throw new Error('Insufficient questions to generate test');
+      }
+
+      // Create MockTest + all responses atomically
+      const mockTest = await tx.mockTest.create({
+        data: {
+          studentId,
+          type,
+          totalQuestions: paper.questions.length,
+          timeLimitMs: paper.timeLimitMs,
+          status: 'in_progress',
+          responses: {
+            createMany: {
+              data: paper.questions.map((q, idx) => ({
+                questionId: q.id,
+                questionNumber: idx + 1,
+              })),
+            },
           },
         },
-      },
+      });
+
+      return { testId: mockTest.id, resumed: false };
     });
 
-    return NextResponse.json({ testId: mockTest.id, resumed: false });
+    return NextResponse.json(result);
   } catch (err) {
     console.error('[mock-tests POST]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

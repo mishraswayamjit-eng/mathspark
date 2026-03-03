@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/db';
+import { prisma, USABLE_QUESTION_FILTER } from '@/lib/db';
 
 // GET /api/diagnostic?topicId=&difficulty=Medium&exclude=id1,id2
 export async function GET(req: Request) {
@@ -19,6 +19,7 @@ export async function GET(req: Request) {
       topicId,
       difficulty: difficulty as 'Easy' | 'Medium' | 'Hard',
       id: { notIn: excludeIds },
+      ...USABLE_QUESTION_FILTER,
     },
     take: 80,
   });
@@ -26,7 +27,7 @@ export async function GET(req: Request) {
   // Fallback to any difficulty in this topic
   if (!pool.length) {
     pool = await prisma.question.findMany({
-      where: { topicId, id: { notIn: excludeIds } },
+      where: { topicId, id: { notIn: excludeIds }, ...USABLE_QUESTION_FILTER },
       take: 80,
     });
   }
@@ -36,5 +37,7 @@ export async function GET(req: Request) {
   }
 
   const q = pool[Math.floor(Math.random() * pool.length)];
-  return NextResponse.json({ ...q, stepByStep: JSON.parse(q.stepByStep ?? '[]') });
+  let stepByStep: unknown[] = [];
+  try { stepByStep = JSON.parse(q.stepByStep ?? '[]'); } catch { /* malformed seed data */ }
+  return NextResponse.json({ ...q, stepByStep });
 }

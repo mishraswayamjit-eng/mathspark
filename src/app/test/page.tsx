@@ -15,10 +15,8 @@ const TEST_OPTIONS: Array<{
   questions: number;
   time: string;
   desc: string;
-  descGradePool: string; // shown for non-Grade-4 students
   color: string;
   border: string;
-  grade4Only?: boolean;
 }> = [
   {
     type: 'quick',
@@ -27,7 +25,6 @@ const TEST_OPTIONS: Array<{
     questions: 15,
     time: '20 min',
     desc: 'Fast check-in across key topics',
-    descGradePool: 'Fast check-in from your grade\'s IPM practice pool',
     color: 'bg-blue-50',
     border: 'border-[#1CB0F6]',
   },
@@ -38,7 +35,6 @@ const TEST_OPTIONS: Array<{
     questions: 30,
     time: '40 min',
     desc: 'Mid-term style practice paper',
-    descGradePool: 'Mid-term style paper from your grade\'s question pool',
     color: 'bg-amber-50',
     border: 'border-[#FF9600]',
   },
@@ -49,10 +45,8 @@ const TEST_OPTIONS: Array<{
     questions: 40,
     time: '60 min',
     desc: 'Matches real IPM topic & difficulty distribution',
-    descGradePool: 'Matches real IPM topic & difficulty distribution',
     color: 'bg-purple-50',
     border: 'border-purple-400',
-    grade4Only: true,
   },
   {
     type: 'full',
@@ -60,8 +54,7 @@ const TEST_OPTIONS: Array<{
     emoji: '🏆',
     questions: 50,
     time: '60 min',
-    desc: 'Extended paper — all 16 topics, max challenge',
-    descGradePool: 'Extended paper — full grade IPM question pool',
+    desc: 'Extended paper — full grade question pool',
     color: 'bg-green-50',
     border: 'border-[#58CC02]',
   },
@@ -85,14 +78,7 @@ const PYQ_YEARS: Array<{
 
 export default function TestConfigPage() {
   const router = useRouter();
-  // Default to 'ipm' for Grade 4, 'quick' for all other grades.
-  // Initialise synchronously from localStorage to avoid a FOUC where the
-  // Grade 4-only IPM Blueprint is briefly shown to non-Grade-4 students.
-  const [selected, setSelected] = useState<TestType>(() => {
-    if (typeof window === 'undefined') return 'ipm';
-    const g = parseInt(localStorage.getItem('mathspark_student_grade') ?? '4', 10);
-    return g === 4 ? 'ipm' : 'quick';
-  });
+  const [selected, setSelected] = useState<TestType>('ipm');
   const [loading,           setLoading]           = useState(false);
   const [pyqLoading,        setPyqLoading]        = useState<PYQYear | null>(null);
   const [megaLoading,       setMegaLoading]       = useState(false);
@@ -129,7 +115,6 @@ export default function TestConfigPage() {
       .catch(() => {});
   }, [router]);
 
-  const isGrade4 = studentGrade === 4;
   const IS_MEGA_ACCESSIBLE = subscriptionTier >= 2 || trialActive;
 
   // Start a synthetic test (quick / half / ipm / full)
@@ -138,8 +123,9 @@ export default function TestConfigPage() {
     setLoading(true);
     setError('');
     try {
-      // For non-Grade-4 students on quick/half/full, scope questions to their grade pool
-      const topicIds = !isGrade4 && selected !== 'ipm'
+      // For non-Grade-4 students, scope quick/half/full to their grade pool
+      // IPM generator handles grade-aware topic selection server-side
+      const topicIds = studentGrade !== 4 && selected !== 'ipm'
         ? [`grade${studentGrade}`]
         : undefined;
 
@@ -214,7 +200,7 @@ export default function TestConfigPage() {
             <Sparky mood="thinking" size={48} />
           </div>
           <div>
-            <h1 className="text-2xl font-extrabold text-white">{isGrade4 ? 'IPM Mock Test' : 'Mock Test'}</h1>
+            <h1 className="text-2xl font-extrabold text-white">IPM Mock Test</h1>
             <p className="text-white/60 text-sm font-medium">No hints · Timed · Full simulation</p>
           </div>
         </div>
@@ -227,36 +213,24 @@ export default function TestConfigPage() {
         </p>
         <div className="space-y-2">
           {TEST_OPTIONS.map((o) => {
-            const locked = !!o.grade4Only && !isGrade4;
-            const isSelected = selected === o.type && !locked;
-            const desc = !isGrade4 ? o.descGradePool : o.desc;
+            const isSelected = selected === o.type;
             return (
               <button
                 key={o.type}
-                onClick={() => !locked && setSelected(o.type)}
-                disabled={locked}
+                onClick={() => setSelected(o.type)}
                 className={`w-full text-left rounded-2xl p-4 border-2 transition-all duration-150 ${
-                  locked
-                    ? 'bg-white/5 border-white/5 opacity-50 cursor-not-allowed'
-                    : isSelected
-                      ? `${o.color} ${o.border} shadow-md active:scale-[0.97]`
-                      : 'bg-white/10 border-white/10 hover:border-white/30 active:scale-[0.97]'
+                  isSelected
+                    ? `${o.color} ${o.border} shadow-md active:scale-[0.97]`
+                    : 'bg-white/10 border-white/10 hover:border-white/30 active:scale-[0.97]'
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">{o.emoji}</span>
                   <div className="flex-1">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <span className={`font-extrabold text-sm ${isSelected ? 'text-gray-800' : 'text-white'}`}>
-                          {o.label}
-                        </span>
-                        {locked && (
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">
-                            Grade 4 only
-                          </span>
-                        )}
-                      </div>
+                      <span className={`font-extrabold text-sm ${isSelected ? 'text-gray-800' : 'text-white'}`}>
+                        {o.label}
+                      </span>
                       <div className="flex items-center gap-1.5">
                         <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
                           isSelected ? 'bg-white/60 text-gray-700' : 'bg-white/10 text-white/70'
@@ -267,7 +241,7 @@ export default function TestConfigPage() {
                       </div>
                     </div>
                     <p className={`text-xs mt-0.5 font-medium ${isSelected ? 'text-gray-600' : 'text-white/40'}`}>
-                      {desc}
+                      {o.desc}
                     </p>
                   </div>
                   {isSelected && <span className="text-[#58CC02] text-base ml-1">✓</span>}
@@ -305,47 +279,32 @@ export default function TestConfigPage() {
           <p className="text-xs font-extrabold text-white/40 uppercase tracking-widest">
             Previous Year Papers
           </p>
-          {!isGrade4 && (
-            <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">
-              Grade 4 only
-            </span>
-          )}
         </div>
         <div className="grid grid-cols-2 gap-3">
           {PYQ_YEARS.map(({ year, label, subtitle, color }) => (
             <button
               key={year}
-              onClick={() => isGrade4 && handlePYQ(year)}
-              disabled={pyqLoading !== null || !isGrade4}
-              className={`relative bg-gradient-to-br ${color} rounded-2xl p-4 text-left transition-all duration-150 min-h-[100px] flex flex-col justify-between ${
-                isGrade4 ? 'active:scale-[0.97] disabled:opacity-60' : 'opacity-40 cursor-not-allowed'
-              }`}
+              onClick={() => handlePYQ(year)}
+              disabled={pyqLoading !== null}
+              className={`relative bg-gradient-to-br ${color} rounded-2xl p-4 text-left transition-all duration-150 min-h-[100px] flex flex-col justify-between active:scale-[0.97] disabled:opacity-60`}
             >
               <div>
                 <p className="text-white font-extrabold text-base leading-tight">{label}</p>
                 <p className="text-white/70 text-xs font-semibold mt-1">{subtitle}</p>
               </div>
               <div className="flex items-center justify-between mt-3">
-                {isGrade4 ? (
-                  <>
-                    <span className="text-white/80 text-xs font-bold">Original order</span>
-                    {pyqLoading === year ? (
-                      <span className="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    ) : (
-                      <span className="text-white/70 text-sm">→</span>
-                    )}
-                  </>
+                <span className="text-white/80 text-xs font-bold">Shuffled order</span>
+                {pyqLoading === year ? (
+                  <span className="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 ) : (
-                  <span className="text-white/60 text-xs font-bold">Grade 4 students only</span>
+                  <span className="text-white/70 text-sm">→</span>
                 )}
               </div>
             </button>
           ))}
         </div>
         <p className="text-white/30 text-[11px] text-center mt-2 font-medium">
-          {isGrade4
-            ? 'Actual questions from 2016–2019 IPM papers · In original exam order'
-            : 'IPM past papers are for Grade 4 students · Practice with synthetic papers above'}
+          Actual questions from 2016–2019 IPM papers
         </p>
       </div>
 

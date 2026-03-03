@@ -1,4 +1,5 @@
-import { prisma } from '@/lib/db';
+import { prisma, USABLE_QUESTION_FILTER } from '@/lib/db';
+import { getTopicsForGrade } from '@/data/topicTree';
 import type { TestType, PYQYear } from '@/types';
 
 // ── Config ────────────────────────────────────────────────────────────────────
@@ -65,7 +66,7 @@ export const TOPIC_NAMES: Record<string, string> = {
   // IPM past-paper pools (Grades 2–9)
   'grade2':  'Grade 2 — IPM Practice',
   'grade3':  'Grade 3 — IPM Practice',
-  'grade4':  'Grade 4 — IPM Past Papers',
+  'grade4':  'Grade 4 — IPM Practice',
   'grade5':  'Grade 5 — IPM Practice',
   'grade6':  'Grade 6 — IPM Practice',
   'grade7':  'Grade 7 — IPM Practice',
@@ -74,6 +75,11 @@ export const TOPIC_NAMES: Record<string, string> = {
 };
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
+
+/** Safe JSON parse for stepByStep — never crash on bad data */
+function safeParseSteps(json: string | null): unknown[] {
+  try { return JSON.parse(json ?? '[]'); } catch { return []; }
+}
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -91,7 +97,7 @@ export async function generatePYQPaper(year: PYQYear) {
   const cfg = TEST_CONFIG.pyq;
 
   const questions = await prisma.question.findMany({
-    where: { source },
+    where: { source, ...USABLE_QUESTION_FILTER },
     orderBy: { questionNumber: 'asc' },
     select: {
       id: true, topicId: true, difficulty: true, source: true,
@@ -104,19 +110,38 @@ export async function generatePYQPaper(year: PYQYear) {
     },
   });
 
+  if (questions.length === 0) {
+    throw new Error(`No PYQ questions found for year ${year}`);
+  }
+
+  // Shuffle so students don't memorize question order across attempts
+  const shuffled = shuffle(questions);
+
   return {
-    questions: questions.map((q) => ({
+    questions: shuffled.map((q) => ({
       ...q,
-      stepByStep: JSON.parse(q.stepByStep ?? '[]'),
+      stepByStep: safeParseSteps(q.stepByStep),
     })),
     timeLimitMs:    cfg.timeLimitMs,
-    totalQuestions: questions.length,
+    totalQuestions: shuffled.length,
   };
 }
 
 // ── IPM Blueprint Paper Generator ─────────────────────────────────────────────
 
-async function generateIPMPaper(studentId: string) {
+const PYQ_SOURCES = ['previous_year_2016', 'previous_year_2017', 'previous_year_2018', 'previous_year_2019'];
+
+const QUESTION_SELECT = {
+  id: true, topicId: true, difficulty: true, source: true,
+  questionText: true, questionLatex: true,
+  option1: true, option2: true, option3: true, option4: true,
+  correctAnswer: true, hint1: true, hint2: true, hint3: true,
+  stepByStep: true,
+  misconceptionA: true, misconceptionB: true, misconceptionC: true, misconceptionD: true,
+  subTopic: true,
+} as const;
+
+async function generateIPMPaper(studentId: string, grade: number) {
   const cfg = TEST_CONFIG.ipm;
 
   // Avoid questions used in last 3 tests
@@ -130,22 +155,18 @@ async function generateIPMPaper(studentId: string) {
     recentTests.flatMap((t) => t.responses.map((r) => r.questionId)),
   );
 
-  const topicIds = MOCK_BLUEPRINT.map((b) => b.topicId);
+  // Grade 4 uses chapter-based blueprint; other grades use their grade pool
+  const topicIds = grade === 4
+    ? MOCK_BLUEPRINT.map((b) => b.topicId)
+    : [`grade${grade}`];
+
   const allQuestions = await prisma.question.findMany({
     where: {
       topicId: { in: topicIds },
-      // Exclude PYQ questions from synthetic papers
-      source: { notIn: ['previous_year_2016', 'previous_year_2017', 'previous_year_2018', 'previous_year_2019'] },
+      source: { notIn: PYQ_SOURCES },
+      ...USABLE_QUESTION_FILTER,
     },
-    select: {
-      id: true, topicId: true, difficulty: true, source: true,
-      questionText: true, questionLatex: true,
-      option1: true, option2: true, option3: true, option4: true,
-      correctAnswer: true, hint1: true, hint2: true, hint3: true,
-      stepByStep: true,
-      misconceptionA: true, misconceptionB: true, misconceptionC: true, misconceptionD: true,
-      subTopic: true,
-    },
+    select: QUESTION_SELECT,
   });
 
   type QRow = typeof allQuestions[number];
@@ -174,13 +195,32 @@ async function generateIPMPaper(studentId: string) {
   const hard:   QRow[] = [];
   const used = new Set<string>();
 
-  for (const slot of MOCK_BLUEPRINT) {
+  if (grade === 4) {
+    // Grade 4: use topic-wise blueprint distribution
+    for (const slot of MOCK_BLUEPRINT) {
+      const diffs: Array<[string, number]> = [
+        ['Easy', slot.easy], ['Medium', slot.medium], ['Hard', slot.hard],
+      ];
+      for (const [diff, count] of diffs) {
+        for (let i = 0; i < count; i++) {
+          const q = pickOne(slot.topicId, diff, used);
+          if (!q) continue;
+          used.add(q.id);
+          if (diff === 'Easy')   easy.push(q);
+          else if (diff === 'Medium') medium.push(q);
+          else hard.push(q);
+        }
+      }
+    }
+  } else {
+    // Other grades: pull from gradeN pool with same difficulty distribution
+    const gradeTopicId = `grade${grade}`;
     const diffs: Array<[string, number]> = [
-      ['Easy', slot.easy], ['Medium', slot.medium], ['Hard', slot.hard],
+      ['Easy', cfg.easy], ['Medium', cfg.medium], ['Hard', cfg.hard],
     ];
-    for (const [diff, count] of diffs) {
-      for (let i = 0; i < count; i++) {
-        const q = pickOne(slot.topicId, diff, used);
+    for (const [diff, target] of diffs) {
+      for (let i = 0; i < target; i++) {
+        const q = pickOne(gradeTopicId, diff, used);
         if (!q) continue;
         used.add(q.id);
         if (diff === 'Easy')   easy.push(q);
@@ -192,13 +232,17 @@ async function generateIPMPaper(studentId: string) {
 
   const ordered = [...shuffle(easy), ...shuffle(medium), ...shuffle(hard)].slice(0, cfg.totalQuestions);
 
+  if (ordered.length < cfg.totalQuestions) {
+    console.warn(`[mockTest] IPM paper generated ${ordered.length}/${cfg.totalQuestions} questions — insufficient pool for grade ${grade}`);
+  }
+
   return {
     questions: ordered.map((q) => ({
       ...q,
-      stepByStep: JSON.parse(q.stepByStep ?? '[]'),
+      stepByStep: safeParseSteps(q.stepByStep),
     })),
     timeLimitMs:    cfg.timeLimitMs,
-    totalQuestions: cfg.totalQuestions,
+    totalQuestions: ordered.length,
   };
 }
 
@@ -240,10 +284,11 @@ export async function generateMockPaper(
   type: TestType,
   requestedTopicIds?: string[],
   year?: PYQYear,
+  grade: number = 4,
 ) {
   // Delegate to specialised generators
   if (type === 'pyq' && year) return generatePYQPaper(year);
-  if (type === 'ipm')        return generateIPMPaper(studentId);
+  if (type === 'ipm')        return generateIPMPaper(studentId, grade);
 
   const cfg = TEST_CONFIG[type as 'quick' | 'half' | 'full'];
   const topicIds = requestedTopicIds?.length ? requestedTopicIds : ALL_TOPIC_IDS;
@@ -275,17 +320,10 @@ export async function generateMockPaper(
   const allQuestions = await prisma.question.findMany({
     where: {
       topicId: { in: activeTopicIds },
-      source: { notIn: ['previous_year_2016', 'previous_year_2017', 'previous_year_2018', 'previous_year_2019'] },
+      source: { notIn: PYQ_SOURCES },
+      ...USABLE_QUESTION_FILTER,
     },
-    select: {
-      id: true, topicId: true, difficulty: true, source: true,
-      questionText: true, questionLatex: true,
-      option1: true, option2: true, option3: true, option4: true,
-      correctAnswer: true, hint1: true, hint2: true, hint3: true,
-      stepByStep: true,
-      misconceptionA: true, misconceptionB: true, misconceptionC: true, misconceptionD: true,
-      subTopic: true,
-    },
+    select: QUESTION_SELECT,
   });
 
   type QRow = typeof allQuestions[number];
@@ -344,10 +382,14 @@ export async function generateMockPaper(
 
   const ordered = [...shuffle(easy), ...shuffle(medium), ...shuffle(hard)].slice(0, cfg.totalQuestions);
 
+  if (ordered.length < cfg.totalQuestions) {
+    console.warn(`[mockTest] ${type} paper generated ${ordered.length}/${cfg.totalQuestions} questions — insufficient pool`);
+  }
+
   return {
-    questions: ordered.map((q) => ({ ...q, stepByStep: JSON.parse(q.stepByStep ?? '[]') })),
+    questions: ordered.map((q) => ({ ...q, stepByStep: safeParseSteps(q.stepByStep) })),
     timeLimitMs:    cfg.timeLimitMs,
-    totalQuestions: cfg.totalQuestions,
+    totalQuestions: ordered.length,
   };
 }
 
@@ -365,7 +407,6 @@ async function getRecentlySeenIds(studentId: string, days: number): Promise<stri
 // ── Mega Test Generator ───────────────────────────────────────────────────────
 
 export async function generateMegaTest(studentId: string, grade: number) {
-  const { getTopicsForGrade } = await import('@/data/topicTree');
   const topics = getTopicsForGrade(grade).map((t) => t.dbTopicId);
   const uniqueTopics = Array.from(new Set(topics));
 
@@ -376,6 +417,7 @@ export async function generateMegaTest(studentId: string, grade: number) {
       topicId: { in: uniqueTopics },
       difficulty: 'Hard',
       id: { notIn: recentIds.length > 0 ? recentIds : ['__none__'] },
+      ...USABLE_QUESTION_FILTER,
     },
     select: {
       id: true, topicId: true, difficulty: true, source: true,
@@ -393,7 +435,7 @@ export async function generateMegaTest(studentId: string, grade: number) {
   const shuffled = shuffle(questions).slice(0, 15);
 
   return {
-    questions: shuffled.map((q) => ({ ...q, stepByStep: JSON.parse(q.stepByStep ?? '[]') })),
+    questions: shuffled.map((q) => ({ ...q, stepByStep: safeParseSteps(q.stepByStep) })),
     timeLimitMs:    45 * 60 * 1000,
     totalQuestions: shuffled.length,
   };

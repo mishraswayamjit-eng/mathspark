@@ -8,6 +8,18 @@ interface TopicStatus {
   id: string; name: string; grade: number; count: number;
 }
 
+interface FixReport {
+  dryRun: boolean;
+  written: boolean;
+  stats: {
+    total: number; tagged: number; skippedG4Ch: number;
+    byMethod: Record<string, number>;
+    emptyCorrectAnswer: number; emptyOptions: number; totalUnusable: number; usableNonG4: number;
+    emptyCorrectBySource: Record<string, number>; emptyOptsBySource: Record<string, number>;
+  };
+  gradeReport: Record<string, { topic: string; label: string; count: number }[]>;
+}
+
 export default function SeedPage() {
   // ── Questions seed ──────────────────────────────────────────────────────────
   const [secret,   setSecret]   = useState('');
@@ -25,6 +37,12 @@ export default function SeedPage() {
   // ── DB verification ─────────────────────────────────────────────────────────
   const [verifyStatus,  setVerifyStatus]  = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
   const [verifyData,    setVerifyData]    = useState<{ total: number; topicCount: number; topics: TopicStatus[]; emptyTopics: TopicStatus[]; healthy: boolean } | null>(null);
+
+  // ── Fix subtopics ──────────────────────────────────────────────────────────
+  const [fixSecret,  setFixSecret]  = useState('');
+  const [fixStatus,  setFixStatus]  = useState<Status>('idle');
+  const [fixMessage, setFixMessage] = useState('');
+  const [fixReport,  setFixReport]  = useState<FixReport | null>(null);
 
   // ── Handlers ─────────────────────────────────────────────────────────────────
   async function runSeed() {
@@ -67,6 +85,25 @@ export default function SeedPage() {
     } catch (err) {
       setTestMessage(`Network error: ${err}`);
       setTestStatus('error');
+    }
+  }
+
+  async function runFixSubtopics(dryRun: boolean) {
+    const sec = fixSecret || secret || testSecret;
+    if (!sec.trim()) { setFixMessage('Enter your SEED_SECRET first.'); setFixStatus('error'); return; }
+    setFixStatus('running');
+    setFixMessage(dryRun ? 'Running dry-run analysis...' : 'Re-tagging subtopics...');
+    setFixReport(null);
+    try {
+      const res  = await fetch(`/api/fix-subtopics?secret=${encodeURIComponent(sec)}&dryRun=${dryRun}`);
+      const data = await res.json();
+      if (!res.ok) { setFixMessage(data.error ?? 'Something went wrong.'); setFixStatus('error'); return; }
+      setFixReport(data as FixReport);
+      setFixMessage(dryRun ? 'Dry-run complete — no changes written.' : 'Seed JSON updated! Re-seed the DB to apply.');
+      setFixStatus('done');
+    } catch (err) {
+      setFixMessage(`Network error: ${err}`);
+      setFixStatus('error');
     }
   }
 
@@ -282,6 +319,130 @@ export default function SeedPage() {
               className="w-full text-xs text-gray-400 hover:text-gray-600 py-1"
             >
               Refresh
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* ── Section 4: Fix SubTopics ──────────────────────────────────────────── */}
+      <div className="w-full bg-white border-2 border-amber-200 rounded-2xl p-6 space-y-4 shadow-sm">
+        <div className="flex items-center gap-3">
+          <span className="text-3xl">🏷️</span>
+          <div>
+            <p className="font-bold text-gray-800">Fix SubTopics</p>
+            <p className="text-xs text-gray-400">Re-tags seed JSON subtopics to match curriculum lesson structure (Grades 2–9)</p>
+          </div>
+        </div>
+
+        {fixStatus === 'idle' || fixStatus === 'error' ? (
+          <>
+            <div>
+              <label className="block text-xs font-semibold text-gray-600 mb-1">SEED_SECRET</label>
+              <input
+                type="password"
+                value={fixSecret}
+                onChange={(e) => setFixSecret(e.target.value)}
+                placeholder="your-secret-key"
+                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-800 outline-none focus:border-amber-400 text-sm"
+              />
+            </div>
+            {fixMessage && <p className="text-sm text-red-500">{fixMessage}</p>}
+            <div className="flex gap-3">
+              <button
+                onClick={() => runFixSubtopics(true)}
+                className="flex-1 bg-amber-100 hover:bg-amber-200 text-amber-800 font-bold py-3.5 rounded-2xl transition-colors text-sm"
+              >
+                Dry Run (preview)
+              </button>
+              <button
+                onClick={() => runFixSubtopics(false)}
+                className="flex-1 bg-amber-500 hover:bg-amber-600 text-white font-bold py-3.5 rounded-2xl transition-colors text-sm"
+              >
+                Apply Fix →
+              </button>
+            </div>
+          </>
+        ) : fixStatus === 'running' ? (
+          <>
+            <div className="h-3 bg-amber-200 rounded-full animate-pulse" />
+            <p className="text-xs text-gray-500 text-center">{fixMessage}</p>
+          </>
+        ) : (
+          <div className="space-y-3">
+            {/* Summary banner */}
+            <div className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold ${
+              fixReport?.written ? 'bg-green-50 text-green-700' : 'bg-amber-50 text-amber-700'
+            }`}>
+              {fixReport?.written ? '✅ Written!' : '👀 Dry Run'}
+              <span className="font-normal">— {fixMessage}</span>
+            </div>
+
+            {fixReport && (
+              <>
+                {/* Method breakdown */}
+                <div className="bg-gray-50 rounded-xl px-3 py-2 text-xs space-y-1">
+                  <p className="font-bold text-gray-700">Classification</p>
+                  <p>Tagged: <b>{fixReport.stats.tagged}</b> · Skipped G4 ch-series: <b>{fixReport.stats.skippedG4Ch}</b></p>
+                  <p>
+                    ID stem: <b>{fixReport.stats.byMethod.id_stem}</b> ·
+                    Keyword: <b>{fixReport.stats.byMethod.keyword}</b> ·
+                    Fallback: <b>{fixReport.stats.byMethod.fallback}</b>
+                  </p>
+                </div>
+
+                {/* Data quality */}
+                <div className="bg-red-50 rounded-xl px-3 py-2 text-xs space-y-1">
+                  <p className="font-bold text-red-700">Data Quality Issues</p>
+                  <p>Empty correctAnswer: <b>{fixReport.stats.emptyCorrectAnswer}</b>
+                    {Object.entries(fixReport.stats.emptyCorrectBySource).map(([src, cnt]) => (
+                      <span key={src} className="ml-2 text-red-500">({src}: {cnt})</span>
+                    ))}
+                  </p>
+                  <p>Empty options: <b>{fixReport.stats.emptyOptions}</b>
+                    {Object.entries(fixReport.stats.emptyOptsBySource).map(([src, cnt]) => (
+                      <span key={src} className="ml-2 text-red-500">({src}: {cnt})</span>
+                    ))}
+                  </p>
+                  <p>Total unusable: <b>{fixReport.stats.totalUnusable}</b> · Usable (non-G4-ch): <b>{fixReport.stats.usableNonG4}</b></p>
+                </div>
+
+                {/* Per-grade distribution */}
+                <div className="space-y-2 max-h-80 overflow-y-auto">
+                  {Object.entries(fixReport.gradeReport).map(([gradeKey, topics]) => {
+                    const total = topics.reduce((s, t) => s + t.count, 0);
+                    return (
+                      <div key={gradeKey} className="bg-white border border-gray-100 rounded-xl px-3 py-2">
+                        <p className="text-xs font-bold text-gray-700 mb-1">
+                          {gradeKey.replace('grade', 'Grade ')} ({total} Qs)
+                        </p>
+                        {topics.map((t) => (
+                          <div key={t.topic} className="flex items-center justify-between text-xs py-0.5">
+                            <span className="text-gray-600">{t.label}</span>
+                            <div className="flex items-center gap-2">
+                              <div className="w-20 bg-gray-100 rounded-full h-1.5">
+                                <div
+                                  className="bg-amber-400 h-1.5 rounded-full"
+                                  style={{ width: `${total > 0 ? Math.round((t.count / total) * 100) : 0}%` }}
+                                />
+                              </div>
+                              <span className={`font-bold tabular-nums w-8 text-right ${t.count === 0 ? 'text-red-500' : 'text-gray-600'}`}>
+                                {t.count}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+
+            <button
+              onClick={() => { setFixStatus('idle'); setFixMessage(''); setFixReport(null); }}
+              className="w-full text-xs text-gray-400 hover:text-gray-600 py-1"
+            >
+              Run again
             </button>
           </div>
         )}

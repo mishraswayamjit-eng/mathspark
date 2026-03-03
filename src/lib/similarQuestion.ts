@@ -1,4 +1,4 @@
-import { prisma } from './db';
+import { prisma, USABLE_QUESTION_FILTER } from './db';
 
 type Difficulty = 'Easy' | 'Medium' | 'Hard';
 const DIFFICULTIES: Difficulty[] = ['Easy', 'Medium', 'Hard'];
@@ -51,6 +51,7 @@ export async function findSimilarQuestion(
       source:     'auto_generated',
       difficulty: { in: allowedDiff },
       id:         { notIn: excluded },
+      ...USABLE_QUESTION_FILTER,
     },
     take: 20,
   });
@@ -63,6 +64,7 @@ export async function findSimilarQuestion(
       source:     'hand_crafted',
       difficulty: { in: allowedDiff },
       id:         { notIn: excluded },
+      ...USABLE_QUESTION_FILTER,
     },
     take: 10,
   });
@@ -74,6 +76,7 @@ export async function findSimilarQuestion(
       topicId,
       difficulty: { in: allowedDiff },
       id:         { notIn: excluded },
+      ...USABLE_QUESTION_FILTER,
     },
     take: 20,
   });

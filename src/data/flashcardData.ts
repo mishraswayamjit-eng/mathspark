@@ -6,20 +6,37 @@ import type { FlashCard } from '@/types';
 
 const ALL_CARDS: FlashCard[] = (flashcardJson as { cards: FlashCard[] }).cards;
 
+// ── Precomputed indexes — built once at module load (O(1) lookups) ───────────
+const BY_GRADE = new Map<number, FlashCard[]>();
+const BY_GRADE_TOPIC = new Map<string, FlashCard[]>();
+const BY_ID = new Map<string, FlashCard>();
+
+for (const c of ALL_CARDS) {
+  // By grade
+  const gradeList = BY_GRADE.get(c.grade);
+  if (gradeList) gradeList.push(c); else BY_GRADE.set(c.grade, [c]);
+  // By grade+topic
+  const key = `${c.grade}::${c.topicId}`;
+  const topicList = BY_GRADE_TOPIC.get(key);
+  if (topicList) topicList.push(c); else BY_GRADE_TOPIC.set(key, [c]);
+  // By id
+  BY_ID.set(c.id, c);
+}
+
 export function getAllFlashcards(): FlashCard[] {
   return ALL_CARDS;
 }
 
 export function getFlashcardsForGrade(grade: number): FlashCard[] {
-  return ALL_CARDS.filter((c) => c.grade === grade);
+  return BY_GRADE.get(grade) ?? [];
 }
 
 export function getFlashcardsByTopic(grade: number, topicId: string): FlashCard[] {
-  return ALL_CARDS.filter((c) => c.grade === grade && c.topicId === topicId);
+  return BY_GRADE_TOPIC.get(`${grade}::${topicId}`) ?? [];
 }
 
 export function getFlashcardById(id: string): FlashCard | undefined {
-  return ALL_CARDS.find((c) => c.id === id);
+  return BY_ID.get(id);
 }
 
 /** Map topicName → accent color for card left border */

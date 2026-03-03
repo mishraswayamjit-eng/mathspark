@@ -268,7 +268,7 @@ model MockTest {
 model MockTestResponse {
   id             String    @id @default(cuid())
   mockTestId     String
-  mockTest       MockTest  @relation(fields: [mockTestId], references: [id])
+  mockTest       MockTest  @relation(fields: [mockTestId], references: [id], onDelete: Cascade)
   questionId     String
   question       Question  @relation(fields: [questionId], references: [id])
   questionNumber Int
@@ -278,6 +278,7 @@ model MockTestResponse {
   flagged        Boolean   @default(false)
   answeredAt     DateTime?
 
+  @@unique([mockTestId, questionNumber])
   @@index([mockTestId])
   @@index([questionId])
 }
@@ -354,6 +355,7 @@ model FlashcardProgress {
 
   @@unique([studentId, cardId])
   @@index([studentId, nextReviewAt])
+  @@index([studentId, lastSeenAt])
 }
 
 // ── Flashcard Session (tracks each review session) ──────────────────────────
@@ -370,4 +372,5 @@ model FlashcardSession {
   createdAt     DateTime @default(now())
 
   @@index([studentId])
+  @@index([studentId, createdAt])
 }

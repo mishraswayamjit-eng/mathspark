@@ -21,8 +21,7 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: 'No more questions available' }, { status: 404 });
   }
 
-  return NextResponse.json({
-    ...q,
-    stepByStep: JSON.parse(q.stepByStep ?? '[]'),
-  });
+  let stepByStep: unknown[] = [];
+  try { stepByStep = JSON.parse(q.stepByStep ?? '[]'); } catch { /* malformed seed data */ }
+  return NextResponse.json({ ...q, stepByStep });
 }

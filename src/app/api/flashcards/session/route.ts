@@ -32,24 +32,30 @@ export async function POST(req: Request) {
     const todayStart = new Date();
     todayStart.setHours(0, 0, 0, 0);
 
-    // Count consecutive days with flashcard sessions (walk backwards)
+    // Single query: fetch all session dates in last 365 days
+    const cutoff = new Date(todayStart);
+    cutoff.setDate(cutoff.getDate() - 365);
+    const sessions = await prisma.flashcardSession.findMany({
+      where: { studentId, createdAt: { gte: cutoff } },
+      select: { createdAt: true },
+      orderBy: { createdAt: 'desc' },
+    });
+
+    // Build set of unique date keys
+    const datesWithSessions = new Set(
+      sessions.map((s) => {
+        const d = new Date(s.createdAt);
+        return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+      }),
+    );
+
+    // Walk backwards from today counting consecutive days
     let dailyStreak = 0;
     const day = new Date(todayStart);
-    // Include today if this session counts
     for (let i = 0; i < 365; i++) {
-      const dayStart = new Date(day);
-      const dayEnd = new Date(day);
-      dayEnd.setDate(dayEnd.getDate() + 1);
-
-      const count = await prisma.flashcardSession.count({
-        where: {
-          studentId,
-          createdAt: { gte: dayStart, lt: dayEnd },
-        },
-      });
-
+      const key = `${day.getFullYear()}-${day.getMonth()}-${day.getDate()}`;
       // For today (i=0), count this session as contributing
-      if (count > 0 || i === 0) {
+      if (datesWithSessions.has(key) || i === 0) {
         dailyStreak++;
         day.setDate(day.getDate() - 1);
       } else {

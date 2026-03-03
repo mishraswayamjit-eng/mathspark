@@ -1,6 +1,5 @@
 import {
   getFlashcardsForGrade,
-  getFlashcardsByTopic,
 } from '@/data/flashcardData';
 import type { FlashCard } from '@/types';
 
@@ -44,14 +43,16 @@ export function generateMCQOptions(
   correctCard: FlashCard,
   grade: number,
   usedDistractorIds: Set<string>,
+  allGradeCards?: FlashCard[],
 ): QuizOption[] {
   const correctText = correctCard.back.trim();
+  const gradePool = allGradeCards ?? getFlashcardsForGrade(grade);
 
   // Collect distractor candidates (prioritize same topic, same grade)
-  const sameTopic = getFlashcardsByTopic(grade, correctCard.topicId).filter(
-    (c) => c.id !== correctCard.id && c.back.trim() !== correctText,
+  const sameTopic = gradePool.filter(
+    (c) => c.topicId === correctCard.topicId && c.id !== correctCard.id && c.back.trim() !== correctText,
   );
-  const sameGrade = getFlashcardsForGrade(grade).filter(
+  const sameGrade = gradePool.filter(
     (c) =>
       c.id !== correctCard.id &&
       c.back.trim() !== correctText &&
@@ -109,6 +110,8 @@ export function generateQuizQuestions(
   grade: number,
 ): QuizQuestion[] {
   const usedDistractors = new Set<string>();
+  // Precompute grade-level pool ONCE instead of per-card
+  const gradeCards = getFlashcardsForGrade(grade);
 
   return cards.map((card) => ({
     cardId: card.id,
@@ -116,7 +119,7 @@ export function generateQuizQuestions(
     cardFormula: card.formula,
     topicName: card.topicName,
     difficulty: card.difficulty,
-    options: generateMCQOptions(card, grade, usedDistractors),
+    options: generateMCQOptions(card, grade, usedDistractors, gradeCards),
     timeLimitMs: 12000, // 12 seconds per question
   }));
 }

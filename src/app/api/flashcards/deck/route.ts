@@ -68,6 +68,14 @@ export async function GET(req: Request) {
   // ── Fetch progress for these cards ──────────────────────────────────────
   const progress = await prisma.flashcardProgress.findMany({
     where: { studentId, cardId: { in: cardIds } },
+    select: {
+      cardId: true,
+      leitnerBox: true,
+      timesSeen: true,
+      timesCorrect: true,
+      streakOnCard: true,
+      nextReviewAt: true,
+    },
   });
   const progressMap = new Map(progress.map((p) => [p.cardId, p]));
   const now = new Date();

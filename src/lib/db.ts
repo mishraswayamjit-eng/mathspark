@@ -10,3 +10,12 @@ export const prisma =
   });
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
+
+/**
+ * Shared Prisma `where` clause that excludes broken questions
+ * (empty correctAnswer or empty options). Spread into any Question.findMany().
+ */
+export const USABLE_QUESTION_FILTER = {
+  correctAnswer: { not: '' },
+  option1:       { not: '' },
+};

@@ -42,19 +42,26 @@ export async function PATCH(
     if (flagged !== undefined) {
       updateData.flagged = flagged;
     }
-    if (additionalTimeMs !== undefined && additionalTimeMs > 0) {
-      // Increment timeTakenMs
-      const current = await prisma.mockTestResponse.findFirst({
-        where: { mockTestId: testId, questionNumber },
-        select: { timeTakenMs: true },
-      });
-      updateData.timeTakenMs = (current?.timeTakenMs ?? 0) + additionalTimeMs;
+    // Validate questionNumber is a positive integer
+    if (typeof questionNumber !== 'number' || questionNumber < 1) {
+      return NextResponse.json({ error: 'Invalid questionNumber' }, { status: 400 });
     }
 
-    await prisma.mockTestResponse.updateMany({
-      where: { mockTestId: testId, questionNumber },
-      data: updateData,
-    });
+    // Split into two operations: regular fields + atomic time increment
+    if (Object.keys(updateData).length > 0) {
+      await prisma.mockTestResponse.updateMany({
+        where: { mockTestId: testId, questionNumber },
+        data: updateData,
+      });
+    }
+
+    // Atomic time increment — avoids race condition with concurrent PATCHes
+    if (additionalTimeMs !== undefined && additionalTimeMs > 0) {
+      await prisma.mockTestResponse.updateMany({
+        where: { mockTestId: testId, questionNumber },
+        data: { timeTakenMs: { increment: additionalTimeMs } },
+      });
+    }
 
     return new Response(null, { status: 204 });
   } catch (err) {
