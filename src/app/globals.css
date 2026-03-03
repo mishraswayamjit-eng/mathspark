@@ -164,3 +164,50 @@ button {
   to   { transform: scale(1) translateY(0);       opacity: 1; }
 }
 .animate-flashcard-slide-up { animation: flashcard-slide-up 200ms ease-out; }
+
+/* ── Quiz Blitz animations ─────────────────────────────────────────────── */
+
+@keyframes quiz-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+  50%      { box-shadow: 0 0 20px 4px rgba(139, 92, 246, 0.2); }
+}
+.animate-quiz-glow { animation: quiz-glow 3s ease-in-out infinite; }
+
+@keyframes quiz-icon {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25%      { transform: scale(1.2) rotate(-8deg); }
+  75%      { transform: scale(1.2) rotate(8deg); }
+}
+.animate-quiz-icon { display: inline-block; animation: quiz-icon 2s ease-in-out infinite; }
+
+@keyframes score-pop {
+  0%   { transform: scale(0.5) translateY(0); opacity: 0; }
+  50%  { transform: scale(1.3) translateY(-12px); opacity: 1; }
+  100% { transform: scale(1) translateY(-24px); opacity: 0; }
+}
+.animate-score-pop { animation: score-pop 0.8s ease-out forwards; }
+
+@keyframes combo-bounce {
+  0%       { transform: scale(1); }
+  30%      { transform: scale(1.25); }
+  60%      { transform: scale(0.95); }
+  100%     { transform: scale(1); }
+}
+.animate-combo-bounce { animation: combo-bounce 0.4s ease-out; }
+
+@keyframes option-correct {
+  0%   { background-color: rgba(52, 211, 153, 0); }
+  100% { background-color: rgba(52, 211, 153, 0.15); }
+}
+
+@keyframes option-wrong {
+  0%   { background-color: rgba(239, 68, 68, 0); }
+  50%  { background-color: rgba(239, 68, 68, 0.2); }
+  100% { background-color: rgba(239, 68, 68, 0.1); }
+}
+
+@keyframes timer-urgent {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}
+.animate-timer-urgent { animation: timer-urgent 0.5s ease-in-out infinite; }

@@ -63,23 +63,23 @@ function PowerBar({ distribution, total }: { distribution: number[]; total: numb
 // ── Deck card ────────────────────────────────────────────────────────────────
 
 function DeckCard({
-  deck, onClick,
+  deck, onClick, onQuiz,
 }: {
   deck: FlashcardDeck;
   onClick: () => void;
+  onQuiz?: () => void;
 }) {
   const isSpecial = ['due', 'quick', 'mental_math'].includes(deck.id);
   const emoji = deck.id === 'due' ? '🔥' : deck.id === 'quick' ? '⚡' : deck.id === 'mental_math' ? '🧠' : '📁';
   return (
-    <button
-      onClick={onClick}
-      className="w-full flex flex-col rounded-2xl px-4 py-3.5 transition-all active:scale-[0.98]"
+    <div
+      className="w-full flex flex-col rounded-2xl px-4 py-3.5 transition-all"
       style={{
         background: '#1E293B',
         borderLeft: `4px solid ${deck.topicColor}`,
       }}
     >
-      <div className="flex items-center gap-3 w-full">
+      <button onClick={onClick} className="flex items-center gap-3 w-full active:scale-[0.98] transition-transform">
         <span className="text-xl flex-shrink-0">{emoji}</span>
         <div className="flex-1 text-left min-w-0">
           <p className="text-sm font-bold text-[#F1F5F9] truncate">{deck.name}</p>
@@ -98,12 +98,27 @@ function DeckCard({
             {deck.dueCount}
           </span>
         )}
-      </div>
-      {/* Power distribution bar for topic decks */}
-      {!isSpecial && deck.boxDistribution && (
-        <PowerBar distribution={deck.boxDistribution} total={deck.total} />
+      </button>
+      {/* Power distribution bar + quiz button for topic decks */}
+      {!isSpecial && (
+        <div className="flex items-center gap-2 mt-1.5">
+          <div className="flex-1">
+            {deck.boxDistribution && (
+              <PowerBar distribution={deck.boxDistribution} total={deck.total} />
+            )}
+          </div>
+          {onQuiz && deck.cardCount >= 4 && (
+            <button
+              onClick={(e) => { e.stopPropagation(); onQuiz(); }}
+              className="text-[10px] font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full hover:bg-amber-400/20 transition-colors whitespace-nowrap"
+              style={{ minHeight: 'auto' }}
+            >
+              ⚡ Quiz
+            </button>
+          )}
+        </div>
       )}
-    </button>
+    </div>
   );
 }
 
@@ -138,8 +153,8 @@ export default function FlashcardsPage() {
   const specialDecks = decks.filter((d) => ['due', 'quick', 'mental_math'].includes(d.id));
   const topicDecks = decks.filter((d) => !['due', 'quick', 'mental_math'].includes(d.id));
 
-  function openDeck(deckId: string) {
-    router.push(`/flashcards/session?deck=${deckId}&mode=classic`);
+  function openDeck(deckId: string, mode: 'classic' | 'quiz' = 'classic') {
+    router.push(`/flashcards/session?deck=${deckId}&mode=${mode}`);
   }
 
   return (
@@ -229,6 +244,32 @@ export default function FlashcardsPage() {
           </div>
         )}
 
+        {/* ── Quiz Blitz entry ────────────────────────────────────────────── */}
+        {!loading && decks.length > 0 && (
+          <button
+            onClick={() => openDeck('quick', 'quiz')}
+            className="w-full rounded-2xl p-4 text-left transition-all active:scale-[0.98] animate-quiz-glow"
+            style={{
+              background: 'linear-gradient(135deg, #1E293B 0%, #312E81 50%, #1E293B 100%)',
+              border: '1px solid rgba(139,92,246,0.3)',
+            }}
+          >
+            <div className="flex items-center gap-3">
+              <span className="text-3xl animate-quiz-icon">⚡</span>
+              <div className="flex-1">
+                <p className="text-base font-black text-[#F1F5F9]">Quiz Blitz</p>
+                <p className="text-xs text-[#A78BFA]">
+                  MCQ speed round · Combo streaks · Beat the clock!
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-0.5">
+                <span className="text-2xl">🏆</span>
+                <span className="text-[10px] font-bold text-amber-400">GO</span>
+              </div>
+            </div>
+          </button>
+        )}
+
         {/* ── Topic decks ─────────────────────────────────────────────────── */}
         {!loading && topicDecks.length > 0 && (
           <div className="space-y-2">
@@ -236,7 +277,12 @@ export default function FlashcardsPage() {
               By Topic
             </h2>
             {topicDecks.map((d) => (
-              <DeckCard key={d.id} deck={d} onClick={() => openDeck(d.id)} />
+              <DeckCard
+                key={d.id}
+                deck={d}
+                onClick={() => openDeck(d.id)}
+                onQuiz={() => openDeck(d.id, 'quiz')}
+              />
             ))}
           </div>
         )}

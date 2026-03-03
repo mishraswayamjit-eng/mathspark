@@ -6,6 +6,7 @@ import FlashCardComponent from '@/components/flashcard/FlashCard';
 import ProgressDots from '@/components/flashcard/ProgressDots';
 import Confetti from '@/components/Confetti';
 import Sparky from '@/components/Sparky';
+import QuizBlitzSession from '@/components/flashcard/QuizBlitzSession';
 import { useSounds } from '@/hooks/useSounds';
 import type { FlashCard } from '@/types';
 
@@ -217,9 +218,23 @@ function SessionComplete({
 // ── Main Session Page ────────────────────────────────────────────────────────
 
 export default function FlashcardSessionPage() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const deckId = searchParams.get('deck') ?? 'quick';
+  const mode = searchParams.get('mode') ?? 'classic';
+
+  // ── Quiz Blitz Mode ────────────────────────────────────────────────────────
+  if (mode === 'quiz') {
+    return <QuizBlitzSession deckId={deckId} />;
+  }
+
+  // ── Classic Flip Mode (below) ──────────────────────────────────────────────
+  return <ClassicFlipSession deckId={deckId} />;
+}
+
+// ── Classic Flip Session Component ───────────────────────────────────────────
+
+function ClassicFlipSession({ deckId }: { deckId: string }) {
+  const router = useRouter();
   const { playCorrect, playWrong, playLevelUp, playMastery } = useSounds();
 
   const [phase, setPhase] = useState<SessionPhase>('loading');
