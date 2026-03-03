@@ -9,6 +9,7 @@ import Sparky from '@/components/Sparky';
 import QuizBlitzSession from '@/components/flashcard/QuizBlitzSession';
 import SpeedRoundSession from '@/components/flashcard/SpeedRoundSession';
 import TapMatchSession from '@/components/flashcard/TapMatchSession';
+import WarmUpSession from '@/components/flashcard/WarmUpSession';
 import { useSounds } from '@/hooks/useSounds';
 import type { FlashCard } from '@/types';
 
@@ -237,6 +238,11 @@ export default function FlashcardSessionPage() {
   // ── Tap Match Mode ────────────────────────────────────────────────────────
   if (mode === 'match') {
     return <TapMatchSession deckId={deckId} />;
+  }
+
+  // ── Pre-Exam Warm-Up Mode ─────────────────────────────────────────────────
+  if (mode === 'warmup') {
+    return <WarmUpSession deckId={deckId} />;
   }
 
   // ── Classic Flip Mode (below) ──────────────────────────────────────────────

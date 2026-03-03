@@ -19,6 +19,7 @@ const BOX_INTERVALS = [0, 1, 2, 5, 14, 30]; // index 0 unused; box 1→1d, box 2
  * - "due": cards where nextReviewAt <= now, ordered by leitnerBox ASC (weakest first)
  * - "quick": 10 smart-selected cards (prioritize box 1-2, mix in unseen)
  * - "mental_math": warm_up + mental_math category cards
+ * - "warmup": pre-exam warm-up mix (warm_up, formula, rule, trick, concept)
  * - <topicId>: all cards for that topic, due ones first
  */
 export async function GET(req: Request) {
@@ -38,6 +39,9 @@ export async function GET(req: Request) {
     candidates = getFlashcardsForGrade(grade).filter(
       (c) => c.category === 'mental_math' || c.category === 'warm_up',
     );
+  } else if (deckId === 'warmup') {
+    // Pre-exam warm-up: all categories, prioritize warm_up + formula + trick
+    candidates = getFlashcardsForGrade(grade);
   } else if (deckId === 'due' || deckId === 'quick') {
     candidates = getFlashcardsForGrade(grade);
   } else {
@@ -132,6 +136,18 @@ export async function GET(req: Request) {
 
     // Final shuffle so it's not always easy→hard
     deck = shuffle(deck);
+  } else if (deckId === 'warmup') {
+    // Warm-up: return a broad mix so client can split by category.
+    // Include all cards, shuffle, cap at 40 (client picks ~20 across phases).
+    const shuffle = <T,>(arr: T[]): T[] => {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    };
+    deck = shuffle(candidates).slice(0, 40);
   } else {
     // Topic or mental_math: due cards first, then unseen, then rest
     const due: FlashCard[] = [];
@@ -168,6 +184,7 @@ export async function GET(req: Request) {
   if (deckId === 'due') deckName = 'Due for Review';
   else if (deckId === 'quick') deckName = 'Quick Review';
   else if (deckId === 'mental_math') deckName = 'Mental Math';
+  else if (deckId === 'warmup') deckName = 'Pre-Exam Warm-Up';
   else if (deck.length > 0) deckName = deck[0].topicName;
 
   return NextResponse.json({

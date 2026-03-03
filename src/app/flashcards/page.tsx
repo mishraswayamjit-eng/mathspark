@@ -307,6 +307,25 @@ export default function FlashcardsPage() {
                 <span className="text-[10px] font-bold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>NEW</span>
               </div>
             </button>
+
+            {/* Pre-Exam Warm-Up */}
+            <button
+              onClick={() => openDeck('warmup', 'warmup')}
+              className="w-full rounded-2xl p-3.5 text-left transition-all active:scale-[0.98] animate-warmup-glow"
+              style={{
+                background: 'linear-gradient(135deg, #1E293B 0%, #1E3A5F 50%, #1E293B 100%)',
+                border: '1px solid rgba(96,165,250,0.3)',
+              }}
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🧘</span>
+                <div className="flex-1">
+                  <p className="text-sm font-black text-[#F1F5F9]">Pre-Exam Warm-Up</p>
+                  <p className="text-[11px] text-blue-300/70">Breathe · Formulas · Confidence boost</p>
+                </div>
+                <span className="text-[10px] font-bold text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>ZEN</span>
+              </div>
+            </button>
           </div>
         )}
 
