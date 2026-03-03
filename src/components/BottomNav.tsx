@@ -24,7 +24,8 @@ export default function BottomNav() {
     pathname.startsWith('/parent/') ||
     pathname.startsWith('/student/') ||
     pathname.startsWith('/profile/') ||    // public profiles (e.g. /profile/abc123)
-    (pathname.startsWith('/test/') && pathname !== '/test/')
+    (pathname.startsWith('/test/') && pathname !== '/test/') ||
+    pathname.startsWith('/flashcards/session')  // hide during active flashcard sessions
   ) return null;
 
   return (

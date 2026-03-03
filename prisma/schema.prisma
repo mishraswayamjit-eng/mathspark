@@ -90,6 +90,8 @@ model Student {
   orders                  Order[]
   leagueMemberships       LeagueMembership[]
   weeklyAwards            WeeklyAward[]
+  flashcardProgress       FlashcardProgress[]
+  flashcardSessions       FlashcardSession[]
 }
 
 // ── Order (payment record) ─────────────────────────────────────────────────
@@ -333,5 +335,39 @@ model WeeklyAward {
   value     String   // e.g. "+240 XP jump", "avg 7s", "94% accuracy", "8 topics"
 
   @@index([weekStart])
+  @@index([studentId])
+}
+
+// ── Flashcard Progress (Leitner box state per student per card) ──────────────
+
+model FlashcardProgress {
+  id            String    @id @default(cuid())
+  studentId     String
+  student       Student   @relation(fields: [studentId], references: [id])
+  cardId        String                          // references static JSON card ID
+  leitnerBox    Int       @default(1)           // 1-5 (Power Level)
+  nextReviewAt  DateTime  @default(now())
+  timesSeen     Int       @default(0)
+  timesCorrect  Int       @default(0)
+  lastSeenAt    DateTime?
+  streakOnCard  Int       @default(0)           // consecutive correct for THIS card
+
+  @@unique([studentId, cardId])
+  @@index([studentId, nextReviewAt])
+}
+
+// ── Flashcard Session (tracks each review session) ──────────────────────────
+
+model FlashcardSession {
+  id            String   @id @default(cuid())
+  studentId     String
+  student       Student  @relation(fields: [studentId], references: [id])
+  mode          String                          // "classic" | "quiz" | "speed" | "match" | "warmup" | "voice"
+  cardsReviewed Int
+  cardsCorrect  Int
+  duration      Int                             // seconds
+  xpEarned      Int      @default(0)
+  createdAt     DateTime @default(now())
+
   @@index([studentId])
 }

@@ -150,3 +150,17 @@ button {
   to   { transform: rotate(360deg); }
 }
 .animate-spin-refresh { display: inline-block; animation: spin-refresh 0.7s linear infinite; }
+
+/* ── Flashcard animations ────────────────────────────────────────────────── */
+
+@keyframes flashcard-breathe {
+  0%, 100% { box-shadow: 0 4px 24px rgba(52,211,153,0.05), 0 1px 4px rgba(0,0,0,0.3); }
+  50%      { box-shadow: 0 4px 24px rgba(52,211,153,0.12), 0 1px 4px rgba(0,0,0,0.3); }
+}
+.flashcard-breathe { animation: flashcard-breathe 3s ease-in-out infinite; }
+
+@keyframes flashcard-slide-up {
+  from { transform: scale(0.95) translateY(16px); opacity: 0; }
+  to   { transform: scale(1) translateY(0);       opacity: 1; }
+}
+.animate-flashcard-slide-up { animation: flashcard-slide-up 200ms ease-out; }

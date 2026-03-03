@@ -272,3 +272,50 @@ export interface PublicProfile {
   joinedAt:         string;
   awards:           WeeklyAwardData[];
 }
+
+// ── Flashcard types ──────────────────────────────────────────────────────────
+
+export type FlashcardCategory = 'concept' | 'formula' | 'rule' | 'trick' | 'mental_math' | 'warm_up';
+export type FlashcardMode = 'classic' | 'quiz' | 'speed' | 'match' | 'warmup' | 'voice';
+export type LeitnerBox = 1 | 2 | 3 | 4 | 5;
+
+export interface FlashCard {
+  id: string;
+  grade: number;
+  topicId: string;
+  topicName: string;
+  front: string;
+  back: string;
+  formula?: string;
+  visual?: string;
+  difficulty: number;         // 1-3
+  category: string;           // FlashcardCategory
+  ipmFrequency?: string;
+  tags?: string[];
+  keywords?: string[];
+}
+
+export interface FlashcardProgressData {
+  cardId: string;
+  leitnerBox: number;         // 1-5 (Power Level)
+  nextReviewAt: string;       // ISO date
+  timesSeen: number;
+  timesCorrect: number;
+  streakOnCard: number;
+}
+
+export interface FlashcardDeck {
+  id: string;                 // topicId or 'due' | 'quick' | 'mental_math'
+  name: string;
+  cardCount: number;
+  dueCount: number;
+  mastered: number;           // cards in box 4-5
+  total: number;
+  topicColor: string;
+}
+
+export interface FlashcardStats {
+  totalCards: number;
+  totalSeen: number;
+  totalMastered: number;      // cards in box 4-5
+}
