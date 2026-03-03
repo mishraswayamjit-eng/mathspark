@@ -409,7 +409,7 @@ export async function generateNudges(
   // If student record not provided, fetch it (for standalone calls)
   const resolvedStudent = student ?? await prisma.student.findUnique({
     where: { id: studentId },
-    select: { grade: true, examDate: true, currentStreak: true },
+    select: { grade: true, examDate: true, currentStreak: true, focusTopics: true },
   });
 
   const m = masteries ?? (await computeTopicMastery(studentId));
