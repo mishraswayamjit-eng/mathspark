@@ -72,5 +72,31 @@ export function useSounds() {
     freqs.forEach((f, i) => playTone(ctx, f, t + i * 0.07, 0.06, 0.15));
   }, [muted]);
 
-  return { playCorrect, playWrong, playStreak, muted, toggleMute };
+  const playLevelUp = useCallback(() => {
+    if (muted) return;
+    const ctx = getAudioContext();
+    if (!ctx) return;
+    const t = ctx.currentTime;
+    // Triumphant ascending fanfare: C5→E5→G5→C6 with longer sustain
+    playTone(ctx, 523.25, t,        0.12, 0.20);
+    playTone(ctx, 659.25, t + 0.10, 0.12, 0.20);
+    playTone(ctx, 783.99, t + 0.20, 0.12, 0.20);
+    playTone(ctx, 1046.5, t + 0.30, 0.25, 0.22);
+  }, [muted]);
+
+  const playMastery = useCallback(() => {
+    if (muted) return;
+    const ctx = getAudioContext();
+    if (!ctx) return;
+    const t = ctx.currentTime;
+    // Grand flourish: C5→E5→G5→C6 + sparkle C6→E6
+    playTone(ctx, 523.25, t,        0.10, 0.18);
+    playTone(ctx, 659.25, t + 0.08, 0.10, 0.18);
+    playTone(ctx, 783.99, t + 0.16, 0.10, 0.18);
+    playTone(ctx, 1046.5, t + 0.24, 0.15, 0.22);
+    playTone(ctx, 1318.5, t + 0.40, 0.20, 0.15);
+    playTone(ctx, 1046.5, t + 0.55, 0.25, 0.12);
+  }, [muted]);
+
+  return { playCorrect, playWrong, playStreak, playLevelUp, playMastery, muted, toggleMute };
 }

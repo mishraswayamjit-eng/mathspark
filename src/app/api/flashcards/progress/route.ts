@@ -6,6 +6,8 @@ export const dynamic = 'force-dynamic';
 // Leitner box → review interval in days
 const BOX_INTERVALS = [0, 1, 2, 5, 14, 30]; // index 0 unused; box 1→1d, box 2→2d, etc.
 
+const BOX_NAMES = ['', 'Rookie', 'Rising', 'Strong', 'Expert', 'Master'];
+
 /**
  * POST /api/flashcards/progress
  * Body: { studentId, cardId, correct: boolean }
@@ -14,6 +16,8 @@ const BOX_INTERVALS = [0, 1, 2, 5, 14, 30]; // index 0 unused; box 1→1d, box 2
  *   correct → box = min(box + 1, 5), streak++
  *   wrong   → box = 1, streak = 0
  * Sets nextReviewAt = now + BOX_INTERVALS[newBox] days
+ *
+ * Returns oldBox, newBox, leveledUp, milestone flags for client celebrations.
  */
 export async function POST(req: Request) {
   try {
@@ -38,8 +42,9 @@ export async function POST(req: Request) {
       where: { studentId_cardId: { studentId, cardId } },
     });
 
-    const oldBox = existing?.leitnerBox ?? 1;
-    const newBox = correct ? Math.min(oldBox + 1, 5) : 1;
+    const wasNew = !existing;
+    const oldBox = existing?.leitnerBox ?? 0; // 0 = never seen
+    const newBox = correct ? Math.min(Math.max(oldBox, 1) + 1, 5) : 1;
     const intervalDays = BOX_INTERVALS[newBox] ?? 1;
     const nextReviewAt = new Date(now.getTime() + intervalDays * 86_400_000);
 
@@ -67,9 +72,21 @@ export async function POST(req: Request) {
       },
     });
 
+    // Detect level-up and milestones
+    const leveledUp = correct && newBox > oldBox && oldBox > 0;
+    const reachedMastery = newBox === 5 && oldBox < 5;
+    const reachedStrong = newBox >= 3 && oldBox < 3;
+
     return NextResponse.json({
       ok: true,
-      leitnerBox: progress.leitnerBox,
+      oldBox,
+      newBox: progress.leitnerBox,
+      oldBoxName: BOX_NAMES[oldBox] ?? '',
+      newBoxName: BOX_NAMES[newBox] ?? '',
+      leveledUp,
+      reachedMastery,
+      reachedStrong,
+      wasNew,
       nextReviewAt: progress.nextReviewAt,
       streakOnCard: progress.streakOnCard,
     });
@@ -78,11 +95,3 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Internal error' }, { status: 500 });
   }
 }
-
-/**
- * POST /api/flashcards/progress/session
- * Body: { studentId, mode, cardsReviewed, cardsCorrect, duration }
- *
- * Records a completed flashcard session.
- * (Kept as a separate function but same route file for simplicity.)
- */

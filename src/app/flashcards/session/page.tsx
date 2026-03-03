@@ -4,9 +4,13 @@ import { useEffect, useState, useCallback, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import FlashCardComponent from '@/components/flashcard/FlashCard';
 import ProgressDots from '@/components/flashcard/ProgressDots';
+import Confetti from '@/components/Confetti';
+import Sparky from '@/components/Sparky';
+import { useSounds } from '@/hooks/useSounds';
 import type { FlashCard } from '@/types';
 
-// ── Card with progress attached by the deck API ────────────────────────────
+// ── Types ────────────────────────────────────────────────────────────────────
+
 interface CardWithProgress extends FlashCard {
   leitnerBox: number;
   timesSeen: number;
@@ -14,20 +18,73 @@ interface CardWithProgress extends FlashCard {
   streakOnCard: number;
 }
 
+interface BoxTransition {
+  cardId: string;
+  cardFront: string;
+  oldBox: number;
+  newBox: number;
+  leveledUp: boolean;
+  reachedMastery: boolean;
+}
+
 type SessionPhase = 'loading' | 'reviewing' | 'complete';
 
-// ── Session Complete Overlay ─────────────────────────────────────────────────
+const BOX_NAMES = ['New', 'Rookie', 'Rising', 'Strong', 'Expert', 'Master'];
+const BOX_COLORS = ['#64748B', '#EF4444', '#F59E0B', '#3B82F6', '#8B5CF6', '#34D399'];
+
+// ── Power-Up Toast ──────────────────────────────────────────────────────────
+
+function PowerUpToast({
+  show,
+  newBox,
+  isMastery,
+}: {
+  show: boolean;
+  newBox: number;
+  isMastery: boolean;
+}) {
+  if (!show) return null;
+  return (
+    <div className="fixed top-20 left-1/2 -translate-x-1/2 z-[60] animate-slide-down">
+      <div
+        className="flex items-center gap-2 px-4 py-2.5 rounded-2xl shadow-lg border"
+        style={{
+          background: isMastery
+            ? 'linear-gradient(135deg, #059669, #34D399)'
+            : 'linear-gradient(135deg, #1E293B, #334155)',
+          borderColor: isMastery ? '#34D399' : BOX_COLORS[newBox] + '40',
+        }}
+      >
+        <span className="text-xl animate-sparky-bounce">
+          {isMastery ? '🏅' : '⚡'}
+        </span>
+        <div>
+          <p className="text-white font-black text-sm">
+            {isMastery ? 'MASTERED!' : 'Power Up!'}
+          </p>
+          <p className="text-white/70 text-[10px] font-bold">
+            {isMastery ? 'Card reached Master level!' : `→ ${BOX_NAMES[newBox]}`}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Session Complete Overlay ────────────────────────────────────────────────
 
 function SessionComplete({
   cardsReviewed,
   cardsCorrect,
   duration,
+  transitions,
   onDone,
   onRestart,
 }: {
   cardsReviewed: number;
   cardsCorrect: number;
   duration: number;
+  transitions: BoxTransition[];
   onDone: () => void;
   onRestart: () => void;
 }) {
@@ -35,18 +92,35 @@ function SessionComplete({
   const mins = Math.floor(duration / 60);
   const secs = duration % 60;
 
+  const promoted = transitions.filter((t) => t.leveledUp);
+  const mastered = transitions.filter((t) => t.reachedMastery);
+  const reset = transitions.filter((t) => t.newBox < t.oldBox && t.oldBox > 0);
+  const hasMilestone = mastered.length > 0;
+
   return (
-    <div className="fixed inset-0 z-50 bg-[#0F172A] flex flex-col items-center justify-center px-6 animate-fade-in">
-      {/* Sparky celebration */}
-      <div className="text-7xl mb-4 animate-sparky-bounce">
-        {pct >= 80 ? '🌟' : pct >= 50 ? '💪' : '📚'}
+    <div className="fixed inset-0 z-50 bg-[#0F172A] flex flex-col items-center justify-center px-6 animate-fade-in overflow-y-auto">
+      {hasMilestone && <Confetti />}
+
+      {/* Sparky */}
+      <div className="mb-3">
+        <div className={hasMilestone ? 'animate-sparky-dance' : 'animate-sparky-bounce'}>
+          <Sparky mood={pct >= 70 ? 'celebrating' : pct >= 40 ? 'happy' : 'encouraging'} size={80} />
+        </div>
       </div>
 
       <h1 className="text-2xl font-black text-[#F1F5F9] mb-1">
-        {pct >= 80 ? 'Amazing Review!' : pct >= 50 ? 'Great Practice!' : 'Keep Going!'}
+        {hasMilestone
+          ? 'Cards Mastered!'
+          : pct >= 80
+          ? 'Amazing Review!'
+          : pct >= 50
+          ? 'Great Practice!'
+          : 'Keep Going!'}
       </h1>
-      <p className="text-sm text-[#94A3B8] mb-8">
-        {pct >= 80
+      <p className="text-sm text-[#94A3B8] mb-6">
+        {hasMilestone
+          ? `${mastered.length} card${mastered.length > 1 ? 's' : ''} reached Master level!`
+          : pct >= 80
           ? "You're really mastering these concepts!"
           : pct >= 50
           ? 'Nice progress — keep reviewing!'
@@ -54,7 +128,7 @@ function SessionComplete({
       </p>
 
       {/* Stats grid */}
-      <div className="grid grid-cols-3 gap-4 w-full max-w-xs mb-10">
+      <div className="grid grid-cols-3 gap-3 w-full max-w-xs mb-5">
         <div className="bg-[#1E293B] rounded-2xl p-3 text-center">
           <p className="text-2xl font-black text-[#F1F5F9] tabular-nums">{cardsReviewed}</p>
           <p className="text-[10px] text-[#64748B] uppercase tracking-wider mt-0.5">Cards</p>
@@ -71,8 +145,57 @@ function SessionComplete({
         </div>
       </div>
 
+      {/* Box transitions report */}
+      {(promoted.length > 0 || reset.length > 0) && (
+        <div className="w-full max-w-xs mb-5 space-y-2">
+          {promoted.length > 0 && (
+            <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl px-3 py-2.5">
+              <p className="text-xs font-bold text-emerald-400 mb-1.5">
+                ⬆️ {promoted.length} card{promoted.length > 1 ? 's' : ''} leveled up
+              </p>
+              {promoted.slice(0, 5).map((t) => (
+                <div key={t.cardId} className="flex items-center gap-2 py-0.5">
+                  <span className="text-[10px] text-[#94A3B8] truncate flex-1">{t.cardFront}</span>
+                  <div className="flex items-center gap-1 flex-shrink-0">
+                    <span
+                      className="text-[10px] font-bold px-1.5 py-0.5 rounded"
+                      style={{ color: BOX_COLORS[t.oldBox], background: BOX_COLORS[t.oldBox] + '20' }}
+                    >
+                      {BOX_NAMES[t.oldBox]}
+                    </span>
+                    <span className="text-[#64748B] text-[10px]">→</span>
+                    <span
+                      className="text-[10px] font-bold px-1.5 py-0.5 rounded"
+                      style={{ color: BOX_COLORS[t.newBox], background: BOX_COLORS[t.newBox] + '20' }}
+                    >
+                      {BOX_NAMES[t.newBox]}
+                    </span>
+                  </div>
+                </div>
+              ))}
+              {promoted.length > 5 && (
+                <p className="text-[10px] text-emerald-400/60 mt-1">
+                  +{promoted.length - 5} more
+                </p>
+              )}
+            </div>
+          )}
+
+          {reset.length > 0 && (
+            <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl px-3 py-2.5">
+              <p className="text-xs font-bold text-blue-400 mb-1">
+                🔄 {reset.length} card{reset.length > 1 ? 's' : ''} need more practice
+              </p>
+              <p className="text-[10px] text-blue-400/60">
+                These reset to Rookie — you&apos;ll see them again soon!
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Action buttons */}
-      <div className="w-full max-w-xs space-y-3">
+      <div className="w-full max-w-xs space-y-3 pb-8">
         <button
           onClick={onRestart}
           className="w-full py-3.5 rounded-2xl font-bold text-white text-sm"
@@ -97,6 +220,7 @@ export default function FlashcardSessionPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const deckId = searchParams.get('deck') ?? 'quick';
+  const { playCorrect, playWrong, playLevelUp, playMastery } = useSounds();
 
   const [phase, setPhase] = useState<SessionPhase>('loading');
   const [cards, setCards] = useState<CardWithProgress[]>([]);
@@ -106,6 +230,14 @@ export default function FlashcardSessionPage() {
   const [correctCount, setCorrectCount] = useState(0);
   const [startTime] = useState(() => Date.now());
   const sessionSavedRef = useRef(false);
+
+  // Celebration state
+  const [transitions, setTransitions] = useState<BoxTransition[]>([]);
+  const [showToast, setShowToast] = useState(false);
+  const [toastBox, setToastBox] = useState(0);
+  const [toastIsMastery, setToastIsMastery] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [sessionStreak, setSessionStreak] = useState(0);
 
   // ── Load deck ──────────────────────────────────────────────────────────────
 
@@ -125,7 +257,6 @@ export default function FlashcardSessionPage() {
           setDeckName(data.deckName ?? 'Flashcards');
           setPhase('reviewing');
         } else {
-          // No cards available
           setDeckName(data.deckName ?? 'Empty');
           setPhase('complete');
         }
@@ -167,8 +298,9 @@ export default function FlashcardSessionPage() {
       if (!card) return;
 
       const sid = localStorage.getItem('mathspark_student_id');
+
+      // Update progress and handle celebration based on response
       if (sid) {
-        // Fire-and-forget progress update
         fetch('/api/flashcards/progress', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -177,7 +309,53 @@ export default function FlashcardSessionPage() {
             cardId: card.id,
             correct,
           }),
-        }).catch(() => {});
+        })
+          .then((r) => r.json())
+          .then((data) => {
+            if (!data.ok) return;
+
+            // Track transition
+            const transition: BoxTransition = {
+              cardId: card.id,
+              cardFront: card.front.length > 40 ? card.front.slice(0, 40) + '...' : card.front,
+              oldBox: data.oldBox,
+              newBox: data.newBox,
+              leveledUp: data.leveledUp,
+              reachedMastery: data.reachedMastery,
+            };
+            setTransitions((prev) => [...prev, transition]);
+
+            // Celebrations
+            if (data.reachedMastery) {
+              // Mastery! Big celebration
+              playMastery();
+              setShowConfetti(true);
+              setToastBox(data.newBox);
+              setToastIsMastery(true);
+              setShowToast(true);
+              setTimeout(() => setShowToast(false), 2200);
+              setTimeout(() => setShowConfetti(false), 2000);
+            } else if (data.leveledUp) {
+              // Level up
+              playLevelUp();
+              setToastBox(data.newBox);
+              setToastIsMastery(false);
+              setShowToast(true);
+              setTimeout(() => setShowToast(false), 1600);
+            } else if (correct) {
+              playCorrect();
+            } else {
+              playWrong();
+            }
+          })
+          .catch(() => {});
+      }
+
+      // Update session streak
+      if (correct) {
+        setSessionStreak((prev) => prev + 1);
+      } else {
+        setSessionStreak(0);
       }
 
       const newCompleted = completed + 1;
@@ -186,13 +364,13 @@ export default function FlashcardSessionPage() {
       setCorrectCount(newCorrect);
 
       if (currentIndex + 1 >= cards.length) {
-        // Session complete
-        setPhase('complete');
+        // Small delay to let final celebration play
+        setTimeout(() => setPhase('complete'), correct ? 600 : 300);
       } else {
         setCurrentIndex((prev) => prev + 1);
       }
     },
-    [cards, currentIndex, completed, correctCount],
+    [cards, currentIndex, completed, correctCount, playCorrect, playWrong, playLevelUp, playMastery],
   );
 
   const handleNailedIt = useCallback(() => handleResponse(true), [handleResponse]);
@@ -237,13 +415,15 @@ export default function FlashcardSessionPage() {
         cardsReviewed={completed}
         cardsCorrect={correctCount}
         duration={duration}
+        transitions={transitions}
         onDone={() => router.push('/flashcards')}
         onRestart={() => {
-          // Reset and reload same deck
           sessionSavedRef.current = false;
           setCurrentIndex(0);
           setCompleted(0);
           setCorrectCount(0);
+          setTransitions([]);
+          setSessionStreak(0);
           setPhase('loading');
 
           const sid = localStorage.getItem('mathspark_student_id');
@@ -272,6 +452,10 @@ export default function FlashcardSessionPage() {
 
   return (
     <div className="min-h-screen bg-[#0F172A] flex flex-col">
+      {/* ── Celebration overlays ───────────────────────────────────────────── */}
+      {showConfetti && <Confetti />}
+      <PowerUpToast show={showToast} newBox={toastBox} isMastery={toastIsMastery} />
+
       {/* ── Top bar ──────────────────────────────────────────────────────────── */}
       <div className="sticky top-0 z-30 bg-[#0F172A]/95 backdrop-blur-md border-b border-white/5 px-4 py-3">
         <div className="flex items-center justify-between max-w-md mx-auto">
@@ -287,9 +471,16 @@ export default function FlashcardSessionPage() {
           <h2 className="text-[#F1F5F9] font-bold text-sm truncate max-w-[200px]">
             {deckName}
           </h2>
-          <span className="text-xs text-[#64748B] tabular-nums">
-            {currentIndex + 1}/{cards.length}
-          </span>
+          <div className="flex items-center gap-2">
+            {sessionStreak >= 3 && (
+              <span className="text-xs font-bold text-amber-400 animate-pulse">
+                🔥{sessionStreak}
+              </span>
+            )}
+            <span className="text-xs text-[#64748B] tabular-nums">
+              {currentIndex + 1}/{cards.length}
+            </span>
+          </div>
         </div>
 
         {/* Progress */}
@@ -303,16 +494,19 @@ export default function FlashcardSessionPage() {
         {/* Power Level indicator */}
         {currentCard && (
           <div className="mb-3 flex items-center gap-2">
-            <span className="text-xs text-[#64748B]">Power Level</span>
+            <span className="text-xs font-bold" style={{ color: BOX_COLORS[currentCard.leitnerBox || 0] }}>
+              {BOX_NAMES[currentCard.leitnerBox || 0]}
+            </span>
             <div className="flex gap-0.5">
               {[1, 2, 3, 4, 5].map((lvl) => (
                 <div
                   key={lvl}
-                  className={`w-5 h-1.5 rounded-full transition-all ${
-                    lvl <= (currentCard.leitnerBox || 0)
-                      ? 'bg-[#34D399]'
-                      : 'bg-white/10'
-                  }`}
+                  className="w-5 h-1.5 rounded-full transition-all duration-300"
+                  style={{
+                    background: lvl <= (currentCard.leitnerBox || 0)
+                      ? BOX_COLORS[currentCard.leitnerBox || 0]
+                      : 'rgba(255,255,255,0.1)',
+                  }}
                 />
               ))}
             </div>

@@ -35,6 +35,31 @@ function MasteryRing({ mastered, total, size = 36 }: { mastered: number; total: 
   );
 }
 
+// ── Power bar (mini stacked box distribution) ────────────────────────────────
+
+const BOX_BAR_COLORS = ['#64748B', '#EF4444', '#F59E0B', '#3B82F6', '#8B5CF6', '#34D399'];
+
+function PowerBar({ distribution, total }: { distribution: number[]; total: number }) {
+  if (total === 0) return null;
+  return (
+    <div className="w-full flex h-1.5 rounded-full overflow-hidden bg-white/5 mt-1.5">
+      {distribution.map((count, i) => {
+        if (count === 0) return null;
+        return (
+          <div
+            key={i}
+            className="h-full transition-all duration-500"
+            style={{
+              width: `${(count / total) * 100}%`,
+              background: BOX_BAR_COLORS[i],
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
 // ── Deck card ────────────────────────────────────────────────────────────────
 
 function DeckCard({
@@ -48,29 +73,35 @@ function DeckCard({
   return (
     <button
       onClick={onClick}
-      className="w-full flex items-center gap-3 rounded-2xl px-4 py-3.5 transition-all active:scale-[0.98]"
+      className="w-full flex flex-col rounded-2xl px-4 py-3.5 transition-all active:scale-[0.98]"
       style={{
         background: '#1E293B',
         borderLeft: `4px solid ${deck.topicColor}`,
       }}
     >
-      <span className="text-xl flex-shrink-0">{emoji}</span>
-      <div className="flex-1 text-left min-w-0">
-        <p className="text-sm font-bold text-[#F1F5F9] truncate">{deck.name}</p>
-        <p className="text-xs text-[#64748B]">
-          {deck.cardCount} card{deck.cardCount !== 1 ? 's' : ''}
-          {deck.dueCount > 0 && !isSpecial && (
-            <span className="ml-1 text-amber-400">· {deck.dueCount} due</span>
-          )}
-        </p>
+      <div className="flex items-center gap-3 w-full">
+        <span className="text-xl flex-shrink-0">{emoji}</span>
+        <div className="flex-1 text-left min-w-0">
+          <p className="text-sm font-bold text-[#F1F5F9] truncate">{deck.name}</p>
+          <p className="text-xs text-[#64748B]">
+            {deck.cardCount} card{deck.cardCount !== 1 ? 's' : ''}
+            {deck.dueCount > 0 && !isSpecial && (
+              <span className="ml-1 text-amber-400">· {deck.dueCount} due</span>
+            )}
+          </p>
+        </div>
+        {!isSpecial && (
+          <MasteryRing mastered={deck.mastered} total={deck.total} />
+        )}
+        {isSpecial && deck.dueCount > 0 && (
+          <span className="bg-red-500/20 text-red-400 text-xs font-bold px-2 py-0.5 rounded-full tabular-nums">
+            {deck.dueCount}
+          </span>
+        )}
       </div>
-      {!isSpecial && (
-        <MasteryRing mastered={deck.mastered} total={deck.total} />
-      )}
-      {isSpecial && deck.dueCount > 0 && (
-        <span className="bg-red-500/20 text-red-400 text-xs font-bold px-2 py-0.5 rounded-full tabular-nums">
-          {deck.dueCount}
-        </span>
+      {/* Power distribution bar for topic decks */}
+      {!isSpecial && deck.boxDistribution && (
+        <PowerBar distribution={deck.boxDistribution} total={deck.total} />
       )}
     </button>
   );
@@ -127,20 +158,52 @@ export default function FlashcardsPage() {
       <div className="max-w-md mx-auto px-4 pt-4 space-y-6">
         {/* ── Stats bar ───────────────────────────────────────────────────── */}
         {stats && !loading && (
-          <div className="flex items-center justify-around bg-[#1E293B] rounded-2xl px-4 py-3">
-            <div className="text-center">
-              <p className="text-lg font-bold text-[#F1F5F9] tabular-nums">{stats.totalCards}</p>
-              <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Total</p>
+          <div className="space-y-3">
+            <div className="flex items-center justify-around bg-[#1E293B] rounded-2xl px-4 py-3">
+              <div className="text-center">
+                <p className="text-lg font-bold text-[#F1F5F9] tabular-nums">{stats.totalCards}</p>
+                <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Total</p>
+              </div>
+              <div className="w-px h-8 bg-white/10" />
+              <div className="text-center">
+                <p className="text-lg font-bold text-[#34D399] tabular-nums">{stats.totalSeen}</p>
+                <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Seen</p>
+              </div>
+              <div className="w-px h-8 bg-white/10" />
+              <div className="text-center">
+                <p className="text-lg font-bold text-[#60A5FA] tabular-nums">{stats.totalMastered}</p>
+                <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Mastered</p>
+              </div>
+              <div className="w-px h-8 bg-white/10" />
+              <div className="text-center">
+                <p className="text-lg font-bold text-[#FBBF24] tabular-nums">
+                  {stats.studyStreak > 0 ? `🔥${stats.studyStreak}` : '—'}
+                </p>
+                <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Streak</p>
+              </div>
             </div>
-            <div className="w-px h-8 bg-white/10" />
-            <div className="text-center">
-              <p className="text-lg font-bold text-[#34D399] tabular-nums">{stats.totalSeen}</p>
-              <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Seen</p>
-            </div>
-            <div className="w-px h-8 bg-white/10" />
-            <div className="text-center">
-              <p className="text-lg font-bold text-[#60A5FA] tabular-nums">{stats.totalMastered}</p>
-              <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Mastered</p>
+
+            {/* Daily new card counter */}
+            <div className="flex items-center justify-between bg-[#1E293B]/60 rounded-xl px-3 py-2">
+              <span className="text-xs text-[#94A3B8]">
+                New cards today
+              </span>
+              <div className="flex items-center gap-1.5">
+                <div className="flex gap-0.5">
+                  {Array.from({ length: stats.maxNewPerDay }).map((_, i) => (
+                    <div
+                      key={i}
+                      className="w-3 h-1.5 rounded-full transition-all"
+                      style={{
+                        background: i < stats.newCardsToday ? '#34D399' : 'rgba(255,255,255,0.1)',
+                      }}
+                    />
+                  ))}
+                </div>
+                <span className="text-xs font-bold text-[#64748B] tabular-nums">
+                  {stats.newCardsToday}/{stats.maxNewPerDay}
+                </span>
+              </div>
             </div>
           </div>
         )}

@@ -62,6 +62,19 @@ export async function GET(req: Request) {
   const progressMap = new Map(progress.map((p) => [p.cardId, p]));
   const now = new Date();
 
+  // ── Daily new card cap: max 5 new cards introduced today ────────────────
+  const todayStart = new Date(now);
+  todayStart.setHours(0, 0, 0, 0);
+  const newCardsSeenToday = await prisma.flashcardProgress.count({
+    where: {
+      studentId,
+      lastSeenAt: { gte: todayStart },
+      timesSeen: 1, // first-time seen today
+    },
+  });
+  const MAX_NEW_PER_DAY = 5;
+  const newCardBudget = Math.max(0, MAX_NEW_PER_DAY - newCardsSeenToday);
+
   // ── Build ordered deck ──────────────────────────────────────────────────
   let deck: FlashCard[];
 
@@ -102,9 +115,11 @@ export async function GET(req: Request) {
       return a;
     };
 
+    // Cap unseen to daily new card budget
+    const unseenCap = Math.min(3, newCardBudget);
     deck = [
       ...shuffle(due).slice(0, 5),
-      ...shuffle(unseen).slice(0, 3),
+      ...shuffle(unseen).slice(0, unseenCap),
       ...shuffle(reinforcement).slice(0, 2),
     ].slice(0, 10);
 
@@ -131,7 +146,9 @@ export async function GET(req: Request) {
     }
 
     due.sort((a, b) => (progressMap.get(a.id)?.leitnerBox ?? 0) - (progressMap.get(b.id)?.leitnerBox ?? 0));
-    deck = [...due, ...unseen, ...rest].slice(0, 20);
+    // Cap unseen to daily budget
+    const cappedUnseen = unseen.slice(0, newCardBudget);
+    deck = [...due, ...cappedUnseen, ...rest].slice(0, 20);
   }
 
   // ── Attach progress data to each card for the client ────────────────────
@@ -157,5 +174,7 @@ export async function GET(req: Request) {
     cards: cardsWithProgress,
     deckName,
     totalInDeck: candidates.length,
+    newCardsSeenToday,
+    newCardBudget,
   });
 }

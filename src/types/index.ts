@@ -312,10 +312,14 @@ export interface FlashcardDeck {
   mastered: number;           // cards in box 4-5
   total: number;
   topicColor: string;
+  boxDistribution?: number[]; // [unseen, box1, box2, box3, box4, box5]
 }
 
 export interface FlashcardStats {
   totalCards: number;
   totalSeen: number;
   totalMastered: number;      // cards in box 4-5
+  studyStreak: number;        // consecutive days reviewing
+  newCardsToday: number;      // new cards introduced today
+  maxNewPerDay: number;       // daily cap (5)
 }
