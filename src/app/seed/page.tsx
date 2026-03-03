@@ -24,7 +24,7 @@ export default function SeedPage() {
 
   // ── DB verification ─────────────────────────────────────────────────────────
   const [verifyStatus,  setVerifyStatus]  = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
-  const [verifyData,    setVerifyData]    = useState<{ total: number; topics: TopicStatus[]; emptyTopics: TopicStatus[]; healthy: boolean } | null>(null);
+  const [verifyData,    setVerifyData]    = useState<{ total: number; topicCount: number; topics: TopicStatus[]; emptyTopics: TopicStatus[]; healthy: boolean } | null>(null);
 
   // ── Handlers ─────────────────────────────────────────────────────────────────
   async function runSeed() {
