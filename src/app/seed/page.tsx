@@ -4,25 +4,35 @@ import { useState } from 'react';
 
 type Status = 'idle' | 'running' | 'done' | 'error';
 
+interface TopicStatus {
+  id: string; name: string; grade: number; count: number;
+}
+
 export default function SeedPage() {
   // ── Questions seed ──────────────────────────────────────────────────────────
-  const [secret,  setSecret]  = useState('');
-  const [status,  setStatus]  = useState<Status>('idle');
-  const [seeded,  setSeeded]  = useState(0);
-  const [total,   setTotal]   = useState(6797);
-  const [message, setMessage] = useState('');
+  const [secret,   setSecret]   = useState('');
+  const [status,   setStatus]   = useState<Status>('idle');
+  const [seeded,   setSeeded]   = useState(0);
+  const [total,    setTotal]    = useState(6797);
+  const [skipped,  setSkipped]  = useState(0);
+  const [message,  setMessage]  = useState('');
 
-  // ── Test users seed (completely independent) ────────────────────────────────
+  // ── Test users seed ─────────────────────────────────────────────────────────
   const [testSecret,  setTestSecret]  = useState('');
   const [testStatus,  setTestStatus]  = useState<Status>('idle');
   const [testMessage, setTestMessage] = useState('');
 
-  // ── Handlers ────────────────────────────────────────────────────────────────
+  // ── DB verification ─────────────────────────────────────────────────────────
+  const [verifyStatus,  setVerifyStatus]  = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
+  const [verifyData,    setVerifyData]    = useState<{ total: number; topics: TopicStatus[]; emptyTopics: TopicStatus[]; healthy: boolean } | null>(null);
+
+  // ── Handlers ─────────────────────────────────────────────────────────────────
   async function runSeed() {
     if (!secret.trim()) { setMessage('Enter your SEED_SECRET first.'); return; }
     setStatus('running');
-    setMessage('Seeding topics…');
+    setMessage('Ensuring topics exist…');
     setSeeded(0);
+    setSkipped(0);
     let page = 0;
     while (true) {
       try {
@@ -30,7 +40,8 @@ export default function SeedPage() {
         const data = await res.json();
         if (!res.ok) { setMessage(data.error ?? 'Something went wrong.'); setStatus('error'); return; }
         setSeeded(data.seeded ?? 0);
-        setTotal(data.total   ?? 2505);
+        setTotal(data.total   ?? 6797);
+        setSkipped((prev) => prev + (data.skipped ?? 0));
         setMessage(data.message ?? '');
         if (data.done) { setStatus('done'); return; }
         page = data.nextPage;
@@ -59,12 +70,27 @@ export default function SeedPage() {
     }
   }
 
+  async function runVerify() {
+    const sec = secret || testSecret;
+    if (!sec.trim()) { alert('Enter your SEED_SECRET in either field above first.'); return; }
+    setVerifyStatus('loading');
+    try {
+      const res  = await fetch(`/api/seed-status?secret=${encodeURIComponent(sec)}`);
+      const data = await res.json();
+      if (!res.ok) { setVerifyStatus('error'); return; }
+      setVerifyData(data);
+      setVerifyStatus('done');
+    } catch {
+      setVerifyStatus('error');
+    }
+  }
+
   const pct = total > 0 ? Math.round((seeded / total) * 100) : 0;
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start px-6 py-10 gap-8 max-w-md mx-auto">
 
-      {/* ── Section 1: Questions ─────────────────────────────────────────────── */}
+      {/* ── Section 1: Questions ───────────────────────────────────────────────── */}
       <div className="w-full bg-white border-2 border-green-200 rounded-2xl p-6 space-y-4 shadow-sm">
         <div className="flex items-center gap-3">
           <span className="text-3xl">🌱</span>
@@ -109,17 +135,28 @@ export default function SeedPage() {
             </div>
           </>
         ) : (
-          <div className="flex items-center gap-3 bg-green-50 rounded-xl px-4 py-3">
-            <span className="text-2xl">🎉</span>
-            <div>
-              <p className="font-bold text-green-700 text-sm">All {total} questions loaded!</p>
-              <a href="/start" className="text-xs text-green-600 underline">Open MathSpark →</a>
+          <div className="space-y-2">
+            <div className="flex items-center gap-3 bg-green-50 rounded-xl px-4 py-3">
+              <span className="text-2xl">🎉</span>
+              <div>
+                <p className="font-bold text-green-700 text-sm">{seeded} questions loaded!</p>
+                {skipped > 0 && (
+                  <p className="text-xs text-amber-600 font-medium">{skipped} skipped (malformed data)</p>
+                )}
+                <a href="/start" className="text-xs text-green-600 underline">Open MathSpark →</a>
+              </div>
             </div>
+            <button
+              onClick={() => { setStatus('idle'); setMessage(''); setSkipped(0); }}
+              className="w-full text-xs text-gray-400 hover:text-gray-600 py-1"
+            >
+              Re-seed (safe to run again)
+            </button>
           </div>
         )}
       </div>
 
-      {/* ── Section 2: Test Users ─────────────────────────────────────────────── */}
+      {/* ── Section 2: Test Users ──────────────────────────────────────────────── */}
       <div className="w-full bg-white border-2 border-blue-200 rounded-2xl p-6 space-y-4 shadow-sm">
         <div className="flex items-center gap-3">
           <span className="text-3xl">👨‍👩‍👧‍👦</span>
@@ -156,26 +193,102 @@ export default function SeedPage() {
           </>
         ) : testStatus === 'running' ? (
           <>
-            {/* Indeterminate animated bar */}
             <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
               <div className="h-3 bg-blue-500 rounded-full animate-pulse w-full" />
             </div>
             <p className="text-xs text-gray-500 text-center">Hashing passwords &amp; writing to database…</p>
           </>
         ) : (
-          <div className="flex items-start gap-3 bg-blue-50 rounded-xl px-4 py-3">
-            <span className="text-2xl mt-0.5">✅</span>
-            <div>
-              <p className="font-bold text-blue-700 text-sm">Test users loaded!</p>
-              <p className="text-xs text-gray-500 mt-0.5">{testMessage}</p>
-              <a href="/dev" className="text-xs text-blue-600 underline mt-1 inline-block">Quick-login switcher →</a>
+          <div className="space-y-2">
+            <div className="flex items-start gap-3 bg-blue-50 rounded-xl px-4 py-3">
+              <span className="text-2xl mt-0.5">✅</span>
+              <div>
+                <p className="font-bold text-blue-700 text-sm">Test users loaded!</p>
+                <p className="text-xs text-gray-500 mt-0.5">{testMessage}</p>
+                <a href="/dev" className="text-xs text-blue-600 underline mt-1 inline-block">Quick-login switcher →</a>
+              </div>
             </div>
+            <button
+              onClick={() => { setTestStatus('idle'); setTestMessage(''); }}
+              className="w-full text-xs text-gray-400 hover:text-gray-600 py-1"
+            >
+              Re-load (safe to run again)
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* ── Section 3: Verify DB ───────────────────────────────────────────────── */}
+      <div className="w-full bg-white border-2 border-purple-200 rounded-2xl p-6 space-y-4 shadow-sm">
+        <div className="flex items-center gap-3">
+          <span className="text-3xl">🔍</span>
+          <div>
+            <p className="font-bold text-gray-800">Verify Database</p>
+            <p className="text-xs text-gray-400">Check question counts per topic to confirm seed is complete</p>
+          </div>
+        </div>
+
+        {verifyStatus === 'idle' && (
+          <button
+            onClick={runVerify}
+            className="w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-3.5 rounded-2xl transition-colors"
+          >
+            Check DB Status →
+          </button>
+        )}
+
+        {verifyStatus === 'loading' && (
+          <div className="h-3 bg-purple-200 rounded-full animate-pulse" />
+        )}
+
+        {verifyStatus === 'error' && (
+          <p className="text-sm text-red-500">Failed to fetch status. Check secret.</p>
+        )}
+
+        {verifyStatus === 'done' && verifyData && (
+          <div className="space-y-3">
+            <div className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold ${
+              verifyData.healthy ? 'bg-green-50 text-green-700' : 'bg-amber-50 text-amber-700'
+            }`}>
+              {verifyData.healthy ? '✅' : '⚠️'}
+              {verifyData.total.toLocaleString()} questions · {verifyData.topicCount} topics
+              {verifyData.emptyTopics.length > 0 && ` · ${verifyData.emptyTopics.length} empty`}
+            </div>
+
+            {verifyData.emptyTopics.length > 0 && (
+              <div className="bg-red-50 rounded-xl px-3 py-2">
+                <p className="text-xs font-bold text-red-600 mb-1">Empty topics (need seeding):</p>
+                {verifyData.emptyTopics.map((t) => (
+                  <p key={t.id} className="text-xs text-red-500">{t.id} — {t.name}</p>
+                ))}
+              </div>
+            )}
+
+            <div className="space-y-1 max-h-64 overflow-y-auto">
+              {verifyData.topics.map((t) => (
+                <div key={t.id} className="flex items-center justify-between text-xs py-1 border-b border-gray-50">
+                  <span className={`font-medium ${t.count === 0 ? 'text-red-500' : 'text-gray-600'}`}>
+                    {t.id}
+                  </span>
+                  <span className={`font-bold tabular-nums ${t.count === 0 ? 'text-red-500' : t.count < 50 ? 'text-amber-500' : 'text-green-600'}`}>
+                    {t.count} Qs
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <button
+              onClick={() => { setVerifyStatus('idle'); setVerifyData(null); }}
+              className="w-full text-xs text-gray-400 hover:text-gray-600 py-1"
+            >
+              Refresh
+            </button>
           </div>
         )}
       </div>
 
       <p className="text-xs text-gray-400 text-center pb-4">
-        Both sections use upsert — safe to run multiple times.
+        All operations use upsert — safe to run multiple times.
       </p>
     </div>
   );

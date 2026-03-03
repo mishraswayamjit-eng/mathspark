@@ -6,7 +6,7 @@ import * as path from 'path';
 export const dynamic = 'force-dynamic';
 
 // ---------------------------------------------------------------------------
-// Topic definitions (mirrors prisma/seed.ts)
+// Helpers
 // ---------------------------------------------------------------------------
 
 /** Strip null bytes — PostgreSQL rejects \x00 in text columns (error 22021) */
@@ -21,11 +21,50 @@ function getTopicGrade(topicId: string): number {
 }
 
 /**
- * Derive topicId from question ID when no explicit topicId is in the JSON.
- * PYQ questions (PYQ_YYYY_QNN) → 'grade4' (Grade 4 IPM past papers pool).
- * ch-series questions → mapped by chapter number.
- * Everything else → 'ch11' fallback.
+ * Remap topicIds that appear in the seed JSON but are not valid FK targets.
+ * The seed JSON uses bare chapter numbers (ch01, ch07, ch09) where the DB
+ * uses merged-range IDs (ch01-05, ch07-08, ch09-10).
  */
+const TOPIC_ID_REMAP: Record<string, string> = {
+  'ch01': 'ch01-05', 'ch02': 'ch01-05', 'ch03': 'ch01-05',
+  'ch04': 'ch01-05', 'ch05': 'ch01-05',
+  'ch07': 'ch07-08', 'ch08': 'ch07-08',
+  'ch09': 'ch09-10', 'ch10': 'ch09-10',
+};
+
+/**
+ * Derive topicId from question ID when no explicit topicId is in the JSON.
+ */
+function getTopicId(questionId: string): string {
+  const upper = questionId.toUpperCase();
+  if (upper.startsWith('Q_DH_'))  return 'dh';
+  if (upper.startsWith('PYQ_'))   return 'grade4'; // real IPM Std.4 past papers
+  const match = upper.match(/^Q_CH(\d+)_/);
+  if (!match) return 'ch11';
+  const n = parseInt(match[1], 10);
+  if (n <= 5)              return 'ch01-05';
+  if (n === 6)             return 'ch06';
+  if (n === 7 || n === 8)  return 'ch07-08';
+  if (n === 9 || n === 10) return 'ch09-10';
+  return `ch${String(n).padStart(2, '0')}`;
+}
+
+/** Resolve a question's topicId with remapping + fallback chain */
+function resolveTopicId(questionId: string, rawTopicId: string | undefined, validIds: Set<string>): string {
+  // 1. Start with explicit JSON value (or derive from ID)
+  let tid = rawTopicId ?? getTopicId(questionId);
+  // 2. Remap known bad values (ch01→ch01-05, ch07→ch07-08, ch09→ch09-10, etc.)
+  tid = TOPIC_ID_REMAP[tid] ?? tid;
+  // 3. If still invalid, derive from ID
+  if (!validIds.has(tid)) tid = getTopicId(questionId);
+  // 4. If still invalid (unexpected ID format), default to ch11
+  if (!validIds.has(tid)) tid = 'ch11';
+  return tid;
+}
+
+// ---------------------------------------------------------------------------
+// Topic + Subscription definitions
+// ---------------------------------------------------------------------------
 
 const TOPICS = [
   // Grade 4 curriculum chapters
@@ -45,7 +84,7 @@ const TOPICS = [
   { id: 'ch20',    name: 'Quadrilaterals',                  chapterNumber: '20'   },
   { id: 'ch21',    name: 'Circle',                          chapterNumber: '21'   },
   { id: 'dh',      name: 'Data Handling & Graphs',          chapterNumber: 'DH'   },
-  // IPM past-paper pools (Grades 2–9)
+  // IPM past-paper / practice pools (Grades 2–9)
   { id: 'grade2',  name: 'Grade 2 — IPM Practice',         chapterNumber: 'G2'   },
   { id: 'grade3',  name: 'Grade 3 — IPM Practice',         chapterNumber: 'G3'   },
   { id: 'grade4',  name: 'Grade 4 — IPM Past Papers',      chapterNumber: 'G4'   },
@@ -56,29 +95,27 @@ const TOPICS = [
   { id: 'grade9',  name: 'Grade 9 — IPM Practice',         chapterNumber: 'G9'   },
 ];
 
-function getTopicId(questionId: string): string {
-  const upper = questionId.toUpperCase();
-  if (upper.startsWith('Q_DH_'))  return 'dh';
-  if (upper.startsWith('PYQ_'))   return 'grade4'; // real IPM Std.4 past papers
-  const match = upper.match(/^Q_CH(\d+)_/);
-  if (!match) return 'ch11';
-  const n = parseInt(match[1], 10);
-  if (n <= 5)              return 'ch01-05';
-  if (n === 6)             return 'ch06';
-  if (n === 7 || n === 8)  return 'ch07-08';
-  if (n === 9 || n === 10) return 'ch09-10';
-  return `ch${String(n).padStart(2, '0')}`;
-}
+const VALID_TOPIC_IDS = new Set(TOPICS.map((t) => t.id));
 
-const PAGE_SIZE = 75; // questions per API call — safe for Vercel's 300s limit
+const PLANS = [
+  { id: 'plan_starter_monthly',   name: 'Starter',          tier: 1, priceINR: 50000,   durationDays: 30,  dailyLimitMinutes: 60,   aiChatDailyLimit: 5,   features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":false,"adaptiveEngine":false,"dashboard":false,"misconceptionFeedback":false,"badges":false,"streaks":false,"aiTutor":true,"mockTest":false,"parentDashboard":false}' },
+  { id: 'plan_advanced_monthly',  name: 'Advanced',         tier: 2, priceINR: 150000,  durationDays: 30,  dailyLimitMinutes: 300,  aiChatDailyLimit: 25,  features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":true,"adaptiveEngine":true,"dashboard":false,"misconceptionFeedback":true,"badges":false,"streaks":false,"aiTutor":true,"mockTest":false,"parentDashboard":false}' },
+  { id: 'plan_unlimited_monthly', name: 'Unlimited',        tier: 3, priceINR: 500000,  durationDays: 30,  dailyLimitMinutes: 1440, aiChatDailyLimit: 100, features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":true,"adaptiveEngine":true,"dashboard":true,"misconceptionFeedback":true,"badges":true,"streaks":true,"aiTutor":true,"mockTest":true,"parentDashboard":true}' },
+  { id: 'plan_starter_annual',    name: 'Starter Annual',   tier: 1, priceINR: 480000,  durationDays: 365, dailyLimitMinutes: 60,   aiChatDailyLimit: 5,   features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":false,"adaptiveEngine":false,"dashboard":false,"misconceptionFeedback":false,"badges":false,"streaks":false,"aiTutor":true,"mockTest":false,"parentDashboard":false}' },
+  { id: 'plan_advanced_annual',   name: 'Advanced Annual',  tier: 2, priceINR: 1440000, durationDays: 365, dailyLimitMinutes: 300,  aiChatDailyLimit: 25,  features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":true,"adaptiveEngine":true,"dashboard":false,"misconceptionFeedback":true,"badges":false,"streaks":false,"aiTutor":true,"mockTest":false,"parentDashboard":false}' },
+  { id: 'plan_unlimited_annual',  name: 'Unlimited Annual', tier: 3, priceINR: 4800000, durationDays: 365, dailyLimitMinutes: 1440, aiChatDailyLimit: 100, features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":true,"adaptiveEngine":true,"dashboard":true,"misconceptionFeedback":true,"badges":true,"streaks":true,"aiTutor":true,"mockTest":true,"parentDashboard":true}' },
+  { id: 'plan_advanced_weekly',   name: 'Advanced Weekly',  tier: 2, priceINR: 49900,   durationDays: 7,   dailyLimitMinutes: 300,  aiChatDailyLimit: 25,  features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":true,"adaptiveEngine":true,"dashboard":false,"misconceptionFeedback":true,"badges":false,"streaks":false,"aiTutor":true,"mockTest":false,"parentDashboard":false}' },
+];
+
+const PAGE_SIZE = 100; // questions per API call
 
 // ---------------------------------------------------------------------------
 // GET /api/seed?secret=xxx&page=0
-// page=0 → seeds topics + first batch of questions
-// page=N → seeds next batch
+// Every page: ensures topics + plans exist, then seeds the next batch.
+// Safe to retry — all writes are upserts.
 // ---------------------------------------------------------------------------
 export async function GET(req: Request) {
-  // ── Auth ─────────────────────────────────────────────────────────────────
+  // ── Auth ──────────────────────────────────────────────────────────────────
   const secret = process.env.SEED_SECRET;
   if (!secret) {
     return NextResponse.json(
@@ -92,27 +129,30 @@ export async function GET(req: Request) {
   }
 
   try {
-  const page = parseInt(searchParams.get('page') ?? '0', 10);
+    const page = parseInt(searchParams.get('page') ?? '0', 10);
 
-  // ── Load seed JSON ────────────────────────────────────────────────────────
-  const dataPath = path.join(process.cwd(), 'data', 'mathspark_complete_seed.json');
-  if (!fs.existsSync(dataPath)) {
-    return NextResponse.json({ error: 'Seed file not found. Make sure data/mathspark_complete_seed.json is committed.' }, { status: 500 });
-  }
-  const { questions } = JSON.parse(fs.readFileSync(dataPath, 'utf-8')) as {
-    questions: Array<{
-      id: string; topicId?: string; year?: number; questionNumber?: number;
-      subTopic?: string; difficulty?: string; questionText?: string;
-      questionLatex?: string; options?: Array<{ id: string; text: string }>;
-      correctAnswer?: string; hints?: string[]; stepByStep?: unknown[];
-      misconceptions?: Record<string, string>; source?: string;
-    }>;
-  };
+    // ── Load seed JSON ──────────────────────────────────────────────────────
+    const dataPath = path.join(process.cwd(), 'data', 'mathspark_complete_seed.json');
+    if (!fs.existsSync(dataPath)) {
+      return NextResponse.json(
+        { error: 'Seed file not found. Make sure data/mathspark_complete_seed.json is committed.' },
+        { status: 500 },
+      );
+    }
+    const { questions } = JSON.parse(fs.readFileSync(dataPath, 'utf-8')) as {
+      questions: Array<{
+        id: string; topicId?: string; year?: number; questionNumber?: number;
+        subTopic?: string; difficulty?: string; questionText?: string;
+        questionLatex?: string; options?: Array<{ id: string; text: string }>;
+        correctAnswer?: string; hints?: string[]; stepByStep?: unknown[];
+        misconceptions?: Record<string, string>; source?: string;
+      }>;
+    };
 
-  // ── Page 0: upsert all 24 topics + 7 subscription plans ─────────────────
-  if (page === 0) {
-    await Promise.all(
-      TOPICS.map((t) => {
+    // ── ALWAYS ensure topics + plans exist (idempotent, fast) ──────────────
+    // This runs on every page so a retry after failure never hits a missing-topic FK error.
+    await Promise.all([
+      ...TOPICS.map((t) => {
         const grade = getTopicGrade(t.id);
         return prisma.topic.upsert({
           where:  { id: t.id },
@@ -120,33 +160,23 @@ export async function GET(req: Request) {
           create: { ...t, grade },
         });
       }),
-    );
-
-    const PLANS = [
-      { id: 'plan_starter_monthly',  name: 'Starter',          tier: 1, priceINR: 50000,   durationDays: 30,  dailyLimitMinutes: 60,   aiChatDailyLimit: 5,   features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":false,"adaptiveEngine":false,"dashboard":false,"misconceptionFeedback":false,"badges":false,"streaks":false,"aiTutor":true,"mockTest":false,"parentDashboard":false}' },
-      { id: 'plan_advanced_monthly', name: 'Advanced',         tier: 2, priceINR: 150000,  durationDays: 30,  dailyLimitMinutes: 300,  aiChatDailyLimit: 25,  features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":true,"adaptiveEngine":true,"dashboard":false,"misconceptionFeedback":true,"badges":false,"streaks":false,"aiTutor":true,"mockTest":false,"parentDashboard":false}' },
-      { id: 'plan_unlimited_monthly',name: 'Unlimited',        tier: 3, priceINR: 500000,  durationDays: 30,  dailyLimitMinutes: 1440, aiChatDailyLimit: 100, features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":true,"adaptiveEngine":true,"dashboard":true,"misconceptionFeedback":true,"badges":true,"streaks":true,"aiTutor":true,"mockTest":true,"parentDashboard":true}' },
-      { id: 'plan_starter_annual',   name: 'Starter Annual',   tier: 1, priceINR: 480000,  durationDays: 365, dailyLimitMinutes: 60,   aiChatDailyLimit: 5,   features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":false,"adaptiveEngine":false,"dashboard":false,"misconceptionFeedback":false,"badges":false,"streaks":false,"aiTutor":true,"mockTest":false,"parentDashboard":false}' },
-      { id: 'plan_advanced_annual',  name: 'Advanced Annual',  tier: 2, priceINR: 1440000, durationDays: 365, dailyLimitMinutes: 300,  aiChatDailyLimit: 25,  features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":true,"adaptiveEngine":true,"dashboard":false,"misconceptionFeedback":true,"badges":false,"streaks":false,"aiTutor":true,"mockTest":false,"parentDashboard":false}' },
-      { id: 'plan_unlimited_annual', name: 'Unlimited Annual', tier: 3, priceINR: 4800000, durationDays: 365, dailyLimitMinutes: 1440, aiChatDailyLimit: 100, features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":true,"adaptiveEngine":true,"dashboard":true,"misconceptionFeedback":true,"badges":true,"streaks":true,"aiTutor":true,"mockTest":true,"parentDashboard":true}' },
-      { id: 'plan_advanced_weekly',  name: 'Advanced Weekly',  tier: 2, priceINR: 49900,   durationDays: 7,   dailyLimitMinutes: 300,  aiChatDailyLimit: 25,  features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":true,"adaptiveEngine":true,"dashboard":false,"misconceptionFeedback":true,"badges":false,"streaks":false,"aiTutor":true,"mockTest":false,"parentDashboard":false}' },
-    ];
-    await Promise.all(
-      PLANS.map(({ id, ...data }) =>
+      ...PLANS.map(({ id, ...data }) =>
         prisma.subscription.upsert({ where: { id }, update: data, create: { id, ...data } }),
       ),
-    );
-  }
+    ]);
 
-  // ── Seed this page of questions ───────────────────────────────────────────
-  const start = page * PAGE_SIZE;
-  const batch = questions.slice(start, start + PAGE_SIZE);
+    // ── Seed this page of questions ─────────────────────────────────────────
+    const start = page * PAGE_SIZE;
+    const batch = questions.slice(start, start + PAGE_SIZE);
 
-  if (batch.length > 0) {
-    await prisma.$transaction(
-      batch.map((q) => {
+    let seededCount = 0;
+    const skipped: string[] = [];
+
+    for (const q of batch) {
+      try {
+        const topicId = resolveTopicId(q.id, q.topicId, VALID_TOPIC_IDS);
         const f = {
-          topicId:        q.topicId ?? getTopicId(q.id), // prefer explicit topicId from JSON
+          topicId,
           subTopic:       s(q.subTopic),
           difficulty:     s(q.difficulty)    || 'Medium',
           questionText:   s(q.questionText),
@@ -168,25 +198,31 @@ export async function GET(req: Request) {
           year:           q.year              ?? null,
           questionNumber: q.questionNumber    ?? null,
         };
-        return prisma.question.upsert({ where: { id: q.id }, update: f, create: { id: q.id, ...f } });
-      }),
-    );
-  }
+        await prisma.question.upsert({ where: { id: q.id }, update: f, create: { id: q.id, ...f } });
+        seededCount++;
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error(`[seed] Skipping question ${q.id}:`, msg);
+        skipped.push(q.id);
+      }
+    }
 
-  const seeded = Math.min(start + PAGE_SIZE, questions.length);
-  const done   = seeded >= questions.length;
+    const totalSeeded = start + seededCount;
+    const done = start + batch.length >= questions.length;
 
-  return NextResponse.json({
-    done,
-    seeded,
-    total:    questions.length,
-    nextPage: done ? null : page + 1,
-    message:  done
-      ? `All ${questions.length} questions seeded!`
-      : `Seeded ${seeded}/${questions.length}`,
-  });
+    return NextResponse.json({
+      done,
+      seeded:   totalSeeded,
+      total:    questions.length,
+      nextPage: done ? null : page + 1,
+      skipped:  skipped.length,
+      message:  done
+        ? `All ${questions.length} questions seeded!${skipped.length ? ` (${skipped.length} skipped)` : ''}`
+        : `Seeded ${totalSeeded}/${questions.length}${skipped.length ? ` · ${skipped.length} skipped this page` : ''}`,
+    });
+
   } catch (err) {
-    console.error('[seed] Error on page', new URL(req.url).searchParams.get('page'), err);
+    console.error('[seed] Fatal error on page', new URL(req.url).searchParams.get('page'), err);
     return NextResponse.json(
       { error: `Seed failed: ${err instanceof Error ? err.message : String(err)}` },
       { status: 500 },
