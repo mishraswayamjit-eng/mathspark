@@ -346,6 +346,25 @@ export default function FlashcardsPage() {
                 <span className="text-[10px] font-bold text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>ZEN</span>
               </div>
             </button>
+
+            {/* Voice Recall */}
+            <button
+              onClick={() => openDeck('voice', 'voice')}
+              className="w-full rounded-2xl p-3.5 text-left transition-all active:scale-[0.98] animate-voice-glow"
+              style={{
+                background: 'linear-gradient(135deg, #1E293B 0%, #3B1764 50%, #1E293B 100%)',
+                border: '1px solid rgba(167,139,250,0.3)',
+              }}
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🎙️</span>
+                <div className="flex-1">
+                  <p className="text-sm font-black text-[#F1F5F9]">Voice Recall</p>
+                  <p className="text-[11px] text-purple-300/70">Say it out loud · Active recall</p>
+                </div>
+                <span className="text-[10px] font-bold text-purple-400 bg-purple-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>NEW</span>
+              </div>
+            </button>
           </div>
         )}
 

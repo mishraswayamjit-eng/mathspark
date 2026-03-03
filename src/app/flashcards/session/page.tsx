@@ -10,6 +10,7 @@ import QuizBlitzSession from '@/components/flashcard/QuizBlitzSession';
 import SpeedRoundSession from '@/components/flashcard/SpeedRoundSession';
 import TapMatchSession from '@/components/flashcard/TapMatchSession';
 import WarmUpSession from '@/components/flashcard/WarmUpSession';
+import VoiceRecallSession from '@/components/flashcard/VoiceRecallSession';
 import { XPPopup, StreakMilestoneCelebration } from '@/components/flashcard/StreakMilestone';
 import { useSounds } from '@/hooks/useSounds';
 import type { FlashCard } from '@/types';
@@ -269,6 +270,11 @@ export default function FlashcardSessionPage() {
   // ── Pre-Exam Warm-Up Mode ─────────────────────────────────────────────────
   if (mode === 'warmup') {
     return <WarmUpSession deckId={deckId} />;
+  }
+
+  // ── Voice Recall Mode ───────────────────────────────────────────────────────
+  if (mode === 'voice') {
+    return <VoiceRecallSession deckId={deckId} />;
   }
 
   // ── Classic Flip Mode (below) ──────────────────────────────────────────────

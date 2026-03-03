@@ -13,12 +13,13 @@ export const dynamic = 'force-dynamic';
 const BOX_INTERVALS = [0, 1, 2, 5, 14, 30]; // index 0 unused; box 1→1d, box 2→2d, etc.
 
 /**
- * GET /api/flashcards/deck?studentId=xxx&grade=N&deck=due|quick|mental_math|<topicId>
+ * GET /api/flashcards/deck?studentId=xxx&grade=N&deck=due|quick|mental_math|voice|<topicId>
  *
  * Returns an ordered list of FlashCard objects for the session.
  * - "due": cards where nextReviewAt <= now, ordered by leitnerBox ASC (weakest first)
  * - "quick": 10 smart-selected cards (prioritize box 1-2, mix in unseen)
  * - "mental_math": warm_up + mental_math category cards
+ * - "voice": concept + formula + rule cards for verbal active recall (15 cards)
  * - "warmup": pre-exam warm-up mix (warm_up, formula, rule, trick, concept)
  * - <topicId>: all cards for that topic, due ones first
  */
@@ -35,7 +36,12 @@ export async function GET(req: Request) {
   // ── Resolve candidate cards ─────────────────────────────────────────────
   let candidates: FlashCard[];
 
-  if (deckId === 'mental_math') {
+  if (deckId === 'voice') {
+    // Voice Recall: concept, formula, and rule cards are best for verbal recall
+    candidates = getFlashcardsForGrade(grade).filter(
+      (c) => c.category === 'concept' || c.category === 'formula' || c.category === 'rule',
+    );
+  } else if (deckId === 'mental_math') {
     candidates = getFlashcardsForGrade(grade).filter(
       (c) => c.category === 'mental_math' || c.category === 'warm_up',
     );
@@ -136,6 +142,33 @@ export async function GET(req: Request) {
 
     // Final shuffle so it's not always easy→hard
     deck = shuffle(deck);
+  } else if (deckId === 'voice') {
+    // Voice Recall: prioritize due concept/formula/rule cards, then unseen, cap at 15
+    const shuffle = <T,>(arr: T[]): T[] => {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    };
+    const due = candidates.filter((c) => {
+      const p = progressMap.get(c.id);
+      return p && new Date(p.nextReviewAt) <= now;
+    });
+    const unseen = candidates.filter((c) => !progressMap.has(c.id));
+    const rest = candidates.filter((c) => {
+      const p = progressMap.get(c.id);
+      return p && new Date(p.nextReviewAt) > now;
+    });
+    const unseenCap = Math.min(5, newCardBudget);
+    deck = [
+      ...shuffle(due).slice(0, 8),
+      ...shuffle(unseen).slice(0, unseenCap),
+      ...shuffle(rest).slice(0, 2),
+    ].slice(0, 15);
+    // Shuffle final set
+    deck = shuffle(deck);
   } else if (deckId === 'warmup') {
     // Warm-up: return a broad mix so client can split by category.
     // Include all cards, shuffle, cap at 40 (client picks ~20 across phases).
@@ -185,6 +218,7 @@ export async function GET(req: Request) {
   else if (deckId === 'quick') deckName = 'Quick Review';
   else if (deckId === 'mental_math') deckName = 'Mental Math';
   else if (deckId === 'warmup') deckName = 'Pre-Exam Warm-Up';
+  else if (deckId === 'voice') deckName = 'Voice Recall';
   else if (deck.length > 0) deckName = deck[0].topicName;
 
   return NextResponse.json({
