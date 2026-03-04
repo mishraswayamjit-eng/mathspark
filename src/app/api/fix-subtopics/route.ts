@@ -332,11 +332,11 @@ export async function GET(req: Request) {
 
     stats.totalUnusable = brokenIds.size;
     let pendingUpdates = 0;
-    for (const ids of updateGroups.values()) pendingUpdates += ids.length;
+    Array.from(updateGroups.values()).forEach((ids) => { pendingUpdates += ids.length; });
 
     // Apply updates to DB — one updateMany per subTopic group (~30 queries total)
     if (!dryRun && updateGroups.size > 0) {
-      for (const [newSubTopic, ids] of updateGroups) {
+      for (const [newSubTopic, ids] of Array.from(updateGroups)) {
         const result = await prisma.question.updateMany({
           where: { id: { in: ids } },
           data: { subTopic: newSubTopic },
