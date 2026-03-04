@@ -289,7 +289,8 @@ export async function GET(req: Request) {
     };
 
     const brokenIds = new Set<string>();
-    const updates: { id: string; newSubTopic: string }[] = [];
+    // Group IDs by their new subTopic for bulk updateMany
+    const updateGroups = new Map<string, string[]>();
 
     for (const q of questions) {
       const gradeMatch = q.topicId.match(/^grade(\d+)$/);
@@ -315,9 +316,11 @@ export async function GET(req: Request) {
       const gradeSubtopics = GRADE_SUBTOPICS[grade] || [];
       const label = gradeSubtopics.find((s) => s.key === key)?.label || key;
 
-      // Track update if subTopic changed
+      // Group by new subTopic (only if changed)
       if (q.subTopic !== label) {
-        updates.push({ id: q.id, newSubTopic: label });
+        const group = updateGroups.get(label) || [];
+        group.push(q.id);
+        updateGroups.set(label, group);
       }
 
       stats.tagged++;
@@ -328,21 +331,17 @@ export async function GET(req: Request) {
     }
 
     stats.totalUnusable = brokenIds.size;
+    let pendingUpdates = 0;
+    for (const ids of updateGroups.values()) pendingUpdates += ids.length;
 
-    // Apply updates to DB (batched)
-    if (!dryRun && updates.length > 0) {
-      const BATCH = 100;
-      for (let i = 0; i < updates.length; i += BATCH) {
-        const batch = updates.slice(i, i + BATCH);
-        await prisma.$transaction(
-          batch.map((u) =>
-            prisma.question.update({
-              where: { id: u.id },
-              data: { subTopic: u.newSubTopic },
-            }),
-          ),
-        );
-        stats.dbUpdated += batch.length;
+    // Apply updates to DB — one updateMany per subTopic group (~30 queries total)
+    if (!dryRun && updateGroups.size > 0) {
+      for (const [newSubTopic, ids] of updateGroups) {
+        const result = await prisma.question.updateMany({
+          where: { id: { in: ids } },
+          data: { subTopic: newSubTopic },
+        });
+        stats.dbUpdated += result.count;
       }
     }
 
@@ -372,7 +371,7 @@ export async function GET(req: Request) {
         totalUnusable: stats.totalUnusable,
         usableNonG4: stats.tagged - stats.totalUnusable,
         dbUpdated: stats.dbUpdated,
-        pendingUpdates: updates.length,
+        pendingUpdates,
       },
       gradeReport,
     });
