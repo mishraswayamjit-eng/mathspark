@@ -60,15 +60,35 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: 'Student not found' }, { status: 404 });
   }
 
-  // Recompute analytics if missing or stale (> 1 hour) — fire-and-forget, never block response
+  // Recompute analytics if missing or stale (> 1 hour)
+  // First load (null): AWAIT so the response includes real data
+  // Stale: fire-and-forget so the page loads fast
   const ONE_HOUR = 60 * 60 * 1000;
-  const isStale = !student.analytics ||
-    Date.now() - new Date(student.analytics.lastComputedAt).getTime() > ONE_HOUR;
+  const neverComputed = !student.analytics;
+  const isStale = neverComputed ||
+    Date.now() - new Date(student.analytics!.lastComputedAt).getTime() > ONE_HOUR;
 
   if (isStale) {
-    recomputeStudentAnalytics(studentId).catch((err) =>
-      console.error('[api/home] background recompute failed:', err),
-    );
+    if (neverComputed) {
+      // First load — wait for recompute so cards are populated on first visit
+      try {
+        await recomputeStudentAnalytics(studentId);
+        // Re-fetch the freshly computed analytics
+        const fresh = await prisma.studentAnalytics.findUnique({
+          where: { studentId },
+        });
+        if (fresh) {
+          (student as Record<string, unknown>).analytics = fresh;
+        }
+      } catch (err) {
+        console.error('[api/home] first-load recompute failed:', err);
+      }
+    } else {
+      // Stale — fire-and-forget, serve cached data immediately
+      recomputeStudentAnalytics(studentId).catch((err) =>
+        console.error('[api/home] background recompute failed:', err),
+      );
+    }
   }
 
   const streak = computeStreak(attempts);

@@ -173,10 +173,13 @@ export default function HomePage() {
       .then((r) => r.json())
       .then((d: HomeData) => {
         setData(d);
-        // Store in cache
-        try {
-          localStorage.setItem(CACHE_KEY, JSON.stringify({ data: d, ts: Date.now() }));
-        } catch { /* ignore storage errors */ }
+        // Only cache if analytics are populated (avoid caching empty first-load state)
+        const hasAnalytics = d.topicMastery && Array.isArray(d.topicMastery) && d.topicMastery.length > 0;
+        if (hasAnalytics) {
+          try {
+            localStorage.setItem(CACHE_KEY, JSON.stringify({ data: d, ts: Date.now() }));
+          } catch { /* ignore storage errors */ }
+        }
       })
       .catch(() => {})
       .finally(() => setLoading(false));
