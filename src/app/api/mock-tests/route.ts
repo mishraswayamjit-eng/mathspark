@@ -19,9 +19,17 @@ export async function POST(req: Request) {
     if (!studentId || !type) {
       return NextResponse.json({ error: 'studentId and type required' }, { status: 400 });
     }
-
-    if (!['quick', 'half', 'full', 'ipm', 'pyq', 'mega'].includes(type)) {
+    if (typeof studentId !== 'string' || studentId.length > 30) {
+      return NextResponse.json({ error: 'Invalid studentId' }, { status: 400 });
+    }
+    if (typeof type !== 'string' || !['quick', 'half', 'full', 'ipm', 'pyq', 'mega'].includes(type)) {
       return NextResponse.json({ error: 'Invalid test type' }, { status: 400 });
+    }
+    if (topicIds && (!Array.isArray(topicIds) || topicIds.some((t: unknown) => typeof t !== 'string' || (t as string).length > 30))) {
+      return NextResponse.json({ error: 'Invalid topicIds' }, { status: 400 });
+    }
+    if (grade !== undefined && (typeof grade !== 'number' || grade < 2 || grade > 9)) {
+      return NextResponse.json({ error: 'Invalid grade' }, { status: 400 });
     }
 
     if (type === 'pyq' && !year) {

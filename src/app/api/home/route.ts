@@ -51,7 +51,7 @@ export async function GET(req: Request) {
       where: { studentId },
       select: { isCorrect: true, createdAt: true, question: { select: { topicId: true } } },
       orderBy: { createdAt: 'desc' },
-      take: 300,
+      take: 100,
     }),
     getTopicsCached(),
   ]);

@@ -17,6 +17,23 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
   }
 
+  // Input validation
+  if (typeof studentId !== 'string' || studentId.length > 30) {
+    return NextResponse.json({ error: 'Invalid studentId' }, { status: 400 });
+  }
+  if (typeof questionId !== 'string' || questionId.length > 50) {
+    return NextResponse.json({ error: 'Invalid questionId' }, { status: 400 });
+  }
+  if (typeof topicId !== 'string' || topicId.length > 30) {
+    return NextResponse.json({ error: 'Invalid topicId' }, { status: 400 });
+  }
+  if (typeof selected !== 'string' || !['A', 'B', 'C', 'D'].includes(selected)) {
+    return NextResponse.json({ error: 'Invalid selected' }, { status: 400 });
+  }
+  if (typeof isCorrect !== 'boolean') {
+    return NextResponse.json({ error: 'Invalid isCorrect' }, { status: 400 });
+  }
+
   const today = new Date();
   today.setUTCHours(0, 0, 0, 0);
 

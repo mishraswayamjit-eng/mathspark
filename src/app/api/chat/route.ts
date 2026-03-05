@@ -7,11 +7,15 @@ export const maxDuration = 60;
 // ── Sparky system prompt ──────────────────────────────────────────────────────
 
 function buildSystemPrompt(studentName: string, topicContext: string): string {
+  // Sanitize inputs to prevent prompt injection via malicious names
+  const safeName = studentName.replace(/[\n\r\t]/g, ' ').trim().slice(0, 50);
+  const safeContext = topicContext.replace(/[\n\r\t]/g, ' ').trim().slice(0, 500);
+
   return `You are Sparky, a warm and encouraging math tutor for Grade 4 students in India preparing for IPM (International Primary Math) exams.
 
 ABOUT THE STUDENT:
-- Name: ${studentName}
-- ${topicContext}
+- Name: ${safeName}
+- ${safeContext}
 
 PERSONALITY:
 - Warm, playful, and encouraging — like a fun older sibling who loves math
@@ -137,6 +141,12 @@ export async function POST(req: Request) {
 
   if (!studentId || !message?.trim()) {
     return Response.json({ error: 'studentId and message required' }, { status: 400 });
+  }
+  if (typeof studentId !== 'string' || studentId.length > 30) {
+    return Response.json({ error: 'Invalid studentId' }, { status: 400 });
+  }
+  if (typeof message !== 'string' || message.length > 2000) {
+    return Response.json({ error: 'Message too long' }, { status: 400 });
   }
 
   // Rate limit / usage check

@@ -29,10 +29,13 @@ export async function GET(
       return NextResponse.json({ error: 'Profile not found' }, { status: 404 });
     }
 
-    // Stats from attempts
-    const [totalAttempts, totalCorrect, masteredCount, awards] = await Promise.all([
-      prisma.attempt.count({ where: { studentId } }),
-      prisma.attempt.count({ where: { studentId, isCorrect: true } }),
+    // Stats from attempts — use _count aggregate to reduce from 4 to 2 queries
+    const [attemptCounts, masteredCount, awards] = await Promise.all([
+      prisma.attempt.groupBy({
+        by: ['isCorrect'],
+        where: { studentId },
+        _count: true,
+      }),
       prisma.progress.count({ where: { studentId, mastery: 'Mastered' } }),
       prisma.weeklyAward.findMany({
         where:   { studentId },
@@ -41,6 +44,8 @@ export async function GET(
         select:  { awardType: true, value: true, studentId: true },
       }),
     ]);
+    const totalCorrect  = attemptCounts.find((g) => g.isCorrect)?._count ?? 0;
+    const totalAttempts  = attemptCounts.reduce((sum, g) => sum + g._count, 0);
 
     const profile: PublicProfile = {
       studentId:        student.id,

@@ -117,15 +117,9 @@ const PAGE_SIZE = 100; // questions per API call
 export async function GET(req: Request) {
   // ── Auth ──────────────────────────────────────────────────────────────────
   const secret = process.env.SEED_SECRET;
-  if (!secret) {
-    return NextResponse.json(
-      { error: 'SEED_SECRET env var not set. Add it in Vercel → Settings → Environment Variables.' },
-      { status: 500 },
-    );
-  }
   const { searchParams } = new URL(req.url);
-  if (searchParams.get('secret') !== secret) {
-    return NextResponse.json({ error: 'Wrong secret.' }, { status: 401 });
+  if (!secret || searchParams.get('secret') !== secret) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   try {

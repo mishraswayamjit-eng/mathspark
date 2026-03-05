@@ -44,43 +44,44 @@ export async function findSimilarQuestion(
   const hi = wasCorrect ? Math.min(origIdx + 1, 2) : origIdx;
   const allowedDiff = DIFFICULTIES.slice(lo, hi + 1);
 
-  // Priority 1 — same subTopic, auto_generated (number-swapped variants)
-  const p1 = await prisma.question.findMany({
-    where: {
-      subTopic,
-      source:     'auto_generated',
-      difficulty: { in: allowedDiff },
-      id:         { notIn: excluded },
-      ...USABLE_QUESTION_FILTER,
-    },
-    take: 20,
-  });
+  // Fire all 3 priority queries in parallel, then pick highest priority non-empty result
+  const [p1, p2, p3] = await Promise.all([
+    // Priority 1 — same subTopic, auto_generated (number-swapped variants)
+    prisma.question.findMany({
+      where: {
+        subTopic,
+        source:     'auto_generated',
+        difficulty: { in: allowedDiff },
+        id:         { notIn: excluded },
+        ...USABLE_QUESTION_FILTER,
+      },
+      take: 20,
+    }),
+    // Priority 2 — same subTopic, hand_crafted
+    prisma.question.findMany({
+      where: {
+        subTopic,
+        source:     'hand_crafted',
+        difficulty: { in: allowedDiff },
+        id:         { notIn: excluded },
+        ...USABLE_QUESTION_FILTER,
+      },
+      take: 10,
+    }),
+    // Priority 3 — same topic, similar difficulty (±1 level)
+    prisma.question.findMany({
+      where: {
+        topicId,
+        difficulty: { in: allowedDiff },
+        id:         { notIn: excluded },
+        ...USABLE_QUESTION_FILTER,
+      },
+      take: 20,
+    }),
+  ]);
+
   if (p1.length > 0) return pickRandom(p1);
-
-  // Priority 2 — same subTopic, hand_crafted
-  const p2 = await prisma.question.findMany({
-    where: {
-      subTopic,
-      source:     'hand_crafted',
-      difficulty: { in: allowedDiff },
-      id:         { notIn: excluded },
-      ...USABLE_QUESTION_FILTER,
-    },
-    take: 10,
-  });
   if (p2.length > 0) return pickRandom(p2);
-
-  // Priority 3 — same topic, similar difficulty (±1 level)
-  const p3 = await prisma.question.findMany({
-    where: {
-      topicId,
-      difficulty: { in: allowedDiff },
-      id:         { notIn: excluded },
-      ...USABLE_QUESTION_FILTER,
-    },
-    take: 20,
-  });
   if (p3.length > 0) return pickRandom(p3);
-
   return null;
 }

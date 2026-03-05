@@ -26,16 +26,18 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: true });
     }
 
-    const token   = crypto.randomBytes(32).toString('hex');
-    const expiry  = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
+    const rawToken  = crypto.randomBytes(32).toString('hex');
+    const tokenHash = crypto.createHash('sha256').update(rawToken).digest('hex');
+    const expiry    = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
 
     await prisma.parent.update({
       where: { id: parent.id },
-      data:  { resetToken: token, resetTokenExpiry: expiry },
+      data:  { resetToken: tokenHash, resetTokenExpiry: expiry },
     });
 
+    // Send raw token in email link; only the hash is stored in DB
     const baseUrl = process.env.NEXTAUTH_URL ?? 'https://mathspark-five.vercel.app';
-    const link    = `${baseUrl}/auth/reset-password?token=${token}`;
+    const link    = `${baseUrl}/auth/reset-password?token=${rawToken}`;
 
     await resend.emails.send({
       from:    'MathSpark <noreply@mathspark.app>',

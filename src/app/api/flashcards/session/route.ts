@@ -27,6 +27,15 @@ export async function POST(req: Request) {
         { status: 400 },
       );
     }
+    if (typeof studentId !== 'string' || studentId.length > 30) {
+      return NextResponse.json({ error: 'Invalid studentId' }, { status: 400 });
+    }
+    if (typeof mode !== 'string' || mode.length > 30) {
+      return NextResponse.json({ error: 'Invalid mode' }, { status: 400 });
+    }
+    if (typeof cardsReviewed !== 'number' || cardsReviewed < 0 || cardsReviewed > 1000) {
+      return NextResponse.json({ error: 'Invalid cardsReviewed' }, { status: 400 });
+    }
 
     // ── Compute study streak for XP multiplier ───────────────────────────
     const todayStart = new Date();

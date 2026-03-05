@@ -12,5 +12,9 @@ export async function GET() {
   topics.sort(
     (a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id),
   );
-  return NextResponse.json(topics);
+  return NextResponse.json(topics, {
+    headers: {
+      'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+    },
+  });
 }

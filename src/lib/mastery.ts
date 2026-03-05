@@ -18,6 +18,7 @@ export async function calculateMastery(
     },
     orderBy: { createdAt: 'desc' },
     take: 10,
+    select: { isCorrect: true },
   });
 
   if (recent.length === 0) return 'NotStarted';

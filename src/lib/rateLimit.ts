@@ -2,6 +2,7 @@
 // For production at scale, replace with Upstash Redis.
 
 const store = new Map<string, { count: number; resetAt: number }>();
+let callCount = 0;
 
 /**
  * Returns true if the request is allowed, false if rate-limited.
@@ -11,6 +12,14 @@ const store = new Map<string, { count: number; resetAt: number }>();
  */
 export function checkRateLimit(key: string, limit: number, windowMs: number): boolean {
   const now = Date.now();
+
+  // Periodic cleanup of expired entries to prevent memory leak
+  if (++callCount % 100 === 0) {
+    for (const [k, v] of Array.from(store)) {
+      if (now > v.resetAt) store.delete(k);
+    }
+  }
+
   const entry = store.get(key);
 
   if (!entry || now > entry.resetAt) {

@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import crypto from 'crypto';
 import bcrypt from 'bcryptjs';
 import { prisma } from '@/lib/db';
 
@@ -13,9 +14,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Password must be at least 8 characters.' }, { status: 400 });
     }
 
+    // Hash the incoming token to compare against the stored hash
+    const tokenHash = crypto.createHash('sha256').update(token).digest('hex');
+
     const parent = await prisma.parent.findFirst({
       where: {
-        resetToken:       token,
+        resetToken:       tokenHash,
         resetTokenExpiry: { gt: new Date() },
       },
     });

@@ -11,7 +11,9 @@ export const dynamic = 'force-dynamic';
 export async function POST(req: Request) {
   try {
     const { studentId } = await req.json() as { studentId: string };
-    if (!studentId) return NextResponse.json({ error: 'studentId required' }, { status: 400 });
+    if (!studentId || typeof studentId !== 'string' || studentId.length > 30) {
+      return NextResponse.json({ error: 'studentId required' }, { status: 400 });
+    }
 
     const accessErr = await validateStudentAccess(studentId);
     if (accessErr) return NextResponse.json({ error: accessErr }, { status: accessErr === 'Student not found' ? 404 : 403 });

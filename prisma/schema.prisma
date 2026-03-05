@@ -193,6 +193,7 @@ model Progress {
   updatedAt DateTime @updatedAt
 
   @@unique([studentId, topicId])
+  @@index([studentId])
 }
 
 // ── Attempt ────────────────────────────────────────────────────────────────
