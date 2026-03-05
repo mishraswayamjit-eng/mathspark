@@ -70,7 +70,6 @@ export async function getNextQuestion(
   const [allQuestions, sessionAttempts, progress, misconceptionAttempts] = await Promise.all([
     prisma.question.findMany({
       where: { topicId, ...subTopicFilter, ...USABLE_QUESTION_FILTER },
-      select: { id: true, topicId: true, subTopic: true, difficulty: true, source: true },
       take: 200,
     }),
 
