@@ -1,0 +1,748 @@
+{
+  "meta": {
+    "title": "MathSpark — Math Stories: Real-World Context Library",
+    "description": "Short, engaging stories that connect math to sports, space, nature, food, money, games, and technology. Each story answers 'Why does this math matter?' with a Sparky question at the end.",
+    "totalStories": 30,
+    "contextCategories": {
+      "sports": 4,
+      "space": 3,
+      "nature": 4,
+      "food": 2,
+      "money": 4,
+      "games": 3,
+      "geography": 4,
+      "technology": 2,
+      "history": 2,
+      "culture": 1,
+      "education": 1
+    },
+    "topics": {
+      "percentage": 6,
+      "speed_distance": 4,
+      "ratio": 2,
+      "patterns": 3,
+      "geometry": 3,
+      "squares": 2,
+      "fractions": 1,
+      "counting": 4,
+      "measurement": 1,
+      "integers": 1,
+      "decimals": 1,
+      "statistics": 1,
+      "mensuration": 1
+    },
+    "writtenIn": "Sparky's voice — curious, fun, 'did you know?!' energy",
+    "generatedAt": "2026-03-14T14:39:14.497433"
+  },
+  "stories": [
+    {
+      "id": "MS_001",
+      "title": "Virat's Strike Rate",
+      "emoji": "🏏",
+      "topicId": "percentage",
+      "contextCategory": "sports",
+      "gradeRange": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "storyText": "When Virat Kohli scores 72 runs off 48 balls, commentators say his strike rate is 150. But what does that actually mean? Strike rate = (runs scored ÷ balls faced) × 100. So 72÷48×100 = 150. It means: for every 100 balls, he'd score 150 runs at this pace!",
+      "mathConnection": "Strike rate is literally a percentage calculation — runs as a percentage of balls faced.",
+      "sparkyQuestion": "If a batsman scores 45 runs off 30 balls, what's the strike rate?",
+      "funFactor": 5,
+      "linkedConcepts": [
+        "Percentage Basics"
+      ]
+    },
+    {
+      "id": "MS_002",
+      "title": "Olympic Track Maths",
+      "emoji": "🏃",
+      "topicId": "speed_distance",
+      "contextCategory": "sports",
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "storyText": "Usain Bolt ran 100m in 9.58 seconds. That's a speed of 100÷9.58 = 10.44 m/s, which is 10.44 × 18/5 = 37.58 km/hr! A school zone speed limit is usually 30 km/hr — Bolt was running FASTER than cars in a school zone!",
+      "mathConnection": "Speed = Distance ÷ Time. And converting m/s to km/hr uses the ×18/5 trick.",
+      "sparkyQuestion": "If you can run 200m in 40 seconds, what's your speed in km/hr?",
+      "funFactor": 5,
+      "linkedConcepts": [
+        "Speed-Distance-Time Basics",
+        "Speed Unit Conversion"
+      ]
+    },
+    {
+      "id": "MS_003",
+      "title": "IPL Auction: Value for Money",
+      "emoji": "💰",
+      "topicId": "ratio",
+      "contextCategory": "sports",
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "storyText": "In the IPL auction, Team A buys Player X for ₹12 crore and he scores 400 runs. Team B buys Player Y for ₹4 crore and he scores 250 runs. Who gave better value? Cost per run: X = 12cr/400 = ₹3 lakh per run. Y = 4cr/250 = ₹1.6 lakh per run. Player Y was better value!",
+      "mathConnection": "This is the unitary method — finding the cost per unit to compare value.",
+      "sparkyQuestion": "If Player Z cost ₹8 crore and scored 320 runs, what's the cost per run? Is Z better value than X?",
+      "funFactor": 5,
+      "linkedConcepts": [
+        "Unitary Method",
+        "Ratio Basics"
+      ]
+    },
+    {
+      "id": "MS_004",
+      "title": "Chandrayaan's Journey",
+      "emoji": "🚀",
+      "topicId": "speed_distance",
+      "contextCategory": "space",
+      "gradeRange": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "storyText": "Chandrayaan-3 travelled about 3,84,000 km from Earth to the Moon. But it didn't go in a straight line! It orbited Earth in bigger and bigger ellipses — each orbit was roughly 1.5 times wider than the last. The first orbit was about 170 km above Earth's surface.",
+      "mathConnection": "The expanding orbits form something close to a geometric sequence — each term is multiplied by a common ratio!",
+      "sparkyQuestion": "If the first orbit height is 170 km and each orbit is 1.5× the previous, what's the height of the 4th orbit?",
+      "funFactor": 5,
+      "linkedConcepts": [
+        "Geometric Progression"
+      ]
+    },
+    {
+      "id": "MS_005",
+      "title": "Satellite Speed",
+      "emoji": "🛸",
+      "topicId": "speed_distance",
+      "contextCategory": "space",
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "storyText": "The International Space Station orbits Earth at about 28,000 km/hr. Earth's circumference is about 40,000 km. That means the ISS goes around the ENTIRE Earth in just 40000÷28000 ≈ 1.43 hours — that's about 1 hour 26 minutes! It sees 16 sunrises every day.",
+      "mathConnection": "Time = Distance ÷ Speed, applied to a real space problem!",
+      "sparkyQuestion": "If a satellite orbits at 20,000 km/hr on a path of 42,000 km, how long is one orbit?",
+      "funFactor": 5,
+      "linkedConcepts": [
+        "Speed-Distance-Time Basics"
+      ]
+    },
+    {
+      "id": "MS_006",
+      "title": "Mangalyaan's Budget",
+      "emoji": "🪐",
+      "topicId": "percentage",
+      "contextCategory": "space",
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "storyText": "India's Mars mission Mangalyaan cost only ₹450 crore — less than the budget of the Hollywood movie Gravity (₹520 crore)! If NASA's MAVEN Mars mission cost ₹4,500 crore, Mangalyaan was just 10% of that cost. India proved that space exploration doesn't have to be expensive!",
+      "mathConnection": "Comparing costs using percentages and fractions makes enormous numbers understandable.",
+      "sparkyQuestion": "If Chandrayaan-3 cost ₹615 crore and MAVEN cost ₹4,500 crore, what percentage of MAVEN's cost is Chandrayaan-3?",
+      "funFactor": 5,
+      "linkedConcepts": [
+        "Percentage Basics"
+      ]
+    },
+    {
+      "id": "MS_007",
+      "title": "Fibonacci in Flowers",
+      "emoji": "🌻",
+      "topicId": "patterns",
+      "contextCategory": "nature",
+      "gradeRange": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "storyText": "Count the petals on different flowers: lily = 3, buttercup = 5, daisy = 13, sunflower = 21 or 34. Notice anything? These are all Fibonacci numbers! The Fibonacci sequence (1, 1, 2, 3, 5, 8, 13, 21, 34...) appears everywhere in nature — in flower petals, pinecone spirals, and even the way branches grow on trees.",
+      "mathConnection": "The Fibonacci sequence: each number = sum of the previous two. Nature 'chose' this pattern because it's the most efficient way to pack seeds!",
+      "sparkyQuestion": "What are the next 3 numbers after 34 in the Fibonacci sequence?",
+      "funFactor": 5,
+      "linkedConcepts": [
+        "Simple Patterns",
+        "Special Sequences"
+      ]
+    },
+    {
+      "id": "MS_008",
+      "title": "Honeycomb Geometry",
+      "emoji": "🐝",
+      "topicId": "geometry",
+      "contextCategory": "nature",
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "storyText": "Bees build their honeycombs using perfect hexagons. Why? Because hexagons tile perfectly with NO gaps (like squares and triangles do), BUT they enclose the most area for the least perimeter. Each interior angle of a regular hexagon is 120°, and 3 hexagons meeting at a point = 360°. Mathematically optimal!",
+      "mathConnection": "This connects polygon angles, area optimisation, and tiling — real geometry in nature!",
+      "sparkyQuestion": "What is each interior angle of a regular hexagon? (Use the formula: (n−2)×180÷n)",
+      "funFactor": 5,
+      "linkedConcepts": [
+        "Polygon Angles"
+      ]
+    },
+    {
+      "id": "MS_009",
+      "title": "Tree Branching — Powers of 2",
+      "emoji": "🌳",
+      "topicId": "squares",
+      "contextCategory": "nature",
+      "gradeRange": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "storyText": "A tree trunk splits into 2 branches. Each branch splits into 2 more. After each split, the number doubles: 1→2→4→8→16→32... After 10 levels of branching, there are 2¹⁰ = 1024 tiny branches! This is why trees look so full — exponential growth is powerful.",
+      "mathConnection": "Powers of 2 appear in nature, computing (1 KB = 1024 bytes!), and even in tournament brackets.",
+      "sparkyQuestion": "If a tree has 15 levels of branching, how many tiny branches are at the top? (2¹⁵ = ?)",
+      "funFactor": 4,
+      "linkedConcepts": [
+        "Laws of Indices"
+      ]
+    },
+    {
+      "id": "MS_010",
+      "title": "Pizza Fractions",
+      "emoji": "🍕",
+      "topicId": "fractions",
+      "contextCategory": "food",
+      "gradeRange": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "storyText": "You're sharing a pizza with friends. The pizza is cut into 8 slices. You eat 3 slices — that's 3/8. Your friend eats 2 slices — that's 2/8 = 1/4. Together you've eaten 3/8 + 2/8 = 5/8. The fraction remaining: 1 − 5/8 = 3/8. But what if the pizza was cut into 12 slices instead? The fractions change even though the amount of pizza doesn't!",
+      "mathConnection": "Pizza is literally the perfect way to understand fractions — parts of a whole!",
+      "sparkyQuestion": "If you eat 2/5 of a pizza and your friend eats 1/4, what fraction is left?",
+      "funFactor": 4,
+      "linkedConcepts": [
+        "Understanding Fractions",
+        "Adding & Subtracting Fractions"
+      ]
+    },
+    {
+      "id": "MS_011",
+      "title": "Recipe Scaling",
+      "emoji": "🧁",
+      "topicId": "ratio",
+      "contextCategory": "food",
+      "gradeRange": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "storyText": "A cupcake recipe serves 12 and needs 2 cups flour, 3 eggs, and 1.5 cups sugar. You need cupcakes for 30 people. The ratio is 30:12 = 5:2. So multiply everything by 5/2: flour = 2×5/2 = 5 cups, eggs = 3×5/2 = 7.5 → round to 8, sugar = 1.5×5/2 = 3.75 cups.",
+      "mathConnection": "Scaling recipes is direct proportion — everything multiplied by the same factor!",
+      "sparkyQuestion": "If a recipe for 8 people needs 200g butter, how much butter for 20 people?",
+      "funFactor": 4,
+      "linkedConcepts": [
+        "Direct & Inverse Variation",
+        "Ratio Basics"
+      ]
+    },
+    {
+      "id": "MS_012",
+      "title": "The Power of Compound Interest",
+      "emoji": "🏦",
+      "topicId": "percentage",
+      "contextCategory": "money",
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "storyText": "If you invest ₹1,000 at 10% compound interest at age 10, by age 70 (60 years later), it becomes ₹1,000 × (1.1)⁶⁰ ≈ ₹3,04,482! That's 304× your money — without adding a single rupee! Albert Einstein reportedly called compound interest 'the eighth wonder of the world.'",
+      "mathConnection": "This is the power of A = P(1+R/100)ⁿ with large n. Small rates + long time = massive growth!",
+      "sparkyQuestion": "If you invest ₹5,000 at 8% CI for 3 years, what's the amount? (Calculate step by step)",
+      "funFactor": 5,
+      "linkedConcepts": [
+        "Compound Interest"
+      ]
+    },
+    {
+      "id": "MS_013",
+      "title": "Discount Stacking — Not What You Think!",
+      "emoji": "🏷️",
+      "topicId": "percentage",
+      "contextCategory": "money",
+      "gradeRange": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "storyText": "A shop offers '50% off + 20% off!' Sounds like 70% off, right? WRONG! 50% off ₹1000 = ₹500. Then 20% off ₹500 = ₹100. Final price: ₹400. That's only 60% off, not 70%! The second discount applies to the ALREADY reduced price.",
+      "mathConnection": "Successive discounts are never additive — they compound. This is one of the biggest real-life math traps!",
+      "sparkyQuestion": "A jacket costs ₹2000. First 30% off, then 10% off. What's the final price? (It's NOT 40% off!)",
+      "funFactor": 5,
+      "linkedConcepts": [
+        "Percentage Increase & Decrease"
+      ]
+    },
+    {
+      "id": "MS_014",
+      "title": "EMI — What You Actually Pay",
+      "emoji": "💳",
+      "topicId": "percentage",
+      "contextCategory": "money",
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "storyText": "When your parents buy a phone on EMI at '0% interest' for 12 months, the sticker price is ₹60,000 and they pay ₹5,000/month. But the same phone costs ₹54,000 if paid at once! The hidden cost: ₹6,000 extra. That's actually 6000/54000 × 100 = 11.1% interest — not 0%!",
+      "mathConnection": "Understanding percentage helps you see through marketing tricks. 'No-cost EMI' often has a hidden percentage!",
+      "sparkyQuestion": "If a laptop costs ₹80,000 cash but ₹7,500/month for 12 months on EMI, what's the hidden interest percentage?",
+      "funFactor": 4,
+      "linkedConcepts": [
+        "Simple Interest",
+        "Percentage Basics"
+      ]
+    },
+    {
+      "id": "MS_015",
+      "title": "Chess Tournament Math",
+      "emoji": "♟️",
+      "topicId": "counting",
+      "contextCategory": "games",
+      "gradeRange": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "storyText": "In a chess tournament where every player plays every other player exactly once, the number of games = n(n−1)/2. With 8 players: 8×7/2 = 28 games! This is the same formula as handshakes, and it's called 'n choose 2' in combinatorics.",
+      "mathConnection": "The handshake formula n(n−1)/2 appears in tournaments, networks, and even in how many diagonals a polygon has!",
+      "sparkyQuestion": "If 12 teams play a round-robin tournament, how many total matches are played?",
+      "funFactor": 4,
+      "linkedConcepts": [
+        "Counting & Combinatorics"
+      ]
+    },
+    {
+      "id": "MS_016",
+      "title": "Dice Probability",
+      "emoji": "🎲",
+      "topicId": "counting",
+      "contextCategory": "games",
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "storyText": "When you roll two dice, there are 6×6 = 36 possible outcomes. What's the probability of getting a sum of 7? The combinations: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) = 6 ways. Probability = 6/36 = 1/6. A sum of 7 is actually the MOST likely sum — more likely than any other number!",
+      "mathConnection": "Probability = favourable outcomes ÷ total outcomes. Understanding this makes you a better game strategist!",
+      "sparkyQuestion": "What's the probability of getting a sum of 2 when rolling two dice?",
+      "funFactor": 4,
+      "linkedConcepts": [
+        "Counting & Combinatorics"
+      ]
+    },
+    {
+      "id": "MS_017",
+      "title": "India by Numbers",
+      "emoji": "🇮🇳",
+      "topicId": "measurement",
+      "contextCategory": "geography",
+      "gradeRange": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "storyText": "The distance from Kashmir to Kanyakumari is about 3,200 km. If you drove at 80 km/hr for 8 hours each day, it would take 3200÷80÷8 = 5 days! India's area is about 33 lakh sq km. If India were a perfect square, each side would be √3300000 ≈ 1817 km.",
+      "mathConnection": "Real distances and areas make measurement meaningful. Square root gives you intuition about size!",
+      "sparkyQuestion": "If the Rajdhani Express travels Delhi to Mumbai (1384 km) in 16 hours, what's its average speed?",
+      "funFactor": 4,
+      "linkedConcepts": [
+        "Speed-Distance-Time Basics",
+        "Square Roots"
+      ]
+    },
+    {
+      "id": "MS_018",
+      "title": "Mount Everest & Negative Numbers",
+      "emoji": "🏔️",
+      "topicId": "integers",
+      "contextCategory": "geography",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "storyText": "Mount Everest is 8,849 metres above sea level. The Mariana Trench is 10,994 metres BELOW sea level — we write that as −10,994m. The total height difference between the highest and lowest points on Earth: 8,849 − (−10,994) = 8,849 + 10,994 = 19,843 metres!",
+      "mathConnection": "Subtracting a negative number = adding! This real-world example makes negative numbers click.",
+      "sparkyQuestion": "If a submarine is at −200m and it rises 75m, what's its new depth?",
+      "funFactor": 4,
+      "linkedConcepts": [
+        "Integers"
+      ]
+    },
+    {
+      "id": "MS_019",
+      "title": "Binary — How Computers Count",
+      "emoji": "💻",
+      "topicId": "patterns",
+      "contextCategory": "technology",
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "storyText": "Computers only understand 0 and 1. They count in 'binary' (base 2): 1, 10, 11, 100, 101, 110, 111, 1000... These are just 1, 2, 3, 4, 5, 6, 7, 8 in disguise! 1 byte = 8 bits = 2⁸ = 256 possible values. That's why pixel colours go from 0 to 255!",
+      "mathConnection": "Binary is a number system based on powers of 2. Place value works the same way — but with 2s instead of 10s!",
+      "sparkyQuestion": "What is the binary number 1101 in decimal? (Hint: 1×8 + 1×4 + 0×2 + 1×1 = ?)",
+      "funFactor": 5,
+      "linkedConcepts": [
+        "Place Value System",
+        "Laws of Indices"
+      ]
+    },
+    {
+      "id": "MS_020",
+      "title": "Password Combinations",
+      "emoji": "🔐",
+      "topicId": "counting",
+      "contextCategory": "technology",
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "storyText": "A 4-digit phone PIN has 10×10×10×10 = 10,000 possible combinations (0000 to 9999). But a 4-letter password (a-z) has 26×26×26×26 = 456,976 combinations — 45× more! Add uppercase (52 letters): 52⁴ = 7,311,616. Add digits and symbols: the numbers explode!",
+      "mathConnection": "This is the multiplication principle of counting — each independent choice multiplies the total.",
+      "sparkyQuestion": "How many 3-digit PINs are possible if the first digit can't be 0?",
+      "funFactor": 4,
+      "linkedConcepts": [
+        "Counting & Combinatorics"
+      ]
+    },
+    {
+      "id": "MS_021",
+      "title": "Gauss and 1+2+3+...+100",
+      "emoji": "🧒",
+      "topicId": "patterns",
+      "contextCategory": "history",
+      "gradeRange": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "storyText": "Legend says that in 1786, 9-year-old Carl Friedrich Gauss stunned his teacher. The teacher told the class to add numbers from 1 to 100, expecting it would take ages. Gauss answered in seconds: 5050! His trick? Pair the numbers: 1+100=101, 2+99=101, 3+98=101... There are 50 such pairs. So 50×101=5050!",
+      "mathConnection": "This gives us the formula: Sum = n(n+1)/2. Gauss basically invented it as a child!",
+      "sparkyQuestion": "Using Gauss's method, find 1+2+3+...+50.",
+      "funFactor": 5,
+      "linkedConcepts": [
+        "Arithmetic Progression",
+        "Simple Patterns"
+      ]
+    },
+    {
+      "id": "MS_022",
+      "title": "The Wheat & Chessboard Problem",
+      "emoji": "♟️",
+      "topicId": "squares",
+      "contextCategory": "history",
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "storyText": "An ancient king promised a wise man a reward: 1 grain of wheat on the first chess square, 2 on the second, 4 on the third, doubling each time. By square 64: 2⁶³ = 9,223,372,036,854,775,808 grains! That's more wheat than has been produced in ALL of human history. The king couldn't pay!",
+      "mathConnection": "Exponential growth (geometric progression) seems slow at first but becomes unimaginably huge. This is the power of doubling!",
+      "sparkyQuestion": "How many grains are on the 10th square? (2⁹ = ?)",
+      "funFactor": 5,
+      "linkedConcepts": [
+        "Geometric Progression",
+        "Laws of Indices"
+      ]
+    },
+    {
+      "id": "MS_023",
+      "title": "The Rupee's Journey",
+      "emoji": "💰",
+      "topicId": "decimals",
+      "contextCategory": "money",
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "storyText": "When India went decimal in 1957, 1 rupee = 100 paise (replacing the old 16-anna system). Today, coins come in ₹1, ₹2, ₹5, ₹10. If you have three ₹5 coins and four ₹2 coins, you have 3×5+4×2 = ₹23.",
+      "mathConnection": "Addition, multiplication, and money — foundational arithmetic in daily life!",
+      "sparkyQuestion": "If you have seven ₹2 coins, five ₹5 coins, and two ₹10 coins, what's the total?",
+      "funFactor": 3,
+      "linkedConcepts": []
+    },
+    {
+      "id": "MS_024",
+      "title": "Train Timetable",
+      "emoji": "🚂",
+      "topicId": "speed_distance",
+      "contextCategory": "geography",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "storyText": "The Shatabdi Express leaves Delhi at 6:10 AM and reaches Jaipur (310 km) at 10:40 AM. Journey time = 4 hrs 30 min = 4.5 hours. Average speed = 310÷4.5 ≈ 68.9 km/hr.",
+      "mathConnection": "Real train timetables are perfect for speed-distance-time practice!",
+      "sparkyQuestion": "If the Rajdhani covers 1384 km in 17 hours, what's the average speed?",
+      "funFactor": 3,
+      "linkedConcepts": []
+    },
+    {
+      "id": "MS_025",
+      "title": "The Cricket Average",
+      "emoji": "📊",
+      "topicId": "statistics",
+      "contextCategory": "sports",
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "storyText": "Sachin Tendulkar scored 15,921 runs in 329 Test innings (not out 33 times). His average = 15921÷(329−33) = 15921÷296 = 53.78. In cricket, average = total runs ÷ (innings − not outs).",
+      "mathConnection": "Cricket averages are a special type of mean — understanding the formula is key!",
+      "sparkyQuestion": "If a player scored 450 runs in 10 innings with 2 not-outs, what's the average?",
+      "funFactor": 4,
+      "linkedConcepts": []
+    },
+    {
+      "id": "MS_026",
+      "title": "Rangoli Symmetry",
+      "emoji": "🎨",
+      "topicId": "geometry",
+      "contextCategory": "culture",
+      "gradeRange": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "storyText": "Rangoli designs are built on symmetry! A square rangoli has 4 lines of symmetry. A circular one has infinite. The most beautiful rangolis use rotational symmetry — the pattern repeats at equal angle intervals: 360°÷n where n is the number of repeats.",
+      "mathConnection": "Symmetry and angles come alive in Indian art!",
+      "sparkyQuestion": "If a rangoli has 6-fold rotational symmetry, at what angle does the pattern repeat?",
+      "funFactor": 4,
+      "linkedConcepts": []
+    },
+    {
+      "id": "MS_027",
+      "title": "Percentage in Exams",
+      "emoji": "📝",
+      "topicId": "percentage",
+      "contextCategory": "education",
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "storyText": "In your IPM mock test, you got 32 out of 40. That's 32/40 × 100 = 80%. But with negative marking, if you got 30 right and 10 wrong: marks = 30 − 10×0.25 = 27.5 out of 40 = 68.75%. The gap between raw accuracy and net score is the 'negative marking tax'!",
+      "mathConnection": "Understanding percentage and negative marking strategy go hand in hand!",
+      "sparkyQuestion": "If you attempt 35 questions, get 28 right and 7 wrong (−0.25 each), what's your net percentage?",
+      "funFactor": 4,
+      "linkedConcepts": []
+    },
+    {
+      "id": "MS_028",
+      "title": "Shadow & Similar Triangles",
+      "emoji": "🌇",
+      "topicId": "geometry",
+      "contextCategory": "nature",
+      "gradeRange": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "storyText": "When you stand in the sun, your shadow makes a right triangle: you're the height, the shadow is the base. A 1.5m tall child has a 2m shadow at the same time as a tree with a 12m shadow. The triangles are SIMILAR! So tree height = 1.5 × (12/2) = 9m.",
+      "mathConnection": "Similar triangles let you measure things too tall to reach!",
+      "sparkyQuestion": "If a 2m pole casts a 3m shadow and a building casts a 21m shadow, how tall is the building?",
+      "funFactor": 4,
+      "linkedConcepts": []
+    },
+    {
+      "id": "MS_029",
+      "title": "The Birthday Problem",
+      "emoji": "🎂",
+      "topicId": "counting",
+      "contextCategory": "games",
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "storyText": "How many people do you need in a room for a 50% chance that two share a birthday? The surprising answer: just 23! With 70 people, the probability is 99.9%. This seems impossibly low because we're not looking for YOUR birthday specifically — we're looking for ANY match.",
+      "mathConnection": "This is one of the most famous probability surprises. The complementary counting method makes it solvable!",
+      "sparkyQuestion": "In a class of 30 students, roughly what's the probability that two share a birthday?",
+      "funFactor": 5,
+      "linkedConcepts": []
+    },
+    {
+      "id": "MS_030",
+      "title": "Area of India's States",
+      "emoji": "🗺️",
+      "topicId": "mensuration",
+      "contextCategory": "geography",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "storyText": "Rajasthan is India's largest state by area: ~342,000 sq km. Goa is the smallest: ~3,702 sq km. Rajasthan is about 342000/3702 ≈ 92 times the area of Goa! If Rajasthan were a square, each side would be √342000 ≈ 585 km.",
+      "mathConnection": "Area comparison uses division and ratio. Square root tells you the 'side length' if a region were square-shaped.",
+      "sparkyQuestion": "If Maharashtra's area is 307,713 sq km, approximately how many Goas fit inside it?",
+      "funFactor": 3,
+      "linkedConcepts": []
+    }
+  ],
+  "topicIndex": {
+    "percentage": [
+      "MS_001",
+      "MS_006",
+      "MS_012",
+      "MS_013",
+      "MS_014",
+      "MS_027"
+    ],
+    "speed_distance": [
+      "MS_002",
+      "MS_004",
+      "MS_005",
+      "MS_024"
+    ],
+    "ratio": [
+      "MS_003",
+      "MS_011"
+    ],
+    "patterns": [
+      "MS_007",
+      "MS_019",
+      "MS_021"
+    ],
+    "geometry": [
+      "MS_008",
+      "MS_026",
+      "MS_028"
+    ],
+    "squares": [
+      "MS_009",
+      "MS_022"
+    ],
+    "fractions": [
+      "MS_010"
+    ],
+    "counting": [
+      "MS_015",
+      "MS_016",
+      "MS_020",
+      "MS_029"
+    ],
+    "measurement": [
+      "MS_017"
+    ],
+    "integers": [
+      "MS_018"
+    ],
+    "decimals": [
+      "MS_023"
+    ],
+    "statistics": [
+      "MS_025"
+    ],
+    "mensuration": [
+      "MS_030"
+    ]
+  },
+  "contextIndex": {
+    "sports": [
+      "MS_001",
+      "MS_002",
+      "MS_003",
+      "MS_025"
+    ],
+    "space": [
+      "MS_004",
+      "MS_005",
+      "MS_006"
+    ],
+    "nature": [
+      "MS_007",
+      "MS_008",
+      "MS_009",
+      "MS_028"
+    ],
+    "food": [
+      "MS_010",
+      "MS_011"
+    ],
+    "money": [
+      "MS_012",
+      "MS_013",
+      "MS_014",
+      "MS_023"
+    ],
+    "games": [
+      "MS_015",
+      "MS_016",
+      "MS_029"
+    ],
+    "geography": [
+      "MS_017",
+      "MS_018",
+      "MS_024",
+      "MS_030"
+    ],
+    "technology": [
+      "MS_019",
+      "MS_020"
+    ],
+    "history": [
+      "MS_021",
+      "MS_022"
+    ],
+    "culture": [
+      "MS_026"
+    ],
+    "education": [
+      "MS_027"
+    ]
+  }
+}

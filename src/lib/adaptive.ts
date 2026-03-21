@@ -20,12 +20,23 @@ function weightedDiff(pEasy: number, pMedium: number, _pHard: number): Difficult
   return 'Hard';
 }
 
-/** Prefer hand_crafted questions; random-pick within the preferred set. */
+/**
+ * Prefer higher-quality sources. Priority:
+ *   hand_crafted > pdf_extracted > variant_of_* > everything else
+ */
 function pickBest<T extends { source: string }>(pool: T[]): T | null {
   if (pool.length === 0) return null;
+
   const crafted = pool.filter((q) => q.source === 'hand_crafted');
-  const candidates = crafted.length > 0 ? crafted : pool;
-  return candidates[Math.floor(Math.random() * candidates.length)];
+  if (crafted.length > 0) return crafted[Math.floor(Math.random() * crafted.length)];
+
+  const extracted = pool.filter((q) => q.source === 'pdf_extracted');
+  if (extracted.length > 0) return extracted[Math.floor(Math.random() * extracted.length)];
+
+  const variants = pool.filter((q) => q.source.startsWith('variant_of_'));
+  if (variants.length > 0) return variants[Math.floor(Math.random() * variants.length)];
+
+  return pool[Math.floor(Math.random() * pool.length)];
 }
 
 // ── Main export ───────────────────────────────────────────────────────────────

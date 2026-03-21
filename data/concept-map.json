@@ -1,0 +1,2959 @@
+{
+  "meta": {
+    "title": "MathSpark — Concept Map Visualisation",
+    "description": "Interactive visual data for rendering the complete math concept landscape. Each domain is an 'island' that students explore. Nodes glow as they're mastered.",
+    "totalNodes": 88,
+    "totalEdges": 123,
+    "domains": {
+      "numbers": {
+        "name": "🔢 Numbers",
+        "island": "Number Island",
+        "description": "Where every math journey begins"
+      },
+      "arithmetic": {
+        "name": "➕ Arithmetic",
+        "island": "Operation Station",
+        "description": "The four operations and BODMAS"
+      },
+      "factors": {
+        "name": "🔍 Factors",
+        "island": "Factor Forest",
+        "description": "Divisibility, primes, HCF & LCM"
+      },
+      "fractions": {
+        "name": "🍕 Fractions",
+        "island": "Fraction Land",
+        "description": "Parts of a whole"
+      },
+      "percentage": {
+        "name": "💰 Percentage",
+        "island": "Business Bay",
+        "description": "Profit, loss, interest"
+      },
+      "ratio": {
+        "name": "⚖️ Ratio",
+        "island": "Balance Bridge",
+        "description": "Comparison and proportion"
+      },
+      "algebra": {
+        "name": "🔤 Algebra",
+        "island": "Algebra Mountain",
+        "description": "The language of math"
+      },
+      "geometry": {
+        "name": "📐 Geometry",
+        "island": "Shape City",
+        "description": "Angles, triangles, circles"
+      },
+      "mensuration": {
+        "name": "📏 Mensuration",
+        "island": "Measure Meadow",
+        "description": "Area, perimeter, volume"
+      },
+      "speed": {
+        "name": "🚂 Speed",
+        "island": "Velocity Valley",
+        "description": "Speed, distance, time"
+      },
+      "statistics": {
+        "name": "📊 Statistics",
+        "island": "Data District",
+        "description": "Averages and data"
+      },
+      "squares": {
+        "name": "² Squares",
+        "island": "Power Peak",
+        "description": "Squares, roots, indices"
+      },
+      "patterns": {
+        "name": "🔄 Patterns",
+        "island": "Sequence Springs",
+        "description": "Patterns and progressions"
+      },
+      "practical": {
+        "name": "💵 Practical",
+        "island": "Real-World River",
+        "description": "Money, time, age, measurement"
+      },
+      "advanced": {
+        "name": "🏆 Advanced",
+        "island": "Summit",
+        "description": "Logs and trigonometry"
+      }
+    },
+    "renderingHints": {
+      "engine": "D3.js force-directed or React Flow",
+      "nodeShape": "circle with icon",
+      "edgeStyle": {
+        "must_know": "solid line",
+        "helpful": "dashed line"
+      },
+      "colorByDomain": true,
+      "sizeByQuestionCount": true,
+      "glowEffect": "mastered nodes pulse with golden glow",
+      "zoomLevels": {
+        "overview": "See all islands at once",
+        "domain": "Zoom into one island to see all concepts",
+        "detail": "See one concept with its prerequisites and dependents"
+      }
+    },
+    "gradeOverlays": {
+      "2": [
+        "CN_001",
+        "CN_002",
+        "CN_003",
+        "CN_007",
+        "CN_008",
+        "CN_009",
+        "CN_010",
+        "CN_019",
+        "CN_047",
+        "CN_048",
+        "CN_058",
+        "CN_077",
+        "CN_081",
+        "CN_082",
+        "CN_083"
+      ],
+      "3": [
+        "CN_001",
+        "CN_002",
+        "CN_003",
+        "CN_004",
+        "CN_005",
+        "CN_007",
+        "CN_008",
+        "CN_009",
+        "CN_010",
+        "CN_011",
+        "CN_014",
+        "CN_019",
+        "CN_020",
+        "CN_021",
+        "CN_024",
+        "CN_036",
+        "CN_039",
+        "CN_047",
+        "CN_048",
+        "CN_049",
+        "CN_058",
+        "CN_059",
+        "CN_077",
+        "CN_081",
+        "CN_082",
+        "CN_083",
+        "CN_084"
+      ],
+      "4": [
+        "CN_002",
+        "CN_003",
+        "CN_004",
+        "CN_005",
+        "CN_007",
+        "CN_010",
+        "CN_011",
+        "CN_012",
+        "CN_013",
+        "CN_014",
+        "CN_015",
+        "CN_016",
+        "CN_019",
+        "CN_020",
+        "CN_021",
+        "CN_022",
+        "CN_024",
+        "CN_025",
+        "CN_032",
+        "CN_036",
+        "CN_037",
+        "CN_039",
+        "CN_040",
+        "CN_047",
+        "CN_048",
+        "CN_049",
+        "CN_050",
+        "CN_051",
+        "CN_058",
+        "CN_059",
+        "CN_060",
+        "CN_064",
+        "CN_069",
+        "CN_071",
+        "CN_072",
+        "CN_077",
+        "CN_081",
+        "CN_082",
+        "CN_083",
+        "CN_084"
+      ],
+      "5": [
+        "CN_005",
+        "CN_006",
+        "CN_011",
+        "CN_012",
+        "CN_013",
+        "CN_014",
+        "CN_015",
+        "CN_016",
+        "CN_017",
+        "CN_018",
+        "CN_020",
+        "CN_021",
+        "CN_022",
+        "CN_023",
+        "CN_024",
+        "CN_025",
+        "CN_026",
+        "CN_027",
+        "CN_032",
+        "CN_033",
+        "CN_034",
+        "CN_036",
+        "CN_037",
+        "CN_038",
+        "CN_039",
+        "CN_040",
+        "CN_041",
+        "CN_049",
+        "CN_050",
+        "CN_051",
+        "CN_056",
+        "CN_058",
+        "CN_059",
+        "CN_060",
+        "CN_064",
+        "CN_065",
+        "CN_069",
+        "CN_071",
+        "CN_072",
+        "CN_073",
+        "CN_078",
+        "CN_081",
+        "CN_082",
+        "CN_083",
+        "CN_084",
+        "CN_086"
+      ],
+      "6": [
+        "CN_006",
+        "CN_012",
+        "CN_013",
+        "CN_016",
+        "CN_017",
+        "CN_018",
+        "CN_022",
+        "CN_023",
+        "CN_024",
+        "CN_025",
+        "CN_026",
+        "CN_027",
+        "CN_028",
+        "CN_029",
+        "CN_032",
+        "CN_033",
+        "CN_034",
+        "CN_035",
+        "CN_036",
+        "CN_037",
+        "CN_038",
+        "CN_040",
+        "CN_041",
+        "CN_042",
+        "CN_050",
+        "CN_051",
+        "CN_052",
+        "CN_053",
+        "CN_056",
+        "CN_060",
+        "CN_061",
+        "CN_064",
+        "CN_065",
+        "CN_066",
+        "CN_069",
+        "CN_070",
+        "CN_071",
+        "CN_072",
+        "CN_073",
+        "CN_078",
+        "CN_083",
+        "CN_084",
+        "CN_085",
+        "CN_086"
+      ],
+      "7": [
+        "CN_006",
+        "CN_017",
+        "CN_018",
+        "CN_023",
+        "CN_027",
+        "CN_028",
+        "CN_029",
+        "CN_030",
+        "CN_033",
+        "CN_034",
+        "CN_035",
+        "CN_038",
+        "CN_041",
+        "CN_042",
+        "CN_043",
+        "CN_044",
+        "CN_045",
+        "CN_051",
+        "CN_052",
+        "CN_053",
+        "CN_055",
+        "CN_056",
+        "CN_061",
+        "CN_062",
+        "CN_063",
+        "CN_065",
+        "CN_066",
+        "CN_067",
+        "CN_068",
+        "CN_069",
+        "CN_070",
+        "CN_071",
+        "CN_073",
+        "CN_074",
+        "CN_075",
+        "CN_078",
+        "CN_079",
+        "CN_080",
+        "CN_084",
+        "CN_085",
+        "CN_086"
+      ],
+      "8": [
+        "CN_029",
+        "CN_030",
+        "CN_031",
+        "CN_035",
+        "CN_042",
+        "CN_043",
+        "CN_044",
+        "CN_045",
+        "CN_046",
+        "CN_052",
+        "CN_053",
+        "CN_054",
+        "CN_055",
+        "CN_057",
+        "CN_061",
+        "CN_062",
+        "CN_063",
+        "CN_066",
+        "CN_067",
+        "CN_068",
+        "CN_070",
+        "CN_074",
+        "CN_075",
+        "CN_076",
+        "CN_078",
+        "CN_079",
+        "CN_080",
+        "CN_084",
+        "CN_085",
+        "CN_086"
+      ],
+      "9": [
+        "CN_031",
+        "CN_043",
+        "CN_044",
+        "CN_045",
+        "CN_046",
+        "CN_054",
+        "CN_055",
+        "CN_057",
+        "CN_062",
+        "CN_063",
+        "CN_067",
+        "CN_068",
+        "CN_075",
+        "CN_076",
+        "CN_079",
+        "CN_080",
+        "CN_085",
+        "CN_087",
+        "CN_088"
+      ]
+    },
+    "generatedAt": "2026-03-14T14:39:14.497152"
+  },
+  "nodes": [
+    {
+      "id": "CN_001",
+      "name": "Counting & Number Names",
+      "domain": "numbers",
+      "domainIsland": "Number Island",
+      "icon": "🔢",
+      "color": "#4CAF50",
+      "x": 0,
+      "y": 50.0,
+      "size": 21,
+      "gradeRange": [
+        2,
+        3
+      ],
+      "difficulty": 1,
+      "questionCount": 214,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_002",
+      "name": "Place Value System",
+      "domain": "numbers",
+      "domainIsland": "Number Island",
+      "icon": "🔢",
+      "color": "#4CAF50",
+      "x": 0,
+      "y": 100.0,
+      "size": 37,
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "questionCount": 375,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_003",
+      "name": "Comparing & Ordering Numbers",
+      "domain": "numbers",
+      "domainIsland": "Number Island",
+      "icon": "⚖️",
+      "color": "#4CAF50",
+      "x": 0,
+      "y": 100.0,
+      "size": 20,
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_004",
+      "name": "Rounding Numbers",
+      "domain": "numbers",
+      "domainIsland": "Number Island",
+      "icon": "🎯",
+      "color": "#4CAF50",
+      "x": 0,
+      "y": 150.0,
+      "size": 20,
+      "gradeRange": [
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_005",
+      "name": "Roman Numerals",
+      "domain": "numbers",
+      "domainIsland": "Number Island",
+      "icon": "🏛️",
+      "color": "#4CAF50",
+      "x": 0,
+      "y": 200.0,
+      "size": 20,
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 2,
+      "questionCount": 17,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_006",
+      "name": "Integers",
+      "domain": "numbers",
+      "domainIsland": "Number Island",
+      "icon": "➖",
+      "color": "#4CAF50",
+      "x": 0,
+      "y": 400.0,
+      "size": 20,
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_007",
+      "name": "Even & Odd Numbers",
+      "domain": "numbers",
+      "domainIsland": "Number Island",
+      "icon": "🔢",
+      "color": "#4CAF50",
+      "x": 0,
+      "y": 100.0,
+      "size": 20,
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "questionCount": 19,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_008",
+      "name": "Addition",
+      "domain": "arithmetic",
+      "domainIsland": "Operation Station",
+      "icon": "➕",
+      "color": "#2196F3",
+      "x": 120,
+      "y": 50.0,
+      "size": 20,
+      "gradeRange": [
+        2,
+        3
+      ],
+      "difficulty": 1,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_009",
+      "name": "Subtraction",
+      "domain": "arithmetic",
+      "domainIsland": "Operation Station",
+      "icon": "➖",
+      "color": "#2196F3",
+      "x": 120,
+      "y": 50.0,
+      "size": 20,
+      "gradeRange": [
+        2,
+        3
+      ],
+      "difficulty": 1,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_010",
+      "name": "Multiplication",
+      "domain": "arithmetic",
+      "domainIsland": "Operation Station",
+      "icon": "✖️",
+      "color": "#2196F3",
+      "x": 120,
+      "y": 100.0,
+      "size": 20,
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_011",
+      "name": "Division",
+      "domain": "arithmetic",
+      "domainIsland": "Operation Station",
+      "icon": "➗",
+      "color": "#2196F3",
+      "x": 120,
+      "y": 200.0,
+      "size": 20,
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_012",
+      "name": "BODMAS / Order of Operations",
+      "domain": "arithmetic",
+      "domainIsland": "Operation Station",
+      "icon": "📋",
+      "color": "#2196F3",
+      "x": 120,
+      "y": 300.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_013",
+      "name": "Number Properties",
+      "domain": "arithmetic",
+      "domainIsland": "Operation Station",
+      "icon": "⚙️",
+      "color": "#2196F3",
+      "x": 120,
+      "y": 300.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 9,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_014",
+      "name": "Divisibility Rules",
+      "domain": "factors",
+      "domainIsland": "Factor Forest",
+      "icon": "🔍",
+      "color": "#9C27B0",
+      "x": 240,
+      "y": 200.0,
+      "size": 20,
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_015",
+      "name": "Factors & Multiples",
+      "domain": "factors",
+      "domainIsland": "Factor Forest",
+      "icon": "🔍",
+      "color": "#9C27B0",
+      "x": 240,
+      "y": 250.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_016",
+      "name": "Prime & Composite Numbers",
+      "domain": "factors",
+      "domainIsland": "Factor Forest",
+      "icon": "🔍",
+      "color": "#9C27B0",
+      "x": 240,
+      "y": 300.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_017",
+      "name": "HCF (Highest Common Factor)",
+      "domain": "factors",
+      "domainIsland": "Factor Forest",
+      "icon": "🔍",
+      "color": "#9C27B0",
+      "x": 240,
+      "y": 400.0,
+      "size": 20,
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_018",
+      "name": "LCM (Least Common Multiple)",
+      "domain": "factors",
+      "domainIsland": "Factor Forest",
+      "icon": "🔍",
+      "color": "#9C27B0",
+      "x": 240,
+      "y": 400.0,
+      "size": 20,
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_019",
+      "name": "Understanding Fractions",
+      "domain": "fractions",
+      "domainIsland": "Fraction Land",
+      "icon": "🍕",
+      "color": "#FF9800",
+      "x": 360,
+      "y": 100.0,
+      "size": 20,
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_020",
+      "name": "Equivalent Fractions",
+      "domain": "fractions",
+      "domainIsland": "Fraction Land",
+      "icon": "🍕",
+      "color": "#FF9800",
+      "x": 360,
+      "y": 200.0,
+      "size": 20,
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 2,
+      "questionCount": 6,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_021",
+      "name": "Comparing Fractions",
+      "domain": "fractions",
+      "domainIsland": "Fraction Land",
+      "icon": "⚖️",
+      "color": "#FF9800",
+      "x": 360,
+      "y": 200.0,
+      "size": 25,
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 2,
+      "questionCount": 251,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_022",
+      "name": "Adding & Subtracting Fractions",
+      "domain": "fractions",
+      "domainIsland": "Fraction Land",
+      "icon": "🍕",
+      "color": "#FF9800",
+      "x": 360,
+      "y": 300.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 174,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_023",
+      "name": "Multiplying & Dividing Fractions",
+      "domain": "fractions",
+      "domainIsland": "Fraction Land",
+      "icon": "🍕",
+      "color": "#FF9800",
+      "x": 360,
+      "y": 400.0,
+      "size": 20,
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_024",
+      "name": "Fraction of a Number",
+      "domain": "fractions",
+      "domainIsland": "Fraction Land",
+      "icon": "🍕",
+      "color": "#FF9800",
+      "x": 360,
+      "y": 250.0,
+      "size": 20,
+      "gradeRange": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_025",
+      "name": "Decimals",
+      "domain": "fractions",
+      "domainIsland": "Fraction Land",
+      "icon": "🔢",
+      "color": "#FF9800",
+      "x": 360,
+      "y": 300.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_026",
+      "name": "Percentage Basics",
+      "domain": "percentage",
+      "domainIsland": "Business Bay",
+      "icon": "💰",
+      "color": "#E91E63",
+      "x": 480,
+      "y": 350.0,
+      "size": 20,
+      "gradeRange": [
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_027",
+      "name": "Finding Percentage of a Number",
+      "domain": "percentage",
+      "domainIsland": "Business Bay",
+      "icon": "💰",
+      "color": "#E91E63",
+      "x": 480,
+      "y": 400.0,
+      "size": 20,
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_028",
+      "name": "Percentage Increase & Decrease",
+      "domain": "percentage",
+      "domainIsland": "Business Bay",
+      "icon": "📈",
+      "color": "#E91E63",
+      "x": 480,
+      "y": 450.0,
+      "size": 20,
+      "gradeRange": [
+        6,
+        7
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_029",
+      "name": "Profit & Loss",
+      "domain": "percentage",
+      "domainIsland": "Business Bay",
+      "icon": "💰",
+      "color": "#E91E63",
+      "x": 480,
+      "y": 500.0,
+      "size": 20,
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "questionCount": 16,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_030",
+      "name": "Simple Interest",
+      "domain": "percentage",
+      "domainIsland": "Business Bay",
+      "icon": "🏦",
+      "color": "#E91E63",
+      "x": 480,
+      "y": 550.0,
+      "size": 20,
+      "gradeRange": [
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "questionCount": 98,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_031",
+      "name": "Compound Interest",
+      "domain": "percentage",
+      "domainIsland": "Business Bay",
+      "icon": "🏦",
+      "color": "#E91E63",
+      "x": 480,
+      "y": 650.0,
+      "size": 20,
+      "gradeRange": [
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "questionCount": 64,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_032",
+      "name": "Ratio Basics",
+      "domain": "ratio",
+      "domainIsland": "Balance Bridge",
+      "icon": "⚖️",
+      "color": "#00BCD4",
+      "x": 600,
+      "y": 300.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_033",
+      "name": "Dividing in a Ratio",
+      "domain": "ratio",
+      "domainIsland": "Balance Bridge",
+      "icon": "⚖️",
+      "color": "#00BCD4",
+      "x": 600,
+      "y": 400.0,
+      "size": 20,
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_034",
+      "name": "Proportion",
+      "domain": "ratio",
+      "domainIsland": "Balance Bridge",
+      "icon": "⚖️",
+      "color": "#00BCD4",
+      "x": 600,
+      "y": 400.0,
+      "size": 20,
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_035",
+      "name": "Direct & Inverse Variation",
+      "domain": "ratio",
+      "domainIsland": "Balance Bridge",
+      "icon": "🔄",
+      "color": "#00BCD4",
+      "x": 600,
+      "y": 500.0,
+      "size": 20,
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_036",
+      "name": "Unitary Method",
+      "domain": "ratio",
+      "domainIsland": "Balance Bridge",
+      "icon": "1️⃣",
+      "color": "#00BCD4",
+      "x": 600,
+      "y": 250.0,
+      "size": 20,
+      "gradeRange": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_037",
+      "name": "Variables & Expressions",
+      "domain": "algebra",
+      "domainIsland": "Algebra Mountain",
+      "icon": "🔤",
+      "color": "#673AB7",
+      "x": 720,
+      "y": 300.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_038",
+      "name": "Like Terms & Simplification",
+      "domain": "algebra",
+      "domainIsland": "Algebra Mountain",
+      "icon": "🔤",
+      "color": "#673AB7",
+      "x": 720,
+      "y": 400.0,
+      "size": 20,
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_039",
+      "name": "One-Step Equations",
+      "domain": "algebra",
+      "domainIsland": "Algebra Mountain",
+      "icon": "🔤",
+      "color": "#673AB7",
+      "x": 720,
+      "y": 200.0,
+      "size": 20,
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_040",
+      "name": "Two-Step Equations",
+      "domain": "algebra",
+      "domainIsland": "Algebra Mountain",
+      "icon": "🔤",
+      "color": "#673AB7",
+      "x": 720,
+      "y": 300.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 18,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_041",
+      "name": "Equations — Variables Both Sides",
+      "domain": "algebra",
+      "domainIsland": "Algebra Mountain",
+      "icon": "🔤",
+      "color": "#673AB7",
+      "x": 720,
+      "y": 400.0,
+      "size": 20,
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 3,
+      "questionCount": 9,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_042",
+      "name": "Equations with Brackets",
+      "domain": "algebra",
+      "domainIsland": "Algebra Mountain",
+      "icon": "🔤",
+      "color": "#673AB7",
+      "x": 720,
+      "y": 500.0,
+      "size": 20,
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_043",
+      "name": "Fraction Equations",
+      "domain": "algebra",
+      "domainIsland": "Algebra Mountain",
+      "icon": "🔤",
+      "color": "#673AB7",
+      "x": 720,
+      "y": 600.0,
+      "size": 20,
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 3,
+      "questionCount": 30,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_044",
+      "name": "Polynomials",
+      "domain": "algebra",
+      "domainIsland": "Algebra Mountain",
+      "icon": "🔤",
+      "color": "#673AB7",
+      "x": 720,
+      "y": 600.0,
+      "size": 20,
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_045",
+      "name": "Algebraic Identities",
+      "domain": "algebra",
+      "domainIsland": "Algebra Mountain",
+      "icon": "🔤",
+      "color": "#673AB7",
+      "x": 720,
+      "y": 600.0,
+      "size": 20,
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "questionCount": 26,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_046",
+      "name": "Quadratic Equations",
+      "domain": "algebra",
+      "domainIsland": "Algebra Mountain",
+      "icon": "🔤",
+      "color": "#673AB7",
+      "x": 720,
+      "y": 650.0,
+      "size": 20,
+      "gradeRange": [
+        8,
+        9
+      ],
+      "difficulty": 5,
+      "questionCount": 82,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_047",
+      "name": "2D Shapes",
+      "domain": "geometry",
+      "domainIsland": "Shape City",
+      "icon": "📐",
+      "color": "#F44336",
+      "x": 840,
+      "y": 100.0,
+      "size": 20,
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_048",
+      "name": "3D Shapes",
+      "domain": "geometry",
+      "domainIsland": "Shape City",
+      "icon": "📦",
+      "color": "#F44336",
+      "x": 840,
+      "y": 100.0,
+      "size": 20,
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_049",
+      "name": "Types of Angles",
+      "domain": "geometry",
+      "domainIsland": "Shape City",
+      "icon": "📐",
+      "color": "#F44336",
+      "x": 840,
+      "y": 200.0,
+      "size": 20,
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 1,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_050",
+      "name": "Complementary & Supplementary",
+      "domain": "geometry",
+      "domainIsland": "Shape City",
+      "icon": "📐",
+      "color": "#F44336",
+      "x": 840,
+      "y": 300.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_051",
+      "name": "Triangle Properties",
+      "domain": "geometry",
+      "domainIsland": "Shape City",
+      "icon": "📐",
+      "color": "#F44336",
+      "x": 840,
+      "y": 350.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_052",
+      "name": "Parallel Lines & Transversal",
+      "domain": "geometry",
+      "domainIsland": "Shape City",
+      "icon": "📐",
+      "color": "#F44336",
+      "x": 840,
+      "y": 500.0,
+      "size": 20,
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "questionCount": 61,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_053",
+      "name": "Polygon Angles",
+      "domain": "geometry",
+      "domainIsland": "Shape City",
+      "icon": "📐",
+      "color": "#F44336",
+      "x": 840,
+      "y": 500.0,
+      "size": 20,
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "questionCount": 25,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_054",
+      "name": "Congruence & Similarity",
+      "domain": "geometry",
+      "domainIsland": "Shape City",
+      "icon": "📐",
+      "color": "#F44336",
+      "x": 840,
+      "y": 650.0,
+      "size": 20,
+      "gradeRange": [
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_055",
+      "name": "Pythagoras Theorem",
+      "domain": "geometry",
+      "domainIsland": "Shape City",
+      "icon": "📐",
+      "color": "#F44336",
+      "x": 840,
+      "y": 600.0,
+      "size": 20,
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_056",
+      "name": "Circle — Basics",
+      "domain": "geometry",
+      "domainIsland": "Shape City",
+      "icon": "⭕",
+      "color": "#F44336",
+      "x": 840,
+      "y": 400.0,
+      "size": 20,
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_057",
+      "name": "Circle — Advanced",
+      "domain": "geometry",
+      "domainIsland": "Shape City",
+      "icon": "⭕",
+      "color": "#F44336",
+      "x": 840,
+      "y": 650.0,
+      "size": 20,
+      "gradeRange": [
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_058",
+      "name": "Symmetry",
+      "domain": "geometry",
+      "domainIsland": "Shape City",
+      "icon": "🪞",
+      "color": "#F44336",
+      "x": 840,
+      "y": 150.0,
+      "size": 20,
+      "gradeRange": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "difficulty": 1,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_059",
+      "name": "Perimeter",
+      "domain": "mensuration",
+      "domainIsland": "Measure Meadow",
+      "icon": "📏",
+      "color": "#795548",
+      "x": 960,
+      "y": 200.0,
+      "size": 20,
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 1,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_060",
+      "name": "Area — Basic Shapes",
+      "domain": "mensuration",
+      "domainIsland": "Measure Meadow",
+      "icon": "📏",
+      "color": "#795548",
+      "x": 960,
+      "y": 300.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_061",
+      "name": "Area — Advanced Shapes",
+      "domain": "mensuration",
+      "domainIsland": "Measure Meadow",
+      "icon": "📏",
+      "color": "#795548",
+      "x": 960,
+      "y": 500.0,
+      "size": 20,
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_062",
+      "name": "Surface Area",
+      "domain": "mensuration",
+      "domainIsland": "Measure Meadow",
+      "icon": "📏",
+      "color": "#795548",
+      "x": 960,
+      "y": 600.0,
+      "size": 20,
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_063",
+      "name": "Volume",
+      "domain": "mensuration",
+      "domainIsland": "Measure Meadow",
+      "icon": "📏",
+      "color": "#795548",
+      "x": 960,
+      "y": 600.0,
+      "size": 20,
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_064",
+      "name": "Speed-Distance-Time Basics",
+      "domain": "speed",
+      "domainIsland": "Velocity Valley",
+      "icon": "🚂",
+      "color": "#607D8B",
+      "x": 1080,
+      "y": 300.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 164,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_065",
+      "name": "Speed Unit Conversion",
+      "domain": "speed",
+      "domainIsland": "Velocity Valley",
+      "icon": "🔄",
+      "color": "#607D8B",
+      "x": 1080,
+      "y": 400.0,
+      "size": 20,
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "questionCount": 10,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_066",
+      "name": "Average Speed",
+      "domain": "speed",
+      "domainIsland": "Velocity Valley",
+      "icon": "🚂",
+      "color": "#607D8B",
+      "x": 1080,
+      "y": 500.0,
+      "size": 20,
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_067",
+      "name": "Train Problems",
+      "domain": "speed",
+      "domainIsland": "Velocity Valley",
+      "icon": "🚂",
+      "color": "#607D8B",
+      "x": 1080,
+      "y": 600.0,
+      "size": 20,
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_068",
+      "name": "Work & Time",
+      "domain": "speed",
+      "domainIsland": "Velocity Valley",
+      "icon": "⚙️",
+      "color": "#607D8B",
+      "x": 1080,
+      "y": 600.0,
+      "size": 20,
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "questionCount": 26,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_069",
+      "name": "Average (Mean)",
+      "domain": "statistics",
+      "domainIsland": "Data District",
+      "icon": "📊",
+      "color": "#009688",
+      "x": 1200,
+      "y": 350.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_070",
+      "name": "Median, Mode, Range",
+      "domain": "statistics",
+      "domainIsland": "Data District",
+      "icon": "📊",
+      "color": "#009688",
+      "x": 1200,
+      "y": 500.0,
+      "size": 20,
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_071",
+      "name": "Data Interpretation",
+      "domain": "statistics",
+      "domainIsland": "Data District",
+      "icon": "📊",
+      "color": "#009688",
+      "x": 1200,
+      "y": 350.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "questionCount": 48,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_072",
+      "name": "Squares & Perfect Squares",
+      "domain": "squares",
+      "domainIsland": "Power Peak",
+      "icon": "²",
+      "color": "#FF5722",
+      "x": 1320,
+      "y": 300.0,
+      "size": 20,
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 26,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_073",
+      "name": "Square Roots",
+      "domain": "squares",
+      "domainIsland": "Power Peak",
+      "icon": "√",
+      "color": "#FF5722",
+      "x": 1320,
+      "y": 400.0,
+      "size": 32,
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "questionCount": 326,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_074",
+      "name": "Cubes & Cube Roots",
+      "domain": "squares",
+      "domainIsland": "Power Peak",
+      "icon": "³",
+      "color": "#FF5722",
+      "x": 1320,
+      "y": 550.0,
+      "size": 20,
+      "gradeRange": [
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_075",
+      "name": "Laws of Indices",
+      "domain": "squares",
+      "domainIsland": "Power Peak",
+      "icon": "📈",
+      "color": "#FF5722",
+      "x": 1320,
+      "y": 600.0,
+      "size": 20,
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_076",
+      "name": "Surds",
+      "domain": "squares",
+      "domainIsland": "Power Peak",
+      "icon": "√",
+      "color": "#FF5722",
+      "x": 1320,
+      "y": 650.0,
+      "size": 20,
+      "gradeRange": [
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_077",
+      "name": "Simple Patterns",
+      "domain": "patterns",
+      "domainIsland": "Sequence Springs",
+      "icon": "🔄",
+      "color": "#CDDC39",
+      "x": 1440,
+      "y": 100.0,
+      "size": 20,
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_078",
+      "name": "Arithmetic Progression",
+      "domain": "patterns",
+      "domainIsland": "Sequence Springs",
+      "icon": "🔄",
+      "color": "#CDDC39",
+      "x": 1440,
+      "y": 450.0,
+      "size": 20,
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_079",
+      "name": "Geometric Progression",
+      "domain": "patterns",
+      "domainIsland": "Sequence Springs",
+      "icon": "🔄",
+      "color": "#CDDC39",
+      "x": 1440,
+      "y": 600.0,
+      "size": 20,
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_080",
+      "name": "Special Sequences",
+      "domain": "patterns",
+      "domainIsland": "Sequence Springs",
+      "icon": "🔄",
+      "color": "#CDDC39",
+      "x": 1440,
+      "y": 600.0,
+      "size": 20,
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_081",
+      "name": "Money & Transactions",
+      "domain": "practical",
+      "domainIsland": "Real-World River",
+      "icon": "💵",
+      "color": "#8BC34A",
+      "x": 1560,
+      "y": 150.0,
+      "size": 50,
+      "gradeRange": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "difficulty": 1,
+      "questionCount": 993,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_082",
+      "name": "Measurement & Units",
+      "domain": "practical",
+      "domainIsland": "Real-World River",
+      "icon": "📏",
+      "color": "#8BC34A",
+      "x": 1560,
+      "y": 150.0,
+      "size": 20,
+      "gradeRange": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "difficulty": 1,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_083",
+      "name": "Time & Calendar",
+      "domain": "practical",
+      "domainIsland": "Real-World River",
+      "icon": "🕐",
+      "color": "#8BC34A",
+      "x": 1560,
+      "y": 200.0,
+      "size": 20,
+      "gradeRange": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_084",
+      "name": "Age Problems",
+      "domain": "practical",
+      "domainIsland": "Real-World River",
+      "icon": "🎂",
+      "color": "#8BC34A",
+      "x": 1560,
+      "y": 350.0,
+      "size": 40,
+      "gradeRange": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "difficulty": 2,
+      "questionCount": 405,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_085",
+      "name": "Sets & Venn Diagrams",
+      "domain": "practical",
+      "domainIsland": "Real-World River",
+      "icon": "⭕",
+      "color": "#8BC34A",
+      "x": 1560,
+      "y": 550.0,
+      "size": 20,
+      "gradeRange": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "difficulty": 3,
+      "questionCount": 13,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_086",
+      "name": "Counting & Combinatorics",
+      "domain": "practical",
+      "domainIsland": "Real-World River",
+      "icon": "🔢",
+      "color": "#8BC34A",
+      "x": 1560,
+      "y": 450.0,
+      "size": 20,
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_087",
+      "name": "Logarithms",
+      "domain": "advanced",
+      "domainIsland": "Summit",
+      "icon": "📈",
+      "color": "#9E9E9E",
+      "x": 1680,
+      "y": 700.0,
+      "size": 20,
+      "gradeRange": [
+        9
+      ],
+      "difficulty": 5,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    },
+    {
+      "id": "CN_088",
+      "name": "Trigonometry",
+      "domain": "advanced",
+      "domainIsland": "Summit",
+      "icon": "📐",
+      "color": "#9E9E9E",
+      "x": 1680,
+      "y": 700.0,
+      "size": 20,
+      "gradeRange": [
+        9
+      ],
+      "difficulty": 5,
+      "questionCount": 5,
+      "status": "locked",
+      "glowOnMastery": true
+    }
+  ],
+  "edges": [
+    {
+      "source": "CN_001",
+      "target": "CN_002",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_002",
+      "target": "CN_003",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_002",
+      "target": "CN_004",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_001",
+      "target": "CN_007",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_001",
+      "target": "CN_008",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_001",
+      "target": "CN_009",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_008",
+      "target": "CN_010",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_009",
+      "target": "CN_010",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_011",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_008",
+      "target": "CN_012",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_009",
+      "target": "CN_012",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_012",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_012",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_012",
+      "target": "CN_013",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_014",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_007",
+      "target": "CN_014",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_014",
+      "target": "CN_015",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_015",
+      "target": "CN_016",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_016",
+      "target": "CN_017",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_016",
+      "target": "CN_018",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_017",
+      "target": "CN_018",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_019",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_019",
+      "target": "CN_020",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_020",
+      "target": "CN_021",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_019",
+      "target": "CN_024",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_024",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_021",
+      "target": "CN_022",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_018",
+      "target": "CN_022",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_022",
+      "target": "CN_023",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_019",
+      "target": "CN_025",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_002",
+      "target": "CN_025",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_024",
+      "target": "CN_026",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_025",
+      "target": "CN_026",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_026",
+      "target": "CN_027",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_027",
+      "target": "CN_028",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_028",
+      "target": "CN_029",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_029",
+      "target": "CN_030",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_030",
+      "target": "CN_031",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_075",
+      "target": "CN_031",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_019",
+      "target": "CN_032",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_032",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_032",
+      "target": "CN_033",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_032",
+      "target": "CN_034",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_034",
+      "target": "CN_035",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_036",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_036",
+      "target": "CN_032",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_012",
+      "target": "CN_037",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_037",
+      "target": "CN_038",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_037",
+      "target": "CN_039",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_039",
+      "target": "CN_040",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_040",
+      "target": "CN_041",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_041",
+      "target": "CN_042",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_042",
+      "target": "CN_043",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_023",
+      "target": "CN_043",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_038",
+      "target": "CN_044",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_044",
+      "target": "CN_045",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_045",
+      "target": "CN_046",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_042",
+      "target": "CN_046",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_047",
+      "target": "CN_049",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_047",
+      "target": "CN_058",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_047",
+      "target": "CN_048",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_049",
+      "target": "CN_050",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_050",
+      "target": "CN_051",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_051",
+      "target": "CN_052",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_051",
+      "target": "CN_053",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_052",
+      "target": "CN_054",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_051",
+      "target": "CN_054",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_051",
+      "target": "CN_055",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_072",
+      "target": "CN_055",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_047",
+      "target": "CN_056",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_056",
+      "target": "CN_057",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_055",
+      "target": "CN_057",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_059",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_047",
+      "target": "CN_059",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_059",
+      "target": "CN_060",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_060",
+      "target": "CN_061",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_056",
+      "target": "CN_061",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_061",
+      "target": "CN_062",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_048",
+      "target": "CN_062",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_061",
+      "target": "CN_063",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_048",
+      "target": "CN_063",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_064",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_064",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_064",
+      "target": "CN_065",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_023",
+      "target": "CN_065",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_064",
+      "target": "CN_066",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_066",
+      "target": "CN_067",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_064",
+      "target": "CN_068",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_022",
+      "target": "CN_068",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_008",
+      "target": "CN_069",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_069",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_069",
+      "target": "CN_070",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_003",
+      "target": "CN_071",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_069",
+      "target": "CN_071",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_072",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_072",
+      "target": "CN_073",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_016",
+      "target": "CN_073",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_072",
+      "target": "CN_074",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_075",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_075",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_075",
+      "target": "CN_076",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_073",
+      "target": "CN_076",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_008",
+      "target": "CN_077",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_077",
+      "target": "CN_078",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_079",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_078",
+      "target": "CN_079",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_078",
+      "target": "CN_080",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_072",
+      "target": "CN_080",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_008",
+      "target": "CN_081",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_009",
+      "target": "CN_081",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_082",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_082",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_009",
+      "target": "CN_083",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_083",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_040",
+      "target": "CN_084",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_032",
+      "target": "CN_084",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_006",
+      "target": "CN_085",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_015",
+      "target": "CN_086",
+      "type": "helpful",
+      "style": "dashed"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_086",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_075",
+      "target": "CN_087",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_051",
+      "target": "CN_088",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_055",
+      "target": "CN_088",
+      "type": "must_know",
+      "style": "solid"
+    },
+    {
+      "source": "CN_032",
+      "target": "CN_088",
+      "type": "helpful",
+      "style": "dashed"
+    }
+  ],
+  "domains": {
+    "numbers": {
+      "name": "🔢 Numbers",
+      "island": "Number Island",
+      "description": "Where every math journey begins"
+    },
+    "arithmetic": {
+      "name": "➕ Arithmetic",
+      "island": "Operation Station",
+      "description": "The four operations and BODMAS"
+    },
+    "factors": {
+      "name": "🔍 Factors",
+      "island": "Factor Forest",
+      "description": "Divisibility, primes, HCF & LCM"
+    },
+    "fractions": {
+      "name": "🍕 Fractions",
+      "island": "Fraction Land",
+      "description": "Parts of a whole"
+    },
+    "percentage": {
+      "name": "💰 Percentage",
+      "island": "Business Bay",
+      "description": "Profit, loss, interest"
+    },
+    "ratio": {
+      "name": "⚖️ Ratio",
+      "island": "Balance Bridge",
+      "description": "Comparison and proportion"
+    },
+    "algebra": {
+      "name": "🔤 Algebra",
+      "island": "Algebra Mountain",
+      "description": "The language of math"
+    },
+    "geometry": {
+      "name": "📐 Geometry",
+      "island": "Shape City",
+      "description": "Angles, triangles, circles"
+    },
+    "mensuration": {
+      "name": "📏 Mensuration",
+      "island": "Measure Meadow",
+      "description": "Area, perimeter, volume"
+    },
+    "speed": {
+      "name": "🚂 Speed",
+      "island": "Velocity Valley",
+      "description": "Speed, distance, time"
+    },
+    "statistics": {
+      "name": "📊 Statistics",
+      "island": "Data District",
+      "description": "Averages and data"
+    },
+    "squares": {
+      "name": "² Squares",
+      "island": "Power Peak",
+      "description": "Squares, roots, indices"
+    },
+    "patterns": {
+      "name": "🔄 Patterns",
+      "island": "Sequence Springs",
+      "description": "Patterns and progressions"
+    },
+    "practical": {
+      "name": "💵 Practical",
+      "island": "Real-World River",
+      "description": "Money, time, age, measurement"
+    },
+    "advanced": {
+      "name": "🏆 Advanced",
+      "island": "Summit",
+      "description": "Logs and trigonometry"
+    }
+  }
+}

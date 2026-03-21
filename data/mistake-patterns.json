@@ -1,0 +1,1717 @@
+{
+  "meta": {
+    "title": "MathSpark — Mistake Pattern Bank",
+    "description": "50 named mathematical mistake patterns, mined from 12,452 exam questions. Each pattern explains WHY students get it wrong and HOW to fix it.",
+    "totalPatterns": 50,
+    "categories": {
+      "wrong_formula": 14,
+      "procedural_error": 7,
+      "order_of_operations": 1,
+      "sign_error": 2,
+      "wrong_operation": 5,
+      "wrong_base": 1,
+      "conceptual_error": 12,
+      "missing_step": 3,
+      "notation_error": 1,
+      "reading_error": 2,
+      "missing_knowledge": 1,
+      "unit_error": 1
+    },
+    "generatedAt": "2026-03-14T07:41:27.175761"
+  },
+  "patterns": [
+    {
+      "id": "MP_001",
+      "name": "The Speed Average Trap",
+      "emoji": "🚗",
+      "category": "wrong_formula",
+      "description": "Averaging the speeds instead of using Total Distance ÷ Total Time",
+      "whyItHappens": "It feels natural to average the numbers — but speed, distance, and time don't work that way. Average speed depends on how LONG you spend at each speed, not just the speeds themselves.",
+      "howToFix": "Always use: Average Speed = Total Distance ÷ Total Time. NEVER average the speeds.",
+      "example": {
+        "question": "A car goes 60 km at 30 km/hr, then 60 km at 60 km/hr. Average speed?",
+        "wrongAnswer": "45 km/hr (averaging 30 and 60)",
+        "rightAnswer": "40 km/hr (120 km ÷ 3 hours)",
+        "wrongThinking": "Student thinks: (30 + 60) ÷ 2 = 45",
+        "rightThinking": "Time1 = 60÷30 = 2 hrs, Time2 = 60÷60 = 1 hr. Total = 120 km in 3 hrs = 40 km/hr"
+      },
+      "frequency": "Very High",
+      "affectedTopics": [
+        "Speed, distance and time",
+        "Average speed"
+      ],
+      "affectedGrades": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "keywords": [
+        "average of speeds",
+        "not average of speeds"
+      ],
+      "sparkyMessage": "Oops! You averaged the speeds. That's the #1 trap in speed problems! Remember: Total Distance ÷ Total Time is the only way to find average speed.",
+      "difficulty": 2,
+      "linkedFlashcardId": null
+    },
+    {
+      "id": "MP_002",
+      "name": "The Bracket Forgetter",
+      "emoji": "🔒",
+      "category": "procedural_error",
+      "description": "Forgetting to expand brackets or apply the operation to ALL terms inside",
+      "whyItHappens": "Kids multiply only the first term inside the bracket and forget the rest. Or they drop brackets during subtraction.",
+      "howToFix": "Draw an arrow from the outside number to EVERY term inside. When subtracting expressions, change ALL signs.",
+      "example": {
+        "question": "Expand: 3(2x + 5)",
+        "wrongAnswer": "6x + 5 (only multiplied the first term)",
+        "rightAnswer": "6x + 15",
+        "wrongThinking": "3 × 2x = 6x, then just writes +5",
+        "rightThinking": "3 × 2x = 6x AND 3 × 5 = 15 → 6x + 15"
+      },
+      "frequency": "Very High",
+      "affectedTopics": [
+        "Algebraic expressions",
+        "Equations",
+        "BODMAS"
+      ],
+      "affectedGrades": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "keywords": [
+        "forgot bracket",
+        "expand",
+        "distribute"
+      ],
+      "sparkyMessage": "Watch out! When you multiply a bracket, you need to multiply EVERY term inside it, not just the first one.",
+      "difficulty": 1
+    },
+    {
+      "id": "MP_003",
+      "name": "BODMAS Blindspot",
+      "emoji": "📋",
+      "category": "order_of_operations",
+      "description": "Doing addition/subtraction before multiplication/division",
+      "whyItHappens": "The brain wants to read left-to-right. But multiplication and division come BEFORE addition and subtraction in BODMAS.",
+      "howToFix": "Underline all × and ÷ first. Solve those. THEN do + and −.",
+      "example": {
+        "question": "Simplify: 5 + 3 × 4",
+        "wrongAnswer": "32 (did 5+3 first, then ×4)",
+        "rightAnswer": "17 (did 3×4 first, then +5)",
+        "wrongThinking": "5 + 3 = 8, then 8 × 4 = 32",
+        "rightThinking": "3 × 4 = 12, then 5 + 12 = 17"
+      },
+      "frequency": "Very High",
+      "affectedTopics": [
+        "BODMAS",
+        "Arithmetic"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "keywords": [
+        "left to right",
+        "bodmas",
+        "order"
+      ],
+      "sparkyMessage": "Did you go left-to-right? Remember BODMAS! Multiplication comes before addition. Always check for × and ÷ first!",
+      "difficulty": 1
+    },
+    {
+      "id": "MP_004",
+      "name": "The Coefficient Skipper",
+      "emoji": "⏭️",
+      "category": "procedural_error",
+      "description": "Solving the constant but forgetting to divide by the coefficient of x",
+      "whyItHappens": "After moving the constant to the other side, the student thinks they're done — forgetting the last step.",
+      "howToFix": "Always ask: 'Is x completely alone?' If there's still a number multiplying x, divide both sides by it.",
+      "example": {
+        "question": "Solve: 3x + 5 = 20",
+        "wrongAnswer": "x = 15 (subtracted 5 but didn't divide by 3)",
+        "rightAnswer": "x = 5 (subtracted 5, then divided by 3)",
+        "wrongThinking": "20 − 5 = 15, done!",
+        "rightThinking": "20 − 5 = 15, then 15 ÷ 3 = 5"
+      },
+      "frequency": "Very High",
+      "affectedTopics": [
+        "Linear equations",
+        "Equations"
+      ],
+      "affectedGrades": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "keywords": [
+        "forgot to divide",
+        "coefficient"
+      ],
+      "sparkyMessage": "Almost there! You moved the 5 correctly, but forgot to divide by 3. The x isn't alone yet — divide both sides by the coefficient!",
+      "difficulty": 1
+    },
+    {
+      "id": "MP_005",
+      "name": "The Sign Flipper Fail",
+      "emoji": "🔄",
+      "category": "sign_error",
+      "description": "Not changing the sign when moving a term to the other side of an equation",
+      "whyItHappens": "When transposing, + should become − and vice versa. But under exam pressure, students forget.",
+      "howToFix": "Visualise crossing a mirror: everything flips. + becomes −, − becomes +, × becomes ÷, ÷ becomes ×.",
+      "example": {
+        "question": "Solve: x − 7 = 12",
+        "wrongAnswer": "x = 5 (subtracted 7 instead of adding)",
+        "rightAnswer": "x = 19 (added 7 to both sides)",
+        "wrongThinking": "Move 7: x = 12 − 7 = 5",
+        "rightThinking": "Move −7: it becomes +7, so x = 12 + 7 = 19"
+      },
+      "frequency": "High",
+      "affectedTopics": [
+        "Linear equations",
+        "Equations"
+      ],
+      "affectedGrades": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "keywords": [
+        "sign change",
+        "transpose",
+        "move"
+      ],
+      "sparkyMessage": "Check your sign! When you move a term across the = sign, its sign flips: + becomes −, and − becomes +.",
+      "difficulty": 1
+    },
+    {
+      "id": "MP_006",
+      "name": "Area vs Perimeter Confusion",
+      "emoji": "📐",
+      "category": "wrong_formula",
+      "description": "Using the area formula when perimeter is asked, or vice versa",
+      "whyItHappens": "Both involve length and breadth, so students grab the wrong formula under pressure.",
+      "howToFix": "Area = space INSIDE (multiply, answer in square units). Perimeter = distance AROUND (add sides, answer in linear units). Check the units!",
+      "example": {
+        "question": "Find the perimeter of a rectangle with l=8, b=5",
+        "wrongAnswer": "40 (calculated area: 8×5)",
+        "rightAnswer": "26 (calculated perimeter: 2(8+5))",
+        "wrongThinking": "8 × 5 = 40",
+        "rightThinking": "2 × (8 + 5) = 2 × 13 = 26"
+      },
+      "frequency": "High",
+      "affectedTopics": [
+        "Geometry (area and perimeter)",
+        "Mensuration"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "keywords": [
+        "area perimeter",
+        "wrong formula",
+        "inside around"
+      ],
+      "sparkyMessage": "Careful — the question asks for PERIMETER (distance around), not AREA (space inside). Read the question one more time!",
+      "difficulty": 1
+    },
+    {
+      "id": "MP_007",
+      "name": "The Fraction Denominator Adder",
+      "emoji": "🍕",
+      "category": "wrong_operation",
+      "description": "Adding the denominators when adding fractions",
+      "whyItHappens": "Kids see 2/5 + 3/7 and think: numerators add (2+3=5), denominators add (5+7=12). It feels logical but it's wrong.",
+      "howToFix": "You NEVER add denominators. Find a common denominator first, then only add numerators. The denominator stays the same.",
+      "example": {
+        "question": "2/5 + 3/5 = ?",
+        "wrongAnswer": "5/10 (added both top and bottom)",
+        "rightAnswer": "5/5 = 1 (same denominator, just add numerators)",
+        "wrongThinking": "(2+3)/(5+5) = 5/10",
+        "rightThinking": "(2+3)/5 = 5/5 = 1"
+      },
+      "frequency": "High",
+      "affectedTopics": [
+        "Adding fractions",
+        "Fractions"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "keywords": [
+        "add denominator",
+        "common denominator"
+      ],
+      "sparkyMessage": "Hold on! You added the denominators — but we never do that. When denominators are the same, keep them and only add the top numbers!",
+      "difficulty": 1
+    },
+    {
+      "id": "MP_008",
+      "name": "Percentage on Wrong Base",
+      "emoji": "💰",
+      "category": "wrong_base",
+      "description": "Calculating profit/loss percentage on selling price instead of cost price",
+      "whyItHappens": "Students divide profit by SP instead of CP. The formula says 'on cost price' but they forget.",
+      "howToFix": "Profit% and Loss% are ALWAYS calculated on COST PRICE. Write 'CP' next to the denominator as a reminder.",
+      "example": {
+        "question": "CP=80, SP=100. Profit%?",
+        "wrongAnswer": "20% (20/100 × 100 — divided by SP)",
+        "rightAnswer": "25% (20/80 × 100 — divided by CP)",
+        "wrongThinking": "Profit = 20, % = 20/100 = 20%",
+        "rightThinking": "Profit = 20, % = 20/80 = 25%"
+      },
+      "frequency": "High",
+      "affectedTopics": [
+        "Profit and loss",
+        "Percentage"
+      ],
+      "affectedGrades": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "keywords": [
+        "percentage on cp",
+        "wrong base",
+        "selling price"
+      ],
+      "sparkyMessage": "Almost! But profit % is always calculated on the COST PRICE, not the selling price. Divide by CP, not SP!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_009",
+      "name": "The Negative Number Negator",
+      "emoji": "➖",
+      "category": "sign_error",
+      "description": "Errors with negative × negative, or subtracting a negative number",
+      "whyItHappens": "Two negatives making a positive feels counterintuitive. And −(−5) = +5 trips up many kids.",
+      "howToFix": "Negative × Negative = Positive (two wrongs make a right!). Subtracting a negative = adding: 7 − (−3) = 7 + 3 = 10.",
+      "example": {
+        "question": "(−4) × (−3) = ?",
+        "wrongAnswer": "−12 (thought neg × neg = neg)",
+        "rightAnswer": "+12",
+        "wrongThinking": "Negative times anything = negative, so −12",
+        "rightThinking": "Negative × negative = positive, so +12"
+      },
+      "frequency": "High",
+      "affectedTopics": [
+        "Integers",
+        "Integer expressions"
+      ],
+      "affectedGrades": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "keywords": [
+        "negative negative",
+        "sign rules",
+        "integer"
+      ],
+      "sparkyMessage": "Remember: negative × negative = POSITIVE! Think of it as 'two wrongs make a right' in multiplication.",
+      "difficulty": 1
+    },
+    {
+      "id": "MP_010",
+      "name": "The 'x Means 1x' Blind Spot",
+      "emoji": "👁️",
+      "category": "procedural_error",
+      "description": "Treating 'x' as having no coefficient when combining like terms",
+      "whyItHappens": "Students see x + 2x and don't realize x = 1x, so they don't combine or combine incorrectly.",
+      "howToFix": "Whenever you see x by itself, write a tiny 1 in front: 1x. Now x + 2x = 1x + 2x = 3x.",
+      "example": {
+        "question": "Simplify: x + 2x + 3",
+        "wrongAnswer": "2x + 3 (forgot to count the first x)",
+        "rightAnswer": "3x + 3",
+        "wrongThinking": "Only sees 2x, ignores the lone x",
+        "rightThinking": "1x + 2x = 3x, so 3x + 3"
+      },
+      "frequency": "High",
+      "affectedTopics": [
+        "Algebraic expressions",
+        "Linear equations"
+      ],
+      "affectedGrades": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "keywords": [
+        "x means 1x",
+        "coefficient",
+        "like terms"
+      ],
+      "sparkyMessage": "Don't forget — 'x' by itself means '1x'! So x + 2x = 1x + 2x = 3x.",
+      "difficulty": 1
+    },
+    {
+      "id": "MP_011",
+      "name": "Comparing Fractions — Bigger Denominator Trap",
+      "emoji": "⚖️",
+      "category": "conceptual_error",
+      "description": "Thinking a bigger denominator means a bigger fraction",
+      "whyItHappens": "In whole numbers, bigger IS bigger. But in fractions, a bigger denominator means SMALLER pieces.",
+      "howToFix": "Same numerator: smaller denominator = bigger fraction (fewer cuts = bigger pieces). Always cross-multiply or find common denominators to compare.",
+      "example": {
+        "question": "Which is bigger: 2/3 or 2/7?",
+        "wrongAnswer": "2/7 (7 is bigger than 3)",
+        "rightAnswer": "2/3 (thirds are bigger pieces than sevenths)",
+        "wrongThinking": "7 > 3, so 2/7 > 2/3",
+        "rightThinking": "Same numerator: smaller denominator = bigger fraction"
+      },
+      "frequency": "High",
+      "affectedTopics": [
+        "Comparing fractions",
+        "Fractions"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "keywords": [
+        "bigger denominator",
+        "comparing",
+        "smaller pieces"
+      ],
+      "sparkyMessage": "Tricky! With the same numerator, the SMALLER denominator actually gives the BIGGER fraction. Think of it as pizza: 3 slices are bigger than 7 slices of the same pizza!",
+      "difficulty": 1
+    },
+    {
+      "id": "MP_012",
+      "name": "The Complementary/Supplementary Swap",
+      "emoji": "📐",
+      "category": "wrong_formula",
+      "description": "Using 180° when the question asks for complementary (90°), or vice versa",
+      "whyItHappens": "Both are about angle pairs. Under pressure, students grab 90 when they need 180 or vice versa.",
+      "howToFix": "C for Complementary, C for Corner (90° = right angle corner). S for Supplementary, S for Straight (180° = straight line).",
+      "example": {
+        "question": "Find the complement of 35°",
+        "wrongAnswer": "145° (subtracted from 180)",
+        "rightAnswer": "55° (subtracted from 90)",
+        "wrongThinking": "180 − 35 = 145",
+        "rightThinking": "Complement means 90 − 35 = 55"
+      },
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Angles",
+        "Geometry"
+      ],
+      "affectedGrades": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "keywords": [
+        "complement supplement",
+        "90 180",
+        "swap"
+      ],
+      "sparkyMessage": "C for Complementary = C for Corner (90°). S for Supplementary = S for Straight line (180°). Which one did the question ask?",
+      "difficulty": 1
+    },
+    {
+      "id": "MP_013",
+      "name": "Train Length Amnesia",
+      "emoji": "🚂",
+      "category": "missing_step",
+      "description": "Forgetting to add the train's own length when crossing a bridge or platform",
+      "whyItHappens": "Students calculate distance = bridge length only, forgetting the train must clear its entire body past the bridge.",
+      "howToFix": "Train + pole: distance = train length only. Train + bridge/platform: distance = train + bridge.",
+      "example": {
+        "question": "Train 200m long crosses a 300m bridge. Distance covered?",
+        "wrongAnswer": "300m (only the bridge)",
+        "rightAnswer": "500m (200 + 300)",
+        "wrongThinking": "The bridge is 300m, so distance = 300m",
+        "rightThinking": "Train must clear itself: 200 + 300 = 500m"
+      },
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Speed, distance and time"
+      ],
+      "affectedGrades": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "keywords": [
+        "train length",
+        "bridge",
+        "platform",
+        "add length"
+      ],
+      "sparkyMessage": "Don't forget the train's own length! When crossing a bridge, total distance = train length + bridge length.",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_014",
+      "name": "The Age Difference Drifter",
+      "emoji": "🎂",
+      "category": "conceptual_error",
+      "description": "Thinking the age difference changes over time",
+      "whyItHappens": "If someone is 10 years older, kids sometimes think they become 'more older' or 'less older' as years pass.",
+      "howToFix": "The age difference is PERMANENT. If I'm 5 years older now, I was 5 years older 10 years ago and I'll be 5 years older in 50 years. It NEVER changes.",
+      "example": {
+        "question": "Mother is 35, daughter is 10. Difference 5 years ago?",
+        "wrongAnswer": "20 (subtracted 5 from difference too)",
+        "rightAnswer": "25 (difference never changes!)",
+        "wrongThinking": "Mother was 30, daughter was 5, diff = 30−5=25... wait, some think it changes",
+        "rightThinking": "Age difference = 25 now = 25 forever"
+      },
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Age problems"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "keywords": [
+        "age difference",
+        "never changes",
+        "permanent"
+      ],
+      "sparkyMessage": "The age gap between two people NEVER changes — not in the past, not in the future, not ever! It's a constant.",
+      "difficulty": 1
+    },
+    {
+      "id": "MP_015",
+      "name": "HCF-LCM Mixup",
+      "emoji": "🔍",
+      "category": "wrong_formula",
+      "description": "Using HCF when LCM is asked, or vice versa",
+      "whyItHappens": "Both use prime factorisation and appear together in the syllabus. Students confuse which one to use.",
+      "howToFix": "HCF = Highest Common Factor (largest that divides both — always ≤ smaller number). LCM = Least Common Multiple (smallest that both divide into — always ≥ larger number).",
+      "example": {
+        "question": "Find the LCM of 12 and 18",
+        "wrongAnswer": "6 (found HCF instead)",
+        "rightAnswer": "36 (found LCM)",
+        "wrongThinking": "Common factors: 1,2,3,6 → highest = 6",
+        "rightThinking": "12=2²×3, 18=2×3². LCM=2²×3²=36"
+      },
+      "frequency": "Medium",
+      "affectedTopics": [
+        "HCF",
+        "LCM"
+      ],
+      "affectedGrades": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "keywords": [
+        "hcf lcm",
+        "mixup",
+        "highest least"
+      ],
+      "sparkyMessage": "Check: did the question ask for HCF or LCM? HCF is always small (≤ smaller number). LCM is always big (≥ larger number).",
+      "difficulty": 1
+    },
+    {
+      "id": "MP_016",
+      "name": "The Percentage Reversal",
+      "emoji": "🔁",
+      "category": "wrong_formula",
+      "description": "When told 20% of X is 40, dividing 40 by 100 and multiplying by 20 instead of the reverse",
+      "whyItHappens": "The 'find X% of Y' direction is easy. The reverse — 'X% of what gives Y' — requires flipping the operation.",
+      "howToFix": "If X% of N = Y, then N = Y × 100 / X. Multiply by 100, divide by the percentage.",
+      "example": {
+        "question": "20% of a number is 40. Find the number.",
+        "wrongAnswer": "8 (40×20/100 = 8)",
+        "rightAnswer": "200 (40×100/20 = 200)",
+        "wrongThinking": "40 × 20 ÷ 100 = 8",
+        "rightThinking": "40 × 100 ÷ 20 = 200. Check: 20% of 200 = 40 ✓"
+      },
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Percentage"
+      ],
+      "affectedGrades": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "keywords": [
+        "reverse percentage",
+        "find the number",
+        "find whole"
+      ],
+      "sparkyMessage": "When you need to find the original number, multiply by 100 and divide by the percentage — it's the REVERSE of finding a percentage!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_017",
+      "name": "The Triangle Inequality Ignorer",
+      "emoji": "📏",
+      "category": "conceptual_error",
+      "description": "Assuming any 3 numbers can form a triangle",
+      "whyItHappens": "Not checking if the sum of two smaller sides > the largest side.",
+      "howToFix": "Always check: add the two smaller numbers. If their sum > the largest number, it works. If not, no triangle possible.",
+      "example": {
+        "question": "Can 2, 3, 8 form a triangle?",
+        "wrongAnswer": "Yes",
+        "rightAnswer": "No (2+3=5 < 8, fails triangle inequality)",
+        "wrongThinking": "Three numbers, three sides, should work",
+        "rightThinking": "2 + 3 = 5, which is less than 8. So no triangle."
+      },
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Triangle",
+        "Geometry"
+      ],
+      "affectedGrades": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "keywords": [
+        "triangle inequality",
+        "sum of two sides"
+      ],
+      "sparkyMessage": "Quick check: add the two smallest sides. Is the sum bigger than the longest side? If not, these can't form a triangle!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_018",
+      "name": "Squaring vs Doubling Confusion",
+      "emoji": "²",
+      "category": "conceptual_error",
+      "description": "Thinking 'squared' means multiplied by 2 instead of multiplied by itself",
+      "whyItHappens": "The word 'square' and the number 2 are closely associated. Young students confuse n² with 2n.",
+      "howToFix": "Squared = multiplied by ITSELF. 5² = 5×5 = 25, NOT 5×2 = 10. The tiny 2 means 'times itself', not 'times two'.",
+      "example": {
+        "question": "What is 7²?",
+        "wrongAnswer": "14 (7×2)",
+        "rightAnswer": "49 (7×7)",
+        "wrongThinking": "Squared means times 2, so 7 × 2 = 14",
+        "rightThinking": "Squared means times itself, so 7 × 7 = 49"
+      },
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Squares and square roots"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "keywords": [
+        "squared",
+        "times itself",
+        "not times 2"
+      ],
+      "sparkyMessage": "Remember: squared means times ITSELF, not times 2! 7² = 7 × 7 = 49, NOT 7 × 2 = 14.",
+      "difficulty": 1
+    },
+    {
+      "id": "MP_019",
+      "name": "The (−3)² vs −3² Trap",
+      "emoji": "🪤",
+      "category": "notation_error",
+      "description": "Not distinguishing between (−3)² and −3²",
+      "whyItHappens": "They look almost the same, but brackets change everything. (−3)² squares the whole −3, while −3² squares only 3 then negates.",
+      "howToFix": "(−3)² = (−3)(−3) = +9. But −3² = −(3²) = −9. Brackets matter!",
+      "example": {
+        "question": "Find −5²",
+        "wrongAnswer": "25 (squared the negative too)",
+        "rightAnswer": "−25 (only 5 is squared, then negated)",
+        "wrongThinking": "(−5)² = 25",
+        "rightThinking": "−5² = −(5²) = −25"
+      },
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Squares and square roots",
+        "Integers",
+        "Exponents"
+      ],
+      "affectedGrades": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "keywords": [
+        "brackets",
+        "negative squared",
+        "notation"
+      ],
+      "sparkyMessage": "Watch the brackets! (−5)² = 25 but −5² = −25. The brackets tell you WHAT gets squared!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_020",
+      "name": "The Remainder Forgetful",
+      "emoji": "🎯",
+      "category": "missing_step",
+      "description": "Not considering the remainder when counting multiples in a range",
+      "whyItHappens": "Students divide to find the count but forget the +1 (or get the first/last multiple wrong).",
+      "howToFix": "Find the first multiple ≥ start, last multiple ≤ end. Count = (last − first) ÷ N + 1.",
+      "example": {
+        "question": "How many multiples of 7 from 1 to 100?",
+        "wrongAnswer": "15 (did 100÷7 ≈ 14.3, rounded up)",
+        "rightAnswer": "14 (first=7, last=98, (98−7)÷7+1=14)",
+        "wrongThinking": "100 ÷ 7 = 14.28, so 15 multiples",
+        "rightThinking": "Last multiple = 98. Count = (98−7)/7 + 1 = 13 + 1 = 14"
+      },
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Counting and number formation",
+        "Divisibility"
+      ],
+      "affectedGrades": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "keywords": [
+        "counting multiples",
+        "remainder",
+        "plus one"
+      ],
+      "sparkyMessage": "When counting multiples in a range, find the first and last multiples first. Then use: (last − first) ÷ N + 1.",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_021",
+      "name": "The Unitary Method Misstep",
+      "emoji": "📦",
+      "category": "wrong_operation",
+      "description": "Multiplying when you should divide (or vice versa) in unitary method problems",
+      "whyItHappens": "See description.",
+      "howToFix": "If 5 items cost Rs.60, to find the cost of 1: DIVIDE (60÷5=12). To find cost of 8: then MULTIPLY (12×8=96).",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Ratio and proportion",
+        "Money and transactions"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "keywords": [],
+      "sparkyMessage": "Check your work — this is the 'The Unitary Method Misstep' mistake!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_022",
+      "name": "The LCM-Product Assumption",
+      "emoji": "✖️",
+      "category": "wrong_formula",
+      "description": "Assuming LCM of two numbers = their product (forgetting to divide by HCF)",
+      "whyItHappens": "See description.",
+      "howToFix": "LCM(a,b) = a×b only when HCF=1. Otherwise: LCM = a×b÷HCF. LCM(12,18) = 216÷6 = 36, NOT 216.",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "LCM",
+        "HCF"
+      ],
+      "affectedGrades": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "keywords": [],
+      "sparkyMessage": "Check your work — this is the 'The LCM-Product Assumption' mistake!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_023",
+      "name": "The Calendar Leap Year Fumble",
+      "emoji": "📅",
+      "category": "conceptual_error",
+      "description": "Getting leap year rules wrong (especially for century years)",
+      "whyItHappens": "See description.",
+      "howToFix": "Divisible by 4 = leap (usually). BUT divisible by 100 = NOT leap. UNLESS divisible by 400 = leap again. 1900: not leap. 2000: leap!",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Calendar"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "keywords": [],
+      "sparkyMessage": "Check your work — this is the 'The Calendar Leap Year Fumble' mistake!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_024",
+      "name": "The Ratio Order Reversal",
+      "emoji": "↔️",
+      "category": "reading_error",
+      "description": "Writing the ratio in the wrong order (boys:girls vs girls:boys)",
+      "whyItHappens": "See description.",
+      "howToFix": "Ratio of A to B = A:B. ORDER MATTERS. If there are 3 boys and 5 girls: boys:girls = 3:5, NOT 5:3.",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Ratio and proportion"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "keywords": [],
+      "sparkyMessage": "Check your work — this is the 'The Ratio Order Reversal' mistake!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_025",
+      "name": "The Equal-Profit-Loss Myth",
+      "emoji": "💸",
+      "category": "conceptual_error",
+      "description": "Thinking equal profit% and loss% on same SP means break-even",
+      "whyItHappens": "See description.",
+      "howToFix": "Equal profit% and loss% on SAME SP always gives NET LOSS. Loss% = x²/100. It's a famous trap!",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Profit and loss"
+      ],
+      "affectedGrades": [
+        7,
+        8,
+        9
+      ],
+      "keywords": [],
+      "sparkyMessage": "Check your work — this is the 'The Equal-Profit-Loss Myth' mistake!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_026",
+      "name": "The Average vs Total Swap",
+      "emoji": "📊",
+      "category": "wrong_formula",
+      "description": "Giving the total when average is asked, or vice versa",
+      "whyItHappens": "See description.",
+      "howToFix": "Average = Total ÷ Count. Total = Average × Count. Read the question: does it ask for the average OR the total?",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Average",
+        "Statistics"
+      ],
+      "affectedGrades": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "keywords": [],
+      "sparkyMessage": "Check your work — this is the 'The Average vs Total Swap' mistake!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_027",
+      "name": "The Dice Opposite Face Forget",
+      "emoji": "🎲",
+      "category": "missing_knowledge",
+      "description": "Not knowing that opposite faces of a die always add to 7",
+      "whyItHappens": "See description.",
+      "howToFix": "1↔6, 2↔5, 3↔4. Total of one die = 21. If you see 2,3,5: hidden = 5,4,2 (each subtracted from 7).",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Dice",
+        "Puzzle"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "keywords": [],
+      "sparkyMessage": "Check your work — this is the 'The Dice Opposite Face Forget' mistake!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_028",
+      "name": "The 0.5 Hours = 50 Minutes Error",
+      "emoji": "⏰",
+      "category": "unit_error",
+      "description": "Converting 0.5 hours to 50 minutes instead of 30 minutes",
+      "whyItHappens": "See description.",
+      "howToFix": "0.5 hours = 30 minutes (half of 60, not half of 100!). 1.5 hrs = 90 min. 2.25 hrs = 135 min.",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Time",
+        "Measurement"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "keywords": [],
+      "sparkyMessage": "Check your work — this is the 'The 0.5 Hours = 50 Minutes Error' mistake!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_029",
+      "name": "The CI Formula Off-By-One",
+      "emoji": "🏦",
+      "category": "procedural_error",
+      "description": "Using CI = P(1+R/100)^n instead of CI = P(1+R/100)^n − P",
+      "whyItHappens": "See description.",
+      "howToFix": "The formula gives the AMOUNT (A), not the interest (CI). CI = A − P. Don't forget to subtract the principal!",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Compound interest"
+      ],
+      "affectedGrades": [
+        7,
+        8,
+        9
+      ],
+      "keywords": [],
+      "sparkyMessage": "Check your work — this is the 'The CI Formula Off-By-One' mistake!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_030",
+      "name": "The Exterior Angle Overcount",
+      "emoji": "📐",
+      "category": "wrong_formula",
+      "description": "Adding all three angles instead of just the two non-adjacent interior angles for the exterior angle theorem",
+      "whyItHappens": "See description.",
+      "howToFix": "Exterior angle = sum of the TWO non-adjacent interior angles only. NOT all three angles (that would be 180°).",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Angles",
+        "Triangle"
+      ],
+      "affectedGrades": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "keywords": [],
+      "sparkyMessage": "Check your work — this is the 'The Exterior Angle Overcount' mistake!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_031",
+      "name": "The Successive Discount Adder",
+      "emoji": "💳",
+      "category": "wrong_operation",
+      "description": "Adding successive discounts instead of applying one after another",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Adding successive discounts → correct approach: applying one after another",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Percentage"
+      ],
+      "affectedGrades": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Successive Discount Adder'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_032",
+      "name": "The Missing Zero in Place Value",
+      "emoji": "0️⃣",
+      "category": "procedural_error",
+      "description": "Forgetting to include 0 when forming smallest number from given digits",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Forgetting to include 0 when forming smallest number from given digits",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Place value",
+        "Numbers"
+      ],
+      "affectedGrades": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Missing Zero in Place Value'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_033",
+      "name": "The Perimeter-of-Square as ×2 not ×4",
+      "emoji": "⬜",
+      "category": "wrong_formula",
+      "description": "Using 2×side instead of 4×side for square perimeter",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Using 2×side → correct approach: 4×side for square perimeter",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Geometry (area and perimeter)"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Perimeter-of-Square as ×2 not ×4'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_034",
+      "name": "The Roman Numeral Wrong Subtraction",
+      "emoji": "🏛️",
+      "category": "wrong_operation",
+      "description": "Subtracting when should add in Roman numerals (e.g., reading VI as 5−1 instead of 5+1)",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Subtracting when should add in Roman numerals (e.g., reading VI as 5−1 → correct approach: 5+1)",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Roman numerals"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Roman Numeral Wrong Subtraction'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_035",
+      "name": "The Triangle Angle > 180 Blindspot",
+      "emoji": "△",
+      "category": "conceptual_error",
+      "description": "Not realising that a proposed triangle with angles summing to more or less than 180° is impossible",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Not realising that a proposed triangle with angles summing to more or less than 180° is impossible",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Angles",
+        "Triangle"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Triangle Angle > 180 Blindspot'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_036",
+      "name": "The Cross-Multiply Misfire",
+      "emoji": "❌",
+      "category": "procedural_error",
+      "description": "Cross-multiplying when it's not a proportion (e.g., in addition of fractions)",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Cross-multiplying when it's not a proportion (e.g., in addition of fractions)",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Fractions",
+        "Ratio and proportion"
+      ],
+      "affectedGrades": [
+        5,
+        6,
+        7
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Cross-Multiply Misfire'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_037",
+      "name": "The 'Of' Means 'Multiply' Forget",
+      "emoji": "×",
+      "category": "reading_error",
+      "description": "Not recognising that 'of' in math means multiply (e.g., 3/4 OF 60 = 3/4 × 60)",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Not recognising that 'of' in math means multiply (e.g., 3/4 OF 60 = 3/4 × 60)",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Fractions"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The 'Of' Means 'Multiply' Forget'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_038",
+      "name": "The Wrong Pythagorean Side",
+      "emoji": "📏",
+      "category": "wrong_formula",
+      "description": "Putting a non-hypotenuse side as c in a²+b²=c² (c must be the LONGEST side)",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Putting a non-hypotenuse side as c in a²+b²=c² (c must be the LONGEST side)",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Pythagoras",
+        "Geometry"
+      ],
+      "affectedGrades": [
+        7,
+        8,
+        9
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Wrong Pythagorean Side'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_039",
+      "name": "The Mean Proportion Mixup",
+      "emoji": "⚖️",
+      "category": "wrong_formula",
+      "description": "Confusing mean proportional (√ab) with arithmetic mean ((a+b)/2)",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Confusing mean proportional (√ab) with arithmetic mean ((a+b)/2)",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Ratio and proportion"
+      ],
+      "affectedGrades": [
+        7,
+        8,
+        9
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Mean Proportion Mixup'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_040",
+      "name": "The Complementary Angle > 90 Error",
+      "emoji": "📐",
+      "category": "conceptual_error",
+      "description": "Trying to find the complement of an angle > 90° (complements only exist for angles < 90°)",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Trying to find the complement of an angle > 90° (complements only exist for angles < 90°)",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Angles"
+      ],
+      "affectedGrades": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Complementary Angle > 90 Error'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_041",
+      "name": "The Digit Sum ≠ Number",
+      "emoji": "🔢",
+      "category": "conceptual_error",
+      "description": "Confusing the digit sum with the number itself (digit sum of 47 is 11, not 47)",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Confusing the digit sum with the number itself (digit sum of 47 is 11, not 47)",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Divisibility",
+        "Place value"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Digit Sum ≠ Number'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_042",
+      "name": "The Factor vs Multiple Swap",
+      "emoji": "🔄",
+      "category": "conceptual_error",
+      "description": "Saying 12 is a factor of 3 instead of 3 is a factor of 12",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Saying 12 is a factor of 3 → correct approach: 3 is a factor of 12",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Factors",
+        "Multiples"
+      ],
+      "affectedGrades": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Factor vs Multiple Swap'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_043",
+      "name": "The Negative Exponent = Negative Number Myth",
+      "emoji": "⁻",
+      "category": "conceptual_error",
+      "description": "Thinking 2⁻³ = −8 instead of 1/8",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Thinking 2⁻³ = −8 → correct approach: 1/8",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Exponents",
+        "Indices"
+      ],
+      "affectedGrades": [
+        7,
+        8,
+        9
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Negative Exponent = Negative Number Myth'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_044",
+      "name": "The Co-Interior = Equal Error",
+      "emoji": "≠",
+      "category": "wrong_formula",
+      "description": "Thinking co-interior angles are equal instead of supplementary (they add to 180°)",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Thinking co-interior angles are equal → correct approach: supplementary (they add to 180°)",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Parallel lines",
+        "Angles"
+      ],
+      "affectedGrades": [
+        6,
+        7,
+        8
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Co-Interior = Equal Error'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_045",
+      "name": "The Simple Interest Amount Forget",
+      "emoji": "🏦",
+      "category": "missing_step",
+      "description": "Forgetting Amount = Principal + Interest (giving SI as the answer when Amount is asked)",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Forgetting Amount = Principal + Interest (giving SI as the answer when Amount is asked)",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Simple interest"
+      ],
+      "affectedGrades": [
+        6,
+        7,
+        8
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Simple Interest Amount Forget'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_046",
+      "name": "The Polygon Angle Formula Off-By-One",
+      "emoji": "🔺",
+      "category": "wrong_formula",
+      "description": "Using n×180 instead of (n−2)×180 for polygon angle sum",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Using n×180 → correct approach: (n−2)×180 for polygon angle sum",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Polygon angles",
+        "Geometry"
+      ],
+      "affectedGrades": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Polygon Angle Formula Off-By-One'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_047",
+      "name": "The Median Without Sorting",
+      "emoji": "📊",
+      "category": "procedural_error",
+      "description": "Finding the middle number without first arranging data in order",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Finding the middle number without first arranging data in order",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Average",
+        "Statistics"
+      ],
+      "affectedGrades": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Median Without Sorting'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_048",
+      "name": "The Work-Rate Inversion",
+      "emoji": "⚙️",
+      "category": "wrong_operation",
+      "description": "If A does a job in 10 days, saying A's rate is 10 instead of 1/10",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "If A does a job in 10 days, saying A's rate is 10 → correct approach: 1/10",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Work and time"
+      ],
+      "affectedGrades": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Work-Rate Inversion'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_049",
+      "name": "The Circumference vs Diameter Mix",
+      "emoji": "⭕",
+      "category": "wrong_formula",
+      "description": "Using πr instead of 2πr for circumference (forgetting the 2)",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Using πr → correct approach: 2πr for circumference (forgetting the 2)",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Circle",
+        "Geometry"
+      ],
+      "affectedGrades": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Circumference vs Diameter Mix'!",
+      "difficulty": 2
+    },
+    {
+      "id": "MP_050",
+      "name": "The Even-Number-of-Odd-Sum Surprise",
+      "emoji": "🤯",
+      "category": "conceptual_error",
+      "description": "Not knowing that the sum of an even count of odd numbers is always even",
+      "whyItHappens": "Common confusion under exam pressure.",
+      "howToFix": "Not knowing that the sum of an even count of odd numbers is always even",
+      "example": null,
+      "frequency": "Medium",
+      "affectedTopics": [
+        "Number patterns"
+      ],
+      "affectedGrades": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "keywords": [],
+      "sparkyMessage": "Careful — you may have fallen for the 'The Even-Number-of-Odd-Sum Surprise'!",
+      "difficulty": 2
+    }
+  ],
+  "categoryIndex": {
+    "wrong_formula": [
+      "MP_001",
+      "MP_006",
+      "MP_012",
+      "MP_015",
+      "MP_016",
+      "MP_022",
+      "MP_026",
+      "MP_030",
+      "MP_033",
+      "MP_038",
+      "MP_039",
+      "MP_044",
+      "MP_046",
+      "MP_049"
+    ],
+    "procedural_error": [
+      "MP_002",
+      "MP_004",
+      "MP_010",
+      "MP_029",
+      "MP_032",
+      "MP_036",
+      "MP_047"
+    ],
+    "order_of_operations": [
+      "MP_003"
+    ],
+    "sign_error": [
+      "MP_005",
+      "MP_009"
+    ],
+    "wrong_operation": [
+      "MP_007",
+      "MP_021",
+      "MP_031",
+      "MP_034",
+      "MP_048"
+    ],
+    "wrong_base": [
+      "MP_008"
+    ],
+    "conceptual_error": [
+      "MP_011",
+      "MP_014",
+      "MP_017",
+      "MP_018",
+      "MP_023",
+      "MP_025",
+      "MP_035",
+      "MP_040",
+      "MP_041",
+      "MP_042",
+      "MP_043",
+      "MP_050"
+    ],
+    "missing_step": [
+      "MP_013",
+      "MP_020",
+      "MP_045"
+    ],
+    "notation_error": [
+      "MP_019"
+    ],
+    "reading_error": [
+      "MP_024",
+      "MP_037"
+    ],
+    "missing_knowledge": [
+      "MP_027"
+    ],
+    "unit_error": [
+      "MP_028"
+    ]
+  },
+  "gradeIndex": {
+    "5": [
+      "MP_001",
+      "MP_002",
+      "MP_003",
+      "MP_004",
+      "MP_005",
+      "MP_006",
+      "MP_007",
+      "MP_008",
+      "MP_009",
+      "MP_010",
+      "MP_011",
+      "MP_012",
+      "MP_014",
+      "MP_015",
+      "MP_016",
+      "MP_017",
+      "MP_018",
+      "MP_020",
+      "MP_021",
+      "MP_022",
+      "MP_023",
+      "MP_024",
+      "MP_026",
+      "MP_027",
+      "MP_028",
+      "MP_030",
+      "MP_032",
+      "MP_033",
+      "MP_034",
+      "MP_035",
+      "MP_036",
+      "MP_037",
+      "MP_040",
+      "MP_041",
+      "MP_042",
+      "MP_046",
+      "MP_049",
+      "MP_050"
+    ],
+    "6": [
+      "MP_001",
+      "MP_002",
+      "MP_003",
+      "MP_004",
+      "MP_005",
+      "MP_006",
+      "MP_007",
+      "MP_008",
+      "MP_009",
+      "MP_010",
+      "MP_011",
+      "MP_012",
+      "MP_013",
+      "MP_014",
+      "MP_015",
+      "MP_016",
+      "MP_017",
+      "MP_018",
+      "MP_019",
+      "MP_020",
+      "MP_021",
+      "MP_022",
+      "MP_023",
+      "MP_024",
+      "MP_026",
+      "MP_027",
+      "MP_028",
+      "MP_030",
+      "MP_031",
+      "MP_035",
+      "MP_036",
+      "MP_037",
+      "MP_040",
+      "MP_042",
+      "MP_044",
+      "MP_045",
+      "MP_046",
+      "MP_047",
+      "MP_048",
+      "MP_049",
+      "MP_050"
+    ],
+    "7": [
+      "MP_001",
+      "MP_002",
+      "MP_003",
+      "MP_004",
+      "MP_005",
+      "MP_006",
+      "MP_008",
+      "MP_009",
+      "MP_010",
+      "MP_012",
+      "MP_013",
+      "MP_014",
+      "MP_015",
+      "MP_016",
+      "MP_017",
+      "MP_019",
+      "MP_020",
+      "MP_021",
+      "MP_022",
+      "MP_023",
+      "MP_024",
+      "MP_025",
+      "MP_026",
+      "MP_028",
+      "MP_029",
+      "MP_030",
+      "MP_031",
+      "MP_036",
+      "MP_038",
+      "MP_039",
+      "MP_040",
+      "MP_043",
+      "MP_044",
+      "MP_045",
+      "MP_046",
+      "MP_047",
+      "MP_048",
+      "MP_049",
+      "MP_050"
+    ],
+    "8": [
+      "MP_001",
+      "MP_002",
+      "MP_004",
+      "MP_005",
+      "MP_008",
+      "MP_009",
+      "MP_012",
+      "MP_013",
+      "MP_015",
+      "MP_016",
+      "MP_017",
+      "MP_019",
+      "MP_020",
+      "MP_022",
+      "MP_025",
+      "MP_026",
+      "MP_029",
+      "MP_030",
+      "MP_031",
+      "MP_038",
+      "MP_039",
+      "MP_043",
+      "MP_044",
+      "MP_045",
+      "MP_046",
+      "MP_047",
+      "MP_048",
+      "MP_049"
+    ],
+    "9": [
+      "MP_001",
+      "MP_005",
+      "MP_008",
+      "MP_013",
+      "MP_017",
+      "MP_019",
+      "MP_025",
+      "MP_029",
+      "MP_031",
+      "MP_038",
+      "MP_039",
+      "MP_043",
+      "MP_047",
+      "MP_048"
+    ],
+    "4": [
+      "MP_002",
+      "MP_003",
+      "MP_004",
+      "MP_005",
+      "MP_006",
+      "MP_007",
+      "MP_009",
+      "MP_010",
+      "MP_011",
+      "MP_012",
+      "MP_014",
+      "MP_015",
+      "MP_018",
+      "MP_020",
+      "MP_021",
+      "MP_023",
+      "MP_024",
+      "MP_026",
+      "MP_027",
+      "MP_028",
+      "MP_032",
+      "MP_033",
+      "MP_034",
+      "MP_035",
+      "MP_037",
+      "MP_040",
+      "MP_041",
+      "MP_042",
+      "MP_050"
+    ],
+    "3": [
+      "MP_003",
+      "MP_006",
+      "MP_007",
+      "MP_011",
+      "MP_014",
+      "MP_018",
+      "MP_021",
+      "MP_023",
+      "MP_024",
+      "MP_027",
+      "MP_028",
+      "MP_032",
+      "MP_033",
+      "MP_034",
+      "MP_035",
+      "MP_037",
+      "MP_041",
+      "MP_042"
+    ],
+    "2": [
+      "MP_032"
+    ]
+  }
+}

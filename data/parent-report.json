@@ -1,0 +1,261 @@
+{
+  "meta": {
+    "title": "MathSpark — Parent Intelligence Report System",
+    "description": "Templates and rules that power personalised weekly/monthly parent reports showing strengths, weaknesses, specific mistakes, and what to do next.",
+    "reportTypes": [
+      "weekly",
+      "monthly",
+      "post_exam"
+    ],
+    "generatedAt": "2026-03-14T07:41:27.189046"
+  },
+  "reportTemplate": {
+    "header": {
+      "childName": "{childName}",
+      "grade": "{grade}",
+      "reportPeriod": "{startDate} to {endDate}",
+      "reportType": "{weekly|monthly|post_exam}",
+      "generatedAt": "{timestamp}",
+      "sparkyGreeting": "Hi {parentName}! Here's how {childName} did this {period}. 🌟"
+    },
+    "sections": [
+      {
+        "id": "overview",
+        "title": "📊 At a Glance",
+        "fields": [
+          {
+            "key": "questionsAttempted",
+            "label": "Questions Practiced",
+            "format": "number"
+          },
+          {
+            "key": "accuracy",
+            "label": "Accuracy",
+            "format": "percentage"
+          },
+          {
+            "key": "timeSpent",
+            "label": "Time Spent",
+            "format": "duration"
+          },
+          {
+            "key": "streak",
+            "label": "Practice Streak",
+            "format": "days"
+          },
+          {
+            "key": "improvement",
+            "label": "vs Last {period}",
+            "format": "delta_percentage"
+          }
+        ]
+      },
+      {
+        "id": "strengths",
+        "title": "💪 Strengths — What {childName} is Great At",
+        "description": "Topics where accuracy is above 80%",
+        "rules": {
+          "threshold": 0.8,
+          "minQuestions": 5,
+          "sortBy": "accuracy_desc"
+        },
+        "narrativeTemplates": [
+          "{childName} is doing brilliantly in {topic}! {accuracy}% accuracy across {count} questions. Keep it up! 🌟",
+          "Really strong performance in {topic}. {childName} got {correct}/{total} right. This is exam-ready!"
+        ]
+      },
+      {
+        "id": "improvement_areas",
+        "title": "🎯 Areas to Strengthen",
+        "description": "Topics where accuracy is below 60%",
+        "rules": {
+          "threshold": 0.6,
+          "minQuestions": 3,
+          "sortBy": "accuracy_asc"
+        },
+        "narrativeTemplates": [
+          "{topic} needs a bit more practice — {childName} scored {accuracy}%. We recommend {recommendation}.",
+          "In {topic}, {childName} is at {accuracy}%. This is totally fixable with focused practice. Try the '{drillName}' skill drill!"
+        ],
+        "toneGuide": "NEVER shame. ALWAYS frame as 'not yet' rather than 'can't'. Use encouraging language."
+      },
+      {
+        "id": "mistake_patterns",
+        "title": "🔍 Mistakes to Watch For",
+        "description": "Specific error patterns detected in this period's work",
+        "rules": {
+          "minOccurrences": 2,
+          "maxPatternsShown": 3,
+          "linkToMistakeBank": true
+        },
+        "narrativeTemplates": [
+          "We noticed {childName} tends to {mistakeDescription}. This happened {count} times this {period}. Here's how to fix it: {fix}",
+          "A common error we spotted: {mistakeName}. This is one of the most frequent mistakes in {topic}. The fix is simple: {fix}"
+        ],
+        "toneGuide": "Frame mistakes as learning opportunities. 'We noticed' not 'your child failed'. Always include the fix."
+      },
+      {
+        "id": "recommendations",
+        "title": "📋 What to Do This Week",
+        "description": "3 specific, actionable recommendations",
+        "rules": {
+          "maxRecommendations": 3,
+          "priorityOrder": [
+            "fix_mistake_pattern",
+            "strengthen_weak_topic",
+            "maintain_strong_topic"
+          ],
+          "linkToContent": true
+        },
+        "templates": [
+          {
+            "type": "fix_mistake",
+            "text": "Practice the '{drillName}' drill to fix the {mistakeName} mistake. Just 5 minutes a day!"
+          },
+          {
+            "type": "strengthen",
+            "text": "Spend 10 minutes on '{topic}' flashcards. {childName} is close to mastering this!"
+          },
+          {
+            "type": "challenge",
+            "text": "{childName} is ready for a challenge! Try the Level {nextLevel} {topic} drill."
+          },
+          {
+            "type": "maintain",
+            "text": "Keep up the great work in {topic}! A quick 5-minute review this week will keep it sharp."
+          }
+        ]
+      },
+      {
+        "id": "progress_chart",
+        "title": "📈 Progress Over Time",
+        "description": "Accuracy trend over the last 4 weeks/months",
+        "chartType": "line",
+        "dataPoints": "accuracy_by_week"
+      },
+      {
+        "id": "topic_heatmap",
+        "title": "🗺️ Topic Mastery Map",
+        "description": "Visual showing mastery level across all topics",
+        "visualType": "heatmap",
+        "levels": {
+          "mastered": {
+            "threshold": 0.9,
+            "color": "#4CAF50",
+            "label": "Mastered ✅"
+          },
+          "strong": {
+            "threshold": 0.75,
+            "color": "#8BC34A",
+            "label": "Strong 💪"
+          },
+          "developing": {
+            "threshold": 0.5,
+            "color": "#FFC107",
+            "label": "Developing 🔄"
+          },
+          "needs_work": {
+            "threshold": 0.0,
+            "color": "#FF5722",
+            "label": "Needs Practice 🎯"
+          }
+        }
+      },
+      {
+        "id": "exam_readiness",
+        "title": "🎓 Exam Readiness Score",
+        "description": "How ready is {childName} for the IPM exam?",
+        "scoring": {
+          "formula": "weighted average of topic accuracies × practice consistency × mistake reduction",
+          "scale": "0-100",
+          "labels": {
+            "90-100": "🏆 Exam Ready! Keep polishing.",
+            "75-89": "💪 Almost there. Focus on weak spots.",
+            "60-74": "🔄 Good foundation. Need more practice.",
+            "40-59": "🎯 Building up. Consistency is key.",
+            "0-39": "🌱 Early stages. Daily practice will make a big difference."
+          }
+        }
+      }
+    ]
+  },
+  "postExamTemplate": {
+    "title": "📝 Mock Test Report for {childName}",
+    "sections": [
+      "score_summary",
+      "time_analysis",
+      "topic_wise_breakdown",
+      "mistake_patterns_detected",
+      "marks_lost_to_negative_marking",
+      "questions_to_review",
+      "comparison_to_previous_attempts",
+      "next_steps"
+    ],
+    "timeAnalysis": {
+      "fields": [
+        {
+          "key": "totalTime",
+          "label": "Total Time Used"
+        },
+        {
+          "key": "avgTimePerQuestion",
+          "label": "Average per Question"
+        },
+        {
+          "key": "fastestQuestion",
+          "label": "Fastest Correct Answer"
+        },
+        {
+          "key": "slowestQuestion",
+          "label": "Most Time Spent"
+        },
+        {
+          "key": "questionsOverTime",
+          "label": "Questions Where You Ran Out of Time"
+        },
+        {
+          "key": "optimalTimeAdvice",
+          "label": "Sparky's Time Tip"
+        }
+      ]
+    },
+    "negativeMarkingAnalysis": {
+      "fields": [
+        {
+          "key": "wrongAnswers",
+          "label": "Wrong Answers"
+        },
+        {
+          "key": "marksLost",
+          "label": "Marks Lost to Negative Marking"
+        },
+        {
+          "key": "shouldHaveSkipped",
+          "label": "Questions You Should Have Left Blank"
+        },
+        {
+          "key": "netImpact",
+          "label": "If You'd Skipped Uncertain Ones"
+        }
+      ]
+    }
+  },
+  "narrativeRules": {
+    "tone": "Warm, encouraging, specific, actionable",
+    "principles": [
+      "Never shame or compare unfavourably to other children",
+      "Frame weaknesses as 'not yet mastered' not 'failing'",
+      "Always include at least 2 strengths before any weakness",
+      "Every weakness mention includes a specific, achievable fix",
+      "Use the child's name — it's personal, not generic",
+      "End on a positive note with encouragement"
+    ],
+    "parentLanguage": "Simple English, no jargon. Assume the parent is not a math teacher.",
+    "sparkyClosing": [
+      "Keep going, {childName}! You're getting better every day! 🚀",
+      "{childName} is on a great path. A little practice each day goes a long way! 🌟",
+      "Great effort this {period}, {childName}! Sparky is proud of you! 💪",
+      "Remember: every mistake is just a step towards getting it right. Keep it up! 🎯"
+    ]
+  }
+}

@@ -26,7 +26,7 @@ export default function SeedPage() {
   const [secret,   setSecret]   = useState('');
   const [status,   setStatus]   = useState<Status>('idle');
   const [seeded,   setSeeded]   = useState(0);
-  const [total,    setTotal]    = useState(6797);
+  const [total,    setTotal]    = useState(12500);
   const [skipped,  setSkipped]  = useState(0);
   const [message,  setMessage]  = useState('');
 
@@ -136,7 +136,7 @@ export default function SeedPage() {
           <span className="text-3xl">🌱</span>
           <div>
             <p className="font-bold text-gray-800">Seed Questions</p>
-            <p className="text-xs text-gray-400">Loads all 6,797 questions (Grades 2–9) into the database</p>
+            <p className="text-xs text-gray-400">Loads all ~12,500 questions (Grades 2–9) into the database</p>
           </div>
         </div>
 

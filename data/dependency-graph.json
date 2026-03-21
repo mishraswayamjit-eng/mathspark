@@ -1,0 +1,2749 @@
+{
+  "meta": {
+    "title": "MathSpark — Concept Dependency Graph (The Math Skill Tree)",
+    "description": "100 concept nodes with ~120 prerequisite edges. Shows which concepts depend on which others, enabling smart learning path recommendations.",
+    "totalNodes": 88,
+    "totalEdges": 123,
+    "domains": {
+      "numbers": 7,
+      "arithmetic": 6,
+      "factors": 5,
+      "fractions": 7,
+      "percentage": 6,
+      "ratio": 5,
+      "algebra": 10,
+      "geometry": 12,
+      "mensuration": 5,
+      "speed": 5,
+      "statistics": 3,
+      "squares": 5,
+      "patterns": 4,
+      "practical": 6,
+      "advanced": 2
+    },
+    "gradeRange": [
+      2,
+      9
+    ],
+    "edgeTypes": {
+      "must_know": "Essential prerequisite",
+      "helpful": "Recommended but not strictly required"
+    },
+    "generatedAt": "2026-03-14T14:39:14.496632"
+  },
+  "nodes": [
+    {
+      "id": "CN_001",
+      "domain": "numbers",
+      "name": "Counting & Number Names",
+      "description": "Count objects, read and write numbers up to 1000",
+      "gradeRange": [
+        2,
+        3
+      ],
+      "difficulty": 1,
+      "icon": "🔢",
+      "color": "#4CAF50",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 214,
+      "estimatedMinutesToMaster": 71,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_002",
+      "domain": "numbers",
+      "name": "Place Value System",
+      "description": "Understand ones, tens, hundreds, thousands — what each digit is worth",
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "icon": "🔢",
+      "color": "#4CAF50",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 375,
+      "estimatedMinutesToMaster": 125,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_003",
+      "domain": "numbers",
+      "name": "Comparing & Ordering Numbers",
+      "description": "Use >, <, = to compare. Arrange in ascending/descending order",
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "icon": "⚖️",
+      "color": "#4CAF50",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_004",
+      "domain": "numbers",
+      "name": "Rounding Numbers",
+      "description": "Round to nearest 10, 100, 1000",
+      "gradeRange": [
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "icon": "🎯",
+      "color": "#4CAF50",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_005",
+      "domain": "numbers",
+      "name": "Roman Numerals",
+      "description": "Read and write Roman numerals, convert to/from Hindu-Arabic",
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 2,
+      "icon": "🏛️",
+      "color": "#4CAF50",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 17,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_006",
+      "domain": "numbers",
+      "name": "Integers",
+      "description": "Positive & negative numbers, number line, absolute value",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 3,
+      "icon": "➖",
+      "color": "#4CAF50",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_007",
+      "domain": "numbers",
+      "name": "Even & Odd Numbers",
+      "description": "Properties: even+even, odd×odd, divisibility by 2",
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "icon": "🔢",
+      "color": "#4CAF50",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 19,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_008",
+      "domain": "arithmetic",
+      "name": "Addition",
+      "description": "Add numbers with and without carrying",
+      "gradeRange": [
+        2,
+        3
+      ],
+      "difficulty": 1,
+      "icon": "➕",
+      "color": "#2196F3",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_009",
+      "domain": "arithmetic",
+      "name": "Subtraction",
+      "description": "Subtract with borrowing, word problems",
+      "gradeRange": [
+        2,
+        3
+      ],
+      "difficulty": 1,
+      "icon": "➖",
+      "color": "#2196F3",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_010",
+      "domain": "arithmetic",
+      "name": "Multiplication",
+      "description": "Times tables, multi-digit multiplication",
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "icon": "✖️",
+      "color": "#2196F3",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_011",
+      "domain": "arithmetic",
+      "name": "Division",
+      "description": "Long division, division with remainder",
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 2,
+      "icon": "➗",
+      "color": "#2196F3",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_012",
+      "domain": "arithmetic",
+      "name": "BODMAS / Order of Operations",
+      "description": "Correct order: Brackets, Orders, Div/Mult, Add/Sub",
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "📋",
+      "color": "#2196F3",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_013",
+      "domain": "arithmetic",
+      "name": "Number Properties",
+      "description": "Commutative, associative, distributive, identity, inverse",
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "⚙️",
+      "color": "#2196F3",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 9,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_014",
+      "domain": "factors",
+      "name": "Divisibility Rules",
+      "description": "Tests for 2, 3, 4, 5, 6, 8, 9, 10, 11",
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 2,
+      "icon": "🔍",
+      "color": "#9C27B0",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_015",
+      "domain": "factors",
+      "name": "Factors & Multiples",
+      "description": "Find all factors, common factors, multiples",
+      "gradeRange": [
+        4,
+        5
+      ],
+      "difficulty": 2,
+      "icon": "🔍",
+      "color": "#9C27B0",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_016",
+      "domain": "factors",
+      "name": "Prime & Composite Numbers",
+      "description": "Identify primes, prime factorisation, factor trees",
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "🔍",
+      "color": "#9C27B0",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_017",
+      "domain": "factors",
+      "name": "HCF (Highest Common Factor)",
+      "description": "Find HCF by listing, prime factorisation, division",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 3,
+      "icon": "🔍",
+      "color": "#9C27B0",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_018",
+      "domain": "factors",
+      "name": "LCM (Least Common Multiple)",
+      "description": "Find LCM, HCF×LCM = product relationship",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 3,
+      "icon": "🔍",
+      "color": "#9C27B0",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_019",
+      "domain": "fractions",
+      "name": "Understanding Fractions",
+      "description": "Numerator, denominator, types: proper, improper, mixed",
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "icon": "🍕",
+      "color": "#FF9800",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_020",
+      "domain": "fractions",
+      "name": "Equivalent Fractions",
+      "description": "Find equivalent fractions, simplify to lowest terms",
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 2,
+      "icon": "🍕",
+      "color": "#FF9800",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 6,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_021",
+      "domain": "fractions",
+      "name": "Comparing Fractions",
+      "description": "Compare using common denominator or cross-multiplication",
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 2,
+      "icon": "⚖️",
+      "color": "#FF9800",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 251,
+      "estimatedMinutesToMaster": 83,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_022",
+      "domain": "fractions",
+      "name": "Adding & Subtracting Fractions",
+      "description": "Same and different denominators, mixed numbers",
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "🍕",
+      "color": "#FF9800",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 174,
+      "estimatedMinutesToMaster": 58,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_023",
+      "domain": "fractions",
+      "name": "Multiplying & Dividing Fractions",
+      "description": "Multiply numerators, reciprocal for division",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 3,
+      "icon": "🍕",
+      "color": "#FF9800",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_024",
+      "domain": "fractions",
+      "name": "Fraction of a Number",
+      "description": "Find 3/4 of 60, fraction word problems",
+      "gradeRange": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "🍕",
+      "color": "#FF9800",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_025",
+      "domain": "fractions",
+      "name": "Decimals",
+      "description": "Place value in decimals, operations, conversion to/from fractions",
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "🔢",
+      "color": "#FF9800",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_026",
+      "domain": "percentage",
+      "name": "Percentage Basics",
+      "description": "% means per hundred, convert fraction↔decimal↔%",
+      "gradeRange": [
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "💰",
+      "color": "#E91E63",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_027",
+      "domain": "percentage",
+      "name": "Finding Percentage of a Number",
+      "description": "Find X% of Y, reverse: find whole from part",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "icon": "💰",
+      "color": "#E91E63",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_028",
+      "domain": "percentage",
+      "name": "Percentage Increase & Decrease",
+      "description": "Increase/decrease by %, successive %, discount",
+      "gradeRange": [
+        6,
+        7
+      ],
+      "difficulty": 3,
+      "icon": "📈",
+      "color": "#E91E63",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_029",
+      "domain": "percentage",
+      "name": "Profit & Loss",
+      "description": "CP, SP, profit%, loss%, marked price, discount",
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "icon": "💰",
+      "color": "#E91E63",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 16,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_030",
+      "domain": "percentage",
+      "name": "Simple Interest",
+      "description": "P×R×T/100, find P/R/T, amount = P+SI",
+      "gradeRange": [
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "icon": "🏦",
+      "color": "#E91E63",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 98,
+      "estimatedMinutesToMaster": 32,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_031",
+      "domain": "percentage",
+      "name": "Compound Interest",
+      "description": "A = P(1+R/100)^n, CI−SI difference, depreciation",
+      "gradeRange": [
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "icon": "🏦",
+      "color": "#E91E63",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 64,
+      "estimatedMinutesToMaster": 21,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_032",
+      "domain": "ratio",
+      "name": "Ratio Basics",
+      "description": "Compare quantities, simplify ratios, equivalent ratios",
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "⚖️",
+      "color": "#00BCD4",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_033",
+      "domain": "ratio",
+      "name": "Dividing in a Ratio",
+      "description": "Divide a number in a given ratio",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "icon": "⚖️",
+      "color": "#00BCD4",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_034",
+      "domain": "ratio",
+      "name": "Proportion",
+      "description": "If a:b = c:d, cross-multiplication, mean proportional",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 3,
+      "icon": "⚖️",
+      "color": "#00BCD4",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_035",
+      "domain": "ratio",
+      "name": "Direct & Inverse Variation",
+      "description": "Direct: x/y constant. Inverse: x×y constant",
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "icon": "🔄",
+      "color": "#00BCD4",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_036",
+      "domain": "ratio",
+      "name": "Unitary Method",
+      "description": "Find value of 1 unit, then scale",
+      "gradeRange": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "1️⃣",
+      "color": "#00BCD4",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_037",
+      "domain": "algebra",
+      "name": "Variables & Expressions",
+      "description": "Using letters for unknowns, forming expressions",
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "🔤",
+      "color": "#673AB7",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_038",
+      "domain": "algebra",
+      "name": "Like Terms & Simplification",
+      "description": "Combine like terms, simplify expressions",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "icon": "🔤",
+      "color": "#673AB7",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_039",
+      "domain": "algebra",
+      "name": "One-Step Equations",
+      "description": "Solve x+5=12, 3x=15, x/4=3",
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 2,
+      "icon": "🔤",
+      "color": "#673AB7",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_040",
+      "domain": "algebra",
+      "name": "Two-Step Equations",
+      "description": "Solve 3x+5=20, move constant then divide",
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "🔤",
+      "color": "#673AB7",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 18,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_041",
+      "domain": "algebra",
+      "name": "Equations — Variables Both Sides",
+      "description": "Solve 7x+3=4x+15, collect terms",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 3,
+      "icon": "🔤",
+      "color": "#673AB7",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 9,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_042",
+      "domain": "algebra",
+      "name": "Equations with Brackets",
+      "description": "Expand then solve: 3(x+4)=21",
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "icon": "🔤",
+      "color": "#673AB7",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_043",
+      "domain": "algebra",
+      "name": "Fraction Equations",
+      "description": "Clear fractions by multiplying by LCM",
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 3,
+      "icon": "🔤",
+      "color": "#673AB7",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 30,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_044",
+      "domain": "algebra",
+      "name": "Polynomials",
+      "description": "Add, subtract, multiply polynomials",
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "icon": "🔤",
+      "color": "#673AB7",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_045",
+      "domain": "algebra",
+      "name": "Algebraic Identities",
+      "description": "(a+b)², (a−b)², a²−b², factorisation",
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "icon": "🔤",
+      "color": "#673AB7",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 26,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_046",
+      "domain": "algebra",
+      "name": "Quadratic Equations",
+      "description": "Solve by factoring, formula, completing the square",
+      "gradeRange": [
+        8,
+        9
+      ],
+      "difficulty": 5,
+      "icon": "🔤",
+      "color": "#673AB7",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 82,
+      "estimatedMinutesToMaster": 27,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_047",
+      "domain": "geometry",
+      "name": "2D Shapes",
+      "description": "Identify and classify: triangle, rectangle, circle, polygon",
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "icon": "📐",
+      "color": "#F44336",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_048",
+      "domain": "geometry",
+      "name": "3D Shapes",
+      "description": "Cube, cuboid, sphere, cylinder, cone — faces, edges, vertices",
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "icon": "📦",
+      "color": "#F44336",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_049",
+      "domain": "geometry",
+      "name": "Types of Angles",
+      "description": "Acute, obtuse, right, straight, reflex",
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 1,
+      "icon": "📐",
+      "color": "#F44336",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_050",
+      "domain": "geometry",
+      "name": "Complementary & Supplementary",
+      "description": "Complementary sum to 90°, supplementary sum to 180°",
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "📐",
+      "color": "#F44336",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_051",
+      "domain": "geometry",
+      "name": "Triangle Properties",
+      "description": "Angle sum=180°, types by sides and angles, inequality",
+      "gradeRange": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "icon": "📐",
+      "color": "#F44336",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_052",
+      "domain": "geometry",
+      "name": "Parallel Lines & Transversal",
+      "description": "Corresponding, alternate, co-interior angles",
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "icon": "📐",
+      "color": "#F44336",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 61,
+      "estimatedMinutesToMaster": 20,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_053",
+      "domain": "geometry",
+      "name": "Polygon Angles",
+      "description": "Interior angle sum = (n−2)×180°, exterior angles",
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "icon": "📐",
+      "color": "#F44336",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 25,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_054",
+      "domain": "geometry",
+      "name": "Congruence & Similarity",
+      "description": "SSS, SAS, ASA, RHS, similar triangles, ratio of areas",
+      "gradeRange": [
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "icon": "📐",
+      "color": "#F44336",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_055",
+      "domain": "geometry",
+      "name": "Pythagoras Theorem",
+      "description": "c²=a²+b², Pythagorean triplets, applications",
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 3,
+      "icon": "📐",
+      "color": "#F44336",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_056",
+      "domain": "geometry",
+      "name": "Circle — Basics",
+      "description": "Radius, diameter, chord, arc, sector, circumference, area",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "icon": "⭕",
+      "color": "#F44336",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_057",
+      "domain": "geometry",
+      "name": "Circle — Advanced",
+      "description": "Tangent properties, arc length, sector area, cyclic quadrilateral",
+      "gradeRange": [
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "icon": "⭕",
+      "color": "#F44336",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_058",
+      "domain": "geometry",
+      "name": "Symmetry",
+      "description": "Lines of symmetry, rotational symmetry",
+      "gradeRange": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "difficulty": 1,
+      "icon": "🪞",
+      "color": "#F44336",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_059",
+      "domain": "mensuration",
+      "name": "Perimeter",
+      "description": "Perimeter of rectangle, square, triangle, circle",
+      "gradeRange": [
+        3,
+        4,
+        5
+      ],
+      "difficulty": 1,
+      "icon": "📏",
+      "color": "#795548",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_060",
+      "domain": "mensuration",
+      "name": "Area — Basic Shapes",
+      "description": "Area of rectangle, square, triangle",
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "📏",
+      "color": "#795548",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_061",
+      "domain": "mensuration",
+      "name": "Area — Advanced Shapes",
+      "description": "Parallelogram, rhombus, trapezium, circle",
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "icon": "📏",
+      "color": "#795548",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_062",
+      "domain": "mensuration",
+      "name": "Surface Area",
+      "description": "TSA, LSA of cube, cuboid, cylinder",
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "icon": "📏",
+      "color": "#795548",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_063",
+      "domain": "mensuration",
+      "name": "Volume",
+      "description": "Volume of cube, cuboid, cylinder, cone, sphere",
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "icon": "📏",
+      "color": "#795548",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_064",
+      "domain": "speed",
+      "name": "Speed-Distance-Time Basics",
+      "description": "S=D/T, D=S×T, T=D/S",
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "🚂",
+      "color": "#607D8B",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 164,
+      "estimatedMinutesToMaster": 54,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_065",
+      "domain": "speed",
+      "name": "Speed Unit Conversion",
+      "description": "km/hr ↔ m/s using ×5/18 or ×18/5",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "icon": "🔄",
+      "color": "#607D8B",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 10,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_066",
+      "domain": "speed",
+      "name": "Average Speed",
+      "description": "Total D ÷ Total T (NOT average of speeds!)",
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "icon": "🚂",
+      "color": "#607D8B",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_067",
+      "domain": "speed",
+      "name": "Train Problems",
+      "description": "Train+pole, train+bridge, relative speed of trains",
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 3,
+      "icon": "🚂",
+      "color": "#607D8B",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_068",
+      "domain": "speed",
+      "name": "Work & Time",
+      "description": "Rate = 1/days, combined work, pipes & cisterns",
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "icon": "⚙️",
+      "color": "#607D8B",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 26,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_069",
+      "domain": "statistics",
+      "name": "Average (Mean)",
+      "description": "Sum/count, weighted average, adding/removing numbers",
+      "gradeRange": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "icon": "📊",
+      "color": "#009688",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_070",
+      "domain": "statistics",
+      "name": "Median, Mode, Range",
+      "description": "Middle value, most frequent, max−min",
+      "gradeRange": [
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "icon": "📊",
+      "color": "#009688",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_071",
+      "domain": "statistics",
+      "name": "Data Interpretation",
+      "description": "Read bar graphs, pie charts, tables, line graphs",
+      "gradeRange": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "icon": "📊",
+      "color": "#009688",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 48,
+      "estimatedMinutesToMaster": 16,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_072",
+      "domain": "squares",
+      "name": "Squares & Perfect Squares",
+      "description": "n², memorise 1²-25², properties",
+      "gradeRange": [
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "²",
+      "color": "#FF5722",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 26,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_073",
+      "domain": "squares",
+      "name": "Square Roots",
+      "description": "√n, methods: estimation, division, factorisation",
+      "gradeRange": [
+        5,
+        6,
+        7
+      ],
+      "difficulty": 2,
+      "icon": "√",
+      "color": "#FF5722",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 326,
+      "estimatedMinutesToMaster": 108,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_074",
+      "domain": "squares",
+      "name": "Cubes & Cube Roots",
+      "description": "n³, memorise 1³-12³, cube roots",
+      "gradeRange": [
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "icon": "³",
+      "color": "#FF5722",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_075",
+      "domain": "squares",
+      "name": "Laws of Indices",
+      "description": "aᵐ×aⁿ, (aᵐ)ⁿ, a⁰=1, a⁻ⁿ=1/aⁿ",
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 3,
+      "icon": "📈",
+      "color": "#FF5722",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_076",
+      "domain": "squares",
+      "name": "Surds",
+      "description": "Simplify, rationalise, nested surds",
+      "gradeRange": [
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "icon": "√",
+      "color": "#FF5722",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_077",
+      "domain": "patterns",
+      "name": "Simple Patterns",
+      "description": "Spot the rule, find the next number",
+      "gradeRange": [
+        2,
+        3,
+        4
+      ],
+      "difficulty": 1,
+      "icon": "🔄",
+      "color": "#CDDC39",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_078",
+      "domain": "patterns",
+      "name": "Arithmetic Progression",
+      "description": "Common difference, nth term = a+(n-1)d, sum formula",
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "icon": "🔄",
+      "color": "#CDDC39",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_079",
+      "domain": "patterns",
+      "name": "Geometric Progression",
+      "description": "Common ratio, nth term, sum formula",
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "icon": "🔄",
+      "color": "#CDDC39",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_080",
+      "domain": "patterns",
+      "name": "Special Sequences",
+      "description": "Triangular, Fibonacci, sum of squares/cubes formulas",
+      "gradeRange": [
+        7,
+        8,
+        9
+      ],
+      "difficulty": 4,
+      "icon": "🔄",
+      "color": "#CDDC39",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_081",
+      "domain": "practical",
+      "name": "Money & Transactions",
+      "description": "Coins, bills, change, cost calculations",
+      "gradeRange": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "difficulty": 1,
+      "icon": "💵",
+      "color": "#8BC34A",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 993,
+      "estimatedMinutesToMaster": 331,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_082",
+      "domain": "practical",
+      "name": "Measurement & Units",
+      "description": "Length, weight, capacity — conversions",
+      "gradeRange": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "difficulty": 1,
+      "icon": "📏",
+      "color": "#8BC34A",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_083",
+      "domain": "practical",
+      "name": "Time & Calendar",
+      "description": "Reading clocks, duration, calendar, odd days, leap year",
+      "gradeRange": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "difficulty": 2,
+      "icon": "🕐",
+      "color": "#8BC34A",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_084",
+      "domain": "practical",
+      "name": "Age Problems",
+      "description": "Past/future ages, age ratios, difference never changes",
+      "gradeRange": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "difficulty": 2,
+      "icon": "🎂",
+      "color": "#8BC34A",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 405,
+      "estimatedMinutesToMaster": 135,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_085",
+      "domain": "practical",
+      "name": "Sets & Venn Diagrams",
+      "description": "Union, intersection, inclusion-exclusion",
+      "gradeRange": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "difficulty": 3,
+      "icon": "⭕",
+      "color": "#8BC34A",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 13,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_086",
+      "domain": "practical",
+      "name": "Counting & Combinatorics",
+      "description": "nCr, handshakes, factorials, digit counting",
+      "gradeRange": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "difficulty": 3,
+      "icon": "🔢",
+      "color": "#8BC34A",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_087",
+      "domain": "advanced",
+      "name": "Logarithms",
+      "description": "log definition, laws, log equations",
+      "gradeRange": [
+        9
+      ],
+      "difficulty": 5,
+      "icon": "📈",
+      "color": "#9E9E9E",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    },
+    {
+      "id": "CN_088",
+      "domain": "advanced",
+      "name": "Trigonometry",
+      "description": "sin/cos/tan, standard values, identities",
+      "gradeRange": [
+        9
+      ],
+      "difficulty": 5,
+      "icon": "📐",
+      "color": "#9E9E9E",
+      "linkedFlashcardIds": [],
+      "linkedDrillTopic": null,
+      "questionCount": 5,
+      "estimatedMinutesToMaster": 15,
+      "masteryThreshold": 0.8
+    }
+  ],
+  "edges": [
+    {
+      "source": "CN_001",
+      "target": "CN_002",
+      "type": "must_know",
+      "sourceName": "Counting & Number Names",
+      "targetName": "Place Value System"
+    },
+    {
+      "source": "CN_002",
+      "target": "CN_003",
+      "type": "must_know",
+      "sourceName": "Place Value System",
+      "targetName": "Comparing & Ordering Numbers"
+    },
+    {
+      "source": "CN_002",
+      "target": "CN_004",
+      "type": "helpful",
+      "sourceName": "Place Value System",
+      "targetName": "Rounding Numbers"
+    },
+    {
+      "source": "CN_001",
+      "target": "CN_007",
+      "type": "must_know",
+      "sourceName": "Counting & Number Names",
+      "targetName": "Even & Odd Numbers"
+    },
+    {
+      "source": "CN_001",
+      "target": "CN_008",
+      "type": "must_know",
+      "sourceName": "Counting & Number Names",
+      "targetName": "Addition"
+    },
+    {
+      "source": "CN_001",
+      "target": "CN_009",
+      "type": "must_know",
+      "sourceName": "Counting & Number Names",
+      "targetName": "Subtraction"
+    },
+    {
+      "source": "CN_008",
+      "target": "CN_010",
+      "type": "must_know",
+      "sourceName": "Addition",
+      "targetName": "Multiplication"
+    },
+    {
+      "source": "CN_009",
+      "target": "CN_010",
+      "type": "helpful",
+      "sourceName": "Subtraction",
+      "targetName": "Multiplication"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_011",
+      "type": "must_know",
+      "sourceName": "Multiplication",
+      "targetName": "Division"
+    },
+    {
+      "source": "CN_008",
+      "target": "CN_012",
+      "type": "must_know",
+      "sourceName": "Addition",
+      "targetName": "BODMAS / Order of Operations"
+    },
+    {
+      "source": "CN_009",
+      "target": "CN_012",
+      "type": "must_know",
+      "sourceName": "Subtraction",
+      "targetName": "BODMAS / Order of Operations"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_012",
+      "type": "must_know",
+      "sourceName": "Multiplication",
+      "targetName": "BODMAS / Order of Operations"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_012",
+      "type": "must_know",
+      "sourceName": "Division",
+      "targetName": "BODMAS / Order of Operations"
+    },
+    {
+      "source": "CN_012",
+      "target": "CN_013",
+      "type": "helpful",
+      "sourceName": "BODMAS / Order of Operations",
+      "targetName": "Number Properties"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_014",
+      "type": "must_know",
+      "sourceName": "Division",
+      "targetName": "Divisibility Rules"
+    },
+    {
+      "source": "CN_007",
+      "target": "CN_014",
+      "type": "helpful",
+      "sourceName": "Even & Odd Numbers",
+      "targetName": "Divisibility Rules"
+    },
+    {
+      "source": "CN_014",
+      "target": "CN_015",
+      "type": "must_know",
+      "sourceName": "Divisibility Rules",
+      "targetName": "Factors & Multiples"
+    },
+    {
+      "source": "CN_015",
+      "target": "CN_016",
+      "type": "must_know",
+      "sourceName": "Factors & Multiples",
+      "targetName": "Prime & Composite Numbers"
+    },
+    {
+      "source": "CN_016",
+      "target": "CN_017",
+      "type": "must_know",
+      "sourceName": "Prime & Composite Numbers",
+      "targetName": "HCF (Highest Common Factor)"
+    },
+    {
+      "source": "CN_016",
+      "target": "CN_018",
+      "type": "must_know",
+      "sourceName": "Prime & Composite Numbers",
+      "targetName": "LCM (Least Common Multiple)"
+    },
+    {
+      "source": "CN_017",
+      "target": "CN_018",
+      "type": "helpful",
+      "sourceName": "HCF (Highest Common Factor)",
+      "targetName": "LCM (Least Common Multiple)"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_019",
+      "type": "must_know",
+      "sourceName": "Division",
+      "targetName": "Understanding Fractions"
+    },
+    {
+      "source": "CN_019",
+      "target": "CN_020",
+      "type": "must_know",
+      "sourceName": "Understanding Fractions",
+      "targetName": "Equivalent Fractions"
+    },
+    {
+      "source": "CN_020",
+      "target": "CN_021",
+      "type": "must_know",
+      "sourceName": "Equivalent Fractions",
+      "targetName": "Comparing Fractions"
+    },
+    {
+      "source": "CN_019",
+      "target": "CN_024",
+      "type": "must_know",
+      "sourceName": "Understanding Fractions",
+      "targetName": "Fraction of a Number"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_024",
+      "type": "must_know",
+      "sourceName": "Multiplication",
+      "targetName": "Fraction of a Number"
+    },
+    {
+      "source": "CN_021",
+      "target": "CN_022",
+      "type": "must_know",
+      "sourceName": "Comparing Fractions",
+      "targetName": "Adding & Subtracting Fractions"
+    },
+    {
+      "source": "CN_018",
+      "target": "CN_022",
+      "type": "helpful",
+      "sourceName": "LCM (Least Common Multiple)",
+      "targetName": "Adding & Subtracting Fractions"
+    },
+    {
+      "source": "CN_022",
+      "target": "CN_023",
+      "type": "must_know",
+      "sourceName": "Adding & Subtracting Fractions",
+      "targetName": "Multiplying & Dividing Fractions"
+    },
+    {
+      "source": "CN_019",
+      "target": "CN_025",
+      "type": "must_know",
+      "sourceName": "Understanding Fractions",
+      "targetName": "Decimals"
+    },
+    {
+      "source": "CN_002",
+      "target": "CN_025",
+      "type": "must_know",
+      "sourceName": "Place Value System",
+      "targetName": "Decimals"
+    },
+    {
+      "source": "CN_024",
+      "target": "CN_026",
+      "type": "must_know",
+      "sourceName": "Fraction of a Number",
+      "targetName": "Percentage Basics"
+    },
+    {
+      "source": "CN_025",
+      "target": "CN_026",
+      "type": "helpful",
+      "sourceName": "Decimals",
+      "targetName": "Percentage Basics"
+    },
+    {
+      "source": "CN_026",
+      "target": "CN_027",
+      "type": "must_know",
+      "sourceName": "Percentage Basics",
+      "targetName": "Finding Percentage of a Number"
+    },
+    {
+      "source": "CN_027",
+      "target": "CN_028",
+      "type": "must_know",
+      "sourceName": "Finding Percentage of a Number",
+      "targetName": "Percentage Increase & Decrease"
+    },
+    {
+      "source": "CN_028",
+      "target": "CN_029",
+      "type": "must_know",
+      "sourceName": "Percentage Increase & Decrease",
+      "targetName": "Profit & Loss"
+    },
+    {
+      "source": "CN_029",
+      "target": "CN_030",
+      "type": "must_know",
+      "sourceName": "Profit & Loss",
+      "targetName": "Simple Interest"
+    },
+    {
+      "source": "CN_030",
+      "target": "CN_031",
+      "type": "must_know",
+      "sourceName": "Simple Interest",
+      "targetName": "Compound Interest"
+    },
+    {
+      "source": "CN_075",
+      "target": "CN_031",
+      "type": "helpful",
+      "sourceName": "Laws of Indices",
+      "targetName": "Compound Interest"
+    },
+    {
+      "source": "CN_019",
+      "target": "CN_032",
+      "type": "must_know",
+      "sourceName": "Understanding Fractions",
+      "targetName": "Ratio Basics"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_032",
+      "type": "must_know",
+      "sourceName": "Division",
+      "targetName": "Ratio Basics"
+    },
+    {
+      "source": "CN_032",
+      "target": "CN_033",
+      "type": "must_know",
+      "sourceName": "Ratio Basics",
+      "targetName": "Dividing in a Ratio"
+    },
+    {
+      "source": "CN_032",
+      "target": "CN_034",
+      "type": "must_know",
+      "sourceName": "Ratio Basics",
+      "targetName": "Proportion"
+    },
+    {
+      "source": "CN_034",
+      "target": "CN_035",
+      "type": "must_know",
+      "sourceName": "Proportion",
+      "targetName": "Direct & Inverse Variation"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_036",
+      "type": "must_know",
+      "sourceName": "Division",
+      "targetName": "Unitary Method"
+    },
+    {
+      "source": "CN_036",
+      "target": "CN_032",
+      "type": "helpful",
+      "sourceName": "Unitary Method",
+      "targetName": "Ratio Basics"
+    },
+    {
+      "source": "CN_012",
+      "target": "CN_037",
+      "type": "must_know",
+      "sourceName": "BODMAS / Order of Operations",
+      "targetName": "Variables & Expressions"
+    },
+    {
+      "source": "CN_037",
+      "target": "CN_038",
+      "type": "must_know",
+      "sourceName": "Variables & Expressions",
+      "targetName": "Like Terms & Simplification"
+    },
+    {
+      "source": "CN_037",
+      "target": "CN_039",
+      "type": "must_know",
+      "sourceName": "Variables & Expressions",
+      "targetName": "One-Step Equations"
+    },
+    {
+      "source": "CN_039",
+      "target": "CN_040",
+      "type": "must_know",
+      "sourceName": "One-Step Equations",
+      "targetName": "Two-Step Equations"
+    },
+    {
+      "source": "CN_040",
+      "target": "CN_041",
+      "type": "must_know",
+      "sourceName": "Two-Step Equations",
+      "targetName": "Equations — Variables Both Sides"
+    },
+    {
+      "source": "CN_041",
+      "target": "CN_042",
+      "type": "must_know",
+      "sourceName": "Equations — Variables Both Sides",
+      "targetName": "Equations with Brackets"
+    },
+    {
+      "source": "CN_042",
+      "target": "CN_043",
+      "type": "must_know",
+      "sourceName": "Equations with Brackets",
+      "targetName": "Fraction Equations"
+    },
+    {
+      "source": "CN_023",
+      "target": "CN_043",
+      "type": "helpful",
+      "sourceName": "Multiplying & Dividing Fractions",
+      "targetName": "Fraction Equations"
+    },
+    {
+      "source": "CN_038",
+      "target": "CN_044",
+      "type": "must_know",
+      "sourceName": "Like Terms & Simplification",
+      "targetName": "Polynomials"
+    },
+    {
+      "source": "CN_044",
+      "target": "CN_045",
+      "type": "must_know",
+      "sourceName": "Polynomials",
+      "targetName": "Algebraic Identities"
+    },
+    {
+      "source": "CN_045",
+      "target": "CN_046",
+      "type": "must_know",
+      "sourceName": "Algebraic Identities",
+      "targetName": "Quadratic Equations"
+    },
+    {
+      "source": "CN_042",
+      "target": "CN_046",
+      "type": "must_know",
+      "sourceName": "Equations with Brackets",
+      "targetName": "Quadratic Equations"
+    },
+    {
+      "source": "CN_047",
+      "target": "CN_049",
+      "type": "must_know",
+      "sourceName": "2D Shapes",
+      "targetName": "Types of Angles"
+    },
+    {
+      "source": "CN_047",
+      "target": "CN_058",
+      "type": "helpful",
+      "sourceName": "2D Shapes",
+      "targetName": "Symmetry"
+    },
+    {
+      "source": "CN_047",
+      "target": "CN_048",
+      "type": "helpful",
+      "sourceName": "2D Shapes",
+      "targetName": "3D Shapes"
+    },
+    {
+      "source": "CN_049",
+      "target": "CN_050",
+      "type": "must_know",
+      "sourceName": "Types of Angles",
+      "targetName": "Complementary & Supplementary"
+    },
+    {
+      "source": "CN_050",
+      "target": "CN_051",
+      "type": "must_know",
+      "sourceName": "Complementary & Supplementary",
+      "targetName": "Triangle Properties"
+    },
+    {
+      "source": "CN_051",
+      "target": "CN_052",
+      "type": "must_know",
+      "sourceName": "Triangle Properties",
+      "targetName": "Parallel Lines & Transversal"
+    },
+    {
+      "source": "CN_051",
+      "target": "CN_053",
+      "type": "must_know",
+      "sourceName": "Triangle Properties",
+      "targetName": "Polygon Angles"
+    },
+    {
+      "source": "CN_052",
+      "target": "CN_054",
+      "type": "helpful",
+      "sourceName": "Parallel Lines & Transversal",
+      "targetName": "Congruence & Similarity"
+    },
+    {
+      "source": "CN_051",
+      "target": "CN_054",
+      "type": "must_know",
+      "sourceName": "Triangle Properties",
+      "targetName": "Congruence & Similarity"
+    },
+    {
+      "source": "CN_051",
+      "target": "CN_055",
+      "type": "must_know",
+      "sourceName": "Triangle Properties",
+      "targetName": "Pythagoras Theorem"
+    },
+    {
+      "source": "CN_072",
+      "target": "CN_055",
+      "type": "helpful",
+      "sourceName": "Squares & Perfect Squares",
+      "targetName": "Pythagoras Theorem"
+    },
+    {
+      "source": "CN_047",
+      "target": "CN_056",
+      "type": "must_know",
+      "sourceName": "2D Shapes",
+      "targetName": "Circle — Basics"
+    },
+    {
+      "source": "CN_056",
+      "target": "CN_057",
+      "type": "must_know",
+      "sourceName": "Circle — Basics",
+      "targetName": "Circle — Advanced"
+    },
+    {
+      "source": "CN_055",
+      "target": "CN_057",
+      "type": "helpful",
+      "sourceName": "Pythagoras Theorem",
+      "targetName": "Circle — Advanced"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_059",
+      "type": "must_know",
+      "sourceName": "Multiplication",
+      "targetName": "Perimeter"
+    },
+    {
+      "source": "CN_047",
+      "target": "CN_059",
+      "type": "must_know",
+      "sourceName": "2D Shapes",
+      "targetName": "Perimeter"
+    },
+    {
+      "source": "CN_059",
+      "target": "CN_060",
+      "type": "must_know",
+      "sourceName": "Perimeter",
+      "targetName": "Area — Basic Shapes"
+    },
+    {
+      "source": "CN_060",
+      "target": "CN_061",
+      "type": "must_know",
+      "sourceName": "Area — Basic Shapes",
+      "targetName": "Area — Advanced Shapes"
+    },
+    {
+      "source": "CN_056",
+      "target": "CN_061",
+      "type": "helpful",
+      "sourceName": "Circle — Basics",
+      "targetName": "Area — Advanced Shapes"
+    },
+    {
+      "source": "CN_061",
+      "target": "CN_062",
+      "type": "must_know",
+      "sourceName": "Area — Advanced Shapes",
+      "targetName": "Surface Area"
+    },
+    {
+      "source": "CN_048",
+      "target": "CN_062",
+      "type": "must_know",
+      "sourceName": "3D Shapes",
+      "targetName": "Surface Area"
+    },
+    {
+      "source": "CN_061",
+      "target": "CN_063",
+      "type": "must_know",
+      "sourceName": "Area — Advanced Shapes",
+      "targetName": "Volume"
+    },
+    {
+      "source": "CN_048",
+      "target": "CN_063",
+      "type": "must_know",
+      "sourceName": "3D Shapes",
+      "targetName": "Volume"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_064",
+      "type": "must_know",
+      "sourceName": "Division",
+      "targetName": "Speed-Distance-Time Basics"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_064",
+      "type": "must_know",
+      "sourceName": "Multiplication",
+      "targetName": "Speed-Distance-Time Basics"
+    },
+    {
+      "source": "CN_064",
+      "target": "CN_065",
+      "type": "must_know",
+      "sourceName": "Speed-Distance-Time Basics",
+      "targetName": "Speed Unit Conversion"
+    },
+    {
+      "source": "CN_023",
+      "target": "CN_065",
+      "type": "helpful",
+      "sourceName": "Multiplying & Dividing Fractions",
+      "targetName": "Speed Unit Conversion"
+    },
+    {
+      "source": "CN_064",
+      "target": "CN_066",
+      "type": "must_know",
+      "sourceName": "Speed-Distance-Time Basics",
+      "targetName": "Average Speed"
+    },
+    {
+      "source": "CN_066",
+      "target": "CN_067",
+      "type": "must_know",
+      "sourceName": "Average Speed",
+      "targetName": "Train Problems"
+    },
+    {
+      "source": "CN_064",
+      "target": "CN_068",
+      "type": "must_know",
+      "sourceName": "Speed-Distance-Time Basics",
+      "targetName": "Work & Time"
+    },
+    {
+      "source": "CN_022",
+      "target": "CN_068",
+      "type": "must_know",
+      "sourceName": "Adding & Subtracting Fractions",
+      "targetName": "Work & Time"
+    },
+    {
+      "source": "CN_008",
+      "target": "CN_069",
+      "type": "must_know",
+      "sourceName": "Addition",
+      "targetName": "Average (Mean)"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_069",
+      "type": "must_know",
+      "sourceName": "Division",
+      "targetName": "Average (Mean)"
+    },
+    {
+      "source": "CN_069",
+      "target": "CN_070",
+      "type": "must_know",
+      "sourceName": "Average (Mean)",
+      "targetName": "Median, Mode, Range"
+    },
+    {
+      "source": "CN_003",
+      "target": "CN_071",
+      "type": "must_know",
+      "sourceName": "Comparing & Ordering Numbers",
+      "targetName": "Data Interpretation"
+    },
+    {
+      "source": "CN_069",
+      "target": "CN_071",
+      "type": "helpful",
+      "sourceName": "Average (Mean)",
+      "targetName": "Data Interpretation"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_072",
+      "type": "must_know",
+      "sourceName": "Multiplication",
+      "targetName": "Squares & Perfect Squares"
+    },
+    {
+      "source": "CN_072",
+      "target": "CN_073",
+      "type": "must_know",
+      "sourceName": "Squares & Perfect Squares",
+      "targetName": "Square Roots"
+    },
+    {
+      "source": "CN_016",
+      "target": "CN_073",
+      "type": "helpful",
+      "sourceName": "Prime & Composite Numbers",
+      "targetName": "Square Roots"
+    },
+    {
+      "source": "CN_072",
+      "target": "CN_074",
+      "type": "must_know",
+      "sourceName": "Squares & Perfect Squares",
+      "targetName": "Cubes & Cube Roots"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_075",
+      "type": "must_know",
+      "sourceName": "Multiplication",
+      "targetName": "Laws of Indices"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_075",
+      "type": "must_know",
+      "sourceName": "Division",
+      "targetName": "Laws of Indices"
+    },
+    {
+      "source": "CN_075",
+      "target": "CN_076",
+      "type": "must_know",
+      "sourceName": "Laws of Indices",
+      "targetName": "Surds"
+    },
+    {
+      "source": "CN_073",
+      "target": "CN_076",
+      "type": "must_know",
+      "sourceName": "Square Roots",
+      "targetName": "Surds"
+    },
+    {
+      "source": "CN_008",
+      "target": "CN_077",
+      "type": "must_know",
+      "sourceName": "Addition",
+      "targetName": "Simple Patterns"
+    },
+    {
+      "source": "CN_077",
+      "target": "CN_078",
+      "type": "must_know",
+      "sourceName": "Simple Patterns",
+      "targetName": "Arithmetic Progression"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_079",
+      "type": "must_know",
+      "sourceName": "Multiplication",
+      "targetName": "Geometric Progression"
+    },
+    {
+      "source": "CN_078",
+      "target": "CN_079",
+      "type": "helpful",
+      "sourceName": "Arithmetic Progression",
+      "targetName": "Geometric Progression"
+    },
+    {
+      "source": "CN_078",
+      "target": "CN_080",
+      "type": "must_know",
+      "sourceName": "Arithmetic Progression",
+      "targetName": "Special Sequences"
+    },
+    {
+      "source": "CN_072",
+      "target": "CN_080",
+      "type": "helpful",
+      "sourceName": "Squares & Perfect Squares",
+      "targetName": "Special Sequences"
+    },
+    {
+      "source": "CN_008",
+      "target": "CN_081",
+      "type": "must_know",
+      "sourceName": "Addition",
+      "targetName": "Money & Transactions"
+    },
+    {
+      "source": "CN_009",
+      "target": "CN_081",
+      "type": "must_know",
+      "sourceName": "Subtraction",
+      "targetName": "Money & Transactions"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_082",
+      "type": "must_know",
+      "sourceName": "Multiplication",
+      "targetName": "Measurement & Units"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_082",
+      "type": "must_know",
+      "sourceName": "Division",
+      "targetName": "Measurement & Units"
+    },
+    {
+      "source": "CN_009",
+      "target": "CN_083",
+      "type": "must_know",
+      "sourceName": "Subtraction",
+      "targetName": "Time & Calendar"
+    },
+    {
+      "source": "CN_011",
+      "target": "CN_083",
+      "type": "helpful",
+      "sourceName": "Division",
+      "targetName": "Time & Calendar"
+    },
+    {
+      "source": "CN_040",
+      "target": "CN_084",
+      "type": "must_know",
+      "sourceName": "Two-Step Equations",
+      "targetName": "Age Problems"
+    },
+    {
+      "source": "CN_032",
+      "target": "CN_084",
+      "type": "helpful",
+      "sourceName": "Ratio Basics",
+      "targetName": "Age Problems"
+    },
+    {
+      "source": "CN_006",
+      "target": "CN_085",
+      "type": "helpful",
+      "sourceName": "Integers",
+      "targetName": "Sets & Venn Diagrams"
+    },
+    {
+      "source": "CN_015",
+      "target": "CN_086",
+      "type": "helpful",
+      "sourceName": "Factors & Multiples",
+      "targetName": "Counting & Combinatorics"
+    },
+    {
+      "source": "CN_010",
+      "target": "CN_086",
+      "type": "must_know",
+      "sourceName": "Multiplication",
+      "targetName": "Counting & Combinatorics"
+    },
+    {
+      "source": "CN_075",
+      "target": "CN_087",
+      "type": "must_know",
+      "sourceName": "Laws of Indices",
+      "targetName": "Logarithms"
+    },
+    {
+      "source": "CN_051",
+      "target": "CN_088",
+      "type": "must_know",
+      "sourceName": "Triangle Properties",
+      "targetName": "Trigonometry"
+    },
+    {
+      "source": "CN_055",
+      "target": "CN_088",
+      "type": "must_know",
+      "sourceName": "Pythagoras Theorem",
+      "targetName": "Trigonometry"
+    },
+    {
+      "source": "CN_032",
+      "target": "CN_088",
+      "type": "helpful",
+      "sourceName": "Ratio Basics",
+      "targetName": "Trigonometry"
+    }
+  ],
+  "domains": {
+    "numbers": {
+      "name": "numbers",
+      "nodeIds": [
+        "CN_001",
+        "CN_002",
+        "CN_003",
+        "CN_004",
+        "CN_005",
+        "CN_006",
+        "CN_007"
+      ],
+      "color": "#4CAF50"
+    },
+    "arithmetic": {
+      "name": "arithmetic",
+      "nodeIds": [
+        "CN_008",
+        "CN_009",
+        "CN_010",
+        "CN_011",
+        "CN_012",
+        "CN_013"
+      ],
+      "color": "#2196F3"
+    },
+    "factors": {
+      "name": "factors",
+      "nodeIds": [
+        "CN_014",
+        "CN_015",
+        "CN_016",
+        "CN_017",
+        "CN_018"
+      ],
+      "color": "#9C27B0"
+    },
+    "fractions": {
+      "name": "fractions",
+      "nodeIds": [
+        "CN_019",
+        "CN_020",
+        "CN_021",
+        "CN_022",
+        "CN_023",
+        "CN_024",
+        "CN_025"
+      ],
+      "color": "#FF9800"
+    },
+    "percentage": {
+      "name": "percentage",
+      "nodeIds": [
+        "CN_026",
+        "CN_027",
+        "CN_028",
+        "CN_029",
+        "CN_030",
+        "CN_031"
+      ],
+      "color": "#E91E63"
+    },
+    "ratio": {
+      "name": "ratio",
+      "nodeIds": [
+        "CN_032",
+        "CN_033",
+        "CN_034",
+        "CN_035",
+        "CN_036"
+      ],
+      "color": "#00BCD4"
+    },
+    "algebra": {
+      "name": "algebra",
+      "nodeIds": [
+        "CN_037",
+        "CN_038",
+        "CN_039",
+        "CN_040",
+        "CN_041",
+        "CN_042",
+        "CN_043",
+        "CN_044",
+        "CN_045",
+        "CN_046"
+      ],
+      "color": "#673AB7"
+    },
+    "geometry": {
+      "name": "geometry",
+      "nodeIds": [
+        "CN_047",
+        "CN_048",
+        "CN_049",
+        "CN_050",
+        "CN_051",
+        "CN_052",
+        "CN_053",
+        "CN_054",
+        "CN_055",
+        "CN_056",
+        "CN_057",
+        "CN_058"
+      ],
+      "color": "#F44336"
+    },
+    "mensuration": {
+      "name": "mensuration",
+      "nodeIds": [
+        "CN_059",
+        "CN_060",
+        "CN_061",
+        "CN_062",
+        "CN_063"
+      ],
+      "color": "#795548"
+    },
+    "speed": {
+      "name": "speed",
+      "nodeIds": [
+        "CN_064",
+        "CN_065",
+        "CN_066",
+        "CN_067",
+        "CN_068"
+      ],
+      "color": "#607D8B"
+    },
+    "statistics": {
+      "name": "statistics",
+      "nodeIds": [
+        "CN_069",
+        "CN_070",
+        "CN_071"
+      ],
+      "color": "#009688"
+    },
+    "squares": {
+      "name": "squares",
+      "nodeIds": [
+        "CN_072",
+        "CN_073",
+        "CN_074",
+        "CN_075",
+        "CN_076"
+      ],
+      "color": "#FF5722"
+    },
+    "patterns": {
+      "name": "patterns",
+      "nodeIds": [
+        "CN_077",
+        "CN_078",
+        "CN_079",
+        "CN_080"
+      ],
+      "color": "#CDDC39"
+    },
+    "practical": {
+      "name": "practical",
+      "nodeIds": [
+        "CN_081",
+        "CN_082",
+        "CN_083",
+        "CN_084",
+        "CN_085",
+        "CN_086"
+      ],
+      "color": "#8BC34A"
+    },
+    "advanced": {
+      "name": "advanced",
+      "nodeIds": [
+        "CN_087",
+        "CN_088"
+      ],
+      "color": "#9E9E9E"
+    }
+  }
+}

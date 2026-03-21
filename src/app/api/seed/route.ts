@@ -39,6 +39,12 @@ function getTopicId(questionId: string): string {
   const upper = questionId.toUpperCase();
   if (upper.startsWith('Q_DH_'))  return 'dh';
   if (upper.startsWith('PYQ_'))   return 'grade4'; // real IPM Std.4 past papers
+  // EXT_G*, VAR_EXT_G*, VAR_G* patterns → grade pool
+  const gradeMatch = upper.match(/(?:EXT|VAR_EXT|VAR)_G(\d)/);
+  if (gradeMatch) {
+    const g = parseInt(gradeMatch[1], 10);
+    if (g >= 2 && g <= 9) return `grade${g}`;
+  }
   const match = upper.match(/^Q_CH(\d+)_/);
   if (!match) return 'ch11';
   const n = parseInt(match[1], 10);
@@ -107,7 +113,7 @@ const PLANS = [
   { id: 'plan_advanced_weekly',   name: 'Advanced Weekly',  tier: 2, priceINR: 49900,   durationDays: 7,   dailyLimitMinutes: 300,  aiChatDailyLimit: 25,  features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":true,"adaptiveEngine":true,"dashboard":false,"misconceptionFeedback":true,"badges":false,"streaks":false,"aiTutor":true,"mockTest":false,"parentDashboard":false}' },
 ];
 
-const PAGE_SIZE = 100; // questions per API call
+const PAGE_SIZE = 200; // questions per API call
 
 // ---------------------------------------------------------------------------
 // GET /api/seed?secret=xxx&page=0

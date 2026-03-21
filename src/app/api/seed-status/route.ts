@@ -40,6 +40,6 @@ export async function GET(req: Request) {
     topicCount: topics.length,
     topics,
     emptyTopics: empty,
-    healthy: empty.length === 0 && total > 6000,
+    healthy: empty.length === 0 && total > 10000,
   });
 }

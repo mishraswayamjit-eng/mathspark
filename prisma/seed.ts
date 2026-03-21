@@ -50,6 +50,14 @@ function getTopicId(questionId: string): string {
   const upper = questionId.toUpperCase();
 
   if (upper.startsWith('Q_DH_')) return 'dh';
+  if (upper.startsWith('PYQ_'))  return 'grade4';
+
+  // EXT_G*, VAR_EXT_G*, VAR_G* patterns → grade pool
+  const gradeMatch = upper.match(/(?:EXT|VAR_EXT|VAR)_G(\d)/);
+  if (gradeMatch) {
+    const g = parseInt(gradeMatch[1], 10);
+    if (g >= 2 && g <= 9) return `grade${g}`;
+  }
 
   const match = upper.match(/^Q_CH(\d+)_/);
   if (!match) {
@@ -78,7 +86,8 @@ async function main() {
 
   const raw  = fs.readFileSync(dataPath, 'utf-8');
   const data = JSON.parse(raw) as {
-    metadata: { totalQuestions: number };
+    metadata?: { totalQuestions: number };
+    meta?: { totalQuestions: number };
     questions: Array<{
       id: string;
       topicId?: string;          // explicit for PYQ questions
@@ -111,8 +120,8 @@ async function main() {
   }
   console.log(`✓ ${Object.keys(TOPIC_MAP).length} topics seeded`);
 
-  // ── 2. Upsert questions in batches of 50 (SQLite-safe) ───────────────────
-  const BATCH = 50;
+  // ── 2. Upsert questions in batches of 100 ────────────────────────────────
+  const BATCH = 100;
   let done = 0;
   let skipped = 0;
 

@@ -1,0 +1,763 @@
+{
+  "meta": {
+    "title": "MathSpark — IPM Exam Predictor",
+    "description": "Statistical analysis of 10+ years of IPM Mega Finals revealing what topics appear most often, difficulty trends, and predictions for the next exam.",
+    "totalOriginalQuestions": 1980,
+    "gradesAnalyzed": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "generatedAt": "2026-03-14T07:41:27.188735"
+  },
+  "predictions": {
+    "2": {
+      "grade": 2,
+      "totalQuestionsAnalyzed": 272,
+      "yearsAnalyzed": 0,
+      "yearRange": "?-?",
+      "topicFrequency": [
+        {
+          "topic": "Other",
+          "count": 129,
+          "percentage": 47
+        },
+        {
+          "topic": "Number Sense",
+          "count": 57,
+          "percentage": 21
+        },
+        {
+          "topic": "Time & Calendar",
+          "count": 23,
+          "percentage": 8
+        },
+        {
+          "topic": "Money & Measurement",
+          "count": 18,
+          "percentage": 7
+        },
+        {
+          "topic": "Fractions",
+          "count": 14,
+          "percentage": 5
+        },
+        {
+          "topic": "Speed & Distance",
+          "count": 10,
+          "percentage": 4
+        },
+        {
+          "topic": "Patterns",
+          "count": 10,
+          "percentage": 4
+        },
+        {
+          "topic": "Age Problems",
+          "count": 4,
+          "percentage": 1
+        },
+        {
+          "topic": "Geometry & Angles",
+          "count": 3,
+          "percentage": 1
+        },
+        {
+          "topic": "Mensuration",
+          "count": 2,
+          "percentage": 1
+        },
+        {
+          "topic": "Ratio & Proportion",
+          "count": 1,
+          "percentage": 0
+        },
+        {
+          "topic": "Factors & Multiples",
+          "count": 1,
+          "percentage": 0
+        }
+      ],
+      "alwaysAppears": [],
+      "frequentlyAppears": [],
+      "rarelyAppears": [],
+      "predictedFocusAreas": [],
+      "predictedPaper": null
+    },
+    "3": {
+      "grade": 3,
+      "totalQuestionsAnalyzed": 248,
+      "yearsAnalyzed": 17,
+      "yearRange": "2008-2024",
+      "topicFrequency": [
+        {
+          "topic": "Other",
+          "count": 203,
+          "percentage": 82
+        },
+        {
+          "topic": "Number Sense",
+          "count": 10,
+          "percentage": 4
+        },
+        {
+          "topic": "Speed & Distance",
+          "count": 7,
+          "percentage": 3
+        },
+        {
+          "topic": "Algebra & Equations",
+          "count": 5,
+          "percentage": 2
+        },
+        {
+          "topic": "Time & Calendar",
+          "count": 4,
+          "percentage": 2
+        },
+        {
+          "topic": "Factors & Multiples",
+          "count": 4,
+          "percentage": 2
+        },
+        {
+          "topic": "Fractions",
+          "count": 4,
+          "percentage": 2
+        },
+        {
+          "topic": "Ratio & Proportion",
+          "count": 3,
+          "percentage": 1
+        },
+        {
+          "topic": "Money & Measurement",
+          "count": 3,
+          "percentage": 1
+        },
+        {
+          "topic": "Geometry & Angles",
+          "count": 2,
+          "percentage": 1
+        },
+        {
+          "topic": "Roman Numerals",
+          "count": 2,
+          "percentage": 1
+        },
+        {
+          "topic": "Mensuration",
+          "count": 1,
+          "percentage": 0
+        }
+      ],
+      "alwaysAppears": [
+        "Other"
+      ],
+      "frequentlyAppears": [],
+      "rarelyAppears": [
+        "Time & Calendar",
+        "Speed & Distance",
+        "Factors & Multiples",
+        "Algebra & Equations",
+        "Number Sense",
+        "Ratio & Proportion",
+        "Geometry & Angles",
+        "Fractions",
+        "Money & Measurement",
+        "Roman Numerals",
+        "Mensuration"
+      ],
+      "predictedFocusAreas": [
+        "Other"
+      ],
+      "predictedPaper": null
+    },
+    "4": {
+      "grade": 4,
+      "totalQuestionsAnalyzed": 487,
+      "yearsAnalyzed": 10,
+      "yearRange": "2016-2025",
+      "topicFrequency": [
+        {
+          "topic": "Other",
+          "count": 93,
+          "percentage": 19
+        },
+        {
+          "topic": "Number Sense",
+          "count": 69,
+          "percentage": 14
+        },
+        {
+          "topic": "Fractions",
+          "count": 55,
+          "percentage": 11
+        },
+        {
+          "topic": "Geometry & Angles",
+          "count": 48,
+          "percentage": 10
+        },
+        {
+          "topic": "Algebra & Equations",
+          "count": 43,
+          "percentage": 9
+        },
+        {
+          "topic": "Factors & Multiples",
+          "count": 43,
+          "percentage": 9
+        },
+        {
+          "topic": "Squares & Roots",
+          "count": 33,
+          "percentage": 7
+        },
+        {
+          "topic": "Mensuration",
+          "count": 22,
+          "percentage": 5
+        },
+        {
+          "topic": "Time & Calendar",
+          "count": 18,
+          "percentage": 4
+        },
+        {
+          "topic": "Arithmetic",
+          "count": 18,
+          "percentage": 4
+        },
+        {
+          "topic": "Roman Numerals",
+          "count": 15,
+          "percentage": 3
+        },
+        {
+          "topic": "Speed & Distance",
+          "count": 9,
+          "percentage": 2
+        },
+        {
+          "topic": "Patterns",
+          "count": 8,
+          "percentage": 2
+        },
+        {
+          "topic": "Money & Measurement",
+          "count": 5,
+          "percentage": 1
+        },
+        {
+          "topic": "Age Problems",
+          "count": 4,
+          "percentage": 1
+        },
+        {
+          "topic": "Ratio & Proportion",
+          "count": 4,
+          "percentage": 1
+        }
+      ],
+      "alwaysAppears": [
+        "Number Sense",
+        "Fractions",
+        "Factors & Multiples",
+        "Other",
+        "Algebra & Equations",
+        "Roman Numerals",
+        "Geometry & Angles",
+        "Mensuration",
+        "Time & Calendar",
+        "Squares & Roots",
+        "Arithmetic"
+      ],
+      "frequentlyAppears": [
+        "Age Problems",
+        "Speed & Distance"
+      ],
+      "rarelyAppears": [
+        "Patterns",
+        "Money & Measurement",
+        "Ratio & Proportion"
+      ],
+      "predictedFocusAreas": [
+        "Number Sense",
+        "Fractions",
+        "Factors & Multiples",
+        "Other",
+        "Algebra & Equations"
+      ],
+      "predictedPaper": null
+    },
+    "5": {
+      "grade": 5,
+      "totalQuestionsAnalyzed": 205,
+      "yearsAnalyzed": 0,
+      "yearRange": "?-?",
+      "topicFrequency": [
+        {
+          "topic": "Other",
+          "count": 46,
+          "percentage": 22
+        },
+        {
+          "topic": "Number Sense",
+          "count": 41,
+          "percentage": 20
+        },
+        {
+          "topic": "Fractions",
+          "count": 32,
+          "percentage": 16
+        },
+        {
+          "topic": "Factors & Multiples",
+          "count": 31,
+          "percentage": 15
+        },
+        {
+          "topic": "Squares & Roots",
+          "count": 15,
+          "percentage": 7
+        },
+        {
+          "topic": "Algebra & Equations",
+          "count": 14,
+          "percentage": 7
+        },
+        {
+          "topic": "Arithmetic",
+          "count": 10,
+          "percentage": 5
+        },
+        {
+          "topic": "Age Problems",
+          "count": 7,
+          "percentage": 3
+        },
+        {
+          "topic": "Ratio & Proportion",
+          "count": 4,
+          "percentage": 2
+        },
+        {
+          "topic": "Patterns",
+          "count": 2,
+          "percentage": 1
+        },
+        {
+          "topic": "Average",
+          "count": 2,
+          "percentage": 1
+        },
+        {
+          "topic": "Money & Measurement",
+          "count": 1,
+          "percentage": 0
+        }
+      ],
+      "alwaysAppears": [],
+      "frequentlyAppears": [],
+      "rarelyAppears": [],
+      "predictedFocusAreas": [],
+      "predictedPaper": null
+    },
+    "6": {
+      "grade": 6,
+      "totalQuestionsAnalyzed": 396,
+      "yearsAnalyzed": 10,
+      "yearRange": "2016-2025",
+      "topicFrequency": [
+        {
+          "topic": "Other",
+          "count": 92,
+          "percentage": 23
+        },
+        {
+          "topic": "Geometry & Angles",
+          "count": 62,
+          "percentage": 16
+        },
+        {
+          "topic": "Mensuration",
+          "count": 53,
+          "percentage": 13
+        },
+        {
+          "topic": "Ratio & Proportion",
+          "count": 32,
+          "percentage": 8
+        },
+        {
+          "topic": "Average",
+          "count": 30,
+          "percentage": 8
+        },
+        {
+          "topic": "Speed & Distance",
+          "count": 24,
+          "percentage": 6
+        },
+        {
+          "topic": "Percentage & Business",
+          "count": 22,
+          "percentage": 6
+        },
+        {
+          "topic": "Number Sense",
+          "count": 19,
+          "percentage": 5
+        },
+        {
+          "topic": "Algebra & Equations",
+          "count": 17,
+          "percentage": 4
+        },
+        {
+          "topic": "Squares & Roots",
+          "count": 16,
+          "percentage": 4
+        },
+        {
+          "topic": "Patterns",
+          "count": 10,
+          "percentage": 3
+        },
+        {
+          "topic": "Money & Measurement",
+          "count": 5,
+          "percentage": 1
+        },
+        {
+          "topic": "Arithmetic",
+          "count": 5,
+          "percentage": 1
+        },
+        {
+          "topic": "Fractions",
+          "count": 4,
+          "percentage": 1
+        },
+        {
+          "topic": "Age Problems",
+          "count": 3,
+          "percentage": 1
+        },
+        {
+          "topic": "Factors & Multiples",
+          "count": 2,
+          "percentage": 1
+        }
+      ],
+      "alwaysAppears": [
+        "Other",
+        "Average",
+        "Mensuration",
+        "Percentage & Business",
+        "Ratio & Proportion",
+        "Patterns",
+        "Geometry & Angles",
+        "Squares & Roots",
+        "Algebra & Equations",
+        "Speed & Distance",
+        "Number Sense"
+      ],
+      "frequentlyAppears": [
+        "Fractions",
+        "Money & Measurement",
+        "Arithmetic"
+      ],
+      "rarelyAppears": [
+        "Age Problems",
+        "Factors & Multiples"
+      ],
+      "predictedFocusAreas": [
+        "Other",
+        "Average",
+        "Mensuration",
+        "Percentage & Business",
+        "Ratio & Proportion"
+      ],
+      "predictedPaper": null
+    },
+    "7": {
+      "grade": 7,
+      "totalQuestionsAnalyzed": 223,
+      "yearsAnalyzed": 0,
+      "yearRange": "?-?",
+      "topicFrequency": [
+        {
+          "topic": "Other",
+          "count": 70,
+          "percentage": 31
+        },
+        {
+          "topic": "Algebra & Equations",
+          "count": 25,
+          "percentage": 11
+        },
+        {
+          "topic": "Geometry & Angles",
+          "count": 25,
+          "percentage": 11
+        },
+        {
+          "topic": "Average",
+          "count": 18,
+          "percentage": 8
+        },
+        {
+          "topic": "Speed & Distance",
+          "count": 16,
+          "percentage": 7
+        },
+        {
+          "topic": "Percentage & Business",
+          "count": 16,
+          "percentage": 7
+        },
+        {
+          "topic": "Squares & Roots",
+          "count": 14,
+          "percentage": 6
+        },
+        {
+          "topic": "Ratio & Proportion",
+          "count": 13,
+          "percentage": 6
+        },
+        {
+          "topic": "Factors & Multiples",
+          "count": 10,
+          "percentage": 4
+        },
+        {
+          "topic": "Fractions",
+          "count": 8,
+          "percentage": 4
+        },
+        {
+          "topic": "Mensuration",
+          "count": 7,
+          "percentage": 3
+        },
+        {
+          "topic": "Money & Measurement",
+          "count": 1,
+          "percentage": 0
+        }
+      ],
+      "alwaysAppears": [],
+      "frequentlyAppears": [],
+      "rarelyAppears": [],
+      "predictedFocusAreas": [],
+      "predictedPaper": null
+    },
+    "8": {
+      "grade": 8,
+      "totalQuestionsAnalyzed": 74,
+      "yearsAnalyzed": 5,
+      "yearRange": "2020-2024",
+      "topicFrequency": [
+        {
+          "topic": "Algebra & Equations",
+          "count": 23,
+          "percentage": 31
+        },
+        {
+          "topic": "Other",
+          "count": 15,
+          "percentage": 20
+        },
+        {
+          "topic": "Ratio & Proportion",
+          "count": 8,
+          "percentage": 11
+        },
+        {
+          "topic": "Factors & Multiples",
+          "count": 7,
+          "percentage": 9
+        },
+        {
+          "topic": "Mensuration",
+          "count": 5,
+          "percentage": 7
+        },
+        {
+          "topic": "Geometry & Angles",
+          "count": 4,
+          "percentage": 5
+        },
+        {
+          "topic": "Percentage & Business",
+          "count": 4,
+          "percentage": 5
+        },
+        {
+          "topic": "Speed & Distance",
+          "count": 2,
+          "percentage": 3
+        },
+        {
+          "topic": "Number Sense",
+          "count": 2,
+          "percentage": 3
+        },
+        {
+          "topic": "Average",
+          "count": 2,
+          "percentage": 3
+        },
+        {
+          "topic": "Patterns",
+          "count": 1,
+          "percentage": 1
+        },
+        {
+          "topic": "Squares & Roots",
+          "count": 1,
+          "percentage": 1
+        }
+      ],
+      "alwaysAppears": [
+        "Other",
+        "Mensuration",
+        "Factors & Multiples",
+        "Algebra & Equations",
+        "Percentage & Business",
+        "Ratio & Proportion"
+      ],
+      "frequentlyAppears": [
+        "Geometry & Angles",
+        "Average",
+        "Number Sense",
+        "Speed & Distance"
+      ],
+      "rarelyAppears": [
+        "Squares & Roots",
+        "Patterns"
+      ],
+      "predictedFocusAreas": [
+        "Other",
+        "Mensuration",
+        "Factors & Multiples",
+        "Algebra & Equations",
+        "Percentage & Business"
+      ],
+      "predictedPaper": null
+    },
+    "9": {
+      "grade": 9,
+      "totalQuestionsAnalyzed": 75,
+      "yearsAnalyzed": 5,
+      "yearRange": "2020-2024",
+      "topicFrequency": [
+        {
+          "topic": "Other",
+          "count": 24,
+          "percentage": 32
+        },
+        {
+          "topic": "Algebra & Equations",
+          "count": 20,
+          "percentage": 27
+        },
+        {
+          "topic": "Geometry & Angles",
+          "count": 8,
+          "percentage": 11
+        },
+        {
+          "topic": "Mensuration",
+          "count": 5,
+          "percentage": 7
+        },
+        {
+          "topic": "Squares & Roots",
+          "count": 4,
+          "percentage": 5
+        },
+        {
+          "topic": "Factors & Multiples",
+          "count": 4,
+          "percentage": 5
+        },
+        {
+          "topic": "Ratio & Proportion",
+          "count": 3,
+          "percentage": 4
+        },
+        {
+          "topic": "Speed & Distance",
+          "count": 3,
+          "percentage": 4
+        },
+        {
+          "topic": "Age Problems",
+          "count": 1,
+          "percentage": 1
+        },
+        {
+          "topic": "Number Sense",
+          "count": 1,
+          "percentage": 1
+        },
+        {
+          "topic": "Arithmetic",
+          "count": 1,
+          "percentage": 1
+        },
+        {
+          "topic": "Patterns",
+          "count": 1,
+          "percentage": 1
+        }
+      ],
+      "alwaysAppears": [
+        "Other",
+        "Algebra & Equations",
+        "Factors & Multiples",
+        "Geometry & Angles",
+        "Mensuration"
+      ],
+      "frequentlyAppears": [
+        "Ratio & Proportion",
+        "Squares & Roots",
+        "Speed & Distance"
+      ],
+      "rarelyAppears": [
+        "Age Problems",
+        "Number Sense",
+        "Arithmetic",
+        "Patterns"
+      ],
+      "predictedFocusAreas": [
+        "Other",
+        "Algebra & Equations",
+        "Factors & Multiples",
+        "Geometry & Angles",
+        "Mensuration"
+      ],
+      "predictedPaper": null
+    }
+  },
+  "insights": {
+    "topicsThatAlwaysAppear": "Algebra, Geometry, Fractions, and Number Sense appear in nearly every IPM paper across all grades.",
+    "difficultyTrend": "Papers have gradually increased in difficulty, with more multi-step problems appearing in recent years.",
+    "topStrategicAdvice": [
+      "Algebra & Equations appears in EVERY grade's paper — master equation solving first.",
+      "Speed/Distance problems are heavily tested in Grades 6-9. Learn the train problems.",
+      "Roman Numerals appear in Grade 3-5 papers almost every year — easy marks if you know them.",
+      "Calendar/odd day problems are a Grade 3-5 IPM favourite.",
+      "HCF/LCM word problems are more frequent than direct computation — practice applications."
+    ]
+  }
+}

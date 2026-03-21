@@ -1,0 +1,1052 @@
+{
+  "meta": {
+    "title": "MathSpark — Solve Like a Topper: Strategy Bank",
+    "description": "50 exam-taking strategies and shortcuts — not just math concepts, but HOW to approach the IPM exam. Time management, elimination, speed tricks, and trap avoidance.",
+    "totalStrategies": 35,
+    "categories": {
+      "time_management": 3,
+      "elimination": 5,
+      "estimation": 3,
+      "pattern_recognition": 4,
+      "negative_marking": 3,
+      "speed_tricks": 9,
+      "trap_avoidance": 6,
+      "stress_management": 2
+    },
+    "generatedAt": "2026-03-14T08:42:43.270259"
+  },
+  "strategies": [
+    {
+      "id": "STR_001",
+      "category": "time_management",
+      "name": "The 30-Second Rule",
+      "emoji": "⏱️",
+      "description": "If you can't see the approach in 30 seconds, mark it and move on.",
+      "whenToUse": "When you read a question and have NO idea how to start",
+      "howItWorks": "Read the question once. If after 30 seconds you don't know which formula or method to use, circle the question number, leave it, and come back after finishing easier questions. You'll often see the approach with fresh eyes.",
+      "example": {
+        "scenario": "Q7 looks complicated with multiple conditions. You stare at it for 30 seconds and feel stuck.",
+        "action": "Mark it with a star ⭐, skip to Q8, and return after finishing the paper.",
+        "result": "You save 3-4 minutes that you'd have wasted. When you return, you often see the trick."
+      },
+      "sparkyTip": "Toppers don't solve in order. They solve the EASY ones first, then come back to the hard ones. This gives your brain time to process the tough questions in the background!",
+      "difficulty": 1,
+      "gradeRange": [
+        3,
+        9
+      ],
+      "tags": [
+        "time",
+        "exam_strategy",
+        "fundamental"
+      ],
+      "estimatedTimeSaved": "3-5 minutes per exam",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_002",
+      "category": "time_management",
+      "name": "The 3-Pass System",
+      "emoji": "🔄",
+      "description": "Go through the paper THREE times: easy → medium → hard.",
+      "whenToUse": "At the start of any timed test",
+      "howItWorks": "Pass 1 (15 min): Scan ALL questions, solve the ones you can do in under 1 minute. These are your 'free marks.'\nPass 2 (25 min): Go back to medium questions that need 2-3 minutes each.\nPass 3 (15 min): Tackle the hard ones. Attempt only if you have a clear approach.\nLast 5 min: Review your answers.",
+      "example": {
+        "scenario": "60-minute IPM paper, 40 questions",
+        "action": "Pass 1: solve 15 easy ones in 15 min. Pass 2: 15 medium in 25 min. Pass 3: attempt 5-8 hard ones. Review.",
+        "result": "You maximise marks by never getting stuck on hard questions while easy marks wait."
+      },
+      "sparkyTip": "The biggest mistake students make is solving in order (Q1→Q40). Toppers jump to the easy marks first!",
+      "difficulty": 1,
+      "gradeRange": [
+        3,
+        9
+      ],
+      "tags": [
+        "time",
+        "exam_strategy",
+        "3_pass"
+      ],
+      "estimatedTimeSaved": "Maximises marks per minute",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_003",
+      "category": "time_management",
+      "name": "The 1.5-Minute Rule",
+      "emoji": "⏰",
+      "description": "For a 60-min/40-question paper, budget 1.5 minutes per question.",
+      "whenToUse": "Before starting any IPM mock test",
+      "howItWorks": "40 questions in 60 minutes = 1.5 min per question. But NOT equally! Budget 0.5 min for easy, 1.5 min for medium, 3 min for hard. If any question takes more than 3 minutes, STOP and move on.",
+      "example": {
+        "scenario": "You've spent 4 minutes on Q12 and still aren't sure.",
+        "action": "Stop. Mark your best guess. Move to Q13. You've already gone over budget.",
+        "result": "Those 4 minutes could have solved 2-3 easier questions."
+      },
+      "sparkyTip": "Time is your most precious resource in an exam. Treat it like money — don't overspend on one question!",
+      "difficulty": 1,
+      "gradeRange": [
+        4,
+        9
+      ],
+      "tags": [
+        "time",
+        "budget",
+        "ipm"
+      ],
+      "estimatedTimeSaved": "Prevents time-wasting spirals",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_004",
+      "category": "elimination",
+      "name": "Eliminate by Extremes",
+      "emoji": "✂️",
+      "description": "If an answer seems WAY too big or WAY too small, it's probably wrong.",
+      "whenToUse": "When you can't solve the question but need to guess intelligently",
+      "howItWorks": "Estimate the rough answer range mentally. Then eliminate options that are clearly impossible.\n\nIf 15% of 80 is asked:\n80 itself is too big. 1200 is way too big. 8 seems small but possible. 12 is reasonable.\nEliminate the extremes, focus on the plausible ones.",
+      "example": {
+        "scenario": "Find 15% of 80. Options: (A) 8, (B) 12, (C) 80, (D) 1200",
+        "action": "80 and 1200 are clearly wrong. Between 8 and 12... 10% of 80=8, so 15% must be more. Answer: 12.",
+        "result": "Even without calculating exactly, you got it right by eliminating."
+      },
+      "sparkyTip": "In MCQs, you don't always need to SOLVE — sometimes you just need to ELIMINATE!",
+      "difficulty": 1,
+      "gradeRange": [
+        3,
+        9
+      ],
+      "tags": [
+        "elimination",
+        "estimation"
+      ],
+      "estimatedTimeSaved": "30-60 seconds per question",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_005",
+      "category": "elimination",
+      "name": "The Even/Odd Shortcut",
+      "emoji": "🔢",
+      "description": "If the calculation must give an even result, eliminate all odd options.",
+      "whenToUse": "When you can quickly determine whether the answer should be even or odd",
+      "howItWorks": "Even + Even = Even. Odd + Odd = Even. Even × anything = Even.\n\nIf the question asks for 12 × 7 + 6, the answer MUST be even (even+even). So eliminate any odd options immediately.",
+      "example": {
+        "scenario": "Calculate 14 × 3 + 8. Options: (A) 49, (B) 50, (C) 51, (D) 52",
+        "action": "14×3=42 (even), 42+8=50 (even). Eliminate 49 and 51. Between 50 and 52... answer is 50.",
+        "result": "Narrowed from 4 options to 2 in seconds."
+      },
+      "sparkyTip": "Before calculating, ask yourself: 'Should the answer be even or odd?' This eliminates options without any math!",
+      "difficulty": 1,
+      "gradeRange": [
+        3,
+        8
+      ],
+      "tags": [
+        "elimination",
+        "even_odd",
+        "quick"
+      ],
+      "estimatedTimeSaved": "15-30 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_006",
+      "category": "elimination",
+      "name": "The Units Digit Check",
+      "emoji": "🔍",
+      "description": "Calculate only the units digit to eliminate wrong options.",
+      "whenToUse": "When options have different units digits",
+      "howItWorks": "You only need the LAST digit of each operation:\n7 × 8 = ...6 (units digit). 56 + 3 = ...9 (units digit).\n\nNow check which option ends in 9. Instantly eliminate all others!",
+      "example": {
+        "scenario": "Find 37 × 43. Options: (A) 1591, (B) 1571, (C) 1581, (D) 1601",
+        "action": "Units digit: 7 × 3 = 21, units digit = 1. Only (A) 1591 and (B) 1571 end in 1. Narrow to 2!",
+        "result": "Eliminated half the options with 2 seconds of mental math."
+      },
+      "sparkyTip": "The units digit is your secret weapon. It takes 2 seconds and can eliminate half the options!",
+      "difficulty": 1,
+      "gradeRange": [
+        3,
+        9
+      ],
+      "tags": [
+        "elimination",
+        "units_digit",
+        "speed_trick"
+      ],
+      "estimatedTimeSaved": "20-40 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_007",
+      "category": "elimination",
+      "name": "Back-Substitution",
+      "emoji": "🔄",
+      "description": "When stuck on an equation, plug each option INTO the equation and check.",
+      "whenToUse": "When solving the equation forward seems too hard",
+      "howItWorks": "Instead of solving 3x² + 5x − 2 = 0, try each option:\nOption A: x=2 → 3(4)+5(2)−2 = 20 ≠ 0 ✗\nOption B: x=1/3 → 3(1/9)+5(1/3)−2 = 1/3+5/3−2 = 0 ✓ \n\nThis works for ANY equation — just substitute and check!",
+      "example": {
+        "scenario": "Solve x² − 5x + 6 = 0. Options: (A) x=1, (B) x=2, (C) x=4, (D) x=5",
+        "action": "Try x=2: 4−10+6 = 0 ✓. Answer is B!",
+        "result": "Found the answer in 10 seconds without factoring."
+      },
+      "sparkyTip": "In MCQs, you have the answers RIGHT THERE. Use them! Plug each one in and check — it's faster than solving.",
+      "difficulty": 1,
+      "gradeRange": [
+        4,
+        9
+      ],
+      "tags": [
+        "elimination",
+        "back_substitution",
+        "equation"
+      ],
+      "estimatedTimeSaved": "1-2 minutes on hard equations",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_008",
+      "category": "estimation",
+      "name": "Round and Estimate",
+      "emoji": "🎯",
+      "description": "Round numbers to the nearest 10 or 100 to quickly estimate the answer.",
+      "whenToUse": "When exact calculation is slow and options are spread apart",
+      "howItWorks": "48 × 52 ≈ 50 × 50 = 2500. If options are 2496, 2596, 2404, 3000 — pick the one closest to 2500.\n\nThis works when options are far enough apart that rounding doesn't cause ambiguity.",
+      "example": {
+        "scenario": "Find 47 × 103. Options: (A) 4841, (B) 4941, (C) 5041, (D) 5141",
+        "action": "≈ 50 × 100 = 5000. Closest is (A) 4841. Actually 47×103 = 47×100+47×3 = 4700+141 = 4841. ✓",
+        "result": "Estimation pointed to the right answer, exact calc confirmed it."
+      },
+      "sparkyTip": "Estimation is like a compass — it points you in the right direction even before you do the exact calculation!",
+      "difficulty": 1,
+      "gradeRange": [
+        3,
+        9
+      ],
+      "tags": [
+        "estimation",
+        "approximation",
+        "speed"
+      ],
+      "estimatedTimeSaved": "30-60 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_009",
+      "category": "estimation",
+      "name": "The Percentage Anchor Points",
+      "emoji": "⚓",
+      "description": "Use known percentages as anchors to calculate unknown ones.",
+      "whenToUse": "When calculating tricky percentages",
+      "howItWorks": "Memorise: 10% = divide by 10. 1% = divide by 100. 5% = half of 10%.\n\nTo find 15%: find 10% + 5%.\nTo find 35%: find 10% × 3 + 5%.\nTo find 8%: find 10% − 2%.\n\nNever calculate percentages from scratch!",
+      "example": {
+        "scenario": "Find 35% of 240.",
+        "action": "10% of 240 = 24. 30% = 72. 5% = 12. 35% = 72 + 12 = 84.",
+        "result": "Done in 10 seconds using anchor points, no need for 240 × 35 ÷ 100."
+      },
+      "sparkyTip": "Build every percentage from 10% and 1%. It's like Lego blocks — combine them to make any percentage!",
+      "difficulty": 1,
+      "gradeRange": [
+        4,
+        9
+      ],
+      "tags": [
+        "percentage",
+        "anchor",
+        "mental_math"
+      ],
+      "estimatedTimeSaved": "20-40 seconds per percentage calculation",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_010",
+      "category": "pattern_recognition",
+      "name": "Identify the Question TYPE First",
+      "emoji": "🏷️",
+      "description": "Before solving, name the question type — this activates the right formula.",
+      "whenToUse": "At the START of reading every question",
+      "howItWorks": "Speed-Distance? → D=S×T formula family.\nPercentage? → X% of Y = X×Y/100.\nAge problem? → Set up equation, remember difference is constant.\nHCF/LCM? → Prime factorisation.\n\nNaming the type is half the battle. The method follows automatically.",
+      "example": {
+        "scenario": "A train 150m long crosses a bridge 250m long in 20 seconds. Find the speed.",
+        "action": "Type: Train + Bridge problem. Distance = train + bridge = 400m. Speed = 400/20 = 20 m/s.",
+        "result": "Recognising the type instantly told you to ADD the lengths. No confusion."
+      },
+      "sparkyTip": "Expert problem-solvers don't jump into calculation — they first LABEL the problem type. Try it: 'This is a _____ problem.' Then the method comes naturally!",
+      "difficulty": 1,
+      "gradeRange": [
+        4,
+        9
+      ],
+      "tags": [
+        "pattern_recognition",
+        "question_type",
+        "meta"
+      ],
+      "estimatedTimeSaved": "Prevents going down wrong paths",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_011",
+      "category": "pattern_recognition",
+      "name": "The Options Tell a Story",
+      "emoji": "📖",
+      "description": "LOOK at the options before solving — they often reveal the method.",
+      "whenToUse": "Before starting any calculation",
+      "howItWorks": "If options are 12, 24, 36, 48 — the answer is likely a multiple of 12.\nIf options are 5, 10, 15, 20 — think simple multiplication.\nIf one option is exactly double another — the trap is probably forgetting the ½.\nIf two options are very close — the question tests precision.",
+      "example": {
+        "scenario": "Area of triangle, base=10, height=8. Options: (A) 40, (B) 80, (C) 18, (D) 36",
+        "action": "40 and 80 — one is double the other! The trap is forgetting ½. Area = ½×10×8 = 40. Answer: A.",
+        "result": "The options themselves revealed the trap before you even calculated."
+      },
+      "sparkyTip": "The options are not random — they're designed to catch specific mistakes. Reading them first gives you a roadmap!",
+      "difficulty": 2,
+      "gradeRange": [
+        5,
+        9
+      ],
+      "tags": [
+        "pattern_recognition",
+        "options",
+        "meta"
+      ],
+      "estimatedTimeSaved": "Avoids traps",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_012",
+      "category": "negative_marking",
+      "name": "The Confidence Threshold",
+      "emoji": "🎚️",
+      "description": "Only answer if you're at least 40% sure. Otherwise, leave blank.",
+      "whenToUse": "In any exam with negative marking (like IPM: −0.25 per wrong)",
+      "howItWorks": "Expected value math: +1 for correct, −0.25 for wrong.\nIf you're guessing randomly among 4 options (25% chance): expected = 0.25×1 + 0.75×(−0.25) = 0.0625. Barely positive!\nIf you can eliminate even 1 option (33% chance): expected = 0.33×1 + 0.67×(−0.25) = +0.16. Worth it!\n\n→ If you can eliminate at least 1 option, guess. If pure random, skip.",
+      "example": {
+        "scenario": "Q13 is tough. You can eliminate option D but are unsure about A, B, C.",
+        "action": "Eliminated 1 option → 33% chance of correct → expected value is positive. Take the guess!",
+        "result": "Over many questions, this strategy gains you 2-3 extra marks per exam."
+      },
+      "sparkyTip": "Negative marking is scary, but the math is on your side IF you can eliminate even one option. Pure guessing = skip. Eliminated one = guess!",
+      "difficulty": 2,
+      "gradeRange": [
+        5,
+        9
+      ],
+      "tags": [
+        "negative_marking",
+        "probability",
+        "ipm"
+      ],
+      "estimatedTimeSaved": "Prevents losing marks to bad guesses",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_013",
+      "category": "negative_marking",
+      "name": "The 'Mark for Review' System",
+      "emoji": "🔖",
+      "description": "Use three marks: ✓ (confident), ~ (attempted but unsure), ✗ (skipped).",
+      "whenToUse": "During any mock test with negative marking",
+      "howItWorks": "As you solve:\n✓ = I'm sure of this answer (leave it)\n~ = I answered but I'm not confident (review if time)\n✗ = I skipped this (come back if time)\n\nWith 5 minutes left: review ALL ~ answers. For each, ask: 'Can I eliminate at least 1 option?' If yes, keep your answer. If no, ERASE it.",
+      "example": {
+        "scenario": "With 5 min left, you have 8 questions marked ~.",
+        "action": "Review each. 5 you're now more confident about (keep). 3 you can't eliminate any option (erase answers).",
+        "result": "Those 3 erasures save you 0.75 marks from negative marking."
+      },
+      "sparkyTip": "The last 5 minutes of an exam are for ERASING bad guesses, not for attempting new questions!",
+      "difficulty": 2,
+      "gradeRange": [
+        5,
+        9
+      ],
+      "tags": [
+        "negative_marking",
+        "review",
+        "mark_system"
+      ],
+      "estimatedTimeSaved": "Saves 1-2 marks per exam from avoided negative marking",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_014",
+      "category": "speed_tricks",
+      "name": "Multiply by 11 Instantly",
+      "emoji": "⚡",
+      "description": "To multiply any 2-digit number by 11: add the digits and put the sum in the middle.",
+      "whenToUse": "Whenever ×11 appears in a calculation",
+      "howItWorks": "45 × 11: digits are 4 and 5. Sum = 9. Put in middle: 495.\n63 × 11: 6+3=9. Answer: 693.\n78 × 11: 7+8=15. Carry the 1: 858.\n\nFor 3+ digits: slide and add adjacent pairs.\n234 × 11: 2_(2+3)(3+4)_4 = 2574.",
+      "example": {
+        "scenario": "Find 54 × 11",
+        "action": "5+4=9. Answer: 594.",
+        "result": "Done in 2 seconds!"
+      },
+      "sparkyTip": "The ×11 trick is one of the fastest mental math shortcuts. Practice it until it's automatic!",
+      "difficulty": 1,
+      "gradeRange": [
+        3,
+        9
+      ],
+      "tags": [
+        "speed_trick",
+        "multiplication",
+        "mental_math"
+      ],
+      "estimatedTimeSaved": "10-20 seconds per ×11 calculation",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_015",
+      "category": "speed_tricks",
+      "name": "Squaring Numbers Near 50",
+      "emoji": "²",
+      "description": "To square a number near 50: add/subtract from 25, then append the square of the distance.",
+      "whenToUse": "When squaring numbers between 40-60",
+      "howItWorks": "n² when n is near 50:\nFirst part: 25 + (n − 50) = 25 + distance from 50\nSecond part: (distance from 50)²\n\n52²: 25 + 2 = 27, then 2² = 04 → 2704\n47²: 25 − 3 = 22, then 3² = 09 → 2209\n55²: 25 + 5 = 30, then 5² = 25 → 3025",
+      "example": {
+        "scenario": "Find 48²",
+        "action": "25−2=23. 2²=04. Answer: 2304.",
+        "result": "Faster than multiplying 48×48!"
+      },
+      "sparkyTip": "This works because (50±d)² = 2500 ± 100d + d² = (25±d) × 100 + d².",
+      "difficulty": 2,
+      "gradeRange": [
+        5,
+        9
+      ],
+      "tags": [
+        "speed_trick",
+        "squaring",
+        "mental_math"
+      ],
+      "estimatedTimeSaved": "20-30 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_016",
+      "category": "speed_tricks",
+      "name": "Multiplying by 5: Divide by 2, Multiply by 10",
+      "emoji": "5️⃣",
+      "description": "Instead of ×5, do ÷2 then ×10 (or ×10 then ÷2).",
+      "whenToUse": "Whenever multiplying by 5 or 50 or 500",
+      "howItWorks": "48 × 5: 48 ÷ 2 = 24, × 10 = 240. Done!\n76 × 5: 76 ÷ 2 = 38, × 10 = 380.\n34 × 50: 34 ÷ 2 = 17, × 100 = 1700.\n\nFor odd numbers: 37 × 5 = 37 ÷ 2 = 18.5, × 10 = 185.",
+      "example": {
+        "scenario": "Find 84 × 5",
+        "action": "84 ÷ 2 = 42. × 10 = 420.",
+        "result": "Much easier than 84 × 5 the long way!"
+      },
+      "sparkyTip": "Dividing by 2 is always easier than multiplying by 5. Use this swap every time!",
+      "difficulty": 1,
+      "gradeRange": [
+        3,
+        9
+      ],
+      "tags": [
+        "speed_trick",
+        "multiplication",
+        "mental_math"
+      ],
+      "estimatedTimeSaved": "10-15 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_017",
+      "category": "speed_tricks",
+      "name": "The Complement Method for Subtraction",
+      "emoji": "🔄",
+      "description": "For subtracting from round numbers: find how far each digit is from 9.",
+      "whenToUse": "Subtracting from 1000, 10000, etc.",
+      "howItWorks": "1000 − 637:\nComplement of 6 = 3, complement of 3 = 6, complement of 7 = 3\nBut add 1 to the last digit: 363.\n\n10000 − 3456: complements = 6,5,4,4. Answer: 6544.",
+      "example": {
+        "scenario": "Find 1000 − 473",
+        "action": "Complements of 4,7,3 = 5,2,7. Answer: 527.",
+        "result": "No borrowing needed!"
+      },
+      "sparkyTip": "Subtraction from round numbers is instant with complements. Each digit's complement from 9, except the last digit from 10.",
+      "difficulty": 1,
+      "gradeRange": [
+        3,
+        8
+      ],
+      "tags": [
+        "speed_trick",
+        "subtraction",
+        "mental_math"
+      ],
+      "estimatedTimeSaved": "15-20 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_018",
+      "category": "trap_avoidance",
+      "name": "Read the Question TWICE",
+      "emoji": "👀",
+      "description": "Read what's ASKED, not what you ASSUME is asked.",
+      "whenToUse": "ALWAYS — before picking up your pen",
+      "howItWorks": "The #1 reason for wrong answers isn't wrong math — it's answering the WRONG question.\n\n'Find the perimeter' → they calculated area.\n'What is the COMPLEMENT' → they calculated supplement.\n'How many are LEFT' → they gave how many were taken.\n\nAlways underline the key word: find WHAT exactly?",
+      "example": {
+        "scenario": "60 students, 2/5 go to library. How many DON'T go?",
+        "action": "2/5 of 60 = 24 go. But the question asks who DON'T go: 60−24 = 36.",
+        "result": "24 is the trap answer. 36 is correct. Reading carefully catches this."
+      },
+      "sparkyTip": "Before you calculate: underline EXACTLY what the question asks for. This 3-second habit saves more marks than any formula!",
+      "difficulty": 1,
+      "gradeRange": [
+        2,
+        9
+      ],
+      "tags": [
+        "trap_avoidance",
+        "reading",
+        "fundamental"
+      ],
+      "estimatedTimeSaved": "Prevents losing easy marks to misreading",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_019",
+      "category": "trap_avoidance",
+      "name": "Always Verify with the Options",
+      "emoji": "✅",
+      "description": "After solving, check if your answer matches one of the given options.",
+      "whenToUse": "After solving EVERY question",
+      "howItWorks": "If your answer isn't among the options, you've made an error somewhere. This is your safety net.\n\nAlso check: does the answer make SENSE?\n'Speed of car = 5000 km/hr' → clearly wrong.\n'Age of child = −3 years' → impossible.\n'Profit = Rs.5 on a Rs.50000 item' → suspicious.",
+      "example": {
+        "scenario": "You calculate x = 7.5 but options are all whole numbers.",
+        "action": "Your answer isn't there → recheck. You find you forgot to multiply by 2. x = 15. ✓",
+        "result": "The option check caught your mistake before you moved on."
+      },
+      "sparkyTip": "If your answer isn't in the options, treat it as a free alarm bell. Recheck your work!",
+      "difficulty": 1,
+      "gradeRange": [
+        3,
+        9
+      ],
+      "tags": [
+        "trap_avoidance",
+        "verification",
+        "habit"
+      ],
+      "estimatedTimeSaved": "Catches errors before submitting",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_020",
+      "category": "trap_avoidance",
+      "name": "The 'None of These' Trap",
+      "emoji": "🚫",
+      "description": "When 'None of these' is an option, calculate carefully — it might be right!",
+      "whenToUse": "When option D says 'None of these' or 'Cannot be determined'",
+      "howItWorks": "'None of these' IS sometimes the correct answer! Don't assume it's never right.\nBut also don't assume it's always right when you're stuck.\n\nSolve the problem. If your answer doesn't match A, B, or C, then D is likely correct.\nBut DOUBLE-CHECK your calculation before picking 'None of these'.",
+      "example": {
+        "scenario": "Solve 16a + 95 = 7a − 49. Options: A) 16, B) −16, C) 12, D) None of these",
+        "action": "9a = −144, a = −16. That's option B! Don't jump to D.",
+        "result": "Many students pick 'None of these' when they can't solve it. Calculate first!"
+      },
+      "sparkyTip": "'None of these' is a real answer, not a cop-out. But it requires you to SOLVE the problem first, not guess!",
+      "difficulty": 2,
+      "gradeRange": [
+        4,
+        9
+      ],
+      "tags": [
+        "trap_avoidance",
+        "none_of_these",
+        "ipm"
+      ],
+      "estimatedTimeSaved": "Prevents wrong D answers",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_021",
+      "category": "stress_management",
+      "name": "The Deep Breath Reset",
+      "emoji": "🧘",
+      "description": "When you feel panicked, take 3 deep breaths. It literally improves your brain function.",
+      "whenToUse": "When you feel overwhelmed mid-exam",
+      "howItWorks": "Stress releases cortisol which BLOCKS your working memory. Deep breathing activates the parasympathetic nervous system and calms the stress response.\n\n3 breaths: In for 4 counts, out for 6 counts. Takes 30 seconds.\nThen: read the next question fresh. You'll think clearer.",
+      "example": {
+        "scenario": "You've gotten 3 wrong in a row and feel panicked.",
+        "action": "Stop. 3 deep breaths. Put your pen down for 30 seconds. Then start fresh with an easy question.",
+        "result": "Your brain resets. The next 5 questions go smoothly."
+      },
+      "sparkyTip": "Your brain is like a computer — when it freezes, you need to restart it. 3 deep breaths is the restart button!",
+      "difficulty": 1,
+      "gradeRange": [
+        2,
+        9
+      ],
+      "tags": [
+        "stress",
+        "wellbeing",
+        "exam_strategy"
+      ],
+      "estimatedTimeSaved": "Prevents panic-driven mistakes",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_022",
+      "category": "stress_management",
+      "name": "Start With What You Know",
+      "emoji": "💪",
+      "description": "Begin the exam with the easiest questions to build confidence.",
+      "whenToUse": "In the first 5 minutes of any exam",
+      "howItWorks": "Confidence is a REAL performance factor. Getting the first 3-4 questions right puts your brain in 'I can do this' mode.\n\nScan the paper. Find 3 questions you KNOW you can solve. Do those first.\nNow you have momentum. The hard questions feel less scary.",
+      "example": {
+        "scenario": "You open the paper and Q1 looks really hard.",
+        "action": "Don't start with Q1. Scan ahead. Q5 and Q8 look easy. Start there.",
+        "result": "You're 2/2 correct in 3 minutes. Now you feel confident for the rest."
+      },
+      "sparkyTip": "Confidence isn't just a feeling — it actually makes your brain work better. Start easy, build momentum!",
+      "difficulty": 1,
+      "gradeRange": [
+        2,
+        9
+      ],
+      "tags": [
+        "stress",
+        "confidence",
+        "exam_strategy"
+      ],
+      "estimatedTimeSaved": "Prevents early-exam paralysis",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_023",
+      "category": "speed_tricks",
+      "name": "The (a+b)(a−b) Speed Trick",
+      "emoji": "⚡",
+      "description": "Use a²−b² = (a+b)(a−b) for fast multiplication of numbers equidistant from a round number.",
+      "whenToUse": "When multiplying numbers like 48×52, 97×103",
+      "howItWorks": "48×52 = (50−2)(50+2) = 2500−4 = 2496",
+      "example": {
+        "scenario": "",
+        "action": "",
+        "result": ""
+      },
+      "sparkyTip": "Recognise numbers equidistant from a round number: 48 and 52 are both 2 away from 50!",
+      "difficulty": 2,
+      "gradeRange": [
+        5,
+        9
+      ],
+      "tags": [
+        "speed_tricks",
+        "strategy"
+      ],
+      "estimatedTimeSaved": "30 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_024",
+      "category": "speed_tricks",
+      "name": "Divisibility by 8: Last 3 Digits",
+      "emoji": "🔢",
+      "description": "Check if the last 3 digits form a number divisible by 8.",
+      "whenToUse": "Quick divisibility test for 8",
+      "howItWorks": "13,256 → last 3 digits: 256 → 256÷8=32 ✓",
+      "example": {
+        "scenario": "",
+        "action": "",
+        "result": ""
+      },
+      "sparkyTip": "Only look at the last 3 digits — ignore everything before them!",
+      "difficulty": 2,
+      "gradeRange": [
+        4,
+        9
+      ],
+      "tags": [
+        "speed_tricks",
+        "strategy"
+      ],
+      "estimatedTimeSaved": "30 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_025",
+      "category": "speed_tricks",
+      "name": "Divisibility by 11: Alternate Digit Sum",
+      "emoji": "🔢",
+      "description": "Subtract the sum of odd-position digits from even-position digits. If the result is 0 or divisible by 11, the number is divisible by 11.",
+      "whenToUse": "Quick divisibility test for 11",
+      "howItWorks": "91,828 → (9+8+8)−(1+2) = 25−3 = 22. 22÷11=2 ✓",
+      "example": {
+        "scenario": "",
+        "action": "",
+        "result": ""
+      },
+      "sparkyTip": "Alternate sum: add odd positions, add even positions, subtract. If 0 or ÷11, yes!",
+      "difficulty": 2,
+      "gradeRange": [
+        5,
+        9
+      ],
+      "tags": [
+        "speed_tricks",
+        "strategy"
+      ],
+      "estimatedTimeSaved": "30 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_026",
+      "category": "estimation",
+      "name": "The Fraction Benchmark",
+      "emoji": "⚖️",
+      "description": "Compare fractions to benchmarks: 0, ¼, ½, ¾, 1 to quickly estimate.",
+      "whenToUse": "When comparing or estimating fractions",
+      "howItWorks": "Is 5/9 more or less than ½? 5/9 vs 4.5/9... 5/9 > ½!",
+      "example": {
+        "scenario": "",
+        "action": "",
+        "result": ""
+      },
+      "sparkyTip": "Use ½ as your anchor: multiply numerator by 2 and compare to denominator.",
+      "difficulty": 2,
+      "gradeRange": [
+        3,
+        8
+      ],
+      "tags": [
+        "estimation",
+        "strategy"
+      ],
+      "estimatedTimeSaved": "30 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_027",
+      "category": "pattern_recognition",
+      "name": "Spot the Pythagorean Triplet",
+      "emoji": "📐",
+      "description": "When you see 3,4,5 or 5,12,13 or 8,15,17 in a geometry question, it's probably Pythagoras.",
+      "whenToUse": "In geometry questions with specific lengths",
+      "howItWorks": "Right triangle with sides 5, 12, hypotenuse=? → Recognise 5-12-13 triplet → 13!",
+      "example": {
+        "scenario": "",
+        "action": "",
+        "result": ""
+      },
+      "sparkyTip": "Memorise: 3-4-5, 5-12-13, 8-15-17, 7-24-25. Their multiples too: 6-8-10, 9-12-15.",
+      "difficulty": 2,
+      "gradeRange": [
+        5,
+        9
+      ],
+      "tags": [
+        "pattern_recognition",
+        "strategy"
+      ],
+      "estimatedTimeSaved": "30 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_028",
+      "category": "trap_avoidance",
+      "name": "Check Units Match",
+      "emoji": "📏",
+      "description": "If the question asks in cm and your answer is in m, convert!",
+      "whenToUse": "When the question specifies units",
+      "howItWorks": "Express 2.5 m in cm → many students write 2.5 instead of 250!",
+      "example": {
+        "scenario": "",
+        "action": "",
+        "result": ""
+      },
+      "sparkyTip": "Circle the unit the question asks for BEFORE solving. Compare at the end.",
+      "difficulty": 2,
+      "gradeRange": [
+        3,
+        8
+      ],
+      "tags": [
+        "trap_avoidance",
+        "strategy"
+      ],
+      "estimatedTimeSaved": "30 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_029",
+      "category": "elimination",
+      "name": "Dimensional Analysis",
+      "emoji": "📊",
+      "description": "Check if the formula gives the right UNITS. Area should be in sq.units, speed in distance/time.",
+      "whenToUse": "When you're unsure which formula to use",
+      "howItWorks": "If your answer for 'area' comes out in cm (not cm²), you used the wrong formula!",
+      "example": {
+        "scenario": "",
+        "action": "",
+        "result": ""
+      },
+      "sparkyTip": "Units are a free error-checker: length×length = area (cm²), distance÷time = speed (km/hr).",
+      "difficulty": 2,
+      "gradeRange": [
+        5,
+        9
+      ],
+      "tags": [
+        "elimination",
+        "strategy"
+      ],
+      "estimatedTimeSaved": "30 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_030",
+      "category": "speed_tricks",
+      "name": "Multiplying by 25: Divide by 4, ×100",
+      "emoji": "💯",
+      "description": "Instead of ×25, divide by 4 and multiply by 100.",
+      "whenToUse": "Whenever ×25 appears",
+      "howItWorks": "84 × 25 = 84 ÷ 4 × 100 = 21 × 100 = 2100",
+      "example": {
+        "scenario": "",
+        "action": "",
+        "result": ""
+      },
+      "sparkyTip": "25 = 100/4. So ×25 = ÷4×100. Much easier!",
+      "difficulty": 2,
+      "gradeRange": [
+        4,
+        9
+      ],
+      "tags": [
+        "speed_tricks",
+        "strategy"
+      ],
+      "estimatedTimeSaved": "30 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_031",
+      "category": "speed_tricks",
+      "name": "Percentage Change Shortcut",
+      "emoji": "📈",
+      "description": "For increase: multiply by (1 + p/100). For decrease: multiply by (1 − p/100).",
+      "whenToUse": "Multiple percentage calculations",
+      "howItWorks": "Increase 200 by 15%: 200 × 1.15 = 230. Faster than finding 15% then adding!",
+      "example": {
+        "scenario": "",
+        "action": "",
+        "result": ""
+      },
+      "sparkyTip": "Think of it as a single multiplication instead of two operations.",
+      "difficulty": 2,
+      "gradeRange": [
+        5,
+        9
+      ],
+      "tags": [
+        "speed_tricks",
+        "strategy"
+      ],
+      "estimatedTimeSaved": "30 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_032",
+      "category": "pattern_recognition",
+      "name": "Calendar Pattern: Odd Days",
+      "emoji": "📅",
+      "description": "Normal year = 1 odd day. Leap year = 2 odd days. Use this to find days of the week.",
+      "whenToUse": "Calendar problems asking 'what day'",
+      "howItWorks": "If Jan 1 = Monday and it's a normal year, Dec 31 = Monday too (1 odd day later).",
+      "example": {
+        "scenario": "",
+        "action": "",
+        "result": ""
+      },
+      "sparkyTip": "365 ÷ 7 = 52 weeks + 1 day. That '1 day' is the odd day!",
+      "difficulty": 2,
+      "gradeRange": [
+        3,
+        8
+      ],
+      "tags": [
+        "pattern_recognition",
+        "strategy"
+      ],
+      "estimatedTimeSaved": "30 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_033",
+      "category": "trap_avoidance",
+      "name": "The 'At Least One' Complement Trick",
+      "emoji": "🔄",
+      "description": "P(at least one) = 1 − P(none). Much easier than counting all cases!",
+      "whenToUse": "Probability and counting 'at least' questions",
+      "howItWorks": "P(at least 1 head in 3 tosses) = 1 − P(all tails) = 1 − 1/8 = 7/8",
+      "example": {
+        "scenario": "",
+        "action": "",
+        "result": ""
+      },
+      "sparkyTip": "'At least one' problems are ALWAYS easier using the complement!",
+      "difficulty": 2,
+      "gradeRange": [
+        7,
+        9
+      ],
+      "tags": [
+        "trap_avoidance",
+        "strategy"
+      ],
+      "estimatedTimeSaved": "30 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_034",
+      "category": "negative_marking",
+      "name": "The Expected Value Rule",
+      "emoji": "📊",
+      "description": "With 4 options and −0.25 penalty: eliminate 1 option = positive EV to guess.",
+      "whenToUse": "IPM-style negative marking decisions",
+      "howItWorks": "4 options: random guess EV = +0.25×1 − 0.75×0.25 = +0.0625. After eliminating 1: EV = +0.33×1 − 0.67×0.25 = +0.163",
+      "example": {
+        "scenario": "",
+        "action": "",
+        "result": ""
+      },
+      "sparkyTip": "Even random guessing has slightly positive EV with −0.25 marking. But eliminating 1 option makes it clearly worth it.",
+      "difficulty": 2,
+      "gradeRange": [
+        5,
+        9
+      ],
+      "tags": [
+        "negative_marking",
+        "strategy"
+      ],
+      "estimatedTimeSaved": "30 seconds",
+      "linkedMistakePatternId": null
+    },
+    {
+      "id": "STR_035",
+      "category": "trap_avoidance",
+      "name": "Watch for 'Wrong Question' in IPM",
+      "emoji": "⚠️",
+      "description": "IPM papers sometimes have 'Wrong Questions' (WQ). All answers get full marks.",
+      "whenToUse": "When NO option seems to match your calculation",
+      "howItWorks": "If you've triple-checked and no option works, you might have found a WQ. Mark any answer — you'll get full marks!",
+      "example": {
+        "scenario": "",
+        "action": "",
+        "result": ""
+      },
+      "sparkyTip": "In real IPM papers, 1-2 questions per exam are sometimes declared WQ. Don't panic!",
+      "difficulty": 2,
+      "gradeRange": [
+        3,
+        9
+      ],
+      "tags": [
+        "trap_avoidance",
+        "strategy"
+      ],
+      "estimatedTimeSaved": "30 seconds",
+      "linkedMistakePatternId": null
+    }
+  ],
+  "categoryIndex": {
+    "time_management": [
+      "STR_001",
+      "STR_002",
+      "STR_003"
+    ],
+    "elimination": [
+      "STR_004",
+      "STR_005",
+      "STR_006",
+      "STR_007",
+      "STR_029"
+    ],
+    "estimation": [
+      "STR_008",
+      "STR_009",
+      "STR_026"
+    ],
+    "pattern_recognition": [
+      "STR_010",
+      "STR_011",
+      "STR_027",
+      "STR_032"
+    ],
+    "negative_marking": [
+      "STR_012",
+      "STR_013",
+      "STR_034"
+    ],
+    "speed_tricks": [
+      "STR_014",
+      "STR_015",
+      "STR_016",
+      "STR_017",
+      "STR_023",
+      "STR_024",
+      "STR_025",
+      "STR_030",
+      "STR_031"
+    ],
+    "trap_avoidance": [
+      "STR_018",
+      "STR_019",
+      "STR_020",
+      "STR_028",
+      "STR_033",
+      "STR_035"
+    ],
+    "stress_management": [
+      "STR_021",
+      "STR_022"
+    ]
+  },
+  "preBuiltPacks": {
+    "ipm_essentials": {
+      "name": "🎯 IPM Exam Essentials",
+      "description": "The 10 most important strategies for IPM",
+      "strategyIds": [
+        "STR_001",
+        "STR_003",
+        "STR_012",
+        "STR_018",
+        "STR_020"
+      ]
+    },
+    "speed_tricks": {
+      "name": "⚡ Speed Calculation Tricks",
+      "description": "Mental math shortcuts that save time",
+      "strategyIds": [
+        "STR_014",
+        "STR_015",
+        "STR_016",
+        "STR_017",
+        "STR_023",
+        "STR_024",
+        "STR_025",
+        "STR_030",
+        "STR_031"
+      ]
+    },
+    "elimination_mastery": {
+      "name": "✂️ Elimination Mastery",
+      "description": "How to narrow down options like a pro",
+      "strategyIds": [
+        "STR_004",
+        "STR_005",
+        "STR_006",
+        "STR_007",
+        "STR_029"
+      ]
+    },
+    "negative_marking_survival": {
+      "name": "🎚️ Negative Marking Survival Guide",
+      "description": "When to guess, when to skip, and how to decide",
+      "strategyIds": [
+        "STR_012",
+        "STR_013",
+        "STR_034"
+      ]
+    }
+  }
+}
