@@ -404,7 +404,7 @@ function main() {
 
       // Fuzzy match (only check if not exact duplicate — expensive operation)
       if (!isDuplicate) {
-        for (const [existingNorm, existingId] of existingTexts) {
+        for (const [existingNorm, existingId] of Array.from(existingTexts.entries())) {
           // Quick length check first
           if (Math.abs(normText.length - existingNorm.length) > normText.length * 0.2) continue;
           const sim = levenshteinSimilarity(normText, existingNorm);
