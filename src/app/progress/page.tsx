@@ -339,7 +339,7 @@ export default function ProgressPage() {
             {topics.map((t) => {
               const pct = accuracyPct(t);
               const level = t.attempted === 0
-                ? { color: '#E5E7EB', label: 'Not started', emoji: '—' }
+                ? { color: '#E5E7EB', label: 'Not started', emoji: '—', bg: '#F9FAFB' }
                 : masteryLevel(pct);
               return (
                 <Link
