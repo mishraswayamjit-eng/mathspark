@@ -81,7 +81,7 @@ export function detectMistakes(
 
   // Build result sorted by occurrences descending
   const results: DetectedMistake[] = [];
-  for (const [patternId, occurrences] of counts.entries()) {
+  for (const [patternId, occurrences] of Array.from(counts.entries())) {
     const p = patterns.find((pat) => pat.id === patternId);
     if (!p) continue;
     results.push({
