@@ -2,6 +2,7 @@
 
 import Sparky from './Sparky';
 import DuoButton from './DuoButton';
+import KatexRenderer from './KatexRenderer';
 
 interface HintSystemProps {
   hint1: string;
@@ -11,11 +12,24 @@ interface HintSystemProps {
   onLevelUp: (next: number) => void;
 }
 
+/** Returns true if a string contains LaTeX markup (backslash commands). */
+function hasLatex(text: string): boolean {
+  return text.includes('\\');
+}
+
+/** Renders text with KaTeX support when LaTeX markers are detected. */
+function HintText({ text }: { text: string }) {
+  if (hasLatex(text)) {
+    return <KatexRenderer latex={text} displayMode={false} />;
+  }
+  return <>{text}</>;
+}
+
 export default function HintSystem({ hint1, hint2, hint3, level, onLevelUp }: HintSystemProps) {
   if (level === 0 || !hint1) return null;
 
   return (
-    <div className="rounded-2xl bg-[#FFF9E6] border-2 border-[#FF9600] p-4 space-y-3 relative">
+    <div className="rounded-2xl bg-[#FFF9E6] border-2 border-duo-orange p-4 space-y-3 relative">
       {/* Sparky thinking */}
       <div className="absolute -top-5 right-3">
         <Sparky mood="thinking" size={48} />
@@ -23,31 +37,37 @@ export default function HintSystem({ hint1, hint2, hint3, level, onLevelUp }: Hi
 
       {/* Level 1 — strategic hint (auto-shown after wrong answer) */}
       {level >= 1 && hint1 && (
-        <div>
-          <p className="text-xs font-extrabold text-[#cc7800] uppercase tracking-wide mb-1">
+        <div className="animate-fade-in">
+          <p className="text-xs font-extrabold text-duo-orange-dark uppercase tracking-wide mb-1">
             💡 Hint
           </p>
-          <p className="text-gray-700 text-sm leading-relaxed font-medium">{hint1}</p>
+          <p className="text-gray-700 text-sm leading-relaxed font-medium">
+            <HintText text={hint1} />
+          </p>
         </div>
       )}
 
       {/* Level 2 — procedural hint */}
       {level >= 2 && hint2 && (
-        <div className="border-t border-[#FFD9A0] pt-3">
-          <p className="text-xs font-extrabold text-[#cc7800] uppercase tracking-wide mb-1">
+        <div className="border-t border-[#FFD9A0] pt-3 animate-fade-in">
+          <p className="text-xs font-extrabold text-duo-orange-dark uppercase tracking-wide mb-1">
             📝 Step hint
           </p>
-          <p className="text-gray-700 text-sm leading-relaxed font-medium">{hint2}</p>
+          <p className="text-gray-700 text-sm leading-relaxed font-medium">
+            <HintText text={hint2} />
+          </p>
         </div>
       )}
 
       {/* Level 3 — worked example */}
       {level >= 3 && hint3 && (
-        <div className="border-t border-[#FFD9A0] pt-3">
-          <p className="text-xs font-extrabold text-[#cc7800] uppercase tracking-wide mb-1">
+        <div className="border-t border-[#FFD9A0] pt-3 animate-fade-in">
+          <p className="text-xs font-extrabold text-duo-orange-dark uppercase tracking-wide mb-1">
             🔍 Worked example
           </p>
-          <p className="text-gray-700 text-sm leading-relaxed font-medium">{hint3}</p>
+          <p className="text-gray-700 text-sm leading-relaxed font-medium">
+            <HintText text={hint3} />
+          </p>
         </div>
       )}
 

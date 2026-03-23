@@ -46,7 +46,7 @@ export default function TimerCircle({ totalMs, remainingMs, size = 56 }: TimerCi
           strokeDashoffset={offset}
           strokeLinecap="round"
           transform={`rotate(-90 ${size / 2} ${size / 2})`}
-          className="transition-all duration-200"
+          className="transition-[stroke-dashoffset] duration-200"
         />
         {/* Seconds text */}
         <text

@@ -58,11 +58,11 @@ function formatTime(ms: number): string {
 }
 
 function getGradeBand(pct: number): { label: string; color: string } {
-  if (pct >= 90) return { label: 'Outstanding! 🏆', color: 'text-[#58CC02]' };
-  if (pct >= 80) return { label: 'Excellent! ⭐',   color: 'text-[#58CC02]' };
-  if (pct >= 70) return { label: 'Good work! 👍',   color: 'text-[#1CB0F6]' };
-  if (pct >= 60) return { label: 'Keep going! 💪',  color: 'text-[#FF9600]' };
-  return { label: 'More practice needed 📚', color: 'text-[#FF4B4B]' };
+  if (pct >= 90) return { label: 'Outstanding! 🏆', color: 'text-duo-green' };
+  if (pct >= 80) return { label: 'Excellent! ⭐',   color: 'text-duo-green' };
+  if (pct >= 70) return { label: 'Good work! 👍',   color: 'text-duo-blue' };
+  if (pct >= 60) return { label: 'Keep going! 💪',  color: 'text-duo-orange' };
+  return { label: 'More practice needed 📚', color: 'text-duo-red' };
 }
 
 // ── Analytics computation ─────────────────────────────────────────────────────
@@ -176,30 +176,30 @@ function QuestionAccordion({ r, idx }: { r: MockTestResponse; idx: number }) {
               const isSelected = r.selectedAnswer === key;
               const isCorrect  = q.correctAnswer === key;
               const cls =
-                isCorrect  ? 'bg-green-50 border-[#58CC02] text-green-800' :
-                isSelected ? 'bg-red-50 border-[#FF4B4B] text-red-800' :
+                isCorrect  ? 'bg-green-50 border-duo-green text-green-800' :
+                isSelected ? 'bg-red-50 border-duo-red text-red-800' :
                              'bg-white border-gray-200 text-gray-600';
               return (
                 <div key={key} className={`flex items-center gap-2 px-3 py-2 rounded-xl border-2 text-sm ${cls}`}>
                   <span className="font-extrabold w-5 flex-shrink-0">{key}</span>
                   <span>{text}</span>
-                  {isCorrect && <span className="ml-auto text-[#58CC02]">✓</span>}
-                  {isSelected && !isCorrect && <span className="ml-auto text-[#FF4B4B]">✗</span>}
+                  {isCorrect && <span className="ml-auto text-duo-green">✓</span>}
+                  {isSelected && !isCorrect && <span className="ml-auto text-duo-red">✗</span>}
                 </div>
               );
             })}
           </div>
 
           {!r.isCorrect && misconception && (
-            <div className="bg-blue-50 border-2 border-[#1CB0F6] rounded-xl px-3 py-2">
-              <p className="text-xs font-extrabold text-[#1CB0F6] mb-0.5">💡 Common mistake</p>
+            <div className="bg-blue-50 border-2 border-duo-blue rounded-xl px-3 py-2">
+              <p className="text-xs font-extrabold text-duo-blue mb-0.5">💡 Common mistake</p>
               <p className="text-xs text-blue-800 font-medium">{misconception}</p>
             </div>
           )}
 
           <button
             onClick={() => router.push(`/practice/${q.topicId}`)}
-            className="w-full min-h-[40px] rounded-xl bg-[#1CB0F6]/10 border-2 border-[#1CB0F6]/30 text-[#1CB0F6] font-bold text-sm hover:bg-[#1CB0F6]/20 transition-colors"
+            className="w-full min-h-[40px] rounded-xl bg-duo-blue/10 border-2 border-duo-blue/30 text-duo-blue font-bold text-sm hover:bg-duo-blue/20 transition-colors"
           >
             Practice similar →
           </button>
@@ -251,7 +251,7 @@ export default function TestResultsPage() {
   if (loading || !test) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="w-12 h-12 border-4 border-[#58CC02]/30 border-t-[#58CC02] rounded-full animate-spin" />
+        <div className="w-12 h-12 border-4 border-duo-green/30 border-t-duo-green rounded-full animate-spin" />
       </div>
     );
   }
@@ -291,7 +291,7 @@ export default function TestResultsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pb-8">
+    <div className="min-h-screen bg-white pb-8 animate-fade-in">
       {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
 
       {/* ── Share sheet ───────────────────────────────────────────────────── */}
@@ -316,7 +316,7 @@ export default function TestResultsPage() {
       )}
 
       {/* ── Score header ─────────────────────────────────────────────────── */}
-      <div className="bg-gradient-to-b from-[#131F24] to-[#1a3040] px-4 pt-8 pb-6 text-center">
+      <div className="bg-gradient-to-b from-duo-dark to-[#1a3040] px-4 pt-8 pb-6 text-center">
         <ScoreRing pct={pct} score={score} total={total} />
         <h1 className={`text-2xl font-extrabold mt-3 ${grade.color}`}>{grade.label}</h1>
         <p className="text-white/70 text-sm font-semibold mt-1">
@@ -346,7 +346,7 @@ export default function TestResultsPage() {
               onClick={() => setActiveSection(s.id)}
               className={`px-4 py-2 rounded-full text-xs font-extrabold whitespace-nowrap transition-colors ${
                 activeSection === s.id
-                  ? 'bg-[#1CB0F6] text-white'
+                  ? 'bg-duo-blue text-white'
                   : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
               }`}
             >
@@ -377,8 +377,8 @@ export default function TestResultsPage() {
                       <span className="text-xs font-extrabold px-2 py-0.5 bg-red-100 text-red-600 rounded-full">Focus 🎯</span>
                     )}
                     <span className={`text-sm font-extrabold ${
-                      t.accuracy >= 0.8 ? 'text-[#58CC02]' :
-                      t.accuracy >= 0.5 ? 'text-[#FF9600]' : 'text-[#FF4B4B]'
+                      t.accuracy >= 0.8 ? 'text-duo-green' :
+                      t.accuracy >= 0.5 ? 'text-duo-orange' : 'text-duo-red'
                     }`}>
                       {Math.round(t.accuracy * 100)}%
                     </span>
@@ -386,9 +386,9 @@ export default function TestResultsPage() {
                 </div>
                 <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
                   <div
-                    className={`h-full rounded-full transition-all ${
-                      t.accuracy >= 0.8 ? 'bg-[#58CC02]' :
-                      t.accuracy >= 0.5 ? 'bg-[#FF9600]' : 'bg-[#FF4B4B]'
+                    className={`h-full rounded-full transition-[width] ${
+                      t.accuracy >= 0.8 ? 'bg-duo-green' :
+                      t.accuracy >= 0.5 ? 'bg-duo-orange' : 'bg-duo-red'
                     }`}
                     style={{ width: `${t.accuracy * 100}%` }}
                   />
@@ -409,8 +409,8 @@ export default function TestResultsPage() {
                 pct >= 0.6 ? 'Good'       :
                 pct >= 0.4 ? 'Needs work' : 'Focus here';
               const color =
-                diff === 'Easy'   ? 'bg-[#58CC02]' :
-                diff === 'Medium' ? 'bg-[#FF9600]' : 'bg-[#FF4B4B]';
+                diff === 'Easy'   ? 'bg-duo-green' :
+                diff === 'Medium' ? 'bg-duo-orange' : 'bg-duo-red';
               return (
                 <div key={diff} className="bg-white border-2 border-gray-100 rounded-2xl p-4">
                   <div className="flex justify-between items-center mb-2">
@@ -418,7 +418,7 @@ export default function TestResultsPage() {
                     <span className="text-sm font-bold text-gray-500">{correct}/{t} · {insight}</span>
                   </div>
                   <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
-                    <div className={`h-full rounded-full transition-all ${color}`} style={{ width: `${pct * 100}%` }} />
+                    <div className={`h-full rounded-full transition-[width] ${color}`} style={{ width: `${pct * 100}%` }} />
                   </div>
                 </div>
               );
@@ -451,7 +451,7 @@ export default function TestResultsPage() {
                     <div key={r.id} className="flex items-center gap-3 py-2 border-b border-gray-100">
                       <span className="text-xs font-extrabold text-gray-400 w-8 flex-shrink-0">Q{r.questionNumber}</span>
                       <p className="flex-1 text-xs text-gray-600 line-clamp-1">{r.question?.questionText}</p>
-                      <span className="text-xs font-extrabold text-[#FF9600] flex-shrink-0">{formatMs(r.timeTakenMs)}</span>
+                      <span className="text-xs font-extrabold text-duo-orange flex-shrink-0">{formatMs(r.timeTakenMs)}</span>
                     </div>
                   ))}
                 </div>
@@ -477,7 +477,7 @@ export default function TestResultsPage() {
 
             {recommendations.filter((r) => r.type === 'priority').length > 0 && (
               <div>
-                <p className="text-xs font-extrabold text-[#FF4B4B] uppercase tracking-wide mb-2">🔴 Priority — Practice These First</p>
+                <p className="text-xs font-extrabold text-duo-red uppercase tracking-wide mb-2">🔴 Priority — Practice These First</p>
                 <div className="space-y-2">
                   {recommendations.filter((r) => r.type === 'priority').map((rec) => (
                     <div key={rec.topicId} className="bg-red-50 border-2 border-red-100 rounded-2xl p-4 flex items-center gap-3">
@@ -496,7 +496,7 @@ export default function TestResultsPage() {
 
             {recommendations.filter((r) => r.type === 'speed').length > 0 && (
               <div>
-                <p className="text-xs font-extrabold text-[#FF9600] uppercase tracking-wide mb-2">🟡 Speed Up — You Know This But Need To Be Faster</p>
+                <p className="text-xs font-extrabold text-duo-orange uppercase tracking-wide mb-2">🟡 Speed Up — You Know This But Need To Be Faster</p>
                 <div className="space-y-2">
                   {recommendations.filter((r) => r.type === 'speed').map((rec) => (
                     <div key={rec.topicId} className="bg-amber-50 border-2 border-amber-100 rounded-2xl p-4 flex items-center gap-3">
@@ -515,7 +515,7 @@ export default function TestResultsPage() {
 
             {recommendations.filter((r) => r.type === 'strength').length > 0 && (
               <div>
-                <p className="text-xs font-extrabold text-[#58CC02] uppercase tracking-wide mb-2">🟢 Strengths — Keep It Up!</p>
+                <p className="text-xs font-extrabold text-duo-green uppercase tracking-wide mb-2">🟢 Strengths — Keep It Up!</p>
                 <div className="space-y-2">
                   {recommendations.filter((r) => r.type === 'strength').map((rec) => (
                     <div key={rec.topicId} className="bg-green-50 border-2 border-green-100 rounded-2xl p-4">

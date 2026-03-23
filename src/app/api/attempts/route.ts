@@ -34,6 +34,16 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Invalid isCorrect' }, { status: 400 });
   }
 
+  // Server-side grading: look up the correct answer and override client's isCorrect
+  const question = await prisma.question.findUnique({
+    where: { id: questionId },
+    select: { correctAnswer: true },
+  });
+  if (!question) {
+    return NextResponse.json({ error: 'Question not found' }, { status: 404 });
+  }
+  const serverIsCorrect = selected === question.correctAnswer;
+
   const today = new Date();
   today.setUTCHours(0, 0, 0, 0);
 
@@ -45,7 +55,7 @@ export async function POST(req: Request) {
 
     const created = await tx.attempt.create({
       data: {
-        studentId, questionId, selected, isCorrect,
+        studentId, questionId, selected, isCorrect: serverIsCorrect,
         hintUsed, timeTakenMs, misconceptionType,
         isBonusQuestion, parentQuestionId,
       },
@@ -58,7 +68,7 @@ export async function POST(req: Request) {
     });
 
     // Compute and atomically cap daily XP within the same transaction
-    const rawXP = computeXPForAttempt(isCorrect, isBonusQuestion, timeTakenMs);
+    const rawXP = computeXPForAttempt(serverIsCorrect, isBonusQuestion, timeTakenMs);
     let awarded = 0;
 
     if (rawXP > 0) {

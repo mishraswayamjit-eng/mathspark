@@ -637,7 +637,7 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
                 key={opt.id}
                 onClick={() => handleAnswer(opt.id)}
                 disabled={isAnswered}
-                className={`w-full flex items-center gap-3 rounded-xl px-4 py-3.5 border transition-all ${bgClass} ${
+                className={`w-full flex items-center gap-3 rounded-xl px-4 py-3.5 border transition-[colors,border-color,transform] ${bgClass} ${
                   isAnswered ? 'cursor-default' : 'active:scale-[0.97]'
                 }`}
               >

@@ -35,9 +35,9 @@ function hasLatex(text: string): boolean {
 
 /** Color tokens for each difficulty level. */
 function difficultyColors(d: Difficulty) {
-  if (d === 'Easy') return { dot: 'bg-[#58CC02]', label: 'text-[#46a302]', bg: 'bg-green-50' };
-  if (d === 'Hard') return { dot: 'bg-[#FF4B4B]', label: 'text-[#cc3333]', bg: 'bg-red-50' };
-  return { dot: 'bg-[#FF9600]', label: 'text-[#cc7800]', bg: 'bg-amber-50' }; // Medium
+  if (d === 'Easy') return { dot: 'bg-duo-green', label: 'text-duo-green-dark', bg: 'bg-green-50' };
+  if (d === 'Hard') return { dot: 'bg-duo-red', label: 'text-duo-red-dark', bg: 'bg-red-50' };
+  return { dot: 'bg-duo-orange', label: 'text-duo-orange-dark', bg: 'bg-amber-50' }; // Medium
 }
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -70,23 +70,23 @@ export default function QuestionCard({
 
   function badgeCls(key: AnswerKey): string {
     const base =
-      'w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-extrabold transition-all duration-200';
+      'w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-extrabold transition-colors duration-200';
     if (!answered) return `${base} bg-gray-100 text-gray-600`;
     if (key === question.correctAnswer)
-      return `${base} bg-[#58CC02] text-white animate-pop-in`;
-    if (key === selected) return `${base} bg-[#FF4B4B] text-white`;
+      return `${base} bg-duo-green text-white animate-pop-in`;
+    if (key === selected) return `${base} bg-duo-red text-white`;
     return `${base} bg-gray-100 text-gray-400`;
   }
 
   function cardCls(key: AnswerKey): string {
     const base =
-      'w-full text-left rounded-2xl px-4 py-4 min-h-[56px] border-2 flex items-center gap-3 transition-all duration-200 shadow-sm';
+      'w-full text-left rounded-2xl px-4 py-4 min-h-[56px] border-2 flex items-center gap-3 transition-colors duration-200 shadow-sm';
     if (!answered)
-      return `${base} bg-white border-gray-200 hover:border-[#1CB0F6] hover:bg-blue-50 hover:shadow-md cursor-pointer`;
+      return `${base} bg-white border-gray-200 hover:border-duo-blue hover:bg-blue-50 hover:shadow-md cursor-pointer`;
     if (key === question.correctAnswer)
-      return `${base} bg-green-50 border-[#58CC02] shadow-md`;
+      return `${base} bg-green-50 border-duo-green shadow-md`;
     if (key === selected)
-      return `${base} bg-red-50 border-[#FF4B4B]`;
+      return `${base} bg-red-50 border-duo-red`;
     return `${base} bg-white border-gray-100 opacity-40`;
   }
 
@@ -108,10 +108,14 @@ export default function QuestionCard({
           </span>
         </div>
 
-        {/* Question text (min 18px) */}
-        <p className="text-[18px] font-bold text-gray-800 leading-relaxed">
-          {question.questionText}
-        </p>
+        {/* Question text (min 18px) — render KaTeX if LaTeX markers detected */}
+        <div className="text-[18px] font-bold text-gray-800 leading-relaxed">
+          {hasLatex(question.questionText) ? (
+            <KatexRenderer latex={question.questionText} displayMode={false} />
+          ) : (
+            question.questionText
+          )}
+        </div>
 
         {/* LaTeX expression below text (if present) */}
         {question.questionLatex && (
@@ -146,7 +150,7 @@ export default function QuestionCard({
 
             {/* Wrong-answer indicator */}
             {answered && key === selected && key !== question.correctAnswer && (
-              <span className="ml-auto text-[#FF4B4B] font-bold text-xl flex-shrink-0">✗</span>
+              <span className="ml-auto text-duo-red font-bold text-xl flex-shrink-0">✗</span>
             )}
           </button>
         ))}

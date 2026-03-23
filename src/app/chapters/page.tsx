@@ -8,13 +8,9 @@ import NudgeBubble from '@/components/NudgeBubble';
 import { computeNudge, markMasteryShown, type Nudge } from '@/lib/nudges';
 import { getAccessibleGrades, isGradeAccessible } from '@/lib/gradeAccess';
 import { getTopicsForGrade, type TopicNode } from '@/data/topicTree';
+import { TOPIC_ORDER } from '@/lib/sharedUtils';
 
 // ── Topic metadata ─────────────────────────────────────────────────────────────
-
-const CH_TOPIC_ORDER = [
-  'ch01-05','ch06','ch07-08','ch09-10','ch11','ch12',
-  'ch13','ch14','ch15','ch16','ch17','ch18','ch19','ch20','ch21','dh',
-];
 
 const GRADE_EMOJI: Record<number, string> = {
   2: '🌱', 3: '🌿', 4: '🌳', 5: '🍀', 6: '⭐', 7: '🌟', 8: '🏆', 9: '🎯',
@@ -44,7 +40,7 @@ function sortTopics(topics: TopicWithProgress[]): TopicWithProgress[] {
     const accA = a.attempted > 0 ? a.correct / a.attempted : 0.5;
     const accB = b.attempted > 0 ? b.correct / b.attempted : 0.5;
     if (Math.abs(accA - accB) > 0.01) return accA - accB;
-    return CH_TOPIC_ORDER.indexOf(a.id) - CH_TOPIC_ORDER.indexOf(b.id);
+    return TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id);
   });
 }
 
@@ -92,14 +88,14 @@ function MiniProgressBar({ correct, attempted, mastery }: { correct: number; att
     : 0;
 
   const barColor =
-    mastery === 'Mastered'  ? 'bg-[#58CC02]' :
-    mastery === 'Practicing' ? 'bg-[#FF9600]' :
+    mastery === 'Mastered'  ? 'bg-duo-green' :
+    mastery === 'Practicing' ? 'bg-duo-orange' :
     'bg-gray-300';
 
   return (
     <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
       <div
-        className={`h-full rounded-full transition-all duration-500 ${barColor}`}
+        className={`h-full rounded-full transition-[width] duration-500 ${barColor}`}
         style={{ width: `${pct}%` }}
       />
     </div>
@@ -118,15 +114,15 @@ function TopicCard({
   const emoji = TOPIC_EMOJI[topic.id] ?? '📚';
 
   return (
-    <div className="w-full text-left bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-[#1CB0F6] transition-all duration-150 flex flex-col gap-2">
+    <div className="w-full text-left bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-duo-blue transition-[colors,border-color,box-shadow] duration-150 flex flex-col gap-2">
       {/* Emoji + mastery badge row */}
-      <button onClick={onClick} className="flex items-start justify-between gap-1 active:scale-[0.97] transition-all">
+      <button onClick={onClick} className="flex items-start justify-between gap-1 active:scale-[0.97] transition-transform">
         <span className="text-3xl leading-none select-none">{emoji}</span>
         <MasteryBadge mastery={topic.mastery} />
       </button>
 
       {/* Topic name */}
-      <button onClick={onClick} className="active:scale-[0.97] transition-all text-left">
+      <button onClick={onClick} className="active:scale-[0.97] transition-transform text-left">
         <p className="text-sm font-extrabold text-gray-800 leading-snug line-clamp-2">
           {topic.name}
         </p>
@@ -149,7 +145,7 @@ function TopicCard({
       </div>
 
       {/* Mini progress bar */}
-      <button onClick={onClick} className="w-full active:scale-[0.97] transition-all">
+      <button onClick={onClick} className="w-full active:scale-[0.97] transition-transform">
         <MiniProgressBar
           correct={topic.correct}
           attempted={topic.attempted}
@@ -166,7 +162,7 @@ function Skeleton() {
   return (
     <div className="min-h-screen bg-white">
       {/* TopBar skeleton */}
-      <div className="sticky top-0 z-50 h-14 bg-[#131F24] flex items-center justify-between px-4">
+      <div className="sticky top-0 z-50 h-14 bg-duo-dark flex items-center justify-between px-4">
         <div className="h-5 w-24 rounded-full bg-white/20 animate-pulse" />
         <div className="flex gap-2">
           {[1,2,3,4].map((n) => (
@@ -294,7 +290,7 @@ export default function ChaptersPage() {
     const allT = data.topics;
     if (selectedGrade === 4) {
       // Grade 4: ch-series + grade4 pool (shown separately at bottom)
-      return allT.filter((t) => CH_TOPIC_ORDER.includes(t.id));
+      return allT.filter((t) => TOPIC_ORDER.includes(t.id));
     }
     // Other grades: only the gradeN pool topic
     return allT.filter((t) => t.id === `grade${selectedGrade}`);
@@ -323,9 +319,9 @@ export default function ChaptersPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white pb-24">
+    <div className="min-h-screen bg-white pb-24 animate-fade-in">
       {/* ── Top bar ─────────────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-50 h-14 bg-[#131F24]/95 backdrop-blur-sm flex items-center justify-between px-4">
+      <div className="sticky top-0 z-50 h-14 bg-duo-dark/95 backdrop-blur-sm flex items-center justify-between px-4">
         <div className="flex items-center gap-2">
           <div className="animate-sparky-bounce">
             <Sparky mood="happy" size={30} />
@@ -354,7 +350,7 @@ export default function ChaptersPage() {
             ))}
           </div>
           {/* Avatar */}
-          <div className="w-8 h-8 rounded-full bg-[#FFC800] flex items-center justify-center font-extrabold text-sm text-yellow-900 border-2 border-white">
+          <div className="w-8 h-8 rounded-full bg-duo-gold flex items-center justify-center font-extrabold text-sm text-yellow-900 border-2 border-white">
             {studentName ? studentName[0].toUpperCase() : '?'}
           </div>
         </div>
@@ -399,11 +395,11 @@ export default function ChaptersPage() {
           const isSelected = selectedGrade === g;
           const isEnrolled = g === studentGrade;
 
-          let tabCls = 'flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-extrabold border-2 transition-all ';
+          let tabCls = 'flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-extrabold border-2 transition-colors ';
           if (isSelected) {
-            tabCls += 'bg-[#131F24] border-[#131F24] text-white';
+            tabCls += 'bg-duo-dark border-duo-dark text-white';
           } else if (access.full) {
-            tabCls += 'bg-white border-gray-200 text-gray-700 hover:border-[#131F24]';
+            tabCls += 'bg-white border-gray-200 text-gray-700 hover:border-duo-dark';
           } else if (access.sample) {
             tabCls += 'bg-white border-blue-200 text-blue-600 hover:border-blue-400';
           } else {
@@ -420,7 +416,7 @@ export default function ChaptersPage() {
               <span>{GRADE_EMOJI[g]}</span>
               <span>Gr {g}</span>
               {isEnrolled && !isSelected && (
-                <span className="w-1.5 h-1.5 rounded-full bg-[#58CC02]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-duo-green" />
               )}
               {access.sample && <span className="text-[10px]">🔓</span>}
               {access.locked && <span className="text-[10px]">🔒</span>}
@@ -432,7 +428,7 @@ export default function ChaptersPage() {
       {/* ── Syllabus Coverage Bar ────────────────────────────────────────── */}
       {(() => {
         const gradeTopics = selectedGrade === 4
-          ? data.topics.filter((t) => CH_TOPIC_ORDER.includes(t.id))
+          ? data.topics.filter((t) => TOPIC_ORDER.includes(t.id))
           : data.topics.filter((t) => t.id === `grade${selectedGrade}`);
         const started = gradeTopics.filter((t) => t.attempted >= 5).length;
         const total   = gradeTopics.length || 1;
@@ -445,7 +441,7 @@ export default function ChaptersPage() {
             </div>
             <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
               <div
-                className="h-full rounded-full transition-all duration-700"
+                className="h-full rounded-full transition-[width] duration-700"
                 style={{
                   width: `${pct}%`,
                   background: 'linear-gradient(to right, #1CB0F6, #58CC02)',
@@ -459,7 +455,7 @@ export default function ChaptersPage() {
       {/* ── Recommended Topics (from weak + low-coverage topics) ──────────── */}
       {selectedGrade === (data.student.grade ?? 4) && (() => {
         const gradeTopics = selectedGrade === 4
-          ? data.topics.filter((t) => CH_TOPIC_ORDER.includes(t.id))
+          ? data.topics.filter((t) => TOPIC_ORDER.includes(t.id))
           : data.topics.filter((t) => t.id === `grade${selectedGrade}`);
         // Sort by accuracy ascending, pick top 2 weak topics with attempts
         const weak = [...gradeTopics]
@@ -480,7 +476,7 @@ export default function ChaptersPage() {
                   <button
                     key={t.id}
                     onClick={() => router.push(`/practice/${t.id}`)}
-                    className="w-full flex items-center gap-3 bg-[#1a2d35] rounded-xl px-3 py-3 border-l-4 border-[#58CC02] active:scale-[0.98] transition-all text-left"
+                    className="w-full flex items-center gap-3 bg-[#1a2d35] rounded-xl px-3 py-3 border-l-4 border-duo-green active:scale-[0.98] transition-transform text-left"
                   >
                     <span className="text-xl shrink-0">{emoji}</span>
                     <div className="flex-1 min-w-0">
@@ -489,7 +485,7 @@ export default function ChaptersPage() {
                         {pct}% accuracy · {t.attempted} attempts
                       </p>
                     </div>
-                    <span className="text-[#58CC02] text-xs font-extrabold shrink-0">Practice →</span>
+                    <span className="text-duo-green text-xs font-extrabold shrink-0">Practice →</span>
                   </button>
                 );
               })}
@@ -502,7 +498,7 @@ export default function ChaptersPage() {
       <div className="px-4 pt-1">
         <button
           onClick={() => router.push('/flashcards')}
-          className="w-full bg-gradient-to-r from-[#1E293B] to-[#1a2d40] border border-emerald-500/20 rounded-2xl px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-all"
+          className="w-full bg-gradient-to-r from-[#1E293B] to-[#1a2d40] border border-emerald-500/20 rounded-2xl px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-transform"
         >
           <span className="text-2xl">🃏</span>
           <div className="text-left flex-1">
@@ -517,7 +513,7 @@ export default function ChaptersPage() {
       <div className="px-4 pt-0">
         <button
           onClick={() => router.push('/test')}
-          className="w-full bg-[#1a2f3a] border border-white/10 rounded-2xl px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-all"
+          className="w-full bg-[#1a2f3a] border border-white/10 rounded-2xl px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-transform"
         >
           <span className="text-2xl">📝</span>
           <div className="text-left flex-1">
@@ -567,7 +563,7 @@ export default function ChaptersPage() {
                 </p>
                 <button
                   onClick={() => router.push('/practice/grade4')}
-                  className="w-full text-left bg-gradient-to-r from-[#131F24] to-[#1a3040] rounded-2xl p-4 flex items-center gap-4 active:scale-[0.98] transition-all"
+                  className="w-full text-left bg-gradient-to-r from-duo-dark to-[#1a3040] rounded-2xl p-4 flex items-center gap-4 active:scale-[0.98] transition-transform"
                 >
                   <span className="text-3xl">🏆</span>
                   <div className="flex-1">
@@ -611,7 +607,7 @@ export default function ChaptersPage() {
                         const qs = qp.toString() ? `?${qp.toString()}` : '';
                         router.push(`/practice/${node.dbTopicId}${qs}`);
                       }}
-                      className="w-full text-left bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-[#1CB0F6] active:scale-[0.97] transition-all duration-150 flex flex-col gap-2"
+                      className="w-full text-left bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-duo-blue active:scale-[0.97] transition-[colors,border-color,box-shadow,transform] duration-150 flex flex-col gap-2"
                     >
                       <div className="flex items-start justify-between gap-1">
                         <span className="text-3xl leading-none select-none">{node.emoji}</span>
@@ -629,7 +625,7 @@ export default function ChaptersPage() {
                       </p>
                       <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
                         <div
-                          className="h-full rounded-full bg-[#1CB0F6]"
+                          className="h-full rounded-full bg-duo-blue"
                           style={{ width: poolTopic && poolTopic.mastery === 'Mastered' ? '100%' : poolTopic && poolTopic.mastery === 'Practicing' ? '50%' : '0%' }}
                         />
                       </div>
@@ -653,7 +649,7 @@ export default function ChaptersPage() {
                         key={g}
                         onClick={() => { setSelectedGrade(g); }}
                         style={{ minHeight: 0 }}
-                        className="bg-gray-50 border border-gray-100 rounded-2xl p-3 flex items-center gap-2 active:scale-[0.97] transition-all text-left"
+                        className="bg-gray-50 border border-gray-100 rounded-2xl p-3 flex items-center gap-2 active:scale-[0.97] transition-transform text-left"
                       >
                         <span className="text-xl">{GRADE_EMOJI[g]}</span>
                         <div className="flex-1 min-w-0">
@@ -687,7 +683,7 @@ export default function ChaptersPage() {
             </div>
             <button
               onClick={() => { setShowUpgradeModal(false); router.push('/pricing'); }}
-              className="w-full min-h-[48px] bg-[#1CB0F6] text-white font-extrabold rounded-full text-sm"
+              className="w-full min-h-[48px] bg-duo-blue text-white font-extrabold rounded-full text-sm"
             >
               Upgrade Plan 🚀
             </button>

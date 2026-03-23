@@ -10,11 +10,13 @@ import { getTopicsForGrade } from '@/data/topicTree';
 
 function Toggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
   return (
-    <button onClick={onToggle} style={{ minHeight: 0 }}
-      className={`relative w-12 h-6 rounded-full transition-colors flex-shrink-0 ${on ? 'bg-[#58CC02]' : 'bg-gray-200'}`}
+    <button onClick={onToggle}
+      className="relative min-w-[44px] min-h-[44px] flex items-center justify-center flex-shrink-0"
       aria-label="toggle"
     >
-      <div className={`absolute top-1 w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${on ? 'translate-x-7' : 'translate-x-1'}`} />
+      <div className={`relative w-12 h-6 rounded-full transition-colors ${on ? 'bg-duo-green' : 'bg-gray-200'}`}>
+        <div className={`absolute top-1 w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${on ? 'translate-x-7' : 'translate-x-1'}`} />
+      </div>
     </button>
   );
 }
@@ -46,9 +48,9 @@ function PillSelector<T extends string | number>({
           key={String(opt)}
           onClick={() => onChange(opt)}
           style={{ minHeight: 0 }}
-          className={`px-3 py-1.5 rounded-full text-xs font-extrabold transition-all active:scale-95 ${
+          className={`px-3 py-1.5 rounded-full text-xs font-extrabold transition-[colors,transform] active:scale-95 ${
             value === opt
-              ? 'bg-[#58CC02] text-white shadow-sm'
+              ? 'bg-duo-green text-white shadow-sm'
               : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
           }`}
         >
@@ -285,7 +287,7 @@ export default function ProfilePage() {
     return (
       <div className="min-h-screen bg-gray-50 pb-24">
         {/* Identity header — real data from localStorage, no pulse */}
-        <div className="bg-[#131F24] pt-10 pb-6 px-4">
+        <div className="bg-duo-dark pt-10 pb-6 px-4">
           <div className="flex items-center gap-4">
             <div
               className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white border-4 border-white/30 shadow-lg shrink-0"
@@ -337,7 +339,7 @@ export default function ProfilePage() {
 
       {/* ── Toast ─────────────────────────────────────────────────────────── */}
       {toast && (
-        <div className={`fixed top-4 left-1/2 -translate-x-1/2 z-[80] px-5 py-3 rounded-full shadow-xl font-bold text-sm text-white animate-pop-in pointer-events-none ${toast.ok ? 'bg-[#58CC02]' : 'bg-[#FF4B4B]'}`}>
+        <div className={`fixed top-4 left-1/2 -translate-x-1/2 z-[80] px-5 py-3 rounded-full shadow-xl font-bold text-sm text-white animate-pop-in pointer-events-none ${toast.ok ? 'bg-duo-green' : 'bg-duo-red'}`}>
           {toast.msg}
         </div>
       )}
@@ -354,7 +356,7 @@ export default function ProfilePage() {
                 onChange={(e) => setNewName(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && saveName()}
                 placeholder="First name"
-                className="w-full border-2 border-blue-200 rounded-2xl px-4 py-3 text-base font-bold text-gray-800 outline-none focus:border-[#1CB0F6]"
+                className="w-full border-2 border-blue-200 rounded-2xl px-4 py-3 text-base font-bold text-gray-800 outline-none focus:border-duo-blue"
                 maxLength={30}
               />
             </div>
@@ -364,7 +366,7 @@ export default function ProfilePage() {
                 type="text" value={newDisplayName}
                 onChange={(e) => setNewDisplayName(e.target.value)}
                 placeholder="Max 20 chars"
-                className="w-full border-2 border-gray-200 rounded-2xl px-4 py-3 text-base font-bold text-gray-800 outline-none focus:border-[#1CB0F6]"
+                className="w-full border-2 border-gray-200 rounded-2xl px-4 py-3 text-base font-bold text-gray-800 outline-none focus:border-duo-blue"
                 maxLength={20}
               />
             </div>
@@ -377,7 +379,7 @@ export default function ProfilePage() {
       )}
 
       {/* ── 1. Identity Header ─────────────────────────────────────────────── */}
-      <div className="bg-[#131F24] pt-10 pb-6 px-4">
+      <div className="bg-duo-dark pt-10 pb-6 px-4">
         <div className="flex items-center gap-4">
           <div
             className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white border-4 border-white/30 shadow-lg shrink-0"
@@ -421,7 +423,7 @@ export default function ProfilePage() {
               type="text" value={examName}
               onChange={(e) => setExamName(e.target.value)}
               placeholder="e.g. IPM 2027"
-              className="w-full mt-1.5 border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-[#1CB0F6]"
+              className="w-full mt-1.5 border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-duo-blue"
             />
           </div>
           <div>
@@ -429,10 +431,10 @@ export default function ProfilePage() {
             <input
               type="date" value={examDate}
               onChange={(e) => setExamDate(e.target.value)}
-              className="w-full mt-1.5 border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-[#1CB0F6]"
+              className="w-full mt-1.5 border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-duo-blue"
             />
             {examDaysLeft !== null && (
-              <p className="text-xs text-[#1CB0F6] font-semibold mt-1">
+              <p className="text-xs text-duo-blue font-semibold mt-1">
                 📅 {examDaysLeft} days to exam
               </p>
             )}
@@ -445,9 +447,9 @@ export default function ProfilePage() {
                   key={s}
                   onClick={() => setTargetScore(s)}
                   style={{ minHeight: 0 }}
-                  className={`flex-1 py-2 rounded-xl text-sm font-extrabold transition-all ${
+                  className={`flex-1 py-2 rounded-xl text-sm font-extrabold transition-colors ${
                     targetScore === s
-                      ? 'bg-[#58CC02] text-white shadow-sm'
+                      ? 'bg-duo-green text-white shadow-sm'
                       : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                   }`}
                 >
@@ -460,7 +462,7 @@ export default function ProfilePage() {
             onClick={saveExam}
             disabled={savingExam}
             style={{ minHeight: 0 }}
-            className="px-4 py-2 rounded-xl bg-[#58CC02] text-white text-xs font-extrabold disabled:opacity-60"
+            className="px-4 py-2 rounded-xl bg-duo-green text-white text-xs font-extrabold disabled:opacity-60"
           >
             {savingExam ? 'Saving…' : 'Save goals ✓'}
           </button>
@@ -501,9 +503,9 @@ export default function ProfilePage() {
                 key={v}
                 onClick={() => updatePracticeTime(v)}
                 style={{ minHeight: 0 }}
-                className={`flex-1 py-2 rounded-xl text-xs font-extrabold transition-all ${
+                className={`flex-1 py-2 rounded-xl text-xs font-extrabold transition-colors ${
                   preferredPracticeTime === v
-                    ? 'bg-[#1CB0F6] text-white shadow-sm'
+                    ? 'bg-duo-blue text-white shadow-sm'
                     : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                 }`}
               >
@@ -541,9 +543,9 @@ export default function ProfilePage() {
                 key={t.id}
                 onClick={() => toggleFocus(t.id)}
                 style={{ minHeight: 0 }}
-                className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-extrabold transition-all ${
+                className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-extrabold transition-colors ${
                   focusTopics.includes(t.id)
-                    ? 'bg-[#FF4B4B] text-white'
+                    ? 'bg-duo-red text-white'
                     : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                 }`}
               >
@@ -563,9 +565,9 @@ export default function ProfilePage() {
                 key={t.id}
                 onClick={() => toggleConfident(t.id)}
                 style={{ minHeight: 0 }}
-                className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-extrabold transition-all ${
+                className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-extrabold transition-colors ${
                   confidentTopics.includes(t.id)
-                    ? 'bg-[#58CC02] text-white'
+                    ? 'bg-duo-green text-white'
                     : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                 }`}
               >
@@ -587,7 +589,7 @@ export default function ProfilePage() {
               type="email" value={parentEmail}
               onChange={(e) => setParentEmail(e.target.value)}
               placeholder="parent@email.com"
-              className="w-full mt-1.5 border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-[#1CB0F6]"
+              className="w-full mt-1.5 border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-duo-blue"
             />
           </div>
           <div>
@@ -603,7 +605,7 @@ export default function ProfilePage() {
             onClick={saveParentContact}
             disabled={savingContact}
             style={{ minHeight: 0 }}
-            className="px-4 py-2 rounded-xl bg-[#58CC02] text-white text-xs font-extrabold disabled:opacity-60"
+            className="px-4 py-2 rounded-xl bg-duo-green text-white text-xs font-extrabold disabled:opacity-60"
           >
             {savingContact ? 'Saving…' : 'Save contact ✓'}
           </button>
@@ -622,9 +624,9 @@ export default function ProfilePage() {
                   key={g}
                   onClick={() => changeGrade(g)}
                   style={{ minHeight: 0 }}
-                  className={`py-2 rounded-xl text-xs font-extrabold transition-all ${
+                  className={`py-2 rounded-xl text-xs font-extrabold transition-colors ${
                     grade === g
-                      ? 'bg-[#1CB0F6] text-white shadow-sm'
+                      ? 'bg-duo-blue text-white shadow-sm'
                       : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                   }`}
                 >
@@ -640,7 +642,7 @@ export default function ProfilePage() {
               <p className="text-sm font-bold text-gray-700">Subscription</p>
               <p className="text-xs text-gray-400 font-medium">Current plan</p>
             </div>
-            <Link href="/pricing" className="text-xs font-extrabold text-[#1CB0F6] bg-blue-50 rounded-full px-3 py-1.5">
+            <Link href="/pricing" className="text-xs font-extrabold text-duo-blue bg-blue-50 rounded-full px-3 py-1.5">
               Upgrade →
             </Link>
           </div>
@@ -651,7 +653,7 @@ export default function ProfilePage() {
               <span className="text-lg">💬</span>
               <p className="text-sm font-bold text-gray-700">Sparky Chat</p>
             </div>
-            <Link href="/chat" className="text-xs font-extrabold text-[#1CB0F6] bg-blue-50 rounded-full px-3 py-1.5">
+            <Link href="/chat" className="text-xs font-extrabold text-duo-blue bg-blue-50 rounded-full px-3 py-1.5">
               → Open
             </Link>
           </div>

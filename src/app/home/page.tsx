@@ -90,7 +90,7 @@ function PlanItem({
     >
       <div
         className={`w-6 h-6 rounded-full border-2 shrink-0 flex items-center justify-center text-xs transition-colors ${
-          item.done ? 'bg-[#58CC02] border-[#58CC02] text-white' : 'border-gray-300'
+          item.done ? 'bg-duo-green border-duo-green text-white' : 'border-gray-300'
         }`}
       >
         {item.done && '✓'}
@@ -118,7 +118,7 @@ function TopicBar({ entry }: { entry: TopicMasteryEntry }) {
       <span className="text-xs font-semibold text-gray-700 w-28 truncate">{entry.topicName}</span>
       <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
         <div
-          className="h-full rounded-full transition-all duration-700"
+          className="h-full rounded-full transition-[width] duration-700"
           style={{ width: `${pct}%`, backgroundColor: barColor }}
         />
       </div>
@@ -203,7 +203,7 @@ export default function HomePage() {
     return (
       <div className="min-h-screen bg-gray-50 pb-24">
         {/* Header */}
-        <div className="bg-[#131F24] px-4 py-3 flex items-center justify-between">
+        <div className="bg-duo-dark px-4 py-3 flex items-center justify-between">
           <div className="h-4 bg-white/20 rounded w-20 animate-pulse" />
           <div className="h-7 bg-white/20 rounded-full w-16 animate-pulse" />
           <div className="h-8 bg-white/20 rounded-full w-14 animate-pulse" />
@@ -300,7 +300,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
 
       {/* ── STICKY HEADER ─────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-40 bg-[#131F24] px-4 py-3 flex items-center justify-between shadow-md">
+      <div className="sticky top-0 z-40 bg-duo-dark px-4 py-3 flex items-center justify-between shadow-md">
         <span className="text-white font-extrabold text-sm tracking-tight">MathSpark</span>
         <div
           className="text-xs font-extrabold px-3 py-1.5 rounded-full text-white"
@@ -339,10 +339,29 @@ export default function HomePage() {
               <p className="text-amber-800 font-extrabold text-sm">🎉 Pro Trial Active</p>
               <p className="text-amber-600 text-xs font-medium">{student.trialDaysLeft} days left</p>
             </div>
-            <Link href="/pricing" className="text-xs font-extrabold text-[#FF9600] bg-amber-100 rounded-full px-3 py-1.5">
+            <Link href="/pricing" className="text-xs font-extrabold text-duo-orange bg-amber-100 rounded-full px-3 py-1.5">
               Upgrade →
             </Link>
           </div>
+        )}
+
+        {/* ── CONTINUE LEARNING CTA ───────────────────────────────── */}
+        {topicPriorities.length > 0 && topicPriorities[0].dbTopicId && (
+          <Link
+            href={`/practice/${topicPriorities[0].dbTopicId}`}
+            className="block bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-4 border border-blue-200 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">{topicPriorities[0].emoji}</span>
+              <div className="flex-1 min-w-0">
+                <p className="font-extrabold text-gray-800 text-sm">Continue Learning</p>
+                <p className="text-xs text-gray-500 font-medium truncate">
+                  {topicPriorities[0].topicName}
+                </p>
+              </div>
+              <span className="text-duo-blue font-extrabold text-sm shrink-0">Go →</span>
+            </div>
+          </Link>
         )}
 
         {/* ── EXAM READINESS RING ────────────────────────────────────── */}
@@ -361,7 +380,7 @@ export default function HomePage() {
                   <div className="flex-1 space-y-1.5">
                     <p className="font-extrabold text-gray-800 text-base leading-tight">Exam Readiness</p>
                     <p className="text-sm font-medium text-gray-400">Answer questions to unlock your readiness score!</p>
-                    <span className="inline-block text-xs font-extrabold text-white bg-[#58CC02] rounded-full px-3 py-1.5">
+                    <span className="inline-block text-xs font-extrabold text-white bg-duo-green rounded-full px-3 py-1.5">
                       Start Practicing →
                     </span>
                   </div>
@@ -385,7 +404,7 @@ export default function HomePage() {
                       📅 {examReadiness.daysUntilExam} days to exam
                     </p>
                   ) : (
-                    <Link href="/profile" className="text-sm font-semibold text-[#1CB0F6] hover:underline">
+                    <Link href="/profile" className="text-sm font-semibold text-duo-blue hover:underline">
                       Set exam date →
                     </Link>
                   )}
@@ -409,12 +428,12 @@ export default function HomePage() {
               <div className="animate-sparky-dance">
                 <Sparky mood="celebrating" size={60} />
               </div>
-              <p className="text-[#58CC02] font-extrabold text-sm">🌟 All done today!</p>
+              <p className="text-duo-green font-extrabold text-sm">🌟 All done today!</p>
             </div>
           ) : planWithDone.length === 0 ? (
             <div className="py-4 text-center">
               <p className="text-gray-400 text-sm font-medium">Start practicing to build your plan!</p>
-              <Link href="/chapters" className="text-[#1CB0F6] font-extrabold text-sm mt-1 block">
+              <Link href="/chapters" className="text-duo-blue font-extrabold text-sm mt-1 block">
                 Go to Learn →
               </Link>
             </div>
@@ -427,21 +446,90 @@ export default function HomePage() {
           )}
         </div>
 
+        {/* ── DAILY CHALLENGE CARD ───────────────────────────────────── */}
+        <Link href="/practice/daily"
+          className="block bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-4 border border-orange-200 shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div className="flex items-center gap-3">
+            <span className="text-3xl">🎯</span>
+            <div className="flex-1 min-w-0">
+              <p className="font-extrabold text-gray-800 text-sm">Daily Challenge</p>
+              <p className="text-xs text-gray-500 font-medium">5 questions · Build your streak!</p>
+            </div>
+            {streak > 0 && (
+              <div className="flex items-center gap-1 bg-orange-100 rounded-full px-2.5 py-1 border border-orange-200">
+                <span className="text-sm">🔥</span>
+                <span className="text-xs font-extrabold text-orange-600">{streak}</span>
+              </div>
+            )}
+            <span className="text-duo-orange font-extrabold text-sm shrink-0">Play →</span>
+          </div>
+        </Link>
+
         {/* ── QUICK ACTIONS ──────────────────────────────────────────── */}
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-2">
           {[
-            { emoji: '⚡', label: 'Quick Practice', sub: '5 min', href: topPriorityUrl, bg: 'bg-blue-50', accent: '#1CB0F6' },
-            { emoji: '🧠', label: 'Flashcards',      sub: '3 min', href: '/flashcards',  bg: 'bg-purple-50', accent: '#9B59B6' },
-            { emoji: '📝', label: 'Mock Test',       sub: '15 min', href: '/test',       bg: 'bg-green-50', accent: '#58CC02' },
+            { emoji: '⚡', label: 'Quick Practice', sub: '5 min',      href: topPriorityUrl,           bg: 'bg-blue-50',   accent: '#1CB0F6' },
+            { emoji: '📝', label: 'Exam Papers',    sub: '240 papers', href: '/practice/papers',       bg: 'bg-red-50',    accent: '#FF4B4B' },
+            { emoji: '🃏', label: 'Flashcards',     sub: '1,086 cards', href: '/flashcards',            bg: 'bg-purple-50', accent: '#9B59B6' },
+            { emoji: '🎯', label: 'Skill Drills',   sub: '16 topics',  href: '/practice/skill-drill',  bg: 'bg-yellow-50', accent: '#FF9600' },
+            { emoji: '💡', label: 'Sparky Explains', sub: '212 solved', href: '/learn/examples',       bg: 'bg-indigo-50', accent: '#6366F1' },
+            { emoji: '🔮', label: 'IPM Predictor',  sub: '10+ years',  href: '/exam-prep/predictor',   bg: 'bg-green-50',  accent: '#58CC02' },
           ].map((action) => (
             <Link key={action.label} href={action.href}
-              className={`${action.bg} rounded-2xl p-3 flex flex-col items-center gap-1 border border-white shadow-sm active:scale-95 transition-all`}
+              className={`${action.bg} rounded-2xl p-3 flex flex-col items-center gap-1 border border-white shadow-sm active:scale-95 transition-transform`}
             >
               <span className="text-2xl">{action.emoji}</span>
               <p className="text-xs font-extrabold text-gray-700 text-center leading-tight">{action.label}</p>
               <p className="text-[10px] text-gray-400 font-semibold">{action.sub}</p>
             </Link>
           ))}
+        </div>
+
+        {/* ── MY PROGRESS ──────────────────────────────────────────────── */}
+        <Link href="/progress"
+          className="block bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 border border-green-200 shadow-sm hover:shadow-md transition-shadow"
+        >
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">📊</span>
+            <div className="flex-1">
+              <p className="font-extrabold text-gray-800 text-sm">My Progress</p>
+              <p className="text-xs text-gray-500 font-medium">Dashboard, strengths, mistakes & parent report</p>
+            </div>
+            <span className="text-green-600 font-extrabold text-xs shrink-0">View →</span>
+          </div>
+        </Link>
+
+        {/* ── LEARN MORE ───────────────────────────────────────────────── */}
+        <div className="grid grid-cols-2 gap-2">
+          <Link href="/learn/strategies"
+            className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-3 border border-amber-200 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <span className="text-xl">🧠</span>
+            <p className="font-extrabold text-gray-800 text-[11px] mt-1.5 leading-tight">Strategy Bank</p>
+            <p className="text-[10px] text-gray-500 font-medium">35 exam tips</p>
+          </Link>
+          <Link href="/learn/stories"
+            className="bg-gradient-to-br from-cyan-50 to-sky-50 rounded-2xl p-3 border border-cyan-200 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <span className="text-xl">📖</span>
+            <p className="font-extrabold text-gray-800 text-[11px] mt-1.5 leading-tight">Math Stories</p>
+            <p className="text-[10px] text-gray-500 font-medium">30 real-world stories</p>
+          </Link>
+          <Link href="/learn/concept-map"
+            className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-3 border border-violet-200 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <span className="text-xl">🗺️</span>
+            <p className="font-extrabold text-gray-800 text-[11px] mt-1.5 leading-tight">Concept Map</p>
+            <p className="text-[10px] text-gray-500 font-medium">88 concepts</p>
+          </Link>
+          <Link href="/learn/mistakes"
+            className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-3 border border-red-200 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <span className="text-xl">🚨</span>
+            <p className="font-extrabold text-gray-800 text-[11px] mt-1.5 leading-tight">Mistake Patterns</p>
+            <p className="text-[10px] text-gray-500 font-medium">50 common traps</p>
+          </Link>
         </div>
 
         {/* ── SPARKY'S NUDGE ─────────────────────────────────────────── */}
@@ -453,7 +541,7 @@ export default function HomePage() {
             <div className="flex-1 min-w-0">
               <p className="text-sm font-semibold text-gray-700 leading-snug">{activeNudge.message}</p>
               <Link href={activeNudge.actionUrl}
-                className="inline-block mt-2 text-xs font-extrabold text-[#1CB0F6] bg-blue-50 rounded-full px-3 py-1.5"
+                className="inline-block mt-2 text-xs font-extrabold text-duo-blue bg-blue-50 rounded-full px-3 py-1.5"
               >
                 {activeNudge.actionLabel} →
               </Link>
@@ -472,13 +560,13 @@ export default function HomePage() {
         <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
           <div className="flex items-center justify-between mb-3">
             <h2 className="font-extrabold text-gray-800 text-sm">Your Topics</h2>
-            <Link href="/chapters" className="text-xs font-extrabold text-[#1CB0F6]">See all →</Link>
+            <Link href="/chapters" className="text-xs font-extrabold text-duo-blue">See all →</Link>
           </div>
 
           {chartTopics.length === 0 ? (
             <div className="py-3 text-center">
               <p className="text-gray-400 text-sm font-medium">No practice yet. Start learning!</p>
-              <Link href="/chapters" className="text-[#1CB0F6] font-extrabold text-sm mt-1 block">
+              <Link href="/chapters" className="text-duo-blue font-extrabold text-sm mt-1 block">
                 Browse Topics →
               </Link>
             </div>
@@ -488,7 +576,7 @@ export default function HomePage() {
                 <TopicBar key={entry.topicId} entry={entry} />
               ))}
               {weakest2.length > 0 && (
-                <p className="text-xs font-semibold text-[#FF4B4B] mt-2">
+                <p className="text-xs font-semibold text-duo-red mt-2">
                   Focus: {weakest2.map((t) => t.topicName).join(' & ')}
                 </p>
               )}
@@ -501,7 +589,7 @@ export default function HomePage() {
           <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
             <div className="flex items-center justify-between mb-3">
               <h2 className="font-extrabold text-gray-800 text-sm">Recent Activity</h2>
-              <Link href="/chapters" className="text-xs font-extrabold text-[#1CB0F6]">View all →</Link>
+              <Link href="/chapters" className="text-xs font-extrabold text-duo-blue">View all →</Link>
             </div>
             <div className="space-y-2.5">
               {recentActivity.map((act, i) => (
@@ -535,14 +623,14 @@ export default function HomePage() {
                 <Link
                   key={tp.topicId}
                   href={`/practice/${tp.dbTopicId}`}
-                  className="flex items-center gap-3 bg-[#1a2d35] rounded-xl px-3 py-3 border-l-4 border-[#58CC02] hover:bg-[#223d4a] transition-colors"
+                  className="flex items-center gap-3 bg-[#1a2d35] rounded-xl px-3 py-3 border-l-4 border-duo-green hover:bg-[#223d4a] transition-colors"
                 >
                   <span className="text-xl shrink-0">{tp.emoji}</span>
                   <div className="flex-1 min-w-0">
                     <p className="text-white font-extrabold text-sm truncate">{tp.topicName}</p>
                     <p className="text-white/50 text-xs font-medium truncate">{tp.reason}</p>
                   </div>
-                  <span className="text-[#58CC02] text-xs font-extrabold shrink-0">Practice →</span>
+                  <span className="text-duo-green text-xs font-extrabold shrink-0">Practice →</span>
                 </Link>
               ))}
             </div>

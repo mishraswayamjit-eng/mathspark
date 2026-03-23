@@ -430,7 +430,7 @@ export default function TapMatchSession({ deckId }: TapMatchSessionProps) {
         {!isMemorize && totalPairs > 0 && (
           <div className="max-w-md mx-auto mt-1.5 h-1 bg-white/5 rounded-full overflow-hidden">
             <div
-              className="h-full bg-[#34D399] rounded-full transition-all duration-300"
+              className="h-full bg-[#34D399] rounded-full transition-[width] duration-300"
               style={{ width: `${(matchedPairIds.size / totalPairs) * 100}%` }}
             />
           </div>
@@ -462,7 +462,7 @@ export default function TapMatchSession({ deckId }: TapMatchSessionProps) {
                 onClick={() => handleTap(tile.id)}
                 disabled={isMemorize || isMatched}
                 className={`
-                  relative rounded-xl transition-all duration-300 aspect-[3/4]
+                  relative rounded-xl transition-[transform,background-color,border-color,opacity] duration-300 aspect-[3/4]
                   flex items-center justify-center p-2 text-center overflow-hidden
                   ${isMatched
                     ? 'bg-emerald-500/20 border-2 border-emerald-500/40 scale-95'

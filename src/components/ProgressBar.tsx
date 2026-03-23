@@ -15,13 +15,13 @@ export default function ProgressBar({
 
   const fillClass = color
     ? color
-    : 'bg-gradient-to-r from-[#58CC02] to-[#89E219]';
+    : 'bg-gradient-to-r from-duo-green to-[#89E219]';
 
   return (
     <div className="w-full">
       <div className={`w-full bg-gray-100 rounded-full overflow-hidden ${height}`}>
         <div
-          className={`${fillClass} ${height} rounded-full transition-all duration-700`}
+          className={`${fillClass} ${height} rounded-full transition-[width] duration-700`}
           style={{ width: `${pct}%` }}
         />
       </div>

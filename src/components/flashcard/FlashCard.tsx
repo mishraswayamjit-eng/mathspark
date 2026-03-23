@@ -2,7 +2,7 @@
 
 import { useState, useRef, useCallback } from 'react';
 import dynamic from 'next/dynamic';
-import { getTopicColor } from '@/data/flashcardData';
+import { getTopicColor } from '@/data/topicColors';
 import type { FlashCard as FlashCardType } from '@/types';
 
 const KatexRenderer = dynamic(() => import('@/components/KatexRenderer'), { ssr: false });

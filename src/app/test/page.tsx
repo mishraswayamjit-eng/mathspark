@@ -26,7 +26,7 @@ const TEST_OPTIONS: Array<{
     time: '20 min',
     desc: 'Fast check-in across key topics',
     color: 'bg-blue-50',
-    border: 'border-[#1CB0F6]',
+    border: 'border-duo-blue',
   },
   {
     type: 'half',
@@ -36,7 +36,7 @@ const TEST_OPTIONS: Array<{
     time: '40 min',
     desc: 'Mid-term style practice paper',
     color: 'bg-amber-50',
-    border: 'border-[#FF9600]',
+    border: 'border-duo-orange',
   },
   {
     type: 'ipm',
@@ -56,7 +56,7 @@ const TEST_OPTIONS: Array<{
     time: '60 min',
     desc: 'Extended paper — full grade question pool',
     color: 'bg-green-50',
-    border: 'border-[#58CC02]',
+    border: 'border-duo-green',
   },
 ];
 
@@ -68,9 +68,9 @@ const PYQ_YEARS: Array<{
   subtitle: string;
   color: string;
 }> = [
-  { year: 2019, label: 'IPM 2019',  subtitle: '40 Qs · 60 min · Most Recent', color: 'from-[#1CB0F6] to-[#0a98dc]' },
-  { year: 2018, label: 'IPM 2018',  subtitle: '40 Qs · 60 min',               color: 'from-[#58CC02] to-[#46a302]' },
-  { year: 2017, label: 'IPM 2017',  subtitle: '40 Qs · 60 min',               color: 'from-[#FF9600] to-[#cc7800]' },
+  { year: 2019, label: 'IPM 2019',  subtitle: '40 Qs · 60 min · Most Recent', color: 'from-duo-blue to-duo-blue-dark' },
+  { year: 2018, label: 'IPM 2018',  subtitle: '40 Qs · 60 min',               color: 'from-duo-green to-duo-green-dark' },
+  { year: 2017, label: 'IPM 2017',  subtitle: '40 Qs · 60 min',               color: 'from-duo-orange to-duo-orange-dark' },
   { year: 2016, label: 'IPM 2016',  subtitle: '40 Qs · 60 min · First Year',  color: 'from-[#9B59B6] to-[#7D3C98]' },
 ];
 
@@ -186,7 +186,7 @@ export default function TestConfigPage() {
   const opt = TEST_OPTIONS.find((o) => o.type === selected)!;
 
   return (
-    <div className="min-h-screen bg-[#131F24] flex flex-col pb-28">
+    <div className="min-h-screen bg-duo-dark flex flex-col pb-28 animate-fade-in">
       {/* Header */}
       <div className="px-4 pt-8 pb-4">
         <button
@@ -218,7 +218,7 @@ export default function TestConfigPage() {
               <button
                 key={o.type}
                 onClick={() => setSelected(o.type)}
-                className={`w-full text-left rounded-2xl p-4 border-2 transition-all duration-150 ${
+                className={`w-full text-left rounded-2xl p-4 border-2 transition-[colors,border-color,box-shadow,transform] duration-150 ${
                   isSelected
                     ? `${o.color} ${o.border} shadow-md active:scale-[0.97]`
                     : 'bg-white/10 border-white/10 hover:border-white/30 active:scale-[0.97]'
@@ -244,7 +244,7 @@ export default function TestConfigPage() {
                       {o.desc}
                     </p>
                   </div>
-                  {isSelected && <span className="text-[#58CC02] text-base ml-1">✓</span>}
+                  {isSelected && <span className="text-duo-green text-base ml-1">✓</span>}
                 </div>
               </button>
             );
@@ -264,7 +264,7 @@ export default function TestConfigPage() {
         </div>
       </div>
 
-      {error && <p className="text-[#FF4B4B] text-sm text-center font-semibold px-4 mt-2">{error}</p>}
+      {error && <p className="text-duo-red text-sm text-center font-semibold px-4 mt-2">{error}</p>}
 
       {/* Start CTA */}
       <div className="px-4 mt-4">
@@ -286,7 +286,7 @@ export default function TestConfigPage() {
               key={year}
               onClick={() => handlePYQ(year)}
               disabled={pyqLoading !== null}
-              className={`relative bg-gradient-to-br ${color} rounded-2xl p-4 text-left transition-all duration-150 min-h-[100px] flex flex-col justify-between active:scale-[0.97] disabled:opacity-60`}
+              className={`relative bg-gradient-to-br ${color} rounded-2xl p-4 text-left transition-[opacity,transform] duration-150 min-h-[100px] flex flex-col justify-between active:scale-[0.97] disabled:opacity-60`}
             >
               <div>
                 <p className="text-white font-extrabold text-base leading-tight">{label}</p>
@@ -352,7 +352,7 @@ export default function TestConfigPage() {
               <p className="text-white/55 text-xs mb-3 text-center px-8">Start your free trial to unlock the Ultimate Challenge</p>
               <button
                 onClick={() => router.push('/pricing')}
-                className="bg-[#FF9600] border-b-[3px] border-[#cc7800] text-white font-extrabold px-5 py-2 rounded-2xl text-xs active:translate-y-[2px] active:border-b-0 transition-all"
+                className="bg-duo-orange border-b-[3px] border-duo-orange-dark text-white font-extrabold px-5 py-2 rounded-2xl text-xs active:translate-y-[2px] active:border-b-0 transition-[colors,border-color,transform]"
               >
                 Unlock with Pro Trial →
               </button>

@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { Nunito } from 'next/font/google';
 import './globals.css';
 import BottomNav from '@/components/BottomNav';
 import ServiceWorkerRegistrar from '@/components/ServiceWorkerRegistrar';
@@ -6,8 +7,15 @@ import AddToHomeScreen from '@/components/AddToHomeScreen';
 import SessionProvider from '@/components/SessionProvider';
 import { Analytics } from '@vercel/analytics/next';
 
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['400', '700', '800', '900'],
+  display: 'swap',
+});
+
 export const viewport: Viewport = {
   themeColor: '#58CC02',
+  viewportFit: 'cover',
 };
 
 export const metadata: Metadata = {
@@ -38,9 +46,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-[#131F24] min-h-screen font-sans">
+      <body className={`bg-duo-dark min-h-screen ${nunito.className}`}>
         <SessionProvider>
-          <main className="bg-white max-w-lg mx-auto min-h-screen pb-20">
+          <main className="bg-white max-w-lg mx-auto min-h-screen">
             {children}
           </main>
           <BottomNav />

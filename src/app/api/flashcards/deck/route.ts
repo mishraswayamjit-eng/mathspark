@@ -33,6 +33,8 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: 'studentId required' }, { status: 400 });
   }
 
+  try {
+
   // ── Resolve candidate cards ─────────────────────────────────────────────
   let candidates: FlashCard[];
 
@@ -203,9 +205,9 @@ export async function GET(req: Request) {
     }
 
     due.sort((a, b) => (progressMap.get(a.id)?.leitnerBox ?? 0) - (progressMap.get(b.id)?.leitnerBox ?? 0));
-    // Cap unseen to daily budget
-    const cappedUnseen = unseen.slice(0, newCardBudget);
-    deck = [...due, ...cappedUnseen, ...rest].slice(0, 20);
+    // For topic decks the student explicitly chose this topic — don't block with daily cap.
+    // Still prioritize due → unseen → rest, and limit session to 20 cards.
+    deck = [...due, ...unseen, ...rest].slice(0, 20);
   }
 
   // ── Attach progress data to each card for the client ────────────────────
@@ -236,4 +238,9 @@ export async function GET(req: Request) {
     newCardsSeenToday,
     newCardBudget,
   });
+
+  } catch (err) {
+    console.error('[flashcards/deck] Error:', err);
+    return NextResponse.json({ cards: [], deckName: 'Error', error: String(err) }, { status: 500 });
+  }
 }

@@ -160,7 +160,10 @@ export async function POST(req: Request) {
 
   // Load student + their progress context
   const [student, progress] = await Promise.all([
-    prisma.student.findUnique({ where: { id: studentId } }),
+    prisma.student.findUnique({
+      where: { id: studentId },
+      select: { id: true, name: true, grade: true },
+    }),
     prisma.progress.findMany({
       where: { studentId },
       include: { topic: true },

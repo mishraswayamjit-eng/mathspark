@@ -5,11 +5,11 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const NAV = [
-  { href: '/home',        emoji: '🏠', label: 'Home'    },
-  { href: '/chapters',    emoji: '📚', label: 'Learn'   },
-  { href: '/test',        emoji: '📝', label: 'Test'    },
-  { href: '/flashcards',  emoji: '🃏', label: 'Cards'   },
-  { href: '/profile',     emoji: '👤', label: 'Profile' },
+  { href: '/home',        emoji: '🏠', label: 'Home'     },
+  { href: '/practice',    emoji: '⚡', label: 'Practice' },
+  { href: '/progress',    emoji: '📊', label: 'Progress' },
+  { href: '/flashcards',  emoji: '🃏', label: 'Cards'    },
+  { href: '/profile',     emoji: '👤', label: 'Profile'  },
 ];
 
 export default function BottomNav() {
@@ -39,16 +39,17 @@ export default function BottomNav() {
   ) return null;
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white z-50 shadow-[0_-2px_10px_rgba(0,0,0,0.08)]">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white z-50 shadow-[0_-2px_10px_rgba(0,0,0,0.08)] pb-[env(safe-area-inset-bottom)]">
       <div className="max-w-lg mx-auto flex h-16">
         {NAV.map(({ href, emoji, label }) => {
-          // Learn tab (/chapters) also activates on /practice/* pages
-          const active = href === '/chapters'
-            ? pathname.startsWith('/chapters') || pathname.startsWith('/practice')
+          const active = href === '/practice'
+            ? pathname.startsWith('/practice') || pathname.startsWith('/chapters') || pathname.startsWith('/learn') || pathname.startsWith('/exam-prep')
+            : href === '/progress'
+            ? pathname.startsWith('/progress')
             : href === '/flashcards'
             ? pathname.startsWith('/flashcards')
             : pathname.startsWith(href);
-          const baseClass = 'flex-1 flex flex-col items-center justify-center py-2 min-h-[56px] text-xs font-bold transition-colors border-t-4 relative';
+          const baseClass = 'flex-1 flex flex-col items-center justify-center py-2 min-h-[56px] text-xs font-bold transition-colors transition-transform active:scale-95 border-t-4 relative';
 
           return (
             <Link
@@ -56,7 +57,7 @@ export default function BottomNav() {
               href={href}
               className={`${baseClass} ${
                 active
-                  ? 'text-[#58CC02] border-[#58CC02]'
+                  ? 'text-duo-green border-duo-green'
                   : 'text-gray-400 border-transparent hover:text-gray-600'
               }`}
             >

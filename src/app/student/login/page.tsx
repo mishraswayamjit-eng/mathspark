@@ -43,7 +43,7 @@ export default function StudentLoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#131F24] flex flex-col items-center justify-center px-6 py-12">
+    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12 animate-fade-in">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">🌟</div>
@@ -77,14 +77,14 @@ export default function StudentLoginPage() {
             <input
               type="email" placeholder="Parent's email address" required autoComplete="email"
               value={email} onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-[#58CC02]"
+              className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-green"
             />
 
-            {error && <p className="text-[#FF4B4B] text-sm text-center font-semibold">{error}</p>}
+            {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
 
             <button
               type="submit" disabled={loading}
-              className="w-full bg-[#58CC02] hover:bg-[#46a302] disabled:opacity-50 text-white font-extrabold py-4 rounded-2xl text-lg transition-colors"
+              className="w-full bg-duo-green hover:bg-duo-green-dark disabled:opacity-50 text-white font-extrabold py-4 rounded-2xl text-lg transition-colors"
             >
               {loading ? 'Finding…' : 'Find My Profile →'}
             </button>
@@ -93,7 +93,7 @@ export default function StudentLoginPage() {
 
         <p className="text-center text-white/30 text-xs mt-8">
           Are you a parent?{' '}
-          <a href="/auth/login" className="text-[#1CB0F6] font-semibold">Sign in here →</a>
+          <a href="/auth/login" className="text-duo-blue font-semibold">Sign in here →</a>
         </p>
       </div>
     </div>

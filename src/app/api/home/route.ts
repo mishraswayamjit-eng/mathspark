@@ -2,23 +2,10 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { recomputeStudentAnalytics } from '@/lib/brain/recompute';
 import { getTopicsCached } from '@/lib/topicCache';
+import { computeStreak } from '@/lib/sharedUtils';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 30;
-
-function computeStreak(attempts: Array<{ createdAt: Date }>): number {
-  if (!attempts.length) return 0;
-  const days = new Set(attempts.map((a) => new Date(a.createdAt).toDateString()));
-  const today = new Date();
-  let streak = 0;
-  for (let i = 0; i < 365; i++) {
-    const d = new Date(today);
-    d.setDate(d.getDate() - i);
-    if (days.has(d.toDateString())) streak++;
-    else break;
-  }
-  return streak;
-}
 
 // GET /api/home?studentId=xxx
 export async function GET(req: Request) {

@@ -1,178 +1,13 @@
-'use client';
-
-import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { useSession } from 'next-auth/react';
 import Sparky from '@/components/Sparky';
+import AuthRedirect from '@/components/landing/AuthRedirect';
+import HeroDemo from '@/components/landing/HeroDemo';
+import SectionFade from '@/components/landing/SectionFade';
+import StatsBar from '@/components/landing/StatsBar';
+import ScrollButton from '@/components/landing/ScrollButton';
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Hooks
-// ─────────────────────────────────────────────────────────────────────────────
-
-function useInView(threshold = 0.12) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { setInView(true); obs.disconnect(); } },
-      { threshold },
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [threshold]);
-  return [ref, inView] as const;
-}
-
-function useCountUp(target: number, inView: boolean, duration = 1600) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!inView) return;
-    if (target === 0) { setCount(0); return; }
-    let start: number | null = null;
-    const raf = (ts: number) => {
-      if (!start) start = ts;
-      const p     = Math.min((ts - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      setCount(Math.floor(eased * target));
-      if (p < 1) requestAnimationFrame(raf); else setCount(target);
-    };
-    requestAnimationFrame(raf);
-  }, [inView, target, duration]);
-  return count;
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// SectionFade
-// ─────────────────────────────────────────────────────────────────────────────
-
-function SectionFade({ children, delay = 0, className = '' }: {
-  children: React.ReactNode; delay?: number; className?: string;
-}) {
-  const [ref, inView] = useInView(0.08);
-  return (
-    <div
-      ref={ref}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} ${className}`}
-    >
-      {children}
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// HeroDemo — live question auto-answers itself
-// ─────────────────────────────────────────────────────────────────────────────
-
-interface PreviewQ {
-  id: string; questionText: string;
-  option1: string; option2: string; option3: string; option4: string;
-  correctAnswer: string;
-}
-const OPT_KEYS = ['A', 'B', 'C', 'D'] as const;
-
-function HeroDemo() {
-  const [q, setQ]               = useState<PreviewQ | null>(null);
-  const [answered, setAnswered] = useState(false);
-  const [badges,   setBadges]   = useState(false);
-
-  useEffect(() => {
-    fetch('/api/questions/preview')
-      .then(r => r.json())
-      .then(d => { if (d.questions?.[0]) setQ(d.questions[0]); })
-      .catch(() => {});
-  }, []);
-
-  useEffect(() => {
-    if (!q) return;
-    const t1 = setTimeout(() => setAnswered(true), 2200);
-    const t2 = setTimeout(() => setBadges(true),   2900);
-    return () => { clearTimeout(t1); clearTimeout(t2); };
-  }, [q]);
-
-  if (!q) return (
-    <div className="bg-[#1a2f3a] border border-white/10 rounded-2xl p-5 space-y-3 animate-pulse">
-      <div className="h-3 bg-white/10 rounded w-1/2" />
-      <div className="h-4 bg-white/10 rounded w-full" />
-      <div className="h-4 bg-white/10 rounded w-4/5" />
-      {[0,1,2,3].map(i => <div key={i} className="h-11 bg-white/10 rounded-xl" />)}
-    </div>
-  );
-
-  const opts = [q.option1, q.option2, q.option3, q.option4];
-
-  return (
-    <div className="relative mt-6 lg:mt-0">
-      {badges && (
-        <>
-          <div className="absolute -top-3 right-3 bg-[#FF9600] text-white text-xs font-extrabold px-3 py-1.5 rounded-full shadow-lg z-10 animate-pop-in whitespace-nowrap">
-            🔥 12-Day Streak
-          </div>
-          <div className="absolute -bottom-3 left-3 bg-[#58CC02] text-white text-xs font-extrabold px-3 py-1.5 rounded-full shadow-lg z-10 animate-pop-in whitespace-nowrap">
-            ⭐ +20 XP
-          </div>
-        </>
-      )}
-      <div className="bg-[#1a2f3a] border border-white/10 rounded-2xl p-5 shadow-2xl">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="text-[10px] font-bold text-[#1CB0F6] bg-[#1CB0F6]/10 px-2 py-0.5 rounded-full uppercase tracking-wide">Real IPM Question</span>
-        </div>
-        <p className="text-white text-sm font-semibold leading-relaxed mb-4">{q.questionText}</p>
-        <div className="space-y-2">
-          {opts.map((opt, i) => {
-            const key     = OPT_KEYS[i];
-            const correct = key === q.correctAnswer;
-            return (
-              <div
-                key={key}
-                className={`flex items-center gap-3 border-2 rounded-xl px-3 py-2.5 transition-all duration-500 ${
-                  !answered ? 'border-white/15 text-white/60'
-                  : correct  ? 'border-[#58CC02] bg-[#58CC02]/10 text-white'
-                  :            'border-white/5 text-white/25'
-                }`}
-              >
-                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${answered && correct ? 'bg-[#58CC02] text-white' : 'bg-white/10 text-white/40'}`}>
-                  {key}
-                </span>
-                <span className="text-sm">{opt}</span>
-                {answered && correct && <span className="ml-auto text-[#58CC02]">✓</span>}
-              </div>
-            );
-          })}
-        </div>
-        {answered && (
-          <div className="mt-3 flex items-center gap-2 bg-[#58CC02]/10 border border-[#58CC02]/20 rounded-xl px-3 py-2 animate-fade-in">
-            <span className="text-[#58CC02] text-sm font-extrabold">Excellent thinking! 🧠</span>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// StatCard
-// ─────────────────────────────────────────────────────────────────────────────
-
-function StatCard({ prefix = '', target, suffix = '', label, inView }: {
-  prefix?: string; target: number; suffix?: string; label: string; inView: boolean;
-}) {
-  const count = useCountUp(target, inView);
-  return (
-    <div className="text-center py-5 px-2 overflow-hidden">
-      <div className="text-xl sm:text-3xl font-extrabold text-white tabular-nums leading-none truncate">
-        {prefix}{target === 0 ? '0' : count.toLocaleString('en-IN')}{suffix}
-      </div>
-      <div className="text-white/40 text-xs sm:text-sm mt-1.5 leading-tight">{label}</div>
-    </div>
-  );
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Data
+// Data (server-only — never shipped to client JS bundle)
 // ─────────────────────────────────────────────────────────────────────────────
 
 const ANXIETY_ITEMS = [
@@ -213,24 +48,13 @@ const COMPARISON_ROWS = [
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Page
+// Page (Server Component)
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default function LandingPage() {
-  const router                 = useRouter();
-  const { status }             = useSession();
-  const [statsRef, statsInView] = useInView(0.25);
-
-  // Routing
-  useEffect(() => {
-    if (status === 'loading') return;
-    if (status === 'authenticated') { router.replace('/parent/dashboard'); return; }
-    const id = localStorage.getItem('mathspark_student_id');
-    if (id) router.replace('/home');
-  }, [status, router]);
-
   return (
     <div className="min-h-screen bg-[#131F24] text-white">
+      <AuthRedirect />
 
       {/* ── NAV ─────────────────────────────────────────────────────────────── */}
       <nav className="sticky top-0 z-50 bg-[#131F24]/95 backdrop-blur-sm border-b border-white/5 px-4 py-3 flex items-center justify-between">
@@ -241,7 +65,7 @@ export default function LandingPage() {
         <div className="flex items-center gap-3">
           <Link href="/pricing" className="text-white/50 text-sm font-semibold hover:text-white transition-colors hidden sm:block">Pricing</Link>
           <Link href="/auth/login" className="text-white/50 text-sm font-semibold hover:text-white transition-colors">Sign in</Link>
-          <Link href="/auth/register" className="bg-[#58CC02] border-b-[3px] border-[#46a302] text-white text-sm font-extrabold px-4 py-2 rounded-full hover:bg-[#5bd800] transition-all active:translate-y-[2px] active:border-b-0">
+          <Link href="/auth/register" className="bg-[#58CC02] border-b-[3px] border-[#46a302] text-white text-sm font-extrabold px-4 py-2 rounded-full hover:bg-[#5bd800] transition-colors active:translate-y-[2px] active:border-b-0">
             Start Free
           </Link>
         </div>
@@ -264,7 +88,7 @@ export default function LandingPage() {
               </h1>
             </div>
             <p className="text-white/60 text-base leading-relaxed mb-2">
-              India's smartest IPM &amp; Olympiad prep — adaptive AI tutoring, 100,000+ richly researched questions, real exam simulations. Built by competitive math champions.
+              India&apos;s smartest IPM &amp; Olympiad prep — adaptive AI tutoring, 100,000+ richly researched questions, real exam simulations. Built by competitive math champions.
             </p>
             <p className="text-white/30 text-xs leading-relaxed mb-8 italic border-l-2 border-white/10 pl-3">
               Research shows daily adaptive practice doubles learning growth versus worksheets (Muralidharan et al., American Economic Review, 2019)
@@ -272,16 +96,16 @@ export default function LandingPage() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/auth/register"
-                className="flex-1 text-center bg-[#58CC02] border-b-4 border-[#46a302] text-white font-extrabold py-4 rounded-2xl transition-all hover:bg-[#5bd800] active:translate-y-1 active:border-b-0"
+                className="flex-1 text-center bg-[#58CC02] border-b-4 border-[#46a302] text-white font-extrabold py-4 rounded-2xl transition-colors hover:bg-[#5bd800] active:translate-y-1 active:border-b-0"
               >
                 Start 7-Day Free Trial →
               </Link>
-              <button
-                onClick={() => document.getElementById('research')?.scrollIntoView({ behavior: 'smooth' })}
-                className="flex-1 border-2 border-white/20 text-white/65 hover:border-white/40 hover:text-white font-extrabold py-4 rounded-2xl transition-all"
+              <ScrollButton
+                targetId="research"
+                className="flex-1 border-2 border-white/20 text-white/65 hover:border-white/40 hover:text-white font-extrabold py-4 rounded-2xl transition-colors"
               >
                 See the Research ↓
-              </button>
+              </ScrollButton>
             </div>
           </div>
           <HeroDemo />
@@ -301,17 +125,7 @@ export default function LandingPage() {
       </div>
 
       {/* ── TRUST NUMBERS ─────────────────────────────────────────────────────── */}
-      <section className="py-10 px-4 max-w-4xl mx-auto">
-        <div ref={statsRef} className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-white/10 bg-white/[0.03] border border-white/10 rounded-2xl">
-          <StatCard target={100000} suffix="+" label="Richly Researched Questions" inView={statsInView} />
-          <StatCard target={4}      suffix=" Yrs" label="of Real IPM Papers"         inView={statsInView} />
-          <StatCard target={0}                    label="Hallucinated Answers"        inView={statsInView} />
-          <StatCard target={2}      suffix="×"    label="Faster Learning (cited)"     inView={statsInView} />
-        </div>
-        <p className="text-center text-white/20 text-xs mt-2 italic">
-          ²Muralidharan, Singh &amp; Ganimian — American Economic Review, 2019
-        </p>
-      </section>
+      <StatsBar />
 
       {/* ── WHY MATHSPARK ─────────────────────────────────────────────────────── */}
       <section className="py-10 px-4 max-w-5xl mx-auto">
@@ -319,7 +133,7 @@ export default function LandingPage() {
           <div className="text-center mb-10">
             <p className="text-[#58CC02] text-xs font-extrabold uppercase tracking-widest mb-2">Research-Backed. Competition-Proven.</p>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-              What even ₹2,000/hour private tutors can't give you.
+              What even ₹2,000/hour private tutors can&apos;t give you.
             </h2>
           </div>
         </SectionFade>
@@ -355,7 +169,7 @@ export default function LandingPage() {
               Your child gets a ₹2,000/hour tutor.<br className="hidden sm:block" /> For a fraction of the cost.
             </h2>
             <p className="text-white/45 text-sm max-w-xl mx-auto">
-              The best private tutors charge ₹1,500–2,000 per hour. But even they can't adapt in real-time, track every misconception, or be available at 6 AM when your child is sharpest.
+              The best private tutors charge ₹1,500–2,000 per hour. But even they can&apos;t adapt in real-time, track every misconception, or be available at 6 AM when your child is sharpest.
             </p>
           </div>
         </SectionFade>
@@ -388,7 +202,7 @@ export default function LandingPage() {
             </table>
           </div>
           <p className="text-white/35 text-sm mt-5 text-center leading-relaxed max-w-2xl mx-auto bg-white/[0.02] border border-white/5 rounded-2xl px-5 py-4">
-            MathSpark doesn't replace your child's tutor or your personal involvement — it supercharges both. When your child practices daily, they arrive at tutor sessions already knowing what they're weak at. Your tutor spends time teaching, not diagnosing. And you get weekly reports showing exactly where to focus.
+            MathSpark doesn&apos;t replace your child&apos;s tutor or your personal involvement — it supercharges both. When your child practices daily, they arrive at tutor sessions already knowing what they&apos;re weak at. Your tutor spends time teaching, not diagnosing. And you get weekly reports showing exactly where to focus.
           </p>
         </SectionFade>
       </section>
@@ -433,7 +247,7 @@ export default function LandingPage() {
         <SectionFade>
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-              You're already investing in your child's math.<br className="hidden sm:block" /> Make every rupee count.
+              You&apos;re already investing in your child&apos;s math.<br className="hidden sm:block" /> Make every rupee count.
             </h2>
           </div>
         </SectionFade>
@@ -500,7 +314,7 @@ export default function LandingPage() {
             <SectionFade key={t.city} delay={i * 100}>
               <div className="bg-[#1a2f3a] border border-white/10 rounded-2xl p-5 h-full flex flex-col">
                 <div className="text-[#FF9600] text-sm mb-3 tracking-wide">★★★★★</div>
-                <p className="text-white/65 text-sm leading-relaxed italic flex-1">"{t.quote}"</p>
+                <p className="text-white/65 text-sm leading-relaxed italic flex-1">&ldquo;{t.quote}&rdquo;</p>
                 <p className="text-white/25 text-xs mt-4 font-semibold">— {t.city}</p>
               </div>
             </SectionFade>
@@ -514,7 +328,7 @@ export default function LandingPage() {
           <div className="text-center mb-8">
             <p className="text-[#1CB0F6] text-xs font-extrabold uppercase tracking-widest mb-2">Peer-Reviewed Evidence</p>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-              Don't take our word for it. Read the research.
+              Don&apos;t take our word for it. Read the research.
             </h2>
           </div>
         </SectionFade>
@@ -607,13 +421,13 @@ export default function LandingPage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-2 leading-tight">
               ₹10 lakh in IPM scholarships.<br />40 questions in 60 minutes.
             </h2>
-            <p className="text-white/55 text-base mt-3 mb-2">Your child's tutor can't be there at 6 AM. Sparky can.</p>
+            <p className="text-white/55 text-base mt-3 mb-2">Your child&apos;s tutor can&apos;t be there at 6 AM. Sparky can.</p>
             <p className="text-white/35 text-sm mb-8 max-w-sm mx-auto">
               Start with a free diagnostic — see exactly where your child stands. Share the results with your tutor.
             </p>
             <Link
               href="/auth/register"
-              className="block w-full bg-[#58CC02] border-b-4 border-[#46a302] text-white font-extrabold py-4 rounded-2xl text-lg transition-all hover:bg-[#5bd800] active:translate-y-1 active:border-b-0"
+              className="block w-full bg-[#58CC02] border-b-4 border-[#46a302] text-white font-extrabold py-4 rounded-2xl text-lg transition-colors hover:bg-[#5bd800] active:translate-y-1 active:border-b-0"
             >
               Start Free Diagnostic Quiz →
             </Link>

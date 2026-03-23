@@ -1,6 +1,7 @@
 import { withAuth } from 'next-auth/middleware';
 
 // Protect /parent/* routes — requires an active parent session.
+// /parent/[studentId] is a public share link and is excluded.
 // All existing student routes (/chapters, /practice, etc.) remain unprotected.
 export default withAuth({
   pages: {
@@ -9,5 +10,5 @@ export default withAuth({
 });
 
 export const config = {
-  matcher: ['/parent/:path*'],
+  matcher: ['/parent/dashboard', '/parent/add-child'],
 };

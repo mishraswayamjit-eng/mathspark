@@ -80,7 +80,7 @@ describe('usageBarColor', () => {
     expect(usageBarColor(80)).toBe('bg-amber-500');
   });
   it('returns green at 50%', () => {
-    expect(usageBarColor(50)).toBe('bg-[#58CC02]');
+    expect(usageBarColor(50)).toBe('bg-duo-green');
   });
   it('returns amber at 75%', () => {
     expect(usageBarColor(75)).toBe('bg-amber-500');

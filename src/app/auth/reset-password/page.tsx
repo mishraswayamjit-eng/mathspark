@@ -40,7 +40,7 @@ function ResetForm() {
   if (!token) {
     return (
       <div className="text-center text-white/50 text-sm">
-        Invalid reset link. <Link href="/auth/forgot-password" className="text-[#1CB0F6]">Request a new one.</Link>
+        Invalid reset link. <Link href="/auth/forgot-password" className="text-duo-blue">Request a new one.</Link>
       </div>
     );
   }
@@ -63,19 +63,19 @@ function ResetForm() {
           <input
             type="password" placeholder="New password (min 8 characters)" required minLength={8}
             value={password} onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-[#58CC02]"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-green"
           />
           <input
             type="password" placeholder="Confirm new password" required
             value={confirm} onChange={(e) => setConfirm(e.target.value)}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-[#58CC02]"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-green"
           />
 
-          {error && <p className="text-[#FF4B4B] text-sm text-center font-semibold">{error}</p>}
+          {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
 
           <button
             type="submit" disabled={loading}
-            className="w-full bg-[#58CC02] hover:bg-[#46a302] disabled:opacity-50 text-white font-extrabold py-4 rounded-2xl text-lg transition-colors"
+            className="w-full bg-duo-green hover:bg-duo-green-dark disabled:opacity-50 text-white font-extrabold py-4 rounded-2xl text-lg transition-colors"
           >
             {loading ? 'Updating…' : 'Update Password →'}
           </button>
@@ -87,7 +87,7 @@ function ResetForm() {
 
 export default function ResetPasswordPage() {
   return (
-    <div className="min-h-screen bg-[#131F24] flex flex-col items-center justify-center px-6 py-12">
+    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12">
       <Suspense fallback={<div className="text-white/50">Loading…</div>}>
         <ResetForm />
       </Suspense>

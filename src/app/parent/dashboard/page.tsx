@@ -49,8 +49,8 @@ export default function ParentDashboard() {
 
   if (status === 'loading' || loading) {
     return (
-      <div className="min-h-screen bg-[#131F24] flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-[#58CC02] border-t-transparent rounded-full animate-spin" />
+      <div className="min-h-screen bg-duo-dark flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-duo-green border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -63,7 +63,7 @@ export default function ParentDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-[#131F24] pb-16">
+    <div className="min-h-screen bg-duo-dark pb-16">
       {/* Header */}
       <div className="px-4 pt-10 pb-4">
         <div className="flex items-center justify-between">
@@ -88,7 +88,7 @@ export default function ParentDashboard() {
           <p className="text-xs font-extrabold text-white/40 uppercase tracking-widest">Your children</p>
           <Link
             href="/parent/add-child"
-            className="text-[#58CC02] text-sm font-extrabold hover:text-[#46a302] transition-colors"
+            className="text-duo-green text-sm font-extrabold hover:text-duo-green-dark transition-colors"
           >
             + Add child
           </Link>
@@ -101,7 +101,7 @@ export default function ParentDashboard() {
             <p className="text-white/40 text-sm mt-1 mb-4">Add your child to get started</p>
             <Link
               href="/parent/add-child"
-              className="inline-block bg-[#58CC02] hover:bg-[#46a302] text-white font-extrabold px-6 py-3 rounded-2xl transition-colors"
+              className="inline-block bg-duo-green hover:bg-duo-green-dark text-white font-extrabold px-6 py-3 rounded-2xl transition-colors"
             >
               Add a child →
             </Link>
@@ -131,13 +131,13 @@ export default function ParentDashboard() {
                         <div className="flex justify-between text-xs text-white/40 mb-1">
                           <span>Today&apos;s usage</span>
                           {unlimited
-                            ? <span className="text-[#58CC02] font-extrabold">Unlimited ♾️</span>
+                            ? <span className="text-duo-green font-extrabold">Unlimited ♾️</span>
                             : <span>{child.dailyUsageMinutes} / {limit} min</span>
                           }
                         </div>
                         <div className="w-full bg-white/10 rounded-full h-1.5">
                           <div
-                            className={`h-1.5 rounded-full transition-all ${unlimited ? 'bg-[#58CC02]' : usedPct >= 100 ? 'bg-[#FF4B4B]' : usedPct >= 75 ? 'bg-[#FF9600]' : 'bg-[#58CC02]'}`}
+                            className={`h-1.5 rounded-full transition-[width] ${unlimited ? 'bg-duo-green' : usedPct >= 100 ? 'bg-duo-red' : usedPct >= 75 ? 'bg-duo-orange' : 'bg-duo-green'}`}
                             style={{ width: unlimited ? '100%' : `${usedPct}%` }}
                           />
                         </div>
@@ -150,7 +150,7 @@ export default function ParentDashboard() {
 
                     <button
                       onClick={() => loginAsChild(child.id, child.name, child.grade)}
-                      className="bg-[#58CC02] hover:bg-[#46a302] text-white text-xs font-extrabold px-3 py-2 rounded-xl transition-colors whitespace-nowrap"
+                      className="bg-duo-green hover:bg-duo-green-dark text-white text-xs font-extrabold px-3 py-2 rounded-xl transition-colors whitespace-nowrap"
                     >
                       Practice →
                     </button>
@@ -160,7 +160,7 @@ export default function ParentDashboard() {
                     <div className="mt-3 border-t border-white/10 pt-3">
                       <Link
                         href="/pricing"
-                        className="block w-full text-center bg-[#FF9600]/20 border border-[#FF9600]/40 text-[#FF9600] text-xs font-extrabold py-2 rounded-xl hover:bg-[#FF9600]/30 transition-colors"
+                        className="block w-full text-center bg-duo-orange/20 border border-duo-orange/40 text-duo-orange text-xs font-extrabold py-2 rounded-xl hover:bg-duo-orange/30 transition-colors"
                       >
                         ⚡ Subscribe to unlock full access →
                       </Link>

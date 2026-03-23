@@ -66,7 +66,7 @@ export function usagePct(usedMinutes: number, limitMinutes: number): number {
 export function usageBarColor(pct: number): string {
   if (pct >= 100) return 'bg-red-500';
   if (pct >= 75)  return 'bg-amber-500';
-  return 'bg-[#58CC02]';
+  return 'bg-duo-green';
 }
 
 /** Human-readable minutes → "2 hr 15 min" or "45 min". */

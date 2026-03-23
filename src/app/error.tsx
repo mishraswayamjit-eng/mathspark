@@ -19,7 +19,7 @@ export default function ErrorPage({
       <p className="text-gray-400 text-sm mb-6">Something went wrong. Let&apos;s try again!</p>
       <button
         onClick={reset}
-        className="bg-[#58CC02] text-white font-extrabold rounded-2xl px-8 py-3"
+        className="bg-duo-green text-white font-extrabold rounded-2xl px-8 py-3"
       >
         Try Again
       </button>

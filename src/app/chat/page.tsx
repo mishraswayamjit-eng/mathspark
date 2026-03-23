@@ -75,10 +75,10 @@ function MessageBubble({ msg, studentInitial }: BubbleProps) {
   if (isUser) {
     return (
       <div className="flex justify-end items-end gap-2 mb-3">
-        <div className="max-w-[78%] bg-[#58CC02] text-white rounded-2xl rounded-br-sm px-4 py-2.5 shadow-sm">
+        <div className="max-w-[78%] bg-duo-green text-white rounded-2xl rounded-br-sm px-4 py-2.5 shadow-sm">
           <p className="text-sm leading-relaxed font-medium">{msg.content}</p>
         </div>
-        <div className="w-8 h-8 rounded-full bg-[#1CB0F6] flex items-center justify-center text-white font-extrabold text-sm flex-shrink-0">
+        <div className="w-8 h-8 rounded-full bg-duo-blue flex items-center justify-center text-white font-extrabold text-sm flex-shrink-0">
           {studentInitial}
         </div>
       </div>
@@ -251,10 +251,10 @@ export default function ChatPage() {
   // ── Render ────────────────────────────────────────────────────────────────
 
   return (
-    <div className="flex flex-col bg-[#F0F4F8]" style={{ height: 'calc(100vh - 64px)' }}>
+    <div className="flex flex-col bg-[#F0F4F8] animate-fade-in" style={{ height: 'calc(100vh - 64px)' }}>
 
       {/* ── Header ── */}
-      <div className="bg-[#131F24] px-4 py-3 flex items-center gap-3 flex-shrink-0 shadow-md">
+      <div className="bg-duo-dark px-4 py-3 flex items-center gap-3 flex-shrink-0 shadow-md">
         <button
           onClick={() => router.push('/chapters')}
           className="text-white/70 hover:text-white font-bold text-xl min-h-[44px] min-w-[44px] flex items-center justify-center"
@@ -267,7 +267,7 @@ export default function ChatPage() {
           <div>
             <p className="text-white font-extrabold text-sm leading-tight">Sparky</p>
             <div className="flex items-center gap-1.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#58CC02]" />
+              <div className="w-1.5 h-1.5 rounded-full bg-duo-green" />
               <p className="text-white/60 text-xs">Math Tutor · Online</p>
             </div>
           </div>
@@ -303,7 +303,7 @@ export default function ChatPage() {
             </div>
             <div className="max-w-[78%] bg-white rounded-2xl rounded-bl-sm px-4 py-2.5 shadow-sm border border-gray-100">
               <p className="text-sm leading-relaxed text-gray-800 font-medium whitespace-pre-wrap">{streamingMsg}</p>
-              <span className="inline-block w-1 h-4 bg-[#58CC02] animate-pulse ml-0.5 rounded" />
+              <span className="inline-block w-1 h-4 bg-duo-green animate-pulse ml-0.5 rounded" />
             </div>
           </div>
         )}
@@ -330,7 +330,7 @@ export default function ChatPage() {
                 key={qr.label}
                 onClick={() => sendMessage(qr.message)}
                 disabled={isLoading}
-                className="flex-shrink-0 bg-white border-2 border-[#1CB0F6] text-[#1CB0F6] text-xs font-bold rounded-full px-3 py-2 hover:bg-[#1CB0F6] hover:text-white transition-colors whitespace-nowrap min-h-[36px]"
+                className="flex-shrink-0 bg-white border-2 border-duo-blue text-duo-blue text-xs font-bold rounded-full px-3 py-2 hover:bg-duo-blue hover:text-white transition-colors whitespace-nowrap min-h-[36px]"
               >
                 {qr.label}
               </button>
@@ -355,12 +355,12 @@ export default function ChatPage() {
               onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(input); } }}
               placeholder="Ask Sparky anything math…"
               disabled={isLoading}
-              className="flex-1 bg-gray-100 rounded-full px-4 py-2.5 text-sm text-gray-800 outline-none focus:ring-2 focus:ring-[#58CC02] font-medium placeholder-gray-400 min-h-[44px]"
+              className="flex-1 bg-gray-100 rounded-full px-4 py-2.5 text-sm text-gray-800 outline-none focus:ring-2 focus:ring-duo-green font-medium placeholder-gray-400 min-h-[44px]"
             />
             <button
               onClick={() => sendMessage(input)}
               disabled={isLoading || !input.trim()}
-              className="w-11 h-11 rounded-full bg-[#58CC02] disabled:bg-gray-200 flex items-center justify-center transition-colors flex-shrink-0"
+              className="w-11 h-11 rounded-full bg-duo-green disabled:bg-gray-200 flex items-center justify-center transition-colors flex-shrink-0"
               aria-label="Send"
             >
               {isLoading ? (

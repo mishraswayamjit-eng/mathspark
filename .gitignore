@@ -28,3 +28,9 @@ prisma/generated/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Large source PDFs
+WOrksheets/
+
+# Claude Code local config
+.claude/

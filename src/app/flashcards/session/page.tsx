@@ -518,6 +518,25 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
     );
   }
 
+  // Empty deck — no cards were loaded at all
+  if (phase === 'complete' && completed === 0 && cards.length === 0) {
+    return (
+      <div className="min-h-screen bg-[#0F172A] flex flex-col items-center justify-center px-6 text-center">
+        <span className="text-5xl mb-4">🃏</span>
+        <h2 className="text-[#F1F5F9] font-extrabold text-xl mb-2">No Cards Available</h2>
+        <p className="text-[#94A3B8] text-sm mb-6 max-w-xs">
+          This deck doesn&apos;t have any cards ready right now. Try a different deck or come back later!
+        </p>
+        <button
+          onClick={() => router.push('/flashcards')}
+          className="bg-[#1E293B] text-[#F1F5F9] font-bold text-sm px-6 py-3 rounded-2xl border border-white/10 active:scale-95 transition-transform"
+        >
+          ← Back to Cards
+        </button>
+      </div>
+    );
+  }
+
   // Complete
   if (phase === 'complete') {
     const duration = Math.round((Date.now() - startTime) / 1000);
@@ -632,7 +651,7 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
               {[1, 2, 3, 4, 5].map((lvl) => (
                 <div
                   key={lvl}
-                  className="w-5 h-1.5 rounded-full transition-all duration-300"
+                  className="w-5 h-1.5 rounded-full transition-[background-color] duration-300"
                   style={{
                     background: lvl <= (currentCard.leitnerBox || 0)
                       ? BOX_COLORS[currentCard.leitnerBox || 0]
@@ -666,13 +685,13 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
         <div className="mt-6 flex items-center gap-3 w-full max-w-[400px]">
           <button
             onClick={handleStillLearning}
-            className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-blue-400 bg-blue-500/10 border border-blue-500/20 active:scale-[0.97] transition-all"
+            className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-blue-400 bg-blue-500/10 border border-blue-500/20 active:scale-[0.97] transition-[transform,background-color,border-color]"
           >
             Still learning 📚
           </button>
           <button
             onClick={handleNailedIt}
-            className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 active:scale-[0.97] transition-all"
+            className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 active:scale-[0.97] transition-[transform,background-color,border-color]"
           >
             Nailed it! 🎯
           </button>

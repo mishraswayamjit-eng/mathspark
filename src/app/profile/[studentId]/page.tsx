@@ -71,7 +71,7 @@ export default function PublicProfilePage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 animate-pulse">
-        <div className="bg-[#131F24] pt-10 pb-8 px-4">
+        <div className="bg-duo-dark pt-10 pb-8 px-4">
           <div className="flex items-center gap-4">
             <div className="w-20 h-20 rounded-full bg-white/20" />
             <div className="flex-1 space-y-2">
@@ -97,7 +97,7 @@ export default function PublicProfilePage() {
         </p>
         <button
           onClick={() => router.back()}
-          className="mt-2 bg-[#1CB0F6] text-white font-extrabold rounded-2xl px-6 py-3 active:scale-95 transition-transform"
+          className="mt-2 bg-duo-blue text-white font-extrabold rounded-2xl px-6 py-3 active:scale-95 transition-transform"
           style={{ minHeight: 48 }}
         >
           ← Go back
@@ -127,7 +127,7 @@ export default function PublicProfilePage() {
       </div>
 
       {/* ── Profile header ──────────────────────────────────────────────── */}
-      <div className="bg-[#131F24] pt-16 pb-8 px-4 text-center">
+      <div className="bg-duo-dark pt-16 pb-8 px-4 text-center">
         <div
           className="w-24 h-24 rounded-full flex items-center justify-center text-3xl font-extrabold text-white border-4 border-white/30 shadow-xl mx-auto mb-3"
           style={{ backgroundColor: avatarColor }}

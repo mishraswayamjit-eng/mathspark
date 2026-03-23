@@ -19,7 +19,7 @@ export default function ProgressDots({ total, current, completed }: ProgressDots
         </span>
         <div className="w-32 h-1.5 bg-white/10 rounded-full overflow-hidden">
           <div
-            className="h-full bg-[#34D399] rounded-full transition-all duration-300"
+            className="h-full bg-[#34D399] rounded-full transition-[width] duration-300"
             style={{ width: `${total > 0 ? (completed / total) * 100 : 0}%` }}
           />
         </div>
@@ -38,7 +38,7 @@ export default function ProgressDots({ total, current, completed }: ProgressDots
         return (
           <div
             key={i}
-            className={`rounded-full transition-all duration-300 ${
+            className={`rounded-full transition-[background-color,width,height] duration-300 ${
               isDone
                 ? 'w-2 h-2 bg-[#34D399]'
                 : isCurrent

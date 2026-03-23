@@ -56,7 +56,7 @@ function MicVisualizer({ active }: { active: boolean }) {
         return (
           <div
             key={i}
-            className="w-1 rounded-full transition-all duration-150"
+            className="w-1 rounded-full transition-[height,background-color] duration-150"
             style={{
               height: `${h}px`,
               background: active ? `hsl(${160 + i * 8}, 80%, ${l}%)` : '#334155',
@@ -613,7 +613,7 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
         {/* Progress bar */}
         <div className="max-w-md mx-auto mt-1.5 h-1 bg-white/5 rounded-full overflow-hidden">
           <div
-            className="h-full bg-[#A78BFA] rounded-full transition-all duration-300"
+            className="h-full bg-[#A78BFA] rounded-full transition-[width] duration-300"
             style={{ width: `${((currentIndex + (phase === 'reveal' ? 0.5 : 0)) / cards.length) * 100}%` }}
           />
         </div>
@@ -630,7 +630,7 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
             {[1, 2, 3, 4, 5].map((lvl) => (
               <div
                 key={lvl}
-                className="w-5 h-1.5 rounded-full transition-all duration-300"
+                className="w-5 h-1.5 rounded-full transition-[background-color] duration-300"
                 style={{
                   background: lvl <= (card.leitnerBox || 0)
                     ? BOX_COLORS[card.leitnerBox || 0]
@@ -663,7 +663,7 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
 
             <button
               onClick={startRecording}
-              className="w-20 h-20 rounded-full flex items-center justify-center animate-voice-pulse transition-all active:scale-95"
+              className="w-20 h-20 rounded-full flex items-center justify-center animate-voice-pulse transition-transform active:scale-95"
               style={{
                 background: 'linear-gradient(135deg, #7C3AED, #A78BFA)',
                 boxShadow: '0 0 30px rgba(167,139,250,0.3)',
@@ -684,7 +684,7 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
             {/* Timer bar */}
             <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
               <div
-                className="h-full rounded-full transition-all duration-100"
+                className="h-full rounded-full transition-[width] duration-100"
                 style={{ width: `${thinkPct * 100}%`, background: timerColor }}
               />
             </div>
@@ -721,7 +721,7 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
             {/* Ready button */}
             <button
               onClick={revealAnswer}
-              className="px-6 py-3 rounded-2xl font-bold text-sm text-white active:scale-[0.97] transition-all"
+              className="px-6 py-3 rounded-2xl font-bold text-sm text-white active:scale-[0.97] transition-transform"
               style={{ background: 'linear-gradient(135deg, #A78BFA, #7C3AED)' }}
             >
               Show Answer ✨
@@ -763,13 +763,13 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
             <div className="flex items-center gap-3 w-full max-w-[400px]">
               <button
                 onClick={() => handleEvaluate(false)}
-                className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-blue-400 bg-blue-500/10 border border-blue-500/20 active:scale-[0.97] transition-all"
+                className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-blue-400 bg-blue-500/10 border border-blue-500/20 active:scale-[0.97] transition-[transform,background-color,border-color]"
               >
                 Not yet 📚
               </button>
               <button
                 onClick={() => handleEvaluate(true)}
-                className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 active:scale-[0.97] transition-all"
+                className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 active:scale-[0.97] transition-[transform,background-color,border-color]"
               >
                 Got it! 🎯
               </button>

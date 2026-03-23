@@ -1,27 +1,8 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getTopicsCached } from '@/lib/topicCache';
+import { TOPIC_ORDER, computeStreak } from '@/lib/sharedUtils';
 import type { RecentSession } from '@/types';
-
-const TOPIC_ORDER = [
-  'ch01-05','ch06','ch07-08','ch09-10','ch11','ch12',
-  'ch13','ch14','ch15','ch16','ch17','ch18','ch19','ch20','ch21','dh',
-];
-
-// ── Streak: consecutive days with at least 1 attempt backwards from today ─────
-function computeStreak(attempts: Array<{ createdAt: Date }>): number {
-  if (attempts.length === 0) return 0;
-  const days = new Set(attempts.map((a) => new Date(a.createdAt).toDateString()));
-  const today = new Date();
-  let streak = 0;
-  for (let i = 0; i < 365; i++) {
-    const d = new Date(today);
-    d.setDate(d.getDate() - i);
-    if (days.has(d.toDateString())) streak++;
-    else break;
-  }
-  return streak;
-}
 
 // ── Weekly chart: attempts per day for last 7 days ────────────────────────────
 function computeWeeklyData(attempts: Array<{ createdAt: Date }>) {
@@ -86,8 +67,15 @@ export async function GET(req: Request) {
 
   const [student, progress, attempts, allTopics] = await Promise.all([
     prisma.student.findUnique({
-      where:   { id: studentId },
-      include: { subscription: { select: { tier: true } } },
+      where: { id: studentId },
+      select: {
+        id: true, name: true, displayName: true, grade: true,
+        avatarColor: true, createdAt: true, currentLeagueTier: true,
+        totalLifetimeXP: true, currentStreak: true, longestStreak: true,
+        totalDaysPracticed: true, examName: true, examDate: true,
+        dailyGoalMins: true, trialExpiresAt: true,
+        subscription: { select: { tier: true } },
+      },
     }),
     prisma.progress.findMany({ where: { studentId }, include: { topic: true } }),
     prisma.attempt.findMany({

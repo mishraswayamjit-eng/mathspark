@@ -100,7 +100,7 @@ function StudentCard({ s }: { s: TestStudent }) {
 
 export default function DevPage() {
   return (
-    <div className="min-h-screen bg-gray-50 px-4 py-8 max-w-2xl mx-auto">
+    <div className="min-h-screen bg-gray-50 px-4 py-8 max-w-2xl mx-auto animate-fade-in">
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center gap-2 mb-1">

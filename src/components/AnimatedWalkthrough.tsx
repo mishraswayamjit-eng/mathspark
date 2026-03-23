@@ -77,7 +77,7 @@ function SimpleView({
         {onSimilar && (
           <button
             onClick={() => { onClose(); onSimilar(); }}
-            className="w-full min-h-[52px] rounded-2xl bg-[#58CC02] hover:bg-[#5bd800] text-white font-extrabold text-sm mt-2 flex items-center justify-center gap-2"
+            className="w-full min-h-[52px] rounded-2xl bg-duo-green hover:bg-[#5bd800] text-white font-extrabold text-sm mt-2 flex items-center justify-center gap-2"
           >
             🔄 Practice This Concept Again
           </button>
@@ -85,7 +85,7 @@ function SimpleView({
         <button
           onClick={onClose}
           className={`w-full min-h-[48px] rounded-2xl font-extrabold text-base mt-2 ${
-            onSimilar ? 'bg-gray-100 text-gray-600' : 'bg-[#58CC02] text-white'
+            onSimilar ? 'bg-gray-100 text-gray-600' : 'bg-duo-green text-white'
           }`}
         >
           Got it! ✓
@@ -150,7 +150,7 @@ function StepSlide({
       {/* LaTeX block — appears after text tokens */}
       {step.latex ? (
         <div
-          className="p-3 bg-green-50 border-l-4 border-[#58CC02] rounded-r-2xl overflow-x-auto"
+          className="p-3 bg-green-50 border-l-4 border-duo-green rounded-r-2xl overflow-x-auto"
           style={{
             opacity: 0,
             animation: 'token-build 0.35s ease forwards',
@@ -299,7 +299,7 @@ function WalkthroughPlayer({
         {/* ── Progress bar ── */}
         <div className="mx-5 mb-4 h-2 bg-gray-100 rounded-full overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-[#58CC02] to-[#89E219] rounded-full transition-all duration-500 ease-out"
+            className="h-full bg-gradient-to-r from-duo-green to-[#89E219] rounded-full transition-[width] duration-500 ease-out"
             style={{ width: `${pct}%` }}
           />
         </div>
@@ -325,7 +325,7 @@ function WalkthroughPlayer({
           {isLast && onSimilar && (
             <button
               onClick={() => { onClose(); onSimilar(); }}
-              className="w-full min-h-[52px] rounded-2xl bg-[#58CC02] hover:bg-[#5bd800] text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors"
+              className="w-full min-h-[52px] rounded-2xl bg-duo-green hover:bg-[#5bd800] text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors"
             >
               🔄 Practice This Concept Again
             </button>
@@ -352,7 +352,7 @@ function WalkthroughPlayer({
                 className={`flex-1 min-h-[48px] rounded-2xl font-extrabold text-base flex items-center justify-center gap-1 transition-colors ${
                   onSimilar
                     ? 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                    : 'bg-[#58CC02] hover:bg-[#5bd800] text-white shadow-sm'
+                    : 'bg-duo-green hover:bg-[#5bd800] text-white shadow-sm'
                 }`}
               >
                 Got it! ✓
@@ -360,7 +360,7 @@ function WalkthroughPlayer({
             ) : (
               <button
                 onClick={goNext}
-                className="flex-1 min-h-[48px] rounded-2xl bg-[#1CB0F6] hover:bg-[#22bfff] active:bg-[#0a98dc] text-white font-extrabold text-base flex items-center justify-center gap-1 shadow-sm transition-colors"
+                className="flex-1 min-h-[48px] rounded-2xl bg-duo-blue hover:bg-[#22bfff] active:bg-duo-blue-dark text-white font-extrabold text-base flex items-center justify-center gap-1 shadow-sm transition-colors"
               >
                 Next ▶
               </button>

@@ -424,7 +424,7 @@ export default function SpeedRoundSession({ deckId }: SpeedRoundSessionProps) {
         {/* Timer bar */}
         <div className="max-w-md mx-auto h-1.5 bg-white/5 rounded-full overflow-hidden">
           <div
-            className="h-full rounded-full transition-all duration-100"
+            className="h-full rounded-full transition-[width] duration-100"
             style={{
               width: `${pct * 100}%`,
               background: barColor,
@@ -453,7 +453,7 @@ export default function SpeedRoundSession({ deckId }: SpeedRoundSessionProps) {
             <button
               key={opt.id}
               onClick={() => handleAnswer(opt.id)}
-              className="flex items-center gap-2 rounded-xl px-3 py-3 border border-white/10 bg-[#1E293B] active:scale-[0.95] transition-all"
+              className="flex items-center gap-2 rounded-xl px-3 py-3 border border-white/10 bg-[#1E293B] active:scale-[0.95] transition-[transform,background-color,border-color]"
             >
               <span className="flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-black bg-white/10 text-[#F1F5F9]">
                 {opt.id}

@@ -134,7 +134,7 @@ function CardReveal({
         {!showBack ? (
           <button
             onClick={onReveal}
-            className="flex-1 py-3 rounded-xl font-bold text-sm text-white transition-all active:scale-[0.97]"
+            className="flex-1 py-3 rounded-xl font-bold text-sm text-white transition-transform active:scale-[0.97]"
             style={{ background: phaseColor }}
           >
             Show Answer
@@ -142,7 +142,7 @@ function CardReveal({
         ) : (
           <button
             onClick={onNext}
-            className="flex-1 py-3 rounded-xl font-bold text-sm text-white transition-all active:scale-[0.97]"
+            className="flex-1 py-3 rounded-xl font-bold text-sm text-white transition-transform active:scale-[0.97]"
             style={{ background: phaseColor }}
           >
             Next →
@@ -173,7 +173,7 @@ function PhaseTransition({
         {Array.from({ length: total }).map((_, i) => (
           <div
             key={i}
-            className="w-2.5 h-2.5 rounded-full transition-all"
+            className="w-2.5 h-2.5 rounded-full transition-[background-color,transform]"
             style={{
               background: i < phaseIndex ? '#34D399' : i === phaseIndex ? config.color : 'rgba(255,255,255,0.1)',
               transform: i === phaseIndex ? 'scale(1.3)' : 'scale(1)',
@@ -194,7 +194,7 @@ function PhaseTransition({
 
       <button
         onClick={onStart}
-        className="px-8 py-3 rounded-2xl font-bold text-sm text-white transition-all active:scale-[0.97]"
+        className="px-8 py-3 rounded-2xl font-bold text-sm text-white transition-transform active:scale-[0.97]"
         style={{ background: config.color }}
       >
         {config.phase === 'ready' ? 'Finish Warm-Up' : 'Start →'}
@@ -546,7 +546,7 @@ export default function WarmUpSession({ deckId }: WarmUpSessionProps) {
         {/* Phase progress bar */}
         <div className="max-w-md mx-auto mt-1.5 h-1 bg-white/5 rounded-full overflow-hidden">
           <div
-            className="h-full rounded-full transition-all duration-300"
+            className="h-full rounded-full transition-[width] duration-300"
             style={{
               width: `${((currentCardIndex + 1) / cards.length) * 100}%`,
               background: phaseConfig.color,

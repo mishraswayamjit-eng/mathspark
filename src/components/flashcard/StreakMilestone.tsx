@@ -123,7 +123,7 @@ export function StreakProgress({ streak, nextMilestone, progress }: StreakProgre
           </div>
           <div className="h-1 bg-white/5 rounded-full overflow-hidden">
             <div
-              className="h-full bg-[#FBBF24] rounded-full transition-all duration-500"
+              className="h-full bg-[#FBBF24] rounded-full transition-[width] duration-500"
               style={{ width: `${progress * 100}%` }}
             />
           </div>

@@ -40,7 +40,7 @@ export default function AddChildPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#131F24] flex flex-col items-center justify-center px-6 py-12">
+    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12">
       <div className="w-full max-w-sm">
         <button
           onClick={() => router.back()}
@@ -63,7 +63,7 @@ export default function AddChildPage() {
             <input
               type="text" placeholder="e.g. Arjun" required
               value={name} onChange={(e) => setName(e.target.value)}
-              className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-[#58CC02]"
+              className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-green"
             />
           </div>
 
@@ -73,20 +73,20 @@ export default function AddChildPage() {
             </label>
             <select
               value={grade ?? ''} onChange={(e) => setGrade(Number(e.target.value))}
-              className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white outline-none focus:border-[#58CC02]"
+              className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white outline-none focus:border-duo-green"
             >
-              <option value="" disabled className="bg-[#131F24]">Select grade</option>
+              <option value="" disabled className="bg-duo-dark">Select grade</option>
               {[2, 3, 4, 5, 6, 7, 8, 9].map((g) => (
-                <option key={g} value={g} className="bg-[#131F24]">Grade {g}</option>
+                <option key={g} value={g} className="bg-duo-dark">Grade {g}</option>
               ))}
             </select>
           </div>
 
-          {error && <p className="text-[#FF4B4B] text-sm text-center font-semibold">{error}</p>}
+          {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
 
           <button
             type="submit" disabled={loading || !grade}
-            className="w-full bg-[#58CC02] hover:bg-[#46a302] disabled:opacity-50 text-white font-extrabold py-4 rounded-2xl text-lg transition-colors"
+            className="w-full bg-duo-green hover:bg-duo-green-dark disabled:opacity-50 text-white font-extrabold py-4 rounded-2xl text-lg transition-colors"
           >
             {loading ? 'Creating…' : 'Add Child →'}
           </button>

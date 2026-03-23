@@ -13,9 +13,9 @@ const PLANS = [
     monthly: 500,
     annual:  4800,
     annualMonthly: 400,
-    color:   'border-[#58CC02]',
-    badge:   'bg-[#58CC02]/10 text-[#58CC02]',
-    ctaClass:'bg-[#58CC02] hover:bg-[#46a302]',
+    color:   'border-duo-green',
+    badge:   'bg-duo-green/10 text-duo-green',
+    ctaClass:'bg-duo-green hover:bg-duo-green-dark',
     popular: false,
     features: [
       '6,797+ practice questions',
@@ -41,9 +41,9 @@ const PLANS = [
     monthly: 1500,
     annual:  14400,
     annualMonthly: 1200,
-    color:   'border-[#1CB0F6]',
-    badge:   'bg-[#1CB0F6]/10 text-[#1CB0F6]',
-    ctaClass:'bg-[#1CB0F6] hover:bg-[#0a98dc]',
+    color:   'border-duo-blue',
+    badge:   'bg-duo-blue/10 text-duo-blue',
+    ctaClass:'bg-duo-blue hover:bg-duo-blue-dark',
     popular: true,
     features: [
       'Everything in Starter',
@@ -109,7 +109,7 @@ const COMPARISON_ROWS = [
   { feature: 'Badges & streaks',        starter: false,       advanced: false,       unlimited: true },
 ];
 
-function Check() { return <span className="text-[#58CC02] font-bold">✓</span>; }
+function Check() { return <span className="text-duo-green font-bold">✓</span>; }
 function Cross() { return <span className="text-gray-300">✕</span>; }
 function Cell({ v }: { v: boolean | string }) {
   if (typeof v === 'string') return <span className="text-gray-700 font-semibold text-sm">{v}</span>;
@@ -122,9 +122,9 @@ export default function PricingPage() {
   const [showCompare, setShowCompare] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white pb-20">
+    <div className="min-h-screen bg-white pb-20 animate-fade-in">
       {/* Nav */}
-      <div className="bg-[#131F24] px-4 py-3 flex items-center justify-between">
+      <div className="bg-duo-dark px-4 py-3 flex items-center justify-between">
         <Link href="/" className="text-white font-extrabold text-lg">MathSpark ⭐</Link>
         <Link href="/auth/login" className="text-white/60 text-sm font-semibold hover:text-white transition-colors">
           Sign in →
@@ -132,7 +132,7 @@ export default function PricingPage() {
       </div>
 
       {/* Hero */}
-      <div className="bg-[#131F24] px-4 pt-8 pb-12 text-center">
+      <div className="bg-duo-dark px-4 pt-8 pb-12 text-center">
         <h1 className="text-2xl font-extrabold text-white leading-tight">
           IPM prep that actually works —<br />for a fraction of coaching costs
         </h1>
@@ -145,13 +145,13 @@ export default function PricingPage() {
           <span className={`text-sm font-bold ${!annual ? 'text-white' : 'text-white/40'}`}>Monthly</span>
           <button
             onClick={() => setAnnual(!annual)}
-            className={`relative w-12 h-6 rounded-full transition-colors ${annual ? 'bg-[#58CC02]' : 'bg-white/20'}`}
+            className={`relative w-12 h-6 rounded-full transition-colors ${annual ? 'bg-duo-green' : 'bg-white/20'}`}
           >
             <span className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${annual ? 'translate-x-6' : 'translate-x-0.5'}`} />
           </button>
           <span className={`text-sm font-bold ${annual ? 'text-white' : 'text-white/40'}`}>
             Annual
-            <span className="ml-1.5 bg-[#FF9600] text-white text-[10px] font-extrabold px-1.5 py-0.5 rounded-full">SAVE 20%</span>
+            <span className="ml-1.5 bg-duo-orange text-white text-[10px] font-extrabold px-1.5 py-0.5 rounded-full">SAVE 20%</span>
           </span>
         </div>
       </div>
@@ -161,10 +161,10 @@ export default function PricingPage() {
         {PLANS.map((plan) => (
           <div
             key={plan.id}
-            className={`bg-white rounded-2xl border-2 ${plan.color} shadow-lg overflow-hidden ${plan.popular ? 'ring-2 ring-[#1CB0F6] ring-offset-2' : ''}`}
+            className={`bg-white rounded-2xl border-2 ${plan.color} shadow-lg overflow-hidden ${plan.popular ? 'ring-2 ring-duo-blue ring-offset-2' : ''}`}
           >
             {plan.popular && (
-              <div className="bg-[#1CB0F6] text-white text-xs font-extrabold text-center py-1.5 tracking-widest uppercase">
+              <div className="bg-duo-blue text-white text-xs font-extrabold text-center py-1.5 tracking-widest uppercase">
                 ⭐ Most Popular
               </div>
             )}
@@ -192,7 +192,7 @@ export default function PricingPage() {
               <ul className="mt-4 space-y-1.5">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm text-gray-700">
-                    <span className="text-[#58CC02] font-bold mt-0.5 shrink-0">✓</span>
+                    <span className="text-duo-green font-bold mt-0.5 shrink-0">✓</span>
                     {f}
                   </li>
                 ))}
@@ -241,8 +241,8 @@ export default function PricingPage() {
               <thead>
                 <tr className="bg-gray-50">
                   <th className="text-left px-3 py-2 font-semibold text-gray-500 text-xs">Feature</th>
-                  <th className="text-center px-2 py-2 font-extrabold text-[#58CC02] text-xs">🌱</th>
-                  <th className="text-center px-2 py-2 font-extrabold text-[#1CB0F6] text-xs">⚡</th>
+                  <th className="text-center px-2 py-2 font-extrabold text-duo-green text-xs">🌱</th>
+                  <th className="text-center px-2 py-2 font-extrabold text-duo-blue text-xs">⚡</th>
                   <th className="text-center px-2 py-2 font-extrabold text-[#9B59B6] text-xs">🏆</th>
                 </tr>
               </thead>
@@ -283,12 +283,12 @@ export default function PricingPage() {
       </div>
 
       {/* CTA footer */}
-      <div className="mx-4 mt-8 bg-[#131F24] rounded-2xl p-6 text-center">
+      <div className="mx-4 mt-8 bg-duo-dark rounded-2xl p-6 text-center">
         <p className="text-white font-extrabold text-lg mb-1">Ready to get started?</p>
         <p className="text-white/50 text-sm mb-4">Join thousands of Grade 4 students mastering IPM math</p>
         <Link
           href="/auth/register"
-          className="block w-full bg-[#58CC02] hover:bg-[#46a302] text-white font-extrabold py-4 rounded-2xl text-lg transition-colors"
+          className="block w-full bg-duo-green hover:bg-duo-green-dark text-white font-extrabold py-4 rounded-2xl text-lg transition-colors"
         >
           Start Free Trial →
         </Link>

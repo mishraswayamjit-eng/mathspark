@@ -4,24 +4,29 @@ import { getNextQuestion } from '@/lib/adaptive';
 // GET /api/questions/next?topicId=&studentId=&subTopic=
 // All session context (seen questions, streak) is derived from the DB.
 export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url);
-  const topicId   = searchParams.get('topicId');
-  const studentId = searchParams.get('studentId');
-  const excludeParam = searchParams.get('exclude') ?? '';
-  const excludeIds   = excludeParam ? excludeParam.split(',').filter(Boolean) : [];
-  const subTopic     = searchParams.get('subTopic') ?? '';
+  try {
+    const { searchParams } = new URL(req.url);
+    const topicId   = searchParams.get('topicId');
+    const studentId = searchParams.get('studentId');
+    const excludeParam = searchParams.get('exclude') ?? '';
+    const excludeIds   = excludeParam ? excludeParam.split(',').filter(Boolean) : [];
+    const subTopic     = searchParams.get('subTopic') ?? '';
 
-  if (!topicId || !studentId) {
-    return NextResponse.json({ error: 'topicId and studentId required' }, { status: 400 });
+    if (!topicId || !studentId) {
+      return NextResponse.json({ error: 'topicId and studentId required' }, { status: 400 });
+    }
+
+    const q = await getNextQuestion(studentId, topicId, excludeIds, subTopic);
+
+    if (!q) {
+      return NextResponse.json({ error: 'No more questions available' }, { status: 404 });
+    }
+
+    let stepByStep: unknown[] = [];
+    try { stepByStep = JSON.parse(q.stepByStep ?? '[]'); } catch { /* malformed seed data */ }
+    return NextResponse.json({ ...q, stepByStep });
+  } catch (err) {
+    console.error('[questions/next] error:', err);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
-
-  const q = await getNextQuestion(studentId, topicId, excludeIds, subTopic);
-
-  if (!q) {
-    return NextResponse.json({ error: 'No more questions available' }, { status: 404 });
-  }
-
-  let stepByStep: unknown[] = [];
-  try { stepByStep = JSON.parse(q.stepByStep ?? '[]'); } catch { /* malformed seed data */ }
-  return NextResponse.json({ ...q, stepByStep });
 }

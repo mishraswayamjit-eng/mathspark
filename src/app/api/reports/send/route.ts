@@ -2,13 +2,9 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { prisma } from '@/lib/db';
 import { buildReportEmail, type ReportTopic } from '@/lib/emailReport';
+import { TOPIC_ORDER, computeStreak } from '@/lib/sharedUtils';
 
 export const dynamic = 'force-dynamic';
-
-const TOPIC_ORDER = [
-  'ch01-05','ch06','ch07-08','ch09-10','ch11','ch12',
-  'ch13','ch14','ch15','ch16','ch17','ch18','ch19','ch20','ch21','dh',
-];
 
 function weeklyCorrectCount(
   attempts: Array<{ isCorrect: boolean; createdAt: Date }>,
@@ -16,21 +12,6 @@ function weeklyCorrectCount(
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - 7);
   return attempts.filter((a) => a.isCorrect && a.createdAt >= cutoff).length;
-}
-
-function computeStreak(attempts: Array<{ isCorrect: boolean; createdAt: Date }>): number {
-  const days = new Set(
-    attempts.filter((a) => a.isCorrect).map((a) => new Date(a.createdAt).toDateString()),
-  );
-  const today = new Date();
-  let streak = 0;
-  for (let i = 0; i < 365; i++) {
-    const d = new Date(today);
-    d.setDate(d.getDate() - i);
-    if (days.has(d.toDateString())) streak++;
-    else break;
-  }
-  return streak;
 }
 
 // POST /api/reports/send — on-demand email to parent
@@ -44,7 +25,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'studentId required' }, { status: 400 });
   }
 
-  const student = await prisma.student.findUnique({ where: { id: studentId } });
+  const student = await prisma.student.findUnique({
+    where: { id: studentId },
+    select: { id: true, name: true, parentEmail: true, lastReportSentAt: true },
+  });
   if (!student) return NextResponse.json({ error: 'Student not found' }, { status: 404 });
 
   if (!student.parentEmail) {
@@ -90,7 +74,7 @@ export async function POST(req: Request) {
     weeklyCorrect:  weeklyCorrectCount(attempts),
     totalSolved:    correctAttempts.length,
     totalAttempted: attempts.length,
-    streakDays:     computeStreak(attempts),
+    streakDays:     computeStreak(attempts, true),
     topicsMastered: progress.filter((p) => p.mastery === 'Mastered').length,
     topics,
     appUrl,

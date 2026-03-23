@@ -3,13 +3,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import type { DashboardData } from '@/types';
+import { TOPIC_ORDER } from '@/lib/sharedUtils';
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
-
-const TOPIC_ORDER = [
-  'ch01-05','ch06','ch07-08','ch09-10','ch11','ch12',
-  'ch13','ch14','ch15','ch16','ch17','ch18','ch19','ch20','ch21','dh',
-];
 
 const TOPIC_SHORT: Record<string, string> = {
   'ch01-05': 'Numbers',      'ch06': 'Factors',       'ch07-08': 'Fractions',
@@ -156,7 +152,7 @@ export default function ParentDashboardPage() {
             {weeklyData.map(({ date, count }) => (
               <div key={date} className="flex-1 flex flex-col items-center gap-1">
                 <div
-                  className="w-full rounded-t-sm transition-all"
+                  className="w-full rounded-t-sm transition-[height]"
                   style={{
                     background: count > 0 ? 'linear-gradient(to top,#46a302,#58CC02)' : 'transparent',
                     height: `${(count / maxBar) * 64}px`,
@@ -252,7 +248,7 @@ export default function ParentDashboardPage() {
             ))}
           </div>
           {copied && (
-            <p className="text-center text-sm font-bold text-[#58CC02] mt-3 animate-pop-in">
+            <p className="text-center text-sm font-bold text-duo-green mt-3 animate-pop-in">
               ✓ Copied to clipboard!
             </p>
           )}

@@ -32,7 +32,7 @@ export default function NudgeBubble({ nudge, onDismiss }: Props) {
 
   return (
     <div
-      className={`fixed top-16 left-1/2 z-40 w-[calc(100%-2rem)] max-w-lg transition-all duration-280 ${
+      className={`fixed top-16 left-1/2 z-40 w-[calc(100%-2rem)] max-w-lg transition-[opacity,transform] duration-280 ${
         gone
           ? 'opacity-0 -translate-y-3 pointer-events-none'
           : 'animate-slide-down opacity-100'
@@ -58,7 +58,7 @@ export default function NudgeBubble({ nudge, onDismiss }: Props) {
           {nudge.actionLabel && (
             <button
               onClick={handleAction}
-              className="mt-2 bg-[#58CC02] text-white text-xs font-extrabold rounded-full px-4 py-1.5 active:scale-95 transition-transform"
+              className="mt-2 bg-duo-green text-white text-xs font-extrabold rounded-full px-4 py-1.5 active:scale-95 transition-transform"
               style={{ minHeight: 0 }}
             >
               {nudge.actionLabel}

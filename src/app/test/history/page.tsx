@@ -55,15 +55,15 @@ export default function TestHistoryPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="w-10 h-10 border-4 border-[#1CB0F6]/30 border-t-[#1CB0F6] rounded-full animate-spin" />
+        <div className="w-10 h-10 border-4 border-duo-blue/30 border-t-duo-blue rounded-full animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-white pb-28">
+    <div className="min-h-screen bg-white pb-28 animate-fade-in">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-[#131F24] px-4 py-4">
+      <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4">
         <button
           onClick={() => router.back()}
           className="text-white/60 text-sm font-semibold mb-2 flex items-center gap-1 hover:text-white transition-colors"
@@ -85,8 +85,8 @@ export default function TestHistoryPage() {
                 return (
                   <div key={t.id} className="flex-1 flex flex-col items-center gap-1">
                     <div
-                      className={`w-full rounded-t-lg transition-all ${
-                        h >= 80 ? 'bg-[#58CC02]' : h >= 60 ? 'bg-[#FF9600]' : 'bg-[#FF4B4B]'
+                      className={`w-full rounded-t-lg transition-[height] ${
+                        h >= 80 ? 'bg-duo-green' : h >= 60 ? 'bg-duo-orange' : 'bg-duo-red'
                       }`}
                       style={{ height: `${Math.max(4, h * 0.72)}px` }}
                     />
@@ -120,9 +120,9 @@ export default function TestHistoryPage() {
               {/* Score circle */}
               <div className={`w-12 h-12 rounded-full flex items-center justify-center font-extrabold text-sm flex-shrink-0 ${
                 pct == null ? 'bg-gray-100 text-gray-400'  :
-                pct >= 80   ? 'bg-green-100 text-[#58CC02]' :
-                pct >= 60   ? 'bg-amber-100 text-[#FF9600]' :
-                              'bg-red-100 text-[#FF4B4B]'
+                pct >= 80   ? 'bg-green-100 text-duo-green' :
+                pct >= 60   ? 'bg-amber-100 text-duo-orange' :
+                              'bg-red-100 text-duo-red'
               }`}>
                 {isCompleted && pct != null ? `${pct}%` : '…'}
               </div>
@@ -145,14 +145,14 @@ export default function TestHistoryPage() {
               {isCompleted ? (
                 <button
                   onClick={() => router.push(`/test/${t.id}/results`)}
-                  className="text-xs font-extrabold text-[#1CB0F6] hover:text-[#0a98dc] flex-shrink-0"
+                  className="text-xs font-extrabold text-duo-blue hover:text-duo-blue-dark flex-shrink-0"
                 >
                   View Results →
                 </button>
               ) : (
                 <button
                   onClick={() => router.push(`/test/${t.id}`)}
-                  className="text-xs font-extrabold text-[#58CC02] hover:text-[#46a302] flex-shrink-0"
+                  className="text-xs font-extrabold text-duo-green hover:text-duo-green-dark flex-shrink-0"
                 >
                   Resume →
                 </button>

@@ -89,7 +89,7 @@ function HeartsBar({ hearts, max = HEARTS_MAX }: { hearts: number; max?: number 
       {Array.from({ length: max }, (_, i) => (
         <span
           key={i}
-          className="text-base transition-all duration-300"
+          className="text-base transition-opacity duration-300"
           style={{ opacity: i < hearts ? 1 : 0.18, filter: i < hearts ? 'none' : 'grayscale(1)' }}
         >
           ❤️
@@ -118,13 +118,13 @@ function LessonJourney({
 
         const circleCls = isDone
           ? isCorrect
-            ? 'bg-[#58CC02] border-[#46a302] text-white'
-            : 'bg-[#FF4B4B] border-[#cc3333] text-white'
+            ? 'bg-duo-green border-duo-green-dark text-white'
+            : 'bg-duo-red border-duo-red-dark text-white'
           : isCurrent
-          ? 'bg-[#1CB0F6] border-[#0a98dc] text-white ring-4 ring-blue-100 animate-pulse'
+          ? 'bg-duo-blue border-duo-blue-dark text-white ring-4 ring-blue-100 animate-pulse'
           : 'bg-white border-gray-200 text-gray-400';
 
-        const lineCls = i < currentIdx || isDone ? 'bg-[#58CC02]' : 'bg-gray-200';
+        const lineCls = i < currentIdx || isDone ? 'bg-duo-green' : 'bg-gray-200';
 
         return (
           <div key={i} className="flex items-center flex-1 min-w-0">
@@ -132,7 +132,7 @@ function LessonJourney({
               <div className={`h-1 flex-1 rounded-full transition-colors duration-500 ${lineCls}`} />
             )}
             <div
-              className={`w-7 h-7 rounded-full border-2 flex items-center justify-center text-[10px] font-extrabold flex-shrink-0 transition-all duration-300 ${circleCls}`}
+              className={`w-7 h-7 rounded-full border-2 flex items-center justify-center text-[10px] font-extrabold flex-shrink-0 transition-colors duration-300 ${circleCls}`}
             >
               {isDone ? (isCorrect ? '✓' : '✗') : i + 1}
             </div>
@@ -146,7 +146,7 @@ function LessonJourney({
 function XpFloat({ amount }: { amount: number }) {
   return (
     <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[70] pointer-events-none">
-      <span className="animate-xp-float text-2xl font-extrabold text-[#FFC800] drop-shadow-lg whitespace-nowrap">
+      <span className="animate-xp-float text-2xl font-extrabold text-duo-gold drop-shadow-lg whitespace-nowrap">
         +{amount} XP ⭐
       </span>
     </div>
@@ -204,7 +204,7 @@ function NoHeartsScreen({
           {wrong.map((r) => (
             <div key={r.questionId} className="bg-red-50 border-2 border-red-100 rounded-2xl px-4 py-3">
               <p className="text-sm text-gray-700 font-medium line-clamp-2">{r.questionText}</p>
-              <p className="text-xs text-[#58CC02] font-extrabold mt-1">Answer: {r.correctAnswer}</p>
+              <p className="text-xs text-duo-green font-extrabold mt-1">Answer: {r.correctAnswer}</p>
             </div>
           ))}
         </div>
@@ -333,16 +333,16 @@ function LessonCompleteScreen({
       {/* Stars */}
       <div className="flex gap-3 text-4xl">
         {[1, 2, 3].map((s) => (
-          <span key={s} className="transition-all" style={{ opacity: s <= stars ? 1 : 0.2, filter: s <= stars ? 'none' : 'grayscale(1)' }}>
+          <span key={s} className="transition-opacity" style={{ opacity: s <= stars ? 1 : 0.2, filter: s <= stars ? 'none' : 'grayscale(1)' }}>
             ⭐
           </span>
         ))}
       </div>
 
       {/* XP */}
-      <div className="bg-[#FFF9E6] border-2 border-[#FFC800] rounded-2xl px-8 py-3 text-center">
+      <div className="bg-[#FFF9E6] border-2 border-duo-gold rounded-2xl px-8 py-3 text-center">
         <p className="text-xs text-amber-700 font-extrabold uppercase tracking-wide">Total XP earned</p>
-        <p className="text-3xl font-extrabold text-[#131F24]">+{displayXp} ⭐</p>
+        <p className="text-3xl font-extrabold text-duo-dark">+{displayXp} ⭐</p>
       </div>
 
       {/* Wrong answers to revisit */}
@@ -354,7 +354,7 @@ function LessonCompleteScreen({
           {wrongOnes.map((r) => (
             <div key={r.questionId} className="bg-red-50 border border-red-100 rounded-xl px-4 py-3">
               <p className="text-xs text-gray-700 font-medium line-clamp-2">{r.questionText}</p>
-              <p className="text-xs text-[#58CC02] font-extrabold mt-0.5">Correct: {r.correctAnswer}</p>
+              <p className="text-xs text-duo-green font-extrabold mt-0.5">Correct: {r.correctAnswer}</p>
             </div>
           ))}
         </div>
@@ -488,7 +488,7 @@ function WrongPanel({
           <Sparky mood="encouraging" size={56} />
         </div>
         <div>
-          <p className="text-sm font-extrabold text-[#FF4B4B] uppercase tracking-wide">
+          <p className="text-sm font-extrabold text-duo-red uppercase tracking-wide">
             No worries! Here&#39;s how it works…
           </p>
           <div className="bg-white rounded-xl px-3 py-2 border border-red-100 mt-1.5">
@@ -529,7 +529,7 @@ function WrongPanel({
         {canTrySimilar && (
           <button
             onClick={onTrySimilar}
-            className="w-full min-h-[48px] bg-[#58CC02] hover:bg-[#5bd800] text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-sm"
+            className="w-full min-h-[48px] bg-duo-green hover:bg-[#5bd800] text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-sm"
           >
             🔄 Try a Similar Question
           </button>
@@ -1473,7 +1473,7 @@ export default function PracticePage() {
             <ul className="space-y-1.5 text-sm text-gray-600">
               {['Unlimited daily practice', 'Hints + step-by-step solutions', 'Progress tracking & badges', 'Full IPM mock tests'].map((item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <span className="text-[#58CC02]">✅</span> {item}
+                  <span className="text-duo-green">✅</span> {item}
                 </li>
               ))}
             </ul>
@@ -1510,7 +1510,7 @@ export default function PracticePage() {
     : false;
 
   return (
-    <div className="flex flex-col bg-white min-h-screen">
+    <div className="flex flex-col bg-white min-h-screen animate-fade-in">
       {/* Confetti */}
       {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
 
@@ -1518,7 +1518,7 @@ export default function PracticePage() {
       {showXpFloat && <XpFloat amount={isReviewing ? XP_REVIEW : XP_CORRECT} />}
 
       {/* ── Dark header ── */}
-      <div className="bg-[#131F24] px-4 py-3 flex items-center gap-3 sticky top-0 z-30 flex-shrink-0">
+      <div className="bg-duo-dark px-4 py-3 flex items-center gap-3 sticky top-0 z-30 flex-shrink-0">
         <button
           onClick={() => router.push('/chapters')}
           className="text-white/70 hover:text-white font-bold text-xl min-h-[44px] min-w-[44px] flex items-center justify-center flex-shrink-0"
@@ -1549,7 +1549,7 @@ export default function PracticePage() {
       {/* ── Journey circles / Review badge ── */}
       {isReviewing ? (
         <div className="bg-[#EEF6FF] px-4 py-2 flex items-center gap-2 border-b border-blue-100">
-          <span className="text-[#1CB0F6] text-sm font-extrabold">📚 Review mode</span>
+          <span className="text-duo-blue text-sm font-extrabold">📚 Review mode</span>
           <span className="text-gray-400 text-xs font-semibold">{reviewIndex + 1} / {reviewQueue.length}</span>
         </div>
       ) : (
@@ -1559,7 +1559,7 @@ export default function PracticePage() {
       {/* Progress bar */}
       <div className="h-1.5 bg-gray-100">
         <div
-          className="h-1.5 bg-gradient-to-r from-[#58CC02] to-[#89E219] transition-all duration-700"
+          className="h-1.5 bg-gradient-to-r from-duo-green to-[#89E219] transition-[width] duration-700"
           style={{ width: `${pct}%` }}
         />
       </div>
@@ -1568,9 +1568,9 @@ export default function PracticePage() {
       {isSpeedMode && phase === 'answering' && (
         <div className="h-2 bg-gray-100 relative">
           <div
-            className={`h-full transition-all duration-200 ${
-              speedRemaining > 60_000 ? 'bg-[#58CC02]' :
-              speedRemaining > 30_000 ? 'bg-[#FF9600]' : 'bg-[#FF4B4B]'
+            className={`h-full transition-[width] duration-200 ${
+              speedRemaining > 60_000 ? 'bg-duo-green' :
+              speedRemaining > 30_000 ? 'bg-duo-orange' : 'bg-duo-red'
             }`}
             style={{ width: `${(speedRemaining / SPEED_DRILL_MS) * 100}%` }}
           />
@@ -1652,7 +1652,7 @@ export default function PracticePage() {
                 {lastCorrect ? 'Keep it up! 🎉' : 'Need help? 💬'}
               </p>
             </div>
-            <div className={`rounded-full p-1.5 shadow-lg ${lastCorrect ? 'bg-[#58CC02]' : 'bg-[#1CB0F6]'}`}>
+            <div className={`rounded-full p-1.5 shadow-lg ${lastCorrect ? 'bg-duo-green' : 'bg-duo-blue'}`}>
               <Sparky mood={lastCorrect ? 'celebrating' : 'encouraging'} size={32} />
             </div>
           </button>
@@ -1664,8 +1664,8 @@ export default function PracticePage() {
         <div
           className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] animate-slide-up overflow-y-auto ${
             lastCorrect
-              ? 'bg-[#58CC02]'
-              : 'bg-[#FFF0F0] border-t-2 border-[#FF4B4B]'
+              ? 'bg-duo-green'
+              : 'bg-[#FFF0F0] border-t-2 border-duo-red'
           }`}
           style={{ maxHeight: '72vh' }}
         >
@@ -1708,7 +1708,7 @@ export default function PracticePage() {
           className="fixed inset-0 bg-white z-[80] flex flex-col max-w-lg mx-auto animate-slide-from-right"
         >
           {/* Header */}
-          <div className="bg-[#131F24] px-4 py-3 flex items-center gap-3 flex-shrink-0">
+          <div className="bg-duo-dark px-4 py-3 flex items-center gap-3 flex-shrink-0">
             <button
               onClick={handleBonusGotIt}
               className="text-white/70 hover:text-white font-bold text-sm min-h-[44px] min-w-[44px] flex items-center gap-1"
@@ -1803,13 +1803,13 @@ export default function PracticePage() {
                 <div
                   className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[90] animate-slide-up ${
                     bonusCorrect
-                      ? 'bg-[#58CC02]'
-                      : 'bg-[#FFF0F0] border-t-2 border-[#FF4B4B]'
+                      ? 'bg-duo-green'
+                      : 'bg-[#FFF0F0] border-t-2 border-duo-red'
                   }`}
                   style={{ minHeight: '160px' }}
                 >
                   <div className="px-4 pt-4 pb-6 space-y-3">
-                    <p className={`font-extrabold text-base ${bonusCorrect ? 'text-white' : 'text-[#FF4B4B]'}`}>
+                    <p className={`font-extrabold text-base ${bonusCorrect ? 'text-white' : 'text-duo-red'}`}>
                       {bonusFeedback}
                     </p>
                     {bonusCorrect && (
@@ -1820,7 +1820,7 @@ export default function PracticePage() {
                     {!bonusCorrect && canOneMore && (
                       <button
                         onClick={handleBonusOneMore}
-                        className="w-full min-h-[48px] bg-white/30 border border-white/40 text-[#FF4B4B] font-extrabold text-sm rounded-2xl flex items-center justify-center gap-2"
+                        className="w-full min-h-[48px] bg-white/30 border border-white/40 text-duo-red font-extrabold text-sm rounded-2xl flex items-center justify-center gap-2"
                       >
                         🔄 One More?
                       </button>

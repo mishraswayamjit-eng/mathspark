@@ -47,7 +47,7 @@ export default function AddToHomeScreen() {
 
   return (
     <div className="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-lg">
-      <div className="bg-[#131F24] rounded-2xl px-4 py-3 flex items-center gap-3 shadow-2xl">
+      <div className="bg-duo-dark rounded-2xl px-4 py-3 flex items-center gap-3 shadow-2xl">
         <span className="text-2xl">🧮</span>
         <p className="flex-1 text-white text-xs font-bold">
           {isIOS
@@ -58,7 +58,7 @@ export default function AddToHomeScreen() {
           <button
             onClick={install}
             style={{ minHeight: 0 }}
-            className="bg-[#58CC02] text-white text-xs font-extrabold rounded-full px-3 py-1"
+            className="bg-duo-green text-white text-xs font-extrabold rounded-full px-3 py-1"
           >
             Install
           </button>

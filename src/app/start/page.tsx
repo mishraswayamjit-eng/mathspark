@@ -264,7 +264,7 @@ export default function StartPage() {
   // ── Screen 1: Welcome ─────────────────────────────────────────────────────
   if (step === 'welcome') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center gap-8 bg-gradient-to-b from-[#131F24] to-[#1a7a20]">
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center gap-8 bg-gradient-to-b from-duo-dark to-[#1a7a20]">
         <div className="text-[96px] leading-none select-none" role="img" aria-label="sparkles">✨</div>
         <div className="space-y-3">
           <h1 className="text-3xl font-extrabold text-white leading-tight">Welcome to MathSpark!</h1>
@@ -285,7 +285,7 @@ export default function StartPage() {
   // ── Screen 2: Grade Selection (now FIRST, before name) ────────────────────
   if (step === 'gradeSelect') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-[#131F24]">
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-duo-dark">
         <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5">
           <div className="text-center space-y-1">
             <div className="text-5xl">🎓</div>
@@ -302,10 +302,10 @@ export default function StartPage() {
                 key={g}
                 onClick={() => setSelectedGrade(g)}
                 style={{ minHeight: 0 }}
-                className={`flex flex-col items-center justify-center rounded-2xl py-3 px-2 border-2 transition-all active:scale-95 ${
+                className={`flex flex-col items-center justify-center rounded-2xl py-3 px-2 border-2 transition-[colors,border-color,box-shadow,transform] active:scale-95 ${
                   selectedGrade === g
-                    ? 'bg-[#1CB0F6] border-[#0a98dc] text-white shadow-md scale-105'
-                    : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-[#1CB0F6]'
+                    ? 'bg-duo-blue border-duo-blue-dark text-white shadow-md scale-105'
+                    : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-duo-blue'
                 }`}
               >
                 <span className="text-xl leading-none">{GRADE_EMOJI[g]}</span>
@@ -333,7 +333,7 @@ export default function StartPage() {
   // ── Screen 3: Name + optional parent email ────────────────────────────────
   if (step === 'name') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-[#131F24]">
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-duo-dark">
         <div className="relative bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5">
           <div className="absolute -top-8 right-4 animate-sparky-wave">
             <Sparky mood="encouraging" size={64} />
@@ -352,7 +352,7 @@ export default function StartPage() {
               onKeyDown={(e) => e.key === 'Enter' && name.trim() && handleStart()}
               placeholder="Your first name"
               maxLength={30}
-              className="w-full text-2xl font-bold text-center border-b-4 border-[#1CB0F6] bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
+              className="w-full text-2xl font-bold text-center border-b-4 border-duo-blue bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
             />
           </div>
 
@@ -366,12 +366,12 @@ export default function StartPage() {
               value={parentEmail}
               onChange={(e) => setParentEmail(e.target.value)}
               placeholder="parent@email.com"
-              className="w-full border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-[#1CB0F6] transition-colors"
+              className="w-full border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-duo-blue transition-colors"
             />
             <p className="text-[11px] text-gray-400 font-medium">For weekly progress reports 📧</p>
           </div>
 
-          {error && <p className="text-[#FF4B4B] text-sm text-center font-semibold">{error}</p>}
+          {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
 
           <DuoButton variant="green" fullWidth onClick={handleStart} loading={loading} disabled={!name.trim()}>
             Start Quiz →
@@ -451,7 +451,7 @@ export default function StartPage() {
     };
 
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-[#131F24]">
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-duo-dark">
         <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5">
           <div className="text-center">
             <div
@@ -478,9 +478,9 @@ export default function StartPage() {
               onKeyDown={(e) => e.key === 'Enter' && handleJoinLeague()}
               placeholder={name.trim().slice(0, 20)}
               maxLength={20}
-              className="w-full mt-1.5 text-xl font-bold text-center border-b-4 border-[#1CB0F6] bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
+              className="w-full mt-1.5 text-xl font-bold text-center border-b-4 border-duo-blue bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
             />
-            {dnError && <p className="text-[#FF4B4B] text-xs font-semibold text-center mt-1">{dnError}</p>}
+            {dnError && <p className="text-duo-red text-xs font-semibold text-center mt-1">{dnError}</p>}
           </div>
 
           <div>
@@ -492,11 +492,13 @@ export default function StartPage() {
                 <button
                   key={c}
                   onClick={() => setAvatarColor(c)}
-                  style={{ backgroundColor: c, minHeight: 0 }}
-                  className={`w-9 h-9 rounded-full transition-all active:scale-95 ${
+                  style={{ minHeight: 0 }}
+                  className={`w-11 h-11 rounded-full transition-transform active:scale-95 flex items-center justify-center ${
                     avatarColor === c ? 'ring-4 ring-offset-2 ring-gray-800 scale-110' : ''
                   }`}
-                />
+                >
+                  <span className="w-9 h-9 rounded-full block" style={{ backgroundColor: c }} />
+                </button>
               ))}
             </div>
           </div>
@@ -523,7 +525,7 @@ export default function StartPage() {
   const notYet   = results.filter((r) => r.status === 'NotYet');
 
   return (
-    <div className="min-h-screen px-4 py-8 flex flex-col gap-6 bg-white pb-12">
+    <div className="min-h-screen px-4 py-8 flex flex-col gap-6 bg-white pb-12 animate-fade-in">
       {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
 
       {/* Hero */}
@@ -534,15 +536,15 @@ export default function StartPage() {
         <h2 className="text-2xl font-extrabold text-gray-800">
           Wow {name}, you already know so much! 🎉
         </h2>
-        <div className="inline-flex items-baseline gap-2 bg-[#FFF9E6] border-2 border-[#FFC800] rounded-2xl px-6 py-3">
-          <span className="text-4xl font-extrabold text-[#131F24] tabular-nums">{countUp}</span>
+        <div className="inline-flex items-baseline gap-2 bg-[#FFF9E6] border-2 border-duo-gold rounded-2xl px-6 py-3">
+          <span className="text-4xl font-extrabold text-duo-dark tabular-nums">{countUp}</span>
           <span className="text-gray-600 font-semibold text-base">out of {TOTAL} correct!</span>
         </div>
       </div>
 
       {/* Trial banner */}
       {trialDaysLeft !== null && trialDaysLeft > 0 && (
-        <div className="bg-amber-50 border-2 border-[#FF9600] rounded-2xl px-4 py-3 text-center">
+        <div className="bg-amber-50 border-2 border-duo-orange rounded-2xl px-4 py-3 text-center">
           <p className="font-extrabold text-amber-800 text-base">🎉 7-Day Pro Trial Activated!</p>
           <p className="text-amber-600 text-xs font-medium mt-0.5">
             Expires on {trialExpiry} · {trialDaysLeft} days left
@@ -553,14 +555,14 @@ export default function StartPage() {
       {/* ✅ Strong */}
       {strong.length > 0 && (
         <div>
-          <h3 className="text-sm font-extrabold text-[#46a302] uppercase tracking-wide mb-2">
+          <h3 className="text-sm font-extrabold text-duo-green-dark uppercase tracking-wide mb-2">
             ✅ You nailed it!
           </h3>
           <div className="space-y-2">
             {strong.map((r) => (
-              <div key={r.topicId} className="bg-green-50 border-2 border-[#58CC02] rounded-2xl px-4 py-3 flex justify-between items-center">
+              <div key={r.topicId} className="bg-green-50 border-2 border-duo-green rounded-2xl px-4 py-3 flex justify-between items-center">
                 <span className="font-bold text-gray-800">{r.name}</span>
-                <span className="text-[#46a302] font-extrabold">{r.correct}/{r.total}</span>
+                <span className="text-duo-green-dark font-extrabold">{r.correct}/{r.total}</span>
               </div>
             ))}
           </div>
@@ -570,14 +572,14 @@ export default function StartPage() {
       {/* 🟡 Learning */}
       {learning.length > 0 && (
         <div>
-          <h3 className="text-sm font-extrabold text-[#cc7800] uppercase tracking-wide mb-2">
+          <h3 className="text-sm font-extrabold text-duo-orange-dark uppercase tracking-wide mb-2">
             🟡 Getting there!
           </h3>
           <div className="space-y-2">
             {learning.map((r) => (
-              <div key={r.topicId} className="bg-amber-50 border-2 border-[#FF9600] rounded-2xl px-4 py-3 flex justify-between items-center">
+              <div key={r.topicId} className="bg-amber-50 border-2 border-duo-orange rounded-2xl px-4 py-3 flex justify-between items-center">
                 <span className="font-bold text-gray-800">{r.name}</span>
-                <span className="text-[#cc7800] font-extrabold">{r.correct}/{r.total}</span>
+                <span className="text-duo-orange-dark font-extrabold">{r.correct}/{r.total}</span>
               </div>
             ))}
           </div>

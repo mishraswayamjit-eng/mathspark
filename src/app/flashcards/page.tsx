@@ -23,7 +23,7 @@ function MasteryRing({ mastered, total, size = 36 }: { mastered: number; total: 
         strokeDashoffset={offset}
         strokeLinecap="round"
         transform={`rotate(-90 ${size / 2} ${size / 2})`}
-        className="transition-all duration-700"
+        className="transition-[stroke-dashoffset] duration-700"
       />
       <text
         x={size / 2} y={size / 2}
@@ -49,7 +49,7 @@ function PowerBar({ distribution, total }: { distribution: number[]; total: numb
         return (
           <div
             key={i}
-            className="h-full transition-all duration-500"
+            className="h-full transition-[width] duration-500"
             style={{
               width: `${(count / total) * 100}%`,
               background: BOX_BAR_COLORS[i],
@@ -74,7 +74,7 @@ function DeckCard({
   const emoji = deck.id === 'due' ? '🔥' : deck.id === 'quick' ? '⚡' : deck.id === 'mental_math' ? '🧠' : '📁';
   return (
     <div
-      className="w-full flex flex-col rounded-2xl px-4 py-3.5 transition-all"
+      className="w-full flex flex-col rounded-2xl px-4 py-3.5 transition-colors"
       style={{
         background: '#1E293B',
         borderLeft: `4px solid ${deck.topicColor}`,
@@ -159,7 +159,7 @@ export default function FlashcardsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0F172A] pb-24">
+    <div className="min-h-screen bg-[#0F172A] pb-24 animate-fade-in">
       {/* ── Header ─────────────────────────────────────────────────────────── */}
       <div className="sticky top-0 z-30 bg-[#0F172A]/95 backdrop-blur-md border-b border-white/5 px-4 py-3">
         <div className="flex items-center justify-between max-w-md mx-auto">
@@ -209,7 +209,7 @@ export default function FlashcardsPage() {
                   {Array.from({ length: stats.maxNewPerDay }).map((_, i) => (
                     <div
                       key={i}
-                      className="w-3 h-1.5 rounded-full transition-all"
+                      className="w-3 h-1.5 rounded-full transition-[background-color]"
                       style={{
                         background: i < stats.newCardsToday ? '#34D399' : 'rgba(255,255,255,0.1)',
                       }}
@@ -274,7 +274,7 @@ export default function FlashcardsPage() {
             {/* Quiz Blitz */}
             <button
               onClick={() => openDeck('quick', 'quiz')}
-              className="w-full rounded-2xl p-3.5 text-left transition-all active:scale-[0.98] animate-quiz-glow"
+              className="w-full rounded-2xl p-3.5 text-left transition-[transform] active:scale-[0.98] animate-quiz-glow"
               style={{
                 background: 'linear-gradient(135deg, #1E293B 0%, #312E81 50%, #1E293B 100%)',
                 border: '1px solid rgba(139,92,246,0.3)',
@@ -293,7 +293,7 @@ export default function FlashcardsPage() {
             {/* Speed Round */}
             <button
               onClick={() => openDeck('quick', 'speed')}
-              className="w-full rounded-2xl p-3.5 text-left transition-all active:scale-[0.98]"
+              className="w-full rounded-2xl p-3.5 text-left transition-[transform] active:scale-[0.98]"
               style={{
                 background: 'linear-gradient(135deg, #1E293B 0%, #7F1D1D 50%, #1E293B 100%)',
                 border: '1px solid rgba(239,68,68,0.3)',
@@ -312,7 +312,7 @@ export default function FlashcardsPage() {
             {/* Tap Match */}
             <button
               onClick={() => openDeck('quick', 'match')}
-              className="w-full rounded-2xl p-3.5 text-left transition-all active:scale-[0.98]"
+              className="w-full rounded-2xl p-3.5 text-left transition-[transform] active:scale-[0.98]"
               style={{
                 background: 'linear-gradient(135deg, #1E293B 0%, #064E3B 50%, #1E293B 100%)',
                 border: '1px solid rgba(52,211,153,0.3)',
@@ -331,7 +331,7 @@ export default function FlashcardsPage() {
             {/* Pre-Exam Warm-Up */}
             <button
               onClick={() => openDeck('warmup', 'warmup')}
-              className="w-full rounded-2xl p-3.5 text-left transition-all active:scale-[0.98] animate-warmup-glow"
+              className="w-full rounded-2xl p-3.5 text-left transition-[transform] active:scale-[0.98] animate-warmup-glow"
               style={{
                 background: 'linear-gradient(135deg, #1E293B 0%, #1E3A5F 50%, #1E293B 100%)',
                 border: '1px solid rgba(96,165,250,0.3)',
@@ -350,7 +350,7 @@ export default function FlashcardsPage() {
             {/* Voice Recall */}
             <button
               onClick={() => openDeck('voice', 'voice')}
-              className="w-full rounded-2xl p-3.5 text-left transition-all active:scale-[0.98] animate-voice-glow"
+              className="w-full rounded-2xl p-3.5 text-left transition-[transform] active:scale-[0.98] animate-voice-glow"
               style={{
                 background: 'linear-gradient(135deg, #1E293B 0%, #3B1764 50%, #1E293B 100%)',
                 border: '1px solid rgba(167,139,250,0.3)',

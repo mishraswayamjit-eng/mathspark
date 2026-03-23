@@ -32,6 +32,7 @@ export async function POST(req: Request) {
     // Verify student belongs to this parent
     const student = await prisma.student.findFirst({
       where: { id: studentId, parentId: userId },
+      select: { id: true },
     });
     if (!student) {
       return NextResponse.json({ error: 'Student not found.' }, { status: 404 });

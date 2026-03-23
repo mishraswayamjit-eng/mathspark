@@ -3,11 +3,7 @@
 import Link from 'next/link';
 import ProgressBar from './ProgressBar';
 import type { TopicWithProgress } from '@/types';
-
-const TOPIC_ORDER = [
-  'ch01-05','ch06','ch07-08','ch09-10','ch11','ch12',
-  'ch13','ch14','ch15','ch16','ch17','ch18','ch19','ch20','ch21','dh',
-];
+import { TOPIC_ORDER } from '@/lib/sharedUtils';
 
 interface ChapterGridProps {
   topics: TopicWithProgress[];

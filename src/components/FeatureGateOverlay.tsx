@@ -14,14 +14,14 @@ interface Props {
  */
 export default function FeatureGateOverlay({ feature, requiredPlan, onDismiss }: Props) {
   const planColors: Record<string, string> = {
-    Starter:   'bg-[#58CC02]',
-    Advanced:  'bg-[#1CB0F6]',
+    Starter:   'bg-duo-green',
+    Advanced:  'bg-duo-blue',
     Unlimited: 'bg-[#9B59B6]',
   };
-  const btnColor = planColors[requiredPlan] ?? 'bg-[#1CB0F6]';
+  const btnColor = planColors[requiredPlan] ?? 'bg-duo-blue';
 
   return (
-    <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-[#131F24]/95 backdrop-blur-sm rounded-2xl p-6 text-center">
+    <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-duo-dark/95 backdrop-blur-sm rounded-2xl p-6 text-center">
       <div className="text-5xl mb-4">🔒</div>
       <h3 className="text-xl font-extrabold text-white mb-2">
         Available on {requiredPlan}

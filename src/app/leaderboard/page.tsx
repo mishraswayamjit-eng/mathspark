@@ -119,7 +119,7 @@ function MemberRow({
     <div
       ref={rowRef}
       className={`relative flex items-center gap-3 px-4 py-3 border-b border-gray-50 cursor-pointer transition-colors hover:bg-gray-50 ${
-        member.isMe ? 'ring-2 ring-inset ring-[#1CB0F6]' : ''
+        member.isMe ? 'ring-2 ring-inset ring-duo-blue' : ''
       } ${blurred ? 'select-none' : ''}`}
       style={{
         minHeight: isTop3 ? 72 : 56,
@@ -143,7 +143,7 @@ function MemberRow({
 
       {/* Name + zone indicator */}
       <div className="flex-1 min-w-0">
-        <p className={`font-extrabold truncate ${member.isMe ? 'text-[#1CB0F6]' : 'text-gray-800'} ${isTop3 ? 'text-base' : 'text-sm'}`}>
+        <p className={`font-extrabold truncate ${member.isMe ? 'text-duo-blue' : 'text-gray-800'} ${isTop3 ? 'text-base' : 'text-sm'}`}>
           {member.displayName} {member.isMe && <span className="text-xs font-bold">(you)</span>}
         </p>
         <p className="text-xs text-gray-400 font-semibold">
@@ -167,7 +167,7 @@ function MemberRow({
 
 function FreeGate({ rank }: { rank: number }) {
   return (
-    <div className="mx-4 my-2 rounded-2xl border-2 border-[#FFC800] bg-[#FFF9E6] p-4 text-center">
+    <div className="mx-4 my-2 rounded-2xl border-2 border-duo-gold bg-[#FFF9E6] p-4 text-center">
       <p className="text-2xl mb-1">🔒</p>
       <p className="font-extrabold text-gray-800 text-sm">You&apos;re #{rank} — see your full rank!</p>
       <p className="text-xs text-gray-500 font-medium mt-1 mb-3">
@@ -175,7 +175,7 @@ function FreeGate({ rank }: { rank: number }) {
       </p>
       <Link
         href="/pricing"
-        className="inline-block bg-[#FFC800] text-[#7B5800] font-extrabold text-sm rounded-full px-5 py-2 active:scale-95 transition-transform"
+        className="inline-block bg-duo-gold text-[#7B5800] font-extrabold text-sm rounded-full px-5 py-2 active:scale-95 transition-transform"
       >
         Upgrade to Pro 🚀
       </Link>
@@ -191,11 +191,11 @@ function StickyMyRankBar({ member, visible }: { member: LeagueMember | null; vis
     <div className="fixed bottom-[72px] left-0 right-0 z-40 px-4">
       <div className="max-w-lg mx-auto">
         <div
-          className="flex items-center gap-3 bg-white rounded-2xl shadow-xl border-2 border-[#1CB0F6] px-4 py-2.5"
+          className="flex items-center gap-3 bg-white rounded-2xl shadow-xl border-2 border-duo-blue px-4 py-2.5"
         >
           <Avatar name={member.displayName} color={member.avatarColor} size={32} />
           <div className="flex-1">
-            <p className="text-sm font-extrabold text-[#1CB0F6]">{member.displayName} (you)</p>
+            <p className="text-sm font-extrabold text-duo-blue">{member.displayName} (you)</p>
             <p className="text-xs text-gray-400 font-semibold">#{member.rank} · {member.weeklyXP.toLocaleString()} XP</p>
           </div>
         </div>
@@ -235,7 +235,7 @@ function PromotionOverlay({
         </div>
         <button
           onClick={onDismiss}
-          className="w-full bg-[#58CC02] text-white font-extrabold rounded-2xl py-3.5 text-base active:scale-95 transition-transform"
+          className="w-full bg-duo-green text-white font-extrabold rounded-2xl py-3.5 text-base active:scale-95 transition-transform"
           style={{ minHeight: 56 }}
         >
           Continue →
@@ -313,7 +313,7 @@ function LastWeekTab({ data }: { data: LastWeekResult | null }) {
           {league.members.map((m, i) => (
             <div
               key={m.studentId}
-              className={`flex items-center gap-3 px-4 py-3 border-b border-gray-50 ${m.isMe ? 'ring-2 ring-inset ring-[#1CB0F6]' : ''}`}
+              className={`flex items-center gap-3 px-4 py-3 border-b border-gray-50 ${m.isMe ? 'ring-2 ring-inset ring-duo-blue' : ''}`}
               style={{ minHeight: 56 }}
             >
               <div className="w-8 text-center">
@@ -325,7 +325,7 @@ function LastWeekTab({ data }: { data: LastWeekResult | null }) {
               </div>
               <Avatar name={m.displayName} color={m.avatarColor} size={36} />
               <div className="flex-1 min-w-0">
-                <p className={`font-extrabold text-sm truncate ${m.isMe ? 'text-[#1CB0F6]' : 'text-gray-800'}`}>
+                <p className={`font-extrabold text-sm truncate ${m.isMe ? 'text-duo-blue' : 'text-gray-800'}`}>
                   {m.displayName} {m.isMe && '(you)'}
                   {m.promoted && <span className="ml-1 text-green-500 text-xs">⬆️ Promoted</span>}
                   {m.demoted  && <span className="ml-1 text-amber-500 text-xs">⬇️ Demoted</span>}
@@ -379,7 +379,7 @@ function AllTimeTab({
         return (
           <div
             key={m.studentId}
-            className={`flex items-center gap-3 px-4 py-3 border-b border-gray-50 ${m.isMe ? 'ring-2 ring-inset ring-[#1CB0F6]' : ''}`}
+            className={`flex items-center gap-3 px-4 py-3 border-b border-gray-50 ${m.isMe ? 'ring-2 ring-inset ring-duo-blue' : ''}`}
             style={{ minHeight: 56, filter: blurred ? 'blur(4px)' : undefined }}
           >
             <div className="w-8 text-center">
@@ -391,7 +391,7 @@ function AllTimeTab({
             </div>
             <Avatar name={m.displayName} color={m.avatarColor} size={36} />
             <div className="flex-1 min-w-0">
-              <p className={`font-extrabold text-sm truncate ${m.isMe ? 'text-[#1CB0F6]' : 'text-gray-800'}`}>
+              <p className={`font-extrabold text-sm truncate ${m.isMe ? 'text-duo-blue' : 'text-gray-800'}`}>
                 {m.displayName} {m.isMe && '(you)'} <span className="opacity-60">{tierBadge}</span>
               </p>
               <p className="text-xs text-gray-400 font-semibold">{m.totalXP.toLocaleString()} lifetime XP</p>
@@ -407,13 +407,13 @@ function AllTimeTab({
       {myEntry && !members.find((m) => m.isMe) && (
         <div className="mx-4 mt-4">
           <p className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-2">Your Position</p>
-          <div className="flex items-center gap-3 px-4 py-3 rounded-2xl ring-2 ring-[#1CB0F6] bg-blue-50">
+          <div className="flex items-center gap-3 px-4 py-3 rounded-2xl ring-2 ring-duo-blue bg-blue-50">
             <div className="w-8 text-center">
-              <span className="text-sm font-extrabold text-[#1CB0F6]">#{myEntry.rank}</span>
+              <span className="text-sm font-extrabold text-duo-blue">#{myEntry.rank}</span>
             </div>
             <Avatar name={myEntry.displayName} color={myEntry.avatarColor} size={36} />
             <div className="flex-1">
-              <p className="font-extrabold text-sm text-[#1CB0F6]">{myEntry.displayName} (you)</p>
+              <p className="font-extrabold text-sm text-duo-blue">{myEntry.displayName} (you)</p>
               <p className="text-xs text-gray-400 font-semibold">{myEntry.totalXP.toLocaleString()} lifetime XP</p>
             </div>
           </div>
@@ -550,7 +550,7 @@ export default function LeaderboardPage() {
       )}
 
       {/* ── Header ─────────────────────────────────────────────────────── */}
-      <div className="bg-[#131F24] pt-10 pb-4 px-4">
+      <div className="bg-duo-dark pt-10 pb-4 px-4">
         <h1 className="text-2xl font-extrabold text-white">🏆 League</h1>
         <p className="text-white/60 text-sm font-semibold mt-0.5">
           Compete with students around you — earn XP, get promoted!
@@ -576,7 +576,7 @@ export default function LeaderboardPage() {
               if (id === 'all') loadAllTime();
             }}
             style={{ minHeight: 0 }}
-            className={`flex-1 rounded-xl py-2 text-xs font-extrabold transition-all ${
+            className={`flex-1 rounded-xl py-2 text-xs font-extrabold transition-colors ${
               tab === id
                 ? 'bg-white text-gray-800 shadow-sm'
                 : 'text-gray-400 hover:text-gray-600'
@@ -595,7 +595,7 @@ export default function LeaderboardPage() {
           <>
             {weekLoading ? (
               <div className="py-20 flex flex-col items-center gap-3">
-                <div className="w-10 h-10 rounded-full border-4 border-[#58CC02] border-t-transparent animate-spin" />
+                <div className="w-10 h-10 rounded-full border-4 border-duo-green border-t-transparent animate-spin" />
                 <p className="text-gray-400 font-semibold text-sm">Loading your league…</p>
               </div>
             ) : !leagueData ? (
@@ -630,7 +630,7 @@ export default function LeaderboardPage() {
         {/* Last Week */}
         {tab === 'last' && (
           !lastWeekLoaded
-            ? <div className="py-20 flex items-center justify-center"><div className="w-8 h-8 rounded-full border-4 border-[#58CC02] border-t-transparent animate-spin" /></div>
+            ? <div className="py-20 flex items-center justify-center"><div className="w-8 h-8 rounded-full border-4 border-duo-green border-t-transparent animate-spin" /></div>
             : <LastWeekTab data={lastWeekData} />
         )}
 

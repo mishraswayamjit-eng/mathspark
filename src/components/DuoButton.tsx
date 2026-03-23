@@ -16,10 +16,10 @@ interface DuoButtonProps {
 }
 
 const VARIANT_STYLES: Record<DuoVariant, { bg: string; border: string; text: string }> = {
-  green:  { bg: 'bg-[#58CC02] hover:bg-[#5bd800]', border: 'border-b-[4px] border-[#46a302]', text: 'text-white' },
-  blue:   { bg: 'bg-[#1CB0F6] hover:bg-[#22bfff]', border: 'border-b-[4px] border-[#0a98dc]', text: 'text-white' },
-  orange: { bg: 'bg-[#FF9600] hover:bg-[#ffaa2a]', border: 'border-b-[4px] border-[#cc7800]', text: 'text-white' },
-  red:    { bg: 'bg-[#FF4B4B] hover:bg-[#ff6060]', border: 'border-b-[4px] border-[#cc3333]', text: 'text-white' },
+  green:  { bg: 'bg-duo-green hover:bg-[#5bd800]', border: 'border-b-[4px] border-duo-green-dark', text: 'text-white' },
+  blue:   { bg: 'bg-duo-blue hover:bg-[#22bfff]', border: 'border-b-[4px] border-duo-blue-dark', text: 'text-white' },
+  orange: { bg: 'bg-duo-orange hover:bg-[#ffaa2a]', border: 'border-b-[4px] border-duo-orange-dark', text: 'text-white' },
+  red:    { bg: 'bg-duo-red hover:bg-[#ff6060]', border: 'border-b-[4px] border-duo-red-dark', text: 'text-white' },
   white:  { bg: 'bg-white hover:bg-gray-50',         border: 'border-b-[4px] border-gray-300',  text: 'text-gray-700' },
 };
 
@@ -49,7 +49,7 @@ export default function DuoButton({
         text-base
         uppercase
         tracking-wide
-        transition-all
+        transition-[colors,border-color,transform]
         duration-75
         select-none
         active:translate-y-[4px]
