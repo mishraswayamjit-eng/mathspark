@@ -183,7 +183,7 @@ function generateNumberVariant(q: SeedQuestion, variantIdx: number): SeedQuestio
   }
 
   // Check that all new numbers are different from originals
-  for (const [oldN, newN] of mapping) {
+  for (const [oldN, newN] of Array.from(mapping.entries())) {
     if (oldN === newN) return null;
   }
 
