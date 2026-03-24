@@ -48,34 +48,15 @@ export async function GET() {
   }
 
   // Recompute analytics if missing or stale (> 1 hour)
-  // First load (null): AWAIT so the response includes real data
-  // Stale: fire-and-forget so the page loads fast
-  const ONE_HOUR = 60 * 60 * 1000;
-  const neverComputed = !student.analytics;
-  const isStale = neverComputed ||
-    Date.now() - new Date(student.analytics!.lastComputedAt).getTime() > ONE_HOUR;
+  // Always fire-and-forget — return immediately with whatever we have (or empty defaults).
+  // The next page load will pick up the freshly computed analytics.
+  const isStale = !student.analytics ||
+    Date.now() - new Date(student.analytics!.lastComputedAt).getTime() > MS_PER_HOUR;
 
   if (isStale) {
-    if (neverComputed) {
-      // First load — wait for recompute so cards are populated on first visit
-      try {
-        await recomputeStudentAnalytics(studentId);
-        // Re-fetch the freshly computed analytics
-        const fresh = await prisma.studentAnalytics.findUnique({
-          where: { studentId },
-        });
-        if (fresh) {
-          (student as Record<string, unknown>).analytics = fresh;
-        }
-      } catch (err) {
-        console.error('[api/home] first-load recompute failed:', err);
-      }
-    } else {
-      // Stale — fire-and-forget, serve cached data immediately
-      recomputeStudentAnalytics(studentId).catch((err) =>
-        console.error('[api/home] background recompute failed:', err),
-      );
-    }
+    recomputeStudentAnalytics(studentId).catch((err) =>
+      console.error('[api/home] background recompute failed:', err),
+    );
   }
 
   const streak = computeStreak(attempts);
