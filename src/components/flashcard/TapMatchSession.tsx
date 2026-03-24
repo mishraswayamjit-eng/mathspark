@@ -162,23 +162,6 @@ export default function TapMatchSession({ deckId }: TapMatchSessionProps) {
   const elapsedRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const allCardsRef = useRef<CardWithProgress[]>([]);
 
-  // ── Load deck ──────────────────────────────────────────────────────────────
-
-  const loadDeck = useCallback(() => {
-    fetchDeck()
-      .then((data) => {
-        if (!data || data.cards.length === 0) {
-          setPhase('complete');
-        } else {
-          allCardsRef.current = data.cards as CardWithProgress[];
-          setupLevel(0, data.cards as CardWithProgress[]);
-        }
-      })
-      .catch(() => router.replace('/flashcards'));
-  }, [fetchDeck, router, setupLevel]);
-
-  useEffect(() => { loadDeck(); }, [loadDeck]);
-
   // ── Setup a level ──────────────────────────────────────────────────────────
 
   const setupLevel = useCallback((lvl: number, cards: CardWithProgress[]) => {
@@ -213,6 +196,23 @@ export default function TapMatchSession({ deckId }: TapMatchSessionProps) {
     setLevel(lvl);
     setPhase('memorize');
   }, []);
+
+  // ── Load deck ──────────────────────────────────────────────────────────────
+
+  const loadDeck = useCallback(() => {
+    fetchDeck()
+      .then((data) => {
+        if (!data || data.cards.length === 0) {
+          setPhase('complete');
+        } else {
+          allCardsRef.current = data.cards as CardWithProgress[];
+          setupLevel(0, data.cards as CardWithProgress[]);
+        }
+      })
+      .catch(() => router.replace('/flashcards'));
+  }, [fetchDeck, router, setupLevel]);
+
+  useEffect(() => { loadDeck(); }, [loadDeck]);
 
   // ── Memorize phase (brief peek) ───────────────────────────────────────────
 
