@@ -1,13 +1,12 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
-// GET /api/leaderboard/all-time?studentId=
-export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url);
-  const studentId = searchParams.get('studentId');
-
+// GET /api/leaderboard/all-time
+export async function GET() {
+  const studentId = await getAuthenticatedStudentId();
   if (!studentId) {
-    return NextResponse.json({ error: 'studentId required' }, { status: 400 });
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   try {

@@ -1,5 +1,6 @@
 'use client';
 
+import { MS_PER_DAY } from '@/lib/timeConstants';
 import { useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import QuestionCard from '@/components/QuestionCard';
@@ -161,6 +162,13 @@ export default function StartPage() {
         }),
       });
       const student = await res.json();
+      // Set httpOnly cookie for API auth
+      await fetch('/api/student/session', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ studentId: student.id }),
+      });
+      // Keep localStorage for UI display only
       localStorage.setItem('mathspark_student_id',    student.id);
       localStorage.setItem('mathspark_student_name',  student.name);
       localStorage.setItem('mathspark_student_grade', String(selectedGrade));
@@ -170,7 +178,7 @@ export default function StartPage() {
 
       if (student.trialExpiresAt) {
         const days = Math.max(0, Math.ceil(
-          (new Date(student.trialExpiresAt).getTime() - Date.now()) / 86400000,
+          (new Date(student.trialExpiresAt).getTime() - Date.now()) / MS_PER_DAY,
         ));
         setTrialDaysLeft(days);
         setTrialExpiry(new Date(student.trialExpiresAt).toLocaleDateString('en-IN', {
@@ -205,14 +213,13 @@ export default function StartPage() {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
-        studentId,
         questionId: question.id,
         topicId:    question.topicId,
         selected:   key,
         isCorrect,
         hintUsed:   0,
       }),
-    }).catch(() => {});
+    }).catch((err) => console.error('[fetch]', err));
 
     setTimeout(() => advance(isCorrect, newAnswers), 1200);
   }
@@ -276,7 +283,7 @@ export default function StartPage() {
           <DuoButton variant="blue" fullWidth onClick={() => setStep('gradeSelect')}>
             Let&#39;s Go! 🚀
           </DuoButton>
-          <p className="text-white/50 text-sm font-medium">Takes about 5 minutes</p>
+          <p className="text-white/70 text-sm font-medium">Takes about 5 minutes</p>
         </div>
       </div>
     );
@@ -290,7 +297,7 @@ export default function StartPage() {
           <div className="text-center space-y-1">
             <div className="text-5xl">🎓</div>
             <h2 className="text-2xl font-extrabold text-gray-800">Which grade are you in?</h2>
-            <p className="text-gray-400 text-sm font-medium">
+            <p className="text-gray-500 text-sm font-medium">
               We&apos;ll personalise everything — topics, difficulty, and mock tests
             </p>
           </div>
@@ -301,8 +308,7 @@ export default function StartPage() {
               <button
                 key={g}
                 onClick={() => setSelectedGrade(g)}
-                style={{ minHeight: 0 }}
-                className={`flex flex-col items-center justify-center rounded-2xl py-3 px-2 border-2 transition-[colors,border-color,box-shadow,transform] active:scale-95 ${
+                className={`flex flex-col items-center justify-center rounded-2xl py-3 px-2 border-2 transition-[colors,border-color,box-shadow,transform] active:scale-95 min-h-0 ${
                   selectedGrade === g
                     ? 'bg-duo-blue border-duo-blue-dark text-white shadow-md scale-105'
                     : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-duo-blue'
@@ -310,7 +316,7 @@ export default function StartPage() {
               >
                 <span className="text-xl leading-none">{GRADE_EMOJI[g]}</span>
                 <span className="text-xs font-extrabold mt-1">Gr {g}</span>
-                <span className="text-[9px] font-semibold opacity-60 mt-0.5">
+                <span className="text-[10px] font-semibold opacity-60 mt-0.5">
                   {GRADE_QUESTION_COUNTS[g]}
                 </span>
               </button>
@@ -351,6 +357,7 @@ export default function StartPage() {
               onChange={(e) => { setName(e.target.value); setError(''); }}
               onKeyDown={(e) => e.key === 'Enter' && name.trim() && handleStart()}
               placeholder="Your first name"
+              aria-label="Your first name"
               maxLength={30}
               className="w-full text-2xl font-bold text-center border-b-4 border-duo-blue bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
             />
@@ -358,17 +365,18 @@ export default function StartPage() {
 
           {/* Parent email (optional) */}
           <div className="space-y-1">
-            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">
+            <label htmlFor="parent-email" className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">
               Parent&apos;s email
             </label>
             <input
+              id="parent-email"
               type="email"
               value={parentEmail}
               onChange={(e) => setParentEmail(e.target.value)}
               placeholder="parent@email.com"
               className="w-full border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-duo-blue transition-colors"
             />
-            <p className="text-[11px] text-gray-400 font-medium">For weekly progress reports 📧</p>
+            <p className="text-xs text-gray-500 font-medium">For weekly progress reports 📧</p>
           </div>
 
           {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
@@ -381,7 +389,7 @@ export default function StartPage() {
             onClick={handleStart}
             disabled={loading || !name.trim()}
             style={{ minHeight: 0 }}
-            className="w-full text-center text-gray-400 text-sm font-semibold py-1 hover:text-gray-600 transition-colors disabled:opacity-40"
+            className="w-full text-center text-gray-500 text-sm font-semibold py-1 hover:text-gray-600 transition-colors disabled:opacity-40"
           >
             Skip email →
           </button>
@@ -410,7 +418,7 @@ export default function StartPage() {
             <div className="animate-sparky-bounce">
               <Sparky mood="thinking" size={100} />
             </div>
-            <p className="text-gray-400 font-semibold">Loading question…</p>
+            <p className="text-gray-500 font-semibold">Loading question…</p>
           </div>
         ) : question ? (
           <QuestionCard
@@ -421,7 +429,7 @@ export default function StartPage() {
           />
         ) : (
           <div className="flex-1 flex flex-col items-center justify-center gap-4">
-            <p className="text-gray-400 font-semibold">Loading question…</p>
+            <p className="text-gray-500 font-semibold">Loading question…</p>
           </div>
         )}
       </div>
@@ -433,7 +441,7 @@ export default function StartPage() {
     const AVATAR_COLORS = [
       '#FF9600','#58CC02','#1CB0F6','#FF4B4B',
       '#9B59B6','#00BCD4','#FFC800','#FF69B4',
-      '#3B82F6','#10B981','#F59E0B','#EF4444',
+      '#3B82F6','#58CC02','#F59E0B','#EF4444',
     ];
     const initial = displayName ? displayName[0].toUpperCase() : (name[0] ?? '?').toUpperCase();
 
@@ -444,8 +452,8 @@ export default function StartPage() {
         await fetch('/api/student', {
           method: 'PATCH',
           headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ studentId, displayName: trimmed, avatarColor }),
-        }).catch(() => {});
+          body: JSON.stringify({ displayName: trimmed, avatarColor }),
+        }).catch((err) => console.error('[fetch]', err));
       }
       router.push(pendingRoute);
     };
@@ -461,16 +469,17 @@ export default function StartPage() {
               {initial}
             </div>
             <h2 className="text-2xl font-extrabold text-gray-800">Join the League! 🏆</h2>
-            <p className="text-gray-400 text-sm font-medium mt-1">
+            <p className="text-gray-500 text-sm font-medium mt-1">
               Pick a leaderboard name and colour
             </p>
           </div>
 
           <div>
-            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">
+            <label htmlFor="leaderboard-name" className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">
               Your leaderboard name
             </label>
             <input
+              id="leaderboard-name"
               type="text"
               autoFocus
               value={displayName}
@@ -484,7 +493,7 @@ export default function StartPage() {
           </div>
 
           <div>
-            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">
+            <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">
               Avatar colour
             </label>
             <div className="flex flex-wrap gap-2 mt-2">
@@ -492,8 +501,7 @@ export default function StartPage() {
                 <button
                   key={c}
                   onClick={() => setAvatarColor(c)}
-                  style={{ minHeight: 0 }}
-                  className={`w-11 h-11 rounded-full transition-transform active:scale-95 flex items-center justify-center ${
+                  className={`w-11 h-11 rounded-full transition-transform active:scale-95 flex items-center justify-center min-h-0 ${
                     avatarColor === c ? 'ring-4 ring-offset-2 ring-gray-800 scale-110' : ''
                   }`}
                 >
@@ -509,7 +517,7 @@ export default function StartPage() {
           <button
             onClick={() => router.push(pendingRoute)}
             style={{ minHeight: 0 }}
-            className="w-full text-center text-gray-400 text-sm font-semibold py-1 hover:text-gray-600 transition-colors"
+            className="w-full text-center text-gray-500 text-sm font-semibold py-1 hover:text-gray-600 transition-colors"
           >
             Skip for now →
           </button>
@@ -589,14 +597,14 @@ export default function StartPage() {
       {/* ⬜ Not Yet */}
       {notYet.length > 0 && (
         <div>
-          <h3 className="text-sm font-extrabold text-gray-400 uppercase tracking-wide mb-2">
+          <h3 className="text-sm font-extrabold text-gray-500 uppercase tracking-wide mb-2">
             ⬜ Let&#39;s explore!
           </h3>
           <div className="space-y-2">
             {notYet.map((r) => (
               <div key={r.topicId} className="bg-gray-50 border-2 border-gray-200 rounded-2xl px-4 py-3 flex justify-between items-center">
                 <span className="font-bold text-gray-800">{r.name}</span>
-                <span className="text-gray-400 font-extrabold text-sm">
+                <span className="text-gray-500 font-extrabold text-sm">
                   {r.total > 0 ? `${r.correct}/${r.total}` : 'Not tested yet'}
                 </span>
               </div>

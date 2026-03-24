@@ -47,7 +47,7 @@ const TOPIC_COLORS: Record<string, string> = {
   'Fractions':           '#F97316',
   'Geometry & Angles':   '#06B6D4',
   'Algebra & Equations': '#8B5CF6',
-  'Factors & Multiples': '#22C55E',
+  'Factors & Multiples': '#58CC02',
   'Squares & Roots':     '#EAB308',
   'Mensuration':         '#14B8A6',
   'Time & Calendar':     '#EC4899',
@@ -79,12 +79,12 @@ export default function IPMPredictorPage() {
   // Load overview
   useEffect(() => {
     fetch('/api/ipm-predictor')
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
         setGradeSummaries(data.grades ?? []);
         setInsights(data.insights ?? null);
       })
-      .catch(() => {})
+      .catch((err) => console.error('[fetch]', err))
       .finally(() => setLoading(false));
   }, []);
 
@@ -93,9 +93,9 @@ export default function IPMPredictorPage() {
     if (!selectedGrade) { setPrediction(null); return; }
     setDetailLoading(true);
     fetch(`/api/ipm-predictor?grade=${selectedGrade}`)
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => setPrediction(data.prediction ?? null))
-      .catch(() => {})
+      .catch((err) => console.error('[fetch]', err))
       .finally(() => setDetailLoading(false));
   }, [selectedGrade]);
 
@@ -108,7 +108,7 @@ export default function IPMPredictorPage() {
         <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white font-extrabold text-lg">IPM Exam Predictor</h1>
-          <p className="text-white/50 text-xs font-medium">1,980 questions analyzed &middot; 10+ years of data</p>
+          <p className="text-white/70 text-xs font-medium">1,980 questions analyzed &middot; 10+ years of data</p>
         </div>
         <span className="text-2xl">🔮</span>
       </div>
@@ -142,7 +142,7 @@ export default function IPMPredictorPage() {
               >
                 <span className="text-xs font-extrabold">Grade {g}</span>
                 {summary && (
-                  <span className={`text-[9px] font-bold mt-0.5 ${isActive ? 'text-white/60' : 'text-gray-400'}`}>
+                  <span className={`text-[10px] font-bold mt-0.5 ${isActive ? 'text-white/60' : 'text-gray-500'}`}>
                     {summary.totalQuestionsAnalyzed} Qs
                   </span>
                 )}
@@ -170,7 +170,7 @@ export default function IPMPredictorPage() {
                   Grade {prediction.grade} Analysis
                 </h2>
                 {prediction.yearRange !== '?-?' && (
-                  <span className="text-[10px] font-bold text-gray-400 bg-gray-100 rounded-full px-2 py-0.5">
+                  <span className="text-[10px] font-bold text-gray-500 bg-gray-100 rounded-full px-2 py-0.5">
                     {prediction.yearRange}
                   </span>
                 )}
@@ -178,17 +178,17 @@ export default function IPMPredictorPage() {
               <div className="grid grid-cols-3 gap-2">
                 <div className="bg-blue-50 rounded-xl p-2.5 text-center border border-blue-100">
                   <p className="text-lg font-extrabold text-blue-600">{prediction.totalQuestionsAnalyzed}</p>
-                  <p className="text-[9px] font-bold text-blue-400 uppercase">Questions</p>
+                  <p className="text-[10px] font-bold text-blue-400 uppercase">Questions</p>
                 </div>
                 <div className="bg-green-50 rounded-xl p-2.5 text-center border border-green-100">
-                  <p className="text-lg font-extrabold text-green-600">{prediction.yearsAnalyzed || '—'}</p>
-                  <p className="text-[9px] font-bold text-green-400 uppercase">Years</p>
+                  <p className="text-lg font-extrabold text-duo-green">{prediction.yearsAnalyzed || '—'}</p>
+                  <p className="text-[10px] font-bold text-green-400 uppercase">Years</p>
                 </div>
                 <div className="bg-purple-50 rounded-xl p-2.5 text-center border border-purple-100">
                   <p className="text-lg font-extrabold text-purple-600">
                     {prediction.topicFrequency.filter((t) => t.topic !== 'Other').length}
                   </p>
-                  <p className="text-[9px] font-bold text-purple-400 uppercase">Topics</p>
+                  <p className="text-[10px] font-bold text-purple-400 uppercase">Topics</p>
                 </div>
               </div>
             </div>
@@ -209,11 +209,11 @@ export default function IPMPredictorPage() {
                             className="h-full rounded-full transition-[width] duration-700"
                             style={{ width: `${Math.max(t.percentage, 3)}%`, backgroundColor: color }}
                           />
-                          <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[9px] font-extrabold text-gray-500">
+                          <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-extrabold text-gray-500">
                             {t.percentage}%
                           </span>
                         </div>
-                        <span className="text-[10px] font-bold text-gray-400 w-8 text-right shrink-0">{t.count}</span>
+                        <span className="text-[10px] font-bold text-gray-500 w-8 text-right shrink-0">{t.count}</span>
                       </div>
                     );
                   })}
@@ -228,11 +228,11 @@ export default function IPMPredictorPage() {
                           width: `${Math.max(prediction.topicFrequency.find((t) => t.topic === 'Other')!.percentage, 3)}%`,
                         }}
                       />
-                      <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[9px] font-extrabold text-gray-400">
+                      <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-extrabold text-gray-500">
                         {prediction.topicFrequency.find((t) => t.topic === 'Other')!.percentage}%
                       </span>
                     </div>
-                    <span className="text-[10px] font-bold text-gray-400 w-8 text-right shrink-0">
+                    <span className="text-[10px] font-bold text-gray-500 w-8 text-right shrink-0">
                       {prediction.topicFrequency.find((t) => t.topic === 'Other')!.count}
                     </span>
                   </div>
@@ -287,7 +287,7 @@ export default function IPMPredictorPage() {
                   <div>
                     <div className="flex items-center gap-1.5 mb-2">
                       <span className="text-sm">⚪</span>
-                      <p className="text-[10px] font-extrabold text-gray-400 uppercase tracking-wide">Rarely Appears</p>
+                      <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide">Rarely Appears</p>
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {prediction.rarelyAppears.map((t) => (
@@ -343,9 +343,9 @@ export default function IPMPredictorPage() {
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-extrabold text-gray-800">Grade {s.grade} Prediction</p>
                     <div className="flex items-center gap-2 mt-0.5">
-                      <span className="text-[10px] font-bold text-gray-400">{s.totalQuestionsAnalyzed} Qs analyzed</span>
+                      <span className="text-[10px] font-bold text-gray-500">{s.totalQuestionsAnalyzed} Qs analyzed</span>
                       {s.yearsAnalyzed > 0 && (
-                        <span className="text-[10px] font-bold text-gray-400">&middot; {s.yearsAnalyzed} years</span>
+                        <span className="text-[10px] font-bold text-gray-500">&middot; {s.yearsAnalyzed} years</span>
                       )}
                     </div>
                     {s.topTopics.length > 0 && (
@@ -353,7 +353,7 @@ export default function IPMPredictorPage() {
                         {s.topTopics.map((t) => (
                           <span
                             key={t}
-                            className="text-[9px] font-bold px-1.5 py-0.5 rounded-full text-white"
+                            className="text-[10px] font-bold px-1.5 py-0.5 rounded-full text-white"
                             style={{ backgroundColor: topicColor(t) }}
                           >
                             {t}
@@ -391,7 +391,7 @@ export default function IPMPredictorPage() {
 
                 {insights.topStrategicAdvice && insights.topStrategicAdvice.length > 0 && (
                   <div>
-                    <p className="text-[10px] font-extrabold text-gray-400 uppercase tracking-wide mb-2">Top Tips</p>
+                    <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-2">Top Tips</p>
                     <div className="space-y-2">
                       {insights.topStrategicAdvice.map((tip, i) => (
                         <div key={i} className="flex items-start gap-2">

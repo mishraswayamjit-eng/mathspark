@@ -1,5 +1,8 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { prisma } from '@/lib/db';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { checkRateLimit } from '@/lib/rateLimit';
+import { validateBody, ValidationError } from '@/lib/validateBody';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
@@ -90,60 +93,81 @@ async function checkAndIncrementUsage(
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  const student = await prisma.student.findUnique({
-    where: { id: studentId },
-    select: {
-      aiChatMessagesUsedToday: true,
-      lastActiveDate: true,
-      subscription: { select: { aiChatDailyLimit: true } },
-    },
+  // Atomic read-check-increment inside a transaction to prevent race conditions
+  return prisma.$transaction(async (tx) => {
+    const student = await tx.student.findUnique({
+      where: { id: studentId },
+      select: {
+        aiChatMessagesUsedToday: true,
+        lastActiveDate: true,
+        subscription: { select: { aiChatDailyLimit: true } },
+      },
+    });
+
+    if (!student) return { allowed: false, remaining: 0 };
+
+    const limit = student.subscription?.aiChatDailyLimit ?? FREE_DAILY_LIMIT;
+
+    // Reset counter if last active date was before today
+    const lastActive = student.lastActiveDate ? new Date(student.lastActiveDate) : null;
+    const isNewDay   = !lastActive || lastActive < today;
+    const usedToday  = isNewDay ? 0 : student.aiChatMessagesUsedToday;
+
+    if (usedToday >= limit) return { allowed: false, remaining: 0 };
+
+    // Increment counter + update lastActiveDate
+    await tx.student.update({
+      where: { id: studentId },
+      data: {
+        aiChatMessagesUsedToday: usedToday + 1,
+        lastActiveDate: new Date(),
+      },
+    });
+
+    // Log to UsageLog (upsert for today's row)
+    await tx.usageLog.upsert({
+      where:  { studentId_date: { studentId, date: today } },
+      create: { studentId, date: today, aiChatMessages: 1 },
+      update: { aiChatMessages: { increment: 1 } },
+    });
+
+    return { allowed: true, remaining: limit - usedToday - 1 };
   });
-
-  if (!student) return { allowed: false, remaining: 0 };
-
-  const limit = student.subscription?.aiChatDailyLimit ?? FREE_DAILY_LIMIT;
-
-  // Reset counter if last active date was before today
-  const lastActive = student.lastActiveDate ? new Date(student.lastActiveDate) : null;
-  const isNewDay   = !lastActive || lastActive < today;
-  const usedToday  = isNewDay ? 0 : student.aiChatMessagesUsedToday;
-
-  if (usedToday >= limit) return { allowed: false, remaining: 0 };
-
-  // Increment counter + update lastActiveDate
-  await prisma.student.update({
-    where: { id: studentId },
-    data: {
-      aiChatMessagesUsedToday: usedToday + 1,
-      lastActiveDate: new Date(),
-    },
-  });
-
-  // Log to UsageLog (upsert for today's row)
-  await prisma.usageLog.upsert({
-    where:  { studentId_date: { studentId, date: today } },
-    create: { studentId, date: today, aiChatMessages: 1 },
-    update: { aiChatMessages: { increment: 1 } },
-  });
-
-  return { allowed: true, remaining: limit - usedToday - 1 };
 }
 
 // ── POST /api/chat ────────────────────────────────────────────────────────────
 
 export async function POST(req: Request) {
-  const { studentId, sessionId, message, mode = 'general' } = await req.json() as {
-    studentId: string;
-    sessionId?: string;
-    message: string;
-    mode?: string;
-  };
-
-  if (!studentId || !message?.trim()) {
-    return Response.json({ error: 'studentId and message required' }, { status: 400 });
+  const studentId = await getAuthenticatedStudentId();
+  if (!studentId) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
-  if (typeof studentId !== 'string' || studentId.length > 30) {
-    return Response.json({ error: 'Invalid studentId' }, { status: 400 });
+
+  // Rate limit: 10 messages per minute per student
+  if (!checkRateLimit(`chat:${studentId}`, 10, 60_000)) {
+    return Response.json({ error: 'Slow down a bit! Try again in a moment.' }, { status: 429 });
+  }
+
+  let sessionId: string | undefined;
+  let message: string;
+  let mode: string;
+  try {
+    const parsed = validateBody<{ message: string; sessionId?: string; mode?: string }>(
+      await req.json(),
+      { message: 'string', sessionId: 'string?', mode: 'string?' },
+    );
+    sessionId = parsed.sessionId;
+    message = parsed.message;
+    mode = parsed.mode ?? 'general';
+  } catch (err) {
+    if (err instanceof ValidationError) {
+      return Response.json({ error: err.message }, { status: 400 });
+    }
+    return Response.json({ error: 'Invalid request body' }, { status: 400 });
+  }
+
+  if (!message?.trim()) {
+    return Response.json({ error: 'message required' }, { status: 400 });
   }
   if (typeof message !== 'string' || message.length > 2000) {
     return Response.json({ error: 'Message too long' }, { status: 400 });

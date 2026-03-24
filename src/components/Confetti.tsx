@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const COLORS = ['#58CC02', '#1CB0F6', '#FF9600', '#FF4B4B', '#FFC800', '#CE82FF'];
 
@@ -33,14 +33,17 @@ interface ConfettiProps {
 export default function Confetti({ onDone }: ConfettiProps) {
   const [particles] = useState(() => makeParticles(30));
   const [visible, setVisible] = useState(true);
+  const onDoneRef = useRef(onDone);
+  onDoneRef.current = onDone;
 
   useEffect(() => {
     const t = setTimeout(() => {
       setVisible(false);
-      onDone?.();
+      onDoneRef.current?.();
     }, 1800);
     return () => clearTimeout(t);
-  }, [onDone]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (!visible) return null;
 

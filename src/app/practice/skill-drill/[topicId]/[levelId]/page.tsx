@@ -205,8 +205,8 @@ export default function SkillDrillSessionPage() {
     setProgress(loadProgress());
 
     Promise.all([
-      fetch('/api/skill-drills').then((r) => r.json()),
-      fetch(`/api/skill-drills?topic=${topicId}&level=${levelId}`).then((r) => r.json()),
+      fetch('/api/skill-drills').then((r) => { if (!r.ok) throw new Error('Skill drills fetch failed'); return r.json(); }),
+      fetch(`/api/skill-drills?topic=${topicId}&level=${levelId}`).then((r) => { if (!r.ok) throw new Error('Session fetch failed'); return r.json(); }),
     ])
       .then(([topicsData, sessionsData]) => {
         const t = topicsData.topics?.[topicId] as TopicInfo | undefined;
@@ -222,7 +222,7 @@ export default function SkillDrillSessionPage() {
   const startSession = useCallback((sessionNum: number) => {
     setLoading(true);
     fetch(`/api/skill-drills?topic=${topicId}&level=${levelId}&session=${sessionNum}`)
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d: { session: DrillSession }) => {
         if (d.session) {
           setActiveSession(d.session);
@@ -356,7 +356,7 @@ export default function SkillDrillSessionPage() {
         <div className="text-center space-y-1">
           <p className="text-3xl">{verdict.emoji}</p>
           <h2 className="text-xl font-extrabold" style={{ color: verdict.color }}>{verdict.label}</h2>
-          <p className="text-xs font-medium text-gray-400">
+          <p className="text-xs font-medium text-gray-500">
             {ll?.emoji} {ll?.label} &middot; Session {activeSession.sessionNumber}
           </p>
         </div>
@@ -365,19 +365,19 @@ export default function SkillDrillSessionPage() {
         <div className="bg-white rounded-2xl p-4 border border-gray-100 w-full space-y-2">
           <div className="flex items-center justify-between text-sm">
             <span className="text-gray-500 font-medium">Pass (7/10)</span>
-            <span className={`font-bold ${score >= 7 ? 'text-duo-green' : 'text-gray-400'}`}>
+            <span className={`font-bold ${score >= 7 ? 'text-duo-green' : 'text-gray-500'}`}>
               {score >= 7 ? '✓ Achieved' : `Need ${7 - score} more`}
             </span>
           </div>
           <div className="flex items-center justify-between text-sm">
             <span className="text-gray-500 font-medium">Unlock next (8/10)</span>
-            <span className={`font-bold ${score >= 8 ? 'text-duo-green' : 'text-gray-400'}`}>
+            <span className={`font-bold ${score >= 8 ? 'text-duo-green' : 'text-gray-500'}`}>
               {score >= 8 ? '🔓 Unlocked!' : `Need ${8 - score} more`}
             </span>
           </div>
           <div className="flex items-center justify-between text-sm">
             <span className="text-gray-500 font-medium">Mastery (9/10)</span>
-            <span className={`font-bold ${score >= 9 ? 'text-duo-orange' : 'text-gray-400'}`}>
+            <span className={`font-bold ${score >= 9 ? 'text-duo-orange' : 'text-gray-500'}`}>
               {score >= 9 ? '🏆 Mastered!' : `Need ${9 - score} more`}
             </span>
           </div>
@@ -468,7 +468,7 @@ export default function SkillDrillSessionPage() {
             <span className="text-xl">{topicIcon}</span>
             <div>
               <h1 className="text-sm font-extrabold text-gray-800 leading-tight">{topicName}</h1>
-              <p className="text-[10px] font-bold text-gray-400">
+              <p className="text-[10px] font-bold text-gray-500">
                 {ll?.emoji} {ll?.label} &middot; Session {activeSession.sessionNumber}
               </p>
             </div>
@@ -484,7 +484,7 @@ export default function SkillDrillSessionPage() {
                   setActiveSession(null);
                 }
               }}
-              className="text-gray-400 hover:text-gray-600 text-xs font-bold"
+              className="text-gray-500 hover:text-gray-600 text-xs font-bold"
             >
               ✕
             </button>
@@ -500,7 +500,7 @@ export default function SkillDrillSessionPage() {
         </div>
 
         {/* Question counter */}
-        <p className="text-xs font-bold text-gray-400 mb-3 text-center">
+        <p className="text-xs font-bold text-gray-500 mb-3 text-center">
           Question {currentIdx + 1} of {totalQ}
         </p>
 
@@ -640,7 +640,7 @@ export default function SkillDrillSessionPage() {
           <div className="flex flex-col items-center gap-4 py-12">
             <div className="text-6xl">🔒</div>
             <h2 className="text-lg font-extrabold text-gray-600">Level Locked</h2>
-            <p className="text-sm text-gray-400 text-center max-w-xs">
+            <p className="text-sm text-gray-500 text-center max-w-xs">
               Score 8/10 or higher on the previous level to unlock {ll?.label}!
             </p>
             {currentLevelIdx > 0 && (
@@ -662,7 +662,7 @@ export default function SkillDrillSessionPage() {
               <Sparky mood="happy" size={36} />
               <div>
                 <p className="text-sm font-bold text-gray-700">{ll?.description}</p>
-                <p className="text-xs text-gray-400 mt-1">
+                <p className="text-xs text-gray-500 mt-1">
                   {sessions.length} sessions &middot; 10 questions each &middot; Score 7+ to pass
                 </p>
               </div>
@@ -698,7 +698,7 @@ export default function SkillDrillSessionPage() {
 
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-extrabold text-gray-800">Session {s.sessionNumber}</p>
-                      <p className="text-xs text-gray-400 font-medium">
+                      <p className="text-xs text-gray-500 font-medium">
                         {s.totalQuestions} questions &middot;
                         {attempted
                           ? ` Best: ${sessionBest}/${s.totalQuestions}`
@@ -715,7 +715,7 @@ export default function SkillDrillSessionPage() {
                       ) : attempted ? (
                         <span className="text-xs font-extrabold text-blue-500 bg-blue-50 px-2.5 py-1 rounded-full">Retry →</span>
                       ) : (
-                        <span className="text-xs font-extrabold text-gray-400 bg-gray-50 px-2.5 py-1 rounded-full">Start →</span>
+                        <span className="text-xs font-extrabold text-gray-500 bg-gray-50 px-2.5 py-1 rounded-full">Start →</span>
                       )}
                     </div>
                   </button>

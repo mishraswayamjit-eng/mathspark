@@ -25,7 +25,7 @@ interface Story {
 const CATEGORY_META: Record<string, { emoji: string; label: string; color: string }> = {
   sports:     { emoji: '🏏', label: 'Sports',     color: '#EF4444' },
   space:      { emoji: '🚀', label: 'Space',      color: '#8B5CF6' },
-  nature:     { emoji: '🌿', label: 'Nature',     color: '#22C55E' },
+  nature:     { emoji: '🌿', label: 'Nature',     color: '#58CC02' },
   food:       { emoji: '🍕', label: 'Food',       color: '#F97316' },
   money:      { emoji: '💰', label: 'Money',      color: '#EAB308' },
   games:      { emoji: '🎮', label: 'Games',      color: '#3B82F6' },
@@ -65,9 +65,9 @@ export default function MathStoriesPage() {
     const qs = selectedCategory ? `?category=${selectedCategory}` : '';
     setLoading(true);
     fetch(`/api/stories${qs}`)
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => setStories(data.stories ?? []))
-      .catch(() => {})
+      .catch((err) => console.error('[fetch]', err))
       .finally(() => setLoading(false));
   }, [selectedCategory]);
 
@@ -85,10 +85,10 @@ export default function MathStoriesPage() {
     <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
-        <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
+        <Link href="/chapters" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white font-extrabold text-lg">Math Stories</h1>
-          <p className="text-white/50 text-xs font-medium">30 stories &middot; Math in the real world!</p>
+          <p className="text-white/70 text-xs font-medium">30 stories &middot; Math in the real world!</p>
         </div>
         <span className="text-2xl">📖</span>
       </div>
@@ -176,18 +176,18 @@ export default function MathStoriesPage() {
                           >
                             {catMeta.label}
                           </span>
-                          <span className="text-[10px] font-bold text-gray-400 capitalize">
+                          <span className="text-[10px] font-bold text-gray-500 capitalize">
                             {story.topicId.replace(/_/g, ' ')}
                           </span>
                           <FunStars level={story.funFactor} />
                         </div>
                         <h3 className="text-sm font-extrabold text-gray-800 leading-tight">{story.title}</h3>
                         {!isExpanded && (
-                          <p className="text-xs text-gray-400 font-medium mt-1 line-clamp-2">{story.storyText}</p>
+                          <p className="text-xs text-gray-500 font-medium mt-1 line-clamp-2">{story.storyText}</p>
                         )}
                       </div>
                       <span
-                        className="text-gray-400 transition-transform duration-200 text-sm shrink-0 mt-1"
+                        className="text-gray-500 transition-transform duration-200 text-sm shrink-0 mt-1"
                         style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
                       >
                         ▾
@@ -248,7 +248,7 @@ export default function MathStoriesPage() {
 
                       {/* Footer */}
                       <div className="flex items-center gap-2 flex-wrap pt-1">
-                        <span className="text-[10px] font-bold text-gray-400">
+                        <span className="text-[10px] font-bold text-gray-500">
                           Grades {story.gradeRange[0]}–{story.gradeRange[story.gradeRange.length - 1]}
                         </span>
                         <FunStars level={story.funFactor} />

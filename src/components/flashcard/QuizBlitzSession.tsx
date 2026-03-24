@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { useFlashcardDeck } from '@/hooks/useFlashcardDeck';
 import dynamic from 'next/dynamic';
 import TimerCircle from './TimerCircle';
 import ProgressDots from './ProgressDots';
@@ -101,27 +102,27 @@ function QuizComplete({
       <div className="grid grid-cols-4 gap-2 w-full max-w-sm mb-5">
         <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
           <p className="text-lg font-black text-[#34D399] tabular-nums">{pct}%</p>
-          <p className="text-[9px] text-[#64748B] uppercase tracking-wider">Accuracy</p>
+          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Accuracy</p>
         </div>
         <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
           <p className="text-lg font-black text-[#F1F5F9] tabular-nums">{correctCount}/{totalQuestions}</p>
-          <p className="text-[9px] text-[#64748B] uppercase tracking-wider">Correct</p>
+          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Correct</p>
         </div>
         <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
           <p className="text-lg font-black text-[#FBBF24] tabular-nums">🔥{maxCombo}</p>
-          <p className="text-[9px] text-[#64748B] uppercase tracking-wider">Max Combo</p>
+          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Max Combo</p>
         </div>
         <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
           <p className="text-lg font-black text-[#60A5FA] tabular-nums">
             {mins > 0 ? `${mins}m` : `${secs}s`}
           </p>
-          <p className="text-[9px] text-[#64748B] uppercase tracking-wider">Time</p>
+          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Time</p>
         </div>
       </div>
 
       {/* Transitions */}
       {promoted.length > 0 && (
-        <div className="w-full max-w-sm bg-emerald-500/10 border border-emerald-500/20 rounded-xl px-3 py-2.5 mb-3">
+        <div className="w-full max-w-sm bg-duo-green/10 border border-duo-green/20 rounded-xl px-3 py-2.5 mb-3">
           <p className="text-xs font-bold text-emerald-400 mb-1">
             ⬆️ {promoted.length} card{promoted.length > 1 ? 's' : ''} leveled up
           </p>
@@ -174,6 +175,7 @@ interface QuizBlitzSessionProps {
 
 export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
   const router = useRouter();
+  const { fetchDeck } = useFlashcardDeck(deckId);
   const { playCorrect, playWrong, playStreak, playMastery } = useSounds();
 
   const [phase, setPhase] = useState<Phase>('loading');
@@ -210,32 +212,28 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
 
   // ── Load deck & generate questions ─────────────────────────────────────────
 
-  useEffect(() => {
-    const sid = localStorage.getItem('mathspark_student_id');
+  const loadDeck = useCallback(() => {
     const grade = localStorage.getItem('mathspark_student_grade') || '4';
-    if (!sid) {
-      router.replace('/start');
-      return;
-    }
 
-    fetch(`/api/flashcards/deck?studentId=${sid}&grade=${grade}&deck=${encodeURIComponent(deckId)}`)
-      .then((r) => r.json())
+    fetchDeck()
       .then((data) => {
-        if (data.cards && data.cards.length > 0) {
+        if (!data || data.cards.length === 0) {
+          setDeckName(data?.deckName ?? 'Empty');
+          setPhase('complete');
+        } else {
           const gradeNum = parseInt(grade, 10);
-          const qs = generateQuizQuestions(data.cards, gradeNum);
+          const qs = generateQuizQuestions(data.cards as CardWithProgress[], gradeNum);
           setQuestions(qs);
           setDeckName(data.deckName ?? 'Quiz Blitz');
           setPhase('playing');
           setTimeRemaining(qs[0]?.timeLimitMs ?? 12000);
           questionStartRef.current = Date.now();
-        } else {
-          setDeckName(data.deckName ?? 'Empty');
-          setPhase('complete');
         }
       })
       .catch(() => router.replace('/flashcards'));
-  }, [router, deckId]);
+  }, [fetchDeck, router]);
+
+  useEffect(() => { loadDeck(); }, [loadDeck]);
 
   // ── Timer tick ─────────────────────────────────────────────────────────────
 
@@ -276,7 +274,6 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        studentId: sid,
         mode: 'quiz',
         cardsReviewed: questions.length,
         cardsCorrect: correctCount,
@@ -284,13 +281,13 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
         bonusXP: accumulatedBonusRef.current,
       }),
     })
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
         if (data.ok && data.xp) {
           setSessionXP({ total: data.xp.total, streakMultiplier: data.xp.streakMultiplier, streakBonus: data.xp.streakBonus });
         }
       })
-      .catch(() => {});
+      .catch((err) => console.error('[fetch]', err));
   }, [startTime, questions.length, correctCount]);
 
   // ── Handle answer ──────────────────────────────────────────────────────────
@@ -317,12 +314,11 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            studentId: sid,
             cardId: q.cardId,
             correct,
           }),
         })
-          .then((r) => r.json())
+          .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
           .then((data) => {
             if (data.ok) {
               setTransitions((prev) => [
@@ -341,7 +337,7 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
               if (bonus > 0) accumulatedBonusRef.current += bonus;
             }
           })
-          .catch(() => {});
+          .catch((err) => console.error('[fetch]', err));
       }
 
       if (correct) {
@@ -386,9 +382,9 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
       fetch('/api/flashcards/progress', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ studentId: sid, cardId: q.cardId, correct: false }),
+        body: JSON.stringify({ cardId: q.cardId, correct: false }),
       })
-        .then((r) => r.json())
+        .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
         .then((data) => {
           if (data.ok) {
             setTransitions((prev) => [
@@ -404,7 +400,7 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
             ]);
           }
         })
-        .catch(() => {});
+        .catch((err) => console.error('[fetch]', err));
     }
 
     setTimeout(() => advanceQuestion(), 1500);
@@ -486,26 +482,7 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
           setSessionXP(null);
           accumulatedBonusRef.current = 0;
           setPhase('loading');
-
-          const sid = localStorage.getItem('mathspark_student_id');
-          const grade = localStorage.getItem('mathspark_student_grade') || '4';
-          if (!sid) return;
-
-          fetch(`/api/flashcards/deck?studentId=${sid}&grade=${grade}&deck=${encodeURIComponent(deckId)}`)
-            .then((r) => r.json())
-            .then((data) => {
-              if (data.cards?.length > 0) {
-                const gradeNum = parseInt(grade, 10);
-                const qs = generateQuizQuestions(data.cards, gradeNum);
-                setQuestions(qs);
-                setPhase('playing');
-                setTimeRemaining(qs[0]?.timeLimitMs ?? 12000);
-                questionStartRef.current = Date.now();
-              } else {
-                setPhase('complete');
-              }
-            })
-            .catch(() => router.replace('/flashcards'));
+          loadDeck();
         }}
         onDone={() => router.push('/flashcards')}
       />
@@ -619,9 +596,9 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
 
             if (isAnswered) {
               if (opt.isCorrect) {
-                bgClass = 'bg-emerald-500/20 border-emerald-500/40';
+                bgClass = 'bg-duo-green/20 border-duo-green/40';
                 textClass = 'text-emerald-300';
-                labelBg = 'bg-emerald-500/30';
+                labelBg = 'bg-duo-green/30';
               } else if (selectedOption === opt.id && !opt.isCorrect) {
                 bgClass = 'bg-red-500/20 border-red-500/40';
                 textClass = 'text-red-300';

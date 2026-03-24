@@ -61,7 +61,7 @@ function FrequencyBadge({ freq }: { freq: string }) {
   const c = config[freq] ?? { color: '#6B7280', bg: '#F3F4F6' };
   return (
     <span
-      className="text-[9px] font-extrabold px-1.5 py-0.5 rounded-full"
+      className="text-[10px] font-extrabold px-1.5 py-0.5 rounded-full"
       style={{ color: c.color, backgroundColor: c.bg }}
     >
       {freq}
@@ -82,9 +82,9 @@ export default function MistakePatternsPage() {
     const qs = selectedCategory ? `?category=${selectedCategory}` : '';
     setLoading(true);
     fetch(`/api/mistake-patterns${qs}`)
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => setPatterns(data.patterns ?? []))
-      .catch(() => {})
+      .catch((err) => console.error('[fetch]', err))
       .finally(() => setLoading(false));
   }, [selectedCategory]);
 
@@ -102,10 +102,10 @@ export default function MistakePatternsPage() {
     <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
-        <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
+        <Link href="/chapters" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white font-extrabold text-lg">Mistake Patterns</h1>
-          <p className="text-white/50 text-xs font-medium">50 traps &middot; Learn from common errors!</p>
+          <p className="text-white/70 text-xs font-medium">50 traps &middot; Learn from common errors!</p>
         </div>
         <span className="text-2xl">🚨</span>
       </div>
@@ -187,7 +187,7 @@ export default function MistakePatternsPage() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1.5 mb-0.5">
                         <span
-                          className="text-[9px] font-extrabold px-1.5 py-0.5 rounded-full text-white"
+                          className="text-[10px] font-extrabold px-1.5 py-0.5 rounded-full text-white"
                           style={{ backgroundColor: catMeta.color }}
                         >
                           {catMeta.label}
@@ -196,11 +196,11 @@ export default function MistakePatternsPage() {
                       </div>
                       <p className="text-sm font-extrabold text-gray-800 leading-tight">{pattern.name}</p>
                       {!isExpanded && (
-                        <p className="text-xs text-gray-400 font-medium mt-0.5 line-clamp-1">{pattern.description}</p>
+                        <p className="text-xs text-gray-500 font-medium mt-0.5 line-clamp-1">{pattern.description}</p>
                       )}
                     </div>
                     <span
-                      className="text-gray-400 transition-transform duration-200 text-sm shrink-0"
+                      className="text-gray-500 transition-transform duration-200 text-sm shrink-0"
                       style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
                     >
                       ▾
@@ -231,7 +231,7 @@ export default function MistakePatternsPage() {
                         <div className="flex items-start gap-2">
                           <span className="text-sm shrink-0">✅</span>
                           <div>
-                            <p className="text-[10px] font-extrabold text-green-600 uppercase tracking-wide">How to Fix It</p>
+                            <p className="text-[10px] font-extrabold text-duo-green uppercase tracking-wide">How to Fix It</p>
                             <p className="text-sm text-green-800 font-medium mt-0.5 leading-relaxed">{pattern.howToFix}</p>
                           </div>
                         </div>
@@ -251,7 +251,7 @@ export default function MistakePatternsPage() {
                               <span className="text-sm shrink-0">❌</span>
                               <div>
                                 <p className="text-xs font-extrabold text-red-600">{pattern.example.wrongAnswer}</p>
-                                <p className="text-[11px] text-red-500 font-medium mt-0.5 italic">{pattern.example.wrongThinking}</p>
+                                <p className="text-xs text-red-500 font-medium mt-0.5 italic">{pattern.example.wrongThinking}</p>
                               </div>
                             </div>
                           </div>
@@ -262,7 +262,7 @@ export default function MistakePatternsPage() {
                               onClick={(e) => { e.stopPropagation(); toggleRight(pattern.id); }}
                               className="w-full bg-green-50 px-3 py-2.5 border-t border-green-100 text-center"
                             >
-                              <span className="text-xs font-bold text-green-600">Tap to see the right way →</span>
+                              <span className="text-xs font-bold text-duo-green">Tap to see the right way →</span>
                             </button>
                           ) : (
                             <div className="bg-green-50 px-3 py-2.5 border-t border-green-100 animate-fade-in">
@@ -270,7 +270,7 @@ export default function MistakePatternsPage() {
                                 <span className="text-sm shrink-0">✅</span>
                                 <div>
                                   <p className="text-xs font-extrabold text-green-700">{pattern.example.rightAnswer}</p>
-                                  <p className="text-[11px] text-green-600 font-medium mt-0.5 italic">{pattern.example.rightThinking}</p>
+                                  <p className="text-xs text-duo-green font-medium mt-0.5 italic">{pattern.example.rightThinking}</p>
                                 </div>
                               </div>
                             </div>
@@ -293,19 +293,19 @@ export default function MistakePatternsPage() {
                       <div className="space-y-2 pt-1">
                         {pattern.affectedTopics.length > 0 && (
                           <div className="flex items-start gap-1.5 flex-wrap">
-                            <span className="text-[10px] font-bold text-gray-400 shrink-0">Topics:</span>
+                            <span className="text-[10px] font-bold text-gray-500 shrink-0">Topics:</span>
                             {pattern.affectedTopics.map((t) => (
-                              <span key={t} className="text-[9px] font-bold text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded-full">
+                              <span key={t} className="text-[10px] font-bold text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded-full">
                                 {t}
                               </span>
                             ))}
                           </div>
                         )}
                         <div className="flex items-center gap-2">
-                          <span className="text-[10px] font-bold text-gray-400">
+                          <span className="text-[10px] font-bold text-gray-500">
                             Grades {pattern.affectedGrades[0]}–{pattern.affectedGrades[pattern.affectedGrades.length - 1]}
                           </span>
-                          <span className="text-[10px] font-bold text-gray-400">
+                          <span className="text-[10px] font-bold text-gray-500">
                             Difficulty: {'⭐'.repeat(pattern.difficulty)}
                           </span>
                         </div>

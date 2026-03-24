@@ -18,10 +18,14 @@ function weeklyCorrectCount(
 // Protected by Authorization: Bearer {CRON_SECRET}
 export async function GET(req: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
-  // Verify cron secret
-  const auth = req.headers.get('authorization');
+  // Verify cron secret (mandatory — reject if unset)
   const cronSecret = process.env.CRON_SECRET;
-  if (cronSecret && auth !== `Bearer ${cronSecret}`) {
+  if (!cronSecret) {
+    console.error('[reports/weekly] CRON_SECRET is not set');
+    return NextResponse.json({ error: 'Server misconfigured' }, { status: 500 });
+  }
+  const auth = req.headers.get('authorization');
+  if (auth !== `Bearer ${cronSecret}`) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
@@ -38,8 +42,31 @@ export async function GET(req: Request) {
     return NextResponse.json({ sent: 0, skipped: 0, failed: 0, message: 'No students with parent email' });
   }
 
-  // Fetch all topics once
-  const allTopics = await prisma.topic.findMany();
+  // Batch-fetch all data upfront (eliminates N+1)
+  const studentIds = students.map((s) => s.id);
+  const [allTopics, allProgress, allAttempts] = await Promise.all([
+    prisma.topic.findMany(),
+    prisma.progress.findMany({ where: { studentId: { in: studentIds } } }),
+    prisma.attempt.findMany({
+      where: { studentId: { in: studentIds } },
+      select: { studentId: true, isCorrect: true, createdAt: true },
+      orderBy: { createdAt: 'desc' },
+    }),
+  ]);
+
+  // Group by studentId for O(1) lookup
+  const progressByStudent = new Map<string, typeof allProgress>();
+  for (const p of allProgress) {
+    const arr = progressByStudent.get(p.studentId) ?? [];
+    arr.push(p);
+    progressByStudent.set(p.studentId, arr);
+  }
+  const attemptsByStudent = new Map<string, typeof allAttempts>();
+  for (const a of allAttempts) {
+    const arr = attemptsByStudent.get(a.studentId) ?? [];
+    arr.push(a);
+    attemptsByStudent.set(a.studentId, arr);
+  }
 
   let sent = 0, skipped = 0, failed = 0;
 
@@ -47,14 +74,8 @@ export async function GET(req: Request) {
     if (!student.parentEmail) { skipped++; continue; }
 
     try {
-      const [progress, attempts] = await Promise.all([
-        prisma.progress.findMany({ where: { studentId: student.id } }),
-        prisma.attempt.findMany({
-          where: { studentId: student.id },
-          select: { isCorrect: true, createdAt: true },
-          orderBy: { createdAt: 'desc' },
-        }),
-      ]);
+      const progress = progressByStudent.get(student.id) ?? [];
+      const attempts = attemptsByStudent.get(student.id) ?? [];
 
       const correctAttempts = attempts.filter((a) => a.isCorrect);
       const topics: ReportTopic[] = allTopics

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Confetti from '@/components/Confetti';
 import Sparky from '@/components/Sparky';
 import type { StreakMilestone as StreakMilestoneType } from '@/lib/flashcardXP';
@@ -20,11 +20,15 @@ export function StreakMilestoneCelebration({
   streak,
   onDismiss,
 }: StreakMilestoneCelebrationProps) {
+  const onDismissRef = useRef(onDismiss);
+  onDismissRef.current = onDismiss;
+
   // Auto-dismiss after 5s
   useEffect(() => {
-    const t = setTimeout(onDismiss, 5000);
+    const t = setTimeout(() => onDismissRef.current(), 5000);
     return () => clearTimeout(t);
-  }, [onDismiss]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div

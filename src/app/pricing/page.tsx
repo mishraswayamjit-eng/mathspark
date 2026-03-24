@@ -142,14 +142,14 @@ export default function PricingPage() {
 
         {/* Monthly / Annual toggle */}
         <div className="flex items-center justify-center gap-3 mt-6">
-          <span className={`text-sm font-bold ${!annual ? 'text-white' : 'text-white/40'}`}>Monthly</span>
+          <span className={`text-sm font-bold ${!annual ? 'text-white' : 'text-white/60'}`}>Monthly</span>
           <button
             onClick={() => setAnnual(!annual)}
             className={`relative w-12 h-6 rounded-full transition-colors ${annual ? 'bg-duo-green' : 'bg-white/20'}`}
           >
             <span className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${annual ? 'translate-x-6' : 'translate-x-0.5'}`} />
           </button>
-          <span className={`text-sm font-bold ${annual ? 'text-white' : 'text-white/40'}`}>
+          <span className={`text-sm font-bold ${annual ? 'text-white' : 'text-white/60'}`}>
             Annual
             <span className="ml-1.5 bg-duo-orange text-white text-[10px] font-extrabold px-1.5 py-0.5 rounded-full">SAVE 20%</span>
           </span>
@@ -179,7 +179,7 @@ export default function PricingPage() {
                     <span className="text-3xl font-extrabold text-gray-900">
                       ₹{annual ? plan.annualMonthly.toLocaleString('en-IN') : plan.monthly.toLocaleString('en-IN')}
                     </span>
-                    <span className="text-gray-400 text-sm">/mo</span>
+                    <span className="text-gray-500 text-sm">/mo</span>
                     {annual && (
                       <span className={`text-xs font-bold px-2 py-0.5 rounded-full ml-2 ${plan.badge}`}>
                         ₹{plan.annual.toLocaleString('en-IN')}/yr
@@ -197,7 +197,7 @@ export default function PricingPage() {
                   </li>
                 ))}
                 {plan.locked.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm text-gray-400">
+                  <li key={f} className="flex items-start gap-2 text-sm text-gray-500">
                     <span className="mt-0.5 shrink-0">✕</span>
                     {f}
                   </li>
@@ -210,7 +210,7 @@ export default function PricingPage() {
               >
                 Start Free Trial →
               </Link>
-              <p className="text-center text-gray-400 text-xs mt-1.5">7-day free trial · No card required</p>
+              <p className="text-center text-gray-500 text-xs mt-1.5">7-day free trial · No card required</p>
             </div>
           </div>
         ))}
@@ -232,7 +232,7 @@ export default function PricingPage() {
           className="w-full flex items-center justify-between bg-gray-50 rounded-2xl px-4 py-3 text-gray-700 font-semibold text-sm"
         >
           <span>Compare all features</span>
-          <span className="text-gray-400">{showCompare ? '▲' : '▼'}</span>
+          <span className="text-gray-500">{showCompare ? '▲' : '▼'}</span>
         </button>
 
         {showCompare && (
@@ -272,7 +272,7 @@ export default function PricingPage() {
                 className="w-full flex items-center justify-between px-4 py-3 text-left text-gray-800 font-semibold text-sm bg-white hover:bg-gray-50 transition-colors"
               >
                 <span>{faq.q}</span>
-                <span className="text-gray-400 ml-2">{openFaq === i ? '▲' : '▼'}</span>
+                <span className="text-gray-500 ml-2">{openFaq === i ? '▲' : '▼'}</span>
               </button>
               {openFaq === i && (
                 <div className="px-4 pb-3 text-gray-600 text-sm bg-gray-50">{faq.a}</div>
@@ -285,14 +285,14 @@ export default function PricingPage() {
       {/* CTA footer */}
       <div className="mx-4 mt-8 bg-duo-dark rounded-2xl p-6 text-center">
         <p className="text-white font-extrabold text-lg mb-1">Ready to get started?</p>
-        <p className="text-white/50 text-sm mb-4">Join thousands of Grade 4 students mastering IPM math</p>
+        <p className="text-white/70 text-sm mb-4">Join thousands of Grade 4 students mastering IPM math</p>
         <Link
           href="/auth/register"
           className="block w-full bg-duo-green hover:bg-duo-green-dark text-white font-extrabold py-4 rounded-2xl text-lg transition-colors"
         >
           Start Free Trial →
         </Link>
-        <p className="text-white/30 text-xs mt-2">7-day free trial · No card required · Cancel anytime</p>
+        <p className="text-white/70 text-xs mt-2">7-day free trial · No card required · Cancel anytime</p>
       </div>
     </div>
   );

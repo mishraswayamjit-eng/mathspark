@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Sparky from './Sparky';
 import DuoButton from './DuoButton';
 import KatexRenderer from './KatexRenderer';
@@ -25,7 +26,7 @@ function HintText({ text }: { text: string }) {
   return <>{text}</>;
 }
 
-export default function HintSystem({ hint1, hint2, hint3, level, onLevelUp }: HintSystemProps) {
+const HintSystem = React.memo(function HintSystem({ hint1, hint2, hint3, level, onLevelUp }: HintSystemProps) {
   if (level === 0 || !hint1) return null;
 
   return (
@@ -84,4 +85,6 @@ export default function HintSystem({ hint1, hint2, hint3, level, onLevelUp }: Hi
       )}
     </div>
   );
-}
+});
+
+export default HintSystem;

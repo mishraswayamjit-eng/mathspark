@@ -139,7 +139,7 @@ function SessionComplete({
       {/* XP earned banner */}
       {sessionXP && sessionXP.total > 0 && (
         <div className="w-full max-w-xs mb-4 animate-pop-in">
-          <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl px-4 py-3 text-center">
+          <div className="bg-duo-green/10 border border-duo-green/20 rounded-2xl px-4 py-3 text-center">
             <p className="text-3xl font-black text-[#34D399] tabular-nums">+{sessionXP.total} XP</p>
             <div className="flex items-center justify-center gap-2 mt-1 flex-wrap">
               <span className="text-[10px] text-[#94A3B8]">Base: {sessionXP.base}</span>
@@ -180,7 +180,7 @@ function SessionComplete({
       {(promoted.length > 0 || reset.length > 0) && (
         <div className="w-full max-w-xs mb-5 space-y-2">
           {promoted.length > 0 && (
-            <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl px-3 py-2.5">
+            <div className="bg-duo-green/10 border border-duo-green/20 rounded-xl px-3 py-2.5">
               <p className="text-xs font-bold text-emerald-400 mb-1.5">
                 ⬆️ {promoted.length} card{promoted.length > 1 ? 's' : ''} leveled up
               </p>
@@ -339,8 +339,8 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
       return;
     }
 
-    fetch(`/api/flashcards/deck?studentId=${sid}&grade=${grade}&deck=${encodeURIComponent(deckId)}`)
-      .then((r) => r.json())
+    fetch(`/api/flashcards/deck?grade=${grade}&deck=${encodeURIComponent(deckId)}`)
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
         if (data.cards && data.cards.length > 0) {
           setCards(data.cards);
@@ -371,7 +371,6 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        studentId: sid,
         mode: 'classic',
         cardsReviewed: completed,
         cardsCorrect: correctCount,
@@ -379,7 +378,7 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
         bonusXP: accumulatedBonusRef.current,
       }),
     })
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
         if (data.ok) {
           setSessionXP(data.xp ?? null);
@@ -388,7 +387,7 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
           }
         }
       })
-      .catch(() => {});
+      .catch((err) => console.error('[fetch]', err));
   }, [startTime, completed, correctCount]);
 
   // ── Card response handlers ────────────────────────────────────────────────
@@ -406,12 +405,11 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            studentId: sid,
             cardId: card.id,
             correct,
           }),
         })
-          .then((r) => r.json())
+          .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
           .then((data) => {
             if (!data.ok) return;
 
@@ -459,7 +457,7 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
               playWrong();
             }
           })
-          .catch(() => {});
+          .catch((err) => console.error('[fetch]', err));
       }
 
       // Update session streak
@@ -573,8 +571,8 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
           const grade = localStorage.getItem('mathspark_student_grade') || '4';
           if (!sid) return;
 
-          fetch(`/api/flashcards/deck?studentId=${sid}&grade=${grade}&deck=${encodeURIComponent(deckId)}`)
-            .then((r) => r.json())
+          fetch(`/api/flashcards/deck?grade=${grade}&deck=${encodeURIComponent(deckId)}`)
+            .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
             .then((data) => {
               if (data.cards?.length > 0) {
                 setCards(data.cards);
@@ -691,7 +689,7 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
           </button>
           <button
             onClick={handleNailedIt}
-            className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 active:scale-[0.97] transition-[transform,background-color,border-color]"
+            className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-emerald-400 bg-duo-green/10 border border-duo-green/20 active:scale-[0.97] transition-[transform,background-color,border-color]"
           >
             Nailed it! 🎯
           </button>

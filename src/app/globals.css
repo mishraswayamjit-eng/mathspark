@@ -200,11 +200,6 @@ button {
 }
 .animate-warmup-glow { animation: warmup-glow 4s ease-in-out infinite; }
 
-@keyframes phase-slide {
-  from { transform: translateX(32px); opacity: 0; }
-  to   { transform: translateX(0);    opacity: 1; }
-}
-.animate-phase-slide { animation: phase-slide 0.3s ease-out; }
 
 /* ── Voice Recall animations ──────────────────────────────────────────────── */
 @keyframes voice-glow {
@@ -218,3 +213,15 @@ button {
   50%      { transform: scale(1.08); box-shadow: 0 0 40px rgba(167,139,250,0.5); }
 }
 .animate-voice-pulse { animation: voice-pulse 1.5s ease-in-out infinite; }
+
+/* ── Accessibility: Reduced motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

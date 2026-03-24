@@ -1,5 +1,6 @@
 'use client';
 
+import { MS_PER_DAY } from '@/lib/timeConstants';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Sparky from '@/components/Sparky';
@@ -32,7 +33,7 @@ function getQuickReplies(grade: number) {
 
 function getOpeningMessage(name: string, grade: number, lastPracticeDate: string | null, streakDays: number): string {
   const today = new Date().toDateString();
-  const yesterday = new Date(Date.now() - 86400000).toDateString();
+  const yesterday = new Date(Date.now() - MS_PER_DAY).toDateString();
 
   if (!lastPracticeDate) {
     return `Hi ${name}! 🌟 I'm Sparky, your math buddy! I love helping with Grade ${grade} math. What would you like to explore today?`;
@@ -132,8 +133,8 @@ export default function ChatPage() {
     setStudentGrade(isNaN(grade) ? 4 : grade);
 
     // Try to load recent session history
-    fetch(`/api/chat/history?studentId=${sid}`)
-      .then((r) => r.json())
+    fetch('/api/chat/history')
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((session) => {
         if (session?.messages?.length > 0) {
           setSessionId(session.id);
@@ -157,7 +158,7 @@ export default function ChatPage() {
         setMessages([{ id: 'opening', role: 'assistant', content: opening }]);
         setInitialized(true);
       });
-  }, [router]);
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Send message ──────────────────────────────────────────────────────────
 
@@ -178,7 +179,6 @@ export default function ChatPage() {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
-          studentId,
           sessionId,
           message: trimmed,
         }),
@@ -287,7 +287,7 @@ export default function ChatPage() {
             <div className="animate-sparky-bounce">
               <Sparky mood="thinking" size={80} />
             </div>
-            <p className="text-gray-400 font-semibold">Loading…</p>
+            <p className="text-gray-500 font-semibold">Loading…</p>
           </div>
         )}
 
@@ -342,7 +342,7 @@ export default function ChatPage() {
       {/* ── Input area ── */}
       <div className="bg-white px-4 py-3 flex-shrink-0 shadow-[0_-2px_10px_rgba(0,0,0,0.06)] pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))]">
         {rateLimited ? (
-          <p className="text-center text-gray-400 text-sm font-medium py-2">
+          <p className="text-center text-gray-500 text-sm font-medium py-2">
             Daily limit reached 🌟 See you tomorrow!
           </p>
         ) : (

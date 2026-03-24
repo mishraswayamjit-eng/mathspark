@@ -262,7 +262,7 @@ export default function ExamSimulatorPage() {
         const patterns = (d.patterns ?? []) as MistakePattern[];
         setMistakes(detectMistakes(wrongAnswers, patterns, paper.grade));
       })
-      .catch(() => {});
+      .catch((err) => console.error('[fetch]', err));
 
     // Celebration
     if (result.percentage >= 80) {
@@ -326,7 +326,7 @@ export default function ExamSimulatorPage() {
           </div>
           <div className="bg-green-50 rounded-2xl p-3 text-center border border-green-100">
             <p className="text-2xl font-extrabold text-duo-green">{paper.totalMarks}</p>
-            <p className="text-[10px] font-bold text-green-600">Marks</p>
+            <p className="text-[10px] font-bold text-duo-green">Marks</p>
           </div>
         </div>
 
@@ -336,7 +336,7 @@ export default function ExamSimulatorPage() {
           <div className="space-y-1.5 text-sm">
             <p className="flex justify-between"><span className="text-gray-600">Correct</span><span className="font-bold text-duo-green">{paper.markingScheme.correct}</span></p>
             <p className="flex justify-between"><span className="text-gray-600">Wrong</span><span className="font-bold text-duo-red">{paper.markingScheme.wrong}</span></p>
-            <p className="flex justify-between"><span className="text-gray-600">Unanswered</span><span className="font-bold text-gray-400">{paper.markingScheme.unanswered}</span></p>
+            <p className="flex justify-between"><span className="text-gray-600">Unanswered</span><span className="font-bold text-gray-500">{paper.markingScheme.unanswered}</span></p>
             <p className="flex justify-between"><span className="text-gray-600">Passing</span><span className="font-bold text-gray-800">{paper.markingScheme.passingMarks}/{paper.markingScheme.maxMarks}</span></p>
           </div>
         </div>
@@ -347,7 +347,7 @@ export default function ExamSimulatorPage() {
           <ul className="space-y-1.5">
             {paper.instructions.rules.map((rule, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                <span className="text-gray-400 shrink-0">•</span>
+                <span className="text-gray-500 shrink-0">•</span>
                 <span>{rule}</span>
               </li>
             ))}
@@ -372,7 +372,7 @@ export default function ExamSimulatorPage() {
           Start Exam →
         </button>
 
-        <Link href="/practice/papers" className="text-sm text-gray-400 font-bold mt-3 hover:text-gray-600">
+        <Link href="/practice/papers" className="text-sm text-gray-500 font-bold mt-3 hover:text-gray-600">
           ← Back to papers
         </Link>
       </div>
@@ -454,7 +454,7 @@ export default function ExamSimulatorPage() {
             <div className="grid grid-cols-3 gap-2 mt-4">
               <div className="bg-green-50 rounded-xl px-2 py-2">
                 <p className="text-lg font-extrabold text-duo-green">{scoreResult.correct}</p>
-                <p className="text-[10px] font-bold text-green-600">Correct</p>
+                <p className="text-[10px] font-bold text-duo-green">Correct</p>
               </div>
               <div className="bg-red-50 rounded-xl px-2 py-2">
                 <p className="text-lg font-extrabold text-duo-red">{scoreResult.wrong}</p>
@@ -462,7 +462,7 @@ export default function ExamSimulatorPage() {
               </div>
               <div className="bg-gray-50 rounded-xl px-2 py-2">
                 <p className="text-lg font-extrabold text-gray-500">{scoreResult.skipped}</p>
-                <p className="text-[10px] font-bold text-gray-400">Skipped</p>
+                <p className="text-[10px] font-bold text-gray-500">Skipped</p>
               </div>
             </div>
 
@@ -513,7 +513,7 @@ export default function ExamSimulatorPage() {
                         onClick={() => setReviewQ(reviewQ === i ? null : i)}
                         className={`w-7 h-7 rounded-full flex items-center justify-center text-[10px] font-extrabold transition-[background-color,transform] ${
                           reviewQ === i ? 'ring-2 ring-blue-400 scale-110' :
-                          isSkipped ? 'bg-gray-100 text-gray-400' :
+                          isSkipped ? 'bg-gray-100 text-gray-500' :
                           isCorrect ? 'bg-duo-green text-white' :
                           'bg-duo-red text-white'
                         }`}
@@ -664,7 +664,7 @@ export default function ExamSimulatorPage() {
                       <span className="text-xl">{m.emoji}</span>
                       <div>
                         <p className="text-sm font-extrabold text-gray-800">{m.patternName}</p>
-                        <p className="text-[10px] font-bold text-gray-400 uppercase">{m.category.replace(/_/g, ' ')}</p>
+                        <p className="text-[10px] font-bold text-gray-500 uppercase">{m.category.replace(/_/g, ' ')}</p>
                       </div>
                       <span className="ml-auto bg-red-50 text-duo-red text-xs font-extrabold px-2 py-0.5 rounded-full">
                         {m.occurrences}x
@@ -709,7 +709,7 @@ export default function ExamSimulatorPage() {
           <span className="text-white text-sm font-extrabold">
             Q{currentQ + 1}/{paper.totalQuestions}
           </span>
-          <span className="text-xs font-bold text-white/40">
+          <span className="text-xs font-bold text-white/60">
             {answeredCount} answered
           </span>
         </div>
@@ -756,7 +756,7 @@ export default function ExamSimulatorPage() {
           }`}>
             {question.difficulty}
           </span>
-          <span className="text-[10px] font-semibold text-gray-400 truncate">{question.subTopic}</span>
+          <span className="text-[10px] font-semibold text-gray-500 truncate">{question.subTopic}</span>
           {responses[currentQ]?.flagged && (
             <span className="text-[10px] font-extrabold text-duo-orange bg-orange-50 px-2 py-0.5 rounded-full">🚩 Flagged</span>
           )}
@@ -834,7 +834,7 @@ export default function ExamSimulatorPage() {
           {responses[currentQ]?.answer && (
             <button
               onClick={() => selectAnswer(null)}
-              className="px-3 py-3 rounded-xl text-xs font-extrabold text-gray-400 bg-gray-50 hover:bg-gray-100"
+              className="px-3 py-3 rounded-xl text-xs font-extrabold text-gray-500 bg-gray-50 hover:bg-gray-100"
             >
               Clear
             </button>
@@ -870,7 +870,7 @@ export default function ExamSimulatorPage() {
           >
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-extrabold text-gray-800 text-lg">Question Navigator</h3>
-              <button onClick={() => setShowNav(false)} className="text-gray-400 text-2xl leading-none min-w-[44px] min-h-[44px] flex items-center justify-center">×</button>
+              <button onClick={() => setShowNav(false)} className="text-gray-500 text-2xl leading-none min-w-[44px] min-h-[44px] flex items-center justify-center">×</button>
             </div>
 
             <div className="flex gap-3 mb-4 text-xs font-bold">
@@ -937,7 +937,7 @@ export default function ExamSimulatorPage() {
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-600">Unanswered</span>
-                <span className="font-extrabold text-gray-400">{paper.totalQuestions - answeredCount}</span>
+                <span className="font-extrabold text-gray-500">{paper.totalQuestions - answeredCount}</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-gray-600">Flagged for review</span>

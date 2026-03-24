@@ -1,18 +1,18 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
 export const dynamic = 'force-dynamic';
 
-// GET /api/chat/history?studentId=xxx&sessionId=xxx
-// Returns the last session's messages (or a specific session's messages)
+// GET /api/chat/history?sessionId=xxx
 export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url);
-  const studentId = searchParams.get('studentId');
-  const sessionId = searchParams.get('sessionId');
-
+  const studentId = await getAuthenticatedStudentId();
   if (!studentId) {
-    return NextResponse.json({ error: 'studentId required' }, { status: 400 });
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
+
+  const { searchParams } = new URL(req.url);
+  const sessionId = searchParams.get('sessionId');
 
   if (sessionId) {
     // Return specific session

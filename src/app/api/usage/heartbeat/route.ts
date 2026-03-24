@@ -1,22 +1,18 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { FREE_DAILY_MINUTES, isUnlimitedPlan } from '@/lib/usageLimits';
-import { validateStudentAccess } from '@/lib/validateStudent';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
 export const dynamic = 'force-dynamic';
 
 // POST /api/usage/heartbeat
-// Body: { studentId }
 // Called every 60 seconds from practice pages to track daily usage.
-export async function POST(req: Request) {
+export async function POST() {
   try {
-    const { studentId } = await req.json() as { studentId: string };
-    if (!studentId || typeof studentId !== 'string' || studentId.length > 30) {
-      return NextResponse.json({ error: 'studentId required' }, { status: 400 });
+    const studentId = await getAuthenticatedStudentId();
+    if (!studentId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
-
-    const accessErr = await validateStudentAccess(studentId);
-    if (accessErr) return NextResponse.json({ error: accessErr }, { status: accessErr === 'Student not found' ? 404 : 403 });
 
     const today = new Date();
     today.setUTCHours(0, 0, 0, 0);

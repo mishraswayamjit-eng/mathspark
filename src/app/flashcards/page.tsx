@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { StreakProgress } from '@/components/flashcard/StreakMilestone';
 import type { FlashcardDeck, FlashcardStats } from '@/types';
@@ -63,7 +63,7 @@ function PowerBar({ distribution, total }: { distribution: number[]; total: numb
 
 // ── Deck card ────────────────────────────────────────────────────────────────
 
-function DeckCard({
+const DeckCard = React.memo(function DeckCard({
   deck, onClick, onQuiz,
 }: {
   deck: FlashcardDeck;
@@ -81,7 +81,7 @@ function DeckCard({
       }}
     >
       <button onClick={onClick} className="flex items-center gap-3 w-full active:scale-[0.98] transition-transform">
-        <span className="text-xl flex-shrink-0">{emoji}</span>
+        <span className="text-xl flex-shrink-0" aria-hidden="true">{emoji}</span>
         <div className="flex-1 text-left min-w-0">
           <p className="text-sm font-bold text-[#F1F5F9] truncate">{deck.name}</p>
           <p className="text-xs text-[#64748B]">
@@ -111,17 +111,16 @@ function DeckCard({
           {onQuiz && deck.cardCount >= 4 && (
             <button
               onClick={(e) => { e.stopPropagation(); onQuiz(); }}
-              className="text-[10px] font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full hover:bg-amber-400/20 transition-colors whitespace-nowrap"
-              style={{ minHeight: 'auto' }}
+              className="text-[10px] font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full hover:bg-amber-400/20 transition-colors whitespace-nowrap min-h-0"
             >
-              ⚡ Quiz
+              <span aria-hidden="true">⚡ </span>Quiz
             </button>
           )}
         </div>
       )}
     </div>
   );
-}
+});
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -136,8 +135,8 @@ export default function FlashcardsPage() {
     const grade = localStorage.getItem('mathspark_student_grade') || '4';
     if (!sid) { router.replace('/start'); return; }
 
-    fetch(`/api/flashcards?studentId=${sid}&grade=${grade}`)
-      .then((r) => r.json())
+    fetch(`/api/flashcards?grade=${grade}`)
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
         setDecks(data.decks ?? []);
         setStats(data.stats ?? null);
@@ -147,26 +146,33 @@ export default function FlashcardsPage() {
           try { localStorage.setItem('mathspark_cards_due', String(dueDeck.dueCount)); } catch {}
         }
       })
-      .catch(() => {})
+      .catch((err) => console.error('[fetch]', err))
       .finally(() => setLoading(false));
-  }, [router]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const specialDecks = decks.filter((d) => ['due', 'quick', 'mental_math'].includes(d.id));
-  const topicDecks = decks.filter((d) => !['due', 'quick', 'mental_math'].includes(d.id));
+  const specialDecks = useMemo(
+    () => decks.filter((d) => ['due', 'quick', 'mental_math'].includes(d.id)),
+    [decks],
+  );
+  const topicDecks = useMemo(
+    () => decks.filter((d) => !['due', 'quick', 'mental_math'].includes(d.id)),
+    [decks],
+  );
 
-  function openDeck(deckId: string, mode: string = 'classic') {
+  const openDeck = useCallback((deckId: string, mode: string = 'classic') => {
     router.push(`/flashcards/session?deck=${deckId}&mode=${mode}`);
-  }
+  }, [router]);
 
   return (
     <div className="min-h-screen bg-[#0F172A] pb-24 animate-fade-in">
       {/* ── Header ─────────────────────────────────────────────────────────── */}
       <div className="sticky top-0 z-30 bg-[#0F172A]/95 backdrop-blur-md border-b border-white/5 px-4 py-3">
         <div className="flex items-center justify-between max-w-md mx-auto">
-          <button onClick={() => router.back()} className="text-[#94A3B8] text-sm">
+          <button onClick={() => window.history.length > 1 ? router.back() : router.push('/home')} className="text-[#94A3B8] text-sm">
             ← Back
           </button>
-          <h1 className="text-[#F1F5F9] font-bold text-lg">🃏 Sparky&apos;s Cards</h1>
+          <h1 className="text-[#F1F5F9] font-bold text-lg"><span aria-hidden="true">🃏 </span>Sparky&apos;s Cards</h1>
           <div className="w-12" />
         </div>
       </div>
@@ -234,7 +240,7 @@ export default function FlashcardsPage() {
             {/* Streak multiplier badge */}
             {stats.streakMultiplier > 1 && (
               <div className="flex items-center justify-center gap-1.5 bg-amber-500/10 border border-amber-500/20 rounded-xl px-3 py-1.5">
-                <span className="text-xs">🔥</span>
+                <span className="text-xs" aria-hidden="true">🔥</span>
                 <span className="text-xs font-bold text-[#FBBF24]">
                   {stats.streakMultiplier}x XP Multiplier Active
                 </span>
@@ -281,10 +287,10 @@ export default function FlashcardsPage() {
               }}
             >
               <div className="flex items-center gap-3">
-                <span className="text-2xl animate-quiz-icon">⚡</span>
+                <span className="text-2xl animate-quiz-icon" aria-hidden="true">⚡</span>
                 <div className="flex-1">
                   <p className="text-sm font-black text-[#F1F5F9]">Quiz Blitz</p>
-                  <p className="text-[11px] text-[#A78BFA]">MCQ · Combos · 12s per card</p>
+                  <p className="text-xs text-[#A78BFA]">MCQ · Combos · 12s per card</p>
                 </div>
                 <span className="text-[10px] font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>GO</span>
               </div>
@@ -300,10 +306,10 @@ export default function FlashcardsPage() {
               }}
             >
               <div className="flex items-center gap-3">
-                <span className="text-2xl">🔥</span>
+                <span className="text-2xl" aria-hidden="true">🔥</span>
                 <div className="flex-1">
                   <p className="text-sm font-black text-[#F1F5F9]">Speed Round</p>
-                  <p className="text-[11px] text-red-300/70">60 seconds · Answer as many as you can!</p>
+                  <p className="text-xs text-red-300/70">60 seconds · Answer as many as you can!</p>
                 </div>
                 <span className="text-[10px] font-bold text-red-400 bg-red-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>60s</span>
               </div>
@@ -319,10 +325,10 @@ export default function FlashcardsPage() {
               }}
             >
               <div className="flex items-center gap-3">
-                <span className="text-2xl">🧩</span>
+                <span className="text-2xl" aria-hidden="true">🧩</span>
                 <div className="flex-1">
                   <p className="text-sm font-black text-[#F1F5F9]">Tap Match</p>
-                  <p className="text-[11px] text-emerald-300/70">Match fronts to backs · Memory game</p>
+                  <p className="text-xs text-emerald-300/70">Match fronts to backs · Memory game</p>
                 </div>
                 <span className="text-[10px] font-bold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>NEW</span>
               </div>
@@ -338,10 +344,10 @@ export default function FlashcardsPage() {
               }}
             >
               <div className="flex items-center gap-3">
-                <span className="text-2xl">🧘</span>
+                <span className="text-2xl" aria-hidden="true">🧘</span>
                 <div className="flex-1">
                   <p className="text-sm font-black text-[#F1F5F9]">Pre-Exam Warm-Up</p>
-                  <p className="text-[11px] text-blue-300/70">Breathe · Formulas · Confidence boost</p>
+                  <p className="text-xs text-blue-300/70">Breathe · Formulas · Confidence boost</p>
                 </div>
                 <span className="text-[10px] font-bold text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>ZEN</span>
               </div>
@@ -357,10 +363,10 @@ export default function FlashcardsPage() {
               }}
             >
               <div className="flex items-center gap-3">
-                <span className="text-2xl">🎙️</span>
+                <span className="text-2xl" aria-hidden="true">🎙️</span>
                 <div className="flex-1">
                   <p className="text-sm font-black text-[#F1F5F9]">Voice Recall</p>
-                  <p className="text-[11px] text-purple-300/70">Say it out loud · Active recall</p>
+                  <p className="text-xs text-purple-300/70">Say it out loud · Active recall</p>
                 </div>
                 <span className="text-[10px] font-bold text-purple-400 bg-purple-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>NEW</span>
               </div>
@@ -388,7 +394,7 @@ export default function FlashcardsPage() {
         {/* ── Empty state ─────────────────────────────────────────────────── */}
         {!loading && decks.length === 0 && (
           <div className="text-center pt-16 space-y-4">
-            <p className="text-4xl">🃏</p>
+            <p className="text-4xl" aria-hidden="true">🃏</p>
             <p className="text-[#94A3B8] text-sm">
               No flashcards available for your grade yet.
             </p>

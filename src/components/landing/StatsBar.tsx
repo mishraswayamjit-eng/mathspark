@@ -45,7 +45,7 @@ function StatCard({ prefix = '', target, suffix = '', label, inView }: {
       <div className="text-xl sm:text-3xl font-extrabold text-white tabular-nums leading-none truncate">
         {prefix}{target === 0 ? '0' : count.toLocaleString('en-IN')}{suffix}
       </div>
-      <div className="text-white/40 text-xs sm:text-sm mt-1.5 leading-tight">{label}</div>
+      <div className="text-white/60 text-xs sm:text-sm mt-1.5 leading-tight">{label}</div>
     </div>
   );
 }

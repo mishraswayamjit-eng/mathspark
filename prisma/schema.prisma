@@ -92,6 +92,8 @@ model Student {
   weeklyAwards            WeeklyAward[]
   flashcardProgress       FlashcardProgress[]
   flashcardSessions       FlashcardSession[]
+
+  @@index([parentId])
 }
 
 // ── Order (payment record) ─────────────────────────────────────────────────
@@ -103,7 +105,7 @@ model Order {
   subscriptionId    String
   subscription      Subscription @relation(fields: [subscriptionId], references: [id])
   studentId         String
-  student           Student      @relation(fields: [studentId], references: [id])
+  student           Student      @relation(fields: [studentId], references: [id], onDelete: Cascade)
   amountPaise       Int
   currency          String       @default("INR")
   paymentMethod     String
@@ -125,7 +127,7 @@ model Order {
 model UsageLog {
   id                 String   @id @default(cuid())
   studentId          String
-  student            Student  @relation(fields: [studentId], references: [id])
+  student            Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
   date               DateTime @db.Date
   minutesUsed        Int      @default(0)
   questionsAttempted Int      @default(0)
@@ -184,7 +186,7 @@ model Question {
 model Progress {
   id        String   @id @default(cuid())
   studentId String
-  student   Student  @relation(fields: [studentId], references: [id])
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
   topicId   String
   topic     Topic    @relation(fields: [topicId], references: [id])
   attempted Int      @default(0)
@@ -201,7 +203,7 @@ model Progress {
 model Attempt {
   id                String   @id @default(cuid())
   studentId         String
-  student           Student  @relation(fields: [studentId], references: [id])
+  student           Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
   questionId        String
   question          Question @relation(fields: [questionId], references: [id])
   selected          String   // "A" | "B" | "C" | "D"
@@ -225,7 +227,7 @@ model Attempt {
 model ConversationSession {
   id        String        @id @default(cuid())
   studentId String
-  student   Student       @relation(fields: [studentId], references: [id])
+  student   Student       @relation(fields: [studentId], references: [id], onDelete: Cascade)
   mode      String        @default("general") // "quiz"|"topic"|"homework"|"general"
   topicId   String?
   createdAt DateTime      @default(now())
@@ -238,7 +240,7 @@ model ConversationSession {
 model ChatMessage {
   id        String              @id @default(cuid())
   sessionId String
-  session   ConversationSession @relation(fields: [sessionId], references: [id])
+  session   ConversationSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
   role      String              // "user" | "assistant"
   content   String
   createdAt DateTime            @default(now())
@@ -251,7 +253,7 @@ model ChatMessage {
 model MockTest {
   id             String             @id @default(cuid())
   studentId      String
-  student        Student            @relation(fields: [studentId], references: [id])
+  student        Student            @relation(fields: [studentId], references: [id], onDelete: Cascade)
   type           String             // "quick" | "half" | "full" | "ipm" | "pyq"
   totalQuestions Int
   timeLimitMs    Int
@@ -289,7 +291,7 @@ model MockTestResponse {
 model StudentAnalytics {
   id              String   @id @default(cuid())
   studentId       String   @unique
-  student         Student  @relation(fields: [studentId], references: [id])
+  student         Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
   topicMastery    Json?    // TopicMasteryEntry[]
   examReadiness   Json?    // ExamReadinessResult
   topicPriorities Json?    // TopicPriority[]
@@ -316,7 +318,7 @@ model League {
 model LeagueMembership {
   id        String  @id @default(cuid())
   studentId String
-  student   Student @relation(fields: [studentId], references: [id])
+  student   Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
   leagueId  String
   league    League  @relation(fields: [leagueId], references: [id])
   weeklyXP  Int     @default(0)
@@ -331,11 +333,12 @@ model LeagueMembership {
 model WeeklyAward {
   id        String   @id @default(cuid())
   studentId String
-  student   Student  @relation(fields: [studentId], references: [id])
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
   weekStart DateTime
   awardType String   // "most_improved" | "speed_demon" | "accuracy_king" | "explorer"
   value     String   // e.g. "+240 XP jump", "avg 7s", "94% accuracy", "8 topics"
 
+  @@unique([studentId, weekStart, awardType])
   @@index([weekStart])
   @@index([studentId])
 }
@@ -345,7 +348,7 @@ model WeeklyAward {
 model FlashcardProgress {
   id            String    @id @default(cuid())
   studentId     String
-  student       Student   @relation(fields: [studentId], references: [id])
+  student       Student   @relation(fields: [studentId], references: [id], onDelete: Cascade)
   cardId        String                          // references static JSON card ID
   leitnerBox    Int       @default(1)           // 1-5 (Power Level)
   nextReviewAt  DateTime  @default(now())
@@ -364,7 +367,7 @@ model FlashcardProgress {
 model FlashcardSession {
   id            String   @id @default(cuid())
   studentId     String
-  student       Student  @relation(fields: [studentId], references: [id])
+  student       Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
   mode          String                          // "classic" | "quiz" | "speed" | "match" | "warmup" | "voice"
   cardsReviewed Int
   cardsCorrect  Int

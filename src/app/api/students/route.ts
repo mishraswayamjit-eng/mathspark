@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { checkRateLimit } from '@/lib/rateLimit';
 
 const AVATAR_COLORS = [
   '#FF9600', '#58CC02', '#1CB0F6', '#FF4B4B',
@@ -10,6 +11,12 @@ const AVATAR_COLORS = [
 // POST /api/students   body: { name: string; grade?: number; parentEmail?: string }
 export async function POST(req: Request) {
   try {
+    // Rate limit: 5 student creations per IP per 10 minutes
+    const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
+    if (!checkRateLimit(`create-student:${ip}`, 5, 600_000)) {
+      return NextResponse.json({ error: 'Too many requests. Try again later.' }, { status: 429 });
+    }
+
     const { name, grade, parentEmail } = await req.json();
 
     if (!name || typeof name !== 'string' || !name.trim()) {

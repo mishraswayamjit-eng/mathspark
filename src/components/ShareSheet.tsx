@@ -152,7 +152,7 @@ export default function ShareSheet({
       const res  = await fetch('/api/share/email', {
         method:  'POST',
         headers: { 'content-type': 'application/json' },
-        body:    JSON.stringify({ studentId, cardType: card.type, cardData: card.data }),
+        body:    JSON.stringify({ cardType: card.type, cardData: card.data }),
       });
       const json = await res.json() as { success?: boolean; sentTo?: string; error?: string };
       if (res.ok && json.success) {
@@ -204,7 +204,7 @@ export default function ShareSheet({
         <div className="flex items-center justify-between px-5 pt-5 pb-3">
           <div>
             <p className="font-extrabold text-gray-800 text-base">Share with Parents 📤</p>
-            <p className="text-xs text-gray-400 font-medium">Choose how to share this achievement</p>
+            <p className="text-xs text-gray-500 font-medium">Choose how to share this achievement</p>
           </div>
           <button
             onClick={onClose}
@@ -292,7 +292,7 @@ function ShareOption({
       </div>
       <div className="text-left flex-1">
         <p className="font-extrabold text-gray-800 text-sm">{title}</p>
-        <p className="text-xs text-gray-400 font-medium">{subtitle}</p>
+        <p className="text-xs text-gray-500 font-medium">{subtitle}</p>
       </div>
       <span className="text-gray-300 text-xl">›</span>
     </button>

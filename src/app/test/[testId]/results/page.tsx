@@ -128,7 +128,7 @@ function ScoreRing({ pct, score, total }: { pct: number; score: number; total: n
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className="text-3xl font-extrabold text-gray-800">{score}</span>
-        <span className="text-gray-400 text-sm font-bold">/{total}</span>
+        <span className="text-gray-500 text-sm font-bold">/{total}</span>
       </div>
     </div>
   );
@@ -159,9 +159,9 @@ function QuestionAccordion({ r, idx }: { r: MockTestResponse; idx: number }) {
         onClick={() => setOpen((o) => !o)}
         className="w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-gray-50 transition-colors"
       >
-        <span className="text-xs font-extrabold text-gray-400 w-8 flex-shrink-0">Q{idx + 1}</span>
+        <span className="text-xs font-extrabold text-gray-500 w-8 flex-shrink-0">Q{idx + 1}</span>
         <span className="flex-1 text-sm font-semibold text-gray-700 line-clamp-1">{q.questionText}</span>
-        <span className="text-xs text-gray-400 flex-shrink-0">{r.timeTakenMs ? formatMs(r.timeTakenMs) : '—'}</span>
+        <span className="text-xs text-gray-500 flex-shrink-0">{r.timeTakenMs ? formatMs(r.timeTakenMs) : '—'}</span>
         <span className="text-lg flex-shrink-0">{r.isCorrect ? '✅' : r.selectedAnswer ? '❌' : '⬜'}</span>
         <span className="text-gray-300 text-sm">{open ? '▲' : '▼'}</span>
       </button>
@@ -233,7 +233,7 @@ export default function TestResultsPage() {
     async function load() {
       try {
         const sid = localStorage.getItem('mathspark_student_id') ?? '';
-        const res = await fetch(`/api/mock-tests/${testId}?studentId=${encodeURIComponent(sid)}`);
+        const res = await fetch(`/api/mock-tests/${testId}`);
         if (!res.ok) { router.replace('/test'); return; }
         const data: MockTestDetail = await res.json();
         setTest(data);
@@ -369,7 +369,7 @@ export default function TestResultsPage() {
                     <span className="text-xl">{TOPIC_EMOJI[t.topicId] ?? '📚'}</span>
                     <div>
                       <p className="font-extrabold text-gray-800 text-sm">{t.topicName}</p>
-                      <p className="text-xs text-gray-400 font-semibold">{t.correct}/{t.total} correct · avg {formatMs(t.avgTimeMs)}</p>
+                      <p className="text-xs text-gray-500 font-semibold">{t.correct}/{t.total} correct · avg {formatMs(t.avgTimeMs)}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
@@ -433,12 +433,12 @@ export default function TestResultsPage() {
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-gray-50 rounded-2xl p-4 text-center">
                 <p className="text-2xl font-extrabold text-gray-800">{formatMs(avgTimeMs)}</p>
-                <p className="text-xs text-gray-400 font-semibold mt-1">avg per question</p>
+                <p className="text-xs text-gray-500 font-semibold mt-1">avg per question</p>
               </div>
               {timeUsedMs != null && (
                 <div className="bg-gray-50 rounded-2xl p-4 text-center">
                   <p className="text-2xl font-extrabold text-gray-800">{formatTime(timeUsedMs)}</p>
-                  <p className="text-xs text-gray-400 font-semibold mt-1">total time used</p>
+                  <p className="text-xs text-gray-500 font-semibold mt-1">total time used</p>
                 </div>
               )}
             </div>
@@ -449,7 +449,7 @@ export default function TestResultsPage() {
                 <div className="space-y-2">
                   {slowest.map((r) => (
                     <div key={r.id} className="flex items-center gap-3 py-2 border-b border-gray-100">
-                      <span className="text-xs font-extrabold text-gray-400 w-8 flex-shrink-0">Q{r.questionNumber}</span>
+                      <span className="text-xs font-extrabold text-gray-500 w-8 flex-shrink-0">Q{r.questionNumber}</span>
                       <p className="flex-1 text-xs text-gray-600 line-clamp-1">{r.question?.questionText}</p>
                       <span className="text-xs font-extrabold text-duo-orange flex-shrink-0">{formatMs(r.timeTakenMs)}</span>
                     </div>
@@ -552,7 +552,7 @@ export default function TestResultsPage() {
         </button>
         <button
           onClick={() => router.push('/chapters')}
-          className="w-full text-gray-400 text-sm font-semibold text-center py-2 hover:text-gray-600 transition-colors"
+          className="w-full text-gray-500 text-sm font-semibold text-center py-2 hover:text-gray-600 transition-colors"
         >
           Back to Learning 📚
         </button>

@@ -1,15 +1,14 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getWeekBounds, TIER_NAMES } from '@/lib/leaderboard';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import type { LastWeekResult, LeagueData, LeagueMember, WeeklyAwardData } from '@/types';
 
-// GET /api/leaderboard/last-week?studentId=
-export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url);
-  const studentId = searchParams.get('studentId');
-
+// GET /api/leaderboard/last-week
+export async function GET() {
+  const studentId = await getAuthenticatedStudentId();
   if (!studentId) {
-    return NextResponse.json({ error: 'studentId required' }, { status: 400 });
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   try {

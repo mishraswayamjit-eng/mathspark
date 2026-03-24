@@ -39,7 +39,7 @@ function ResetForm() {
 
   if (!token) {
     return (
-      <div className="text-center text-white/50 text-sm">
+      <div className="text-center text-white/70 text-sm">
         Invalid reset link. <Link href="/auth/forgot-password" className="text-duo-blue">Request a new one.</Link>
       </div>
     );
@@ -56,19 +56,21 @@ function ResetForm() {
         <div className="text-center space-y-3">
           <div className="text-4xl">✅</div>
           <p className="text-white font-semibold">Password updated!</p>
-          <p className="text-white/50 text-sm">Redirecting to login…</p>
+          <p className="text-white/70 text-sm">Redirecting to login…</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="password" placeholder="New password (min 8 characters)" required minLength={8}
+            aria-label="New password (min 8 characters)"
             value={password} onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-green"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
           />
           <input
             type="password" placeholder="Confirm new password" required
+            aria-label="Confirm new password"
             value={confirm} onChange={(e) => setConfirm(e.target.value)}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-green"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
           />
 
           {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
@@ -87,8 +89,8 @@ function ResetForm() {
 
 export default function ResetPasswordPage() {
   return (
-    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12">
-      <Suspense fallback={<div className="text-white/50">Loading…</div>}>
+    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12 animate-fade-in">
+      <Suspense fallback={<div className="text-white/70">Loading…</div>}>
         <ResetForm />
       </Suspense>
     </div>

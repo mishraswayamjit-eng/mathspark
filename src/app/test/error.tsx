@@ -27,7 +27,7 @@ export default function TestError({
         <DuoButton variant="blue" fullWidth onClick={reset}>
           Try again
         </DuoButton>
-        <a href="/test" className="block text-gray-400 text-sm font-semibold text-center py-2">
+        <a href="/test" className="block text-gray-500 text-sm font-semibold text-center py-2">
           Back to tests
         </a>
       </div>

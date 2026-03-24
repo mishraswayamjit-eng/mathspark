@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef, useCallback, type Ref } from 'react';
+import React, { useEffect, useState, useRef, useCallback, useMemo, type Ref } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Confetti from '@/components/Confetti';
@@ -18,7 +18,7 @@ const TIER_COLORS: Record<number, { bg: string; text: string; border: string; ba
 
 // ── Avatar ────────────────────────────────────────────────────────────────────
 
-function Avatar({ name, color, size = 40 }: { name: string; color: string; size?: number }) {
+const Avatar = React.memo(function Avatar({ name, color, size = 40 }: { name: string; color: string; size?: number }) {
   const initial = name ? name[0].toUpperCase() : '?';
   return (
     <div
@@ -28,7 +28,7 @@ function Avatar({ name, color, size = 40 }: { name: string; color: string; size?
       {initial}
     </div>
   );
-}
+});
 
 // ── Tier status card ──────────────────────────────────────────────────────────
 
@@ -65,7 +65,7 @@ function StatusCard({
       style={{ borderColor: colors.border, background: `${colors.bg}22` }}
     >
       <div className="flex items-center gap-3">
-        <div className="text-4xl">{colors.badge}</div>
+        <div className="text-4xl" aria-hidden="true">{colors.badge}</div>
         <div className="flex-1">
           <p className="font-extrabold text-lg text-gray-800">{league.leagueName} League</p>
           <p className="text-sm font-semibold text-gray-500">
@@ -86,7 +86,7 @@ function StatusCard({
 
 // ── Member row ────────────────────────────────────────────────────────────────
 
-function MemberRow({
+const MemberRow = React.memo(function MemberRow({
   member,
   rank,
   total,
@@ -134,7 +134,7 @@ function MemberRow({
         {isTop3 ? (
           <span className="text-xl">{medals[rank - 1]}</span>
         ) : (
-          <span className="text-sm font-extrabold text-gray-400">#{rank}</span>
+          <span className="text-sm font-extrabold text-gray-500">#{rank}</span>
         )}
       </div>
 
@@ -146,7 +146,7 @@ function MemberRow({
         <p className={`font-extrabold truncate ${member.isMe ? 'text-duo-blue' : 'text-gray-800'} ${isTop3 ? 'text-base' : 'text-sm'}`}>
           {member.displayName} {member.isMe && <span className="text-xs font-bold">(you)</span>}
         </p>
-        <p className="text-xs text-gray-400 font-semibold">
+        <p className="text-xs text-gray-500 font-semibold">
           {isPromoZone && !isTop3 && '⬆️ Promotion zone ·'}
           {isDangerZone && '⚠️ Danger zone ·'}{' '}
           {member.weeklyXP.toLocaleString()} XP
@@ -161,14 +161,14 @@ function MemberRow({
       )}
     </div>
   );
-}
+});
 
 // ── Free gate overlay ─────────────────────────────────────────────────────────
 
 function FreeGate({ rank }: { rank: number }) {
   return (
     <div className="mx-4 my-2 rounded-2xl border-2 border-duo-gold bg-[#FFF9E6] p-4 text-center">
-      <p className="text-2xl mb-1">🔒</p>
+      <p className="text-2xl mb-1" aria-hidden="true">🔒</p>
       <p className="font-extrabold text-gray-800 text-sm">You&apos;re #{rank} — see your full rank!</p>
       <p className="text-xs text-gray-500 font-medium mt-1 mb-3">
         Upgrade to see all {rank > 5 ? rank - 5 : 0}+ members below you and track your league position.
@@ -196,7 +196,7 @@ function StickyMyRankBar({ member, visible }: { member: LeagueMember | null; vis
           <Avatar name={member.displayName} color={member.avatarColor} size={32} />
           <div className="flex-1">
             <p className="text-sm font-extrabold text-duo-blue">{member.displayName} (you)</p>
-            <p className="text-xs text-gray-400 font-semibold">#{member.rank} · {member.weeklyXP.toLocaleString()} XP</p>
+            <p className="text-xs text-gray-500 font-semibold">#{member.rank} · {member.weeklyXP.toLocaleString()} XP</p>
           </div>
         </div>
       </div>
@@ -222,7 +222,7 @@ function PromotionOverlay({
     <div className="fixed inset-0 z-[90] flex items-center justify-center bg-black/70 px-6">
       {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
       <div className="bg-white rounded-3xl p-8 w-full max-w-sm text-center shadow-2xl animate-pop-in">
-        <div className="text-6xl mb-3">🎉</div>
+        <div className="text-6xl mb-3" aria-hidden="true">🎉</div>
         <h2 className="text-2xl font-extrabold text-gray-800 mb-1">You&apos;ve been promoted!</h2>
         {myRank && (
           <p className="text-gray-500 font-semibold text-sm mb-2">Finished #{myRank} in {from} League</p>
@@ -251,7 +251,7 @@ function DemotionBanner({ tier, onDismiss }: { tier: number; onDismiss: () => vo
   const tierName = { 1: 'Bronze', 2: 'Silver', 3: 'Gold', 4: 'Diamond', 5: 'Champion' }[tier] ?? 'Bronze';
   return (
     <div className="bg-amber-100 border-b-2 border-amber-300 px-4 py-3 flex items-center gap-3">
-      <span className="text-lg">⬇️</span>
+      <span className="text-lg" aria-hidden="true">⬇️</span>
       <p className="flex-1 text-sm font-bold text-amber-800">
         You were demoted to {tierName} League this week. Practice more to climb back up!
       </p>
@@ -268,9 +268,9 @@ function LastWeekTab({ data }: { data: LastWeekResult | null }) {
   if (!data) {
     return (
       <div className="flex flex-col items-center justify-center py-20 gap-3 text-center px-8">
-        <p className="text-5xl">📊</p>
+        <p className="text-5xl" aria-hidden="true">📊</p>
         <p className="font-extrabold text-gray-700">No last-week data yet</p>
-        <p className="text-sm text-gray-400 font-medium">Keep playing and check back after Sunday!</p>
+        <p className="text-sm text-gray-500 font-medium">Keep playing and check back after Sunday!</p>
       </div>
     );
   }
@@ -281,7 +281,7 @@ function LastWeekTab({ data }: { data: LastWeekResult | null }) {
     <div className="pb-6">
       {awards.length > 0 && (
         <div className="mx-4 mt-4 mb-2">
-          <p className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-2">Your Awards</p>
+          <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest mb-2">Your Awards</p>
           <div className="space-y-2">
             {awards.map((a, i) => {
               const icons: Record<string, string> = {
@@ -293,7 +293,7 @@ function LastWeekTab({ data }: { data: LastWeekResult | null }) {
               };
               return (
                 <div key={i} className="bg-yellow-50 border border-yellow-200 rounded-2xl px-4 py-3 flex items-center gap-3">
-                  <span className="text-2xl">{icons[a.awardType] ?? '🏅'}</span>
+                  <span className="text-2xl" aria-hidden="true">{icons[a.awardType] ?? '🏅'}</span>
                   <div>
                     <p className="font-extrabold text-gray-800 text-sm">{names[a.awardType] ?? a.awardType}</p>
                     <p className="text-xs text-gray-500 font-medium">{a.value}</p>
@@ -307,36 +307,35 @@ function LastWeekTab({ data }: { data: LastWeekResult | null }) {
 
       {league ? (
         <div className="mt-4">
-          <p className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mx-4 mb-2">
+          <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest mx-4 mb-2">
             Last Week — {league.leagueName} League
           </p>
           {league.members.map((m, i) => (
             <div
               key={m.studentId}
-              className={`flex items-center gap-3 px-4 py-3 border-b border-gray-50 ${m.isMe ? 'ring-2 ring-inset ring-duo-blue' : ''}`}
-              style={{ minHeight: 56 }}
+              className={`flex items-center gap-3 px-4 py-3 border-b border-gray-50 min-h-[56px] ${m.isMe ? 'ring-2 ring-inset ring-duo-blue' : ''}`}
             >
               <div className="w-8 text-center">
                 {m.rank && m.rank <= 3 ? (
                   <span className="text-xl">{['🥇', '🥈', '🥉'][m.rank - 1]}</span>
                 ) : (
-                  <span className="text-sm font-extrabold text-gray-400">#{m.rank ?? i + 1}</span>
+                  <span className="text-sm font-extrabold text-gray-500">#{m.rank ?? i + 1}</span>
                 )}
               </div>
               <Avatar name={m.displayName} color={m.avatarColor} size={36} />
               <div className="flex-1 min-w-0">
                 <p className={`font-extrabold text-sm truncate ${m.isMe ? 'text-duo-blue' : 'text-gray-800'}`}>
                   {m.displayName} {m.isMe && '(you)'}
-                  {m.promoted && <span className="ml-1 text-green-500 text-xs">⬆️ Promoted</span>}
+                  {m.promoted && <span className="ml-1 text-duo-green text-xs">⬆️ Promoted</span>}
                   {m.demoted  && <span className="ml-1 text-amber-500 text-xs">⬇️ Demoted</span>}
                 </p>
-                <p className="text-xs text-gray-400 font-semibold">{m.weeklyXP.toLocaleString()} XP</p>
+                <p className="text-xs text-gray-500 font-semibold">{m.weeklyXP.toLocaleString()} XP</p>
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <p className="text-center text-gray-400 text-sm font-medium py-8 px-4">
+        <p className="text-center text-gray-500 text-sm font-medium py-8 px-4">
           You weren&apos;t in a league last week. Keep playing this week!
         </p>
       )}
@@ -366,7 +365,7 @@ function AllTimeTab({
   myRank: number;
 }) {
   if (!data) {
-    return <div className="flex items-center justify-center py-20 text-gray-400 font-semibold">Loading…</div>;
+    return <div className="flex items-center justify-center py-20 text-gray-500 font-semibold">Loading…</div>;
   }
 
   const { members, myEntry } = data;
@@ -379,14 +378,14 @@ function AllTimeTab({
         return (
           <div
             key={m.studentId}
-            className={`flex items-center gap-3 px-4 py-3 border-b border-gray-50 ${m.isMe ? 'ring-2 ring-inset ring-duo-blue' : ''}`}
-            style={{ minHeight: 56, filter: blurred ? 'blur(4px)' : undefined }}
+            className={`flex items-center gap-3 px-4 py-3 border-b border-gray-50 min-h-[56px] ${m.isMe ? 'ring-2 ring-inset ring-duo-blue' : ''}`}
+            style={{ filter: blurred ? 'blur(4px)' : undefined }}
           >
             <div className="w-8 text-center">
               {m.rank <= 3 ? (
                 <span className="text-xl">{['🥇', '🥈', '🥉'][m.rank - 1]}</span>
               ) : (
-                <span className="text-sm font-extrabold text-gray-400">#{m.rank}</span>
+                <span className="text-sm font-extrabold text-gray-500">#{m.rank}</span>
               )}
             </div>
             <Avatar name={m.displayName} color={m.avatarColor} size={36} />
@@ -394,7 +393,7 @@ function AllTimeTab({
               <p className={`font-extrabold text-sm truncate ${m.isMe ? 'text-duo-blue' : 'text-gray-800'}`}>
                 {m.displayName} {m.isMe && '(you)'} <span className="opacity-60">{tierBadge}</span>
               </p>
-              <p className="text-xs text-gray-400 font-semibold">{m.totalXP.toLocaleString()} lifetime XP</p>
+              <p className="text-xs text-gray-500 font-semibold">{m.totalXP.toLocaleString()} lifetime XP</p>
             </div>
           </div>
         );
@@ -406,7 +405,7 @@ function AllTimeTab({
 
       {myEntry && !members.find((m) => m.isMe) && (
         <div className="mx-4 mt-4">
-          <p className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-2">Your Position</p>
+          <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest mb-2">Your Position</p>
           <div className="flex items-center gap-3 px-4 py-3 rounded-2xl ring-2 ring-duo-blue bg-blue-50">
             <div className="w-8 text-center">
               <span className="text-sm font-extrabold text-duo-blue">#{myEntry.rank}</span>
@@ -414,7 +413,7 @@ function AllTimeTab({
             <Avatar name={myEntry.displayName} color={myEntry.avatarColor} size={36} />
             <div className="flex-1">
               <p className="font-extrabold text-sm text-duo-blue">{myEntry.displayName} (you)</p>
-              <p className="text-xs text-gray-400 font-semibold">{myEntry.totalXP.toLocaleString()} lifetime XP</p>
+              <p className="text-xs text-gray-500 font-semibold">{myEntry.totalXP.toLocaleString()} lifetime XP</p>
             </div>
           </div>
         </div>
@@ -465,18 +464,18 @@ export default function LeaderboardPage() {
     const sub = localStorage.getItem('mathspark_subscription_tier');
     setIsFree(!sub || sub === 'free');
 
-    fetch(`/api/leaderboard?studentId=${id}`)
-      .then((r) => r.json())
+    fetch('/api/leaderboard')
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d: LeagueData) => { setLeagueData(d); setWeekLoading(false); })
       .catch(() => setWeekLoading(false));
-  }, [router]);
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Check for promotion / demotion from last week ────────────────────────
   useEffect(() => {
     if (!studentId) return;
 
-    fetch(`/api/leaderboard/last-week?studentId=${studentId}`)
-      .then((r) => r.json())
+    fetch('/api/leaderboard/last-week')
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d: LastWeekResult) => {
         setLastWeekData(d);
         setLastWeekLoaded(true);
@@ -500,22 +499,23 @@ export default function LeaderboardPage() {
   // ── Load all-time on first tap ────────────────────────────────────────────
   const loadAllTime = useCallback(() => {
     if (!studentId || allTimeLoaded) return;
-    fetch(`/api/leaderboard/all-time?studentId=${studentId}`)
-      .then((r) => r.json())
+    fetch('/api/leaderboard/all-time')
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d) => { setAllTimeData(d); setAllTimeLoaded(true); })
       .catch(() => setAllTimeLoaded(true));
   }, [studentId, allTimeLoaded]);
 
   // ── IntersectionObserver for my-rank row ──────────────────────────────────
+  const hasLeagueData = !!leagueData;
   useEffect(() => {
-    if (!myRowRef.current) return;
+    if (!hasLeagueData || !myRowRef.current) return;
     const obs = new IntersectionObserver(
       ([entry]) => setMyRowVisible(entry.isIntersecting),
       { threshold: 0.5 },
     );
     obs.observe(myRowRef.current);
     return () => obs.disconnect();
-  }, [leagueData]); // re-run when leagueData loads
+  }, [hasLeagueData]);
 
   function dismissPromo() {
     const key = `leaderboard_promo_seen_${lastWeekData?.league?.weekStart ?? 'prev'}`;
@@ -529,7 +529,10 @@ export default function LeaderboardPage() {
     setShowDemote(false);
   }
 
-  const myMember = leagueData?.members.find((m) => m.isMe) ?? null;
+  const myMember = useMemo(
+    () => leagueData?.members.find((m) => m.isMe) ?? null,
+    [leagueData?.members],
+  );
 
   return (
     <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
@@ -551,7 +554,7 @@ export default function LeaderboardPage() {
 
       {/* ── Header ─────────────────────────────────────────────────────── */}
       <div className="bg-duo-dark pt-10 pb-4 px-4">
-        <h1 className="text-2xl font-extrabold text-white">🏆 League</h1>
+        <h1 className="text-2xl font-extrabold text-white"><span aria-hidden="true">🏆 </span>League</h1>
         <p className="text-white/60 text-sm font-semibold mt-0.5">
           Compete with students around you — earn XP, get promoted!
         </p>
@@ -575,11 +578,10 @@ export default function LeaderboardPage() {
               setTab(id);
               if (id === 'all') loadAllTime();
             }}
-            style={{ minHeight: 0 }}
-            className={`flex-1 rounded-xl py-2 text-xs font-extrabold transition-colors ${
+            className={`flex-1 rounded-xl py-2 text-xs font-extrabold transition-colors min-h-0 ${
               tab === id
                 ? 'bg-white text-gray-800 shadow-sm'
-                : 'text-gray-400 hover:text-gray-600'
+                : 'text-gray-500 hover:text-gray-600'
             }`}
           >
             {label}
@@ -596,16 +598,29 @@ export default function LeaderboardPage() {
             {weekLoading ? (
               <div className="py-20 flex flex-col items-center gap-3">
                 <div className="w-10 h-10 rounded-full border-4 border-duo-green border-t-transparent animate-spin" />
-                <p className="text-gray-400 font-semibold text-sm">Loading your league…</p>
+                <p className="text-gray-500 font-semibold text-sm">Loading your league…</p>
               </div>
             ) : !leagueData ? (
               <div className="py-20 text-center px-8">
-                <p className="text-4xl mb-3">😕</p>
+                <p className="text-4xl mb-3" aria-hidden="true">😕</p>
                 <p className="font-extrabold text-gray-700">Couldn&apos;t load league</p>
-                <p className="text-sm text-gray-400 mt-1">Try refreshing the page.</p>
+                <p className="text-sm text-gray-500 mt-1">Check your connection and try again.</p>
+                <button
+                  onClick={() => window.location.reload()}
+                  className="mt-4 bg-duo-blue text-white font-extrabold rounded-2xl px-6 py-2.5 text-sm active:scale-95 transition-transform"
+                >
+                  Retry
+                </button>
               </div>
             ) : (
               <>
+                {leagueData.members.length === 0 ? (
+                  <div className="py-20 text-center px-8">
+                    <p className="text-4xl mb-3">🏟️</p>
+                    <p className="font-extrabold text-gray-700">No one here yet</p>
+                    <p className="text-sm text-gray-500 mt-1">Practice some questions to join the league!</p>
+                  </div>
+                ) : null}
                 {leagueData.members.map((m, idx) => (
                   <MemberRow
                     key={m.studentId}

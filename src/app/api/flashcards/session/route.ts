@@ -1,34 +1,33 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { computeSessionXP, getAchievedMilestone, getMilestoneProgress } from '@/lib/flashcardXP';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { validateBody, ValidationError } from '@/lib/validateBody';
 
 export const dynamic = 'force-dynamic';
 
 /**
  * POST /api/flashcards/session
- * Body: { studentId, mode, cardsReviewed, cardsCorrect, duration }
- *
- * Records a completed flashcard session.
+ * Body: { mode, cardsReviewed, cardsCorrect, duration }
  */
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { studentId, mode, cardsReviewed, cardsCorrect, duration } = body as {
-      studentId?: string;
-      mode?: string;
-      cardsReviewed?: number;
-      cardsCorrect?: number;
-      duration?: number;
-    };
+    const studentId = await getAuthenticatedStudentId();
+    if (!studentId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
-    if (!studentId || !mode || cardsReviewed == null) {
+    const body = validateBody<{ mode?: string; cardsReviewed?: number; cardsCorrect?: number; duration?: number; bonusXP?: number }>(
+      await req.json(),
+      { mode: 'string?', cardsReviewed: 'number?', cardsCorrect: 'number?', duration: 'number?' },
+    );
+    const { mode, cardsReviewed, cardsCorrect, duration } = body;
+
+    if (!mode || cardsReviewed == null) {
       return NextResponse.json(
-        { error: 'studentId, mode, and cardsReviewed required' },
+        { error: 'mode and cardsReviewed required' },
         { status: 400 },
       );
-    }
-    if (typeof studentId !== 'string' || studentId.length > 30) {
-      return NextResponse.json({ error: 'Invalid studentId' }, { status: 400 });
     }
     if (typeof mode !== 'string' || mode.length > 30) {
       return NextResponse.json({ error: 'Invalid mode' }, { status: 400 });
@@ -127,6 +126,9 @@ export async function POST(req: Request) {
       },
     });
   } catch (err) {
+    if (err instanceof ValidationError) {
+      return NextResponse.json({ error: err.message }, { status: 400 });
+    }
     console.error('[flashcards/session] Error:', err);
     return NextResponse.json({ error: 'Internal error' }, { status: 500 });
   }

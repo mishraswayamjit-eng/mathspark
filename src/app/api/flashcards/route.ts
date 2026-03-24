@@ -6,20 +6,19 @@ import {
 } from '@/data/flashcardData';
 import { getTopicColor } from '@/data/topicColors';
 import { getStreakMultiplier, getMilestoneProgress, getAchievedMilestone } from '@/lib/flashcardXP';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
 export const dynamic = 'force-dynamic';
 
-// GET /api/flashcards?studentId=xxx&grade=N
-// Returns deck list with stats for the flashcard selection screen.
+// GET /api/flashcards?grade=N
 export async function GET(req: Request) {
   try {
-    const { searchParams } = new URL(req.url);
-    const studentId = searchParams.get('studentId');
-    const grade = parseInt(searchParams.get('grade') ?? '4', 10);
-
+    const studentId = await getAuthenticatedStudentId();
     if (!studentId) {
-      return NextResponse.json({ error: 'studentId required' }, { status: 400 });
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
+    const { searchParams } = new URL(req.url);
+    const grade = parseInt(searchParams.get('grade') ?? '4', 10);
 
     const gradeCards = getFlashcardsForGrade(grade);
     const gradeCardIds = gradeCards.map((c) => c.id);

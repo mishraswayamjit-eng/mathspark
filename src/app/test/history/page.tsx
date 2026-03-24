@@ -44,11 +44,11 @@ export default function TestHistoryPage() {
   useEffect(() => {
     const id = localStorage.getItem('mathspark_student_id');
     if (!id) { router.replace('/start'); return; }
-    fetch(`/api/mock-tests/history?studentId=${id}`)
-      .then((r) => r.json())
+    fetch('/api/mock-tests/history')
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data: TestSummary[]) => { setTests(data); setLoading(false); })
       .catch(() => setLoading(false));
-  }, [router]);
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   const completed = tests.filter((t) => t.status === 'completed');
 
@@ -65,20 +65,20 @@ export default function TestHistoryPage() {
       {/* Header */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4">
         <button
-          onClick={() => router.back()}
+          onClick={() => window.history.length > 1 ? router.back() : router.push('/test')}
           className="text-white/60 text-sm font-semibold mb-2 flex items-center gap-1 hover:text-white transition-colors"
         >
           ← Back
         </button>
         <h1 className="text-xl font-extrabold text-white">Test History 📋</h1>
-        <p className="text-white/50 text-xs font-semibold mt-0.5">{completed.length} test{completed.length !== 1 ? 's' : ''} completed</p>
+        <p className="text-white/70 text-xs font-semibold mt-0.5">{completed.length} test{completed.length !== 1 ? 's' : ''} completed</p>
       </div>
 
       {/* Trend chart (≥ 2 completed tests) */}
       {completed.length >= 2 && (
         <div className="px-4 pt-4">
           <div className="bg-gray-50 rounded-2xl p-4">
-            <p className="text-xs font-extrabold text-gray-400 uppercase tracking-wide mb-3">Score Trend</p>
+            <p className="text-xs font-extrabold text-gray-500 uppercase tracking-wide mb-3">Score Trend</p>
             <div className="flex items-end gap-2 h-20">
               {completed.slice(-8).map((t, i) => {
                 const h = t.totalQuestions > 0 ? ((t.score ?? 0) / t.totalQuestions) * 100 : 0;
@@ -90,7 +90,7 @@ export default function TestHistoryPage() {
                       }`}
                       style={{ height: `${Math.max(4, h * 0.72)}px` }}
                     />
-                    <span className="text-[9px] text-gray-400 font-bold">{Math.round(h)}%</span>
+                    <span className="text-[10px] text-gray-500 font-bold">{Math.round(h)}%</span>
                   </div>
                 );
               })}
@@ -105,7 +105,7 @@ export default function TestHistoryPage() {
           <div className="text-center py-12">
             <p className="text-4xl mb-3">📋</p>
             <p className="font-extrabold text-gray-700">No tests yet</p>
-            <p className="text-gray-400 text-sm mt-1">Take your first mock test to see results here!</p>
+            <p className="text-gray-500 text-sm mt-1">Take your first mock test to see results here!</p>
           </div>
         )}
 
@@ -119,7 +119,7 @@ export default function TestHistoryPage() {
             >
               {/* Score circle */}
               <div className={`w-12 h-12 rounded-full flex items-center justify-center font-extrabold text-sm flex-shrink-0 ${
-                pct == null ? 'bg-gray-100 text-gray-400'  :
+                pct == null ? 'bg-gray-100 text-gray-500'  :
                 pct >= 80   ? 'bg-green-100 text-duo-green' :
                 pct >= 60   ? 'bg-amber-100 text-duo-orange' :
                               'bg-red-100 text-duo-red'
@@ -136,7 +136,7 @@ export default function TestHistoryPage() {
                     </span>
                   )}
                 </div>
-                <p className="text-xs text-gray-400 font-semibold">
+                <p className="text-xs text-gray-500 font-semibold">
                   {formatDate(t.startedAt)}
                   {isCompleted && t.score != null && ` · ${t.score}/${t.totalQuestions}`}
                 </p>

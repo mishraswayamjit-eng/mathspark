@@ -36,7 +36,7 @@ const TOPIC_META: Record<string, { emoji: string; color: string }> = {
   bodmas: { emoji: '🧮', color: '#EF4444' },
   patterns: { emoji: '🔄', color: '#8B5CF6' },
   average: { emoji: '📊', color: '#06B6D4' },
-  place_value: { emoji: '🏗️', color: '#22C55E' },
+  place_value: { emoji: '🏗️', color: '#58CC02' },
   squares: { emoji: '⬛', color: '#F97316' },
   money: { emoji: '💰', color: '#84CC16' },
   age: { emoji: '🎂', color: '#EC4899' },
@@ -46,7 +46,7 @@ const TOPIC_META: Record<string, { emoji: string; color: string }> = {
   time_calendar: { emoji: '🕐', color: '#F43F5E' },
   roman: { emoji: '🏛️', color: '#78716C' },
   sets: { emoji: '🔵', color: '#0EA5E9' },
-  data: { emoji: '📈', color: '#10B981' },
+  data: { emoji: '📈', color: '#58CC02' },
 };
 
 function getTopicMeta(topic: string): { emoji: string; color: string } {
@@ -76,12 +76,12 @@ export default function WorkedExamplesPage() {
     const qs = params.toString();
 
     fetch(`/api/worked-examples${qs ? `?${qs}` : ''}`)
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
         setExamples(data.examples ?? []);
         if (!selectedTopic && !selectedGrade) setTopics(data.topics ?? []);
       })
-      .catch(() => {})
+      .catch((err) => console.error('[fetch]', err))
       .finally(() => setLoading(false));
   }, [selectedTopic, selectedGrade]);
 
@@ -92,10 +92,10 @@ export default function WorkedExamplesPage() {
     <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
-        <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
+        <Link href="/chapters" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white font-extrabold text-lg">Sparky Explains</h1>
-          <p className="text-white/50 text-xs font-medium">212 worked examples with step-by-step solutions</p>
+          <p className="text-white/70 text-xs font-medium">212 worked examples with step-by-step solutions</p>
         </div>
         <span className="text-2xl">💡</span>
       </div>
@@ -212,7 +212,7 @@ export default function WorkedExamplesPage() {
                         >
                           {ex.topic.replace(/_/g, ' ')}
                         </span>
-                        <span className="text-[10px] font-bold text-gray-400">
+                        <span className="text-[10px] font-bold text-gray-500">
                           Grade {ex.grade}
                         </span>
                         <span
@@ -232,7 +232,7 @@ export default function WorkedExamplesPage() {
                       </p>
 
                       {/* Sub-topic */}
-                      <p className="text-xs text-gray-400 mt-1">{ex.subTopic}</p>
+                      <p className="text-xs text-gray-500 mt-1">{ex.subTopic}</p>
                     </div>
 
                     {/* Arrow */}

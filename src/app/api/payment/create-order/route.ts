@@ -4,6 +4,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { validateBody, ValidationError } from '@/lib/validateBody';
 
 // POST /api/payment/create-order
 // Body: { subscriptionId, studentId }
@@ -24,7 +25,10 @@ export async function POST(req: Request) {
   }
 
   try {
-    const { subscriptionId, studentId } = await req.json() as { subscriptionId: string; studentId: string };
+    const { subscriptionId, studentId } = validateBody<{ subscriptionId: string; studentId: string }>(
+      await req.json(),
+      { subscriptionId: 'string', studentId: 'string' },
+    );
     if (!subscriptionId || !studentId) {
       return NextResponse.json({ error: 'subscriptionId and studentId required.' }, { status: 400 });
     }
@@ -57,6 +61,9 @@ export async function POST(req: Request) {
       planName:   plan.name,
     });
   } catch (err) {
+    if (err instanceof ValidationError) {
+      return NextResponse.json({ error: err.message }, { status: 400 });
+    }
     console.error('[payment/create-order]', err);
     return NextResponse.json({ error: 'Failed to create payment order.' }, { status: 500 });
   }

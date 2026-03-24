@@ -16,7 +16,7 @@ export default function ChaptersError({
       <h2 className="text-xl font-extrabold text-gray-800 mb-2">
         Oops! Sparky tripped over a number!
       </h2>
-      <p className="text-gray-400 text-sm mb-6">Something went wrong. Let&apos;s try again!</p>
+      <p className="text-gray-500 text-sm mb-6">Something went wrong. Let&apos;s try again!</p>
       <button
         onClick={reset}
         className="bg-duo-green text-white font-extrabold rounded-2xl px-8 py-3"

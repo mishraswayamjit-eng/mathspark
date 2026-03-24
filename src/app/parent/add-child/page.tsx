@@ -43,8 +43,8 @@ export default function AddChildPage() {
     <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12">
       <div className="w-full max-w-sm">
         <button
-          onClick={() => router.back()}
-          className="text-white/50 text-sm font-semibold mb-6 flex items-center gap-1 hover:text-white transition-colors"
+          onClick={() => window.history.length > 1 ? router.back() : router.push('/parent/dashboard')}
+          className="text-white/70 text-sm font-semibold mb-6 flex items-center gap-1 hover:text-white transition-colors"
         >
           ← Back
         </button>
@@ -52,7 +52,7 @@ export default function AddChildPage() {
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">👦</div>
           <h1 className="text-2xl font-extrabold text-white">Add a child</h1>
-          <p className="text-white/50 text-sm mt-1">Create your child's learning profile</p>
+          <p className="text-white/70 text-sm mt-1">Create your child's learning profile</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -63,7 +63,7 @@ export default function AddChildPage() {
             <input
               type="text" placeholder="e.g. Arjun" required
               value={name} onChange={(e) => setName(e.target.value)}
-              className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-green"
+              className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
             />
           </div>
 
@@ -92,7 +92,7 @@ export default function AddChildPage() {
           </button>
         </form>
 
-        <p className="text-white/30 text-xs text-center mt-4">
+        <p className="text-white/70 text-xs text-center mt-4">
           After adding your child, subscribe to unlock full access.
         </p>
       </div>

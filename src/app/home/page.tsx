@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
@@ -46,7 +46,7 @@ interface HomeData {
 
 // ── Sub-components ────────────────────────────────────────────────────────────
 
-function ReadinessRing({ score, trend }: { score: number; trend: string }) {
+const ReadinessRing = React.memo(function ReadinessRing({ score, trend }: { score: number; trend: string }) {
   const r = 50;
   const circumference = 2 * Math.PI * r;
   const offset = circumference * (1 - score / 100);
@@ -75,9 +75,9 @@ function ReadinessRing({ score, trend }: { score: number; trend: string }) {
       </text>
     </svg>
   );
-}
+});
 
-function PlanItem({
+const PlanItem = React.memo(function PlanItem({
   item, onToggle,
 }: {
   item: DailyPlanItem;
@@ -95,26 +95,26 @@ function PlanItem({
       >
         {item.done && '✓'}
       </div>
-      <span className="text-lg shrink-0">{typeIcon}</span>
+      <span className="text-lg shrink-0" aria-hidden="true">{typeIcon}</span>
       <div className="flex-1 min-w-0">
-        <p className={`text-sm font-bold truncate ${item.done ? 'line-through text-gray-400' : 'text-gray-800'}`}>
+        <p className={`text-sm font-bold truncate ${item.done ? 'line-through text-gray-500' : 'text-gray-800'}`}>
           {item.action}
         </p>
-        <p className="text-xs text-gray-400 font-medium truncate">{item.reason}</p>
+        <p className="text-xs text-gray-500 font-medium truncate">{item.reason}</p>
       </div>
-      <span className="text-[10px] font-extrabold text-gray-400 bg-gray-100 rounded-full px-2 py-0.5 shrink-0">
+      <span className="text-[10px] font-extrabold text-gray-500 bg-gray-100 rounded-full px-2 py-0.5 shrink-0">
         {item.estimatedMins}min
       </span>
     </Link>
   );
-}
+});
 
-function TopicBar({ entry }: { entry: TopicMasteryEntry }) {
+const TopicBar = React.memo(function TopicBar({ entry }: { entry: TopicMasteryEntry }) {
   const pct = Math.round(entry.mastery * 100);
   const barColor = pct >= 70 ? '#58CC02' : pct >= 40 ? '#FF9600' : pct > 0 ? '#FF4B4B' : '#e5e7eb';
   return (
     <div className="flex items-center gap-3 py-1.5">
-      <span className="text-base shrink-0 w-6 text-center">{entry.emoji}</span>
+      <span className="text-base shrink-0 w-6 text-center" aria-hidden="true">{entry.emoji}</span>
       <span className="text-xs font-semibold text-gray-700 w-28 truncate">{entry.topicName}</span>
       <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
         <div
@@ -122,12 +122,12 @@ function TopicBar({ entry }: { entry: TopicMasteryEntry }) {
           style={{ width: `${pct}%`, backgroundColor: barColor }}
         />
       </div>
-      <span className="text-[11px] font-extrabold w-9 text-right" style={{ color: barColor }}>
+      <span className="text-xs font-extrabold w-9 text-right" style={{ color: barColor }}>
         {pct}%
       </span>
     </div>
   );
-}
+});
 
 
 // ── Page ──────────────────────────────────────────────────────────────────────
@@ -169,8 +169,8 @@ export default function HomePage() {
     } catch { /* ignore parse errors */ }
 
     // Cache miss — fetch from API
-    fetch(`/api/home?studentId=${id}`)
-      .then((r) => r.json())
+    fetch('/api/home')
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d: HomeData) => {
         setData(d);
         // Only cache if analytics are populated (avoid caching empty first-load state)
@@ -181,23 +181,53 @@ export default function HomePage() {
           } catch { /* ignore storage errors */ }
         }
       })
-      .catch(() => {})
+      .catch((err) => console.error('[fetch]', err))
       .finally(() => setLoading(false));
-  }, [router]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  function togglePlanItem(id: string) {
+  const togglePlanItem = useCallback((id: string) => {
     const todayKey = `mathspark_plan_done_${new Date().toDateString()}`;
-    const next = new Set(planDone);
-    if (next.has(id)) next.delete(id); else next.add(id);
-    setPlanDone(next);
-    localStorage.setItem(todayKey, JSON.stringify(Array.from(next)));
-  }
+    setPlanDone((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      localStorage.setItem(todayKey, JSON.stringify(Array.from(next)));
+      return next;
+    });
+  }, []);
 
   function dismissNudge() {
     const dismissedKey = `dismissed_nudge_${new Date().toDateString()}`;
     localStorage.setItem(dismissedKey, 'true');
     setNudgeDismissed(true);
   }
+
+  // Today's plan with done state applied
+  const planWithDone = useMemo(
+    () => (data?.dailyPlan ?? []).map((item) => ({ ...item, done: planDone.has(item.id) })),
+    [data?.dailyPlan, planDone],
+  );
+  const planDoneCount = useMemo(
+    () => planWithDone.filter((i) => i.done).length,
+    [planWithDone],
+  );
+  const allDone = planDoneCount >= planWithDone.length && planWithDone.length > 0;
+
+  // Top mastery entries with attempts (for chart)
+  const chartTopics = useMemo(
+    () => [...(data?.topicMastery ?? [])]
+      .filter((t) => t.attemptsCount > 0)
+      .sort((a, b) => b.mastery - a.mastery)
+      .slice(0, 5),
+    [data?.topicMastery],
+  );
+
+  const weakest2 = useMemo(
+    () => [...(data?.topicMastery ?? [])]
+      .filter((t) => t.attemptsCount > 0)
+      .slice(0, 2),
+    [data?.topicMastery],
+  );
 
   if (loading || !data) {
     return (
@@ -273,21 +303,6 @@ export default function HomePage() {
   const hour = new Date().getHours();
   const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
 
-  // Today's plan with done state applied
-  const planWithDone = dailyPlan.map((item) => ({ ...item, done: planDone.has(item.id) }));
-  const planDoneCount = planWithDone.filter((i) => i.done).length;
-  const allDone = planDoneCount >= planWithDone.length && planWithDone.length > 0;
-
-  // Top mastery entries with attempts (for chart)
-  const chartTopics = [...topicMastery]
-    .filter((t) => t.attemptsCount > 0)
-    .sort((a, b) => b.mastery - a.mastery)
-    .slice(0, 5);
-
-  const weakest2 = [...topicMastery]
-    .filter((t) => t.attemptsCount > 0)
-    .slice(0, 2);
-
   const activeNudge = nudges[0];
   const topPriorityUrl = topicPriorities[0]?.dbTopicId
     ? `/practice/${topicPriorities[0].dbTopicId}`
@@ -316,7 +331,7 @@ export default function HomePage() {
             {student.name[0]?.toUpperCase() ?? '?'}
           </div>
           {streak > 0 && (
-            <span className="text-orange-400 text-sm font-extrabold">🔥{streak}</span>
+            <span className="text-orange-400 text-sm font-extrabold"><span aria-hidden="true">🔥</span>{streak}</span>
           )}
         </div>
       </div>
@@ -326,9 +341,9 @@ export default function HomePage() {
         {/* ── GREETING + TRIAL BANNER ────────────────────────────────── */}
         <div>
           <h1 className="text-xl font-extrabold text-gray-800">
-            {greeting}, {student.name}! 🌟
+            {greeting}, {student.name}! <span aria-hidden="true">🌟</span>
           </h1>
-          <p className="text-gray-400 text-sm font-medium mt-0.5">
+          <p className="text-gray-500 text-sm font-medium mt-0.5">
             {todayCorrect > 0 ? `${todayCorrect} correct today · ` : ''}Ready to practice?
           </p>
         </div>
@@ -336,7 +351,7 @@ export default function HomePage() {
         {student.trialActive && student.trialDaysLeft !== null && (
           <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-2.5 flex items-center justify-between">
             <div>
-              <p className="text-amber-800 font-extrabold text-sm">🎉 Pro Trial Active</p>
+              <p className="text-amber-800 font-extrabold text-sm"><span aria-hidden="true">🎉 </span>Pro Trial Active</p>
               <p className="text-amber-600 text-xs font-medium">{student.trialDaysLeft} days left</p>
             </div>
             <Link href="/pricing" className="text-xs font-extrabold text-duo-orange bg-amber-100 rounded-full px-3 py-1.5">
@@ -352,7 +367,7 @@ export default function HomePage() {
             className="block bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-4 border border-blue-200 shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="flex items-center gap-3">
-              <span className="text-2xl">{topicPriorities[0].emoji}</span>
+              <span className="text-2xl" aria-hidden="true">{topicPriorities[0].emoji}</span>
               <div className="flex-1 min-w-0">
                 <p className="font-extrabold text-gray-800 text-sm">Continue Learning</p>
                 <p className="text-xs text-gray-500 font-medium truncate">
@@ -379,7 +394,7 @@ export default function HomePage() {
                   </svg>
                   <div className="flex-1 space-y-1.5">
                     <p className="font-extrabold text-gray-800 text-base leading-tight">Exam Readiness</p>
-                    <p className="text-sm font-medium text-gray-400">Answer questions to unlock your readiness score!</p>
+                    <p className="text-sm font-medium text-gray-500">Answer questions to unlock your readiness score!</p>
                     <span className="inline-block text-xs font-extrabold text-white bg-duo-green rounded-full px-3 py-1.5">
                       Start Practicing →
                     </span>
@@ -418,7 +433,7 @@ export default function HomePage() {
         <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
           <div className="flex items-center justify-between mb-1">
             <h2 className="font-extrabold text-gray-800 text-sm">Today&apos;s Plan</h2>
-            <span className="text-xs font-bold text-gray-400">
+            <span className="text-xs font-bold text-gray-500">
               {planDoneCount}/{planWithDone.length} done
             </span>
           </div>
@@ -428,11 +443,11 @@ export default function HomePage() {
               <div className="animate-sparky-dance">
                 <Sparky mood="celebrating" size={60} />
               </div>
-              <p className="text-duo-green font-extrabold text-sm">🌟 All done today!</p>
+              <p className="text-duo-green font-extrabold text-sm"><span aria-hidden="true">🌟 </span>All done today!</p>
             </div>
           ) : planWithDone.length === 0 ? (
             <div className="py-4 text-center">
-              <p className="text-gray-400 text-sm font-medium">Start practicing to build your plan!</p>
+              <p className="text-gray-500 text-sm font-medium">Start practicing to build your plan!</p>
               <Link href="/chapters" className="text-duo-blue font-extrabold text-sm mt-1 block">
                 Go to Learn →
               </Link>
@@ -451,14 +466,14 @@ export default function HomePage() {
           className="block bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-4 border border-orange-200 shadow-sm hover:shadow-md transition-shadow"
         >
           <div className="flex items-center gap-3">
-            <span className="text-3xl">🎯</span>
+            <span className="text-3xl" aria-hidden="true">🎯</span>
             <div className="flex-1 min-w-0">
               <p className="font-extrabold text-gray-800 text-sm">Daily Challenge</p>
               <p className="text-xs text-gray-500 font-medium">5 questions · Build your streak!</p>
             </div>
             {streak > 0 && (
               <div className="flex items-center gap-1 bg-orange-100 rounded-full px-2.5 py-1 border border-orange-200">
-                <span className="text-sm">🔥</span>
+                <span className="text-sm" aria-hidden="true">🔥</span>
                 <span className="text-xs font-extrabold text-orange-600">{streak}</span>
               </div>
             )}
@@ -479,9 +494,9 @@ export default function HomePage() {
             <Link key={action.label} href={action.href}
               className={`${action.bg} rounded-2xl p-3 flex flex-col items-center gap-1 border border-white shadow-sm active:scale-95 transition-transform`}
             >
-              <span className="text-2xl">{action.emoji}</span>
+              <span className="text-2xl" aria-hidden="true">{action.emoji}</span>
               <p className="text-xs font-extrabold text-gray-700 text-center leading-tight">{action.label}</p>
-              <p className="text-[10px] text-gray-400 font-semibold">{action.sub}</p>
+              <p className="text-[10px] text-gray-500 font-semibold">{action.sub}</p>
             </Link>
           ))}
         </div>
@@ -491,12 +506,12 @@ export default function HomePage() {
           className="block bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 border border-green-200 shadow-sm hover:shadow-md transition-shadow"
         >
           <div className="flex items-center gap-3">
-            <span className="text-2xl">📊</span>
+            <span className="text-2xl" aria-hidden="true">📊</span>
             <div className="flex-1">
               <p className="font-extrabold text-gray-800 text-sm">My Progress</p>
               <p className="text-xs text-gray-500 font-medium">Dashboard, strengths, mistakes & parent report</p>
             </div>
-            <span className="text-green-600 font-extrabold text-xs shrink-0">View →</span>
+            <span className="text-duo-green font-extrabold text-xs shrink-0">View →</span>
           </div>
         </Link>
 
@@ -505,29 +520,29 @@ export default function HomePage() {
           <Link href="/learn/strategies"
             className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-3 border border-amber-200 shadow-sm hover:shadow-md transition-shadow"
           >
-            <span className="text-xl">🧠</span>
-            <p className="font-extrabold text-gray-800 text-[11px] mt-1.5 leading-tight">Strategy Bank</p>
+            <span className="text-xl" aria-hidden="true">🧠</span>
+            <p className="font-extrabold text-gray-800 text-xs mt-1.5 leading-tight">Strategy Bank</p>
             <p className="text-[10px] text-gray-500 font-medium">35 exam tips</p>
           </Link>
           <Link href="/learn/stories"
             className="bg-gradient-to-br from-cyan-50 to-sky-50 rounded-2xl p-3 border border-cyan-200 shadow-sm hover:shadow-md transition-shadow"
           >
-            <span className="text-xl">📖</span>
-            <p className="font-extrabold text-gray-800 text-[11px] mt-1.5 leading-tight">Math Stories</p>
+            <span className="text-xl" aria-hidden="true">📖</span>
+            <p className="font-extrabold text-gray-800 text-xs mt-1.5 leading-tight">Math Stories</p>
             <p className="text-[10px] text-gray-500 font-medium">30 real-world stories</p>
           </Link>
           <Link href="/learn/concept-map"
             className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-3 border border-violet-200 shadow-sm hover:shadow-md transition-shadow"
           >
-            <span className="text-xl">🗺️</span>
-            <p className="font-extrabold text-gray-800 text-[11px] mt-1.5 leading-tight">Concept Map</p>
+            <span className="text-xl" aria-hidden="true">🗺️</span>
+            <p className="font-extrabold text-gray-800 text-xs mt-1.5 leading-tight">Concept Map</p>
             <p className="text-[10px] text-gray-500 font-medium">88 concepts</p>
           </Link>
           <Link href="/learn/mistakes"
             className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-3 border border-red-200 shadow-sm hover:shadow-md transition-shadow"
           >
-            <span className="text-xl">🚨</span>
-            <p className="font-extrabold text-gray-800 text-[11px] mt-1.5 leading-tight">Mistake Patterns</p>
+            <span className="text-xl" aria-hidden="true">🚨</span>
+            <p className="font-extrabold text-gray-800 text-xs mt-1.5 leading-tight">Mistake Patterns</p>
             <p className="text-[10px] text-gray-500 font-medium">50 common traps</p>
           </Link>
         </div>
@@ -565,7 +580,7 @@ export default function HomePage() {
 
           {chartTopics.length === 0 ? (
             <div className="py-3 text-center">
-              <p className="text-gray-400 text-sm font-medium">No practice yet. Start learning!</p>
+              <p className="text-gray-500 text-sm font-medium">No practice yet. Start learning!</p>
               <Link href="/chapters" className="text-duo-blue font-extrabold text-sm mt-1 block">
                 Browse Topics →
               </Link>
@@ -594,12 +609,12 @@ export default function HomePage() {
             <div className="space-y-2.5">
               {recentActivity.map((act, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center text-sm shrink-0">
+                  <div className="w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center text-sm shrink-0" aria-hidden="true">
                     📚
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-bold text-gray-700 truncate">{act.topicName}</p>
-                    <p className="text-xs text-gray-400 font-medium">{act.correct}/{act.attempted} correct</p>
+                    <p className="text-xs text-gray-500 font-medium">{act.correct}/{act.attempted} correct</p>
                   </div>
                   <div className="text-right">
                     <p className="text-sm font-extrabold"
@@ -617,7 +632,7 @@ export default function HomePage() {
         {/* ── TOP RECOMMENDATIONS ────────────────────────────────────── */}
         {topicPriorities.slice(0, 2).length > 0 && (
           <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
-            <h2 className="font-extrabold text-gray-800 text-sm mb-3">🎯 Recommended for You</h2>
+            <h2 className="font-extrabold text-gray-800 text-sm mb-3"><span aria-hidden="true">🎯 </span>Recommended for You</h2>
             <div className="space-y-2">
               {topicPriorities.slice(0, 2).map((tp) => (
                 <Link
@@ -625,10 +640,10 @@ export default function HomePage() {
                   href={`/practice/${tp.dbTopicId}`}
                   className="flex items-center gap-3 bg-[#1a2d35] rounded-xl px-3 py-3 border-l-4 border-duo-green hover:bg-[#223d4a] transition-colors"
                 >
-                  <span className="text-xl shrink-0">{tp.emoji}</span>
+                  <span className="text-xl shrink-0" aria-hidden="true">{tp.emoji}</span>
                   <div className="flex-1 min-w-0">
                     <p className="text-white font-extrabold text-sm truncate">{tp.topicName}</p>
-                    <p className="text-white/50 text-xs font-medium truncate">{tp.reason}</p>
+                    <p className="text-white/70 text-xs font-medium truncate">{tp.reason}</p>
                   </div>
                   <span className="text-duo-green text-xs font-extrabold shrink-0">Practice →</span>
                 </Link>

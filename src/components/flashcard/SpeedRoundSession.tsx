@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { useFlashcardDeck } from '@/hooks/useFlashcardDeck';
 import dynamic from 'next/dynamic';
 import ProgressDots from './ProgressDots';
 import Confetti from '@/components/Confetti';
@@ -78,19 +79,19 @@ function SpeedComplete({
       <div className="grid grid-cols-4 gap-2 w-full max-w-sm mb-6">
         <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
           <p className="text-lg font-black text-[#F1F5F9] tabular-nums">{answered}</p>
-          <p className="text-[9px] text-[#64748B] uppercase tracking-wider">Answered</p>
+          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Answered</p>
         </div>
         <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
           <p className="text-lg font-black text-[#34D399] tabular-nums">{pct}%</p>
-          <p className="text-[9px] text-[#64748B] uppercase tracking-wider">Accuracy</p>
+          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Accuracy</p>
         </div>
         <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
           <p className="text-lg font-black text-[#FBBF24] tabular-nums">🔥{maxStreak}</p>
-          <p className="text-[9px] text-[#64748B] uppercase tracking-wider">Streak</p>
+          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Streak</p>
         </div>
         <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
           <p className="text-lg font-black text-[#A78BFA] tabular-nums">{speed}</p>
-          <p className="text-[9px] text-[#64748B] uppercase tracking-wider">/sec</p>
+          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">/sec</p>
         </div>
       </div>
 
@@ -122,6 +123,7 @@ interface SpeedRoundSessionProps {
 
 export default function SpeedRoundSession({ deckId }: SpeedRoundSessionProps) {
   const router = useRouter();
+  const { fetchDeck } = useFlashcardDeck(deckId, { limit: 40 });
   const { playCorrect, playWrong, playStreak, playMastery } = useSounds();
 
   const [phase, setPhase] = useState<Phase>('loading');
@@ -153,24 +155,21 @@ export default function SpeedRoundSession({ deckId }: SpeedRoundSessionProps) {
   // ── Load deck ──────────────────────────────────────────────────────────────
 
   const loadDeck = useCallback(() => {
-    const sid = localStorage.getItem('mathspark_student_id');
     const grade = localStorage.getItem('mathspark_student_grade') || '4';
-    if (!sid) { router.replace('/start'); return; }
 
-    fetch(`/api/flashcards/deck?studentId=${sid}&grade=${grade}&deck=${encodeURIComponent(deckId)}&limit=40`)
-      .then((r) => r.json())
+    fetchDeck()
       .then((data) => {
-        if (data.cards && data.cards.length > 0) {
+        if (!data || data.cards.length === 0) {
+          setPhase('complete');
+        } else {
           const gradeNum = parseInt(grade, 10);
           const qs = generateQuizQuestions(data.cards as CardWithProgress[], gradeNum);
           setQuestions(qs);
           setPhase('countdown');
-        } else {
-          setPhase('complete');
         }
       })
       .catch(() => router.replace('/flashcards'));
-  }, [router, deckId]);
+  }, [fetchDeck, router]);
 
   useEffect(() => { loadDeck(); }, [loadDeck]);
 
@@ -225,20 +224,19 @@ export default function SpeedRoundSession({ deckId }: SpeedRoundSessionProps) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        studentId: sid,
         mode: 'speed',
         cardsReviewed: answered,
         cardsCorrect: correctCount,
         duration: 60,
       }),
     })
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
         if (data.ok && data.xp) {
           setSessionXP({ total: data.xp.total, streakMultiplier: data.xp.streakMultiplier, streakBonus: data.xp.streakBonus });
         }
       })
-      .catch(() => {});
+      .catch((err) => console.error('[fetch]', err));
   }, [phase, answered, correctCount, playMastery]);
 
   // ── Handle answer ──────────────────────────────────────────────────────────
@@ -261,8 +259,8 @@ export default function SpeedRoundSession({ deckId }: SpeedRoundSessionProps) {
         fetch('/api/flashcards/progress', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ studentId: sid, cardId: q.cardId, correct }),
-        }).catch(() => {});
+          body: JSON.stringify({ cardId: q.cardId, correct }),
+        }).catch((err) => console.error('[fetch]', err));
       }
 
       if (correct) {
@@ -377,7 +375,7 @@ export default function SpeedRoundSession({ deckId }: SpeedRoundSessionProps) {
 
   // Screen flash overlay
   const flashOverlay = flashColor === 'green'
-    ? 'bg-emerald-500/10'
+    ? 'bg-duo-green/10'
     : flashColor === 'red'
     ? 'bg-red-500/10'
     : '';

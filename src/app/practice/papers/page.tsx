@@ -42,14 +42,14 @@ export default function PaperSelectionPage() {
     fetch('/api/student')
       .then((r) => r.ok ? r.json() : null)
       .then((s) => { if (s?.grade) setGrade(s.grade); })
-      .catch(() => {});
+      .catch((err) => console.error('[fetch]', err));
   }, []);
 
   // Load papers for selected grade
   useEffect(() => {
     setLoading(true);
     fetch(`/api/papers?grade=${grade}`)
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d) => setPapers(d.papers ?? []))
       .catch(() => setPapers([]))
       .finally(() => setLoading(false));
@@ -65,7 +65,7 @@ export default function PaperSelectionPage() {
         <div className="max-w-lg mx-auto flex items-center justify-between">
           <div>
             <h1 className="text-white font-extrabold text-lg">Exam Papers</h1>
-            <p className="text-white/50 text-xs font-medium">240 pre-built practice papers</p>
+            <p className="text-white/70 text-xs font-medium">240 pre-built practice papers</p>
           </div>
           <Link
             href="/home"
@@ -114,7 +114,7 @@ export default function PaperSelectionPage() {
               >
                 <span className="text-2xl block">{d.emoji}</span>
                 <p className="text-xs font-extrabold text-gray-800 mt-1">{d.desc}</p>
-                <p className="text-[10px] text-gray-400 font-semibold">{d.label}</p>
+                <p className="text-[10px] text-gray-500 font-semibold">{d.label}</p>
               </button>
             ))}
           </div>
@@ -124,7 +124,7 @@ export default function PaperSelectionPage() {
         {loading ? (
           <div className="flex flex-col items-center py-12 gap-3">
             <Sparky mood="thinking" size={56} />
-            <p className="text-sm text-gray-400 font-bold animate-pulse">Loading papers...</p>
+            <p className="text-sm text-gray-500 font-bold animate-pulse">Loading papers...</p>
           </div>
         ) : filtered.length === 0 ? (
           <div className="flex flex-col items-center py-12 gap-3">
@@ -133,7 +133,7 @@ export default function PaperSelectionPage() {
           </div>
         ) : (
           <div className="space-y-3">
-            <p className="text-xs font-bold text-gray-400">
+            <p className="text-xs font-bold text-gray-500">
               {filtered.length} {filtered.length === 1 ? 'paper' : 'papers'} available
             </p>
             {filtered.map((paper) => (
@@ -152,15 +152,15 @@ export default function PaperSelectionPage() {
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-extrabold text-gray-800 truncate">{paper.title}</p>
                     <div className="flex items-center gap-2 mt-1">
-                      <span className="text-[10px] font-bold text-gray-400">
+                      <span className="text-[10px] font-bold text-gray-500">
                         {paper.totalQuestions} Qs
                       </span>
                       <span className="text-gray-300">·</span>
-                      <span className="text-[10px] font-bold text-gray-400">
+                      <span className="text-[10px] font-bold text-gray-500">
                         {paper.duration} min
                       </span>
                       <span className="text-gray-300">·</span>
-                      <span className="text-[10px] font-bold text-gray-400">
+                      <span className="text-[10px] font-bold text-gray-500">
                         {paper.totalMarks} marks
                       </span>
                     </div>
@@ -189,13 +189,13 @@ export default function PaperSelectionPage() {
 
         {/* Legend */}
         <div className="flex items-center gap-4 justify-center pt-2">
-          <span className="flex items-center gap-1 text-[10px] font-bold text-gray-400">
+          <span className="flex items-center gap-1 text-[10px] font-bold text-gray-500">
             <span className="w-2 h-2 rounded-full bg-duo-green" /> Easy
           </span>
-          <span className="flex items-center gap-1 text-[10px] font-bold text-gray-400">
+          <span className="flex items-center gap-1 text-[10px] font-bold text-gray-500">
             <span className="w-2 h-2 rounded-full bg-duo-orange" /> Medium
           </span>
-          <span className="flex items-center gap-1 text-[10px] font-bold text-gray-400">
+          <span className="flex items-center gap-1 text-[10px] font-bold text-gray-500">
             <span className="w-2 h-2 rounded-full bg-duo-red" /> Hard
           </span>
         </div>

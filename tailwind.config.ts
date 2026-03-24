@@ -1,5 +1,10 @@
 import type { Config } from 'tailwindcss';
 
+// Theme convention:
+// - Light mode (bg-gray-50/bg-white): home, chapters, learn/*, leaderboard, profile, progress
+// - Dark mode (bg-[#0F172A]): flashcards, flashcard sessions
+// - Dark header (bg-duo-dark) + light body: all pages use duo-dark sticky header
+
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',

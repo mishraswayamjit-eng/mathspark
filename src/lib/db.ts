@@ -16,6 +16,10 @@ if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
  * (empty correctAnswer or empty options). Spread into any Question.findMany().
  */
 export const USABLE_QUESTION_FILTER = {
+  questionText:  { not: '' },
   correctAnswer: { not: '' },
   option1:       { not: '' },
+  option2:       { not: '' },
+  option3:       { not: '' },
+  option4:       { not: '' },
 };

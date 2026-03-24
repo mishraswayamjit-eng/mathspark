@@ -55,14 +55,14 @@ function SimpleView({
         </div>
 
         {/* Question (dimmed) */}
-        <p className="text-sm text-gray-400 font-medium mb-4 leading-snug">{question.questionText}</p>
+        <p className="text-sm text-gray-500 font-medium mb-4 leading-snug">{question.questionText}</p>
 
         {/* Correct answer */}
         <div
           className="bg-green-50 border border-green-200 rounded-2xl px-4 py-3 mb-3"
           style={{ animation: 'answer-celebrate 0.6s ease-out' }}
         >
-          <p className="text-xs font-extrabold text-green-600 uppercase tracking-wide mb-1">✅ Correct answer</p>
+          <p className="text-xs font-extrabold text-duo-green uppercase tracking-wide mb-1">✅ Correct answer</p>
           <p className="font-extrabold text-gray-800">{question.correctAnswer}: {correctText}</p>
         </div>
 
@@ -120,13 +120,13 @@ function StepSlide({
     >
       {/* Step 1: show dimmed question text */}
       {isFirst && (
-        <p className="text-sm text-gray-400 font-medium mb-3 leading-snug" style={{ opacity: 0.65 }}>
+        <p className="text-sm text-gray-500 font-medium mb-3 leading-snug" style={{ opacity: 0.65 }}>
           📋 {question.questionText}
         </p>
       )}
 
       {/* Step label */}
-      <p className="text-[11px] font-extrabold text-gray-400 uppercase tracking-widest mb-2">
+      <p className="text-xs font-extrabold text-gray-500 uppercase tracking-widest mb-2">
         Step {stepIndex + 1} of {totalSteps}
       </p>
 
@@ -167,7 +167,7 @@ function StepSlide({
           className="mt-4 bg-green-50 border border-green-200 rounded-2xl px-4 py-3"
           style={{ animation: 'answer-celebrate 0.6s ease-out 0.3s both' }}
         >
-          <p className="text-xs font-extrabold text-green-600 uppercase tracking-wide mb-1">✅ The answer is</p>
+          <p className="text-xs font-extrabold text-duo-green uppercase tracking-wide mb-1">✅ The answer is</p>
           <p className="font-extrabold text-gray-800 text-base">{question.correctAnswer}: {correctText}</p>
 
           {wasWrong && studentAnswer && (
@@ -284,7 +284,7 @@ function WalkthroughPlayer({
         {/* ── Header ── */}
         <div className="flex items-center justify-between px-5 pt-5 pb-2">
           <div>
-            <p className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest">🎬 Watch Solution</p>
+            <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest">🎬 Watch Solution</p>
             <p className="text-sm font-bold text-gray-700 mt-0.5">{question.subTopic}</p>
           </div>
           <button

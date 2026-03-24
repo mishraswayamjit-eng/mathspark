@@ -53,7 +53,7 @@ function QuestionNavigator({
       >
         <div className="flex items-center justify-between mb-4">
           <h3 className="font-extrabold text-gray-800 text-lg">Question Navigator</h3>
-          <button onClick={onClose} className="text-gray-400 text-2xl leading-none min-w-[44px] min-h-[44px] flex items-center justify-center">×</button>
+          <button onClick={onClose} className="text-gray-500 text-2xl leading-none min-w-[44px] min-h-[44px] flex items-center justify-center">×</button>
         </div>
 
         {/* Legend */}
@@ -191,7 +191,7 @@ export default function TestEnginePage() {
     async function load() {
       try {
         const sid = localStorage.getItem('mathspark_student_id') ?? '';
-        const res = await fetch(`/api/mock-tests/${testId}?studentId=${encodeURIComponent(sid)}`);
+        const res = await fetch(`/api/mock-tests/${testId}`);
         if (!res.ok) { router.replace('/test'); return; }
         const data: MockTestDetail = await res.json();
         if (data.status === 'completed') {
@@ -330,7 +330,7 @@ export default function TestEnginePage() {
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center space-y-3">
           <div className="w-12 h-12 border-4 border-duo-blue/30 border-t-duo-blue rounded-full animate-spin mx-auto" />
-          <p className="text-gray-400 font-semibold">Loading your test…</p>
+          <p className="text-gray-500 font-semibold">Loading your test…</p>
         </div>
       </div>
     );
@@ -365,7 +365,7 @@ export default function TestEnginePage() {
         {/* Back / quit */}
         <button
           onClick={() => setShowQuitModal(true)}
-          className="text-gray-400 text-xl leading-none mr-1 flex-shrink-0"
+          className="text-gray-500 text-xl leading-none mr-1 flex-shrink-0"
         >
           ←
         </button>
@@ -404,14 +404,14 @@ export default function TestEnginePage() {
             <span className="text-xs font-extrabold text-white bg-duo-blue rounded-full px-3 py-1">
               Q{currentNum}
             </span>
-            <span className="text-xs text-gray-400 font-semibold">{currentQuestion.difficulty}</span>
+            <span className="text-xs text-gray-500 font-semibold">{currentQuestion.difficulty}</span>
           </div>
           <button
             onClick={() => toggleFlag(currentNum)}
             className={`flex items-center gap-1 text-xs font-extrabold px-3 py-1 rounded-full border-2 transition-colors ${
               currentResponse.flagged
                 ? 'bg-duo-orange border-duo-orange text-white'
-                : 'border-gray-200 text-gray-400 hover:border-duo-orange hover:text-duo-orange'
+                : 'border-gray-200 text-gray-500 hover:border-duo-orange hover:text-duo-orange'
             }`}
           >
             🚩 {currentResponse.flagged ? 'Flagged' : 'Flag'}

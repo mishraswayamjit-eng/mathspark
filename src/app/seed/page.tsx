@@ -136,7 +136,7 @@ export default function SeedPage() {
           <span className="text-3xl">🌱</span>
           <div>
             <p className="font-bold text-gray-800">Seed Questions</p>
-            <p className="text-xs text-gray-400">Loads all ~12,500 questions (Grades 2–9) into the database</p>
+            <p className="text-xs text-gray-500">Loads all ~12,500 questions (Grades 2–9) into the database</p>
           </div>
         </div>
 
@@ -156,7 +156,7 @@ export default function SeedPage() {
             {message && <p className="text-sm text-red-500">{message}</p>}
             <button
               onClick={runSeed}
-              className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3.5 rounded-2xl transition-colors"
+              className="w-full bg-duo-green hover:bg-green-600 text-white font-bold py-3.5 rounded-2xl transition-colors"
             >
               Start Seeding →
             </button>
@@ -165,7 +165,7 @@ export default function SeedPage() {
           <>
             <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
               <div
-                className="bg-green-500 h-3 rounded-full transition-[width] duration-300"
+                className="bg-duo-green h-3 rounded-full transition-[width] duration-300"
                 style={{ width: `${pct}%` }}
               />
             </div>
@@ -188,7 +188,7 @@ export default function SeedPage() {
             </div>
             <button
               onClick={() => { setStatus('idle'); setMessage(''); setSkipped(0); }}
-              className="w-full text-xs text-gray-400 hover:text-gray-600 py-1"
+              className="w-full text-xs text-gray-500 hover:text-gray-600 py-1"
             >
               Re-seed (safe to run again)
             </button>
@@ -202,7 +202,7 @@ export default function SeedPage() {
           <span className="text-3xl">👨‍👩‍👧‍👦</span>
           <div>
             <p className="font-bold text-gray-800">Load Test Users</p>
-            <p className="text-xs text-gray-400">10 families · 18 students (Gr 2–9) · subscriptions, orders, progress &amp; streaks</p>
+            <p className="text-xs text-gray-500">10 families · 18 students (Gr 2–9) · subscriptions, orders, progress &amp; streaks</p>
           </div>
         </div>
 
@@ -250,7 +250,7 @@ export default function SeedPage() {
             </div>
             <button
               onClick={() => { setTestStatus('idle'); setTestMessage(''); }}
-              className="w-full text-xs text-gray-400 hover:text-gray-600 py-1"
+              className="w-full text-xs text-gray-500 hover:text-gray-600 py-1"
             >
               Re-load (safe to run again)
             </button>
@@ -264,7 +264,7 @@ export default function SeedPage() {
           <span className="text-3xl">🔍</span>
           <div>
             <p className="font-bold text-gray-800">Verify Database</p>
-            <p className="text-xs text-gray-400">Check question counts per topic to confirm seed is complete</p>
+            <p className="text-xs text-gray-500">Check question counts per topic to confirm seed is complete</p>
           </div>
         </div>
 
@@ -319,7 +319,7 @@ export default function SeedPage() {
 
             <button
               onClick={() => { setVerifyStatus('idle'); setVerifyData(null); }}
-              className="w-full text-xs text-gray-400 hover:text-gray-600 py-1"
+              className="w-full text-xs text-gray-500 hover:text-gray-600 py-1"
             >
               Refresh
             </button>
@@ -333,7 +333,7 @@ export default function SeedPage() {
           <span className="text-3xl">🏷️</span>
           <div>
             <p className="font-bold text-gray-800">Fix SubTopics</p>
-            <p className="text-xs text-gray-400">Re-tags question subtopics in DB to match curriculum lessons (Grades 2–9)</p>
+            <p className="text-xs text-gray-500">Re-tags question subtopics in DB to match curriculum lessons (Grades 2–9)</p>
           </div>
         </div>
 
@@ -443,7 +443,7 @@ export default function SeedPage() {
 
             <button
               onClick={() => { setFixStatus('idle'); setFixMessage(''); setFixReport(null); }}
-              className="w-full text-xs text-gray-400 hover:text-gray-600 py-1"
+              className="w-full text-xs text-gray-500 hover:text-gray-600 py-1"
             >
               Run again
             </button>
@@ -451,7 +451,7 @@ export default function SeedPage() {
         )}
       </div>
 
-      <p className="text-xs text-gray-400 text-center pb-4">
+      <p className="text-xs text-gray-500 text-center pb-4">
         All operations use upsert — safe to run multiple times.
       </p>
     </div>

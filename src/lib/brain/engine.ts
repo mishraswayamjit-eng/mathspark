@@ -1,3 +1,4 @@
+import { MS_PER_DAY, MS_PER_HOUR } from '@/lib/timeConstants';
 import { prisma } from '@/lib/db';
 import { TOPIC_TREE, getTopicsForGrade } from '@/data/topicTree';
 
@@ -134,7 +135,7 @@ export async function computeTopicMastery(
 
     let recency = 0;
     if (count > 0 && topicAttempts[0]) {
-      const daysSinceLast = (Date.now() - new Date(topicAttempts[0].createdAt).getTime()) / 86400000;
+      const daysSinceLast = (Date.now() - new Date(topicAttempts[0].createdAt).getTime()) / MS_PER_DAY;
       recency = Math.max(0, 1 - daysSinceLast / 30);
     }
 
@@ -190,8 +191,8 @@ export async function computeExamReadiness(
   const syllabusCoverage = m.filter((t) => t.attemptsCount >= 5).length / m.length;
 
   // Collapse 3 separate attempt queries into one parallel pair
-  const twoWeeksAgo = new Date(Date.now() - 14 * 86400000);
-  const oneWeekAgo  = new Date(Date.now() - 7  * 86400000);
+  const twoWeeksAgo = new Date(Date.now() - 14 * MS_PER_DAY);
+  const oneWeekAgo  = new Date(Date.now() - 7  * MS_PER_DAY);
 
   const [recentMocks, twoWeekAttempts] = await Promise.all([
     prisma.mockTest.findMany({
@@ -247,7 +248,7 @@ export async function computeExamReadiness(
 
   const examDate = resolvedStudent?.examDate;
   const daysUntilExam = examDate
-    ? Math.ceil((new Date(examDate).getTime() - Date.now()) / 86400000)
+    ? Math.ceil((new Date(examDate).getTime() - Date.now()) / MS_PER_DAY)
     : null;
 
   return {
@@ -359,7 +360,7 @@ export async function generateDailyPlan(
     select: { startedAt: true },
   });
   const daysSinceMock = latestMock
-    ? (Date.now() - new Date(latestMock.startedAt).getTime()) / 86400000
+    ? (Date.now() - new Date(latestMock.startedAt).getTime()) / MS_PER_DAY
     : Infinity;
 
   if (daysSinceMock > 7) {
@@ -420,7 +421,7 @@ export async function generateNudges(
   const nudges: Nudge[] = [];
 
   // Rule 1: Evening + streak at risk
-  const nowIST = new Date(Date.now() + 5.5 * 3600000);
+  const nowIST = new Date(Date.now() + 5.5 * MS_PER_HOUR);
   const hourIST = nowIST.getUTCHours();
   const todayStart = new Date(); todayStart.setHours(0, 0, 0, 0);
   const todayAttempts = await prisma.attempt.count({
@@ -439,8 +440,8 @@ export async function generateNudges(
 
   // Rule 2: Topic with accuracy drop — batch query instead of N+1
   if (m.length > 0) {
-    const twoWeeksAgo = new Date(Date.now() - 14 * 86400000);
-    const oneWeekAgo  = new Date(Date.now() - 7  * 86400000);
+    const twoWeeksAgo = new Date(Date.now() - 14 * MS_PER_DAY);
+    const oneWeekAgo  = new Date(Date.now() - 7  * MS_PER_DAY);
 
     // Check top 5 topics max to bound the query scope
     const topicsToCheck = m.slice(0, 5);

@@ -92,12 +92,12 @@ export default function SkillDrillTopicsPage() {
     setProgress(loadProgress());
 
     fetch('/api/skill-drills')
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d: { meta: Meta; topics: Record<string, TopicInfo> }) => {
         setMeta(d.meta);
         setTopics(d.topics);
       })
-      .catch(() => {})
+      .catch((err) => console.error('[fetch]', err))
       .finally(() => setLoading(false));
   }, []);
 
@@ -137,7 +137,7 @@ export default function SkillDrillTopicsPage() {
         <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white font-extrabold text-lg">Skill Drills</h1>
-          <p className="text-white/50 text-xs font-medium">16 topics &middot; 5 mastery levels each</p>
+          <p className="text-white/70 text-xs font-medium">16 topics &middot; 5 mastery levels each</p>
         </div>
         <span className="text-2xl">🎯</span>
       </div>
@@ -194,7 +194,7 @@ export default function SkillDrillTopicsPage() {
                   <div className="flex-1 min-w-0">
                     {/* Title + description */}
                     <h3 className="font-extrabold text-gray-800 text-sm leading-tight">{topic.displayName}</h3>
-                    <p className="text-xs text-gray-400 font-medium mt-0.5 line-clamp-1">{topic.description}</p>
+                    <p className="text-xs text-gray-500 font-medium mt-0.5 line-clamp-1">{topic.description}</p>
 
                     {/* Level dots */}
                     <div className="flex items-center gap-1.5 mt-2.5">
@@ -232,7 +232,7 @@ export default function SkillDrillTopicsPage() {
                       })}
 
                       {/* Progress summary */}
-                      <span className="ml-auto text-[10px] font-bold text-gray-400 shrink-0">
+                      <span className="ml-auto text-[10px] font-bold text-gray-500 shrink-0">
                         {masteredCount > 0 && <span className="text-yellow-500">{masteredCount}★</span>}
                         {passedCount > masteredCount && <span className="text-duo-green ml-1">{passedCount - masteredCount}✓</span>}
                         {passedCount === 0 && masteredCount === 0 && 'Start →'}

@@ -46,7 +46,7 @@ export default function MisconceptionPopup({
 
       {/* Misconception explanation */}
       <div>
-        <p className="text-[11px] font-extrabold text-blue-700 uppercase tracking-wide mb-1">
+        <p className="text-xs font-extrabold text-blue-700 uppercase tracking-wide mb-1">
           💡 Common mistake
         </p>
         <p className="text-sm text-gray-700 font-medium leading-snug">

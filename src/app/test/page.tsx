@@ -102,7 +102,7 @@ export default function TestConfigPage() {
     }
 
     // Fetch subscription tier + authoritative trial from home API
-    fetch(`/api/home?studentId=${id}`)
+    fetch('/api/home')
       .then(r => r.ok ? r.json() : null)
       .then(data => {
         if (data?.student?.subscriptionTier != null) {
@@ -112,8 +112,8 @@ export default function TestConfigPage() {
           setTrialActive(new Date(data.student.trialExpiresAt) > new Date());
         }
       })
-      .catch(() => {});
-  }, [router]);
+      .catch((err) => console.error('[fetch]', err));
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   const IS_MEGA_ACCESSIBLE = subscriptionTier >= 2 || trialActive;
 
@@ -132,7 +132,7 @@ export default function TestConfigPage() {
       const res = await fetch('/api/mock-tests', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ studentId, type: selected, topicIds }),
+        body: JSON.stringify({ type: selected, topicIds }),
       });
       if (!res.ok) throw new Error('Failed to create test');
       const { testId } = await res.json();
@@ -152,7 +152,7 @@ export default function TestConfigPage() {
       const res = await fetch('/api/mock-tests', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ studentId, type: 'pyq', year }),
+        body: JSON.stringify({ type: 'pyq', year }),
       });
       if (!res.ok) throw new Error('Failed to create test');
       const { testId } = await res.json();
@@ -172,7 +172,7 @@ export default function TestConfigPage() {
       const res = await fetch('/api/mock-tests', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ studentId, type: 'mega', topicIds: [`grade${studentGrade}`] }),
+        body: JSON.stringify({ type: 'mega', topicIds: [`grade${studentGrade}`] }),
       });
       if (!res.ok) throw new Error('Failed to create test');
       const { testId } = await res.json();
@@ -190,7 +190,7 @@ export default function TestConfigPage() {
       {/* Header */}
       <div className="px-4 pt-8 pb-4">
         <button
-          onClick={() => router.back()}
+          onClick={() => window.history.length > 1 ? router.back() : router.push('/practice')}
           className="text-white/60 text-sm font-semibold mb-4 flex items-center gap-1 hover:text-white transition-colors"
         >
           ← Back
@@ -208,7 +208,7 @@ export default function TestConfigPage() {
 
       {/* ── Section: Synthetic tests ────────────────────────────────────────── */}
       <div className="px-4">
-        <p className="text-xs font-extrabold text-white/40 uppercase tracking-widest mb-2">
+        <p className="text-xs font-extrabold text-white/60 uppercase tracking-widest mb-2">
           Synthetic Papers
         </p>
         <div className="space-y-2">
@@ -240,7 +240,7 @@ export default function TestConfigPage() {
                         }`}>{o.time}</span>
                       </div>
                     </div>
-                    <p className={`text-xs mt-0.5 font-medium ${isSelected ? 'text-gray-600' : 'text-white/40'}`}>
+                    <p className={`text-xs mt-0.5 font-medium ${isSelected ? 'text-gray-600' : 'text-white/60'}`}>
                       {o.desc}
                     </p>
                   </div>
@@ -256,7 +256,7 @@ export default function TestConfigPage() {
       <div className="px-4 mt-3">
         <div className="bg-white/5 border border-white/10 rounded-2xl p-3 space-y-1">
           <p className="text-white font-extrabold text-xs">📋 Exam Rules</p>
-          <ul className="text-white/50 text-[11px] font-medium space-y-0.5">
+          <ul className="text-white/70 text-xs font-medium space-y-0.5">
             <li>• No hints or feedback during the test</li>
             <li>• Jump between questions freely · Flag for review</li>
             <li>• Full analytics shown after submission</li>
@@ -276,7 +276,7 @@ export default function TestConfigPage() {
       {/* ── Section: Previous Year Papers ──────────────────────────────────── */}
       <div className="px-4 mt-6">
         <div className="flex items-center gap-2 mb-3">
-          <p className="text-xs font-extrabold text-white/40 uppercase tracking-widest">
+          <p className="text-xs font-extrabold text-white/60 uppercase tracking-widest">
             Previous Year Papers
           </p>
         </div>
@@ -303,7 +303,7 @@ export default function TestConfigPage() {
             </button>
           ))}
         </div>
-        <p className="text-white/30 text-[11px] text-center mt-2 font-medium">
+        <p className="text-white/70 text-xs text-center mt-2 font-medium">
           Actual questions from 2016–2019 IPM papers
         </p>
       </div>
@@ -311,7 +311,7 @@ export default function TestConfigPage() {
       {/* ── Section: Mega Final ─────────────────────────────────────────────── */}
       <div className="px-4 mt-6">
         <div className="flex items-center gap-2 mb-3">
-          <p className="text-xs font-extrabold text-white/40 uppercase tracking-widest">
+          <p className="text-xs font-extrabold text-white/60 uppercase tracking-widest">
             Mega Final Experience
           </p>
         </div>
@@ -324,17 +324,17 @@ export default function TestConfigPage() {
                 <span className="text-2xl">🏆</span>
                 <div>
                   <p className="text-white font-extrabold text-sm leading-tight">THE ULTIMATE CHALLENGE</p>
-                  <p className="text-white/50 text-[11px]">Full Mega Mock · 15 Qs · 45 min</p>
+                  <p className="text-white/70 text-xs">Full Mega Mock · 15 Qs · 45 min</p>
                 </div>
               </div>
-              <span className="text-[9px] font-bold px-2 py-1 rounded-full bg-[#9B59B6]/20 text-[#9B59B6] border border-[#9B59B6]/30 shrink-0">
+              <span className="text-[10px] font-bold px-2 py-1 rounded-full bg-[#9B59B6]/20 text-[#9B59B6] border border-[#9B59B6]/30 shrink-0">
                 PRO
               </span>
             </div>
             <div className="space-y-1">
-              <p className="text-white/50 text-[11px]">✦ Grade {studentGrade}-specific · Hard difficulty only</p>
-              <p className="text-white/50 text-[11px]">✦ No repeats · No hints · Full simulation</p>
-              <p className="text-white/50 text-[11px]">✦ Detailed performance report after</p>
+              <p className="text-white/70 text-xs">✦ Grade {studentGrade}-specific · Hard difficulty only</p>
+              <p className="text-white/70 text-xs">✦ No repeats · No hints · Full simulation</p>
+              <p className="text-white/70 text-xs">✦ Detailed performance report after</p>
             </div>
             <DuoButton variant="green" fullWidth loading={megaLoading} onClick={handleMega}>
               Begin Mega Final 🚀
@@ -366,9 +366,9 @@ export default function TestConfigPage() {
             <div className="flex items-center justify-between mb-2">
               <div>
                 <p className="text-white font-extrabold text-sm">MEGA CHALLENGE MODE</p>
-                <p className="text-white/40 text-[11px]">Untimed · Random hard questions</p>
+                <p className="text-white/60 text-xs">Untimed · Random hard questions</p>
               </div>
-              <span className="text-[9px] font-bold px-2 py-1 rounded-full bg-[#9B59B6]/20 text-[#9B59B6] border border-[#9B59B6]/30 shrink-0">
+              <span className="text-[10px] font-bold px-2 py-1 rounded-full bg-[#9B59B6]/20 text-[#9B59B6] border border-[#9B59B6]/30 shrink-0">
                 PRO
               </span>
             </div>
@@ -390,7 +390,7 @@ export default function TestConfigPage() {
       <div className="px-4 mt-4">
         <button
           onClick={() => router.push('/test/history')}
-          className="w-full text-white/40 text-sm font-semibold text-center py-2 hover:text-white/70 transition-colors"
+          className="w-full text-white/60 text-sm font-semibold text-center py-2 hover:text-white/70 transition-colors"
         >
           View past tests →
         </button>

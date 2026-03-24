@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import KatexRenderer from './KatexRenderer';
 import type { AnswerKey, Difficulty, Question } from '@/types';
 
@@ -51,7 +52,7 @@ interface QuestionCardProps {
   onAnswer: (key: AnswerKey, isCorrect: boolean) => void;
 }
 
-export default function QuestionCard({
+const QuestionCard = React.memo(function QuestionCard({
   question,
   answered,
   selected,
@@ -75,7 +76,7 @@ export default function QuestionCard({
     if (key === question.correctAnswer)
       return `${base} bg-duo-green text-white animate-pop-in`;
     if (key === selected) return `${base} bg-duo-red text-white`;
-    return `${base} bg-gray-100 text-gray-400`;
+    return `${base} bg-gray-100 text-gray-500`;
   }
 
   function cardCls(key: AnswerKey): string {
@@ -99,11 +100,11 @@ export default function QuestionCard({
         <div className="flex items-center gap-2 mb-3 flex-wrap">
           <div className={`flex items-center gap-1.5 px-2.5 py-0.5 rounded-full ${diff.bg}`}>
             <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${diff.dot}`} />
-            <span className={`text-[11px] font-extrabold uppercase tracking-wide ${diff.label}`}>
+            <span className={`text-xs font-extrabold uppercase tracking-wide ${diff.label}`}>
               {question.difficulty}
             </span>
           </div>
-          <span className="text-[11px] font-semibold text-gray-400 truncate max-w-[200px]">
+          <span className="text-xs font-semibold text-gray-500 truncate max-w-[200px]">
             {question.subTopic}
           </span>
         </div>
@@ -157,4 +158,6 @@ export default function QuestionCard({
       </div>
     </div>
   );
-}
+});
+
+export default QuestionCard;

@@ -2,24 +2,31 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { updateProgress } from '@/lib/mastery';
 import { computeXPForAttempt, ensureCurrentWeekLeague } from '@/lib/leaderboard';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { checkRateLimit } from '@/lib/rateLimit';
 
 // POST /api/attempts
-// body: { studentId, questionId, topicId, selected, isCorrect, hintUsed?, timeTakenMs?, isBonusQuestion? }
+// body: { questionId, topicId, selected, isCorrect, hintUsed?, timeTakenMs?, isBonusQuestion? }
 export async function POST(req: Request) {
+  const studentId = await getAuthenticatedStudentId();
+  if (!studentId) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  // Rate limit: 60 attempts per minute per student
+  if (!checkRateLimit(`attempts:${studentId}`, 60, 60_000)) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+  }
+
   const body = await req.json();
   const {
-    studentId, questionId, topicId, selected, isCorrect,
+    questionId, topicId, selected, isCorrect,
     hintUsed = 0, timeTakenMs = 0, misconceptionType = null,
     isBonusQuestion = false, parentQuestionId = null,
   } = body;
 
-  if (!studentId || !questionId || !topicId || !selected) {
+  if (!questionId || !topicId || !selected) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
-  }
-
-  // Input validation
-  if (typeof studentId !== 'string' || studentId.length > 30) {
-    return NextResponse.json({ error: 'Invalid studentId' }, { status: 400 });
   }
   if (typeof questionId !== 'string' || questionId.length > 50) {
     return NextResponse.json({ error: 'Invalid questionId' }, { status: 400 });

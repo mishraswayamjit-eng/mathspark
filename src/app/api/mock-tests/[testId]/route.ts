@@ -1,19 +1,23 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
 function safeParseSteps(json: string | null): unknown[] {
   try { return JSON.parse(json ?? '[]'); } catch { return []; }
 }
 
-// GET /api/mock-tests/[testId]?studentId=xxx
+// GET /api/mock-tests/[testId]
 export async function GET(
-  req: Request,
+  _req: Request,
   { params }: { params: { testId: string } },
 ) {
   try {
+    const studentId = await getAuthenticatedStudentId();
+    if (!studentId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { testId } = params;
-    const { searchParams } = new URL(req.url);
-    const requestingStudentId = searchParams.get('studentId');
 
     const mockTest = await prisma.mockTest.findUnique({
       where: { id: testId },
@@ -43,8 +47,8 @@ export async function GET(
       return NextResponse.json({ error: 'Test not found' }, { status: 404 });
     }
 
-    // Auth: verify requesting student owns this test
-    if (requestingStudentId && mockTest.studentId !== requestingStudentId) {
+    // Mandatory ownership check
+    if (mockTest.studentId !== studentId) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 

@@ -51,8 +51,8 @@ export default function ParentDashboardPage() {
 
   useEffect(() => {
     if (!studentId) return;
-    fetch(`/api/dashboard?studentId=${studentId}`)
-      .then((r) => r.json())
+    fetch(`/api/parent/report/${studentId}`)
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d: DashboardData) => { setData(d); setLoading(false); })
       .catch(() => setLoading(false));
   }, [studentId]);
@@ -73,7 +73,7 @@ export default function ParentDashboardPage() {
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-8 text-center">
         <div className="text-5xl mb-4">😕</div>
         <h2 className="text-xl font-extrabold text-gray-700 mb-2">Report not found</h2>
-        <p className="text-gray-400 text-sm">This link may have expired or the student ID is invalid.</p>
+        <p className="text-gray-500 text-sm">This link may have expired or the student ID is invalid.</p>
       </div>
     );
   }
@@ -117,7 +117,7 @@ export default function ParentDashboardPage() {
               <div key={label} className="bg-white/20 rounded-2xl p-3 text-center">
                 <div className="text-xl mb-0.5">{emoji}</div>
                 <div className="text-white font-extrabold text-xl leading-none">{value}</div>
-                <div className="text-green-100 text-[11px] font-semibold mt-1">{label}</div>
+                <div className="text-green-100 text-xs font-semibold mt-1">{label}</div>
               </div>
             ))}
           </div>
@@ -137,7 +137,7 @@ export default function ParentDashboardPage() {
           </div>
           <div>
             <p className="font-extrabold text-gray-800 text-base">Overall Accuracy</p>
-            <p className="text-gray-400 text-sm font-medium">
+            <p className="text-gray-500 text-sm font-medium">
               {accuracy >= 80 ? 'Excellent — top of the class! 🏆' :
                accuracy >= 60 ? 'Good work — improving every day! 📈' :
                'Keep practicing — it gets easier! 💪'}
@@ -147,7 +147,7 @@ export default function ParentDashboardPage() {
 
         {/* ── Weekly chart ──────────────────────────────────────────────── */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mt-3">
-          <h2 className="text-[11px] font-extrabold text-gray-400 uppercase tracking-widest mb-4">This Week's Activity</h2>
+          <h2 className="text-xs font-extrabold text-gray-500 uppercase tracking-widest mb-4">This Week's Activity</h2>
           <div className="flex items-end gap-1.5 h-20 mb-1">
             {weeklyData.map(({ date, count }) => (
               <div key={date} className="flex-1 flex flex-col items-center gap-1">
@@ -159,11 +159,11 @@ export default function ParentDashboardPage() {
                     minHeight: count > 0 ? '4px' : '0',
                   }}
                 />
-                <span className="text-[10px] text-gray-400 font-semibold">{date}</span>
+                <span className="text-[10px] text-gray-500 font-semibold">{date}</span>
               </div>
             ))}
           </div>
-          <p className="text-[11px] text-gray-400 text-center font-medium">Correct answers per day</p>
+          <p className="text-xs text-gray-500 text-center font-medium">Correct answers per day</p>
         </div>
 
         {/* ── Strongest & Weakest ───────────────────────────────────────── */}
@@ -173,7 +173,7 @@ export default function ParentDashboardPage() {
               <div className="bg-green-50 border border-green-200 rounded-2xl p-4">
                 <p className="text-[10px] text-green-700 font-extrabold uppercase tracking-wide">💪 Best at</p>
                 <p className="text-sm font-extrabold text-gray-800 mt-1">{TOPIC_SHORT[strongest.id] ?? strongest.name}</p>
-                <p className="text-xs text-green-600 font-bold mt-0.5">
+                <p className="text-xs text-duo-green font-bold mt-0.5">
                   {strongest.attempted > 0 ? Math.round(strongest.correct / strongest.attempted * 100) : 0}% accurate
                 </p>
               </div>
@@ -192,7 +192,7 @@ export default function ParentDashboardPage() {
 
         {/* ── All topics ────────────────────────────────────────────────── */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mt-3">
-          <h2 className="text-[11px] font-extrabold text-gray-400 uppercase tracking-widest mb-4">All 16 Topics</h2>
+          <h2 className="text-xs font-extrabold text-gray-500 uppercase tracking-widest mb-4">All 16 Topics</h2>
           <div className="space-y-2">
             {sortedTopics.map((t) => {
               const pct = t.attempted > 0 ? Math.round(t.correct / t.attempted * 100) : 0;
@@ -224,24 +224,23 @@ export default function ParentDashboardPage() {
 
         {/* ── Encouragement messages ────────────────────────────────────── */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mt-3">
-          <h2 className="text-[11px] font-extrabold text-gray-400 uppercase tracking-widest mb-4">
+          <h2 className="text-xs font-extrabold text-gray-500 uppercase tracking-widest mb-4">
             Send Encouragement to {student.name}
           </h2>
-          <p className="text-gray-400 text-sm mb-3 font-medium">
+          <p className="text-gray-500 text-sm mb-3 font-medium">
             Copy a message and share it with your child!
           </p>
           <div className="space-y-2">
             {ENCOURAGEMENTS.map((msg, i) => (
               <button
                 key={i}
-                style={{ minHeight: 0 }}
                 onClick={() => {
                   navigator.clipboard.writeText(msg).then(() => {
                     setCopied(true);
                     setTimeout(() => setCopied(false), 2000);
                   });
                 }}
-                className="w-full text-left bg-gray-50 hover:bg-green-50 border border-gray-200 hover:border-green-300 rounded-xl px-4 py-3 text-sm text-gray-700 font-medium transition-colors"
+                className="w-full text-left bg-gray-50 hover:bg-green-50 border border-gray-200 hover:border-green-300 rounded-xl px-4 py-3 text-sm text-gray-700 font-medium transition-colors min-h-0"
               >
                 {msg}
               </button>
@@ -263,7 +262,7 @@ export default function ParentDashboardPage() {
               setCopied(true);
               setTimeout(() => setCopied(false), 2000);
             }}
-            className="text-sm font-bold text-gray-400 hover:text-gray-600 transition-colors"
+            className="text-sm font-bold text-gray-500 hover:text-gray-600 transition-colors"
           >
             🔗 Copy page link
           </button>

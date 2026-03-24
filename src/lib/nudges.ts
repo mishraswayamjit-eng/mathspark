@@ -1,3 +1,4 @@
+import { MS_PER_DAY } from '@/lib/timeConstants';
 // src/lib/nudges.ts — Nudge engine for proactive student engagement
 
 export interface Nudge {
@@ -131,7 +132,7 @@ export function computeNudge(input: NudgeInput): Nudge | null {
   // 5. Welcome back after a 2+ day gap
   if (lastDate && lastDate !== today) {
     const daysSince = Math.floor(
-      (new Date().getTime() - new Date(lastDate).getTime()) / 86_400_000,
+      (new Date().getTime() - new Date(lastDate).getTime()) / MS_PER_DAY,
     );
     if (daysSince >= 2) {
       return {

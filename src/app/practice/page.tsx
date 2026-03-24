@@ -27,8 +27,8 @@ export default function PracticeHubPage() {
     const studentId = localStorage.getItem('mathspark_student_id');
     if (!studentId) { router.replace('/start'); return; }
 
-    fetch(`/api/dashboard?studentId=${studentId}`)
-      .then((r) => r.json())
+    fetch('/api/dashboard')
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
         setStats({
           streak: data.stats?.streakDays ?? 0,
@@ -39,9 +39,9 @@ export default function PracticeHubPage() {
           weakestTopicName: data.weakestTopicName ?? null,
         });
       })
-      .catch(() => {})
+      .catch((err) => console.error('[fetch]', err))
       .finally(() => setLoading(false));
-  }, [router]);
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
@@ -50,7 +50,7 @@ export default function PracticeHubPage() {
         <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white font-extrabold text-lg">Practice Hub</h1>
-          <p className="text-white/50 text-xs font-medium">Choose your practice mode</p>
+          <p className="text-white/70 text-xs font-medium">Choose your practice mode</p>
         </div>
         <Sparky mood="happy" size={32} />
       </div>
@@ -68,7 +68,7 @@ export default function PracticeHubPage() {
               <div key={s.label} className="flex-1 bg-white rounded-xl p-2.5 border border-gray-100 shadow-sm text-center">
                 <span className="text-sm">{s.emoji}</span>
                 <p className="text-sm font-extrabold text-gray-800">{s.value}</p>
-                <p className="text-[9px] font-bold text-gray-400 uppercase">{s.label}</p>
+                <p className="text-[10px] font-bold text-gray-500 uppercase">{s.label}</p>
               </div>
             ))}
           </div>
@@ -86,7 +86,7 @@ export default function PracticeHubPage() {
               </div>
               <div className="flex-1">
                 <p className="text-white font-extrabold text-sm">Smart Practice</p>
-                <p className="text-white/50 text-xs font-medium">
+                <p className="text-white/70 text-xs font-medium">
                   Continue with {stats.weakestTopicName ?? 'your weakest topic'}
                 </p>
               </div>
@@ -131,11 +131,11 @@ export default function PracticeHubPage() {
               <p className="font-extrabold text-gray-800 text-sm">Exam Papers</p>
               <p className="text-xs text-gray-500 font-medium mt-0.5">240 papers · 15/30/60 min formats</p>
               <div className="flex items-center gap-2 mt-1">
-                <span className="text-[9px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded-full border border-red-100">IPM Format</span>
-                <span className="text-[9px] font-bold text-gray-400">Grades 2-9</span>
+                <span className="text-[10px] font-bold text-red-500 bg-red-50 px-1.5 py-0.5 rounded-full border border-red-100">IPM Format</span>
+                <span className="text-[10px] font-bold text-gray-500">Grades 2-9</span>
               </div>
             </div>
-            <span className="text-gray-400 text-sm shrink-0">→</span>
+            <span className="text-gray-500 text-sm shrink-0">→</span>
           </div>
         </Link>
 
@@ -151,11 +151,11 @@ export default function PracticeHubPage() {
               <p className="font-extrabold text-gray-800 text-sm">Skill Drills</p>
               <p className="text-xs text-gray-500 font-medium mt-0.5">16 topics · 5 mastery levels</p>
               <div className="flex items-center gap-2 mt-1">
-                <span className="text-[9px] font-bold text-yellow-600 bg-yellow-50 px-1.5 py-0.5 rounded-full border border-yellow-200">10 Qs per drill</span>
-                <span className="text-[9px] font-bold text-gray-400">290 sessions</span>
+                <span className="text-[10px] font-bold text-yellow-600 bg-yellow-50 px-1.5 py-0.5 rounded-full border border-yellow-200">10 Qs per drill</span>
+                <span className="text-[10px] font-bold text-gray-500">290 sessions</span>
               </div>
             </div>
-            <span className="text-gray-400 text-sm shrink-0">→</span>
+            <span className="text-gray-500 text-sm shrink-0">→</span>
           </div>
         </Link>
 
@@ -171,11 +171,11 @@ export default function PracticeHubPage() {
               <p className="font-extrabold text-gray-800 text-sm">Topic Practice</p>
               <p className="text-xs text-gray-500 font-medium mt-0.5">Practice by chapter · 12,500+ questions</p>
               <div className="flex items-center gap-2 mt-1">
-                <span className="text-[9px] font-bold text-blue-500 bg-blue-50 px-1.5 py-0.5 rounded-full border border-blue-100">All Topics</span>
-                <span className="text-[9px] font-bold text-gray-400">Grades 2-9</span>
+                <span className="text-[10px] font-bold text-blue-500 bg-blue-50 px-1.5 py-0.5 rounded-full border border-blue-100">All Topics</span>
+                <span className="text-[10px] font-bold text-gray-500">Grades 2-9</span>
               </div>
             </div>
-            <span className="text-gray-400 text-sm shrink-0">→</span>
+            <span className="text-gray-500 text-sm shrink-0">→</span>
           </div>
         </Link>
 
@@ -191,11 +191,11 @@ export default function PracticeHubPage() {
               <p className="font-extrabold text-gray-800 text-sm">Flashcards</p>
               <p className="text-xs text-gray-500 font-medium mt-0.5">1,086 cards · Spaced repetition</p>
               <div className="flex items-center gap-2 mt-1">
-                <span className="text-[9px] font-bold text-purple-500 bg-purple-50 px-1.5 py-0.5 rounded-full border border-purple-100">5 game modes</span>
-                <span className="text-[9px] font-bold text-gray-400">Leitner system</span>
+                <span className="text-[10px] font-bold text-purple-500 bg-purple-50 px-1.5 py-0.5 rounded-full border border-purple-100">5 game modes</span>
+                <span className="text-[10px] font-bold text-gray-500">Leitner system</span>
               </div>
             </div>
-            <span className="text-gray-400 text-sm shrink-0">→</span>
+            <span className="text-gray-500 text-sm shrink-0">→</span>
           </div>
         </Link>
 
@@ -211,17 +211,17 @@ export default function PracticeHubPage() {
               <p className="font-extrabold text-gray-800 text-sm">Mock Test</p>
               <p className="text-xs text-gray-500 font-medium mt-0.5">Timed tests · Previous year papers</p>
               <div className="flex items-center gap-2 mt-1">
-                <span className="text-[9px] font-bold text-green-600 bg-green-50 px-1.5 py-0.5 rounded-full border border-green-100">Full exam</span>
-                <span className="text-[9px] font-bold text-gray-400">With results</span>
+                <span className="text-[10px] font-bold text-duo-green bg-green-50 px-1.5 py-0.5 rounded-full border border-green-100">Full exam</span>
+                <span className="text-[10px] font-bold text-gray-500">With results</span>
               </div>
             </div>
-            <span className="text-gray-400 text-sm shrink-0">→</span>
+            <span className="text-gray-500 text-sm shrink-0">→</span>
           </div>
         </Link>
 
         {/* ── LEARN SECTION ───────────────────────────────────────── */}
         <div className="pt-2">
-          <h2 className="text-[10px] font-extrabold text-gray-400 uppercase tracking-wide mb-3">Learn & Prepare</h2>
+          <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-3">Learn & Prepare</h2>
           <div className="grid grid-cols-2 gap-2">
             {[
               { emoji: '💡', label: 'Sparky Explains',  sub: '212 solved',     href: '/learn/examples',     bg: 'from-indigo-50 to-blue-50', border: 'border-indigo-200' },
@@ -237,7 +237,7 @@ export default function PracticeHubPage() {
                 className={`bg-gradient-to-br ${item.bg} rounded-2xl p-3 border ${item.border} shadow-sm active:scale-95 transition-transform`}
               >
                 <span className="text-xl">{item.emoji}</span>
-                <p className="font-extrabold text-gray-800 text-[11px] mt-1.5 leading-tight">{item.label}</p>
+                <p className="font-extrabold text-gray-800 text-xs mt-1.5 leading-tight">{item.label}</p>
                 <p className="text-[10px] text-gray-500 font-medium">{item.sub}</p>
               </Link>
             ))}

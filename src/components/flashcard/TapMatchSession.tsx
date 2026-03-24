@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { useFlashcardDeck } from '@/hooks/useFlashcardDeck';
 import dynamic from 'next/dynamic';
 import Confetti from '@/components/Confetti';
 import Sparky from '@/components/Sparky';
@@ -92,17 +93,17 @@ function MatchComplete({
       <div className="grid grid-cols-3 gap-2 w-full max-w-xs mb-6">
         <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
           <p className="text-lg font-black text-[#F1F5F9] tabular-nums">{pairs}</p>
-          <p className="text-[9px] text-[#64748B] uppercase tracking-wider">Pairs</p>
+          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Pairs</p>
         </div>
         <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
           <p className="text-lg font-black text-[#FBBF24] tabular-nums">{moves}</p>
-          <p className="text-[9px] text-[#64748B] uppercase tracking-wider">Moves</p>
+          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Moves</p>
         </div>
         <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
           <p className="text-lg font-black text-[#60A5FA] tabular-nums">
             {mins > 0 ? `${mins}m${secs}s` : `${secs}s`}
           </p>
-          <p className="text-[9px] text-[#64748B] uppercase tracking-wider">Time</p>
+          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Time</p>
         </div>
       </div>
 
@@ -142,6 +143,7 @@ interface TapMatchSessionProps {
 
 export default function TapMatchSession({ deckId }: TapMatchSessionProps) {
   const router = useRouter();
+  const { fetchDeck } = useFlashcardDeck(deckId, { limit: 40 });
   const { playCorrect, playWrong, playStreak, playMastery } = useSounds();
 
   const [phase, setPhase] = useState<Phase>('loading');
@@ -163,22 +165,17 @@ export default function TapMatchSession({ deckId }: TapMatchSessionProps) {
   // ── Load deck ──────────────────────────────────────────────────────────────
 
   const loadDeck = useCallback(() => {
-    const sid = localStorage.getItem('mathspark_student_id');
-    const grade = localStorage.getItem('mathspark_student_grade') || '4';
-    if (!sid) { router.replace('/start'); return; }
-
-    fetch(`/api/flashcards/deck?studentId=${sid}&grade=${grade}&deck=${encodeURIComponent(deckId)}&limit=40`)
-      .then((r) => r.json())
+    fetchDeck()
       .then((data) => {
-        if (data.cards && data.cards.length > 0) {
-          allCardsRef.current = data.cards;
-          setupLevel(0, data.cards);
-        } else {
+        if (!data || data.cards.length === 0) {
           setPhase('complete');
+        } else {
+          allCardsRef.current = data.cards as CardWithProgress[];
+          setupLevel(0, data.cards as CardWithProgress[]);
         }
       })
       .catch(() => router.replace('/flashcards'));
-  }, [router, deckId]);
+  }, [fetchDeck, router, setupLevel]);
 
   useEffect(() => { loadDeck(); }, [loadDeck]);
 
@@ -263,13 +260,12 @@ export default function TapMatchSession({ deckId }: TapMatchSessionProps) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        studentId: sid,
         mode: 'match',
         cardsReviewed: totalPairs * 2,
         cardsCorrect: totalPairs,
         duration: elapsed,
       }),
-    }).catch(() => {});
+    }).catch((err) => console.error('[fetch]', err));
   }, [phase, totalPairs, elapsed, playMastery]);
 
   // ── Handle tile tap ────────────────────────────────────────────────────────
@@ -315,8 +311,8 @@ export default function TapMatchSession({ deckId }: TapMatchSessionProps) {
             fetch('/api/flashcards/progress', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ studentId: sid, cardId: first.pairId, correct: true }),
-            }).catch(() => {});
+              body: JSON.stringify({ cardId: first.pairId, correct: true }),
+            }).catch((err) => console.error('[fetch]', err));
           }
 
           if (newConsec >= 3) {
@@ -463,15 +459,14 @@ export default function TapMatchSession({ deckId }: TapMatchSessionProps) {
                 disabled={isMemorize || isMatched}
                 className={`
                   relative rounded-xl transition-[transform,background-color,border-color,opacity] duration-300 aspect-[3/4]
-                  flex items-center justify-center p-2 text-center overflow-hidden
+                  flex items-center justify-center p-2 text-center overflow-hidden min-h-0
                   ${isMatched
-                    ? 'bg-emerald-500/20 border-2 border-emerald-500/40 scale-95'
+                    ? 'bg-duo-green/20 border-2 border-duo-green/40 scale-95'
                     : isFlipped
                     ? 'bg-[#1E293B] border-2 border-[#A78BFA]/40'
                     : 'bg-[#1E293B] border-2 border-white/10 active:scale-95 hover:border-white/20'
                   }
                 `}
-                style={{ minHeight: '0' }}
               >
                 {isFlipped ? (
                   <div className="animate-fade-in">
@@ -483,9 +478,9 @@ export default function TapMatchSession({ deckId }: TapMatchSessionProps) {
                     </span>
 
                     {tile.formula ? (
-                      <KatexRenderer latex={tile.formula} displayMode={false} className="text-[#F1F5F9] text-[11px]" />
+                      <KatexRenderer latex={tile.formula} displayMode={false} className="text-[#F1F5F9] text-xs" />
                     ) : (
-                      <p className={`text-[11px] font-bold leading-tight ${
+                      <p className={`text-xs font-bold leading-tight ${
                         isMatched ? 'text-emerald-300' : 'text-[#F1F5F9]'
                       }`}>
                         {tile.text.length > 60 ? tile.text.slice(0, 57) + '...' : tile.text}
@@ -495,7 +490,7 @@ export default function TapMatchSession({ deckId }: TapMatchSessionProps) {
                 ) : (
                   <div className="flex flex-col items-center gap-1">
                     <span className="text-2xl">🃏</span>
-                    <span className="text-[9px] text-[#475569] font-bold">TAP</span>
+                    <span className="text-[10px] text-[#475569] font-bold">TAP</span>
                   </div>
                 )}
               </button>

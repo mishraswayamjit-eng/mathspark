@@ -47,34 +47,38 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12">
+    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12 animate-fade-in">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">🌱</div>
           <h1 className="text-2xl font-extrabold text-white">Create your account</h1>
-          <p className="text-white/50 text-sm mt-1">Start your child's IPM journey today</p>
+          <p className="text-white/70 text-sm mt-1">Start your child's IPM journey today</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text" placeholder="Your name" required
+            aria-label="Your name"
             value={form.name} onChange={field('name')}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-green"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
           />
           <input
             type="email" placeholder="Email address" required
+            aria-label="Email address"
             value={form.email} onChange={field('email')}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-green"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
           />
           <input
             type="password" placeholder="Password (min 8 characters)" required minLength={8}
+            aria-label="Password (min 8 characters)"
             value={form.password} onChange={field('password')}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-green"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
           />
           <input
             type="tel" placeholder="Phone number (optional)"
+            aria-label="Phone number (optional)"
             value={form.phone} onChange={field('phone')}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-green"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
           />
 
           {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
@@ -87,14 +91,14 @@ export default function RegisterPage() {
           </button>
         </form>
 
-        <p className="text-center text-white/40 text-sm mt-6">
+        <p className="text-center text-white/60 text-sm mt-6">
           Already have an account?{' '}
           <Link href="/auth/login" className="text-duo-blue font-semibold hover:underline">
             Sign in
           </Link>
         </p>
         <p className="text-center mt-4">
-          <Link href="/pricing" className="text-white/30 text-xs hover:text-white/60 transition-colors">
+          <Link href="/pricing" className="text-white/70 text-xs hover:text-white/60 transition-colors">
             View plans & pricing →
           </Link>
         </p>

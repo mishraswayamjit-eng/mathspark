@@ -1,19 +1,22 @@
 import { NextResponse } from 'next/server';
 import { getNextQuestion } from '@/lib/adaptive';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
-// GET /api/questions/next?topicId=&studentId=&subTopic=
-// All session context (seen questions, streak) is derived from the DB.
+// GET /api/questions/next?topicId=&subTopic=&exclude=
 export async function GET(req: Request) {
   try {
+    const studentId = await getAuthenticatedStudentId();
+    if (!studentId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
     const { searchParams } = new URL(req.url);
     const topicId   = searchParams.get('topicId');
-    const studentId = searchParams.get('studentId');
     const excludeParam = searchParams.get('exclude') ?? '';
     const excludeIds   = excludeParam ? excludeParam.split(',').filter(Boolean) : [];
     const subTopic     = searchParams.get('subTopic') ?? '';
 
-    if (!topicId || !studentId) {
-      return NextResponse.json({ error: 'topicId and studentId required' }, { status: 400 });
+    if (!topicId) {
+      return NextResponse.json({ error: 'topicId required' }, { status: 400 });
     }
 
     const q = await getNextQuestion(studentId, topicId, excludeIds, subTopic);

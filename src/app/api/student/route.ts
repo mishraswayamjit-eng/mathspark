@@ -1,13 +1,17 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { isClean } from '@/lib/profanityFilter';
-import { validateStudentAccess } from '@/lib/validateStudent';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
 // PATCH /api/student — update mutable student fields
 export async function PATCH(req: Request) {
   try {
+    const studentId = await getAuthenticatedStudentId();
+    if (!studentId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const body = await req.json() as {
-      studentId?: string;
       parentEmail?: string;
       parentWhatsApp?: string;
       name?: string;
@@ -15,27 +19,16 @@ export async function PATCH(req: Request) {
       avatarColor?: string;
       hiddenFromLeaderboard?: boolean;
       grade?: number;
-      // Brain engine / personalization fields
       examName?: string;
-      examDate?: string;        // ISO date string
+      examDate?: string;
       targetScore?: number;
       dailyGoalMins?: number;
       sessionLengthMins?: number;
-      focusTopics?: string[];   // array; stored as JSON string
-      confidentTopics?: string[]; // array; stored as JSON string
+      focusTopics?: string[];
+      confidentTopics?: string[];
       city?: string;
       preferredPracticeTime?: string;
     };
-
-    const { studentId } = body;
-    if (!studentId) {
-      return NextResponse.json({ error: 'studentId required' }, { status: 400 });
-    }
-
-    const accessErr = await validateStudentAccess(studentId);
-    if (accessErr) {
-      return NextResponse.json({ error: accessErr }, { status: accessErr === 'Student not found' ? 404 : 403 });
-    }
 
     const data: Record<string, unknown> = {};
 

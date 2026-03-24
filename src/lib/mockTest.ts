@@ -1,3 +1,4 @@
+import { MS_PER_DAY } from '@/lib/timeConstants';
 import { prisma, USABLE_QUESTION_FILTER } from '@/lib/db';
 import { getTopicsForGrade } from '@/data/topicTree';
 import type { TestType, PYQYear } from '@/types';
@@ -396,7 +397,7 @@ export async function generateMockPaper(
 // ── Helpers for Mega test ─────────────────────────────────────────────────────
 
 async function getRecentlySeenIds(studentId: string, days: number): Promise<string[]> {
-  const since = new Date(Date.now() - days * 86400000);
+  const since = new Date(Date.now() - days * MS_PER_DAY);
   const attempts = await prisma.attempt.findMany({
     where: { studentId, createdAt: { gte: since } },
     select: { questionId: true },

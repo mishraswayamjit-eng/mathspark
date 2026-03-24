@@ -5,6 +5,7 @@ import {
   getFlashcardsByTopic,
   getAllFlashcards,
 } from '@/data/flashcardData';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import type { FlashCard } from '@/types';
 
 export const dynamic = 'force-dynamic';
@@ -24,14 +25,13 @@ const BOX_INTERVALS = [0, 1, 2, 5, 14, 30]; // index 0 unused; box 1→1d, box 2
  * - <topicId>: all cards for that topic, due ones first
  */
 export async function GET(req: Request) {
+  const studentId = await getAuthenticatedStudentId();
+  if (!studentId) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
   const { searchParams } = new URL(req.url);
-  const studentId = searchParams.get('studentId');
   const grade = parseInt(searchParams.get('grade') ?? '4', 10);
   const deckId = searchParams.get('deck') ?? 'quick';
-
-  if (!studentId) {
-    return NextResponse.json({ error: 'studentId required' }, { status: 400 });
-  }
 
   try {
 

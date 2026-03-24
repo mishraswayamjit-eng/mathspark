@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { prisma } from '@/lib/db';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { checkRateLimit } from '@/lib/rateLimit';
+import { escapeHtml } from '@/lib/emailReport';
+import { validateBody, ValidationError } from '@/lib/validateBody';
 import type {
   LessonCardData, MockTestCardData, BadgeCardData,
   StreakCardData, MasteredCardData,
@@ -10,19 +14,31 @@ const FROM    = process.env.RESEND_FROM_EMAIL ?? 'MathSpark <achievements@mathsp
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://mathspark.in';
 
 // POST /api/share/email
-// Body: { studentId, cardType, cardData }
+// Body: { cardType, cardData }
 // Sends a beautifully formatted HTML achievement email to the parent.
 export async function POST(req: Request) {
   try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    const { studentId, cardType, cardData } = await req.json() as {
-      studentId: string;
-      cardType:  string;
-      cardData:  Record<string, unknown>;
-    };
+    const studentId = await getAuthenticatedStudentId();
+    if (!studentId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
-    if (!studentId || !cardType) {
-      return NextResponse.json({ error: 'studentId and cardType required' }, { status: 400 });
+    // Rate limit: 5 share emails per 10 minutes per student
+    if (!checkRateLimit(`share-email:${studentId}`, 5, 600_000)) {
+      return NextResponse.json({ error: 'Too many share emails. Try again later.' }, { status: 429 });
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const { cardType, cardData } = validateBody<{
+      cardType: string;
+      cardData: Record<string, unknown>;
+    }>(
+      await req.json(),
+      { cardType: 'string', cardData: 'object' },
+    );
+
+    if (!cardType) {
+      return NextResponse.json({ error: 'cardType required' }, { status: 400 });
     }
 
     const student = await prisma.student.findUnique({
@@ -37,12 +53,15 @@ export async function POST(req: Request) {
       );
     }
 
-    const { subject, html } = buildShareEmail(cardType, cardData, student.name, studentId);
+    const { subject, html } = buildShareEmail(cardType, cardData, escapeHtml(student.name), studentId);
 
     await resend.emails.send({ from: FROM, to: student.parentEmail, subject, html });
 
     return NextResponse.json({ success: true, sentTo: student.parentEmail });
   } catch (err) {
+    if (err instanceof ValidationError) {
+      return NextResponse.json({ error: err.message }, { status: 400 });
+    }
     console.error('[share/email]', err);
     return NextResponse.json({ error: 'Failed to send email. Please try again.' }, { status: 500 });
   }
@@ -57,6 +76,7 @@ function buildShareEmail(
   studentId:   string,
 ): { subject: string; html: string } {
   const progressUrl = `${APP_URL}/parent/${studentId}`;
+  const esc = escapeHtml; // shorthand
 
   let subject = `🌟 ${studentName}'s MathSpark Achievement!`;
   let headline = '';
@@ -66,48 +86,57 @@ function buildShareEmail(
   if (cardType === 'lesson') {
     const d = cardData as unknown as LessonCardData;
     const pct = Math.round((d.correct / d.total) * 100);
-    subject   = `🏆 ${d.studentName} completed a lesson on MathSpark!`;
-    headline  = `${d.studentName} just completed a lesson! 🏆`;
-    footerNote = `They've been working hard on <strong>${d.topicName}</strong> — keep encouraging them!`;
-    statsHtml  = statRow('📐 Topic',    d.topicEmoji + ' ' + d.topicName)
-               + statRow('🎯 Score',    `${d.correct} / ${d.total} correct`)
+    const name = esc(String(d.studentName ?? studentName));
+    const topic = esc(String(d.topicName ?? ''));
+    subject   = `🏆 ${name} completed a lesson on MathSpark!`;
+    headline  = `${name} just completed a lesson! 🏆`;
+    footerNote = `They've been working hard on <strong>${topic}</strong> — keep encouraging them!`;
+    statsHtml  = statRow('📐 Topic',    esc(String(d.topicEmoji ?? '')) + ' ' + topic)
+               + statRow('🎯 Score',    `${Number(d.correct) || 0} / ${Number(d.total) || 0} correct`)
                + statRow('📊 Accuracy', `${pct}%`)
-               + statRow('⭐ XP Earned', `+${d.xp} XP`);
+               + statRow('⭐ XP Earned', `+${Number(d.xp) || 0} XP`);
   } else if (cardType === 'mocktest') {
     const d = cardData as unknown as MockTestCardData;
-    const timeMin = Math.round(d.timeUsedMs / 60_000);
-    subject   = `📝 ${d.studentName} took an IPM Mock Test — ${d.pct}%!`;
-    headline  = `${d.studentName} just took an IPM Mock Test! 📝`;
-    footerNote = `They scored <strong>${d.score}/${d.totalQ}</strong> — great preparation for the IPM exam!`;
-    statsHtml  = statRow('🎯 Score',       `${d.score} / ${d.totalQ}  (${d.pct}%)`)
-               + statRow('📊 Grade',       d.gradeLabel)
+    const timeMin = Math.round((Number(d.timeUsedMs) || 0) / 60_000);
+    const name = esc(String(d.studentName ?? studentName));
+    subject   = `📝 ${name} took an IPM Mock Test — ${Number(d.pct) || 0}%!`;
+    headline  = `${name} just took an IPM Mock Test! 📝`;
+    footerNote = `They scored <strong>${Number(d.score) || 0}/${Number(d.totalQ) || 0}</strong> — great preparation for the IPM exam!`;
+    statsHtml  = statRow('🎯 Score',       `${Number(d.score) || 0} / ${Number(d.totalQ) || 0}  (${Number(d.pct) || 0}%)`)
+               + statRow('📊 Grade',       esc(String(d.gradeLabel ?? '')))
                + statRow('⏱ Time taken',  `${timeMin} min`)
-               + statRow('💪 Strongest',   d.strongTopic)
-               + statRow('📚 Focus area',  d.weakTopic);
+               + statRow('💪 Strongest',   esc(String(d.strongTopic ?? '')))
+               + statRow('📚 Focus area',  esc(String(d.weakTopic ?? '')));
   } else if (cardType === 'badge') {
     const d = cardData as unknown as BadgeCardData;
-    subject   = `🏅 ${d.studentName} earned the ${d.badgeName} badge!`;
-    headline  = `${d.studentName} earned a new badge! 🏅`;
-    footerNote = `Every badge is a real achievement — they\'re making great progress!`;
-    statsHtml  = statRow('🏅 Badge',       d.badgeEmoji + ' ' + d.badgeName)
-               + statRow('📋 Description', d.badgeDesc)
-               + statRow('📅 Date',        d.date);
+    const name = esc(String(d.studentName ?? studentName));
+    const badge = esc(String(d.badgeName ?? ''));
+    subject   = `🏅 ${name} earned the ${badge} badge!`;
+    headline  = `${name} earned a new badge! 🏅`;
+    footerNote = `Every badge is a real achievement — they're making great progress!`;
+    statsHtml  = statRow('🏅 Badge',       esc(String(d.badgeEmoji ?? '')) + ' ' + badge)
+               + statRow('📋 Description', esc(String(d.badgeDesc ?? '')))
+               + statRow('📅 Date',        esc(String(d.date ?? '')));
   } else if (cardType === 'streak') {
     const d = cardData as unknown as StreakCardData;
-    subject   = `🔥 ${d.studentName} is on a ${d.streakDays}-day streak!`;
-    headline  = `${d.studentName} is on a ${d.streakDays}-day streak! 🔥`;
-    footerNote = `Consistent daily practice is the secret to IPM success. They\'re building an amazing habit!`;
-    statsHtml  = statRow('🔥 Streak',  `${d.streakDays} days in a row!`)
-               + statRow('📅 Date',    d.date);
+    const name = esc(String(d.studentName ?? studentName));
+    const days = Number(d.streakDays) || 0;
+    subject   = `🔥 ${name} is on a ${days}-day streak!`;
+    headline  = `${name} is on a ${days}-day streak! 🔥`;
+    footerNote = `Consistent daily practice is the secret to IPM success. They're building an amazing habit!`;
+    statsHtml  = statRow('🔥 Streak',  `${days} days in a row!`)
+               + statRow('📅 Date',    esc(String(d.date ?? '')));
   } else if (cardType === 'mastered') {
     const d = cardData as unknown as MasteredCardData;
-    subject   = `🏆 ${d.studentName} mastered ${d.topicName} on MathSpark!`;
-    headline  = `${d.studentName} mastered ${d.topicName}! 🏆`;
+    const name = esc(String(d.studentName ?? studentName));
+    const topic = esc(String(d.topicName ?? ''));
+    subject   = `🏆 ${name} mastered ${topic} on MathSpark!`;
+    headline  = `${name} mastered ${topic}! 🏆`;
     footerNote = `Mastering a topic means scoring 80%+ consistently. This is a huge milestone!`;
-    statsHtml  = statRow('📐 Topic',       d.topicEmoji + ' ' + d.topicName)
-               + statRow('✅ Questions',   `${d.questionsTotal} solved`)
-               + statRow('📊 Accuracy',    `${d.accuracy}%`)
-               + statRow('📅 Days practiced', `${d.daysPracticed} days`);
+    statsHtml  = statRow('📐 Topic',       esc(String(d.topicEmoji ?? '')) + ' ' + topic)
+               + statRow('✅ Questions',   `${Number(d.questionsTotal) || 0} solved`)
+               + statRow('📊 Accuracy',    `${Number(d.accuracy) || 0}%`)
+               + statRow('📅 Days practiced', `${Number(d.daysPracticed) || 0} days`);
   }
 
   const html = `

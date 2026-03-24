@@ -22,7 +22,7 @@ function masteryBadge(mastery: string) {
 }
 
 function barColor(mastery: string) {
-  if (mastery === 'Mastered')   return 'bg-green-500';
+  if (mastery === 'Mastered')   return 'bg-duo-green';
   if (mastery === 'Practicing') return 'bg-amber-400';
   return 'bg-gray-300';
 }
@@ -46,7 +46,7 @@ export default function ChapterGrid({ topics }: ChapterGridProps) {
             href={`/practice/${topic.id}`}
             className={`rounded-2xl border-2 p-4 flex flex-col gap-2 hover:shadow-md transition-shadow ${masteryStyle(topic.mastery)}`}
           >
-            <span className="text-xs font-bold text-gray-400 uppercase tracking-wide">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wide">
               Ch {topic.chapterNumber}
             </span>
             <p className="text-sm font-semibold text-gray-800 leading-tight">
@@ -59,7 +59,7 @@ export default function ChapterGrid({ topics }: ChapterGridProps) {
               height="h-1.5"
             />
             {topic.attempted > 0 && (
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray-500">
                 {topic.correct}/{topic.attempted} correct
               </p>
             )}

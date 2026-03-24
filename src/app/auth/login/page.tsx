@@ -39,24 +39,26 @@ function LoginForm() {
   }
 
   return (
-    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12">
+    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12 animate-fade-in">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">⚡</div>
           <h1 className="text-2xl font-extrabold text-white">Parent sign in</h1>
-          <p className="text-white/50 text-sm mt-1">Welcome back to MathSpark</p>
+          <p className="text-white/70 text-sm mt-1">Welcome back to MathSpark</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="email" placeholder="Email address" required autoComplete="email"
+            aria-label="Email address"
             value={email} onChange={(e) => setEmail(e.target.value)}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-blue"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-blue"
           />
           <input
             type="password" placeholder="Password" required autoComplete="current-password"
+            aria-label="Password"
             value={password} onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-blue"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-blue"
           />
 
           {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
@@ -70,12 +72,12 @@ function LoginForm() {
         </form>
 
         <p className="text-center mt-4">
-          <Link href="/auth/forgot-password" className="text-white/40 text-sm hover:text-white/70 transition-colors">
+          <Link href="/auth/forgot-password" className="text-white/60 text-sm hover:text-white/70 transition-colors">
             Forgot your password?
           </Link>
         </p>
 
-        <p className="text-center text-white/40 text-sm mt-6">
+        <p className="text-center text-white/60 text-sm mt-6">
           Don't have an account?{' '}
           <Link href="/auth/register" className="text-duo-green font-semibold hover:underline">
             Create one free
@@ -83,7 +85,7 @@ function LoginForm() {
         </p>
 
         <div className="mt-8 border-t border-white/10 pt-6">
-          <p className="text-center text-white/30 text-xs mb-3">Is your child logging in?</p>
+          <p className="text-center text-white/70 text-xs mb-3">Is your child logging in?</p>
           <Link
             href="/student/login"
             className="block w-full text-center bg-white/5 border border-white/10 rounded-xl py-3 text-white/60 text-sm font-semibold hover:bg-white/10 transition-colors"

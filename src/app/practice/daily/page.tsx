@@ -228,7 +228,8 @@ export default function DailyChallengePage() {
       <div className="min-h-screen flex flex-col items-center justify-center px-6 gap-4">
         <Sparky mood="thinking" size={64} />
         <p className="text-sm text-red-500 font-bold">{error || 'Something went wrong.'}</p>
-        <Link href="/home" className="text-sm text-blue-500 underline">Go Home</Link>
+        <button onClick={() => window.location.reload()} className="bg-duo-blue text-white font-extrabold rounded-2xl px-6 py-2.5 text-sm active:scale-95 transition-transform">Retry</button>
+        <Link href="/home" className="text-sm text-gray-500 font-semibold">Go Home</Link>
       </div>
     );
   }
@@ -397,7 +398,7 @@ export default function DailyChallengePage() {
       </div>
 
       {/* Question counter */}
-      <p className="text-xs font-bold text-gray-400 mb-3 text-center">
+      <p className="text-xs font-bold text-gray-500 mb-3 text-center">
         Question {currentIdx + 1} of {totalQ}
       </p>
 

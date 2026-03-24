@@ -51,7 +51,7 @@ interface ConceptDetail {
 // ── Domain colors ─────────────────────────────────────────────────────────────
 
 const DOMAIN_COLORS: Record<string, { bg: string; border: string; text: string; accent: string }> = {
-  numbers:      { bg: '#ECFDF5', border: '#6EE7B7', text: '#065F46', accent: '#10B981' },
+  numbers:      { bg: '#ECFDF5', border: '#6EE7B7', text: '#065F46', accent: '#58CC02' },
   arithmetic:   { bg: '#EFF6FF', border: '#93C5FD', text: '#1E3A8A', accent: '#3B82F6' },
   factors:      { bg: '#FEF3C7', border: '#FCD34D', text: '#78350F', accent: '#F59E0B' },
   fractions:    { bg: '#FFF7ED', border: '#FDBA74', text: '#7C2D12', accent: '#F97316' },
@@ -59,7 +59,7 @@ const DOMAIN_COLORS: Record<string, { bg: string; border: string; text: string; 
   ratio:        { bg: '#F5F3FF', border: '#C4B5FD', text: '#4C1D95', accent: '#8B5CF6' },
   algebra:      { bg: '#EDE9FE', border: '#A78BFA', text: '#3730A3', accent: '#6366F1' },
   geometry:     { bg: '#ECFEFF', border: '#67E8F9', text: '#155E75', accent: '#06B6D4' },
-  mensuration:  { bg: '#F0FDF4', border: '#86EFAC', text: '#14532D', accent: '#22C55E' },
+  mensuration:  { bg: '#F0FDF4', border: '#86EFAC', text: '#14532D', accent: '#58CC02' },
   speed:        { bg: '#FEF2F2', border: '#FCA5A5', text: '#7F1D1D', accent: '#EF4444' },
   statistics:   { bg: '#F8FAFC', border: '#CBD5E1', text: '#1E293B', accent: '#64748B' },
   squares:      { bg: '#FFFBEB', border: '#FDE68A', text: '#713F12', accent: '#EAB308' },
@@ -75,7 +75,7 @@ function getDomainStyle(domain: string) {
 // ── Difficulty label ──────────────────────────────────────────────────────────
 
 function diffLabel(d: number) {
-  if (d <= 1) return { text: 'Easy', color: '#22C55E' };
+  if (d <= 1) return { text: 'Easy', color: '#58CC02' };
   if (d <= 2) return { text: 'Medium', color: '#F59E0B' };
   if (d <= 3) return { text: 'Hard', color: '#EF4444' };
   return { text: 'Expert', color: '#8B5CF6' };
@@ -98,13 +98,13 @@ export default function ConceptMapPage() {
     const qs = selectedGrade ? `?grade=${selectedGrade}` : '';
     setLoading(true);
     fetch(`/api/concept-map${qs}`)
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
         setNodes(data.nodes ?? []);
         setEdges(data.edges ?? []);
         if (data.meta?.domains) setDomains(data.meta.domains);
       })
-      .catch(() => {})
+      .catch((err) => console.error('[fetch]', err))
       .finally(() => setLoading(false));
   }, [selectedGrade]);
 
@@ -112,9 +112,9 @@ export default function ConceptMapPage() {
   const openDetail = useCallback((id: string) => {
     setDetailLoading(true);
     fetch(`/api/concept-map?id=${id}`)
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => setDetail(data))
-      .catch(() => {})
+      .catch((err) => console.error('[fetch]', err))
       .finally(() => setDetailLoading(false));
   }, []);
 
@@ -143,10 +143,10 @@ export default function ConceptMapPage() {
     <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
-        <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
+        <Link href="/chapters" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white font-extrabold text-lg">Concept Map</h1>
-          <p className="text-white/50 text-xs font-medium">
+          <p className="text-white/70 text-xs font-medium">
             {totalNodes} concepts &middot; {domainCount} domains &middot; {edges.length} connections
           </p>
         </div>
@@ -238,7 +238,7 @@ export default function ConceptMapPage() {
                         <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: style.accent + '20', color: style.accent }}>
                           {domainNodes.length} concepts
                         </span>
-                        <span className="text-[10px] font-bold text-gray-400">
+                        <span className="text-[10px] font-bold text-gray-500">
                           {connectionCount} links
                         </span>
                       </div>
@@ -286,19 +286,19 @@ export default function ConceptMapPage() {
                                 <div className="flex-1 min-w-0">
                                   <p className="text-xs font-extrabold text-gray-800 leading-tight truncate">{node.name}</p>
                                   <div className="flex items-center gap-1.5 mt-0.5">
-                                    <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full text-white" style={{ backgroundColor: diff.color }}>
+                                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full text-white" style={{ backgroundColor: diff.color }}>
                                       {diff.text}
                                     </span>
-                                    <span className="text-[9px] font-bold text-gray-400">
+                                    <span className="text-[10px] font-bold text-gray-500">
                                       G{node.gradeRange[0]}-{node.gradeRange[node.gradeRange.length - 1]}
                                     </span>
                                     {node.questionCount > 0 && (
-                                      <span className="text-[9px] font-bold text-gray-400">
+                                      <span className="text-[10px] font-bold text-gray-500">
                                         {node.questionCount} Qs
                                       </span>
                                     )}
                                     {connections > 0 && (
-                                      <span className="text-[9px] font-bold" style={{ color: style.accent }}>
+                                      <span className="text-[10px] font-bold" style={{ color: style.accent }}>
                                         {connections} links
                                       </span>
                                     )}
@@ -484,17 +484,17 @@ function ConceptDetailSheet({
             <span className="text-[10px] font-bold px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: diff.color }}>
               {diff.text}
             </span>
-            <span className="text-[10px] font-bold text-gray-400">
+            <span className="text-[10px] font-bold text-gray-500">
               Grades {concept.gradeRange[0]}–{concept.gradeRange[concept.gradeRange.length - 1]}
             </span>
             {concept.questionCount > 0 && (
-              <span className="text-[10px] font-bold text-gray-400">
+              <span className="text-[10px] font-bold text-gray-500">
                 {concept.questionCount} questions
               </span>
             )}
           </div>
         </div>
-        <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-xl shrink-0">×</button>
+        <button onClick={onClose} className="text-gray-500 hover:text-gray-600 text-xl shrink-0">×</button>
       </div>
 
       {/* Description */}
@@ -509,25 +509,25 @@ function ConceptDetailSheet({
         {concept.estimatedMinutesToMaster != null && (
           <div className="bg-blue-50 rounded-xl p-2.5 border border-blue-200 text-center">
             <p className="text-lg font-extrabold text-blue-600">{concept.estimatedMinutesToMaster}</p>
-            <p className="text-[9px] font-bold text-blue-400 uppercase">min to master</p>
+            <p className="text-[10px] font-bold text-blue-400 uppercase">min to master</p>
           </div>
         )}
         {concept.masteryThreshold != null && (
           <div className="bg-green-50 rounded-xl p-2.5 border border-green-200 text-center">
-            <p className="text-lg font-extrabold text-green-600">{Math.round(concept.masteryThreshold * 100)}%</p>
-            <p className="text-[9px] font-bold text-green-400 uppercase">mastery goal</p>
+            <p className="text-lg font-extrabold text-duo-green">{Math.round(concept.masteryThreshold * 100)}%</p>
+            <p className="text-[10px] font-bold text-green-400 uppercase">mastery goal</p>
           </div>
         )}
         <div className="bg-purple-50 rounded-xl p-2.5 border border-purple-200 text-center">
           <p className="text-lg font-extrabold text-purple-600">{prerequisites.length + dependents.length}</p>
-          <p className="text-[9px] font-bold text-purple-400 uppercase">connections</p>
+          <p className="text-[10px] font-bold text-purple-400 uppercase">connections</p>
         </div>
       </div>
 
       {/* Prerequisites */}
       {prerequisites.length > 0 && (
         <div>
-          <p className="text-[10px] font-extrabold text-gray-400 uppercase tracking-wide mb-2">
+          <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-2">
             Prerequisites ({prerequisites.length})
           </p>
           <div className="space-y-1.5">
@@ -540,7 +540,7 @@ function ConceptDetailSheet({
                 <span className="text-sm shrink-0">{p.type === 'must_know' ? '🔴' : '🟡'}</span>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-bold text-gray-800 truncate">{p.name}</p>
-                  <p className="text-[9px] font-bold text-gray-400">{p.type === 'must_know' ? 'Must know first' : 'Helpful to know'}</p>
+                  <p className="text-[10px] font-bold text-gray-500">{p.type === 'must_know' ? 'Must know first' : 'Helpful to know'}</p>
                 </div>
                 <span className="text-gray-300 text-xs shrink-0">→</span>
               </button>
@@ -552,7 +552,7 @@ function ConceptDetailSheet({
       {/* Leads to (dependents) */}
       {dependents.length > 0 && (
         <div>
-          <p className="text-[10px] font-extrabold text-gray-400 uppercase tracking-wide mb-2">
+          <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-2">
             Unlocks ({dependents.length})
           </p>
           <div className="space-y-1.5">
@@ -565,7 +565,7 @@ function ConceptDetailSheet({
                 <span className="text-sm shrink-0">{d.type === 'must_know' ? '🟢' : '🟡'}</span>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-bold text-gray-800 truncate">{d.name}</p>
-                  <p className="text-[9px] font-bold text-gray-400">{d.type === 'must_know' ? 'Requires this concept' : 'Benefits from this'}</p>
+                  <p className="text-[10px] font-bold text-gray-500">{d.type === 'must_know' ? 'Requires this concept' : 'Benefits from this'}</p>
                 </div>
                 <span className="text-gray-300 text-xs shrink-0">→</span>
               </button>

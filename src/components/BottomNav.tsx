@@ -43,9 +43,11 @@ export default function BottomNav() {
       <div className="max-w-lg mx-auto flex h-16">
         {NAV.map(({ href, emoji, label }) => {
           const active = href === '/practice'
-            ? pathname.startsWith('/practice') || pathname.startsWith('/chapters') || pathname.startsWith('/learn') || pathname.startsWith('/exam-prep')
+            ? pathname.startsWith('/practice') || pathname.startsWith('/chapters') || pathname.startsWith('/learn') || pathname.startsWith('/exam-prep') || pathname.startsWith('/test')
+            : href === '/home'
+            ? pathname.startsWith('/home') || pathname.startsWith('/chat')
             : href === '/progress'
-            ? pathname.startsWith('/progress')
+            ? pathname.startsWith('/progress') || pathname.startsWith('/leaderboard')
             : href === '/flashcards'
             ? pathname.startsWith('/flashcards')
             : pathname.startsWith(href);
@@ -58,14 +60,14 @@ export default function BottomNav() {
               className={`${baseClass} ${
                 active
                   ? 'text-duo-green border-duo-green'
-                  : 'text-gray-400 border-transparent hover:text-gray-600'
+                  : 'text-gray-500 border-transparent hover:text-gray-600'
               }`}
             >
               <span className="text-xl mb-0.5 relative">
-                {emoji}
+                <span aria-hidden="true">{emoji}</span>
                 {/* Due badge on Cards tab */}
                 {href === '/flashcards' && cardsDue > 0 && (
-                  <span className="absolute -top-1.5 -right-3 bg-red-500 text-white text-[9px] font-bold min-w-[16px] h-4 flex items-center justify-center rounded-full px-1 leading-none">
+                  <span className="absolute -top-1.5 -right-3 bg-red-500 text-white text-[10px] font-bold min-w-[16px] h-4 flex items-center justify-center rounded-full px-1 leading-none">
                     {cardsDue > 99 ? '99+' : cardsDue}
                   </span>
                 )}

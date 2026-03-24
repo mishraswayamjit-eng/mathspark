@@ -63,8 +63,8 @@ export default function LandingPage() {
           <span className="text-white font-extrabold text-lg tracking-tight">MathSpark</span>
         </div>
         <div className="flex items-center gap-3">
-          <Link href="/pricing" className="text-white/50 text-sm font-semibold hover:text-white transition-colors hidden sm:block">Pricing</Link>
-          <Link href="/auth/login" className="text-white/50 text-sm font-semibold hover:text-white transition-colors">Sign in</Link>
+          <Link href="/pricing" className="text-white/70 text-sm font-semibold hover:text-white transition-colors hidden sm:block">Pricing</Link>
+          <Link href="/auth/login" className="text-white/70 text-sm font-semibold hover:text-white transition-colors">Sign in</Link>
           <Link href="/auth/register" className="bg-[#58CC02] border-b-[3px] border-[#46a302] text-white text-sm font-extrabold px-4 py-2 rounded-full hover:bg-[#5bd800] transition-colors active:translate-y-[2px] active:border-b-0">
             Start Free
           </Link>
@@ -90,7 +90,7 @@ export default function LandingPage() {
             <p className="text-white/60 text-base leading-relaxed mb-2">
               India&apos;s smartest IPM &amp; Olympiad prep — adaptive AI tutoring, 100,000+ richly researched questions, real exam simulations. Built by competitive math champions.
             </p>
-            <p className="text-white/30 text-xs leading-relaxed mb-8 italic border-l-2 border-white/10 pl-3">
+            <p className="text-white/70 text-xs leading-relaxed mb-8 italic border-l-2 border-white/10 pl-3">
               Research shows daily adaptive practice doubles learning growth versus worksheets (Muralidharan et al., American Economic Review, 2019)
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -183,7 +183,7 @@ export default function LandingPage() {
               </colgroup>
               <thead>
                 <tr className="bg-white/5 border-b border-white/10">
-                  <th className="text-left px-4 py-3 text-white/40 font-semibold text-xs"></th>
+                  <th className="text-left px-4 py-3 text-white/60 font-semibold text-xs"></th>
                   <th className="px-4 py-3 text-white/45 font-semibold text-center text-xs">
                     Private Tutor<br /><span className="font-normal text-white/25">₹1,500–2,000/hr</span>
                   </th>
@@ -357,7 +357,7 @@ export default function LandingPage() {
                   </div>
                 </div>
                 <h3 className="text-white font-extrabold text-sm mb-2 leading-tight">{r.title}</h3>
-                <p className="text-white/50 text-xs leading-relaxed flex-1">{r.body}</p>
+                <p className="text-white/70 text-xs leading-relaxed flex-1">{r.body}</p>
                 <p className="text-white/25 text-xs mt-3 italic">{r.authors}</p>
               </div>
             </SectionFade>

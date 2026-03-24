@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { useFlashcardDeck } from '@/hooks/useFlashcardDeck';
 import dynamic from 'next/dynamic';
 import Confetti from '@/components/Confetti';
 import Sparky from '@/components/Sparky';
@@ -142,7 +143,7 @@ function VoiceComplete({
 
       {/* Transitions */}
       {promoted.length > 0 && (
-        <div className="w-full max-w-xs bg-emerald-500/10 border border-emerald-500/20 rounded-xl px-3 py-2.5 mb-4">
+        <div className="w-full max-w-xs bg-duo-green/10 border border-duo-green/20 rounded-xl px-3 py-2.5 mb-4">
           <p className="text-xs font-bold text-emerald-400 mb-1">
             ⬆️ {promoted.length} card{promoted.length > 1 ? 's' : ''} leveled up
           </p>
@@ -195,6 +196,7 @@ interface VoiceRecallSessionProps {
 
 export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) {
   const router = useRouter();
+  const { fetchDeck } = useFlashcardDeck(deckId);
   const { playCorrect, playWrong, playLevelUp, playMastery } = useSounds();
 
   const [phase, setPhase] = useState<Phase>('loading');
@@ -213,8 +215,7 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
   const thinkTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [transcript, setTranscript] = useState('');
   const [isListening, setIsListening] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const recognitionRef = useRef<any>(null);
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
   const [speechSupported, setSpeechSupported] = useState(false);
 
   // Celebrations
@@ -235,31 +236,24 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
   // ── Check Web Speech API support ─────────────────────────────────────────
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const w = window as any;
-    setSpeechSupported(!!(w.SpeechRecognition || w.webkitSpeechRecognition));
+    setSpeechSupported(!!(window.SpeechRecognition || window.webkitSpeechRecognition));
   }, []);
 
   // ── Load deck ────────────────────────────────────────────────────────────
 
   const loadDeck = useCallback(() => {
-    const sid = localStorage.getItem('mathspark_student_id');
-    const grade = localStorage.getItem('mathspark_student_grade') || '4';
-    if (!sid) { router.replace('/start'); return; }
-
-    fetch(`/api/flashcards/deck?studentId=${sid}&grade=${grade}&deck=${encodeURIComponent(deckId)}`)
-      .then((r) => r.json())
+    fetchDeck()
       .then((data) => {
-        if (data.cards && data.cards.length > 0) {
-          setCards(data.cards);
+        if (!data || data.cards.length === 0) {
+          setPhase('complete');
+        } else {
+          setCards(data.cards as CardWithProgress[]);
           setDeckName(data.deckName ?? 'Voice Recall');
           setPhase('prompt');
-        } else {
-          setPhase('complete');
         }
       })
       .catch(() => router.replace('/flashcards'));
-  }, [router, deckId]);
+  }, [fetchDeck, router]);
 
   useEffect(() => { loadDeck(); }, [loadDeck]);
 
@@ -268,19 +262,16 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
   const startListening = useCallback(() => {
     if (!speechSupported) return;
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const w = window as any;
-    const SpeechRecognition = w.SpeechRecognition || w.webkitSpeechRecognition;
-    if (!SpeechRecognition) return;
+    const SpeechRecognitionCtor = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognitionCtor) return;
 
     try {
-      const recognition = new SpeechRecognition();
+      const recognition = new SpeechRecognitionCtor();
       recognition.continuous = true;
       recognition.interimResults = true;
       recognition.lang = 'en-IN';
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      recognition.onresult = (event: any) => {
+      recognition.onresult = (event: SpeechRecognitionEvent) => {
         let text = '';
         for (let i = 0; i < event.results.length; i++) {
           text += event.results[i][0].transcript;
@@ -368,9 +359,9 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
         fetch('/api/flashcards/progress', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ studentId: sid, cardId: card.id, correct }),
+          body: JSON.stringify({ cardId: card.id, correct }),
         })
-          .then((r) => r.json())
+          .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
           .then((data) => {
             if (!data.ok) return;
 
@@ -412,7 +403,7 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
               playWrong();
             }
           })
-          .catch(() => {});
+          .catch((err) => console.error('[fetch]', err));
       }
 
       const newCompleted = completed + 1;
@@ -448,7 +439,6 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        studentId: sid,
         mode: 'voice',
         cardsReviewed: completed,
         cardsCorrect: correctCount,
@@ -456,7 +446,7 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
         bonusXP: accumulatedBonusRef.current,
       }),
     })
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
         if (data.ok && data.xp) {
           setSessionXP({
@@ -466,7 +456,7 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
           });
         }
       })
-      .catch(() => {});
+      .catch((err) => console.error('[fetch]', err));
   }, [startTime, completed, correctCount]);
 
   useEffect(() => {
@@ -769,7 +759,7 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
               </button>
               <button
                 onClick={() => handleEvaluate(true)}
-                className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 active:scale-[0.97] transition-[transform,background-color,border-color]"
+                className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-emerald-400 bg-duo-green/10 border border-duo-green/20 active:scale-[0.97] transition-[transform,background-color,border-color]"
               >
                 Got it! 🎯
               </button>

@@ -106,7 +106,7 @@ export async function addWeeklyXP(studentId: string, xpAmount: number): Promise<
   const today = new Date();
   today.setUTCHours(0, 0, 0, 0);
 
-  await Promise.all([
+  await prisma.$transaction([
     prisma.leagueMembership.update({
       where: { id: membership.id },
       data:  { weeklyXP: { increment: xpAmount } },

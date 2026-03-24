@@ -13,7 +13,8 @@
     "postinstall": "prisma generate",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "lint": "next lint"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.36.3",
@@ -24,6 +25,7 @@
     "bcryptjs": "^2.4.3",
     "katex": "^0.16.10",
     "next": "^14.2.3",
+    "jose": "^5.2.0",
     "next-auth": "^4.24.7",
     "razorpay": "^2.9.2",
     "react": "^18",

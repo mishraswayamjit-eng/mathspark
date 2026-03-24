@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getTopicsCached } from '@/lib/topicCache';
 import { TOPIC_ORDER, computeStreak } from '@/lib/sharedUtils';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
 function computeWeeklyData(attempts: Array<{ createdAt: Date; isCorrect: boolean }>) {
   const today = new Date();
@@ -18,14 +19,12 @@ function computeWeeklyData(attempts: Array<{ createdAt: Date; isCorrect: boolean
   });
 }
 
-// GET /api/profile?studentId=xxx
-export async function GET(req: Request) {
+// GET /api/profile
+export async function GET() {
   try {
-    const { searchParams } = new URL(req.url);
-    const studentId = searchParams.get('studentId');
-
+    const studentId = await getAuthenticatedStudentId();
     if (!studentId) {
-      return NextResponse.json({ error: 'studentId required' }, { status: 400 });
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
     const [student, progress, attempts, allTopics] = await Promise.all([

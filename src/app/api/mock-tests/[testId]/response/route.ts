@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { validateBody, ValidationError } from '@/lib/validateBody';
 
 // PATCH /api/mock-tests/[testId]/response
 // Body: { questionNumber, selectedAnswer?, flagged?, additionalTimeMs? }
@@ -8,26 +10,36 @@ export async function PATCH(
   { params }: { params: { testId: string } },
 ) {
   try {
+    const studentId = await getAuthenticatedStudentId();
+    if (!studentId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { testId } = params;
-    const body = await req.json();
-    const { questionNumber, selectedAnswer, flagged, additionalTimeMs } = body as {
+    const { questionNumber, selectedAnswer, flagged, additionalTimeMs } = validateBody<{
       questionNumber: number;
       selectedAnswer?: string;
       flagged?: boolean;
       additionalTimeMs?: number;
-    };
+    }>(
+      await req.json(),
+      { questionNumber: 'number', selectedAnswer: 'string?', flagged: 'boolean?', additionalTimeMs: 'number?' },
+    );
 
     if (!questionNumber) {
       return NextResponse.json({ error: 'questionNumber required' }, { status: 400 });
     }
 
-    // Verify test exists and is in progress
+    // Verify test exists, is in progress, and belongs to student
     const mockTest = await prisma.mockTest.findUnique({
       where: { id: testId },
-      select: { status: true },
+      select: { status: true, studentId: true },
     });
     if (!mockTest) {
       return NextResponse.json({ error: 'Test not found' }, { status: 404 });
+    }
+    if (mockTest.studentId !== studentId) {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
     if (mockTest.status !== 'in_progress') {
       return NextResponse.json({ error: 'Test already completed' }, { status: 409 });
@@ -65,6 +77,9 @@ export async function PATCH(
 
     return new Response(null, { status: 204 });
   } catch (err) {
+    if (err instanceof ValidationError) {
+      return NextResponse.json({ error: err.message }, { status: 400 });
+    }
     console.error('[mock-tests PATCH response]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }

@@ -1,8 +1,10 @@
+import { MS_PER_HOUR } from '@/lib/timeConstants';
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { prisma } from '@/lib/db';
 import { buildReportEmail, type ReportTopic } from '@/lib/emailReport';
 import { TOPIC_ORDER, computeStreak } from '@/lib/sharedUtils';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
 export const dynamic = 'force-dynamic';
 
@@ -15,15 +17,15 @@ function weeklyCorrectCount(
 }
 
 // POST /api/reports/send — on-demand email to parent
-// Body: { studentId }
+// Authenticated via cookie — no body needed
 // Rate-limit: 1 email per 24 hours per student (tracked via DB lastReportSentAt)
 export async function POST(req: Request) {
-  const resend = new Resend(process.env.RESEND_API_KEY);
-  const { studentId } = await req.json() as { studentId?: string };
-
+  const studentId = await getAuthenticatedStudentId();
   if (!studentId) {
-    return NextResponse.json({ error: 'studentId required' }, { status: 400 });
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   const student = await prisma.student.findUnique({
     where: { id: studentId },
@@ -37,7 +39,7 @@ export async function POST(req: Request) {
 
   // Rate limit: 1 send per 24 hours
   if (student.lastReportSentAt) {
-    const hoursSince = (Date.now() - student.lastReportSentAt.getTime()) / 36e5;
+    const hoursSince = (Date.now() - student.lastReportSentAt.getTime()) / MS_PER_HOUR;
     if (hoursSince < 24) {
       const hoursLeft = Math.ceil(24 - hoursSince);
       return NextResponse.json(

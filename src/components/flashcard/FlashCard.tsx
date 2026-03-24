@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import dynamic from 'next/dynamic';
 import { getTopicColor } from '@/data/topicColors';
 import type { FlashCard as FlashCardType } from '@/types';
@@ -23,7 +23,7 @@ interface FlashCardProps {
 
 // ── Difficulty dots ──────────────────────────────────────────────────────────
 
-function DifficultyDots({ level }: { level: number }) {
+const DifficultyDots = React.memo(function DifficultyDots({ level }: { level: number }) {
   return (
     <div className="flex items-center gap-1">
       {[1, 2, 3].map((i) => (
@@ -36,7 +36,7 @@ function DifficultyDots({ level }: { level: number }) {
       ))}
     </div>
   );
-}
+});
 
 // ── Main component ───────────────────────────────────────────────────────────
 
@@ -55,21 +55,31 @@ export default function FlashCard({
   const touchStartRef = useRef<{ x: number; y: number; t: number } | null>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
+  // Refs for stable callbacks (avoid recreating handlers on every drag pixel)
+  const dragXRef = useRef(0);
+  const isDraggingRef = useRef(false);
+  const flyOffRef = useRef<'left' | 'right' | null>(null);
+  const onSwipeRightRef = useRef(onSwipeRight);
+  const onSwipeLeftRef = useRef(onSwipeLeft);
+  onSwipeRightRef.current = onSwipeRight;
+  onSwipeLeftRef.current = onSwipeLeft;
+
   const topicColor = getTopicColor(card.topicName);
   const SWIPE_THRESHOLD = 60;
 
   // ── Flip handler ─────────────────────────────────────────────────────────
 
   const handleFlip = useCallback(() => {
-    if (isDragging) return;
+    if (isDraggingRef.current) return;
     setIsFlipped((prev) => !prev);
-  }, [isDragging]);
+  }, []);
 
   // ── Touch / swipe handlers ───────────────────────────────────────────────
 
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
     const touch = e.touches[0];
     touchStartRef.current = { x: touch.clientX, y: touch.clientY, t: Date.now() };
+    isDraggingRef.current = false;
     setIsDragging(false);
   }, []);
 
@@ -80,6 +90,8 @@ export default function FlashCard({
     const dy = touch.clientY - touchStartRef.current.y;
     // Only horizontal drags
     if (Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
+      isDraggingRef.current = true;
+      dragXRef.current = dx;
       setIsDragging(true);
       setDragX(dx);
     }
@@ -87,15 +99,20 @@ export default function FlashCard({
 
   const handleTouchEnd = useCallback(() => {
     if (!touchStartRef.current) return;
-    const wasShortTap = !isDragging && Date.now() - touchStartRef.current.t < 300;
+    const wasDragging = isDraggingRef.current;
+    const dx = dragXRef.current;
+    const wasShortTap = !wasDragging && Date.now() - touchStartRef.current.t < 300;
 
-    if (isDragging && Math.abs(dragX) >= SWIPE_THRESHOLD) {
-      const direction = dragX > 0 ? 'right' : 'left';
+    if (wasDragging && Math.abs(dx) >= SWIPE_THRESHOLD) {
+      const direction = dx > 0 ? 'right' : 'left';
+      flyOffRef.current = direction;
       setFlyOff(direction);
       setTimeout(() => {
-        if (direction === 'right') onSwipeRight?.();
-        else onSwipeLeft?.();
+        if (direction === 'right') onSwipeRightRef.current?.();
+        else onSwipeLeftRef.current?.();
         // Reset after callback
+        flyOffRef.current = null;
+        dragXRef.current = 0;
         setFlyOff(null);
         setDragX(0);
         setIsFlipped(false);
@@ -104,15 +121,17 @@ export default function FlashCard({
       handleFlip();
     }
 
-    if (!flyOff) setDragX(0);
+    if (!flyOffRef.current) { dragXRef.current = 0; setDragX(0); }
+    isDraggingRef.current = false;
     setIsDragging(false);
     touchStartRef.current = null;
-  }, [isDragging, dragX, handleFlip, onSwipeRight, onSwipeLeft, flyOff]);
+  }, [handleFlip]);
 
   // ── Mouse drag (desktop) ─────────────────────────────────────────────────
 
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
     touchStartRef.current = { x: e.clientX, y: e.clientY, t: Date.now() };
+    isDraggingRef.current = false;
     setIsDragging(false);
   }, []);
 
@@ -121,6 +140,8 @@ export default function FlashCard({
     const dx = e.clientX - touchStartRef.current.x;
     const dy = e.clientY - touchStartRef.current.y;
     if (Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
+      isDraggingRef.current = true;
+      dragXRef.current = dx;
       setIsDragging(true);
       setDragX(dx);
     }
@@ -182,7 +203,7 @@ export default function FlashCard({
       {/* ── Swipe indicators ──────────────────────────────────────────────── */}
       {isDragging && dragX > 20 && (
         <div
-          className="absolute top-8 left-8 z-50 px-4 py-2 rounded-xl bg-emerald-500/90 text-white font-bold text-lg rotate-[-12deg]"
+          className="absolute top-8 left-8 z-50 px-4 py-2 rounded-xl bg-duo-green/90 text-white font-bold text-lg rotate-[-12deg]"
           style={{ opacity: swipeIndicatorOpacity }}
         >
           Nailed it! 🎯

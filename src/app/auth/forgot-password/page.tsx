@@ -31,19 +31,19 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12">
+    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12 animate-fade-in">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">🔑</div>
           <h1 className="text-2xl font-extrabold text-white">Reset password</h1>
-          <p className="text-white/50 text-sm mt-1">We'll send you a reset link</p>
+          <p className="text-white/70 text-sm mt-1">We'll send you a reset link</p>
         </div>
 
         {sent ? (
           <div className="text-center space-y-4">
             <div className="text-4xl">📧</div>
             <p className="text-white font-semibold">Check your email!</p>
-            <p className="text-white/50 text-sm">
+            <p className="text-white/70 text-sm">
               If an account exists for <strong className="text-white/70">{email}</strong>, you'll receive a reset link in the next few minutes.
             </p>
             <Link
@@ -57,8 +57,9 @@ export default function ForgotPasswordPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="email" placeholder="Your email address" required
+              aria-label="Your email address"
               value={email} onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-blue"
+              className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-blue"
             />
 
             {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
@@ -71,7 +72,7 @@ export default function ForgotPasswordPage() {
             </button>
 
             <p className="text-center">
-              <Link href="/auth/login" className="text-white/40 text-sm hover:text-white/70 transition-colors">
+              <Link href="/auth/login" className="text-white/60 text-sm hover:text-white/70 transition-colors">
                 ← Back to login
               </Link>
             </p>

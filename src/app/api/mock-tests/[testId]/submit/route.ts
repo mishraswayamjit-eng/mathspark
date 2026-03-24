@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { addWeeklyXP } from '@/lib/leaderboard';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
 // POST /api/mock-tests/[testId]/submit
 // Idempotent — re-submitting returns existing results
@@ -9,6 +10,11 @@ export async function POST(
   { params }: { params: { testId: string } },
 ) {
   try {
+    const studentId = await getAuthenticatedStudentId();
+    if (!studentId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { testId } = params;
 
     const mockTest = await prisma.mockTest.findUnique({
@@ -25,6 +31,11 @@ export async function POST(
 
     if (!mockTest) {
       return NextResponse.json({ error: 'Test not found' }, { status: 404 });
+    }
+
+    // Ownership check
+    if (mockTest.studentId !== studentId) {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
     // Idempotent: already completed

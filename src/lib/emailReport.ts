@@ -1,6 +1,16 @@
 // ─── Email report HTML generator ────────────────────────────────────────────
 // Pure function — no side effects, easy to test/preview.
 
+/** Escape HTML special characters to prevent XSS in email templates. */
+export function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 const TOPIC_SHORT: Record<string, string> = {
   'ch01-05': 'Numbers',      'ch06': 'Factors',       'ch07-08': 'Fractions',
   'ch09-10': 'Operations',   'ch11': 'Decimals',       'ch12': 'Measurement',
@@ -31,7 +41,7 @@ export interface ReportInput {
 }
 
 function topicName(t: ReportTopic): string {
-  return TOPIC_SHORT[t.id] ?? t.name;
+  return escapeHtml(TOPIC_SHORT[t.id] ?? t.name);
 }
 function topicPct(t: ReportTopic): number {
   return t.attempted > 0 ? Math.round((t.correct / t.attempted) * 100) : 0;
@@ -39,9 +49,10 @@ function topicPct(t: ReportTopic): number {
 
 export function buildReportEmail(input: ReportInput): { subject: string; html: string } {
   const {
-    studentId, studentName, weeklyCorrect, totalSolved, totalAttempted,
+    studentId, weeklyCorrect, totalSolved, totalAttempted,
     streakDays, topicsMastered, topics, appUrl,
   } = input;
+  const studentName = escapeHtml(input.studentName);
 
   const accuracy = totalAttempted > 0
     ? Math.round((totalSolved / totalAttempted) * 100) : 0;

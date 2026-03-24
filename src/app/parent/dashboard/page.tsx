@@ -42,7 +42,7 @@ export default function ParentDashboard() {
   useEffect(() => {
     if (status !== 'authenticated') return;
     fetch('/api/parent/children')
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d) => { setChildren(d.children ?? []); setLoading(false); })
       .catch(() => setLoading(false));
   }, [status]);
@@ -55,7 +55,14 @@ export default function ParentDashboard() {
     );
   }
 
-  function loginAsChild(childId: string, childName: string, childGrade: number) {
+  async function loginAsChild(childId: string, childName: string, childGrade: number) {
+    // Set httpOnly cookie for API auth
+    await fetch('/api/student/session', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ studentId: childId }),
+    });
+    // Keep localStorage for UI display only
     localStorage.setItem('mathspark_student_id',    childId);
     localStorage.setItem('mathspark_student_name',  childName);
     localStorage.setItem('mathspark_student_grade', String(childGrade));
@@ -68,14 +75,14 @@ export default function ParentDashboard() {
       <div className="px-4 pt-10 pb-4">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-white/50 text-xs font-semibold uppercase tracking-widest">Parent Dashboard</p>
+            <p className="text-white/70 text-xs font-semibold uppercase tracking-widest">Parent Dashboard</p>
             <h1 className="text-2xl font-extrabold text-white mt-0.5">
               Hi, {session?.user?.name?.split(' ')[0]} 👋
             </h1>
           </div>
           <button
             onClick={() => signOut({ callbackUrl: '/auth/login' })}
-            className="text-white/40 text-xs font-semibold hover:text-white/70 transition-colors border border-white/10 rounded-xl px-3 py-2"
+            className="text-white/60 text-xs font-semibold hover:text-white/70 transition-colors border border-white/10 rounded-xl px-3 py-2"
           >
             Sign out
           </button>
@@ -85,7 +92,7 @@ export default function ParentDashboard() {
       {/* Children */}
       <div className="px-4 mt-2">
         <div className="flex items-center justify-between mb-3">
-          <p className="text-xs font-extrabold text-white/40 uppercase tracking-widest">Your children</p>
+          <p className="text-xs font-extrabold text-white/60 uppercase tracking-widest">Your children</p>
           <Link
             href="/parent/add-child"
             className="text-duo-green text-sm font-extrabold hover:text-duo-green-dark transition-colors"
@@ -98,7 +105,7 @@ export default function ParentDashboard() {
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
             <div className="text-4xl mb-3">👦</div>
             <p className="text-white font-semibold">No children yet</p>
-            <p className="text-white/40 text-sm mt-1 mb-4">Add your child to get started</p>
+            <p className="text-white/60 text-sm mt-1 mb-4">Add your child to get started</p>
             <Link
               href="/parent/add-child"
               className="inline-block bg-duo-green hover:bg-duo-green-dark text-white font-extrabold px-6 py-3 rounded-2xl transition-colors"
@@ -124,11 +131,11 @@ export default function ParentDashboard() {
                         <span className="text-white font-extrabold text-base">{child.name}</span>
                         <PlanBadge sub={child.subscription} />
                       </div>
-                      <p className="text-white/40 text-xs">Grade {child.grade} · Last active: {lastActive}</p>
+                      <p className="text-white/60 text-xs">Grade {child.grade} · Last active: {lastActive}</p>
 
                       {/* Daily usage bar */}
                       <div className="mt-3">
-                        <div className="flex justify-between text-xs text-white/40 mb-1">
+                        <div className="flex justify-between text-xs text-white/60 mb-1">
                           <span>Today&apos;s usage</span>
                           {unlimited
                             ? <span className="text-duo-green font-extrabold">Unlimited ♾️</span>
@@ -143,7 +150,7 @@ export default function ParentDashboard() {
                         </div>
                       </div>
 
-                      <p className="text-white/40 text-xs mt-2">
+                      <p className="text-white/60 text-xs mt-2">
                         AI chats today: {child.aiChatMessagesUsedToday} / {child.subscription?.aiChatDailyLimit ?? 5}
                       </p>
                     </div>
@@ -182,9 +189,9 @@ export default function ParentDashboard() {
           <span className="text-2xl">💳</span>
           <div>
             <p className="text-white font-extrabold text-sm">View Plans & Pricing</p>
-            <p className="text-white/40 text-xs">Starter ₹500/mo · Advanced ₹1,500/mo · Unlimited ₹5,000/mo</p>
+            <p className="text-white/60 text-xs">Starter ₹500/mo · Advanced ₹1,500/mo · Unlimited ₹5,000/mo</p>
           </div>
-          <span className="text-white/40 ml-auto">→</span>
+          <span className="text-white/60 ml-auto">→</span>
         </Link>
       </div>
     </div>

@@ -7,9 +7,14 @@ export const dynamic = 'force-dynamic';
 // POST /api/payment/webhook
 // Handles Razorpay webhook events
 export async function POST(req: Request) {
+  const secret = process.env.RAZORPAY_WEBHOOK_SECRET;
+  if (!secret) {
+    console.error('[payment/webhook] RAZORPAY_WEBHOOK_SECRET is not set');
+    return NextResponse.json({ error: 'Webhook not configured' }, { status: 500 });
+  }
+
   const body      = await req.text();
   const signature = req.headers.get('x-razorpay-signature') ?? '';
-  const secret    = process.env.RAZORPAY_WEBHOOK_SECRET ?? '';
 
   // Verify webhook signature
   const expected = crypto.createHmac('sha256', secret).update(body).digest('hex');

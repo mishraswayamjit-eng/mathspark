@@ -33,7 +33,7 @@ function StatTile({ emoji, label, value, color }: {
     <div className="bg-gray-50 rounded-2xl p-3 border border-gray-100 text-center">
       <span className="text-2xl">{emoji}</span>
       <p className="text-xl font-extrabold mt-1" style={{ color }}>{value}</p>
-      <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wide mt-0.5">{label}</p>
+      <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-0.5">{label}</p>
     </div>
   );
 }
@@ -92,11 +92,11 @@ export default function PublicProfilePage() {
       <div className="min-h-screen bg-white flex flex-col items-center justify-center gap-4 px-8 text-center">
         <p className="text-5xl">🔒</p>
         <h2 className="font-extrabold text-gray-800 text-lg">Profile not found</h2>
-        <p className="text-gray-400 text-sm font-medium">
+        <p className="text-gray-500 text-sm font-medium">
           This student has hidden their profile or it doesn&apos;t exist.
         </p>
         <button
-          onClick={() => router.back()}
+          onClick={() => window.history.length > 1 ? router.back() : router.push('/home')}
           className="mt-2 bg-duo-blue text-white font-extrabold rounded-2xl px-6 py-3 active:scale-95 transition-transform"
           style={{ minHeight: 48 }}
         >
@@ -118,7 +118,7 @@ export default function PublicProfilePage() {
       {/* ── Back button ─────────────────────────────────────────────────── */}
       <div className="absolute top-4 left-4 z-10">
         <button
-          onClick={() => router.back()}
+          onClick={() => window.history.length > 1 ? router.back() : router.push('/home')}
           className="bg-white/90 backdrop-blur rounded-full px-3 py-2 font-bold text-sm text-gray-600 shadow active:scale-95 transition-transform"
           style={{ minHeight: 0 }}
         >
@@ -139,7 +139,7 @@ export default function PublicProfilePage() {
           <span className="text-lg">{tierBadge}</span>
           <span className="text-white/70 font-semibold text-sm">{tierName} League</span>
         </div>
-        <p className="text-white/40 text-xs font-medium mt-1">Member since {joined}</p>
+        <p className="text-white/60 text-xs font-medium mt-1">Member since {joined}</p>
         {isMe && (
           <Link
             href="/profile"
@@ -152,7 +152,7 @@ export default function PublicProfilePage() {
 
       {/* ── Stats grid ──────────────────────────────────────────────────── */}
       <div className="bg-white px-4 py-5 border-b border-gray-100">
-        <h2 className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-3">Stats</h2>
+        <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest mb-3">Stats</h2>
         <div className="grid grid-cols-2 gap-3">
           <StatTile emoji="💎"  label="Lifetime XP"     value={totalLifetimeXP.toLocaleString()} color="#9B59B6" />
           <StatTile emoji="✅"  label="Questions Solved" value={totalSolved}                      color="#58CC02" />
@@ -164,7 +164,7 @@ export default function PublicProfilePage() {
       {/* ── Awards ──────────────────────────────────────────────────────── */}
       {awards.length > 0 && (
         <div className="bg-white px-4 py-5 mt-2 border-b border-gray-100">
-          <h2 className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-3">Recent Awards</h2>
+          <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest mb-3">Recent Awards</h2>
           <div className="space-y-2">
             {awards.map((a: WeeklyAwardData, i: number) => {
               const meta = AWARD_META[a.awardType] ?? { icon: '🏅', name: a.awardType };
@@ -173,7 +173,7 @@ export default function PublicProfilePage() {
                   <span className="text-2xl">{meta.icon}</span>
                   <div>
                     <p className="font-extrabold text-gray-800 text-sm">{meta.name}</p>
-                    <p className="text-xs text-gray-400 font-medium">{a.value}</p>
+                    <p className="text-xs text-gray-500 font-medium">{a.value}</p>
                   </div>
                 </div>
               );
@@ -187,7 +187,7 @@ export default function PublicProfilePage() {
         <div className="px-4 pt-6 text-center">
           <a
             href={`mailto:admin@mathspark.in?subject=Report profile ${targetId}&body=I want to report this profile for the following reason:`}
-            className="text-xs text-gray-400 font-medium underline"
+            className="text-xs text-gray-500 font-medium underline"
           >
             🚩 Report this profile
           </a>

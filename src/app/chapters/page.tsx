@@ -1,6 +1,6 @@
 'use client';
 
-import { Fragment, useEffect, useRef, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import type { DashboardData, TopicWithProgress } from '@/types';
 import Sparky from '@/components/Sparky';
@@ -58,29 +58,29 @@ function getHearts(): number {
 
 // ── Sub-components ─────────────────────────────────────────────────────────────
 
-function MasteryBadge({ mastery }: { mastery: string }) {
+const MasteryBadge = React.memo(function MasteryBadge({ mastery }: { mastery: string }) {
   if (mastery === 'Mastered') {
     return (
-      <span className="inline-flex items-center gap-1 text-[11px] font-extrabold px-2 py-0.5 rounded-full bg-green-100 text-green-700 border border-green-200">
+      <span className="inline-flex items-center gap-1 text-xs font-extrabold px-2 py-0.5 rounded-full bg-green-100 text-green-700 border border-green-200">
         Mastered ✅
       </span>
     );
   }
   if (mastery === 'Practicing') {
     return (
-      <span className="inline-flex items-center gap-1 text-[11px] font-extrabold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 border border-amber-200">
+      <span className="inline-flex items-center gap-1 text-xs font-extrabold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 border border-amber-200">
         Learning 🟡
       </span>
     );
   }
   return (
-    <span className="inline-flex items-center gap-1 text-[11px] font-extrabold px-2 py-0.5 rounded-full bg-gray-100 text-gray-500 border border-gray-200">
+    <span className="inline-flex items-center gap-1 text-xs font-extrabold px-2 py-0.5 rounded-full bg-gray-100 text-gray-500 border border-gray-200">
       Not started
     </span>
   );
-}
+});
 
-function MiniProgressBar({ correct, attempted, mastery }: { correct: number; attempted: number; mastery: string }) {
+const MiniProgressBar = React.memo(function MiniProgressBar({ correct, attempted, mastery }: { correct: number; attempted: number; mastery: string }) {
   const pct = mastery === 'Mastered'
     ? 100
     : attempted > 0
@@ -100,9 +100,9 @@ function MiniProgressBar({ correct, attempted, mastery }: { correct: number; att
       />
     </div>
   );
-}
+});
 
-function TopicCard({
+const TopicCard = React.memo(function TopicCard({
   topic,
   onClick,
   onFlashcards,
@@ -117,7 +117,7 @@ function TopicCard({
     <div className="w-full text-left bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-duo-blue transition-[colors,border-color,box-shadow] duration-150 flex flex-col gap-2">
       {/* Emoji + mastery badge row */}
       <button onClick={onClick} className="flex items-start justify-between gap-1 active:scale-[0.97] transition-transform">
-        <span className="text-3xl leading-none select-none">{emoji}</span>
+        <span className="text-3xl leading-none select-none" aria-hidden="true">{emoji}</span>
         <MasteryBadge mastery={topic.mastery} />
       </button>
 
@@ -130,16 +130,15 @@ function TopicCard({
 
       {/* Questions solved + flashcard link */}
       <div className="flex items-center justify-between">
-        <p className="text-[11px] text-gray-400 font-semibold">
+        <p className="text-xs text-gray-500 font-semibold">
           {topic.correct} question{topic.correct !== 1 ? 's' : ''} solved
         </p>
         {onFlashcards && (
           <button
             onClick={(e) => { e.stopPropagation(); onFlashcards(); }}
-            style={{ minHeight: 0 }}
-            className="text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full px-2 py-0.5 hover:bg-emerald-100 transition-colors"
+            className="text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full px-2 py-0.5 hover:bg-emerald-100 transition-colors min-h-0"
           >
-            🃏 Cards
+            <span aria-hidden="true">🃏 </span>Cards
           </button>
         )}
       </div>
@@ -154,7 +153,7 @@ function TopicCard({
       </button>
     </div>
   );
-}
+});
 
 // ── Loading skeleton ───────────────────────────────────────────────────────────
 
@@ -244,8 +243,8 @@ export default function ChaptersPage() {
     } catch { /* ignore parse errors */ }
 
     // Cache miss — fetch from API
-    fetch(`/api/dashboard?studentId=${id}`)
-      .then((r) => r.json())
+    fetch('/api/dashboard')
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d: DashboardData) => {
         setData(d);
         setLoading(false);
@@ -269,44 +268,61 @@ export default function ChaptersPage() {
         if (n) setNudge(n);
       })
       .catch(() => setLoading(false));
-  }, [router]);
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
-  if (loading) return <Skeleton />;
-  if (!data)   return <Skeleton />;
-
-  const studentName      = data.student.name;
-  const studentGrade     = data.student.grade ?? 4;
-  const subscriptionTier = data.subscriptionTier ?? 0;
-  const streakDays       = data.stats.streakDays;
-  const xp               = data.stats.totalLifetimeXP;
-  const todayCorrect     = data.weeklyData?.[data.weeklyData.length - 1]?.count ?? 0;
-  const goalMet          = todayCorrect >= DAILY_GOAL;
+  const studentGrade     = data?.student.grade ?? 4;
+  const subscriptionTier = data?.subscriptionTier ?? 0;
 
   // Accessible grade sets
   const { fullAccess, sampleOnly } = getAccessibleGrades(studentGrade, subscriptionTier);
 
   // Topics for the selected grade
-  const topicsForGrade: TopicWithProgress[] = (() => {
-    const allT = data.topics;
+  const topicsForGrade = useMemo<TopicWithProgress[]>(() => {
+    const allT = data?.topics ?? [];
     if (selectedGrade === 4) {
-      // Grade 4: ch-series + grade4 pool (shown separately at bottom)
       return allT.filter((t) => TOPIC_ORDER.includes(t.id));
     }
-    // Other grades: only the gradeN pool topic
     return allT.filter((t) => t.id === `grade${selectedGrade}`);
-  })();
+  }, [data?.topics, selectedGrade]);
 
   // Grade 4 IPM pool card (separate from ch-series grid)
-  const grade4PoolTopic = selectedGrade === 4
-    ? data.topics.find((t) => t.id === 'grade4')
-    : null;
+  const grade4PoolTopic = useMemo(
+    () => selectedGrade === 4 ? (data?.topics ?? []).find((t) => t.id === 'grade4') ?? null : null,
+    [data?.topics, selectedGrade],
+  );
 
   // "Also accessible" lower grades (only shown for non-grade-4 selected tabs)
-  const lowerGrades = selectedGrade !== 4
-    ? fullAccess.filter((g) => g < selectedGrade).sort((a, b) => b - a)
-    : [];
+  const lowerGrades = useMemo(
+    () => selectedGrade !== 4 ? fullAccess.filter((g) => g < selectedGrade).sort((a, b) => b - a) : [],
+    [fullAccess, selectedGrade],
+  );
 
-  const sortedTopics = sortTopics(topicsForGrade);
+  const sortedTopics = useMemo(() => sortTopics(topicsForGrade), [topicsForGrade]);
+
+  // Syllabus coverage stats (used by the coverage bar)
+  const syllabusCoverage = useMemo(() => {
+    const started = topicsForGrade.filter((t) => t.attempted >= 5).length;
+    const total = topicsForGrade.length || 1;
+    const pct = Math.round(started / total * 100);
+    return { started, total, pct };
+  }, [topicsForGrade]);
+
+  // Weak topics for recommendations
+  const weakTopics = useMemo(() => {
+    return [...topicsForGrade]
+      .filter((t) => t.attempted > 0 && t.mastery !== 'Mastered')
+      .sort((a, b) => (a.correct / Math.max(a.attempted, 1)) - (b.correct / Math.max(b.attempted, 1)))
+      .slice(0, 2);
+  }, [topicsForGrade]);
+
+  if (loading) return <Skeleton />;
+  if (!data)   return <Skeleton />;
+
+  const studentName      = data.student.name;
+  const streakDays       = data.stats.streakDays;
+  const xp               = data.stats.totalLifetimeXP;
+  const todayCorrect     = data.weeklyData?.[data.weeklyData.length - 1]?.count ?? 0;
+  const goalMet          = todayCorrect >= DAILY_GOAL;
 
   function handleGradeTabClick(g: number) {
     const access = isGradeAccessible(g, studentGrade, subscriptionTier);
@@ -331,12 +347,12 @@ export default function ChaptersPage() {
         <div className="flex items-center gap-3">
           {/* Streak */}
           <div className="flex items-center gap-1 bg-white/15 rounded-full px-2.5 py-1">
-            <span className="text-sm">🔥</span>
+            <span className="text-sm" aria-hidden="true">🔥</span>
             <span className="text-white text-xs font-extrabold">{streakDays}</span>
           </div>
           {/* XP */}
           <div className="flex items-center gap-1 bg-white/15 rounded-full px-2.5 py-1">
-            <span className="text-sm">💎</span>
+            <span className="text-sm" aria-hidden="true">💎</span>
             <span className="text-white text-xs font-extrabold">{xp}</span>
           </div>
           {/* Hearts */}
@@ -346,6 +362,7 @@ export default function ChaptersPage() {
                 key={h}
                 className="text-sm transition-opacity duration-300"
                 style={{ opacity: h <= hearts ? 1 : 0.2 }}
+                aria-hidden="true"
               >❤️</span>
             ))}
           </div>
@@ -375,9 +392,9 @@ export default function ChaptersPage() {
       {/* ── Greeting ────────────────────────────────────────────────────── */}
       <div className="px-4 pt-5 pb-2">
         <h1 className="text-xl font-extrabold text-gray-800">
-          Hi {studentName}! What shall we practice today? 🌟
+          Hi {studentName}! What shall we practice today? <span aria-hidden="true">🌟</span>
         </h1>
-        <p className="text-sm text-gray-400 font-semibold mt-0.5">
+        <p className="text-sm text-gray-500 font-semibold mt-0.5">
           {goalMet
             ? `Daily goal met! 🎯 ${todayCorrect} correct today`
             : `${todayCorrect} / ${DAILY_GOAL} questions correct today`}
@@ -395,7 +412,7 @@ export default function ChaptersPage() {
           const isSelected = selectedGrade === g;
           const isEnrolled = g === studentGrade;
 
-          let tabCls = 'flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-extrabold border-2 transition-colors ';
+          let tabCls = 'flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-extrabold border-2 transition-colors min-h-0 ';
           if (isSelected) {
             tabCls += 'bg-duo-dark border-duo-dark text-white';
           } else if (access.full) {
@@ -403,17 +420,16 @@ export default function ChaptersPage() {
           } else if (access.sample) {
             tabCls += 'bg-white border-blue-200 text-blue-600 hover:border-blue-400';
           } else {
-            tabCls += 'bg-gray-50 border-gray-100 text-gray-400 opacity-75';
+            tabCls += 'bg-gray-50 border-gray-100 text-gray-500 opacity-75';
           }
 
           return (
             <button
               key={g}
               onClick={() => handleGradeTabClick(g)}
-              style={{ minHeight: 0 }}
               className={tabCls}
             >
-              <span>{GRADE_EMOJI[g]}</span>
+              <span aria-hidden="true">{GRADE_EMOJI[g]}</span>
               <span>Gr {g}</span>
               {isEnrolled && !isSelected && (
                 <span className="w-1.5 h-1.5 rounded-full bg-duo-green" />
@@ -426,81 +442,60 @@ export default function ChaptersPage() {
       </div>
 
       {/* ── Syllabus Coverage Bar ────────────────────────────────────────── */}
-      {(() => {
-        const gradeTopics = selectedGrade === 4
-          ? data.topics.filter((t) => TOPIC_ORDER.includes(t.id))
-          : data.topics.filter((t) => t.id === `grade${selectedGrade}`);
-        const started = gradeTopics.filter((t) => t.attempted >= 5).length;
-        const total   = gradeTopics.length || 1;
-        const pct     = Math.round(started / total * 100);
-        return (
-          <div className="px-4 pb-3">
-            <div className="flex items-center justify-between text-[11px] font-extrabold text-gray-400 uppercase tracking-wide mb-1.5">
-              <span>Syllabus Coverage</span>
-              <span>{started} / {total} topics started</span>
-            </div>
-            <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-              <div
-                className="h-full rounded-full transition-[width] duration-700"
-                style={{
-                  width: `${pct}%`,
-                  background: 'linear-gradient(to right, #1CB0F6, #58CC02)',
-                }}
-              />
-            </div>
-          </div>
-        );
-      })()}
+      <div className="px-4 pb-3">
+        <div className="flex items-center justify-between text-xs font-extrabold text-gray-500 uppercase tracking-wide mb-1.5">
+          <span>Syllabus Coverage</span>
+          <span>{syllabusCoverage.started} / {syllabusCoverage.total} topics started</span>
+        </div>
+        <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+          <div
+            className="h-full rounded-full transition-[width] duration-700"
+            style={{
+              width: `${syllabusCoverage.pct}%`,
+              background: 'linear-gradient(to right, #1CB0F6, #58CC02)',
+            }}
+          />
+        </div>
+      </div>
 
       {/* ── Recommended Topics (from weak + low-coverage topics) ──────────── */}
-      {selectedGrade === (data.student.grade ?? 4) && (() => {
-        const gradeTopics = selectedGrade === 4
-          ? data.topics.filter((t) => TOPIC_ORDER.includes(t.id))
-          : data.topics.filter((t) => t.id === `grade${selectedGrade}`);
-        // Sort by accuracy ascending, pick top 2 weak topics with attempts
-        const weak = [...gradeTopics]
-          .filter((t) => t.attempted > 0 && t.mastery !== 'Mastered')
-          .sort((a, b) => (a.correct / Math.max(a.attempted, 1)) - (b.correct / Math.max(b.attempted, 1)))
-          .slice(0, 2);
-        if (!weak.length) return null;
-        return (
-          <div className="px-4 pb-3">
-            <p className="text-[11px] font-extrabold uppercase tracking-widest mb-2 text-gray-500">
-              🎯 Recommended for You
-            </p>
-            <div className="space-y-2">
-              {weak.map((t) => {
-                const pct = t.attempted > 0 ? Math.round(t.correct / t.attempted * 100) : 0;
-                const emoji = TOPIC_EMOJI[t.id] ?? '📚';
-                return (
-                  <button
-                    key={t.id}
-                    onClick={() => router.push(`/practice/${t.id}`)}
-                    className="w-full flex items-center gap-3 bg-[#1a2d35] rounded-xl px-3 py-3 border-l-4 border-duo-green active:scale-[0.98] transition-transform text-left"
-                  >
-                    <span className="text-xl shrink-0">{emoji}</span>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-white font-extrabold text-sm truncate">{t.name}</p>
-                      <p className="text-white/50 text-xs font-medium">
-                        {pct}% accuracy · {t.attempted} attempts
-                      </p>
-                    </div>
-                    <span className="text-duo-green text-xs font-extrabold shrink-0">Practice →</span>
-                  </button>
-                );
-              })}
-            </div>
+      {selectedGrade === (data.student.grade ?? 4) && weakTopics.length > 0 && (
+        <div className="px-4 pb-3">
+          <p className="text-xs font-extrabold uppercase tracking-widest mb-2 text-gray-500">
+            <span aria-hidden="true">🎯 </span>Recommended for You
+          </p>
+          <div className="space-y-2">
+            {weakTopics.map((t) => {
+              const pct = t.attempted > 0 ? Math.round(t.correct / t.attempted * 100) : 0;
+              const emoji = TOPIC_EMOJI[t.id] ?? '📚';
+              return (
+                <button
+                  key={t.id}
+                  onClick={() => router.push(`/practice/${t.id}`)}
+                  className="w-full flex items-center gap-3 bg-[#1a2d35] rounded-xl px-3 py-3 border-l-4 border-duo-green active:scale-[0.98] transition-transform text-left"
+                >
+                  <span className="text-xl shrink-0" aria-hidden="true">{emoji}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-white font-extrabold text-sm truncate">{t.name}</p>
+                    <p className="text-white/70 text-xs font-medium">
+                      {pct}% accuracy · {t.attempted} attempts
+                    </p>
+                  </div>
+                  <span className="text-duo-green text-xs font-extrabold shrink-0">Practice →</span>
+                </button>
+              );
+            })}
           </div>
-        );
-      })()}
+        </div>
+      )}
 
       {/* ── Flashcard review banner ─────────────────────────────────────── */}
       <div className="px-4 pt-1">
         <button
           onClick={() => router.push('/flashcards')}
-          className="w-full bg-gradient-to-r from-[#1E293B] to-[#1a2d40] border border-emerald-500/20 rounded-2xl px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-transform"
+          className="w-full bg-gradient-to-r from-[#1E293B] to-[#1a2d40] border border-duo-green/20 rounded-2xl px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-transform"
         >
-          <span className="text-2xl">🃏</span>
+          <span className="text-2xl" aria-hidden="true">🃏</span>
           <div className="text-left flex-1">
             <p className="text-white font-extrabold text-sm leading-tight">Sparky&apos;s Flashcards</p>
             <p className="text-emerald-400/70 text-xs">Tap · Flip · Master concepts</p>
@@ -515,12 +510,12 @@ export default function ChaptersPage() {
           onClick={() => router.push('/test')}
           className="w-full bg-[#1a2f3a] border border-white/10 rounded-2xl px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-transform"
         >
-          <span className="text-2xl">📝</span>
+          <span className="text-2xl" aria-hidden="true">📝</span>
           <div className="text-left flex-1">
             <p className="text-white font-extrabold text-sm leading-tight">IPM Mock Test</p>
-            <p className="text-white/50 text-xs">Timed · No hints · Full paper simulation</p>
+            <p className="text-white/70 text-xs">Timed · No hints · Full paper simulation</p>
           </div>
-          <span className="text-white/40 text-sm">→</span>
+          <span className="text-white/60 text-sm">→</span>
         </button>
       </div>
 
@@ -541,7 +536,7 @@ export default function ChaptersPage() {
                 return (
                   <Fragment key={topic.id}>
                     {showDivider && (
-                      <p className="col-span-2 sm:col-span-3 lg:col-span-4 text-[11px] font-extrabold uppercase tracking-widest mt-4 mb-1 text-gray-500">
+                      <p className="col-span-2 sm:col-span-3 lg:col-span-4 text-xs font-extrabold uppercase tracking-widest mt-4 mb-1 text-gray-500">
                         {dividerLabel}
                       </p>
                     )}
@@ -558,21 +553,21 @@ export default function ChaptersPage() {
             {/* Grade 4 IPM Past Papers card */}
             {grade4PoolTopic && (
               <div className="mt-6">
-                <p className="text-[11px] font-extrabold uppercase tracking-widest mb-2 text-gray-500">
-                  📄 IPM Past Papers
+                <p className="text-xs font-extrabold uppercase tracking-widest mb-2 text-gray-500">
+                  <span aria-hidden="true">📄 </span>IPM Past Papers
                 </p>
                 <button
                   onClick={() => router.push('/practice/grade4')}
                   className="w-full text-left bg-gradient-to-r from-duo-dark to-[#1a3040] rounded-2xl p-4 flex items-center gap-4 active:scale-[0.98] transition-transform"
                 >
-                  <span className="text-3xl">🏆</span>
+                  <span className="text-3xl" aria-hidden="true">🏆</span>
                   <div className="flex-1">
                     <p className="text-white font-extrabold text-sm">Grade 4 — IPM Past Papers</p>
                     <p className="text-white/60 text-xs mt-0.5">
                       {grade4PoolTopic.correct} correct · {grade4PoolTopic.mastery === 'Mastered' ? '✅ Mastered' : grade4PoolTopic.mastery === 'Practicing' ? '🟡 In progress' : 'Not started'}
                     </p>
                   </div>
-                  <span className="text-white/40 text-sm">→</span>
+                  <span className="text-white/60 text-sm">→</span>
                 </button>
               </div>
             )}
@@ -589,7 +584,7 @@ export default function ChaptersPage() {
 
               if (!treeNodes.length) {
                 return (
-                  <div className="text-center py-12 text-gray-400">
+                  <div className="text-center py-12 text-gray-500">
                     <p className="font-semibold">No lessons available yet for Grade {selectedGrade}</p>
                   </div>
                 );
@@ -610,9 +605,9 @@ export default function ChaptersPage() {
                       className="w-full text-left bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-duo-blue active:scale-[0.97] transition-[colors,border-color,box-shadow,transform] duration-150 flex flex-col gap-2"
                     >
                       <div className="flex items-start justify-between gap-1">
-                        <span className="text-3xl leading-none select-none">{node.emoji}</span>
+                        <span className="text-3xl leading-none select-none" aria-hidden="true">{node.emoji}</span>
                         {isSample && (
-                          <span className="inline-flex items-center text-[11px] font-extrabold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 border border-blue-200">
+                          <span className="inline-flex items-center text-xs font-extrabold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 border border-blue-200">
                             Preview 🔓
                           </span>
                         )}
@@ -620,7 +615,7 @@ export default function ChaptersPage() {
                       <p className="text-sm font-extrabold text-gray-800 leading-snug line-clamp-2">
                         {node.name}
                       </p>
-                      <p className="text-[11px] text-gray-400 font-semibold">
+                      <p className="text-xs text-gray-500 font-semibold">
                         {poolTopic ? `${poolTopic.correct} solved in pool` : 'Not started'}
                       </p>
                       <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
@@ -638,7 +633,7 @@ export default function ChaptersPage() {
             {/* Also accessible: lower grades */}
             {lowerGrades.length > 0 && (
               <div className="mt-6">
-                <p className="text-[11px] font-extrabold uppercase tracking-widest mb-2 text-gray-500">
+                <p className="text-xs font-extrabold uppercase tracking-widest mb-2 text-gray-500">
                   Also accessible
                 </p>
                 <div className="grid grid-cols-2 gap-2">
@@ -648,13 +643,12 @@ export default function ChaptersPage() {
                       <button
                         key={g}
                         onClick={() => { setSelectedGrade(g); }}
-                        style={{ minHeight: 0 }}
-                        className="bg-gray-50 border border-gray-100 rounded-2xl p-3 flex items-center gap-2 active:scale-[0.97] transition-transform text-left"
+                        className="bg-gray-50 border border-gray-100 rounded-2xl p-3 flex items-center gap-2 active:scale-[0.97] transition-transform text-left min-h-0"
                       >
-                        <span className="text-xl">{GRADE_EMOJI[g]}</span>
+                        <span className="text-xl" aria-hidden="true">{GRADE_EMOJI[g]}</span>
                         <div className="flex-1 min-w-0">
                           <p className="text-xs font-extrabold text-gray-700 truncate">Grade {g}</p>
-                          <p className="text-[10px] text-gray-400">
+                          <p className="text-[10px] text-gray-500">
                             {t ? `${t.correct} solved` : 'Not started'}
                           </p>
                         </div>
@@ -673,7 +667,7 @@ export default function ChaptersPage() {
         <div className="fixed inset-0 z-[100] flex items-end justify-center bg-black/50 p-4">
           <div className="bg-white rounded-3xl p-6 w-full max-w-sm shadow-2xl space-y-4 animate-slide-up">
             <div className="text-center">
-              <span className="text-5xl">🔒</span>
+              <span className="text-5xl" aria-hidden="true">🔒</span>
               <h3 className="text-xl font-extrabold text-gray-800 mt-2">
                 Grade {lockedGradeTarget} is locked
               </h3>
@@ -690,7 +684,7 @@ export default function ChaptersPage() {
             <button
               onClick={() => setShowUpgradeModal(false)}
               style={{ minHeight: 0 }}
-              className="w-full text-center text-gray-400 text-sm font-semibold py-2"
+              className="w-full text-center text-gray-500 text-sm font-semibold py-2"
             >
               Not now
             </button>

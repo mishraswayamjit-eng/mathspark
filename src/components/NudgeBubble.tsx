@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Sparky from '@/components/Sparky';
 import type { Nudge } from '@/lib/nudges';
@@ -13,16 +13,19 @@ interface Props {
 export default function NudgeBubble({ nudge, onDismiss }: Props) {
   const router  = useRouter();
   const [gone, setGone] = useState(false);
+  const onDismissRef = useRef(onDismiss);
+  onDismissRef.current = onDismiss;
+  const dismissTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const dismiss = useCallback(() => {
     setGone(true);
-    setTimeout(onDismiss, 280);
-  }, [onDismiss]);
+    dismissTimerRef.current = setTimeout(() => onDismissRef.current(), 280);
+  }, []);
 
   // Auto-dismiss after 8 s
   useEffect(() => {
     const t = setTimeout(dismiss, 8000);
-    return () => clearTimeout(t);
+    return () => { clearTimeout(t); clearTimeout(dismissTimerRef.current); };
   }, [dismiss]);
 
   function handleAction() {
@@ -51,7 +54,7 @@ export default function NudgeBubble({ nudge, onDismiss }: Props) {
             {nudge.message}
           </p>
           {nudge.subtext && (
-            <p className="text-xs text-gray-400 font-medium mt-0.5">
+            <p className="text-xs text-gray-500 font-medium mt-0.5">
               {nudge.subtext}
             </p>
           )}

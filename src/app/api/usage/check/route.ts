@@ -1,17 +1,15 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { FREE_DAILY_MINUTES, isUnlimitedPlan, isPracticeAllowed } from '@/lib/usageLimits';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
 export const dynamic = 'force-dynamic';
 
-// GET /api/usage/check?studentId=
-// Returns current usage status without incrementing any counters.
-// Used as a gate check before the practice session starts.
-export async function GET(req: Request) {
+// GET /api/usage/check
+export async function GET() {
   try {
-    const { searchParams } = new URL(req.url);
-    const studentId = searchParams.get('studentId');
-    if (!studentId) return NextResponse.json({ error: 'studentId required' }, { status: 400 });
+    const studentId = await getAuthenticatedStudentId();
+    if (!studentId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
     const [student, lifetimeCount, todayAttemptCount] = await Promise.all([
       prisma.student.findUnique({

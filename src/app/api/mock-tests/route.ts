@@ -1,26 +1,37 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { generateMockPaper, generateMegaTest } from '@/lib/mockTest';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { checkRateLimit } from '@/lib/rateLimit';
+import { validateBody, ValidationError } from '@/lib/validateBody';
 import type { TestType, PYQYear } from '@/types';
 
 // POST /api/mock-tests
-// Body: { studentId, type, topicIds?, year? }
+// Body: { type, topicIds?, year?, grade? }
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { studentId, type, topicIds, year, grade } = body as {
-      studentId: string;
+    const studentId = await getAuthenticatedStudentId();
+    if (!studentId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    // Rate limit: 5 test creations per 10 minutes per student
+    if (!checkRateLimit(`mock-tests:${studentId}`, 5, 600_000)) {
+      return NextResponse.json({ error: 'Too many tests created. Try again later.' }, { status: 429 });
+    }
+
+    const { type, topicIds, year, grade } = validateBody<{
       type: TestType;
       topicIds?: string[];
       year?: PYQYear;
       grade?: number;
-    };
+    }>(
+      await req.json(),
+      { type: 'string', topicIds: 'array?', year: 'string?', grade: 'number?' },
+    );
 
-    if (!studentId || !type) {
-      return NextResponse.json({ error: 'studentId and type required' }, { status: 400 });
-    }
-    if (typeof studentId !== 'string' || studentId.length > 30) {
-      return NextResponse.json({ error: 'Invalid studentId' }, { status: 400 });
+    if (!type) {
+      return NextResponse.json({ error: 'type required' }, { status: 400 });
     }
     if (typeof type !== 'string' || !['quick', 'half', 'full', 'ipm', 'pyq', 'mega'].includes(type)) {
       return NextResponse.json({ error: 'Invalid test type' }, { status: 400 });
@@ -94,6 +105,9 @@ export async function POST(req: Request) {
 
     return NextResponse.json(result);
   } catch (err) {
+    if (err instanceof ValidationError) {
+      return NextResponse.json({ error: err.message }, { status: 400 });
+    }
     console.error('[mock-tests POST]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }

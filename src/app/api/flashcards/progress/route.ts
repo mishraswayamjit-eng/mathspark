@@ -1,6 +1,9 @@
+import { MS_PER_DAY } from '@/lib/timeConstants';
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { computeCardXP } from '@/lib/flashcardXP';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { validateBody, ValidationError } from '@/lib/validateBody';
 
 export const dynamic = 'force-dynamic';
 
@@ -11,7 +14,7 @@ const BOX_NAMES = ['', 'Rookie', 'Rising', 'Strong', 'Expert', 'Master'];
 
 /**
  * POST /api/flashcards/progress
- * Body: { studentId, cardId, correct: boolean }
+ * Body: { cardId, correct: boolean }
  *
  * Updates Leitner box state for one card:
  *   correct → box = min(box + 1, 5), streak++
@@ -22,16 +25,19 @@ const BOX_NAMES = ['', 'Rookie', 'Rising', 'Strong', 'Expert', 'Master'];
  */
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    const { studentId, cardId, correct } = body as {
-      studentId?: string;
-      cardId?: string;
-      correct?: boolean;
-    };
+    const studentId = await getAuthenticatedStudentId();
+    if (!studentId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
-    if (!studentId || !cardId || typeof correct !== 'boolean') {
+    const { cardId, correct } = validateBody<{ cardId?: string; correct?: boolean }>(
+      await req.json(),
+      { cardId: 'string?', correct: 'boolean?' },
+    );
+
+    if (!cardId || typeof correct !== 'boolean') {
       return NextResponse.json(
-        { error: 'studentId, cardId, and correct (boolean) required' },
+        { error: 'cardId and correct (boolean) required' },
         { status: 400 },
       );
     }
@@ -47,7 +53,7 @@ export async function POST(req: Request) {
     const oldBox = existing?.leitnerBox ?? 0; // 0 = never seen
     const newBox = correct ? Math.min(Math.max(oldBox, 1) + 1, 5) : 1;
     const intervalDays = BOX_INTERVALS[newBox] ?? 1;
-    const nextReviewAt = new Date(now.getTime() + intervalDays * 86_400_000);
+    const nextReviewAt = new Date(now.getTime() + intervalDays * MS_PER_DAY);
 
     const streak = correct ? (existing?.streakOnCard ?? 0) + 1 : 0;
 
@@ -97,6 +103,9 @@ export async function POST(req: Request) {
       xpBreakdown: cardXP.breakdown,
     });
   } catch (err) {
+    if (err instanceof ValidationError) {
+      return NextResponse.json({ error: err.message }, { status: 400 });
+    }
     console.error('[flashcards/progress] Error:', err);
     return NextResponse.json({ error: 'Internal error' }, { status: 500 });
   }

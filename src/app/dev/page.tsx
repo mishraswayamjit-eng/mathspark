@@ -33,7 +33,7 @@ const GRADE_STUDENTS: TestStudent[] = [
   { id: 'student_test_gr2', name: 'Aarav',  grade: 2, tier: 0, color: '#EF4444', emoji: '🌱', note: 'Grade 2 pool only' },
   { id: 'student_test_gr3', name: 'Priya',  grade: 3, tier: 1, color: '#F97316', emoji: '🌿', note: 'Gr3 + Gr4 sample' },
   { id: 'student_test_gr4', name: 'Rahul',  grade: 4, tier: 2, color: '#EAB308', emoji: '🌳', note: 'Ch-series + Gr4–6 full' },
-  { id: 'student_test_gr5', name: 'Sneha',  grade: 5, tier: 3, color: '#22C55E', emoji: '🍀', note: 'Gr5 mastered → grade-up CTA' },
+  { id: 'student_test_gr5', name: 'Sneha',  grade: 5, tier: 3, color: '#58CC02', emoji: '🍀', note: 'Gr5 mastered → grade-up CTA' },
   { id: 'student_test_gr6', name: 'Arjun',  grade: 6, tier: 0, color: '#06B6D4', emoji: '⭐', note: 'Gr6 only, Gr7+ locked' },
   { id: 'student_test_gr7', name: 'Kavya',  grade: 7, tier: 1, color: '#8B5CF6', emoji: '🌟', note: 'Gr6 mastered, Gr8 sample' },
   { id: 'student_test_gr8', name: 'Dhruv',  grade: 8, tier: 2, color: '#EC4899', emoji: '🏆', note: 'Gr7+8 mastered, Gr9 full' },
@@ -46,7 +46,7 @@ const GRADE4_STUDENTS: TestStudent[] = [
   { id: 'student_002', name: 'Ananya Sharma', grade: 4, tier: 3, color: '#8B5CF6', emoji: '🌟', note: '6 topics mastered, steady learner' },
   { id: 'student_003', name: 'Vivaan Mehta',  grade: 4, tier: 2, color: '#F97316', emoji: '⚡', note: '4 topics mastered, loves puzzles' },
   { id: 'student_004', name: 'Ishika Mehta',  grade: 4, tier: 2, color: '#EC4899', emoji: '🌱', note: 'New user, 5 days, decimal strength' },
-  { id: 'student_005', name: 'Arjun Patel',   grade: 4, tier: 1, color: '#22C55E', emoji: '⏰', note: 'Hits daily limit, 2 mastered' },
+  { id: 'student_005', name: 'Arjun Patel',   grade: 4, tier: 1, color: '#58CC02', emoji: '⏰', note: 'Hits daily limit, 2 mastered' },
   { id: 'student_006', name: 'Saanvi Iyer',   grade: 4, tier: 3, color: '#14B8A6', emoji: '🔥', note: 'Power user, 23-day streak, 14 mastered' },
   { id: 'student_007', name: 'Dhruv Iyer',    grade: 4, tier: 1, color: '#EAB308', emoji: '🌱', note: 'Just started, 2 days practice' },
   { id: 'student_008', name: 'Meera Reddy',   grade: 4, tier: 2, color: '#EF4444', emoji: '📈', note: '15-day streak, 8 mastered' },
@@ -84,7 +84,7 @@ function StudentCard({ s }: { s: TestStudent }) {
           <span className="text-xs bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded-full">Gr {s.grade}</span>
           <span className={`text-xs px-1.5 py-0.5 rounded-full ${TIER_COLOR[s.tier]}`}>{TIER_LABEL[s.tier]}</span>
         </div>
-        <p className="text-xs text-gray-400 mt-0.5 truncate">{s.note}</p>
+        <p className="text-xs text-gray-500 mt-0.5 truncate">{s.note}</p>
       </div>
 
       {/* CTA */}
@@ -132,7 +132,7 @@ export default function DevPage() {
       </section>
 
       {/* Footer links */}
-      <div className="flex gap-4 text-sm text-center justify-center text-gray-400">
+      <div className="flex gap-4 text-sm text-center justify-center text-gray-500">
         <a href="/seed" className="underline hover:text-gray-600">Seed page</a>
         <span>·</span>
         <a href="/chapters" className="underline hover:text-gray-600">Chapters</a>

@@ -1,19 +1,19 @@
+import { MS_PER_DAY, MS_PER_HOUR } from '@/lib/timeConstants';
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { recomputeStudentAnalytics } from '@/lib/brain/recompute';
 import { getTopicsCached } from '@/lib/topicCache';
 import { computeStreak } from '@/lib/sharedUtils';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 30;
 
-// GET /api/home?studentId=xxx
-export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url);
-  const studentId = searchParams.get('studentId');
-
+// GET /api/home
+export async function GET() {
+  const studentId = await getAuthenticatedStudentId();
   if (!studentId) {
-    return NextResponse.json({ error: 'studentId required' }, { status: 400 });
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   // Parallelize all 3 DB queries simultaneously
@@ -106,7 +106,7 @@ export async function GET(req: Request) {
     .slice(0, 4)
     .map((g) => {
       const diffMs = Date.now() - g.latest.getTime();
-      const diffH  = Math.floor(diffMs / 3600000);
+      const diffH  = Math.floor(diffMs / MS_PER_HOUR);
       const diffD  = Math.floor(diffH / 24);
       const timeAgo = diffD > 0 ? `${diffD}d ago` : diffH > 0 ? `${diffH}h ago` : 'just now';
       return {
@@ -125,7 +125,7 @@ export async function GET(req: Request) {
 
   const trialExpiresAt = student.trialExpiresAt;
   const trialDaysLeft  = trialExpiresAt
-    ? Math.max(0, Math.ceil((new Date(trialExpiresAt).getTime() - Date.now()) / 86400000))
+    ? Math.max(0, Math.ceil((new Date(trialExpiresAt).getTime() - Date.now()) / MS_PER_DAY))
     : null;
   const trialActive = trialDaysLeft !== null && trialDaysLeft > 0;
 

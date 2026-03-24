@@ -5,7 +5,6 @@ import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { track } from '@vercel/analytics';
 import QuestionCard from '@/components/QuestionCard';
 import HintSystem from '@/components/HintSystem';
-import KatexRenderer from '@/components/KatexRenderer';
 import StepByStep from '@/components/StepByStep';
 import AnimatedWalkthrough from '@/components/AnimatedWalkthrough';
 import Sparky from '@/components/Sparky';
@@ -15,541 +14,16 @@ import { useSounds } from '@/hooks/useSounds';
 import type { Question, AnswerKey } from '@/types';
 import { saveSessionData } from '@/lib/nudges';
 import { formatMinutes, isUnlimitedPlan } from '@/lib/usageLimits';
-import ShareSheet from '@/components/ShareSheet';
 import { isGradeAccessible, getTopicGrade } from '@/lib/gradeAccess';
-
-// ── Constants ─────────────────────────────────────────────────────────────────
-
-const LESSON_SIZE    = 10;
-const HEARTS_MAX     = 5;
-const XP_CORRECT     = 20;
-const XP_REVIEW      = 10;
-const AUTO_ADVANCE_MS = 2000;
-const SPEED_DRILL_MS  = 90_000; // 90 seconds per question
-const MAX_BONUS_PER_LESSON = 5;
-const MAX_BONUS_PER_ORIGIN = 2;
-
-// ── Types ─────────────────────────────────────────────────────────────────────
-
-type Phase =
-  | 'loading'
-  | 'answering'
-  | 'result'
-  | 'no_hearts'
-  | 'review_intro'
-  | 'reviewing'
-  | 'complete'
-  | 'usage_limit'
-  | 'trial_limit'
-  | 'error';
-
-interface TrialStatus {
-  isSubscribed:      boolean;
-  lifetimeQuestions: number;
-  todayQuestions:    number;
-}
-
-type BonusMode = 'off' | 'searching' | 'answering' | 'result' | 'unavailable';
-
-interface QuestionResult {
-  questionId:    string;
-  questionText:  string;
-  wasCorrect:    boolean;
-  selectedAnswer: AnswerKey;
-  correctAnswer:  AnswerKey;
-}
-
-// ── Card accent colors (visual variety per question slot) ─────────────────────
-
-const TOPIC_EMOJI: Record<string, string> = {
-  'ch01-05': '🔢', 'ch06': '🔑', 'ch07-08': '🍕', 'ch09-10': '➗',
-  'ch11': '📊', 'ch12': '📏', 'ch13': '🔤', 'ch14': '⚖️',
-  'ch15': '🧩', 'ch16': '🔢', 'ch17': '🕐', 'ch18': '📐',
-  'ch19': '🔺', 'ch20': '⬜', 'ch21': '⭕', 'dh': '📈',
-};
-
-const CARD_ACCENTS = [
-  'bg-blue-50 text-blue-700 border-blue-200',
-  'bg-purple-50 text-purple-700 border-purple-200',
-  'bg-amber-50 text-amber-700 border-amber-200',
-  'bg-emerald-50 text-emerald-700 border-emerald-200',
-  'bg-rose-50 text-rose-700 border-rose-200',
-  'bg-cyan-50 text-cyan-700 border-cyan-200',
-  'bg-orange-50 text-orange-700 border-orange-200',
-  'bg-indigo-50 text-indigo-700 border-indigo-200',
-  'bg-pink-50 text-pink-700 border-pink-200',
-  'bg-teal-50 text-teal-700 border-teal-200',
-];
-
-// ── Sub-components ────────────────────────────────────────────────────────────
-
-function HeartsBar({ hearts, max = HEARTS_MAX }: { hearts: number; max?: number }) {
-  return (
-    <div className="flex items-center gap-0.5">
-      {Array.from({ length: max }, (_, i) => (
-        <span
-          key={i}
-          className="text-base transition-opacity duration-300"
-          style={{ opacity: i < hearts ? 1 : 0.18, filter: i < hearts ? 'none' : 'grayscale(1)' }}
-        >
-          ❤️
-        </span>
-      ))}
-    </div>
-  );
-}
-
-function LessonJourney({
-  total,
-  currentIdx,
-  results,
-}: {
-  total: number;
-  currentIdx: number;
-  results: QuestionResult[];
-}) {
-  return (
-    <div className="flex items-center px-4 py-3 gap-0">
-      {Array.from({ length: total }, (_, i) => {
-        const result    = results[i];
-        const isDone    = result !== undefined;
-        const isCurrent = i === currentIdx;
-        const isCorrect = result?.wasCorrect;
-
-        const circleCls = isDone
-          ? isCorrect
-            ? 'bg-duo-green border-duo-green-dark text-white'
-            : 'bg-duo-red border-duo-red-dark text-white'
-          : isCurrent
-          ? 'bg-duo-blue border-duo-blue-dark text-white ring-4 ring-blue-100 animate-pulse'
-          : 'bg-white border-gray-200 text-gray-400';
-
-        const lineCls = i < currentIdx || isDone ? 'bg-duo-green' : 'bg-gray-200';
-
-        return (
-          <div key={i} className="flex items-center flex-1 min-w-0">
-            {i > 0 && (
-              <div className={`h-1 flex-1 rounded-full transition-colors duration-500 ${lineCls}`} />
-            )}
-            <div
-              className={`w-7 h-7 rounded-full border-2 flex items-center justify-center text-[10px] font-extrabold flex-shrink-0 transition-colors duration-300 ${circleCls}`}
-            >
-              {isDone ? (isCorrect ? '✓' : '✗') : i + 1}
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-function XpFloat({ amount }: { amount: number }) {
-  return (
-    <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[70] pointer-events-none">
-      <span className="animate-xp-float text-2xl font-extrabold text-duo-gold drop-shadow-lg whitespace-nowrap">
-        +{amount} XP ⭐
-      </span>
-    </div>
-  );
-}
-
-function ReviewIntroScreen({ count, onStart }: { count: number; onStart: () => void }) {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] px-6 gap-6 text-center">
-      <div className="animate-sparky-bounce">
-        <Sparky mood="encouraging" size={120} />
-      </div>
-      <div className="space-y-2">
-        <h2 className="text-2xl font-extrabold text-gray-800">
-          Let&#39;s review the tricky ones! 💪
-        </h2>
-        <p className="text-gray-500 font-medium">
-          {count} question{count !== 1 ? 's' : ''} to review — you&#39;ve got this!
-        </p>
-      </div>
-      <DuoButton variant="blue" fullWidth onClick={onStart}>
-        Start review →
-      </DuoButton>
-    </div>
-  );
-}
-
-function NoHeartsScreen({
-  results,
-  onRetry,
-  onHome,
-}: {
-  results: QuestionResult[];
-  onRetry: () => void;
-  onHome: () => void;
-}) {
-  const wrong = results.filter((r) => !r.wasCorrect);
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-white pb-8">
-      <div className="animate-sparky-wave">
-        <Sparky mood="encouraging" size={120} />
-      </div>
-      <div className="text-center space-y-2">
-        <h2 className="text-2xl font-extrabold text-gray-800">
-          Let&#39;s take a break and review! 📚
-        </h2>
-        <p className="text-gray-500 font-medium">
-          You ran out of hearts — that&#39;s okay! Every attempt makes you stronger.
-        </p>
-      </div>
-
-      {wrong.length > 0 && (
-        <div className="w-full space-y-2">
-          <p className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Questions to revisit</p>
-          {wrong.map((r) => (
-            <div key={r.questionId} className="bg-red-50 border-2 border-red-100 rounded-2xl px-4 py-3">
-              <p className="text-sm text-gray-700 font-medium line-clamp-2">{r.questionText}</p>
-              <p className="text-xs text-duo-green font-extrabold mt-1">Answer: {r.correctAnswer}</p>
-            </div>
-          ))}
-        </div>
-      )}
-
-      <div className="w-full space-y-3">
-        <DuoButton variant="green" fullWidth onClick={onRetry}>
-          Try again ↺
-        </DuoButton>
-        <DuoButton variant="white" fullWidth onClick={onHome}>
-          Back to chapters
-        </DuoButton>
-      </div>
-    </div>
-  );
-}
-
-interface GradeUpCta {
-  grade:   number;
-  type:    'full' | 'sample' | 'locked';
-  onPress: () => void;
-}
-
-function LessonCompleteScreen({
-  mainResults,
-  reviewResults,
-  totalXp,
-  hasReviewMistakes,
-  onContinue,
-  onReviewMistakes,
-  shareData,
-  gradeUpCta,
-}: {
-  mainResults:       QuestionResult[];
-  reviewResults:     QuestionResult[];
-  totalXp:           number;
-  hasReviewMistakes: boolean;
-  onContinue:        () => void;
-  onReviewMistakes:  () => void;
-  gradeUpCta?:       GradeUpCta;
-  shareData?: {
-    studentId:    string;
-    studentName:  string;
-    topicName:    string;
-    topicEmoji:   string;
-    parentEmail:  string;
-    parentWhatsApp: string;
-  };
-}) {
-  const allResults  = [...mainResults, ...reviewResults];
-  const correct     = allResults.filter((r) => r.wasCorrect).length;
-  const total       = allResults.length;
-  const pct         = total > 0 ? Math.round((correct / total) * 100) : 100;
-  const stars       = pct >= 90 ? 3 : pct >= 70 ? 2 : 1;
-  const message     = pct >= 90 ? 'Amazing! 🏆' : pct >= 70 ? 'Great job! 🌟' : 'Keep practicing! 💪';
-
-  // XP count-up animation
-  const [displayXp, setDisplayXp] = useState(0);
-  useEffect(() => {
-    let cur = 0;
-    const step = totalXp / 40;
-    const interval = setInterval(() => {
-      cur = Math.min(cur + step, totalXp);
-      setDisplayXp(Math.round(cur));
-      if (cur >= totalXp) clearInterval(interval);
-    }, 40);
-    return () => clearInterval(interval);
-  }, [totalXp]);
-
-  // Accuracy ring
-  const r    = 52;
-  const circ = 2 * Math.PI * r; // 326.7
-  const dash = circ * (pct / 100);
-
-  const wrongOnes = allResults.filter((r) => !r.wasCorrect);
-  const [showShare, setShowShare] = useState(false);
-
-  return (
-    <div className="flex flex-col items-center px-6 py-8 gap-6 bg-white min-h-screen pb-24">
-      {showShare && shareData && (
-        <ShareSheet
-          card={{ type: 'lesson', data: {
-            studentName: shareData.studentName,
-            topicName:   shareData.topicName,
-            topicEmoji:  shareData.topicEmoji,
-            correct,
-            total,
-            xp:          totalXp,
-            date:        new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
-          }}}
-          studentId={shareData.studentId}
-          parentEmail={shareData.parentEmail || undefined}
-          parentWhatsApp={shareData.parentWhatsApp || undefined}
-          onClose={() => setShowShare(false)}
-        />
-      )}
-      <Confetti />
-
-      {/* Sparky celebrating */}
-      <div className="animate-sparky-dance">
-        <Sparky mood="celebrating" size={140} />
-      </div>
-
-      <h1 className="text-2xl font-extrabold text-gray-800 text-center">{message}</h1>
-
-      {/* Accuracy ring */}
-      <svg width="140" height="140" viewBox="0 0 140 140">
-        <circle cx="70" cy="70" r={r} fill="none" stroke="#e5e7eb" strokeWidth="12" />
-        <circle
-          cx="70" cy="70" r={r} fill="none"
-          stroke={pct >= 70 ? '#58CC02' : '#FF9600'}
-          strokeWidth="12"
-          strokeLinecap="round"
-          strokeDasharray={`${dash} ${circ}`}
-          transform="rotate(-90 70 70)"
-          style={{ transition: 'stroke-dasharray 1s ease-out' }}
-        />
-        <text x="70" y="64" textAnchor="middle" fontSize="26" fontWeight="900" fill="#131F24">
-          {pct}%
-        </text>
-        <text x="70" y="84" textAnchor="middle" fontSize="11" fill="#9ca3af" fontWeight="600">
-          {correct}/{total} correct
-        </text>
-      </svg>
-
-      {/* Stars */}
-      <div className="flex gap-3 text-4xl">
-        {[1, 2, 3].map((s) => (
-          <span key={s} className="transition-opacity" style={{ opacity: s <= stars ? 1 : 0.2, filter: s <= stars ? 'none' : 'grayscale(1)' }}>
-            ⭐
-          </span>
-        ))}
-      </div>
-
-      {/* XP */}
-      <div className="bg-[#FFF9E6] border-2 border-duo-gold rounded-2xl px-8 py-3 text-center">
-        <p className="text-xs text-amber-700 font-extrabold uppercase tracking-wide">Total XP earned</p>
-        <p className="text-3xl font-extrabold text-duo-dark">+{displayXp} ⭐</p>
-      </div>
-
-      {/* Wrong answers to revisit */}
-      {wrongOnes.length > 0 && (
-        <div className="w-full space-y-2">
-          <p className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">
-            {hasReviewMistakes ? 'Still needs work' : 'Review at home'}
-          </p>
-          {wrongOnes.map((r) => (
-            <div key={r.questionId} className="bg-red-50 border border-red-100 rounded-xl px-4 py-3">
-              <p className="text-xs text-gray-700 font-medium line-clamp-2">{r.questionText}</p>
-              <p className="text-xs text-duo-green font-extrabold mt-0.5">Correct: {r.correctAnswer}</p>
-            </div>
-          ))}
-        </div>
-      )}
-
-      <div className="w-full space-y-3">
-        {/* Grade level-up CTA — shown first when pct >= 80 */}
-        {gradeUpCta && (
-          gradeUpCta.type === 'full' ? (
-            <DuoButton variant="blue" fullWidth onClick={gradeUpCta.onPress}>
-              Level Up to Grade {gradeUpCta.grade}! 🚀
-            </DuoButton>
-          ) : gradeUpCta.type === 'sample' ? (
-            <DuoButton variant="blue" fullWidth onClick={gradeUpCta.onPress}>
-              Try Grade {gradeUpCta.grade} — 5 Free Questions 🔓
-            </DuoButton>
-          ) : (
-            <button
-              onClick={gradeUpCta.onPress}
-              className="w-full min-h-[48px] rounded-full border-2 border-amber-200 font-extrabold text-amber-600 text-sm hover:bg-amber-50 transition-colors"
-            >
-              Upgrade to unlock Grade {gradeUpCta.grade} 🔒
-            </button>
-          )
-        )}
-
-        <DuoButton variant="green" fullWidth onClick={onContinue}>
-          Continue to chapters 🎯
-        </DuoButton>
-        {hasReviewMistakes && (
-          <DuoButton variant="blue" fullWidth onClick={onReviewMistakes}>
-            Review mistakes 📚
-          </DuoButton>
-        )}
-        {shareData && (
-          <button
-            onClick={() => setShowShare(true)}
-            className="w-full min-h-[48px] rounded-full border-2 border-gray-200 font-extrabold text-gray-500 text-sm hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
-          >
-            📤 Share with Parents
-          </button>
-        )}
-      </div>
-    </div>
-  );
-}
-
-// ── Correct / Wrong sliding panels ────────────────────────────────────────────
-
-function CorrectPanel({
-  feedback,
-  streak,
-  onContinue,
-  onWatchSolution,
-  onTrySimilar,
-  canTrySimilar,
-}: {
-  feedback:        string;
-  streak:          number;
-  onContinue:      () => void;
-  onWatchSolution: () => void;
-  onTrySimilar:    () => void;
-  canTrySimilar:   boolean;
-}) {
-  return (
-    <div className="px-4 pt-4 pb-6 space-y-3">
-      <div className="flex items-center gap-3">
-        <div className="animate-sparky-dance flex-shrink-0">
-          <Sparky mood="celebrating" size={56} />
-        </div>
-        <div>
-          {streak >= 3 && (
-            <p className="text-xs font-extrabold text-white/80 uppercase tracking-wide mb-0.5">
-              🔥 {streak} in a row!
-            </p>
-          )}
-          <p className="text-lg font-extrabold text-white leading-tight">{feedback}</p>
-        </div>
-      </div>
-      <button
-        onClick={onWatchSolution}
-        className="btn-sparkle w-full min-h-[44px] bg-white/20 border border-white/40 text-white font-extrabold text-sm rounded-2xl py-2 flex items-center justify-center gap-2"
-      >
-        <span className="sparkle-icon">🎬</span> Watch Solution
-      </button>
-      {canTrySimilar && (
-        <button
-          onClick={onTrySimilar}
-          className="w-full min-h-[44px] bg-white/10 border border-white/30 text-white font-extrabold text-sm rounded-2xl py-2 flex items-center justify-center gap-2"
-        >
-          🔄 Try a Similar Question
-        </button>
-      )}
-      <DuoButton variant="white" fullWidth onClick={onContinue}>
-        Continue →
-      </DuoButton>
-    </div>
-  );
-}
-
-function WrongPanel({
-  question,
-  selected,
-  onGotIt,
-  hintLevel,
-  onHintLevelUp,
-  onWatchSolution,
-  onTrySimilar,
-  canTrySimilar,
-}: {
-  question:        Question;
-  selected:        AnswerKey | null;
-  onGotIt:         () => void;
-  hintLevel:       number;
-  onHintLevelUp:   (n: number) => void;
-  onWatchSolution: () => void;
-  onTrySimilar:    () => void;
-  canTrySimilar:   boolean;
-}) {
-  const optionKey     = selected ? (`misconception${selected}` as keyof Question) : null;
-  const misconception = optionKey ? (question[optionKey] as string) : '';
-  const correctIdx    = ['A', 'B', 'C', 'D'].indexOf(question.correctAnswer);
-  const correctText   = question[`option${correctIdx + 1}` as keyof Question] as string;
-  const textHasLatex  = correctText.includes('\\');
-
-  return (
-    <div className="px-4 pt-4 pb-6 space-y-3">
-      {/* Header row */}
-      <div className="flex items-center gap-3">
-        <div className="flex-shrink-0">
-          <Sparky mood="encouraging" size={56} />
-        </div>
-        <div>
-          <p className="text-sm font-extrabold text-duo-red uppercase tracking-wide">
-            No worries! Here&#39;s how it works…
-          </p>
-          <div className="bg-white rounded-xl px-3 py-2 border border-red-100 mt-1.5">
-            <p className="text-xs text-gray-500 font-semibold">Correct answer ({question.correctAnswer})</p>
-            {textHasLatex ? (
-              <div className="mt-1"><KatexRenderer latex={correctText} displayMode={false} /></div>
-            ) : (
-              <p className="text-sm text-gray-800 font-bold leading-snug">{correctText}</p>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Misconception box */}
-      {misconception && (
-        <div className="bg-blue-50 border border-blue-200 rounded-2xl px-4 py-3">
-          <p className="text-[11px] font-extrabold text-blue-700 uppercase tracking-wide mb-1">
-            💡 Common mistake
-          </p>
-          <p className="text-sm text-gray-700 font-medium leading-snug">{misconception}</p>
-        </div>
-      )}
-
-      {/* Step-by-step inline */}
-      <StepByStep steps={question.stepByStep} />
-
-      {/* Hints */}
-      <HintSystem
-        hint1={question.hint1}
-        hint2={question.hint2}
-        hint3={question.hint3}
-        level={hintLevel}
-        onLevelUp={onHintLevelUp}
-      />
-
-      {/* Action strip */}
-      <div className="space-y-2 pt-1">
-        {canTrySimilar && (
-          <button
-            onClick={onTrySimilar}
-            className="w-full min-h-[48px] bg-duo-green hover:bg-[#5bd800] text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-sm"
-          >
-            🔄 Try a Similar Question
-          </button>
-        )}
-        <button
-          onClick={onWatchSolution}
-          className="btn-sparkle w-full min-h-[44px] bg-gradient-to-r from-violet-500 to-indigo-500 text-white font-extrabold text-sm rounded-2xl py-2 flex items-center justify-center gap-2 shadow-md"
-        >
-          <span className="sparkle-icon">🎬</span> Watch Solution
-        </button>
-        <button
-          onClick={onGotIt}
-          className="w-full min-h-[44px] border border-gray-200 text-gray-500 font-semibold text-sm rounded-2xl py-2 flex items-center justify-center bg-white"
-        >
-          Got it, move on →
-        </button>
-      </div>
-    </div>
-  );
-}
+import {
+  LESSON_SIZE, HEARTS_MAX, XP_CORRECT, XP_REVIEW, AUTO_ADVANCE_MS,
+  SPEED_DRILL_MS, MAX_BONUS_PER_LESSON, MAX_BONUS_PER_ORIGIN,
+  TOPIC_EMOJI, CARD_ACCENTS,
+  type Phase, type TrialStatus, type BonusMode, type QuestionResult, type GradeUpCta,
+} from '@/components/practice';
+import { HeartsBar, LessonJourney, XpFloat } from '@/components/practice';
+import { ReviewIntroScreen, NoHeartsScreen, LessonCompleteScreen } from '@/components/practice';
+import { CorrectPanel, WrongPanel } from '@/components/practice';
 
 // ── Main component ────────────────────────────────────────────────────────────
 
@@ -660,7 +134,7 @@ export default function PracticePage() {
     try {
       const excludeParam = Array.from(seenQuestionIdsRef.current).join(',');
       const subTopicEncoded = subTopicParam ? `&subTopic=${encodeURIComponent(subTopicParam)}` : '';
-      const url = `/api/questions/next?topicId=${topicId}&studentId=${sid}${subTopicEncoded}${excludeParam ? `&exclude=${excludeParam}` : ''}`;
+      const url = `/api/questions/next?topicId=${topicId}${subTopicEncoded}${excludeParam ? `&exclude=${excludeParam}` : ''}`;
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), 5000);
       const res = await fetch(url, { signal: controller.signal });
@@ -711,7 +185,7 @@ export default function PracticePage() {
 
   // ── Offline attempt queue helpers ──────────────────────────────────────────
   interface AttemptPayload {
-    studentId: string; questionId: string; topicId: string;
+    questionId: string; topicId: string;
     selected: string; isCorrect: boolean; hintUsed: number;
     misconceptionType?: string | null;
     isBonusQuestion?: boolean;
@@ -736,7 +210,7 @@ export default function PracticePage() {
       ),
     )
       .then(() => localStorage.removeItem('mathspark_attempt_queue'))
-      .catch(() => {});
+      .catch((err) => console.error('[fetch]', err));
   }
 
   function submitAttempt(payload: AttemptPayload, onXpAwarded?: (xp: number) => void) {
@@ -778,7 +252,7 @@ export default function PracticePage() {
         const res = await fetch('/api/usage/heartbeat', {
           method:  'POST',
           headers: { 'content-type': 'application/json' },
-          body:    JSON.stringify({ studentId }),
+          body:    JSON.stringify({}),
         });
         if (res.ok) {
           const data = await res.json() as { allowed: boolean; used: number; limit: number };
@@ -794,7 +268,7 @@ export default function PracticePage() {
       heartbeatRef.current = null;
       // Best-effort beacon on tab close/navigate so the last partial minute is counted
       if (heartbeatPhaseRef.current && navigator.sendBeacon) {
-        navigator.sendBeacon('/api/usage/heartbeat', JSON.stringify({ studentId }));
+        navigator.sendBeacon('/api/usage/heartbeat', '{}');
       }
     };
   }, [studentId]); // run once per student session
@@ -873,12 +347,12 @@ export default function PracticePage() {
 
     Promise.all([
       // Gate check — fails open (allowed: true) so API errors never block students
-      fetch(`/api/usage/check?studentId=${sid}`)
+      fetch('/api/usage/check')
         .then((r) => r.ok ? r.json() : { allowed: true, used: 0, limit: 0, trial: null })
         .catch(() => ({ allowed: true, used: 0, limit: 0, trial: null })),
-      fetch('/api/topics').then((r) => r.json()),
+      fetch('/api/topics').then((r) => { if (!r.ok) throw new Error('Topics fetch failed'); return r.json(); }),
       // First question from the adaptive engine
-      fetch(`/api/questions/next?topicId=${topicId}&studentId=${sid}${subTopicParam ? `&subTopic=${encodeURIComponent(subTopicParam)}` : ''}`)
+      fetch(`/api/questions/next?topicId=${topicId}${subTopicParam ? `&subTopic=${encodeURIComponent(subTopicParam)}` : ''}`)
         .then((r) => { if (!r.ok) throw new Error('fetch failed'); return r.json() as Promise<Question>; }),
     ])
       .then(([usageData, topics, firstQ]: [{ allowed: boolean; used: number; limit: number; trial: TrialStatus | null }, Array<{ id: string; name: string }>, Question]) => {
@@ -1076,7 +550,6 @@ export default function PracticePage() {
     if (studentId) {
       submitAttempt(
         {
-          studentId,
           questionId: currentQuestion.id,
           topicId,
           selected: key,
@@ -1201,7 +674,6 @@ export default function PracticePage() {
 
     if (studentId) {
       submitAttempt({
-        studentId,
         questionId:      bonusQuestion.id,
         topicId,
         selected:        key,
@@ -1321,7 +793,7 @@ export default function PracticePage() {
             <div className="animate-sparky-bounce">
               <Sparky mood="thinking" size={100} />
             </div>
-            <p className="text-gray-400 font-semibold">Loading your lesson…</p>
+            <p className="text-gray-500 font-semibold">Loading your lesson…</p>
           </>
         )}
       </div>
@@ -1550,7 +1022,7 @@ export default function PracticePage() {
       {isReviewing ? (
         <div className="bg-[#EEF6FF] px-4 py-2 flex items-center gap-2 border-b border-blue-100">
           <span className="text-duo-blue text-sm font-extrabold">📚 Review mode</span>
-          <span className="text-gray-400 text-xs font-semibold">{reviewIndex + 1} / {reviewQueue.length}</span>
+          <span className="text-gray-500 text-xs font-semibold">{reviewIndex + 1} / {reviewQueue.length}</span>
         </div>
       ) : (
         <LessonJourney total={LESSON_SIZE} currentIdx={qIndex} results={results} />
@@ -1782,7 +1254,7 @@ export default function PracticePage() {
                   <>
                     {bonusMisconText && (
                       <div className="bg-blue-50 border border-blue-200 rounded-2xl px-4 py-3">
-                        <p className="text-[11px] font-extrabold text-blue-700 uppercase tracking-wide mb-1">💡 Common mistake</p>
+                        <p className="text-xs font-extrabold text-blue-700 uppercase tracking-wide mb-1">💡 Common mistake</p>
                         <p className="text-sm text-gray-700 font-medium leading-snug">{bonusMisconText}</p>
                       </div>
                     )}

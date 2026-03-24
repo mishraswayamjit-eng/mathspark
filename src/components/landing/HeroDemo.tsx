@@ -16,9 +16,9 @@ export default function HeroDemo() {
 
   useEffect(() => {
     fetch('/api/questions/preview')
-      .then(r => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then(d => { if (d.questions?.[0]) setQ(d.questions[0]); })
-      .catch(() => {});
+      .catch((err) => console.error('[fetch]', err));
   }, []);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export default function HeroDemo() {
                   :            'border-white/5 text-white/25'
                 }`}
               >
-                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${answered && correct ? 'bg-[#58CC02] text-white' : 'bg-white/10 text-white/40'}`}>
+                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${answered && correct ? 'bg-[#58CC02] text-white' : 'bg-white/10 text-white/60'}`}>
                   {key}
                 </span>
                 <span className="text-sm">{opt}</span>

@@ -66,7 +66,7 @@ export default function AddToHomeScreen() {
         <button
           onClick={dismiss}
           style={{ minHeight: 0 }}
-          className="text-white/50 text-lg leading-none"
+          className="text-white/70 text-lg leading-none"
           aria-label="Dismiss"
         >
           ×

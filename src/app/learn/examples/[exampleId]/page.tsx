@@ -82,7 +82,7 @@ export default function WorkedExampleDetailPage() {
 
   useEffect(() => {
     fetch(`/api/worked-examples?id=${exampleId}`)
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
         if (data.example) {
           setExample(data.example);
@@ -162,7 +162,8 @@ export default function WorkedExampleDetailPage() {
       <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-6">
         <Sparky mood="thinking" size={64} />
         <p className="text-sm font-bold text-red-500">{error || 'Something went wrong.'}</p>
-        <Link href="/learn/examples" className="text-sm text-blue-500 underline">Back to Examples</Link>
+        <button onClick={() => window.location.reload()} className="bg-duo-blue text-white font-extrabold rounded-2xl px-6 py-2.5 text-sm active:scale-95 transition-transform">Retry</button>
+        <Link href="/learn/examples" className="text-sm text-gray-500 font-semibold">Back to Examples</Link>
       </div>
     );
   }
@@ -180,7 +181,7 @@ export default function WorkedExampleDetailPage() {
         <Link href="/learn/examples" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1 min-w-0">
           <h1 className="text-white font-extrabold text-sm truncate">Sparky Explains</h1>
-          <p className="text-white/50 text-xs font-medium truncate">
+          <p className="text-white/70 text-xs font-medium truncate">
             {example.topic.replace(/_/g, ' ')} &middot; Grade {example.grade}
           </p>
         </div>
@@ -197,10 +198,10 @@ export default function WorkedExampleDetailPage() {
         {/* ── Question Card ───────────────────────────────────────────────── */}
         <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-md">
           <div className="flex items-center gap-2 mb-3">
-            <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wide">
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wide">
               Question
             </span>
-            <span className="text-[11px] font-medium text-gray-300">{example.subTopic}</span>
+            <span className="text-xs font-medium text-gray-300">{example.subTopic}</span>
           </div>
 
           <p className="text-lg font-bold text-gray-800 leading-relaxed">
@@ -342,7 +343,7 @@ export default function WorkedExampleDetailPage() {
                 <p className="text-sm font-extrabold text-duo-green mb-1">Answer: {example.correctAnswer}</p>
                 <p className="text-sm font-semibold text-gray-800">{example.finalAnswer.text}</p>
                 {example.finalAnswer.sparkyReaction && (
-                  <p className="text-xs font-medium text-green-600 mt-1.5 italic">
+                  <p className="text-xs font-medium text-duo-green mt-1.5 italic">
                     {example.finalAnswer.sparkyReaction}
                   </p>
                 )}
@@ -398,7 +399,7 @@ export default function WorkedExampleDetailPage() {
             More Examples →
           </Link>
           <Link
-            href="/home"
+            href="/chapters"
             className="bg-gray-200 text-gray-600 font-bold px-6 py-3.5 rounded-2xl transition-colors hover:bg-gray-300 text-sm"
           >
             Home

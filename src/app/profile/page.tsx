@@ -1,5 +1,6 @@
 'use client';
 
+import { MS_PER_DAY } from '@/lib/timeConstants';
 import { useEffect, useState, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -27,10 +28,10 @@ function SettingRow({ icon, label, sublabel, control }: {
   return (
     <div className="flex items-center justify-between py-3.5 border-b border-gray-100">
       <div className="flex items-center gap-3">
-        <span className="text-xl">{icon}</span>
+        <span className="text-xl" aria-hidden="true">{icon}</span>
         <div>
           <p className="font-bold text-gray-700 text-sm">{label}</p>
-          {sublabel && <p className="text-xs text-gray-400 font-medium">{sublabel}</p>}
+          {sublabel && <p className="text-xs text-gray-500 font-medium">{sublabel}</p>}
         </div>
       </div>
       {control}
@@ -47,8 +48,7 @@ function PillSelector<T extends string | number>({
         <button
           key={String(opt)}
           onClick={() => onChange(opt)}
-          style={{ minHeight: 0 }}
-          className={`px-3 py-1.5 rounded-full text-xs font-extrabold transition-[colors,transform] active:scale-95 ${
+          className={`px-3 py-1.5 rounded-full text-xs font-extrabold transition-[colors,transform] active:scale-95 min-h-0 ${
             value === opt
               ? 'bg-duo-green text-white shadow-sm'
               : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
@@ -64,7 +64,7 @@ function PillSelector<T extends string | number>({
 function Card({ title, children }: { title?: string; children: ReactNode }) {
   return (
     <div className="bg-white px-4 py-4 mt-2 border-b border-gray-100">
-      {title && <h2 className="text-[10px] font-extrabold text-gray-400 uppercase tracking-widest mb-3">{title}</h2>}
+      {title && <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest mb-3">{title}</h2>}
       {children}
     </div>
   );
@@ -143,8 +143,8 @@ export default function ProfilePage() {
     setNotifications(localStorage.getItem('mathspark_notifications') === 'true');
 
     // Fetch student data
-    fetch(`/api/profile?studentId=${id}`)
-      .then((r) => r.json())
+    fetch('/api/profile')
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d) => {
         const s = d.student ?? d;
         setName(s.name ?? '');
@@ -170,15 +170,15 @@ export default function ProfilePage() {
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, [router]);
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   async function patchStudent(fields: Record<string, unknown>) {
     if (!studentId) return;
     await fetch('/api/student', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ studentId, ...fields }),
-    }).catch(() => {});
+      body: JSON.stringify({ ...fields }),
+    }).catch((err) => console.error('[fetch]', err));
   }
 
   async function saveName() {
@@ -272,8 +272,8 @@ export default function ProfilePage() {
     fetch('/api/brain/recompute', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ studentId }),
-    }).catch(() => {});
+      body: JSON.stringify({}),
+    }).catch((err) => console.error('[fetch]', err));
   }
 
   function logout() {
@@ -285,7 +285,7 @@ export default function ProfilePage() {
   if (loading) {
     const skeletonInitial = name ? name[0].toUpperCase() : '?';
     return (
-      <div className="min-h-screen bg-gray-50 pb-24">
+      <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
         {/* Identity header — real data from localStorage, no pulse */}
         <div className="bg-duo-dark pt-10 pb-6 px-4">
           <div className="flex items-center gap-4">
@@ -331,7 +331,7 @@ export default function ProfilePage() {
   const gradeTopics = getTopicsForGrade(grade);
 
   const examDaysLeft = examDate
-    ? Math.max(0, Math.ceil((new Date(examDate).getTime() - Date.now()) / 86400000))
+    ? Math.max(0, Math.ceil((new Date(examDate).getTime() - Date.now()) / MS_PER_DAY))
     : null;
 
   return (
@@ -350,7 +350,7 @@ export default function ProfilePage() {
           <div className="bg-white rounded-3xl p-6 w-full max-w-xs shadow-2xl animate-pop-in space-y-4">
             <h3 className="font-extrabold text-gray-800 text-lg">Change your name</h3>
             <div className="space-y-2">
-              <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Your name</label>
+              <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">Your name</label>
               <input
                 type="text" autoFocus value={newName}
                 onChange={(e) => setNewName(e.target.value)}
@@ -361,7 +361,7 @@ export default function ProfilePage() {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Leaderboard name</label>
+              <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">Leaderboard name</label>
               <input
                 type="text" value={newDisplayName}
                 onChange={(e) => setNewDisplayName(e.target.value)}
@@ -393,15 +393,15 @@ export default function ProfilePage() {
               Grade {grade}{city ? ` · ${city}` : ''}
             </p>
             <div className="flex items-center gap-2 mt-1">
-              <span className="text-white/50 text-xs font-medium">
+              <span className="text-white/70 text-xs font-medium">
                 {tierEmoji} {tierName} League
               </span>
               {streakDays > 0 && (
-                <span className="text-orange-400 text-xs font-extrabold">🔥 {streakDays}-day streak</span>
+                <span className="text-orange-400 text-xs font-extrabold"><span aria-hidden="true">🔥 </span>{streakDays}-day streak</span>
               )}
             </div>
             {memberSince && (
-              <p className="text-white/30 text-xs font-medium mt-0.5">Member since {memberSince}</p>
+              <p className="text-white/70 text-xs font-medium mt-0.5">Member since {memberSince}</p>
             )}
           </div>
         </div>
@@ -410,7 +410,7 @@ export default function ProfilePage() {
           style={{ minHeight: 0 }}
           className="mt-4 bg-white/15 hover:bg-white/25 text-white text-sm font-bold rounded-full px-4 py-2 transition-colors"
         >
-          ✏️ Edit name
+          <span aria-hidden="true">✏️ </span>Edit name
         </button>
       </div>
 
@@ -418,7 +418,7 @@ export default function ProfilePage() {
       <Card title="My Exam">
         <div className="space-y-3">
           <div>
-            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Exam name</label>
+            <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">Exam name</label>
             <input
               type="text" value={examName}
               onChange={(e) => setExamName(e.target.value)}
@@ -427,7 +427,7 @@ export default function ProfilePage() {
             />
           </div>
           <div>
-            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Exam date</label>
+            <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">Exam date</label>
             <input
               type="date" value={examDate}
               onChange={(e) => setExamDate(e.target.value)}
@@ -440,14 +440,13 @@ export default function ProfilePage() {
             )}
           </div>
           <div>
-            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide mb-1.5 block">Target score (out of 40)</label>
+            <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide mb-1.5 block">Target score (out of 40)</label>
             <div className="flex gap-2">
               {[25, 30, 35, 38].map((s) => (
                 <button
                   key={s}
                   onClick={() => setTargetScore(s)}
-                  style={{ minHeight: 0 }}
-                  className={`flex-1 py-2 rounded-xl text-sm font-extrabold transition-colors ${
+                  className={`flex-1 py-2 rounded-xl text-sm font-extrabold transition-colors min-h-0 ${
                     targetScore === s
                       ? 'bg-duo-green text-white shadow-sm'
                       : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
@@ -502,8 +501,7 @@ export default function ProfilePage() {
               <button
                 key={v}
                 onClick={() => updatePracticeTime(v)}
-                style={{ minHeight: 0 }}
-                className={`flex-1 py-2 rounded-xl text-xs font-extrabold transition-colors ${
+                className={`flex-1 py-2 rounded-xl text-xs font-extrabold transition-colors min-h-0 ${
                   preferredPracticeTime === v
                     ? 'bg-duo-blue text-white shadow-sm'
                     : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
@@ -533,23 +531,22 @@ export default function ProfilePage() {
 
       {/* ── 5. Focus Areas ────────────────────────────────────────────────── */}
       <Card title="Focus Areas">
-        <p className="text-xs text-gray-400 font-medium mb-3">These help Sparky prioritise your practice 🧠</p>
+        <p className="text-xs text-gray-500 font-medium mb-3">These help Sparky prioritise your practice 🧠</p>
 
         <div className="mb-4">
-          <p className="text-sm font-bold text-gray-700 mb-2">📌 Topics I Find Hard</p>
+          <p className="text-sm font-bold text-gray-700 mb-2"><span aria-hidden="true">📌 </span>Topics I Find Hard</p>
           <div className="flex flex-wrap gap-1.5">
             {gradeTopics.slice(0, 10).map((t) => (
               <button
                 key={t.id}
                 onClick={() => toggleFocus(t.id)}
-                style={{ minHeight: 0 }}
-                className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-extrabold transition-colors ${
+                className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-extrabold transition-colors min-h-0 ${
                   focusTopics.includes(t.id)
                     ? 'bg-duo-red text-white'
                     : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                 }`}
               >
-                <span>{t.emoji}</span>
+                <span aria-hidden="true">{t.emoji}</span>
                 <span>{t.name.split(' ')[0]}</span>
                 {focusTopics.includes(t.id) && <span>×</span>}
               </button>
@@ -558,20 +555,19 @@ export default function ProfilePage() {
         </div>
 
         <div>
-          <p className="text-sm font-bold text-gray-700 mb-2">💪 Topics I&apos;m Confident In</p>
+          <p className="text-sm font-bold text-gray-700 mb-2"><span aria-hidden="true">💪 </span>Topics I&apos;m Confident In</p>
           <div className="flex flex-wrap gap-1.5">
             {gradeTopics.slice(0, 10).map((t) => (
               <button
                 key={t.id}
                 onClick={() => toggleConfident(t.id)}
-                style={{ minHeight: 0 }}
-                className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-extrabold transition-colors ${
+                className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-extrabold transition-colors min-h-0 ${
                   confidentTopics.includes(t.id)
                     ? 'bg-duo-green text-white'
                     : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                 }`}
               >
-                <span>{t.emoji}</span>
+                <span aria-hidden="true">{t.emoji}</span>
                 <span>{t.name.split(' ')[0]}</span>
                 {confidentTopics.includes(t.id) && <span>×</span>}
               </button>
@@ -584,7 +580,7 @@ export default function ProfilePage() {
       <Card title="Parent Settings">
         <div className="space-y-3">
           <div>
-            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">Parent email</label>
+            <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">Parent email</label>
             <input
               type="email" value={parentEmail}
               onChange={(e) => setParentEmail(e.target.value)}
@@ -593,7 +589,7 @@ export default function ProfilePage() {
             />
           </div>
           <div>
-            <label className="text-xs font-extrabold text-gray-400 uppercase tracking-wide">WhatsApp number</label>
+            <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">WhatsApp number</label>
             <input
               type="tel" value={parentWhatsApp}
               onChange={(e) => setParentWhatsApp(e.target.value)}
@@ -623,8 +619,7 @@ export default function ProfilePage() {
                 <button
                   key={g}
                   onClick={() => changeGrade(g)}
-                  style={{ minHeight: 0 }}
-                  className={`py-2 rounded-xl text-xs font-extrabold transition-colors ${
+                  className={`py-2 rounded-xl text-xs font-extrabold transition-colors min-h-0 ${
                     grade === g
                       ? 'bg-duo-blue text-white shadow-sm'
                       : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
@@ -640,7 +635,7 @@ export default function ProfilePage() {
           <div className="flex items-center justify-between py-2">
             <div>
               <p className="text-sm font-bold text-gray-700">Subscription</p>
-              <p className="text-xs text-gray-400 font-medium">Current plan</p>
+              <p className="text-xs text-gray-500 font-medium">Current plan</p>
             </div>
             <Link href="/pricing" className="text-xs font-extrabold text-duo-blue bg-blue-50 rounded-full px-3 py-1.5">
               Upgrade →
@@ -650,7 +645,7 @@ export default function ProfilePage() {
           {/* Sparky Chat */}
           <div className="flex items-center justify-between py-2 border-t border-gray-100">
             <div className="flex items-center gap-2">
-              <span className="text-lg">💬</span>
+              <span className="text-lg" aria-hidden="true">💬</span>
               <p className="text-sm font-bold text-gray-700">Sparky Chat</p>
             </div>
             <Link href="/chat" className="text-xs font-extrabold text-duo-blue bg-blue-50 rounded-full px-3 py-1.5">

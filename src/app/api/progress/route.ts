@@ -1,14 +1,13 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
-// GET /api/progress?studentId=xxx
-export async function GET(req: Request) {
+// GET /api/progress
+export async function GET() {
   try {
-    const { searchParams } = new URL(req.url);
-    const studentId = searchParams.get('studentId');
-
+    const studentId = await getAuthenticatedStudentId();
     if (!studentId) {
-      return NextResponse.json({ error: 'studentId is required' }, { status: 400 });
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
     const progress = await prisma.progress.findMany({

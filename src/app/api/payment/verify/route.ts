@@ -3,6 +3,7 @@ import crypto from 'crypto';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
+import { validateBody, ValidationError } from '@/lib/validateBody';
 
 function generateInvoiceNumber(count: number): string {
   const year = new Date().getFullYear();
@@ -25,7 +26,16 @@ export async function POST(req: Request) {
       razorpaySignature,
       subscriptionId,
       studentId,
-    } = await req.json() as Record<string, string>;
+    } = validateBody<{
+      razorpayOrderId: string;
+      razorpayPaymentId: string;
+      razorpaySignature: string;
+      subscriptionId: string;
+      studentId: string;
+    }>(
+      await req.json(),
+      { razorpayOrderId: 'string', razorpayPaymentId: 'string', razorpaySignature: 'string', subscriptionId: 'string', studentId: 'string' },
+    );
 
     // Verify Razorpay signature
     const secret    = process.env.RAZORPAY_KEY_SECRET ?? '';
@@ -46,16 +56,16 @@ export async function POST(req: Request) {
     const plan = await prisma.subscription.findUnique({ where: { id: subscriptionId } });
     if (!plan) return NextResponse.json({ error: 'Plan not found.' }, { status: 404 });
 
-    // Generate invoice number
-    const orderCount = await prisma.order.count();
-    const invoiceNumber = generateInvoiceNumber(orderCount);
-
     const now      = new Date();
     const expiresAt = new Date(now.getTime() + plan.durationDays * 24 * 60 * 60 * 1000);
 
-    // Create order record + activate subscription on student
-    await prisma.$transaction([
-      prisma.order.create({
+    // Create order + activate subscription atomically.
+    // Invoice number count is inside the transaction to prevent duplicates.
+    const invoiceNumber = await prisma.$transaction(async (tx) => {
+      const orderCount = await tx.order.count();
+      const inv = generateInvoiceNumber(orderCount);
+
+      await tx.order.create({
         data: {
           parentId:         session.user.id,
           subscriptionId,
@@ -65,19 +75,25 @@ export async function POST(req: Request) {
           paymentStatus:    'paid',
           razorpayOrderId,
           razorpayPaymentId,
-          invoiceNumber,
+          invoiceNumber:    inv,
           startsAt:         now,
           expiresAt,
         },
-      }),
-      prisma.student.update({
+      });
+
+      await tx.student.update({
         where: { id: studentId },
         data:  { subscriptionId },
-      }),
-    ]);
+      });
+
+      return inv;
+    });
 
     return NextResponse.json({ ok: true, invoiceNumber, expiresAt: expiresAt.toISOString() });
   } catch (err) {
+    if (err instanceof ValidationError) {
+      return NextResponse.json({ error: err.message }, { status: 400 });
+    }
     console.error('[payment/verify]', err);
     return NextResponse.json({ error: 'Failed to verify payment.' }, { status: 500 });
   }

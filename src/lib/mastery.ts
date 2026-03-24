@@ -31,19 +31,30 @@ export async function calculateMastery(
 
 /**
  * Recalculate and persist mastery + aggregate counts for a student/topic pair.
+ * Uses a single batched transaction (3 queries → 1 round-trip) + 1 upsert.
  * Also exported as updateMastery to match the spec interface.
  */
 export async function updateProgress(studentId: string, topicId: string): Promise<void> {
-  const [mastery, all] = await Promise.all([
-    calculateMastery(studentId, topicId),
+  const where = { studentId, question: { topicId } };
+
+  const [recent, attempted, correct] = await prisma.$transaction([
     prisma.attempt.findMany({
-      where: { studentId, question: { topicId } },
+      where,
+      orderBy: { createdAt: 'desc' },
+      take: 10,
       select: { isCorrect: true },
     }),
+    prisma.attempt.count({ where }),
+    prisma.attempt.count({ where: { studentId, question: { topicId }, isCorrect: true } }),
   ]);
 
-  const attempted = all.length;
-  const correct   = all.filter((a) => a.isCorrect).length;
+  // Derive mastery from recent 10 attempts
+  let mastery: MasteryLevel = 'NotStarted';
+  if (recent.length > 0) {
+    const ratio = recent.filter((a) => a.isCorrect).length / recent.length;
+    if (ratio >= 0.8) mastery = 'Mastered';
+    else if (ratio >= 0.4) mastery = 'Practicing';
+  }
 
   await prisma.progress.upsert({
     where:  { studentId_topicId: { studentId, topicId } },

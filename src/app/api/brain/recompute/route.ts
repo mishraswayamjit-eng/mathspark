@@ -1,20 +1,17 @@
 import { NextResponse } from 'next/server';
 import { recomputeStudentAnalytics } from '@/lib/brain/recompute';
-import { validateStudentAccess } from '@/lib/validateStudent';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 30;
 
-// POST /api/brain/recompute  { studentId }
-// Called fire-and-forget from practice end, mock submit, etc.
-export async function POST(req: Request) {
+// POST /api/brain/recompute
+export async function POST() {
   try {
-    const { studentId } = await req.json();
-    if (!studentId || typeof studentId !== 'string') {
-      return NextResponse.json({ error: 'studentId required' }, { status: 400 });
+    const studentId = await getAuthenticatedStudentId();
+    if (!studentId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
-    const err = await validateStudentAccess(studentId);
-    if (err) return NextResponse.json({ error: err }, { status: err === 'Student not found' ? 404 : 403 });
 
     await recomputeStudentAnalytics(studentId);
     return NextResponse.json({ ok: true });

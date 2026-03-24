@@ -36,7 +36,14 @@ export default function StudentLoginPage() {
     }
   }
 
-  function selectChild(child: Child) {
+  async function selectChild(child: Child) {
+    // Set httpOnly cookie for API auth
+    await fetch('/api/student/session', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ studentId: child.id }),
+    });
+    // Keep localStorage for UI display only
     localStorage.setItem('mathspark_student_id',   child.id);
     localStorage.setItem('mathspark_student_name', child.name);
     router.push('/chapters');
@@ -48,7 +55,7 @@ export default function StudentLoginPage() {
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">🌟</div>
           <h1 className="text-2xl font-extrabold text-white">Student login</h1>
-          <p className="text-white/50 text-sm mt-1">Enter your parent's email to find your profile</p>
+          <p className="text-white/70 text-sm mt-1">Enter your parent's email to find your profile</p>
         </div>
 
         {children ? (
@@ -62,12 +69,12 @@ export default function StudentLoginPage() {
               >
                 <span className="text-3xl">🧑‍🎓</span>
                 <span className="text-white font-extrabold text-lg">{child.name}</span>
-                <span className="text-white/40 ml-auto">→</span>
+                <span className="text-white/60 ml-auto">→</span>
               </button>
             ))}
             <button
               onClick={() => setChildren(null)}
-              className="w-full text-white/40 text-sm py-2 hover:text-white/70 transition-colors"
+              className="w-full text-white/60 text-sm py-2 hover:text-white/70 transition-colors"
             >
               ← Use a different email
             </button>
@@ -76,8 +83,9 @@ export default function StudentLoginPage() {
           <form onSubmit={handleLookup} className="space-y-4">
             <input
               type="email" placeholder="Parent's email address" required autoComplete="email"
+              aria-label="Parent's email address"
               value={email} onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-green"
+              className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
             />
 
             {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
@@ -91,7 +99,7 @@ export default function StudentLoginPage() {
           </form>
         )}
 
-        <p className="text-center text-white/30 text-xs mt-8">
+        <p className="text-center text-white/70 text-xs mt-8">
           Are you a parent?{' '}
           <a href="/auth/login" className="text-duo-blue font-semibold">Sign in here →</a>
         </p>

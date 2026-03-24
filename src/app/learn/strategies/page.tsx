@@ -55,11 +55,11 @@ export default function StrategyBankPage() {
     const qs = selectedCategory ? `?category=${selectedCategory}` : '';
     setLoading(true);
     fetch(`/api/strategies${qs}`)
-      .then((r) => r.json())
+      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
         setStrategies(data.strategies ?? []);
       })
-      .catch(() => {})
+      .catch((err) => console.error('[fetch]', err))
       .finally(() => setLoading(false));
   }, [selectedCategory]);
 
@@ -77,10 +77,10 @@ export default function StrategyBankPage() {
     <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
-        <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
+        <Link href="/chapters" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white font-extrabold text-lg">Strategy Bank</h1>
-          <p className="text-white/50 text-xs font-medium">35 exam strategies &middot; Solve like a topper!</p>
+          <p className="text-white/70 text-xs font-medium">35 exam strategies &middot; Solve like a topper!</p>
         </div>
         <span className="text-2xl">🧠</span>
       </div>
@@ -152,9 +152,9 @@ export default function StrategyBankPage() {
                       <span className="text-lg">{meta.emoji}</span>
                       <div>
                         <h2 className="text-sm font-extrabold text-gray-800">{meta.label}</h2>
-                        <p className="text-[10px] text-gray-400 font-medium">{meta.description}</p>
+                        <p className="text-[10px] text-gray-500 font-medium">{meta.description}</p>
                       </div>
-                      <span className="ml-auto text-[10px] font-bold text-gray-400 bg-gray-100 rounded-full px-2 py-0.5">
+                      <span className="ml-auto text-[10px] font-bold text-gray-500 bg-gray-100 rounded-full px-2 py-0.5">
                         {categoryStrategies.length}
                       </span>
                     </div>
@@ -178,16 +178,16 @@ export default function StrategyBankPage() {
                             <span className="text-xl shrink-0">{s.emoji}</span>
                             <div className="flex-1 min-w-0">
                               <p className="text-sm font-extrabold text-gray-800 leading-tight">{s.name}</p>
-                              <p className="text-xs text-gray-400 font-medium mt-0.5 line-clamp-1">{s.description}</p>
+                              <p className="text-xs text-gray-500 font-medium mt-0.5 line-clamp-1">{s.description}</p>
                             </div>
                             <div className="flex items-center gap-2 shrink-0">
                               {s.estimatedTimeSaved && (
-                                <span className="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full hidden sm:block">
+                                <span className="text-[10px] font-bold text-duo-green bg-green-50 px-2 py-0.5 rounded-full hidden sm:block">
                                   {s.estimatedTimeSaved}
                                 </span>
                               )}
                               <span
-                                className="text-gray-400 transition-transform duration-200 text-sm"
+                                className="text-gray-500 transition-transform duration-200 text-sm"
                                 style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
                               >
                                 ▾
@@ -205,7 +205,7 @@ export default function StrategyBankPage() {
                               <div className="flex items-start gap-2">
                                 <span className="text-xs shrink-0 mt-0.5">🕐</span>
                                 <div>
-                                  <p className="text-[10px] font-extrabold text-gray-400 uppercase tracking-wide">When to Use</p>
+                                  <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide">When to Use</p>
                                   <p className="text-sm text-gray-700 font-medium mt-0.5">{s.whenToUse}</p>
                                 </div>
                               </div>
@@ -214,7 +214,7 @@ export default function StrategyBankPage() {
                               <div className="flex items-start gap-2">
                                 <span className="text-xs shrink-0 mt-0.5">⚙️</span>
                                 <div>
-                                  <p className="text-[10px] font-extrabold text-gray-400 uppercase tracking-wide">How It Works</p>
+                                  <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide">How It Works</p>
                                   <p className="text-sm text-gray-700 font-medium mt-0.5 leading-relaxed">{s.howItWorks}</p>
                                 </div>
                               </div>
@@ -233,7 +233,7 @@ export default function StrategyBankPage() {
                                       <p className="text-xs text-blue-800 font-medium">{s.example.action}</p>
                                     </div>
                                     <div className="flex items-start gap-2">
-                                      <span className="text-[10px] text-green-500 font-bold shrink-0 mt-0.5">Result:</span>
+                                      <span className="text-[10px] text-duo-green font-bold shrink-0 mt-0.5">Result:</span>
                                       <p className="text-xs text-green-700 font-semibold">{s.example.result}</p>
                                     </div>
                                   </div>
@@ -254,14 +254,14 @@ export default function StrategyBankPage() {
                               {/* Footer: time saved + difficulty + grade range */}
                               <div className="flex items-center gap-2 flex-wrap pt-1">
                                 {s.estimatedTimeSaved && (
-                                  <span className="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full border border-green-200">
+                                  <span className="text-[10px] font-bold text-duo-green bg-green-50 px-2 py-0.5 rounded-full border border-green-200">
                                     Saves {s.estimatedTimeSaved}
                                   </span>
                                 )}
                                 <span className="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
                                   {s.difficulty === 1 ? 'Beginner' : 'Advanced'}
                                 </span>
-                                <span className="text-[10px] font-bold text-gray-400">
+                                <span className="text-[10px] font-bold text-gray-500">
                                   Grades {s.gradeRange[0]}–{s.gradeRange[1]}
                                 </span>
                               </div>

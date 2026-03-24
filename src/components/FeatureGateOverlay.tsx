@@ -42,7 +42,7 @@ export default function FeatureGateOverlay({ feature, requiredPlan, onDismiss }:
       {onDismiss && (
         <button
           onClick={onDismiss}
-          className="mt-3 text-white/40 text-sm hover:text-white/70 transition-colors"
+          className="mt-3 text-white/60 text-sm hover:text-white/70 transition-colors"
         >
           Maybe later
         </button>

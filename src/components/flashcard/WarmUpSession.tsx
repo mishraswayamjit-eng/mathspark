@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { useFlashcardDeck } from '@/hooks/useFlashcardDeck';
 import dynamic from 'next/dynamic';
 import Confetti from '@/components/Confetti';
 import Sparky from '@/components/Sparky';
@@ -211,6 +212,7 @@ interface WarmUpSessionProps {
 
 export default function WarmUpSession({ deckId }: WarmUpSessionProps) {
   const router = useRouter();
+  const { fetchDeck } = useFlashcardDeck('warmup');
   const { playCorrect, playLevelUp, playMastery } = useSounds();
 
   const [currentPhase, setCurrentPhase] = useState<WarmUpPhase>('loading');
@@ -235,14 +237,9 @@ export default function WarmUpSession({ deckId }: WarmUpSessionProps) {
   // ── Load warm-up deck ──────────────────────────────────────────────────────
 
   useEffect(() => {
-    const sid = localStorage.getItem('mathspark_student_id');
-    const grade = localStorage.getItem('mathspark_student_grade') || '4';
-    if (!sid) { router.replace('/start'); return; }
-
-    fetch(`/api/flashcards/deck?studentId=${sid}&grade=${grade}&deck=warmup`)
-      .then((r) => r.json())
+    fetchDeck()
       .then((data) => {
-        if (!data.cards || data.cards.length === 0) {
+        if (!data || data.cards.length === 0) {
           router.replace('/flashcards');
           return;
         }
@@ -284,7 +281,7 @@ export default function WarmUpSession({ deckId }: WarmUpSessionProps) {
         setCurrentPhase('breathe');
       })
       .catch(() => router.replace('/flashcards'));
-  }, [router, deckId]);
+  }, [fetchDeck, router]);
 
   // ── Breathing cycle ────────────────────────────────────────────────────────
 
@@ -388,13 +385,12 @@ export default function WarmUpSession({ deckId }: WarmUpSessionProps) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        studentId: sid,
         mode: 'warmup',
         cardsReviewed: totalCards,
         cardsCorrect: totalCards, // warm-up = all reviewed
         duration,
       }),
-    }).catch(() => {});
+    }).catch((err) => console.error('[fetch]', err));
   }, [startTime, quickfireCards.length, formulaCards.length, confidenceCards.length]);
 
   // ── Render: Loading ────────────────────────────────────────────────────────
@@ -572,7 +568,7 @@ export default function WarmUpSession({ deckId }: WarmUpSessionProps) {
       <div className="flex-1 flex flex-col items-center justify-center px-4 py-6" key={`${currentPhase}-${currentCardIndex}`}>
         {/* Confidence boost: show mastery badge */}
         {currentPhase === 'confidence' && (
-          <div className="flex items-center gap-2 mb-4 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-3 py-1">
+          <div className="flex items-center gap-2 mb-4 bg-duo-green/10 border border-duo-green/20 rounded-full px-3 py-1">
             <span className="text-sm">💪</span>
             <span className="text-xs font-bold text-emerald-400">
               Box {currentCard.leitnerBox} — You know this!
@@ -595,8 +591,7 @@ export default function WarmUpSession({ deckId }: WarmUpSessionProps) {
             playLevelUp();
             advanceToNextPhase();
           }}
-          className="mt-6 text-xs text-[#475569] hover:text-[#94A3B8] transition-colors"
-          style={{ minHeight: 'auto' }}
+          className="mt-6 text-xs text-[#475569] hover:text-[#94A3B8] transition-colors min-h-0"
         >
           Skip to next phase →
         </button>

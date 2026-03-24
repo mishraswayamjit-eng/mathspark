@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma, USABLE_QUESTION_FILTER } from '@/lib/db';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -10,16 +11,19 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-// GET /api/questions/lesson?topicId=xxx&studentId=xxx&count=10
+// GET /api/questions/lesson?topicId=xxx&count=10
 export async function GET(req: Request) {
   try {
+    const studentId = await getAuthenticatedStudentId();
+    if (!studentId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
     const { searchParams } = new URL(req.url);
     const topicId   = searchParams.get('topicId');
-    const studentId = searchParams.get('studentId');
     const count     = Math.min(parseInt(searchParams.get('count') ?? '10', 10), 20);
 
-    if (!topicId || !studentId) {
-      return NextResponse.json({ error: 'topicId and studentId required' }, { status: 400 });
+    if (!topicId) {
+      return NextResponse.json({ error: 'topicId required' }, { status: 400 });
     }
 
     // Get student mastery for this topic
