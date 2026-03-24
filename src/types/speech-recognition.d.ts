@@ -1,10 +1,44 @@
 /**
- * Augment the Window interface with the webkit-prefixed Web Speech API.
- *
- * The standard `SpeechRecognition` and `SpeechRecognitionEvent` types are
- * already provided by TypeScript's `lib.dom.d.ts`.  Safari/older Chrome
- * expose the same API under the `webkit` prefix, so we add that here.
+ * Web Speech API types — not included in all TypeScript lib.dom versions.
+ * Declares SpeechRecognition, SpeechRecognitionEvent, and the webkit prefix.
  */
+
+interface SpeechRecognitionEvent extends Event {
+  readonly resultIndex: number;
+  readonly results: SpeechRecognitionResultList;
+}
+
+interface SpeechRecognitionResultList {
+  readonly length: number;
+  item(index: number): SpeechRecognitionResult;
+  [index: number]: SpeechRecognitionResult;
+}
+
+interface SpeechRecognitionResult {
+  readonly isFinal: boolean;
+  readonly length: number;
+  item(index: number): SpeechRecognitionAlternative;
+  [index: number]: SpeechRecognitionAlternative;
+}
+
+interface SpeechRecognitionAlternative {
+  readonly transcript: string;
+  readonly confidence: number;
+}
+
+declare class SpeechRecognition extends EventTarget {
+  continuous: boolean;
+  interimResults: boolean;
+  lang: string;
+  onresult: ((event: SpeechRecognitionEvent) => void) | null;
+  onerror: ((event: Event) => void) | null;
+  onend: (() => void) | null;
+  start(): void;
+  stop(): void;
+  abort(): void;
+}
+
 interface Window {
+  SpeechRecognition: typeof SpeechRecognition;
   webkitSpeechRecognition: typeof SpeechRecognition;
 }
