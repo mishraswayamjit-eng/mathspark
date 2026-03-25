@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 // ── Test student registry ─────────────────────────────────────────────────────
@@ -58,20 +59,51 @@ const GRADE4_STUDENTS: TestStudent[] = [
 
 function StudentCard({ s }: { s: TestStudent }) {
   const router = useRouter();
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
 
   async function loginAs() {
-    // Set auth cookie (required for all API routes)
-    await fetch('/api/student/session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ studentId: s.id }),
-    });
-    // Keep localStorage for UI display
-    localStorage.setItem('mathspark_student_id',        s.id);
-    localStorage.setItem('mathspark_student_name',      s.name);
-    localStorage.setItem('mathspark_student_grade',     String(s.grade));
-    localStorage.setItem('mathspark_subscription_tier', String(s.tier));
-    router.push('/chapters');
+    setBusy(true);
+    setError('');
+    try {
+      // Try to create session (sets auth cookie)
+      let res = await fetch('/api/student/session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ studentId: s.id }),
+      });
+
+      // Student doesn't exist in DB — auto-provision for dev testing
+      if (res.status === 404) {
+        const createRes = await fetch('/api/students', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: s.name, grade: s.grade }),
+        });
+        if (!createRes.ok) { setError('Failed to create test student'); setBusy(false); return; }
+        const created = await createRes.json();
+        // Retry session with the real DB id
+        res = await fetch('/api/student/session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ studentId: created.id }),
+        });
+        // Update localStorage with real id
+        s = { ...s, id: created.id };
+      }
+
+      if (!res.ok) { setError('Session creation failed'); setBusy(false); return; }
+
+      // Keep localStorage for UI display
+      localStorage.setItem('mathspark_student_id',        s.id);
+      localStorage.setItem('mathspark_student_name',      s.name);
+      localStorage.setItem('mathspark_student_grade',     String(s.grade));
+      localStorage.setItem('mathspark_subscription_tier', String(s.tier));
+      router.push('/chapters');
+    } catch {
+      setError('Network error');
+      setBusy(false);
+    }
   }
 
   return (
@@ -95,12 +127,16 @@ function StudentCard({ s }: { s: TestStudent }) {
       </div>
 
       {/* CTA */}
-      <button
-        onClick={loginAs}
-        className="flex-shrink-0 bg-indigo-500 hover:bg-indigo-600 text-white text-xs font-bold px-3 py-2 rounded-xl transition-colors"
-      >
-        Log in →
-      </button>
+      <div className="flex flex-col items-end gap-1">
+        <button
+          onClick={loginAs}
+          disabled={busy}
+          className="flex-shrink-0 bg-indigo-500 hover:bg-indigo-600 disabled:opacity-50 text-white text-xs font-bold px-3 py-2 rounded-xl transition-colors"
+        >
+          {busy ? 'Loading…' : 'Log in →'}
+        </button>
+        {error && <span className="text-red-500 text-[10px]">{error}</span>}
+      </div>
     </div>
   );
 }
