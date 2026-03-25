@@ -27,7 +27,7 @@ export async function POST(req: Request) {
       grade?: number;
     }>(
       await req.json(),
-      { type: 'string', topicIds: 'array?', year: 'string?', grade: 'number?' },
+      { type: 'string', topicIds: 'array?', year: 'number?', grade: 'number?' },
     );
 
     if (!type) {
@@ -62,26 +62,37 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Invalid grade for mega test (must be 2-9)' }, { status: 400 });
     }
 
-    // Check for existing in-progress test (inside serializable transaction to prevent race)
+    // Check for existing in-progress test first (fast, no heavy lock)
+    const existing = await prisma.mockTest.findFirst({
+      where: { studentId, status: 'in_progress' },
+      orderBy: { startedAt: 'desc' },
+      select: { id: true },
+    });
+    if (existing) {
+      return NextResponse.json({ testId: existing.id, resumed: true });
+    }
+
+    // Generate paper OUTSIDE the transaction — these run multiple DB queries
+    // and would cause lock contention / timeouts inside a transaction
+    const paper = type === 'mega'
+      ? await generateMegaTest(studentId, effectiveGrade)
+      : await generateMockPaper(studentId, type, topicIds, year, student.grade);
+
+    if (paper.questions.length === 0) {
+      return NextResponse.json({ error: 'Insufficient questions to generate test' }, { status: 500 });
+    }
+
+    // Create MockTest + responses atomically (lightweight — just inserts)
     const result = await prisma.$transaction(async (tx) => {
-      const existing = await tx.mockTest.findFirst({
+      // Re-check inside transaction to prevent race between concurrent requests
+      const existingInTx = await tx.mockTest.findFirst({
         where: { studentId, status: 'in_progress' },
-        orderBy: { startedAt: 'desc' },
+        select: { id: true },
       });
-      if (existing) {
-        return { testId: existing.id, resumed: true };
+      if (existingInTx) {
+        return { testId: existingInTx.id, resumed: true };
       }
 
-      // Generate paper — mega uses its own generator
-      const paper = type === 'mega'
-        ? await generateMegaTest(studentId, effectiveGrade)
-        : await generateMockPaper(studentId, type, topicIds, year, student.grade);
-
-      if (paper.questions.length === 0) {
-        throw new Error('Insufficient questions to generate test');
-      }
-
-      // Create MockTest + all responses atomically
       const mockTest = await tx.mockTest.create({
         data: {
           studentId,

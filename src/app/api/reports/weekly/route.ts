@@ -78,10 +78,11 @@ export async function GET(req: Request) {
       const attempts = attemptsByStudent.get(student.id) ?? [];
 
       const correctAttempts = attempts.filter((a) => a.isCorrect);
+      const progressMap = new Map(progress.map((p) => [p.topicId, p]));
       const topics: ReportTopic[] = allTopics
         .sort((a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id))
         .map((t) => {
-          const p = progress.find((x) => x.topicId === t.id);
+          const p = progressMap.get(t.id);
           return { id: t.id, name: t.name, mastery: p?.mastery ?? 'NotStarted', attempted: p?.attempted ?? 0, correct: p?.correct ?? 0 };
         });
 

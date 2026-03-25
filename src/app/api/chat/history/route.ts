@@ -18,7 +18,7 @@ export async function GET(req: Request) {
     // Return specific session
     const session = await prisma.conversationSession.findUnique({
       where: { id: sessionId },
-      include: { messages: { orderBy: { createdAt: 'asc' } } },
+      include: { messages: { orderBy: { createdAt: 'asc' }, take: 100 } },
     });
     if (!session || session.studentId !== studentId) {
       return NextResponse.json({ error: 'Not found' }, { status: 404 });

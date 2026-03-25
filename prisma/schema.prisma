@@ -179,6 +179,7 @@ model Question {
 
   @@index([topicId])
   @@index([topicId, difficulty])
+  @@index([source])
 }
 
 // ── Progress ───────────────────────────────────────────────────────────────

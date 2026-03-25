@@ -134,8 +134,9 @@ const TopicBar = React.memo(function TopicBar({ entry }: { entry: TopicMasteryEn
 
 export default function HomePage() {
   const router = useRouter();
-  const [data,    setData]    = useState<HomeData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [data,       setData]       = useState<HomeData | null>(null);
+  const [loading,    setLoading]    = useState(true);
+  const [fetchError, setFetchError] = useState(false);
   const [planDone, setPlanDone] = useState<Set<string>>(new Set());
   const [nudgeDismissed, setNudgeDismissed] = useState(false);
 
@@ -181,7 +182,7 @@ export default function HomePage() {
           } catch { /* ignore storage errors */ }
         }
       })
-      .catch((err) => console.error('[fetch]', err))
+      .catch((err) => { console.error('[fetch]', err); setFetchError(true); })
       .finally(() => setLoading(false));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -228,6 +229,18 @@ export default function HomePage() {
       .slice(0, 2),
     [data?.topicMastery],
   );
+
+  if (!loading && (fetchError || !data)) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-4 pb-24">
+        <p className="text-gray-800 font-extrabold text-lg">Something went wrong</p>
+        <p className="text-gray-500 text-sm">Could not load your dashboard. Check your connection.</p>
+        <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
+          Retry
+        </button>
+      </div>
+    );
+  }
 
   if (loading || !data) {
     return (

@@ -190,8 +190,9 @@ export async function POST(req: Request) {
     }),
     prisma.progress.findMany({
       where: { studentId },
-      include: { topic: true },
+      select: { topicId: true, mastery: true, attempted: true, correct: true, topic: { select: { name: true } } },
       orderBy: { updatedAt: 'desc' },
+      take: 20,
     }),
   ]);
 

@@ -125,7 +125,8 @@ export default function ProfilePage() {
   const [savingContact,  setSavingContact]  = useState(false);
 
   // UI
-  const [loading, setLoading]   = useState(true);
+  const [loading,    setLoading]    = useState(true);
+  const [fetchError, setFetchError] = useState(false);
   const [toast,   setToast]     = useState<{ msg: string; ok: boolean } | null>(null);
 
   function showToast(msg: string, ok: boolean) {
@@ -169,7 +170,7 @@ export default function ProfilePage() {
         setParentWhatsApp(s.parentWhatsApp ?? '');
         setLoading(false);
       })
-      .catch(() => setLoading(false));
+      .catch(() => { setFetchError(true); setLoading(false); });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   async function patchStudent(fields: Record<string, unknown>) {
@@ -279,6 +280,19 @@ export default function ProfilePage() {
   function logout() {
     Object.keys(localStorage).filter((k) => k.startsWith('mathspark_')).forEach((k) => localStorage.removeItem(k));
     router.replace('/start');
+  }
+
+  // ── Error state ─────────────────────────────────────────────────────────
+  if (fetchError) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-4 pb-24">
+        <p className="text-gray-800 font-extrabold text-lg">Something went wrong</p>
+        <p className="text-gray-500 text-sm">Could not load your profile. Check your connection.</p>
+        <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
+          Retry
+        </button>
+      </div>
+    );
   }
 
   // ── Loading skeleton ──────────────────────────────────────────────────────

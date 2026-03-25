@@ -52,10 +52,11 @@ export async function GET(
     return NextResponse.json({ error: 'Student not found' }, { status: 404 });
   }
 
+  const progressMap = new Map(progress.map((p) => [p.topicId, p]));
   const topics = allTopics
     .sort((a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id))
     .map((t) => {
-      const p = progress.find((x) => x.topicId === t.id);
+      const p = progressMap.get(t.id);
       return {
         id:        t.id,
         name:      t.name,

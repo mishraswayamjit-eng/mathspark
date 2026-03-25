@@ -88,6 +88,7 @@ export default function ConceptMapPage() {
   const [edges, setEdges] = useState<ConceptEdge[]>([]);
   const [domains, setDomains] = useState<Record<string, DomainMeta>>({});
   const [loading, setLoading] = useState(true);
+  const [fetchError, setFetchError] = useState(false);
   const [selectedGrade, setSelectedGrade] = useState<number | null>(null);
   const [expandedDomain, setExpandedDomain] = useState<string | null>(null);
   const [detail, setDetail] = useState<ConceptDetail | null>(null);
@@ -104,7 +105,7 @@ export default function ConceptMapPage() {
         setEdges(data.edges ?? []);
         if (data.meta?.domains) setDomains(data.meta.domains);
       })
-      .catch((err) => console.error('[fetch]', err))
+      .catch((err) => { console.error('[fetch]', err); setFetchError(true); })
       .finally(() => setLoading(false));
   }, [selectedGrade]);
 
@@ -317,8 +318,19 @@ export default function ConceptMapPage() {
           </div>
         )}
 
+        {/* Error state */}
+        {!loading && fetchError && (
+          <div className="flex flex-col items-center gap-4 py-12">
+            <p className="text-gray-800 font-extrabold text-lg">Something went wrong</p>
+            <p className="text-gray-500 text-sm">Could not load the concept map.</p>
+            <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
+              Retry
+            </button>
+          </div>
+        )}
+
         {/* Empty state */}
-        {!loading && nodes.length === 0 && (
+        {!loading && !fetchError && nodes.length === 0 && (
           <div className="flex flex-col items-center gap-4 py-12">
             <Sparky mood="thinking" size={64} />
             <p className="text-sm font-bold text-gray-500">No concepts found for this grade.</p>

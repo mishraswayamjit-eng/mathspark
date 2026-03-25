@@ -22,6 +22,7 @@ export default function PracticeHubPage() {
   const router = useRouter();
   const [stats, setStats] = useState<QuickStats | null>(null);
   const [loading, setLoading] = useState(true);
+  const [fetchError, setFetchError] = useState(false);
 
   useEffect(() => {
     const studentId = localStorage.getItem('mathspark_student_id');
@@ -39,7 +40,7 @@ export default function PracticeHubPage() {
           weakestTopicName: data.weakestTopicName ?? null,
         });
       })
-      .catch((err) => console.error('[fetch]', err))
+      .catch((err) => { console.error('[fetch]', err); setFetchError(true); })
       .finally(() => setLoading(false));
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -56,6 +57,15 @@ export default function PracticeHubPage() {
       </div>
 
       <div className="max-w-lg mx-auto px-4 pt-5 space-y-4">
+
+        {/* Error banner */}
+        {!loading && fetchError && (
+          <div className="bg-red-50 border border-red-200 rounded-2xl p-3 flex items-center gap-3">
+            <span className="text-sm">⚠️</span>
+            <p className="text-red-700 text-xs font-semibold flex-1">Could not load stats.</p>
+            <button onClick={() => window.location.reload()} className="text-duo-green text-xs font-extrabold">Retry</button>
+          </div>
+        )}
 
         {/* Quick stats bar */}
         {!loading && stats && (

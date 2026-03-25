@@ -129,6 +129,7 @@ export default function FlashcardsPage() {
   const [decks, setDecks] = useState<FlashcardDeck[]>([]);
   const [stats, setStats] = useState<FlashcardStats | null>(null);
   const [loading, setLoading] = useState(true);
+  const [fetchError, setFetchError] = useState(false);
 
   useEffect(() => {
     const sid = localStorage.getItem('mathspark_student_id');
@@ -146,7 +147,7 @@ export default function FlashcardsPage() {
           try { localStorage.setItem('mathspark_cards_due', String(dueDeck.dueCount)); } catch {}
         }
       })
-      .catch((err) => console.error('[fetch]', err))
+      .catch((err) => { console.error('[fetch]', err); setFetchError(true); })
       .finally(() => setLoading(false));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -391,8 +392,19 @@ export default function FlashcardsPage() {
           </div>
         )}
 
+        {/* ── Error state ─────────────────────────────────────────────────── */}
+        {!loading && fetchError && (
+          <div className="text-center pt-16 space-y-4">
+            <p className="text-4xl" aria-hidden="true">😵</p>
+            <p className="text-[#94A3B8] text-sm">Could not load flashcards. Check your connection.</p>
+            <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
+              Retry
+            </button>
+          </div>
+        )}
+
         {/* ── Empty state ─────────────────────────────────────────────────── */}
-        {!loading && decks.length === 0 && (
+        {!loading && !fetchError && decks.length === 0 && (
           <div className="text-center pt-16 space-y-4">
             <p className="text-4xl" aria-hidden="true">🃏</p>
             <p className="text-[#94A3B8] text-sm">

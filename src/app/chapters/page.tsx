@@ -197,6 +197,7 @@ export default function ChaptersPage() {
 
   const [data,          setData]          = useState<DashboardData | null>(null);
   const [loading,       setLoading]       = useState(true);
+  const [fetchError,    setFetchError]    = useState(false);
   const [hearts,        setHearts]        = useState(5);
   const [nudge,         setNudge]         = useState<Nudge | null>(null);
   // Read from localStorage immediately to avoid Grade 4 flash for non-Grade-4 students
@@ -267,7 +268,7 @@ export default function ChaptersPage() {
         });
         if (n) setNudge(n);
       })
-      .catch(() => setLoading(false));
+      .catch(() => { setFetchError(true); setLoading(false); });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   const studentGrade     = data?.student.grade ?? 4;
@@ -316,7 +317,15 @@ export default function ChaptersPage() {
   }, [topicsForGrade]);
 
   if (loading) return <Skeleton />;
-  if (!data)   return <Skeleton />;
+  if (fetchError || !data) return (
+    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center gap-4 pb-24">
+      <p className="text-white font-extrabold text-lg">Something went wrong</p>
+      <p className="text-white/60 text-sm">Could not load chapters. Check your connection.</p>
+      <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
+        Retry
+      </button>
+    </div>
+  );
 
   const studentName      = data.student.name;
   const streakDays       = data.stats.streakDays;

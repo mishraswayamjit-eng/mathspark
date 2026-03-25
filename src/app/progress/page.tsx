@@ -54,6 +54,7 @@ export default function ProgressPage() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [mistakes, setMistakes] = useState<MistakePattern[]>([]);
   const [loading, setLoading] = useState(true);
+  const [fetchError, setFetchError] = useState(false);
 
   useEffect(() => {
     const studentId = localStorage.getItem('mathspark_student_id');
@@ -67,7 +68,7 @@ export default function ProgressPage() {
         setData(dashData);
         setMistakes(mistakeData.patterns ?? []);
       })
-      .catch((err) => console.error('[fetch]', err))
+      .catch((err) => { console.error('[fetch]', err); setFetchError(true); })
       .finally(() => setLoading(false));
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -160,6 +161,18 @@ export default function ProgressPage() {
   const ringCircumference = 2 * Math.PI * ringR;
   const ringOffset = ringCircumference * (1 - readinessScore / 100);
   const ringColor = readinessScore >= 75 ? '#58CC02' : readinessScore >= 50 ? '#FFC107' : '#FF5722';
+
+  if (!loading && (fetchError || !data)) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-4 pb-24">
+        <p className="text-gray-800 font-extrabold text-lg">Something went wrong</p>
+        <p className="text-gray-500 text-sm">Could not load progress data. Check your connection.</p>
+        <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
+          Retry
+        </button>
+      </div>
+    );
+  }
 
   if (loading || !data) {
     return (

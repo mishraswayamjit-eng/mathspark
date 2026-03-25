@@ -95,10 +95,11 @@ export async function GET() {
 
     const topicMap = new Map(allTopics.map((t) => [t.id, t.name]));
 
+    const progressMap = new Map(progress.map((p) => [p.topicId, p]));
     const topics = allTopics
       .sort((a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id))
       .map((t) => {
-        const p = progress.find((x) => x.topicId === t.id);
+        const p = progressMap.get(t.id);
         return {
           ...t,
           mastery:   p?.mastery   ?? 'NotStarted',
