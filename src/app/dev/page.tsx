@@ -59,7 +59,14 @@ const GRADE4_STUDENTS: TestStudent[] = [
 function StudentCard({ s }: { s: TestStudent }) {
   const router = useRouter();
 
-  function loginAs() {
+  async function loginAs() {
+    // Set auth cookie (required for all API routes)
+    await fetch('/api/student/session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ studentId: s.id }),
+    });
+    // Keep localStorage for UI display
     localStorage.setItem('mathspark_student_id',        s.id);
     localStorage.setItem('mathspark_student_name',      s.name);
     localStorage.setItem('mathspark_student_grade',     String(s.grade));
