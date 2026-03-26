@@ -136,7 +136,11 @@ test.describe('Exam Simulator — exam phase', () => {
 
     await startBtn.click();
     await page.waitForTimeout(2_000);
-    return true;
+
+    // Verify we're actually on an exam page (not still on instructions or hub)
+    const pageText = await page.textContent('body') ?? '';
+    const isExamPage = /⏱|Q\d|flag|←.*→/i.test(pageText);
+    return isExamPage;
   }
 
   test('timer visible and counting down', async ({ authenticatedPage: page }) => {

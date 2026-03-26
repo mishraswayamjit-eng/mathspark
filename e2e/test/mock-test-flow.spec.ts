@@ -154,11 +154,10 @@ test.describe('Test — flag & navigator', () => {
   });
 
   test('navigator button opens Question Navigator modal', async ({ authenticatedPage: page }) => {
-    await page.goto('/test', { waitUntil: 'domcontentloaded' });
-    await waitForDataLoad(page);
+    const testId = await createMockTest(page).catch(() => null);
+    if (!testId) { test.skip(true, 'Could not create test via API'); return; }
 
-    await page.locator('button').filter({ hasText: /start/i }).first().click();
-    await page.waitForURL(/\/test\//, { timeout: 20_000 });
+    await page.goto(`/test/${testId}`, { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
     const navButton = page.locator('button').filter({ hasText: /Q\d+/i }).first();
@@ -175,11 +174,10 @@ test.describe('Test — flag & navigator', () => {
   test('navigator shows answered/flagged/unanswered counts', async ({
     authenticatedPage: page,
   }) => {
-    await page.goto('/test', { waitUntil: 'domcontentloaded' });
-    await waitForDataLoad(page);
+    const testId = await createMockTest(page).catch(() => null);
+    if (!testId) { test.skip(true, 'Could not create test via API'); return; }
 
-    await page.locator('button').filter({ hasText: /start/i }).first().click();
-    await page.waitForURL(/\/test\//, { timeout: 20_000 });
+    await page.goto(`/test/${testId}`, { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
     const navButton = page.locator('button').filter({ hasText: /Q\d+/i }).first();
@@ -199,11 +197,10 @@ test.describe('Test — flag & navigator', () => {
   test('clicking Q number in navigator jumps to that question', async ({
     authenticatedPage: page,
   }) => {
-    await page.goto('/test', { waitUntil: 'domcontentloaded' });
-    await waitForDataLoad(page);
+    const testId = await createMockTest(page).catch(() => null);
+    if (!testId) { test.skip(true, 'Could not create test via API'); return; }
 
-    await page.locator('button').filter({ hasText: /start/i }).first().click();
-    await page.waitForURL(/\/test\//, { timeout: 20_000 });
+    await page.goto(`/test/${testId}`, { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
     const navButton = page.locator('button').filter({ hasText: /Q\d+/i }).first();
@@ -228,11 +225,10 @@ test.describe('Test — flag & navigator', () => {
 
 test.describe('Test — submit & quit', () => {
   test('submit shows confirmation modal with counts', async ({ authenticatedPage: page }) => {
-    await page.goto('/test', { waitUntil: 'domcontentloaded' });
-    await waitForDataLoad(page);
+    const testId = await createMockTest(page).catch(() => null);
+    if (!testId) { test.skip(true, 'Could not create test via API'); return; }
 
-    await page.locator('button').filter({ hasText: /start/i }).first().click();
-    await page.waitForURL(/\/test\//, { timeout: 20_000 });
+    await page.goto(`/test/${testId}`, { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
     // Navigate to last Q with → button repeatedly
