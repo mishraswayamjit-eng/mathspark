@@ -8,9 +8,10 @@ test.describe('Flashcards Hub', () => {
 
     await expect(page.getByText("Sparky's Cards")).toBeVisible();
 
-    for (const label of ['TOTAL', 'SEEN', 'MASTERED', 'STREAK']) {
+    // Labels are "Total", "Seen", etc. with CSS uppercase transform
+    for (const label of ['Total', 'Seen', 'Mastered', 'Streak']) {
       await expect(
-        page.getByText(label, { exact: true }).first(),
+        page.getByText(label).first(),
       ).toBeVisible({ timeout: 10_000 });
     }
   });

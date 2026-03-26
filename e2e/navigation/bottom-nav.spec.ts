@@ -66,7 +66,7 @@ test.describe('BottomNav — tab navigation', () => {
       if (item.href === '/home') {
         // Already on /home — just verify heading
         await expect(
-          page.locator(`text=${item.heading.source}`).first(),
+          page.getByText(item.heading).first(),
         ).toBeVisible({ timeout: 15_000 });
         return;
       }
@@ -77,7 +77,7 @@ test.describe('BottomNav — tab navigation', () => {
       await waitForDataLoad(page);
 
       await expect(
-        page.locator(`text=${item.heading.source}`).first(),
+        page.getByText(item.heading).first(),
       ).toBeVisible({ timeout: 15_000 });
     });
   }

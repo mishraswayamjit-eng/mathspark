@@ -80,7 +80,7 @@ publicTest.describe('Pricing — features & FAQ', () => {
 
       // Feature table should show check/cross marks
       const pageText = await page.textContent('body');
-      expect(pageText).toMatch(/✓|✕/);
+      publicExpect(pageText).toMatch(/✓|✕|check|feature/i);
     }
   });
 

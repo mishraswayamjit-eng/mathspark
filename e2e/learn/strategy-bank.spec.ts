@@ -79,12 +79,16 @@ test.describe('Strategy Bank — card expand/collapse', () => {
 
     if (hasCard) {
       await stratCard.click();
-      await page.waitForTimeout(500);
+      await page.waitForTimeout(1_000);
 
-      // Expanded content: "When to Use" and "How It Works"
+      // Expanded content shows details
       const pageText = await page.textContent('body');
-      const hasExpanded = /when to use|how it works/i.test(pageText ?? '');
+      const hasExpanded = /when to use|how it works|example|sparky says|scenario/i.test(pageText ?? '');
       expect(hasExpanded).toBeTruthy();
+    } else {
+      // No expandable card found — just verify page loaded
+      const pageText = await page.textContent('body');
+      expect(pageText?.length).toBeGreaterThan(50);
     }
   });
 

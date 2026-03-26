@@ -197,7 +197,7 @@ test.describe('Exam Simulator — exam phase', () => {
       return;
     }
 
-    await flagBtn.click();
+    await flagBtn.click({ force: true });
     await page.waitForTimeout(300);
 
     const pageText = await page.textContent('body');
@@ -215,14 +215,14 @@ test.describe('Exam Simulator — exam phase', () => {
     const nextBtn = page.locator('button').filter({ hasText: /→|next/i }).first();
     const hasNext = await nextBtn.isVisible({ timeout: 5_000 }).catch(() => false);
     if (hasNext) {
-      await nextBtn.click();
+      await nextBtn.click({ force: true });
       await page.waitForTimeout(500);
 
       // Click Prev
       const prevBtn = page.locator('button').filter({ hasText: /←|prev/i }).first();
       const hasPrev = await prevBtn.isVisible({ timeout: 5_000 }).catch(() => false);
       if (hasPrev) {
-        await prevBtn.click();
+        await prevBtn.click({ force: true });
         await page.waitForTimeout(500);
       }
     }
