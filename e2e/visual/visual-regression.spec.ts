@@ -1,10 +1,18 @@
 import { test, expect } from '../fixtures/auth';
 import { test as publicTest, expect as publicExpect } from '@playwright/test';
 import { waitForDataLoad } from '../helpers/wait';
+import * as fs from 'fs';
+import * as path from 'path';
 
 // Visual regression tests — Chromium only (cross-browser pixel diffs are noise).
 // Run with: npm run test:e2e:visual
 // Update snapshots: npm run test:e2e:update-snapshots
+
+// On the FIRST run, golden snapshots don't exist yet.
+// The workflow generates them with --update-snapshots, then commits them.
+// Until that's done, skip visual tests if no snapshots dir exists.
+const snapshotsDir = path.join(__dirname, 'visual-regression.spec.ts-snapshots');
+const hasSnapshots = fs.existsSync(snapshotsDir);
 
 // Dynamic content masks — hide dates, streaks, scores that change between runs.
 const DYNAMIC_MASKS = (page: import('@playwright/test').Page) => [
@@ -17,6 +25,7 @@ const DYNAMIC_MASKS = (page: import('@playwright/test').Page) => [
 // ─── Public pages ───────────────────────────────────────────────────────────
 
 publicTest.describe('Visual — Public pages', () => {
+  publicTest.skip(!hasSnapshots, 'No golden snapshots yet — run npm run test:e2e:update-snapshots first');
   publicTest.use({ viewport: { width: 430, height: 932 } });
 
   publicTest('landing page', async ({ page }) => {
@@ -45,6 +54,8 @@ publicTest.describe('Visual — Public pages', () => {
 // ─── Authenticated pages ────────────────────────────────────────────────────
 
 test.describe('Visual — Authenticated pages', () => {
+  test.skip(!hasSnapshots, 'No golden snapshots yet — run npm run test:e2e:update-snapshots first');
+
   test('home page', async ({ authenticatedPage: page }) => {
     await page.goto('/home', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);

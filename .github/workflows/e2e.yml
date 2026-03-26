@@ -33,11 +33,7 @@ jobs:
       - name: Build app
         run: npm run build
 
-      - name: Run E2E smoke tests
-        run: npm run test:e2e:smoke
-
-      - name: Run full E2E suite
-        if: success()
+      - name: Run E2E tests
         run: npm run test:e2e
 
       - name: Upload test report
