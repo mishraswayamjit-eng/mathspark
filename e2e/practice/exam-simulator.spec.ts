@@ -137,10 +137,10 @@ test.describe('Exam Simulator — exam phase', () => {
     await startBtn.click();
     await page.waitForTimeout(2_000);
 
-    // Verify we're actually on an exam page (not still on instructions or hub)
-    const pageText = await page.textContent('body') ?? '';
-    const isExamPage = /⏱|Q\d|flag|←.*→/i.test(pageText);
-    return isExamPage;
+    // Verify we're actually on an exam page (not still on Practice Hub)
+    const visibleText = await page.locator('main').first().textContent().catch(() => '') ?? '';
+    const isStillOnHub = /Practice Hub|Choose your practice mode/i.test(visibleText);
+    return !isStillOnHub;
   }
 
   test('timer visible and counting down', async ({ authenticatedPage: page }) => {
