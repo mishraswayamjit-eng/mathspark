@@ -16,15 +16,19 @@ export async function PATCH(
     }
 
     const { testId } = params;
-    const { questionNumber, selectedAnswer, flagged, additionalTimeMs } = validateBody<{
+    const body = await req.json();
+    const { questionNumber, flagged, additionalTimeMs } = validateBody<{
       questionNumber: number;
-      selectedAnswer?: string;
       flagged?: boolean;
       additionalTimeMs?: number;
     }>(
-      await req.json(),
-      { questionNumber: 'number', selectedAnswer: 'string?', flagged: 'boolean?', additionalTimeMs: 'number?' },
+      body,
+      { questionNumber: 'number', flagged: 'boolean?', additionalTimeMs: 'number?' },
     );
+    // selectedAnswer can be a string (A-D) or null (deselect) — handle separately
+    const selectedAnswer: string | null | undefined = body.selectedAnswer === null
+      ? null
+      : typeof body.selectedAnswer === 'string' ? body.selectedAnswer : undefined;
 
     if (!questionNumber) {
       return NextResponse.json({ error: 'questionNumber required' }, { status: 400 });
@@ -48,8 +52,8 @@ export async function PATCH(
     // Build update data
     const updateData: Record<string, unknown> = {};
     if (selectedAnswer !== undefined) {
-      updateData.selectedAnswer = selectedAnswer;
-      updateData.answeredAt = new Date();
+      updateData.selectedAnswer = selectedAnswer; // null clears the answer
+      updateData.answeredAt = selectedAnswer !== null ? new Date() : null;
     }
     if (flagged !== undefined) {
       updateData.flagged = flagged;

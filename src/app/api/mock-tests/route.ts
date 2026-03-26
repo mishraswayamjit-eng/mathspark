@@ -79,7 +79,8 @@ export async function POST(req: Request) {
       : await generateMockPaper(studentId, type, topicIds, year, student.grade);
 
     if (paper.questions.length === 0) {
-      return NextResponse.json({ error: 'Insufficient questions to generate test' }, { status: 500 });
+      console.error(`[mock-tests POST] 0 questions for type=${type} grade=${effectiveGrade} student=${studentId}`);
+      return NextResponse.json({ error: 'Not enough questions available for this test type. Please try a different test.' }, { status: 500 });
     }
 
     // Create MockTest + responses atomically (lightweight — just inserts)

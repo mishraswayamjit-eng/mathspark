@@ -134,11 +134,16 @@ export default function TestConfigPage() {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ type: selected, topicIds }),
       });
-      if (!res.ok) throw new Error('Failed to create test');
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        if (res.status === 401) throw new Error('Session expired — please log in again.');
+        if (res.status === 429) throw new Error('Too many tests created. Wait a minute and try again.');
+        throw new Error(body?.error || 'Failed to create test. Please try again.');
+      }
       const { testId } = await res.json();
       router.push(`/test/${testId}`);
-    } catch {
-      setError('Something went wrong. Please try again!');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again!');
       setLoading(false);
     }
   }
@@ -154,11 +159,16 @@ export default function TestConfigPage() {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ type: 'pyq', year }),
       });
-      if (!res.ok) throw new Error('Failed to create test');
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        if (res.status === 401) throw new Error('Session expired — please log in again.');
+        if (res.status === 429) throw new Error('Too many tests created. Wait a minute and try again.');
+        throw new Error(body?.error || 'Failed to create test. Please try again.');
+      }
       const { testId } = await res.json();
       router.push(`/test/${testId}`);
-    } catch {
-      setError('Something went wrong. Please try again!');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again!');
       setPyqLoading(null);
     }
   }
@@ -174,11 +184,16 @@ export default function TestConfigPage() {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ type: 'mega', topicIds: [`grade${studentGrade}`] }),
       });
-      if (!res.ok) throw new Error('Failed to create test');
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        if (res.status === 401) throw new Error('Session expired — please log in again.');
+        if (res.status === 429) throw new Error('Too many tests created. Wait a minute and try again.');
+        throw new Error(body?.error || 'Failed to create test. Please try again.');
+      }
       const { testId } = await res.json();
       router.push(`/test/${testId}`);
-    } catch {
-      setError('Something went wrong. Please try again!');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again!');
       setMegaLoading(false);
     }
   }

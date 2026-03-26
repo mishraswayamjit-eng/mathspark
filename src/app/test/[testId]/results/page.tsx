@@ -127,8 +127,8 @@ function ScoreRing({ pct, score, total }: { pct: number; score: number; total: n
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-3xl font-extrabold text-gray-800">{score}</span>
-        <span className="text-gray-500 text-sm font-bold">/{total}</span>
+        <span className="text-3xl font-extrabold text-white">{score}</span>
+        <span className="text-white/70 text-sm font-bold">/{total}</span>
       </div>
     </div>
   );
@@ -232,12 +232,11 @@ export default function TestResultsPage() {
 
     async function load() {
       try {
-        const sid = localStorage.getItem('mathspark_student_id') ?? '';
         const res = await fetch(`/api/mock-tests/${testId}`);
         if (!res.ok) { router.replace('/test'); return; }
         const data: MockTestDetail = await res.json();
         setTest(data);
-        if ((data.score ?? 0) / data.totalQuestions >= 0.8) {
+        if (data.totalQuestions > 0 && (data.score ?? 0) / data.totalQuestions >= 0.8) {
           setShowConfetti(true);
         }
         setLoading(false);
@@ -246,7 +245,7 @@ export default function TestResultsPage() {
       }
     }
     load();
-  }, [testId, router]);
+  }, [testId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (loading || !test) {
     return (
@@ -258,7 +257,7 @@ export default function TestResultsPage() {
 
   const score    = test.score ?? 0;
   const total    = test.totalQuestions;
-  const pct      = Math.round((score / total) * 100);
+  const pct      = total > 0 ? Math.round((score / total) * 100) : 0;
   const grade    = getGradeBand(pct);
   const topicResults = computeTopicResults(test.responses);
   const recommendations = computeRecommendations(topicResults);

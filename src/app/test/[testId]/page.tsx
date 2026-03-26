@@ -121,10 +121,11 @@ function SubmitModal({
     <div className="fixed inset-0 z-[90] bg-black/60 flex items-center justify-center px-4">
       <div className="bg-white rounded-3xl p-6 w-full max-w-sm space-y-4 shadow-2xl">
         <h3 className="font-extrabold text-gray-800 text-xl text-center">Ready to submit?</h3>
+        <p className="text-xs text-gray-500 text-center -mt-2">Your answers will be graded after submission.</p>
 
         <div className="bg-gray-50 rounded-2xl p-4 space-y-2">
           <div className="flex justify-between text-sm font-bold">
-            <span className="text-gray-600">Answered</span>
+            <span className="text-gray-600">Questions attempted</span>
             <span className="text-duo-green">{answered}/{responses.length}</span>
           </div>
           <div className="flex justify-between text-sm font-bold">
@@ -179,10 +180,12 @@ export default function TestEnginePage() {
   const [showSubmitModal,setShowSubmitModal] = useState(false);
   const [showQuitModal,  setShowQuitModal]  = useState(false);
   const [submitting,     setSubmitting]     = useState(false);
+  const [submitError,    setSubmitError]    = useState('');
   const [autoSubmitted,  setAutoSubmitted]  = useState(false);
   const [isOffline,      setIsOffline]      = useState(false);
 
   const questionStartRef = useRef<number>(Date.now());
+  const currentNumRef    = useRef(1);
   const patchQueueRef    = useRef<Array<() => Promise<void>>>([]);
   const flushingRef      = useRef(false);
 
@@ -190,7 +193,6 @@ export default function TestEnginePage() {
   useEffect(() => {
     async function load() {
       try {
-        const sid = localStorage.getItem('mathspark_student_id') ?? '';
         const res = await fetch(`/api/mock-tests/${testId}`);
         if (!res.ok) { router.replace('/test'); return; }
         const data: MockTestDetail = await res.json();
@@ -203,7 +205,10 @@ export default function TestEnginePage() {
 
         // Jump to first unanswered question
         const firstUnanswered = data.responses.find((r) => !r.selectedAnswer);
-        if (firstUnanswered) setCurrentNum(firstUnanswered.questionNumber);
+        if (firstUnanswered) {
+          setCurrentNum(firstUnanswered.questionNumber);
+          currentNumRef.current = firstUnanswered.questionNumber;
+        }
 
         setLoading(false);
       } catch {
@@ -211,7 +216,7 @@ export default function TestEnginePage() {
       }
     }
     load();
-  }, [testId, router]);
+  }, [testId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Timer
   const remaining = useTestTimer(test?.startedAt ?? null, test?.timeLimitMs ?? null);
@@ -255,7 +260,7 @@ export default function TestEnginePage() {
 
   // Save response (debounced via queue)
   const saveResponse = useCallback((questionNumber: number, data: {
-    selectedAnswer?: string;
+    selectedAnswer?: string | null;
     flagged?: boolean;
     additionalTimeMs?: number;
   }) => {
@@ -264,7 +269,7 @@ export default function TestEnginePage() {
         method: 'PATCH',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ questionNumber, ...data }),
-      }).then(() => {/* ok */})
+      }).then((res) => { if (!res.ok) throw new Error(`PATCH failed: ${res.status}`); })
     );
     flushQueue();
   }, [testId, flushQueue]);
@@ -275,9 +280,10 @@ export default function TestEnginePage() {
     // Track time on current question — always record (even sub-second)
     const elapsed = Date.now() - questionStartRef.current;
     if (elapsed > 0) {
-      saveResponse(currentNum, { additionalTimeMs: elapsed });
+      saveResponse(currentNumRef.current, { additionalTimeMs: elapsed });
     }
     questionStartRef.current = Date.now();
+    currentNumRef.current = num;
     setCurrentNum(num);
   }
 
@@ -289,7 +295,7 @@ export default function TestEnginePage() {
     setResponses((prev) => prev.map((r) =>
       r.questionNumber === questionNumber ? { ...r, selectedAnswer: newSelection } : r,
     ));
-    saveResponse(questionNumber, { selectedAnswer: newSelection ?? undefined });
+    saveResponse(questionNumber, { selectedAnswer: newSelection });
   }
 
   // Toggle flag
@@ -305,6 +311,7 @@ export default function TestEnginePage() {
   async function handleSubmit() {
     setShowSubmitModal(false);
     setSubmitting(true);
+    setSubmitError('');
     // Drain any queued answer saves first
     await flushQueue();
     // Record final time on current question
@@ -313,14 +320,15 @@ export default function TestEnginePage() {
       await fetch(`/api/mock-tests/${testId}/response`, {
         method: 'PATCH',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ questionNumber: currentNum, additionalTimeMs: elapsed }),
+        body: JSON.stringify({ questionNumber: currentNumRef.current, additionalTimeMs: elapsed }),
       }).catch(() => {/* silent */});
     }
     try {
       const res = await fetch(`/api/mock-tests/${testId}/submit`, { method: 'POST' });
-      if (!res.ok) throw new Error();
+      if (!res.ok) throw new Error('Submission failed');
       router.push(`/test/${testId}/results`);
     } catch {
+      setSubmitError('Failed to submit — please check your connection and try again.');
       setSubmitting(false);
     }
   }
@@ -378,8 +386,8 @@ export default function TestEnginePage() {
           />
         </div>
 
-        {/* Q counter */}
-        <span className="text-xs font-extrabold text-gray-500 flex-shrink-0">{answered}/{totalQ}</span>
+        {/* Q counter — show as "done" count to avoid confusion with score */}
+        <span className="text-xs font-extrabold text-gray-500 flex-shrink-0">✎ {answered}/{totalQ}</span>
 
         {/* Timer */}
         {remaining !== null && (
@@ -393,6 +401,13 @@ export default function TestEnginePage() {
       {isOffline && (
         <div className="bg-amber-500 text-white text-xs font-extrabold text-center py-1.5 px-4 flex-shrink-0">
           ⚠️ No internet — answers queued, will sync on reconnect
+        </div>
+      )}
+
+      {/* Submit error banner */}
+      {submitError && (
+        <div className="bg-duo-red text-white text-xs font-extrabold text-center py-1.5 px-4 flex-shrink-0">
+          {submitError}
         </div>
       )}
 
