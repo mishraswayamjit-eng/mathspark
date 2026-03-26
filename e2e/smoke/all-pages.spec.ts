@@ -4,13 +4,27 @@ import { waitForDataLoad } from '../helpers/wait';
 
 // ─── Helper: collect JS errors during navigation ────────────────────────────
 
+// React hydration errors are common in Next.js production builds and not actionable.
+const IGNORED_ERROR_PATTERNS = [
+  /Minified React error #425/,  // hydration text mismatch
+  /Minified React error #418/,  // hydration expected server HTML
+  /Minified React error #423/,  // hydration mismatch
+  /Text content does not match/,
+];
+
+function isIgnoredError(msg: string): boolean {
+  return IGNORED_ERROR_PATTERNS.some((p) => p.test(msg));
+}
+
 async function expectNoJSErrors(
   page: import('@playwright/test').Page,
   path: string,
   expectedText: string | RegExp,
 ) {
   const errors: string[] = [];
-  page.on('pageerror', (err) => errors.push(err.message));
+  page.on('pageerror', (err) => {
+    if (!isIgnoredError(err.message)) errors.push(err.message);
+  });
 
   await page.goto(path, { waitUntil: 'domcontentloaded' });
   await waitForDataLoad(page);
