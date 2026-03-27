@@ -82,6 +82,7 @@ function VoiceComplete({
   sessionXP,
   onPlayAgain,
   onDone,
+  suggestions,
 }: {
   cardsReviewed: number;
   cardsCorrect: number;

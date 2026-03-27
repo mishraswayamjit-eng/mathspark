@@ -42,6 +42,7 @@ function SpeedComplete({
   sessionXP,
   onPlayAgain,
   onDone,
+  suggestions,
 }: {
   answered: number;
   correctCount: number;

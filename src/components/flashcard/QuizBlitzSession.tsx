@@ -59,6 +59,7 @@ function QuizComplete({
   sessionXP,
   onPlayAgain,
   onDone,
+  suggestions,
 }: {
   score: number;
   totalQuestions: number;

@@ -57,6 +57,7 @@ function MatchComplete({
   onNextLevel,
   onPlayAgain,
   onDone,
+  suggestions,
 }: {
   pairs: number;
   moves: number;
