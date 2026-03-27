@@ -59,21 +59,20 @@ export type ShareCardData =
 
 // ── Design tokens (inline styles — required for reliable PNG export) ───────────
 
-const BG   = 'linear-gradient(140deg, #0A0E17 0%, #0D1620 60%, #0A1118 100%)';
-const GREEN = '#34D399';
-const BLUE  = '#60A5FA';
-const GOLD  = '#FBBF24';
-const WHITE = '#F9FAFB';
-const MUTED = '#9CA3AF';
-const DIM   = '#6B7280';
-const DARK2 = '#0F2035';
+const GREEN   = '#58CC02';
+const BLUE    = '#1CB0F6';
+const ORANGE  = '#FF9600';
+const GOLD    = '#FBBF24';
+const RED     = '#EF4444';
+const PRIMARY = '#1F2937';
+const SECONDARY = '#6B7280';
 const CARD_FONT = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif';
 
 const CARD: React.CSSProperties = {
   width: 540, height: 540,
-  background: BG,
+  background: '#FFFFFF',
   borderRadius: 24,
-  padding: 36,
+  padding: 0,
   display: 'flex',
   flexDirection: 'column',
   position: 'relative',
@@ -84,14 +83,34 @@ const CARD: React.CSSProperties = {
 
 // ── Shared sub-components ─────────────────────────────────────────────────────
 
+function GreenStrip() {
+  return (
+    <div style={{
+      width: '100%', height: 8,
+      background: 'linear-gradient(90deg, #58CC02 0%, #46A302 100%)',
+      flexShrink: 0,
+    }} />
+  );
+}
+
+function OrangeStrip() {
+  return (
+    <div style={{
+      width: '100%', height: 8,
+      background: 'linear-gradient(90deg, #FF9600 0%, #E08600 100%)',
+      flexShrink: 0,
+    }} />
+  );
+}
+
 function Watermark() {
   return (
     <div style={{
-      position: 'absolute', bottom: 18, left: 0, right: 0,
       display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
+      paddingBottom: 20, paddingTop: 8,
     }}>
-      <span style={{ fontSize: 13, color: '#374151', fontWeight: 700 }}>✨</span>
-      <span style={{ fontSize: 12, color: '#374151', fontWeight: 700, letterSpacing: 0.5 }}>
+      <span style={{ fontSize: 13, color: SECONDARY }}>✨</span>
+      <span style={{ fontSize: 12, color: SECONDARY, fontWeight: 700, letterSpacing: 0.5 }}>
         MathSpark · mathspark.in
       </span>
     </div>
@@ -101,25 +120,28 @@ function Watermark() {
 function Label({ text, color }: { text: string; color: string }) {
   return (
     <div style={{
-      fontSize: 10, color, fontWeight: 800, letterSpacing: 2,
-      textTransform: 'uppercase', marginBottom: 6,
+      fontSize: 11, color, fontWeight: 800, letterSpacing: 1.5,
+      textTransform: 'uppercase', marginBottom: 4,
     }}>{text}</div>
   );
 }
 
-function ScoreRing({ pct, topLabel, bottomLabel }: { pct: number; topLabel: string; bottomLabel: string }) {
-  const r    = 50;
+function ScoreRing({ pct, topLabel, bottomLabel, size = 140 }: {
+  pct: number; topLabel: string; bottomLabel: string; size?: number;
+}) {
+  const r    = (size - 14) / 2;
+  const cx   = size / 2;
   const circ = 2 * Math.PI * r;
   const dash = circ * Math.min(pct, 100) / 100;
-  const color = pct >= 70 ? GREEN : pct >= 50 ? GOLD : '#FF4B4B';
+  const color = pct >= 70 ? GREEN : pct >= 50 ? GOLD : RED;
   return (
-    <svg width="126" height="126" viewBox="0 0 126 126">
-      <circle cx="63" cy="63" r={r} fill="none" stroke="#1a2f3a" strokeWidth="10" />
-      <circle cx="63" cy="63" r={r} fill="none" stroke={color} strokeWidth="10"
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+      <circle cx={cx} cy={cx} r={r} fill="none" stroke="#F3F4F6" strokeWidth="12" />
+      <circle cx={cx} cy={cx} r={r} fill="none" stroke={color} strokeWidth="12"
         strokeDasharray={`${dash} ${circ}`} strokeLinecap="round"
-        transform="rotate(-90 63 63)" />
-      <text x="63" y="57" textAnchor="middle" fontSize="22" fontWeight="900" fill={WHITE}>{topLabel}</text>
-      <text x="63" y="78" textAnchor="middle" fontSize="11" fill={MUTED} fontWeight="600">{bottomLabel}</text>
+        transform={`rotate(-90 ${cx} ${cx})`} />
+      <text x={cx} y={cx - 6} textAnchor="middle" fontSize="26" fontWeight="900" fill={PRIMARY}>{topLabel}</text>
+      <text x={cx} y={cx + 16} textAnchor="middle" fontSize="13" fill={SECONDARY} fontWeight="600">{bottomLabel}</text>
     </svg>
   );
 }
@@ -130,44 +152,49 @@ function LessonCard({ data }: { data: LessonCardData }) {
   const pct = Math.round((data.correct / data.total) * 100);
   return (
     <div style={CARD}>
-      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 16 }}>
-        <div>
-          <Label text="MathSpark Achievement" color={GREEN} />
-          <div style={{ fontSize: 22, color: WHITE, fontWeight: 900, lineHeight: 1.2 }}>
-            Lesson Complete! 🏆
+      <GreenStrip />
+      <div style={{ padding: '28px 36px 0', flex: 1, display: 'flex', flexDirection: 'column' }}>
+        {/* Header */}
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 10 }}>
+          <div>
+            <Label text="MathSpark Achievement" color={GREEN} />
+            <div style={{ fontSize: 24, color: PRIMARY, fontWeight: 900, lineHeight: 1.2 }}>
+              Lesson Complete! 🏆
+            </div>
+          </div>
+          <span style={{ fontSize: 36 }}>✨</span>
+        </div>
+
+        {/* Student name */}
+        <div style={{ fontSize: 15, color: SECONDARY, fontWeight: 600, marginBottom: 16 }}>
+          {data.studentName} just completed
+        </div>
+
+        {/* Topic pill */}
+        <div style={{
+          background: '#F0FDF4', border: '1.5px solid #BBF7D0',
+          borderRadius: 14, padding: '10px 16px', marginBottom: 20,
+          display: 'flex', alignItems: 'center', gap: 10,
+        }}>
+          <span style={{ fontSize: 26 }}>{data.topicEmoji}</span>
+          <span style={{ fontSize: 17, color: PRIMARY, fontWeight: 800 }}>{data.topicName}</span>
+        </div>
+
+        {/* Score ring + stats */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 28, flex: 1 }}>
+          <ScoreRing pct={pct} topLabel={`${data.correct}/${data.total}`} bottomLabel={`${pct}%`} />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <div>
+              <Label text="Accuracy" color={SECONDARY} />
+              <div style={{ fontSize: 30, color: GREEN, fontWeight: 900 }}>{pct}%</div>
+            </div>
+            <div>
+              <Label text="XP Earned" color={SECONDARY} />
+              <div style={{ fontSize: 26, color: GOLD, fontWeight: 900 }}>+{data.xp} ⭐</div>
+            </div>
           </div>
         </div>
-        <span style={{ fontSize: 38 }}>✨</span>
       </div>
-
-      <div style={{ fontSize: 14, color: MUTED, fontWeight: 600, marginBottom: 18 }}>
-        {data.studentName} just completed
-      </div>
-
-      <div style={{
-        background: DARK2, border: '1px solid #1a3a50',
-        borderRadius: 16, padding: '12px 16px', marginBottom: 22,
-        display: 'flex', alignItems: 'center', gap: 12,
-      }}>
-        <span style={{ fontSize: 28 }}>{data.topicEmoji}</span>
-        <span style={{ fontSize: 17, color: WHITE, fontWeight: 800 }}>{data.topicName}</span>
-      </div>
-
-      <div style={{ display: 'flex', alignItems: 'center', gap: 24, flex: 1 }}>
-        <ScoreRing pct={pct} topLabel={`${data.correct}/${data.total}`} bottomLabel={`${pct}%`} />
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <div>
-            <Label text="Accuracy" color={DIM} />
-            <div style={{ fontSize: 30, color: GREEN, fontWeight: 900 }}>{pct}%</div>
-          </div>
-          <div>
-            <Label text="XP Earned" color={DIM} />
-            <div style={{ fontSize: 26, color: GOLD, fontWeight: 900 }}>+{data.xp} ⭐</div>
-          </div>
-        </div>
-      </div>
-
-      <div style={{ fontSize: 11, color: DIM, fontWeight: 600, marginBottom: 30 }}>{data.date}</div>
       <Watermark />
     </div>
   );
@@ -180,34 +207,64 @@ function MockTestCard({ data }: { data: MockTestCardData }) {
   const limitMin = Math.round(data.timeLimitMs / 60_000);
   return (
     <div style={CARD}>
-      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 14 }}>
-        <div>
-          <Label text="MathSpark IPM Prep" color={BLUE} />
-          <div style={{ fontSize: 20, color: WHITE, fontWeight: 900 }}>📝 Mock Test Results</div>
+      <GreenStrip />
+      <div style={{ padding: '24px 36px 0', flex: 1, display: 'flex', flexDirection: 'column' }}>
+        {/* Label row */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
+          <Label text="MathSpark · IPM Mock Test" color={BLUE} />
+          <span style={{ fontSize: 24 }}>📝</span>
         </div>
-        <span style={{ fontSize: 36 }}>📋</span>
-      </div>
 
-      <div style={{ fontSize: 13, color: MUTED, fontWeight: 600, marginBottom: 18 }}>{data.studentName}</div>
+        {/* Student name */}
+        <div style={{ fontSize: 22, color: PRIMARY, fontWeight: 900, marginBottom: 20 }}>
+          {data.studentName}
+        </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: 24, marginBottom: 22 }}>
-        <ScoreRing pct={data.pct} topLabel={`${data.score}/${data.totalQ}`} bottomLabel={`${data.pct}%`} />
-        <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 18, color: WHITE, fontWeight: 900, marginBottom: 10 }}>{data.gradeLabel}</div>
-          <div style={{ fontSize: 12, color: MUTED, fontWeight: 600 }}>
-            ⏱ {timeMin} min / {limitMin} min
+        {/* Score ring + grade + time */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 24, marginBottom: 24 }}>
+          <ScoreRing pct={data.pct} topLabel={`${data.score}/${data.totalQ}`} bottomLabel={`${data.pct}%`} size={140} />
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 22, color: PRIMARY, fontWeight: 900, marginBottom: 6 }}>
+              {data.gradeLabel} {data.pct >= 70 ? '⭐' : data.pct >= 50 ? '👍' : '💪'}
+            </div>
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+              background: '#F9FAFB', borderRadius: 8, padding: '5px 12px',
+            }}>
+              <span style={{ fontSize: 14 }}>⏱</span>
+              <span style={{ fontSize: 14, color: SECONDARY, fontWeight: 600 }}>
+                {timeMin} / {limitMin} min
+              </span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div style={{ display: 'flex', gap: 12, marginBottom: 30 }}>
-        <div style={{ flex: 1, background: DARK2, border: '1px solid #1a3a50', borderRadius: 14, padding: '10px 14px' }}>
-          <div style={{ fontSize: 9, color: GREEN, fontWeight: 800, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 4 }}>✅ Strongest</div>
-          <div style={{ fontSize: 13, color: WHITE, fontWeight: 700, lineHeight: 1.3 }}>{data.strongTopic}</div>
-        </div>
-        <div style={{ flex: 1, background: '#1a1005', border: '1px solid #3a2a05', borderRadius: 14, padding: '10px 14px' }}>
-          <div style={{ fontSize: 9, color: GOLD, fontWeight: 800, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 4 }}>🟡 Focus on</div>
-          <div style={{ fontSize: 13, color: WHITE, fontWeight: 700, lineHeight: 1.3 }}>{data.weakTopic}</div>
+        {/* Two stat cards */}
+        <div style={{ display: 'flex', gap: 12, flex: 1 }}>
+          <div style={{
+            flex: 1, background: '#F0FDF4', border: '1.5px solid #BBF7D0',
+            borderRadius: 14, padding: '12px 14px',
+            display: 'flex', flexDirection: 'column', justifyContent: 'center',
+          }}>
+            <div style={{ fontSize: 10, color: GREEN, fontWeight: 800, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 6 }}>
+              ✅ Strongest
+            </div>
+            <div style={{ fontSize: 15, color: PRIMARY, fontWeight: 700, lineHeight: 1.3 }}>
+              {data.strongTopic}
+            </div>
+          </div>
+          <div style={{
+            flex: 1, background: '#FFFBEB', border: '1.5px solid #FDE68A',
+            borderRadius: 14, padding: '12px 14px',
+            display: 'flex', flexDirection: 'column', justifyContent: 'center',
+          }}>
+            <div style={{ fontSize: 10, color: '#D97706', fontWeight: 800, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 6 }}>
+              🎯 Focus on
+            </div>
+            <div style={{ fontSize: 15, color: PRIMARY, fontWeight: 700, lineHeight: 1.3 }}>
+              {data.weakTopic}
+            </div>
+          </div>
         </div>
       </div>
       <Watermark />
@@ -220,22 +277,28 @@ function MockTestCard({ data }: { data: MockTestCardData }) {
 function BadgeCard({ data }: { data: BadgeCardData }) {
   return (
     <div style={CARD}>
+      <GreenStrip />
       <div style={{
-        flex: 1, display: 'flex', flexDirection: 'column',
-        alignItems: 'center', justifyContent: 'center', gap: 14,
+        padding: '0 36px', flex: 1, display: 'flex', flexDirection: 'column',
+        alignItems: 'center', justifyContent: 'center', gap: 12,
       }}>
-        <Label text="🏅 Badge Earned!" color={GOLD} />
-        <div style={{ fontSize: 90, lineHeight: 1.1, filter: 'drop-shadow(0 0 24px rgba(251,191,36,0.45))' }}>
+        <Label text="Badge Earned!" color={GOLD} />
+        <div style={{ fontSize: 88, lineHeight: 1.1, filter: 'drop-shadow(0 4px 12px rgba(251,191,36,0.3))' }}>
           {data.badgeEmoji}
         </div>
-        <div style={{ fontSize: 28, color: WHITE, fontWeight: 900, textAlign: 'center' }}>{data.badgeName}</div>
-        <div style={{ fontSize: 15, color: MUTED, fontWeight: 600, textAlign: 'center', maxWidth: 340, lineHeight: 1.5 }}>
+        <div style={{ fontSize: 28, color: PRIMARY, fontWeight: 900, textAlign: 'center' }}>
+          {data.badgeName}
+        </div>
+        <div style={{ fontSize: 15, color: SECONDARY, fontWeight: 600, textAlign: 'center', maxWidth: 360, lineHeight: 1.5 }}>
           {data.badgeDesc}
         </div>
-        <div style={{ fontSize: 13, color: DIM, fontWeight: 600, marginTop: 4 }}>
-          {data.studentName} earned this on MathSpark
+        <div style={{
+          marginTop: 8, background: '#F9FAFB', borderRadius: 10, padding: '8px 20px',
+        }}>
+          <span style={{ fontSize: 14, color: PRIMARY, fontWeight: 700 }}>
+            {data.studentName}
+          </span>
         </div>
-        <div style={{ fontSize: 11, color: DIM, fontWeight: 500 }}>{data.date}</div>
       </div>
       <Watermark />
     </div>
@@ -247,23 +310,29 @@ function BadgeCard({ data }: { data: BadgeCardData }) {
 function StreakCard({ data }: { data: StreakCardData }) {
   return (
     <div style={CARD}>
+      <OrangeStrip />
       <div style={{
-        flex: 1, display: 'flex', flexDirection: 'column',
-        alignItems: 'center', justifyContent: 'center', gap: 18,
+        padding: '0 36px', flex: 1, display: 'flex', flexDirection: 'column',
+        alignItems: 'center', justifyContent: 'center', gap: 14,
       }}>
-        <Label text="Streak Milestone 🔥" color="#FF9600" />
-        <div style={{ fontSize: 80, fontWeight: 900, color: '#FF9600', display: 'flex', alignItems: 'center', gap: 10, lineHeight: 1 }}>
+        <div style={{ fontSize: 80, fontWeight: 900, color: ORANGE, display: 'flex', alignItems: 'center', gap: 8, lineHeight: 1 }}>
           🔥 {data.streakDays}
         </div>
-        <div style={{ fontSize: 26, color: WHITE, fontWeight: 900 }}>
+        <div style={{ fontSize: 28, color: PRIMARY, fontWeight: 900 }}>
           {data.streakDays}-Day Streak!
         </div>
-        <div style={{ fontSize: 15, color: MUTED, fontWeight: 600, textAlign: 'center', maxWidth: 360, lineHeight: 1.5 }}>
+        <div style={{ fontSize: 15, color: SECONDARY, fontWeight: 600, textAlign: 'center', maxWidth: 380, lineHeight: 1.6 }}>
           {data.studentName} has practiced math every day for{' '}
-          <span style={{ color: '#FF9600', fontWeight: 800 }}>{data.streakDays} days</span> in a row!
+          <span style={{ color: ORANGE, fontWeight: 800 }}>{data.streakDays} days</span> in a row!
         </div>
-        <div style={{ fontSize: 15, color: GOLD, fontWeight: 700 }}>That&apos;s incredible dedication 💪</div>
-        <div style={{ fontSize: 11, color: DIM, fontWeight: 500 }}>{data.date}</div>
+        <div style={{
+          marginTop: 4, background: '#FFF7ED', border: '1.5px solid #FED7AA',
+          borderRadius: 10, padding: '8px 20px',
+        }}>
+          <span style={{ fontSize: 14, color: '#C2410C', fontWeight: 700 }}>
+            Incredible dedication 💪
+          </span>
+        </div>
       </div>
       <Watermark />
     </div>
@@ -275,35 +344,42 @@ function StreakCard({ data }: { data: StreakCardData }) {
 function MasteredCard({ data }: { data: MasteredCardData }) {
   return (
     <div style={CARD}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-        <Label text="MathSpark Mastery" color={GREEN} />
-        <span style={{ fontSize: 30 }}>🏆</span>
-      </div>
+      <GreenStrip />
+      <div style={{ padding: '24px 36px 0', flex: 1, display: 'flex', flexDirection: 'column' }}>
+        {/* Header */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
+          <div style={{ fontSize: 22, color: PRIMARY, fontWeight: 900 }}>Topic Mastered 🏆</div>
+        </div>
 
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 16 }}>
-        <div style={{ fontSize: 68, filter: 'drop-shadow(0 0 20px rgba(52,211,153,0.4))' }}>✅</div>
-        <div style={{ textAlign: 'center' }}>
-          <Label text="Mastered" color={GREEN} />
-          <div style={{ fontSize: 26, color: WHITE, fontWeight: 900 }}>{data.topicEmoji} {data.topicName}</div>
-          <div style={{ fontSize: 14, color: MUTED, fontWeight: 600, marginTop: 6 }}>
+        {/* Centered content */}
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 12 }}>
+          <div style={{ fontSize: 64, filter: 'drop-shadow(0 4px 12px rgba(88,204,2,0.25))' }}>
+            {data.topicEmoji}
+          </div>
+          <div style={{ fontSize: 26, color: PRIMARY, fontWeight: 900, textAlign: 'center' }}>
+            {data.topicName}
+          </div>
+          <div style={{ fontSize: 14, color: SECONDARY, fontWeight: 600 }}>
             {data.studentName} has fully mastered this topic!
           </div>
-        </div>
 
-        <div style={{ display: 'flex', justifyContent: 'center', gap: 32, marginTop: 4 }}>
-          {[
-            { val: String(data.questionsTotal), label: 'Questions' },
-            { val: `${data.accuracy}%`,         label: 'Accuracy', color: GREEN },
-            { val: String(data.daysPracticed),  label: 'Days', color: BLUE },
-          ].map(({ val, label, color }) => (
-            <div key={label} style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: 24, color: color ?? WHITE, fontWeight: 900 }}>{val}</div>
-              <div style={{ fontSize: 11, color: DIM, fontWeight: 600 }}>{label}</div>
-            </div>
-          ))}
+          {/* 3 stat columns */}
+          <div style={{
+            display: 'flex', justifyContent: 'center', gap: 24, marginTop: 8,
+            background: '#F9FAFB', borderRadius: 16, padding: '16px 32px',
+          }}>
+            {[
+              { val: String(data.questionsTotal), label: 'Questions', color: PRIMARY },
+              { val: `${data.accuracy}%`,         label: 'Accuracy',  color: GREEN },
+              { val: String(data.daysPracticed),  label: 'Days',      color: BLUE },
+            ].map(({ val, label, color }) => (
+              <div key={label} style={{ textAlign: 'center', minWidth: 70 }}>
+                <div style={{ fontSize: 26, color, fontWeight: 900 }}>{val}</div>
+                <div style={{ fontSize: 11, color: SECONDARY, fontWeight: 600, marginTop: 2 }}>{label}</div>
+              </div>
+            ))}
+          </div>
         </div>
-
-        <div style={{ fontSize: 11, color: DIM, fontWeight: 500 }}>{data.date}</div>
       </div>
       <Watermark />
     </div>

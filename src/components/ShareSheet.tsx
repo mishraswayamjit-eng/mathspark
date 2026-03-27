@@ -215,7 +215,7 @@ export default function ShareSheet({
         </div>
 
         {/* Card preview (scaled to fit) */}
-        <div className="mx-5 mb-4 overflow-hidden rounded-2xl bg-[#0A0E17]"
+        <div className="mx-5 mb-4 overflow-hidden rounded-2xl bg-gray-50 border border-gray-100"
           style={{ height: 200, position: 'relative' }}>
           <div style={{
             position: 'absolute', top: 0, left: '50%',
