@@ -294,12 +294,12 @@ function FlashcardSessionInner() {
   }
 
   // ── Classic Flip Mode (below) ──────────────────────────────────────────────
-  return <ClassicFlipSession deckId={deckId} />;
+  return <ClassicFlipSession deckId={deckId} gradeOverride={gradeParam} />;
 }
 
 // ── Classic Flip Session Component ───────────────────────────────────────────
 
-function ClassicFlipSession({ deckId }: { deckId: string }) {
+function ClassicFlipSession({ deckId, gradeOverride }: { deckId: string; gradeOverride?: string | null }) {
   const router = useRouter();
   const { playCorrect, playWrong, playLevelUp, playMastery } = useSounds();
 
@@ -334,7 +334,7 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
 
   useEffect(() => {
     const sid = localStorage.getItem('mathspark_student_id');
-    const grade = gradeParam || localStorage.getItem('mathspark_student_grade') || '4';
+    const grade = gradeOverride || localStorage.getItem('mathspark_student_grade') || '4';
     if (!sid) {
       router.replace('/start');
       return;
@@ -355,7 +355,7 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
       .catch(() => {
         router.replace('/flashcards');
       });
-  }, [router, deckId, gradeParam]);
+  }, [router, deckId, gradeOverride]);
 
   // ── Save session on complete ───────────────────────────────────────────────
 
