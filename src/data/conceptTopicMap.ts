@@ -1107,11 +1107,14 @@ export function resolveLinksForGrade(conceptId: string, studentGrade: number): R
     return sorted[0];
   }
 
+  // Concept tracking params — appended so activity pages can return to the concept
+  const conceptParams = `from=concept&conceptId=${conceptId}`;
+
   // Practice
   const pLink = pickBest(mapping.practiceLinks);
   const practice = pLink
     ? {
-        url: `/practice/${pLink.topicId}${pLink.subTopicKey ? `?sub=${pLink.subTopicKey}` : ''}`,
+        url: `/practice/${pLink.topicId}?${pLink.subTopicKey ? `subTopic=${pLink.subTopicKey}&` : ''}${conceptParams}`,
         topicId: pLink.topicId,
         subTopicKey: pLink.subTopicKey,
         label: pLink.topicId,
@@ -1122,7 +1125,7 @@ export function resolveLinksForGrade(conceptId: string, studentGrade: number): R
   const fLink = pickBest(mapping.flashcardLinks);
   const flashcard = fLink
     ? {
-        url: `/flashcards/session?deck=${encodeURIComponent(fLink.topicId)}&mode=classic&grade=${fLink.grade}`,
+        url: `/flashcards/session?deck=${encodeURIComponent(fLink.topicId)}&mode=classic&grade=${fLink.grade}&${conceptParams}`,
         topicId: fLink.topicId,
         grade: fLink.grade,
         label: fLink.topicId,
@@ -1132,7 +1135,7 @@ export function resolveLinksForGrade(conceptId: string, studentGrade: number): R
   // Worked examples
   const example = mapping.exampleTopic
     ? {
-        url: `/learn/examples?topic=${encodeURIComponent(mapping.exampleTopic)}&grade=${studentGrade}`,
+        url: `/learn/examples?topic=${encodeURIComponent(mapping.exampleTopic)}&grade=${studentGrade}&${conceptParams}`,
         label: mapping.exampleTopic.replace(/_/g, ' '),
       }
     : null;

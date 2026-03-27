@@ -208,9 +208,10 @@ function PhaseTransition({
 
 interface WarmUpSessionProps {
   deckId: string;
+  conceptId?: string | null;
 }
 
-export default function WarmUpSession({ deckId }: WarmUpSessionProps) {
+export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps) {
   const router = useRouter();
   const { fetchDeck } = useFlashcardDeck('warmup');
   const { playCorrect, playLevelUp, playMastery } = useSounds();
@@ -448,11 +449,11 @@ export default function WarmUpSession({ deckId }: WarmUpSessionProps) {
             <button
               onClick={() => {
                 saveSession();
-                router.push('/flashcards');
+                router.push(conceptId ? `/learn/concept-map?open=${conceptId}` : '/flashcards');
               }}
               className="w-full py-3.5 rounded-2xl font-bold text-sm text-[#94A3B8] bg-[#1E293B]"
             >
-              Back to Cards
+              {conceptId ? 'Back to Concept Map' : 'Back to Cards'}
             </button>
           </div>
         </div>

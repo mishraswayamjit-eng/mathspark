@@ -16,7 +16,10 @@ import {
   type QuizQuestion,
   type QuizOption,
 } from '@/lib/quizBlitz';
+import { useConceptSuggestions } from '@/hooks/useConceptSuggestions';
+import WhatsNextSheet from '@/components/WhatsNextSheet';
 import type { FlashCard } from '@/types';
+import type { WhatsNextSuggestion } from '@/lib/whatsNext';
 
 const KatexRenderer = dynamic(() => import('@/components/KatexRenderer'), { ssr: false });
 
@@ -66,6 +69,7 @@ function QuizComplete({
   sessionXP: { total: number; streakMultiplier: number; streakBonus: number } | null;
   onPlayAgain: () => void;
   onDone: () => void;
+  suggestions?: WhatsNextSuggestion[];
 }) {
   const pct = totalQuestions > 0 ? Math.round((correctCount / totalQuestions) * 100) : 0;
   const mins = Math.floor(duration / 60);
@@ -156,12 +160,16 @@ function QuizComplete({
         >
           Play Again ⚡
         </button>
-        <button
-          onClick={onDone}
-          className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-[#1E293B]"
-        >
-          Done
-        </button>
+        {suggestions && suggestions.length > 0 ? (
+          <WhatsNextSheet suggestions={suggestions} />
+        ) : (
+          <button
+            onClick={onDone}
+            className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-[#1E293B]"
+          >
+            Done
+          </button>
+        )}
       </div>
     </div>
   );
@@ -171,9 +179,10 @@ function QuizComplete({
 
 interface QuizBlitzSessionProps {
   deckId: string;
+  conceptId?: string | null;
 }
 
-export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
+export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSessionProps) {
   const router = useRouter();
   const { fetchDeck } = useFlashcardDeck(deckId);
   const { playCorrect, playWrong, playStreak, playMastery } = useSounds();
@@ -209,6 +218,12 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
 
   // Points animation
   const [pointsPopup, setPointsPopup] = useState<{ points: number; key: number } | null>(null);
+
+  // Concept journey suggestions
+  const quizAccuracy = questions.length > 0 ? Math.round((correctCount / questions.length) * 100) : 0;
+  const whatsNextSuggestions = useConceptSuggestions(
+    conceptId ?? null, 'flashcards', phase === 'complete', quizAccuracy,
+  );
 
   // ── Load deck & generate questions ─────────────────────────────────────────
 
@@ -484,7 +499,8 @@ export default function QuizBlitzSession({ deckId }: QuizBlitzSessionProps) {
           setPhase('loading');
           loadDeck();
         }}
-        onDone={() => router.push('/flashcards')}
+        onDone={() => router.push(conceptId ? `/learn/concept-map?open=${conceptId}` : '/flashcards')}
+        suggestions={whatsNextSuggestions}
       />
     );
   }

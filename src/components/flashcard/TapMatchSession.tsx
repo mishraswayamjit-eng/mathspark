@@ -7,7 +7,10 @@ import dynamic from 'next/dynamic';
 import Confetti from '@/components/Confetti';
 import Sparky from '@/components/Sparky';
 import { useSounds } from '@/hooks/useSounds';
+import { useConceptSuggestions } from '@/hooks/useConceptSuggestions';
+import WhatsNextSheet from '@/components/WhatsNextSheet';
 import type { FlashCard } from '@/types';
+import type { WhatsNextSuggestion } from '@/lib/whatsNext';
 
 const KatexRenderer = dynamic(() => import('@/components/KatexRenderer'), { ssr: false });
 
@@ -62,6 +65,7 @@ function MatchComplete({
   onNextLevel: (() => void) | null;
   onPlayAgain: () => void;
   onDone: () => void;
+  suggestions?: WhatsNextSuggestion[];
 }) {
   const efficiency = pairs > 0 ? Math.round((pairs / moves) * 100) : 0;
   const stars = efficiency >= 90 ? 3 : efficiency >= 60 ? 2 : 1;
@@ -124,12 +128,16 @@ function MatchComplete({
         >
           Play Again
         </button>
-        <button
-          onClick={onDone}
-          className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-transparent"
-        >
-          Done
-        </button>
+        {suggestions && suggestions.length > 0 ? (
+          <WhatsNextSheet suggestions={suggestions} />
+        ) : (
+          <button
+            onClick={onDone}
+            className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-transparent"
+          >
+            Done
+          </button>
+        )}
       </div>
     </div>
   );
@@ -139,9 +147,10 @@ function MatchComplete({
 
 interface TapMatchSessionProps {
   deckId: string;
+  conceptId?: string | null;
 }
 
-export default function TapMatchSession({ deckId }: TapMatchSessionProps) {
+export default function TapMatchSession({ deckId, conceptId }: TapMatchSessionProps) {
   const router = useRouter();
   const { fetchDeck } = useFlashcardDeck(deckId, { limit: 40 });
   const { playCorrect, playWrong, playStreak, playMastery } = useSounds();
@@ -161,6 +170,11 @@ export default function TapMatchSession({ deckId }: TapMatchSessionProps) {
   const sessionSavedRef = useRef(false);
   const elapsedRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const allCardsRef = useRef<CardWithProgress[]>([]);
+
+  // Concept journey suggestions
+  const whatsNextSuggestions = useConceptSuggestions(
+    conceptId ?? null, 'flashcards', phase === 'complete',
+  );
 
   // ── Setup a level ──────────────────────────────────────────────────────────
 
@@ -376,7 +390,8 @@ export default function TapMatchSession({ deckId }: TapMatchSessionProps) {
           sessionSavedRef.current = false;
           setupLevel(level, allCardsRef.current);
         }}
-        onDone={() => router.push('/flashcards')}
+        onDone={() => router.push(conceptId ? `/learn/concept-map?open=${conceptId}` : '/flashcards')}
+        suggestions={whatsNextSuggestions}
       />
     );
   }

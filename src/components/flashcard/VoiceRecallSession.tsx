@@ -8,7 +8,10 @@ import Confetti from '@/components/Confetti';
 import Sparky from '@/components/Sparky';
 import { XPPopup } from '@/components/flashcard/StreakMilestone';
 import { useSounds } from '@/hooks/useSounds';
+import { useConceptSuggestions } from '@/hooks/useConceptSuggestions';
+import WhatsNextSheet from '@/components/WhatsNextSheet';
 import type { FlashCard } from '@/types';
+import type { WhatsNextSuggestion } from '@/lib/whatsNext';
 
 const KatexRenderer = dynamic(() => import('@/components/KatexRenderer'), { ssr: false });
 
@@ -87,6 +90,7 @@ function VoiceComplete({
   sessionXP: { total: number; streakMultiplier: number; streakBonus: number } | null;
   onPlayAgain: () => void;
   onDone: () => void;
+  suggestions?: WhatsNextSuggestion[];
 }) {
   const pct = cardsReviewed > 0 ? Math.round((cardsCorrect / cardsReviewed) * 100) : 0;
   const mins = Math.floor(duration / 60);
@@ -177,12 +181,16 @@ function VoiceComplete({
         >
           Practice Again 🎙️
         </button>
-        <button
-          onClick={onDone}
-          className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-[#1E293B]"
-        >
-          Done
-        </button>
+        {suggestions && suggestions.length > 0 ? (
+          <WhatsNextSheet suggestions={suggestions} />
+        ) : (
+          <button
+            onClick={onDone}
+            className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-[#1E293B]"
+          >
+            Done
+          </button>
+        )}
       </div>
     </div>
   );
@@ -192,9 +200,10 @@ function VoiceComplete({
 
 interface VoiceRecallSessionProps {
   deckId: string;
+  conceptId?: string | null;
 }
 
-export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) {
+export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSessionProps) {
   const router = useRouter();
   const { fetchDeck } = useFlashcardDeck(deckId);
   const { playCorrect, playWrong, playLevelUp, playMastery } = useSounds();
@@ -232,6 +241,12 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
   const [sessionXP, setSessionXP] = useState<{
     total: number; streakMultiplier: number; streakBonus: number;
   } | null>(null);
+
+  // Concept journey suggestions
+  const voiceAccuracy = completed > 0 ? Math.round((correctCount / completed) * 100) : 0;
+  const whatsNextSuggestions = useConceptSuggestions(
+    conceptId ?? null, 'flashcards', phase === 'complete', voiceAccuracy,
+  );
 
   // ── Check Web Speech API support ─────────────────────────────────────────
 
@@ -528,7 +543,8 @@ export default function VoiceRecallSession({ deckId }: VoiceRecallSessionProps) 
           setPhase('loading');
           loadDeck();
         }}
-        onDone={() => router.push('/flashcards')}
+        onDone={() => router.push(conceptId ? `/learn/concept-map?open=${conceptId}` : '/flashcards')}
+        suggestions={whatsNextSuggestions}
       />
     );
   }

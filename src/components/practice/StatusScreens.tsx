@@ -5,6 +5,8 @@ import Sparky from '@/components/Sparky';
 import Confetti from '@/components/Confetti';
 import DuoButton from '@/components/DuoButton';
 import ShareSheet from '@/components/ShareSheet';
+import WhatsNextSheet from '@/components/WhatsNextSheet';
+import type { WhatsNextSuggestion } from '@/lib/whatsNext';
 import type { QuestionResult, GradeUpCta } from './constants';
 
 export function ReviewIntroScreen({ count, onStart }: { count: number; onStart: () => void }) {
@@ -85,6 +87,7 @@ export function LessonCompleteScreen({
   onReviewMistakes,
   shareData,
   gradeUpCta,
+  whatsNextSuggestions,
 }: {
   mainResults:       QuestionResult[];
   reviewResults:     QuestionResult[];
@@ -93,6 +96,7 @@ export function LessonCompleteScreen({
   onContinue:        () => void;
   onReviewMistakes:  () => void;
   gradeUpCta?:       GradeUpCta;
+  whatsNextSuggestions?: WhatsNextSuggestion[];
   shareData?: {
     studentId:    string;
     studentName:  string;
@@ -229,9 +233,13 @@ export function LessonCompleteScreen({
           )
         )}
 
-        <DuoButton variant="green" fullWidth onClick={onContinue}>
-          Continue to chapters 🎯
-        </DuoButton>
+        {whatsNextSuggestions && whatsNextSuggestions.length > 0 ? (
+          <WhatsNextSheet suggestions={whatsNextSuggestions} />
+        ) : (
+          <DuoButton variant="green" fullWidth onClick={onContinue}>
+            Continue to chapters 🎯
+          </DuoButton>
+        )}
         {hasReviewMistakes && (
           <DuoButton variant="blue" fullWidth onClick={onReviewMistakes}>
             Review mistakes 📚

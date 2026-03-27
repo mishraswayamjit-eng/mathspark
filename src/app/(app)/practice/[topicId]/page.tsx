@@ -11,6 +11,7 @@ import Sparky from '@/components/Sparky';
 import Confetti from '@/components/Confetti';
 import DuoButton from '@/components/DuoButton';
 import { useSounds } from '@/hooks/useSounds';
+import { useConceptSuggestions } from '@/hooks/useConceptSuggestions';
 import type { Question, AnswerKey } from '@/types';
 import { saveSessionData } from '@/lib/nudges';
 import { formatMinutes, isUnlimitedPlan } from '@/lib/usageLimits';
@@ -35,6 +36,7 @@ export default function PracticePage() {
   const isSpeedMode   = searchParams.get('mode') === 'speed';
   const isSampleMode  = searchParams.get('sample') === 'true';
   const subTopicParam = searchParams.get('subTopic') ?? '';
+  const conceptId     = searchParams.get('from') === 'concept' ? searchParams.get('conceptId') : null;
   const SAMPLE_LIMIT  = 5;
   const { playCorrect, playWrong, playStreak, muted, toggleMute } = useSounds();
 
@@ -114,6 +116,14 @@ export default function PracticePage() {
   const bonusCountByOriginRef  = useRef(new Map<string, number>());
   const bonusOriginRef         = useRef<Question | null>(null);
   const bonusOriginCorrectRef  = useRef(false);
+
+  // Concept journey "What's Next" suggestions
+  const practiceAccuracy = results.length > 0
+    ? Math.round((results.filter((r) => r.wasCorrect).length / results.length) * 100)
+    : 0;
+  const whatsNextSuggestions = useConceptSuggestions(
+    conceptId, 'practice', phase === 'complete', practiceAccuracy,
+  );
 
   // ── Usage tracking ──────────────────────────────────────────────────────────
   const [usageInfo, setUsageInfo] = useState<{ used: number; limit: number }>({ used: 0, limit: 0 });
@@ -856,7 +866,8 @@ export default function PracticePage() {
         totalXp={xp}
         hasReviewMistakes={hasReviewMistakes}
         gradeUpCta={gradeUpCta}
-        onContinue={() => router.push('/chapters')}
+        onContinue={() => router.push(conceptId ? `/learn/concept-map?open=${conceptId}` : '/chapters')}
+        whatsNextSuggestions={whatsNextSuggestions}
         shareData={studentId ? {
           studentId,
           studentName:    shareInfo.studentName,

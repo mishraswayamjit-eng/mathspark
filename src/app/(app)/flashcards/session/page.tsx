@@ -13,8 +13,11 @@ import WarmUpSession from '@/components/flashcard/WarmUpSession';
 import VoiceRecallSession from '@/components/flashcard/VoiceRecallSession';
 import { XPPopup, StreakMilestoneCelebration } from '@/components/flashcard/StreakMilestone';
 import { useSounds } from '@/hooks/useSounds';
+import { useConceptSuggestions } from '@/hooks/useConceptSuggestions';
+import WhatsNextSheet from '@/components/WhatsNextSheet';
 import type { FlashCard } from '@/types';
 import type { StreakMilestone } from '@/lib/flashcardXP';
+import type { WhatsNextSuggestion } from '@/lib/whatsNext';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -88,6 +91,7 @@ function SessionComplete({
   sessionXP,
   onDone,
   onRestart,
+  suggestions,
 }: {
   cardsReviewed: number;
   cardsCorrect: number;
@@ -96,6 +100,7 @@ function SessionComplete({
   sessionXP: { total: number; base: number; streakMultiplier: number; streakBonus: number; milestoneBonus: number } | null;
   onDone: () => void;
   onRestart: () => void;
+  suggestions?: WhatsNextSuggestion[];
 }) {
   const pct = cardsReviewed > 0 ? Math.round((cardsCorrect / cardsReviewed) * 100) : 0;
   const mins = Math.floor(duration / 60);
@@ -234,12 +239,16 @@ function SessionComplete({
         >
           Review Again
         </button>
-        <button
-          onClick={onDone}
-          className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-[#1E293B]"
-        >
-          Done
-        </button>
+        {suggestions && suggestions.length > 0 ? (
+          <WhatsNextSheet suggestions={suggestions} />
+        ) : (
+          <button
+            onClick={onDone}
+            className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-[#1E293B]"
+          >
+            Done
+          </button>
+        )}
       </div>
     </div>
   );
@@ -267,39 +276,40 @@ function FlashcardSessionInner() {
   const deckId = searchParams.get('deck') ?? 'quick';
   const mode = searchParams.get('mode') ?? 'classic';
   const gradeParam = searchParams.get('grade'); // from concept-map deep links
+  const conceptId = searchParams.get('from') === 'concept' ? searchParams.get('conceptId') : null;
 
   // ── Quiz Blitz Mode ────────────────────────────────────────────────────────
   if (mode === 'quiz') {
-    return <QuizBlitzSession deckId={deckId} />;
+    return <QuizBlitzSession deckId={deckId} conceptId={conceptId} />;
   }
 
   // ── Speed Round Mode ──────────────────────────────────────────────────────
   if (mode === 'speed') {
-    return <SpeedRoundSession deckId={deckId} />;
+    return <SpeedRoundSession deckId={deckId} conceptId={conceptId} />;
   }
 
   // ── Tap Match Mode ────────────────────────────────────────────────────────
   if (mode === 'match') {
-    return <TapMatchSession deckId={deckId} />;
+    return <TapMatchSession deckId={deckId} conceptId={conceptId} />;
   }
 
   // ── Pre-Exam Warm-Up Mode ─────────────────────────────────────────────────
   if (mode === 'warmup') {
-    return <WarmUpSession deckId={deckId} />;
+    return <WarmUpSession deckId={deckId} conceptId={conceptId} />;
   }
 
   // ── Voice Recall Mode ───────────────────────────────────────────────────────
   if (mode === 'voice') {
-    return <VoiceRecallSession deckId={deckId} />;
+    return <VoiceRecallSession deckId={deckId} conceptId={conceptId} />;
   }
 
   // ── Classic Flip Mode (below) ──────────────────────────────────────────────
-  return <ClassicFlipSession deckId={deckId} gradeOverride={gradeParam} />;
+  return <ClassicFlipSession deckId={deckId} gradeOverride={gradeParam} conceptId={conceptId} />;
 }
 
 // ── Classic Flip Session Component ───────────────────────────────────────────
 
-function ClassicFlipSession({ deckId, gradeOverride }: { deckId: string; gradeOverride?: string | null }) {
+function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: string; gradeOverride?: string | null; conceptId?: string | null }) {
   const router = useRouter();
   const { playCorrect, playWrong, playLevelUp, playMastery } = useSounds();
 
@@ -329,6 +339,12 @@ function ClassicFlipSession({ deckId, gradeOverride }: { deckId: string; gradeOv
     total: number; base: number; streakMultiplier: number; streakBonus: number; milestoneBonus: number;
   } | null>(null);
   const [streakMilestone, setStreakMilestone] = useState<StreakMilestone | null>(null);
+
+  // Concept journey suggestions (pre-fetched, computed on complete)
+  const sessionAccuracy = completed > 0 ? Math.round((correctCount / completed) * 100) : 0;
+  const whatsNextSuggestions = useConceptSuggestions(
+    conceptId ?? null, 'flashcards', phase === 'complete', sessionAccuracy,
+  );
 
   // ── Load deck ──────────────────────────────────────────────────────────────
 
@@ -554,7 +570,8 @@ function ClassicFlipSession({ deckId, gradeOverride }: { deckId: string; gradeOv
           duration={duration}
           transitions={transitions}
           sessionXP={sessionXP}
-          onDone={() => router.push('/flashcards')}
+          onDone={() => router.push(conceptId ? `/learn/concept-map?open=${conceptId}` : '/flashcards')}
+          suggestions={whatsNextSuggestions}
           onRestart={() => {
             sessionSavedRef.current = false;
             setCurrentIndex(0);

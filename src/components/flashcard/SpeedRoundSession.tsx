@@ -12,7 +12,10 @@ import {
   generateQuizQuestions,
   type QuizQuestion,
 } from '@/lib/quizBlitz';
+import { useConceptSuggestions } from '@/hooks/useConceptSuggestions';
+import WhatsNextSheet from '@/components/WhatsNextSheet';
 import type { FlashCard } from '@/types';
+import type { WhatsNextSuggestion } from '@/lib/whatsNext';
 
 const KatexRenderer = dynamic(() => import('@/components/KatexRenderer'), { ssr: false });
 
@@ -46,6 +49,7 @@ function SpeedComplete({
   sessionXP: { total: number; streakMultiplier: number; streakBonus: number } | null;
   onPlayAgain: () => void;
   onDone: () => void;
+  suggestions?: WhatsNextSuggestion[];
 }) {
   const pct = answered > 0 ? Math.round((correctCount / answered) * 100) : 0;
   const speed = (correctCount / 60).toFixed(1); // cards per second
@@ -104,12 +108,16 @@ function SpeedComplete({
         >
           Go Again 🔥
         </button>
-        <button
-          onClick={onDone}
-          className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-[#1E293B]"
-        >
-          Done
-        </button>
+        {suggestions && suggestions.length > 0 ? (
+          <WhatsNextSheet suggestions={suggestions} />
+        ) : (
+          <button
+            onClick={onDone}
+            className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-[#1E293B]"
+          >
+            Done
+          </button>
+        )}
       </div>
     </div>
   );
@@ -119,9 +127,10 @@ function SpeedComplete({
 
 interface SpeedRoundSessionProps {
   deckId: string;
+  conceptId?: string | null;
 }
 
-export default function SpeedRoundSession({ deckId }: SpeedRoundSessionProps) {
+export default function SpeedRoundSession({ deckId, conceptId }: SpeedRoundSessionProps) {
   const router = useRouter();
   const { fetchDeck } = useFlashcardDeck(deckId, { limit: 40 });
   const { playCorrect, playWrong, playStreak, playMastery } = useSounds();
@@ -151,6 +160,12 @@ export default function SpeedRoundSession({ deckId }: SpeedRoundSessionProps) {
 
   // XP tracking
   const [sessionXP, setSessionXP] = useState<{ total: number; streakMultiplier: number; streakBonus: number } | null>(null);
+
+  // Concept journey suggestions
+  const speedAccuracy = answered > 0 ? Math.round((correctCount / answered) * 100) : 0;
+  const whatsNextSuggestions = useConceptSuggestions(
+    conceptId ?? null, 'flashcards', phase === 'complete', speedAccuracy,
+  );
 
   // ── Load deck ──────────────────────────────────────────────────────────────
 
@@ -359,7 +374,8 @@ export default function SpeedRoundSession({ deckId }: SpeedRoundSessionProps) {
           setPhase('loading');
           loadDeck();
         }}
-        onDone={() => router.push('/flashcards')}
+        onDone={() => router.push(conceptId ? `/learn/concept-map?open=${conceptId}` : '/flashcards')}
+        suggestions={whatsNextSuggestions}
       />
     );
   }

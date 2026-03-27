@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useCallback } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 
@@ -154,6 +155,7 @@ function ChevronRight({ className }: { className?: string }) {
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function ConceptMapPage() {
+  const searchParams = useSearchParams();
   const [nodes, setNodes] = useState<ConceptNode[]>([]);
   const [edges, setEdges] = useState<ConceptEdge[]>([]);
   const [domains, setDomains] = useState<Record<string, DomainMeta>>({});
@@ -210,6 +212,14 @@ export default function ConceptMapPage() {
       .catch((err) => console.error('[fetch]', err))
       .finally(() => setDetailLoading(false));
   }, []);
+
+  // Deep link: ?open=CN_XXX auto-opens the concept detail sheet
+  useEffect(() => {
+    const openId = searchParams.get('open');
+    if (openId && !loading) {
+      openDetail(openId);
+    }
+  }, [searchParams, loading, openDetail]);
 
   // Group nodes by domain
   const grouped = new Map<string, ConceptNode[]>();
