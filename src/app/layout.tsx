@@ -1,9 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Nunito } from 'next/font/google';
 import './globals.css';
-import BottomNav from '@/components/BottomNav';
-import ServiceWorkerRegistrar from '@/components/ServiceWorkerRegistrar';
-import AddToHomeScreen from '@/components/AddToHomeScreen';
 import SessionProvider from '@/components/SessionProvider';
 import { Analytics } from '@vercel/analytics/next';
 
@@ -48,12 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`bg-duo-dark min-h-screen ${nunito.className}`}>
         <SessionProvider>
-          <main className="bg-white max-w-lg mx-auto min-h-screen">
-            {children}
-          </main>
-          <BottomNav />
-          <AddToHomeScreen />
-          <ServiceWorkerRegistrar />
+          {children}
           <Analytics />
         </SessionProvider>
       </body>
