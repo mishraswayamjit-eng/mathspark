@@ -266,6 +266,7 @@ function FlashcardSessionInner() {
   const searchParams = useSearchParams();
   const deckId = searchParams.get('deck') ?? 'quick';
   const mode = searchParams.get('mode') ?? 'classic';
+  const gradeParam = searchParams.get('grade'); // from concept-map deep links
 
   // ── Quiz Blitz Mode ────────────────────────────────────────────────────────
   if (mode === 'quiz') {
@@ -333,7 +334,7 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
 
   useEffect(() => {
     const sid = localStorage.getItem('mathspark_student_id');
-    const grade = localStorage.getItem('mathspark_student_grade') || '4';
+    const grade = gradeParam || localStorage.getItem('mathspark_student_grade') || '4';
     if (!sid) {
       router.replace('/start');
       return;
@@ -354,7 +355,7 @@ function ClassicFlipSession({ deckId }: { deckId: string }) {
       .catch(() => {
         router.replace('/flashcards');
       });
-  }, [router, deckId]);
+  }, [router, deckId, gradeParam]);
 
   // ── Save session on complete ───────────────────────────────────────────────
 

@@ -1122,7 +1122,7 @@ export function resolveLinksForGrade(conceptId: string, studentGrade: number): R
   const fLink = pickBest(mapping.flashcardLinks);
   const flashcard = fLink
     ? {
-        url: `/flashcards/session?deck=${encodeURIComponent(fLink.topicId)}&mode=classic`,
+        url: `/flashcards/session?deck=${encodeURIComponent(fLink.topicId)}&mode=classic&grade=${fLink.grade}`,
         topicId: fLink.topicId,
         grade: fLink.grade,
         label: fLink.topicId,
