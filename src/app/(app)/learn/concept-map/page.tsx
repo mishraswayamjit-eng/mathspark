@@ -94,6 +94,16 @@ export default function ConceptMapPage() {
   const [detail, setDetail] = useState<ConceptDetail | null>(null);
   const [detailLoading, setDetailLoading] = useState(false);
 
+  // Lock body scroll when detail sheet is open
+  useEffect(() => {
+    if (detail || detailLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [detail, detailLoading]);
+
   // Fetch map data
   useEffect(() => {
     const qs = selectedGrade ? `?grade=${selectedGrade}` : '';
@@ -237,37 +247,29 @@ export default function ConceptMapPage() {
                       </p>
                       <div className="flex items-center gap-2 mt-1">
                         <span className="text-[10px] font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: style.accent + '20', color: style.accent }}>
-                          {domainNodes.length} concepts
+                          {isExpanded ? 'Hide concepts' : `Show ${domainNodes.length} concepts`}
                         </span>
                         <span className="text-[10px] font-bold text-gray-500">
                           {connectionCount} links
                         </span>
                       </div>
                     </div>
-                    <span
-                      className="text-sm transition-transform duration-200 shrink-0"
-                      style={{ color: style.accent, transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                    <svg
+                      className="w-5 h-5 shrink-0 transition-transform duration-200"
+                      style={{ color: style.text, transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2.5}
                     >
-                      ▾
-                    </span>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
                   </button>
 
                   {/* Expanded: concept nodes */}
                   {isExpanded && (
                     <div className="px-4 pb-4 space-y-2 animate-fade-in">
                       <div className="border-t" style={{ borderColor: style.border }} />
-
-                      {/* Mini graph: show connections within this domain */}
-                      <DomainMiniGraph
-                        nodes={domainNodes}
-                        edges={edges.filter(
-                          (e) =>
-                            domainNodes.some((n) => n.id === e.source) &&
-                            domainNodes.some((n) => n.id === e.target)
-                        )}
-                        style={style}
-                        onNodeClick={openDetail}
-                      />
 
                       {/* Concept list */}
                       <div className="space-y-1.5 mt-3">
@@ -280,32 +282,29 @@ export default function ConceptMapPage() {
                               <button
                                 key={node.id}
                                 onClick={() => openDetail(node.id)}
-                                className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white/80 border active:bg-white transition-colors text-left"
+                                className="w-full flex items-center gap-3 px-3 py-3 rounded-xl bg-white/80 border active:bg-white transition-colors text-left"
                                 style={{ borderColor: style.border }}
                               >
-                                <span className="text-lg shrink-0">{node.icon}</span>
+                                <span className="text-xl shrink-0">{node.icon}</span>
                                 <div className="flex-1 min-w-0">
-                                  <p className="text-xs font-extrabold text-gray-800 leading-tight truncate">{node.name}</p>
-                                  <div className="flex items-center gap-1.5 mt-0.5">
+                                  <p className="text-sm font-extrabold text-gray-800 leading-tight truncate">{node.name}</p>
+                                  <div className="flex items-center gap-1.5 mt-1">
                                     <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full text-white" style={{ backgroundColor: diff.color }}>
                                       {diff.text}
                                     </span>
                                     <span className="text-[10px] font-bold text-gray-500">
-                                      G{node.gradeRange[0]}-{node.gradeRange[node.gradeRange.length - 1]}
+                                      Grade {node.gradeRange[0]}-{node.gradeRange[node.gradeRange.length - 1]}
                                     </span>
                                     {node.questionCount > 0 && (
                                       <span className="text-[10px] font-bold text-gray-500">
                                         {node.questionCount} Qs
                                       </span>
                                     )}
-                                    {connections > 0 && (
-                                      <span className="text-[10px] font-bold" style={{ color: style.accent }}>
-                                        {connections} links
-                                      </span>
-                                    )}
                                   </div>
                                 </div>
-                                <span className="text-gray-300 text-xs shrink-0">→</span>
+                                <svg className="w-5 h-5 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                                </svg>
                               </button>
                             );
                           })}
@@ -343,14 +342,14 @@ export default function ConceptMapPage() {
 
       {/* ── Concept Detail Sheet ───────────────────────────────────────────── */}
       {(detail || detailLoading) && (
-        <div className="fixed inset-0 z-50 flex items-end justify-center">
+        <div className="fixed inset-0 z-[60] flex items-end justify-center">
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/40"
             onClick={() => { setDetail(null); setDetailLoading(false); }}
           />
           {/* Sheet */}
-          <div className="relative w-full max-w-lg bg-white rounded-t-3xl shadow-2xl max-h-[85vh] overflow-y-auto animate-slide-up">
+          <div className="relative w-full max-w-lg bg-white rounded-t-3xl shadow-2xl max-h-[90vh] overflow-y-auto overscroll-contain animate-slide-up">
             {detailLoading && !detail ? (
               <div className="p-6 space-y-4 animate-pulse">
                 <div className="h-6 bg-gray-200 rounded w-48" />
@@ -363,98 +362,6 @@ export default function ConceptMapPage() {
           </div>
         </div>
       )}
-    </div>
-  );
-}
-
-// ── Mini Graph (SVG) ──────────────────────────────────────────────────────────
-
-function DomainMiniGraph({
-  nodes,
-  edges,
-  style,
-  onNodeClick,
-}: {
-  nodes: ConceptNode[];
-  edges: ConceptEdge[];
-  style: { accent: string };
-  onNodeClick: (id: string) => void;
-}) {
-  if (nodes.length <= 1) return null;
-
-  // Layout nodes in a circle for clean visualization
-  const W = 320;
-  const H = Math.min(200, 80 + nodes.length * 12);
-  const cx = W / 2;
-  const cy = H / 2;
-  const radius = Math.min(cx, cy) - 30;
-
-  const positions = new Map<string, { x: number; y: number }>();
-  nodes.forEach((n, i) => {
-    const angle = (2 * Math.PI * i) / nodes.length - Math.PI / 2;
-    positions.set(n.id, {
-      x: cx + radius * Math.cos(angle),
-      y: cy + radius * Math.sin(angle),
-    });
-  });
-
-  return (
-    <div className="flex justify-center">
-      <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} className="overflow-visible">
-        {/* Edges */}
-        {edges.map((e, i) => {
-          const s = positions.get(e.source);
-          const t = positions.get(e.target);
-          if (!s || !t) return null;
-          return (
-            <line
-              key={i}
-              x1={s.x} y1={s.y} x2={t.x} y2={t.y}
-              stroke={e.type === 'must_know' ? style.accent : '#D1D5DB'}
-              strokeWidth={e.type === 'must_know' ? 1.5 : 1}
-              strokeDasharray={e.type === 'helpful' ? '4,3' : undefined}
-              opacity={0.5}
-            />
-          );
-        })}
-        {/* Nodes */}
-        {nodes.map((n) => {
-          const pos = positions.get(n.id);
-          if (!pos) return null;
-          const r = Math.max(12, Math.min(20, 10 + n.questionCount / 50));
-          return (
-            <g
-              key={n.id}
-              onClick={() => onNodeClick(n.id)}
-              style={{ cursor: 'pointer' }}
-            >
-              <circle
-                cx={pos.x} cy={pos.y} r={r}
-                fill="white"
-                stroke={n.color || style.accent}
-                strokeWidth={2}
-              />
-              <text
-                x={pos.x} y={pos.y + 1}
-                textAnchor="middle"
-                dominantBaseline="central"
-                fontSize={r * 0.9}
-              >
-                {n.icon}
-              </text>
-              <text
-                x={pos.x} y={pos.y + r + 10}
-                textAnchor="middle"
-                fontSize="7"
-                fill="#6B7280"
-                fontWeight="600"
-              >
-                {n.name.length > 14 ? n.name.slice(0, 12) + '…' : n.name}
-              </text>
-            </g>
-          );
-        })}
-      </svg>
     </div>
   );
 }
@@ -475,7 +382,7 @@ function ConceptDetailSheet({
   const diff = diffLabel(concept.difficulty);
 
   return (
-    <div className="p-5 pb-8 space-y-4">
+    <div className="p-5 pb-[calc(2rem+env(safe-area-inset-bottom,0px))] space-y-4">
       {/* Handle bar */}
       <div className="flex justify-center -mt-1 mb-2">
         <div className="w-10 h-1 rounded-full bg-gray-300" />
@@ -506,7 +413,13 @@ function ConceptDetailSheet({
             )}
           </div>
         </div>
-        <button onClick={onClose} className="text-gray-500 hover:text-gray-600 text-xl shrink-0">×</button>
+        <button
+          onClick={onClose}
+          className="w-11 h-11 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 font-bold text-lg shrink-0 active:bg-gray-200 transition-colors"
+          aria-label="Close concept details"
+        >
+          ✕
+        </button>
       </div>
 
       {/* Description */}
@@ -521,18 +434,18 @@ function ConceptDetailSheet({
         {concept.estimatedMinutesToMaster != null && (
           <div className="bg-blue-50 rounded-xl p-2.5 border border-blue-200 text-center">
             <p className="text-lg font-extrabold text-blue-600">{concept.estimatedMinutesToMaster}</p>
-            <p className="text-[10px] font-bold text-blue-400 uppercase">min to master</p>
+            <p className="text-[10px] font-bold text-blue-600 uppercase">min to master</p>
           </div>
         )}
         {concept.masteryThreshold != null && (
           <div className="bg-green-50 rounded-xl p-2.5 border border-green-200 text-center">
             <p className="text-lg font-extrabold text-duo-green">{Math.round(concept.masteryThreshold * 100)}%</p>
-            <p className="text-[10px] font-bold text-green-400 uppercase">mastery goal</p>
+            <p className="text-[10px] font-bold text-green-600 uppercase">mastery goal</p>
           </div>
         )}
         <div className="bg-purple-50 rounded-xl p-2.5 border border-purple-200 text-center">
           <p className="text-lg font-extrabold text-purple-600">{prerequisites.length + dependents.length}</p>
-          <p className="text-[10px] font-bold text-purple-400 uppercase">connections</p>
+          <p className="text-[10px] font-bold text-purple-600 uppercase">connections</p>
         </div>
       </div>
 
@@ -547,14 +460,16 @@ function ConceptDetailSheet({
               <button
                 key={p.id}
                 onClick={() => onNavigate(p.id)}
-                className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-red-50 border border-red-100 text-left active:bg-red-100 transition-colors"
+                className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-amber-50 border border-amber-100 text-left active:bg-amber-100 transition-colors"
               >
-                <span className="text-sm shrink-0">{p.type === 'must_know' ? '🔴' : '🟡'}</span>
+                <span className="text-sm shrink-0">{p.type === 'must_know' ? '🔒' : '🟡'}</span>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-bold text-gray-800 truncate">{p.name}</p>
                   <p className="text-[10px] font-bold text-gray-500">{p.type === 'must_know' ? 'Must know first' : 'Helpful to know'}</p>
                 </div>
-                <span className="text-gray-300 text-xs shrink-0">→</span>
+                <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
               </button>
             ))}
           </div>
@@ -579,7 +494,9 @@ function ConceptDetailSheet({
                   <p className="text-xs font-bold text-gray-800 truncate">{d.name}</p>
                   <p className="text-[10px] font-bold text-gray-500">{d.type === 'must_know' ? 'Requires this concept' : 'Benefits from this'}</p>
                 </div>
-                <span className="text-gray-300 text-xs shrink-0">→</span>
+                <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
               </button>
             ))}
           </div>
