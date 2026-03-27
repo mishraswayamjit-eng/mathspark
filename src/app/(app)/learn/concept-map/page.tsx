@@ -42,10 +42,34 @@ interface DomainMeta {
   description: string;
 }
 
+interface ConceptLinks {
+  practice: { url: string; label: string } | null;
+  flashcard: { url: string; label: string } | null;
+  example: { url: string; label: string } | null;
+}
+
+interface ConceptProgress {
+  mastery: string;
+  attempted: number;
+  correct: number;
+  accuracy: number;
+  difficultyBreakdown: { easy: number; medium: number; hard: number };
+}
+
+interface ConceptFlashcardProgress {
+  totalCards: number;
+  cardsSeen: number;
+  avgBox: number;
+}
+
 interface ConceptDetail {
   concept: ConceptNode;
   prerequisites: { id: string; name: string; type: string }[];
   dependents: { id: string; name: string; type: string }[];
+  links?: ConceptLinks;
+  progress?: ConceptProgress | null;
+  flashcardProgress?: ConceptFlashcardProgress | null;
+  studentGrade?: number | null;
 }
 
 // ── Domain colors ─────────────────────────────────────────────────────────────
@@ -81,6 +105,52 @@ function diffLabel(d: number) {
   return { text: 'Expert', color: '#8B5CF6' };
 }
 
+// ── Progress Ring SVG ─────────────────────────────────────────────────────────
+
+function ProgressRing({ accuracy, mastery, size = 64 }: { accuracy: number; mastery: string; size?: number }) {
+  const strokeWidth = 5;
+  const radius = (size - strokeWidth) / 2;
+  const circumference = 2 * Math.PI * radius;
+  const offset = circumference - (accuracy / 100) * circumference;
+
+  const color = mastery === 'Mastered' ? '#58CC02' : mastery === 'Practicing' ? '#F59E0B' : '#D1D5DB';
+
+  return (
+    <svg width={size} height={size} className="shrink-0">
+      <circle
+        cx={size / 2} cy={size / 2} r={radius}
+        fill="none" stroke="#E5E7EB" strokeWidth={strokeWidth}
+      />
+      <circle
+        cx={size / 2} cy={size / 2} r={radius}
+        fill="none" stroke={color} strokeWidth={strokeWidth}
+        strokeLinecap="round"
+        strokeDasharray={circumference}
+        strokeDashoffset={offset}
+        transform={`rotate(-90 ${size / 2} ${size / 2})`}
+      />
+      <text
+        x={size / 2} y={size / 2}
+        textAnchor="middle" dominantBaseline="central"
+        className="text-sm font-extrabold"
+        fill={color}
+      >
+        {accuracy}%
+      </text>
+    </svg>
+  );
+}
+
+// ── Chevron Right Icon ────────────────────────────────────────────────────────
+
+function ChevronRight({ className }: { className?: string }) {
+  return (
+    <svg className={className ?? 'w-5 h-5 text-white/80 shrink-0'} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  );
+}
+
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function ConceptMapPage() {
@@ -103,6 +173,18 @@ export default function ConceptMapPage() {
     }
     return () => { document.body.style.overflow = ''; };
   }, [detail, detailLoading]);
+
+  // Auto-detect student grade on mount
+  useEffect(() => {
+    fetch('/api/dashboard')
+      .then((r) => { if (!r.ok) throw new Error('Fetch failed'); return r.json(); })
+      .then((data) => {
+        if (data.grade && typeof data.grade === 'number') {
+          setSelectedGrade(data.grade);
+        }
+      })
+      .catch(() => { /* Not authenticated or error — use All Grades */ });
+  }, []);
 
   // Fetch map data
   useEffect(() => {
@@ -161,7 +243,7 @@ export default function ConceptMapPage() {
             {totalNodes} concepts &middot; {domainCount} domains &middot; {edges.length} connections
           </p>
         </div>
-        <span className="text-2xl">🗺️</span>
+        <span className="text-2xl" aria-hidden="true">🗺️</span>
       </div>
 
       <div className="max-w-lg mx-auto px-4 pt-5">
@@ -277,7 +359,6 @@ export default function ConceptMapPage() {
                           .sort((a, b) => a.difficulty - b.difficulty || a.gradeRange[0] - b.gradeRange[0])
                           .map((node) => {
                             const diff = diffLabel(node.difficulty);
-                            const connections = edgeCounts.get(node.id) ?? 0;
                             return (
                               <button
                                 key={node.id}
@@ -377,7 +458,7 @@ function ConceptDetailSheet({
   onClose: () => void;
   onNavigate: (id: string) => void;
 }) {
-  const { concept, prerequisites, dependents } = detail;
+  const { concept, prerequisites, dependents, links, progress, flashcardProgress } = detail;
   const style = getDomainStyle(concept.domain);
   const diff = diffLabel(concept.difficulty);
 
@@ -429,25 +510,109 @@ function ConceptDetailSheet({
         </div>
       )}
 
-      {/* Stats row */}
-      <div className="grid grid-cols-3 gap-2">
-        {concept.estimatedMinutesToMaster != null && (
-          <div className="bg-blue-50 rounded-xl p-2.5 border border-blue-200 text-center">
-            <p className="text-lg font-extrabold text-blue-600">{concept.estimatedMinutesToMaster}</p>
-            <p className="text-[10px] font-bold text-blue-600 uppercase">min to master</p>
-          </div>
-        )}
-        {concept.masteryThreshold != null && (
-          <div className="bg-green-50 rounded-xl p-2.5 border border-green-200 text-center">
-            <p className="text-lg font-extrabold text-duo-green">{Math.round(concept.masteryThreshold * 100)}%</p>
-            <p className="text-[10px] font-bold text-green-600 uppercase">mastery goal</p>
-          </div>
-        )}
-        <div className="bg-purple-50 rounded-xl p-2.5 border border-purple-200 text-center">
-          <p className="text-lg font-extrabold text-purple-600">{prerequisites.length + dependents.length}</p>
-          <p className="text-[10px] font-bold text-purple-600 uppercase">connections</p>
+      {/* ── Action Buttons ─────────────────────────────────────────────────── */}
+      {links && (
+        <div className="space-y-2">
+          {links.practice && (
+            <Link
+              href={links.practice.url}
+              className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-duo-green text-white font-bold text-sm active:opacity-90 transition-opacity min-h-[44px]"
+            >
+              <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+              <div className="flex-1 min-w-0">
+                <p className="font-extrabold">Practice Questions</p>
+                {progress && progress.attempted > 0 && (
+                  <p className="text-white/80 text-xs font-medium">
+                    {progress.correct}/{progress.attempted} correct ({progress.accuracy}%)
+                  </p>
+                )}
+              </div>
+              <ChevronRight />
+            </Link>
+          )}
+
+          {links.flashcard && (
+            <Link
+              href={links.flashcard.url}
+              className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-blue-500 text-white font-bold text-sm active:opacity-90 transition-opacity min-h-[44px]"
+            >
+              <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+              <div className="flex-1 min-w-0">
+                <p className="font-extrabold">Study Flashcards</p>
+                {flashcardProgress && flashcardProgress.cardsSeen > 0 && (
+                  <p className="text-white/80 text-xs font-medium">
+                    {flashcardProgress.cardsSeen}/{flashcardProgress.totalCards} cards reviewed
+                  </p>
+                )}
+              </div>
+              <ChevronRight />
+            </Link>
+          )}
+
+          {links.example && (
+            <Link
+              href={links.example.url}
+              className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-amber-500 text-white font-bold text-sm active:opacity-90 transition-opacity min-h-[44px]"
+            >
+              <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+              <div className="flex-1 min-w-0">
+                <p className="font-extrabold">Watch Examples</p>
+              </div>
+              <ChevronRight />
+            </Link>
+          )}
         </div>
-      </div>
+      )}
+
+      {/* ── Your Progress ──────────────────────────────────────────────────── */}
+      {progress && progress.mastery !== 'NotStarted' && (
+        <div>
+          <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-2">
+            Your Progress
+          </p>
+          <div className="bg-gray-50 rounded-xl p-3 border border-gray-100 flex items-center gap-4">
+            <ProgressRing accuracy={progress.accuracy} mastery={progress.mastery} />
+            <div>
+              <p className="text-sm font-extrabold text-gray-800">
+                {progress.mastery === 'Mastered' ? 'Mastered' : 'Practicing'}
+              </p>
+              <p className="text-xs text-gray-500 font-medium mt-0.5">
+                {progress.correct} of {progress.attempted} questions correct
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── Difficulty Breakdown ───────────────────────────────────────────── */}
+      {progress && (progress.difficultyBreakdown.easy + progress.difficultyBreakdown.medium + progress.difficultyBreakdown.hard) > 0 && (
+        <div>
+          <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-2">
+            Question Bank
+          </p>
+          <div className="grid grid-cols-3 gap-2">
+            <div className="bg-green-50 rounded-xl p-2.5 border border-green-200 text-center">
+              <p className="text-lg font-extrabold text-duo-green">{progress.difficultyBreakdown.easy}</p>
+              <p className="text-[10px] font-bold text-green-600 uppercase">Easy</p>
+            </div>
+            <div className="bg-amber-50 rounded-xl p-2.5 border border-amber-200 text-center">
+              <p className="text-lg font-extrabold text-amber-500">{progress.difficultyBreakdown.medium}</p>
+              <p className="text-[10px] font-bold text-amber-600 uppercase">Medium</p>
+            </div>
+            <div className="bg-red-50 rounded-xl p-2.5 border border-red-200 text-center">
+              <p className="text-lg font-extrabold text-red-500">{progress.difficultyBreakdown.hard}</p>
+              <p className="text-[10px] font-bold text-red-600 uppercase">Hard</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Prerequisites */}
       {prerequisites.length > 0 && (
@@ -462,7 +627,7 @@ function ConceptDetailSheet({
                 onClick={() => onNavigate(p.id)}
                 className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-amber-50 border border-amber-100 text-left active:bg-amber-100 transition-colors"
               >
-                <span className="text-sm shrink-0">{p.type === 'must_know' ? '🔒' : '🟡'}</span>
+                <span className="text-sm shrink-0" aria-hidden="true">{p.type === 'must_know' ? '🔒' : '🟡'}</span>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-bold text-gray-800 truncate">{p.name}</p>
                   <p className="text-[10px] font-bold text-gray-500">{p.type === 'must_know' ? 'Must know first' : 'Helpful to know'}</p>
@@ -489,7 +654,7 @@ function ConceptDetailSheet({
                 onClick={() => onNavigate(d.id)}
                 className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-green-50 border border-green-100 text-left active:bg-green-100 transition-colors"
               >
-                <span className="text-sm shrink-0">{d.type === 'must_know' ? '🟢' : '🟡'}</span>
+                <span className="text-sm shrink-0" aria-hidden="true">{d.type === 'must_know' ? '🟢' : '🟡'}</span>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-bold text-gray-800 truncate">{d.name}</p>
                   <p className="text-[10px] font-bold text-gray-500">{d.type === 'must_know' ? 'Requires this concept' : 'Benefits from this'}</p>
@@ -503,18 +668,60 @@ function ConceptDetailSheet({
         </div>
       )}
 
-      {/* Sparky tip */}
+      {/* ── Smart Sparky Says ──────────────────────────────────────────────── */}
       <div className="bg-purple-50 rounded-xl p-3 border border-purple-200 flex items-start gap-2">
         <Sparky mood="happy" size={28} />
         <div>
           <p className="text-[10px] font-extrabold text-purple-500 uppercase tracking-wide">Sparky Says</p>
           <p className="text-xs text-purple-800 font-medium mt-0.5 italic leading-snug">
-            {prerequisites.length === 0
-              ? "This is a starting concept — no prerequisites needed! Jump right in!"
-              : `Master the ${prerequisites.length} prerequisite${prerequisites.length > 1 ? 's' : ''} first, then this will be a breeze!`}
+            {getSparkyMessage(progress, flashcardProgress, prerequisites, dependents)}
           </p>
         </div>
       </div>
     </div>
   );
+}
+
+// ── Smart Sparky Message ──────────────────────────────────────────────────────
+
+function getSparkyMessage(
+  progress: ConceptProgress | null | undefined,
+  flashcardProgress: ConceptFlashcardProgress | null | undefined,
+  prerequisites: { id: string; name: string; type: string }[],
+  dependents: { id: string; name: string; type: string }[],
+): string {
+  // Mastered
+  if (progress?.mastery === 'Mastered') {
+    if (dependents.length > 0) {
+      return `You've mastered this! Time to unlock ${dependents.length === 1 ? 'the next concept' : `the ${dependents.length} concepts`} that come next!`;
+    }
+    return "You've mastered this concept! Amazing work!";
+  }
+
+  // Practicing with high accuracy
+  if (progress?.mastery === 'Practicing' && progress.accuracy >= 70) {
+    return 'Great progress! Keep going for mastery!';
+  }
+
+  // Practicing with low accuracy
+  if (progress?.mastery === 'Practicing' && progress.accuracy < 70) {
+    return 'Try the worked examples first, then practice again!';
+  }
+
+  // Has flashcard progress but no practice
+  if (flashcardProgress && flashcardProgress.cardsSeen > 0 && (!progress || progress.attempted === 0)) {
+    return 'You know the cards — now test yourself with practice questions!';
+  }
+
+  // Has prerequisites, no progress
+  if (prerequisites.length > 0 && (!progress || progress.attempted === 0)) {
+    return `Master the ${prerequisites.length} prerequisite${prerequisites.length > 1 ? 's' : ''} first, then this will be a breeze!`;
+  }
+
+  // Starting concept (no prerequisites)
+  if (prerequisites.length === 0) {
+    return 'No prerequisites needed — jump right in!';
+  }
+
+  return 'Tap Practice Questions to get started!';
 }

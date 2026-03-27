@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import * as fs from 'fs';
 import * as path from 'path';
+import { prisma } from '@/lib/db';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { resolveLinksForGrade } from '@/data/conceptTopicMap';
 
 export const dynamic = 'force-dynamic';
 
@@ -26,7 +29,7 @@ function loadGraph() {
 // GET /api/concept-map                → full map (nodes, edges, domains, gradeOverlays)
 // GET /api/concept-map?domain=numbers → filter nodes by domain
 // GET /api/concept-map?grade=4        → filter to grade overlay
-// GET /api/concept-map?id=CN_001      → single concept detail (merged from both files)
+// GET /api/concept-map?id=CN_001      → single concept detail (merged from both files) + links + progress
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
@@ -50,7 +53,7 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: 'Concept map not found' }, { status: 404 });
     }
 
-    // Single concept detail — merge visual + dependency data
+    // Single concept detail — merge visual + dependency data + learning links
     if (id) {
       const mapNode = mapData.nodes.find((n) => n.id === id);
       const graphNode = graphData?.nodes.find((n) => n.id === id);
@@ -73,10 +76,132 @@ export async function GET(req: Request) {
           return { id: e.target, name: (node as Record<string, unknown>)?.name ?? e.target, type: e.type };
         });
 
+      // Resolve learning links + student progress
+      let studentGrade: number | null = null;
+      let studentId: string | null = null;
+      try {
+        studentId = await getAuthenticatedStudentId();
+        if (studentId) {
+          const student = await prisma.student.findUnique({
+            where: { id: studentId },
+            select: { grade: true },
+          });
+          studentGrade = student?.grade ?? null;
+        }
+      } catch {
+        // Graceful fail for unauthenticated
+      }
+
+      const conceptGradeRange = (mapNode as Record<string, unknown>).gradeRange as number[] | undefined;
+      const effectiveGrade = studentGrade ?? conceptGradeRange?.[0] ?? 4;
+      const resolved = resolveLinksForGrade(id, effectiveGrade);
+
+      // Build links object
+      const links: Record<string, { url: string; label: string } | null> = {
+        practice: resolved.practice ? { url: resolved.practice.url, label: resolved.practice.label } : null,
+        flashcard: resolved.flashcard ? { url: resolved.flashcard.url, label: resolved.flashcard.label } : null,
+        example: resolved.example ? { url: resolved.example.url, label: resolved.example.label } : null,
+      };
+
+      // Fetch progress data (only if authenticated and practice link exists)
+      let progress: {
+        mastery: string;
+        attempted: number;
+        correct: number;
+        accuracy: number;
+        difficultyBreakdown: { easy: number; medium: number; hard: number };
+      } | null = null;
+      let flashcardProgress: { totalCards: number; cardsSeen: number; avgBox: number } | null = null;
+
+      if (studentId && resolved.practice) {
+        const topicId = resolved.practice.topicId;
+
+        const [progressRow, diffCounts] = await Promise.all([
+          prisma.progress.findUnique({
+            where: { studentId_topicId: { studentId, topicId } },
+            select: { mastery: true, attempted: true, correct: true },
+          }),
+          prisma.question.groupBy({
+            by: ['difficulty'],
+            where: { topicId },
+            _count: { id: true },
+          }),
+        ]);
+
+        if (progressRow) {
+          const breakdown = { easy: 0, medium: 0, hard: 0 };
+          for (const row of diffCounts) {
+            const d = row.difficulty.toLowerCase();
+            if (d === 'easy') breakdown.easy = row._count.id;
+            else if (d === 'medium') breakdown.medium = row._count.id;
+            else if (d === 'hard') breakdown.hard = row._count.id;
+          }
+          progress = {
+            mastery: progressRow.mastery,
+            attempted: progressRow.attempted,
+            correct: progressRow.correct,
+            accuracy: progressRow.attempted > 0 ? Math.round((progressRow.correct / progressRow.attempted) * 100) : 0,
+            difficultyBreakdown: breakdown,
+          };
+        } else {
+          // No progress yet, but still show difficulty breakdown
+          const breakdown = { easy: 0, medium: 0, hard: 0 };
+          for (const row of diffCounts) {
+            const d = row.difficulty.toLowerCase();
+            if (d === 'easy') breakdown.easy = row._count.id;
+            else if (d === 'medium') breakdown.medium = row._count.id;
+            else if (d === 'hard') breakdown.hard = row._count.id;
+          }
+          progress = {
+            mastery: 'NotStarted',
+            attempted: 0,
+            correct: 0,
+            accuracy: 0,
+            difficultyBreakdown: breakdown,
+          };
+        }
+      }
+
+      // Flashcard progress
+      if (studentId && resolved.flashcard) {
+        const fcTopicId = resolved.flashcard.topicId;
+        const fcGrade = resolved.flashcard.grade;
+
+        // Load flashcard data to count total cards for this deck
+        const flashcardDataPath = path.join(process.cwd(), 'data', 'concept_flashcards_all_grades.json');
+        let totalCards = 0;
+        try {
+          const fcData = JSON.parse(fs.readFileSync(flashcardDataPath, 'utf-8'));
+          const cards = (fcData.cards as { topicId: string; grade: number; id: string }[])
+            .filter((c) => c.topicId === fcTopicId && c.grade === fcGrade);
+          totalCards = cards.length;
+
+          if (totalCards > 0) {
+            const cardIds = cards.map((c) => c.id);
+            const fcProgress = await prisma.flashcardProgress.aggregate({
+              where: { studentId, cardId: { in: cardIds } },
+              _count: { id: true },
+              _avg: { leitnerBox: true },
+            });
+            flashcardProgress = {
+              totalCards,
+              cardsSeen: fcProgress._count.id,
+              avgBox: Math.round((fcProgress._avg.leitnerBox ?? 0) * 10) / 10,
+            };
+          }
+        } catch {
+          // Graceful fail if flashcard data unavailable
+        }
+      }
+
       return NextResponse.json({
         concept: { ...mapNode, ...graphNode },
         prerequisites,
         dependents,
+        links,
+        progress,
+        flashcardProgress,
+        studentGrade: studentGrade,
       });
     }
 
