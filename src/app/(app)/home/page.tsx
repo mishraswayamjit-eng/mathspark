@@ -4,6 +4,7 @@ import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
+import { STREAK_MILESTONES } from '@/lib/flashcardXP';
 import type {
   TopicMasteryEntry,
   ExamReadinessResult,
@@ -42,38 +43,196 @@ interface HomeData {
     topicId: string; topicName: string;
     correct: number; attempted: number; pct: number; timeAgo: string;
   }>;
+  leagueTier: number;
+  leagueName: string;
+  leagueRank: number | null;
+  weeklyXP: number;
+  todayXP: number;
+  topicsMasteredCount: number;
+  topicsExploredCount: number;
+  totalTopics: number;
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+const LEAGUE_EMOJI: Record<number, string> = { 1: '🥉', 2: '🥈', 3: '🥇', 4: '💎', 5: '👑' };
+
+function reframePlanReason(reason: string): string {
+  if (reason.includes('Very low accuracy'))             return 'Great topic to build on!';
+  if (reason.includes('Not practiced in'))              return "Time to refresh — it's been a while!";
+  if (reason.includes('% of question types explored'))  return 'New question types to discover!';
+  if (reason.includes('High exam frequency'))           return 'Appears often in exams — high impact!';
+  if (reason.includes('You marked this as a focus'))    return 'Your focus area — keep going!';
+  if (reason.includes('No mock test in'))               return 'Time for a fresh mock test';
+  if (reason.includes('Very few question types'))       return 'New question types to discover!';
+  return reason;
+}
+
+function isRecentWin(timeAgo: string): boolean {
+  if (timeAgo === 'just now') return true;
+  if (timeAgo.endsWith('h ago')) {
+    const hours = parseInt(timeAgo, 10);
+    return !isNaN(hours) && hours <= 12;
+  }
+  return false;
 }
 
 // ── Sub-components ────────────────────────────────────────────────────────────
 
-const ReadinessRing = React.memo(function ReadinessRing({ score, trend }: { score: number; trend: string }) {
-  const r = 50;
-  const circumference = 2 * Math.PI * r;
-  const offset = circumference * (1 - score / 100);
-  const color = score >= 70 ? '#58CC02' : score >= 40 ? '#FF9600' : '#FF4B4B';
-
+const StatsBar = React.memo(function StatsBar({
+  streak, todayXP, leagueName, leagueTier, leagueRank,
+}: {
+  streak: number; todayXP: number; leagueName: string; leagueTier: number; leagueRank: number | null;
+}) {
+  const leagueEmoji = LEAGUE_EMOJI[leagueTier] ?? '🥉';
   return (
-    <svg width="120" height="120" viewBox="0 0 120 120" className="shrink-0">
-      {/* Background circle */}
-      <circle cx="60" cy="60" r={r} stroke="#e5e7eb" strokeWidth="10" fill="none" />
-      {/* Progress arc */}
-      <circle
-        cx="60" cy="60" r={r}
-        stroke={color}
-        strokeWidth="10"
-        fill="none"
-        strokeDasharray={circumference}
-        strokeDashoffset={offset}
-        strokeLinecap="round"
-        transform="rotate(-90 60 60)"
-        style={{ transition: 'stroke-dashoffset 1s ease' }}
-      />
-      {/* Score text */}
-      <text x="60" y="56" textAnchor="middle" fontSize="22" fontWeight="800" fill={color}>{score}%</text>
-      <text x="60" y="72" textAnchor="middle" fontSize="9" fill="#9ca3af">
-        {trend === 'improving' ? '⬆ Improving' : trend === 'declining' ? '⬇ Declining' : '➡ Stable'}
-      </text>
-    </svg>
+    <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1.5 bg-orange-50 rounded-full px-3 py-1.5 border border-orange-100">
+        <span className="text-sm" aria-hidden="true">🔥</span>
+        <span className="text-xs font-extrabold text-orange-600">{streak > 0 ? streak : '—'}</span>
+      </div>
+      <div className="flex items-center gap-1.5 bg-amber-50 rounded-full px-3 py-1.5 border border-amber-100">
+        <span className="text-sm" aria-hidden="true">⭐</span>
+        <span className="text-xs font-extrabold text-amber-600">{todayXP} XP</span>
+      </div>
+      <Link href="/leaderboard" className="flex items-center gap-1.5 bg-blue-50 rounded-full px-3 py-1.5 border border-blue-100">
+        <span className="text-sm" aria-hidden="true">{leagueEmoji}</span>
+        <span className="text-xs font-extrabold text-blue-600">
+          {leagueName}{leagueRank ? ` #${leagueRank}` : ''}
+        </span>
+      </Link>
+    </div>
+  );
+});
+
+const HeroCard = React.memo(function HeroCard({
+  streak, recentActivity, topicPriorities,
+  onDismissMilestone,
+}: {
+  streak: number;
+  recentActivity: HomeData['recentActivity'];
+  topicPriorities: TopicPriority[];
+  onDismissMilestone: () => void;
+}) {
+  // Priority 1: Streak milestone
+  const milestone = STREAK_MILESTONES.find(m => m.days === streak);
+  const todayKey = `mathspark_milestone_${new Date().toDateString()}`;
+  const celebrated = typeof window !== 'undefined' && localStorage.getItem(todayKey) === 'true';
+
+  if (milestone && !celebrated) {
+    return (
+      <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl p-4 border border-amber-200 shadow-sm">
+        <div className="flex items-center gap-3">
+          <div className="shrink-0 animate-sparky-dance">
+            <Sparky mood="celebrating" size={52} />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-lg font-extrabold text-gray-800">
+              {milestone.emoji} {milestone.title}
+            </p>
+            <p className="text-sm text-gray-600 font-medium">
+              <span aria-hidden="true">🔥</span> {streak} day streak · {milestone.description}
+            </p>
+          </div>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              localStorage.setItem(todayKey, 'true');
+              onDismissMilestone();
+            }}
+            className="text-gray-300 hover:text-gray-500 text-lg leading-none px-1 shrink-0"
+          >
+            ×
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // Priority 2: Recent win (≥85%, within 12h)
+  const recentWin = recentActivity[0];
+  if (recentWin && recentWin.pct >= 85 && isRecentWin(recentWin.timeAgo)) {
+    return (
+      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 border border-green-200 shadow-sm">
+        <div className="flex items-center gap-3">
+          <div className="shrink-0">
+            <Sparky mood="happy" size={52} />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-extrabold text-gray-800">
+              You aced {recentWin.topicName}! <span aria-hidden="true">🎉</span>
+            </p>
+            <p className="text-xs text-gray-500 font-medium">
+              {recentWin.correct}/{recentWin.attempted} correct · {recentWin.pct}%
+            </p>
+          </div>
+          <span className="text-2xl shrink-0" aria-hidden="true">🌟</span>
+        </div>
+      </div>
+    );
+  }
+
+  // Priority 3: Daily challenge (if streak > 0)
+  if (streak > 0) {
+    return (
+      <Link href="/practice/daily"
+        className="block bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-4 border border-orange-200 shadow-sm"
+      >
+        <div className="flex items-center gap-3">
+          <span className="text-3xl" aria-hidden="true">🎯</span>
+          <div className="flex-1 min-w-0">
+            <p className="font-extrabold text-gray-800 text-sm">Daily Challenge</p>
+            <p className="text-xs text-gray-500 font-medium">5 questions · Build your streak!</p>
+          </div>
+          {streak > 0 && (
+            <div className="flex items-center gap-1 bg-orange-100 rounded-full px-2.5 py-1 border border-orange-200">
+              <span className="text-sm" aria-hidden="true">🔥</span>
+              <span className="text-xs font-extrabold text-orange-600">{streak}</span>
+            </div>
+          )}
+          <span className="text-duo-orange font-extrabold text-sm shrink-0">Play →</span>
+        </div>
+      </Link>
+    );
+  }
+
+  // Priority 4: Continue learning
+  if (topicPriorities[0]?.dbTopicId) {
+    const tp = topicPriorities[0];
+    return (
+      <Link href={`/practice/${tp.dbTopicId}`}
+        className="block bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-4 border border-blue-200 shadow-sm"
+      >
+        <div className="flex items-center gap-3">
+          <span className="text-2xl" aria-hidden="true">{tp.emoji}</span>
+          <div className="flex-1 min-w-0">
+            <p className="font-extrabold text-gray-800 text-sm">Continue: {tp.topicName}</p>
+            <p className="text-xs text-gray-500 font-medium truncate">
+              {reframePlanReason(tp.reason)}
+            </p>
+          </div>
+          <span className="text-duo-blue font-extrabold text-sm shrink-0">Go →</span>
+        </div>
+      </Link>
+    );
+  }
+
+  // Priority 5: Fallback — welcome
+  return (
+    <Link href="/chapters"
+      className="block bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-4 border border-blue-200 shadow-sm"
+    >
+      <div className="flex items-center gap-3">
+        <div className="shrink-0">
+          <Sparky mood="happy" size={52} />
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="font-extrabold text-gray-800 text-sm">Welcome to MathSpark!</p>
+          <p className="text-xs text-gray-500 font-medium">Start your math journey today</p>
+        </div>
+        <span className="text-duo-blue font-extrabold text-sm shrink-0">Start →</span>
+      </div>
+    </Link>
   );
 });
 
@@ -100,7 +259,7 @@ const PlanItem = React.memo(function PlanItem({
         <p className={`text-sm font-bold truncate ${item.done ? 'line-through text-gray-500' : 'text-gray-800'}`}>
           {item.action}
         </p>
-        <p className="text-xs text-gray-500 font-medium truncate">{item.reason}</p>
+        <p className="text-xs text-gray-500 font-medium truncate">{reframePlanReason(item.reason)}</p>
       </div>
       <span className="text-[10px] font-extrabold text-gray-500 bg-gray-100 rounded-full px-2 py-0.5 shrink-0">
         {item.estimatedMins}min
@@ -129,7 +288,6 @@ const TopicBar = React.memo(function TopicBar({ entry }: { entry: TopicMasteryEn
   );
 });
 
-
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function HomePage() {
@@ -138,7 +296,7 @@ export default function HomePage() {
   const [loading,    setLoading]    = useState(true);
   const [fetchError, setFetchError] = useState(false);
   const [planDone, setPlanDone] = useState<Set<string>>(new Set());
-  const [nudgeDismissed, setNudgeDismissed] = useState(false);
+  const [heroDismissed, setHeroDismissed] = useState(false);
 
   useEffect(() => {
     const id = localStorage.getItem('mathspark_student_id');
@@ -148,10 +306,6 @@ export default function HomePage() {
     const todayKey = `mathspark_plan_done_${new Date().toDateString()}`;
     const savedDone = JSON.parse(localStorage.getItem(todayKey) ?? '[]') as string[];
     setPlanDone(new Set(savedDone));
-
-    // Nudge dismissal
-    const dismissedKey = `dismissed_nudge_${new Date().toDateString()}`;
-    setNudgeDismissed(localStorage.getItem(dismissedKey) === 'true');
 
     const CACHE_KEY = `mathspark_home_${id}`;
     const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
@@ -197,15 +351,9 @@ export default function HomePage() {
     });
   }, []);
 
-  function dismissNudge() {
-    const dismissedKey = `dismissed_nudge_${new Date().toDateString()}`;
-    localStorage.setItem(dismissedKey, 'true');
-    setNudgeDismissed(true);
-  }
-
-  // Today's plan with done state applied
+  // Today's plan with done state applied — cap at 3 items
   const planWithDone = useMemo(
-    () => (data?.dailyPlan ?? []).map((item) => ({ ...item, done: planDone.has(item.id) })),
+    () => (data?.dailyPlan ?? []).slice(0, 3).map((item) => ({ ...item, done: planDone.has(item.id) })),
     [data?.dailyPlan, planDone],
   );
   const planDoneCount = useMemo(
@@ -214,21 +362,73 @@ export default function HomePage() {
   );
   const allDone = planDoneCount >= planWithDone.length && planWithDone.length > 0;
 
-  // Top mastery entries with attempts (for chart)
-  const chartTopics = useMemo(
-    () => [...(data?.topicMastery ?? [])]
-      .filter((t) => t.attemptsCount > 0)
-      .sort((a, b) => b.mastery - a.mastery)
-      .slice(0, 5),
-    [data?.topicMastery],
-  );
+  // 3 most recently active topics for "Your Topics"
+  const displayTopics = useMemo(() => {
+    if (!data) return [];
+    const masteryMap = new Map(data.topicMastery.map(t => [t.topicId, t]));
+    const recentTopicEntries: TopicMasteryEntry[] = [];
 
-  const weakest2 = useMemo(
-    () => [...(data?.topicMastery ?? [])]
-      .filter((t) => t.attemptsCount > 0)
-      .slice(0, 2),
-    [data?.topicMastery],
-  );
+    // From recent activity order
+    for (const act of data.recentActivity) {
+      const entry = masteryMap.get(act.topicId);
+      if (entry && !recentTopicEntries.some(e => e.topicId === entry.topicId)) {
+        recentTopicEntries.push(entry);
+      }
+      if (recentTopicEntries.length >= 3) break;
+    }
+
+    // Pad with highest mastery if fewer than 3
+    if (recentTopicEntries.length < 3) {
+      const sorted = [...data.topicMastery]
+        .filter(t => t.attemptsCount > 0)
+        .sort((a, b) => b.mastery - a.mastery);
+      for (const entry of sorted) {
+        if (!recentTopicEntries.some(e => e.topicId === entry.topicId)) {
+          recentTopicEntries.push(entry);
+        }
+        if (recentTopicEntries.length >= 3) break;
+      }
+    }
+    return recentTopicEntries;
+  }, [data]);
+
+  // Quick Access tiles — contextual slots 3-4
+  const quickAccessTiles = useMemo(() => {
+    if (!data) return [];
+    const topPriorityUrl = data.topicPriorities[0]?.dbTopicId
+      ? `/practice/${data.topicPriorities[0].dbTopicId}`
+      : '/chapters';
+
+    // Read flashcard due count from localStorage
+    let flashcardSub = 'Review cards';
+    if (typeof window !== 'undefined') {
+      const due = localStorage.getItem('mathspark_cards_due');
+      if (due && parseInt(due, 10) > 0) flashcardSub = `${due} due`;
+    }
+
+    const fixed = [
+      { emoji: '🃏', label: 'Flashcards',     sub: flashcardSub, href: '/flashcards',    bg: 'bg-purple-50', accent: '#9B59B6' },
+      { emoji: '⚡', label: 'Quick Practice',  sub: '5 min',      href: topPriorityUrl,   bg: 'bg-blue-50',   accent: '#1CB0F6' },
+    ];
+
+    // Candidate pool for slots 3-4
+    const candidates: Array<{ emoji: string; label: string; sub: string; href: string; bg: string; accent: string }> = [];
+
+    if (data.examReadiness?.daysUntilExam != null && data.examReadiness.daysUntilExam <= 60) {
+      candidates.push({ emoji: '📝', label: 'Exam Papers', sub: 'Practice exams', href: '/practice/papers', bg: 'bg-red-50', accent: '#FF4B4B' });
+    }
+    if (data.topicsExploredCount < data.totalTopics / 2) {
+      candidates.push({ emoji: '🗺️', label: 'Concept Map', sub: 'Explore topics', href: '/learn/concept-map', bg: 'bg-violet-50', accent: '#9B59B6' });
+    }
+    candidates.push(
+      { emoji: '🎯', label: 'Skill Drills', sub: 'Level up', href: '/practice/skill-drill', bg: 'bg-yellow-50', accent: '#FF9600' },
+      { emoji: '💡', label: 'Sparky Explains', sub: 'Step-by-step', href: '/learn/examples', bg: 'bg-indigo-50', accent: '#6366F1' },
+      { emoji: '🧠', label: 'Strategy Bank', sub: 'Exam tips', href: '/learn/strategies', bg: 'bg-amber-50', accent: '#FF9600' },
+      { emoji: '🚨', label: 'Mistake Patterns', sub: 'Common traps', href: '/learn/mistakes', bg: 'bg-red-50', accent: '#FF4B4B' },
+    );
+
+    return [...fixed, ...candidates.slice(0, 2)];
+  }, [data]);
 
   if (!loading && (fetchError || !data)) {
     return (
@@ -252,21 +452,19 @@ export default function HomePage() {
           <div className="h-8 bg-white/20 rounded-full w-14 animate-pulse" />
         </div>
         <div className="max-w-lg mx-auto px-4 pt-5 space-y-4">
-          {/* Greeting */}
-          <div className="space-y-1.5 animate-pulse">
+          {/* Greeting + pills */}
+          <div className="space-y-2.5 animate-pulse">
             <div className="h-5 bg-gray-200 rounded w-48" />
             <div className="h-3.5 bg-gray-200 rounded w-32" />
-          </div>
-          {/* Readiness ring card */}
-          <div className="bg-white rounded-2xl p-4 border border-gray-100 flex items-center gap-4 animate-pulse">
-            <div className="w-[120px] h-[120px] rounded-full bg-gray-200 shrink-0" />
-            <div className="flex-1 space-y-2">
-              <div className="h-4 bg-gray-200 rounded w-28" />
-              <div className="h-3.5 bg-gray-200 rounded w-36" />
-              <div className="h-3.5 bg-gray-200 rounded w-24" />
+            <div className="flex gap-2">
+              <div className="h-8 bg-gray-200 rounded-full w-16" />
+              <div className="h-8 bg-gray-200 rounded-full w-20" />
+              <div className="h-8 bg-gray-200 rounded-full w-24" />
             </div>
           </div>
-          {/* Today's plan card */}
+          {/* Hero card */}
+          <div className="bg-white rounded-2xl p-4 border border-gray-100 h-20 animate-pulse" />
+          {/* Plan card */}
           <div className="bg-white rounded-2xl p-4 border border-gray-100 animate-pulse">
             <div className="h-3.5 bg-gray-200 rounded w-24 mb-4" />
             {[0, 1, 2].map((i) => (
@@ -281,16 +479,16 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          {/* Quick actions */}
-          <div className="grid grid-cols-3 gap-3 animate-pulse">
-            {[0, 1, 2].map((i) => (
+          {/* 2×2 grid */}
+          <div className="grid grid-cols-2 gap-2 animate-pulse">
+            {[0, 1, 2, 3].map((i) => (
               <div key={i} className="bg-white rounded-2xl p-3 h-20 border border-gray-100" />
             ))}
           </div>
-          {/* Strengths & gaps card */}
+          {/* Topics card */}
           <div className="bg-white rounded-2xl p-4 border border-gray-100 animate-pulse">
             <div className="h-3.5 bg-gray-200 rounded w-20 mb-4" />
-            {[0, 1, 2, 3].map((i) => (
+            {[0, 1, 2].map((i) => (
               <div key={i} className="flex items-center gap-3 py-1.5">
                 <div className="w-6 h-6 rounded bg-gray-200 shrink-0" />
                 <div className="w-28 h-3 bg-gray-200 rounded shrink-0" />
@@ -304,7 +502,7 @@ export default function HomePage() {
     );
   }
 
-  const { student, streak, todayCorrect, topicMastery, examReadiness, topicPriorities, dailyPlan, nudges, recentActivity } = data;
+  const { student, streak, todayCorrect, topicPriorities, recentActivity } = data;
 
   const gradeColors: Record<number, string> = {
     2: '#58CC02', 3: '#58CC02', 4: '#1CB0F6',
@@ -315,14 +513,6 @@ export default function HomePage() {
 
   const hour = new Date().getHours();
   const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
-
-  const activeNudge = nudges[0];
-  const topPriorityUrl = topicPriorities[0]?.dbTopicId
-    ? `/practice/${topicPriorities[0].dbTopicId}`
-    : '/chapters';
-
-  const readinessScore = examReadiness?.score ?? 0;
-  const readinessTrend = examReadiness?.trend ?? 'stable';
 
   return (
     <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
@@ -351,7 +541,7 @@ export default function HomePage() {
 
       <div className="max-w-lg mx-auto px-4 pt-5 space-y-4">
 
-        {/* ── GREETING + TRIAL BANNER ────────────────────────────────── */}
+        {/* ── § 1: GREETING + STATS BAR ────────────────────────────────── */}
         <div>
           <h1 className="text-xl font-extrabold text-gray-800">
             {greeting}, {student.name}! <span aria-hidden="true">🌟</span>
@@ -359,8 +549,18 @@ export default function HomePage() {
           <p className="text-gray-500 text-sm font-medium mt-0.5">
             {todayCorrect > 0 ? `${todayCorrect} correct today · ` : ''}Ready to practice?
           </p>
+          <div className="mt-2.5">
+            <StatsBar
+              streak={streak}
+              todayXP={data.todayXP}
+              leagueName={data.leagueName}
+              leagueTier={data.leagueTier}
+              leagueRank={data.leagueRank}
+            />
+          </div>
         </div>
 
+        {/* ── TRIAL BANNER (if active) ─────────────────────────────────── */}
         {student.trialActive && student.trialDaysLeft !== null && (
           <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-2.5 flex items-center justify-between">
             <div>
@@ -373,76 +573,15 @@ export default function HomePage() {
           </div>
         )}
 
-        {/* ── CONTINUE LEARNING CTA ───────────────────────────────── */}
-        {topicPriorities.length > 0 && topicPriorities[0].dbTopicId && (
-          <Link
-            href={`/practice/${topicPriorities[0].dbTopicId}`}
-            className="block bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-4 border border-blue-200 shadow-sm hover:shadow-md transition-shadow"
-          >
-            <div className="flex items-center gap-3">
-              <span className="text-2xl" aria-hidden="true">{topicPriorities[0].emoji}</span>
-              <div className="flex-1 min-w-0">
-                <p className="font-extrabold text-gray-800 text-sm">Continue Learning</p>
-                <p className="text-xs text-gray-500 font-medium truncate">
-                  {topicPriorities[0].topicName}
-                </p>
-              </div>
-              <span className="text-duo-blue font-extrabold text-sm shrink-0">Go →</span>
-            </div>
-          </Link>
-        )}
+        {/* ── § 2: HERO CARD (dynamic) ─────────────────────────────────── */}
+        <HeroCard
+          streak={streak}
+          recentActivity={recentActivity}
+          topicPriorities={topicPriorities}
+          onDismissMilestone={() => setHeroDismissed(!heroDismissed)}
+        />
 
-        {/* ── EXAM READINESS RING ────────────────────────────────────── */}
-        {(() => {
-          const hasAttempts = topicMastery.some(t => t.attemptsCount > 0);
-          if (!hasAttempts) {
-            return (
-              <Link href="/chapters">
-                <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center gap-4 cursor-pointer hover:shadow-md transition-shadow">
-                  {/* Empty state ring — gray with ? */}
-                  <svg width="120" height="120" viewBox="0 0 120 120" className="shrink-0">
-                    <circle cx="60" cy="60" r="50" stroke="#e5e7eb" strokeWidth="10" fill="none" />
-                    <text x="60" y="56" textAnchor="middle" fontSize="22" fontWeight="800" fill="#d1d5db">?</text>
-                    <text x="60" y="72" textAnchor="middle" fontSize="9" fill="#9ca3af">Not started</text>
-                  </svg>
-                  <div className="flex-1 space-y-1.5">
-                    <p className="font-extrabold text-gray-800 text-base leading-tight">Exam Readiness</p>
-                    <p className="text-sm font-medium text-gray-500">Answer questions to unlock your readiness score!</p>
-                    <span className="inline-block text-xs font-extrabold text-white bg-duo-green rounded-full px-3 py-1.5">
-                      Start Practicing →
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            );
-          }
-          return (
-            <Link href="/chapters">
-              <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center gap-4 cursor-pointer hover:shadow-md transition-shadow">
-                <ReadinessRing score={readinessScore} trend={readinessTrend} />
-                <div className="flex-1 space-y-1.5">
-                  <p className="font-extrabold text-gray-800 text-base leading-tight">Exam Readiness</p>
-                  {examReadiness?.predictedMin != null ? (
-                    <p className="text-sm font-semibold text-gray-600">
-                      📊 Predicted {examReadiness.predictedMin}–{examReadiness.predictedMax} / 40
-                    </p>
-                  ) : null}
-                  {examReadiness?.daysUntilExam != null ? (
-                    <p className="text-sm font-semibold text-gray-500">
-                      📅 {examReadiness.daysUntilExam} days to exam
-                    </p>
-                  ) : (
-                    <Link href="/profile" className="text-sm font-semibold text-duo-blue hover:underline">
-                      Set exam date →
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </Link>
-          );
-        })()}
-
-        {/* ── TODAY'S PLAN ───────────────────────────────────────────── */}
+        {/* ── § 3: TODAY'S PLAN (max 3) ────────────────────────────────── */}
         <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
           <div className="flex items-center justify-between mb-1">
             <h2 className="font-extrabold text-gray-800 text-sm">Today&apos;s Plan</h2>
@@ -474,36 +613,9 @@ export default function HomePage() {
           )}
         </div>
 
-        {/* ── DAILY CHALLENGE CARD ───────────────────────────────────── */}
-        <Link href="/practice/daily"
-          className="block bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-4 border border-orange-200 shadow-sm hover:shadow-md transition-shadow"
-        >
-          <div className="flex items-center gap-3">
-            <span className="text-3xl" aria-hidden="true">🎯</span>
-            <div className="flex-1 min-w-0">
-              <p className="font-extrabold text-gray-800 text-sm">Daily Challenge</p>
-              <p className="text-xs text-gray-500 font-medium">5 questions · Build your streak!</p>
-            </div>
-            {streak > 0 && (
-              <div className="flex items-center gap-1 bg-orange-100 rounded-full px-2.5 py-1 border border-orange-200">
-                <span className="text-sm" aria-hidden="true">🔥</span>
-                <span className="text-xs font-extrabold text-orange-600">{streak}</span>
-              </div>
-            )}
-            <span className="text-duo-orange font-extrabold text-sm shrink-0">Play →</span>
-          </div>
-        </Link>
-
-        {/* ── QUICK ACTIONS ──────────────────────────────────────────── */}
-        <div className="grid grid-cols-3 gap-2">
-          {[
-            { emoji: '⚡', label: 'Quick Practice', sub: '5 min',      href: topPriorityUrl,           bg: 'bg-blue-50',   accent: '#1CB0F6' },
-            { emoji: '📝', label: 'Exam Papers',    sub: '240 papers', href: '/practice/papers',       bg: 'bg-red-50',    accent: '#FF4B4B' },
-            { emoji: '🃏', label: 'Flashcards',     sub: '1,086 cards', href: '/flashcards',            bg: 'bg-purple-50', accent: '#9B59B6' },
-            { emoji: '🎯', label: 'Skill Drills',   sub: '16 topics',  href: '/practice/skill-drill',  bg: 'bg-yellow-50', accent: '#FF9600' },
-            { emoji: '💡', label: 'Sparky Explains', sub: '212 solved', href: '/learn/examples',       bg: 'bg-indigo-50', accent: '#6366F1' },
-            { emoji: '🔮', label: 'IPM Predictor',  sub: '10+ years',  href: '/exam-prep/predictor',   bg: 'bg-green-50',  accent: '#58CC02' },
-          ].map((action) => (
+        {/* ── § 4: QUICK ACCESS (2×2 grid) ─────────────────────────────── */}
+        <div className="grid grid-cols-2 gap-2">
+          {quickAccessTiles.map((action) => (
             <Link key={action.label} href={action.href}
               className={`${action.bg} rounded-2xl p-3 flex flex-col items-center gap-1 border border-white shadow-sm active:scale-95 transition-transform`}
             >
@@ -514,84 +626,14 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* ── MY PROGRESS ──────────────────────────────────────────────── */}
-        <Link href="/progress"
-          className="block bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 border border-green-200 shadow-sm hover:shadow-md transition-shadow"
-        >
-          <div className="flex items-center gap-3">
-            <span className="text-2xl" aria-hidden="true">📊</span>
-            <div className="flex-1">
-              <p className="font-extrabold text-gray-800 text-sm">My Progress</p>
-              <p className="text-xs text-gray-500 font-medium">Dashboard, strengths, mistakes & parent report</p>
-            </div>
-            <span className="text-duo-green font-extrabold text-xs shrink-0">View →</span>
-          </div>
-        </Link>
-
-        {/* ── LEARN MORE ───────────────────────────────────────────────── */}
-        <div className="grid grid-cols-2 gap-2">
-          <Link href="/learn/strategies"
-            className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-3 border border-amber-200 shadow-sm hover:shadow-md transition-shadow"
-          >
-            <span className="text-xl" aria-hidden="true">🧠</span>
-            <p className="font-extrabold text-gray-800 text-xs mt-1.5 leading-tight">Strategy Bank</p>
-            <p className="text-[10px] text-gray-500 font-medium">35 exam tips</p>
-          </Link>
-          <Link href="/learn/stories"
-            className="bg-gradient-to-br from-cyan-50 to-sky-50 rounded-2xl p-3 border border-cyan-200 shadow-sm hover:shadow-md transition-shadow"
-          >
-            <span className="text-xl" aria-hidden="true">📖</span>
-            <p className="font-extrabold text-gray-800 text-xs mt-1.5 leading-tight">Math Stories</p>
-            <p className="text-[10px] text-gray-500 font-medium">30 real-world stories</p>
-          </Link>
-          <Link href="/learn/concept-map"
-            className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl p-3 border border-violet-200 shadow-sm hover:shadow-md transition-shadow"
-          >
-            <span className="text-xl" aria-hidden="true">🗺️</span>
-            <p className="font-extrabold text-gray-800 text-xs mt-1.5 leading-tight">Concept Map</p>
-            <p className="text-[10px] text-gray-500 font-medium">88 concepts</p>
-          </Link>
-          <Link href="/learn/mistakes"
-            className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-3 border border-red-200 shadow-sm hover:shadow-md transition-shadow"
-          >
-            <span className="text-xl" aria-hidden="true">🚨</span>
-            <p className="font-extrabold text-gray-800 text-xs mt-1.5 leading-tight">Mistake Patterns</p>
-            <p className="text-[10px] text-gray-500 font-medium">50 common traps</p>
-          </Link>
-        </div>
-
-        {/* ── SPARKY'S NUDGE ─────────────────────────────────────────── */}
-        {activeNudge && !nudgeDismissed && (
-          <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-start gap-3">
-            <div className="shrink-0">
-              <Sparky mood={activeNudge.sparkyEmotion} size={44} />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-semibold text-gray-700 leading-snug">{activeNudge.message}</p>
-              <Link href={activeNudge.actionUrl}
-                className="inline-block mt-2 text-xs font-extrabold text-duo-blue bg-blue-50 rounded-full px-3 py-1.5"
-              >
-                {activeNudge.actionLabel} →
-              </Link>
-            </div>
-            <button
-              onClick={dismissNudge}
-              style={{ minHeight: 0 }}
-              className="text-gray-300 hover:text-gray-500 text-lg leading-none px-1 shrink-0"
-            >
-              ×
-            </button>
-          </div>
-        )}
-
-        {/* ── STRENGTHS & GAPS ───────────────────────────────────────── */}
+        {/* ── § 5: YOUR TOPICS (3 bars + summary) ──────────────────────── */}
         <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
           <div className="flex items-center justify-between mb-3">
             <h2 className="font-extrabold text-gray-800 text-sm">Your Topics</h2>
             <Link href="/chapters" className="text-xs font-extrabold text-duo-blue">See all →</Link>
           </div>
 
-          {chartTopics.length === 0 ? (
+          {displayTopics.length === 0 ? (
             <div className="py-3 text-center">
               <p className="text-gray-500 text-sm font-medium">No practice yet. Start learning!</p>
               <Link href="/chapters" className="text-duo-blue font-extrabold text-sm mt-1 block">
@@ -600,19 +642,18 @@ export default function HomePage() {
             </div>
           ) : (
             <>
-              {chartTopics.map((entry) => (
+              {displayTopics.map((entry) => (
                 <TopicBar key={entry.topicId} entry={entry} />
               ))}
-              {weakest2.length > 0 && (
-                <p className="text-xs font-semibold text-duo-red mt-2">
-                  Focus: {weakest2.map((t) => t.topicName).join(' & ')}
-                </p>
-              )}
+              <p className="text-xs font-medium text-gray-500 mt-2">
+                {data.topicsExploredCount} of {data.totalTopics} topics explored
+                {data.topicsMasteredCount > 0 ? ` · ${data.topicsMasteredCount} mastered` : ''}
+              </p>
             </>
           )}
         </div>
 
-        {/* ── RECENT ACTIVITY ────────────────────────────────────────── */}
+        {/* ── § 6: RECENT ACTIVITY (3 items) ───────────────────────────── */}
         {recentActivity.length > 0 && (
           <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
             <div className="flex items-center justify-between mb-3">
@@ -620,7 +661,7 @@ export default function HomePage() {
               <Link href="/chapters" className="text-xs font-extrabold text-duo-blue">View all →</Link>
             </div>
             <div className="space-y-2.5">
-              {recentActivity.map((act, i) => (
+              {recentActivity.slice(0, 3).map((act, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center text-sm shrink-0" aria-hidden="true">
                     📚
@@ -637,29 +678,6 @@ export default function HomePage() {
                     <p className="text-[10px] text-gray-300 font-medium">{act.timeAgo}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* ── TOP RECOMMENDATIONS ────────────────────────────────────── */}
-        {topicPriorities.slice(0, 2).length > 0 && (
-          <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
-            <h2 className="font-extrabold text-gray-800 text-sm mb-3"><span aria-hidden="true">🎯 </span>Recommended for You</h2>
-            <div className="space-y-2">
-              {topicPriorities.slice(0, 2).map((tp) => (
-                <Link
-                  key={tp.topicId}
-                  href={`/practice/${tp.dbTopicId}`}
-                  className="flex items-center gap-3 bg-[#1a2d35] rounded-xl px-3 py-3 border-l-4 border-duo-green hover:bg-[#223d4a] transition-colors"
-                >
-                  <span className="text-xl shrink-0" aria-hidden="true">{tp.emoji}</span>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-white font-extrabold text-sm truncate">{tp.topicName}</p>
-                    <p className="text-white/70 text-xs font-medium truncate">{tp.reason}</p>
-                  </div>
-                  <span className="text-duo-green text-xs font-extrabold shrink-0">Practice →</span>
-                </Link>
               ))}
             </div>
           </div>

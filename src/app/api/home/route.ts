@@ -5,6 +5,8 @@ import { recomputeStudentAnalytics } from '@/lib/brain/recompute';
 import { getTopicsCached } from '@/lib/topicCache';
 import { computeStreak } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { getWeekBounds, TIER_NAMES } from '@/lib/leaderboard';
+import { getTopicsForGrade } from '@/data/topicTree';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 30;
@@ -16,8 +18,8 @@ export async function GET() {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  // Parallelize all 3 DB queries simultaneously
-  const [student, attempts, allTopics] = await Promise.all([
+  // Parallelize all 5 DB queries simultaneously
+  const [student, attempts, allTopics, currentMembership, todayUsage] = await Promise.all([
     prisma.student.findUnique({
       where: { id: studentId },
       select: {
@@ -30,6 +32,8 @@ export async function GET() {
         dailyGoalMins: true,
         trialExpiresAt: true,
         createdAt: true,
+        currentLeagueTier: true,
+        totalLifetimeXP: true,
         subscription: { select: { tier: true, name: true } },
         analytics: true,
       },
@@ -41,6 +45,33 @@ export async function GET() {
       take: 100,
     }),
     getTopicsCached(),
+    // Query 4 — Current week's league membership (for weeklyXP + rank)
+    (async () => {
+      const { weekStart } = getWeekBounds();
+      return prisma.leagueMembership.findFirst({
+        where: { studentId, league: { weekStart } },
+        select: {
+          weeklyXP: true,
+          league: {
+            select: {
+              members: {
+                select: { studentId: true, weeklyXP: true },
+                orderBy: { weeklyXP: 'desc' as const },
+              },
+            },
+          },
+        },
+      });
+    })(),
+    // Query 5 — Today's XP (from UsageLog)
+    (async () => {
+      const today = new Date();
+      today.setUTCHours(0, 0, 0, 0);
+      return prisma.usageLog.findUnique({
+        where: { studentId_date: { studentId, date: today } },
+        select: { xpEarned: true },
+      });
+    })(),
   ]);
 
   if (!student) {
@@ -100,6 +131,18 @@ export async function GET() {
       };
     });
 
+  // League + XP derived fields
+  const leagueTier = student.currentLeagueTier ?? 1;
+  const leagueName = TIER_NAMES[leagueTier] ?? 'Bronze';
+  const weeklyXP = currentMembership?.weeklyXP ?? 0;
+  const todayXP = todayUsage?.xpEarned ?? 0;
+
+  let leagueRank: number | null = null;
+  if (currentMembership?.league?.members) {
+    const idx = currentMembership.league.members.findIndex(m => m.studentId === studentId);
+    leagueRank = idx >= 0 ? idx + 1 : null;
+  }
+
   const analytics = student.analytics;
   const subscriptionTier = student.subscription?.tier ?? 0;
   const subscriptionName = student.subscription?.name ?? null;
@@ -121,6 +164,12 @@ export async function GET() {
   const parsedPriorities = safeJson(analytics?.topicPriorities, [] as unknown[]);
   const parsedPlan       = safeJson(analytics?.dailyPlan,       [] as unknown[]);
   const parsedNudges     = safeJson(analytics?.nudges,          [] as unknown[]);
+
+  // Topic summary counts (from already-parsed analytics, no extra DB query)
+  const masteryArray = parsedMastery as Array<{ status?: string; attemptsCount?: number }>;
+  const topicsMasteredCount = masteryArray.filter(t => t.status === 'mastered').length;
+  const topicsExploredCount = masteryArray.filter(t => (t.attemptsCount ?? 0) > 0).length;
+  const totalTopics = getTopicsForGrade(student.grade).length;
 
   return NextResponse.json(
     {
@@ -146,6 +195,14 @@ export async function GET() {
       dailyPlan:       parsedPlan,
       nudges:          parsedNudges,
       recentActivity,
+      leagueTier,
+      leagueName,
+      leagueRank,
+      weeklyXP,
+      todayXP,
+      topicsMasteredCount,
+      topicsExploredCount,
+      totalTopics,
     },
     {
       headers: {
