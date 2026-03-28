@@ -46,7 +46,7 @@ export default function StudentLoginPage() {
     // Keep localStorage for UI display only
     localStorage.setItem('mathspark_student_id',   child.id);
     localStorage.setItem('mathspark_student_name', child.name);
-    router.push('/chapters');
+    router.push('/home');
   }
 
   return (

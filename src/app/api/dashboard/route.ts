@@ -96,7 +96,8 @@ export async function GET() {
     const topicMap = new Map(allTopics.map((t) => [t.id, t.name]));
 
     const progressMap = new Map(progress.map((p) => [p.topicId, p]));
-    const topics = allTopics
+    const gradeTopics = allTopics.filter((t) => t.grade === student.grade);
+    const topics = gradeTopics
       .sort((a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id))
       .map((t) => {
         const p = progressMap.get(t.id);

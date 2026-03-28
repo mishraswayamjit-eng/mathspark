@@ -771,7 +771,7 @@ export default function PracticePage() {
             This lesson doesn&apos;t have questions yet. Check back soon!
           </p>
         </div>
-        <DuoButton variant="white" fullWidth onClick={() => router.push('/chapters')}>
+        <DuoButton variant="white" fullWidth onClick={() => router.push('/practice')}>
           Back to Chapters →
         </DuoButton>
       </div>
@@ -815,7 +815,7 @@ export default function PracticePage() {
       <NoHeartsScreen
         results={results}
         onRetry={resetLesson}
-        onHome={() => router.push('/chapters')}
+        onHome={() => router.push('/practice')}
       />
     );
   }
@@ -925,7 +925,7 @@ export default function PracticePage() {
               Upgrade Plan 🚀
             </DuoButton>
           )}
-          <DuoButton variant="white" fullWidth onClick={() => router.push('/chapters')}>
+          <DuoButton variant="white" fullWidth onClick={() => router.push('/practice')}>
             Back to chapters
           </DuoButton>
         </div>
@@ -966,7 +966,7 @@ export default function PracticePage() {
           <DuoButton variant="blue" fullWidth onClick={() => router.push('/pricing')}>
             Upgrade Now 🚀
           </DuoButton>
-          <DuoButton variant="white" fullWidth onClick={() => router.push('/chapters')}>
+          <DuoButton variant="white" fullWidth onClick={() => router.push('/practice')}>
             {wasExhaustedAtBoot ? 'Back to chapters' : 'Come back tomorrow for 1 free question'}
           </DuoButton>
         </div>
@@ -1003,7 +1003,7 @@ export default function PracticePage() {
       {/* ── Dark header ── */}
       <div className="bg-duo-dark px-4 py-3 flex items-center gap-3 sticky top-0 z-30 flex-shrink-0">
         <button
-          onClick={() => router.push('/chapters')}
+          onClick={() => router.push('/practice')}
           className="text-white/70 hover:text-white font-bold text-xl min-h-[44px] min-w-[44px] flex items-center justify-center flex-shrink-0"
           aria-label="Back"
         >
