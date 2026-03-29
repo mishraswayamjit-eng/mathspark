@@ -1,0 +1,1180 @@
+{
+  "id": "time-calendar",
+  "topic": "Time & Calendar",
+  "emoji": "\ud83d\udd50",
+  "color": "#FBBF24",
+  "gradeRange": [2, 5],
+  "description": "Clocks, calendars, and speed-distance-time",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Reading Clocks",
+      "emoji": "\ud83d\udfe2",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "Hours and minutes",
+      "lessons": [
+        {
+          "id": "tc-l1-les1",
+          "title": "The Hour Hand & Minute Hand",
+          "intro": "A clock has two main hands. The short, thick hand is the hour hand \u2014 it moves slowly and tells us the hour. The long, thin hand is the minute hand \u2014 it moves faster and tells us the minutes past the hour.",
+          "visual": "clock-hands",
+          "steps": [
+            {
+              "text": "Find the short hand on the clock. This is the hour hand.",
+              "notation": "Short hand = Hour hand"
+            },
+            {
+              "text": "Find the long hand on the clock. This is the minute hand.",
+              "notation": "Long hand = Minute hand"
+            },
+            {
+              "text": "The hour hand takes 12 hours to go all the way around. The minute hand takes just 1 hour (60 minutes) to go around once.",
+              "notation": "1 full round of minute hand = 60 minutes = 1 hour"
+            },
+            {
+              "text": "The numbers 1 to 12 on the clock face tell the hours. Each small mark between numbers counts as 1 minute, and there are 5 small marks between each number.",
+              "notation": "Each number gap = 5 minutes",
+              "tip": "Count by 5s around the clock: 5, 10, 15, 20 ... 60!"
+            }
+          ],
+          "explanation": [
+            "The hour hand is shorter and thicker so you can tell it apart from the minute hand.",
+            "When the minute hand points to 12, we read only the hour.",
+            "There are 60 minutes in 1 hour and 12 hours shown on a clock face."
+          ],
+          "rule": "Short hand = Hour, Long hand = Minutes",
+          "tip": "Remember: the SHORT hand tells the HOUR because hours are short numbers (1\u201312)."
+        },
+        {
+          "id": "tc-l1-les2",
+          "title": "Reading O'Clock Times",
+          "intro": "When the minute hand points straight up to 12, we say it is \"o\u2019clock\". The hour hand then points exactly at a number, and that number is the time!",
+          "visual": "clock-oclock",
+          "steps": [
+            {
+              "text": "Look at the minute hand. Is it pointing to 12? If yes, the time is something o\u2019clock.",
+              "notation": "Minute hand at 12 \u2192 o\u2019clock"
+            },
+            {
+              "text": "Now look at the hour hand. Whatever number it points to is the hour.",
+              "notation": "Hour hand at 3, minute hand at 12 \u2192 3 o\u2019clock"
+            },
+            {
+              "text": "We write o\u2019clock times as the hour followed by :00. For example, 7 o\u2019clock is written 7:00.",
+              "notation": "7 o\u2019clock = 7:00"
+            }
+          ],
+          "explanation": [
+            "O\u2019clock means the minute hand is at 12 and zero extra minutes have passed.",
+            "School assembly in many Indian schools starts at 8 o\u2019clock (8:00).",
+            "When we write 7:00, the :00 shows zero minutes past the hour."
+          ],
+          "rule": "Minute hand on 12 = o\u2019clock time",
+          "tip": "If someone says \"Meet me at 5 o\u2019clock,\" picture the minute hand at 12 and hour hand at 5."
+        },
+        {
+          "id": "tc-l1-les3",
+          "title": "Half Past & Quarter Past",
+          "intro": "The clock face is a full circle. When the minute hand moves halfway around (to 6), 30 minutes have passed \u2014 that\u2019s \"half past\". When it moves a quarter of the way (to 3), 15 minutes have passed \u2014 that\u2019s \"quarter past\".",
+          "visual": "clock-half-quarter",
+          "steps": [
+            {
+              "text": "When the minute hand points to 6 (straight down), exactly 30 minutes have passed. We say \"half past\" the hour.",
+              "notation": "Minute hand at 6 \u2192 :30 \u2192 half past",
+              "tip": "Half of 60 minutes = 30 minutes."
+            },
+            {
+              "text": "When the minute hand points to 3, exactly 15 minutes have passed. We say \"quarter past\" the hour.",
+              "notation": "Minute hand at 3 \u2192 :15 \u2192 quarter past",
+              "tip": "A quarter of 60 minutes = 15 minutes."
+            },
+            {
+              "text": "When the minute hand points to 9, exactly 45 minutes have passed. We say \"quarter to\" the next hour.",
+              "notation": "Minute hand at 9 \u2192 :45 \u2192 quarter to (next hour)"
+            },
+            {
+              "text": "Example: if the hour hand is between 4 and 5 and the minute hand is on 6, the time is half past 4, or 4:30.",
+              "notation": "Hour hand between 4\u20135, minute hand on 6 = 4:30"
+            }
+          ],
+          "explanation": [
+            "Half past 8 means 8:30 \u2014 this is when the lunch break starts in many schools!",
+            "Quarter past 10 means 10:15.",
+            "Quarter to 5 means 4:45 \u2014 15 minutes before 5 o\u2019clock."
+          ],
+          "rule": "Half past = :30, Quarter past = :15, Quarter to = :45",
+          "tip": "Think of a pizza cut into 4 slices \u2014 each slice is a quarter (15 min)."
+        },
+        {
+          "id": "tc-l1-les4",
+          "title": "Reading Any Time",
+          "intro": "Now let\u2019s learn to read the exact minutes, not just o\u2019clock, half past, or quarter past. We count by 5s using the numbers on the clock, then add the extra small marks.",
+          "visual": "clock-any-time",
+          "steps": [
+            {
+              "text": "Start at 12 and count by 5s as you move clockwise to where the minute hand points: 12\u21920, 1\u21925, 2\u219210, 3\u219215, 4\u219220, 5\u219225, 6\u219230, 7\u219235, 8\u219240, 9\u219245, 10\u219250, 11\u219255.",
+              "notation": "Each number = 5 minutes"
+            },
+            {
+              "text": "If the minute hand is between two numbers, count from the lower number. Each small mark = 1 minute.",
+              "notation": "E.g., minute hand 2 marks past 4 \u2192 20 + 2 = 22 minutes"
+            },
+            {
+              "text": "The hour hand will be between two numbers when it\u2019s not exactly o\u2019clock. Read the smaller number as the current hour.",
+              "notation": "Hour hand between 9 and 10 \u2192 hour is 9"
+            },
+            {
+              "text": "Put it together: hour hand between 9 and 10, minute hand on the 4th mark after 2 \u2192 9:14.",
+              "notation": "9:14",
+              "tip": "Always write minutes with two digits: 9:04, not 9:4."
+            }
+          ],
+          "explanation": [
+            "Practice reading the kitchen clock at home every morning.",
+            "If the minute hand is on 7, that means 35 minutes (7 \u00d7 5 = 35).",
+            "Railway station clocks in India always show the exact time for train arrivals."
+          ],
+          "rule": "Minutes = (number the minute hand points to) \u00d7 5 + extra small marks",
+          "tip": "Multiplication tables of 5 help you read clocks fast!"
+        },
+        {
+          "id": "tc-l1-les5",
+          "title": "AM and PM",
+          "intro": "There are 24 hours in a day, but a clock only shows 12 hours. So the clock goes around twice each day! We use AM for the first half (midnight to noon) and PM for the second half (noon to midnight).",
+          "visual": "am-pm-timeline",
+          "steps": [
+            {
+              "text": "AM stands for \"Ante Meridiem\" (before midday). It covers 12:00 midnight to 11:59 in the morning.",
+              "notation": "AM: 12:00 midnight \u2192 11:59 morning"
+            },
+            {
+              "text": "PM stands for \"Post Meridiem\" (after midday). It covers 12:00 noon to 11:59 at night.",
+              "notation": "PM: 12:00 noon \u2192 11:59 night"
+            },
+            {
+              "text": "Example: school starts at 8:00 AM (morning). Cricket practice ends at 5:00 PM (evening).",
+              "notation": "8:00 AM = morning, 5:00 PM = evening"
+            },
+            {
+              "text": "Special cases: 12:00 noon is 12:00 PM, and 12:00 midnight is 12:00 AM.",
+              "notation": "12:00 PM = noon, 12:00 AM = midnight",
+              "tip": "Noon has PM because the sun has already crossed the meridian."
+            }
+          ],
+          "explanation": [
+            "Indian Railways uses the 24-hour format instead of AM/PM (we\u2019ll learn that later!).",
+            "Most Indian schools run from about 8:00 AM to 2:00 PM.",
+            "Doordarshan evening news comes at 9:00 PM."
+          ],
+          "rule": "AM = midnight to noon, PM = noon to midnight",
+          "tip": "Think: AM = After Midnight, PM = Past Midday (not the real meaning, but a handy trick!)."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "tc-l1-q1",
+          "question": "Which hand on the clock is the hour hand?",
+          "answer": "The short hand",
+          "hint": "The hour hand is shorter and thicker than the minute hand.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l1-q2",
+          "question": "The minute hand points to 12 and the hour hand points to 9. What time is it?",
+          "answer": "9:00",
+          "hint": "When the minute hand is on 12, it is exactly o\u2019clock.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l1-q3",
+          "question": "What time is \"half past 3\"?",
+          "answer": "3:30",
+          "hint": "Half past means 30 minutes past the hour.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l1-q4",
+          "question": "The minute hand points to 5 on the clock. How many minutes past the hour is it?",
+          "answer": "25 minutes",
+          "hint": "Each number on the clock = 5 minutes. Count: 5 \u00d7 5 = ?",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "tc-l1-q5",
+          "question": "What does \"quarter to 7\" mean in digital time?",
+          "answer": "6:45",
+          "hint": "Quarter to means 15 minutes BEFORE the hour. 60 \u2212 15 = 45 minutes, and the hour is one less.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "tc-l1-q6",
+          "question": "Is 7:00 in the morning written as 7:00 AM or 7:00 PM?",
+          "answer": "7:00 AM",
+          "hint": "AM is for times from midnight to noon (morning hours).",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l1-q7",
+          "question": "Aarav\u2019s school starts at quarter past 8 in the morning. Write this time with AM or PM.",
+          "answer": "8:15 AM",
+          "hint": "Quarter past = 15 minutes past the hour. Morning = AM.",
+          "story": "Aarav wakes up early every day for school assembly.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "tc-l1-q8",
+          "question": "How many times does the hour hand go around the clock in one full day (24 hours)?",
+          "answer": "2",
+          "hint": "The clock shows 12 hours. A day has 24 hours. 24 \u00f7 12 = ?",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Time Calculations",
+      "emoji": "\ud83d\udfe2",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Adding and subtracting time",
+      "lessons": [
+        {
+          "id": "tc-l2-les1",
+          "title": "Adding Minutes",
+          "intro": "Sometimes we need to find out what time it will be after some minutes pass. We add the minutes to the current time. If the total minutes go past 60, we carry over to the next hour.",
+          "visual": "clock-add-minutes",
+          "steps": [
+            {
+              "text": "Start with the current time. Add the extra minutes to the minutes part.",
+              "notation": "3:20 + 25 min = 3:45"
+            },
+            {
+              "text": "If the minutes total 60 or more, subtract 60 from the minutes and add 1 to the hour.",
+              "notation": "3:45 + 30 min = 3:75 \u2192 4:15 (75 \u2212 60 = 15, hour 3+1 = 4)"
+            },
+            {
+              "text": "If the minutes total 120 or more, subtract 120 and add 2 hours, and so on.",
+              "notation": "2:50 + 85 min = 2:135 \u2192 4:15 (135 \u2212 120 = 15, hour 2+2 = 4)"
+            },
+            {
+              "text": "Always check: minutes should be between 00 and 59 in your final answer.",
+              "notation": "Final answer: hours:minutes (minutes < 60)",
+              "tip": "You can also convert everything to minutes, add, then convert back."
+            }
+          ],
+          "explanation": [
+            "Adding minutes is like counting forward on the clock.",
+            "Priya\u2019s bus takes 40 minutes. If she boards at 7:30 AM, she reaches school at 8:10 AM.",
+            "Remember: 60 minutes = 1 hour, so always check if your minutes exceed 60."
+          ],
+          "rule": "If total minutes \u2265 60, subtract 60 and add 1 hour",
+          "tip": "Break the addition into two steps: first reach the next hour, then add the remaining minutes."
+        },
+        {
+          "id": "tc-l2-les2",
+          "title": "Subtracting Time",
+          "intro": "To find what time it was a certain number of minutes ago, we subtract. If there aren\u2019t enough minutes to subtract, we borrow 60 minutes from the hour.",
+          "visual": "clock-subtract-time",
+          "steps": [
+            {
+              "text": "Start with the current time. Subtract the minutes from the minutes part.",
+              "notation": "5:40 \u2212 25 min = 5:15"
+            },
+            {
+              "text": "If you can\u2019t subtract (minutes part is too small), borrow 1 hour: reduce the hour by 1 and add 60 to the minutes.",
+              "notation": "5:10 \u2212 25 min \u2192 borrow: 4:70 \u2212 25 = 4:45"
+            },
+            {
+              "text": "For subtracting hours and minutes together, subtract hours first, then minutes.",
+              "notation": "8:30 \u2212 2 hr 45 min: First 8:30 \u2212 2 hr = 6:30, then 6:30 \u2212 45 min = 5:45"
+            }
+          ],
+          "explanation": [
+            "Subtracting time is like counting backward on the clock.",
+            "If a train arrives at 3:15 PM and the journey was 50 minutes, it departed at 2:25 PM.",
+            "Borrowing in time is similar to borrowing in normal subtraction, but we borrow 60 instead of 10."
+          ],
+          "rule": "If minutes aren\u2019t enough, borrow 60 from the hour",
+          "tip": "Think of it like money: 1 hour = 60 minutes, just as \u20b91 = 100 paise."
+        },
+        {
+          "id": "tc-l2-les3",
+          "title": "Elapsed Time",
+          "intro": "Elapsed time is the total time that has passed from a start time to an end time. It answers the question: \"How long did it take?\"",
+          "visual": "elapsed-time-number-line",
+          "steps": [
+            {
+              "text": "Write the start time and end time. Count forward from start to end.",
+              "notation": "Start: 9:15 AM, End: 11:45 AM"
+            },
+            {
+              "text": "Method 1 \u2014 Counting up: From 9:15 to 10:00 = 45 min. From 10:00 to 11:00 = 1 hr. From 11:00 to 11:45 = 45 min. Total = 2 hr 30 min.",
+              "notation": "45 min + 1 hr + 45 min = 2 hr 30 min"
+            },
+            {
+              "text": "Method 2 \u2014 Subtraction: 11:45 \u2212 9:15. Hours: 11 \u2212 9 = 2. Minutes: 45 \u2212 15 = 30. Answer: 2 hr 30 min.",
+              "notation": "11:45 \u2212 9:15 = 2 hr 30 min"
+            },
+            {
+              "text": "If end minutes < start minutes, borrow: 2:10 PM \u2212 11:40 AM. Convert 2:10 PM to 14:10. Then 14:10 \u2212 11:40: borrow \u2192 13:70 \u2212 11:40 = 2 hr 30 min.",
+              "notation": "Borrow if needed, just like subtraction",
+              "tip": "The counting-up method avoids borrowing and is often easier."
+            }
+          ],
+          "explanation": [
+            "Elapsed time tells us the duration of an event.",
+            "If a cricket match starts at 2:00 PM and ends at 5:30 PM, the elapsed time is 3 hours 30 minutes.",
+            "Indian Railways shows both departure and arrival time \u2014 the difference is the journey duration."
+          ],
+          "rule": "Elapsed time = End time \u2212 Start time",
+          "tip": "Draw a number line from start to end, hopping by hours first, then minutes."
+        },
+        {
+          "id": "tc-l2-les4",
+          "title": "Converting Hours to Minutes",
+          "intro": "Since 1 hour = 60 minutes, we can convert between hours and minutes using multiplication and division.",
+          "visual": "hours-minutes-conversion",
+          "steps": [
+            {
+              "text": "To convert hours to minutes, multiply by 60.",
+              "notation": "3 hours = 3 \\times 60 = 180 minutes"
+            },
+            {
+              "text": "For hours and minutes together, convert the hours part then add the minutes.",
+              "notation": "2 hr 25 min = (2 \\times 60) + 25 = 120 + 25 = 145 minutes"
+            },
+            {
+              "text": "To convert minutes to hours, divide by 60. The quotient is hours, the remainder is minutes.",
+              "notation": "200 min = 200 \\div 60 = 3 remainder 20 = 3 hr 20 min"
+            },
+            {
+              "text": "Quick reference: 1 hr = 60 min, 2 hr = 120 min, 3 hr = 180 min, 4 hr = 240 min, 5 hr = 300 min.",
+              "notation": "n \\text{ hours} = n \\times 60 \\text{ minutes}",
+              "tip": "Knowing the 6 times table helps: 6\u00d71=6, so 60\u00d71=60, 60\u00d72=120, etc."
+            }
+          ],
+          "explanation": [
+            "We convert to the same unit before adding or comparing times.",
+            "A Bollywood movie is about 2 hr 30 min = 150 minutes.",
+            "A 90-minute exam is 1 hr 30 min."
+          ],
+          "rule": "Hours \u00d7 60 = Minutes, Minutes \u00f7 60 = Hours and remaining Minutes",
+          "tip": "To quickly convert 150 min: take out two 60s (2 hours) and you have 30 min left = 2 hr 30 min."
+        },
+        {
+          "id": "tc-l2-les5",
+          "title": "The 24-Hour Clock",
+          "intro": "Indian Railways, airports, and the military use the 24-hour clock. Instead of AM/PM, hours run from 00:00 (midnight) to 23:59 (one minute before the next midnight).",
+          "visual": "24-hour-clock",
+          "steps": [
+            {
+              "text": "From midnight to 12:59 PM, the 24-hour time is the same as the 12-hour time. Just drop the AM/PM.",
+              "notation": "9:30 AM = 09:30, 12:45 PM = 12:45"
+            },
+            {
+              "text": "For PM times (1:00 PM onward), add 12 to the hour.",
+              "notation": "1:00 PM = 13:00, 5:30 PM = 17:30, 9:15 PM = 21:15"
+            },
+            {
+              "text": "For midnight: 12:00 AM = 00:00. For times just after midnight: 12:30 AM = 00:30.",
+              "notation": "12:00 AM = 00:00, 12:30 AM = 00:30"
+            },
+            {
+              "text": "To convert back: if the hour is 13 or more, subtract 12 and add PM.",
+              "notation": "18:45 = 18 \u2212 12 = 6:45 PM",
+              "tip": "Indian train tickets always show 24-hour time: \"Dep 22:30\" means 10:30 PM."
+            }
+          ],
+          "explanation": [
+            "The Rajdhani Express might depart at 16:55 (4:55 PM) and arrive at 10:20 (10:20 AM next day).",
+            "24-hour format avoids confusion between AM and PM.",
+            "Digital clocks and phones in India often use 24-hour format."
+          ],
+          "rule": "PM hour + 12 = 24-hour format (for 1 PM to 11 PM)",
+          "tip": "Subtract 12 from any hour above 12 to get the PM time: 20:00 \u2212 12 = 8:00 PM."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "tc-l2-q1",
+          "question": "What is 4:35 + 40 minutes?",
+          "answer": "5:15",
+          "hint": "35 + 40 = 75 minutes. Since 75 > 60, subtract 60 and add 1 hour: 75 \u2212 60 = 15, hour = 5.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l2-q2",
+          "question": "What is 7:20 \u2212 35 minutes?",
+          "answer": "6:45",
+          "hint": "20 < 35, so borrow: 6:80 \u2212 35 = 6:45.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l2-q3",
+          "question": "A class starts at 10:15 AM and ends at 11:00 AM. What is the elapsed time?",
+          "answer": "45 minutes",
+          "hint": "Count from 10:15 to 11:00. From :15 to :00 of the next hour = 45 minutes.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l2-q4",
+          "question": "Convert 3 hours 40 minutes to minutes.",
+          "answer": "220 minutes",
+          "hint": "3 \u00d7 60 = 180. Then 180 + 40 = 220.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "tc-l2-q5",
+          "question": "Convert 195 minutes to hours and minutes.",
+          "answer": "3 hours 15 minutes",
+          "hint": "195 \u00f7 60 = 3 remainder 15.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "tc-l2-q6",
+          "question": "What is 8:30 PM in 24-hour format?",
+          "answer": "20:30",
+          "hint": "For PM times, add 12 to the hour: 8 + 12 = 20.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l2-q7",
+          "question": "Meera\u2019s dance class starts at 4:45 PM and lasts 1 hour 30 minutes. What time does it end?",
+          "answer": "6:15 PM",
+          "hint": "Add 1 hour: 5:45 PM. Add 30 min: 45 + 30 = 75 \u2192 6:15 PM.",
+          "story": "Meera attends Bharatanatyam class every Saturday.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "tc-l2-q8",
+          "question": "A train departs at 22:50 and arrives at 06:20 the next day. How long is the journey?",
+          "answer": "7 hours 30 minutes",
+          "hint": "From 22:50 to 23:00 = 10 min. 23:00 to 06:00 = 7 hr. 06:00 to 06:20 = 20 min. Total = 7 hr 30 min.",
+          "story": "The Howrah\u2013New Delhi Rajdhani Express travels overnight.",
+          "isWord": true,
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Calendar Skills",
+      "emoji": "\ud83d\udfe1",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Days, weeks, months",
+      "lessons": [
+        {
+          "id": "tc-l3-les1",
+          "title": "Days in Each Month \u2014 The Knuckle Trick",
+          "intro": "Not all months have the same number of days. Some have 31, some have 30, and February is special. The knuckle trick is a fun way to remember!",
+          "visual": "knuckle-trick",
+          "steps": [
+            {
+              "text": "Make two fists and hold them side by side. Each knuckle (bump) is a month with 31 days. Each valley (dip) is a month with 30 days (or 28/29 for February).",
+              "notation": "Knuckle = 31 days, Valley = 30 days (except Feb)"
+            },
+            {
+              "text": "Starting from your left pinky knuckle: Jan (31), valley Feb (28/29), Mar (31), valley Apr (30), May (31), valley Jun (30), Jul (31).",
+              "notation": "Jan=31, Feb=28/29, Mar=31, Apr=30, May=31, Jun=30, Jul=31"
+            },
+            {
+              "text": "Now start from the right index knuckle (or repeat left index): Aug (31), valley Sep (30), Oct (31), valley Nov (30), Dec (31).",
+              "notation": "Aug=31, Sep=30, Oct=31, Nov=30, Dec=31"
+            },
+            {
+              "text": "Rhyme: \"30 days hath September, April, June, and November. All the rest have 31, except February alone.\"",
+              "notation": "30 days: Sep, Apr, Jun, Nov. 31 days: Jan, Mar, May, Jul, Aug, Oct, Dec",
+              "tip": "Both July and August have 31 days \u2014 they sit on two knuckles next to each other!"
+            }
+          ],
+          "explanation": [
+            "February has 28 days normally and 29 days in a leap year.",
+            "India\u2019s Republic Day (26 January) is in a 31-day month.",
+            "Independence Day (15 August) is also in a 31-day month."
+          ],
+          "rule": "Knuckle = 31, Valley = 30 (February = 28 or 29)",
+          "tip": "July and August both have 31 days because they were named after Julius Caesar and Augustus Caesar."
+        },
+        {
+          "id": "tc-l3-les2",
+          "title": "Leap Years",
+          "intro": "Every 4 years, February gets an extra day (29 instead of 28). This is called a leap year. It happens because the Earth takes about 365.25 days to orbit the Sun.",
+          "visual": "leap-year-calendar",
+          "steps": [
+            {
+              "text": "A year is a leap year if it is divisible by 4.",
+              "notation": "2024 \\div 4 = 506 \\text{ (no remainder)} \\Rightarrow \\text{Leap year!}"
+            },
+            {
+              "text": "Exception: century years (ending in 00) must be divisible by 400 to be a leap year.",
+              "notation": "1900: 1900 \\div 400 = 4.75 \\Rightarrow \\text{Not a leap year}",
+              "tip": "2000 was a leap year (2000 \u00f7 400 = 5), but 1900 was not."
+            },
+            {
+              "text": "In a leap year, the year has 366 days. In a normal year, it has 365 days.",
+              "notation": "Leap year = 366 days, Normal year = 365 days"
+            },
+            {
+              "text": "Recent leap years: 2020, 2024, 2028. Non-leap years: 2021, 2022, 2023, 2025.",
+              "notation": "Check: is the year \\div 4 = whole number?"
+            }
+          ],
+          "explanation": [
+            "People born on 29 February (like the Leap Day!) celebrate their birthday once every 4 years on the actual date.",
+            "The Indian calendar (Saka calendar) also accounts for leap years.",
+            "2024 was a leap year; the next one is 2028."
+          ],
+          "rule": "Divisible by 4 = leap year (except century years must be divisible by 400)",
+          "tip": "Olympics and general elections in India happen in leap years \u2014 a handy way to remember!"
+        },
+        {
+          "id": "tc-l3-les3",
+          "title": "Counting Days Between Dates",
+          "intro": "To find how many days are between two dates, we count the days carefully, remembering how many days each month has.",
+          "visual": "date-counting",
+          "steps": [
+            {
+              "text": "Count remaining days in the start month (don\u2019t count the start date itself).",
+              "notation": "From 20 March: 31 \u2212 20 = 11 days left in March"
+            },
+            {
+              "text": "Add full months in between.",
+              "notation": "April = 30, May = 31 \u2192 30 + 31 = 61 days"
+            },
+            {
+              "text": "Add the days in the final month up to (and including) the end date.",
+              "notation": "Up to 15 June = 15 days"
+            },
+            {
+              "text": "Total: add all parts together.",
+              "notation": "11 + 30 + 31 + 15 = 87 days (from 20 March to 15 June)",
+              "tip": "Double check by counting on a calendar if the gap is small."
+            }
+          ],
+          "explanation": [
+            "From Holi (March) to Diwali (October/November), there are about 7\u20138 months.",
+            "Indian school summer vacation is typically from May 1 to June 15 \u2014 about 46 days.",
+            "Always check if February falls in the range and whether it\u2019s a leap year."
+          ],
+          "rule": "Remaining days in start month + full months in between + days in end month",
+          "tip": "For small gaps (within the same month), just subtract: June 25 \u2212 June 10 = 15 days."
+        },
+        {
+          "id": "tc-l3-les4",
+          "title": "Weeks and Days",
+          "intro": "There are 7 days in a week. We can convert between days and weeks using division. This helps us plan schedules and count durations.",
+          "visual": "weeks-days-conversion",
+          "steps": [
+            {
+              "text": "To convert days to weeks, divide by 7. The quotient is weeks, the remainder is extra days.",
+              "notation": "25 days = 25 \\div 7 = 3 \\text{ weeks } 4 \\text{ days}"
+            },
+            {
+              "text": "To convert weeks to days, multiply by 7.",
+              "notation": "6 weeks = 6 \\times 7 = 42 days"
+            },
+            {
+              "text": "A fortnight = 2 weeks = 14 days.",
+              "notation": "1 \\text{ fortnight} = 14 \\text{ days}"
+            },
+            {
+              "text": "Quick fact: 1 year = 52 weeks + 1 day (or +2 days in a leap year).",
+              "notation": "365 \\div 7 = 52 \\text{ weeks } 1 \\text{ day}",
+              "tip": "This is why your birthday falls on a different day of the week each year!"
+            }
+          ],
+          "explanation": [
+            "The 7 days of the week in Hindi: Somvar, Mangalvar, Budhvar, Guruvar, Shukravar, Shanivar, Ravivar.",
+            "Indian schools have 6 working days (Monday to Saturday) in most states.",
+            "Many Indian board exams are spaced about 2 weeks (a fortnight) apart."
+          ],
+          "rule": "Days \u00f7 7 = Weeks and remaining Days",
+          "tip": "To find the day of the week after N days, divide N by 7. The remainder tells you how many days ahead."
+        },
+        {
+          "id": "tc-l3-les5",
+          "title": "Indian Festivals and Dates",
+          "intro": "India celebrates many festivals throughout the year. Knowing the approximate months helps us practice calendar skills. Some festivals follow the lunar calendar and their dates change every year.",
+          "visual": "indian-festival-calendar",
+          "steps": [
+            {
+              "text": "Fixed-date festivals: Republic Day \u2014 26 January, Independence Day \u2014 15 August, Gandhi Jayanti \u2014 2 October.",
+              "notation": "26 Jan, 15 Aug, 2 Oct = fixed dates every year"
+            },
+            {
+              "text": "Variable-date festivals (based on lunar calendar): Diwali \u2014 October/November, Holi \u2014 March, Eid \u2014 changes each year, Pongal \u2014 14\u201315 January.",
+              "notation": "Diwali: Oct/Nov, Holi: Mar, Eid: varies, Pongal: Jan"
+            },
+            {
+              "text": "How many days between Republic Day (26 Jan) and Independence Day (15 Aug)? Count: 5 (Jan) + 28/29 (Feb) + 31 (Mar) + 30 (Apr) + 31 (May) + 30 (Jun) + 31 (Jul) + 15 (Aug) = 201 or 202 days.",
+              "notation": "26 Jan to 15 Aug = 201 days (non-leap) or 202 days (leap)"
+            },
+            {
+              "text": "School academic year in India typically runs from April to March (not January to December).",
+              "notation": "Indian school year: April \u2192 March",
+              "tip": "Government financial year in India is also April to March."
+            }
+          ],
+          "explanation": [
+            "Knowing festival dates helps you plan holidays and count days for math problems.",
+            "Most Indian school calendars mark all national holidays.",
+            "The Indian school year starts in April after the spring/summer break."
+          ],
+          "rule": "Fixed festivals have the same date every year; lunar festivals shift each year",
+          "tip": "Remember the big three national holidays: 26 Jan, 15 Aug, 2 Oct."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "tc-l3-q1",
+          "question": "How many days are there in the month of November?",
+          "answer": "30",
+          "hint": "Use the knuckle trick or the rhyme: \"30 days hath September, April, June, and November.\"",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l3-q2",
+          "question": "Is the year 2028 a leap year?",
+          "answer": "Yes",
+          "hint": "Check if 2028 is divisible by 4: 2028 \u00f7 4 = 507 with no remainder.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l3-q3",
+          "question": "How many days are there from 1 March to 31 March (counting both dates)?",
+          "answer": "31",
+          "hint": "March has 31 days. From the 1st to the 31st, all days are included.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l3-q4",
+          "question": "Convert 45 days into weeks and days.",
+          "answer": "6 weeks 3 days",
+          "hint": "45 \u00f7 7 = 6 remainder 3.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "tc-l3-q5",
+          "question": "How many days are in February 2024?",
+          "answer": "29",
+          "hint": "2024 \u00f7 4 = 506 (no remainder), so 2024 is a leap year. February has 29 days in a leap year.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "tc-l3-q6",
+          "question": "Rohan\u2019s summer vacation starts on 1 May and ends on 15 June. How many days is his vacation (including both dates)?",
+          "answer": "46 days",
+          "hint": "May has 31 days (1 May to 31 May = 31 days). Then 1 June to 15 June = 15 days. Total = 31 + 15 = 46.",
+          "story": "Rohan plans to visit his grandparents in Kerala during the vacation.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "tc-l3-q7",
+          "question": "On which date is India\u2019s Independence Day celebrated?",
+          "answer": "15 August",
+          "hint": "It is one of the three major national holidays. Think of the flag hoisting ceremony.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l3-q8",
+          "question": "Is the year 1900 a leap year? Why or why not?",
+          "answer": "No, because 1900 is divisible by 100 but not by 400",
+          "hint": "Century years (ending in 00) must be divisible by 400. 1900 \u00f7 400 = 4.75 (not a whole number).",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Word Problems",
+      "emoji": "\ud83d\udfe0",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Time in real life",
+      "lessons": [
+        {
+          "id": "tc-l4-les1",
+          "title": "Travel Time Problems",
+          "intro": "When we travel by bus, train, or auto-rickshaw, we often need to figure out when we\u2019ll arrive or how long the journey takes. These are travel time problems!",
+          "visual": "travel-time",
+          "steps": [
+            {
+              "text": "Identify what is given: start time, end time, or duration. Figure out what is asked.",
+              "notation": "Given 2 of 3: Start, End, Duration. Find the 3rd."
+            },
+            {
+              "text": "If given start time and duration, add to find end time.",
+              "notation": "Start 9:30 AM + Duration 2 hr 15 min = End 11:45 AM"
+            },
+            {
+              "text": "If given start and end time, subtract to find duration.",
+              "notation": "End 4:00 PM \u2212 Start 1:30 PM = Duration 2 hr 30 min"
+            },
+            {
+              "text": "If given end time and duration, subtract to find start time.",
+              "notation": "End 6:15 PM \u2212 Duration 1 hr 45 min = Start 4:30 PM",
+              "tip": "Draw a simple timeline to visualise start \u2192 duration \u2192 end."
+            }
+          ],
+          "explanation": [
+            "The Delhi Metro takes about 45 minutes from Rajiv Chowk to Huda City Centre.",
+            "An auto-rickshaw ride within a city might take 20\u201340 minutes depending on traffic.",
+            "Indian Railways provides departure and arrival times on every ticket."
+          ],
+          "rule": "Start + Duration = End, End \u2212 Start = Duration, End \u2212 Duration = Start",
+          "tip": "Always check if AM/PM changes during the journey (e.g., 11:30 AM + 2 hours = 1:30 PM)."
+        },
+        {
+          "id": "tc-l4-les2",
+          "title": "Schedule Problems (School Timetable)",
+          "intro": "School timetables are perfect for practising time calculations! Each period has a fixed start and end time, and we can calculate durations, breaks, and total school hours.",
+          "visual": "school-timetable",
+          "steps": [
+            {
+              "text": "A typical Indian school timetable: Assembly 8:00\u20138:15, Period 1: 8:15\u20139:00, Period 2: 9:00\u20139:45, Short Break: 9:45\u201310:00, Period 3: 10:00\u201310:45, and so on.",
+              "notation": "Each period = 45 min, Short break = 15 min"
+            },
+            {
+              "text": "To find the duration of one period: End \u2212 Start. E.g., 9:00 \u2212 8:15 = 45 minutes.",
+              "notation": "Period 1: 9:00 \u2212 8:15 = 45 min"
+            },
+            {
+              "text": "To find total teaching time, multiply period length by number of periods.",
+              "notation": "8 periods \\times 45 min = 360 min = 6 hours"
+            },
+            {
+              "text": "To find total school hours, use End of last period \u2212 Start of school.",
+              "notation": "School: 8:00 AM to 2:30 PM = 6 hr 30 min",
+              "tip": "Remember to include break times when finding total school hours!"
+            }
+          ],
+          "explanation": [
+            "Most Indian schools run from about 8:00 AM to 2:00 PM or 2:30 PM.",
+            "Lunch break is usually 30\u201340 minutes, typically around noon.",
+            "Saturday is a half day in many schools, ending by 12:30 PM."
+          ],
+          "rule": "Read the timetable carefully: identify start/end times, period durations, and break times",
+          "tip": "Make a mini timetable of your own school day and practise finding durations."
+        },
+        {
+          "id": "tc-l4-les3",
+          "title": "Duration Problems",
+          "intro": "Duration problems ask how long something lasts. It could be a movie, a cooking time, a bus ride, or even how long you studied!",
+          "visual": "duration-problems",
+          "steps": [
+            {
+              "text": "Carefully read the problem. Underline the start time and end time.",
+              "notation": "Keywords: \"started at\", \"ended at\", \"began\", \"finished\""
+            },
+            {
+              "text": "Use the counting-up method or subtraction to find the elapsed time.",
+              "notation": "Movie: 3:30 PM to 6:15 PM. Count: 3:30\u21924:00 (30 min), 4:00\u21926:00 (2 hr), 6:00\u21926:15 (15 min). Total: 2 hr 45 min."
+            },
+            {
+              "text": "Some problems give you the duration and ask for the end time (or start time). Add or subtract accordingly.",
+              "notation": "Cooking started at 5:45 PM, takes 1 hr 20 min. End = 5:45 + 1:20 = 7:05 PM."
+            },
+            {
+              "text": "Watch out for overnight durations! If something starts at 10:00 PM and ends at 6:00 AM, count through midnight.",
+              "notation": "10:00 PM to 6:00 AM: 10\u219212 = 2 hr, 12\u21926 = 6 hr. Total = 8 hr.",
+              "tip": "Converting to 24-hour format makes overnight calculations easier."
+            }
+          ],
+          "explanation": [
+            "A typical Bollywood movie lasts about 2 hours 30 minutes to 3 hours.",
+            "IPL cricket matches usually last about 3 hours 30 minutes.",
+            "Cooking a biryani takes approximately 1 hour 15 minutes."
+          ],
+          "rule": "Duration = End time \u2212 Start time (use counting-up for easier calculation)",
+          "tip": "Break the time into comfortable chunks: first go to the next full hour, then count hours, then add remaining minutes."
+        },
+        {
+          "id": "tc-l4-les4",
+          "title": "Time Zones \u2014 IST",
+          "intro": "The Earth is divided into time zones. India follows Indian Standard Time (IST), which is UTC +5:30. This means when it\u2019s midnight (00:00) in London, it\u2019s 5:30 AM in India!",
+          "visual": "time-zones-map",
+          "steps": [
+            {
+              "text": "IST = UTC + 5 hours 30 minutes. UTC (Coordinated Universal Time) is the base time at Greenwich, London.",
+              "notation": "IST = UTC + 5:30"
+            },
+            {
+              "text": "To convert IST to UTC, subtract 5 hours 30 minutes. To convert UTC to IST, add 5 hours 30 minutes.",
+              "notation": "3:00 PM IST = 3:00 PM \u2212 5:30 = 9:30 AM UTC"
+            },
+            {
+              "text": "India has only ONE time zone for the entire country, even though it\u2019s a large country. The reference longitude is 82.5\u00b0 E (Mirzapur, UP).",
+              "notation": "All of India uses IST (UTC +5:30)"
+            },
+            {
+              "text": "Some common differences: USA (New York) is IST \u2212 10:30 or IST \u2212 9:30 (daylight saving). Dubai is IST \u2212 1:30.",
+              "notation": "When it's 9:00 PM IST, it's 10:30 AM in New York (approx.)",
+              "tip": "If your relative calls from the US at 8:00 AM their time, it\u2019s about 6:30 PM IST."
+            }
+          ],
+          "explanation": [
+            "India chose the +5:30 time zone to be exactly in between two whole-hour zones.",
+            "When you watch a live cricket match from Australia, the time shown is Australian time, not IST.",
+            "International flights show both local time and destination time."
+          ],
+          "rule": "IST = UTC + 5:30. Add 5:30 to convert UTC \u2192 IST, subtract 5:30 for IST \u2192 UTC.",
+          "tip": "India is ahead of London. When it\u2019s morning in India, it\u2019s still night in the UK."
+        },
+        {
+          "id": "tc-l4-les5",
+          "title": "Converting Time Units",
+          "intro": "Time has many units: seconds, minutes, hours, days, weeks, months, and years. Being able to convert between them is essential for solving problems.",
+          "visual": "time-unit-ladder",
+          "steps": [
+            {
+              "text": "Key conversions: 1 minute = 60 seconds, 1 hour = 60 minutes = 3600 seconds, 1 day = 24 hours.",
+              "notation": "1 \\text{ min} = 60 \\text{ sec}, \\quad 1 \\text{ hr} = 60 \\text{ min}, \\quad 1 \\text{ day} = 24 \\text{ hr}"
+            },
+            {
+              "text": "More conversions: 1 week = 7 days, 1 year = 365 days (or 366 in a leap year), 1 year = 12 months.",
+              "notation": "1 \\text{ week} = 7 \\text{ days}, \\quad 1 \\text{ year} = 365 \\text{ days}, \\quad 1 \\text{ year} = 12 \\text{ months}"
+            },
+            {
+              "text": "To convert larger \u2192 smaller: MULTIPLY. E.g., 5 hours to seconds: 5 \u00d7 60 \u00d7 60 = 18,000 seconds.",
+              "notation": "5 \\text{ hr} = 5 \\times 3600 = 18000 \\text{ sec}"
+            },
+            {
+              "text": "To convert smaller \u2192 larger: DIVIDE. E.g., 150 seconds to minutes: 150 \u00f7 60 = 2 min 30 sec.",
+              "notation": "150 \\text{ sec} = 2 \\text{ min } 30 \\text{ sec}",
+              "tip": "When dividing, the remainder gives you the smaller unit."
+            }
+          ],
+          "explanation": [
+            "A 100-metre race takes about 10\u201315 seconds for a school student.",
+            "An Indian cooking show episode is about 45 minutes = 2,700 seconds.",
+            "There are 8,760 hours in a regular year (365 \u00d7 24)."
+          ],
+          "rule": "Larger to smaller = Multiply, Smaller to larger = Divide",
+          "tip": "Remember the chain: seconds \u00d760\u2192 minutes \u00d760\u2192 hours \u00d724\u2192 days \u00d77\u2192 weeks."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "tc-l4-q1",
+          "question": "Ananya takes a bus at 7:45 AM. The ride is 1 hour 25 minutes. What time does she reach school?",
+          "answer": "9:10 AM",
+          "hint": "7:45 + 1 hr = 8:45. Then 8:45 + 25 min = 9:10 AM.",
+          "story": "Ananya takes the school bus from Koramangala to her school in Whitefield, Bengaluru.",
+          "isWord": true,
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l4-q2",
+          "question": "Vikram\u2019s school has 7 periods of 40 minutes each, a 15-minute short break, and a 30-minute lunch break. If school starts at 8:00 AM, what time does it end?",
+          "answer": "1:25 PM",
+          "hint": "7 \u00d7 40 = 280 min teaching + 15 + 30 = 325 min total = 5 hr 25 min. 8:00 AM + 5:25 = 1:25 PM.",
+          "story": "Vikram studies at a CBSE school in Jaipur.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "tc-l4-q3",
+          "question": "A Bollywood movie starts at 6:30 PM and ends at 9:15 PM. How long is the movie?",
+          "answer": "2 hours 45 minutes",
+          "hint": "6:30 to 9:00 = 2 hr 30 min. 9:00 to 9:15 = 15 min. Total = 2 hr 45 min.",
+          "story": "Kavya\u2019s family goes to watch a new Hindi movie at PVR Cinemas.",
+          "isWord": true,
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l4-q4",
+          "question": "It is 4:30 PM IST. What time is it in London (UTC)?",
+          "answer": "11:00 AM",
+          "hint": "IST is UTC + 5:30. So subtract 5 hr 30 min: 4:30 PM \u2212 5:30 = 11:00 AM.",
+          "story": "Ravi wants to call his cousin in London.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "tc-l4-q5",
+          "question": "Convert 2 hours 15 minutes to seconds.",
+          "answer": "8100 seconds",
+          "hint": "2 hr 15 min = 135 min. 135 \u00d7 60 = 8100 seconds.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "tc-l4-q6",
+          "question": "A train departs from Mumbai at 10:45 PM and arrives in Pune at 2:15 AM. How long is the journey?",
+          "answer": "3 hours 30 minutes",
+          "hint": "10:45 PM to 12:00 AM = 1 hr 15 min. 12:00 AM to 2:15 AM = 2 hr 15 min. Total = 3 hr 30 min.",
+          "story": "The Deccan Express runs between Mumbai CST and Pune Junction.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "tc-l4-q7",
+          "question": "Deepa studied for 45 minutes, took a 10-minute break, studied for 1 hour 20 minutes more, and finished at 7:30 PM. What time did she start studying?",
+          "answer": "5:15 PM",
+          "hint": "Total time = 45 + 10 + 80 = 135 min = 2 hr 15 min. 7:30 PM \u2212 2:15 = 5:15 PM.",
+          "story": "Deepa is preparing for her Class 5 maths exam.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "tc-l4-q8",
+          "question": "An international cricket match starts at 2:00 PM IST on Saturday and lasts 8 hours. It is broadcast live in London (UTC). At what local time does the match end for London viewers?",
+          "answer": "4:30 PM UTC",
+          "hint": "Match ends at 2:00 PM + 8 hr = 10:00 PM IST. Convert: 10:00 PM IST \u2212 5:30 = 4:30 PM UTC.",
+          "story": "India vs England test match at the Narendra Modi Stadium, Ahmedabad.",
+          "isWord": true,
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Speed, Distance, Time",
+      "emoji": "\ud83d\udd34",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "S = D \u00f7 T",
+      "lessons": [
+        {
+          "id": "tc-l5-les1",
+          "title": "What Is Speed?",
+          "intro": "Speed tells us how fast something is moving. It is the distance covered in a certain amount of time. If a car covers 60 km in 1 hour, its speed is 60 km/hr.",
+          "visual": "speed-intro",
+          "steps": [
+            {
+              "text": "Speed is the distance travelled per unit of time.",
+              "notation": "\\text{Speed} = \\frac{\\text{Distance}}{\\text{Time}}"
+            },
+            {
+              "text": "Common units of speed: km/hr (kilometres per hour) for cars, trains, and planes. m/s (metres per second) for running and science.",
+              "notation": "\\text{km/hr}, \\quad \\text{m/s}"
+            },
+            {
+              "text": "Example: Arjun cycles 12 km in 2 hours. His speed = 12 \u00f7 2 = 6 km/hr.",
+              "notation": "S = \\frac{12}{2} = 6 \\text{ km/hr}"
+            },
+            {
+              "text": "Higher speed means covering more distance in the same time, or the same distance in less time.",
+              "notation": "\\text{Fast} \\Rightarrow \\text{high speed}, \\quad \\text{Slow} \\Rightarrow \\text{low speed}",
+              "tip": "A school bus goes about 30\u201340 km/hr. A train goes about 80\u2013130 km/hr. A plane goes about 800 km/hr!"
+            }
+          ],
+          "explanation": [
+            "Speed limits on Indian highways are typically 100 km/hr for cars and 80 km/hr for trucks.",
+            "The Vande Bharat Express has a top speed of 160 km/hr.",
+            "Usain Bolt\u2019s speed was about 10.4 m/s \u2014 that\u2019s roughly 37 km/hr!"
+          ],
+          "rule": "Speed = Distance \u00f7 Time",
+          "tip": "Always check the units! If distance is in km and time is in hours, speed will be in km/hr."
+        },
+        {
+          "id": "tc-l5-les2",
+          "title": "The SDT Triangle",
+          "intro": "The SDT (Speed-Distance-Time) triangle is a visual trick to remember all three formulas. Write S, D, T in a triangle with D on top, and S and T on the bottom.",
+          "visual": "sdt-triangle",
+          "steps": [
+            {
+              "text": "Draw a triangle. Write D (Distance) at the top. Write S (Speed) at the bottom-left and T (Time) at the bottom-right.",
+              "notation": "\\triangle: \\text{D (top)}, \\text{S (bottom-left)}, \\text{T (bottom-right)}"
+            },
+            {
+              "text": "To find any value, cover it with your finger. The remaining two values show you the formula.",
+              "notation": "Cover D \\Rightarrow S \\times T. \\quad Cover S \\Rightarrow \\frac{D}{T}. \\quad Cover T \\Rightarrow \\frac{D}{S}."
+            },
+            {
+              "text": "Formula 1: Speed = Distance \u00f7 Time (cover S, see D over T).",
+              "notation": "S = \\frac{D}{T}"
+            },
+            {
+              "text": "Formula 2: Distance = Speed \u00d7 Time (cover D, see S beside T).",
+              "notation": "D = S \\times T"
+            },
+            {
+              "text": "Formula 3: Time = Distance \u00f7 Speed (cover T, see D over S).",
+              "notation": "T = \\frac{D}{S}",
+              "tip": "Draw this triangle on the top of your exam sheet \u2014 you\u2019ll never forget the formulas!"
+            }
+          ],
+          "explanation": [
+            "The triangle works because D is always on top (numerator) and S \u00d7 T are on the bottom.",
+            "D = S \u00d7 T is like area = length \u00d7 width \u2014 two things multiplied give the bigger thing.",
+            "Always identify which two values you know and which one you need to find."
+          ],
+          "rule": "D on top, S and T on bottom. Cover what you need \u2192 read the formula.",
+          "tip": "Remember: \"Delhi is on Top\" \u2014 D is always at the top of the triangle!"
+        },
+        {
+          "id": "tc-l5-les3",
+          "title": "Finding Distance: D = S \u00d7 T",
+          "intro": "If you know how fast something is going (speed) and how long it travels (time), you can find the distance by multiplying speed and time.",
+          "visual": "find-distance",
+          "steps": [
+            {
+              "text": "Write the formula: Distance = Speed \u00d7 Time.",
+              "notation": "D = S \\times T"
+            },
+            {
+              "text": "Example: A car travels at 60 km/hr for 3 hours. D = 60 \u00d7 3 = 180 km.",
+              "notation": "D = 60 \\times 3 = 180 \\text{ km}"
+            },
+            {
+              "text": "Make sure speed and time have matching units. If speed is in km/hr, time must be in hours.",
+              "notation": "\\text{km/hr} \\times \\text{hr} = \\text{km}",
+              "tip": "If time is given in minutes, convert to hours first: 30 min = 0.5 hr."
+            },
+            {
+              "text": "Example with conversion: Speed = 40 km/hr, Time = 90 minutes = 1.5 hours. D = 40 \u00d7 1.5 = 60 km.",
+              "notation": "D = 40 \\times 1.5 = 60 \\text{ km}"
+            }
+          ],
+          "explanation": [
+            "The Delhi\u2013Agra Expressway is about 230 km. At 100 km/hr, it takes about 2.3 hours.",
+            "If you walk at 5 km/hr for 2 hours, you cover 10 km.",
+            "The Shatabdi Express at 120 km/hr covers 120 km every hour."
+          ],
+          "rule": "Distance = Speed \u00d7 Time",
+          "tip": "Multiply the number in front of km/hr by the number of hours to get km."
+        },
+        {
+          "id": "tc-l5-les4",
+          "title": "Finding Time: T = D \u00f7 S",
+          "intro": "If you know the distance and speed, you can find how long the journey will take by dividing distance by speed.",
+          "visual": "find-time",
+          "steps": [
+            {
+              "text": "Write the formula: Time = Distance \u00f7 Speed.",
+              "notation": "T = \\frac{D}{S}"
+            },
+            {
+              "text": "Example: Distance = 240 km, Speed = 80 km/hr. T = 240 \u00f7 80 = 3 hours.",
+              "notation": "T = \\frac{240}{80} = 3 \\text{ hours}"
+            },
+            {
+              "text": "If the answer is a decimal, convert to hours and minutes. E.g., 2.5 hours = 2 hours 30 minutes.",
+              "notation": "2.5 \\text{ hr} = 2 \\text{ hr } 30 \\text{ min}"
+            },
+            {
+              "text": "Tricky decimals: 0.75 hours = 45 min (0.75 \u00d7 60 = 45), 0.25 hours = 15 min.",
+              "notation": "0.25 \\text{ hr} = 15 \\text{ min}, \\quad 0.5 \\text{ hr} = 30 \\text{ min}, \\quad 0.75 \\text{ hr} = 45 \\text{ min}",
+              "tip": "Multiply the decimal part by 60 to get minutes."
+            }
+          ],
+          "explanation": [
+            "If Chennai to Bengaluru is 350 km and you drive at 70 km/hr, it takes 5 hours.",
+            "Walking 3 km at 4 km/hr takes 0.75 hours = 45 minutes.",
+            "The Vande Bharat Express (160 km/hr) covers 480 km in 3 hours."
+          ],
+          "rule": "Time = Distance \u00f7 Speed",
+          "tip": "Always convert your answer to hours and minutes for a clear, readable answer."
+        },
+        {
+          "id": "tc-l5-les5",
+          "title": "Word Problems with km/hr",
+          "intro": "Now let\u2019s put it all together! Real-life speed problems involve reading carefully, identifying given values, picking the right formula, and solving step by step.",
+          "visual": "word-problems-speed",
+          "steps": [
+            {
+              "text": "Step 1: Read the problem carefully. Underline the numbers and what is asked.",
+              "notation": "Given: S = ?, D = ?, T = ? \u2192 Find: ?"
+            },
+            {
+              "text": "Step 2: Write what you know: S = ___, D = ___, T = ___. Identify the missing one.",
+              "notation": "If S and T are known, find D = S \\times T"
+            },
+            {
+              "text": "Step 3: Check that units match! Convert if necessary (minutes \u2192 hours, m \u2192 km).",
+              "notation": "30 \\text{ min} = 0.5 \\text{ hr}, \\quad 500 \\text{ m} = 0.5 \\text{ km}"
+            },
+            {
+              "text": "Step 4: Solve and write the answer with correct units.",
+              "notation": "\\text{Answer: } 150 \\text{ km (not just 150)}",
+              "tip": "Always label your answer with units \u2014 km, hours, or km/hr."
+            },
+            {
+              "text": "Step 5: Do a reasonableness check. Does the answer make sense?",
+              "notation": "A car at 60 km/hr for 2 hr = 120 km \\checkmark (reasonable)"
+            }
+          ],
+          "explanation": [
+            "IPM and Olympiad exams love speed-distance-time word problems!",
+            "Typical problem: \"A train travels from Patna to Kolkata (550 km) at 110 km/hr. How long does it take?\"",
+            "Always re-read the question after solving to make sure you answered what was asked."
+          ],
+          "rule": "Read \u2192 Identify S, D, T \u2192 Match units \u2192 Apply formula \u2192 Check answer",
+          "tip": "Write the SDT triangle on your rough sheet before starting any speed problem."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "tc-l5-q1",
+          "question": "A bicycle moves at 15 km/hr. What is the distance covered in 2 hours?",
+          "answer": "30 km",
+          "hint": "D = S \u00d7 T = 15 \u00d7 2 = 30 km.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l5-q2",
+          "question": "A car covers 200 km in 4 hours. What is its speed?",
+          "answer": "50 km/hr",
+          "hint": "S = D \u00f7 T = 200 \u00f7 4 = 50 km/hr.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l5-q3",
+          "question": "How long will it take to travel 150 km at a speed of 50 km/hr?",
+          "answer": "3 hours",
+          "hint": "T = D \u00f7 S = 150 \u00f7 50 = 3 hours.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l5-q4",
+          "question": "Sanjay walks at 4 km/hr for 45 minutes. How far does he walk?",
+          "answer": "3 km",
+          "hint": "First convert 45 min to hours: 45 \u00f7 60 = 0.75 hr. D = 4 \u00d7 0.75 = 3 km.",
+          "story": "Sanjay walks to his tuition class every evening.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "tc-l5-q5",
+          "question": "In the SDT triangle, what does covering the D give you?",
+          "answer": "S x T",
+          "hint": "D is on top. Covering it shows S and T side by side, meaning Speed \u00d7 Time.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "tc-l5-q6",
+          "question": "The Vande Bharat Express travels at 120 km/hr. How far does it go in 2 hours 30 minutes?",
+          "answer": "300 km",
+          "hint": "2 hr 30 min = 2.5 hr. D = 120 \u00d7 2.5 = 300 km.",
+          "story": "The Vande Bharat Express runs between New Delhi and Varanasi.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "tc-l5-q7",
+          "question": "Priya cycles to school at 12 km/hr and takes 25 minutes. Her brother Raj walks the same distance at 5 km/hr. How long does Raj take?",
+          "answer": "1 hour",
+          "hint": "Priya\u2019s distance: 12 \u00d7 (25/60) = 12 \u00d7 (5/12) = 5 km. Raj\u2019s time: 5 \u00f7 5 = 1 hour.",
+          "story": "Priya and Raj both go to the same school in Lucknow.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "tc-l5-q8",
+          "question": "A train leaves Jaipur at 8:00 AM and travels at 90 km/hr. Another train leaves Jaipur at 9:00 AM on the same route at 120 km/hr. At what time will the second train catch up with the first?",
+          "answer": "12:00 PM",
+          "hint": "By 9:00 AM, Train 1 has covered 90 km. The second train gains 30 km/hr (120 \u2212 90). Time to close 90 km gap: 90 \u00f7 30 = 3 hours after 9:00 AM = 12:00 PM.",
+          "story": "Two Rajasthan Express trains on the Jaipur\u2013Delhi route.",
+          "isWord": true,
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

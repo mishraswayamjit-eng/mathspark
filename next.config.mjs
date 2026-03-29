@@ -32,6 +32,7 @@ const nextConfig = {
       '/api/stories':               ['./data/math-stories.json'],
       '/api/concept-map':           ['./data/concept-map.json', './data/dependency-graph.json'],
       '/api/ipm-predictor':         ['./data/ipm-predictor.json'],
+      '/api/lessons/[topicSlug]':   ['./data/lessons/**/*'],
     },
   },
 };

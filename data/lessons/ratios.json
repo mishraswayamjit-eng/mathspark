@@ -1,0 +1,1100 @@
+{
+  "id": "ratios",
+  "topic": "Ratios & Proportions",
+  "emoji": "\u2696\ufe0f",
+  "color": "#FB923C",
+  "gradeRange": [5, 8],
+  "description": "Comparing quantities and scaling",
+  "levels": [
+    {
+      "id": 1,
+      "label": "What is a Ratio?",
+      "emoji": "\ud83d\udfe2",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "Comparing quantities",
+      "lessons": [
+        {
+          "id": "ra-l1-les1",
+          "title": "Ratios as Comparison",
+          "intro": "A ratio tells us how two quantities compare to each other. If there are 14 boys and 16 girls in a class, we can compare them using a ratio.",
+          "visual": "boys_girls_classroom",
+          "steps": [
+            {
+              "text": "Count the two groups you want to compare.",
+              "notation": "\\text{Boys} = 14, \\quad \\text{Girls} = 16"
+            },
+            {
+              "text": "Write the ratio using a colon.",
+              "notation": "\\text{Boys : Girls} = 14 : 16"
+            },
+            {
+              "text": "A ratio compares quantities in order. Boys to Girls is different from Girls to Boys.",
+              "notation": "14 : 16 \\neq 16 : 14",
+              "tip": "Order matters! Always read left to right."
+            }
+          ],
+          "explanation": [
+            "A ratio is a way of comparing two quantities by showing how many times one contains the other.",
+            "In Aarav's class, for every 14 boys there are 16 girls. We write this as 14:16.",
+            "Ratios can compare any two quantities \u2014 runs scored by two batsmen, chapatis eaten by two friends, or marks in two subjects."
+          ],
+          "rule": "A ratio a : b means for every a of the first quantity, there are b of the second.",
+          "tip": "Think of ratio as a recipe \u2014 it tells you the relationship, not the exact amounts."
+        },
+        {
+          "id": "ra-l1-les2",
+          "title": "Writing Ratios",
+          "intro": "There are three common ways to write a ratio. Let us learn all three using a chai recipe: 2 spoons of tea leaves for 3 cups of water.",
+          "visual": "chai_recipe",
+          "steps": [
+            {
+              "text": "Using a colon (:) \u2014 the most common way.",
+              "notation": "\\text{Tea : Water} = 2 : 3"
+            },
+            {
+              "text": "Using the word 'to'.",
+              "notation": "\\text{Tea to Water} = 2 \\text{ to } 3"
+            },
+            {
+              "text": "As a fraction.",
+              "notation": "\\frac{\\text{Tea}}{\\text{Water}} = \\frac{2}{3}",
+              "tip": "When writing as a fraction, the first quantity goes on top (numerator)."
+            }
+          ],
+          "explanation": [
+            "All three forms mean the same thing \u2014 for every 2 spoons of tea, we use 3 cups of water.",
+            "In exams, the colon form (2:3) is used most often.",
+            "The fraction form is especially useful when you need to do calculations."
+          ],
+          "rule": "a : b = a to b = \\frac{a}{b}",
+          "tip": "Dadi's chai recipe is 2:3. If you change the ratio, the taste changes!"
+        },
+        {
+          "id": "ra-l1-les3",
+          "title": "Simplifying Ratios",
+          "intro": "Just like fractions, ratios can be simplified by dividing both parts by their HCF. Simpler ratios are easier to understand and work with.",
+          "visual": "simplify_ratio",
+          "steps": [
+            {
+              "text": "Start with the ratio you want to simplify.",
+              "notation": "12 : 18"
+            },
+            {
+              "text": "Find the HCF (Highest Common Factor) of both numbers.",
+              "notation": "\\text{HCF}(12, 18) = 6"
+            },
+            {
+              "text": "Divide both parts of the ratio by the HCF.",
+              "notation": "\\frac{12}{6} : \\frac{18}{6} = 2 : 3",
+              "tip": "A ratio is in simplest form when HCF of both parts is 1."
+            }
+          ],
+          "explanation": [
+            "12:18 and 2:3 represent the same comparison, but 2:3 is simpler.",
+            "Think of it this way: Priya scored 12 out of 18 in a test. That is the same proportion as 2 out of every 3.",
+            "Always simplify ratios in your final answer unless told otherwise."
+          ],
+          "rule": "To simplify a : b, divide both a and b by \\text{HCF}(a, b).",
+          "tip": "If both numbers are even, you can start by dividing by 2, then keep going."
+        },
+        {
+          "id": "ra-l1-les4",
+          "title": "Equivalent Ratios",
+          "intro": "Just like equivalent fractions, equivalent ratios represent the same comparison. Multiplying or dividing both parts by the same number gives an equivalent ratio.",
+          "visual": "equivalent_ratios",
+          "steps": [
+            {
+              "text": "Start with a ratio.",
+              "notation": "3 : 5"
+            },
+            {
+              "text": "Multiply both parts by the same number to get an equivalent ratio.",
+              "notation": "3 \\times 2 : 5 \\times 2 = 6 : 10"
+            },
+            {
+              "text": "You can multiply by any number to generate more equivalent ratios.",
+              "notation": "3 : 5 = 6 : 10 = 9 : 15 = 12 : 20 = 15 : 25",
+              "tip": "All these ratios simplify back to 3:5."
+            }
+          ],
+          "explanation": [
+            "If Rohit mixes 3 spoons of Rooh Afza in 5 glasses of water, and Meera mixes 6 spoons in 10 glasses, they get the same taste!",
+            "Equivalent ratios are used when scaling recipes, maps, and models.",
+            "To check if two ratios are equivalent, simplify both \u2014 if they match, they are equivalent."
+          ],
+          "rule": "a : b = (a \\times k) : (b \\times k) for any non-zero number k.",
+          "tip": "Scaling up a recipe? Just multiply both sides of the ratio by the same number."
+        },
+        {
+          "id": "ra-l1-les5",
+          "title": "Ratios in Daily Life",
+          "intro": "Ratios are everywhere around us \u2014 in cricket, cooking, maps, and even pocket money! Let us see how ratios appear in everyday Indian life.",
+          "visual": "daily_life_ratios",
+          "steps": [
+            {
+              "text": "Cricket: A batsman scores 45 runs off 30 balls. The strike rate ratio is runs to balls.",
+              "notation": "\\text{Runs : Balls} = 45 : 30 = 3 : 2"
+            },
+            {
+              "text": "Pocket money: Ananya gets \u20b9200 and her brother Vihaan gets \u20b9300 per week.",
+              "notation": "\\text{Ananya : Vihaan} = 200 : 300 = 2 : 3"
+            },
+            {
+              "text": "Map scale: 1 cm on the map represents 5 km in real life.",
+              "notation": "\\text{Map : Real} = 1 : 5{,}00{,}000",
+              "tip": "Maps use ratios to shrink real distances. 1 cm = 5 km means 1 : 500000 (in cm)."
+            }
+          ],
+          "explanation": [
+            "In cricket, a strike rate of 3:2 means the batsman scores 3 runs for every 2 balls faced.",
+            "Ratios help us compare, scale, and make fair decisions.",
+            "When Papa divides pocket money in ratio 2:3, he is being fair based on age or need, not giving equal amounts."
+          ],
+          "rule": "Ratios help compare quantities of the same kind in a meaningful way.",
+          "tip": "Next time you watch a cricket match, try calculating the run rate as a ratio!"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ra-l1-q1",
+          "question": "In a class, there are 18 boys and 12 girls. What is the ratio of boys to girls in simplest form?",
+          "answer": "3:2",
+          "hint": "Find the HCF of 18 and 12, then divide both by it.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ra-l1-q2",
+          "question": "Dadi uses 4 spoons of sugar for 6 cups of chai. Write the ratio of sugar to chai in simplest form.",
+          "answer": "2:3",
+          "hint": "Divide both 4 and 6 by their HCF, which is 2.",
+          "story": "Every morning Dadi makes chai for the whole family.",
+          "isWord": true,
+          "difficulty": "direct"
+        },
+        {
+          "id": "ra-l1-q3",
+          "question": "Which of these is equivalent to 5:8? (a) 10:16 (b) 15:20 (c) 25:35",
+          "answer": "10:16",
+          "hint": "Multiply both parts of 5:8 by 2 and see which one matches.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ra-l1-q4",
+          "question": "Simplify the ratio 36:48.",
+          "answer": "3:4",
+          "hint": "HCF of 36 and 48 is 12. Divide both by 12.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ra-l1-q5",
+          "question": "Arjun scored 72 runs off 48 balls. What is the ratio of runs to balls in simplest form?",
+          "answer": "3:2",
+          "hint": "HCF of 72 and 48 is 24.",
+          "story": "Arjun was batting in a school cricket tournament and hit some brilliant shots.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ra-l1-q6",
+          "question": "The ratio of Kavya's marks to Ishaan's marks is 7:5. If Kavya scored 84, how many marks did Ishaan score?",
+          "answer": "60",
+          "hint": "If 7 parts = 84, find the value of 1 part first (84 \u00f7 7 = 12). Then multiply by 5.",
+          "story": "Kavya and Ishaan are classmates who compared their maths test scores.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ra-l1-q7",
+          "question": "A recipe needs flour and sugar in the ratio 5:2. If you use 15 cups of flour, how many cups of sugar do you need?",
+          "answer": "6",
+          "hint": "15 \u00f7 5 = 3, so multiply the sugar part by 3 as well.",
+          "story": "Meera is baking a cake for her friend's birthday.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ra-l1-q8",
+          "question": "There are 45 students in a class. The ratio of students who walk to school to those who take a bus is 2:3. How many students take the bus?",
+          "answer": "27",
+          "hint": "Total parts = 2 + 3 = 5. Each part = 45 \u00f7 5 = 9. Bus students = 3 \u00d7 9.",
+          "story": "The class teacher of Grade 6 was surveying how students travel to school.",
+          "isWord": true,
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Proportion",
+      "emoji": "\ud83d\udd35",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Equal ratios",
+      "lessons": [
+        {
+          "id": "ra-l2-les1",
+          "title": "What is a Proportion?",
+          "intro": "A proportion is a statement that two ratios are equal. If two ratios simplify to the same value, they are in proportion.",
+          "visual": "proportion_balance",
+          "steps": [
+            {
+              "text": "Consider two ratios.",
+              "notation": "2 : 3 \\quad \\text{and} \\quad 4 : 6"
+            },
+            {
+              "text": "Simplify the second ratio.",
+              "notation": "4 : 6 = \\frac{4}{2} : \\frac{6}{2} = 2 : 3"
+            },
+            {
+              "text": "Since both ratios are equal, they are in proportion. We write this using the :: symbol.",
+              "notation": "2 : 3 :: 4 : 6",
+              "tip": "The symbol :: (double colon) means 'is proportional to'."
+            }
+          ],
+          "explanation": [
+            "A proportion says that two ratios are the same.",
+            "If Riya buys 2 notebooks for \u20b930, and 4 notebooks for \u20b960, the ratios 2:30 and 4:60 are in proportion.",
+            "In a proportion a:b :: c:d, the numbers a and d are called extremes, and b and c are called means."
+          ],
+          "rule": "a : b :: c : d means \\frac{a}{b} = \\frac{c}{d}",
+          "tip": "Proportion = equal ratios. If you can simplify both to the same ratio, they are proportional."
+        },
+        {
+          "id": "ra-l2-les2",
+          "title": "Cross Multiplication",
+          "intro": "Cross multiplication is a powerful shortcut to check if two ratios form a proportion, and to solve for unknown values.",
+          "visual": "cross_multiply",
+          "steps": [
+            {
+              "text": "Write the proportion as two fractions set equal.",
+              "notation": "\\frac{3}{4} = \\frac{6}{8}"
+            },
+            {
+              "text": "Cross multiply: multiply the numerator of each fraction by the denominator of the other.",
+              "notation": "3 \\times 8 = 24 \\quad \\text{and} \\quad 4 \\times 6 = 24"
+            },
+            {
+              "text": "If the cross products are equal, the ratios are in proportion.",
+              "notation": "3 \\times 8 = 4 \\times 6 \\implies 24 = 24 \\quad \\checkmark",
+              "tip": "Cross multiplication works because multiplying both sides of an equation by both denominators gives the same result."
+            }
+          ],
+          "explanation": [
+            "Cross multiplication converts a fraction equation into a simple multiplication equation.",
+            "This is the fastest way to check proportions in MCQ exams.",
+            "It also helps us find a missing value when three of the four numbers are known."
+          ],
+          "rule": "\\frac{a}{b} = \\frac{c}{d} \\iff a \\times d = b \\times c",
+          "tip": "Draw an X across the = sign to remember which numbers to multiply."
+        },
+        {
+          "id": "ra-l2-les3",
+          "title": "Solving Proportions",
+          "intro": "When one value in a proportion is unknown, we can use cross multiplication to find it. Let us solve step by step.",
+          "visual": "solve_proportion",
+          "steps": [
+            {
+              "text": "Set up the proportion with the unknown.",
+              "notation": "\\frac{5}{8} = \\frac{x}{24}"
+            },
+            {
+              "text": "Cross multiply.",
+              "notation": "5 \\times 24 = 8 \\times x \\implies 120 = 8x"
+            },
+            {
+              "text": "Solve for x by dividing both sides.",
+              "notation": "x = \\frac{120}{8} = 15",
+              "tip": "Always check: does 5:8 = 15:24? Simplify 15:24 = 5:8. Yes!"
+            }
+          ],
+          "explanation": [
+            "Step 1: Write what you know as a proportion.",
+            "Step 2: Cross multiply to get rid of fractions.",
+            "Step 3: Solve the simple equation.",
+            "Step 4: Verify by simplifying both ratios."
+          ],
+          "rule": "If \\frac{a}{b} = \\frac{x}{d}, then x = \\frac{a \\times d}{b}",
+          "tip": "After finding x, always substitute back and check that both ratios are equal."
+        },
+        {
+          "id": "ra-l2-les4",
+          "title": "Checking Proportionality",
+          "intro": "Given two ratios, how do we quickly check if they form a proportion? There are two methods: simplification and cross multiplication.",
+          "visual": "check_proportion",
+          "steps": [
+            {
+              "text": "Method 1 \u2014 Simplify both ratios.",
+              "notation": "\\frac{12}{18} = \\frac{2}{3} \\quad \\text{and} \\quad \\frac{20}{30} = \\frac{2}{3}"
+            },
+            {
+              "text": "Same simplified ratio means they are in proportion.",
+              "notation": "12 : 18 :: 20 : 30 \\quad \\checkmark"
+            },
+            {
+              "text": "Method 2 \u2014 Cross multiply and compare.",
+              "notation": "12 \\times 30 = 360 \\quad \\text{and} \\quad 18 \\times 20 = 360 \\quad \\checkmark",
+              "tip": "Use whichever method feels faster. For big numbers, cross multiplication is usually quicker."
+            }
+          ],
+          "explanation": [
+            "Both methods work every time. Choose the one you find easier.",
+            "Simplification is good when numbers have obvious common factors.",
+            "Cross multiplication is better for larger numbers or in time-pressured exams."
+          ],
+          "rule": "Two ratios a:b and c:d are in proportion if and only if a \\times d = b \\times c.",
+          "tip": "IPM tip: In MCQs, cross multiplication is faster than simplifying both fractions."
+        },
+        {
+          "id": "ra-l2-les5",
+          "title": "Word Problems \u2014 Recipe Scaling",
+          "intro": "Proportions are perfect for scaling recipes. If a recipe serves 4, how do you adjust it for 10 people? Let us find out with Nani's famous biryani recipe.",
+          "visual": "recipe_scaling",
+          "steps": [
+            {
+              "text": "Nani's biryani recipe uses 2 cups of rice for 4 people. How much rice for 10 people?",
+              "notation": "\\frac{2 \\text{ cups}}{4 \\text{ people}} = \\frac{x \\text{ cups}}{10 \\text{ people}}"
+            },
+            {
+              "text": "Cross multiply.",
+              "notation": "2 \\times 10 = 4 \\times x \\implies 20 = 4x"
+            },
+            {
+              "text": "Solve.",
+              "notation": "x = \\frac{20}{4} = 5 \\text{ cups of rice}",
+              "tip": "You can also think: 10 people is 2.5 times 4 people, so multiply rice by 2.5."
+            }
+          ],
+          "explanation": [
+            "Recipe scaling is one of the most practical uses of proportion.",
+            "Set up: known ratio on the left, unknown on the right. Keep the same quantity on top in both.",
+            "Cross multiply and solve for the missing quantity."
+          ],
+          "rule": "\\frac{\\text{quantity}_1}{\\text{people}_1} = \\frac{\\text{quantity}_2}{\\text{people}_2}",
+          "tip": "Nani's rule: if the biryani ratio is wrong, no amount of dum can save it!"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ra-l2-q1",
+          "question": "Are the ratios 6:9 and 10:15 in proportion?",
+          "answer": "Yes",
+          "hint": "Simplify both: 6:9 = 2:3 and 10:15 = 2:3.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ra-l2-q2",
+          "question": "Solve for x: 4:7 = x:21",
+          "answer": "12",
+          "hint": "Cross multiply: 4 \u00d7 21 = 7 \u00d7 x, so 84 = 7x.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ra-l2-q3",
+          "question": "Nani uses 3 cups of dal for 6 people. How many cups are needed for 15 people?",
+          "answer": "7.5",
+          "hint": "Set up: 3/6 = x/15. Cross multiply: 3 \u00d7 15 = 6 \u00d7 x.",
+          "story": "Nani is cooking dal for a family gathering.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ra-l2-q4",
+          "question": "In a proportion a:b :: c:d, if a = 5, b = 8, c = 15, find d.",
+          "answer": "24",
+          "hint": "5 \u00d7 d = 8 \u00d7 15 = 120, so d = 120 \u00f7 5.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ra-l2-q5",
+          "question": "Riya buys 5 pencils for \u20b940. How much will 12 pencils cost at the same rate?",
+          "answer": "96",
+          "hint": "5/40 = 12/x. Cross multiply: 5x = 480.",
+          "story": "Riya is buying pencils from the school canteen for her friends.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ra-l2-q6",
+          "question": "Check if 8:12 and 14:21 are in proportion using cross multiplication. What are both cross products?",
+          "answer": "168",
+          "hint": "8 \u00d7 21 = ? and 12 \u00d7 14 = ?",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ra-l2-q7",
+          "question": "A recipe needs sugar and flour in ratio 2:5. If Meera uses 350g of flour, how many grams of sugar does she need?",
+          "answer": "140",
+          "hint": "2/5 = x/350. Cross multiply: 2 \u00d7 350 = 5 \u00d7 x.",
+          "story": "Meera is baking cookies for Diwali.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ra-l2-q8",
+          "question": "The first three terms of a proportion are 3, 5, and 12. Find the fourth term.",
+          "answer": "20",
+          "hint": "3:5 :: 12:x. Cross multiply: 3x = 60.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Unitary Method",
+      "emoji": "\ud83d\udfe1",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Find the value of one",
+      "lessons": [
+        {
+          "id": "ra-l3-les1",
+          "title": "The Unitary Method Concept",
+          "intro": "The unitary method is a technique where we first find the value of one unit, then use it to find the value of any number of units. It is one of the most important problem-solving tools in Indian maths syllabi.",
+          "visual": "unitary_method",
+          "steps": [
+            {
+              "text": "Problem: 8 mangoes cost \u20b9120. What is the cost of 5 mangoes?",
+              "notation": "8 \\text{ mangoes} = \\text{\u20b9}120"
+            },
+            {
+              "text": "Step 1: Find the cost of 1 mango.",
+              "notation": "1 \\text{ mango} = \\frac{120}{8} = \\text{\u20b9}15"
+            },
+            {
+              "text": "Step 2: Multiply to find the cost of 5 mangoes.",
+              "notation": "5 \\text{ mangoes} = 15 \\times 5 = \\text{\u20b9}75",
+              "tip": "Always write the 'value of 1' step clearly. Examiners give marks for showing this step."
+            }
+          ],
+          "explanation": [
+            "The unitary method has two steps: first divide to find the value of one, then multiply to find the value of many.",
+            "It works for cost, weight, distance, time, and any proportional quantity.",
+            "This method is called 'ekank vidhi' (\u090f\u0915\u093e\u0902\u0915 \u0935\u093f\u0927\u093f) in Hindi \u2014 'ek' means one."
+          ],
+          "rule": "\\text{Value of 1 unit} = \\frac{\\text{Total value}}{\\text{Number of units}}",
+          "tip": "The unitary method is the backbone of ratio problems. Master it and proportions become easy."
+        },
+        {
+          "id": "ra-l3-les2",
+          "title": "Direct Variation",
+          "intro": "When two quantities increase or decrease together at the same rate, they are in direct variation. More items means more cost. More distance means more time.",
+          "visual": "direct_variation",
+          "steps": [
+            {
+              "text": "If 4 kg of rice costs \u20b9240, what does 7 kg cost? More rice = more cost (direct).",
+              "notation": "4 \\text{ kg} = \\text{\u20b9}240"
+            },
+            {
+              "text": "Find cost of 1 kg.",
+              "notation": "1 \\text{ kg} = \\frac{240}{4} = \\text{\u20b9}60"
+            },
+            {
+              "text": "Find cost of 7 kg.",
+              "notation": "7 \\text{ kg} = 60 \\times 7 = \\text{\u20b9}420",
+              "tip": "In direct variation: as one quantity goes UP, the other also goes UP."
+            }
+          ],
+          "explanation": [
+            "Direct variation means both quantities move in the same direction.",
+            "If you buy more rice, you pay more. If you travel farther, it takes more time (at constant speed).",
+            "The ratio between the two quantities stays constant: 240/4 = 420/7 = 60."
+          ],
+          "rule": "\\text{Direct variation: } \\frac{y_1}{x_1} = \\frac{y_2}{x_2}",
+          "tip": "Ask yourself: if I double one quantity, does the other also double? If yes, it is direct variation."
+        },
+        {
+          "id": "ra-l3-les3",
+          "title": "Cost Problems",
+          "intro": "Shopping at the market is full of unitary method problems! Let us solve some real-life cost calculations.",
+          "visual": "market_shopping",
+          "steps": [
+            {
+              "text": "Samosa vendor: 12 samosas cost \u20b9180. What is the cost of 20 samosas?",
+              "notation": "12 \\text{ samosas} = \\text{\u20b9}180"
+            },
+            {
+              "text": "Cost of 1 samosa.",
+              "notation": "1 \\text{ samosa} = \\frac{180}{12} = \\text{\u20b9}15"
+            },
+            {
+              "text": "Cost of 20 samosas.",
+              "notation": "20 \\text{ samosas} = 15 \\times 20 = \\text{\u20b9}300",
+              "tip": "In exams, write clearly: 'Cost of 1 = ... ' then 'Cost of n = ...'. This format always gets full marks."
+            }
+          ],
+          "explanation": [
+            "Step 1: Always find the price of 1 item first.",
+            "Step 2: Multiply the unit price by the number you need.",
+            "This works for any shopping scenario \u2014 groceries, stationery, or snacks."
+          ],
+          "rule": "\\text{Cost of } n \\text{ items} = n \\times \\frac{\\text{Total cost}}{\\text{Number of items}}",
+          "tip": "Bhaiya at the samosa stall uses the unitary method to give you change. Maths is everywhere!"
+        },
+        {
+          "id": "ra-l3-les4",
+          "title": "Time and Work Problems",
+          "intro": "If 6 workers can paint a school wall in 4 days, how long would 8 workers take? More workers means less time \u2014 this is inverse variation!",
+          "visual": "time_work",
+          "steps": [
+            {
+              "text": "6 workers take 4 days. Find the total work in worker-days.",
+              "notation": "\\text{Total work} = 6 \\times 4 = 24 \\text{ worker-days}"
+            },
+            {
+              "text": "If 8 workers do the same work, find the days needed.",
+              "notation": "\\text{Days} = \\frac{24}{8} = 3 \\text{ days}"
+            },
+            {
+              "text": "More workers = fewer days. This is inverse variation.",
+              "notation": "\\text{Workers} \\times \\text{Days} = \\text{constant}",
+              "tip": "In inverse variation: if one quantity doubles, the other halves."
+            }
+          ],
+          "explanation": [
+            "Time-work problems often involve inverse variation: more workers means less time.",
+            "The key is to find the total work (in worker-days or man-hours) first.",
+            "Then divide by the new number of workers to find the new time."
+          ],
+          "rule": "\\text{Workers}_1 \\times \\text{Days}_1 = \\text{Workers}_2 \\times \\text{Days}_2",
+          "tip": "Think of it as the total effort needed. Whether 6 people or 8 people do it, the wall is the same size."
+        },
+        {
+          "id": "ra-l3-les5",
+          "title": "Mixed Problems",
+          "intro": "Let us combine what we have learned \u2014 some problems need direct variation, others need inverse variation. The key is identifying which type it is.",
+          "visual": "mixed_problems",
+          "steps": [
+            {
+              "text": "Problem: A car travels 150 km in 3 hours. How far will it go in 5 hours at the same speed?",
+              "notation": "\\frac{150 \\text{ km}}{3 \\text{ hours}} = 50 \\text{ km/hr}"
+            },
+            {
+              "text": "More time = more distance (direct variation). Multiply.",
+              "notation": "50 \\times 5 = 250 \\text{ km}"
+            },
+            {
+              "text": "Problem: 15 students can finish cleaning the ground in 6 hours. How long for 10 students?",
+              "notation": "\\text{Total work} = 15 \\times 6 = 90 \\text{ student-hours}. \\quad \\text{Time} = \\frac{90}{10} = 9 \\text{ hours}",
+              "tip": "Ask: 'If I increase one, does the other increase (direct) or decrease (inverse)?'"
+            }
+          ],
+          "explanation": [
+            "Before solving, always decide: is it direct or inverse variation?",
+            "Direct: more of A means more of B (more time, more distance).",
+            "Inverse: more of A means less of B (more workers, less time).",
+            "Write this decision as your first step \u2014 it helps avoid mistakes."
+          ],
+          "rule": "Direct: \\frac{a_1}{b_1} = \\frac{a_2}{b_2}. \\quad Inverse: a_1 \\times b_1 = a_2 \\times b_2.",
+          "tip": "IPM trick: Underline whether the problem is direct or inverse before solving. It saves silly mistakes."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ra-l3-q1",
+          "question": "If 6 notebooks cost \u20b9150, what is the cost of 1 notebook?",
+          "answer": "25",
+          "hint": "Divide the total cost by the number of notebooks: 150 \u00f7 6.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ra-l3-q2",
+          "question": "9 oranges cost \u20b9135. How much do 15 oranges cost?",
+          "answer": "225",
+          "hint": "Cost of 1 orange = 135 \u00f7 9 = \u20b915. Then 15 \u00d7 15.",
+          "story": "Tanvi went to the fruit market near her school.",
+          "isWord": true,
+          "difficulty": "direct"
+        },
+        {
+          "id": "ra-l3-q3",
+          "question": "A car travels 240 km in 4 hours. How far will it travel in 7 hours at the same speed?",
+          "answer": "420",
+          "hint": "Speed = 240 \u00f7 4 = 60 km/hr. Distance in 7 hours = 60 \u00d7 7.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ra-l3-q4",
+          "question": "If 5 workers can build a wall in 12 days, how many days will 10 workers take?",
+          "answer": "6",
+          "hint": "Total work = 5 \u00d7 12 = 60 worker-days. Days for 10 workers = 60 \u00f7 10.",
+          "story": "A contractor hired workers to build a wall around the school playground.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ra-l3-q5",
+          "question": "12 identical machines produce 360 items in a day. How many items do 8 machines produce?",
+          "answer": "240",
+          "hint": "1 machine produces 360 \u00f7 12 = 30 items. 8 machines produce 30 \u00d7 8.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ra-l3-q6",
+          "question": "A tap fills a tank in 6 hours. What fraction of the tank is filled in 1 hour?",
+          "answer": "1/6",
+          "hint": "If the full tank takes 6 hours, in 1 hour, 1/6 of the tank is filled.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ra-l3-q7",
+          "question": "Sameer cycles 18 km in 1.5 hours. At the same speed, how long will he take to cycle 30 km?",
+          "answer": "2.5",
+          "hint": "Speed = 18 \u00f7 1.5 = 12 km/hr. Time = 30 \u00f7 12.",
+          "story": "Sameer cycles from his home to the coaching centre every morning.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ra-l3-q8",
+          "question": "If 8 men can dig a trench in 6 days, how many men are needed to dig it in 4 days?",
+          "answer": "12",
+          "hint": "Total work = 8 \u00d7 6 = 48 man-days. Men needed = 48 \u00f7 4.",
+          "story": "The village panchayat needed a drainage trench dug before the monsoon.",
+          "isWord": true,
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Percentages",
+      "emoji": "\ud83d\udfe0",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Per hundred",
+      "lessons": [
+        {
+          "id": "ra-l4-les1",
+          "title": "Percent Means Per 100",
+          "intro": "The word 'percent' comes from the Latin 'per centum', meaning 'for every hundred'. If you scored 85%, it means you got 85 out of every 100 marks.",
+          "visual": "hundred_grid",
+          "steps": [
+            {
+              "text": "Percent means 'out of 100'.",
+              "notation": "85\\% = \\frac{85}{100}"
+            },
+            {
+              "text": "We can visualise percent on a 10\u00d710 grid (100 squares). 85% means 85 squares shaded.",
+              "notation": "85 \\text{ shaded squares out of } 100"
+            },
+            {
+              "text": "Any fraction can be converted to a percentage by making the denominator 100.",
+              "notation": "\\frac{17}{20} = \\frac{17 \\times 5}{20 \\times 5} = \\frac{85}{100} = 85\\%",
+              "tip": "Percentage is just a special ratio \u2014 a ratio with 100 as the second term."
+            }
+          ],
+          "explanation": [
+            "Percent is a standard way to compare quantities because everything is 'out of 100'.",
+            "Scoring 42/60 and 35/50 \u2014 which is better? Convert to percentages to compare easily.",
+            "42/60 = 70% and 35/50 = 70%. They are the same!"
+          ],
+          "rule": "x\\% = \\frac{x}{100}",
+          "tip": "The % symbol is just a shorthand for '/100'. Every time you see %, think 'divided by 100'."
+        },
+        {
+          "id": "ra-l4-les2",
+          "title": "Converting Fractions and Percentages",
+          "intro": "Moving between fractions, decimals, and percentages is a key skill. Let us master all the conversion paths.",
+          "visual": "fraction_percent_decimal",
+          "steps": [
+            {
+              "text": "Fraction to Percentage: multiply by 100.",
+              "notation": "\\frac{3}{4} = \\frac{3}{4} \\times 100\\% = 75\\%"
+            },
+            {
+              "text": "Percentage to Fraction: put over 100 and simplify.",
+              "notation": "60\\% = \\frac{60}{100} = \\frac{3}{5}"
+            },
+            {
+              "text": "Decimal to Percentage: multiply by 100 (move decimal point 2 places right).",
+              "notation": "0.45 = 0.45 \\times 100\\% = 45\\%",
+              "tip": "Learn the common ones by heart: 1/2 = 50%, 1/4 = 25%, 1/5 = 20%, 1/3 = 33.33%."
+            }
+          ],
+          "explanation": [
+            "Fraction to %: multiply by 100.",
+            "% to Fraction: divide by 100 and simplify.",
+            "Decimal to %: multiply by 100. % to Decimal: divide by 100.",
+            "Knowing these conversions quickly helps in MCQ exams like IPM."
+          ],
+          "rule": "\\text{Fraction} \\xrightarrow{\\times 100} \\text{Percentage} \\xrightarrow{\\div 100} \\text{Fraction}",
+          "tip": "Memorise: 1/8 = 12.5%, 3/8 = 37.5%, 5/8 = 62.5%, 7/8 = 87.5%. These appear often in IPM."
+        },
+        {
+          "id": "ra-l4-les3",
+          "title": "Finding Percentage of a Number",
+          "intro": "How much is 20% of \u20b9500? This type of calculation is used every time there is a discount, a tax, or a tip.",
+          "visual": "percentage_of_number",
+          "steps": [
+            {
+              "text": "Write the percentage as a fraction.",
+              "notation": "20\\% = \\frac{20}{100}"
+            },
+            {
+              "text": "Multiply by the number.",
+              "notation": "20\\% \\text{ of } 500 = \\frac{20}{100} \\times 500"
+            },
+            {
+              "text": "Calculate.",
+              "notation": "= \\frac{20 \\times 500}{100} = \\frac{10000}{100} = 100",
+              "tip": "Shortcut: to find 10%, just move the decimal one place left. 10% of 500 = 50. Then 20% = 2 \u00d7 50 = 100."
+            }
+          ],
+          "explanation": [
+            "'Of' in maths means 'multiply'. So '20% of 500' means '20/100 \u00d7 500'.",
+            "Quick tricks: 10% is just dividing by 10. 5% is half of 10%. 1% is dividing by 100.",
+            "You can build any percentage from these: 15% = 10% + 5%."
+          ],
+          "rule": "x\\% \\text{ of } N = \\frac{x}{100} \\times N",
+          "tip": "When shopping, calculate 10% first (easy!) and then adjust. 30% off \u20b9800 = 3 \u00d7 80 = \u20b9240 off."
+        },
+        {
+          "id": "ra-l4-les4",
+          "title": "Percentage Increase and Decrease",
+          "intro": "Prices go up, populations grow, test scores improve or drop. Percentage change tells us by how much, relative to the original.",
+          "visual": "percent_change",
+          "steps": [
+            {
+              "text": "Formula for percentage change.",
+              "notation": "\\text{Percentage change} = \\frac{\\text{Change}}{\\text{Original}} \\times 100\\%"
+            },
+            {
+              "text": "Example: A shirt's price increased from \u20b9400 to \u20b9480.",
+              "notation": "\\text{Change} = 480 - 400 = 80. \\quad \\text{\\% increase} = \\frac{80}{400} \\times 100 = 20\\%"
+            },
+            {
+              "text": "Example: The price dropped from \u20b9500 to \u20b9425.",
+              "notation": "\\text{Change} = 500 - 425 = 75. \\quad \\text{\\% decrease} = \\frac{75}{500} \\times 100 = 15\\%",
+              "tip": "Always divide by the ORIGINAL value, not the new value. This is the most common mistake."
+            }
+          ],
+          "explanation": [
+            "Percentage increase: new value is MORE than the original.",
+            "Percentage decrease: new value is LESS than the original.",
+            "The denominator is always the original (starting) value.",
+            "If your marks went from 60 to 75, the increase is (75-60)/60 \u00d7 100 = 25%."
+          ],
+          "rule": "\\text{\\% change} = \\frac{\\text{New} - \\text{Original}}{\\text{Original}} \\times 100\\%",
+          "tip": "Common trap: a 50% increase followed by a 50% decrease does NOT bring you back to the original!"
+        },
+        {
+          "id": "ra-l4-les5",
+          "title": "Real-World Percentages",
+          "intro": "Discounts during Diwali sales, exam results, GST on your pizza \u2014 percentages are everywhere in India. Let us solve some real scenarios.",
+          "visual": "real_world_percent",
+          "steps": [
+            {
+              "text": "Discount: A bag costs \u20b91200 and has a 25% discount. What is the sale price?",
+              "notation": "\\text{Discount} = 25\\% \\times 1200 = \\text{\u20b9}300. \\quad \\text{Sale price} = 1200 - 300 = \\text{\u20b9}900"
+            },
+            {
+              "text": "Exam marks: Pooja scored 432 out of 600. What is her percentage?",
+              "notation": "\\frac{432}{600} \\times 100 = 72\\%"
+            },
+            {
+              "text": "GST: A pizza costs \u20b9250 plus 5% GST. What is the total bill?",
+              "notation": "\\text{GST} = 5\\% \\times 250 = \\text{\u20b9}12.50. \\quad \\text{Total} = 250 + 12.50 = \\text{\u20b9}262.50",
+              "tip": "For GST, multiply price by (1 + rate/100) to get the total directly. 250 \u00d7 1.05 = 262.50."
+            }
+          ],
+          "explanation": [
+            "Discount means the price goes DOWN by that percentage.",
+            "GST (Goods and Services Tax) means the price goes UP by that percentage.",
+            "Exam percentage = (marks obtained / total marks) \u00d7 100.",
+            "These are the three most common percentage calculations in daily life."
+          ],
+          "rule": "\\text{Sale price} = \\text{MRP} \\times \\left(1 - \\frac{\\text{discount}\\%}{100}\\right)",
+          "tip": "During the Flipkart Big Billion Day sale, check: is the discount on MRP or on the seller's price? Big difference!"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ra-l4-q1",
+          "question": "Convert 3/5 to a percentage.",
+          "answer": "60%",
+          "hint": "Multiply 3/5 by 100: (3 \u00d7 100) \u00f7 5.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ra-l4-q2",
+          "question": "What is 15% of \u20b9800?",
+          "answer": "120",
+          "hint": "10% of 800 = 80. 5% of 800 = 40. Add them: 80 + 40.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ra-l4-q3",
+          "question": "Aditya scored 378 out of 450 in his exams. What is his percentage?",
+          "answer": "84%",
+          "hint": "Divide 378 by 450 and multiply by 100: (378/450) \u00d7 100.",
+          "story": "Aditya was nervous about his half-yearly exam results.",
+          "isWord": true,
+          "difficulty": "direct"
+        },
+        {
+          "id": "ra-l4-q4",
+          "question": "A shirt marked at \u20b91500 is sold at 20% discount. What is the sale price?",
+          "answer": "1200",
+          "hint": "Discount = 20% of 1500 = 300. Sale price = 1500 - 300.",
+          "story": "Karan went shopping during the Republic Day sale.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ra-l4-q5",
+          "question": "The population of a town increased from 50,000 to 55,000. What is the percentage increase?",
+          "answer": "10%",
+          "hint": "Increase = 5000. Percentage = (5000/50000) \u00d7 100.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ra-l4-q6",
+          "question": "A book costs \u20b9350 plus 12% GST. What is the total price?",
+          "answer": "392",
+          "hint": "GST = 12% of 350 = 42. Total = 350 + 42.",
+          "story": "Sneha bought a reference book for her IPM preparation.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ra-l4-q7",
+          "question": "A shopkeeper bought a toy for \u20b9200 and sold it for \u20b9250. What is his profit percentage?",
+          "answer": "25%",
+          "hint": "Profit = 250 - 200 = 50. Profit % = (50/200) \u00d7 100.",
+          "story": "A shopkeeper near Chandni Chowk deals in toys.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ra-l4-q8",
+          "question": "A TV's price was increased by 10% and then decreased by 10%. If the original price was \u20b920,000, what is the final price?",
+          "answer": "19800",
+          "hint": "After 10% increase: 22000. Then 10% of 22000 = 2200. Final: 22000 - 2200.",
+          "story": "Papa was tracking the price of a TV on Amazon before buying it.",
+          "isWord": true,
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Advanced Ratios",
+      "emoji": "\ud83d\udd34",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Ratio reasoning",
+      "lessons": [
+        {
+          "id": "ra-l5-les1",
+          "title": "Dividing in a Ratio",
+          "intro": "When a quantity is divided in a given ratio, the total is split into parts. This is used for sharing money, distributing sweets, or dividing land.",
+          "visual": "divide_ratio",
+          "steps": [
+            {
+              "text": "Divide \u20b91500 between Aarav and Diya in the ratio 2:3.",
+              "notation": "\\text{Total parts} = 2 + 3 = 5"
+            },
+            {
+              "text": "Find the value of 1 part.",
+              "notation": "1 \\text{ part} = \\frac{1500}{5} = \\text{\u20b9}300"
+            },
+            {
+              "text": "Multiply to find each share.",
+              "notation": "\\text{Aarav} = 2 \\times 300 = \\text{\u20b9}600. \\quad \\text{Diya} = 3 \\times 300 = \\text{\u20b9}900",
+              "tip": "Check: 600 + 900 = 1500. Always verify that the shares add up to the total."
+            }
+          ],
+          "explanation": [
+            "Step 1: Add the ratio parts to find total parts.",
+            "Step 2: Divide the total quantity by total parts to find the value of one part.",
+            "Step 3: Multiply each ratio number by the value of one part.",
+            "Step 4: Verify by adding all shares \u2014 they must equal the total."
+          ],
+          "rule": "\\text{Share of } a = \\frac{a}{a+b} \\times \\text{Total}",
+          "tip": "In IPM, this is one of the most frequently tested topics. Practice with different totals and ratios."
+        },
+        {
+          "id": "ra-l5-les2",
+          "title": "Three-Part Ratios",
+          "intro": "Sometimes we need to divide among three or more people. The method is the same \u2014 just add all the parts together first.",
+          "visual": "three_part_ratio",
+          "steps": [
+            {
+              "text": "Divide 180 sweets among Rehan, Saira, and Vikram in the ratio 2:3:4.",
+              "notation": "\\text{Total parts} = 2 + 3 + 4 = 9"
+            },
+            {
+              "text": "Value of 1 part.",
+              "notation": "1 \\text{ part} = \\frac{180}{9} = 20 \\text{ sweets}"
+            },
+            {
+              "text": "Each person's share.",
+              "notation": "\\text{Rehan} = 2 \\times 20 = 40. \\quad \\text{Saira} = 3 \\times 20 = 60. \\quad \\text{Vikram} = 4 \\times 20 = 80",
+              "tip": "Verify: 40 + 60 + 80 = 180. Correct!"
+            }
+          ],
+          "explanation": [
+            "Three-part ratios work exactly like two-part ratios, just with more parts to add.",
+            "The total number of parts is the sum of all ratio components.",
+            "This extends to any number of parts: 4-part, 5-part ratios all follow the same method."
+          ],
+          "rule": "\\text{Share of } a = \\frac{a}{a+b+c} \\times \\text{Total}",
+          "tip": "During Eid, Nani divides mithai among grandchildren in a ratio. The oldest gets the most!"
+        },
+        {
+          "id": "ra-l5-les3",
+          "title": "Profit Sharing",
+          "intro": "In a business partnership, profits are shared in the ratio of investment. If you invest more, you earn more. This is used in every business in India.",
+          "visual": "profit_sharing",
+          "steps": [
+            {
+              "text": "Fatima invests \u20b940,000 and Geeta invests \u20b960,000 in a business. They earn \u20b925,000 profit.",
+              "notation": "\\text{Investment ratio} = 40000 : 60000 = 2 : 3"
+            },
+            {
+              "text": "Share the profit in ratio 2:3.",
+              "notation": "\\text{Total parts} = 2 + 3 = 5. \\quad 1 \\text{ part} = \\frac{25000}{5} = \\text{\u20b9}5000"
+            },
+            {
+              "text": "Calculate each partner's share.",
+              "notation": "\\text{Fatima} = 2 \\times 5000 = \\text{\u20b9}10{,}000. \\quad \\text{Geeta} = 3 \\times 5000 = \\text{\u20b9}15{,}000",
+              "tip": "If partners invest for different durations, multiply investment by time to get the effective investment ratio."
+            }
+          ],
+          "explanation": [
+            "In business partnerships, profit sharing is proportional to the capital invested.",
+            "First simplify the investment amounts into a ratio, then divide the profit in that ratio.",
+            "If investment periods differ, calculate capital \u00d7 time for each partner before finding the ratio."
+          ],
+          "rule": "\\text{Profit share} = \\frac{\\text{Your investment}}{\\text{Total investment}} \\times \\text{Total profit}",
+          "tip": "Many IPM problems add a twist: different investment periods. Always multiply amount \u00d7 months."
+        },
+        {
+          "id": "ra-l5-les4",
+          "title": "Speed and Ratio",
+          "intro": "Speed, distance, and time have ratio relationships. If two trains travel for the same time, the distance ratio equals the speed ratio. Let us explore.",
+          "visual": "speed_ratio",
+          "steps": [
+            {
+              "text": "Two trains leave Delhi at the same time. Train A travels at 60 km/hr and Train B at 80 km/hr. After 3 hours, what is the ratio of distances?",
+              "notation": "\\text{Speed ratio} = 60 : 80 = 3 : 4"
+            },
+            {
+              "text": "Since time is the same, distance ratio = speed ratio.",
+              "notation": "\\text{Distance}_A : \\text{Distance}_B = 3 : 4"
+            },
+            {
+              "text": "Actual distances: A = 180 km, B = 240 km. Ratio = 180:240 = 3:4.",
+              "notation": "\\frac{180}{240} = \\frac{3}{4} \\quad \\checkmark",
+              "tip": "Same time \u2192 distance ratio = speed ratio. Same distance \u2192 time ratio = inverse of speed ratio."
+            }
+          ],
+          "explanation": [
+            "Distance = Speed \u00d7 Time. So if time is constant, distance is proportional to speed.",
+            "If distance is constant (same route), time is inversely proportional to speed.",
+            "The Rajdhani Express and Shatabdi Express cover the same route but at different speeds \u2014 the faster one takes less time."
+          ],
+          "rule": "\\text{If time is constant: } \\frac{d_1}{d_2} = \\frac{s_1}{s_2}. \\quad \\text{If distance is constant: } \\frac{t_1}{t_2} = \\frac{s_2}{s_1}.",
+          "tip": "Train problems are a favourite in Indian exams. Draw a diagram with arrows showing direction."
+        },
+        {
+          "id": "ra-l5-les5",
+          "title": "Compound Ratios",
+          "intro": "When we multiply two or more ratios together, we get a compound ratio. This is used in advanced problems involving multiple proportional relationships.",
+          "visual": "compound_ratio",
+          "steps": [
+            {
+              "text": "The compound ratio of a:b and c:d is found by multiplying the corresponding terms.",
+              "notation": "\\text{Compound ratio of } a:b \\text{ and } c:d = ac : bd"
+            },
+            {
+              "text": "Example: Find the compound ratio of 2:3 and 4:5.",
+              "notation": "(2 \\times 4) : (3 \\times 5) = 8 : 15"
+            },
+            {
+              "text": "Example with three ratios: 1:2, 3:4, and 5:6.",
+              "notation": "(1 \\times 3 \\times 5) : (2 \\times 4 \\times 6) = 15 : 48 = 5 : 16",
+              "tip": "Simplify the compound ratio at the end. Always check if the final ratio can be reduced."
+            }
+          ],
+          "explanation": [
+            "Compound ratio combines multiple ratio relationships into one.",
+            "It is like chaining proportions: if A is related to B, and B is related to C, you can find how A relates to C.",
+            "Applications include combined work problems, multi-step scaling, and complex partnership questions."
+          ],
+          "rule": "\\text{Compound ratio of } a_1:b_1, \\; a_2:b_2, \\; \\ldots = (a_1 \\cdot a_2 \\cdot \\ldots) : (b_1 \\cdot b_2 \\cdot \\ldots)",
+          "tip": "Duplicate ratio of a:b is a^2:b^2. Triplicate ratio is a^3:b^3. These are special compound ratios."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ra-l5-q1",
+          "question": "Divide \u20b92400 between Neha and Ojas in the ratio 3:5. How much does Ojas get?",
+          "answer": "1500",
+          "hint": "Total parts = 3 + 5 = 8. One part = 2400 \u00f7 8 = 300. Ojas = 5 \u00d7 300.",
+          "story": "Neha and Ojas won a quiz competition and the prize money was split based on their contribution.",
+          "isWord": true,
+          "difficulty": "direct"
+        },
+        {
+          "id": "ra-l5-q2",
+          "question": "Divide 270 kg of rice among three families in the ratio 2:3:4. How much does the family with the largest share get?",
+          "answer": "120",
+          "hint": "Total parts = 2 + 3 + 4 = 9. One part = 270 \u00f7 9 = 30. Largest share = 4 \u00d7 30.",
+          "story": "During floods, relief supplies were distributed to three families based on family size.",
+          "isWord": true,
+          "difficulty": "direct"
+        },
+        {
+          "id": "ra-l5-q3",
+          "question": "Rahul invests \u20b930,000 and Suresh invests \u20b920,000 in a business. They make \u20b910,000 profit. What is Rahul's share?",
+          "answer": "6000",
+          "hint": "Ratio = 30000:20000 = 3:2. Rahul's share = (3/5) \u00d7 10000.",
+          "story": "Two friends started a small tiffin delivery business.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ra-l5-q4",
+          "question": "Two cyclists ride for 2 hours. One rides at 12 km/hr and the other at 18 km/hr. What is the ratio of their distances?",
+          "answer": "2:3",
+          "hint": "Same time, so distance ratio = speed ratio = 12:18. Simplify.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ra-l5-q5",
+          "question": "Find the compound ratio of 3:4 and 5:7.",
+          "answer": "15:28",
+          "hint": "Multiply the first terms: 3 \u00d7 5 = 15. Multiply the second terms: 4 \u00d7 7 = 28.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ra-l5-q6",
+          "question": "\u20b97200 is divided among Aisha, Bhanu, and Chitra in the ratio 1:2:3. How much more does Chitra get than Aisha?",
+          "answer": "2400",
+          "hint": "Total parts = 6. One part = 1200. Chitra = 3600, Aisha = 1200. Difference = 2400.",
+          "story": "Three sisters pooled money for their parents' anniversary gift and split the cost by seniority.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ra-l5-q7",
+          "question": "Amit invests \u20b950,000 for 6 months and Beena invests \u20b940,000 for 9 months. What is their effective investment ratio in simplest form?",
+          "answer": "5:6",
+          "hint": "Amit: 50000 \u00d7 6 = 300000. Beena: 40000 \u00d7 9 = 360000. Ratio = 300000:360000. Simplify.",
+          "story": "Amit and Beena partnered for a seasonal clothing business.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ra-l5-q8",
+          "question": "The compound ratio of 2:3, 3:5, and 5:7 is?",
+          "answer": "2:7",
+          "hint": "Multiply all first terms: 2 \u00d7 3 \u00d7 5 = 30. All second terms: 3 \u00d7 5 \u00d7 7 = 105. Simplify 30:105.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

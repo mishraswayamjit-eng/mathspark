@@ -421,6 +421,7 @@ export default function HomePage() {
       candidates.push({ emoji: '🗺️', label: 'Concept Map', sub: 'Explore topics', href: '/learn/concept-map', bg: 'bg-violet-50', accent: '#9B59B6' });
     }
     candidates.push(
+      { emoji: '📖', label: 'Concept Lessons', sub: 'Step-by-step', href: '/learn/lessons', bg: 'bg-purple-50', accent: '#8B5CF6' },
       { emoji: '🎯', label: 'Skill Drills', sub: 'Level up', href: '/practice/skill-drill', bg: 'bg-yellow-50', accent: '#FF9600' },
       { emoji: '💡', label: 'Sparky Explains', sub: 'Step-by-step', href: '/learn/examples', bg: 'bg-indigo-50', accent: '#6366F1' },
       { emoji: '🧠', label: 'Strategy Bank', sub: 'Exam tips', href: '/learn/strategies', bg: 'bg-amber-50', accent: '#FF9600' },

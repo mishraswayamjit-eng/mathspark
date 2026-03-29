@@ -410,6 +410,19 @@ export default function ChaptersPage() {
         </p>
       </div>
 
+      {/* ── Concept Lessons banner ───────────────────────────────────────── */}
+      <button
+        onClick={() => router.push('/learn/lessons')}
+        className="mx-4 mb-3 w-[calc(100%-2rem)] bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl px-4 py-3 flex items-center gap-3 shadow-md active:scale-[0.98] transition-transform text-left"
+      >
+        <span className="text-2xl" aria-hidden="true">📖</span>
+        <div className="flex-1 min-w-0">
+          <p className="text-sm font-extrabold text-white">Learn New Concepts</p>
+          <p className="text-xs text-white/70 font-semibold">Step-by-step lessons with quizzes</p>
+        </div>
+        <span className="text-white/60 text-lg" aria-hidden="true">&rsaquo;</span>
+      </button>
+
       {/* ── Grade switcher tabs ──────────────────────────────────────────── */}
       <div
         ref={gradeTabsRef}

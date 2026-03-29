@@ -1,0 +1,1209 @@
+{
+  "id": "geometry",
+  "topic": "Geometry",
+  "emoji": "📏",
+  "color": "#60A5FA",
+  "gradeRange": [3, 7],
+  "description": "Angles, triangles, and quadrilaterals",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Lines & Angles",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "The building blocks",
+      "lessons": [
+        {
+          "id": "ge-l1-les1",
+          "title": "Types of Lines",
+          "intro": "Look around your classroom — the edges of your notebook, the lines on a ruled page, the railway tracks outside. Lines are everywhere! In geometry, we study three special ways two lines can relate to each other.",
+          "visual": "Three pairs of lines: parallel (railway tracks), perpendicular (a '+' crossroad), intersecting (scissors blades crossing).",
+          "steps": [
+            {
+              "text": "Parallel lines run side by side and never meet, no matter how far you extend them.",
+              "notation": "\\text{Line } AB \\parallel CD",
+              "tip": "Think of railway tracks or the opposite edges of your ruler — they stay the same distance apart forever."
+            },
+            {
+              "text": "Perpendicular lines meet at exactly 90° — a perfect right angle.",
+              "notation": "AB \\perp CD \\implies \\angle = 90°",
+              "tip": "The corner of your textbook or the T in a cricket stump and the bail forms a perpendicular."
+            },
+            {
+              "text": "Intersecting lines cross each other at any angle. If that angle is 90°, they are also perpendicular.",
+              "notation": "\\text{Lines } l_1 \\text{ and } l_2 \\text{ intersect at point } P"
+            }
+          ],
+          "explanation": [
+            "Parallel lines have the same direction and never cross. Symbol: ∥.",
+            "Perpendicular lines form a 90° angle at their meeting point. Symbol: ⊥.",
+            "Intersecting lines share exactly one common point."
+          ],
+          "rule": "Two lines in a plane are either parallel, perpendicular, or intersecting at some other angle.",
+          "tip": "Look at a rangoli pattern: the straight border lines are parallel, and the cross-lines inside are often perpendicular!"
+        },
+        {
+          "id": "ge-l1-les2",
+          "title": "What Is an Angle?",
+          "intro": "When you open a book, the two covers form an angle. When a batsman lifts the bat, the bat and the ground form an angle. An angle is simply the amount of turn between two rays sharing a common starting point.",
+          "visual": "Two rays OA and OB starting from point O, with a curved arc marking the angle between them.",
+          "steps": [
+            {
+              "text": "An angle is formed by two rays (called arms) meeting at a common point (called the vertex).",
+              "notation": "\\angle AOB \\text{ — vertex } O, \\text{ arms } OA \\text{ and } OB"
+            },
+            {
+              "text": "We measure angles in degrees (°). A full turn is 360°.",
+              "notation": "\\text{Full turn} = 360°, \\quad \\text{Half turn} = 180°, \\quad \\text{Quarter turn} = 90°"
+            },
+            {
+              "text": "The angle is named by the vertex letter (middle) with one arm letter on each side, or just by the vertex if there is no confusion.",
+              "notation": "\\angle AOB = \\angle BOA = \\angle O",
+              "tip": "Always put the vertex letter in the middle when using three letters."
+            }
+          ],
+          "explanation": [
+            "Two rays with a common endpoint form an angle.",
+            "The common endpoint is the vertex; the rays are the arms.",
+            "Angles are measured in degrees using a protractor."
+          ],
+          "rule": "An angle measures the amount of rotation from one arm to another about the vertex.",
+          "tip": "Imagine the hands of a clock: at 3 o'clock they form a 90° angle, and at 6 o'clock they form a 180° angle."
+        },
+        {
+          "id": "ge-l1-les3",
+          "title": "Types of Angles",
+          "intro": "Not all angles are the same size. A door slightly open makes a small angle; a door flung wide makes a large one. Let's classify angles by their size.",
+          "visual": "Five angles drawn in a row: acute (40°), right (90°), obtuse (120°), straight (180°), reflex (300°).",
+          "steps": [
+            {
+              "text": "An acute angle is less than 90°. Think of the tip of a sharpened pencil.",
+              "notation": "0° < \\angle A < 90°"
+            },
+            {
+              "text": "A right angle is exactly 90°. We mark it with a small square at the vertex.",
+              "notation": "\\angle A = 90°",
+              "tip": "The corners of your NCERT textbook are all right angles!"
+            },
+            {
+              "text": "An obtuse angle is between 90° and 180°. Imagine the hands of a clock at 10:10.",
+              "notation": "90° < \\angle A < 180°"
+            },
+            {
+              "text": "A straight angle is exactly 180° — the arms form a straight line.",
+              "notation": "\\angle A = 180°"
+            },
+            {
+              "text": "A reflex angle is between 180° and 360°. It is the 'bigger' angle when you look at the outside of an ordinary angle.",
+              "notation": "180° < \\angle A < 360°",
+              "tip": "If someone asks for the reflex angle when the normal angle is 60°, it is 360° − 60° = 300°."
+            }
+          ],
+          "explanation": [
+            "Acute: 0° to 90° (exclusive).",
+            "Right: exactly 90°.",
+            "Obtuse: 90° to 180° (exclusive).",
+            "Straight: exactly 180°.",
+            "Reflex: 180° to 360° (exclusive)."
+          ],
+          "rule": "Angles are classified as acute, right, obtuse, straight, or reflex based on their degree measure.",
+          "tip": "Mnemonic: 'A Right Obtuse Straight Reflex' — AROSR — the first letters go in order of increasing angle."
+        },
+        {
+          "id": "ge-l1-les4",
+          "title": "Measuring Angles",
+          "intro": "A protractor is your best friend for measuring angles. Let's learn to use it step by step — just like how Arjun measures the angle of his cricket bat to practise cover drives.",
+          "visual": "A semicircular protractor placed on an angle, with labels showing the baseline, centre mark, and degree scale.",
+          "steps": [
+            {
+              "text": "Place the centre of the protractor exactly on the vertex of the angle.",
+              "notation": "\\text{Centre} \\to \\text{Vertex}"
+            },
+            {
+              "text": "Align the baseline (0° line) of the protractor along one arm of the angle.",
+              "notation": "\\text{Baseline} \\parallel \\text{Arm } OA"
+            },
+            {
+              "text": "Read the scale where the second arm crosses the protractor. Use the scale that starts from 0° on your aligned arm.",
+              "notation": "\\angle AOB = \\text{reading on scale}",
+              "tip": "A protractor has two scales (inner and outer). Always start from 0° on the arm you aligned."
+            },
+            {
+              "text": "To draw an angle, mark the vertex, draw one arm, place the protractor, mark the desired degree, and join the dot to the vertex.",
+              "notation": "\\text{Draw } \\angle = 65°: \\text{ mark at } 65° \\text{ on the scale}"
+            }
+          ],
+          "explanation": [
+            "Align the protractor centre on the vertex and the baseline on one arm.",
+            "Read the degree where the other arm crosses the scale.",
+            "Use the correct scale — inner or outer — based on which arm you aligned."
+          ],
+          "rule": "Always use the scale that starts from 0° on the arm you placed the baseline on.",
+          "tip": "Double-check: if the angle looks acute, your reading should be less than 90°. If it looks obtuse, the reading should be more than 90°."
+        },
+        {
+          "id": "ge-l1-les5",
+          "title": "Complementary & Supplementary Angles",
+          "intro": "Some angle pairs have a special relationship. When Priya and Ravi fold a square piece of rangoli paper diagonally, the two angles formed at the fold always add up to 180°. Let's explore these special pairs.",
+          "visual": "Two diagrams: (1) two angles adding to 90° with a right-angle box, (2) two angles on a straight line adding to 180°.",
+          "steps": [
+            {
+              "text": "Complementary angles are two angles that add up to 90°.",
+              "notation": "\\angle A + \\angle B = 90°",
+              "tip": "Think: 'Corner' starts with C, and a corner is 90° — Complementary = adds to 90°."
+            },
+            {
+              "text": "If one complementary angle is 35°, the other is 90° − 35° = 55°.",
+              "notation": "\\angle B = 90° - 35° = 55°"
+            },
+            {
+              "text": "Supplementary angles are two angles that add up to 180°.",
+              "notation": "\\angle A + \\angle B = 180°",
+              "tip": "Think: 'Straight' starts with S, and a straight line is 180° — Supplementary = adds to 180°."
+            },
+            {
+              "text": "If one supplementary angle is 110°, the other is 180° − 110° = 70°.",
+              "notation": "\\angle B = 180° - 110° = 70°"
+            }
+          ],
+          "explanation": [
+            "Complementary: sum is 90°. Example: 30° and 60°.",
+            "Supplementary: sum is 180°. Example: 120° and 60°.",
+            "An angle can be both part of a complementary and supplementary pair with different partners."
+          ],
+          "rule": "Complementary angles add to 90°. Supplementary angles add to 180°.",
+          "tip": "Quick check: the complement of 0° is 90°, and the supplement of 0° is 180°. An angle greater than 90° cannot have a complement (it would be negative)."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ge-l1-q1",
+          "question": "What is the complement of a 35° angle?",
+          "answer": "55",
+          "hint": "Complementary angles add up to 90°. Subtract 35° from 90°.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l1-q2",
+          "question": "What is the supplement of a 110° angle?",
+          "answer": "70",
+          "hint": "Supplementary angles add up to 180°. Subtract 110° from 180°.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l1-q3",
+          "question": "An angle measures 150°. What type of angle is it?",
+          "answer": "obtuse",
+          "hint": "It is greater than 90° but less than 180°.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l1-q4",
+          "question": "Railway tracks are an example of which type of lines?",
+          "answer": "parallel",
+          "hint": "These lines run side by side and never meet.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l1-q5",
+          "question": "Meera opens her geometry box and measures an angle of 90°. What is the reflex angle at the same vertex?",
+          "answer": "270",
+          "hint": "Reflex angle = 360° minus the given angle.",
+          "story": "Meera is drawing a rangoli border and needs the bigger angle at the corner.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ge-l1-q6",
+          "question": "Two angles are supplementary. One is three times the other. Find the smaller angle in degrees.",
+          "answer": "45",
+          "hint": "Let the smaller angle be x. Then x + 3x = 180°.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ge-l1-q7",
+          "question": "Arjun's cricket bat makes a 55° angle with the ground when he plays a cover drive. What is the complement of this angle?",
+          "answer": "35",
+          "hint": "Complement = 90° minus the angle.",
+          "story": "Arjun's coach told him the bat angle and its complement together make a right angle.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ge-l1-q8",
+          "question": "Two complementary angles are in the ratio 2:3. Find the larger angle in degrees.",
+          "answer": "54",
+          "hint": "Let the angles be 2x and 3x. Then 2x + 3x = 90°, so 5x = 90°.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Triangles",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Three sides, three angles",
+      "lessons": [
+        {
+          "id": "ge-l2-les1",
+          "title": "Triangles by Sides",
+          "intro": "A triangle is the simplest closed shape — just three straight sides. But not all triangles look the same! The lengths of the sides tell us a lot about the triangle's personality.",
+          "visual": "Three triangles side by side: equilateral (all sides marked equal), isosceles (two sides marked equal), scalene (all sides different lengths).",
+          "steps": [
+            {
+              "text": "An equilateral triangle has all three sides equal in length. Each angle is also 60°.",
+              "notation": "AB = BC = CA, \\quad \\angle A = \\angle B = \\angle C = 60°",
+              "tip": "The word 'equi' means equal, and 'lateral' means side. So equilateral = equal sides."
+            },
+            {
+              "text": "An isosceles triangle has exactly two sides equal. The angles opposite the equal sides are also equal.",
+              "notation": "AB = AC \\implies \\angle B = \\angle C",
+              "tip": "Think of an Indian temple gopuram — the two slanting edges are equal, making an isosceles triangle."
+            },
+            {
+              "text": "A scalene triangle has all three sides of different lengths. All three angles are also different.",
+              "notation": "AB \\neq BC \\neq CA, \\quad \\angle A \\neq \\angle B \\neq \\angle C"
+            }
+          ],
+          "explanation": [
+            "Equilateral: 3 equal sides, 3 equal angles (each 60°).",
+            "Isosceles: 2 equal sides, 2 equal base angles.",
+            "Scalene: no equal sides, no equal angles."
+          ],
+          "rule": "Classify triangles by sides: equilateral (3 equal), isosceles (2 equal), scalene (0 equal).",
+          "tip": "A cricket pitch viewed from above sometimes looks like a triangle. The distances from the three stumps to mid-on form a scalene triangle!"
+        },
+        {
+          "id": "ge-l2-les2",
+          "title": "Triangles by Angles",
+          "intro": "We can also classify triangles by their largest angle. Just like how we classify angles as acute, right, or obtuse — we do the same for triangles!",
+          "visual": "Three triangles: acute-angled (all angles < 90°), right-angled (one 90° angle marked), obtuse-angled (one angle > 90°).",
+          "steps": [
+            {
+              "text": "An acute-angled triangle has all three angles less than 90°.",
+              "notation": "\\angle A < 90°, \\quad \\angle B < 90°, \\quad \\angle C < 90°",
+              "tip": "An equilateral triangle is always acute-angled since each angle is 60°."
+            },
+            {
+              "text": "A right-angled triangle has one angle exactly equal to 90°. The side opposite the right angle is called the hypotenuse.",
+              "notation": "\\angle C = 90°, \\quad \\text{Hypotenuse} = AB"
+            },
+            {
+              "text": "An obtuse-angled triangle has one angle greater than 90°. Only one angle can be obtuse in a triangle.",
+              "notation": "\\angle A > 90°, \\quad \\angle B < 90°, \\quad \\angle C < 90°",
+              "tip": "Why only one obtuse angle? Because if two angles were each more than 90°, their sum alone would exceed 180° — impossible in a triangle!"
+            }
+          ],
+          "explanation": [
+            "Acute: all angles below 90°.",
+            "Right: exactly one 90° angle.",
+            "Obtuse: exactly one angle above 90°."
+          ],
+          "rule": "A triangle can have at most one right angle or one obtuse angle, never both.",
+          "tip": "The corner of a set square (drafting tool) is a right angle — it forms a right-angled triangle."
+        },
+        {
+          "id": "ge-l2-les3",
+          "title": "Angle Sum Property",
+          "intro": "Here is one of the most powerful facts in geometry: the three angles inside every triangle always add up to exactly 180°. Always! Let's see why.",
+          "visual": "A triangle ABC with angles marked. Below it, the three angles are torn off and placed together to form a straight line (180°).",
+          "steps": [
+            {
+              "text": "The angle sum property states that in any triangle, the sum of the three interior angles is 180°.",
+              "notation": "\\angle A + \\angle B + \\angle C = 180°"
+            },
+            {
+              "text": "You can verify this by cutting out a triangle from paper, tearing off the three corners, and placing them together — they always form a straight line.",
+              "notation": "\\angle A + \\angle B + \\angle C = 180° \\text{ (straight line)}",
+              "tip": "Try this activity with any shaped triangle — it always works!"
+            },
+            {
+              "text": "If two angles of a triangle are known, you can always find the third.",
+              "notation": "\\angle C = 180° - \\angle A - \\angle B"
+            },
+            {
+              "text": "Example: If ∠A = 50° and ∠B = 60°, then ∠C = 180° − 50° − 60° = 70°.",
+              "notation": "\\angle C = 180° - 50° - 60° = 70°"
+            }
+          ],
+          "explanation": [
+            "Sum of all interior angles of a triangle = 180°.",
+            "If two angles are known, the third is 180° minus their sum.",
+            "This property holds for every triangle — acute, right, or obtuse."
+          ],
+          "rule": "∠A + ∠B + ∠C = 180° for every triangle ABC.",
+          "tip": "In an equilateral triangle: 180° ÷ 3 = 60° each. That's why all angles of an equilateral triangle are 60°."
+        },
+        {
+          "id": "ge-l2-les4",
+          "title": "Exterior Angle Theorem",
+          "intro": "When you extend one side of a triangle beyond a vertex, you create an exterior angle. This angle has a beautiful relationship with the two non-adjacent interior angles.",
+          "visual": "Triangle ABC with side BC extended to point D. Exterior angle ACD is marked, along with the two remote interior angles A and B.",
+          "steps": [
+            {
+              "text": "An exterior angle of a triangle is formed when one side is extended. It is adjacent to an interior angle.",
+              "notation": "\\angle ACD \\text{ is an exterior angle at vertex } C"
+            },
+            {
+              "text": "The Exterior Angle Theorem says: an exterior angle equals the sum of the two non-adjacent (remote) interior angles.",
+              "notation": "\\angle ACD = \\angle A + \\angle B"
+            },
+            {
+              "text": "This works because ∠ACB + ∠ACD = 180° (straight line), and ∠A + ∠B + ∠ACB = 180° (angle sum). So ∠ACD = ∠A + ∠B.",
+              "notation": "\\angle ACD = 180° - \\angle ACB = \\angle A + \\angle B",
+              "tip": "This means every exterior angle is always greater than either of the two remote interior angles."
+            },
+            {
+              "text": "Example: If ∠A = 45° and ∠B = 65°, the exterior angle at C = 45° + 65° = 110°.",
+              "notation": "\\angle ACD = 45° + 65° = 110°"
+            }
+          ],
+          "explanation": [
+            "Exterior angle = sum of the two remote interior angles.",
+            "It follows directly from the angle sum property and the straight-line property.",
+            "An exterior angle is always greater than each of its remote interior angles."
+          ],
+          "rule": "Exterior angle of a triangle = Sum of the two non-adjacent interior angles.",
+          "tip": "This theorem is a shortcut — it saves you from first finding the third interior angle."
+        },
+        {
+          "id": "ge-l2-les5",
+          "title": "Introduction to Pythagoras Theorem",
+          "intro": "About 2,500 years ago, Indian mathematician Baudhayan (even before Pythagoras!) described a rule for right-angled triangles. It connects the three sides in a magical equation.",
+          "visual": "A right-angled triangle with sides labelled a, b (legs) and c (hypotenuse). Squares drawn on each side showing a² + b² = c².",
+          "steps": [
+            {
+              "text": "In a right-angled triangle, the side opposite the right angle is the longest side, called the hypotenuse.",
+              "notation": "\\text{Hypotenuse} = c \\quad (\\text{longest side})"
+            },
+            {
+              "text": "The Pythagoras Theorem states: the square of the hypotenuse equals the sum of the squares of the other two sides.",
+              "notation": "a^2 + b^2 = c^2",
+              "tip": "In India, this result was known as the Baudhayan theorem, described in the Sulba Sutras around 800 BCE!"
+            },
+            {
+              "text": "Example: If the two legs are 3 cm and 4 cm, hypotenuse = √(9 + 16) = √25 = 5 cm.",
+              "notation": "3^2 + 4^2 = 9 + 16 = 25 = 5^2"
+            },
+            {
+              "text": "Common Pythagorean triplets to remember: (3, 4, 5), (5, 12, 13), (8, 15, 17), (7, 24, 25).",
+              "notation": "3^2 + 4^2 = 5^2, \\quad 5^2 + 12^2 = 13^2",
+              "tip": "Any multiple of a triplet is also a triplet. E.g., (6, 8, 10) is just (3, 4, 5) × 2."
+            }
+          ],
+          "explanation": [
+            "Only applies to right-angled triangles.",
+            "Hypotenuse² = Sum of squares of the other two sides.",
+            "Can be used to find any missing side if the other two are known."
+          ],
+          "rule": "In a right-angled triangle: a² + b² = c², where c is the hypotenuse.",
+          "tip": "To check if a triangle is right-angled, verify if a² + b² = c² for the three given sides."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ge-l2-q1",
+          "question": "In a triangle, angles are 70° and 50°. What is the third angle?",
+          "answer": "60",
+          "hint": "Sum of all angles in a triangle = 180°. Subtract the two known angles.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l2-q2",
+          "question": "What is each angle of an equilateral triangle in degrees?",
+          "answer": "60",
+          "hint": "All three angles are equal and they add to 180°.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l2-q3",
+          "question": "A right-angled triangle has legs of length 6 cm and 8 cm. What is the hypotenuse in cm?",
+          "answer": "10",
+          "hint": "Use Pythagoras: c² = 6² + 8² = 36 + 64 = 100.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l2-q4",
+          "question": "An exterior angle of a triangle is 120°. One of the remote interior angles is 45°. What is the other remote interior angle?",
+          "answer": "75",
+          "hint": "Exterior angle = sum of two remote interior angles. So the other = 120° − 45°.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ge-l2-q5",
+          "question": "Kavitha is making a triangular rangoli. Two angles measure 40° and 80°. What is the third angle? What type of triangle is it by angles?",
+          "answer": "60",
+          "hint": "Third angle = 180° − 40° − 80°. Since all angles are less than 90°, it is acute-angled.",
+          "story": "Kavitha wants her rangoli to have a perfect triangular border. She measured two angles and needs the third.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ge-l2-q6",
+          "question": "The angles of a triangle are in the ratio 2:3:5. Find the largest angle in degrees.",
+          "answer": "90",
+          "hint": "Let the angles be 2x, 3x, 5x. Then 2x + 3x + 5x = 180°, so 10x = 180°, x = 18°.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ge-l2-q7",
+          "question": "Rajan's ladder leans against a wall. The ladder is 13 m long and its foot is 5 m from the wall. How high up the wall does it reach in metres?",
+          "answer": "12",
+          "hint": "Use Pythagoras: height² = 13² − 5² = 169 − 25 = 144. Height = √144.",
+          "story": "Rajan needs to clean the windows of his house in Jaipur and wants to know how high his ladder reaches.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ge-l2-q8",
+          "question": "In triangle PQR, ∠P = 2x, ∠Q = 3x, and the exterior angle at R is 100°. Find the value of x.",
+          "answer": "20",
+          "hint": "Exterior angle at R = ∠P + ∠Q (exterior angle theorem). So 2x + 3x = 100°, giving 5x = 100°.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Quadrilaterals",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Four-sided shapes",
+      "lessons": [
+        {
+          "id": "ge-l3-les1",
+          "title": "Types of Quadrilaterals",
+          "intro": "A quadrilateral is any four-sided closed figure. From the rectangular door of your classroom to the diamond shape of a kite — quadrilaterals are everywhere in Indian architecture and daily life!",
+          "visual": "A gallery of six quadrilaterals: square, rectangle, parallelogram, rhombus, trapezium, kite, each labelled with their name.",
+          "steps": [
+            {
+              "text": "A square has four equal sides and four right angles (90° each).",
+              "notation": "AB = BC = CD = DA, \\quad \\angle A = \\angle B = \\angle C = \\angle D = 90°",
+              "tip": "A carrom board is a perfect square!"
+            },
+            {
+              "text": "A rectangle has opposite sides equal and four right angles. It is a 'stretched' square.",
+              "notation": "AB = CD, \\quad BC = DA, \\quad \\text{all angles} = 90°"
+            },
+            {
+              "text": "A parallelogram has opposite sides parallel and equal. Opposite angles are equal.",
+              "notation": "AB \\parallel CD, \\quad BC \\parallel DA, \\quad AB = CD, \\quad BC = DA"
+            },
+            {
+              "text": "A rhombus has all four sides equal (like a tilted square). Opposite angles are equal.",
+              "notation": "AB = BC = CD = DA, \\quad \\angle A = \\angle C, \\quad \\angle B = \\angle D",
+              "tip": "The diamond shape on playing cards is a rhombus. In Hindi, it is called 'samchaturbhuj'."
+            },
+            {
+              "text": "A trapezium has exactly one pair of parallel sides. The parallel sides are called bases.",
+              "notation": "AB \\parallel CD, \\quad BC \\not\\parallel DA"
+            }
+          ],
+          "explanation": [
+            "Square: 4 equal sides, 4 right angles.",
+            "Rectangle: opposite sides equal, 4 right angles.",
+            "Parallelogram: opposite sides parallel and equal.",
+            "Rhombus: 4 equal sides, opposite angles equal.",
+            "Trapezium: exactly one pair of parallel sides."
+          ],
+          "rule": "Every square is a rectangle, every rectangle is a parallelogram, every rhombus is a parallelogram — but not the other way around.",
+          "tip": "Think of the hierarchy: Square → Rectangle → Parallelogram and Square → Rhombus → Parallelogram."
+        },
+        {
+          "id": "ge-l3-les2",
+          "title": "Angle Sum of a Quadrilateral",
+          "intro": "Just as a triangle's angles add to 180°, quadrilaterals have their own angle sum. Let's discover it using our knowledge of triangles!",
+          "visual": "A quadrilateral ABCD with a diagonal drawn from A to C, splitting it into two triangles. Each triangle's angle sum is 180°.",
+          "steps": [
+            {
+              "text": "Draw a diagonal in any quadrilateral — it splits the shape into two triangles.",
+              "notation": "\\text{Diagonal } AC \\text{ divides } ABCD \\text{ into } \\triangle ABC \\text{ and } \\triangle ACD"
+            },
+            {
+              "text": "Each triangle has an angle sum of 180°. Two triangles give 2 × 180° = 360°.",
+              "notation": "\\angle A + \\angle B + \\angle C + \\angle D = 360°"
+            },
+            {
+              "text": "This works for every quadrilateral — regular or irregular, convex or concave.",
+              "notation": "\\sum \\text{interior angles of any quadrilateral} = 360°",
+              "tip": "This is the same as one full turn!"
+            },
+            {
+              "text": "Example: If three angles are 90°, 80°, and 110°, the fourth = 360° − 90° − 80° − 110° = 80°.",
+              "notation": "\\angle D = 360° - 90° - 80° - 110° = 80°"
+            }
+          ],
+          "explanation": [
+            "A diagonal divides a quadrilateral into 2 triangles.",
+            "Total angle sum = 2 × 180° = 360°.",
+            "Use this to find any missing angle if three are known."
+          ],
+          "rule": "The sum of interior angles of any quadrilateral is 360°.",
+          "tip": "For any polygon with n sides, the angle sum is (n − 2) × 180°. For a quadrilateral: (4 − 2) × 180° = 360°."
+        },
+        {
+          "id": "ge-l3-les3",
+          "title": "Properties of a Parallelogram",
+          "intro": "A parallelogram is a quadrilateral with both pairs of opposite sides parallel. It has several special properties that make geometry problems much easier to solve.",
+          "visual": "A parallelogram ABCD with both diagonals drawn, showing the point of intersection O. Equal sides and angles are marked.",
+          "steps": [
+            {
+              "text": "Opposite sides are equal and parallel.",
+              "notation": "AB = CD, \\quad BC = DA, \\quad AB \\parallel CD, \\quad BC \\parallel DA"
+            },
+            {
+              "text": "Opposite angles are equal.",
+              "notation": "\\angle A = \\angle C, \\quad \\angle B = \\angle D"
+            },
+            {
+              "text": "Consecutive (adjacent) angles are supplementary — they add up to 180°.",
+              "notation": "\\angle A + \\angle B = 180°, \\quad \\angle B + \\angle C = 180°",
+              "tip": "This is because the parallel sides act like a transversal cutting parallel lines!"
+            },
+            {
+              "text": "The diagonals bisect each other — they cut each other into two equal halves at the intersection point.",
+              "notation": "OA = OC, \\quad OB = OD \\text{ (where O is the intersection)}"
+            }
+          ],
+          "explanation": [
+            "Opposite sides: equal and parallel.",
+            "Opposite angles: equal.",
+            "Adjacent angles: supplementary (sum = 180°).",
+            "Diagonals: bisect each other."
+          ],
+          "rule": "In a parallelogram: opposite sides are equal and parallel, opposite angles are equal, diagonals bisect each other.",
+          "tip": "If you can prove any ONE of these properties for a quadrilateral, it is a parallelogram."
+        },
+        {
+          "id": "ge-l3-les4",
+          "title": "Properties of Rhombus & Trapezium",
+          "intro": "A rhombus is a parallelogram with all sides equal — like a diamond shape. A trapezium has just one pair of parallel sides. Both show up in everyday Indian objects: kites and table tops!",
+          "visual": "Side by side: a rhombus with diagonals showing perpendicular intersection, and a trapezium with one pair of parallel sides marked.",
+          "steps": [
+            {
+              "text": "A rhombus has all four sides equal. It inherits all parallelogram properties, plus more.",
+              "notation": "AB = BC = CD = DA"
+            },
+            {
+              "text": "Special rhombus property: the diagonals bisect each other at right angles (90°).",
+              "notation": "AC \\perp BD, \\quad OA = OC, \\quad OB = OD",
+              "tip": "The shape of a traditional Indian patang (kite) is close to a rhombus — its sticks cross at 90°!"
+            },
+            {
+              "text": "The diagonals of a rhombus also bisect the vertex angles.",
+              "notation": "\\angle OAB = \\angle OAD, \\quad \\angle OBA = \\angle OBC"
+            },
+            {
+              "text": "A trapezium has one pair of parallel sides (called bases) and one pair of non-parallel sides (called legs).",
+              "notation": "AB \\parallel CD \\text{ (bases)}, \\quad AD, BC \\text{ (legs)}"
+            },
+            {
+              "text": "An isosceles trapezium has equal legs and equal base angles.",
+              "notation": "AD = BC, \\quad \\angle A = \\angle B, \\quad \\angle D = \\angle C"
+            }
+          ],
+          "explanation": [
+            "Rhombus: all sides equal, diagonals perpendicular and bisect each other.",
+            "Rhombus diagonals bisect vertex angles.",
+            "Trapezium: exactly one pair of parallel sides.",
+            "Isosceles trapezium: non-parallel sides (legs) are equal."
+          ],
+          "rule": "Rhombus diagonals are perpendicular bisectors of each other. A trapezium has exactly one pair of parallel sides.",
+          "tip": "Every square is a rhombus (all sides equal + right angles), but not every rhombus is a square (angles need not be 90°)."
+        },
+        {
+          "id": "ge-l3-les5",
+          "title": "Classifying Quadrilaterals",
+          "intro": "With so many types of quadrilaterals, it helps to understand the family tree. Some quadrilaterals are special cases of others. Let's map the relationships.",
+          "visual": "A hierarchy/Venn diagram: Quadrilateral → Trapezium → Parallelogram → Rectangle and Rhombus → Square (at the intersection of rectangle and rhombus).",
+          "steps": [
+            {
+              "text": "All squares are rectangles (4 right angles), and all squares are rhombuses (4 equal sides).",
+              "notation": "\\text{Square} \\subset \\text{Rectangle} \\subset \\text{Parallelogram}",
+              "tip": "A square is the most 'special' quadrilateral — it has every property of all the others."
+            },
+            {
+              "text": "All rectangles and rhombuses are parallelograms (opposite sides parallel).",
+              "notation": "\\text{Rhombus} \\subset \\text{Parallelogram}, \\quad \\text{Rectangle} \\subset \\text{Parallelogram}"
+            },
+            {
+              "text": "A parallelogram is a special trapezium (some definitions) since it has at least one pair of parallel sides.",
+              "notation": "\\text{Parallelogram} \\subseteq \\text{Trapezium (inclusive definition)}"
+            },
+            {
+              "text": "A kite has two pairs of adjacent sides equal but is NOT a parallelogram (unless it is a rhombus).",
+              "notation": "AB = AD, \\quad CB = CD \\text{ (adjacent pairs equal)}",
+              "tip": "An Indian patang (kite) has this exact shape — two short sides and two long sides, meeting in pairs."
+            }
+          ],
+          "explanation": [
+            "Square is both a rectangle and a rhombus.",
+            "Rectangle and rhombus are both parallelograms.",
+            "Parallelogram has two pairs of parallel sides; trapezium has one.",
+            "A kite has two pairs of adjacent equal sides."
+          ],
+          "rule": "The quadrilateral hierarchy: Square → Rectangle/Rhombus → Parallelogram → Trapezium → General Quadrilateral.",
+          "tip": "When asked 'Is a square a rectangle?', the answer is YES. When asked 'Is a rectangle a square?', the answer is NOT ALWAYS — only when all sides are equal."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ge-l3-q1",
+          "question": "What is the sum of all interior angles of a quadrilateral?",
+          "answer": "360",
+          "hint": "A diagonal divides it into 2 triangles: 2 × 180° = 360°.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l3-q2",
+          "question": "In a parallelogram, one angle is 70°. What is the adjacent angle?",
+          "answer": "110",
+          "hint": "Adjacent angles in a parallelogram are supplementary: 180° − 70°.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l3-q3",
+          "question": "How many pairs of parallel sides does a trapezium have?",
+          "answer": "1",
+          "hint": "A trapezium has exactly one pair of parallel sides.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l3-q4",
+          "question": "Sita is designing a rangoli tile in the shape of a rhombus. Its diagonals intersect at what angle?",
+          "answer": "90",
+          "hint": "Diagonals of a rhombus are perpendicular — they meet at 90°.",
+          "story": "Sita's rangoli design uses diamond-shaped tiles. She needs to know the angle where the diagonals cross to draw them correctly.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ge-l3-q5",
+          "question": "Three angles of a quadrilateral are 85°, 95°, and 110°. What is the fourth angle?",
+          "answer": "70",
+          "hint": "Sum = 360°. Fourth angle = 360° − 85° − 95° − 110°.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ge-l3-q6",
+          "question": "In a parallelogram ABCD, ∠A = (3x + 10)° and ∠B = (2x + 20)°. Find ∠A in degrees.",
+          "answer": "100",
+          "hint": "Adjacent angles are supplementary: (3x + 10) + (2x + 20) = 180. Solve for x, then find ∠A.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ge-l3-q7",
+          "question": "Vikram is making a kite (patang) where the diagonals are 30 cm and 40 cm. If the diagonals of this rhombus-shaped kite bisect each other at right angles, what is the side of the kite in cm?",
+          "answer": "25",
+          "hint": "Half-diagonals are 15 cm and 20 cm. Use Pythagoras: side = √(15² + 20²) = √(225 + 400) = √625.",
+          "story": "Vikram is preparing for Makar Sankranti and wants to calculate the exact size of his kite frame.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ge-l3-q8",
+          "question": "The angles of a quadrilateral are in the ratio 1:2:3:4. Find the largest angle in degrees.",
+          "answer": "144",
+          "hint": "Let angles be x, 2x, 3x, 4x. Sum = 10x = 360°, so x = 36°. Largest = 4 × 36°.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Symmetry & Transformations",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Mirror, slide, turn",
+      "lessons": [
+        {
+          "id": "ge-l4-les1",
+          "title": "Line Symmetry",
+          "intro": "Fold a butterfly's wing in half — the two halves match perfectly. That fold line is a line of symmetry. Symmetry is one of the most beautiful ideas in mathematics, and Indian art is filled with it!",
+          "visual": "A butterfly with a dotted vertical line of symmetry down the middle. One half is a mirror image of the other.",
+          "steps": [
+            {
+              "text": "A figure has line symmetry if it can be folded along a line so that the two halves match exactly.",
+              "notation": "\\text{Line of symmetry divides the figure into two mirror-image halves}"
+            },
+            {
+              "text": "The fold line is called the line of symmetry (or axis of symmetry).",
+              "notation": "\\text{Axis of symmetry} = \\text{mirror line}",
+              "tip": "The Taj Mahal has a vertical line of symmetry — the left and right halves are mirror images!"
+            },
+            {
+              "text": "Some figures have no line of symmetry (like a scalene triangle), while others have many (like a circle, which has infinitely many).",
+              "notation": "\\text{Scalene triangle: 0 lines}, \\quad \\text{Circle: } \\infty \\text{ lines}"
+            },
+            {
+              "text": "To test for symmetry, try folding along different lines and check if both halves overlap perfectly.",
+              "notation": "\\text{Fold test: halves overlap} \\implies \\text{symmetric}"
+            }
+          ],
+          "explanation": [
+            "Line symmetry means one half mirrors the other across a line.",
+            "The line of symmetry divides the shape into two congruent halves.",
+            "Different shapes have different numbers of lines of symmetry."
+          ],
+          "rule": "A figure has line symmetry if there exists a line that divides it into two identical mirror-image halves.",
+          "tip": "Indian rangoli designs use symmetry extensively. When you draw one quarter of a rangoli pattern, you can reflect it to fill all four quarters!"
+        },
+        {
+          "id": "ge-l4-les2",
+          "title": "Lines of Symmetry in Common Shapes",
+          "intro": "Let's count the lines of symmetry in shapes you see every day. Some shapes surprise you with how many lines of symmetry they have!",
+          "visual": "A grid showing each shape with its lines of symmetry drawn as dotted lines: equilateral triangle (3), square (4), rectangle (2), circle (∞), regular pentagon (5), rhombus (2).",
+          "steps": [
+            {
+              "text": "Equilateral triangle: 3 lines of symmetry (one from each vertex to the midpoint of the opposite side).",
+              "notation": "\\text{Equilateral } \\triangle: 3 \\text{ lines}"
+            },
+            {
+              "text": "Square: 4 lines of symmetry (2 through midpoints of opposite sides, 2 through diagonals).",
+              "notation": "\\text{Square: 4 lines}",
+              "tip": "A carrom board has 4 lines of symmetry!"
+            },
+            {
+              "text": "Rectangle (non-square): 2 lines of symmetry (through midpoints of opposite sides only — diagonals are NOT lines of symmetry for a rectangle).",
+              "notation": "\\text{Rectangle: 2 lines}",
+              "tip": "Common mistake: students think rectangle diagonals are lines of symmetry. They are not! Fold along the diagonal and the halves do not overlap."
+            },
+            {
+              "text": "Isosceles triangle: 1 line of symmetry (from the vertex between the equal sides to the midpoint of the base).",
+              "notation": "\\text{Isosceles } \\triangle: 1 \\text{ line}"
+            },
+            {
+              "text": "A regular polygon with n sides has exactly n lines of symmetry.",
+              "notation": "\\text{Regular } n\\text{-gon: } n \\text{ lines of symmetry}",
+              "tip": "Regular hexagon (like a honeycomb cell): 6 lines. Regular pentagon: 5 lines."
+            }
+          ],
+          "explanation": [
+            "Equilateral triangle: 3, Square: 4, Rectangle: 2, Circle: infinite.",
+            "Isosceles triangle: 1, Scalene triangle: 0.",
+            "Regular polygon with n sides has n lines of symmetry."
+          ],
+          "rule": "A regular polygon with n sides has exactly n lines of symmetry.",
+          "tip": "Rhombus has 2 lines of symmetry (along its diagonals). Parallelogram (non-rhombus) has 0 lines of symmetry!"
+        },
+        {
+          "id": "ge-l4-les3",
+          "title": "Rotational Symmetry",
+          "intro": "Spin a fan blade, and at certain points it looks exactly the same. This is rotational symmetry — the shape maps onto itself when rotated by certain angles.",
+          "visual": "A three-blade ceiling fan at 0°, 120°, and 240° rotations — looking identical each time.",
+          "steps": [
+            {
+              "text": "A figure has rotational symmetry if it looks the same after being rotated (less than 360°) about its centre.",
+              "notation": "\\text{Rotational symmetry: figure looks same after rotation} < 360°"
+            },
+            {
+              "text": "The order of rotational symmetry is the number of times a figure fits onto itself during a full 360° rotation.",
+              "notation": "\\text{Order} = \\frac{360°}{\\text{angle of rotation}}"
+            },
+            {
+              "text": "A square has rotational symmetry of order 4 (it fits onto itself at 90°, 180°, 270°, and 360°).",
+              "notation": "\\text{Square: order 4}, \\quad \\text{angle} = 90°",
+              "tip": "Think of the swastik symbol common in Indian temples — it has rotational symmetry of order 4."
+            },
+            {
+              "text": "An equilateral triangle has order 3 (fits at 120°, 240°, 360°). A regular hexagon has order 6.",
+              "notation": "\\text{Equilateral } \\triangle: \\text{order 3}, \\quad \\text{Regular hexagon: order 6}"
+            },
+            {
+              "text": "Every figure has rotational symmetry of at least order 1 (a full 360° turn always brings it back).",
+              "notation": "\\text{Minimum order} = 1 \\text{ (trivial)}",
+              "tip": "We only say a figure has rotational symmetry if its order is 2 or more."
+            }
+          ],
+          "explanation": [
+            "Rotational symmetry: looks the same after rotation about the centre.",
+            "Order = number of times it matches during a 360° turn.",
+            "Angle of rotation = 360° ÷ order."
+          ],
+          "rule": "Order of rotational symmetry = 360° ÷ smallest angle of rotation that maps the figure onto itself.",
+          "tip": "Many rangoli and kolam patterns have high orders of rotational symmetry — that's what makes them look balanced and beautiful!"
+        },
+        {
+          "id": "ge-l4-les4",
+          "title": "Reflection",
+          "intro": "When you look in a mirror, you see your reflection. In geometry, reflecting a shape across a line creates a mirror image on the other side, exactly the same distance from the line.",
+          "visual": "A triangle reflected across a vertical line. Each vertex and its image are the same distance from the mirror line.",
+          "steps": [
+            {
+              "text": "A reflection flips a shape across a line (called the mirror line or axis of reflection).",
+              "notation": "\\text{Reflection of point } P \\text{ across line } l \\to P'"
+            },
+            {
+              "text": "Every point and its image are the same perpendicular distance from the mirror line, on opposite sides.",
+              "notation": "d(P, l) = d(P', l), \\quad PP' \\perp l"
+            },
+            {
+              "text": "The mirror line is the perpendicular bisector of the segment joining each point to its image.",
+              "notation": "\\text{Midpoint of } PP' \\text{ lies on line } l",
+              "tip": "To find the reflection of a point, draw a perpendicular to the mirror line from the point, then go the same distance on the other side."
+            },
+            {
+              "text": "Reflection preserves shape and size — the reflected figure is congruent to the original. But it is 'flipped' (the orientation reverses).",
+              "notation": "\\triangle ABC \\cong \\triangle A'B'C' \\text{ (mirror image)}"
+            }
+          ],
+          "explanation": [
+            "Reflection = flipping across a mirror line.",
+            "Each point and its image are equidistant from the mirror line.",
+            "Size and shape are preserved, but orientation is reversed."
+          ],
+          "rule": "In a reflection, every point is mapped to a point equidistant from the mirror line on the opposite side.",
+          "tip": "The reflection of the word 'AMBULANCE' is written on the front of ambulances so it reads correctly in your car's rear-view mirror!"
+        },
+        {
+          "id": "ge-l4-les5",
+          "title": "Translation & Rotation",
+          "intro": "Sliding a shape without turning it is a translation. Spinning it around a fixed point is a rotation. Both are ways to move shapes while keeping their size and shape unchanged.",
+          "visual": "Left: a shape slid to the right (translation arrow). Right: a shape rotated 90° clockwise about a point.",
+          "steps": [
+            {
+              "text": "A translation slides every point of a shape the same distance in the same direction.",
+              "notation": "\\text{Translation by vector } \\vec{v}: P \\to P + \\vec{v}",
+              "tip": "Imagine sliding a chess piece across the board without rotating it — that is a translation."
+            },
+            {
+              "text": "A translation preserves shape, size, and orientation. The image is identical to the original, just in a new position.",
+              "notation": "\\triangle ABC \\cong \\triangle A'B'C', \\quad \\text{same orientation}"
+            },
+            {
+              "text": "A rotation turns a shape about a fixed point (called the centre of rotation) through a given angle.",
+              "notation": "\\text{Rotation of } 90° \\text{ clockwise about point } O",
+              "tip": "When you turn a key in a lock, the key rotates about the point where it enters the lock."
+            },
+            {
+              "text": "A rotation preserves shape and size but changes the direction the shape faces. The distance from the centre of rotation to any point stays the same.",
+              "notation": "OP = OP', \\quad \\angle POP' = \\text{angle of rotation}"
+            },
+            {
+              "text": "Together, reflections, translations, and rotations are called rigid transformations — they move shapes without stretching or shrinking them.",
+              "notation": "\\text{Rigid transformations: reflection, translation, rotation}",
+              "tip": "The patterns on a sari border use translation (repeating motif), and kolam designs use rotation and reflection."
+            }
+          ],
+          "explanation": [
+            "Translation: slide without turning. Preserves shape, size, and orientation.",
+            "Rotation: turn about a fixed centre. Preserves shape and size, changes direction.",
+            "Both are rigid transformations (no stretching)."
+          ],
+          "rule": "Reflections, translations, and rotations are rigid transformations — they preserve the size and shape of the figure.",
+          "tip": "Floor tiling patterns (like in Indian palaces) often combine all three transformations to create beautiful repeating designs."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ge-l4-q1",
+          "question": "How many lines of symmetry does a square have?",
+          "answer": "4",
+          "hint": "Two through midpoints of opposite sides, two along the diagonals.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l4-q2",
+          "question": "What is the order of rotational symmetry of an equilateral triangle?",
+          "answer": "3",
+          "hint": "It maps onto itself at 120°, 240°, and 360°.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l4-q3",
+          "question": "How many lines of symmetry does a rectangle (that is not a square) have?",
+          "answer": "2",
+          "hint": "Only through the midpoints of opposite sides. Diagonals are NOT lines of symmetry for a rectangle.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l4-q4",
+          "question": "Ananya is drawing a rangoli with a regular hexagon as the base. How many lines of symmetry does it have?",
+          "answer": "6",
+          "hint": "A regular n-sided polygon has n lines of symmetry. A hexagon has 6 sides.",
+          "story": "Ananya's Diwali rangoli uses a hexagonal pattern as the central frame.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ge-l4-q5",
+          "question": "What is the smallest angle of rotation (in degrees) for a regular pentagon to map onto itself?",
+          "answer": "72",
+          "hint": "Angle = 360° ÷ order. A regular pentagon has order 5.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ge-l4-q6",
+          "question": "Deepak reflects point (3, 2) across the y-axis. What is the x-coordinate of the image?",
+          "answer": "-3",
+          "hint": "Reflection across the y-axis changes the sign of the x-coordinate: (3, 2) → (−3, 2).",
+          "story": "Deepak is learning about coordinate geometry and reflections for his Class 6 exam.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ge-l4-q7",
+          "question": "A figure has rotational symmetry of order 8. What is the angle of rotation in degrees?",
+          "answer": "45",
+          "hint": "Angle = 360° ÷ order = 360° ÷ 8.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ge-l4-q8",
+          "question": "A shape has exactly 5 lines of symmetry and rotational symmetry of order 5. How many sides does this regular polygon have?",
+          "answer": "5",
+          "hint": "A regular polygon with n sides has n lines of symmetry and rotational symmetry of order n.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Angle Relationships",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "When lines meet",
+      "lessons": [
+        {
+          "id": "ge-l5-les1",
+          "title": "Vertically Opposite Angles",
+          "intro": "When two straight lines cross, they form two pairs of angles. The angles that face each other across the intersection point are called vertically opposite angles — and they are always equal!",
+          "visual": "Two lines crossing at point O forming four angles. The vertically opposite pairs are shaded in matching colours.",
+          "steps": [
+            {
+              "text": "When two lines intersect, they form 4 angles at the point of intersection.",
+              "notation": "\\text{Lines } AB \\text{ and } CD \\text{ intersect at } O \\implies \\angle AOC, \\angle COB, \\angle BOD, \\angle DOA"
+            },
+            {
+              "text": "Vertically opposite angles (VOA) are the pairs that face each other. They are always equal.",
+              "notation": "\\angle AOC = \\angle BOD, \\quad \\angle COB = \\angle DOA"
+            },
+            {
+              "text": "Why? Each pair of adjacent angles is supplementary (on a straight line), so the opposite angles must be equal.",
+              "notation": "\\angle AOC + \\angle COB = 180° \\text{ and } \\angle COB + \\angle BOD = 180° \\implies \\angle AOC = \\angle BOD",
+              "tip": "VOA is one of the most useful facts — always look for it when two lines cross!"
+            },
+            {
+              "text": "Example: If one angle at an intersection is 65°, the vertically opposite angle is also 65°, and the other two are each 180° − 65° = 115°.",
+              "notation": "\\angle_1 = 65°, \\quad \\angle_2 = 115°, \\quad \\angle_3 = 65°, \\quad \\angle_4 = 115°"
+            }
+          ],
+          "explanation": [
+            "When two lines intersect, vertically opposite angles are equal.",
+            "Adjacent angles at the intersection are supplementary (sum = 180°).",
+            "If one angle is known, all four can be found."
+          ],
+          "rule": "Vertically opposite angles are equal.",
+          "tip": "At a road crossing (chauraha), the opposite angles formed by the two roads are vertically opposite and equal."
+        },
+        {
+          "id": "ge-l5-les2",
+          "title": "Angles on a Straight Line",
+          "intro": "A straight line represents an angle of 180°. When a ray or another line meets a straight line, the angles formed on one side must add up to 180°.",
+          "visual": "A horizontal line with a ray rising from a point on it, creating two angles that together make 180°.",
+          "steps": [
+            {
+              "text": "Angles on a straight line (linear pair) add up to 180°.",
+              "notation": "\\angle AOC + \\angle COB = 180° \\text{ (if A, O, B are collinear)}",
+              "tip": "This is also called the linear pair axiom."
+            },
+            {
+              "text": "If multiple rays emanate from a point on a straight line, all the angles on one side still sum to 180°.",
+              "notation": "\\angle_1 + \\angle_2 + \\angle_3 = 180° \\text{ (all on one side of the line)}"
+            },
+            {
+              "text": "Example: If two angles on a straight line are 3x and 2x, then 3x + 2x = 180°, so 5x = 180°, x = 36°.",
+              "notation": "3x + 2x = 180° \\implies x = 36°"
+            },
+            {
+              "text": "A linear pair is a specific case: two adjacent angles whose non-common arms form a straight line. They are always supplementary.",
+              "notation": "\\text{Linear pair} \\implies \\text{supplementary} \\implies \\text{sum} = 180°"
+            }
+          ],
+          "explanation": [
+            "Angles on a straight line sum to 180°.",
+            "A linear pair is two adjacent supplementary angles.",
+            "If one angle is known, the other = 180° minus it."
+          ],
+          "rule": "The sum of angles on a straight line is 180° (linear pair).",
+          "tip": "When you see a straight line in a geometry diagram, immediately look for angle pairs that sum to 180°."
+        },
+        {
+          "id": "ge-l5-les3",
+          "title": "Angles at a Point",
+          "intro": "When several lines or rays meet at a single point, the angles formed all the way around add up to one full turn — 360°.",
+          "visual": "Four rays meeting at a point, creating four angles that together sweep a full 360°.",
+          "steps": [
+            {
+              "text": "All angles around a point add up to 360°.",
+              "notation": "\\angle_1 + \\angle_2 + \\angle_3 + \\angle_4 = 360°"
+            },
+            {
+              "text": "This is true no matter how many angles are formed at the point.",
+              "notation": "\\sum_{i=1}^{n} \\angle_i = 360°",
+              "tip": "Think of a clock — the hour hand sweeps 360° in 12 hours."
+            },
+            {
+              "text": "Example: Three angles at a point are 120°, 90°, and 80°. The fourth = 360° − 120° − 90° − 80° = 70°.",
+              "notation": "\\angle_4 = 360° - 120° - 90° - 80° = 70°"
+            },
+            {
+              "text": "If all angles at a point are equal (like a plus sign), each is 360° ÷ number of angles.",
+              "notation": "\\text{4 equal angles: each} = 360° \\div 4 = 90°"
+            }
+          ],
+          "explanation": [
+            "Angles at a point = 360° (full turn).",
+            "Works for any number of angles meeting at the point.",
+            "Combine with VOA and linear pair for complex problems."
+          ],
+          "rule": "The sum of all angles at a point is 360°.",
+          "tip": "A roundabout (traffic circle) divides the full 360° into exit angles. The Connaught Place circle in Delhi is a great example!"
+        },
+        {
+          "id": "ge-l5-les4",
+          "title": "Parallel Lines & Transversal",
+          "intro": "When a line (called a transversal) cuts across two parallel lines, it creates 8 angles. These angles have special relationships — alternate, corresponding, and co-interior angles. This topic is a favourite in Indian school exams!",
+          "visual": "Two parallel horizontal lines cut by a transversal. All 8 angles are labelled (1-8). Corresponding pairs, alternate pairs, and co-interior pairs are colour-coded.",
+          "steps": [
+            {
+              "text": "A transversal is a line that intersects two or more lines at different points.",
+              "notation": "\\text{Transversal } t \\text{ cuts parallel lines } l_1 \\parallel l_2"
+            },
+            {
+              "text": "Corresponding angles are in the same position at each intersection — they are equal when the lines are parallel.",
+              "notation": "\\angle 1 = \\angle 5, \\quad \\angle 2 = \\angle 6, \\quad \\angle 3 = \\angle 7, \\quad \\angle 4 = \\angle 8",
+              "tip": "Corresponding = same corner. Think: 'F-shape' formed by the parallel lines and transversal."
+            },
+            {
+              "text": "Alternate interior angles are on opposite sides of the transversal, between the parallel lines — they are equal.",
+              "notation": "\\angle 3 = \\angle 6, \\quad \\angle 4 = \\angle 5",
+              "tip": "Think: 'Z-shape' or 'S-shape' formed by the lines."
+            },
+            {
+              "text": "Co-interior angles (same-side interior or allied angles) are on the same side of the transversal, between the parallel lines — they are supplementary (add to 180°).",
+              "notation": "\\angle 3 + \\angle 5 = 180°, \\quad \\angle 4 + \\angle 6 = 180°",
+              "tip": "Think: 'U-shape' or 'C-shape' formed by the angles."
+            },
+            {
+              "text": "Alternate exterior angles are also equal: ∠1 = ∠8 and ∠2 = ∠7.",
+              "notation": "\\angle 1 = \\angle 8, \\quad \\angle 2 = \\angle 7"
+            }
+          ],
+          "explanation": [
+            "Corresponding angles: equal (F-shape).",
+            "Alternate interior angles: equal (Z-shape).",
+            "Co-interior angles: supplementary, sum = 180° (C-shape).",
+            "All relationships hold only when the lines are parallel."
+          ],
+          "rule": "When a transversal cuts parallel lines: corresponding angles are equal, alternate angles are equal, co-interior angles are supplementary.",
+          "tip": "If you can prove any of these angle relationships, then the lines MUST be parallel. This works both ways!"
+        },
+        {
+          "id": "ge-l5-les5",
+          "title": "Solving Multi-Step Angle Problems",
+          "intro": "Real geometry problems often combine multiple angle facts. You might need vertically opposite angles, linear pairs, parallel line properties, and the triangle angle sum — all in one problem! Let's build a strategy.",
+          "visual": "A complex diagram with parallel lines, a transversal, and a triangle formed between them. Multiple angles are marked with letters.",
+          "steps": [
+            {
+              "text": "Step 1: Identify all parallel lines and transversals in the diagram. Mark known angles.",
+              "notation": "\\text{Look for } \\parallel \\text{ arrows and known angle values}",
+              "tip": "Redraw the diagram neatly if it helps — messy diagrams lead to mistakes."
+            },
+            {
+              "text": "Step 2: Use vertically opposite angles (equal) and linear pairs (sum 180°) at each intersection point.",
+              "notation": "\\text{VOA: } \\angle_1 = \\angle_3, \\quad \\text{LP: } \\angle_1 + \\angle_2 = 180°"
+            },
+            {
+              "text": "Step 3: Use parallel line properties (corresponding, alternate, co-interior) to transfer angle values from one intersection to another.",
+              "notation": "\\text{Corresponding: } \\angle_1 = \\angle_5, \\quad \\text{Alternate: } \\angle_3 = \\angle_6"
+            },
+            {
+              "text": "Step 4: Use the triangle angle sum property (180°) or quadrilateral sum (360°) for any polygon in the diagram.",
+              "notation": "\\angle A + \\angle B + \\angle C = 180° \\text{ (triangle)}"
+            },
+            {
+              "text": "Step 5: Set up equations if angles are given as algebraic expressions, solve for the variable, then find the required angle.",
+              "notation": "\\text{E.g., } 2x + 30° + 3x = 180° \\implies x = 30°",
+              "tip": "Always double-check your answer by substituting back and verifying that all angle sums are correct."
+            }
+          ],
+          "explanation": [
+            "Identify: parallel lines, transversals, triangles, known angles.",
+            "Apply: VOA, linear pair, corresponding/alternate/co-interior properties.",
+            "Calculate: use angle sums (180° for triangles, 360° for quadrilaterals).",
+            "Solve: set up and solve equations if variables are involved."
+          ],
+          "rule": "Combine VOA, linear pair, parallel line properties, and angle sum rules systematically to solve multi-step problems.",
+          "tip": "In CBSE and IPM exams, the hardest geometry questions just combine 2-3 simple facts. Master each fact, then combine!"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ge-l5-q1",
+          "question": "Two lines intersect. One of the angles formed is 72°. What is the vertically opposite angle?",
+          "answer": "72",
+          "hint": "Vertically opposite angles are always equal.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l5-q2",
+          "question": "Three angles on a straight line are 55°, 80°, and x°. Find x.",
+          "answer": "45",
+          "hint": "Angles on a straight line sum to 180°. So x = 180° − 55° − 80°.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l5-q3",
+          "question": "A transversal cuts two parallel lines. One of the corresponding angles is 130°. What is the other corresponding angle?",
+          "answer": "130",
+          "hint": "Corresponding angles are equal when lines are parallel.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ge-l5-q4",
+          "question": "Sunita sees two parallel walls of her school corridor cut by a diagonal beam. If an alternate interior angle on one side is 65°, what is the co-interior angle on the same side?",
+          "answer": "115",
+          "hint": "The alternate interior angle (65°) and the co-interior angle on the same side are supplementary: 180° − 65° = 115°.",
+          "story": "Sunita is studying the angles formed by the corridor walls and a diagonal support beam.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ge-l5-q5",
+          "question": "Four angles meet at a point. Three of them are 85°, 105°, and 75°. What is the fourth angle?",
+          "answer": "95",
+          "hint": "Angles at a point sum to 360°. Fourth = 360° − 85° − 105° − 75°.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ge-l5-q6",
+          "question": "Two parallel lines are cut by a transversal. One angle is (2x + 10)° and its alternate interior angle is (3x − 20)°. Find the angle in degrees.",
+          "answer": "70",
+          "hint": "Alternate interior angles are equal: 2x + 10 = 3x − 20. Solve: x = 30. Angle = 2(30) + 10 = 70°.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ge-l5-q7",
+          "question": "In a figure, two lines intersect. One of the angles is (4x + 5)° and the adjacent angle is (6x − 25)°. Find the value of the smaller angle in degrees.",
+          "answer": "85",
+          "hint": "Adjacent angles at an intersection are supplementary: (4x + 5) + (6x − 25) = 180. Solve for x = 20. Smaller angle = 4(20) + 5 = 85°.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ge-l5-q8",
+          "question": "Lines AB ∥ CD. A transversal intersects AB at P and CD at Q. ∠APQ = 50° and PQ is extended to R. A triangle PQS is formed between the parallel lines with S on CD. If ∠PQS = 30°, find ∠PSQ.",
+          "answer": "100",
+          "hint": "∠PQC (alternate to ∠APQ) = 50°. ∠PQS = 30°, so ∠SQC = 50° − 30° = 20°. In triangle PQS: ∠QPS = 50° (alternate angle with ∠PQC... actually use exterior angle or angle sum). ∠PSQ = 180° − 50° − 30° = 100°.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

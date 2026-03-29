@@ -1,0 +1,1085 @@
+{
+  "id": "area-perimeter",
+  "topic": "Area & Perimeter",
+  "emoji": "📐",
+  "color": "#A78BFA",
+  "gradeRange": [3, 7],
+  "description": "Shapes, spaces, and boundaries",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Perimeter Basics",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "Walking around shapes",
+      "lessons": [
+        {
+          "id": "ap-l1-les1",
+          "title": "What Is Perimeter?",
+          "intro": "Imagine you want to build a fence around your garden. The total length of that fence is the perimeter — the distance all the way around a shape.",
+          "visual": "rectangle-fence",
+          "steps": [
+            {
+              "text": "Perimeter means the total distance around the boundary of a flat shape.",
+              "notation": "P = \\text{sum of all sides}"
+            },
+            {
+              "text": "Think of an ant walking along the edges of your notebook. The distance the ant walks is the perimeter.",
+              "notation": "P = s_1 + s_2 + s_3 + \\ldots + s_n"
+            },
+            {
+              "text": "Perimeter is always measured in units of length — centimetres (cm), metres (m), or kilometres (km).",
+              "notation": "\\text{Unit: cm, m, km}",
+              "tip": "Perimeter is a length, not an area. Never write cm² for perimeter!"
+            }
+          ],
+          "explanation": [
+            "Perimeter comes from the Greek words 'peri' (around) and 'metron' (measure).",
+            "To find the perimeter, simply add up the lengths of all the sides of a shape.",
+            "If a garden is 10 m long and 5 m wide, you would need 10 + 5 + 10 + 5 = 30 m of fencing."
+          ],
+          "rule": "Perimeter = sum of all side lengths",
+          "tip": "Walk around the shape in your mind and add every side you touch."
+        },
+        {
+          "id": "ap-l1-les2",
+          "title": "Perimeter of a Rectangle",
+          "intro": "A rectangle has two pairs of equal sides. This gives us a shortcut formula instead of adding all four sides one by one.",
+          "visual": "rectangle-labelled",
+          "steps": [
+            {
+              "text": "A rectangle has length (l) and width (w). Opposite sides are equal.",
+              "notation": "\\text{Sides: } l, w, l, w"
+            },
+            {
+              "text": "Adding all four sides: P = l + w + l + w = 2l + 2w.",
+              "notation": "P = 2l + 2w"
+            },
+            {
+              "text": "We can factor this as P = 2(l + w). Both forms are correct.",
+              "notation": "P = 2(l + w)",
+              "tip": "Most textbooks prefer 2(l + w). Use whichever is easier for you."
+            }
+          ],
+          "explanation": [
+            "A cricket pitch is a rectangle 20.12 m long and 3.05 m wide.",
+            "Its perimeter = 2(20.12 + 3.05) = 2 × 23.17 = 46.34 m.",
+            "This tells us how much rope you would need to mark its boundary."
+          ],
+          "rule": "Perimeter of rectangle = 2(length + width)",
+          "tip": "Always check that length and width are in the same unit before adding."
+        },
+        {
+          "id": "ap-l1-les3",
+          "title": "Perimeter of a Square",
+          "intro": "A square is a special rectangle where all four sides are equal. This makes the formula even simpler!",
+          "visual": "square-labelled",
+          "steps": [
+            {
+              "text": "A square has four equal sides, each of length s.",
+              "notation": "\\text{Sides: } s, s, s, s"
+            },
+            {
+              "text": "Perimeter = s + s + s + s = 4s.",
+              "notation": "P = 4s"
+            },
+            {
+              "text": "If each side of a rangoli square is 15 cm, then P = 4 × 15 = 60 cm.",
+              "notation": "P = 4 \\times 15 = 60 \\text{ cm}",
+              "tip": "A square is a rectangle with l = w, so 2(l + w) = 2(s + s) = 4s. Same answer!"
+            }
+          ],
+          "explanation": [
+            "A carrom board has sides of about 74 cm each.",
+            "Its perimeter = 4 × 74 = 296 cm, which is nearly 3 metres.",
+            "Knowing the perimeter helps if you want to put a decorative border around the board."
+          ],
+          "rule": "Perimeter of square = 4 × side",
+          "tip": "If you know the perimeter and need the side, just divide by 4."
+        },
+        {
+          "id": "ap-l1-les4",
+          "title": "Perimeter of Irregular Shapes",
+          "intro": "Not all shapes are neat rectangles or squares. For irregular shapes, we go back to the basic rule: add up every side.",
+          "visual": "irregular-polygon",
+          "steps": [
+            {
+              "text": "An irregular shape has sides of different lengths. There is no shortcut formula.",
+              "notation": "P = s_1 + s_2 + s_3 + \\ldots + s_n"
+            },
+            {
+              "text": "Count the number of sides carefully. Mark each side as you add it so you don't miss any.",
+              "notation": "\\text{Check: number of sides added = number of edges}"
+            },
+            {
+              "text": "Example: A plot has sides 12 m, 8 m, 15 m, 6 m, and 10 m. P = 12 + 8 + 15 + 6 + 10 = 51 m.",
+              "notation": "P = 12 + 8 + 15 + 6 + 10 = 51 \\text{ m}",
+              "tip": "Draw the shape and label every side before you start adding."
+            }
+          ],
+          "explanation": [
+            "Many real plots of land in India are not perfect rectangles.",
+            "Surveyors measure each boundary side and add them all to find the total fencing needed.",
+            "Even an L-shaped room has a perimeter — just count all the outer edges."
+          ],
+          "rule": "Perimeter of any shape = sum of all its side lengths",
+          "tip": "Tick off each side on the diagram as you add it. This prevents missing a side."
+        },
+        {
+          "id": "ap-l1-les5",
+          "title": "Perimeter Word Problems",
+          "intro": "Let's use perimeter in everyday Indian situations — fencing a garden, bordering a rangoli, or marking a cricket boundary.",
+          "visual": "word-problem-garden",
+          "steps": [
+            {
+              "text": "Step 1: Read the problem and identify the shape and its dimensions.",
+              "notation": "\\text{Shape} \\to \\text{dimensions}"
+            },
+            {
+              "text": "Step 2: Pick the right formula — 4s for square, 2(l+w) for rectangle, or add all sides.",
+              "notation": "P = \\begin{cases} 4s & \\text{square} \\\\ 2(l+w) & \\text{rectangle} \\\\ \\sum s_i & \\text{other} \\end{cases}"
+            },
+            {
+              "text": "Step 3: Substitute the values, calculate, and write the unit.",
+              "notation": "P = \\text{number} \\text{ units}",
+              "tip": "Always include the unit in your final answer — marks are deducted for missing units!"
+            }
+          ],
+          "explanation": [
+            "Ananya wants to put a lace border around a rectangular tablecloth that is 120 cm by 80 cm.",
+            "Perimeter = 2(120 + 80) = 2 × 200 = 400 cm. She needs 400 cm = 4 m of lace.",
+            "If the lace costs ₹12 per metre, total cost = 4 × 12 = ₹48."
+          ],
+          "rule": "Read → Identify shape → Apply formula → Include unit",
+          "tip": "In word problems, watch out for 'how much fencing' or 'length of border' — these are perimeter clues."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ap-l1-q1",
+          "question": "Find the perimeter of a rectangle with length 12 cm and width 8 cm.",
+          "answer": "40",
+          "hint": "Use P = 2(l + w). Plug in l = 12 and w = 8.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ap-l1-q2",
+          "question": "A square carrom board has a side of 74 cm. What is its perimeter in cm?",
+          "answer": "296",
+          "hint": "Perimeter of a square = 4 × side.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ap-l1-q3",
+          "question": "Rohan wants to fence his rectangular garden that is 25 m long and 15 m wide. How many metres of fencing does he need?",
+          "answer": "80",
+          "hint": "Fencing goes around the garden. Use P = 2(l + w).",
+          "story": "Rohan's family has a garden in their Pune home. He wants to put up a small fence to keep the neighbour's dog out.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ap-l1-q4",
+          "question": "A triangle has sides 7 cm, 10 cm, and 13 cm. What is its perimeter?",
+          "answer": "30",
+          "hint": "For any shape, perimeter = sum of all sides.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ap-l1-q5",
+          "question": "The perimeter of a square is 64 cm. What is the length of one side in cm?",
+          "answer": "16",
+          "hint": "If P = 4s, then s = P ÷ 4.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ap-l1-q6",
+          "question": "Meera is putting a ribbon border around a rectangular greeting card that is 20 cm long and 14 cm wide. How many cm of ribbon does she need?",
+          "answer": "68",
+          "hint": "Ribbon goes around the card — that's the perimeter.",
+          "story": "Meera is making a Diwali greeting card for her grandmother.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ap-l1-q7",
+          "question": "A pentagonal (5-sided) plot has sides 18 m, 22 m, 15 m, 20 m, and 25 m. What is its perimeter in metres?",
+          "answer": "100",
+          "hint": "Add all five sides together.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ap-l1-q8",
+          "question": "A rectangular field is 45 m long. Its perimeter is 150 m. What is its width in metres?",
+          "answer": "30",
+          "hint": "150 = 2(45 + w). Solve for w: 75 = 45 + w.",
+          "story": "A farmer near Nashik wants to know the width of his sugarcane field. He measured the length and walked the entire boundary.",
+          "isWord": true,
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Area of Rectangles",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Covering surfaces",
+      "lessons": [
+        {
+          "id": "ap-l2-les1",
+          "title": "What Is Area?",
+          "intro": "If perimeter is the fence around a garden, area is the grass inside it. Area measures how much surface a flat shape covers.",
+          "visual": "rectangle-tiles",
+          "steps": [
+            {
+              "text": "Area is the amount of flat space enclosed inside a shape.",
+              "notation": "A = \\text{space inside the boundary}"
+            },
+            {
+              "text": "We measure area in square units — like square centimetres (cm²) or square metres (m²).",
+              "notation": "\\text{Units: cm}^2\\text{, m}^2\\text{, km}^2"
+            },
+            {
+              "text": "Imagine covering a floor with 1 cm × 1 cm tiles. The number of tiles that fit is the area in cm².",
+              "notation": "A = \\text{number of unit squares}",
+              "tip": "Area is always in square units (cm², m²). Never write just cm for area!"
+            }
+          ],
+          "explanation": [
+            "When you tile a kitchen floor, you need to know the area to buy the right number of tiles.",
+            "A 1 m × 1 m tile covers 1 m² of floor. If the kitchen is 12 m², you need 12 tiles.",
+            "Area helps us figure out how much paint, carpet, or grass seed we need."
+          ],
+          "rule": "Area = the flat space inside a closed shape, measured in square units",
+          "tip": "Perimeter is a length (cm, m). Area is a surface (cm², m²). Don't mix them up!"
+        },
+        {
+          "id": "ap-l2-les2",
+          "title": "Counting Squares",
+          "intro": "The simplest way to find area is to draw the shape on a grid and count the unit squares inside it.",
+          "visual": "grid-counting",
+          "steps": [
+            {
+              "text": "Draw the shape on square grid paper. Each small square is one unit square.",
+              "notation": "\\text{1 small square} = 1 \\text{ unit}^2"
+            },
+            {
+              "text": "Count all the full squares inside the shape. Then count partial squares — two halves make one full.",
+              "notation": "A \\approx \\text{full squares} + \\frac{\\text{half squares}}{2}"
+            },
+            {
+              "text": "Example: A rectangle on a grid is 5 squares long and 3 squares wide. Count: 5 × 3 = 15 squares.",
+              "notation": "A = 15 \\text{ unit}^2",
+              "tip": "This counting method works for any shape, even curved ones like leaves."
+            }
+          ],
+          "explanation": [
+            "Grid counting is taught in NCERT Class 5 as the first step to understanding area.",
+            "For neat rectangles, counting leads naturally to the multiplication formula.",
+            "For irregular shapes (like a map of India), counting squares on a grid gives a good estimate."
+          ],
+          "rule": "Area by counting = number of complete unit squares inside the shape",
+          "tip": "Use a pencil to dot each square as you count — it prevents double-counting."
+        },
+        {
+          "id": "ap-l2-les3",
+          "title": "Area of a Rectangle",
+          "intro": "Instead of counting every square, we can multiply. If a rectangle is 5 units long and 3 units wide, the area is 5 × 3 = 15 square units.",
+          "visual": "rectangle-area-formula",
+          "steps": [
+            {
+              "text": "A rectangle with length l and width w has rows of squares. There are w rows, each with l squares.",
+              "notation": "A = l \\times w"
+            },
+            {
+              "text": "Example: A classroom floor is 10 m long and 8 m wide. A = 10 × 8 = 80 m².",
+              "notation": "A = 10 \\times 8 = 80 \\text{ m}^2"
+            },
+            {
+              "text": "Always make sure both dimensions use the same unit before multiplying.",
+              "notation": "\\text{If } l \\text{ in m and } w \\text{ in cm, convert first!}",
+              "tip": "Convert to the same unit first. 1 m = 100 cm."
+            }
+          ],
+          "explanation": [
+            "Priya's bedroom is 4 m by 3.5 m. She wants to buy a carpet.",
+            "Area = 4 × 3.5 = 14 m². She needs at least 14 m² of carpet.",
+            "If carpet costs ₹350 per m², the total cost = 14 × 350 = ₹4,900."
+          ],
+          "rule": "Area of rectangle = length × width",
+          "tip": "Length × width is the same as width × length — multiplication is commutative."
+        },
+        {
+          "id": "ap-l2-les4",
+          "title": "Area of a Square",
+          "intro": "A square is a rectangle with equal sides. So the area formula becomes even simpler: side × side, or side squared.",
+          "visual": "square-area-formula",
+          "steps": [
+            {
+              "text": "A square has all sides equal to s. Its area = s × s = s².",
+              "notation": "A = s^2"
+            },
+            {
+              "text": "Example: A rangoli square has sides of 6 cm. Area = 6² = 36 cm².",
+              "notation": "A = 6^2 = 36 \\text{ cm}^2"
+            },
+            {
+              "text": "The 's²' is read as 's squared'. This is where the phrase 'square units' comes from!",
+              "notation": "s^2 = s \\times s",
+              "tip": "s² does NOT mean s × 2. It means s × s. Be careful!"
+            }
+          ],
+          "explanation": [
+            "A square tile for a temple floor is 30 cm on each side.",
+            "Area of one tile = 30 × 30 = 900 cm².",
+            "If the temple floor is 90,000 cm² (= 9 m²), you need 90,000 ÷ 900 = 100 tiles."
+          ],
+          "rule": "Area of square = side × side = s²",
+          "tip": "To find side from area, take the square root: s = √A."
+        },
+        {
+          "id": "ap-l2-les5",
+          "title": "Area Word Problems",
+          "intro": "Area shows up everywhere — flooring a room, painting a wall, laying a cricket pitch. Let's practise real Indian scenarios.",
+          "visual": "word-problem-room",
+          "steps": [
+            {
+              "text": "Step 1: Identify the shape and read off the dimensions.",
+              "notation": "\\text{Rectangle: } l, w \\quad \\text{Square: } s"
+            },
+            {
+              "text": "Step 2: Apply the correct formula — l × w for rectangle, s² for square.",
+              "notation": "A = l \\times w \\quad \\text{or} \\quad A = s^2"
+            },
+            {
+              "text": "Step 3: If the problem asks for cost or number of tiles, use the area in a follow-up calculation.",
+              "notation": "\\text{Cost} = A \\times \\text{rate per unit area}",
+              "tip": "Cost problems are two-step: first find area, then multiply by the rate."
+            }
+          ],
+          "explanation": [
+            "Vikram's room is 5 m by 4 m. He wants to lay marble tiles that are 50 cm × 50 cm.",
+            "Room area = 5 × 4 = 20 m². Each tile area = 0.5 × 0.5 = 0.25 m².",
+            "Number of tiles = 20 ÷ 0.25 = 80 tiles."
+          ],
+          "rule": "Read → Identify shape → Area formula → Follow-up calculation → Unit",
+          "tip": "Watch for 'how many tiles', 'cost of painting', 'amount of carpet' — these are area clues."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ap-l2-q1",
+          "question": "Find the area of a rectangle with length 9 cm and width 7 cm.",
+          "answer": "63",
+          "hint": "Area = length × width = 9 × 7.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ap-l2-q2",
+          "question": "A square has a side of 11 m. What is its area in m²?",
+          "answer": "121",
+          "hint": "Area of square = s² = 11 × 11.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ap-l2-q3",
+          "question": "Kavya's bedroom is 6 m long and 4 m wide. How many square metres of carpet does she need?",
+          "answer": "24",
+          "hint": "Carpet covers the floor — find the area. A = l × w.",
+          "story": "Kavya just moved to a new flat in Bengaluru and wants to carpet her bedroom.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ap-l2-q4",
+          "question": "A rectangular cricket pitch is 20 m long and 3 m wide. What is its area in m²?",
+          "answer": "60",
+          "hint": "A = 20 × 3.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ap-l2-q5",
+          "question": "The area of a rectangle is 96 cm² and its length is 12 cm. What is its width in cm?",
+          "answer": "8",
+          "hint": "A = l × w, so w = A ÷ l = 96 ÷ 12.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ap-l2-q6",
+          "question": "Aditya wants to paint one wall of his room. The wall is 5 m wide and 3 m high. What is the area to be painted, in m²?",
+          "answer": "15",
+          "hint": "A wall is a rectangle. Area = width × height.",
+          "story": "Aditya is redecorating his room in Jaipur and picked a sky-blue colour for one accent wall.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ap-l2-q7",
+          "question": "A rectangular garden is 18 m long and 12 m wide. If each square metre of turf costs ₹45, what is the total cost in ₹?",
+          "answer": "9720",
+          "hint": "First find area = 18 × 12, then multiply by ₹45.",
+          "story": "Sneha's school in Chennai is laying new turf on the playground.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ap-l2-q8",
+          "question": "A square room has an area of 144 m². What is the length of one side in metres?",
+          "answer": "12",
+          "hint": "If A = s², then s = √A = √144.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Triangles & Parallelograms",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Beyond rectangles",
+      "lessons": [
+        {
+          "id": "ap-l3-les1",
+          "title": "Area of a Triangle",
+          "intro": "A triangle is half of a rectangle. If you know the base and height, the area is half the product of those two.",
+          "visual": "triangle-area",
+          "steps": [
+            {
+              "text": "The base (b) is any side of the triangle. The height (h) is the perpendicular distance from the base to the opposite vertex.",
+              "notation": "b = \\text{base}, \\quad h = \\text{height (perpendicular)}"
+            },
+            {
+              "text": "Area of a triangle = half × base × height.",
+              "notation": "A = \\frac{1}{2} \\times b \\times h"
+            },
+            {
+              "text": "Example: A triangular garden has base 10 m and height 6 m. A = ½ × 10 × 6 = 30 m².",
+              "notation": "A = \\frac{1}{2} \\times 10 \\times 6 = 30 \\text{ m}^2",
+              "tip": "The height must be perpendicular to the base — not a slant side!"
+            }
+          ],
+          "explanation": [
+            "Many Indian road signs are triangular (yield signs, warning signs).",
+            "If a warning sign has a base of 60 cm and height of 52 cm, its area = ½ × 60 × 52 = 1,560 cm².",
+            "This tells you how much reflective material is needed to cover the sign."
+          ],
+          "rule": "Area of triangle = ½ × base × height",
+          "tip": "You can pick any side as the base, but the height must be perpendicular to that chosen base."
+        },
+        {
+          "id": "ap-l3-les2",
+          "title": "Why Half a Rectangle?",
+          "intro": "Let's see why the triangle formula works by connecting it to the rectangle formula you already know.",
+          "visual": "triangle-from-rectangle",
+          "steps": [
+            {
+              "text": "Draw a rectangle with length = base and width = height of the triangle.",
+              "notation": "\\text{Rectangle area} = b \\times h"
+            },
+            {
+              "text": "Draw a diagonal inside the rectangle. It splits the rectangle into two equal triangles.",
+              "notation": "\\text{Each triangle} = \\frac{b \\times h}{2}"
+            },
+            {
+              "text": "So the area of each triangle is exactly half the rectangle's area.",
+              "notation": "A_{\\triangle} = \\frac{1}{2} \\times b \\times h",
+              "tip": "This works for right triangles perfectly. For other triangles, you can always enclose them in a rectangle and subtract."
+            }
+          ],
+          "explanation": [
+            "Take a rectangular piece of paper and fold it along the diagonal.",
+            "The two triangles you get are identical — each one is half the rectangle.",
+            "This hands-on proof is used in NCERT Class 7 to explain the formula."
+          ],
+          "rule": "Triangle = half of the enclosing rectangle",
+          "tip": "Try cutting a rectangle diagonally at home. You will see two equal triangles."
+        },
+        {
+          "id": "ap-l3-les3",
+          "title": "Area of a Parallelogram",
+          "intro": "A parallelogram is like a slanted rectangle. Push it upright and it becomes a rectangle — same base, same height, same area!",
+          "visual": "parallelogram-area",
+          "steps": [
+            {
+              "text": "A parallelogram has a base (b) and a perpendicular height (h) between the two parallel sides.",
+              "notation": "b = \\text{base}, \\quad h = \\text{perpendicular height}"
+            },
+            {
+              "text": "If you cut a triangle from one end and move it to the other, you get a rectangle.",
+              "notation": "A = b \\times h"
+            },
+            {
+              "text": "Example: A parallelogram-shaped plot has base 14 m and height 9 m. A = 14 × 9 = 126 m².",
+              "notation": "A = 14 \\times 9 = 126 \\text{ m}^2",
+              "tip": "Use the perpendicular height, not the slant side!"
+            }
+          ],
+          "explanation": [
+            "Some plots of farmland in India are parallelogram-shaped due to roads cutting at angles.",
+            "To find how much crop a farmer can grow, we need the area.",
+            "The formula is the same as a rectangle: just use the perpendicular height, not the slant."
+          ],
+          "rule": "Area of parallelogram = base × height",
+          "tip": "The slant side is NOT the height. Height is always perpendicular to the base."
+        },
+        {
+          "id": "ap-l3-les4",
+          "title": "Area of a Rhombus",
+          "intro": "A rhombus has a special formula using its two diagonals. The diagonals of a rhombus always cross at right angles.",
+          "visual": "rhombus-diagonals",
+          "steps": [
+            {
+              "text": "A rhombus has two diagonals, d₁ and d₂, that bisect each other at 90°.",
+              "notation": "d_1, d_2 \\text{ perpendicular bisectors}"
+            },
+            {
+              "text": "The area = half the product of the diagonals.",
+              "notation": "A = \\frac{1}{2} \\times d_1 \\times d_2"
+            },
+            {
+              "text": "Example: A kite (rhombus shape) has diagonals 24 cm and 18 cm. A = ½ × 24 × 18 = 216 cm².",
+              "notation": "A = \\frac{1}{2} \\times 24 \\times 18 = 216 \\text{ cm}^2",
+              "tip": "This formula also works for any quadrilateral whose diagonals are perpendicular (like a kite)."
+            }
+          ],
+          "explanation": [
+            "During Makar Sankranti, kites of all sizes fill the sky.",
+            "If you know the lengths of the two sticks (diagonals) of your kite, you can find the paper needed.",
+            "A kite with sticks of 40 cm and 30 cm needs ½ × 40 × 30 = 600 cm² of paper."
+          ],
+          "rule": "Area of rhombus = ½ × d₁ × d₂",
+          "tip": "Remember: the diagonals of a rhombus always meet at right angles."
+        },
+        {
+          "id": "ap-l3-les5",
+          "title": "Mixed Problems",
+          "intro": "Now let's solve problems that mix triangles, parallelograms, and rectangles. The key is identifying the shape first.",
+          "visual": "mixed-shapes",
+          "steps": [
+            {
+              "text": "Step 1: Look at the shape. Count the sides, check for parallel sides, right angles, and equal sides.",
+              "notation": "\\text{Identify: triangle, rectangle, parallelogram, or rhombus}"
+            },
+            {
+              "text": "Step 2: Pick the matching formula and identify the required measurements.",
+              "notation": "A = \\begin{cases} l \\times w & \\text{rectangle} \\\\ \\frac{1}{2}bh & \\text{triangle} \\\\ bh & \\text{parallelogram} \\\\ \\frac{1}{2}d_1 d_2 & \\text{rhombus} \\end{cases}"
+            },
+            {
+              "text": "Step 3: Substitute values, compute, and include units.",
+              "notation": "A = \\text{number} \\text{ unit}^2",
+              "tip": "If you are unsure of the shape, sketch it. A quick drawing always helps."
+            }
+          ],
+          "explanation": [
+            "A park has a rectangular section (20 m × 15 m) and a triangular section (base 20 m, height 8 m).",
+            "Rectangular area = 20 × 15 = 300 m². Triangular area = ½ × 20 × 8 = 80 m².",
+            "Total park area = 300 + 80 = 380 m²."
+          ],
+          "rule": "Identify shape → Choose formula → Substitute → Solve",
+          "tip": "Many real problems combine shapes. Break them into known shapes and add the areas."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ap-l3-q1",
+          "question": "Find the area of a triangle with base 14 cm and height 10 cm.",
+          "answer": "70",
+          "hint": "A = ½ × b × h = ½ × 14 × 10.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ap-l3-q2",
+          "question": "A parallelogram has a base of 16 m and a perpendicular height of 9 m. What is its area in m²?",
+          "answer": "144",
+          "hint": "Area of parallelogram = base × height = 16 × 9.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ap-l3-q3",
+          "question": "A rhombus has diagonals of 12 cm and 8 cm. What is its area in cm²?",
+          "answer": "48",
+          "hint": "A = ½ × d₁ × d₂ = ½ × 12 × 8.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ap-l3-q4",
+          "question": "Ishaan's triangular garden has a base of 18 m and a height of 12 m. What is its area in m²?",
+          "answer": "108",
+          "hint": "A = ½ × 18 × 12.",
+          "story": "Ishaan lives in Dehradun and has a triangular garden patch behind his house.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ap-l3-q5",
+          "question": "The area of a parallelogram is 180 cm² and its base is 15 cm. What is the height in cm?",
+          "answer": "12",
+          "hint": "A = b × h, so h = A ÷ b = 180 ÷ 15.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ap-l3-q6",
+          "question": "During Sankranti, Divya makes a kite with diagonals 30 cm and 20 cm. How many cm² of paper does the kite need?",
+          "answer": "300",
+          "hint": "Kite area = ½ × d₁ × d₂ = ½ × 30 × 20.",
+          "story": "Divya and her brother are preparing kites for the Makar Sankranti festival in Ahmedabad.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ap-l3-q7",
+          "question": "A triangular road sign has an area of 150 cm². If its base is 20 cm, what is the height in cm?",
+          "answer": "15",
+          "hint": "150 = ½ × 20 × h. So 150 = 10h, meaning h = 15.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ap-l3-q8",
+          "question": "A park has a rectangular section (30 m × 20 m) and a triangular section (base 30 m, height 10 m). What is the total area of the park in m²?",
+          "answer": "750",
+          "hint": "Rectangle area = 30 × 20 = 600. Triangle area = ½ × 30 × 10 = 150. Total = 600 + 150.",
+          "story": "Nisha's housing colony in Hyderabad has a park with a rectangular play area and a triangular garden at one end.",
+          "isWord": true,
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Circles",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Pi enters the picture",
+      "lessons": [
+        {
+          "id": "ap-l4-les1",
+          "title": "Parts of a Circle",
+          "intro": "Before we calculate anything, let's learn the key parts of a circle: centre, radius, diameter, and circumference.",
+          "visual": "circle-parts",
+          "steps": [
+            {
+              "text": "The centre is the exact middle point of the circle. Every point on the circle is the same distance from the centre.",
+              "notation": "O = \\text{centre}"
+            },
+            {
+              "text": "The radius (r) is the distance from the centre to any point on the circle. The diameter (d) goes all the way across through the centre.",
+              "notation": "d = 2r \\quad \\text{or} \\quad r = \\frac{d}{2}"
+            },
+            {
+              "text": "The circumference is the perimeter of a circle — the total distance around the curved boundary.",
+              "notation": "C = \\text{circumference (perimeter of circle)}",
+              "tip": "Diameter = 2 × radius. Always. If you know one, you know the other."
+            }
+          ],
+          "explanation": [
+            "Think of a bicycle wheel. The axle is the centre, a spoke is the radius, and the tyre is the circumference.",
+            "If a wheel has a radius of 35 cm, its diameter is 2 × 35 = 70 cm.",
+            "The circumference tells you how far the bicycle moves in one complete rotation of the wheel."
+          ],
+          "rule": "Diameter = 2 × radius; Circumference = distance around the circle",
+          "tip": "Radius is half the diameter. Write d = 2r on your formula sheet."
+        },
+        {
+          "id": "ap-l4-les2",
+          "title": "Meet Pi (π)",
+          "intro": "There is a magical number that connects every circle's circumference to its diameter. That number is pi (π), roughly 3.14.",
+          "visual": "pi-intro",
+          "steps": [
+            {
+              "text": "For any circle, if you divide the circumference by the diameter, you always get the same number: π ≈ 3.14159...",
+              "notation": "\\pi = \\frac{C}{d} \\approx 3.14"
+            },
+            {
+              "text": "π is an irrational number — its decimal never ends and never repeats. We use approximations: 3.14 or 22/7.",
+              "notation": "\\pi \\approx 3.14 \\approx \\frac{22}{7}"
+            },
+            {
+              "text": "The fraction 22/7 is especially useful when the radius or diameter is a multiple of 7 — the division becomes clean.",
+              "notation": "\\text{If } r = 7, 14, 21, \\ldots \\text{ use } \\frac{22}{7}",
+              "tip": "Use 22/7 when the number is divisible by 7. Use 3.14 for other cases."
+            }
+          ],
+          "explanation": [
+            "Ancient Indian mathematician Aryabhata (476 CE) calculated π to be approximately 3.1416 — remarkably accurate!",
+            "Take a round roti and measure around it with a string (circumference), then measure across it (diameter).",
+            "Divide circumference by diameter, and you will get a value close to 3.14 every time."
+          ],
+          "rule": "π ≈ 3.14 or 22/7; π = circumference ÷ diameter",
+          "tip": "π is the same for every circle in the universe — small or big."
+        },
+        {
+          "id": "ap-l4-les3",
+          "title": "Circumference of a Circle",
+          "intro": "Now that we know π, finding the circumference is straightforward: just multiply π by the diameter (or 2πr).",
+          "visual": "circumference-formula",
+          "steps": [
+            {
+              "text": "Since π = C/d, we get C = π × d. And since d = 2r, we can write C = 2πr.",
+              "notation": "C = \\pi d = 2\\pi r"
+            },
+            {
+              "text": "Example: A circular garden has radius 7 m. C = 2 × (22/7) × 7 = 44 m.",
+              "notation": "C = 2 \\times \\frac{22}{7} \\times 7 = 44 \\text{ m}"
+            },
+            {
+              "text": "Example: A wheel has diameter 50 cm. C = 3.14 × 50 = 157 cm.",
+              "notation": "C = 3.14 \\times 50 = 157 \\text{ cm}",
+              "tip": "Circumference tells you how much rope or fencing you need to go around a circular space."
+            }
+          ],
+          "explanation": [
+            "If a bicycle wheel has a radius of 35 cm, its circumference = 2 × (22/7) × 35 = 220 cm = 2.2 m.",
+            "This means the bicycle moves 2.2 m forward with each complete rotation of the wheel.",
+            "To travel 1.1 km = 1,100 m, the wheel rotates 1,100 ÷ 2.2 = 500 times."
+          ],
+          "rule": "Circumference = 2πr = πd",
+          "tip": "C = 2πr uses radius. C = πd uses diameter. Both give the same answer."
+        },
+        {
+          "id": "ap-l4-les4",
+          "title": "Area of a Circle",
+          "intro": "The area of a circle tells us the space inside it — how much ground a circular garden covers, or how much pizza you get!",
+          "visual": "circle-area-formula",
+          "steps": [
+            {
+              "text": "The area of a circle = π × radius × radius = πr².",
+              "notation": "A = \\pi r^2"
+            },
+            {
+              "text": "Example: A circular rangoli has radius 14 cm. A = (22/7) × 14 × 14 = (22/7) × 196 = 616 cm².",
+              "notation": "A = \\frac{22}{7} \\times 14^2 = \\frac{22 \\times 196}{7} = 616 \\text{ cm}^2"
+            },
+            {
+              "text": "Example: A plate has radius 10 cm. A = 3.14 × 10 × 10 = 314 cm².",
+              "notation": "A = 3.14 \\times 10^2 = 314 \\text{ cm}^2",
+              "tip": "Remember: πr² means π × r × r, NOT (πr)². Square only the radius!"
+            }
+          ],
+          "explanation": [
+            "If a dosa is circular with radius 12 cm, its area = 3.14 × 144 ≈ 452 cm².",
+            "A larger dosa with radius 15 cm has area = 3.14 × 225 ≈ 707 cm².",
+            "Doubling the radius doesn't double the area — it quadruples it! (Because area depends on r².)"
+          ],
+          "rule": "Area of circle = πr²",
+          "tip": "If you are given the diameter, first find radius = d/2, then use πr²."
+        },
+        {
+          "id": "ap-l4-les5",
+          "title": "Circle Word Problems",
+          "intro": "Let's solve real problems involving circular gardens, wheels, plates, and more using circumference and area formulas.",
+          "visual": "word-problem-circle",
+          "steps": [
+            {
+              "text": "Step 1: Read the problem. Is it asking for distance around (circumference) or space inside (area)?",
+              "notation": "\\text{Around} \\to C = 2\\pi r \\quad \\text{Inside} \\to A = \\pi r^2"
+            },
+            {
+              "text": "Step 2: Identify radius or diameter from the problem. Convert if needed (r = d/2).",
+              "notation": "r = \\frac{d}{2}"
+            },
+            {
+              "text": "Step 3: Substitute into the formula. Use π = 22/7 if r involves 7; use 3.14 otherwise.",
+              "notation": "\\text{Choose } \\pi \\approx 3.14 \\text{ or } \\frac{22}{7}",
+              "tip": "Fence/border/rope → circumference. Grass/paint/tiles → area."
+            }
+          ],
+          "explanation": [
+            "Arjun runs around a circular track of radius 35 m. One lap = circumference = 2 × (22/7) × 35 = 220 m.",
+            "For 5 laps: 5 × 220 = 1,100 m = 1.1 km.",
+            "If the same track is to be covered with grass: area = (22/7) × 35² = (22/7) × 1,225 = 3,850 m²."
+          ],
+          "rule": "Around → circumference (2πr); Inside → area (πr²)",
+          "tip": "Always note whether the problem gives radius or diameter before plugging into the formula."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ap-l4-q1",
+          "question": "Find the circumference of a circle with radius 7 cm. Use π = 22/7.",
+          "answer": "44",
+          "hint": "C = 2πr = 2 × (22/7) × 7 = 44.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ap-l4-q2",
+          "question": "Find the area of a circle with radius 14 cm. Use π = 22/7.",
+          "answer": "616",
+          "hint": "A = πr² = (22/7) × 14 × 14.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ap-l4-q3",
+          "question": "A circular plate has a diameter of 28 cm. What is its area in cm²? Use π = 22/7.",
+          "answer": "616",
+          "hint": "First find radius = 28/2 = 14 cm. Then A = (22/7) × 14².",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ap-l4-q4",
+          "question": "Riya runs around a circular park of radius 21 m. How many metres does she cover in one lap? Use π = 22/7.",
+          "answer": "132",
+          "hint": "One lap = circumference = 2 × (22/7) × 21.",
+          "story": "Riya trains for her school sports day by running around the circular park near her home in Lucknow.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ap-l4-q5",
+          "question": "A wheel has a radius of 35 cm. How far (in cm) does it travel in one full rotation? Use π = 22/7.",
+          "answer": "220",
+          "hint": "Distance in one rotation = circumference = 2πr = 2 × (22/7) × 35.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ap-l4-q6",
+          "question": "A circular garden has a radius of 10 m. Find the cost of fencing it at ₹25 per metre. Use π = 3.14. Give the answer in ₹.",
+          "answer": "1570",
+          "hint": "Fencing = circumference = 2 × 3.14 × 10 = 62.8 m. Cost = 62.8 × 25.",
+          "story": "Amit's family in Nagpur wants to fence their circular garden to protect the flower beds.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ap-l4-q7",
+          "question": "A circular rangoli has a radius of 7 m. How many m² of coloured powder is needed to fill it? Use π = 22/7.",
+          "answer": "154",
+          "hint": "Area = πr² = (22/7) × 7 × 7 = (22/7) × 49 = 154.",
+          "story": "For Onam celebrations in Kochi, a huge circular rangoli is drawn in the school courtyard.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ap-l4-q8",
+          "question": "A bicycle wheel has a diameter of 70 cm. How many complete rotations does it make to cover 2200 cm? Use π = 22/7.",
+          "answer": "10",
+          "hint": "Circumference = π × d = (22/7) × 70 = 220 cm. Rotations = 2200 ÷ 220.",
+          "story": "Karan rides his bicycle from home to the neighbourhood grocery store in Bhopal.",
+          "isWord": true,
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Composite Shapes",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Break it down",
+      "lessons": [
+        {
+          "id": "ap-l5-les1",
+          "title": "The Splitting Strategy",
+          "intro": "Most real-world shapes are not simple rectangles or circles. The trick is to split them into shapes you already know.",
+          "visual": "composite-split",
+          "steps": [
+            {
+              "text": "A composite shape is made up of two or more simple shapes joined together.",
+              "notation": "A_{\\text{total}} = A_1 + A_2 + \\ldots"
+            },
+            {
+              "text": "Strategy: Draw dotted lines to break the composite shape into rectangles, triangles, or circles.",
+              "notation": "\\text{Split} \\to \\text{Calculate each} \\to \\text{Add}"
+            },
+            {
+              "text": "Sometimes you add areas (shape is a combination). Sometimes you subtract (shape has a hole or cutout).",
+              "notation": "A = A_{\\text{big}} - A_{\\text{removed}} \\quad \\text{or} \\quad A = A_1 + A_2",
+              "tip": "Look for rectangles first — they are the easiest to spot and calculate."
+            }
+          ],
+          "explanation": [
+            "Think of an L-shaped room. You can split it into two rectangles.",
+            "A swimming pool with a semicircular end = rectangle + semicircle.",
+            "The key skill is seeing the simple shapes hiding inside the complex one."
+          ],
+          "rule": "Composite area = sum of parts (or big shape minus cutout)",
+          "tip": "Always label your sub-shapes (A1, A2) and their dimensions before calculating."
+        },
+        {
+          "id": "ap-l5-les2",
+          "title": "L-Shaped Figures",
+          "intro": "L-shapes are everywhere — room layouts, hallways, and plots of land. Let's learn to split them cleanly.",
+          "visual": "l-shape",
+          "steps": [
+            {
+              "text": "An L-shape can be split into two rectangles with a horizontal or vertical cut.",
+              "notation": "A_L = A_1 + A_2"
+            },
+            {
+              "text": "Method 1: Horizontal cut — a top rectangle and a bottom rectangle.",
+              "notation": "A_L = (l_1 \\times w_1) + (l_2 \\times w_2)"
+            },
+            {
+              "text": "Method 2: Think of it as a big rectangle with a corner piece removed.",
+              "notation": "A_L = A_{\\text{big}} - A_{\\text{corner}}",
+              "tip": "Both methods give the same answer. Use whichever feels easier."
+            }
+          ],
+          "explanation": [
+            "Prachi's flat in Mumbai has an L-shaped living room. The long part is 8 m × 4 m and the short part is 3 m × 4 m.",
+            "Total area = (8 × 4) + (3 × 4) = 32 + 12 = 44 m².",
+            "Alternatively: big rectangle = 8 × 8 = 64, removed corner = 5 × 4 = 20, area = 64 - 20 = 44 m². Same answer!"
+          ],
+          "rule": "L-shape = two rectangles added, or one big rectangle minus corner",
+          "tip": "Draw both options and pick the one with easier numbers."
+        },
+        {
+          "id": "ap-l5-les3",
+          "title": "Shapes with Cutouts",
+          "intro": "Sometimes a shape has a hole cut out of it — like a picture frame or a washer. We subtract the inner area from the outer area.",
+          "visual": "shape-cutout",
+          "steps": [
+            {
+              "text": "For a shape with a cutout: remaining area = outer area − cutout area.",
+              "notation": "A = A_{\\text{outer}} - A_{\\text{inner}}"
+            },
+            {
+              "text": "Example: A square card (20 cm side) has a circular hole (radius 5 cm) in the centre.",
+              "notation": "A = 20^2 - \\pi(5)^2 = 400 - 78.5 = 321.5 \\text{ cm}^2"
+            },
+            {
+              "text": "A picture frame is a large rectangle minus a smaller rectangle (the opening).",
+              "notation": "A_{\\text{frame}} = l_{\\text{outer}} \\times w_{\\text{outer}} - l_{\\text{inner}} \\times w_{\\text{inner}}",
+              "tip": "Frame and ring problems are always subtraction problems."
+            }
+          ],
+          "explanation": [
+            "A circular path surrounds a garden. The outer circle has radius 10 m, inner circle has radius 7 m.",
+            "Path area = π(10²) − π(7²) = π(100 − 49) = (22/7) × 51 ≈ 160.3 m².",
+            "This tells you how much concrete is needed for the path."
+          ],
+          "rule": "Cutout area = outer area − inner area",
+          "tip": "For rings and frames, always subtract the smaller from the larger."
+        },
+        {
+          "id": "ap-l5-les4",
+          "title": "Combining Area and Perimeter",
+          "intro": "Some problems ask for both area and perimeter of a composite shape. Let's tackle these step by step.",
+          "visual": "area-perimeter-combo",
+          "steps": [
+            {
+              "text": "For area of a composite shape: split into parts and add (or subtract for cutouts).",
+              "notation": "A = A_1 + A_2 + \\ldots"
+            },
+            {
+              "text": "For perimeter of a composite shape: trace the outer boundary only. Do NOT add internal edges.",
+              "notation": "P = \\text{sum of outer edges only}"
+            },
+            {
+              "text": "Example: Two squares (side 5 cm) joined side by side form a rectangle 10 × 5. Area = 50. But perimeter = 2(10+5) = 30, not 4×5 + 4×5 = 40.",
+              "notation": "P \\neq P_1 + P_2 \\text{ (shared edges are inside, not on boundary)}",
+              "tip": "When shapes join, the shared edge disappears from the perimeter. Be careful!"
+            }
+          ],
+          "explanation": [
+            "A semicircular arch sits on top of a rectangular door (width 2 m, height 3 m).",
+            "Area = rectangle + semicircle = (2 × 3) + ½π(1²) = 6 + 1.57 = 7.57 m².",
+            "Perimeter = two vertical sides + bottom + semicircle arc = 3 + 3 + 2 + π(1) = 11.14 m."
+          ],
+          "rule": "Area: split and add. Perimeter: trace only the outer boundary.",
+          "tip": "Shared (internal) edges do not count in the perimeter."
+        },
+        {
+          "id": "ap-l5-les5",
+          "title": "Real-World Composite Problems",
+          "intro": "Room layouts, garden paths, and building plans are all composite shapes. Let's solve problems that architects and engineers face daily.",
+          "visual": "real-world-composite",
+          "steps": [
+            {
+              "text": "Room layouts: Split the floor plan into rectangles. Add the areas for total flooring needed.",
+              "notation": "A_{\\text{floor}} = A_1 + A_2 + A_3 + \\ldots"
+            },
+            {
+              "text": "Garden paths: The path area = total area (garden + path) − garden area.",
+              "notation": "A_{\\text{path}} = (l+2w)(b+2w) - lb",
+              "tip": "Here w is the width of the path, not the garden width."
+            },
+            {
+              "text": "Cost calculation: Multiply the computed area by the cost per square unit.",
+              "notation": "\\text{Total cost} = A \\times \\text{rate}",
+              "tip": "Always double-check units. If area is in m² and cost is per m², you are good."
+            }
+          ],
+          "explanation": [
+            "A rectangular garden (20 m × 15 m) has a 2 m wide path all around it.",
+            "Outer dimensions: (20 + 4) × (15 + 4) = 24 × 19 = 456 m².",
+            "Garden area = 20 × 15 = 300 m². Path area = 456 − 300 = 156 m². If paving costs ₹120/m², total = 156 × 120 = ₹18,720."
+          ],
+          "rule": "Path area = outer area − inner area; then multiply by cost rate",
+          "tip": "A path of width w around a rectangle adds 2w to both length and width."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ap-l5-q1",
+          "question": "An L-shaped room has two parts: 8 m × 5 m and 4 m × 3 m. What is its total area in m²?",
+          "answer": "52",
+          "hint": "Add the two rectangular areas: (8 × 5) + (4 × 3).",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ap-l5-q2",
+          "question": "A rectangular card (30 cm × 20 cm) has a rectangular hole (10 cm × 8 cm) cut out. What is the remaining area in cm²?",
+          "answer": "520",
+          "hint": "Remaining = outer − inner = (30 × 20) − (10 × 8) = 600 − 80.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ap-l5-q3",
+          "question": "Two squares, each with side 6 cm, are placed side by side to form a rectangle. What is the perimeter of the rectangle in cm?",
+          "answer": "36",
+          "hint": "The rectangle is 12 cm × 6 cm. P = 2(12 + 6). The shared edge is inside, not on the boundary.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ap-l5-q4",
+          "question": "Tanvi's room in Kolkata is L-shaped: one section is 10 m × 6 m and the other is 5 m × 4 m. How many m² of tiles does she need?",
+          "answer": "80",
+          "hint": "Total area = (10 × 6) + (5 × 4) = 60 + 20.",
+          "story": "Tanvi is renovating her family home in Kolkata and needs to order floor tiles for her L-shaped bedroom.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ap-l5-q5",
+          "question": "A rectangular garden is 24 m long and 18 m wide. A path 2 m wide runs around the outside. What is the area of the path in m²?",
+          "answer": "176",
+          "hint": "Outer: (24+4) × (18+4) = 28 × 22 = 616. Inner: 24 × 18 = 432. Path = 616 − 432.",
+          "story": "Suresh's farmhouse near Mysuru has a garden with a paved walking path around it.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ap-l5-q6",
+          "question": "A square photo frame has outer side 20 cm and inner side 14 cm. What is the area of the frame border in cm²?",
+          "answer": "204",
+          "hint": "Frame area = outer square − inner square = 20² − 14² = 400 − 196.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "ap-l5-q7",
+          "question": "A room is shaped like a rectangle (12 m × 8 m) with a semicircular bay window (diameter 8 m) attached to one shorter side. What is the total floor area in m²? Use π = 3.14. Round to the nearest whole number.",
+          "answer": "121",
+          "hint": "Rectangle = 12 × 8 = 96. Semicircle radius = 4, area = ½ × 3.14 × 16 = 25.12. Total ≈ 121.",
+          "story": "Architect Farah is designing a new library room in Chandigarh with a semicircular reading bay.",
+          "isWord": true,
+          "difficulty": "challenge"
+        },
+        {
+          "id": "ap-l5-q8",
+          "question": "A rectangular cricket ground is 140 m × 80 m. A circular pitch of radius 10 m is at the centre. What is the area of the ground excluding the pitch, in m²? Use π = 3.14. Round to the nearest whole number.",
+          "answer": "10886",
+          "hint": "Ground = 140 × 80 = 11200. Pitch = 3.14 × 100 = 314. Remaining = 11200 − 314 = 10886.",
+          "story": "The Dharamsala Cricket Stadium groundskeeper needs to know how much grass to maintain outside the pitch area.",
+          "isWord": true,
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

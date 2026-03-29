@@ -1,0 +1,962 @@
+{
+  "id": "equations",
+  "topic": "Equations",
+  "emoji": "\u2696\ufe0f",
+  "color": "#8B5CF6",
+  "gradeRange": [4, 7],
+  "description": "From balance puzzles to multi-step equations",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Balance Puzzles",
+      "emoji": "\ud83d\udfe2",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "What is an equation?",
+      "lessons": [
+        {
+          "id": "eq-l1-les1",
+          "title": "What is an Equation?",
+          "intro": "Imagine a balance scale in your hand. If one side is heavier, the scale tips. An equation is just like that scale \u2014 both sides must always be perfectly balanced!",
+          "visual": "balance-scale",
+          "explanation": [
+            "An equation is a mathematical statement that says two things are equal. We use the '=' sign to show this. For example, 3 + 4 = 7 means the left side (3 + 4) has the same value as the right side (7).",
+            "Think of a balance scale: if you put 3 mangoes and 4 mangoes on the left pan, and 7 mangoes on the right pan, the scale stays perfectly balanced. That is what an equation shows \u2014 both sides weigh the same!",
+            "Equations are everywhere in real life. When your mother says 'I need 5 more plates to have 12 total,' she is thinking of an equation: plates she has + 5 = 12. Learning equations helps you solve puzzles like these!"
+          ],
+          "rule": "An equation always has an '=' sign. The left side and right side must have the same value.",
+          "tip": "Whenever you see '=', think of a balance scale. Both sides must match!"
+        },
+        {
+          "id": "eq-l1-les2",
+          "title": "The Unknown (?)",
+          "intro": "Sometimes we know one part of the equation is missing. We use a '?' or a letter to stand for the number we need to find. Let us solve our first puzzle!",
+          "visual": "question-mark-box",
+          "steps": [
+            {
+              "text": "Look at the equation carefully.",
+              "notation": "\\( ? + 3 = 7 \\)",
+              "tip": "The '?' is the mystery number we need to find."
+            },
+            {
+              "text": "Identify what is unknown. We need to find what number, added to 3, gives us 7.",
+              "notation": "\\( \\text{something} + 3 = 7 \\)"
+            },
+            {
+              "text": "Think: What number plus 3 equals 7? You can count up from 3 to reach 7. That is 4 steps!",
+              "notation": "3 \u2192 4 \u2192 5 \u2192 6 \u2192 7 (4 steps)"
+            },
+            {
+              "text": "So the unknown is 4. Let us write our answer.",
+              "notation": "\\( ? = 4 \\)"
+            },
+            {
+              "text": "Check: Put 4 back into the equation. Does 4 + 3 = 7? Yes! Our answer is correct.",
+              "notation": "\\( 4 + 3 = 7 \\) \u2714"
+            }
+          ],
+          "tip": "Always check by putting your answer back into the original equation!"
+        },
+        {
+          "id": "eq-l1-les3",
+          "title": "Writing Equations",
+          "intro": "Word problems can look scary, but they are just equations hiding inside sentences. Let us learn to turn stories into equations!",
+          "visual": "story-to-equation",
+          "explanation": [
+            "Read this story: 'Riya has some sweets. She gets 3 more from her grandmother. Now she has 8 sweets in total. How many did she start with?' The unknown is how many sweets Riya started with. Let us call it '?'.",
+            "Riya started with '?' sweets, then got 3 more, and ended up with 8. We can write this as: ? + 3 = 8. Now we have an equation! To solve: What plus 3 gives 8? The answer is 5. Riya started with 5 sweets.",
+            "Here is another one: 'Arjun scored some runs in the first innings. He scored 12 runs in the second innings. His total score is 25.' The equation is: ? + 12 = 25. Solving: ? = 25 - 12 = 13. Arjun scored 13 runs in the first innings."
+          ],
+          "rule": "To write an equation from a word problem: (1) Find the unknown, call it '?'. (2) Write what happens using +, -, and =. (3) Solve for '?'.",
+          "tip": "Underline the key numbers and the word 'total' or 'in all' \u2014 they help you build the equation."
+        },
+        {
+          "id": "eq-l1-les4",
+          "title": "Checking Your Answer",
+          "intro": "A good mathematician always checks their work! Let us solve an equation step by step and then verify our answer is correct.",
+          "visual": "checkmark",
+          "steps": [
+            {
+              "text": "Here is our equation to solve.",
+              "notation": "\\( ? + 5 = 12 \\)"
+            },
+            {
+              "text": "We need to find what number plus 5 gives 12. To isolate '?', we subtract 5 from both sides of the equation.",
+              "notation": "\\( ? + 5 - 5 = 12 - 5 \\)",
+              "tip": "Whatever you do to one side, you must do to the other side too!"
+            },
+            {
+              "text": "Simplify both sides. On the left, +5 and -5 cancel out. On the right, 12 - 5 = 7.",
+              "notation": "\\( ? = 7 \\)"
+            },
+            {
+              "text": "Now CHECK: Substitute ? = 7 back into the original equation.",
+              "notation": "\\( 7 + 5 = 12 \\)"
+            },
+            {
+              "text": "Is 7 + 5 = 12 true? Yes! Our answer ? = 7 is verified.",
+              "notation": "\\( 12 = 12 \\) \u2714",
+              "tip": "If the check fails, go back and redo your steps. Everyone makes mistakes \u2014 checking catches them!"
+            }
+          ]
+        },
+        {
+          "id": "eq-l1-les5",
+          "title": "Bigger Numbers",
+          "intro": "The same method works for bigger numbers too. Do not be scared \u2014 the steps are exactly the same! Let us try one with numbers above 10.",
+          "visual": "big-numbers",
+          "steps": [
+            {
+              "text": "Here is an equation with bigger numbers.",
+              "notation": "\\( ? + 15 = 42 \\)"
+            },
+            {
+              "text": "Identify the unknown: '?' is the number we need to find. It is being added to 15 to give 42.",
+              "notation": "\\( ? + 15 = 42 \\)"
+            },
+            {
+              "text": "To find '?', subtract 15 from both sides.",
+              "notation": "\\( ? + 15 - 15 = 42 - 15 \\)",
+              "tip": "For subtraction of bigger numbers, you can do it step by step: 42 - 10 = 32, then 32 - 5 = 27."
+            },
+            {
+              "text": "Simplify: On the left, 15 - 15 = 0, so we get just '?'. On the right, 42 - 15 = 27.",
+              "notation": "\\( ? = 27 \\)"
+            },
+            {
+              "text": "Verify: Does 27 + 15 = 42? Let us check: 27 + 15 = 27 + 10 + 5 = 37 + 5 = 42. Correct!",
+              "notation": "\\( 27 + 15 = 42 \\) \u2714"
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "id": "eq-l1-q1",
+          "question": "? + 4 = 9. Find ?.",
+          "answer": "5",
+          "hint": "Think: what number added to 4 gives 9? Try subtracting 4 from 9.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "eq-l1-q2",
+          "question": "? + 7 = 15. Find ?.",
+          "answer": "8",
+          "hint": "Subtract 7 from 15 to find the unknown.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "eq-l1-q3",
+          "question": "12 + ? = 20. Find ?.",
+          "answer": "8",
+          "hint": "The unknown is on the right side this time! What added to 12 gives 20?",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "eq-l1-q4",
+          "question": "? + 23 = 41. Find ?.",
+          "answer": "18",
+          "hint": "Subtract 23 from 41. You can break it up: 41 - 20 = 21, then 21 - 3 = 18.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "eq-l1-q5",
+          "question": "Aman had ? marbles. He found 12 more and now has 30 marbles. Find ?.",
+          "answer": "18",
+          "hint": "Write an equation: ? + 12 = 30. Now subtract 12 from 30.",
+          "story": "Aman had some marbles in his pocket. While playing in the park, he found 12 more marbles. He counted all his marbles and found he had 30.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "eq-l1-q6",
+          "question": "Priya read ? pages yesterday and 35 pages today. She has read 82 pages in total. Find ?.",
+          "answer": "47",
+          "hint": "The equation is: ? + 35 = 82. Subtract 35 from 82.",
+          "story": "Priya is reading a storybook. She read some pages yesterday and 35 pages today. Her bookmark shows she has read 82 pages in total.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "eq-l1-q7",
+          "question": "? + ? = 16, and both numbers are the same. Find the number.",
+          "answer": "8",
+          "hint": "If both numbers are the same, you are looking for a number that, added to itself, gives 16. Think: what is half of 16?",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "eq-l1-q8",
+          "question": "? + 6 = 15 and ? + 9 = 18. Is the value of ? the same in both equations?",
+          "answer": "9",
+          "hint": "Solve each equation separately. First: ? = 15 - 6 = 9. Second: ? = 18 - 9 = 9. The answer to give is the value of ?.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Subtraction Equations",
+      "emoji": "\ud83d\udfe4",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Undo with inverse operations",
+      "lessons": [
+        {
+          "id": "eq-l2-les1",
+          "title": "Inverse Operations",
+          "intro": "Every operation has an opposite that can undo it. Addition and subtraction are opposites \u2014 they are called inverse operations. This is the secret weapon for solving equations!",
+          "visual": "undo-arrow",
+          "explanation": [
+            "If you add 5 to a number, you can undo it by subtracting 5. If you subtract 3 from a number, you can undo it by adding 3. These 'undo' operations are called inverse operations.",
+            "In equations, we use inverse operations to get the unknown by itself. If the equation says ? + 8 = 20, the '+8' is attached to '?'. To remove it, we do the inverse: subtract 8 from both sides. This gives ? = 12.",
+            "The same idea works for subtraction equations! If ? - 6 = 10, the '-6' is attached to '?'. The inverse of subtracting 6 is adding 6. So we add 6 to both sides: ? = 16."
+          ],
+          "rule": "Addition undoes subtraction. Subtraction undoes addition. These are inverse operations.",
+          "tip": "Think of it like walking: if you walk 5 steps forward (+5), you walk 5 steps backward (-5) to get back to where you started."
+        },
+        {
+          "id": "eq-l2-les2",
+          "title": "Solving x - a = b",
+          "intro": "When the unknown has something subtracted from it, we add to both sides to find the answer. Let us see how!",
+          "visual": "add-both-sides",
+          "steps": [
+            {
+              "text": "Here is our equation. Something minus 6 equals 10.",
+              "notation": "\\( ? - 6 = 10 \\)"
+            },
+            {
+              "text": "The '-6' is keeping '?' trapped. To free '?', we do the inverse: add 6 to both sides.",
+              "notation": "\\( ? - 6 + 6 = 10 + 6 \\)",
+              "tip": "Adding 6 cancels out the -6 on the left side."
+            },
+            {
+              "text": "On the left: -6 + 6 = 0, so we just have '?'. On the right: 10 + 6 = 16.",
+              "notation": "\\( ? = 16 \\)"
+            },
+            {
+              "text": "Check: Does 16 - 6 = 10? Yes! Our answer is correct.",
+              "notation": "\\( 16 - 6 = 10 \\) \u2714"
+            }
+          ]
+        },
+        {
+          "id": "eq-l2-les3",
+          "title": "Solving a - x = b",
+          "intro": "What if the unknown is being subtracted from a number? This type needs a slightly different approach. Let us figure it out!",
+          "visual": "reverse-subtract",
+          "steps": [
+            {
+              "text": "Look at this equation. 20 minus something equals 8.",
+              "notation": "\\( 20 - ? = 8 \\)"
+            },
+            {
+              "text": "This is different! The '?' is being taken away from 20. Think of it as: Meera had 20 rupees, she spent '?' rupees, and has 8 left.",
+              "notation": "\\( 20 - ? = 8 \\)",
+              "tip": "Amount spent = Total - Remaining"
+            },
+            {
+              "text": "To find what was spent (the ?), subtract the remaining from the total: ? = 20 - 8.",
+              "notation": "\\( ? = 20 - 8 \\)"
+            },
+            {
+              "text": "Calculate: 20 - 8 = 12. So ? = 12.",
+              "notation": "\\( ? = 12 \\)"
+            },
+            {
+              "text": "Check: Does 20 - 12 = 8? Yes! Meera spent 12 rupees.",
+              "notation": "\\( 20 - 12 = 8 \\) \u2714"
+            }
+          ]
+        },
+        {
+          "id": "eq-l2-les4",
+          "title": "Mixed Addition and Subtraction",
+          "intro": "Now you know both addition and subtraction equations. Let us practise recognising which type we have and picking the right method!",
+          "visual": "mixed-ops",
+          "explanation": [
+            "When you see an equation, first identify what is happening to the unknown. Is something being added to it or subtracted from it? Example 1: ? + 14 = 30. Here, 14 is being added to '?'. Inverse: subtract 14. So ? = 30 - 14 = 16.",
+            "Example 2: ? - 9 = 21. Here, 9 is being subtracted from '?'. Inverse: add 9. So ? = 21 + 9 = 30.",
+            "Example 3: 45 - ? = 18. Here, '?' is being subtracted from 45. We find: ? = 45 - 18 = 27. Always check: 45 - 27 = 18. Correct!"
+          ],
+          "rule": "Step 1: Spot the operation on '?'. Step 2: Use the inverse. Step 3: Always check!",
+          "tip": "Write the type before solving: 'add type', 'subtract type', or 'reverse subtract type'. This helps you pick the right method."
+        },
+        {
+          "id": "eq-l2-les5",
+          "title": "Word Problems with Subtraction",
+          "intro": "Many real-life situations involve subtraction equations. Let us turn stories into equations and solve them!",
+          "visual": "story-subtract",
+          "steps": [
+            {
+              "text": "Read the problem: 'Rahul had some money. He spent \u20b945 on a book. Now he has \u20b9120 left. How much did he have at first?'",
+              "notation": "? - 45 = 120"
+            },
+            {
+              "text": "Identify: '?' is Rahul's original money. He subtracted 45 (spent on book) and has 120 left.",
+              "notation": "\\( ? - 45 = 120 \\)",
+              "tip": "The word 'spent' usually means subtraction."
+            },
+            {
+              "text": "Use the inverse of subtraction: add 45 to both sides.",
+              "notation": "\\( ? = 120 + 45 \\)"
+            },
+            {
+              "text": "Calculate: 120 + 45 = 165. Rahul had \u20b9165 at first.",
+              "notation": "\\( ? = 165 \\)"
+            },
+            {
+              "text": "Check: 165 - 45 = 120. Correct! Rahul started with \u20b9165.",
+              "notation": "\\( 165 - 45 = 120 \\) \u2714"
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "id": "eq-l2-q1",
+          "question": "? - 3 = 11. Find ?.",
+          "answer": "14",
+          "hint": "Add 3 to both sides: ? = 11 + 3.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "eq-l2-q2",
+          "question": "? - 9 = 24. Find ?.",
+          "answer": "33",
+          "hint": "The inverse of subtracting 9 is adding 9. Add 9 to 24.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "eq-l2-q3",
+          "question": "30 - ? = 17. Find ?.",
+          "answer": "13",
+          "hint": "Here '?' is being subtracted from 30. Find: ? = 30 - 17.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "eq-l2-q4",
+          "question": "? - 28 = 47. Find ?.",
+          "answer": "75",
+          "hint": "Add 28 to 47. Break it up: 47 + 28 = 47 + 30 - 2 = 75.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "eq-l2-q5",
+          "question": "Meera had ? stickers. She gave 15 to her friend and has 23 left. Find ?.",
+          "answer": "38",
+          "hint": "Giving away means subtraction: ? - 15 = 23. Add 15 to 23.",
+          "story": "Meera had a collection of stickers. She gave 15 stickers to her best friend Priya. Now Meera has 23 stickers left.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "eq-l2-q6",
+          "question": "A cricket team scored 256 runs. Arjun scored some and the rest of the team scored 189. How many runs did Arjun score?",
+          "answer": "67",
+          "hint": "Arjun's runs + rest = total. So ? + 189 = 256, which means ? = 256 - 189.",
+          "story": "In a cricket match, the total team score was 256 runs. The rest of the team (excluding Arjun) scored 189 runs.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "eq-l2-q7",
+          "question": "? - 12 = 33 and ? - 33 = 12. Is '?' the same in both equations? Give the value of ?.",
+          "answer": "45",
+          "hint": "Solve each: First ? = 33 + 12 = 45. Second ? = 12 + 33 = 45. They are the same!",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "eq-l2-q8",
+          "question": "100 - ? = ?. Both blanks have the same number. Find it.",
+          "answer": "50",
+          "hint": "If ? - ? = 0, then 100 = 2 \u00d7 ?. What is half of 100?",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Multiplication Equations",
+      "emoji": "\ud83d\udfe1",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Groups and sharing",
+      "lessons": [
+        {
+          "id": "eq-l3-les1",
+          "title": "Multiplication in Equations",
+          "intro": "When a number is multiplied by the unknown, we have a multiplication equation. Think of it as groups: if you have 4 bags with the same number of mangoes in each, how many are in one bag?",
+          "visual": "groups",
+          "explanation": [
+            "A multiplication equation looks like this: 4 \u00d7 ? = 20. It means '4 groups of some number equals 20'. If you have 4 bags and 20 mangoes total, each bag has the same number of mangoes.",
+            "To find the unknown in a multiplication equation, we use division \u2014 the inverse of multiplication. If 4 \u00d7 ? = 20, then ? = 20 \u00f7 4 = 5. Each bag has 5 mangoes!",
+            "We can write multiplication equations in different ways: 4 \u00d7 ? = 20, or 4? = 20 (in algebra, we write numbers next to letters to show multiplication). They all mean the same thing."
+          ],
+          "rule": "To solve a multiplication equation, divide both sides by the number multiplied with the unknown.",
+          "tip": "Think of multiplication as 'groups of' and division as 'sharing equally'."
+        },
+        {
+          "id": "eq-l3-les2",
+          "title": "Division as Inverse",
+          "intro": "Just like subtraction undoes addition, division undoes multiplication. Let us master this inverse pair!",
+          "visual": "multiply-divide-pair",
+          "steps": [
+            {
+              "text": "Start with a multiplication equation.",
+              "notation": "\\( 5 \\times ? = 35 \\)"
+            },
+            {
+              "text": "The '?' is being multiplied by 5. To undo this, we divide both sides by 5.",
+              "notation": "\\( \\frac{5 \\times ?}{5} = \\frac{35}{5} \\)",
+              "tip": "Dividing by 5 cancels the multiplication by 5."
+            },
+            {
+              "text": "On the left, 5 \u00f7 5 = 1, so we get just '?'. On the right, 35 \u00f7 5 = 7.",
+              "notation": "\\( ? = 7 \\)"
+            },
+            {
+              "text": "Check: 5 \u00d7 7 = 35. Correct!",
+              "notation": "\\( 5 \\times 7 = 35 \\) \u2714"
+            }
+          ]
+        },
+        {
+          "id": "eq-l3-les3",
+          "title": "Solving 3x = 15",
+          "intro": "In algebra, we often write '3x' instead of '3 \u00d7 x'. The letter 'x' is just another way to write the unknown (instead of '?'). Let us solve some!",
+          "visual": "algebra-intro",
+          "steps": [
+            {
+              "text": "Here is our equation using algebra notation.",
+              "notation": "\\( 3x = 15 \\)",
+              "tip": "'3x' means '3 times x'. The multiplication sign is hidden!"
+            },
+            {
+              "text": "To find x, divide both sides by 3.",
+              "notation": "\\( \\frac{3x}{3} = \\frac{15}{3} \\)"
+            },
+            {
+              "text": "Simplify: 3 \u00f7 3 = 1, so left side is just x. Right side: 15 \u00f7 3 = 5.",
+              "notation": "\\( x = 5 \\)"
+            },
+            {
+              "text": "Check: 3 \u00d7 5 = 15. Perfect!",
+              "notation": "\\( 3 \\times 5 = 15 \\) \u2714"
+            },
+            {
+              "text": "Let us try another: 7x = 56. Divide both sides by 7: x = 56 \u00f7 7 = 8. Check: 7 \u00d7 8 = 56. Done!",
+              "notation": "\\( 7x = 56 \\implies x = 8 \\)"
+            }
+          ]
+        },
+        {
+          "id": "eq-l3-les4",
+          "title": "Real-World: Price \u00d7 Quantity",
+          "intro": "Multiplication equations are used every day when we go shopping! If you know the total cost and the price per item, you can find how many items were bought.",
+          "visual": "shopping",
+          "explanation": [
+            "Priya buys some notebooks at \u20b945 each. She pays \u20b9270 in total. How many notebooks did she buy? This is a multiplication equation: 45 \u00d7 ? = 270. Dividing: ? = 270 \u00f7 45 = 6. Priya bought 6 notebooks.",
+            "Arjun's father bought ? kg of rice at \u20b960 per kg and paid \u20b9480. The equation: 60 \u00d7 ? = 480. Solving: ? = 480 \u00f7 60 = 8. He bought 8 kg of rice.",
+            "Sometimes you know the quantity and total, but not the price. If Meera bought 4 pencil boxes for \u20b9340 total, what is the price of one box? The equation: 4 \u00d7 ? = 340. Solving: ? = 340 \u00f7 4 = 85. Each box costs \u20b985."
+          ],
+          "rule": "Price \u00d7 Quantity = Total Cost. If you know any two, you can find the third!",
+          "tip": "In shopping problems, identify what is unknown: the price, the quantity, or the total."
+        },
+        {
+          "id": "eq-l3-les5",
+          "title": "Larger Numbers",
+          "intro": "Multiplication equations with bigger numbers work the same way. The trick is to break the division into simpler steps!",
+          "visual": "big-multiply",
+          "steps": [
+            {
+              "text": "Solve this equation with larger numbers.",
+              "notation": "\\( 8x = 96 \\)"
+            },
+            {
+              "text": "Divide both sides by 8.",
+              "notation": "\\( x = \\frac{96}{8} \\)",
+              "tip": "Break it down: 96 \u00f7 8. Think: 8 \u00d7 10 = 80, 8 \u00d7 2 = 16. So 8 \u00d7 12 = 96."
+            },
+            {
+              "text": "So x = 12.",
+              "notation": "\\( x = 12 \\)"
+            },
+            {
+              "text": "Check: 8 \u00d7 12 = 96. Correct!",
+              "notation": "\\( 8 \\times 12 = 96 \\) \u2714"
+            },
+            {
+              "text": "Try another: 6x = 132. Divide by 6: x = 132 \u00f7 6 = 22. Check: 6 \u00d7 22 = 132. Done!",
+              "notation": "\\( 6x = 132 \\implies x = 22 \\)"
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "id": "eq-l3-q1",
+          "question": "3 \u00d7 ? = 18. Find ?.",
+          "answer": "6",
+          "hint": "Divide 18 by 3. Think: what number times 3 gives 18?",
+          "difficulty": "direct"
+        },
+        {
+          "id": "eq-l3-q2",
+          "question": "7x = 49. Find x.",
+          "answer": "7",
+          "hint": "Divide 49 by 7. Recall your 7 times table!",
+          "difficulty": "direct"
+        },
+        {
+          "id": "eq-l3-q3",
+          "question": "? \u00d7 9 = 108. Find ?.",
+          "answer": "12",
+          "hint": "Divide 108 by 9. Break it down: 9 \u00d7 10 = 90, 9 \u00d7 12 = 108.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "eq-l3-q4",
+          "question": "5x = 85. Find x.",
+          "answer": "17",
+          "hint": "Divide 85 by 5. Since 85 ends in 5, it is divisible by 5.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "eq-l3-q5",
+          "question": "Riya bought ? packets of chips at \u20b915 each and paid \u20b990 in total. Find ?.",
+          "answer": "6",
+          "hint": "Equation: 15 \u00d7 ? = 90. Divide 90 by 15.",
+          "story": "Riya went to the shop and bought some packets of chips for a class picnic. Each packet costs \u20b915. She paid \u20b990 in total.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "eq-l3-q6",
+          "question": "A school bought ? cricket bats at \u20b9350 each for a total of \u20b92800. Find ?.",
+          "answer": "8",
+          "hint": "Equation: 350 \u00d7 ? = 2800. Divide 2800 by 350. Think: 350 \u00d7 8 = 2800.",
+          "story": "The school sports department ordered cricket bats for the team. Each bat costs \u20b9350 and the total bill was \u20b92800.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "eq-l3-q7",
+          "question": "If 4x = 48 and 3y = 48, find x + y.",
+          "answer": "28",
+          "hint": "Solve each separately: x = 48 \u00f7 4 = 12, y = 48 \u00f7 3 = 16. Then add: 12 + 16 = 28.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "eq-l3-q8",
+          "question": "A number multiplied by itself gives 144. Find the number.",
+          "answer": "12",
+          "hint": "The equation is ? \u00d7 ? = 144. Think of perfect squares: 10\u00b2 = 100, 11\u00b2 = 121, 12\u00b2 = 144!",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Two-Step Equations",
+      "emoji": "\ud83d\udfe0",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Combine operations",
+      "lessons": [
+        {
+          "id": "eq-l4-les1",
+          "title": "Introduction to Two-Step Equations",
+          "intro": "So far, each equation had one operation. Now we will solve equations that need TWO steps to find the answer. It is like unwrapping a gift \u2014 you remove the outer wrapping first, then the inner one!",
+          "visual": "two-layers",
+          "steps": [
+            {
+              "text": "Here is a two-step equation.",
+              "notation": "\\( 2x + 3 = 11 \\)",
+              "tip": "There are two operations on x: multiply by 2, then add 3."
+            },
+            {
+              "text": "Step 1: Undo the addition first. Subtract 3 from both sides.",
+              "notation": "\\( 2x + 3 - 3 = 11 - 3 \\)"
+            },
+            {
+              "text": "Simplify: 2x = 8.",
+              "notation": "\\( 2x = 8 \\)"
+            },
+            {
+              "text": "Step 2: Now undo the multiplication. Divide both sides by 2.",
+              "notation": "\\( \\frac{2x}{2} = \\frac{8}{2} \\)"
+            },
+            {
+              "text": "Simplify: x = 4.",
+              "notation": "\\( x = 4 \\)"
+            },
+            {
+              "text": "Check: Put x = 4 back. 2(4) + 3 = 8 + 3 = 11. Correct!",
+              "notation": "\\( 2(4) + 3 = 11 \\) \u2714"
+            }
+          ]
+        },
+        {
+          "id": "eq-l4-les2",
+          "title": "Reverse Order of Operations",
+          "intro": "In normal maths, we follow BODMAS (Brackets, Orders, Division, Multiplication, Addition, Subtraction). When solving equations, we go in REVERSE \u2014 undo addition/subtraction first, then multiplication/division!",
+          "visual": "reverse-bodmas",
+          "explanation": [
+            "Consider 5x + 7 = 32. The operations on x are: multiply by 5, then add 7. To solve, we reverse the order: first undo the addition (subtract 7), then undo the multiplication (divide by 5).",
+            "Step 1: 5x + 7 - 7 = 32 - 7, so 5x = 25. Step 2: 5x \u00f7 5 = 25 \u00f7 5, so x = 5. Check: 5(5) + 7 = 25 + 7 = 32. Correct!",
+            "Why reverse order? Think of putting on socks and shoes. You put socks on first, then shoes. To take them off, you reverse: shoes off first, then socks. Equations work the same way!"
+          ],
+          "rule": "To solve two-step equations: (1) Undo addition or subtraction first. (2) Then undo multiplication or division.",
+          "tip": "Remember the socks-and-shoes rule: last on, first off!"
+        },
+        {
+          "id": "eq-l4-les3",
+          "title": "Equations with Subtraction First",
+          "intro": "Some two-step equations have subtraction instead of addition. The same reverse-order rule applies!",
+          "visual": "subtract-first",
+          "steps": [
+            {
+              "text": "Solve this equation where subtraction comes after multiplication.",
+              "notation": "\\( 3x - 5 = 16 \\)"
+            },
+            {
+              "text": "Step 1: Undo the subtraction. Add 5 to both sides.",
+              "notation": "\\( 3x - 5 + 5 = 16 + 5 \\)"
+            },
+            {
+              "text": "Simplify: 3x = 21.",
+              "notation": "\\( 3x = 21 \\)"
+            },
+            {
+              "text": "Step 2: Undo the multiplication. Divide both sides by 3.",
+              "notation": "\\( x = \\frac{21}{3} = 7 \\)"
+            },
+            {
+              "text": "Check: 3(7) - 5 = 21 - 5 = 16. Correct!",
+              "notation": "\\( 3(7) - 5 = 16 \\) \u2714",
+              "tip": "If the equation has '-', add in step 1. If it has '+', subtract in step 1. Always do the opposite!"
+            }
+          ]
+        },
+        {
+          "id": "eq-l4-les4",
+          "title": "Word Problems with Two Steps",
+          "intro": "Real-life problems often need two steps to solve. Let us turn these stories into two-step equations!",
+          "visual": "two-step-story",
+          "steps": [
+            {
+              "text": "Problem: 'Priya thinks of a number. She doubles it and adds 7. The result is 23. What is her number?'",
+              "notation": "\\( 2x + 7 = 23 \\)",
+              "tip": "'Doubles' means \u00d72, 'adds 7' means +7."
+            },
+            {
+              "text": "Step 1: Undo the '+7'. Subtract 7 from both sides.",
+              "notation": "\\( 2x = 23 - 7 = 16 \\)"
+            },
+            {
+              "text": "Step 2: Undo the '\u00d72'. Divide both sides by 2.",
+              "notation": "\\( x = 16 \\div 2 = 8 \\)"
+            },
+            {
+              "text": "Priya's number is 8. Check: 2(8) + 7 = 16 + 7 = 23. Correct!",
+              "notation": "\\( 2(8) + 7 = 23 \\) \u2714"
+            },
+            {
+              "text": "Another example: 'Rahul buys 3 samosas and a \u20b920 lassi. He pays \u20b965 total. What is the cost of one samosa?'",
+              "notation": "\\( 3x + 20 = 65 \\implies 3x = 45 \\implies x = 15 \\)"
+            }
+          ]
+        },
+        {
+          "id": "eq-l4-les5",
+          "title": "Practice Strategies",
+          "intro": "Here are some tips and tricks to solve two-step equations quickly and correctly every time!",
+          "visual": "strategy",
+          "explanation": [
+            "Strategy 1: Write down each step clearly. Do not try to do both steps at once \u2014 that leads to mistakes. First simplify the addition/subtraction, write the result, then handle the multiplication/division.",
+            "Strategy 2: Use the 'cover up' method. In 4x + 9 = 33, cover the '+9'. Ask: 4x = what gives 33 when you add 9? That is 24. Now: 4x = 24, so x = 6. This method is fast once you get comfortable!",
+            "Strategy 3: Always check your answer by substituting back. This takes only a few seconds and can save you marks on exams. In competitions like IPM, a wrong answer may cost negative marks \u2014 checking is essential!"
+          ],
+          "rule": "Two-step equation solving: (1) Undo +/- (2) Undo \u00d7/\u00f7 (3) Check by substituting back.",
+          "tip": "In exams, write 'Check:' and show your verification. Some examiners award extra marks for it!"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "eq-l4-q1",
+          "question": "2x + 5 = 17. Find x.",
+          "answer": "6",
+          "hint": "Step 1: Subtract 5 from both sides: 2x = 12. Step 2: Divide by 2: x = 6.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "eq-l4-q2",
+          "question": "4x - 3 = 25. Find x.",
+          "answer": "7",
+          "hint": "Step 1: Add 3 to both sides: 4x = 28. Step 2: Divide by 4: x = 7.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "eq-l4-q3",
+          "question": "3x + 10 = 40. Find x.",
+          "answer": "10",
+          "hint": "Subtract 10 first: 3x = 30. Then divide by 3: x = 10.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "eq-l4-q4",
+          "question": "7x - 8 = 34. Find x.",
+          "answer": "6",
+          "hint": "Add 8: 7x = 42. Divide by 7: x = 6. Check: 7(6) - 8 = 42 - 8 = 34.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "eq-l4-q5",
+          "question": "Aman thinks of a number, triples it, and subtracts 4. He gets 20. What is the number?",
+          "answer": "8",
+          "hint": "Equation: 3x - 4 = 20. Add 4: 3x = 24. Divide by 3: x = 8.",
+          "story": "Aman thinks of a secret number. He triples it (multiplies by 3) and then subtracts 4. The result is 20.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "eq-l4-q6",
+          "question": "Meera buys 5 pens and a \u20b930 notebook. The total is \u20b9105. What is the price of one pen?",
+          "answer": "15",
+          "hint": "Equation: 5x + 30 = 105. Subtract 30: 5x = 75. Divide by 5: x = 15.",
+          "story": "Meera goes to the stationery shop. She buys 5 pens (all the same price) and a notebook that costs \u20b930. She pays \u20b9105 in total.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "eq-l4-q7",
+          "question": "If 2x + 3 = 15 and 3y - 2 = 13, find x + y.",
+          "answer": "11",
+          "hint": "Solve each: 2x = 12, x = 6. Then 3y = 15, y = 5. So x + y = 11.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "eq-l4-q8",
+          "question": "A number is doubled and then 9 is added. The result is the same as 5 times the original number. Find the number.",
+          "answer": "3",
+          "hint": "Equation: 2x + 9 = 5x. Subtract 2x: 9 = 3x. Divide by 3: x = 3.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Equation Master",
+      "emoji": "\ud83d\udd34",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Variables on both sides",
+      "lessons": [
+        {
+          "id": "eq-l5-les1",
+          "title": "Variables on Both Sides",
+          "intro": "Until now, the variable (x) was only on one side of the equation. But what happens when x appears on BOTH sides? Let us learn to handle this!",
+          "visual": "both-sides",
+          "steps": [
+            {
+              "text": "Look at this equation \u2014 x appears on both sides!",
+              "notation": "\\( 3x + 2 = x + 10 \\)"
+            },
+            {
+              "text": "Goal: Get all the x terms on one side and all the numbers on the other. Let us subtract x from both sides to move x terms to the left.",
+              "notation": "\\( 3x + 2 - x = x + 10 - x \\)",
+              "tip": "Always move the smaller x-term to the side with the larger x-term."
+            },
+            {
+              "text": "Simplify: 3x - x = 2x on the left. On the right, x - x = 0.",
+              "notation": "\\( 2x + 2 = 10 \\)"
+            },
+            {
+              "text": "Now it is a two-step equation! Subtract 2 from both sides.",
+              "notation": "\\( 2x = 8 \\)"
+            },
+            {
+              "text": "Divide both sides by 2.",
+              "notation": "\\( x = 4 \\)"
+            },
+            {
+              "text": "Check: Left = 3(4) + 2 = 14. Right = 4 + 10 = 14. Both sides equal! Correct!",
+              "notation": "\\( 3(4) + 2 = 4 + 10 = 14 \\) \u2714"
+            }
+          ]
+        },
+        {
+          "id": "eq-l5-les2",
+          "title": "Collecting Like Terms",
+          "intro": "When an equation has many terms, we first simplify each side by combining 'like terms' \u2014 terms that have the same variable or are both plain numbers.",
+          "visual": "collect-terms",
+          "steps": [
+            {
+              "text": "Simplify and solve this equation.",
+              "notation": "\\( 5x + 3 - 2x = 18 \\)"
+            },
+            {
+              "text": "Collect like terms on the left: 5x and -2x are both x-terms. Combine them: 5x - 2x = 3x.",
+              "notation": "\\( 3x + 3 = 18 \\)",
+              "tip": "Like terms have the same variable. 5x and 2x are like terms. 3 and 18 are like terms (both are constants)."
+            },
+            {
+              "text": "Now solve the two-step equation. Subtract 3: 3x = 15.",
+              "notation": "\\( 3x = 15 \\)"
+            },
+            {
+              "text": "Divide by 3: x = 5.",
+              "notation": "\\( x = 5 \\)"
+            },
+            {
+              "text": "Check: 5(5) + 3 - 2(5) = 25 + 3 - 10 = 18. Correct!",
+              "notation": "\\( 5(5) + 3 - 2(5) = 18 \\) \u2714"
+            }
+          ]
+        },
+        {
+          "id": "eq-l5-les3",
+          "title": "Distributive Property",
+          "intro": "Sometimes equations have brackets. We use the distributive property to remove them: a(b + c) = ab + ac. This is a powerful tool!",
+          "visual": "distribute",
+          "steps": [
+            {
+              "text": "Solve this equation that has brackets.",
+              "notation": "\\( 2(x + 4) = 14 \\)"
+            },
+            {
+              "text": "Distribute the 2: multiply each term inside the brackets by 2.",
+              "notation": "\\( 2 \\times x + 2 \\times 4 = 14 \\)",
+              "tip": "The distributive property: a(b + c) = ab + ac. Multiply each term inside by the number outside."
+            },
+            {
+              "text": "Simplify: 2x + 8 = 14.",
+              "notation": "\\( 2x + 8 = 14 \\)"
+            },
+            {
+              "text": "Subtract 8 from both sides: 2x = 6.",
+              "notation": "\\( 2x = 6 \\)"
+            },
+            {
+              "text": "Divide by 2: x = 3.",
+              "notation": "\\( x = 3 \\)"
+            },
+            {
+              "text": "Check: 2(3 + 4) = 2(7) = 14. Correct!",
+              "notation": "\\( 2(3 + 4) = 14 \\) \u2714"
+            }
+          ]
+        },
+        {
+          "id": "eq-l5-les4",
+          "title": "Complex Word Problems",
+          "intro": "Real-life problems at this level involve multiple steps. Let us tackle some challenging word problems that Indian students often see in exams!",
+          "visual": "complex-story",
+          "steps": [
+            {
+              "text": "Problem: 'Riya is 3 years older than twice Arjun's age. If Riya is 17, how old is Arjun?'",
+              "notation": "\\( 2x + 3 = 17 \\)",
+              "tip": "'Twice Arjun's age' = 2x. '3 years older than' = +3."
+            },
+            {
+              "text": "Subtract 3 from both sides.",
+              "notation": "\\( 2x = 14 \\)"
+            },
+            {
+              "text": "Divide by 2.",
+              "notation": "\\( x = 7 \\)"
+            },
+            {
+              "text": "Arjun is 7 years old. Check: Twice 7 = 14. Plus 3 = 17 = Riya's age. Correct!",
+              "notation": "\\( 2(7) + 3 = 17 \\) \u2714"
+            },
+            {
+              "text": "Harder problem: 'Priya and Rahul have \u20b9180 together. Priya has \u20b930 more than Rahul. How much does each have?'",
+              "notation": "\\( x + (x + 30) = 180 \\implies 2x + 30 = 180 \\implies 2x = 150 \\implies x = 75 \\)"
+            },
+            {
+              "text": "Rahul has \u20b975 and Priya has \u20b975 + \u20b930 = \u20b9105. Check: 75 + 105 = 180. Correct!",
+              "notation": "\\( 75 + 105 = 180 \\) \u2714"
+            }
+          ]
+        },
+        {
+          "id": "eq-l5-les5",
+          "title": "Review of All Strategies",
+          "intro": "You have learnt many equation-solving techniques across all five levels. Let us put everything together and review the master strategy!",
+          "visual": "master-review",
+          "explanation": [
+            "Step 1 \u2014 Simplify each side: Remove brackets using the distributive property. Combine like terms on each side separately. Example: 2(x + 1) + 3x = 17 becomes 2x + 2 + 3x = 17, then 5x + 2 = 17.",
+            "Step 2 \u2014 Move variables to one side: If x appears on both sides, subtract the smaller x-term from both sides. Example: 5x + 2 = 2x + 14 becomes 3x + 2 = 14 (subtract 2x from both sides).",
+            "Step 3 \u2014 Solve the remaining equation: Undo addition/subtraction first, then multiplication/division. From 3x + 2 = 14: subtract 2 to get 3x = 12, then divide by 3 to get x = 4.",
+            "Step 4 \u2014 Always check: Substitute your answer into the ORIGINAL equation and verify both sides are equal. This catches any mistakes. In exams, this step can save precious marks!"
+          ],
+          "rule": "The master strategy: (1) Simplify (2) Collect variables (3) Solve in reverse order (4) Check!",
+          "tip": "Practice makes permanent. Solve at least 5 equations every day to build speed and accuracy for IPM and school exams!"
+        }
+      ],
+      "quiz": [
+        {
+          "id": "eq-l5-q1",
+          "question": "5x - 3 = 2x + 9. Find x.",
+          "answer": "4",
+          "hint": "Subtract 2x from both sides: 3x - 3 = 9. Add 3: 3x = 12. Divide by 3: x = 4.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "eq-l5-q2",
+          "question": "4x + 5 = 2x + 19. Find x.",
+          "answer": "7",
+          "hint": "Subtract 2x: 2x + 5 = 19. Subtract 5: 2x = 14. Divide by 2: x = 7.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "eq-l5-q3",
+          "question": "3(x + 2) = 21. Find x.",
+          "answer": "5",
+          "hint": "Distribute: 3x + 6 = 21. Subtract 6: 3x = 15. Divide by 3: x = 5.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "eq-l5-q4",
+          "question": "7x - 2x + 4 = 29. Find x.",
+          "answer": "5",
+          "hint": "Combine like terms: 5x + 4 = 29. Subtract 4: 5x = 25. Divide by 5: x = 5.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "eq-l5-q5",
+          "question": "Arjun's age is 5 more than twice Meera's age. If Arjun is 21 years old, find Meera's age.",
+          "answer": "8",
+          "hint": "Equation: 2x + 5 = 21. Subtract 5: 2x = 16. Divide by 2: x = 8.",
+          "story": "Arjun is 21 years old. His age is 5 more than twice his cousin Meera's age.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "eq-l5-q6",
+          "question": "Two friends have \u20b9100 together. One has \u20b920 more than the other. How much does the one with less money have?",
+          "answer": "40",
+          "hint": "Let the smaller amount be x. Then x + (x + 20) = 100. So 2x + 20 = 100, 2x = 80, x = 40.",
+          "story": "Priya and Riya have \u20b9100 in total. Riya has \u20b920 more than Priya.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "eq-l5-q7",
+          "question": "2(3x - 1) = 4x + 6. Find x.",
+          "answer": "4",
+          "hint": "Distribute: 6x - 2 = 4x + 6. Subtract 4x: 2x - 2 = 6. Add 2: 2x = 8. x = 4.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "eq-l5-q8",
+          "question": "The sum of three consecutive numbers is 72. Find the smallest number.",
+          "answer": "23",
+          "hint": "Let the numbers be x, x+1, x+2. Then x + (x+1) + (x+2) = 72. So 3x + 3 = 72, 3x = 69, x = 23.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1088 @@
+{
+  "id": "fractions",
+  "topic": "Fractions",
+  "emoji": "\ud83c\udf55",
+  "color": "#F472B6",
+  "gradeRange": [2, 6],
+  "description": "From pizza slices to mixed numbers",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Fair Shares",
+      "emoji": "\ud83d\udfe2",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "What is a fraction?",
+      "lessons": [
+        {
+          "id": "fr-l1-les1",
+          "title": "Sharing Equally",
+          "intro": "Imagine you have 1 roti and you want to share it equally between 2 friends. You break it into 2 equal parts. Each part is a fraction of the whole roti!",
+          "visual": "roti-split-half",
+          "steps": [
+            {
+              "text": "A fraction is a part of a whole. When we divide something into equal parts, each part is a fraction.",
+              "notation": "\\text{Fraction} = \\frac{\\text{part}}{\\text{total equal parts}}"
+            },
+            {
+              "text": "If Aarav has 1 pizza and shares it equally among 4 friends, each friend gets one out of four slices.",
+              "notation": "\\frac{1}{4}",
+              "tip": "The key word is 'equal' \u2014 all parts must be the same size!"
+            },
+            {
+              "text": "If Priya cuts a ladoo into 3 equal pieces and eats 1 piece, she ate one-third of the ladoo.",
+              "notation": "\\frac{1}{3}"
+            }
+          ],
+          "explanation": [
+            "A fraction tells us how many equal parts we have out of the total.",
+            "The dividing line in a fraction is like the word 'out of'.",
+            "1/2 means 1 out of 2 equal parts."
+          ],
+          "rule": "A fraction represents equal parts of a whole. All parts must be the same size.",
+          "tip": "Think of cutting a chapati \u2014 if the pieces aren't equal, they aren't proper fractions!"
+        },
+        {
+          "id": "fr-l1-les2",
+          "title": "Numerator & Denominator",
+          "intro": "Every fraction has two important numbers. Let's learn their names and what they mean!",
+          "visual": "fraction-anatomy",
+          "steps": [
+            {
+              "text": "The bottom number is called the denominator. It tells us the total number of equal parts.",
+              "notation": "\\frac{\\Box}{\\mathbf{4}} \\leftarrow \\text{denominator (total parts)}"
+            },
+            {
+              "text": "The top number is called the numerator. It tells us how many parts we are talking about.",
+              "notation": "\\frac{\\mathbf{3}}{4} \\leftarrow \\text{numerator (parts chosen)}"
+            },
+            {
+              "text": "So in 3/4, the whole is cut into 4 equal parts and we have picked 3 of them.",
+              "notation": "\\frac{3}{4} = \\text{3 out of 4 equal parts}",
+              "tip": "Remember: Denominator is Down (both start with D)!"
+            }
+          ],
+          "explanation": [
+            "Numerator = number of parts we have (top).",
+            "Denominator = total number of equal parts (bottom).",
+            "The denominator can never be 0, because you can't divide something into 0 parts."
+          ],
+          "rule": "Numerator (top) counts the parts taken. Denominator (bottom) counts the total equal parts.",
+          "tip": "D for Denominator, D for Down. That's how you remember which is which!"
+        },
+        {
+          "id": "fr-l1-les3",
+          "title": "Reading Fractions: Halves, Thirds & Fourths",
+          "intro": "Let's learn how to read and say fractions out loud. Meera's teacher asked her to read 1/2 \u2014 she said 'one by two'. But there's a better way!",
+          "visual": "fraction-names-chart",
+          "steps": [
+            {
+              "text": "1/2 is read as 'one-half'. When something is split into 2 equal parts, each part is a half.",
+              "notation": "\\frac{1}{2} \\rightarrow \\text{one-half}"
+            },
+            {
+              "text": "1/3 is read as 'one-third'. Three equal parts means each part is a third.",
+              "notation": "\\frac{1}{3} \\rightarrow \\text{one-third}"
+            },
+            {
+              "text": "1/4 is read as 'one-fourth' or 'one-quarter'. A quarter is the same as a fourth!",
+              "notation": "\\frac{1}{4} \\rightarrow \\text{one-fourth (one-quarter)}",
+              "tip": "A 25-paisa coin used to be called a 'quarter' because 25 is one-fourth of 100."
+            },
+            {
+              "text": "For other fractions, we say the top number first, then the bottom number with '-th'. 3/5 = 'three-fifths'.",
+              "notation": "\\frac{3}{5} \\rightarrow \\text{three-fifths}"
+            }
+          ],
+          "explanation": [
+            "1/2 = one-half",
+            "1/3 = one-third, 2/3 = two-thirds",
+            "1/4 = one-quarter or one-fourth",
+            "For denominators 5 and above: add '-th' or '-ths' (fifths, sixths, sevenths, etc.)"
+          ],
+          "rule": "Read fractions as: numerator + denominator-th(s). Special names: half, third, quarter."
+        },
+        {
+          "id": "fr-l1-les4",
+          "title": "Comparing Unit Fractions",
+          "intro": "A unit fraction has 1 as the numerator (like 1/2, 1/3, 1/4). Which is bigger: 1/2 or 1/4? Let's find out!",
+          "visual": "unit-fraction-bars",
+          "steps": [
+            {
+              "text": "Imagine cutting one roti into 2 pieces vs cutting the same roti into 4 pieces. Which piece is bigger?",
+              "notation": "\\frac{1}{2} \\quad \\text{vs} \\quad \\frac{1}{4}"
+            },
+            {
+              "text": "The one cut into 2 pieces gives bigger pieces! So 1/2 > 1/4.",
+              "notation": "\\frac{1}{2} > \\frac{1}{4}",
+              "tip": "More cuts = smaller pieces. Fewer cuts = bigger pieces."
+            },
+            {
+              "text": "Similarly, 1/3 > 1/5 because cutting into 3 parts gives bigger pieces than cutting into 5 parts.",
+              "notation": "\\frac{1}{3} > \\frac{1}{5}"
+            },
+            {
+              "text": "The rule: for unit fractions, the bigger the denominator, the smaller the fraction!",
+              "notation": "\\frac{1}{2} > \\frac{1}{3} > \\frac{1}{4} > \\frac{1}{5} > \\frac{1}{6} > \\ldots"
+            }
+          ],
+          "explanation": [
+            "Unit fractions have 1 on top.",
+            "Bigger denominator = more pieces = each piece is smaller.",
+            "So among unit fractions, bigger denominator means smaller value."
+          ],
+          "rule": "For unit fractions: bigger denominator = smaller fraction. 1/2 > 1/3 > 1/4 > 1/5 ...",
+          "tip": "Think of sharing 1 ladoo among more and more friends. The more friends, the less each person gets!"
+        },
+        {
+          "id": "fr-l1-les5",
+          "title": "Fractions in Daily Life",
+          "intro": "Fractions are everywhere around us! Let's see where Arjun and Kavya spot fractions during their day.",
+          "visual": "daily-life-fractions",
+          "steps": [
+            {
+              "text": "Arjun's mum says: 'Drink half a glass of milk.' That means 1/2 of the glass.",
+              "notation": "\\frac{1}{2} \\text{ glass of milk}"
+            },
+            {
+              "text": "Kavya's cricket match is over after 3 out of 4 quarters. That's 3/4 of the match done.",
+              "notation": "\\frac{3}{4} \\text{ of the match}",
+              "tip": "Sports often use halves, thirds, and quarters!"
+            },
+            {
+              "text": "A clock shows quarter past, half past, and quarter to. These are fractions of an hour!",
+              "notation": "\\frac{1}{4} \\text{ hour} = 15 \\text{ minutes}, \\quad \\frac{1}{2} \\text{ hour} = 30 \\text{ minutes}"
+            },
+            {
+              "text": "In recipes: 'Add 1/4 teaspoon of haldi' or 'Use 3/4 cup of atta'. Cooking is full of fractions!",
+              "notation": "\\frac{1}{4} \\text{ tsp haldi}, \\quad \\frac{3}{4} \\text{ cup atta}"
+            }
+          ],
+          "explanation": [
+            "Time: quarter hour = 15 min, half hour = 30 min.",
+            "Cooking: recipes use fractions for measurements.",
+            "Shopping: half-kg sugar, quarter-kg jeera.",
+            "Sports: half-time, quarters in basketball/cricket."
+          ],
+          "rule": "Fractions are used in time, cooking, shopping, sports, and many everyday situations."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fr-l1-q1",
+          "question": "Riya cuts a cake into 4 equal pieces and eats 1 piece. What fraction of the cake did she eat?",
+          "answer": "1/4",
+          "hint": "She ate 1 piece out of 4 equal pieces. Put the part she ate on top and the total pieces on the bottom.",
+          "story": "Riya baked a cake for her birthday. She cut it into 4 equal slices.",
+          "isWord": true,
+          "difficulty": "direct"
+        },
+        {
+          "id": "fr-l1-q2",
+          "question": "In the fraction 5/8, what is the numerator?",
+          "answer": "5",
+          "hint": "The numerator is the top number of a fraction. Remember: D for Denominator, D for Down.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fr-l1-q3",
+          "question": "In the fraction 7/9, what is the denominator?",
+          "answer": "9",
+          "hint": "The denominator is the bottom number. It tells you the total number of equal parts.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fr-l1-q4",
+          "question": "Which is bigger: 1/3 or 1/6?",
+          "answer": "1/3",
+          "hint": "For unit fractions, the bigger the denominator, the smaller the fraction. Which denominator is smaller here?",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fr-l1-q5",
+          "question": "Aarav has 1 metre of ribbon. He uses 1/4 of it. How many centimetres did he use?",
+          "answer": "25",
+          "hint": "1 metre = 100 cm. Find 1/4 of 100 by dividing 100 by 4.",
+          "story": "Aarav is wrapping a gift for his friend. He has 1 metre of ribbon.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fr-l1-q6",
+          "question": "A pizza is cut into 8 equal slices. Meera eats 3 slices. What fraction is left?",
+          "answer": "5/8",
+          "hint": "If 3 out of 8 slices are eaten, how many slices remain? That's the numerator, and 8 is still the denominator.",
+          "story": "Meera ordered a pizza with 8 slices for movie night.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "fr-l1-q7",
+          "question": "Arrange from smallest to largest: 1/2, 1/5, 1/3",
+          "answer": "1/5, 1/3, 1/2",
+          "hint": "For unit fractions, bigger denominator = smaller fraction. Start with the biggest denominator.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "fr-l1-q8",
+          "question": "Kavya's mother gave her 12 ladoos and said she could eat 1/4 of them. How many ladoos can Kavya eat?",
+          "answer": "3",
+          "hint": "1/4 of 12 means divide 12 into 4 equal groups. How many are in each group?",
+          "story": "It's Diwali and Kavya's mother made fresh ladoos!",
+          "isWord": true,
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Equivalent Fractions",
+      "emoji": "\ud83d\udfe3",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Same value, different look",
+      "lessons": [
+        {
+          "id": "fr-l2-les1",
+          "title": "Visual Equivalence with Bar Models",
+          "intro": "Can two fractions that look different actually be the same? Let's see with bar models!",
+          "visual": "bar-model-equivalence",
+          "steps": [
+            {
+              "text": "Draw a bar and shade 1/2 of it. Now draw another bar the same size and shade 2/4 of it.",
+              "notation": "\\frac{1}{2} = \\frac{2}{4}"
+            },
+            {
+              "text": "Both bars have the same amount shaded! That means 1/2 and 2/4 are equivalent fractions.",
+              "notation": "\\frac{1}{2} = \\frac{2}{4} = \\frac{3}{6} = \\frac{4}{8}",
+              "tip": "Equivalent means 'equal in value'. The fractions look different but represent the same amount."
+            },
+            {
+              "text": "Try it with 1/3. Shade 1/3 of a bar, then shade 2/6 of another bar. Same amount!",
+              "notation": "\\frac{1}{3} = \\frac{2}{6}"
+            }
+          ],
+          "explanation": [
+            "Equivalent fractions represent the same portion of a whole.",
+            "You can verify by drawing bar models and comparing the shaded area.",
+            "There are infinitely many equivalent fractions for any given fraction."
+          ],
+          "rule": "Equivalent fractions have different numerators and denominators but represent the same value."
+        },
+        {
+          "id": "fr-l2-les2",
+          "title": "Multiplying Top and Bottom",
+          "intro": "There's a magic trick to find equivalent fractions without drawing bars every time!",
+          "visual": "multiply-top-bottom",
+          "steps": [
+            {
+              "text": "If you multiply both the numerator and denominator by the same number, you get an equivalent fraction.",
+              "notation": "\\frac{1}{3} = \\frac{1 \\times 2}{3 \\times 2} = \\frac{2}{6}"
+            },
+            {
+              "text": "Let's try with 2/5. Multiply top and bottom by 3.",
+              "notation": "\\frac{2}{5} = \\frac{2 \\times 3}{5 \\times 3} = \\frac{6}{15}",
+              "tip": "You must multiply BOTH top and bottom by the same number. If you only change one, the value changes!"
+            },
+            {
+              "text": "This works because multiplying by 2/2, 3/3, or 4/4 is the same as multiplying by 1, and anything times 1 stays the same.",
+              "notation": "\\frac{2}{5} \\times \\frac{3}{3} = \\frac{6}{15} \\quad \\left(\\frac{3}{3} = 1\\right)"
+            }
+          ],
+          "explanation": [
+            "Multiply numerator and denominator by the same number to get an equivalent fraction.",
+            "This works because you are multiplying by 1 (e.g., 2/2 = 1, 3/3 = 1).",
+            "You can use any number: multiply by 2, 3, 4, 5, etc."
+          ],
+          "rule": "Multiply both numerator and denominator by the same non-zero number to get an equivalent fraction."
+        },
+        {
+          "id": "fr-l2-les3",
+          "title": "Simplifying Fractions",
+          "intro": "Sometimes fractions use big numbers. Simplifying makes them easier to understand. Let's learn how!",
+          "visual": "simplify-fraction",
+          "steps": [
+            {
+              "text": "To simplify a fraction, divide both the numerator and denominator by the same number.",
+              "notation": "\\frac{4}{8} = \\frac{4 \\div 4}{8 \\div 4} = \\frac{1}{2}"
+            },
+            {
+              "text": "The number you divide by must go into both top and bottom evenly. This is called a common factor.",
+              "notation": "\\frac{6}{9} = \\frac{6 \\div 3}{9 \\div 3} = \\frac{2}{3}",
+              "tip": "A fraction is in simplest form when the only common factor of the numerator and denominator is 1."
+            },
+            {
+              "text": "Use the HCF (Highest Common Factor) to simplify in one step. HCF of 12 and 18 is 6.",
+              "notation": "\\frac{12}{18} = \\frac{12 \\div 6}{18 \\div 6} = \\frac{2}{3}"
+            }
+          ],
+          "explanation": [
+            "Simplifying means dividing top and bottom by a common factor.",
+            "A fraction is fully simplified when no number (except 1) divides both evenly.",
+            "Using the HCF gives the simplest form in one step."
+          ],
+          "rule": "Divide both numerator and denominator by their HCF to get the simplest form.",
+          "tip": "Check if both numbers are even \u2014 if yes, you can always start by dividing by 2!"
+        },
+        {
+          "id": "fr-l2-les4",
+          "title": "Finding Equivalent Fractions",
+          "intro": "Sometimes a question asks: 2/3 = ?/12. How do we find the missing number? Let's learn!",
+          "visual": "find-equivalent",
+          "steps": [
+            {
+              "text": "Look at the denominators: 3 and 12. Ask: 3 times what gives 12?",
+              "notation": "3 \\times \\mathbf{4} = 12"
+            },
+            {
+              "text": "Since we multiplied the denominator by 4, we must also multiply the numerator by 4.",
+              "notation": "\\frac{2}{3} = \\frac{2 \\times 4}{3 \\times 4} = \\frac{8}{12}",
+              "tip": "Whatever you do to the bottom, you must do to the top!"
+            },
+            {
+              "text": "It works for simplifying too. If 15/? = 3/4, then 15 \u00f7 5 = 3, so ? = 20 \u00f7... Wait, let's think: 3 \u00d7 5 = 15, so 4 \u00d7 5 = 20.",
+              "notation": "\\frac{15}{20} = \\frac{15 \\div 5}{20 \\div 5} = \\frac{3}{4}"
+            }
+          ],
+          "explanation": [
+            "Find what number the denominator was multiplied or divided by.",
+            "Apply the same operation to the numerator.",
+            "Always check: cross-multiply to verify (2 \u00d7 12 = 24, 3 \u00d7 8 = 24 \u2714)."
+          ],
+          "rule": "To find a missing number in equivalent fractions, find the multiplier for one pair and apply it to the other."
+        },
+        {
+          "id": "fr-l2-les5",
+          "title": "Comparing Fractions",
+          "intro": "Who ate more: Rohan who ate 2/3 of his roti, or Sneha who ate 3/5 of her roti? Let's find out!",
+          "visual": "compare-fractions-lcd",
+          "steps": [
+            {
+              "text": "To compare fractions with different denominators, first make the denominators the same.",
+              "notation": "\\frac{2}{3} \\quad \\text{vs} \\quad \\frac{3}{5}"
+            },
+            {
+              "text": "Find the LCM of 3 and 5, which is 15. Convert both fractions.",
+              "notation": "\\frac{2}{3} = \\frac{10}{15}, \\quad \\frac{3}{5} = \\frac{9}{15}"
+            },
+            {
+              "text": "Now compare: 10/15 > 9/15, so 2/3 > 3/5. Rohan ate more!",
+              "notation": "\\frac{10}{15} > \\frac{9}{15} \\implies \\frac{2}{3} > \\frac{3}{5}",
+              "tip": "You can also cross-multiply: 2\u00d75 = 10 and 3\u00d73 = 9. Since 10 > 9, the first fraction is bigger."
+            }
+          ],
+          "explanation": [
+            "Step 1: Find the LCM of the denominators.",
+            "Step 2: Convert both fractions to have that common denominator.",
+            "Step 3: Compare the numerators \u2014 bigger numerator = bigger fraction."
+          ],
+          "rule": "To compare fractions: make denominators equal, then compare numerators. Or use cross-multiplication.",
+          "tip": "Cross-multiply shortcut: a/b vs c/d \u2192 compare a\u00d7d with c\u00d7b."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fr-l2-q1",
+          "question": "Write an equivalent fraction of 1/3 with denominator 9.",
+          "answer": "3/9",
+          "hint": "Multiply both numerator and denominator by 3, since 3 \u00d7 3 = 9.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fr-l2-q2",
+          "question": "Simplify 8/12 to its simplest form.",
+          "answer": "2/3",
+          "hint": "Find the HCF of 8 and 12. It is 4. Divide both numerator and denominator by 4.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fr-l2-q3",
+          "question": "Find the missing number: 4/5 = ?/20",
+          "answer": "16",
+          "hint": "5 \u00d7 ? = 20, so the multiplier is 4. Now multiply the numerator 4 by the same number.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fr-l2-q4",
+          "question": "Are 3/4 and 9/12 equivalent? Answer yes or no.",
+          "answer": "yes",
+          "hint": "Simplify 9/12 by dividing both by 3. What do you get?",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fr-l2-q5",
+          "question": "Which is greater: 3/4 or 5/8?",
+          "answer": "3/4",
+          "hint": "Convert to the same denominator (8). 3/4 = 6/8. Now compare 6/8 with 5/8.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "fr-l2-q6",
+          "question": "Simplify 18/24 to its simplest form.",
+          "answer": "3/4",
+          "hint": "The HCF of 18 and 24 is 6. Divide both by 6.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "fr-l2-q7",
+          "question": "Priya has a ribbon that is 3/5 of a metre long. Ananya has one that is 7/10 of a metre. Who has the longer ribbon?",
+          "answer": "Ananya",
+          "hint": "Convert 3/5 to tenths: 3/5 = 6/10. Now compare 6/10 with 7/10.",
+          "story": "Both girls are making decorations for the school Diwali celebration.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "fr-l2-q8",
+          "question": "Find the simplest form of 36/48.",
+          "answer": "3/4",
+          "hint": "Try dividing both by 12 (the HCF of 36 and 48). If you're unsure, start by dividing both by 2, then by 2 again, then by 3.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Adding & Subtracting",
+      "emoji": "\ud83d\udfe1",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Same denominator first",
+      "lessons": [
+        {
+          "id": "fr-l3-les1",
+          "title": "Adding Fractions with the Same Denominator",
+          "intro": "When fractions have the same denominator, adding them is as easy as adding the top numbers!",
+          "visual": "add-same-denom",
+          "steps": [
+            {
+              "text": "Arjun ate 1/5 of a cake. Then he ate 2/5 more. How much did he eat in total?",
+              "notation": "\\frac{1}{5} + \\frac{2}{5}"
+            },
+            {
+              "text": "Since both fractions have denominator 5, just add the numerators. The denominator stays the same.",
+              "notation": "\\frac{1}{5} + \\frac{2}{5} = \\frac{1+2}{5} = \\frac{3}{5}"
+            },
+            {
+              "text": "Think of it like this: 1 fifth + 2 fifths = 3 fifths. Just like 1 apple + 2 apples = 3 apples!",
+              "notation": "\\frac{a}{c} + \\frac{b}{c} = \\frac{a+b}{c}",
+              "tip": "Same denominator? Just add the tops! Don't add the bottoms."
+            }
+          ],
+          "explanation": [
+            "When denominators are the same, add only the numerators.",
+            "Keep the denominator unchanged.",
+            "Simplify the result if possible."
+          ],
+          "rule": "a/c + b/c = (a+b)/c. Add numerators, keep the denominator.",
+          "tip": "Never add the denominators! 1/5 + 2/5 is NOT 3/10."
+        },
+        {
+          "id": "fr-l3-les2",
+          "title": "Subtracting Fractions with the Same Denominator",
+          "intro": "Subtracting fractions with the same denominator works exactly like adding \u2014 just subtract the tops instead!",
+          "visual": "subtract-same-denom",
+          "steps": [
+            {
+              "text": "Kavya had 5/6 of a metre of cloth. She used 2/6 to make a handkerchief. How much is left?",
+              "notation": "\\frac{5}{6} - \\frac{2}{6}"
+            },
+            {
+              "text": "Same denominator (6), so subtract the numerators: 5 - 2 = 3.",
+              "notation": "\\frac{5}{6} - \\frac{2}{6} = \\frac{5-2}{6} = \\frac{3}{6} = \\frac{1}{2}"
+            },
+            {
+              "text": "Don't forget to simplify! 3/6 = 1/2 (divide top and bottom by 3).",
+              "notation": "\\frac{3}{6} = \\frac{1}{2}",
+              "tip": "Always check if your answer can be simplified."
+            }
+          ],
+          "explanation": [
+            "When denominators are the same, subtract the numerators.",
+            "Keep the denominator unchanged.",
+            "Always simplify the final answer."
+          ],
+          "rule": "a/c - b/c = (a-b)/c. Subtract numerators, keep the denominator."
+        },
+        {
+          "id": "fr-l3-les3",
+          "title": "Finding the LCD",
+          "intro": "What if the denominators are different? We need to find a common denominator first. Let's learn how!",
+          "visual": "lcd-explanation",
+          "steps": [
+            {
+              "text": "To add 1/3 + 1/4, we need the same denominator. We find the LCD \u2014 Least Common Denominator.",
+              "notation": "\\text{LCD of } 3 \\text{ and } 4 = ?"
+            },
+            {
+              "text": "The LCD is the LCM (Least Common Multiple) of the denominators. Multiples of 3: 3, 6, 9, 12... Multiples of 4: 4, 8, 12... LCD = 12!",
+              "notation": "\\text{LCM}(3, 4) = 12"
+            },
+            {
+              "text": "Now convert both fractions to have denominator 12.",
+              "notation": "\\frac{1}{3} = \\frac{4}{12}, \\quad \\frac{1}{4} = \\frac{3}{12}",
+              "tip": "For small denominators, just list multiples of each until you find the first one they share."
+            }
+          ],
+          "explanation": [
+            "LCD = Least Common Denominator = LCM of the two denominators.",
+            "List the multiples of each denominator and find the smallest common one.",
+            "Convert each fraction to the common denominator before adding or subtracting."
+          ],
+          "rule": "The LCD is the smallest number that both denominators divide into evenly.",
+          "tip": "Quick check: if one denominator is a multiple of the other, that's your LCD! (e.g., LCD of 3 and 6 is just 6.)"
+        },
+        {
+          "id": "fr-l3-les4",
+          "title": "Adding Fractions with Different Denominators",
+          "intro": "Now let's put it all together: find the LCD, convert, then add!",
+          "visual": "add-different-denom",
+          "steps": [
+            {
+              "text": "Let's solve 1/3 + 1/4. We found the LCD is 12.",
+              "notation": "\\frac{1}{3} + \\frac{1}{4}"
+            },
+            {
+              "text": "Convert: 1/3 = 4/12 and 1/4 = 3/12.",
+              "notation": "\\frac{4}{12} + \\frac{3}{12}"
+            },
+            {
+              "text": "Now add the numerators: 4 + 3 = 7. The answer is 7/12.",
+              "notation": "\\frac{4}{12} + \\frac{3}{12} = \\frac{7}{12}",
+              "tip": "Check: can 7/12 be simplified? 7 is prime and doesn't divide 12, so it's already in simplest form!"
+            }
+          ],
+          "explanation": [
+            "Step 1: Find the LCD of the denominators.",
+            "Step 2: Convert each fraction to have the LCD as denominator.",
+            "Step 3: Add the numerators, keep the common denominator.",
+            "Step 4: Simplify if possible."
+          ],
+          "rule": "To add fractions with different denominators: find LCD, convert, add numerators, simplify."
+        },
+        {
+          "id": "fr-l3-les5",
+          "title": "Word Problems with Adding & Subtracting",
+          "intro": "Let's solve real-life problems using fraction addition and subtraction!",
+          "visual": "word-problem-fractions",
+          "steps": [
+            {
+              "text": "Rohit walked 2/5 km to the bus stop and then 1/4 km to his school from the stop. How far did he walk in total?",
+              "notation": "\\frac{2}{5} + \\frac{1}{4}"
+            },
+            {
+              "text": "LCD of 5 and 4 is 20. Convert: 2/5 = 8/20, 1/4 = 5/20.",
+              "notation": "\\frac{8}{20} + \\frac{5}{20} = \\frac{13}{20} \\text{ km}"
+            },
+            {
+              "text": "Ananya had 3/4 of a chocolate bar. She gave 1/3 to her brother. How much does she have left?",
+              "notation": "\\frac{3}{4} - \\frac{1}{3}"
+            },
+            {
+              "text": "LCD of 4 and 3 is 12. Convert: 3/4 = 9/12, 1/3 = 4/12. Subtract: 9/12 - 4/12 = 5/12.",
+              "notation": "\\frac{9}{12} - \\frac{4}{12} = \\frac{5}{12} \\text{ of the chocolate bar}",
+              "tip": "In word problems, look for keywords: 'total', 'altogether', 'in all' = add. 'Left', 'remaining', 'less' = subtract."
+            }
+          ],
+          "explanation": [
+            "Read the problem and identify whether to add or subtract.",
+            "Find LCD if denominators are different.",
+            "Convert, compute, simplify, and write the answer with units."
+          ],
+          "rule": "For word problems: identify the operation, find LCD, compute, and always include units in your answer."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fr-l3-q1",
+          "question": "Solve: 2/7 + 3/7",
+          "answer": "5/7",
+          "hint": "Same denominator! Just add the numerators: 2 + 3. Keep the denominator as 7.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fr-l3-q2",
+          "question": "Solve: 5/8 - 1/8",
+          "answer": "1/2",
+          "hint": "Subtract the numerators: 5 - 1 = 4. So you get 4/8. Now simplify!",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fr-l3-q3",
+          "question": "What is the LCD of 4 and 6?",
+          "answer": "12",
+          "hint": "List multiples of 4 (4, 8, 12, 16...) and multiples of 6 (6, 12, 18...). What's the smallest number in both lists?",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fr-l3-q4",
+          "question": "Solve: 1/3 + 1/6",
+          "answer": "1/2",
+          "hint": "LCD of 3 and 6 is 6. Convert 1/3 = 2/6. Now add 2/6 + 1/6 and simplify.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fr-l3-q5",
+          "question": "Solve: 3/4 - 1/3",
+          "answer": "5/12",
+          "hint": "LCD of 4 and 3 is 12. Convert: 3/4 = 9/12, 1/3 = 4/12. Now subtract.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "fr-l3-q6",
+          "question": "Sana drank 1/4 litre of milk in the morning and 1/3 litre in the evening. How much milk did she drink in total? Write as a fraction.",
+          "answer": "7/12",
+          "hint": "Add 1/4 + 1/3. LCD of 4 and 3 is 12. Convert and add.",
+          "story": "Sana's mother insists she drink milk twice a day.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "fr-l3-q7",
+          "question": "Solve: 2/3 + 1/4 + 1/6",
+          "answer": "13/12",
+          "hint": "Find the LCD of 3, 4, and 6 \u2014 it's 12. Convert all three fractions, then add.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "fr-l3-q8",
+          "question": "Vikram had 7/8 kg of rice. He used 1/3 kg for biryani and 1/4 kg for kheer. How much rice is left? Write as a fraction.",
+          "answer": "7/24",
+          "hint": "First find how much was used: 1/3 + 1/4. Then subtract that from 7/8. LCD of 3, 4, 8 is 24.",
+          "story": "Vikram is helping his father cook for a family gathering.",
+          "isWord": true,
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Multiplying Fractions",
+      "emoji": "\ud83d\udfe0",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Of means multiply",
+      "lessons": [
+        {
+          "id": "fr-l4-les1",
+          "title": "Fraction of a Whole Number",
+          "intro": "What is 1/3 of 12 ladoos? The word 'of' in maths often means 'multiply'!",
+          "visual": "fraction-of-whole",
+          "steps": [
+            {
+              "text": "'1/3 of 12' means 'divide 12 into 3 equal groups and take 1 group'.",
+              "notation": "\\frac{1}{3} \\times 12 = \\frac{12}{3} = 4"
+            },
+            {
+              "text": "What about 2/5 of 20? Divide 20 into 5 groups (4 each), take 2 groups.",
+              "notation": "\\frac{2}{5} \\times 20 = \\frac{2 \\times 20}{5} = \\frac{40}{5} = 8",
+              "tip": "You can also think: 20 \u00f7 5 = 4 (one group), then 4 \u00d7 2 = 8 (two groups)."
+            },
+            {
+              "text": "Priya's mother has 18 rotis. She gives 2/3 to the family. How many is that?",
+              "notation": "\\frac{2}{3} \\times 18 = \\frac{2 \\times 18}{3} = \\frac{36}{3} = 12 \\text{ rotis}"
+            }
+          ],
+          "explanation": [
+            "'Of' means multiply in fraction problems.",
+            "To find a fraction of a number: multiply the number by the numerator, then divide by the denominator.",
+            "Or: divide the number by the denominator first, then multiply by the numerator."
+          ],
+          "rule": "Fraction of a whole number: (numerator \u00d7 whole number) \u00f7 denominator.",
+          "tip": "Divide first if the number is divisible by the denominator \u2014 it keeps the numbers small!"
+        },
+        {
+          "id": "fr-l4-les2",
+          "title": "Multiplying Two Fractions",
+          "intro": "What is 1/2 of 1/3? This means we need to multiply two fractions together!",
+          "visual": "multiply-two-fractions",
+          "steps": [
+            {
+              "text": "To multiply fractions, multiply the numerators together and the denominators together.",
+              "notation": "\\frac{a}{b} \\times \\frac{c}{d} = \\frac{a \\times c}{b \\times d}"
+            },
+            {
+              "text": "Example: 1/2 \u00d7 1/3 = (1\u00d71)/(2\u00d73) = 1/6.",
+              "notation": "\\frac{1}{2} \\times \\frac{1}{3} = \\frac{1}{6}",
+              "tip": "Half of a third is a sixth. Makes sense: the piece gets even smaller!"
+            },
+            {
+              "text": "Another example: 2/3 \u00d7 3/4 = 6/12 = 1/2.",
+              "notation": "\\frac{2}{3} \\times \\frac{3}{4} = \\frac{6}{12} = \\frac{1}{2}"
+            }
+          ],
+          "explanation": [
+            "Multiply straight across: tops together, bottoms together.",
+            "No need for a common denominator when multiplying!",
+            "Always simplify the result."
+          ],
+          "rule": "To multiply fractions: (top \u00d7 top) / (bottom \u00d7 bottom). Then simplify."
+        },
+        {
+          "id": "fr-l4-les3",
+          "title": "Simplifying Before Multiplying (Cross-Cancellation)",
+          "intro": "There's a shortcut to make multiplication easier: simplify before you multiply!",
+          "visual": "cross-cancellation",
+          "steps": [
+            {
+              "text": "Look at 4/9 \u00d7 3/8. Before multiplying, check if any numerator shares a factor with any denominator.",
+              "notation": "\\frac{4}{9} \\times \\frac{3}{8}"
+            },
+            {
+              "text": "4 and 8 share a factor of 4 (divide: 4\u00f74=1, 8\u00f74=2). 3 and 9 share a factor of 3 (divide: 3\u00f73=1, 9\u00f73=3).",
+              "notation": "\\frac{\\cancel{4}^{1}}{\\cancel{9}_{3}} \\times \\frac{\\cancel{3}^{1}}{\\cancel{8}_{2}} = \\frac{1 \\times 1}{3 \\times 2} = \\frac{1}{6}",
+              "tip": "This is called cross-cancellation. It keeps numbers small so you don't need to simplify at the end!"
+            },
+            {
+              "text": "Without the shortcut: 4/9 \u00d7 3/8 = 12/72. Then simplify 12/72 = 1/6. Same answer, more work!",
+              "notation": "\\frac{12}{72} = \\frac{1}{6}"
+            }
+          ],
+          "explanation": [
+            "Before multiplying, look for common factors between any numerator and any denominator.",
+            "Divide them by the common factor (cancel).",
+            "Then multiply the simplified numbers. The answer is already in simplest form!"
+          ],
+          "rule": "Cross-cancel common factors between numerators and denominators before multiplying to simplify the work."
+        },
+        {
+          "id": "fr-l4-les4",
+          "title": "Word Problems: Recipe Scaling",
+          "intro": "Cooking is one of the best real-life uses of fraction multiplication. Let's scale some recipes!",
+          "visual": "recipe-scaling",
+          "steps": [
+            {
+              "text": "A recipe for chai uses 3/4 cup of milk for 4 people. Devi wants to make it for 2 people (half the recipe).",
+              "notation": "\\frac{1}{2} \\times \\frac{3}{4} = \\frac{3}{8} \\text{ cup of milk}"
+            },
+            {
+              "text": "The recipe needs 2/3 cup of sugar for 6 people. For 3 people (half), you need:",
+              "notation": "\\frac{1}{2} \\times \\frac{2}{3} = \\frac{2}{6} = \\frac{1}{3} \\text{ cup of sugar}",
+              "tip": "Scaling a recipe down by half means multiplying each ingredient by 1/2."
+            },
+            {
+              "text": "A recipe for 8 gulab jamuns needs 3/4 cup of khoya. Aman wants to make 12 (that's 12/8 = 3/2 times the recipe).",
+              "notation": "\\frac{3}{2} \\times \\frac{3}{4} = \\frac{9}{8} = 1\\frac{1}{8} \\text{ cups of khoya}"
+            }
+          ],
+          "explanation": [
+            "To scale a recipe: multiply each ingredient by the scaling factor.",
+            "Half recipe = multiply by 1/2.",
+            "Double recipe = multiply by 2.",
+            "From 4 servings to 6 servings = multiply by 6/4 = 3/2."
+          ],
+          "rule": "Scaling factor = desired servings / original servings. Multiply each ingredient amount by this fraction."
+        },
+        {
+          "id": "fr-l4-les5",
+          "title": "Mixed Practice: Multiplication",
+          "intro": "Let's practise different types of fraction multiplication problems!",
+          "visual": "mixed-multiplication",
+          "steps": [
+            {
+              "text": "Type 1 \u2014 Fraction \u00d7 Whole Number: Find 3/5 of 25.",
+              "notation": "\\frac{3}{5} \\times 25 = \\frac{75}{5} = 15"
+            },
+            {
+              "text": "Type 2 \u2014 Fraction \u00d7 Fraction: Solve 2/7 \u00d7 7/10.",
+              "notation": "\\frac{2}{7} \\times \\frac{7}{10} = \\frac{\\cancel{2}^{1}}{\\cancel{7}_{1}} \\times \\frac{\\cancel{7}^{1}}{\\cancel{10}_{5}} = \\frac{1}{5}",
+              "tip": "Notice 7 cancels with 7, and 2 cancels with 10 (divide both by 2). The answer comes out clean!"
+            },
+            {
+              "text": "Type 3 \u2014 Word Problem: A garden is 3/4 metre long and 2/3 metre wide. Find the area.",
+              "notation": "\\text{Area} = \\frac{3}{4} \\times \\frac{2}{3} = \\frac{6}{12} = \\frac{1}{2} \\text{ sq. metre}"
+            }
+          ],
+          "explanation": [
+            "Fraction \u00d7 Whole: treat the whole number as (number/1).",
+            "Fraction \u00d7 Fraction: top \u00d7 top, bottom \u00d7 bottom.",
+            "Always cross-cancel when possible to keep numbers small.",
+            "For area problems: Area = length \u00d7 width."
+          ],
+          "rule": "Multiply tops, multiply bottoms, cross-cancel when you can, and always simplify the final answer."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fr-l4-q1",
+          "question": "Find 1/4 of 20.",
+          "answer": "5",
+          "hint": "1/4 of 20 means 20 \u00f7 4. How many groups of 4 are in 20?",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fr-l4-q2",
+          "question": "Solve: 2/3 \u00d7 1/5",
+          "answer": "2/15",
+          "hint": "Multiply numerators: 2 \u00d7 1 = 2. Multiply denominators: 3 \u00d7 5 = 15.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fr-l4-q3",
+          "question": "Find 3/4 of 16 ladoos.",
+          "answer": "12",
+          "hint": "Divide 16 by 4 to get one group (4 ladoos), then take 3 groups.",
+          "story": "Deepa's grandmother made 16 ladoos for Holi.",
+          "isWord": true,
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fr-l4-q4",
+          "question": "Solve: 3/5 \u00d7 5/9",
+          "answer": "1/3",
+          "hint": "Try cross-cancellation first. The 5s cancel! And 3 divides into 9. What's left?",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fr-l4-q5",
+          "question": "A recipe uses 2/3 cup of flour. Neha wants to make half the recipe. How much flour does she need?",
+          "answer": "1/3",
+          "hint": "Half the recipe means multiply by 1/2. So: 1/2 \u00d7 2/3. Simplify.",
+          "story": "Neha is baking cookies for just herself and her sister.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "fr-l4-q6",
+          "question": "Solve: 4/7 \u00d7 7/8",
+          "answer": "1/2",
+          "hint": "Cross-cancel: 7 cancels with 7. And 4 cancels with 8 (divide both by 4). What's left?",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "fr-l4-q7",
+          "question": "A rectangular garden is 5/6 metre long and 3/5 metre wide. What is its area in square metres?",
+          "answer": "1/2",
+          "hint": "Area = length \u00d7 width = 5/6 \u00d7 3/5. Cross-cancel: 5 with 5, and 3 with 6.",
+          "isWord": true,
+          "difficulty": "challenge"
+        },
+        {
+          "id": "fr-l4-q8",
+          "question": "Raj has 60 marbles. He gives 2/5 to Amit and 1/3 of the remaining to Suresh. How many marbles does Suresh get?",
+          "answer": "12",
+          "hint": "First find 2/5 of 60 = 24 (given to Amit). Remaining = 60 - 24 = 36. Now find 1/3 of 36.",
+          "story": "Raj is sharing his marble collection with his friends after school.",
+          "isWord": true,
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Mixed Numbers & Division",
+      "emoji": "\ud83d\udd34",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Improper fractions & beyond",
+      "lessons": [
+        {
+          "id": "fr-l5-les1",
+          "title": "Mixed Numbers to Improper Fractions",
+          "intro": "A mixed number like 2 1/3 has a whole part (2) and a fraction part (1/3). Let's learn to convert it to an improper fraction!",
+          "visual": "mixed-to-improper",
+          "steps": [
+            {
+              "text": "In an improper fraction, the numerator is bigger than (or equal to) the denominator, like 7/3.",
+              "notation": "\\text{Improper: } \\frac{7}{3}, \\frac{5}{2}, \\frac{11}{4}"
+            },
+            {
+              "text": "To convert 2 1/3 to an improper fraction: Multiply the whole number by the denominator, add the numerator.",
+              "notation": "2\\frac{1}{3} = \\frac{(2 \\times 3) + 1}{3} = \\frac{7}{3}",
+              "tip": "Remember the trick: multiply the bottom by the whole, add the top, keep the bottom."
+            },
+            {
+              "text": "Another example: 3 2/5 = (3 \u00d7 5 + 2)/5 = 17/5.",
+              "notation": "3\\frac{2}{5} = \\frac{(3 \\times 5) + 2}{5} = \\frac{17}{5}"
+            }
+          ],
+          "explanation": [
+            "Mixed number = whole number + proper fraction.",
+            "Improper fraction = numerator >= denominator.",
+            "To convert: (whole \u00d7 denominator + numerator) / denominator."
+          ],
+          "rule": "Mixed to improper: (whole \u00d7 denominator + numerator) / denominator."
+        },
+        {
+          "id": "fr-l5-les2",
+          "title": "Improper Fractions to Mixed Numbers",
+          "intro": "Now let's go the other way! If you have 11/4, how do you write it as a mixed number?",
+          "visual": "improper-to-mixed",
+          "steps": [
+            {
+              "text": "Divide the numerator by the denominator. 11 \u00f7 4 = 2 remainder 3.",
+              "notation": "11 \\div 4 = 2 \\text{ R } 3"
+            },
+            {
+              "text": "The quotient (2) is the whole number. The remainder (3) is the new numerator. The denominator stays 4.",
+              "notation": "\\frac{11}{4} = 2\\frac{3}{4}",
+              "tip": "Think of it as: how many whole pizzas can you make from 11 quarter-slices? 2 full pizzas with 3 slices left over."
+            },
+            {
+              "text": "Another example: 17/5 = 17 \u00f7 5 = 3 remainder 2, so 17/5 = 3 2/5.",
+              "notation": "\\frac{17}{5} = 3\\frac{2}{5}"
+            }
+          ],
+          "explanation": [
+            "Divide numerator by denominator.",
+            "Quotient = whole number.",
+            "Remainder = new numerator.",
+            "Denominator stays the same."
+          ],
+          "rule": "Improper to mixed: divide top by bottom. Quotient is the whole number, remainder is the numerator."
+        },
+        {
+          "id": "fr-l5-les3",
+          "title": "Dividing Fractions: Keep, Flip, Change (KFC)",
+          "intro": "Dividing fractions can seem tricky, but there's a simple trick: KFC \u2014 Keep, Flip, Change!",
+          "visual": "kfc-division",
+          "steps": [
+            {
+              "text": "To divide by a fraction, use KFC: Keep the first fraction, Flip the second fraction, Change division to multiplication.",
+              "notation": "\\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\times \\frac{d}{c}"
+            },
+            {
+              "text": "Example: 3/4 \u00f7 1/2. Keep 3/4. Flip 1/2 to get 2/1. Change \u00f7 to \u00d7.",
+              "notation": "\\frac{3}{4} \\div \\frac{1}{2} = \\frac{3}{4} \\times \\frac{2}{1} = \\frac{6}{4} = \\frac{3}{2} = 1\\frac{1}{2}",
+              "tip": "The flipped fraction (2/1 instead of 1/2) is called the reciprocal."
+            },
+            {
+              "text": "Why does this work? Dividing by 1/2 means 'how many halves fit into 3/4?' Answer: one and a half halves.",
+              "notation": "\\frac{3}{4} \\div \\frac{1}{2} = 1\\frac{1}{2}"
+            }
+          ],
+          "explanation": [
+            "KFC: Keep the first fraction, Flip the second, Change \u00f7 to \u00d7.",
+            "The reciprocal of a/b is b/a.",
+            "After flipping, it becomes a multiplication problem.",
+            "Simplify your answer."
+          ],
+          "rule": "To divide fractions: Keep the first, Flip the second (reciprocal), Change to multiplication.",
+          "tip": "KFC \u2014 just like the restaurant, it's easy to remember! Keep, Flip, Change."
+        },
+        {
+          "id": "fr-l5-les4",
+          "title": "Word Problems with Division",
+          "intro": "Let's solve real-world problems using fraction division!",
+          "visual": "division-word-problems",
+          "steps": [
+            {
+              "text": "Meena has 3/4 metre of ribbon. She needs 1/8 metre for each gift bow. How many bows can she make?",
+              "notation": "\\frac{3}{4} \\div \\frac{1}{8} = \\frac{3}{4} \\times \\frac{8}{1} = \\frac{24}{4} = 6 \\text{ bows}"
+            },
+            {
+              "text": "A 2/3 kg packet of dal is shared equally among 4 families. How much does each family get?",
+              "notation": "\\frac{2}{3} \\div 4 = \\frac{2}{3} \\times \\frac{1}{4} = \\frac{2}{12} = \\frac{1}{6} \\text{ kg}",
+              "tip": "Dividing by a whole number 4 is the same as multiplying by 1/4."
+            },
+            {
+              "text": "A teacher has 5/6 of a chart paper. Each student needs 1/3 of a chart paper. How many students can get a piece?",
+              "notation": "\\frac{5}{6} \\div \\frac{1}{3} = \\frac{5}{6} \\times \\frac{3}{1} = \\frac{15}{6} = \\frac{5}{2} = 2\\frac{1}{2}"
+            }
+          ],
+          "explanation": [
+            "Division questions often ask: 'how many ___ fit into ___?' or 'share equally'.",
+            "Convert whole numbers: 4 = 4/1 before applying KFC.",
+            "If the answer is a mixed number, decide based on context whether to round (2.5 students = only 2 full pieces)."
+          ],
+          "rule": "For division word problems: identify what's being divided and by what, then apply KFC."
+        },
+        {
+          "id": "fr-l5-les5",
+          "title": "Review: All Operations with Fractions",
+          "intro": "Let's bring everything together! You now know how to add, subtract, multiply, and divide fractions.",
+          "visual": "all-operations-review",
+          "steps": [
+            {
+              "text": "Addition/Subtraction: Need a common denominator. Add/subtract only the numerators.",
+              "notation": "\\frac{a}{b} \\pm \\frac{c}{d} \\rightarrow \\text{Find LCD, convert, then add/subtract tops}"
+            },
+            {
+              "text": "Multiplication: No common denominator needed. Multiply straight across.",
+              "notation": "\\frac{a}{b} \\times \\frac{c}{d} = \\frac{a \\times c}{b \\times d}"
+            },
+            {
+              "text": "Division: Keep, Flip, Change. Then multiply.",
+              "notation": "\\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\times \\frac{d}{c}",
+              "tip": "Before any operation, convert mixed numbers to improper fractions first!"
+            },
+            {
+              "text": "Golden rule: Always simplify your final answer!",
+              "notation": "\\text{Check: Is the GCD of numerator and denominator = 1?}"
+            }
+          ],
+          "explanation": [
+            "Add/Subtract: same denominator needed.",
+            "Multiply: multiply across (cross-cancel first).",
+            "Divide: Keep, Flip, Change.",
+            "Mixed numbers: convert to improper fractions before operating.",
+            "Always simplify the final answer."
+          ],
+          "rule": "Add/Subtract = LCD needed. Multiply = straight across. Divide = KFC. Always simplify."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fr-l5-q1",
+          "question": "Convert 3 1/4 to an improper fraction.",
+          "answer": "13/4",
+          "hint": "Multiply the whole number (3) by the denominator (4) to get 12. Add the numerator (1) to get 13. Keep the denominator 4.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fr-l5-q2",
+          "question": "Convert 11/3 to a mixed number.",
+          "answer": "3 2/3",
+          "hint": "Divide 11 by 3. Quotient = 3 (whole number), remainder = 2 (numerator). Denominator stays 3.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fr-l5-q3",
+          "question": "Solve: 2/3 \u00f7 1/6",
+          "answer": "4",
+          "hint": "KFC: Keep 2/3, Flip 1/6 to get 6/1, Change to multiplication. 2/3 \u00d7 6/1 = ?",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fr-l5-q4",
+          "question": "Solve: 5/8 \u00f7 5/4",
+          "answer": "1/2",
+          "hint": "Keep 5/8, Flip 5/4 to get 4/5, multiply: 5/8 \u00d7 4/5. Cross-cancel the 5s and the 4 with 8.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fr-l5-q5",
+          "question": "Aisha has 3/4 kg of paneer. She uses 1/4 kg for each dish. How many dishes can she make?",
+          "answer": "3",
+          "hint": "Divide 3/4 by 1/4. KFC: 3/4 \u00d7 4/1. The 4s cancel!",
+          "story": "Aisha is preparing paneer tikka for a dinner party.",
+          "isWord": true,
+          "difficulty": "stretch"
+        },
+        {
+          "id": "fr-l5-q6",
+          "question": "Convert 4 2/5 to an improper fraction, then multiply it by 5/11. Write the answer as a fraction.",
+          "answer": "2",
+          "hint": "4 2/5 = 22/5. Now multiply 22/5 \u00d7 5/11. The 5s cancel, and 22/11 = 2.",
+          "difficulty": "stretch"
+        },
+        {
+          "id": "fr-l5-q7",
+          "question": "A rope is 2 1/2 metres long. It is cut into pieces each 1/4 metre long. How many pieces are there?",
+          "answer": "10",
+          "hint": "Convert 2 1/2 to 5/2. Divide 5/2 by 1/4 using KFC: 5/2 \u00d7 4/1 = 20/2 = 10.",
+          "story": "Rohan is cutting rope for a school art project.",
+          "isWord": true,
+          "difficulty": "challenge"
+        },
+        {
+          "id": "fr-l5-q8",
+          "question": "Solve: 1 1/3 + 2/3 \u00d7 3/4 (follow BODMAS \u2014 multiply first!)",
+          "answer": "1 5/6",
+          "hint": "BODMAS: First multiply 2/3 \u00d7 3/4 = 1/2. Then add 1 1/3 + 1/2. Convert 1 1/3 = 4/3. LCD of 3 and 2 is 6. 8/6 + 3/6 = 11/6 = 1 5/6.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}
