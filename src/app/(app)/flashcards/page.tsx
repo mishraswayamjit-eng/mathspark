@@ -355,12 +355,11 @@ export default function FlashcardsPage() {
             </button>
 
             {/* Voice Recall */}
-            <button
-              onClick={() => openDeck('voice', 'voice')}
-              className="w-full rounded-2xl p-3.5 text-left transition-[transform] active:scale-[0.98] animate-voice-glow"
+            <div
+              className="w-full rounded-2xl p-3.5 text-left opacity-60 cursor-not-allowed"
               style={{
                 background: 'linear-gradient(135deg, #1E293B 0%, #3B1764 50%, #1E293B 100%)',
-                border: '1px solid rgba(167,139,250,0.3)',
+                border: '1px solid rgba(167,139,250,0.2)',
               }}
             >
               <div className="flex items-center gap-3">
@@ -369,9 +368,9 @@ export default function FlashcardsPage() {
                   <p className="text-sm font-black text-[#F1F5F9]">Voice Recall</p>
                   <p className="text-xs text-purple-300/70">Say it out loud · Active recall</p>
                 </div>
-                <span className="text-[10px] font-bold text-purple-400 bg-purple-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>NEW</span>
+                <span className="text-[10px] font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>COMING SOON</span>
               </div>
-            </button>
+            </div>
           </div>
         )}
 
