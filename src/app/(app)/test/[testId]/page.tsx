@@ -412,7 +412,7 @@ export default function TestEnginePage() {
       )}
 
       {/* ── Question area ────────────────────────────────────────────────── */}
-      <div className="flex-1 px-4 pt-4 pb-4 overflow-y-auto">
+      <div className="flex-1 px-4 pt-4 pb-24 overflow-y-auto">
         {/* Q# + topic + flag */}
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
@@ -474,7 +474,8 @@ export default function TestEnginePage() {
       </div>
 
       {/* ── Bottom navigation bar ────────────────────────────────────────── */}
-      <div className="sticky bottom-0 bg-white border-t border-gray-100 px-4 py-3 flex gap-3">
+      <div className="fixed bottom-0 left-0 right-0 z-[60] bg-white border-t border-gray-100 shadow-[0_-2px_10px_rgba(0,0,0,0.06)] pb-[env(safe-area-inset-bottom)]">
+      <div className="max-w-lg mx-auto px-4 py-3 flex gap-3">
         <button
           onClick={() => navigateTo(currentNum - 1)}
           disabled={currentNum === 1}
@@ -505,6 +506,7 @@ export default function TestEnginePage() {
             →
           </button>
         )}
+      </div>
       </div>
 
       {/* Navigator overlay */}
