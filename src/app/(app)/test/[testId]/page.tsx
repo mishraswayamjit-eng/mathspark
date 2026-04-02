@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import KatexRenderer from '@/components/KatexRenderer';
+import QuestionDiagram from '@/components/diagrams/QuestionDiagram';
 import type { MockTestDetail, MockTestResponse, AnswerKey } from '@/types';
 
 // ── Timer hook ────────────────────────────────────────────────────────────────
@@ -443,6 +444,8 @@ export default function TestEnginePage() {
               <KatexRenderer latex={currentQuestion.questionLatex} />
             </div>
           )}
+          {/* Diagram (if this question has an associated figure) */}
+          <QuestionDiagram questionId={currentQuestion.id} />
         </div>
 
         {/* Options */}

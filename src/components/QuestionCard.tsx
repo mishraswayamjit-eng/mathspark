@@ -2,6 +2,7 @@
 
 import React from 'react';
 import KatexRenderer from './KatexRenderer';
+import QuestionDiagram from './diagrams/QuestionDiagram';
 import type { AnswerKey, Difficulty, Question } from '@/types';
 
 // ── Message banks ─────────────────────────────────────────────────────────────
@@ -124,6 +125,9 @@ const QuestionCard = React.memo(function QuestionCard({
             <KatexRenderer latex={question.questionLatex} displayMode className="block" />
           </div>
         )}
+
+        {/* Diagram (if this question has an associated figure) */}
+        <QuestionDiagram questionId={question.id} />
       </div>
 
       {/* ── Answer options ────────────────────────────────────────────── */}
