@@ -225,6 +225,30 @@ button {
   80%      { transform: translateX(4px); }
 }
 
+/* ── Brilliant-style answer sheet animations ──────────────────────────────── */
+
+@keyframes shake-gentle {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
+.animate-shake-gentle { animation: shake-gentle 0.4s ease-out; }
+
+@keyframes scale-in {
+  0% { transform: scale(0); opacity: 0; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.animate-scale-in { animation: scale-in 0.3s ease-out forwards; }
+
+@keyframes stage-crossfade {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-stage-crossfade { animation: stage-crossfade 0.5s ease-out; }
+
 /* ── Accessibility: Reduced motion ─────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -1,9 +1,14 @@
 'use client';
 
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import KatexRenderer from './KatexRenderer';
 import QuestionDiagram from './diagrams/QuestionDiagram';
 import type { AnswerKey, Difficulty, Question } from '@/types';
+
+// Lazy-load interactive components (only loaded when needed)
+const TapToColorQuestion = lazy(() => import('./interactive/TapToColorQuestion'));
+const DragToSortQuestion = lazy(() => import('./interactive/DragToSortQuestion'));
+const ChartTapQuestion = lazy(() => import('./interactive/ChartTapQuestion'));
 
 // ── Message banks ─────────────────────────────────────────────────────────────
 
@@ -51,6 +56,7 @@ interface QuestionCardProps {
   answered: boolean;
   selected: AnswerKey | null;
   onAnswer: (key: AnswerKey, isCorrect: boolean) => void;
+  onInteractiveAnswer?: (answer: string, isCorrect: boolean) => void;
 }
 
 const QuestionCard = React.memo(function QuestionCard({
@@ -58,6 +64,7 @@ const QuestionCard = React.memo(function QuestionCard({
   answered,
   selected,
   onAnswer,
+  onInteractiveAnswer,
 }: QuestionCardProps) {
   const options: Array<{ key: AnswerKey; text: string }> = [
     { key: 'A', text: question.option1 },
@@ -130,7 +137,43 @@ const QuestionCard = React.memo(function QuestionCard({
         <QuestionDiagram questionId={question.id} />
       </div>
 
-      {/* ── Answer options ────────────────────────────────────────────── */}
+      {/* ── Interactive question or MCQ options ──────────────────────── */}
+      {question.interactionType && question.interactionData ? (
+        <Suspense fallback={<div className="h-40 bg-gray-50 rounded-2xl animate-pulse" />}>
+          {question.interactionType === 'tapToColor' && (
+            <TapToColorQuestion
+              data={question.interactionData as import('@/types').TapToColorData}
+              answered={answered}
+              onSubmit={(answer, isCorrect) => {
+                if (onInteractiveAnswer) onInteractiveAnswer(answer, isCorrect);
+                // Map to MCQ callback for compatibility
+                onAnswer(isCorrect ? question.correctAnswer : ('A' === question.correctAnswer ? 'B' : 'A'), isCorrect);
+              }}
+            />
+          )}
+          {question.interactionType === 'dragToSort' && (
+            <DragToSortQuestion
+              data={question.interactionData as import('@/types').DragToSortData}
+              answered={answered}
+              onSubmit={(answer, isCorrect) => {
+                if (onInteractiveAnswer) onInteractiveAnswer(answer, isCorrect);
+                onAnswer(isCorrect ? question.correctAnswer : ('A' === question.correctAnswer ? 'B' : 'A'), isCorrect);
+              }}
+            />
+          )}
+          {question.interactionType === 'chartTap' && (
+            <ChartTapQuestion
+              data={question.interactionData as import('@/types').ChartTapData}
+              questionId={question.id}
+              answered={answered}
+              onSubmit={(answer, isCorrect) => {
+                if (onInteractiveAnswer) onInteractiveAnswer(answer, isCorrect);
+                onAnswer(isCorrect ? question.correctAnswer : ('A' === question.correctAnswer ? 'B' : 'A'), isCorrect);
+              }}
+            />
+          )}
+        </Suspense>
+      ) : (
       <div className="space-y-3">
         {options.map(({ key, text }) => (
           <button
@@ -160,6 +203,7 @@ const QuestionCard = React.memo(function QuestionCard({
           </button>
         ))}
       </div>
+      )}
     </div>
   );
 });

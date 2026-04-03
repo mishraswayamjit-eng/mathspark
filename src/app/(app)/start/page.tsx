@@ -66,8 +66,8 @@ const GRADE_QUESTION_COUNTS: Record<number, string> = {
   6: '720+', 7: '780+', 8: '850+',   9: '900+',
 };
 
-// Step order: welcome → gradeSelect → name → quiz → results → displayName
-type Step = 'welcome' | 'gradeSelect' | 'name' | 'quiz' | 'results' | 'displayName';
+// Step order: welcome → gradeSelect → sampleQuestion → name → quiz → results → displayName
+type Step = 'welcome' | 'gradeSelect' | 'sampleQuestion' | 'name' | 'quiz' | 'results' | 'displayName';
 type Diff  = 'Easy' | 'Medium' | 'Hard';
 
 function nextDiff(d: Diff, up: boolean): Diff {
@@ -109,6 +109,12 @@ export default function StartPage() {
   const [dnError,       setDnError]      = useState('');
   const [trialDaysLeft, setTrialDaysLeft] = useState<number | null>(null);
   const [trialExpiry,   setTrialExpiry]  = useState<string | null>(null);
+
+  // Sample question (shown between grade select and name)
+  const [sampleQ, setSampleQ] = useState<Question | null>(null);
+  const [sampleAnswered, setSampleAnswered] = useState(false);
+  const [sampleSelected, setSampleSelected] = useState<AnswerKey | null>(null);
+  const [sampleLoading, setSampleLoading] = useState(false);
 
   // Active diagnostic plan (set when grade confirmed in gradeSelect step)
   const [activePlan, setActivePlan] = useState<DiagnosticPlan[]>([]);
@@ -326,12 +332,72 @@ export default function StartPage() {
           <DuoButton
             variant="green"
             fullWidth
-            onClick={() => selectedGrade && setStep('name')}
+            onClick={() => {
+              if (!selectedGrade) return;
+              // Fetch a sample question and move to sampleQuestion step
+              setSampleLoading(true);
+              setStep('sampleQuestion');
+              const plan = getDiagnosticPlan(selectedGrade);
+              fetch(`/api/diagnostic?topicId=${plan[0].topicId}&difficulty=Easy&exclude=`)
+                .then((r) => { if (!r.ok) throw new Error('fetch'); return r.json(); })
+                .then((q: Question) => { setSampleQ(q); setSampleLoading(false); })
+                .catch(() => {
+                  // Fallback: skip sample question on failure
+                  setSampleLoading(false);
+                  setStep('name');
+                });
+            }}
             disabled={!selectedGrade}
           >
             Next →
           </DuoButton>
         </div>
+      </div>
+    );
+  }
+
+  // ── Screen 2.5: Sample Question (quick taste before name entry) ────────────
+  if (step === 'sampleQuestion') {
+    return (
+      <div className="min-h-screen flex flex-col px-4 py-6 gap-4 bg-white animate-fade-in">
+        <div className="space-y-2">
+          <p className="text-sm font-extrabold text-gray-500 text-center">
+            <span aria-hidden="true">🎯 </span>Try one question!
+          </p>
+          <p className="text-xs text-gray-400 text-center font-medium">
+            Just a quick taste of what&apos;s inside
+          </p>
+        </div>
+
+        {sampleLoading || !sampleQ ? (
+          <div className="flex-1 flex flex-col items-center justify-center gap-4">
+            <div className="animate-sparky-bounce">
+              <Sparky mood="thinking" size={100} />
+            </div>
+            <p className="text-gray-500 font-semibold">Loading question…</p>
+          </div>
+        ) : (
+          <QuestionCard
+            question={sampleQ}
+            answered={sampleAnswered}
+            selected={sampleSelected}
+            onAnswer={(key, isCorrect) => {
+              if (sampleAnswered) return;
+              setSampleAnswered(true);
+              setSampleSelected(key);
+              // Auto-advance to name step after feedback
+              setTimeout(() => setStep('name'), 1500);
+            }}
+          />
+        )}
+
+        <button
+          onClick={() => setStep('name')}
+          className="text-center text-gray-500 text-sm font-semibold py-2 hover:text-gray-600 transition-colors"
+          style={{ minHeight: 0 }}
+        >
+          Skip →
+        </button>
       </div>
     );
   }

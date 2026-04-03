@@ -63,6 +63,44 @@ export const LessonJourney = React.memo(function LessonJourney({
   );
 });
 
+export const LessonProgressBar = React.memo(function LessonProgressBar({
+  total,
+  currentIdx,
+  results,
+}: {
+  total: number;
+  currentIdx: number;
+  results: QuestionResult[];
+}) {
+  const pct = total > 0 ? (currentIdx / total) * 100 : 0;
+
+  return (
+    <div className="px-4 py-3">
+      <div className="relative h-2 bg-gray-200 rounded-full overflow-hidden">
+        {/* Fill */}
+        <div
+          className="absolute inset-y-0 left-0 bg-duo-green rounded-full transition-[width] duration-700"
+          style={{ width: `${pct}%` }}
+        />
+        {/* Section dots */}
+        {Array.from({ length: total - 1 }, (_, i) => {
+          const dotPct = ((i + 1) / total) * 100;
+          const isDone = results[i] !== undefined;
+          return (
+            <div
+              key={i}
+              className={`absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full ${
+                isDone ? 'bg-duo-green-dark' : 'bg-white'
+              }`}
+              style={{ left: `${dotPct}%`, marginLeft: '-3px' }}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
+});
+
 export function XpFloat({ amount }: { amount: number }) {
   return (
     <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[70] pointer-events-none">

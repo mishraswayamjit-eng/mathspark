@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import KatexRenderer from '@/components/KatexRenderer';
 import StepByStep from '@/components/StepByStep';
 import HintSystem from '@/components/HintSystem';
@@ -10,50 +11,80 @@ import type { Question, AnswerKey } from '@/types';
 export function CorrectPanel({
   feedback,
   streak,
+  xpEarned = 20,
   onContinue,
   onWatchSolution,
   onTrySimilar,
   canTrySimilar,
+  question,
 }: {
   feedback:        string;
   streak:          number;
+  xpEarned?:       number;
   onContinue:      () => void;
   onWatchSolution: () => void;
   onTrySimilar:    () => void;
   canTrySimilar:   boolean;
+  question?:       Question;
 }) {
+  const [showWhy, setShowWhy] = useState(false);
+
   return (
-    <div className="px-4 pt-4 pb-6 space-y-3">
+    <div className="px-4 pt-4 pb-6 space-y-3 border-l-4 border-duo-green">
       <div className="flex items-center gap-3">
         <div className="animate-sparky-dance flex-shrink-0">
           <Sparky mood="celebrating" size={56} />
         </div>
-        <div>
+        <div className="flex-1 min-w-0">
           {streak >= 3 && (
-            <p className="text-xs font-extrabold text-white/80 uppercase tracking-wide mb-0.5">
-              🔥 {streak} in a row!
-            </p>
+            <div className="flex items-center gap-1.5 mb-0.5">
+              <span className="animate-pop-in text-base" aria-hidden="true">🔥</span>
+              <p className="text-xs font-extrabold text-duo-green-dark uppercase tracking-wide">
+                {streak} in a row!
+              </p>
+            </div>
           )}
-          <p className="text-lg font-extrabold text-white leading-tight">{feedback}</p>
+          <p className="text-lg font-extrabold text-gray-800 leading-tight">{feedback}</p>
+        </div>
+        {/* XP badge */}
+        <div className="animate-scale-in flex-shrink-0 bg-duo-green/15 rounded-full px-3 py-1">
+          <span className="text-sm font-extrabold text-duo-green-dark">+{xpEarned} XP</span>
         </div>
       </div>
+
+      {/* "Why?" collapsible for step-by-step */}
+      {question?.stepByStep && question.stepByStep.length > 0 && (
+        <div>
+          <button
+            onClick={() => setShowWhy(!showWhy)}
+            className="text-sm font-bold text-duo-green-dark underline underline-offset-2 min-h-[44px] flex items-center"
+          >
+            {showWhy ? 'Hide explanation ▲' : 'Why? ▼'}
+          </button>
+          {showWhy && <StepByStep steps={question.stepByStep} />}
+        </div>
+      )}
+
+      {/* Actions */}
+      <DuoButton variant="green" fullWidth onClick={onContinue}>
+        Continue →
+      </DuoButton>
+
       <button
         onClick={onWatchSolution}
-        className="btn-sparkle w-full min-h-[44px] bg-white/20 border border-white/40 text-white font-extrabold text-sm rounded-2xl py-2 flex items-center justify-center gap-2"
+        className="btn-sparkle w-full min-h-[44px] text-duo-green-dark font-bold text-sm flex items-center justify-center gap-2"
       >
-        <span className="sparkle-icon">🎬</span> Watch Solution
+        <span className="sparkle-icon" aria-hidden="true">🎬</span> Watch Solution
       </button>
+
       {canTrySimilar && (
         <button
           onClick={onTrySimilar}
-          className="w-full min-h-[44px] bg-white/10 border border-white/30 text-white font-extrabold text-sm rounded-2xl py-2 flex items-center justify-center gap-2"
+          className="w-full text-gray-400 font-semibold text-xs flex items-center justify-center gap-1 min-h-[36px]"
         >
           🔄 Try a Similar Question
         </button>
       )}
-      <DuoButton variant="white" fullWidth onClick={onContinue}>
-        Continue →
-      </DuoButton>
     </div>
   );
 }
@@ -84,17 +115,17 @@ export function WrongPanel({
   const textHasLatex  = correctText.includes('\\');
 
   return (
-    <div className="px-4 pt-4 pb-6 space-y-3">
+    <div className="px-4 pt-4 pb-6 space-y-3 border-l-4 border-duo-red animate-shake-gentle">
       {/* Header row */}
       <div className="flex items-center gap-3">
         <div className="flex-shrink-0">
           <Sparky mood="encouraging" size={56} />
         </div>
         <div>
-          <p className="text-sm font-extrabold text-duo-red uppercase tracking-wide">
-            No worries! Here&#39;s how it works…
+          <p className="text-base font-extrabold text-duo-red">
+            Not quite!
           </p>
-          <div className="bg-white rounded-xl px-3 py-2 border border-red-100 mt-1.5">
+          <div className="bg-white rounded-xl px-3 py-2 border border-duo-red/30 mt-1.5">
             <p className="text-xs text-gray-500 font-semibold">Correct answer ({question.correctAnswer})</p>
             {textHasLatex ? (
               <div className="mt-1"><KatexRenderer latex={correctText} displayMode={false} /></div>
@@ -109,7 +140,7 @@ export function WrongPanel({
       {misconception && (
         <div className="bg-blue-50 border border-blue-200 rounded-2xl px-4 py-3">
           <p className="text-xs font-extrabold text-blue-700 uppercase tracking-wide mb-1">
-            💡 Common mistake
+            <span aria-hidden="true">💡</span> Common mistake
           </p>
           <p className="text-sm text-gray-700 font-medium leading-snug">{misconception}</p>
         </div>
@@ -127,27 +158,16 @@ export function WrongPanel({
         onLevelUp={onHintLevelUp}
       />
 
-      {/* Action strip */}
+      {/* Action strip — simplified to 2 buttons */}
       <div className="space-y-2 pt-1">
-        {canTrySimilar && (
-          <button
-            onClick={onTrySimilar}
-            className="w-full min-h-[48px] bg-duo-green hover:bg-[#5bd800] text-white font-extrabold text-sm rounded-2xl py-3 flex items-center justify-center gap-2 shadow-sm"
-          >
-            🔄 Try a Similar Question
-          </button>
-        )}
+        <DuoButton variant="red" fullWidth onClick={onGotIt}>
+          Got it →
+        </DuoButton>
         <button
           onClick={onWatchSolution}
-          className="btn-sparkle w-full min-h-[44px] bg-gradient-to-r from-violet-500 to-indigo-500 text-white font-extrabold text-sm rounded-2xl py-2 flex items-center justify-center gap-2 shadow-md"
+          className="btn-sparkle w-full min-h-[44px] border border-gray-200 bg-white text-gray-700 font-bold text-sm rounded-2xl py-2 flex items-center justify-center gap-2"
         >
-          <span className="sparkle-icon">🎬</span> Watch Solution
-        </button>
-        <button
-          onClick={onGotIt}
-          className="w-full min-h-[44px] border border-gray-200 text-gray-500 font-semibold text-sm rounded-2xl py-2 flex items-center justify-center bg-white"
-        >
-          Got it, move on →
+          <span className="sparkle-icon" aria-hidden="true">🎬</span> Watch Solution
         </button>
       </div>
     </div>

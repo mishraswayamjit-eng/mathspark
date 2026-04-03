@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Fragment, useEffect, useRef, useState, useMemo } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import type { DashboardData, TopicWithProgress } from '@/types';
 import Sparky from '@/components/Sparky';
@@ -9,6 +9,7 @@ import { computeNudge, markMasteryShown, type Nudge } from '@/lib/nudges';
 import { getAccessibleGrades, isGradeAccessible } from '@/lib/gradeAccess';
 import { getTopicsForGrade, type TopicNode } from '@/data/topicTree';
 import { TOPIC_ORDER } from '@/lib/sharedUtils';
+import SkillPath from '@/components/chapters/SkillPath';
 
 // ── Topic metadata ─────────────────────────────────────────────────────────────
 
@@ -56,105 +57,6 @@ function getHearts(): number {
   return parseInt(localStorage.getItem('mathspark_hearts') ?? '5', 10);
 }
 
-// ── Sub-components ─────────────────────────────────────────────────────────────
-
-const MasteryBadge = React.memo(function MasteryBadge({ mastery }: { mastery: string }) {
-  if (mastery === 'Mastered') {
-    return (
-      <span className="inline-flex items-center gap-1 text-xs font-extrabold px-2 py-0.5 rounded-full bg-green-100 text-green-700 border border-green-200">
-        Mastered ✅
-      </span>
-    );
-  }
-  if (mastery === 'Practicing') {
-    return (
-      <span className="inline-flex items-center gap-1 text-xs font-extrabold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 border border-amber-200">
-        Learning 🟡
-      </span>
-    );
-  }
-  return (
-    <span className="inline-flex items-center gap-1 text-xs font-extrabold px-2 py-0.5 rounded-full bg-gray-100 text-gray-500 border border-gray-200">
-      Not started
-    </span>
-  );
-});
-
-const MiniProgressBar = React.memo(function MiniProgressBar({ correct, attempted, mastery }: { correct: number; attempted: number; mastery: string }) {
-  const pct = mastery === 'Mastered'
-    ? 100
-    : attempted > 0
-    ? Math.min(100, Math.round((correct / attempted) * 100))
-    : 0;
-
-  const barColor =
-    mastery === 'Mastered'  ? 'bg-duo-green' :
-    mastery === 'Practicing' ? 'bg-duo-orange' :
-    'bg-gray-300';
-
-  return (
-    <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
-      <div
-        className={`h-full rounded-full transition-[width] duration-500 ${barColor}`}
-        style={{ width: `${pct}%` }}
-      />
-    </div>
-  );
-});
-
-const TopicCard = React.memo(function TopicCard({
-  topic,
-  onClick,
-  onFlashcards,
-}: {
-  topic: TopicWithProgress;
-  onClick: () => void;
-  onFlashcards?: () => void;
-}) {
-  const emoji = TOPIC_EMOJI[topic.id] ?? '📚';
-
-  return (
-    <div className="w-full text-left bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-duo-blue transition-[colors,border-color,box-shadow] duration-150 flex flex-col gap-2">
-      {/* Emoji + mastery badge row */}
-      <button onClick={onClick} className="flex items-start justify-between gap-1 active:scale-[0.97] transition-transform">
-        <span className="text-3xl leading-none select-none" aria-hidden="true">{emoji}</span>
-        <MasteryBadge mastery={topic.mastery} />
-      </button>
-
-      {/* Topic name */}
-      <button onClick={onClick} className="active:scale-[0.97] transition-transform text-left">
-        <p className="text-sm font-extrabold text-gray-800 leading-snug line-clamp-2">
-          {topic.name}
-        </p>
-      </button>
-
-      {/* Questions solved + flashcard link */}
-      <div className="flex items-center justify-between">
-        <p className="text-xs text-gray-500 font-semibold">
-          {topic.correct} question{topic.correct !== 1 ? 's' : ''} solved
-        </p>
-        {onFlashcards && (
-          <button
-            onClick={(e) => { e.stopPropagation(); onFlashcards(); }}
-            className="text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full px-2 py-0.5 hover:bg-emerald-100 transition-colors min-h-0"
-          >
-            <span aria-hidden="true">🃏 </span>Cards
-          </button>
-        )}
-      </div>
-
-      {/* Mini progress bar */}
-      <button onClick={onClick} className="w-full active:scale-[0.97] transition-transform">
-        <MiniProgressBar
-          correct={topic.correct}
-          attempted={topic.attempted}
-          mastery={topic.mastery}
-        />
-      </button>
-    </div>
-  );
-});
-
 // ── Loading skeleton ───────────────────────────────────────────────────────────
 
 function Skeleton() {
@@ -180,10 +82,19 @@ function Skeleton() {
           <div key={i} className="flex-shrink-0 h-8 w-14 rounded-full bg-gray-100 animate-pulse" />
         ))}
       </div>
-      {/* Grid skeleton */}
-      <div className="px-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-        {Array.from({ length: 16 }, (_, i) => (
-          <div key={i} className="rounded-2xl bg-gray-100 animate-pulse h-36" />
+      {/* Skill path skeleton */}
+      <div className="px-4 space-y-2">
+        {Array.from({ length: 8 }, (_, i) => (
+          <React.Fragment key={i}>
+            {i > 0 && <div className="flex justify-center"><div className="w-1 h-8 bg-gray-100 rounded-full" /></div>}
+            <div className={`flex items-center gap-3 px-3 py-3 ${i % 2 === 1 ? 'flex-row-reverse' : ''}`}>
+              <div className="w-14 h-14 rounded-full bg-gray-100 animate-pulse flex-shrink-0" />
+              <div className="flex-1 space-y-2">
+                <div className="h-4 w-32 rounded-xl bg-gray-100 animate-pulse" />
+                <div className="h-3 w-20 rounded-xl bg-gray-100 animate-pulse" />
+              </div>
+            </div>
+          </React.Fragment>
         ))}
       </div>
     </div>
@@ -298,7 +209,15 @@ export default function ChaptersPage() {
     [fullAccess, selectedGrade],
   );
 
-  const sortedTopics = useMemo(() => sortTopics(topicsForGrade), [topicsForGrade]);
+  // Grade 4: curriculum order for skill path; other grades: mastery-weight sort
+  const sortedTopics = useMemo(() => {
+    if (selectedGrade === 4) {
+      return [...topicsForGrade].sort(
+        (a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id),
+      );
+    }
+    return sortTopics(topicsForGrade);
+  }, [topicsForGrade, selectedGrade]);
 
   // Syllabus coverage stats (used by the coverage bar)
   const syllabusCoverage = useMemo(() => {
@@ -544,33 +463,12 @@ export default function ChaptersPage() {
       {/* ── Topic content for selected grade ────────────────────────────── */}
       <div className="px-4 pt-0">
         {selectedGrade === 4 ? (
-          // Grade 4: ch-series grid + IPM pool card at bottom
+          // Grade 4: vertical skill path + IPM pool card at bottom
           <>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-              {sortedTopics.map((topic, idx) => {
-                const prev        = sortedTopics[idx - 1];
-                const showDivider = idx === 0 || masteryWeight(topic.mastery) !== masteryWeight(prev.mastery);
-                const dividerLabel =
-                  topic.mastery === 'Practicing' ? '📖 In progress' :
-                  topic.mastery === 'NotStarted' ? '⬜ Not started yet' :
-                  '✅ Mastered';
-
-                return (
-                  <Fragment key={topic.id}>
-                    {showDivider && (
-                      <p className="col-span-2 sm:col-span-3 lg:col-span-4 text-xs font-extrabold uppercase tracking-widest mt-4 mb-1 text-gray-500">
-                        {dividerLabel}
-                      </p>
-                    )}
-                    <TopicCard
-                      topic={topic}
-                      onClick={() => router.push(`/practice/${topic.id}`)}
-                      onFlashcards={() => router.push(`/flashcards/session?deck=${topic.id}&mode=classic`)}
-                    />
-                  </Fragment>
-                );
-              })}
-            </div>
+            <SkillPath
+              topics={sortedTopics}
+              onTopicClick={(id) => router.push(`/practice/${id}`)}
+            />
 
             {/* Grade 4 IPM Past Papers card */}
             {grade4PoolTopic && (
@@ -595,9 +493,9 @@ export default function ChaptersPage() {
             )}
           </>
         ) : (
-          // Other grades: topicTree lesson cards + lower-grade tiles
+          // Other grades: topicTree skill path + lower-grade tiles
           <>
-            {/* Lesson grid from topicTree */}
+            {/* Skill path from topicTree */}
             {(() => {
               const treeNodes: TopicNode[] = getTopicsForGrade(selectedGrade);
               const access = isGradeAccessible(selectedGrade, studentGrade, subscriptionTier);
@@ -612,43 +510,35 @@ export default function ChaptersPage() {
                 );
               }
 
+              // Adapt TopicNode[] → TopicWithProgress[] for SkillPath
+              const adapted: TopicWithProgress[] = treeNodes.map((node) => ({
+                id: node.subTopicKey ? `${node.dbTopicId}__${node.subTopicKey}` : node.dbTopicId,
+                name: node.name,
+                chapterNumber: '',
+                grade: node.grade,
+                mastery: poolTopic?.mastery ?? ('NotStarted' as const),
+                attempted: poolTopic?.attempted ?? 0,
+                correct: poolTopic?.correct ?? 0,
+              }));
+
               return (
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-                  {treeNodes.map((node) => (
-                    <button
-                      key={node.id}
-                      onClick={() => {
-                        const qp = new URLSearchParams();
-                        if (node.subTopicKey) qp.set('subTopic', node.subTopicKey);
-                        if (isSample) qp.set('sample', 'true');
-                        const qs = qp.toString() ? `?${qp.toString()}` : '';
-                        router.push(`/practice/${node.dbTopicId}${qs}`);
-                      }}
-                      className="w-full text-left bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md hover:border-duo-blue active:scale-[0.97] transition-[colors,border-color,box-shadow,transform] duration-150 flex flex-col gap-2"
-                    >
-                      <div className="flex items-start justify-between gap-1">
-                        <span className="text-3xl leading-none select-none" aria-hidden="true">{node.emoji}</span>
-                        {isSample && (
-                          <span className="inline-flex items-center text-xs font-extrabold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 border border-blue-200">
-                            Preview 🔓
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-sm font-extrabold text-gray-800 leading-snug line-clamp-2">
-                        {node.name}
-                      </p>
-                      <p className="text-xs text-gray-500 font-semibold">
-                        {poolTopic ? `${poolTopic.correct} solved in pool` : 'Not started'}
-                      </p>
-                      <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                        <div
-                          className="h-full rounded-full bg-duo-blue"
-                          style={{ width: poolTopic && poolTopic.mastery === 'Mastered' ? '100%' : poolTopic && poolTopic.mastery === 'Practicing' ? '50%' : '0%' }}
-                        />
-                      </div>
-                    </button>
-                  ))}
-                </div>
+                <SkillPath
+                  topics={adapted}
+                  onTopicClick={(adaptedId) => {
+                    // Reverse the adapted ID to find original TopicNode
+                    const node = treeNodes.find((n) =>
+                      n.subTopicKey
+                        ? `${n.dbTopicId}__${n.subTopicKey}` === adaptedId
+                        : n.dbTopicId === adaptedId,
+                    );
+                    if (!node) return;
+                    const qp = new URLSearchParams();
+                    if (node.subTopicKey) qp.set('subTopic', node.subTopicKey);
+                    if (isSample) qp.set('sample', 'true');
+                    const qs = qp.toString() ? `?${qp.toString()}` : '';
+                    router.push(`/practice/${node.dbTopicId}${qs}`);
+                  }}
+                />
               );
             })()}
 

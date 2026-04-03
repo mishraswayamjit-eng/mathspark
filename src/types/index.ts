@@ -23,6 +23,33 @@ export interface StepItem {
   latex?: string;
 }
 
+// ── Interactive question types ────────────────────────────────────────────────
+
+export type InteractionType = 'tapToColor' | 'dragToSort' | 'chartTap';
+
+export interface TapToColorData {
+  shape: 'rectangle' | 'circle';
+  totalParts: number;
+  correctCount: number;
+  correctIndices?: number[];
+  columns?: number;
+  label?: string;
+}
+
+export interface DragToSortData {
+  items: string[];
+  correctOrder: number[];
+  instruction?: string;
+}
+
+export interface ChartTapData {
+  diagramType: string;
+  correctRegion: string;
+  regions: Array<{ id: string; label: string; x: number; y: number; width: number; height: number }>;
+}
+
+export type InteractionData = TapToColorData | DragToSortData | ChartTapData;
+
 export interface Question {
   id: string;
   topicId: string;
@@ -46,6 +73,8 @@ export interface Question {
   source: string;
   year?: number | null;
   questionNumber?: number | null;
+  interactionType?: InteractionType;
+  interactionData?: InteractionData;
 }
 
 export interface Progress {

@@ -8,6 +8,7 @@ import StepByStep from '@/components/StepByStep';
 import MisconceptionPopup from '@/components/MisconceptionPopup';
 import Sparky from '@/components/Sparky';
 import Confetti from '@/components/Confetti';
+import DuoButton from '@/components/DuoButton';
 import StreakCounter from '@/components/progress/StreakCounter';
 import { useSounds } from '@/hooks/useSounds';
 import {
@@ -91,13 +92,18 @@ export default function DailyChallengePage() {
   const [selected, setSelected] = useState<AnswerKey | null>(null);
   const [results, setResults] = useState<boolean[]>([]);
   const [hintLevel, setHintLevel] = useState(0);
+  const [isCorrect, setIsCorrect] = useState(false);
 
   // Completion state
   const [phase, setPhase] = useState<'quiz' | 'done' | 'already'>('quiz');
   const [prevResult, setPrevResult] = useState<ChallengeResult | null>(null);
   const [streak, setStreak] = useState<StreakData | null>(null);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [showMiniConfetti, setShowMiniConfetti] = useState(false);
   const [newMilestone, setNewMilestone] = useState<string | null>(null);
+
+  // XP count-up for done screen
+  const [displayXp, setDisplayXp] = useState(0);
 
   // ── Load data ──────────────────────────────────────────────────────────────
   useEffect(() => {
@@ -154,13 +160,15 @@ export default function DailyChallengePage() {
   }, []);
 
   // ── Handlers ───────────────────────────────────────────────────────────────
-  const handleAnswer = useCallback((key: AnswerKey, isCorrect: boolean) => {
+  const handleAnswer = useCallback((key: AnswerKey, correct: boolean) => {
     if (answered) return;
     setSelected(key);
     setAnswered(true);
-    setResults((prev) => [...prev, isCorrect]);
-    if (isCorrect) {
+    setIsCorrect(correct);
+    setResults((prev) => [...prev, correct]);
+    if (correct) {
       playCorrect();
+      setShowMiniConfetti(true);
     } else {
       playWrong();
       setHintLevel(1);
@@ -207,9 +215,24 @@ export default function DailyChallengePage() {
       setCurrentIdx(nextIdx);
       setAnswered(false);
       setSelected(null);
+      setIsCorrect(false);
       setHintLevel(0);
     }
   }, [challenge, currentIdx, results, grade, playLevelUp, playStreak]);
+
+  // XP count-up
+  useEffect(() => {
+    if (phase !== 'done') return;
+    const totalXp = results.filter(Boolean).length * 20;
+    let cur = 0;
+    const step = totalXp / 30;
+    const interval = setInterval(() => {
+      cur = Math.min(cur + step, totalXp);
+      setDisplayXp(Math.round(cur));
+      if (cur >= totalXp) clearInterval(interval);
+    }, 40);
+    return () => clearInterval(interval);
+  }, [phase, results]);
 
   // ── Loading / Error states ─────────────────────────────────────────────────
   if (loading) {
@@ -286,13 +309,19 @@ export default function DailyChallengePage() {
     const score = results.filter(Boolean).length;
     const total = challenge?.questions.length ?? 5;
     const { text: sparkyText, emotion } = scoreMessage(score, total);
+    const totalXp = score * 20;
 
     return (
-      <div className="min-h-screen flex flex-col items-center px-6 py-8 gap-5 max-w-lg mx-auto">
+      <div className="min-h-screen flex flex-col items-center px-6 py-8 gap-5 max-w-lg mx-auto animate-stage-crossfade">
         {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
 
+        {/* Sparky celebrating */}
+        <div className="animate-sparky-dance">
+          <Sparky mood={emotion === 'celebrating' ? 'celebrating' : emotion === 'happy' ? 'happy' : 'encouraging'} size={100} />
+        </div>
+
         {/* Score */}
-        <div className="text-center space-y-2 mt-4">
+        <div className="text-center space-y-2">
           <div className="text-6xl font-extrabold" style={{ color: score >= 3 ? '#58CC02' : '#FF9600' }}>
             {score}/{total}
           </div>
@@ -301,9 +330,15 @@ export default function DailyChallengePage() {
           </p>
         </div>
 
+        {/* XP tally */}
+        <div className="bg-[#FFF9E6] border-2 border-duo-gold rounded-2xl px-8 py-3 text-center animate-pop-in">
+          <p className="text-xs text-amber-700 font-extrabold uppercase tracking-wide">XP earned</p>
+          <p className="text-3xl font-extrabold text-duo-dark">+{displayXp} <span aria-hidden="true">⭐</span></p>
+        </div>
+
         {/* Milestone */}
         {newMilestone && (
-          <div className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-2xl px-5 py-3 border-2 border-yellow-300 text-center">
+          <div className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-2xl px-5 py-3 border-2 border-yellow-300 text-center animate-pop-in">
             <p className="text-lg font-extrabold text-orange-700">{newMilestone}</p>
             <p className="text-xs font-bold text-orange-500 mt-0.5">New Milestone Unlocked!</p>
           </div>
@@ -312,7 +347,7 @@ export default function DailyChallengePage() {
         {/* Streak */}
         {streak && <StreakCounter streak={streak} />}
 
-        {/* Sparky */}
+        {/* Sparky message */}
         <div className="bg-purple-50 rounded-2xl px-4 py-3 flex items-start gap-3 border border-purple-200 w-full">
           <Sparky mood={emotion === 'celebrating' ? 'celebrating' : emotion === 'happy' ? 'happy' : 'encouraging'} size={40} />
           <p className="text-sm font-semibold text-purple-800 pt-1">{sparkyText}</p>
@@ -321,7 +356,7 @@ export default function DailyChallengePage() {
         {/* Fun fact */}
         {challenge?.funFact && (
           <div className="bg-blue-50 rounded-2xl px-4 py-3 border border-blue-200 w-full">
-            <p className="text-xs font-bold text-blue-500 mb-1">💡 Fun Fact</p>
+            <p className="text-xs font-bold text-blue-500 mb-1"><span aria-hidden="true">💡</span> Fun Fact</p>
             <p className="text-sm text-blue-800">{challenge.funFact}</p>
           </div>
         )}
@@ -372,11 +407,14 @@ export default function DailyChallengePage() {
   const progressPct = ((currentIdx + (answered ? 1 : 0)) / totalQ) * 100;
 
   return (
-    <div className="min-h-screen flex flex-col px-4 py-6 max-w-lg mx-auto pb-28 animate-fade-in">
+    <div className="min-h-screen flex flex-col px-4 py-6 max-w-lg mx-auto animate-fade-in" style={{ paddingBottom: answered ? '50vh' : '80px' }}>
+      {/* Mini confetti on correct */}
+      {showMiniConfetti && <Confetti variant="mini" onDone={() => setShowMiniConfetti(false)} />}
+
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <span className="text-xl">🎯</span>
+          <span className="text-xl" aria-hidden="true">🎯</span>
           <h1 className="text-lg font-extrabold text-gray-800">Daily Challenge</h1>
         </div>
         {streak && <StreakCounter streak={streak} compact />}
@@ -410,68 +448,84 @@ export default function DailyChallengePage() {
         onAnswer={handleAnswer}
       />
 
-      {/* Feedback after answer */}
+      {/* ── Sliding bottom panel (Brilliant-style answer sheet) ── */}
       {answered && (
-        <div className="mt-4 space-y-3">
-          {/* Correct/wrong message */}
-          <div className={`rounded-2xl px-4 py-3 flex items-start gap-3 border ${
-            selected === adaptedQuestion.correctAnswer
-              ? 'bg-green-50 border-green-200'
-              : 'bg-red-50 border-red-200'
-          }`}>
-            <Sparky
-              mood={selected === adaptedQuestion.correctAnswer ? 'celebrating' : 'encouraging'}
-              size={36}
-            />
-            <p className={`text-sm font-semibold pt-1 ${
-              selected === adaptedQuestion.correctAnswer ? 'text-green-700' : 'text-red-700'
-            }`}>
-              {selected === adaptedQuestion.correctAnswer
-                ? ['Great job! ⭐', 'You got it! 🎯', 'Excellent! 🧠', 'Well done! 🌟', 'Awesome! 🎉'][
-                    Math.floor(Math.random() * 5)
-                  ]
-                : "Not quite — let's look at the solution!"}
-            </p>
+        <div
+          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] animate-slide-up overflow-y-auto rounded-t-2xl ${
+            isCorrect ? 'bg-duo-mint' : 'bg-duo-blush'
+          }`}
+          style={{ maxHeight: '50vh' }}
+        >
+          <div className="px-4 pt-4 pb-6 space-y-3">
+            {isCorrect ? (
+              <>
+                {/* Correct feedback */}
+                <div className="flex items-center gap-3 border-l-4 border-duo-green pl-3">
+                  <div className="animate-sparky-dance flex-shrink-0">
+                    <Sparky mood="celebrating" size={44} />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-base font-extrabold text-gray-800">
+                      {['Great job! ⭐', 'You got it! 🎯', 'Excellent! 🧠', 'Well done! 🌟', 'Awesome! 🎉'][currentIdx % 5]}
+                    </p>
+                  </div>
+                  <div className="animate-scale-in flex-shrink-0 bg-duo-green/15 rounded-full px-3 py-1">
+                    <span className="text-sm font-extrabold text-duo-green-dark">+20 XP</span>
+                  </div>
+                </div>
+                <DuoButton variant="green" fullWidth onClick={handleNext}>
+                  {currentIdx + 1 >= totalQ ? 'See Results →' : 'Next →'}
+                </DuoButton>
+              </>
+            ) : (
+              <>
+                {/* Wrong feedback */}
+                <div className="flex items-center gap-3 border-l-4 border-duo-red pl-3">
+                  <div className="flex-shrink-0">
+                    <Sparky mood="encouraging" size={44} />
+                  </div>
+                  <p className="text-base font-extrabold text-duo-red">
+                    Not quite!
+                  </p>
+                </div>
+
+                {/* Misconception */}
+                {selected && selected !== adaptedQuestion.correctAnswer && (() => {
+                  const misconKey = `misconception${selected}` as keyof typeof adaptedQuestion;
+                  const misconText = adaptedQuestion[misconKey] as string;
+                  const correctIdx = ['A', 'B', 'C', 'D'].indexOf(adaptedQuestion.correctAnswer);
+                  const correctText = adaptedQuestion[`option${correctIdx + 1}` as keyof typeof adaptedQuestion] as string;
+                  return misconText ? (
+                    <MisconceptionPopup
+                      text={misconText}
+                      correctAnswer={adaptedQuestion.correctAnswer}
+                      correctText={correctText}
+                    />
+                  ) : null;
+                })()}
+
+                {/* Hints */}
+                {hintLevel > 0 && (
+                  <HintSystem
+                    hint1={adaptedQuestion.hint1}
+                    hint2={adaptedQuestion.hint2}
+                    hint3={adaptedQuestion.hint3}
+                    level={hintLevel}
+                    onLevelUp={setHintLevel}
+                  />
+                )}
+
+                {/* Step by step */}
+                {adaptedQuestion.stepByStep.length > 0 && (
+                  <StepByStep steps={adaptedQuestion.stepByStep} />
+                )}
+
+                <DuoButton variant="red" fullWidth onClick={handleNext}>
+                  {currentIdx + 1 >= totalQ ? 'See Results →' : 'Got it →'}
+                </DuoButton>
+              </>
+            )}
           </div>
-
-          {/* Misconception (for wrong answers) */}
-          {selected && selected !== adaptedQuestion.correctAnswer && (() => {
-            const misconKey = `misconception${selected}` as keyof typeof adaptedQuestion;
-            const misconText = adaptedQuestion[misconKey] as string;
-            const correctIdx = ['A', 'B', 'C', 'D'].indexOf(adaptedQuestion.correctAnswer);
-            const correctText = adaptedQuestion[`option${correctIdx + 1}` as keyof typeof adaptedQuestion] as string;
-            return misconText ? (
-              <MisconceptionPopup
-                text={misconText}
-                correctAnswer={adaptedQuestion.correctAnswer}
-                correctText={correctText}
-              />
-            ) : null;
-          })()}
-
-          {/* Hints (for wrong answers) */}
-          {hintLevel > 0 && (
-            <HintSystem
-              hint1={adaptedQuestion.hint1}
-              hint2={adaptedQuestion.hint2}
-              hint3={adaptedQuestion.hint3}
-              level={hintLevel}
-              onLevelUp={setHintLevel}
-            />
-          )}
-
-          {/* Step by step solution */}
-          {adaptedQuestion.stepByStep.length > 0 && (
-            <StepByStep steps={adaptedQuestion.stepByStep} />
-          )}
-
-          {/* Next button */}
-          <button
-            onClick={handleNext}
-            className="w-full bg-duo-blue hover:bg-[#0a8fd4] text-white font-extrabold py-3.5 rounded-2xl transition-colors mt-2"
-          >
-            {currentIdx + 1 >= totalQ ? 'See Results →' : 'Next →'}
-          </button>
         </div>
       )}
     </div>

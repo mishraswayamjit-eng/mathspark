@@ -22,8 +22,8 @@ import {
   TOPIC_EMOJI, CARD_ACCENTS,
   type Phase, type TrialStatus, type BonusMode, type QuestionResult, type GradeUpCta,
 } from '@/components/practice';
-import { HeartsBar, LessonJourney, XpFloat } from '@/components/practice';
-import { ReviewIntroScreen, NoHeartsScreen, LessonCompleteScreen } from '@/components/practice';
+import { HeartsBar, LessonProgressBar, XpFloat } from '@/components/practice';
+import { ReviewIntroScreen, NoHeartsScreen, LessonCompleteScreen, LessonIntro, CelebrationCascade, StreakCommitment } from '@/components/practice';
 import { CorrectPanel, WrongPanel } from '@/components/practice';
 
 // ── Main component ────────────────────────────────────────────────────────────
@@ -68,8 +68,10 @@ export default function PracticePage() {
   const [reviewResults, setReviewResults] = useState<QuestionResult[]>([]);
 
   // Animations
-  const [showXpFloat,  setShowXpFloat]  = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false);
+  const [showXpFloat,      setShowXpFloat]      = useState(false);
+  const [showConfetti,     setShowConfetti]     = useState(false);
+  const [showMiniConfetti,     setShowMiniConfetti]     = useState(false);
+  const [showStreakCommitment, setShowStreakCommitment] = useState(false);
 
   // Similar question (fetched on wrong answer for "Practice Similar" button)
   // similarQ removed — replaced by bonus question system
@@ -389,7 +391,7 @@ export default function PracticePage() {
           return;
         }
         setQuestions([firstQ]);
-        setPhase('answering');
+        setPhase('intro');
         // Immediately prefetch the second question
         prefetchNext();
       })
@@ -524,10 +526,11 @@ export default function PracticePage() {
     if (correct && newStreak === 10) msg = 'Math wizard! 🧙';
     setFeedback(msg);
 
-    // Sounds
+    // Sounds + mini confetti
     if (correct) {
       if (newStreak === 3 || newStreak === 5) playStreak();
       else playCorrect();
+      setShowMiniConfetti(true);
     } else {
       playWrong();
       // Auto-show hint level 1 after a wrong answer
@@ -810,6 +813,17 @@ export default function PracticePage() {
     );
   }
 
+  if (phase === 'intro') {
+    return (
+      <LessonIntro
+        topicName={topicName}
+        topicEmoji={TOPIC_EMOJI[topicId] ?? '📚'}
+        questionCount={LESSON_SIZE}
+        onStart={() => setPhase('answering')}
+      />
+    );
+  }
+
   if (phase === 'no_hearts') {
     return (
       <NoHeartsScreen
@@ -830,6 +844,17 @@ export default function PracticePage() {
   }
 
   if (phase === 'complete') {
+    if (showStreakCommitment) {
+      return (
+        <StreakCommitment
+          onDone={() => {
+            setShowStreakCommitment(false);
+            router.push(conceptId ? `/learn/concept-map?open=${conceptId}` : '/chapters');
+          }}
+        />
+      );
+    }
+
     const hasReviewMistakes = reviewResults.some((r) => !r.wasCorrect);
 
     // Compute grade progression CTA
@@ -860,13 +885,23 @@ export default function PracticePage() {
     }
 
     return (
-      <LessonCompleteScreen
+      <CelebrationCascade
         mainResults={results}
         reviewResults={reviewResults}
         totalXp={xp}
+        streak={streak}
         hasReviewMistakes={hasReviewMistakes}
         gradeUpCta={gradeUpCta}
-        onContinue={() => router.push(conceptId ? `/learn/concept-map?open=${conceptId}` : '/chapters')}
+        topicId={topicId}
+        topicName={topicName}
+        onComplete={() => {
+          // Show streak commitment if not yet set
+          if (typeof window !== 'undefined' && !localStorage.getItem('mathspark_streakGoalSet')) {
+            setShowStreakCommitment(true);
+          } else {
+            router.push(conceptId ? `/learn/concept-map?open=${conceptId}` : '/chapters');
+          }
+        }}
         whatsNextSuggestions={whatsNextSuggestions}
         shareData={studentId ? {
           studentId,
@@ -979,10 +1014,6 @@ export default function PracticePage() {
   if (!currentQuestion) return null;
 
   const accentCls = CARD_ACCENTS[currentSlotIndex % CARD_ACCENTS.length];
-  const pct = isReviewing
-    ? Math.round((reviewResults.length / reviewQueue.length) * 100)
-    : Math.round((qIndex / LESSON_SIZE) * 100);
-
   // Bonus helpers
   const bonusOptKey      = bonusSelected ? `misconception${bonusSelected}` as keyof Question : null;
   const bonusMisconText  = bonusOptKey && bonusQuestion ? bonusQuestion[bonusOptKey] as string : '';
@@ -994,8 +1025,10 @@ export default function PracticePage() {
 
   return (
     <div className="flex flex-col bg-white min-h-screen animate-fade-in">
-      {/* Confetti */}
+      {/* Confetti (full — lesson complete) */}
       {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
+      {/* Mini confetti — per correct answer */}
+      {showMiniConfetti && <Confetti variant="mini" onDone={() => setShowMiniConfetti(false)} />}
 
       {/* XP Float */}
       {showXpFloat && <XpFloat amount={isReviewing ? XP_REVIEW : XP_CORRECT} />}
@@ -1029,23 +1062,15 @@ export default function PracticePage() {
         </div>
       )}
 
-      {/* ── Journey circles / Review badge ── */}
+      {/* ── Progress bar / Review badge ── */}
       {isReviewing ? (
         <div className="bg-[#EEF6FF] px-4 py-2 flex items-center gap-2 border-b border-blue-100">
           <span className="text-duo-blue text-sm font-extrabold">📚 Review mode</span>
           <span className="text-gray-500 text-xs font-semibold">{reviewIndex + 1} / {reviewQueue.length}</span>
         </div>
       ) : (
-        <LessonJourney total={LESSON_SIZE} currentIdx={qIndex} results={results} />
+        <LessonProgressBar total={LESSON_SIZE} currentIdx={qIndex} results={results} />
       )}
-
-      {/* Progress bar */}
-      <div className="h-1.5 bg-gray-100">
-        <div
-          className="h-1.5 bg-gradient-to-r from-duo-green to-[#89E219] transition-[width] duration-700"
-          style={{ width: `${pct}%` }}
-        />
-      </div>
 
       {/* Speed drill timer bar */}
       {isSpeedMode && phase === 'answering' && (
@@ -1142,13 +1167,13 @@ export default function PracticePage() {
         </div>
       )}
 
-      {/* ── Sliding bottom panel ── */}
+      {/* ── Sliding bottom panel (Brilliant-style answer sheet) ── */}
       {phase === 'result' && (
         <div
-          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] animate-slide-up overflow-y-auto ${
+          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] animate-slide-up overflow-y-auto rounded-t-2xl ${
             lastCorrect
-              ? 'bg-duo-green'
-              : 'bg-[#FFF0F0] border-t-2 border-duo-red'
+              ? 'bg-duo-mint'
+              : 'bg-duo-blush'
           }`}
           style={{ maxHeight: '72vh' }}
         >
@@ -1156,6 +1181,8 @@ export default function PracticePage() {
             <CorrectPanel
               feedback={feedback}
               streak={streak}
+              xpEarned={isReviewing ? XP_REVIEW : XP_CORRECT}
+              question={currentQuestion}
               onContinue={() => {
                 if (advanceTimer.current) clearTimeout(advanceTimer.current);
                 advance(hearts);

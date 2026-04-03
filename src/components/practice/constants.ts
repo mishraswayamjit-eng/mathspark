@@ -15,6 +15,7 @@ export const MAX_BONUS_PER_ORIGIN = 2;
 
 export type Phase =
   | 'loading'
+  | 'intro'
   | 'answering'
   | 'result'
   | 'no_hearts'

@@ -128,6 +128,160 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
+  // ── Interactive question seeding ──────────────────────────────────────────
+  if (searchParams.get('page') === 'interactive') {
+    try {
+      const INTERACTIVE_QUESTIONS = [
+        // 2× tapToColor — fraction shading
+        {
+          id: 'INTERACTIVE_TAP_RECT_01',
+          topicId: 'ch07-08',
+          subTopic: 'Fraction representation',
+          difficulty: 'Easy',
+          questionText: 'Shade 3/8 of the rectangle. Tap the parts you want to shade.',
+          questionLatex: '',
+          option1: '3 parts', option2: '4 parts', option3: '5 parts', option4: '6 parts',
+          correctAnswer: 'A',
+          hint1: 'Count carefully — you need exactly 3 out of 8 parts.',
+          hint2: '', hint3: '',
+          stepByStep: '[]',
+          misconceptionA: '', misconceptionB: '', misconceptionC: '', misconceptionD: '',
+          source: 'interactive_seed',
+          interactionType: 'tapToColor',
+          interactionData: { shape: 'rectangle', totalParts: 8, correctCount: 3, columns: 4, label: 'Shade 3/8 of this shape' },
+        },
+        {
+          id: 'INTERACTIVE_TAP_CIRCLE_01',
+          topicId: 'ch07-08',
+          subTopic: 'Fraction representation',
+          difficulty: 'Easy',
+          questionText: 'Shade 2/6 of the circle. Tap the slices you want to shade.',
+          questionLatex: '',
+          option1: '2 slices', option2: '3 slices', option3: '4 slices', option4: '1 slice',
+          correctAnswer: 'A',
+          hint1: 'You need to shade exactly 2 out of 6 equal slices.',
+          hint2: '', hint3: '',
+          stepByStep: '[]',
+          misconceptionA: '', misconceptionB: '', misconceptionC: '', misconceptionD: '',
+          source: 'interactive_seed',
+          interactionType: 'tapToColor',
+          interactionData: { shape: 'circle', totalParts: 6, correctCount: 2, label: 'Shade 2/6 of this circle' },
+        },
+        // 2× dragToSort — number ordering
+        {
+          id: 'INTERACTIVE_DRAG_FRAC_01',
+          topicId: 'ch07-08',
+          subTopic: 'Comparing fractions',
+          difficulty: 'Medium',
+          questionText: 'Arrange these fractions from smallest to largest.',
+          questionLatex: '',
+          option1: '3/4, 1/2, 1/4, 1/8', option2: '1/8, 1/4, 1/2, 3/4', option3: '1/4, 1/8, 1/2, 3/4', option4: '1/2, 1/4, 3/4, 1/8',
+          correctAnswer: 'B',
+          hint1: 'Compare the fractions by finding a common denominator or thinking about what portion of a whole each represents.',
+          hint2: '', hint3: '',
+          stepByStep: '[]',
+          misconceptionA: '', misconceptionB: '', misconceptionC: '', misconceptionD: '',
+          source: 'interactive_seed',
+          interactionType: 'dragToSort',
+          interactionData: { items: ['3/4', '1/2', '1/4', '1/8'], correctOrder: [3, 2, 1, 0], instruction: 'Drag to arrange from smallest to largest' },
+        },
+        {
+          id: 'INTERACTIVE_DRAG_DEC_01',
+          topicId: 'ch11',
+          subTopic: 'Comparing decimals',
+          difficulty: 'Medium',
+          questionText: 'Arrange these decimals from smallest to largest.',
+          questionLatex: '',
+          option1: '0.75, 0.3, 0.5, 0.08', option2: '0.08, 0.3, 0.5, 0.75', option3: '0.3, 0.08, 0.5, 0.75', option4: '0.5, 0.3, 0.75, 0.08',
+          correctAnswer: 'B',
+          hint1: 'Compare digit by digit: look at tenths place first, then hundredths.',
+          hint2: '', hint3: '',
+          stepByStep: '[]',
+          misconceptionA: '', misconceptionB: '', misconceptionC: '', misconceptionD: '',
+          source: 'interactive_seed',
+          interactionType: 'dragToSort',
+          interactionData: { items: ['0.75', '0.3', '0.5', '0.08'], correctOrder: [3, 1, 2, 0], instruction: 'Drag to arrange from smallest to largest' },
+        },
+        // 2× chartTap — pictograph reading
+        {
+          id: 'INTERACTIVE_CHART_PICTO_01',
+          topicId: 'dh',
+          subTopic: 'Data Handling',
+          difficulty: 'Easy',
+          questionText: 'In the pictograph below, which fruit is the most popular? Tap on it.',
+          questionLatex: '',
+          option1: 'Apple', option2: 'Banana', option3: 'Mango', option4: 'Orange',
+          correctAnswer: 'C',
+          hint1: 'Count the pictures for each fruit and find the one with the most.',
+          hint2: '', hint3: '',
+          stepByStep: '[]',
+          misconceptionA: '', misconceptionB: '', misconceptionC: '', misconceptionD: '',
+          source: 'interactive_seed',
+          interactionType: 'chartTap',
+          interactionData: {
+            diagramType: 'pictograph',
+            correctRegion: 'mango',
+            regions: [
+              { id: 'apple',  label: 'Apple',  x: 10, y: 10, width: 80, height: 20 },
+              { id: 'banana', label: 'Banana', x: 10, y: 30, width: 80, height: 20 },
+              { id: 'mango',  label: 'Mango',  x: 10, y: 50, width: 80, height: 20 },
+              { id: 'orange', label: 'Orange', x: 10, y: 70, width: 80, height: 20 },
+            ],
+          },
+        },
+        {
+          id: 'INTERACTIVE_CHART_PICTO_02',
+          topicId: 'dh',
+          subTopic: 'Data Handling',
+          difficulty: 'Easy',
+          questionText: 'In the pictograph below, which sport has the fewest students? Tap on it.',
+          questionLatex: '',
+          option1: 'Cricket', option2: 'Football', option3: 'Tennis', option4: 'Basketball',
+          correctAnswer: 'C',
+          hint1: 'Count the pictures for each sport and find the one with the fewest.',
+          hint2: '', hint3: '',
+          stepByStep: '[]',
+          misconceptionA: '', misconceptionB: '', misconceptionC: '', misconceptionD: '',
+          source: 'interactive_seed',
+          interactionType: 'chartTap',
+          interactionData: {
+            diagramType: 'pictograph',
+            correctRegion: 'tennis',
+            regions: [
+              { id: 'cricket',    label: 'Cricket',    x: 10, y: 10, width: 80, height: 20 },
+              { id: 'football',   label: 'Football',   x: 10, y: 30, width: 80, height: 20 },
+              { id: 'tennis',     label: 'Tennis',      x: 10, y: 50, width: 80, height: 20 },
+              { id: 'basketball', label: 'Basketball', x: 10, y: 70, width: 80, height: 20 },
+            ],
+          },
+        },
+      ];
+
+      let seeded = 0;
+      for (const q of INTERACTIVE_QUESTIONS) {
+        const { interactionType, interactionData, ...rest } = q;
+        await prisma.question.upsert({
+          where: { id: q.id },
+          update: { ...rest, interactionType, interactionData: interactionData as object },
+          create: { id: q.id, ...rest, interactionType, interactionData: interactionData as object },
+        });
+        seeded++;
+      }
+
+      return NextResponse.json({
+        done: true,
+        seeded,
+        message: `Seeded ${seeded} interactive questions (tapToColor, dragToSort, chartTap)`,
+      });
+    } catch (err) {
+      console.error('[seed] Interactive seed error:', err);
+      return NextResponse.json(
+        { error: `Interactive seed failed: ${err instanceof Error ? err.message : String(err)}` },
+        { status: 500 },
+      );
+    }
+  }
+
   try {
     const page = parseInt(searchParams.get('page') ?? '0', 10);
 

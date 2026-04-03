@@ -175,6 +175,8 @@ model Question {
   source         String    @default("hand_crafted")
   year           Int?      // PYQ questions: 2016 | 2017 | 2018 | 2019
   questionNumber Int?      // PYQ questions: original exam order (1-40)
+  interactionType  String?   // 'tapToColor' | 'dragToSort' | 'chartTap'
+  interactionData  Json?     // type-specific config for interactive questions
   attempts       Attempt[]
   mockTestResponses MockTestResponse[]
 

@@ -4,6 +4,7 @@ import { updateProgress } from '@/lib/mastery';
 import { computeXPForAttempt, ensureCurrentWeekLeague } from '@/lib/leaderboard';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { validateInteractiveAnswer } from '@/lib/interactiveGrading';
 
 // POST /api/attempts
 // body: { questionId, topicId, selected, isCorrect, hintUsed?, timeTakenMs?, isBonusQuestion? }
@@ -44,12 +45,15 @@ export async function POST(req: Request) {
   // Server-side grading: look up the correct answer and override client's isCorrect
   const question = await prisma.question.findUnique({
     where: { id: questionId },
-    select: { correctAnswer: true },
+    select: { correctAnswer: true, interactionType: true, interactionData: true },
   });
   if (!question) {
     return NextResponse.json({ error: 'Question not found' }, { status: 404 });
   }
-  const serverIsCorrect = selected === question.correctAnswer;
+  // Interactive questions: validate via interactiveGrading; MCQ: compare selected === correctAnswer
+  const serverIsCorrect = question.interactionType
+    ? validateInteractiveAnswer(question.interactionType, question.interactionData, selected)
+    : selected === question.correctAnswer;
 
   const today = new Date();
   today.setUTCHours(0, 0, 0, 0);
