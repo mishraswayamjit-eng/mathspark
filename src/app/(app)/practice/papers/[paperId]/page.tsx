@@ -807,7 +807,7 @@ export default function ExamSimulatorPage() {
       </div>
 
       {/* Bottom action bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-3 z-30">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-3 z-[60]">
         <div className="max-w-lg mx-auto flex items-center gap-2">
           {/* Prev */}
           <button
