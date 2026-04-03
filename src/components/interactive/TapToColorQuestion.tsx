@@ -33,11 +33,11 @@ export default function TapToColorQuestion({ data, answered, onSubmit }: Props) 
 
   const handleCheck = () => {
     if (answered) return;
-    const answer = JSON.stringify([...selected].sort((a, b) => a - b));
+    const answer = JSON.stringify(Array.from(selected).sort((a, b) => a - b));
     let isCorrect: boolean;
     if (data.correctIndices) {
-      const expected = [...data.correctIndices].sort((a, b) => a - b);
-      const sorted = [...selected].sort((a, b) => a - b);
+      const expected = Array.from(data.correctIndices).sort((a, b) => a - b);
+      const sorted = Array.from(selected).sort((a, b) => a - b);
       isCorrect = sorted.length === expected.length && sorted.every((v, i) => v === expected[i]);
     } else {
       isCorrect = selected.size === data.correctCount;
