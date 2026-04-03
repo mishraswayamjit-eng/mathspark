@@ -263,7 +263,7 @@ export async function GET(req: Request) {
         await prisma.question.upsert({
           where: { id: q.id },
           update: { ...rest, interactionType, interactionData: interactionData as object },
-          create: { id: q.id, ...rest, interactionType, interactionData: interactionData as object },
+          create: { ...rest, interactionType, interactionData: interactionData as object },
         });
         seeded++;
       }
