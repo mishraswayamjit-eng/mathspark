@@ -109,6 +109,24 @@ function conceptScore(text: string): number {
   return Math.min(pts, 3);
 }
 
+// ── Signal 5: Pattern Recognition & Reasoning (0-3 pts) ───────────────
+
+const SEQUENCE_RE = /\b(sequence|series|pattern|next number|next term|missing number|what comes next)\b/i;
+const EXPONENT_RE = /\b(cube[ds]?|square[ds]?|power|exponent|index|indices|\^)\b/i;
+const MULTI_STEP_RE = /\b(how many .+ (if|when|after)|find the .+ (if|given|when)|what is the .+ (of|after|when))\b/i;
+const COMPARISON_RE = /\b(arrange|ascending|descending|greatest|smallest|largest|compare|order|rank)\b/i;
+
+function reasoningScore(text: string): number {
+  let pts = 0;
+  if (SEQUENCE_RE.test(text)) pts += 2;  // sequences need pattern recognition
+  if (EXPONENT_RE.test(text)) pts++;
+  if (MULTI_STEP_RE.test(text)) pts++;
+  if (COMPARISON_RE.test(text)) pts++;
+  // Long questions (>200 chars) tend to be multi-step word problems
+  if (text.length > 200) pts++;
+  return Math.min(pts, 3);
+}
+
 // ── Hard Override Rules ────────────────────────────────────────────────
 
 function applyOverrides(
@@ -160,6 +178,7 @@ export function scoreQuestion(q: QuestionInput): ScoredQuestion {
   score += numberComplexity(q.questionText);
   score += operationScore(q.questionText);
   score += conceptScore(q.questionText);
+  score += reasoningScore(q.questionText);
 
   score = Math.min(score, 10);
   score = applyOverrides(score, q.topicId, q.questionText);
