@@ -6,6 +6,26 @@ export interface LessonStep {
   tip?: string;
 }
 
+// ── Slide-based lesson types ─────────────────────────────────────────────────
+
+export type SlideType = 'intro' | 'concept' | 'rule' | 'tip' | 'diagram' | 'recap';
+
+export interface SlideIllustration {
+  type: 'fraction' | 'multiFraction' | 'numberLine' | 'clock' | 'angle' |
+        'triangle' | 'circle' | 'balance' | 'pattern' | 'polygon' |
+        'pictograph' | 'compositeShape' | 'venn' | 'emoji';
+  props: Record<string, unknown>;
+}
+
+export interface Slide {
+  type: SlideType;
+  text: string;
+  subtext?: string;
+  notation?: string;
+  illustration?: SlideIllustration;
+  emoji?: string;
+}
+
 export interface Lesson {
   id: string;
   title: string;
@@ -15,6 +35,7 @@ export interface Lesson {
   explanation?: string[];
   rule?: string;
   tip?: string;
+  slides?: Slide[];
 }
 
 export type QuizDifficulty = 'direct' | 'near_transfer' | 'stretch' | 'challenge';

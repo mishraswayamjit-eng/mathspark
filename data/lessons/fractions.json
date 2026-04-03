@@ -40,7 +40,45 @@
             "1/2 means 1 out of 2 equal parts."
           ],
           "rule": "A fraction represents equal parts of a whole. All parts must be the same size.",
-          "tip": "Think of cutting a chapati \u2014 if the pieces aren't equal, they aren't proper fractions!"
+          "tip": "Think of cutting a chapati \u2014 if the pieces aren't equal, they aren't proper fractions!",
+          "slides": [
+            {
+              "type": "intro",
+              "text": "Sharing Equally",
+              "subtext": "Imagine you have 1 roti and you want to share it equally between 2 friends. Each part is a **fraction**!",
+              "illustration": { "type": "fraction", "props": { "shape": "circle", "totalParts": 2, "shadedParts": 1, "label": "1 roti → 2 equal parts" } },
+              "emoji": "\ud83e\udd59"
+            },
+            {
+              "type": "concept",
+              "text": "A **fraction** is a part of a whole. When we divide something into **equal parts**, each part is a fraction.",
+              "notation": "\\text{Fraction} = \\frac{\\text{part}}{\\text{total equal parts}}",
+              "illustration": { "type": "fraction", "props": { "shape": "rectangle", "totalParts": 4, "shadedParts": 1, "columns": 4, "label": "1 out of 4" } }
+            },
+            {
+              "type": "concept",
+              "text": "If Aarav has 1 pizza and shares it equally among **4 friends**, each friend gets one out of four slices.",
+              "notation": "\\frac{1}{4}",
+              "illustration": { "type": "fraction", "props": { "shape": "circle", "totalParts": 4, "shadedParts": 1 } },
+              "subtext": "The key word is 'equal' \u2014 all parts must be the same size!"
+            },
+            {
+              "type": "concept",
+              "text": "Priya cuts a ladoo into **3 equal pieces** and eats 1 piece. She ate **one-third** of the ladoo.",
+              "notation": "\\frac{1}{3}",
+              "illustration": { "type": "fraction", "props": { "shape": "circle", "totalParts": 3, "shadedParts": 1 } }
+            },
+            {
+              "type": "rule",
+              "text": "A fraction represents **equal parts** of a whole. All parts must be the **same size**.",
+              "emoji": "\ud83d\udcdd"
+            },
+            {
+              "type": "tip",
+              "text": "Think of cutting a chapati \u2014 if the pieces aren't equal, they aren't proper fractions!",
+              "emoji": "\ud83d\udca1"
+            }
+          ]
         },
         {
           "id": "fr-l1-les2",
@@ -68,7 +106,43 @@
             "The denominator can never be 0, because you can't divide something into 0 parts."
           ],
           "rule": "Numerator (top) counts the parts taken. Denominator (bottom) counts the total equal parts.",
-          "tip": "D for Denominator, D for Down. That's how you remember which is which!"
+          "tip": "D for Denominator, D for Down. That's how you remember which is which!",
+          "slides": [
+            {
+              "type": "intro",
+              "text": "Numerator & Denominator",
+              "subtext": "Every fraction has **two important numbers**. Let's learn their names!",
+              "emoji": "\ud83d\udd22"
+            },
+            {
+              "type": "concept",
+              "text": "The bottom number is called the **denominator**. It tells us the **total** number of equal parts.",
+              "notation": "\\frac{\\Box}{\\mathbf{4}} \\leftarrow \\text{denominator (total parts)}",
+              "illustration": { "type": "fraction", "props": { "shape": "rectangle", "totalParts": 4, "shadedParts": 0, "columns": 4, "label": "4 total parts" } }
+            },
+            {
+              "type": "concept",
+              "text": "The top number is called the **numerator**. It tells us how many parts we are talking about.",
+              "notation": "\\frac{\\mathbf{3}}{4} \\leftarrow \\text{numerator (parts chosen)}",
+              "illustration": { "type": "fraction", "props": { "shape": "rectangle", "totalParts": 4, "shadedParts": 3, "columns": 4, "label": "3 out of 4" } }
+            },
+            {
+              "type": "diagram",
+              "text": "In **3/4**, the whole is cut into 4 equal parts and we pick 3 of them.",
+              "notation": "\\frac{3}{4} = \\text{3 out of 4 equal parts}",
+              "illustration": { "type": "fraction", "props": { "shape": "circle", "totalParts": 4, "shadedParts": 3 } }
+            },
+            {
+              "type": "rule",
+              "text": "**Numerator** (top) counts the parts taken. **Denominator** (bottom) counts the total equal parts.",
+              "emoji": "\ud83d\udcdd"
+            },
+            {
+              "type": "tip",
+              "text": "**D** for Denominator, **D** for Down. That's how you remember which is which!",
+              "emoji": "\ud83d\udca1"
+            }
+          ]
         },
         {
           "id": "fr-l1-les3",
@@ -100,7 +174,44 @@
             "1/4 = one-quarter or one-fourth",
             "For denominators 5 and above: add '-th' or '-ths' (fifths, sixths, sevenths, etc.)"
           ],
-          "rule": "Read fractions as: numerator + denominator-th(s). Special names: half, third, quarter."
+          "rule": "Read fractions as: numerator + denominator-th(s). Special names: half, third, quarter.",
+          "slides": [
+            {
+              "type": "intro",
+              "text": "Reading Fractions",
+              "subtext": "Let's learn how to read and say fractions out loud — the **correct** way!",
+              "emoji": "\ud83d\udde3\ufe0f"
+            },
+            {
+              "type": "concept",
+              "text": "1/2 is read as **one-half**. When something is split into 2 equal parts, each part is a half.",
+              "notation": "\\frac{1}{2} \\rightarrow \\text{one-half}",
+              "illustration": { "type": "fraction", "props": { "shape": "circle", "totalParts": 2, "shadedParts": 1, "label": "one-half" } }
+            },
+            {
+              "type": "concept",
+              "text": "1/3 is read as **one-third**. Three equal parts means each part is a third.",
+              "notation": "\\frac{1}{3} \\rightarrow \\text{one-third}",
+              "illustration": { "type": "fraction", "props": { "shape": "circle", "totalParts": 3, "shadedParts": 1, "label": "one-third" } }
+            },
+            {
+              "type": "concept",
+              "text": "1/4 is read as **one-fourth** or **one-quarter**. A quarter is the same as a fourth!",
+              "notation": "\\frac{1}{4} \\rightarrow \\text{one-fourth (one-quarter)}",
+              "illustration": { "type": "fraction", "props": { "shape": "circle", "totalParts": 4, "shadedParts": 1, "label": "one-quarter" } },
+              "subtext": "A 25-paisa coin used to be called a 'quarter' because 25 is one-fourth of 100."
+            },
+            {
+              "type": "concept",
+              "text": "For other fractions, say the top number first, then the bottom with **-th**. 3/5 = 'three-fifths'.",
+              "notation": "\\frac{3}{5} \\rightarrow \\text{three-fifths}"
+            },
+            {
+              "type": "rule",
+              "text": "Read fractions as: numerator + denominator-th(s). Special names: **half**, **third**, **quarter**.",
+              "emoji": "\ud83d\udcdd"
+            }
+          ]
         },
         {
           "id": "fr-l1-les4",
@@ -132,7 +243,44 @@
             "So among unit fractions, bigger denominator means smaller value."
           ],
           "rule": "For unit fractions: bigger denominator = smaller fraction. 1/2 > 1/3 > 1/4 > 1/5 ...",
-          "tip": "Think of sharing 1 ladoo among more and more friends. The more friends, the less each person gets!"
+          "tip": "Think of sharing 1 ladoo among more and more friends. The more friends, the less each person gets!",
+          "slides": [
+            {
+              "type": "intro",
+              "text": "Comparing Unit Fractions",
+              "subtext": "A **unit fraction** has 1 as the numerator. Which is bigger: 1/2 or 1/4?",
+              "emoji": "\u2696\ufe0f"
+            },
+            {
+              "type": "diagram",
+              "text": "Imagine cutting one roti into **2 pieces** vs **4 pieces**. Which piece is bigger?",
+              "notation": "\\frac{1}{2} \\quad \\text{vs} \\quad \\frac{1}{4}",
+              "illustration": { "type": "multiFraction", "props": { "figures": [{ "shape": "rectangle", "totalParts": 2, "shadedParts": 1, "columns": 2, "label": "1/2" }, { "shape": "rectangle", "totalParts": 4, "shadedParts": 1, "columns": 4, "label": "1/4" }] } }
+            },
+            {
+              "type": "concept",
+              "text": "The one cut into 2 pieces gives **bigger pieces**! So 1/2 > 1/4.",
+              "notation": "\\frac{1}{2} > \\frac{1}{4}",
+              "subtext": "More cuts = smaller pieces. Fewer cuts = bigger pieces."
+            },
+            {
+              "type": "concept",
+              "text": "Similarly, **1/3 > 1/5** because cutting into 3 parts gives bigger pieces than cutting into 5.",
+              "notation": "\\frac{1}{3} > \\frac{1}{5}",
+              "illustration": { "type": "multiFraction", "props": { "figures": [{ "shape": "rectangle", "totalParts": 3, "shadedParts": 1, "columns": 3, "label": "1/3" }, { "shape": "rectangle", "totalParts": 5, "shadedParts": 1, "columns": 5, "label": "1/5" }] } }
+            },
+            {
+              "type": "rule",
+              "text": "For unit fractions: **bigger denominator = smaller fraction**.",
+              "notation": "\\frac{1}{2} > \\frac{1}{3} > \\frac{1}{4} > \\frac{1}{5} > \\ldots",
+              "emoji": "\ud83d\udcdd"
+            },
+            {
+              "type": "tip",
+              "text": "Think of sharing 1 ladoo among more and more friends. The **more friends**, the **less** each person gets!",
+              "emoji": "\ud83d\udca1"
+            }
+          ]
         },
         {
           "id": "fr-l1-les5",
@@ -164,7 +312,44 @@
             "Shopping: half-kg sugar, quarter-kg jeera.",
             "Sports: half-time, quarters in basketball/cricket."
           ],
-          "rule": "Fractions are used in time, cooking, shopping, sports, and many everyday situations."
+          "rule": "Fractions are used in time, cooking, shopping, sports, and many everyday situations.",
+          "slides": [
+            {
+              "type": "intro",
+              "text": "Fractions in Daily Life",
+              "subtext": "Fractions are **everywhere** around us! Let's spot them.",
+              "emoji": "\ud83c\udf0d"
+            },
+            {
+              "type": "concept",
+              "text": "Arjun's mum says: 'Drink **half** a glass of milk.' That means **1/2** of the glass.",
+              "notation": "\\frac{1}{2} \\text{ glass of milk}",
+              "illustration": { "type": "fraction", "props": { "shape": "rectangle", "totalParts": 2, "shadedParts": 1, "columns": 1, "label": "half a glass" } }
+            },
+            {
+              "type": "concept",
+              "text": "Kavya's cricket match is over after 3 out of 4 **quarters**. That's **3/4** of the match done.",
+              "notation": "\\frac{3}{4} \\text{ of the match}",
+              "illustration": { "type": "fraction", "props": { "shape": "circle", "totalParts": 4, "shadedParts": 3 } },
+              "subtext": "Sports often use halves, thirds, and quarters!"
+            },
+            {
+              "type": "concept",
+              "text": "A clock shows **quarter past**, **half past**, and **quarter to**. These are fractions of an hour!",
+              "notation": "\\frac{1}{4} \\text{ hour} = 15 \\text{ min}",
+              "illustration": { "type": "clock", "props": { "hour": 3, "minute": 15 } }
+            },
+            {
+              "type": "concept",
+              "text": "In recipes: 'Add **1/4 teaspoon** of haldi' or 'Use **3/4 cup** of atta'. Cooking is full of fractions!",
+              "notation": "\\frac{1}{4} \\text{ tsp haldi}, \\quad \\frac{3}{4} \\text{ cup atta}"
+            },
+            {
+              "type": "rule",
+              "text": "Fractions are used in **time**, **cooking**, **shopping**, **sports**, and many everyday situations.",
+              "emoji": "\ud83d\udcdd"
+            }
+          ]
         }
       ],
       "quiz": [
