@@ -45,6 +45,18 @@ export default function SeedPage() {
   const [fixMessage, setFixMessage] = useState('');
   const [fixReport,  setFixReport]  = useState<FixReport | null>(null);
 
+  // ── Audit difficulty ──────────────────────────────────────────────────────
+  const [diffSecret,  setDiffSecret]  = useState('');
+  const [diffStatus,  setDiffStatus]  = useState<Status>('idle');
+  const [diffMessage, setDiffMessage] = useState('');
+  const [diffReport,  setDiffReport]  = useState<{
+    total: number; mismatches: number;
+    summary: Record<string, number>;
+    byTopic: Record<string, { total: number; changes: number }>;
+    samples: Array<{ id: string; topic: string; text: string; was: string; now: string; score: number }>;
+    updated?: number;
+  } | null>(null);
+
   // ── Handlers ─────────────────────────────────────────────────────────────────
   async function runSeed() {
     if (!secret.trim()) { setMessage('Enter your SEED_SECRET first.'); return; }
@@ -122,6 +134,31 @@ export default function SeedPage() {
       setVerifyStatus('done');
     } catch {
       setVerifyStatus('error');
+    }
+  }
+
+  async function runAuditDifficulty(dryRun: boolean) {
+    const sec = diffSecret || secret || testSecret || fixSecret;
+    if (!sec.trim()) { setDiffMessage('Enter your SEED_SECRET first.'); setDiffStatus('error'); return; }
+    setDiffStatus('running');
+    setDiffMessage(dryRun ? 'Scanning all questions...' : 'Reclassifying questions...');
+    setDiffReport(null);
+    try {
+      const method = dryRun ? 'GET' : 'POST';
+      const res  = await fetch(`/api/admin/audit-difficulty?secret=${encodeURIComponent(sec)}`, { method });
+      const data = await res.json();
+      if (!res.ok) { setDiffMessage(data.error ?? 'Something went wrong.'); setDiffStatus('error'); return; }
+      if (dryRun) {
+        setDiffReport(data);
+        setDiffMessage(`Found ${data.mismatches} misclassified out of ${data.total} questions.`);
+      } else {
+        setDiffReport(null);
+        setDiffMessage(`Done! ${data.updated} questions reclassified.`);
+      }
+      setDiffStatus('done');
+    } catch (err) {
+      setDiffMessage(`Network error: ${err}`);
+      setDiffStatus('error');
     }
   }
 
@@ -443,6 +480,118 @@ export default function SeedPage() {
 
             <button
               onClick={() => { setFixStatus('idle'); setFixMessage(''); setFixReport(null); }}
+              className="w-full text-xs text-gray-500 hover:text-gray-600 py-1"
+            >
+              Run again
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* ── Section 5: Audit Difficulty ────────────────────────────────────────── */}
+      <div className="w-full bg-white border-2 border-rose-200 rounded-2xl p-6 space-y-4 shadow-sm">
+        <div className="flex items-center gap-3">
+          <span className="text-3xl">⚖️</span>
+          <div>
+            <p className="font-bold text-gray-800">Audit Difficulty</p>
+            <p className="text-xs text-gray-500">Re-scores all questions with the heuristic classifier and fixes mismatches</p>
+          </div>
+        </div>
+
+        {diffStatus === 'idle' || diffStatus === 'error' ? (
+          <>
+            <div>
+              <label className="block text-xs font-semibold text-gray-600 mb-1">SEED_SECRET</label>
+              <input
+                type="password"
+                value={diffSecret}
+                onChange={(e) => setDiffSecret(e.target.value)}
+                placeholder="your-secret-key"
+                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-800 outline-none focus:border-rose-400 text-sm"
+              />
+            </div>
+            {diffMessage && <p className="text-sm text-red-500">{diffMessage}</p>}
+            <div className="flex gap-3">
+              <button
+                onClick={() => runAuditDifficulty(true)}
+                className="flex-1 bg-rose-100 hover:bg-rose-200 text-rose-800 font-bold py-3.5 rounded-2xl transition-colors text-sm"
+              >
+                Dry Run (preview)
+              </button>
+              <button
+                onClick={() => runAuditDifficulty(false)}
+                className="flex-1 bg-rose-500 hover:bg-rose-600 text-white font-bold py-3.5 rounded-2xl transition-colors text-sm"
+              >
+                Apply Fix →
+              </button>
+            </div>
+          </>
+        ) : diffStatus === 'running' ? (
+          <>
+            <div className="h-3 bg-rose-200 rounded-full animate-pulse" />
+            <p className="text-xs text-gray-500 text-center">{diffMessage}</p>
+          </>
+        ) : (
+          <div className="space-y-3">
+            <div className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold ${
+              diffReport ? 'bg-rose-50 text-rose-700' : 'bg-green-50 text-green-700'
+            }`}>
+              {diffReport ? '👀 Dry Run' : '✅ Applied!'}
+              <span className="font-normal">— {diffMessage}</span>
+            </div>
+
+            {diffReport && (
+              <>
+                {/* Transition summary */}
+                {Object.keys(diffReport.summary).length > 0 && (
+                  <div className="bg-gray-50 rounded-xl px-3 py-2 text-xs space-y-1">
+                    <p className="font-bold text-gray-700">Transitions</p>
+                    {Object.entries(diffReport.summary).map(([key, cnt]) => (
+                      <p key={key}>{key}: <b>{cnt}</b></p>
+                    ))}
+                  </div>
+                )}
+
+                {/* Topics with changes */}
+                <div className="space-y-1 max-h-48 overflow-y-auto bg-gray-50 rounded-xl px-3 py-2">
+                  <p className="text-xs font-bold text-gray-700 mb-1">By Topic</p>
+                  {Object.entries(diffReport.byTopic)
+                    .filter(([, v]) => v.changes > 0)
+                    .sort(([, a], [, b]) => b.changes - a.changes)
+                    .map(([topic, v]) => (
+                      <div key={topic} className="flex items-center justify-between text-xs py-0.5">
+                        <span className="text-gray-600">{topic}</span>
+                        <span className="font-bold text-rose-600">{v.changes}/{v.total}</span>
+                      </div>
+                    ))}
+                </div>
+
+                {/* Sample mismatches */}
+                {diffReport.samples.length > 0 && (
+                  <div className="space-y-2 max-h-64 overflow-y-auto">
+                    <p className="text-xs font-bold text-gray-700">Sample Mismatches (up to 50)</p>
+                    {diffReport.samples.map((s) => (
+                      <div key={s.id} className="bg-white border border-gray-100 rounded-xl px-3 py-2 text-xs">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className={`px-1.5 py-0.5 rounded-full font-bold ${
+                            s.was === 'Easy' ? 'bg-green-50 text-green-700' : s.was === 'Medium' ? 'bg-amber-50 text-amber-700' : 'bg-red-50 text-red-700'
+                          }`}>{s.was}</span>
+                          <span>→</span>
+                          <span className={`px-1.5 py-0.5 rounded-full font-bold ${
+                            s.now === 'Easy' ? 'bg-green-50 text-green-700' : s.now === 'Medium' ? 'bg-amber-50 text-amber-700' : 'bg-red-50 text-red-700'
+                          }`}>{s.now}</span>
+                          <span className="text-gray-400 ml-auto">score: {s.score}</span>
+                        </div>
+                        <p className="text-gray-600 leading-snug">{s.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
+
+            <button
+              onClick={() => { setDiffStatus('idle'); setDiffMessage(''); setDiffReport(null); }}
               className="w-full text-xs text-gray-500 hover:text-gray-600 py-1"
             >
               Run again
