@@ -16,6 +16,13 @@ import MirrorDiagram from './MirrorDiagram';
 import ClockDiagram from './ClockDiagram';
 import NumberLineDiagram from './NumberLineDiagram';
 import BlockDiagram from './BlockDiagram';
+import AbacusDiagram from './AbacusDiagram';
+import CalendarDiagram from './CalendarDiagram';
+import CurrencyDiagram from './CurrencyDiagram';
+import NumberGridDiagram from './NumberGridDiagram';
+import TetrominoDiagram from './TetrominoDiagram';
+import PolygonDiagram from './PolygonDiagram';
+import HeightsDistanceDiagram from './HeightsDistanceDiagram';
 
 function renderDiagram(spec: DiagramSpec) {
   switch (spec.type) {
@@ -45,6 +52,20 @@ function renderDiagram(spec: DiagramSpec) {
       return <NumberLineDiagram {...spec.props} />;
     case 'blocks':
       return <BlockDiagram {...spec.props} />;
+    case 'abacus':
+      return <AbacusDiagram {...spec.props} />;
+    case 'calendar':
+      return <CalendarDiagram {...spec.props} />;
+    case 'currency':
+      return <CurrencyDiagram {...spec.props} />;
+    case 'numberGrid':
+      return <NumberGridDiagram {...spec.props} />;
+    case 'tetromino':
+      return <TetrominoDiagram {...spec.props} />;
+    case 'polygon':
+      return <PolygonDiagram {...spec.props} />;
+    case 'heightsDistance':
+      return <HeightsDistanceDiagram {...spec.props} />;
     default:
       return null;
   }

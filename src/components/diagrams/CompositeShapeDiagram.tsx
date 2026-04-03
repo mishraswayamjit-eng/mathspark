@@ -29,6 +29,14 @@ const GRAY = '#374151';
 export default function CompositeShapeDiagram({ rects, dimensions }: Props) {
   return (
     <svg viewBox="0 0 280 160" className="w-full" role="img" aria-label="Composite shape with dimensions">
+      <defs>
+        <marker id="arrowStart" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto-start-reverse">
+          <path d="M6,0 L0,3 L6,6" fill="none" stroke="#9CA3AF" strokeWidth={1} />
+        </marker>
+        <marker id="arrowEnd" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6" fill="none" stroke="#9CA3AF" strokeWidth={1} />
+        </marker>
+      </defs>
       {rects.map((r, i) => (
         <g key={i}>
           <rect

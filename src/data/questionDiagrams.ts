@@ -156,6 +156,64 @@ export interface BlockDiagramSpec {
   };
 }
 
+export interface AbacusDiagramSpec {
+  type: 'abacus';
+  props: {
+    rods: Array<{ label: string; beads: number }>;
+  };
+}
+
+export interface CalendarDiagramSpec {
+  type: 'calendar';
+  props: {
+    month: string;
+    year: number;
+    startDay: number;
+    daysInMonth: number;
+    highlight?: number[];
+  };
+}
+
+export interface CurrencyDiagramSpec {
+  type: 'currency';
+  props: {
+    items: Array<{ type: 'coin' | 'note'; value: string }>;
+  };
+}
+
+export interface NumberGridDiagramSpec {
+  type: 'numberGrid';
+  props: {
+    grid: string[][];
+    unknownLabel?: string;
+  };
+}
+
+export interface TetrominoDiagramSpec {
+  type: 'tetromino';
+  props: {
+    figures: Array<{ cells: Array<[number, number]>; label: string }>;
+  };
+}
+
+export interface PolygonDiagramSpec {
+  type: 'polygon';
+  props: {
+    sides: number;
+    labels: Array<{ text: string; side: number }>;
+  };
+}
+
+export interface HeightsDistanceDiagramSpec {
+  type: 'heightsDistance';
+  props: {
+    variant: 'cliff-tower' | 'cliff-boat';
+    heights: { cliff: number; tower?: number };
+    angles: number[];
+    labels?: Record<string, string>;
+  };
+}
+
 export type DiagramSpec =
   | FractionDiagramSpec
   | MultiFractionDiagramSpec
@@ -169,7 +227,14 @@ export type DiagramSpec =
   | MirrorDiagramSpec
   | ClockDiagramSpec
   | NumberLineDiagramSpec
-  | BlockDiagramSpec;
+  | BlockDiagramSpec
+  | AbacusDiagramSpec
+  | CalendarDiagramSpec
+  | CurrencyDiagramSpec
+  | NumberGridDiagramSpec
+  | TetrominoDiagramSpec
+  | PolygonDiagramSpec
+  | HeightsDistanceDiagramSpec;
 
 // ── Mapping ───────────────────────────────────────────────────────────────
 
@@ -1364,5 +1429,209 @@ export const QUESTION_DIAGRAMS: Record<string, DiagramSpec> = {
   'EXT_G2_PP_02_024': {
     type: 'pattern',
     props: { variant: 'dots', sequence: ['★★★★', '★★★★', '★★★★'], showQuestion: false },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // ABACUS
+  // ═══════════════════════════════════════════════════════════════════════
+
+  // "What number is shown on the abacus?" H=3, T=2, O=3 → 323
+  'EXT_G2_PP_01_027': {
+    type: 'abacus',
+    props: { rods: [{ label: 'H', beads: 3 }, { label: 'T', beads: 2 }, { label: 'O', beads: 3 }] },
+  },
+
+  // "What number is shown on the abacus?" H=4, T=0, O=3 → 403
+  'EXT_G2_PP_03_003': {
+    type: 'abacus',
+    props: { rods: [{ label: 'H', beads: 4 }, { label: 'T', beads: 0 }, { label: 'O', beads: 3 }] },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // CALENDAR
+  // ═══════════════════════════════════════════════════════════════════════
+
+  // "Look at the calendar: 4th Saturday, date on 3rd Sunday" Feb 2006 starts Wed
+  'EXT_G2_PP_02_031': {
+    type: 'calendar',
+    props: {
+      month: 'February',
+      year: 2006,
+      startDay: 3, // Wednesday
+      daysInMonth: 28,
+      highlight: [25, 19], // 4th Saturday = 25th, 3rd Sunday = 19th
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // CURRENCY
+  // ═══════════════════════════════════════════════════════════════════════
+
+  // "Total money in the figure?" Rs.1+Rs.2+25p+50p+25p+Rs.5 → Rs.8.75 (but answer Rs.9)
+  'EXT_G2_PP_04_037': {
+    type: 'currency',
+    props: {
+      items: [
+        { type: 'coin', value: 'Rs.1' },
+        { type: 'coin', value: 'Rs.2' },
+        { type: 'coin', value: '25p' },
+        { type: 'coin', value: '50p' },
+        { type: 'coin', value: '25p' },
+        { type: 'note', value: 'Rs.5' },
+      ],
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // NUMBER GRID
+  // ═══════════════════════════════════════════════════════════════════════
+
+  // "Find the missing number in the grid" — magic square / pattern grid
+  'EXT_G3_MF_2018_009': {
+    type: 'numberGrid',
+    props: {
+      grid: [
+        ['6', '7', '2'],
+        ['1', '5', '9'],
+        ['8', '3', '?'],
+      ],
+      unknownLabel: '?',
+    },
+  },
+
+  // "Find the missing number" — pattern grid
+  'EXT_G4_FP_2022_028': {
+    type: 'numberGrid',
+    props: {
+      grid: [
+        ['3', '5', '7'],
+        ['4', '?', '10'],
+        ['5', '7', '9'],
+      ],
+      unknownLabel: '?',
+    },
+  },
+
+  // "Find the missing number" — pattern grid
+  'EXT_G4_FP_2023_029': {
+    type: 'numberGrid',
+    props: {
+      grid: [
+        ['2', '9', '4'],
+        ['7', '5', '3'],
+        ['6', '1', '?'],
+      ],
+      unknownLabel: '?',
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // TETROMINO
+  // ═══════════════════════════════════════════════════════════════════════
+
+  // "Which shape has smallest perimeter?" I/L/O/S tetrominoes
+  'EXT_G3_MF_2022_004': {
+    type: 'tetromino',
+    props: {
+      figures: [
+        { cells: [[0, 0], [0, 1], [0, 2], [0, 3]], label: 'A (I)' },
+        { cells: [[0, 0], [1, 0], [2, 0], [2, 1]], label: 'B (L)' },
+        { cells: [[0, 0], [0, 1], [1, 0], [1, 1]], label: 'C (O)' },
+        { cells: [[0, 1], [0, 2], [1, 0], [1, 1]], label: 'D (S)' },
+      ],
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // POLYGON
+  // ═══════════════════════════════════════════════════════════════════════
+
+  // "Pentagon with algebraic side expressions, find perimeter"
+  'EXT_G6_FP_2023_019': {
+    type: 'polygon',
+    props: {
+      sides: 5,
+      labels: [
+        { text: '2x+3', side: 0 },
+        { text: 'x+7', side: 1 },
+        { text: '3x−1', side: 2 },
+        { text: '2x+1', side: 3 },
+        { text: 'x+5', side: 4 },
+      ],
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // HEIGHTS & DISTANCE
+  // ═══════════════════════════════════════════════════════════════════════
+
+  // "200m cliff, angles 30° depression and 60° elevation to tower top/bottom"
+  'EXT_G9_MF_2023_007': {
+    type: 'heightsDistance',
+    props: {
+      variant: 'cliff-tower',
+      heights: { cliff: 200, tower: undefined },
+      angles: [30, 60],
+      labels: { cliff: '200m' },
+    },
+  },
+
+  // "Rock, boat at 30° depression moves to 60° depression"
+  'EXT_G9_MF_2024_009': {
+    type: 'heightsDistance',
+    props: {
+      variant: 'cliff-boat',
+      heights: { cliff: 0 },
+      angles: [30, 60],
+      labels: { cliff: 'h', boat1: 'B', boat2: 'C' },
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // ADDITIONAL BALANCE MAPPINGS (existing component)
+  // ═══════════════════════════════════════════════════════════════════════
+
+  // "3 balanced scales with shapes → solve 4th" answer 28g
+  'EXT_G3_MF_2013_001': {
+    type: 'balance',
+    props: {
+      scales: [
+        { left: [{ label: '●', count: 2, shape: 'circle' }], right: [{ label: '▲', count: 1, shape: 'triangle' }] },
+        { left: [{ label: '▲', count: 1, shape: 'triangle' }], right: [{ label: '■', count: 3, shape: 'square' }] },
+        { left: [{ label: '■', count: 1, shape: 'square' }], right: [{ label: '★', count: 2, shape: 'star' }] },
+      ],
+    },
+  },
+
+  // "3 balanced scales with shapes → solve 4th" answer 18g
+  'EXT_G3_MF_2020_014': {
+    type: 'balance',
+    props: {
+      scales: [
+        { left: [{ label: '●', count: 3, shape: 'circle' }], right: [{ label: '▲', count: 1, shape: 'triangle' }] },
+        { left: [{ label: '▲', count: 2, shape: 'triangle' }], right: [{ label: '■', count: 3, shape: 'square' }] },
+        { left: [{ label: '■', count: 1, shape: 'square' }], right: [{ label: '★', count: 2, shape: 'star' }] },
+      ],
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // ADDITIONAL COMPOSITE SHAPE MAPPING (existing component)
+  // ═══════════════════════════════════════════════════════════════════════
+
+  // "Grid of 1cm squares, irregular shape, find perimeter" → 29cm
+  'EXT_G3_MF_2014_007': {
+    type: 'compositeShape',
+    props: {
+      rects: [
+        { x: 40, y: 20, width: 120, height: 40, label: '' },
+        { x: 40, y: 60, width: 80, height: 40, label: '' },
+        { x: 40, y: 100, width: 40, height: 40, label: '' },
+      ],
+      dimensions: [
+        { x1: 40, y1: 145, x2: 160, y2: 145, label: '6 cm' },
+        { x1: 35, y1: 20, x2: 35, y2: 140, label: '6 cm' },
+      ],
+    },
   },
 };
