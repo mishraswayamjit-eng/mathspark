@@ -23,6 +23,7 @@ import NumberGridDiagram from './NumberGridDiagram';
 import TetrominoDiagram from './TetrominoDiagram';
 import PolygonDiagram from './PolygonDiagram';
 import HeightsDistanceDiagram from './HeightsDistanceDiagram';
+import PictographDiagram from './PictographDiagram';
 
 function renderDiagram(spec: DiagramSpec) {
   switch (spec.type) {
@@ -66,6 +67,8 @@ function renderDiagram(spec: DiagramSpec) {
       return <PolygonDiagram {...spec.props} />;
     case 'heightsDistance':
       return <HeightsDistanceDiagram {...spec.props} />;
+    case 'pictograph':
+      return <PictographDiagram {...spec.props} />;
     default:
       return null;
   }

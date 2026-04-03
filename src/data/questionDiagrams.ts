@@ -214,6 +214,15 @@ export interface HeightsDistanceDiagramSpec {
   };
 }
 
+export interface PictographDiagramSpec {
+  type: 'pictograph';
+  props: {
+    icon: 'candle' | 'star' | 'apple';
+    count: number;
+    label?: string;
+  };
+}
+
 export type DiagramSpec =
   | FractionDiagramSpec
   | MultiFractionDiagramSpec
@@ -234,7 +243,8 @@ export type DiagramSpec =
   | NumberGridDiagramSpec
   | TetrominoDiagramSpec
   | PolygonDiagramSpec
-  | HeightsDistanceDiagramSpec;
+  | HeightsDistanceDiagramSpec
+  | PictographDiagramSpec;
 
 // ── Mapping ───────────────────────────────────────────────────────────────
 
@@ -1633,5 +1643,135 @@ export const QUESTION_DIAGRAMS: Record<string, DiagramSpec> = {
         { x1: 35, y1: 20, x2: 35, y2: 140, label: '6 cm' },
       ],
     },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // CLOCK — angle-between-hands questions (existing component)
+  // ═══════════════════════════════════════════════════════════════════════
+
+  // "Angle between hour and minute hand at 9:30" → obtuse
+  'EXT_G3_MF_2008_015': {
+    type: 'clock',
+    props: { hour: 9, minute: 30 },
+  },
+
+  // "Angle between hands at 9:20pm?" → obtuse
+  'EXT_G3_MF_2020_013': {
+    type: 'clock',
+    props: { hour: 9, minute: 20 },
+  },
+
+  // "At half past six, angle between hour and minute hand?" → 15°
+  'EXT_G4_FP_2020_033': {
+    type: 'clock',
+    props: { hour: 6, minute: 30 },
+  },
+
+  // "Angle between hour and minute hand at 8:30 am?" → 75°
+  'EXT_G4_FP_2023_034': {
+    type: 'clock',
+    props: { hour: 8, minute: 30 },
+  },
+
+  // "Angle between hour and minute hand at 7:20 pm?" → 100°
+  'EXT_G4_FP_2024_017': {
+    type: 'clock',
+    props: { hour: 7, minute: 20 },
+  },
+
+  // "Angle between hour and minute at 18 minutes past 5?" → 57°
+  'EXT_G4_FP_2025_013': {
+    type: 'clock',
+    props: { hour: 5, minute: 18 },
+  },
+
+  // "Clock started at 4pm. Degrees hour hand rotates to 8:53pm?" → 146.5°
+  'EXT_G9_MF_2022_010': {
+    type: 'clock',
+    props: { hour: 4, minute: 0 },
+  },
+
+  // "Angle between hour and minute hand at 2:31?" → 110.5°
+  'EXT_G9_MF_2023_014': {
+    type: 'clock',
+    props: { hour: 2, minute: 31 },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // ABACUS — additional mappings (existing component)
+  // ═══════════════════════════════════════════════════════════════════════
+
+  // "1 bead added to one's place on abacus H=3,T=2,O=5 → carry to ten's"
+  'EXT_G2_PP_01_044': {
+    type: 'abacus',
+    props: { rods: [{ label: 'H', beads: 3 }, { label: 'T', beads: 2 }, { label: 'O', beads: 5 }] },
+  },
+
+  // "Abacus shows number ___" → 241 (H=2, T=4, O=1)
+  'EXT_G2_PP_06_004': {
+    type: 'abacus',
+    props: { rods: [{ label: 'H', beads: 2 }, { label: 'T', beads: 4 }, { label: 'O', beads: 1 }] },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // BLOCKS — staircase (existing component)
+  // ═══════════════════════════════════════════════════════════════════════
+
+  // "3-step staircase with 6 blocks. How many for 7-step?" → 28
+  'EXT_G3_MF_2013_006': {
+    type: 'blocks',
+    props: {
+      layers: [[3], [2], [1]],
+      answer: 6,
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // COMPOSITE SHAPE — PYQ figures (existing component)
+  // ═══════════════════════════════════════════════════════════════════════
+
+  // "Rectangle 4cm×1cm cut into 4 pieces (1cm squares). Perimeter diff?" → 6cm
+  'PYQ_2016_Q24': {
+    type: 'compositeShape',
+    props: {
+      rects: [
+        { x: 60, y: 50, width: 40, height: 40, label: '' },
+        { x: 100, y: 50, width: 40, height: 40, label: '' },
+        { x: 140, y: 50, width: 40, height: 40, label: '' },
+        { x: 180, y: 50, width: 40, height: 40, label: '' },
+      ],
+      dimensions: [
+        { x1: 60, y1: 95, x2: 220, y2: 95, label: '4 cm' },
+        { x1: 55, y1: 50, x2: 55, y2: 90, label: '1 cm' },
+      ],
+    },
+  },
+
+  // "3 squares (side 9cm) joined by edges → perimeter of rectangle?" → 72cm
+  'PYQ_2019_Q30': {
+    type: 'compositeShape',
+    props: {
+      rects: [
+        { x: 20, y: 30, width: 80, height: 80, label: '' },
+        { x: 100, y: 30, width: 80, height: 80, label: '' },
+        { x: 180, y: 30, width: 80, height: 80, label: '' },
+      ],
+      dimensions: [
+        { x1: 20, y1: 115, x2: 100, y2: 115, label: '9 cm' },
+        { x1: 100, y1: 115, x2: 180, y2: 115, label: '9 cm' },
+        { x1: 180, y1: 115, x2: 260, y2: 115, label: '9 cm' },
+        { x1: 265, y1: 30, x2: 265, y2: 110, label: '9 cm' },
+      ],
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════
+  // PICTOGRAPH
+  // ═══════════════════════════════════════════════════════════════════════
+
+  // "How old is Nupur?" → 6 candles pictograph → answer 6 years
+  'EXT_G2_PP_01_012': {
+    type: 'pictograph',
+    props: { icon: 'candle', count: 6, label: "Nupur's birthday cake" },
   },
 };
