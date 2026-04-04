@@ -146,7 +146,13 @@ export default function SeedPage() {
     try {
       const method = dryRun ? 'GET' : 'POST';
       const res  = await fetch(`/api/admin/audit-difficulty?secret=${encodeURIComponent(sec)}`, { method });
-      const data = await res.json();
+      const text = await res.text();
+      let data;
+      try { data = JSON.parse(text); } catch {
+        setDiffMessage(`Server error: ${text.slice(0, 200)}`);
+        setDiffStatus('error');
+        return;
+      }
       if (!res.ok) { setDiffMessage(data.error ?? 'Something went wrong.'); setDiffStatus('error'); return; }
       if (dryRun) {
         setDiffReport(data);

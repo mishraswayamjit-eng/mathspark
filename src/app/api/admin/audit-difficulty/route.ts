@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { scoreQuestion, ScoredQuestion } from '@/lib/difficultyScorer';
 
-// Allow up to 60s for scoring 12k+ questions
 export const maxDuration = 60;
 
 function authorize(req: NextRequest): boolean {
@@ -10,6 +9,39 @@ function authorize(req: NextRequest): boolean {
   if (!secret) return false;
   const { searchParams } = new URL(req.url);
   return searchParams.get('secret') === secret;
+}
+
+// Fetch all questions in pages to avoid Neon connection / memory limits
+const PAGE_SIZE = 3000;
+
+async function fetchAllQuestions(topicFilter?: string) {
+  const allQuestions: Array<{
+    id: string; topicId: string; difficulty: string;
+    questionText: string; topic: { grade: number };
+  }> = [];
+
+  let cursor: string | undefined;
+  while (true) {
+    const batch = await prisma.question.findMany({
+      where: topicFilter ? { topicId: topicFilter } : undefined,
+      select: {
+        id: true,
+        topicId: true,
+        difficulty: true,
+        questionText: true,
+        topic: { select: { grade: true } },
+      },
+      take: PAGE_SIZE,
+      ...(cursor ? { skip: 1, cursor: { id: cursor } } : {}),
+      orderBy: { id: 'asc' },
+    });
+    if (batch.length === 0) break;
+    allQuestions.push(...batch);
+    cursor = batch[batch.length - 1].id;
+    if (batch.length < PAGE_SIZE) break;
+  }
+
+  return allQuestions;
 }
 
 // ── GET: Dry-run report ────────────────────────────────────────────────
@@ -20,21 +52,12 @@ export async function GET(req: NextRequest) {
   }
 
   const { searchParams } = new URL(req.url);
-  const topicFilter = searchParams.get('topic');
+  const topicFilter = searchParams.get('topic') || undefined;
 
   try {
-    const questions = await prisma.question.findMany({
-      where: topicFilter ? { topicId: topicFilter } : undefined,
-      select: {
-        id: true,
-        topicId: true,
-        difficulty: true,
-        questionText: true,
-        topic: { select: { grade: true } },
-      },
-    });
+    const questions = await fetchAllQuestions(topicFilter);
 
-    // Build a lookup map for sample text (avoids O(n²) find calls)
+    // Build a lookup map for sample text
     const textMap = new Map<string, string>();
     for (const q of questions) {
       textMap.set(q.id, q.questionText);
@@ -89,13 +112,16 @@ export async function GET(req: NextRequest) {
     });
   } catch (err) {
     console.error('audit-difficulty GET error:', err);
-    return NextResponse.json({ error: 'Internal error' }, { status: 500 });
+    return NextResponse.json(
+      { error: `Internal error: ${err instanceof Error ? err.message : String(err)}` },
+      { status: 500 },
+    );
   }
 }
 
 // ── POST: Apply reclassification ───────────────────────────────────────
 
-const BATCH_SIZE = 500;
+const BATCH_SIZE = 200;
 
 export async function POST(req: NextRequest) {
   if (!authorize(req)) {
@@ -103,15 +129,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const questions = await prisma.question.findMany({
-      select: {
-        id: true,
-        topicId: true,
-        difficulty: true,
-        questionText: true,
-        topic: { select: { grade: true } },
-      },
-    });
+    const questions = await fetchAllQuestions();
 
     const mismatches = questions
       .map((q) =>
@@ -147,6 +165,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ updated });
   } catch (err) {
     console.error('audit-difficulty POST error:', err);
-    return NextResponse.json({ error: 'Internal error' }, { status: 500 });
+    return NextResponse.json(
+      { error: `Internal error: ${err instanceof Error ? err.message : String(err)}` },
+      { status: 500 },
+    );
   }
 }
