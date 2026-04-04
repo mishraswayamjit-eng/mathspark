@@ -49,7 +49,7 @@ export async function GET(req: NextRequest) {
       let gradeTotalU = 0;
 
       // Get all questions for this grade's DB topic IDs in one query
-      const dbTopicIds = [...new Set(topics.map(t => t.dbTopicId))];
+      const dbTopicIds = Array.from(new Set(topics.map(t => t.dbTopicId)));
       const allQuestions = await prisma.question.findMany({
         where: { topicId: { in: dbTopicIds } },
         select: { topicId: true, subTopic: true, difficulty: true, questionText: true, correctAnswer: true, option1: true, option2: true, option3: true, option4: true },

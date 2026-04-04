@@ -211,7 +211,7 @@ async function generateIPMPaper(studentId: string, grade: number) {
   const blueprint = grade === 4 ? MOCK_BLUEPRINT : buildGradeBlueprint(grade);
 
   // Collect all DB topic IDs needed
-  const topicIds = [...new Set(blueprint.map(b => b.topicId))];
+  const topicIds = Array.from(new Set(blueprint.map(b => b.topicId)));
 
   const allQuestions = await prisma.question.findMany({
     where: {
