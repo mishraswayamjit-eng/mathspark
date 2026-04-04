@@ -4,7 +4,8 @@ import { scoreQuestion } from '@/lib/difficultyScorer';
 
 export const dynamic = 'force-dynamic';
 
-const PAGE_SIZE = 500;
+const DRY_PAGE  = 500;   // read-only is fast
+const APPLY_PAGE = 100;  // writes need smaller batches for 10s limit
 
 function authorize(req: NextRequest): boolean {
   const secret = process.env.SEED_SECRET;
@@ -32,6 +33,8 @@ export async function GET(req: NextRequest) {
   const apply   = searchParams.get('apply') === '1';
   const topic   = searchParams.get('topic') || undefined;
 
+  const pageSize = apply ? APPLY_PAGE : DRY_PAGE;
+
   try {
     // Count total questions (only on page 0, client caches it)
     const total = page === 0
@@ -48,8 +51,8 @@ export async function GET(req: NextRequest) {
         questionText: true,
         topic: { select: { grade: true } },
       },
-      skip: page * PAGE_SIZE,
-      take: PAGE_SIZE,
+      skip: page * pageSize,
+      take: pageSize,
       orderBy: { id: 'asc' },
     });
 
@@ -66,18 +69,24 @@ export async function GET(req: NextRequest) {
 
     const mismatches = scored.filter((s) => s.changed);
 
-    // If applying, update mismatches in this batch
+    // If applying, batch updates by difficulty (max 3 queries instead of N)
     let updated = 0;
     if (apply && mismatches.length > 0) {
-      await prisma.$transaction(
-        mismatches.map((m) =>
-          prisma.question.update({
-            where: { id: m.id },
-            data: { difficulty: m.newDifficulty },
+      const byDiff = new Map<string, string[]>();
+      for (const m of mismatches) {
+        const ids = byDiff.get(m.newDifficulty) || [];
+        ids.push(m.id);
+        byDiff.set(m.newDifficulty, ids);
+      }
+      const results = await prisma.$transaction(
+        Array.from(byDiff.entries()).map(([diff, ids]) =>
+          prisma.question.updateMany({
+            where: { id: { in: ids } },
+            data: { difficulty: diff },
           }),
         ),
       );
-      updated = mismatches.length;
+      updated = results.reduce((sum, r) => sum + r.count, 0);
     }
 
     // Transition summary for this batch
@@ -101,7 +110,7 @@ export async function GET(req: NextRequest) {
       };
     });
 
-    const done = questions.length < PAGE_SIZE;
+    const done = questions.length < pageSize;
 
     return NextResponse.json({
       done,
