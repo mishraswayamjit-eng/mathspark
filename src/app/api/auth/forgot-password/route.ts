@@ -5,11 +5,16 @@ import { checkRateLimit } from '@/lib/rateLimit';
 import { Resend } from 'resend';
 
 export async function POST(req: Request) {
-  // Lazy init — avoids "Missing API key" crash during Next.js build-time page collection
-  const resend = new Resend(process.env.RESEND_API_KEY ?? '');
   const ip = req.headers.get('x-forwarded-for')?.split(',')[0] ?? 'unknown';
   if (!checkRateLimit(`forgot:${ip}`, 5, 60_000)) {
     return NextResponse.json({ error: 'Too many requests.' }, { status: 429 });
+  }
+
+  // Validate API key upfront
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.error('[forgot-password] RESEND_API_KEY is not configured');
+    return NextResponse.json({ error: 'Email service is not configured.' }, { status: 500 });
   }
 
   try {
@@ -39,7 +44,9 @@ export async function POST(req: Request) {
     const baseUrl = process.env.NEXTAUTH_URL ?? 'https://mathspark-five.vercel.app';
     const link    = `${baseUrl}/auth/reset-password?token=${rawToken}`;
 
-    await resend.emails.send({
+    // Lazy init — avoids crash during Next.js build-time page collection
+    const resend = new Resend(apiKey);
+    const { error: sendError } = await resend.emails.send({
       from:    'MathSpark <noreply@mathspark.app>',
       to:      [emailClean],
       subject: 'Reset your MathSpark password',
@@ -51,8 +58,14 @@ export async function POST(req: Request) {
       `,
     });
 
+    if (sendError) {
+      console.error('[forgot-password] Resend error:', sendError);
+      return NextResponse.json({ error: 'Failed to send reset email. Please try again.' }, { status: 500 });
+    }
+
     return NextResponse.json({ ok: true });
-  } catch {
-    return NextResponse.json({ error: 'Something went wrong.' }, { status: 500 });
+  } catch (err) {
+    console.error('[forgot-password] Unexpected error:', err);
+    return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
   }
 }
