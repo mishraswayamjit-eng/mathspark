@@ -56,6 +56,15 @@ export default function SeedPage() {
   const [diffSummary, setDiffSummary] = useState<Record<string, number>>({});
   const [diffSamples, setDiffSamples] = useState<Array<{ id: string; topic: string; text: string; was: string; now: string; score: number }>>([]);
 
+  // ── Redistribute Grade 4 ─────────────────────────────────────────────────
+  const [redistStatus,   setRedistStatus]   = useState<Status>('idle');
+  const [redistMessage,  setRedistMessage]  = useState('');
+  const [redistTotal,    setRedistTotal]    = useState(0);
+  const [redistProcessed, setRedistProcessed] = useState(0);
+  const [redistMoved,    setRedistMoved]    = useState(0);
+  const [redistByMethod, setRedistByMethod] = useState<Record<string, number>>({});
+  const [redistPerTopic, setRedistPerTopic] = useState<Record<string, number>>({});
+
   // ── Handlers ─────────────────────────────────────────────────────────────────
   async function runSeed() {
     if (!secret.trim()) { setMessage('Enter your SEED_SECRET first.'); return; }
@@ -197,6 +206,70 @@ export default function SeedPage() {
       } catch (err) {
         setDiffMessage(`Network error: ${err}`);
         setDiffStatus('error');
+        return;
+      }
+    }
+  }
+
+  async function runRedistribute(apply: boolean) {
+    const sec = diffSecret || fixSecret || secret || testSecret;
+    if (!sec.trim()) { setRedistMessage('Enter your SEED_SECRET first.'); setRedistStatus('error'); return; }
+    setRedistStatus('running');
+    setRedistMessage(apply ? 'Moving questions to ch-topics...' : 'Analyzing grade4 pool...');
+    setRedistProcessed(0); setRedistMoved(0);
+    setRedistByMethod({}); setRedistPerTopic({});
+
+    let page = 0;
+    let totalQ = 0;
+    let processed = 0;
+    let moved = 0;
+    const cumulMethod: Record<string, number> = {};
+    const cumulTopic: Record<string, number> = {};
+
+    while (true) {
+      try {
+        const url = `/api/admin/redistribute-grade4?secret=${encodeURIComponent(sec)}&page=${page}${apply ? '&apply=1' : ''}`;
+        const res = await fetch(url);
+        const text = await res.text();
+        let data;
+        try { data = JSON.parse(text); } catch {
+          setRedistMessage(`Server error: ${text.slice(0, 200)}`);
+          setRedistStatus('error');
+          return;
+        }
+        if (!res.ok) { setRedistMessage(data.error ?? 'Something went wrong.'); setRedistStatus('error'); return; }
+
+        if (data.total) totalQ = data.total;
+        processed += data.pageQuestions;
+        moved += data.pageUpdated ?? 0;
+        for (const [k, v] of Object.entries(data.byMethod)) {
+          cumulMethod[k] = (cumulMethod[k] || 0) + (v as number);
+        }
+        for (const [k, v] of Object.entries(data.perTopic)) {
+          cumulTopic[k] = (cumulTopic[k] || 0) + (v as number);
+        }
+
+        setRedistTotal(totalQ);
+        setRedistProcessed(processed);
+        setRedistMoved(moved);
+        setRedistByMethod({ ...cumulMethod });
+        setRedistPerTopic({ ...cumulTopic });
+        setRedistMessage(apply
+          ? `Moving... ${moved} questions redistributed`
+          : `Analyzing... ${processed} questions scanned`);
+
+        if (data.done) {
+          const totalMapped = Object.values(cumulMethod).reduce((s, v) => s + v, 0) - (cumulMethod.unclassified || 0);
+          setRedistMessage(apply
+            ? `Done! ${moved} questions moved to ch-topics.`
+            : `Found ${totalMapped} classifiable out of ${processed} grade4 questions (${cumulMethod.unclassified || 0} unclassifiable).`);
+          setRedistStatus('done');
+          return;
+        }
+        page = data.nextPage;
+      } catch (err) {
+        setRedistMessage(`Network error: ${err}`);
+        setRedistStatus('error');
         return;
       }
     }
@@ -641,6 +714,112 @@ export default function SeedPage() {
 
             <button
               onClick={() => { setDiffStatus('idle'); setDiffMessage(''); }}
+              className="w-full text-xs text-gray-500 hover:text-gray-600 py-1"
+            >
+              Run again
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* ── Section 6: Redistribute Grade 4 ────────────────────────────────── */}
+      <div className="w-full bg-white border-2 border-indigo-200 rounded-2xl p-6 space-y-4 shadow-sm">
+        <div className="flex items-center gap-3">
+          <span className="text-3xl" aria-hidden="true">🔀</span>
+          <div>
+            <p className="font-bold text-gray-800">Redistribute Grade 4</p>
+            <p className="text-xs text-gray-500">Moves ~2,600 flat &ldquo;grade4&rdquo; pool questions into correct ch-topic buckets</p>
+          </div>
+        </div>
+
+        {redistStatus === 'idle' || redistStatus === 'error' ? (
+          <>
+            {redistMessage && <p className="text-sm text-red-500">{redistMessage}</p>}
+            <div className="flex gap-3">
+              <button
+                onClick={() => runRedistribute(false)}
+                className="flex-1 bg-indigo-100 hover:bg-indigo-200 text-indigo-800 font-bold py-3.5 rounded-2xl transition-colors text-sm"
+              >
+                Dry Run (preview)
+              </button>
+              <button
+                onClick={() => runRedistribute(true)}
+                className="flex-1 bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3.5 rounded-2xl transition-colors text-sm"
+              >
+                Apply →
+              </button>
+            </div>
+          </>
+        ) : redistStatus === 'running' ? (
+          <>
+            <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div
+                className="bg-indigo-500 h-3 rounded-full transition-[width] duration-300"
+                style={{ width: `${redistTotal > 0 ? Math.round((redistProcessed / redistTotal) * 100) : 0}%` }}
+              />
+            </div>
+            <div className="flex justify-between text-xs text-gray-500">
+              <span>{redistMessage}</span>
+              <span className="font-semibold">{redistProcessed} / {redistTotal}</span>
+            </div>
+          </>
+        ) : (
+          <div className="space-y-3">
+            {/* Summary banner */}
+            <div className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold ${
+              redistMoved > 0 ? 'bg-green-50 text-green-700' : 'bg-indigo-50 text-indigo-700'
+            }`}>
+              {redistMoved > 0 ? '✅ Applied!' : '👀 Dry Run'}
+              <span className="font-normal">— {redistMessage}</span>
+            </div>
+
+            {/* Stats row */}
+            <div className="flex gap-3 text-center">
+              <div className="flex-1 bg-gray-50 rounded-xl px-2 py-2">
+                <p className="text-lg font-extrabold text-gray-800">{redistProcessed.toLocaleString()}</p>
+                <p className="text-[10px] font-semibold text-gray-500">Scanned</p>
+              </div>
+              <div className="flex-1 bg-indigo-50 rounded-xl px-2 py-2">
+                <p className="text-lg font-extrabold text-indigo-600">
+                  {Object.values(redistByMethod).reduce((s, v) => s + v, 0) - (redistByMethod.unclassified || 0)}
+                </p>
+                <p className="text-[10px] font-semibold text-gray-500">Mapped</p>
+              </div>
+              {redistMoved > 0 && (
+                <div className="flex-1 bg-green-50 rounded-xl px-2 py-2">
+                  <p className="text-lg font-extrabold text-green-600">{redistMoved.toLocaleString()}</p>
+                  <p className="text-[10px] font-semibold text-gray-500">Moved</p>
+                </div>
+              )}
+            </div>
+
+            {/* Method breakdown */}
+            {Object.keys(redistByMethod).length > 0 && (
+              <div className="bg-gray-50 rounded-xl px-3 py-2 text-xs space-y-1">
+                <p className="font-bold text-gray-700">Classification Method</p>
+                {Object.entries(redistByMethod).map(([key, cnt]) => (
+                  <p key={key}>{key}: <b>{cnt}</b></p>
+                ))}
+              </div>
+            )}
+
+            {/* Per-topic distribution */}
+            {Object.keys(redistPerTopic).length > 0 && (
+              <div className="space-y-1 max-h-48 overflow-y-auto bg-gray-50 rounded-xl px-3 py-2">
+                <p className="text-xs font-bold text-gray-700 mb-1">Target Topics</p>
+                {Object.entries(redistPerTopic)
+                  .sort(([, a], [, b]) => b - a)
+                  .map(([topic, cnt]) => (
+                    <div key={topic} className="flex items-center justify-between text-xs py-0.5">
+                      <span className="text-gray-600">{topic}</span>
+                      <span className="font-bold tabular-nums text-indigo-600">{cnt}</span>
+                    </div>
+                  ))}
+              </div>
+            )}
+
+            <button
+              onClick={() => { setRedistStatus('idle'); setRedistMessage(''); }}
               className="w-full text-xs text-gray-500 hover:text-gray-600 py-1"
             >
               Run again

@@ -19,7 +19,7 @@ const GRADE4_TOPICS: TopicNode[] = [
   { id: 'gr4_numbers',    name: 'Number System & Place Value', emoji: '🔢', grade: 4, examWeight: 0.15, dbTopicId: 'ch01-05' },
   { id: 'gr4_factors',    name: 'Factors & Multiples',         emoji: '🔑', grade: 4, examWeight: 0.10, dbTopicId: 'ch06' },
   { id: 'gr4_fractions',  name: 'Fractions',                   emoji: '🍕', grade: 4, examWeight: 0.12, dbTopicId: 'ch07-08' },
-  { id: 'gr4_operations', name: 'Operations & BODMAS',         emoji: '➗', grade: 4, examWeight: 0.12, dbTopicId: 'ch09-10' },
+  { id: 'gr4_operations', name: 'Operations & BODMAS',         emoji: '➗', grade: 4, examWeight: 0.14, dbTopicId: 'ch09-10' },
   { id: 'gr4_decimals',   name: 'Decimal Fractions',           emoji: '📊', grade: 4, examWeight: 0.10, dbTopicId: 'ch11' },
   { id: 'gr4_units',      name: 'Decimal Units of Measurement',emoji: '📏', grade: 4, examWeight: 0.05, dbTopicId: 'ch12' },
   { id: 'gr4_algebra',    name: 'Algebraic Expressions',       emoji: '🔤', grade: 4, examWeight: 0.08, dbTopicId: 'ch13' },
@@ -29,9 +29,9 @@ const GRADE4_TOPICS: TopicNode[] = [
   { id: 'gr4_time',       name: 'Measurement of Time & Calendar',emoji: '🕐', grade: 4, examWeight: 0.03, dbTopicId: 'ch17' },
   { id: 'gr4_angles',     name: 'Angles',                      emoji: '📐', grade: 4, examWeight: 0.05, dbTopicId: 'ch18' },
   { id: 'gr4_triangles',  name: 'Triangles',                   emoji: '🔺', grade: 4, examWeight: 0.05, dbTopicId: 'ch19' },
-  { id: 'gr4_quads',      name: 'Quadrilaterals',              emoji: '⬜', grade: 4, examWeight: 0.03, dbTopicId: 'ch20' },
+  { id: 'gr4_quads',      name: 'Quadrilaterals',              emoji: '⬜', grade: 4, examWeight: 0.05, dbTopicId: 'ch20' },
   { id: 'gr4_circle',     name: 'Circle',                      emoji: '⭕', grade: 4, examWeight: 0.03, dbTopicId: 'ch21' },
-  { id: 'gr4_data',       name: 'Data Handling & Graphs',      emoji: '📈', grade: 4, examWeight: 0.06, dbTopicId: 'dh' },
+  { id: 'gr4_data',       name: 'Data Handling & Graphs',      emoji: '📈', grade: 4, examWeight: 0.00, dbTopicId: 'dh' },
   { id: 'gr4_ipm',        name: 'IPM Past Papers',             emoji: '🎓', grade: 4, examWeight: 0.20, dbTopicId: 'grade4' },
 ];
 

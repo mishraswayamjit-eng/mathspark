@@ -17,30 +17,34 @@ export const TEST_CONFIG = {
 // Each entry: topicId (DB), count, difficulty breakdown (E/M/H)
 // Source: ch01→ch01-05, ch07→ch07-08, ch09→ch09-10, roman→ch01-05 (merged)
 
-const MOCK_BLUEPRINT: Array<{
+interface BlueprintSlot {
   topicId: string;
+  subTopicKey?: string;
   count: number;
   easy: number;
   medium: number;
   hard: number;
-}> = [
-  { topicId: 'ch01-05', count: 5, easy: 1, medium: 3, hard: 1 }, // ch01(4) + roman(1)
-  { topicId: 'ch06',    count: 4, easy: 1, medium: 2, hard: 1 },
-  { topicId: 'ch07-08', count: 3, easy: 1, medium: 1, hard: 1 },
-  { topicId: 'ch11',    count: 3, easy: 1, medium: 1, hard: 1 },
-  { topicId: 'ch09-10', count: 2, easy: 1, medium: 1, hard: 0 },
-  { topicId: 'ch12',    count: 2, easy: 1, medium: 1, hard: 0 },
-  { topicId: 'ch13',    count: 2, easy: 0, medium: 1, hard: 1 },
-  { topicId: 'ch14',    count: 3, easy: 1, medium: 1, hard: 1 },
-  { topicId: 'ch15',    count: 3, easy: 0, medium: 1, hard: 2 },
-  { topicId: 'ch16',    count: 2, easy: 0, medium: 1, hard: 1 },
-  { topicId: 'ch17',    count: 2, easy: 0, medium: 1, hard: 1 },
-  { topicId: 'ch18',    count: 2, easy: 1, medium: 1, hard: 0 },
-  { topicId: 'ch19',    count: 2, easy: 0, medium: 1, hard: 1 },
-  { topicId: 'ch20',    count: 3, easy: 1, medium: 1, hard: 1 },
-  { topicId: 'ch21',    count: 1, easy: 0, medium: 1, hard: 0 },
-  { topicId: 'dh',      count: 1, easy: 0, medium: 1, hard: 0 },
-];
+}
+
+// Grade 4: hand-tuned to match real IPM paper distribution (2016-2025 analysis)
+// dh removed (Data Handling not tested in real IPM), ch09-10 bumped from 2→3
+const MOCK_BLUEPRINT: BlueprintSlot[] = [
+  { topicId: 'ch01-05', count: 5, easy: 1, medium: 3, hard: 1 }, // Numbers, Place Value, Roman, Squares
+  { topicId: 'ch06',    count: 4, easy: 1, medium: 2, hard: 1 }, // Factors, Divisibility, LCM/HCF
+  { topicId: 'ch07-08', count: 3, easy: 1, medium: 1, hard: 1 }, // Fractions
+  { topicId: 'ch09-10', count: 3, easy: 1, medium: 1, hard: 1 }, // Operations & BODMAS
+  { topicId: 'ch11',    count: 3, easy: 1, medium: 1, hard: 1 }, // Decimal Fractions
+  { topicId: 'ch12',    count: 2, easy: 1, medium: 1, hard: 0 }, // Units of Measurement
+  { topicId: 'ch13',    count: 2, easy: 0, medium: 1, hard: 1 }, // Algebraic Expressions
+  { topicId: 'ch14',    count: 3, easy: 1, medium: 1, hard: 1 }, // Equations
+  { topicId: 'ch15',    count: 3, easy: 0, medium: 1, hard: 2 }, // Puzzles & Magic Squares
+  { topicId: 'ch16',    count: 2, easy: 0, medium: 1, hard: 1 }, // Sequences
+  { topicId: 'ch17',    count: 2, easy: 0, medium: 1, hard: 1 }, // Time & Calendar
+  { topicId: 'ch18',    count: 2, easy: 1, medium: 1, hard: 0 }, // Angles
+  { topicId: 'ch19',    count: 2, easy: 0, medium: 1, hard: 1 }, // Triangles
+  { topicId: 'ch20',    count: 3, easy: 1, medium: 1, hard: 1 }, // Quadrilaterals
+  { topicId: 'ch21',    count: 1, easy: 0, medium: 1, hard: 0 }, // Circle
+]; // Total: 40
 
 const ALL_TOPIC_IDS = [
   'ch01-05', 'ch06', 'ch07-08', 'ch09-10', 'ch11', 'ch12',
@@ -89,6 +93,53 @@ function shuffle<T>(arr: T[]): T[] {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+}
+
+// ── Dynamic Blueprint for Grades 2-3, 5-9 ────────────────────────────────────
+// Builds a blueprint from topicTree examWeight values.
+// Uses subTopicKey for filtering within the gradeN pool.
+
+function buildGradeBlueprint(grade: number): BlueprintSlot[] {
+  const topics = getTopicsForGrade(grade).filter(t => !t.id.endsWith('_ipm'));
+  const totalQuestions = TEST_CONFIG.ipm.totalQuestions; // 40
+
+  // Calculate raw counts from examWeight, then adjust to hit totalQuestions
+  const raw = topics.map(t => ({
+    topicId: t.dbTopicId,
+    subTopicKey: t.subTopicKey,
+    rawCount: Math.max(2, Math.round(t.examWeight * totalQuestions)),
+    examWeight: t.examWeight,
+  }));
+
+  // Adjust to hit exact total
+  let sum = raw.reduce((s, r) => s + r.rawCount, 0);
+  while (sum > totalQuestions) {
+    // Shrink the largest slot (that's > 2)
+    const largest = raw.filter(r => r.rawCount > 2).sort((a, b) => b.rawCount - a.rawCount)[0];
+    if (!largest) break;
+    largest.rawCount--;
+    sum--;
+  }
+  while (sum < totalQuestions) {
+    // Grow the slot with highest weight
+    const best = raw.sort((a, b) => b.examWeight - a.examWeight)[0];
+    best.rawCount++;
+    sum++;
+  }
+
+  return raw.map(r => {
+    const easy = Math.round(r.rawCount * 0.23);
+    const hard = Math.round(r.rawCount * 0.30);
+    const medium = r.rawCount - easy - hard;
+    return {
+      topicId: r.topicId,
+      subTopicKey: r.subTopicKey,
+      count: r.rawCount,
+      easy,
+      medium,
+      hard,
+    };
+  });
 }
 
 // ── PYQ Paper Generator ───────────────────────────────────────────────────────
@@ -156,10 +207,11 @@ async function generateIPMPaper(studentId: string, grade: number) {
     recentTests.flatMap((t) => t.responses.map((r) => r.questionId)),
   );
 
-  // Grade 4 uses chapter-based blueprint; other grades use their grade pool
-  const topicIds = grade === 4
-    ? MOCK_BLUEPRINT.map((b) => b.topicId)
-    : [`grade${grade}`];
+  // All grades now use blueprint-based topic distribution
+  const blueprint = grade === 4 ? MOCK_BLUEPRINT : buildGradeBlueprint(grade);
+
+  // Collect all DB topic IDs needed
+  const topicIds = [...new Set(blueprint.map(b => b.topicId))];
 
   const allQuestions = await prisma.question.findMany({
     where: {
@@ -172,20 +224,52 @@ async function generateIPMPaper(studentId: string, grade: number) {
 
   type QRow = typeof allQuestions[number];
 
-  // Pool by topicId + difficulty
-  const poolMap = new Map<string, QRow[]>();
-  for (const q of allQuestions) {
-    const key = `${q.topicId}__${q.difficulty}`;
-    if (!poolMap.has(key)) poolMap.set(key, []);
-    poolMap.get(key)!.push(q);
+  // Pool by topicId (or subTopicKey) + difficulty
+  // For grades 2-3,5-9: further filter by subTopic ILIKE within the gradeN pool
+  function buildPoolKey(slot: BlueprintSlot, difficulty: string): string {
+    return slot.subTopicKey
+      ? `${slot.topicId}__${slot.subTopicKey}__${difficulty}`
+      : `${slot.topicId}__${difficulty}`;
   }
 
-  function pickOne(topicId: string, difficulty: string, used: Set<string>): QRow | null {
-    const key  = `${topicId}__${difficulty}`;
-    const pool = poolMap.get(key) ?? [];
-    let candidates = pool.filter((q) => !used.has(q.id) && !recentIds.has(q.id) && q.source === 'hand_crafted');
-    if (!candidates.length) candidates = pool.filter((q) => !used.has(q.id) && !recentIds.has(q.id));
-    if (!candidates.length) candidates = pool.filter((q) => !used.has(q.id));
+  const poolMap = new Map<string, QRow[]>();
+  for (const slot of blueprint) {
+    for (const diff of ['Easy', 'Medium', 'Hard']) {
+      const key = buildPoolKey(slot, diff);
+      const filtered = allQuestions.filter(q => {
+        if (q.topicId !== slot.topicId) return false;
+        if (q.difficulty !== diff) return false;
+        if (slot.subTopicKey) {
+          return (q.subTopic ?? '').toLowerCase().includes(slot.subTopicKey.toLowerCase());
+        }
+        return true;
+      });
+      poolMap.set(key, filtered);
+    }
+  }
+
+  // Also build fallback pools per topicId+difficulty (ignoring subTopicKey)
+  // Used when a subTopicKey-filtered pool runs dry
+  const fallbackPool = new Map<string, QRow[]>();
+  for (const q of allQuestions) {
+    const key = `${q.topicId}__${q.difficulty}`;
+    if (!fallbackPool.has(key)) fallbackPool.set(key, []);
+    fallbackPool.get(key)!.push(q);
+  }
+
+  function pickOne(slot: BlueprintSlot, difficulty: string, used: Set<string>): QRow | null {
+    const key = buildPoolKey(slot, difficulty);
+    let pool = poolMap.get(key) ?? [];
+    let candidates = pool.filter(q => !used.has(q.id) && !recentIds.has(q.id) && q.source === 'hand_crafted');
+    if (!candidates.length) candidates = pool.filter(q => !used.has(q.id) && !recentIds.has(q.id));
+    if (!candidates.length) candidates = pool.filter(q => !used.has(q.id));
+    // Fallback: try the broader pool (ignoring subTopicKey)
+    if (!candidates.length && slot.subTopicKey) {
+      const fbKey = `${slot.topicId}__${difficulty}`;
+      pool = fallbackPool.get(fbKey) ?? [];
+      candidates = pool.filter(q => !used.has(q.id) && !recentIds.has(q.id));
+      if (!candidates.length) candidates = pool.filter(q => !used.has(q.id));
+    }
     if (!candidates.length) candidates = pool;
     if (!candidates.length) return null;
     return candidates[Math.floor(Math.random() * candidates.length)];
@@ -196,32 +280,14 @@ async function generateIPMPaper(studentId: string, grade: number) {
   const hard:   QRow[] = [];
   const used = new Set<string>();
 
-  if (grade === 4) {
-    // Grade 4: use topic-wise blueprint distribution
-    for (const slot of MOCK_BLUEPRINT) {
-      const diffs: Array<[string, number]> = [
-        ['Easy', slot.easy], ['Medium', slot.medium], ['Hard', slot.hard],
-      ];
-      for (const [diff, count] of diffs) {
-        for (let i = 0; i < count; i++) {
-          const q = pickOne(slot.topicId, diff, used);
-          if (!q) continue;
-          used.add(q.id);
-          if (diff === 'Easy')   easy.push(q);
-          else if (diff === 'Medium') medium.push(q);
-          else hard.push(q);
-        }
-      }
-    }
-  } else {
-    // Other grades: pull from gradeN pool with same difficulty distribution
-    const gradeTopicId = `grade${grade}`;
+  // Fill from blueprint slots
+  for (const slot of blueprint) {
     const diffs: Array<[string, number]> = [
-      ['Easy', cfg.easy], ['Medium', cfg.medium], ['Hard', cfg.hard],
+      ['Easy', slot.easy], ['Medium', slot.medium], ['Hard', slot.hard],
     ];
-    for (const [diff, target] of diffs) {
-      for (let i = 0; i < target; i++) {
-        const q = pickOne(gradeTopicId, diff, used);
+    for (const [diff, count] of diffs) {
+      for (let i = 0; i < count; i++) {
+        const q = pickOne(slot, diff, used);
         if (!q) continue;
         used.add(q.id);
         if (diff === 'Easy')   easy.push(q);
