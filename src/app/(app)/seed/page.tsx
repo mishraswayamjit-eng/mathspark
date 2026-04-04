@@ -56,6 +56,18 @@ export default function SeedPage() {
   const [diffSummary, setDiffSummary] = useState<Record<string, number>>({});
   const [diffSamples, setDiffSamples] = useState<Array<{ id: string; topic: string; text: string; was: string; now: string; score: number }>>([]);
 
+  // ── Topic Audit ──────────────────────────────────────────────────────────
+  const [auditStatus, setAuditStatus] = useState<Status>('idle');
+  const [auditMessage, setAuditMessage] = useState('');
+  const [auditData, setAuditData] = useState<Record<string, {
+    topics: Array<{
+      topicId: string; name: string; subTopicKey?: string; examWeight: number;
+      total: number; usable: number; easy: number; medium: number; hard: number;
+      blueprintNeed: number; coverage: string;
+    }>;
+    totalQuestions: number; totalUsable: number;
+  }> | null>(null);
+
   // ── Redistribute Grade 4 ─────────────────────────────────────────────────
   const [redistStatus,   setRedistStatus]   = useState<Status>('idle');
   const [redistMessage,  setRedistMessage]  = useState('');
@@ -272,6 +284,32 @@ export default function SeedPage() {
         setRedistStatus('error');
         return;
       }
+    }
+  }
+
+  async function runTopicAudit(grade?: number) {
+    const sec = diffSecret || fixSecret || secret || testSecret;
+    if (!sec.trim()) { setAuditMessage('Enter your SEED_SECRET first.'); setAuditStatus('error'); return; }
+    setAuditStatus('running');
+    setAuditMessage('Fetching topic coverage...');
+    setAuditData(null);
+    try {
+      const gradeParam = grade ? `&grade=${grade}` : '';
+      const res = await fetch(`/api/admin/topic-audit?secret=${encodeURIComponent(sec)}${gradeParam}`);
+      const text = await res.text();
+      let data;
+      try { data = JSON.parse(text); } catch {
+        setAuditMessage(`Server error: ${text.slice(0, 200)}`);
+        setAuditStatus('error');
+        return;
+      }
+      if (!res.ok) { setAuditMessage(data.error ?? 'Something went wrong.'); setAuditStatus('error'); return; }
+      setAuditData(data);
+      setAuditMessage('Audit complete.');
+      setAuditStatus('done');
+    } catch (err) {
+      setAuditMessage(`Network error: ${err}`);
+      setAuditStatus('error');
     }
   }
 
@@ -820,6 +858,108 @@ export default function SeedPage() {
 
             <button
               onClick={() => { setRedistStatus('idle'); setRedistMessage(''); }}
+              className="w-full text-xs text-gray-500 hover:text-gray-600 py-1"
+            >
+              Run again
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* ── Section 7: Topic Audit ──────────────────────────────────────────── */}
+      <div className="w-full bg-white border-2 border-teal-200 rounded-2xl p-6 space-y-4 shadow-sm">
+        <div className="flex items-center gap-3">
+          <span className="text-3xl" aria-hidden="true">📊</span>
+          <div>
+            <p className="font-bold text-gray-800">Topic Audit</p>
+            <p className="text-xs text-gray-500">Per-topic question counts, difficulty breakdown, and blueprint coverage</p>
+          </div>
+        </div>
+
+        {auditStatus === 'idle' || auditStatus === 'error' ? (
+          <>
+            {auditMessage && <p className="text-sm text-red-500">{auditMessage}</p>}
+            <div className="flex gap-3">
+              <button
+                onClick={() => runTopicAudit()}
+                className="flex-1 bg-teal-500 hover:bg-teal-600 text-white font-bold py-3.5 rounded-2xl transition-colors text-sm"
+              >
+                Audit All Grades
+              </button>
+              <button
+                onClick={() => runTopicAudit(4)}
+                className="flex-1 bg-teal-100 hover:bg-teal-200 text-teal-800 font-bold py-3.5 rounded-2xl transition-colors text-sm"
+              >
+                Grade 4 Only
+              </button>
+            </div>
+          </>
+        ) : auditStatus === 'running' ? (
+          <>
+            <div className="h-3 bg-teal-200 rounded-full animate-pulse" />
+            <p className="text-xs text-gray-500 text-center">{auditMessage}</p>
+          </>
+        ) : (
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold bg-teal-50 text-teal-700">
+              ✅ {auditMessage}
+            </div>
+
+            {auditData && (
+              <div className="space-y-4 max-h-[500px] overflow-y-auto">
+                {Object.entries(auditData).map(([gradeKey, gradeData]) => (
+                  <div key={gradeKey} className="bg-white border border-gray-100 rounded-xl px-3 py-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <p className="text-sm font-extrabold text-gray-800">
+                        {gradeKey.replace('grade', 'Grade ')}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        {gradeData.totalUsable} usable / {gradeData.totalQuestions} total
+                      </p>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      {gradeData.topics.map((t) => {
+                        const coverageColor = {
+                          empty: 'text-red-600 bg-red-50',
+                          low: 'text-red-500 bg-red-50',
+                          thin: 'text-amber-600 bg-amber-50',
+                          ok: 'text-gray-600 bg-gray-50',
+                          rich: 'text-green-600 bg-green-50',
+                        }[t.coverage] ?? 'text-gray-600 bg-gray-50';
+
+                        return (
+                          <div key={`${gradeKey}-${t.topicId}-${t.subTopicKey ?? ''}`} className="flex items-center gap-2 text-xs">
+                            <div className="flex-1 min-w-0">
+                              <p className="font-semibold text-gray-700 truncate">{t.name}</p>
+                              <p className="text-gray-400">
+                                {t.topicId}{t.subTopicKey ? ` → ${t.subTopicKey}` : ''}
+                              </p>
+                            </div>
+                            <div className="flex items-center gap-1.5 flex-shrink-0">
+                              <span className="text-green-600 font-bold">{t.easy}E</span>
+                              <span className="text-amber-600 font-bold">{t.medium}M</span>
+                              <span className="text-red-600 font-bold">{t.hard}H</span>
+                            </div>
+                            <div className="flex items-center gap-1.5 flex-shrink-0">
+                              <span className="font-bold tabular-nums w-8 text-right text-gray-700">{t.usable}</span>
+                              <span className="text-gray-400">/</span>
+                              <span className="font-semibold tabular-nums w-6 text-gray-500">{t.blueprintNeed}</span>
+                            </div>
+                            <span className={`px-1.5 py-0.5 rounded-full text-[10px] font-bold ${coverageColor}`}>
+                              {t.coverage}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <button
+              onClick={() => { setAuditStatus('idle'); setAuditMessage(''); setAuditData(null); }}
               className="w-full text-xs text-gray-500 hover:text-gray-600 py-1"
             >
               Run again
