@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { scoreQuestion, ScoredQuestion } from '@/lib/difficultyScorer';
 
+// Allow up to 60s for scoring 12k+ questions
+export const maxDuration = 60;
+
 function authorize(req: NextRequest): boolean {
   const secret = process.env.SEED_SECRET;
   if (!secret) return false;
@@ -31,6 +34,12 @@ export async function GET(req: NextRequest) {
       },
     });
 
+    // Build a lookup map for sample text (avoids O(n²) find calls)
+    const textMap = new Map<string, string>();
+    for (const q of questions) {
+      textMap.set(q.id, q.questionText);
+    }
+
     const scored: ScoredQuestion[] = questions.map((q) =>
       scoreQuestion({
         id: q.id,
@@ -59,18 +68,17 @@ export async function GET(req: NextRequest) {
     }
 
     // Sample mismatches (up to 50)
-    const samples = mismatches.slice(0, 50).map((m) => ({
-      id: m.id,
-      topic: m.topicId,
-      text:
-        questions.find((q) => q.id === m.id)!.questionText.slice(0, 120) +
-        (questions.find((q) => q.id === m.id)!.questionText.length > 120
-          ? '...'
-          : ''),
-      was: m.oldDifficulty,
-      now: m.newDifficulty,
-      score: m.score,
-    }));
+    const samples = mismatches.slice(0, 50).map((m) => {
+      const fullText = textMap.get(m.id) ?? '';
+      return {
+        id: m.id,
+        topic: m.topicId,
+        text: fullText.length > 120 ? fullText.slice(0, 120) + '...' : fullText,
+        was: m.oldDifficulty,
+        now: m.newDifficulty,
+        score: m.score,
+      };
+    });
 
     return NextResponse.json({
       total: scored.length,
