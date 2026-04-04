@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
-import { scoreQuestion, ScoredQuestion } from '@/lib/difficultyScorer';
+import { scoreQuestion } from '@/lib/difficultyScorer';
 
-export const maxDuration = 60;
+export const dynamic = 'force-dynamic';
+
+const PAGE_SIZE = 500;
 
 function authorize(req: NextRequest): boolean {
   const secret = process.env.SEED_SECRET;
@@ -11,40 +13,14 @@ function authorize(req: NextRequest): boolean {
   return searchParams.get('secret') === secret;
 }
 
-// Fetch all questions in pages to avoid Neon connection / memory limits
-const PAGE_SIZE = 3000;
-
-async function fetchAllQuestions(topicFilter?: string) {
-  const allQuestions: Array<{
-    id: string; topicId: string; difficulty: string;
-    questionText: string; topic: { grade: number };
-  }> = [];
-
-  let cursor: string | undefined;
-  while (true) {
-    const batch = await prisma.question.findMany({
-      where: topicFilter ? { topicId: topicFilter } : undefined,
-      select: {
-        id: true,
-        topicId: true,
-        difficulty: true,
-        questionText: true,
-        topic: { select: { grade: true } },
-      },
-      take: PAGE_SIZE,
-      ...(cursor ? { skip: 1, cursor: { id: cursor } } : {}),
-      orderBy: { id: 'asc' },
-    });
-    if (batch.length === 0) break;
-    allQuestions.push(...batch);
-    cursor = batch[batch.length - 1].id;
-    if (batch.length < PAGE_SIZE) break;
-  }
-
-  return allQuestions;
-}
-
-// ── GET: Dry-run report ────────────────────────────────────────────────
+// ── GET: Paginated dry-run / apply ────────────────────────────────────
+//
+// Usage (client loops until done=true):
+//   GET /api/admin/audit-difficulty?secret=xxx&page=0           → dry run
+//   GET /api/admin/audit-difficulty?secret=xxx&page=0&apply=1   → apply fixes
+//
+// Each page fetches PAGE_SIZE questions, scores them, optionally writes
+// fixes, and returns cumulative stats + done/nextPage for the loop.
 
 export async function GET(req: NextRequest) {
   if (!authorize(req)) {
@@ -52,18 +28,33 @@ export async function GET(req: NextRequest) {
   }
 
   const { searchParams } = new URL(req.url);
-  const topicFilter = searchParams.get('topic') || undefined;
+  const page    = parseInt(searchParams.get('page') ?? '0', 10);
+  const apply   = searchParams.get('apply') === '1';
+  const topic   = searchParams.get('topic') || undefined;
 
   try {
-    const questions = await fetchAllQuestions(topicFilter);
+    // Count total questions (only on page 0, client caches it)
+    const total = page === 0
+      ? await prisma.question.count({ where: topic ? { topicId: topic } : undefined })
+      : 0;
 
-    // Build a lookup map for sample text
-    const textMap = new Map<string, string>();
-    for (const q of questions) {
-      textMap.set(q.id, q.questionText);
-    }
+    // Fetch one page of questions
+    const questions = await prisma.question.findMany({
+      where: topic ? { topicId: topic } : undefined,
+      select: {
+        id: true,
+        topicId: true,
+        difficulty: true,
+        questionText: true,
+        topic: { select: { grade: true } },
+      },
+      skip: page * PAGE_SIZE,
+      take: PAGE_SIZE,
+      orderBy: { id: 'asc' },
+    });
 
-    const scored: ScoredQuestion[] = questions.map((q) =>
+    // Score this batch
+    const scored = questions.map((q) =>
       scoreQuestion({
         id: q.id,
         topicId: q.topicId,
@@ -75,24 +66,31 @@ export async function GET(req: NextRequest) {
 
     const mismatches = scored.filter((s) => s.changed);
 
-    // Summary: count transitions
+    // If applying, update mismatches in this batch
+    let updated = 0;
+    if (apply && mismatches.length > 0) {
+      await prisma.$transaction(
+        mismatches.map((m) =>
+          prisma.question.update({
+            where: { id: m.id },
+            data: { difficulty: m.newDifficulty },
+          }),
+        ),
+      );
+      updated = mismatches.length;
+    }
+
+    // Transition summary for this batch
     const summary: Record<string, number> = {};
     for (const m of mismatches) {
       const key = `${m.oldDifficulty}\u2192${m.newDifficulty}`;
       summary[key] = (summary[key] || 0) + 1;
     }
 
-    // By topic
-    const byTopic: Record<string, { total: number; changes: number }> = {};
-    for (const s of scored) {
-      if (!byTopic[s.topicId]) byTopic[s.topicId] = { total: 0, changes: 0 };
-      byTopic[s.topicId].total++;
-      if (s.changed) byTopic[s.topicId].changes++;
-    }
-
-    // Sample mismatches (up to 50)
-    const samples = mismatches.slice(0, 50).map((m) => {
-      const fullText = textMap.get(m.id) ?? '';
+    // Sample mismatches (up to 10 per page, client accumulates)
+    const samples = mismatches.slice(0, 10).map((m) => {
+      const q = questions.find((q) => q.id === m.id);
+      const fullText = q?.questionText ?? '';
       return {
         id: m.id,
         topic: m.topicId,
@@ -103,68 +101,20 @@ export async function GET(req: NextRequest) {
       };
     });
 
+    const done = questions.length < PAGE_SIZE;
+
     return NextResponse.json({
-      total: scored.length,
-      mismatches: mismatches.length,
+      done,
+      nextPage: done ? page : page + 1,
+      pageScored: scored.length,
+      pageMismatches: mismatches.length,
+      pageUpdated: updated,
       summary,
-      byTopic,
       samples,
+      ...(page === 0 ? { total } : {}),
     });
   } catch (err) {
-    console.error('audit-difficulty GET error:', err);
-    return NextResponse.json(
-      { error: `Internal error: ${err instanceof Error ? err.message : String(err)}` },
-      { status: 500 },
-    );
-  }
-}
-
-// ── POST: Apply reclassification ───────────────────────────────────────
-
-const BATCH_SIZE = 200;
-
-export async function POST(req: NextRequest) {
-  if (!authorize(req)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  }
-
-  try {
-    const questions = await fetchAllQuestions();
-
-    const mismatches = questions
-      .map((q) =>
-        scoreQuestion({
-          id: q.id,
-          topicId: q.topicId,
-          difficulty: q.difficulty,
-          questionText: q.questionText,
-          grade: q.topic.grade,
-        }),
-      )
-      .filter((s) => s.changed);
-
-    if (mismatches.length === 0) {
-      return NextResponse.json({ updated: 0 });
-    }
-
-    // Batch update in transactions of BATCH_SIZE
-    let updated = 0;
-    for (let i = 0; i < mismatches.length; i += BATCH_SIZE) {
-      const batch = mismatches.slice(i, i + BATCH_SIZE);
-      await prisma.$transaction(
-        batch.map((m) =>
-          prisma.question.update({
-            where: { id: m.id },
-            data: { difficulty: m.newDifficulty },
-          }),
-        ),
-      );
-      updated += batch.length;
-    }
-
-    return NextResponse.json({ updated });
-  } catch (err) {
-    console.error('audit-difficulty POST error:', err);
+    console.error('audit-difficulty error:', err);
     return NextResponse.json(
       { error: `Internal error: ${err instanceof Error ? err.message : String(err)}` },
       { status: 500 },

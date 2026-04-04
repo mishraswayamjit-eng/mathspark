@@ -49,13 +49,12 @@ export default function SeedPage() {
   const [diffSecret,  setDiffSecret]  = useState('');
   const [diffStatus,  setDiffStatus]  = useState<Status>('idle');
   const [diffMessage, setDiffMessage] = useState('');
-  const [diffReport,  setDiffReport]  = useState<{
-    total: number; mismatches: number;
-    summary: Record<string, number>;
-    byTopic: Record<string, { total: number; changes: number }>;
-    samples: Array<{ id: string; topic: string; text: string; was: string; now: string; score: number }>;
-    updated?: number;
-  } | null>(null);
+  const [diffScored,  setDiffScored]  = useState(0);
+  const [diffTotal,   setDiffTotal]   = useState(0);
+  const [diffFixed,   setDiffFixed]   = useState(0);
+  const [diffMismatches, setDiffMismatches] = useState(0);
+  const [diffSummary, setDiffSummary] = useState<Record<string, number>>({});
+  const [diffSamples, setDiffSamples] = useState<Array<{ id: string; topic: string; text: string; was: string; now: string; score: number }>>([]);
 
   // ── Handlers ─────────────────────────────────────────────────────────────────
   async function runSeed() {
@@ -137,34 +136,69 @@ export default function SeedPage() {
     }
   }
 
-  async function runAuditDifficulty(dryRun: boolean) {
+  async function runAuditDifficulty(apply: boolean) {
     const sec = diffSecret || secret || testSecret || fixSecret;
     if (!sec.trim()) { setDiffMessage('Enter your SEED_SECRET first.'); setDiffStatus('error'); return; }
     setDiffStatus('running');
-    setDiffMessage(dryRun ? 'Scanning all questions...' : 'Reclassifying questions...');
-    setDiffReport(null);
-    try {
-      const method = dryRun ? 'GET' : 'POST';
-      const res  = await fetch(`/api/admin/audit-difficulty?secret=${encodeURIComponent(sec)}`, { method });
-      const text = await res.text();
-      let data;
-      try { data = JSON.parse(text); } catch {
-        setDiffMessage(`Server error: ${text.slice(0, 200)}`);
+    setDiffMessage(apply ? 'Reclassifying questions…' : 'Scanning questions…');
+    setDiffScored(0); setDiffTotal(0); setDiffFixed(0); setDiffMismatches(0);
+    setDiffSummary({}); setDiffSamples([]);
+
+    let page = 0;
+    let totalQuestions = 0;
+    let totalMismatches = 0;
+    let totalFixed = 0;
+    const cumulSummary: Record<string, number> = {};
+    const cumulSamples: typeof diffSamples = [];
+
+    while (true) {
+      try {
+        const url = `/api/admin/audit-difficulty?secret=${encodeURIComponent(sec)}&page=${page}${apply ? '&apply=1' : ''}`;
+        const res  = await fetch(url);
+        const text = await res.text();
+        let data;
+        try { data = JSON.parse(text); } catch {
+          setDiffMessage(`Server error: ${text.slice(0, 200)}`);
+          setDiffStatus('error');
+          return;
+        }
+        if (!res.ok) { setDiffMessage(data.error ?? 'Something went wrong.'); setDiffStatus('error'); return; }
+
+        // Accumulate stats
+        if (data.total) totalQuestions = data.total;
+        totalMismatches += data.pageMismatches;
+        totalFixed += data.pageUpdated ?? 0;
+        for (const [k, v] of Object.entries(data.summary)) {
+          cumulSummary[k] = (cumulSummary[k] || 0) + (v as number);
+        }
+        if (cumulSamples.length < 50) {
+          cumulSamples.push(...(data.samples || []));
+        }
+
+        // Update UI
+        setDiffScored((prev) => prev + data.pageScored);
+        setDiffTotal(totalQuestions);
+        setDiffMismatches(totalMismatches);
+        setDiffFixed(totalFixed);
+        setDiffSummary({ ...cumulSummary });
+        setDiffSamples([...cumulSamples.slice(0, 50)]);
+        setDiffMessage(apply
+          ? `Fixing… ${totalFixed} updated so far`
+          : `Scanning… ${totalMismatches} mismatches found`);
+
+        if (data.done) {
+          setDiffMessage(apply
+            ? `Done! ${totalFixed} questions reclassified out of ${totalQuestions}.`
+            : `Found ${totalMismatches} misclassified out of ${totalQuestions} questions.`);
+          setDiffStatus('done');
+          return;
+        }
+        page = data.nextPage;
+      } catch (err) {
+        setDiffMessage(`Network error: ${err}`);
         setDiffStatus('error');
         return;
       }
-      if (!res.ok) { setDiffMessage(data.error ?? 'Something went wrong.'); setDiffStatus('error'); return; }
-      if (dryRun) {
-        setDiffReport(data);
-        setDiffMessage(`Found ${data.mismatches} misclassified out of ${data.total} questions.`);
-      } else {
-        setDiffReport(null);
-        setDiffMessage(`Done! ${data.updated} questions reclassified.`);
-      }
-      setDiffStatus('done');
-    } catch (err) {
-      setDiffMessage(`Network error: ${err}`);
-      setDiffStatus('error');
     }
   }
 
@@ -519,13 +553,13 @@ export default function SeedPage() {
             {diffMessage && <p className="text-sm text-red-500">{diffMessage}</p>}
             <div className="flex gap-3">
               <button
-                onClick={() => runAuditDifficulty(true)}
+                onClick={() => runAuditDifficulty(false)}
                 className="flex-1 bg-rose-100 hover:bg-rose-200 text-rose-800 font-bold py-3.5 rounded-2xl transition-colors text-sm"
               >
                 Dry Run (preview)
               </button>
               <button
-                onClick={() => runAuditDifficulty(false)}
+                onClick={() => runAuditDifficulty(true)}
                 className="flex-1 bg-rose-500 hover:bg-rose-600 text-white font-bold py-3.5 rounded-2xl transition-colors text-sm"
               >
                 Apply Fix →
@@ -534,70 +568,79 @@ export default function SeedPage() {
           </>
         ) : diffStatus === 'running' ? (
           <>
-            <div className="h-3 bg-rose-200 rounded-full animate-pulse" />
-            <p className="text-xs text-gray-500 text-center">{diffMessage}</p>
+            <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div
+                className="bg-rose-500 h-3 rounded-full transition-[width] duration-300"
+                style={{ width: `${diffTotal > 0 ? Math.round((diffScored / diffTotal) * 100) : 0}%` }}
+              />
+            </div>
+            <div className="flex justify-between text-xs text-gray-500">
+              <span>{diffMessage}</span>
+              <span className="font-semibold">{diffScored.toLocaleString()} / {diffTotal.toLocaleString()}</span>
+            </div>
           </>
         ) : (
           <div className="space-y-3">
+            {/* Summary banner */}
             <div className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-bold ${
-              diffReport ? 'bg-rose-50 text-rose-700' : 'bg-green-50 text-green-700'
+              diffFixed > 0 ? 'bg-green-50 text-green-700' : 'bg-rose-50 text-rose-700'
             }`}>
-              {diffReport ? '👀 Dry Run' : '✅ Applied!'}
+              {diffFixed > 0 ? '✅ Applied!' : '👀 Dry Run'}
               <span className="font-normal">— {diffMessage}</span>
             </div>
 
-            {diffReport && (
-              <>
-                {/* Transition summary */}
-                {Object.keys(diffReport.summary).length > 0 && (
-                  <div className="bg-gray-50 rounded-xl px-3 py-2 text-xs space-y-1">
-                    <p className="font-bold text-gray-700">Transitions</p>
-                    {Object.entries(diffReport.summary).map(([key, cnt]) => (
-                      <p key={key}>{key}: <b>{cnt}</b></p>
-                    ))}
-                  </div>
-                )}
-
-                {/* Topics with changes */}
-                <div className="space-y-1 max-h-48 overflow-y-auto bg-gray-50 rounded-xl px-3 py-2">
-                  <p className="text-xs font-bold text-gray-700 mb-1">By Topic</p>
-                  {Object.entries(diffReport.byTopic)
-                    .filter(([, v]) => v.changes > 0)
-                    .sort(([, a], [, b]) => b.changes - a.changes)
-                    .map(([topic, v]) => (
-                      <div key={topic} className="flex items-center justify-between text-xs py-0.5">
-                        <span className="text-gray-600">{topic}</span>
-                        <span className="font-bold text-rose-600">{v.changes}/{v.total}</span>
-                      </div>
-                    ))}
+            {/* Stats row */}
+            <div className="flex gap-3 text-center">
+              <div className="flex-1 bg-gray-50 rounded-xl px-2 py-2">
+                <p className="text-lg font-extrabold text-gray-800">{diffScored.toLocaleString()}</p>
+                <p className="text-[10px] font-semibold text-gray-500">Scanned</p>
+              </div>
+              <div className="flex-1 bg-rose-50 rounded-xl px-2 py-2">
+                <p className="text-lg font-extrabold text-rose-600">{diffMismatches.toLocaleString()}</p>
+                <p className="text-[10px] font-semibold text-gray-500">Mismatches</p>
+              </div>
+              {diffFixed > 0 && (
+                <div className="flex-1 bg-green-50 rounded-xl px-2 py-2">
+                  <p className="text-lg font-extrabold text-green-600">{diffFixed.toLocaleString()}</p>
+                  <p className="text-[10px] font-semibold text-gray-500">Fixed</p>
                 </div>
+              )}
+            </div>
 
-                {/* Sample mismatches */}
-                {diffReport.samples.length > 0 && (
-                  <div className="space-y-2 max-h-64 overflow-y-auto">
-                    <p className="text-xs font-bold text-gray-700">Sample Mismatches (up to 50)</p>
-                    {diffReport.samples.map((s) => (
-                      <div key={s.id} className="bg-white border border-gray-100 rounded-xl px-3 py-2 text-xs">
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className={`px-1.5 py-0.5 rounded-full font-bold ${
-                            s.was === 'Easy' ? 'bg-green-50 text-green-700' : s.was === 'Medium' ? 'bg-amber-50 text-amber-700' : 'bg-red-50 text-red-700'
-                          }`}>{s.was}</span>
-                          <span>→</span>
-                          <span className={`px-1.5 py-0.5 rounded-full font-bold ${
-                            s.now === 'Easy' ? 'bg-green-50 text-green-700' : s.now === 'Medium' ? 'bg-amber-50 text-amber-700' : 'bg-red-50 text-red-700'
-                          }`}>{s.now}</span>
-                          <span className="text-gray-400 ml-auto">score: {s.score}</span>
-                        </div>
-                        <p className="text-gray-600 leading-snug">{s.text}</p>
-                      </div>
-                    ))}
+            {/* Transition summary */}
+            {Object.keys(diffSummary).length > 0 && (
+              <div className="bg-gray-50 rounded-xl px-3 py-2 text-xs space-y-1">
+                <p className="font-bold text-gray-700">Transitions</p>
+                {Object.entries(diffSummary).map(([key, cnt]) => (
+                  <p key={key}>{key}: <b>{cnt}</b></p>
+                ))}
+              </div>
+            )}
+
+            {/* Sample mismatches */}
+            {diffSamples.length > 0 && (
+              <div className="space-y-2 max-h-64 overflow-y-auto">
+                <p className="text-xs font-bold text-gray-700">Sample Mismatches ({diffSamples.length})</p>
+                {diffSamples.map((s) => (
+                  <div key={s.id} className="bg-white border border-gray-100 rounded-xl px-3 py-2 text-xs">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className={`px-1.5 py-0.5 rounded-full font-bold ${
+                        s.was === 'Easy' ? 'bg-green-50 text-green-700' : s.was === 'Medium' ? 'bg-amber-50 text-amber-700' : 'bg-red-50 text-red-700'
+                      }`}>{s.was}</span>
+                      <span>→</span>
+                      <span className={`px-1.5 py-0.5 rounded-full font-bold ${
+                        s.now === 'Easy' ? 'bg-green-50 text-green-700' : s.now === 'Medium' ? 'bg-amber-50 text-amber-700' : 'bg-red-50 text-red-700'
+                      }`}>{s.now}</span>
+                      <span className="text-gray-400 ml-auto">score: {s.score}</span>
+                    </div>
+                    <p className="text-gray-600 leading-snug">{s.text}</p>
                   </div>
-                )}
-              </>
+                ))}
+              </div>
             )}
 
             <button
-              onClick={() => { setDiffStatus('idle'); setDiffMessage(''); setDiffReport(null); }}
+              onClick={() => { setDiffStatus('idle'); setDiffMessage(''); }}
               className="w-full text-xs text-gray-500 hover:text-gray-600 py-1"
             >
               Run again
