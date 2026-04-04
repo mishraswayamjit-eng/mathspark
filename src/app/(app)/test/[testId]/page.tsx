@@ -371,12 +371,15 @@ export default function TestEnginePage() {
     <div className="min-h-screen bg-white flex flex-col max-w-lg mx-auto animate-fade-in">
       {/* ── Top bar ─────────────────────────────────────────────────────── */}
       <div className="sticky top-0 z-50 bg-white border-b border-gray-100 px-4 py-3 flex items-center gap-3">
-        {/* Back / quit */}
+        {/* Exit test */}
         <button
           onClick={() => setShowQuitModal(true)}
-          className="text-gray-500 text-xl leading-none mr-1 flex-shrink-0"
+          className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-gray-100 hover:bg-gray-200 transition-colors flex-shrink-0"
+          aria-label="Exit test"
         >
-          ←
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="text-gray-600">
+            <path d="M4.5 4.5l9 9M13.5 4.5l-9 9" />
+          </svg>
         </button>
 
         {/* Progress bar */}
@@ -504,9 +507,9 @@ export default function TestEnginePage() {
         ) : (
           <button
             onClick={() => navigateTo(currentNum + 1)}
-            className="min-h-[48px] px-4 rounded-2xl bg-duo-blue border-b-4 border-duo-blue-dark font-extrabold text-white"
+            className="min-h-[48px] px-5 rounded-2xl bg-duo-blue border-b-4 border-duo-blue-dark font-extrabold text-white text-sm"
           >
-            →
+            Next →
           </button>
         )}
       </div>
