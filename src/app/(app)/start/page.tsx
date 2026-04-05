@@ -1,13 +1,16 @@
 'use client';
 
 import { MS_PER_DAY } from '@/lib/timeConstants';
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import QuestionCard from '@/components/QuestionCard';
 import ProgressBar from '@/components/ProgressBar';
 import Sparky from '@/components/Sparky';
 import Confetti from '@/components/Confetti';
 import DuoButton from '@/components/DuoButton';
+import SparkyBubble from '@/components/SparkyBubble';
+import TopicSelectCard from '@/components/TopicSelectCard';
+import { getTopicsForGrade } from '@/data/topicTree';
 import type { Question, AnswerKey, DiagnosticAnswer } from '@/types';
 
 // ── Diagnostic plan — grade-aware ─────────────────────────────────────────────
@@ -19,23 +22,20 @@ interface DiagnosticPlan {
 
 function getDiagnosticPlan(grade: number): DiagnosticPlan[] {
   if (grade === 4) {
+    // Top-5 exam-weight topics, 1 question each
     return [
-      { topicId: 'ch11',    count: 2 },
-      { topicId: 'ch09-10', count: 2 },
-      { topicId: 'ch07-08', count: 2 },
-      { topicId: 'ch06',    count: 2 },
-      { topicId: 'ch01-05', count: 2 },
-      { topicId: 'ch18',    count: 2 },
-      { topicId: 'ch20',    count: 1 },
-      { topicId: 'ch13',    count: 1 },
-      { topicId: 'ch19',    count: 1 },
+      { topicId: 'ch01-05', count: 1 },
+      { topicId: 'ch09-10', count: 1 },
+      { topicId: 'ch07-08', count: 1 },
+      { topicId: 'ch11',    count: 1 },
+      { topicId: 'ch06',    count: 1 },
     ];
   }
-  // All other grades: single grade pool, 15 questions
-  return [{ topicId: `grade${grade}`, count: 15 }];
+  // All other grades: single grade pool, 5 questions
+  return [{ topicId: `grade${grade}`, count: 5 }];
 }
 
-const TOTAL = 15;
+const TOTAL = 5;
 
 const TOPIC_NAMES: Record<string, string> = {
   'ch01-05': 'Number System',
@@ -66,9 +66,21 @@ const GRADE_QUESTION_COUNTS: Record<number, string> = {
   6: '720+', 7: '780+', 8: '850+',   9: '900+',
 };
 
-// Step order: welcome → gradeSelect → sampleQuestion → name → quiz → results → displayName
-type Step = 'welcome' | 'gradeSelect' | 'sampleQuestion' | 'name' | 'quiz' | 'results' | 'displayName';
-type Diff  = 'Easy' | 'Medium' | 'Hard';
+// ── Step types ────────────────────────────────────────────────────────────────
+
+type Step =
+  | 'welcome' | 'gradeSelect' | 'goal' | 'valueProp1'
+  | 'confidentTopics' | 'focusTopics' | 'dailyGoal' | 'practiceTime'
+  | 'valueProp2' | 'name' | 'pathReady' | 'quiz' | 'results' | 'displayName';
+
+type Diff = 'Easy' | 'Medium' | 'Hard';
+
+// Progress percentages for each step
+const STEP_PROGRESS: Record<Step, number> = {
+  welcome: 0, gradeSelect: 8, goal: 16, valueProp1: 24,
+  confidentTopics: 36, focusTopics: 45, dailyGoal: 55, practiceTime: 65,
+  valueProp2: 75, name: 82, pathReady: 90, quiz: 92, results: 100, displayName: 100,
+};
 
 function nextDiff(d: Diff, up: boolean): Diff {
   if (up)  return d === 'Easy' ? 'Medium' : 'Hard';
@@ -93,9 +105,80 @@ function useCountUp(target: number, active: boolean): number {
   return value;
 }
 
+// ── Sparky witty responses ────────────────────────────────────────────────────
+
+const GOAL_RESPONSES: Record<string, string> = {
+  IPM:    'IPM warrior mode: activated! 💪',
+  School: 'Ace every test — let\'s do this! 📝',
+  Fun:    'Math is the best kind of fun! 🎲',
+};
+
+const DAILY_GOAL_RESPONSES: Record<number, string> = {
+  10: 'That\'s ~50 questions a week! 🔥',
+  15: 'That\'s ~75 questions a week! ⚡',
+  20: 'That\'s ~100 questions a week — perfect! 🎯',
+  30: 'That\'s ~150 questions a week — champion! 🏆',
+};
+
+const PRACTICE_TIME_RESPONSES: Record<string, string> = {
+  Morning:   'Early bird catches the math worm! 🌅',
+  Afternoon: 'The best time to sharpen your brain! ☀️',
+  Evening:   'Wind down with some puzzles! 🌙',
+};
+
+function getConfidentResponse(count: number): string {
+  if (count <= 1) return 'No worries, we\'ll find your strengths! 💡';
+  if (count <= 3) return 'Nice! You\'ve got a solid base! 💪';
+  return 'Wow, you\'re already a math whiz! 🌟';
+}
+
+// ── Onboarding progress bar ─────────────────────────────────────────────────
+
+function OnboardingProgress({ step }: { step: Step }) {
+  const pct = STEP_PROGRESS[step];
+  return (
+    <div className="fixed top-0 left-0 right-0 z-40 px-4 pt-3 pb-1 bg-transparent">
+      <div className="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+        <div
+          className="bg-duo-green h-2 rounded-full transition-[width] duration-700"
+          style={{ width: `${pct}%` }}
+        />
+      </div>
+    </div>
+  );
+}
+
+// ── Page wrapper with consistent dark bg ──────────────────────────────────────
+
+function OnboardingShell({ children, step, variant = 'dark' }: {
+  children: React.ReactNode;
+  step: Step;
+  variant?: 'dark' | 'white' | 'gradient';
+}) {
+  const bg = variant === 'gradient'
+    ? 'bg-gradient-to-b from-duo-dark to-[#1a7a20]'
+    : variant === 'white'
+      ? 'bg-white'
+      : 'bg-duo-dark';
+
+  return (
+    <div className={`min-h-screen flex flex-col ${bg}`}>
+      <OnboardingProgress step={step} />
+      <div className="flex-1 flex flex-col items-center justify-center px-6 pt-10 pb-8">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// Page component
+// ══════════════════════════════════════════════════════════════════════════════
+
 export default function StartPage() {
   const router = useRouter();
 
+  // ── Navigation state ──────────────────────────────────────────────────────
   const [step,          setStep]         = useState<Step>('welcome');
   const [selectedGrade, setSelectedGrade] = useState<number | null>(null);
   const [name,          setName]         = useState('');
@@ -110,16 +193,18 @@ export default function StartPage() {
   const [trialDaysLeft, setTrialDaysLeft] = useState<number | null>(null);
   const [trialExpiry,   setTrialExpiry]  = useState<string | null>(null);
 
-  // Sample question (shown between grade select and name)
-  const [sampleQ, setSampleQ] = useState<Question | null>(null);
-  const [sampleAnswered, setSampleAnswered] = useState(false);
-  const [sampleSelected, setSampleSelected] = useState<AnswerKey | null>(null);
-  const [sampleLoading, setSampleLoading] = useState(false);
+  // ── Personalization state (collected before account creation) ──────────────
+  const [goal,               setGoal]              = useState<string>('');
+  const [confidentTopicIds,  setConfidentTopicIds] = useState<string[]>([]);
+  const [focusTopicIds,      setFocusTopicIds]     = useState<string[]>([]);
+  const [dailyGoal,          setDailyGoal]         = useState<number>(20);
+  const [practiceTime,       setPracticeTime]      = useState<string>('');
+  const [sparkyMessage,      setSparkyMessage]     = useState<string>('');
 
-  // Active diagnostic plan (set when grade confirmed in gradeSelect step)
+  // ── Diagnostic plan (set when grade confirmed) ─────────────────────────────
   const [activePlan, setActivePlan] = useState<DiagnosticPlan[]>([]);
 
-  // Quiz state
+  // ── Quiz state ─────────────────────────────────────────────────────────────
   const [question,     setQuestion]     = useState<Question | null>(null);
   const [answered,     setAnswered]     = useState(false);
   const [selected,     setSelected]     = useState<AnswerKey | null>(null);
@@ -132,6 +217,13 @@ export default function StartPage() {
 
   const totalCorrect = answers.filter((a) => a.isCorrect).length;
   const countUp      = useCountUp(totalCorrect, step === 'results');
+  const xpCountUp    = useCountUp(50, step === 'results');
+
+  // Grade-specific topics for topic selection steps
+  const gradeTopics = useMemo(
+    () => (selectedGrade ? getTopicsForGrade(selectedGrade) : []),
+    [selectedGrade],
+  );
 
   // ── Fetch one diagnostic question ─────────────────────────────────────────
   const fetchQuestion = useCallback(async (topicId: string, diff: Diff, seen: string[]) => {
@@ -153,7 +245,7 @@ export default function StartPage() {
   }, []);
 
   // ── Create student + start quiz ───────────────────────────────────────────
-  async function handleStart() {
+  async function handleCreateStudent() {
     if (!name.trim() || !selectedGrade) return;
     setLoading(true);
     setError('');
@@ -162,9 +254,14 @@ export default function StartPage() {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
-          name:        name.trim(),
-          grade:       selectedGrade,
-          parentEmail: parentEmail.trim() || undefined,
+          name:                 name.trim(),
+          grade:                selectedGrade,
+          parentEmail:          parentEmail.trim() || undefined,
+          examName:             goal || undefined,
+          focusTopics:          focusTopicIds.length > 0 ? focusTopicIds : undefined,
+          confidentTopics:      confidentTopicIds.length > 0 ? confidentTopicIds : undefined,
+          dailyGoalMins:        dailyGoal,
+          preferredPracticeTime: practiceTime || undefined,
         }),
       });
       const student = await res.json();
@@ -192,15 +289,22 @@ export default function StartPage() {
         }));
       }
 
-      const plan = getDiagnosticPlan(selectedGrade);
-      setActivePlan(plan);
-      setStep('quiz');
-      await fetchQuestion(plan[0].topicId, 'Medium', []);
+      // Move to path ready celebration
+      setStep('pathReady');
     } catch {
       setError('Something went wrong. Please try again!');
     } finally {
       setLoading(false);
     }
+  }
+
+  // ── Start the diagnostic quiz after path ready ─────────────────────────────
+  async function startQuiz() {
+    if (!selectedGrade) return;
+    const plan = getDiagnosticPlan(selectedGrade);
+    setActivePlan(plan);
+    setStep('quiz');
+    await fetchQuestion(plan[0].topicId, 'Medium', []);
   }
 
   // ── Handle answer ─────────────────────────────────────────────────────────
@@ -274,41 +378,51 @@ export default function StartPage() {
     });
   }
 
-  // ── Screen 1: Welcome ─────────────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 1: Welcome
+  // ═══════════════════════════════════════════════════════════════════════════
+
   if (step === 'welcome') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center gap-8 bg-gradient-to-b from-duo-dark to-[#1a7a20]">
-        <div className="text-[96px] leading-none select-none" role="img" aria-label="sparkles">✨</div>
-        <div className="space-y-3">
-          <h1 className="text-3xl font-extrabold text-white leading-tight">Welcome to MathSpark!</h1>
-          <p className="text-white/80 text-lg leading-relaxed">
-            Let&#39;s find out what you already know —<br />it&#39;ll be quick and fun!
-          </p>
+      <OnboardingShell step="welcome" variant="gradient">
+        <div className="flex flex-col items-center text-center gap-8 animate-fade-in">
+          <div className="animate-sparky-dance">
+            <Sparky mood="celebrating" size={120} />
+          </div>
+          <div className="space-y-3">
+            <h1 className="text-3xl font-extrabold text-white leading-tight">
+              Let&apos;s build your math superpowers!
+            </h1>
+            <p className="text-white/80 text-lg leading-relaxed">
+              Quick setup — takes about 2 minutes
+            </p>
+          </div>
+          <div className="w-full max-w-sm space-y-3">
+            <DuoButton variant="green" fullWidth onClick={() => setStep('gradeSelect')}>
+              Let&apos;s Go!
+            </DuoButton>
+          </div>
         </div>
-        <div className="w-full space-y-3">
-          <DuoButton variant="blue" fullWidth onClick={() => setStep('gradeSelect')}>
-            Let&#39;s Go! 🚀
-          </DuoButton>
-          <p className="text-white/70 text-sm font-medium">Takes about 5 minutes</p>
-        </div>
-      </div>
+      </OnboardingShell>
     );
   }
 
-  // ── Screen 2: Grade Selection (now FIRST, before name) ────────────────────
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 2: Grade Select
+  // ═══════════════════════════════════════════════════════════════════════════
+
   if (step === 'gradeSelect') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-duo-dark">
-        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5">
+      <OnboardingShell step="gradeSelect">
+        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5 animate-fade-in">
           <div className="text-center space-y-1">
-            <div className="text-5xl">🎓</div>
+            <div className="text-5xl" aria-hidden="true">🎓</div>
             <h2 className="text-2xl font-extrabold text-gray-800">Which grade are you in?</h2>
             <p className="text-gray-500 text-sm font-medium">
-              We&apos;ll personalise everything — topics, difficulty, and mock tests
+              We&apos;ll personalise everything for you
             </p>
           </div>
 
-          {/* 2×4 grade grid */}
           <div className="grid grid-cols-4 gap-2">
             {[2, 3, 4, 5, 6, 7, 8, 9].map((g) => (
               <button
@@ -320,7 +434,7 @@ export default function StartPage() {
                     : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-duo-blue'
                 }`}
               >
-                <span className="text-xl leading-none">{GRADE_EMOJI[g]}</span>
+                <span className="text-xl leading-none" aria-hidden="true">{GRADE_EMOJI[g]}</span>
                 <span className="text-xs font-extrabold mt-1">Gr {g}</span>
                 <span className="text-[10px] font-semibold opacity-60 mt-0.5">
                   {GRADE_QUESTION_COUNTS[g]}
@@ -332,96 +446,360 @@ export default function StartPage() {
           <DuoButton
             variant="green"
             fullWidth
-            onClick={() => {
-              if (!selectedGrade) return;
-              // Fetch a sample question and move to sampleQuestion step
-              setSampleLoading(true);
-              setStep('sampleQuestion');
-              const plan = getDiagnosticPlan(selectedGrade);
-              fetch(`/api/diagnostic?topicId=${plan[0].topicId}&difficulty=Easy&exclude=`)
-                .then((r) => { if (!r.ok) throw new Error('fetch'); return r.json(); })
-                .then((q: Question) => { setSampleQ(q); setSampleLoading(false); })
-                .catch(() => {
-                  // Fallback: skip sample question on failure
-                  setSampleLoading(false);
-                  setStep('name');
-                });
-            }}
+            onClick={() => { if (selectedGrade) setStep('goal'); }}
             disabled={!selectedGrade}
           >
-            Next →
+            Next
           </DuoButton>
         </div>
-      </div>
+      </OnboardingShell>
     );
   }
 
-  // ── Screen 2.5: Sample Question (quick taste before name entry) ────────────
-  if (step === 'sampleQuestion') {
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 3: Goal — "What are you preparing for?"
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  if (step === 'goal') {
+    const goals = [
+      { label: 'IPM Exam',     value: 'IPM',    emoji: '🎯' },
+      { label: 'School Maths', value: 'School', emoji: '📚' },
+      { label: 'Just for Fun', value: 'Fun',    emoji: '🎲' },
+    ];
+
     return (
-      <div className="min-h-screen flex flex-col px-4 py-6 gap-4 bg-white animate-fade-in">
-        <div className="space-y-2">
-          <p className="text-sm font-extrabold text-gray-500 text-center">
-            <span aria-hidden="true">🎯 </span>Try one question!
-          </p>
-          <p className="text-xs text-gray-400 text-center font-medium">
-            Just a quick taste of what&apos;s inside
-          </p>
-        </div>
-
-        {sampleLoading || !sampleQ ? (
-          <div className="flex-1 flex flex-col items-center justify-center gap-4">
-            <div className="animate-sparky-bounce">
-              <Sparky mood="thinking" size={100} />
-            </div>
-            <p className="text-gray-500 font-semibold">Loading question…</p>
+      <OnboardingShell step="goal">
+        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5 animate-fade-in">
+          <div className="text-center space-y-2">
+            <h2 className="text-2xl font-extrabold text-gray-800">What are you preparing for?</h2>
           </div>
-        ) : (
-          <QuestionCard
-            question={sampleQ}
-            answered={sampleAnswered}
-            selected={sampleSelected}
-            onAnswer={(key, isCorrect) => {
-              if (sampleAnswered) return;
-              setSampleAnswered(true);
-              setSampleSelected(key);
-              // Auto-advance to name step after feedback
-              setTimeout(() => setStep('name'), 1500);
-            }}
-          />
-        )}
 
-        <button
-          onClick={() => setStep('name')}
-          className="text-center text-gray-500 text-sm font-semibold py-2 hover:text-gray-600 transition-colors"
-          style={{ minHeight: 0 }}
-        >
-          Skip →
-        </button>
-      </div>
+          {sparkyMessage && (
+            <div className="flex justify-center">
+              <SparkyBubble message={sparkyMessage} mood="encouraging" />
+            </div>
+          )}
+
+          <div className="space-y-3">
+            {goals.map((g) => (
+              <button
+                key={g.value}
+                onClick={() => {
+                  setGoal(g.value);
+                  setSparkyMessage(GOAL_RESPONSES[g.value]);
+                  setTimeout(() => { setSparkyMessage(''); setStep('valueProp1'); }, 1000);
+                }}
+                className={`flex items-center gap-3 w-full rounded-2xl px-5 py-4 border-2 transition-[colors,border-color,transform] active:scale-95 min-h-0 ${
+                  goal === g.value
+                    ? 'bg-duo-blue/10 border-duo-blue text-duo-blue-dark'
+                    : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                <span className="text-2xl" aria-hidden="true">{g.emoji}</span>
+                <span className="font-bold text-base">{g.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </OnboardingShell>
     );
   }
 
-  // ── Screen 3: Name + optional parent email ────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 4: Value Prop Interstitial 1
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  if (step === 'valueProp1') {
+    return (
+      <OnboardingShell step="valueProp1" variant="gradient">
+        <div className="flex flex-col items-center text-center gap-8 animate-fade-in max-w-sm">
+          <div className="animate-sparky-wave">
+            <Sparky mood="encouraging" size={100} />
+          </div>
+          <div className="space-y-3">
+            <h2 className="text-2xl font-extrabold text-white leading-tight">
+              10,000+ questions from real exams
+            </h2>
+            <p className="text-white/80 text-base leading-relaxed">
+              Practice with actual IPM papers from 2016–2025, topic-wise drills, and smart revision
+            </p>
+          </div>
+          <DuoButton variant="white" fullWidth onClick={() => setStep('confidentTopics')}>
+            Continue
+          </DuoButton>
+        </div>
+      </OnboardingShell>
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 5: Confident Topics — "Which topics feel easy?"
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  if (step === 'confidentTopics') {
+    const toggleConfident = (id: string) => {
+      setConfidentTopicIds((prev) =>
+        prev.includes(id) ? prev.filter((t) => t !== id) : [...prev, id],
+      );
+    };
+
+    return (
+      <OnboardingShell step="confidentTopics">
+        <div className="bg-white rounded-3xl p-6 w-full max-w-sm shadow-2xl space-y-4 animate-fade-in max-h-[85vh] overflow-y-auto">
+          <div className="text-center space-y-1">
+            <h2 className="text-xl font-extrabold text-gray-800">Which topics feel easy?</h2>
+            <p className="text-gray-500 text-sm font-medium">Tap all that apply</p>
+          </div>
+
+          <SparkyBubble
+            message={getConfidentResponse(confidentTopicIds.length)}
+            mood="happy"
+            size={40}
+          />
+
+          <div className="space-y-2">
+            {gradeTopics.map((t) => (
+              <TopicSelectCard
+                key={t.id}
+                emoji={t.emoji}
+                name={t.name}
+                selected={confidentTopicIds.includes(t.id)}
+                onToggle={() => toggleConfident(t.id)}
+              />
+            ))}
+          </div>
+
+          <div className="space-y-2 pt-2">
+            <DuoButton variant="green" fullWidth onClick={() => setStep('focusTopics')}>
+              Next
+            </DuoButton>
+            <button
+              onClick={() => { setConfidentTopicIds([]); setStep('focusTopics'); }}
+              className="w-full text-center text-gray-500 text-sm font-semibold py-2 hover:text-gray-600 transition-colors"
+              style={{ minHeight: 0 }}
+            >
+              Skip
+            </button>
+          </div>
+        </div>
+      </OnboardingShell>
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 6: Focus Topics — "Which topics do you want to improve?"
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  if (step === 'focusTopics') {
+    const toggleFocus = (id: string) => {
+      setFocusTopicIds((prev) =>
+        prev.includes(id) ? prev.filter((t) => t !== id) : [...prev, id],
+      );
+    };
+
+    return (
+      <OnboardingShell step="focusTopics">
+        <div className="bg-white rounded-3xl p-6 w-full max-w-sm shadow-2xl space-y-4 animate-fade-in max-h-[85vh] overflow-y-auto">
+          <div className="text-center space-y-1">
+            <h2 className="text-xl font-extrabold text-gray-800">Which topics do you want to get better at?</h2>
+            <p className="text-gray-500 text-sm font-medium">We&apos;ll focus extra practice here</p>
+          </div>
+
+          {focusTopicIds.length > 0 && (
+            <SparkyBubble
+              message="Great picks! We'll focus extra practice here. 🎯"
+              mood="encouraging"
+              size={40}
+            />
+          )}
+
+          <div className="space-y-2">
+            {gradeTopics.map((t) => (
+              <TopicSelectCard
+                key={t.id}
+                emoji={t.emoji}
+                name={t.name}
+                selected={focusTopicIds.includes(t.id)}
+                onToggle={() => toggleFocus(t.id)}
+                muted={confidentTopicIds.includes(t.id)}
+              />
+            ))}
+          </div>
+
+          <div className="space-y-2 pt-2">
+            <DuoButton variant="green" fullWidth onClick={() => setStep('dailyGoal')}>
+              Next
+            </DuoButton>
+            <button
+              onClick={() => { setFocusTopicIds([]); setStep('dailyGoal'); }}
+              className="w-full text-center text-gray-500 text-sm font-semibold py-2 hover:text-gray-600 transition-colors"
+              style={{ minHeight: 0 }}
+            >
+              Skip
+            </button>
+          </div>
+        </div>
+      </OnboardingShell>
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 7: Daily Goal
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  if (step === 'dailyGoal') {
+    const goals = [
+      { mins: 10, label: '10 min', desc: 'Quick burst',    emoji: '⚡' },
+      { mins: 15, label: '15 min', desc: 'Steady pace',    emoji: '🔥' },
+      { mins: 20, label: '20 min', desc: 'Great habit',    emoji: '🎯', recommended: true },
+      { mins: 30, label: '30 min', desc: 'Power session',  emoji: '🏆' },
+    ];
+
+    return (
+      <OnboardingShell step="dailyGoal">
+        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5 animate-fade-in">
+          <div className="text-center space-y-1">
+            <h2 className="text-xl font-extrabold text-gray-800">How much practice each day?</h2>
+          </div>
+
+          {sparkyMessage && (
+            <div className="flex justify-center">
+              <SparkyBubble message={sparkyMessage} mood="encouraging" />
+            </div>
+          )}
+
+          <div className="grid grid-cols-2 gap-3">
+            {goals.map((g) => (
+              <button
+                key={g.mins}
+                onClick={() => {
+                  setDailyGoal(g.mins);
+                  setSparkyMessage(DAILY_GOAL_RESPONSES[g.mins]);
+                  setTimeout(() => { setSparkyMessage(''); setStep('practiceTime'); }, 1000);
+                }}
+                className={`relative flex flex-col items-center gap-1 rounded-2xl px-4 py-4 border-2 transition-[colors,border-color,transform] active:scale-95 min-h-0 ${
+                  dailyGoal === g.mins && sparkyMessage
+                    ? 'bg-duo-green/10 border-duo-green text-duo-green-dark'
+                    : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                {g.recommended && (
+                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-duo-orange text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wide">
+                    Best
+                  </span>
+                )}
+                <span className="text-2xl" aria-hidden="true">{g.emoji}</span>
+                <span className="font-extrabold text-base">{g.label}</span>
+                <span className="text-xs font-medium text-gray-500">{g.desc}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </OnboardingShell>
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 8: Practice Time
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  if (step === 'practiceTime') {
+    const times = [
+      { label: 'Morning',   desc: 'Before school', emoji: '🌅' },
+      { label: 'Afternoon', desc: 'After school',  emoji: '☀️' },
+      { label: 'Evening',   desc: 'Before bed',    emoji: '🌙' },
+    ];
+
+    return (
+      <OnboardingShell step="practiceTime">
+        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5 animate-fade-in">
+          <div className="text-center space-y-1">
+            <h2 className="text-xl font-extrabold text-gray-800">When do you like to practice?</h2>
+          </div>
+
+          {sparkyMessage && (
+            <div className="flex justify-center">
+              <SparkyBubble message={sparkyMessage} mood="happy" />
+            </div>
+          )}
+
+          <div className="space-y-3">
+            {times.map((t) => (
+              <button
+                key={t.label}
+                onClick={() => {
+                  setPracticeTime(t.label);
+                  setSparkyMessage(PRACTICE_TIME_RESPONSES[t.label]);
+                  setTimeout(() => { setSparkyMessage(''); setStep('valueProp2'); }, 1000);
+                }}
+                className={`flex items-center gap-3 w-full rounded-2xl px-5 py-4 border-2 transition-[colors,border-color,transform] active:scale-95 min-h-0 ${
+                  practiceTime === t.label && sparkyMessage
+                    ? 'bg-duo-blue/10 border-duo-blue text-duo-blue-dark'
+                    : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                <span className="text-2xl" aria-hidden="true">{t.emoji}</span>
+                <div className="text-left">
+                  <span className="font-bold text-base block">{t.label}</span>
+                  <span className="text-xs text-gray-500 font-medium">{t.desc}</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </OnboardingShell>
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 9: Value Prop Interstitial 2
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  if (step === 'valueProp2') {
+    return (
+      <OnboardingShell step="valueProp2" variant="gradient">
+        <div className="flex flex-col items-center text-center gap-8 animate-fade-in max-w-sm">
+          <div className="animate-sparky-bounce">
+            <Sparky mood="thinking" size={100} />
+          </div>
+          <div className="space-y-3">
+            <h2 className="text-2xl font-extrabold text-white leading-tight">
+              Practice like the real exam
+            </h2>
+            <p className="text-white/80 text-base leading-relaxed">
+              Timed mock tests, topic-wise drills, and smart revision — all personalised for you
+            </p>
+          </div>
+          <DuoButton variant="white" fullWidth onClick={() => setStep('name')}>
+            Continue
+          </DuoButton>
+        </div>
+      </OnboardingShell>
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 10: Name + Create Account
+  // ═══════════════════════════════════════════════════════════════════════════
+
   if (step === 'name') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-duo-dark">
-        <div className="relative bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5">
+      <OnboardingShell step="name">
+        <div className="relative bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5 animate-fade-in">
           <div className="absolute -top-8 right-4 animate-sparky-wave">
             <Sparky mood="encouraging" size={64} />
           </div>
           <h2 className="text-2xl font-extrabold text-gray-800 text-center pt-4">
-            What should I call you? 😊
+            What should I call you?
           </h2>
 
-          {/* Name input */}
           <div>
             <input
               type="text"
               autoFocus
               value={name}
               onChange={(e) => { setName(e.target.value); setError(''); }}
-              onKeyDown={(e) => e.key === 'Enter' && name.trim() && handleStart()}
+              onKeyDown={(e) => e.key === 'Enter' && name.trim() && handleCreateStudent()}
               placeholder="Your first name"
               aria-label="Your first name"
               maxLength={30}
@@ -429,42 +807,89 @@ export default function StartPage() {
             />
           </div>
 
-          {/* Parent email (optional) */}
-          <div className="space-y-1">
-            <label htmlFor="parent-email" className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">
-              Parent&apos;s email
-            </label>
-            <input
-              id="parent-email"
-              type="email"
-              value={parentEmail}
-              onChange={(e) => setParentEmail(e.target.value)}
-              placeholder="parent@email.com"
-              className="w-full border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-duo-blue transition-colors"
-            />
-            <p className="text-xs text-gray-500 font-medium">For weekly progress reports 📧</p>
-          </div>
+          <details className="group">
+            <summary className="text-xs font-extrabold text-gray-500 uppercase tracking-wide cursor-pointer select-none list-none flex items-center gap-1">
+              <span className="text-gray-400 group-open:rotate-90 transition-transform">▶</span>
+              Add parent email for reports
+            </summary>
+            <div className="mt-2 space-y-1">
+              <input
+                type="email"
+                value={parentEmail}
+                onChange={(e) => setParentEmail(e.target.value)}
+                placeholder="parent@email.com"
+                aria-label="Parent email"
+                className="w-full border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-duo-blue transition-colors"
+              />
+              <p className="text-xs text-gray-500 font-medium">For weekly progress reports</p>
+            </div>
+          </details>
 
           {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
 
-          <DuoButton variant="green" fullWidth onClick={handleStart} loading={loading} disabled={!name.trim()}>
-            Start Quiz →
+          <DuoButton variant="green" fullWidth onClick={handleCreateStudent} loading={loading} disabled={!name.trim()}>
+            Continue
           </DuoButton>
-
-          <button
-            onClick={handleStart}
-            disabled={loading || !name.trim()}
-            style={{ minHeight: 0 }}
-            className="w-full text-center text-gray-500 text-sm font-semibold py-1 hover:text-gray-600 transition-colors disabled:opacity-40"
-          >
-            Skip email →
-          </button>
         </div>
-      </div>
+      </OnboardingShell>
     );
   }
 
-  // ── Screen 4: Diagnostic Quiz ─────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 11: Path Ready — Celebration
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  if (step === 'pathReady') {
+    // Show top focus topics (or first 3 grade topics) as path preview
+    const pathTopics = focusTopicIds.length > 0
+      ? gradeTopics.filter((t) => focusTopicIds.includes(t.id)).slice(0, 3)
+      : gradeTopics.slice(0, 3);
+
+    return (
+      <OnboardingShell step="pathReady" variant="white">
+        <div className="flex flex-col items-center text-center gap-6 animate-fade-in max-w-sm">
+          <Confetti variant="full" onDone={() => {}} />
+
+          <div className="animate-sparky-dance">
+            <Sparky mood="celebrating" size={160} />
+          </div>
+
+          <div className="space-y-2">
+            <h2 className="text-2xl font-extrabold text-gray-800">
+              Your learning path is ready!
+            </h2>
+            <p className="text-gray-500 text-sm font-medium">
+              Here&apos;s where we&apos;ll start
+            </p>
+          </div>
+
+          {pathTopics.length > 0 && (
+            <div className="w-full space-y-2">
+              {pathTopics.map((t, i) => (
+                <div
+                  key={t.id}
+                  className="flex items-center gap-3 bg-gray-50 rounded-2xl px-4 py-3 border-2 border-gray-100"
+                >
+                  <span className="text-lg font-extrabold text-duo-green w-7">{i + 1}</span>
+                  <span className="text-xl" aria-hidden="true">{t.emoji}</span>
+                  <span className="font-bold text-sm text-gray-700">{t.name}</span>
+                </div>
+              ))}
+            </div>
+          )}
+
+          <DuoButton variant="green" fullWidth onClick={startQuiz}>
+            Let&apos;s see how you do!
+          </DuoButton>
+        </div>
+      </OnboardingShell>
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 12: Diagnostic Quiz (5 questions)
+  // ═══════════════════════════════════════════════════════════════════════════
+
   if (step === 'quiz') {
     const qNum = answers.length + 1;
     const pct  = (answers.length / TOTAL) * 100;
@@ -474,7 +899,7 @@ export default function StartPage() {
         <div className="space-y-3">
           <div className="flex items-center justify-between text-sm text-gray-500 font-semibold">
             <span>Question {qNum} of {TOTAL}</span>
-            <span>Quick check-in 🔍</span>
+            <span>Quick check-in</span>
           </div>
           <ProgressBar value={pct} height="h-4" />
         </div>
@@ -502,7 +927,10 @@ export default function StartPage() {
     );
   }
 
-  // ── Screen 5: Display name + avatar ──────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 14: Display Name + Avatar
+  // ═══════════════════════════════════════════════════════════════════════════
+
   if (step === 'displayName') {
     const AVATAR_COLORS = [
       '#FF9600','#58CC02','#1CB0F6','#FF4B4B',
@@ -525,8 +953,8 @@ export default function StartPage() {
     };
 
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-duo-dark">
-        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5">
+      <OnboardingShell step="displayName">
+        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5 animate-fade-in">
           <div className="text-center">
             <div
               className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white mx-auto mb-3 border-4 border-white/30 shadow-lg"
@@ -534,7 +962,7 @@ export default function StartPage() {
             >
               {initial}
             </div>
-            <h2 className="text-2xl font-extrabold text-gray-800">Join the League! 🏆</h2>
+            <h2 className="text-2xl font-extrabold text-gray-800">Join the League!</h2>
             <p className="text-gray-500 text-sm font-medium mt-1">
               Pick a leaderboard name and colour
             </p>
@@ -578,21 +1006,24 @@ export default function StartPage() {
           </div>
 
           <DuoButton variant="green" fullWidth onClick={handleJoinLeague} loading={loading}>
-            Let&apos;s go! 🚀
+            Let&apos;s go!
           </DuoButton>
           <button
             onClick={() => router.push(pendingRoute)}
             style={{ minHeight: 0 }}
             className="w-full text-center text-gray-500 text-sm font-semibold py-1 hover:text-gray-600 transition-colors"
           >
-            Skip for now →
+            Skip for now
           </button>
         </div>
-      </div>
+      </OnboardingShell>
     );
   }
 
-  // ── Screen 6: Results ─────────────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 13: Results + Reward
+  // ═══════════════════════════════════════════════════════════════════════════
+
   const results  = computeResults();
   const strong   = results.filter((r) => r.status === 'Strong');
   const learning = results.filter((r) => r.status === 'Learning');
@@ -608,7 +1039,7 @@ export default function StartPage() {
           <Sparky mood="celebrating" size={120} />
         </div>
         <h2 className="text-2xl font-extrabold text-gray-800">
-          Wow {name}, you already know so much! 🎉
+          Wow {name}, you already know so much!
         </h2>
         <div className="inline-flex items-baseline gap-2 bg-[#FFF9E6] border-2 border-duo-gold rounded-2xl px-6 py-3">
           <span className="text-4xl font-extrabold text-duo-dark tabular-nums">{countUp}</span>
@@ -616,21 +1047,28 @@ export default function StartPage() {
         </div>
       </div>
 
+      {/* XP Reward Banner */}
+      <div className="bg-gradient-to-r from-duo-gold/20 to-duo-orange/20 border-2 border-duo-gold rounded-2xl px-4 py-3 text-center">
+        <p className="font-extrabold text-amber-800 text-lg">
+          <span aria-hidden="true">⭐ </span>+{xpCountUp} XP Welcome Bonus!
+        </p>
+      </div>
+
       {/* Trial banner */}
       {trialDaysLeft !== null && trialDaysLeft > 0 && (
         <div className="bg-amber-50 border-2 border-duo-orange rounded-2xl px-4 py-3 text-center">
-          <p className="font-extrabold text-amber-800 text-base">🎉 7-Day Pro Trial Activated!</p>
+          <p className="font-extrabold text-amber-800 text-base">7-Day Pro Trial Activated!</p>
           <p className="text-amber-600 text-xs font-medium mt-0.5">
             Expires on {trialExpiry} · {trialDaysLeft} days left
           </p>
         </div>
       )}
 
-      {/* ✅ Strong */}
+      {/* Strong */}
       {strong.length > 0 && (
         <div>
           <h3 className="text-sm font-extrabold text-duo-green-dark uppercase tracking-wide mb-2">
-            ✅ You nailed it!
+            <span aria-hidden="true">✅ </span>You nailed it!
           </h3>
           <div className="space-y-2">
             {strong.map((r) => (
@@ -643,11 +1081,11 @@ export default function StartPage() {
         </div>
       )}
 
-      {/* 🟡 Learning */}
+      {/* Learning */}
       {learning.length > 0 && (
         <div>
           <h3 className="text-sm font-extrabold text-duo-orange-dark uppercase tracking-wide mb-2">
-            🟡 Getting there!
+            <span aria-hidden="true">🟡 </span>Getting there!
           </h3>
           <div className="space-y-2">
             {learning.map((r) => (
@@ -660,11 +1098,11 @@ export default function StartPage() {
         </div>
       )}
 
-      {/* ⬜ Not Yet */}
+      {/* Not Yet */}
       {notYet.length > 0 && (
         <div>
           <h3 className="text-sm font-extrabold text-gray-500 uppercase tracking-wide mb-2">
-            ⬜ Let&#39;s explore!
+            <span aria-hidden="true">⬜ </span>Let&#39;s explore!
           </h3>
           <div className="space-y-2">
             {notYet.map((r) => (
@@ -681,10 +1119,10 @@ export default function StartPage() {
 
       <div className="space-y-3">
         <DuoButton variant="green" fullWidth onClick={() => { setPendingRoute('/home'); setStep('displayName'); }}>
-          Start Learning 📚
+          Start Learning
         </DuoButton>
         <DuoButton variant="blue" fullWidth onClick={() => { setPendingRoute('/test'); setStep('displayName'); }}>
-          Take a Mock Test 📝
+          Take a Mock Test
         </DuoButton>
       </div>
     </div>

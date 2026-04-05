@@ -17,7 +17,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Too many requests. Try again later.' }, { status: 429 });
     }
 
-    const { name, grade, parentEmail } = await req.json();
+    const { name, grade, parentEmail, examName, focusTopics, confidentTopics, dailyGoalMins, preferredPracticeTime } = await req.json();
 
     if (!name || typeof name !== 'string' || !name.trim()) {
       return NextResponse.json({ error: 'name is required' }, { status: 400 });
@@ -38,6 +38,11 @@ export async function POST(req: Request) {
         ...(parentEmail && typeof parentEmail === 'string' && parentEmail.trim()
           ? { parentEmail: parentEmail.trim() }
           : {}),
+        ...(examName && typeof examName === 'string' ? { examName } : {}),
+        ...(Array.isArray(focusTopics) ? { focusTopics } : {}),
+        ...(Array.isArray(confidentTopics) ? { confidentTopics } : {}),
+        ...(typeof dailyGoalMins === 'number' && dailyGoalMins > 0 ? { dailyGoalMins } : {}),
+        ...(preferredPracticeTime && typeof preferredPracticeTime === 'string' ? { preferredPracticeTime } : {}),
       },
     });
 
