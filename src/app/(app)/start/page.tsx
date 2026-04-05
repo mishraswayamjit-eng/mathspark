@@ -1,7 +1,7 @@
 'use client';
 
 import { MS_PER_DAY } from '@/lib/timeConstants';
-import { useState, useCallback, useEffect, useMemo } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import QuestionCard from '@/components/QuestionCard';
 import ProgressBar from '@/components/ProgressBar';
@@ -9,8 +9,6 @@ import Sparky from '@/components/Sparky';
 import Confetti from '@/components/Confetti';
 import DuoButton from '@/components/DuoButton';
 import SparkyBubble from '@/components/SparkyBubble';
-import TopicSelectCard from '@/components/TopicSelectCard';
-import { getTopicsForGrade } from '@/data/topicTree';
 import type { Question, AnswerKey, DiagnosticAnswer } from '@/types';
 
 // ── Diagnostic plan — grade-aware ─────────────────────────────────────────────
@@ -22,7 +20,6 @@ interface DiagnosticPlan {
 
 function getDiagnosticPlan(grade: number): DiagnosticPlan[] {
   if (grade === 4) {
-    // Top-5 exam-weight topics, 1 question each
     return [
       { topicId: 'ch01-05', count: 1 },
       { topicId: 'ch09-10', count: 1 },
@@ -31,7 +28,6 @@ function getDiagnosticPlan(grade: number): DiagnosticPlan[] {
       { topicId: 'ch06',    count: 1 },
     ];
   }
-  // All other grades: single grade pool, 5 questions
   return [{ topicId: `grade${grade}`, count: 5 }];
 }
 
@@ -67,19 +63,21 @@ const GRADE_QUESTION_COUNTS: Record<number, string> = {
 };
 
 // ── Step types ────────────────────────────────────────────────────────────────
+// Flow: welcome → gradeSelect → goal → valueProp1 → dailyGoal → practiceTime
+//       → valueProp2 → quiz (free, no auth) → results (free)
+//       → signup (creates account, saves everything) → displayName
 
 type Step =
   | 'welcome' | 'gradeSelect' | 'goal' | 'valueProp1'
-  | 'confidentTopics' | 'focusTopics' | 'dailyGoal' | 'practiceTime'
-  | 'valueProp2' | 'name' | 'pathReady' | 'quiz' | 'results' | 'displayName';
+  | 'dailyGoal' | 'practiceTime' | 'valueProp2'
+  | 'quiz' | 'results' | 'signup' | 'displayName';
 
 type Diff = 'Easy' | 'Medium' | 'Hard';
 
-// Progress percentages for each step
 const STEP_PROGRESS: Record<Step, number> = {
-  welcome: 0, gradeSelect: 8, goal: 16, valueProp1: 24,
-  confidentTopics: 36, focusTopics: 45, dailyGoal: 55, practiceTime: 65,
-  valueProp2: 75, name: 82, pathReady: 90, quiz: 92, results: 100, displayName: 100,
+  welcome: 0, gradeSelect: 10, goal: 20, valueProp1: 30,
+  dailyGoal: 40, practiceTime: 50, valueProp2: 60,
+  quiz: 70, results: 85, signup: 95, displayName: 100,
 };
 
 function nextDiff(d: Diff, up: boolean): Diff {
@@ -126,12 +124,6 @@ const PRACTICE_TIME_RESPONSES: Record<string, string> = {
   Evening:   'Wind down with some puzzles! 🌙',
 };
 
-function getConfidentResponse(count: number): string {
-  if (count <= 1) return 'No worries, we\'ll find your strengths! 💡';
-  if (count <= 3) return 'Nice! You\'ve got a solid base! 💪';
-  return 'Wow, you\'re already a math whiz! 🌟';
-}
-
 // ── Onboarding progress bar ─────────────────────────────────────────────────
 
 function OnboardingProgress({ step }: { step: Step }) {
@@ -148,7 +140,7 @@ function OnboardingProgress({ step }: { step: Step }) {
   );
 }
 
-// ── Page wrapper with consistent dark bg ──────────────────────────────────────
+// ── Page wrapper ──────────────────────────────────────────────────────────────
 
 function OnboardingShell({ children, step, variant = 'dark' }: {
   children: React.ReactNode;
@@ -193,18 +185,16 @@ export default function StartPage() {
   const [trialDaysLeft, setTrialDaysLeft] = useState<number | null>(null);
   const [trialExpiry,   setTrialExpiry]  = useState<string | null>(null);
 
-  // ── Personalization state (collected before account creation) ──────────────
-  const [goal,               setGoal]              = useState<string>('');
-  const [confidentTopicIds,  setConfidentTopicIds] = useState<string[]>([]);
-  const [focusTopicIds,      setFocusTopicIds]     = useState<string[]>([]);
-  const [dailyGoal,          setDailyGoal]         = useState<number>(20);
-  const [practiceTime,       setPracticeTime]      = useState<string>('');
-  const [sparkyMessage,      setSparkyMessage]     = useState<string>('');
+  // ── Personalization state (saved to profile on sign-up) ───────────────────
+  const [goal,          setGoal]         = useState<string>('');
+  const [dailyGoal,     setDailyGoal]    = useState<number>(20);
+  const [practiceTime,  setPracticeTime] = useState<string>('');
+  const [sparkyMessage, setSparkyMessage] = useState<string>('');
 
-  // ── Diagnostic plan (set when grade confirmed) ─────────────────────────────
+  // ── Diagnostic plan ───────────────────────────────────────────────────────
   const [activePlan, setActivePlan] = useState<DiagnosticPlan[]>([]);
 
-  // ── Quiz state ─────────────────────────────────────────────────────────────
+  // ── Quiz state (runs WITHOUT auth — answers stored locally) ───────────────
   const [question,     setQuestion]     = useState<Question | null>(null);
   const [answered,     setAnswered]     = useState(false);
   const [selected,     setSelected]     = useState<AnswerKey | null>(null);
@@ -215,17 +205,14 @@ export default function StartPage() {
   const [answers,      setAnswers]      = useState<DiagnosticAnswer[]>([]);
   const [showConfetti, setShowConfetti] = useState(false);
 
+  // Store selected keys for retroactive attempt saving
+  const [selectedKeys, setSelectedKeys] = useState<AnswerKey[]>([]);
+
   const totalCorrect = answers.filter((a) => a.isCorrect).length;
   const countUp      = useCountUp(totalCorrect, step === 'results');
   const xpCountUp    = useCountUp(50, step === 'results');
 
-  // Grade-specific topics for topic selection steps
-  const gradeTopics = useMemo(
-    () => (selectedGrade ? getTopicsForGrade(selectedGrade) : []),
-    [selectedGrade],
-  );
-
-  // ── Fetch one diagnostic question ─────────────────────────────────────────
+  // ── Fetch one diagnostic question (public, no auth) ───────────────────────
   const fetchQuestion = useCallback(async (topicId: string, diff: Diff, seen: string[]) => {
     setLoading(true);
     setAnswered(false);
@@ -244,61 +231,7 @@ export default function StartPage() {
     }
   }, []);
 
-  // ── Create student + start quiz ───────────────────────────────────────────
-  async function handleCreateStudent() {
-    if (!name.trim() || !selectedGrade) return;
-    setLoading(true);
-    setError('');
-    try {
-      const res = await fetch('/api/students', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({
-          name:                 name.trim(),
-          grade:                selectedGrade,
-          parentEmail:          parentEmail.trim() || undefined,
-          examName:             goal || undefined,
-          focusTopics:          focusTopicIds.length > 0 ? focusTopicIds : undefined,
-          confidentTopics:      confidentTopicIds.length > 0 ? confidentTopicIds : undefined,
-          dailyGoalMins:        dailyGoal,
-          preferredPracticeTime: practiceTime || undefined,
-        }),
-      });
-      const student = await res.json();
-      // Set httpOnly cookie for API auth
-      await fetch('/api/student/session', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ studentId: student.id }),
-      });
-      // Keep localStorage for UI display only
-      localStorage.setItem('mathspark_student_id',    student.id);
-      localStorage.setItem('mathspark_student_name',  student.name);
-      localStorage.setItem('mathspark_student_grade', String(selectedGrade));
-      setStudentId(student.id);
-      setDisplayName(name.trim().slice(0, 20));
-      setAvatarColor(student.avatarColor ?? '#3B82F6');
-
-      if (student.trialExpiresAt) {
-        const days = Math.max(0, Math.ceil(
-          (new Date(student.trialExpiresAt).getTime() - Date.now()) / MS_PER_DAY,
-        ));
-        setTrialDaysLeft(days);
-        setTrialExpiry(new Date(student.trialExpiresAt).toLocaleDateString('en-IN', {
-          day: 'numeric', month: 'long', year: 'numeric',
-        }));
-      }
-
-      // Move to path ready celebration
-      setStep('pathReady');
-    } catch {
-      setError('Something went wrong. Please try again!');
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  // ── Start the diagnostic quiz after path ready ─────────────────────────────
+  // ── Start quiz (called from valueProp2) ────────────────────────────────────
   async function startQuiz() {
     if (!selectedGrade) return;
     const plan = getDiagnosticPlan(selectedGrade);
@@ -307,9 +240,9 @@ export default function StartPage() {
     await fetchQuestion(plan[0].topicId, 'Medium', []);
   }
 
-  // ── Handle answer ─────────────────────────────────────────────────────────
-  async function handleAnswer(key: AnswerKey, isCorrect: boolean) {
-    if (!question || answered || !studentId) return;
+  // ── Handle answer (NO auth call — just store locally) ─────────────────────
+  function handleAnswer(key: AnswerKey, isCorrect: boolean) {
+    if (!question || answered) return;
     setAnswered(true);
     setSelected(key);
 
@@ -318,18 +251,7 @@ export default function StartPage() {
       { topicId: activePlan[planIdx].topicId, questionId: question.id, isCorrect },
     ];
     setAnswers(newAnswers);
-
-    fetch('/api/attempts', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({
-        questionId: question.id,
-        topicId:    question.topicId,
-        selected:   key,
-        isCorrect,
-        hintUsed:   0,
-      }),
-    }).catch((err) => console.error('[fetch]', err));
+    setSelectedKeys((prev) => [...prev, key]);
 
     setTimeout(() => advance(isCorrect, newAnswers), 1200);
   }
@@ -376,6 +298,77 @@ export default function StartPage() {
         correct > 0                    ? 'Learning' : 'NotYet';
       return { topicId, name: TOPIC_NAMES[topicId] ?? topicId, correct, total, status };
     });
+  }
+
+  // ── Create account + save all quiz data retroactively ─────────────────────
+  async function handleSignUp() {
+    if (!name.trim() || !selectedGrade) return;
+    setLoading(true);
+    setError('');
+    try {
+      // 1. Create student with all collected preferences
+      const res = await fetch('/api/students', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          name:                  name.trim(),
+          grade:                 selectedGrade,
+          parentEmail:           parentEmail.trim() || undefined,
+          examName:              goal || undefined,
+          dailyGoalMins:         dailyGoal,
+          preferredPracticeTime: practiceTime || undefined,
+        }),
+      });
+      const student = await res.json();
+
+      // 2. Set auth cookie
+      await fetch('/api/student/session', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ studentId: student.id }),
+      });
+
+      // 3. localStorage for UI
+      localStorage.setItem('mathspark_student_id',    student.id);
+      localStorage.setItem('mathspark_student_name',  student.name);
+      localStorage.setItem('mathspark_student_grade', String(selectedGrade));
+      setStudentId(student.id);
+      setDisplayName(name.trim().slice(0, 20));
+      setAvatarColor(student.avatarColor ?? '#3B82F6');
+
+      if (student.trialExpiresAt) {
+        const days = Math.max(0, Math.ceil(
+          (new Date(student.trialExpiresAt).getTime() - Date.now()) / MS_PER_DAY,
+        ));
+        setTrialDaysLeft(days);
+        setTrialExpiry(new Date(student.trialExpiresAt).toLocaleDateString('en-IN', {
+          day: 'numeric', month: 'long', year: 'numeric',
+        }));
+      }
+
+      // 4. Retroactively save quiz attempts (now that we have auth)
+      for (let i = 0; i < answers.length; i++) {
+        const a = answers[i];
+        fetch('/api/attempts', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            questionId: a.questionId,
+            topicId:    a.topicId,
+            selected:   selectedKeys[i] ?? 'A',
+            isCorrect:  a.isCorrect,
+            hintUsed:   0,
+          }),
+        }).catch((err) => console.error('[fetch]', err));
+      }
+
+      // 5. Go to display name step
+      setStep('displayName');
+    } catch {
+      setError('Something went wrong. Please try again!');
+    } finally {
+      setLoading(false);
+    }
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -457,7 +450,7 @@ export default function StartPage() {
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // Step 3: Goal — "What are you preparing for?"
+  // Step 3: Goal
   // ═══════════════════════════════════════════════════════════════════════════
 
   if (step === 'goal') {
@@ -506,7 +499,7 @@ export default function StartPage() {
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // Step 4: Value Prop Interstitial 1
+  // Step 4: Value Prop 1
   // ═══════════════════════════════════════════════════════════════════════════
 
   if (step === 'valueProp1') {
@@ -524,7 +517,7 @@ export default function StartPage() {
               Practice with actual IPM papers from 2016–2025, topic-wise drills, and smart revision
             </p>
           </div>
-          <DuoButton variant="white" fullWidth onClick={() => setStep('confidentTopics')}>
+          <DuoButton variant="white" fullWidth onClick={() => setStep('dailyGoal')}>
             Continue
           </DuoButton>
         </div>
@@ -533,118 +526,7 @@ export default function StartPage() {
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // Step 5: Confident Topics — "Which topics feel easy?"
-  // ═══════════════════════════════════════════════════════════════════════════
-
-  if (step === 'confidentTopics') {
-    const toggleConfident = (id: string) => {
-      setConfidentTopicIds((prev) =>
-        prev.includes(id) ? prev.filter((t) => t !== id) : [...prev, id],
-      );
-    };
-
-    return (
-      <OnboardingShell step="confidentTopics">
-        <div className="bg-white rounded-3xl p-6 w-full max-w-sm shadow-2xl space-y-4 animate-fade-in max-h-[85vh] overflow-y-auto">
-          <div className="text-center space-y-1">
-            <h2 className="text-xl font-extrabold text-gray-800">Which topics feel easy?</h2>
-            <p className="text-gray-500 text-sm font-medium">Tap all that apply</p>
-          </div>
-
-          <SparkyBubble
-            message={getConfidentResponse(confidentTopicIds.length)}
-            mood="happy"
-            size={40}
-          />
-
-          <div className="space-y-2">
-            {gradeTopics.map((t) => (
-              <TopicSelectCard
-                key={t.id}
-                emoji={t.emoji}
-                name={t.name}
-                selected={confidentTopicIds.includes(t.id)}
-                onToggle={() => toggleConfident(t.id)}
-              />
-            ))}
-          </div>
-
-          <div className="space-y-2 pt-2">
-            <DuoButton variant="green" fullWidth onClick={() => setStep('focusTopics')}>
-              Next
-            </DuoButton>
-            <button
-              onClick={() => { setConfidentTopicIds([]); setStep('focusTopics'); }}
-              className="w-full text-center text-gray-500 text-sm font-semibold py-2 hover:text-gray-600 transition-colors"
-              style={{ minHeight: 0 }}
-            >
-              Skip
-            </button>
-          </div>
-        </div>
-      </OnboardingShell>
-    );
-  }
-
-  // ═══════════════════════════════════════════════════════════════════════════
-  // Step 6: Focus Topics — "Which topics do you want to improve?"
-  // ═══════════════════════════════════════════════════════════════════════════
-
-  if (step === 'focusTopics') {
-    const toggleFocus = (id: string) => {
-      setFocusTopicIds((prev) =>
-        prev.includes(id) ? prev.filter((t) => t !== id) : [...prev, id],
-      );
-    };
-
-    return (
-      <OnboardingShell step="focusTopics">
-        <div className="bg-white rounded-3xl p-6 w-full max-w-sm shadow-2xl space-y-4 animate-fade-in max-h-[85vh] overflow-y-auto">
-          <div className="text-center space-y-1">
-            <h2 className="text-xl font-extrabold text-gray-800">Which topics do you want to get better at?</h2>
-            <p className="text-gray-500 text-sm font-medium">We&apos;ll focus extra practice here</p>
-          </div>
-
-          {focusTopicIds.length > 0 && (
-            <SparkyBubble
-              message="Great picks! We'll focus extra practice here. 🎯"
-              mood="encouraging"
-              size={40}
-            />
-          )}
-
-          <div className="space-y-2">
-            {gradeTopics.map((t) => (
-              <TopicSelectCard
-                key={t.id}
-                emoji={t.emoji}
-                name={t.name}
-                selected={focusTopicIds.includes(t.id)}
-                onToggle={() => toggleFocus(t.id)}
-                muted={confidentTopicIds.includes(t.id)}
-              />
-            ))}
-          </div>
-
-          <div className="space-y-2 pt-2">
-            <DuoButton variant="green" fullWidth onClick={() => setStep('dailyGoal')}>
-              Next
-            </DuoButton>
-            <button
-              onClick={() => { setFocusTopicIds([]); setStep('dailyGoal'); }}
-              className="w-full text-center text-gray-500 text-sm font-semibold py-2 hover:text-gray-600 transition-colors"
-              style={{ minHeight: 0 }}
-            >
-              Skip
-            </button>
-          </div>
-        </div>
-      </OnboardingShell>
-    );
-  }
-
-  // ═══════════════════════════════════════════════════════════════════════════
-  // Step 7: Daily Goal
+  // Step 5: Daily Goal
   // ═══════════════════════════════════════════════════════════════════════════
 
   if (step === 'dailyGoal') {
@@ -700,7 +582,7 @@ export default function StartPage() {
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // Step 8: Practice Time
+  // Step 6: Practice Time
   // ═══════════════════════════════════════════════════════════════════════════
 
   if (step === 'practiceTime') {
@@ -752,7 +634,7 @@ export default function StartPage() {
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // Step 9: Value Prop Interstitial 2
+  // Step 7: Value Prop 2
   // ═══════════════════════════════════════════════════════════════════════════
 
   if (step === 'valueProp2') {
@@ -764,14 +646,14 @@ export default function StartPage() {
           </div>
           <div className="space-y-3">
             <h2 className="text-2xl font-extrabold text-white leading-tight">
-              Practice like the real exam
+              Let&apos;s see where you stand
             </h2>
             <p className="text-white/80 text-base leading-relaxed">
-              Timed mock tests, topic-wise drills, and smart revision — all personalised for you
+              5 quick questions to find your strengths — then we&apos;ll build your personalised path
             </p>
           </div>
-          <DuoButton variant="white" fullWidth onClick={() => setStep('name')}>
-            Continue
+          <DuoButton variant="white" fullWidth onClick={startQuiz}>
+            Start Quiz
           </DuoButton>
         </div>
       </OnboardingShell>
@@ -779,115 +661,7 @@ export default function StartPage() {
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // Step 10: Name + Create Account
-  // ═══════════════════════════════════════════════════════════════════════════
-
-  if (step === 'name') {
-    return (
-      <OnboardingShell step="name">
-        <div className="relative bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5 animate-fade-in">
-          <div className="absolute -top-8 right-4 animate-sparky-wave">
-            <Sparky mood="encouraging" size={64} />
-          </div>
-          <h2 className="text-2xl font-extrabold text-gray-800 text-center pt-4">
-            What should I call you?
-          </h2>
-
-          <div>
-            <input
-              type="text"
-              autoFocus
-              value={name}
-              onChange={(e) => { setName(e.target.value); setError(''); }}
-              onKeyDown={(e) => e.key === 'Enter' && name.trim() && handleCreateStudent()}
-              placeholder="Your first name"
-              aria-label="Your first name"
-              maxLength={30}
-              className="w-full text-2xl font-bold text-center border-b-4 border-duo-blue bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
-            />
-          </div>
-
-          <details className="group">
-            <summary className="text-xs font-extrabold text-gray-500 uppercase tracking-wide cursor-pointer select-none list-none flex items-center gap-1">
-              <span className="text-gray-400 group-open:rotate-90 transition-transform">▶</span>
-              Add parent email for reports
-            </summary>
-            <div className="mt-2 space-y-1">
-              <input
-                type="email"
-                value={parentEmail}
-                onChange={(e) => setParentEmail(e.target.value)}
-                placeholder="parent@email.com"
-                aria-label="Parent email"
-                className="w-full border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-duo-blue transition-colors"
-              />
-              <p className="text-xs text-gray-500 font-medium">For weekly progress reports</p>
-            </div>
-          </details>
-
-          {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
-
-          <DuoButton variant="green" fullWidth onClick={handleCreateStudent} loading={loading} disabled={!name.trim()}>
-            Continue
-          </DuoButton>
-        </div>
-      </OnboardingShell>
-    );
-  }
-
-  // ═══════════════════════════════════════════════════════════════════════════
-  // Step 11: Path Ready — Celebration
-  // ═══════════════════════════════════════════════════════════════════════════
-
-  if (step === 'pathReady') {
-    // Show top focus topics (or first 3 grade topics) as path preview
-    const pathTopics = focusTopicIds.length > 0
-      ? gradeTopics.filter((t) => focusTopicIds.includes(t.id)).slice(0, 3)
-      : gradeTopics.slice(0, 3);
-
-    return (
-      <OnboardingShell step="pathReady" variant="white">
-        <div className="flex flex-col items-center text-center gap-6 animate-fade-in max-w-sm">
-          <Confetti variant="full" onDone={() => {}} />
-
-          <div className="animate-sparky-dance">
-            <Sparky mood="celebrating" size={160} />
-          </div>
-
-          <div className="space-y-2">
-            <h2 className="text-2xl font-extrabold text-gray-800">
-              Your learning path is ready!
-            </h2>
-            <p className="text-gray-500 text-sm font-medium">
-              Here&apos;s where we&apos;ll start
-            </p>
-          </div>
-
-          {pathTopics.length > 0 && (
-            <div className="w-full space-y-2">
-              {pathTopics.map((t, i) => (
-                <div
-                  key={t.id}
-                  className="flex items-center gap-3 bg-gray-50 rounded-2xl px-4 py-3 border-2 border-gray-100"
-                >
-                  <span className="text-lg font-extrabold text-duo-green w-7">{i + 1}</span>
-                  <span className="text-xl" aria-hidden="true">{t.emoji}</span>
-                  <span className="font-bold text-sm text-gray-700">{t.name}</span>
-                </div>
-              ))}
-            </div>
-          )}
-
-          <DuoButton variant="green" fullWidth onClick={startQuiz}>
-            Let&apos;s see how you do!
-          </DuoButton>
-        </div>
-      </OnboardingShell>
-    );
-  }
-
-  // ═══════════════════════════════════════════════════════════════════════════
-  // Step 12: Diagnostic Quiz (5 questions)
+  // Step 8: Quiz (5 questions, NO auth required)
   // ═══════════════════════════════════════════════════════════════════════════
 
   if (step === 'quiz') {
@@ -928,7 +702,69 @@ export default function StartPage() {
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // Step 14: Display Name + Avatar
+  // Step 10: Sign Up (REQUIRED to continue — wall after results)
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  if (step === 'signup') {
+    return (
+      <OnboardingShell step="signup">
+        <div className="relative bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5 animate-fade-in">
+          <div className="absolute -top-8 right-4 animate-sparky-wave">
+            <Sparky mood="encouraging" size={64} />
+          </div>
+          <div className="text-center pt-4 space-y-1">
+            <h2 className="text-2xl font-extrabold text-gray-800">
+              Save your results!
+            </h2>
+            <p className="text-gray-500 text-sm font-medium">
+              Create a free account to keep your progress and start learning
+            </p>
+          </div>
+
+          <div>
+            <input
+              type="text"
+              autoFocus
+              value={name}
+              onChange={(e) => { setName(e.target.value); setError(''); }}
+              onKeyDown={(e) => e.key === 'Enter' && name.trim() && handleSignUp()}
+              placeholder="Your first name"
+              aria-label="Your first name"
+              maxLength={30}
+              className="w-full text-2xl font-bold text-center border-b-4 border-duo-blue bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
+            />
+          </div>
+
+          <details className="group">
+            <summary className="text-xs font-extrabold text-gray-500 uppercase tracking-wide cursor-pointer select-none list-none flex items-center gap-1">
+              <span className="text-gray-400 group-open:rotate-90 transition-transform">▶</span>
+              Add parent email for reports
+            </summary>
+            <div className="mt-2 space-y-1">
+              <input
+                type="email"
+                value={parentEmail}
+                onChange={(e) => setParentEmail(e.target.value)}
+                placeholder="parent@email.com"
+                aria-label="Parent email"
+                className="w-full border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-duo-blue transition-colors"
+              />
+              <p className="text-xs text-gray-500 font-medium">For weekly progress reports</p>
+            </div>
+          </details>
+
+          {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
+
+          <DuoButton variant="green" fullWidth onClick={handleSignUp} loading={loading} disabled={!name.trim()}>
+            Create Free Account
+          </DuoButton>
+        </div>
+      </OnboardingShell>
+    );
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // Step 11: Display Name + Avatar
   // ═══════════════════════════════════════════════════════════════════════════
 
   if (step === 'displayName') {
@@ -1021,7 +857,7 @@ export default function StartPage() {
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // Step 13: Results + Reward
+  // Step 9: Results (free — but CTAs lead to sign-up wall)
   // ═══════════════════════════════════════════════════════════════════════════
 
   const results  = computeResults();
@@ -1039,7 +875,7 @@ export default function StartPage() {
           <Sparky mood="celebrating" size={120} />
         </div>
         <h2 className="text-2xl font-extrabold text-gray-800">
-          Wow {name}, you already know so much!
+          Great job! Here&apos;s how you did
         </h2>
         <div className="inline-flex items-baseline gap-2 bg-[#FFF9E6] border-2 border-duo-gold rounded-2xl px-6 py-3">
           <span className="text-4xl font-extrabold text-duo-dark tabular-nums">{countUp}</span>
@@ -1047,22 +883,13 @@ export default function StartPage() {
         </div>
       </div>
 
-      {/* XP Reward Banner */}
+      {/* XP teaser */}
       <div className="bg-gradient-to-r from-duo-gold/20 to-duo-orange/20 border-2 border-duo-gold rounded-2xl px-4 py-3 text-center">
         <p className="font-extrabold text-amber-800 text-lg">
           <span aria-hidden="true">⭐ </span>+{xpCountUp} XP Welcome Bonus!
         </p>
+        <p className="text-amber-600 text-xs font-medium mt-0.5">Sign up to claim your XP</p>
       </div>
-
-      {/* Trial banner */}
-      {trialDaysLeft !== null && trialDaysLeft > 0 && (
-        <div className="bg-amber-50 border-2 border-duo-orange rounded-2xl px-4 py-3 text-center">
-          <p className="font-extrabold text-amber-800 text-base">7-Day Pro Trial Activated!</p>
-          <p className="text-amber-600 text-xs font-medium mt-0.5">
-            Expires on {trialExpiry} · {trialDaysLeft} days left
-          </p>
-        </div>
-      )}
 
       {/* Strong */}
       {strong.length > 0 && (
@@ -1117,12 +944,13 @@ export default function StartPage() {
         </div>
       )}
 
+      {/* Sign-up CTA — the only way forward */}
       <div className="space-y-3">
-        <DuoButton variant="green" fullWidth onClick={() => { setPendingRoute('/home'); setStep('displayName'); }}>
-          Start Learning
+        <DuoButton variant="green" fullWidth onClick={() => { setPendingRoute('/home'); setStep('signup'); }}>
+          Save Results &amp; Start Learning
         </DuoButton>
-        <DuoButton variant="blue" fullWidth onClick={() => { setPendingRoute('/test'); setStep('displayName'); }}>
-          Take a Mock Test
+        <DuoButton variant="blue" fullWidth onClick={() => { setPendingRoute('/test'); setStep('signup'); }}>
+          Save Results &amp; Take a Mock Test
         </DuoButton>
       </div>
     </div>
