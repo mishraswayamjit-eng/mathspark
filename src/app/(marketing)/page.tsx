@@ -59,8 +59,8 @@ export default function LandingPage() {
           <div className="flex items-center gap-3">
             <Link href="/pricing" className="text-gray-600 text-sm font-semibold hover:text-gray-900 transition-colors hidden sm:block">Pricing</Link>
             <Link href="/auth/login" className="text-gray-600 text-sm font-semibold hover:text-gray-900 transition-colors">Sign in</Link>
-            <Link href="/auth/register" className="bg-duo-green text-white text-sm font-extrabold px-5 py-2 rounded-full hover:bg-[#46a302] transition-colors">
-              Start Free
+            <Link href="/start" className="bg-duo-green text-white text-sm font-extrabold px-5 py-2 rounded-full hover:bg-[#46a302] transition-colors">
+              Try It Free
             </Link>
           </div>
         </div>
@@ -71,26 +71,27 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-duo-dark leading-[1.1] mb-4">
-              Math that adapts<br />
-              <span className="text-duo-green">to your child.</span>
+              Try a real IPM question<br />
+              <span className="text-duo-green">right now.</span>
             </h1>
             <p className="text-gray-600 text-lg leading-relaxed mb-8 max-w-md">
-              Adaptive AI tutoring, 100,000+ questions, and real IPM exam simulations — built by competitive math champions.
+              No sign up. No email. Just tap an answer and see how adaptive math practice works.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href="/auth/register"
+                href="/start"
                 className="flex-1 text-center bg-duo-green text-white font-extrabold py-4 rounded-2xl transition-colors hover:bg-[#46a302] active:translate-y-0.5"
               >
-                Start 7-Day Free Trial
+                Start Practicing — Free
               </Link>
               <ScrollButton
-                targetId="research"
+                targetId="how-it-works"
                 className="flex-1 border-2 border-gray-200 text-gray-500 hover:border-gray-300 hover:text-gray-700 font-extrabold py-4 rounded-2xl transition-colors"
               >
-                See the Research
+                How It Works
               </ScrollButton>
             </div>
+            <p className="text-gray-400 text-xs mt-3 font-medium">No account needed to start. Create one later to save progress.</p>
           </div>
           <HeroDemo />
         </div>
@@ -98,6 +99,48 @@ export default function LandingPage() {
 
       {/* ── TRUST NUMBERS ─────────────────────────────────────────────────────── */}
       <StatsBar />
+
+      {/* ── HOW IT WORKS ──────────────────────────────────────────────────────── */}
+      <section id="how-it-works" className="bg-gray-50 py-16 px-4 sm:px-6 scroll-mt-16">
+        <div className="max-w-3xl mx-auto">
+          <SectionFade>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-duo-dark text-center mb-10">How it works</h2>
+          </SectionFade>
+          <div className="space-y-4">
+            {[
+              { n: '01', title: 'Try a Question — Right Now',
+                body: 'Answer the question above. No sign up, no email — just see how it feels to learn with MathSpark.' },
+              { n: '02', title: '2-Minute Setup',
+                body: 'Pick your grade, tell us what you want to improve, and take a quick 5-question diagnostic. We build your personalised path.' },
+              { n: '03', title: 'Daily 15-Minute Practice',
+                body: 'Gamified lessons with streaks, XP, and badges. Adaptive questions with 3-level hints and solutions.' },
+              { n: '04', title: 'Mock Tests & Improve',
+                body: 'Full IPM simulations with detailed analytics. Track score improvement week over week.' },
+            ].map((s, i) => (
+              <SectionFade key={s.n} delay={i * 80}>
+                <div className="flex items-start gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+                  <div className="text-duo-green font-extrabold text-2xl tabular-nums shrink-0 w-10 mt-0.5">{s.n}</div>
+                  <div>
+                    <h3 className="text-duo-dark font-extrabold text-base mb-1">{s.title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed">{s.body}</p>
+                  </div>
+                </div>
+              </SectionFade>
+            ))}
+          </div>
+          <SectionFade delay={320}>
+            <div className="mt-8 text-center">
+              <Link
+                href="/start"
+                className="inline-block bg-duo-green text-white font-extrabold py-4 px-10 rounded-2xl transition-colors hover:bg-[#46a302] active:translate-y-0.5 text-base"
+              >
+                Start Your Free Diagnostic
+              </Link>
+              <p className="text-gray-400 text-xs mt-2">Takes 2 minutes. No sign up required.</p>
+            </div>
+          </SectionFade>
+        </div>
+      </section>
 
       {/* ── WHY MATHSPARK ─────────────────────────────────────────────────────── */}
       <section className="py-16 px-4 sm:px-6">
@@ -210,39 +253,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ──────────────────────────────────────────────────────── */}
-      <section className="bg-gray-50 py-16 px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto">
-          <SectionFade>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-duo-dark text-center mb-10">How it works</h2>
-          </SectionFade>
-          <div className="space-y-4">
-            {[
-              { n: '01', title: 'Free Diagnostic Quiz',
-                body: '15 adaptive questions map strengths and gaps across all IPM topics. Takes 5 minutes.' },
-              { n: '02', title: 'Personalised Learning Path',
-                body: 'Sparky builds a path prioritising weak areas. Topics unlock as your child progresses.' },
-              { n: '03', title: 'Daily 15-Minute Practice',
-                body: 'Gamified lessons with streaks, XP, and badges. Adaptive questions with 3-level hints and solutions.' },
-              { n: '04', title: 'Mock Tests & Improve',
-                body: 'Full IPM simulations with detailed analytics. Track score improvement week over week.' },
-            ].map((step, i) => (
-              <SectionFade key={step.n} delay={i * 80}>
-                <div className="flex items-start gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
-                  <div className="text-duo-green font-extrabold text-2xl tabular-nums shrink-0 w-10 mt-0.5">{step.n}</div>
-                  <div>
-                    <h3 className="text-duo-dark font-extrabold text-base mb-1">{step.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{step.body}</p>
-                  </div>
-                </div>
-              </SectionFade>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── TESTIMONIALS ──────────────────────────────────────────────────────── */}
-      <section className="py-16 px-4 sm:px-6">
+      <section className="bg-gray-50 py-16 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <SectionFade>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-duo-dark text-center mb-10">What parents are saying</h2>
@@ -266,7 +278,7 @@ export default function LandingPage() {
       </section>
 
       {/* ── RESEARCH ──────────────────────────────────────────────────────────── */}
-      <section id="research" className="bg-gray-50 py-16 px-4 sm:px-6 scroll-mt-16">
+      <section id="research" className="py-16 px-4 sm:px-6 scroll-mt-16">
         <div className="max-w-6xl mx-auto">
           <SectionFade>
             <div className="text-center mb-10">
@@ -311,12 +323,12 @@ export default function LandingPage() {
       </section>
 
       {/* ── PRICING ───────────────────────────────────────────────────────────── */}
-      <section className="py-16 px-4 sm:px-6">
+      <section className="bg-gray-50 py-16 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <SectionFade>
             <div className="text-center mb-10">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-duo-dark mb-2">Simple, honest pricing.</h2>
-              <p className="text-gray-500 text-sm">3-day free trial on all plans · No card required · Cancel anytime</p>
+              <p className="text-gray-500 text-sm">Start free — upgrade when you&apos;re ready. No card required.</p>
             </div>
           </SectionFade>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -342,8 +354,8 @@ export default function LandingPage() {
                         </li>
                       ))}
                     </ul>
-                    <Link href="/auth/register" className={`block w-full text-center ${plan.ctaClass} text-white font-extrabold py-3 rounded-2xl transition-colors text-sm`}>
-                      Start Free Trial
+                    <Link href="/start" className={`block w-full text-center ${plan.ctaClass} text-white font-extrabold py-3 rounded-2xl transition-colors text-sm`}>
+                      Start Free
                     </Link>
                   </div>
                 </div>
@@ -358,18 +370,18 @@ export default function LandingPage() {
         <SectionFade>
           <div className="max-w-2xl mx-auto bg-gradient-to-br from-duo-green to-emerald-500 rounded-3xl px-8 py-12 text-center">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-3 leading-tight">
-              Your child&apos;s math journey starts here.
+              See it for yourself in 2 minutes.
             </h2>
             <p className="text-white/80 text-base mb-8 max-w-md mx-auto">
-              Start with a free diagnostic — see exactly where your child stands. Share the results with your tutor.
+              Pick your grade, answer 5 questions, and get a personalised learning path — no sign up needed.
             </p>
             <Link
-              href="/auth/register"
+              href="/start"
               className="inline-block bg-white text-duo-green font-extrabold py-4 px-10 rounded-2xl text-lg transition-colors hover:bg-gray-50 active:translate-y-0.5"
             >
-              Start Free Diagnostic Quiz
+              Start Free Diagnostic
             </Link>
-            <p className="text-white/60 text-xs mt-4">3-day free trial · No card required · Cancel anytime</p>
+            <p className="text-white/60 text-xs mt-4">No account required. Save progress later.</p>
           </div>
         </SectionFade>
       </section>
@@ -386,7 +398,7 @@ export default function LandingPage() {
         </p>
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-white/40 text-xs font-semibold mb-5">
           <Link href="/pricing"       className="hover:text-white/70 transition-colors">Pricing</Link>
-          <Link href="/auth/register" className="hover:text-white/70 transition-colors">Sign up</Link>
+          <Link href="/start"         className="hover:text-white/70 transition-colors">Try it free</Link>
           <Link href="/auth/login"    className="hover:text-white/70 transition-colors">Sign in</Link>
           <a href="#"                 className="hover:text-white/70 transition-colors">Privacy</a>
           <a href="#"                 className="hover:text-white/70 transition-colors">Terms</a>
