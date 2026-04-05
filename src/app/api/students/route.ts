@@ -39,8 +39,8 @@ export async function POST(req: Request) {
           ? { parentEmail: parentEmail.trim() }
           : {}),
         ...(examName && typeof examName === 'string' ? { examName } : {}),
-        ...(Array.isArray(focusTopics) ? { focusTopics } : {}),
-        ...(Array.isArray(confidentTopics) ? { confidentTopics } : {}),
+        ...(Array.isArray(focusTopics) ? { focusTopics: JSON.stringify(focusTopics) } : {}),
+        ...(Array.isArray(confidentTopics) ? { confidentTopics: JSON.stringify(confidentTopics) } : {}),
         ...(typeof dailyGoalMins === 'number' && dailyGoalMins > 0 ? { dailyGoalMins } : {}),
         ...(preferredPracticeTime && typeof preferredPracticeTime === 'string' ? { preferredPracticeTime } : {}),
       },
