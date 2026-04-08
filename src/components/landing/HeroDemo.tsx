@@ -32,7 +32,9 @@ export default function HeroDemo() {
     </div>
   );
 
-  const opts = [q.option1, q.option2, q.option3, q.option4];
+  // q is guaranteed non-null after the early return above
+  const question = q as PreviewQ;
+  const opts = [question.option1, question.option2, question.option3, question.option4];
   const answered = correctAnswer !== null;
   const isCorrect = selected === correctAnswer;
 
@@ -44,7 +46,7 @@ export default function HeroDemo() {
       const res = await fetch('/api/questions/preview/check', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ questionId: q.id, selected: key }),
+        body: JSON.stringify({ questionId: question.id, selected: key }),
       });
       if (res.ok) {
         const data = await res.json();
@@ -82,7 +84,7 @@ export default function HeroDemo() {
             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wide">Tap to answer</span>
           )}
         </div>
-        <p className="text-duo-dark text-sm font-semibold leading-relaxed mb-4">{q.questionText}</p>
+        <p className="text-duo-dark text-sm font-semibold leading-relaxed mb-4">{question.questionText}</p>
         <div className="space-y-2">
           {opts.map((opt, i) => {
             const key     = OPT_KEYS[i];
