@@ -156,11 +156,11 @@ export async function GET() {
   const trialActive = trialDaysLeft !== null && trialDaysLeft > 0;
 
   // Analytics fields: Prisma Json? returns objects directly; handle legacy string values too
-  function safeJson<T>(val: unknown, fallback: T): T {
+  const safeJson = <T,>(val: unknown, fallback: T): T => {
     if (!val) return fallback;
     if (typeof val === 'string') { try { return JSON.parse(val) as T; } catch { return fallback; } }
     return val as T;
-  }
+  };
   const parsedMastery    = safeJson(analytics?.topicMastery,    [] as unknown[]);
   const parsedReadiness  = safeJson(analytics?.examReadiness,   {} as Record<string, unknown>);
   const parsedPriorities = safeJson(analytics?.topicPriorities, [] as unknown[]);
