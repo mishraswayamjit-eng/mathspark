@@ -20,12 +20,11 @@ interface Props {
   illustration: SlideIllustrationT;
 }
 
-// Diagram components accept Record<string, unknown> from lesson JSON data.
+// Diagram components accept dynamic props from lesson JSON data.
 // Each component handles its own prop validation internally.
-type DiagramProps = Record<string, unknown>;
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function renderDiagram(illustration: SlideIllustrationT) {
-  const p = illustration.props as DiagramProps;
+  const p = illustration.props as any;
 
   switch (illustration.type) {
     case 'fraction':
