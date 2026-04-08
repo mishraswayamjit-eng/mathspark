@@ -281,7 +281,7 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
         setShowTransition(true);
         setCurrentPhase('breathe');
       })
-      .catch(() => router.replace('/flashcards'));
+      .catch((err) => { console.error('[WarmUp] fetch deck', err); router.replace('/flashcards'); });
   }, [fetchDeck, router]);
 
   // ── Breathing cycle ────────────────────────────────────────────────────────

@@ -33,13 +33,13 @@ export default function TopicPage({
       }),
       fetch('/api/lessons/progress')
         .then((r) => (r.ok ? r.json() : { progress: [] }))
-        .catch(() => ({ progress: [] })),
+        .catch((err) => { console.error('[lessons/topic] fetch progress', err); return { progress: [] }; }),
     ])
       .then(([topicData, progressData]) => {
         setTopic(topicData);
         setProgress(progressData.progress ?? []);
       })
-      .catch(() => setError(true))
+      .catch((err) => { console.error('[lessons/topic] fetch topic data', err); setError(true); })
       .finally(() => setLoading(false));
   }, [topicSlug]);
 

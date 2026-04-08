@@ -65,7 +65,7 @@ export default function PublicProfilePage() {
         if (d) setProfile(d);
         setLoading(false);
       })
-      .catch(() => { setNotFound(true); setLoading(false); });
+      .catch((err) => { console.error('[profile] fetch public profile', err); setNotFound(true); setLoading(false); });
   }, [targetId]);
 
   if (loading) {

@@ -54,7 +54,7 @@ export default function ParentDashboardPage() {
     fetch(`/api/parent/report/${studentId}`)
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d: DashboardData) => { setData(d); setLoading(false); })
-      .catch(() => setLoading(false));
+      .catch((err) => { console.error('[parent/report] fetch report', err); setLoading(false); });
   }, [studentId]);
 
   if (loading) {

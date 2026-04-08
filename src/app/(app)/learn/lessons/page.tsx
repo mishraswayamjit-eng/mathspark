@@ -23,7 +23,7 @@ export default function LessonsPage() {
         return r.json();
       })
       .then((d) => setProgress(d.progress ?? []))
-      .catch(() => setProgress([]))
+      .catch((err) => { console.error('[lessons] fetch progress', err); setProgress([]); })
       .finally(() => setLoading(false));
   }, []);
 

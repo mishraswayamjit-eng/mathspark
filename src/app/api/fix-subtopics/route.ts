@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { verifySecret } from '@/lib/adminAuth';
 
 export const dynamic = 'force-dynamic';
+// NOTE: maxDuration is ignored on Vercel Hobby (10s hard limit). Only effective on Pro+.
 export const maxDuration = 60;
 
 // ─── SubTopicKey definitions per grade (mirrors topicTree.ts) ────────────────
@@ -241,13 +243,9 @@ function classifyDBQuestion(
 // Reads questions from DB, classifies them, updates subTopic directly in DB.
 
 export async function GET(req: Request) {
-  const secret = process.env.SEED_SECRET;
-  if (!secret) {
-    return NextResponse.json({ error: 'SEED_SECRET env var not set.' }, { status: 500 });
-  }
   const { searchParams } = new URL(req.url);
-  if (searchParams.get('secret') !== secret) {
-    return NextResponse.json({ error: 'Wrong secret.' }, { status: 401 });
+  if (!verifySecret(searchParams.get('secret'))) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   const dryRun = searchParams.get('dryRun') === 'true';

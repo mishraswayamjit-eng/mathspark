@@ -2,33 +2,40 @@ import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
+import { validateBody, ValidationError } from '@/lib/validateBody';
+import { checkRateLimit } from '@/lib/rateLimit';
 
 // GET /api/parent/children — list parent's children
 export async function GET() {
-  const session = await getServerSession(authOptions);
-  if (!session?.user?.id) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  }
+  try {
+    const session = await getServerSession(authOptions);
+    if (!session?.user?.id) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
-  const children = await prisma.student.findMany({
-    where: { parentId: session.user.id },
-    select: {
-      id:                      true,
-      name:                    true,
-      grade:                   true,
-      createdAt:               true,
-      subscriptionId:          true,
-      dailyUsageMinutes:       true,
-      lastActiveDate:          true,
-      aiChatMessagesUsedToday: true,
-      subscription: {
-        select: { name: true, tier: true, dailyLimitMinutes: true, aiChatDailyLimit: true },
+    const children = await prisma.student.findMany({
+      where: { parentId: session.user.id },
+      select: {
+        id:                      true,
+        name:                    true,
+        grade:                   true,
+        createdAt:               true,
+        subscriptionId:          true,
+        dailyUsageMinutes:       true,
+        lastActiveDate:          true,
+        aiChatMessagesUsedToday: true,
+        subscription: {
+          select: { name: true, tier: true, dailyLimitMinutes: true, aiChatDailyLimit: true },
+        },
       },
-    },
-    orderBy: { createdAt: 'asc' },
-  });
+      orderBy: { createdAt: 'asc' },
+    });
 
-  return NextResponse.json({ children });
+    return NextResponse.json({ children });
+  } catch (err) {
+    console.error('[parent/children GET]', err);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
 }
 
 // POST /api/parent/children — add a child
@@ -38,8 +45,16 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
+  // Rate limit: 10 child additions per parent per hour
+  if (!checkRateLimit(`add-child:${session.user.id}`, 10, 3_600_000)) {
+    return NextResponse.json({ error: 'Too many requests.' }, { status: 429 });
+  }
+
   try {
-    const { name, grade } = await req.json() as { name: string; grade?: number };
+    const { name, grade } = validateBody<{ name: string; grade?: number }>(
+      await req.json(),
+      { name: 'string', grade: 'number?' },
+    );
     if (!name?.trim()) {
       return NextResponse.json({ error: 'Child name is required.' }, { status: 400 });
     }
@@ -61,7 +76,11 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ id: child.id, name: child.name, grade: child.grade }, { status: 201 });
-  } catch {
+  } catch (err) {
+    if (err instanceof ValidationError) {
+      return NextResponse.json({ error: err.message }, { status: 400 });
+    }
+    console.error('[parent/children POST]', err);
     return NextResponse.json({ error: 'Something went wrong.' }, { status: 500 });
   }
 }

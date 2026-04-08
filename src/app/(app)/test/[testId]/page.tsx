@@ -301,11 +301,13 @@ export default function TestEnginePage() {
 
   // Toggle flag
   function toggleFlag(questionNumber: number) {
-    setResponses((prev) => prev.map((r) =>
-      r.questionNumber === questionNumber ? { ...r, flagged: !r.flagged } : r,
-    ));
+    // Compute toggle from current state once so both UI and server get the same value
     const current = responses.find((r) => r.questionNumber === questionNumber);
-    saveResponse(questionNumber, { flagged: !current?.flagged });
+    const newFlagged = !current?.flagged;
+    setResponses((prev) => prev.map((r) =>
+      r.questionNumber === questionNumber ? { ...r, flagged: newFlagged } : r,
+    ));
+    saveResponse(questionNumber, { flagged: newFlagged });
   }
 
   // Submit
@@ -322,7 +324,7 @@ export default function TestEnginePage() {
         method: 'PATCH',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ questionNumber: currentNumRef.current, additionalTimeMs: elapsed }),
-      }).catch(() => {/* silent */});
+      }).catch((err) => console.error('[test/submit] save final time', err));
     }
     try {
       const res = await fetch(`/api/mock-tests/${testId}/submit`, { method: 'POST' });

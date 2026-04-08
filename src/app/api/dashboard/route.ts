@@ -3,55 +3,7 @@ import { prisma } from '@/lib/db';
 import { getTopicsCached } from '@/lib/topicCache';
 import { TOPIC_ORDER, computeStreak } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
-import type { RecentSession } from '@/types';
-
-// ── Weekly chart: attempts per day for last 7 days ────────────────────────────
-function computeWeeklyData(attempts: Array<{ createdAt: Date }>) {
-  const today = new Date();
-  return Array.from({ length: 7 }, (_, i) => {
-    const d = new Date(today);
-    d.setDate(d.getDate() - (6 - i));
-    const dateStr = d.toDateString();
-    return {
-      date:  d.toLocaleDateString('en-IN', { weekday: 'short' }),
-      count: attempts.filter((a) => new Date(a.createdAt).toDateString() === dateStr).length,
-    };
-  });
-}
-
-// ── Recent activity: last 5 (topicId × calendar-day) sessions ─────────────────
-function computeRecentActivity(
-  attempts: Array<{ isCorrect: boolean; createdAt: Date; question: { topicId: string } }>,
-  topicMap: Map<string, string>,
-): RecentSession[] {
-  const groups = new Map<string, { topicId: string; attempted: number; correct: number; latest: Date }>();
-
-  for (const a of attempts) {
-    const topicId = a.question.topicId;
-    const dayKey  = new Date(a.createdAt).toDateString();
-    const key     = `${topicId}__${dayKey}`;
-
-    if (!groups.has(key)) {
-      groups.set(key, { topicId, attempted: 0, correct: 0, latest: new Date(a.createdAt) });
-    }
-    const g = groups.get(key)!;
-    g.attempted++;
-    if (a.isCorrect) g.correct++;
-    const at = new Date(a.createdAt);
-    if (at > g.latest) g.latest = at;
-  }
-
-  return Array.from(groups.values())
-    .sort((a, b) => b.latest.getTime() - a.latest.getTime())
-    .slice(0, 5)
-    .map((g) => ({
-      topicId:   g.topicId,
-      topicName: topicMap.get(g.topicId) ?? g.topicId,
-      attempted: g.attempted,
-      correct:   g.correct,
-      createdAt: g.latest.toISOString(),
-    }));
-}
+import { computeWeeklyData, computeRecentActivity } from '@/lib/studentDashboard';
 
 // ── Route ─────────────────────────────────────────────────────────────────────
 

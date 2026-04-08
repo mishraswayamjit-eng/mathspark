@@ -185,7 +185,7 @@ export default function ConceptMapPage() {
           setSelectedGrade(data.grade);
         }
       })
-      .catch(() => { /* Not authenticated or error — use All Grades */ });
+      .catch((err) => console.error('[concept-map] fetch dashboard grade', err));
   }, []);
 
   // Fetch map data

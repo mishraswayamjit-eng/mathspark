@@ -246,7 +246,7 @@ export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSession
           questionStartRef.current = Date.now();
         }
       })
-      .catch(() => router.replace('/flashcards'));
+      .catch((err) => { console.error('[QuizBlitz] fetch deck', err); router.replace('/flashcards'); });
   }, [fetchDeck, router]);
 
   useEffect(() => { loadDeck(); }, [loadDeck]);

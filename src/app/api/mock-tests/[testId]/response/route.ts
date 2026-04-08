@@ -33,6 +33,9 @@ export async function PATCH(
     if (!questionNumber) {
       return NextResponse.json({ error: 'questionNumber required' }, { status: 400 });
     }
+    if (selectedAnswer !== undefined && selectedAnswer !== null && !['A', 'B', 'C', 'D'].includes(selectedAnswer)) {
+      return NextResponse.json({ error: 'selectedAnswer must be A, B, C, or D' }, { status: 400 });
+    }
 
     // Verify test exists, is in progress, and belongs to student
     const mockTest = await prisma.mockTest.findUnique({

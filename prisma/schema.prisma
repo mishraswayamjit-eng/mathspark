@@ -45,6 +45,7 @@ model Subscription {
 model Student {
   id                      String        @id @default(cuid())
   name                    String
+  pinHash                 String?       // bcrypt hash of 4-digit student PIN
   grade                   Int           @default(4)
   createdAt               DateTime      @default(now())
   parentEmail             String?                         // legacy — for weekly email reports
@@ -62,7 +63,7 @@ model Student {
   currentStreak           Int           @default(0)
   longestStreak           Int           @default(0)
   totalDaysPracticed      Int           @default(0)
-  badges                  String        @default("[]") // JSON array of badge IDs
+  badges                  String        @default("[]") // JSON array of badge IDs — TODO: migrate to Json type in dedicated PR
   // ── League / Social ──
   displayName             String?
   avatarColor             String        @default("#3B82F6")
@@ -147,6 +148,8 @@ model Topic {
   grade         Int        @default(4)   // 2-9; ch-series and dh = 4
   questions     Question[]
   progress      Progress[]
+
+  @@index([grade])
 }
 
 // ── Question ───────────────────────────────────────────────────────────────
@@ -397,4 +400,5 @@ model LessonProgress {
 
   @@unique([studentId, topicSlug, levelId])
   @@index([studentId])
+  @@index([studentId, topicSlug])
 }

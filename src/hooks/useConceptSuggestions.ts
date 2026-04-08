@@ -34,7 +34,7 @@ export function useConceptSuggestions(
     fetch(`/api/concept-map?id=${conceptId}`)
       .then((r) => { if (!r.ok) throw new Error('Fetch failed'); return r.json(); })
       .then((data: ConceptData) => { conceptDataRef.current = data; })
-      .catch(() => { /* Concept data unavailable — suggestions will be empty */ });
+      .catch((err) => console.error('[useConceptSuggestions] fetch concept data', err));
   }, [conceptId]);
 
   // Compute suggestions when session completes

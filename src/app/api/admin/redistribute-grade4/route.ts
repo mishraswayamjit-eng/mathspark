@@ -1,15 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { verifySecret } from '@/lib/adminAuth';
 
 export const dynamic = 'force-dynamic';
 
 const PAGE_SIZE = 200;
 
 function authorize(req: NextRequest): boolean {
-  const secret = process.env.SEED_SECRET;
-  if (!secret) return false;
   const { searchParams } = new URL(req.url);
-  return searchParams.get('secret') === secret;
+  return verifySecret(searchParams.get('secret'));
 }
 
 // ── Chapter ID extraction from question IDs ─────────────────────────────────
@@ -191,6 +190,7 @@ export async function GET(req: NextRequest) {
       perTopic,
     });
   } catch (err) {
+    console.error('[admin/redistribute-grade4]', err);
     return NextResponse.json(
       { error: `Redistribute failed: ${err instanceof Error ? err.message : String(err)}` },
       { status: 500 },

@@ -20,9 +20,12 @@ interface Props {
   illustration: SlideIllustrationT;
 }
 
+// Diagram components accept Record<string, unknown> from lesson JSON data.
+// Each component handles its own prop validation internally.
+type DiagramProps = Record<string, unknown>;
+
 function renderDiagram(illustration: SlideIllustrationT) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const p = illustration.props as any;
+  const p = illustration.props as DiagramProps;
 
   switch (illustration.type) {
     case 'fraction':
@@ -55,7 +58,7 @@ function renderDiagram(illustration: SlideIllustrationT) {
       return (
         <div className="flex items-center justify-center">
           <span className="text-[80px] leading-none" aria-hidden="true">
-            {p.emoji || '📖'}
+            {(p as { emoji?: string }).emoji || '📖'}
           </span>
         </div>
       );

@@ -1,21 +1,11 @@
-import crypto from 'crypto';
 import { NextResponse } from 'next/server';
 import { processWeeklyLeagues } from '@/lib/leaderboard';
+import { verifyCronSecret } from '@/lib/adminAuth';
 
 // GET /api/cron/process-leagues
 // Protected by CRON_SECRET header (set in Vercel cron config)
 export async function GET(req: Request) {
-  const authHeader = req.headers.get('authorization') ?? '';
-  const provided = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : '';
-  const expected = process.env.CRON_SECRET ?? '';
-
-  // Timing-safe comparison to prevent timing attacks
-  if (
-    !expected ||
-    !provided ||
-    provided.length !== expected.length ||
-    !crypto.timingSafeEqual(Buffer.from(provided), Buffer.from(expected))
-  ) {
+  if (!verifyCronSecret(req.headers.get('authorization'))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

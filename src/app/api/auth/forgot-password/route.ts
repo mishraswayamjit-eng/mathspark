@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 import { prisma } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { validateBody, ValidationError } from '@/lib/validateBody';
 import { Resend } from 'resend';
 
 export async function POST(req: Request) {
@@ -18,7 +19,10 @@ export async function POST(req: Request) {
   }
 
   try {
-    const { email } = await req.json() as { email: string };
+    const { email } = validateBody<{ email: string }>(
+      await req.json(),
+      { email: 'string' },
+    );
     if (!email?.trim()) {
       return NextResponse.json({ error: 'Email is required.' }, { status: 400 });
     }
@@ -65,6 +69,9 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ ok: true });
   } catch (err) {
+    if (err instanceof ValidationError) {
+      return NextResponse.json({ error: err.message }, { status: 400 });
+    }
     console.error('[forgot-password] Unexpected error:', err);
     return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
   }

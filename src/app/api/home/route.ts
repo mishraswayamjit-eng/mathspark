@@ -9,10 +9,12 @@ import { getWeekBounds, TIER_NAMES } from '@/lib/leaderboard';
 import { getTopicsForGrade } from '@/data/topicTree';
 
 export const dynamic = 'force-dynamic';
+// NOTE: maxDuration is ignored on Vercel Hobby (10s hard limit). Only effective on Pro+.
 export const maxDuration = 30;
 
 // GET /api/home
 export async function GET() {
+  try {
   const studentId = await getAuthenticatedStudentId();
   if (!studentId) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
@@ -210,4 +212,8 @@ export async function GET() {
       },
     },
   );
+  } catch (err) {
+    console.error('[api/home]', err);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
 }

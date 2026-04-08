@@ -52,14 +52,21 @@ export async function GET(
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 
+    const isCompleted = mockTest.status === 'completed';
+
     const result = {
       ...mockTest,
-      responses: mockTest.responses.map((r) => ({
-        ...r,
-        question: r.question
-          ? { ...r.question, stepByStep: safeParseSteps(r.question.stepByStep) }
-          : undefined,
-      })),
+      responses: mockTest.responses.map((r) => {
+        if (!r.question) return { ...r, question: undefined };
+        const { correctAnswer, stepByStep, misconceptionA, misconceptionB, misconceptionC, misconceptionD, ...qRest } = r.question;
+        // Only include correctAnswer, stepByStep, and misconceptions after test is completed (for review screen)
+        return {
+          ...r,
+          question: isCompleted
+            ? { ...r.question, stepByStep: safeParseSteps(stepByStep) }
+            : { ...qRest, stepByStep: [] },
+        };
+      }),
     };
 
     return NextResponse.json(result);

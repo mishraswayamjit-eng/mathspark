@@ -1,14 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getTopicsForGrade } from '@/data/topicTree';
+import { verifySecret } from '@/lib/adminAuth';
 
 export const dynamic = 'force-dynamic';
 
 function authorize(req: NextRequest): boolean {
-  const secret = process.env.SEED_SECRET;
-  if (!secret) return false;
   const { searchParams } = new URL(req.url);
-  return searchParams.get('secret') === secret;
+  return verifySecret(searchParams.get('secret'));
 }
 
 // ── GET /api/admin/topic-audit?secret=xxx[&grade=4] ─────────────────────────

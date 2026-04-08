@@ -297,6 +297,7 @@ export default function HomePage() {
   const [fetchError, setFetchError] = useState(false);
   const [planDone, setPlanDone] = useState<Set<string>>(new Set());
   const [heroDismissed, setHeroDismissed] = useState(false);
+  const handleDismissMilestone = useCallback(() => setHeroDismissed(prev => !prev), []);
 
   useEffect(() => {
     const id = localStorage.getItem('mathspark_student_id');
@@ -579,7 +580,7 @@ export default function HomePage() {
           streak={streak}
           recentActivity={recentActivity}
           topicPriorities={topicPriorities}
-          onDismissMilestone={() => setHeroDismissed(!heroDismissed)}
+          onDismissMilestone={handleDismissMilestone}
         />
 
         {/* ── § 3: TODAY'S PLAN (max 3) ────────────────────────────────── */}

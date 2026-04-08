@@ -6,14 +6,15 @@ import Link from 'next/link';
 interface PreviewQ {
   id: string; questionText: string;
   option1: string; option2: string; option3: string; option4: string;
-  correctAnswer: string;
 }
 const OPT_KEYS = ['A', 'B', 'C', 'D'] as const;
 
 export default function HeroDemo() {
   const [q, setQ]               = useState<PreviewQ | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
+  const [correctAnswer, setCorrectAnswer] = useState<string | null>(null);
   const [showCta, setShowCta]   = useState(false);
+  const [checking, setChecking] = useState(false);
 
   useEffect(() => {
     fetch('/api/questions/preview')
@@ -32,13 +33,32 @@ export default function HeroDemo() {
   );
 
   const opts = [q.option1, q.option2, q.option3, q.option4];
-  const answered = selected !== null;
-  const isCorrect = selected === q.correctAnswer;
+  const answered = correctAnswer !== null;
+  const isCorrect = selected === correctAnswer;
 
-  function handleSelect(key: string) {
-    if (answered) return;
+  async function handleSelect(key: string) {
+    if (answered || checking) return;
     setSelected(key);
-    setTimeout(() => setShowCta(true), 800);
+    setChecking(true);
+    try {
+      const res = await fetch('/api/questions/preview/check', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ questionId: q.id, selected: key }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setCorrectAnswer(data.correctAnswer);
+      } else {
+        // Fallback: treat as answered to avoid stuck state
+        setCorrectAnswer(key);
+      }
+    } catch {
+      setCorrectAnswer(key);
+    } finally {
+      setChecking(false);
+      setTimeout(() => setShowCta(true), 800);
+    }
   }
 
   return (
@@ -66,13 +86,13 @@ export default function HeroDemo() {
         <div className="space-y-2">
           {opts.map((opt, i) => {
             const key     = OPT_KEYS[i];
-            const correct = key === q.correctAnswer;
+            const correct = key === correctAnswer;
             const isSelected = key === selected;
             return (
               <button
                 key={key}
                 onClick={() => handleSelect(key)}
-                disabled={answered}
+                disabled={answered || checking}
                 className={`flex items-center gap-3 border-2 rounded-xl px-3 py-2.5 w-full text-left transition-colors duration-300 min-h-0 ${
                   !answered
                     ? 'border-gray-200 text-gray-600 hover:border-duo-blue hover:bg-blue-50/30 cursor-pointer active:scale-[0.98]'

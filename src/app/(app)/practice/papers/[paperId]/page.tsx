@@ -139,7 +139,7 @@ export default function ExamSimulatorPage() {
         setPaper(d.paper);
         setPhase('instructions');
       })
-      .catch(() => setError('Could not load exam paper.'));
+      .catch((err) => { console.error('[papers] fetch paper', err); setError('Could not load exam paper.'); });
   }, [paperId]);
 
   // ── Timer ──────────────────────────────────────────────────────────────────

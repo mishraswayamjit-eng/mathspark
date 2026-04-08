@@ -268,7 +268,7 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
           setPhase('prompt');
         }
       })
-      .catch(() => router.replace('/flashcards'));
+      .catch((err) => { console.error('[VoiceRecall] fetch deck', err); router.replace('/flashcards'); });
   }, [fetchDeck, router]);
 
   useEffect(() => { loadDeck(); }, [loadDeck]);

@@ -214,7 +214,7 @@ export default function SkillDrillSessionPage() {
         setLevelMeta(topicsData.meta?.levelLabels ?? {});
         setSessions(sessionsData.sessions ?? []);
       })
-      .catch(() => setError('Failed to load drill data.'))
+      .catch((err) => { console.error('[skill-drill] fetch drill data', err); setError('Failed to load drill data.'); })
       .finally(() => setLoading(false));
   }, [topicId, levelId]);
 
@@ -236,7 +236,7 @@ export default function SkillDrillSessionPage() {
           setError('Session not found.');
         }
       })
-      .catch(() => setError('Failed to load session.'))
+      .catch((err) => { console.error('[skill-drill] fetch session', err); setError('Failed to load session.'); })
       .finally(() => setLoading(false));
   }, [topicId, levelId]);
 

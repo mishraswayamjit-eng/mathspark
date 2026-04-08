@@ -76,7 +76,7 @@ export async function POST(
 
     // Award XP: 15 per correct answer
     if (correct > 0) {
-      await addWeeklyXP(mockTest.studentId, correct * 15).catch(() => {/* non-critical */});
+      await addWeeklyXP(mockTest.studentId, correct * 15).catch((err) => console.error('[mock-tests/submit] addWeeklyXP', err));
     }
 
     return NextResponse.json({ testId });

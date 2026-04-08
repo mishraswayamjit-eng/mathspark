@@ -184,7 +184,7 @@ export default function SpeedRoundSession({ deckId, conceptId }: SpeedRoundSessi
           setPhase('countdown');
         }
       })
-      .catch(() => router.replace('/flashcards'));
+      .catch((err) => { console.error('[SpeedRound] fetch deck', err); router.replace('/flashcards'); });
   }, [fetchDeck, router]);
 
   useEffect(() => { loadDeck(); }, [loadDeck]);

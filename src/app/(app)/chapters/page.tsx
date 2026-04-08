@@ -179,7 +179,7 @@ export default function ChaptersPage() {
         });
         if (n) setNudge(n);
       })
-      .catch(() => { setFetchError(true); setLoading(false); });
+      .catch((err) => { console.error('[chapters] fetch topics', err); setFetchError(true); setLoading(false); });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   const studentGrade     = data?.student.grade ?? 4;

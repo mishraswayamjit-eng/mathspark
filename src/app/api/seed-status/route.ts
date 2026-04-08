@@ -1,16 +1,15 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { verifySecret } from '@/lib/adminAuth';
 
 export const dynamic = 'force-dynamic';
 
 // GET /api/seed-status?secret=xxx
 // Returns question counts per topic so you can verify the seed is complete.
 export async function GET(req: Request) {
-  const secret = process.env.SEED_SECRET;
-  if (!secret) return NextResponse.json({ error: 'SEED_SECRET not set' }, { status: 500 });
   const { searchParams } = new URL(req.url);
-  if (searchParams.get('secret') !== secret) {
-    return NextResponse.json({ error: 'Wrong secret.' }, { status: 401 });
+  if (!verifySecret(searchParams.get('secret'))) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   const [topicCounts, total] = await Promise.all([

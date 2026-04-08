@@ -49,7 +49,7 @@ export async function GET(
 
     const profile: PublicProfile = {
       studentId:        student.id,
-      displayName:      student.displayName ?? student.name.split(' ')[0],
+      displayName:      student.displayName ?? 'Student',
       avatarColor:       student.avatarColor,
       currentLeagueTier: student.currentLeagueTier,
       totalLifetimeXP:  student.totalLifetimeXP,
@@ -61,7 +61,7 @@ export async function GET(
         awardType:   a.awardType as WeeklyAwardData['awardType'],
         value:       a.value,
         studentId:   a.studentId,
-        displayName: student.displayName ?? student.name.split(' ')[0],
+        displayName: student.displayName ?? 'Student',
       })),
     };
 

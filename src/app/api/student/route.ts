@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { isClean } from '@/lib/profanityFilter';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import bcrypt from 'bcryptjs';
 
 // PATCH /api/student — update mutable student fields
 export async function PATCH(req: Request) {
@@ -28,9 +29,22 @@ export async function PATCH(req: Request) {
       confidentTopics?: string[];
       city?: string;
       preferredPracticeTime?: string;
+      pin?: string;
     };
 
     const data: Record<string, unknown> = {};
+
+    // PIN update — must be exactly 4 digits
+    if (typeof body.pin !== 'undefined') {
+      if (body.pin === '' || body.pin === null) {
+        // Allow clearing PIN
+        data.pinHash = null;
+      } else if (typeof body.pin === 'string' && /^\d{4}$/.test(body.pin)) {
+        data.pinHash = await bcrypt.hash(body.pin, 10);
+      } else {
+        return NextResponse.json({ error: 'PIN must be exactly 4 digits' }, { status: 400 });
+      }
+    }
 
     if (typeof body.parentEmail    !== 'undefined') data.parentEmail    = body.parentEmail    || null;
     if (typeof body.parentWhatsApp !== 'undefined') data.parentWhatsApp = body.parentWhatsApp || null;

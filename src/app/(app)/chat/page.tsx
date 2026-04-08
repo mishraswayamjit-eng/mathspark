@@ -152,7 +152,8 @@ export default function ChatPage() {
         }
         setInitialized(true);
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error('[chat] fetch session history', err);
         // Fallback opening on error
         const opening = getOpeningMessage(name || 'friend', isNaN(grade) ? 4 : grade, null, 0);
         setMessages([{ id: 'opening', role: 'assistant', content: opening }]);

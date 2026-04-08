@@ -90,7 +90,7 @@ export default function WorkedExampleDetailPage() {
           setError('Example not found.');
         }
       })
-      .catch(() => setError('Failed to load example.'))
+      .catch((err) => { console.error('[examples] fetch example', err); setError('Failed to load example.'); })
       .finally(() => setLoading(false));
   }, [exampleId]);
 

@@ -3,6 +3,7 @@ import { Resend } from 'resend';
 import { prisma } from '@/lib/db';
 import { buildReportEmail, type ReportTopic } from '@/lib/emailReport';
 import { TOPIC_ORDER, computeStreak } from '@/lib/sharedUtils';
+import { verifyCronSecret } from '@/lib/adminAuth';
 
 export const dynamic = 'force-dynamic';
 
@@ -25,7 +26,7 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: 'Server misconfigured' }, { status: 500 });
   }
   const auth = req.headers.get('authorization');
-  if (auth !== `Bearer ${cronSecret}`) {
+  if (!verifyCronSecret(auth)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
@@ -43,14 +44,19 @@ export async function GET(req: Request) {
   }
 
   // Batch-fetch all data upfront (eliminates N+1)
+  // Only fetch attempts from last 7 days — that's all the weekly report needs
+  const sevenDaysAgo = new Date();
+  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
   const studentIds = students.map((s) => s.id);
   const [allTopics, allProgress, allAttempts] = await Promise.all([
     prisma.topic.findMany(),
     prisma.progress.findMany({ where: { studentId: { in: studentIds } } }),
     prisma.attempt.findMany({
-      where: { studentId: { in: studentIds } },
+      where: { studentId: { in: studentIds }, createdAt: { gte: sevenDaysAgo } },
       select: { studentId: true, isCorrect: true, createdAt: true },
       orderBy: { createdAt: 'desc' },
+      take: 10000, // safety limit
     }),
   ]);
 
@@ -70,50 +76,57 @@ export async function GET(req: Request) {
 
   let sent = 0, skipped = 0, failed = 0;
 
-  for (const student of students) {
-    if (!student.parentEmail) { skipped++; continue; }
+  // Process students in batches of 5 with Promise.allSettled
+  const BATCH_SIZE = 5;
+  const eligible = students.filter((s) => s.parentEmail);
+  skipped = students.length - eligible.length;
 
-    try {
-      const progress = progressByStudent.get(student.id) ?? [];
-      const attempts = attemptsByStudent.get(student.id) ?? [];
+  for (let i = 0; i < eligible.length; i += BATCH_SIZE) {
+    const batch = eligible.slice(i, i + BATCH_SIZE);
+    const results = await Promise.allSettled(
+      batch.map(async (student) => {
+        const progress = progressByStudent.get(student.id) ?? [];
+        const attempts = attemptsByStudent.get(student.id) ?? [];
 
-      const correctAttempts = attempts.filter((a) => a.isCorrect);
-      const progressMap = new Map(progress.map((p) => [p.topicId, p]));
-      const topics: ReportTopic[] = allTopics
-        .sort((a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id))
-        .map((t) => {
-          const p = progressMap.get(t.id);
-          return { id: t.id, name: t.name, mastery: p?.mastery ?? 'NotStarted', attempted: p?.attempted ?? 0, correct: p?.correct ?? 0 };
+        const correctAttempts = attempts.filter((a) => a.isCorrect);
+        const progressMap = new Map(progress.map((p) => [p.topicId, p]));
+        const topics: ReportTopic[] = allTopics
+          .sort((a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id))
+          .map((t) => {
+            const p = progressMap.get(t.id);
+            return { id: t.id, name: t.name, mastery: p?.mastery ?? 'NotStarted', attempted: p?.attempted ?? 0, correct: p?.correct ?? 0 };
+          });
+
+        const { subject, html } = buildReportEmail({
+          studentId:      student.id,
+          studentName:    student.name,
+          weeklyCorrect:  weeklyCorrectCount(attempts),
+          totalSolved:    correctAttempts.length,
+          totalAttempted: attempts.length,
+          streakDays:     computeStreak(attempts, true),
+          topicsMastered: progress.filter((p) => p.mastery === 'Mastered').length,
+          topics,
+          appUrl,
         });
 
-      const { subject, html } = buildReportEmail({
-        studentId:      student.id,
-        studentName:    student.name,
-        weeklyCorrect:  weeklyCorrectCount(attempts),
-        totalSolved:    correctAttempts.length,
-        totalAttempted: attempts.length,
-        streakDays:     computeStreak(attempts, true),
-        topicsMastered: progress.filter((p) => p.mastery === 'Mastered').length,
-        topics,
-        appUrl,
-      });
+        const { error } = await resend.emails.send({
+          from,
+          to: student.parentEmail!,
+          subject,
+          html,
+        });
 
-      const { error } = await resend.emails.send({
-        from,
-        to: student.parentEmail,
-        subject,
-        html,
-      });
+        if (error) throw error;
+      }),
+    );
 
-      if (error) {
-        console.error(`Failed for ${student.id}:`, error);
-        failed++;
-      } else {
+    for (const result of results) {
+      if (result.status === 'fulfilled') {
         sent++;
+      } else {
+        console.error('[reports/weekly] email failed:', result.reason);
+        failed++;
       }
-    } catch (err) {
-      console.error(`Error processing student ${student.id}:`, err);
-      failed++;
     }
   }
 

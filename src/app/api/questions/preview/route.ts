@@ -18,7 +18,6 @@ export async function GET() {
         option2:       true,
         option3:       true,
         option4:       true,
-        correctAnswer: true,
         hint1:         true,
         topicId:       true,
       },

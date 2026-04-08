@@ -4,6 +4,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
 import { validateBody, ValidationError } from '@/lib/validateBody';
+import { MS_PER_DAY } from '@/lib/timeConstants';
 
 function generateInvoiceNumber(count: number): string {
   const year = new Date().getFullYear();
@@ -42,7 +43,10 @@ export async function POST(req: Request) {
     const body      = `${razorpayOrderId}|${razorpayPaymentId}`;
     const expected  = crypto.createHmac('sha256', secret).update(body).digest('hex');
 
-    if (expected !== razorpaySignature) {
+    if (
+      expected.length !== razorpaySignature.length ||
+      !crypto.timingSafeEqual(Buffer.from(expected), Buffer.from(razorpaySignature))
+    ) {
       return NextResponse.json({ error: 'Invalid payment signature.' }, { status: 400 });
     }
 
@@ -57,7 +61,7 @@ export async function POST(req: Request) {
     if (!plan) return NextResponse.json({ error: 'Plan not found.' }, { status: 404 });
 
     const now      = new Date();
-    const expiresAt = new Date(now.getTime() + plan.durationDays * 24 * 60 * 60 * 1000);
+    const expiresAt = new Date(now.getTime() + plan.durationDays * MS_PER_DAY);
 
     // Create order + activate subscription atomically.
     // Invoice number count is inside the transaction to prevent duplicates.

@@ -27,7 +27,9 @@ export async function GET(req: Request) {
 
     let stepByStep: unknown[] = [];
     try { stepByStep = JSON.parse(q.stepByStep ?? '[]'); } catch { /* malformed seed data */ }
-    return NextResponse.json({ ...q, stepByStep });
+    // Strip correctAnswer — grading is done server-side via /api/attempts
+    const { correctAnswer: _ca, ...rest } = q;
+    return NextResponse.json({ ...rest, stepByStep });
   } catch (err) {
     console.error('[questions/next] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

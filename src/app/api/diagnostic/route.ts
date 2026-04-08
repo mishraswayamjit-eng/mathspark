@@ -40,7 +40,9 @@ export async function GET(req: Request) {
     const q = pool[Math.floor(Math.random() * pool.length)];
     let stepByStep: unknown[] = [];
     try { stepByStep = JSON.parse(q.stepByStep ?? '[]'); } catch { /* malformed seed data */ }
-    return NextResponse.json({ ...q, stepByStep });
+    // Omit correctAnswer from response — grading is done server-side via /api/diagnostic/check
+    const { correctAnswer: _ca, ...rest } = q;
+    return NextResponse.json({ ...rest, stepByStep });
   } catch (err) {
     console.error('[diagnostic] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

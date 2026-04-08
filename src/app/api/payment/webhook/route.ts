@@ -16,9 +16,13 @@ export async function POST(req: Request) {
   const body      = await req.text();
   const signature = req.headers.get('x-razorpay-signature') ?? '';
 
-  // Verify webhook signature
+  // Verify webhook signature (timing-safe to prevent timing attacks)
   const expected = crypto.createHmac('sha256', secret).update(body).digest('hex');
-  if (expected !== signature) {
+  if (
+    !signature ||
+    expected.length !== signature.length ||
+    !crypto.timingSafeEqual(Buffer.from(expected), Buffer.from(signature))
+  ) {
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 });
   }
 

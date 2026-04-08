@@ -7,7 +7,7 @@ import { checkRateLimit } from '@/lib/rateLimit';
 export async function GET(req: Request) {
   try {
     const ip = req.headers.get('x-forwarded-for')?.split(',')[0] ?? 'unknown';
-    if (!checkRateLimit(`lookup:${ip}`, 10, 60_000)) {
+    if (!checkRateLimit(`lookup:${ip}`, 3, 60_000)) {
       return NextResponse.json({ error: 'Too many requests.' }, { status: 429 });
     }
 

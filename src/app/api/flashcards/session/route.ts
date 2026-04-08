@@ -102,8 +102,8 @@ export async function POST(req: Request) {
         where: { id: studentId },
         data: { totalLifetimeXP: { increment: finalXP } },
       });
-    } catch {
-      // totalLifetimeXP field may not exist yet — non-blocking
+    } catch (err) {
+      console.error('[flashcards/session] XP update failed:', err);
     }
 
     const milestoneProgress = getMilestoneProgress(dailyStreak);

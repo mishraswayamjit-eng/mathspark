@@ -24,6 +24,12 @@ export async function POST(req: Request) {
     if (password.length < 8) {
       return NextResponse.json({ error: 'Password must be at least 8 characters.' }, { status: 400 });
     }
+    if (password.length > 128) {
+      return NextResponse.json({ error: 'Password must be at most 128 characters.' }, { status: 400 });
+    }
+    if (!/[a-zA-Z]/.test(password) || !/\d/.test(password)) {
+      return NextResponse.json({ error: 'Password must contain at least one letter and one digit.' }, { status: 400 });
+    }
 
     const existing = await prisma.parent.findUnique({ where: { email: emailClean } });
     if (existing) {
@@ -41,7 +47,8 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ id: parent.id, name: parent.name, email: parent.email }, { status: 201 });
-  } catch {
+  } catch (err) {
+    console.error('[auth/register]', err);
     return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
   }
 }

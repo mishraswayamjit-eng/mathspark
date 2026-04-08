@@ -368,7 +368,8 @@ function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: stri
           setPhase('complete');
         }
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error('[flashcards/session] fetch deck', err);
         router.replace('/flashcards');
       });
   }, [router, deckId, gradeOverride]);
@@ -599,7 +600,7 @@ function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: stri
                 setPhase('complete');
               }
             })
-            .catch(() => router.replace('/flashcards'));
+            .catch((err) => { console.error('[flashcards/session] re-fetch deck', err); router.replace('/flashcards'); });
         }}
       />
       </>

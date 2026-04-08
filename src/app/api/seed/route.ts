@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { verifySecret } from '@/lib/adminAuth';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -121,10 +122,9 @@ const PAGE_SIZE = 200; // questions per API call
 // Safe to retry — all writes are upserts.
 // ---------------------------------------------------------------------------
 export async function GET(req: Request) {
-  // ── Auth ──────────────────────────────────────────────────────────────────
-  const secret = process.env.SEED_SECRET;
+  // ── Auth (timing-safe) ───────────────────────────────────────────────────
   const { searchParams } = new URL(req.url);
-  if (!secret || searchParams.get('secret') !== secret) {
+  if (!verifySecret(searchParams.get('secret'))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

@@ -51,7 +51,7 @@ export default function PaperSelectionPage() {
     fetch(`/api/papers?grade=${grade}`)
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d) => setPapers(d.papers ?? []))
-      .catch(() => setPapers([]))
+      .catch((err) => { console.error('[papers] fetch papers', err); setPapers([]); })
       .finally(() => setLoading(false));
   }, [grade]);
 

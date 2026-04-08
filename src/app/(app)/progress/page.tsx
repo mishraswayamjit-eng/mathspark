@@ -62,7 +62,7 @@ export default function ProgressPage() {
 
     Promise.all([
       fetch('/api/dashboard').then((r) => { if (!r.ok) throw new Error('Dashboard fetch failed'); return r.json(); }),
-      fetch('/api/mistake-patterns').then((r) => r.ok ? r.json() : { patterns: [] }).catch(() => ({ patterns: [] })),
+      fetch('/api/mistake-patterns').then((r) => r.ok ? r.json() : { patterns: [] }).catch((err) => { console.error('[progress] fetch mistake-patterns', err); return { patterns: [] }; }),
     ])
       .then(([dashData, mistakeData]) => {
         setData(dashData);

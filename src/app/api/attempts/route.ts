@@ -100,9 +100,6 @@ export async function POST(req: Request) {
     }
 
     return { attempt: created, xpAwarded: awarded };
-  }).catch((err) => {
-    if ((err as Error).message === 'Student not found') throw err;
-    throw err;
   });
 
   // ── Progress update — fire-and-forget (safe if it lags; idempotent) ────────

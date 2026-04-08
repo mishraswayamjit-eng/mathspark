@@ -80,7 +80,9 @@ export async function GET(req: Request) {
       final.map((q) => {
         let stepByStep: unknown[] = [];
         try { stepByStep = JSON.parse(q.stepByStep ?? '[]'); } catch { /* malformed seed data */ }
-        return { ...q, stepByStep };
+        // Strip correctAnswer — grading is done server-side via /api/attempts
+        const { correctAnswer: _ca, ...rest } = q;
+        return { ...rest, stepByStep };
       }),
     );
   } catch (err) {

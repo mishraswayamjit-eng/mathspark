@@ -178,6 +178,8 @@ export async function processWeeklyLeagues(): Promise<{ processed: number }> {
       };
     });
 
+    // Batch all membership + student tier updates in a single transaction.
+    // For larger leagues (100+ members), consider raw SQL CASE WHEN for fewer round trips.
     await prisma.$transaction([
       ...updates.map((u) =>
         prisma.leagueMembership.update({

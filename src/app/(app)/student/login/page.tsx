@@ -14,6 +14,8 @@ export default function StudentLoginPage() {
   const [children, setChildren] = useState<Child[] | null>(null);
   const [loading,  setLoading]  = useState(false);
   const [error,    setError]    = useState('');
+  const [pinChild, setPinChild] = useState<Child | null>(null);
+  const [pin,      setPin]      = useState('');
 
   async function handleLookup(e: React.FormEvent) {
     e.preventDefault();
@@ -36,17 +38,42 @@ export default function StudentLoginPage() {
     }
   }
 
-  async function selectChild(child: Child) {
-    // Set httpOnly cookie for API auth
-    await fetch('/api/student/session', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ studentId: child.id }),
-    });
-    // Keep localStorage for UI display only
-    localStorage.setItem('mathspark_student_id',   child.id);
-    localStorage.setItem('mathspark_student_name', child.name);
-    router.push('/home');
+  async function selectChild(child: Child, pinValue?: string) {
+    setLoading(true);
+    setError('');
+    try {
+      const res = await fetch('/api/student/session', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ studentId: child.id, ...(pinValue ? { pin: pinValue } : {}) }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        // If PIN is required, show PIN input
+        if (data.requiresPin) {
+          setPinChild(child);
+          setLoading(false);
+          return;
+        }
+        setError(data.error || 'Login failed');
+        setLoading(false);
+        return;
+      }
+
+      localStorage.setItem('mathspark_student_id',   child.id);
+      localStorage.setItem('mathspark_student_name', child.name);
+      router.push('/home');
+    } catch {
+      setError('Something went wrong. Please try again.');
+      setLoading(false);
+    }
+  }
+
+  async function handlePinSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!pinChild || !pin) return;
+    await selectChild(pinChild, pin);
   }
 
   return (
@@ -58,13 +85,45 @@ export default function StudentLoginPage() {
           <p className="text-white/70 text-sm mt-1">Enter your parent's email to find your profile</p>
         </div>
 
-        {children ? (
+        {pinChild ? (
+          <form onSubmit={handlePinSubmit} className="space-y-4">
+            <p className="text-white/60 text-sm text-center mb-2">
+              Enter PIN for <span className="text-white font-bold">{pinChild.name}</span>
+            </p>
+            <input
+              type="password"
+              inputMode="numeric"
+              maxLength={4}
+              autoFocus
+              value={pin}
+              onChange={(e) => { setPin(e.target.value.replace(/\D/g, '').slice(0, 4)); setError(''); }}
+              placeholder="••••"
+              aria-label="4-digit PIN"
+              className="w-full text-3xl font-bold text-center tracking-[0.5em] bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-green"
+            />
+            {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
+            <button
+              type="submit" disabled={loading || pin.length !== 4}
+              className="w-full bg-duo-green hover:bg-duo-green-dark disabled:opacity-50 text-white font-extrabold py-4 rounded-2xl text-lg transition-colors"
+            >
+              {loading ? 'Verifying…' : 'Enter →'}
+            </button>
+            <button
+              type="button"
+              onClick={() => { setPinChild(null); setPin(''); setError(''); }}
+              className="w-full text-white/60 text-sm py-2 hover:text-white/70 transition-colors"
+            >
+              ← Pick a different profile
+            </button>
+          </form>
+        ) : children ? (
           <div className="space-y-3">
             <p className="text-white/60 text-sm text-center mb-4">Who are you?</p>
             {children.map((child) => (
               <button
                 key={child.id}
                 onClick={() => selectChild(child)}
+                disabled={loading}
                 className="w-full bg-white/10 hover:bg-white/20 border border-white/10 rounded-2xl p-4 text-left flex items-center gap-4 transition-colors active:scale-[0.97]"
               >
                 <span className="text-3xl">🧑‍🎓</span>

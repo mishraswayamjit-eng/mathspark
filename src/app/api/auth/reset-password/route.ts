@@ -2,8 +2,15 @@ import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 import bcrypt from 'bcryptjs';
 import { prisma } from '@/lib/db';
+import { checkRateLimit } from '@/lib/rateLimit';
 
 export async function POST(req: Request) {
+  // Rate limit: 10 attempts per IP per 15 minutes
+  const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
+  if (!checkRateLimit(`reset-password:${ip}`, 10, 900_000)) {
+    return NextResponse.json({ error: 'Too many requests. Please wait and try again.' }, { status: 429 });
+  }
+
   try {
     const { token, password } = await req.json() as { token: string; password: string };
 

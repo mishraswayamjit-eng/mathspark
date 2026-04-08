@@ -4,6 +4,7 @@ import { prisma } from '@/lib/db';
 import { computeCardXP } from '@/lib/flashcardXP';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { validateBody, ValidationError } from '@/lib/validateBody';
+import { checkRateLimit } from '@/lib/rateLimit';
 
 export const dynamic = 'force-dynamic';
 
@@ -28,6 +29,10 @@ export async function POST(req: Request) {
     const studentId = await getAuthenticatedStudentId();
     if (!studentId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    if (!checkRateLimit(`fc-progress:${studentId}`, 30, 60_000)) {
+      return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
     }
 
     const { cardId, correct } = validateBody<{ cardId?: string; correct?: boolean }>(

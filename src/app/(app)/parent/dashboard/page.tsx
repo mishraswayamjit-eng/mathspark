@@ -44,7 +44,7 @@ export default function ParentDashboard() {
     fetch('/api/parent/children')
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d) => { setChildren(d.children ?? []); setLoading(false); })
-      .catch(() => setLoading(false));
+      .catch((err) => { console.error('[parent/dashboard] fetch children', err); setLoading(false); });
   }, [status]);
 
   if (status === 'loading' || loading) {

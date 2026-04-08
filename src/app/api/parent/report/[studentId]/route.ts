@@ -35,6 +35,7 @@ export async function GET(
       where: { id: studentId },
       select: {
         name: true,
+        displayName: true,
         grade: true,
       },
     }),
@@ -68,7 +69,7 @@ export async function GET(
 
   return NextResponse.json(
     {
-      student: { name: student.name, grade: student.grade },
+      student: { name: student.displayName ?? student.name.split(' ')[0], grade: student.grade },
       stats: {
         totalSolved:    attempts.filter((a) => a.isCorrect).length,
         topicsMastered: progress.filter((p) => p.mastery === 'Mastered').length,

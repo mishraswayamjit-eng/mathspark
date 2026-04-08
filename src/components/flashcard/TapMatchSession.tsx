@@ -224,7 +224,7 @@ export default function TapMatchSession({ deckId, conceptId }: TapMatchSessionPr
           setupLevel(0, data.cards as CardWithProgress[]);
         }
       })
-      .catch(() => router.replace('/flashcards'));
+      .catch((err) => { console.error('[TapMatch] fetch deck', err); router.replace('/flashcards'); });
   }, [fetchDeck, router, setupLevel]);
 
   useEffect(() => { loadDeck(); }, [loadDeck]);

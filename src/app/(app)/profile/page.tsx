@@ -170,7 +170,7 @@ export default function ProfilePage() {
         setParentWhatsApp(s.parentWhatsApp ?? '');
         setLoading(false);
       })
-      .catch(() => { setFetchError(true); setLoading(false); });
+      .catch((err) => { console.error('[profile] fetch student settings', err); setFetchError(true); setLoading(false); });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   async function patchStudent(fields: Record<string, unknown>) {

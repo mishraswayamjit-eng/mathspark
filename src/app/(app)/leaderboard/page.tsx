@@ -467,7 +467,7 @@ export default function LeaderboardPage() {
     fetch('/api/leaderboard')
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d: LeagueData) => { setLeagueData(d); setWeekLoading(false); })
-      .catch(() => setWeekLoading(false));
+      .catch((err) => { console.error('[leaderboard] fetch weekly', err); setWeekLoading(false); });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Check for promotion / demotion from last week ────────────────────────
@@ -493,7 +493,7 @@ export default function LeaderboardPage() {
           }
         }
       })
-      .catch(() => setLastWeekLoaded(true));
+      .catch((err) => { console.error('[leaderboard] fetch last-week', err); setLastWeekLoaded(true); });
   }, [studentId]);
 
   // ── Load all-time on first tap ────────────────────────────────────────────
@@ -502,7 +502,7 @@ export default function LeaderboardPage() {
     fetch('/api/leaderboard/all-time')
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d) => { setAllTimeData(d); setAllTimeLoaded(true); })
-      .catch(() => setAllTimeLoaded(true));
+      .catch((err) => { console.error('[leaderboard] fetch all-time', err); setAllTimeLoaded(true); });
   }, [studentId, allTimeLoaded]);
 
   // ── IntersectionObserver for my-rank row ──────────────────────────────────

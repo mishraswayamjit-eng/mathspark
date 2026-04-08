@@ -184,6 +184,7 @@ export default function StartPage() {
   const [dnError,       setDnError]      = useState('');
   const [trialDaysLeft, setTrialDaysLeft] = useState<number | null>(null);
   const [trialExpiry,   setTrialExpiry]  = useState<string | null>(null);
+  const [pin,           setPin]          = useState('');
 
   // ── Personalization state (saved to profile on sign-up) ───────────────────
   const [goal,          setGoal]         = useState<string>('');
@@ -240,11 +241,30 @@ export default function StartPage() {
     await fetchQuestion(plan[0].topicId, 'Medium', []);
   }
 
-  // ── Handle answer (NO auth call — just store locally) ─────────────────────
-  function handleAnswer(key: AnswerKey, isCorrect: boolean) {
+  // ── Handle answer (server-side grading via /api/diagnostic/check) ─────────
+  async function handleAnswer(key: AnswerKey) {
     if (!question || answered) return;
+    setSelected(key);    // Show which option was tapped
+
+    // Grade server-side — correctAnswer is not sent to the client
+    let isCorrect = false;
+    try {
+      const res = await fetch('/api/diagnostic/check', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ questionId: question.id, selected: key }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        isCorrect = data.isCorrect;
+        // Set correctAnswer on question so QuestionCard can show visual feedback
+        setQuestion((prev) => prev ? { ...prev, correctAnswer: data.correctAnswer } : null);
+      }
+    } catch {
+      // Fallback: treat as incorrect on network error
+    }
+
     setAnswered(true);
-    setSelected(key);
 
     const newAnswers: DiagnosticAnswer[] = [
       ...answers,
@@ -317,6 +337,7 @@ export default function StartPage() {
           examName:              goal || undefined,
           dailyGoalMins:         dailyGoal,
           preferredPracticeTime: practiceTime || undefined,
+          pin:                   pin || undefined,
         }),
       });
       const student = await res.json();
@@ -733,6 +754,23 @@ export default function StartPage() {
               maxLength={30}
               className="w-full text-2xl font-bold text-center border-b-4 border-duo-blue bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
             />
+          </div>
+
+          <div>
+            <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">
+              Set a 4-digit PIN (optional)
+            </label>
+            <input
+              type="password"
+              inputMode="numeric"
+              maxLength={4}
+              value={pin}
+              onChange={(e) => { const v = e.target.value.replace(/\D/g, '').slice(0, 4); setPin(v); setError(''); }}
+              placeholder="••••"
+              aria-label="4-digit PIN"
+              className="w-full mt-1.5 text-2xl font-bold text-center tracking-[0.5em] border-b-4 border-gray-200 bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300 focus:border-duo-blue transition-colors"
+            />
+            <p className="text-xs text-gray-500 font-medium mt-1">Protects your account from siblings</p>
           </div>
 
           <details className="group">

@@ -51,7 +51,7 @@ export default function LessonSessionPage({
         setLevel(lvl);
         setAccentColor(lvl.color || data.color || '#8B5CF6');
       })
-      .catch(() => setError(true))
+      .catch((err) => { console.error('[lessons/level] fetch level data', err); setError(true); })
       .finally(() => setLoading(false));
   }, [topicSlug, levelId]);
 
@@ -89,9 +89,8 @@ export default function LessonSessionPage({
             setIsFirstTime(data.xp.firstTimeBonus > 0);
           }
         })
-        .catch(() => {
-          // Silently fail — score is still shown
-          console.error('Failed to save lesson progress');
+        .catch((err) => {
+          console.error('[lessons] save lesson progress', err);
         });
     },
     [topicSlug, levelId],

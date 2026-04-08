@@ -5,6 +5,7 @@ import { checkRateLimit } from '@/lib/rateLimit';
 import { validateBody, ValidationError } from '@/lib/validateBody';
 
 export const dynamic = 'force-dynamic';
+// NOTE: maxDuration is ignored on Vercel Hobby (10s hard limit). Only effective on Pro+.
 export const maxDuration = 60;
 
 // ── Sparky system prompt ──────────────────────────────────────────────────────
