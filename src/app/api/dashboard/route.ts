@@ -121,6 +121,8 @@ export async function GET(req: Request) {
       weeklyData: weeklyData(attempts),
       weakestTopicId: weakest?.id ?? topics[0]?.id ?? null,
       achievements,
+    }, {
+      headers: { 'Cache-Control': 'private, no-store' },
     });
   } catch (err) {
     console.error('[GET /api/dashboard]', err);

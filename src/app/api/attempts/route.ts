@@ -40,7 +40,10 @@ export async function POST(req: Request) {
     // Recalculate + persist mastery
     await updateProgress(studentId, topicId);
 
-    return NextResponse.json(attempt, { status: 201 });
+    return NextResponse.json(attempt, {
+      status: 201,
+      headers: { 'Cache-Control': 'private, no-store' },
+    });
   } catch (err) {
     console.error('[POST /api/attempts]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

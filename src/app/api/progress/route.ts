@@ -31,7 +31,9 @@ export async function GET(req: Request) {
       topicName: p.topic?.name ?? p.topicId,
     }));
 
-    return NextResponse.json(progressWithNames);
+    return NextResponse.json(progressWithNames, {
+      headers: { 'Cache-Control': 'private, no-store' },
+    });
   } catch (err) {
     console.error('[GET /api/progress]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
