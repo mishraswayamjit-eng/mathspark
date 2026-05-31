@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 const rateLimitMap = new Map<string, { count: number; windowStart: number }>();
 const WINDOW_MS = 60_000;
 const MAX_REQUESTS = 60;
+const MAX_ENTRIES = 50_000;
 
 function addSecurityHeaders(response: NextResponse): NextResponse {
   response.headers.set('X-Content-Type-Options', 'nosniff');
@@ -33,9 +34,17 @@ export function middleware(req: NextRequest) {
 
   const ip = req.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? 'unknown';
   const now = Date.now();
+
+  // Safety cap: if the map grows beyond MAX_ENTRIES, clear it entirely to prevent
+  // unbounded memory growth from unique IPs that never return.
+  if (rateLimitMap.size > MAX_ENTRIES) {
+    rateLimitMap.clear();
+  }
+
   const entry = rateLimitMap.get(ip);
 
   if (!entry || now - entry.windowStart > WINDOW_MS) {
+    if (entry) rateLimitMap.delete(ip); // explicit cleanup of stale entry
     rateLimitMap.set(ip, { count: 1, windowStart: now });
     return addSecurityHeaders(NextResponse.next());
   }
