@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import KatexRenderer from './KatexRenderer';
 import { humaniseSubTopic } from '@/lib/utils';
 import type { AnswerKey, Question } from '@/types';
@@ -83,13 +84,21 @@ export default function QuestionCard({
       {/* Options */}
       <div className="space-y-3" role="group" aria-labelledby="question-text">
         {options.map(({ key, text }) => (
-          <button
+          <motion.button
             key={key}
             disabled={answered}
             onClick={() => onAnswer(key, key === question.correctAnswer)}
             className={optionStyle(key)}
             aria-label={`Option ${key}: ${text}`}
             aria-pressed={selected === key}
+            animate={
+              answered && key === question.correctAnswer
+                ? { scale: [1, 1.04, 1] }
+                : answered && key === selected && key !== question.correctAnswer
+                ? { x: [0, -6, 6, -6, 6, 0] }
+                : {}
+            }
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
           >
             <span
               className={`w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-bold ${
@@ -109,7 +118,7 @@ export default function QuestionCard({
             {answered && key === selected && key !== question.correctAnswer && (
               <span className="ml-auto text-red-500 font-bold">✗</span>
             )}
-          </button>
+          </motion.button>
         ))}
       </div>
     </div>

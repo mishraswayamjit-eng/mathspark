@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import QuestionCard, { randomCorrect, randomWrong } from '@/components/QuestionCard';
 import HintSystem from '@/components/HintSystem';
 import StepByStep from '@/components/StepByStep';
@@ -322,17 +322,22 @@ export default function PracticePage() {
           />
 
           {/* Feedback banner */}
-          {answered && feedback && (
-            <div
-              className={`rounded-2xl px-4 py-3 text-center font-semibold text-base ${
-                selected === question.correctAnswer
-                  ? 'bg-green-50 text-green-700 border border-green-200'
-                  : 'bg-amber-50 text-amber-700 border border-amber-200'
-              }`}
-            >
-              {feedback}
-            </div>
-          )}
+          <AnimatePresence>
+            {answered && feedback && (
+              <motion.div
+                className={`rounded-2xl px-4 py-3 text-center font-semibold text-base ${
+                  selected === question.correctAnswer
+                    ? 'bg-green-50 text-green-700 border border-green-200'
+                    : 'bg-amber-50 text-amber-700 border border-amber-200'
+                }`}
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2, delay: 0.05 }}
+              >
+                {feedback}
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Hint system (auto-shown on wrong) */}
           {answered && (
