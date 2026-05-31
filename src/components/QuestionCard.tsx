@@ -1,7 +1,16 @@
 'use client';
 
 import KatexRenderer from './KatexRenderer';
+import { humaniseSubTopic } from '@/lib/utils';
 import type { AnswerKey, Question } from '@/types';
+
+function OptionText({ text }: { text: string }) {
+  const hasMath = /[\$\\^_]|\/\d|\d\//.test(text);
+  if (hasMath) {
+    return <KatexRenderer latex={text} />;
+  }
+  return <span>{text}</span>;
+}
 
 const CORRECT_MESSAGES = [
   'Great job! ⭐',
@@ -67,7 +76,7 @@ export default function QuestionCard({
           </div>
         )}
         <p className="mt-2 text-xs text-gray-400 uppercase tracking-wide">
-          {question.subTopic} · {question.difficulty}
+          {humaniseSubTopic(question.subTopic)} · {question.difficulty}
         </p>
       </div>
 
@@ -93,7 +102,7 @@ export default function QuestionCard({
             >
               {key}
             </span>
-            <span className="text-gray-800 text-base">{text}</span>
+            <span className="text-gray-800 text-base"><OptionText text={text} /></span>
             {answered && key === question.correctAnswer && (
               <span className="ml-auto text-green-600 font-bold">✓</span>
             )}
