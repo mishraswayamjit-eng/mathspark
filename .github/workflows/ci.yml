@@ -40,3 +40,6 @@ jobs:
           DATABASE_URL: ${{ secrets.DATABASE_URL || 'postgresql://user:pass@localhost/mathspark' }}
           SEED_SECRET: ${{ secrets.SEED_SECRET || 'ci-placeholder' }}
           NEXT_TELEMETRY_DISABLED: 1
+
+      # E2E tests (require DATABASE_URL with seeded data — run locally or in staging)
+      # To run: npm run e2e
