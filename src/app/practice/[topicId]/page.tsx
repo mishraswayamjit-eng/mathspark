@@ -31,7 +31,8 @@ export default function PracticePage() {
   const [cw,         setCw]         = useState(0); // consecutive wrong
   const [cr,         setCr]         = useState(0); // consecutive right
   const [score,      setScore]      = useState({ correct: 0, attempted: 0 });
-  const [noMore,     setNoMore]     = useState(false);
+  const [noMore,       setNoMore]       = useState(false);
+  const [attemptError, setAttemptError] = useState(false);
 
   // ── Timer ref: tracks when the current question was shown ─────────────────
   const startTimeRef = useRef<number>(Date.now());
@@ -63,6 +64,12 @@ export default function PracticePage() {
     if (res.status === 404) {
       sessionStorage.removeItem(`mathspark_session_${topicId}`);
       setNoMore(true);
+      setLoading(false);
+      return;
+    }
+    if (!res.ok) {
+      // Already handled 404 above; treat other errors as retriable
+      setFeedback("Hmm, couldn't load the next question. Tap 'Next' to try again.");
       setLoading(false);
       return;
     }
@@ -111,6 +118,7 @@ export default function PracticePage() {
   // ── Handle answer ─────────────────────────────────────────────────────────
   async function handleAnswer(key: AnswerKey, isCorrect: boolean) {
     if (!question || answered || !studentId) return;
+    setAttemptError(false);
     setAnswered(true);
     setSelected(key);
 
@@ -146,7 +154,7 @@ export default function PracticePage() {
         hintUsed: hintLevel,
         timeTakenMs,
       }),
-    }).catch(() => {/* ignore in MVP */});
+    }).catch(() => { setAttemptError(true); });
 
     const newSeenIds = [...seenIds, question.id];
     setSeenIds(newSeenIds);
@@ -250,6 +258,13 @@ export default function PracticePage() {
               </div>
             ) : null;
           })()}
+
+          {/* Attempt save error banner */}
+          {attemptError && (
+            <div className="text-xs text-amber-600 text-center">
+              Couldn&apos;t save your answer — tap Next to continue.
+            </div>
+          )}
 
           {/* Next question button */}
           {answered && (

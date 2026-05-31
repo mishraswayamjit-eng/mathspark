@@ -90,7 +90,10 @@ export async function GET(req: Request) {
 
     const weakest = topics
       .filter((t) => t.attempted > 0 && t.mastery !== 'Mastered')
-      .sort((a, b) => (a.correct / a.attempted) - (b.correct / b.attempted))[0];
+      .sort((a, b) =>
+        (a.attempted > 0 ? Math.round((a.correct / a.attempted) * 100) : 0) -
+        (b.attempted > 0 ? Math.round((b.correct / b.attempted) * 100) : 0),
+      )[0];
 
     const topicsStarted = progress.filter((p) => p.attempted > 0).length;
     const totalCorrect = progress.reduce((sum, p) => sum + p.correct, 0);

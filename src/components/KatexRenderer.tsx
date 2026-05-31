@@ -19,16 +19,18 @@ export default function KatexRenderer({
 
   useEffect(() => {
     if (!ref.current || !latex) return;
+    let html = '';
     try {
-      katex.render(latex, ref.current, {
+      html = katex.renderToString(latex, {
         displayMode,
         throwOnError: false,
         strict: false,
         trust: false,
       });
     } catch {
-      if (ref.current) ref.current.textContent = latex;
+      html = `<span style="color:#888">${latex}</span>`;
     }
+    if (ref.current) ref.current.innerHTML = html;
   }, [latex, displayMode]);
 
   if (!latex) return null;
