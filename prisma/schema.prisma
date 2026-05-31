@@ -48,6 +48,9 @@ model Question {
   misconceptionD String    @default("")
   source         String    @default("hand_crafted")
   attempts       Attempt[]
+
+  @@index([topicId])
+  @@index([topicId, difficulty])
 }
 
 model Progress {
@@ -75,4 +78,8 @@ model Attempt {
   hintUsed    Int      @default(0)
   timeTakenMs Int      @default(0)
   createdAt   DateTime @default(now())
+
+  @@index([studentId])
+  @@index([studentId, createdAt])
+  @@index([questionId])
 }
