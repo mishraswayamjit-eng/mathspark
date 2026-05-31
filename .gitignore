@@ -22,6 +22,9 @@ prisma/*.db-shm
 # Prisma generated client
 prisma/generated/
 
+# Claude Code agent worktrees
+.claude/
+
 # Misc
 .DS_Store
 *.pem
