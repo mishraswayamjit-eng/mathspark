@@ -29,7 +29,7 @@ export default function BottomNav() {
               }`}
               aria-current={active ? 'page' : undefined}
             >
-              <span className="text-xl mb-0.5">{emoji}</span>
+              <span className="text-xl mb-0.5" aria-hidden="true">{emoji}</span>
               <span>{label}</span>
             </Link>
           );

@@ -23,9 +23,9 @@ function masteryStyle(mastery: string) {
 }
 
 function masteryBadge(mastery: string) {
-  if (mastery === 'Mastered')  return <span className="text-xs font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded-full">⭐ Mastered</span>;
-  if (mastery === 'Practicing') return <span className="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">📚 Practicing</span>;
-  return <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">🆕 Start</span>;
+  if (mastery === 'Mastered')   return <span className="text-xs font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded-full"><span aria-hidden="true">⭐</span> Mastered</span>;
+  if (mastery === 'Practicing') return <span className="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full"><span aria-hidden="true">📚</span> Practicing</span>;
+  return <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full"><span aria-hidden="true">🆕</span> Start</span>;
 }
 
 function barColor(mastery: string) {
@@ -63,7 +63,7 @@ export default function ChapterGrid({ topics, prerequisiteHints, attemptedMap }:
             {masteryBadge(topic.mastery)}
             {prerequisiteHints?.[topic.id] && (
               <p className="text-xs text-amber-600 mt-1 leading-tight">
-                💡 Try {prerequisiteHints[topic.id]} first
+                <span aria-hidden="true">💡</span> Try {prerequisiteHints[topic.id]} first
               </p>
             )}
             <ProgressBar
