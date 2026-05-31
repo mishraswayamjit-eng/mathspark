@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import ProgressBar from '@/components/ProgressBar';
 import { SkeletonStatRow, SkeletonGrid } from '@/components/Skeleton';
 import type { DashboardData } from '@/types';
@@ -97,12 +97,7 @@ export default function DashboardPage() {
 
   if (loading) {
     return (
-      <motion.div
-        className="min-h-screen pb-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-      >
+      <div className="min-h-screen pb-8">
         <div className="px-4 pt-8 pb-4">
           <div className="h-7 bg-gray-200 rounded w-40 mb-1 animate-pulse" />
           <div className="h-4 bg-gray-100 rounded w-32 animate-pulse" />
@@ -113,20 +108,15 @@ export default function DashboardPage() {
         <div className="px-4">
           <SkeletonGrid count={16} />
         </div>
-      </motion.div>
+      </div>
     );
   }
 
   if (!data) {
     return (
-      <motion.div
-        className="flex items-center justify-center min-h-screen text-gray-400"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.2 }}
-      >
+      <div className="flex items-center justify-center min-h-screen text-gray-400">
         Could not load dashboard. Please try again.
-      </motion.div>
+      </div>
     );
   }
 
@@ -134,12 +124,7 @@ export default function DashboardPage() {
   const maxBar = Math.max(...weeklyData.map((d) => d.count), 1);
 
   return (
-    <motion.div
-      className="min-h-screen pb-8"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.2 }}
-    >
+    <div className="min-h-screen pb-8">
       {/* Header */}
       <div className="px-4 pt-8 pb-4">
         <h1 className="text-2xl font-bold text-gray-800">Hi {student.name}! 🌟</h1>
@@ -305,25 +290,37 @@ export default function DashboardPage() {
       )}
 
       {/* Mastery celebration modal */}
-      {newlyMastered && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-6">
-          <div className="bg-white rounded-3xl p-8 shadow-2xl max-w-sm w-full text-center">
-            <div className="text-7xl mb-4">🏆</div>
-            <h2 className="text-2xl font-bold text-gray-800 mb-2">Topic Mastered!</h2>
-            <p className="text-gray-500 mb-2">
-              You&apos;ve mastered
-            </p>
-            <p className="text-lg font-bold text-blue-600 mb-6">{newlyMastered}</p>
-            <p className="text-3xl mb-6">⭐ ⭐ ⭐</p>
-            <button
-              onClick={() => setNewlyMastered(null)}
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 rounded-2xl text-lg transition-colors min-h-[48px]"
+      <AnimatePresence>
+        {newlyMastered && (
+          <motion.div
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <motion.div
+              className="bg-white rounded-3xl p-8 shadow-2xl max-w-sm w-full text-center"
+              initial={{ opacity: 0, scale: 0.85, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 10 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
-              Keep going! 🚀
-            </button>
-          </div>
-        </div>
-      )}
-    </motion.div>
+              <div className="text-7xl mb-4" aria-hidden="true">🏆</div>
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">Topic Mastered!</h2>
+              <p className="text-gray-500 mb-2">You&apos;ve mastered</p>
+              <p className="text-lg font-bold text-blue-600 mb-6">{newlyMastered}</p>
+              <p className="text-3xl mb-6" aria-hidden="true">⭐ ⭐ ⭐</p>
+              <button
+                onClick={() => setNewlyMastered(null)}
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 rounded-2xl text-lg transition-colors min-h-[48px]"
+              >
+                Keep going! 🚀
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
