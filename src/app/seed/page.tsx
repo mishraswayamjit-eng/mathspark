@@ -10,18 +10,24 @@ export default function SeedPage() {
   const [seeded,   setSeeded]   = useState(0);
   const [total,    setTotal]    = useState(2345);
   const [message,  setMessage]  = useState('');
+  const [page,     setPage]     = useState(0);
 
   async function runSeed() {
     if (!secret.trim()) { setMessage('Enter your SEED_SECRET first.'); return; }
     setStatus('running');
     setMessage('Seeding topics…');
     setSeeded(0);
+    setPage(0);
 
-    let page = 0;
+    let currentPage = 0;
 
     while (true) {
       try {
-        const res = await fetch(`/api/seed?secret=${encodeURIComponent(secret)}&page=${page}`);
+        const res = await fetch('/api/seed', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ secret, page: currentPage }),
+        });
         const data = await res.json();
 
         if (!res.ok) {
@@ -33,13 +39,14 @@ export default function SeedPage() {
         setSeeded(data.seeded ?? 0);
         setTotal(data.total  ?? 2345);
         setMessage(data.message ?? '');
+        setPage(data.nextPage ?? currentPage);
 
         if (data.done) {
           setStatus('done');
           return;
         }
 
-        page = data.nextPage;
+        currentPage = data.nextPage;
       } catch (err) {
         setMessage(`Network error: ${err}`);
         setStatus('error');
