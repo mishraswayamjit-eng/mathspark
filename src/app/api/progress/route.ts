@@ -23,10 +23,15 @@ export async function GET(req: Request) {
 
     const progress = await prisma.progress.findMany({
       where: { studentId },
-      include: { topic: true },
+      include: { topic: { select: { name: true } } },
     });
 
-    return NextResponse.json(progress);
+    const progressWithNames = progress.map((p) => ({
+      ...p,
+      topicName: p.topic?.name ?? p.topicId,
+    }));
+
+    return NextResponse.json(progressWithNames);
   } catch (err) {
     console.error('[GET /api/progress]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

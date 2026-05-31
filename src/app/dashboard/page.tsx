@@ -145,6 +145,21 @@ export default function DashboardPage() {
         ))}
       </div>
 
+      {/* Share progress with parent */}
+      <div className="px-4 mb-4 text-center">
+        <button
+          onClick={() => {
+            const url = `${window.location.origin}/share/${localStorage.getItem('mathspark_student_id')}`;
+            navigator.clipboard.writeText(url).then(() => {
+              alert('Share link copied! Send it to your parent. 📤');
+            });
+          }}
+          className="text-sm text-blue-500 underline underline-offset-2 hover:text-blue-600 transition-colors"
+        >
+          Share progress with parent <span aria-hidden="true">📤</span>
+        </button>
+      </div>
+
       {/* Continue learning */}
       {weakestTopicId && (
         <div className="px-4 mb-6">
