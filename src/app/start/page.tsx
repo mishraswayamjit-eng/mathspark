@@ -129,7 +129,7 @@ export default function StartPage() {
         isCorrect,
         hintUsed: 0,
       }),
-    }).catch(() => {/* ignore */});
+    }).catch((e) => { console.warn('Attempt save failed in diagnostic:', e); });
 
     // Auto-advance after short delay
     setTimeout(() => advance(isCorrect, newAnswers), 1200);
