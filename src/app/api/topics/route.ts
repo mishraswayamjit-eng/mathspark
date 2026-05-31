@@ -8,9 +8,14 @@ const TOPIC_ORDER = [
 
 // GET /api/topics
 export async function GET() {
-  const topics = await prisma.topic.findMany();
-  topics.sort(
-    (a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id),
-  );
-  return NextResponse.json(topics);
+  try {
+    const topics = await prisma.topic.findMany();
+    topics.sort(
+      (a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id),
+    );
+    return NextResponse.json(topics);
+  } catch (err) {
+    console.error('[GET /api/topics]', err);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
 }
