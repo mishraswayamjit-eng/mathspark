@@ -34,6 +34,11 @@ export default function PracticePage() {
   const [noMore,       setNoMore]       = useState(false);
   const [attemptError, setAttemptError] = useState(false);
 
+  // Flag this question
+  const [showFlagForm, setShowFlagForm]   = useState(false);
+  const [flagReason,   setFlagReason]     = useState<'wrong_answer' | 'confusing' | 'too_hard' | 'other'>('other');
+  const [flagSent,     setFlagSent]       = useState(false);
+
   // ── Timer ref: tracks when the current question was shown ─────────────────
   const startTimeRef = useRef<number>(Date.now());
 
@@ -80,6 +85,8 @@ export default function PracticePage() {
     setSelected(null);
     setFeedback('');
     setHintLevel(0);
+    setShowFlagForm(false);
+    setFlagSent(false);
 
     // Use prefetched question if available
     if (prefetchedRef.current) {
@@ -353,6 +360,70 @@ export default function PracticePage() {
             >
               Next Question →
             </button>
+          )}
+
+          {/* Flag this question */}
+          {answered && !flagSent && (
+            <div className="text-center">
+              {!showFlagForm ? (
+                <button
+                  onClick={() => setShowFlagForm(true)}
+                  className="text-xs text-gray-300 hover:text-gray-400 transition-colors py-2"
+                >
+                  Something wrong with this question? 🚩
+                </button>
+              ) : (
+                <div className="bg-gray-50 rounded-xl p-3 text-left">
+                  <p className="text-xs font-semibold text-gray-500 mb-2">What&apos;s the issue?</p>
+                  <div className="space-y-1 mb-3">
+                    {([
+                      ['wrong_answer', 'The answer seems wrong'],
+                      ['confusing',    'The question is confusing'],
+                      ['too_hard',     'Way too hard for Grade 4'],
+                      ['other',        'Something else'],
+                    ] as const).map(([val, label]) => (
+                      <label key={val} className="flex items-center gap-2 text-xs text-gray-600 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="flagReason"
+                          value={val}
+                          checked={flagReason === val}
+                          onChange={() => setFlagReason(val)}
+                          className="accent-blue-500"
+                        />
+                        {label}
+                      </label>
+                    ))}
+                  </div>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => setShowFlagForm(false)}
+                      className="flex-1 text-xs text-gray-400 py-2 rounded-lg border border-gray-200"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={async () => {
+                        if (!question || !studentId) return;
+                        await fetch('/api/questions/flag', {
+                          method: 'POST',
+                          headers: { 'content-type': 'application/json' },
+                          body: JSON.stringify({ questionId: question.id, studentId, reason: flagReason }),
+                        }).catch(() => {});
+                        setFlagSent(true);
+                        setShowFlagForm(false);
+                      }}
+                      className="flex-1 text-xs bg-amber-500 hover:bg-amber-600 text-white py-2 rounded-lg font-semibold"
+                    >
+                      Send report 🚩
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+          {answered && flagSent && (
+            <p className="text-xs text-center text-green-600">Thanks for the report! We&apos;ll review it. ✅</p>
           )}
         </>
       ) : (
