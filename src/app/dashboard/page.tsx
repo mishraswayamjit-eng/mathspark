@@ -97,7 +97,7 @@ export default function DashboardPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen pb-8">
+      <motion.div className="min-h-screen pb-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.2 }}>
         <div className="px-4 pt-8 pb-4">
           <div className="h-7 bg-gray-200 rounded w-40 mb-1 animate-pulse" />
           <div className="h-4 bg-gray-100 rounded w-32 animate-pulse" />
@@ -108,15 +108,15 @@ export default function DashboardPage() {
         <div className="px-4">
           <SkeletonGrid count={16} />
         </div>
-      </div>
+      </motion.div>
     );
   }
 
   if (!data) {
     return (
-      <div className="flex items-center justify-center min-h-screen text-gray-400">
+      <motion.div className="flex items-center justify-center min-h-screen text-gray-400" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.2 }}>
         Could not load dashboard. Please try again.
-      </div>
+      </motion.div>
     );
   }
 
@@ -124,7 +124,7 @@ export default function DashboardPage() {
   const maxBar = Math.max(...weeklyData.map((d) => d.count), 1);
 
   return (
-    <div className="min-h-screen pb-8">
+    <motion.div className="min-h-screen pb-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.2 }}>
       {/* Header */}
       <div className="px-4 pt-8 pb-4">
         <h1 className="text-2xl font-bold text-gray-800">Hi {student.name}! 🌟</h1>
@@ -321,6 +321,6 @@ export default function DashboardPage() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }
