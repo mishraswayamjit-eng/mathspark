@@ -247,7 +247,7 @@ export default function PracticePage() {
   if (noMore) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-6 gap-6 text-center">
-        <div className="text-5xl">🏆</div>
+        <div className="text-5xl" aria-hidden="true">🏆</div>
         <h2 className="text-2xl font-bold text-gray-800">You practised all questions here!</h2>
         <p className="text-gray-500">Score: {score.correct}/{score.attempted} correct</p>
         <button
@@ -298,7 +298,7 @@ export default function PracticePage() {
       {/* Question area */}
       {loading ? (
         <div className="flex-1 flex items-center justify-center">
-          <div className="text-4xl animate-bounce">🤔</div>
+          <div className="text-4xl animate-bounce" aria-hidden="true">🤔</div>
         </div>
       ) : question ? (
         <>
@@ -372,7 +372,7 @@ export default function PracticePage() {
               {!showFlagForm ? (
                 <button
                   onClick={() => setShowFlagForm(true)}
-                  className="text-xs text-gray-300 hover:text-gray-400 transition-colors py-2"
+                  className="text-xs text-gray-400 hover:text-gray-600 transition-colors py-2"
                 >
                   Something wrong with this question? 🚩
                 </button>

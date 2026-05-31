@@ -56,7 +56,7 @@ export default function QuestionCard({
   ];
 
   function optionStyle(key: AnswerKey): string {
-    const base = 'w-full text-left rounded-2xl px-4 py-4 min-h-[56px] transition-all duration-200 border-2 flex items-center gap-3';
+    const base = 'w-full text-left rounded-2xl px-4 py-4 min-h-[56px] transition-all duration-200 border-2 flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2';
     if (!answered) return `${base} bg-white border-gray-200 hover:border-blue-400 hover:bg-blue-50 cursor-pointer`;
     if (key === question.correctAnswer) return `${base} bg-green-50 border-green-500`;
     if (key === selected) return `${base} bg-red-50 border-red-400`;
