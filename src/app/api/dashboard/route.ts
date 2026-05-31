@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { prisma } from '@/lib/db';
+import { computeAchievements } from '@/lib/achievements';
 
 const TOPIC_ORDER = [
   'ch01-05','ch06','ch07-08','ch09-10','ch11','ch12',
@@ -91,16 +92,32 @@ export async function GET(req: Request) {
       .filter((t) => t.attempted > 0 && t.mastery !== 'Mastered')
       .sort((a, b) => (a.correct / a.attempted) - (b.correct / b.attempted))[0];
 
+    const topicsStarted = progress.filter((p) => p.attempted > 0).length;
+    const totalCorrect = progress.reduce((sum, p) => sum + p.correct, 0);
+    const totalSolved = attempts.filter((a) => a.isCorrect).length;
+    const topicsMasteredCount = progress.filter((p) => p.mastery === 'Mastered').length;
+    const streak = streakDays(attempts);
+
+    const achievements = computeAchievements({
+      totalAttempts: attempts.length,
+      totalCorrect,
+      streakDays: streak,
+      topicsMastered: topicsMasteredCount,
+      topicsStarted,
+      totalTopics: 16,
+    });
+
     return NextResponse.json({
       student,
       stats: {
-        totalSolved:   attempts.filter((a) => a.isCorrect).length,
-        topicsMastered: progress.filter((p) => p.mastery === 'Mastered').length,
-        streakDays:    streakDays(attempts),
+        totalSolved,
+        topicsMastered: topicsMasteredCount,
+        streakDays:    streak,
       },
       topics,
       weeklyData: weeklyData(attempts),
       weakestTopicId: weakest?.id ?? topics[0]?.id ?? null,
+      achievements,
     });
   } catch (err) {
     console.error('[GET /api/dashboard]', err);

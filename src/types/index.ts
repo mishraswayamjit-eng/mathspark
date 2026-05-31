@@ -1,3 +1,6 @@
+import type { Achievement } from '@/lib/achievements';
+export type { Achievement };
+
 export type Difficulty = 'Easy' | 'Medium' | 'Hard';
 export type MasteryLevel = 'NotStarted' | 'Practicing' | 'Mastered';
 export type AnswerKey = 'A' | 'B' | 'C' | 'D';
@@ -85,4 +88,5 @@ export interface DashboardData {
   topics: TopicWithProgress[];
   weeklyData: Array<{ date: string; count: number }>;
   weakestTopicId: string | null;
+  achievements?: Achievement[];
 }

@@ -181,6 +181,31 @@ export default function DashboardPage() {
         </div>
       </div>
 
+      {/* Achievements */}
+      {data.achievements && (
+        <div className="px-4 mt-6">
+          <h2 className="text-sm font-bold text-gray-600 uppercase tracking-wide mb-3">
+            Badges {data.achievements.filter((a) => a.earned).length}/{data.achievements.length}
+          </h2>
+          <div className="grid grid-cols-3 gap-2">
+            {data.achievements.map((badge) => (
+              <div
+                key={badge.id}
+                className={`bg-white rounded-xl border p-3 text-center transition-opacity ${
+                  badge.earned
+                    ? 'border-amber-200 opacity-100'
+                    : 'border-gray-100 opacity-30 grayscale'
+                }`}
+              >
+                <div className="text-2xl mb-1">{badge.emoji}</div>
+                <p className="text-xs font-bold text-gray-700 leading-tight">{badge.title}</p>
+                <p className="text-xs text-gray-400 leading-tight mt-0.5">{badge.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Reset progress */}
       <div className="px-4 mt-8 pb-4 text-center">
         {resetError && (
