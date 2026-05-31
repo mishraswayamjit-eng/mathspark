@@ -1,10 +1,15 @@
 import { NextResponse } from 'next/server';
+import { z } from 'zod';
 import { prisma } from '@/lib/db';
 
 const TOPIC_ORDER = [
   'ch01-05','ch06','ch07-08','ch09-10','ch11','ch12',
   'ch13','ch14','ch15','ch16','ch17','ch18','ch19','ch20','ch21','dh',
 ];
+
+const DashboardQuerySchema = z.object({
+  studentId: z.string().min(1),
+});
 
 function streakDays(attempts: Array<{ createdAt: Date; isCorrect: boolean }>): number {
   const correct = attempts.filter((a) => a.isCorrect);
@@ -39,51 +44,61 @@ function weeklyData(attempts: Array<{ createdAt: Date; isCorrect: boolean }>) {
 
 // GET /api/dashboard?studentId=xxx
 export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url);
-  const studentId = searchParams.get('studentId');
+  try {
+    const { searchParams } = new URL(req.url);
 
-  if (!studentId) {
-    return NextResponse.json({ error: 'studentId required' }, { status: 400 });
-  }
-
-  const [student, progress, attempts, allTopics] = await Promise.all([
-    prisma.student.findUnique({ where: { id: studentId } }),
-    prisma.progress.findMany({ where: { studentId }, include: { topic: true } }),
-    prisma.attempt.findMany({
-      where: { studentId },
-      select: { isCorrect: true, createdAt: true },
-      orderBy: { createdAt: 'desc' },
-    }),
-    prisma.topic.findMany(),
-  ]);
-
-  if (!student) return NextResponse.json({ error: 'Student not found' }, { status: 404 });
-
-  const topics = allTopics
-    .sort((a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id))
-    .map((t) => {
-      const p = progress.find((x) => x.topicId === t.id);
-      return {
-        ...t,
-        mastery:   p?.mastery   ?? 'NotStarted',
-        attempted: p?.attempted ?? 0,
-        correct:   p?.correct   ?? 0,
-      };
+    const parsed = DashboardQuerySchema.safeParse({
+      studentId: searchParams.get('studentId') ?? undefined,
     });
 
-  const weakest = topics
-    .filter((t) => t.attempted > 0 && t.mastery !== 'Mastered')
-    .sort((a, b) => (a.correct / a.attempted) - (b.correct / b.attempted))[0];
+    if (!parsed.success) {
+      return NextResponse.json({ error: parsed.error.flatten() }, { status: 400 });
+    }
 
-  return NextResponse.json({
-    student,
-    stats: {
-      totalSolved:   attempts.filter((a) => a.isCorrect).length,
-      topicsMastered: progress.filter((p) => p.mastery === 'Mastered').length,
-      streakDays:    streakDays(attempts),
-    },
-    topics,
-    weeklyData: weeklyData(attempts),
-    weakestTopicId: weakest?.id ?? topics[0]?.id ?? null,
-  });
+    const { studentId } = parsed.data;
+
+    const [student, progress, attempts, allTopics] = await Promise.all([
+      prisma.student.findUnique({ where: { id: studentId } }),
+      prisma.progress.findMany({ where: { studentId }, include: { topic: true } }),
+      prisma.attempt.findMany({
+        where: { studentId },
+        select: { isCorrect: true, createdAt: true },
+        orderBy: { createdAt: 'desc' },
+      }),
+      prisma.topic.findMany(),
+    ]);
+
+    if (!student) return NextResponse.json({ error: 'Student not found' }, { status: 404 });
+
+    const topics = allTopics
+      .sort((a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id))
+      .map((t) => {
+        const p = progress.find((x) => x.topicId === t.id);
+        return {
+          ...t,
+          mastery:   p?.mastery   ?? 'NotStarted',
+          attempted: p?.attempted ?? 0,
+          correct:   p?.correct   ?? 0,
+        };
+      });
+
+    const weakest = topics
+      .filter((t) => t.attempted > 0 && t.mastery !== 'Mastered')
+      .sort((a, b) => (a.correct / a.attempted) - (b.correct / b.attempted))[0];
+
+    return NextResponse.json({
+      student,
+      stats: {
+        totalSolved:   attempts.filter((a) => a.isCorrect).length,
+        topicsMastered: progress.filter((p) => p.mastery === 'Mastered').length,
+        streakDays:    streakDays(attempts),
+      },
+      topics,
+      weeklyData: weeklyData(attempts),
+      weakestTopicId: weakest?.id ?? topics[0]?.id ?? null,
+    });
+  } catch (err) {
+    console.error('[GET /api/dashboard]', err);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
 }
