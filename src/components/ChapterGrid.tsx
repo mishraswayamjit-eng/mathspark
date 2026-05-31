@@ -11,6 +11,8 @@ const TOPIC_ORDER = [
 
 interface ChapterGridProps {
   topics: TopicWithProgress[];
+  /** Optional map of topicId → prerequisite hint text (e.g. "Try Fractions first") */
+  prerequisiteHints?: Record<string, string>;
 }
 
 function masteryStyle(mastery: string) {
@@ -31,7 +33,7 @@ function barColor(mastery: string) {
   return 'bg-gray-300';
 }
 
-export default function ChapterGrid({ topics }: ChapterGridProps) {
+export default function ChapterGrid({ topics, prerequisiteHints }: ChapterGridProps) {
   const sorted = [...topics].sort(
     (a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id),
   );
@@ -58,6 +60,11 @@ export default function ChapterGrid({ topics }: ChapterGridProps) {
               {topic.name}
             </p>
             {masteryBadge(topic.mastery)}
+            {prerequisiteHints?.[topic.id] && (
+              <p className="text-xs text-amber-600 mt-1 leading-tight">
+                💡 Try {prerequisiteHints[topic.id]} first
+              </p>
+            )}
             <ProgressBar
               value={pct}
               color={barColor(topic.mastery)}

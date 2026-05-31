@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import ChapterGrid from '@/components/ChapterGrid';
 import { SkeletonGrid } from '@/components/Skeleton';
 import type { Topic, Progress, TopicWithProgress } from '@/types';
+import { getUnmetPrerequisites } from '@/lib/prerequisites';
 
 export default function ChaptersPage() {
   const router = useRouter();
@@ -43,6 +44,32 @@ export default function ChaptersPage() {
     load().catch(console.error);
   }, [router]);
 
+  // Build a mastery lookup: topicId → mastery level
+  const masteryMap = useMemo<Record<string, string>>(() => {
+    const map: Record<string, string> = {};
+    topics.forEach((t) => { map[t.id] = t.mastery; });
+    return map;
+  }, [topics]);
+
+  // Build a topic name lookup: topicId → topic name
+  const topicNameMap = useMemo<Record<string, string>>(() => {
+    const map: Record<string, string> = {};
+    topics.forEach((t) => { map[t.id] = t.name; });
+    return map;
+  }, [topics]);
+
+  // Compute soft prerequisite hints for each topic
+  const prerequisiteHints = useMemo<Record<string, string>>(() => {
+    const hints: Record<string, string> = {};
+    topics.forEach((t) => {
+      const unmet = getUnmetPrerequisites(t.id, masteryMap);
+      if (unmet.length > 0) {
+        hints[t.id] = topicNameMap[unmet[0]] ?? unmet[0];
+      }
+    });
+    return hints;
+  }, [topics, masteryMap, topicNameMap]);
+
   if (loading) {
     return (
       <div className="min-h-screen pb-8">
@@ -65,7 +92,7 @@ export default function ChaptersPage() {
         <p className="text-gray-500 mt-1">Choose a topic to practice:</p>
       </div>
 
-      <ChapterGrid topics={topics} />
+      <ChapterGrid topics={topics} prerequisiteHints={prerequisiteHints} />
     </div>
   );
 }
