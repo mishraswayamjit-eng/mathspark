@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'MathSpark — Grade 4 Math',
   description: 'Fun, safe math learning and IPM exam prep for Grade 4 students',
   manifest: '/manifest.json',
+};
+
+export const viewport = {
   themeColor: '#3b82f6',
 };
 
