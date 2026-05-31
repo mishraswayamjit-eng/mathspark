@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 import ChapterGrid from '@/components/ChapterGrid';
 import { SkeletonGrid } from '@/components/Skeleton';
 import type { Topic, Progress, TopicWithProgress } from '@/types';
@@ -77,7 +78,12 @@ export default function ChaptersPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen pb-8">
+      <motion.div
+        className="min-h-screen pb-8"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+      >
         <div className="px-4 pt-8 pb-4">
           <h1 className="text-2xl font-bold text-gray-800">Hi {name}! 👋</h1>
           <p className="text-gray-500 mt-1">Choose a topic to practice:</p>
@@ -85,7 +91,7 @@ export default function ChaptersPage() {
         <div className="px-4">
           <SkeletonGrid count={16} />
         </div>
-      </div>
+      </motion.div>
     );
   }
 
@@ -95,7 +101,12 @@ export default function ChaptersPage() {
   });
 
   return (
-    <div className="min-h-screen pb-8">
+    <motion.div
+      className="min-h-screen pb-8"
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+    >
       {/* Header */}
       <div className="px-4 pt-8 pb-4">
         <h1 className="text-2xl font-bold text-gray-800">Hi {name}! 👋</h1>
@@ -121,6 +132,6 @@ export default function ChaptersPage() {
       )}
 
       <ChapterGrid topics={topics} prerequisiteHints={prerequisiteHints} attemptedMap={attemptedMap} />
-    </div>
+    </motion.div>
   );
 }

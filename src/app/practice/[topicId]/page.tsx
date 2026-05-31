@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 import QuestionCard, { randomCorrect, randomWrong } from '@/components/QuestionCard';
 import HintSystem from '@/components/HintSystem';
 import StepByStep from '@/components/StepByStep';
@@ -246,7 +247,12 @@ export default function PracticePage() {
 
   if (noMore) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center px-6 gap-6 text-center">
+      <motion.div
+        className="min-h-screen flex flex-col items-center justify-center px-6 gap-6 text-center"
+        initial={{ opacity: 0, scale: 0.96 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+      >
         <div className="text-5xl" aria-hidden="true">🏆</div>
         <h2 className="text-2xl font-bold text-gray-800">You practised all questions here!</h2>
         <p className="text-gray-500">Score: {score.correct}/{score.attempted} correct</p>
@@ -256,12 +262,18 @@ export default function PracticePage() {
         >
           Back to Chapters 📚
         </button>
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <div className="min-h-screen flex flex-col px-4 py-5 gap-4">
+    <motion.div
+      className="min-h-screen flex flex-col px-4 py-5 gap-4"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 16 }}
+      transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+    >
       {/* Header */}
       <div className="space-y-1">
         <div className="flex items-center justify-between">
@@ -440,6 +452,6 @@ export default function PracticePage() {
         topicName={topicName}
         questionText={question?.questionText ?? ''}
       />
-    </div>
+    </motion.div>
   );
 }

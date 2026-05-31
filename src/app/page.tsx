@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 export default function RootPage() {
   const router = useRouter();
@@ -25,15 +26,25 @@ export default function RootPage() {
   // New student — show nothing (redirect happens instantly)
   if (!studentName) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <span className="text-5xl animate-bounce">⭐</span>
-      </div>
+      <motion.div
+        className="flex items-center justify-center min-h-screen"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.2 }}
+      >
+        <span className="text-5xl animate-bounce" aria-hidden="true">⭐</span>
+      </motion.div>
     );
   }
 
   // Returning student — brief welcome
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen gap-4 text-center px-6">
+    <motion.div
+      className="flex flex-col items-center justify-center min-h-screen gap-4 text-center px-6"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
+    >
       <div className="text-7xl animate-bounce">👋</div>
       <h1 className="text-3xl font-bold text-gray-800">
         Welcome back, {studentName}!
@@ -48,6 +59,6 @@ export default function RootPage() {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

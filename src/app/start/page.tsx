@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import QuestionCard from '@/components/QuestionCard';
 import ProgressBar from '@/components/ProgressBar';
 import type { Question, AnswerKey, DiagnosticAnswer } from '@/types';
@@ -189,11 +190,29 @@ export default function StartPage() {
     });
   }
 
+  // ── Animation setup ───────────────────────────────────────────────────────
+  const prefersReduced = useReducedMotion();
+  const slideVariants = {
+    enter: { opacity: 0, x: prefersReduced ? 0 : 40 },
+    center: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: prefersReduced ? 0 : -40 },
+  };
+
   // ── Render ────────────────────────────────────────────────────────────────
+
+  const stepContent = () => {
 
   if (step === 'welcome') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center gap-6">
+      <motion.div
+        key="welcome"
+        className="flex flex-col items-center justify-center min-h-screen px-6 text-center gap-6"
+        variants={slideVariants}
+        initial="enter"
+        animate="center"
+        exit="exit"
+        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+      >
         <div className="text-6xl">🌟</div>
         <h1 className="text-3xl font-bold text-gray-800">Welcome to MathSpark!</h1>
         <p className="text-gray-500 text-lg leading-relaxed">
@@ -206,13 +225,21 @@ export default function StartPage() {
         >
           Let&#39;s Go! 🚀
         </button>
-      </div>
+      </motion.div>
     );
   }
 
   if (step === 'name') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6">
+      <motion.div
+        key="name"
+        className="flex flex-col items-center justify-center min-h-screen px-6 gap-6"
+        variants={slideVariants}
+        initial="enter"
+        animate="center"
+        exit="exit"
+        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+      >
         <div className="text-5xl">👋</div>
         <h2 className="text-2xl font-bold text-gray-800 text-center">What&#39;s your name?</h2>
         <input
@@ -233,7 +260,7 @@ export default function StartPage() {
         >
           {loading ? 'Setting up...' : 'Continue →'}
         </button>
-      </div>
+      </motion.div>
     );
   }
 
@@ -242,7 +269,15 @@ export default function StartPage() {
     const pct  = (answers.length / TOTAL) * 100;
 
     return (
-      <div className="min-h-screen flex flex-col px-4 py-6 gap-4">
+      <motion.div
+        key="quiz"
+        className="min-h-screen flex flex-col px-4 py-6 gap-4"
+        variants={slideVariants}
+        initial="enter"
+        animate="center"
+        exit="exit"
+        transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+      >
         {/* Header */}
         <div className="space-y-2">
           <div className="flex items-center justify-between text-sm text-gray-500">
@@ -266,7 +301,7 @@ export default function StartPage() {
         ) : (
           <p className="text-center text-gray-400 mt-10">Loading question…</p>
         )}
-      </div>
+      </motion.div>
     );
   }
 
@@ -277,7 +312,15 @@ export default function StartPage() {
   const notYet   = results.filter((r) => r.status === 'NotYet');
 
   return (
-    <div className="min-h-screen px-4 py-8 flex flex-col gap-6">
+    <motion.div
+      key="results"
+      className="min-h-screen px-4 py-8 flex flex-col gap-6"
+      variants={slideVariants}
+      initial="enter"
+      animate="center"
+      exit="exit"
+      transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+    >
       <div className="text-center space-y-2">
         <div className="text-5xl">🎉</div>
         <h2 className="text-2xl font-bold text-gray-800">Wow, you already know a lot!</h2>
@@ -339,6 +382,13 @@ export default function StartPage() {
       >
         Ready to start! Let&#39;s go! 🚀
       </button>
-    </div>
+    </motion.div>
+  );
+  }; // end stepContent
+
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      {stepContent()}
+    </AnimatePresence>
   );
 }
