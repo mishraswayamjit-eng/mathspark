@@ -8,6 +8,26 @@ function shift(d: Difficulty, delta: number): Difficulty {
   return DIFFICULTIES[idx];
 }
 
+function shuffle<T>(arr: T[]): void {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
+async function pickFromDifficulty(
+  topicId: string,
+  exclude: string[],
+  difficulty: Difficulty,
+) {
+  const pool = await prisma.question.findMany({
+    where: { topicId, id: { notIn: exclude }, difficulty },
+    take: 20,
+  });
+  shuffle(pool);
+  return pool[0] ?? null;
+}
+
 /**
  * Adaptive next-question picker.
  *
@@ -16,6 +36,11 @@ function shift(d: Difficulty, delta: number): Difficulty {
  *  - 5 right in a row → raise difficulty 1 level
  *  - Never repeat a question in the same session (seenIds)
  *  - Base difficulty derived from current mastery level
+ *
+ * ZPD distribution (applied after streak adjustment):
+ *  - 70%  → base difficulty (current level / ZPD)
+ *  - 20%  → one level below base (review / consolidation)
+ *  - 10%  → one level above base (stretch)
  */
 export async function getNextQuestion(
   studentId: string,
@@ -39,16 +64,32 @@ export async function getNextQuestion(
 
   const exclude = seenIds.length > 0 ? seenIds : [];
 
-  // Try target difficulty first
-  const question = await prisma.question.findFirst({
-    where: { topicId, id: { notIn: exclude }, difficulty: base },
-    orderBy: { id: 'asc' },
-  });
-  if (question) return question;
+  // ZPD roll: 0–0.69 → base, 0.70–0.89 → review (base-1), 0.90–0.99 → stretch (base+1)
+  const roll = Math.random();
+  let targetDiff: Difficulty;
+  if (roll < 0.70) {
+    targetDiff = base;
+  } else if (roll < 0.90) {
+    targetDiff = shift(base, -1); // review / consolidation
+  } else {
+    targetDiff = shift(base, +1); // stretch
+  }
 
-  // Fallback: any unseen question from this topic
-  return prisma.question.findFirst({
+  // Try the rolled difficulty band first
+  if (targetDiff !== base) {
+    const question = await pickFromDifficulty(topicId, exclude, targetDiff);
+    if (question) return question;
+  }
+
+  // Fall back to base difficulty
+  const baseQuestion = await pickFromDifficulty(topicId, exclude, base);
+  if (baseQuestion) return baseQuestion;
+
+  // Final fallback: any unseen question in the topic
+  const pool = await prisma.question.findMany({
     where: { topicId, id: { notIn: exclude } },
-    orderBy: { id: 'asc' },
+    take: 20,
   });
+  shuffle(pool);
+  return pool[0] ?? null;
 }
