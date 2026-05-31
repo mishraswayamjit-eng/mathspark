@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import ChapterGrid from '@/components/ChapterGrid';
+import { SkeletonGrid } from '@/components/Skeleton';
 import type { Topic, Progress, TopicWithProgress } from '@/types';
 
 export default function ChaptersPage() {
@@ -44,8 +45,14 @@ export default function ChaptersPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-5xl animate-bounce">📚</div>
+      <div className="min-h-screen pb-8">
+        <div className="px-4 pt-8 pb-4">
+          <h1 className="text-2xl font-bold text-gray-800">Hi {name}! 👋</h1>
+          <p className="text-gray-500 mt-1">Choose a topic to practice:</p>
+        </div>
+        <div className="px-4">
+          <SkeletonGrid count={16} />
+        </div>
       </div>
     );
   }

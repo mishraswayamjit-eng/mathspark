@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import ProgressBar from '@/components/ProgressBar';
+import { SkeletonStatRow, SkeletonGrid } from '@/components/Skeleton';
 import type { DashboardData } from '@/types';
 
 const TOPIC_ORDER = [
@@ -40,8 +41,17 @@ export default function DashboardPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-5xl animate-bounce">📊</div>
+      <div className="min-h-screen pb-8">
+        <div className="px-4 pt-8 pb-4">
+          <div className="h-7 bg-gray-200 rounded w-40 mb-1 animate-pulse" />
+          <div className="h-4 bg-gray-100 rounded w-32 animate-pulse" />
+        </div>
+        <div className="px-4 mb-6">
+          <SkeletonStatRow />
+        </div>
+        <div className="px-4">
+          <SkeletonGrid count={16} />
+        </div>
       </div>
     );
   }
