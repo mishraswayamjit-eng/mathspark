@@ -1,36 +1,41 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import QuestionCard from '@/components/QuestionCard';
 import ProgressBar from '@/components/ProgressBar';
 import type { Question, AnswerKey, DiagnosticAnswer } from '@/types';
 
 // ── Diagnostic plan ─────────────────────────────────────────────────────────
-// 15 questions covering 9 topics (≥ 6 required by spec)
-const PLAN = [
-  { topicId: 'ch11',    count: 2 },
-  { topicId: 'ch09-10', count: 2 },
-  { topicId: 'ch07-08', count: 2 },
-  { topicId: 'ch06',    count: 2 },
-  { topicId: 'ch01-05', count: 2 },
-  { topicId: 'ch18',    count: 2 },
-  { topicId: 'ch20',    count: 1 },
-  { topicId: 'ch13',    count: 1 },
-  { topicId: 'ch19',    count: 1 },
+// 15 questions cycling across ALL 16 topics (≥ 6 required by spec)
+const TOTAL = 15;
+
+// All 16 topic IDs in curriculum order; diagnostic starts at ch11 (index 4)
+const ALL_TOPICS = [
+  'ch01-05', 'ch06', 'ch07-08', 'ch09-10',
+  'ch11',    'ch12', 'ch13',    'ch14',
+  'ch15',    'ch16', 'ch17',    'ch18',
+  'ch19',    'ch20', 'ch21',    'dh',
 ];
-const TOTAL = PLAN.reduce((s, p) => s + p.count, 0); // 15
+const START_TOPIC_IDX = 4; // ch11
 
 const TOPIC_NAMES: Record<string, string> = {
-  'ch01-05': 'Number System',
+  'ch01-05': 'Number System & Place Value',
   'ch06':    'Factors & Multiples',
   'ch07-08': 'Fractions',
   'ch09-10': 'Operations & BODMAS',
   'ch11':    'Decimal Fractions',
+  'ch12':    'Decimal Units of Measurement',
   'ch13':    'Algebraic Expressions',
+  'ch14':    'Equations',
+  'ch15':    'Puzzles & Magic Squares',
+  'ch16':    'Sequence & Series',
+  'ch17':    'Measurement of Time & Calendar',
   'ch18':    'Angles',
   'ch19':    'Triangles',
   'ch20':    'Quadrilaterals',
+  'ch21':    'Circle',
+  'dh':      'Data Handling & Graphs',
 };
 
 type Step = 'welcome' | 'name' | 'quiz' | 'results';
@@ -54,11 +59,11 @@ export default function StartPage() {
   const [question,     setQuestion]     = useState<Question | null>(null);
   const [answered,     setAnswered]     = useState(false);
   const [selected,     setSelected]     = useState<AnswerKey | null>(null);
-  const [planIdx,      setPlanIdx]      = useState(0);
-  const [countInTopic, setCountInTopic] = useState(0);
+  const [topicIdx,     setTopicIdx]     = useState(START_TOPIC_IDX);
   const [difficulty,   setDifficulty]   = useState<Diff>('Medium');
   const [seenIds,      setSeenIds]      = useState<string[]>([]);
   const [answers,      setAnswers]      = useState<DiagnosticAnswer[]>([]);
+  const questionStartTime              = useRef<number>(Date.now());
 
   // ── Fetch one diagnostic question ─────────────────────────────────────────
   const fetchQuestion = useCallback(async (
@@ -79,6 +84,7 @@ export default function StartPage() {
       if (!res.ok) { setQuestion(null); return; }
       const q = await res.json();
       setQuestion(q);
+      questionStartTime.current = Date.now();
     } finally {
       setLoading(false);
     }
@@ -100,7 +106,7 @@ export default function StartPage() {
       localStorage.setItem('mathspark_student_name', student.name);
       setStudentId(student.id);
       setStep('quiz');
-      await fetchQuestion(PLAN[0].topicId, 'Medium', []);
+      await fetchQuestion(ALL_TOPICS[START_TOPIC_IDX], 'Medium', []);
     } catch {
       setError('Something went wrong. Please try again!');
     } finally {
@@ -114,7 +120,8 @@ export default function StartPage() {
     setAnswered(true);
     setSelected(key);
 
-    const newAnswers = [...answers, { topicId: PLAN[planIdx].topicId, questionId: question.id, isCorrect }];
+    const timeTakenMs = Date.now() - questionStartTime.current;
+    const newAnswers = [...answers, { topicId: ALL_TOPICS[topicIdx], questionId: question.id, isCorrect }];
     setAnswers(newAnswers);
 
     // Record attempt (fire-and-forget — doesn't block UX)
@@ -126,8 +133,8 @@ export default function StartPage() {
         questionId: question.id,
         topicId: question.topicId,
         selected: key,
-        isCorrect,
         hintUsed: 0,
+        timeTakenMs,
       }),
     }).catch((e) => { console.warn('Attempt save failed in diagnostic:', e); });
 
@@ -137,34 +144,37 @@ export default function StartPage() {
 
   // ── Advance to next question or results ───────────────────────────────────
   async function advance(wasCorrect: boolean, currentAnswers: DiagnosticAnswer[]) {
-    const newDiff = nextDiff(difficulty, wasCorrect);
-    const newCount = countInTopic + 1;
-    const newSeen  = [...seenIds, question!.id];
-
-    if (currentAnswers.length >= TOTAL || planIdx >= PLAN.length) {
+    if (currentAnswers.length >= TOTAL) {
       setStep('results');
       return;
     }
 
-    let nextPlanIdx = planIdx;
-    let nextCount   = newCount;
+    const newSeen = [...seenIds, question!.id];
 
-    if (newCount >= PLAN[planIdx].count) {
-      nextPlanIdx = planIdx + 1;
-      nextCount   = 0;
-      if (nextPlanIdx >= PLAN.length) { setStep('results'); return; }
+    // On correct: move to next topic (wrap around); optionally increase difficulty
+    // On wrong:   stay in current topic; drop difficulty one level
+    let nextTopicIdx = topicIdx;
+    let newDiff = difficulty;
+
+    if (wasCorrect) {
+      nextTopicIdx = (topicIdx + 1) % ALL_TOPICS.length;
+      newDiff = nextDiff(difficulty, true);
+    } else {
+      // stay on same topic
+      newDiff = nextDiff(difficulty, false);
     }
 
-    setPlanIdx(nextPlanIdx);
-    setCountInTopic(nextCount);
+    setTopicIdx(nextTopicIdx);
     setDifficulty(newDiff);
     setSeenIds(newSeen);
-    await fetchQuestion(PLAN[nextPlanIdx].topicId, newDiff, newSeen);
+    await fetchQuestion(ALL_TOPICS[nextTopicIdx], newDiff, newSeen);
   }
 
   // ── Compute results ───────────────────────────────────────────────────────
   function computeResults() {
-    return PLAN.map(({ topicId }) => {
+    // Derive the unique topics that were actually visited during the quiz
+    const visitedTopics = Array.from(new Set(answers.map((a) => a.topicId)));
+    return visitedTopics.map((topicId) => {
       const topicAnswers = answers.filter((a) => a.topicId === topicId);
       const correct = topicAnswers.filter((a) => a.isCorrect).length;
       const total   = topicAnswers.length;
@@ -176,7 +186,7 @@ export default function StartPage() {
         total,
         status: ratio >= 0.7 ? 'Strong' : ratio >= 0.4 ? 'Learning' : 'NotYet',
       };
-    }).filter((r) => r.total > 0);
+    });
   }
 
   // ── Render ────────────────────────────────────────────────────────────────
