@@ -41,25 +41,29 @@ function getTopicId(questionId: string): string {
 const PAGE_SIZE = 75; // questions per API call — safe for Vercel's 300s limit
 
 // ---------------------------------------------------------------------------
-// GET /api/seed?secret=xxx&page=0
+// POST /api/seed
+// body: { secret: string, page?: number }
 // page=0 → seeds topics + first batch of questions
 // page=N → seeds next batch
 // ---------------------------------------------------------------------------
-export async function GET(req: Request) {
+export async function POST(req: Request) {
+  try {
   // ── Auth ─────────────────────────────────────────────────────────────────
-  const secret = process.env.SEED_SECRET;
-  if (!secret) {
+  const envSecret = process.env.SEED_SECRET;
+  if (!envSecret) {
     return NextResponse.json(
       { error: 'SEED_SECRET env var not set. Add it in Vercel → Settings → Environment Variables.' },
       { status: 500 },
     );
   }
-  const { searchParams } = new URL(req.url);
-  if (searchParams.get('secret') !== secret) {
+  const body = await req.json().catch(() => ({}));
+  const { secret, page = 0 } = body as { secret?: string; page?: number };
+  if (!secret) {
+    return NextResponse.json({ error: 'Missing secret.' }, { status: 401 });
+  }
+  if (secret !== envSecret) {
     return NextResponse.json({ error: 'Wrong secret.' }, { status: 401 });
   }
-
-  const page = parseInt(searchParams.get('page') ?? '0', 10);
 
   // ── Load seed JSON ────────────────────────────────────────────────────────
   const dataPath = path.join(process.cwd(), 'data', 'mathspark_complete_seed.json');
@@ -129,4 +133,10 @@ export async function GET(req: Request) {
       ? `All ${questions.length} questions seeded!`
       : `Seeded ${seeded}/${questions.length}`,
   });
+  } catch (err) {
+    return NextResponse.json(
+      { error: `Unexpected error: ${err instanceof Error ? err.message : String(err)}` },
+      { status: 500 },
+    );
+  }
 }
