@@ -6,6 +6,7 @@ import QuestionCard, { randomCorrect, randomWrong } from '@/components/QuestionC
 import HintSystem from '@/components/HintSystem';
 import StepByStep from '@/components/StepByStep';
 import ProgressBar from '@/components/ProgressBar';
+import ChatWidget from '@/components/ChatWidget';
 import type { Question, AnswerKey } from '@/types';
 
 const STREAK_MSG: Record<number, string> = {
@@ -19,8 +20,9 @@ export default function PracticePage() {
   const router = useRouter();
   const topicId = params.topicId as string;
 
-  const [studentId,  setStudentId]  = useState<string | null>(null);
-  const [topicName,  setTopicName]  = useState('');
+  const [studentId,   setStudentId]   = useState<string | null>(null);
+  const [studentName, setStudentName] = useState('');
+  const [topicName,   setTopicName]   = useState('');
   const [question,   setQuestion]   = useState<Question | null>(null);
   const [loading,    setLoading]    = useState(true);
   const [answered,   setAnswered]   = useState(false);
@@ -152,6 +154,7 @@ export default function PracticePage() {
     const sid = localStorage.getItem('mathspark_student_id');
     if (!sid) { router.replace('/start'); return; }
     setStudentId(sid);
+    setStudentName(localStorage.getItem('mathspark_student_name') ?? '');
 
     fetch('/api/topics')
       .then((r) => r.json())
@@ -430,6 +433,13 @@ export default function PracticePage() {
       ) : (
         <p className="text-center text-gray-400 mt-16">No question loaded.</p>
       )}
+
+      {/* Spark AI learning companion — floating chat bubble */}
+      <ChatWidget
+        studentName={studentName}
+        topicName={topicName}
+        questionText={question?.questionText ?? ''}
+      />
     </div>
   );
 }
