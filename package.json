@@ -17,7 +17,11 @@
     "e2e:ui": "playwright test --ui"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.55.1",
     "@prisma/client": "^5.14.0",
+    "@sentry/nextjs": "^9.21.0",
+    "@upstash/ratelimit": "^2.0.5",
+    "@upstash/redis": "^1.34.9",
     "katex": "^0.16.10",
     "next": "^14.2.3",
     "react": "^18",
