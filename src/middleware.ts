@@ -1,67 +1,119 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { Ratelimit } from '@upstash/ratelimit';
+import { Redis } from '@upstash/redis';
 
-const rateLimitMap = new Map<string, { count: number; windowStart: number }>();
+// ── In-memory fallback (single-instance) ──────────────────────────────────
+interface Entry { count: number; resetAt: number }
+const memMap = new Map<string, Entry>();
 const WINDOW_MS = 60_000;
-const MAX_REQUESTS = 60;
-const MAX_ENTRIES = 50_000;
+const MEM_LIMIT = 60;
+const MAX_ENTRIES = 50_000; // cap to prevent memory leak
 
-function addSecurityHeaders(response: NextResponse): NextResponse {
-  response.headers.set('X-Content-Type-Options', 'nosniff');
-  response.headers.set('X-Frame-Options', 'DENY');
-  response.headers.set('X-XSS-Protection', '1; mode=block');
-  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
-  response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
-  response.headers.set(
+function memRateLimit(ip: string): { allowed: boolean; remaining: number } {
+  const now = Date.now();
+  // Evict oldest entry if at cap
+  if (memMap.size >= MAX_ENTRIES) {
+    const oldest = memMap.keys().next().value;
+    if (oldest) memMap.delete(oldest);
+  }
+  const entry = memMap.get(ip);
+  if (!entry || now >= entry.resetAt) {
+    memMap.set(ip, { count: 1, resetAt: now + WINDOW_MS });
+    return { allowed: true, remaining: MEM_LIMIT - 1 };
+  }
+  entry.count += 1;
+  return { allowed: entry.count <= MEM_LIMIT, remaining: Math.max(0, MEM_LIMIT - entry.count) };
+}
+
+// ── Upstash Redis rate limit (multi-instance) ─────────────────────────────
+let ratelimitInstance: InstanceType<typeof Ratelimit> | null = null;
+
+function getRatelimit(): InstanceType<typeof Ratelimit> | null {
+  if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) return null;
+  if (!ratelimitInstance) {
+    ratelimitInstance = new Ratelimit({
+      redis: new Redis({
+        url: process.env.UPSTASH_REDIS_REST_URL,
+        token: process.env.UPSTASH_REDIS_REST_TOKEN,
+      }),
+      limiter: Ratelimit.slidingWindow(60, '60 s'),
+      analytics: false,
+    });
+  }
+  return ratelimitInstance;
+}
+
+async function redisRateLimit(ip: string): Promise<{ allowed: boolean; remaining: number }> {
+  const ratelimit = getRatelimit()!;
+  const { success, remaining } = await ratelimit.limit(ip);
+  return { allowed: success, remaining };
+}
+
+// ── Security headers ───────────────────────────────────────────────────────
+function addSecurityHeaders(res: NextResponse): NextResponse {
+  res.headers.set('X-Frame-Options', 'DENY');
+  res.headers.set('X-Content-Type-Options', 'nosniff');
+  res.headers.set('X-XSS-Protection', '1; mode=block');
+  res.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  res.headers.set(
     'Content-Security-Policy',
     [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline'",  // unsafe-inline needed for Next.js inline scripts
-      "style-src 'self' 'unsafe-inline'",   // unsafe-inline needed for Tailwind
-      "img-src 'self' data:",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: blob:",
       "font-src 'self'",
       "connect-src 'self'",
       "frame-ancestors 'none'",
-    ].join('; ')
+    ].join('; '),
   );
-  return response;
+  return res;
 }
 
-export function middleware(req: NextRequest) {
+export async function middleware(req: NextRequest) {
   // Only rate-limit API routes
-  if (!req.nextUrl.pathname.startsWith('/api')) {
-    return addSecurityHeaders(NextResponse.next());
+  if (!req.nextUrl.pathname.startsWith('/api/')) {
+    const res = NextResponse.next();
+    return addSecurityHeaders(res);
   }
 
-  const ip = req.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? 'unknown';
-  const now = Date.now();
+  const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim()
+    ?? req.headers.get('x-real-ip')
+    ?? '127.0.0.1';
 
-  // Safety cap: if the map grows beyond MAX_ENTRIES, clear it entirely to prevent
-  // unbounded memory growth from unique IPs that never return.
-  if (rateLimitMap.size > MAX_ENTRIES) {
-    rateLimitMap.clear();
+  let allowed: boolean;
+  let remaining: number;
+
+  const useRedis =
+    Boolean(process.env.UPSTASH_REDIS_REST_URL) &&
+    Boolean(process.env.UPSTASH_REDIS_REST_TOKEN);
+
+  if (useRedis) {
+    try {
+      ({ allowed, remaining } = await redisRateLimit(ip));
+    } catch {
+      // Redis unavailable — fall back to memory
+      ({ allowed, remaining } = memRateLimit(ip));
+    }
+  } else {
+    ({ allowed, remaining } = memRateLimit(ip));
   }
 
-  const entry = rateLimitMap.get(ip);
-
-  if (!entry || now - entry.windowStart > WINDOW_MS) {
-    if (entry) rateLimitMap.delete(ip); // explicit cleanup of stale entry
-    rateLimitMap.set(ip, { count: 1, windowStart: now });
-    return addSecurityHeaders(NextResponse.next());
-  }
-
-  entry.count += 1;
-  if (entry.count > MAX_REQUESTS) {
-    return addSecurityHeaders(
-      NextResponse.json(
-        { error: "Too many requests — slow down a little!" },
-        { status: 429 }
-      )
+  if (!allowed) {
+    const res = NextResponse.json(
+      { error: 'Too many requests — please slow down!' },
+      { status: 429 },
     );
+    res.headers.set('Retry-After', '60');
+    return addSecurityHeaders(res);
   }
 
-  return addSecurityHeaders(NextResponse.next());
+  const res = NextResponse.next();
+  res.headers.set('X-RateLimit-Remaining', String(remaining));
+  return addSecurityHeaders(res);
 }
 
 export const config = {
-  matcher: '/((?!_next/static|_next/image|favicon.ico|icon-192.png|icon-512.png|sw.js|manifest.json).*)',
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|.*\\.png$).*)'],
 };
