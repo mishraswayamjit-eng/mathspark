@@ -37,6 +37,37 @@ export default function PracticePage() {
   // ── Timer ref: tracks when the current question was shown ─────────────────
   const startTimeRef = useRef<number>(Date.now());
 
+  // ── Prefetch refs ──────────────────────────────────────────────────────────
+  const prefetchedRef   = useRef<Question | null>(null);
+  const prefetchingRef  = useRef(false);
+
+  // ── Timed exam mode ────────────────────────────────────────────────────────
+  const [timedMode, setTimedMode] = useState(false);
+  const [timeLeft,  setTimeLeft]  = useState(60);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // ── Prefetch next question in the background ───────────────────────────────
+  const prefetchNext = useCallback(async (
+    sid: string,
+    seen: string[],
+    cwCur: number,
+    crCur: number,
+  ) => {
+    if (prefetchingRef.current) return;
+    prefetchingRef.current = true;
+    try {
+      const res = await fetch('/api/questions/next', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ topicId, studentId: sid, exclude: seen, cw: cwCur, cr: crCur }),
+      });
+      if (res.ok) {
+        prefetchedRef.current = await res.json();
+      }
+    } catch { /* silent */ }
+    prefetchingRef.current = false;
+  }, [topicId]);
+
   // ── Load next question ────────────────────────────────────────────────────
   const loadNext = useCallback(async (
     sid: string,
@@ -49,6 +80,16 @@ export default function PracticePage() {
     setSelected(null);
     setFeedback('');
     setHintLevel(0);
+
+    // Use prefetched question if available
+    if (prefetchedRef.current) {
+      const q = prefetchedRef.current;
+      prefetchedRef.current = null;
+      setQuestion(q);
+      startTimeRef.current = Date.now();
+      setLoading(false);
+      return;
+    }
 
     const res = await fetch('/api/questions/next', {
       method: 'POST',
@@ -79,6 +120,25 @@ export default function PracticePage() {
     startTimeRef.current = Date.now();
     setLoading(false);
   }, [topicId]);
+
+  // ── Timed mode countdown ───────────────────────────────────────────────────
+  useEffect(() => {
+    if (!timedMode || !question || answered) return;
+    setTimeLeft(60);
+    timerRef.current = setInterval(() => {
+      setTimeLeft((t) => {
+        if (t <= 1) {
+          clearInterval(timerRef.current!);
+          // Time's up — treat as wrong answer (only if not already answered)
+          if (!answered) handleAnswer(question.correctAnswer === 'A' ? 'B' : 'A', false);
+          return 0;
+        }
+        return t - 1;
+      });
+    }, 1000);
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [question, timedMode]);
 
   // ── Boot: get student + topic ─────────────────────────────────────────────
   useEffect(() => {
@@ -118,6 +178,7 @@ export default function PracticePage() {
   // ── Handle answer ─────────────────────────────────────────────────────────
   async function handleAnswer(key: AnswerKey, isCorrect: boolean) {
     if (!question || answered || !studentId) return;
+    if (timerRef.current) clearInterval(timerRef.current);
     setAttemptError(false);
     setAnswered(true);
     setSelected(key);
@@ -165,6 +226,8 @@ export default function PracticePage() {
       cw: newCw,
       cr: newCr,
     }));
+
+    prefetchNext(studentId!, newSeenIds, newCw, newCr);
   }
 
   // ── Render helpers ────────────────────────────────────────────────────────
@@ -197,12 +260,28 @@ export default function PracticePage() {
           >
             ← Back
           </button>
-          <span className="text-sm text-gray-500 font-medium">
-            {score.correct}/{score.attempted} correct
-          </span>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setTimedMode((m) => !m)}
+              className={`text-xs font-medium px-2 py-1 rounded-lg min-h-[44px] transition-colors ${
+                timedMode ? 'bg-amber-100 text-amber-700' : 'text-gray-400 hover:text-gray-600'
+              }`}
+              aria-label={timedMode ? 'Disable timed mode' : 'Enable timed mode (60s per question)'}
+            >
+              {timedMode ? '⏱️ Timed' : '⏱️'}
+            </button>
+            <span className="text-sm text-gray-500 font-medium">
+              {score.correct}/{score.attempted} correct
+            </span>
+          </div>
         </div>
         <h1 className="text-lg font-bold text-gray-800 px-2">{topicName}</h1>
         <ProgressBar value={pct} color="bg-blue-500" height="h-2" />
+        {timedMode && !answered && (
+          <div className={`text-center text-sm font-bold ${timeLeft <= 10 ? 'text-red-500' : 'text-gray-400'}`}>
+            {timeLeft}s
+          </div>
+        )}
       </div>
 
       {/* Question area */}
