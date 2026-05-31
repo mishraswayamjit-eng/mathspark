@@ -31,6 +31,7 @@ export default function DashboardPage() {
   const [showConfirm,  setShowConfirm]  = useState(false);
   const [resetting,    setResetting]    = useState(false);
   const [resetError,   setResetError]   = useState<string | null>(null);
+  const [newlyMastered, setNewlyMastered] = useState<string | null>(null); // topic name
 
   useEffect(() => {
     const studentId = localStorage.getItem('mathspark_student_id');
@@ -38,7 +39,32 @@ export default function DashboardPage() {
 
     fetch(`/api/dashboard?studentId=${studentId}`)
       .then((r) => r.json())
-      .then((d) => { setData(d); setLoading(false); })
+      .then((d) => {
+        setData(d);
+
+        // Check for newly mastered topics
+        const snapshotKey = 'mathspark_mastery_snapshot';
+        try {
+          const raw = localStorage.getItem(snapshotKey);
+          const prev: Record<string, string> = raw ? JSON.parse(raw) : {};
+
+          const freshlyMastered = d.topics.find(
+            (t: { id: string; mastery: string; name: string }) =>
+              t.mastery === 'Mastered' && prev[t.id] !== 'Mastered'
+          );
+
+          if (freshlyMastered) {
+            setNewlyMastered(freshlyMastered.name);
+          }
+
+          // Update snapshot
+          const next: Record<string, string> = {};
+          d.topics.forEach((t: { id: string; mastery: string }) => { next[t.id] = t.mastery; });
+          localStorage.setItem(snapshotKey, JSON.stringify(next));
+        } catch { /* ignore */ }
+
+        setLoading(false);
+      })
       .catch(() => setLoading(false));
   }, [router]);
 
@@ -243,6 +269,27 @@ export default function DashboardPage() {
                 {resetting ? 'Resetting...' : 'Yes, reset'}
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Mastery celebration modal */}
+      {newlyMastered && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-6">
+          <div className="bg-white rounded-3xl p-8 shadow-2xl max-w-sm w-full text-center">
+            <div className="text-7xl mb-4">🏆</div>
+            <h2 className="text-2xl font-bold text-gray-800 mb-2">Topic Mastered!</h2>
+            <p className="text-gray-500 mb-2">
+              You&apos;ve mastered
+            </p>
+            <p className="text-lg font-bold text-blue-600 mb-6">{newlyMastered}</p>
+            <p className="text-3xl mb-6">⭐ ⭐ ⭐</p>
+            <button
+              onClick={() => setNewlyMastered(null)}
+              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 rounded-2xl text-lg transition-colors min-h-[48px]"
+            >
+              Keep going! 🚀
+            </button>
           </div>
         </div>
       )}
