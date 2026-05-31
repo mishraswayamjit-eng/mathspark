@@ -1,5 +1,10 @@
 import { prisma } from './db';
 import type { Difficulty } from '@/types';
+import { getUnmetPrerequisites } from './prerequisites';
+
+type QuestionResult = (Awaited<ReturnType<typeof prisma.question.findFirst>> & {
+  prerequisiteRedirect?: string; // topicId that student should tackle first
+}) | null;
 
 const DIFFICULTIES: Difficulty[] = ['Easy', 'Medium', 'Hard'];
 
@@ -41,6 +46,10 @@ async function pickFromDifficulty(
  *  - 70%  → base difficulty (current level / ZPD)
  *  - 20%  → SRS review band: surface a mastered topic due for review
  *  - 10%  → one level above base (stretch)
+ *
+ * Prerequisite check:
+ *  - If the student has never attempted a prerequisite topic, serve an Easy
+ *    question from that topic first (soft redirect — not a hard block).
  */
 export async function getNextQuestion(
   studentId: string,
@@ -48,7 +57,29 @@ export async function getNextQuestion(
   seenIds: string[]        = [],
   consecutiveWrong: number = 0,
   consecutiveRight: number = 0,
-) {
+): Promise<QuestionResult> {
+  // Check prerequisites before serving the requested topic
+  const unmetPrereqs = await getUnmetPrerequisites(studentId, topicId);
+  if (unmetPrereqs.length > 0) {
+    const prereqTopicId = unmetPrereqs[0];
+    // Serve an Easy question from the first unmet prerequisite topic
+    const prereqQuestion = await prisma.question.findFirst({
+      where: { topicId: prereqTopicId, difficulty: 'Easy' },
+      orderBy: { id: 'asc' },
+    });
+    if (prereqQuestion) {
+      return { ...prereqQuestion, prerequisiteRedirect: prereqTopicId };
+    }
+    // If no Easy questions found, try any question from the prereq topic
+    const fallbackQuestion = await prisma.question.findFirst({
+      where: { topicId: prereqTopicId },
+      orderBy: { id: 'asc' },
+    });
+    if (fallbackQuestion) {
+      return { ...fallbackQuestion, prerequisiteRedirect: prereqTopicId };
+    }
+  }
+
   const progress = await prisma.progress.findUnique({
     where: { studentId_topicId: { studentId, topicId } },
   });

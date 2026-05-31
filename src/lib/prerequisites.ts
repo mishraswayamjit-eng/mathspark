@@ -1,26 +1,39 @@
-// Soft prerequisite map: topicId → prerequisite topicId(s)
-// Meaning: "to get the most out of this topic, finish these first"
+import { prisma } from './db';
+import type { MasteryLevel } from '@/types';
+
+// Topic prerequisite graph: key → list of topics that must not be NotStarted
 export const PREREQUISITES: Record<string, string[]> = {
-  'ch07-08': ['ch01-05'],           // Fractions → Number System
-  'ch09-10': ['ch01-05', 'ch06'],   // BODMAS → Numbers + Factors
-  'ch11':    ['ch07-08'],            // Decimals → Fractions
-  'ch12':    ['ch11'],               // Decimal Units → Decimals
-  'ch13':    ['ch09-10'],            // Algebra → BODMAS
-  'ch14':    ['ch13'],               // Equations → Algebra
-  'ch15':    ['ch09-10'],            // Puzzles → BODMAS
-  'ch16':    ['ch09-10'],            // Sequences → BODMAS
-  'ch19':    ['ch18'],               // Triangles → Angles
-  'ch20':    ['ch18'],               // Quadrilaterals → Angles
-  'ch21':    ['ch18'],               // Circle → Angles
+  'ch07-08': ['ch01-05'],
+  'ch09-10': ['ch01-05', 'ch06'],
+  'ch11':    ['ch07-08'],
+  'ch12':    ['ch11'],
+  'ch13':    ['ch09-10'],
+  'ch14':    ['ch13'],
+  'ch15':    ['ch09-10'],
+  'ch16':    ['ch09-10'],
+  'ch19':    ['ch18'],
+  'ch20':    ['ch18'],
+  'ch21':    ['ch18'],
 };
 
-export function getUnmetPrerequisites(
+// Returns prerequisites that are still NotStarted/not attempted
+export async function getUnmetPrerequisites(
+  studentId: string,
   topicId: string,
-  masteryMap: Record<string, string>, // topicId → mastery level
-): string[] {
+): Promise<string[]> {
   const prereqs = PREREQUISITES[topicId] ?? [];
-  return prereqs.filter((p) => {
-    const m = masteryMap[p];
-    return !m || m === 'NotStarted';
+  if (prereqs.length === 0) return [];
+
+  const progress = await prisma.progress.findMany({
+    where: { studentId, topicId: { in: prereqs } },
+    select: { topicId: true, mastery: true, attempted: true },
   });
+
+  const progressMap: Record<string, { mastery: MasteryLevel; attempted: number }> = {};
+  for (const p of progress) {
+    progressMap[p.topicId] = { mastery: p.mastery as MasteryLevel, attempted: p.attempted };
+  }
+
+  // A prerequisite is "unmet" if the student has never attempted it
+  return prereqs.filter((p) => !progressMap[p] || progressMap[p].attempted === 0);
 }

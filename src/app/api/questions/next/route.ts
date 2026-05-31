@@ -49,11 +49,15 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: 'No more questions available' }, { status: 404 });
     }
 
+    const { prerequisiteRedirect, ...rest } = question as typeof question & { prerequisiteRedirect?: string };
+
+    let stepByStep: unknown[] = [];
+    try { stepByStep = JSON.parse(rest.stepByStep ?? '[]'); } catch { /* malformed seed data */ }
+
     return NextResponse.json({
-      ...question,
-      stepByStep: typeof question.stepByStep === 'string'
-        ? JSON.parse(question.stepByStep)
-        : question.stepByStep,
+      ...rest,
+      stepByStep,
+      ...(prerequisiteRedirect ? { prerequisiteRedirect } : {}),
     });
   } catch (err) {
     console.error('[GET /api/questions/next]', err);
@@ -78,11 +82,15 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'No more questions' }, { status: 404 });
     }
 
+    const { prerequisiteRedirect, ...rest } = question as typeof question & { prerequisiteRedirect?: string };
+
+    let stepByStep: unknown[] = [];
+    try { stepByStep = JSON.parse(rest.stepByStep ?? '[]'); } catch { /* malformed seed data */ }
+
     return NextResponse.json({
-      ...question,
-      stepByStep: typeof question.stepByStep === 'string'
-        ? JSON.parse(question.stepByStep)
-        : question.stepByStep,
+      ...rest,
+      stepByStep,
+      ...(prerequisiteRedirect ? { prerequisiteRedirect } : {}),
     });
   } catch (err) {
     console.error('[POST /api/questions/next]', err);
