@@ -39,7 +39,7 @@ async function pickFromDifficulty(
  *
  * ZPD distribution (applied after streak adjustment):
  *  - 70%  → base difficulty (current level / ZPD)
- *  - 20%  → one level below base (review / consolidation)
+ *  - 20%  → SRS review band: surface a mastered topic due for review
  *  - 10%  → one level above base (stretch)
  */
 export async function getNextQuestion(
@@ -64,13 +64,36 @@ export async function getNextQuestion(
 
   const exclude = seenIds.length > 0 ? seenIds : [];
 
-  // ZPD roll: 0–0.69 → base, 0.70–0.89 → review (base-1), 0.90–0.99 → stretch (base+1)
+  // ZPD roll: 0–0.69 → base, 0.70–0.89 → SRS review band, 0.90–0.99 → stretch (base+1)
   const roll = Math.random();
   let targetDiff: Difficulty;
   if (roll < 0.70) {
     targetDiff = base;
   } else if (roll < 0.90) {
-    targetDiff = shift(base, -1); // review / consolidation
+    // SRS Review Band (20% chance): surface a mastered topic due for review
+    const reviewProgress = await prisma.progress.findFirst({
+      where: {
+        studentId,
+        mastery: 'Mastered',
+        nextReviewAt: { lte: new Date() },
+        topicId: { not: topicId }, // different topic
+      },
+      orderBy: { nextReviewAt: 'asc' }, // most overdue first
+    });
+
+    if (reviewProgress) {
+      const reviewPool = await prisma.question.findMany({
+        where: {
+          topicId: reviewProgress.topicId,
+          id: { notIn: exclude },
+        },
+        take: 10,
+      });
+      shuffle(reviewPool);
+      if (reviewPool.length > 0) return reviewPool[0];
+    }
+    // Fall through to base difficulty if no SRS review found
+    targetDiff = base;
   } else {
     targetDiff = shift(base, +1); // stretch
   }

@@ -3,7 +3,7 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 vi.mock('@/lib/db', () => ({
   prisma: {
     attempt: { findMany: vi.fn() },
-    progress: { upsert: vi.fn() },
+    progress: { upsert: vi.fn(), findUnique: vi.fn() },
   },
 }));
 
@@ -12,6 +12,7 @@ import { calculateMastery, updateProgress } from '@/lib/mastery';
 
 const mockAttemptFindMany = prisma.attempt.findMany as ReturnType<typeof vi.fn>;
 const mockProgressUpsert = prisma.progress.upsert as ReturnType<typeof vi.fn>;
+const mockProgressFindUnique = prisma.progress.findUnique as ReturnType<typeof vi.fn>;
 
 // Build a fake attempt record
 const attempt = (isCorrect: boolean, createdAt: Date = new Date()) => ({
@@ -131,6 +132,8 @@ describe('updateProgress', () => {
     );
     // all-attempts call (no take limit) also returns 10
     mockAttemptFindMany.mockResolvedValueOnce(allAttempts);
+    // SRS: not previously mastered → start interval at 1
+    mockProgressFindUnique.mockResolvedValueOnce({ mastery: 'Practicing', reviewInterval: 1 });
     mockProgressUpsert.mockResolvedValueOnce({});
 
     await updateProgress('stu1', 'ch11');
@@ -140,6 +143,9 @@ describe('updateProgress', () => {
     expect(upsertCall.update.mastery).toBe('Mastered');
     expect(upsertCall.update.attempted).toBe(10);
     expect(upsertCall.update.correct).toBe(8);
+    // SRS fields should be present
+    expect(upsertCall.update.reviewInterval).toBe(1);
+    expect(upsertCall.update.nextReviewAt).toBeInstanceOf(Date);
   });
 
   it('sets mastery=NotStarted and correct=0 when all attempts are wrong', async () => {

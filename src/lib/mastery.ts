@@ -24,9 +24,33 @@ export async function updateProgress(studentId: string, topicId: string): Promis
   const attempted = all.length;
   const correct   = all.filter((a) => a.isCorrect).length;
 
+  // Compute SRS fields
+  let nextReviewAt: Date | null = null;
+  let reviewInterval = 1;
+
+  if (mastery === 'Mastered') {
+    // Fetch current progress to see if already mastered (to increment interval)
+    const current = await prisma.progress.findUnique({
+      where: { studentId_topicId: { studentId, topicId } },
+      select: { mastery: true, reviewInterval: true },
+    });
+
+    if (current?.mastery === 'Mastered') {
+      // Already mastered — increment interval (1 → 3 → 7 → 14 → 30, capped)
+      const intervals = [1, 3, 7, 14, 30];
+      const currentIdx = intervals.indexOf(current.reviewInterval ?? 1);
+      reviewInterval = intervals[Math.min(currentIdx + 1, intervals.length - 1)];
+    } else {
+      // Newly mastered — start at 1 day
+      reviewInterval = 1;
+    }
+
+    nextReviewAt = new Date(Date.now() + reviewInterval * 24 * 60 * 60 * 1000);
+  }
+
   await prisma.progress.upsert({
     where:  { studentId_topicId: { studentId, topicId } },
-    update: { attempted, correct, mastery },
-    create: { studentId, topicId, attempted, correct, mastery },
+    update: { attempted, correct, mastery, nextReviewAt, reviewInterval },
+    create: { studentId, topicId, attempted, correct, mastery, nextReviewAt, reviewInterval },
   });
 }
