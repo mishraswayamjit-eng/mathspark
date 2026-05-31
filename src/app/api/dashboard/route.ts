@@ -23,16 +23,21 @@ function streakDays(attempts: Array<{ createdAt: Date; isCorrect: boolean }>): n
 }
 
 function weeklyData(attempts: Array<{ createdAt: Date; isCorrect: boolean }>) {
-  const today = new Date();
+  // Build map once: date string → correct-attempt count
+  const correctByDate = new Map<string, number>();
+  for (const a of attempts) {
+    if (!a.isCorrect) continue;
+    const day = new Date(a.createdAt).toDateString();
+    correctByDate.set(day, (correctByDate.get(day) ?? 0) + 1);
+  }
+
+  // Look up 7 days
   return Array.from({ length: 7 }, (_, i) => {
-    const d = new Date(today);
+    const d = new Date();
     d.setDate(d.getDate() - (6 - i));
-    const dateStr = d.toDateString();
     return {
       date: d.toLocaleDateString('en-IN', { weekday: 'short' }),
-      count: attempts.filter(
-        (a) => a.isCorrect && new Date(a.createdAt).toDateString() === dateStr,
-      ).length,
+      count: correctByDate.get(d.toDateString()) ?? 0,
     };
   });
 }

@@ -2,44 +2,29 @@ import { prisma } from './db';
 import type { MasteryLevel } from '@/types';
 
 /**
- * Recalculate mastery from the student's last 10 attempts on a topic.
- *   >= 80% correct → Mastered
- *   >= 40% correct → Practicing
- *   <  40% correct → NotStarted
- */
-export async function calculateMastery(
-  studentId: string,
-  topicId: string,
-): Promise<MasteryLevel> {
-  const recent = await prisma.attempt.findMany({
-    where: {
-      studentId,
-      question: { topicId },
-    },
-    orderBy: { createdAt: 'desc' },
-    take: 10,
-  });
-
-  if (recent.length === 0) return 'NotStarted';
-
-  const ratio = recent.filter((a) => a.isCorrect).length / recent.length;
-  if (ratio >= 0.8) return 'Mastered';
-  if (ratio >= 0.4) return 'Practicing';
-  return 'NotStarted';
-}
-
-/**
  * Recalculate and persist mastery + aggregate counts for a student/topic pair.
+ * Single DB fetch: all attempts ordered newest-first; mastery derived from the
+ * most-recent 10, all-time totals derived from the full set.
  */
 export async function updateProgress(studentId: string, topicId: string): Promise<void> {
-  const [mastery, all] = await Promise.all([
-    calculateMastery(studentId, topicId),
-    prisma.attempt.findMany({
-      where: { studentId, question: { topicId } },
-      select: { isCorrect: true },
-    }),
-  ]);
+  // Single fetch: all attempts for this student+topic, newest first
+  const all = await prisma.attempt.findMany({
+    where: { studentId, question: { topicId } },
+    orderBy: { createdAt: 'desc' },
+    select: { isCorrect: true },
+  });
 
+  // Mastery from last 10
+  const recent = all.slice(0, 10);
+  const mastery: MasteryLevel = recent.length === 0
+    ? 'NotStarted'
+    : recent.filter((a) => a.isCorrect).length / recent.length >= 0.8
+      ? 'Mastered'
+      : recent.filter((a) => a.isCorrect).length / recent.length >= 0.4
+        ? 'Practicing'
+        : 'NotStarted';
+
+  // All-time counts
   const attempted = all.length;
   const correct   = all.filter((a) => a.isCorrect).length;
 
