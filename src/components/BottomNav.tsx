@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 const NAV = [
   { href: '/chapters',  emoji: '📚', label: 'Chapters'  },
@@ -24,13 +25,20 @@ export default function BottomNav() {
             <Link
               key={href}
               href={href}
-              className={`flex-1 flex flex-col items-center justify-center py-2 min-h-[56px] text-xs font-semibold transition-colors ${
+              className={`relative flex-1 flex flex-col items-center justify-center py-2 min-h-[56px] text-xs font-semibold transition-colors ${
                 active ? 'text-blue-600' : 'text-gray-400 hover:text-gray-600'
               }`}
               aria-current={active ? 'page' : undefined}
             >
               <span className="text-xl mb-0.5" aria-hidden="true">{emoji}</span>
               <span>{label}</span>
+              {active && (
+                <motion.div
+                  layoutId="bottomNavPip"
+                  className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-blue-500"
+                  transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                />
+              )}
             </Link>
           );
         })}
