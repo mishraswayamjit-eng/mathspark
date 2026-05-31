@@ -26,8 +26,11 @@ function masteryDot(m: string) {
 
 export default function DashboardPage() {
   const router = useRouter();
-  const [data,    setData]    = useState<DashboardData | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [data,         setData]         = useState<DashboardData | null>(null);
+  const [loading,      setLoading]      = useState(true);
+  const [showConfirm,  setShowConfirm]  = useState(false);
+  const [resetting,    setResetting]    = useState(false);
+  const [resetError,   setResetError]   = useState<string | null>(null);
 
   useEffect(() => {
     const studentId = localStorage.getItem('mathspark_student_id');
@@ -38,6 +41,32 @@ export default function DashboardPage() {
       .then((d) => { setData(d); setLoading(false); })
       .catch(() => setLoading(false));
   }, [router]);
+
+  async function handleReset() {
+    const studentId = localStorage.getItem('mathspark_student_id');
+    if (!studentId) { router.replace('/start'); return; }
+
+    setResetting(true);
+    setResetError(null);
+
+    try {
+      const res = await fetch('/api/progress/reset', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ studentId }),
+      });
+
+      if (!res.ok) throw new Error('Reset failed');
+
+      localStorage.removeItem('mathspark_student_id');
+      localStorage.removeItem('mathspark_student_name');
+      router.replace('/start');
+    } catch {
+      setResetError('Oops! Something went wrong. Please try again.');
+      setResetting(false);
+      setShowConfirm(false);
+    }
+  }
 
   if (loading) {
     return (
@@ -151,6 +180,47 @@ export default function DashboardPage() {
             })}
         </div>
       </div>
+
+      {/* Reset progress */}
+      <div className="px-4 mt-8 pb-4 text-center">
+        {resetError && (
+          <p className="text-red-400 text-sm mb-2">{resetError}</p>
+        )}
+        <button
+          onClick={() => { setShowConfirm(true); setResetError(null); }}
+          className="text-sm text-gray-400 underline underline-offset-2 hover:text-gray-500 transition-colors min-h-[48px] px-4"
+        >
+          Reset my progress
+        </button>
+      </div>
+
+      {/* Confirmation dialog */}
+      {showConfirm && (
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 px-6">
+          <div className="bg-white rounded-2xl p-6 shadow-xl max-w-sm w-full">
+            <p className="text-lg font-bold text-gray-800 mb-2">Start fresh? 🔄</p>
+            <p className="text-gray-500 text-sm mb-6">
+              This will wipe out all your stars and start fresh. Are you sure?
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => setShowConfirm(false)}
+                disabled={resetting}
+                className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-xl py-3 transition-colors min-h-[48px]"
+              >
+                No, keep going!
+              </button>
+              <button
+                onClick={handleReset}
+                disabled={resetting}
+                className="flex-1 bg-red-100 hover:bg-red-200 text-red-600 font-semibold rounded-xl py-3 transition-colors min-h-[48px]"
+              >
+                {resetting ? 'Resetting...' : 'Yes, reset'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

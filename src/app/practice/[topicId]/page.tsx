@@ -1,12 +1,11 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import QuestionCard, { randomCorrect, randomWrong } from '@/components/QuestionCard';
 import HintSystem from '@/components/HintSystem';
 import StepByStep from '@/components/StepByStep';
 import ProgressBar from '@/components/ProgressBar';
-import { SkeletonCard } from '@/components/Skeleton';
 import type { Question, AnswerKey } from '@/types';
 
 const STREAK_MSG: Record<number, string> = {
@@ -24,7 +23,6 @@ export default function PracticePage() {
   const [topicName,  setTopicName]  = useState('');
   const [question,   setQuestion]   = useState<Question | null>(null);
   const [loading,    setLoading]    = useState(true);
-  const [everLoaded, setEverLoaded] = useState(false); // true once first question arrives
   const [answered,   setAnswered]   = useState(false);
   const [selected,   setSelected]   = useState<AnswerKey | null>(null);
   const [feedback,   setFeedback]   = useState('');
@@ -34,7 +32,9 @@ export default function PracticePage() {
   const [cr,         setCr]         = useState(0); // consecutive right
   const [score,      setScore]      = useState({ correct: 0, attempted: 0 });
   const [noMore,     setNoMore]     = useState(false);
-  const [saveError,  setSaveError]  = useState<(() => void) | null>(null);
+
+  // ── Timer ref: tracks when the current question was shown ─────────────────
+  const startTimeRef = useRef<number>(Date.now());
 
   // ── Load next question ────────────────────────────────────────────────────
   const loadNext = useCallback(async (
@@ -49,28 +49,22 @@ export default function PracticePage() {
     setFeedback('');
     setHintLevel(0);
 
-    const params = new URLSearchParams({
-      topicId,
-      studentId: sid,
-      exclude: seen.join(','),
-      cw: String(cwCur),
-      cr: String(crCur),
+    const res = await fetch('/api/questions/next', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        topicId,
+        studentId: sid,
+        exclude: seen,
+        cw: cwCur,
+        cr: crCur,
+      }),
     });
-
-    const res = await fetch(`/api/questions/next?${params}`);
-    if (res.status === 404) {
-      // Session complete — clear persisted session state
-      sessionStorage.removeItem(`mathspark_seen_${topicId}`);
-      sessionStorage.removeItem(`mathspark_cw_${topicId}`);
-      sessionStorage.removeItem(`mathspark_cr_${topicId}`);
-      setNoMore(true);
-      setLoading(false);
-      return;
-    }
+    if (res.status === 404) { setNoMore(true); setLoading(false); return; }
 
     const q = await res.json();
     setQuestion(q);
-    setEverLoaded(true);
+    startTimeRef.current = Date.now();
     setLoading(false);
   }, [topicId]);
 
@@ -87,18 +81,7 @@ export default function PracticePage() {
         setTopicName(t?.name ?? topicId);
       });
 
-    // Restore session state from sessionStorage to survive hard refreshes
-    const rawSeen = sessionStorage.getItem(`mathspark_seen_${topicId}`);
-    const initialSeen: string[] = rawSeen ? JSON.parse(rawSeen) : [];
-    const initialCw = parseInt(sessionStorage.getItem(`mathspark_cw_${topicId}`) ?? '0', 10);
-    const initialCr = parseInt(sessionStorage.getItem(`mathspark_cr_${topicId}`) ?? '0', 10);
-
-    // Seed React state so subsequent loadNext calls (via Next button) use correct values
-    setSeenIds(initialSeen);
-    setCw(initialCw);
-    setCr(initialCr);
-
-    loadNext(sid, initialSeen, initialCw, initialCr);
+    loadNext(sid, [], 0, 0);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [topicId]);
 
@@ -127,34 +110,22 @@ export default function PracticePage() {
     // Show hint level 1 automatically on wrong
     if (!isCorrect) setHintLevel(1);
 
-    // Persist session state so a hard refresh doesn't reset progress
-    const newSeenIds = [...seenIds, question.id];
-    setSeenIds(newSeenIds);
-    sessionStorage.setItem(`mathspark_seen_${topicId}`, JSON.stringify(newSeenIds));
-    sessionStorage.setItem(`mathspark_cw_${topicId}`, String(newCw));
-    sessionStorage.setItem(`mathspark_cr_${topicId}`, String(newCr));
+    // Record attempt
+    const timeTakenMs = Date.now() - startTimeRef.current;
+    fetch('/api/attempts', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        studentId,
+        questionId: question.id,
+        topicId,
+        selected: key,
+        hintUsed: hintLevel,
+        timeTakenMs,
+      }),
+    }).catch(() => {/* ignore in MVP */});
 
-    // Record attempt with retry on failure
-    const payload = {
-      studentId,
-      questionId: question.id,
-      topicId,
-      selected: key,
-      isCorrect,
-      hintUsed: hintLevel,
-    };
-
-    function recordAttempt(p: typeof payload) {
-      fetch('/api/attempts', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(p),
-      })
-        .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); setSaveError(null); })
-        .catch(() => { setSaveError(() => () => recordAttempt(p)); });
-    }
-
-    recordAttempt(payload);
+    setSeenIds((prev) => [...prev, question.id]);
   }
 
   // ── Render helpers ────────────────────────────────────────────────────────
@@ -196,9 +167,7 @@ export default function PracticePage() {
       </div>
 
       {/* Question area */}
-      {loading && !everLoaded ? (
-        <SkeletonCard />
-      ) : loading ? (
+      {loading ? (
         <div className="flex-1 flex items-center justify-center">
           <div className="text-4xl animate-bounce">🤔</div>
         </div>
@@ -221,19 +190,6 @@ export default function PracticePage() {
               }`}
             >
               {feedback}
-            </div>
-          )}
-
-          {/* Save error banner */}
-          {saveError && (
-            <div className="mx-4 mt-2 p-3 bg-amber-50 border border-amber-200 rounded-xl flex items-center justify-between text-sm text-amber-700">
-              <span>Couldn&apos;t save your answer.</span>
-              <button
-                onClick={() => { saveError(); setSaveError(null); }}
-                className="font-semibold underline ml-2"
-              >
-                Retry
-              </button>
             </div>
           )}
 
