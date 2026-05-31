@@ -31,7 +31,7 @@ vi.mock('@/lib/db', () => ({
       upsert: vi.fn(),
       findUnique: vi.fn(),
     },
-    question: { findFirst: vi.fn() },
+    question: { findUnique: vi.fn() },
   },
 }));
 
@@ -61,6 +61,7 @@ import { GET as getNextQ } from '@/app/api/questions/next/route';
 
 const mockTopicFindMany = prisma.topic.findMany as ReturnType<typeof vi.fn>;
 const mockAttemptCreate = prisma.attempt.create as ReturnType<typeof vi.fn>;
+const mockQuestionFindUnique = prisma.question.findUnique as ReturnType<typeof vi.fn>;
 const mockUpdateProgress = updateProgress as ReturnType<typeof vi.fn>;
 const mockGetNextQuestion = getNextQuestion as ReturnType<typeof vi.fn>;
 
@@ -176,6 +177,7 @@ describe('POST /api/attempts', () => {
 
   it('returns 201 and the created attempt on valid payload', async () => {
     const createdAttempt = { id: 'att1', ...validPayload };
+    mockQuestionFindUnique.mockResolvedValueOnce({ correctAnswer: 'A' });
     mockAttemptCreate.mockResolvedValueOnce(createdAttempt);
     mockUpdateProgress.mockResolvedValueOnce(undefined);
 
@@ -188,6 +190,7 @@ describe('POST /api/attempts', () => {
   });
 
   it('calls updateProgress with studentId and topicId', async () => {
+    mockQuestionFindUnique.mockResolvedValueOnce({ correctAnswer: 'A' });
     mockAttemptCreate.mockResolvedValueOnce({ id: 'att2', ...validPayload });
     mockUpdateProgress.mockResolvedValueOnce(undefined);
 
@@ -240,6 +243,7 @@ describe('POST /api/attempts', () => {
       selected: 'B',
       isCorrect: false,
     };
+    mockQuestionFindUnique.mockResolvedValueOnce({ correctAnswer: 'B' });
     mockAttemptCreate.mockResolvedValueOnce({ id: 'att3', ...minimalPayload });
     mockUpdateProgress.mockResolvedValueOnce(undefined);
 
