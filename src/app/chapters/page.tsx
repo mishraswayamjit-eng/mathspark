@@ -12,11 +12,16 @@ export default function ChaptersPage() {
   const [topics,   setTopics]   = useState<TopicWithProgress[]>([]);
   const [name,     setName]     = useState('');
   const [loading,  setLoading]  = useState(true);
+  const [practicedToday, setPracticedToday] = useState<boolean>(true);
 
   useEffect(() => {
     const studentId = localStorage.getItem('mathspark_student_id');
     if (!studentId) { router.replace('/start'); return; }
     setName(localStorage.getItem('mathspark_student_name') ?? 'there');
+
+    const lastPractice = localStorage.getItem('mathspark_last_practice');
+    const today = new Date().toISOString().slice(0, 10);
+    setPracticedToday(lastPractice === today);
 
     async function load() {
       const [topicsRes, progressRes] = await Promise.all([
@@ -84,6 +89,11 @@ export default function ChaptersPage() {
     );
   }
 
+  const attemptedMap: Record<string, number> = {};
+  topics.forEach((p: { id: string; attempted: number }) => {
+    attemptedMap[p.id] = p.attempted;
+  });
+
   return (
     <div className="min-h-screen pb-8">
       {/* Header */}
@@ -92,7 +102,25 @@ export default function ChaptersPage() {
         <p className="text-gray-500 mt-1">Choose a topic to practice:</p>
       </div>
 
-      <ChapterGrid topics={topics} prerequisiteHints={prerequisiteHints} />
+      {/* Streak reminder banner */}
+      {!practicedToday && (
+        <div className="mx-4 mt-4 bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 flex items-center gap-3">
+          <span className="text-2xl">🔥</span>
+          <div className="flex-1">
+            <p className="text-sm font-semibold text-amber-800">Don&apos;t lose your streak!</p>
+            <p className="text-xs text-amber-600">Practice any topic today to keep going.</p>
+          </div>
+          <button
+            onClick={() => setPracticedToday(true)}
+            className="text-amber-400 hover:text-amber-600 text-lg leading-none"
+            aria-label="Dismiss reminder"
+          >
+            ×
+          </button>
+        </div>
+      )}
+
+      <ChapterGrid topics={topics} prerequisiteHints={prerequisiteHints} attemptedMap={attemptedMap} />
     </div>
   );
 }

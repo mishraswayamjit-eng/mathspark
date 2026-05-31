@@ -13,6 +13,7 @@ interface ChapterGridProps {
   topics: TopicWithProgress[];
   /** Optional map of topicId → prerequisite hint text (e.g. "Try Fractions first") */
   prerequisiteHints?: Record<string, string>;
+  attemptedMap?: Record<string, number>;
 }
 
 function masteryStyle(mastery: string) {
@@ -33,7 +34,7 @@ function barColor(mastery: string) {
   return 'bg-gray-300';
 }
 
-export default function ChapterGrid({ topics, prerequisiteHints }: ChapterGridProps) {
+export default function ChapterGrid({ topics, prerequisiteHints, attemptedMap }: ChapterGridProps) {
   const sorted = [...topics].sort(
     (a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id),
   );
@@ -74,6 +75,9 @@ export default function ChapterGrid({ topics, prerequisiteHints }: ChapterGridPr
               <p className="text-xs text-gray-400">
                 {topic.correct}/{topic.attempted} correct
               </p>
+            )}
+            {attemptedMap && attemptedMap[topic.id] > 0 && (
+              <span className="text-xs text-gray-400">{attemptedMap[topic.id]} answered</span>
             )}
           </Link>
         );

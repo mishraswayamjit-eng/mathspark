@@ -223,6 +223,7 @@ export default function PracticePage() {
         timeTakenMs,
       }),
     }).catch(() => { setAttemptError(true); });
+    localStorage.setItem('mathspark_last_practice', new Date().toISOString().slice(0, 10));
 
     const newSeenIds = [...seenIds, question.id];
     setSeenIds(newSeenIds);
