@@ -134,6 +134,17 @@ model Attempt {
 }
 ```
 
+### Local Setup (first time)
+```bash
+npm install
+npx prisma generate
+npx prisma db push        # creates tables in your Postgres DB
+# After schema changes, apply to DB:
+npx prisma db push
+# Then visit /seed in the browser to load the 2,345 questions
+# OR run: npm run db:seed (requires local DB access)
+```
+
 ## Seed Script Behavior
 
 The seed script (`prisma/seed.ts`) must:
