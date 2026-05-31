@@ -11,6 +11,9 @@ const config: Config = {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
+      colors: {
+        'duo-blue': '#1cb0f6',
+      },
     },
   },
   plugins: [],
