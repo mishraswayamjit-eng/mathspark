@@ -316,21 +316,31 @@ Based on last 10 attempts per topic:
 ### ✅ Complete
 1. Scaffold Next.js + Prisma + PostgreSQL (Neon) + Tailwind
 2. Schema + CLI seed script + web seeder (`/seed` page + `/api/seed` route)
-3. `/chapters` — chapter grid with mastery colors (green/amber/gray)
+3. `/chapters` — chapter grid with mastery colours (green/amber/gray)
 4. `/practice/[topicId]` — question card, 4 options, 3-tier hints, step-by-step KaTeX, misconception feedback
-5. Adaptive engine — difficulty adjustment by mastery level + streak (see above)
-6. `/start` — onboarding + 15-question diagnostic quiz with adaptive difficulty
-7. `/dashboard` — stats (solved, mastered, streak), weekly bar chart, topic grid, "Continue learning" CTA
-8. Bottom nav (hidden on `/`, `/start`, `/seed`)
-9. Full REST API layer — 9 routes under `/api/`
+5. Adaptive engine — mastery-based difficulty + streak + 70/20/10 ZPD distribution + Fisher-Yates shuffle
+6. `/start` — onboarding + 15-question diagnostic quiz covering all 16 topics with adaptive difficulty
+7. `/dashboard` — stats (solved, mastered, streak), weekly bar chart, topic grid, "Continue learning" CTA, reset progress button
+8. `/offline` — kid-friendly offline fallback page
+9. Bottom nav (hidden on `/`, `/start`, `/seed`)
+10. Full REST API layer — 10 routes under `/api/` (including `POST /api/progress/reset`)
+11. Server-side `isCorrect` computation — attempts route verifies answer independently
+12. SEED_SECRET in POST body — never in URL or logs
+13. Attempt error handling — retry banner shown on failure; fire-and-forget removed
+14. Session-state persistence — `seenIds`/cw/cr stored in `sessionStorage` per topic; survives hard refresh
+15. Question randomization — Fisher-Yates shuffle on each pool fetch (no deterministic order)
+16. DB performance indexes — on `Attempt(studentId)`, `Attempt(studentId, createdAt)`, `Attempt(questionId)`, `Question(topicId)`, `Question(topicId, difficulty)`
+17. Accessibility — ARIA roles, labels, `aria-pressed`, `aria-expanded`, `aria-current` across all components
+18. Kid-friendly error boundaries — `error.tsx` + `global-error.tsx` with encouraging copy
+19. PWA — `manifest.json`, 192px + 512px icons, service worker with offline cache-first strategy
+20. Rate limiting — in-memory sliding-window middleware (60 req/min per IP) on all `/api/*` routes
+21. Structured logging — `src/lib/logger.ts` + `src/lib/withLogging.ts` for JSON-line observability
+22. Test suite — 45 unit/integration tests (Vitest): adaptive engine, mastery calculation, API routes
+23. CI/CD — GitHub Actions pipeline: test + typecheck + build on every push
+24. Lockfile — `package-lock.json` committed for reproducible installs
 
 ### ⬜ Remaining
-- **Attempt error handling** — currently fire-and-forget; failures silently dropped
-- **Session-state persistence** — `seenIds`/streak reset on hard refresh (fix: `sessionStorage`)
-- **Question randomization** — currently deterministic by ID order
-- **Full ZPD adaptive engine** — 70/20/10 distribution, cross-topic prerequisites
-- **PWA manifest + service worker** — required for "Add to Home Screen" on Android
-- **Loading skeletons** — pages show a spinner; no skeleton placeholders
-- **Page transitions / animations**
-- **Lockfile** — no `package-lock.json` committed; installs are non-reproducible
-- **Test suite** — no unit, integration, or e2e tests
+- **Full ZPD cross-topic prerequisites** — topic graph and prerequisite-aware sequencing
+- **Page transitions / animations** — Framer Motion or CSS transitions between questions
+- **Sentry / external error monitoring** — requires SENTRY_DSN; structured logging is in place as foundation
+- **Rate limiting at scale** — current in-memory map resets on cold start; Upstash Redis needed for multi-instance

@@ -60,7 +60,12 @@ export default function PracticePage() {
         cr: crCur,
       }),
     });
-    if (res.status === 404) { setNoMore(true); setLoading(false); return; }
+    if (res.status === 404) {
+      sessionStorage.removeItem(`mathspark_session_${topicId}`);
+      setNoMore(true);
+      setLoading(false);
+      return;
+    }
 
     const q = await res.json();
     setQuestion(q);
@@ -81,7 +86,25 @@ export default function PracticePage() {
         setTopicName(t?.name ?? topicId);
       });
 
-    loadNext(sid, [], 0, 0);
+    // Restore session state (survives page refresh within the same tab)
+    const sessionKey = `mathspark_session_${topicId}`;
+    let initialSeen: string[] = [];
+    let initialCw = 0;
+    let initialCr = 0;
+    try {
+      const saved = sessionStorage.getItem(sessionKey);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        initialSeen = parsed.seenIds ?? [];
+        initialCw   = parsed.cw   ?? 0;
+        initialCr   = parsed.cr   ?? 0;
+        setSeenIds(initialSeen);
+        setCw(initialCw);
+        setCr(initialCr);
+      }
+    } catch { /* ignore parse errors */ }
+
+    loadNext(sid, initialSeen, initialCw, initialCr);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [topicId]);
 
@@ -125,7 +148,15 @@ export default function PracticePage() {
       }),
     }).catch(() => {/* ignore in MVP */});
 
-    setSeenIds((prev) => [...prev, question.id]);
+    const newSeenIds = [...seenIds, question.id];
+    setSeenIds(newSeenIds);
+
+    // Persist session state so it survives a hard refresh
+    sessionStorage.setItem(`mathspark_session_${topicId}`, JSON.stringify({
+      seenIds: newSeenIds,
+      cw: newCw,
+      cr: newCr,
+    }));
   }
 
   // ── Render helpers ────────────────────────────────────────────────────────
