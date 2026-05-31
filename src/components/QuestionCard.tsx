@@ -58,7 +58,7 @@ export default function QuestionCard({
     <div className="space-y-4">
       {/* Question text */}
       <div className="bg-white rounded-2xl p-5 shadow-sm">
-        <p className="text-lg font-medium text-gray-800 leading-relaxed">
+        <p id="question-text" className="text-lg font-medium text-gray-800 leading-relaxed">
           {question.questionText}
         </p>
         {question.questionLatex && (
@@ -72,13 +72,15 @@ export default function QuestionCard({
       </div>
 
       {/* Options */}
-      <div className="space-y-3">
+      <div className="space-y-3" role="group" aria-labelledby="question-text">
         {options.map(({ key, text }) => (
           <button
             key={key}
             disabled={answered}
             onClick={() => onAnswer(key, key === question.correctAnswer)}
             className={optionStyle(key)}
+            aria-label={`Option ${key}: ${text}`}
+            aria-pressed={selected === key}
           >
             <span
               className={`w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-bold ${

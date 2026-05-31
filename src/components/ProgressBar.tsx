@@ -19,6 +19,10 @@ export default function ProgressBar({
         <div
           className={`${color} ${height} rounded-full transition-all duration-500`}
           style={{ width: `${pct}%` }}
+          role="progressbar"
+          aria-valuenow={pct}
+          aria-valuemin={0}
+          aria-valuemax={100}
         />
       </div>
       {showLabel && (

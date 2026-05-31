@@ -18,13 +18,15 @@ export default function StepByStep({ steps }: StepByStepProps) {
       <button
         onClick={() => setOpen((o) => !o)}
         className="w-full flex items-center justify-between px-4 py-3 bg-blue-50 text-blue-700 font-semibold text-sm"
+        aria-expanded={open}
+        aria-controls="step-by-step-panel"
       >
         <span>📖 See step-by-step solution</span>
         <span className="text-lg">{open ? '▲' : '▼'}</span>
       </button>
 
       {open && (
-        <div className="divide-y divide-blue-100 bg-white">
+        <div id="step-by-step-panel" className="divide-y divide-blue-100 bg-white">
           {steps.map((step, i) => (
             <div key={step.step ?? i} className="px-4 py-3">
               <p className="text-xs font-bold text-blue-500 uppercase tracking-wide mb-1">

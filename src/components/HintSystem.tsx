@@ -48,6 +48,8 @@ export default function HintSystem({ hint1, hint2, hint3, level, onLevelUp }: Hi
         <button
           onClick={() => onLevelUp(2)}
           className="w-full py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-800 text-sm font-semibold transition-colors"
+          aria-expanded={false}
+          aria-label="Show hint level 2"
         >
           Need more help?
         </button>
@@ -56,6 +58,8 @@ export default function HintSystem({ hint1, hint2, hint3, level, onLevelUp }: Hi
         <button
           onClick={() => onLevelUp(3)}
           className="w-full py-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-800 text-sm font-semibold transition-colors"
+          aria-expanded={false}
+          aria-label="Show hint level 3"
         >
           Show me how
         </button>

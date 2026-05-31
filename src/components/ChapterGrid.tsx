@@ -49,6 +49,7 @@ export default function ChapterGrid({ topics }: ChapterGridProps) {
             key={topic.id}
             href={`/practice/${topic.id}`}
             className={`rounded-2xl border-2 p-4 flex flex-col gap-2 hover:shadow-md transition-shadow ${masteryStyle(topic.mastery)}`}
+            aria-label={`Chapter: ${topic.name} — ${topic.mastery}`}
           >
             <span className="text-xs font-bold text-gray-400 uppercase tracking-wide">
               Ch {topic.chapterNumber}
