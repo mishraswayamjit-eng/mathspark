@@ -6,22 +6,22 @@ MathSpark is a child-safe, kid-friendly math learning and IPM exam prep app for 
 ## Tech Stack
 - **Framework:** Next.js 14+ (App Router)
 - **Language:** TypeScript
-- **Database:** SQLite via Prisma ORM (file: `prisma/mathspark.db`)
+- **Database:** PostgreSQL (Neon) via Prisma ORM — connection via `DATABASE_URL` env var
 - **Math Rendering:** KaTeX (`katex` npm package)
 - **Styling:** Tailwind CSS
-- **State:** React Context (no Redux)
-- **Deployment:** Vercel (later)
+- **State:** Local component state + localStorage (no Redux, no Context)
+- **Deployment:** Vercel (configured — `vercel.json` present)
 
 ## Project Structure
 ```
 mathspark/
 ├── CLAUDE.md              ← this file
+├── vercel.json            ← Vercel deployment config
 ├── prisma/
-│   ├── schema.prisma      ← database schema
-│   ├── seed.ts            ← loads mathspark_complete_seed.json
-│   └── mathspark.db       ← SQLite database (auto-created)
+│   ├── schema.prisma      ← database schema (PostgreSQL)
+│   └── seed.ts            ← CLI seed script (local dev only)
 ├── data/
-│   └── mathspark_complete_seed.json  ← 2,345 questions (COPY HERE)
+│   └── mathspark_complete_seed.json  ← 2,345 questions
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx     ← root layout with bottom nav
@@ -29,21 +29,37 @@ mathspark/
 │   │   ├── start/
 │   │   │   └── page.tsx   ← onboarding + diagnostic quiz
 │   │   ├── chapters/
-│   │   │   └── page.tsx   ← chapter grid (21 chapters)
+│   │   │   └── page.tsx   ← chapter grid (16 topics)
 │   │   ├── practice/
+│   │   │   ├── page.tsx   ← smart redirect to weakest topic
 │   │   │   └── [topicId]/
 │   │   │       └── page.tsx  ← adaptive practice mode
-│   │   └── dashboard/
-│   │       └── page.tsx   ← student progress
+│   │   ├── dashboard/
+│   │   │   └── page.tsx   ← student progress
+│   │   ├── seed/
+│   │   │   └── page.tsx   ← admin UI for web-based seeding
+│   │   └── api/
+│   │       ├── students/
+│   │       │   ├── route.ts      ← POST create student
+│   │       │   └── [id]/route.ts ← GET student by id
+│   │       ├── topics/route.ts   ← GET all 16 topics
+│   │       ├── progress/route.ts ← GET progress by studentId
+│   │       ├── attempts/route.ts ← POST record attempt
+│   │       ├── diagnostic/route.ts ← GET diagnostic question
+│   │       ├── dashboard/route.ts  ← GET full dashboard data
+│   │       ├── questions/
+│   │       │   └── next/route.ts ← GET adaptive next question
+│   │       └── seed/route.ts     ← GET paginated seed (secret-protected)
 │   ├── components/
 │   │   ├── QuestionCard.tsx
 │   │   ├── HintSystem.tsx
 │   │   ├── StepByStep.tsx
 │   │   ├── ProgressBar.tsx
 │   │   ├── ChapterGrid.tsx
-│   │   └── BottomNav.tsx
+│   │   ├── BottomNav.tsx
+│   │   └── KatexRenderer.tsx
 │   ├── lib/
-│   │   ├── db.ts          ← Prisma client
+│   │   ├── db.ts          ← Prisma client singleton
 │   │   ├── adaptive.ts    ← adaptive problem picker
 │   │   └── mastery.ts     ← mastery calculation
 │   └── types/
@@ -56,8 +72,8 @@ mathspark/
 
 ```prisma
 datasource db {
-  provider = "sqlite"
-  url      = "file:./mathspark.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 generator client {
@@ -134,6 +150,28 @@ model Attempt {
 }
 ```
 
+## Environment Variables
+
+| Variable       | Required | Description |
+|----------------|----------|-------------|
+| `DATABASE_URL` | Yes      | PostgreSQL connection string (e.g. Neon: `postgresql://user:pass@host/db`) |
+| `SEED_SECRET`  | Yes      | Passphrase to authorize the `/api/seed` endpoint |
+
+For local dev, create a `.env` file in the project root (already `.gitignore`d):
+```
+DATABASE_URL="postgresql://user:pass@host/db"
+SEED_SECRET="any-secret-string"
+```
+
+### Local Setup (first time)
+```bash
+npm install
+npx prisma generate
+npx prisma db push        # creates tables in your Postgres DB
+# Then visit /seed in the browser to load the 2,345 questions
+# OR run: npm run db:seed (requires local DB access)
+```
+
 ## Seed Script Behavior
 
 The seed script (`prisma/seed.ts`) must:
@@ -146,6 +184,13 @@ The seed script (`prisma/seed.ts`) must:
    - `misconceptions.A` → `misconceptionA`, etc.
    - Map question ID prefix to topicId (e.g., `Q_CH11_xxx` → topic `ch11`)
 4. Use `upsert` so the script can be re-run safely
+
+### Web-Based Seeding (Production / Vercel)
+The CLI seed script requires direct DB access. For production Vercel deployments, use the paginated web seeder instead:
+1. Deploy the app with `DATABASE_URL` and `SEED_SECRET` env vars set in Vercel
+2. Visit `/seed` in the browser
+3. Enter your `SEED_SECRET` value and click "Start Seeding"
+4. The UI polls `GET /api/seed?secret=&page=N` until all 2,345 questions are loaded (75 questions/request, ~32 requests, within Vercel's 300s function limit)
 
 ### Topic Mapping
 ```
@@ -174,21 +219,30 @@ dh       → "Data Handling & Graphs"
 - **Difficulty:** 20% Easy, 45% Medium, 34% Hard
 - **All IDs unique:** ✓ Validated
 
-## Adaptive Engine Rules (`src/lib/adaptive.ts`)
+## Adaptive Engine — Current Implementation (`src/lib/adaptive.ts`)
 
 ```
-function getNextQuestion(studentId, topicId):
-  1. Fetch student's mastery for this topic and prerequisites
-  2. Pick questions they haven't seen this session
-  3. Distribution:
-     - 70% from current ZPD (topics at 30-70% mastery)
-     - 20% review (mastered topics, weighted by days since last attempt)
-     - 10% stretch (one difficulty above current)
-  4. Streak adjustments:
-     - 3 wrong in a row → drop difficulty by 1 level
-     - 5 right in a row → increase difficulty by 1 level
-  5. Never repeat same question within a session
+function getNextQuestion(studentId, topicId, seenIds, consecutiveWrong, consecutiveRight):
+  1. Fetch student's mastery for this topic from the Progress table
+  2. Base difficulty:
+       NotStarted → Easy
+       Practicing → Medium
+       Mastered   → Hard
+  3. Streak adjustments:
+       consecutiveWrong >= 3 → drop difficulty one level
+       consecutiveRight >= 5 → raise difficulty one level
+  4. Find first unseen question at target difficulty (orderBy id asc — deterministic)
+  5. Fallback: if none at target difficulty, return any unseen question in the topic
+  6. Return null if all questions seen (session complete)
+
+NOTE: Session state (seenIds, consecutiveWrong, consecutiveRight) is maintained
+client-side and passed as query params on each request. The server is stateless.
 ```
+
+**Planned but not yet implemented:**
+- 70% ZPD / 20% review / 10% stretch difficulty distribution
+- Cross-topic prerequisite graph
+- Randomized question ordering (currently deterministic by question ID)
 
 ## Mastery Calculation (`src/lib/mastery.ts`)
 
@@ -257,13 +311,26 @@ Based on last 10 attempts per topic:
 5. **No data collection beyond name and answers.** No email, no phone, no location.
 6. **Session-based auth in MVP.** No account creation required. Just first name + progress stored locally.
 
-## Build Order (Sequential Prompts)
+## Build Status
 
-1. Scaffold Next.js + Prisma + SQLite + Tailwind
-2. Create schema + seed script + load all 2,345 questions
-3. Build /chapters page (chapter grid with mastery colors)
-4. Build /practice/[topicId] (question card + options + hints + solution)
-5. Build adaptive engine (getNextQuestion with ZPD logic)
-6. Build /start (onboarding + diagnostic quiz)
-7. Build /dashboard (stats + progress + streak)
-8. Polish: bottom nav, PWA manifest, loading skeletons, page transitions
+### ✅ Complete
+1. Scaffold Next.js + Prisma + PostgreSQL (Neon) + Tailwind
+2. Schema + CLI seed script + web seeder (`/seed` page + `/api/seed` route)
+3. `/chapters` — chapter grid with mastery colors (green/amber/gray)
+4. `/practice/[topicId]` — question card, 4 options, 3-tier hints, step-by-step KaTeX, misconception feedback
+5. Adaptive engine — difficulty adjustment by mastery level + streak (see above)
+6. `/start` — onboarding + 15-question diagnostic quiz with adaptive difficulty
+7. `/dashboard` — stats (solved, mastered, streak), weekly bar chart, topic grid, "Continue learning" CTA
+8. Bottom nav (hidden on `/`, `/start`, `/seed`)
+9. Full REST API layer — 9 routes under `/api/`
+
+### ⬜ Remaining
+- **Attempt error handling** — currently fire-and-forget; failures silently dropped
+- **Session-state persistence** — `seenIds`/streak reset on hard refresh (fix: `sessionStorage`)
+- **Question randomization** — currently deterministic by ID order
+- **Full ZPD adaptive engine** — 70/20/10 distribution, cross-topic prerequisites
+- **PWA manifest + service worker** — required for "Add to Home Screen" on Android
+- **Loading skeletons** — pages show a spinner; no skeleton placeholders
+- **Page transitions / animations**
+- **Lockfile** — no `package-lock.json` committed; installs are non-reproducible
+- **Test suite** — no unit, integration, or e2e tests
