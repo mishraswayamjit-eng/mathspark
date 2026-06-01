@@ -13,6 +13,8 @@ export default function ChaptersPage() {
   const [topics,   setTopics]   = useState<TopicWithProgress[]>([]);
   const [name,     setName]     = useState('');
   const [loading,  setLoading]  = useState(true);
+  const [loadError, setLoadError] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
   const [practicedToday, setPracticedToday] = useState<boolean>(true);
 
   useEffect(() => {
@@ -25,30 +27,51 @@ export default function ChaptersPage() {
     setPracticedToday(lastPractice === today);
 
     async function load() {
-      const [topicsRes, progressRes] = await Promise.all([
-        fetch('/api/topics'),
-        fetch(`/api/progress?studentId=${studentId}`),
-      ]);
+      try {
+        const [topicsRes, progressRes] = await Promise.all([
+          fetch('/api/topics'),
+          fetch(`/api/progress?studentId=${studentId}`),
+        ]);
 
-      const topicsData:   Topic[]    = await topicsRes.json();
-      const progressData: Progress[] = await progressRes.json();
+        if (!topicsRes.ok || !progressRes.ok) {
+          setLoadError(true);
+          setLoading(false);
+          return;
+        }
 
-      const merged: TopicWithProgress[] = topicsData.map((t) => {
-        const p = progressData.find((x) => x.topicId === t.id);
-        return {
-          ...t,
-          mastery:   p?.mastery   ?? 'NotStarted',
-          attempted: p?.attempted ?? 0,
-          correct:   p?.correct   ?? 0,
-        };
-      });
+        const topicsData:   Topic[]    = await topicsRes.json();
+        const progressData: Progress[] = await progressRes.json();
 
-      setTopics(merged);
-      setLoading(false);
+        if (!Array.isArray(topicsData)) {
+          setLoadError(true);
+          setLoading(false);
+          return;
+        }
+
+        const merged: TopicWithProgress[] = topicsData.map((t) => {
+          const p = Array.isArray(progressData)
+            ? progressData.find((x) => x.topicId === t.id)
+            : undefined;
+          return {
+            ...t,
+            mastery:   p?.mastery   ?? 'NotStarted',
+            attempted: p?.attempted ?? 0,
+            correct:   p?.correct   ?? 0,
+          };
+        });
+
+        setTopics(merged);
+        setLoading(false);
+      } catch (err) {
+        console.error('[chapters load]', err);
+        setLoadError(true);
+        setLoading(false);
+      }
     }
 
-    load().catch(console.error);
-  }, [router]);
+    load();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router, retryCount]);
 
   // Build a mastery lookup: topicId → mastery level
   const masteryMap = useMemo<Record<string, string>>(() => {
@@ -75,6 +98,27 @@ export default function ChaptersPage() {
     });
     return hints;
   }, [topics, masteryMap, topicNameMap]);
+
+  if (loadError) {
+    return (
+      <motion.div
+        className="min-h-screen flex flex-col items-center justify-center px-6 gap-4 text-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.25 }}
+      >
+        <div className="text-5xl" aria-hidden="true">😅</div>
+        <h2 className="text-xl font-bold text-gray-800">Oops, couldn&apos;t load your topics!</h2>
+        <p className="text-gray-500 text-sm">Check your internet connection and try again.</p>
+        <button
+          onClick={() => { setLoadError(false); setLoading(true); setRetryCount((n) => n + 1); }}
+          className="bg-blue-500 text-white font-bold py-3 px-6 rounded-2xl text-base"
+        >
+          Try again
+        </button>
+      </motion.div>
+    );
+  }
 
   if (loading) {
     return (
