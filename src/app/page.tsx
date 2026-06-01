@@ -19,7 +19,7 @@ export default function RootPage() {
 
     // Show welcome back briefly, then navigate
     setStudentName(name ?? 'there');
-    const t = setTimeout(() => router.replace('/chapters'), 1500);
+    const t = setTimeout(() => router.replace('/chapters'), 400);
     return () => clearTimeout(t);
   }, [router]);
 

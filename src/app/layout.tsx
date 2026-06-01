@@ -1,7 +1,14 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import BottomNav from '@/components/BottomNav';
 import PageTransitionWrapper from '@/components/PageTransitionWrapper';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
   title: 'MathSpark — Grade 4 Math',
@@ -15,7 +22,7 @@ export const viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <body className="bg-gray-50 min-h-screen font-sans">
         <main className="max-w-lg mx-auto min-h-screen pb-20">
           <PageTransitionWrapper>{children}</PageTransitionWrapper>
