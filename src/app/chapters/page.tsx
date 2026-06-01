@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import ChapterGrid from '@/components/ChapterGrid';
 import { SkeletonGrid } from '@/components/Skeleton';
 import type { Topic, Progress, TopicWithProgress } from '@/types';
-import { getUnmetPrerequisites } from '@/lib/prerequisites';
+import { getUnmetPrerequisiteIds } from '@/lib/prerequisites';
 
 export default function ChaptersPage() {
   const router = useRouter();
@@ -68,7 +68,7 @@ export default function ChaptersPage() {
   const prerequisiteHints = useMemo<Record<string, string>>(() => {
     const hints: Record<string, string> = {};
     topics.forEach((t) => {
-      const unmet = getUnmetPrerequisites(t.id, masteryMap);
+      const unmet = getUnmetPrerequisiteIds(t.id, masteryMap);
       if (unmet.length > 0) {
         hints[t.id] = topicNameMap[unmet[0]] ?? unmet[0];
       }

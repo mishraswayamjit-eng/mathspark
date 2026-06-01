@@ -37,3 +37,13 @@ export async function getUnmetPrerequisites(
   // A prerequisite is "unmet" if the student has never attempted it
   return prereqs.filter((p) => !progressMap[p] || progressMap[p].attempted === 0);
 }
+
+// Synchronous variant for client components that already have mastery data in memory.
+// masteryMap: topicId → mastery level string ('NotStarted' | 'Practicing' | 'Mastered')
+export function getUnmetPrerequisiteIds(
+  topicId: string,
+  masteryMap: Record<string, string>,
+): string[] {
+  const prereqs = PREREQUISITES[topicId] ?? [];
+  return prereqs.filter((p) => !masteryMap[p] || masteryMap[p] === 'NotStarted');
+}

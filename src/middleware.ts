@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Ratelimit } from '@upstash/ratelimit';
-import { Redis } from '@upstash/redis';
 
 // ── In-memory fallback (single-instance) ──────────────────────────────────
 interface Entry { count: number; resetAt: number }
@@ -11,7 +9,6 @@ const MAX_ENTRIES = 50_000; // cap to prevent memory leak
 
 function memRateLimit(ip: string): { allowed: boolean; remaining: number } {
   const now = Date.now();
-  // Evict oldest entry if at cap
   if (memMap.size >= MAX_ENTRIES) {
     const oldest = memMap.keys().next().value;
     if (oldest) memMap.delete(oldest);
@@ -26,25 +23,18 @@ function memRateLimit(ip: string): { allowed: boolean; remaining: number } {
 }
 
 // ── Upstash Redis rate limit (multi-instance) ─────────────────────────────
-let ratelimitInstance: InstanceType<typeof Ratelimit> | null = null;
-
-function getRatelimit(): InstanceType<typeof Ratelimit> | null {
-  if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) return null;
-  if (!ratelimitInstance) {
-    ratelimitInstance = new Ratelimit({
-      redis: new Redis({
-        url: process.env.UPSTASH_REDIS_REST_URL,
-        token: process.env.UPSTASH_REDIS_REST_TOKEN,
-      }),
-      limiter: Ratelimit.slidingWindow(60, '60 s'),
-      analytics: false,
-    });
-  }
-  return ratelimitInstance;
-}
-
+// Dynamic import keeps Node.js-only Upstash code out of the Edge bundle.
 async function redisRateLimit(ip: string): Promise<{ allowed: boolean; remaining: number }> {
-  const ratelimit = getRatelimit()!;
+  const { Ratelimit } = await import('@upstash/ratelimit');
+  const { Redis } = await import('@upstash/redis');
+  const ratelimit = new Ratelimit({
+    redis: new Redis({
+      url: process.env.UPSTASH_REDIS_REST_URL!,
+      token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+    }),
+    limiter: Ratelimit.slidingWindow(60, '60 s'),
+    analytics: false,
+  });
   const { success, remaining } = await ratelimit.limit(ip);
   return { allowed: success, remaining };
 }
