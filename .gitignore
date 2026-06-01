@@ -25,6 +25,9 @@ prisma/generated/
 # Agent worktrees (Claude Code scratch space)
 .claude/
 
+# TypeScript
+*.tsbuildinfo
+
 # Misc
 .DS_Store
 *.pem
