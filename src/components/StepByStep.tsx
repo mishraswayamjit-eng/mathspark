@@ -14,27 +14,27 @@ export default function StepByStep({ steps }: StepByStepProps) {
   if (!steps || steps.length === 0) return null;
 
   return (
-    <div className="rounded-2xl border border-blue-200 overflow-hidden">
+    <div className="rounded-spark border border-spark-indigo/20 overflow-hidden bg-surface-card shadow-soft">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full flex items-center justify-between px-4 py-3 bg-blue-50 text-blue-700 font-semibold text-sm"
+        className="w-full flex items-center justify-between px-4 py-3.5 bg-spark-indigo-soft text-spark-indigo font-body font-bold text-sm"
         aria-expanded={open}
         aria-controls="step-by-step-panel"
       >
         <span>📖 See step-by-step solution</span>
-        <span className="text-lg">{open ? '▲' : '▼'}</span>
+        <span className="text-base transition-transform duration-200" style={{ transform: open ? 'rotate(180deg)' : 'none' }}>▾</span>
       </button>
 
       {open && (
-        <div id="step-by-step-panel" className="divide-y divide-blue-100 bg-white">
+        <div id="step-by-step-panel" className="divide-y divide-spark-indigo/10">
           {steps.map((step, i) => (
-            <div key={step.step ?? i} className="px-4 py-3">
-              <p className="text-xs font-bold text-blue-500 uppercase tracking-wide mb-1">
+            <div key={step.step ?? i} className="px-4 py-3.5">
+              <p className="text-xs font-body font-bold text-spark-indigo uppercase tracking-wide mb-1">
                 Step {step.step ?? i + 1}
               </p>
-              <p className="text-gray-700 text-sm leading-relaxed">{step.text}</p>
+              <p className="font-body text-ink text-sm leading-relaxed">{step.text}</p>
               {step.latex && (
-                <div className="mt-2 p-2 bg-green-50 rounded-lg overflow-x-auto">
+                <div className="mt-2 p-3 bg-spark-green-soft rounded-xl overflow-x-auto">
                   <KatexRenderer latex={step.latex} displayMode />
                 </div>
               )}

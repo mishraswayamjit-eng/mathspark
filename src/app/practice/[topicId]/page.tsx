@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import QuestionCard, { randomCorrect, randomWrong } from '@/components/QuestionCard';
 import HintSystem from '@/components/HintSystem';
 import StepByStep from '@/components/StepByStep';
-import ProgressBar from '@/components/ProgressBar';
 import ChatWidget from '@/components/ChatWidget';
+import SparkMascot from '@/components/SparkMascot';
 import type { Question, AnswerKey } from '@/types';
 
 const STREAK_MSG: Record<number, string> = {
@@ -246,62 +246,88 @@ export default function PracticePage() {
   const pct = score.attempted > 0 ? Math.round((score.correct / score.attempted) * 100) : 0;
 
   if (noMore) {
+    const finalPct = score.attempted > 0 ? Math.round((score.correct / score.attempted) * 100) : 0;
     return (
       <motion.div
-        className="min-h-screen flex flex-col items-center justify-center px-6 gap-6 text-center"
+        className="min-h-screen bg-surface-cream flex flex-col items-center justify-center px-6 gap-5 text-center"
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="text-5xl" aria-hidden="true">🏆</div>
-        <h2 className="text-2xl font-bold text-gray-800">You practised all questions here!</h2>
-        <p className="text-gray-500">Score: {score.correct}/{score.attempted} correct</p>
+        <div className="animate-spark-pop">
+          <SparkMascot expression="cheer" size={92} glow />
+        </div>
+        <h2 className="font-display text-2xl font-bold text-ink">You finished every question here!</h2>
+        <div className="bg-surface-card rounded-spark shadow-soft px-7 py-5">
+          <p className="font-display text-4xl font-extrabold text-spark-indigo">{finalPct}%</p>
+          <p className="font-body text-sm text-ink-muted mt-1">
+            {score.correct} of {score.attempted} correct
+          </p>
+        </div>
         <button
           onClick={() => router.push('/chapters')}
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-2xl text-lg"
+          className="bg-spark-indigo text-white font-body font-extrabold py-4 px-8 rounded-2xl text-lg shadow-press active:translate-y-0.5 active:shadow-press-sm transition-all"
         >
-          Back to Chapters 📚
+          Back to Chapters →
         </button>
       </motion.div>
     );
   }
 
+  const isCorrectAnswer = answered && !!question && selected === question.correctAnswer;
+
   return (
     <motion.div
-      className="min-h-screen flex flex-col px-4 py-5 gap-4"
+      className="min-h-screen bg-surface-cream flex flex-col px-4 py-5 gap-5"
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 16 }}
       transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
     >
       {/* Header */}
-      <div className="space-y-1">
-        <div className="flex items-center justify-between">
+      <div className="space-y-3">
+        <div className="flex items-center gap-3">
           <button
             onClick={() => router.push('/chapters')}
-            className="text-gray-400 hover:text-gray-600 text-sm font-medium min-h-[44px] px-2"
+            className="w-10 h-10 flex items-center justify-center rounded-full text-ink-muted hover:bg-surface-muted transition-colors flex-shrink-0"
+            aria-label="Back to chapters"
           >
-            ← Back
+            <span className="text-xl">←</span>
           </button>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setTimedMode((m) => !m)}
-              className={`text-xs font-medium px-2 py-1 rounded-lg min-h-[44px] transition-colors ${
-                timedMode ? 'bg-amber-100 text-amber-700' : 'text-gray-400 hover:text-gray-600'
-              }`}
-              aria-label={timedMode ? 'Disable timed mode' : 'Enable timed mode (60s per question)'}
-            >
-              {timedMode ? '⏱️ Timed' : '⏱️'}
-            </button>
-            <span className="text-sm text-gray-500 font-medium">
-              {score.correct}/{score.attempted} correct
-            </span>
+
+          {/* Lesson progress */}
+          <div className="flex-1 h-2.5 bg-surface-muted rounded-full overflow-hidden">
+            <div
+              className="h-full bg-spark-yellow rounded-full transition-all duration-500"
+              style={{ width: `${pct}%` }}
+              role="progressbar"
+              aria-valuenow={pct}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-label="Session accuracy"
+            />
           </div>
+
+          <button
+            onClick={() => setTimedMode((m) => !m)}
+            className={`text-xs font-body font-bold px-2.5 h-10 rounded-full transition-colors flex-shrink-0 ${
+              timedMode ? 'bg-spark-amber-soft text-spark-amber' : 'text-ink-faint hover:bg-surface-muted'
+            }`}
+            aria-label={timedMode ? 'Disable timed mode' : 'Enable timed mode (60s per question)'}
+          >
+            {timedMode ? '⏱️ Timed' : '⏱️'}
+          </button>
         </div>
-        <h1 className="text-lg font-bold text-gray-800 px-2">{topicName}</h1>
-        <ProgressBar value={pct} color="bg-blue-500" height="h-2" />
+
+        <div className="flex items-center justify-between px-1">
+          <h1 className="font-display text-lg font-bold text-ink">{topicName}</h1>
+          <span className="font-body text-sm font-bold text-ink-muted">
+            {score.correct}/{score.attempted}
+          </span>
+        </div>
+
         {timedMode && !answered && (
-          <div className={`text-center text-sm font-bold ${timeLeft <= 10 ? 'text-red-500' : 'text-gray-400'}`}>
+          <div className={`text-center font-body text-sm font-bold ${timeLeft <= 10 ? 'text-spark-coral' : 'text-ink-faint'}`}>
             {timeLeft}s
           </div>
         )}
@@ -310,7 +336,7 @@ export default function PracticePage() {
       {/* Question area */}
       {loading ? (
         <div className="flex-1 flex items-center justify-center">
-          <div className="text-4xl animate-bounce" aria-hidden="true">🤔</div>
+          <SparkMascot expression="idle" size={64} glow className="animate-bounce" />
         </div>
       ) : question ? (
         <>
@@ -321,20 +347,33 @@ export default function PracticePage() {
             onAnswer={handleAnswer}
           />
 
-          {/* Feedback banner */}
+          {/* Feedback — restrained Spark reacts after the answer */}
           <AnimatePresence>
             {answered && feedback && (
               <motion.div
-                className={`rounded-2xl px-4 py-3 text-center font-semibold text-base ${
-                  selected === question.correctAnswer
-                    ? 'bg-green-50 text-green-700 border border-green-200'
-                    : 'bg-amber-50 text-amber-700 border border-amber-200'
+                className={`relative flex items-center gap-3 rounded-spark px-4 py-3 shadow-soft overflow-visible ${
+                  isCorrectAnswer
+                    ? 'bg-spark-green-soft'
+                    : 'bg-spark-amber-soft'
                 }`}
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: 0.05 }}
               >
-                {feedback}
+                {/* Gentle sparkle burst on correct */}
+                {isCorrectAnswer && (
+                  <span aria-hidden="true" className="pointer-events-none absolute left-5 top-1 text-spark-yellow">
+                    <span className="absolute animate-sparkle text-sm" style={{ animationDelay: '0ms' }}>✦</span>
+                    <span className="absolute animate-sparkle text-xs left-3" style={{ animationDelay: '120ms' }}>✦</span>
+                    <span className="absolute animate-sparkle text-[10px] left-6" style={{ animationDelay: '240ms' }}>✦</span>
+                  </span>
+                )}
+                <span className={isCorrectAnswer ? 'animate-spark-pop' : ''}>
+                  <SparkMascot expression={isCorrectAnswer ? 'cheer' : 'idle'} size={40} />
+                </span>
+                <span className={`font-body font-bold text-base ${isCorrectAnswer ? 'text-spark-green' : 'text-spark-amber'}`}>
+                  {feedback}
+                </span>
               </motion.div>
             )}
           </AnimatePresence>
@@ -360,7 +399,7 @@ export default function PracticePage() {
             const key = `misconception${selected}` as keyof Question;
             const note = question[key] as string;
             return note ? (
-              <div className="rounded-2xl bg-blue-50 border border-blue-100 px-4 py-3 text-sm text-blue-700">
+              <div className="rounded-spark bg-spark-indigo-soft px-4 py-3 font-body text-sm text-spark-indigo-dark">
                 <span className="font-bold">Why not {selected}?</span> {note}
               </div>
             ) : null;
@@ -368,16 +407,16 @@ export default function PracticePage() {
 
           {/* Attempt save error banner */}
           {attemptError && (
-            <div className="text-xs text-amber-600 text-center">
+            <div className="font-body text-xs text-spark-amber text-center">
               Couldn&apos;t save your answer — tap Next to continue.
             </div>
           )}
 
-          {/* Next question button */}
+          {/* Next question button — chunky + pressable */}
           {answered && (
             <button
               onClick={() => loadNext(studentId!, seenIds, cw, cr)}
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 rounded-2xl text-lg transition-colors"
+              className="w-full bg-spark-indigo text-white font-body font-extrabold py-4 rounded-2xl text-lg shadow-press active:translate-y-0.5 active:shadow-press-sm transition-all"
             >
               Next Question →
             </button>
@@ -389,28 +428,28 @@ export default function PracticePage() {
               {!showFlagForm ? (
                 <button
                   onClick={() => setShowFlagForm(true)}
-                  className="text-xs text-gray-400 hover:text-gray-600 transition-colors py-2"
+                  className="font-body text-xs text-ink-faint hover:text-ink-muted transition-colors py-2"
                 >
                   Something wrong with this question? 🚩
                 </button>
               ) : (
-                <div className="bg-gray-50 rounded-xl p-3 text-left">
-                  <p className="text-xs font-semibold text-gray-500 mb-2">What&apos;s the issue?</p>
-                  <div className="space-y-1 mb-3">
+                <div className="bg-surface-card rounded-spark shadow-soft p-4 text-left">
+                  <p className="font-body text-xs font-bold text-ink-muted mb-2">What&apos;s the issue?</p>
+                  <div className="space-y-1.5 mb-3">
                     {([
                       ['wrong_answer', 'The answer seems wrong'],
                       ['confusing',    'The question is confusing'],
                       ['too_hard',     'Way too hard for Grade 4'],
                       ['other',        'Something else'],
                     ] as const).map(([val, label]) => (
-                      <label key={val} className="flex items-center gap-2 text-xs text-gray-600 cursor-pointer">
+                      <label key={val} className="flex items-center gap-2 font-body text-xs text-ink cursor-pointer">
                         <input
                           type="radio"
                           name="flagReason"
                           value={val}
                           checked={flagReason === val}
                           onChange={() => setFlagReason(val)}
-                          className="accent-blue-500"
+                          className="accent-spark-indigo"
                         />
                         {label}
                       </label>
@@ -419,7 +458,7 @@ export default function PracticePage() {
                   <div className="flex gap-2">
                     <button
                       onClick={() => setShowFlagForm(false)}
-                      className="flex-1 text-xs text-gray-400 py-2 rounded-lg border border-gray-200"
+                      className="flex-1 font-body text-xs text-ink-muted py-2.5 rounded-xl border border-surface-muted"
                     >
                       Cancel
                     </button>
@@ -434,7 +473,7 @@ export default function PracticePage() {
                         setFlagSent(true);
                         setShowFlagForm(false);
                       }}
-                      className="flex-1 text-xs bg-amber-500 hover:bg-amber-600 text-white py-2 rounded-lg font-semibold"
+                      className="flex-1 font-body text-xs bg-spark-amber text-white py-2.5 rounded-xl font-bold"
                     >
                       Send report 🚩
                     </button>
@@ -444,11 +483,11 @@ export default function PracticePage() {
             </div>
           )}
           {answered && flagSent && (
-            <p className="text-xs text-center text-green-600">Thanks for the report! We&apos;ll review it. ✅</p>
+            <p className="font-body text-xs text-center text-spark-green">Thanks for the report! We&apos;ll review it. ✅</p>
           )}
         </>
       ) : (
-        <p className="text-center text-gray-400 mt-16">No question loaded.</p>
+        <p className="text-center font-body text-ink-faint mt-16">No question loaded.</p>
       )}
 
       {/* Spark AI learning companion — floating chat bubble */}

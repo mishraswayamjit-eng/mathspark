@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import KatexRenderer from './KatexRenderer';
 import { humaniseSubTopic } from '@/lib/utils';
 import type { AnswerKey, Question } from '@/types';
@@ -41,14 +41,14 @@ interface QuestionCardProps {
   onAnswer: (key: AnswerKey, isCorrect: boolean) => void;
 }
 
-const LABELS: AnswerKey[] = ['A', 'B', 'C', 'D'];
-
 export default function QuestionCard({
   question,
   answered,
   selected,
   onAnswer,
 }: QuestionCardProps) {
+  const reduce = useReducedMotion();
+
   const options: Array<{ key: AnswerKey; text: string }> = [
     { key: 'A', text: question.option1 },
     { key: 'B', text: question.option2 },
@@ -56,70 +56,86 @@ export default function QuestionCard({
     { key: 'D', text: question.option4 },
   ];
 
-  function optionStyle(key: AnswerKey): string {
-    const base = 'w-full text-left rounded-2xl px-4 py-4 min-h-[56px] transition-all duration-200 border-2 flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2';
-    if (!answered) return `${base} bg-white border-gray-200 hover:border-blue-400 hover:bg-blue-50 cursor-pointer`;
-    if (key === question.correctAnswer) return `${base} bg-green-50 border-green-500`;
-    if (key === selected) return `${base} bg-red-50 border-red-400`;
-    return `${base} bg-white border-gray-100 opacity-50`;
+  // Visual state per option (no pure red — "not quite" uses warm amber).
+  function optionClasses(key: AnswerKey): string {
+    const base =
+      'group w-full text-left rounded-2xl px-4 py-4 min-h-[64px] border-2 flex items-center gap-3.5 transition-all duration-200 ' +
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spark-indigo focus-visible:ring-offset-2 focus-visible:ring-offset-surface-cream';
+
+    if (!answered) {
+      return `${base} bg-surface-card border-transparent shadow-soft hover:border-spark-indigo hover:-translate-y-0.5 hover:shadow-soft-lg cursor-pointer`;
+    }
+    if (key === question.correctAnswer) {
+      return `${base} bg-spark-green-soft border-spark-green shadow-soft`;
+    }
+    if (key === selected) {
+      return `${base} bg-spark-amber-soft border-spark-amber shadow-soft`;
+    }
+    return `${base} bg-surface-card border-transparent opacity-45`;
+  }
+
+  function chipClasses(key: AnswerKey): string {
+    const base =
+      'w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-bold font-body transition-colors';
+    if (answered && key === question.correctAnswer) return `${base} bg-spark-green text-white`;
+    if (answered && key === selected)               return `${base} bg-spark-amber text-white`;
+    return `${base} bg-surface-muted text-ink-muted group-hover:bg-spark-indigo-soft group-hover:text-spark-indigo`;
   }
 
   return (
-    <div className="space-y-4">
-      {/* Question text */}
-      <div className="bg-white rounded-2xl p-5 shadow-sm">
-        <p id="question-text" className="text-lg font-medium text-gray-800 leading-relaxed">
+    <div className="space-y-5">
+      {/* Question prompt */}
+      <div className="bg-surface-card rounded-spark p-5 sm:p-6 shadow-soft">
+        <p
+          id="question-text"
+          className="font-display text-xl sm:text-2xl font-semibold text-ink leading-snug"
+        >
           {question.questionText}
         </p>
         {question.questionLatex && (
-          <div className="mt-3 overflow-x-auto">
+          <div className="mt-4 overflow-x-auto text-lg">
             <KatexRenderer latex={question.questionLatex} displayMode className="block" />
           </div>
         )}
-        <p className="mt-2 text-xs text-gray-400 uppercase tracking-wide">
+        <p className="mt-3 text-xs font-body font-semibold text-ink-faint uppercase tracking-wide">
           {humaniseSubTopic(question.subTopic)} · {question.difficulty}
         </p>
       </div>
 
       {/* Options */}
       <div className="space-y-3" role="group" aria-labelledby="question-text">
-        {options.map(({ key, text }) => (
-          <motion.button
-            key={key}
-            disabled={answered}
-            onClick={() => onAnswer(key, key === question.correctAnswer)}
-            className={optionStyle(key)}
-            aria-label={`Option ${key}: ${text}`}
-            aria-pressed={selected === key}
-            animate={
-              answered && key === question.correctAnswer
-                ? { scale: [1, 1.04, 1] }
-                : answered && key === selected && key !== question.correctAnswer
-                ? { x: [0, -6, 6, -6, 6, 0] }
-                : {}
-            }
-            transition={{ duration: 0.4, ease: 'easeInOut' }}
-          >
-            <span
-              className={`w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-bold ${
-                answered && key === question.correctAnswer
-                  ? 'bg-green-500 text-white'
-                  : answered && key === selected
-                  ? 'bg-red-400 text-white'
-                  : 'bg-gray-100 text-gray-600'
-              }`}
+        {options.map(({ key, text }) => {
+          const isCorrect = answered && key === question.correctAnswer;
+          const isWrongPick = answered && key === selected && key !== question.correctAnswer;
+          return (
+            <motion.button
+              key={key}
+              disabled={answered}
+              onClick={() => onAnswer(key, key === question.correctAnswer)}
+              className={optionClasses(key)}
+              aria-label={`Option ${key}: ${text}`}
+              aria-pressed={selected === key}
+              whileTap={!answered && !reduce ? { scale: 0.98 } : undefined}
+              animate={
+                reduce
+                  ? {}
+                  : isCorrect
+                  ? { scale: [1, 1.04, 1] }
+                  : isWrongPick
+                  ? { x: [0, -4, 4, -3, 3, 0] }
+                  : {}
+              }
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
             >
-              {key}
-            </span>
-            <span className="text-gray-800 text-base"><OptionText text={text} /></span>
-            {answered && key === question.correctAnswer && (
-              <span className="ml-auto text-green-600 font-bold">✓</span>
-            )}
-            {answered && key === selected && key !== question.correctAnswer && (
-              <span className="ml-auto text-red-500 font-bold">✗</span>
-            )}
-          </motion.button>
-        ))}
+              <span className={chipClasses(key)}>{key}</span>
+              <span className="font-body text-base text-ink flex-1">
+                <OptionText text={text} />
+              </span>
+              {isCorrect && <span className="ml-auto text-spark-green font-bold text-lg">✓</span>}
+              {isWrongPick && <span className="ml-auto text-spark-amber font-bold text-lg">!</span>}
+            </motion.button>
+          );
+        })}
       </div>
     </div>
   );
