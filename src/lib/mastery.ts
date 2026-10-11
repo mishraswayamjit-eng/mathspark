@@ -32,7 +32,6 @@ export async function calculateMastery(
 /**
  * Recalculate and persist mastery + aggregate counts for a student/topic pair.
  * Uses a single batched transaction (3 queries → 1 round-trip) + 1 upsert.
- * Also exported as updateMastery to match the spec interface.
  */
 export async function updateProgress(studentId: string, topicId: string): Promise<void> {
   const where = { studentId, question: { topicId } };
@@ -62,6 +61,3 @@ export async function updateProgress(studentId: string, topicId: string): Promis
     create: { studentId, topicId, attempted, correct, mastery },
   });
 }
-
-/** Alias matching the task spec. */
-export const updateMastery = updateProgress;

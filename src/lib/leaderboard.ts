@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/db';
-import type { LeagueTierName } from '@/types';
+import { getDisplayName } from '@/lib/sharedUtils';
+import type { LeagueTierName, LeagueMember } from '@/types';
 
 // ── Tier metadata ─────────────────────────────────────────────────────────────
 
@@ -131,6 +132,36 @@ export function weeklyCorrectCount(
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - 7);
   return attempts.filter((a) => a.isCorrect && a.createdAt >= cutoff).length;
+}
+
+// ── Build ranked LeagueMember list for API responses ──────────────────────────
+// Shared by the current-week and last-week leaderboard routes. Sorts by weeklyXP
+// desc; falls back to positional rank when a stored rank isn't set (current week).
+
+type RawLeagueMember = {
+  studentId: string;
+  weeklyXP:  number;
+  promoted:  boolean;
+  demoted:   boolean;
+  rank?:     number | null;
+  student:   { name: string; displayName: string | null; avatarColor: string };
+};
+
+export function buildLeagueMembers(
+  members:   ReadonlyArray<RawLeagueMember>,
+  studentId: string,
+): LeagueMember[] {
+  const sorted = [...members].sort((a, b) => b.weeklyXP - a.weeklyXP);
+  return sorted.map((m, idx) => ({
+    studentId:   m.studentId,
+    displayName: getDisplayName(m.student.name, m.student.displayName),
+    avatarColor: m.student.avatarColor,
+    weeklyXP:    m.weeklyXP,
+    rank:        m.rank ?? idx + 1,
+    isMe:        m.studentId === studentId,
+    promoted:    m.promoted,
+    demoted:     m.demoted,
+  }));
 }
 
 // ── Compute XP for a single attempt ───────────────────────────────────────────

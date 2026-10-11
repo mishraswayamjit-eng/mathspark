@@ -1,6 +1,7 @@
 import { MS_PER_DAY } from '@/lib/timeConstants';
 import { prisma, USABLE_QUESTION_FILTER } from '@/lib/db';
 import { getTopicsForGrade } from '@/data/topicTree';
+import { shuffle } from '@/lib/shuffle';
 import type { TestType, PYQYear } from '@/types';
 
 // ── Config ────────────────────────────────────────────────────────────────────
@@ -86,14 +87,6 @@ function safeParseSteps(json: string | null): unknown[] {
   try { return JSON.parse(json ?? '[]'); } catch { return []; }
 }
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
 
 // ── Dynamic Blueprint for Grades 2-3, 5-9 ────────────────────────────────────
 // Builds a blueprint from topicTree examWeight values.

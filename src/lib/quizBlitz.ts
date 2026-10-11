@@ -1,6 +1,7 @@
 import {
   getFlashcardsForGrade,
 } from '@/data/flashcardData';
+import { shuffle } from '@/lib/shuffle';
 import type { FlashCard } from '@/types';
 
 // ── Types ────────────────────────────────────────────────────────────────────
@@ -19,17 +20,6 @@ export interface QuizQuestion {
   difficulty: number;
   options: QuizOption[];
   timeLimitMs: number;
-}
-
-// ── Shuffle helper ───────────────────────────────────────────────────────────
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
 }
 
 // ── MCQ Generation ───────────────────────────────────────────────────────────
