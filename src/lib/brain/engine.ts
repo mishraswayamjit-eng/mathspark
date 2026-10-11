@@ -1,6 +1,7 @@
 import { MS_PER_DAY, MS_PER_HOUR } from '@/lib/timeConstants';
 import { prisma } from '@/lib/db';
 import { TOPIC_TREE, getTopicsForGrade } from '@/data/topicTree';
+import { parseStringArray } from '@/lib/jsonFields';
 
 // ── Shared Types ──────────────────────────────────────────────────────────────
 
@@ -271,7 +272,7 @@ export async function computeTopicPriorities(
   });
 
   const m = masteries ?? (await computeTopicMastery(studentId));
-  const focusTopics: string[] = JSON.parse(resolvedStudent?.focusTopics ?? '[]');
+  const focusTopics = parseStringArray(resolvedStudent?.focusTopics);
 
   const gradeTopics = getTopicsForGrade(resolvedStudent?.grade ?? 4);
   const maxExamWeight = Math.max(...gradeTopics.map((t) => t.examWeight), 1);

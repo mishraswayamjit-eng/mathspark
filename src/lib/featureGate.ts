@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/db';
+import { parseFeatureFlags } from '@/lib/jsonFields';
 
 // ── Feature keys matching the Subscription.features JSON ──────────────────
 
@@ -80,8 +81,7 @@ export async function checkFeature(studentId: string | null | undefined, feature
   }
 
   const sub = student.subscription;
-  let features: Record<string, boolean> = {};
-  try { features = JSON.parse(sub.features); } catch { /* ignore */ }
+  const features = parseFeatureFlags(sub.features);
 
   const allowed = !!features[feature];
   return {

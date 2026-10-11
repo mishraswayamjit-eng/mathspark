@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma, USABLE_QUESTION_FILTER } from '@/lib/db';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { parseUnknownArray } from '@/lib/jsonFields';
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -78,8 +79,7 @@ export async function GET(req: Request) {
 
     return NextResponse.json(
       final.map((q) => {
-        let stepByStep: unknown[] = [];
-        try { stepByStep = JSON.parse(q.stepByStep ?? '[]'); } catch { /* malformed seed data */ }
+        const stepByStep = parseUnknownArray(q.stepByStep);
         // Strip correctAnswer — grading is done server-side via /api/attempts
         const { correctAnswer: _ca, ...rest } = q;
         return { ...rest, stepByStep };

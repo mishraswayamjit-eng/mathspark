@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { findSimilarQuestion } from '@/lib/similarQuestion';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { parseUnknownArray } from '@/lib/jsonFields';
 
 export const dynamic = 'force-dynamic';
 
@@ -37,8 +38,7 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: 'No similar question found' }, { status: 404 });
     }
 
-    let stepByStep: unknown[] = [];
-    try { stepByStep = JSON.parse(q.stepByStep); } catch { stepByStep = []; }
+    const stepByStep = parseUnknownArray(q.stepByStep);
 
     // Omit correctAnswer — grading is done server-side via /api/attempts
     const { correctAnswer: _ca, ...rest } = q;

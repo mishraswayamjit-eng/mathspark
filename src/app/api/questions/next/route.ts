@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getNextQuestion } from '@/lib/adaptive';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { parseUnknownArray } from '@/lib/jsonFields';
 
 // GET /api/questions/next?topicId=&subTopic=&exclude=
 export async function GET(req: Request) {
@@ -25,8 +26,7 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: 'No more questions available' }, { status: 404 });
     }
 
-    let stepByStep: unknown[] = [];
-    try { stepByStep = JSON.parse(q.stepByStep ?? '[]'); } catch { /* malformed seed data */ }
+    const stepByStep = parseUnknownArray(q.stepByStep);
     // Strip correctAnswer — grading is done server-side via /api/attempts
     const { correctAnswer: _ca, ...rest } = q;
     return NextResponse.json({ ...rest, stepByStep });

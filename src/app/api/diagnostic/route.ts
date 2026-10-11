@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma, USABLE_QUESTION_FILTER } from '@/lib/db';
+import { parseUnknownArray } from '@/lib/jsonFields';
 
 // GET /api/diagnostic?topicId=&difficulty=Medium&exclude=id1,id2
 export async function GET(req: Request) {
@@ -38,8 +39,7 @@ export async function GET(req: Request) {
     }
 
     const q = pool[Math.floor(Math.random() * pool.length)];
-    let stepByStep: unknown[] = [];
-    try { stepByStep = JSON.parse(q.stepByStep ?? '[]'); } catch { /* malformed seed data */ }
+    const stepByStep = parseUnknownArray(q.stepByStep);
     // Omit correctAnswer from response — grading is done server-side via /api/diagnostic/check
     const { correctAnswer: _ca, ...rest } = q;
     return NextResponse.json({ ...rest, stepByStep });
