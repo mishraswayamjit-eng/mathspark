@@ -96,19 +96,21 @@ function buildGradeBlueprint(grade: number): BlueprintSlot[] {
   const topics = getTopicsForGrade(grade).filter(t => !t.id.endsWith('_ipm'));
   const totalQuestions = TEST_CONFIG.ipm.totalQuestions; // 40
 
-  // Calculate raw counts from examWeight, then adjust to hit totalQuestions
+  // Calculate raw counts from examWeight, then adjust to hit totalQuestions.
+  // Floor of 1 (not 2) so grades with many topics — e.g. Grade 5's full 21-topic
+  // IPM syllabus — don't over-floor trivial topics and flatten the weighting.
   const raw = topics.map(t => ({
     topicId: t.dbTopicId,
     subTopicKey: t.subTopicKey,
-    rawCount: Math.max(2, Math.round(t.examWeight * totalQuestions)),
+    rawCount: Math.max(1, Math.round(t.examWeight * totalQuestions)),
     examWeight: t.examWeight,
   }));
 
   // Adjust to hit exact total
   let sum = raw.reduce((s, r) => s + r.rawCount, 0);
   while (sum > totalQuestions) {
-    // Shrink the largest slot (that's > 2)
-    const largest = raw.filter(r => r.rawCount > 2).sort((a, b) => b.rawCount - a.rawCount)[0];
+    // Shrink the largest slot (that's above the floor)
+    const largest = raw.filter(r => r.rawCount > 1).sort((a, b) => b.rawCount - a.rawCount)[0];
     if (!largest) break;
     largest.rawCount--;
     sum--;

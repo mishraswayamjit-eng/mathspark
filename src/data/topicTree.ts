@@ -55,15 +55,36 @@ const GRADE3_TOPICS: TopicNode[] = [
 ];
 
 // ── Grade 5 ───────────────────────────────────────────────────────────────────
-// Data coverage: bodmas, simple_interest, angles, fraction_arithmetic, percentage, perimeter_area, equation, hcf_lcm (8 stems → 6 lessons)
+// Full IPM Grade-5 syllabus (21 topics) extracted from the official IPM worksheet
+// volumes. examWeight ≈ each topic's share of worksheet pages (sums to ~1.00).
+// subTopicKey chosen to surface the largest matching existing seed buckets where a
+// clean match exists (fraction 272, money 135, place-value 116, hcf 113, bodmas 90,
+// squares 89, equation 75, algebra 57, ratio 40, divisibility 21, sequence 16);
+// topics with no seed coverage (integers, decimals, profit, interest, triangles)
+// are populated by Feature 5b AI generation (tagged with the matching key).
 
 const GRADE5_TOPICS: TopicNode[] = [
-  { id: 'gr5_percentages',  name: 'Percentages & Interest',  emoji: '💯', grade: 5, examWeight: 0.22, dbTopicId: 'grade5', subTopicKey: 'percentage' },
-  { id: 'gr5_fractions',    name: 'Fractions & HCF/LCM',    emoji: '🍕', grade: 5, examWeight: 0.20, dbTopicId: 'grade5', subTopicKey: 'fraction' },
-  { id: 'gr5_decimals',     name: 'Decimals & BODMAS',       emoji: '📊', grade: 5, examWeight: 0.16, dbTopicId: 'grade5', subTopicKey: 'decimal' },
-  { id: 'gr5_geometry',     name: 'Area & Perimeter',        emoji: '📐', grade: 5, examWeight: 0.16, dbTopicId: 'grade5', subTopicKey: 'area' },
-  { id: 'gr5_algebra',      name: 'Equations & Algebra',     emoji: '🔤', grade: 5, examWeight: 0.14, dbTopicId: 'grade5', subTopicKey: 'algebra' },
-  { id: 'gr5_angles',       name: 'Angles & Lines',          emoji: '📏', grade: 5, examWeight: 0.12, dbTopicId: 'grade5', subTopicKey: 'angle' },
+  { id: 'gr5_placevalue',   name: 'Numbers & Place Value',          emoji: '🔢', grade: 5, examWeight: 0.06, dbTopicId: 'grade5', subTopicKey: 'place value' },
+  { id: 'gr5_operations1',  name: 'Addition & Subtraction',         emoji: '➕', grade: 5, examWeight: 0.03, dbTopicId: 'grade5', subTopicKey: 'addition' },
+  { id: 'gr5_operations2',  name: 'Multiplication & Division',      emoji: '✖️', grade: 5, examWeight: 0.04, dbTopicId: 'grade5', subTopicKey: 'multiplication' },
+  { id: 'gr5_divisibility', name: 'Divisibility, Factors & Primes', emoji: '🔑', grade: 5, examWeight: 0.04, dbTopicId: 'grade5', subTopicKey: 'divisib' },
+  { id: 'gr5_integers',     name: 'Integers',                       emoji: '➖', grade: 5, examWeight: 0.03, dbTopicId: 'grade5', subTopicKey: 'integer' },
+  { id: 'gr5_bodmas',       name: 'BODMAS & Order of Operations',   emoji: '🧮', grade: 5, examWeight: 0.01, dbTopicId: 'grade5', subTopicKey: 'bodmas' },
+  { id: 'gr5_squares',      name: 'Square Numbers & Roots',         emoji: '⏹️', grade: 5, examWeight: 0.05, dbTopicId: 'grade5', subTopicKey: 'square' },
+  { id: 'gr5_hcflcm',       name: 'HCF & LCM',                      emoji: '🔗', grade: 5, examWeight: 0.04, dbTopicId: 'grade5', subTopicKey: 'hcf' },
+  { id: 'gr5_algebra',      name: 'Algebraic Expressions',          emoji: '🔤', grade: 5, examWeight: 0.04, dbTopicId: 'grade5', subTopicKey: 'algebra' },
+  { id: 'gr5_equations',    name: 'Equations',                      emoji: '⚖️', grade: 5, examWeight: 0.05, dbTopicId: 'grade5', subTopicKey: 'equation' },
+  { id: 'gr5_fractions',    name: 'Fractions',                      emoji: '🍕', grade: 5, examWeight: 0.14, dbTopicId: 'grade5', subTopicKey: 'fraction' },
+  { id: 'gr5_decimals',     name: 'Decimal Fractions',              emoji: '📊', grade: 5, examWeight: 0.11, dbTopicId: 'grade5', subTopicKey: 'decimal' },
+  { id: 'gr5_sequences',    name: 'Sequences & Series',             emoji: '🔢', grade: 5, examWeight: 0.01, dbTopicId: 'grade5', subTopicKey: 'sequence' },
+  { id: 'gr5_variation',    name: 'Ratio, Proportion & Variation',  emoji: '⚖️', grade: 5, examWeight: 0.02, dbTopicId: 'grade5', subTopicKey: 'ratio' },
+  { id: 'gr5_percentage',   name: 'Percentage & Money',             emoji: '💯', grade: 5, examWeight: 0.09, dbTopicId: 'grade5', subTopicKey: 'money' },
+  { id: 'gr5_profitloss',   name: 'Profit & Loss',                  emoji: '💰', grade: 5, examWeight: 0.05, dbTopicId: 'grade5', subTopicKey: 'profit' },
+  { id: 'gr5_interest',     name: 'Simple Interest',                emoji: '🏦', grade: 5, examWeight: 0.03, dbTopicId: 'grade5', subTopicKey: 'interest' },
+  { id: 'gr5_speed',        name: 'Time, Distance & Speed',         emoji: '🚄', grade: 5, examWeight: 0.03, dbTopicId: 'grade5', subTopicKey: 'speed' },
+  { id: 'gr5_angles',       name: 'Angles & Lines',                 emoji: '📐', grade: 5, examWeight: 0.04, dbTopicId: 'grade5', subTopicKey: 'angle' },
+  { id: 'gr5_triangles',    name: 'Triangles',                      emoji: '🔺', grade: 5, examWeight: 0.04, dbTopicId: 'grade5', subTopicKey: 'triangle' },
+  { id: 'gr5_area',         name: 'Area & Perimeter',               emoji: '📏', grade: 5, examWeight: 0.05, dbTopicId: 'grade5', subTopicKey: 'area' },
 ];
 
 // ── Grade 6 ───────────────────────────────────────────────────────────────────
