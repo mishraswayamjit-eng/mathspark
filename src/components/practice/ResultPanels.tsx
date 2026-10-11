@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import KatexRenderer from '@/components/KatexRenderer';
 import StepByStep from '@/components/StepByStep';
 import HintSystem from '@/components/HintSystem';
@@ -110,6 +110,30 @@ export function WrongPanel({
 }) {
   const optionKey     = selected ? (`misconception${selected}` as keyof Question) : null;
   const misconception = optionKey ? (question[optionKey] as string) : '';
+
+  // Feature 2: fetch a personalized AI nudge that re-expresses the verified
+  // misconception. Falls back silently to the static `misconception` text.
+  const [aiNudge, setAiNudge] = useState<string | null>(null);
+  useEffect(() => {
+    if (!selected || !misconception) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch('/api/ai/misconception', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ questionId: question.id, selected }),
+        });
+        if (!res.ok) return;
+        const data = (await res.json()) as { nudge?: string | null };
+        if (!cancelled && data.nudge) setAiNudge(data.nudge);
+      } catch {
+        /* keep static fallback */
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [question.id, selected, misconception]);
+
   const correctIdx    = ['A', 'B', 'C', 'D'].indexOf(question.correctAnswer);
   const correctText   = question[`option${correctIdx + 1}` as keyof Question] as string;
   const textHasLatex  = correctText.includes('\\');
@@ -136,13 +160,14 @@ export function WrongPanel({
         </div>
       </div>
 
-      {/* Misconception box */}
+      {/* Misconception box — shows the personalized AI nudge when available,
+          otherwise the verified static misconception text (static floor). */}
       {misconception && (
         <div className="bg-blue-50 border border-blue-200 rounded-2xl px-4 py-3">
           <p className="text-xs font-extrabold text-blue-700 uppercase tracking-wide mb-1">
             <span aria-hidden="true">💡</span> Common mistake
           </p>
-          <p className="text-sm text-gray-700 font-medium leading-snug">{misconception}</p>
+          <p className="text-sm text-gray-700 font-medium leading-snug">{aiNudge ?? misconception}</p>
         </div>
       )}
 
