@@ -53,7 +53,7 @@ ${kidSafeRules(input.grade)}`;
     });
 
     const { text } = await complete({
-      model: 'haiku',
+      model: 'sonnet',
       maxTokens: 160,
       system,
       messages: [{ role: 'user', content: userPrompt }],

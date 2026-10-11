@@ -89,7 +89,7 @@ Keep it short — a few short sentences or a tiny bullet list. End with a gentle
 
   const stream = streamCompletion(
     {
-      model: 'haiku',
+      model: 'sonnet',
       maxTokens: 350,
       system,
       messages: [{ role: 'user', content: userPrompt }],

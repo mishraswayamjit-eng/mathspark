@@ -5,7 +5,7 @@
  *
  *  - `solveGrounded(questionId)` — the problem exists in our DB, so the answer is
  *    already verified. We merely RE-EXPRESS the verified answer/steps for the
- *    student (Haiku). Truth is unchanged → no verification needed.
+ *    student (Sonnet). Truth is unchanged → no verification needed.
  *
  *  - `solveFresh(problemText)` — homework typed by the student. There is no
  *    verified answer, so we run SELF-CONSISTENCY: N independent Opus samples,
@@ -93,7 +93,7 @@ Keep it short and clear. Number the steps.`;
   });
 
   const { text } = await complete({
-    model: 'haiku',
+    model: 'sonnet',
     maxTokens: 500,
     system,
     messages: [{ role: 'user', content: userPrompt }],
@@ -105,7 +105,7 @@ Keep it short and clear. Number the steps.`;
     answer: verifiedAnswer,
     agreement: 1,
     flagged: false,
-    model: MODELS.haiku,
+    model: MODELS.sonnet,
   };
 }
 

@@ -124,7 +124,7 @@ export async function POST(req: Request) {
 
   const stream = streamCompletion(
     {
-      model: 'haiku',
+      model: 'sonnet',
       maxTokens: 300,
       system: buildKidSafeSystemPrompt(student.grade, student.name, topicContext),
       messages: history,

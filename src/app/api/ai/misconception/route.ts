@@ -109,13 +109,13 @@ Keep it to 2 sentences max. Do not include the correct answer or a full solution
       });
 
       const { text } = await complete({
-        model: 'haiku',
+        model: 'sonnet',
         maxTokens: 120,
         system,
         messages: [{ role: 'user', content: userPrompt }],
       });
 
-      return { content: text.trim(), model: MODELS.haiku };
+      return { content: text.trim(), model: MODELS.sonnet };
     },
   });
 

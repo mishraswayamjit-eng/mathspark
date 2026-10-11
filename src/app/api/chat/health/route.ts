@@ -19,13 +19,13 @@ export async function GET() {
   try {
     const anthropic = getAnthropicClient();
     const msg = await anthropic.messages.create({
-      model:      MODELS.haiku,
+      model:      MODELS.sonnet,
       max_tokens: 10,
       messages:   [{ role: 'user', content: 'Say "ok"' }],
     });
     return NextResponse.json({
       ok:    true,
-      model: MODELS.haiku,
+      model: MODELS.sonnet,
       reply: msg.content,
     });
   } catch (err: unknown) {

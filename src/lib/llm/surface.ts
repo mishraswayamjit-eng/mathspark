@@ -105,7 +105,7 @@ Return ONLY a JSON object:
 
   try {
     const { text } = await complete({
-      model: 'haiku',
+      model: 'sonnet',
       maxTokens: 300,
       system,
       messages: [{ role: 'user', content: userPrompt }],
