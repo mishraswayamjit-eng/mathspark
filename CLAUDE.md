@@ -88,3 +88,57 @@ When adding JSON files to `data/`:
 5. All student API routes use `getAuthenticatedStudentId()` cookie auth
 6. Rate limiting on all POST endpoints
 7. `validateBody()` on all POST request bodies
+
+---
+
+# Codebase Cleanup Protocol — 7-Track Low-Risk Pass
+
+## MISSION
+
+Clean up the codebase and improve code quality through a careful, low-risk cleanup pass. Work in **7 focused tracks**, executed sequentially. This is not a rewrite — it is a surgical cleanup.
+
+## OPERATING PRINCIPLES (apply to every track)
+
+1. **Inspect before you touch.** Read the code thoroughly before proposing any change.
+2. **Write a critical assessment first.** For each track, produce a written analysis of what was found, the risks, and the trade-offs — before editing anything.
+3. **Rank every proposed change by confidence (High / Medium / Low) and risk (Low / Medium / High).**
+4. **Implement ONLY High-confidence, Low-risk changes.** Everything else goes in a "Deferred" list with reasoning, for manual review.
+5. **Small, atomic commits per track.** One logical change per commit, with a clear message. Never bundle tracks.
+6. **Run all checks after every track**: typecheck, lint, tests, build. If anything breaks, stop and report — do not "fix forward" without approval.
+7. **Preserve behavior.** This is cleanup, not refactoring-for-its-own-sake. If a change alters observable behavior, it is out of scope.
+8. **No new abstractions** unless removing one. No new dependencies. No framework changes.
+9. **When in doubt, leave it alone** and add it to the Deferred list.
+
+## TRACK 1 — DEDUPLICATION
+Scan the codebase for repeated logic, copy-pasted functions, and redundant abstractions. Consolidate only where DRY genuinely simplifies. Do not merge code that merely LOOKS similar but serves different purposes. Defer cases requiring new parameters/flags/branches inside the shared function.
+
+## TRACK 2 — TYPE CONSOLIDATION
+Find duplicated type/interface/schema definitions. Merge into a single source of truth using the existing repo convention. Defer types that belong to different bounded contexts.
+
+## TRACK 3 — DEAD CODE REMOVAL
+Use static analysis (`knip`, `ts-prune`, `depcheck`) to find unused exports. Manually verify before removing (dynamic imports, string-based references, framework conventions, codegen, tests, public API). Remove only what is CONFIRMED dead.
+
+## TRACK 4 — CIRCULAR DEPENDENCIES
+Use `madge` / `dpdm` to map the dependency graph. Untangle by extracting shared logic into neutral modules. Do NOT introduce new abstractions/indirection layers just to break a cycle.
+
+## TRACK 5 — TYPE STRENGTHENING
+Find every `any`, weak `unknown`, `object`, `Function`, `@ts-ignore`, `@ts-expect-error`. Replace with strong types. Run typecheck after every batch. PRESERVE legitimate `unknown` at trust boundaries and well-justified `any` escape hatches.
+
+## TRACK 6 — ERROR HANDLING CLEANUP
+Classify every `try/catch` as: real boundary (keep), silent swallow (remove/surface), or over-defensive (remove). No error hiding. No silent fallbacks. Where fallback is genuinely needed, add explicit logging.
+
+## TRACK 7 — FINAL VERIFICATION
+Typecheck, lint, tests, build, dependency audit, bundle size diff, and a grouped-by-track diff summary.
+
+## DELIVERABLES (per track)
+1. Assessment document (findings ranked by confidence + risk)
+2. Change list (file paths + one-line reason)
+3. Deferred list (what was intentionally NOT done, and why)
+4. Verification output
+
+## CONSTRAINTS
+- Do not proceed to the next track until the current one is complete, committed, and all checks pass.
+- If any check fails mid-track, stop and report before fixing.
+- If a track produces zero high-confidence low-risk changes, say so explicitly — do not manufacture changes.
+- Ask before touching: public APIs, database schemas, migration files, CI config, or deployment code.
+- **Node.js constraint still applies:** typecheck/lint/tests/build cannot be run locally. Verification will be via git push → Vercel build logs, or by asking the user to run checks.
