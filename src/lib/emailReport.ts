@@ -38,6 +38,12 @@ export interface ReportInput {
   topicsMastered: number;
   topics: ReportTopic[];
   appUrl: string;         // e.g. https://mathspark.vercel.app
+  /**
+   * Optional AI-generated encouragement narrative (Feature 4b). Plain text —
+   * it is HTML-escaped before rendering. When omitted, a static warm default
+   * is used so the email always has a closing note.
+   */
+  encouragement?: string;
 }
 
 function topicName(t: ReportTopic): string {
@@ -53,6 +59,12 @@ export function buildReportEmail(input: ReportInput): { subject: string; html: s
     streakDays, topicsMastered, topics, appUrl,
   } = input;
   const studentName = escapeHtml(input.studentName);
+
+  // Encouragement: AI narrative when provided (escaped), else a static default.
+  const encouragementHtml = input.encouragement
+    ? escapeHtml(input.encouragement)
+    : `Keep encouraging <strong>${studentName}</strong> — they're working hard and growing every day!
+                Every question they practice builds math confidence for their future. 🚀`;
 
   const accuracy = totalAttempted > 0
     ? Math.round((totalSolved / totalAttempted) * 100) : 0;
@@ -172,8 +184,7 @@ export function buildReportEmail(input: ReportInput): { subject: string; html: s
           <td style="padding:22px 28px 0;">
             <div style="background:#f4fbef;border-left:5px solid #58CC02;border-radius:0 12px 12px 0;padding:16px 18px;">
               <p style="font-size:15px;color:#2d4a1e;margin:0;line-height:1.7;">
-                Keep encouraging <strong>${studentName}</strong> — they're working hard and growing every day!
-                Every question they practice builds math confidence for their future. 🚀
+                ${encouragementHtml}
               </p>
             </div>
           </td>

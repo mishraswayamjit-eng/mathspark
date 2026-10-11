@@ -134,6 +134,33 @@ export function LessonCompleteScreen({
   const wrongOnes = allResults.filter((r) => !r.wasCorrect);
   const [showShare, setShowShare] = useState(false);
 
+  // Feature 4a: warm AI session wrap-up. Fetched once; omitted silently if
+  // the LLM is unavailable.
+  const [narrative, setNarrative] = useState<string | null>(null);
+  useEffect(() => {
+    if (allResults.length === 0) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch('/api/ai/session-narrative', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            topicName: shareData?.topicName,
+            results: allResults.map((r) => ({ wasCorrect: r.wasCorrect, questionText: r.questionText })),
+          }),
+        });
+        if (!res.ok) return;
+        const data = (await res.json()) as { narrative?: string | null };
+        if (!cancelled && data.narrative) setNarrative(data.narrative);
+      } catch {
+        /* silently omit */
+      }
+    })();
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="flex flex-col items-center px-6 py-8 gap-6 bg-white min-h-screen pb-24">
       {showShare && shareData && (
@@ -196,6 +223,15 @@ export function LessonCompleteScreen({
         <p className="text-xs text-amber-700 font-extrabold uppercase tracking-wide">Total XP earned</p>
         <p className="text-3xl font-extrabold text-duo-dark">+{displayXp} ⭐</p>
       </div>
+
+      {/* AI session wrap-up (Feature 4a) */}
+      {narrative && (
+        <div className="w-full bg-duo-green/10 border border-duo-green/30 rounded-2xl px-4 py-3 animate-fade-in">
+          <p className="text-sm text-gray-700 font-medium leading-snug">
+            <span aria-hidden="true">✨</span> {narrative}
+          </p>
+        </div>
+      )}
 
       {/* Wrong answers to revisit */}
       {wrongOnes.length > 0 && (

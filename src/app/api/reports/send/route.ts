@@ -6,6 +6,7 @@ import { buildReportEmail, type ReportTopic } from '@/lib/emailReport';
 import { TOPIC_ORDER, computeStreak, buildLookupMap } from '@/lib/sharedUtils';
 import { weeklyCorrectCount } from '@/lib/leaderboard';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { generateReportNarrative } from '@/lib/llm/reportNarrative';
 import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
@@ -23,7 +24,7 @@ export async function POST(req: Request) {
 
   const student = await prisma.student.findUnique({
     where: { id: studentId },
-    select: { id: true, name: true, parentEmail: true, lastReportSentAt: true, deletedAt: true },
+    select: { id: true, name: true, grade: true, parentEmail: true, lastReportSentAt: true, deletedAt: true },
   });
   if (!student || student.deletedAt) return NextResponse.json({ error: 'Student not found' }, { status: 404 });
 
@@ -65,6 +66,26 @@ export async function POST(req: Request) {
 
   const appUrl = new URL(req.url).origin;
 
+  const pct = (t: ReportTopic) => (t.attempted > 0 ? Math.round((t.correct / t.attempted) * 100) : 0);
+  const attemptedTopics = topics.filter((t) => t.attempted > 0);
+  const strongestTopics = [...attemptedTopics].sort((a, b) => pct(b) - pct(a)).slice(0, 3).map((t) => t.name);
+  const weakestTopics = [...attemptedTopics]
+    .filter((t) => t.mastery !== 'Mastered')
+    .sort((a, b) => pct(a) - pct(b))
+    .slice(0, 3)
+    .map((t) => t.name);
+
+  const encouragement = await generateReportNarrative({
+    studentName:    student.name,
+    grade:          student.grade,
+    weeklyCorrect:  weeklyCorrectCount(attempts),
+    accuracy:       attempts.length > 0 ? Math.round((correctAttempts.length / attempts.length) * 100) : 0,
+    streakDays:     computeStreak(attempts, true),
+    topicsMastered: progress.filter((p) => p.mastery === 'Mastered').length,
+    strongestTopics,
+    weakestTopics,
+  });
+
   const { subject, html } = buildReportEmail({
     studentId,
     studentName:    student.name,
@@ -75,6 +96,7 @@ export async function POST(req: Request) {
     topicsMastered: progress.filter((p) => p.mastery === 'Mastered').length,
     topics,
     appUrl,
+    encouragement,
   });
 
   const from = process.env.RESEND_FROM_EMAIL ?? 'MathSpark <onboarding@resend.dev>';

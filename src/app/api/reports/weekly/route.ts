@@ -5,6 +5,7 @@ import { buildReportEmail, type ReportTopic } from '@/lib/emailReport';
 import { TOPIC_ORDER, computeStreak, buildLookupMap } from '@/lib/sharedUtils';
 import { weeklyCorrectCount } from '@/lib/leaderboard';
 import { verifyCronSecret } from '@/lib/adminAuth';
+import { generateReportNarrative } from '@/lib/llm/reportNarrative';
 import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
@@ -30,7 +31,7 @@ export async function GET(req: Request) {
   // Fetch all students with a parent email
   const students = await prisma.student.findMany({
     where: { parentEmail: { not: null }, deletedAt: null },
-    select: { id: true, name: true, parentEmail: true },
+    select: { id: true, name: true, grade: true, parentEmail: true },
   });
 
   if (students.length === 0) {
@@ -91,6 +92,26 @@ export async function GET(req: Request) {
             return { id: t.id, name: t.name, mastery: p?.mastery ?? 'NotStarted', attempted: p?.attempted ?? 0, correct: p?.correct ?? 0 };
           });
 
+        const pct = (t: ReportTopic) => (t.attempted > 0 ? Math.round((t.correct / t.attempted) * 100) : 0);
+        const attemptedTopics = topics.filter((t) => t.attempted > 0);
+        const strongestTopics = [...attemptedTopics].sort((a, b) => pct(b) - pct(a)).slice(0, 3).map((t) => t.name);
+        const weakestTopics = [...attemptedTopics]
+          .filter((t) => t.mastery !== 'Mastered')
+          .sort((a, b) => pct(a) - pct(b))
+          .slice(0, 3)
+          .map((t) => t.name);
+
+        const encouragement = await generateReportNarrative({
+          studentName:    student.name,
+          grade:          student.grade,
+          weeklyCorrect:  weeklyCorrectCount(attempts),
+          accuracy:       attempts.length > 0 ? Math.round((correctAttempts.length / attempts.length) * 100) : 0,
+          streakDays:     computeStreak(attempts, true),
+          topicsMastered: progress.filter((p) => p.mastery === 'Mastered').length,
+          strongestTopics,
+          weakestTopics,
+        });
+
         const { subject, html } = buildReportEmail({
           studentId:      student.id,
           studentName:    student.name,
@@ -101,6 +122,7 @@ export async function GET(req: Request) {
           topicsMastered: progress.filter((p) => p.mastery === 'Mastered').length,
           topics,
           appUrl,
+          encouragement,
         });
 
         const { error } = await resend.emails.send({
