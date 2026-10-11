@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { verifySecret } from '@/lib/adminAuth';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -41,7 +42,7 @@ export async function GET(req: Request) {
       },
     });
   } catch (err) {
-    console.error('[cleanup-users]', err);
+    logError('[cleanup-users]', err);
     return NextResponse.json(
       { error: `Cleanup failed: ${err instanceof Error ? err.message : String(err)}` },
       { status: 500 },

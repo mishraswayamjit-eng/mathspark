@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { verifySecret } from '@/lib/adminAuth';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -190,7 +191,7 @@ export async function GET(req: NextRequest) {
       perTopic,
     });
   } catch (err) {
-    console.error('[admin/redistribute-grade4]', err);
+    logError('[admin/redistribute-grade4]', err);
     return NextResponse.json(
       { error: `Redistribute failed: ${err instanceof Error ? err.message : String(err)}` },
       { status: 500 },

@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
+import { logError } from '@/lib/logger';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -185,7 +186,7 @@ export default function ConceptMapPage() {
           setSelectedGrade(data.grade);
         }
       })
-      .catch((err) => console.error('[concept-map] fetch dashboard grade', err));
+      .catch((err) => logError('[concept-map] fetch dashboard grade', err));
   }, []);
 
   // Fetch map data
@@ -199,7 +200,7 @@ export default function ConceptMapPage() {
         setEdges(data.edges ?? []);
         if (data.meta?.domains) setDomains(data.meta.domains);
       })
-      .catch((err) => { console.error('[fetch]', err); setFetchError(true); })
+      .catch((err) => { logError('[fetch]', err); setFetchError(true); })
       .finally(() => setLoading(false));
   }, [selectedGrade]);
 
@@ -209,7 +210,7 @@ export default function ConceptMapPage() {
     fetch(`/api/concept-map?id=${id}`)
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => setDetail(data))
-      .catch((err) => console.error('[fetch]', err))
+      .catch((err) => logError('[fetch]', err))
       .finally(() => setDetailLoading(false));
   }, []);
 

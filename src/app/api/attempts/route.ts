@@ -5,6 +5,7 @@ import { computeXPForAttempt, ensureCurrentWeekLeague } from '@/lib/leaderboard'
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { validateInteractiveAnswer } from '@/lib/interactiveGrading';
+import { logError } from '@/lib/logger';
 
 // POST /api/attempts
 // body: { questionId, topicId, selected, isCorrect, hintUsed?, timeTakenMs?, isBonusQuestion? }
@@ -67,7 +68,7 @@ export async function POST(req: Request) {
   const membership = await ensureCurrentWeekLeague(studentId).catch((err) => {
     // League ensure failures should not block recording the attempt — log and
     // continue without weekly XP. The attempt + usageLog still record cleanly.
-    console.error('[attempts] ensureCurrentWeekLeague failed:', err);
+    logError('[attempts] ensureCurrentWeekLeague failed:', err);
     return null;
   });
 
@@ -130,7 +131,7 @@ export async function POST(req: Request) {
 
   // ── Progress update — fire-and-forget (safe if it lags; idempotent) ────────
   updateProgress(studentId, topicId).catch((err) =>
-    console.error('[attempts] progress update failed:', err),
+    logError('[attempts] progress update failed:', err),
   );
 
   return NextResponse.json({ ...attempt, xpAwarded }, { status: 201 });

@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { getNextQuestion } from '@/lib/adaptive';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { parseUnknownArray } from '@/lib/jsonFields';
+import { logError } from '@/lib/logger';
 
 // GET /api/questions/next?topicId=&subTopic=&exclude=
 export async function GET(req: Request) {
@@ -31,7 +32,7 @@ export async function GET(req: Request) {
     const { correctAnswer: _ca, ...rest } = q;
     return NextResponse.json({ ...rest, stepByStep });
   } catch (err) {
-    console.error('[questions/next] error:', err);
+    logError('[questions/next] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

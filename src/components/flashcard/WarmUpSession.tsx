@@ -7,7 +7,9 @@ import dynamic from 'next/dynamic';
 import Confetti from '@/components/Confetti';
 import Sparky from '@/components/Sparky';
 import { useSounds } from '@/hooks/useSounds';
+import { shuffle } from '@/lib/shuffle';
 import type { FlashCard } from '@/types';
+import { logError } from '@/lib/logger';
 
 const KatexRenderer = dynamic(() => import('@/components/KatexRenderer'), { ssr: false });
 
@@ -257,16 +259,6 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
         const mastered = cards.filter((c) => c.leitnerBox >= 4);
         const tricks = cards.filter((c) => c.category === 'trick');
 
-        // Shuffle helper
-        const shuffle = <T,>(arr: T[]): T[] => {
-          const a = [...arr];
-          for (let i = a.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [a[i], a[j]] = [a[j], a[i]];
-          }
-          return a;
-        };
-
         // Select cards for each phase
         setQuickfireCards(shuffle(warmUpCards).slice(0, 8));
         setFormulaCards(shuffle([...formulas, ...tricks]).slice(0, 6));
@@ -281,7 +273,7 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
         setShowTransition(true);
         setCurrentPhase('breathe');
       })
-      .catch((err) => { console.error('[WarmUp] fetch deck', err); router.replace('/flashcards'); });
+      .catch((err) => { logError('[WarmUp] fetch deck', err); router.replace('/flashcards'); });
   }, [fetchDeck, router]);
 
   // ── Breathing cycle ────────────────────────────────────────────────────────
@@ -391,7 +383,7 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
         cardsCorrect: totalCards, // warm-up = all reviewed
         duration,
       }),
-    }).catch((err) => console.error('[fetch]', err));
+    }).catch((err) => logError('[fetch]', err));
   }, [startTime, quickfireCards.length, formulaCards.length, confidenceCards.length]);
 
   // ── Render: Loading ────────────────────────────────────────────────────────

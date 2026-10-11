@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 import { prisma } from '@/lib/db';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,7 +10,7 @@ export const dynamic = 'force-dynamic';
 export async function POST(req: Request) {
   const secret = process.env.RAZORPAY_WEBHOOK_SECRET;
   if (!secret) {
-    console.error('[payment/webhook] RAZORPAY_WEBHOOK_SECRET is not set');
+    logError('[payment/webhook] RAZORPAY_WEBHOOK_SECRET is not set');
     return NextResponse.json({ error: 'Webhook not configured' }, { status: 500 });
   }
 
@@ -50,7 +51,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error('[payment/webhook]', err);
+    logError('[payment/webhook]', err);
     return NextResponse.json({ error: 'Webhook processing failed' }, { status: 500 });
   }
 }

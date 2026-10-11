@@ -6,6 +6,7 @@ import { buildReportEmail, type ReportTopic } from '@/lib/emailReport';
 import { TOPIC_ORDER, computeStreak, buildLookupMap } from '@/lib/sharedUtils';
 import { weeklyCorrectCount } from '@/lib/leaderboard';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -80,7 +81,7 @@ export async function POST(req: Request) {
 
   const { error } = await resend.emails.send({ from, to: student.parentEmail, subject, html });
   if (error) {
-    console.error('Resend error:', error);
+    logError('Resend error:', error);
     return NextResponse.json({ error: 'Failed to send email. Please try again.' }, { status: 500 });
   }
 

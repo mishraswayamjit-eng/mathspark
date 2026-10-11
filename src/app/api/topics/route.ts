@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { TOPIC_ORDER } from '@/lib/sharedUtils';
+import { logError } from '@/lib/logger';
 
 // GET /api/topics
 export async function GET() {
@@ -15,7 +16,7 @@ export async function GET() {
       },
     });
   } catch (err) {
-    console.error('[topics] error:', err);
+    logError('[topics] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
+import { logError } from '@/lib/logger';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -97,7 +98,7 @@ export default function SkillDrillTopicsPage() {
         setMeta(d.meta);
         setTopics(d.topics);
       })
-      .catch((err) => console.error('[fetch]', err))
+      .catch((err) => logError('[fetch]', err))
       .finally(() => setLoading(false));
   }, []);
 

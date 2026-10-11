@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { validateBody, ValidationError } from '@/lib/validateBody';
+import { logError } from '@/lib/logger';
 
 // PATCH /api/mock-tests/[testId]/response
 // Body: { questionNumber, selectedAnswer?, flagged?, additionalTimeMs? }
@@ -87,7 +88,7 @@ export async function PATCH(
     if (err instanceof ValidationError) {
       return NextResponse.json({ error: err.message }, { status: 400 });
     }
-    console.error('[mock-tests PATCH response]', err);
+    logError('[mock-tests PATCH response]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

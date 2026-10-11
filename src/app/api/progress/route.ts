@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { logError } from '@/lib/logger';
 
 // GET /api/progress
 export async function GET() {
@@ -17,7 +18,7 @@ export async function GET() {
 
     return NextResponse.json(progress);
   } catch (err) {
-    console.error('[progress] error:', err);
+    logError('[progress] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import KatexRenderer from '@/components/KatexRenderer';
+import { logError } from '@/lib/logger';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -90,7 +91,7 @@ export default function WorkedExampleDetailPage() {
           setError('Example not found.');
         }
       })
-      .catch((err) => { console.error('[examples] fetch example', err); setError('Failed to load example.'); })
+      .catch((err) => { logError('[examples] fetch example', err); setError('Failed to load example.'); })
       .finally(() => setLoading(false));
   }, [exampleId]);
 

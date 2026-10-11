@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { findSimilarQuestion } from '@/lib/similarQuestion';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { parseUnknownArray } from '@/lib/jsonFields';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -44,7 +45,7 @@ export async function GET(req: Request) {
     const { correctAnswer: _ca, ...rest } = q;
     return NextResponse.json({ ...rest, stepByStep });
   } catch (err) {
-    console.error('[questions/similar] error:', err);
+    logError('[questions/similar] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { MS_PER_DAY } from '@/lib/timeConstants';
+import { logError } from '@/lib/logger';
 import { useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import QuestionCard from '@/components/QuestionCard';
@@ -380,7 +381,7 @@ export default function StartPage() {
             isCorrect:  a.isCorrect,
             hintUsed:   0,
           }),
-        }).catch((err) => console.error('[fetch]', err));
+        }).catch((err) => logError('[fetch]', err));
       }
 
       // 5. Go to display name step
@@ -821,7 +822,7 @@ export default function StartPage() {
           method: 'PATCH',
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify({ displayName: trimmed, avatarColor }),
-        }).catch((err) => console.error('[fetch]', err));
+        }).catch((err) => logError('[fetch]', err));
       }
       router.push(pendingRoute);
     };

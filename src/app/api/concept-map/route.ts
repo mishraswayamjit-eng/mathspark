@@ -4,6 +4,7 @@ import * as path from 'path';
 import { prisma } from '@/lib/db';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { resolveLinksForGrade } from '@/data/conceptTopicMap';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -248,7 +249,7 @@ export async function GET(req: Request) {
       totalEdges: edges.length,
     });
   } catch (err) {
-    console.error('[concept-map]', err);
+    logError('[concept-map]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

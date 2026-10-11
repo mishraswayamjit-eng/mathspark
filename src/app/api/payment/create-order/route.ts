@@ -5,6 +5,7 @@ import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { validateBody, ValidationError } from '@/lib/validateBody';
+import { logError } from '@/lib/logger';
 
 // POST /api/payment/create-order
 // Body: { subscriptionId, studentId }
@@ -14,7 +15,7 @@ export async function POST(req: Request) {
   const razorpayKeyId     = process.env.RAZORPAY_KEY_ID;
   const razorpayKeySecret = process.env.RAZORPAY_KEY_SECRET;
   if (!razorpayKeyId || !razorpayKeySecret) {
-    console.error('[payment/create-order] Razorpay credentials missing');
+    logError('[payment/create-order] Razorpay credentials missing');
     return NextResponse.json(
       { error: 'Payments are not configured. Please contact support.' },
       { status: 503 },
@@ -75,7 +76,7 @@ export async function POST(req: Request) {
     if (err instanceof ValidationError) {
       return NextResponse.json({ error: err.message }, { status: 400 });
     }
-    console.error('[payment/create-order]', err);
+    logError('[payment/create-order]', err);
     return NextResponse.json({ error: 'Failed to create payment order.' }, { status: 500 });
   }
 }

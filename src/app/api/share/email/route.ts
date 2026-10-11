@@ -5,6 +5,7 @@ import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { escapeHtml } from '@/lib/emailReport';
 import { validateBody, ValidationError } from '@/lib/validateBody';
+import { logError } from '@/lib/logger';
 import type {
   LessonCardData, MockTestCardData, BadgeCardData,
   StreakCardData, MasteredCardData,
@@ -62,7 +63,7 @@ export async function POST(req: Request) {
     if (err instanceof ValidationError) {
       return NextResponse.json({ error: err.message }, { status: 400 });
     }
-    console.error('[share/email]', err);
+    logError('[share/email]', err);
     return NextResponse.json({ error: 'Failed to send email. Please try again.' }, { status: 500 });
   }
 }

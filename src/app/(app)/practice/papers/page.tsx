@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
+import { logError } from '@/lib/logger';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -42,7 +43,7 @@ export default function PaperSelectionPage() {
     fetch('/api/student')
       .then((r) => r.ok ? r.json() : null)
       .then((s) => { if (s?.grade) setGrade(s.grade); })
-      .catch((err) => console.error('[fetch]', err));
+      .catch((err) => logError('[fetch]', err));
   }, []);
 
   // Load papers for selected grade
@@ -51,7 +52,7 @@ export default function PaperSelectionPage() {
     fetch(`/api/papers?grade=${grade}`)
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d) => setPapers(d.papers ?? []))
-      .catch((err) => { console.error('[papers] fetch papers', err); setPapers([]); })
+      .catch((err) => { logError('[papers] fetch papers', err); setPapers([]); })
       .finally(() => setLoading(false));
   }, [grade]);
 

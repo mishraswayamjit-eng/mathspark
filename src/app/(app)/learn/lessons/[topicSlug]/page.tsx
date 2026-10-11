@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import Sparky from '@/components/Sparky';
 import LevelMap from '@/components/lesson/LevelMap';
 import type { LessonTopic } from '@/types/lesson';
+import { logError } from '@/lib/logger';
 
 interface ProgressRow {
   topicSlug: string;
@@ -33,13 +34,13 @@ export default function TopicPage({
       }),
       fetch('/api/lessons/progress')
         .then((r) => (r.ok ? r.json() : { progress: [] }))
-        .catch((err) => { console.error('[lessons/topic] fetch progress', err); return { progress: [] }; }),
+        .catch((err) => { logError('[lessons/topic] fetch progress', err); return { progress: [] }; }),
     ])
       .then(([topicData, progressData]) => {
         setTopic(topicData);
         setProgress(progressData.progress ?? []);
       })
-      .catch((err) => { console.error('[lessons/topic] fetch topic data', err); setError(true); })
+      .catch((err) => { logError('[lessons/topic] fetch topic data', err); setError(true); })
       .finally(() => setLoading(false));
   }, [topicSlug]);
 

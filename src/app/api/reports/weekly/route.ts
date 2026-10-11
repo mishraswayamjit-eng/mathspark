@@ -5,6 +5,7 @@ import { buildReportEmail, type ReportTopic } from '@/lib/emailReport';
 import { TOPIC_ORDER, computeStreak, buildLookupMap } from '@/lib/sharedUtils';
 import { weeklyCorrectCount } from '@/lib/leaderboard';
 import { verifyCronSecret } from '@/lib/adminAuth';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -15,7 +16,7 @@ export async function GET(req: Request) {
   // Verify cron secret (mandatory — reject if unset)
   const cronSecret = process.env.CRON_SECRET;
   if (!cronSecret) {
-    console.error('[reports/weekly] CRON_SECRET is not set');
+    logError('[reports/weekly] CRON_SECRET is not set');
     return NextResponse.json({ error: 'Server misconfigured' }, { status: 500 });
   }
   const auth = req.headers.get('authorization');
@@ -117,7 +118,7 @@ export async function GET(req: Request) {
       if (result.status === 'fulfilled') {
         sent++;
       } else {
-        console.error('[reports/weekly] email failed:', result.reason);
+        logError('[reports/weekly] email failed:', result.reason);
         failed++;
       }
     }

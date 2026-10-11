@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { logError } from '@/lib/logger';
 import DuoButton from '@/components/DuoButton';
 
 interface TestSummary {
@@ -47,7 +48,7 @@ export default function TestHistoryPage() {
     fetch('/api/mock-tests/history')
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data: TestSummary[]) => { setTests(data); setLoading(false); })
-      .catch((err) => { console.error('[test/history] fetch tests', err); setLoading(false); });
+      .catch((err) => { logError('[test/history] fetch tests', err); setLoading(false); });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   const completed = tests.filter((t) => t.status === 'completed');

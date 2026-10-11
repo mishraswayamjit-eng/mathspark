@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { isClean } from '@/lib/profanityFilter';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { logError } from '@/lib/logger';
 import bcrypt from 'bcryptjs';
 
 // PATCH /api/student — update mutable student fields
@@ -88,7 +89,7 @@ export async function PATCH(req: Request) {
     await prisma.student.update({ where: { id: studentId }, data });
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error('[student] error:', err);
+    logError('[student] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

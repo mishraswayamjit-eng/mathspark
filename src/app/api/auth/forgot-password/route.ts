@@ -3,6 +3,7 @@ import crypto from 'crypto';
 import { prisma } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { validateBody, ValidationError } from '@/lib/validateBody';
+import { logError } from '@/lib/logger';
 import { Resend } from 'resend';
 
 export async function POST(req: Request) {
@@ -14,7 +15,7 @@ export async function POST(req: Request) {
   // Validate API key upfront
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.error('[forgot-password] RESEND_API_KEY is not configured');
+    logError('[forgot-password] RESEND_API_KEY is not configured');
     return NextResponse.json({ error: 'Email service is not configured.' }, { status: 500 });
   }
 
@@ -65,7 +66,7 @@ export async function POST(req: Request) {
     });
 
     if (sendError) {
-      console.error('[forgot-password] Resend error:', sendError);
+      logError('[forgot-password] Resend error:', sendError);
       return NextResponse.json({ error: 'Failed to send reset email. Please try again.' }, { status: 500 });
     }
 
@@ -74,7 +75,7 @@ export async function POST(req: Request) {
     if (err instanceof ValidationError) {
       return NextResponse.json({ error: err.message }, { status: 400 });
     }
-    console.error('[forgot-password] Unexpected error:', err);
+    logError('[forgot-password] Unexpected error:', err);
     return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
   }
 }

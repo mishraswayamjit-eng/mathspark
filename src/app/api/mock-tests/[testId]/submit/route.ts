@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { addWeeklyXP } from '@/lib/leaderboard';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { logError } from '@/lib/logger';
 
 // POST /api/mock-tests/[testId]/submit
 // Idempotent — re-submitting returns existing results
@@ -76,12 +77,12 @@ export async function POST(
 
     // Award XP: 15 per correct answer
     if (correct > 0) {
-      await addWeeklyXP(mockTest.studentId, correct * 15).catch((err) => console.error('[mock-tests/submit] addWeeklyXP', err));
+      await addWeeklyXP(mockTest.studentId, correct * 15).catch((err) => logError('[mock-tests/submit] addWeeklyXP', err));
     }
 
     return NextResponse.json({ testId });
   } catch (err) {
-    console.error('[mock-tests submit POST]', err);
+    logError('[mock-tests submit POST]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

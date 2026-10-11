@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { logError } from '@/lib/logger';
 import { useRouter } from 'next/navigation';
 import DuoButton from '@/components/DuoButton';
 import Sparky from '@/components/Sparky';
@@ -112,7 +113,7 @@ export default function TestConfigPage() {
           setTrialActive(new Date(data.student.trialExpiresAt) > new Date());
         }
       })
-      .catch((err) => console.error('[fetch]', err));
+      .catch((err) => logError('[fetch]', err));
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   const IS_MEGA_ACCESSIBLE = subscriptionTier >= 2 || trialActive;

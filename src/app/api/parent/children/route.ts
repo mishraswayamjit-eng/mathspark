@@ -4,6 +4,7 @@ import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
 import { validateBody, ValidationError } from '@/lib/validateBody';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { logError } from '@/lib/logger';
 
 // GET /api/parent/children — list parent's children
 export async function GET() {
@@ -33,7 +34,7 @@ export async function GET() {
 
     return NextResponse.json({ children });
   } catch (err) {
-    console.error('[parent/children GET]', err);
+    logError('[parent/children GET]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
@@ -80,7 +81,7 @@ export async function POST(req: Request) {
     if (err instanceof ValidationError) {
       return NextResponse.json({ error: err.message }, { status: 400 });
     }
-    console.error('[parent/children POST]', err);
+    logError('[parent/children POST]', err);
     return NextResponse.json({ error: 'Something went wrong.' }, { status: 500 });
   }
 }

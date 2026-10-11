@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getDisplayName } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { logError } from '@/lib/logger';
 
 // GET /api/leaderboard/all-time
 export async function GET() {
@@ -55,7 +56,7 @@ export async function GET() {
 
     return NextResponse.json({ members, myEntry });
   } catch (err) {
-    console.error('[leaderboard/all-time GET]', err);
+    logError('[leaderboard/all-time GET]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

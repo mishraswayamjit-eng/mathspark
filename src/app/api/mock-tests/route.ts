@@ -4,6 +4,7 @@ import { generateMockPaper, generateMegaTest } from '@/lib/mockTest';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { validateBody, ValidationError } from '@/lib/validateBody';
+import { logError } from '@/lib/logger';
 import type { TestType, PYQYear } from '@/types';
 
 // POST /api/mock-tests
@@ -79,7 +80,7 @@ export async function POST(req: Request) {
       : await generateMockPaper(studentId, type, topicIds, year, student.grade);
 
     if (paper.questions.length === 0) {
-      console.error(`[mock-tests POST] 0 questions for type=${type} grade=${effectiveGrade} student=${studentId}`);
+      logError(`[mock-tests POST] 0 questions for type=${type} grade=${effectiveGrade} student=${studentId}`);
       return NextResponse.json({ error: 'Not enough questions available for this test type. Please try a different test.' }, { status: 500 });
     }
 
@@ -120,7 +121,7 @@ export async function POST(req: Request) {
     if (err instanceof ValidationError) {
       return NextResponse.json({ error: err.message }, { status: 400 });
     }
-    console.error('[mock-tests POST]', err);
+    logError('[mock-tests POST]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

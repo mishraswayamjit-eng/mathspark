@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import DuoButton from '@/components/DuoButton';
 import { getTopicsForGrade } from '@/data/topicTree';
+import { logError } from '@/lib/logger';
 
 // ── Sub-components ────────────────────────────────────────────────────────────
 
@@ -170,7 +171,7 @@ export default function ProfilePage() {
         setParentWhatsApp(s.parentWhatsApp ?? '');
         setLoading(false);
       })
-      .catch((err) => { console.error('[profile] fetch student settings', err); setFetchError(true); setLoading(false); });
+      .catch((err) => { logError('[profile] fetch student settings', err); setFetchError(true); setLoading(false); });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   async function patchStudent(fields: Record<string, unknown>) {
@@ -179,7 +180,7 @@ export default function ProfilePage() {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...fields }),
-    }).catch((err) => console.error('[fetch]', err));
+    }).catch((err) => logError('[fetch]', err));
   }
 
   async function saveName() {
@@ -274,7 +275,7 @@ export default function ProfilePage() {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({}),
-    }).catch((err) => console.error('[fetch]', err));
+    }).catch((err) => logError('[fetch]', err));
   }
 
   function logout() {

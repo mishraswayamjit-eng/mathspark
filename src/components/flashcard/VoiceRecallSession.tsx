@@ -12,6 +12,7 @@ import { useConceptSuggestions } from '@/hooks/useConceptSuggestions';
 import WhatsNextSheet from '@/components/WhatsNextSheet';
 import type { FlashCard } from '@/types';
 import type { WhatsNextSuggestion } from '@/lib/whatsNext';
+import { logError } from '@/lib/logger';
 
 const KatexRenderer = dynamic(() => import('@/components/KatexRenderer'), { ssr: false });
 
@@ -268,7 +269,7 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
           setPhase('prompt');
         }
       })
-      .catch((err) => { console.error('[VoiceRecall] fetch deck', err); router.replace('/flashcards'); });
+      .catch((err) => { logError('[VoiceRecall] fetch deck', err); router.replace('/flashcards'); });
   }, [fetchDeck, router]);
 
   useEffect(() => { loadDeck(); }, [loadDeck]);
@@ -419,7 +420,7 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
               playWrong();
             }
           })
-          .catch((err) => console.error('[fetch]', err));
+          .catch((err) => logError('[fetch]', err));
       }
 
       const newCompleted = completed + 1;
@@ -472,7 +473,7 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
           });
         }
       })
-      .catch((err) => console.error('[fetch]', err));
+      .catch((err) => logError('[fetch]', err));
   }, [startTime, completed, correctCount]);
 
   useEffect(() => {

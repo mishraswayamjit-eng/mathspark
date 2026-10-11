@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { logError } from '@/lib/logger';
 
 // GET /api/mock-tests/history?limit=&offset=
 export async function GET(req: Request) {
@@ -27,7 +28,7 @@ export async function GET(req: Request) {
 
     return NextResponse.json(tests);
   } catch (err) {
-    console.error('[mock-tests/history]', err);
+    logError('[mock-tests/history]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

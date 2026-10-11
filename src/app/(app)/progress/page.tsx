@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import type { DashboardData } from '@/types';
+import { logError } from '@/lib/logger';
 
 // ── Mastery helpers ───────────────────────────────────────────────────────────
 
@@ -62,13 +63,13 @@ export default function ProgressPage() {
 
     Promise.all([
       fetch('/api/dashboard').then((r) => { if (!r.ok) throw new Error('Dashboard fetch failed'); return r.json(); }),
-      fetch('/api/mistake-patterns').then((r) => r.ok ? r.json() : { patterns: [] }).catch((err) => { console.error('[progress] fetch mistake-patterns', err); return { patterns: [] }; }),
+      fetch('/api/mistake-patterns').then((r) => r.ok ? r.json() : { patterns: [] }).catch((err) => { logError('[progress] fetch mistake-patterns', err); return { patterns: [] }; }),
     ])
       .then(([dashData, mistakeData]) => {
         setData(dashData);
         setMistakes(mistakeData.patterns ?? []);
       })
-      .catch((err) => { console.error('[fetch]', err); setFetchError(true); })
+      .catch((err) => { logError('[fetch]', err); setFetchError(true); })
       .finally(() => setLoading(false));
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 

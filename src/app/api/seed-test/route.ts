@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { verifySecret } from '@/lib/adminAuth';
+import { logError } from '@/lib/logger';
 import bcrypt from 'bcryptjs';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -158,7 +159,7 @@ export async function GET(req: Request) {
       },
     });
   } catch (err) {
-    console.error('[seed-test]', err);
+    logError('[seed-test]', err);
     return NextResponse.json(
       { error: `Test seed failed: ${err instanceof Error ? err.message : String(err)}` },
       { status: 500 },

@@ -5,6 +5,7 @@ import { recomputeStudentAnalytics } from '@/lib/brain/recompute';
 import { getTopicsCached } from '@/lib/topicCache';
 import { computeStreak, buildTopicNameMap } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { logError } from '@/lib/logger';
 import { getWeekBounds, TIER_NAMES } from '@/lib/leaderboard';
 import { getTopicsForGrade } from '@/data/topicTree';
 
@@ -88,7 +89,7 @@ export async function GET() {
 
   if (isStale) {
     recomputeStudentAnalytics(studentId).catch((err) =>
-      console.error('[api/home] background recompute failed:', err),
+      logError('[api/home] background recompute failed:', err),
     );
   }
 
@@ -213,7 +214,7 @@ export async function GET() {
     },
   );
   } catch (err) {
-    console.error('[api/home]', err);
+    logError('[api/home]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

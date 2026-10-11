@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
+import { logError } from '@/lib/logger';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -84,7 +85,7 @@ export default function MistakePatternsPage() {
     fetch(`/api/mistake-patterns${qs}`)
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => setPatterns(data.patterns ?? []))
-      .catch((err) => console.error('[fetch]', err))
+      .catch((err) => logError('[fetch]', err))
       .finally(() => setLoading(false));
   }, [selectedCategory]);
 

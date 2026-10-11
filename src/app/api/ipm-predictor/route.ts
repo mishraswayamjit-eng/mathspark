@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import * as fs from 'fs';
 import * as path from 'path';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -61,7 +62,7 @@ export async function GET(req: Request) {
       grades: gradeSummaries,
     });
   } catch (err) {
-    console.error('[ipm-predictor]', err);
+    logError('[ipm-predictor]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

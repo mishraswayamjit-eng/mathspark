@@ -6,6 +6,7 @@ import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { validateBody, ValidationError } from '@/lib/validateBody';
 import { addWeeklyXP } from '@/lib/leaderboard';
+import { logError } from '@/lib/logger';
 
 // GET — return all lesson progress for the authenticated student
 export async function GET() {
@@ -116,7 +117,7 @@ export async function POST(req: Request) {
     if (e instanceof ValidationError) {
       return NextResponse.json({ error: e.message }, { status: 400 });
     }
-    console.error('POST /api/lessons/progress error:', e);
+    logError('POST /api/lessons/progress error:', e);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import type { DashboardData } from '@/types';
 import { TOPIC_ORDER } from '@/lib/sharedUtils';
+import { logError } from '@/lib/logger';
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
@@ -54,7 +55,7 @@ export default function ParentDashboardPage() {
     fetch(`/api/parent/report/${studentId}`)
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d: DashboardData) => { setData(d); setLoading(false); })
-      .catch((err) => { console.error('[parent/report] fetch report', err); setLoading(false); });
+      .catch((err) => { logError('[parent/report] fetch report', err); setLoading(false); });
   }, [studentId]);
 
   if (loading) {

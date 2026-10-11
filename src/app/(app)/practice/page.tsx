@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
+import { logError } from '@/lib/logger';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -40,7 +41,7 @@ export default function PracticeHubPage() {
           weakestTopicName: data.weakestTopicName ?? null,
         });
       })
-      .catch((err) => { console.error('[fetch]', err); setFetchError(true); })
+      .catch((err) => { logError('[fetch]', err); setFetchError(true); })
       .finally(() => setLoading(false));
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 

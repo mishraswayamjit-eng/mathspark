@@ -8,6 +8,7 @@ import LessonViewer from '@/components/lesson/LessonViewer';
 import LessonQuiz from '@/components/lesson/LessonQuiz';
 import LessonComplete from '@/components/lesson/LessonComplete';
 import type { LessonLevel } from '@/types/lesson';
+import { logError } from '@/lib/logger';
 
 type Phase = 'lessons' | 'quiz' | 'complete';
 
@@ -51,7 +52,7 @@ export default function LessonSessionPage({
         setLevel(lvl);
         setAccentColor(lvl.color || data.color || '#8B5CF6');
       })
-      .catch((err) => { console.error('[lessons/level] fetch level data', err); setError(true); })
+      .catch((err) => { logError('[lessons/level] fetch level data', err); setError(true); })
       .finally(() => setLoading(false));
   }, [topicSlug, levelId]);
 
@@ -90,7 +91,7 @@ export default function LessonSessionPage({
           }
         })
         .catch((err) => {
-          console.error('[lessons] save lesson progress', err);
+          logError('[lessons] save lesson progress', err);
         });
     },
     [topicSlug, levelId],

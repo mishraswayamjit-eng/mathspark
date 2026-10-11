@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import type { PublicProfile, WeeklyAwardData } from '@/types';
+import { logError } from '@/lib/logger';
 
 // GET /api/profile/[studentId] — public profile (no PII)
 export async function GET(
@@ -67,7 +68,7 @@ export async function GET(
 
     return NextResponse.json(profile);
   } catch (err) {
-    console.error('[profile GET]', err);
+    logError('[profile GET]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

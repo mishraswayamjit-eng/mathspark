@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { logError } from '@/lib/logger';
 import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
@@ -44,7 +45,7 @@ export default function ParentDashboard() {
     fetch('/api/parent/children')
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d) => { setChildren(d.children ?? []); setLoading(false); })
-      .catch((err) => { console.error('[parent/dashboard] fetch children', err); setLoading(false); });
+      .catch((err) => { logError('[parent/dashboard] fetch children', err); setLoading(false); });
   }, [status]);
 
   if (status === 'loading' || loading) {

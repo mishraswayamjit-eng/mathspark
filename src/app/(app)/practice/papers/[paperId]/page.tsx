@@ -11,6 +11,7 @@ import StepByStep from '@/components/StepByStep';
 import { useSounds } from '@/hooks/useSounds';
 import { calculateScore, getVerdict, type ScoreResult } from '@/lib/scoring';
 import { detectMistakes, type MistakePattern, type DetectedMistake, type WrongAnswer } from '@/lib/mistake-detector';
+import { logError } from '@/lib/logger';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -139,7 +140,7 @@ export default function ExamSimulatorPage() {
         setPaper(d.paper);
         setPhase('instructions');
       })
-      .catch((err) => { console.error('[papers] fetch paper', err); setError('Could not load exam paper.'); });
+      .catch((err) => { logError('[papers] fetch paper', err); setError('Could not load exam paper.'); });
   }, [paperId]);
 
   // ── Timer ──────────────────────────────────────────────────────────────────
@@ -262,7 +263,7 @@ export default function ExamSimulatorPage() {
         const patterns = (d.patterns ?? []) as MistakePattern[];
         setMistakes(detectMistakes(wrongAnswers, patterns, paper.grade));
       })
-      .catch((err) => console.error('[fetch]', err));
+      .catch((err) => logError('[fetch]', err));
 
     // Celebration
     if (result.percentage >= 80) {

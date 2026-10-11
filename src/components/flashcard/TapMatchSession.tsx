@@ -9,8 +9,10 @@ import Sparky from '@/components/Sparky';
 import { useSounds } from '@/hooks/useSounds';
 import { useConceptSuggestions } from '@/hooks/useConceptSuggestions';
 import WhatsNextSheet from '@/components/WhatsNextSheet';
+import { shuffle } from '@/lib/shuffle';
 import type { FlashCard } from '@/types';
 import type { WhatsNextSuggestion } from '@/lib/whatsNext';
+import { logError } from '@/lib/logger';
 
 const KatexRenderer = dynamic(() => import('@/components/KatexRenderer'), { ssr: false });
 
@@ -35,17 +37,6 @@ type Phase = 'loading' | 'memorize' | 'playing' | 'complete';
 
 const PAIR_COUNTS = [6, 8, 10]; // progressive difficulty
 const MEMORIZE_MS = 3000;       // brief peek time
-
-// ── Shuffle ──────────────────────────────────────────────────────────────────
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
 
 // ── Match Complete Screen ────────────────────────────────────────────────────
 
@@ -224,7 +215,7 @@ export default function TapMatchSession({ deckId, conceptId }: TapMatchSessionPr
           setupLevel(0, data.cards as CardWithProgress[]);
         }
       })
-      .catch((err) => { console.error('[TapMatch] fetch deck', err); router.replace('/flashcards'); });
+      .catch((err) => { logError('[TapMatch] fetch deck', err); router.replace('/flashcards'); });
   }, [fetchDeck, router, setupLevel]);
 
   useEffect(() => { loadDeck(); }, [loadDeck]);
@@ -280,7 +271,7 @@ export default function TapMatchSession({ deckId, conceptId }: TapMatchSessionPr
         cardsCorrect: totalPairs,
         duration: elapsed,
       }),
-    }).catch((err) => console.error('[fetch]', err));
+    }).catch((err) => logError('[fetch]', err));
   }, [phase, totalPairs, elapsed, playMastery]);
 
   // ── Handle tile tap ────────────────────────────────────────────────────────
@@ -327,7 +318,7 @@ export default function TapMatchSession({ deckId, conceptId }: TapMatchSessionPr
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ cardId: first.pairId, correct: true }),
-            }).catch((err) => console.error('[fetch]', err));
+            }).catch((err) => logError('[fetch]', err));
           }
 
           if (newConsec >= 3) {

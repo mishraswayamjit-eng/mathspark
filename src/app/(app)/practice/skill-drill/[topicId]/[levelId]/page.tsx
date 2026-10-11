@@ -11,6 +11,7 @@ import Sparky from '@/components/Sparky';
 import Confetti from '@/components/Confetti';
 import { useSounds } from '@/hooks/useSounds';
 import type { Question, AnswerKey, StepItem } from '@/types';
+import { logError } from '@/lib/logger';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -214,7 +215,7 @@ export default function SkillDrillSessionPage() {
         setLevelMeta(topicsData.meta?.levelLabels ?? {});
         setSessions(sessionsData.sessions ?? []);
       })
-      .catch((err) => { console.error('[skill-drill] fetch drill data', err); setError('Failed to load drill data.'); })
+      .catch((err) => { logError('[skill-drill] fetch drill data', err); setError('Failed to load drill data.'); })
       .finally(() => setLoading(false));
   }, [topicId, levelId]);
 
@@ -236,7 +237,7 @@ export default function SkillDrillSessionPage() {
           setError('Session not found.');
         }
       })
-      .catch((err) => { console.error('[skill-drill] fetch session', err); setError('Failed to load session.'); })
+      .catch((err) => { logError('[skill-drill] fetch session', err); setError('Failed to load session.'); })
       .finally(() => setLoading(false));
   }, [topicId, levelId]);
 

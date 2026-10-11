@@ -16,6 +16,7 @@ import { useConceptSuggestions } from '@/hooks/useConceptSuggestions';
 import WhatsNextSheet from '@/components/WhatsNextSheet';
 import type { FlashCard } from '@/types';
 import type { WhatsNextSuggestion } from '@/lib/whatsNext';
+import { logError } from '@/lib/logger';
 
 const KatexRenderer = dynamic(() => import('@/components/KatexRenderer'), { ssr: false });
 
@@ -184,7 +185,7 @@ export default function SpeedRoundSession({ deckId, conceptId }: SpeedRoundSessi
           setPhase('countdown');
         }
       })
-      .catch((err) => { console.error('[SpeedRound] fetch deck', err); router.replace('/flashcards'); });
+      .catch((err) => { logError('[SpeedRound] fetch deck', err); router.replace('/flashcards'); });
   }, [fetchDeck, router]);
 
   useEffect(() => { loadDeck(); }, [loadDeck]);
@@ -252,7 +253,7 @@ export default function SpeedRoundSession({ deckId, conceptId }: SpeedRoundSessi
           setSessionXP({ total: data.xp.total, streakMultiplier: data.xp.streakMultiplier, streakBonus: data.xp.streakBonus });
         }
       })
-      .catch((err) => console.error('[fetch]', err));
+      .catch((err) => logError('[fetch]', err));
   }, [phase, answered, correctCount, playMastery]);
 
   // ── Handle answer ──────────────────────────────────────────────────────────
@@ -276,7 +277,7 @@ export default function SpeedRoundSession({ deckId, conceptId }: SpeedRoundSessi
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ cardId: q.cardId, correct }),
-        }).catch((err) => console.error('[fetch]', err));
+        }).catch((err) => logError('[fetch]', err));
       }
 
       if (correct) {

@@ -3,6 +3,7 @@ import crypto from 'crypto';
 import bcrypt from 'bcryptjs';
 import { prisma } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { logError } from '@/lib/logger';
 
 export async function POST(req: Request) {
   // Rate limit: 10 attempts per IP per 15 minutes
@@ -43,7 +44,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error('[reset-password] Unexpected error:', err);
+    logError('[reset-password] Unexpected error:', err);
     return NextResponse.json({ error: 'Something went wrong.' }, { status: 500 });
   }
 }

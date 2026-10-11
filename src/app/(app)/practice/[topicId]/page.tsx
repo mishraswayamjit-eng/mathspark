@@ -25,6 +25,7 @@ import {
 import { HeartsBar, LessonProgressBar, XpFloat } from '@/components/practice';
 import { ReviewIntroScreen, NoHeartsScreen, LessonCompleteScreen, LessonIntro, CelebrationCascade, StreakCommitment } from '@/components/practice';
 import { CorrectPanel, WrongPanel } from '@/components/practice';
+import { logError } from '@/lib/logger';
 
 // ── Main component ────────────────────────────────────────────────────────────
 
@@ -222,7 +223,7 @@ export default function PracticePage() {
       ),
     )
       .then(() => localStorage.removeItem('mathspark_attempt_queue'))
-      .catch((err) => console.error('[fetch]', err));
+      .catch((err) => logError('[fetch]', err));
   }
 
   function submitAttempt(payload: AttemptPayload, onXpAwarded?: (xp: number) => void) {
@@ -234,7 +235,7 @@ export default function PracticePage() {
       })
         .then((r) => r.ok ? r.json() : null)
         .then((data) => { if (onXpAwarded && data?.xpAwarded) onXpAwarded(data.xpAwarded); })
-        .catch((err) => { console.error('[practice] save attempt', err); queueAttempt(payload); });
+        .catch((err) => { logError('[practice] save attempt', err); queueAttempt(payload); });
     } else {
       queueAttempt(payload);
     }
@@ -361,7 +362,7 @@ export default function PracticePage() {
       // Gate check — fails open (allowed: true) so API errors never block students
       fetch('/api/usage/check')
         .then((r) => r.ok ? r.json() : { allowed: true, used: 0, limit: 0, trial: null })
-        .catch((err) => { console.error('[practice] usage check', err); return { allowed: true, used: 0, limit: 0, trial: null }; }),
+        .catch((err) => { logError('[practice] usage check', err); return { allowed: true, used: 0, limit: 0, trial: null }; }),
       fetch('/api/topics').then((r) => { if (!r.ok) throw new Error('Topics fetch failed'); return r.json(); }),
       // First question from the adaptive engine
       fetch(`/api/questions/next?topicId=${topicId}${subTopicParam ? `&subTopic=${encodeURIComponent(subTopicParam)}` : ''}`)
@@ -395,7 +396,7 @@ export default function PracticePage() {
         // Immediately prefetch the second question
         prefetchNext();
       })
-      .catch((err) => { console.error('[practice] init fetch', err); setPhase('error'); });
+      .catch((err) => { logError('[practice] init fetch', err); setPhase('error'); });
 
     return () => {
       if (advanceTimer.current) clearTimeout(advanceTimer.current);
@@ -489,7 +490,7 @@ export default function PracticePage() {
             setQIndex(nextIdx);
             setPhase('answering');
           }).catch((err) => {
-            console.error('[practice] fetch adaptive question', err);
+            logError('[practice] fetch adaptive question', err);
             // Fetch failed — show retry option instead of a dead screen
             setFetchRetry(true);
             setPhase('loading');
@@ -654,7 +655,7 @@ export default function PracticePage() {
           topicId, originalId: originQuestion.id, bonusId: q.id,
         });
       })
-      .catch((err) => { console.error('[practice] fetch similar question', err); setBonusMode('unavailable'); });
+      .catch((err) => { logError('[practice] fetch similar question', err); setBonusMode('unavailable'); });
   }
 
   function handleBonusAnswer(key: AnswerKey) {
@@ -797,7 +798,7 @@ export default function PracticePage() {
                 setQuestions((prev) => [...prev, q]);
                 setQIndex((prev) => prev + 1);
                 setPhase('answering');
-              }).catch((err) => { console.error('[practice] retry fetch adaptive', err); setFetchRetry(true); });
+              }).catch((err) => { logError('[practice] retry fetch adaptive', err); setFetchRetry(true); });
             }}>
               Retry →
             </DuoButton>

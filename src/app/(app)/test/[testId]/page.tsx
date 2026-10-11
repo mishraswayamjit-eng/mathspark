@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { logError } from '@/lib/logger';
 import { useParams, useRouter } from 'next/navigation';
 import KatexRenderer from '@/components/KatexRenderer';
 import QuestionDiagram from '@/components/diagrams/QuestionDiagram';
@@ -324,7 +325,7 @@ export default function TestEnginePage() {
         method: 'PATCH',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ questionNumber: currentNumRef.current, additionalTimeMs: elapsed }),
-      }).catch((err) => console.error('[test/submit] save final time', err));
+      }).catch((err) => logError('[test/submit] save final time', err));
     }
     try {
       const res = await fetch(`/api/mock-tests/${testId}/submit`, { method: 'POST' });

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
+import { logError } from '@/lib/logger';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -84,7 +85,7 @@ export default function IPMPredictorPage() {
         setGradeSummaries(data.grades ?? []);
         setInsights(data.insights ?? null);
       })
-      .catch((err) => console.error('[fetch]', err))
+      .catch((err) => logError('[fetch]', err))
       .finally(() => setLoading(false));
   }, []);
 
@@ -95,7 +96,7 @@ export default function IPMPredictorPage() {
     fetch(`/api/ipm-predictor?grade=${selectedGrade}`)
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => setPrediction(data.prediction ?? null))
-      .catch((err) => console.error('[fetch]', err))
+      .catch((err) => logError('[fetch]', err))
       .finally(() => setDetailLoading(false));
   }, [selectedGrade]);
 

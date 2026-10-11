@@ -3,6 +3,7 @@ import { prisma } from '@/lib/db';
 import { getTopicsCached } from '@/lib/topicCache';
 import { TOPIC_ORDER, computeStreak, buildTopicNameMap, buildLookupMap } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { logError } from '@/lib/logger';
 import { computeWeeklyData, computeRecentActivity } from '@/lib/studentDashboard';
 
 // ── Route ─────────────────────────────────────────────────────────────────────
@@ -92,7 +93,7 @@ export async function GET() {
       },
     );
   } catch (err) {
-    console.error('[dashboard]', err);
+    logError('[dashboard]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

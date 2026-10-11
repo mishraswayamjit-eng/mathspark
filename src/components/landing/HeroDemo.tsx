@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { logError } from '@/lib/logger';
 
 interface PreviewQ {
   id: string; questionText: string;
@@ -20,7 +21,7 @@ export default function HeroDemo() {
     fetch('/api/questions/preview')
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then(d => { if (d.questions?.[0]) setQ(d.questions[0]); })
-      .catch((err) => console.error('[fetch]', err));
+      .catch((err) => logError('[fetch]', err));
   }, []);
 
   if (!q) return (

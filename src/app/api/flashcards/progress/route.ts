@@ -5,6 +5,7 @@ import { computeCardXP } from '@/lib/flashcardXP';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { validateBody, ValidationError } from '@/lib/validateBody';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -111,7 +112,7 @@ export async function POST(req: Request) {
     if (err instanceof ValidationError) {
       return NextResponse.json({ error: err.message }, { status: 400 });
     }
-    console.error('[flashcards/progress] Error:', err);
+    logError('[flashcards/progress] Error:', err);
     return NextResponse.json({ error: 'Internal error' }, { status: 500 });
   }
 }

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { computeWhatsNext, type WhatsNextSuggestion } from '@/lib/whatsNext';
+import { logError } from '@/lib/logger';
 
 interface ConceptData {
   concept: { id: string; name: string };
@@ -41,7 +42,7 @@ export function useConceptSuggestions(
       })
       .catch((err) => {
         if (err?.name !== 'AbortError') {
-          console.error('[useConceptSuggestions] fetch concept data', err);
+          logError('[useConceptSuggestions] fetch concept data', err);
         }
       });
     return () => controller.abort();

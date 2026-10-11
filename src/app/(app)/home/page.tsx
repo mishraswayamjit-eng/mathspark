@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import { logError } from '@/lib/logger';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
@@ -337,7 +338,7 @@ export default function HomePage() {
           } catch { /* ignore storage errors */ }
         }
       })
-      .catch((err) => { console.error('[fetch]', err); setFetchError(true); })
+      .catch((err) => { logError('[fetch]', err); setFetchError(true); })
       .finally(() => setLoading(false));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

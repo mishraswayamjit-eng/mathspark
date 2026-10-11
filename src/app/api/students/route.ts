@@ -3,6 +3,7 @@ import { prisma } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { validateBody, ValidationError } from '@/lib/validateBody';
 import { MS_PER_DAY } from '@/lib/timeConstants';
+import { logError } from '@/lib/logger';
 import bcrypt from 'bcryptjs';
 
 const AVATAR_COLORS = [
@@ -77,7 +78,7 @@ export async function POST(req: Request) {
     if (err instanceof ValidationError) {
       return NextResponse.json({ error: err.message }, { status: 400 });
     }
-    console.error('[students] error:', err);
+    logError('[students] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

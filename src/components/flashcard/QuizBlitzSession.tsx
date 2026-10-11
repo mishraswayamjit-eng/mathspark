@@ -20,6 +20,7 @@ import { useConceptSuggestions } from '@/hooks/useConceptSuggestions';
 import WhatsNextSheet from '@/components/WhatsNextSheet';
 import type { FlashCard } from '@/types';
 import type { WhatsNextSuggestion } from '@/lib/whatsNext';
+import { logError } from '@/lib/logger';
 
 const KatexRenderer = dynamic(() => import('@/components/KatexRenderer'), { ssr: false });
 
@@ -246,7 +247,7 @@ export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSession
           questionStartRef.current = Date.now();
         }
       })
-      .catch((err) => { console.error('[QuizBlitz] fetch deck', err); router.replace('/flashcards'); });
+      .catch((err) => { logError('[QuizBlitz] fetch deck', err); router.replace('/flashcards'); });
   }, [fetchDeck, router]);
 
   useEffect(() => { loadDeck(); }, [loadDeck]);
@@ -303,7 +304,7 @@ export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSession
           setSessionXP({ total: data.xp.total, streakMultiplier: data.xp.streakMultiplier, streakBonus: data.xp.streakBonus });
         }
       })
-      .catch((err) => console.error('[fetch]', err));
+      .catch((err) => logError('[fetch]', err));
   }, [startTime, questions.length, correctCount]);
 
   // ── Handle answer ──────────────────────────────────────────────────────────
@@ -353,7 +354,7 @@ export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSession
               if (bonus > 0) accumulatedBonusRef.current += bonus;
             }
           })
-          .catch((err) => console.error('[fetch]', err));
+          .catch((err) => logError('[fetch]', err));
       }
 
       if (correct) {
@@ -416,7 +417,7 @@ export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSession
             ]);
           }
         })
-        .catch((err) => console.error('[fetch]', err));
+        .catch((err) => logError('[fetch]', err));
     }
 
     setTimeout(() => advanceQuestion(), 1500);

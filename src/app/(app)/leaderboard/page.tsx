@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Confetti from '@/components/Confetti';
 import type { LeagueData, LeagueMember, LastWeekResult } from '@/types';
+import { logError } from '@/lib/logger';
 
 // ── Tier metadata ─────────────────────────────────────────────────────────────
 
@@ -467,7 +468,7 @@ export default function LeaderboardPage() {
     fetch('/api/leaderboard')
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d: LeagueData) => { setLeagueData(d); setWeekLoading(false); })
-      .catch((err) => { console.error('[leaderboard] fetch weekly', err); setWeekLoading(false); });
+      .catch((err) => { logError('[leaderboard] fetch weekly', err); setWeekLoading(false); });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Check for promotion / demotion from last week ────────────────────────
@@ -493,7 +494,7 @@ export default function LeaderboardPage() {
           }
         }
       })
-      .catch((err) => { console.error('[leaderboard] fetch last-week', err); setLastWeekLoaded(true); });
+      .catch((err) => { logError('[leaderboard] fetch last-week', err); setLastWeekLoaded(true); });
   }, [studentId]);
 
   // ── Load all-time on first tap ────────────────────────────────────────────
@@ -502,7 +503,7 @@ export default function LeaderboardPage() {
     fetch('/api/leaderboard/all-time')
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d) => { setAllTimeData(d); setAllTimeLoaded(true); })
-      .catch((err) => { console.error('[leaderboard] fetch all-time', err); setAllTimeLoaded(true); });
+      .catch((err) => { logError('[leaderboard] fetch all-time', err); setAllTimeLoaded(true); });
   }, [studentId, allTimeLoaded]);
 
   // ── IntersectionObserver for my-rank row ──────────────────────────────────

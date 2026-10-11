@@ -2,15 +2,8 @@ import { NextResponse } from 'next/server';
 import { prisma, USABLE_QUESTION_FILTER } from '@/lib/db';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { parseUnknownArray } from '@/lib/jsonFields';
-
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
+import { shuffle } from '@/lib/shuffle';
+import { logError } from '@/lib/logger';
 
 // GET /api/questions/lesson?topicId=xxx&count=10
 export async function GET(req: Request) {
@@ -86,7 +79,7 @@ export async function GET(req: Request) {
       }),
     );
   } catch (err) {
-    console.error('[questions/lesson] error:', err);
+    logError('[questions/lesson] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

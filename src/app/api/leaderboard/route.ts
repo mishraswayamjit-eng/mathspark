@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
-import { ensureCurrentWeekLeague, getWeekBounds, TIER_NAMES } from '@/lib/leaderboard';
-import { getDisplayName } from '@/lib/sharedUtils';
+import { ensureCurrentWeekLeague, getWeekBounds, TIER_NAMES, buildLeagueMembers } from '@/lib/leaderboard';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { logError } from '@/lib/logger';
 import type { LeagueData, LeagueMember } from '@/types';
 
 // GET /api/leaderboard
@@ -30,22 +30,11 @@ export async function GET() {
 
     const { league } = membership;
 
-    // Sort members by weeklyXP desc for live ranks
-    const sorted = [...league.members].sort((a, b) => b.weeklyXP - a.weeklyXP);
-    const total  = sorted.length;
+    // Build ranked members (live ranks by weeklyXP desc)
+    const members: LeagueMember[] = buildLeagueMembers(league.members, studentId);
+    const total  = members.length;
     const promoteCount = Math.max(1, Math.floor(total * 0.2));
     const demoteCount  = Math.max(1, Math.floor(total * 0.2));
-
-    const members: LeagueMember[] = sorted.map((m, idx) => ({
-      studentId:   m.studentId,
-      displayName: getDisplayName(m.student.name, m.student.displayName),
-      avatarColor:  m.student.avatarColor,
-      weeklyXP:    m.weeklyXP,
-      rank:        idx + 1,
-      isMe:        m.studentId === studentId,
-      promoted:    m.promoted,
-      demoted:     m.demoted,
-    }));
 
     const myMember = members.find((m) => m.isMe);
 
@@ -65,7 +54,7 @@ export async function GET() {
 
     return NextResponse.json(data);
   } catch (err) {
-    console.error('[leaderboard GET]', err);
+    logError('[leaderboard GET]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

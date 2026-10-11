@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { verifySecret } from '@/lib/adminAuth';
+import { logError } from '@/lib/logger';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -278,7 +279,7 @@ export async function GET(req: Request) {
         message: `Seeded ${seeded} interactive questions (tapToColor, dragToSort, chartTap)`,
       });
     } catch (err) {
-      console.error('[seed] Interactive seed error:', err);
+      logError('[seed] Interactive seed error:', err);
       return NextResponse.json(
         { error: `Interactive seed failed: ${err instanceof Error ? err.message : String(err)}` },
         { status: 500 },
@@ -366,7 +367,7 @@ export async function GET(req: Request) {
           return { ok: true as const, id: q.id };
         } catch (err) {
           const msg = err instanceof Error ? err.message : String(err);
-          console.error(`[seed] Skipping question ${q.id}:`, msg);
+          logError(`[seed] Skipping question ${q.id}:`, msg);
           return { ok: false as const, id: q.id };
         }
       }));
@@ -391,7 +392,7 @@ export async function GET(req: Request) {
     });
 
   } catch (err) {
-    console.error('[seed] Fatal error on page', new URL(req.url).searchParams.get('page'), err);
+    logError(`[seed] Fatal error on page ${new URL(req.url).searchParams.get('page')}`, err);
     return NextResponse.json(
       { error: `Seed failed: ${err instanceof Error ? err.message : String(err)}` },
       { status: 500 },

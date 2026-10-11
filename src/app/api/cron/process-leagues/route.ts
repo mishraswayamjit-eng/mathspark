@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { processWeeklyLeagues } from '@/lib/leaderboard';
 import { verifyCronSecret } from '@/lib/adminAuth';
+import { logError } from '@/lib/logger';
 
 // GET /api/cron/process-leagues
 // Protected by CRON_SECRET header (set in Vercel cron config)
@@ -13,7 +14,7 @@ export async function GET(req: Request) {
     const result = await processWeeklyLeagues();
     return NextResponse.json({ success: true, ...result });
   } catch (err) {
-    console.error('[cron/process-leagues]', err);
+    logError('[cron/process-leagues]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

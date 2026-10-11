@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import { logError } from '@/lib/logger';
 import { useRouter } from 'next/navigation';
 import { StreakProgress } from '@/components/flashcard/StreakMilestone';
 import type { FlashcardDeck, FlashcardStats } from '@/types';
@@ -147,7 +148,7 @@ export default function FlashcardsPage() {
           try { localStorage.setItem('mathspark_cards_due', String(dueDeck.dueCount)); } catch {}
         }
       })
-      .catch((err) => { console.error('[fetch]', err); setFetchError(true); })
+      .catch((err) => { logError('[fetch]', err); setFetchError(true); })
       .finally(() => setLoading(false));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

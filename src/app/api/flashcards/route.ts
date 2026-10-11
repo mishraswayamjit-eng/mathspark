@@ -7,6 +7,7 @@ import {
 import { getTopicColor } from '@/data/topicColors';
 import { getStreakMultiplier, getMilestoneProgress, getAchievedMilestone } from '@/lib/flashcardXP';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -190,7 +191,7 @@ export async function GET(req: Request) {
       },
     });
   } catch (err) {
-    console.error('[flashcards] error:', err);
+    logError('[flashcards] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

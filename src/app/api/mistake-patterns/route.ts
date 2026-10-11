@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import * as fs from 'fs';
 import * as path from 'path';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -65,7 +66,7 @@ export async function GET(req: Request) {
       total: patterns.length,
     });
   } catch (err) {
-    console.error('[mistake-patterns]', err);
+    logError('[mistake-patterns]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

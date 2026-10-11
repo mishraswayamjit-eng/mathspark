@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { logError } from '@/lib/logger';
 import DuoButton from '@/components/DuoButton';
 
 export default function TestError({
@@ -11,7 +12,7 @@ export default function TestError({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error('[/test error boundary]', error);
+    logError('[/test error boundary]', error);
   }, [error]);
 
   return (

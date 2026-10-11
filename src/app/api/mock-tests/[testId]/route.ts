@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { logError } from '@/lib/logger';
 
 function safeParseSteps(json: string | null): unknown[] {
   try { return JSON.parse(json ?? '[]'); } catch { return []; }
@@ -71,7 +72,7 @@ export async function GET(
 
     return NextResponse.json(result);
   } catch (err) {
-    console.error('[mock-tests GET]', err);
+    logError('[mock-tests GET]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

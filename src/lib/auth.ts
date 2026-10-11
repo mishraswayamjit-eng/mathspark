@@ -2,6 +2,7 @@ import { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import bcrypt from 'bcryptjs';
 import { prisma } from '@/lib/db';
+import { logError } from '@/lib/logger';
 
 /**
  * Lazy getter for NEXTAUTH_SECRET — read at request time, not module init.
@@ -41,7 +42,7 @@ export const authOptions: NextAuthOptions = {
 
           return { id: parent.id, email: parent.email, name: parent.name };
         } catch (err) {
-          console.error('[authorize] DB error:', err);
+          logError('[authorize] DB error:', err);
           // Re-throw so NextAuth surfaces a Configuration error rather than
           // silently returning "Incorrect email or password"
           throw err;

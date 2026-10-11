@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { logError } from '@/lib/logger';
 
 // GET /api/student/lookup?email=parent@email.com
 // Used by student login page to find children for a given parent email
@@ -34,7 +35,7 @@ export async function GET(req: Request) {
 
     return NextResponse.json({ children: parent.children });
   } catch (err) {
-    console.error('[student/lookup] error:', err);
+    logError('[student/lookup] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Sparky from '@/components/Sparky';
 import type { DashboardData } from '@/types';
+import { logError } from '@/lib/logger';
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -35,7 +36,7 @@ export default function ParentReportPage() {
     fetch('/api/dashboard')
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d: DashboardData) => { setData(d); setLoading(false); })
-      .catch((err) => { console.error('[progress/report] fetch dashboard', err); setLoading(false); });
+      .catch((err) => { logError('[progress/report] fetch dashboard', err); setLoading(false); });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   if (loading || !data) {

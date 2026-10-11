@@ -1,6 +1,7 @@
 'use client';
 
 import { Suspense, useEffect, useState, useCallback, useRef } from 'react';
+import { logError } from '@/lib/logger';
 import { useRouter, useSearchParams } from 'next/navigation';
 import FlashCardComponent from '@/components/flashcard/FlashCard';
 import ProgressDots from '@/components/flashcard/ProgressDots';
@@ -369,7 +370,7 @@ function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: stri
         }
       })
       .catch((err) => {
-        console.error('[flashcards/session] fetch deck', err);
+        logError('[flashcards/session] fetch deck', err);
         router.replace('/flashcards');
       });
   }, [router, deckId, gradeOverride]);
@@ -405,7 +406,7 @@ function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: stri
           }
         }
       })
-      .catch((err) => console.error('[fetch]', err));
+      .catch((err) => logError('[fetch]', err));
   }, [startTime, completed, correctCount]);
 
   // ── Card response handlers ────────────────────────────────────────────────
@@ -475,7 +476,7 @@ function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: stri
               playWrong();
             }
           })
-          .catch((err) => console.error('[fetch]', err));
+          .catch((err) => logError('[fetch]', err));
       }
 
       // Update session streak
@@ -600,7 +601,7 @@ function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: stri
                 setPhase('complete');
               }
             })
-            .catch((err) => { console.error('[flashcards/session] re-fetch deck', err); router.replace('/flashcards'); });
+            .catch((err) => { logError('[flashcards/session] re-fetch deck', err); router.replace('/flashcards'); });
         }}
       />
       </>

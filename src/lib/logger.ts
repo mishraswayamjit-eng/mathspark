@@ -5,9 +5,9 @@
  *   import * as Sentry from '@sentry/nextjs';
  *   Sentry.captureException(err, { extra: { context } });
  */
-export function logError(context: string, err: unknown): void {
+export function logError(context: string, err?: unknown): void {
   const timestamp = new Date().toISOString();
-  const message = err instanceof Error ? err.message : String(err);
+  const message = err === undefined ? '' : err instanceof Error ? err.message : String(err);
   const stack = err instanceof Error ? err.stack : undefined;
 
   console.error(JSON.stringify({

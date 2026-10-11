@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { prisma } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { logError } from '@/lib/logger';
 
 export async function POST(req: Request) {
   const ip = req.headers.get('x-forwarded-for')?.split(',')[0] ?? 'unknown';
@@ -48,7 +49,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ id: parent.id, name: parent.name, email: parent.email }, { status: 201 });
   } catch (err) {
-    console.error('[auth/register]', err);
+    logError('[auth/register]', err);
     return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
   }
 }

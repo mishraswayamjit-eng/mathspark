@@ -3,6 +3,7 @@ import { prisma } from '@/lib/db';
 import { computeSessionXP, getAchievedMilestone, getMilestoneProgress } from '@/lib/flashcardXP';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { validateBody, ValidationError } from '@/lib/validateBody';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -103,7 +104,7 @@ export async function POST(req: Request) {
         data: { totalLifetimeXP: { increment: finalXP } },
       });
     } catch (err) {
-      console.error('[flashcards/session] XP update failed:', err);
+      logError('[flashcards/session] XP update failed:', err);
     }
 
     const milestoneProgress = getMilestoneProgress(dailyStreak);
@@ -129,7 +130,7 @@ export async function POST(req: Request) {
     if (err instanceof ValidationError) {
       return NextResponse.json({ error: err.message }, { status: 400 });
     }
-    console.error('[flashcards/session] Error:', err);
+    logError('[flashcards/session] Error:', err);
     return NextResponse.json({ error: 'Internal error' }, { status: 500 });
   }
 }

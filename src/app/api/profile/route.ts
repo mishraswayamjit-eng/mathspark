@@ -4,6 +4,7 @@ import { getTopicsCached } from '@/lib/topicCache';
 import { TOPIC_ORDER, computeStreak, buildLookupMap } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { computeWeeklyData } from '@/lib/studentDashboard';
+import { logError } from '@/lib/logger';
 
 // GET /api/profile
 export async function GET() {
@@ -93,7 +94,7 @@ export async function GET() {
       },
     );
   } catch (err) {
-    console.error('[profile] error:', err);
+    logError('[profile] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

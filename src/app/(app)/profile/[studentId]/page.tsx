@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import type { PublicProfile, WeeklyAwardData } from '@/types';
+import { logError } from '@/lib/logger';
 
 // ── Tier metadata ─────────────────────────────────────────────────────────────
 
@@ -65,7 +66,7 @@ export default function PublicProfilePage() {
         if (d) setProfile(d);
         setLoading(false);
       })
-      .catch((err) => { console.error('[profile] fetch public profile', err); setNotFound(true); setLoading(false); });
+      .catch((err) => { logError('[profile] fetch public profile', err); setNotFound(true); setLoading(false); });
   }, [targetId]);
 
   if (loading) {

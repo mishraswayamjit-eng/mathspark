@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState, useMemo } from 'react';
+import { logError } from '@/lib/logger';
 import { useRouter } from 'next/navigation';
 import type { DashboardData, TopicWithProgress } from '@/types';
 import Sparky from '@/components/Sparky';
@@ -179,7 +180,7 @@ export default function ChaptersPage() {
         });
         if (n) setNudge(n);
       })
-      .catch((err) => { console.error('[chapters] fetch topics', err); setFetchError(true); setLoading(false); });
+      .catch((err) => { logError('[chapters] fetch topics', err); setFetchError(true); setLoading(false); });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   const studentGrade     = data?.student.grade ?? 4;

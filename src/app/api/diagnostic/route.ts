@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma, USABLE_QUESTION_FILTER } from '@/lib/db';
 import { parseUnknownArray } from '@/lib/jsonFields';
+import { logError } from '@/lib/logger';
 
 // GET /api/diagnostic?topicId=&difficulty=Medium&exclude=id1,id2
 export async function GET(req: Request) {
@@ -44,7 +45,7 @@ export async function GET(req: Request) {
     const { correctAnswer: _ca, ...rest } = q;
     return NextResponse.json({ ...rest, stepByStep });
   } catch (err) {
-    console.error('[diagnostic] error:', err);
+    logError('[diagnostic] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

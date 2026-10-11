@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import TopicGrid from '@/components/lesson/TopicGrid';
 import { LESSON_TOPICS } from '@/data/lessonTopics';
+import { logError } from '@/lib/logger';
 
 interface ProgressRow {
   topicSlug: string;
@@ -23,7 +24,7 @@ export default function LessonsPage() {
         return r.json();
       })
       .then((d) => setProgress(d.progress ?? []))
-      .catch((err) => { console.error('[lessons] fetch progress', err); setProgress([]); })
+      .catch((err) => { logError('[lessons] fetch progress', err); setProgress([]); })
       .finally(() => setLoading(false));
   }, []);
 

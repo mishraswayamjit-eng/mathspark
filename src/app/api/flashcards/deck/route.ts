@@ -6,6 +6,8 @@ import {
   getAllFlashcards,
 } from '@/data/flashcardData';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { shuffle } from '@/lib/shuffle';
+import { logError } from '@/lib/logger';
 import type { FlashCard } from '@/types';
 
 export const dynamic = 'force-dynamic';
@@ -125,16 +127,6 @@ export async function GET(req: Request) {
       return p && p.leitnerBox >= 3 && new Date(p.nextReviewAt) <= now;
     });
 
-    // Shuffle helpers
-    const shuffle = <T,>(arr: T[]): T[] => {
-      const a = [...arr];
-      for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-      }
-      return a;
-    };
-
     // Cap unseen to daily new card budget
     const unseenCap = Math.min(3, newCardBudget);
     deck = [
@@ -154,14 +146,6 @@ export async function GET(req: Request) {
     deck = shuffle(deck);
   } else if (deckId === 'voice') {
     // Voice Recall: prioritize due concept/formula/rule cards, then unseen, cap at 15
-    const shuffle = <T,>(arr: T[]): T[] => {
-      const a = [...arr];
-      for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-      }
-      return a;
-    };
     const due = candidates.filter((c) => {
       const p = progressMap.get(c.id);
       return p && new Date(p.nextReviewAt) <= now;
@@ -182,14 +166,6 @@ export async function GET(req: Request) {
   } else if (deckId === 'warmup') {
     // Warm-up: return a broad mix so client can split by category.
     // Include all cards, shuffle, cap at 40 (client picks ~20 across phases).
-    const shuffle = <T,>(arr: T[]): T[] => {
-      const a = [...arr];
-      for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-      }
-      return a;
-    };
     deck = shuffle(candidates).slice(0, 40);
   } else {
     // Topic or mental_math: due cards first, then unseen, then rest
@@ -240,7 +216,7 @@ export async function GET(req: Request) {
   });
 
   } catch (err) {
-    console.error('[flashcards/deck] Error:', err);
+    logError('[flashcards/deck] Error:', err);
     return NextResponse.json({ cards: [], deckName: 'Error', error: String(err) }, { status: 500 });
   }
 }

@@ -3,6 +3,7 @@ import { prisma } from '@/lib/db';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { validateBody, ValidationError } from '@/lib/validateBody';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 // NOTE: maxDuration is ignored on Vercel Hobby (10s hard limit). Only effective on Pro+.
@@ -240,7 +241,7 @@ export async function POST(req: Request) {
   // Guard: API key must exist before we even open the stream
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
-    console.error('[chat] ANTHROPIC_API_KEY is not set');
+    logError('[chat] ANTHROPIC_API_KEY is not set');
     return Response.json({ error: 'AI tutor is not configured. Set ANTHROPIC_API_KEY in Vercel env vars.' }, { status: 503 });
   }
 
@@ -293,7 +294,7 @@ export async function POST(req: Request) {
         }
       } catch (err: unknown) {
         const e = err as { status?: number; message?: string };
-        console.error('[chat] Anthropic error:', e.status, e.message, err);
+        logError(`[chat] Anthropic error: ${e.status} ${e.message}`, err);
         const fallback  = "I'm having a little trouble thinking right now! 🤔 Could you try again in a moment?";
         controller.enqueue(encoder.encode(fallback));
         await prisma.chatMessage.create({

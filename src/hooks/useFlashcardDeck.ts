@@ -2,6 +2,7 @@
 
 import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import { logError } from '@/lib/logger';
 
 export interface DeckResponse {
   cards: unknown[];
@@ -42,7 +43,7 @@ export function useFlashcardDeck(deckId: string, options?: { limit?: number }) {
         topicColor: data.topicColor,
       }))
       .catch((err) => {
-        console.error('[useFlashcardDeck]', err);
+        logError('[useFlashcardDeck]', err);
         return null;
       });
   // eslint-disable-next-line react-hooks/exhaustive-deps

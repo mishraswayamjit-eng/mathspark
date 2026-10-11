@@ -1,6 +1,7 @@
 'use client';
 
 import { MS_PER_DAY } from '@/lib/timeConstants';
+import { logError } from '@/lib/logger';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Sparky from '@/components/Sparky';
@@ -153,7 +154,7 @@ export default function ChatPage() {
         setInitialized(true);
       })
       .catch((err) => {
-        console.error('[chat] fetch session history', err);
+        logError('[chat] fetch session history', err);
         // Fallback opening on error
         const opening = getOpeningMessage(name || 'friend', isNaN(grade) ? 4 : grade, null, 0);
         setMessages([{ id: 'opening', role: 'assistant', content: opening }]);

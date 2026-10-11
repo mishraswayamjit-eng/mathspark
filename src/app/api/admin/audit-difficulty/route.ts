@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { scoreQuestion } from '@/lib/difficultyScorer';
 import { verifySecret } from '@/lib/adminAuth';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -122,7 +123,7 @@ export async function GET(req: NextRequest) {
       ...(page === 0 ? { total } : {}),
     });
   } catch (err) {
-    console.error('audit-difficulty error:', err);
+    logError('audit-difficulty error:', err);
     return NextResponse.json(
       { error: `Internal error: ${err instanceof Error ? err.message : String(err)}` },
       { status: 500 },

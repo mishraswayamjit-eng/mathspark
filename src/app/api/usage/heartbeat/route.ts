@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { FREE_DAILY_MINUTES, isUnlimitedPlan } from '@/lib/usageLimits';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -67,7 +68,7 @@ export async function POST() {
     if ((err as Error).message === 'Student not found') {
       return NextResponse.json({ error: 'Student not found' }, { status: 404 });
     }
-    console.error('[heartbeat]', err);
+    logError('[heartbeat]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

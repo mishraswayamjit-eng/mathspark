@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { FREE_DAILY_MINUTES, isUnlimitedPlan, isPracticeAllowed } from '@/lib/usageLimits';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 
@@ -53,7 +54,7 @@ export async function GET() {
 
     return NextResponse.json({ allowed, used, limit, remaining, trial });
   } catch (err) {
-    console.error('[usage/check]', err);
+    logError('[usage/check]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

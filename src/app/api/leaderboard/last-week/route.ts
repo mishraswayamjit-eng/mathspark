@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
-import { getWeekBounds, TIER_NAMES } from '@/lib/leaderboard';
+import { getWeekBounds, TIER_NAMES, buildLeagueMembers } from '@/lib/leaderboard';
 import { getDisplayName } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { logError } from '@/lib/logger';
 import type { LastWeekResult, LeagueData, LeagueMember, WeeklyAwardData } from '@/types';
 
 // GET /api/leaderboard/last-week
@@ -65,21 +66,10 @@ export async function GET() {
     }
 
     const { league } = membership;
-    const sorted = league.members; // already ordered by weeklyXP desc
-    const total  = sorted.length;
+    const members: LeagueMember[] = buildLeagueMembers(league.members, studentId);
+    const total  = members.length;
     const promoteCount = Math.max(1, Math.floor(total * 0.2));
     const demoteCount  = Math.max(1, Math.floor(total * 0.2));
-
-    const members: LeagueMember[] = sorted.map((m, idx) => ({
-      studentId:   m.studentId,
-      displayName: getDisplayName(m.student.name, m.student.displayName),
-      avatarColor:  m.student.avatarColor,
-      weeklyXP:    m.weeklyXP,
-      rank:        m.rank ?? idx + 1,
-      isMe:        m.studentId === studentId,
-      promoted:    m.promoted,
-      demoted:     m.demoted,
-    }));
 
     const leagueData: LeagueData = {
       leagueId:     league.id,
@@ -125,7 +115,7 @@ export async function GET() {
 
     return NextResponse.json(result);
   } catch (err) {
-    console.error('[leaderboard/last-week GET]', err);
+    logError('[leaderboard/last-week GET]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

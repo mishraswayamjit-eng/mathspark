@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { recomputeStudentAnalytics } from '@/lib/brain/recompute';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
 // NOTE: maxDuration is ignored on Vercel Hobby (10s hard limit). Only effective on Pro+.
@@ -22,7 +23,7 @@ export async function POST() {
     await recomputeStudentAnalytics(studentId);
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error('[brain/recompute]', err);
+    logError('[brain/recompute]', err);
     return NextResponse.json({ error: 'Failed to recompute' }, { status: 500 });
   }
 }
