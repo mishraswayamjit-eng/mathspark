@@ -1,18 +1,15 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { verifySecret } from '@/lib/adminAuth';
 
 export const dynamic = 'force-dynamic';
 
 // GET /api/admin/cleanup-users?secret=xxx
 // Deletes all non-test students and parents (test IDs start with student_ / parent_)
 export async function GET(req: Request) {
-  const secret = process.env.SEED_SECRET;
-  if (!secret) {
-    return NextResponse.json({ error: 'SEED_SECRET not set.' }, { status: 500 });
-  }
   const { searchParams } = new URL(req.url);
-  if (searchParams.get('secret') !== secret) {
-    return NextResponse.json({ error: 'Wrong secret.' }, { status: 401 });
+  if (!verifySecret(searchParams.get('secret'))) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   try {

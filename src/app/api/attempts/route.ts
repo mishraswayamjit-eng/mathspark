@@ -58,7 +58,20 @@ export async function POST(req: Request) {
   const today = new Date();
   today.setUTCHours(0, 0, 0, 0);
 
-  // ── Atomic core: create attempt + count daily usage + cap XP ──────────────
+  // Resolve the student's current-week league membership BEFORE the main tx.
+  // `ensureCurrentWeekLeague` does its own writes (membership row + maybe league
+  // row creation), so threading it inside `prisma.$transaction` would risk
+  // a long-running transaction holding row locks. Instead, we resolve the
+  // membership id up-front, then the main tx atomically writes attempt +
+  // usageLog + leagueMembership.weeklyXP + student.totalLifetimeXP together.
+  const membership = await ensureCurrentWeekLeague(studentId).catch((err) => {
+    // League ensure failures should not block recording the attempt — log and
+    // continue without weekly XP. The attempt + usageLog still record cleanly.
+    console.error('[attempts] ensureCurrentWeekLeague failed:', err);
+    return null;
+  });
+
+  // ── Atomic core: create attempt + count daily usage + cap XP + league/lifetime XP ─
   const { attempt, xpAwarded } = await prisma.$transaction(async (tx) => {
     // Validate student exists
     const student = await tx.student.findUnique({ where: { id: studentId }, select: { id: true } });
@@ -95,6 +108,19 @@ export async function POST(req: Request) {
           where: { studentId_date: { studentId, date: today } },
           data:  { xpEarned: { increment: xpActual } },
         });
+        // League weeklyXP + student totalLifetimeXP increment in the same tx so
+        // a partial failure can't leave usageLog incremented but the league
+        // standing untouched (or vice versa).
+        if (membership) {
+          await tx.leagueMembership.update({
+            where: { id: membership.id },
+            data:  { weeklyXP: { increment: xpActual } },
+          });
+        }
+        await tx.student.update({
+          where: { id: studentId },
+          data:  { totalLifetimeXP: { increment: xpActual } },
+        });
         awarded = xpActual;
       }
     }
@@ -106,24 +132,6 @@ export async function POST(req: Request) {
   updateProgress(studentId, topicId).catch((err) =>
     console.error('[attempts] progress update failed:', err),
   );
-
-  // ── League + lifetime XP — fire-and-forget (usageLog already updated above) ─
-  if (xpAwarded > 0) {
-    ensureCurrentWeekLeague(studentId)
-      .then((membership) =>
-        Promise.all([
-          prisma.leagueMembership.update({
-            where: { id: membership.id },
-            data:  { weeklyXP: { increment: xpAwarded } },
-          }),
-          prisma.student.update({
-            where: { id: studentId },
-            data:  { totalLifetimeXP: { increment: xpAwarded } },
-          }),
-        ]),
-      )
-      .catch((err) => console.error('[attempts] league XP award failed:', err));
-  }
 
   return NextResponse.json({ ...attempt, xpAwarded }, { status: 201 });
 }

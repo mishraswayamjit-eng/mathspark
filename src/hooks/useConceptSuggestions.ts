@@ -28,13 +28,23 @@ export function useConceptSuggestions(
   const [suggestions, setSuggestions] = useState<WhatsNextSuggestion[]>([]);
   const conceptDataRef = useRef<ConceptData | null>(null);
 
-  // Pre-fetch concept data on mount so it's ready by completion
+  // Pre-fetch concept data on mount so it's ready by completion.
+  // AbortController + cleanup prevents (a) stale data from a previous
+  // conceptId overwriting the current ref, and (b) state updates after unmount.
   useEffect(() => {
     if (!conceptId) return;
-    fetch(`/api/concept-map?id=${conceptId}`)
+    const controller = new AbortController();
+    fetch(`/api/concept-map?id=${conceptId}`, { signal: controller.signal })
       .then((r) => { if (!r.ok) throw new Error('Fetch failed'); return r.json(); })
-      .then((data: ConceptData) => { conceptDataRef.current = data; })
-      .catch((err) => console.error('[useConceptSuggestions] fetch concept data', err));
+      .then((data: ConceptData) => {
+        if (!controller.signal.aborted) conceptDataRef.current = data;
+      })
+      .catch((err) => {
+        if (err?.name !== 'AbortError') {
+          console.error('[useConceptSuggestions] fetch concept data', err);
+        }
+      });
+    return () => controller.abort();
   }, [conceptId]);
 
   // Compute suggestions when session completes

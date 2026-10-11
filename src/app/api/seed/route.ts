@@ -257,16 +257,20 @@ export async function GET(req: Request) {
         },
       ];
 
-      let seeded = 0;
-      for (const q of INTERACTIVE_QUESTIONS) {
-        const { interactionType, interactionData, ...rest } = q;
-        await prisma.question.upsert({
-          where: { id: q.id },
-          update: { ...rest, interactionType, interactionData: interactionData as object },
-          create: { ...rest, interactionType, interactionData: interactionData as object },
-        });
-        seeded++;
-      }
+      // Parallelize upserts — the interactive set is tiny (<10 rows) so a
+      // single Promise.all stays comfortably under the Neon free-tier
+      // connection cap. The chunked larger seed below uses the same pattern.
+      const results = await Promise.all(
+        INTERACTIVE_QUESTIONS.map((q) => {
+          const { interactionType, interactionData, ...rest } = q;
+          return prisma.question.upsert({
+            where: { id: q.id },
+            update: { ...rest, interactionType, interactionData: interactionData as object },
+            create: { ...rest, interactionType, interactionData: interactionData as object },
+          });
+        }),
+      );
+      const seeded = results.length;
 
       return NextResponse.json({
         done: true,
@@ -326,38 +330,49 @@ export async function GET(req: Request) {
     let seededCount = 0;
     const skipped: string[] = [];
 
-    for (const q of batch) {
-      try {
-        const topicId = resolveTopicId(q.id, q.topicId, VALID_TOPIC_IDS);
-        const f = {
-          topicId,
-          subTopic:       s(q.subTopic),
-          difficulty:     s(q.difficulty)    || 'Medium',
-          questionText:   s(q.questionText),
-          questionLatex:  s(q.questionLatex),
-          option1:        s(q.options?.[0]?.text),
-          option2:        s(q.options?.[1]?.text),
-          option3:        s(q.options?.[2]?.text),
-          option4:        s(q.options?.[3]?.text),
-          correctAnswer:  s(q.correctAnswer)  || 'A',
-          hint1:          s(q.hints?.[0]),
-          hint2:          s(q.hints?.[1]),
-          hint3:          s(q.hints?.[2]),
-          stepByStep:     s(JSON.stringify(q.stepByStep ?? [])),
-          misconceptionA: s(q.misconceptions?.['A']),
-          misconceptionB: s(q.misconceptions?.['B']),
-          misconceptionC: s(q.misconceptions?.['C']),
-          misconceptionD: s(q.misconceptions?.['D']),
-          source:         s(q.source)         || 'auto_generated',
-          year:           q.year              ?? null,
-          questionNumber: q.questionNumber    ?? null,
-        };
-        await prisma.question.upsert({ where: { id: q.id }, update: f, create: { id: q.id, ...f } });
-        seededCount++;
-      } catch (err) {
-        const msg = err instanceof Error ? err.message : String(err);
-        console.error(`[seed] Skipping question ${q.id}:`, msg);
-        skipped.push(q.id);
+    // Chunked parallel upserts — Vercel Hobby has a 10s hard timeout and
+    // Neon's free tier caps at ~5 pooled connections. CHUNK_SIZE=20 gives
+    // a ~10x speedup over serial upserts while staying within the pool.
+    const CHUNK_SIZE = 20;
+    for (let i = 0; i < batch.length; i += CHUNK_SIZE) {
+      const chunk = batch.slice(i, i + CHUNK_SIZE);
+      const results = await Promise.all(chunk.map(async (q) => {
+        try {
+          const topicId = resolveTopicId(q.id, q.topicId, VALID_TOPIC_IDS);
+          const f = {
+            topicId,
+            subTopic:       s(q.subTopic),
+            difficulty:     s(q.difficulty)    || 'Medium',
+            questionText:   s(q.questionText),
+            questionLatex:  s(q.questionLatex),
+            option1:        s(q.options?.[0]?.text),
+            option2:        s(q.options?.[1]?.text),
+            option3:        s(q.options?.[2]?.text),
+            option4:        s(q.options?.[3]?.text),
+            correctAnswer:  s(q.correctAnswer)  || 'A',
+            hint1:          s(q.hints?.[0]),
+            hint2:          s(q.hints?.[1]),
+            hint3:          s(q.hints?.[2]),
+            stepByStep:     s(JSON.stringify(q.stepByStep ?? [])),
+            misconceptionA: s(q.misconceptions?.['A']),
+            misconceptionB: s(q.misconceptions?.['B']),
+            misconceptionC: s(q.misconceptions?.['C']),
+            misconceptionD: s(q.misconceptions?.['D']),
+            source:         s(q.source)         || 'auto_generated',
+            year:           q.year              ?? null,
+            questionNumber: q.questionNumber    ?? null,
+          };
+          await prisma.question.upsert({ where: { id: q.id }, update: f, create: { id: q.id, ...f } });
+          return { ok: true as const, id: q.id };
+        } catch (err) {
+          const msg = err instanceof Error ? err.message : String(err);
+          console.error(`[seed] Skipping question ${q.id}:`, msg);
+          return { ok: false as const, id: q.id };
+        }
+      }));
+      for (const r of results) {
+        if (r.ok) seededCount++;
+        else skipped.push(r.id);
       }
     }
 

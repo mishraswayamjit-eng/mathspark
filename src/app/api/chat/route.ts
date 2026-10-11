@@ -252,6 +252,11 @@ export async function POST(req: Request) {
 
   const stream = new ReadableStream({
     async start(controller) {
+      // `truncated` becomes true when stop_reason !== 'end_turn'
+      // (i.e. hit max_tokens, the API errored, or the client disconnected
+      // before the assistant finished its thought). The UI can then surface a
+      // "(want me to keep going?)" affordance.
+      let truncated = false;
       try {
         const anthropicStream = anthropic.messages.stream({
           model:      'claude-haiku-4-5-20251001',
@@ -267,12 +272,23 @@ export async function POST(req: Request) {
           ) {
             fullResponse += event.delta.text;
             controller.enqueue(encoder.encode(event.delta.text));
+          } else if (
+            event.type === 'message_delta' &&
+            event.delta.stop_reason &&
+            event.delta.stop_reason !== 'end_turn'
+          ) {
+            truncated = true;
           }
         }
 
         if (fullResponse) {
           await prisma.chatMessage.create({
-            data: { sessionId: currentSessionId, role: 'assistant', content: fullResponse },
+            data: {
+              sessionId: currentSessionId,
+              role:      'assistant',
+              content:   fullResponse,
+              truncated,
+            },
           });
         }
       } catch (err: unknown) {
@@ -281,7 +297,12 @@ export async function POST(req: Request) {
         const fallback  = "I'm having a little trouble thinking right now! 🤔 Could you try again in a moment?";
         controller.enqueue(encoder.encode(fallback));
         await prisma.chatMessage.create({
-          data: { sessionId: currentSessionId, role: 'assistant', content: fallback },
+          data: {
+            sessionId: currentSessionId,
+            role:      'assistant',
+            content:   fallback,
+            truncated: true,
+          },
         });
       } finally {
         controller.close();

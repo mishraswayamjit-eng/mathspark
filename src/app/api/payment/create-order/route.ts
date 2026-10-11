@@ -9,10 +9,21 @@ import { validateBody, ValidationError } from '@/lib/validateBody';
 // POST /api/payment/create-order
 // Body: { subscriptionId, studentId }
 export async function POST(req: Request) {
+  // Fail fast if Razorpay credentials are missing — avoids creating "ghost" orders
+  // with empty keys that would then fail signature verification on /verify.
+  const razorpayKeyId     = process.env.RAZORPAY_KEY_ID;
+  const razorpayKeySecret = process.env.RAZORPAY_KEY_SECRET;
+  if (!razorpayKeyId || !razorpayKeySecret) {
+    console.error('[payment/create-order] Razorpay credentials missing');
+    return NextResponse.json(
+      { error: 'Payments are not configured. Please contact support.' },
+      { status: 503 },
+    );
+  }
   // Lazy init — avoids constructor crash during Next.js build-time page collection
   const razorpay = new Razorpay({
-    key_id:     process.env.RAZORPAY_KEY_ID     ?? '',
-    key_secret: process.env.RAZORPAY_KEY_SECRET ?? '',
+    key_id:     razorpayKeyId,
+    key_secret: razorpayKeySecret,
   });
   const session = await getServerSession(authOptions);
   if (!session?.user?.id) {
@@ -57,7 +68,7 @@ export async function POST(req: Request) {
       orderId:    order.id,
       amount:     plan.priceINR,
       currency:   'INR',
-      keyId:      process.env.RAZORPAY_KEY_ID,
+      keyId:      razorpayKeyId,
       planName:   plan.name,
     });
   } catch (err) {
