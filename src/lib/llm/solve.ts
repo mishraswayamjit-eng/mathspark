@@ -166,7 +166,7 @@ ${kidSafeRules(grade)}`;
   }
 
   let winner: { count: number; display: string; full: string } | null = null;
-  for (const v of votes.values()) {
+  for (const v of Array.from(votes.values())) {
     if (!winner || v.count > winner.count) winner = v;
   }
 
