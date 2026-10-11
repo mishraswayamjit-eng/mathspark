@@ -26,17 +26,18 @@ test.describe('Home Dashboard — core sections', () => {
     expect(hasPlan).toBeTruthy();
   });
 
-  test('Exam Readiness section visible', async ({ authenticatedPage: page }) => {
+  test('Stats bar visible with XP pill', async ({ authenticatedPage: page }) => {
     await page.goto('/home', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    const hasReadiness = await page
-      .getByText(/exam readiness/i)
+    // The home StatsBar always renders a "<n> XP" pill (shows "0 XP" when none).
+    const hasStats = await page
+      .getByText(/\d+\s*XP/i)
       .first()
       .isVisible({ timeout: 10_000 })
       .catch(() => false);
 
-    expect(hasReadiness).toBeTruthy();
+    expect(hasStats).toBeTruthy();
   });
 
   test('Your Topics section visible', async ({ authenticatedPage: page }) => {
@@ -130,14 +131,19 @@ test.describe('Home Dashboard — quick actions', () => {
   });
 });
 
-test.describe('Home Dashboard — learn more cards', () => {
-  test('Learn More section shows Strategy Bank, Math Stories, Concept Map, Mistake Patterns', async ({
+test.describe('Home Dashboard — quick access tiles', () => {
+  test('Quick Access grid shows action tiles', async ({
     authenticatedPage: page,
   }) => {
     await page.goto('/home', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    const cards = ['Strategy Bank', 'Math Stories', 'Concept Map', 'Mistake Patterns'];
+    // The 2×2 grid renders 2 fixed tiles (Flashcards, Quick Practice) plus 2
+    // data-driven candidates from the learn/practice pool.
+    const cards = [
+      'Flashcards', 'Quick Practice', 'Concept Lessons', 'Skill Drills',
+      'Sparky Explains', 'Strategy Bank', 'Concept Map', 'Mistake Patterns',
+    ];
     let found = 0;
     for (const card of cards) {
       const visible = await page

@@ -110,7 +110,7 @@ publicTest.describe('Public Pages — no auth required', () => {
   const publicRoutes = [
     { route: '/', heading: /mathspark|ipm|math/i },
     { route: '/pricing', heading: /starter|advanced|unlimited/i },
-    { route: '/start', heading: /welcome to mathspark/i },
+    { route: '/start', heading: /math superpowers/i },
     { route: '/student/login', heading: /student login/i },
     { route: '/auth/login', heading: /parent sign in/i },
     { route: '/auth/register', heading: /create|register|get started/i },
