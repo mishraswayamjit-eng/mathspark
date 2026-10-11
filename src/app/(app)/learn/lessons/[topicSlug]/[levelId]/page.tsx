@@ -178,6 +178,8 @@ export default function LessonSessionPage({
             lessons={level.lessons}
             accentColor={accentColor}
             onDone={handleLessonsDone}
+            topicSlug={topicSlug}
+            levelId={levelId}
           />
         )}
 

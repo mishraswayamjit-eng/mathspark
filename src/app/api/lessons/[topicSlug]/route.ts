@@ -1,20 +1,7 @@
 export const dynamic = 'force-dynamic';
 
-import fs from 'fs';
-import path from 'path';
 import { NextResponse } from 'next/server';
-
-const cache = new Map<string, unknown>();
-const SLUG_RE = /^[a-z0-9-]+$/;
-
-function loadTopic(slug: string) {
-  if (cache.has(slug)) return cache.get(slug);
-  const filePath = path.join(process.cwd(), 'data', 'lessons', `${slug}.json`);
-  if (!fs.existsSync(filePath)) return null;
-  const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-  cache.set(slug, data);
-  return data;
-}
+import { loadTopic, LESSON_SLUG_RE } from '@/lib/lessonData';
 
 export async function GET(
   _req: Request,
@@ -22,7 +9,7 @@ export async function GET(
 ) {
   const { topicSlug } = params;
 
-  if (!SLUG_RE.test(topicSlug)) {
+  if (!LESSON_SLUG_RE.test(topicSlug)) {
     return NextResponse.json({ error: 'Invalid slug' }, { status: 400 });
   }
 

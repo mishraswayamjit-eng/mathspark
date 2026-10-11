@@ -5,12 +5,16 @@ import KatexRenderer from '@/components/KatexRenderer';
 import LessonStepper from './LessonStepper';
 import SlideRenderer from './SlideRenderer';
 import { toSlides } from '@/lib/lessonSlideAdapter';
+import AiExplainInline from '@/components/AiExplainInline';
 import type { Lesson, Slide } from '@/types/lesson';
 
 interface LessonViewerProps {
   lessons: Lesson[];
   accentColor: string;
   onDone: () => void;
+  /** Identify the lesson for the AI "explain differently" feature. */
+  topicSlug?: string;
+  levelId?: number;
 }
 
 function hasLatex(text: string): boolean {
@@ -23,6 +27,8 @@ function SlideModeViewer({
   lessons,
   accentColor,
   onDone,
+  topicSlug,
+  levelId,
 }: LessonViewerProps) {
   const [lessonIndex, setLessonIndex] = useState(0);
   const [slideIndex, setSlideIndex] = useState(0);
@@ -153,6 +159,19 @@ function SlideModeViewer({
       >
         <SlideRenderer slide={slides[slideIndex]} accentColor={accentColor} />
       </div>
+
+      {/* ── "I'm confused" AI re-explanation (Feature 3) ── */}
+      {topicSlug && levelId !== undefined && (
+        <div className="mt-4">
+          <AiExplainInline
+            key={lesson.id}
+            endpoint="/api/ai/lesson-reexplain"
+            body={{ topicSlug, levelId, lessonId: lesson.id }}
+            buttonLabel="I'm confused — explain it differently"
+            heading="Sparky explains it another way"
+          />
+        </div>
+      )}
 
       {/* ── Navigation ── */}
       <div className="flex gap-3 mt-4 pb-2">
