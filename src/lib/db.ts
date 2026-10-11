@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { isAiQuestionsServeEnabled } from './llm/featureFlags';
+import { isAiQuestionsServeEnabled, isAiTextbookServeEnabled } from './llm/featureFlags';
 
 // Prevent multiple PrismaClient instances in development (Next.js hot-reload)
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | undefined };
@@ -26,11 +26,16 @@ export const USABLE_QUESTION_FILTER = {
 };
 
 /**
- * Feature 5b kill-switch. When `AI_QUESTIONS_SERVE` is off (default), spread this
- * into a Question `where` clause to exclude `source='ai_generated'` questions.
- * When on, returns `{}` so authored questions can be served (still ranked last
- * by the adaptive picker and excluded from mock tests at their own call sites).
+ * Generated-content kill-switch. Spread into a Question `where` clause to exclude
+ * generated sources unless their serve flag is on:
+ *   - `ai_generated`  — excluded unless `AI_QUESTIONS_SERVE` (Feature 5b)
+ *   - `ipm_textbook`  — excluded unless `AI_TEXTBOOK_SERVE` (textbook import)
+ * Returns `{}` when both are enabled (nothing to exclude). Served rows are still
+ * ranked below real sources by the adaptive picker and gated at mock call sites.
  */
-export function aiSourceFilter(): { source?: { not: string } } {
-  return isAiQuestionsServeEnabled() ? {} : { source: { not: 'ai_generated' } };
+export function aiSourceFilter(): { source?: { notIn: string[] } } {
+  const excluded: string[] = [];
+  if (!isAiQuestionsServeEnabled()) excluded.push('ai_generated');
+  if (!isAiTextbookServeEnabled()) excluded.push('ipm_textbook');
+  return excluded.length ? { source: { notIn: excluded } } : {};
 }

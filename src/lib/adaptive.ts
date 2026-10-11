@@ -22,10 +22,12 @@ function weightedDiff(pEasy: number, pMedium: number, _pHard: number): Difficult
 
 /**
  * Prefer higher-quality sources. Priority:
- *   hand_crafted > pdf_extracted > variant_of_* > other > ai_generated (last)
+ *   hand_crafted > pdf_extracted > variant_of_* > other real
+ *     > ipm_textbook > ai_generated (last)
  *
- * AI-authored questions (Feature 5b) are deliberately ranked last: they are only
- * ever picked when nothing else is available.
+ * IPM-textbook questions are real exam stems, so they outrank synthetic
+ * `ai_generated` questions — but they sit below our curated/seed sources since
+ * their teaching layer is LLM-generated. Authored questions remain last-resort.
  */
 function pickBest<T extends { source: string }>(pool: T[]): T | null {
   if (pool.length === 0) return null;
@@ -39,10 +41,16 @@ function pickBest<T extends { source: string }>(pool: T[]): T | null {
   const variants = pool.filter((q) => q.source.startsWith('variant_of_'));
   if (variants.length > 0) return variants[Math.floor(Math.random() * variants.length)];
 
-  // Prefer any other non-AI source before falling back to ai_generated.
-  const nonAi = pool.filter((q) => q.source !== 'ai_generated');
-  const tier = nonAi.length > 0 ? nonAi : pool;
-  return tier[Math.floor(Math.random() * tier.length)];
+  // Prefer any other real (non-generated) source first.
+  const GENERATED = new Set(['ipm_textbook', 'ai_generated']);
+  const otherReal = pool.filter((q) => !GENERATED.has(q.source));
+  if (otherReal.length > 0) return otherReal[Math.floor(Math.random() * otherReal.length)];
+
+  // Real exam stems (textbook) beat synthetic authored questions.
+  const textbook = pool.filter((q) => q.source === 'ipm_textbook');
+  if (textbook.length > 0) return textbook[Math.floor(Math.random() * textbook.length)];
+
+  return pool[Math.floor(Math.random() * pool.length)];
 }
 
 // ── Main export ───────────────────────────────────────────────────────────────

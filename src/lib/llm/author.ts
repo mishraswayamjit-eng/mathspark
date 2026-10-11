@@ -50,14 +50,14 @@ export interface AuthoredQuestion {
 const ANSWER_KEYS = ['A', 'B', 'C', 'D'] as const;
 
 /** Extract the first balanced JSON object from a model response. */
-function extractJson(text: string): unknown {
+export function extractJson(text: string): unknown {
   const start = text.indexOf('{');
   const end = text.lastIndexOf('}');
   if (start < 0 || end <= start) throw new Error('No JSON object in response');
   return JSON.parse(text.slice(start, end + 1));
 }
 
-function asString(v: unknown): string {
+export function asString(v: unknown): string {
   return typeof v === 'string' ? v.trim() : '';
 }
 

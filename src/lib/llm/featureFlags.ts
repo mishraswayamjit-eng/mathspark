@@ -47,3 +47,12 @@ export function isAiQuestionsSanityEnabled(): boolean {
 export function isAiSurfaceEnabled(): boolean {
   return flag('AI_SURFACE_ENABLED');
 }
+
+/**
+ * IPM-textbook import: serve `source='ipm_textbook'` questions to students.
+ * Separate from `AI_QUESTIONS_SERVE` so the imported exam-authentic bank can be
+ * toggled independently of synthetic authored questions. Default OFF.
+ */
+export function isAiTextbookServeEnabled(): boolean {
+  return flag('AI_TEXTBOOK_SERVE');
+}

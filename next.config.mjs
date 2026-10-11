@@ -42,6 +42,7 @@ const nextConfig = {
       '/api/concept-map':           ['./data/concept-map.json', './data/dependency-graph.json'],
       '/api/ipm-predictor':         ['./data/ipm-predictor.json'],
       '/api/lessons/[topicSlug]':   ['./data/lessons/**/*'],
+      '/api/admin/import-textbook': ['./data/ipm-textbook-grade5.json'],
     },
   },
 };

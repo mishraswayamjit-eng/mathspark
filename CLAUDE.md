@@ -111,6 +111,16 @@ stays deterministic. Specifically:
 - **Surfacing/narration (5c) decides presentation only.** The numbers come from
   the deterministic Brain Engine; the LLM only orders/explains them. Gated by
   `AI_SURFACE_ENABLED`.
+- **Imported IPM-textbook questions (`source='ipm_textbook'`) are permitted only
+  when every answer is LLM-verified before it can reach a child:** a printed
+  answer must pass `sanityCheck`; an answerless (or sanity-failing) question's
+  answer must win N=3 self-consistency (majority ≥2) — anything that fails is
+  rejected, never persisted. The teaching layer (hints/steps/misconceptions) is
+  LLM-generated but strictly grounded on the verified answer (never changes the
+  math). These rows are tagged `source='ipm_textbook'`, kill-switchable via
+  `AI_TEXTBOOK_SERVE` (default OFF), ranked below real sources in adaptive
+  selection, and — per product decision — allowed in mock tests only when the
+  flag is on.
 
 All LLM usage goes through the single `src/lib/llm/` seam and degrades gracefully
 (static fallback) when `ANTHROPIC_API_KEY` is unset.

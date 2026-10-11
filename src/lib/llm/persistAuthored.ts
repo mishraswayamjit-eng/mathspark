@@ -1,9 +1,13 @@
 /**
  * Feature 5b — persist an AI-authored question.
  *
- * ID scheme: `AIGEN_<topicId>_<cuid>` so authored rows are instantly greppable
- * and distinguishable from the seed corpus. `source='ai_generated'` is the
- * kill-switch handle used by `aiSourceFilter()` + mock-test exclusion.
+ * Default ID scheme: `AIGEN_<topicId>_<cuid>` so authored rows are instantly
+ * greppable and distinguishable from the seed corpus. `source='ai_generated'` is
+ * the kill-switch handle used by `aiSourceFilter()` + mock-test exclusion.
+ *
+ * The optional `opts` let the IPM-textbook importer reuse this persistence path
+ * with its own deterministic id (`IPMTB_grade5_<ref>`, for idempotent re-runs)
+ * and its own `source` ('ipm_textbook', wired through its own kill-switch).
  */
 
 import { randomUUID } from 'crypto';
@@ -15,8 +19,10 @@ export async function persistAuthoredQuestion(
   subTopic: string,
   difficulty: 'Easy' | 'Medium' | 'Hard',
   q: AuthoredQuestion,
+  opts?: { source?: string; id?: string },
 ): Promise<string> {
-  const id = `AIGEN_${topicId}_${randomUUID()}`;
+  const source = opts?.source ?? 'ai_generated';
+  const id = opts?.id ?? `AIGEN_${topicId}_${randomUUID()}`;
 
   await prisma.question.create({
     data: {
@@ -39,7 +45,7 @@ export async function persistAuthoredQuestion(
       misconceptionB: q.misconceptionB,
       misconceptionC: q.misconceptionC,
       misconceptionD: q.misconceptionD,
-      source: 'ai_generated',
+      source,
     },
   });
 
