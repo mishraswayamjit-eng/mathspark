@@ -8,7 +8,7 @@
  *    student (Haiku). Truth is unchanged → no verification needed.
  *
  *  - `solveFresh(problemText)` — homework typed by the student. There is no
- *    verified answer, so we run SELF-CONSISTENCY: N independent Sonnet samples,
+ *    verified answer, so we run SELF-CONSISTENCY: N independent Opus samples,
  *    require a majority to agree on the final answer, and always append a
  *    "double-check this yourself" disclaimer. Low agreement → flagged + a
  *    gentle suggestion to ask Sparky in Chat.
@@ -144,7 +144,7 @@ ${kidSafeRules(grade)}`;
   const samples = await Promise.all(
     Array.from({ length: FRESH_SAMPLES }, () =>
       complete({
-        model: 'sonnet',
+        model: 'opus',
         maxTokens: 700,
         temperature: 0.7,
         system,
@@ -180,13 +180,13 @@ ${kidSafeRules(grade)}`;
       answer: winner.display,
       agreement,
       flagged: agreement < 1, // perfect agreement = unflagged; partial = review
-      model: MODELS.sonnet,
+      model: MODELS.opus,
     };
   }
 
   // No majority → one deterministic tie-break pass, but flag it and be honest.
   const tieBreak = await complete({
-    model: 'sonnet',
+    model: 'opus',
     maxTokens: 700,
     temperature: 0,
     system,
@@ -200,6 +200,6 @@ ${kidSafeRules(grade)}`;
     answer: final,
     agreement: winner ? winner.count / FRESH_SAMPLES : 0,
     flagged: true,
-    model: MODELS.sonnet,
+    model: MODELS.opus,
   };
 }

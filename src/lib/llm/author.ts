@@ -2,7 +2,7 @@
  * Feature 5b — AI-authored practice questions.
  *
  * Generates full question objects (text, 4 options, correct key, 3 hints,
- * step-by-step, 4 misconceptions) with Sonnet. Per the user's decision we TRUST
+ * step-by-step, 4 misconceptions) with Opus. Per the user's decision we TRUST
  * the model directly (no human-review queue) but add traceability + mitigations:
  *  - everything is tagged `source='ai_generated'` on persist (persistAuthored.ts)
  *  - an optional cheap sanity self-check (AI_QUESTIONS_SANITY, default-on)
@@ -128,7 +128,7 @@ The correctAnswer MUST be the genuinely correct option. Each misconception expla
   const userPrompt = `Topic: ${req.topicName}\nSub-topic: ${req.subTopic || 'general'}\nDifficulty: ${req.difficulty}\n\nWrite the question now as a single JSON object.`;
 
   const { text } = await complete({
-    model: 'sonnet',
+    model: 'opus',
     maxTokens: 1200,
     temperature: 0.8,
     system,
@@ -154,7 +154,7 @@ export async function sanityCheck(
 
   try {
     const { text } = await complete({
-      model: 'sonnet',
+      model: 'opus',
       maxTokens: 300,
       temperature: 0,
       system,
