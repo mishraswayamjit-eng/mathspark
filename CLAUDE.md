@@ -82,12 +82,38 @@ When adding JSON files to `data/`:
 ## Safety & Content Rules (NON-NEGOTIABLE)
 
 1. No math answer reaches a child without verification — all content is pre-verified
-2. No LLM-generated answers at runtime
+2. No LLM-generated answers at runtime for **graded practice**. Grading is always 100% deterministic and server-side; the LLM is NEVER the arbiter of correctness.
 3. No user-generated content visible to other students
 4. Server-side grading only (never trust client answers)
 5. All student API routes use `getAuthenticatedStudentId()` cookie auth
 6. Rate limiting on all POST endpoints
 7. `validateBody()` on all POST request bodies
+
+### Truth vs Delivery — permitted LLM usage (amendment)
+
+The LLM may expand the *teaching delivery* (explaining, rephrasing, coaching,
+narrating), but math **truth** (correct answers, grading, valid steps, mastery)
+stays deterministic. Specifically:
+
+- **Grounded re-expression of already-verified content is permitted.** Re-wording
+  a verified answer/steps/misconception for clarity does not change the truth, so
+  it is allowed (Features 1–4: misconception nudge, session/report narrative,
+  lesson re-explain, stuck-coach). These are always grounded in verified data and
+  must never contradict it.
+- **Fresh/homework solving (5a) is permitted only behind self-consistency
+  verification** (N-sample majority agreement) **and an explicit "double-check
+  this yourself" disclaimer.** It is never fed into graded practice. Gated by
+  `AI_SOLVE_ENABLED`.
+- **AI-authored questions (5b) are permitted only when tagged
+  `source='ai_generated'`**, kill-switchable (`AI_QUESTIONS_SERVE`), excluded
+  from mock tests entirely, and ranked last in adaptive selection. An optional
+  sanity self-check (`AI_QUESTIONS_SANITY`) runs before persist.
+- **Surfacing/narration (5c) decides presentation only.** The numbers come from
+  the deterministic Brain Engine; the LLM only orders/explains them. Gated by
+  `AI_SURFACE_ENABLED`.
+
+All LLM usage goes through the single `src/lib/llm/` seam and degrades gracefully
+(static fallback) when `ANTHROPIC_API_KEY` is unset.
 
 ---
 

@@ -167,6 +167,7 @@ export async function GET() {
   const parsedPriorities = safeJson(analytics?.topicPriorities, [] as unknown[]);
   const parsedPlan       = safeJson(analytics?.dailyPlan,       [] as unknown[]);
   const parsedNudges     = safeJson(analytics?.nudges,          [] as unknown[]);
+  const parsedSurface    = safeJson(analytics?.surfacePlan,     null as Record<string, unknown> | null);
 
   // Topic summary counts (from already-parsed analytics, no extra DB query)
   const masteryArray = parsedMastery as Array<{ status?: string; attemptsCount?: number }>;
@@ -197,6 +198,7 @@ export async function GET() {
       topicPriorities: parsedPriorities,
       dailyPlan:       parsedPlan,
       nudges:          parsedNudges,
+      surfacePlan:     parsedSurface,
       recentActivity,
       leagueTier,
       leagueName,

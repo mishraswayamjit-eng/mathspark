@@ -175,6 +175,9 @@ export async function generatePYQPaper(year: PYQYear) {
 // ── IPM Blueprint Paper Generator ─────────────────────────────────────────────
 
 const PYQ_SOURCES = ['previous_year_2016', 'previous_year_2017', 'previous_year_2018', 'previous_year_2019'];
+// Feature 5b: AI-authored questions are NEVER used in mock tests (exam realism +
+// safety). Excluded unconditionally alongside the PYQ pools in generated papers.
+const MOCK_EXCLUDED_SOURCES = [...PYQ_SOURCES, 'ai_generated'];
 
 const QUESTION_SELECT = {
   id: true, topicId: true, difficulty: true, source: true,
@@ -209,7 +212,7 @@ async function generateIPMPaper(studentId: string, grade: number) {
   const allQuestions = await prisma.question.findMany({
     where: {
       topicId: { in: topicIds },
-      source: { notIn: PYQ_SOURCES },
+      source: { notIn: MOCK_EXCLUDED_SOURCES },
       ...USABLE_QUESTION_FILTER,
     },
     select: QUESTION_SELECT,
@@ -380,7 +383,7 @@ export async function generateMockPaper(
   const allQuestions = await prisma.question.findMany({
     where: {
       topicId: { in: activeTopicIds },
-      source: { notIn: PYQ_SOURCES },
+      source: { notIn: MOCK_EXCLUDED_SOURCES },
       ...USABLE_QUESTION_FILTER,
     },
     select: QUESTION_SELECT,
@@ -477,6 +480,7 @@ export async function generateMegaTest(studentId: string, grade: number) {
       topicId: { in: uniqueTopics },
       difficulty: 'Hard',
       id: { notIn: recentIds.length > 0 ? recentIds : ['__none__'] },
+      source: { notIn: MOCK_EXCLUDED_SOURCES },
       ...USABLE_QUESTION_FILTER,
     },
     select: {

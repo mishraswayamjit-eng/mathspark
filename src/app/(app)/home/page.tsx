@@ -16,6 +16,15 @@ import type {
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
+// Feature 5c: LLM surfacing/narration over the verified Brain Engine signals.
+// Numbers come from the engine; this only reorders + narrates.
+interface SurfacePlan {
+  headline: string;
+  narration: string;
+  orderedTopicIds: string[];
+  focusTopicId: string | null;
+}
+
 interface HomeStudent {
   id: string;
   name: string;
@@ -40,6 +49,7 @@ interface HomeData {
   topicPriorities: TopicPriority[];
   dailyPlan: DailyPlanItem[];
   nudges: Nudge[];
+  surfacePlan: SurfacePlan | null;
   recentActivity: Array<{
     topicId: string; topicName: string;
     correct: number; attempted: number; pct: number; timeAgo: string;
@@ -433,6 +443,26 @@ export default function HomePage() {
     return [...fixed, ...candidates.slice(0, 2)];
   }, [data]);
 
+  // Feature 5c: apply the LLM surfacing order over the verified Brain Engine
+  // priorities. Numbers/topics are unchanged — only presentation order. Any
+  // topic the LLM dropped is appended so nothing verified is lost.
+  const surfacedPriorities = useMemo<TopicPriority[]>(() => {
+    if (!data) return [];
+    const order = data.surfacePlan?.orderedTopicIds;
+    if (!order || order.length === 0) return data.topicPriorities;
+    const byId = new Map(data.topicPriorities.map((p) => [p.dbTopicId, p]));
+    const ordered: TopicPriority[] = [];
+    const seen = new Set<string>();
+    for (const id of order) {
+      const p = byId.get(id);
+      if (p && !seen.has(id)) { ordered.push(p); seen.add(id); }
+    }
+    for (const p of data.topicPriorities) {
+      if (!seen.has(p.dbTopicId)) ordered.push(p);
+    }
+    return ordered;
+  }, [data]);
+
   if (!loading && (fetchError || !data)) {
     return (
       <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-4 pb-24">
@@ -505,7 +535,9 @@ export default function HomePage() {
     );
   }
 
-  const { student, streak, todayCorrect, topicPriorities, recentActivity } = data;
+  const { student, streak, todayCorrect, recentActivity } = data;
+  const topicPriorities = surfacedPriorities;
+  const surfaceNarration = data.surfacePlan?.narration?.trim() || null;
 
   const gradeColors: Record<number, string> = {
     2: '#58CC02', 3: '#58CC02', 4: '#1CB0F6',
@@ -550,7 +582,8 @@ export default function HomePage() {
             {greeting}, {student.name}! <span aria-hidden="true">🌟</span>
           </h1>
           <p className="text-gray-500 text-sm font-medium mt-0.5">
-            {todayCorrect > 0 ? `${todayCorrect} correct today · ` : ''}Ready to practice?
+            {surfaceNarration
+              ?? `${todayCorrect > 0 ? `${todayCorrect} correct today · ` : ''}Ready to practice?`}
           </p>
           <div className="mt-2.5">
             <StatsBar

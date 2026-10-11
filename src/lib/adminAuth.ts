@@ -23,3 +23,14 @@ export function verifyCronSecret(authHeader: string | null): boolean {
   if (provided.length !== expected.length) return false;
   return crypto.timingSafeEqual(Buffer.from(provided), Buffer.from(expected));
 }
+
+/**
+ * Timing-safe comparison of a provided secret against AI_GEN_SECRET env var.
+ * Guards the Feature 5b question-generation admin route.
+ */
+export function verifyGenSecret(provided: string | null): boolean {
+  const expected = process.env.AI_GEN_SECRET ?? '';
+  if (!provided || !expected) return false;
+  if (provided.length !== expected.length) return false;
+  return crypto.timingSafeEqual(Buffer.from(provided), Buffer.from(expected));
+}

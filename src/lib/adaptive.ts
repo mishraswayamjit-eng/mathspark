@@ -1,4 +1,4 @@
-import { prisma, USABLE_QUESTION_FILTER } from './db';
+import { prisma, USABLE_QUESTION_FILTER, aiSourceFilter } from './db';
 import type { Difficulty } from '@/types';
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -22,7 +22,10 @@ function weightedDiff(pEasy: number, pMedium: number, _pHard: number): Difficult
 
 /**
  * Prefer higher-quality sources. Priority:
- *   hand_crafted > pdf_extracted > variant_of_* > everything else
+ *   hand_crafted > pdf_extracted > variant_of_* > other > ai_generated (last)
+ *
+ * AI-authored questions (Feature 5b) are deliberately ranked last: they are only
+ * ever picked when nothing else is available.
  */
 function pickBest<T extends { source: string }>(pool: T[]): T | null {
   if (pool.length === 0) return null;
@@ -36,7 +39,10 @@ function pickBest<T extends { source: string }>(pool: T[]): T | null {
   const variants = pool.filter((q) => q.source.startsWith('variant_of_'));
   if (variants.length > 0) return variants[Math.floor(Math.random() * variants.length)];
 
-  return pool[Math.floor(Math.random() * pool.length)];
+  // Prefer any other non-AI source before falling back to ai_generated.
+  const nonAi = pool.filter((q) => q.source !== 'ai_generated');
+  const tier = nonAi.length > 0 ? nonAi : pool;
+  return tier[Math.floor(Math.random() * tier.length)];
 }
 
 // ── Main export ───────────────────────────────────────────────────────────────
@@ -80,7 +86,7 @@ export async function getNextQuestion(
   // Parallel DB reads
   const [allQuestions, sessionAttempts, progress, misconceptionAttempts] = await Promise.all([
     prisma.question.findMany({
-      where: { topicId, ...subTopicFilter, ...USABLE_QUESTION_FILTER },
+      where: { topicId, ...subTopicFilter, ...USABLE_QUESTION_FILTER, ...aiSourceFilter() },
       take: 200,
     }),
 

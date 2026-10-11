@@ -318,6 +318,7 @@ model StudentAnalytics {
   topicPriorities Json?    // TopicPriority[]
   dailyPlan       Json?    // DailyPlanItem[]
   nudges          Json?    // Nudge[]
+  surfacePlan     Json?    // Feature 5c: LLM presentation/ordering + narration over verified Brain Engine signals
   lastComputedAt  DateTime @default(now())
   updatedAt       DateTime @updatedAt
 }
@@ -343,6 +344,27 @@ model AiExplanation {
   updatedAt DateTime @updatedAt
 
   @@index([feature, refId])
+  @@index([flagged])
+}
+
+// ── AI Solve Log (Feature 5a audit trail) ──────────────────────────────────
+// Every solve-on-demand request is logged for traceability. `path` records
+// whether we re-expressed a verified DB answer (grounded) or solved fresh
+// homework via self-consistency; `agreement` captures the vote ratio so weak
+// consensus answers can be reviewed. Not shown to students.
+
+model AiSolveLog {
+  id         String   @id @default(cuid())
+  studentId  String
+  path       String   // "grounded" | "fresh"
+  input      String   // questionId (grounded) or problem text (fresh)
+  answer     String   @default("")
+  agreement  Float    @default(0) // fresh: winning-sample ratio (0–1); grounded: 1
+  model      String
+  flagged    Boolean  @default(false)
+  createdAt  DateTime @default(now())
+
+  @@index([studentId, createdAt])
   @@index([flagged])
 }
 
