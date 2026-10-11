@@ -99,6 +99,9 @@ export default function PracticePage() {
   const isAdvancingRef    = useRef(false);
   // BUG 1 FIX: Track every question ID served in this lesson so we never repeat.
   const seenQuestionIdsRef = useRef<Set<string>>(new Set());
+  // Feature 1: count wrong attempts per question → trigger stuck-coach on 2nd miss.
+  const wrongCountByQuestionRef = useRef<Map<string, number>>(new Map());
+  const [showCoach, setShowCoach] = useState(false);
   // Fetch with 5s timeout + retry tracking
   const [fetchRetry, setFetchRetry] = useState(false);
 
@@ -537,6 +540,11 @@ export default function PracticePage() {
       playWrong();
       // Auto-show hint level 1 after a wrong answer
       setHintLevel(1);
+      // Feature 1: fire Socratic stuck-coach on the 2nd+ wrong attempt.
+      const prevWrong = wrongCountByQuestionRef.current.get(currentQuestion.id) ?? 0;
+      const nextWrong = prevWrong + 1;
+      wrongCountByQuestionRef.current.set(currentQuestion.id, nextWrong);
+      setShowCoach(nextWrong >= 2);
     }
 
     // Queue wrong answer for review (main lesson only)
@@ -1209,6 +1217,7 @@ export default function PracticePage() {
               onWatchSolution={() => setShowWalkthrough(true)}
               onTrySimilar={() => requestBonus(currentQuestion, false)}
               canTrySimilar={bonusMode === 'off'}
+              showCoach={showCoach}
             />
           )}
         </div>

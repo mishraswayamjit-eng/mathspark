@@ -6,6 +6,7 @@ import StepByStep from '@/components/StepByStep';
 import HintSystem from '@/components/HintSystem';
 import Sparky from '@/components/Sparky';
 import DuoButton from '@/components/DuoButton';
+import AiExplainInline from '@/components/AiExplainInline';
 import type { Question, AnswerKey } from '@/types';
 
 export function CorrectPanel({
@@ -98,6 +99,7 @@ export function WrongPanel({
   onWatchSolution,
   onTrySimilar,
   canTrySimilar,
+  showCoach = false,
 }: {
   question:        Question;
   selected:        AnswerKey | null;
@@ -107,6 +109,8 @@ export function WrongPanel({
   onWatchSolution: () => void;
   onTrySimilar:    () => void;
   canTrySimilar:   boolean;
+  /** Feature 1: on the 2nd+ wrong attempt, auto-show Socratic stuck-coaching. */
+  showCoach?:      boolean;
 }) {
   const optionKey     = selected ? (`misconception${selected}` as keyof Question) : null;
   const misconception = optionKey ? (question[optionKey] as string) : '';
@@ -169,6 +173,19 @@ export function WrongPanel({
           </p>
           <p className="text-sm text-gray-700 font-medium leading-snug">{aiNudge ?? misconception}</p>
         </div>
+      )}
+
+      {/* Feature 1: Socratic stuck-coaching — auto-streams on the 2nd+ wrong
+          attempt. Grounded in verified steps; never states the final answer. */}
+      {showCoach && (
+        <AiExplainInline
+          key={question.id}
+          endpoint="/api/ai/stuck-coach"
+          body={{ questionId: question.id }}
+          buttonLabel="Feeling stuck? Let Sparky help"
+          heading="Sparky's hint"
+          autoStart
+        />
       )}
 
       {/* Step-by-step inline */}
