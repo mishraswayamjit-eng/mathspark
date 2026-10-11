@@ -1,5 +1,6 @@
-import Anthropic from '@anthropic-ai/sdk';
 import { NextResponse } from 'next/server';
+import { getAnthropicClient } from '@/lib/llm/client';
+import { MODELS } from '@/lib/llm/models';
 
 export const dynamic = 'force-dynamic';
 
@@ -16,15 +17,15 @@ export async function GET() {
   }
 
   try {
-    const anthropic = new Anthropic({ apiKey: key });
+    const anthropic = getAnthropicClient();
     const msg = await anthropic.messages.create({
-      model:      'claude-haiku-4-5-20251001',
+      model:      MODELS.haiku,
       max_tokens: 10,
       messages:   [{ role: 'user', content: 'Say "ok"' }],
     });
     return NextResponse.json({
       ok:    true,
-      model: 'claude-haiku-4-5-20251001',
+      model: MODELS.haiku,
       reply: msg.content,
     });
   } catch (err: unknown) {

@@ -322,6 +322,30 @@ model StudentAnalytics {
   updatedAt       DateTime @updatedAt
 }
 
+// ── AI Explanation Cache (generate-once / reuse / review-flag) ──────────────
+// Caches grounded LLM deliverables (misconception nudges, narratives, lesson
+// re-explanations) so identical requests reuse one verified generation instead
+// of re-calling the model. `reviewed`/`flagged` support lightweight auditing.
+
+model AiExplanation {
+  id        String   @id @default(cuid())
+  cacheKey  String   @unique // sha256(feature|refId|variant|grade)
+  feature   String   // LlmFeature, e.g. "misconception" | "lesson-reexplain"
+  refId     String   // domain id this explanation is about (questionId, topicSlug, …)
+  variant   String   @default("") // sub-key (selectedOption, level, …)
+  grade     Int
+  content   String
+  model     String   // model id used to generate
+  reviewed  Boolean  @default(false)
+  flagged   Boolean  @default(false)
+  hitCount  Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([feature, refId])
+  @@index([flagged])
+}
+
 // ── League / Social ────────────────────────────────────────────────────────
 
 model League {
