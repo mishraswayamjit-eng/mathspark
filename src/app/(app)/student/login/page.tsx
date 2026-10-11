@@ -99,7 +99,7 @@ export default function StudentLoginPage() {
               onChange={(e) => { setPin(e.target.value.replace(/\D/g, '').slice(0, 4)); setError(''); }}
               placeholder="••••"
               aria-label="4-digit PIN"
-              className="w-full text-3xl font-bold text-center tracking-[0.5em] bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/40 outline-none focus:border-duo-green"
+              className="w-full text-3xl font-bold text-center tracking-[0.5em] bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green focus-visible:ring-2 focus-visible:ring-duo-green focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
             />
             {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
             <button
@@ -144,7 +144,7 @@ export default function StudentLoginPage() {
               type="email" placeholder="Parent's email address" required autoComplete="email"
               aria-label="Parent's email address"
               value={email} onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
+              className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green focus-visible:ring-2 focus-visible:ring-duo-green focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
             />
 
             {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}

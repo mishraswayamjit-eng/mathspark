@@ -52,13 +52,13 @@ function LoginForm() {
             type="email" placeholder="Email address" required autoComplete="email"
             aria-label="Email address"
             value={email} onChange={(e) => setEmail(e.target.value)}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-blue"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-blue focus-visible:ring-2 focus-visible:ring-duo-blue focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
           />
           <input
             type="password" placeholder="Password" required autoComplete="current-password"
             aria-label="Password"
             value={password} onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-blue"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-blue focus-visible:ring-2 focus-visible:ring-duo-blue focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
           />
 
           {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}

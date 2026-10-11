@@ -64,13 +64,13 @@ function ResetForm() {
             type="password" placeholder="New password (min 8 characters)" required minLength={8}
             aria-label="New password (min 8 characters)"
             value={password} onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green focus-visible:ring-2 focus-visible:ring-duo-green focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
           />
           <input
             type="password" placeholder="Confirm new password" required
             aria-label="Confirm new password"
             value={confirm} onChange={(e) => setConfirm(e.target.value)}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green focus-visible:ring-2 focus-visible:ring-duo-green focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
           />
 
           {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}

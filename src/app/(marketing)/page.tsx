@@ -392,19 +392,19 @@ export default function LandingPage() {
           <Sparky size={26} mood="happy" />
           <span className="text-white font-extrabold text-base">MathSpark</span>
         </div>
-        <p className="text-white/40 text-xs mb-1">Built by mathletes and educationists for IPM &amp; Olympiad aspirants.</p>
-        <p className="text-white/25 text-xs mb-5">
+        <p className="text-white/70 text-xs mb-1">Built by mathletes and educationists for IPM &amp; Olympiad aspirants.</p>
+        <p className="text-white/60 text-xs mb-5">
           100,000+ researched questions · 4 years of real papers · Zero hallucination · Adaptive AI
         </p>
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-white/40 text-xs font-semibold mb-5">
-          <Link href="/pricing"       className="hover:text-white/70 transition-colors">Pricing</Link>
-          <Link href="/start"         className="hover:text-white/70 transition-colors">Try it free</Link>
-          <Link href="/auth/login"    className="hover:text-white/70 transition-colors">Sign in</Link>
-          <a href="#"                 className="hover:text-white/70 transition-colors">Privacy</a>
-          <a href="#"                 className="hover:text-white/70 transition-colors">Terms</a>
-          <a href="mailto:hello@mathspark.app" className="hover:text-white/70 transition-colors">Contact</a>
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-white/70 text-xs font-semibold mb-5">
+          <Link href="/pricing"       className="hover:text-white transition-colors">Pricing</Link>
+          <Link href="/start"         className="hover:text-white transition-colors">Try it free</Link>
+          <Link href="/auth/login"    className="hover:text-white transition-colors">Sign in</Link>
+          <a href="#"                 className="hover:text-white transition-colors">Privacy</a>
+          <a href="#"                 className="hover:text-white transition-colors">Terms</a>
+          <a href="mailto:hello@mathspark.app" className="hover:text-white transition-colors">Contact</a>
         </div>
-        <p className="text-white/15 text-xs">© 2026 MathSpark. Research citations available on request.</p>
+        <p className="text-white/60 text-xs">© 2026 MathSpark. Research citations available on request.</p>
       </footer>
 
     </div>

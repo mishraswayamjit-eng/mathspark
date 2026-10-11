@@ -60,25 +60,25 @@ export default function RegisterPage() {
             type="text" placeholder="Your name" required
             aria-label="Your name"
             value={form.name} onChange={field('name')}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green focus-visible:ring-2 focus-visible:ring-duo-green focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
           />
           <input
             type="email" placeholder="Email address" required
             aria-label="Email address"
             value={form.email} onChange={field('email')}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green focus-visible:ring-2 focus-visible:ring-duo-green focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
           />
           <input
             type="password" placeholder="Password (min 8 characters)" required minLength={8}
             aria-label="Password (min 8 characters)"
             value={form.password} onChange={field('password')}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green focus-visible:ring-2 focus-visible:ring-duo-green focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
           />
           <input
             type="tel" placeholder="Phone number (optional)"
             aria-label="Phone number (optional)"
             value={form.phone} onChange={field('phone')}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green"
+            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green focus-visible:ring-2 focus-visible:ring-duo-green focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
           />
 
           {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
