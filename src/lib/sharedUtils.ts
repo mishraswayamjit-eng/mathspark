@@ -33,3 +33,33 @@ export function computeStreak(
   }
   return streak;
 }
+
+/**
+ * Resolve a leaderboard/report display name: prefer student.displayName,
+ * otherwise fall back to the first token of the full name.
+ */
+export function getDisplayName(name: string, displayName?: string | null): string {
+  return displayName ?? name.split(' ')[0];
+}
+
+/**
+ * Build a `Map<topicId, topicName>` from a topic list.
+ * Used by dashboard/home/report routes for O(1) topic-name lookup.
+ */
+export function buildTopicNameMap(
+  topics: ReadonlyArray<{ id: string; name: string }>,
+): Map<string, string> {
+  return new Map(topics.map((t) => [t.id, t.name]));
+}
+
+/**
+ * Build a `Map<T[K], T>` keyed by the named field. Generic equivalent of
+ * `new Map(items.map(i => [i.keyField, i]))` used across dashboard/report
+ * routes to index Prisma rows by topicId / cardId / etc.
+ */
+export function buildLookupMap<T, K extends keyof T>(
+  items: ReadonlyArray<T>,
+  keyField: K,
+): Map<T[K], T> {
+  return new Map(items.map((item) => [item[keyField], item]));
+}

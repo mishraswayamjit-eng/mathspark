@@ -123,6 +123,16 @@ export async function addWeeklyXP(studentId: string, xpAmount: number): Promise<
   ]);
 }
 
+// ── Count correct attempts in the trailing 7 days ─────────────────────────────
+
+export function weeklyCorrectCount(
+  attempts: ReadonlyArray<{ isCorrect: boolean; createdAt: Date }>,
+): number {
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - 7);
+  return attempts.filter((a) => a.isCorrect && a.createdAt >= cutoff).length;
+}
+
 // ── Compute XP for a single attempt ───────────────────────────────────────────
 
 export function computeXPForAttempt(

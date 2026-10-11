@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { ensureCurrentWeekLeague, getWeekBounds, TIER_NAMES } from '@/lib/leaderboard';
+import { getDisplayName } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import type { LeagueData, LeagueMember } from '@/types';
 
@@ -37,7 +38,7 @@ export async function GET() {
 
     const members: LeagueMember[] = sorted.map((m, idx) => ({
       studentId:   m.studentId,
-      displayName: m.student.displayName ?? m.student.name.split(' ')[0],
+      displayName: getDisplayName(m.student.name, m.student.displayName),
       avatarColor:  m.student.avatarColor,
       weeklyXP:    m.weeklyXP,
       rank:        idx + 1,

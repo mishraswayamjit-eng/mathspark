@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { recomputeStudentAnalytics } from '@/lib/brain/recompute';
 import { getTopicsCached } from '@/lib/topicCache';
-import { computeStreak } from '@/lib/sharedUtils';
+import { computeStreak, buildTopicNameMap } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { getWeekBounds, TIER_NAMES } from '@/lib/leaderboard';
 import { getTopicsForGrade } from '@/data/topicTree';
@@ -101,7 +101,7 @@ export async function GET() {
 
   // Recent activity
   const recentAttempts = attempts.slice(0, 50);
-  const topicMap = new Map(allTopics.map((t) => [t.id, t.name]));
+  const topicMap = buildTopicNameMap(allTopics);
 
   const groups = new Map<string, {
     topicId: string; attempted: number; correct: number; latest: Date;

@@ -1,23 +1,9 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getTopicsCached } from '@/lib/topicCache';
-import { TOPIC_ORDER, computeStreak } from '@/lib/sharedUtils';
+import { TOPIC_ORDER, computeStreak, buildLookupMap } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
-
-function computeWeeklyData(attempts: Array<{ createdAt: Date; isCorrect: boolean }>) {
-  const today = new Date();
-  return Array.from({ length: 7 }, (_, i) => {
-    const d = new Date(today);
-    d.setDate(d.getDate() - (6 - i));
-    const dateStr = d.toDateString();
-    return {
-      date: d.toLocaleDateString('en-IN', { weekday: 'short' }),
-      count: attempts.filter(
-        (a) => a.isCorrect && new Date(a.createdAt).toDateString() === dateStr,
-      ).length,
-    };
-  });
-}
+import { computeWeeklyData } from '@/lib/studentDashboard';
 
 // GET /api/profile
 export async function GET() {
@@ -68,7 +54,7 @@ export async function GET() {
 
     const correctAttempts = attempts.filter((a) => a.isCorrect);
 
-    const progressMap = new Map(progress.map((p) => [p.topicId, p]));
+    const progressMap = buildLookupMap(progress, 'topicId');
     const topics = allTopics
       .sort((a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id))
       .map((t) => {
@@ -97,7 +83,7 @@ export async function GET() {
           fastCorrects,
         },
         topics,
-        weeklyData:     computeWeeklyData(attempts),
+        weeklyData:     computeWeeklyData(attempts, true),
         weakestTopicId: weakest?.id ?? topics[0]?.id ?? null,
       },
       {

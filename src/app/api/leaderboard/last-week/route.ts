@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getWeekBounds, TIER_NAMES } from '@/lib/leaderboard';
+import { getDisplayName } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import type { LastWeekResult, LeagueData, LeagueMember, WeeklyAwardData } from '@/types';
 
@@ -48,7 +49,7 @@ export async function GET() {
       awardType:   a.awardType as WeeklyAwardData['awardType'],
       value:       a.value,
       studentId:   a.studentId,
-      displayName: a.student.displayName ?? a.student.name.split(' ')[0],
+      displayName: getDisplayName(a.student.name, a.student.displayName),
     }));
 
     if (!membership) {
@@ -71,7 +72,7 @@ export async function GET() {
 
     const members: LeagueMember[] = sorted.map((m, idx) => ({
       studentId:   m.studentId,
-      displayName: m.student.displayName ?? m.student.name.split(' ')[0],
+      displayName: getDisplayName(m.student.name, m.student.displayName),
       avatarColor:  m.student.avatarColor,
       weeklyXP:    m.weeklyXP,
       rank:        m.rank ?? idx + 1,

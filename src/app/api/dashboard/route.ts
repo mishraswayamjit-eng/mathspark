@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getTopicsCached } from '@/lib/topicCache';
-import { TOPIC_ORDER, computeStreak } from '@/lib/sharedUtils';
+import { TOPIC_ORDER, computeStreak, buildTopicNameMap, buildLookupMap } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { computeWeeklyData, computeRecentActivity } from '@/lib/studentDashboard';
 
@@ -45,9 +45,9 @@ export async function GET() {
 
     if (!student) return NextResponse.json({ error: 'Student not found' }, { status: 404 });
 
-    const topicMap = new Map(allTopics.map((t) => [t.id, t.name]));
+    const topicMap = buildTopicNameMap(allTopics);
 
-    const progressMap = new Map(progress.map((p) => [p.topicId, p]));
+    const progressMap = buildLookupMap(progress, 'topicId');
     const gradeTopics = allTopics.filter((t) => t.grade === student.grade);
     const topics = gradeTopics
       .sort((a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id))

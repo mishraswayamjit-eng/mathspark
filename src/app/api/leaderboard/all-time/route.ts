@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { getDisplayName } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
 // GET /api/leaderboard/all-time
@@ -19,7 +20,7 @@ export async function GET() {
 
     const members = top.map((s, idx) => ({
       studentId:   s.id,
-      displayName: s.displayName ?? s.name.split(' ')[0],
+      displayName: getDisplayName(s.name, s.displayName),
       avatarColor:  s.avatarColor,
       totalXP:     s.totalLifetimeXP,
       tier:        s.currentLeagueTier,
@@ -42,7 +43,7 @@ export async function GET() {
         });
         myEntry = {
           studentId:   me.id,
-          displayName: me.displayName ?? me.name.split(' ')[0],
+          displayName: getDisplayName(me.name, me.displayName),
           avatarColor:  me.avatarColor,
           totalXP:     me.totalLifetimeXP,
           tier:        me.currentLeagueTier,
