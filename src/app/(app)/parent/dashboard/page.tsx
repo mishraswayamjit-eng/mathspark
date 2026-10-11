@@ -35,6 +35,9 @@ export default function ParentDashboard() {
   const router = useRouter();
   const [children, setChildren] = useState<Child[]>([]);
   const [loading,  setLoading]  = useState(true);
+  const [confirmId, setConfirmId] = useState<string | null>(null);
+  const [busyId,    setBusyId]    = useState<string | null>(null);
+  const [removeError, setRemoveError] = useState<string | null>(null);
 
   useEffect(() => {
     if (status === 'unauthenticated') router.replace('/auth/login');
@@ -54,6 +57,25 @@ export default function ParentDashboard() {
         <div className="w-8 h-8 border-4 border-duo-green border-t-transparent rounded-full animate-spin" />
       </div>
     );
+  }
+
+  async function removeChild(childId: string) {
+    setBusyId(childId);
+    setRemoveError(null);
+    try {
+      const res = await fetch(`/api/parent/children/${childId}`, { method: 'DELETE' });
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error ?? 'Could not remove child. Please try again.');
+      }
+      setChildren((prev) => prev.filter((c) => c.id !== childId));
+      setConfirmId(null);
+    } catch (err) {
+      logError('[parent/dashboard] remove child', err);
+      setRemoveError(err instanceof Error ? err.message : 'Could not remove child. Please try again.');
+    } finally {
+      setBusyId(null);
+    }
   }
 
   async function loginAsChild(childId: string, childName: string, childGrade: number) {
@@ -158,7 +180,8 @@ export default function ParentDashboard() {
 
                     <button
                       onClick={() => loginAsChild(child.id, child.name, child.grade)}
-                      className="bg-duo-green hover:bg-duo-green-dark text-white text-xs font-extrabold px-3 py-2 rounded-xl transition-colors whitespace-nowrap"
+                      disabled={busyId === child.id}
+                      className="bg-duo-green hover:bg-duo-green-dark text-white text-xs font-extrabold px-3 py-2 rounded-xl transition-colors whitespace-nowrap disabled:opacity-50"
                     >
                       Practice →
                     </button>
@@ -174,6 +197,40 @@ export default function ParentDashboard() {
                       </Link>
                     </div>
                   )}
+
+                  <div className="mt-3 flex flex-col items-end gap-1">
+                    {confirmId === child.id ? (
+                      <div className="flex items-center gap-2">
+                        <span className="text-white/60 text-xs">Remove {child.name}?</span>
+                        <button
+                          onClick={() => removeChild(child.id)}
+                          disabled={busyId === child.id}
+                          aria-label={`Confirm remove ${child.name}`}
+                          className="text-duo-red text-xs font-extrabold px-3 min-h-[48px] rounded-lg hover:bg-duo-red/10 transition-colors disabled:opacity-50"
+                        >
+                          {busyId === child.id ? 'Removing…' : 'Yes, remove'}
+                        </button>
+                        <button
+                          onClick={() => { setConfirmId(null); setRemoveError(null); }}
+                          disabled={busyId === child.id}
+                          className="text-white/60 text-xs font-semibold px-3 min-h-[48px] rounded-lg hover:text-white/80 transition-colors disabled:opacity-50"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    ) : (
+                      <button
+                        onClick={() => { setConfirmId(child.id); setRemoveError(null); }}
+                        aria-label={`Remove ${child.name}`}
+                        className="text-white/60 text-xs font-semibold min-h-[48px] px-2 hover:text-duo-red transition-colors"
+                      >
+                        Remove
+                      </button>
+                    )}
+                    {confirmId === child.id && removeError && (
+                      <p className="text-duo-red text-xs font-semibold">{removeError}</p>
+                    )}
+                  </div>
                 </div>
               );
             })}
