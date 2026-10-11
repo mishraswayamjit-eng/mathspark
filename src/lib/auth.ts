@@ -3,6 +3,20 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import bcrypt from 'bcryptjs';
 import { prisma } from '@/lib/db';
 
+/**
+ * Lazy getter for NEXTAUTH_SECRET — read at request time, not module init.
+ * This avoids the module-load order issue where env vars from .env aren't
+ * yet attached on Vercel cold start. Throws so NextAuth surfaces a
+ * "Configuration" error rather than silently signing with `undefined`.
+ */
+function getNextAuthSecret(): string {
+  const secret = process.env.NEXTAUTH_SECRET;
+  if (!secret) {
+    throw new Error('NEXTAUTH_SECRET is not set — configure it in your Vercel env vars.');
+  }
+  return secret;
+}
+
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
@@ -18,7 +32,9 @@ export const authOptions: NextAuthOptions = {
           const parent = await prisma.parent.findUnique({
             where: { email: credentials.email.toLowerCase().trim() },
           });
-          if (!parent) return null;
+          // Treat soft-deleted accounts as if they don't exist so a deleted
+          // user cannot resurrect their session by re-entering credentials.
+          if (!parent || parent.deletedAt) return null;
 
           const valid = await bcrypt.compare(credentials.password, parent.passwordHash);
           if (!valid) return null;
@@ -51,5 +67,8 @@ export const authOptions: NextAuthOptions = {
     signIn: '/auth/login',
     error:  '/auth/login',
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  // Lazy getter ensures we read the env var at request time, not module init time.
+  get secret() {
+    return getNextAuthSecret();
+  },
 };

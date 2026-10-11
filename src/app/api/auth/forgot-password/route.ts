@@ -30,8 +30,10 @@ export async function POST(req: Request) {
     const emailClean = email.toLowerCase().trim();
     const parent = await prisma.parent.findUnique({ where: { email: emailClean } });
 
-    // Always return success to prevent email enumeration
-    if (!parent) {
+    // Always return success to prevent email enumeration. Soft-deleted
+    // accounts are treated as not-found so we don't email reset links to
+    // closed accounts.
+    if (!parent || parent.deletedAt) {
       return NextResponse.json({ ok: true });
     }
 

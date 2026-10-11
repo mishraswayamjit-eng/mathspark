@@ -36,9 +36,10 @@ export async function POST(req: Request) {
 
   const student = await prisma.student.findUnique({
     where: { id: studentId },
-    select: { id: true, name: true, grade: true, pinHash: true },
+    select: { id: true, name: true, grade: true, pinHash: true, deletedAt: true },
   });
-  if (!student) {
+  // Soft-deleted students are treated as not-found so they cannot log in.
+  if (!student || student.deletedAt) {
     return NextResponse.json({ error: 'Student not found' }, { status: 404 });
   }
 

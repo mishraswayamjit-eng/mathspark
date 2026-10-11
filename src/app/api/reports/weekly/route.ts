@@ -2,18 +2,11 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { prisma } from '@/lib/db';
 import { buildReportEmail, type ReportTopic } from '@/lib/emailReport';
-import { TOPIC_ORDER, computeStreak } from '@/lib/sharedUtils';
+import { TOPIC_ORDER, computeStreak, buildLookupMap } from '@/lib/sharedUtils';
+import { weeklyCorrectCount } from '@/lib/leaderboard';
 import { verifyCronSecret } from '@/lib/adminAuth';
 
 export const dynamic = 'force-dynamic';
-
-function weeklyCorrectCount(
-  attempts: Array<{ isCorrect: boolean; createdAt: Date }>,
-): number {
-  const cutoff = new Date();
-  cutoff.setDate(cutoff.getDate() - 7);
-  return attempts.filter((a) => a.isCorrect && a.createdAt >= cutoff).length;
-}
 
 // GET /api/reports/weekly — called by Vercel Cron (Sunday 04:30 UTC = 10:00 AM IST)
 // Protected by Authorization: Bearer {CRON_SECRET}
@@ -35,7 +28,7 @@ export async function GET(req: Request) {
 
   // Fetch all students with a parent email
   const students = await prisma.student.findMany({
-    where: { parentEmail: { not: null } },
+    where: { parentEmail: { not: null }, deletedAt: null },
     select: { id: true, name: true, parentEmail: true },
   });
 
@@ -89,7 +82,7 @@ export async function GET(req: Request) {
         const attempts = attemptsByStudent.get(student.id) ?? [];
 
         const correctAttempts = attempts.filter((a) => a.isCorrect);
-        const progressMap = new Map(progress.map((p) => [p.topicId, p]));
+        const progressMap = buildLookupMap(progress, 'topicId');
         const topics: ReportTopic[] = allTopics
           .sort((a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id))
           .map((t) => {

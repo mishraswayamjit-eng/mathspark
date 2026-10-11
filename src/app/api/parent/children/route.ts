@@ -14,7 +14,7 @@ export async function GET() {
     }
 
     const children = await prisma.student.findMany({
-      where: { parentId: session.user.id },
+      where: { parentId: session.user.id, deletedAt: null },
       select: {
         id:                      true,
         name:                    true,
@@ -62,7 +62,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Grade must be between 2 and 9.' }, { status: 400 });
     }
 
-    const count = await prisma.student.count({ where: { parentId: session.user.id } });
+    const count = await prisma.student.count({ where: { parentId: session.user.id, deletedAt: null } });
     if (count >= 5) {
       return NextResponse.json({ error: 'Maximum 5 children per account.' }, { status: 400 });
     }

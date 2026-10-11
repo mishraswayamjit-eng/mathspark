@@ -3,18 +3,11 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { prisma } from '@/lib/db';
 import { buildReportEmail, type ReportTopic } from '@/lib/emailReport';
-import { TOPIC_ORDER, computeStreak } from '@/lib/sharedUtils';
+import { TOPIC_ORDER, computeStreak, buildLookupMap } from '@/lib/sharedUtils';
+import { weeklyCorrectCount } from '@/lib/leaderboard';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 
 export const dynamic = 'force-dynamic';
-
-function weeklyCorrectCount(
-  attempts: Array<{ isCorrect: boolean; createdAt: Date }>,
-): number {
-  const cutoff = new Date();
-  cutoff.setDate(cutoff.getDate() - 7);
-  return attempts.filter((a) => a.isCorrect && a.createdAt >= cutoff).length;
-}
 
 // POST /api/reports/send — on-demand email to parent
 // Authenticated via cookie — no body needed
@@ -29,9 +22,9 @@ export async function POST(req: Request) {
 
   const student = await prisma.student.findUnique({
     where: { id: studentId },
-    select: { id: true, name: true, parentEmail: true, lastReportSentAt: true },
+    select: { id: true, name: true, parentEmail: true, lastReportSentAt: true, deletedAt: true },
   });
-  if (!student) return NextResponse.json({ error: 'Student not found' }, { status: 404 });
+  if (!student || student.deletedAt) return NextResponse.json({ error: 'Student not found' }, { status: 404 });
 
   if (!student.parentEmail) {
     return NextResponse.json({ error: 'No parent email configured' }, { status: 400 });
@@ -61,7 +54,7 @@ export async function POST(req: Request) {
   ]);
 
   const correctAttempts = attempts.filter((a) => a.isCorrect);
-  const progressMap = new Map(progress.map((p) => [p.topicId, p]));
+  const progressMap = buildLookupMap(progress, 'topicId');
   const topics: ReportTopic[] = allTopics
     .sort((a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id))
     .map((t) => {

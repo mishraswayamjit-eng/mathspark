@@ -1,25 +1,16 @@
 import { NextResponse } from 'next/server';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
 import { getTopicsCached } from '@/lib/topicCache';
-import { TOPIC_ORDER, computeStreak } from '@/lib/sharedUtils';
+import { TOPIC_ORDER, computeStreak, getDisplayName, buildLookupMap } from '@/lib/sharedUtils';
+import { computeWeeklyData } from '@/lib/studentDashboard';
 
 export const dynamic = 'force-dynamic';
 
-function computeWeeklyData(attempts: Array<{ createdAt: Date }>) {
-  const today = new Date();
-  return Array.from({ length: 7 }, (_, i) => {
-    const d = new Date(today);
-    d.setDate(d.getDate() - (6 - i));
-    const dateStr = d.toDateString();
-    return {
-      date:  d.toLocaleDateString('en-IN', { weekday: 'short' }),
-      count: attempts.filter((a) => new Date(a.createdAt).toDateString() === dateStr).length,
-    };
-  });
-}
-
 // GET /api/parent/report/[studentId]
-// Public endpoint for share links — returns limited dashboard data (no PII).
+// Returns limited dashboard data — requires an authenticated parent
+// who owns this student (prevents IDOR via guessed studentIds).
 export async function GET(
   _req: Request,
   { params }: { params: { studentId: string } },
@@ -28,6 +19,20 @@ export async function GET(
 
   if (!studentId || typeof studentId !== 'string' || studentId.length > 30) {
     return NextResponse.json({ error: 'Invalid studentId' }, { status: 400 });
+  }
+
+  const session = await getServerSession(authOptions);
+  if (!session?.user?.id) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  // Ownership check: only the student's parent may view this report.
+  const owned = await prisma.student.findFirst({
+    where: { id: studentId, parentId: session.user.id, deletedAt: null },
+    select: { id: true },
+  });
+  if (!owned) {
+    return NextResponse.json({ error: 'Student not found' }, { status: 404 });
   }
 
   const [student, progress, attempts, allTopics] = await Promise.all([
@@ -53,7 +58,7 @@ export async function GET(
     return NextResponse.json({ error: 'Student not found' }, { status: 404 });
   }
 
-  const progressMap = new Map(progress.map((p) => [p.topicId, p]));
+  const progressMap = buildLookupMap(progress, 'topicId');
   const topics = allTopics
     .sort((a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id))
     .map((t) => {
@@ -69,7 +74,7 @@ export async function GET(
 
   return NextResponse.json(
     {
-      student: { name: student.displayName ?? student.name.split(' ')[0], grade: student.grade },
+      student: { name: getDisplayName(student.name, student.displayName), grade: student.grade },
       stats: {
         totalSolved:    attempts.filter((a) => a.isCorrect).length,
         topicsMastered: progress.filter((p) => p.mastery === 'Mastered').length,

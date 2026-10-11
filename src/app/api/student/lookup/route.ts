@@ -17,10 +17,20 @@ export async function GET(req: Request) {
 
     const parent = await prisma.parent.findUnique({
       where:  { email },
-      select: { id: true, children: { select: { id: true, name: true }, orderBy: { createdAt: 'asc' } } },
+      select: {
+        id: true,
+        deletedAt: true,
+        children: {
+          where:   { deletedAt: null },
+          select:  { id: true, name: true },
+          orderBy: { createdAt: 'asc' },
+        },
+      },
     });
 
-    if (!parent) return NextResponse.json({ children: [] });
+    // Soft-deleted parents are treated as not-found so deleted accounts
+    // can't be discovered or used to bypass child-PIN auth.
+    if (!parent || parent.deletedAt) return NextResponse.json({ children: [] });
 
     return NextResponse.json({ children: parent.children });
   } catch (err) {

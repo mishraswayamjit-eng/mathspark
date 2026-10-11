@@ -18,10 +18,17 @@ model Parent {
   phone            String?
   resetToken       String?
   resetTokenExpiry DateTime?
+  // Soft-delete marker. When set, the account is treated as removed
+  // (login blocked, child lookup hidden) but the row + its children are
+  // kept so accidental deletions can be reversed and so order/audit history
+  // is preserved.
+  deletedAt        DateTime?
   children         Student[]
   orders           Order[]
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
+
+  @@index([deletedAt])
 }
 
 // ── Subscription plans ─────────────────────────────────────────────────────
@@ -48,6 +55,8 @@ model Student {
   pinHash                 String?       // bcrypt hash of 4-digit student PIN
   grade                   Int           @default(4)
   createdAt               DateTime      @default(now())
+  // Soft-delete marker. See Parent.deletedAt for rationale.
+  deletedAt               DateTime?
   parentEmail             String?                         // legacy — for weekly email reports
   lastReportSentAt        DateTime?                       // rate-limit on-demand sends
   // ── New parent/subscription fields ──
@@ -96,6 +105,7 @@ model Student {
   lessonProgress          LessonProgress[]
 
   @@index([parentId])
+  @@index([deletedAt])
 }
 
 // ── Order (payment record) ─────────────────────────────────────────────────
@@ -105,7 +115,7 @@ model Order {
   parentId          String
   parent            Parent       @relation(fields: [parentId], references: [id])
   subscriptionId    String
-  subscription      Subscription @relation(fields: [subscriptionId], references: [id])
+  subscription      Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Restrict)
   studentId         String
   student           Student      @relation(fields: [studentId], references: [id], onDelete: Cascade)
   amountPaise       Int
@@ -250,6 +260,10 @@ model ChatMessage {
   session   ConversationSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
   role      String              // "user" | "assistant"
   content   String
+  // `true` when the assistant's response was cut short (max_tokens reached
+  // or the client disconnected mid-stream). Used by the UI to show a
+  // "(continue?)" affordance and by analytics to spot regressions.
+  truncated Boolean             @default(false)
   createdAt DateTime            @default(now())
 
   @@index([sessionId])
