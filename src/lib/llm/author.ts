@@ -20,6 +20,8 @@ export interface AuthorRequest {
   subTopic: string;
   difficulty: 'Easy' | 'Medium' | 'Hard';
   grade: number;
+  /** Existing question stems to steer away from (dedup / variety). */
+  avoidStems?: string[];
 }
 
 export interface AuthoredStep {
@@ -108,9 +110,26 @@ function normalize(raw: unknown): AuthoredQuestion {
   };
 }
 
+/** Per-difficulty depth expectations, so the question genuinely makes the student think. */
+const DEPTH_BY_DIFFICULTY: Record<AuthorRequest['difficulty'], string> = {
+  Easy: '2 clear solution steps, one core concept, with a small reasoning twist — never pure recall.',
+  Medium: '3–4 solution steps that combine two sub-skills.',
+  Hard: '4+ solution steps combining multiple concepts or requiring a non-obvious insight — true IPM-olympiad depth.',
+};
+
 /** Generate a single AI-authored question for the given slot. */
 export async function authorQuestion(req: AuthorRequest): Promise<AuthoredQuestion> {
-  const system = `You are an expert math question writer creating IPM-style multiple-choice practice for a ${gradeDescriptor(req.grade)}. Write ONE original, factually-correct, unambiguous question.
+  const system = `You are an expert IPM (International Primary Math) olympiad question author writing original multiple-choice practice for a ${gradeDescriptor(req.grade)}.
+
+Write ONE original, factually-correct, unambiguous question with real DEPTH — it must make the student genuinely THINK, not just recall a fact.
+
+DEPTH REQUIREMENTS:
+- Prefer a rich, real-world word problem with an Indian context (rupees, cricket, festivals, trains, markets) over bare computation.
+- Depth for THIS question (${req.difficulty}): ${DEPTH_BY_DIFFICULTY[req.difficulty]}
+- Each of the 3 wrong options must be the result of a SPECIFIC, plausible student mistake (e.g. forgot to convert units, used the wrong operation, off-by-one). No random or silly distractors.
+- Each misconception field names the exact mistake that leads to that option.
+- hint1 = strategic nudge; hint2 = the first procedural step; hint3 = a worked example of a SIMILAR (not identical) problem — never reveal this question's final answer.
+- stepByStep must show every step a student needs, using latex where it clarifies the math.
 
 ${kidSafeRules(req.grade)}
 
@@ -123,13 +142,20 @@ Return ONLY a JSON object (no prose, no markdown fences) with EXACTLY these keys
   "stepByStep": [ { "step": number, "text": string, "latex"?: string } ],
   "misconceptionA": string, "misconceptionB": string, "misconceptionC": string, "misconceptionD": string
 }
-The correctAnswer MUST be the genuinely correct option. Each misconception explains why a student might wrongly pick that option. Exactly one option is correct.`;
+The correctAnswer MUST be the genuinely correct option. Exactly one option is correct.`;
 
-  const userPrompt = `Topic: ${req.topicName}\nSub-topic: ${req.subTopic || 'general'}\nDifficulty: ${req.difficulty}\n\nWrite the question now as a single JSON object.`;
+  const avoidBlock =
+    req.avoidStems && req.avoidStems.length
+      ? `\n\nDo NOT duplicate or lightly reword any of these existing questions:\n${req.avoidStems
+          .map((s) => `- ${s.slice(0, 140)}`)
+          .join('\n')}`
+      : '';
+
+  const userPrompt = `Topic: ${req.topicName}\nSub-topic: ${req.subTopic || 'general'}\nDifficulty: ${req.difficulty}${avoidBlock}\n\nWrite the question now as a single JSON object.`;
 
   const { text } = await complete({
     model: 'opus',
-    maxTokens: 1200,
+    maxTokens: 1600,
     temperature: 0.8,
     system,
     messages: [{ role: 'user', content: userPrompt }],
