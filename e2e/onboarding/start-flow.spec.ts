@@ -5,7 +5,7 @@ publicTest.describe('Onboarding — Welcome screen', () => {
     await page.goto('/start', { waitUntil: 'domcontentloaded' });
 
     await publicExpect(
-      page.getByText(/welcome to mathspark/i).first(),
+      page.getByText(/math superpowers/i).first(),
     ).toBeVisible({ timeout: 10_000 });
 
     await publicExpect(
@@ -17,7 +17,7 @@ publicTest.describe('Onboarding — Welcome screen', () => {
     await page.goto('/start', { waitUntil: 'domcontentloaded' });
 
     const hasTime = await page
-      .getByText(/5 minutes/i)
+      .getByText(/2 minutes/i)
       .first()
       .isVisible({ timeout: 5_000 })
       .catch(() => false);
@@ -96,7 +96,7 @@ publicTest.describe('Onboarding — Grade selection', () => {
   });
 });
 
-publicTest.describe('Onboarding — Name input', () => {
+publicTest.describe('Onboarding — Goal selection', () => {
   publicTest.beforeEach(async ({ page }) => {
     await page.goto('/start', { waitUntil: 'domcontentloaded' });
     // Welcome → Let's Go
@@ -109,38 +109,33 @@ publicTest.describe('Onboarding — Name input', () => {
     await page.waitForTimeout(1_000);
   });
 
-  publicTest('name screen shows input and Start Quiz button', async ({ page }) => {
+  publicTest('goal screen shows prompt and goal options', async ({ page }) => {
+    // After grade selection the flow asks what the student is preparing for.
     await publicExpect(
-      page.getByText(/what should i call you/i).first(),
+      page.getByText(/what are you preparing for/i).first(),
     ).toBeVisible({ timeout: 10_000 });
 
-    const nameInput = page.locator('input[placeholder*="first name"], input[aria-label*="first name"]');
-    await publicExpect(nameInput.first()).toBeVisible({ timeout: 5_000 });
-
-    const startQuiz = page.locator('button').filter({ hasText: /start quiz|→/i }).first();
-    await publicExpect(startQuiz).toBeVisible({ timeout: 5_000 });
+    for (const goal of [/IPM Exam/i, /School Maths/i, /Just for Fun/i]) {
+      await publicExpect(page.getByText(goal).first()).toBeVisible({ timeout: 5_000 });
+    }
   });
 
-  publicTest('Start Quiz button disabled until name entered', async ({ page }) => {
-    const nameInput = page.locator('input[placeholder*="first name"], input[aria-label*="first name"]').first();
-    const hasInput = await nameInput.isVisible({ timeout: 10_000 }).catch(() => false);
+  publicTest('selecting a goal advances past the goal screen', async ({ page }) => {
+    await publicExpect(
+      page.getByText(/what are you preparing for/i).first(),
+    ).toBeVisible({ timeout: 10_000 });
 
-    if (!hasInput) {
-      publicTest.skip(true, 'Name input not found');
-      return;
-    }
+    await page.getByText(/IPM Exam/i).first().click();
+    // Goal selection auto-advances after a short Sparky message.
+    await page.waitForTimeout(1_500);
 
-    // Button should be disabled when empty
-    const startBtn = page.locator('button').filter({ hasText: /start quiz/i }).first();
-    const isDisabled = await startBtn.isDisabled().catch(() => false);
-    publicExpect(isDisabled).toBeTruthy();
+    const advanced = await page
+      .getByText(/what are you preparing for/i)
+      .first()
+      .isVisible({ timeout: 2_000 })
+      .catch(() => false);
 
-    // Type a name
-    await nameInput.fill('TestStudent');
-    await page.waitForTimeout(300);
-
-    // Button should be enabled now
-    await publicExpect(startBtn).toBeEnabled({ timeout: 3_000 });
+    publicExpect(advanced).toBeFalsy();
   });
 });
 

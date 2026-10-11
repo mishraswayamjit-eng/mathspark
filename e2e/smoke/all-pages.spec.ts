@@ -39,7 +39,7 @@ async function expectNoJSErrors(
 
 publicTest.describe('Public pages', () => {
   publicTest('/ — landing page', async ({ page }) => {
-    await expectNoJSErrors(page, '/', '15 minutes a day');
+    await expectNoJSErrors(page, '/', 'Try a real IPM question');
   });
 
   publicTest('/auth/login', async ({ page }) => {
@@ -63,7 +63,7 @@ publicTest.describe('Public pages', () => {
   });
 
   publicTest('/start — onboarding', async ({ page }) => {
-    await expectNoJSErrors(page, '/start', 'Welcome to MathSpark');
+    await expectNoJSErrors(page, '/start', 'math superpowers');
   });
 });
 
