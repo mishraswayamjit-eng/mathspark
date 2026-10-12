@@ -121,6 +121,15 @@ stays deterministic. Specifically:
   `AI_TEXTBOOK_SERVE` (default OFF), ranked below real sources in adaptive
   selection, and — per product decision — allowed in mock tests only when the
   flag is on.
+- **Equal surfacing (`EQUAL_SURFACING`, default OFF) removes source-quality
+  *ranking* only, never a safety gate.** When ON, adaptive practice draws
+  uniformly across all *eligible* sources (no hand_crafted > … > ai_generated
+  tiering) and `ai_generated` becomes mock-eligible (both `EQUAL_SURFACING` and
+  `AI_QUESTIONS_SERVE` must be on). Verification (printed→sanityCheck,
+  answerless→self-consistency, 5b sanity self-check) and the per-source serve
+  kill-switches (`AI_QUESTIONS_SERVE` / `AI_TEXTBOOK_SERVE`) still fully apply —
+  a source is surfaced only when its own flag already allows it. PYQ pools stay
+  reserved for dedicated PYQ papers regardless.
 
 All LLM usage goes through the single `src/lib/llm/` seam and degrades gracefully
 (static fallback) when `ANTHROPIC_API_KEY` is unset.

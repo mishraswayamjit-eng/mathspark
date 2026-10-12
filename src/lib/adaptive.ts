@@ -1,4 +1,5 @@
 import { prisma, USABLE_QUESTION_FILTER, aiSourceFilter } from './db';
+import { isEqualSurfacingEnabled } from './llm/featureFlags';
 import type { Difficulty } from '@/types';
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -28,9 +29,15 @@ function weightedDiff(pEasy: number, pMedium: number, _pHard: number): Difficult
  * IPM-textbook questions are real exam stems, so they outrank synthetic
  * `ai_generated` questions — but they sit below our curated/seed sources since
  * their teaching layer is LLM-generated. Authored questions remain last-resort.
+ *
+ * When `EQUAL_SURFACING` is on, this tiering is bypassed: every eligible question
+ * (the pool is already serve-flag filtered upstream) is equally likely, so AI and
+ * real exam questions surface the same.
  */
 function pickBest<T extends { source: string }>(pool: T[]): T | null {
   if (pool.length === 0) return null;
+
+  if (isEqualSurfacingEnabled()) return pool[Math.floor(Math.random() * pool.length)];
 
   const crafted = pool.filter((q) => q.source === 'hand_crafted');
   if (crafted.length > 0) return crafted[Math.floor(Math.random() * crafted.length)];

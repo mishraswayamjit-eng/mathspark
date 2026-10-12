@@ -1,6 +1,6 @@
 import { MS_PER_DAY } from '@/lib/timeConstants';
 import { prisma, USABLE_QUESTION_FILTER } from '@/lib/db';
-import { isAiTextbookServeEnabled } from '@/lib/llm/featureFlags';
+import { isAiTextbookServeEnabled, isAiQuestionsServeEnabled, isEqualSurfacingEnabled } from '@/lib/llm/featureFlags';
 import { getTopicsForGrade } from '@/data/topicTree';
 import { shuffle } from '@/lib/shuffle';
 import type { TestType, PYQYear } from '@/types';
@@ -180,15 +180,17 @@ export async function generatePYQPaper(year: PYQYear) {
 const PYQ_SOURCES = ['previous_year_2016', 'previous_year_2017', 'previous_year_2018', 'previous_year_2019'];
 
 /**
- * Sources excluded from generated mock papers. PYQ pools are reserved for the
- * dedicated PYQ papers; synthetic `ai_generated` questions are NEVER used in
- * mocks (exam realism + safety). IPM-textbook questions are real exam stems, so
- * — per product decision — they ARE allowed in mocks, but only once their serve
- * flag (`AI_TEXTBOOK_SERVE`) is on; otherwise they stay excluded like any other
- * dormant generated content.
+ * Sources excluded from generated mock papers. PYQ pools are always reserved for
+ * the dedicated PYQ papers. Generated sources are gated by their serve flags:
+ *   - `ipm_textbook` (real exam stems) — allowed once `AI_TEXTBOOK_SERVE` is on.
+ *   - `ai_generated` (synthetic) — normally barred from mocks for exam realism;
+ *     allowed only when `EQUAL_SURFACING` AND `AI_QUESTIONS_SERVE` are both on
+ *     (the product decision to stop discriminating by source quality).
  */
 function mockExcludedSources(): string[] {
-  const excluded = [...PYQ_SOURCES, 'ai_generated'];
+  const excluded = [...PYQ_SOURCES];
+  const serveAiInMocks = isEqualSurfacingEnabled() && isAiQuestionsServeEnabled();
+  if (!serveAiInMocks) excluded.push('ai_generated');
   if (!isAiTextbookServeEnabled()) excluded.push('ipm_textbook');
   return excluded;
 }
@@ -205,6 +207,7 @@ const QUESTION_SELECT = {
 
 async function generateIPMPaper(studentId: string, grade: number) {
   const cfg = TEST_CONFIG.ipm;
+  const equalSurfacing = isEqualSurfacingEnabled();
 
   // Avoid questions used in last 3 tests
   const recentTests = await prisma.mockTest.findMany({
@@ -270,7 +273,7 @@ async function generateIPMPaper(studentId: string, grade: number) {
   function pickOne(slot: BlueprintSlot, difficulty: string, used: Set<string>): QRow | null {
     const key = buildPoolKey(slot, difficulty);
     let pool = poolMap.get(key) ?? [];
-    let candidates = pool.filter(q => !used.has(q.id) && !recentIds.has(q.id) && q.source === 'hand_crafted');
+    let candidates = pool.filter(q => !used.has(q.id) && !recentIds.has(q.id) && (equalSurfacing || q.source === 'hand_crafted'));
     if (!candidates.length) candidates = pool.filter(q => !used.has(q.id) && !recentIds.has(q.id));
     if (!candidates.length) candidates = pool.filter(q => !used.has(q.id));
     // Fallback: try the broader pool (ignoring subTopicKey)
@@ -368,6 +371,7 @@ export async function generateMockPaper(
   if (type === 'ipm')        return generateIPMPaper(studentId, grade);
 
   const cfg = TEST_CONFIG[type as 'quick' | 'half' | 'full'];
+  const equalSurfacing = isEqualSurfacingEnabled();
   const topicIds = requestedTopicIds?.length ? requestedTopicIds : ALL_TOPIC_IDS;
 
   // Student progress for weak/strong ordering
@@ -415,7 +419,7 @@ export async function generateMockPaper(
   function pickQuestion(topicId: string, difficulty: string, used: Set<string>): QRow | null {
     const key  = `${topicId}__${difficulty}`;
     const pool = poolMap.get(key) ?? [];
-    let candidates = pool.filter((q) => !used.has(q.id) && !recentIds.has(q.id) && q.source === 'hand_crafted');
+    let candidates = pool.filter((q) => !used.has(q.id) && !recentIds.has(q.id) && (equalSurfacing || q.source === 'hand_crafted'));
     if (!candidates.length) candidates = pool.filter((q) => !used.has(q.id) && !recentIds.has(q.id));
     if (!candidates.length) candidates = pool.filter((q) => !used.has(q.id));
     if (!candidates.length) candidates = pool;

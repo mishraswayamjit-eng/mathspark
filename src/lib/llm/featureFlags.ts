@@ -56,3 +56,19 @@ export function isAiSurfaceEnabled(): boolean {
 export function isAiTextbookServeEnabled(): boolean {
   return flag('AI_TEXTBOOK_SERVE');
 }
+
+/**
+ * Equal surfacing: when ON, all *eligible* question sources (hand_crafted,
+ * pdf_extracted, variants, ipm_textbook, ai_generated, …) are surfaced with no
+ * source-quality tiering — adaptive practice draws uniformly across sources and
+ * generated sources become mock-eligible (subject to their own serve flags).
+ *
+ * It removes source-quality ranking bias in adaptive practice and additionally
+ * lifts the mock-test exclusion of `ai_generated` (still requiring its own serve
+ * flag). It does NOT bypass any safety gate: verification still runs at
+ * import/author time, and a source is eligible only when its serve flag allows it
+ * (`AI_QUESTIONS_SERVE` / `AI_TEXTBOOK_SERVE`). Default OFF.
+ */
+export function isEqualSurfacingEnabled(): boolean {
+  return flag('EQUAL_SURFACING');
+}
