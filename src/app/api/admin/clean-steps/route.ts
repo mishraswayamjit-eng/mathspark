@@ -40,7 +40,7 @@ function cleanSteps(raw: unknown): Step[] | null {
     if (m) {
       changed = true;
       // Keep only the content before the marker, trimmed of dangling joiners.
-      const kept = text.slice(0, m.index).replace(/[\s\u2014\-:;,.]+$/u, '').trim();
+      const kept = text.slice(0, m.index).replace(/[\s\u2014\-:;,.]+$/, '').trim();
       if (kept) {
         out.push({ step: out.length + 1, text: kept, ...(latex ? { latex } : {}) });
       }
