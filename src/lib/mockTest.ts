@@ -94,9 +94,8 @@ function safeParseSteps(json: string | null): unknown[] {
 // Builds a blueprint from topicTree examWeight values.
 // Uses subTopicKey for filtering within the gradeN pool.
 
-function buildGradeBlueprint(grade: number): BlueprintSlot[] {
+function buildGradeBlueprint(grade: number, totalQuestions: number = TEST_CONFIG.ipm.totalQuestions): BlueprintSlot[] {
   const topics = getTopicsForGrade(grade).filter(t => !t.id.endsWith('_ipm'));
-  const totalQuestions = TEST_CONFIG.ipm.totalQuestions; // 40
 
   // Calculate raw counts from examWeight, then adjust to hit totalQuestions.
   // Floor of 1 (not 2) so grades with many topics — e.g. Grade 5's full 21-topic
@@ -206,8 +205,18 @@ const QUESTION_SELECT = {
   subTopic: true,
 } as const;
 
-async function generateIPMPaper(studentId: string, grade: number) {
-  const cfg = TEST_CONFIG.ipm;
+interface PaperConfig {
+  totalQuestions: number;
+  timeLimitMs: number;
+}
+
+/**
+ * Subtopic-blueprint paper generator. Used for the IPM paper and — for keyed
+ * grades (2-3, 5-9), which are a single DB pool subdivided by subTopicKey — for
+ * quick/half/full too, since the chapter-based distribution collapses to one
+ * question for those grades. `cfg` scales the blueprint to the test size.
+ */
+async function generateBlueprintPaper(studentId: string, grade: number, cfg: PaperConfig) {
   const equalSurfacing = isEqualSurfacingEnabled();
 
   // Avoid questions used in last 3 tests
@@ -222,7 +231,7 @@ async function generateIPMPaper(studentId: string, grade: number) {
   );
 
   // All grades now use blueprint-based topic distribution
-  const blueprint = grade === 4 ? MOCK_BLUEPRINT : buildGradeBlueprint(grade);
+  const blueprint = grade === 4 ? MOCK_BLUEPRINT : buildGradeBlueprint(grade, cfg.totalQuestions);
 
   // Collect all DB topic IDs needed
   const topicIds = Array.from(new Set(blueprint.map(b => b.topicId)));
@@ -314,7 +323,7 @@ async function generateIPMPaper(studentId: string, grade: number) {
   const ordered = [...shuffle(easy), ...shuffle(medium), ...shuffle(hard)].slice(0, cfg.totalQuestions);
 
   if (ordered.length < cfg.totalQuestions) {
-    console.warn(`[mockTest] IPM paper generated ${ordered.length}/${cfg.totalQuestions} questions — insufficient pool for grade ${grade}`);
+    console.warn(`[mockTest] blueprint paper generated ${ordered.length}/${cfg.totalQuestions} questions — insufficient pool for grade ${grade}`);
   }
 
   return {
@@ -369,9 +378,16 @@ export async function generateMockPaper(
 ) {
   // Delegate to specialised generators
   if (type === 'pyq' && year) return generatePYQPaper(year);
-  if (type === 'ipm')        return generateIPMPaper(studentId, grade);
+  if (type === 'ipm')        return generateBlueprintPaper(studentId, grade, TEST_CONFIG.ipm);
 
   const cfg = TEST_CONFIG[type as 'quick' | 'half' | 'full'];
+
+  // Keyed grades (2-3, 5-9) are a single DB pool subdivided by subTopicKey. The
+  // chapter-based distribution below assumes many DB topic IDs, so for these
+  // grades it collapses to a 1-question paper. Route quick/half/full through the
+  // same subtopic blueprint as the IPM paper, scaled to this test's size.
+  if (grade !== 4) return generateBlueprintPaper(studentId, grade, cfg);
+
   const equalSurfacing = isEqualSurfacingEnabled();
   const topicIds = requestedTopicIds?.length ? requestedTopicIds : ALL_TOPIC_IDS;
 
