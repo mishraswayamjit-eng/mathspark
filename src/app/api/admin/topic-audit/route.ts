@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getTopicsForGrade } from '@/data/topicTree';
 import { verifySecret } from '@/lib/adminAuth';
+import { matchesSubTopicKey } from '@/lib/sharedUtils';
 
 export const dynamic = 'force-dynamic';
 
@@ -61,12 +62,10 @@ export async function GET(req: NextRequest) {
         // Filter questions for this topic
         let topicQs = allQuestions.filter(q => q.topicId === topic.dbTopicId);
 
-        // If subTopicKey exists, further filter by subTopic ILIKE
+        // If subTopicKey exists, further filter by word-boundary subTopic match
         if (topic.subTopicKey) {
-          const key = topic.subTopicKey.toLowerCase();
-          topicQs = topicQs.filter(q =>
-            (q.subTopic ?? '').toLowerCase().includes(key)
-          );
+          const key = topic.subTopicKey;
+          topicQs = topicQs.filter(q => matchesSubTopicKey(q.subTopic, key));
         }
 
         const total = topicQs.length;

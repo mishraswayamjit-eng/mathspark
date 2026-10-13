@@ -3,6 +3,7 @@ import { prisma, USABLE_QUESTION_FILTER } from '@/lib/db';
 import { isAiTextbookServeEnabled, isAiQuestionsServeEnabled, isEqualSurfacingEnabled } from '@/lib/llm/featureFlags';
 import { getTopicsForGrade } from '@/data/topicTree';
 import { shuffle } from '@/lib/shuffle';
+import { matchesSubTopicKey } from '@/lib/sharedUtils';
 import type { TestType, PYQYear } from '@/types';
 
 // ── Config ────────────────────────────────────────────────────────────────────
@@ -253,7 +254,7 @@ async function generateIPMPaper(studentId: string, grade: number) {
         if (q.topicId !== slot.topicId) return false;
         if (q.difficulty !== diff) return false;
         if (slot.subTopicKey) {
-          return (q.subTopic ?? '').toLowerCase().includes(slot.subTopicKey.toLowerCase());
+          return matchesSubTopicKey(q.subTopic, slot.subTopicKey);
         }
         return true;
       });

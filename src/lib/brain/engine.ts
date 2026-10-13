@@ -2,6 +2,7 @@ import { MS_PER_DAY, MS_PER_HOUR } from '@/lib/timeConstants';
 import { prisma } from '@/lib/db';
 import { TOPIC_TREE, getTopicsForGrade } from '@/data/topicTree';
 import { parseStringArray } from '@/lib/jsonFields';
+import { matchesSubTopicKey } from '@/lib/sharedUtils';
 
 // ── Shared Types ──────────────────────────────────────────────────────────────
 
@@ -119,7 +120,7 @@ export async function computeTopicMastery(
     const topicAttempts = allAttempts.filter((a) => {
       if (a.question.topicId !== node.dbTopicId) return false;
       if (node.subTopicKey) {
-        return a.question.subTopic.toLowerCase().includes(node.subTopicKey.toLowerCase());
+        return matchesSubTopicKey(a.question.subTopic, node.subTopicKey);
       }
       return true;
     });

@@ -7,6 +7,7 @@ import { isAiQuestionsEnabled, isAiQuestionsSanityEnabled } from '@/lib/llm/feat
 import { authorQuestion, sanityCheck } from '@/lib/llm/author';
 import { persistAuthoredQuestion } from '@/lib/llm/persistAuthored';
 import { getTopicsForGrade } from '@/data/topicTree';
+import { matchesSubTopicKey } from '@/lib/sharedUtils';
 import { validateBody, ValidationError } from '@/lib/validateBody';
 
 export const dynamic = 'force-dynamic';
@@ -124,14 +125,20 @@ export async function POST(req: Request) {
     for (const difficulty of DIFFICULTIES) {
       const target = targets[difficulty];
 
-      const existing = await prisma.question.count({
-        where: {
-          topicId: node.dbTopicId,
-          difficulty,
-          source: 'ai_generated',
-          subTopic: { contains: key, mode: 'insensitive' },
-        },
-      });
+      // Count existing ai_generated with a word-boundary match so a "ratio" slot
+      // doesn't count "...Order of Ope(ratio)ns (bodmas)" rows (which would make
+      // the slot look full and skip generation). DB `contains` is the superset.
+      const existing = (
+        await prisma.question.findMany({
+          where: {
+            topicId: node.dbTopicId,
+            difficulty,
+            source: 'ai_generated',
+            subTopic: { contains: key, mode: 'insensitive' },
+          },
+          select: { subTopic: true },
+        })
+      ).filter((q) => matchesSubTopicKey(q.subTopic, key)).length;
 
       const slot: SlotResult = {
         topicId: node.dbTopicId,
@@ -158,11 +165,14 @@ export async function POST(req: Request) {
             topicId: node.dbTopicId,
             subTopic: { contains: key, mode: 'insensitive' },
           },
-          select: { questionText: true },
+          select: { questionText: true, subTopic: true },
           orderBy: { id: 'desc' },
-          take: 12,
+          take: 24,
         })
-      ).map((q) => q.questionText);
+      )
+        .filter((q) => matchesSubTopicKey(q.subTopic, key))
+        .slice(0, 12)
+        .map((q) => q.questionText);
 
       for (let i = 0; i < needed; i++) {
         if (overBudget()) {

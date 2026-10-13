@@ -35,6 +35,31 @@ export function computeStreak(
 }
 
 /**
+ * Match a question's `subTopic` against a topic node's `subTopicKey` using a
+ * word-boundary (prefix) test instead of a raw substring. This prevents
+ * cross-contamination where a key appears INSIDE a larger word — e.g. the key
+ * "ratio" must not match "Ope(ratio)ns" / "Mensu(ratio)n", and "angle" must not
+ * match "Tri(angle)s". The key must start the string or follow a non-alphanumeric
+ * character; it need NOT end on a boundary, so stems like "divisib" still match
+ * "divisibility" and "square" still matches "squares". An empty key matches all
+ * (mirrors the "no filter" case). Case-insensitive.
+ */
+export function matchesSubTopicKey(
+  subTopic: string | null | undefined,
+  key: string,
+): boolean {
+  if (!key) return true;
+  const hay = (subTopic ?? '').toLowerCase();
+  const needle = key.toLowerCase();
+  for (let from = 0; ; ) {
+    const idx = hay.indexOf(needle, from);
+    if (idx === -1) return false;
+    if (idx === 0 || !/[a-z0-9]/.test(hay[idx - 1])) return true;
+    from = idx + 1;
+  }
+}
+
+/**
  * Resolve a leaderboard/report display name: prefer student.displayName,
  * otherwise fall back to the first token of the full name.
  */

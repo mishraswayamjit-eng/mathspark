@@ -1,5 +1,6 @@
 import { prisma, USABLE_QUESTION_FILTER, aiSourceFilter } from './db';
 import { isEqualSurfacingEnabled } from './llm/featureFlags';
+import { matchesSubTopicKey } from './sharedUtils';
 import type { Difficulty } from '@/types';
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -93,13 +94,15 @@ export async function getNextQuestion(
   const tomorrowStart = new Date(todayStart);
   tomorrowStart.setDate(tomorrowStart.getDate() + 1);
 
-  // Build optional subTopic filter
+  // Build optional subTopic filter. The DB `contains` is a cheap SUPERSET used to
+  // keep `take: 200` relevant; precise word-boundary matching is applied in-app
+  // below so keys like "ratio" don't leak "Ope(ratio)ns" / "angle" → "Tri(angle)s".
   const subTopicFilter = subTopicKey
     ? { subTopic: { contains: subTopicKey, mode: 'insensitive' as const } }
     : {};
 
   // Parallel DB reads
-  const [allQuestions, sessionAttempts, progress, misconceptionAttempts] = await Promise.all([
+  const [fetchedQuestions, sessionAttempts, progress, misconceptionAttempts] = await Promise.all([
     prisma.question.findMany({
       where: { topicId, ...subTopicFilter, ...USABLE_QUESTION_FILTER, ...aiSourceFilter() },
       take: 200,
@@ -129,6 +132,12 @@ export async function getNextQuestion(
       select: { question: { select: { subTopic: true } } },
     }),
   ]);
+
+  // Precise word-boundary filter on the served pool (the DB query above only
+  // narrowed it to a substring superset).
+  const allQuestions = subTopicKey
+    ? fetchedQuestions.filter((q) => matchesSubTopicKey(q.subTopic, subTopicKey))
+    : fetchedQuestions;
 
   // Compute boosted subTopics (3+ misconception attempts → higher priority)
   const subTopicMiscCounts = new Map<string, number>();
