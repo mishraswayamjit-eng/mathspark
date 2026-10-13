@@ -27,6 +27,7 @@ answer before any row can reach a child.
 """
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -54,6 +55,28 @@ CHAPTER_MAP = {
 
 OPTION_LETTERS = {"a": "A", "b": "B", "c": "C", "d": "D"}
 
+# Stems that depend on a diagram/figure/layout which did NOT survive digitization
+# (the YAML carries only the question text, not the printed figure). The import
+# route's LLM verification cannot validate these from text alone — it just
+# rubber-stamps the model's own INVENTED figure — so a wrong "verified" answer can
+# reach a child. Drop them here at convert time. Markers chosen from the live
+# cleanup: they catch every figure-dependent stem found while sparing self-contained
+# look-alikes ("series given below" carries its series inline; conceptual
+# "linear pair" word problems need no figure). "figure out" is explicitly excluded.
+FIGURE_MARKERS = (
+    re.compile(r"\bfigure\b(?! out)", re.I),  # "in the figure", "figure given below"
+    re.compile(r"\bshaded\b", re.I),          # "area of the shaded region"
+    re.compile(r"\bdiagram\b", re.I),
+    re.compile(r"problem given below", re.I),  # cryptarithm layout (add/sub problem)
+    re.compile(r"\bshown (?:below|above|alongside)\b", re.I),
+    re.compile(r"\badjoining\b", re.I),
+)
+
+
+def is_figure_dependent(text):
+    """True when the stem references a figure/layout that isn't embedded in text."""
+    return any(p.search(text) for p in FIGURE_MARKERS)
+
 
 def normalize_answer(raw):
     """Printed option label -> 'A'..'D'; anything ambiguous/missing -> None."""
@@ -74,6 +97,7 @@ def main():
     out = []
     skipped_chapters = {}
     skipped_options = 0
+    skipped_figure = 0
     with_answer = 0
     answerless = 0
 
@@ -109,6 +133,12 @@ def main():
                       file=sys.stderr)
                 continue
 
+            if is_figure_dependent(text):
+                skipped_figure += 1
+                print(f"WARNING: {ref} is figure/layout-dependent "
+                      f"(figure not in text) - skipping", file=sys.stderr)
+                continue
+
             printed = normalize_answer(q.get("printed_answer_option"))
             if printed:
                 with_answer += 1
@@ -138,6 +168,8 @@ def main():
     print(f"  answerless (-> fresh-solve on import): {answerless}")
     if skipped_options:
         print(f"  skipped (bad text/options): {skipped_options}")
+    if skipped_figure:
+        print(f"  skipped (figure/layout-dependent): {skipped_figure}")
     if skipped_chapters:
         print(f"  skipped unmapped chapters: {skipped_chapters}")
 
