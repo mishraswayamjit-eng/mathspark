@@ -117,3 +117,33 @@ export async function POST(req: NextRequest) {
   }
   return NextResponse.json({ mode: 'apply', topicId, source, scanned, updated });
 }
+
+export async function DELETE(req: NextRequest) {
+  const { searchParams } = new URL(req.url);
+  if (!verifySecret(searchParams.get('secret'))) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+  const topicId = searchParams.get('topicId') ?? 'grade5';
+  const source = searchParams.get('source') ?? 'ai_generated';
+
+  const { scanned, affected } = await loadCandidates(topicId, source);
+  const ids = affected.map((a) => a.id);
+
+  // Remove dependent rows first (no cascade on these relations), then the questions.
+  const [attempts, responses, questions] = await prisma.$transaction([
+    prisma.attempt.deleteMany({ where: { questionId: { in: ids } } }),
+    prisma.mockTestResponse.deleteMany({ where: { questionId: { in: ids } } }),
+    prisma.question.deleteMany({ where: { id: { in: ids } } }),
+  ]);
+
+  return NextResponse.json({
+    mode: 'delete',
+    topicId,
+    source,
+    scanned,
+    matched: ids.length,
+    deletedQuestions: questions.count,
+    deletedAttempts: attempts.count,
+    deletedMockResponses: responses.count,
+  });
+}
