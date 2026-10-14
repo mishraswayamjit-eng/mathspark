@@ -139,7 +139,7 @@ export default function SkillDrillTopicsPage() {
         <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white font-extrabold text-lg">Skill Drills</h1>
-          <p className="text-white/70 text-xs font-medium">16 topics &middot; 5 mastery levels each</p>
+          <p className="text-white/70 text-xs font-medium">{topicList.length} topics &middot; master step by step</p>
         </div>
         <span className="text-2xl">🎯</span>
       </div>

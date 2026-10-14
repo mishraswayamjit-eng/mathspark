@@ -83,7 +83,7 @@ export default function StrategyBankPage() {
         <Link href="/chapters" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white font-extrabold text-lg">Strategy Bank</h1>
-          <p className="text-white/70 text-xs font-medium">35 exam strategies &middot; Solve like a topper!</p>
+          <p className="text-white/70 text-xs font-medium">{strategies.length} exam strategies &middot; Solve like a topper!</p>
         </div>
         <span className="text-2xl">🧠</span>
       </div>
