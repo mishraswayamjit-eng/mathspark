@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 const NAV = [
   { href: '/home',        emoji: '🏠', label: 'Home'     },
   { href: '/practice',    emoji: '⚡', label: 'Practice' },
+  { href: '/chat',        emoji: '💬', label: 'Sparky'   },
   { href: '/progress',    emoji: '📊', label: 'Progress' },
   { href: '/flashcards',  emoji: '🃏', label: 'Cards'    },
   { href: '/profile',     emoji: '👤', label: 'Profile'  },
@@ -46,7 +47,9 @@ export default function BottomNav() {
           const active = href === '/practice'
             ? pathname.startsWith('/practice') || pathname.startsWith('/chapters') || pathname.startsWith('/learn') || pathname.startsWith('/exam-prep') || pathname.startsWith('/test')
             : href === '/home'
-            ? pathname.startsWith('/home') || pathname.startsWith('/chat')
+            ? pathname.startsWith('/home')
+            : href === '/chat'
+            ? pathname.startsWith('/chat')
             : href === '/progress'
             ? pathname.startsWith('/progress') || pathname.startsWith('/leaderboard')
             : href === '/flashcards'

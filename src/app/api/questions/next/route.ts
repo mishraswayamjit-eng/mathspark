@@ -28,9 +28,12 @@ export async function GET(req: Request) {
     }
 
     const stepByStep = parseUnknownArray(q.stepByStep);
-    // Strip correctAnswer — grading is done server-side via /api/attempts
-    const { correctAnswer: _ca, ...rest } = q;
-    return NextResponse.json({ ...rest, stepByStep });
+    // correctAnswer is included: adaptive practice grades per-question on the
+    // client for instant feedback, offline play, option highlighting, and the
+    // post-answer reveal. The authoritative record (XP, progress, mastery) is
+    // still re-graded server-side in /api/attempts, which never trusts the
+    // client's isCorrect flag.
+    return NextResponse.json({ ...q, stepByStep });
   } catch (err) {
     logError('[questions/next] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

@@ -139,7 +139,7 @@ export function WrongPanel({
   }, [question.id, selected, misconception]);
 
   const correctIdx    = ['A', 'B', 'C', 'D'].indexOf(question.correctAnswer);
-  const correctText   = question[`option${correctIdx + 1}` as keyof Question] as string;
+  const correctText   = (correctIdx >= 0 ? (question[`option${correctIdx + 1}` as keyof Question] as string) : '') ?? '';
   const textHasLatex  = correctText.includes('\\');
 
   return (

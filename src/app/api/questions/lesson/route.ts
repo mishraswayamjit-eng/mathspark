@@ -73,9 +73,10 @@ export async function GET(req: Request) {
     return NextResponse.json(
       final.map((q) => {
         const stepByStep = parseUnknownArray(q.stepByStep);
-        // Strip correctAnswer — grading is done server-side via /api/attempts
-        const { correctAnswer: _ca, ...rest } = q;
-        return { ...rest, stepByStep };
+        // correctAnswer is included for client-side per-question grading (instant
+        // feedback / offline play / reveal). /api/attempts still re-grades
+        // server-side and is the authoritative record.
+        return { ...q, stepByStep };
       }),
     );
   } catch (err) {
