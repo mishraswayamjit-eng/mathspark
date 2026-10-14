@@ -144,6 +144,31 @@ describe('getNextQuestion', () => {
     expect(easyCount).toBeGreaterThan(5);
   });
 
+  it('whole-grade keyed practice rotates away from the over-served sub-topic', async () => {
+    // Served pool is tagged with a DIFFERENT sub-topic than the skewed one, so a
+    // non-null pick can only come from a less-served key → proves rotation.
+    prisma.question.findMany.mockResolvedValue([
+      { id: 'm1', topicId: 'grade5', subTopic: 'Grade 5 — Multiplication & Division', difficulty: 'Easy', source: 'auto_generated' },
+    ]);
+    // Default [] covers every session/misconception read inside pickForSubtopic
+    // (rotation may probe several keys before one yields a question).
+    prisma.attempt.findMany
+      .mockResolvedValue([])
+      // 1st call: rotation pre-query → today's attempts all skewed to place value
+      .mockResolvedValueOnce([
+        { question: { subTopic: 'Grade 5 — Numbers (place value)' } },
+        { question: { subTopic: 'Grade 5 — Numbers (place value)' } },
+        { question: { subTopic: 'Grade 5 — Numbers (place value)' } },
+      ]);
+    prisma.progress.findUnique.mockResolvedValue(null);
+
+    const result = await getNextQuestion('s1', 'grade5');
+    expect(result).not.toBeNull();
+    // Rotation must not land on the over-served 'place value' key.
+    expect(result!.subTopic.toLowerCase()).not.toContain('place value');
+    expect(result!.id).toBe('m1');
+  });
+
   it('5 right in a row → raises difficulty', async () => {
     prisma.question.findMany.mockResolvedValue([
       makeQuestion('q1', 'Easy'),

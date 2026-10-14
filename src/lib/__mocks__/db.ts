@@ -47,3 +47,7 @@ export const USABLE_QUESTION_FILTER = {
   correctAnswer: { not: '' },
   option1: { not: '' },
 };
+
+export function aiSourceFilter(): { source?: { notIn: string[] } } {
+  return {};
+}
