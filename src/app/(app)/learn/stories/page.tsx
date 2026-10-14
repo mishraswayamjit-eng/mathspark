@@ -63,9 +63,11 @@ export default function MathStoriesPage() {
   const [showAnswer, setShowAnswer] = useState<Set<string>>(new Set());
 
   useEffect(() => {
-    const qs = selectedCategory ? `?category=${selectedCategory}` : '';
+    const params = new URLSearchParams();
+    if (selectedCategory) params.set('category', selectedCategory);
+    params.set('grade', localStorage.getItem('mathspark_student_grade') || '4');
     setLoading(true);
-    fetch(`/api/stories${qs}`)
+    fetch(`/api/stories?${params.toString()}`)
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => setStories(data.stories ?? []))
       .catch((err) => logError('[fetch]', err))

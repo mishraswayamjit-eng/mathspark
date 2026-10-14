@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import * as fs from 'fs';
 import * as path from 'path';
+import { gradeInRange } from '@/lib/sharedUtils';
 
 export const dynamic = 'force-dynamic';
 
@@ -23,6 +24,8 @@ export async function GET(req: Request) {
   const topicId = searchParams.get('topic');
   const levelId = searchParams.get('level');
   const sessionNum = searchParams.get('session');
+  const gradeParam = searchParams.get('grade');
+  const grade = gradeParam ? parseInt(gradeParam, 10) : NaN;
 
   const data = loadData() as {
     meta: Record<string, unknown>;
@@ -36,13 +39,36 @@ export async function GET(req: Request) {
 
   // No params — return topics + meta only
   if (!topicId) {
-    return NextResponse.json({ meta: data.meta, topics: data.topics });
+    if (Number.isNaN(grade)) {
+      return NextResponse.json({ meta: data.meta, topics: data.topics });
+    }
+    // Keep only levels whose gradeRange covers the grade; drop topics left empty.
+    const topics: Record<string, Record<string, unknown>> = {};
+    for (const [key, topic] of Object.entries(data.topics)) {
+      const levels = topic.levels as Record<string, { gradeRange?: unknown }> | undefined;
+      if (!levels) {
+        topics[key] = topic;
+        continue;
+      }
+      const keptLevels = Object.fromEntries(
+        Object.entries(levels).filter(([, lv]) => gradeInRange(lv.gradeRange, grade)),
+      );
+      if (Object.keys(keptLevels).length > 0) {
+        topics[key] = { ...topic, levels: keptLevels };
+      }
+    }
+    return NextResponse.json({ meta: data.meta, topics });
   }
 
   // Topic + level — return matching sessions (without questions)
   if (topicId && levelId && !sessionNum) {
     const sessions = data.sessions
-      .filter((s: Record<string, unknown>) => s.topicId === topicId && s.levelId === levelId)
+      .filter(
+        (s: Record<string, unknown>) =>
+          s.topicId === topicId &&
+          s.levelId === levelId &&
+          (Number.isNaN(grade) || gradeInRange(s.gradeRange, grade)),
+      )
       .map((s: Record<string, unknown>) => {
         const { questions, answerKey, ...rest } = s;
         return rest;

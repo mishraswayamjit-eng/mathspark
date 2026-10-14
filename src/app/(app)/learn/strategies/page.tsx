@@ -53,9 +53,11 @@ export default function StrategyBankPage() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   useEffect(() => {
-    const qs = selectedCategory ? `?category=${selectedCategory}` : '';
+    const params = new URLSearchParams();
+    if (selectedCategory) params.set('category', selectedCategory);
+    params.set('grade', localStorage.getItem('mathspark_student_grade') || '4');
     setLoading(true);
-    fetch(`/api/strategies${qs}`)
+    fetch(`/api/strategies?${params.toString()}`)
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
         setStrategies(data.strategies ?? []);

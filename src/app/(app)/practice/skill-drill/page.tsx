@@ -92,7 +92,8 @@ export default function SkillDrillTopicsPage() {
   useEffect(() => {
     setProgress(loadProgress());
 
-    fetch('/api/skill-drills')
+    const grade = localStorage.getItem('mathspark_student_grade') || '4';
+    fetch(`/api/skill-drills?grade=${grade}`)
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d: { meta: Meta; topics: Record<string, TopicInfo> }) => {
         setMeta(d.meta);

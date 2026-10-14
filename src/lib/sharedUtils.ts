@@ -60,6 +60,21 @@ export function matchesSubTopicKey(
 }
 
 /**
+ * Whether a `gradeRange` tag covers a given grade. Content data files tag entries
+ * with either an inclusive `[min, max]` pair (strategies, skill-drill levels) or
+ * an enumerated grade list (stories) — both are always contiguous, so a single
+ * `min..max` span test is correct for either shape. Untagged entries (missing or
+ * short `gradeRange`) are treated as grade-agnostic and always match, preserving
+ * the pre-filter behaviour for content that was never tagged.
+ */
+export function gradeInRange(gradeRange: unknown, grade: number): boolean {
+  if (!Array.isArray(gradeRange)) return true;
+  const nums = gradeRange.filter((n): n is number => typeof n === 'number');
+  if (nums.length < 2) return true;
+  return Math.min(...nums) <= grade && grade <= Math.max(...nums);
+}
+
+/**
  * Resolve a leaderboard/report display name: prefer student.displayName,
  * otherwise fall back to the first token of the full name.
  */

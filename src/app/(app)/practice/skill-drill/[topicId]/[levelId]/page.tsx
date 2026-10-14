@@ -205,9 +205,10 @@ export default function SkillDrillSessionPage() {
   useEffect(() => {
     setProgress(loadProgress());
 
+    const grade = localStorage.getItem('mathspark_student_grade') || '4';
     Promise.all([
-      fetch('/api/skill-drills').then((r) => { if (!r.ok) throw new Error('Skill drills fetch failed'); return r.json(); }),
-      fetch(`/api/skill-drills?topic=${topicId}&level=${levelId}`).then((r) => { if (!r.ok) throw new Error('Session fetch failed'); return r.json(); }),
+      fetch(`/api/skill-drills?grade=${grade}`).then((r) => { if (!r.ok) throw new Error('Skill drills fetch failed'); return r.json(); }),
+      fetch(`/api/skill-drills?topic=${topicId}&level=${levelId}&grade=${grade}`).then((r) => { if (!r.ok) throw new Error('Session fetch failed'); return r.json(); }),
     ])
       .then(([topicsData, sessionsData]) => {
         const t = topicsData.topics?.[topicId] as TopicInfo | undefined;

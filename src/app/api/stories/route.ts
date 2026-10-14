@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import * as fs from 'fs';
 import * as path from 'path';
+import { gradeInRange } from '@/lib/sharedUtils';
 
 export const dynamic = 'force-dynamic';
 
@@ -23,6 +24,7 @@ export async function GET(req: Request) {
   const id = searchParams.get('id');
   const category = searchParams.get('category');
   const topic = searchParams.get('topic');
+  const gradeParam = searchParams.get('grade');
 
   const data = loadData() as {
     meta: Record<string, unknown>;
@@ -47,6 +49,10 @@ export async function GET(req: Request) {
   }
   if (topic) {
     stories = stories.filter((s) => s.topicId === topic);
+  }
+  const grade = gradeParam ? parseInt(gradeParam, 10) : NaN;
+  if (!Number.isNaN(grade)) {
+    stories = stories.filter((s) => gradeInRange(s.gradeRange, grade));
   }
 
   return NextResponse.json({
