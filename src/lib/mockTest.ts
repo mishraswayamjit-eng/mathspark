@@ -94,16 +94,21 @@ function safeParseSteps(json: string | null): unknown[] {
 // Builds a blueprint from topicTree examWeight values.
 // Uses subTopicKey for filtering within the gradeN pool.
 
-function buildGradeBlueprint(grade: number, totalQuestions: number = TEST_CONFIG.ipm.totalQuestions): BlueprintSlot[] {
+function buildGradeBlueprint(grade: number, cfg: PaperConfig): BlueprintSlot[] {
   const topics = getTopicsForGrade(grade).filter(t => !t.id.endsWith('_ipm'));
+  const totalQuestions = cfg.totalQuestions;
 
   // Calculate raw counts from examWeight, then adjust to hit totalQuestions.
-  // Floor of 1 (not 2) so grades with many topics — e.g. Grade 5's full 21-topic
-  // IPM syllabus — don't over-floor trivial topics and flatten the weighting.
+  // Floor of 1 keeps every topic represented when the paper is at least as long
+  // as the topic list; when it's shorter (e.g. a 15-question quick test over
+  // Grade 5's 21 topics) use a floor of 0 so the counts can still sum to exactly
+  // the target — covering the highest-weight topics instead of forcing all-to-1
+  // (which would otherwise over-represent trivial topics and get truncated).
+  const floor = totalQuestions >= topics.length ? 1 : 0;
   const raw = topics.map(t => ({
     topicId: t.dbTopicId,
     subTopicKey: t.subTopicKey,
-    rawCount: Math.max(1, Math.round(t.examWeight * totalQuestions)),
+    rawCount: Math.max(floor, Math.round(t.examWeight * totalQuestions)),
     examWeight: t.examWeight,
   }));
 
@@ -111,7 +116,7 @@ function buildGradeBlueprint(grade: number, totalQuestions: number = TEST_CONFIG
   let sum = raw.reduce((s, r) => s + r.rawCount, 0);
   while (sum > totalQuestions) {
     // Shrink the largest slot (that's above the floor)
-    const largest = raw.filter(r => r.rawCount > 1).sort((a, b) => b.rawCount - a.rawCount)[0];
+    const largest = raw.filter(r => r.rawCount > floor).sort((a, b) => b.rawCount - a.rawCount)[0];
     if (!largest) break;
     largest.rawCount--;
     sum--;
@@ -123,19 +128,34 @@ function buildGradeBlueprint(grade: number, totalQuestions: number = TEST_CONFIG
     sum++;
   }
 
-  return raw.map(r => {
-    const easy = Math.round(r.rawCount * 0.23);
-    const hard = Math.round(r.rawCount * 0.30);
-    const medium = r.rawCount - easy - hard;
-    return {
-      topicId: r.topicId,
-      subTopicKey: r.subTopicKey,
-      count: r.rawCount,
-      easy,
-      medium,
-      hard,
-    };
-  });
+  // Keep only slots that carry questions, then hand out the paper's difficulty
+  // budget (cfg.easy/medium/hard) GLOBALLY across them. Per-slot rounding
+  // collapses low-count slots to all-medium (e.g. a 15-question quick paper where
+  // every slot holds one question); a global pass preserves the intended
+  // easy/medium/hard mix regardless of how small each slot is.
+  const slots: BlueprintSlot[] = raw
+    .filter(r => r.rawCount > 0)
+    .map(r => ({ topicId: r.topicId, subTopicKey: r.subTopicKey, count: r.rawCount, easy: 0, medium: 0, hard: 0 }));
+
+  const remaining: Record<'easy' | 'medium' | 'hard', number> = {
+    easy: cfg.easy, medium: cfg.medium, hard: cfg.hard,
+  };
+  for (const slot of slots) {
+    for (let i = 0; i < slot.count; i++) {
+      // Draw from the largest remaining bucket so the global mix matches cfg and
+      // difficulties spread across topics; fall back to medium once exhausted.
+      const pick = (['easy', 'medium', 'hard'] as const)
+        .reduce((best, d) => (remaining[d] > remaining[best] ? d : best), 'medium' as 'easy' | 'medium' | 'hard');
+      if (remaining[pick] > 0) {
+        remaining[pick]--;
+        slot[pick]++;
+      } else {
+        slot.medium++;
+      }
+    }
+  }
+
+  return slots;
 }
 
 // ── PYQ Paper Generator ───────────────────────────────────────────────────────
@@ -208,6 +228,9 @@ const QUESTION_SELECT = {
 interface PaperConfig {
   totalQuestions: number;
   timeLimitMs: number;
+  easy: number;
+  medium: number;
+  hard: number;
 }
 
 /**
@@ -231,7 +254,7 @@ async function generateBlueprintPaper(studentId: string, grade: number, cfg: Pap
   );
 
   // All grades now use blueprint-based topic distribution
-  const blueprint = grade === 4 ? MOCK_BLUEPRINT : buildGradeBlueprint(grade, cfg.totalQuestions);
+  const blueprint = grade === 4 ? MOCK_BLUEPRINT : buildGradeBlueprint(grade, cfg);
 
   // Collect all DB topic IDs needed
   const topicIds = Array.from(new Set(blueprint.map(b => b.topicId)));
