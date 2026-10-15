@@ -1,0 +1,753 @@
+{
+  "id": "squares-roots",
+  "topic": "Squares & Roots",
+  "emoji": "🔲",
+  "color": "#A855F7",
+  "gradeRange": [
+    5,
+    9
+  ],
+  "description": "Square numbers, square roots and their patterns",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Square Numbers",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "A number times itself",
+      "lessons": [
+        {
+          "id": "sq-l1-les1",
+          "title": "What is a Square Number?",
+          "intro": "A square number is what you get when you multiply a number by itself — like the area of a square!",
+          "visual": "",
+          "explanation": [
+            "4 squared = 4 x 4 = 16.",
+            "We write it as 4 with a small 2: the exponent means 'times itself'.",
+            "Square numbers: 1, 4, 9, 16, 25, ..."
+          ],
+          "rule": "A square number = a number multiplied by itself.",
+          "tip": "Picture a square grid: side x side.",
+          "steps": [
+            {
+              "text": "Multiply the number by itself.",
+              "notation": "4^2 = 4 \\times 4"
+            },
+            {
+              "text": "That gives the square number.",
+              "notation": "4^2 = 16",
+              "tip": "Like the area of a 4x4 square."
+            }
+          ]
+        },
+        {
+          "id": "sq-l1-les2",
+          "title": "Squares as Areas",
+          "intro": "The area of a square equals its side multiplied by itself — a square number!",
+          "visual": "",
+          "explanation": [
+            "A tile with side 6 cm has area 6 x 6 = 36 sq cm.",
+            "Side squared gives the area.",
+            "That is why we call it 'squared'."
+          ],
+          "rule": "Area of a square = side x side.",
+          "tip": "Side 5 gives area 25."
+        },
+        {
+          "id": "sq-l1-les3",
+          "title": "The First Squares",
+          "intro": "Learning the first few square numbers by heart is very handy.",
+          "visual": "",
+          "explanation": [
+            "1, 4, 9, 16, 25, 36, 49, 64, 81, 100.",
+            "These are 1 through 10 squared.",
+            "7 squared is 49; 10 squared is 100."
+          ],
+          "rule": "Memorise squares of 1 to 10.",
+          "tip": "Say them in order to spot the pattern."
+        },
+        {
+          "id": "sq-l1-les4",
+          "title": "Odd Number Pattern",
+          "intro": "Square numbers grow by adding the next odd number each time — a lovely pattern.",
+          "visual": "",
+          "explanation": [
+            "1, then +3 = 4, then +5 = 9, then +7 = 16.",
+            "The gaps are the odd numbers.",
+            "This shows why squares grow faster and faster."
+          ],
+          "rule": "Each square = previous square + next odd number.",
+          "tip": "Gaps go 3, 5, 7, 9, ..."
+        },
+        {
+          "id": "sq-l1-les5",
+          "title": "Squares in Problems",
+          "intro": "Squares appear whenever something is arranged in a square grid.",
+          "visual": "",
+          "explanation": [
+            "A 9 x 9 garden has 81 square metres.",
+            "Side squared gives the total.",
+            "Look for 'square-shaped' clues."
+          ],
+          "rule": "Square-shaped layouts use square numbers.",
+          "tip": "Count the side, then square it."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sq-l1-q1",
+          "question": "What is 4 squared?",
+          "answer": "16",
+          "hint": "4 x 4.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq-l1-q2",
+          "question": "What is 5 squared?",
+          "answer": "25",
+          "hint": "5 x 5.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq-l1-q3",
+          "question": "What is 7 squared?",
+          "answer": "49",
+          "hint": "7 x 7.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq-l1-q4",
+          "question": "What is 10 squared?",
+          "answer": "100",
+          "hint": "10 x 10.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq-l1-q5",
+          "question": "A square tile has a side of 6 cm. What is its area in square cm?",
+          "answer": "36",
+          "hint": "Side x side.",
+          "difficulty": "stretch",
+          "story": "Tiling a bathroom floor.",
+          "isWord": true
+        },
+        {
+          "id": "sq-l1-q6",
+          "question": "A square garden has a side of 9 m. What is its area in square metres?",
+          "answer": "81",
+          "hint": "Side x side.",
+          "difficulty": "stretch",
+          "story": "Planning a vegetable garden.",
+          "isWord": true
+        },
+        {
+          "id": "sq-l1-q7",
+          "question": "What is 12 squared?",
+          "answer": "144",
+          "hint": "12 x 12.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sq-l1-q8",
+          "question": "What is 15 squared?",
+          "answer": "225",
+          "hint": "15 x 15.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Squares to 20",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Teen squares",
+      "lessons": [
+        {
+          "id": "sq-l2-les1",
+          "title": "Squares Beyond Ten",
+          "intro": "Once you know squares to 10, you can learn the next ones up to 20.",
+          "visual": "",
+          "explanation": [
+            "11 squared = 121.",
+            "12 squared = 144; 13 squared = 169.",
+            "These come up often in exams."
+          ],
+          "rule": "Learn squares from 11 to 20 too.",
+          "tip": "Build on your 1-10 squares.",
+          "steps": [
+            {
+              "text": "Multiply the teen number by itself.",
+              "notation": "11^2 = 11 \\times 11"
+            },
+            {
+              "text": "That gives 121.",
+              "notation": "11^2 = 121",
+              "tip": "Worth memorising."
+            }
+          ]
+        },
+        {
+          "id": "sq-l2-les2",
+          "title": "Breaking Down Squares",
+          "intro": "You can work out a square by splitting the number.",
+          "visual": "",
+          "explanation": [
+            "13 x 13 = 13 x 10 + 13 x 3 = 130 + 39 = 169.",
+            "Split into tens and ones.",
+            "Add the two parts."
+          ],
+          "rule": "Split a number to multiply it by itself.",
+          "tip": "Use (tens + ones) parts."
+        },
+        {
+          "id": "sq-l2-les3",
+          "title": "Bigger Square Areas",
+          "intro": "Large square rooms and plots use these bigger squares.",
+          "visual": "",
+          "explanation": [
+            "A 20 m square plot has area 400 sq m.",
+            "An 18 m square has area 324 sq m.",
+            "Side squared, as always."
+          ],
+          "rule": "Side squared gives even large square areas.",
+          "tip": "20 squared is 400."
+        },
+        {
+          "id": "sq-l2-les4",
+          "title": "Spotting Squares to 400",
+          "intro": "Knowing squares to 20 lets you recognise perfect squares up to 400.",
+          "visual": "",
+          "explanation": [
+            "256 is 16 squared.",
+            "289 is 17 squared.",
+            "Recognising them speeds up your work."
+          ],
+          "rule": "Squares to 20 cover perfect squares up to 400.",
+          "tip": "289, 324, 361, 400 are 17, 18, 19, 20 squared."
+        },
+        {
+          "id": "sq-l2-les5",
+          "title": "Teen Square Master",
+          "intro": "Practise all the teen squares until they are automatic.",
+          "visual": "",
+          "explanation": [
+            "14 squared = 196; 16 squared = 256.",
+            "17 squared = 289; 19 squared = 361.",
+            "Speed here pays off in exams."
+          ],
+          "rule": "Master every square from 11 to 20.",
+          "tip": "Quiz yourself out of order."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sq-l2-q1",
+          "question": "What is 11 squared?",
+          "answer": "121",
+          "hint": "11 x 11.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq-l2-q2",
+          "question": "What is 13 squared?",
+          "answer": "169",
+          "hint": "13 x 13.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq-l2-q3",
+          "question": "What is 14 squared?",
+          "answer": "196",
+          "hint": "14 x 14.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq-l2-q4",
+          "question": "What is 16 squared?",
+          "answer": "256",
+          "hint": "16 x 16.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq-l2-q5",
+          "question": "A square room has a side of 20 m. What is its area in square metres?",
+          "answer": "400",
+          "hint": "Side x side.",
+          "difficulty": "stretch",
+          "story": "Measuring a large hall.",
+          "isWord": true
+        },
+        {
+          "id": "sq-l2-q6",
+          "question": "A square board has a side of 18 cm. What is its area in square cm?",
+          "answer": "324",
+          "hint": "Side x side.",
+          "difficulty": "stretch",
+          "story": "Making a chess-style board.",
+          "isWord": true
+        },
+        {
+          "id": "sq-l2-q7",
+          "question": "What is 17 squared?",
+          "answer": "289",
+          "hint": "17 x 17.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sq-l2-q8",
+          "question": "What is 19 squared?",
+          "answer": "361",
+          "hint": "19 x 19.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Square Roots",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Undoing a square",
+      "lessons": [
+        {
+          "id": "sq-l3-les1",
+          "title": "What is a Square Root?",
+          "intro": "A square root undoes squaring — it asks 'what number times itself gives this?'",
+          "visual": "",
+          "explanation": [
+            "The square root of 36 is 6, because 6 x 6 = 36.",
+            "Square root is the opposite of squaring.",
+            "We use the radical sign for it."
+          ],
+          "rule": "A square root is the number that was squared.",
+          "tip": "Ask: what times itself gives this?",
+          "steps": [
+            {
+              "text": "Find the number that was squared.",
+              "notation": "\\sqrt{36} = ?"
+            },
+            {
+              "text": "6 x 6 = 36, so the root is 6.",
+              "notation": "\\sqrt{36} = 6",
+              "tip": "Root undoes square."
+            }
+          ]
+        },
+        {
+          "id": "sq-l3-les2",
+          "title": "Roots of Perfect Squares",
+          "intro": "Perfect squares have whole-number square roots.",
+          "visual": "",
+          "explanation": [
+            "Square root of 49 is 7.",
+            "Square root of 81 is 9.",
+            "If you memorised the squares, you know the roots!"
+          ],
+          "rule": "Roots of perfect squares are whole numbers.",
+          "tip": "Use your squares table in reverse."
+        },
+        {
+          "id": "sq-l3-les3",
+          "title": "Roots as Sides",
+          "intro": "The square root of an area gives the side of a square.",
+          "visual": "",
+          "explanation": [
+            "A square field of 64 sq m has a side of 8 m.",
+            "Root of the area = the side.",
+            "Squaring the side gives back the area."
+          ],
+          "rule": "Side of a square = square root of its area.",
+          "tip": "Root of 64 is 8."
+        },
+        {
+          "id": "sq-l3-les4",
+          "title": "Using the Squares Table",
+          "intro": "Finding roots is just reading your squares table backwards.",
+          "visual": "",
+          "explanation": [
+            "100 -> 10, 121 -> 11.",
+            "Know the square, know the root.",
+            "This is why learning squares pays off twice."
+          ],
+          "rule": "Read squares backwards to get roots.",
+          "tip": "Root of 100 is 10."
+        },
+        {
+          "id": "sq-l3-les5",
+          "title": "Root Master",
+          "intro": "Practise roots of all perfect squares up to 225.",
+          "visual": "",
+          "explanation": [
+            "Square root of 144 is 12.",
+            "Square root of 225 is 15.",
+            "Instant recall is the goal."
+          ],
+          "rule": "Master roots of squares up to 225.",
+          "tip": "Pair each square with its root."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sq-l3-q1",
+          "question": "What is the square root of 36?",
+          "answer": "6",
+          "hint": "6 x 6 = 36.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq-l3-q2",
+          "question": "What is the square root of 49?",
+          "answer": "7",
+          "hint": "7 x 7 = 49.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq-l3-q3",
+          "question": "What is the square root of 81?",
+          "answer": "9",
+          "hint": "9 x 9 = 81.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq-l3-q4",
+          "question": "What is the square root of 100?",
+          "answer": "10",
+          "hint": "10 x 10 = 100.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq-l3-q5",
+          "question": "A square field has an area of 64 square metres. What is the length of one side in metres?",
+          "answer": "8",
+          "hint": "Root of the area.",
+          "difficulty": "stretch",
+          "story": "Fencing a square field.",
+          "isWord": true
+        },
+        {
+          "id": "sq-l3-q6",
+          "question": "A square of tiles covers 121 square cm. What is the length of one side in cm?",
+          "answer": "11",
+          "hint": "Root of 121.",
+          "difficulty": "stretch",
+          "story": "Laying square mosaic tiles.",
+          "isWord": true
+        },
+        {
+          "id": "sq-l3-q7",
+          "question": "What is the square root of 144?",
+          "answer": "12",
+          "hint": "12 x 12 = 144.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sq-l3-q8",
+          "question": "What is the square root of 225?",
+          "answer": "15",
+          "hint": "15 x 15 = 225.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Squares & Patterns",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Perfect squares and roots",
+      "lessons": [
+        {
+          "id": "sq-l4-les1",
+          "title": "Perfect vs Not",
+          "intro": "Not every number is a perfect square — some sit between two squares.",
+          "visual": "",
+          "explanation": [
+            "25 is a perfect square; 24 is not.",
+            "50 is not a perfect square.",
+            "Perfect squares end in 0,1,4,5,6,9 — never 2,3,7,8."
+          ],
+          "rule": "A perfect square is a whole number squared.",
+          "tip": "Numbers ending in 2,3,7,8 are never perfect squares.",
+          "steps": [
+            {
+              "text": "Check if it is a whole number squared.",
+              "notation": "25 = 5^2"
+            },
+            {
+              "text": "24 has no whole-number root.",
+              "notation": "\\sqrt{24} \\text{ is not whole}",
+              "tip": "So 24 is not a perfect square."
+            }
+          ]
+        },
+        {
+          "id": "sq-l4-les2",
+          "title": "Roots Between Whole Numbers",
+          "intro": "The root of a non-perfect square lies between two whole numbers.",
+          "visual": "",
+          "explanation": [
+            "Square root of 20 is between 4 and 5 (since 16 and 25).",
+            "Find the squares just below and above.",
+            "The root sits between their roots."
+          ],
+          "rule": "A root lies between the roots of the nearest squares.",
+          "tip": "Root of 20 is between 4 and 5."
+        },
+        {
+          "id": "sq-l4-les3",
+          "title": "Nearest Perfect Square",
+          "intro": "We can find the perfect square closest to any number.",
+          "visual": "",
+          "explanation": [
+            "The nearest perfect square to 48 is 49.",
+            "Compare the squares on either side.",
+            "49 (7 squared) is just above 48."
+          ],
+          "rule": "Find the closest square above and below, then pick.",
+          "tip": "48 is nearest to 49."
+        },
+        {
+          "id": "sq-l4-les4",
+          "title": "Squares in a Range",
+          "intro": "You can list the perfect squares that fall in a given range.",
+          "visual": "",
+          "explanation": [
+            "Between 30 and 40, the perfect square is 36.",
+            "36 is 6 squared.",
+            "Check each square to see if it fits."
+          ],
+          "rule": "List squares and see which land in the range.",
+          "tip": "36 sits between 30 and 40."
+        },
+        {
+          "id": "sq-l4-les5",
+          "title": "Square Patterns Master",
+          "intro": "Use square patterns to answer clever questions.",
+          "visual": "",
+          "explanation": [
+            "Sum of the first 3 squares: 1 + 4 + 9 = 14.",
+            "Difference of consecutive squares grows by odd numbers.",
+            "10 squared - 9 squared = 19."
+          ],
+          "rule": "Use sums and differences of squares in puzzles.",
+          "tip": "Consecutive square gap = sum of the two roots."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sq-l4-q1",
+          "question": "Which is a perfect square, 24 or 25? Write it.",
+          "answer": "25",
+          "hint": "5 x 5 = 25.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq-l4-q2",
+          "question": "Is 50 a perfect square? Answer Yes or No.",
+          "answer": "No",
+          "hint": "No whole number squares to 50.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq-l4-q3",
+          "question": "The square root of 20 lies between 4 and which next whole number?",
+          "answer": "5",
+          "hint": "16 and 25 are the nearest squares.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq-l4-q4",
+          "question": "The square root of 90 lies between 9 and which next whole number?",
+          "answer": "10",
+          "hint": "81 and 100 are the nearest squares.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq-l4-q5",
+          "question": "What is the perfect square nearest to 48?",
+          "answer": "49",
+          "hint": "Compare 36 and 49.",
+          "difficulty": "stretch",
+          "story": "A rounding-to-squares puzzle.",
+          "isWord": true
+        },
+        {
+          "id": "sq-l4-q6",
+          "question": "Which perfect square lies between 30 and 40?",
+          "answer": "36",
+          "hint": "6 x 6 = 36.",
+          "difficulty": "stretch",
+          "story": "Finding a hidden square.",
+          "isWord": true
+        },
+        {
+          "id": "sq-l4-q7",
+          "question": "What is the sum of the first three square numbers (1 + 4 + 9)?",
+          "answer": "14",
+          "hint": "Add 1, 4 and 9.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sq-l4-q8",
+          "question": "What is 10 squared minus 9 squared?",
+          "answer": "19",
+          "hint": "100 - 81.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Square Master",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Squares and roots combined",
+      "lessons": [
+        {
+          "id": "sq-l5-les1",
+          "title": "Squares and Roots Together",
+          "intro": "Now combine squaring and rooting in the same problem.",
+          "visual": "",
+          "explanation": [
+            "8 squared = 64; the root of 64 is 8.",
+            "Square and root are opposites.",
+            "One undoes the other."
+          ],
+          "rule": "Squaring and rooting are inverse operations.",
+          "tip": "Root of (n squared) is n.",
+          "steps": [
+            {
+              "text": "Square a number.",
+              "notation": "8^2 = 64"
+            },
+            {
+              "text": "Rooting brings it back.",
+              "notation": "\\sqrt{64} = 8",
+              "tip": "They cancel out."
+            }
+          ]
+        },
+        {
+          "id": "sq-l5-les2",
+          "title": "Adding Squares",
+          "intro": "Sometimes we add two squares together.",
+          "visual": "",
+          "explanation": [
+            "6 squared + 8 squared = 36 + 64 = 100.",
+            "Square each first, then add.",
+            "This pattern appears in geometry too."
+          ],
+          "rule": "Square each number, then add the results.",
+          "tip": "36 + 64 = 100."
+        },
+        {
+          "id": "sq-l5-les3",
+          "title": "Root of Bigger Squares",
+          "intro": "Practise roots of larger perfect squares.",
+          "visual": "",
+          "explanation": [
+            "Root of 400 is 20.",
+            "Root of 196 is 14.",
+            "Use your extended squares table."
+          ],
+          "rule": "Find roots of squares up to 400.",
+          "tip": "Root of 400 is 20."
+        },
+        {
+          "id": "sq-l5-les4",
+          "title": "Adding Roots",
+          "intro": "We can add two square roots of perfect squares.",
+          "visual": "",
+          "explanation": [
+            "Root of 100 + root of 64 = 10 + 8 = 18.",
+            "Find each root first, then add.",
+            "Keep the two steps separate."
+          ],
+          "rule": "Find each root, then add them.",
+          "tip": "10 + 8 = 18."
+        },
+        {
+          "id": "sq-l5-les5",
+          "title": "Square Master",
+          "intro": "You can now handle any squares-and-roots challenge.",
+          "visual": "",
+          "explanation": [
+            "12 squared - 11 squared = 144 - 121 = 23.",
+            "Square each, then subtract.",
+            "Confidence comes from knowing your tables."
+          ],
+          "rule": "Combine squares and roots with full confidence.",
+          "tip": "Always know your squares to 20."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sq-l5-q1",
+          "question": "What is 8 squared?",
+          "answer": "64",
+          "hint": "8 x 8.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq-l5-q2",
+          "question": "What is the square root of 169?",
+          "answer": "13",
+          "hint": "13 x 13 = 169.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq-l5-q3",
+          "question": "What is 6 squared + 8 squared?",
+          "answer": "100",
+          "hint": "36 + 64.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq-l5-q4",
+          "question": "What is the square root of 400?",
+          "answer": "20",
+          "hint": "20 x 20 = 400.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq-l5-q5",
+          "question": "A square hall has 7 tiles along each side. How many tiles cover the whole floor?",
+          "answer": "49",
+          "hint": "Side squared.",
+          "difficulty": "stretch",
+          "story": "Tiling a square hall.",
+          "isWord": true
+        },
+        {
+          "id": "sq-l5-q6",
+          "question": "A square plot has an area of 196 square metres. What is the length of one side in metres?",
+          "answer": "14",
+          "hint": "Root of 196.",
+          "difficulty": "stretch",
+          "story": "Marking out a square plot.",
+          "isWord": true
+        },
+        {
+          "id": "sq-l5-q7",
+          "question": "What is the square root of 100 plus the square root of 64?",
+          "answer": "18",
+          "hint": "10 + 8.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sq-l5-q8",
+          "question": "What is 12 squared minus 11 squared?",
+          "answer": "23",
+          "hint": "144 - 121.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,742 @@
+{
+  "id": "place-value",
+  "topic": "Numbers & Place Value",
+  "emoji": "🔢",
+  "color": "#38BDF8",
+  "gradeRange": [
+    2,
+    6
+  ],
+  "description": "Reading, building, comparing and rounding numbers",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Reading Numbers",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "Digits, positions and figures",
+      "lessons": [
+        {
+          "id": "pv-l1-les1",
+          "title": "Numbers All Around Us",
+          "intro": "From the pages in your book to the runs in a cricket match, numbers are everywhere. Big numbers are just small numbers joined together in a clever way!",
+          "visual": "",
+          "explanation": [
+            "A number is made of digits (0-9). Where a digit sits decides how much it is worth.",
+            "We read numbers from left to right, grouping into thousands, hundreds, tens and ones.",
+            "For example, 4,206 is read 'four thousand two hundred six'."
+          ],
+          "rule": "Every digit has a value that depends on its position.",
+          "tip": "Read big numbers left to right, one group at a time."
+        },
+        {
+          "id": "pv-l1-les2",
+          "title": "Digits and Positions",
+          "intro": "The same digit can mean very different things. The 5 in 500 is much bigger than the 5 in 5!",
+          "visual": "",
+          "explanation": [
+            "A 4-digit number has places for ones, tens, hundreds and thousands.",
+            "In 3,742 the digit 3 is in the thousands place, so it means 3,000.",
+            "Reading the position carefully is the first step to understanding any number."
+          ],
+          "rule": "Position tells you a digit's true size.",
+          "tip": "Always find the ones place first, then count left."
+        },
+        {
+          "id": "pv-l1-les3",
+          "title": "Writing Numbers in Figures",
+          "intro": "When someone says a number out loud, you can write it in figures by listening for 'thousand', 'hundred', and so on.",
+          "visual": "",
+          "explanation": [
+            "'Seven thousand ninety' becomes 7,090 — notice the 0 holding the hundreds place.",
+            "Zeros are important place-holders; they keep the other digits in the correct spot.",
+            "Without the 0, 7,090 would wrongly become 790."
+          ],
+          "rule": "Use 0 to hold any empty place.",
+          "tip": "Say the number slowly and write one group at a time."
+        },
+        {
+          "id": "pv-l1-les4",
+          "title": "How Many Digits?",
+          "intro": "Counting digits helps you know how big a number is. More digits usually means a bigger number!",
+          "visual": "",
+          "explanation": [
+            "The largest 3-digit number is 999; the smallest 4-digit number is 1,000.",
+            "Adding 1 to 999 makes 1,000 — a brand new thousands place appears.",
+            "The largest 4-digit number is 9,999."
+          ],
+          "rule": "Each new place lets numbers grow ten times bigger.",
+          "tip": "If two numbers have different digit counts, the longer one is larger."
+        },
+        {
+          "id": "pv-l1-les5",
+          "title": "Making Numbers from Digits",
+          "intro": "Give me some digits and I can build the biggest or smallest number by arranging them cleverly.",
+          "visual": "",
+          "explanation": [
+            "To make the biggest number, put the largest digits on the left.",
+            "To make the smallest, put the smallest digits on the left — but never a 0 at the very front.",
+            "With 3, 9, 1, 7 the biggest 4-digit number is 9,731."
+          ],
+          "rule": "Biggest number: large digits first. Smallest: small digits first (no leading 0).",
+          "tip": "Sort the digits first, then place them."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pv-l1-q1",
+          "question": "Write in figures: four thousand two hundred six.",
+          "answer": "4206",
+          "hint": "Four groups: 4 thousands, 2 hundreds, 0 tens, 6 ones.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pv-l1-q2",
+          "question": "Write in figures: seven thousand ninety.",
+          "answer": "7090",
+          "hint": "Ninety is 9 tens; there are no hundreds, so use 0.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pv-l1-q3",
+          "question": "How many digits are there in the number 10,000?",
+          "answer": "5",
+          "hint": "Count each digit: 1, 0, 0, 0, 0.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pv-l1-q4",
+          "question": "What is the largest 3-digit number?",
+          "answer": "999",
+          "hint": "All three places hold the biggest digit, 9.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pv-l1-q5",
+          "question": "A stadium has fifty-two thousand seats. Write this number in figures.",
+          "answer": "52000",
+          "hint": "Fifty-two thousand = 52 followed by three zeros.",
+          "difficulty": "stretch",
+          "story": "The new cricket stadium is huge!",
+          "isWord": true
+        },
+        {
+          "id": "pv-l1-q6",
+          "question": "Ravi wrote the smallest 4-digit number. What number did he write?",
+          "answer": "1000",
+          "hint": "The smallest 4-digit number starts with 1 and then zeros.",
+          "difficulty": "stretch",
+          "story": "Ravi loves playing with numbers.",
+          "isWord": true
+        },
+        {
+          "id": "pv-l1-q7",
+          "question": "What is the largest 4-digit number using the digits 3, 9, 1, 7 each once?",
+          "answer": "9731",
+          "hint": "Put the biggest digits on the left: 9, then 7, then 3, then 1.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pv-l1-q8",
+          "question": "What is the smallest 4-digit number using the digits 4, 0, 6, 2 each once (no leading zero)?",
+          "answer": "2046",
+          "hint": "Smallest non-zero digit goes first, then the 0.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Place & Face Value",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Two values for every digit",
+      "lessons": [
+        {
+          "id": "pv-l2-les1",
+          "title": "Place Value vs Face Value",
+          "intro": "Every digit has two values: its face value (the digit itself) and its place value (what it is worth where it sits).",
+          "visual": "",
+          "explanation": [
+            "Face value of 7 in 4,703 is simply 7.",
+            "Place value of 7 in 4,703 is 700, because 7 sits in the hundreds place.",
+            "Face value never changes; place value depends on position."
+          ],
+          "rule": "Face value = the digit. Place value = digit x its place.",
+          "tip": "Ask: 'Which place?' then multiply.",
+          "steps": [
+            {
+              "text": "Face value is just the digit you see.",
+              "notation": "\\text{face value of } 7 = 7"
+            },
+            {
+              "text": "Place value multiplies the digit by its place (ones, tens, hundreds...).",
+              "notation": "7 \\times 100 = 700",
+              "tip": "7 is in the hundreds place here."
+            }
+          ]
+        },
+        {
+          "id": "pv-l2-les2",
+          "title": "The Thousands Place",
+          "intro": "When a digit sits in the thousands place, it is worth a whole thousand times itself.",
+          "visual": "",
+          "explanation": [
+            "Place value of 8 in 8,159 is 8,000.",
+            "Place value of 3 in 3,642 is 3,000.",
+            "The leftmost digit of a 4-digit number is always in the thousands place."
+          ],
+          "rule": "Thousands place: multiply the digit by 1,000.",
+          "tip": "Count places from the right: ones, tens, hundreds, thousands."
+        },
+        {
+          "id": "pv-l2-les3",
+          "title": "The Mighty Zero",
+          "intro": "Zero may look empty, but it does a big job — it holds a place so other digits stay put.",
+          "visual": "",
+          "explanation": [
+            "Place value of 0 in 4,082 is 0.",
+            "Even though its place value is 0, the 0 keeps the 4 in the thousands place.",
+            "Remove the 0 and 4,082 wrongly becomes 482."
+          ],
+          "rule": "A zero's place value is 0, but it still holds the place.",
+          "tip": "Never drop a middle zero when writing numbers."
+        },
+        {
+          "id": "pv-l2-les4",
+          "title": "Comparing the Two Values",
+          "intro": "Sometimes a question asks for the difference between place value and face value — a neat little puzzle.",
+          "visual": "",
+          "explanation": [
+            "For 3 in 5,347: place value 300, face value 3.",
+            "Their difference is 300 - 3 = 297.",
+            "This difference is big when the digit sits far to the left."
+          ],
+          "rule": "Difference = place value - face value.",
+          "tip": "Find both values first, then subtract."
+        },
+        {
+          "id": "pv-l2-les5",
+          "title": "Two of the Same Digit",
+          "intro": "What if a number has the same digit twice? Each copy has its own place value!",
+          "visual": "",
+          "explanation": [
+            "In 3,434 there are two 4s: one in the hundreds (400) and one in the ones (4).",
+            "Their place values are 400 and 4.",
+            "Add them to get 404."
+          ],
+          "rule": "Each repeated digit keeps its own place value.",
+          "tip": "Handle each copy separately, then combine."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pv-l2-q1",
+          "question": "What is the place value of 6 in 3,642?",
+          "answer": "600",
+          "hint": "6 sits in the hundreds place: 6 x 100.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pv-l2-q2",
+          "question": "What is the place value of 8 in 8,159?",
+          "answer": "8000",
+          "hint": "8 sits in the thousands place: 8 x 1000.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pv-l2-q3",
+          "question": "What is the face value of 5 in 7,526?",
+          "answer": "5",
+          "hint": "Face value is just the digit itself.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pv-l2-q4",
+          "question": "What is the place value of 0 in 4,082?",
+          "answer": "0",
+          "hint": "Zero times any place is 0.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pv-l2-q5",
+          "question": "In 5,347, what is the place value of 3 minus its face value?",
+          "answer": "297",
+          "hint": "Place value is 300, face value is 3.",
+          "difficulty": "stretch",
+          "story": "A number puzzle from Meena's workbook.",
+          "isWord": true
+        },
+        {
+          "id": "pv-l2-q6",
+          "question": "In 9,210, what is the place value of 9 minus the place value of 2?",
+          "answer": "8800",
+          "hint": "9 is thousands (9000), 2 is hundreds (200).",
+          "difficulty": "stretch",
+          "story": "Two digits, two place values.",
+          "isWord": true
+        },
+        {
+          "id": "pv-l2-q7",
+          "question": "In 3,434, what is the sum of the place values of the two 4s?",
+          "answer": "404",
+          "hint": "One 4 is in hundreds, the other in ones.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pv-l2-q8",
+          "question": "In 6,767, add the place value of 7 in the tens place to the place value of 6 in the thousands place.",
+          "answer": "6070",
+          "hint": "Tens: 7 x 10. Thousands: 6 x 1000.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Expanded Form",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Build and break numbers",
+      "lessons": [
+        {
+          "id": "pv-l3-les1",
+          "title": "Breaking Numbers Apart",
+          "intro": "Expanded form shows a number as the sum of its place values — like taking a toy apart to see its pieces.",
+          "visual": "",
+          "explanation": [
+            "3,542 = 3,000 + 500 + 40 + 2.",
+            "Each piece is the place value of one digit.",
+            "Adding the pieces back gives the original number."
+          ],
+          "rule": "Expanded form = sum of each digit's place value.",
+          "tip": "Write the thousands piece first, then work right.",
+          "steps": [
+            {
+              "text": "Split each digit into its place value.",
+              "notation": "3542 = 3000 + 500 + 40 + 2"
+            },
+            {
+              "text": "Add the pieces to rebuild the number.",
+              "notation": "3000 + 500 + 40 + 2 = 3542",
+              "tip": "Nothing is lost or added."
+            }
+          ]
+        },
+        {
+          "id": "pv-l3-les2",
+          "title": "Putting Numbers Back Together",
+          "intro": "Given the expanded pieces, you can rebuild the number by adding them up.",
+          "visual": "",
+          "explanation": [
+            "3,000 + 500 + 40 + 2 rebuilds to 3,542.",
+            "6,000 + 70 + 9 rebuilds to 6,079 (there are no hundreds, so that place is 0).",
+            "Watch for missing places — they become zeros."
+          ],
+          "rule": "Add all the pieces to get the standard number.",
+          "tip": "A missing place means a 0 in that spot."
+        },
+        {
+          "id": "pv-l3-les3",
+          "title": "Minding the Zeros",
+          "intro": "Expanded form makes zeros easy to spot — a missing place simply isn't written.",
+          "visual": "",
+          "explanation": [
+            "7,000 + 800 + 5 = 7,805 (the tens place is 0).",
+            "2,000 + 90 = 2,090 (hundreds and ones are 0).",
+            "Always check every place from thousands down to ones."
+          ],
+          "rule": "Fill any skipped place with 0 in the final number.",
+          "tip": "List all four places so you don't forget a zero."
+        },
+        {
+          "id": "pv-l3-les4",
+          "title": "Expanded Form in Words",
+          "intro": "Sometimes numbers are described in words: so many thousands, hundreds, tens and ones.",
+          "visual": "",
+          "explanation": [
+            "5 thousands, 3 hundreds, 0 tens, 7 ones = 5,307.",
+            "8 thousands and 6 ones only = 8,006.",
+            "Each described group is a place value piece."
+          ],
+          "rule": "Turn each spoken group into its place value, then add.",
+          "tip": "Zero groups still need a 0 place-holder."
+        },
+        {
+          "id": "pv-l3-les5",
+          "title": "Tricky Expanded Sums",
+          "intro": "What if a piece is bigger than its place allows? You simply carry over, just like in addition.",
+          "visual": "",
+          "explanation": [
+            "6 thousands + 15 tens = 6,000 + 150 = 6,150.",
+            "The 15 tens became 150, adding into the hundreds place.",
+            "Expanded form still works — just add carefully."
+          ],
+          "rule": "Pieces can be any size; just add them honestly.",
+          "tip": "Convert each piece to a plain number, then total."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pv-l3-q1",
+          "question": "What is 3,000 + 500 + 40 + 2?",
+          "answer": "3542",
+          "hint": "Add the place-value pieces.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pv-l3-q2",
+          "question": "What is 6,000 + 70 + 9?",
+          "answer": "6079",
+          "hint": "There are no hundreds, so that place is 0.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pv-l3-q3",
+          "question": "What is 7,000 + 800 + 5?",
+          "answer": "7805",
+          "hint": "The tens place is 0.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pv-l3-q4",
+          "question": "What is 2,000 + 90?",
+          "answer": "2090",
+          "hint": "Hundreds and ones are both 0.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pv-l3-q5",
+          "question": "A number is made of 5 thousands, 3 hundreds, 0 tens and 7 ones. What is it?",
+          "answer": "5307",
+          "hint": "Write 5, then 3, then 0, then 7.",
+          "difficulty": "stretch",
+          "story": "Aarav builds a number from blocks.",
+          "isWord": true
+        },
+        {
+          "id": "pv-l3-q6",
+          "question": "A number has 8 thousands and 6 ones only. What is the number?",
+          "answer": "8006",
+          "hint": "Hundreds and tens are 0.",
+          "difficulty": "stretch",
+          "story": "Only two place values are filled.",
+          "isWord": true
+        },
+        {
+          "id": "pv-l3-q7",
+          "question": "What is 2,000 + 2,000 + 500 + 500 + 10 + 10?",
+          "answer": "5020",
+          "hint": "Add the matching pieces together.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pv-l3-q8",
+          "question": "If a number equals 6 thousands + 15 tens, what is the number?",
+          "answer": "6150",
+          "hint": "15 tens is 150.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Comparing & Ordering",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Bigger, smaller, in order",
+      "lessons": [
+        {
+          "id": "pv-l4-les1",
+          "title": "Which is Bigger?",
+          "intro": "To compare numbers, line them up and look at the leftmost digit that is different.",
+          "visual": "",
+          "explanation": [
+            "4,532 vs 4,523: thousands and hundreds match, tens differ (3 vs 2), so 4,532 is greater.",
+            "Compare place by place from the left.",
+            "The first place where they differ decides the winner."
+          ],
+          "rule": "Compare from the highest place; the first difference wins.",
+          "tip": "If digit counts differ, the longer number is bigger.",
+          "steps": [
+            {
+              "text": "Line the numbers up by place.",
+              "notation": "4532 \\;?\\; 4523"
+            },
+            {
+              "text": "First differing place (tens) decides it.",
+              "notation": "4532 > 4523",
+              "tip": "3 tens beats 2 tens."
+            }
+          ]
+        },
+        {
+          "id": "pv-l4-les2",
+          "title": "Smaller and Smallest",
+          "intro": "Finding the smallest works the same way — the first differing digit, but you pick the lower one.",
+          "visual": "",
+          "explanation": [
+            "7,089 vs 7,098: tens differ (8 vs 9), so 7,089 is smaller.",
+            "Among 5,600; 5,060; 5,006 the smallest is 5,006.",
+            "Always start comparing from the left."
+          ],
+          "rule": "Smallest number has the lowest digit at the first difference.",
+          "tip": "Scan left to right and stop at the first gap."
+        },
+        {
+          "id": "pv-l4-les3",
+          "title": "Ordering Numbers",
+          "intro": "Putting several numbers in order (ascending or descending) is just comparing them in a row.",
+          "visual": "",
+          "explanation": [
+            "Ascending means smallest to largest; descending means largest to smallest.",
+            "Among 2,341; 2,314; 2,431 the greatest is 2,431.",
+            "Sort by the first differing place."
+          ],
+          "rule": "Ascending = low to high; descending = high to low.",
+          "tip": "Find the biggest, then the next, and so on."
+        },
+        {
+          "id": "pv-l4-les4",
+          "title": "Real-Life Comparisons",
+          "intro": "We compare numbers every day — scores, prices, distances and more.",
+          "visual": "",
+          "explanation": [
+            "Scores 3,450, 3,540, 3,405: the highest is 3,540.",
+            "Prices 1,299, 1,099, 1,199: the lowest is 1,099.",
+            "Comparing helps us make smart choices."
+          ],
+          "rule": "The same left-to-right rule works for money and scores.",
+          "tip": "Ignore the currency sign and compare the numbers."
+        },
+        {
+          "id": "pv-l4-les5",
+          "title": "Numbers In Between",
+          "intro": "Between two numbers there can be several whole numbers — counting them is a fun puzzle.",
+          "visual": "",
+          "explanation": [
+            "Between 2,998 and 3,002 the whole numbers are 2,999, 3,000, 3,001.",
+            "That is 3 numbers strictly in between.",
+            "Count carefully and do not include the end numbers."
+          ],
+          "rule": "Count only the numbers strictly between the two ends.",
+          "tip": "List them out if you are unsure."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pv-l4-q1",
+          "question": "Which is greater: 4,532 or 4,523? Write the greater number.",
+          "answer": "4532",
+          "hint": "Compare the tens place.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pv-l4-q2",
+          "question": "Which is smaller: 7,089 or 7,098? Write the smaller number.",
+          "answer": "7089",
+          "hint": "Compare the tens place.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pv-l4-q3",
+          "question": "Write the greatest of 2,341; 2,314; 2,431.",
+          "answer": "2431",
+          "hint": "Compare the hundreds place.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pv-l4-q4",
+          "question": "Write the smallest of 5,600; 5,060; 5,006.",
+          "answer": "5006",
+          "hint": "Compare the hundreds, then tens.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pv-l4-q5",
+          "question": "Three friends scored 3,450, 3,540 and 3,405. What is the highest score?",
+          "answer": "3540",
+          "hint": "Compare the hundreds place.",
+          "difficulty": "stretch",
+          "story": "A big day at the quiz contest!",
+          "isWord": true
+        },
+        {
+          "id": "pv-l4-q6",
+          "question": "Prices are 1,299, 1,099 and 1,199 rupees. What is the lowest price in rupees?",
+          "answer": "1099",
+          "hint": "Compare the hundreds place.",
+          "difficulty": "stretch",
+          "story": "Shopping for the best deal.",
+          "isWord": true
+        },
+        {
+          "id": "pv-l4-q7",
+          "question": "How many whole numbers lie strictly between 2,998 and 3,002?",
+          "answer": "3",
+          "hint": "List 2,999, 3,000, 3,001.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pv-l4-q8",
+          "question": "What is the greatest 4-digit number less than 5,000 using the digits 4, 9, 8, 7 each once?",
+          "answer": "4987",
+          "hint": "It must start with 4 to stay under 5,000; arrange the rest biggest first.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Rounding & Estimation",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Snap numbers to round values",
+      "lessons": [
+        {
+          "id": "pv-l5-les1",
+          "title": "Rounding to the Nearest Ten",
+          "intro": "Rounding makes numbers simpler by snapping them to a nearby round number.",
+          "visual": "",
+          "explanation": [
+            "Look at the digit just to the right of the place you are rounding to.",
+            "If it is 5 or more, round up; if it is 4 or less, round down.",
+            "4,489 rounded to the nearest ten is 4,490."
+          ],
+          "rule": "5 or more rounds up; 4 or less rounds down.",
+          "tip": "Only the next digit to the right decides.",
+          "steps": [
+            {
+              "text": "To round to tens, look at the ones digit.",
+              "notation": "4489 \\to 4490"
+            },
+            {
+              "text": "Ones digit 9 is 5-or-more, so round up.",
+              "notation": "9 \\geq 5 \\Rightarrow \\text{round up}",
+              "tip": "Up means add to the tens place."
+            }
+          ]
+        },
+        {
+          "id": "pv-l5-les2",
+          "title": "Rounding to the Nearest Hundred",
+          "intro": "Same rule, bigger step — now we snap to the nearest hundred.",
+          "visual": "",
+          "explanation": [
+            "Look at the tens digit to decide.",
+            "3,472 rounded to the nearest hundred is 3,500.",
+            "2,350 rounded to the nearest hundred is 2,400 (5 rounds up)."
+          ],
+          "rule": "Check the tens digit to round to hundreds.",
+          "tip": "At exactly 50, always round up."
+        },
+        {
+          "id": "pv-l5-les3",
+          "title": "Rounding to the Nearest Thousand",
+          "intro": "For big numbers we often round to the nearest thousand to make them easy to say.",
+          "visual": "",
+          "explanation": [
+            "Look at the hundreds digit to decide.",
+            "6,814 rounded to the nearest thousand is 7,000.",
+            "48,500 rounded to the nearest thousand is 49,000."
+          ],
+          "rule": "Check the hundreds digit to round to thousands.",
+          "tip": "Keep the chosen place and zero out everything to its right."
+        },
+        {
+          "id": "pv-l5-les4",
+          "title": "Rounding to Report",
+          "intro": "Shops, towns and reports often use rounded numbers because they are easier to remember.",
+          "visual": "",
+          "explanation": [
+            "A shop that sold 2,780 items reports about 2,800.",
+            "Rounded numbers are approximate, not exact.",
+            "We use the word 'about' to show it is rounded."
+          ],
+          "rule": "Rounded numbers are approximate — say 'about'.",
+          "tip": "Round to whatever place the report needs."
+        },
+        {
+          "id": "pv-l5-les5",
+          "title": "Estimating Answers",
+          "intro": "Before calculating, estimate by rounding each number — it tells you roughly what to expect.",
+          "visual": "",
+          "explanation": [
+            "412 + 289: round to 400 + 300 = about 700.",
+            "6,120 - 2,970: round to 6,000 - 3,000 = about 3,000.",
+            "Estimates help you check if your exact answer is sensible."
+          ],
+          "rule": "Round each number first, then add or subtract.",
+          "tip": "Use estimation to catch big mistakes."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pv-l5-q1",
+          "question": "Round 3,472 to the nearest hundred.",
+          "answer": "3500",
+          "hint": "Look at the tens digit (7).",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pv-l5-q2",
+          "question": "Round 6,814 to the nearest thousand.",
+          "answer": "7000",
+          "hint": "Look at the hundreds digit (8).",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pv-l5-q3",
+          "question": "Round 2,350 to the nearest hundred.",
+          "answer": "2400",
+          "hint": "The tens digit is 5, so round up.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pv-l5-q4",
+          "question": "Round 4,489 to the nearest ten.",
+          "answer": "4490",
+          "hint": "Look at the ones digit (9).",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pv-l5-q5",
+          "question": "A shop sold 2,780 items. Round this to the nearest hundred for the report.",
+          "answer": "2800",
+          "hint": "The tens digit is 8, so round up.",
+          "difficulty": "stretch",
+          "story": "Time for the weekly sales report.",
+          "isWord": true
+        },
+        {
+          "id": "pv-l5-q6",
+          "question": "A town has 48,500 people. Round this to the nearest thousand.",
+          "answer": "49000",
+          "hint": "The hundreds digit is 5, so round up.",
+          "difficulty": "stretch",
+          "story": "The census team needs a round figure.",
+          "isWord": true
+        },
+        {
+          "id": "pv-l5-q7",
+          "question": "Estimate 412 + 289 by rounding each to the nearest hundred, then adding.",
+          "answer": "700",
+          "hint": "400 + 300.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pv-l5-q8",
+          "question": "Estimate 6,120 - 2,970 by rounding each to the nearest thousand, then subtracting.",
+          "answer": "3000",
+          "hint": "6,000 - 3,000.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

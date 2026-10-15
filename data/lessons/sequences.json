@@ -1,0 +1,753 @@
+{
+  "id": "sequences",
+  "topic": "Sequences & Series",
+  "emoji": "🔣",
+  "color": "#F97316",
+  "gradeRange": [
+    3,
+    8
+  ],
+  "description": "Number patterns, rules, and adding series",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Number Patterns",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "Spot what comes next",
+      "lessons": [
+        {
+          "id": "sq2-l1-les1",
+          "title": "Number Patterns",
+          "intro": "A sequence is a list of numbers that follow a pattern. Spotting the pattern lets you predict what comes next!",
+          "visual": "",
+          "explanation": [
+            "2, 4, 6, 8, ... each number is 2 more than the last.",
+            "The next number is 10.",
+            "Patterns can add, subtract, double, and more."
+          ],
+          "rule": "A sequence follows a rule from one term to the next.",
+          "tip": "Find what changes between the numbers.",
+          "steps": [
+            {
+              "text": "Look at the gap between terms.",
+              "notation": "2,\\ 4,\\ 6,\\ 8"
+            },
+            {
+              "text": "Each adds 2, so next is 10.",
+              "notation": "8 + 2 = 10",
+              "tip": "The gap is the pattern."
+            }
+          ]
+        },
+        {
+          "id": "sq2-l1-les2",
+          "title": "Counting Up",
+          "intro": "Many sequences simply count up by a fixed step.",
+          "visual": "",
+          "explanation": [
+            "5, 10, 15, ... steps of 5; next is 20.",
+            "3, 6, 9, 12, ... steps of 3; next is 15.",
+            "The step stays the same each time."
+          ],
+          "rule": "A fixed step makes a counting sequence.",
+          "tip": "Add the step to get the next term."
+        },
+        {
+          "id": "sq2-l1-les3",
+          "title": "Steps of Three and More",
+          "intro": "The step can be any number, not just one or two.",
+          "visual": "",
+          "explanation": [
+            "1, 4, 7, 10, ... steps of 3; next is 13.",
+            "Check the gap is the same each time.",
+            "Then keep adding that gap."
+          ],
+          "rule": "Any constant step gives a steady pattern.",
+          "tip": "Confirm the gap before predicting."
+        },
+        {
+          "id": "sq2-l1-les4",
+          "title": "Doubling Patterns",
+          "intro": "Some sequences multiply instead of add — they grow much faster.",
+          "visual": "",
+          "explanation": [
+            "2, 4, 8, 16, ... each doubles; next is 32.",
+            "Multiply, do not add, here.",
+            "Doubling makes numbers shoot up quickly."
+          ],
+          "rule": "A doubling sequence multiplies by 2 each time.",
+          "tip": "Check: is it adding or multiplying?"
+        },
+        {
+          "id": "sq2-l1-les5",
+          "title": "Growing Gaps",
+          "intro": "In some clever sequences the gap itself grows.",
+          "visual": "",
+          "explanation": [
+            "1, 2, 4, 7, 11, ... gaps are 1, 2, 3, 4.",
+            "Each gap is one bigger than the last.",
+            "The next gap is 5, so the next term is 16."
+          ],
+          "rule": "Sometimes the gap increases by a pattern.",
+          "tip": "Look at the gaps between the gaps."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sq2-l1-q1",
+          "question": "What is the next number: 2, 4, 6, 8, ?",
+          "answer": "10",
+          "hint": "Add 2.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq2-l1-q2",
+          "question": "What is the next number: 5, 10, 15, ?",
+          "answer": "20",
+          "hint": "Add 5.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq2-l1-q3",
+          "question": "What is the next number: 3, 6, 9, 12, ?",
+          "answer": "15",
+          "hint": "Add 3.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq2-l1-q4",
+          "question": "What is the next number: 1, 4, 7, 10, ?",
+          "answer": "13",
+          "hint": "Add 3.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq2-l1-q5",
+          "question": "A pattern goes 10, 20, 30, ... What is the 5th term?",
+          "answer": "50",
+          "hint": "Each term is 10 times its position.",
+          "difficulty": "stretch",
+          "story": "Stacking coins in tens.",
+          "isWord": true
+        },
+        {
+          "id": "sq2-l1-q6",
+          "question": "The odd numbers go 1, 3, 5, 7, ... What is the 6th term?",
+          "answer": "11",
+          "hint": "Odd numbers: 1,3,5,7,9,11.",
+          "difficulty": "stretch",
+          "story": "Counting odd house numbers.",
+          "isWord": true
+        },
+        {
+          "id": "sq2-l1-q7",
+          "question": "What is the next number: 2, 4, 8, 16, ?",
+          "answer": "32",
+          "hint": "Each term doubles.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sq2-l1-q8",
+          "question": "What is the next number: 1, 2, 4, 7, 11, ?",
+          "answer": "16",
+          "hint": "Gaps grow 1,2,3,4,5.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Arithmetic Sequences",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "The common difference",
+      "lessons": [
+        {
+          "id": "sq2-l2-les1",
+          "title": "Arithmetic Sequences",
+          "intro": "An arithmetic sequence adds the same amount each time — this amount is the common difference.",
+          "visual": "",
+          "explanation": [
+            "3, 7, 11, 15, ... common difference 4.",
+            "Find it by subtracting one term from the next.",
+            "Add the common difference to extend the sequence."
+          ],
+          "rule": "Arithmetic sequence = fixed common difference.",
+          "tip": "Difference = any term minus the one before.",
+          "steps": [
+            {
+              "text": "Subtract to find the common difference.",
+              "notation": "7 - 3 = 4"
+            },
+            {
+              "text": "Add it to extend.",
+              "notation": "15 + 4 = 19",
+              "tip": "Same gap every time."
+            }
+          ]
+        },
+        {
+          "id": "sq2-l2-les2",
+          "title": "Finding the Difference",
+          "intro": "The common difference can be found anywhere in the sequence.",
+          "visual": "",
+          "explanation": [
+            "20, 17, 14, ... difference is -3 (it goes down).",
+            "A negative difference means the sequence decreases.",
+            "Subtract neighbouring terms to check."
+          ],
+          "rule": "Common difference can be positive or negative.",
+          "tip": "Decreasing sequences have negative differences."
+        },
+        {
+          "id": "sq2-l2-les3",
+          "title": "Decreasing Sequences",
+          "intro": "When the common difference is negative, each term is smaller.",
+          "visual": "",
+          "explanation": [
+            "100, 90, 80, ... difference -10.",
+            "Keep subtracting to continue.",
+            "Next term is 70."
+          ],
+          "rule": "Subtract the difference for a decreasing sequence.",
+          "tip": "Watch the sign of the difference."
+        },
+        {
+          "id": "sq2-l2-les4",
+          "title": "Extending Forward",
+          "intro": "To find the next term, add the common difference to the last term.",
+          "visual": "",
+          "explanation": [
+            "2, 9, 16, 23, ... difference 7; next is 30.",
+            "Add 7 to 23.",
+            "Repeat to go further."
+          ],
+          "rule": "Next term = last term + common difference.",
+          "tip": "Keep adding the same step."
+        },
+        {
+          "id": "sq2-l2-les5",
+          "title": "Finding Far Terms",
+          "intro": "You can jump ahead by using the position and the difference.",
+          "visual": "",
+          "explanation": [
+            "5th term of 3, 8, 13, ...: start 3, add 4 four more times -> 23.",
+            "Term = first + (position - 1) x difference.",
+            "This avoids writing out every term."
+          ],
+          "rule": "Term = first + (position - 1) x difference.",
+          "tip": "Count the gaps, not the terms."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sq2-l2-q1",
+          "question": "What is the common difference of 3, 7, 11, 15?",
+          "answer": "4",
+          "hint": "7 - 3.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq2-l2-q2",
+          "question": "What is the next term: 20, 17, 14, ?",
+          "answer": "11",
+          "hint": "Subtract 3.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq2-l2-q3",
+          "question": "What is the common difference of 100, 90, 80?",
+          "answer": "-10",
+          "hint": "90 - 100.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq2-l2-q4",
+          "question": "What is the next term: 2, 9, 16, 23, ?",
+          "answer": "30",
+          "hint": "Add 7.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq2-l2-q5",
+          "question": "A hall adds 5 seats per row, starting at 10 in row 1 (10, 15, 20, ...). How many seats are in row 5?",
+          "answer": "30",
+          "hint": "First 10, then add 5 four times.",
+          "difficulty": "stretch",
+          "story": "Setting up rows for a show.",
+          "isWord": true
+        },
+        {
+          "id": "sq2-l2-q6",
+          "question": "Aditi saves in a pattern 50, 100, 150, ... (adding 50). What is the 6th term?",
+          "answer": "300",
+          "hint": "Each term is 50 times its position.",
+          "difficulty": "stretch",
+          "story": "A weekly savings plan.",
+          "isWord": true
+        },
+        {
+          "id": "sq2-l2-q7",
+          "question": "What is the 5th term of 3, 8, 13, ...?",
+          "answer": "19",
+          "hint": "Start 3, add 4 four times.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sq2-l2-q8",
+          "question": "What is the 10th term of 2, 4, 6, ...?",
+          "answer": "20",
+          "hint": "Each term is 2 times its position.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Finding the Rule",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Position to value",
+      "lessons": [
+        {
+          "id": "sq2-l3-les1",
+          "title": "Finding the Rule",
+          "intro": "A rule connects a term's position to its value, so you can find any term instantly.",
+          "visual": "",
+          "explanation": [
+            "4, 8, 12, ... rule: term = 4 x position.",
+            "The 6th term is 4 x 6 = 24.",
+            "Rules save you from listing everything."
+          ],
+          "rule": "A rule links position to term value.",
+          "tip": "Test your rule on the first few terms.",
+          "steps": [
+            {
+              "text": "Spot the link to position.",
+              "notation": "\\text{term} = 4 \\times n"
+            },
+            {
+              "text": "Use it for any position.",
+              "notation": "4 \\times 6 = 24",
+              "tip": "n is the position."
+            }
+          ]
+        },
+        {
+          "id": "sq2-l3-les2",
+          "title": "Rules with Plus",
+          "intro": "Many rules multiply the position and then add a number.",
+          "visual": "",
+          "explanation": [
+            "Rule term = 2n + 1: 1st term 3, 2nd term 5.",
+            "Multiply the position, then add.",
+            "Check it matches the sequence."
+          ],
+          "rule": "Rule form: (step x position) + start adjust.",
+          "tip": "Substitute the position carefully."
+        },
+        {
+          "id": "sq2-l3-les3",
+          "title": "Testing a Rule",
+          "intro": "Always check a rule by trying it on known terms.",
+          "visual": "",
+          "explanation": [
+            "Rule term = 3n: 5th term is 15.",
+            "It should match every given term.",
+            "If one fails, the rule is wrong."
+          ],
+          "rule": "A correct rule matches every term.",
+          "tip": "Test at least two terms."
+        },
+        {
+          "id": "sq2-l3-les4",
+          "title": "Rules from Words",
+          "intro": "Real situations give rules too.",
+          "visual": "",
+          "explanation": [
+            "Chairs = 2 x tables + 1: 10 tables give 21 chairs.",
+            "Turn the words into a rule.",
+            "Then plug in the number."
+          ],
+          "rule": "Translate word situations into position rules.",
+          "tip": "Find the 'per' amount and the start."
+        },
+        {
+          "id": "sq2-l3-les5",
+          "title": "Rule Master",
+          "intro": "Use rules to find far-off terms with ease.",
+          "visual": "",
+          "explanation": [
+            "Rule term = n x n: 6th term is 36.",
+            "Rule term = 4n + 3: 7th term is 31.",
+            "Rules make big positions simple."
+          ],
+          "rule": "Apply any rule to find distant terms.",
+          "tip": "Write the rule, then substitute."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sq2-l3-q1",
+          "question": "A sequence has the rule term = 4 x position. What is the 6th term?",
+          "answer": "24",
+          "hint": "4 x 6.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq2-l3-q2",
+          "question": "A sequence has the rule term = 2n + 1. What is the 1st term?",
+          "answer": "3",
+          "hint": "2 x 1 + 1.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq2-l3-q3",
+          "question": "A sequence has the rule term = 3n. What is the 5th term?",
+          "answer": "15",
+          "hint": "3 x 5.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq2-l3-q4",
+          "question": "A sequence has the rule term = 5n - 2. What is the 4th term?",
+          "answer": "18",
+          "hint": "5 x 4 - 2.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq2-l3-q5",
+          "question": "In a hall, chairs = 2 x tables + 1. How many chairs are needed for 10 tables?",
+          "answer": "21",
+          "hint": "2 x 10 + 1.",
+          "difficulty": "stretch",
+          "story": "Arranging a dining hall.",
+          "isWord": true
+        },
+        {
+          "id": "sq2-l3-q6",
+          "question": "A toy costs by the rule cost = 20 per toy + 5 rupees packing. What is the cost for 4 toys in rupees?",
+          "answer": "85",
+          "hint": "20 x 4 + 5.",
+          "difficulty": "stretch",
+          "story": "Ordering toys online.",
+          "isWord": true
+        },
+        {
+          "id": "sq2-l3-q7",
+          "question": "A sequence has the rule term = n x n. What is the 6th term?",
+          "answer": "36",
+          "hint": "6 x 6.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sq2-l3-q8",
+          "question": "A sequence has the rule term = 4n + 3. What is the 7th term?",
+          "answer": "31",
+          "hint": "4 x 7 + 3.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Missing Terms",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Fill the gaps",
+      "lessons": [
+        {
+          "id": "sq2-l4-les1",
+          "title": "Missing Terms",
+          "intro": "Sometimes a term in the middle is missing — use the pattern to fill the gap.",
+          "visual": "",
+          "explanation": [
+            "2, ?, 6, 8 ... the step is 2, so the missing term is 4.",
+            "Find the step from the known terms.",
+            "Then fill the blank."
+          ],
+          "rule": "Use the common step to find a missing term.",
+          "tip": "Check both neighbours of the gap.",
+          "steps": [
+            {
+              "text": "Find the step.",
+              "notation": "6 - ? = ? - 2"
+            },
+            {
+              "text": "Step 2 means the missing term is 4.",
+              "notation": "2,\\ 4,\\ 6,\\ 8",
+              "tip": "Midway fits the pattern."
+            }
+          ]
+        },
+        {
+          "id": "sq2-l4-les2",
+          "title": "Filling Counting Gaps",
+          "intro": "In a steady counting sequence, the missing term sits exactly between its neighbours.",
+          "visual": "",
+          "explanation": [
+            "10, 20, ?, 40 ... missing is 30.",
+            "The step is 10.",
+            "The gap value is the average of its neighbours."
+          ],
+          "rule": "A missing counting term = average of neighbours.",
+          "tip": "Add neighbours and halve."
+        },
+        {
+          "id": "sq2-l4-les3",
+          "title": "Gaps with Bigger Steps",
+          "intro": "The same idea works for any constant step.",
+          "visual": "",
+          "explanation": [
+            "5, 8, ?, 14 ... step 3, missing is 11.",
+            "Confirm the step from the known terms.",
+            "Add the step to fill the gap."
+          ],
+          "rule": "Find the step, then fill the blank.",
+          "tip": "Check your answer fits both sides."
+        },
+        {
+          "id": "sq2-l4-les4",
+          "title": "Doubling Gaps",
+          "intro": "If the sequence doubles, the missing term is found by doubling or halving.",
+          "visual": "",
+          "explanation": [
+            "3, 6, 12, ?, 48 ... missing is 24.",
+            "Each term doubles.",
+            "Double 12 to get 24, which doubles to 48."
+          ],
+          "rule": "In a doubling sequence, multiply/divide by 2 to fill gaps.",
+          "tip": "Check the term after fits too."
+        },
+        {
+          "id": "sq2-l4-les5",
+          "title": "Tricky Gaps Master",
+          "intro": "Harder sequences hide the gap inside a growing pattern.",
+          "visual": "",
+          "explanation": [
+            "2, 5, 10, 17, ? ... gaps 3,5,7,9; next is 26.",
+            "1, 4, 9, 16, ? ... these are squares; next is 25.",
+            "Look for growing gaps or special numbers."
+          ],
+          "rule": "Spot growing gaps or square patterns for hard gaps.",
+          "tip": "Write the gaps underneath the sequence."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sq2-l4-q1",
+          "question": "Find the missing term: 2, ?, 6, 8.",
+          "answer": "4",
+          "hint": "The step is 2.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq2-l4-q2",
+          "question": "Find the missing term: 10, 20, ?, 40.",
+          "answer": "30",
+          "hint": "The step is 10.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq2-l4-q3",
+          "question": "Find the missing term: 5, 8, ?, 14.",
+          "answer": "11",
+          "hint": "The step is 3.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq2-l4-q4",
+          "question": "Find the missing term: 1, ?, 9, 13.",
+          "answer": "5",
+          "hint": "The step is 4.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq2-l4-q5",
+          "question": "A countdown goes 100, 90, ?, 70. What is the missing number?",
+          "answer": "80",
+          "hint": "The step is -10.",
+          "difficulty": "stretch",
+          "story": "A rocket launch countdown.",
+          "isWord": true
+        },
+        {
+          "id": "sq2-l4-q6",
+          "question": "A doubling pattern goes 3, 6, 12, ?, 48. What is the missing number?",
+          "answer": "24",
+          "hint": "Each term doubles.",
+          "difficulty": "stretch",
+          "story": "Bacteria doubling each hour.",
+          "isWord": true
+        },
+        {
+          "id": "sq2-l4-q7",
+          "question": "Find the next term: 2, 5, 10, 17, ?",
+          "answer": "26",
+          "hint": "Gaps grow 3, 5, 7, 9.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sq2-l4-q8",
+          "question": "Find the next term: 1, 4, 9, 16, ?",
+          "answer": "25",
+          "hint": "These are square numbers.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Series & Sums",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Adding sequences up",
+      "lessons": [
+        {
+          "id": "sq2-l5-les1",
+          "title": "What is a Series?",
+          "intro": "A series is the SUM of the terms of a sequence — adding them all up.",
+          "visual": "",
+          "explanation": [
+            "1 + 2 + 3 + 4 + 5 = 15.",
+            "The sequence lists; the series totals.",
+            "We add the terms together."
+          ],
+          "rule": "A series is the sum of a sequence's terms.",
+          "tip": "List the terms, then add carefully.",
+          "steps": [
+            {
+              "text": "Write the terms of the sequence.",
+              "notation": "1,2,3,4,5"
+            },
+            {
+              "text": "Add them for the series.",
+              "notation": "1+2+3+4+5 = 15",
+              "tip": "Series means sum."
+            }
+          ]
+        },
+        {
+          "id": "sq2-l5-les2",
+          "title": "Adding in Pairs",
+          "intro": "A neat trick: pair the first and last terms to add quickly.",
+          "visual": "",
+          "explanation": [
+            "1+2+...+10: pair 1+10, 2+9, ... = 5 pairs of 11 = 55.",
+            "Each pair has the same total.",
+            "Multiply the pair total by the number of pairs."
+          ],
+          "rule": "Pair outer terms to add a long series fast.",
+          "tip": "Pairs of equal sums speed things up."
+        },
+        {
+          "id": "sq2-l5-les3",
+          "title": "Sums of Even and Odd",
+          "intro": "Adding only evens or only odds gives tidy totals.",
+          "visual": "",
+          "explanation": [
+            "2 + 4 + 6 = 12.",
+            "First 5 odd numbers: 1+3+5+7+9 = 25.",
+            "The sum of the first n odd numbers is n squared!"
+          ],
+          "rule": "Sum of first n odd numbers = n squared.",
+          "tip": "1+3+5+7+9 = 5 squared = 25."
+        },
+        {
+          "id": "sq2-l5-les4",
+          "title": "Savings and Totals",
+          "intro": "Series appear whenever we add up amounts over time.",
+          "visual": "",
+          "explanation": [
+            "Saving 10,20,30,40,50 over 5 weeks totals 150.",
+            "Add each week's amount.",
+            "The running total is the series."
+          ],
+          "rule": "Total saved = sum of each period's amount.",
+          "tip": "Add step by step or in pairs."
+        },
+        {
+          "id": "sq2-l5-les5",
+          "title": "Series Master",
+          "intro": "Combine your tricks to sum any simple series.",
+          "visual": "",
+          "explanation": [
+            "1+2+...+20 = 10 pairs of 21 = 210.",
+            "Rows 1+2+...+6 = 21 seats.",
+            "Choose the quickest method."
+          ],
+          "rule": "Use pairing and patterns to sum series fast.",
+          "tip": "Check with a rough estimate."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sq2-l5-q1",
+          "question": "What is 1 + 2 + 3 + 4 + 5?",
+          "answer": "15",
+          "hint": "Add them up.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq2-l5-q2",
+          "question": "What is 2 + 4 + 6 (the first three even numbers)?",
+          "answer": "12",
+          "hint": "Add the evens.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sq2-l5-q3",
+          "question": "What is the sum 1 + 2 + 3 + ... + 10?",
+          "answer": "55",
+          "hint": "Pair 1+10, 2+9, ...",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq2-l5-q4",
+          "question": "What is 5 + 10 + 15 + 20?",
+          "answer": "50",
+          "hint": "Add the multiples of 5.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sq2-l5-q5",
+          "question": "Nina saves 10, 20, 30, 40 and 50 rupees over five weeks. What is the total saved in rupees?",
+          "answer": "150",
+          "hint": "Add all five amounts.",
+          "difficulty": "stretch",
+          "story": "Filling a piggy bank.",
+          "isWord": true
+        },
+        {
+          "id": "sq2-l5-q6",
+          "question": "A theatre has 1 seat in row 1, 2 in row 2, up to 6 in row 6. How many seats in total?",
+          "answer": "21",
+          "hint": "Add 1+2+3+4+5+6.",
+          "difficulty": "stretch",
+          "story": "Designing a small theatre.",
+          "isWord": true
+        },
+        {
+          "id": "sq2-l5-q7",
+          "question": "What is the sum of the first five odd numbers (1 + 3 + 5 + 7 + 9)?",
+          "answer": "25",
+          "hint": "It equals 5 squared.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sq2-l5-q8",
+          "question": "What is the sum 1 + 2 + 3 + ... + 20?",
+          "answer": "210",
+          "hint": "10 pairs of 21.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

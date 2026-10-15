@@ -1,0 +1,753 @@
+{
+  "id": "profit-loss",
+  "topic": "Profit & Loss",
+  "emoji": "💰",
+  "color": "#16A34A",
+  "gradeRange": [
+    5,
+    9
+  ],
+  "description": "Cost price, selling price, profit, loss and percent",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Cost & Selling Price",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "Buying and selling",
+      "lessons": [
+        {
+          "id": "pl-l1-les1",
+          "title": "Cost Price and Selling Price",
+          "intro": "When we buy something we pay the cost price (CP). When we sell it we get the selling price (SP). Comparing them tells us if we gained or lost.",
+          "visual": "",
+          "explanation": [
+            "CP is the price a shopkeeper pays to buy an item.",
+            "SP is the price the shopkeeper sells it for.",
+            "Buy for 100, sell for 120: CP = 100, SP = 120."
+          ],
+          "rule": "CP is what you pay; SP is what you receive.",
+          "tip": "Always find CP and SP first.",
+          "steps": [
+            {
+              "text": "Write the cost price.",
+              "notation": "CP = 100"
+            },
+            {
+              "text": "Write the selling price.",
+              "notation": "SP = 120",
+              "tip": "Compare the two to judge gain or loss."
+            }
+          ]
+        },
+        {
+          "id": "pl-l1-les2",
+          "title": "Which is Bigger?",
+          "intro": "Comparing SP and CP tells the whole story at a glance.",
+          "visual": "",
+          "explanation": [
+            "If SP is more than CP, there is a profit.",
+            "If SP is less than CP, there is a loss.",
+            "If they are equal, it is break-even (no gain, no loss)."
+          ],
+          "rule": "SP > CP means profit; SP < CP means loss.",
+          "tip": "Line the two prices up and compare."
+        },
+        {
+          "id": "pl-l1-les3",
+          "title": "Everyday Prices",
+          "intro": "Shops buy stock and sell it a little higher to earn money.",
+          "visual": "",
+          "explanation": [
+            "A toy costs the shop 80 and sells for 100.",
+            "The extra 20 is the shop's gain.",
+            "Prices you pay include the shop's profit."
+          ],
+          "rule": "Selling a bit above cost is how shops earn.",
+          "tip": "The gap between prices matters most."
+        },
+        {
+          "id": "pl-l1-les4",
+          "title": "Marked Price",
+          "intro": "The marked price is the label price before any discount.",
+          "visual": "",
+          "explanation": [
+            "A bag is marked 500 but sold for 450 after discount.",
+            "The discount is 500 - 450 = 50.",
+            "After discount, the price paid is the selling price."
+          ],
+          "rule": "Marked price - discount = selling price.",
+          "tip": "Discounts lower the marked price."
+        },
+        {
+          "id": "pl-l1-les5",
+          "title": "Reading Money Problems",
+          "intro": "Careful reading finds the CP and SP hidden in a word problem.",
+          "visual": "",
+          "explanation": [
+            "'Bought for' usually gives the CP.",
+            "'Sold for' usually gives the SP.",
+            "Underline both numbers before you calculate."
+          ],
+          "rule": "Spot 'bought for' (CP) and 'sold for' (SP).",
+          "tip": "Label each number as CP or SP first."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pl-l1-q1",
+          "question": "A shop buys a pen for 10 rupees and sells it for 15 rupees. What is the cost price?",
+          "answer": "10",
+          "hint": "Cost price is the buying price.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pl-l1-q2",
+          "question": "A shop buys a pen for 10 rupees and sells it for 15 rupees. What is the selling price?",
+          "answer": "15",
+          "hint": "Selling price is what it sells for.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pl-l1-q3",
+          "question": "A bag is marked 500 rupees and sold for 450 rupees. What is the discount in rupees?",
+          "answer": "50",
+          "hint": "Marked price minus selling price.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pl-l1-q4",
+          "question": "A toy's cost price is 80 and selling price is 100. By how many rupees is SP more than CP?",
+          "answer": "20",
+          "hint": "Subtract CP from SP.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pl-l1-q5",
+          "question": "Ravi buys a cricket ball for 120 rupees and sells it for 150 rupees. What is the selling price in rupees?",
+          "answer": "150",
+          "hint": "Selling price is the price he sells at.",
+          "difficulty": "stretch",
+          "story": "Ravi runs a small sports stall.",
+          "isWord": true
+        },
+        {
+          "id": "pl-l1-q6",
+          "question": "A cycle is marked 3000 rupees and given a 400 rupee discount. What is the selling price in rupees?",
+          "answer": "2600",
+          "hint": "Marked price minus discount.",
+          "difficulty": "stretch",
+          "story": "A festive-season cycle sale.",
+          "isWord": true
+        },
+        {
+          "id": "pl-l1-q7",
+          "question": "A shopkeeper buys a shirt for 250 and sells it for 250. Is this a profit, a loss, or break-even?",
+          "answer": "break-even",
+          "hint": "SP equals CP.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pl-l1-q8",
+          "question": "A phone is marked 15000 and sold for 13500. What is the discount in rupees?",
+          "answer": "1500",
+          "hint": "Marked minus selling.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Profit",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "The money gained",
+      "lessons": [
+        {
+          "id": "pl-l2-les1",
+          "title": "What is Profit?",
+          "intro": "Profit is the money gained when the selling price is higher than the cost price.",
+          "visual": "",
+          "explanation": [
+            "Profit = SP - CP.",
+            "Buy for 100, sell for 120: profit = 20.",
+            "Profit only happens when SP is above CP."
+          ],
+          "rule": "Profit = Selling Price - Cost Price.",
+          "tip": "Subtract CP from SP to get profit.",
+          "steps": [
+            {
+              "text": "Write the profit formula.",
+              "notation": "\\text{Profit} = SP - CP"
+            },
+            {
+              "text": "Put in the numbers.",
+              "notation": "120 - 100 = 20",
+              "tip": "The gain is 20."
+            }
+          ]
+        },
+        {
+          "id": "pl-l2-les2",
+          "title": "Calculating Profit",
+          "intro": "Just subtract the cost price from the selling price.",
+          "visual": "",
+          "explanation": [
+            "SP = 250, CP = 200: profit = 50.",
+            "SP = 500, CP = 450: profit = 50.",
+            "Bigger gap means bigger profit."
+          ],
+          "rule": "Profit grows as SP rises above CP.",
+          "tip": "Keep SP first in the subtraction."
+        },
+        {
+          "id": "pl-l2-les3",
+          "title": "Profit Per Item",
+          "intro": "Knowing the profit on one item helps with many items.",
+          "visual": "",
+          "explanation": [
+            "Profit of 5 per pen, 10 pens sold: 5 x 10 = 50.",
+            "Multiply the single-item profit by the count.",
+            "Total profit adds up quickly."
+          ],
+          "rule": "Total profit = profit per item x number sold.",
+          "tip": "Find one item's profit, then multiply."
+        },
+        {
+          "id": "pl-l2-les4",
+          "title": "Checking Your Answer",
+          "intro": "A quick check keeps your profit sensible.",
+          "visual": "",
+          "explanation": [
+            "Profit can never be more than the selling price.",
+            "If SP < CP, you have a loss, not a profit.",
+            "Re-add: CP + profit should equal SP."
+          ],
+          "rule": "CP + profit = SP is a good check.",
+          "tip": "Add profit back to CP to verify."
+        },
+        {
+          "id": "pl-l2-les5",
+          "title": "Profit in Stories",
+          "intro": "Word problems hide the two prices you need.",
+          "visual": "",
+          "explanation": [
+            "'Bought for 40, sold for 55' gives profit 15.",
+            "Find CP and SP, then subtract.",
+            "Keep rupees consistent throughout."
+          ],
+          "rule": "Pull out CP and SP, then take SP - CP.",
+          "tip": "Label both prices before subtracting."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pl-l2-q1",
+          "question": "Cost price 100, selling price 120. What is the profit in rupees?",
+          "answer": "20",
+          "hint": "SP minus CP.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pl-l2-q2",
+          "question": "Cost price 200, selling price 250. What is the profit in rupees?",
+          "answer": "50",
+          "hint": "SP minus CP.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pl-l2-q3",
+          "question": "A pen is bought for 8 and sold for 12. What is the profit in rupees?",
+          "answer": "4",
+          "hint": "SP minus CP.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pl-l2-q4",
+          "question": "If the profit on one pen is 5 rupees, what is the profit on 10 such pens in rupees?",
+          "answer": "50",
+          "hint": "Multiply by the number of pens.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pl-l2-q5",
+          "question": "Meera buys a plant for 60 rupees and sells it for 95 rupees. What is her profit in rupees?",
+          "answer": "35",
+          "hint": "Selling price minus cost price.",
+          "difficulty": "stretch",
+          "story": "Meera sells plants at a weekend market.",
+          "isWord": true
+        },
+        {
+          "id": "pl-l2-q6",
+          "question": "A baker makes 8 rupees profit on each cake and sells 12 cakes. What is the total profit in rupees?",
+          "answer": "96",
+          "hint": "Profit per cake times number of cakes.",
+          "difficulty": "stretch",
+          "story": "A busy day at the bakery.",
+          "isWord": true
+        },
+        {
+          "id": "pl-l2-q7",
+          "question": "Cost price 450, selling price 500. What is the profit in rupees?",
+          "answer": "50",
+          "hint": "SP minus CP.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pl-l2-q8",
+          "question": "A trader buys a watch for 1200 and sells it for 1500. What is the profit in rupees?",
+          "answer": "300",
+          "hint": "SP minus CP.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Loss",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "The money lost",
+      "lessons": [
+        {
+          "id": "pl-l3-les1",
+          "title": "What is Loss?",
+          "intro": "Loss is the money lost when the selling price is lower than the cost price.",
+          "visual": "",
+          "explanation": [
+            "Loss = CP - SP.",
+            "Buy for 100, sell for 80: loss = 20.",
+            "Loss happens only when SP is below CP."
+          ],
+          "rule": "Loss = Cost Price - Selling Price.",
+          "tip": "Subtract SP from CP to get loss.",
+          "steps": [
+            {
+              "text": "Write the loss formula.",
+              "notation": "\\text{Loss} = CP - SP"
+            },
+            {
+              "text": "Put in the numbers.",
+              "notation": "100 - 80 = 20",
+              "tip": "The loss is 20."
+            }
+          ]
+        },
+        {
+          "id": "pl-l3-les2",
+          "title": "Calculating Loss",
+          "intro": "Subtract the selling price from the cost price.",
+          "visual": "",
+          "explanation": [
+            "CP = 250, SP = 200: loss = 50.",
+            "CP = 500, SP = 400: loss = 100.",
+            "A lower SP means a bigger loss."
+          ],
+          "rule": "Loss grows as SP falls below CP.",
+          "tip": "Keep CP first in the subtraction."
+        },
+        {
+          "id": "pl-l3-les3",
+          "title": "Why Losses Happen",
+          "intro": "Sometimes shops must sell below cost.",
+          "visual": "",
+          "explanation": [
+            "Old stock may be sold cheaply to clear it.",
+            "Damaged goods sell for less than they cost.",
+            "Selling fast can be worth a small loss."
+          ],
+          "rule": "Clearing stock can cause a planned loss.",
+          "tip": "A loss still means SP is below CP."
+        },
+        {
+          "id": "pl-l3-les4",
+          "title": "Checking a Loss",
+          "intro": "A quick check keeps your loss sensible.",
+          "visual": "",
+          "explanation": [
+            "Loss can never be more than the cost price.",
+            "If SP > CP, it is a profit, not a loss.",
+            "Re-add: SP + loss should equal CP."
+          ],
+          "rule": "SP + loss = CP is a good check.",
+          "tip": "Add the loss back to SP to verify."
+        },
+        {
+          "id": "pl-l3-les5",
+          "title": "Loss in Stories",
+          "intro": "Find CP and SP, then take CP - SP.",
+          "visual": "",
+          "explanation": [
+            "'Bought for 90, sold for 70' gives loss 20.",
+            "Spot both prices in the problem.",
+            "Keep the units in rupees."
+          ],
+          "rule": "Loss = CP - SP once both prices are found.",
+          "tip": "Label CP and SP before subtracting."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pl-l3-q1",
+          "question": "Cost price 100, selling price 80. What is the loss in rupees?",
+          "answer": "20",
+          "hint": "CP minus SP.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pl-l3-q2",
+          "question": "Cost price 250, selling price 200. What is the loss in rupees?",
+          "answer": "50",
+          "hint": "CP minus SP.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pl-l3-q3",
+          "question": "A toy bought for 60 is sold for 45. What is the loss in rupees?",
+          "answer": "15",
+          "hint": "CP minus SP.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pl-l3-q4",
+          "question": "Cost price 500, selling price 400. What is the loss in rupees?",
+          "answer": "100",
+          "hint": "CP minus SP.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pl-l3-q5",
+          "question": "Sameer buys a shirt for 350 rupees but sells it for 290 rupees. What is his loss in rupees?",
+          "answer": "60",
+          "hint": "Cost price minus selling price.",
+          "difficulty": "stretch",
+          "story": "Sameer clears old stock from his shop.",
+          "isWord": true
+        },
+        {
+          "id": "pl-l3-q6",
+          "question": "A fruit seller buys apples for 200 rupees and sells them for 170 rupees before they spoil. What is the loss in rupees?",
+          "answer": "30",
+          "hint": "CP minus SP.",
+          "difficulty": "stretch",
+          "story": "Selling fruit quickly before it goes bad.",
+          "isWord": true
+        },
+        {
+          "id": "pl-l3-q7",
+          "question": "Cost price 1500, selling price 1200. What is the loss in rupees?",
+          "answer": "300",
+          "hint": "CP minus SP.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pl-l3-q8",
+          "question": "A dealer buys a bike for 40000 and sells it for 37000. What is the loss in rupees?",
+          "answer": "3000",
+          "hint": "CP minus SP.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Profit & Loss Percent",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Comparing to cost",
+      "lessons": [
+        {
+          "id": "pl-l4-les1",
+          "title": "Profit Percent",
+          "intro": "Profit percent compares the profit to the cost price, out of 100. It shows how good a deal really was.",
+          "visual": "",
+          "explanation": [
+            "Profit% = (Profit / CP) x 100.",
+            "CP 100, profit 20: profit% = 20%.",
+            "Percent lets us compare different deals fairly."
+          ],
+          "rule": "Profit% = (Profit / CP) x 100.",
+          "tip": "Always divide by the cost price.",
+          "steps": [
+            {
+              "text": "Find the profit first.",
+              "notation": "\\text{Profit} = 120 - 100 = 20"
+            },
+            {
+              "text": "Divide by CP and times 100.",
+              "notation": "\\tfrac{20}{100} \\times 100 = 20\\%",
+              "tip": "Profit% uses CP, not SP."
+            }
+          ]
+        },
+        {
+          "id": "pl-l4-les2",
+          "title": "Loss Percent",
+          "intro": "Loss percent compares the loss to the cost price, out of 100.",
+          "visual": "",
+          "explanation": [
+            "Loss% = (Loss / CP) x 100.",
+            "CP 200, loss 50: loss% = 25%.",
+            "Again we divide by the cost price."
+          ],
+          "rule": "Loss% = (Loss / CP) x 100.",
+          "tip": "Loss percent also divides by CP."
+        },
+        {
+          "id": "pl-l4-les3",
+          "title": "Why Divide by CP?",
+          "intro": "The cost price is the base amount we invested.",
+          "visual": "",
+          "explanation": [
+            "Percent shows gain or loss per 100 rupees of cost.",
+            "Using CP keeps comparisons fair.",
+            "Two deals can be compared by their percents."
+          ],
+          "rule": "Profit and loss percent both use CP as the base.",
+          "tip": "CP is the 'out of' amount."
+        },
+        {
+          "id": "pl-l4-les4",
+          "title": "Clean Percentages",
+          "intro": "Friendly numbers give whole-number percents.",
+          "visual": "",
+          "explanation": [
+            "CP 400, profit 100: 100/400 x 100 = 25%.",
+            "CP 50, profit 10: 10/50 x 100 = 20%.",
+            "Simplify the fraction before multiplying."
+          ],
+          "rule": "Simplify Profit/CP before x 100.",
+          "tip": "Look for easy fractions like 1/4 = 25%."
+        },
+        {
+          "id": "pl-l4-les5",
+          "title": "Percent in Stories",
+          "intro": "Find profit or loss, then compare to CP.",
+          "visual": "",
+          "explanation": [
+            "Bought 80, sold 100: profit 20, so 20/80 x 100 = 25%.",
+            "Always take the percent of the cost price.",
+            "State whether it is profit or loss percent."
+          ],
+          "rule": "Compute profit or loss, then divide by CP x 100.",
+          "tip": "Name it as profit% or loss%."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pl-l4-q1",
+          "question": "Cost price 100, profit 20. What is the profit percent? Include the % sign.",
+          "answer": "20%",
+          "hint": "Profit / CP x 100.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pl-l4-q2",
+          "question": "Cost price 200, loss 50. What is the loss percent? Include the % sign.",
+          "answer": "25%",
+          "hint": "Loss / CP x 100.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pl-l4-q3",
+          "question": "A pen costs 80 and is sold for 100. What is the profit percent? Include the % sign.",
+          "answer": "25%",
+          "hint": "Profit 20, divide by CP 80, times 100.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pl-l4-q4",
+          "question": "Cost price 400, selling price 300. What is the loss percent? Include the % sign.",
+          "answer": "25%",
+          "hint": "Loss 100, divide by CP 400, times 100.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pl-l4-q5",
+          "question": "Asha buys a bag for 500 rupees and sells it for 600 rupees. What is her profit percent? Include the % sign.",
+          "answer": "20%",
+          "hint": "Profit 100 over CP 500, times 100.",
+          "difficulty": "stretch",
+          "story": "Asha resells bags online.",
+          "isWord": true
+        },
+        {
+          "id": "pl-l4-q6",
+          "question": "A trader buys goods for 250 rupees and sells them for 200 rupees. What is the loss percent? Include the % sign.",
+          "answer": "20%",
+          "hint": "Loss 50 over CP 250, times 100.",
+          "difficulty": "stretch",
+          "story": "Clearing slow-moving stock.",
+          "isWord": true
+        },
+        {
+          "id": "pl-l4-q7",
+          "question": "Cost price 50, selling price 60. What is the profit percent? Include the % sign.",
+          "answer": "20%",
+          "hint": "Profit 10 over CP 50, times 100.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pl-l4-q8",
+          "question": "Cost price 1000, selling price 800. What is the loss percent? Include the % sign.",
+          "answer": "20%",
+          "hint": "Loss 200 over CP 1000, times 100.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Profit & Loss Master",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Full money problems",
+      "lessons": [
+        {
+          "id": "pl-l5-les1",
+          "title": "Putting It Together",
+          "intro": "Now you can find profit, loss, and their percents in any money problem.",
+          "visual": "",
+          "explanation": [
+            "Decide profit or loss by comparing SP and CP.",
+            "Use the matching formula.",
+            "Convert to percent using CP as the base."
+          ],
+          "rule": "Compare, compute, then convert to percent.",
+          "tip": "Three steps: compare, subtract, percent.",
+          "steps": [
+            {
+              "text": "Compare SP and CP.",
+              "notation": "SP = 150,\\ CP = 120"
+            },
+            {
+              "text": "Profit = 30, then percent.",
+              "notation": "\\tfrac{30}{120} \\times 100 = 25\\%",
+              "tip": "Profit because SP > CP."
+            }
+          ]
+        },
+        {
+          "id": "pl-l5-les2",
+          "title": "Finding SP from Profit%",
+          "intro": "If you know the profit percent, you can find the selling price.",
+          "visual": "",
+          "explanation": [
+            "SP = CP + profit; profit = profit% of CP.",
+            "CP 200 at 10% profit: profit 20, SP = 220.",
+            "Add the profit to the cost price."
+          ],
+          "rule": "SP = CP + (profit% of CP).",
+          "tip": "Find the profit amount first, then add."
+        },
+        {
+          "id": "pl-l5-les3",
+          "title": "Finding SP from Loss%",
+          "intro": "A loss percent lets you find a lower selling price.",
+          "visual": "",
+          "explanation": [
+            "SP = CP - loss; loss = loss% of CP.",
+            "CP 300 at 10% loss: loss 30, SP = 270.",
+            "Subtract the loss from the cost price."
+          ],
+          "rule": "SP = CP - (loss% of CP).",
+          "tip": "Find the loss amount, then subtract."
+        },
+        {
+          "id": "pl-l5-les4",
+          "title": "Comparing Deals",
+          "intro": "Percent lets you judge which deal is better.",
+          "visual": "",
+          "explanation": [
+            "25% profit beats 10% profit on the same cost.",
+            "Compare the percents, not just the rupees.",
+            "Higher profit% is the better sale."
+          ],
+          "rule": "Compare deals by their profit percent.",
+          "tip": "The bigger percent wins."
+        },
+        {
+          "id": "pl-l5-les5",
+          "title": "Profit & Loss Master",
+          "intro": "Combine every skill to solve full money problems.",
+          "visual": "",
+          "explanation": [
+            "Read carefully, label CP and SP.",
+            "Choose profit or loss, then compute.",
+            "Finish with a percent if asked."
+          ],
+          "rule": "Label, compute, and convert with confidence.",
+          "tip": "Re-check by adding profit or loss back."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pl-l5-q1",
+          "question": "Cost price 120, selling price 150. What is the profit in rupees?",
+          "answer": "30",
+          "hint": "SP minus CP.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pl-l5-q2",
+          "question": "Cost price 120, selling price 150. What is the profit percent? Include the % sign.",
+          "answer": "25%",
+          "hint": "Profit 30 over CP 120, times 100.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pl-l5-q3",
+          "question": "A cost price is 200 and the profit percent is 10%. What is the profit in rupees?",
+          "answer": "20",
+          "hint": "10% of 200.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pl-l5-q4",
+          "question": "A cost price is 200 with a 10% profit. What is the selling price in rupees?",
+          "answer": "220",
+          "hint": "CP plus 10% of CP.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pl-l5-q5",
+          "question": "Neha buys a dress for 400 rupees and sells it at a 25% profit. What is the selling price in rupees?",
+          "answer": "500",
+          "hint": "Profit is 25% of 400; add it to CP.",
+          "difficulty": "stretch",
+          "story": "Neha runs a boutique.",
+          "isWord": true
+        },
+        {
+          "id": "pl-l5-q6",
+          "question": "A shop buys a fan for 300 rupees and sells it at a 10% loss. What is the selling price in rupees?",
+          "answer": "270",
+          "hint": "Loss is 10% of 300; subtract from CP.",
+          "difficulty": "stretch",
+          "story": "Clearing last season's fans.",
+          "isWord": true
+        },
+        {
+          "id": "pl-l5-q7",
+          "question": "Cost price 500, selling price 625. What is the profit percent? Include the % sign.",
+          "answer": "25%",
+          "hint": "Profit 125 over CP 500, times 100.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pl-l5-q8",
+          "question": "A cost price is 800 with a 25% profit. What is the selling price in rupees?",
+          "answer": "1000",
+          "hint": "Add 25% of 800 to 800.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

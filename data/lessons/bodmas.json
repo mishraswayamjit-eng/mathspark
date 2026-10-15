@@ -1,0 +1,753 @@
+{
+  "id": "bodmas",
+  "topic": "BODMAS",
+  "emoji": "🧮",
+  "color": "#F472B6",
+  "gradeRange": [
+    4,
+    8
+  ],
+  "description": "Order of operations with brackets, of, x, /, + and -",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Order Matters",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "Why BODMAS exists",
+      "lessons": [
+        {
+          "id": "bo-l1-les1",
+          "title": "Order Matters",
+          "intro": "When a sum has several operations, the ORDER you do them in changes the answer. BODMAS tells us the rule!",
+          "visual": "",
+          "explanation": [
+            "BODMAS: Brackets, Of, Division, Multiplication, Addition, Subtraction.",
+            "2 + 3 x 4 = 14, because we multiply before we add.",
+            "Doing it left to right wrongly would give 20."
+          ],
+          "rule": "Do multiplication and division before addition and subtraction.",
+          "tip": "BODMAS keeps everyone's answer the same.",
+          "steps": [
+            {
+              "text": "Multiply before adding.",
+              "notation": "2 + 3 \\times 4"
+            },
+            {
+              "text": "3 x 4 first, then add 2.",
+              "notation": "2 + 12 = 14",
+              "tip": "Not 20!"
+            }
+          ]
+        },
+        {
+          "id": "bo-l1-les2",
+          "title": "Multiply Before Add",
+          "intro": "The golden first step: handle multiplication and division before addition and subtraction.",
+          "visual": "",
+          "explanation": [
+            "10 - 2 x 3 = 10 - 6 = 4.",
+            "Do the 2 x 3 first.",
+            "Only then subtract from 10."
+          ],
+          "rule": "x and / come before + and -.",
+          "tip": "Underline the multiply/divide part first."
+        },
+        {
+          "id": "bo-l1-les3",
+          "title": "Divide Before Add",
+          "intro": "Division ranks with multiplication — do it before adding or subtracting.",
+          "visual": "",
+          "explanation": [
+            "6 + 12 / 4 = 6 + 3 = 9.",
+            "Divide 12 by 4 first.",
+            "Then add the 6."
+          ],
+          "rule": "Division happens before addition.",
+          "tip": "Do the division step, then combine."
+        },
+        {
+          "id": "bo-l1-les4",
+          "title": "Left to Right for Equal Rank",
+          "intro": "When operations have equal rank, work from left to right.",
+          "visual": "",
+          "explanation": [
+            "20 / 5 + 1: divide first (4), then add 1 = 5.",
+            "x and / are equal rank; + and - are equal rank.",
+            "Among equals, go left to right."
+          ],
+          "rule": "Equal-rank operations: work left to right.",
+          "tip": "Never jump around; move left to right."
+        },
+        {
+          "id": "bo-l1-les5",
+          "title": "Order in Real Life",
+          "intro": "Shopping sums naturally use order of operations.",
+          "visual": "",
+          "explanation": [
+            "3 pens at 5 and 1 book at 20: 3x5 + 20 = 35.",
+            "Multiply the groups before adding.",
+            "BODMAS gives the correct total."
+          ],
+          "rule": "Multiply quantities before adding totals.",
+          "tip": "Work out each group cost first."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "bo-l1-q1",
+          "question": "What is 2 + 3 x 4?",
+          "answer": "14",
+          "hint": "Multiply before adding.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "bo-l1-q2",
+          "question": "What is 10 - 2 x 3?",
+          "answer": "4",
+          "hint": "Do 2 x 3 first.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "bo-l1-q3",
+          "question": "What is 6 + 12 / 4?",
+          "answer": "9",
+          "hint": "Divide before adding.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "bo-l1-q4",
+          "question": "What is 20 / 5 + 1?",
+          "answer": "5",
+          "hint": "Divide first, then add.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "bo-l1-q5",
+          "question": "Riya buys 3 pens at 5 rupees each and 1 book at 20 rupees. What is the total cost in rupees?",
+          "answer": "35",
+          "hint": "Multiply the pens first, then add the book.",
+          "difficulty": "stretch",
+          "story": "A stationery shopping trip.",
+          "isWord": true
+        },
+        {
+          "id": "bo-l1-q6",
+          "question": "A jar has 2 sweets, then 2 packets of 5 sweets are added. How many sweets in total?",
+          "answer": "12",
+          "hint": "Multiply the packets first.",
+          "difficulty": "stretch",
+          "story": "Filling the sweet jar.",
+          "isWord": true
+        },
+        {
+          "id": "bo-l1-q7",
+          "question": "What is 100 - 10 x 5 + 2?",
+          "answer": "52",
+          "hint": "Multiply first, then left to right.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "bo-l1-q8",
+          "question": "What is 4 x 3 + 2 x 5?",
+          "answer": "22",
+          "hint": "Do both multiplications first.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Brackets First",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Brackets are the boss",
+      "lessons": [
+        {
+          "id": "bo-l2-les1",
+          "title": "Brackets First",
+          "intro": "Brackets are the boss — whatever is inside them is calculated before anything else.",
+          "visual": "",
+          "explanation": [
+            "(2 + 3) x 4 = 5 x 4 = 20.",
+            "The brackets change the order on purpose.",
+            "Always clear the brackets first."
+          ],
+          "rule": "Do everything inside brackets before the rest.",
+          "tip": "Brackets beat even multiplication.",
+          "steps": [
+            {
+              "text": "Solve inside the brackets first.",
+              "notation": "(2 + 3) \\times 4"
+            },
+            {
+              "text": "Then multiply.",
+              "notation": "5 \\times 4 = 20",
+              "tip": "Brackets come first."
+            }
+          ]
+        },
+        {
+          "id": "bo-l2-les2",
+          "title": "Brackets Change Everything",
+          "intro": "The same numbers can give different answers depending on where the brackets go.",
+          "visual": "",
+          "explanation": [
+            "2 + 3 x 4 = 14, but (2 + 3) x 4 = 20.",
+            "Brackets force the addition to happen first.",
+            "Read the brackets carefully."
+          ],
+          "rule": "Brackets can completely change the answer.",
+          "tip": "Always check for brackets before you start."
+        },
+        {
+          "id": "bo-l2-les3",
+          "title": "Division with Brackets",
+          "intro": "Clear the brackets, then divide.",
+          "visual": "",
+          "explanation": [
+            "(10 - 4) / 2 = 6 / 2 = 3.",
+            "The subtraction inside happens first.",
+            "Then the division finishes it."
+          ],
+          "rule": "Brackets first, then divide.",
+          "tip": "Never divide before clearing brackets."
+        },
+        {
+          "id": "bo-l2-les4",
+          "title": "Two Sets of Brackets",
+          "intro": "When there are two bracketed parts, solve each, then combine.",
+          "visual": "",
+          "explanation": [
+            "(6 + 2) x (3 - 1) = 8 x 2 = 16.",
+            "Clear both brackets before multiplying.",
+            "Each bracket is handled on its own."
+          ],
+          "rule": "Solve each bracket separately, then combine.",
+          "tip": "Work through brackets one at a time."
+        },
+        {
+          "id": "bo-l2-les5",
+          "title": "Nested Brackets",
+          "intro": "Sometimes brackets sit inside brackets — start from the innermost.",
+          "visual": "",
+          "explanation": [
+            "((2 + 3) x 2) + 5 = (5 x 2) + 5 = 15.",
+            "Do the inside brackets first.",
+            "Work outward step by step."
+          ],
+          "rule": "Start with the innermost brackets.",
+          "tip": "Peel the brackets from inside out."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "bo-l2-q1",
+          "question": "What is (2 + 3) x 4?",
+          "answer": "20",
+          "hint": "Brackets first.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "bo-l2-q2",
+          "question": "What is (10 - 4) / 2?",
+          "answer": "3",
+          "hint": "Clear the brackets, then divide.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "bo-l2-q3",
+          "question": "What is 3 x (4 + 1)?",
+          "answer": "15",
+          "hint": "Add inside first.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "bo-l2-q4",
+          "question": "What is (6 + 2) x (3 - 1)?",
+          "answer": "16",
+          "hint": "Solve both brackets.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "bo-l2-q5",
+          "question": "A room has (5 + 3) chairs in each of 2 rows. How many chairs in total?",
+          "answer": "16",
+          "hint": "Add inside the bracket first.",
+          "difficulty": "stretch",
+          "story": "Arranging a reading corner.",
+          "isWord": true
+        },
+        {
+          "id": "bo-l2-q6",
+          "question": "What is 2 x (10 - 3)?",
+          "answer": "14",
+          "hint": "Subtract inside first.",
+          "difficulty": "stretch",
+          "story": "A quick bracket challenge.",
+          "isWord": true
+        },
+        {
+          "id": "bo-l2-q7",
+          "question": "What is 20 - (4 + 2) x 2?",
+          "answer": "8",
+          "hint": "Bracket, then multiply, then subtract.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "bo-l2-q8",
+          "question": "What is ((2 + 3) x 2) + 5?",
+          "answer": "15",
+          "hint": "Innermost bracket first.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Of & Division",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Fractions and left-to-right",
+      "lessons": [
+        {
+          "id": "bo-l3-les1",
+          "title": "'Of' Means Multiply",
+          "intro": "In BODMAS the 'O' stands for 'of', which simply means multiply — often a fraction of a number.",
+          "visual": "",
+          "explanation": [
+            "1/2 of 10 = 5.",
+            "'of' comes right after brackets.",
+            "Half OF something means multiply by a half."
+          ],
+          "rule": "'Of' means multiply and ranks just after brackets.",
+          "tip": "Half of 10 is the same as 1/2 x 10.",
+          "steps": [
+            {
+              "text": "'Of' means multiply.",
+              "notation": "\\tfrac{1}{2}\\ \\text{of}\\ 10"
+            },
+            {
+              "text": "So take half of 10.",
+              "notation": "\\tfrac{1}{2}\\times 10 = 5",
+              "tip": "Of = times."
+            }
+          ]
+        },
+        {
+          "id": "bo-l3-les2",
+          "title": "Division Left to Right",
+          "intro": "Division and multiplication share a rank, so do them left to right.",
+          "visual": "",
+          "explanation": [
+            "12 / 3 x 2 = 4 x 2 = 8.",
+            "Divide first because it is on the left.",
+            "Do NOT multiply before dividing here."
+          ],
+          "rule": "Among x and /, go left to right.",
+          "tip": "Left operation happens first."
+        },
+        {
+          "id": "bo-l3-les3",
+          "title": "Fractions of Amounts",
+          "intro": "Finding a fraction of an amount is an 'of' step in a bigger sum.",
+          "visual": "",
+          "explanation": [
+            "1/4 of 20 + 3 = 5 + 3 = 8.",
+            "Do the 'of' first, then add.",
+            "'Of' outranks addition."
+          ],
+          "rule": "Do the 'of' step before adding or subtracting.",
+          "tip": "Quarter of 20 is 5."
+        },
+        {
+          "id": "bo-l3-les4",
+          "title": "Mixing Of and Division",
+          "intro": "When 'of' and division appear together, handle them in BODMAS order.",
+          "visual": "",
+          "explanation": [
+            "2 x 6 / 3 = 12 / 3 = 4.",
+            "Left to right among equal ranks.",
+            "'Of' behaves like multiplication."
+          ],
+          "rule": "'Of', x and / are handled left to right.",
+          "tip": "Treat 'of' as multiply."
+        },
+        {
+          "id": "bo-l3-les5",
+          "title": "Of and Division Master",
+          "intro": "Combine 'of' with the other operations confidently.",
+          "visual": "",
+          "explanation": [
+            "1/2 of (8 + 4) x 2 = 1/2 of 12 x 2 = 6 x 2 = 12.",
+            "Brackets, then 'of', then multiply.",
+            "Follow BODMAS in strict order."
+          ],
+          "rule": "Brackets, then 'of', then x/, then +/-.",
+          "tip": "Go one BODMAS step at a time."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "bo-l3-q1",
+          "question": "What is 1/2 of 10?",
+          "answer": "5",
+          "hint": "Half of 10.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "bo-l3-q2",
+          "question": "What is 12 / 3 x 2?",
+          "answer": "8",
+          "hint": "Left to right.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "bo-l3-q3",
+          "question": "What is 1/4 of 20 + 3?",
+          "answer": "8",
+          "hint": "Quarter of 20, then add 3.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "bo-l3-q4",
+          "question": "What is 2 x 6 / 3?",
+          "answer": "4",
+          "hint": "Left to right.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "bo-l3-q5",
+          "question": "Half of 18 apples are given away, then 4 more apples are added. How many apples are there now?",
+          "answer": "13",
+          "hint": "Half of 18 is 9, then add 4.",
+          "difficulty": "stretch",
+          "story": "Sharing apples at a picnic.",
+          "isWord": true
+        },
+        {
+          "id": "bo-l3-q6",
+          "question": "What is 1/3 of 30 - 5?",
+          "answer": "5",
+          "hint": "A third of 30, then subtract 5.",
+          "difficulty": "stretch",
+          "story": "A fraction-and-subtract puzzle.",
+          "isWord": true
+        },
+        {
+          "id": "bo-l3-q7",
+          "question": "What is 24 / 2 / 3?",
+          "answer": "4",
+          "hint": "Left to right.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "bo-l3-q8",
+          "question": "What is 1/2 of (8 + 4) x 2?",
+          "answer": "12",
+          "hint": "Bracket, then 'of', then multiply.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Mixed Operations",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "All four together",
+      "lessons": [
+        {
+          "id": "bo-l4-les1",
+          "title": "Mixing Operations",
+          "intro": "Real sums mix adding, subtracting, multiplying and dividing. BODMAS keeps them in order.",
+          "visual": "",
+          "explanation": [
+            "2 + 3 x 4 - 5 = 2 + 12 - 5 = 9.",
+            "Multiply first, then add and subtract left to right.",
+            "Follow the BODMAS order every time."
+          ],
+          "rule": "Do x/ first, then +/- left to right.",
+          "tip": "Handle the highest-rank operation first.",
+          "steps": [
+            {
+              "text": "Multiply before add/subtract.",
+              "notation": "2 + 3\\times 4 - 5"
+            },
+            {
+              "text": "Then left to right.",
+              "notation": "2 + 12 - 5 = 9",
+              "tip": "Order keeps it correct."
+            }
+          ]
+        },
+        {
+          "id": "bo-l4-les2",
+          "title": "Brackets and Division Together",
+          "intro": "Combine brackets with division carefully.",
+          "visual": "",
+          "explanation": [
+            "(4 + 6) / 2 + 3 = 10 / 2 + 3 = 5 + 3 = 8.",
+            "Bracket first, then divide, then add.",
+            "Each step in turn."
+          ],
+          "rule": "Brackets, then divide, then add.",
+          "tip": "Never skip a BODMAS step."
+        },
+        {
+          "id": "bo-l4-les3",
+          "title": "Division Then Multiply",
+          "intro": "When a bracket feeds into division and multiplication, go in order.",
+          "visual": "",
+          "explanation": [
+            "18 / (3 + 3) x 2 = 18 / 6 x 2 = 3 x 2 = 6.",
+            "Clear the bracket, then left to right.",
+            "Divide before multiplying here (it is on the left)."
+          ],
+          "rule": "Bracket first, then x/ left to right.",
+          "tip": "Left operation goes first."
+        },
+        {
+          "id": "bo-l4-les4",
+          "title": "Subtract After Dividing",
+          "intro": "Division outranks subtraction, so divide first.",
+          "visual": "",
+          "explanation": [
+            "5 x 4 - 10 / 2 = 20 - 5 = 15.",
+            "Do both x and / before subtracting.",
+            "Then subtract the results."
+          ],
+          "rule": "Finish all x/ before any +/-.",
+          "tip": "Line up the multiply/divide results first."
+        },
+        {
+          "id": "bo-l4-les5",
+          "title": "Mixed Master",
+          "intro": "Put every rule together for a full mixed sum.",
+          "visual": "",
+          "explanation": [
+            "50 - 6 x 4 + 8 / 2 = 50 - 24 + 4 = 30.",
+            "Multiply and divide first.",
+            "Then add and subtract left to right."
+          ],
+          "rule": "x/ first, then +/-, always left to right.",
+          "tip": "Write each step on a new line."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "bo-l4-q1",
+          "question": "What is 2 + 3 x 4 - 5?",
+          "answer": "9",
+          "hint": "Multiply first.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "bo-l4-q2",
+          "question": "What is (4 + 6) / 2 + 3?",
+          "answer": "8",
+          "hint": "Bracket, divide, add.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "bo-l4-q3",
+          "question": "What is 18 / (3 + 3) x 2?",
+          "answer": "6",
+          "hint": "Bracket first, then left to right.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "bo-l4-q4",
+          "question": "What is 5 x 4 - 10 / 2?",
+          "answer": "15",
+          "hint": "Do x and / first.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "bo-l4-q5",
+          "question": "There are 3 boxes of 4 pencils and 2 boxes of 5 pens. How many items in total?",
+          "answer": "22",
+          "hint": "Multiply each box group, then add.",
+          "difficulty": "stretch",
+          "story": "Packing a supply crate.",
+          "isWord": true
+        },
+        {
+          "id": "bo-l4-q6",
+          "question": "What is (12 - 4) / 2 + 6?",
+          "answer": "10",
+          "hint": "Bracket, divide, add.",
+          "difficulty": "stretch",
+          "story": "A step-by-step challenge.",
+          "isWord": true
+        },
+        {
+          "id": "bo-l4-q7",
+          "question": "What is 2 + 3 x (8 - 4) / 2?",
+          "answer": "8",
+          "hint": "Bracket, then x/, then add.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "bo-l4-q8",
+          "question": "What is 50 - 6 x 4 + 8 / 2?",
+          "answer": "30",
+          "hint": "Multiply and divide first.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "BODMAS Master",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Every rule together",
+      "lessons": [
+        {
+          "id": "bo-l5-les1",
+          "title": "Full BODMAS",
+          "intro": "Now solve sums that use every part of BODMAS in one go.",
+          "visual": "",
+          "explanation": [
+            "(6 + 4) x 3 - 5 = 10 x 3 - 5 = 25.",
+            "Brackets, then multiply, then subtract.",
+            "Follow the order strictly."
+          ],
+          "rule": "Apply B-O-D-M-A-S in strict order.",
+          "tip": "Rewrite the sum after each step.",
+          "steps": [
+            {
+              "text": "Clear brackets first.",
+              "notation": "(6+4)\\times 3 - 5"
+            },
+            {
+              "text": "Then multiply and subtract.",
+              "notation": "30 - 5 = 25",
+              "tip": "One step at a time."
+            }
+          ]
+        },
+        {
+          "id": "bo-l5-les2",
+          "title": "Repeated Division",
+          "intro": "Two divisions in a row are done left to right.",
+          "visual": "",
+          "explanation": [
+            "100 / (2 + 3) / 2 = 100 / 5 / 2 = 20 / 2 = 10.",
+            "Bracket first, then divide left to right.",
+            "Order protects the answer."
+          ],
+          "rule": "Chained divisions go left to right.",
+          "tip": "Bracket first, then divide twice."
+        },
+        {
+          "id": "bo-l5-les3",
+          "title": "Multiply and Divide Mix",
+          "intro": "Combine a bracket, a multiply and a divide.",
+          "visual": "",
+          "explanation": [
+            "2 x (3 + 4) - 6 / 3 = 14 - 2 = 12.",
+            "Bracket, then x and /, then subtract.",
+            "Each operation in BODMAS turn."
+          ],
+          "rule": "Brackets, then x/, then +/-.",
+          "tip": "Keep the steps separate and neat."
+        },
+        {
+          "id": "bo-l5-les4",
+          "title": "Two Brackets, Full Sum",
+          "intro": "Two brackets plus operations — a proper challenge.",
+          "visual": "",
+          "explanation": [
+            "(8 - 3) x (2 + 2) = 5 x 4 = 20.",
+            "Solve each bracket, then multiply.",
+            "Careful order gives the right answer."
+          ],
+          "rule": "Clear every bracket before combining.",
+          "tip": "Multiply the bracket results last."
+        },
+        {
+          "id": "bo-l5-les5",
+          "title": "BODMAS Master",
+          "intro": "You are ready for the toughest order-of-operations sums.",
+          "visual": "",
+          "explanation": [
+            "3 + 4 x 2 - (10 - 6) / 2 = 3 + 8 - 2 = 9.",
+            "Bracket, then multiply/divide, then add/subtract.",
+            "Take it one careful step at a time."
+          ],
+          "rule": "Master sums: brackets, x/, then +/- in order.",
+          "tip": "Slow and steady beats rushing."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "bo-l5-q1",
+          "question": "What is (6 + 4) x 3 - 5?",
+          "answer": "25",
+          "hint": "Bracket, multiply, subtract.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "bo-l5-q2",
+          "question": "What is 100 / (2 + 3) / 2?",
+          "answer": "10",
+          "hint": "Bracket, then divide twice.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "bo-l5-q3",
+          "question": "What is 2 x (3 + 4) - 6 / 3?",
+          "answer": "12",
+          "hint": "Bracket, then x/, then subtract.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "bo-l5-q4",
+          "question": "What is (8 - 3) x (2 + 2)?",
+          "answer": "20",
+          "hint": "Solve both brackets.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "bo-l5-q5",
+          "question": "A shop sells 4 toys at 25 rupees each and gives a 10-rupee discount on the total. What is the amount paid in rupees?",
+          "answer": "90",
+          "hint": "Multiply the toys, then subtract the discount.",
+          "difficulty": "stretch",
+          "story": "Shopping with a coupon.",
+          "isWord": true
+        },
+        {
+          "id": "bo-l5-q6",
+          "question": "What is (15 + 5) / 4 + 7?",
+          "answer": "12",
+          "hint": "Bracket, divide, add.",
+          "difficulty": "stretch",
+          "story": "A multi-step calculation.",
+          "isWord": true
+        },
+        {
+          "id": "bo-l5-q7",
+          "question": "What is 3 + 4 x 2 - (10 - 6) / 2?",
+          "answer": "9",
+          "hint": "Bracket, x/, then +/-.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "bo-l5-q8",
+          "question": "What is ((20 - 5) / 3 + 2) x 2?",
+          "answer": "14",
+          "hint": "Innermost bracket first.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

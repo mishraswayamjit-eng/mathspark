@@ -1,0 +1,753 @@
+{
+  "id": "factors-primes",
+  "topic": "Factors & Primes",
+  "emoji": "🌳",
+  "color": "#84CC16",
+  "gradeRange": [
+    4,
+    8
+  ],
+  "description": "Factors, multiples, divisibility rules and primes",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Factors",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "Numbers that divide exactly",
+      "lessons": [
+        {
+          "id": "fp-l1-les1",
+          "title": "What is a Factor?",
+          "intro": "A factor is a number that divides another number exactly, leaving no remainder.",
+          "visual": "",
+          "explanation": [
+            "The factors of 8 are 1, 2, 4 and 8.",
+            "Every number has at least two factors: 1 and itself.",
+            "Factors always come in pairs that multiply to the number."
+          ],
+          "rule": "A factor divides a number with no remainder.",
+          "tip": "1 is a factor of every number.",
+          "steps": [
+            {
+              "text": "Test if a number divides exactly.",
+              "notation": "8 \\div 4 = 2"
+            },
+            {
+              "text": "Factors come in pairs.",
+              "notation": "1\\times 8,\\ 2\\times 4",
+              "tip": "Each pair gives two factors."
+            }
+          ]
+        },
+        {
+          "id": "fp-l1-les2",
+          "title": "Factor Pairs",
+          "intro": "Finding factor pairs is a neat way to list every factor without missing any.",
+          "visual": "",
+          "explanation": [
+            "16 = 1x16, 2x8, 4x4 -> factors 1,2,4,8,16.",
+            "When a pair repeats (4x4), that factor is counted once.",
+            "Pairs guarantee you catch them all."
+          ],
+          "rule": "List factor pairs from 1 upward.",
+          "tip": "Stop when the pair values meet."
+        },
+        {
+          "id": "fp-l1-les3",
+          "title": "Counting Factors",
+          "intro": "Some numbers have many factors, others very few.",
+          "visual": "",
+          "explanation": [
+            "24 has factors 1,2,3,4,6,8,12,24 — eight of them.",
+            "A prime number has exactly two factors.",
+            "More factors usually means a 'friendlier' number for sharing."
+          ],
+          "rule": "Count factors by listing every pair.",
+          "tip": "Perfect squares have an odd number of factors."
+        },
+        {
+          "id": "fp-l1-les4",
+          "title": "The Smallest and Largest Factor",
+          "intro": "Every number's smallest factor is 1 and its largest factor is itself.",
+          "visual": "",
+          "explanation": [
+            "Smallest factor of any number is 1.",
+            "Largest factor of 45 (other than 45) is 15.",
+            "The second-largest factor pairs with the second-smallest."
+          ],
+          "rule": "Smallest factor is 1; largest is the number itself.",
+          "tip": "The biggest 'other' factor = number / smallest prime factor."
+        },
+        {
+          "id": "fp-l1-les5",
+          "title": "Special Factor Facts",
+          "intro": "Factors hide some lovely patterns worth knowing.",
+          "visual": "",
+          "explanation": [
+            "The factors of 36 are 1,2,3,4,6,9,12,18,36 — nine factors.",
+            "6 is a 'perfect number': its factors 1,2,3 add up to 6.",
+            "Exploring factors reveals maths magic."
+          ],
+          "rule": "A perfect number equals the sum of its smaller factors.",
+          "tip": "6 and 28 are perfect numbers."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fp-l1-q1",
+          "question": "How many factors does 8 have?",
+          "answer": "4",
+          "hint": "They are 1,2,4,8.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fp-l1-q2",
+          "question": "What is the smallest factor of any whole number?",
+          "answer": "1",
+          "hint": "1 divides everything.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fp-l1-q3",
+          "question": "Is 6 a factor of 30? Answer Yes or No.",
+          "answer": "Yes",
+          "hint": "30 = 6 x 5.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fp-l1-q4",
+          "question": "How many factors does 16 have?",
+          "answer": "5",
+          "hint": "1,2,4,8,16.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fp-l1-q5",
+          "question": "Raju wants to arrange 24 chairs in equal rows. In how many different numbers of equal rows can he arrange them (count the factors of 24)?",
+          "answer": "8",
+          "hint": "Factors of 24: 1,2,3,4,6,8,12,24.",
+          "difficulty": "stretch",
+          "story": "Setting up a classroom.",
+          "isWord": true
+        },
+        {
+          "id": "fp-l1-q6",
+          "question": "What is the largest factor of 45 other than 45 itself?",
+          "answer": "15",
+          "hint": "45 = 3 x 15.",
+          "difficulty": "stretch",
+          "story": "A number puzzle on the board.",
+          "isWord": true
+        },
+        {
+          "id": "fp-l1-q7",
+          "question": "How many factors does 36 have?",
+          "answer": "9",
+          "hint": "1,2,3,4,6,9,12,18,36.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "fp-l1-q8",
+          "question": "What is the sum of all the factors of 6?",
+          "answer": "12",
+          "hint": "Add 1+2+3+6.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Multiples",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Skip-counting numbers",
+      "lessons": [
+        {
+          "id": "fp-l2-les1",
+          "title": "What is a Multiple?",
+          "intro": "A multiple of a number is what you get when you multiply it by a whole number.",
+          "visual": "",
+          "explanation": [
+            "Multiples of 4: 4, 8, 12, 16, 20, ...",
+            "The 5th multiple of 4 is 20.",
+            "Multiples are just the times-table of a number."
+          ],
+          "rule": "A multiple = number x a whole number.",
+          "tip": "The multiples of n are its times-table.",
+          "steps": [
+            {
+              "text": "Multiply by 1, 2, 3, ...",
+              "notation": "4,\\ 8,\\ 12,\\ 16"
+            },
+            {
+              "text": "The nth multiple is n times the number.",
+              "notation": "4 \\times 5 = 20",
+              "tip": "20 is the 5th multiple of 4."
+            }
+          ]
+        },
+        {
+          "id": "fp-l2-les2",
+          "title": "Multiples Never End",
+          "intro": "Unlike factors, multiples go on forever — you can always find a bigger one.",
+          "visual": "",
+          "explanation": [
+            "Multiples of 3: 3,6,9,12,... endless.",
+            "The 7th multiple of 3 is 21.",
+            "The smallest multiple of any number is the number itself."
+          ],
+          "rule": "Multiples are infinite; the smallest is the number itself.",
+          "tip": "There is no 'largest' multiple."
+        },
+        {
+          "id": "fp-l2-les3",
+          "title": "Recognising Multiples",
+          "intro": "You can check if a number is a multiple of another by dividing.",
+          "visual": "",
+          "explanation": [
+            "Is 24 a multiple of 6? 24 / 6 = 4, yes.",
+            "If the division is exact, it is a multiple.",
+            "Being a multiple of n means n is a factor of it."
+          ],
+          "rule": "If it divides exactly, it is a multiple.",
+          "tip": "Multiples and factors are opposites of each other."
+        },
+        {
+          "id": "fp-l2-les4",
+          "title": "Multiples in Groups",
+          "intro": "Multiples help when counting equal groups.",
+          "visual": "",
+          "explanation": [
+            "7 chairs per row, 6 rows: 7 x 6 = 42 chairs.",
+            "The total is a multiple of the group size.",
+            "Repeated addition and multiples go together."
+          ],
+          "rule": "Equal groups give multiples of the group size.",
+          "tip": "Total = group size x number of groups."
+        },
+        {
+          "id": "fp-l2-les5",
+          "title": "Counting Multiples",
+          "intro": "We can count how many multiples of a number fall in a range.",
+          "visual": "",
+          "explanation": [
+            "Multiples of 5 from 1 to 50: 5,10,...,50 — that is 10 of them.",
+            "Divide the top of the range by the number.",
+            "The first multiple over 50 for 8 is 56."
+          ],
+          "rule": "Count multiples by dividing the range end.",
+          "tip": "50 / 5 = 10 multiples of 5 up to 50."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fp-l2-q1",
+          "question": "What is the 5th multiple of 4?",
+          "answer": "20",
+          "hint": "4 x 5.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fp-l2-q2",
+          "question": "Is 24 a multiple of 6? Answer Yes or No.",
+          "answer": "Yes",
+          "hint": "24 / 6 = 4.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fp-l2-q3",
+          "question": "What is the 7th multiple of 3?",
+          "answer": "21",
+          "hint": "3 x 7.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fp-l2-q4",
+          "question": "What is the smallest multiple of 9?",
+          "answer": "9",
+          "hint": "The number itself.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fp-l2-q5",
+          "question": "A hall has 7 chairs in each row. How many chairs are there in 6 rows?",
+          "answer": "42",
+          "hint": "7 x 6.",
+          "difficulty": "stretch",
+          "story": "Arranging a school assembly.",
+          "isWord": true
+        },
+        {
+          "id": "fp-l2-q6",
+          "question": "Which multiple of 10 lies between 25 and 35?",
+          "answer": "30",
+          "hint": "Count by tens.",
+          "difficulty": "stretch",
+          "story": "Finding the round number.",
+          "isWord": true
+        },
+        {
+          "id": "fp-l2-q7",
+          "question": "What is the first multiple of 8 that is greater than 50?",
+          "answer": "56",
+          "hint": "8 x 7 = 56.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "fp-l2-q8",
+          "question": "How many multiples of 5 are there from 1 to 50?",
+          "answer": "10",
+          "hint": "50 / 5.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Divisibility Rules",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Quick division checks",
+      "lessons": [
+        {
+          "id": "fp-l3-les1",
+          "title": "Divisibility by 2, 5, 10",
+          "intro": "Some numbers can be tested for division just by looking at their last digit.",
+          "visual": "",
+          "explanation": [
+            "A number is divisible by 2 if it ends in 0,2,4,6,8 (even).",
+            "Divisible by 5 if it ends in 0 or 5.",
+            "Divisible by 10 if it ends in 0."
+          ],
+          "rule": "Last digit tells divisibility by 2, 5 and 10.",
+          "tip": "Even numbers end in 0,2,4,6,8.",
+          "steps": [
+            {
+              "text": "Check the last digit for 2, 5, 10.",
+              "notation": "126 \\to \\text{ends in } 6"
+            },
+            {
+              "text": "6 is even, so 126 is divisible by 2.",
+              "notation": "126 \\div 2 = 63",
+              "tip": "No remainder."
+            }
+          ]
+        },
+        {
+          "id": "fp-l3-les2",
+          "title": "Divisibility by 3 and 9",
+          "intro": "For 3 and 9 we add the digits — a neat trick!",
+          "visual": "",
+          "explanation": [
+            "Divisible by 3 if the digit sum is divisible by 3.",
+            "123: 1+2+3=6, divisible by 3.",
+            "Divisible by 9 if the digit sum is divisible by 9."
+          ],
+          "rule": "Add the digits to test 3 and 9.",
+          "tip": "If the digit sum works, the number does too."
+        },
+        {
+          "id": "fp-l3-les3",
+          "title": "Divisibility by 4",
+          "intro": "A number is divisible by 4 if its last TWO digits form a number divisible by 4.",
+          "visual": "",
+          "explanation": [
+            "128: last two digits 28, and 28 / 4 = 7, so yes.",
+            "You can ignore all the earlier digits.",
+            "This works because 100 is divisible by 4."
+          ],
+          "rule": "Check the last two digits for divisibility by 4.",
+          "tip": "28, 32, 36... all divide by 4."
+        },
+        {
+          "id": "fp-l3-les4",
+          "title": "Divisibility by 8",
+          "intro": "For 8, check the last THREE digits.",
+          "visual": "",
+          "explanation": [
+            "1000 is divisible by 8 (1000 / 8 = 125).",
+            "Only the last three digits matter.",
+            "This works because 1000 is divisible by 8."
+          ],
+          "rule": "Check the last three digits for divisibility by 8.",
+          "tip": "1000 / 8 = 125 exactly."
+        },
+        {
+          "id": "fp-l3-les5",
+          "title": "Using the Rules Together",
+          "intro": "Combine the rules to test bigger numbers quickly without long division.",
+          "visual": "",
+          "explanation": [
+            "234: ends in 4 (div by 2) and digit sum 9 (div by 9).",
+            "So 234 is divisible by 2, 3, 6 and 9.",
+            "The rules save a lot of time."
+          ],
+          "rule": "Combine rules to test many divisors fast.",
+          "tip": "Divisible by 2 and 3 means divisible by 6."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fp-l3-q1",
+          "question": "Is 126 divisible by 2? Answer Yes or No.",
+          "answer": "Yes",
+          "hint": "It ends in 6 (even).",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fp-l3-q2",
+          "question": "Is 45 divisible by 5? Answer Yes or No.",
+          "answer": "Yes",
+          "hint": "It ends in 5.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fp-l3-q3",
+          "question": "Is 123 divisible by 3? Answer Yes or No.",
+          "answer": "Yes",
+          "hint": "1+2+3 = 6.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fp-l3-q4",
+          "question": "Is 90 divisible by 10? Answer Yes or No.",
+          "answer": "Yes",
+          "hint": "It ends in 0.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fp-l3-q5",
+          "question": "A number is 234. Is it divisible by 9? Answer Yes or No.",
+          "answer": "Yes",
+          "hint": "2+3+4 = 9.",
+          "difficulty": "stretch",
+          "story": "Checking a raffle ticket number.",
+          "isWord": true
+        },
+        {
+          "id": "fp-l3-q6",
+          "question": "Is 128 divisible by 4? Answer Yes or No.",
+          "answer": "Yes",
+          "hint": "Last two digits 28 divide by 4.",
+          "difficulty": "stretch",
+          "story": "A quick mental-maths challenge.",
+          "isWord": true
+        },
+        {
+          "id": "fp-l3-q7",
+          "question": "What is the smallest ones digit d so that the number 12d is divisible by 3?",
+          "answer": "0",
+          "hint": "Digit sum 1+2+d must divide by 3; d=0 gives 3.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "fp-l3-q8",
+          "question": "Is 1000 divisible by 8? Answer Yes or No.",
+          "answer": "Yes",
+          "hint": "1000 / 8 = 125.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Prime & Composite",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "The atoms of numbers",
+      "lessons": [
+        {
+          "id": "fp-l4-les1",
+          "title": "Prime Numbers",
+          "intro": "A prime number has exactly two factors: 1 and itself. Primes are the atoms of maths!",
+          "visual": "",
+          "explanation": [
+            "7 is prime: only 1 and 7 divide it.",
+            "The first primes are 2, 3, 5, 7, 11, 13, ...",
+            "2 is the only even prime number."
+          ],
+          "rule": "A prime has exactly two factors.",
+          "tip": "2 is the only even prime.",
+          "steps": [
+            {
+              "text": "Check for factors other than 1 and itself.",
+              "notation": "7:\\ 1,\\ 7"
+            },
+            {
+              "text": "Only two factors means prime.",
+              "notation": "7 = \\text{prime}",
+              "tip": "No other number divides 7."
+            }
+          ]
+        },
+        {
+          "id": "fp-l4-les2",
+          "title": "Composite Numbers",
+          "intro": "A composite number has more than two factors.",
+          "visual": "",
+          "explanation": [
+            "9 is composite: 1, 3, 9.",
+            "Every whole number above 1 is prime or composite.",
+            "1 is neither prime nor composite."
+          ],
+          "rule": "Composite numbers have more than two factors.",
+          "tip": "1 is special: not prime, not composite."
+        },
+        {
+          "id": "fp-l4-les3",
+          "title": "Is It Prime?",
+          "intro": "To test if a number is prime, try dividing by small primes.",
+          "visual": "",
+          "explanation": [
+            "Test 29: not divisible by 2,3,5 — so it is prime.",
+            "If no small prime divides it, it is prime.",
+            "You only need to test primes up to its square root."
+          ],
+          "rule": "If no prime up to the square root divides it, it is prime.",
+          "tip": "Testing 2, 3, 5, 7 covers numbers up to 100-ish."
+        },
+        {
+          "id": "fp-l4-les4",
+          "title": "The Number 1 and 2",
+          "intro": "Two special cases trip people up: 1 and 2.",
+          "visual": "",
+          "explanation": [
+            "1 has only one factor, so it is NOT prime.",
+            "2 is prime and is the only even prime.",
+            "Knowing these avoids common mistakes."
+          ],
+          "rule": "1 is not prime; 2 is the only even prime.",
+          "tip": "Never call 1 a prime number."
+        },
+        {
+          "id": "fp-l4-les5",
+          "title": "Counting Primes",
+          "intro": "Primes become rarer as numbers get bigger, but they never stop.",
+          "visual": "",
+          "explanation": [
+            "Primes under 10: 2,3,5,7 — four of them.",
+            "Primes under 20: add 11,13,17,19 — eight in all.",
+            "The largest prime under 30 is 29."
+          ],
+          "rule": "Primes thin out but continue forever.",
+          "tip": "List them carefully; do not skip 2."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fp-l4-q1",
+          "question": "Is 7 a prime number? Answer Yes or No.",
+          "answer": "Yes",
+          "hint": "Only 1 and 7 divide it.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fp-l4-q2",
+          "question": "Is 9 a prime number? Answer Yes or No.",
+          "answer": "No",
+          "hint": "3 divides 9.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fp-l4-q3",
+          "question": "How many prime numbers are there between 1 and 10?",
+          "answer": "4",
+          "hint": "2,3,5,7.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fp-l4-q4",
+          "question": "What is the only even prime number?",
+          "answer": "2",
+          "hint": "Every other even number divides by 2.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fp-l4-q5",
+          "question": "How many prime numbers are less than 20?",
+          "answer": "8",
+          "hint": "2,3,5,7,11,13,17,19.",
+          "difficulty": "stretch",
+          "story": "Listing primes for a maths game.",
+          "isWord": true
+        },
+        {
+          "id": "fp-l4-q6",
+          "question": "Is 1 a prime number? Answer Yes or No.",
+          "answer": "No",
+          "hint": "1 has only one factor.",
+          "difficulty": "stretch",
+          "story": "A tricky quiz question.",
+          "isWord": true
+        },
+        {
+          "id": "fp-l4-q7",
+          "question": "What is the largest prime number less than 30?",
+          "answer": "29",
+          "hint": "Check 29 for factors.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "fp-l4-q8",
+          "question": "How many composite numbers are there from 1 to 10?",
+          "answer": "5",
+          "hint": "4,6,8,9,10.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Prime Factorisation",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Factor trees and primes",
+      "lessons": [
+        {
+          "id": "fp-l5-les1",
+          "title": "Prime Factorisation",
+          "intro": "Breaking a number into primes gives its unique prime factorisation.",
+          "visual": "",
+          "explanation": [
+            "30 = 2 x 3 x 5.",
+            "Divide by the smallest prime over and over.",
+            "Every number has exactly one prime factorisation."
+          ],
+          "rule": "Prime factorisation = a number written as primes multiplied.",
+          "tip": "Start with 2, then 3, then 5...",
+          "steps": [
+            {
+              "text": "Divide repeatedly by the smallest prime.",
+              "notation": "30 = 2 \\times 15 = 2 \\times 3 \\times 5"
+            },
+            {
+              "text": "Multiply the primes to check.",
+              "notation": "2 \\times 3 \\times 5 = 30",
+              "tip": "Order does not matter."
+            }
+          ]
+        },
+        {
+          "id": "fp-l5-les2",
+          "title": "Factor Trees",
+          "intro": "A factor tree is a picture that helps break a number into primes.",
+          "visual": "",
+          "explanation": [
+            "8 splits into 2 and 4, then 4 into 2 and 2.",
+            "So 8 = 2 x 2 x 2.",
+            "Keep branching until every leaf is prime."
+          ],
+          "rule": "A factor tree ends when all leaves are prime.",
+          "tip": "Circle the prime leaves."
+        },
+        {
+          "id": "fp-l5-les3",
+          "title": "Largest and Smallest Prime Factor",
+          "intro": "Among a number's prime factors, we can pick the biggest or smallest.",
+          "visual": "",
+          "explanation": [
+            "30 = 2x3x5: smallest prime factor 2, largest 5.",
+            "35 = 5x7: smallest 5, largest 7.",
+            "The smallest prime factor divides the number first."
+          ],
+          "rule": "Identify the smallest and largest prime factors.",
+          "tip": "2 is often (not always) the smallest."
+        },
+        {
+          "id": "fp-l5-les4",
+          "title": "Counting Prime Factors",
+          "intro": "We can count prime factors, with or without repeats.",
+          "visual": "",
+          "explanation": [
+            "24 = 2x2x2x3 — four prime factors with repetition.",
+            "16 = 2x2x2x2 — four twos.",
+            "Repetition counts each copy."
+          ],
+          "rule": "Count every prime, including repeats.",
+          "tip": "List them out before counting."
+        },
+        {
+          "id": "fp-l5-les5",
+          "title": "Prime Power Master",
+          "intro": "Combine factor trees and products to solve any prime puzzle.",
+          "visual": "",
+          "explanation": [
+            "60 = 2x2x3x5.",
+            "Multiply chosen primes to build new numbers.",
+            "Prime factors unlock HCF and LCM too."
+          ],
+          "rule": "Master prime factors to tackle HCF, LCM and more.",
+          "tip": "Always verify by multiplying back."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "fp-l5-q1",
+          "question": "What is 2 x 3 x 5?",
+          "answer": "30",
+          "hint": "Multiply step by step.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fp-l5-q2",
+          "question": "What is 2 x 2 x 2?",
+          "answer": "8",
+          "hint": "That is 8.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "fp-l5-q3",
+          "question": "What is the largest prime factor of 30?",
+          "answer": "5",
+          "hint": "30 = 2 x 3 x 5.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fp-l5-q4",
+          "question": "What is 3 x 3 x 2?",
+          "answer": "18",
+          "hint": "That is 9 x 2.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "fp-l5-q5",
+          "question": "A number's factor tree gives 2, 2, 2 and 2. What is the number?",
+          "answer": "16",
+          "hint": "Multiply four 2s.",
+          "difficulty": "stretch",
+          "story": "Reading a factor-tree picture.",
+          "isWord": true
+        },
+        {
+          "id": "fp-l5-q6",
+          "question": "What is the smallest prime factor of 35?",
+          "answer": "5",
+          "hint": "35 = 5 x 7.",
+          "difficulty": "stretch",
+          "story": "Hunting for the smallest prime.",
+          "isWord": true
+        },
+        {
+          "id": "fp-l5-q7",
+          "question": "How many prime factors (counting repeats) does 24 have?",
+          "answer": "4",
+          "hint": "24 = 2 x 2 x 2 x 3.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "fp-l5-q8",
+          "question": "What is 2 x 2 x 3 x 5?",
+          "answer": "60",
+          "hint": "That is 4 x 15.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

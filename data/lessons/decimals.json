@@ -1,0 +1,753 @@
+{
+  "id": "decimals",
+  "topic": "Decimal Fractions",
+  "emoji": "💠",
+  "color": "#34D399",
+  "gradeRange": [
+    4,
+    8
+  ],
+  "description": "Tenths, hundredths and decimal arithmetic",
+  "levels": [
+    {
+      "id": 1,
+      "label": "What is a Decimal",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "Points, tenths and money",
+      "lessons": [
+        {
+          "id": "dec-l1-les1",
+          "title": "What is a Decimal?",
+          "intro": "A decimal is a way to write numbers that are between whole numbers — like the money in your pocket, which is rupees AND paise!",
+          "visual": "",
+          "explanation": [
+            "A decimal point separates the whole part from the fraction part.",
+            "In 3.5, the 3 is whole and the .5 means half.",
+            "Decimals are just another way to write fractions with 10, 100, 1000."
+          ],
+          "rule": "The decimal point separates whole numbers from parts.",
+          "tip": "Read 3.5 as 'three point five'.",
+          "steps": [
+            {
+              "text": "A decimal splits whole and part at the point.",
+              "notation": "3.5 = 3 + \\tfrac{5}{10}"
+            },
+            {
+              "text": "Tenths are the first place after the point.",
+              "notation": "0.5 = \\tfrac{5}{10} = \\tfrac{1}{2}",
+              "tip": "Half a whole is 0.5."
+            }
+          ]
+        },
+        {
+          "id": "dec-l1-les2",
+          "title": "Tenths",
+          "intro": "The very first place after the decimal point is the tenths place — one whole split into 10 equal parts.",
+          "visual": "",
+          "explanation": [
+            "0.1 means one tenth, written 1/10.",
+            "0.7 means seven tenths, or 7/10.",
+            "Ten tenths make one whole: 0.1 x 10 = 1."
+          ],
+          "rule": "The first decimal place is tenths (1/10).",
+          "tip": "0.1 is one slice of a ten-slice cake."
+        },
+        {
+          "id": "dec-l1-les3",
+          "title": "Decimals and Money",
+          "intro": "Rupees and paise are decimals in real life — 100 paise make 1 rupee.",
+          "visual": "",
+          "explanation": [
+            "Rs 3.50 means 3 rupees and 50 paise.",
+            "The two digits after the point are the paise.",
+            "Money is a friendly way to picture decimals."
+          ],
+          "rule": "Money uses two decimal places for paise.",
+          "tip": "Think of coins to picture decimal parts."
+        },
+        {
+          "id": "dec-l1-les4",
+          "title": "Reading Decimals",
+          "intro": "We read the whole part normally, say 'point', then read each decimal digit one by one.",
+          "visual": "",
+          "explanation": [
+            "4.25 is read 'four point two five'.",
+            "We do NOT say 'twenty-five' after the point — each digit separately.",
+            "0.08 is 'zero point zero eight'."
+          ],
+          "rule": "After the point, read each digit on its own.",
+          "tip": "Never group the digits after the point."
+        },
+        {
+          "id": "dec-l1-les5",
+          "title": "Decimals on a Number Line",
+          "intro": "Decimals fit neatly between whole numbers on a number line, splitting each gap into ten steps.",
+          "visual": "",
+          "explanation": [
+            "Between 0 and 1 we can mark 0.1, 0.2, ... up to 0.9.",
+            "0.5 sits exactly halfway between 0 and 1.",
+            "Number lines make decimal sizes easy to see."
+          ],
+          "rule": "Each unit on the line splits into ten decimal steps.",
+          "tip": "0.5 is always the middle of a unit."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "dec-l1-q1",
+          "question": "Write 5 tenths as a decimal.",
+          "answer": "0.5",
+          "hint": "Tenths go in the first place after the point.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "dec-l1-q2",
+          "question": "Write 3 and 2 tenths as a decimal.",
+          "answer": "3.2",
+          "hint": "Whole part 3, then 2 tenths.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "dec-l1-q3",
+          "question": "Write the fraction 7/10 as a decimal.",
+          "answer": "0.7",
+          "hint": "Seven tenths is 0.7.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "dec-l1-q4",
+          "question": "How many tenths are there in 1 whole?",
+          "answer": "10",
+          "hint": "Ten tenths make one whole.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "dec-l1-q5",
+          "question": "A pencil is 4 and 5 tenths centimetres long. Write its length as a decimal.",
+          "answer": "4.5",
+          "hint": "4 whole and 5 tenths.",
+          "difficulty": "stretch",
+          "story": "Measuring with a ruler in class.",
+          "isWord": true
+        },
+        {
+          "id": "dec-l1-q6",
+          "question": "Riya has 3 rupees and 50 paise. Write this amount as a decimal number of rupees.",
+          "answer": "3.5",
+          "hint": "50 paise is 5 tenths of a rupee.",
+          "difficulty": "stretch",
+          "story": "Counting coins for the canteen.",
+          "isWord": true
+        },
+        {
+          "id": "dec-l1-q7",
+          "question": "Write the mixed number 2 and 3/10 as a decimal.",
+          "answer": "2.3",
+          "hint": "Whole 2, then 3 tenths.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "dec-l1-q8",
+          "question": "What decimal is exactly halfway between 0 and 1?",
+          "answer": "0.5",
+          "hint": "Halfway is five tenths.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Decimal Place Value",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Tenths, hundredths, thousandths",
+      "lessons": [
+        {
+          "id": "dec-l2-les1",
+          "title": "Decimal Place Values",
+          "intro": "Just like whole numbers, each place after the decimal point has its own value: tenths, hundredths, thousandths.",
+          "visual": "",
+          "explanation": [
+            "First place = tenths (1/10), second = hundredths (1/100).",
+            "In 0.47 the 4 is 4 tenths and the 7 is 7 hundredths.",
+            "Each place is ten times smaller than the one before."
+          ],
+          "rule": "Decimal places shrink by ten each step right.",
+          "tip": "Tenths, then hundredths, then thousandths.",
+          "steps": [
+            {
+              "text": "Name the decimal places from the point.",
+              "notation": "0.47 = \\tfrac{4}{10} + \\tfrac{7}{100}"
+            },
+            {
+              "text": "Each place is ten times smaller.",
+              "notation": "\\tfrac{1}{10},\\ \\tfrac{1}{100},\\ \\tfrac{1}{1000}",
+              "tip": "Smaller and smaller."
+            }
+          ]
+        },
+        {
+          "id": "dec-l2-les2",
+          "title": "Hundredths",
+          "intro": "The second place after the point is hundredths — a whole split into 100 tiny equal parts.",
+          "visual": "",
+          "explanation": [
+            "0.01 is one hundredth, 1/100.",
+            "0.25 means 25 hundredths, the same as a quarter.",
+            "Paise are hundredths of a rupee."
+          ],
+          "rule": "The second decimal place is hundredths (1/100).",
+          "tip": "0.25 is the same as 1/4."
+        },
+        {
+          "id": "dec-l2-les3",
+          "title": "Place Value of a Digit",
+          "intro": "You can name the exact value of any digit in a decimal by its place.",
+          "visual": "",
+          "explanation": [
+            "In 6.38 the 3 is in the tenths place, worth 0.3.",
+            "In 6.38 the 8 is in the hundredths place, worth 0.08.",
+            "Position matters just as much as in whole numbers."
+          ],
+          "rule": "A decimal digit's value = digit x its place.",
+          "tip": "Point to the digit, then name its place."
+        },
+        {
+          "id": "dec-l2-les4",
+          "title": "Equivalent Decimals",
+          "intro": "Adding a zero at the END of a decimal does not change its value — 0.5 and 0.50 are equal.",
+          "visual": "",
+          "explanation": [
+            "0.5 = 0.50 = 0.500; the extra zeros add nothing.",
+            "But 0.05 is NOT the same as 0.5 — position changed!",
+            "Trailing zeros are harmless; middle zeros are not."
+          ],
+          "rule": "Trailing zeros after a decimal don't change its value.",
+          "tip": "Only zeros at the very end are 'free'."
+        },
+        {
+          "id": "dec-l2-les5",
+          "title": "Decimals to Fractions",
+          "intro": "Every decimal can be written as a fraction over 10, 100, or 1000, then simplified.",
+          "visual": "",
+          "explanation": [
+            "0.5 = 5/10 = 1/2.",
+            "0.25 = 25/100 = 1/4.",
+            "Count the decimal places to choose 10, 100 or 1000."
+          ],
+          "rule": "Decimal places decide the denominator (10, 100, 1000).",
+          "tip": "One place over 10, two places over 100."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "dec-l2-q1",
+          "question": "In 6.38, what is the place value of the 3? Write it as a decimal.",
+          "answer": "0.3",
+          "hint": "3 is in the tenths place.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "dec-l2-q2",
+          "question": "In 6.38, what is the place value of the 8? Write it as a decimal.",
+          "answer": "0.08",
+          "hint": "8 is in the hundredths place.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "dec-l2-q3",
+          "question": "Write 0.25 as a fraction in lowest terms.",
+          "answer": "1/4",
+          "hint": "25/100 simplifies.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "dec-l2-q4",
+          "question": "Write 0.5 as a fraction in lowest terms.",
+          "answer": "1/2",
+          "hint": "5/10 simplifies.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "dec-l2-q5",
+          "question": "A ribbon is 0.75 metre long. Write this length as a fraction of a metre in lowest terms.",
+          "answer": "3/4",
+          "hint": "75/100 simplifies by dividing by 25.",
+          "difficulty": "stretch",
+          "story": "Wrapping a gift with ribbon.",
+          "isWord": true
+        },
+        {
+          "id": "dec-l2-q6",
+          "question": "Is 0.50 equal to 0.5? Answer Yes or No.",
+          "answer": "Yes",
+          "hint": "Trailing zeros do not change the value.",
+          "difficulty": "stretch",
+          "story": "A classmate asks a tricky question.",
+          "isWord": true
+        },
+        {
+          "id": "dec-l2-q7",
+          "question": "Write 0.125 as a fraction in lowest terms.",
+          "answer": "1/8",
+          "hint": "125/1000 simplifies by dividing by 125.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "dec-l2-q8",
+          "question": "In 4.062, what is the place value of the 6? Write it as a decimal.",
+          "answer": "0.06",
+          "hint": "6 is in the hundredths place.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Comparing Decimals",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Order and compare safely",
+      "lessons": [
+        {
+          "id": "dec-l3-les1",
+          "title": "Comparing Decimals",
+          "intro": "To compare decimals, line up the decimal points and compare place by place, just like whole numbers.",
+          "visual": "",
+          "explanation": [
+            "Compare the whole parts first; if equal, move to tenths.",
+            "0.7 is greater than 0.65 because 7 tenths beats 6 tenths.",
+            "Give each number the same number of decimal places to compare easily."
+          ],
+          "rule": "Line up the points; compare from the left.",
+          "tip": "Add trailing zeros so both have equal places.",
+          "steps": [
+            {
+              "text": "Make the place counts equal with trailing zeros.",
+              "notation": "0.7 = 0.70"
+            },
+            {
+              "text": "Now compare like whole numbers.",
+              "notation": "0.70 > 0.65",
+              "tip": "70 hundredths > 65 hundredths."
+            }
+          ]
+        },
+        {
+          "id": "dec-l3-les2",
+          "title": "The Trailing-Zero Trick",
+          "intro": "Giving decimals the same number of places makes comparing foolproof.",
+          "visual": "",
+          "explanation": [
+            "To compare 0.5 and 0.45, write 0.50 and 0.45.",
+            "Now it is clearly 50 vs 45 hundredths, so 0.5 is bigger.",
+            "This trick removes all confusion."
+          ],
+          "rule": "Equalise decimal places before comparing.",
+          "tip": "More digits does NOT mean a bigger number."
+        },
+        {
+          "id": "dec-l3-les3",
+          "title": "Ordering Decimals",
+          "intro": "Put several decimals in order by comparing them two at a time.",
+          "visual": "",
+          "explanation": [
+            "Ascending: 0.3, 0.33, 0.4.",
+            "Descending: 0.4, 0.33, 0.3.",
+            "Line up points and sort from the first differing place."
+          ],
+          "rule": "Sort decimals by their first differing place.",
+          "tip": "Equalise places first, then order."
+        },
+        {
+          "id": "dec-l3-les4",
+          "title": "Decimals Between Decimals",
+          "intro": "Between any two decimals there is always another decimal — numbers never run out!",
+          "visual": "",
+          "explanation": [
+            "Between 0.3 and 0.4 you can find 0.35.",
+            "Between 0.5 and 0.6 you can find 0.55.",
+            "Just add another decimal place to fit one in."
+          ],
+          "rule": "You can always find a decimal between two others.",
+          "tip": "Add a place and pick a middle digit."
+        },
+        {
+          "id": "dec-l3-les5",
+          "title": "Comparing in Real Life",
+          "intro": "We compare decimals when we weigh things, time races, or measure lengths.",
+          "visual": "",
+          "explanation": [
+            "A 0.75 kg bag is heavier than a 0.7 kg bag.",
+            "A runner at 10.8 seconds beats one at 10.85 seconds.",
+            "Smaller time wins a race; larger weight is heavier."
+          ],
+          "rule": "Context tells you whether bigger or smaller is 'better'.",
+          "tip": "Read the units to know what you are comparing."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "dec-l3-q1",
+          "question": "Which is greater: 0.7 or 0.65? Write the greater one.",
+          "answer": "0.7",
+          "hint": "Write 0.70 and compare with 0.65.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "dec-l3-q2",
+          "question": "Which is smaller: 0.5 or 0.45? Write the smaller one.",
+          "answer": "0.45",
+          "hint": "Write 0.50 and compare with 0.45.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "dec-l3-q3",
+          "question": "Write the greatest of 0.3, 0.33, 0.4.",
+          "answer": "0.4",
+          "hint": "0.40 is the largest.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "dec-l3-q4",
+          "question": "Write the smallest of 0.6, 0.06, 0.66.",
+          "answer": "0.06",
+          "hint": "0.06 is six hundredths.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "dec-l3-q5",
+          "question": "Bag A weighs 0.75 kg and bag B weighs 0.7 kg. Which weight is heavier, in kg?",
+          "answer": "0.75",
+          "hint": "Compare 0.75 with 0.70.",
+          "difficulty": "stretch",
+          "story": "At the vegetable market.",
+          "isWord": true
+        },
+        {
+          "id": "dec-l3-q6",
+          "question": "Two runners clock 10.8 s and 10.85 s. What is the winning (smaller) time in seconds?",
+          "answer": "10.8",
+          "hint": "Smaller time wins; compare 10.80 and 10.85.",
+          "difficulty": "stretch",
+          "story": "A close finish at sports day.",
+          "isWord": true
+        },
+        {
+          "id": "dec-l3-q7",
+          "question": "Write a decimal that lies exactly halfway between 0.3 and 0.4.",
+          "answer": "0.35",
+          "hint": "Halfway means add a hundredths digit of 5.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "dec-l3-q8",
+          "question": "Write the greatest of 0.109, 0.11, 0.1.",
+          "answer": "0.11",
+          "hint": "Equalise to 0.109, 0.110, 0.100.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Add & Subtract",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Line up the points",
+      "lessons": [
+        {
+          "id": "dec-l4-les1",
+          "title": "Adding Decimals",
+          "intro": "Adding decimals is just like adding whole numbers — the one golden rule is to line up the decimal points.",
+          "visual": "",
+          "explanation": [
+            "Stack the numbers so the points are in a column.",
+            "0.5 + 0.3 = 0.8.",
+            "Fill empty places with zeros to keep columns neat."
+          ],
+          "rule": "Line up the decimal points, then add column by column.",
+          "tip": "Keep the point in the same column in your answer.",
+          "steps": [
+            {
+              "text": "Line up the points before adding.",
+              "notation": "0.5 + 0.3"
+            },
+            {
+              "text": "Add tenths, carry if needed.",
+              "notation": "0.5 + 0.3 = 0.8",
+              "tip": "5 tenths + 3 tenths = 8 tenths."
+            }
+          ]
+        },
+        {
+          "id": "dec-l4-les2",
+          "title": "Carrying with Decimals",
+          "intro": "When a column adds to 10 or more, carry to the next column — exactly like whole-number addition.",
+          "visual": "",
+          "explanation": [
+            "0.7 + 0.5 = 1.2 (the tenths made a whole).",
+            "The carried 1 moves into the ones place.",
+            "The decimal point stays put."
+          ],
+          "rule": "Carry across the point just like any other column.",
+          "tip": "Ten tenths become one whole."
+        },
+        {
+          "id": "dec-l4-les3",
+          "title": "Subtracting Decimals",
+          "intro": "Subtraction also needs lined-up points; borrow across columns when needed.",
+          "visual": "",
+          "explanation": [
+            "0.9 - 0.4 = 0.5.",
+            "1.0 - 0.3 = 0.7 (borrow from the ones place).",
+            "Equalise places with zeros before you subtract."
+          ],
+          "rule": "Line up points; borrow across the point if needed.",
+          "tip": "Write 1.0 as 1.0 so columns match."
+        },
+        {
+          "id": "dec-l4-les4",
+          "title": "Money Calculations",
+          "intro": "Adding and subtracting money is decimal maths with two places for paise.",
+          "visual": "",
+          "explanation": [
+            "Rs 2.50 + Rs 1.25 = Rs 3.75.",
+            "Rs 5.00 - Rs 1.75 = Rs 3.25.",
+            "Always keep two decimal places for money."
+          ],
+          "rule": "Treat money as decimals with two places.",
+          "tip": "Line up the rupee points before calculating."
+        },
+        {
+          "id": "dec-l4-les5",
+          "title": "Adding Three Decimals",
+          "intro": "You can add several decimals at once — stack them all with points aligned.",
+          "visual": "",
+          "explanation": [
+            "0.2 + 0.3 + 0.4 = 0.9.",
+            "Add the tenths column, then carry if it reaches ten.",
+            "More numbers, same rule: line up the points."
+          ],
+          "rule": "Stack all the numbers by their decimal points.",
+          "tip": "Add one column at a time from the right."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "dec-l4-q1",
+          "question": "What is 0.5 + 0.3?",
+          "answer": "0.8",
+          "hint": "Add the tenths.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "dec-l4-q2",
+          "question": "What is 0.9 - 0.4?",
+          "answer": "0.5",
+          "hint": "Subtract the tenths.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "dec-l4-q3",
+          "question": "What is 0.7 + 0.5?",
+          "answer": "1.2",
+          "hint": "Ten tenths carry to one whole.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "dec-l4-q4",
+          "question": "What is 1.0 - 0.3?",
+          "answer": "0.7",
+          "hint": "Borrow from the ones place.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "dec-l4-q5",
+          "question": "Riya buys a pen for 2.50 rupees and an eraser for 1.25 rupees. What is the total cost in rupees?",
+          "answer": "3.75",
+          "hint": "Line up the points and add.",
+          "difficulty": "stretch",
+          "story": "A quick trip to the stationery shop.",
+          "isWord": true
+        },
+        {
+          "id": "dec-l4-q6",
+          "question": "Aman pays 5.00 rupees for a snack that costs 1.75 rupees. How much change does he get, in rupees?",
+          "answer": "3.25",
+          "hint": "Subtract 1.75 from 5.00.",
+          "difficulty": "stretch",
+          "story": "Buying a snack at the canteen.",
+          "isWord": true
+        },
+        {
+          "id": "dec-l4-q7",
+          "question": "What is 0.2 + 0.3 + 0.4?",
+          "answer": "0.9",
+          "hint": "Add all the tenths.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "dec-l4-q8",
+          "question": "What is 3.25 + 1.8?",
+          "answer": "5.05",
+          "hint": "Write 1.80 so places match, then add.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Multiply & Divide",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Shift the point with care",
+      "lessons": [
+        {
+          "id": "dec-l5-les1",
+          "title": "Multiplying by 10, 100, 1000",
+          "intro": "Multiplying a decimal by 10 shifts the decimal point one place to the RIGHT — the number grows!",
+          "visual": "",
+          "explanation": [
+            "0.5 x 10 = 5 (point moves one right).",
+            "0.5 x 100 = 50 (point moves two right).",
+            "Count the zeros to count the shifts."
+          ],
+          "rule": "x10 moves the point one place right per zero.",
+          "tip": "More zeros, more shifts to the right.",
+          "steps": [
+            {
+              "text": "Multiplying by 10 shifts the point right.",
+              "notation": "0.5 \\times 10 = 5"
+            },
+            {
+              "text": "Each extra zero is one more shift.",
+              "notation": "0.5 \\times 100 = 50",
+              "tip": "Two zeros, two shifts."
+            }
+          ]
+        },
+        {
+          "id": "dec-l5-les2",
+          "title": "Dividing by 10, 100, 1000",
+          "intro": "Dividing a decimal by 10 shifts the point one place to the LEFT — the number shrinks.",
+          "visual": "",
+          "explanation": [
+            "5 / 10 = 0.5 (point moves one left).",
+            "5 / 100 = 0.05 (point moves two left).",
+            "Add zeros as place-holders if you run out of digits."
+          ],
+          "rule": "/10 moves the point one place left per zero.",
+          "tip": "Fill empty places with zeros."
+        },
+        {
+          "id": "dec-l5-les3",
+          "title": "Multiplying a Decimal by a Whole Number",
+          "intro": "Multiply as usual, then place the decimal point so the answer has the right number of decimal places.",
+          "visual": "",
+          "explanation": [
+            "0.3 x 4 = 1.2 (one decimal place in, one out).",
+            "Count decimal places in the question to place the point.",
+            "Ignore the point while multiplying, then put it back."
+          ],
+          "rule": "The answer has as many decimal places as the decimal factor.",
+          "tip": "Multiply first, then count places for the point."
+        },
+        {
+          "id": "dec-l5-les4",
+          "title": "Dividing a Decimal by a Whole Number",
+          "intro": "Divide as usual and line the decimal point of the answer up with the one inside.",
+          "visual": "",
+          "explanation": [
+            "0.8 / 2 = 0.4.",
+            "1.5 / 3 = 0.5.",
+            "Keep the point in the quotient above the point inside."
+          ],
+          "rule": "Place the quotient's point above the dividend's point.",
+          "tip": "Divide the digits as normal, keep the point aligned."
+        },
+        {
+          "id": "dec-l5-les5",
+          "title": "Decimal Master Mix",
+          "intro": "Now combine everything — multiply, divide and shift points with confidence.",
+          "visual": "",
+          "explanation": [
+            "0.25 x 4 = 1 (four quarters make a whole).",
+            "2.4 / 10 = 0.24.",
+            "Always check: does the size of the answer make sense?"
+          ],
+          "rule": "Use point-shifting and place-counting together.",
+          "tip": "Estimate first to check your answer is sensible."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "dec-l5-q1",
+          "question": "What is 0.5 x 10?",
+          "answer": "5",
+          "hint": "Shift the point one place right.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "dec-l5-q2",
+          "question": "What is 5 / 10?",
+          "answer": "0.5",
+          "hint": "Shift the point one place left.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "dec-l5-q3",
+          "question": "What is 0.3 x 4?",
+          "answer": "1.2",
+          "hint": "3 tenths taken 4 times.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "dec-l5-q4",
+          "question": "What is 0.8 / 2?",
+          "answer": "0.4",
+          "hint": "Half of 8 tenths.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "dec-l5-q5",
+          "question": "A nail is 0.6 cm long. What is the total length of 5 such nails, in cm?",
+          "answer": "3",
+          "hint": "0.6 taken 5 times.",
+          "difficulty": "stretch",
+          "story": "Building a small wooden toy.",
+          "isWord": true
+        },
+        {
+          "id": "dec-l5-q6",
+          "question": "A 1.5 metre ribbon is cut into 3 equal pieces. How long is each piece, in metres?",
+          "answer": "0.5",
+          "hint": "Divide 1.5 by 3.",
+          "difficulty": "stretch",
+          "story": "Sharing ribbon for a craft project.",
+          "isWord": true
+        },
+        {
+          "id": "dec-l5-q7",
+          "question": "What is 0.25 x 4?",
+          "answer": "1",
+          "hint": "Four quarters make one whole.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "dec-l5-q8",
+          "question": "What is 2.4 / 10?",
+          "answer": "0.24",
+          "hint": "Shift the point one place left.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

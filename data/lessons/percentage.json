@@ -1,0 +1,753 @@
+{
+  "id": "percentage",
+  "topic": "Percentage & Money",
+  "emoji": "💸",
+  "color": "#F59E0B",
+  "gradeRange": [
+    5,
+    9
+  ],
+  "description": "Percent of amounts, discounts, profit and change",
+  "levels": [
+    {
+      "id": 1,
+      "label": "What is Percent",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "Out of a hundred",
+      "lessons": [
+        {
+          "id": "pct-l1-les1",
+          "title": "What is Percent?",
+          "intro": "'Percent' means 'out of 100'. When your test says 80%, it means 80 marks out of every 100!",
+          "visual": "",
+          "explanation": [
+            "The symbol % is short for 'per hundred'.",
+            "50% means 50 out of 100, which is half.",
+            "Percentages make it easy to compare different amounts fairly."
+          ],
+          "rule": "Percent means 'out of 100'.",
+          "tip": "Read % as 'out of a hundred'.",
+          "steps": [
+            {
+              "text": "Percent is a fraction with denominator 100.",
+              "notation": "50\\% = \\tfrac{50}{100}"
+            },
+            {
+              "text": "That simplifies to one half.",
+              "notation": "\\tfrac{50}{100} = \\tfrac{1}{2}",
+              "tip": "50% is half."
+            }
+          ]
+        },
+        {
+          "id": "pct-l1-les2",
+          "title": "Percent as a Fraction",
+          "intro": "Any percentage can be written as a fraction over 100, then simplified.",
+          "visual": "",
+          "explanation": [
+            "25% = 25/100 = 1/4.",
+            "75% = 75/100 = 3/4.",
+            "Divide top and bottom by the same number to simplify."
+          ],
+          "rule": "Percent to fraction: put it over 100 and simplify.",
+          "tip": "Learn the friendly ones: 25%, 50%, 75%."
+        },
+        {
+          "id": "pct-l1-les3",
+          "title": "Percent as a Decimal",
+          "intro": "To turn a percent into a decimal, divide by 100 — the point moves two places left.",
+          "visual": "",
+          "explanation": [
+            "50% = 0.5.",
+            "7% = 0.07.",
+            "Dividing by 100 shifts the decimal point two places left."
+          ],
+          "rule": "Percent to decimal: divide by 100.",
+          "tip": "Move the point two places to the left."
+        },
+        {
+          "id": "pct-l1-les4",
+          "title": "Common Percentages",
+          "intro": "A few percentages come up again and again — knowing them by heart saves time.",
+          "visual": "",
+          "explanation": [
+            "100% is the whole thing; 50% is half; 25% is a quarter.",
+            "10% is one tenth — just divide by 10.",
+            "1% is one hundredth."
+          ],
+          "rule": "Memorise 10%, 25%, 50%, 100%.",
+          "tip": "10% of a number is simply that number / 10."
+        },
+        {
+          "id": "pct-l1-les5",
+          "title": "Why Percentages Help",
+          "intro": "Percentages let us compare things of different sizes on the same fair scale.",
+          "visual": "",
+          "explanation": [
+            "Scoring 18/20 and 45/50 — percentages (90% each) show they are equal.",
+            "Shops use % for discounts so deals are easy to compare.",
+            "Percentages turn every amount into 'out of 100'."
+          ],
+          "rule": "Percent puts everything on the same 'out of 100' scale.",
+          "tip": "Convert to % to compare unlike amounts."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pct-l1-q1",
+          "question": "Write 25% as a fraction in lowest terms.",
+          "answer": "1/4",
+          "hint": "25/100 simplifies.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pct-l1-q2",
+          "question": "Write 50% as a decimal.",
+          "answer": "0.5",
+          "hint": "Divide 50 by 100.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pct-l1-q3",
+          "question": "Write 7% as a decimal.",
+          "answer": "0.07",
+          "hint": "Move the point two places left.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pct-l1-q4",
+          "question": "Write 75% as a fraction in lowest terms.",
+          "answer": "3/4",
+          "hint": "75/100 simplifies by dividing by 25.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pct-l1-q5",
+          "question": "In a class, 50% of the students are girls. What fraction of the class is girls? Give it in lowest terms.",
+          "answer": "1/2",
+          "hint": "50% is one half.",
+          "difficulty": "stretch",
+          "story": "Counting the class register.",
+          "isWord": true
+        },
+        {
+          "id": "pct-l1-q6",
+          "question": "A phone battery is at 20%. Write this as a fraction in lowest terms.",
+          "answer": "1/5",
+          "hint": "20/100 simplifies by dividing by 20.",
+          "difficulty": "stretch",
+          "story": "Checking the battery before a trip.",
+          "isWord": true
+        },
+        {
+          "id": "pct-l1-q7",
+          "question": "Write 125% as a decimal.",
+          "answer": "1.25",
+          "hint": "Divide 125 by 100.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pct-l1-q8",
+          "question": "Write 0.4 as a percentage. Include the % sign.",
+          "answer": "40%",
+          "hint": "Multiply by 100.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Percent of a Number",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Taking a part of an amount",
+      "lessons": [
+        {
+          "id": "pct-l2-les1",
+          "title": "Finding a Percent of a Number",
+          "intro": "To find a percentage of an amount, turn the percent into a fraction (or decimal) and multiply.",
+          "visual": "",
+          "explanation": [
+            "10% of 50 = (10/100) x 50 = 5.",
+            "Think: 'of' means 'multiply'.",
+            "50% of anything is just half of it."
+          ],
+          "rule": "Percent of a number = (percent/100) x number.",
+          "tip": "'of' means multiply.",
+          "steps": [
+            {
+              "text": "Turn the percent into a fraction over 100.",
+              "notation": "10\\% = \\tfrac{10}{100}"
+            },
+            {
+              "text": "Multiply by the amount.",
+              "notation": "\\tfrac{10}{100} \\times 50 = 5",
+              "tip": "'of' means multiply."
+            }
+          ]
+        },
+        {
+          "id": "pct-l2-les2",
+          "title": "Easy 10% Trick",
+          "intro": "Finding 10% is super quick — just divide the number by 10.",
+          "visual": "",
+          "explanation": [
+            "10% of 80 = 8.",
+            "10% of 250 = 25.",
+            "Once you know 10%, you can build 20%, 30%, and more."
+          ],
+          "rule": "10% of a number = number / 10.",
+          "tip": "Double 10% to get 20%."
+        },
+        {
+          "id": "pct-l2-les3",
+          "title": "Finding 25% and 50%",
+          "intro": "50% is half; 25% is a quarter. These are the friendliest percentages.",
+          "visual": "",
+          "explanation": [
+            "50% of 60 = 30.",
+            "25% of 60 = 15.",
+            "25% is half of 50%."
+          ],
+          "rule": "50% = half; 25% = quarter.",
+          "tip": "Halve twice to get a quarter."
+        },
+        {
+          "id": "pct-l2-les4",
+          "title": "Building Any Percentage",
+          "intro": "Combine the easy pieces: 30% is three lots of 10%, 15% is 10% + 5%.",
+          "visual": "",
+          "explanation": [
+            "30% of 200 = 3 x 20 = 60.",
+            "15% of 40 = 4 + 2 = 6.",
+            "Break the percent into 10% and 5% chunks."
+          ],
+          "rule": "Build tricky percents from 10% and 5% pieces.",
+          "tip": "5% is half of 10%."
+        },
+        {
+          "id": "pct-l2-les5",
+          "title": "Percent in Real Life",
+          "intro": "Shops, exams and surveys use 'percent of' all the time.",
+          "visual": "",
+          "explanation": [
+            "A 20% tip on Rs 300 is Rs 60.",
+            "Scoring 80% on a 50-mark test is 40 marks.",
+            "Reading the question tells you the amount and the percent."
+          ],
+          "rule": "Identify the amount, then take the percent of it.",
+          "tip": "Underline the number and the percent first."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pct-l2-q1",
+          "question": "What is 10% of 50?",
+          "answer": "5",
+          "hint": "Divide 50 by 10.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pct-l2-q2",
+          "question": "What is 50% of 60?",
+          "answer": "30",
+          "hint": "Half of 60.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pct-l2-q3",
+          "question": "What is 25% of 80?",
+          "answer": "20",
+          "hint": "A quarter of 80.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pct-l2-q4",
+          "question": "What is 20% of 150?",
+          "answer": "30",
+          "hint": "20% is two lots of 10%.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pct-l2-q5",
+          "question": "A shirt costs 400 rupees. A tailor's charge is 15% of this. What is the charge in rupees?",
+          "answer": "60",
+          "hint": "15% = 10% + 5% = 40 + 20.",
+          "difficulty": "stretch",
+          "story": "Getting a shirt stitched.",
+          "isWord": true
+        },
+        {
+          "id": "pct-l2-q6",
+          "question": "Out of 50 marks, Riya scored 80%. How many marks did she get?",
+          "answer": "40",
+          "hint": "80% of 50.",
+          "difficulty": "stretch",
+          "story": "Exam results day!",
+          "isWord": true
+        },
+        {
+          "id": "pct-l2-q7",
+          "question": "What is 30% of 200?",
+          "answer": "60",
+          "hint": "Three lots of 10%.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pct-l2-q8",
+          "question": "What is 12% of 250?",
+          "answer": "30",
+          "hint": "10% is 25, plus 2% is 5.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Fractions & Percent",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Convert between forms",
+      "lessons": [
+        {
+          "id": "pct-l3-les1",
+          "title": "Fractions to Percentages",
+          "intro": "To turn a fraction into a percentage, make the denominator 100 (or multiply the fraction by 100).",
+          "visual": "",
+          "explanation": [
+            "1/2 = 50%.",
+            "3/4 = 75%.",
+            "1/5 = 20% because 1/5 = 20/100."
+          ],
+          "rule": "Fraction to percent: multiply by 100.",
+          "tip": "Make the bottom 100, then read the top.",
+          "steps": [
+            {
+              "text": "Scale the fraction so the denominator is 100.",
+              "notation": "\\tfrac{1}{5} = \\tfrac{20}{100}"
+            },
+            {
+              "text": "The numerator is now the percentage.",
+              "notation": "\\tfrac{20}{100} = 20\\%",
+              "tip": "Top number over 100 is the %."
+            }
+          ]
+        },
+        {
+          "id": "pct-l3-les2",
+          "title": "Decimals to Percentages",
+          "intro": "To change a decimal into a percentage, multiply by 100 — the point moves two places right.",
+          "visual": "",
+          "explanation": [
+            "0.6 = 60%.",
+            "0.05 = 5%.",
+            "Multiplying by 100 shifts the point two places right."
+          ],
+          "rule": "Decimal to percent: multiply by 100.",
+          "tip": "Move the point two places right, add %."
+        },
+        {
+          "id": "pct-l3-les3",
+          "title": "Marks as Percentages",
+          "intro": "Turning a test score into a percentage shows how you did out of 100.",
+          "visual": "",
+          "explanation": [
+            "18 out of 20 = 18/20 = 90%.",
+            "Write the score as a fraction, then convert.",
+            "This lets you compare tests of different totals."
+          ],
+          "rule": "Score percent = (marks / total) x 100.",
+          "tip": "Divide marks by total, then x100."
+        },
+        {
+          "id": "pct-l3-les4",
+          "title": "One Amount as a Percent of Another",
+          "intro": "We can say what fraction one amount is of another, as a percentage.",
+          "visual": "",
+          "explanation": [
+            "15 is what percent of 60? 15/60 = 1/4 = 25%.",
+            "Make a fraction (part/whole) and convert.",
+            "The 'whole' is what comes after 'of'."
+          ],
+          "rule": "Part as percent of whole = (part/whole) x 100.",
+          "tip": "The whole goes on the bottom."
+        },
+        {
+          "id": "pct-l3-les5",
+          "title": "Percentages Compared",
+          "intro": "Converting everything to percentages lets you compare fairly.",
+          "visual": "",
+          "explanation": [
+            "40/50 = 80% beats 7/10 = 70%.",
+            "Always convert to the same scale first.",
+            "The bigger percentage is the better result (for scores)."
+          ],
+          "rule": "Convert each to % before comparing.",
+          "tip": "Same scale makes comparison easy."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pct-l3-q1",
+          "question": "Write 1/2 as a percentage. Include the % sign.",
+          "answer": "50%",
+          "hint": "Half is 50 out of 100.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pct-l3-q2",
+          "question": "Write 3/4 as a percentage. Include the % sign.",
+          "answer": "75%",
+          "hint": "3/4 = 75/100.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pct-l3-q3",
+          "question": "Write 0.6 as a percentage. Include the % sign.",
+          "answer": "60%",
+          "hint": "Multiply by 100.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pct-l3-q4",
+          "question": "Write 1/5 as a percentage. Include the % sign.",
+          "answer": "20%",
+          "hint": "1/5 = 20/100.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pct-l3-q5",
+          "question": "Aman scored 18 out of 20 in a test. What is his score as a percentage? Include the % sign.",
+          "answer": "90%",
+          "hint": "18/20 = 90/100.",
+          "difficulty": "stretch",
+          "story": "Report card time.",
+          "isWord": true
+        },
+        {
+          "id": "pct-l3-q6",
+          "question": "In a box of 60 pens, 15 are red. What percentage are red? Include the % sign.",
+          "answer": "25%",
+          "hint": "15/60 = 1/4.",
+          "difficulty": "stretch",
+          "story": "Sorting the stationery box.",
+          "isWord": true
+        },
+        {
+          "id": "pct-l3-q7",
+          "question": "Write 0.125 as a percentage. Include the % sign.",
+          "answer": "12.5%",
+          "hint": "Multiply 0.125 by 100.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pct-l3-q8",
+          "question": "27 is what percentage of 90? Include the % sign.",
+          "answer": "30%",
+          "hint": "27/90 = 3/10.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Discounts & Money",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Percentages with price tags",
+      "lessons": [
+        {
+          "id": "pct-l4-les1",
+          "title": "Discounts",
+          "intro": "A discount is a percentage taken OFF the price. Find the discount, then subtract it.",
+          "visual": "",
+          "explanation": [
+            "A 20% discount on Rs 500 is Rs 100 off.",
+            "New price = 500 - 100 = Rs 400.",
+            "Discount reduces what you pay."
+          ],
+          "rule": "Discount amount = percent x price; new price = price - discount.",
+          "tip": "First find the discount, then subtract.",
+          "steps": [
+            {
+              "text": "Find the discount amount.",
+              "notation": "20\\% \\times 500 = 100"
+            },
+            {
+              "text": "Subtract it from the price.",
+              "notation": "500 - 100 = 400",
+              "tip": "You pay the smaller price."
+            }
+          ]
+        },
+        {
+          "id": "pct-l4-les2",
+          "title": "Sale Price Shortcut",
+          "intro": "If 20% is taken off, you still PAY 80%. You can find the sale price in one step.",
+          "visual": "",
+          "explanation": [
+            "Pay 100% - 20% = 80% of the price.",
+            "80% of Rs 500 = Rs 400.",
+            "This one-step trick saves time."
+          ],
+          "rule": "Sale price = (100% - discount%) of the price.",
+          "tip": "Subtract the discount percent from 100 first."
+        },
+        {
+          "id": "pct-l4-les3",
+          "title": "Increases",
+          "intro": "Some things go UP by a percent — like a price rise. Find the increase, then add it.",
+          "visual": "",
+          "explanation": [
+            "A 10% rise on Rs 200 is Rs 20 more.",
+            "New price = 200 + 20 = Rs 220.",
+            "Increase makes the amount bigger."
+          ],
+          "rule": "Increase amount = percent x amount; new = amount + increase.",
+          "tip": "Find the rise, then add it on."
+        },
+        {
+          "id": "pct-l4-les4",
+          "title": "Money and Percentages",
+          "intro": "Tips, taxes and savings are all percentages of money.",
+          "visual": "",
+          "explanation": [
+            "A 5% tax on Rs 400 is Rs 20.",
+            "A 10% tip on Rs 300 is Rs 30.",
+            "Add tax/tip; subtract discounts."
+          ],
+          "rule": "Add for tax/tip, subtract for discount.",
+          "tip": "Decide add or subtract before you start."
+        },
+        {
+          "id": "pct-l4-les5",
+          "title": "Mixed Money Problems",
+          "intro": "Real shopping often mixes discounts and totals — take them one step at a time.",
+          "visual": "",
+          "explanation": [
+            "Rs 250 item with 20% off: pay Rs 200.",
+            "Buy 2 at the sale price: 2 x 200 = Rs 400.",
+            "Do the percentage first, then the counting."
+          ],
+          "rule": "Handle the percentage step before multiplying quantities.",
+          "tip": "Work in small, clear steps."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pct-l4-q1",
+          "question": "A 20% discount on 500 rupees is how many rupees off?",
+          "answer": "100",
+          "hint": "20% of 500.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pct-l4-q2",
+          "question": "A 10% rise on 200 rupees adds how many rupees?",
+          "answer": "20",
+          "hint": "10% of 200.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pct-l4-q3",
+          "question": "After a 20% discount, what is the sale price of a 500-rupee item, in rupees?",
+          "answer": "400",
+          "hint": "You pay 80% of 500.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pct-l4-q4",
+          "question": "After a 10% rise, what is the new price of a 200-rupee item, in rupees?",
+          "answer": "220",
+          "hint": "New price is 110% of 200.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pct-l4-q5",
+          "question": "A toy costs 250 rupees. In a sale it is 20% off. What is the sale price in rupees?",
+          "answer": "200",
+          "hint": "Pay 80% of 250.",
+          "difficulty": "stretch",
+          "story": "Toy sale at the mall!",
+          "isWord": true
+        },
+        {
+          "id": "pct-l4-q6",
+          "question": "A meal costs 300 rupees. A 10% service tip is added. What is the total bill in rupees?",
+          "answer": "330",
+          "hint": "Add 10% of 300 to 300.",
+          "difficulty": "stretch",
+          "story": "Dinner with the family.",
+          "isWord": true
+        },
+        {
+          "id": "pct-l4-q7",
+          "question": "A 1200-rupee bag has 25% off. What is the sale price in rupees?",
+          "answer": "900",
+          "hint": "Pay 75% of 1200.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pct-l4-q8",
+          "question": "Two notebooks cost 250 rupees each with 20% off each. What is the total paid in rupees?",
+          "answer": "400",
+          "hint": "Find one sale price, then double.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Percentage Master",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Wholes, change and profit",
+      "lessons": [
+        {
+          "id": "pct-l5-les1",
+          "title": "Finding the Whole",
+          "intro": "Sometimes you know the percentage amount and must find the original whole.",
+          "visual": "",
+          "explanation": [
+            "If 10% of a number is 7, the number is 70.",
+            "Work backwards: whole = part / (percent/100).",
+            "This 'reverse percentage' is a powerful skill."
+          ],
+          "rule": "Whole = part / (percent as a fraction).",
+          "tip": "If 10% is known, multiply it by 10 for the whole.",
+          "steps": [
+            {
+              "text": "10% is one tenth of the whole.",
+              "notation": "10\\% \\times N = 7"
+            },
+            {
+              "text": "So the whole is ten times the part.",
+              "notation": "N = 7 \\times 10 = 70",
+              "tip": "Multiply back up."
+            }
+          ]
+        },
+        {
+          "id": "pct-l5-les2",
+          "title": "Percentage Change",
+          "intro": "Percentage change tells us how much something grew or shrank, as a percent of the start.",
+          "visual": "",
+          "explanation": [
+            "A price goes 100 -> 120: that is a 20% increase.",
+            "Change% = (change / original) x 100.",
+            "The original amount is always the base."
+          ],
+          "rule": "Change% = (new - old)/old x 100.",
+          "tip": "Always divide the change by the ORIGINAL."
+        },
+        {
+          "id": "pct-l5-les3",
+          "title": "Combining Percentages",
+          "intro": "Careful! 10% then another 10% is not 20% of the start, because the base changes.",
+          "visual": "",
+          "explanation": [
+            "Rs 100 up 10% = 110; up 10% again = 121, not 120.",
+            "Each percentage applies to the newest amount.",
+            "Do the steps one after another."
+          ],
+          "rule": "Apply each percentage to the current amount in turn.",
+          "tip": "Never just add the percents together."
+        },
+        {
+          "id": "pct-l5-les4",
+          "title": "Profit and Percentages",
+          "intro": "Shopkeepers describe profit as a percentage of the cost price.",
+          "visual": "",
+          "explanation": [
+            "Buy at Rs 200, sell at Rs 250: profit Rs 50.",
+            "Profit% = (50/200) x 100 = 25%.",
+            "The cost price is the base for profit%."
+          ],
+          "rule": "Profit% = (profit / cost) x 100.",
+          "tip": "Cost price goes on the bottom."
+        },
+        {
+          "id": "pct-l5-les5",
+          "title": "Percentage Master",
+          "intro": "Put it all together: of, change, discount and reverse percentages.",
+          "visual": "",
+          "explanation": [
+            "Read carefully to spot the base amount.",
+            "Decide: are you finding a part, a whole, or a change?",
+            "Check your answer is a sensible size."
+          ],
+          "rule": "Identify part, whole, or change — then choose the method.",
+          "tip": "A quick estimate catches silly errors."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "pct-l5-q1",
+          "question": "If 10% of a number is 7, what is the number?",
+          "answer": "70",
+          "hint": "Multiply the part by 10.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pct-l5-q2",
+          "question": "A price rises from 100 to 120 rupees. What is the percentage increase? Include the % sign.",
+          "answer": "20%",
+          "hint": "Change is 20 out of 100.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "pct-l5-q3",
+          "question": "If 25% of a number is 15, what is the number?",
+          "answer": "60",
+          "hint": "25% is a quarter, so multiply by 4.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pct-l5-q4",
+          "question": "An item bought for 200 rupees is sold for 250 rupees. What is the profit percentage? Include the % sign.",
+          "answer": "25%",
+          "hint": "Profit 50 over cost 200.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "pct-l5-q5",
+          "question": "20% of the students in a school play cricket. If 40 students play cricket, how many students are there in all?",
+          "answer": "200",
+          "hint": "40 is 20%, so the whole is 5 times 40.",
+          "difficulty": "stretch",
+          "story": "A school sports survey.",
+          "isWord": true
+        },
+        {
+          "id": "pct-l5-q6",
+          "question": "A shopkeeper buys a toy for 150 rupees and sells it for 180 rupees. What is the profit percentage? Include the % sign.",
+          "answer": "20%",
+          "hint": "Profit 30 over cost 150.",
+          "difficulty": "stretch",
+          "story": "At the toy shop counter.",
+          "isWord": true
+        },
+        {
+          "id": "pct-l5-q7",
+          "question": "Rs 100 is increased by 10%, then the result is increased by 10% again. What is the final amount in rupees?",
+          "answer": "121",
+          "hint": "110 first, then 10% more of 110.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "pct-l5-q8",
+          "question": "If 15% of a number is 45, what is the number?",
+          "answer": "300",
+          "hint": "15% is 45, so 1% is 3, so 100% is 300.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

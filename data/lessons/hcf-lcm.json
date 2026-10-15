@@ -1,0 +1,753 @@
+{
+  "id": "hcf-lcm",
+  "topic": "HCF & LCM",
+  "emoji": "🔗",
+  "color": "#22D3EE",
+  "gradeRange": [
+    4,
+    8
+  ],
+  "description": "Factors, multiples, and the HCF/LCM toolkit",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Factors & Multiples",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "The building blocks",
+      "lessons": [
+        {
+          "id": "hl-l1-les1",
+          "title": "Factors and Multiples",
+          "intro": "Factors divide a number exactly; multiples are what you get by skip-counting. They are two sides of the same coin!",
+          "visual": "",
+          "explanation": [
+            "A factor of 12 divides 12 with no remainder: 1, 2, 3, 4, 6, 12.",
+            "A multiple of 5 is 5, 10, 15, 20, ... — the times table of 5.",
+            "Factors are smaller-or-equal; multiples grow bigger."
+          ],
+          "rule": "Factors divide exactly; multiples are skip-counts.",
+          "tip": "Factors come in pairs that multiply to the number.",
+          "steps": [
+            {
+              "text": "A factor divides with no remainder.",
+              "notation": "12 \\div 3 = 4"
+            },
+            {
+              "text": "A multiple is the number times a whole number.",
+              "notation": "5 \\times 4 = 20",
+              "tip": "20 is the 4th multiple of 5."
+            }
+          ]
+        },
+        {
+          "id": "hl-l1-les2",
+          "title": "Finding All Factors",
+          "intro": "To list every factor, test numbers in pairs from 1 upwards.",
+          "visual": "",
+          "explanation": [
+            "Factors of 12: 1x12, 2x6, 3x4 — so 1, 2, 3, 4, 6, 12.",
+            "Each pair gives two factors at once.",
+            "Stop when the pair numbers meet in the middle."
+          ],
+          "rule": "Find factor pairs from 1 up to the square root.",
+          "tip": "Every number has 1 and itself as factors."
+        },
+        {
+          "id": "hl-l1-les3",
+          "title": "Multiples Grow Forever",
+          "intro": "A number has endless multiples — you can always find the next one.",
+          "visual": "",
+          "explanation": [
+            "Multiples of 8: 8, 16, 24, 32, ...",
+            "The 4th multiple of 5 is 20.",
+            "Multiples never stop; factors always do."
+          ],
+          "rule": "Multiples are endless; find any by multiplying.",
+          "tip": "The nth multiple = number x n."
+        },
+        {
+          "id": "hl-l1-les4",
+          "title": "Common Factors",
+          "intro": "Two numbers can share factors — these are called common factors.",
+          "visual": "",
+          "explanation": [
+            "Factors of 12: 1,2,3,4,6,12. Factors of 18: 1,2,3,6,9,18.",
+            "Common factors: 1, 2, 3, 6.",
+            "The biggest shared one is special (that is the HCF!)."
+          ],
+          "rule": "Common factors appear in both factor lists.",
+          "tip": "1 is always a common factor."
+        },
+        {
+          "id": "hl-l1-les5",
+          "title": "Common Multiples",
+          "intro": "Two numbers also share multiples — the common multiples.",
+          "visual": "",
+          "explanation": [
+            "Multiples of 4: 4,8,12,16,... Multiples of 6: 6,12,18,...",
+            "Common multiples: 12, 24, 36, ...",
+            "The smallest shared one is special (that is the LCM!)."
+          ],
+          "rule": "Common multiples appear in both multiple lists.",
+          "tip": "The smallest common multiple is the LCM."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "hl-l1-q1",
+          "question": "How many factors does 6 have?",
+          "answer": "4",
+          "hint": "They are 1, 2, 3, 6.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "hl-l1-q2",
+          "question": "What is the largest factor of 20 other than 20 itself?",
+          "answer": "10",
+          "hint": "20 = 2 x 10.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "hl-l1-q3",
+          "question": "What is the 4th multiple of 5?",
+          "answer": "20",
+          "hint": "5 x 4.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "hl-l1-q4",
+          "question": "Is 7 a factor of 56? Answer Yes or No.",
+          "answer": "Yes",
+          "hint": "56 = 7 x 8.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "hl-l1-q5",
+          "question": "Meena has 12 chocolates to arrange in equal rows. How many different numbers of equal rows are possible (count all factors of 12)?",
+          "answer": "6",
+          "hint": "Factors of 12: 1,2,3,4,6,12.",
+          "difficulty": "stretch",
+          "story": "Setting up a chocolate display.",
+          "isWord": true
+        },
+        {
+          "id": "hl-l1-q6",
+          "question": "What is the smallest multiple of 8 that is greater than 20?",
+          "answer": "24",
+          "hint": "8, 16, 24 — pick the first above 20.",
+          "difficulty": "stretch",
+          "story": "Packing items in eights.",
+          "isWord": true
+        },
+        {
+          "id": "hl-l1-q7",
+          "question": "What is the greatest common factor of 12 and 18?",
+          "answer": "6",
+          "hint": "Shared factors are 1, 2, 3, 6.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "hl-l1-q8",
+          "question": "What is the smallest number that is a multiple of both 4 and 6?",
+          "answer": "12",
+          "hint": "List multiples of each and find the first match.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Finding HCF",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "The highest common factor",
+      "lessons": [
+        {
+          "id": "hl-l2-les1",
+          "title": "What is HCF?",
+          "intro": "The Highest Common Factor is the biggest number that divides two numbers exactly.",
+          "visual": "",
+          "explanation": [
+            "HCF of 12 and 18: common factors are 1,2,3,6; the highest is 6.",
+            "HCF is always less than or equal to the smaller number.",
+            "It is also called the Greatest Common Divisor (GCD)."
+          ],
+          "rule": "HCF = the largest factor shared by both numbers.",
+          "tip": "List factors of both, pick the biggest shared one.",
+          "steps": [
+            {
+              "text": "List the factors of each number.",
+              "notation": "12: 1,2,3,4,6,12"
+            },
+            {
+              "text": "The biggest shared factor is the HCF.",
+              "notation": "\\text{HCF}(12,18)=6",
+              "tip": "6 divides both exactly."
+            }
+          ]
+        },
+        {
+          "id": "hl-l2-les2",
+          "title": "HCF by Listing",
+          "intro": "The simplest way to find HCF is to list factors and spot the biggest match.",
+          "visual": "",
+          "explanation": [
+            "HCF of 8 and 12: factors 1,2,4,8 and 1,2,3,4,6,12.",
+            "Shared: 1,2,4. Highest is 4.",
+            "Listing is reliable for small numbers."
+          ],
+          "rule": "Match the factor lists and take the largest.",
+          "tip": "Underline the shared factors."
+        },
+        {
+          "id": "hl-l2-les3",
+          "title": "When HCF is 1",
+          "intro": "Some number pairs share only the factor 1 — we call them co-prime.",
+          "visual": "",
+          "explanation": [
+            "HCF of 9 and 16 is 1.",
+            "They have no common factor except 1.",
+            "Co-prime numbers need not be prime themselves."
+          ],
+          "rule": "If the only common factor is 1, numbers are co-prime.",
+          "tip": "Co-prime does not mean prime."
+        },
+        {
+          "id": "hl-l2-les4",
+          "title": "HCF in Real Life",
+          "intro": "HCF helps when we want the largest equal groups or pieces.",
+          "visual": "",
+          "explanation": [
+            "Cutting 24 cm and 36 cm ribbons into the longest equal pieces uses HCF.",
+            "HCF of 24 and 36 is 12, so each piece is 12 cm.",
+            "The 'largest equal' clue means HCF."
+          ],
+          "rule": "'Largest equal size/group' problems use HCF.",
+          "tip": "Look for the word 'largest' or 'greatest'."
+        },
+        {
+          "id": "hl-l2-les5",
+          "title": "HCF of Three Numbers",
+          "intro": "You can find the HCF of three numbers by taking the common factor of all three.",
+          "visual": "",
+          "explanation": [
+            "HCF of 16, 24, 40: all are divisible by 8.",
+            "Check the largest number that divides every one.",
+            "8 is the HCF."
+          ],
+          "rule": "HCF of three = largest factor common to all three.",
+          "tip": "Find HCF of two first, then with the third."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "hl-l2-q1",
+          "question": "What is the HCF of 12 and 18?",
+          "answer": "6",
+          "hint": "Common factors: 1,2,3,6.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "hl-l2-q2",
+          "question": "What is the HCF of 8 and 12?",
+          "answer": "4",
+          "hint": "Common factors: 1,2,4.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "hl-l2-q3",
+          "question": "What is the HCF of 15 and 25?",
+          "answer": "5",
+          "hint": "Both divide by 5.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "hl-l2-q4",
+          "question": "What is the HCF of 9 and 16?",
+          "answer": "1",
+          "hint": "They are co-prime.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "hl-l2-q5",
+          "question": "Two ribbons are 24 cm and 36 cm. They are cut into equal pieces of the greatest possible length. How long is each piece, in cm?",
+          "answer": "12",
+          "hint": "Find the HCF of 24 and 36.",
+          "difficulty": "stretch",
+          "story": "Preparing craft supplies.",
+          "isWord": true
+        },
+        {
+          "id": "hl-l2-q6",
+          "question": "Trays hold 30 and 45 sweets. What is the greatest number of sweets per equal group that empties both?",
+          "answer": "15",
+          "hint": "Find the HCF of 30 and 45.",
+          "difficulty": "stretch",
+          "story": "Sorting sweets for a party.",
+          "isWord": true
+        },
+        {
+          "id": "hl-l2-q7",
+          "question": "What is the HCF of 48 and 60?",
+          "answer": "12",
+          "hint": "Both divide by 12.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "hl-l2-q8",
+          "question": "What is the HCF of 16, 24 and 40?",
+          "answer": "8",
+          "hint": "All divide by 8.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Finding LCM",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "The lowest common multiple",
+      "lessons": [
+        {
+          "id": "hl-l3-les1",
+          "title": "What is LCM?",
+          "intro": "The Lowest Common Multiple is the smallest number that two numbers both divide into.",
+          "visual": "",
+          "explanation": [
+            "LCM of 4 and 6: common multiples 12, 24, ...; the lowest is 12.",
+            "LCM is always greater than or equal to the larger number.",
+            "It is the first time both times-tables meet."
+          ],
+          "rule": "LCM = the smallest multiple shared by both numbers.",
+          "tip": "List multiples of the larger number and test each.",
+          "steps": [
+            {
+              "text": "List multiples until they match.",
+              "notation": "4: 4,8,12 \\quad 6: 6,12"
+            },
+            {
+              "text": "The first shared multiple is the LCM.",
+              "notation": "\\text{LCM}(4,6)=12",
+              "tip": "Both 4 and 6 divide 12."
+            }
+          ]
+        },
+        {
+          "id": "hl-l3-les2",
+          "title": "LCM by Listing",
+          "intro": "List the multiples of the bigger number and check which one the smaller also divides.",
+          "visual": "",
+          "explanation": [
+            "LCM of 3 and 5: 5,10,15 — 15 is divisible by 3.",
+            "Checking the bigger number's multiples is faster.",
+            "Stop at the first common one."
+          ],
+          "rule": "Test multiples of the larger number first.",
+          "tip": "This saves time versus listing both."
+        },
+        {
+          "id": "hl-l3-les3",
+          "title": "LCM of Co-prime Numbers",
+          "intro": "If two numbers share no factors, their LCM is simply their product.",
+          "visual": "",
+          "explanation": [
+            "LCM of 3 and 5 is 15 = 3 x 5.",
+            "This shortcut works only for co-prime numbers.",
+            "Otherwise the LCM is smaller than the product."
+          ],
+          "rule": "Co-prime numbers: LCM = their product.",
+          "tip": "Check they share no factor before multiplying."
+        },
+        {
+          "id": "hl-l3-les4",
+          "title": "LCM in Real Life",
+          "intro": "LCM helps when events repeat together — like bells or blinking lights.",
+          "visual": "",
+          "explanation": [
+            "Bells every 4 and 6 minutes ring together after the LCM: 12 minutes.",
+            "The 'next time together' clue means LCM.",
+            "Lights blinking every 8 and 12 seconds sync after 24 seconds."
+          ],
+          "rule": "'Next time together / least' problems use LCM.",
+          "tip": "Look for 'together again' or 'smallest'."
+        },
+        {
+          "id": "hl-l3-les5",
+          "title": "LCM of Three Numbers",
+          "intro": "Find the LCM of three numbers step by step: two first, then with the third.",
+          "visual": "",
+          "explanation": [
+            "LCM of 4, 6, 8: LCM(4,6)=12, then LCM(12,8)=24.",
+            "Work in pairs to keep it simple.",
+            "24 is divisible by 4, 6 and 8."
+          ],
+          "rule": "LCM of three = build it two numbers at a time.",
+          "tip": "Do the first pair, then combine with the third."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "hl-l3-q1",
+          "question": "What is the LCM of 4 and 6?",
+          "answer": "12",
+          "hint": "Multiples of 6: 6,12; 12 divides by 4.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "hl-l3-q2",
+          "question": "What is the LCM of 3 and 5?",
+          "answer": "15",
+          "hint": "Co-prime: multiply them.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "hl-l3-q3",
+          "question": "What is the LCM of 6 and 8?",
+          "answer": "24",
+          "hint": "Multiples of 8: 8,16,24.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "hl-l3-q4",
+          "question": "What is the LCM of 10 and 15?",
+          "answer": "30",
+          "hint": "Multiples of 15: 15,30.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "hl-l3-q5",
+          "question": "Two bells ring every 4 and 6 minutes. After how many minutes do they ring together again?",
+          "answer": "12",
+          "hint": "Find the LCM of 4 and 6.",
+          "difficulty": "stretch",
+          "story": "Temple bells in the morning.",
+          "isWord": true
+        },
+        {
+          "id": "hl-l3-q6",
+          "question": "Two lights blink every 8 and 12 seconds. After how many seconds do they blink together?",
+          "answer": "24",
+          "hint": "Find the LCM of 8 and 12.",
+          "difficulty": "stretch",
+          "story": "Decorating lights at a fair.",
+          "isWord": true
+        },
+        {
+          "id": "hl-l3-q7",
+          "question": "What is the LCM of 12 and 18?",
+          "answer": "36",
+          "hint": "Multiples of 18: 18,36.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "hl-l3-q8",
+          "question": "What is the LCM of 4, 6 and 8?",
+          "answer": "24",
+          "hint": "LCM(4,6)=12, then with 8.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Prime Factorisation",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Break numbers into primes",
+      "lessons": [
+        {
+          "id": "hl-l4-les1",
+          "title": "Prime Factorisation",
+          "intro": "Every number can be broken into a product of prime numbers — its prime factorisation.",
+          "visual": "",
+          "explanation": [
+            "12 = 2 x 2 x 3.",
+            "Primes are numbers with exactly two factors: 1 and themselves.",
+            "Keep dividing by the smallest prime until you reach 1."
+          ],
+          "rule": "Prime factorisation writes a number as primes multiplied.",
+          "tip": "Start dividing by 2, then 3, then 5...",
+          "steps": [
+            {
+              "text": "Divide by the smallest prime repeatedly.",
+              "notation": "12 = 2 \\times 6 = 2 \\times 2 \\times 3"
+            },
+            {
+              "text": "The prime factors multiply back to the number.",
+              "notation": "2 \\times 2 \\times 3 = 12",
+              "tip": "Always check by multiplying."
+            }
+          ]
+        },
+        {
+          "id": "hl-l4-les2",
+          "title": "Building Numbers from Primes",
+          "intro": "Multiply prime factors together to rebuild the original number.",
+          "visual": "",
+          "explanation": [
+            "2 x 2 x 3 = 12.",
+            "2 x 2 x 2 x 3 = 24.",
+            "The order of primes does not matter."
+          ],
+          "rule": "Multiply the primes back to get the number.",
+          "tip": "Group repeated primes to multiply faster."
+        },
+        {
+          "id": "hl-l4-les3",
+          "title": "HCF from Prime Factors",
+          "intro": "Take the primes COMMON to both numbers to build the HCF.",
+          "visual": "",
+          "explanation": [
+            "36 = 2x2x3x3, 48 = 2x2x2x2x3.",
+            "Common primes: 2x2x3 = 12.",
+            "HCF uses the shared primes only."
+          ],
+          "rule": "HCF = product of common prime factors.",
+          "tip": "Pick primes that appear in both."
+        },
+        {
+          "id": "hl-l4-les4",
+          "title": "LCM from Prime Factors",
+          "intro": "Take ALL primes, using the highest count from either number, to build the LCM.",
+          "visual": "",
+          "explanation": [
+            "9 = 3x3, 12 = 2x2x3.",
+            "LCM = 2x2x3x3 = 36.",
+            "Include every prime at its biggest power."
+          ],
+          "rule": "LCM = product of all primes at highest powers.",
+          "tip": "Never miss a prime that appears in either number."
+        },
+        {
+          "id": "hl-l4-les5",
+          "title": "Prime Factor Puzzles",
+          "intro": "Knowing a number's primes lets you solve many puzzles quickly.",
+          "visual": "",
+          "explanation": [
+            "A number with primes 2, 3, 5 each once is 30.",
+            "A number = 2 x 2 x 7 is 28.",
+            "Prime factors are a number's 'fingerprint'."
+          ],
+          "rule": "A number's prime factors uniquely identify it.",
+          "tip": "Multiply the given primes to find the number."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "hl-l4-q1",
+          "question": "What is the smallest prime number?",
+          "answer": "2",
+          "hint": "The only even prime.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "hl-l4-q2",
+          "question": "What is 2 x 2 x 3?",
+          "answer": "12",
+          "hint": "Multiply step by step.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "hl-l4-q3",
+          "question": "In the prime factorisation 18 = 2 x 3 x 3, what is the largest prime factor?",
+          "answer": "3",
+          "hint": "Compare the primes 2 and 3.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "hl-l4-q4",
+          "question": "What is 2 x 2 x 2 x 3?",
+          "answer": "24",
+          "hint": "That is 8 x 3.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "hl-l4-q5",
+          "question": "A number's prime factors are 2, 3 and 5, each used once. What is the number?",
+          "answer": "30",
+          "hint": "Multiply 2 x 3 x 5.",
+          "difficulty": "stretch",
+          "story": "A number-detective clue card.",
+          "isWord": true
+        },
+        {
+          "id": "hl-l4-q6",
+          "question": "A number equals 2 x 2 x 7. What is the number?",
+          "answer": "28",
+          "hint": "That is 4 x 7.",
+          "difficulty": "stretch",
+          "story": "Rebuilding a number from its primes.",
+          "isWord": true
+        },
+        {
+          "id": "hl-l4-q7",
+          "question": "Using prime factors, what is the HCF of 36 and 48?",
+          "answer": "12",
+          "hint": "Common primes: 2 x 2 x 3.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "hl-l4-q8",
+          "question": "Using prime factors, what is the LCM of 9 and 12?",
+          "answer": "36",
+          "hint": "2 x 2 x 3 x 3.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Word Problems",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Choose HCF or LCM",
+      "lessons": [
+        {
+          "id": "hl-l5-les1",
+          "title": "Choosing HCF or LCM",
+          "intro": "The trick in word problems is deciding whether to use HCF or LCM.",
+          "visual": "",
+          "explanation": [
+            "'Largest/greatest equal' -> HCF.",
+            "'Smallest/least, together again' -> LCM.",
+            "Read the question's clue words carefully."
+          ],
+          "rule": "HCF for largest-equal; LCM for least-together.",
+          "tip": "Spot the clue word first, then calculate.",
+          "steps": [
+            {
+              "text": "Greatest equal size uses HCF.",
+              "notation": "\\text{HCF}"
+            },
+            {
+              "text": "Least common time uses LCM.",
+              "notation": "\\text{LCM}",
+              "tip": "Clue words decide."
+            }
+          ]
+        },
+        {
+          "id": "hl-l5-les2",
+          "title": "Sharing Equally (HCF)",
+          "intro": "When splitting into the biggest equal groups, HCF gives the group size.",
+          "visual": "",
+          "explanation": [
+            "36 and 60 sweets into equal largest groups: HCF(36,60)=12.",
+            "Each group has 12 of each kind.",
+            "Largest-equal always points to HCF."
+          ],
+          "rule": "Largest equal share = HCF of the amounts.",
+          "tip": "The answer is never bigger than the smaller amount."
+        },
+        {
+          "id": "hl-l5-les3",
+          "title": "Meeting Again (LCM)",
+          "intro": "When repeating events line up, LCM gives the meeting time.",
+          "visual": "",
+          "explanation": [
+            "Buses every 15 and 20 minutes meet after LCM = 60 min.",
+            "The next-together time is the LCM.",
+            "Both schedules fit the LCM exactly."
+          ],
+          "rule": "Next-together time = LCM of the intervals.",
+          "tip": "The answer is never smaller than the larger interval."
+        },
+        {
+          "id": "hl-l5-les4",
+          "title": "Mixed Clues",
+          "intro": "Some problems hide the clue — rephrase them in your own words.",
+          "visual": "",
+          "explanation": [
+            "'Cut into equal longest pieces' -> HCF.",
+            "'Ring together / smallest number divisible' -> LCM.",
+            "Turning the words into 'largest' or 'smallest' helps."
+          ],
+          "rule": "Reword the problem to reveal HCF or LCM.",
+          "tip": "Ask: am I splitting or syncing?"
+        },
+        {
+          "id": "hl-l5-les5",
+          "title": "HCF & LCM Master",
+          "intro": "Put both skills together and pick the right tool every time.",
+          "visual": "",
+          "explanation": [
+            "Smallest number divisible by 6, 8, 12 -> LCM = 24.",
+            "Largest number dividing 60 and 90 -> HCF = 30.",
+            "Confidence comes from reading the clue words."
+          ],
+          "rule": "Match the clue to the right tool, then compute.",
+          "tip": "Double-check with a quick division."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "hl-l5-q1",
+          "question": "What is the HCF of 20 and 30?",
+          "answer": "10",
+          "hint": "Both divide by 10.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "hl-l5-q2",
+          "question": "What is the LCM of 5 and 7?",
+          "answer": "35",
+          "hint": "Co-prime: multiply.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "hl-l5-q3",
+          "question": "Two rods 16 m and 24 m are cut into equal longest pieces. What is each piece length in m?",
+          "answer": "8",
+          "hint": "Use HCF for 'longest equal'.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "hl-l5-q4",
+          "question": "Two taps drip every 6 and 9 seconds. After how many seconds do they drip together?",
+          "answer": "18",
+          "hint": "Use LCM for 'together'.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "hl-l5-q5",
+          "question": "36 red and 60 blue sweets are packed into equal largest groups that use them all. How many sweets of one colour per group?",
+          "answer": "12",
+          "hint": "Use HCF of 36 and 60.",
+          "difficulty": "stretch",
+          "story": "Packing party bags.",
+          "isWord": true
+        },
+        {
+          "id": "hl-l5-q6",
+          "question": "Two buses leave every 15 and 20 minutes. After how many minutes do they leave together again?",
+          "answer": "60",
+          "hint": "Use LCM of 15 and 20.",
+          "difficulty": "stretch",
+          "story": "At the bus depot.",
+          "isWord": true
+        },
+        {
+          "id": "hl-l5-q7",
+          "question": "What is the smallest number divisible by 6, 8 and 12?",
+          "answer": "24",
+          "hint": "That is the LCM.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "hl-l5-q8",
+          "question": "What is the largest number that divides both 60 and 90 exactly?",
+          "answer": "30",
+          "hint": "That is the HCF.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

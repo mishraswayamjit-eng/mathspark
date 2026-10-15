@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import TopicGrid from '@/components/lesson/TopicGrid';
 import { LESSON_TOPICS } from '@/data/lessonTopics';
+import { gradeInRange } from '@/lib/sharedUtils';
 import { logError } from '@/lib/logger';
 
 interface ProgressRow {
@@ -16,8 +17,10 @@ interface ProgressRow {
 export default function LessonsPage() {
   const [progress, setProgress] = useState<ProgressRow[]>([]);
   const [loading, setLoading] = useState(true);
+  const [grade, setGrade] = useState(4);
 
   useEffect(() => {
+    setGrade(Number(localStorage.getItem('mathspark_student_grade')) || 4);
     fetch('/api/lessons/progress')
       .then((r) => {
         if (!r.ok) return { progress: [] };
@@ -28,6 +31,11 @@ export default function LessonsPage() {
       .finally(() => setLoading(false));
   }, []);
 
+  const visibleTopics = useMemo(
+    () => LESSON_TOPICS.filter((t) => gradeInRange(t.gradeRange, grade)),
+    [grade],
+  );
+
   const topicProgress = useMemo(() => {
     const map = new Map<string, Set<number>>();
     for (const row of progress) {
@@ -36,12 +44,12 @@ export default function LessonsPage() {
         map.get(row.topicSlug)!.add(row.levelId);
       }
     }
-    return LESSON_TOPICS.map((t) => ({
+    return visibleTopics.map((t) => ({
       topicSlug: t.id,
       completed: map.get(t.id)?.size ?? 0,
       total: 5,
     }));
-  }, [progress]);
+  }, [progress, visibleTopics]);
 
   return (
     <div className="min-h-screen bg-gray-50 pb-24">
@@ -82,7 +90,7 @@ export default function LessonsPage() {
 
         {/* Topic grid */}
         {!loading && (
-          <TopicGrid topics={LESSON_TOPICS} progress={topicProgress} />
+          <TopicGrid topics={visibleTopics} progress={topicProgress} />
         )}
       </div>
     </div>

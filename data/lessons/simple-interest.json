@@ -1,0 +1,753 @@
+{
+  "id": "simple-interest",
+  "topic": "Simple Interest",
+  "emoji": "🏦",
+  "color": "#0EA5E9",
+  "gradeRange": [
+    5,
+    9
+  ],
+  "description": "Principal, rate, time, interest and amount",
+  "levels": [
+    {
+      "id": 1,
+      "label": "What is Interest",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "Money for saving",
+      "lessons": [
+        {
+          "id": "si-l1-les1",
+          "title": "What is Interest?",
+          "intro": "Interest is extra money paid for borrowing or earned for saving. Banks pay you interest when you keep money with them.",
+          "visual": "",
+          "explanation": [
+            "Save money in a bank and it pays you interest.",
+            "Borrow money and you pay interest back.",
+            "Interest is always extra on top of the original amount."
+          ],
+          "rule": "Interest is extra money for borrowing or saving.",
+          "tip": "Interest is always added on top.",
+          "steps": [
+            {
+              "text": "Start with the money saved.",
+              "notation": "P = 1000"
+            },
+            {
+              "text": "Interest is extra earned on it.",
+              "notation": "\\text{Interest} > 0",
+              "tip": "You get back more than you put in."
+            }
+          ]
+        },
+        {
+          "id": "si-l1-les2",
+          "title": "Principal",
+          "intro": "The principal is the original amount of money borrowed or saved.",
+          "visual": "",
+          "explanation": [
+            "If you save 1000 rupees, the principal is 1000.",
+            "Interest is calculated on the principal.",
+            "Principal is where every interest sum begins."
+          ],
+          "rule": "Principal (P) is the starting amount.",
+          "tip": "Find the principal first."
+        },
+        {
+          "id": "si-l1-les3",
+          "title": "Rate of Interest",
+          "intro": "The rate tells how much interest is charged per 100 rupees each year.",
+          "visual": "",
+          "explanation": [
+            "A rate of 5% means 5 rupees per 100 each year.",
+            "Higher rate means more interest.",
+            "Rate is given as a percent per year."
+          ],
+          "rule": "Rate (R) is percent of principal per year.",
+          "tip": "Read the rate as '% per year'."
+        },
+        {
+          "id": "si-l1-les4",
+          "title": "Time Period",
+          "intro": "Time is how long the money is borrowed or saved, usually in years.",
+          "visual": "",
+          "explanation": [
+            "2 years means interest builds for 2 years.",
+            "Longer time means more total interest.",
+            "Keep time in years for the basic formula."
+          ],
+          "rule": "Time (T) is the number of years.",
+          "tip": "Use years unless told otherwise."
+        },
+        {
+          "id": "si-l1-les5",
+          "title": "Putting the Pieces Together",
+          "intro": "Every simple-interest problem needs principal, rate, and time.",
+          "visual": "",
+          "explanation": [
+            "Spot P, R, and T in the question.",
+            "Each has its own role in the formula.",
+            "Label them before you calculate."
+          ],
+          "rule": "You need P, R, and T for simple interest.",
+          "tip": "Underline P, R, and T as you read."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "si-l1-q1",
+          "question": "You put 1000 rupees in a bank. What is the principal in rupees?",
+          "answer": "1000",
+          "hint": "Principal is the starting amount.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "si-l1-q2",
+          "question": "A loan is taken for 3 years. What is the time period in years?",
+          "answer": "3",
+          "hint": "Time is the number of years.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "si-l1-q3",
+          "question": "A bank offers 5% per year. How much interest is that per 100 rupees each year, in rupees?",
+          "answer": "5",
+          "hint": "5% means 5 per 100.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "si-l1-q4",
+          "question": "A rate of 8% means how many rupees interest per 100 each year?",
+          "answer": "8",
+          "hint": "Rate is per 100 per year.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "si-l1-q5",
+          "question": "Riya deposits 2000 rupees in a bank for 4 years. What is the principal in rupees?",
+          "answer": "2000",
+          "hint": "Principal is the amount deposited.",
+          "difficulty": "stretch",
+          "story": "Riya opens her first savings account.",
+          "isWord": true
+        },
+        {
+          "id": "si-l1-q6",
+          "question": "A farmer borrows money for 2 years at 6% per year. What is the time period in years?",
+          "answer": "2",
+          "hint": "Time is the number of years.",
+          "difficulty": "stretch",
+          "story": "A farmer takes a short-term loan.",
+          "isWord": true
+        },
+        {
+          "id": "si-l1-q7",
+          "question": "A rate of 10% means how many rupees interest per 100 rupees each year?",
+          "answer": "10",
+          "hint": "10 per 100.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "si-l1-q8",
+          "question": "A sum of 5000 rupees is saved. What is the principal in rupees?",
+          "answer": "5000",
+          "hint": "Principal is the saved amount.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "The SI Formula",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "P times R times T over 100",
+      "lessons": [
+        {
+          "id": "si-l2-les1",
+          "title": "The Simple Interest Formula",
+          "intro": "Simple interest uses one neat formula: multiply principal, rate, and time, then divide by 100.",
+          "visual": "",
+          "explanation": [
+            "SI = (P x R x T) / 100.",
+            "P 1000, R 5, T 2: SI = (1000 x 5 x 2)/100 = 100.",
+            "The 100 comes from the percent."
+          ],
+          "rule": "SI = (P x R x T) / 100.",
+          "tip": "Multiply P, R, T, then divide by 100.",
+          "steps": [
+            {
+              "text": "Multiply principal, rate, and time.",
+              "notation": "1000 \\times 5 \\times 2 = 10000"
+            },
+            {
+              "text": "Divide by 100.",
+              "notation": "\\tfrac{10000}{100} = 100",
+              "tip": "SI = 100 rupees."
+            }
+          ]
+        },
+        {
+          "id": "si-l2-les2",
+          "title": "Why Divide by 100?",
+          "intro": "The rate is a percent, so we divide by 100 to undo it.",
+          "visual": "",
+          "explanation": [
+            "Rate 5% = 5/100.",
+            "Dividing by 100 turns percent into a fraction.",
+            "That is why the formula has a 100."
+          ],
+          "rule": "The 100 converts the percent rate.",
+          "tip": "Percent always brings a divide-by-100."
+        },
+        {
+          "id": "si-l2-les3",
+          "title": "Order of Multiplying",
+          "intro": "You can multiply P, R, and T in any order.",
+          "visual": "",
+          "explanation": [
+            "P x R x T gives the same answer as T x R x P.",
+            "Multiply the easy pair first.",
+            "Then divide by 100 at the end."
+          ],
+          "rule": "Multiplication order does not change the result.",
+          "tip": "Pick the easiest order to multiply."
+        },
+        {
+          "id": "si-l2-les4",
+          "title": "Keeping Units Right",
+          "intro": "Use rupees for money and years for time.",
+          "visual": "",
+          "explanation": [
+            "If time is in months, change it to years first.",
+            "6 months = half a year = 0.5.",
+            "Matching units keeps the answer correct."
+          ],
+          "rule": "Use years for T in the basic formula.",
+          "tip": "Convert months to years before using."
+        },
+        {
+          "id": "si-l2-les5",
+          "title": "Reading SI Problems",
+          "intro": "Find P, R, and T, then plug them in.",
+          "visual": "",
+          "explanation": [
+            "'1500 at 4% for 3 years' gives all three values.",
+            "P = 1500, R = 4, T = 3.",
+            "Then apply the formula."
+          ],
+          "rule": "Identify P, R, T before using the formula.",
+          "tip": "Label each number as you read."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "si-l2-q1",
+          "question": "Find the simple interest on 1000 rupees at 5% per year for 2 years, in rupees.",
+          "answer": "100",
+          "hint": "Use (P x R x T)/100.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "si-l2-q2",
+          "question": "Find the simple interest on 500 rupees at 10% per year for 1 year, in rupees.",
+          "answer": "50",
+          "hint": "Use (P x R x T)/100.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "si-l2-q3",
+          "question": "Find the simple interest on 2000 rupees at 5% per year for 3 years, in rupees.",
+          "answer": "300",
+          "hint": "Multiply then divide by 100.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "si-l2-q4",
+          "question": "Find the simple interest on 800 rupees at 10% per year for 2 years, in rupees.",
+          "answer": "160",
+          "hint": "Multiply then divide by 100.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "si-l2-q5",
+          "question": "Aman deposits 1500 rupees at 4% per year for 2 years. What is the simple interest in rupees?",
+          "answer": "120",
+          "hint": "(1500 x 4 x 2)/100.",
+          "difficulty": "stretch",
+          "story": "Aman saves his pocket money.",
+          "isWord": true
+        },
+        {
+          "id": "si-l2-q6",
+          "question": "A bank pays 6% per year on 2500 rupees for 2 years. What is the simple interest in rupees?",
+          "answer": "300",
+          "hint": "(2500 x 6 x 2)/100.",
+          "difficulty": "stretch",
+          "story": "A two-year savings deposit.",
+          "isWord": true
+        },
+        {
+          "id": "si-l2-q7",
+          "question": "Find the simple interest on 1200 rupees at 5% per year for 4 years, in rupees.",
+          "answer": "240",
+          "hint": "(1200 x 5 x 4)/100.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "si-l2-q8",
+          "question": "Find the simple interest on 10000 rupees at 8% per year for 3 years, in rupees.",
+          "answer": "2400",
+          "hint": "(10000 x 8 x 3)/100.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Finding Interest",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Years and rates",
+      "lessons": [
+        {
+          "id": "si-l3-les1",
+          "title": "Interest for One Year",
+          "intro": "Finding interest for a single year is the simplest case.",
+          "visual": "",
+          "explanation": [
+            "SI for 1 year = (P x R)/100.",
+            "P 2000, R 5: SI = 100 for one year.",
+            "Multiply by more years for longer periods."
+          ],
+          "rule": "One-year SI = (P x R)/100.",
+          "tip": "Leave out T when T is 1.",
+          "steps": [
+            {
+              "text": "Multiply principal by rate.",
+              "notation": "2000 \\times 5 = 10000"
+            },
+            {
+              "text": "Divide by 100.",
+              "notation": "\\tfrac{10000}{100} = 100",
+              "tip": "100 rupees for one year."
+            }
+          ]
+        },
+        {
+          "id": "si-l3-les2",
+          "title": "Interest for Several Years",
+          "intro": "For more years, multiply the one-year interest by the number of years.",
+          "visual": "",
+          "explanation": [
+            "One year SI 100, for 3 years: 300.",
+            "Simple interest is the same each year.",
+            "Multiply by T for the total."
+          ],
+          "rule": "Total SI = one-year SI x number of years.",
+          "tip": "Simple interest stays equal each year."
+        },
+        {
+          "id": "si-l3-les3",
+          "title": "Bigger Principals",
+          "intro": "A larger principal earns more interest at the same rate.",
+          "visual": "",
+          "explanation": [
+            "5000 at 5% for 1 year gives 250.",
+            "Double the principal, double the interest.",
+            "Keep dividing by 100 at the end."
+          ],
+          "rule": "More principal means more interest.",
+          "tip": "The rate and time being equal, P decides size."
+        },
+        {
+          "id": "si-l3-les4",
+          "title": "Higher Rates",
+          "intro": "A higher rate earns more interest on the same money.",
+          "visual": "",
+          "explanation": [
+            "1000 at 10% beats 1000 at 5%.",
+            "The bigger rate gives bigger interest.",
+            "Compare rates to compare earnings."
+          ],
+          "rule": "A higher rate earns more interest.",
+          "tip": "More % means more money."
+        },
+        {
+          "id": "si-l3-les5",
+          "title": "Interest in Stories",
+          "intro": "Pick out P, R, and T, then compute the interest.",
+          "visual": "",
+          "explanation": [
+            "'3000 at 5% for 2 years' gives SI 300.",
+            "Plug the three values into the formula.",
+            "Answer in rupees."
+          ],
+          "rule": "Identify P, R, T, then apply the formula.",
+          "tip": "Underline all three values."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "si-l3-q1",
+          "question": "Find the simple interest on 2000 rupees at 5% per year for 1 year, in rupees.",
+          "answer": "100",
+          "hint": "(P x R)/100.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "si-l3-q2",
+          "question": "Find the simple interest on 1000 rupees at 10% per year for 1 year, in rupees.",
+          "answer": "100",
+          "hint": "(P x R)/100.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "si-l3-q3",
+          "question": "Find the simple interest on 1000 rupees at 10% per year for 3 years, in rupees.",
+          "answer": "300",
+          "hint": "One-year SI times 3.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "si-l3-q4",
+          "question": "Find the simple interest on 5000 rupees at 5% per year for 1 year, in rupees.",
+          "answer": "250",
+          "hint": "(P x R)/100.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "si-l3-q5",
+          "question": "Priya invests 3000 rupees at 5% per year for 2 years. What simple interest does she earn, in rupees?",
+          "answer": "300",
+          "hint": "(3000 x 5 x 2)/100.",
+          "difficulty": "stretch",
+          "story": "Priya grows her savings.",
+          "isWord": true
+        },
+        {
+          "id": "si-l3-q6",
+          "question": "A shopkeeper borrows 4000 rupees at 10% per year for 2 years. What interest must he pay, in rupees?",
+          "answer": "800",
+          "hint": "(4000 x 10 x 2)/100.",
+          "difficulty": "stretch",
+          "story": "A loan to buy new stock.",
+          "isWord": true
+        },
+        {
+          "id": "si-l3-q7",
+          "question": "Find the simple interest on 6000 rupees at 5% per year for 3 years, in rupees.",
+          "answer": "900",
+          "hint": "(6000 x 5 x 3)/100.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "si-l3-q8",
+          "question": "Find the simple interest on 2500 rupees at 8% per year for 2 years, in rupees.",
+          "answer": "400",
+          "hint": "(2500 x 8 x 2)/100.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Finding the Amount",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Principal plus interest",
+      "lessons": [
+        {
+          "id": "si-l4-les1",
+          "title": "The Amount",
+          "intro": "The amount is the total you have at the end: principal plus interest.",
+          "visual": "",
+          "explanation": [
+            "Amount = P + SI.",
+            "P 1000, SI 100: amount = 1100.",
+            "The amount is always bigger than the principal."
+          ],
+          "rule": "Amount = Principal + Simple Interest.",
+          "tip": "Add the interest back to the principal.",
+          "steps": [
+            {
+              "text": "Find the interest.",
+              "notation": "SI = 100"
+            },
+            {
+              "text": "Add it to the principal.",
+              "notation": "1000 + 100 = 1100",
+              "tip": "Amount = 1100 rupees."
+            }
+          ]
+        },
+        {
+          "id": "si-l4-les2",
+          "title": "Finding the Amount",
+          "intro": "First find the interest, then add it to the principal.",
+          "visual": "",
+          "explanation": [
+            "Compute SI with the formula.",
+            "Add SI to P for the amount.",
+            "The amount is what you finally get or owe."
+          ],
+          "rule": "Compute SI, then add P.",
+          "tip": "Two steps: interest, then add."
+        },
+        {
+          "id": "si-l4-les3",
+          "title": "Amount for Savers",
+          "intro": "Savers receive the amount when they withdraw.",
+          "visual": "",
+          "explanation": [
+            "Save 2000, earn 200 interest: get 2200.",
+            "The bank returns principal plus interest.",
+            "More interest means a bigger amount."
+          ],
+          "rule": "Savers get principal plus interest back.",
+          "tip": "Amount is your total payout."
+        },
+        {
+          "id": "si-l4-les4",
+          "title": "Amount for Borrowers",
+          "intro": "Borrowers repay the amount, not just the principal.",
+          "visual": "",
+          "explanation": [
+            "Borrow 1000, interest 150: repay 1150.",
+            "The lender wants the interest too.",
+            "The amount is the full repayment."
+          ],
+          "rule": "Borrowers repay principal plus interest.",
+          "tip": "Repayment equals the amount."
+        },
+        {
+          "id": "si-l4-les5",
+          "title": "Amount in Stories",
+          "intro": "Find SI, then add it to P to get the amount.",
+          "visual": "",
+          "explanation": [
+            "'2500 at 4% for 2 years': SI 200, amount 2700.",
+            "Do the interest step first.",
+            "Then add for the amount."
+          ],
+          "rule": "Amount = P + SI once SI is found.",
+          "tip": "Never forget to add the principal."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "si-l4-q1",
+          "question": "Principal 1000 and simple interest 100. What is the amount in rupees?",
+          "answer": "1100",
+          "hint": "Amount = P + SI.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "si-l4-q2",
+          "question": "Principal 500 and simple interest 50. What is the amount in rupees?",
+          "answer": "550",
+          "hint": "Amount = P + SI.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "si-l4-q3",
+          "question": "Find the amount on 2000 rupees at 5% per year for 2 years, in rupees.",
+          "answer": "2200",
+          "hint": "Find SI, then add 2000.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "si-l4-q4",
+          "question": "Find the amount on 1000 rupees at 10% per year for 1 year, in rupees.",
+          "answer": "1100",
+          "hint": "Find SI, then add 1000.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "si-l4-q5",
+          "question": "Kiran saves 3000 rupees at 5% per year for 2 years. What amount does she receive, in rupees?",
+          "answer": "3300",
+          "hint": "SI first, then add 3000.",
+          "difficulty": "stretch",
+          "story": "Kiran plans a future purchase.",
+          "isWord": true
+        },
+        {
+          "id": "si-l4-q6",
+          "question": "A man borrows 2000 rupees at 10% per year for 2 years. What amount must he repay, in rupees?",
+          "answer": "2400",
+          "hint": "SI first, then add 2000.",
+          "difficulty": "stretch",
+          "story": "Repaying a two-year loan.",
+          "isWord": true
+        },
+        {
+          "id": "si-l4-q7",
+          "question": "Find the amount on 5000 rupees at 8% per year for 2 years, in rupees.",
+          "answer": "5800",
+          "hint": "SI first, then add 5000.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "si-l4-q8",
+          "question": "Find the amount on 1200 rupees at 5% per year for 3 years, in rupees.",
+          "answer": "1380",
+          "hint": "SI first, then add 1200.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Simple Interest Master",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Interest and amount",
+      "lessons": [
+        {
+          "id": "si-l5-les1",
+          "title": "Putting It Together",
+          "intro": "You can now find interest and the final amount for any simple-interest problem.",
+          "visual": "",
+          "explanation": [
+            "Find SI with (P x R x T)/100.",
+            "Add SI to P for the amount.",
+            "Check your units are rupees and years."
+          ],
+          "rule": "SI then amount: two reliable steps.",
+          "tip": "Compute interest, then add the principal.",
+          "steps": [
+            {
+              "text": "Compute the interest.",
+              "notation": "\\tfrac{2000 \\times 5 \\times 2}{100} = 200"
+            },
+            {
+              "text": "Add to the principal.",
+              "notation": "2000 + 200 = 2200",
+              "tip": "Amount = 2200 rupees."
+            }
+          ]
+        },
+        {
+          "id": "si-l5-les2",
+          "title": "Comparing Two Banks",
+          "intro": "Higher interest means a better savings deal.",
+          "visual": "",
+          "explanation": [
+            "Bank A 5%, Bank B 6% on the same money.",
+            "Bank B earns more interest.",
+            "Compare the interest to choose."
+          ],
+          "rule": "Pick the higher interest for savings.",
+          "tip": "More interest is better for a saver."
+        },
+        {
+          "id": "si-l5-les3",
+          "title": "Longer vs Shorter Time",
+          "intro": "More years means more simple interest.",
+          "visual": "",
+          "explanation": [
+            "Same P and R: 3 years earns more than 2.",
+            "Interest grows steadily each year.",
+            "Time multiplies the yearly interest."
+          ],
+          "rule": "More years, more interest.",
+          "tip": "Each extra year adds the same interest."
+        },
+        {
+          "id": "si-l5-les4",
+          "title": "Checking Your Work",
+          "intro": "A quick check keeps answers sensible.",
+          "visual": "",
+          "explanation": [
+            "Interest should be smaller than the principal for small rates.",
+            "Amount must be bigger than the principal.",
+            "Re-subtract: amount - P should equal SI."
+          ],
+          "rule": "Amount - P should equal SI.",
+          "tip": "Subtract back to verify."
+        },
+        {
+          "id": "si-l5-les5",
+          "title": "Simple Interest Master",
+          "intro": "Combine every skill to solve full interest problems.",
+          "visual": "",
+          "explanation": [
+            "Read for P, R, and T.",
+            "Find the interest, then the amount.",
+            "State the answer clearly in rupees."
+          ],
+          "rule": "Find SI and the amount with confidence.",
+          "tip": "Label, compute, and check."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "si-l5-q1",
+          "question": "Find the simple interest on 1000 rupees at 5% per year for 2 years, in rupees.",
+          "answer": "100",
+          "hint": "(P x R x T)/100.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "si-l5-q2",
+          "question": "Find the amount on 1000 rupees at 5% per year for 2 years, in rupees.",
+          "answer": "1100",
+          "hint": "SI then add 1000.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "si-l5-q3",
+          "question": "Find the simple interest on 4000 rupees at 5% per year for 3 years, in rupees.",
+          "answer": "600",
+          "hint": "(4000 x 5 x 3)/100.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "si-l5-q4",
+          "question": "Find the amount on 2000 rupees at 10% per year for 2 years, in rupees.",
+          "answer": "2400",
+          "hint": "SI then add 2000.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "si-l5-q5",
+          "question": "Deepa deposits 5000 rupees at 6% per year for 2 years. What amount does she get, in rupees?",
+          "answer": "5600",
+          "hint": "SI first, then add 5000.",
+          "difficulty": "stretch",
+          "story": "Deepa saves for a new bicycle.",
+          "isWord": true
+        },
+        {
+          "id": "si-l5-q6",
+          "question": "A loan of 3000 rupees is taken at 10% per year for 3 years. What total amount is repaid, in rupees?",
+          "answer": "3900",
+          "hint": "SI first, then add 3000.",
+          "difficulty": "stretch",
+          "story": "A three-year repayment plan.",
+          "isWord": true
+        },
+        {
+          "id": "si-l5-q7",
+          "question": "Find the simple interest on 7500 rupees at 8% per year for 2 years, in rupees.",
+          "answer": "1200",
+          "hint": "(7500 x 8 x 2)/100.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "si-l5-q8",
+          "question": "Find the amount on 10000 rupees at 5% per year for 4 years, in rupees.",
+          "answer": "12000",
+          "hint": "SI then add 10000.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

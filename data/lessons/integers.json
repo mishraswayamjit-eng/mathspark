@@ -1,0 +1,753 @@
+{
+  "id": "integers",
+  "topic": "Integers",
+  "emoji": "➕",
+  "color": "#60A5FA",
+  "gradeRange": [
+    5,
+    9
+  ],
+  "description": "Positive and negative numbers and their operations",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Positive & Negative",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "Numbers below zero",
+      "lessons": [
+        {
+          "id": "int-l1-les1",
+          "title": "Positive and Negative",
+          "intro": "Integers include zero, the counting numbers, AND their negatives — numbers below zero.",
+          "visual": "",
+          "explanation": [
+            "Positive integers: 1, 2, 3, ... Negative integers: -1, -2, -3, ...",
+            "Zero is an integer too, neither positive nor negative.",
+            "We use negatives for things like temperature below zero or debt."
+          ],
+          "rule": "Integers are positive numbers, negatives and zero.",
+          "tip": "The '-' sign shows a number below zero.",
+          "steps": [
+            {
+              "text": "Negatives sit below zero.",
+              "notation": "-3 < 0 < 3"
+            },
+            {
+              "text": "Each positive has an opposite negative.",
+              "notation": "5 \\text{ and } -5",
+              "tip": "Opposites are the same distance from 0."
+            }
+          ]
+        },
+        {
+          "id": "int-l1-les2",
+          "title": "Opposites",
+          "intro": "Every integer has an opposite — the same distance from zero but the other side.",
+          "visual": "",
+          "explanation": [
+            "The opposite of +5 is -5.",
+            "The opposite of -3 is +3.",
+            "Zero is its own opposite."
+          ],
+          "rule": "An integer's opposite has the same size, other sign.",
+          "tip": "Opposites always add to zero."
+        },
+        {
+          "id": "int-l1-les3",
+          "title": "Comparing Negatives",
+          "intro": "With negatives, bigger-looking numbers can actually be smaller!",
+          "visual": "",
+          "explanation": [
+            "-2 is greater than -5 (it is closer to zero).",
+            "On a number line, right is always greater.",
+            "The more negative a number, the smaller it is."
+          ],
+          "rule": "The number further right on the line is greater.",
+          "tip": "-1 is greater than -100."
+        },
+        {
+          "id": "int-l1-les4",
+          "title": "Integers in Real Life",
+          "intro": "Negatives describe real situations: cold temperatures, depths, and debts.",
+          "visual": "",
+          "explanation": [
+            "3 degrees below zero is written -3.",
+            "20 m below sea level is -20.",
+            "A profit is positive; a loss is negative."
+          ],
+          "rule": "Below zero, below sea level and debt are negatives.",
+          "tip": "Above/gain is positive; below/loss is negative."
+        },
+        {
+          "id": "int-l1-les5",
+          "title": "Ordering Integers",
+          "intro": "We can line up integers from smallest to largest on the number line.",
+          "visual": "",
+          "explanation": [
+            "Order of -3, 0, 2, -1 from smallest: -3, -1, 0, 2.",
+            "Negatives come first, then zero, then positives.",
+            "The smallest is the most negative."
+          ],
+          "rule": "Smallest = most negative; largest = most positive.",
+          "tip": "Place them on a line to be sure."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "int-l1-q1",
+          "question": "What is the opposite of +5?",
+          "answer": "-5",
+          "hint": "Same size, other sign.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "int-l1-q2",
+          "question": "What is the opposite of -3?",
+          "answer": "3",
+          "hint": "Flip the sign.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "int-l1-q3",
+          "question": "Which is greater, -2 or -5? Write the greater one.",
+          "answer": "-2",
+          "hint": "Closer to zero is greater.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "int-l1-q4",
+          "question": "Write 'three degrees below zero' as an integer.",
+          "answer": "-3",
+          "hint": "Below zero is negative.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "int-l1-q5",
+          "question": "A submarine is 20 metres below sea level. Write its position as an integer.",
+          "answer": "-20",
+          "hint": "Below sea level is negative.",
+          "difficulty": "stretch",
+          "story": "Exploring the deep ocean.",
+          "isWord": true
+        },
+        {
+          "id": "int-l1-q6",
+          "question": "A shopkeeper makes a profit of 50 rupees. Write this as an integer.",
+          "answer": "50",
+          "hint": "A profit is positive.",
+          "difficulty": "stretch",
+          "story": "A good day at the shop.",
+          "isWord": true
+        },
+        {
+          "id": "int-l1-q7",
+          "question": "From the list -3, 0, 2, -1, write the smallest number.",
+          "answer": "-3",
+          "hint": "Most negative is smallest.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "int-l1-q8",
+          "question": "Which is greater, -10 or -1? Write the greater one.",
+          "answer": "-1",
+          "hint": "Closer to zero wins.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Number Line",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Move left and right",
+      "lessons": [
+        {
+          "id": "int-l2-les1",
+          "title": "The Integer Number Line",
+          "intro": "The number line stretches both ways from zero: positives right, negatives left.",
+          "visual": "",
+          "explanation": [
+            "3 steps right of 0 lands on 3.",
+            "4 steps left of 0 lands on -4.",
+            "Moving right adds; moving left subtracts."
+          ],
+          "rule": "Right is positive, left is negative on the line.",
+          "tip": "Zero is the middle of the integer line.",
+          "steps": [
+            {
+              "text": "Right of zero is positive.",
+              "notation": "0 \\to +3"
+            },
+            {
+              "text": "Left of zero is negative.",
+              "notation": "0 \\to -4",
+              "tip": "Left means subtract."
+            }
+          ]
+        },
+        {
+          "id": "int-l2-les2",
+          "title": "Moving on the Line",
+          "intro": "To add, move right; to subtract, move left.",
+          "visual": "",
+          "explanation": [
+            "Start at 2, move 5 left: land on -3.",
+            "Start at -1, move 3 right: land on 2.",
+            "Count the steps carefully, watching direction."
+          ],
+          "rule": "Add = move right; subtract = move left.",
+          "tip": "Begin at the first number, then step."
+        },
+        {
+          "id": "int-l2-les3",
+          "title": "Lifts and Floors",
+          "intro": "A building with basements is a perfect integer number line.",
+          "visual": "",
+          "explanation": [
+            "Floor -2 going up 5 floors reaches floor 3.",
+            "Basements are negative floors.",
+            "Going up adds, going down subtracts."
+          ],
+          "rule": "Up adds, down subtracts — just like the line.",
+          "tip": "Floor 0 is the ground floor."
+        },
+        {
+          "id": "int-l2-les4",
+          "title": "Distance on the Line",
+          "intro": "The distance between two integers is how many steps apart they are — always positive.",
+          "visual": "",
+          "explanation": [
+            "Distance between -3 and 4 is 7 steps.",
+            "Count from one to the other.",
+            "Distance ignores direction, so it is never negative."
+          ],
+          "rule": "Distance = steps between numbers (always positive).",
+          "tip": "Add the two distances from zero if signs differ."
+        },
+        {
+          "id": "int-l2-les5",
+          "title": "Midpoints",
+          "intro": "The midpoint of two integers is exactly halfway between them.",
+          "visual": "",
+          "explanation": [
+            "Halfway between -6 and 2 is -2.",
+            "Add the two numbers and halve.",
+            "The midpoint is equally far from both ends."
+          ],
+          "rule": "Midpoint = (first + second) / 2.",
+          "tip": "Check it is the same distance from each end."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "int-l2-q1",
+          "question": "On a number line, what number is 3 steps right of 0?",
+          "answer": "3",
+          "hint": "Right adds.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "int-l2-q2",
+          "question": "What number is 4 steps left of 0?",
+          "answer": "-4",
+          "hint": "Left subtracts.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "int-l2-q3",
+          "question": "Start at 2 and move 5 steps left. Where do you land?",
+          "answer": "-3",
+          "hint": "2 minus 5.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "int-l2-q4",
+          "question": "Start at -1 and move 3 steps right. Where do you land?",
+          "answer": "2",
+          "hint": "-1 plus 3.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "int-l2-q5",
+          "question": "A lift at floor -2 goes up 5 floors. Which floor does it reach?",
+          "answer": "3",
+          "hint": "Up means add.",
+          "difficulty": "stretch",
+          "story": "Riding the mall lift.",
+          "isWord": true
+        },
+        {
+          "id": "int-l2-q6",
+          "question": "The temperature is -5 degrees and rises by 8 degrees. What is the new temperature?",
+          "answer": "3",
+          "hint": "Rising means add.",
+          "difficulty": "stretch",
+          "story": "A winter morning warming up.",
+          "isWord": true
+        },
+        {
+          "id": "int-l2-q7",
+          "question": "What is the distance between -3 and 4 on the number line?",
+          "answer": "7",
+          "hint": "Count the steps from -3 to 4.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "int-l2-q8",
+          "question": "What integer is exactly halfway between -6 and 2?",
+          "answer": "-2",
+          "hint": "Add them and halve.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Adding Integers",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Combine positives and negatives",
+      "lessons": [
+        {
+          "id": "int-l3-les1",
+          "title": "Adding Integers",
+          "intro": "Adding a positive moves right; adding a negative moves left.",
+          "visual": "",
+          "explanation": [
+            "-3 + 5 = 2 (move 5 right from -3).",
+            "4 + (-6) = -2 (move 6 left from 4).",
+            "Same signs add, different signs find the difference."
+          ],
+          "rule": "Add positives by moving right, negatives by moving left.",
+          "tip": "Different signs: subtract and keep the bigger sign.",
+          "steps": [
+            {
+              "text": "Start at the first number.",
+              "notation": "-3 + 5"
+            },
+            {
+              "text": "Move right for +5.",
+              "notation": "-3 + 5 = 2",
+              "tip": "Landed on 2."
+            }
+          ]
+        },
+        {
+          "id": "int-l3-les2",
+          "title": "Same Signs",
+          "intro": "When both integers have the same sign, add their sizes and keep the sign.",
+          "visual": "",
+          "explanation": [
+            "-7 + (-2) = -9 (both negative).",
+            "3 + 4 = 7 (both positive).",
+            "Same signs make the result bigger in size."
+          ],
+          "rule": "Same signs: add sizes, keep the shared sign.",
+          "tip": "Two negatives make a bigger negative."
+        },
+        {
+          "id": "int-l3-les3",
+          "title": "Different Signs",
+          "intro": "With different signs, subtract the smaller size from the bigger and keep the bigger sign.",
+          "visual": "",
+          "explanation": [
+            "4 + (-6): 6 - 4 = 2, bigger size is negative, so -2.",
+            "-5 + 5 = 0 (they cancel).",
+            "Opposites always cancel to zero."
+          ],
+          "rule": "Different signs: subtract, keep the bigger number's sign.",
+          "tip": "Equal opposites give zero."
+        },
+        {
+          "id": "int-l3-les4",
+          "title": "Adding and Money",
+          "intro": "Earning is positive, owing is negative — adding them gives your balance.",
+          "visual": "",
+          "explanation": [
+            "Owe 8, earn 3: -8 + 3 = -5 (still owe 5).",
+            "A negative balance means debt.",
+            "Add earnings and debts to find the net."
+          ],
+          "rule": "Net balance = earnings (+) plus debts (-).",
+          "tip": "A negative total means you still owe."
+        },
+        {
+          "id": "int-l3-les5",
+          "title": "Adding Three Integers",
+          "intro": "Add integers one at a time, keeping track of the running total.",
+          "visual": "",
+          "explanation": [
+            "-12 + 7 + 3: -12 + 7 = -5, then -5 + 3 = -2.",
+            "Work left to right.",
+            "Grouping positives and negatives first can help."
+          ],
+          "rule": "Add step by step, left to right.",
+          "tip": "You can add all positives, then all negatives."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "int-l3-q1",
+          "question": "What is -3 + 5?",
+          "answer": "2",
+          "hint": "Move 5 right from -3.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "int-l3-q2",
+          "question": "What is 4 + (-6)?",
+          "answer": "-2",
+          "hint": "Move 6 left from 4.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "int-l3-q3",
+          "question": "What is -7 + (-2)?",
+          "answer": "-9",
+          "hint": "Both negative: add sizes.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "int-l3-q4",
+          "question": "What is -5 + 5?",
+          "answer": "0",
+          "hint": "Opposites cancel.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "int-l3-q5",
+          "question": "The temperature is -4 degrees and rises by 10 degrees. What is the new temperature?",
+          "answer": "6",
+          "hint": "Rising means add.",
+          "difficulty": "stretch",
+          "story": "Afternoon sun warms the air.",
+          "isWord": true
+        },
+        {
+          "id": "int-l3-q6",
+          "question": "Sara owes 8 rupees and then earns 3 rupees. What is her balance as an integer (negative means she owes)?",
+          "answer": "-5",
+          "hint": "Owe is negative, earn is positive.",
+          "difficulty": "stretch",
+          "story": "Keeping track of pocket money.",
+          "isWord": true
+        },
+        {
+          "id": "int-l3-q7",
+          "question": "What is -12 + 7 + 3?",
+          "answer": "-2",
+          "hint": "Add left to right.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "int-l3-q8",
+          "question": "What is (-5) + (-5) + 10?",
+          "answer": "0",
+          "hint": "Combine the negatives first.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Subtracting Integers",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Add the opposite",
+      "lessons": [
+        {
+          "id": "int-l4-les1",
+          "title": "Subtracting Integers",
+          "intro": "Subtracting an integer is the same as adding its opposite — a powerful rule!",
+          "visual": "",
+          "explanation": [
+            "5 - 8 = -3 (move 8 left from 5).",
+            "2 - (-3) = 2 + 3 = 5 (subtracting a negative adds).",
+            "Change subtraction to 'add the opposite'."
+          ],
+          "rule": "To subtract, add the opposite: a - b = a + (-b).",
+          "tip": "Two minuses in a row make a plus.",
+          "steps": [
+            {
+              "text": "Rewrite subtraction as adding the opposite.",
+              "notation": "2 - (-3) = 2 + 3"
+            },
+            {
+              "text": "Then add as usual.",
+              "notation": "2 + 3 = 5",
+              "tip": "Minus a negative is plus."
+            }
+          ]
+        },
+        {
+          "id": "int-l4-les2",
+          "title": "Going Below Zero",
+          "intro": "Subtracting a bigger number takes you below zero.",
+          "visual": "",
+          "explanation": [
+            "5 - 8 = -3.",
+            "The result is negative when you subtract more than you have.",
+            "Move left past zero on the line."
+          ],
+          "rule": "Subtracting more than you have gives a negative.",
+          "tip": "Count the steps past zero."
+        },
+        {
+          "id": "int-l4-les3",
+          "title": "Minus a Negative",
+          "intro": "Subtracting a negative is like adding — the two signs make a plus.",
+          "visual": "",
+          "explanation": [
+            "2 - (-3) = 5.",
+            "-5 - (-2) = -5 + 2 = -3.",
+            "Always rewrite '- (-)' as '+'."
+          ],
+          "rule": "Subtracting a negative adds a positive.",
+          "tip": "Replace '--' with '+' first."
+        },
+        {
+          "id": "int-l4-les4",
+          "title": "Temperature Drops",
+          "intro": "Falling temperatures are a natural subtraction of integers.",
+          "visual": "",
+          "explanation": [
+            "3 degrees falling by 7 gives 3 - 7 = -4.",
+            "Falling means subtract.",
+            "Below zero shows as a negative temperature."
+          ],
+          "rule": "A drop subtracts; below zero is negative.",
+          "tip": "Start high, step down."
+        },
+        {
+          "id": "int-l4-les5",
+          "title": "Subtraction Master",
+          "intro": "With the 'add the opposite' rule, any integer subtraction is easy.",
+          "visual": "",
+          "explanation": [
+            "-6 - (-10) = -6 + 10 = 4.",
+            "0 - (-7) = 0 + 7 = 7.",
+            "Rewrite, then add."
+          ],
+          "rule": "Rewrite every subtraction as an addition, then solve.",
+          "tip": "The opposite flips the sign."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "int-l4-q1",
+          "question": "What is 5 - 8?",
+          "answer": "-3",
+          "hint": "Move 8 left from 5.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "int-l4-q2",
+          "question": "What is -3 - 4?",
+          "answer": "-7",
+          "hint": "Move 4 further left.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "int-l4-q3",
+          "question": "What is 2 - (-3)?",
+          "answer": "5",
+          "hint": "Minus a negative is plus.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "int-l4-q4",
+          "question": "What is -5 - (-2)?",
+          "answer": "-3",
+          "hint": "Rewrite as -5 + 2.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "int-l4-q5",
+          "question": "The temperature is 3 degrees and falls by 7 degrees. What is the new temperature?",
+          "answer": "-4",
+          "hint": "Falling means subtract.",
+          "difficulty": "stretch",
+          "story": "A sudden cold wind.",
+          "isWord": true
+        },
+        {
+          "id": "int-l4-q6",
+          "question": "From floor -1, a lift goes down 4 floors. Which floor does it reach?",
+          "answer": "-5",
+          "hint": "Down means subtract.",
+          "difficulty": "stretch",
+          "story": "Heading to the car park.",
+          "isWord": true
+        },
+        {
+          "id": "int-l4-q7",
+          "question": "What is -6 - (-10)?",
+          "answer": "4",
+          "hint": "Rewrite as -6 + 10.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "int-l4-q8",
+          "question": "What is 0 - (-7)?",
+          "answer": "7",
+          "hint": "Minus a negative is plus.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Multiply & Divide",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "The sign rules",
+      "lessons": [
+        {
+          "id": "int-l5-les1",
+          "title": "Multiplying Integers",
+          "intro": "The sign rule for multiplication: same signs give positive, different signs give negative.",
+          "visual": "",
+          "explanation": [
+            "(-3) x 4 = -12 (different signs).",
+            "(-2) x (-5) = 10 (same signs).",
+            "Multiply the sizes, then decide the sign."
+          ],
+          "rule": "Same signs -> positive; different signs -> negative.",
+          "tip": "Count the minus signs: even = +, odd = -.",
+          "steps": [
+            {
+              "text": "Multiply the sizes first.",
+              "notation": "3 \\times 4 = 12"
+            },
+            {
+              "text": "Different signs make it negative.",
+              "notation": "(-3) \\times 4 = -12",
+              "tip": "One minus = negative."
+            }
+          ]
+        },
+        {
+          "id": "int-l5-les2",
+          "title": "Dividing Integers",
+          "intro": "Division follows the SAME sign rule as multiplication.",
+          "visual": "",
+          "explanation": [
+            "(-12) / 3 = -4 (different signs).",
+            "(-20) / (-5) = 4 (same signs).",
+            "Divide the sizes, then apply the sign rule."
+          ],
+          "rule": "Division sign rule matches multiplication.",
+          "tip": "Same signs positive, different signs negative."
+        },
+        {
+          "id": "int-l5-les3",
+          "title": "Repeated Steps",
+          "intro": "Multiplying models repeated movement, like a diver descending each minute.",
+          "visual": "",
+          "explanation": [
+            "Descending 3 m each minute for 4 minutes: (-3) x 4 = -12.",
+            "Repeated loss is multiplication by a negative.",
+            "The total change is negative."
+          ],
+          "rule": "Repeated equal change = multiplication.",
+          "tip": "Loss each step gives a negative product."
+        },
+        {
+          "id": "int-l5-les4",
+          "title": "Counting the Minus Signs",
+          "intro": "When several negatives multiply, count them: even minuses give positive, odd give negative.",
+          "visual": "",
+          "explanation": [
+            "(-2) x (-3) x (-1): three minuses -> negative = -6.",
+            "Two minuses would give positive.",
+            "Count signs before you compute the size."
+          ],
+          "rule": "Even number of minus signs -> positive result.",
+          "tip": "Odd number of minuses -> negative result."
+        },
+        {
+          "id": "int-l5-les5",
+          "title": "Integer Master",
+          "intro": "Combine add, subtract, multiply and divide with full sign confidence.",
+          "visual": "",
+          "explanation": [
+            "(-48) / (-6) / (-2): 8 then -4.",
+            "Work left to right, tracking signs.",
+            "A quick sign check prevents mistakes."
+          ],
+          "rule": "Track signs carefully through every step.",
+          "tip": "Do the arithmetic, then confirm the sign."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "int-l5-q1",
+          "question": "What is (-3) x 4?",
+          "answer": "-12",
+          "hint": "Different signs: negative.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "int-l5-q2",
+          "question": "What is (-2) x (-5)?",
+          "answer": "10",
+          "hint": "Same signs: positive.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "int-l5-q3",
+          "question": "What is (-12) / 3?",
+          "answer": "-4",
+          "hint": "Different signs: negative.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "int-l5-q4",
+          "question": "What is (-20) / (-5)?",
+          "answer": "4",
+          "hint": "Same signs: positive.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "int-l5-q5",
+          "question": "A diver descends 3 metres each minute for 4 minutes. What is her depth as an integer?",
+          "answer": "-12",
+          "hint": "Descending each minute is negative.",
+          "difficulty": "stretch",
+          "story": "A scuba-diving adventure.",
+          "isWord": true
+        },
+        {
+          "id": "int-l5-q6",
+          "question": "The temperature falls 2 degrees each hour for 5 hours. What is the total change as an integer?",
+          "answer": "-10",
+          "hint": "A fall each hour is negative.",
+          "difficulty": "stretch",
+          "story": "An overnight cold spell.",
+          "isWord": true
+        },
+        {
+          "id": "int-l5-q7",
+          "question": "What is (-2) x (-3) x (-1)?",
+          "answer": "-6",
+          "hint": "Three minuses: negative.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "int-l5-q8",
+          "question": "What is (-48) / (-6) / (-2)?",
+          "answer": "-4",
+          "hint": "Work left to right.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}
