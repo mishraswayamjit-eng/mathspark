@@ -68,11 +68,12 @@ function pickBest<T extends { source: string }>(pool: T[]): T | null {
  * Adaptive next-question picker.
  *
  * All session context (seen questions, streak) is derived from the database.
- * "Session" = questions answered today (midnight to midnight, local time).
+ * Streak = today's attempts (midnight to midnight, local time); seen-exclusion
+ * spans a rolling multi-day window so the same user doesn't get repeats day-to-day.
  *
  * Rules:
- *  1. Fetch all questions for the topic + today's attempts in parallel.
- *  2. Exclude questions already answered today.
+ *  1. Fetch all questions for the topic + recent attempts in parallel.
+ *  2. Exclude questions answered within the rolling seen window.
  *  3. Derive base difficulty from the student's mastery level:
  *       NotStarted → 80% Easy, 20% Medium
  *       Practicing  → 20% Easy, 60% Medium, 20% Hard
@@ -89,11 +90,20 @@ export async function getNextQuestion(
   clientExcludeIds: string[] = [],
   subTopicKey: string = '',
 ) {
-  // Session window: midnight today → midnight tomorrow
+  // Session window: midnight today → midnight tomorrow (drives streak/difficulty).
   const todayStart = new Date();
   todayStart.setHours(0, 0, 0, 0);
   const tomorrowStart = new Date(todayStart);
   tomorrowStart.setDate(tomorrowStart.getDate() + 1);
+
+  // Seen-exclusion window: a rolling multi-day span so a student practising the
+  // same topic across days doesn't get the same questions back. Streak logic still
+  // uses today only (below). 14 days is long enough to feel fresh, short enough to
+  // avoid starving small sub-topic pools (the absolute fallback re-serves if a pool
+  // is genuinely exhausted).
+  const SEEN_WINDOW_DAYS = 14;
+  const seenWindowStart = new Date(todayStart);
+  seenWindowStart.setDate(seenWindowStart.getDate() - SEEN_WINDOW_DAYS);
 
   // Scoped selection for a single sub-topic key (empty key = whole pool). This is
   // the original `getNextQuestion` body verbatim — same queries, same order.
@@ -115,11 +125,11 @@ export async function getNextQuestion(
       prisma.attempt.findMany({
         where: {
           studentId,
-          createdAt: { gte: todayStart, lt: tomorrowStart },
+          createdAt: { gte: seenWindowStart, lt: tomorrowStart },
           question: { topicId, ...subTopicFilter },
         },
         orderBy: { createdAt: 'asc' },
-        select: { questionId: true, isCorrect: true },
+        select: { questionId: true, isCorrect: true, createdAt: true },
       }),
 
       prisma.progress.findUnique({
@@ -155,12 +165,19 @@ export async function getNextQuestion(
         .map(([st]) => st),
     );
 
-    // Filter out already-seen questions (DB attempts + client-provided IDs)
+    // Filter out already-seen questions (DB attempts across the seen window +
+    // client-provided IDs). The wider window pushes repeats out across days.
     const seenIds  = new Set([
       ...sessionAttempts.map((a) => a.questionId),
       ...clientExcludeIds,
     ]);
     const available = allQuestions.filter((q) => !seenIds.has(q.id));
+
+    // Streak/difficulty is a *today-only* signal. Attempts without a createdAt
+    // (unit-test fixtures) are treated as today so test behaviour is unchanged.
+    const todayAttempts = sessionAttempts.filter(
+      (a) => !a.createdAt || new Date(a.createdAt) >= todayStart,
+    );
 
     // ── Step 3: Base difficulty from mastery ─────────────────────────────────
     const mastery = progress?.mastery ?? 'NotStarted';
@@ -174,8 +191,8 @@ export async function getNextQuestion(
       targetDiff = weightedDiff(0.2, 0.6, 0.2);
     }
 
-    // ── Step 4: Streak adjustments ───────────────────────────────────────────
-    const recent5 = sessionAttempts.slice(-5);
+    // ── Step 4: Streak adjustments (today only) ──────────────────────────────
+    const recent5 = todayAttempts.slice(-5);
     const last3   = recent5.slice(-3);
     if (last3.length === 3 && last3.every((a) => !a.isCorrect)) {
       // 3 wrong in a row → easier

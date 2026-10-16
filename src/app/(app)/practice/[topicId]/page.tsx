@@ -348,8 +348,8 @@ export default function PracticePage() {
 
   // ── Boot ───────────────────────────────────────────────────────────────────
   // Fetch one adaptive question at a time. Questions are served by the adaptive
-  // engine (/api/questions/next) which reads today's DB attempts to determine
-  // difficulty, avoid repeats, and honour streak adjustments.
+  // engine (/api/questions/next): streak/difficulty use today's DB attempts, while
+  // repeats are avoided across a rolling multi-day window (plus this session's set).
   useEffect(() => {
     const sid = localStorage.getItem('mathspark_student_id');
     if (!sid) { router.replace('/start'); return; }
