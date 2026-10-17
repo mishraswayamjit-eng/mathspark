@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
-import { FREE_DAILY_MINUTES, isUnlimitedPlan } from '@/lib/usageLimits';
+import { FREE_DAILY_MINUTES, UNLIMITED_THRESHOLD, isUnlimitedPlan } from '@/lib/usageLimits';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { MONETIZATION_ENABLED } from '@/lib/monetization';
 import { logError } from '@/lib/logger';
 
 export const dynamic = 'force-dynamic';
@@ -13,6 +14,11 @@ export async function POST() {
     const studentId = await getAuthenticatedStudentId();
     if (!studentId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    // Monetization OFF → no usage tracking/gating; always allow.
+    if (!MONETIZATION_ENABLED) {
+      return NextResponse.json({ allowed: true, used: 0, limit: UNLIMITED_THRESHOLD, remaining: null });
     }
 
     const today = new Date();

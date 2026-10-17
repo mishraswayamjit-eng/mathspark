@@ -1,7 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { MONETIZATION_ENABLED } from '@/lib/monetization';
 
 // ── Plan data ──────────────────────────────────────────────────────────────
 
@@ -117,9 +119,16 @@ function Cell({ v }: { v: boolean | string }) {
 }
 
 export default function PricingPage() {
+  const router = useRouter();
   const [annual,      setAnnual]      = useState(false);
   const [openFaq,     setOpenFaq]     = useState<number | null>(null);
   const [showCompare, setShowCompare] = useState(false);
+
+  // Monetization OFF → pricing is hidden; bounce to the home page.
+  useEffect(() => {
+    if (!MONETIZATION_ENABLED) router.replace('/');
+  }, [router]);
+  if (!MONETIZATION_ENABLED) return null;
 
   return (
     <div className="min-h-screen bg-white pb-20 animate-fade-in">

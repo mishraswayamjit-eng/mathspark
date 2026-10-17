@@ -1,5 +1,7 @@
 import { prisma } from '@/lib/db';
 import { parseFeatureFlags } from '@/lib/jsonFields';
+import { MONETIZATION_ENABLED } from '@/lib/monetization';
+import { UNLIMITED_THRESHOLD } from '@/lib/usageLimits';
 
 // ── Feature keys matching the Subscription.features JSON ──────────────────
 
@@ -50,6 +52,11 @@ export interface GateResult {
  */
 export async function checkFeature(studentId: string | null | undefined, feature: Feature): Promise<GateResult> {
   const requiredPlan = FEATURE_PLAN[feature];
+
+  // Monetization OFF → every feature is unlocked for everyone.
+  if (!MONETIZATION_ENABLED) {
+    return { allowed: true, requiredPlan, remaining: { dailyMinutes: UNLIMITED_THRESHOLD, aiChats: UNLIMITED_THRESHOLD } };
+  }
 
   // Guest / no studentId — allow basic features without restriction
   if (!studentId) {
@@ -104,6 +111,11 @@ export async function checkDailyLimit(studentId: string): Promise<{
   limit:      number;
   remaining:  number;
 }> {
+  // Monetization OFF → no daily time limit.
+  if (!MONETIZATION_ENABLED) {
+    return { allowed: true, used: 0, limit: UNLIMITED_THRESHOLD, remaining: UNLIMITED_THRESHOLD };
+  }
+
   const student = await prisma.student.findUnique({
     where:  { id: studentId },
     select: {

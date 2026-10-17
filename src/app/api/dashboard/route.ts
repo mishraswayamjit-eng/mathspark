@@ -3,6 +3,7 @@ import { prisma } from '@/lib/db';
 import { getTopicsCached } from '@/lib/topicCache';
 import { TOPIC_ORDER, computeStreak, buildTopicNameMap, buildLookupMap } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { MONETIZATION_ENABLED, UNLIMITED_TIER } from '@/lib/monetization';
 import { logError } from '@/lib/logger';
 import { computeWeeklyData, computeRecentActivity } from '@/lib/studentDashboard';
 
@@ -84,7 +85,9 @@ export async function GET() {
         weakestTopicId:   weakest?.id ?? topics[0]?.id ?? null,
         weakestTopicName: weakest?.name ?? null,
         recentActivity:   computeRecentActivity(attempts, topicMap),
-        subscriptionTier: (student as { subscription?: { tier: number } | null }).subscription?.tier ?? 0,
+        subscriptionTier: MONETIZATION_ENABLED
+          ? ((student as { subscription?: { tier: number } | null }).subscription?.tier ?? 0)
+          : UNLIMITED_TIER,
       },
       {
         headers: {

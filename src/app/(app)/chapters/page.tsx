@@ -8,6 +8,7 @@ import Sparky from '@/components/Sparky';
 import NudgeBubble from '@/components/NudgeBubble';
 import { computeNudge, markMasteryShown, type Nudge } from '@/lib/nudges';
 import { getAccessibleGrades, isGradeAccessible } from '@/lib/gradeAccess';
+import { MONETIZATION_ENABLED, UNLIMITED_TIER } from '@/lib/monetization';
 import { getTopicsForGrade, type TopicNode } from '@/data/topicTree';
 import { TOPIC_ORDER } from '@/lib/sharedUtils';
 import SkillPath from '@/components/chapters/SkillPath';
@@ -184,7 +185,7 @@ export default function ChaptersPage() {
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   const studentGrade     = data?.student.grade ?? 4;
-  const subscriptionTier = data?.subscriptionTier ?? 0;
+  const subscriptionTier = MONETIZATION_ENABLED ? (data?.subscriptionTier ?? 0) : UNLIMITED_TIER;
 
   // Accessible grade sets
   const { fullAccess, sampleOnly } = getAccessibleGrades(studentGrade, subscriptionTier);

@@ -16,6 +16,7 @@ import type { Question, AnswerKey } from '@/types';
 import { saveSessionData } from '@/lib/nudges';
 import { formatMinutes, isUnlimitedPlan } from '@/lib/usageLimits';
 import { isGradeAccessible, getTopicGrade } from '@/lib/gradeAccess';
+import { MONETIZATION_ENABLED, UNLIMITED_TIER } from '@/lib/monetization';
 import {
   LESSON_SIZE, HEARTS_MAX, XP_CORRECT, XP_REVIEW, AUTO_ADVANCE_MS,
   SPEED_DRILL_MS, MAX_BONUS_PER_LESSON, MAX_BONUS_PER_ORIGIN,
@@ -35,7 +36,7 @@ export default function PracticePage() {
   const searchParams  = useSearchParams();
   const topicId       = params.topicId as string;
   const isSpeedMode   = searchParams.get('mode') === 'speed';
-  const isSampleMode  = searchParams.get('sample') === 'true';
+  const isSampleMode  = MONETIZATION_ENABLED && searchParams.get('sample') === 'true';
   const subTopicParam = searchParams.get('subTopic') ?? '';
   const conceptId     = searchParams.get('from') === 'concept' ? searchParams.get('conceptId') : null;
   const SAMPLE_LIMIT  = 5;
@@ -876,10 +877,12 @@ export default function PracticePage() {
       typeof window !== 'undefined' ? (localStorage.getItem('mathspark_student_grade') ?? '4') : '4',
       10,
     );
-    const subTier = parseInt(
-      typeof window !== 'undefined' ? (localStorage.getItem('mathspark_subscription_tier') ?? '0') : '0',
-      10,
-    );
+    const subTier = MONETIZATION_ENABLED
+      ? parseInt(
+          typeof window !== 'undefined' ? (localStorage.getItem('mathspark_subscription_tier') ?? '0') : '0',
+          10,
+        )
+      : UNLIMITED_TIER;
 
     let gradeUpCta: GradeUpCta | undefined;
     if (pctScore >= 80 && topicGrade < 9) {

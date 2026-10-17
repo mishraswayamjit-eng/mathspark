@@ -5,6 +5,7 @@ import { recomputeStudentAnalytics } from '@/lib/brain/recompute';
 import { getTopicsCached } from '@/lib/topicCache';
 import { computeStreak, buildTopicNameMap } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { MONETIZATION_ENABLED, UNLIMITED_TIER } from '@/lib/monetization';
 import { logError } from '@/lib/logger';
 import { getWeekBounds, TIER_NAMES } from '@/lib/leaderboard';
 import { getTopicsForGrade } from '@/data/topicTree';
@@ -147,7 +148,7 @@ export async function GET() {
   }
 
   const analytics = student.analytics;
-  const subscriptionTier = student.subscription?.tier ?? 0;
+  const subscriptionTier = MONETIZATION_ENABLED ? (student.subscription?.tier ?? 0) : UNLIMITED_TIER;
   const subscriptionName = student.subscription?.name ?? null;
 
   const trialExpiresAt = student.trialExpiresAt;

@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import DuoButton from '@/components/DuoButton';
 import Sparky from '@/components/Sparky';
 import type { TestType, PYQYear } from '@/types';
+import { MONETIZATION_ENABLED } from '@/lib/monetization';
 
 // ── Synthetic test options ─────────────────────────────────────────────────────
 
@@ -116,7 +117,7 @@ export default function TestConfigPage() {
       .catch((err) => logError('[fetch]', err));
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
-  const IS_MEGA_ACCESSIBLE = subscriptionTier >= 2 || trialActive;
+  const IS_MEGA_ACCESSIBLE = !MONETIZATION_ENABLED || subscriptionTier >= 2 || trialActive;
 
   // Start a synthetic test (quick / half / ipm / full)
   async function handleStart() {
