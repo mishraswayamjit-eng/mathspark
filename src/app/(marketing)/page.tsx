@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
+import { MONETIZATION_ENABLED } from '@/lib/monetization';
 import AuthRedirect from '@/components/landing/AuthRedirect';
 import HeroDemo from '@/components/landing/HeroDemo';
 import SectionFade from '@/components/landing/SectionFade';
@@ -57,7 +58,9 @@ export default function LandingPage() {
             <span className="text-duo-dark font-extrabold text-lg tracking-tight">MathSpark</span>
           </div>
           <div className="flex items-center gap-3">
-            <Link href="/pricing" className="text-gray-600 text-sm font-semibold hover:text-gray-900 transition-colors hidden sm:block">Pricing</Link>
+            {MONETIZATION_ENABLED && (
+              <Link href="/pricing" className="text-gray-600 text-sm font-semibold hover:text-gray-900 transition-colors hidden sm:block">Pricing</Link>
+            )}
             <Link href="/auth/login" className="text-gray-600 text-sm font-semibold hover:text-gray-900 transition-colors">Sign in</Link>
             <Link href="/start" className="bg-duo-green text-white text-sm font-extrabold px-5 py-2 rounded-full hover:bg-[#46a302] transition-colors">
               Try It Free
@@ -323,47 +326,49 @@ export default function LandingPage() {
       </section>
 
       {/* ── PRICING ───────────────────────────────────────────────────────────── */}
-      <section className="bg-gray-50 py-16 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
-          <SectionFade>
-            <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-duo-dark mb-2">Simple, honest pricing.</h2>
-              <p className="text-gray-500 text-sm">Start free — upgrade when you&apos;re ready. No card required.</p>
-            </div>
-          </SectionFade>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {PLANS.map((plan, i) => (
-              <SectionFade key={plan.id} delay={i * 100}>
-                <div className={`bg-white border-2 ${plan.borderColor} rounded-2xl overflow-hidden h-full flex flex-col shadow-sm ${plan.popular ? 'ring-2 ring-duo-blue ring-offset-2' : ''}`}>
-                  {plan.popular && (
-                    <div className="bg-duo-blue text-white text-[10px] font-extrabold text-center py-1.5 tracking-widest uppercase">Most Popular</div>
-                  )}
-                  <div className="p-6 flex flex-col flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xl" aria-hidden="true">{plan.emoji}</span>
-                      <span className="text-duo-dark font-extrabold text-lg">{plan.name}</span>
+      {MONETIZATION_ENABLED && (
+        <section className="bg-gray-50 py-16 px-4 sm:px-6">
+          <div className="max-w-6xl mx-auto">
+            <SectionFade>
+              <div className="text-center mb-10">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-duo-dark mb-2">Simple, honest pricing.</h2>
+                <p className="text-gray-500 text-sm">Start free — upgrade when you&apos;re ready. No card required.</p>
+              </div>
+            </SectionFade>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {PLANS.map((plan, i) => (
+                <SectionFade key={plan.id} delay={i * 100}>
+                  <div className={`bg-white border-2 ${plan.borderColor} rounded-2xl overflow-hidden h-full flex flex-col shadow-sm ${plan.popular ? 'ring-2 ring-duo-blue ring-offset-2' : ''}`}>
+                    {plan.popular && (
+                      <div className="bg-duo-blue text-white text-[10px] font-extrabold text-center py-1.5 tracking-widest uppercase">Most Popular</div>
+                    )}
+                    <div className="p-6 flex flex-col flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xl" aria-hidden="true">{plan.emoji}</span>
+                        <span className="text-duo-dark font-extrabold text-lg">{plan.name}</span>
+                      </div>
+                      <div className="flex items-baseline gap-1 mb-5">
+                        <span className="text-3xl font-extrabold text-duo-dark">₹{plan.monthly.toLocaleString('en-IN')}</span>
+                        <span className="text-gray-400 text-sm">/mo</span>
+                      </div>
+                      <ul className="space-y-2 flex-1 mb-5">
+                        {plan.features.map(f => (
+                          <li key={f} className="flex items-start gap-2 text-xs text-gray-600">
+                            <span className="text-duo-green font-bold shrink-0 mt-0.5" aria-hidden="true">✓</span> {f}
+                          </li>
+                        ))}
+                      </ul>
+                      <Link href="/start" className={`block w-full text-center ${plan.ctaClass} text-white font-extrabold py-3 rounded-2xl transition-colors text-sm`}>
+                        Start Free
+                      </Link>
                     </div>
-                    <div className="flex items-baseline gap-1 mb-5">
-                      <span className="text-3xl font-extrabold text-duo-dark">₹{plan.monthly.toLocaleString('en-IN')}</span>
-                      <span className="text-gray-400 text-sm">/mo</span>
-                    </div>
-                    <ul className="space-y-2 flex-1 mb-5">
-                      {plan.features.map(f => (
-                        <li key={f} className="flex items-start gap-2 text-xs text-gray-600">
-                          <span className="text-duo-green font-bold shrink-0 mt-0.5" aria-hidden="true">✓</span> {f}
-                        </li>
-                      ))}
-                    </ul>
-                    <Link href="/start" className={`block w-full text-center ${plan.ctaClass} text-white font-extrabold py-3 rounded-2xl transition-colors text-sm`}>
-                      Start Free
-                    </Link>
                   </div>
-                </div>
-              </SectionFade>
-            ))}
+                </SectionFade>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── FINAL CTA ─────────────────────────────────────────────────────────── */}
       <section className="py-16 px-4 sm:px-6">
@@ -397,7 +402,9 @@ export default function LandingPage() {
           100,000+ researched questions · 4 years of real papers · Zero hallucination · Adaptive AI
         </p>
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-white/70 text-xs font-semibold mb-5">
-          <Link href="/pricing"       className="hover:text-white transition-colors">Pricing</Link>
+          {MONETIZATION_ENABLED && (
+            <Link href="/pricing"     className="hover:text-white transition-colors">Pricing</Link>
+          )}
           <Link href="/start"         className="hover:text-white transition-colors">Try it free</Link>
           <Link href="/auth/login"    className="hover:text-white transition-colors">Sign in</Link>
           <a href="#"                 className="hover:text-white transition-colors">Privacy</a>

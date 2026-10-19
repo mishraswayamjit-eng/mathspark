@@ -1,8 +1,16 @@
 import { prisma } from '@/lib/db';
+import { MONETIZATION_ENABLED } from '@/lib/monetization';
 import type { LlmFeature } from './types';
 
 /** Daily message budget for a student with no active subscription. */
 const FREE_DAILY_LIMIT = 5;
+
+/**
+ * Daily AI-message budget granted to everyone when monetization is OFF.
+ * Matches the top ("Unlimited") plan tier — lifts the paid gate while keeping a
+ * sane ceiling so uncapped LLM API cost can't run away.
+ */
+const MONETIZATION_OFF_DAILY_LIMIT = 100;
 
 /**
  * Which features draw from the shared daily AI budget (DB-backed, counted
@@ -54,7 +62,9 @@ export async function checkAndIncrementUsage(
 
     if (!student) return { allowed: false, remaining: 0 };
 
-    const limit = student.subscription?.aiChatDailyLimit ?? FREE_DAILY_LIMIT;
+    const limit = MONETIZATION_ENABLED
+      ? (student.subscription?.aiChatDailyLimit ?? FREE_DAILY_LIMIT)
+      : MONETIZATION_OFF_DAILY_LIMIT;
 
     // Reset counter if last active date was before today.
     const lastActive = student.lastActiveDate ? new Date(student.lastActiveDate) : null;

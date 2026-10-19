@@ -6,6 +6,7 @@ import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { isUnlimitedPlan } from '@/lib/usageLimits';
+import { MONETIZATION_ENABLED } from '@/lib/monetization';
 
 interface Child {
   id:                      string;
@@ -140,7 +141,7 @@ export default function ParentDashboard() {
           <div className="space-y-3">
             {children.map((child) => {
               const limit      = child.subscription?.dailyLimitMinutes ?? 60;
-              const unlimited  = isUnlimitedPlan(limit);
+              const unlimited  = !MONETIZATION_ENABLED || isUnlimitedPlan(limit);
               const usedPct    = unlimited ? 100 : Math.min(100, Math.round((child.dailyUsageMinutes / limit) * 100));
               const lastActive = child.lastActiveDate
                 ? new Date(child.lastActiveDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })
@@ -152,7 +153,7 @@ export default function ParentDashboard() {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-white font-extrabold text-base">{child.name}</span>
-                        <PlanBadge sub={child.subscription} />
+                        {MONETIZATION_ENABLED && <PlanBadge sub={child.subscription} />}
                       </div>
                       <p className="text-white/60 text-xs">Grade {child.grade} · Last active: {lastActive}</p>
 
@@ -173,9 +174,11 @@ export default function ParentDashboard() {
                         </div>
                       </div>
 
-                      <p className="text-white/60 text-xs mt-2">
-                        AI chats today: {child.aiChatMessagesUsedToday} / {child.subscription?.aiChatDailyLimit ?? 5}
-                      </p>
+                      {MONETIZATION_ENABLED && (
+                        <p className="text-white/60 text-xs mt-2">
+                          AI chats today: {child.aiChatMessagesUsedToday} / {child.subscription?.aiChatDailyLimit ?? 5}
+                        </p>
+                      )}
                     </div>
 
                     <button
@@ -187,7 +190,7 @@ export default function ParentDashboard() {
                     </button>
                   </div>
 
-                  {!child.subscriptionId && (
+                  {MONETIZATION_ENABLED && !child.subscriptionId && (
                     <div className="mt-3 border-t border-white/10 pt-3">
                       <Link
                         href="/pricing"
@@ -239,19 +242,21 @@ export default function ParentDashboard() {
       </div>
 
       {/* Quick links */}
-      <div className="px-4 mt-6 space-y-2">
-        <Link
-          href="/pricing"
-          className="block w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center gap-3 hover:bg-white/10 transition-colors"
-        >
-          <span className="text-2xl">💳</span>
-          <div>
-            <p className="text-white font-extrabold text-sm">View Plans & Pricing</p>
-            <p className="text-white/60 text-xs">Starter ₹500/mo · Advanced ₹1,500/mo · Unlimited ₹5,000/mo</p>
-          </div>
-          <span className="text-white/60 ml-auto">→</span>
-        </Link>
-      </div>
+      {MONETIZATION_ENABLED && (
+        <div className="px-4 mt-6 space-y-2">
+          <Link
+            href="/pricing"
+            className="block w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center gap-3 hover:bg-white/10 transition-colors"
+          >
+            <span className="text-2xl">💳</span>
+            <div>
+              <p className="text-white font-extrabold text-sm">View Plans & Pricing</p>
+              <p className="text-white/60 text-xs">Starter ₹500/mo · Advanced ₹1,500/mo · Unlimited ₹5,000/mo</p>
+            </div>
+            <span className="text-white/60 ml-auto">→</span>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }
