@@ -36,7 +36,7 @@ let current: ScreenContext | null = null;
 const listeners = new Set<() => void>();
 
 function emit() {
-  for (const l of listeners) l();
+  listeners.forEach((l) => l());
 }
 
 /** Publish the current screen context (replaces any previous value). */
@@ -63,7 +63,7 @@ const openListeners = new Set<() => void>();
 
 /** Ask the floating Sparky widget to open (no-op if the widget isn't mounted). */
 export function requestOpenSparky(): void {
-  for (const l of openListeners) l();
+  openListeners.forEach((l) => l());
 }
 
 /** Subscribe to open requests. Returns an unsubscribe fn. */
