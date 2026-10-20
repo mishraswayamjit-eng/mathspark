@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { isAppChromeHidden } from '@/lib/navVisibility';
 
 const NAV = [
   { href: '/home',        emoji: '🏠', label: 'Home'     },
@@ -26,19 +27,7 @@ export default function BottomNav() {
   }, [pathname]); // re-check on navigation
 
   // Hide on landing, auth, parent, student, pricing, onboarding, seed, test engine pages, and public profiles
-  if (
-    pathname === '/' ||
-    pathname === '/start' ||
-    pathname === '/seed' ||
-    pathname === '/pricing' ||
-    pathname.startsWith('/auth/') ||
-    pathname.startsWith('/parent/') ||
-    pathname.startsWith('/student/') ||
-    pathname.startsWith('/profile/') ||    // public profiles (e.g. /profile/abc123)
-    (pathname.startsWith('/test/') && pathname !== '/test/') ||
-    pathname.startsWith('/practice/papers/') ||  // hide during practice paper exams
-    pathname.startsWith('/flashcards/session')  // hide during active flashcard sessions
-  ) return null;
+  if (isAppChromeHidden(pathname)) return null;
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-white z-50 shadow-[0_-2px_10px_rgba(0,0,0,0.08)] pb-[env(safe-area-inset-bottom)]">

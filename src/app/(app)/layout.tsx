@@ -1,4 +1,5 @@
 import BottomNav from '@/components/BottomNav';
+import SparkyWidget from '@/components/SparkyWidget';
 import ServiceWorkerRegistrar from '@/components/ServiceWorkerRegistrar';
 import AddToHomeScreen from '@/components/AddToHomeScreen';
 
@@ -9,6 +10,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       <BottomNav />
+      <SparkyWidget />
       <AddToHomeScreen />
       <ServiceWorkerRegistrar />
     </>

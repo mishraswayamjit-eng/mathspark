@@ -4,7 +4,7 @@ import { checkRateLimit } from '@/lib/rateLimit';
 import { validateBody, ValidationError } from '@/lib/validateBody';
 import { logError } from '@/lib/logger';
 import { isLlmConfigured } from '@/lib/llm/client';
-import { buildKidSafeSystemPrompt } from '@/lib/llm/guardrails';
+import { buildKidSafeSystemPrompt, type ChatScreenContext } from '@/lib/llm/guardrails';
 import { streamCompletion } from '@/lib/llm/complete';
 import { checkAndIncrementUsage } from '@/lib/llm/usage';
 import type { LlmMessage } from '@/lib/llm/types';
@@ -29,14 +29,24 @@ export async function POST(req: Request) {
   let sessionId: string | undefined;
   let message: string;
   let mode: string;
+  let screenContext: ChatScreenContext | undefined;
   try {
-    const parsed = validateBody<{ message: string; sessionId?: string; mode?: string }>(
+    const parsed = validateBody<{ message: string; sessionId?: string; mode?: string; context?: Record<string, unknown> }>(
       await req.json(),
-      { message: 'string', sessionId: 'string?', mode: 'string?' },
+      { message: 'string', sessionId: 'string?', mode: 'string?', context: 'object?' },
     );
     sessionId = parsed.sessionId;
     message = parsed.message;
     mode = parsed.mode ?? 'general';
+    // Sanitise/narrow the optional screen context — string fields only, NO answer.
+    if (parsed.context && typeof parsed.context === 'object') {
+      const c = parsed.context;
+      screenContext = {
+        screen:       typeof c.screen === 'string' ? c.screen : undefined,
+        topicName:    typeof c.topicName === 'string' ? c.topicName : undefined,
+        questionText: typeof c.questionText === 'string' ? c.questionText : undefined,
+      };
+    }
   } catch (err) {
     if (err instanceof ValidationError) {
       return Response.json({ error: err.message }, { status: 400 });
@@ -126,7 +136,7 @@ export async function POST(req: Request) {
     {
       model: 'sonnet',
       maxTokens: 300,
-      system: buildKidSafeSystemPrompt(student.grade, student.name, topicContext),
+      system: buildKidSafeSystemPrompt(student.grade, student.name, topicContext, screenContext),
       messages: history,
     },
     {

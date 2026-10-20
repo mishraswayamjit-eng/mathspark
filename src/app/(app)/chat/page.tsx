@@ -1,254 +1,31 @@
 'use client';
 
-import { MS_PER_DAY } from '@/lib/timeConstants';
-import { logError } from '@/lib/logger';
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Sparky from '@/components/Sparky';
-import type { ChatMessage } from '@/types';
-
-// ── Quick reply chips — grade-aware ───────────────────────────────────────────
-
-const QUICK_REPLIES_BASE = [
-  { label: 'Quiz me! 🎯',                message: 'Quiz me on something from my recent topics!' },
-  { label: 'Help with homework 📝',       message: "I'm stuck on my homework. Can you help me?" },
-  { label: 'What should I practice? 🤔', message: 'What topic should I practice next?' },
-];
-
-const QUICK_REPLIES_BY_GRADE: Record<number, Array<{ label: string; message: string }>> = {
-  2: [{ label: 'Counting 🔢', message: 'Help me understand counting and numbers!' }, { label: 'Addition ➕', message: 'Can you explain addition with examples?' }],
-  3: [{ label: 'Multiplication ✖️', message: 'Help me with multiplication tables!' }, { label: 'Fractions 🍕', message: 'Help me understand fractions!' }],
-  4: [{ label: 'Decimals 📊', message: 'Can you explain decimals to me in a simple way?' }, { label: 'BODMAS 🧮', message: 'Can you explain BODMAS with an example?' }],
-  5: [{ label: 'Percentages %', message: 'Help me understand percentages!' }, { label: 'Algebra 🔤', message: 'Can you explain algebra basics?' }],
-  6: [{ label: 'Ratios ⚖️', message: 'Help me understand ratios and proportions!' }, { label: 'Geometry 📐', message: 'Can you explain geometry concepts?' }],
-  7: [{ label: 'Linear equations 📝', message: 'Help me solve linear equations!' }, { label: 'Integers 🔢', message: 'Can you explain integers?' }],
-  8: [{ label: 'Quadratics ²', message: 'Help me understand quadratic equations!' }, { label: 'Statistics 📊', message: 'Can you explain statistics?' }],
-  9: [{ label: 'Trigonometry 📐', message: 'Help me understand trigonometry!' }, { label: 'Polynomials 🔤', message: 'Can you explain polynomials?' }],
-};
-
-function getQuickReplies(grade: number) {
-  return [...QUICK_REPLIES_BASE, ...(QUICK_REPLIES_BY_GRADE[grade] ?? QUICK_REPLIES_BY_GRADE[4])];
-}
-
-// ── Proactive nudge logic ─────────────────────────────────────────────────────
-
-function getOpeningMessage(name: string, grade: number, lastPracticeDate: string | null, streakDays: number): string {
-  const today = new Date().toDateString();
-  const yesterday = new Date(Date.now() - MS_PER_DAY).toDateString();
-
-  if (!lastPracticeDate) {
-    return `Hi ${name}! 🌟 I'm Sparky, your math buddy! I love helping with Grade ${grade} math. What would you like to explore today?`;
-  }
-  if (lastPracticeDate !== today && lastPracticeDate !== yesterday) {
-    return `Hey ${name}! I missed you! 🔥 Want to keep your streak going? Let's solve some math together!`;
-  }
-  if (streakDays >= 3) {
-    return `Hi ${name}! 🔥 You're on a ${streakDays}-day streak — amazing! Ready for some more math magic?`;
-  }
-  return `Hi ${name}! 🌟 Ready for some math magic today? Ask me anything or I can quiz you!`;
-}
-
-// ── Typing indicator ──────────────────────────────────────────────────────────
-
-function TypingDots() {
-  return (
-    <div className="flex items-center gap-1 px-4 py-3">
-      {[0, 1, 2].map((i) => (
-        <div
-          key={i}
-          className="w-2 h-2 rounded-full bg-gray-400"
-          style={{ animation: `bounce 1.2s ease-in-out ${i * 0.2}s infinite` }}
-        />
-      ))}
-    </div>
-  );
-}
-
-// ── Message bubble ────────────────────────────────────────────────────────────
-
-interface BubbleProps {
-  msg: { role: 'user' | 'assistant'; content: string };
-  studentInitial: string;
-}
-
-function MessageBubble({ msg, studentInitial }: BubbleProps) {
-  const isUser = msg.role === 'user';
-
-  if (isUser) {
-    return (
-      <div className="flex justify-end items-end gap-2 mb-3">
-        <div className="max-w-[78%] bg-duo-green text-white rounded-2xl rounded-br-sm px-4 py-2.5 shadow-sm">
-          <p className="text-sm leading-relaxed font-medium">{msg.content}</p>
-        </div>
-        <div className="w-8 h-8 rounded-full bg-duo-blue flex items-center justify-center text-white font-extrabold text-sm flex-shrink-0">
-          {studentInitial}
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="flex items-end gap-2 mb-3">
-      <div className="flex-shrink-0">
-        <Sparky mood="happy" size={36} />
-      </div>
-      <div className="max-w-[78%] bg-white rounded-2xl rounded-bl-sm px-4 py-2.5 shadow-sm border border-gray-100">
-        <p className="text-sm leading-relaxed text-gray-800 font-medium whitespace-pre-wrap">{msg.content}</p>
-      </div>
-    </div>
-  );
-}
+import MessageBubble from '@/components/chat/MessageBubble';
+import TypingDots from '@/components/chat/TypingDots';
+import { useSparkyChat, getQuickReplies } from '@/components/chat/useSparkyChat';
 
 // ── Main component ────────────────────────────────────────────────────────────
 
 export default function ChatPage() {
   const router = useRouter();
 
-  const [studentId,    setStudentId]    = useState<string | null>(null);
-  const [studentName,  setStudentName]  = useState('');
-  const [studentGrade, setStudentGrade] = useState(4);
-  const [sessionId,    setSessionId]    = useState<string | null>(null);
-  const [messages,     setMessages]     = useState<Array<{ role: 'user' | 'assistant'; content: string; id: string }>>([]);
-  const [input,        setInput]        = useState('');
-  const [isLoading,    setIsLoading]    = useState(false);
-  const [streamingMsg, setStreamingMsg] = useState('');
-  const [rateLimited,  setRateLimited]  = useState(false);
-  const [initialized,  setInitialized]  = useState(false);
+  const {
+    studentGrade,
+    messages, input, setInput,
+    isLoading, streamingMsg, rateLimited, initialized,
+    sendMessage, startNewChat,
+    studentInitial, inputRef,
+  } = useSparkyChat({ onNoStudent: () => router.replace('/start') });
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const inputRef       = useRef<HTMLInputElement>(null);
 
   // Scroll to bottom whenever messages change
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, streamingMsg]);
-
-  // Boot: load student + session history + proactive nudge
-  useEffect(() => {
-    const sid   = localStorage.getItem('mathspark_student_id');
-    const name  = localStorage.getItem('mathspark_student_name') ?? '';
-    const grade = parseInt(localStorage.getItem('mathspark_student_grade') ?? '4', 10);
-    if (!sid) { router.replace('/start'); return; }
-    setStudentId(sid);
-    setStudentName(name);
-    setStudentGrade(isNaN(grade) ? 4 : grade);
-
-    // Try to load recent session history
-    fetch('/api/chat/history')
-      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
-      .then((session) => {
-        if (session?.messages?.length > 0) {
-          setSessionId(session.id);
-          setMessages(session.messages.map((m: { id: string; role: 'user' | 'assistant'; content: string }) => ({
-            id: m.id,
-            role: m.role,
-            content: m.content,
-          })));
-        } else {
-          // No history — show proactive opening message
-          const lastPractice = localStorage.getItem('mathspark_last_practice') ?? null;
-          const streak = parseInt(localStorage.getItem('mathspark_streak') ?? '0', 10);
-          const opening = getOpeningMessage(name || 'friend', isNaN(grade) ? 4 : grade, lastPractice, streak);
-          setMessages([{ id: 'opening', role: 'assistant', content: opening }]);
-        }
-        setInitialized(true);
-      })
-      .catch((err) => {
-        logError('[chat] fetch session history', err);
-        // Fallback opening on error
-        const opening = getOpeningMessage(name || 'friend', isNaN(grade) ? 4 : grade, null, 0);
-        setMessages([{ id: 'opening', role: 'assistant', content: opening }]);
-        setInitialized(true);
-      });
-  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
-
-  // ── Send message ──────────────────────────────────────────────────────────
-
-  const sendMessage = useCallback(async (text: string) => {
-    const trimmed = text.trim();
-    if (!trimmed || isLoading || !studentId) return;
-
-    setInput('');
-    setIsLoading(true);
-    setStreamingMsg('');
-
-    // Optimistically add user message
-    const userMsgId = `user-${Date.now()}`;
-    setMessages((prev) => [...prev, { id: userMsgId, role: 'user', content: trimmed }]);
-
-    try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({
-          sessionId,
-          message: trimmed,
-        }),
-      });
-
-      if (res.status === 429) {
-        setRateLimited(true);
-        setMessages((prev) => [...prev, {
-          id: `limit-${Date.now()}`,
-          role: 'assistant',
-          content: "You've been chatting a lot today — great work! 🌟 Come back tomorrow for more math adventures!",
-        }]);
-        return;
-      }
-
-      if (!res.ok || !res.body) {
-        throw new Error('API error');
-      }
-
-      // Capture sessionId from header
-      const newSessionId = res.headers.get('X-Session-Id');
-      if (newSessionId && !sessionId) setSessionId(newSessionId);
-
-      // Stream the response
-      const reader  = res.body.getReader();
-      const decoder = new TextDecoder();
-      let fullText  = '';
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        fullText += decoder.decode(value, { stream: true });
-        setStreamingMsg(fullText);
-      }
-
-      // Move streaming text into messages list
-      if (fullText) {
-        setMessages((prev) => [...prev, {
-          id: `asst-${Date.now()}`,
-          role: 'assistant',
-          content: fullText,
-        }]);
-      }
-    } catch {
-      setMessages((prev) => [...prev, {
-        id: `err-${Date.now()}`,
-        role: 'assistant',
-        content: "Oops! I had a little brain freeze 🤔 Can you try sending that again?",
-      }]);
-    } finally {
-      setIsLoading(false);
-      setStreamingMsg('');
-      inputRef.current?.focus();
-    }
-  }, [studentId, sessionId, isLoading]);
-
-  // ── New conversation ──────────────────────────────────────────────────────
-
-  function startNewChat() {
-    setSessionId(null);
-    setMessages([{
-      id: `new-${Date.now()}`,
-      role: 'assistant',
-      content: `Starting fresh! 🌟 What math topic shall we explore today, ${studentName || 'friend'}?`,
-    }]);
-  }
-
-  const studentInitial = studentName ? studentName[0].toUpperCase() : '?';
 
   // ── Render ────────────────────────────────────────────────────────────────
 

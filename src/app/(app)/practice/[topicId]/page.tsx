@@ -27,6 +27,7 @@ import { HeartsBar, LessonProgressBar, XpFloat } from '@/components/practice';
 import { ReviewIntroScreen, NoHeartsScreen, LessonCompleteScreen, LessonIntro, CelebrationCascade, StreakCommitment } from '@/components/practice';
 import { CorrectPanel, WrongPanel } from '@/components/practice';
 import { logError } from '@/lib/logger';
+import { publishScreenContext, clearScreenContext, requestOpenSparky } from '@/lib/sparkyContext';
 
 // ── Main component ────────────────────────────────────────────────────────────
 
@@ -346,6 +347,22 @@ export default function PracticePage() {
   const isReviewing      = phase === 'reviewing';
   const currentQuestion  = isReviewing ? reviewQueue[reviewIndex] : questions[qIndex];
   const currentSlotIndex = isReviewing ? reviewIndex : qIndex;
+
+  // ── Publish screen context for the Sparky widget ────────────────────────────
+  // SAFETY: text only — NEVER the correctAnswer — so Sparky can guide without
+  // ever being handed the answer on a live graded question.
+  useEffect(() => {
+    if (currentQuestion) {
+      publishScreenContext({
+        screen: 'practice',
+        topicName: topicName || undefined,
+        questionText: currentQuestion.questionText,
+      });
+    }
+  }, [currentQuestion, topicName]);
+
+  // Clear context when leaving the practice page.
+  useEffect(() => () => clearScreenContext(), []);
 
   // ── Boot ───────────────────────────────────────────────────────────────────
   // Fetch one adaptive question at a time. Questions are served by the adaptive
@@ -1164,7 +1181,7 @@ export default function PracticePage() {
           style={{ bottom: 'calc(72vh + 12px)', animationDelay: '1.2s', animationFillMode: 'backwards' }}
         >
           <button
-            onClick={() => router.push('/chat')}
+            onClick={() => requestOpenSparky()}
             className="flex flex-col items-end gap-1"
             aria-label="Ask Sparky"
           >

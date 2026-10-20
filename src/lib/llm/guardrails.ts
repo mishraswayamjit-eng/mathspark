@@ -44,6 +44,44 @@ SAFETY — NON-NEGOTIABLE:
 }
 
 /**
+ * "What's on screen right now" context passed from the app to `/api/chat`.
+ * SAFETY: deliberately has NO answer field — on a live graded question we only
+ * ever know the question text, never the correct answer.
+ */
+export interface ChatScreenContext {
+  screen?: string;
+  topicName?: string;
+  questionText?: string;
+}
+
+/**
+ * Build a grounded context block appended to the system prompt so Sparky can
+ * help with whatever the student is looking at. Bounded + sanitised, and it
+ * restates the "guide, never reveal the answer" rule so being told the question
+ * never tempts the model into handing over the solution.
+ */
+export function buildContextBlock(context: ChatScreenContext): string {
+  const screen   = context.screen ? sanitizePromptText(context.screen, 30) : '';
+  const topic    = context.topicName ? sanitizePromptText(context.topicName, 100) : '';
+  const question = context.questionText ? sanitizePromptText(context.questionText, 600) : '';
+
+  if (!topic && !question) return '';
+
+  const lines = [
+    'WHAT THE STUDENT IS LOOKING AT RIGHT NOW:',
+    screen   ? `- Screen: ${screen}` : '',
+    topic    ? `- Topic: ${topic}` : '',
+    question ? `- Current question on their screen: "${question}"` : '',
+    '',
+    'Use this to make your help specific to what they see. CRITICAL: even though',
+    'you can see the question, you must NEVER state or reveal the final answer or',
+    'the correct option — guide them to it one small step at a time.',
+  ].filter(Boolean);
+
+  return lines.join('\n');
+}
+
+/**
  * Full Sparky tutor system prompt (grade-aware), used by `/api/chat`.
  * Behaviour-preserving relative to the old Grade-4 hardcode, but now scales
  * the grade/age and syllabus framing to the student's actual grade.
@@ -52,10 +90,14 @@ export function buildKidSafeSystemPrompt(
   grade: number,
   studentName: string,
   topicContext: string,
+  screenContext?: ChatScreenContext,
 ): string {
   const safeName = sanitizePromptText(studentName, 50);
   const safeContext = sanitizePromptText(topicContext, 500);
   const g = Number.isFinite(grade) ? grade : 4;
+
+  const contextBlock = screenContext ? buildContextBlock(screenContext) : '';
+  const contextSection = contextBlock ? `\n\n${contextBlock}` : '';
 
   return `You are Sparky, a warm and encouraging math tutor for a ${gradeDescriptor(g)}.
 
@@ -82,5 +124,5 @@ ${kidSafeRules(g)}
 RESPONSE FORMAT:
 - Maximum 3 sentences of explanation/feedback.
 - Always end with exactly ONE guiding question.
-- Never give the numeric answer — guide toward it.`;
+- Never give the numeric answer — guide toward it.${contextSection}`;
 }
