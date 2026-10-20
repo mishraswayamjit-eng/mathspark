@@ -236,6 +236,7 @@ export default function PracticeHubPage() {
           <div className="grid grid-cols-2 gap-2">
             {[
               { emoji: '💡', label: 'Sparky Explains',  sub: '212 solved',     href: '/learn/examples',     bg: 'from-indigo-50 to-blue-50', border: 'border-indigo-200' },
+              { emoji: '🎯', label: 'Concept Trainer',  sub: 'Think in steps', href: '/learn/concept-trainer', bg: 'from-amber-50 to-yellow-50', border: 'border-amber-200' },
               { emoji: '🧠', label: 'Strategy Bank',    sub: '35 exam tips',   href: '/learn/strategies',   bg: 'from-amber-50 to-orange-50', border: 'border-amber-200' },
               { emoji: '📖', label: 'Math Stories',     sub: '30 stories',     href: '/learn/stories',      bg: 'from-cyan-50 to-sky-50', border: 'border-cyan-200' },
               { emoji: '🗺️', label: 'Concept Map',     sub: '88 concepts',    href: '/learn/concept-map',  bg: 'from-violet-50 to-purple-50', border: 'border-violet-200' },
