@@ -1,12 +1,37 @@
 import type { ConceptVisual } from '@/types/conceptTrainer';
 
 /**
- * Pure-CSS renderer for a concept item's visual model. Three shapes:
+ * Pure-CSS renderer for a concept item's visual model. Four shapes:
  *  - `bar`     — a two-part percentage bar (share% | rest%)
  *  - `mapping` — a percent ↔ amount correspondence table
  *  - `groups`  — a row of equal-capacity boxes working toward a target
+ *  - `parts`   — a whole cut into N equal segments with k shaded (fractions)
  */
 export default function ConceptVisualView({ visual }: { visual: ConceptVisual }) {
+  if (visual.type === 'parts') {
+    const total = Math.max(1, Math.floor(visual.total));
+    const shaded = Math.max(0, Math.min(total, Math.floor(visual.shaded)));
+    return (
+      <div>
+        <div className="flex w-full h-12 rounded-lg overflow-hidden border border-gray-200">
+          {Array.from({ length: total }, (_, i) => (
+            <div
+              key={i}
+              className={`flex-1 flex items-center justify-center text-[10px] font-bold ${
+                i < shaded ? 'bg-duo-blue text-white' : 'bg-gray-100 text-gray-400'
+              } ${i > 0 ? 'border-l border-white/60' : ''}`}
+            >
+              {i < shaded ? '●' : ''}
+            </div>
+          ))}
+        </div>
+        <p className="text-[11px] text-gray-600 font-semibold mt-1.5">
+          {visual.label ?? `${shaded}/${total} shaded`}
+        </p>
+      </div>
+    );
+  }
+
   if (visual.type === 'bar') {
     const share = Math.max(0, Math.min(100, visual.share));
     return (

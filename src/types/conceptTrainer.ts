@@ -55,7 +55,17 @@ export interface GroupsVisual {
   capLabel?: string;
 }
 
-export type ConceptVisual = BarVisual | MappingVisual | GroupsVisual;
+/** A whole split into `total` equal parts with `shaded` of them filled — the
+ *  canonical fraction picture (a bar of N equal segments, k shaded). */
+export interface PartsVisual {
+  type: 'parts';
+  total: number;       // number of equal parts the whole is cut into (>0)
+  shaded: number;      // how many parts are filled (0..total)
+  shape?: 'bar';       // rendering shape (bar only for now)
+  label?: string;      // caption, e.g. '3/8 is shaded'
+}
+
+export type ConceptVisual = BarVisual | MappingVisual | GroupsVisual | PartsVisual;
 
 /** A single micro-item: story → three thinking steps → hint → visual → solution. */
 export interface ConceptItem {
