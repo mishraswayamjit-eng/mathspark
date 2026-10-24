@@ -981,6 +981,13 @@ def _to_improper_item(code, title, story, whole, num, den):
         ],
         check=f"{answer} divides back to {whole} remainder {num}, which is {mixed}.",
         explain="Why do we multiply the whole by the bottom before adding the top?",
+        model={
+            "type": "groups",
+            "caps": [den] * whole + [num],
+            "labels": [f"1 whole = {den}/{den}"] * whole + [f"the {num}/{den} part"],
+            "target": f"{mixed} = how many {_ordinal_parts(den)} in all?",
+            "capLabel": f"{' + '.join([str(den)] * whole + [str(num)])} = {improper_top}, so {answer}",
+        },
         verify={"op": "to_improper", "args": [mixed]},
     )
 
@@ -1045,6 +1052,13 @@ def _to_mixed_item(code, title, story, num, den):
         ],
         check=f"{whole} x {den} + {rem} = {num}, so {answer} is {improper}.",
         explain="Why does the remainder become the new top of the fraction part?",
+        model={
+            "type": "groups",
+            "caps": [den] * whole + ([rem] if rem else []),
+            "labels": [f"group of {den}"] * whole + ([f"leftover {rem}/{den}"] if rem else []),
+            "target": f"{improper} = {whole} wholes + {rem}/{den}?",
+            "capLabel": f"{whole} x {den} + {rem} = {num}, so {answer}",
+        },
         verify={"op": "to_mixed", "args": [improper]},
     )
 
