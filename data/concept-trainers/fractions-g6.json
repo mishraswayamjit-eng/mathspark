@@ -2788,7 +2788,13 @@
             }
           ],
           "check": "3 and 4 share no factor above 1.",
-          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest."
+          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest.",
+          "visual": {
+            "type": "parts",
+            "total": 4,
+            "shaded": 3,
+            "label": "18/24 = 3/4 (same shaded area, fewer pieces)"
+          }
         },
         {
           "code": "m4-2",
@@ -2884,7 +2890,13 @@
             }
           ],
           "check": "2 and 5 share no factor above 1.",
-          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest."
+          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest.",
+          "visual": {
+            "type": "parts",
+            "total": 5,
+            "shaded": 2,
+            "label": "16/40 = 2/5 (same shaded area, fewer pieces)"
+          }
         },
         {
           "code": "m4-3",
@@ -2980,7 +2992,13 @@
             }
           ],
           "check": "2 and 3 share no factor above 1.",
-          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest."
+          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest.",
+          "visual": {
+            "type": "parts",
+            "total": 3,
+            "shaded": 2,
+            "label": "24/36 = 2/3 (same shaded area, fewer pieces)"
+          }
         },
         {
           "code": "m4-4",
@@ -3076,7 +3094,13 @@
             }
           ],
           "check": "2 and 3 share no factor above 1.",
-          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest."
+          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest.",
+          "visual": {
+            "type": "parts",
+            "total": 3,
+            "shaded": 2,
+            "label": "30/45 = 2/3 (same shaded area, fewer pieces)"
+          }
         },
         {
           "code": "m4-5",
@@ -3172,7 +3196,13 @@
             }
           ],
           "check": "3 and 4 share no factor above 1.",
-          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest."
+          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest.",
+          "visual": {
+            "type": "parts",
+            "total": 4,
+            "shaded": 3,
+            "label": "42/56 = 3/4 (same shaded area, fewer pieces)"
+          }
         },
         {
           "code": "m4-6",
@@ -3268,7 +3298,13 @@
             }
           ],
           "check": "3 and 5 share no factor above 1.",
-          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest."
+          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest.",
+          "visual": {
+            "type": "parts",
+            "total": 5,
+            "shaded": 3,
+            "label": "27/45 = 3/5 (same shaded area, fewer pieces)"
+          }
         },
         {
           "code": "m4-7",
@@ -3364,7 +3400,13 @@
             }
           ],
           "check": "2 and 5 share no factor above 1.",
-          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest."
+          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest.",
+          "visual": {
+            "type": "parts",
+            "total": 5,
+            "shaded": 2,
+            "label": "20/50 = 2/5 (same shaded area, fewer pieces)"
+          }
         },
         {
           "code": "m4-8",
@@ -3460,7 +3502,13 @@
             }
           ],
           "check": "3 and 4 share no factor above 1.",
-          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest."
+          "explain": "Dividing top and bottom by the same number keeps the share but makes the writing simplest.",
+          "visual": {
+            "type": "parts",
+            "total": 4,
+            "shaded": 3,
+            "label": "36/48 = 3/4 (same shaded area, fewer pieces)"
+          }
         }
       ],
       "level": "Core",
@@ -6276,7 +6324,22 @@
             }
           ],
           "check": "Back to mixed: 11/4 = 2 3/4.",
-          "explain": "A mixed number just groups improper 4ths into wholes plus a leftover."
+          "explain": "A mixed number just groups improper 4ths into wholes plus a leftover.",
+          "visual": {
+            "type": "groups",
+            "caps": [
+              4,
+              4,
+              3
+            ],
+            "labels": [
+              "1 whole = 4/4",
+              "1 whole = 4/4",
+              "the 3/4 part"
+            ],
+            "target": "2 3/4 = how many 4ths in all?",
+            "capLabel": "4 + 4 + 3 = 11, so 11/4"
+          }
         },
         {
           "code": "m8-2",
@@ -6372,7 +6435,24 @@
             }
           ],
           "check": "Back to mixed: 16/5 = 3 1/5.",
-          "explain": "A mixed number just groups improper 5ths into wholes plus a leftover."
+          "explain": "A mixed number just groups improper 5ths into wholes plus a leftover.",
+          "visual": {
+            "type": "groups",
+            "caps": [
+              5,
+              5,
+              5,
+              1
+            ],
+            "labels": [
+              "1 whole = 5/5",
+              "1 whole = 5/5",
+              "1 whole = 5/5",
+              "the 1/5 part"
+            ],
+            "target": "3 1/5 = how many 5ths in all?",
+            "capLabel": "5 + 5 + 5 + 1 = 16, so 16/5"
+          }
         },
         {
           "code": "m8-3",
@@ -6468,7 +6548,20 @@
             }
           ],
           "check": "Back to mixed: 11/6 = 1 5/6.",
-          "explain": "A mixed number just groups improper 6ths into wholes plus a leftover."
+          "explain": "A mixed number just groups improper 6ths into wholes plus a leftover.",
+          "visual": {
+            "type": "groups",
+            "caps": [
+              6,
+              5
+            ],
+            "labels": [
+              "1 whole = 6/6",
+              "the 5/6 part"
+            ],
+            "target": "1 5/6 = how many 6ths in all?",
+            "capLabel": "6 + 5 = 11, so 11/6"
+          }
         },
         {
           "code": "m8-4",
@@ -6564,7 +6657,26 @@
             }
           ],
           "check": "Back to mixed: 14/3 = 4 2/3.",
-          "explain": "A mixed number just groups improper 3ths into wholes plus a leftover."
+          "explain": "A mixed number just groups improper 3ths into wholes plus a leftover.",
+          "visual": {
+            "type": "groups",
+            "caps": [
+              3,
+              3,
+              3,
+              3,
+              2
+            ],
+            "labels": [
+              "1 whole = 3/3",
+              "1 whole = 3/3",
+              "1 whole = 3/3",
+              "1 whole = 3/3",
+              "the 2/3 part"
+            ],
+            "target": "4 2/3 = how many 3ths in all?",
+            "capLabel": "3 + 3 + 3 + 3 + 2 = 14, so 14/3"
+          }
         },
         {
           "code": "m8-5",
@@ -6660,7 +6772,22 @@
             }
           ],
           "check": "Back to improper: 2 3/4 = 11/4.",
-          "explain": "An improper fraction packs leftover parts into whole groups plus a remainder."
+          "explain": "An improper fraction packs leftover parts into whole groups plus a remainder.",
+          "visual": {
+            "type": "groups",
+            "caps": [
+              4,
+              4,
+              3
+            ],
+            "labels": [
+              "group of 4",
+              "group of 4",
+              "leftover 3/4"
+            ],
+            "target": "11/4 = 2 wholes + 3/4?",
+            "capLabel": "2 x 4 + 3 = 11, so 2 3/4"
+          }
         },
         {
           "code": "m8-6",
@@ -6756,7 +6883,24 @@
             }
           ],
           "check": "Back to improper: 3 2/5 = 17/5.",
-          "explain": "An improper fraction packs leftover parts into whole groups plus a remainder."
+          "explain": "An improper fraction packs leftover parts into whole groups plus a remainder.",
+          "visual": {
+            "type": "groups",
+            "caps": [
+              5,
+              5,
+              5,
+              2
+            ],
+            "labels": [
+              "group of 5",
+              "group of 5",
+              "group of 5",
+              "leftover 2/5"
+            ],
+            "target": "17/5 = 3 wholes + 2/5?",
+            "capLabel": "3 x 5 + 2 = 17, so 3 2/5"
+          }
         },
         {
           "code": "m8-7",
@@ -6852,7 +6996,24 @@
             }
           ],
           "check": "As improper: 3/2 + 9/4 = 15/4.",
-          "explain": "Mixed-number addition keeps wholes with wholes and matches the fraction part-sizes."
+          "explain": "Mixed-number addition keeps wholes with wholes and matches the fraction part-sizes.",
+          "visual": {
+            "type": "mapping",
+            "rows": [
+              [
+                "1 1/2",
+                "3/2"
+              ],
+              [
+                "2 1/4",
+                "9/4"
+              ],
+              [
+                "1 1/2 + 2 1/4",
+                "3 3/4 = 15/4"
+              ]
+            ]
+          }
         },
         {
           "code": "m8-8",
@@ -6948,7 +7109,24 @@
             }
           ],
           "check": "As improper: 8/3 + 7/6 = 23/6.",
-          "explain": "Mixed-number addition keeps wholes with wholes and matches the fraction part-sizes."
+          "explain": "Mixed-number addition keeps wholes with wholes and matches the fraction part-sizes.",
+          "visual": {
+            "type": "mapping",
+            "rows": [
+              [
+                "2 2/3",
+                "8/3"
+              ],
+              [
+                "1 1/6",
+                "7/6"
+              ],
+              [
+                "2 2/3 + 1 1/6",
+                "3 5/6 = 23/6"
+              ]
+            ]
+          }
         }
       ],
       "level": "Stretch",
@@ -7373,7 +7551,24 @@
             }
           ],
           "check": "2/5 is already in lowest terms.",
-          "explain": "Multiplying fractions means taking a part of a part — tops x tops, bottoms x bottoms."
+          "explain": "Multiplying fractions means taking a part of a part — tops x tops, bottoms x bottoms.",
+          "visual": {
+            "type": "mapping",
+            "rows": [
+              [
+                "2/3 x 3/5",
+                "multiply straight across"
+              ],
+              [
+                "2x3 / 3x5",
+                "6/15"
+              ],
+              [
+                "lowest terms",
+                "2/5"
+              ]
+            ]
+          }
         },
         {
           "code": "m9-5",
@@ -7469,7 +7664,24 @@
             }
           ],
           "check": "3/8 is already in lowest terms.",
-          "explain": "Multiplying fractions means taking a part of a part — tops x tops, bottoms x bottoms."
+          "explain": "Multiplying fractions means taking a part of a part — tops x tops, bottoms x bottoms.",
+          "visual": {
+            "type": "mapping",
+            "rows": [
+              [
+                "1/2 x 3/4",
+                "multiply straight across"
+              ],
+              [
+                "1x3 / 2x4",
+                "3/8"
+              ],
+              [
+                "lowest terms",
+                "3/8"
+              ]
+            ]
+          }
         },
         {
           "code": "m9-6",
@@ -7565,7 +7777,24 @@
             }
           ],
           "check": "3/2 x 1/2 = 3/4 = 3/4.",
-          "explain": "Dividing by a fraction asks 'how many of it fit?' — flip and multiply to count them."
+          "explain": "Dividing by a fraction asks 'how many of it fit?' — flip and multiply to count them.",
+          "visual": {
+            "type": "mapping",
+            "rows": [
+              [
+                "3/4 / 1/2",
+                "flip the divisor"
+              ],
+              [
+                "3/4 x 2",
+                "multiply by the reciprocal"
+              ],
+              [
+                "answer",
+                "3/2"
+              ]
+            ]
+          }
         },
         {
           "code": "m9-7",
@@ -7661,7 +7890,24 @@
             }
           ],
           "check": "4 x 1/6 = 2/3 = 2/3.",
-          "explain": "Dividing by a fraction asks 'how many of it fit?' — flip and multiply to count them."
+          "explain": "Dividing by a fraction asks 'how many of it fit?' — flip and multiply to count them.",
+          "visual": {
+            "type": "mapping",
+            "rows": [
+              [
+                "2/3 / 1/6",
+                "flip the divisor"
+              ],
+              [
+                "2/3 x 6",
+                "multiply by the reciprocal"
+              ],
+              [
+                "answer",
+                "4"
+              ]
+            ]
+          }
         },
         {
           "code": "m9-8",
@@ -7757,7 +8003,24 @@
             }
           ],
           "check": "2 x 5/12 = 5/6 = 5/6.",
-          "explain": "Dividing by a fraction asks 'how many of it fit?' — flip and multiply to count them."
+          "explain": "Dividing by a fraction asks 'how many of it fit?' — flip and multiply to count them.",
+          "visual": {
+            "type": "mapping",
+            "rows": [
+              [
+                "5/6 / 5/12",
+                "flip the divisor"
+              ],
+              [
+                "5/6 x 12/5",
+                "multiply by the reciprocal"
+              ],
+              [
+                "answer",
+                "2"
+              ]
+            ]
+          }
         }
       ],
       "level": "Stretch",
@@ -7870,7 +8133,24 @@
             }
           ],
           "check": "1/3 sits exactly between 1/2 and 1/6.",
-          "explain": "An average of two values is their total shared equally between the two."
+          "explain": "An average of two values is their total shared equally between the two.",
+          "visual": {
+            "type": "mapping",
+            "rows": [
+              [
+                "add",
+                "1/2 + 1/6 = 2/3"
+              ],
+              [
+                "halve",
+                "2/3 / 2 = 1/3"
+              ],
+              [
+                "average",
+                "1/3"
+              ]
+            ]
+          }
         },
         {
           "code": "m10-2",
@@ -7963,7 +8243,24 @@
             }
           ],
           "check": "4/15 sits exactly between 1/3 and 1/5.",
-          "explain": "An average of two values is their total shared equally between the two."
+          "explain": "An average of two values is their total shared equally between the two.",
+          "visual": {
+            "type": "mapping",
+            "rows": [
+              [
+                "add",
+                "1/3 + 1/5 = 8/15"
+              ],
+              [
+                "halve",
+                "8/15 / 2 = 4/15"
+              ],
+              [
+                "average",
+                "4/15"
+              ]
+            ]
+          }
         },
         {
           "code": "m10-3",
@@ -8056,7 +8353,24 @@
             }
           ],
           "check": "1/2 sits exactly between 3/4 and 1/4.",
-          "explain": "An average of two values is their total shared equally between the two."
+          "explain": "An average of two values is their total shared equally between the two.",
+          "visual": {
+            "type": "mapping",
+            "rows": [
+              [
+                "add",
+                "3/4 + 1/4 = 1"
+              ],
+              [
+                "halve",
+                "1 / 2 = 1/2"
+              ],
+              [
+                "average",
+                "1/2"
+              ]
+            ]
+          }
         },
         {
           "code": "m10-4",
@@ -8397,7 +8711,24 @@
             }
           ],
           "check": "Check: 45/4 + 45/6 = 75/4, and 45/12 + 15 = 75/4.",
-          "explain": "Clearing fractions turns a messy fraction equation into a simple whole-number one."
+          "explain": "Clearing fractions turns a messy fraction equation into a simple whole-number one.",
+          "visual": {
+            "type": "mapping",
+            "rows": [
+              [
+                "equation",
+                "Q/4 + Q/6 = Q/12 + 15"
+              ],
+              [
+                "x12 (clear)",
+                "3Q + 2Q = Q + 180"
+              ],
+              [
+                "solve",
+                "4Q = 180, Q = 45"
+              ]
+            ]
+          }
         },
         {
           "code": "m10-7",
@@ -8493,7 +8824,24 @@
             }
           ],
           "check": "Check: 24/2 + 24/3 = 20.",
-          "explain": "The same 'clear the fractions' move solves any Q-over-number equation."
+          "explain": "The same 'clear the fractions' move solves any Q-over-number equation.",
+          "visual": {
+            "type": "mapping",
+            "rows": [
+              [
+                "equation",
+                "Q/2 + Q/3 = 20"
+              ],
+              [
+                "x6 (clear)",
+                "3Q + 2Q = 120"
+              ],
+              [
+                "solve",
+                "5Q = 120, Q = 24"
+              ]
+            ]
+          }
         }
       ],
       "level": "Stretch",

@@ -456,6 +456,8 @@ def module4():
              ],
              check=f"{n // g} and {d // g} share no factor above 1.",
              explain="Dividing top and bottom by the same number keeps the share but makes the writing simplest.",
+             model={"type": "parts", "total": f.denominator, "shaded": f.numerator,
+                    "label": f"{frac} = {reduced} (same shaded area, fewer pieces)"},
              verify={"op": "simplify", "args": [frac]})
 
 
@@ -774,6 +776,11 @@ def module8():
              ],
              check=f"Back to mixed: {top}/{d} = {fm(f)}.",
              explain="A mixed number just groups improper {d}ths into wholes plus a leftover.".replace("{d}", str(d)),
+             model={"type": "groups",
+                    "caps": [d] * whole + [n],
+                    "labels": [f"1 whole = {d}/{d}"] * whole + [f"the {fracpart} part"],
+                    "target": f"{mixed} = how many {d}ths in all?",
+                    "capLabel": f"{' + '.join([str(d)] * whole + [str(n)])} = {top}, so {top}/{d}"},
              verify={"op": "to_improper", "args": [mixed]})
 
     # (b) improper -> mixed  &  mixed addition
@@ -830,6 +837,11 @@ def module8():
              ],
              check=f"Back to improper: {mixedans} = {ff(f)}.",
              explain="An improper fraction packs leftover parts into whole groups plus a remainder.",
+             model={"type": "groups",
+                    "caps": [d] * whole + ([rem] if rem else []),
+                    "labels": [f"group of {d}"] * whole + ([f"leftover {rem}/{d}"] if rem else []),
+                    "target": f"{imp} = {whole} wholes + {rem}/{d}?",
+                    "capLabel": f"{whole} x {d} + {rem} = {n}, so {mixedans}"},
              verify={"op": "to_mixed", "args": [imp]})
 
     # (c) adding mixed numbers
@@ -886,6 +898,8 @@ def module8():
              ],
              check=f"As improper: {ff(fa)} + {ff(fb)} = {res_imp}.",
              explain="Mixed-number addition keeps wholes with wholes and matches the fraction part-sizes.",
+             model={"type": "mapping",
+                    "rows": [[a, ff(fa)], [b, ff(fb)], [f"{a} + {b}", f"{res} = {res_imp}"]]},
              verify={"op": "add", "args": [a, b]})
 
 
@@ -1005,6 +1019,13 @@ def module9():
              ],
              check=f"{res} is already in lowest terms.",
              explain="Multiplying fractions means taking a part of a part — tops x tops, bottoms x bottoms.",
+             model={"type": "mapping",
+                    "rows": [
+                        [f"{a} x {b}", "multiply straight across"],
+                        [f"{fa.numerator}x{fb.numerator} / {fa.denominator}x{fb.denominator}",
+                         f"{fa.numerator * fb.numerator}/{fa.denominator * fb.denominator}"],
+                        ["lowest terms", res],
+                    ]},
              verify={"op": "mul", "args": [a, b]})
 
     # (c) divide fractions (invert & multiply)
@@ -1060,6 +1081,12 @@ def module9():
              ],
              check=f"{res} x {b} = {ff(F(res) * fb)} = {a}.",
              explain="Dividing by a fraction asks 'how many of it fit?' — flip and multiply to count them.",
+             model={"type": "mapping",
+                    "rows": [
+                        [f"{a} / {b}", "flip the divisor"],
+                        [f"{a} x {recip}", "multiply by the reciprocal"],
+                        ["answer", res],
+                    ]},
              verify={"op": "mul", "args": [a, recip]})
 
 
@@ -1124,6 +1151,12 @@ def module10():
              ],
              check=f"{res} sits exactly between {a} and {b}.",
              explain="An average of two values is their total shared equally between the two.",
+             model={"type": "mapping",
+                    "rows": [
+                        ["add", f"{a} + {b} = {ff(s)}"],
+                        ["halve", f"{ff(s)} / 2 = {res}"],
+                        ["average", res],
+                    ]},
              verify={"op": "mul", "args": [ff(s), "1/2"]})
 
     # (b) fraction series / nth term (real seed: 1/6,1/4,1/3,5/12,... 10th term)
@@ -1240,6 +1273,12 @@ def module10():
          ],
          check=f"Check: {ff(Q)}/4 + {ff(Q)}/6 = {ff(F(ff(Q)) / 4 + F(ff(Q)) / 6)}, and {ff(Q)}/12 + 15 = {ff(F(ff(Q)) / 12 + 15)}.",
          explain="Clearing fractions turns a messy fraction equation into a simple whole-number one.",
+         model={"type": "mapping",
+                "rows": [
+                    ["equation", "Q/4 + Q/6 = Q/12 + 15"],
+                    ["x12 (clear)", "3Q + 2Q = Q + 180"],
+                    ["solve", f"4Q = 180, Q = {ff(Q)}"],
+                ]},
          verify={"op": "simplify", "args": [ff(Q)]})
 
     # second algebraic one: simpler, "Q/2 + Q/3 = 20" -> (5/6)Q = 20 -> Q = 24
@@ -1279,6 +1318,12 @@ def module10():
          ],
          check=f"Check: {ff(Q2)}/2 + {ff(Q2)}/3 = {ff(F(ff(Q2)) / 2 + F(ff(Q2)) / 3)}.",
          explain="The same 'clear the fractions' move solves any Q-over-number equation.",
+         model={"type": "mapping",
+                "rows": [
+                    ["equation", "Q/2 + Q/3 = 20"],
+                    ["x6 (clear)", "3Q + 2Q = 120"],
+                    ["solve", f"5Q = 120, Q = {ff(Q2)}"],
+                ]},
          verify={"op": "simplify", "args": [ff(Q2)]})
 
 
