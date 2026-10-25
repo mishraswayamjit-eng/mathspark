@@ -105,6 +105,15 @@ export async function POST(req: Request) {
       })
     : null;
 
+  // Ownership guard: never reuse a session owned by a different student. Without
+  // this, a client passing someone else's sessionId would load the victim's
+  // messages into the LLM context AND write new messages into their thread
+  // (cross-child PII leak + tampering). Fall through to a fresh session, matching
+  // the check in /api/chat/history.
+  if (session && session.studentId !== studentId) {
+    session = null;
+  }
+
   if (!session) {
     session = await prisma.conversationSession.create({
       data: { studentId, mode },

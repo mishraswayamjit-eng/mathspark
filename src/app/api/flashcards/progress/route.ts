@@ -90,8 +90,15 @@ export async function POST(req: Request) {
     const reachedMastery = newBox === 5 && oldBox < 5;
     const reachedStrong = newBox >= 3 && oldBox < 3;
 
+    // Server-authoritative anti-tap: derive how long since this exact card was
+    // last answered from the stored `lastSeenAt` (NOT a client-supplied timer).
+    // Re-answering the same card faster than ANTI_SPAM_MS earns 0 XP, so a script
+    // hammering one cardId can't farm XP. A brand-new card has no prior timestamp
+    // (undefined → full XP); it can only be spammed on the *next* submit.
+    const elapsedMs = existing ? now.getTime() - new Date(existing.lastSeenAt).getTime() : undefined;
+
     // Compute XP for this card
-    const cardXP = computeCardXP(correct, leveledUp, reachedMastery, reachedStrong);
+    const cardXP = computeCardXP(correct, leveledUp, reachedMastery, reachedStrong, elapsedMs);
 
     return NextResponse.json({
       ok: true,

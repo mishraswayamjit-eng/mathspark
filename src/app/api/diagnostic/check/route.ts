@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/db';
+import { prisma, USABLE_QUESTION_FILTER } from '@/lib/db';
 import { checkRateLimit } from '@/lib/rateLimit';
 
 // POST /api/diagnostic/check
@@ -21,8 +21,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'selected must be A, B, C, or D' }, { status: 400 });
     }
 
-    const question = await prisma.question.findUnique({
-      where: { id: questionId },
+    // Scope to the usable question pool the diagnostic endpoint actually serves.
+    // findFirst with the shared filter means this unauthenticated grader can only
+    // reveal answers for real, servable questions keyed by a known id — it can't
+    // be used to dump the whole answer key by brute-forcing arbitrary ids.
+    const question = await prisma.question.findFirst({
+      where: { id: questionId, ...USABLE_QUESTION_FILTER },
       select: { correctAnswer: true },
     });
 

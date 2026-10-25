@@ -21,8 +21,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'selected must be A, B, C, or D' }, { status: 400 });
     }
 
-    const question = await prisma.question.findUnique({
-      where: { id: questionId },
+    // Scope to the exact pool the public preview endpoint serves. Using
+    // findFirst with the same filter means this unauthenticated grader can only
+    // reveal answers for the handful of hand-crafted Medium preview questions,
+    // not enumerate the entire 6k-question answer key by guessing ids.
+    const question = await prisma.question.findFirst({
+      where: { id: questionId, difficulty: 'Medium', source: 'hand_crafted' },
       select: { correctAnswer: true },
     });
 
