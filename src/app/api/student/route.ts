@@ -35,12 +35,10 @@ export async function PATCH(req: Request) {
 
     const data: Record<string, unknown> = {};
 
-    // PIN update — must be exactly 4 digits
+    // PIN update — must be exactly 4 digits. Clearing is NOT allowed: a PIN is
+    // mandatory, so an account can only ever change to a new valid PIN.
     if (typeof body.pin !== 'undefined') {
-      if (body.pin === '' || body.pin === null) {
-        // Allow clearing PIN
-        data.pinHash = null;
-      } else if (typeof body.pin === 'string' && /^\d{4}$/.test(body.pin)) {
+      if (typeof body.pin === 'string' && /^\d{4}$/.test(body.pin)) {
         data.pinHash = await bcrypt.hash(body.pin, 10);
       } else {
         return NextResponse.json({ error: 'PIN must be exactly 4 digits' }, { status: 400 });

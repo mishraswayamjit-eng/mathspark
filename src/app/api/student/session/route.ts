@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
 import { createStudentToken, COOKIE_NAME } from '@/lib/studentAuth';
 import { checkRateLimit } from '@/lib/rateLimit';
@@ -36,15 +38,32 @@ export async function POST(req: Request) {
 
   const student = await prisma.student.findUnique({
     where: { id: studentId },
-    select: { id: true, name: true, grade: true, pinHash: true, deletedAt: true },
+    select: { id: true, name: true, grade: true, pinHash: true, parentId: true, deletedAt: true },
   });
   // Soft-deleted students are treated as not-found so they cannot log in.
   if (!student || student.deletedAt) {
     return NextResponse.json({ error: 'Student not found' }, { status: 404 });
   }
 
-  // If student has a PIN set, require it for login
-  if (student.pinHash) {
+  // A parent authenticated via NextAuth who OWNS this child may start a session
+  // without the child's PIN (legitimate proof of ownership). This also gives
+  // legacy PIN-less accounts a secure recovery path: the parent logs in as the
+  // child, then sets a PIN. Everyone else must present a valid PIN.
+  const parentSession = await getServerSession(authOptions);
+  const isOwningParent = Boolean(
+    parentSession?.user?.id && student.parentId && parentSession.user.id === student.parentId,
+  );
+
+  if (!isOwningParent) {
+    // Mandatory PIN: a self-serve session is ONLY ever issued after a verified
+    // PIN check. This closes the account-takeover hole where any known studentId
+    // yielded a session without proof of ownership.
+    if (!student.pinHash) {
+      return NextResponse.json(
+        { error: 'This account needs a PIN. Ask a parent to set one.', requiresPinSetup: true },
+        { status: 403 },
+      );
+    }
     if (!pin) {
       return NextResponse.json({ error: 'PIN required', requiresPin: true }, { status: 401 });
     }

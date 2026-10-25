@@ -324,6 +324,10 @@ export default function StartPage() {
   // ── Create account + save all quiz data retroactively ─────────────────────
   async function handleSignUp() {
     if (!name.trim() || !selectedGrade) return;
+    if (!/^\d{4}$/.test(pin)) {
+      setError('Please set a 4-digit PIN to protect your account.');
+      return;
+    }
     setLoading(true);
     setError('');
     try {
@@ -338,16 +342,16 @@ export default function StartPage() {
           examName:              goal || undefined,
           dailyGoalMins:         dailyGoal,
           preferredPracticeTime: practiceTime || undefined,
-          pin:                   pin || undefined,
+          pin,
         }),
       });
       const student = await res.json();
 
-      // 2. Set auth cookie
+      // 2. Set auth cookie (PIN is mandatory, so the session call must send it)
       await fetch('/api/student/session', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ studentId: student.id }),
+        body: JSON.stringify({ studentId: student.id, pin }),
       });
 
       // 3. localStorage for UI
@@ -759,7 +763,7 @@ export default function StartPage() {
 
           <div>
             <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">
-              Set a 4-digit PIN (optional)
+              Set a 4-digit PIN
             </label>
             <input
               type="password"
@@ -771,7 +775,7 @@ export default function StartPage() {
               aria-label="4-digit PIN"
               className="w-full mt-1.5 text-2xl font-bold text-center tracking-[0.5em] border-b-4 border-gray-200 bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300 focus:border-duo-blue transition-colors"
             />
-            <p className="text-xs text-gray-500 font-medium mt-1">Protects your account from siblings</p>
+            <p className="text-xs text-gray-500 font-medium mt-1">You'll need this to log in — keep it safe!</p>
           </div>
 
           <details className="group">
@@ -794,7 +798,7 @@ export default function StartPage() {
 
           {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
 
-          <DuoButton variant="green" fullWidth onClick={handleSignUp} loading={loading} disabled={!name.trim()}>
+          <DuoButton variant="green" fullWidth onClick={handleSignUp} loading={loading} disabled={!name.trim() || pin.length !== 4}>
             Create Free Account
           </DuoButton>
         </div>

@@ -34,14 +34,13 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'name is required' }, { status: 400 });
     }
 
-    // Validate PIN if provided — must be exactly 4 digits
-    let pinHash: string | undefined;
-    if (pin !== undefined && pin !== null && pin !== '') {
-      if (typeof pin !== 'string' || !/^\d{4}$/.test(pin)) {
-        return NextResponse.json({ error: 'PIN must be exactly 4 digits' }, { status: 400 });
-      }
-      pinHash = await bcrypt.hash(pin, 10);
+    // PIN is mandatory — every account must have one so a session can never be
+    // issued without a verified PIN (closes the account-takeover hole where any
+    // known studentId yielded a login).
+    if (typeof pin !== 'string' || !/^\d{4}$/.test(pin)) {
+      return NextResponse.json({ error: 'A 4-digit PIN is required' }, { status: 400 });
     }
+    const pinHash = await bcrypt.hash(pin, 10);
 
     const avatarColor = AVATAR_COLORS[Math.floor(Math.random() * AVATAR_COLORS.length)];
     const gradeValue  = typeof grade === 'number' && grade >= 2 && grade <= 9 ? grade : 4;
@@ -55,7 +54,7 @@ export async function POST(req: Request) {
         avatarColor,
         grade:         gradeValue,
         trialExpiresAt,
-        ...(pinHash ? { pinHash } : {}),
+        pinHash,
         ...(parentEmail && typeof parentEmail === 'string' && parentEmail.trim()
           ? { parentEmail: parentEmail.trim() }
           : {}),

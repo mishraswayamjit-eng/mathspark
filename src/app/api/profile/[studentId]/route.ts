@@ -1,14 +1,21 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import type { PublicProfile, WeeklyAwardData } from '@/types';
+import { checkRateLimit } from '@/lib/rateLimit';
 import { logError } from '@/lib/logger';
 
 // GET /api/profile/[studentId] — public profile (no PII)
 export async function GET(
-  _req: Request,
+  req: Request,
   { params }: { params: { studentId: string } },
 ) {
   try {
+    // Public but rate-limited to deter scraping / id enumeration.
+    const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
+    if (!checkRateLimit(`profile:${ip}`, 60, 60_000)) {
+      return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+    }
+
     const { studentId } = params;
 
     const student = await prisma.student.findUnique({

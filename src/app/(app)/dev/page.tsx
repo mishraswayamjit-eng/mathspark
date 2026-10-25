@@ -65,12 +65,14 @@ function StudentCard({ s }: { s: TestStudent }) {
   async function loginAs() {
     setBusy(true);
     setError('');
+    // Dev-only fixed PIN — PINs are mandatory, so quick-login must supply one.
+    const DEV_PIN = '0000';
     try {
       // Try to create session (sets auth cookie)
       let res = await fetch('/api/student/session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ studentId: s.id }),
+        body: JSON.stringify({ studentId: s.id, pin: DEV_PIN }),
       });
 
       // Student doesn't exist in DB — auto-provision for dev testing
@@ -78,7 +80,7 @@ function StudentCard({ s }: { s: TestStudent }) {
         const createRes = await fetch('/api/students', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: s.name, grade: s.grade }),
+          body: JSON.stringify({ name: s.name, grade: s.grade, pin: DEV_PIN }),
         });
         if (!createRes.ok) { setError('Failed to create test student'); setBusy(false); return; }
         const created = await createRes.json();
@@ -86,13 +88,18 @@ function StudentCard({ s }: { s: TestStudent }) {
         res = await fetch('/api/student/session', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ studentId: created.id }),
+          body: JSON.stringify({ studentId: created.id, pin: DEV_PIN }),
         });
         // Update localStorage with real id
         s = { ...s, id: created.id };
       }
 
-      if (!res.ok) { setError('Session creation failed'); setBusy(false); return; }
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setError(data.requiresPinSetup ? 'Seeded test student has no PIN — re-seed needed' : 'Session creation failed');
+        setBusy(false);
+        return;
+      }
 
       // Keep localStorage for UI display
       localStorage.setItem('mathspark_student_id',        s.id);

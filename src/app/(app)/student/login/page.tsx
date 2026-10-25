@@ -56,6 +56,12 @@ export default function StudentLoginPage() {
           setLoading(false);
           return;
         }
+        // Legacy account with no PIN — a parent must set one before login.
+        if (data.requiresPinSetup) {
+          setError('This account needs a PIN. Ask a parent to set one in the Parent dashboard.');
+          setLoading(false);
+          return;
+        }
         setError(data.error || 'Login failed');
         setLoading(false);
         return;
