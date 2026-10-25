@@ -341,12 +341,15 @@ export default function HomePage() {
       .then((r) => {
         // 401 = the auth cookie is missing/expired while localStorage still holds
         // an id (a session desync). Send the user back to re-login instead of a
-        // dead-end error. A one-shot guard prevents an infinite redirect loop in
-        // the rare case the cookie genuinely isn't being sent.
+        // dead-end error. A timestamp guard only suppresses the redirect if we
+        // *just* bounced here (a genuine tight loop where the cookie truly isn't
+        // being sent) — a later desync in the same session still redirects.
         if (r.status === 401) {
-          const LOOP_KEY = 'mathspark_home_401_redirect';
-          if (!sessionStorage.getItem(LOOP_KEY)) {
-            sessionStorage.setItem(LOOP_KEY, '1');
+          const LOOP_KEY = 'mathspark_home_401_redirect_ts';
+          const LOOP_WINDOW_MS = 10_000;
+          const last = Number(sessionStorage.getItem(LOOP_KEY) ?? 0);
+          if (!(last && Date.now() - last < LOOP_WINDOW_MS)) {
+            sessionStorage.setItem(LOOP_KEY, String(Date.now()));
             redirected = true;
             router.replace('/student/login');
             return null;
@@ -357,7 +360,7 @@ export default function HomePage() {
       })
       .then((d: HomeData | null) => {
         if (!d) return; // redirected on 401
-        sessionStorage.removeItem('mathspark_home_401_redirect');
+        sessionStorage.removeItem('mathspark_home_401_redirect_ts');
         setData(d);
         // Only cache if analytics are populated (avoid caching empty first-load state)
         const hasAnalytics = d.topicMastery && Array.isArray(d.topicMastery) && d.topicMastery.length > 0;

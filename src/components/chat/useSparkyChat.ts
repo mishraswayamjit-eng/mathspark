@@ -179,9 +179,13 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
         if (!isNaN(n)) setRemaining(n);
       }
 
-      // Capture sessionId from header (only when starting a fresh conversation).
+      // Reconcile sessionId from the server header. The server is the source of
+      // truth: it may start a fresh session (we had none) OR hand back a
+      // different id than we sent (e.g. ours expired / belonged to another
+      // student). Always adopt the server's id so the widget and /chat page
+      // keep driving the same persisted thread.
       const newSessionId = res.headers.get('X-Session-Id');
-      if (newSessionId && !sessionId) {
+      if (newSessionId && newSessionId !== sessionId) {
         setSessionId(newSessionId);
         persistSession(newSessionId);
       }
