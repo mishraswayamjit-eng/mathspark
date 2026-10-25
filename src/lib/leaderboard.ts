@@ -89,12 +89,39 @@ export async function ensureCurrentWeekLeague(studentId: string) {
         data: { name, tier, grade, weekStart, weekEnd },
       })).id;
 
-  const membership = await prisma.leagueMembership.create({
-    data:    { studentId, leagueId },
-    include: { league: true },
-  });
+  // Check-then-create race: two concurrent attempts from the same student can
+  // both pass the `existing` check above and reach here. The
+  // `@@unique([studentId, leagueId])` constraint makes the loser's insert throw
+  // P2002 — catch it and return the membership the winner created instead of
+  // surfacing a duplicate-key error (which would silently drop this attempt's
+  // weekly XP). Also covers the rare case where the racer joined a different
+  // league for the same week.
+  try {
+    return await prisma.leagueMembership.create({
+      data:    { studentId, leagueId },
+      include: { league: true },
+    });
+  } catch (err) {
+    if (isUniqueViolation(err)) {
+      const raced = await prisma.leagueMembership.findFirst({
+        where:   { studentId, league: { weekStart } },
+        include: { league: true },
+      });
+      if (raced) return raced;
+    }
+    throw err;
+  }
+}
 
-  return membership;
+// Narrow a thrown Prisma error to the unique-constraint (P2002) code without
+// importing the Prisma namespace at the call site.
+function isUniqueViolation(err: unknown): boolean {
+  return (
+    typeof err === 'object' &&
+    err !== null &&
+    'code' in err &&
+    (err as { code?: unknown }).code === 'P2002'
+  );
 }
 
 // ── Add XP to weekly league + lifetime total ──────────────────────────────────

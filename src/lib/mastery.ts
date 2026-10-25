@@ -29,11 +29,15 @@ export async function calculateMastery(
   return 'NotStarted';
 }
 
-/**
- * Recalculate and persist mastery + aggregate counts for a student/topic pair.
- * Uses a single batched transaction (3 queries → 1 round-trip) + 1 upsert.
- */
-export async function updateProgress(studentId: string, topicId: string): Promise<void> {
+// Coalesce concurrent recomputes per (student, topic). `updateProgress` is
+// fired fire-and-forget on every attempt, so a burst of rapid answers would
+// otherwise stampede the DB with many redundant full-table recounts. While one
+// recompute is in flight we only mark the key dirty; the running pass then does
+// exactly one trailing recompute so the final persisted counts still reflect
+// the latest attempts (never a stale overwrite). Keyed per warm instance.
+const inFlightProgress = new Map<string, boolean>(); // key -> dirty
+
+async function recomputeProgress(studentId: string, topicId: string): Promise<void> {
   const where = { studentId, question: { topicId } };
 
   const [recent, attempted, correct] = await prisma.$transaction([
@@ -60,4 +64,32 @@ export async function updateProgress(studentId: string, topicId: string): Promis
     update: { attempted, correct, mastery },
     create: { studentId, topicId, attempted, correct, mastery },
   });
+}
+
+/**
+ * Recalculate and persist mastery + aggregate counts for a student/topic pair.
+ * Uses a single batched transaction (3 queries → 1 round-trip) + 1 upsert.
+ * Concurrent calls for the same (student, topic) are coalesced into one running
+ * recompute plus a single trailing pass (see `inFlightProgress`).
+ */
+export async function updateProgress(studentId: string, topicId: string): Promise<void> {
+  const key = `${studentId}::${topicId}`;
+
+  // A recompute is already running for this key — mark dirty and let it catch up.
+  if (inFlightProgress.has(key)) {
+    inFlightProgress.set(key, true);
+    return;
+  }
+
+  inFlightProgress.set(key, false);
+  try {
+    do {
+      // Clear the dirty flag before computing; any call that arrives during the
+      // recompute will set it again, triggering exactly one more pass.
+      inFlightProgress.set(key, false);
+      await recomputeProgress(studentId, topicId);
+    } while (inFlightProgress.get(key));
+  } finally {
+    inFlightProgress.delete(key);
+  }
 }
