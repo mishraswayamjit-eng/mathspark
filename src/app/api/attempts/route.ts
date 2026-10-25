@@ -58,7 +58,7 @@ export async function POST(req: Request) {
     // Server-side grading: look up the correct answer and override client's isCorrect
     const question = await prisma.question.findUnique({
       where: { id: questionId },
-      select: { correctAnswer: true, interactionType: true, interactionData: true },
+      select: { correctAnswer: true, interactionType: true, interactionData: true, topicId: true },
     });
     if (!question) {
       return NextResponse.json({ error: 'Question not found' }, { status: 404 });
@@ -142,7 +142,10 @@ export async function POST(req: Request) {
     });
 
     // ── Progress update — fire-and-forget (safe if it lags; idempotent) ────────
-    updateProgress(studentId, topicId).catch((err) =>
+    // Use the question's REAL server-side topicId (not the client-supplied
+    // `topicId`) so a forged body can never recompute mastery against a topic
+    // the question doesn't belong to.
+    updateProgress(studentId, question.topicId).catch((err) =>
       logError('[attempts] progress update failed:', err),
     );
 
