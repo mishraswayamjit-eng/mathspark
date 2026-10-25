@@ -74,34 +74,46 @@ export async function ensureCurrentWeekLeague(studentId: string) {
   const grade = student?.grade ?? 4;
   const name  = TIER_NAMES[tier] ?? 'Bronze';
 
-  // Find a non-full league for this tier + grade + week
-  const league = await (async () => {
-    const candidates = await prisma.league.findMany({
-      where:   { tier, grade, weekStart },
-      include: { _count: { select: { members: true } } },
-    });
-    return candidates.find((l) => l._count.members < MAX_LEAGUE_SIZE) ?? null;
-  })();
-
-  const leagueId = league
-    ? league.id
-    : (await prisma.league.create({
-        data: { name, tier, grade, weekStart, weekEnd },
-      })).id;
-
-  // Check-then-create race: two concurrent attempts from the same student can
-  // both pass the `existing` check above and reach here. The
-  // `@@unique([studentId, leagueId])` constraint makes the loser's insert throw
-  // P2002 — catch it and return the membership the winner created instead of
-  // surfacing a duplicate-key error (which would silently drop this attempt's
-  // weekly XP). Also covers the rare case where the racer joined a different
-  // league for the same week.
+  // Join (or create) a league atomically. A transaction-scoped Postgres advisory
+  // lock keyed on the tier/grade/week bucket serialises concurrent joins for that
+  // bucket, so "find a league with spare room, else create one" and the
+  // membership insert happen as one unit. This closes the MAX_LEAGUE_SIZE overflow
+  // (two students racing into the same 24-member league → 26 members) AND the
+  // same-student double-join (the in-lock re-check below returns the winner). The
+  // lock auto-releases at commit/rollback and is only ever taken on a student's
+  // first attempt of the week — every later attempt short-circuits on `existing`.
   try {
-    return await prisma.leagueMembership.create({
-      data:    { studentId, leagueId },
-      include: { league: true },
+    return await prisma.$transaction(async (tx) => {
+      const lockKey = `league:${tier}:${grade}:${weekStart.toISOString()}`;
+      await tx.$executeRaw`SELECT pg_advisory_xact_lock(hashtext(${lockKey}))`;
+
+      // Re-check under the lock: a concurrent request for this student may have
+      // created the membership while we waited for the lock.
+      const already = await tx.leagueMembership.findFirst({
+        where:   { studentId, league: { weekStart } },
+        include: { league: true },
+      });
+      if (already) return already;
+
+      const candidates = await tx.league.findMany({
+        where:   { tier, grade, weekStart },
+        include: { _count: { select: { members: true } } },
+      });
+      const target = candidates.find((l) => l._count.members < MAX_LEAGUE_SIZE);
+
+      const leagueId = target
+        ? target.id
+        : (await tx.league.create({ data: { name, tier, grade, weekStart, weekEnd } })).id;
+
+      return tx.leagueMembership.create({
+        data:    { studentId, leagueId },
+        include: { league: true },
+      });
     });
   } catch (err) {
+    // Ultimate backstop: the @@unique([studentId, leagueId]) constraint. If a
+    // racer somehow still slipped through, return the winning membership rather
+    // than letting the duplicate-key error drop this attempt's weekly XP.
     if (isUniqueViolation(err)) {
       const raced = await prisma.leagueMembership.findFirst({
         where:   { studentId, league: { weekStart } },
