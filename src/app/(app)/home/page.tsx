@@ -336,9 +336,28 @@ export default function HomePage() {
     } catch { /* ignore parse errors */ }
 
     // Cache miss — fetch from API
+    let redirected = false;
     fetch('/api/home')
-      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
-      .then((d: HomeData) => {
+      .then((r) => {
+        // 401 = the auth cookie is missing/expired while localStorage still holds
+        // an id (a session desync). Send the user back to re-login instead of a
+        // dead-end error. A one-shot guard prevents an infinite redirect loop in
+        // the rare case the cookie genuinely isn't being sent.
+        if (r.status === 401) {
+          const LOOP_KEY = 'mathspark_home_401_redirect';
+          if (!sessionStorage.getItem(LOOP_KEY)) {
+            sessionStorage.setItem(LOOP_KEY, '1');
+            redirected = true;
+            router.replace('/student/login');
+            return null;
+          }
+        }
+        if (!r.ok) throw new Error(`Fetch failed (${r.status})`);
+        return r.json();
+      })
+      .then((d: HomeData | null) => {
+        if (!d) return; // redirected on 401
+        sessionStorage.removeItem('mathspark_home_401_redirect');
         setData(d);
         // Only cache if analytics are populated (avoid caching empty first-load state)
         const hasAnalytics = d.topicMastery && Array.isArray(d.topicMastery) && d.topicMastery.length > 0;
@@ -349,7 +368,7 @@ export default function HomePage() {
         }
       })
       .catch((err) => { logError('[fetch]', err); setFetchError(true); })
-      .finally(() => setLoading(false));
+      .finally(() => { if (!redirected) setLoading(false); });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -468,9 +487,14 @@ export default function HomePage() {
       <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-4 pb-24">
         <p className="text-gray-800 font-extrabold text-lg">Something went wrong</p>
         <p className="text-gray-500 text-sm">Could not load your dashboard. Check your connection.</p>
-        <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
-          Retry
-        </button>
+        <div className="flex items-center gap-3">
+          <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
+            Retry
+          </button>
+          <Link href="/student/login" className="text-duo-blue font-extrabold text-sm px-4 py-2.5">
+            Log in again
+          </Link>
+        </div>
       </div>
     );
   }
