@@ -208,11 +208,13 @@ export function buildLeagueMembers(
 export function computeXPForAttempt(
   isCorrect:       boolean,
   isBonusQuestion: boolean,
-  timeTakenMs:     number,
+  timeTakenMs?:    number,
 ): number {
-  if (!isCorrect)         return 0;
-  if (timeTakenMs < 3000) return 0; // anti-spam-tap
-  if (isBonusQuestion)    return 10;
+  if (!isCorrect)                                        return 0;
+  // Anti-spam-tap. `undefined` means "no prior attempt to measure against"
+  // (first attempt) → full credit, not a gate. A measured gap < 3s earns 0.
+  if (timeTakenMs !== undefined && timeTakenMs < 3000)   return 0;
+  if (isBonusQuestion)                                    return 10;
   return 20;
 }
 

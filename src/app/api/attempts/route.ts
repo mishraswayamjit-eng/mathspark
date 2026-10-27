@@ -84,6 +84,19 @@ export async function POST(req: Request) {
       return null;
     });
 
+    // Server-authoritative anti-tap timer: derive elapsed from the student's
+    // PREVIOUS recorded attempt instead of trusting the client-supplied
+    // `timeTakenMs` (which a script can forge to 9999 to dodge the 3s XP gate).
+    // First-ever attempt (no prior) → undefined → full credit, matching the
+    // flashcard `lastSeenAt` pattern. The client `timeTakenMs` is still stored
+    // on the row for analytics, just no longer trusted for the XP decision.
+    const lastAttempt = await prisma.attempt.findFirst({
+      where:   { studentId },
+      orderBy: { createdAt: 'desc' },
+      select:  { createdAt: true },
+    });
+    const serverElapsedMs = lastAttempt ? Date.now() - lastAttempt.createdAt.getTime() : undefined;
+
     // ── Atomic core: create attempt + count daily usage + cap XP + league/lifetime XP ─
     const { attempt, xpAwarded } = await prisma.$transaction(async (tx) => {
       // Validate student exists
@@ -105,7 +118,7 @@ export async function POST(req: Request) {
       });
 
       // Compute and atomically cap daily XP within the same transaction
-      const rawXP = computeXPForAttempt(serverIsCorrect, isBonusQuestion, timeTakenMs);
+      const rawXP = computeXPForAttempt(serverIsCorrect, isBonusQuestion, serverElapsedMs);
       let awarded = 0;
 
       if (rawXP > 0) {
