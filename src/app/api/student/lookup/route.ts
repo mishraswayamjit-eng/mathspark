@@ -7,8 +7,14 @@ import { logError } from '@/lib/logger';
 // Used by student login page to find children for a given parent email
 export async function GET(req: Request) {
   try {
+    // Dual-window anti-enumeration guard. The query is keyed by email but the
+    // limit is per-IP, so enumeration (many distinct emails from one IP) is
+    // throttled by the sustained cap while a genuine parent still has burst room
+    // to fix a mistyped email. 3/min burst + 10/hour sustained (was 3/min only),
+    // cutting max enumeration throughput from ~180/hr to ~10/hr per IP.
     const ip = req.headers.get('x-forwarded-for')?.split(',')[0] ?? 'unknown';
-    if (!checkRateLimit(`lookup:${ip}`, 3, 60_000)) {
+    if (!checkRateLimit(`lookup-burst:${ip}`, 3, 60_000) ||
+        !checkRateLimit(`lookup:${ip}`, 10, 60 * 60_000)) {
       return NextResponse.json({ error: 'Too many requests.' }, { status: 429 });
     }
 
