@@ -2,15 +2,27 @@
 
 import React from 'react';
 import type { TopicWithProgress } from '@/types';
+import { getTopicColor } from '@/data/topicColors';
+import { TOPIC_TREE } from '@/data/topicTree';
 
-// ── Node state derivation ────────────────────────────────────────────────────
+// ── Topic list ───────────────────────────────────────────────────────────────
+// Every topic is open: a child can start anywhere. The list only suggests where
+// to go next (the first topic that is not yet mastered is marked "Start here").
 
-type NodeState = 'completed' | 'current' | 'available' | 'locked';
+type NodeState = 'completed' | 'current' | 'available';
 
 interface SkillNode {
   topic: TopicWithProgress;
   state: NodeState;
   emoji: string;
+  color: string;
+  /** True for the one topic we suggest doing next. */
+  suggested: boolean;
+  /**
+   * Sub-topics of a whole-grade pool share one progress record, so their
+   * numbers describe the grade, not this topic. Hide per-topic stats for them.
+   */
+  sharesProgress: boolean;
 }
 
 const TOPIC_EMOJI: Record<string, string> = {
@@ -20,102 +32,41 @@ const TOPIC_EMOJI: Record<string, string> = {
   'ch19':    '🔺', 'ch20':    '⬜', 'ch21':    '⭕', 'dh':      '📈',
 };
 
-function deriveNodes(topics: TopicWithProgress[]): SkillNode[] {
-  let foundFirstIncomplete = false;
-  return topics.map((topic) => {
-    const emoji = TOPIC_EMOJI[topic.id] ?? '📚';
+function emojiFor(topic: TopicWithProgress): string {
+  const byId = TOPIC_EMOJI[topic.id];
+  if (byId) return byId;
+  for (let i = 0; i < TOPIC_TREE.length; i++) {
+    if (TOPIC_TREE[i].name === topic.name) return TOPIC_TREE[i].emoji;
+  }
+  return '📚';
+}
 
-    if (topic.mastery === 'Mastered') {
-      return { topic, state: 'completed' as const, emoji };
-    }
-    if (topic.mastery === 'Practicing') {
-      foundFirstIncomplete = true;
-      return { topic, state: 'current' as const, emoji };
-    }
-    // NotStarted
-    if (!foundFirstIncomplete) {
-      foundFirstIncomplete = true;
-      return { topic, state: 'available' as const, emoji };
-    }
-    return { topic, state: 'locked' as const, emoji };
+function deriveNodes(topics: TopicWithProgress[]): SkillNode[] {
+  let suggestedGiven = false;
+  return topics.map((topic) => {
+    const state: NodeState =
+      topic.mastery === 'Mastered' ? 'completed' :
+      topic.mastery === 'Practicing' ? 'current' : 'available';
+    const suggested = !suggestedGiven && state !== 'completed';
+    if (suggested) suggestedGiven = true;
+    return {
+      topic,
+      state,
+      emoji: emojiFor(topic),
+      color: getTopicColor(topic.name),
+      suggested,
+      sharesProgress: topic.id.indexOf('__') !== -1,
+    };
   });
 }
 
-// ── Sub-components ───────────────────────────────────────────────────────────
-
-const NodeCircle = React.memo(function NodeCircle({ node }: { node: SkillNode }) {
-  switch (node.state) {
-    case 'completed':
-      return (
-        <div className="w-14 h-14 rounded-full bg-success-soft border-2 border-success flex items-center justify-center">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M5 12l5 5L19 7" stroke="#12805c" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </div>
-      );
-    case 'current':
-      return (
-        <div className="relative w-14 h-14">
-          <div className="absolute inset-0 rounded-full bg-action/20 animate-ping" style={{ animationDuration: '2s' }} />
-          <div className="relative w-14 h-14 rounded-full bg-white border-2 border-ink flex items-center justify-center shadow-hard-sm">
-            <span className="text-xl leading-none select-none" aria-hidden="true">{node.emoji}</span>
-          </div>
-        </div>
-      );
-    case 'available':
-      return (
-        <div className="w-14 h-14 rounded-full bg-white border-2 border-line flex items-center justify-center">
-          <span className="text-xl leading-none select-none" aria-hidden="true">{node.emoji}</span>
-        </div>
-      );
-    case 'locked':
-      return (
-        <div className="w-14 h-14 rounded-full bg-white border-2 border-line flex items-center justify-center opacity-60">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <rect x="5" y="11" width="14" height="10" rx="2" stroke="#5d6b8c" strokeWidth="2" />
-            <path d="M8 11V7a4 4 0 018 0v4" stroke="#5d6b8c" strokeWidth="2" strokeLinecap="round" />
-          </svg>
-        </div>
-      );
-  }
-});
-
-function NodeLabel({ node }: { node: SkillNode }) {
-  const accuracyPct = node.topic.attempted > 0
-    ? Math.round((node.topic.correct / node.topic.attempted) * 100)
-    : 0;
-
-  return (
-    <div className="flex-1 min-w-0">
-      <p className={`text-sm font-extrabold leading-snug line-clamp-2 ${
-        node.state === 'locked' ? 'text-ink-muted' : 'text-ink'
-      }`}>
-        {node.topic.name}
-      </p>
-      <p className={`text-xs font-semibold mt-0.5 ${
-        node.state === 'completed' ? 'text-success' :
-        node.state === 'current' ? 'text-ink-muted' :
-        node.state === 'available' ? 'text-ink-muted' :
-        'text-ink-muted'
-      }`}>
-        {node.state === 'completed' && `Mastered · ${accuracyPct}%`}
-        {node.state === 'current' && `${node.topic.correct} solved · ${accuracyPct}%`}
-        {node.state === 'available' && 'Ready to start'}
-        {node.state === 'locked' && 'Complete previous topics'}
-      </p>
-    </div>
-  );
-}
-
-// ── Connector line ───────────────────────────────────────────────────────────
-
-function Connector({ fromState }: { fromState: NodeState }) {
-  const color = fromState === 'completed' ? 'bg-success' : 'bg-line';
-  return (
-    <div className="flex justify-center py-0">
-      <div className={`w-1 h-8 ${color} rounded-full`} />
-    </div>
-  );
+function statusLine(node: SkillNode): string {
+  if (node.sharesProgress) return node.suggested ? 'A good place to start' : 'Tap to practise';
+  const { attempted, correct } = node.topic;
+  const pct = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
+  if (node.state === 'completed') return `Mastered · ${pct}% right`;
+  if (node.state === 'current') return `${correct} solved · ${pct}% right`;
+  return node.suggested ? 'A good place to start' : 'Not started yet';
 }
 
 // ── Main component ───────────────────────────────────────────────────────────
@@ -129,31 +80,53 @@ export default function SkillPath({ topics, onTopicClick }: SkillPathProps) {
   const nodes = deriveNodes(topics);
 
   return (
-    <div className="relative px-2">
-      {nodes.map((node, idx) => {
-        const isRight = idx % 2 === 1;
-        const isClickable = node.state !== 'locked';
+    <div className="space-y-3">
+      {nodes.map((node) => {
+        const { topic } = node;
+        const pct = topic.attempted > 0 ? Math.round((topic.correct / topic.attempted) * 100) : 0;
+        const showMeter = !node.sharesProgress && node.state === 'current';
 
         return (
-          <React.Fragment key={node.topic.id}>
-            {idx > 0 && <Connector fromState={nodes[idx - 1].state} />}
-
-            <button
-              disabled={!isClickable}
-              onClick={() => isClickable && onTopicClick(node.topic.id)}
-              className={`w-full flex items-center gap-3 rounded-control px-3 py-3 transition-transform ${
-                isRight ? 'flex-row-reverse pl-4 pr-3' : 'flex-row pl-3 pr-4'
-              } ${
-                isClickable
-                  ? 'active:scale-[0.97] hover:bg-soft'
-                  : 'cursor-default'
-              }`}
-              style={{ marginLeft: isRight ? 'auto' : 0 }}
+          <button
+            key={topic.id}
+            type="button"
+            onClick={() => onTopicClick(topic.id)}
+            className={`w-full text-left bg-white rounded-card border-2 border-l-[10px] p-3 flex items-center gap-3 min-h-[72px] transition-transform active:scale-[0.98] ${
+              node.suggested ? 'border-ink shadow-hard-sm' : 'border-line hover:border-ink'
+            }`}
+            style={{ borderLeftColor: node.color }}
+          >
+            {/* Emoji tile, tinted with the topic colour */}
+            <span
+              className="w-11 h-11 rounded-tile flex items-center justify-center text-xl leading-none flex-shrink-0 select-none"
+              style={{ backgroundColor: `${node.color}33` }}
+              aria-hidden="true"
             >
-              <NodeCircle node={node} />
-              <NodeLabel node={node} />
-            </button>
-          </React.Fragment>
+              {node.emoji}
+            </span>
+
+            <span className="flex-1 min-w-0">
+              <span className="block font-display text-title text-ink">{topic.name}</span>
+              <span className="block text-[13px] font-bold text-ink-muted mt-0.5">{statusLine(node)}</span>
+              {showMeter && (
+                <span className="block ui-meter h-2.5 mt-2">
+                  <span className="block h-full bg-action rounded-full" style={{ width: `${Math.max(4, pct)}%` }} />
+                </span>
+              )}
+            </span>
+
+            {/* Status badge */}
+            {node.state === 'completed' && !node.sharesProgress && (
+              <span className="ui-chip flex-shrink-0 !bg-success-soft !border-success !text-ink">
+                <span aria-hidden="true">✓</span> Mastered
+              </span>
+            )}
+            {node.suggested && (
+              <span className="ui-chip flex-shrink-0 !bg-action !border-ink !text-white">Start here</span>
+            )}
+
+            <span className="text-2xl leading-none text-ink-muted flex-shrink-0" aria-hidden="true">›</span>
+          </button>
         );
       })}
     </div>
