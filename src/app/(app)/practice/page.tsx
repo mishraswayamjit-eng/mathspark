@@ -46,7 +46,7 @@ export default function PracticeHubPage() {
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
         <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
@@ -76,7 +76,7 @@ export default function PracticeHubPage() {
               { emoji: '🎯', value: `${stats.totalSolved}`, label: 'Solved' },
               { emoji: '⭐', value: `${stats.topicsMastered}`, label: 'Mastered' },
             ].map((s) => (
-              <div key={s.label} className="flex-1 bg-white rounded-xl p-2.5 border border-gray-100 shadow-sm text-center">
+              <div key={s.label} className="flex-1 bg-white rounded-xl p-2.5 border-2 border-line text-center">
                 <span className="text-sm">{s.emoji}</span>
                 <p className="text-sm font-extrabold text-gray-800">{s.value}</p>
                 <p className="text-[10px] font-bold text-gray-500 uppercase">{s.label}</p>
@@ -132,7 +132,7 @@ export default function PracticeHubPage() {
 
         {/* Exam Papers */}
         <Link href="/practice/papers"
-          className="block bg-white rounded-2xl p-4 border border-gray-100 shadow-sm active:scale-[0.98] transition-transform"
+          className="block bg-white rounded-2xl p-4 border-2 border-line active:scale-[0.98] transition-transform"
         >
           <div className="flex items-center gap-3">
             <div className="w-14 h-14 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center shrink-0">
@@ -152,7 +152,7 @@ export default function PracticeHubPage() {
 
         {/* Skill Drills */}
         <Link href="/practice/skill-drill"
-          className="block bg-white rounded-2xl p-4 border border-gray-100 shadow-sm active:scale-[0.98] transition-transform"
+          className="block bg-white rounded-2xl p-4 border-2 border-line active:scale-[0.98] transition-transform"
         >
           <div className="flex items-center gap-3">
             <div className="w-14 h-14 rounded-2xl bg-yellow-50 border border-yellow-100 flex items-center justify-center shrink-0">
@@ -172,7 +172,7 @@ export default function PracticeHubPage() {
 
         {/* Topic Practice */}
         <Link href="/chapters"
-          className="block bg-white rounded-2xl p-4 border border-gray-100 shadow-sm active:scale-[0.98] transition-transform"
+          className="block bg-white rounded-2xl p-4 border-2 border-line active:scale-[0.98] transition-transform"
         >
           <div className="flex items-center gap-3">
             <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
@@ -192,7 +192,7 @@ export default function PracticeHubPage() {
 
         {/* Flashcards */}
         <Link href="/flashcards"
-          className="block bg-white rounded-2xl p-4 border border-gray-100 shadow-sm active:scale-[0.98] transition-transform"
+          className="block bg-white rounded-2xl p-4 border-2 border-line active:scale-[0.98] transition-transform"
         >
           <div className="flex items-center gap-3">
             <div className="w-14 h-14 rounded-2xl bg-purple-50 border border-purple-100 flex items-center justify-center shrink-0">
@@ -212,7 +212,7 @@ export default function PracticeHubPage() {
 
         {/* Mock Test */}
         <Link href="/test"
-          className="block bg-white rounded-2xl p-4 border border-gray-100 shadow-sm active:scale-[0.98] transition-transform"
+          className="block bg-white rounded-2xl p-4 border-2 border-line active:scale-[0.98] transition-transform"
         >
           <div className="flex items-center gap-3">
             <div className="w-14 h-14 rounded-2xl bg-green-50 border border-green-100 flex items-center justify-center shrink-0">

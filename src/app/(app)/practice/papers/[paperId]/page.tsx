@@ -332,7 +332,7 @@ export default function ExamSimulatorPage() {
         </div>
 
         {/* Marking scheme */}
-        <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm w-full mt-4">
+        <div className="bg-white rounded-2xl p-4 border-2 border-line w-full mt-4">
           <p className="text-xs font-extrabold text-gray-500 uppercase tracking-wide mb-2">Marking Scheme</p>
           <div className="space-y-1.5 text-sm">
             <p className="flex justify-between"><span className="text-gray-600">Correct</span><span className="font-bold text-duo-green">{paper.markingScheme.correct}</span></p>
@@ -343,7 +343,7 @@ export default function ExamSimulatorPage() {
         </div>
 
         {/* Rules */}
-        <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm w-full mt-3">
+        <div className="bg-white rounded-2xl p-4 border-2 border-line w-full mt-3">
           <p className="text-xs font-extrabold text-gray-500 uppercase tracking-wide mb-2">Rules</p>
           <ul className="space-y-1.5">
             {paper.instructions.rules.map((rule, i) => (
@@ -422,7 +422,7 @@ export default function ExamSimulatorPage() {
     const reviewResponse = reviewQ !== null ? responses[reviewQ] : null;
 
     return (
-      <div className="min-h-screen bg-gray-50 pb-24">
+      <div className="min-h-screen bg-paper pb-24">
         {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
 
         {/* Header */}
@@ -437,7 +437,7 @@ export default function ExamSimulatorPage() {
 
         <div className="max-w-lg mx-auto px-4 pt-5 space-y-4">
           {/* Score card */}
-          <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
+          <div className="bg-white rounded-2xl p-6 border-2 border-line text-center">
             <div className="flex items-center justify-center gap-3 mb-3">
               <Sparky mood={verdict.sparkyMood} size={52} />
               <div>
@@ -502,7 +502,7 @@ export default function ExamSimulatorPage() {
           {resultsTab === 'score' && (
             <div className="space-y-3">
               {/* Question dots */}
-              <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+              <div className="bg-white rounded-2xl p-4 border-2 border-line">
                 <p className="text-xs font-extrabold text-gray-500 uppercase tracking-wide mb-3">Question Results</p>
                 <div className="flex flex-wrap gap-1.5">
                   {responses.map((r, i) => {
@@ -528,7 +528,7 @@ export default function ExamSimulatorPage() {
 
               {/* Review selected question */}
               {reviewQuestion && reviewResponse && reviewQ !== null && (
-                <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm space-y-3 animate-fade-in">
+                <div className="bg-white rounded-2xl p-4 border-2 border-line space-y-3 animate-fade-in">
                   <p className="text-xs font-extrabold text-gray-500">Q{reviewQ + 1} Review</p>
                   <p className="text-sm font-bold text-gray-800">{reviewQuestion.questionText}</p>
                   <div className="space-y-1.5">
@@ -576,7 +576,7 @@ export default function ExamSimulatorPage() {
           )}
 
           {resultsTab === 'topics' && (
-            <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm space-y-3">
+            <div className="bg-white rounded-2xl p-4 border-2 border-line space-y-3">
               <p className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">Topic Accuracy</p>
               {topicResults.map((t) => (
                 <div key={t.topic} className="space-y-1">
@@ -601,7 +601,7 @@ export default function ExamSimulatorPage() {
           )}
 
           {resultsTab === 'difficulty' && (
-            <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm space-y-3">
+            <div className="bg-white rounded-2xl p-4 border-2 border-line space-y-3">
               <p className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">Difficulty Breakdown</p>
               {['Easy', 'Medium', 'Hard'].map((diff) => {
                 const d = diffMap.get(diff);
@@ -625,7 +625,7 @@ export default function ExamSimulatorPage() {
           )}
 
           {resultsTab === 'time' && (
-            <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm space-y-3">
+            <div className="bg-white rounded-2xl p-4 border-2 border-line space-y-3">
               <p className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">Time Analysis</p>
               <div className="grid grid-cols-2 gap-3">
                 <div className="bg-blue-50 rounded-xl p-3 text-center">
@@ -652,7 +652,7 @@ export default function ExamSimulatorPage() {
           {resultsTab === 'mistakes' && (
             <div className="space-y-3">
               {mistakes.length === 0 ? (
-                <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
+                <div className="bg-white rounded-2xl p-6 border-2 border-line text-center">
                   <Sparky mood="celebrating" size={48} />
                   <p className="text-sm font-bold text-gray-500 mt-2">
                     {scoreResult.wrong === 0 ? 'Perfect — no mistakes!' : 'No common patterns detected. Keep practicing!'}
@@ -660,7 +660,7 @@ export default function ExamSimulatorPage() {
                 </div>
               ) : (
                 mistakes.slice(0, 5).map((m) => (
-                  <div key={m.patternId} className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+                  <div key={m.patternId} className="bg-white rounded-2xl p-4 border-2 border-line">
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-xl">{m.emoji}</span>
                       <div>
@@ -703,7 +703,7 @@ export default function ExamSimulatorPage() {
   const question = paper.questions[currentQ];
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col animate-fade-in">
+    <div className="min-h-screen bg-paper flex flex-col animate-fade-in">
       {/* Timer bar */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-3 flex items-center justify-between shadow-md">
         <div className="flex items-center gap-3">

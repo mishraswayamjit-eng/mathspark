@@ -1,6 +1,6 @@
 export default function TopicLoading() {
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 animate-pulse">
+    <div className="min-h-screen bg-paper pb-24 animate-pulse">
       <div className="bg-duo-dark px-4 py-4">
         <div className="h-6 bg-white/20 rounded w-32" />
       </div>

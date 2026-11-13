@@ -114,7 +114,7 @@ function StudentCard({ s }: { s: TestStudent }) {
   }
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-4 flex items-center gap-3 shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-2xl border-2 border-line p-4 flex items-center gap-3 hover:shadow-md transition-shadow">
       {/* Avatar */}
       <div
         className="w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-white font-bold text-sm"
@@ -150,7 +150,7 @@ function StudentCard({ s }: { s: TestStudent }) {
 
 export default function DevPage() {
   return (
-    <div className="min-h-screen bg-gray-50 px-4 py-8 max-w-2xl mx-auto animate-fade-in">
+    <div className="min-h-screen bg-paper px-4 py-8 max-w-2xl mx-auto animate-fade-in">
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center gap-2 mb-1">

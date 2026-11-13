@@ -30,7 +30,7 @@ export default function BottomNav() {
   if (isAppChromeHidden(pathname)) return null;
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white z-50 shadow-[0_-2px_10px_rgba(0,0,0,0.08)] pb-[env(safe-area-inset-bottom)]">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white z-50 border-t-2 border-ink pb-[env(safe-area-inset-bottom)]">
       <div className="max-w-lg mx-auto flex h-16">
         {NAV.map(({ href, emoji, label }) => {
           const active = href === '/practice'
@@ -52,15 +52,15 @@ export default function BottomNav() {
               href={href}
               className={`${baseClass} ${
                 active
-                  ? 'text-duo-green border-duo-green'
-                  : 'text-gray-500 border-transparent hover:text-gray-600'
+                  ? 'text-action border-action font-extrabold'
+                  : 'text-gray-500 border-transparent hover:text-ink'
               }`}
             >
               <span className="text-xl mb-0.5 relative">
                 <span aria-hidden="true">{emoji}</span>
                 {/* Due badge on Cards tab */}
                 {href === '/flashcards' && cardsDue > 0 && (
-                  <span className="absolute -top-1.5 -right-3 bg-red-500 text-white text-[10px] font-bold min-w-[16px] h-4 flex items-center justify-center rounded-full px-1 leading-none">
+                  <span className="absolute -top-1.5 -right-3 bg-retry text-white text-[10px] font-bold min-w-[16px] h-4 flex items-center justify-center rounded-full px-1 leading-none">
                     {cardsDue > 99 ? '99+' : cardsDue}
                   </span>
                 )}

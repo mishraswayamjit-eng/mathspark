@@ -34,7 +34,7 @@ export default function ConceptTrainerRunner() {
   // ── Loading / not-found ─────────────────────────────────────────────────
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-3">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-3">
         <div className="animate-sparky-bounce"><Sparky mood="thinking" size={64} /></div>
         <p className="text-gray-500 font-semibold text-sm">Loading…</p>
       </div>
@@ -43,7 +43,7 @@ export default function ConceptTrainerRunner() {
 
   if (notFound || !trainer) {
     return (
-      <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-3 px-6 text-center">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-3 px-6 text-center">
         <Sparky mood="thinking" size={64} />
         <p className="text-gray-700 font-bold">This trainer isn&apos;t available yet.</p>
         <Link href="/learn/concept-trainer" className="text-duo-blue font-bold text-sm">
@@ -60,7 +60,7 @@ export default function ConceptTrainerRunner() {
     const item = mod.items[ii];
     const hasNext = ii + 1 < mod.items.length;
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-paper">
         <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
           <button
             onClick={() => setActive(null)}
@@ -85,7 +85,7 @@ export default function ConceptTrainerRunner() {
 
   // ── Module accordion (list) ─────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-gray-50 pb-24">
+    <div className="min-h-screen bg-paper pb-24">
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
         <Link
           href="/learn/concept-trainer"
@@ -107,7 +107,7 @@ export default function ConceptTrainerRunner() {
           {trainer.modules.map((mod, mi) => {
             const isOpen = openModule === mi;
             return (
-              <div key={mod.code} className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+              <div key={mod.code} className="bg-white rounded-2xl border-2 border-line overflow-hidden">
                 <button
                   onClick={() => setOpenModule(isOpen ? null : mi)}
                   className="w-full flex items-center gap-3 px-4 py-3.5 text-left min-h-[56px]"

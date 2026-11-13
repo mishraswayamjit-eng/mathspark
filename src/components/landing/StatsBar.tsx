@@ -55,7 +55,7 @@ export default function StatsBar() {
   return (
     <section className="py-10 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
-        <div ref={ref} className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-gray-100 bg-white border border-gray-100 rounded-2xl shadow-sm">
+        <div ref={ref} className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-gray-100 bg-white border-2 border-line rounded-2xl">
           <StatCard target={100000} suffix="+" label="Richly Researched Questions" color="text-duo-green" inView={inView} />
           <StatCard target={4}      suffix=" Yrs" label="of Real IPM Papers"       color="text-duo-blue"  inView={inView} />
           <StatCard target={0}                    label="Hallucinated Answers"      color="text-duo-dark"  inView={inView} />

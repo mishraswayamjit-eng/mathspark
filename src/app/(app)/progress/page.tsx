@@ -165,7 +165,7 @@ export default function ProgressPage() {
 
   if (!loading && (fetchError || !data)) {
     return (
-      <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-4 pb-24">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
         <p className="text-gray-800 font-extrabold text-lg">Something went wrong</p>
         <p className="text-gray-500 text-sm">Could not load progress data. Check your connection.</p>
         <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
@@ -177,7 +177,7 @@ export default function ProgressPage() {
 
   if (loading || !data) {
     return (
-      <div className="min-h-screen bg-gray-50 pb-24">
+      <div className="min-h-screen bg-paper pb-24">
         <div className="bg-duo-dark px-4 py-4 flex items-center gap-3">
           <div className="h-5 bg-white/20 rounded w-24 animate-pulse" />
         </div>
@@ -193,7 +193,7 @@ export default function ProgressPage() {
   const { student, stats, weeklyData } = data;
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
         <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
@@ -209,7 +209,7 @@ export default function ProgressPage() {
       <div className="max-w-lg mx-auto px-4 pt-5 space-y-4">
 
         {/* ── AT A GLANCE ──────────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+        <div className="bg-white rounded-2xl p-4 border-2 border-line">
           <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-3">At a Glance</h2>
           <div className="grid grid-cols-4 gap-2">
             {[
@@ -228,7 +228,7 @@ export default function ProgressPage() {
         </div>
 
         {/* ── EXAM READINESS ───────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center gap-4">
+        <div className="bg-white rounded-2xl p-4 border-2 border-line flex items-center gap-4">
           <svg width="100" height="100" viewBox="0 0 100 100" className="shrink-0">
             <circle cx="50" cy="50" r={ringR} stroke="#E5E7EB" strokeWidth="8" fill="none" />
             <circle
@@ -254,7 +254,7 @@ export default function ProgressPage() {
         </div>
 
         {/* ── WEEKLY ACTIVITY ──────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+        <div className="bg-white rounded-2xl p-4 border-2 border-line">
           <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-3">This Week</h2>
           <div className="flex items-end gap-1.5 h-24">
             {weeklyData.map(({ date, count }) => (
@@ -278,7 +278,7 @@ export default function ProgressPage() {
 
         {/* ── STRENGTHS ────────────────────────────────────────────── */}
         {strengths.length > 0 && (
-          <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+          <div className="bg-white rounded-2xl p-4 border-2 border-line">
             <h2 className="text-[10px] font-extrabold text-duo-green uppercase tracking-wide mb-3">
               💪 Strengths — What You&apos;re Great At
             </h2>
@@ -301,7 +301,7 @@ export default function ProgressPage() {
 
         {/* ── AREAS TO STRENGTHEN ──────────────────────────────────── */}
         {weakAreas.length > 0 && (
-          <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+          <div className="bg-white rounded-2xl p-4 border-2 border-line">
             <h2 className="text-[10px] font-extrabold text-orange-600 uppercase tracking-wide mb-3">
               🎯 Areas to Strengthen
             </h2>
@@ -328,7 +328,7 @@ export default function ProgressPage() {
 
         {/* ── TOP 3 MISTAKE PATTERNS ───────────────────────────────── */}
         {topMistakes.length > 0 && (
-          <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+          <div className="bg-white rounded-2xl p-4 border-2 border-line">
             <div className="flex items-center justify-between mb-3">
               <h2 className="text-[10px] font-extrabold text-red-500 uppercase tracking-wide">
                 🔍 Mistakes to Watch For
@@ -353,7 +353,7 @@ export default function ProgressPage() {
         )}
 
         {/* ── TOPIC MASTERY HEATMAP ────────────────────────────────── */}
-        <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+        <div className="bg-white rounded-2xl p-4 border-2 border-line">
           <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-3">
             🗺️ Topic Mastery Map
           </h2>
@@ -400,7 +400,7 @@ export default function ProgressPage() {
         </div>
 
         {/* ── RECOMMENDATIONS ──────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+        <div className="bg-white rounded-2xl p-4 border-2 border-line">
           <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-3">
             📋 What to Do This Week
           </h2>

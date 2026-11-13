@@ -286,7 +286,7 @@ export default function ProfilePage() {
   // ── Error state ─────────────────────────────────────────────────────────
   if (fetchError) {
     return (
-      <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-4 pb-24">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
         <p className="text-gray-800 font-extrabold text-lg">Something went wrong</p>
         <p className="text-gray-500 text-sm">Could not load your profile. Check your connection.</p>
         <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
@@ -300,7 +300,7 @@ export default function ProfilePage() {
   if (loading) {
     const skeletonInitial = name ? name[0].toUpperCase() : '?';
     return (
-      <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
+      <div className="min-h-screen bg-paper pb-24 animate-fade-in">
         {/* Identity header — real data from localStorage, no pulse */}
         <div className="bg-duo-dark pt-10 pb-6 px-4">
           <div className="flex items-center gap-4">
@@ -350,7 +350,7 @@ export default function ProfilePage() {
     : null;
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
 
       {/* ── Toast ─────────────────────────────────────────────────────────── */}
       {toast && (

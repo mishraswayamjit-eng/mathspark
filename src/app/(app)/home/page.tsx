@@ -98,17 +98,17 @@ const StatsBar = React.memo(function StatsBar({
   const leagueEmoji = LEAGUE_EMOJI[leagueTier] ?? '🥉';
   return (
     <div className="flex items-center gap-2">
-      <div className="flex items-center gap-1.5 bg-orange-50 rounded-full px-3 py-1.5 border border-orange-100">
+      <div className="flex items-center gap-1.5 bg-white rounded-xl px-3 py-1.5 border-2 border-line">
         <span className="text-sm" aria-hidden="true">🔥</span>
-        <span className="text-xs font-extrabold text-orange-600">{streak > 0 ? streak : '—'}</span>
+        <span className="text-sm font-extrabold text-ink">{streak > 0 ? streak : '—'}</span>
       </div>
-      <div className="flex items-center gap-1.5 bg-amber-50 rounded-full px-3 py-1.5 border border-amber-100">
+      <div className="flex items-center gap-1.5 bg-white rounded-xl px-3 py-1.5 border-2 border-line">
         <span className="text-sm" aria-hidden="true">⭐</span>
-        <span className="text-xs font-extrabold text-amber-600">{todayXP} XP</span>
+        <span className="text-sm font-extrabold text-ink">{todayXP} XP</span>
       </div>
-      <Link href="/leaderboard" className="flex items-center gap-1.5 bg-blue-50 rounded-full px-3 py-1.5 border border-blue-100">
+      <Link href="/leaderboard" className="flex items-center gap-1.5 bg-white rounded-xl px-3 py-1.5 border-2 border-line">
         <span className="text-sm" aria-hidden="true">{leagueEmoji}</span>
-        <span className="text-xs font-extrabold text-blue-600">
+        <span className="text-sm font-extrabold text-ink">
           {leagueName}{leagueRank ? ` #${leagueRank}` : ''}
         </span>
       </Link>
@@ -132,13 +132,13 @@ const HeroCard = React.memo(function HeroCard({
 
   if (milestone && !celebrated) {
     return (
-      <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl p-4 border border-amber-200 shadow-sm">
+      <div className="ui-card border-l-[10px] border-l-amber-400 animate-card-pop">
         <div className="flex items-center gap-3">
           <div className="shrink-0 animate-sparky-dance">
             <Sparky mood="celebrating" size={52} />
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-lg font-extrabold text-gray-800">
+            <p className="font-display text-xl font-semibold text-gray-800">
               {milestone.emoji} {milestone.title}
             </p>
             <p className="text-sm text-gray-600 font-medium">
@@ -164,7 +164,7 @@ const HeroCard = React.memo(function HeroCard({
   const recentWin = recentActivity[0];
   if (recentWin && recentWin.pct >= 85 && isRecentWin(recentWin.timeAgo)) {
     return (
-      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 border border-green-200 shadow-sm">
+      <div className="ui-card border-l-[10px] border-l-success animate-card-pop">
         <div className="flex items-center gap-3">
           <div className="shrink-0">
             <Sparky mood="happy" size={52} />
@@ -187,7 +187,7 @@ const HeroCard = React.memo(function HeroCard({
   if (streak > 0) {
     return (
       <Link href="/practice/daily"
-        className="block bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-4 border border-orange-200 shadow-sm"
+        className="block ui-card border-l-[10px] border-l-orange-400"
       >
         <div className="flex items-center gap-3">
           <span className="text-3xl" aria-hidden="true">🎯</span>
@@ -201,7 +201,7 @@ const HeroCard = React.memo(function HeroCard({
               <span className="text-xs font-extrabold text-orange-600">{streak}</span>
             </div>
           )}
-          <span className="text-duo-orange font-extrabold text-sm shrink-0">Play →</span>
+          <span className="text-action font-extrabold text-sm shrink-0">Play →</span>
         </div>
       </Link>
     );
@@ -212,7 +212,7 @@ const HeroCard = React.memo(function HeroCard({
     const tp = topicPriorities[0];
     return (
       <Link href={`/practice/${tp.dbTopicId}`}
-        className="block bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-4 border border-blue-200 shadow-sm"
+        className="block ui-card border-l-[10px] border-l-action"
       >
         <div className="flex items-center gap-3">
           <span className="text-2xl" aria-hidden="true">{tp.emoji}</span>
@@ -222,7 +222,7 @@ const HeroCard = React.memo(function HeroCard({
               {reframePlanReason(tp.reason)}
             </p>
           </div>
-          <span className="text-duo-blue font-extrabold text-sm shrink-0">Go →</span>
+          <span className="text-action font-extrabold text-sm shrink-0">Go →</span>
         </div>
       </Link>
     );
@@ -231,7 +231,7 @@ const HeroCard = React.memo(function HeroCard({
   // Priority 5: Fallback — welcome
   return (
     <Link href="/chapters"
-      className="block bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-4 border border-blue-200 shadow-sm"
+      className="block ui-card border-l-[10px] border-l-action"
     >
       <div className="flex items-center gap-3">
         <div className="shrink-0">
@@ -241,7 +241,7 @@ const HeroCard = React.memo(function HeroCard({
           <p className="font-extrabold text-gray-800 text-sm">Welcome to MathSpark!</p>
           <p className="text-xs text-gray-500 font-medium">Start your math journey today</p>
         </div>
-        <span className="text-duo-blue font-extrabold text-sm shrink-0">Start →</span>
+        <span className="text-action font-extrabold text-sm shrink-0">Start →</span>
       </div>
     </Link>
   );
@@ -281,12 +281,12 @@ const PlanItem = React.memo(function PlanItem({
 
 const TopicBar = React.memo(function TopicBar({ entry }: { entry: TopicMasteryEntry }) {
   const pct = Math.round(entry.mastery * 100);
-  const barColor = pct >= 70 ? '#58CC02' : pct >= 40 ? '#FF9600' : pct > 0 ? '#FF4B4B' : '#e5e7eb';
+  const barColor = pct >= 70 ? '#12805c' : pct >= 40 ? '#FF9600' : pct > 0 ? '#c62f3d' : '#d3deee';
   return (
     <div className="flex items-center gap-3 py-1.5">
       <span className="text-base shrink-0 w-6 text-center" aria-hidden="true">{entry.emoji}</span>
       <span className="text-xs font-semibold text-gray-700 w-28 truncate">{entry.topicName}</span>
-      <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+      <div className="flex-1 h-2 bg-soft rounded-full overflow-hidden">
         <div
           className="h-full rounded-full transition-[width] duration-700"
           style={{ width: `${pct}%`, backgroundColor: barColor }}
@@ -487,7 +487,7 @@ export default function HomePage() {
 
   if (!loading && (fetchError || !data)) {
     return (
-      <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-4 pb-24">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
         <p className="text-gray-800 font-extrabold text-lg">Something went wrong</p>
         <p className="text-gray-500 text-sm">Could not load your dashboard. Check your connection.</p>
         <div className="flex items-center gap-3">
@@ -504,7 +504,7 @@ export default function HomePage() {
 
   if (loading || !data) {
     return (
-      <div className="min-h-screen bg-gray-50 pb-24">
+      <div className="min-h-screen bg-paper pb-24">
         {/* Header */}
         <div className="bg-duo-dark px-4 py-3 flex items-center justify-between">
           <div className="h-4 bg-white/20 rounded w-20 animate-pulse" />
@@ -577,11 +577,11 @@ export default function HomePage() {
   const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
 
       {/* ── STICKY HEADER ─────────────────────────────────────────────── */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-3 flex items-center justify-between shadow-md">
-        <span className="text-white font-extrabold text-sm tracking-tight">MathSpark</span>
+        <span className="text-white font-display font-semibold text-lg">MathSpark</span>
         <div
           className="text-xs font-extrabold px-3 py-1.5 rounded-full text-white"
           style={{ backgroundColor: gradeColor }}
@@ -604,11 +604,11 @@ export default function HomePage() {
       <div className="max-w-lg mx-auto px-4 pt-5 space-y-4">
 
         {/* ── § 1: GREETING + STATS BAR ────────────────────────────────── */}
-        <div>
-          <h1 className="text-xl font-extrabold text-gray-800">
+        <div className="ui-card ui-card-pop">
+          <h1 className="text-[26px] font-semibold text-gray-800 leading-tight">
             {greeting}, {student.name}! <span aria-hidden="true">🌟</span>
           </h1>
-          <p className="text-gray-500 text-sm font-medium mt-0.5">
+          <p className="text-gray-500 text-[15px] font-semibold mt-1">
             {surfaceNarration
               ?? `${todayCorrect > 0 ? `${todayCorrect} correct today · ` : ''}Ready to practice?`}
           </p>
@@ -645,9 +645,9 @@ export default function HomePage() {
         />
 
         {/* ── § 3: TODAY'S PLAN (max 3) ────────────────────────────────── */}
-        <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+        <div className="bg-white rounded-2xl p-4 border-2 border-line">
           <div className="flex items-center justify-between mb-1">
-            <h2 className="font-extrabold text-gray-800 text-sm">Today&apos;s Plan</h2>
+            <h2 className="font-semibold text-gray-800 text-lg">Today&apos;s Plan</h2>
             <span className="text-xs font-bold text-gray-500">
               {planDoneCount}/{planWithDone.length} done
             </span>
@@ -680,7 +680,7 @@ export default function HomePage() {
         <div className="grid grid-cols-2 gap-2">
           {quickAccessTiles.map((action) => (
             <Link key={action.label} href={action.href}
-              className={`${action.bg} rounded-2xl p-3 flex flex-col items-center gap-1 border border-white shadow-sm active:scale-95 transition-transform`}
+              className={`${action.bg} rounded-2xl p-3 flex flex-col items-center gap-1 border-2 border-line active:scale-95 transition-transform`}
             >
               <span className="text-2xl" aria-hidden="true">{action.emoji}</span>
               <p className="text-xs font-extrabold text-gray-700 text-center leading-tight">{action.label}</p>
@@ -690,9 +690,9 @@ export default function HomePage() {
         </div>
 
         {/* ── § 5: YOUR TOPICS (3 bars + summary) ──────────────────────── */}
-        <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+        <div className="bg-white rounded-2xl p-4 border-2 border-line">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="font-extrabold text-gray-800 text-sm">Your Topics</h2>
+            <h2 className="font-semibold text-gray-800 text-lg">Your Topics</h2>
             <Link href="/chapters" className="text-xs font-extrabold text-duo-blue">See all →</Link>
           </div>
 
@@ -718,9 +718,9 @@ export default function HomePage() {
 
         {/* ── § 6: RECENT ACTIVITY (3 items) ───────────────────────────── */}
         {recentActivity.length > 0 && (
-          <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+          <div className="bg-white rounded-2xl p-4 border-2 border-line">
             <div className="flex items-center justify-between mb-3">
-              <h2 className="font-extrabold text-gray-800 text-sm">Recent Activity</h2>
+              <h2 className="font-semibold text-gray-800 text-lg">Recent Activity</h2>
               <Link href="/chapters" className="text-xs font-extrabold text-duo-blue">View all →</Link>
             </div>
             <div className="space-y-2.5">
@@ -735,7 +735,7 @@ export default function HomePage() {
                   </div>
                   <div className="text-right">
                     <p className="text-sm font-extrabold"
-                      style={{ color: act.pct >= 70 ? '#58CC02' : act.pct >= 40 ? '#FF9600' : '#FF4B4B' }}>
+                      style={{ color: act.pct >= 70 ? '#12805c' : act.pct >= 40 ? '#cc7800' : '#c62f3d' }}>
                       {act.pct}%
                     </p>
                     <p className="text-[10px] text-gray-300 font-medium">{act.timeAgo}</p>

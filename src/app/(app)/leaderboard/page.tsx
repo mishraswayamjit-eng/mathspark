@@ -536,7 +536,7 @@ export default function LeaderboardPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
 
       {/* ── Promotion overlay ──────────────────────────────────────────── */}
       {showPromo && promoInfo && (

@@ -41,7 +41,7 @@ export default function ParentReportPage() {
 
   if (loading || !data) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50">
+      <div className="flex items-center justify-center min-h-screen bg-paper">
         <div className="text-center">
           <div className="text-5xl mb-4 animate-bounce">📊</div>
           <p className="text-gray-500 font-bold">Generating report…</p>
@@ -83,7 +83,7 @@ export default function ParentReportPage() {
   const dateStr = today.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-12 animate-fade-in" id="parent-report">
+    <div className="min-h-screen bg-paper pb-12 animate-fade-in" id="parent-report">
 
       {/* ── Header ──────────────────────────────────────────────── */}
       <div style={{ background: 'linear-gradient(135deg, #58CC02, #46a302)' }} className="px-6 pt-8 pb-6">
@@ -119,7 +119,7 @@ export default function ParentReportPage() {
       <div className="max-w-lg mx-auto px-4">
 
         {/* ── Exam Readiness ───────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mt-4 flex items-center gap-4">
+        <div className="bg-white rounded-2xl border-2 border-line p-5 mt-4 flex items-center gap-4">
           <div
             className="w-16 h-16 rounded-full flex items-center justify-center text-xl font-extrabold border-4 shrink-0"
             style={{
@@ -137,7 +137,7 @@ export default function ParentReportPage() {
 
         {/* ── Strengths ────────────────────────────────────────────── */}
         {strengths.length > 0 && (
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mt-3">
+          <div className="bg-white rounded-2xl border-2 border-line p-5 mt-3">
             <h2 className="text-xs font-extrabold text-duo-green uppercase tracking-widest mb-3">
               💪 What {student.name} is Great At
             </h2>
@@ -157,7 +157,7 @@ export default function ParentReportPage() {
 
         {/* ── Areas to Strengthen ──────────────────────────────────── */}
         {weakAreas.length > 0 && (
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mt-3">
+          <div className="bg-white rounded-2xl border-2 border-line p-5 mt-3">
             <h2 className="text-xs font-extrabold text-orange-600 uppercase tracking-widest mb-3">
               🎯 Areas to Strengthen
             </h2>
@@ -178,7 +178,7 @@ export default function ParentReportPage() {
         )}
 
         {/* ── Weekly Activity ──────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mt-3">
+        <div className="bg-white rounded-2xl border-2 border-line p-5 mt-3">
           <h2 className="text-xs font-extrabold text-gray-500 uppercase tracking-widest mb-3">This Week&apos;s Activity</h2>
           <div className="flex items-end gap-1.5 h-16 mb-1">
             {weeklyData.map(({ date, count }) => (
@@ -198,7 +198,7 @@ export default function ParentReportPage() {
         </div>
 
         {/* ── Topic Mastery Map ─────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mt-3">
+        <div className="bg-white rounded-2xl border-2 border-line p-5 mt-3">
           <h2 className="text-xs font-extrabold text-gray-500 uppercase tracking-widest mb-3">
             🗺️ Topic Mastery Map
           </h2>
@@ -226,7 +226,7 @@ export default function ParentReportPage() {
         </div>
 
         {/* ── Recommendations ──────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mt-3">
+        <div className="bg-white rounded-2xl border-2 border-line p-5 mt-3">
           <h2 className="text-xs font-extrabold text-gray-500 uppercase tracking-widest mb-3">
             📋 What to Do This Week
           </h2>

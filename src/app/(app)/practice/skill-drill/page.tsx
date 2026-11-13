@@ -105,7 +105,7 @@ export default function SkillDrillTopicsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 pb-24">
+      <div className="min-h-screen bg-paper pb-24">
         <div className="bg-duo-dark px-4 py-4 flex items-center gap-3">
           <Link href="/home" className="text-white/60 hover:text-white text-sm">&larr;</Link>
           <h1 className="text-white font-extrabold text-lg">Skill Drills</h1>
@@ -133,7 +133,7 @@ export default function SkillDrillTopicsPage() {
   const levelLabels = meta.levelLabels;
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
         <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
@@ -187,7 +187,7 @@ export default function SkillDrillTopicsPage() {
               <Link
                 key={topic.topicId}
                 href={`/practice/skill-drill/${topic.topicId}/${highestLevel}`}
-                className="block bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-[box-shadow,transform] active:scale-[0.98]"
+                className="block bg-white rounded-2xl p-4 border-2 border-line hover:shadow-md transition-[box-shadow,transform] active:scale-[0.98]"
               >
                 <div className="flex items-start gap-3">
                   {/* Icon */}

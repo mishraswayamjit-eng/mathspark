@@ -29,7 +29,7 @@ export default function TopicGrid({ topics, progress }: TopicGridProps) {
           <Link
             key={topic.id}
             href={`/learn/lessons/${topic.id}`}
-            className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-[box-shadow] active:scale-[0.97] flex flex-col gap-2"
+            className="bg-white rounded-2xl p-4 border-2 border-line hover:shadow-md transition-[box-shadow] active:scale-[0.97] flex flex-col gap-2"
           >
             {/* Emoji + progress badge */}
             <div className="flex items-start justify-between">

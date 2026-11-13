@@ -71,7 +71,7 @@ export default function PublicProfilePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 animate-pulse">
+      <div className="min-h-screen bg-paper animate-pulse">
         <div className="bg-duo-dark pt-10 pb-8 px-4">
           <div className="flex items-center gap-4">
             <div className="w-20 h-20 rounded-full bg-white/20" />
@@ -114,7 +114,7 @@ export default function PublicProfilePage() {
   const joined    = new Date(joinedAt).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' });
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-8 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-8 animate-fade-in">
 
       {/* ── Back button ─────────────────────────────────────────────────── */}
       <div className="absolute top-4 left-4 z-10">

@@ -143,7 +143,7 @@ function SparkyWidgetInner() {
                   <div className="flex-shrink-0">
                     <Sparky mood="thinking" size={36} />
                   </div>
-                  <div className="max-w-[78%] bg-white rounded-2xl rounded-bl-sm px-4 py-2.5 shadow-sm border border-gray-100">
+                  <div className="max-w-[78%] bg-white rounded-2xl rounded-bl-sm px-4 py-2.5 border-2 border-line">
                     <p className="text-sm leading-relaxed text-gray-800 font-medium whitespace-pre-wrap">{streamingMsg}</p>
                     <span className="inline-block w-1 h-4 bg-duo-green animate-pulse ml-0.5 rounded" />
                   </div>
@@ -153,7 +153,7 @@ function SparkyWidgetInner() {
               {isLoading && !streamingMsg && (
                 <div className="flex items-end gap-2 mb-3">
                   <Sparky mood="thinking" size={36} />
-                  <div className="bg-white rounded-2xl rounded-bl-sm shadow-sm border border-gray-100">
+                  <div className="bg-white rounded-2xl rounded-bl-sm border-2 border-line">
                     <TypingDots />
                   </div>
                 </div>

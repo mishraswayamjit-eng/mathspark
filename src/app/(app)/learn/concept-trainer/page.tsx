@@ -19,7 +19,7 @@ export default function ConceptTrainerCatalog() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24">
+    <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
         <Link
@@ -57,7 +57,7 @@ export default function ConceptTrainerCatalog() {
             <Link
               key={t.slug}
               href={`/learn/concept-trainer/${t.slug}`}
-              className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center gap-4 active:scale-[0.98] transition-transform"
+              className="bg-white rounded-2xl p-4 border-2 border-line flex items-center gap-4 active:scale-[0.98] transition-transform"
             >
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0"

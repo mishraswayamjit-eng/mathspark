@@ -116,7 +116,7 @@ export default function LessonQuiz({ questions, accentColor, onComplete }: Lesso
         )}
 
         {/* Question */}
-        <div className="bg-white border border-gray-200 rounded-2xl px-4 py-5 mb-4 text-center shadow-sm">
+        <div className="bg-white border-2 border-line rounded-2xl px-4 py-5 mb-4 text-center">
           {hasLatex(q.question) ? (
             <KatexRenderer latex={q.question} displayMode className="text-lg" />
           ) : (

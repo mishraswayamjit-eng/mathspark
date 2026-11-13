@@ -1,6 +1,7 @@
 'use client';
 
-// DuoButton — Duolingo-style pill button with 3D press-sink effect
+// DuoButton — IPM-style outlined button: ink border, hard offset shadow, sinks on press.
+// Variant names are historical; `green` is the primary action (indigo brand).
 import type { ReactNode } from 'react';
 
 export type DuoVariant = 'green' | 'blue' | 'orange' | 'red' | 'white';
@@ -16,11 +17,11 @@ interface DuoButtonProps {
 }
 
 const VARIANT_STYLES: Record<DuoVariant, { bg: string; border: string; text: string }> = {
-  green:  { bg: 'bg-duo-green hover:bg-[#5bd800]', border: 'border-b-[4px] border-duo-green-dark', text: 'text-white' },
-  blue:   { bg: 'bg-duo-blue hover:bg-[#22bfff]', border: 'border-b-[4px] border-duo-blue-dark', text: 'text-white' },
-  orange: { bg: 'bg-duo-orange hover:bg-[#ffaa2a]', border: 'border-b-[4px] border-duo-orange-dark', text: 'text-white' },
-  red:    { bg: 'bg-duo-red hover:bg-[#ff6060]', border: 'border-b-[4px] border-duo-red-dark', text: 'text-white' },
-  white:  { bg: 'bg-white hover:bg-gray-50',         border: 'border-b-[4px] border-gray-300',  text: 'text-gray-700' },
+  green:  { bg: 'bg-action hover:bg-action-dark', border: 'border-2 border-ink', text: 'text-white' },
+  blue:   { bg: 'bg-duo-blue hover:bg-duo-blue-dark',   border: 'border-2 border-ink', text: 'text-white' },
+  orange: { bg: 'bg-star hover:bg-[#ffb31a]',       border: 'border-2 border-ink', text: 'text-ink' },
+  red:    { bg: 'bg-retry hover:bg-[#b02835]',        border: 'border-2 border-ink', text: 'text-white' },
+  white:  { bg: 'bg-white hover:bg-soft',           border: 'border-2 border-ink', text: 'text-ink' },
 };
 
 export default function DuoButton({
@@ -42,26 +43,27 @@ export default function DuoButton({
       className={`
         ${fullWidth ? 'w-full' : ''}
         ${bg} ${border} ${text}
-        rounded-[9999px]
-        min-h-[56px]
-        px-6
+        rounded-[14px]
+        min-h-[52px]
+        px-5
         font-extrabold
         text-base
-        uppercase
-        tracking-wide
-        transition-[colors,border-color,transform]
+        shadow-hard-sm
+        transition-[colors,transform,box-shadow]
         duration-75
         select-none
-        active:translate-y-[4px]
-        active:border-b-0
+        active:translate-x-[2px]
+        active:translate-y-[2px]
+        active:shadow-hard-xs
         disabled:opacity-50
         disabled:cursor-not-allowed
+        disabled:pointer-events-none
         flex items-center justify-center gap-2
       `}
     >
       {loading ? (
         <span
-          className="inline-block w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"
+          className="inline-block w-5 h-5 border-2 border-transparent border-t-current border-r-current rounded-full animate-spin"
           aria-hidden="true"
         />
       ) : children}

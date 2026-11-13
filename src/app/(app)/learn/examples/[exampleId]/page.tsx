@@ -145,7 +145,7 @@ export default function WorkedExampleDetailPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 pb-24">
+      <div className="min-h-screen bg-paper pb-24">
         <div className="bg-duo-dark px-4 py-4 flex items-center gap-3">
           <Link href="/learn/examples" className="text-white/60 hover:text-white text-sm">&larr;</Link>
           <h1 className="text-white font-extrabold text-lg">Loading...</h1>
@@ -173,7 +173,7 @@ export default function WorkedExampleDetailPage() {
   const hasStarted = showThinking || revealedSteps > 0;
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
       <div
         className="sticky top-0 z-40 px-4 py-4 flex items-center gap-3 shadow-md"
@@ -293,7 +293,7 @@ export default function WorkedExampleDetailPage() {
             {example.stepByStep.slice(0, revealedSteps).map((step, i) => (
               <div
                 key={step.stepNumber}
-                className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm animate-fade-in"
+                className="bg-white rounded-2xl p-4 border-2 border-line animate-fade-in"
                 style={{ animationDelay: `${i * 120}ms`, animationFillMode: 'backwards' }}
               >
                 <div className="flex items-start gap-3">

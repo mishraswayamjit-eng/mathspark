@@ -103,7 +103,7 @@ export default function IPMPredictorPage() {
   const grades = [2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
         <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
@@ -165,7 +165,7 @@ export default function IPMPredictorPage() {
         {!detailLoading && prediction && (
           <div className="space-y-4 animate-fade-in">
             {/* Overview card */}
-            <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+            <div className="bg-white rounded-2xl p-4 border-2 border-line">
               <div className="flex items-center justify-between mb-3">
                 <h2 className="font-extrabold text-gray-800 text-sm">
                   Grade {prediction.grade} Analysis
@@ -195,7 +195,7 @@ export default function IPMPredictorPage() {
             </div>
 
             {/* Topic frequency chart */}
-            <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+            <div className="bg-white rounded-2xl p-4 border-2 border-line">
               <h3 className="font-extrabold text-gray-800 text-sm mb-3">Topic Frequency</h3>
               <div className="space-y-2.5">
                 {prediction.topicFrequency
@@ -243,7 +243,7 @@ export default function IPMPredictorPage() {
 
             {/* Always / Frequently / Rarely appears */}
             {prediction.alwaysAppears.length > 0 && (
-              <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm space-y-3">
+              <div className="bg-white rounded-2xl p-4 border-2 border-line space-y-3">
                 {prediction.alwaysAppears.length > 0 && (
                   <div>
                     <div className="flex items-center gap-1.5 mb-2">
@@ -336,7 +336,7 @@ export default function IPMPredictorPage() {
                 <button
                   key={s.grade}
                   onClick={() => setSelectedGrade(s.grade)}
-                  className="w-full bg-white rounded-2xl p-4 border border-gray-100 shadow-sm flex items-center gap-3 text-left active:bg-gray-50 transition-colors"
+                  className="w-full bg-white rounded-2xl p-4 border-2 border-line flex items-center gap-3 text-left active:bg-gray-50 transition-colors"
                 >
                   <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center shrink-0">
                     <span className="text-lg font-extrabold text-indigo-600">G{s.grade}</span>
@@ -370,7 +370,7 @@ export default function IPMPredictorPage() {
 
             {/* Strategic insights */}
             {insights && (
-              <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm space-y-3">
+              <div className="bg-white rounded-2xl p-4 border-2 border-line space-y-3">
                 <div className="flex items-center gap-2">
                   <span className="text-lg">💡</span>
                   <h3 className="font-extrabold text-gray-800 text-sm">Strategic Insights</h3>

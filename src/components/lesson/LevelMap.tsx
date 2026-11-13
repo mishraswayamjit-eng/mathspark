@@ -33,7 +33,7 @@ export default function LevelMap({ topicSlug, levels, progress }: LevelMapProps)
             <Link
               key={level.id}
               href={`/learn/lessons/${topicSlug}/${level.id}`}
-              className="relative flex items-start gap-4 bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-[box-shadow] active:scale-[0.98]"
+              className="relative flex items-start gap-4 bg-white rounded-2xl p-4 border-2 border-line hover:shadow-md transition-[box-shadow] active:scale-[0.98]"
             >
               {/* Level icon */}
               <div

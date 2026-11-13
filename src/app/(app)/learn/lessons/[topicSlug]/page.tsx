@@ -52,7 +52,7 @@ export default function TopicPage({
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 pb-24 animate-pulse">
+      <div className="min-h-screen bg-paper pb-24 animate-pulse">
         <div className="bg-duo-dark px-4 py-4">
           <div className="h-6 bg-white/20 rounded w-32" />
         </div>
@@ -67,7 +67,7 @@ export default function TopicPage({
 
   if (error || !topic) {
     return (
-      <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-4 pb-24">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
         <Sparky mood="thinking" size={64} />
         <p className="text-sm font-bold text-gray-500">Topic not found</p>
         <button
@@ -81,7 +81,7 @@ export default function TopicPage({
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24">
+    <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
         <Link

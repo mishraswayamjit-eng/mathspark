@@ -121,7 +121,7 @@ export default function LandingPage() {
                 body: 'Full IPM simulations with detailed analytics. Track score improvement week over week.' },
             ].map((s, i) => (
               <SectionFade key={s.n} delay={i * 80}>
-                <div className="flex items-start gap-4 bg-white border border-gray-100 rounded-2xl p-5 shadow-sm">
+                <div className="flex items-start gap-4 bg-white border-2 border-line rounded-2xl p-5">
                   <div className="text-duo-green font-extrabold text-2xl tabular-nums shrink-0 w-10 mt-0.5">{s.n}</div>
                   <div>
                     <h3 className="text-duo-dark font-extrabold text-base mb-1">{s.title}</h3>
@@ -165,7 +165,7 @@ export default function LandingPage() {
                 body: 'Gamified streaks, XP, and encouragement keep children practicing 93% of the time. Mixed-topic practice doubles retention.' },
             ].map((card, i) => (
               <SectionFade key={card.title} delay={i * 100}>
-                <div className="bg-white border border-gray-100 rounded-2xl p-6 h-full flex flex-col shadow-sm hover:shadow-md transition-shadow">
+                <div className="bg-white border-2 border-line rounded-2xl p-6 h-full flex flex-col hover:shadow-md transition-shadow">
                   <div className={`w-12 h-12 ${card.bg} rounded-xl flex items-center justify-center text-2xl mb-4`} aria-hidden="true">{card.emoji}</div>
                   <h3 className="text-duo-dark font-extrabold text-base mb-2 leading-tight">{card.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed flex-1">{card.body}</p>
@@ -190,7 +190,7 @@ export default function LandingPage() {
             </div>
           </SectionFade>
           <SectionFade delay={100}>
-            <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm bg-white">
+            <div className="overflow-x-auto rounded-2xl border-2 border-line bg-white">
               <table className="w-full text-sm min-w-[600px]">
                 <colgroup>
                   <col className="w-[30%]" />
@@ -245,7 +245,7 @@ export default function LandingPage() {
                 body: 'Timed drills matching real IPM pace — 90 seconds per question. Builds speed, accuracy, and exam confidence.' },
             ].map((f, i) => (
               <SectionFade key={f.title} delay={(i % 3) * 80}>
-                <div className="bg-white border border-gray-100 rounded-2xl p-6 h-full flex flex-col shadow-sm hover:shadow-md transition-shadow">
+                <div className="bg-white border-2 border-line rounded-2xl p-6 h-full flex flex-col hover:shadow-md transition-shadow">
                   <div className={`w-10 h-10 ${f.bg} rounded-lg flex items-center justify-center text-xl mb-3`} aria-hidden="true">{f.emoji}</div>
                   <h3 className="text-duo-dark font-extrabold text-sm mb-2 leading-tight">{f.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed flex-1">{f.body}</p>
@@ -269,7 +269,7 @@ export default function LandingPage() {
               { quote: "My son used to dread math worksheets. Now he asks to 'play MathSpark' every morning before school. His tutor noticed the difference within two weeks. The streak system is magic — 23 days and counting.", city: 'Parent, Bangalore' },
             ].map((t, i) => (
               <SectionFade key={t.city} delay={i * 100}>
-                <div className="bg-white border border-gray-100 rounded-2xl p-6 h-full flex flex-col shadow-sm">
+                <div className="bg-white border-2 border-line rounded-2xl p-6 h-full flex flex-col">
                   <div className="text-duo-orange text-sm mb-3 tracking-wide" aria-hidden="true">★★★★★</div>
                   <p className="text-gray-600 text-sm leading-relaxed italic flex-1">&ldquo;{t.quote}&rdquo;</p>
                   <p className="text-gray-400 text-xs mt-4 font-semibold">— {t.city}</p>

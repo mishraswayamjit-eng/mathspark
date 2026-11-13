@@ -77,7 +77,7 @@ export default function StrategyBankPage() {
   const categories = Object.keys(CATEGORY_META);
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
         <Link href="/chapters" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
@@ -170,7 +170,7 @@ export default function StrategyBankPage() {
                       return (
                         <div
                           key={s.id}
-                          className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden transition-shadow"
+                          className="bg-white rounded-2xl border-2 border-line overflow-hidden transition-shadow"
                           style={{ borderLeftWidth: '4px', borderLeftColor: meta.color }}
                         >
                           {/* Collapsed header */}

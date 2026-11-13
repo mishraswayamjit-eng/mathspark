@@ -42,9 +42,9 @@ function hasLatex(text: string): boolean {
 
 /** Color tokens for each difficulty level. */
 function difficultyColors(d: Difficulty) {
-  if (d === 'Easy') return { dot: 'bg-duo-green', label: 'text-duo-green-dark', bg: 'bg-green-50' };
-  if (d === 'Hard') return { dot: 'bg-duo-red', label: 'text-duo-red-dark', bg: 'bg-red-50' };
-  return { dot: 'bg-duo-orange', label: 'text-duo-orange-dark', bg: 'bg-amber-50' }; // Medium
+  if (d === 'Easy') return { dot: 'bg-success', label: 'text-success', bg: 'bg-success-soft border-success/30' };
+  if (d === 'Hard') return { dot: 'bg-retry', label: 'text-retry', bg: 'bg-retry-soft border-retry/30' };
+  return { dot: 'bg-star', label: 'text-hint-ink', bg: 'bg-hint border-hint-ink/30' }; // Medium
 }
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -79,46 +79,46 @@ const QuestionCard = React.memo(function QuestionCard({
 
   function badgeCls(key: AnswerKey): string {
     const base =
-      'w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-extrabold transition-colors duration-200';
-    if (!answered) return `${base} bg-gray-100 text-gray-600`;
+      'w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-[15px] font-extrabold transition-colors duration-200';
+    if (!answered) return `${base} bg-soft text-ink`;
     if (key === question.correctAnswer)
-      return `${base} bg-duo-green text-white animate-pop-in`;
-    if (key === selected) return `${base} bg-duo-red text-white`;
-    return `${base} bg-gray-100 text-gray-500`;
+      return `${base} bg-success text-white animate-pop-in`;
+    if (key === selected) return `${base} bg-retry text-white`;
+    return `${base} bg-soft text-ink-muted`;
   }
 
   function cardCls(key: AnswerKey): string {
     const base =
-      'w-full text-left rounded-2xl px-4 py-4 min-h-[56px] border-2 flex items-center gap-3 transition-colors duration-200 shadow-sm';
+      'w-full text-left rounded-[14px] px-3.5 py-3 min-h-[52px] border-2 flex items-center gap-3 transition-colors duration-200';
     if (!answered)
-      return `${base} bg-white border-gray-200 hover:border-duo-blue hover:bg-blue-50 hover:shadow-md cursor-pointer`;
+      return `${base} bg-white border-line text-ink hover:border-ink cursor-pointer`;
     if (key === question.correctAnswer)
-      return `${base} bg-green-50 border-duo-green shadow-md`;
+      return `${base} bg-success-soft border-success text-success`;
     if (key === selected)
-      return `${base} bg-red-50 border-duo-red`;
-    return `${base} bg-white border-gray-100 opacity-40`;
+      return `${base} bg-retry-soft border-retry text-retry`;
+    return `${base} bg-white border-line text-ink opacity-40`;
   }
 
   return (
     <div className="space-y-4">
       {/* ── Question card ─────────────────────────────────────────────── */}
-      <div className="bg-white rounded-2xl p-5 shadow-md border border-gray-100">
+      <div className="ui-card ui-card-pop animate-card-pop">
 
         {/* SubTopic + Difficulty tags at TOP */}
         <div className="flex items-center gap-2 mb-3 flex-wrap">
-          <div className={`flex items-center gap-1.5 px-2.5 py-0.5 rounded-full ${diff.bg}`}>
+          <div className={`flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border-2 ${diff.bg}`}>
             <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${diff.dot}`} />
-            <span className={`text-xs font-extrabold uppercase tracking-wide ${diff.label}`}>
+            <span className={`text-[13px] font-extrabold ${diff.label}`}>
               {question.difficulty}
             </span>
           </div>
-          <span className="text-xs font-semibold text-gray-500 truncate max-w-[200px]">
-            {question.subTopic}
+          <span className="ui-chip max-w-[220px]">
+            <span className="truncate">{question.subTopic}</span>
           </span>
         </div>
 
         {/* Question text (min 18px) — render KaTeX if LaTeX markers detected */}
-        <div className="text-[18px] font-bold text-gray-800 leading-relaxed">
+        <div className="text-[19px] font-bold text-ink leading-normal [overflow-wrap:anywhere]">
           {hasLatex(question.questionText) ? (
             <KatexRenderer latex={question.questionText} displayMode={false} />
           ) : (
@@ -128,7 +128,7 @@ const QuestionCard = React.memo(function QuestionCard({
 
         {/* LaTeX expression below text (if present) */}
         {question.questionLatex && (
-          <div className="mt-3 overflow-x-auto p-3 bg-gray-50 rounded-xl border border-gray-100">
+          <div className="mt-3 overflow-x-auto p-3 bg-soft rounded-[10px] border-l-[6px] border-action">
             <KatexRenderer latex={question.questionLatex} displayMode className="block" />
           </div>
         )}
@@ -174,7 +174,7 @@ const QuestionCard = React.memo(function QuestionCard({
           )}
         </Suspense>
       ) : (
-      <div className="space-y-3">
+      <div className="grid gap-2.5">
         {options.map(({ key, text }) => (
           <button
             key={key}
@@ -188,7 +188,7 @@ const QuestionCard = React.memo(function QuestionCard({
             </span>
 
             {/* Option text — KaTeX if LaTeX markers detected */}
-            <span className="flex-1 text-left text-gray-800 text-base font-semibold leading-snug">
+            <span className="flex-1 text-left text-[17px] font-bold leading-snug">
               {hasLatex(text) ? (
                 <KatexRenderer latex={text} displayMode={false} />
               ) : (
@@ -198,7 +198,7 @@ const QuestionCard = React.memo(function QuestionCard({
 
             {/* Wrong-answer indicator */}
             {answered && key === selected && key !== question.correctAnswer && (
-              <span className="ml-auto text-duo-red font-bold text-xl flex-shrink-0">✗</span>
+              <span className="ml-auto text-retry font-bold text-xl flex-shrink-0" aria-hidden="true">✗</span>
             )}
           </button>
         ))}

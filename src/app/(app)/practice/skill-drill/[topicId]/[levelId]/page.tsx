@@ -296,7 +296,7 @@ export default function SkillDrillSessionPage() {
   // Loading
   if (loading && phase === 'sessions') {
     return (
-      <div className="min-h-screen bg-gray-50 pb-24">
+      <div className="min-h-screen bg-paper pb-24">
         <div className="bg-duo-dark px-4 py-4 flex items-center gap-3">
           <Link href="/practice/skill-drill" className="text-white/60 hover:text-white text-sm">&larr;</Link>
           <h1 className="text-white font-extrabold text-lg">Loading...</h1>
@@ -586,7 +586,7 @@ export default function SkillDrillSessionPage() {
   const isUnlocked = levelId === 'L1' || (levelProgress && levelProgress.unlocked);
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
       <div
         className="px-4 py-4 flex items-center gap-3 shadow-md"
@@ -681,7 +681,7 @@ export default function SkillDrillSessionPage() {
                   <button
                     key={s.sessionId}
                     onClick={() => startSession(s.sessionNumber)}
-                    className="w-full bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-[box-shadow,transform] active:scale-[0.98] text-left flex items-center gap-4"
+                    className="w-full bg-white rounded-2xl p-4 border-2 border-line hover:shadow-md transition-[box-shadow,transform] active:scale-[0.98] text-left flex items-center gap-4"
                   >
                     {/* Session number circle */}
                     <div

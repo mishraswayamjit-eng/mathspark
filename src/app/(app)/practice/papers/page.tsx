@@ -60,7 +60,7 @@ export default function PaperSelectionPage() {
   const durInfo = DURATIONS.find((d) => d.value === duration)!;
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
       <div className="bg-duo-dark px-4 py-4">
         <div className="max-w-lg mx-auto flex items-center justify-between">
@@ -141,7 +141,7 @@ export default function PaperSelectionPage() {
               <Link
                 key={paper.paperId}
                 href={`/practice/papers/${paper.paperId}`}
-                className="block bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+                className="block bg-white rounded-2xl p-4 border-2 border-line hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center gap-3">
                   <div

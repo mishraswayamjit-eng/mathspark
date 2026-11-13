@@ -1054,7 +1054,7 @@ export default function PracticePage() {
     : false;
 
   return (
-    <div className="flex flex-col bg-white min-h-screen animate-fade-in">
+    <div className="flex flex-col bg-paper min-h-screen animate-fade-in">
       {/* Confetti (full — lesson complete) */}
       {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
       {/* Mini confetti — per correct answer */}
@@ -1073,7 +1073,7 @@ export default function PracticePage() {
           ←
         </button>
         <div className="flex-1 min-w-0">
-          <p className="text-white font-extrabold text-sm truncate">{topicName}</p>
+          <p className="text-white font-display font-semibold text-lg leading-tight truncate">{topicName}</p>
         </div>
         <HeartsBar hearts={hearts} />
         <button
@@ -1142,7 +1142,7 @@ export default function PracticePage() {
         style={{ paddingBottom: phase === 'result' ? '72vh' : '80px' }}
       >
         {/* Question label with color accent */}
-        <div className={`inline-flex items-center gap-2 text-xs font-extrabold px-3 py-1.5 rounded-full border ${accentCls}`}>
+        <div className={`inline-flex items-center gap-2 text-[13px] font-extrabold px-3 py-1 rounded-full border-2 ${accentCls}`}>
           {isReviewing
             ? `🔁 Review question ${reviewIndex + 1} of ${reviewQueue.length}`
             : isSpeedMode
@@ -1200,7 +1200,7 @@ export default function PracticePage() {
       {/* ── Sliding bottom panel (Brilliant-style answer sheet) ── */}
       {phase === 'result' && (
         <div
-          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] animate-slide-up overflow-y-auto rounded-t-2xl ${
+          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] animate-slide-up overflow-y-auto rounded-t-2xl border-2 border-b-0 border-ink ${
             lastCorrect
               ? 'bg-duo-mint'
               : 'bg-duo-blush'

@@ -31,7 +31,7 @@ export function CorrectPanel({
   const [showWhy, setShowWhy] = useState(false);
 
   return (
-    <div className="px-4 pt-4 pb-6 space-y-3 border-l-4 border-duo-green">
+    <div className="px-4 pt-4 pb-6 space-y-3 text-success" role="status">
       <div className="flex items-center gap-3">
         <div className="animate-sparky-dance flex-shrink-0">
           <Sparky mood="celebrating" size={56} />
@@ -40,16 +40,16 @@ export function CorrectPanel({
           {streak >= 3 && (
             <div className="flex items-center gap-1.5 mb-0.5">
               <span className="animate-pop-in text-base" aria-hidden="true">🔥</span>
-              <p className="text-xs font-extrabold text-duo-green-dark uppercase tracking-wide">
+              <p className="text-sm font-extrabold">
                 {streak} in a row!
               </p>
             </div>
           )}
-          <p className="text-lg font-extrabold text-gray-800 leading-tight">{feedback}</p>
+          <h3 className="text-[21px] font-semibold leading-tight">{feedback}</h3>
         </div>
         {/* XP badge */}
-        <div className="animate-scale-in flex-shrink-0 bg-duo-green/15 rounded-full px-3 py-1">
-          <span className="text-sm font-extrabold text-duo-green-dark">+{xpEarned} XP</span>
+        <div className="animate-scale-in flex-shrink-0 bg-white border-2 border-line rounded-xl px-2.5 py-1">
+          <span className="text-sm font-extrabold text-ink whitespace-nowrap"><span aria-hidden="true">⭐</span> +{xpEarned} XP</span>
         </div>
       </div>
 
@@ -58,7 +58,7 @@ export function CorrectPanel({
         <div>
           <button
             onClick={() => setShowWhy(!showWhy)}
-            className="text-sm font-bold text-duo-green-dark underline underline-offset-2 min-h-[44px] flex items-center"
+            className="text-sm font-extrabold text-success underline underline-offset-2 min-h-[44px] flex items-center"
           >
             {showWhy ? 'Hide explanation ▲' : 'Why? ▼'}
           </button>
@@ -73,7 +73,7 @@ export function CorrectPanel({
 
       <button
         onClick={onWatchSolution}
-        className="btn-sparkle w-full min-h-[44px] text-duo-green-dark font-bold text-sm flex items-center justify-center gap-2"
+        className="ui-btn w-full text-sm"
       >
         <span className="sparkle-icon" aria-hidden="true">🎬</span> Watch Solution
       </button>
@@ -81,7 +81,7 @@ export function CorrectPanel({
       {canTrySimilar && (
         <button
           onClick={onTrySimilar}
-          className="w-full text-gray-400 font-semibold text-xs flex items-center justify-center gap-1 min-h-[36px]"
+          className="w-full text-ink-muted font-bold text-sm flex items-center justify-center gap-1 min-h-[44px]"
         >
           🔄 Try a Similar Question
         </button>
@@ -143,35 +143,37 @@ export function WrongPanel({
   const textHasLatex  = correctText.includes('\\');
 
   return (
-    <div className="px-4 pt-4 pb-6 space-y-3 border-l-4 border-duo-red animate-shake-gentle">
+    <div className="px-4 pt-4 pb-6 space-y-3 animate-shake-gentle" role="alert">
       {/* Header row */}
       <div className="flex items-center gap-3">
         <div className="flex-shrink-0">
           <Sparky mood="encouraging" size={56} />
         </div>
-        <div>
-          <p className="text-base font-extrabold text-duo-red">
-            Not quite!
-          </p>
-          <div className="bg-white rounded-xl px-3 py-2 border border-duo-red/30 mt-1.5">
-            <p className="text-xs text-gray-500 font-semibold">Correct answer ({question.correctAnswer})</p>
-            {textHasLatex ? (
-              <div className="mt-1"><KatexRenderer latex={correctText} displayMode={false} /></div>
-            ) : (
-              <p className="text-sm text-gray-800 font-bold leading-snug">{correctText}</p>
-            )}
-          </div>
+        <div className="flex-1 min-w-0">
+          <h3 className="text-[21px] font-semibold leading-tight text-retry">
+            Not quite. Let&apos;s look again <span aria-hidden="true">🔍</span>
+          </h3>
         </div>
+      </div>
+
+      {/* Verified correct answer */}
+      <div className="bg-success-soft text-success rounded-[10px] px-3 py-2 font-extrabold">
+        <p className="text-sm"><span aria-hidden="true">✅</span> Correct answer: option {question.correctAnswer}</p>
+        {textHasLatex ? (
+          <div className="mt-1"><KatexRenderer latex={correctText} displayMode={false} /></div>
+        ) : (
+          <p className="text-base leading-snug [overflow-wrap:anywhere]">{correctText}</p>
+        )}
       </div>
 
       {/* Misconception box — shows the personalized AI nudge when available,
           otherwise the verified static misconception text (static floor). */}
       {misconception && (
-        <div className="bg-blue-50 border border-blue-200 rounded-2xl px-4 py-3">
-          <p className="text-xs font-extrabold text-blue-700 uppercase tracking-wide mb-1">
-            <span aria-hidden="true">💡</span> Common mistake
+        <div className="bg-white border-l-[6px] border-action rounded-[10px] px-3 py-2.5">
+          <p className="text-sm font-extrabold text-ink mb-1">
+            <span aria-hidden="true">🧠</span> Common mistake
           </p>
-          <p className="text-sm text-gray-700 font-medium leading-snug">{aiNudge ?? misconception}</p>
+          <p className="text-[15px] text-ink font-semibold leading-snug">{aiNudge ?? misconception}</p>
         </div>
       )}
 
@@ -202,12 +204,12 @@ export function WrongPanel({
 
       {/* Action strip — simplified to 2 buttons */}
       <div className="space-y-2 pt-1">
-        <DuoButton variant="red" fullWidth onClick={onGotIt}>
+        <DuoButton variant="green" fullWidth onClick={onGotIt}>
           Got it →
         </DuoButton>
         <button
           onClick={onWatchSolution}
-          className="btn-sparkle w-full min-h-[44px] border border-gray-200 bg-white text-gray-700 font-bold text-sm rounded-2xl py-2 flex items-center justify-center gap-2"
+          className="ui-btn w-full text-sm"
         >
           <span className="sparkle-icon" aria-hidden="true">🎬</span> Watch Solution
         </button>

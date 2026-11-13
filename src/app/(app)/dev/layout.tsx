@@ -9,7 +9,7 @@ function DevGate({ children }: { children: React.ReactNode }) {
 
   if (process.env.NODE_ENV === 'production' && key !== 'mathspark2026') {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50">
+      <div className="flex items-center justify-center min-h-screen bg-paper">
         <p className="text-gray-500 font-bold">Access denied</p>
       </div>
     );

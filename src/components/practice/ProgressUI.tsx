@@ -38,13 +38,13 @@ export const LessonJourney = React.memo(function LessonJourney({
 
         const circleCls = isDone
           ? isCorrect
-            ? 'bg-duo-green border-duo-green-dark text-white'
-            : 'bg-duo-red border-duo-red-dark text-white'
+            ? 'bg-success-soft border-success text-success'
+            : 'bg-retry-soft border-retry text-retry'
           : isCurrent
-          ? 'bg-duo-blue border-duo-blue-dark text-white ring-4 ring-blue-100 animate-pulse'
-          : 'bg-white border-gray-200 text-gray-500';
+          ? 'bg-white border-ink text-ink shadow-[2px_2px_0_#1d2a4d]'
+          : 'bg-white border-line text-ink-muted';
 
-        const lineCls = i < currentIdx || isDone ? 'bg-duo-green' : 'bg-gray-200';
+        const lineCls = i < currentIdx || isDone ? 'bg-action' : 'bg-line';
 
         return (
           <div key={i} className="flex items-center flex-1 min-w-0">
@@ -52,7 +52,7 @@ export const LessonJourney = React.memo(function LessonJourney({
               <div className={`h-1 flex-1 rounded-full transition-colors duration-500 ${lineCls}`} />
             )}
             <div
-              className={`w-7 h-7 rounded-full border-2 flex items-center justify-center text-[10px] font-extrabold flex-shrink-0 transition-colors duration-300 ${circleCls}`}
+              className={`w-7 h-7 rounded-[9px] border-2 flex items-center justify-center text-[11px] font-extrabold flex-shrink-0 transition-colors duration-300 ${circleCls}`}
             >
               {isDone ? (isCorrect ? '✓' : '✗') : i + 1}
             </div>
@@ -76,10 +76,10 @@ export const LessonProgressBar = React.memo(function LessonProgressBar({
 
   return (
     <div className="px-4 py-3">
-      <div className="relative h-2 bg-gray-200 rounded-full overflow-hidden">
+      <div className="relative h-3.5 ui-meter">
         {/* Fill */}
         <div
-          className="absolute inset-y-0 left-0 bg-duo-green rounded-full transition-[width] duration-700"
+          className="absolute inset-y-0 left-0 bg-action rounded-full transition-[width] duration-700"
           style={{ width: `${pct}%` }}
         />
         {/* Section dots */}
@@ -90,7 +90,7 @@ export const LessonProgressBar = React.memo(function LessonProgressBar({
             <div
               key={i}
               className={`absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full ${
-                isDone ? 'bg-duo-green-dark' : 'bg-white'
+                isDone ? 'bg-white/70' : 'bg-line'
               }`}
               style={{ left: `${dotPct}%`, marginLeft: '-3px' }}
             />
@@ -104,7 +104,7 @@ export const LessonProgressBar = React.memo(function LessonProgressBar({
 export function XpFloat({ amount }: { amount: number }) {
   return (
     <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[70] pointer-events-none">
-      <span className="animate-xp-float text-2xl font-extrabold text-duo-gold drop-shadow-lg whitespace-nowrap">
+      <span className="animate-xp-float font-display text-2xl font-bold text-star drop-shadow-lg whitespace-nowrap">
         +{amount} XP ⭐
       </span>
     </div>

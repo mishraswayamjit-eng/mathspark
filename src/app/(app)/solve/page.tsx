@@ -54,7 +54,7 @@ export default function SolvePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-24">
+    <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
         <Link
@@ -119,7 +119,7 @@ export default function SolvePage() {
         )}
 
         {state === 'done' && answer && (
-          <div className="mt-5 bg-white border border-gray-100 rounded-2xl px-4 py-4 shadow-sm">
+          <div className="mt-5 bg-white border-2 border-line rounded-2xl px-4 py-4">
             <div className="flex items-center gap-2 mb-2">
               <Sparky mood="celebrating" size={28} />
               <p className="text-xs font-extrabold text-duo-green-dark uppercase tracking-wide">

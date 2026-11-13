@@ -59,7 +59,7 @@ export default function ConceptItemView({ module, item, index, total, onBack, on
       <h2 className="text-lg font-extrabold text-gray-800 mb-2">{item.title}</h2>
 
       {/* Story */}
-      <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm mb-4">
+      <div className="bg-white rounded-2xl p-4 border-2 border-line mb-4">
         <p className="text-[15px] leading-relaxed text-gray-800 font-medium">{item.story}</p>
       </div>
 
@@ -142,7 +142,7 @@ export default function ConceptItemView({ module, item, index, total, onBack, on
       {allDone && (
         <div className="animate-slide-up">
           {item.visual && (
-            <div className="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm mb-4">
+            <div className="bg-white rounded-2xl p-4 border-2 border-line mb-4">
               <p className="text-[11px] font-extrabold text-gray-400 uppercase tracking-wide mb-2">
                 Picture it
               </p>

@@ -60,7 +60,7 @@ export default function ParentDashboardPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50">
+      <div className="flex items-center justify-center min-h-screen bg-paper">
         <div className="text-center">
           <div className="text-5xl mb-4 animate-bounce">🌟</div>
           <p className="text-gray-500 font-bold">Loading progress report…</p>
@@ -71,7 +71,7 @@ export default function ParentDashboardPage() {
 
   if (!data) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-8 text-center">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-paper p-8 text-center">
         <div className="text-5xl mb-4">😕</div>
         <h2 className="text-xl font-extrabold text-gray-700 mb-2">Report not found</h2>
         <p className="text-gray-500 text-sm">This link may have expired or the student ID is invalid.</p>
@@ -99,7 +99,7 @@ export default function ParentDashboardPage() {
   const pageUrl = typeof window !== 'undefined' ? window.location.href : '';
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-12">
+    <div className="min-h-screen bg-paper pb-12">
 
       {/* ── Header ─────────────────────────────────────────────────────── */}
       <div style={{ background: 'linear-gradient(135deg,#58CC02,#46a302)' }} className="px-6 pt-10 pb-8">
@@ -128,7 +128,7 @@ export default function ParentDashboardPage() {
       <div className="max-w-lg mx-auto px-4">
 
         {/* ── Accuracy highlight ────────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mt-4 flex items-center gap-4">
+        <div className="bg-white rounded-2xl border-2 border-line p-5 mt-4 flex items-center gap-4">
           <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-extrabold border-4 flex-shrink-0"
             style={{
               borderColor: accuracy >= 70 ? '#58CC02' : accuracy >= 50 ? '#FF9600' : '#FF4B4B',
@@ -147,7 +147,7 @@ export default function ParentDashboardPage() {
         </div>
 
         {/* ── Weekly chart ──────────────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mt-3">
+        <div className="bg-white rounded-2xl border-2 border-line p-5 mt-3">
           <h2 className="text-xs font-extrabold text-gray-500 uppercase tracking-widest mb-4">This Week's Activity</h2>
           <div className="flex items-end gap-1.5 h-20 mb-1">
             {weeklyData.map(({ date, count }) => (
@@ -192,7 +192,7 @@ export default function ParentDashboardPage() {
         )}
 
         {/* ── All topics ────────────────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mt-3">
+        <div className="bg-white rounded-2xl border-2 border-line p-5 mt-3">
           <h2 className="text-xs font-extrabold text-gray-500 uppercase tracking-widest mb-4">All 16 Topics</h2>
           <div className="space-y-2">
             {sortedTopics.map((t) => {
@@ -224,7 +224,7 @@ export default function ParentDashboardPage() {
         </div>
 
         {/* ── Encouragement messages ────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mt-3">
+        <div className="bg-white rounded-2xl border-2 border-line p-5 mt-3">
           <h2 className="text-xs font-extrabold text-gray-500 uppercase tracking-widest mb-4">
             Send Encouragement to {student.name}
           </h2>

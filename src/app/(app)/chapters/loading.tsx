@@ -1,6 +1,6 @@
 export default function ChaptersLoading() {
   return (
-    <div className="min-h-screen bg-gray-50 pb-24 animate-pulse">
+    <div className="min-h-screen bg-paper pb-24 animate-pulse">
       <div className="bg-duo-dark px-4 py-4 flex items-center gap-3">
         <div className="h-5 bg-white/20 rounded w-24" />
         <div className="ml-auto flex gap-3">
