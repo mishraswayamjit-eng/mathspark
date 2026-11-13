@@ -28,10 +28,10 @@ function ResetForm() {
         body:    JSON.stringify({ token, password }),
       });
       const data = await res.json();
-      if (!res.ok) { setError(data.error ?? 'Something went wrong.'); }
+      if (!res.ok) { setError(data.error ?? "We couldn't finish that. Please try again."); }
       else          { setSuccess(true); setTimeout(() => router.push('/auth/login'), 2000); }
     } catch {
-      setError('Something went wrong. Please try again.');
+      setError("We couldn't finish that. Please try again.");
     } finally {
       setLoading(false);
     }

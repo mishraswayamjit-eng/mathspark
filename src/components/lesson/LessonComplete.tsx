@@ -27,7 +27,6 @@ export default function LessonComplete({
   total,
   xp,
   isFirstTime,
-  accentColor,
   onBackToLevels,
   onReview,
 }: LessonCompleteProps) {
@@ -72,17 +71,14 @@ export default function LessonComplete({
       <div className="w-full max-w-xs">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-bold text-ink-muted">Score</span>
-          <span className="text-sm font-extrabold" style={{ color: accentColor }}>
+          <span className="text-sm font-extrabold text-ink">
             {score}/{total} ({pct}%)
           </span>
         </div>
         <div className="w-full h-3 ui-meter">
           <div
-            className="h-full rounded-full transition-[width] duration-1000 ease-out"
-            style={{
-              width: `${animatedPct}%`,
-              backgroundColor: passed ? '#12805c' : '#4f46e5',
-            }}
+            className={`h-full rounded-full transition-[width] duration-1000 ease-out ${passed ? 'bg-success' : 'bg-action'}`}
+            style={{ width: `${animatedPct}%` }}
           />
         </div>
         {pct < 75 && (
@@ -135,8 +131,7 @@ export default function LessonComplete({
         </button>
         <button
           onClick={onBackToLevels}
-          className="flex-1 py-3 rounded-control text-sm font-extrabold text-white border-2 border-ink shadow-hard-sm active:scale-95 transition-transform"
-          style={{ backgroundColor: accentColor }}
+          className="flex-1 ui-btn ui-btn-primary text-sm"
         >
           Back to Levels
         </button>

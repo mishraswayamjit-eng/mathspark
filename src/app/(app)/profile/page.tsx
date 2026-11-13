@@ -287,7 +287,7 @@ export default function ProfilePage() {
   if (fetchError) {
     return (
       <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
-        <p className="text-ink font-extrabold text-lg">Something went wrong</p>
+        <p className="text-ink font-extrabold text-lg">Oops! Sparky tripped over a number</p>
         <p className="text-ink-muted text-sm">Could not load your profile. Check your connection.</p>
         <button onClick={() => window.location.reload()} className="bg-action text-white border-2 border-ink shadow-hard-sm font-extrabold px-6 py-2.5 rounded-control text-sm active:scale-95 transition-transform">
           Retry

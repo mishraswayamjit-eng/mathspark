@@ -21,10 +21,10 @@ export default function ForgotPasswordPage() {
         body:    JSON.stringify({ email }),
       });
       const data = await res.json();
-      if (!res.ok) { setError(data.error ?? 'Something went wrong.'); }
+      if (!res.ok) { setError(data.error ?? "We couldn't finish that. Please try again."); }
       else          { setSent(true); }
     } catch {
-      setError('Something went wrong. Please try again.');
+      setError("We couldn't finish that. Please try again.");
     } finally {
       setLoading(false);
     }

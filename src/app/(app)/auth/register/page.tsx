@@ -36,7 +36,7 @@ export default function RegisterPage() {
       if (result?.ok) router.push('/parent/dashboard');
       else { setError('Account created! Please sign in.'); router.push('/auth/login'); }
     } catch {
-      setError('Something went wrong. Please try again.');
+      setError("We couldn't finish that. Please try again.");
       setLoading(false);
     }
   }

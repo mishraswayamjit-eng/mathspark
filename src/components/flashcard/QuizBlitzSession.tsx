@@ -46,7 +46,7 @@ type Phase = 'loading' | 'playing' | 'feedback' | 'complete';
 
 const OPTION_LABELS = ['A', 'B', 'C', 'D'];
 const BOX_NAMES = ['New', 'Rookie', 'Rising', 'Strong', 'Expert', 'Master'];
-const BOX_COLORS = ['#64748B', '#EF4444', '#F59E0B', '#3B82F6', '#8B5CF6', '#34D399'];
+const BOX_COLORS = ['#5d6b8c', '#5a4300', '#4f46e5', '#0e7490', '#3f37c9', '#12805c'];
 
 // ── Quiz Complete Screen ─────────────────────────────────────────────────────
 
@@ -80,25 +80,25 @@ function QuizComplete({
   const mastered = transitions.filter((t) => t.reachedMastery);
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#0F172A] flex flex-col items-center justify-center px-6 animate-fade-in overflow-y-auto">
+    <div className="fixed inset-0 z-50 bg-paper flex flex-col items-center justify-center px-6 animate-fade-in overflow-y-auto">
       {pct >= 80 && <Confetti />}
 
       <div className={pct >= 70 ? 'animate-sparky-dance' : 'animate-sparky-bounce'}>
         <Sparky mood={pct >= 70 ? 'celebrating' : pct >= 40 ? 'happy' : 'encouraging'} size={80} />
       </div>
 
-      <h1 className="text-2xl font-black text-[#F1F5F9] mt-3 mb-1">
+      <h1 className="text-display text-ink mt-3 mb-1">
         {pct >= 80 ? 'Quiz Master!' : pct >= 60 ? 'Great Blitz!' : 'Good Try!'}
       </h1>
 
       {/* Score + XP */}
-      <p className="text-4xl font-black text-[#FBBF24] tabular-nums mb-0.5">{score}</p>
-      <p className="text-xs text-[#64748B] uppercase tracking-wider mb-1">points</p>
+      <p className="text-4xl font-black text-ink bg-star border-2 border-ink rounded-control px-5 py-1 tabular-nums mb-1">{score}</p>
+      <p className="text-[13px] font-bold text-ink-muted mb-1">points</p>
       {sessionXP && sessionXP.total > 0 && (
         <div className="flex items-center gap-1.5 mb-5">
-          <span className="text-sm font-black text-[#34D399]">+{sessionXP.total} XP</span>
+          <span className="text-sm font-black text-ink bg-star border-2 border-ink rounded-full px-3 py-0.5">+{sessionXP.total} XP</span>
           {sessionXP.streakBonus > 0 && (
-            <span className="text-[10px] text-[#FBBF24]">({sessionXP.streakMultiplier}x streak)</span>
+            <span className="text-xs font-bold text-ink-muted">({sessionXP.streakMultiplier}x streak)</span>
           )}
         </div>
       )}
@@ -106,44 +106,44 @@ function QuizComplete({
 
       {/* Stats grid */}
       <div className="grid grid-cols-4 gap-2 w-full max-w-sm mb-5">
-        <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
-          <p className="text-lg font-black text-[#34D399] tabular-nums">{pct}%</p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Accuracy</p>
+        <div className="bg-card border-2 border-line rounded-tile p-2.5 text-center">
+          <p className="text-lg font-black text-success tabular-nums">{pct}%</p>
+          <p className="text-xs font-bold text-ink-muted">Accuracy</p>
         </div>
-        <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
-          <p className="text-lg font-black text-[#F1F5F9] tabular-nums">{correctCount}/{totalQuestions}</p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Correct</p>
+        <div className="bg-card border-2 border-line rounded-tile p-2.5 text-center">
+          <p className="text-lg font-black text-ink tabular-nums">{correctCount}/{totalQuestions}</p>
+          <p className="text-xs font-bold text-ink-muted">Correct</p>
         </div>
-        <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
-          <p className="text-lg font-black text-[#FBBF24] tabular-nums">🔥{maxCombo}</p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Max Combo</p>
+        <div className="bg-card border-2 border-line rounded-tile p-2.5 text-center">
+          <p className="text-lg font-black text-ink tabular-nums">🔥{maxCombo}</p>
+          <p className="text-xs font-bold text-ink-muted">Max Combo</p>
         </div>
-        <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
-          <p className="text-lg font-black text-[#60A5FA] tabular-nums">
+        <div className="bg-card border-2 border-line rounded-tile p-2.5 text-center">
+          <p className="text-lg font-black text-ink tabular-nums">
             {mins > 0 ? `${mins}m` : `${secs}s`}
           </p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Time</p>
+          <p className="text-xs font-bold text-ink-muted">Time</p>
         </div>
       </div>
 
       {/* Transitions */}
       {promoted.length > 0 && (
-        <div className="w-full max-w-sm bg-duo-green/10 border border-duo-green/20 rounded-xl px-3 py-2.5 mb-3">
-          <p className="text-xs font-bold text-emerald-400 mb-1">
+        <div className="w-full max-w-sm bg-success-soft border-2 border-success rounded-control px-3 py-2.5 mb-3">
+          <p className="text-label text-success mb-1">
             ⬆️ {promoted.length} card{promoted.length > 1 ? 's' : ''} leveled up
           </p>
           {promoted.slice(0, 4).map((t) => (
             <div key={t.cardId} className="flex items-center gap-2 py-0.5">
-              <span className="text-[10px] text-[#94A3B8] truncate flex-1">{t.cardFront}</span>
+              <span className="text-xs font-bold text-ink truncate flex-1">{t.cardFront}</span>
               <span
-                className="text-[10px] font-bold px-1.5 py-0.5 rounded"
+                className="text-xs font-bold px-1.5 py-0.5 rounded-full"
                 style={{ color: BOX_COLORS[t.oldBox], background: BOX_COLORS[t.oldBox] + '20' }}
               >
                 {BOX_NAMES[t.oldBox]}
               </span>
-              <span className="text-[#64748B] text-[10px]">→</span>
+              <span className="text-ink-muted text-xs">→</span>
               <span
-                className="text-[10px] font-bold px-1.5 py-0.5 rounded"
+                className="text-xs font-bold px-1.5 py-0.5 rounded-full"
                 style={{ color: BOX_COLORS[t.newBox], background: BOX_COLORS[t.newBox] + '20' }}
               >
                 {BOX_NAMES[t.newBox]}
@@ -157,8 +157,7 @@ function QuizComplete({
       <div className="w-full max-w-sm space-y-3 pb-8">
         <button
           onClick={onPlayAgain}
-          className="w-full py-3.5 rounded-2xl font-bold text-white text-sm"
-          style={{ background: 'linear-gradient(135deg, #FBBF24, #F59E0B)' }}
+          className="ui-btn ui-btn-primary w-full"
         >
           Play Again ⚡
         </button>
@@ -167,7 +166,7 @@ function QuizComplete({
         ) : (
           <button
             onClick={onDone}
-            className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-[#1E293B]"
+            className="ui-btn w-full"
           >
             Done
           </button>
@@ -466,9 +465,9 @@ export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSession
 
   if (phase === 'loading') {
     return (
-      <div className="min-h-screen bg-[#0F172A] flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center">
         <div className="text-5xl animate-sparky-bounce mb-4">⚡</div>
-        <p className="text-[#94A3B8] text-sm">Preparing quiz...</p>
+        <p className="text-ink-muted text-label">Preparing quiz...</p>
       </div>
     );
   }
@@ -516,16 +515,16 @@ export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSession
   const comboMult = getComboMultiplier(combo);
 
   return (
-    <div className="min-h-screen bg-[#0F172A] flex flex-col">
+    <div className="min-h-screen bg-paper flex flex-col">
       {/* ── Top bar ────────────────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-30 bg-[#0F172A]/95 backdrop-blur-md border-b border-white/5 px-4 py-2.5">
+      <div className="sticky top-0 z-30 bg-ink px-4 py-2.5">
         <div className="flex items-center justify-between max-w-md mx-auto">
           <button
             onClick={() => {
               if (currentIndex > 0) saveSession();
               router.push('/flashcards');
             }}
-            className="text-[#94A3B8] text-sm font-bold"
+            className="text-white text-sm font-bold"
           >
             ✕
           </button>
@@ -533,12 +532,12 @@ export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSession
           <div className="flex items-center gap-3">
             {/* Score */}
             <div className="flex items-center gap-1 relative">
-              <span className="text-xs font-bold text-[#FBBF24] tabular-nums">{score} pts</span>
+              <span className="text-xs font-bold text-star tabular-nums">{score} pts</span>
               {/* Points popup */}
               {pointsPopup && (
                 <span
                   key={pointsPopup.key}
-                  className="absolute -top-5 left-1/2 -translate-x-1/2 text-xs font-black text-[#34D399] animate-xp-float"
+                  className="absolute -top-5 left-1/2 -translate-x-1/2 text-xs font-black text-star animate-xp-float"
                 >
                   +{pointsPopup.points}
                 </span>
@@ -547,18 +546,18 @@ export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSession
 
             {/* Combo */}
             {combo >= 3 && (
-              <span className="text-xs font-black text-amber-400 animate-pulse tabular-nums">
+              <span className="text-xs font-black text-star animate-pulse tabular-nums">
                 🔥{combo} ({comboMult}x)
               </span>
             )}
           </div>
 
-          <span className="text-xs text-[#64748B] tabular-nums">
+          <span className="text-xs font-bold text-white/70 tabular-nums">
             {currentIndex + 1}/{questions.length}
           </span>
         </div>
 
-        <div className="max-w-md mx-auto mt-1">
+        <div className="max-w-md mx-auto mt-2">
           <ProgressDots total={questions.length} current={currentIndex} completed={currentIndex} />
         </div>
       </div>
@@ -576,22 +575,22 @@ export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSession
 
         {/* Topic + difficulty */}
         <div className="flex items-center gap-2 mb-3">
-          <span className="text-[10px] font-bold uppercase tracking-wider text-[#64748B]">
+          <span className="ui-chip">
             {q.topicName}
           </span>
           <div className="flex gap-0.5">
             {[1, 2, 3].map((d) => (
               <div
                 key={d}
-                className={`w-1.5 h-1.5 rounded-full ${d <= q.difficulty ? 'bg-[#F59E0B]' : 'bg-white/10'}`}
+                className={`w-1.5 h-1.5 rounded-full ${d <= q.difficulty ? 'bg-ink' : 'bg-line'}`}
               />
             ))}
           </div>
         </div>
 
         {/* Question text */}
-        <div className="w-full bg-[#1E293B] rounded-2xl px-5 py-5 mb-5 text-center">
-          <p className="text-[#F1F5F9] text-lg font-bold leading-relaxed">
+        <div className="w-full bg-card border-2 border-ink rounded-card shadow-hard-lg px-5 py-5 mb-5 text-center">
+          <p className="text-ink text-question leading-relaxed">
             {q.cardFront}
           </p>
           {q.cardFormula && (
@@ -599,7 +598,7 @@ export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSession
               <KatexRenderer
                 latex={q.cardFormula}
                 displayMode
-                className="text-[#F1F5F9] text-xl"
+                className="text-ink text-xl"
               />
             </div>
           )}
@@ -608,22 +607,22 @@ export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSession
         {/* ── Options ───────────────────────────────────────────────────────── */}
         <div className="w-full space-y-2.5">
           {q.options.map((opt) => {
-            let bgClass = 'bg-[#1E293B] border-white/10';
-            let textClass = 'text-[#F1F5F9]';
-            let labelBg = 'bg-white/10';
+            let bgClass = 'bg-card border-line';
+            let textClass = 'text-ink';
+            let labelBg = 'bg-soft';
 
             if (isAnswered) {
               if (opt.isCorrect) {
-                bgClass = 'bg-duo-green/20 border-duo-green/40';
-                textClass = 'text-emerald-300';
-                labelBg = 'bg-duo-green/30';
+                bgClass = 'bg-success-soft border-success';
+                textClass = 'text-success';
+                labelBg = 'bg-card';
               } else if (selectedOption === opt.id && !opt.isCorrect) {
-                bgClass = 'bg-red-500/20 border-red-500/40';
-                textClass = 'text-red-300';
-                labelBg = 'bg-red-500/30';
+                bgClass = 'bg-retry-soft border-retry';
+                textClass = 'text-retry';
+                labelBg = 'bg-card';
               } else {
-                bgClass = 'bg-[#1E293B]/50 border-white/5';
-                textClass = 'text-[#64748B]';
+                bgClass = 'bg-card border-line opacity-40';
+                textClass = 'text-ink';
               }
             }
 
@@ -632,23 +631,23 @@ export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSession
                 key={opt.id}
                 onClick={() => handleAnswer(opt.id)}
                 disabled={isAnswered}
-                className={`w-full flex items-center gap-3 rounded-xl px-4 py-3.5 border transition-[colors,border-color,transform] ${bgClass} ${
+                className={`w-full min-h-[52px] flex items-center gap-3 rounded-control px-4 py-3.5 border-2 transition-[colors,border-color,transform] ${bgClass} ${
                   isAnswered ? 'cursor-default' : 'active:scale-[0.97]'
                 }`}
               >
                 <span
-                  className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-black ${labelBg} ${textClass}`}
+                  className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-black ${labelBg} ${textClass}`}
                 >
                   {opt.id}
                 </span>
-                <span className={`text-sm font-bold text-left flex-1 ${textClass}`}>
+                <span className={`text-body font-bold text-left flex-1 ${textClass}`}>
                   {opt.text}
                 </span>
                 {isAnswered && opt.isCorrect && (
-                  <span className="text-emerald-400 flex-shrink-0">✓</span>
+                  <span className="text-success font-black flex-shrink-0">✓</span>
                 )}
                 {isAnswered && selectedOption === opt.id && !opt.isCorrect && (
-                  <span className="text-red-400 flex-shrink-0">✗</span>
+                  <span className="text-retry font-black flex-shrink-0">✗</span>
                 )}
               </button>
             );
@@ -658,14 +657,14 @@ export default function QuizBlitzSession({ deckId, conceptId }: QuizBlitzSession
         {/* Timeout message */}
         {isAnswered && selectedOption === null && (
           <div className="mt-4 text-center">
-            <p className="text-sm text-red-400 font-bold">
+            <p className="text-label text-ink">
               Time&apos;s up! Answer was: {correctOption?.text}
             </p>
           </div>
         )}
 
         {/* Keyboard hint (desktop) */}
-        <p className="mt-4 text-[10px] text-[#475569] hidden sm:block">
+        <p className="mt-4 text-xs text-ink-muted hidden sm:block">
           Press A, B, C, or D to answer
         </p>
       </div>

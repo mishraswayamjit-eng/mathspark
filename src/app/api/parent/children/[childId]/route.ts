@@ -41,6 +41,6 @@ export async function DELETE(
     return NextResponse.json({ success: true });
   } catch (err) {
     logError('[parent/children DELETE]', err);
-    return NextResponse.json({ error: 'Something went wrong.' }, { status: 500 });
+    return NextResponse.json({ error: "We couldn't finish that. Please try again." }, { status: 500 });
   }
 }

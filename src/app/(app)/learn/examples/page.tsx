@@ -119,7 +119,7 @@ export default function WorkedExamplesPage() {
             onClick={() => { setSelectedGrade(null); setLoading(true); }}
             className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
               selectedGrade === null
-                ? 'bg-action text-white border-action'
+                ? 'bg-action text-white border-ink'
                 : 'bg-white text-ink border-line'
             }`}
           >
@@ -131,7 +131,7 @@ export default function WorkedExamplesPage() {
               onClick={() => { setSelectedGrade(g); setLoading(true); }}
               className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
                 selectedGrade === g
-                  ? 'bg-action text-white border-action'
+                  ? 'bg-action text-white border-ink'
                   : 'bg-white text-ink border-line'
               }`}
             >
@@ -147,7 +147,7 @@ export default function WorkedExamplesPage() {
               onClick={() => { setSelectedTopic(null); setLoading(true); }}
               className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
                 selectedTopic === null
-                  ? 'bg-action text-white border-action'
+                  ? 'bg-action text-white border-ink'
                   : 'bg-white text-ink border-line'
               }`}
             >
@@ -161,10 +161,9 @@ export default function WorkedExamplesPage() {
                   onClick={() => { setSelectedTopic(t.topic); setLoading(true); }}
                   className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors flex items-center gap-1 ${
                     selectedTopic === t.topic
-                      ? 'text-white border-transparent'
+                      ? 'bg-action text-white border-ink'
                       : 'bg-white text-ink border-line'
                   }`}
-                  style={selectedTopic === t.topic ? { backgroundColor: meta.color } : {}}
                 >
                   <span>{meta.emoji}</span>
                   <span className="capitalize">{t.topic.replace(/_/g, ' ')}</span>
@@ -207,10 +206,7 @@ export default function WorkedExamplesPage() {
                     <div className="flex-1 min-w-0">
                       {/* Tags */}
                       <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                        <span
-                          className="text-xs font-extrabold px-2 py-0.5 rounded-full text-white"
-                          style={{ backgroundColor: meta.color }}
-                        >
+                        <span className="ui-chip">
                           {ex.topic.replace(/_/g, ' ')}
                         </span>
                         <span className="text-xs font-bold text-ink-muted">

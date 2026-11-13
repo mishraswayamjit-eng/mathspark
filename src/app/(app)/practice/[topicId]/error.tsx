@@ -17,7 +17,7 @@ export default function PracticeError({
       <h2 className="text-heading text-ink mb-2">
         Oops! Sparky tripped over a number!
       </h2>
-      <p className="text-ink-muted text-sm mb-6">Something went wrong. Let&apos;s try again!</p>
+      <p className="text-ink-muted text-sm mb-6">Oops! Sparky tripped over a number. Let&apos;s try again!</p>
       <button
         onClick={reset}
         className="ui-btn ui-btn-primary px-8"

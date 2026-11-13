@@ -48,7 +48,7 @@ export default function SolvePage() {
       setState('done');
     } catch (err) {
       logError('[solve] request', err);
-      setErrorMsg("Something went wrong — please try again in a moment.");
+      setErrorMsg("That didn't work this time — please try again in a moment.");
       setState('error');
     }
   }

@@ -250,7 +250,7 @@ export default function DailyChallengePage() {
     return (
       <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 gap-4">
         <Sparky mood="thinking" size={64} />
-        <p className="text-sm text-ink font-bold">{error || 'Something went wrong.'}</p>
+        <p className="text-sm text-ink font-bold">{error || "We couldn't finish that. Please try again."}</p>
         <button onClick={() => window.location.reload()} className="ui-btn ui-btn-primary px-6 text-sm">Retry</button>
         <Link href="/home" className="text-sm text-ink-muted font-bold">Go Home</Link>
       </div>

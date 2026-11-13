@@ -30,11 +30,11 @@ export default function AddChildPage() {
       });
       const data = await res.json();
 
-      if (!res.ok) { setError(data.error ?? 'Something went wrong.'); setLoading(false); return; }
+      if (!res.ok) { setError(data.error ?? "We couldn't finish that. Please try again."); setLoading(false); return; }
 
       router.push('/parent/dashboard');
     } catch {
-      setError('Something went wrong. Please try again.');
+      setError("We couldn't finish that. Please try again.");
       setLoading(false);
     }
   }

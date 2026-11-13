@@ -12,7 +12,7 @@ import tokens from './design/tokens.json';
 // the hundreds of older call sites pick up the palette; do not use `duo-*` in
 // new code.
 //
-// Dark mode (bg-[#0F172A]) is used only by flashcards and is outside this system.
+// There is no separate dark theme: flashcards use this system too.
 
 const color = (name: keyof typeof tokens.color): string => tokens.color[name].$value;
 const radius = (name: keyof typeof tokens.radius): string => tokens.radius[name].$value;
@@ -69,6 +69,7 @@ const config: Config = {
         retry:   { DEFAULT: color('retry'), soft: color('retry-soft') },
         hint:    { DEFAULT: color('hint'), ink: color('hint-ink') },
         star:    color('star'),
+        strong:  { DEFAULT: color('strong'), soft: color('strong-soft') },
 
         // ── Neutral ramp: Tailwind `gray` re-tinted to the ink/line family ──
         gray: {

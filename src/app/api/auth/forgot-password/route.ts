@@ -76,6 +76,6 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: err.message }, { status: 400 });
     }
     logError('[forgot-password] Unexpected error:', err);
-    return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
+    return NextResponse.json({ error: "We couldn't finish that. Please try again." }, { status: 500 });
   }
 }

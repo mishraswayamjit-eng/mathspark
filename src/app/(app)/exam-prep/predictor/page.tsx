@@ -137,7 +137,7 @@ export default function IPMPredictorPage() {
                 onClick={() => setSelectedGrade(isActive ? null : g)}
                 className={`flex flex-col items-center px-3.5 py-2.5 rounded-control border-2 shrink-0 transition-colors min-w-[72px] ${
                   isActive
-                    ? 'bg-action text-white border-action'
+                    ? 'bg-action text-white border-ink'
                     : 'bg-white text-ink border-line'
                 }`}
               >
@@ -201,14 +201,13 @@ export default function IPMPredictorPage() {
                 {prediction.topicFrequency
                   .filter((t) => t.topic !== 'Other')
                   .map((t) => {
-                    const color = topicColor(t.topic);
                     return (
                       <div key={t.topic} className="flex items-center gap-2">
                         <span className="text-xs font-semibold text-ink w-32 truncate shrink-0">{t.topic}</span>
                         <div className="flex-1 h-5 bg-soft rounded-full overflow-hidden relative">
                           <div
-                            className="h-full rounded-full transition-[width] duration-700"
-                            style={{ width: `${Math.max(t.percentage, 3)}%`, backgroundColor: color }}
+                            className="h-full rounded-full bg-action transition-[width] duration-700"
+                            style={{ width: `${Math.max(t.percentage, 3)}%` }}
                           />
                           <span className="absolute right-2 top-1/2 -translate-y-1/2 text-xs font-extrabold text-ink-muted">
                             {t.percentage}%
@@ -252,11 +251,12 @@ export default function IPMPredictorPage() {
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {prediction.alwaysAppears.filter((t) => t !== 'Other').map((t) => (
-                        <span
-                          key={t}
-                          className="text-xs font-bold px-2 py-1 rounded-full text-white"
-                          style={{ backgroundColor: topicColor(t) }}
-                        >
+                        <span key={t} className="ui-chip">
+                          <span
+                            className="w-2.5 h-2.5 rounded-full shrink-0"
+                            style={{ backgroundColor: topicColor(t) }}
+                            aria-hidden="true"
+                          />
                           {t}
                         </span>
                       ))}
@@ -272,11 +272,12 @@ export default function IPMPredictorPage() {
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {prediction.frequentlyAppears.map((t) => (
-                        <span
-                          key={t}
-                          className="text-xs font-bold px-2 py-1 rounded-full border-2"
-                          style={{ color: topicColor(t), borderColor: topicColor(t), backgroundColor: topicColor(t) + '15' }}
-                        >
+                        <span key={t} className="ui-chip">
+                          <span
+                            className="w-2.5 h-2.5 rounded-full shrink-0"
+                            style={{ backgroundColor: topicColor(t) }}
+                            aria-hidden="true"
+                          />
                           {t}
                         </span>
                       ))}
@@ -312,10 +313,7 @@ export default function IPMPredictorPage() {
                 <div className="space-y-2">
                   {prediction.predictedFocusAreas.filter((t) => t !== 'Other').map((topic, i) => (
                     <div key={topic} className="flex items-center gap-2.5">
-                      <span
-                        className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-extrabold text-white shrink-0"
-                        style={{ backgroundColor: topicColor(topic) }}
-                      >
+                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-extrabold bg-soft text-ink border-2 border-line shrink-0">
                         {i + 1}
                       </span>
                       <span className="text-sm font-bold text-ink">{topic}</span>
@@ -352,11 +350,12 @@ export default function IPMPredictorPage() {
                     {s.topTopics.length > 0 && (
                       <div className="flex gap-1 mt-1 flex-wrap">
                         {s.topTopics.map((t) => (
-                          <span
-                            key={t}
-                            className="text-xs font-bold px-1.5 py-0.5 rounded-full text-white"
-                            style={{ backgroundColor: topicColor(t) }}
-                          >
+                          <span key={t} className="ui-chip">
+                            <span
+                              className="w-2.5 h-2.5 rounded-full shrink-0"
+                              style={{ backgroundColor: topicColor(t) }}
+                              aria-hidden="true"
+                            />
                             {t}
                           </span>
                         ))}

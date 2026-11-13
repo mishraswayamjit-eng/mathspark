@@ -64,17 +64,13 @@ function BreathingCircle({
   return (
     <div className="flex flex-col items-center gap-6">
       <div
-        className={`w-32 h-32 rounded-full transition-transform ease-in-out ${scale} ${duration}`}
-        style={{
-          background: 'radial-gradient(circle, rgba(96,165,250,0.4) 0%, rgba(96,165,250,0.1) 60%, transparent 100%)',
-          boxShadow: '0 0 40px 10px rgba(96,165,250,0.15)',
-        }}
+        className={`w-32 h-32 rounded-full bg-soft transition-transform ease-in-out ${scale} ${duration}`}
       >
-        <div className="w-full h-full rounded-full flex items-center justify-center border-2 border-[#60A5FA]/30">
+        <div className="w-full h-full rounded-full flex items-center justify-center border-2 border-ink">
           <span className="text-4xl">🧘</span>
         </div>
       </div>
-      <p className="text-lg font-bold text-[#60A5FA] animate-pulse">{label}</p>
+      <p className="font-display text-heading text-ink animate-pulse">{label}</p>
     </div>
   );
 }
@@ -99,33 +95,32 @@ function CardReveal({
   return (
     <div className="w-full max-w-sm mx-auto animate-flashcard-slide-up">
       {label && (
-        <p className="text-center text-[10px] font-bold uppercase tracking-widest text-[#64748B] mb-3">
+        <p className="text-center text-[13px] font-bold text-ink-muted mb-3">
           {label}
         </p>
       )}
 
       <div
-        className="rounded-2xl p-5 mb-4"
+        className="bg-card border-2 border-ink rounded-card shadow-hard-lg p-5 mb-4"
         style={{
-          background: '#1E293B',
-          borderLeft: `4px solid ${phaseColor}`,
+          borderLeft: `10px solid ${phaseColor}`,
         }}
       >
         {/* Front */}
-        <p className="text-[#F1F5F9] text-base font-bold leading-relaxed">
+        <p className="text-ink text-question leading-relaxed">
           {card.front}
         </p>
 
         {card.formula && (
           <div className="mt-3">
-            <KatexRenderer latex={card.formula} displayMode className="text-[#F1F5F9]" />
+            <KatexRenderer latex={card.formula} displayMode className="text-ink" />
           </div>
         )}
 
         {/* Back (revealed) */}
         {showBack && (
-          <div className="mt-4 pt-3 border-t border-white/10 animate-fade-in">
-            <p className="text-sm text-[#34D399] font-bold leading-relaxed">
+          <div className="mt-4 pt-3 border-t-2 border-line animate-fade-in">
+            <p className="text-body text-ink bg-soft rounded-note px-3 py-2 font-bold leading-relaxed">
               {card.back}
             </p>
           </div>
@@ -137,16 +132,14 @@ function CardReveal({
         {!showBack ? (
           <button
             onClick={onReveal}
-            className="flex-1 py-3 rounded-xl font-bold text-sm text-white transition-transform active:scale-[0.97]"
-            style={{ background: phaseColor }}
+            className="flex-1 py-3 rounded-control font-extrabold text-sm text-white bg-action border-2 border-ink shadow-hard-sm transition-transform active:scale-[0.97]"
           >
             Show Answer
           </button>
         ) : (
           <button
             onClick={onNext}
-            className="flex-1 py-3 rounded-xl font-bold text-sm text-white transition-transform active:scale-[0.97]"
-            style={{ background: phaseColor }}
+            className="flex-1 py-3 rounded-control font-extrabold text-sm text-white bg-action border-2 border-ink shadow-hard-sm transition-transform active:scale-[0.97]"
           >
             Next →
           </button>
@@ -170,7 +163,7 @@ function PhaseTransition({
   onStart: () => void;
 }) {
   return (
-    <div className="fixed inset-0 z-50 bg-[#0F172A] flex flex-col items-center justify-center px-6 animate-fade-in">
+    <div className="fixed inset-0 z-50 bg-paper flex flex-col items-center justify-center px-6 animate-fade-in">
       {/* Progress dots */}
       <div className="flex gap-2 mb-8">
         {Array.from({ length: total }).map((_, i) => (
@@ -178,7 +171,7 @@ function PhaseTransition({
             key={i}
             className="w-2.5 h-2.5 rounded-full transition-[background-color,transform]"
             style={{
-              background: i < phaseIndex ? '#34D399' : i === phaseIndex ? config.color : 'rgba(255,255,255,0.1)',
+              background: i < phaseIndex ? '#4f46e5' : i === phaseIndex ? '#1d2a4d' : '#d3deee',
               transform: i === phaseIndex ? 'scale(1.3)' : 'scale(1)',
             }}
           />
@@ -186,8 +179,8 @@ function PhaseTransition({
       </div>
 
       <span className="text-5xl mb-4">{config.emoji}</span>
-      <h2 className="text-xl font-black text-[#F1F5F9] mb-2">{config.label}</h2>
-      <p className="text-sm text-[#94A3B8] mb-8 text-center max-w-xs">
+      <h2 className="text-heading text-ink mb-2">{config.label}</h2>
+      <p className="text-label text-ink-muted mb-8 text-center max-w-xs">
         {config.phase === 'breathe' && 'Take 3 deep breaths to clear your mind'}
         {config.phase === 'quickfire' && 'Quick mental math — just tap to reveal!'}
         {config.phase === 'formulas' && 'Review key formulas before the exam'}
@@ -197,8 +190,7 @@ function PhaseTransition({
 
       <button
         onClick={onStart}
-        className="px-8 py-3 rounded-2xl font-bold text-sm text-white transition-transform active:scale-[0.97]"
-        style={{ background: config.color }}
+        className="px-8 py-3 rounded-control font-extrabold text-sm text-white bg-action border-2 border-ink shadow-hard-sm transition-transform active:scale-[0.97]"
       >
         {config.phase === 'ready' ? 'Finish Warm-Up' : 'Start →'}
       </button>
@@ -390,9 +382,9 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
 
   if (currentPhase === 'loading') {
     return (
-      <div className="min-h-screen bg-[#0F172A] flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center">
         <div className="text-5xl animate-sparky-bounce mb-4">🧘</div>
-        <p className="text-[#94A3B8] text-sm">Preparing warm-up...</p>
+        <p className="text-ink-muted text-label">Preparing warm-up...</p>
       </div>
     );
   }
@@ -405,12 +397,12 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
     if (config.phase === 'ready') {
       // Final "Ready!" screen
       return (
-        <div className="fixed inset-0 z-50 bg-[#0F172A] flex flex-col items-center justify-center px-6 animate-fade-in">
+        <div className="fixed inset-0 z-50 bg-paper flex flex-col items-center justify-center px-6 animate-fade-in">
           <Confetti />
 
           <div className="flex gap-2 mb-6">
             {PHASE_ORDER.map((_, i) => (
-              <div key={i} className="w-2.5 h-2.5 rounded-full bg-[#34D399]" />
+              <div key={i} className="w-2.5 h-2.5 rounded-full bg-action" />
             ))}
           </div>
 
@@ -418,13 +410,13 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
             <Sparky mood="celebrating" size={100} />
           </div>
 
-          <h1 className="text-2xl font-black text-[#F1F5F9] mt-4 mb-2">
+          <h1 className="text-display text-ink mt-4 mb-2">
             You&apos;re Ready!
           </h1>
-          <p className="text-sm text-[#94A3B8] mb-2 text-center max-w-xs">
+          <p className="text-label text-ink-muted mb-2 text-center max-w-xs">
             Mind is calm, formulas fresh, confidence high.
           </p>
-          <p className="text-lg font-black text-[#FBBF24] mb-8">Go crush it! 🌟</p>
+          <p className="text-lg font-black text-ink mb-8">Go crush it! 🌟</p>
 
           <div className="w-full max-w-xs space-y-3">
             <button
@@ -433,8 +425,7 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
                 playMastery();
                 router.push('/test');
               }}
-              className="w-full py-3.5 rounded-2xl font-bold text-sm text-white"
-              style={{ background: 'linear-gradient(135deg, #34D399, #059669)' }}
+              className="ui-btn ui-btn-primary w-full"
             >
               Start My Exam 🚀
             </button>
@@ -443,7 +434,7 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
                 saveSession();
                 router.push(conceptId ? `/learn/concept-map?open=${conceptId}` : '/flashcards');
               }}
-              className="w-full py-3.5 rounded-2xl font-bold text-sm text-[#94A3B8] bg-[#1E293B]"
+              className="ui-btn w-full"
             >
               {conceptId ? 'Back to Concept Map' : 'Back to Cards'}
             </button>
@@ -466,15 +457,15 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
 
   if (currentPhase === 'breathe') {
     return (
-      <div className="min-h-screen bg-[#0F172A] flex flex-col">
+      <div className="min-h-screen bg-paper flex flex-col">
         {/* Top bar */}
-        <div className="sticky top-0 z-30 bg-[#0F172A]/95 backdrop-blur-md border-b border-white/5 px-4 py-2.5">
+        <div className="sticky top-0 z-30 bg-ink px-4 py-2.5">
           <div className="flex items-center justify-between max-w-md mx-auto">
-            <button onClick={() => router.push('/flashcards')} className="text-[#94A3B8] text-sm font-bold">
+            <button onClick={() => router.push('/flashcards')} className="text-white text-sm font-bold">
               ✕
             </button>
-            <span className="text-xs font-bold text-[#60A5FA]">🧘 Calm Your Mind</span>
-            <span className="text-xs text-[#64748B] tabular-nums">
+            <span className="font-display text-title text-white">🧘 Calm Your Mind</span>
+            <span className="text-xs font-bold text-white/70 tabular-nums">
               {breathCycle + 1}/{BREATH_CYCLES}
             </span>
           </div>
@@ -483,7 +474,7 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
         <div className="flex-1 flex flex-col items-center justify-center px-6">
           <BreathingCircle breathState={breathState} />
 
-          <p className="text-xs text-[#64748B] mt-8">
+          <p className="text-[13px] font-bold text-ink-muted mt-8">
             Breath {breathCycle + 1} of {BREATH_CYCLES}
           </p>
         </div>
@@ -506,39 +497,38 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
   };
 
   return (
-    <div className="min-h-screen bg-[#0F172A] flex flex-col">
+    <div className="min-h-screen bg-paper flex flex-col">
       {/* Top bar */}
-      <div className="sticky top-0 z-30 bg-[#0F172A]/95 backdrop-blur-md border-b border-white/5 px-4 py-2.5">
+      <div className="sticky top-0 z-30 bg-ink px-4 py-2.5">
         <div className="flex items-center justify-between max-w-md mx-auto">
           <button
             onClick={() => {
               saveSession();
               router.push('/flashcards');
             }}
-            className="text-[#94A3B8] text-sm font-bold"
+            className="text-white text-sm font-bold"
           >
             ✕
           </button>
 
           <div className="flex items-center gap-2">
             <span className="text-sm">{phaseConfig.emoji}</span>
-            <span className="text-xs font-bold" style={{ color: phaseConfig.color }}>
+            <span className="font-display text-title text-white">
               {phaseConfig.label}
             </span>
           </div>
 
-          <span className="text-xs text-[#64748B] tabular-nums">
+          <span className="text-xs font-bold text-white/70 tabular-nums">
             {currentCardIndex + 1}/{cards.length}
           </span>
         </div>
 
         {/* Phase progress bar */}
-        <div className="max-w-md mx-auto mt-1.5 h-1 bg-white/5 rounded-full overflow-hidden">
+        <div className="ui-meter max-w-md mx-auto mt-1.5 h-3">
           <div
-            className="h-full rounded-full transition-[width] duration-300"
+            className="h-full bg-action rounded-full transition-[width] duration-300"
             style={{
               width: `${((currentCardIndex + 1) / cards.length) * 100}%`,
-              background: phaseConfig.color,
             }}
           />
         </div>
@@ -550,7 +540,7 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
               key={i}
               className="w-1.5 h-1.5 rounded-full"
               style={{
-                background: i < phaseIndex ? '#34D399' : i === phaseIndex ? phaseConfig.color : 'rgba(255,255,255,0.1)',
+                background: i < phaseIndex ? '#ffffff' : i === phaseIndex ? '#f5a400' : 'rgba(255,255,255,0.3)',
               }}
             />
           ))}
@@ -561,9 +551,9 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
       <div className="flex-1 flex flex-col items-center justify-center px-4 py-6" key={`${currentPhase}-${currentCardIndex}`}>
         {/* Confidence boost: show mastery badge */}
         {currentPhase === 'confidence' && (
-          <div className="flex items-center gap-2 mb-4 bg-duo-green/10 border border-duo-green/20 rounded-full px-3 py-1">
+          <div className="flex items-center gap-2 mb-4 bg-success-soft border-2 border-success rounded-full px-3 py-1">
             <span className="text-sm">💪</span>
-            <span className="text-xs font-bold text-emerald-400">
+            <span className="text-label text-success">
               Box {currentCard.leitnerBox} — You know this!
             </span>
           </div>
@@ -584,7 +574,7 @@ export default function WarmUpSession({ deckId, conceptId }: WarmUpSessionProps)
             playLevelUp();
             advanceToNextPhase();
           }}
-          className="mt-6 text-xs text-[#475569] hover:text-[#94A3B8] transition-colors min-h-0"
+          className="mt-6 text-[13px] font-bold text-ink-muted hover:text-ink transition-colors min-h-0"
         >
           Skip to next phase →
         </button>

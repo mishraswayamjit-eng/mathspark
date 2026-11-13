@@ -145,7 +145,7 @@ export default function TestConfigPage() {
       const { testId } = await res.json();
       router.push(`/test/${testId}`);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again!');
+      setError(err instanceof Error ? err.message : "We couldn't finish that. Please try again!");
       setLoading(false);
     }
   }
@@ -170,7 +170,7 @@ export default function TestConfigPage() {
       const { testId } = await res.json();
       router.push(`/test/${testId}`);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again!');
+      setError(err instanceof Error ? err.message : "We couldn't finish that. Please try again!");
       setPyqLoading(null);
     }
   }
@@ -195,7 +195,7 @@ export default function TestConfigPage() {
       const { testId } = await res.json();
       router.push(`/test/${testId}`);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again!');
+      setError(err instanceof Error ? err.message : "We couldn't finish that. Please try again!");
       setMegaLoading(false);
     }
   }

@@ -14,10 +14,10 @@ export default function TimerCircle({ totalMs, remainingMs, size = 56 }: TimerCi
   const circumference = 2 * Math.PI * r;
   const offset = circumference * (1 - pct);
 
-  // Color shifts: green → amber → red
-  let color = '#34D399'; // green
-  if (pct < 0.3) color = '#EF4444'; // red
-  else if (pct < 0.6) color = '#F59E0B'; // amber
+  // Colour: action indigo, turning star gold when time is low (never red)
+  let color = '#4f46e5'; // action
+  if (pct < 0.3) color = '#f5a400'; // star (low)
+  else if (pct < 0.6) color = '#4f46e5'; // action
 
   // Pulse when under 3 seconds
   const pulse = seconds <= 3 && seconds > 0;
@@ -31,7 +31,7 @@ export default function TimerCircle({ totalMs, remainingMs, size = 56 }: TimerCi
           cy={size / 2}
           r={r}
           fill="none"
-          stroke="rgba(255,255,255,0.08)"
+          stroke="#d3deee"
           strokeWidth={5}
         />
         {/* Progress ring */}
@@ -54,7 +54,7 @@ export default function TimerCircle({ totalMs, remainingMs, size = 56 }: TimerCi
           y={size / 2}
           textAnchor="middle"
           dominantBaseline="central"
-          fill={color}
+          fill="#1d2a4d"
           fontSize={size * 0.36}
           fontWeight="900"
           className="tabular-nums"

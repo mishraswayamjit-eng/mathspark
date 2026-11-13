@@ -57,25 +57,25 @@ function SpeedComplete({
   const speed = (correctCount / 60).toFixed(1); // cards per second
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#0F172A] flex flex-col items-center justify-center px-6 animate-fade-in">
+    <div className="fixed inset-0 z-50 bg-paper flex flex-col items-center justify-center px-6 animate-fade-in">
       {correctCount >= 15 && <Confetti />}
 
       <div className={correctCount >= 15 ? 'animate-sparky-dance' : 'animate-sparky-bounce'}>
         <Sparky mood={correctCount >= 15 ? 'celebrating' : correctCount >= 8 ? 'happy' : 'encouraging'} size={80} />
       </div>
 
-      <h1 className="text-2xl font-black text-[#F1F5F9] mt-3 mb-1">
+      <h1 className="text-display text-ink mt-3 mb-1">
         {correctCount >= 20 ? 'Lightning Fast!' : correctCount >= 12 ? 'Speed Demon!' : correctCount >= 6 ? 'Quick Thinker!' : 'Good Effort!'}
       </h1>
 
       {/* Big number + XP */}
-      <p className="text-5xl font-black text-[#FBBF24] tabular-nums mb-0.5">{correctCount}</p>
-      <p className="text-xs text-[#64748B] uppercase tracking-wider mb-1">correct in 60s</p>
+      <p className="text-5xl font-black text-ink bg-star border-2 border-ink rounded-control px-5 py-1 tabular-nums mb-1">{correctCount}</p>
+      <p className="text-[13px] font-bold text-ink-muted mb-1">correct in 60s</p>
       {sessionXP && sessionXP.total > 0 && (
         <div className="flex items-center gap-1.5 mb-5">
-          <span className="text-sm font-black text-[#34D399]">+{sessionXP.total} XP</span>
+          <span className="text-sm font-black text-ink bg-star border-2 border-ink rounded-full px-3 py-0.5">+{sessionXP.total} XP</span>
           {sessionXP.streakBonus > 0 && (
-            <span className="text-[10px] text-[#FBBF24]">({sessionXP.streakMultiplier}x streak)</span>
+            <span className="text-xs font-bold text-ink-muted">({sessionXP.streakMultiplier}x streak)</span>
           )}
         </div>
       )}
@@ -83,21 +83,21 @@ function SpeedComplete({
 
       {/* Stats grid */}
       <div className="grid grid-cols-4 gap-2 w-full max-w-sm mb-6">
-        <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
-          <p className="text-lg font-black text-[#F1F5F9] tabular-nums">{answered}</p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Answered</p>
+        <div className="bg-card border-2 border-line rounded-tile p-2.5 text-center">
+          <p className="text-lg font-black text-ink tabular-nums">{answered}</p>
+          <p className="text-xs font-bold text-ink-muted">Answered</p>
         </div>
-        <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
-          <p className="text-lg font-black text-[#34D399] tabular-nums">{pct}%</p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Accuracy</p>
+        <div className="bg-card border-2 border-line rounded-tile p-2.5 text-center">
+          <p className="text-lg font-black text-success tabular-nums">{pct}%</p>
+          <p className="text-xs font-bold text-ink-muted">Accuracy</p>
         </div>
-        <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
-          <p className="text-lg font-black text-[#FBBF24] tabular-nums">🔥{maxStreak}</p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Streak</p>
+        <div className="bg-card border-2 border-line rounded-tile p-2.5 text-center">
+          <p className="text-lg font-black text-ink tabular-nums">🔥{maxStreak}</p>
+          <p className="text-xs font-bold text-ink-muted">Streak</p>
         </div>
-        <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
-          <p className="text-lg font-black text-[#A78BFA] tabular-nums">{speed}</p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">/sec</p>
+        <div className="bg-card border-2 border-line rounded-tile p-2.5 text-center">
+          <p className="text-lg font-black text-ink tabular-nums">{speed}</p>
+          <p className="text-xs font-bold text-ink-muted">/sec</p>
         </div>
       </div>
 
@@ -105,8 +105,7 @@ function SpeedComplete({
       <div className="w-full max-w-sm space-y-3">
         <button
           onClick={onPlayAgain}
-          className="w-full py-3.5 rounded-2xl font-bold text-white text-sm"
-          style={{ background: 'linear-gradient(135deg, #EF4444, #DC2626)' }}
+          className="ui-btn ui-btn-primary w-full"
         >
           Go Again 🔥
         </button>
@@ -115,7 +114,7 @@ function SpeedComplete({
         ) : (
           <button
             onClick={onDone}
-            className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-[#1E293B]"
+            className="ui-btn w-full"
           >
             Done
           </button>
@@ -330,9 +329,9 @@ export default function SpeedRoundSession({ deckId, conceptId }: SpeedRoundSessi
 
   if (phase === 'loading') {
     return (
-      <div className="min-h-screen bg-[#0F172A] flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center">
         <div className="text-5xl animate-sparky-bounce mb-4">🔥</div>
-        <p className="text-[#94A3B8] text-sm">Preparing speed round...</p>
+        <p className="text-ink-muted text-label">Preparing speed round...</p>
       </div>
     );
   }
@@ -341,14 +340,14 @@ export default function SpeedRoundSession({ deckId, conceptId }: SpeedRoundSessi
 
   if (phase === 'countdown') {
     return (
-      <div className="min-h-screen bg-[#0F172A] flex flex-col items-center justify-center">
-        <p className="text-xs text-[#64748B] uppercase tracking-widest mb-4">Get Ready!</p>
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center">
+        <p className="font-display text-title text-ink-muted mb-4">Get Ready!</p>
         <div className="animate-combo-bounce" key={countdownNum}>
-          <span className="text-8xl font-black text-[#F1F5F9] tabular-nums">
+          <span className="text-8xl font-black text-ink tabular-nums">
             {countdownNum > 0 ? countdownNum : 'GO!'}
           </span>
         </div>
-        <p className="text-sm text-[#94A3B8] mt-6">60 seconds · Answer as many as you can!</p>
+        <p className="text-label text-ink-muted mt-6">60 seconds · Answer as many as you can!</p>
       </div>
     );
   }
@@ -388,57 +387,57 @@ export default function SpeedRoundSession({ deckId, conceptId }: SpeedRoundSessi
   if (!q) return null;
 
   const pct = timeRemaining / ROUND_DURATION_MS;
-  const barColor = pct > 0.5 ? '#34D399' : pct > 0.2 ? '#F59E0B' : '#EF4444';
+  const barColor = pct > 0.5 ? '#4f46e5' : pct > 0.2 ? '#4f46e5' : '#f5a400';
   const seconds = Math.ceil(timeRemaining / 1000);
 
   // Screen flash overlay
   const flashOverlay = flashColor === 'green'
-    ? 'bg-duo-green/10'
+    ? '!bg-success-soft'
     : flashColor === 'red'
-    ? 'bg-red-500/10'
+    ? '!bg-retry-soft'
     : '';
 
   return (
-    <div className={`min-h-screen bg-[#0F172A] flex flex-col transition-colors duration-150 ${flashOverlay}`}>
+    <div className={`min-h-screen bg-paper flex flex-col transition-colors duration-150 ${flashOverlay}`}>
       {/* ── Top bar ──────────────────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-30 bg-[#0F172A]/95 backdrop-blur-md px-4 py-2">
+      <div className="sticky top-0 z-30 bg-ink px-4 py-2">
         <div className="flex items-center justify-between max-w-md mx-auto mb-1.5">
           <button
             onClick={() => {
               if (timerRef.current) clearInterval(timerRef.current);
               setPhase('complete');
             }}
-            className="text-[#94A3B8] text-sm font-bold"
+            className="text-white text-sm font-bold"
           >
             ✕
           </button>
 
           <div className="flex items-center gap-3">
             {/* Timer number */}
-            <span className={`text-lg font-black tabular-nums ${seconds <= 10 ? 'text-red-400 animate-timer-urgent' : 'text-[#F1F5F9]'}`}>
+            <span className={`text-lg font-black tabular-nums ${seconds <= 10 ? 'text-star animate-timer-urgent' : 'text-white'}`}>
               {seconds}s
             </span>
 
             {/* Score */}
-            <span className="text-sm font-bold text-[#FBBF24] tabular-nums">
+            <span className="text-sm font-bold text-star tabular-nums">
               ✓ {correctCount}
             </span>
 
             {/* Streak */}
             {streak >= 3 && (
-              <span className="text-sm font-black text-amber-400 animate-pulse tabular-nums">
+              <span className="text-sm font-black text-star animate-pulse tabular-nums">
                 🔥{streak}
               </span>
             )}
           </div>
 
-          <span className="text-xs text-[#64748B] tabular-nums">
+          <span className="text-xs font-bold text-white/70 tabular-nums">
             #{answered + 1}
           </span>
         </div>
 
         {/* Timer bar */}
-        <div className="max-w-md mx-auto h-1.5 bg-white/5 rounded-full overflow-hidden">
+        <div className="ui-meter max-w-md mx-auto h-3">
           <div
             className="h-full rounded-full transition-[width] duration-100"
             style={{
@@ -452,13 +451,13 @@ export default function SpeedRoundSession({ deckId, conceptId }: SpeedRoundSessi
       {/* ── Question area ────────────────────────────────────────────────────── */}
       <div className="flex-1 flex flex-col items-center px-4 py-3 max-w-md mx-auto w-full">
         {/* Question text */}
-        <div className="w-full bg-[#1E293B] rounded-2xl px-5 py-4 mb-4 text-center animate-flashcard-slide-up" key={currentIndex}>
-          <p className="text-[#F1F5F9] text-base font-bold leading-relaxed">
+        <div className="w-full bg-card border-2 border-ink rounded-card shadow-hard-lg px-5 py-4 mb-4 text-center animate-flashcard-slide-up" key={currentIndex}>
+          <p className="text-ink text-question leading-relaxed">
             {q.cardFront}
           </p>
           {q.cardFormula && (
             <div className="mt-2">
-              <KatexRenderer latex={q.cardFormula} displayMode className="text-[#F1F5F9]" />
+              <KatexRenderer latex={q.cardFormula} displayMode className="text-ink" />
             </div>
           )}
         </div>
@@ -469,12 +468,12 @@ export default function SpeedRoundSession({ deckId, conceptId }: SpeedRoundSessi
             <button
               key={opt.id}
               onClick={() => handleAnswer(opt.id)}
-              className="flex items-center gap-2 rounded-xl px-3 py-3 border border-white/10 bg-[#1E293B] active:scale-[0.95] transition-[transform,background-color,border-color]"
+              className="min-h-[52px] flex items-center gap-2 rounded-control px-3 py-3 border-2 border-line bg-card active:scale-[0.95] transition-[transform,background-color,border-color]"
             >
-              <span className="flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-black bg-white/10 text-[#F1F5F9]">
+              <span className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-black bg-soft text-ink">
                 {opt.id}
               </span>
-              <span className="text-xs font-bold text-[#F1F5F9] text-left flex-1 leading-tight">
+              <span className="text-sm font-bold text-ink text-left flex-1 leading-tight">
                 {opt.text}
               </span>
             </button>
@@ -482,7 +481,7 @@ export default function SpeedRoundSession({ deckId, conceptId }: SpeedRoundSessi
         </div>
 
         {/* Keyboard hint */}
-        <p className="mt-3 text-[10px] text-[#475569] hidden sm:block">
+        <p className="mt-3 text-xs text-ink-muted hidden sm:block">
           Press A, B, C, or D · Speed is everything!
         </p>
       </div>

@@ -37,7 +37,7 @@ interface BoxTransition {
 type Phase = 'loading' | 'prompt' | 'recording' | 'reveal' | 'complete';
 
 const BOX_NAMES = ['New', 'Rookie', 'Rising', 'Strong', 'Expert', 'Master'];
-const BOX_COLORS = ['#64748B', '#EF4444', '#F59E0B', '#3B82F6', '#8B5CF6', '#34D399'];
+const BOX_COLORS = ['#5d6b8c', '#5a4300', '#4f46e5', '#0e7490', '#3f37c9', '#12805c'];
 const THINK_TIME_MS = 15_000; // 15 seconds to think + speak
 const PULSE_BARS = 12; // number of bars in the voice visualizer
 
@@ -64,7 +64,7 @@ function MicVisualizer({ active }: { active: boolean }) {
             className="w-1 rounded-full transition-[height,background-color] duration-150"
             style={{
               height: `${h}px`,
-              background: active ? `hsl(${160 + i * 8}, 80%, ${l}%)` : '#334155',
+              background: active ? `hsl(243, 75%, ${l}%)` : '#d3deee',
             }}
           />
         );
@@ -101,17 +101,17 @@ function VoiceComplete({
   const mastered = transitions.filter((t) => t.reachedMastery);
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#0F172A] flex flex-col items-center justify-center px-6 animate-fade-in overflow-y-auto">
+    <div className="fixed inset-0 z-50 bg-paper flex flex-col items-center justify-center px-6 animate-fade-in overflow-y-auto">
       {mastered.length > 0 && <Confetti />}
 
       <div className={pct >= 70 ? 'animate-sparky-dance' : 'animate-sparky-bounce'}>
         <Sparky mood={pct >= 70 ? 'celebrating' : pct >= 40 ? 'happy' : 'encouraging'} size={80} />
       </div>
 
-      <h1 className="text-2xl font-black text-[#F1F5F9] mt-3 mb-1">
+      <h1 className="text-display text-ink mt-3 mb-1">
         {pct >= 80 ? 'Voice Master!' : pct >= 60 ? 'Great Recall!' : pct >= 40 ? 'Good Practice!' : 'Keep Speaking!'}
       </h1>
-      <p className="text-sm text-[#94A3B8] mb-4">
+      <p className="text-label text-ink-muted mb-4 text-center">
         {pct >= 80
           ? 'Speaking answers out loud really works!'
           : pct >= 50
@@ -122,49 +122,49 @@ function VoiceComplete({
       {/* XP */}
       {sessionXP && sessionXP.total > 0 && (
         <div className="flex items-center gap-1.5 mb-4 animate-pop-in">
-          <span className="text-lg font-black text-[#34D399]">+{sessionXP.total} XP</span>
+          <span className="text-lg font-black text-ink bg-star border-2 border-ink rounded-full px-3 py-0.5">+{sessionXP.total} XP</span>
           {sessionXP.streakBonus > 0 && (
-            <span className="text-[10px] text-[#FBBF24]">({sessionXP.streakMultiplier}x streak)</span>
+            <span className="text-xs font-bold text-ink-muted">({sessionXP.streakMultiplier}x streak)</span>
           )}
         </div>
       )}
 
       {/* Stats grid */}
       <div className="grid grid-cols-3 gap-3 w-full max-w-xs mb-5">
-        <div className="bg-[#1E293B] rounded-2xl p-3 text-center">
-          <p className="text-2xl font-black text-[#F1F5F9] tabular-nums">{cardsReviewed}</p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider mt-0.5">Cards</p>
+        <div className="bg-card border-2 border-line rounded-card p-3 text-center">
+          <p className="text-2xl font-black text-ink tabular-nums">{cardsReviewed}</p>
+          <p className="text-[13px] font-bold text-ink-muted mt-0.5">Cards</p>
         </div>
-        <div className="bg-[#1E293B] rounded-2xl p-3 text-center">
-          <p className="text-2xl font-black text-[#34D399] tabular-nums">{pct}%</p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider mt-0.5">Recalled</p>
+        <div className="bg-card border-2 border-line rounded-card p-3 text-center">
+          <p className="text-2xl font-black text-success tabular-nums">{pct}%</p>
+          <p className="text-[13px] font-bold text-ink-muted mt-0.5">Recalled</p>
         </div>
-        <div className="bg-[#1E293B] rounded-2xl p-3 text-center">
-          <p className="text-2xl font-black text-[#60A5FA] tabular-nums">
+        <div className="bg-card border-2 border-line rounded-card p-3 text-center">
+          <p className="text-2xl font-black text-ink tabular-nums">
             {mins > 0 ? `${mins}m` : `${secs}s`}
           </p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider mt-0.5">Time</p>
+          <p className="text-[13px] font-bold text-ink-muted mt-0.5">Time</p>
         </div>
       </div>
 
       {/* Transitions */}
       {promoted.length > 0 && (
-        <div className="w-full max-w-xs bg-duo-green/10 border border-duo-green/20 rounded-xl px-3 py-2.5 mb-4">
-          <p className="text-xs font-bold text-emerald-400 mb-1">
+        <div className="w-full max-w-xs bg-success-soft border-2 border-success rounded-control px-3 py-2.5 mb-4">
+          <p className="text-label text-success mb-1">
             ⬆️ {promoted.length} card{promoted.length > 1 ? 's' : ''} leveled up
           </p>
           {promoted.slice(0, 4).map((t) => (
             <div key={t.cardId} className="flex items-center gap-2 py-0.5">
-              <span className="text-[10px] text-[#94A3B8] truncate flex-1">{t.cardFront}</span>
+              <span className="text-xs font-bold text-ink truncate flex-1">{t.cardFront}</span>
               <span
-                className="text-[10px] font-bold px-1.5 py-0.5 rounded"
+                className="text-xs font-bold px-1.5 py-0.5 rounded-full"
                 style={{ color: BOX_COLORS[t.oldBox], background: BOX_COLORS[t.oldBox] + '20' }}
               >
                 {BOX_NAMES[t.oldBox]}
               </span>
-              <span className="text-[#64748B] text-[10px]">→</span>
+              <span className="text-ink-muted text-xs">→</span>
               <span
-                className="text-[10px] font-bold px-1.5 py-0.5 rounded"
+                className="text-xs font-bold px-1.5 py-0.5 rounded-full"
                 style={{ color: BOX_COLORS[t.newBox], background: BOX_COLORS[t.newBox] + '20' }}
               >
                 {BOX_NAMES[t.newBox]}
@@ -178,8 +178,7 @@ function VoiceComplete({
       <div className="w-full max-w-xs space-y-3 pb-8">
         <button
           onClick={onPlayAgain}
-          className="w-full py-3.5 rounded-2xl font-bold text-white text-sm"
-          style={{ background: 'linear-gradient(135deg, #A78BFA, #7C3AED)' }}
+          className="ui-btn ui-btn-primary w-full"
         >
           Practice Again 🎙️
         </button>
@@ -188,7 +187,7 @@ function VoiceComplete({
         ) : (
           <button
             onClick={onDone}
-            className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-[#1E293B]"
+            className="ui-btn w-full"
           >
             Done
           </button>
@@ -514,9 +513,9 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
 
   if (phase === 'loading') {
     return (
-      <div className="min-h-screen bg-[#0F172A] flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center">
         <div className="text-5xl animate-sparky-bounce mb-4">🎙️</div>
-        <p className="text-[#94A3B8] text-sm">Preparing voice recall...</p>
+        <p className="text-ink-muted text-label">Preparing voice recall...</p>
       </div>
     );
   }
@@ -558,20 +557,20 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
 
   const thinkPct = thinkTimer / THINK_TIME_MS;
   const thinkSecs = Math.ceil(thinkTimer / 1000);
-  const timerColor = thinkPct > 0.5 ? '#A78BFA' : thinkPct > 0.2 ? '#F59E0B' : '#EF4444';
+  const timerColor = thinkPct > 0.5 ? '#4f46e5' : thinkPct > 0.2 ? '#4f46e5' : '#f5a400';
 
   return (
-    <div className="min-h-screen bg-[#0F172A] flex flex-col">
+    <div className="min-h-screen bg-paper flex flex-col">
       {/* ── Power-Up Toast ────────────────────────────────────────────────── */}
       {showToast && (
         <div className="fixed top-20 left-1/2 -translate-x-1/2 z-[60] animate-slide-down">
           <div
-            className="flex items-center gap-2 px-4 py-2.5 rounded-2xl shadow-lg border"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-control shadow-hard-sm border-2"
             style={{
               background: toastIsMastery
-                ? 'linear-gradient(135deg, #059669, #34D399)'
-                : 'linear-gradient(135deg, #1E293B, #334155)',
-              borderColor: toastIsMastery ? '#34D399' : BOX_COLORS[toastBox] + '40',
+                ? '#12805c'
+                : '#1d2a4d',
+              borderColor: '#1d2a4d',
             }}
           >
             <span className="text-xl animate-sparky-bounce">
@@ -581,7 +580,7 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
               <p className="text-white font-black text-sm">
                 {toastIsMastery ? 'MASTERED!' : 'Power Up!'}
               </p>
-              <p className="text-white/70 text-[10px] font-bold">
+              <p className="text-white text-xs font-bold">
                 {toastIsMastery ? 'Card reached Master level!' : `→ ${BOX_NAMES[toastBox]}`}
               </p>
             </div>
@@ -590,7 +589,7 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
       )}
 
       {/* ── Top bar ───────────────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-30 bg-[#0F172A]/95 backdrop-blur-md border-b border-white/5 px-4 py-3">
+      <div className="sticky top-0 z-30 bg-ink px-4 py-3">
         <div className="flex items-center justify-between max-w-md mx-auto">
           <button
             onClick={() => {
@@ -598,30 +597,30 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
               if (completed > 0) saveSession();
               router.push('/flashcards');
             }}
-            className="text-[#94A3B8] text-sm font-bold"
+            className="text-white text-sm font-bold"
           >
             ✕
           </button>
-          <h2 className="text-[#F1F5F9] font-bold text-sm truncate max-w-[180px]">
+          <h2 className="text-white text-title truncate max-w-[180px]">
             🎙️ {deckName}
           </h2>
           <div className="flex items-center gap-2">
             {accumulatedXP > 0 && (
-              <span className="text-xs font-bold text-[#34D399] tabular-nums relative">
+              <span className="text-xs font-extrabold text-ink bg-star rounded-full px-2 py-0.5 tabular-nums relative">
                 {accumulatedXP} XP
                 <XPPopup xp={lastXP} triggerKey={xpTrigger} />
               </span>
             )}
-            <span className="text-xs text-[#64748B] tabular-nums">
+            <span className="text-xs font-bold text-white/70 tabular-nums">
               {currentIndex + 1}/{cards.length}
             </span>
           </div>
         </div>
 
         {/* Progress bar */}
-        <div className="max-w-md mx-auto mt-1.5 h-1 bg-white/5 rounded-full overflow-hidden">
+        <div className="ui-meter max-w-md mx-auto mt-1.5 h-3">
           <div
-            className="h-full bg-[#A78BFA] rounded-full transition-[width] duration-300"
+            className="h-full bg-action rounded-full transition-[width] duration-300"
             style={{ width: `${((currentIndex + (phase === 'reveal' ? 0.5 : 0)) / cards.length) * 100}%` }}
           />
         </div>
@@ -642,7 +641,7 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
                 style={{
                   background: lvl <= (card.leitnerBox || 0)
                     ? BOX_COLORS[card.leitnerBox || 0]
-                    : 'rgba(255,255,255,0.1)',
+                    : '#d3deee',
                 }}
               />
             ))}
@@ -651,13 +650,13 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
 
         {/* Question card (front) */}
         <div
-          className="w-full bg-[#1E293B] rounded-2xl px-5 py-6 mb-5 text-center animate-flashcard-slide-up"
+          className="w-full bg-card border-2 border-ink rounded-card shadow-hard-lg px-5 py-6 mb-5 text-center animate-flashcard-slide-up"
           key={`${card.id}-front`}
         >
-          <p className="text-[#F1F5F9] text-lg font-bold leading-relaxed">{card.front}</p>
+          <p className="text-ink text-question leading-relaxed">{card.front}</p>
           {card.formula && (
             <div className="mt-3">
-              <KatexRenderer latex={card.formula} displayMode className="text-[#F1F5F9] text-xl" />
+              <KatexRenderer latex={card.formula} displayMode className="text-ink text-xl" />
             </div>
           )}
         </div>
@@ -665,22 +664,18 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
         {/* ── Phase: Prompt ────────────────────────────────────────────────── */}
         {phase === 'prompt' && (
           <div className="flex flex-col items-center gap-4 animate-fade-in">
-            <p className="text-sm text-[#94A3B8] text-center">
+            <p className="text-label text-ink-muted text-center">
               Think about the answer, then say it out loud!
             </p>
 
             <button
               onClick={startRecording}
-              className="w-20 h-20 rounded-full flex items-center justify-center animate-voice-pulse transition-transform active:scale-95"
-              style={{
-                background: 'linear-gradient(135deg, #7C3AED, #A78BFA)',
-                boxShadow: '0 0 30px rgba(167,139,250,0.3)',
-              }}
+              className="w-20 h-20 rounded-full flex items-center justify-center bg-action border-2 border-ink shadow-hard-sm transition-transform active:scale-95"
             >
               <span className="text-3xl">🎙️</span>
             </button>
 
-            <p className="text-xs text-[#64748B]">
+            <p className="text-[13px] font-bold text-ink-muted">
               Tap to start · {speechSupported ? 'Voice capture on' : 'Self-check mode'}
             </p>
           </div>
@@ -690,22 +685,18 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
         {phase === 'recording' && (
           <div className="flex flex-col items-center gap-4 w-full animate-fade-in">
             {/* Timer bar */}
-            <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+            <div className="ui-meter w-full h-3">
               <div
                 className="h-full rounded-full transition-[width] duration-100"
                 style={{ width: `${thinkPct * 100}%`, background: timerColor }}
               />
             </div>
-            <span className="text-xs font-bold tabular-nums" style={{ color: timerColor }}>
+            <span className="text-[13px] font-bold text-ink tabular-nums">
               {thinkSecs}s
             </span>
 
             {/* Mic visualizer */}
-            <div className="w-20 h-20 rounded-full flex items-center justify-center animate-voice-pulse"
-              style={{
-                background: 'linear-gradient(135deg, #7C3AED, #A78BFA)',
-                boxShadow: '0 0 40px rgba(167,139,250,0.4)',
-              }}
+            <div className="w-20 h-20 rounded-full flex items-center justify-center bg-action border-2 border-ink animate-pulse"
             >
               <span className="text-3xl">{isListening ? '🔊' : '🎙️'}</span>
             </div>
@@ -714,14 +705,14 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
 
             {/* Transcript */}
             {transcript && (
-              <div className="w-full bg-[#1E293B]/60 rounded-xl px-4 py-2.5 border border-purple-500/20">
-                <p className="text-xs text-[#64748B] mb-0.5">You said:</p>
-                <p className="text-sm text-[#F1F5F9] font-medium italic">&ldquo;{transcript}&rdquo;</p>
+              <div className="w-full bg-card rounded-control px-4 py-2.5 border-2 border-line">
+                <p className="text-xs font-bold text-ink-muted mb-0.5">You said:</p>
+                <p className="text-sm text-ink font-bold italic">&ldquo;{transcript}&rdquo;</p>
               </div>
             )}
 
             {!speechSupported && (
-              <p className="text-xs text-[#94A3B8] text-center">
+              <p className="text-[13px] font-bold text-ink-muted text-center">
                 Say your answer out loud — speaking helps you remember!
               </p>
             )}
@@ -729,13 +720,12 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
             {/* Ready button */}
             <button
               onClick={revealAnswer}
-              className="px-6 py-3 rounded-2xl font-bold text-sm text-white active:scale-[0.97] transition-transform"
-              style={{ background: 'linear-gradient(135deg, #A78BFA, #7C3AED)' }}
+              className="px-6 py-3 rounded-control font-extrabold text-sm text-white bg-action border-2 border-ink shadow-hard-sm active:scale-[0.97] transition-transform"
             >
               Show Answer ✨
             </button>
 
-            <p className="text-[10px] text-[#475569] hidden sm:block">
+            <p className="text-xs text-ink-muted hidden sm:block">
               Press Space to reveal
             </p>
           </div>
@@ -746,44 +736,44 @@ export default function VoiceRecallSession({ deckId, conceptId }: VoiceRecallSes
           <div className="flex flex-col items-center gap-4 w-full animate-fade-in">
             {/* Answer card (back) */}
             <div
-              className="w-full bg-gradient-to-br from-[#1E293B] to-[#2D1B69] rounded-2xl px-5 py-5 text-center border border-purple-500/20 animate-pop-in"
+              className="w-full bg-soft rounded-card px-5 py-5 text-center border-2 border-line animate-pop-in"
             >
-              <p className="text-[10px] text-purple-300 uppercase tracking-wider mb-1.5 font-bold">Answer</p>
-              <p className="text-[#F1F5F9] text-lg font-bold leading-relaxed">{card.back}</p>
+              <p className="text-[13px] text-ink-muted mb-1.5 font-bold">Answer</p>
+              <p className="text-ink text-question leading-relaxed">{card.back}</p>
               {card.formula && (
                 <div className="mt-2">
-                  <KatexRenderer latex={card.formula} displayMode className="text-[#F1F5F9]" />
+                  <KatexRenderer latex={card.formula} displayMode className="text-ink" />
                 </div>
               )}
             </div>
 
             {/* Transcript comparison (if available) */}
             {transcript && (
-              <div className="w-full bg-[#1E293B]/40 rounded-xl px-4 py-2 border border-white/5">
-                <p className="text-[10px] text-[#64748B] mb-0.5">You said:</p>
-                <p className="text-sm text-[#94A3B8] italic">&ldquo;{transcript}&rdquo;</p>
+              <div className="w-full bg-card rounded-control px-4 py-2 border-2 border-line">
+                <p className="text-xs font-bold text-ink-muted mb-0.5">You said:</p>
+                <p className="text-sm text-ink italic">&ldquo;{transcript}&rdquo;</p>
               </div>
             )}
 
-            <p className="text-sm text-[#94A3B8]">Did you get it right?</p>
+            <p className="text-label text-ink">Did you get it right?</p>
 
             {/* Self-evaluation buttons */}
             <div className="flex items-center gap-3 w-full max-w-[400px]">
               <button
                 onClick={() => handleEvaluate(false)}
-                className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-blue-400 bg-blue-500/10 border border-blue-500/20 active:scale-[0.97] transition-[transform,background-color,border-color]"
+                className="flex-1 py-3.5 rounded-control font-extrabold text-sm text-hint-ink bg-hint border-2 border-ink shadow-hard-sm active:scale-[0.97] transition-[transform,background-color,border-color]"
               >
                 Not yet 📚
               </button>
               <button
                 onClick={() => handleEvaluate(true)}
-                className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-emerald-400 bg-duo-green/10 border border-duo-green/20 active:scale-[0.97] transition-[transform,background-color,border-color]"
+                className="flex-1 py-3.5 rounded-control font-extrabold text-sm text-white bg-success border-2 border-ink shadow-hard-sm active:scale-[0.97] transition-[transform,background-color,border-color]"
               >
                 Got it! 🎯
               </button>
             </div>
 
-            <p className="text-[10px] text-[#475569] hidden sm:block">
+            <p className="text-xs text-ink-muted hidden sm:block">
               ← A = Not yet &nbsp;·&nbsp; D → = Got it
             </p>
           </div>

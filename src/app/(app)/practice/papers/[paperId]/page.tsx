@@ -336,7 +336,7 @@ export default function ExamSimulatorPage() {
           <p className="text-caption text-ink-muted mb-2">Marking Scheme</p>
           <div className="space-y-1.5 text-sm">
             <p className="flex justify-between"><span className="text-ink-muted font-semibold">Correct</span><span className="font-bold text-success">{paper.markingScheme.correct}</span></p>
-            <p className="flex justify-between"><span className="text-ink-muted font-semibold">Wrong</span><span className="font-bold text-retry">{paper.markingScheme.wrong}</span></p>
+            <p className="flex justify-between"><span className="text-ink-muted font-semibold">Not right</span><span className="font-bold text-retry">{paper.markingScheme.wrong}</span></p>
             <p className="flex justify-between"><span className="text-ink-muted font-semibold">Unanswered</span><span className="font-bold text-ink-muted">{paper.markingScheme.unanswered}</span></p>
             <p className="flex justify-between"><span className="text-ink-muted font-semibold">Passing</span><span className="font-bold text-ink">{paper.markingScheme.passingMarks}/{paper.markingScheme.maxMarks}</span></p>
           </div>
@@ -360,7 +360,7 @@ export default function ExamSimulatorPage() {
           <div className="bg-hint border-2 border-hint-ink/30 rounded-card px-4 py-3 w-full mt-3 flex items-start gap-2">
             <span className="text-lg shrink-0">⚠️</span>
             <p className="text-xs text-hint-ink font-bold">
-              This paper has negative marking (-0.25 per wrong answer). Leave questions blank if unsure.
+              This paper has negative marking (-0.25 for each answer that isn&apos;t right). Leave questions blank if unsure.
             </p>
           </div>
         )}
@@ -459,7 +459,7 @@ export default function ExamSimulatorPage() {
               </div>
               <div className="bg-retry-soft rounded-tile px-2 py-2">
                 <p className="text-lg font-extrabold text-retry">{scoreResult.wrong}</p>
-                <p className="text-xs font-bold text-ink">Wrong</p>
+                <p className="text-xs font-bold text-ink">Not right</p>
               </div>
               <div className="bg-soft rounded-tile px-2 py-2">
                 <p className="text-lg font-extrabold text-ink-muted">{scoreResult.skipped}</p>

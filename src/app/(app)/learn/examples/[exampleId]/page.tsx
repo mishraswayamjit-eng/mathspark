@@ -88,10 +88,10 @@ export default function WorkedExampleDetailPage() {
         if (data.example) {
           setExample(data.example);
         } else {
-          setError('Example not found.');
+          setError("We couldn't find that example.");
         }
       })
-      .catch((err) => { logError('[examples] fetch example', err); setError('Failed to load example.'); })
+      .catch((err) => { logError('[examples] fetch example', err); setError("We couldn't open that example. Let's try again!"); })
       .finally(() => setLoading(false));
   }, [exampleId]);
 
@@ -162,7 +162,7 @@ export default function WorkedExampleDetailPage() {
     return (
       <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 px-6">
         <Sparky mood="thinking" size={64} />
-        <p className="text-sm font-bold text-ink">{error || 'Something went wrong.'}</p>
+        <p className="text-sm font-bold text-ink">{error || "We couldn't finish that. Let's try again!"}</p>
         <button onClick={() => window.location.reload()} className="bg-action hover:bg-action-dark text-white font-extrabold rounded-control border-2 border-ink shadow-hard-sm px-6 py-2.5 text-sm active:scale-95 transition-transform">Retry</button>
         <Link href="/learn/examples" className="text-sm text-ink-muted font-semibold">Back to Examples</Link>
       </div>

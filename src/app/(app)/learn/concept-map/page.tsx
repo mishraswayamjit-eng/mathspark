@@ -275,7 +275,7 @@ export default function ConceptMapPage() {
             onClick={() => setSelectedGrade(null)}
             className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
               selectedGrade === null
-                ? 'bg-action text-white border-action'
+                ? 'bg-action text-white border-ink'
                 : 'bg-white text-ink border-line'
             }`}
           >
@@ -287,7 +287,7 @@ export default function ConceptMapPage() {
               onClick={() => setSelectedGrade(g)}
               className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
                 selectedGrade === g
-                  ? 'bg-action text-white border-action'
+                  ? 'bg-action text-white border-ink'
                   : 'bg-white text-ink border-line'
               }`}
             >
@@ -317,8 +317,8 @@ export default function ConceptMapPage() {
               return (
                 <div
                   key={domain}
-                  className="rounded-card overflow-hidden"
-                  style={{ backgroundColor: style.bg, borderWidth: '2px', borderColor: style.border }}
+                  className="bg-white rounded-card border-2 border-line border-l-[10px] overflow-hidden"
+                  style={{ borderLeftColor: style.accent }}
                 >
                   {/* Island header */}
                   <button
@@ -326,20 +326,20 @@ export default function ConceptMapPage() {
                     className="w-full px-4 py-4 flex items-center gap-3 text-left active:opacity-80 transition-opacity"
                   >
                     <div
-                      className="w-12 h-12 rounded-tile flex items-center justify-center text-2xl shrink-0"
-                      style={{ backgroundColor: style.accent + '20', border: `2px solid ${style.accent}40` }}
+                      className="w-11 h-11 rounded-tile flex items-center justify-center text-2xl shrink-0"
+                      style={{ backgroundColor: style.accent + '20' }}
                     >
                       {meta?.name?.split(' ')[0] ?? '📘'}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-extrabold leading-tight" style={{ color: style.text }}>
+                      <p className="text-title text-ink leading-tight">
                         {meta?.island ?? domain}
                       </p>
-                      <p className="text-xs font-medium mt-0.5" style={{ color: style.text + 'AA' }}>
+                      <p className="text-xs font-medium text-ink-muted mt-0.5">
                         {meta?.description ?? ''}
                       </p>
                       <div className="flex items-center gap-2 mt-1">
-                        <span className="text-xs font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: style.accent + '20', color: style.accent }}>
+                        <span className="ui-chip">
                           {isExpanded ? 'Hide concepts' : `Show ${domainNodes.length} concepts`}
                         </span>
                         <span className="text-xs font-bold text-ink-muted">
@@ -348,8 +348,8 @@ export default function ConceptMapPage() {
                       </div>
                     </div>
                     <svg
-                      className="w-5 h-5 shrink-0 transition-transform duration-200"
-                      style={{ color: style.text, transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                      className="w-5 h-5 text-ink-muted shrink-0 transition-transform duration-200"
+                      style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -362,7 +362,7 @@ export default function ConceptMapPage() {
                   {/* Expanded: concept nodes */}
                   {isExpanded && (
                     <div className="px-4 pb-4 space-y-2 animate-fade-in">
-                      <div className="border-t-2" style={{ borderColor: style.border }} />
+                      <div className="border-t-2 border-line" />
 
                       {/* Concept list */}
                       <div className="space-y-1.5 mt-3">
@@ -374,14 +374,13 @@ export default function ConceptMapPage() {
                               <button
                                 key={node.id}
                                 onClick={() => openDetail(node.id)}
-                                className="w-full flex items-center gap-3 px-3 py-3 rounded-control bg-white border-2 active:bg-white transition-colors text-left"
-                                style={{ borderColor: style.border }}
+                                className="w-full flex items-center gap-3 px-3 py-3 rounded-control bg-white border-2 border-line active:bg-soft transition-colors text-left"
                               >
                                 <span className="text-xl shrink-0">{node.icon}</span>
                                 <div className="flex-1 min-w-0">
                                   <p className="text-sm font-extrabold text-ink leading-tight truncate">{node.name}</p>
                                   <div className="flex items-center gap-1.5 mt-1">
-                                    <span className="text-xs font-bold px-1.5 py-0.5 rounded-full text-white" style={{ backgroundColor: diff.color }}>
+                                    <span className="ui-chip">
                                       {diff.text}
                                     </span>
                                     <span className="text-xs font-bold text-ink-muted">
@@ -412,7 +411,7 @@ export default function ConceptMapPage() {
         {/* Error state */}
         {!loading && fetchError && (
           <div className="flex flex-col items-center gap-4 py-12">
-            <p className="text-ink font-extrabold text-lg">Something went wrong</p>
+            <p className="text-ink font-extrabold text-lg">Oops! Sparky tripped over a number</p>
             <p className="text-ink-muted text-sm">Could not load the concept map.</p>
             <button onClick={() => window.location.reload()} className="bg-action hover:bg-action-dark text-white font-extrabold px-6 py-2.5 rounded-control border-2 border-ink shadow-hard-sm text-sm active:scale-95 transition-transform">
               Retry
@@ -484,7 +483,7 @@ function ConceptDetailSheet({
       <div className="flex items-start gap-3">
         <div
           className="w-14 h-14 rounded-tile flex items-center justify-center text-3xl shrink-0"
-          style={{ backgroundColor: style.bg, border: `2px solid ${style.border}` }}
+          style={{ backgroundColor: style.accent + '20' }}
         >
           {concept.icon}
         </div>
@@ -492,7 +491,7 @@ function ConceptDetailSheet({
           <h2 className="text-title text-ink leading-tight">{concept.name}</h2>
           <p className="text-xs text-ink-muted font-medium mt-0.5">{concept.domainIsland}</p>
           <div className="flex items-center gap-2 mt-1.5 flex-wrap">
-            <span className="text-xs font-bold px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: diff.color }}>
+            <span className="ui-chip">
               {diff.text}
             </span>
             <span className="text-xs font-bold text-ink-muted">

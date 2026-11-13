@@ -496,8 +496,8 @@ export default function SkillDrillSessionPage() {
         {/* Progress bar */}
         <div className="w-full ui-meter h-3 mb-4">
           <div
-            className="h-full rounded-full transition-[width] duration-500 ease-out"
-            style={{ width: `${progressPct}%`, backgroundColor: levelInfo?.color ?? '#4f46e5' }}
+            className="h-full rounded-full bg-action transition-[width] duration-500 ease-out"
+            style={{ width: `${progressPct}%` }}
           />
         </div>
 
@@ -569,8 +569,7 @@ export default function SkillDrillSessionPage() {
             {/* Next button */}
             <button
               onClick={handleNext}
-              className="w-full text-white font-extrabold py-3.5 rounded-control border-2 border-ink shadow-hard-sm transition-colors mt-2"
-              style={{ backgroundColor: levelInfo?.color ?? '#4f46e5' }}
+              className="w-full ui-btn ui-btn-primary mt-2"
             >
               {currentIdx + 1 >= totalQ ? 'See Results →' : 'Next →'}
             </button>
@@ -588,10 +587,7 @@ export default function SkillDrillSessionPage() {
   return (
     <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
-      <div
-        className="px-4 py-4 flex items-center gap-3"
-        style={{ backgroundColor: levelInfo?.color ?? '#1d2a4d' }}
-      >
+      <div className="bg-ink px-4 py-4 flex items-center gap-3">
         <Link href="/practice/skill-drill" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <div className="flex items-center gap-2">
@@ -621,12 +617,11 @@ export default function SkillDrillSessionPage() {
                 href={unlocked ? `/practice/skill-drill/${topicId}/${lvl}` : '#'}
                 className={`flex items-center gap-1 px-3 py-2 rounded-full border-2 shrink-0 transition-colors ${
                   isActive
-                    ? 'text-white font-extrabold'
+                    ? 'bg-action text-white font-extrabold border-ink'
                     : unlocked
                     ? 'bg-white text-ink font-bold border-line hover:border-ink'
                     : 'bg-soft text-gray-400 font-bold border-line cursor-not-allowed'
                 }`}
-                style={isActive ? { backgroundColor: li.color, borderColor: li.color } : {}}
                 onClick={(e) => { if (!unlocked) e.preventDefault(); }}
               >
                 <span className="text-sm">{lm?.emoji}</span>

@@ -488,7 +488,7 @@ export default function HomePage() {
   if (!loading && (fetchError || !data)) {
     return (
       <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
-        <p className="text-ink font-extrabold text-lg">Something went wrong</p>
+        <p className="text-ink font-extrabold text-lg">Oops! Sparky tripped over a number</p>
         <p className="text-gray-500 text-sm">Could not load your dashboard. Check your connection.</p>
         <div className="flex items-center gap-3">
           <button onClick={() => window.location.reload()} className="bg-action text-white font-extrabold px-6 py-2.5 rounded-control border-2 border-ink shadow-hard-sm text-sm active:scale-95 transition-transform">

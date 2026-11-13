@@ -106,7 +106,7 @@ export default function StrategyBankPage() {
             onClick={() => setSelectedCategory(null)}
             className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
               selectedCategory === null
-                ? 'bg-action text-white border-action'
+                ? 'bg-action text-white border-ink'
                 : 'bg-white text-ink border-line'
             }`}
           >
@@ -121,10 +121,9 @@ export default function StrategyBankPage() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors flex items-center gap-1 ${
                   isActive
-                    ? 'text-white border-transparent'
+                    ? 'bg-action text-white border-ink'
                     : 'bg-white text-ink border-line'
                 }`}
-                style={isActive ? { backgroundColor: meta.color, borderColor: meta.color } : {}}
               >
                 <span>{meta.emoji}</span>
                 <span>{meta.label}</span>
@@ -170,8 +169,8 @@ export default function StrategyBankPage() {
                       return (
                         <div
                           key={s.id}
-                          className="bg-white rounded-card border-2 border-line overflow-hidden"
-                          style={{ borderLeftWidth: '4px', borderLeftColor: meta.color }}
+                          className="bg-white rounded-card border-2 border-line border-l-[10px] overflow-hidden"
+                          style={{ borderLeftColor: meta.color }}
                         >
                           {/* Collapsed header */}
                           <button

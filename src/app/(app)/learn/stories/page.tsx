@@ -114,7 +114,7 @@ export default function MathStoriesPage() {
             onClick={() => setSelectedCategory(null)}
             className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
               selectedCategory === null
-                ? 'bg-action text-white border-action'
+                ? 'bg-action text-white border-ink'
                 : 'bg-white text-ink border-line'
             }`}
           >
@@ -129,10 +129,9 @@ export default function MathStoriesPage() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors flex items-center gap-1 ${
                   isActive
-                    ? 'text-white border-transparent'
+                    ? 'bg-action text-white border-ink'
                     : 'bg-white text-ink border-line'
                 }`}
-                style={isActive ? { backgroundColor: meta.color, borderColor: meta.color } : {}}
               >
                 <span>{meta.emoji}</span>
                 <span>{meta.label}</span>
@@ -161,8 +160,8 @@ export default function MathStoriesPage() {
               return (
                 <div
                   key={story.id}
-                  className="bg-white rounded-card border-2 border-line overflow-hidden"
-                  style={{ borderTopWidth: '4px', borderTopColor: catMeta.color }}
+                  className="bg-white rounded-card border-2 border-line border-l-[10px] overflow-hidden"
+                  style={{ borderLeftColor: catMeta.color }}
                 >
                   {/* Card header — always visible */}
                   <button
@@ -173,10 +172,7 @@ export default function MathStoriesPage() {
                       <span className="text-3xl shrink-0">{story.emoji}</span>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1">
-                          <span
-                            className="text-xs font-extrabold px-2 py-0.5 rounded-full text-white"
-                            style={{ backgroundColor: catMeta.color }}
-                          >
+                          <span className="ui-chip">
                             {catMeta.label}
                           </span>
                           <span className="text-xs font-bold text-ink-muted capitalize">

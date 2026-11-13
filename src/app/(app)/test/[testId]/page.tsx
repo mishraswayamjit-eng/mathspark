@@ -332,7 +332,7 @@ export default function TestEnginePage() {
       if (!res.ok) throw new Error('Submission failed');
       router.push(`/test/${testId}/results`);
     } catch {
-      setSubmitError('Failed to submit — please check your connection and try again.');
+      setSubmitError("We couldn't submit your test — please check your connection and try again.");
       setSubmitting(false);
     }
   }

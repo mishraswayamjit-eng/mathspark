@@ -13,10 +13,10 @@ function MasteryRing({ mastered, total, size = 36 }: { mastered: number; total: 
   const r = (size - 6) / 2;
   const circumference = 2 * Math.PI * r;
   const offset = circumference * (1 - pct);
-  const color = pct >= 0.7 ? '#34D399' : pct >= 0.3 ? '#FBBF24' : '#64748B';
+  const color = pct >= 0.7 ? '#12805c' : pct >= 0.3 ? '#f5a400' : '#5d6b8c';
   return (
     <svg width={size} height={size} className="flex-shrink-0">
-      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#1E293B" strokeWidth={4} />
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#d3deee" strokeWidth={4} />
       <circle
         cx={size / 2} cy={size / 2} r={r}
         fill="none" stroke={color} strokeWidth={4}
@@ -29,7 +29,7 @@ function MasteryRing({ mastered, total, size = 36 }: { mastered: number; total: 
       <text
         x={size / 2} y={size / 2}
         textAnchor="middle" dominantBaseline="central"
-        fill="#F1F5F9" fontSize={size * 0.28} fontWeight="bold"
+        fill="#1d2a4d" fontSize={size * 0.28} fontWeight="bold"
       >
         {Math.round(pct * 100)}%
       </text>
@@ -39,12 +39,12 @@ function MasteryRing({ mastered, total, size = 36 }: { mastered: number; total: 
 
 // ── Power bar (mini stacked box distribution) ────────────────────────────────
 
-const BOX_BAR_COLORS = ['#64748B', '#EF4444', '#F59E0B', '#3B82F6', '#8B5CF6', '#34D399'];
+const BOX_BAR_COLORS = ['#5d6b8c', '#5a4300', '#4f46e5', '#0e7490', '#3f37c9', '#12805c'];
 
 function PowerBar({ distribution, total }: { distribution: number[]; total: number }) {
   if (total === 0) return null;
   return (
-    <div className="w-full flex h-1.5 rounded-full overflow-hidden bg-white/5 mt-1.5">
+    <div className="ui-meter w-full flex h-3 mt-1.5">
       {distribution.map((count, i) => {
         if (count === 0) return null;
         return (
@@ -75,20 +75,19 @@ const DeckCard = React.memo(function DeckCard({
   const emoji = deck.id === 'due' ? '🔥' : deck.id === 'quick' ? '⚡' : deck.id === 'mental_math' ? '🧠' : '📁';
   return (
     <div
-      className="w-full flex flex-col rounded-2xl px-4 py-3.5 transition-colors"
+      className="w-full flex flex-col bg-card border-2 border-line rounded-card px-4 py-3.5 transition-colors"
       style={{
-        background: '#1E293B',
-        borderLeft: `4px solid ${deck.topicColor}`,
+        borderLeft: `10px solid ${deck.topicColor}`,
       }}
     >
       <button onClick={onClick} className="flex items-center gap-3 w-full active:scale-[0.98] transition-transform">
-        <span className="text-xl flex-shrink-0" aria-hidden="true">{emoji}</span>
+        <span className="w-11 h-11 rounded-tile bg-soft text-xl text-center leading-[44px] flex-shrink-0" aria-hidden="true">{emoji}</span>
         <div className="flex-1 text-left min-w-0">
-          <p className="text-sm font-bold text-[#F1F5F9] truncate">{deck.name}</p>
-          <p className="text-xs text-[#64748B]">
+          <p className="font-display text-title text-ink truncate">{deck.name}</p>
+          <p className="text-[13px] font-bold text-ink-muted">
             {deck.cardCount} card{deck.cardCount !== 1 ? 's' : ''}
             {deck.dueCount > 0 && !isSpecial && (
-              <span className="ml-1 text-amber-400">· {deck.dueCount} due</span>
+              <span className="ml-1 text-hint-ink">· {deck.dueCount} due</span>
             )}
           </p>
         </div>
@@ -96,7 +95,7 @@ const DeckCard = React.memo(function DeckCard({
           <MasteryRing mastered={deck.mastered} total={deck.total} />
         )}
         {isSpecial && deck.dueCount > 0 && (
-          <span className="bg-red-500/20 text-red-400 text-xs font-bold px-2 py-0.5 rounded-full tabular-nums">
+          <span className="bg-star text-ink border-2 border-ink text-xs font-extrabold px-2 py-0.5 rounded-full tabular-nums">
             {deck.dueCount}
           </span>
         )}
@@ -112,7 +111,7 @@ const DeckCard = React.memo(function DeckCard({
           {onQuiz && deck.cardCount >= 4 && (
             <button
               onClick={(e) => { e.stopPropagation(); onQuiz(); }}
-              className="text-[10px] font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full hover:bg-amber-400/20 transition-colors whitespace-nowrap min-h-0"
+              className="text-xs font-extrabold text-ink bg-card border-2 border-ink px-2.5 py-0.5 rounded-full hover:bg-soft transition-colors whitespace-nowrap min-h-0"
             >
               <span aria-hidden="true">⚡ </span>Quiz
             </button>
@@ -167,14 +166,14 @@ export default function FlashcardsPage() {
   }, [router]);
 
   return (
-    <div className="min-h-screen bg-[#0F172A] pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* ── Header ─────────────────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-30 bg-[#0F172A]/95 backdrop-blur-md border-b border-white/5 px-4 py-3">
+      <div className="sticky top-0 z-30 bg-ink px-4 py-3">
         <div className="flex items-center justify-between max-w-md mx-auto">
-          <button onClick={() => window.history.length > 1 ? router.back() : router.push('/home')} className="text-[#94A3B8] text-sm">
+          <button onClick={() => window.history.length > 1 ? router.back() : router.push('/home')} className="text-white text-sm font-bold">
             ← Back
           </button>
-          <h1 className="text-[#F1F5F9] font-bold text-lg"><span aria-hidden="true">🃏 </span>Sparky&apos;s Cards</h1>
+          <h1 className="text-white text-title"><span aria-hidden="true">🃏 </span>Sparky&apos;s Cards</h1>
           <div className="w-12" />
         </div>
       </div>
@@ -183,33 +182,33 @@ export default function FlashcardsPage() {
         {/* ── Stats bar ───────────────────────────────────────────────────── */}
         {stats && !loading && (
           <div className="space-y-3">
-            <div className="flex items-center justify-around bg-[#1E293B] rounded-2xl px-4 py-3">
+            <div className="flex items-center justify-around bg-card border-2 border-ink rounded-card shadow-hard-lg px-4 py-3">
               <div className="text-center">
-                <p className="text-lg font-bold text-[#F1F5F9] tabular-nums">{stats.totalCards}</p>
-                <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Total</p>
+                <p className="text-lg font-bold text-ink tabular-nums">{stats.totalCards}</p>
+                <p className="text-xs font-bold text-ink-muted">Total</p>
               </div>
-              <div className="w-px h-8 bg-white/10" />
+              <div className="w-0.5 h-8 bg-line" />
               <div className="text-center">
-                <p className="text-lg font-bold text-[#34D399] tabular-nums">{stats.totalSeen}</p>
-                <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Seen</p>
+                <p className="text-lg font-bold text-ink tabular-nums">{stats.totalSeen}</p>
+                <p className="text-xs font-bold text-ink-muted">Seen</p>
               </div>
-              <div className="w-px h-8 bg-white/10" />
+              <div className="w-0.5 h-8 bg-line" />
               <div className="text-center">
-                <p className="text-lg font-bold text-[#60A5FA] tabular-nums">{stats.totalMastered}</p>
-                <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Mastered</p>
+                <p className="text-lg font-bold text-success tabular-nums">{stats.totalMastered}</p>
+                <p className="text-xs font-bold text-ink-muted">Mastered</p>
               </div>
-              <div className="w-px h-8 bg-white/10" />
+              <div className="w-0.5 h-8 bg-line" />
               <div className="text-center">
-                <p className="text-lg font-bold text-[#FBBF24] tabular-nums">
+                <p className="text-lg font-bold text-ink tabular-nums">
                   {stats.studyStreak > 0 ? `🔥${stats.studyStreak}` : '—'}
                 </p>
-                <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Streak</p>
+                <p className="text-xs font-bold text-ink-muted">Streak</p>
               </div>
             </div>
 
             {/* Daily new card counter */}
-            <div className="flex items-center justify-between bg-[#1E293B]/60 rounded-xl px-3 py-2">
-              <span className="text-xs text-[#94A3B8]">
+            <div className="flex items-center justify-between bg-card border-2 border-line rounded-control px-3 py-2">
+              <span className="text-[13px] font-bold text-ink-muted">
                 New cards today
               </span>
               <div className="flex items-center gap-1.5">
@@ -219,12 +218,12 @@ export default function FlashcardsPage() {
                       key={i}
                       className="w-3 h-1.5 rounded-full transition-[background-color]"
                       style={{
-                        background: i < stats.newCardsToday ? '#34D399' : 'rgba(255,255,255,0.1)',
+                        background: i < stats.newCardsToday ? '#4f46e5' : '#d3deee',
                       }}
                     />
                   ))}
                 </div>
-                <span className="text-xs font-bold text-[#64748B] tabular-nums">
+                <span className="text-xs font-bold text-ink-muted tabular-nums">
                   {stats.newCardsToday}/{stats.maxNewPerDay}
                 </span>
               </div>
@@ -241,9 +240,9 @@ export default function FlashcardsPage() {
 
             {/* Streak multiplier badge */}
             {stats.streakMultiplier > 1 && (
-              <div className="flex items-center justify-center gap-1.5 bg-amber-500/10 border border-amber-500/20 rounded-xl px-3 py-1.5">
+              <div className="flex items-center justify-center gap-1.5 bg-star border-2 border-ink rounded-control px-3 py-1.5">
                 <span className="text-xs" aria-hidden="true">🔥</span>
-                <span className="text-xs font-bold text-[#FBBF24]">
+                <span className="text-[13px] font-extrabold text-ink">
                   {stats.streakMultiplier}x XP Multiplier Active
                 </span>
               </div>
@@ -255,7 +254,7 @@ export default function FlashcardsPage() {
         {loading && (
           <div className="space-y-3">
             {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="h-16 bg-[#1E293B] rounded-2xl animate-pulse" />
+              <div key={i} className="h-16 bg-card border-2 border-line rounded-card animate-pulse" />
             ))}
           </div>
         )}
@@ -263,7 +262,7 @@ export default function FlashcardsPage() {
         {/* ── Special decks ───────────────────────────────────────────────── */}
         {!loading && specialDecks.length > 0 && (
           <div className="space-y-2">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-[#64748B] px-1">
+            <h2 className="text-title text-ink px-1">
               Quick Start
             </h2>
             {specialDecks.map((d) => (
@@ -275,101 +274,81 @@ export default function FlashcardsPage() {
         {/* ── Game Modes ───────────────────────────────────────────────────── */}
         {!loading && decks.length > 0 && (
           <div className="space-y-2">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-[#64748B] px-1">
+            <h2 className="text-title text-ink px-1">
               Game Modes
             </h2>
 
             {/* Quiz Blitz */}
             <button
               onClick={() => openDeck('quick', 'quiz')}
-              className="w-full rounded-2xl p-3.5 text-left transition-[transform] active:scale-[0.98] animate-quiz-glow"
-              style={{
-                background: 'linear-gradient(135deg, #1E293B 0%, #312E81 50%, #1E293B 100%)',
-                border: '1px solid rgba(139,92,246,0.3)',
-              }}
+              className="w-full bg-card border-2 border-line rounded-card p-3.5 text-left transition-[transform] active:scale-[0.98]"
             >
               <div className="flex items-center gap-3">
-                <span className="text-2xl animate-quiz-icon" aria-hidden="true">⚡</span>
+                <span className="w-11 h-11 rounded-tile bg-soft text-2xl text-center leading-[44px] flex-shrink-0 animate-quiz-icon" aria-hidden="true">⚡</span>
                 <div className="flex-1">
-                  <p className="text-sm font-black text-[#F1F5F9]">Quiz Blitz</p>
-                  <p className="text-xs text-[#A78BFA]">MCQ · Combos · 12s per card</p>
+                  <p className="font-display text-title text-ink">Quiz Blitz</p>
+                  <p className="text-[13px] font-bold text-ink-muted">MCQ · Combos · 12s per card</p>
                 </div>
-                <span className="text-[10px] font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>GO</span>
+                <span className="ui-chip" style={{ minHeight: 'auto' }}>GO</span>
               </div>
             </button>
 
             {/* Speed Round */}
             <button
               onClick={() => openDeck('quick', 'speed')}
-              className="w-full rounded-2xl p-3.5 text-left transition-[transform] active:scale-[0.98]"
-              style={{
-                background: 'linear-gradient(135deg, #1E293B 0%, #7F1D1D 50%, #1E293B 100%)',
-                border: '1px solid rgba(239,68,68,0.3)',
-              }}
+              className="w-full bg-card border-2 border-line rounded-card p-3.5 text-left transition-[transform] active:scale-[0.98]"
             >
               <div className="flex items-center gap-3">
-                <span className="text-2xl" aria-hidden="true">🔥</span>
+                <span className="w-11 h-11 rounded-tile bg-soft text-2xl text-center leading-[44px] flex-shrink-0" aria-hidden="true">🔥</span>
                 <div className="flex-1">
-                  <p className="text-sm font-black text-[#F1F5F9]">Speed Round</p>
-                  <p className="text-xs text-red-300/70">60 seconds · Answer as many as you can!</p>
+                  <p className="font-display text-title text-ink">Speed Round</p>
+                  <p className="text-[13px] font-bold text-ink-muted">60 seconds · Answer as many as you can!</p>
                 </div>
-                <span className="text-[10px] font-bold text-red-400 bg-red-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>60s</span>
+                <span className="ui-chip" style={{ minHeight: 'auto' }}>60s</span>
               </div>
             </button>
 
             {/* Tap Match */}
             <button
               onClick={() => openDeck('quick', 'match')}
-              className="w-full rounded-2xl p-3.5 text-left transition-[transform] active:scale-[0.98]"
-              style={{
-                background: 'linear-gradient(135deg, #1E293B 0%, #064E3B 50%, #1E293B 100%)',
-                border: '1px solid rgba(52,211,153,0.3)',
-              }}
+              className="w-full bg-card border-2 border-line rounded-card p-3.5 text-left transition-[transform] active:scale-[0.98]"
             >
               <div className="flex items-center gap-3">
-                <span className="text-2xl" aria-hidden="true">🧩</span>
+                <span className="w-11 h-11 rounded-tile bg-soft text-2xl text-center leading-[44px] flex-shrink-0" aria-hidden="true">🧩</span>
                 <div className="flex-1">
-                  <p className="text-sm font-black text-[#F1F5F9]">Tap Match</p>
-                  <p className="text-xs text-emerald-300/70">Match fronts to backs · Memory game</p>
+                  <p className="font-display text-title text-ink">Tap Match</p>
+                  <p className="text-[13px] font-bold text-ink-muted">Match fronts to backs · Memory game</p>
                 </div>
-                <span className="text-[10px] font-bold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>NEW</span>
+                <span className="ui-chip" style={{ minHeight: 'auto' }}>NEW</span>
               </div>
             </button>
 
             {/* Pre-Exam Warm-Up */}
             <button
               onClick={() => openDeck('warmup', 'warmup')}
-              className="w-full rounded-2xl p-3.5 text-left transition-[transform] active:scale-[0.98] animate-warmup-glow"
-              style={{
-                background: 'linear-gradient(135deg, #1E293B 0%, #1E3A5F 50%, #1E293B 100%)',
-                border: '1px solid rgba(96,165,250,0.3)',
-              }}
+              className="w-full bg-card border-2 border-line rounded-card p-3.5 text-left transition-[transform] active:scale-[0.98]"
             >
               <div className="flex items-center gap-3">
-                <span className="text-2xl" aria-hidden="true">🧘</span>
+                <span className="w-11 h-11 rounded-tile bg-soft text-2xl text-center leading-[44px] flex-shrink-0" aria-hidden="true">🧘</span>
                 <div className="flex-1">
-                  <p className="text-sm font-black text-[#F1F5F9]">Pre-Exam Warm-Up</p>
-                  <p className="text-xs text-blue-300/70">Breathe · Formulas · Confidence boost</p>
+                  <p className="font-display text-title text-ink">Pre-Exam Warm-Up</p>
+                  <p className="text-[13px] font-bold text-ink-muted">Breathe · Formulas · Confidence boost</p>
                 </div>
-                <span className="text-[10px] font-bold text-blue-400 bg-blue-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>ZEN</span>
+                <span className="ui-chip" style={{ minHeight: 'auto' }}>ZEN</span>
               </div>
             </button>
 
             {/* Voice Recall */}
             <div
-              className="w-full rounded-2xl p-3.5 text-left opacity-60 cursor-not-allowed"
-              style={{
-                background: 'linear-gradient(135deg, #1E293B 0%, #3B1764 50%, #1E293B 100%)',
-                border: '1px solid rgba(167,139,250,0.2)',
-              }}
+              className="w-full bg-card border-2 border-line rounded-card p-3.5 text-left opacity-60 cursor-not-allowed"
             >
               <div className="flex items-center gap-3">
-                <span className="text-2xl" aria-hidden="true">🎙️</span>
+                <span className="w-11 h-11 rounded-tile bg-soft text-2xl text-center leading-[44px] flex-shrink-0" aria-hidden="true">🎙️</span>
                 <div className="flex-1">
-                  <p className="text-sm font-black text-[#F1F5F9]">Voice Recall</p>
-                  <p className="text-xs text-purple-300/70">Say it out loud · Active recall</p>
+                  <p className="font-display text-title text-ink">Voice Recall</p>
+                  <p className="text-[13px] font-bold text-ink-muted">Say it out loud · Active recall</p>
                 </div>
-                <span className="text-[10px] font-bold text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded-full" style={{ minHeight: 'auto' }}>COMING SOON</span>
+                <span className="ui-chip" style={{ minHeight: 'auto' }}>COMING SOON</span>
               </div>
             </div>
           </div>
@@ -378,7 +357,7 @@ export default function FlashcardsPage() {
         {/* ── Topic decks ─────────────────────────────────────────────────── */}
         {!loading && topicDecks.length > 0 && (
           <div className="space-y-2">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-[#64748B] px-1">
+            <h2 className="text-title text-ink px-1">
               By Topic
             </h2>
             {topicDecks.map((d) => (
@@ -396,8 +375,8 @@ export default function FlashcardsPage() {
         {!loading && fetchError && (
           <div className="text-center pt-16 space-y-4">
             <p className="text-4xl" aria-hidden="true">😵</p>
-            <p className="text-[#94A3B8] text-sm">Could not load flashcards. Check your connection.</p>
-            <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
+            <p className="text-ink-muted text-label">Could not load flashcards. Check your connection.</p>
+            <button onClick={() => window.location.reload()} className="bg-action text-white font-extrabold px-6 py-2.5 rounded-control border-2 border-ink shadow-hard-sm text-sm active:scale-95 transition-transform">
               Retry
             </button>
           </div>
@@ -407,7 +386,7 @@ export default function FlashcardsPage() {
         {!loading && !fetchError && decks.length === 0 && (
           <div className="text-center pt-16 space-y-4">
             <p className="text-4xl" aria-hidden="true">🃏</p>
-            <p className="text-[#94A3B8] text-sm">
+            <p className="text-ink-muted text-label">
               No flashcards available for your grade yet.
             </p>
           </div>

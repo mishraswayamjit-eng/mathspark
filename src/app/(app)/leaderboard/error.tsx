@@ -14,7 +14,7 @@ export default function LeaderboardError({
       <p className="text-5xl">😕</p>
       <h2 className="font-extrabold text-gray-800 text-lg">League temporarily unavailable</h2>
       <p className="text-gray-500 text-sm font-medium">
-        {error.message ?? 'Something went wrong loading the leaderboard.'}
+        {error.message ?? "We couldn't load the leaderboard. Let's try again!"}
       </p>
       <DuoButton variant="blue" onClick={reset}>Try Again</DuoButton>
     </div>

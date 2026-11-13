@@ -208,7 +208,7 @@ export default function PaperSelectionPage() {
             <div>
               <p className="text-xs font-extrabold text-hint-ink">IPM Format — Negative Marking</p>
               <p className="text-xs font-bold text-hint-ink mt-0.5">
-                -0.25 marks for each wrong answer. Leave blank if unsure!
+                -0.25 marks for each answer that isn&apos;t right. Leave blank if unsure!
               </p>
             </div>
           </div>

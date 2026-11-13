@@ -124,14 +124,8 @@ function SlideModeViewer({
                 i === lessonIndex
                   ? 'w-6'
                   : 'w-2'
-              }`}
+              } ${i <= lessonIndex ? 'bg-action' : 'bg-line'}`}
               style={{
-                backgroundColor:
-                  i < lessonIndex
-                    ? accentColor
-                    : i === lessonIndex
-                    ? accentColor
-                    : '#d3deee',
                 opacity: i === lessonIndex ? 1 : i < lessonIndex ? 0.6 : 0.3,
               }}
             />
@@ -139,12 +133,11 @@ function SlideModeViewer({
         </div>
 
         {/* Slide progress bar */}
-        <div className="w-full h-1.5 bg-soft rounded-full overflow-hidden">
+        <div className="w-full h-2.5 ui-meter">
           <div
-            className="h-full rounded-full transition-[width] duration-500"
+            className="h-full rounded-full bg-action transition-[width] duration-500"
             style={{
               width: `${((completedSlides + 1) / totalSlidesAllLessons) * 100}%`,
-              backgroundColor: accentColor,
             }}
           />
         </div>
@@ -185,8 +178,7 @@ function SlideModeViewer({
         )}
         <button
           onClick={nextSlide}
-          className="flex-1 py-3 rounded-control text-sm font-extrabold text-white border-2 border-ink shadow-hard-sm active:scale-95 transition-transform"
-          style={{ backgroundColor: accentColor }}
+          className="flex-1 ui-btn ui-btn-primary text-sm"
         >
           {buttonLabel}
         </button>
@@ -199,7 +191,6 @@ function SlideModeViewer({
 
 function ClassicModeViewer({
   lessons,
-  accentColor,
   onDone,
 }: LessonViewerProps) {
   const [lessonIndex, setLessonIndex] = useState(0);
@@ -230,12 +221,11 @@ function ClassicModeViewer({
             {Math.round(((lessonIndex + 1) / lessons.length) * 100)}%
           </p>
         </div>
-        <div className="w-full h-2 bg-soft rounded-full overflow-hidden">
+        <div className="w-full h-2.5 ui-meter">
           <div
-            className="h-full rounded-full transition-[width] duration-500"
+            className="h-full rounded-full bg-action transition-[width] duration-500"
             style={{
               width: `${((lessonIndex + 1) / lessons.length) * 100}%`,
-              backgroundColor: accentColor,
             }}
           />
         </div>
@@ -259,8 +249,7 @@ function ClassicModeViewer({
             {lesson.explanation.map((para, i) => (
               <div
                 key={i}
-                className="border-l-4 pl-4 py-1"
-                style={{ borderColor: accentColor + '80' }}
+                className="border-l-4 border-line pl-4 py-1"
               >
                 <p className="text-sm text-ink leading-relaxed">
                   {hasLatex(para) ? (
@@ -321,8 +310,7 @@ function ClassicModeViewer({
             )}
             <button
               onClick={nextLesson}
-              className="flex-1 py-3 rounded-control text-sm font-extrabold text-white border-2 border-ink shadow-hard-sm active:scale-95 transition-transform"
-              style={{ backgroundColor: accentColor }}
+              className="flex-1 ui-btn ui-btn-primary text-sm"
             >
               {isLast ? 'Start Quiz!' : 'Next Lesson'}
             </button>

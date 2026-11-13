@@ -30,7 +30,7 @@ const DifficultyDots = React.memo(function DifficultyDots({ level }: { level: nu
         <div
           key={i}
           className={`w-2 h-2 rounded-full ${
-            i <= level ? 'bg-white/70' : 'bg-white/20'
+            i <= level ? 'bg-ink' : 'bg-line'
           }`}
         />
       ))}
@@ -177,7 +177,7 @@ export default function FlashCard({
       {/* ── Stacked deck cards behind ──────────────────────────────────────── */}
       {deckSize >= 2 && (
         <div
-          className="absolute rounded-[20px] bg-[#1E293B]/80 border border-white/[0.04]"
+          className="absolute rounded-card bg-card border-2 border-line"
           style={{
             width: '85%',
             maxWidth: 400,
@@ -189,7 +189,7 @@ export default function FlashCard({
       )}
       {deckSize >= 1 && (
         <div
-          className="absolute rounded-[20px] bg-[#1E293B]/90 border border-white/[0.05]"
+          className="absolute rounded-card bg-card border-2 border-line"
           style={{
             width: '85%',
             maxWidth: 400,
@@ -203,7 +203,7 @@ export default function FlashCard({
       {/* ── Swipe indicators ──────────────────────────────────────────────── */}
       {isDragging && dragX > 20 && (
         <div
-          className="absolute top-8 left-8 z-50 px-4 py-2 rounded-xl bg-duo-green/90 text-white font-bold text-lg rotate-[-12deg]"
+          className="absolute top-8 left-8 z-50 px-4 py-2 rounded-control bg-success border-2 border-ink text-white font-bold text-lg rotate-[-12deg]"
           style={{ opacity: swipeIndicatorOpacity }}
         >
           Nailed it! 🎯
@@ -211,7 +211,7 @@ export default function FlashCard({
       )}
       {isDragging && dragX < -20 && (
         <div
-          className="absolute top-8 right-8 z-50 px-4 py-2 rounded-xl bg-blue-500/90 text-white font-bold text-lg rotate-[12deg]"
+          className="absolute top-8 right-8 z-50 px-4 py-2 rounded-control bg-hint border-2 border-hint-ink text-hint-ink font-bold text-lg rotate-[12deg]"
           style={{ opacity: swipeIndicatorOpacity }}
         >
           Still learning 📚
@@ -247,23 +247,22 @@ export default function FlashCard({
         >
           {/* ── FRONT FACE ──────────────────────────────────────────────── */}
           <div
-            className="absolute inset-0 rounded-[20px] flex flex-col overflow-hidden flashcard-breathe"
+            className="absolute inset-0 rounded-card flex flex-col overflow-hidden"
             style={{
               backfaceVisibility: 'hidden',
               WebkitBackfaceVisibility: 'hidden',
-              background: '#1E293B',
-              borderLeft: `4px solid ${topicColor}`,
-              border: `1px solid rgba(255,255,255,0.06)`,
-              borderLeftWidth: '4px',
+              background: '#ffffff',
+              borderLeft: `10px solid ${topicColor}`,
+              border: `2px solid #1d2a4d`,
+              borderLeftWidth: '10px',
               borderLeftColor: topicColor,
-              boxShadow: '0 4px 24px rgba(52,211,153,0.08), 0 1px 4px rgba(0,0,0,0.3)',
+              boxShadow: '5px 5px 0 #1d2a4d',
             }}
           >
             {/* Top bar */}
             <div className="flex items-center justify-between px-4 pt-4 pb-2">
               <span
-                className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
-                style={{ backgroundColor: topicColor + '22', color: topicColor }}
+                className="ui-chip"
               >
                 {card.topicName}
               </span>
@@ -272,7 +271,7 @@ export default function FlashCard({
 
             {/* Center — question */}
             <div className="flex-1 flex flex-col items-center justify-center px-6 text-center gap-3">
-              <p className="text-[#F1F5F9] text-xl sm:text-2xl font-bold leading-snug">
+              <p className="text-ink text-xl sm:text-2xl font-bold leading-snug">
                 {card.front}
               </p>
               {card.formula && (
@@ -280,7 +279,7 @@ export default function FlashCard({
                   <KatexRenderer
                     latex={card.formula}
                     displayMode
-                    className="text-[#F1F5F9] text-2xl"
+                    className="text-ink text-2xl"
                   />
                 </div>
               )}
@@ -288,7 +287,7 @@ export default function FlashCard({
 
             {/* Bottom — tap hint */}
             <div className="pb-5 text-center">
-              <p className="text-sm text-[#94A3B8] animate-pulse">
+              <p className="text-sm font-bold text-ink-muted animate-pulse">
                 Tap to reveal ✨
               </p>
             </div>
@@ -296,37 +295,37 @@ export default function FlashCard({
 
           {/* ── BACK FACE ───────────────────────────────────────────────── */}
           <div
-            className="absolute inset-0 rounded-[20px] flex flex-col overflow-hidden"
+            className="absolute inset-0 rounded-card flex flex-col overflow-hidden"
             style={{
               backfaceVisibility: 'hidden',
               WebkitBackfaceVisibility: 'hidden',
               transform: 'rotateY(180deg)',
-              background: 'linear-gradient(135deg, #1E293B 0%, #1a2332 100%)',
-              borderLeft: `4px solid ${topicColor}`,
-              border: `1px solid rgba(255,255,255,0.06)`,
-              borderLeftWidth: '4px',
+              background: '#ffffff',
+              borderLeft: `10px solid ${topicColor}`,
+              border: `2px solid #1d2a4d`,
+              borderLeftWidth: '10px',
               borderLeftColor: topicColor,
-              boxShadow: '0 4px 24px rgba(52,211,153,0.08), 0 1px 4px rgba(0,0,0,0.3)',
+              boxShadow: '5px 5px 0 #1d2a4d',
             }}
           >
             {/* Top — Answer label */}
             <div className="px-4 pt-4 pb-2">
-              <span className="text-xs font-bold uppercase tracking-[1.5px] text-[#34D399]">
+              <span className="ui-chip">
                 Answer
               </span>
             </div>
 
             {/* Center — answer text */}
             <div className="flex-1 flex flex-col items-center justify-center px-6 text-center gap-3">
-              <p className="text-[#F1F5F9] text-lg sm:text-xl font-bold leading-snug">
+              <p className="text-ink text-lg sm:text-xl font-bold leading-snug">
                 {card.back}
               </p>
               {card.formula && (
-                <div className="mt-2">
+                <div className="mt-2 bg-soft rounded-note px-3 py-2">
                   <KatexRenderer
                     latex={card.formula}
                     displayMode
-                    className="text-[#F1F5F9] text-2xl"
+                    className="text-ink text-2xl"
                   />
                 </div>
               )}
@@ -337,7 +336,7 @@ export default function FlashCard({
               {showConfidenceSlot ? (
                 <div className="h-14" /> // Placeholder for external confidence buttons
               ) : (
-                <p className="text-center text-xs text-[#64748B]">
+                <p className="text-center text-[13px] font-bold text-ink-muted">
                   Swipe right = Got it · Swipe left = Review again
                 </p>
               )}

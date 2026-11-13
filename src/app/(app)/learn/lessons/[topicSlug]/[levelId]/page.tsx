@@ -37,7 +37,7 @@ export default function LessonSessionPage({
   const [quizTotal, setQuizTotal] = useState(0);
   const [xp, setXP] = useState<XPBreakdown | null>(null);
   const [isFirstTime, setIsFirstTime] = useState(true);
-  const [accentColor, setAccentColor] = useState('#8B5CF6');
+  const [accentColor, setAccentColor] = useState('#4f46e5');
   const startTimeRef = useRef(Date.now());
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export default function LessonSessionPage({
         const lvl = data.levels?.find((l: LessonLevel) => l.id === levelId);
         if (!lvl) throw new Error('Level not found');
         setLevel(lvl);
-        setAccentColor(lvl.color || data.color || '#8B5CF6');
+        setAccentColor(lvl.color || data.color || '#4f46e5');
       })
       .catch((err) => { logError('[lessons/level] fetch level data', err); setError(true); })
       .finally(() => setLoading(false));

@@ -41,7 +41,7 @@ interface BoxTransition {
 type SessionPhase = 'loading' | 'reviewing' | 'complete';
 
 const BOX_NAMES = ['New', 'Rookie', 'Rising', 'Strong', 'Expert', 'Master'];
-const BOX_COLORS = ['#64748B', '#EF4444', '#F59E0B', '#3B82F6', '#8B5CF6', '#34D399'];
+const BOX_COLORS = ['#5d6b8c', '#5a4300', '#4f46e5', '#0e7490', '#3f37c9', '#12805c'];
 
 // ── Power-Up Toast ──────────────────────────────────────────────────────────
 
@@ -58,12 +58,12 @@ function PowerUpToast({
   return (
     <div className="fixed top-20 left-1/2 -translate-x-1/2 z-[60] animate-slide-down">
       <div
-        className="flex items-center gap-2 px-4 py-2.5 rounded-2xl shadow-lg border"
+        className="flex items-center gap-2 px-4 py-2.5 rounded-control shadow-hard-sm border-2"
         style={{
           background: isMastery
-            ? 'linear-gradient(135deg, #059669, #34D399)'
-            : 'linear-gradient(135deg, #1E293B, #334155)',
-          borderColor: isMastery ? '#34D399' : BOX_COLORS[newBox] + '40',
+            ? '#12805c'
+            : '#1d2a4d',
+          borderColor: '#1d2a4d',
         }}
       >
         <span className="text-xl animate-sparky-bounce">
@@ -73,7 +73,7 @@ function PowerUpToast({
           <p className="text-white font-black text-sm">
             {isMastery ? 'MASTERED!' : 'Power Up!'}
           </p>
-          <p className="text-white/70 text-[10px] font-bold">
+          <p className="text-white text-xs font-bold">
             {isMastery ? 'Card reached Master level!' : `→ ${BOX_NAMES[newBox]}`}
           </p>
         </div>
@@ -113,7 +113,7 @@ function SessionComplete({
   const hasMilestone = mastered.length > 0;
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#0F172A] flex flex-col items-center justify-center px-6 animate-fade-in overflow-y-auto">
+    <div className="fixed inset-0 z-50 bg-paper flex flex-col items-center justify-center px-6 animate-fade-in overflow-y-auto">
       {hasMilestone && <Confetti />}
 
       {/* Sparky */}
@@ -123,7 +123,7 @@ function SessionComplete({
         </div>
       </div>
 
-      <h1 className="text-2xl font-black text-[#F1F5F9] mb-1">
+      <h1 className="text-display text-ink mb-1">
         {hasMilestone
           ? 'Cards Mastered!'
           : pct >= 80
@@ -132,7 +132,7 @@ function SessionComplete({
           ? 'Great Practice!'
           : 'Keep Going!'}
       </h1>
-      <p className="text-sm text-[#94A3B8] mb-6">
+      <p className="text-label text-ink-muted mb-6">
         {hasMilestone
           ? `${mastered.length} card${mastered.length > 1 ? 's' : ''} reached Master level!`
           : pct >= 80
@@ -145,17 +145,17 @@ function SessionComplete({
       {/* XP earned banner */}
       {sessionXP && sessionXP.total > 0 && (
         <div className="w-full max-w-xs mb-4 animate-pop-in">
-          <div className="bg-duo-green/10 border border-duo-green/20 rounded-2xl px-4 py-3 text-center">
-            <p className="text-3xl font-black text-[#34D399] tabular-nums">+{sessionXP.total} XP</p>
+          <div className="bg-star border-2 border-ink rounded-card px-4 py-3 text-center">
+            <p className="text-3xl font-black text-ink tabular-nums">+{sessionXP.total} XP</p>
             <div className="flex items-center justify-center gap-2 mt-1 flex-wrap">
-              <span className="text-[10px] text-[#94A3B8]">Base: {sessionXP.base}</span>
+              <span className="text-xs font-bold text-ink">Base: {sessionXP.base}</span>
               {sessionXP.streakBonus > 0 && (
-                <span className="text-[10px] text-[#FBBF24]">
+                <span className="text-xs font-bold text-ink">
                   Streak {sessionXP.streakMultiplier}x: +{sessionXP.streakBonus}
                 </span>
               )}
               {sessionXP.milestoneBonus > 0 && (
-                <span className="text-[10px] text-[#A78BFA]">
+                <span className="text-xs font-bold text-ink">
                   Milestone: +{sessionXP.milestoneBonus}
                 </span>
               )}
@@ -166,19 +166,19 @@ function SessionComplete({
 
       {/* Stats grid */}
       <div className="grid grid-cols-3 gap-3 w-full max-w-xs mb-5">
-        <div className="bg-[#1E293B] rounded-2xl p-3 text-center">
-          <p className="text-2xl font-black text-[#F1F5F9] tabular-nums">{cardsReviewed}</p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider mt-0.5">Cards</p>
+        <div className="bg-card border-2 border-line rounded-card p-3 text-center">
+          <p className="text-2xl font-black text-ink tabular-nums">{cardsReviewed}</p>
+          <p className="text-[13px] font-bold text-ink-muted mt-0.5">Cards</p>
         </div>
-        <div className="bg-[#1E293B] rounded-2xl p-3 text-center">
-          <p className="text-2xl font-black text-[#34D399] tabular-nums">{pct}%</p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider mt-0.5">Got It</p>
+        <div className="bg-card border-2 border-line rounded-card p-3 text-center">
+          <p className="text-2xl font-black text-success tabular-nums">{pct}%</p>
+          <p className="text-[13px] font-bold text-ink-muted mt-0.5">Got It</p>
         </div>
-        <div className="bg-[#1E293B] rounded-2xl p-3 text-center">
-          <p className="text-2xl font-black text-[#60A5FA] tabular-nums">
+        <div className="bg-card border-2 border-line rounded-card p-3 text-center">
+          <p className="text-2xl font-black text-ink tabular-nums">
             {mins > 0 ? `${mins}m` : `${secs}s`}
           </p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider mt-0.5">Time</p>
+          <p className="text-[13px] font-bold text-ink-muted mt-0.5">Time</p>
         </div>
       </div>
 
@@ -186,23 +186,23 @@ function SessionComplete({
       {(promoted.length > 0 || reset.length > 0) && (
         <div className="w-full max-w-xs mb-5 space-y-2">
           {promoted.length > 0 && (
-            <div className="bg-duo-green/10 border border-duo-green/20 rounded-xl px-3 py-2.5">
-              <p className="text-xs font-bold text-emerald-400 mb-1.5">
+            <div className="bg-success-soft border-2 border-success rounded-control px-3 py-2.5">
+              <p className="text-label text-success mb-1.5">
                 ⬆️ {promoted.length} card{promoted.length > 1 ? 's' : ''} leveled up
               </p>
               {promoted.slice(0, 5).map((t) => (
                 <div key={t.cardId} className="flex items-center gap-2 py-0.5">
-                  <span className="text-[10px] text-[#94A3B8] truncate flex-1">{t.cardFront}</span>
+                  <span className="text-xs font-bold text-ink truncate flex-1">{t.cardFront}</span>
                   <div className="flex items-center gap-1 flex-shrink-0">
                     <span
-                      className="text-[10px] font-bold px-1.5 py-0.5 rounded"
+                      className="text-xs font-bold px-1.5 py-0.5 rounded-full"
                       style={{ color: BOX_COLORS[t.oldBox], background: BOX_COLORS[t.oldBox] + '20' }}
                     >
                       {BOX_NAMES[t.oldBox]}
                     </span>
-                    <span className="text-[#64748B] text-[10px]">→</span>
+                    <span className="text-ink-muted text-xs">→</span>
                     <span
-                      className="text-[10px] font-bold px-1.5 py-0.5 rounded"
+                      className="text-xs font-bold px-1.5 py-0.5 rounded-full"
                       style={{ color: BOX_COLORS[t.newBox], background: BOX_COLORS[t.newBox] + '20' }}
                     >
                       {BOX_NAMES[t.newBox]}
@@ -211,7 +211,7 @@ function SessionComplete({
                 </div>
               ))}
               {promoted.length > 5 && (
-                <p className="text-[10px] text-emerald-400/60 mt-1">
+                <p className="text-xs font-bold text-ink-muted mt-1">
                   +{promoted.length - 5} more
                 </p>
               )}
@@ -219,11 +219,11 @@ function SessionComplete({
           )}
 
           {reset.length > 0 && (
-            <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl px-3 py-2.5">
-              <p className="text-xs font-bold text-blue-400 mb-1">
+            <div className="bg-hint border-2 border-dashed border-hint-ink rounded-control px-3 py-2.5">
+              <p className="text-label text-hint-ink mb-1">
                 🔄 {reset.length} card{reset.length > 1 ? 's' : ''} need more practice
               </p>
-              <p className="text-[10px] text-blue-400/60">
+              <p className="text-[13px] font-bold text-hint-ink">
                 These reset to Rookie — you&apos;ll see them again soon!
               </p>
             </div>
@@ -235,8 +235,7 @@ function SessionComplete({
       <div className="w-full max-w-xs space-y-3 pb-8">
         <button
           onClick={onRestart}
-          className="w-full py-3.5 rounded-2xl font-bold text-white text-sm"
-          style={{ background: 'linear-gradient(135deg, #34D399, #059669)' }}
+          className="ui-btn ui-btn-primary w-full"
         >
           Review Again
         </button>
@@ -245,7 +244,7 @@ function SessionComplete({
         ) : (
           <button
             onClick={onDone}
-            className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-[#1E293B]"
+            className="ui-btn w-full"
           >
             Done
           </button>
@@ -261,9 +260,9 @@ export default function FlashcardSessionPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-[#0F172A] flex flex-col items-center justify-center">
+        <div className="min-h-screen bg-paper flex flex-col items-center justify-center">
           <div className="text-5xl animate-sparky-bounce mb-4">🃏</div>
-          <p className="text-[#94A3B8] text-sm">Loading session...</p>
+          <p className="text-ink-muted text-label">Loading session...</p>
         </div>
       }
     >
@@ -528,9 +527,9 @@ function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: stri
   // Loading
   if (phase === 'loading') {
     return (
-      <div className="min-h-screen bg-[#0F172A] flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center">
         <div className="text-5xl animate-sparky-bounce mb-4">🃏</div>
-        <p className="text-[#94A3B8] text-sm">Shuffling cards...</p>
+        <p className="text-ink-muted text-label">Shuffling cards...</p>
       </div>
     );
   }
@@ -538,15 +537,15 @@ function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: stri
   // Empty deck — no cards were loaded at all
   if (phase === 'complete' && completed === 0 && cards.length === 0) {
     return (
-      <div className="min-h-screen bg-[#0F172A] flex flex-col items-center justify-center px-6 text-center">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 text-center">
         <span className="text-5xl mb-4">🃏</span>
-        <h2 className="text-[#F1F5F9] font-extrabold text-xl mb-2">No Cards Available</h2>
-        <p className="text-[#94A3B8] text-sm mb-6 max-w-xs">
+        <h2 className="text-heading text-ink mb-2">No Cards Available</h2>
+        <p className="text-ink-muted text-label mb-6 max-w-xs">
           This deck doesn&apos;t have any cards ready right now. Try a different deck or come back later!
         </p>
         <button
           onClick={() => router.push('/flashcards')}
-          className="bg-[#1E293B] text-[#F1F5F9] font-bold text-sm px-6 py-3 rounded-2xl border border-white/10 active:scale-95 transition-transform"
+          className="bg-action text-white font-extrabold text-sm px-6 py-3 rounded-control border-2 border-ink shadow-hard-sm active:scale-95 transition-transform"
         >
           ← Back to Cards
         </button>
@@ -613,46 +612,46 @@ function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: stri
   const remaining = cards.length - currentIndex - 1;
 
   return (
-    <div className="min-h-screen bg-[#0F172A] flex flex-col">
+    <div className="min-h-screen bg-paper flex flex-col">
       {/* ── Celebration overlays ───────────────────────────────────────────── */}
       {showConfetti && <Confetti />}
       <PowerUpToast show={showToast} newBox={toastBox} isMastery={toastIsMastery} />
 
       {/* ── Top bar ──────────────────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-30 bg-[#0F172A]/95 backdrop-blur-md border-b border-white/5 px-4 py-3">
+      <div className="sticky top-0 z-30 bg-ink px-4 py-3">
         <div className="flex items-center justify-between max-w-md mx-auto">
           <button
             onClick={() => {
               if (completed > 0) saveSession();
               router.push('/flashcards');
             }}
-            className="text-[#94A3B8] text-sm font-bold"
+            className="text-white text-sm font-bold"
           >
             ✕
           </button>
-          <h2 className="text-[#F1F5F9] font-bold text-sm truncate max-w-[200px]">
+          <h2 className="text-white text-title truncate max-w-[200px]">
             {deckName}
           </h2>
           <div className="flex items-center gap-2">
             {accumulatedXP > 0 && (
-              <span className="text-xs font-bold text-[#34D399] tabular-nums relative">
+              <span className="text-xs font-extrabold text-ink bg-star rounded-full px-2 py-0.5 tabular-nums relative">
                 {accumulatedXP} XP
                 <XPPopup xp={lastXP} triggerKey={xpTrigger} />
               </span>
             )}
             {sessionStreak >= 3 && (
-              <span className="text-xs font-bold text-amber-400 animate-pulse">
+              <span className="text-xs font-bold text-star animate-pulse">
                 🔥{sessionStreak}
               </span>
             )}
-            <span className="text-xs text-[#64748B] tabular-nums">
+            <span className="text-xs font-bold text-white/70 tabular-nums">
               {currentIndex + 1}/{cards.length}
             </span>
           </div>
         </div>
 
         {/* Progress */}
-        <div className="max-w-md mx-auto mt-1">
+        <div className="max-w-md mx-auto mt-2">
           <ProgressDots total={cards.length} current={currentIndex} completed={completed} />
         </div>
       </div>
@@ -673,13 +672,13 @@ function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: stri
                   style={{
                     background: lvl <= (currentCard.leitnerBox || 0)
                       ? BOX_COLORS[currentCard.leitnerBox || 0]
-                      : 'rgba(255,255,255,0.1)',
+                      : '#d3deee',
                   }}
                 />
               ))}
             </div>
             {currentCard.timesSeen > 0 && (
-              <span className="text-[10px] text-[#64748B] ml-1">
+              <span className="text-xs font-bold text-ink-muted ml-1">
                 Seen {currentCard.timesSeen}x
               </span>
             )}
@@ -703,20 +702,20 @@ function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: stri
         <div className="mt-6 flex items-center gap-3 w-full max-w-[400px]">
           <button
             onClick={handleStillLearning}
-            className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-blue-400 bg-blue-500/10 border border-blue-500/20 active:scale-[0.97] transition-[transform,background-color,border-color]"
+            className="flex-1 py-3.5 rounded-control font-extrabold text-sm text-hint-ink bg-hint border-2 border-ink shadow-hard-sm active:scale-[0.97] transition-[transform,background-color,border-color]"
           >
             Still learning 📚
           </button>
           <button
             onClick={handleNailedIt}
-            className="flex-1 py-3.5 rounded-2xl font-bold text-sm text-emerald-400 bg-duo-green/10 border border-duo-green/20 active:scale-[0.97] transition-[transform,background-color,border-color]"
+            className="flex-1 py-3.5 rounded-control font-extrabold text-sm text-white bg-success border-2 border-ink shadow-hard-sm active:scale-[0.97] transition-[transform,background-color,border-color]"
           >
             Nailed it! 🎯
           </button>
         </div>
 
         {/* Keyboard hint (desktop only) */}
-        <p className="mt-3 text-[10px] text-[#475569] hidden sm:block">
+        <p className="mt-3 text-xs text-ink-muted hidden sm:block">
           ← A = Still learning &nbsp;·&nbsp; D → = Nailed it &nbsp;·&nbsp; Tap card to flip
         </p>
       </div>

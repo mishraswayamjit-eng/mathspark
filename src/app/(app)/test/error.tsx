@@ -19,7 +19,7 @@ export default function TestError({
     <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 text-center gap-6">
       <span className="text-6xl">😕</span>
       <div className="space-y-2">
-        <h2 className="text-heading text-ink">Something went wrong</h2>
+        <h2 className="text-heading text-ink">Oops! Sparky tripped over a number</h2>
         <p className="text-ink-muted font-medium text-sm">
           We couldn&apos;t load your test. Don&apos;t worry — your progress is saved!
         </p>

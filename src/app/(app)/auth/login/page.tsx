@@ -33,7 +33,7 @@ function LoginForm() {
       setError('Server configuration error — NEXTAUTH_SECRET or NEXTAUTH_URL may not be set in Vercel env vars.');
       setLoading(false);
     } else {
-      setError('Incorrect email or password. Please try again.');
+      setError("That email or password doesn't match. Please try again.");
       setLoading(false);
     }
   }

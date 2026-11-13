@@ -27,7 +27,7 @@ function NotationBox({ notation }: { notation: string }) {
   );
 }
 
-export default function SlideRenderer({ slide, accentColor }: SlideRendererProps) {
+export default function SlideRenderer({ slide }: SlideRendererProps) {
   switch (slide.type) {
     case 'intro':
       return (
@@ -110,7 +110,7 @@ export default function SlideRenderer({ slide, accentColor }: SlideRendererProps
       return (
         <div className="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center">
           <span className="text-[48px] leading-none mb-4" aria-hidden="true">✅</span>
-          <p className="text-[13px] font-extrabold mb-2" style={{ color: accentColor }}>
+          <p className="text-[13px] font-extrabold text-ink-muted mb-2">
             Recap
           </p>
           <p className="text-base font-semibold text-ink leading-relaxed max-w-[320px]">

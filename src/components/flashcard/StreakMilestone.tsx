@@ -32,7 +32,7 @@ export function StreakMilestoneCelebration({
 
   return (
     <div
-      className="fixed inset-0 z-[70] bg-[#0F172A]/95 backdrop-blur-sm flex flex-col items-center justify-center px-6 animate-fade-in"
+      className="fixed inset-0 z-[70] bg-paper flex flex-col items-center justify-center px-6 animate-fade-in"
       onClick={onDismiss}
     >
       <Confetti />
@@ -46,31 +46,31 @@ export function StreakMilestoneCelebration({
         <span className="text-6xl">{milestone.emoji}</span>
       </div>
 
-      <h1 className="text-2xl font-black text-[#F1F5F9] mb-1 animate-pop-in">
+      <h1 className="text-display text-ink mb-1 animate-pop-in">
         {milestone.title}
       </h1>
 
-      <p className="text-sm text-[#94A3B8] mb-4 text-center max-w-xs">
+      <p className="text-label text-ink-muted mb-4 text-center max-w-xs">
         {milestone.description}
       </p>
 
       {/* Streak count */}
-      <div className="flex items-center gap-2 bg-[#1E293B] rounded-full px-4 py-2 mb-3">
+      <div className="flex items-center gap-2 bg-star border-2 border-ink rounded-full px-4 py-2 mb-3">
         <span className="text-lg">🔥</span>
-        <span className="text-lg font-black text-[#FBBF24] tabular-nums">{streak}</span>
-        <span className="text-xs text-[#64748B]">day streak</span>
+        <span className="text-lg font-black text-ink tabular-nums">{streak}</span>
+        <span className="text-[13px] font-bold text-ink">day streak</span>
       </div>
 
       {/* XP bonus */}
       {milestone.xpBonus > 0 && (
         <div className="animate-xp-float">
-          <span className="text-sm font-black text-[#34D399]">
+          <span className="text-sm font-black text-ink bg-star border-2 border-ink rounded-full px-3 py-1">
             +{milestone.xpBonus} XP Bonus!
           </span>
         </div>
       )}
 
-      <p className="text-xs text-[#475569] mt-6">Tap anywhere to continue</p>
+      <p className="text-[13px] font-bold text-ink-muted mt-6">Tap anywhere to continue</p>
     </div>
   );
 }
@@ -89,7 +89,7 @@ export function XPPopup({ xp, triggerKey }: XPPopupProps) {
   return (
     <span
       key={triggerKey}
-      className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-black text-[#34D399] animate-xp-float whitespace-nowrap pointer-events-none"
+      className="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-black text-star animate-xp-float whitespace-nowrap pointer-events-none"
     >
       +{xp} XP
     </span>
@@ -109,31 +109,31 @@ export function StreakProgress({ streak, nextMilestone, progress }: StreakProgre
   if (streak === 0) return null;
 
   return (
-    <div className="flex items-center gap-3 bg-[#1E293B]/60 rounded-xl px-3 py-2">
+    <div className="flex items-center gap-3 bg-card border-2 border-line rounded-control px-3 py-2">
       <div className="flex items-center gap-1.5 flex-shrink-0">
         <span className="text-sm">🔥</span>
-        <span className="text-sm font-black text-[#FBBF24] tabular-nums">{streak}</span>
+        <span className="text-sm font-black text-ink tabular-nums">{streak}</span>
       </div>
 
       {nextMilestone ? (
         <div className="flex-1">
           <div className="flex items-center justify-between mb-0.5">
-            <span className="text-[10px] text-[#64748B]">
+            <span className="text-xs font-bold text-ink-muted">
               Next: {nextMilestone.emoji} {nextMilestone.title.replace('!', '')}
             </span>
-            <span className="text-[10px] text-[#64748B] tabular-nums">
+            <span className="text-xs font-bold text-ink-muted tabular-nums">
               {streak}/{nextMilestone.days}
             </span>
           </div>
-          <div className="h-1 bg-white/5 rounded-full overflow-hidden">
+          <div className="ui-meter h-2.5">
             <div
-              className="h-full bg-[#FBBF24] rounded-full transition-[width] duration-500"
+              className="h-full bg-star rounded-full transition-[width] duration-500"
               style={{ width: `${progress * 100}%` }}
             />
           </div>
         </div>
       ) : (
-        <span className="text-[10px] text-[#34D399] font-bold">
+        <span className="text-xs text-ink font-bold">
           👑 All milestones achieved!
         </span>
       )}

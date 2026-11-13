@@ -23,7 +23,7 @@ function accuracyPct(t: TopicEntry) {
 
 function masteryLevel(pct: number) {
   if (pct >= 90) return { label: 'Mastered', color: '#12805c', emoji: '✅', bg: '#dff6ea' };
-  if (pct >= 75) return { label: 'Strong',   color: '#8BC34A', emoji: '💪', bg: '#F7FEE7' };
+  if (pct >= 75) return { label: 'Strong',   color: '#0e7490', emoji: '💪', bg: '#dff3f8' };
   if (pct >= 50) return { label: 'Developing',color: '#5a4300', emoji: '🔄', bg: '#fff1b8' };
   return                 { label: 'Needs Practice', color: '#c62f3d', emoji: '🎯', bg: '#fde8ea' };
 }
@@ -166,7 +166,7 @@ export default function ProgressPage() {
   if (!loading && (fetchError || !data)) {
     return (
       <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
-        <p className="text-ink font-extrabold text-lg">Something went wrong</p>
+        <p className="text-ink font-extrabold text-lg">Oops! Sparky tripped over a number</p>
         <p className="text-ink-muted text-sm">Could not load progress data. Check your connection.</p>
         <button onClick={() => window.location.reload()} className="bg-action text-white border-2 border-ink shadow-hard-sm font-extrabold px-6 py-2.5 rounded-control text-sm active:scale-95 transition-transform">
           Retry
@@ -361,7 +361,7 @@ export default function ProgressPage() {
           <div className="flex gap-2 mb-3 flex-wrap">
             {[
               { label: 'Mastered', color: '#12805c' },
-              { label: 'Strong', color: '#8BC34A' },
+              { label: 'Strong', color: '#0e7490' },
               { label: 'Developing', color: '#5a4300' },
               { label: 'Needs Work', color: '#c62f3d' },
               { label: 'Not Started', color: '#d3deee' },

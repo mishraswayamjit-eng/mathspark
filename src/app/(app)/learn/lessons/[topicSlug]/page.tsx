@@ -98,13 +98,10 @@ export default function TopicPage({
       <div className="max-w-lg mx-auto px-4 pt-5 animate-fade-in">
         {/* Topic description */}
         <div
-          className="rounded-card px-4 py-3 mb-5 border-2"
-          style={{
-            backgroundColor: topic.color + '10',
-            borderColor: topic.color + '30',
-          }}
+          className="bg-white rounded-card px-4 py-3 mb-5 border-2 border-line border-l-[10px]"
+          style={{ borderLeftColor: topic.color }}
         >
-          <p className="text-sm font-semibold" style={{ color: topic.color }}>
+          <p className="text-sm font-semibold text-ink">
             {topic.description}
           </p>
           <p className="text-xs text-ink-muted mt-1">

@@ -69,10 +69,7 @@ export default function ConceptTrainerCatalog() {
               <div className="min-w-0">
                 <p className="font-extrabold text-ink">{t.title}</p>
                 <p className="text-xs text-ink-muted mt-0.5 leading-snug">{t.description}</p>
-                <p
-                  className="text-xs font-bold mt-1"
-                  style={{ color: t.color }}
-                >
+                <p className="text-xs font-bold text-ink-muted mt-1">
                   Grades {t.gradeRange[0]}–{t.gradeRange[1]}
                 </p>
               </div>

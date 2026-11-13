@@ -82,6 +82,6 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: err.message }, { status: 400 });
     }
     logError('[parent/children POST]', err);
-    return NextResponse.json({ error: 'Something went wrong.' }, { status: 500 });
+    return NextResponse.json({ error: "We couldn't finish that. Please try again." }, { status: 500 });
   }
 }

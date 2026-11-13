@@ -12,15 +12,15 @@ export default function PageError({
 }) {
   useEffect(() => logError('[flashcards] error boundary', error), [error]);
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-white p-8 text-center">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-paper p-8 text-center">
       <div className="text-6xl mb-4" aria-hidden="true">&#x1F0CF;</div>
-      <h2 className="text-xl font-extrabold text-gray-800 mb-2">
-        The flashcards got shuffled wrong!
+      <h2 className="text-heading text-ink mb-2">
+        Oops! The flashcards got in a muddle!
       </h2>
-      <p className="text-gray-500 text-sm mb-6">Something went wrong. Let&apos;s try again!</p>
+      <p className="text-ink-muted text-label mb-6">Sparky tripped over a card. Let&apos;s try again!</p>
       <button
         onClick={reset}
-        className="bg-duo-green text-white font-extrabold rounded-2xl px-8 py-3"
+        className="ui-btn ui-btn-primary px-8"
       >
         Try Again
       </button>

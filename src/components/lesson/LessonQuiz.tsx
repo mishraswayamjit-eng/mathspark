@@ -18,7 +18,7 @@ function normalize(s: string): string {
   return s.trim().toLowerCase().replace(/\s+/g, ' ');
 }
 
-export default function LessonQuiz({ questions, accentColor, onComplete }: LessonQuizProps) {
+export default function LessonQuiz({ questions, onComplete }: LessonQuizProps) {
   const [qIndex, setQIndex] = useState(0);
   const [input, setInput] = useState('');
   const [score, setScore] = useState(0);
@@ -94,12 +94,11 @@ export default function LessonQuiz({ questions, accentColor, onComplete }: Lesso
       </div>
 
       {/* Progress bar */}
-      <div className="w-full h-2 bg-soft rounded-full overflow-hidden mb-5">
+      <div className="w-full h-2.5 ui-meter mb-5">
         <div
-          className="h-full rounded-full transition-[width] duration-500"
+          className="h-full rounded-full bg-action transition-[width] duration-500"
           style={{
             width: `${((qIndex + 1) / questions.length) * 100}%`,
-            backgroundColor: accentColor,
           }}
         />
       </div>
@@ -157,7 +156,7 @@ export default function LessonQuiz({ questions, accentColor, onComplete }: Lesso
         {feedback === 'wrong' && (
           <div className="text-center mb-4 animate-pop-in">
             <p className="text-sm font-extrabold text-retry">
-              <span aria-hidden="true">❌ </span>The answer is {q.answer}
+The answer is {q.answer}
             </p>
           </div>
         )}
@@ -167,8 +166,7 @@ export default function LessonQuiz({ questions, accentColor, onComplete }: Lesso
           <button
             onClick={check}
             disabled={!input.trim()}
-            className="w-full py-3.5 rounded-control text-sm font-extrabold text-white border-2 border-ink shadow-hard-sm active:scale-95 transition-transform disabled:opacity-40"
-            style={{ backgroundColor: accentColor }}
+            className="w-full ui-btn ui-btn-primary text-sm"
           >
             Check
           </button>

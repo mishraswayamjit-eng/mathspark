@@ -29,6 +29,8 @@ The visual language was ported from the `ipm-maths-practice` app, which tested b
 | Hint Yellow | `#fff1b8` | `hint` | `--color-hint` | Fill of the hint note |
 | Hint Ink | `#5a4300` | `hint-ink` | `--color-hint-ink` | Text and dashed outline on the hint note |
 | Star Gold | `#f5a400` | `star` | `--color-star` | Stars, XP and reward accents |
+| Strong Teal | `#0e7490` | `strong` | `--color-strong` | The "strong" mastery band (75–89%) on mastery maps, legends and report rows only |
+| Strong Wash | `#dff3f8` | `strong-soft` | `--color-strong-soft` | Background of "strong" mastery tiles and rows |
 
 ### Contrast (WCAG, computed)
 
@@ -43,6 +45,8 @@ The visual language was ported from the `ipm-maths-practice` app, which tested b
 | Not-Quite Red on Not-Quite Wash | 4.6 : 1 | Feedback heading, option text |
 | Hint Ink on Hint Yellow | 8.3 : 1 | Hint text |
 | Ink on Star Gold | 6.8 : 1 | "Need more help?" button label |
+| Strong Teal on Card White | 5.4 : 1 | Mastery label text |
+| Strong Teal on Strong Wash | 4.7 : 1 | Mastery row text |
 
 ## Tokens — Typography
 
@@ -216,7 +220,7 @@ White fill with a 2px ink top border. The active tab is Action Indigo at weight 
 - Don't use uppercase tracking labels; they are harder for young readers.
 - Don't put text smaller than 13px in front of a child.
 - Don't put green text on Correct Wash below 15px bold (contrast is 4.3 : 1).
-- Don't apply this system to the flashcard screens; they use a separate dark theme.
+- Don't keep a separate theme for any screen. Flashcards use this system too: the card is the screen's one emphasised card, "got it" is green, "still learning" is hint yellow.
 
 ## Surfaces
 

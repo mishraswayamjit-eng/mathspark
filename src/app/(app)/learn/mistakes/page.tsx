@@ -32,18 +32,18 @@ interface MistakePattern {
 // ── Category metadata ─────────────────────────────────────────────────────────
 
 const CATEGORY_META: Record<string, { emoji: string; label: string; color: string }> = {
-  wrong_formula:      { emoji: '📝', label: 'Wrong Formula',      color: '#EF4444' },
-  procedural_error:   { emoji: '🔄', label: 'Procedural Error',   color: '#F97316' },
+  wrong_formula:      { emoji: '📝', label: 'Formula Mix-up',     color: '#EF4444' },
+  procedural_error:   { emoji: '🔄', label: 'Procedure Slip',     color: '#F97316' },
   order_of_operations:{ emoji: '🔢', label: 'Order of Ops',       color: '#EAB308' },
-  sign_error:         { emoji: '➖', label: 'Sign Error',          color: '#8B5CF6' },
-  wrong_operation:    { emoji: '✖️', label: 'Wrong Operation',     color: '#3B82F6' },
-  wrong_base:         { emoji: '🎯', label: 'Wrong Base',          color: '#14B8A6' },
-  conceptual_error:   { emoji: '💭', label: 'Conceptual Error',    color: '#EC4899' },
+  sign_error:         { emoji: '➖', label: 'Sign Slip',           color: '#8B5CF6' },
+  wrong_operation:    { emoji: '✖️', label: 'Operation Mix-up',    color: '#3B82F6' },
+  wrong_base:         { emoji: '🎯', label: 'Base Mix-up',         color: '#14B8A6' },
+  conceptual_error:   { emoji: '💭', label: 'Concept Mix-up',      color: '#EC4899' },
   missing_step:       { emoji: '⏭️', label: 'Missing Step',        color: '#F59E0B' },
-  notation_error:     { emoji: '✏️', label: 'Notation Error',      color: '#6366F1' },
-  reading_error:      { emoji: '👀', label: 'Reading Error',       color: '#059669' },
+  notation_error:     { emoji: '✏️', label: 'Notation Slip',       color: '#6366F1' },
+  reading_error:      { emoji: '👀', label: 'Reading Slip',        color: '#059669' },
   missing_knowledge:  { emoji: '❓', label: 'Missing Knowledge',   color: '#78716C' },
-  unit_error:         { emoji: '📏', label: 'Unit Error',          color: '#0EA5E9' },
+  unit_error:         { emoji: '📏', label: 'Unit Slip',           color: '#0EA5E9' },
 };
 
 function getCatMeta(cat: string) {
@@ -106,7 +106,7 @@ export default function MistakePatternsPage() {
         <Link href="/chapters" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white text-title">Mistake Patterns</h1>
-          <p className="text-white/70 text-xs font-medium">50 traps &middot; Learn from common errors!</p>
+          <p className="text-white/70 text-xs font-medium">50 traps &middot; Learn from common mistakes!</p>
         </div>
         <span className="text-2xl">🚨</span>
       </div>
@@ -129,7 +129,7 @@ export default function MistakePatternsPage() {
             onClick={() => setSelectedCategory(null)}
             className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
               selectedCategory === null
-                ? 'bg-action text-white border-action'
+                ? 'bg-action text-white border-ink'
                 : 'bg-white text-ink border-line'
             }`}
           >
@@ -144,10 +144,9 @@ export default function MistakePatternsPage() {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors flex items-center gap-1 ${
                   isActive
-                    ? 'text-white border-transparent'
+                    ? 'bg-action text-white border-ink'
                     : 'bg-white text-ink border-line'
                 }`}
-                style={isActive ? { backgroundColor: meta.color, borderColor: meta.color } : {}}
               >
                 <span>{meta.emoji}</span>
                 <span>{meta.label}</span>
@@ -176,8 +175,8 @@ export default function MistakePatternsPage() {
               return (
                 <div
                   key={pattern.id}
-                  className="bg-white rounded-card border-2 border-line overflow-hidden"
-                  style={{ borderLeftWidth: '4px', borderLeftColor: catMeta.color }}
+                  className="bg-white rounded-card border-2 border-line border-l-[10px] overflow-hidden"
+                  style={{ borderLeftColor: catMeta.color }}
                 >
                   {/* Card header */}
                   <button
@@ -187,10 +186,7 @@ export default function MistakePatternsPage() {
                     <span className="text-2xl shrink-0">{pattern.emoji}</span>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1.5 mb-0.5">
-                        <span
-                          className="text-xs font-extrabold px-1.5 py-0.5 rounded-full text-white"
-                          style={{ backgroundColor: catMeta.color }}
-                        >
+                        <span className="ui-chip">
                           {catMeta.label}
                         </span>
                         <FrequencyBadge freq={pattern.frequency} />

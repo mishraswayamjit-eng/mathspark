@@ -50,6 +50,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ id: parent.id, name: parent.name, email: parent.email }, { status: 201 });
   } catch (err) {
     logError('[auth/register]', err);
-    return NextResponse.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
+    return NextResponse.json({ error: "We couldn't finish that. Please try again." }, { status: 500 });
   }
 }

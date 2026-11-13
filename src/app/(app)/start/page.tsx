@@ -393,7 +393,7 @@ export default function StartPage() {
       // 5. Go to display name step
       setStep('displayName');
     } catch {
-      setError('Something went wrong. Please try again!');
+      setError("We couldn't finish that. Please try again!");
     } finally {
       setLoading(false);
     }

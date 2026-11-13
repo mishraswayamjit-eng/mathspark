@@ -14,7 +14,7 @@ function accuracyPct(t: { attempted: number; correct: number }) {
 
 function masteryColor(pct: number) {
   if (pct >= 90) return { bg: '#dff6ea', border: '#12805c', text: '#1d2a4d', label: 'Mastered ✅' };
-  if (pct >= 75) return { bg: '#F7FEE7', border: '#8BC34A', text: '#3F6212', label: 'Strong 💪' };
+  if (pct >= 75) return { bg: '#dff3f8', border: '#0e7490', text: '#0e7490', label: 'Strong 💪' };
   if (pct >= 50) return { bg: '#fff1b8', border: '#5a4300', text: '#5a4300', label: 'Developing 🔄' };
   return                 { bg: '#fde8ea', border: '#c62f3d', text: '#c62f3d', label: 'Needs Practice 🎯' };
 }

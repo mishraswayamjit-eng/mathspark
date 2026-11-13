@@ -32,7 +32,7 @@ export default function StudentLoginPage() {
         setChildren(data.children);
       }
     } catch {
-      setError('Something went wrong. Please try again.');
+      setError("We couldn't finish that. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -71,7 +71,7 @@ export default function StudentLoginPage() {
       localStorage.setItem('mathspark_student_name', child.name);
       router.push('/home');
     } catch {
-      setError('Something went wrong. Please try again.');
+      setError("We couldn't finish that. Please try again.");
       setLoading(false);
     }
   }

@@ -65,14 +65,14 @@ function MatchComplete({
   const secs = timeSeconds % 60;
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#0F172A] flex flex-col items-center justify-center px-6 animate-fade-in">
+    <div className="fixed inset-0 z-50 bg-paper flex flex-col items-center justify-center px-6 animate-fade-in">
       {stars >= 3 && <Confetti />}
 
       <div className={stars >= 3 ? 'animate-sparky-dance' : 'animate-sparky-bounce'}>
         <Sparky mood={stars >= 3 ? 'celebrating' : stars >= 2 ? 'happy' : 'encouraging'} size={80} />
       </div>
 
-      <h1 className="text-2xl font-black text-[#F1F5F9] mt-3 mb-1">
+      <h1 className="text-display text-ink mt-3 mb-1">
         {stars >= 3 ? 'Perfect Memory!' : stars >= 2 ? 'Great Matching!' : 'Keep Practicing!'}
       </h1>
 
@@ -87,19 +87,19 @@ function MatchComplete({
 
       {/* Stats */}
       <div className="grid grid-cols-3 gap-2 w-full max-w-xs mb-6">
-        <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
-          <p className="text-lg font-black text-[#F1F5F9] tabular-nums">{pairs}</p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Pairs</p>
+        <div className="bg-card border-2 border-line rounded-tile p-2.5 text-center">
+          <p className="text-lg font-black text-ink tabular-nums">{pairs}</p>
+          <p className="text-xs font-bold text-ink-muted">Pairs</p>
         </div>
-        <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
-          <p className="text-lg font-black text-[#FBBF24] tabular-nums">{moves}</p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Moves</p>
+        <div className="bg-card border-2 border-line rounded-tile p-2.5 text-center">
+          <p className="text-lg font-black text-ink tabular-nums">{moves}</p>
+          <p className="text-xs font-bold text-ink-muted">Moves</p>
         </div>
-        <div className="bg-[#1E293B] rounded-xl p-2.5 text-center">
-          <p className="text-lg font-black text-[#60A5FA] tabular-nums">
+        <div className="bg-card border-2 border-line rounded-tile p-2.5 text-center">
+          <p className="text-lg font-black text-ink tabular-nums">
             {mins > 0 ? `${mins}m${secs}s` : `${secs}s`}
           </p>
-          <p className="text-[10px] text-[#64748B] uppercase tracking-wider">Time</p>
+          <p className="text-xs font-bold text-ink-muted">Time</p>
         </div>
       </div>
 
@@ -108,15 +108,14 @@ function MatchComplete({
         {onNextLevel && (
           <button
             onClick={onNextLevel}
-            className="w-full py-3.5 rounded-2xl font-bold text-white text-sm"
-            style={{ background: 'linear-gradient(135deg, #8B5CF6, #7C3AED)' }}
+            className="ui-btn ui-btn-primary w-full"
           >
             Next Level ({PAIR_COUNTS[level + 1]} pairs) 🚀
           </button>
         )}
         <button
           onClick={onPlayAgain}
-          className="w-full py-3.5 rounded-2xl font-bold text-white text-sm bg-[#1E293B] border border-white/10"
+          className="ui-btn w-full"
         >
           Play Again
         </button>
@@ -125,7 +124,7 @@ function MatchComplete({
         ) : (
           <button
             onClick={onDone}
-            className="w-full py-3.5 rounded-2xl font-bold text-[#94A3B8] text-sm bg-transparent"
+            className="w-full py-3.5 rounded-control font-extrabold text-ink-muted text-sm bg-transparent"
           >
             Done
           </button>
@@ -356,9 +355,9 @@ export default function TapMatchSession({ deckId, conceptId }: TapMatchSessionPr
 
   if (phase === 'loading') {
     return (
-      <div className="min-h-screen bg-[#0F172A] flex flex-col items-center justify-center">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center">
         <div className="text-5xl animate-sparky-bounce mb-4">🧩</div>
-        <p className="text-[#94A3B8] text-sm">Preparing match game...</p>
+        <p className="text-ink-muted text-label">Preparing match game...</p>
       </div>
     );
   }
@@ -395,45 +394,45 @@ export default function TapMatchSession({ deckId, conceptId }: TapMatchSessionPr
   const secs = elapsed % 60;
 
   return (
-    <div className="min-h-screen bg-[#0F172A] flex flex-col">
+    <div className="min-h-screen bg-paper flex flex-col">
       {/* ── Top bar ──────────────────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-30 bg-[#0F172A]/95 backdrop-blur-md border-b border-white/5 px-4 py-2.5">
+      <div className="sticky top-0 z-30 bg-ink px-4 py-2.5">
         <div className="flex items-center justify-between max-w-md mx-auto">
           <button
             onClick={() => router.push('/flashcards')}
-            className="text-[#94A3B8] text-sm font-bold"
+            className="text-white text-sm font-bold"
           >
             ✕
           </button>
 
           <div className="flex items-center gap-3">
             {isMemorize && (
-              <span className="text-xs font-bold text-amber-400 animate-pulse">
+              <span className="text-xs font-bold text-star animate-pulse">
                 👀 Memorize!
               </span>
             )}
             {!isMemorize && (
               <>
-                <span className="text-xs font-bold text-[#F1F5F9] tabular-nums">
+                <span className="text-xs font-bold text-white tabular-nums">
                   {matchedPairIds.size}/{totalPairs} pairs
                 </span>
-                <span className="text-xs text-[#64748B] tabular-nums">
+                <span className="text-xs font-bold text-white/70 tabular-nums">
                   {moves} moves
                 </span>
               </>
             )}
           </div>
 
-          <span className="text-xs font-bold text-[#60A5FA] tabular-nums">
+          <span className="text-xs font-bold text-white tabular-nums">
             {mins > 0 ? `${mins}:${secs.toString().padStart(2, '0')}` : `${secs}s`}
           </span>
         </div>
 
         {/* Progress bar */}
         {!isMemorize && totalPairs > 0 && (
-          <div className="max-w-md mx-auto mt-1.5 h-1 bg-white/5 rounded-full overflow-hidden">
+          <div className="ui-meter max-w-md mx-auto mt-1.5 h-3">
             <div
-              className="h-full bg-[#34D399] rounded-full transition-[width] duration-300"
+              className="h-full bg-action rounded-full transition-[width] duration-300"
               style={{ width: `${(matchedPairIds.size / totalPairs) * 100}%` }}
             />
           </div>
@@ -442,7 +441,7 @@ export default function TapMatchSession({ deckId, conceptId }: TapMatchSessionPr
 
       {/* Level label */}
       <div className="text-center pt-3 pb-2">
-        <span className="text-[10px] font-bold uppercase tracking-widest text-[#64748B]">
+        <span className="ui-chip">
           Level {level + 1} · {totalPairs} pairs
         </span>
       </div>
@@ -465,30 +464,30 @@ export default function TapMatchSession({ deckId, conceptId }: TapMatchSessionPr
                 onClick={() => handleTap(tile.id)}
                 disabled={isMemorize || isMatched}
                 className={`
-                  relative rounded-xl transition-[transform,background-color,border-color,opacity] duration-300 aspect-[3/4]
+                  relative rounded-control transition-[transform,background-color,border-color,opacity] duration-300 aspect-[3/4]
                   flex items-center justify-center p-2 text-center overflow-hidden min-h-0
                   ${isMatched
-                    ? 'bg-duo-green/20 border-2 border-duo-green/40 scale-95'
+                    ? 'bg-success-soft border-2 border-success scale-95'
                     : isFlipped
-                    ? 'bg-[#1E293B] border-2 border-[#A78BFA]/40'
-                    : 'bg-[#1E293B] border-2 border-white/10 active:scale-95 hover:border-white/20'
+                    ? 'bg-card border-2 border-ink shadow-hard-xs'
+                    : 'bg-soft border-2 border-line active:scale-95'
                   }
                 `}
               >
                 {isFlipped ? (
                   <div className="animate-fade-in">
                     {/* Type badge */}
-                    <span className={`absolute top-1 right-1.5 text-[8px] font-bold uppercase tracking-wider rounded px-1 ${
-                      tile.type === 'front' ? 'text-[#A78BFA] bg-[#A78BFA]/10' : 'text-[#34D399] bg-[#34D399]/10'
+                    <span className={`absolute top-1 right-1.5 text-xs font-extrabold rounded-full px-1.5 ${
+                      tile.type === 'front' ? 'text-ink bg-soft' : 'text-white bg-ink'
                     }`}>
                       {tile.type === 'front' ? 'Q' : 'A'}
                     </span>
 
                     {tile.formula ? (
-                      <KatexRenderer latex={tile.formula} displayMode={false} className="text-[#F1F5F9] text-xs" />
+                      <KatexRenderer latex={tile.formula} displayMode={false} className="text-ink text-xs" />
                     ) : (
                       <p className={`text-xs font-bold leading-tight ${
-                        isMatched ? 'text-emerald-300' : 'text-[#F1F5F9]'
+                        isMatched ? 'text-ink' : 'text-ink'
                       }`}>
                         {tile.text.length > 60 ? tile.text.slice(0, 57) + '...' : tile.text}
                       </p>
@@ -497,7 +496,7 @@ export default function TapMatchSession({ deckId, conceptId }: TapMatchSessionPr
                 ) : (
                   <div className="flex flex-col items-center gap-1">
                     <span className="text-2xl">🃏</span>
-                    <span className="text-[10px] text-[#475569] font-bold">TAP</span>
+                    <span className="text-xs text-ink-muted font-bold">TAP</span>
                   </div>
                 )}
               </button>

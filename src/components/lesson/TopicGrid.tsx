@@ -40,10 +40,7 @@ export default function TopicGrid({ topics, progress }: TopicGridProps) {
                 <span aria-hidden="true">{topic.emoji}</span>
               </div>
               {completed > 0 && (
-                <span
-                  className="text-xs font-extrabold px-2 py-0.5 rounded-full text-white"
-                  style={{ backgroundColor: topic.color }}
-                >
+                <span className="ui-chip">
                   {completed}/{total}
                 </span>
               )}
@@ -65,12 +62,11 @@ export default function TopicGrid({ topics, progress }: TopicGridProps) {
             </p>
 
             {/* Progress bar */}
-            <div className="w-full h-1.5 bg-soft rounded-full overflow-hidden mt-auto">
+            <div className="w-full h-2.5 ui-meter mt-auto">
               <div
-                className="h-full rounded-full transition-[width] duration-500"
+                className="h-full rounded-full bg-action transition-[width] duration-500"
                 style={{
                   width: `${(completed / total) * 100}%`,
-                  backgroundColor: topic.color,
                 }}
               />
             </div>
