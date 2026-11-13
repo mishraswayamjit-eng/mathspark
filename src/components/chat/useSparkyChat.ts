@@ -169,7 +169,28 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
         return;
       }
 
+      // Sparky is not switched on in this environment (no API key on the server).
+      // Say so plainly instead of the generic retry message, which would never work.
+      if (res.status === 503) {
+        setMessages((prev) => [...prev, {
+          id: `off-${Date.now()}`,
+          role: 'assistant',
+          content: "I'm not switched on here yet! 🔌 Ask a grown-up to check Sparky's settings, then try again.",
+        }]);
+        return;
+      }
+      // Session expired: retrying will not help until the child logs in again.
+      if (res.status === 401) {
+        setMessages((prev) => [...prev, {
+          id: `auth-${Date.now()}`,
+          role: 'assistant',
+          content: "I've lost track of who I'm talking to! 🙈 Please log in again and I'll be right here.",
+        }]);
+        return;
+      }
+
       if (!res.ok || !res.body) {
+        logError(`[chat] /api/chat returned ${res.status}`);
         throw new Error('API error');
       }
 
