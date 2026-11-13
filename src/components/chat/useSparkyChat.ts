@@ -13,6 +13,52 @@ export interface ChatUiMessage {
   id: string;
   role: 'user' | 'assistant';
   content: string;
+  /** Preview of a photo the child sent with this message (this session only). */
+  imageUrl?: string;
+}
+
+/** A photo waiting to be sent with the next message. */
+export interface ChatAttachment {
+  /** data: URL for the on-screen preview. */
+  previewUrl: string;
+  /** The same image as bare base64, for the server. */
+  base64: string;
+  mediaType: 'image/jpeg';
+}
+
+// Photos are shrunk in the browser before upload: plenty for handwriting, small
+// enough to send quickly on a phone connection.
+const MAX_PHOTO_EDGE = 1600;
+
+function loadImage(url: string): Promise<HTMLImageElement> {
+  return new Promise((resolve, reject) => {
+    const el = new Image();
+    el.onload = () => resolve(el);
+    el.onerror = () => reject(new Error('unreadable image'));
+    el.src = url;
+  });
+}
+
+/** Shrink a picked photo to a JPEG no larger than MAX_PHOTO_EDGE on its long side. */
+async function toAttachment(file: File): Promise<ChatAttachment> {
+  const objectUrl = URL.createObjectURL(file);
+  try {
+    const img = await loadImage(objectUrl);
+    const longest = Math.max(img.naturalWidth, img.naturalHeight) || 1;
+    const scale = Math.min(1, MAX_PHOTO_EDGE / longest);
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.max(1, Math.round(img.naturalWidth * scale));
+    canvas.height = Math.max(1, Math.round(img.naturalHeight * scale));
+    const ctx = canvas.getContext('2d');
+    if (!ctx) throw new Error('no canvas');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    const previewUrl = canvas.toDataURL('image/jpeg', 0.85);
+    return { previewUrl, base64: previewUrl.slice(previewUrl.indexOf(',') + 1), mediaType: 'image/jpeg' };
+  } finally {
+    URL.revokeObjectURL(objectUrl);
+  }
 }
 
 // ── Quick reply chips — grade-aware ───────────────────────────────────────────
@@ -77,6 +123,8 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
   const [rateLimited,  setRateLimited]  = useState(false);
   const [initialized,  setInitialized]  = useState(false);
   const [remaining,    setRemaining]    = useState<number | null>(null);
+  const [attachment,   setAttachment]   = useState<ChatAttachment | null>(null);
+  const [attachmentNotice, setAttachmentNotice] = useState('');
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -133,18 +181,47 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
       });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
-  // ── Send message ──────────────────────────────────────────────────────────
+  // ── Photo of working ──────────────────────────────────────────────────────
 
-  const sendMessage = useCallback(async (text: string, context?: ScreenContext | null) => {
-    const trimmed = text.trim();
-    if (!trimmed || isLoading || !studentId) return;
+  const attachImage = useCallback(async (file: File) => {
+    setAttachmentNotice('');
+    if (file.type.indexOf('image/') !== 0) {
+      setAttachmentNotice('That file is not a picture. Try a photo of your working.');
+      return;
+    }
+    try {
+      setAttachment(await toAttachment(file));
+    } catch {
+      setAttachmentNotice("I couldn't open that photo. Try taking it again.");
+    }
+  }, []);
+
+  const clearAttachment = useCallback(() => {
+    setAttachment(null);
+    setAttachmentNotice('');
+  }, []);
+
+  // ── Send message ──────────────────────────────────────────────────────────
+  // Resolves with Sparky's full reply (or null if nothing was sent or it did
+  // not come through), so voice mode can read the reply aloud.
+
+  const sendMessage = useCallback(async (text: string, context?: ScreenContext | null): Promise<string | null> => {
+    const photo = attachment;
+    // With a photo and no words, say the obvious thing on the child's behalf.
+    const trimmed = text.trim() || (photo ? 'Here is my working. Can you check it? 📷' : '');
+    if (!trimmed || isLoading || !studentId) return null;
 
     setInput('');
+    setAttachment(null);
+    setAttachmentNotice('');
     setIsLoading(true);
     setStreamingMsg('');
 
     const userMsgId = `user-${Date.now()}`;
-    setMessages((prev) => [...prev, { id: userMsgId, role: 'user', content: trimmed }]);
+    setMessages((prev) => [...prev, {
+      id: userMsgId, role: 'user', content: trimmed,
+      ...(photo ? { imageUrl: photo.previewUrl } : {}),
+    }]);
 
     try {
       const res = await fetch('/api/chat', {
@@ -154,6 +231,7 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
           sessionId,
           message: trimmed,
           ...(context ? { context } : {}),
+          ...(photo ? { imageBase64: photo.base64, imageType: photo.mediaType } : {}),
         }),
       });
 
@@ -166,7 +244,7 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
           if (typeof body?.error === 'string' && body.error) content = body.error;
         } catch { /* keep default */ }
         setMessages((prev) => [...prev, { id: `limit-${Date.now()}`, role: 'assistant', content }]);
-        return;
+        return null;
       }
 
       // Sparky is not switched on in this environment (no API key on the server).
@@ -177,7 +255,7 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
           role: 'assistant',
           content: "I'm not switched on here yet! 🔌 Ask a grown-up to check Sparky's settings, then try again.",
         }]);
-        return;
+        return null;
       }
       // Session expired: retrying will not help until the child logs in again.
       if (res.status === 401) {
@@ -186,7 +264,7 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
           role: 'assistant',
           content: "I've lost track of who I'm talking to! 🙈 Please log in again and I'll be right here.",
         }]);
-        return;
+        return null;
       }
 
       if (!res.ok || !res.body) {
@@ -225,18 +303,20 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
       if (fullText) {
         setMessages((prev) => [...prev, { id: `asst-${Date.now()}`, role: 'assistant', content: fullText }]);
       }
+      return fullText || null;
     } catch {
       setMessages((prev) => [...prev, {
         id: `err-${Date.now()}`,
         role: 'assistant',
         content: "Oops! I had a little brain freeze 🤔 Can you try sending that again?",
       }]);
+      return null;
     } finally {
       setIsLoading(false);
       setStreamingMsg('');
       inputRef.current?.focus();
     }
-  }, [studentId, sessionId, isLoading, persistSession]);
+  }, [studentId, sessionId, isLoading, persistSession, attachment]);
 
   // ── New conversation ──────────────────────────────────────────────────────
 
@@ -259,5 +339,6 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
     isLoading, streamingMsg, rateLimited, initialized, remaining,
     sendMessage, startNewChat,
     studentInitial, inputRef,
+    attachment, attachmentNotice, attachImage, clearAttachment,
   };
 }

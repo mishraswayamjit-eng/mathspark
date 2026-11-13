@@ -131,6 +131,15 @@ stays deterministic. Specifically:
   a source is surfaced only when its own flag already allows it. PYQ pools stay
   reserved for dedicated PYQ papers regardless.
 
+- **Sparky chat (`/api/chat`) is a tutor, not graded practice (owner decision,
+  Nov 2026).** The chat model (Claude Opus 5.5, `MODELS.chat`) teaches freely: it
+  explains, checks the child's working — including photos of it — judges whether
+  an answer is right, and may give full worked answers. It is deliberately NOT
+  gated by deterministic checks and has no "never give the answer" rule. Nothing
+  it says feeds XP, mastery or grading, which stay deterministic and server-side.
+  Its prompt lives in `src/lib/llm/tutorPrompt.ts`; child-safety boundaries there
+  (age-appropriate, no personal details, trusted-adult handoff) are not optional.
+
 All LLM usage goes through the single `src/lib/llm/` seam and degrades gracefully
 (static fallback) when `ANTHROPIC_API_KEY` is unset.
 

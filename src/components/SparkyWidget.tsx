@@ -5,7 +5,9 @@ import { usePathname } from 'next/navigation';
 import Sparky from '@/components/Sparky';
 import MessageBubble from '@/components/chat/MessageBubble';
 import TypingDots from '@/components/chat/TypingDots';
+import ChatComposer from '@/components/chat/ChatComposer';
 import { useSparkyChat, getQuickReplies } from '@/components/chat/useSparkyChat';
+import { useVoiceLoop } from '@/components/chat/useVoiceLoop';
 import { useScreenContext, subscribeOpenSparky, type ScreenContext } from '@/lib/sparkyContext';
 import { isAppChromeHidden } from '@/lib/navVisibility';
 
@@ -44,13 +46,21 @@ function SparkyWidgetInner() {
     isLoading, streamingMsg, rateLimited, initialized, remaining,
     sendMessage, startNewChat,
     studentInitial, inputRef,
+    attachment, attachmentNotice, attachImage, clearAttachment,
   } = useSparkyChat();
+
+  // Voice conversation: what the child says is sent with the current screen context.
+  const voice = useVoiceLoop((text) => sendMessage(text, ctx));
 
   const [open, setOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Auto-close the sheet whenever the student navigates to another page.
   useEffect(() => { setOpen(false); }, [pathname]);
+
+  // Closing the widget ends a voice conversation.
+  const stopVoice = voice.stop;
+  useEffect(() => { if (!open) stopVoice(); }, [open, stopVoice]);
 
   // Let pages (e.g. the practice result bubble) open the widget.
   useEffect(() => subscribeOpenSparky(() => setOpen(true)), []);
@@ -143,8 +153,8 @@ function SparkyWidgetInner() {
                   <div className="flex-shrink-0">
                     <Sparky mood="thinking" size={36} />
                   </div>
-                  <div className="max-w-[78%] bg-white rounded-card rounded-bl-sm px-4 py-2.5 border-2 border-line">
-                    <p className="text-sm leading-relaxed text-ink font-medium whitespace-pre-wrap">{streamingMsg}</p>
+                  <div className="max-w-[85%] bg-white rounded-card rounded-bl-sm px-4 py-2.5 border-2 border-line">
+                    <p className="text-[15px] leading-relaxed text-ink font-medium whitespace-pre-wrap [overflow-wrap:anywhere]">{streamingMsg}</p>
                     <span className="inline-block w-1 h-4 bg-action animate-pulse ml-0.5 rounded" />
                   </div>
                 </div>
@@ -193,33 +203,23 @@ function SparkyWidgetInner() {
                       ⚡ {remaining} {remaining === 1 ? 'chat' : 'chats'} left today
                     </p>
                   )}
-                  <div className="flex items-center gap-3">
-                    <input
-                      ref={inputRef}
-                      type="text"
-                      value={input}
-                      onChange={(e) => setInput(e.target.value)}
-                      onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(input, ctx); } }}
-                      placeholder="Ask Sparky anything math…"
-                      disabled={isLoading}
-                      className="flex-1 bg-white border-2 border-line rounded-control px-4 py-2.5 text-sm text-ink outline-none focus:border-action font-medium placeholder-gray-400 min-h-[44px]"
-                    />
-                    <button
-                      onClick={() => sendMessage(input, ctx)}
-                      disabled={isLoading || !input.trim()}
-                      className="w-11 h-11 rounded-tile bg-action border-2 border-ink disabled:bg-gray-300 disabled:border-gray-300 flex items-center justify-center transition-colors flex-shrink-0"
-                      aria-label="Send"
-                    >
-                      {isLoading ? (
-                        <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      ) : (
-                        <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="22" y1="2" x2="11" y2="13" />
-                          <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                        </svg>
-                      )}
-                    </button>
-                  </div>
+                  <ChatComposer
+                    input={input}
+                    setInput={setInput}
+                    onSend={() => { sendMessage(input, ctx); }}
+                    isLoading={isLoading}
+                    inputRef={inputRef}
+                    attachment={attachment}
+                    attachmentNotice={attachmentNotice}
+                    onAttach={attachImage}
+                    onClearAttachment={clearAttachment}
+                    voiceSupported={voice.supported}
+                    voiceState={voice.state}
+                    voiceHeard={voice.heard}
+                    voiceNotice={voice.notice}
+                    onVoiceStart={voice.start}
+                    onVoiceStop={voice.stop}
+                  />
                 </>
               )}
             </div>

@@ -4,14 +4,37 @@ import { checkRateLimit } from '@/lib/rateLimit';
 import { validateBody, ValidationError } from '@/lib/validateBody';
 import { logError } from '@/lib/logger';
 import { isLlmConfigured } from '@/lib/llm/client';
-import { buildKidSafeSystemPrompt, type ChatScreenContext } from '@/lib/llm/guardrails';
-import { streamCompletion } from '@/lib/llm/complete';
+import type Anthropic from '@anthropic-ai/sdk';
+import type { ChatScreenContext } from '@/lib/llm/guardrails';
+import { buildTutorStablePrompt, buildTutorStudentPrompt } from '@/lib/llm/tutorPrompt';
+import { streamChat } from '@/lib/llm/complete';
 import { checkAndIncrementUsage } from '@/lib/llm/usage';
 import type { LlmMessage } from '@/lib/llm/types';
 
 export const dynamic = 'force-dynamic';
 // NOTE: maxDuration is ignored on Vercel Hobby (10s hard limit). Only effective on Pro+.
 export const maxDuration = 60;
+
+// How many of the most recent messages Sparky sees on each turn.
+const HISTORY_WINDOW = 40;
+// Room for the model's reasoning plus a full worked explanation.
+const MAX_REPLY_TOKENS = 16000;
+// Longest typed message we accept (a pasted word problem with working fits easily).
+const MAX_MESSAGE_CHARS = 6000;
+// A photo arrives as base64 in the JSON body; Vercel caps a request at ~4.5 MB.
+const MAX_IMAGE_BASE64_CHARS = 4_000_000;
+const IMAGE_TYPES = {
+  'image/jpeg': 'image/jpeg',
+  'image/png': 'image/png',
+  'image/webp': 'image/webp',
+} as const;
+// What the child's message says in the saved history when it carried a photo.
+// The photo itself is sent to the model for that one turn and never stored.
+const PHOTO_NOTE = '[Sent a photo of their working]';
+// Shown if the model declines or returns no text.
+const EMPTY_FALLBACK = "Hmm, I couldn't put that one into words. 🤔 Could you ask me in a different way?";
+// Shown when the model call fails. Never fed back to the model as if Sparky had said it.
+const ERROR_FALLBACK = "I'm having a little trouble thinking right now! 🤔 Could you try again in a moment?";
 
 // ── POST /api/chat ────────────────────────────────────────────────────────────
 
@@ -30,11 +53,28 @@ export async function POST(req: Request) {
   let message: string;
   let mode: string;
   let screenContext: ChatScreenContext | undefined;
+  let imageBase64: string | undefined;
+  let imageType: keyof typeof IMAGE_TYPES | undefined;
   try {
-    const parsed = validateBody<{ message: string; sessionId?: string; mode?: string; context?: Record<string, unknown> }>(
+    const parsed = validateBody<{
+      message: string; sessionId?: string; mode?: string; context?: Record<string, unknown>;
+      imageBase64?: string; imageType?: string;
+    }>(
       await req.json(),
-      { message: 'string', sessionId: 'string?', mode: 'string?', context: 'object?' },
+      {
+        message: 'string', sessionId: 'string?', mode: 'string?', context: 'object?',
+        imageBase64: 'string?', imageType: 'string?',
+      },
     );
+    if (parsed.imageBase64) {
+      const type = parsed.imageType ?? '';
+      if (!(type in IMAGE_TYPES) || parsed.imageBase64.length > MAX_IMAGE_BASE64_CHARS
+        || !/^[A-Za-z0-9+/]+=*$/.test(parsed.imageBase64)) {
+        return Response.json({ error: 'That photo could not be used. Try a smaller or clearer one.' }, { status: 400 });
+      }
+      imageBase64 = parsed.imageBase64;
+      imageType = type as keyof typeof IMAGE_TYPES;
+    }
     sessionId = parsed.sessionId;
     message = parsed.message;
     mode = parsed.mode ?? 'general';
@@ -54,12 +94,14 @@ export async function POST(req: Request) {
     return Response.json({ error: 'Invalid request body' }, { status: 400 });
   }
 
-  if (!message?.trim()) {
+  if (typeof message !== 'string' || (!message.trim() && !imageBase64)) {
     return Response.json({ error: 'message required' }, { status: 400 });
   }
-  if (typeof message !== 'string' || message.length > 2000) {
+  if (message.length > MAX_MESSAGE_CHARS) {
     return Response.json({ error: 'Message too long' }, { status: 400 });
   }
+  // What the child said, as text. With a photo and no words, ask for the obvious thing.
+  const typed = message.trim() || 'Here is a photo of my working. Can you check it and help me?';
 
   // Rate limit / usage check
   const usage = await checkAndIncrementUsage(studentId, 'chat');
@@ -88,20 +130,19 @@ export async function POST(req: Request) {
     return Response.json({ error: 'Student not found' }, { status: 404 });
   }
 
-  // Build topic context string
-  const mastered   = progress.filter((p) => p.mastery === 'Mastered').map((p) => p.topic.name);
-  const practicing = progress.filter((p) => p.mastery === 'Practicing').map((p) => p.topic.name);
-  const topicContext = [
-    mastered.length   > 0 ? `Topics mastered: ${mastered.join(', ')}` : '',
-    practicing.length > 0 ? `Currently practicing: ${practicing.join(', ')}` : '',
-    mastered.length === 0 && practicing.length === 0 ? 'Just starting out — be especially encouraging!' : '',
-  ].filter(Boolean).join('. ');
+  // The child's practice record, so Sparky can recommend and pitch things properly.
+  const progressLines = progress.map((p) => ({
+    topicName: p.topic.name,
+    mastery: p.mastery,
+    attempted: p.attempted,
+    correct: p.correct,
+  }));
 
   // Get or create conversation session
   let session = sessionId
     ? await prisma.conversationSession.findUnique({
         where: { id: sessionId },
-        include: { messages: { orderBy: { createdAt: 'asc' }, take: 20 } },
+        include: { messages: { orderBy: { createdAt: 'desc' }, take: HISTORY_WINDOW } },
       })
     : null;
 
@@ -117,21 +158,44 @@ export async function POST(req: Request) {
   if (!session) {
     session = await prisma.conversationSession.create({
       data: { studentId, mode },
-      include: { messages: { orderBy: { createdAt: 'asc' }, take: 20 } },
+      include: { messages: { orderBy: { createdAt: 'desc' }, take: HISTORY_WINDOW } },
     });
   }
 
   // Save user message
   await prisma.chatMessage.create({
-    data: { sessionId: session.id, role: 'user', content: message.trim() },
+    data: { sessionId: session.id, role: 'user', content: imageBase64 ? `${PHOTO_NOTE} ${typed}` : typed },
   });
 
-  // Build conversation history for Anthropic
-  const history: LlmMessage[] = session.messages.map((m) => ({
-    role: m.role as 'user' | 'assistant',
-    content: m.content,
-  }));
-  history.push({ role: 'user', content: message.trim() });
+  // Build conversation history for Anthropic: the most recent messages, oldest
+  // first. (They are loaded newest-first so a long chat keeps its LATEST turns;
+  // loading oldest-first kept only the first 20 messages of a session forever,
+  // so Sparky could not see the question it had just asked.)
+  const recent = [...session.messages].reverse();
+  const history: LlmMessage[] = [];
+  for (const m of recent) {
+    const role: LlmMessage['role'] | null =
+      m.role === 'assistant' ? 'assistant' : m.role === 'user' ? 'user' : null;
+    if (!role) continue;
+    if (role === 'assistant' && (m.content === ERROR_FALLBACK || m.content === EMPTY_FALLBACK)) continue;
+    // The API needs the conversation to open with the student.
+    if (history.length === 0 && role === 'assistant') continue;
+    history.push({ role, content: m.content });
+  }
+
+  // This turn: the child's words, with the photo in front of them when there is one.
+  const messages: Anthropic.MessageParam[] = history.map((m) => ({ role: m.role, content: m.content }));
+  if (imageBase64 && imageType) {
+    messages.push({
+      role: 'user',
+      content: [
+        { type: 'image', source: { type: 'base64', media_type: IMAGE_TYPES[imageType], data: imageBase64 } },
+        { type: 'text', text: typed },
+      ],
+    });
+  } else {
+    messages.push({ role: 'user', content: typed });
+  }
 
   // Guard: API key must exist before we even open the stream
   if (!isLlmConfigured()) {
@@ -141,15 +205,21 @@ export async function POST(req: Request) {
 
   const currentSessionId = session.id;
 
-  const stream = streamCompletion(
+  const stream = streamChat(
     {
-      model: 'sonnet',
-      maxTokens: 300,
-      system: buildKidSafeSystemPrompt(student.grade, student.name, topicContext, screenContext),
-      messages: history,
+      model: 'chat',
+      maxTokens: MAX_REPLY_TOKENS,
+      system: [
+        // Same for every student in a grade: cached by the API between turns.
+        { type: 'text', text: buildTutorStablePrompt(student.grade), cache_control: { type: 'ephemeral' } },
+        // Per student, per screen: after the cache point so it never invalidates it.
+        { type: 'text', text: buildTutorStudentPrompt(student.grade, student.name, progressLines, screenContext) },
+      ],
+      messages,
     },
     {
-      onErrorFallback: "I'm having a little trouble thinking right now! 🤔 Could you try again in a moment?",
+      onErrorFallback: ERROR_FALLBACK,
+      onEmptyFallback: EMPTY_FALLBACK,
       onError: (err) => {
         const e = err as { status?: number; message?: string };
         logError(`[chat] Anthropic error: ${e.status} ${e.message}`, err);

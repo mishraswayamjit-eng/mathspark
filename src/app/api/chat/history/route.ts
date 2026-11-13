@@ -18,20 +18,21 @@ export async function GET(req: Request) {
     // Return specific session
     const session = await prisma.conversationSession.findUnique({
       where: { id: sessionId },
-      include: { messages: { orderBy: { createdAt: 'asc' }, take: 100 } },
+      // Newest first so `take` keeps the latest messages; reversed below for display.
+      include: { messages: { orderBy: { createdAt: 'desc' }, take: 100 } },
     });
     if (!session || session.studentId !== studentId) {
       return NextResponse.json({ error: 'Not found' }, { status: 404 });
     }
-    return NextResponse.json(session);
+    return NextResponse.json({ ...session, messages: [...session.messages].reverse() });
   }
 
   // Return most recent session
   const session = await prisma.conversationSession.findFirst({
     where: { studentId },
     orderBy: { updatedAt: 'desc' },
-    include: { messages: { orderBy: { createdAt: 'asc' }, take: 50 } },
+    include: { messages: { orderBy: { createdAt: 'desc' }, take: 50 } },
   });
 
-  return NextResponse.json(session ?? null);
+  return NextResponse.json(session ? { ...session, messages: [...session.messages].reverse() } : null);
 }
