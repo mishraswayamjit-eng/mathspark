@@ -89,6 +89,10 @@ export async function getNextQuestion(
   topicId: string,
   clientExcludeIds: string[] = [],
   subTopicKey: string = '',
+  // Optional self-reported confidence from the lesson intro ("Could you solve
+  // these?"). It only shifts the starting difficulty one level for the first
+  // few questions of the day; after that the real streak signal takes over.
+  confidence?: 'low' | 'high',
 ) {
   // Session window: midnight today → midnight tomorrow (drives streak/difficulty).
   const todayStart = new Date();
@@ -189,6 +193,12 @@ export async function getNextQuestion(
     } else {
       // Practicing
       targetDiff = weightedDiff(0.2, 0.6, 0.2);
+    }
+
+    // ── Step 3b: Self-reported confidence (first few questions today only) ───
+    const CONFIDENCE_WINDOW = 4;
+    if (confidence && todayAttempts.length < CONFIDENCE_WINDOW) {
+      targetDiff = clampDiff(DIFFICULTIES.indexOf(targetDiff) + (confidence === 'high' ? 1 : -1));
     }
 
     // ── Step 4: Streak adjustments (today only) ──────────────────────────────

@@ -3,12 +3,17 @@
 import React, { lazy, Suspense } from 'react';
 import KatexRenderer from './KatexRenderer';
 import QuestionDiagram from './diagrams/QuestionDiagram';
+import ReadAloudButton from './ReadAloudButton';
+import { questionToSpeech } from '@/lib/speech/mathToSpeech';
+import { narrationAudioSrc } from '@/hooks/useReadAloud';
 import type { AnswerKey, Difficulty, Question } from '@/types';
 
 // Lazy-load interactive components (only loaded when needed)
 const TapToColorQuestion = lazy(() => import('./interactive/TapToColorQuestion'));
 const DragToSortQuestion = lazy(() => import('./interactive/DragToSortQuestion'));
 const ChartTapQuestion = lazy(() => import('./interactive/ChartTapQuestion'));
+const TileBuildQuestion = lazy(() => import('./interactive/TileBuildQuestion'));
+const NumberLineQuestion = lazy(() => import('./interactive/NumberLineQuestion'));
 
 // ── Message banks ─────────────────────────────────────────────────────────────
 
@@ -105,7 +110,8 @@ const QuestionCard = React.memo(function QuestionCard({
       <div className="ui-card ui-card-pop animate-card-pop">
 
         {/* SubTopic + Difficulty tags at TOP */}
-        <div className="flex items-center gap-2 mb-3 flex-wrap">
+        <div className="flex items-center gap-2 mb-3">
+          <div className="flex items-center gap-2 flex-wrap flex-1 min-w-0">
           <div className={`flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border-2 ${diff.bg}`}>
             <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${diff.dot}`} />
             <span className={`text-[13px] font-extrabold ${diff.label}`}>
@@ -115,6 +121,12 @@ const QuestionCard = React.memo(function QuestionCard({
           <span className="ui-chip max-w-[220px]">
             <span className="truncate">{question.subTopic}</span>
           </span>
+          </div>
+          <ReadAloudButton
+            text={questionToSpeech(question)}
+            audioSrc={narrationAudioSrc(question.id, 'question')}
+            label="the question"
+          />
         </div>
 
         {/* Question text (min 18px) — render KaTeX if LaTeX markers detected */}
@@ -142,6 +154,7 @@ const QuestionCard = React.memo(function QuestionCard({
         <Suspense fallback={<div className="h-40 bg-gray-50 rounded-2xl animate-pulse" />}>
           {question.interactionType === 'tapToColor' && (
             <TapToColorQuestion
+              key={question.id}
               data={question.interactionData as import('@/types').TapToColorData}
               answered={answered}
               onSubmit={(answer, isCorrect) => {
@@ -153,7 +166,30 @@ const QuestionCard = React.memo(function QuestionCard({
           )}
           {question.interactionType === 'dragToSort' && (
             <DragToSortQuestion
+              key={question.id}
               data={question.interactionData as import('@/types').DragToSortData}
+              answered={answered}
+              onSubmit={(answer, isCorrect) => {
+                if (onInteractiveAnswer) onInteractiveAnswer(answer, isCorrect);
+                onAnswer(isCorrect ? question.correctAnswer : ('A' === question.correctAnswer ? 'B' : 'A'), isCorrect);
+              }}
+            />
+          )}
+          {question.interactionType === 'tileBuild' && (
+            <TileBuildQuestion
+              key={question.id}
+              data={question.interactionData as import('@/types').TileBuildData}
+              answered={answered}
+              onSubmit={(answer, isCorrect) => {
+                if (onInteractiveAnswer) onInteractiveAnswer(answer, isCorrect);
+                onAnswer(isCorrect ? question.correctAnswer : ('A' === question.correctAnswer ? 'B' : 'A'), isCorrect);
+              }}
+            />
+          )}
+          {question.interactionType === 'numberLine' && (
+            <NumberLineQuestion
+              key={question.id}
+              data={question.interactionData as import('@/types').NumberLineData}
               answered={answered}
               onSubmit={(answer, isCorrect) => {
                 if (onInteractiveAnswer) onInteractiveAnswer(answer, isCorrect);
@@ -163,6 +199,7 @@ const QuestionCard = React.memo(function QuestionCard({
           )}
           {question.interactionType === 'chartTap' && (
             <ChartTapQuestion
+              key={question.id}
               data={question.interactionData as import('@/types').ChartTapData}
               questionId={question.id}
               answered={answered}

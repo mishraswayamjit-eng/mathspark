@@ -101,6 +101,13 @@ export default function PracticePage() {
   const isAdvancingRef    = useRef(false);
   // BUG 1 FIX: Track every question ID served in this lesson so we never repeat.
   const seenQuestionIdsRef = useRef<Set<string>>(new Set());
+  // Confidence check: the child's answer to "Could you solve these?" on the intro.
+  // Asked once per topic per day; nudges the difficulty of the first few questions.
+  const confidenceRef = useRef<'low' | 'medium' | 'high' | null>(null);
+  // What the child built/tapped/dragged on an interactive question (JSON string),
+  // captured just before handleAnswer runs so the server can grade the real answer.
+  const interactiveAnswerRef = useRef<string | null>(null);
+  const [askConfidence, setAskConfidence] = useState(false);
   // Feature 1: count wrong attempts per question → trigger stuck-coach on 2nd miss.
   const wrongCountByQuestionRef = useRef<Map<string, number>>(new Map());
   const [showCoach, setShowCoach] = useState(false);
@@ -152,7 +159,9 @@ export default function PracticePage() {
     try {
       const excludeParam = Array.from(seenQuestionIdsRef.current).join(',');
       const subTopicEncoded = subTopicParam ? `&subTopic=${encodeURIComponent(subTopicParam)}` : '';
-      const url = `/api/questions/next?topicId=${topicId}${subTopicEncoded}${excludeParam ? `&exclude=${excludeParam}` : ''}`;
+      const confidence = confidenceRef.current;
+      const confidenceEncoded = confidence === 'low' || confidence === 'high' ? `&confidence=${confidence}` : '';
+      const url = `/api/questions/next?topicId=${topicId}${subTopicEncoded}${confidenceEncoded}${excludeParam ? `&exclude=${excludeParam}` : ''}`;
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), 5000);
       const res = await fetch(url, { signal: controller.signal });
@@ -166,6 +175,16 @@ export default function PracticePage() {
       return null;
     }
   }, [topicId, subTopicParam]);
+
+  // Ask the confidence question at most once per topic per day.
+  useEffect(() => {
+    try {
+      const askedOn = localStorage.getItem(`mathspark_confidence_${topicId}`);
+      setAskConfidence(askedOn !== new Date().toDateString());
+    } catch {
+      setAskConfidence(false);
+    }
+  }, [topicId]);
 
   // Kick off a background prefetch of the next question.
   const prefetchNext = useCallback(() => {
@@ -208,6 +227,8 @@ export default function PracticePage() {
     misconceptionType?: string | null;
     isBonusQuestion?: boolean;
     parentQuestionId?: string | null;
+    /** JSON answer of an interactive question, graded by the server. */
+    interactiveAnswer?: string;
   }
 
   function queueAttempt(p: AttemptPayload) {
@@ -597,6 +618,9 @@ export default function PracticePage() {
           isCorrect: correct,
           hintUsed: hintLevel,
           misconceptionType,
+          ...(currentQuestion.interactionType && interactiveAnswerRef.current
+            ? { interactiveAnswer: interactiveAnswerRef.current }
+            : {}),
         },
         correct
           ? (awarded) => {
@@ -848,6 +872,15 @@ export default function PracticePage() {
         topicEmoji={TOPIC_EMOJI[topicId] ?? '📚'}
         questionCount={LESSON_SIZE}
         onStart={() => setPhase('answering')}
+        onConfidence={askConfidence ? (confidence) => {
+          confidenceRef.current = confidence;
+          try { localStorage.setItem(`mathspark_confidence_${topicId}`, new Date().toDateString()); } catch { /* storage unavailable */ }
+          // The second question was picked before we knew this: pick it again with the signal.
+          if (confidence !== 'medium' && !isFetchingRef.current) {
+            prefetchRef.current = null;
+            prefetchNext();
+          }
+        } : undefined}
       />
     );
   }
@@ -1158,6 +1191,7 @@ export default function PracticePage() {
           answered={phase === 'result'}
           selected={selected}
           onAnswer={handleAnswer}
+          onInteractiveAnswer={(answer) => { interactiveAnswerRef.current = answer; }}
         />
       </div>
 

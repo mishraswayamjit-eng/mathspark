@@ -4,7 +4,7 @@ import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { parseUnknownArray } from '@/lib/jsonFields';
 import { logError } from '@/lib/logger';
 
-// GET /api/questions/next?topicId=&subTopic=&exclude=
+// GET /api/questions/next?topicId=&subTopic=&exclude=&confidence=
 export async function GET(req: Request) {
   try {
     const studentId = await getAuthenticatedStudentId();
@@ -16,12 +16,15 @@ export async function GET(req: Request) {
     const excludeParam = searchParams.get('exclude') ?? '';
     const excludeIds   = excludeParam ? excludeParam.split(',').filter(Boolean) : [];
     const subTopic     = searchParams.get('subTopic') ?? '';
+    // Anything other than the two known values is ignored.
+    const confidenceParam = searchParams.get('confidence');
+    const confidence = confidenceParam === 'low' || confidenceParam === 'high' ? confidenceParam : undefined;
 
     if (!topicId) {
       return NextResponse.json({ error: 'topicId required' }, { status: 400 });
     }
 
-    const q = await getNextQuestion(studentId, topicId, excludeIds, subTopic);
+    const q = await getNextQuestion(studentId, topicId, excludeIds, subTopic, confidence);
 
     if (!q) {
       return NextResponse.json({ error: 'No more questions available' }, { status: 404 });

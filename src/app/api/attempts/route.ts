@@ -33,16 +33,19 @@ export async function POST(req: Request) {
       questionId: string; topicId: string; selected: string; isCorrect: boolean;
       hintUsed?: number; timeTakenMs?: number; misconceptionType?: string;
       isBonusQuestion?: boolean; parentQuestionId?: string;
+      interactiveAnswer?: string;
     }>(rawBody, {
       questionId: 'string', topicId: 'string', selected: 'string', isCorrect: 'boolean',
       hintUsed: 'number?', timeTakenMs: 'number?', misconceptionType: 'string?',
       isBonusQuestion: 'boolean?', parentQuestionId: 'string?',
+      interactiveAnswer: 'string?',
     });
 
     const {
       questionId, topicId, selected,
       hintUsed = 0, timeTakenMs = 0, misconceptionType = null,
       isBonusQuestion = false, parentQuestionId = null,
+      interactiveAnswer,
     } = body;
 
     if (questionId.length > 50) {
@@ -54,6 +57,9 @@ export async function POST(req: Request) {
     if (!['A', 'B', 'C', 'D'].includes(selected)) {
       return NextResponse.json({ error: 'Invalid selected' }, { status: 400 });
     }
+    if (interactiveAnswer !== undefined && interactiveAnswer.length > 300) {
+      return NextResponse.json({ error: 'Invalid interactiveAnswer' }, { status: 400 });
+    }
 
     // Server-side grading: look up the correct answer and override client's isCorrect
     const question = await prisma.question.findUnique({
@@ -63,9 +69,11 @@ export async function POST(req: Request) {
     if (!question) {
       return NextResponse.json({ error: 'Question not found' }, { status: 404 });
     }
-    // Interactive questions: validate via interactiveGrading; MCQ: compare selected === correctAnswer
+    // Interactive questions: grade what the child actually built/tapped/dragged
+    // (`interactiveAnswer`, a JSON string). `selected` stays an A-D letter for the
+    // attempt record. MCQ: compare selected === correctAnswer.
     const serverIsCorrect = question.interactionType
-      ? validateInteractiveAnswer(question.interactionType, question.interactionData, selected)
+      ? validateInteractiveAnswer(question.interactionType, question.interactionData, interactiveAnswer ?? selected)
       : selected === question.correctAnswer;
 
     const today = new Date();

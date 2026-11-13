@@ -25,7 +25,7 @@ export interface StepItem {
 
 // ── Interactive question types ────────────────────────────────────────────────
 
-export type InteractionType = 'tapToColor' | 'dragToSort' | 'chartTap';
+export type InteractionType = 'tapToColor' | 'dragToSort' | 'chartTap' | 'tileBuild' | 'numberLine';
 
 export interface TapToColorData {
   shape: 'rectangle' | 'circle';
@@ -48,7 +48,39 @@ export interface ChartTapData {
   regions: Array<{ id: string; label: string; x: number; y: number; width: number; height: number }>;
 }
 
-export type InteractionData = TapToColorData | DragToSortData | ChartTapData;
+/** Build-the-answer: tap tiles to fill the blanks in an expression or worked line. */
+export interface TileBuildData {
+  /** Pieces of the line in order; `null` marks a blank the student fills. */
+  parts: Array<string | null>;
+  /** Tiles on offer (include distractors). */
+  tiles: string[];
+  /** The tile text expected in each blank, in order. */
+  solution: string[];
+  /** Other fully correct fillings, e.g. where two blanks may be swapped. */
+  alsoCorrect?: string[][];
+  instruction?: string;
+}
+
+/** Drag a point to a value on a number line. */
+export interface NumberLineData {
+  min: number;
+  max: number;
+  /** Distance between the positions the point snaps to (1, 0.5, 0.25, 0.1 …). */
+  step: number;
+  /** Put a number under every Nth tick. Defaults to a readable spacing. */
+  labelEvery?: number;
+  correctValue: number;
+  /** Hide the live "your point is at …" readout when it would give the answer away. */
+  hideValue?: boolean;
+  instruction?: string;
+}
+
+export type InteractionData =
+  | TapToColorData
+  | DragToSortData
+  | ChartTapData
+  | TileBuildData
+  | NumberLineData;
 
 export interface Question {
   id: string;

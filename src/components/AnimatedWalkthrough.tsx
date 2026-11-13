@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 import KatexRenderer from './KatexRenderer';
 import type { Question, AnswerKey, StepItem } from '@/types';
+import { useReadAloud, narrationAudioSrc } from '@/hooks/useReadAloud';
+import { walkthroughStepSpeech } from '@/lib/speech/mathToSpeech';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -231,15 +233,72 @@ function WalkthroughPlayer({
   const isFirst  = stepIndex === 0;
   const isLast   = stepIndex >= totalSteps - 1;
 
+  // ── Narration ───────────────────────────────────────────────────────────────
+  // Each step is read aloud and the next step waits for the voice to finish.
+  // On by default unless the child has muted sounds or switched narration off.
+  const { speak, stop, supported } = useReadAloud();
+  const [narrate,     setNarrate]     = useState(false);
+  const [narratedKey, setNarratedKey] = useState(-1);  // stepKey whose narration has finished
+  const [startedKey,  setStartedKey]  = useState(-1);  // stepKey whose narration has audibly started
+  const narrating = narrate && supported;
+
+  useEffect(() => {
+    try {
+      // An explicit narration choice wins; the sound mute only decides the default.
+      const choice = localStorage.getItem('mathspark_narration');
+      const on = choice === 'on' || (choice !== 'off' && localStorage.getItem('mathspark_muted') !== 'true');
+      setNarrate(on);
+    } catch {
+      setNarrate(false);
+    }
+  }, []);
+
+  function toggleNarration() {
+    setNarrate((prev) => {
+      const next = !prev;
+      try { localStorage.setItem('mathspark_narration', next ? 'on' : 'off'); } catch { /* storage unavailable */ }
+      return next;
+    });
+  }
+
+  useEffect(() => {
+    if (!narrating || isPaused) {
+      stop();
+      return;
+    }
+    const text = walkthroughStepSpeech(question, steps, stepIndex);
+    const key = stepKey;
+    // Fresh reading (new step, or resumed after a pause): forget any earlier finish.
+    setNarratedKey(-1);
+    setStartedKey(-1);
+    speak(text, {
+      audioSrc: narrationAudioSrc(question.id, `step-${stepIndex + 1}`),
+      onStart: () => setStartedKey(key),
+      onEnd: () => setNarratedKey(key),
+    });
+    return () => stop();
+  }, [narrating, isPaused, stepKey, stepIndex, steps, question, speak, stop]);
+
   // ── Auto-advance ────────────────────────────────────────────────────────────
   useEffect(() => {
     if (isPaused || isLast) return;
+    // No narration, or the browser never started speaking (some block speech
+    // that does not come straight from a tap): keep the original fixed pace.
+    let delay = 3200;
+    if (narrating && narratedKey === stepKey) {
+      delay = 900;                                   // short breath after the voice
+    } else if (narrating && startedKey === stepKey) {
+      // Speaking now: wait for it to finish. This long timer is only a safety
+      // net, sized from everything the voice says (sentence, maths line, answer).
+      const spoken = walkthroughStepSpeech(question, steps, stepIndex);
+      delay = Math.min(30000, 4000 + tokenize(spoken).length * 550);
+    }
     const timer = setTimeout(() => {
       setStepIndex((prev) => Math.min(prev + 1, totalSteps - 1));
       setStepKey((k) => k + 1);
-    }, 3200);
+    }, delay);
     return () => clearTimeout(timer);
-  }, [stepIndex, isPaused, isLast, totalSteps]);
+  }, [stepIndex, stepKey, isPaused, isLast, totalSteps, narrating, narratedKey, startedKey, steps, question]);
 
   // ── Navigation ──────────────────────────────────────────────────────────────
   function goNext() {
@@ -287,13 +346,27 @@ function WalkthroughPlayer({
             <p className="text-xs font-extrabold text-ink-muted">🎬 Watch Solution</p>
             <p className="text-sm font-bold text-ink mt-0.5">{question.subTopic}</p>
           </div>
-          <button
-            onClick={onClose}
-            className="w-10 h-10 rounded-tile bg-white border-2 border-line flex items-center justify-center text-ink font-bold text-lg hover:border-ink transition-colors"
-            aria-label="Close walkthrough"
-          >
-            ✕
-          </button>
+          <div className="flex items-center gap-2">
+            {supported && (
+              <button
+                onClick={toggleNarration}
+                className={`w-12 h-12 rounded-tile border-2 flex items-center justify-center text-lg transition-colors ${
+                  narrate ? 'bg-action border-ink text-white' : 'bg-white border-line text-ink hover:border-ink'
+                }`}
+                aria-label={narrate ? 'Turn narration off' : 'Turn narration on'}
+                aria-pressed={narrate}
+              >
+                <span aria-hidden="true">{narrate ? '🔊' : '🔇'}</span>
+              </button>
+            )}
+            <button
+              onClick={onClose}
+              className="w-12 h-12 rounded-tile bg-white border-2 border-line flex items-center justify-center text-ink font-bold text-lg hover:border-ink transition-colors"
+              aria-label="Close walkthrough"
+            >
+              ✕
+            </button>
+          </div>
         </div>
 
         {/* ── Progress bar ── */}
