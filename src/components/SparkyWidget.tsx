@@ -18,9 +18,9 @@ interface Suggestion { label: string; message: string }
 function getSuggestions(ctx: ScreenContext | null, grade: number): Suggestion[] {
   if (ctx?.screen === 'practice' && ctx.questionText) {
     return [
-      { label: 'Explain this 🧠', message: 'Can you help me understand this question?' },
-      { label: 'Give me a hint 💡', message: 'Can you give me a hint for this question?' },
-      { label: "I'm stuck 😅",     message: "I'm stuck on this question. Can you guide me?" },
+      { label: 'Give me a hint 💡', message: 'Can you give me a hint for the question on my screen?' },
+      { label: "I'm stuck 😅",     message: "I'm stuck on the question on my screen. Can you guide me?" },
+      { label: 'Show me a similar one 📘', message: 'Can you show me a worked example of a similar question?' },
     ];
   }
   if (ctx?.screen === 'lesson' || ctx?.screen === 'learn') {
@@ -53,6 +53,11 @@ function SparkyWidgetInner() {
   const voice = useVoiceLoop((text) => sendMessage(text, ctx));
 
   const [open, setOpen] = useState(false);
+  // On phones the sheet takes about half the screen so the question stays in
+  // view; the child can stretch it for a long explanation.
+  const [tall, setTall] = useState(false);
+  // The question we have already asked Sparky to help with (hides the button until the next question).
+  const [helpedQuestion, setHelpedQuestion] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Auto-close the sheet whenever the student navigates to another page.
@@ -72,6 +77,17 @@ function SparkyWidgetInner() {
 
   const suggestions = getSuggestions(ctx, studentGrade);
 
+  // The practice question on screen, if there is one: Sparky offers to help with it by default.
+  const screenQuestion = ctx?.screen === 'practice' && ctx.questionText ? ctx.questionText : '';
+  const canOfferHelp = screenQuestion !== '' && helpedQuestion !== screenQuestion;
+
+  function helpWithScreenQuestion() {
+    if (!screenQuestion || isLoading) return;
+    setHelpedQuestion(screenQuestion);
+    // Quote the question so the request still makes sense later in the conversation.
+    sendMessage(`Please help me with this question: "${screenQuestion.slice(0, 600)}"`, ctx);
+  }
+
   return (
     <>
       {/* ── Floating action button ── */}
@@ -89,20 +105,18 @@ function SparkyWidgetInner() {
         </button>
       )}
 
-      {/* ── Bottom sheet ── */}
+      {/* ── Chat panel ──
+          No backdrop: the page stays visible and usable behind it.
+          Phones and tablets: a sheet over the lower half of the screen (the
+          question stays in view above it), stretchable with the header button.
+          Wide screens: a panel docked at the right, beside the page. */}
       {open && (
         <>
-          {/* Backdrop */}
           <div
-            className="fixed inset-0 z-[68] bg-black/30 animate-fade-in"
-            onClick={() => setOpen(false)}
-            aria-hidden="true"
-          />
-
-          {/* Sheet */}
-          <div
-            className="fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[70] flex flex-col bg-paper rounded-t-card border-t-2 border-x-2 border-ink animate-slide-up"
-            style={{ height: 'min(85dvh, 640px)', paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
+            className={`fixed z-[70] flex flex-col bg-paper border-ink animate-slide-up bottom-0 left-0 right-0 max-w-lg mx-auto rounded-t-card border-t-2 border-x-2 ${
+              tall ? 'h-[88dvh]' : 'h-[56dvh]'
+            } min-[1360px]:left-auto min-[1360px]:right-4 min-[1360px]:bottom-[84px] min-[1360px]:mx-0 min-[1360px]:w-[400px] min-[1360px]:max-w-none min-[1360px]:h-[min(78dvh,700px)] min-[1360px]:rounded-card min-[1360px]:border-2 min-[1360px]:shadow-hard`}
+            style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
             role="dialog"
             aria-label="Sparky chat"
           >
@@ -125,6 +139,14 @@ function SparkyWidgetInner() {
                 New
               </button>
               <button
+                onClick={() => setTall((t) => !t)}
+                aria-label={tall ? 'Make the chat smaller' : 'Make the chat taller'}
+                aria-pressed={tall}
+                className="min-[1360px]:hidden text-white/70 hover:text-white text-xl font-bold min-h-[44px] min-w-[36px] flex items-center justify-center"
+              >
+                <span aria-hidden="true">{tall ? '▾' : '▴'}</span>
+              </button>
+              <button
                 onClick={() => setOpen(false)}
                 aria-label="Close"
                 className="text-white/70 hover:text-white text-xl font-bold min-h-[44px] min-w-[36px] flex items-center justify-center"
@@ -132,6 +154,24 @@ function SparkyWidgetInner() {
                 ✕
               </button>
             </div>
+
+            {/* The question on screen, with the default action */}
+            {screenQuestion && (
+              <div className="bg-white border-b-2 border-line px-4 py-3 flex-shrink-0">
+                <p className="text-caption text-ink-muted">The question on your screen</p>
+                <p className="text-label text-ink mt-0.5 line-clamp-2">{screenQuestion}</p>
+                {canOfferHelp && !rateLimited && (
+                  <button
+                    type="button"
+                    onClick={helpWithScreenQuestion}
+                    disabled={isLoading}
+                    className="ui-btn ui-btn-primary w-full mt-2"
+                  >
+                    Help me with this question
+                  </button>
+                )}
+              </div>
+            )}
 
             {/* Messages */}
             <div className="flex-1 overflow-y-auto px-4 py-4">
