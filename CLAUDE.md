@@ -19,7 +19,7 @@ MathSpark (Socratic) is a child-safe, kid-friendly math learning and IPM exam pr
 - **Language:** TypeScript
 - **Database:** PostgreSQL (Neon) via Prisma ORM
 - **Math Rendering:** KaTeX (lazy-loaded in `KatexRenderer` component)
-- **Styling:** Tailwind CSS with `duo-*` design tokens
+- **Styling:** Tailwind CSS with the Socratic design tokens (`design/tokens.json`; see `design/DESIGN.md`)
 - **Auth:** JWT cookies via `jose` (`src/lib/studentAuth.ts`)
 - **Deployment:** Vercel (auto-deploy on push to `main`)
 
@@ -54,7 +54,7 @@ When adding JSON files to `data/`:
 | Shared utils | `src/lib/sharedUtils.ts` | `TOPIC_ORDER`, `computeStreak` |
 | Topic colors | `src/data/topicColors.ts` | Extracted color map |
 | Flashcard hook | `src/hooks/useFlashcardDeck.ts` | Shared deck fetch pattern |
-| Design tokens | `tailwind.config.ts` | `duo-green`, `duo-blue`, `duo-orange`, `duo-red`, `duo-gold`, `duo-dark` |
+| Design system | `design/tokens.json`, `design/DESIGN.md` | Source of truth for colours, type, radii, shadows. Role names: `ink`, `canvas`, `card`, `soft`, `line`, `action`, `success`, `retry`, `hint`, `star`; `ui-*` classes in `globals.css`. Regenerate `src/app/tokens.css` with `python scripts/build_tokens.py`. `duo-*` is legacy — not for new code |
 
 ## UI/UX Rules — CRITICAL
 
