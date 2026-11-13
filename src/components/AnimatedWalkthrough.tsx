@@ -38,54 +38,54 @@ function SimpleView({
 
   return (
     <div className="fixed inset-0 z-[100] flex flex-col justify-end">
-      <div className="absolute inset-0 bg-black/60" onClick={onClose} />
+      <div className="absolute inset-0 bg-ink/60" onClick={onClose} />
       <div
-        className="relative bg-white rounded-t-3xl max-w-lg mx-auto w-full px-5 pt-5 pb-8"
+        className="relative bg-white rounded-t-card border-2 border-b-0 border-ink max-w-lg mx-auto w-full px-5 pt-5 pb-8"
         style={{ animation: 'walkthrough-slide-up 0.4s ease-out' }}
       >
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
-          <p className="font-extrabold text-gray-700 text-base">Solution</p>
+          <p className="font-display text-title text-ink">Solution</p>
           <button
             onClick={onClose}
-            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 font-bold text-lg"
+            className="w-10 h-10 rounded-tile bg-white border-2 border-line flex items-center justify-center text-ink font-bold text-lg"
           >
             ✕
           </button>
         </div>
 
         {/* Question (dimmed) */}
-        <p className="text-sm text-gray-500 font-medium mb-4 leading-snug">{question.questionText}</p>
+        <p className="text-sm text-ink-muted font-semibold mb-4 leading-snug">{question.questionText}</p>
 
         {/* Correct answer */}
         <div
-          className="bg-green-50 border border-green-200 rounded-2xl px-4 py-3 mb-3"
+          className="bg-success-soft border-2 border-success rounded-card px-4 py-3 mb-3"
           style={{ animation: 'answer-celebrate 0.6s ease-out' }}
         >
-          <p className="text-xs font-extrabold text-duo-green uppercase tracking-wide mb-1">✅ Correct answer</p>
-          <p className="font-extrabold text-gray-800">{question.correctAnswer}: {correctText}</p>
+          <p className="text-caption text-ink mb-1">✅ Correct answer</p>
+          <p className="font-extrabold text-ink">{question.correctAnswer}: {correctText}</p>
         </div>
 
         {/* Wrong: student's answer + misconception */}
         {wasWrong && studentAnswer && (
-          <div className="bg-red-50 border border-red-100 rounded-2xl px-4 py-3 mb-3">
-            <p className="text-xs font-semibold text-red-400 mb-1">You chose {studentAnswer}: {optionText(question, studentAnswer)}</p>
-            {misconText && <p className="text-xs text-gray-500">💡 {misconText}</p>}
+          <div className="bg-retry-soft border-2 border-retry rounded-card px-4 py-3 mb-3">
+            <p className="text-xs font-bold text-retry mb-1">You chose {studentAnswer}: {optionText(question, studentAnswer)}</p>
+            {misconText && <p className="text-xs font-semibold text-ink">💡 {misconText}</p>}
           </div>
         )}
 
         {onSimilar && (
           <button
             onClick={() => { onClose(); onSimilar(); }}
-            className="w-full min-h-[52px] rounded-2xl bg-duo-green hover:bg-[#5bd800] text-white font-extrabold text-sm mt-2 flex items-center justify-center gap-2"
+            className="w-full min-h-[52px] rounded-control border-2 border-ink shadow-hard-sm bg-action hover:bg-action-dark text-white font-extrabold text-sm mt-2 flex items-center justify-center gap-2"
           >
             🔄 Practice This Concept Again
           </button>
         )}
         <button
           onClick={onClose}
-          className={`w-full min-h-[48px] rounded-2xl font-extrabold text-base mt-2 ${
-            onSimilar ? 'bg-gray-100 text-gray-600' : 'bg-duo-green text-white'
+          className={`w-full min-h-[48px] rounded-control border-2 border-ink shadow-hard-sm font-extrabold text-base mt-2 ${
+            onSimilar ? 'bg-white text-ink' : 'bg-action text-white'
           }`}
         >
           Got it! ✓
@@ -120,18 +120,18 @@ function StepSlide({
     >
       {/* Step 1: show dimmed question text */}
       {isFirst && (
-        <p className="text-sm text-gray-500 font-medium mb-3 leading-snug" style={{ opacity: 0.65 }}>
+        <p className="text-sm text-ink-muted font-semibold mb-3 leading-snug" style={{ opacity: 0.65 }}>
           📋 {question.questionText}
         </p>
       )}
 
       {/* Step label */}
-      <p className="text-xs font-extrabold text-gray-500 uppercase tracking-widest mb-2">
+      <p className="text-caption text-ink-muted mb-2">
         Step {stepIndex + 1} of {totalSteps}
       </p>
 
       {/* Step text — word-by-word stagger */}
-      <div className="text-[18px] font-bold text-gray-800 leading-relaxed mb-3 min-h-[56px]">
+      <div className="text-question text-ink leading-relaxed mb-3 min-h-[56px]">
         {tokens.map((word, i) => (
           <span
             key={i}
@@ -150,7 +150,7 @@ function StepSlide({
       {/* LaTeX block — appears after text tokens */}
       {step.latex ? (
         <div
-          className="p-3 bg-green-50 border-l-4 border-duo-green rounded-r-2xl overflow-x-auto"
+          className="p-3 bg-success-soft border-l-[6px] border-success rounded-r-note overflow-x-auto"
           style={{
             opacity: 0,
             animation: 'token-build 0.35s ease forwards',
@@ -164,19 +164,19 @@ function StepSlide({
       {/* Final step: answer celebration */}
       {isLast && (
         <div
-          className="mt-4 bg-green-50 border border-green-200 rounded-2xl px-4 py-3"
+          className="mt-4 bg-success-soft border-2 border-success rounded-card px-4 py-3"
           style={{ animation: 'answer-celebrate 0.6s ease-out 0.3s both' }}
         >
-          <p className="text-xs font-extrabold text-duo-green uppercase tracking-wide mb-1">✅ The answer is</p>
-          <p className="font-extrabold text-gray-800 text-base">{question.correctAnswer}: {correctText}</p>
+          <p className="text-caption text-ink mb-1">✅ The answer is</p>
+          <p className="font-extrabold text-ink text-base">{question.correctAnswer}: {correctText}</p>
 
           {wasWrong && studentAnswer && (
-            <div className="mt-2 pt-2 border-t border-green-100">
-              <p className="text-xs text-red-400 font-semibold">
+            <div className="mt-2 pt-2 border-t-2 border-success/30">
+              <p className="text-xs text-retry font-bold">
                 You chose {studentAnswer}: {optionText(question, studentAnswer)}
               </p>
               {misconText && (
-                <p className="text-xs text-gray-500 mt-1">💡 {misconText}</p>
+                <p className="text-xs font-semibold text-ink mt-1">💡 {misconText}</p>
               )}
             </div>
           )}
@@ -272,11 +272,11 @@ function WalkthroughPlayer({
   return (
     <div className="fixed inset-0 z-[100] flex flex-col justify-end">
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/60" onClick={onClose} />
+      <div className="absolute inset-0 bg-ink/60" onClick={onClose} />
 
       {/* Card */}
       <div
-        className="relative bg-white rounded-t-3xl max-w-lg mx-auto w-full overflow-hidden"
+        className="relative bg-white rounded-t-card border-2 border-b-0 border-ink max-w-lg mx-auto w-full overflow-hidden"
         style={{ animation: 'walkthrough-slide-up 0.4s ease-out', maxHeight: '92vh' }}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
@@ -284,12 +284,12 @@ function WalkthroughPlayer({
         {/* ── Header ── */}
         <div className="flex items-center justify-between px-5 pt-5 pb-2">
           <div>
-            <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest">🎬 Watch Solution</p>
-            <p className="text-sm font-bold text-gray-700 mt-0.5">{question.subTopic}</p>
+            <p className="text-xs font-extrabold text-ink-muted">🎬 Watch Solution</p>
+            <p className="text-sm font-bold text-ink mt-0.5">{question.subTopic}</p>
           </div>
           <button
             onClick={onClose}
-            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 font-bold text-lg hover:bg-gray-200 transition-colors"
+            className="w-10 h-10 rounded-tile bg-white border-2 border-line flex items-center justify-center text-ink font-bold text-lg hover:border-ink transition-colors"
             aria-label="Close walkthrough"
           >
             ✕
@@ -297,9 +297,9 @@ function WalkthroughPlayer({
         </div>
 
         {/* ── Progress bar ── */}
-        <div className="mx-5 mb-4 h-2 bg-gray-100 rounded-full overflow-hidden">
+        <div className="mx-5 mb-4 h-3 ui-meter">
           <div
-            className="h-full bg-gradient-to-r from-duo-green to-[#89E219] rounded-full transition-[width] duration-500 ease-out"
+            className="h-full bg-action rounded-full transition-[width] duration-500 ease-out"
             style={{ width: `${pct}%` }}
           />
         </div>
@@ -320,12 +320,12 @@ function WalkthroughPlayer({
         </div>
 
         {/* ── Controls ── */}
-        <div className="border-t border-gray-100 px-5 pt-3 pb-4 bg-white space-y-2">
+        <div className="border-t-2 border-line px-5 pt-3 pb-4 bg-white space-y-2">
           {/* "Practice Again" — prominent on last step if onSimilar provided */}
           {isLast && onSimilar && (
             <button
               onClick={() => { onClose(); onSimilar(); }}
-              className="w-full min-h-[52px] rounded-2xl bg-duo-green hover:bg-[#5bd800] text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-sm transition-colors"
+              className="w-full min-h-[52px] rounded-control border-2 border-ink shadow-hard-sm bg-action hover:bg-action-dark text-white font-extrabold text-sm flex items-center justify-center gap-2 transition-colors"
             >
               🔄 Practice This Concept Again
             </button>
@@ -336,23 +336,23 @@ function WalkthroughPlayer({
             <button
               onClick={goPrev}
               disabled={isFirst}
-              className="min-h-[48px] px-4 rounded-2xl border-2 border-gray-200 font-bold text-gray-500 disabled:opacity-30 flex items-center gap-1 hover:bg-gray-50 transition-colors"
+              className="min-h-[48px] px-4 rounded-control border-2 border-line bg-white font-bold text-ink disabled:opacity-30 flex items-center gap-1 hover:border-ink transition-colors"
             >
               ◀ Back
             </button>
             <button
               onClick={() => setIsPaused((p) => !p)}
-              className="min-h-[48px] px-4 rounded-2xl bg-gray-100 font-bold text-gray-600 flex items-center gap-1 hover:bg-gray-200 transition-colors"
+              className="min-h-[48px] px-4 rounded-control border-2 border-line bg-white font-bold text-ink flex items-center gap-1 hover:border-ink transition-colors"
             >
               {isPaused ? '▶ Play' : '⏸ Pause'}
             </button>
             {isLast ? (
               <button
                 onClick={onClose}
-                className={`flex-1 min-h-[48px] rounded-2xl font-extrabold text-base flex items-center justify-center gap-1 transition-colors ${
+                className={`flex-1 min-h-[48px] rounded-control border-2 border-ink shadow-hard-sm font-extrabold text-base flex items-center justify-center gap-1 transition-colors ${
                   onSimilar
-                    ? 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                    : 'bg-duo-green hover:bg-[#5bd800] text-white shadow-sm'
+                    ? 'bg-white text-ink hover:bg-soft'
+                    : 'bg-action hover:bg-action-dark text-white'
                 }`}
               >
                 Got it! ✓
@@ -360,7 +360,7 @@ function WalkthroughPlayer({
             ) : (
               <button
                 onClick={goNext}
-                className="flex-1 min-h-[48px] rounded-2xl bg-duo-blue hover:bg-[#22bfff] active:bg-duo-blue-dark text-white font-extrabold text-base flex items-center justify-center gap-1 shadow-sm transition-colors"
+                className="flex-1 min-h-[48px] rounded-control border-2 border-ink shadow-hard-sm bg-action hover:bg-action-dark text-white font-extrabold text-base flex items-center justify-center gap-1 transition-colors"
               >
                 Next ▶
               </button>

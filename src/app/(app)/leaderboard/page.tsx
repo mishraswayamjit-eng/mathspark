@@ -42,7 +42,7 @@ function StatusCard({
 }) {
   if (isLoading) {
     return (
-      <div className="mx-4 rounded-3xl bg-gray-100 animate-pulse h-28" />
+      <div className="mx-4 rounded-card bg-soft animate-pulse h-28" />
     );
   }
   if (!league) return null;
@@ -62,25 +62,25 @@ function StatusCard({
 
   return (
     <div
-      className="mx-4 rounded-3xl p-4 border-2"
+      className="mx-4 rounded-card p-4 border-2"
       style={{ borderColor: colors.border, background: `${colors.bg}22` }}
     >
       <div className="flex items-center gap-3">
         <div className="text-4xl" aria-hidden="true">{colors.badge}</div>
         <div className="flex-1">
-          <p className="font-extrabold text-lg text-gray-800">{league.leagueName} League</p>
-          <p className="text-sm font-semibold text-gray-500">
+          <p className="font-extrabold text-lg text-ink">{league.leagueName} League</p>
+          <p className="text-sm font-semibold text-ink-muted">
             #{myRank} of {total} · {league.myWeeklyXP.toLocaleString()} XP this week
           </p>
         </div>
         <div
-          className="rounded-2xl px-3 py-1 text-xs font-extrabold"
+          className="rounded-full px-3 py-1 text-xs font-extrabold"
           style={{ backgroundColor: `${colors.border}33`, color: colors.text }}
         >
           Tier {tier}/5
         </div>
       </div>
-      <p className="mt-2 text-sm font-semibold text-gray-600">{zoneMsg}</p>
+      <p className="mt-2 text-sm font-semibold text-ink">{zoneMsg}</p>
     </div>
   );
 }
@@ -113,14 +113,14 @@ const MemberRow = React.memo(function MemberRow({
 
   const medals = ['🥇', '🥈', '🥉'];
   const bg     = isTop3 ? `${['#FFD70020','#C0C0C020','#CD7F3220'][rank - 1]}` :
-                 isPromoZone ? '#f0fdf4' :
-                 isDangerZone ? '#fffbeb' : 'white';
+                 isPromoZone ? '#eef3fb' :
+                 isDangerZone ? '#fff1b8' : 'white';
 
   return (
     <div
       ref={rowRef}
-      className={`relative flex items-center gap-3 px-4 py-3 border-b border-gray-50 cursor-pointer transition-colors hover:bg-gray-50 ${
-        member.isMe ? 'ring-2 ring-inset ring-duo-blue' : ''
+      className={`relative flex items-center gap-3 px-4 py-3 border-b border-line cursor-pointer transition-colors hover:bg-soft ${
+        member.isMe ? 'ring-2 ring-inset ring-action' : ''
       } ${blurred ? 'select-none' : ''}`}
       style={{
         minHeight: isTop3 ? 72 : 56,
@@ -135,7 +135,7 @@ const MemberRow = React.memo(function MemberRow({
         {isTop3 ? (
           <span className="text-xl">{medals[rank - 1]}</span>
         ) : (
-          <span className="text-sm font-extrabold text-gray-500">#{rank}</span>
+          <span className="text-sm font-extrabold text-ink-muted">#{rank}</span>
         )}
       </div>
 
@@ -144,7 +144,7 @@ const MemberRow = React.memo(function MemberRow({
 
       {/* Name + zone indicator */}
       <div className="flex-1 min-w-0">
-        <p className={`font-extrabold truncate ${member.isMe ? 'text-duo-blue' : 'text-gray-800'} ${isTop3 ? 'text-base' : 'text-sm'}`}>
+        <p className={`font-extrabold truncate ${member.isMe ? 'text-action' : 'text-ink'} ${isTop3 ? 'text-base' : 'text-sm'}`}>
           {member.displayName} {member.isMe && <span className="text-xs font-bold">(you)</span>}
         </p>
         <p className="text-xs text-gray-500 font-semibold">
@@ -156,7 +156,7 @@ const MemberRow = React.memo(function MemberRow({
 
       {/* XP badge for top 3 */}
       {isTop3 && (
-        <div className="bg-yellow-100 text-yellow-700 rounded-full px-2 py-0.5 text-xs font-extrabold flex-shrink-0">
+        <div className="bg-star text-ink rounded-full px-2 py-0.5 text-xs font-extrabold flex-shrink-0">
           {member.weeklyXP.toLocaleString()} XP
         </div>
       )}
@@ -168,15 +168,15 @@ const MemberRow = React.memo(function MemberRow({
 
 function FreeGate({ rank }: { rank: number }) {
   return (
-    <div className="mx-4 my-2 rounded-2xl border-2 border-duo-gold bg-[#FFF9E6] p-4 text-center">
+    <div className="mx-4 my-2 rounded-card border-2 border-star bg-white p-4 text-center">
       <p className="text-2xl mb-1" aria-hidden="true">🔒</p>
-      <p className="font-extrabold text-gray-800 text-sm">You&apos;re #{rank} — see your full rank!</p>
-      <p className="text-xs text-gray-500 font-medium mt-1 mb-3">
+      <p className="font-extrabold text-ink text-sm">You&apos;re #{rank} — see your full rank!</p>
+      <p className="text-xs text-ink-muted font-medium mt-1 mb-3">
         Upgrade to see all {rank > 5 ? rank - 5 : 0}+ members below you and track your league position.
       </p>
       <Link
         href="/pricing"
-        className="inline-block bg-duo-gold text-[#7B5800] font-extrabold text-sm rounded-full px-5 py-2 active:scale-95 transition-transform"
+        className="inline-flex items-center min-h-[48px] bg-star text-ink border-2 border-ink shadow-hard-sm font-extrabold text-sm rounded-control px-5 py-2 active:scale-95 transition-transform"
       >
         Upgrade to Pro 🚀
       </Link>
@@ -192,11 +192,11 @@ function StickyMyRankBar({ member, visible }: { member: LeagueMember | null; vis
     <div className="fixed bottom-[72px] left-0 right-0 z-40 px-4">
       <div className="max-w-lg mx-auto">
         <div
-          className="flex items-center gap-3 bg-white rounded-2xl shadow-xl border-2 border-duo-blue px-4 py-2.5"
+          className="flex items-center gap-3 bg-white rounded-control shadow-hard border-2 border-ink px-4 py-2.5"
         >
           <Avatar name={member.displayName} color={member.avatarColor} size={32} />
           <div className="flex-1">
-            <p className="text-sm font-extrabold text-duo-blue">{member.displayName} (you)</p>
+            <p className="text-sm font-extrabold text-action">{member.displayName} (you)</p>
             <p className="text-xs text-gray-500 font-semibold">#{member.rank} · {member.weeklyXP.toLocaleString()} XP</p>
           </div>
         </div>
@@ -217,26 +217,26 @@ function PromotionOverlay({
   const tierColors: Record<string, string> = {
     Silver: '#C0C0C0', Gold: '#FFD700', Diamond: '#00BCD4', Champion: '#9B59B6',
   };
-  const color = tierColors[to] ?? '#58CC02';
+  const color = tierColors[to] ?? '#f5a400';
 
   return (
     <div className="fixed inset-0 z-[90] flex items-center justify-center bg-black/70 px-6">
       {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
-      <div className="bg-white rounded-3xl p-8 w-full max-w-sm text-center shadow-2xl animate-pop-in">
+      <div className="bg-white rounded-card border-2 border-ink p-8 w-full max-w-sm text-center shadow-hard-lg animate-pop-in">
         <div className="text-6xl mb-3" aria-hidden="true">🎉</div>
-        <h2 className="text-2xl font-extrabold text-gray-800 mb-1">You&apos;ve been promoted!</h2>
+        <h2 className="text-heading text-ink mb-1">You&apos;ve been promoted!</h2>
         {myRank && (
-          <p className="text-gray-500 font-semibold text-sm mb-2">Finished #{myRank} in {from} League</p>
+          <p className="text-ink-muted font-semibold text-sm mb-2">Finished #{myRank} in {from} League</p>
         )}
         <div
-          className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 mb-5 font-extrabold text-lg"
+          className="inline-flex items-center gap-2 rounded-control px-5 py-3 mb-5 font-extrabold text-lg"
           style={{ backgroundColor: `${color}22`, color }}
         >
           Welcome to {to} League!
         </div>
         <button
           onClick={onDismiss}
-          className="w-full bg-duo-green text-white font-extrabold rounded-2xl py-3.5 text-base active:scale-95 transition-transform"
+          className="w-full bg-action text-white border-2 border-ink shadow-hard-sm font-extrabold rounded-control py-3.5 text-base active:scale-95 transition-transform"
           style={{ minHeight: 56 }}
         >
           Continue →
@@ -251,12 +251,12 @@ function PromotionOverlay({
 function DemotionBanner({ tier, onDismiss }: { tier: number; onDismiss: () => void }) {
   const tierName = { 1: 'Bronze', 2: 'Silver', 3: 'Gold', 4: 'Diamond', 5: 'Champion' }[tier] ?? 'Bronze';
   return (
-    <div className="bg-amber-100 border-b-2 border-amber-300 px-4 py-3 flex items-center gap-3">
+    <div className="bg-hint border-b-2 border-hint-ink px-4 py-3 flex items-center gap-3">
       <span className="text-lg" aria-hidden="true">⬇️</span>
-      <p className="flex-1 text-sm font-bold text-amber-800">
+      <p className="flex-1 text-sm font-bold text-hint-ink">
         You were demoted to {tierName} League this week. Practice more to climb back up!
       </p>
-      <button onClick={onDismiss} className="text-amber-500 font-extrabold text-lg leading-none" style={{ minHeight: 0 }}>
+      <button onClick={onDismiss} className="text-hint-ink font-extrabold text-lg leading-none" style={{ minHeight: 0 }}>
         ✕
       </button>
     </div>
@@ -270,8 +270,8 @@ function LastWeekTab({ data }: { data: LastWeekResult | null }) {
     return (
       <div className="flex flex-col items-center justify-center py-20 gap-3 text-center px-8">
         <p className="text-5xl" aria-hidden="true">📊</p>
-        <p className="font-extrabold text-gray-700">No last-week data yet</p>
-        <p className="text-sm text-gray-500 font-medium">Keep playing and check back after Sunday!</p>
+        <p className="font-extrabold text-ink">No last-week data yet</p>
+        <p className="text-sm text-ink-muted font-medium">Keep playing and check back after Sunday!</p>
       </div>
     );
   }
@@ -282,7 +282,7 @@ function LastWeekTab({ data }: { data: LastWeekResult | null }) {
     <div className="pb-6">
       {awards.length > 0 && (
         <div className="mx-4 mt-4 mb-2">
-          <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest mb-2">Your Awards</p>
+          <p className="text-caption text-ink-muted mb-2">Your Awards</p>
           <div className="space-y-2">
             {awards.map((a, i) => {
               const icons: Record<string, string> = {
@@ -293,7 +293,7 @@ function LastWeekTab({ data }: { data: LastWeekResult | null }) {
                 accuracy_king: 'Accuracy King', explorer: 'Explorer',
               };
               return (
-                <div key={i} className="bg-yellow-50 border border-yellow-200 rounded-2xl px-4 py-3 flex items-center gap-3">
+                <div key={i} className="bg-white border-2 border-star rounded-card px-4 py-3 flex items-center gap-3">
                   <span className="text-2xl" aria-hidden="true">{icons[a.awardType] ?? '🏅'}</span>
                   <div>
                     <p className="font-extrabold text-gray-800 text-sm">{names[a.awardType] ?? a.awardType}</p>
@@ -308,13 +308,13 @@ function LastWeekTab({ data }: { data: LastWeekResult | null }) {
 
       {league ? (
         <div className="mt-4">
-          <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest mx-4 mb-2">
+          <p className="text-caption text-ink-muted mx-4 mb-2">
             Last Week — {league.leagueName} League
           </p>
           {league.members.map((m, i) => (
             <div
               key={m.studentId}
-              className={`flex items-center gap-3 px-4 py-3 border-b border-gray-50 min-h-[56px] ${m.isMe ? 'ring-2 ring-inset ring-duo-blue' : ''}`}
+              className={`flex items-center gap-3 px-4 py-3 border-b border-line min-h-[56px] ${m.isMe ? 'ring-2 ring-inset ring-action' : ''}`}
             >
               <div className="w-8 text-center">
                 {m.rank && m.rank <= 3 ? (
@@ -325,10 +325,10 @@ function LastWeekTab({ data }: { data: LastWeekResult | null }) {
               </div>
               <Avatar name={m.displayName} color={m.avatarColor} size={36} />
               <div className="flex-1 min-w-0">
-                <p className={`font-extrabold text-sm truncate ${m.isMe ? 'text-duo-blue' : 'text-gray-800'}`}>
+                <p className={`font-extrabold text-sm truncate ${m.isMe ? 'text-action' : 'text-ink'}`}>
                   {m.displayName} {m.isMe && '(you)'}
-                  {m.promoted && <span className="ml-1 text-duo-green text-xs">⬆️ Promoted</span>}
-                  {m.demoted  && <span className="ml-1 text-amber-500 text-xs">⬇️ Demoted</span>}
+                  {m.promoted && <span className="ml-1 text-ink-muted text-xs">⬆️ Promoted</span>}
+                  {m.demoted  && <span className="ml-1 text-hint-ink text-xs">⬇️ Demoted</span>}
                 </p>
                 <p className="text-xs text-gray-500 font-semibold">{m.weeklyXP.toLocaleString()} XP</p>
               </div>
@@ -379,7 +379,7 @@ function AllTimeTab({
         return (
           <div
             key={m.studentId}
-            className={`flex items-center gap-3 px-4 py-3 border-b border-gray-50 min-h-[56px] ${m.isMe ? 'ring-2 ring-inset ring-duo-blue' : ''}`}
+            className={`flex items-center gap-3 px-4 py-3 border-b border-line min-h-[56px] ${m.isMe ? 'ring-2 ring-inset ring-action' : ''}`}
             style={{ filter: blurred ? 'blur(4px)' : undefined }}
           >
             <div className="w-8 text-center">
@@ -391,7 +391,7 @@ function AllTimeTab({
             </div>
             <Avatar name={m.displayName} color={m.avatarColor} size={36} />
             <div className="flex-1 min-w-0">
-              <p className={`font-extrabold text-sm truncate ${m.isMe ? 'text-duo-blue' : 'text-gray-800'}`}>
+              <p className={`font-extrabold text-sm truncate ${m.isMe ? 'text-action' : 'text-ink'}`}>
                 {m.displayName} {m.isMe && '(you)'} <span className="opacity-60">{tierBadge}</span>
               </p>
               <p className="text-xs text-gray-500 font-semibold">{m.totalXP.toLocaleString()} lifetime XP</p>
@@ -406,14 +406,14 @@ function AllTimeTab({
 
       {myEntry && !members.find((m) => m.isMe) && (
         <div className="mx-4 mt-4">
-          <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest mb-2">Your Position</p>
-          <div className="flex items-center gap-3 px-4 py-3 rounded-2xl ring-2 ring-duo-blue bg-blue-50">
+          <p className="text-caption text-ink-muted mb-2">Your Position</p>
+          <div className="flex items-center gap-3 px-4 py-3 rounded-control ring-2 ring-action bg-soft">
             <div className="w-8 text-center">
-              <span className="text-sm font-extrabold text-duo-blue">#{myEntry.rank}</span>
+              <span className="text-sm font-extrabold text-action">#{myEntry.rank}</span>
             </div>
             <Avatar name={myEntry.displayName} color={myEntry.avatarColor} size={36} />
             <div className="flex-1">
-              <p className="font-extrabold text-sm text-duo-blue">{myEntry.displayName} (you)</p>
+              <p className="font-extrabold text-sm text-action">{myEntry.displayName} (you)</p>
               <p className="text-xs text-gray-500 font-semibold">{myEntry.totalXP.toLocaleString()} lifetime XP</p>
             </div>
           </div>
@@ -554,9 +554,9 @@ export default function LeaderboardPage() {
       )}
 
       {/* ── Header ─────────────────────────────────────────────────────── */}
-      <div className="bg-duo-dark pt-10 pb-4 px-4">
-        <h1 className="text-2xl font-extrabold text-white"><span aria-hidden="true">🏆 </span>League</h1>
-        <p className="text-white/60 text-sm font-semibold mt-0.5">
+      <div className="bg-ink pt-10 pb-4 px-4">
+        <h1 className="text-heading text-white"><span aria-hidden="true">🏆 </span>League</h1>
+        <p className="text-white/70 text-sm font-semibold mt-0.5">
           Compete with students around you — earn XP, get promoted!
         </p>
       </div>
@@ -567,7 +567,7 @@ export default function LeaderboardPage() {
       </div>
 
       {/* ── Tab bar ────────────────────────────────────────────────────── */}
-      <div className="flex mx-4 gap-1 bg-gray-100 rounded-2xl p-1 mb-2">
+      <div className="flex mx-4 gap-1 bg-soft border-2 border-line rounded-control p-1 mb-2">
         {([
           { id: 'week', label: 'This Week' },
           { id: 'last', label: 'Last Week' },
@@ -579,10 +579,10 @@ export default function LeaderboardPage() {
               setTab(id);
               if (id === 'all') loadAllTime();
             }}
-            className={`flex-1 rounded-xl py-2 text-xs font-extrabold transition-colors min-h-0 ${
+            className={`flex-1 rounded-note py-2 text-xs font-extrabold transition-colors min-h-0 ${
               tab === id
-                ? 'bg-white text-gray-800 shadow-sm'
-                : 'text-gray-500 hover:text-gray-600'
+                ? 'bg-action text-white'
+                : 'text-ink-muted hover:text-ink'
             }`}
           >
             {label}
@@ -591,14 +591,14 @@ export default function LeaderboardPage() {
       </div>
 
       {/* ── Tab content ────────────────────────────────────────────────── */}
-      <div className="bg-white rounded-t-3xl overflow-hidden shadow-sm">
+      <div className="bg-white rounded-t-card border-t-2 border-line overflow-hidden">
 
         {/* This Week */}
         {tab === 'week' && (
           <>
             {weekLoading ? (
               <div className="py-20 flex flex-col items-center gap-3">
-                <div className="w-10 h-10 rounded-full border-4 border-duo-green border-t-transparent animate-spin" />
+                <div className="w-10 h-10 rounded-full border-4 border-action border-t-transparent animate-spin" />
                 <p className="text-gray-500 font-semibold text-sm">Loading your league…</p>
               </div>
             ) : !leagueData ? (
@@ -608,7 +608,7 @@ export default function LeaderboardPage() {
                 <p className="text-sm text-gray-500 mt-1">Check your connection and try again.</p>
                 <button
                   onClick={() => window.location.reload()}
-                  className="mt-4 bg-duo-blue text-white font-extrabold rounded-2xl px-6 py-2.5 text-sm active:scale-95 transition-transform"
+                  className="mt-4 bg-action text-white border-2 border-ink shadow-hard-sm font-extrabold rounded-control px-6 py-2.5 text-sm active:scale-95 transition-transform"
                 >
                   Retry
                 </button>
@@ -646,7 +646,7 @@ export default function LeaderboardPage() {
         {/* Last Week */}
         {tab === 'last' && (
           !lastWeekLoaded
-            ? <div className="py-20 flex items-center justify-center"><div className="w-8 h-8 rounded-full border-4 border-duo-green border-t-transparent animate-spin" /></div>
+            ? <div className="py-20 flex items-center justify-center"><div className="w-8 h-8 rounded-full border-4 border-action border-t-transparent animate-spin" /></div>
             : <LastWeekTab data={lastWeekData} />
         )}
 

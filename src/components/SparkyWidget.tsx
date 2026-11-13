@@ -69,11 +69,11 @@ function SparkyWidgetInner() {
         <button
           onClick={() => setOpen(true)}
           aria-label="Ask Sparky"
-          className="fixed right-4 z-[55] bg-duo-green rounded-full p-1.5 shadow-xl active:scale-95 transition-transform"
+          className="fixed right-4 z-[55] bg-white border-2 border-ink rounded-full p-1.5 shadow-hard-sm active:scale-95 transition-transform"
           style={{ bottom: 'calc(64px + env(safe-area-inset-bottom, 0px) + 12px)' }}
         >
           <Sparky mood="happy" size={44} />
-          <span className="absolute -top-1 -right-1 w-4 h-4 bg-duo-blue rounded-full border-2 border-white flex items-center justify-center">
+          <span className="absolute -top-1 -right-1 w-4 h-4 bg-action rounded-full border-2 border-white flex items-center justify-center">
             <span className="text-white text-[9px] font-extrabold" aria-hidden="true">?</span>
           </span>
         </button>
@@ -91,26 +91,26 @@ function SparkyWidgetInner() {
 
           {/* Sheet */}
           <div
-            className="fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[70] flex flex-col bg-[#F0F4F8] rounded-t-2xl shadow-2xl animate-slide-up"
+            className="fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[70] flex flex-col bg-paper rounded-t-card border-t-2 border-x-2 border-ink animate-slide-up"
             style={{ height: 'min(85dvh, 640px)', paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
             role="dialog"
             aria-label="Sparky chat"
           >
             {/* Header */}
-            <div className="bg-duo-dark px-4 py-3 flex items-center gap-2 flex-shrink-0 rounded-t-2xl">
+            <div className="bg-ink px-4 py-3 flex items-center gap-2 flex-shrink-0 rounded-t-2xl">
               <Sparky mood="happy" size={34} />
               <div className="flex-1 min-w-0">
                 <p className="text-white font-extrabold text-sm leading-tight">Sparky</p>
                 <div className="flex items-center gap-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-duo-green" />
-                  <p className="text-white/60 text-xs truncate">
+                  <div className="w-1.5 h-1.5 rounded-full bg-success-soft" />
+                  <p className="text-white/70 text-xs truncate">
                     {ctx?.topicName ? `Helping with ${ctx.topicName}` : 'Math Tutor · Online'}
                   </p>
                 </div>
               </div>
               <button
                 onClick={startNewChat}
-                className="text-white/70 hover:text-white text-xs font-bold px-2.5 py-1.5 rounded-full border border-white/20 hover:border-white/40 transition-colors min-h-[36px]"
+                className="text-white/70 hover:text-white text-xs font-bold px-2.5 py-1.5 rounded-full border-2 border-white/30 hover:border-white/60 transition-colors min-h-[36px]"
               >
                 New
               </button>
@@ -130,7 +130,7 @@ function SparkyWidgetInner() {
                   <div className="animate-sparky-bounce">
                     <Sparky mood="thinking" size={64} />
                   </div>
-                  <p className="text-gray-500 font-semibold text-sm">Loading…</p>
+                  <p className="text-ink-muted font-semibold text-sm">Loading…</p>
                 </div>
               )}
 
@@ -143,9 +143,9 @@ function SparkyWidgetInner() {
                   <div className="flex-shrink-0">
                     <Sparky mood="thinking" size={36} />
                   </div>
-                  <div className="max-w-[78%] bg-white rounded-2xl rounded-bl-sm px-4 py-2.5 border-2 border-line">
-                    <p className="text-sm leading-relaxed text-gray-800 font-medium whitespace-pre-wrap">{streamingMsg}</p>
-                    <span className="inline-block w-1 h-4 bg-duo-green animate-pulse ml-0.5 rounded" />
+                  <div className="max-w-[78%] bg-white rounded-card rounded-bl-sm px-4 py-2.5 border-2 border-line">
+                    <p className="text-sm leading-relaxed text-ink font-medium whitespace-pre-wrap">{streamingMsg}</p>
+                    <span className="inline-block w-1 h-4 bg-action animate-pulse ml-0.5 rounded" />
                   </div>
                 </div>
               )}
@@ -153,7 +153,7 @@ function SparkyWidgetInner() {
               {isLoading && !streamingMsg && (
                 <div className="flex items-end gap-2 mb-3">
                   <Sparky mood="thinking" size={36} />
-                  <div className="bg-white rounded-2xl rounded-bl-sm border-2 border-line">
+                  <div className="bg-white rounded-card rounded-bl-sm border-2 border-line">
                     <TypingDots />
                   </div>
                 </div>
@@ -171,7 +171,7 @@ function SparkyWidgetInner() {
                       key={s.label}
                       onClick={() => sendMessage(s.message, ctx)}
                       disabled={isLoading}
-                      className="flex-shrink-0 bg-white border-2 border-duo-blue text-duo-blue text-xs font-bold rounded-full px-3 py-2 hover:bg-duo-blue hover:text-white transition-colors whitespace-nowrap min-h-[36px]"
+                      className="flex-shrink-0 bg-white border-2 border-line text-ink text-xs font-bold rounded-full px-3 py-2 hover:border-ink transition-colors whitespace-nowrap min-h-[36px]"
                     >
                       {s.label}
                     </button>
@@ -181,15 +181,15 @@ function SparkyWidgetInner() {
             )}
 
             {/* Input */}
-            <div className="bg-white px-4 py-3 flex-shrink-0 shadow-[0_-2px_10px_rgba(0,0,0,0.06)]">
+            <div className="bg-white px-4 py-3 flex-shrink-0 border-t-2 border-line">
               {rateLimited ? (
-                <p className="text-center text-gray-500 text-sm font-medium py-2">
+                <p className="text-center text-ink-muted text-sm font-medium py-2">
                   Daily limit reached 🌟 See you tomorrow!
                 </p>
               ) : (
                 <>
                   {remaining !== null && remaining <= 5 && (
-                    <p className="text-center text-duo-orange text-xs font-bold mb-2">
+                    <p className="text-center text-hint-ink text-xs font-bold mb-2">
                       ⚡ {remaining} {remaining === 1 ? 'chat' : 'chats'} left today
                     </p>
                   )}
@@ -202,12 +202,12 @@ function SparkyWidgetInner() {
                       onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(input, ctx); } }}
                       placeholder="Ask Sparky anything math…"
                       disabled={isLoading}
-                      className="flex-1 bg-gray-100 rounded-full px-4 py-2.5 text-sm text-gray-800 outline-none focus:ring-2 focus:ring-duo-green font-medium placeholder-gray-400 min-h-[44px]"
+                      className="flex-1 bg-white border-2 border-line rounded-control px-4 py-2.5 text-sm text-ink outline-none focus:border-action font-medium placeholder-gray-400 min-h-[44px]"
                     />
                     <button
                       onClick={() => sendMessage(input, ctx)}
                       disabled={isLoading || !input.trim()}
-                      className="w-11 h-11 rounded-full bg-duo-green disabled:bg-gray-200 flex items-center justify-center transition-colors flex-shrink-0"
+                      className="w-11 h-11 rounded-tile bg-action border-2 border-ink disabled:bg-gray-300 disabled:border-gray-300 flex items-center justify-center transition-colors flex-shrink-0"
                       aria-label="Send"
                     >
                       {isLoading ? (

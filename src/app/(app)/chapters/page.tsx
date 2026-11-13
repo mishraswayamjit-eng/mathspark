@@ -63,9 +63,9 @@ function getHearts(): number {
 
 function Skeleton() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-paper">
       {/* TopBar skeleton */}
-      <div className="sticky top-0 z-50 h-14 bg-duo-dark flex items-center justify-between px-4">
+      <div className="sticky top-0 z-50 h-14 bg-ink flex items-center justify-between px-4">
         <div className="h-5 w-24 rounded-full bg-white/20 animate-pulse" />
         <div className="flex gap-2">
           {[1,2,3,4].map((n) => (
@@ -75,25 +75,25 @@ function Skeleton() {
       </div>
       {/* Greeting skeleton */}
       <div className="px-4 pt-5 pb-3">
-        <div className="h-7 w-56 rounded-xl bg-gray-100 animate-pulse mb-1" />
-        <div className="h-4 w-36 rounded-xl bg-gray-100 animate-pulse" />
+        <div className="h-7 w-56 rounded-xl bg-gray-200 animate-pulse mb-1" />
+        <div className="h-4 w-36 rounded-xl bg-gray-200 animate-pulse" />
       </div>
       {/* Grade tab placeholders */}
       <div className="flex gap-2 px-4 pb-3 overflow-x-auto no-scrollbar">
         {Array.from({ length: 8 }, (_, i) => (
-          <div key={i} className="flex-shrink-0 h-8 w-14 rounded-full bg-gray-100 animate-pulse" />
+          <div key={i} className="flex-shrink-0 h-8 w-14 rounded-full bg-gray-200 animate-pulse" />
         ))}
       </div>
       {/* Skill path skeleton */}
       <div className="px-4 space-y-2">
         {Array.from({ length: 8 }, (_, i) => (
           <React.Fragment key={i}>
-            {i > 0 && <div className="flex justify-center"><div className="w-1 h-8 bg-gray-100 rounded-full" /></div>}
+            {i > 0 && <div className="flex justify-center"><div className="w-1 h-8 bg-gray-200 rounded-full" /></div>}
             <div className={`flex items-center gap-3 px-3 py-3 ${i % 2 === 1 ? 'flex-row-reverse' : ''}`}>
-              <div className="w-14 h-14 rounded-full bg-gray-100 animate-pulse flex-shrink-0" />
+              <div className="w-14 h-14 rounded-full bg-gray-200 animate-pulse flex-shrink-0" />
               <div className="flex-1 space-y-2">
-                <div className="h-4 w-32 rounded-xl bg-gray-100 animate-pulse" />
-                <div className="h-3 w-20 rounded-xl bg-gray-100 animate-pulse" />
+                <div className="h-4 w-32 rounded-xl bg-gray-200 animate-pulse" />
+                <div className="h-3 w-20 rounded-xl bg-gray-200 animate-pulse" />
               </div>
             </div>
           </React.Fragment>
@@ -239,10 +239,10 @@ export default function ChaptersPage() {
 
   if (loading) return <Skeleton />;
   if (fetchError || !data) return (
-    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center gap-4 pb-24">
-      <p className="text-white font-extrabold text-lg">Something went wrong</p>
-      <p className="text-white/60 text-sm">Could not load chapters. Check your connection.</p>
-      <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
+    <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
+      <p className="text-ink font-extrabold text-lg">Something went wrong</p>
+      <p className="text-ink-muted text-sm">Could not load chapters. Check your connection.</p>
+      <button onClick={() => window.location.reload()} className="bg-action hover:bg-action-dark text-white font-extrabold px-6 py-2.5 rounded-control border-2 border-ink shadow-hard-sm text-sm active:scale-95 transition-transform">
         Retry
       </button>
     </div>
@@ -265,14 +265,14 @@ export default function ChaptersPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* ── Top bar ─────────────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-50 h-14 bg-duo-dark/95 backdrop-blur-sm flex items-center justify-between px-4">
+      <div className="sticky top-0 z-50 h-14 bg-ink flex items-center justify-between px-4">
         <div className="flex items-center gap-2">
           <div className="animate-sparky-bounce">
             <Sparky mood="happy" size={30} />
           </div>
-          <span className="font-extrabold text-white text-base tracking-tight">MathSpark</span>
+          <span className="font-display text-title text-white">MathSpark</span>
         </div>
         <div className="flex items-center gap-3">
           {/* Streak */}
@@ -297,7 +297,7 @@ export default function ChaptersPage() {
             ))}
           </div>
           {/* Avatar */}
-          <div className="w-8 h-8 rounded-full bg-duo-gold flex items-center justify-center font-extrabold text-sm text-yellow-900 border-2 border-white">
+          <div className="w-8 h-8 rounded-full bg-star flex items-center justify-center font-extrabold text-sm text-ink border-2 border-white">
             {studentName ? studentName[0].toUpperCase() : '?'}
           </div>
         </div>
@@ -321,10 +321,10 @@ export default function ChaptersPage() {
 
       {/* ── Greeting ────────────────────────────────────────────────────── */}
       <div className="px-4 pt-5 pb-2">
-        <h1 className="text-xl font-extrabold text-gray-800">
+        <h1 className="text-heading text-ink">
           Hi {studentName}! What shall we practice today? <span aria-hidden="true">🌟</span>
         </h1>
-        <p className="text-sm text-gray-500 font-semibold mt-0.5">
+        <p className="text-sm text-ink-muted font-semibold mt-0.5">
           {goalMet
             ? `Daily goal met! 🎯 ${todayCorrect} correct today`
             : `${todayCorrect} / ${DAILY_GOAL} questions correct today`}
@@ -334,14 +334,14 @@ export default function ChaptersPage() {
       {/* ── Concept Lessons banner ───────────────────────────────────────── */}
       <button
         onClick={() => router.push('/learn/lessons')}
-        className="mx-4 mb-3 w-[calc(100%-2rem)] bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl px-4 py-3 flex items-center gap-3 shadow-md active:scale-[0.98] transition-transform text-left"
+        className="mx-4 mb-3 w-[calc(100%-2rem)] bg-white border-2 border-line rounded-card px-4 py-3 flex items-center gap-3 active:scale-[0.98] transition-transform text-left"
       >
         <span className="text-2xl" aria-hidden="true">📖</span>
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-extrabold text-white">Learn New Concepts</p>
-          <p className="text-xs text-white/70 font-semibold">Step-by-step lessons with quizzes</p>
+          <p className="text-sm font-extrabold text-ink">Learn New Concepts</p>
+          <p className="text-xs text-ink-muted font-semibold">Step-by-step lessons with quizzes</p>
         </div>
-        <span className="text-white/60 text-lg" aria-hidden="true">&rsaquo;</span>
+        <span className="text-ink-muted text-lg" aria-hidden="true">&rsaquo;</span>
       </button>
 
       {/* ── Grade switcher tabs ──────────────────────────────────────────── */}
@@ -357,13 +357,13 @@ export default function ChaptersPage() {
 
           let tabCls = 'flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-extrabold border-2 transition-colors min-h-0 ';
           if (isSelected) {
-            tabCls += 'bg-duo-dark border-duo-dark text-white';
+            tabCls += 'bg-action border-action text-white';
           } else if (access.full) {
-            tabCls += 'bg-white border-gray-200 text-gray-700 hover:border-duo-dark';
+            tabCls += 'bg-white border-line text-ink hover:border-ink';
           } else if (access.sample) {
-            tabCls += 'bg-white border-blue-200 text-blue-600 hover:border-blue-400';
+            tabCls += 'bg-white border-line text-ink-muted hover:border-ink';
           } else {
-            tabCls += 'bg-gray-50 border-gray-100 text-gray-500 opacity-75';
+            tabCls += 'bg-gray-50 border-line text-ink-muted opacity-75';
           }
 
           return (
@@ -375,10 +375,10 @@ export default function ChaptersPage() {
               <span aria-hidden="true">{GRADE_EMOJI[g]}</span>
               <span>Gr {g}</span>
               {isEnrolled && !isSelected && (
-                <span className="w-1.5 h-1.5 rounded-full bg-duo-green" />
+                <span className="w-1.5 h-1.5 rounded-full bg-action" />
               )}
-              {access.sample && <span className="text-[10px]">🔓</span>}
-              {access.locked && <span className="text-[10px]">🔒</span>}
+              {access.sample && <span className="text-xs">🔓</span>}
+              {access.locked && <span className="text-xs">🔒</span>}
             </button>
           );
         })}
@@ -386,16 +386,16 @@ export default function ChaptersPage() {
 
       {/* ── Syllabus Coverage Bar ────────────────────────────────────────── */}
       <div className="px-4 pb-3">
-        <div className="flex items-center justify-between text-xs font-extrabold text-gray-500 uppercase tracking-wide mb-1.5">
+        <div className="flex items-center justify-between text-xs font-extrabold text-ink-muted mb-1.5">
           <span>Syllabus Coverage</span>
           <span>{syllabusCoverage.started} / {syllabusCoverage.total} topics started</span>
         </div>
-        <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+        <div className="h-2 bg-soft rounded-full overflow-hidden">
           <div
             className="h-full rounded-full transition-[width] duration-700"
             style={{
               width: `${syllabusCoverage.pct}%`,
-              background: 'linear-gradient(to right, #1CB0F6, #58CC02)',
+              background: '#4f46e5',
             }}
           />
         </div>
@@ -404,7 +404,7 @@ export default function ChaptersPage() {
       {/* ── Recommended Topics (from weak + low-coverage topics) ──────────── */}
       {selectedGrade === (data.student.grade ?? 4) && weakTopics.length > 0 && (
         <div className="px-4 pb-3">
-          <p className="text-xs font-extrabold uppercase tracking-widest mb-2 text-gray-500">
+          <p className="text-xs font-extrabold mb-2 text-ink-muted">
             <span aria-hidden="true">🎯 </span>Recommended for You
           </p>
           <div className="space-y-2">
@@ -415,16 +415,16 @@ export default function ChaptersPage() {
                 <button
                   key={t.id}
                   onClick={() => router.push(`/practice/${t.id}`)}
-                  className="w-full flex items-center gap-3 bg-[#1a2d35] rounded-xl px-3 py-3 border-l-4 border-duo-green active:scale-[0.98] transition-transform text-left"
+                  className="w-full flex items-center gap-3 bg-white rounded-card px-3 py-3 border-2 border-line border-l-[10px] border-l-action active:scale-[0.98] transition-transform text-left"
                 >
                   <span className="text-xl shrink-0" aria-hidden="true">{emoji}</span>
                   <div className="flex-1 min-w-0">
-                    <p className="text-white font-extrabold text-sm truncate">{t.name}</p>
-                    <p className="text-white/70 text-xs font-medium">
+                    <p className="text-ink font-extrabold text-sm truncate">{t.name}</p>
+                    <p className="text-ink-muted text-xs font-medium">
                       {pct}% accuracy · {t.attempted} attempts
                     </p>
                   </div>
-                  <span className="text-duo-green text-xs font-extrabold shrink-0">Practice →</span>
+                  <span className="text-action text-xs font-extrabold shrink-0">Practice →</span>
                 </button>
               );
             })}
@@ -436,14 +436,14 @@ export default function ChaptersPage() {
       <div className="px-4 pt-1">
         <button
           onClick={() => router.push('/flashcards')}
-          className="w-full bg-gradient-to-r from-[#1E293B] to-[#1a2d40] border border-duo-green/20 rounded-2xl px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-transform"
+          className="w-full bg-white border-2 border-line rounded-card px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-transform"
         >
           <span className="text-2xl" aria-hidden="true">🃏</span>
           <div className="text-left flex-1">
-            <p className="text-white font-extrabold text-sm leading-tight">Sparky&apos;s Flashcards</p>
-            <p className="text-emerald-400/70 text-xs">Tap · Flip · Master concepts</p>
+            <p className="text-ink font-extrabold text-sm leading-tight">Sparky&apos;s Flashcards</p>
+            <p className="text-ink-muted text-xs">Tap · Flip · Master concepts</p>
           </div>
-          <span className="text-emerald-400 text-sm font-bold">Review →</span>
+          <span className="text-action text-sm font-bold">Review →</span>
         </button>
       </div>
 
@@ -451,14 +451,14 @@ export default function ChaptersPage() {
       <div className="px-4 pt-0">
         <button
           onClick={() => router.push('/test')}
-          className="w-full bg-[#1a2f3a] border border-white/10 rounded-2xl px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-transform"
+          className="w-full bg-white border-2 border-line rounded-card px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-transform"
         >
           <span className="text-2xl" aria-hidden="true">📝</span>
           <div className="text-left flex-1">
-            <p className="text-white font-extrabold text-sm leading-tight">IPM Mock Test</p>
-            <p className="text-white/70 text-xs">Timed · No hints · Full paper simulation</p>
+            <p className="text-ink font-extrabold text-sm leading-tight">IPM Mock Test</p>
+            <p className="text-ink-muted text-xs">Timed · No hints · Full paper simulation</p>
           </div>
-          <span className="text-white/60 text-sm">→</span>
+          <span className="text-ink-muted text-sm">→</span>
         </button>
       </div>
 
@@ -475,21 +475,21 @@ export default function ChaptersPage() {
             {/* Grade 4 IPM Past Papers card */}
             {grade4PoolTopic && (
               <div className="mt-6">
-                <p className="text-xs font-extrabold uppercase tracking-widest mb-2 text-gray-500">
+                <p className="text-xs font-extrabold mb-2 text-ink-muted">
                   <span aria-hidden="true">📄 </span>IPM Past Papers
                 </p>
                 <button
                   onClick={() => router.push('/practice/grade4')}
-                  className="w-full text-left bg-gradient-to-r from-duo-dark to-[#1a3040] rounded-2xl p-4 flex items-center gap-4 active:scale-[0.98] transition-transform"
+                  className="w-full text-left bg-white border-2 border-line rounded-card p-4 flex items-center gap-4 active:scale-[0.98] transition-transform"
                 >
                   <span className="text-3xl" aria-hidden="true">🏆</span>
                   <div className="flex-1">
-                    <p className="text-white font-extrabold text-sm">Grade 4 — IPM Past Papers</p>
-                    <p className="text-white/60 text-xs mt-0.5">
+                    <p className="text-ink font-extrabold text-sm">Grade 4 — IPM Past Papers</p>
+                    <p className="text-ink-muted text-xs mt-0.5">
                       {grade4PoolTopic.correct} correct · {grade4PoolTopic.mastery === 'Mastered' ? '✅ Mastered' : grade4PoolTopic.mastery === 'Practicing' ? '🟡 In progress' : 'Not started'}
                     </p>
                   </div>
-                  <span className="text-white/60 text-sm">→</span>
+                  <span className="text-ink-muted text-sm">→</span>
                 </button>
               </div>
             )}
@@ -506,7 +506,7 @@ export default function ChaptersPage() {
 
               if (!treeNodes.length) {
                 return (
-                  <div className="text-center py-12 text-gray-500">
+                  <div className="text-center py-12 text-ink-muted">
                     <p className="font-semibold">No lessons available yet for Grade {selectedGrade}</p>
                   </div>
                 );
@@ -547,7 +547,7 @@ export default function ChaptersPage() {
             {/* Also accessible: lower grades */}
             {lowerGrades.length > 0 && (
               <div className="mt-6">
-                <p className="text-xs font-extrabold uppercase tracking-widest mb-2 text-gray-500">
+                <p className="text-xs font-extrabold mb-2 text-ink-muted">
                   Also accessible
                 </p>
                 <div className="grid grid-cols-2 gap-2">
@@ -557,12 +557,12 @@ export default function ChaptersPage() {
                       <button
                         key={g}
                         onClick={() => { setSelectedGrade(g); }}
-                        className="bg-gray-50 border border-gray-100 rounded-2xl p-3 flex items-center gap-2 active:scale-[0.97] transition-transform text-left min-h-0"
+                        className="bg-white border-2 border-line rounded-control p-3 flex items-center gap-2 active:scale-[0.97] transition-transform text-left min-h-0"
                       >
                         <span className="text-xl" aria-hidden="true">{GRADE_EMOJI[g]}</span>
                         <div className="flex-1 min-w-0">
-                          <p className="text-xs font-extrabold text-gray-700 truncate">Grade {g}</p>
-                          <p className="text-[10px] text-gray-500">
+                          <p className="text-xs font-extrabold text-ink truncate">Grade {g}</p>
+                          <p className="text-xs text-ink-muted">
                             {t ? `${t.correct} solved` : 'Not started'}
                           </p>
                         </div>
@@ -579,26 +579,26 @@ export default function ChaptersPage() {
       {/* ── Upgrade modal for locked grades ────────────────────────────── */}
       {showUpgradeModal && lockedGradeTarget && (
         <div className="fixed inset-0 z-[100] flex items-end justify-center bg-black/50 p-4">
-          <div className="bg-white rounded-3xl p-6 w-full max-w-sm shadow-2xl space-y-4 animate-slide-up">
+          <div className="bg-white rounded-card border-2 border-ink p-6 w-full max-w-sm shadow-hard-lg space-y-4 animate-slide-up">
             <div className="text-center">
               <span className="text-5xl" aria-hidden="true">🔒</span>
-              <h3 className="text-xl font-extrabold text-gray-800 mt-2">
+              <h3 className="text-heading text-ink mt-2">
                 Grade {lockedGradeTarget} is locked
               </h3>
-              <p className="text-gray-500 text-sm mt-1">
+              <p className="text-ink-muted text-sm mt-1">
                 Upgrade your plan to access Grade {lockedGradeTarget} {GRADE_EMOJI[lockedGradeTarget]} questions
               </p>
             </div>
             <button
               onClick={() => { setShowUpgradeModal(false); router.push('/pricing'); }}
-              className="w-full min-h-[48px] bg-duo-blue text-white font-extrabold rounded-full text-sm"
+              className="w-full min-h-[48px] bg-action hover:bg-action-dark text-white font-extrabold rounded-control border-2 border-ink shadow-hard-sm text-sm"
             >
               Upgrade Plan 🚀
             </button>
             <button
               onClick={() => setShowUpgradeModal(false)}
               style={{ minHeight: 0 }}
-              className="w-full text-center text-gray-500 text-sm font-semibold py-2"
+              className="w-full text-center text-ink-muted text-sm font-semibold py-2"
             >
               Not now
             </button>

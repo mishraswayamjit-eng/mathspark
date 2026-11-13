@@ -58,11 +58,11 @@ function formatTime(ms: number): string {
 }
 
 function getGradeBand(pct: number): { label: string; color: string } {
-  if (pct >= 90) return { label: 'Outstanding! 🏆', color: 'text-duo-green' };
-  if (pct >= 80) return { label: 'Excellent! ⭐',   color: 'text-duo-green' };
-  if (pct >= 70) return { label: 'Good work! 👍',   color: 'text-duo-blue' };
-  if (pct >= 60) return { label: 'Keep going! 💪',  color: 'text-duo-orange' };
-  return { label: 'More practice needed 📚', color: 'text-duo-red' };
+  if (pct >= 90) return { label: 'Outstanding! 🏆', color: 'text-success' };
+  if (pct >= 80) return { label: 'Excellent! ⭐',   color: 'text-success' };
+  if (pct >= 70) return { label: 'Good work! 👍',   color: 'text-ink' };
+  if (pct >= 60) return { label: 'Keep going! 💪',  color: 'text-hint-ink' };
+  return { label: 'More practice needed 📚', color: 'text-retry' };
 }
 
 // ── Analytics computation ─────────────────────────────────────────────────────
@@ -112,8 +112,8 @@ function ScoreRing({ pct, score, total }: { pct: number; score: number; total: n
   const r = 54;
   const circ = 2 * Math.PI * r;
   const dash = circ * (pct / 100);
-  const color = pct >= 70 ? '#58CC02' : pct >= 40 ? '#FF9600' : '#FF4B4B';
-  const trackColor = pct >= 70 ? '#E5F9CC' : pct >= 40 ? '#FFF3CD' : '#FFE4E4';
+  const color = pct >= 70 ? '#12805c' : pct >= 40 ? '#f5a400' : '#c62f3d';
+  const trackColor = pct >= 70 ? '#dff6ea' : pct >= 40 ? '#fff1b8' : '#fde8ea';
 
   return (
     <div className="relative inline-flex items-center justify-center">
@@ -127,8 +127,8 @@ function ScoreRing({ pct, score, total }: { pct: number; score: number; total: n
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-3xl font-extrabold text-white">{score}</span>
-        <span className="text-white/70 text-sm font-bold">/{total}</span>
+        <span className="text-3xl font-extrabold text-ink">{score}</span>
+        <span className="text-ink-muted text-sm font-bold">/{total}</span>
       </div>
     </div>
   );
@@ -154,21 +154,21 @@ function QuestionAccordion({ r, idx }: { r: MockTestResponse; idx: number }) {
     r.selectedAnswer === 'D' ? q.misconceptionD : '';
 
   return (
-    <div className="border-2 border-gray-100 rounded-2xl overflow-hidden">
+    <div className="bg-white border-2 border-line rounded-card overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-gray-50 transition-colors"
+        className="w-full text-left px-4 py-3 flex items-center gap-3 hover:bg-soft transition-colors"
       >
-        <span className="text-xs font-extrabold text-gray-500 w-8 flex-shrink-0">Q{idx + 1}</span>
-        <span className="flex-1 text-sm font-semibold text-gray-700 line-clamp-1">{q.questionText}</span>
-        <span className="text-xs text-gray-500 flex-shrink-0">{r.timeTakenMs ? formatMs(r.timeTakenMs) : '—'}</span>
+        <span className="text-xs font-extrabold text-ink-muted w-8 flex-shrink-0">Q{idx + 1}</span>
+        <span className="flex-1 text-sm font-semibold text-ink line-clamp-1">{q.questionText}</span>
+        <span className="text-xs text-ink-muted flex-shrink-0">{r.timeTakenMs ? formatMs(r.timeTakenMs) : '—'}</span>
         <span className="text-lg flex-shrink-0">{r.isCorrect ? '✅' : r.selectedAnswer ? '❌' : '⬜'}</span>
-        <span className="text-gray-300 text-sm">{open ? '▲' : '▼'}</span>
+        <span className="text-ink-muted text-sm">{open ? '▲' : '▼'}</span>
       </button>
 
       {open && (
-        <div className="px-4 pb-4 border-t border-gray-100 pt-3 space-y-3">
-          <p className="text-gray-700 text-sm font-medium">{q.questionText}</p>
+        <div className="px-4 pb-4 border-t-2 border-line pt-3 space-y-3">
+          <p className="text-ink text-sm font-medium">{q.questionText}</p>
           {q.questionLatex && <KatexRenderer latex={q.questionLatex} />}
 
           <div className="space-y-2">
@@ -176,30 +176,30 @@ function QuestionAccordion({ r, idx }: { r: MockTestResponse; idx: number }) {
               const isSelected = r.selectedAnswer === key;
               const isCorrect  = q.correctAnswer === key;
               const cls =
-                isCorrect  ? 'bg-green-50 border-duo-green text-green-800' :
-                isSelected ? 'bg-red-50 border-duo-red text-red-800' :
-                             'bg-white border-gray-200 text-gray-600';
+                isCorrect  ? 'bg-success-soft border-success text-ink' :
+                isSelected ? 'bg-retry-soft border-retry text-retry' :
+                             'bg-white border-line text-ink-muted';
               return (
-                <div key={key} className={`flex items-center gap-2 px-3 py-2 rounded-xl border-2 text-sm ${cls}`}>
+                <div key={key} className={`flex items-center gap-2 px-3 py-2 rounded-control border-2 text-sm font-bold ${cls}`}>
                   <span className="font-extrabold w-5 flex-shrink-0">{key}</span>
                   <span>{text}</span>
-                  {isCorrect && <span className="ml-auto text-duo-green">✓</span>}
-                  {isSelected && !isCorrect && <span className="ml-auto text-duo-red">✗</span>}
+                  {isCorrect && <span className="ml-auto text-success">✓</span>}
+                  {isSelected && !isCorrect && <span className="ml-auto text-retry">✗</span>}
                 </div>
               );
             })}
           </div>
 
           {!r.isCorrect && misconception && (
-            <div className="bg-blue-50 border-2 border-duo-blue rounded-xl px-3 py-2">
-              <p className="text-xs font-extrabold text-duo-blue mb-0.5">💡 Common mistake</p>
-              <p className="text-xs text-blue-800 font-medium">{misconception}</p>
+            <div className="bg-hint border-2 border-dashed border-hint-ink rounded-control px-3 py-2">
+              <p className="text-xs font-extrabold text-hint-ink mb-0.5">💡 Common mistake</p>
+              <p className="text-xs text-hint-ink font-medium">{misconception}</p>
             </div>
           )}
 
           <button
             onClick={() => router.push(`/practice/${q.topicId}`)}
-            className="w-full min-h-[40px] rounded-xl bg-duo-blue/10 border-2 border-duo-blue/30 text-duo-blue font-bold text-sm hover:bg-duo-blue/20 transition-colors"
+            className="w-full min-h-[40px] rounded-control bg-white border-2 border-ink shadow-hard-sm text-ink font-bold text-sm hover:bg-soft transition-colors"
           >
             Practice similar →
           </button>
@@ -249,8 +249,8 @@ export default function TestResultsPage() {
 
   if (loading || !test) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="w-12 h-12 border-4 border-duo-green/30 border-t-duo-green rounded-full animate-spin" />
+      <div className="min-h-screen bg-paper flex items-center justify-center">
+        <div className="w-12 h-12 border-4 border-line border-t-action rounded-full animate-spin" />
       </div>
     );
   }
@@ -290,7 +290,7 @@ export default function TestResultsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pb-8 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-8 animate-fade-in">
       {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
 
       {/* ── Share sheet ───────────────────────────────────────────────────── */}
@@ -315,21 +315,21 @@ export default function TestResultsPage() {
       )}
 
       {/* ── Score header ─────────────────────────────────────────────────── */}
-      <div className="bg-gradient-to-b from-duo-dark to-[#1a3040] px-4 pt-8 pb-6 text-center">
+      <div className="bg-white border-b-2 border-ink px-4 pt-8 pb-6 text-center">
         <ScoreRing pct={pct} score={score} total={total} />
-        <h1 className={`text-2xl font-extrabold mt-3 ${grade.color}`}>{grade.label}</h1>
-        <p className="text-white/70 text-sm font-semibold mt-1">
+        <h1 className={`text-display mt-3 ${grade.color}`}>{grade.label}</h1>
+        <p className="text-ink-muted text-sm font-semibold mt-1">
           {pct}% accuracy
           {timeUsedMs != null && ` · ${formatTime(timeUsedMs)} used`}
         </p>
         <div className="mt-2 flex items-center justify-center gap-2">
-          <span className="inline-block bg-white/10 text-white/80 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wide">
+          <span className="inline-block bg-soft text-ink border-2 border-line text-xs font-extrabold px-3 py-1 rounded-full">
             {test.type === 'quick' ? 'Quick Test' : test.type === 'half' ? 'Half Paper' : test.type === 'ipm' ? 'IPM Blueprint' : test.type === 'pyq' ? 'Past Year Paper' : test.type === 'mega' ? 'Mega Final' : 'Full Paper'}
           </span>
           <button
             onClick={() => setShowShare(true)}
             style={{ minHeight: 0 }}
-            className="bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold px-3 py-1 rounded-full transition-colors"
+            className="bg-white hover:bg-soft text-ink border-2 border-ink text-xs font-extrabold px-3 py-1 rounded-full transition-colors"
           >
             📤 Share
           </button>
@@ -337,7 +337,7 @@ export default function TestResultsPage() {
       </div>
 
       {/* ── Section tabs ─────────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-40 bg-white border-b border-gray-100 overflow-x-auto">
+      <div className="sticky top-0 z-40 bg-white border-b-2 border-line overflow-x-auto">
         <div className="flex px-2 py-2 gap-1 min-w-max">
           {SECTIONS.map((s) => (
             <button
@@ -345,8 +345,8 @@ export default function TestResultsPage() {
               onClick={() => setActiveSection(s.id)}
               className={`px-4 py-2 rounded-full text-xs font-extrabold whitespace-nowrap transition-colors ${
                 activeSection === s.id
-                  ? 'bg-duo-blue text-white'
-                  : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
+                  ? 'bg-action text-white'
+                  : 'text-ink-muted hover:text-ink hover:bg-soft'
               }`}
             >
               {s.label}
@@ -360,9 +360,9 @@ export default function TestResultsPage() {
         {/* ── Topics section ────────────────────────────────────────────── */}
         {activeSection === 'topics' && (
           <div className="space-y-3">
-            <h2 className="font-extrabold text-gray-800 text-lg">Topic Performance</h2>
+            <h2 className="text-title text-ink">Topic Performance</h2>
             {topicResults.map((t) => (
-              <div key={t.topicId} className="bg-white border-2 border-gray-100 rounded-2xl p-4">
+              <div key={t.topicId} className="bg-white border-2 border-line rounded-card p-4">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
                     <span className="text-xl">{TOPIC_EMOJI[t.topicId] ?? '📚'}</span>
@@ -373,21 +373,21 @@ export default function TestResultsPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     {t.accuracy < 0.5 && (
-                      <span className="text-xs font-extrabold px-2 py-0.5 bg-red-100 text-red-600 rounded-full">Focus 🎯</span>
+                      <span className="text-xs font-extrabold px-2 py-0.5 bg-retry-soft text-retry rounded-full">Focus 🎯</span>
                     )}
                     <span className={`text-sm font-extrabold ${
-                      t.accuracy >= 0.8 ? 'text-duo-green' :
-                      t.accuracy >= 0.5 ? 'text-duo-orange' : 'text-duo-red'
+                      t.accuracy >= 0.8 ? 'text-success' :
+                      t.accuracy >= 0.5 ? 'text-hint-ink' : 'text-retry'
                     }`}>
                       {Math.round(t.accuracy * 100)}%
                     </span>
                   </div>
                 </div>
-                <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                <div className="w-full h-2 bg-soft rounded-full overflow-hidden">
                   <div
                     className={`h-full rounded-full transition-[width] ${
-                      t.accuracy >= 0.8 ? 'bg-duo-green' :
-                      t.accuracy >= 0.5 ? 'bg-duo-orange' : 'bg-duo-red'
+                      t.accuracy >= 0.8 ? 'bg-success' :
+                      t.accuracy >= 0.5 ? 'bg-star' : 'bg-retry'
                     }`}
                     style={{ width: `${t.accuracy * 100}%` }}
                   />
@@ -400,7 +400,7 @@ export default function TestResultsPage() {
         {/* ── Difficulty section ────────────────────────────────────────── */}
         {activeSection === 'difficulty' && (
           <div className="space-y-3">
-            <h2 className="font-extrabold text-gray-800 text-lg">Difficulty Breakdown</h2>
+            <h2 className="text-title text-ink">Difficulty Breakdown</h2>
             {diffBreakdown.map(({ diff, correct, total: t }) => {
               const pct = t > 0 ? correct / t : 0;
               const insight =
@@ -408,15 +408,15 @@ export default function TestResultsPage() {
                 pct >= 0.6 ? 'Good'       :
                 pct >= 0.4 ? 'Needs work' : 'Focus here';
               const color =
-                diff === 'Easy'   ? 'bg-duo-green' :
-                diff === 'Medium' ? 'bg-duo-orange' : 'bg-duo-red';
+                diff === 'Easy'   ? 'bg-action' :
+                diff === 'Medium' ? 'bg-action' : 'bg-action';
               return (
-                <div key={diff} className="bg-white border-2 border-gray-100 rounded-2xl p-4">
+                <div key={diff} className="bg-white border-2 border-line rounded-card p-4">
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-extrabold text-gray-800">{diff}</span>
                     <span className="text-sm font-bold text-gray-500">{correct}/{t} · {insight}</span>
                   </div>
-                  <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="w-full h-3 ui-meter">
                     <div className={`h-full rounded-full transition-[width] ${color}`} style={{ width: `${pct * 100}%` }} />
                   </div>
                 </div>
@@ -428,14 +428,14 @@ export default function TestResultsPage() {
         {/* ── Time section ─────────────────────────────────────────────── */}
         {activeSection === 'time' && (
           <div className="space-y-4">
-            <h2 className="font-extrabold text-gray-800 text-lg">Time Analysis</h2>
+            <h2 className="text-title text-ink">Time Analysis</h2>
             <div className="grid grid-cols-2 gap-3">
-              <div className="bg-gray-50 rounded-2xl p-4 text-center">
+              <div className="bg-white border-2 border-line rounded-card p-4 text-center">
                 <p className="text-2xl font-extrabold text-gray-800">{formatMs(avgTimeMs)}</p>
                 <p className="text-xs text-gray-500 font-semibold mt-1">avg per question</p>
               </div>
               {timeUsedMs != null && (
-                <div className="bg-gray-50 rounded-2xl p-4 text-center">
+                <div className="bg-white border-2 border-line rounded-card p-4 text-center">
                   <p className="text-2xl font-extrabold text-gray-800">{formatTime(timeUsedMs)}</p>
                   <p className="text-xs text-gray-500 font-semibold mt-1">total time used</p>
                 </div>
@@ -447,10 +447,10 @@ export default function TestResultsPage() {
                 <p className="font-extrabold text-gray-700 text-sm mb-2">Slowest questions</p>
                 <div className="space-y-2">
                   {slowest.map((r) => (
-                    <div key={r.id} className="flex items-center gap-3 py-2 border-b border-gray-100">
+                    <div key={r.id} className="flex items-center gap-3 py-2 border-b border-line">
                       <span className="text-xs font-extrabold text-gray-500 w-8 flex-shrink-0">Q{r.questionNumber}</span>
                       <p className="flex-1 text-xs text-gray-600 line-clamp-1">{r.question?.questionText}</p>
-                      <span className="text-xs font-extrabold text-duo-orange flex-shrink-0">{formatMs(r.timeTakenMs)}</span>
+                      <span className="text-xs font-extrabold text-hint-ink flex-shrink-0">{formatMs(r.timeTakenMs)}</span>
                     </div>
                   ))}
                 </div>
@@ -462,7 +462,7 @@ export default function TestResultsPage() {
         {/* ── Question playback ─────────────────────────────────────────── */}
         {activeSection === 'playback' && (
           <div className="space-y-2">
-            <h2 className="font-extrabold text-gray-800 text-lg mb-3">All Questions</h2>
+            <h2 className="text-title text-ink mb-3">All Questions</h2>
             {test.responses.map((r, idx) => (
               <QuestionAccordion key={r.id} r={r} idx={idx} />
             ))}
@@ -472,14 +472,14 @@ export default function TestResultsPage() {
         {/* ── Study plan ───────────────────────────────────────────────── */}
         {activeSection === 'plan' && (
           <div className="space-y-3">
-            <h2 className="font-extrabold text-gray-800 text-lg">Personalised Study Plan</h2>
+            <h2 className="text-title text-ink">Personalised Study Plan</h2>
 
             {recommendations.filter((r) => r.type === 'priority').length > 0 && (
               <div>
-                <p className="text-xs font-extrabold text-duo-red uppercase tracking-wide mb-2">🔴 Priority — Practice These First</p>
+                <p className="text-caption text-retry mb-2">🔴 Priority — Practice These First</p>
                 <div className="space-y-2">
                   {recommendations.filter((r) => r.type === 'priority').map((rec) => (
-                    <div key={rec.topicId} className="bg-red-50 border-2 border-red-100 rounded-2xl p-4 flex items-center gap-3">
+                    <div key={rec.topicId} className="bg-retry-soft border-2 border-retry rounded-card p-4 flex items-center gap-3">
                       <div className="flex-1">
                         <p className="font-extrabold text-gray-800 text-sm">{rec.topicName}</p>
                         <p className="text-xs text-gray-500 font-medium">{rec.reason}</p>
@@ -495,13 +495,13 @@ export default function TestResultsPage() {
 
             {recommendations.filter((r) => r.type === 'speed').length > 0 && (
               <div>
-                <p className="text-xs font-extrabold text-duo-orange uppercase tracking-wide mb-2">🟡 Speed Up — You Know This But Need To Be Faster</p>
+                <p className="text-caption text-hint-ink mb-2">🟡 Speed Up — You Know This But Need To Be Faster</p>
                 <div className="space-y-2">
                   {recommendations.filter((r) => r.type === 'speed').map((rec) => (
-                    <div key={rec.topicId} className="bg-amber-50 border-2 border-amber-100 rounded-2xl p-4 flex items-center gap-3">
+                    <div key={rec.topicId} className="bg-hint border-2 border-hint-ink rounded-card p-4 flex items-center gap-3">
                       <div className="flex-1">
-                        <p className="font-extrabold text-gray-800 text-sm">{rec.topicName}</p>
-                        <p className="text-xs text-gray-500 font-medium">{rec.reason}</p>
+                        <p className="font-extrabold text-ink text-sm">{rec.topicName}</p>
+                        <p className="text-xs text-hint-ink font-medium">{rec.reason}</p>
                       </div>
                       <DuoButton variant="orange" onClick={() => router.push(`/practice/${rec.topicId}?mode=speed`)}>
                         ⚡ Speed
@@ -514,10 +514,10 @@ export default function TestResultsPage() {
 
             {recommendations.filter((r) => r.type === 'strength').length > 0 && (
               <div>
-                <p className="text-xs font-extrabold text-duo-green uppercase tracking-wide mb-2">🟢 Strengths — Keep It Up!</p>
+                <p className="text-caption text-success mb-2">🟢 Strengths — Keep It Up!</p>
                 <div className="space-y-2">
                   {recommendations.filter((r) => r.type === 'strength').map((rec) => (
-                    <div key={rec.topicId} className="bg-green-50 border-2 border-green-100 rounded-2xl p-4">
+                    <div key={rec.topicId} className="bg-success-soft border-2 border-success rounded-card p-4">
                       <p className="font-extrabold text-gray-800 text-sm">{rec.topicName}</p>
                       <p className="text-xs text-gray-500 font-medium">{rec.reason}</p>
                     </div>
@@ -527,7 +527,7 @@ export default function TestResultsPage() {
             )}
 
             {recommendations.length === 0 && (
-              <div className="bg-green-50 border-2 border-green-100 rounded-2xl p-6 text-center">
+              <div className="bg-success-soft border-2 border-success rounded-card p-6 text-center">
                 <p className="text-2xl mb-2">🎉</p>
                 <p className="font-extrabold text-gray-800">Everything looks balanced!</p>
                 <p className="text-sm text-gray-500 mt-1">Keep practicing to maintain your performance.</p>
@@ -545,13 +545,13 @@ export default function TestResultsPage() {
         </DuoButton>
         <button
           onClick={() => router.push('/test/history')}
-          className="w-full min-h-[48px] rounded-full border-2 border-gray-200 font-extrabold text-gray-600 text-sm hover:bg-gray-50 transition-colors"
+          className="w-full min-h-[48px] rounded-control border-2 border-ink bg-white shadow-hard-sm font-extrabold text-ink text-sm hover:bg-soft transition-colors"
         >
           View All Tests
         </button>
         <button
           onClick={() => router.push('/chapters')}
-          className="w-full text-gray-500 text-sm font-semibold text-center py-2 hover:text-gray-600 transition-colors"
+          className="w-full text-action text-sm font-semibold text-center py-2 hover:text-action-dark transition-colors"
         >
           Back to Learning 📚
         </button>

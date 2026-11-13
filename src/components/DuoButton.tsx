@@ -1,7 +1,8 @@
 'use client';
 
 // DuoButton — IPM-style outlined button: ink border, hard offset shadow, sinks on press.
-// Variant names are historical; `green` is the primary action (indigo brand).
+// Variant names are historical: `green` is the primary action (indigo), `blue` is a
+// secondary button (white, same as `white`), `orange` is a reward, `red` is not-quite.
 import type { ReactNode } from 'react';
 
 export type DuoVariant = 'green' | 'blue' | 'orange' | 'red' | 'white';
@@ -18,9 +19,9 @@ interface DuoButtonProps {
 
 const VARIANT_STYLES: Record<DuoVariant, { bg: string; border: string; text: string }> = {
   green:  { bg: 'bg-action hover:bg-action-dark', border: 'border-2 border-ink', text: 'text-white' },
-  blue:   { bg: 'bg-duo-blue hover:bg-duo-blue-dark',   border: 'border-2 border-ink', text: 'text-white' },
-  orange: { bg: 'bg-star hover:bg-[#ffb31a]',       border: 'border-2 border-ink', text: 'text-ink' },
-  red:    { bg: 'bg-retry hover:bg-[#b02835]',        border: 'border-2 border-ink', text: 'text-white' },
+  blue:   { bg: 'bg-white hover:bg-soft',           border: 'border-2 border-ink', text: 'text-ink' },
+  orange: { bg: 'bg-star hover:brightness-95',      border: 'border-2 border-ink', text: 'text-ink' },
+  red:    { bg: 'bg-retry hover:brightness-95',      border: 'border-2 border-ink', text: 'text-white' },
   white:  { bg: 'bg-white hover:bg-soft',           border: 'border-2 border-ink', text: 'text-ink' },
 };
 
@@ -43,7 +44,7 @@ export default function DuoButton({
       className={`
         ${fullWidth ? 'w-full' : ''}
         ${bg} ${border} ${text}
-        rounded-[14px]
+        rounded-control
         min-h-[52px]
         px-5
         font-extrabold

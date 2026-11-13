@@ -11,9 +11,9 @@ interface Props {
 }
 
 // ── Colors ───────────────────────────────────────────────────────────────────
-const CORRECT_BG = 'bg-green-50 border-duo-green';
-const WRONG_BG   = 'bg-red-50 border-duo-red';
-const NEUTRAL_BG = 'bg-white border-gray-200';
+const CORRECT_BG = 'bg-success-soft border-success';
+const WRONG_BG   = 'bg-retry-soft border-retry';
+const NEUTRAL_BG = 'bg-white border-line';
 
 export default function DragToSortQuestion({ data, answered, onSubmit }: Props) {
   // order[i] = index into data.items
@@ -82,7 +82,7 @@ export default function DragToSortQuestion({ data, answered, onSubmit }: Props) 
   return (
     <div className="space-y-3">
       {data.instruction && (
-        <p className="text-sm font-semibold text-gray-600 text-center">{data.instruction}</p>
+        <p className="text-sm font-bold text-ink-muted text-center">{data.instruction}</p>
       )}
 
       <div
@@ -95,8 +95,8 @@ export default function DragToSortQuestion({ data, answered, onSubmit }: Props) 
           return (
             <div
               key={itemIdx}
-              className={`flex items-center gap-2 rounded-2xl px-4 py-3 border-2 transition-colors ${getItemBg(pos)} ${
-                isDragging ? 'shadow-lg z-10 relative' : ''
+              className={`flex items-center gap-2 rounded-control px-4 py-3 border-2 transition-colors ${getItemBg(pos)} ${
+                isDragging ? 'shadow-hard z-10 relative' : ''
               }`}
               style={{
                 transform: isDragging ? `translateY(${dragOffset}px)` : undefined,
@@ -105,12 +105,12 @@ export default function DragToSortQuestion({ data, answered, onSubmit }: Props) 
               onTouchStart={(e) => handleTouchStart(pos, e)}
             >
               {/* Position number */}
-              <span className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center text-xs font-extrabold text-gray-600 flex-shrink-0">
+              <span className="w-7 h-7 rounded-full bg-soft flex items-center justify-center text-xs font-extrabold text-ink flex-shrink-0">
                 {pos + 1}
               </span>
 
               {/* Item text */}
-              <span className="flex-1 text-base font-semibold text-gray-800">
+              <span className="flex-1 text-base font-bold text-ink">
                 {data.items[itemIdx]}
               </span>
 
@@ -120,7 +120,7 @@ export default function DragToSortQuestion({ data, answered, onSubmit }: Props) 
                   <button
                     onClick={() => swap(pos, pos - 1)}
                     disabled={pos === 0}
-                    className="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center text-gray-500 disabled:opacity-30 active:bg-gray-200 transition-colors min-h-0"
+                    className="w-7 h-7 rounded-lg bg-soft flex items-center justify-center text-ink-muted disabled:opacity-30 active:bg-line transition-colors min-h-0"
                     aria-label={`Move ${data.items[itemIdx]} up`}
                   >
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -130,7 +130,7 @@ export default function DragToSortQuestion({ data, answered, onSubmit }: Props) 
                   <button
                     onClick={() => swap(pos, pos + 1)}
                     disabled={pos === order.length - 1}
-                    className="w-7 h-7 rounded-lg bg-gray-100 flex items-center justify-center text-gray-500 disabled:opacity-30 active:bg-gray-200 transition-colors min-h-0"
+                    className="w-7 h-7 rounded-lg bg-soft flex items-center justify-center text-ink-muted disabled:opacity-30 active:bg-line transition-colors min-h-0"
                     aria-label={`Move ${data.items[itemIdx]} down`}
                   >
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -142,7 +142,7 @@ export default function DragToSortQuestion({ data, answered, onSubmit }: Props) 
 
               {/* Result indicator */}
               {result && (
-                <span className={`text-lg font-bold flex-shrink-0 ${result[pos] ? 'text-duo-green' : 'text-duo-red'}`}>
+                <span className={`text-lg font-bold flex-shrink-0 ${result[pos] ? 'text-success' : 'text-retry'}`}>
                   {result[pos] ? '✓' : '✗'}
                 </span>
               )}
@@ -153,9 +153,9 @@ export default function DragToSortQuestion({ data, answered, onSubmit }: Props) 
 
       {/* Show correct order on wrong answer */}
       {result && !result.every(Boolean) && (
-        <div className="bg-green-50 border border-green-200 rounded-xl px-3 py-2">
-          <p className="text-xs font-extrabold text-green-700 mb-1">Correct order:</p>
-          <p className="text-sm text-green-800 font-semibold">
+        <div className="bg-success-soft border-2 border-success rounded-note px-3 py-2">
+          <p className="text-xs font-extrabold text-ink mb-1">Correct order:</p>
+          <p className="text-label text-success">
             {data.correctOrder.map((idx) => data.items[idx]).join(' → ')}
           </p>
         </div>

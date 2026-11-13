@@ -47,14 +47,14 @@ export default function JustOneMore({
   if (streak < 3 || getTodayLessons() >= 3) return null;
 
   return (
-    <div className="w-full bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-duo-green rounded-2xl p-4 space-y-3 animate-pop-in">
+    <div className="w-full bg-white border-2 border-line rounded-card p-4 space-y-3 animate-pop-in">
       <div className="flex items-center gap-3">
         <Sparky mood="encouraging" size={48} />
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-extrabold text-gray-800">
+          <p className="text-sm font-extrabold text-ink">
             You&apos;re on fire! <span aria-hidden="true">🔥</span>
           </p>
-          <p className="text-xs text-gray-600 font-medium">
+          <p className="text-xs text-ink-muted font-semibold">
             One more {topicName} lesson? ~5 min
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function JustOneMore({
 
       <button
         onClick={onDecline}
-        className="w-full text-center text-gray-500 text-sm font-semibold py-1 hover:text-gray-600 transition-colors"
+        className="w-full text-center text-ink-muted text-sm font-bold py-1 hover:text-ink transition-colors"
         style={{ minHeight: 0 }}
       >
         Not now

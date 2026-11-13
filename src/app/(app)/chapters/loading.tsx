@@ -1,7 +1,7 @@
 export default function ChaptersLoading() {
   return (
     <div className="min-h-screen bg-paper pb-24 animate-pulse">
-      <div className="bg-duo-dark px-4 py-4 flex items-center gap-3">
+      <div className="bg-ink px-4 py-4 flex items-center gap-3">
         <div className="h-5 bg-white/20 rounded w-24" />
         <div className="ml-auto flex gap-3">
           <div className="h-5 bg-white/20 rounded w-12" />
@@ -18,8 +18,8 @@ export default function ChaptersLoading() {
         {/* Topic cards */}
         <div className="space-y-3">
           {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100 h-24 flex items-center gap-3">
-              <div className="w-12 h-12 bg-gray-200 rounded-xl shrink-0" />
+            <div key={i} className="bg-white rounded-card p-4 border-2 border-line h-24 flex items-center gap-3">
+              <div className="w-12 h-12 bg-gray-200 rounded-tile shrink-0" />
               <div className="flex-1">
                 <div className="h-4 bg-gray-200 rounded w-3/4 mb-2" />
                 <div className="h-2 bg-gray-100 rounded-full w-full" />

@@ -54,15 +54,15 @@ function getCatMeta(cat: string) {
 
 function FrequencyBadge({ freq }: { freq: string }) {
   const config: Record<string, { color: string; bg: string }> = {
-    'Very High': { color: '#DC2626', bg: '#FEE2E2' },
-    'High':      { color: '#EA580C', bg: '#FFF7ED' },
-    'Medium':    { color: '#CA8A04', bg: '#FEF9C3' },
-    'Low':       { color: '#16A34A', bg: '#DCFCE7' },
+    'Very High': { color: '#5d6b8c', bg: '#eef3fb' },
+    'High':      { color: '#5d6b8c', bg: '#eef3fb' },
+    'Medium':    { color: '#5d6b8c', bg: '#eef3fb' },
+    'Low':       { color: '#5d6b8c', bg: '#eef3fb' },
   };
-  const c = config[freq] ?? { color: '#6B7280', bg: '#F3F4F6' };
+  const c = config[freq] ?? { color: '#5d6b8c', bg: '#eef3fb' };
   return (
     <span
-      className="text-[10px] font-extrabold px-1.5 py-0.5 rounded-full"
+      className="text-xs font-extrabold px-1.5 py-0.5 rounded-full"
       style={{ color: c.color, backgroundColor: c.bg }}
     >
       {freq}
@@ -102,10 +102,10 @@ export default function MistakePatternsPage() {
   return (
     <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
-        <Link href="/chapters" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
+      <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
+        <Link href="/chapters" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
-          <h1 className="text-white font-extrabold text-lg">Mistake Patterns</h1>
+          <h1 className="text-white text-title">Mistake Patterns</h1>
           <p className="text-white/70 text-xs font-medium">50 traps &middot; Learn from common errors!</p>
         </div>
         <span className="text-2xl">🚨</span>
@@ -113,11 +113,11 @@ export default function MistakePatternsPage() {
 
       <div className="max-w-lg mx-auto px-4 pt-5">
         {/* Intro */}
-        <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl px-4 py-3 border border-red-200 mb-5 flex items-start gap-3">
+        <div className="bg-white rounded-card px-4 py-3 border-2 border-line mb-5 flex items-start gap-3">
           <Sparky mood="thinking" size={36} />
           <div>
-            <p className="text-sm font-bold text-red-800">Everyone makes mistakes — toppers learn from them!</p>
-            <p className="text-xs text-red-600 mt-0.5">
+            <p className="text-sm font-bold text-ink">Everyone makes mistakes — toppers learn from them!</p>
+            <p className="text-xs text-ink-muted mt-0.5">
               These 50 patterns are the most common traps in math exams. Know them = avoid them!
             </p>
           </div>
@@ -129,8 +129,8 @@ export default function MistakePatternsPage() {
             onClick={() => setSelectedCategory(null)}
             className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
               selectedCategory === null
-                ? 'bg-duo-dark text-white border-duo-dark'
-                : 'bg-white text-gray-600 border-gray-200'
+                ? 'bg-action text-white border-action'
+                : 'bg-white text-ink border-line'
             }`}
           >
             All ({patterns.length || 50})
@@ -145,7 +145,7 @@ export default function MistakePatternsPage() {
                 className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors flex items-center gap-1 ${
                   isActive
                     ? 'text-white border-transparent'
-                    : 'bg-white text-gray-600 border-gray-200'
+                    : 'bg-white text-ink border-line'
                 }`}
                 style={isActive ? { backgroundColor: meta.color, borderColor: meta.color } : {}}
               >
@@ -160,7 +160,7 @@ export default function MistakePatternsPage() {
         {loading && (
           <div className="space-y-3">
             {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100 animate-pulse h-28" />
+              <div key={i} className="bg-white rounded-card p-4 border-2 border-line animate-pulse h-28" />
             ))}
           </div>
         )}
@@ -176,32 +176,32 @@ export default function MistakePatternsPage() {
               return (
                 <div
                   key={pattern.id}
-                  className="bg-white rounded-2xl border-2 border-line overflow-hidden"
+                  className="bg-white rounded-card border-2 border-line overflow-hidden"
                   style={{ borderLeftWidth: '4px', borderLeftColor: catMeta.color }}
                 >
                   {/* Card header */}
                   <button
                     onClick={() => setExpandedId(isExpanded ? null : pattern.id)}
-                    className="w-full px-4 py-3.5 flex items-center gap-3 text-left active:bg-gray-50 transition-colors"
+                    className="w-full px-4 py-3.5 flex items-center gap-3 text-left active:bg-soft transition-colors"
                   >
                     <span className="text-2xl shrink-0">{pattern.emoji}</span>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1.5 mb-0.5">
                         <span
-                          className="text-[10px] font-extrabold px-1.5 py-0.5 rounded-full text-white"
+                          className="text-xs font-extrabold px-1.5 py-0.5 rounded-full text-white"
                           style={{ backgroundColor: catMeta.color }}
                         >
                           {catMeta.label}
                         </span>
                         <FrequencyBadge freq={pattern.frequency} />
                       </div>
-                      <p className="text-sm font-extrabold text-gray-800 leading-tight">{pattern.name}</p>
+                      <p className="text-sm font-extrabold text-ink leading-tight">{pattern.name}</p>
                       {!isExpanded && (
-                        <p className="text-xs text-gray-500 font-medium mt-0.5 line-clamp-1">{pattern.description}</p>
+                        <p className="text-xs text-ink-muted font-medium mt-0.5 line-clamp-1">{pattern.description}</p>
                       )}
                     </div>
                     <span
-                      className="text-gray-500 transition-transform duration-200 text-sm shrink-0"
+                      className="text-ink-muted transition-transform duration-200 text-sm shrink-0"
                       style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
                     >
                       ▾
@@ -211,48 +211,48 @@ export default function MistakePatternsPage() {
                   {/* Expanded content */}
                   {isExpanded && (
                     <div className="px-4 pb-4 space-y-3 animate-fade-in">
-                      <div className="border-t border-gray-100" />
+                      <div className="border-t-2 border-line" />
 
                       {/* Description */}
-                      <p className="text-sm text-gray-700 font-medium leading-relaxed">{pattern.description}</p>
+                      <p className="text-sm text-ink font-medium leading-relaxed">{pattern.description}</p>
 
                       {/* Why it happens */}
-                      <div className="bg-red-50 rounded-xl p-3 border border-red-200">
+                      <div className="bg-retry-soft rounded-control p-3 border-2 border-retry">
                         <div className="flex items-start gap-2">
                           <span className="text-sm shrink-0">🤔</span>
                           <div>
-                            <p className="text-[10px] font-extrabold text-red-500 uppercase tracking-wide">Why This Happens</p>
-                            <p className="text-sm text-red-800 font-medium mt-0.5 leading-relaxed">{pattern.whyItHappens}</p>
+                            <p className="text-[13px] font-extrabold text-retry">Why This Happens</p>
+                            <p className="text-sm text-ink font-medium mt-0.5 leading-relaxed">{pattern.whyItHappens}</p>
                           </div>
                         </div>
                       </div>
 
                       {/* How to fix */}
-                      <div className="bg-green-50 rounded-xl p-3 border border-green-200">
+                      <div className="bg-success-soft rounded-control p-3 border-2 border-success">
                         <div className="flex items-start gap-2">
                           <span className="text-sm shrink-0">✅</span>
                           <div>
-                            <p className="text-[10px] font-extrabold text-duo-green uppercase tracking-wide">How to Fix It</p>
-                            <p className="text-sm text-green-800 font-medium mt-0.5 leading-relaxed">{pattern.howToFix}</p>
+                            <p className="text-[15px] font-extrabold text-success">How to Fix It</p>
+                            <p className="text-sm text-ink font-medium mt-0.5 leading-relaxed">{pattern.howToFix}</p>
                           </div>
                         </div>
                       </div>
 
                       {/* Example */}
                       {pattern.example && (
-                        <div className="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+                        <div className="bg-white rounded-control border-2 border-line overflow-hidden">
                           <div className="px-3 pt-3 pb-2">
-                            <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-1.5">Example</p>
-                            <p className="text-sm text-gray-800 font-semibold">{pattern.example.question}</p>
+                            <p className="text-[13px] font-extrabold text-ink-muted mb-1.5">Example</p>
+                            <p className="text-sm text-ink font-semibold">{pattern.example.question}</p>
                           </div>
 
                           {/* Wrong answer */}
-                          <div className="bg-red-50 px-3 py-2.5 border-t border-red-100">
+                          <div className="bg-retry-soft px-3 py-2.5 border-t-2 border-line">
                             <div className="flex items-start gap-2">
                               <span className="text-sm shrink-0">❌</span>
                               <div>
-                                <p className="text-xs font-extrabold text-red-600">{pattern.example.wrongAnswer}</p>
-                                <p className="text-xs text-red-500 font-medium mt-0.5 italic">{pattern.example.wrongThinking}</p>
+                                <p className="text-[13px] font-extrabold text-retry">{pattern.example.wrongAnswer}</p>
+                                <p className="text-[13px] text-ink font-medium mt-0.5 italic">{pattern.example.wrongThinking}</p>
                               </div>
                             </div>
                           </div>
@@ -261,17 +261,17 @@ export default function MistakePatternsPage() {
                           {!rightShown ? (
                             <button
                               onClick={(e) => { e.stopPropagation(); toggleRight(pattern.id); }}
-                              className="w-full bg-green-50 px-3 py-2.5 border-t border-green-100 text-center"
+                              className="w-full bg-white px-3 py-2.5 border-t-2 border-line text-center"
                             >
-                              <span className="text-xs font-bold text-duo-green">Tap to see the right way →</span>
+                              <span className="text-[13px] font-bold text-action">Tap to see the right way →</span>
                             </button>
                           ) : (
-                            <div className="bg-green-50 px-3 py-2.5 border-t border-green-100 animate-fade-in">
+                            <div className="bg-success-soft px-3 py-2.5 border-t-2 border-line animate-fade-in">
                               <div className="flex items-start gap-2">
                                 <span className="text-sm shrink-0">✅</span>
                                 <div>
-                                  <p className="text-xs font-extrabold text-green-700">{pattern.example.rightAnswer}</p>
-                                  <p className="text-xs text-duo-green font-medium mt-0.5 italic">{pattern.example.rightThinking}</p>
+                                  <p className="text-[15px] font-extrabold text-success">{pattern.example.rightAnswer}</p>
+                                  <p className="text-[13px] text-ink font-medium mt-0.5 italic">{pattern.example.rightThinking}</p>
                                 </div>
                               </div>
                             </div>
@@ -281,11 +281,11 @@ export default function MistakePatternsPage() {
 
                       {/* Sparky's message */}
                       {pattern.sparkyMessage && (
-                        <div className="bg-purple-50 rounded-xl p-3 border border-purple-200 flex items-start gap-2">
+                        <div className="bg-soft rounded-control p-3 border-2 border-line flex items-start gap-2">
                           <Sparky mood="thinking" size={28} />
                           <div>
-                            <p className="text-[10px] font-extrabold text-purple-500 uppercase tracking-wide">Sparky Says</p>
-                            <p className="text-xs text-purple-800 font-medium mt-0.5 italic leading-snug">{pattern.sparkyMessage}</p>
+                            <p className="text-[13px] font-extrabold text-ink-muted">Sparky Says</p>
+                            <p className="text-[13px] text-ink font-medium mt-0.5 italic leading-snug">{pattern.sparkyMessage}</p>
                           </div>
                         </div>
                       )}
@@ -294,19 +294,19 @@ export default function MistakePatternsPage() {
                       <div className="space-y-2 pt-1">
                         {pattern.affectedTopics.length > 0 && (
                           <div className="flex items-start gap-1.5 flex-wrap">
-                            <span className="text-[10px] font-bold text-gray-500 shrink-0">Topics:</span>
+                            <span className="text-xs font-bold text-ink-muted shrink-0">Topics:</span>
                             {pattern.affectedTopics.map((t) => (
-                              <span key={t} className="text-[10px] font-bold text-gray-500 bg-gray-100 px-1.5 py-0.5 rounded-full">
+                              <span key={t} className="text-xs font-bold text-ink-muted bg-soft px-1.5 py-0.5 rounded-full">
                                 {t}
                               </span>
                             ))}
                           </div>
                         )}
                         <div className="flex items-center gap-2">
-                          <span className="text-[10px] font-bold text-gray-500">
+                          <span className="text-xs font-bold text-ink-muted">
                             Grades {pattern.affectedGrades[0]}–{pattern.affectedGrades[pattern.affectedGrades.length - 1]}
                           </span>
-                          <span className="text-[10px] font-bold text-gray-500">
+                          <span className="text-xs font-bold text-ink-muted">
                             Difficulty: {'⭐'.repeat(pattern.difficulty)}
                           </span>
                         </div>
@@ -323,8 +323,8 @@ export default function MistakePatternsPage() {
         {!loading && patterns.length === 0 && (
           <div className="flex flex-col items-center gap-4 py-12">
             <Sparky mood="thinking" size={64} />
-            <p className="text-sm font-bold text-gray-500">No patterns found for this category.</p>
-            <button onClick={() => setSelectedCategory(null)} className="text-sm text-blue-500 underline">
+            <p className="text-sm font-bold text-ink-muted">No patterns found for this category.</p>
+            <button onClick={() => setSelectedCategory(null)} className="text-sm text-action font-bold underline">
               Show all
             </button>
           </div>

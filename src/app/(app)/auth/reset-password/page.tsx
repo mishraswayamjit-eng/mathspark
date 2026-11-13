@@ -39,8 +39,8 @@ function ResetForm() {
 
   if (!token) {
     return (
-      <div className="text-center text-white/70 text-sm">
-        Invalid reset link. <Link href="/auth/forgot-password" className="text-duo-blue">Request a new one.</Link>
+      <div className="text-center text-ink-muted text-sm">
+        Invalid reset link. <Link href="/auth/forgot-password" className="text-action font-semibold">Request a new one.</Link>
       </div>
     );
   }
@@ -49,14 +49,14 @@ function ResetForm() {
     <div className="w-full max-w-sm">
       <div className="text-center mb-8">
         <div className="text-5xl mb-3">🔒</div>
-        <h1 className="text-2xl font-extrabold text-white">New password</h1>
+        <h1 className="text-2xl font-extrabold text-ink">New password</h1>
       </div>
 
       {success ? (
         <div className="text-center space-y-3">
           <div className="text-4xl">✅</div>
-          <p className="text-white font-semibold">Password updated!</p>
-          <p className="text-white/70 text-sm">Redirecting to login…</p>
+          <p className="text-ink font-semibold">Password updated!</p>
+          <p className="text-ink-muted text-sm">Redirecting to login…</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -64,20 +64,20 @@ function ResetForm() {
             type="password" placeholder="New password (min 8 characters)" required minLength={8}
             aria-label="New password (min 8 characters)"
             value={password} onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green focus-visible:ring-2 focus-visible:ring-duo-green focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
+            className="w-full bg-white border-2 border-line rounded-control px-4 py-3 text-ink placeholder:text-ink-muted outline-none focus:border-action focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
           />
           <input
             type="password" placeholder="Confirm new password" required
             aria-label="Confirm new password"
             value={confirm} onChange={(e) => setConfirm(e.target.value)}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green focus-visible:ring-2 focus-visible:ring-duo-green focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
+            className="w-full bg-white border-2 border-line rounded-control px-4 py-3 text-ink placeholder:text-ink-muted outline-none focus:border-action focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
           />
 
-          {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
+          {error && <p className="text-retry bg-retry-soft border-2 border-retry rounded-control px-3 py-2 text-sm text-center font-semibold">{error}</p>}
 
           <button
             type="submit" disabled={loading}
-            className="w-full bg-duo-green hover:bg-duo-green-dark disabled:opacity-50 text-white font-extrabold py-4 rounded-2xl text-lg transition-colors"
+            className="w-full bg-action hover:bg-action-dark disabled:opacity-50 text-white font-extrabold py-4 rounded-control border-2 border-ink shadow-hard-sm text-lg transition-colors"
           >
             {loading ? 'Updating…' : 'Update Password →'}
           </button>
@@ -89,8 +89,8 @@ function ResetForm() {
 
 export default function ResetPasswordPage() {
   return (
-    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12 animate-fade-in">
-      <Suspense fallback={<div className="text-white/70">Loading…</div>}>
+    <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 py-12 animate-fade-in">
+      <Suspense fallback={<div className="text-ink-muted">Loading…</div>}>
         <ResetForm />
       </Suspense>
     </div>

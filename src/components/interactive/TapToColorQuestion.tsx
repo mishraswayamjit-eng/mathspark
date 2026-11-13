@@ -11,11 +11,11 @@ interface Props {
 }
 
 // ── SVG colors ───────────────────────────────────────────────────────────────
-const SELECTED = 'rgba(88, 204, 2, 0.35)';    // duo-green translucent
-const CORRECT  = 'rgba(88, 204, 2, 0.5)';
-const WRONG    = 'rgba(255, 75, 75, 0.4)';
-const UNSHADED = '#F3F4F6';
-const STROKE   = '#9CA3AF';
+const SELECTED = 'rgba(79, 70, 229, 0.35)';   // action translucent
+const CORRECT  = 'rgba(18, 128, 92, 0.5)';
+const WRONG    = 'rgba(198, 47, 61, 0.4)';
+const UNSHADED = '#eef3fb';
+const STROKE   = '#5d6b8c';
 
 export default function TapToColorQuestion({ data, answered, onSubmit }: Props) {
   const [selected, setSelected] = useState<Set<number>>(new Set());
@@ -73,7 +73,7 @@ export default function TapToColorQuestion({ data, answered, onSubmit }: Props) 
     return (
       <div className="space-y-3">
         {data.label && (
-          <p className="text-sm font-semibold text-gray-600 text-center">{data.label}</p>
+          <p className="text-sm font-bold text-ink-muted text-center">{data.label}</p>
         )}
         <svg viewBox={`0 0 ${w} ${h}`} className="w-full max-w-[320px] mx-auto" role="img" aria-label="Tap to shade parts">
           {Array.from({ length: data.totalParts }, (_, i) => {
@@ -88,7 +88,7 @@ export default function TapToColorQuestion({ data, answered, onSubmit }: Props) 
                 height={cellH - 2}
                 rx={4}
                 fill={getFill(i)}
-                stroke={selected.has(i) && !result ? '#58CC02' : STROKE}
+                stroke={selected.has(i) && !result ? '#4f46e5' : STROKE}
                 strokeWidth={selected.has(i) && !result ? 2 : 1.5}
                 className="cursor-pointer"
                 onClick={() => toggle(i)}
@@ -98,7 +98,7 @@ export default function TapToColorQuestion({ data, answered, onSubmit }: Props) 
             );
           })}
         </svg>
-        <p className="text-xs text-gray-500 text-center font-medium">
+        <p className="text-xs text-ink-muted text-center font-bold">
           {selected.size} / {data.correctCount} parts selected
         </p>
         {!answered && (
@@ -133,7 +133,7 @@ export default function TapToColorQuestion({ data, answered, onSubmit }: Props) 
   return (
     <div className="space-y-3">
       {data.label && (
-        <p className="text-sm font-semibold text-gray-600 text-center">{data.label}</p>
+        <p className="text-sm font-bold text-ink-muted text-center">{data.label}</p>
       )}
       <svg viewBox="0 0 160 160" className="w-40 h-40 mx-auto" role="img" aria-label="Tap to shade parts of circle">
         {Array.from({ length: data.totalParts }, (_, i) => (
@@ -141,7 +141,7 @@ export default function TapToColorQuestion({ data, answered, onSubmit }: Props) 
             key={i}
             d={slicePath(i)}
             fill={getFill(i)}
-            stroke={selected.has(i) && !result ? '#58CC02' : STROKE}
+            stroke={selected.has(i) && !result ? '#4f46e5' : STROKE}
             strokeWidth={selected.has(i) && !result ? 2 : 1}
             className="cursor-pointer"
             onClick={() => toggle(i)}
@@ -150,7 +150,7 @@ export default function TapToColorQuestion({ data, answered, onSubmit }: Props) 
           />
         ))}
       </svg>
-      <p className="text-xs text-gray-500 text-center font-medium">
+      <p className="text-xs text-ink-muted text-center font-bold">
         {selected.size} / {data.correctCount} parts selected
       </p>
       {!answered && (

@@ -26,17 +26,17 @@ export default function ChartTapQuestion({ data, questionId, answered, onSubmit 
   const getRegionStyle = (regionId: string) => {
     if (result) {
       if (regionId === data.correctRegion) {
-        return 'border-2 border-duo-green bg-green-100/40';
+        return 'border-2 border-success bg-success-soft/40';
       }
       if (regionId === selectedRegion && regionId !== data.correctRegion) {
-        return 'border-2 border-duo-red bg-red-100/40';
+        return 'border-2 border-retry bg-retry-soft/40';
       }
-      return 'border border-transparent';
+      return 'border-2 border-transparent';
     }
     if (regionId === selectedRegion) {
-      return 'border-2 border-duo-blue bg-blue-100/30';
+      return 'border-2 border-action bg-action/10';
     }
-    return 'border border-gray-200/50 hover:border-duo-blue/50 hover:bg-blue-50/20';
+    return 'border-2 border-line/50 hover:border-action/50 hover:bg-action/5';
   };
 
   return (
@@ -75,19 +75,19 @@ export default function ChartTapQuestion({ data, questionId, answered, onSubmit 
       <div className="flex flex-wrap gap-2 justify-center">
         {data.regions.map((region) => {
           const isSelected = selectedRegion === region.id;
-          let chipCls = 'px-3 py-1.5 rounded-full text-xs font-extrabold border-2 transition-colors min-h-[36px] ';
+          let chipCls = 'px-3 py-1.5 rounded-full text-caption border-2 transition-colors min-h-[36px] ';
           if (result) {
             if (region.id === data.correctRegion) {
-              chipCls += 'bg-green-100 border-duo-green text-green-800';
+              chipCls += 'bg-success border-success text-white';
             } else if (region.id === selectedRegion) {
-              chipCls += 'bg-red-100 border-duo-red text-red-800';
+              chipCls += 'bg-retry-soft border-retry text-retry';
             } else {
-              chipCls += 'bg-gray-50 border-gray-200 text-gray-400';
+              chipCls += 'bg-soft border-line text-gray-400';
             }
           } else if (isSelected) {
-            chipCls += 'bg-blue-100 border-duo-blue text-blue-800';
+            chipCls += 'bg-action border-action text-white';
           } else {
-            chipCls += 'bg-white border-gray-200 text-gray-700 hover:border-duo-blue';
+            chipCls += 'bg-white border-line text-ink hover:border-ink';
           }
 
           return (

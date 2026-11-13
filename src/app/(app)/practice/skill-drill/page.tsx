@@ -106,13 +106,13 @@ export default function SkillDrillTopicsPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-paper pb-24">
-        <div className="bg-duo-dark px-4 py-4 flex items-center gap-3">
-          <Link href="/home" className="text-white/60 hover:text-white text-sm">&larr;</Link>
-          <h1 className="text-white font-extrabold text-lg">Skill Drills</h1>
+        <div className="bg-ink px-4 py-4 flex items-center gap-3">
+          <Link href="/home" className="text-white/70 hover:text-white text-sm">&larr;</Link>
+          <h1 className="text-white text-title">Skill Drills</h1>
         </div>
         <div className="max-w-lg mx-auto px-4 pt-6 space-y-3">
           {[0, 1, 2, 3, 4, 5].map((i) => (
-            <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100 animate-pulse h-24" />
+            <div key={i} className="bg-white rounded-card p-4 border-2 border-line animate-pulse h-24" />
           ))}
         </div>
       </div>
@@ -121,10 +121,10 @@ export default function SkillDrillTopicsPage() {
 
   if (!topics || !meta) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-6">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 px-6">
         <Sparky mood="thinking" size={64} />
-        <p className="text-sm font-bold text-gray-500">Skill drills not available yet.</p>
-        <Link href="/home" className="text-sm text-blue-500 underline">Go Home</Link>
+        <p className="text-sm font-bold text-ink-muted">Skill drills not available yet.</p>
+        <Link href="/home" className="text-sm font-bold text-action underline">Go Home</Link>
       </div>
     );
   }
@@ -135,10 +135,10 @@ export default function SkillDrillTopicsPage() {
   return (
     <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
-        <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
+      <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
+        <Link href="/home" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
-          <h1 className="text-white font-extrabold text-lg">Skill Drills</h1>
+          <h1 className="text-white text-title">Skill Drills</h1>
           <p className="text-white/70 text-xs font-medium">{topicList.length} topics &middot; master step by step</p>
         </div>
         <span className="text-2xl">🎯</span>
@@ -146,11 +146,11 @@ export default function SkillDrillTopicsPage() {
 
       {/* Intro */}
       <div className="max-w-lg mx-auto px-4 pt-5">
-        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl px-4 py-3 border border-indigo-200 mb-5 flex items-start gap-3">
+        <div className="bg-soft rounded-card px-4 py-3 border-2 border-line mb-5 flex items-start gap-3">
           <Sparky mood="happy" size={36} />
           <div>
-            <p className="text-sm font-bold text-indigo-800">Master any topic, step by step!</p>
-            <p className="text-xs text-indigo-600 mt-0.5">
+            <p className="text-sm font-bold text-ink">Master any topic, step by step!</p>
+            <p className="text-xs font-semibold text-ink-muted mt-0.5">
               Each topic has 5 levels. Score 8/10 to unlock the next level. Score 9/10 for mastery!
             </p>
           </div>
@@ -161,9 +161,9 @@ export default function SkillDrillTopicsPage() {
           {['L1', 'L2', 'L3', 'L4', 'L5'].map((lvl) => {
             const ll = levelLabels[lvl];
             return (
-              <div key={lvl} className="flex items-center gap-1 bg-white rounded-full px-2.5 py-1 border border-gray-200 shrink-0">
+              <div key={lvl} className="flex items-center gap-1 bg-white rounded-full px-2.5 py-1 border-2 border-line shrink-0">
                 <span className="text-xs">{ll?.emoji}</span>
-                <span className="text-[10px] font-bold text-gray-600">{ll?.label}</span>
+                <span className="text-xs font-bold text-ink-muted">{ll?.label}</span>
               </div>
             );
           })}
@@ -187,7 +187,7 @@ export default function SkillDrillTopicsPage() {
               <Link
                 key={topic.topicId}
                 href={`/practice/skill-drill/${topic.topicId}/${highestLevel}`}
-                className="block bg-white rounded-2xl p-4 border-2 border-line hover:shadow-md transition-[box-shadow,transform] active:scale-[0.98]"
+                className="block bg-white rounded-card p-4 border-2 border-line hover:border-ink transition-[border-color,transform] active:scale-[0.98]"
               >
                 <div className="flex items-start gap-3">
                   {/* Icon */}
@@ -195,8 +195,8 @@ export default function SkillDrillTopicsPage() {
 
                   <div className="flex-1 min-w-0">
                     {/* Title + description */}
-                    <h3 className="font-extrabold text-gray-800 text-sm leading-tight">{topic.displayName}</h3>
-                    <p className="text-xs text-gray-500 font-medium mt-0.5 line-clamp-1">{topic.description}</p>
+                    <h3 className="font-extrabold text-ink text-sm leading-tight">{topic.displayName}</h3>
+                    <p className="text-xs text-ink-muted font-medium mt-0.5 line-clamp-1">{topic.description}</p>
 
                     {/* Level dots */}
                     <div className="flex items-center gap-1.5 mt-2.5">
@@ -204,8 +204,8 @@ export default function SkillDrillTopicsPage() {
                         const levelInfo = topic.levels[lvl];
                         if (!levelInfo || levelInfo.sessionsAvailable === 0) {
                           return (
-                            <div key={lvl} className="w-6 h-6 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center">
-                              <span className="text-[8px] text-gray-300">-</span>
+                            <div key={lvl} className="w-6 h-6 rounded-full bg-soft border-2 border-line flex items-center justify-center">
+                              <span className="text-xs text-gray-300">-</span>
                             </div>
                           );
                         }
@@ -213,17 +213,17 @@ export default function SkillDrillTopicsPage() {
                         const status = getLevelStatus(tp, lvl);
                         const ll = levelLabels[lvl];
 
-                        let dotCls = 'w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold border-2 ';
+                        let dotCls = 'w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold border-2 ';
                         if (status === 'mastered') {
-                          dotCls += 'bg-gradient-to-br from-yellow-300 to-orange-400 border-yellow-400 text-white';
+                          dotCls += 'bg-star border-ink text-ink';
                         } else if (status === 'passed') {
-                          dotCls += 'bg-duo-green border-duo-green-dark text-white';
+                          dotCls += 'bg-success-soft border-success text-success';
                         } else if (status === 'started') {
-                          dotCls += 'bg-blue-100 border-blue-300 text-blue-600';
+                          dotCls += 'bg-hint border-hint-ink/40 text-hint-ink';
                         } else if (status === 'available') {
-                          dotCls += 'bg-white border-gray-300 text-gray-500';
+                          dotCls += 'bg-white border-line text-ink-muted';
                         } else {
-                          dotCls += 'bg-gray-100 border-gray-200 text-gray-300';
+                          dotCls += 'bg-soft border-line text-gray-300';
                         }
 
                         return (
@@ -234,9 +234,9 @@ export default function SkillDrillTopicsPage() {
                       })}
 
                       {/* Progress summary */}
-                      <span className="ml-auto text-[10px] font-bold text-gray-500 shrink-0">
-                        {masteredCount > 0 && <span className="text-yellow-500">{masteredCount}★</span>}
-                        {passedCount > masteredCount && <span className="text-duo-green ml-1">{passedCount - masteredCount}✓</span>}
+                      <span className="ml-auto text-xs font-bold text-ink-muted shrink-0">
+                        {masteredCount > 0 && <span className="text-hint-ink">{masteredCount}★</span>}
+                        {passedCount > masteredCount && <span className="text-success ml-1">{passedCount - masteredCount}✓</span>}
                         {passedCount === 0 && masteredCount === 0 && 'Start →'}
                       </span>
                     </div>

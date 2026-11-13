@@ -69,7 +69,7 @@ function renderDiagram(illustration: SlideIllustrationT) {
 export default function SlideIllustration({ illustration }: Props) {
   return (
     <div className="max-w-[280px] mx-auto my-4">
-      <div className="rounded-xl border border-gray-100 bg-gray-50 p-3">
+      <div className="rounded-tile border-2 border-line bg-soft p-3">
         {renderDiagram(illustration)}
       </div>
     </div>

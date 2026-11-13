@@ -47,12 +47,12 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12 animate-fade-in">
+    <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 py-12 animate-fade-in">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">🌱</div>
-          <h1 className="text-2xl font-extrabold text-white">Create your account</h1>
-          <p className="text-white/70 text-sm mt-1">Start your child's IPM journey today</p>
+          <h1 className="text-2xl font-extrabold text-ink">Create your account</h1>
+          <p className="text-ink-muted text-sm mt-1">Start your child's IPM journey today</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -60,45 +60,45 @@ export default function RegisterPage() {
             type="text" placeholder="Your name" required
             aria-label="Your name"
             value={form.name} onChange={field('name')}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green focus-visible:ring-2 focus-visible:ring-duo-green focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
+            className="w-full bg-white border-2 border-line rounded-control px-4 py-3 text-ink placeholder:text-ink-muted outline-none focus:border-action focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
           />
           <input
             type="email" placeholder="Email address" required
             aria-label="Email address"
             value={form.email} onChange={field('email')}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green focus-visible:ring-2 focus-visible:ring-duo-green focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
+            className="w-full bg-white border-2 border-line rounded-control px-4 py-3 text-ink placeholder:text-ink-muted outline-none focus:border-action focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
           />
           <input
             type="password" placeholder="Password (min 8 characters)" required minLength={8}
             aria-label="Password (min 8 characters)"
             value={form.password} onChange={field('password')}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green focus-visible:ring-2 focus-visible:ring-duo-green focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
+            className="w-full bg-white border-2 border-line rounded-control px-4 py-3 text-ink placeholder:text-ink-muted outline-none focus:border-action focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
           />
           <input
             type="tel" placeholder="Phone number (optional)"
             aria-label="Phone number (optional)"
             value={form.phone} onChange={field('phone')}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-green focus-visible:ring-2 focus-visible:ring-duo-green focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
+            className="w-full bg-white border-2 border-line rounded-control px-4 py-3 text-ink placeholder:text-ink-muted outline-none focus:border-action focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
           />
 
-          {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
+          {error && <p className="text-retry bg-retry-soft border-2 border-retry rounded-control px-3 py-2 text-sm text-center font-semibold">{error}</p>}
 
           <button
             type="submit" disabled={loading}
-            className="w-full bg-duo-green hover:bg-duo-green-dark disabled:opacity-50 text-white font-extrabold py-4 rounded-2xl text-lg transition-colors mt-2"
+            className="w-full bg-action hover:bg-action-dark disabled:opacity-50 text-white font-extrabold py-4 rounded-control border-2 border-ink shadow-hard-sm text-lg transition-colors mt-2"
           >
             {loading ? 'Creating account…' : 'Create Account →'}
           </button>
         </form>
 
-        <p className="text-center text-white/60 text-sm mt-6">
+        <p className="text-center text-ink-muted text-sm mt-6">
           Already have an account?{' '}
-          <Link href="/auth/login" className="text-duo-blue font-semibold hover:underline">
+          <Link href="/auth/login" className="text-action font-semibold hover:underline">
             Sign in
           </Link>
         </p>
         <p className="text-center mt-4">
-          <Link href="/pricing" className="text-white/70 text-xs hover:text-white/60 transition-colors">
+          <Link href="/pricing" className="text-ink-muted text-xs hover:text-ink transition-colors">
             View plans & pricing →
           </Link>
         </p>

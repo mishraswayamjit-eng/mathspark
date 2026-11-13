@@ -15,9 +15,9 @@ const PLANS = [
     monthly: 500,
     annual:  4800,
     annualMonthly: 400,
-    color:   'border-duo-green',
-    badge:   'bg-duo-green/10 text-duo-green',
-    ctaClass:'bg-duo-green hover:bg-duo-green-dark',
+    color:   'border-line',
+    badge:   'bg-soft text-ink',
+    ctaClass:'bg-white hover:bg-soft text-ink',
     popular: false,
     features: [
       '6,797+ practice questions',
@@ -43,9 +43,9 @@ const PLANS = [
     monthly: 1500,
     annual:  14400,
     annualMonthly: 1200,
-    color:   'border-duo-blue',
-    badge:   'bg-duo-blue/10 text-duo-blue',
-    ctaClass:'bg-duo-blue hover:bg-duo-blue-dark',
+    color:   'border-ink',
+    badge:   'bg-soft text-ink',
+    ctaClass:'bg-action hover:bg-action-dark text-white',
     popular: true,
     features: [
       'Everything in Starter',
@@ -69,9 +69,9 @@ const PLANS = [
     monthly: 5000,
     annual:  48000,
     annualMonthly: 4000,
-    color:   'border-[#9B59B6]',
-    badge:   'bg-purple-100 text-purple-700',
-    ctaClass:'bg-[#9B59B6] hover:bg-[#7D3C98]',
+    color:   'border-line',
+    badge:   'bg-soft text-ink',
+    ctaClass:'bg-white hover:bg-soft text-ink',
     popular: false,
     features: [
       'Everything in Advanced',
@@ -111,10 +111,10 @@ const COMPARISON_ROWS = [
   { feature: 'Badges & streaks',        starter: false,       advanced: false,       unlimited: true },
 ];
 
-function Check() { return <span className="text-duo-green font-bold">✓</span>; }
-function Cross() { return <span className="text-gray-300">✕</span>; }
+function Check() { return <span className="text-success font-bold">✓</span>; }
+function Cross() { return <span className="text-ink-muted">✕</span>; }
 function Cell({ v }: { v: boolean | string }) {
-  if (typeof v === 'string') return <span className="text-gray-700 font-semibold text-sm">{v}</span>;
+  if (typeof v === 'string') return <span className="text-ink font-semibold text-sm">{v}</span>;
   return v ? <Check /> : <Cross />;
 }
 
@@ -131,36 +131,36 @@ export default function PricingPage() {
   if (!MONETIZATION_ENABLED) return null;
 
   return (
-    <div className="min-h-screen bg-white pb-20 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-20 animate-fade-in">
       {/* Nav */}
-      <div className="bg-duo-dark px-4 py-3 flex items-center justify-between">
+      <div className="bg-ink px-4 py-3 flex items-center justify-between">
         <Link href="/" className="text-white font-extrabold text-lg">MathSpark ⭐</Link>
-        <Link href="/auth/login" className="text-white/60 text-sm font-semibold hover:text-white transition-colors">
+        <Link href="/auth/login" className="text-white/70 text-sm font-semibold hover:text-white transition-colors">
           Sign in →
         </Link>
       </div>
 
       {/* Hero */}
-      <div className="bg-duo-dark px-4 pt-8 pb-12 text-center">
-        <h1 className="text-2xl font-extrabold text-white leading-tight">
+      <div className="px-4 pt-8 pb-12 text-center">
+        <h1 className="text-2xl font-extrabold text-ink leading-tight">
           IPM prep that actually works —<br />for a fraction of coaching costs
         </h1>
-        <p className="text-white/60 text-sm mt-3 max-w-sm mx-auto">
+        <p className="text-ink-muted text-sm mt-3 max-w-sm mx-auto">
           One coaching session = ₹1,500. MathSpark gives you more for less.
         </p>
 
         {/* Monthly / Annual toggle */}
         <div className="flex items-center justify-center gap-3 mt-6">
-          <span className={`text-sm font-bold ${!annual ? 'text-white' : 'text-white/60'}`}>Monthly</span>
+          <span className={`text-sm font-bold ${!annual ? 'text-ink' : 'text-ink-muted'}`}>Monthly</span>
           <button
             onClick={() => setAnnual(!annual)}
-            className={`relative w-12 h-6 rounded-full transition-colors ${annual ? 'bg-duo-green' : 'bg-white/20'}`}
+            className={`relative w-12 h-6 rounded-full transition-colors ${annual ? 'bg-action' : 'bg-line'}`}
           >
-            <span className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${annual ? 'translate-x-6' : 'translate-x-0.5'}`} />
+            <span className={`absolute top-0.5 w-5 h-5 bg-white rounded-full border-2 border-ink transition-transform ${annual ? 'translate-x-6' : 'translate-x-0.5'}`} />
           </button>
-          <span className={`text-sm font-bold ${annual ? 'text-white' : 'text-white/60'}`}>
+          <span className={`text-sm font-bold ${annual ? 'text-ink' : 'text-ink-muted'}`}>
             Annual
-            <span className="ml-1.5 bg-duo-orange text-white text-[10px] font-extrabold px-1.5 py-0.5 rounded-full">SAVE 20%</span>
+            <span className="ml-1.5 bg-star text-ink text-xs font-extrabold px-1.5 py-0.5 rounded-full">SAVE 20%</span>
           </span>
         </div>
       </div>
@@ -170,10 +170,10 @@ export default function PricingPage() {
         {PLANS.map((plan) => (
           <div
             key={plan.id}
-            className={`bg-white rounded-2xl border-2 ${plan.color} shadow-lg overflow-hidden ${plan.popular ? 'ring-2 ring-duo-blue ring-offset-2' : ''}`}
+            className={`bg-white rounded-card border-2 ${plan.color} overflow-hidden ${plan.popular ? 'shadow-hard-lg' : ''}`}
           >
             {plan.popular && (
-              <div className="bg-duo-blue text-white text-xs font-extrabold text-center py-1.5 tracking-widest uppercase">
+              <div className="bg-star text-ink text-xs font-extrabold text-center py-1.5">
                 ⭐ Most Popular
               </div>
             )}
@@ -182,10 +182,10 @@ export default function PricingPage() {
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-2xl">{plan.emoji}</span>
-                    <span className="text-xl font-extrabold text-gray-800">{plan.name}</span>
+                    <span className="text-xl font-extrabold text-ink">{plan.name}</span>
                   </div>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-extrabold text-gray-900">
+                    <span className="text-3xl font-extrabold text-ink">
                       ₹{annual ? plan.annualMonthly.toLocaleString('en-IN') : plan.monthly.toLocaleString('en-IN')}
                     </span>
                     <span className="text-gray-500 text-sm">/mo</span>
@@ -201,7 +201,7 @@ export default function PricingPage() {
               <ul className="mt-4 space-y-1.5">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm text-gray-700">
-                    <span className="text-duo-green font-bold mt-0.5 shrink-0">✓</span>
+                    <span className="text-success font-bold mt-0.5 shrink-0">✓</span>
                     {f}
                   </li>
                 ))}
@@ -215,19 +215,19 @@ export default function PricingPage() {
 
               <Link
                 href="/auth/register"
-                className={`block w-full text-center ${plan.ctaClass} text-white font-extrabold py-3.5 rounded-2xl mt-5 transition-colors`}
+                className={`block w-full text-center ${plan.ctaClass} border-2 border-ink shadow-hard-sm font-extrabold py-3.5 rounded-control mt-5 transition-colors`}
               >
                 Start Free Trial →
               </Link>
-              <p className="text-center text-gray-500 text-xs mt-1.5">7-day free trial · No card required</p>
+              <p className="text-center text-ink-muted text-xs mt-1.5">7-day free trial · No card required</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* Value comparison */}
-      <div className="mx-4 mt-6 bg-amber-50 border border-amber-200 rounded-2xl p-4">
-        <p className="text-amber-800 text-sm leading-relaxed">
+      <div className="mx-4 mt-6 bg-hint border-2 border-hint-ink rounded-card p-4">
+        <p className="text-hint-ink text-sm leading-relaxed">
           💡 <strong>Compare:</strong> Private coaching costs ₹18,000/month for 3 sessions/week.
           MathSpark Unlimited gives you 24/7 AI-powered practice, adaptive learning, and detailed analytics
           for <strong>₹5,000/month</strong> — <strong>72% less than coaching</strong>, available anytime.
@@ -238,26 +238,26 @@ export default function PricingPage() {
       <div className="mx-4 mt-6">
         <button
           onClick={() => setShowCompare(!showCompare)}
-          className="w-full flex items-center justify-between bg-gray-50 rounded-2xl px-4 py-3 text-gray-700 font-semibold text-sm"
+          className="w-full flex items-center justify-between bg-white border-2 border-ink shadow-hard-sm rounded-control px-4 py-3 text-ink font-semibold text-sm"
         >
           <span>Compare all features</span>
           <span className="text-gray-500">{showCompare ? '▲' : '▼'}</span>
         </button>
 
         {showCompare && (
-          <div className="mt-2 overflow-x-auto">
+          <div className="mt-2 overflow-x-auto bg-white border-2 border-line rounded-card">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-gray-50">
+                <tr className="bg-soft">
                   <th className="text-left px-3 py-2 font-semibold text-gray-500 text-xs">Feature</th>
-                  <th className="text-center px-2 py-2 font-extrabold text-duo-green text-xs">🌱</th>
-                  <th className="text-center px-2 py-2 font-extrabold text-duo-blue text-xs">⚡</th>
-                  <th className="text-center px-2 py-2 font-extrabold text-[#9B59B6] text-xs">🏆</th>
+                  <th className="text-center px-2 py-2 font-extrabold text-ink text-xs">🌱</th>
+                  <th className="text-center px-2 py-2 font-extrabold text-ink text-xs">⚡</th>
+                  <th className="text-center px-2 py-2 font-extrabold text-ink text-xs">🏆</th>
                 </tr>
               </thead>
               <tbody>
                 {COMPARISON_ROWS.map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-soft'}>
                     <td className="px-3 py-2 text-gray-600 text-xs">{row.feature}</td>
                     <td className="text-center px-2 py-2"><Cell v={row.starter} /></td>
                     <td className="text-center px-2 py-2"><Cell v={row.advanced} /></td>
@@ -272,19 +272,19 @@ export default function PricingPage() {
 
       {/* FAQ */}
       <div className="mx-4 mt-6">
-        <h2 className="text-lg font-extrabold text-gray-800 mb-3">Frequently asked questions</h2>
+        <h2 className="text-lg font-extrabold text-ink mb-3">Frequently asked questions</h2>
         <div className="space-y-2">
           {FAQS.map((faq, i) => (
-            <div key={i} className="border border-gray-200 rounded-xl overflow-hidden">
+            <div key={i} className="border-2 border-line rounded-control overflow-hidden">
               <button
                 onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                className="w-full flex items-center justify-between px-4 py-3 text-left text-gray-800 font-semibold text-sm bg-white hover:bg-gray-50 transition-colors"
+                className="w-full flex items-center justify-between px-4 py-3 text-left text-ink font-semibold text-sm bg-white hover:bg-soft transition-colors"
               >
                 <span>{faq.q}</span>
                 <span className="text-gray-500 ml-2">{openFaq === i ? '▲' : '▼'}</span>
               </button>
               {openFaq === i && (
-                <div className="px-4 pb-3 text-gray-600 text-sm bg-gray-50">{faq.a}</div>
+                <div className="px-4 pb-3 text-ink-muted text-sm bg-soft">{faq.a}</div>
               )}
             </div>
           ))}
@@ -292,12 +292,12 @@ export default function PricingPage() {
       </div>
 
       {/* CTA footer */}
-      <div className="mx-4 mt-8 bg-duo-dark rounded-2xl p-6 text-center">
+      <div className="mx-4 mt-8 bg-ink rounded-card p-6 text-center">
         <p className="text-white font-extrabold text-lg mb-1">Ready to get started?</p>
         <p className="text-white/70 text-sm mb-4">Join thousands of Grade 4 students mastering IPM math</p>
         <Link
           href="/auth/register"
-          className="block w-full bg-duo-green hover:bg-duo-green-dark text-white font-extrabold py-4 rounded-2xl text-lg transition-colors"
+          className="block w-full bg-action hover:bg-action-dark text-white border-2 border-white font-extrabold py-4 rounded-control text-lg transition-colors"
         >
           Start Free Trial →
         </Link>

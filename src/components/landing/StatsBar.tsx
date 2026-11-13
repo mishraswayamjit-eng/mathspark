@@ -45,7 +45,7 @@ function StatCard({ prefix = '', target, suffix = '', label, color, inView }: {
       <div className={`text-xl sm:text-3xl font-extrabold ${color} tabular-nums leading-none truncate`}>
         {prefix}{target === 0 ? '0' : count.toLocaleString('en-IN')}{suffix}
       </div>
-      <div className="text-gray-500 text-xs sm:text-sm mt-1.5 leading-tight">{label}</div>
+      <div className="text-ink-muted text-xs sm:text-sm mt-1.5 leading-tight">{label}</div>
     </div>
   );
 }
@@ -55,13 +55,13 @@ export default function StatsBar() {
   return (
     <section className="py-10 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
-        <div ref={ref} className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-gray-100 bg-white border-2 border-line rounded-2xl">
-          <StatCard target={100000} suffix="+" label="Richly Researched Questions" color="text-duo-green" inView={inView} />
-          <StatCard target={4}      suffix=" Yrs" label="of Real IPM Papers"       color="text-duo-blue"  inView={inView} />
-          <StatCard target={0}                    label="Hallucinated Answers"      color="text-duo-dark"  inView={inView} />
-          <StatCard target={2}      suffix="×"    label="Faster Learning (cited)"   color="text-duo-orange" inView={inView} />
+        <div ref={ref} className="grid grid-cols-2 sm:grid-cols-4 divide-x-2 divide-line bg-white border-2 border-line rounded-card">
+          <StatCard target={100000} suffix="+" label="Richly Researched Questions" color="text-ink" inView={inView} />
+          <StatCard target={4}      suffix=" Yrs" label="of Real IPM Papers"       color="text-ink"  inView={inView} />
+          <StatCard target={0}                    label="Hallucinated Answers"      color="text-ink"  inView={inView} />
+          <StatCard target={2}      suffix="×"    label="Faster Learning (cited)"   color="text-ink" inView={inView} />
         </div>
-        <p className="text-center text-gray-400 text-xs mt-2 italic">
+        <p className="text-center text-ink-muted text-xs mt-2 italic">
           Muralidharan, Singh &amp; Ganimian — American Economic Review, 2019
         </p>
       </div>

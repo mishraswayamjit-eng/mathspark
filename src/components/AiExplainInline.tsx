@@ -75,7 +75,7 @@ export default function AiExplainInline({
     return (
       <button
         onClick={() => void run()}
-        className={`w-full min-h-[44px] rounded-2xl border border-duo-blue/40 bg-duo-blue/10 text-duo-blue font-bold text-sm flex items-center justify-center gap-2 active:scale-[0.98] transition-transform ${className}`}
+        className={`w-full min-h-[48px] rounded-control border-2 border-ink bg-white text-ink font-extrabold text-sm shadow-hard-sm flex items-center justify-center gap-2 active:scale-[0.98] transition-transform ${className}`}
       >
         <span aria-hidden="true">💬</span> {buttonLabel}
       </button>
@@ -83,20 +83,20 @@ export default function AiExplainInline({
   }
 
   return (
-    <div className={`bg-duo-blue/5 border border-duo-blue/30 rounded-2xl px-4 py-3 ${className}`}>
+    <div className={`bg-soft border-2 border-line rounded-card px-4 py-3 ${className}`}>
       <div className="flex items-center gap-2 mb-1.5">
         <Sparky mood={state === 'loading' ? 'thinking' : 'encouraging'} size={28} />
-        <p className="text-xs font-extrabold text-duo-blue uppercase tracking-wide">
+        <p className="text-caption text-ink">
           {heading ?? 'Sparky explains'}
         </p>
       </div>
 
       {state === 'error' ? (
-        <p className="text-sm text-gray-600 font-medium">
+        <p className="text-sm text-ink font-semibold">
           I&apos;m having a little trouble right now! 🤔 Please try again in a moment.
         </p>
       ) : (
-        <p className="text-sm text-gray-700 font-medium leading-snug whitespace-pre-wrap">
+        <p className="text-sm text-ink font-semibold leading-snug whitespace-pre-wrap">
           {text}
           {state === 'loading' && <span className="animate-pulse">▍</span>}
         </p>

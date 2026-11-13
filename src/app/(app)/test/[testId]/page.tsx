@@ -50,19 +50,19 @@ function QuestionNavigator({
   return (
     <div className="fixed inset-0 z-[80] bg-black/60 flex items-end" onClick={onClose}>
       <div
-        className="w-full bg-white rounded-t-3xl p-6 pb-8 max-h-[70vh] overflow-y-auto"
+        className="w-full bg-white rounded-t-card border-t-2 border-ink p-6 pb-8 max-h-[70vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-4">
-          <h3 className="font-extrabold text-gray-800 text-lg">Question Navigator</h3>
-          <button onClick={onClose} className="text-gray-500 text-2xl leading-none min-w-[44px] min-h-[44px] flex items-center justify-center">×</button>
+          <h3 className="text-title text-ink">Question Navigator</h3>
+          <button onClick={onClose} className="text-ink-muted text-2xl leading-none min-w-[44px] min-h-[44px] flex items-center justify-center">×</button>
         </div>
 
         {/* Legend */}
-        <div className="flex gap-3 mb-4 text-xs font-bold">
-          <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-full bg-duo-blue inline-block" /> Answered</span>
-          <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-full bg-duo-orange inline-block" /> Flagged</span>
-          <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-full bg-gray-200 inline-block" /> Unanswered</span>
+        <div className="flex gap-3 mb-4 text-xs font-bold text-ink">
+          <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-full bg-action inline-block" /> Answered</span>
+          <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-full bg-hint border-2 border-hint-ink inline-block" /> Flagged</span>
+          <span className="flex items-center gap-1"><span className="w-3 h-3 rounded-full bg-white border-2 border-line inline-block" /> Unanswered</span>
         </div>
 
         <div className="grid grid-cols-6 gap-2">
@@ -73,12 +73,12 @@ function QuestionNavigator({
             const isCurrent  = n === current;
 
             const circleCls = isCurrent
-              ? 'bg-duo-blue text-white ring-4 ring-blue-200 scale-110'
+              ? 'bg-white text-ink border-2 border-ink shadow-hard-xs scale-110'
               : isFlagged
-              ? 'bg-duo-orange text-white'
+              ? 'bg-hint text-hint-ink border-2 border-hint-ink'
               : isAnswered
-              ? 'bg-duo-blue/20 text-duo-blue border-2 border-duo-blue'
-              : 'bg-gray-100 text-gray-500 border-2 border-gray-200';
+              ? 'bg-action text-white border-2 border-action'
+              : 'bg-white text-ink-muted border-2 border-line';
 
             return (
               <button
@@ -92,7 +92,7 @@ function QuestionNavigator({
           })}
         </div>
 
-        <div className="mt-4 pt-4 border-t border-gray-100 flex gap-3 text-xs text-gray-500 font-semibold">
+        <div className="mt-4 pt-4 border-t-2 border-line flex gap-3 text-xs text-ink-muted font-semibold">
           <span>Answered: {responses.filter((r) => r.selectedAnswer).length}/{responses.length}</span>
           <span>Flagged: {responses.filter((r) => r.flagged).length}</span>
           <span>Unanswered: {responses.filter((r) => !r.selectedAnswer).length}</span>
@@ -121,27 +121,27 @@ function SubmitModal({
 
   return (
     <div className="fixed inset-0 z-[90] bg-black/60 flex items-center justify-center px-4">
-      <div className="bg-white rounded-3xl p-6 w-full max-w-sm space-y-4 shadow-2xl">
-        <h3 className="font-extrabold text-gray-800 text-xl text-center">Ready to submit?</h3>
-        <p className="text-xs text-gray-500 text-center -mt-2">Your answers will be graded after submission.</p>
+      <div className="bg-white rounded-card border-2 border-ink p-6 w-full max-w-sm space-y-4 shadow-hard-lg">
+        <h3 className="text-heading text-ink text-center">Ready to submit?</h3>
+        <p className="text-xs text-ink-muted text-center -mt-2">Your answers will be graded after submission.</p>
 
-        <div className="bg-gray-50 rounded-2xl p-4 space-y-2">
+        <div className="bg-soft rounded-control p-4 space-y-2">
           <div className="flex justify-between text-sm font-bold">
-            <span className="text-gray-600">Questions attempted</span>
-            <span className="text-duo-green">{answered}/{responses.length}</span>
+            <span className="text-ink-muted">Questions attempted</span>
+            <span className="text-action">{answered}/{responses.length}</span>
           </div>
           <div className="flex justify-between text-sm font-bold">
-            <span className="text-gray-600">Flagged for review</span>
-            <span className="text-duo-orange">{flagged}</span>
+            <span className="text-ink-muted">Flagged for review</span>
+            <span className="text-hint-ink">{flagged}</span>
           </div>
           <div className="flex justify-between text-sm font-bold">
-            <span className="text-gray-600">Unanswered</span>
-            <span className="text-duo-red">{unanswered}</span>
+            <span className="text-ink-muted">Unanswered</span>
+            <span className="text-ink">{unanswered}</span>
           </div>
         </div>
 
         {unanswered > 0 && (
-          <p className="text-amber-600 text-xs font-semibold text-center">
+          <p className="text-hint-ink text-xs font-semibold text-center">
             ⚠️ You have {unanswered} unanswered question{unanswered !== 1 ? 's' : ''}.
           </p>
         )}
@@ -149,14 +149,14 @@ function SubmitModal({
         <div className="flex gap-3">
           <button
             onClick={onCancel}
-            className="flex-1 min-h-[48px] rounded-2xl border-2 border-gray-200 font-extrabold text-gray-600 hover:bg-gray-50 transition-colors"
+            className="flex-1 min-h-[48px] rounded-control border-2 border-ink bg-white shadow-hard-sm font-extrabold text-ink hover:bg-soft transition-colors"
           >
             Cancel
           </button>
           <button
             onClick={onConfirm}
             disabled={submitting}
-            className="flex-1 min-h-[48px] rounded-2xl bg-duo-green border-b-4 border-duo-green-dark font-extrabold text-white disabled:opacity-50 flex items-center justify-center gap-2"
+            className="flex-1 min-h-[48px] rounded-control bg-action border-2 border-ink shadow-hard-sm font-extrabold text-white disabled:opacity-50 flex items-center justify-center gap-2"
           >
             {submitting ? (
               <span className="inline-block w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -339,10 +339,10 @@ export default function TestEnginePage() {
 
   if (loading || !test) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="min-h-screen bg-paper flex items-center justify-center">
         <div className="text-center space-y-3">
-          <div className="w-12 h-12 border-4 border-duo-blue/30 border-t-duo-blue rounded-full animate-spin mx-auto" />
-          <p className="text-gray-500 font-semibold">Loading your test…</p>
+          <div className="w-12 h-12 border-4 border-line border-t-action rounded-full animate-spin mx-auto" />
+          <p className="text-ink-muted font-semibold">Loading your test…</p>
         </div>
       </div>
     );
@@ -357,10 +357,10 @@ export default function TestEnginePage() {
 
   // Timer color: red < 1 min, amber 1–5 min, orange 5–10 min, gray otherwise
   const timerColor =
-    remaining !== null && remaining <= 60_000   ? 'text-duo-red' :
-    remaining !== null && remaining <= 300_000  ? 'text-duo-orange' :
-    remaining !== null && remaining <= 600_000  ? 'text-duo-orange' :
-    'text-gray-700';
+    remaining !== null && remaining <= 60_000   ? 'text-hint-ink bg-hint rounded-full px-2 py-0.5' :
+    remaining !== null && remaining <= 300_000  ? 'text-hint-ink bg-hint rounded-full px-2 py-0.5' :
+    remaining !== null && remaining <= 600_000  ? 'text-hint-ink bg-hint rounded-full px-2 py-0.5' :
+    'text-ink';
   const timerPulse = remaining !== null && remaining <= 60_000 ? 'animate-pulse' : '';
 
   const options: Array<{ key: AnswerKey; text: string }> = [
@@ -371,30 +371,30 @@ export default function TestEnginePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white flex flex-col max-w-lg mx-auto animate-fade-in">
+    <div className="min-h-screen bg-paper flex flex-col max-w-lg mx-auto animate-fade-in">
       {/* ── Top bar ─────────────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-50 bg-white border-b border-gray-100 px-4 py-3 flex items-center gap-3">
+      <div className="sticky top-0 z-50 bg-white border-b-2 border-ink px-4 py-3 flex items-center gap-3">
         {/* Exit test */}
         <button
           onClick={() => setShowQuitModal(true)}
-          className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-gray-100 hover:bg-gray-200 transition-colors flex-shrink-0"
+          className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-tile bg-soft border-2 border-line hover:border-ink transition-colors flex-shrink-0"
           aria-label="Exit test"
         >
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="text-gray-600">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" className="text-ink">
             <path d="M4.5 4.5l9 9M13.5 4.5l-9 9" />
           </svg>
         </button>
 
         {/* Progress bar */}
-        <div className="flex-1 h-3 bg-gray-100 rounded-full overflow-hidden">
+        <div className="flex-1 h-3 ui-meter">
           <div
-            className="h-full bg-duo-blue rounded-full transition-[width] duration-500"
+            className="h-full bg-action rounded-full transition-[width] duration-500"
             style={{ width: `${(answered / totalQ) * 100}%` }}
           />
         </div>
 
         {/* Q counter — show as "done" count to avoid confusion with score */}
-        <span className="text-xs font-extrabold text-gray-500 flex-shrink-0">✎ {answered}/{totalQ}</span>
+        <span className="text-xs font-extrabold text-ink-muted flex-shrink-0">✎ {answered}/{totalQ}</span>
 
         {/* Timer */}
         {remaining !== null && (
@@ -406,14 +406,14 @@ export default function TestEnginePage() {
 
       {/* Offline banner */}
       {isOffline && (
-        <div className="bg-amber-500 text-white text-xs font-extrabold text-center py-1.5 px-4 flex-shrink-0">
+        <div className="bg-hint text-hint-ink text-xs font-extrabold text-center py-1.5 px-4 flex-shrink-0">
           ⚠️ No internet — answers queued, will sync on reconnect
         </div>
       )}
 
       {/* Submit error banner */}
       {submitError && (
-        <div className="bg-duo-red text-white text-xs font-extrabold text-center py-1.5 px-4 flex-shrink-0">
+        <div className="bg-retry-soft text-retry text-xs font-extrabold text-center py-1.5 px-4 flex-shrink-0">
           {submitError}
         </div>
       )}
@@ -423,17 +423,17 @@ export default function TestEnginePage() {
         {/* Q# + topic + flag */}
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-extrabold text-white bg-duo-blue rounded-full px-3 py-1">
+            <span className="text-xs font-extrabold text-ink bg-soft border-2 border-line rounded-full px-3 py-1">
               Q{currentNum}
             </span>
-            <span className="text-xs text-gray-500 font-semibold">{currentQuestion.difficulty}</span>
+            <span className="text-xs text-ink-muted font-semibold">{currentQuestion.difficulty}</span>
           </div>
           <button
             onClick={() => toggleFlag(currentNum)}
             className={`flex items-center gap-1 text-xs font-extrabold px-3 py-1 rounded-full border-2 transition-colors ${
               currentResponse.flagged
-                ? 'bg-duo-orange border-duo-orange text-white'
-                : 'border-gray-200 text-gray-500 hover:border-duo-orange hover:text-duo-orange'
+                ? 'bg-hint border-hint-ink text-hint-ink'
+                : 'bg-white border-line text-ink-muted hover:border-hint-ink hover:text-hint-ink'
             }`}
           >
             🚩 {currentResponse.flagged ? 'Flagged' : 'Flag'}
@@ -441,8 +441,8 @@ export default function TestEnginePage() {
         </div>
 
         {/* Question text */}
-        <div className="bg-gray-50 rounded-2xl p-4 mb-4">
-          <p className="text-gray-800 font-semibold text-base leading-relaxed">
+        <div className="bg-white border-2 border-ink shadow-hard-lg rounded-card p-4 mb-4">
+          <p className="text-ink text-question">
             {currentQuestion.questionText}
           </p>
           {currentQuestion.questionLatex && (
@@ -462,16 +462,16 @@ export default function TestEnginePage() {
               <button
                 key={key}
                 onClick={() => selectAnswer(currentNum, key)}
-                className={`w-full text-left rounded-2xl p-4 border-2 font-semibold text-base transition-[colors,border-color,transform] duration-150 active:scale-[0.98] min-h-[56px] flex items-center gap-3 ${
+                className={`w-full text-left rounded-control p-4 border-2 font-bold text-base transition-[colors,border-color,transform] duration-150 active:scale-[0.98] min-h-[56px] flex items-center gap-3 ${
                   isSelected
-                    ? 'bg-blue-50 border-duo-blue text-gray-800'
-                    : 'bg-white border-gray-200 text-gray-700 hover:border-duo-blue/50'
+                    ? 'bg-soft border-action text-ink'
+                    : 'bg-white border-line text-ink hover:border-ink'
                 }`}
               >
                 <span className={`w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-extrabold border-2 ${
                   isSelected
-                    ? 'bg-duo-blue border-duo-blue text-white'
-                    : 'border-gray-300 text-gray-500'
+                    ? 'bg-action border-action text-white'
+                    : 'bg-soft border-line text-ink'
                 }`}>
                   {key}
                 </span>
@@ -483,19 +483,19 @@ export default function TestEnginePage() {
       </div>
 
       {/* ── Bottom navigation bar ────────────────────────────────────────── */}
-      <div className="fixed bottom-0 left-0 right-0 z-[60] bg-white border-t border-gray-100 shadow-[0_-2px_10px_rgba(0,0,0,0.06)] pb-[env(safe-area-inset-bottom)]">
+      <div className="fixed bottom-0 left-0 right-0 z-[60] bg-white border-t-2 border-ink pb-[env(safe-area-inset-bottom)]">
       <div className="max-w-lg mx-auto px-4 py-3 flex gap-3">
         <button
           onClick={() => navigateTo(currentNum - 1)}
           disabled={currentNum === 1}
-          className="min-h-[48px] px-4 rounded-2xl border-2 border-gray-200 font-extrabold text-gray-500 disabled:opacity-30 hover:border-gray-400 transition-colors"
+          className="min-h-[48px] px-4 rounded-control border-2 border-ink bg-white shadow-hard-sm font-extrabold text-ink disabled:opacity-30 hover:bg-soft transition-colors"
         >
           ←
         </button>
 
         <button
           onClick={() => setShowNavigator(true)}
-          className="flex-1 min-h-[48px] rounded-2xl border-2 border-gray-200 font-bold text-gray-600 hover:border-duo-blue transition-colors text-sm"
+          className="flex-1 min-h-[48px] rounded-control border-2 border-ink bg-white shadow-hard-sm font-bold text-ink hover:bg-soft transition-colors text-sm"
         >
           Q{currentNum}/{totalQ} · {answered} answered
         </button>
@@ -503,14 +503,14 @@ export default function TestEnginePage() {
         {currentNum === totalQ ? (
           <button
             onClick={() => setShowSubmitModal(true)}
-            className="min-h-[48px] px-4 rounded-2xl bg-duo-green border-b-4 border-duo-green-dark font-extrabold text-white text-sm"
+            className="min-h-[48px] px-4 rounded-control bg-action border-2 border-ink shadow-hard-sm font-extrabold text-white text-sm"
           >
             Submit ✓
           </button>
         ) : (
           <button
             onClick={() => navigateTo(currentNum + 1)}
-            className="min-h-[48px] px-5 rounded-2xl bg-duo-blue border-b-4 border-duo-blue-dark font-extrabold text-white text-sm"
+            className="min-h-[48px] px-5 rounded-control bg-action border-2 border-ink shadow-hard-sm font-extrabold text-white text-sm"
           >
             Next →
           </button>
@@ -541,21 +541,21 @@ export default function TestEnginePage() {
       {/* Quit confirmation modal */}
       {showQuitModal && (
         <div className="fixed inset-0 z-[90] bg-black/60 flex items-center justify-center px-4">
-          <div className="bg-white rounded-3xl p-6 w-full max-w-sm space-y-4 shadow-2xl">
-            <h3 className="font-extrabold text-gray-800 text-xl text-center">Leave the test?</h3>
-            <p className="text-gray-500 text-sm text-center">
+          <div className="bg-white rounded-card border-2 border-ink p-6 w-full max-w-sm space-y-4 shadow-hard-lg">
+            <h3 className="text-heading text-ink text-center">Leave the test?</h3>
+            <p className="text-ink-muted text-sm text-center">
               Your progress is saved — you can resume from where you left off.
             </p>
             <div className="flex gap-3">
               <button
                 onClick={() => setShowQuitModal(false)}
-                className="flex-1 min-h-[48px] rounded-2xl border-2 border-gray-200 font-extrabold text-gray-600 hover:bg-gray-50 transition-colors"
+                className="flex-1 min-h-[48px] rounded-control border-2 border-ink bg-white shadow-hard-sm font-extrabold text-ink hover:bg-soft transition-colors"
               >
                 Keep going
               </button>
               <button
                 onClick={() => router.push('/test')}
-                className="flex-1 min-h-[48px] rounded-2xl bg-gray-800 font-extrabold text-white hover:bg-gray-700 transition-colors"
+                className="flex-1 min-h-[48px] rounded-control bg-ink border-2 border-ink font-extrabold text-white hover:bg-gray-700 transition-colors"
               >
                 Leave
               </button>
@@ -568,8 +568,8 @@ export default function TestEnginePage() {
       {submitting && (
         <div className="fixed inset-0 z-[100] bg-white/90 flex items-center justify-center">
           <div className="text-center space-y-3">
-            <div className="w-12 h-12 border-4 border-duo-green/30 border-t-duo-green rounded-full animate-spin mx-auto" />
-            <p className="font-extrabold text-gray-700">Grading your test…</p>
+            <div className="w-12 h-12 border-4 border-line border-t-action rounded-full animate-spin mx-auto" />
+            <p className="font-extrabold text-ink">Grading your test…</p>
           </div>
         </div>
       )}

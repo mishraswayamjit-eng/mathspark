@@ -20,15 +20,15 @@ interface Child {
 }
 
 function PlanBadge({ sub }: { sub: Child['subscription'] }) {
-  if (!sub) return <span className="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full font-semibold">No plan</span>;
+  if (!sub) return <span className="text-xs bg-soft text-ink-muted border-2 border-line px-2 py-0.5 rounded-full font-semibold">No plan</span>;
   const colors: Record<number, string> = {
-    1: 'bg-green-100 text-green-700',
-    2: 'bg-blue-100 text-blue-700',
-    3: 'bg-purple-100 text-purple-700',
-    4: 'bg-cyan-100 text-cyan-700',
-    5: 'bg-amber-100 text-amber-700',
+    1: 'bg-soft text-ink',
+    2: 'bg-soft text-ink',
+    3: 'bg-soft text-ink',
+    4: 'bg-soft text-ink',
+    5: 'bg-soft text-ink',
   };
-  return <span className={`text-xs ${colors[sub.tier] ?? 'bg-gray-100 text-gray-500'} px-2 py-0.5 rounded-full font-semibold`}>{sub.name}</span>;
+  return <span className={`text-xs ${colors[sub.tier] ?? 'bg-soft text-ink-muted'} border-2 border-line px-2 py-0.5 rounded-full font-semibold`}>{sub.name}</span>;
 }
 
 export default function ParentDashboard() {
@@ -54,8 +54,8 @@ export default function ParentDashboard() {
 
   if (status === 'loading' || loading) {
     return (
-      <div className="min-h-screen bg-duo-dark flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-duo-green border-t-transparent rounded-full animate-spin" />
+      <div className="min-h-screen bg-paper flex items-center justify-center">
+        <div className="w-8 h-8 border-4 border-action border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -94,19 +94,19 @@ export default function ParentDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-duo-dark pb-16">
+    <div className="min-h-screen bg-paper pb-16">
       {/* Header */}
       <div className="px-4 pt-10 pb-4">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-white/70 text-xs font-semibold uppercase tracking-widest">Parent Dashboard</p>
-            <h1 className="text-2xl font-extrabold text-white mt-0.5">
+            <p className="text-ink-muted text-xs font-semibold">Parent Dashboard</p>
+            <h1 className="text-2xl font-extrabold text-ink mt-0.5">
               Hi, {session?.user?.name?.split(' ')[0]} 👋
             </h1>
           </div>
           <button
             onClick={() => signOut({ callbackUrl: '/auth/login' })}
-            className="text-white/60 text-xs font-semibold hover:text-white/70 transition-colors border border-white/10 rounded-xl px-3 py-2"
+            className="bg-white text-ink text-xs font-semibold hover:bg-soft transition-colors border-2 border-ink shadow-hard-sm rounded-control px-3 py-2"
           >
             Sign out
           </button>
@@ -116,23 +116,23 @@ export default function ParentDashboard() {
       {/* Children */}
       <div className="px-4 mt-2">
         <div className="flex items-center justify-between mb-3">
-          <p className="text-xs font-extrabold text-white/60 uppercase tracking-widest">Your children</p>
+          <p className="text-xs font-extrabold text-ink-muted">Your children</p>
           <Link
             href="/parent/add-child"
-            className="text-duo-green text-sm font-extrabold hover:text-duo-green-dark transition-colors"
+            className="text-action text-sm font-extrabold hover:text-action-dark transition-colors"
           >
             + Add child
           </Link>
         </div>
 
         {children.length === 0 ? (
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+          <div className="bg-white border-2 border-line rounded-card p-6 text-center">
             <div className="text-4xl mb-3">👦</div>
-            <p className="text-white font-semibold">No children yet</p>
-            <p className="text-white/60 text-sm mt-1 mb-4">Add your child to get started</p>
+            <p className="text-ink font-semibold">No children yet</p>
+            <p className="text-ink-muted text-sm mt-1 mb-4">Add your child to get started</p>
             <Link
               href="/parent/add-child"
-              className="inline-block bg-duo-green hover:bg-duo-green-dark text-white font-extrabold px-6 py-3 rounded-2xl transition-colors"
+              className="inline-block bg-action hover:bg-action-dark text-white font-extrabold px-6 py-3 rounded-control border-2 border-ink shadow-hard-sm transition-colors"
             >
               Add a child →
             </Link>
@@ -148,34 +148,34 @@ export default function ParentDashboard() {
                 : 'Never';
 
               return (
-                <div key={child.id} className="bg-white/5 border border-white/10 rounded-2xl p-4">
+                <div key={child.id} className="bg-white border-2 border-line rounded-card p-4">
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-white font-extrabold text-base">{child.name}</span>
+                        <span className="text-ink font-extrabold text-base">{child.name}</span>
                         {MONETIZATION_ENABLED && <PlanBadge sub={child.subscription} />}
                       </div>
-                      <p className="text-white/60 text-xs">Grade {child.grade} · Last active: {lastActive}</p>
+                      <p className="text-ink-muted text-xs">Grade {child.grade} · Last active: {lastActive}</p>
 
                       {/* Daily usage bar */}
                       <div className="mt-3">
-                        <div className="flex justify-between text-xs text-white/60 mb-1">
+                        <div className="flex justify-between text-xs text-ink-muted mb-1">
                           <span>Today&apos;s usage</span>
                           {unlimited
-                            ? <span className="text-duo-green font-extrabold">Unlimited ♾️</span>
+                            ? <span className="text-success font-extrabold">Unlimited ♾️</span>
                             : <span>{child.dailyUsageMinutes} / {limit} min</span>
                           }
                         </div>
-                        <div className="w-full bg-white/10 rounded-full h-1.5">
+                        <div className="w-full bg-soft rounded-full h-1.5">
                           <div
-                            className={`h-1.5 rounded-full transition-[width] ${unlimited ? 'bg-duo-green' : usedPct >= 100 ? 'bg-duo-red' : usedPct >= 75 ? 'bg-duo-orange' : 'bg-duo-green'}`}
+                            className={`h-1.5 rounded-full transition-[width] ${unlimited ? 'bg-action' : usedPct >= 100 ? 'bg-retry' : usedPct >= 75 ? 'bg-star' : 'bg-action'}`}
                             style={{ width: unlimited ? '100%' : `${usedPct}%` }}
                           />
                         </div>
                       </div>
 
                       {MONETIZATION_ENABLED && (
-                        <p className="text-white/60 text-xs mt-2">
+                        <p className="text-ink-muted text-xs mt-2">
                           AI chats today: {child.aiChatMessagesUsedToday} / {child.subscription?.aiChatDailyLimit ?? 5}
                         </p>
                       )}
@@ -184,17 +184,17 @@ export default function ParentDashboard() {
                     <button
                       onClick={() => loginAsChild(child.id, child.name, child.grade)}
                       disabled={busyId === child.id}
-                      className="bg-duo-green hover:bg-duo-green-dark text-white text-xs font-extrabold px-3 py-2 rounded-xl transition-colors whitespace-nowrap disabled:opacity-50"
+                      className="bg-action hover:bg-action-dark text-white text-xs font-extrabold px-3 py-2 rounded-control border-2 border-ink shadow-hard-sm transition-colors whitespace-nowrap disabled:opacity-50"
                     >
                       Practice →
                     </button>
                   </div>
 
                   {MONETIZATION_ENABLED && !child.subscriptionId && (
-                    <div className="mt-3 border-t border-white/10 pt-3">
+                    <div className="mt-3 border-t-2 border-line pt-3">
                       <Link
                         href="/pricing"
-                        className="block w-full text-center bg-duo-orange/20 border border-duo-orange/40 text-duo-orange text-xs font-extrabold py-2 rounded-xl hover:bg-duo-orange/30 transition-colors"
+                        className="block w-full text-center bg-hint border-2 border-hint-ink text-hint-ink text-xs font-extrabold py-2 rounded-control hover:border-ink transition-colors"
                       >
                         ⚡ Subscribe to unlock full access →
                       </Link>
@@ -204,19 +204,19 @@ export default function ParentDashboard() {
                   <div className="mt-3 flex flex-col items-end gap-1">
                     {confirmId === child.id ? (
                       <div className="flex items-center gap-2">
-                        <span className="text-white/60 text-xs">Remove {child.name}?</span>
+                        <span className="text-ink-muted text-xs">Remove {child.name}?</span>
                         <button
                           onClick={() => removeChild(child.id)}
                           disabled={busyId === child.id}
                           aria-label={`Confirm remove ${child.name}`}
-                          className="text-duo-red text-xs font-extrabold px-3 min-h-[48px] rounded-lg hover:bg-duo-red/10 transition-colors disabled:opacity-50"
+                          className="text-retry text-xs font-extrabold px-3 min-h-[48px] rounded-control hover:bg-retry-soft transition-colors disabled:opacity-50"
                         >
                           {busyId === child.id ? 'Removing…' : 'Yes, remove'}
                         </button>
                         <button
                           onClick={() => { setConfirmId(null); setRemoveError(null); }}
                           disabled={busyId === child.id}
-                          className="text-white/60 text-xs font-semibold px-3 min-h-[48px] rounded-lg hover:text-white/80 transition-colors disabled:opacity-50"
+                          className="text-ink-muted text-xs font-semibold px-3 min-h-[48px] rounded-control hover:text-ink transition-colors disabled:opacity-50"
                         >
                           Cancel
                         </button>
@@ -225,13 +225,13 @@ export default function ParentDashboard() {
                       <button
                         onClick={() => { setConfirmId(child.id); setRemoveError(null); }}
                         aria-label={`Remove ${child.name}`}
-                        className="text-white/60 text-xs font-semibold min-h-[48px] px-2 hover:text-duo-red transition-colors"
+                        className="text-ink-muted text-xs font-semibold min-h-[48px] px-2 hover:text-retry transition-colors"
                       >
                         Remove
                       </button>
                     )}
                     {confirmId === child.id && removeError && (
-                      <p className="text-duo-red text-xs font-semibold">{removeError}</p>
+                      <p className="text-retry text-xs font-semibold">{removeError}</p>
                     )}
                   </div>
                 </div>
@@ -246,14 +246,14 @@ export default function ParentDashboard() {
         <div className="px-4 mt-6 space-y-2">
           <Link
             href="/pricing"
-            className="block w-full bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center gap-3 hover:bg-white/10 transition-colors"
+            className="block w-full bg-white border-2 border-line rounded-card p-4 flex items-center gap-3 hover:border-ink transition-colors"
           >
             <span className="text-2xl">💳</span>
             <div>
-              <p className="text-white font-extrabold text-sm">View Plans & Pricing</p>
-              <p className="text-white/60 text-xs">Starter ₹500/mo · Advanced ₹1,500/mo · Unlimited ₹5,000/mo</p>
+              <p className="text-ink font-extrabold text-sm">View Plans & Pricing</p>
+              <p className="text-ink-muted text-xs">Starter ₹500/mo · Advanced ₹1,500/mo · Unlimited ₹5,000/mo</p>
             </div>
-            <span className="text-white/60 ml-auto">→</span>
+            <span className="text-ink-muted ml-auto">→</span>
           </Link>
         </div>
       )}

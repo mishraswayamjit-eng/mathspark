@@ -10,20 +10,20 @@ interface ChapterGridProps {
 }
 
 function masteryStyle(mastery: string) {
-  if (mastery === 'Mastered')  return 'bg-green-50 border-green-300';
-  if (mastery === 'Practicing') return 'bg-amber-50 border-amber-300';
-  return 'bg-white border-gray-200';
+  if (mastery === 'Mastered')  return 'bg-white border-success';
+  if (mastery === 'Practicing') return 'bg-white border-line';
+  return 'bg-white border-line';
 }
 
 function masteryBadge(mastery: string) {
-  if (mastery === 'Mastered')  return <span className="text-xs font-semibold text-green-700 bg-green-100 px-2 py-0.5 rounded-full">⭐ Mastered</span>;
-  if (mastery === 'Practicing') return <span className="text-xs font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">📚 Practicing</span>;
-  return <span className="text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">🆕 Start</span>;
+  if (mastery === 'Mastered')  return <span className="text-xs font-bold text-white bg-success px-2 py-0.5 rounded-full">⭐ Mastered</span>;
+  if (mastery === 'Practicing') return <span className="text-xs font-bold text-hint-ink bg-hint px-2 py-0.5 rounded-full">📚 Practicing</span>;
+  return <span className="text-xs font-bold text-ink-muted bg-soft px-2 py-0.5 rounded-full">🆕 Start</span>;
 }
 
 function barColor(mastery: string) {
-  if (mastery === 'Mastered')   return 'bg-duo-green';
-  if (mastery === 'Practicing') return 'bg-amber-400';
+  if (mastery === 'Mastered')   return 'bg-success';
+  if (mastery === 'Practicing') return 'bg-action';
   return 'bg-gray-300';
 }
 
@@ -44,12 +44,12 @@ export default function ChapterGrid({ topics }: ChapterGridProps) {
           <Link
             key={topic.id}
             href={`/practice/${topic.id}`}
-            className={`rounded-2xl border-2 p-4 flex flex-col gap-2 hover:shadow-md transition-shadow ${masteryStyle(topic.mastery)}`}
+            className={`rounded-card border-2 p-4 flex flex-col gap-2 hover:border-ink transition-colors ${masteryStyle(topic.mastery)}`}
           >
-            <span className="text-xs font-bold text-gray-500 uppercase tracking-wide">
+            <span className="text-xs font-bold text-ink-muted">
               Ch {topic.chapterNumber}
             </span>
-            <p className="text-sm font-semibold text-gray-800 leading-tight">
+            <p className="text-sm font-bold text-ink leading-tight">
               {topic.name}
             </p>
             {masteryBadge(topic.mastery)}
@@ -59,7 +59,7 @@ export default function ChapterGrid({ topics }: ChapterGridProps) {
               height="h-1.5"
             />
             {topic.attempted > 0 && (
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-ink-muted">
                 {topic.correct}/{topic.attempted} correct
               </p>
             )}

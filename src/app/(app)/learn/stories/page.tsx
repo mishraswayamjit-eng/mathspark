@@ -47,7 +47,7 @@ function FunStars({ level }: { level: number }) {
   return (
     <div className="flex gap-0.5">
       {[1, 2, 3, 4, 5].map((i) => (
-        <span key={i} className={`text-[10px] ${i <= level ? 'text-yellow-400' : 'text-gray-200'}`}>★</span>
+        <span key={i} className={`text-xs ${i <= level ? 'text-star' : 'text-line'}`}>★</span>
       ))}
     </div>
   );
@@ -87,10 +87,10 @@ export default function MathStoriesPage() {
   return (
     <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
-        <Link href="/chapters" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
+      <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
+        <Link href="/chapters" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
-          <h1 className="text-white font-extrabold text-lg">Math Stories</h1>
+          <h1 className="text-white text-title">Math Stories</h1>
           <p className="text-white/70 text-xs font-medium">{stories.length} stories &middot; Math in the real world!</p>
         </div>
         <span className="text-2xl">📖</span>
@@ -98,11 +98,11 @@ export default function MathStoriesPage() {
 
       <div className="max-w-lg mx-auto px-4 pt-5">
         {/* Intro */}
-        <div className="bg-gradient-to-r from-cyan-50 to-sky-50 rounded-2xl px-4 py-3 border border-cyan-200 mb-5 flex items-start gap-3">
+        <div className="bg-white rounded-card px-4 py-3 border-2 border-line mb-5 flex items-start gap-3">
           <Sparky mood="happy" size={36} />
           <div>
-            <p className="text-sm font-bold text-cyan-800">Did you know math is everywhere?</p>
-            <p className="text-xs text-cyan-600 mt-0.5">
+            <p className="text-sm font-bold text-ink">Did you know math is everywhere?</p>
+            <p className="text-xs text-ink-muted mt-0.5">
               Cricket, rockets, pizza, money — every story ends with a Sparky challenge!
             </p>
           </div>
@@ -114,8 +114,8 @@ export default function MathStoriesPage() {
             onClick={() => setSelectedCategory(null)}
             className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
               selectedCategory === null
-                ? 'bg-duo-dark text-white border-duo-dark'
-                : 'bg-white text-gray-600 border-gray-200'
+                ? 'bg-action text-white border-action'
+                : 'bg-white text-ink border-line'
             }`}
           >
             All
@@ -130,7 +130,7 @@ export default function MathStoriesPage() {
                 className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors flex items-center gap-1 ${
                   isActive
                     ? 'text-white border-transparent'
-                    : 'bg-white text-gray-600 border-gray-200'
+                    : 'bg-white text-ink border-line'
                 }`}
                 style={isActive ? { backgroundColor: meta.color, borderColor: meta.color } : {}}
               >
@@ -145,7 +145,7 @@ export default function MathStoriesPage() {
         {loading && (
           <div className="space-y-3">
             {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100 animate-pulse h-32" />
+              <div key={i} className="bg-white rounded-card p-4 border-2 border-line animate-pulse h-32" />
             ))}
           </div>
         )}
@@ -161,36 +161,36 @@ export default function MathStoriesPage() {
               return (
                 <div
                   key={story.id}
-                  className="bg-white rounded-2xl border-2 border-line overflow-hidden"
+                  className="bg-white rounded-card border-2 border-line overflow-hidden"
                   style={{ borderTopWidth: '4px', borderTopColor: catMeta.color }}
                 >
                   {/* Card header — always visible */}
                   <button
                     onClick={() => setExpandedId(isExpanded ? null : story.id)}
-                    className="w-full px-4 pt-4 pb-3 text-left active:bg-gray-50 transition-colors"
+                    className="w-full px-4 pt-4 pb-3 text-left active:bg-soft transition-colors"
                   >
                     <div className="flex items-start gap-3">
                       <span className="text-3xl shrink-0">{story.emoji}</span>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1">
                           <span
-                            className="text-[10px] font-extrabold px-2 py-0.5 rounded-full text-white"
+                            className="text-xs font-extrabold px-2 py-0.5 rounded-full text-white"
                             style={{ backgroundColor: catMeta.color }}
                           >
                             {catMeta.label}
                           </span>
-                          <span className="text-[10px] font-bold text-gray-500 capitalize">
+                          <span className="text-xs font-bold text-ink-muted capitalize">
                             {story.topicId.replace(/_/g, ' ')}
                           </span>
                           <FunStars level={story.funFactor} />
                         </div>
-                        <h3 className="text-sm font-extrabold text-gray-800 leading-tight">{story.title}</h3>
+                        <h3 className="text-title text-ink leading-tight">{story.title}</h3>
                         {!isExpanded && (
-                          <p className="text-xs text-gray-500 font-medium mt-1 line-clamp-2">{story.storyText}</p>
+                          <p className="text-xs text-ink-muted font-medium mt-1 line-clamp-2">{story.storyText}</p>
                         )}
                       </div>
                       <span
-                        className="text-gray-500 transition-transform duration-200 text-sm shrink-0 mt-1"
+                        className="text-ink-muted transition-transform duration-200 text-sm shrink-0 mt-1"
                         style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
                       >
                         ▾
@@ -202,26 +202,26 @@ export default function MathStoriesPage() {
                   {isExpanded && (
                     <div className="px-4 pb-4 space-y-3 animate-fade-in">
                       {/* Story text */}
-                      <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
-                        <p className="text-sm text-gray-700 font-medium leading-relaxed">{story.storyText}</p>
+                      <div className="bg-soft rounded-control p-4 border-2 border-line">
+                        <p className="text-sm text-ink font-medium leading-relaxed">{story.storyText}</p>
                       </div>
 
                       {/* Math connection */}
-                      <div className="bg-indigo-50 rounded-xl p-3 border border-indigo-200 flex items-start gap-2">
+                      <div className="bg-white rounded-control p-3 border-2 border-line flex items-start gap-2">
                         <span className="text-sm shrink-0">🔗</span>
                         <div>
-                          <p className="text-[10px] font-extrabold text-indigo-500 uppercase tracking-wide">Math Connection</p>
-                          <p className="text-sm text-indigo-800 font-medium mt-0.5">{story.mathConnection}</p>
+                          <p className="text-[13px] font-extrabold text-ink-muted">Math Connection</p>
+                          <p className="text-sm text-ink font-medium mt-0.5">{story.mathConnection}</p>
                         </div>
                       </div>
 
                       {/* Sparky's question */}
-                      <div className="bg-purple-50 rounded-xl p-3 border border-purple-200">
+                      <div className="bg-soft rounded-control p-3 border-2 border-line">
                         <div className="flex items-start gap-2">
                           <Sparky mood="thinking" size={28} />
                           <div className="flex-1">
-                            <p className="text-[10px] font-extrabold text-purple-500 uppercase tracking-wide">Sparky&apos;s Challenge</p>
-                            <p className="text-sm text-purple-800 font-semibold mt-0.5">{story.sparkyQuestion}</p>
+                            <p className="text-[13px] font-extrabold text-ink-muted">Sparky&apos;s Challenge</p>
+                            <p className="text-sm text-ink font-semibold mt-0.5">{story.sparkyQuestion}</p>
                           </div>
                         </div>
 
@@ -229,18 +229,18 @@ export default function MathStoriesPage() {
                         <div className="mt-2 flex justify-end">
                           <button
                             onClick={(e) => { e.stopPropagation(); toggleAnswer(story.id); }}
-                            className="text-[10px] font-bold text-purple-500 bg-purple-100 px-2.5 py-1 rounded-full hover:bg-purple-200 transition-colors"
+                            className="text-xs font-bold text-action bg-white border-2 border-line px-2.5 py-1 rounded-full hover:border-ink transition-colors"
                           >
                             {answerShown ? 'Hide hint' : 'Think about it... 🤔'}
                           </button>
                         </div>
 
                         {answerShown && (
-                          <div className="mt-2 bg-white rounded-lg px-3 py-2 border border-purple-200 animate-fade-in">
-                            <p className="text-xs text-purple-700 font-medium">
+                          <div className="mt-2 bg-hint rounded-control px-3 py-2 border-2 border-dashed border-hint-ink animate-fade-in">
+                            <p className="text-[13px] text-hint-ink font-bold">
                               Try working it out! Re-read the story for the numbers you need.
                               {story.linkedConcepts.length > 0 && (
-                                <span className="block mt-1 text-purple-400">
+                                <span className="block mt-1 text-hint-ink">
                                   Related: {story.linkedConcepts.join(', ')}
                                 </span>
                               )}
@@ -251,7 +251,7 @@ export default function MathStoriesPage() {
 
                       {/* Footer */}
                       <div className="flex items-center gap-2 flex-wrap pt-1">
-                        <span className="text-[10px] font-bold text-gray-500">
+                        <span className="text-xs font-bold text-ink-muted">
                           Grades {story.gradeRange[0]}–{story.gradeRange[story.gradeRange.length - 1]}
                         </span>
                         <FunStars level={story.funFactor} />
@@ -268,10 +268,10 @@ export default function MathStoriesPage() {
         {!loading && stories.length === 0 && (
           <div className="flex flex-col items-center gap-4 py-12">
             <Sparky mood="thinking" size={64} />
-            <p className="text-sm font-bold text-gray-500">No stories found for this category.</p>
+            <p className="text-sm font-bold text-ink-muted">No stories found for this category.</p>
             <button
               onClick={() => setSelectedCategory(null)}
-              className="text-sm text-blue-500 underline"
+              className="text-sm text-action font-bold underline"
             >
               Show all
             </button>

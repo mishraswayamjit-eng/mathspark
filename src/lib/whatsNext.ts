@@ -64,7 +64,7 @@ export function computeWhatsNext(ctx: ConceptContext): WhatsNextSuggestion[] {
         sublabel: 'Test what you just learned',
         icon: '📝',
         url: links.practice.url,
-        color: 'bg-duo-green',
+        color: 'bg-white',
         priority: 10,
       });
     }
@@ -76,7 +76,7 @@ export function computeWhatsNext(ctx: ConceptContext): WhatsNextSuggestion[] {
         sublabel: 'See step-by-step solutions',
         icon: '👁️',
         url: links.example.url,
-        color: 'bg-amber-500',
+        color: 'bg-white',
         priority: 9,
       });
     }
@@ -88,7 +88,7 @@ export function computeWhatsNext(ctx: ConceptContext): WhatsNextSuggestion[] {
         sublabel: `${acc}% accuracy — keep going!`,
         icon: '📝',
         url: links.practice.url,
-        color: 'bg-duo-green',
+        color: 'bg-white',
         priority: 7,
       });
     }
@@ -101,7 +101,7 @@ export function computeWhatsNext(ctx: ConceptContext): WhatsNextSuggestion[] {
         sublabel: 'You unlocked this!',
         icon: '🚀',
         url: `/learn/concept-map?open=${next.id}`,
-        color: 'bg-purple-500',
+        color: 'bg-white',
         priority: 10,
       });
     }
@@ -116,7 +116,7 @@ export function computeWhatsNext(ctx: ConceptContext): WhatsNextSuggestion[] {
         sublabel: 'Strengthen the basics',
         icon: '🃏',
         url: links.flashcard.url,
-        color: 'bg-blue-500',
+        color: 'bg-white',
         priority: 10,
       });
     }
@@ -128,7 +128,7 @@ export function computeWhatsNext(ctx: ConceptContext): WhatsNextSuggestion[] {
         sublabel: 'See how experts solve these',
         icon: '👁️',
         url: links.example.url,
-        color: 'bg-amber-500',
+        color: 'bg-white',
         priority: 9,
       });
     }
@@ -141,7 +141,7 @@ export function computeWhatsNext(ctx: ConceptContext): WhatsNextSuggestion[] {
         sublabel: `${needed}% more for mastery!`,
         icon: '💪',
         url: links.practice.url,
-        color: 'bg-duo-green',
+        color: 'bg-white',
         priority: 8,
       });
     }
@@ -153,7 +153,7 @@ export function computeWhatsNext(ctx: ConceptContext): WhatsNextSuggestion[] {
         sublabel: "You're ready for tough ones!",
         icon: '🔥',
         url: links.practice.url + (links.practice.url.includes('?') ? '&difficulty=hard' : '?difficulty=hard'),
-        color: 'bg-red-500',
+        color: 'bg-white',
         priority: 9,
       });
     }
@@ -166,7 +166,7 @@ export function computeWhatsNext(ctx: ConceptContext): WhatsNextSuggestion[] {
         sublabel: "Explore what's next",
         icon: '🚀',
         url: `/learn/concept-map?open=${next.id}`,
-        color: 'bg-purple-500',
+        color: 'bg-white',
         priority: 10,
       });
     }
@@ -181,7 +181,7 @@ export function computeWhatsNext(ctx: ConceptContext): WhatsNextSuggestion[] {
         sublabel: 'Put it into action',
         icon: '📝',
         url: links.practice.url,
-        color: 'bg-duo-green',
+        color: 'bg-white',
         priority: 10,
       });
     }
@@ -192,7 +192,7 @@ export function computeWhatsNext(ctx: ConceptContext): WhatsNextSuggestion[] {
         sublabel: 'Memorize key concepts',
         icon: '🃏',
         url: links.flashcard.url,
-        color: 'bg-blue-500',
+        color: 'bg-white',
         priority: 7,
       });
     }

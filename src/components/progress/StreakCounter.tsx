@@ -29,7 +29,7 @@ export default function StreakCounter({ streak: externalStreak, compact }: Strea
     return (
       <div className="flex items-center gap-1.5">
         <span className="text-lg animate-pulse">🔥</span>
-        <span className="text-sm font-extrabold text-orange-600">
+        <span className="text-sm font-extrabold text-ink">
           {data.currentStreak}
         </span>
       </div>
@@ -37,7 +37,7 @@ export default function StreakCounter({ streak: externalStreak, compact }: Strea
   }
 
   return (
-    <div className="flex items-center gap-3 bg-orange-50 rounded-2xl px-4 py-3 border border-orange-200">
+    <div className="flex items-center gap-3 bg-white rounded-card px-4 py-3 border-2 border-star">
       {/* Fire emoji */}
       <div className="text-3xl animate-bounce" style={{ animationDuration: '2s' }}>
         🔥
@@ -46,14 +46,14 @@ export default function StreakCounter({ streak: externalStreak, compact }: Strea
       {/* Streak info */}
       <div className="flex-1 min-w-0">
         <div className="flex items-baseline gap-1.5">
-          <span className="text-2xl font-extrabold text-orange-600">
+          <span className="text-2xl font-extrabold text-ink">
             {data.currentStreak}
           </span>
-          <span className="text-sm font-bold text-orange-500">day streak</span>
+          <span className="text-sm font-bold text-ink-muted">day streak</span>
         </div>
 
         {milestone && (
-          <p className="text-xs font-bold text-orange-400 mt-0.5 truncate">
+          <p className="text-xs font-bold text-ink-muted mt-0.5 truncate">
             {milestone}
           </p>
         )}
@@ -61,9 +61,9 @@ export default function StreakCounter({ streak: externalStreak, compact }: Strea
 
       {/* Freeze indicator */}
       {data.freezesRemaining > 0 && (
-        <div className="flex items-center gap-1 bg-blue-50 rounded-full px-2.5 py-1 border border-blue-200">
+        <div className="flex items-center gap-1 bg-soft rounded-full px-2.5 py-1 border-2 border-line">
           <span className="text-sm">❄️</span>
-          <span className="text-xs font-bold text-blue-600">{data.freezesRemaining}</span>
+          <span className="text-xs font-bold text-ink">{data.freezesRemaining}</span>
         </div>
       )}
     </div>

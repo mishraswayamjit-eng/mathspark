@@ -16,10 +16,10 @@ export function ReviewIntroScreen({ count, onStart }: { count: number; onStart: 
         <Sparky mood="encouraging" size={120} />
       </div>
       <div className="space-y-2">
-        <h2 className="text-2xl font-extrabold text-gray-800">
+        <h2 className="text-heading text-ink">
           Let&#39;s review the tricky ones! 💪
         </h2>
-        <p className="text-gray-500 font-medium">
+        <p className="text-ink-muted font-semibold">
           {count} question{count !== 1 ? 's' : ''} to review — you&#39;ve got this!
         </p>
       </div>
@@ -41,26 +41,26 @@ export function NoHeartsScreen({
 }) {
   const wrong = results.filter((r) => !r.wasCorrect);
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-white pb-8">
+    <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-paper pb-8">
       <div className="animate-sparky-wave">
         <Sparky mood="encouraging" size={120} />
       </div>
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-extrabold text-gray-800">
+        <h2 className="text-heading text-ink">
           Let&#39;s take a break and review! 📚
         </h2>
-        <p className="text-gray-500 font-medium">
+        <p className="text-ink-muted font-semibold">
           You ran out of hearts — that&#39;s okay! Every attempt makes you stronger.
         </p>
       </div>
 
       {wrong.length > 0 && (
         <div className="w-full space-y-2">
-          <p className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">Questions to revisit</p>
+          <p className="text-caption text-ink-muted">Questions to revisit</p>
           {wrong.map((r) => (
-            <div key={r.questionId} className="bg-red-50 border-2 border-red-100 rounded-2xl px-4 py-3">
-              <p className="text-sm text-gray-700 font-medium line-clamp-2">{r.questionText}</p>
-              <p className="text-xs text-duo-green font-extrabold mt-1">Answer: {r.correctAnswer}</p>
+            <div key={r.questionId} className="bg-white border-2 border-line rounded-note px-4 py-3">
+              <p className="text-sm text-ink font-semibold line-clamp-2">{r.questionText}</p>
+              <p className="text-sm text-success font-extrabold mt-1">Answer: {r.correctAnswer}</p>
             </div>
           ))}
         </div>
@@ -162,7 +162,7 @@ export function LessonCompleteScreen({
   }, []);
 
   return (
-    <div className="flex flex-col items-center px-6 py-8 gap-6 bg-white min-h-screen pb-24">
+    <div className="flex flex-col items-center px-6 py-8 gap-6 bg-paper min-h-screen pb-24">
       {showShare && shareData && (
         <ShareSheet
           card={{ type: 'lesson', data: {
@@ -187,24 +187,24 @@ export function LessonCompleteScreen({
         <Sparky mood="celebrating" size={140} />
       </div>
 
-      <h1 className="text-2xl font-extrabold text-gray-800 text-center">{message}</h1>
+      <h1 className="text-display text-ink text-center">{message}</h1>
 
       {/* Accuracy ring */}
       <svg width="140" height="140" viewBox="0 0 140 140">
-        <circle cx="70" cy="70" r={r} fill="none" stroke="#e5e7eb" strokeWidth="12" />
+        <circle cx="70" cy="70" r={r} fill="none" stroke="#d3deee" strokeWidth="12" />
         <circle
           cx="70" cy="70" r={r} fill="none"
-          stroke={pct >= 70 ? '#58CC02' : '#FF9600'}
+          stroke={pct >= 70 ? '#12805c' : '#f5a400'}
           strokeWidth="12"
           strokeLinecap="round"
           strokeDasharray={`${dash} ${circ}`}
           transform="rotate(-90 70 70)"
           style={{ transition: 'stroke-dasharray 1s ease-out' }}
         />
-        <text x="70" y="64" textAnchor="middle" fontSize="26" fontWeight="900" fill="#131F24">
+        <text x="70" y="64" textAnchor="middle" fontSize="26" fontWeight="900" fill="#1d2a4d">
           {pct}%
         </text>
-        <text x="70" y="84" textAnchor="middle" fontSize="11" fill="#9ca3af" fontWeight="600">
+        <text x="70" y="84" textAnchor="middle" fontSize="11" fill="#5d6b8c" fontWeight="600">
           {correct}/{total} correct
         </text>
       </svg>
@@ -219,15 +219,15 @@ export function LessonCompleteScreen({
       </div>
 
       {/* XP */}
-      <div className="bg-[#FFF9E6] border-2 border-duo-gold rounded-2xl px-8 py-3 text-center">
-        <p className="text-xs text-amber-700 font-extrabold uppercase tracking-wide">Total XP earned</p>
-        <p className="text-3xl font-extrabold text-duo-dark">+{displayXp} ⭐</p>
+      <div className="bg-hint border-2 border-star rounded-card px-8 py-3 text-center">
+        <p className="text-caption text-hint-ink">Total XP earned</p>
+        <p className="text-3xl font-extrabold text-ink">+{displayXp} ⭐</p>
       </div>
 
       {/* AI session wrap-up (Feature 4a) */}
       {narrative && (
-        <div className="w-full bg-duo-green/10 border border-duo-green/30 rounded-2xl px-4 py-3 animate-fade-in">
-          <p className="text-sm text-gray-700 font-medium leading-snug">
+        <div className="w-full bg-soft border-2 border-line rounded-card px-4 py-3 animate-fade-in">
+          <p className="text-sm text-ink font-semibold leading-snug">
             <span aria-hidden="true">✨</span> {narrative}
           </p>
         </div>
@@ -236,13 +236,13 @@ export function LessonCompleteScreen({
       {/* Wrong answers to revisit */}
       {wrongOnes.length > 0 && (
         <div className="w-full space-y-2">
-          <p className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">
+          <p className="text-caption text-ink-muted">
             {hasReviewMistakes ? 'Still needs work' : 'Review at home'}
           </p>
           {wrongOnes.map((r) => (
-            <div key={r.questionId} className="bg-red-50 border border-red-100 rounded-xl px-4 py-3">
-              <p className="text-xs text-gray-700 font-medium line-clamp-2">{r.questionText}</p>
-              <p className="text-xs text-duo-green font-extrabold mt-0.5">Correct: {r.correctAnswer}</p>
+            <div key={r.questionId} className="bg-white border-2 border-line rounded-note px-4 py-3">
+              <p className="text-xs text-ink font-semibold line-clamp-2">{r.questionText}</p>
+              <p className="text-sm text-success font-extrabold mt-0.5">Correct: {r.correctAnswer}</p>
             </div>
           ))}
         </div>
@@ -262,7 +262,7 @@ export function LessonCompleteScreen({
           ) : (
             <button
               onClick={gradeUpCta.onPress}
-              className="w-full min-h-[48px] rounded-full border-2 border-amber-200 font-extrabold text-amber-600 text-sm hover:bg-amber-50 transition-colors"
+              className="ui-btn w-full text-sm"
             >
               Upgrade to unlock Grade {gradeUpCta.grade} 🔒
             </button>
@@ -284,7 +284,7 @@ export function LessonCompleteScreen({
         {shareData && (
           <button
             onClick={() => setShowShare(true)}
-            className="w-full min-h-[48px] rounded-full border-2 border-gray-200 font-extrabold text-gray-500 text-sm hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+            className="ui-btn w-full text-sm"
           >
             📤 Share with Parents
           </button>

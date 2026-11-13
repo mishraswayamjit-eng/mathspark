@@ -163,11 +163,11 @@ function adaptQuestion(q: DrillQuestion, sessionId: string): Question {
 // ── Score verdict ─────────────────────────────────────────────────────────────
 
 function getVerdict(score: number, total: number, passing: number, mastery: number, unlock: number) {
-  if (score >= mastery) return { label: 'MASTERED!', color: '#FF9600', emoji: '🏆', mood: 'celebrating' as const };
-  if (score >= unlock) return { label: 'Level Unlocked!', color: '#58CC02', emoji: '🔓', mood: 'celebrating' as const };
-  if (score >= passing) return { label: 'Passed!', color: '#58CC02', emoji: '✅', mood: 'happy' as const };
-  if (score >= total / 2) return { label: 'Almost there!', color: '#FF9600', emoji: '💪', mood: 'encouraging' as const };
-  return { label: 'Keep practicing!', color: '#FF4B4B', emoji: '🌱', mood: 'encouraging' as const };
+  if (score >= mastery) return { label: 'MASTERED!', color: '#12805c', emoji: '🏆', mood: 'celebrating' as const };
+  if (score >= unlock) return { label: 'Level Unlocked!', color: '#12805c', emoji: '🔓', mood: 'celebrating' as const };
+  if (score >= passing) return { label: 'Passed!', color: '#12805c', emoji: '✅', mood: 'happy' as const };
+  if (score >= total / 2) return { label: 'Almost there!', color: '#5a4300', emoji: '💪', mood: 'encouraging' as const };
+  return { label: 'Keep practicing!', color: '#1d2a4d', emoji: '🌱', mood: 'encouraging' as const };
 }
 
 // ── Phase types ───────────────────────────────────────────────────────────────
@@ -297,13 +297,13 @@ export default function SkillDrillSessionPage() {
   if (loading && phase === 'sessions') {
     return (
       <div className="min-h-screen bg-paper pb-24">
-        <div className="bg-duo-dark px-4 py-4 flex items-center gap-3">
-          <Link href="/practice/skill-drill" className="text-white/60 hover:text-white text-sm">&larr;</Link>
-          <h1 className="text-white font-extrabold text-lg">Loading...</h1>
+        <div className="bg-ink px-4 py-4 flex items-center gap-3">
+          <Link href="/practice/skill-drill" className="text-white/70 hover:text-white text-sm">&larr;</Link>
+          <h1 className="text-white text-title">Loading...</h1>
         </div>
         <div className="max-w-lg mx-auto px-4 pt-6 space-y-3">
           {[0, 1, 2, 3].map((i) => (
-            <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100 animate-pulse h-20" />
+            <div key={i} className="bg-white rounded-card p-4 border-2 border-line animate-pulse h-20" />
           ))}
         </div>
       </div>
@@ -313,10 +313,10 @@ export default function SkillDrillSessionPage() {
   // Error
   if (error) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-6">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 px-6">
         <Sparky mood="thinking" size={64} />
-        <p className="text-sm font-bold text-red-500">{error}</p>
-        <Link href="/practice/skill-drill" className="text-sm text-blue-500 underline">Back to Topics</Link>
+        <p className="text-sm font-bold text-ink">{error}</p>
+        <Link href="/practice/skill-drill" className="text-sm font-bold text-action underline">Back to Topics</Link>
       </div>
     );
   }
@@ -335,7 +335,7 @@ export default function SkillDrillSessionPage() {
         {/* Score circle */}
         <div className="relative mt-4">
           <svg width="140" height="140" viewBox="0 0 140 140">
-            <circle cx="70" cy="70" r="58" stroke="#e5e7eb" strokeWidth="10" fill="none" />
+            <circle cx="70" cy="70" r="58" stroke="#d3deee" strokeWidth="10" fill="none" />
             <circle
               cx="70" cy="70" r="58"
               stroke={verdict.color}
@@ -350,36 +350,36 @@ export default function SkillDrillSessionPage() {
             <text x="70" y="65" textAnchor="middle" fontSize="28" fontWeight="800" fill={verdict.color}>
               {score}/{total}
             </text>
-            <text x="70" y="85" textAnchor="middle" fontSize="12" fill="#9ca3af">{pct}%</text>
+            <text x="70" y="85" textAnchor="middle" fontSize="12" fill="#5d6b8c">{pct}%</text>
           </svg>
         </div>
 
         {/* Verdict */}
         <div className="text-center space-y-1">
           <p className="text-3xl">{verdict.emoji}</p>
-          <h2 className="text-xl font-extrabold" style={{ color: verdict.color }}>{verdict.label}</h2>
-          <p className="text-xs font-medium text-gray-500">
+          <h2 className="text-heading" style={{ color: verdict.color }}>{verdict.label}</h2>
+          <p className="text-xs font-bold text-ink-muted">
             {ll?.emoji} {ll?.label} &middot; Session {activeSession.sessionNumber}
           </p>
         </div>
 
         {/* Scoring breakdown */}
-        <div className="bg-white rounded-2xl p-4 border border-gray-100 w-full space-y-2">
+        <div className="bg-white rounded-card p-4 border-2 border-line w-full space-y-2">
           <div className="flex items-center justify-between text-sm">
-            <span className="text-gray-500 font-medium">Pass (7/10)</span>
-            <span className={`font-bold ${score >= 7 ? 'text-duo-green' : 'text-gray-500'}`}>
+            <span className="text-ink-muted font-semibold">Pass (7/10)</span>
+            <span className={`font-bold ${score >= 7 ? 'text-success' : 'text-ink-muted'}`}>
               {score >= 7 ? '✓ Achieved' : `Need ${7 - score} more`}
             </span>
           </div>
           <div className="flex items-center justify-between text-sm">
-            <span className="text-gray-500 font-medium">Unlock next (8/10)</span>
-            <span className={`font-bold ${score >= 8 ? 'text-duo-green' : 'text-gray-500'}`}>
+            <span className="text-ink-muted font-semibold">Unlock next (8/10)</span>
+            <span className={`font-bold ${score >= 8 ? 'text-success' : 'text-ink-muted'}`}>
               {score >= 8 ? '🔓 Unlocked!' : `Need ${8 - score} more`}
             </span>
           </div>
           <div className="flex items-center justify-between text-sm">
-            <span className="text-gray-500 font-medium">Mastery (9/10)</span>
-            <span className={`font-bold ${score >= 9 ? 'text-duo-orange' : 'text-gray-500'}`}>
+            <span className="text-ink-muted font-semibold">Mastery (9/10)</span>
+            <span className={`font-bold ${score >= 9 ? 'text-success' : 'text-ink-muted'}`}>
               {score >= 9 ? '🏆 Mastered!' : `Need ${9 - score} more`}
             </span>
           </div>
@@ -390,8 +390,8 @@ export default function SkillDrillSessionPage() {
           {results.map((correct, i) => (
             <div
               key={i}
-              className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs ${
-                correct ? 'bg-duo-green' : 'bg-duo-red'
+              className={`w-8 h-8 rounded-full flex items-center justify-center border-2 font-extrabold text-base ${
+                correct ? 'bg-success-soft border-success text-success' : 'bg-retry-soft border-retry text-retry'
               }`}
             >
               {correct ? '✓' : '✗'}
@@ -400,9 +400,9 @@ export default function SkillDrillSessionPage() {
         </div>
 
         {/* Sparky */}
-        <div className="bg-purple-50 rounded-2xl px-4 py-3 flex items-start gap-3 border border-purple-200 w-full">
+        <div className="bg-white rounded-card px-4 py-3 flex items-start gap-3 border-2 border-line w-full">
           <Sparky mood={verdict.mood} size={40} />
-          <p className="text-sm font-semibold text-purple-800 pt-1">
+          <p className="text-sm font-bold text-ink pt-1">
             {score >= 9
               ? 'Amazing! You truly mastered this level!'
               : score >= 8
@@ -418,7 +418,7 @@ export default function SkillDrillSessionPage() {
           {score < activeSession.masteryScore && (
             <button
               onClick={() => startSession(activeSession.sessionNumber)}
-              className="w-full bg-duo-blue hover:bg-[#0a8fd4] text-white font-extrabold py-3.5 rounded-2xl transition-colors"
+              className="ui-btn ui-btn-primary w-full"
             >
               Retry Session →
             </button>
@@ -428,14 +428,14 @@ export default function SkillDrillSessionPage() {
               setPhase('sessions');
               setActiveSession(null);
             }}
-            className="w-full bg-duo-green hover:bg-duo-green-dark text-white font-extrabold py-3.5 rounded-2xl transition-colors"
+            className="ui-btn w-full"
           >
             Back to Sessions
           </button>
           {score >= 8 && currentLevelIdx < 4 && (
             <Link
               href={`/practice/skill-drill/${topicId}/${allLevels[currentLevelIdx + 1]}`}
-              className="w-full bg-gradient-to-r from-yellow-400 to-orange-400 text-white font-extrabold py-3.5 rounded-2xl text-center transition-colors"
+              className="ui-btn w-full bg-star text-center"
             >
               {levelMeta[allLevels[currentLevelIdx + 1]]?.emoji} Next Level →
             </Link>
@@ -449,9 +449,9 @@ export default function SkillDrillSessionPage() {
   if (phase === 'drill' && activeSession) {
     if (loading) {
       return (
-        <div className="min-h-screen flex flex-col items-center justify-center gap-4">
+        <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4">
           <Sparky mood="thinking" size={64} />
-          <p className="text-sm font-bold text-gray-500 animate-pulse">Loading drill...</p>
+          <p className="text-sm font-bold text-ink-muted animate-pulse">Loading drill...</p>
         </div>
       );
     }
@@ -469,14 +469,14 @@ export default function SkillDrillSessionPage() {
           <div className="flex items-center gap-2">
             <span className="text-xl">{topicIcon}</span>
             <div>
-              <h1 className="text-sm font-extrabold text-gray-800 leading-tight">{topicName}</h1>
-              <p className="text-[10px] font-bold text-gray-500">
+              <h1 className="text-sm font-extrabold text-ink leading-tight">{topicName}</h1>
+              <p className="text-xs font-bold text-ink-muted">
                 {ll?.emoji} {ll?.label} &middot; Session {activeSession.sessionNumber}
               </p>
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-xs font-extrabold text-duo-green bg-green-50 px-2 py-1 rounded-full">
+            <span className="text-xs font-extrabold text-white bg-success px-2 py-1 rounded-full">
               {correctSoFar}✓
             </span>
             <button
@@ -486,7 +486,7 @@ export default function SkillDrillSessionPage() {
                   setActiveSession(null);
                 }
               }}
-              className="text-gray-500 hover:text-gray-600 text-xs font-bold"
+              className="text-ink-muted hover:text-ink text-xs font-bold"
             >
               ✕
             </button>
@@ -494,15 +494,15 @@ export default function SkillDrillSessionPage() {
         </div>
 
         {/* Progress bar */}
-        <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 overflow-hidden">
+        <div className="w-full ui-meter h-3 mb-4">
           <div
-            className="h-2.5 rounded-full transition-[width] duration-500 ease-out"
-            style={{ width: `${progressPct}%`, backgroundColor: levelInfo?.color ?? '#58CC02' }}
+            className="h-full rounded-full transition-[width] duration-500 ease-out"
+            style={{ width: `${progressPct}%`, backgroundColor: levelInfo?.color ?? '#4f46e5' }}
           />
         </div>
 
         {/* Question counter */}
-        <p className="text-xs font-bold text-gray-500 mb-3 text-center">
+        <p className="text-xs font-bold text-ink-muted mb-3 text-center">
           Question {currentIdx + 1} of {totalQ}
         </p>
 
@@ -517,17 +517,17 @@ export default function SkillDrillSessionPage() {
         {/* Feedback */}
         {answered && (
           <div className="mt-4 space-y-3">
-            <div className={`rounded-2xl px-4 py-3 flex items-start gap-3 border ${
+            <div className={`rounded-card px-4 py-3 flex items-start gap-3 border-2 ${
               selected === adapted.correctAnswer
-                ? 'bg-green-50 border-green-200'
-                : 'bg-red-50 border-red-200'
+                ? 'bg-success-soft border-success'
+                : 'bg-retry-soft border-retry'
             }`}>
               <Sparky
                 mood={selected === adapted.correctAnswer ? 'celebrating' : 'encouraging'}
                 size={36}
               />
-              <p className={`text-sm font-semibold pt-1 ${
-                selected === adapted.correctAnswer ? 'text-green-700' : 'text-red-700'
+              <p className={`text-label pt-1 ${
+                selected === adapted.correctAnswer ? 'text-success' : 'text-retry'
               }`}>
                 {selected === adapted.correctAnswer
                   ? ['Great job!', 'You got it!', 'Excellent!', 'Well done!', 'Awesome!'][currentIdx % 5]
@@ -569,8 +569,8 @@ export default function SkillDrillSessionPage() {
             {/* Next button */}
             <button
               onClick={handleNext}
-              className="w-full text-white font-extrabold py-3.5 rounded-2xl transition-colors mt-2"
-              style={{ backgroundColor: levelInfo?.color ?? '#1CB0F6' }}
+              className="w-full text-white font-extrabold py-3.5 rounded-control border-2 border-ink shadow-hard-sm transition-colors mt-2"
+              style={{ backgroundColor: levelInfo?.color ?? '#4f46e5' }}
             >
               {currentIdx + 1 >= totalQ ? 'See Results →' : 'Next →'}
             </button>
@@ -589,16 +589,16 @@ export default function SkillDrillSessionPage() {
     <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
       <div
-        className="px-4 py-4 flex items-center gap-3 shadow-md"
-        style={{ backgroundColor: levelInfo?.color ?? '#131F24' }}
+        className="px-4 py-4 flex items-center gap-3"
+        style={{ backgroundColor: levelInfo?.color ?? '#1d2a4d' }}
       >
         <Link href="/practice/skill-drill" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <div className="flex items-center gap-2">
             <span className="text-2xl">{topicIcon}</span>
-            <h1 className="text-white font-extrabold text-lg leading-tight">{topicName}</h1>
+            <h1 className="text-white text-title leading-tight">{topicName}</h1>
           </div>
-          <p className="text-white/60 text-xs font-medium mt-0.5">
+          <p className="text-white/70 text-xs font-medium mt-0.5">
             {ll?.emoji} {ll?.label} &middot; {levelInfo?.name ?? levelId}
           </p>
         </div>
@@ -621,10 +621,10 @@ export default function SkillDrillSessionPage() {
                 href={unlocked ? `/practice/skill-drill/${topicId}/${lvl}` : '#'}
                 className={`flex items-center gap-1 px-3 py-2 rounded-full border-2 shrink-0 transition-colors ${
                   isActive
-                    ? 'text-white font-extrabold shadow-md'
+                    ? 'text-white font-extrabold'
                     : unlocked
-                    ? 'bg-white text-gray-600 font-bold border-gray-200 hover:border-gray-400'
-                    : 'bg-gray-100 text-gray-300 font-bold border-gray-200 cursor-not-allowed'
+                    ? 'bg-white text-ink font-bold border-line hover:border-ink'
+                    : 'bg-soft text-gray-400 font-bold border-line cursor-not-allowed'
                 }`}
                 style={isActive ? { backgroundColor: li.color, borderColor: li.color } : {}}
                 onClick={(e) => { if (!unlocked) e.preventDefault(); }}
@@ -641,14 +641,14 @@ export default function SkillDrillSessionPage() {
         {!isUnlocked && (
           <div className="flex flex-col items-center gap-4 py-12">
             <div className="text-6xl">🔒</div>
-            <h2 className="text-lg font-extrabold text-gray-600">Level Locked</h2>
-            <p className="text-sm text-gray-500 text-center max-w-xs">
+            <h2 className="text-heading text-ink">Level Locked</h2>
+            <p className="text-sm font-semibold text-ink-muted text-center max-w-xs">
               Score 8/10 or higher on the previous level to unlock {ll?.label}!
             </p>
             {currentLevelIdx > 0 && (
               <Link
                 href={`/practice/skill-drill/${topicId}/${allLevels[currentLevelIdx - 1]}`}
-                className="bg-duo-blue text-white font-extrabold px-6 py-3 rounded-2xl"
+                className="ui-btn ui-btn-primary px-6"
               >
                 Go to {levelMeta[allLevels[currentLevelIdx - 1]]?.label} →
               </Link>
@@ -660,11 +660,11 @@ export default function SkillDrillSessionPage() {
         {isUnlocked && (
           <>
             {/* Level description */}
-            <div className="bg-white rounded-2xl p-4 border border-gray-100 mb-4 flex items-start gap-3">
+            <div className="bg-white rounded-card p-4 border-2 border-line mb-4 flex items-start gap-3">
               <Sparky mood="happy" size={36} />
               <div>
-                <p className="text-sm font-bold text-gray-700">{ll?.description}</p>
-                <p className="text-xs text-gray-500 mt-1">
+                <p className="text-sm font-bold text-ink">{ll?.description}</p>
+                <p className="text-xs font-semibold text-ink-muted mt-1">
                   {sessions.length} sessions &middot; 10 questions each &middot; Score 7+ to pass
                 </p>
               </div>
@@ -681,26 +681,26 @@ export default function SkillDrillSessionPage() {
                   <button
                     key={s.sessionId}
                     onClick={() => startSession(s.sessionNumber)}
-                    className="w-full bg-white rounded-2xl p-4 border-2 border-line hover:shadow-md transition-[box-shadow,transform] active:scale-[0.98] text-left flex items-center gap-4"
+                    className="w-full bg-white rounded-card p-4 border-2 border-line hover:border-ink transition-[border-color,transform] active:scale-[0.98] text-left flex items-center gap-4"
                   >
                     {/* Session number circle */}
                     <div
                       className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-extrabold shrink-0 border-2 ${
                         mastered
-                          ? 'bg-gradient-to-br from-yellow-300 to-orange-400 border-yellow-400 text-white'
+                          ? 'bg-star border-ink text-ink'
                           : passed
-                          ? 'bg-duo-green border-duo-green-dark text-white'
+                          ? 'bg-success-soft border-success text-success'
                           : attempted
-                          ? 'bg-blue-100 border-blue-300 text-blue-600'
-                          : 'bg-gray-100 border-gray-300 text-gray-500'
+                          ? 'bg-hint border-hint-ink/40 text-hint-ink'
+                          : 'bg-soft border-line text-ink-muted'
                       }`}
                     >
                       {mastered ? '★' : passed ? '✓' : s.sessionNumber}
                     </div>
 
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-extrabold text-gray-800">Session {s.sessionNumber}</p>
-                      <p className="text-xs text-gray-500 font-medium">
+                      <p className="text-sm font-extrabold text-ink">Session {s.sessionNumber}</p>
+                      <p className="text-xs text-ink-muted font-medium">
                         {s.totalQuestions} questions &middot;
                         {attempted
                           ? ` Best: ${sessionBest}/${s.totalQuestions}`
@@ -711,13 +711,13 @@ export default function SkillDrillSessionPage() {
                     {/* Status badge */}
                     <div className="shrink-0">
                       {mastered ? (
-                        <span className="text-xs font-extrabold text-duo-orange bg-orange-50 px-2.5 py-1 rounded-full">Mastered</span>
+                        <span className="text-xs font-extrabold text-ink bg-star px-2.5 py-1 rounded-full">Mastered</span>
                       ) : passed ? (
-                        <span className="text-xs font-extrabold text-duo-green bg-green-50 px-2.5 py-1 rounded-full">Passed</span>
+                        <span className="text-xs font-extrabold text-white bg-success px-2.5 py-1 rounded-full">Passed</span>
                       ) : attempted ? (
-                        <span className="text-xs font-extrabold text-blue-500 bg-blue-50 px-2.5 py-1 rounded-full">Retry →</span>
+                        <span className="text-xs font-extrabold text-hint-ink bg-hint px-2.5 py-1 rounded-full">Retry →</span>
                       ) : (
-                        <span className="text-xs font-extrabold text-gray-500 bg-gray-50 px-2.5 py-1 rounded-full">Start →</span>
+                        <span className="text-xs font-extrabold text-action bg-soft px-2.5 py-1 rounded-full">Start →</span>
                       )}
                     </div>
                   </button>

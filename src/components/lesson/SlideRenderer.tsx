@@ -17,11 +17,11 @@ function hasLatex(text: string): boolean {
 
 function NotationBox({ notation }: { notation: string }) {
   return (
-    <div className="bg-indigo-50 border border-indigo-200 rounded-xl px-4 py-3 mt-3 text-center w-full">
+    <div className="bg-soft border-2 border-line rounded-note px-4 py-3 mt-3 text-center w-full">
       {hasLatex(notation) ? (
         <KatexRenderer latex={notation} displayMode className="text-base" />
       ) : (
-        <p className="text-base font-bold text-indigo-800 font-mono">{notation}</p>
+        <p className="text-base font-bold text-ink font-mono">{notation}</p>
       )}
     </div>
   );
@@ -36,11 +36,11 @@ export default function SlideRenderer({ slide, accentColor }: SlideRendererProps
             <span className="text-[64px] leading-none mb-4" aria-hidden="true">{slide.emoji}</span>
           )}
           {slide.illustration && <SlideIllustration illustration={slide.illustration} />}
-          <h2 className="text-xl font-extrabold text-gray-800 mb-3">
+          <h2 className="text-heading text-ink mb-3">
             <BoldText text={slide.text} />
           </h2>
           {slide.subtext && (
-            <p className="text-sm text-gray-600 leading-relaxed max-w-[320px]">
+            <p className="text-sm text-ink-muted leading-relaxed max-w-[320px]">
               <BoldText text={slide.subtext} />
             </p>
           )}
@@ -50,13 +50,13 @@ export default function SlideRenderer({ slide, accentColor }: SlideRendererProps
     case 'concept':
       return (
         <div className="min-h-[60vh] flex flex-col items-center justify-center px-6">
-          <p className="text-base font-semibold text-gray-800 leading-relaxed text-center mb-4">
+          <p className="text-base font-semibold text-ink leading-relaxed text-center mb-4">
             <BoldText text={slide.text} />
           </p>
           {slide.illustration && <SlideIllustration illustration={slide.illustration} />}
           {slide.notation && <NotationBox notation={slide.notation} />}
           {slide.subtext && (
-            <p className="text-xs font-bold text-gray-500 mt-3 text-center">
+            <p className="text-[13px] font-bold text-ink-muted mt-3 text-center">
               <span aria-hidden="true">💡 </span>
               <BoldText text={slide.subtext} />
             </p>
@@ -67,12 +67,12 @@ export default function SlideRenderer({ slide, accentColor }: SlideRendererProps
     case 'rule':
       return (
         <div className="min-h-[60vh] flex flex-col items-center justify-center px-6">
-          <div className="w-full bg-yellow-50 border border-yellow-200 rounded-2xl px-5 py-6 text-center">
+          <div className="w-full bg-white border-2 border-line rounded-card px-5 py-6 text-center">
             <span className="text-[40px] leading-none mb-3 block" aria-hidden="true">
               {slide.emoji || '📝'}
             </span>
-            <p className="text-xs font-extrabold text-yellow-800 uppercase tracking-wide mb-2">Rule</p>
-            <p className="text-base font-bold text-yellow-900 leading-relaxed">
+            <p className="text-[13px] font-extrabold text-ink-muted mb-2">Rule</p>
+            <p className="text-base font-bold text-ink leading-relaxed">
               <BoldText text={slide.text} />
             </p>
             {slide.notation && <NotationBox notation={slide.notation} />}
@@ -83,12 +83,12 @@ export default function SlideRenderer({ slide, accentColor }: SlideRendererProps
     case 'tip':
       return (
         <div className="min-h-[60vh] flex flex-col items-center justify-center px-6">
-          <div className="w-full bg-blue-50 border border-blue-200 rounded-2xl px-5 py-6 text-center">
+          <div className="w-full bg-hint rounded-card px-5 py-6 text-center">
             <span className="text-[40px] leading-none mb-3 block" aria-hidden="true">
               {slide.emoji || '💡'}
             </span>
-            <p className="text-xs font-extrabold text-blue-800 uppercase tracking-wide mb-2">Tip</p>
-            <p className="text-sm font-semibold text-blue-900 leading-relaxed">
+            <p className="text-[13px] font-extrabold text-hint-ink mb-2">Tip</p>
+            <p className="text-sm font-semibold text-hint-ink leading-relaxed">
               <BoldText text={slide.text} />
             </p>
           </div>
@@ -99,7 +99,7 @@ export default function SlideRenderer({ slide, accentColor }: SlideRendererProps
       return (
         <div className="min-h-[60vh] flex flex-col items-center justify-center px-6">
           {slide.illustration && <SlideIllustration illustration={slide.illustration} />}
-          <p className="text-sm text-gray-600 text-center mt-2">
+          <p className="text-sm text-ink-muted text-center mt-2">
             <BoldText text={slide.text} />
           </p>
           {slide.notation && <NotationBox notation={slide.notation} />}
@@ -110,10 +110,10 @@ export default function SlideRenderer({ slide, accentColor }: SlideRendererProps
       return (
         <div className="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center">
           <span className="text-[48px] leading-none mb-4" aria-hidden="true">✅</span>
-          <p className="text-xs font-extrabold uppercase tracking-wide mb-2" style={{ color: accentColor }}>
+          <p className="text-[13px] font-extrabold mb-2" style={{ color: accentColor }}>
             Recap
           </p>
-          <p className="text-base font-semibold text-gray-800 leading-relaxed max-w-[320px]">
+          <p className="text-base font-semibold text-ink leading-relaxed max-w-[320px]">
             <BoldText text={slide.text} />
           </p>
           {slide.notation && <NotationBox notation={slide.notation} />}

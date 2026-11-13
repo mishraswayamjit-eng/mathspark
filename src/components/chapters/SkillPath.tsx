@@ -47,33 +47,33 @@ const NodeCircle = React.memo(function NodeCircle({ node }: { node: SkillNode })
   switch (node.state) {
     case 'completed':
       return (
-        <div className="w-14 h-14 rounded-full bg-duo-green flex items-center justify-center shadow-md shadow-green-200">
+        <div className="w-14 h-14 rounded-full bg-success-soft border-2 border-success flex items-center justify-center">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M5 12l5 5L19 7" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M5 12l5 5L19 7" stroke="#12805c" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
       );
     case 'current':
       return (
         <div className="relative w-14 h-14">
-          <div className="absolute inset-0 rounded-full bg-duo-green/20 animate-ping" style={{ animationDuration: '2s' }} />
-          <div className="relative w-14 h-14 rounded-full bg-white border-4 border-duo-green flex items-center justify-center shadow-md">
+          <div className="absolute inset-0 rounded-full bg-action/20 animate-ping" style={{ animationDuration: '2s' }} />
+          <div className="relative w-14 h-14 rounded-full bg-white border-2 border-ink flex items-center justify-center shadow-hard-sm">
             <span className="text-xl leading-none select-none" aria-hidden="true">{node.emoji}</span>
           </div>
         </div>
       );
     case 'available':
       return (
-        <div className="w-14 h-14 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center shadow-sm">
+        <div className="w-14 h-14 rounded-full bg-white border-2 border-line flex items-center justify-center">
           <span className="text-xl leading-none select-none" aria-hidden="true">{node.emoji}</span>
         </div>
       );
     case 'locked':
       return (
-        <div className="w-14 h-14 rounded-full bg-gray-100 border-2 border-gray-200 flex items-center justify-center opacity-60">
+        <div className="w-14 h-14 rounded-full bg-white border-2 border-line flex items-center justify-center opacity-60">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <rect x="5" y="11" width="14" height="10" rx="2" stroke="#9CA3AF" strokeWidth="2" />
-            <path d="M8 11V7a4 4 0 018 0v4" stroke="#9CA3AF" strokeWidth="2" strokeLinecap="round" />
+            <rect x="5" y="11" width="14" height="10" rx="2" stroke="#5d6b8c" strokeWidth="2" />
+            <path d="M8 11V7a4 4 0 018 0v4" stroke="#5d6b8c" strokeWidth="2" strokeLinecap="round" />
           </svg>
         </div>
       );
@@ -88,15 +88,15 @@ function NodeLabel({ node }: { node: SkillNode }) {
   return (
     <div className="flex-1 min-w-0">
       <p className={`text-sm font-extrabold leading-snug line-clamp-2 ${
-        node.state === 'locked' ? 'text-gray-400' : 'text-gray-800'
+        node.state === 'locked' ? 'text-ink-muted' : 'text-ink'
       }`}>
         {node.topic.name}
       </p>
       <p className={`text-xs font-semibold mt-0.5 ${
-        node.state === 'completed' ? 'text-duo-green-dark' :
-        node.state === 'current' ? 'text-duo-orange-dark' :
-        node.state === 'available' ? 'text-gray-500' :
-        'text-gray-400'
+        node.state === 'completed' ? 'text-success' :
+        node.state === 'current' ? 'text-ink-muted' :
+        node.state === 'available' ? 'text-ink-muted' :
+        'text-ink-muted'
       }`}>
         {node.state === 'completed' && `Mastered · ${accuracyPct}%`}
         {node.state === 'current' && `${node.topic.correct} solved · ${accuracyPct}%`}
@@ -110,7 +110,7 @@ function NodeLabel({ node }: { node: SkillNode }) {
 // ── Connector line ───────────────────────────────────────────────────────────
 
 function Connector({ fromState }: { fromState: NodeState }) {
-  const color = fromState === 'completed' ? 'bg-duo-green' : 'bg-gray-200';
+  const color = fromState === 'completed' ? 'bg-success' : 'bg-line';
   return (
     <div className="flex justify-center py-0">
       <div className={`w-1 h-8 ${color} rounded-full`} />
@@ -141,11 +141,11 @@ export default function SkillPath({ topics, onTopicClick }: SkillPathProps) {
             <button
               disabled={!isClickable}
               onClick={() => isClickable && onTopicClick(node.topic.id)}
-              className={`w-full flex items-center gap-3 rounded-2xl px-3 py-3 transition-transform ${
+              className={`w-full flex items-center gap-3 rounded-control px-3 py-3 transition-transform ${
                 isRight ? 'flex-row-reverse pl-4 pr-3' : 'flex-row pl-3 pr-4'
               } ${
                 isClickable
-                  ? 'active:scale-[0.97] hover:bg-gray-50'
+                  ? 'active:scale-[0.97] hover:bg-soft'
                   : 'cursor-default'
               }`}
               style={{ marginLeft: isRight ? 'auto' : 0 }}

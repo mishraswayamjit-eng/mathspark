@@ -126,12 +126,12 @@ export default function LessonSessionPage({
   if (loading) {
     return (
       <div className="min-h-screen bg-paper pb-24 animate-pulse">
-        <div className="bg-duo-dark px-4 py-4">
+        <div className="bg-ink px-4 py-4">
           <div className="h-6 bg-white/20 rounded w-32" />
         </div>
         <div className="max-w-lg mx-auto px-4 pt-6 space-y-4">
-          <div className="bg-white rounded-2xl p-5 border border-gray-100 h-64" />
-          <div className="bg-white rounded-2xl p-5 border border-gray-100 h-16" />
+          <div className="bg-white rounded-card p-5 border-2 border-line h-64" />
+          <div className="bg-white rounded-card p-5 border-2 border-line h-16" />
         </div>
       </div>
     );
@@ -141,10 +141,10 @@ export default function LessonSessionPage({
     return (
       <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
         <Sparky mood="thinking" size={64} />
-        <p className="text-sm font-bold text-gray-500">Level not found</p>
+        <p className="text-sm font-bold text-ink-muted">Level not found</p>
         <button
           onClick={() => router.push('/learn/lessons')}
-          className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform"
+          className="bg-action hover:bg-action-dark text-white font-extrabold px-6 py-2.5 rounded-control border-2 border-ink shadow-hard-sm text-sm active:scale-95 transition-transform"
         >
           Back to Lessons
         </button>
@@ -155,18 +155,18 @@ export default function LessonSessionPage({
   return (
     <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
+      <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
         <Link
           href={`/learn/lessons/${topicSlug}`}
-          className="text-white/60 hover:text-white text-lg font-bold"
+          className="text-white/70 hover:text-white text-lg font-bold"
           aria-label="Back"
         >
           &larr;
         </Link>
         <span className="text-lg" aria-hidden="true">{level.emoji}</span>
-        <h1 className="text-white font-extrabold text-lg truncate">{level.label}</h1>
+        <h1 className="text-white text-title truncate">{level.label}</h1>
         {phase !== 'complete' && (
-          <span className="ml-auto text-xs font-bold text-white/40 capitalize">
+          <span className="ml-auto text-xs font-bold text-white/70 capitalize">
             {phase === 'lessons' ? 'Learning' : 'Quiz'}
           </span>
         )}

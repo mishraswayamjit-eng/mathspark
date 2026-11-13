@@ -130,12 +130,14 @@ const PRACTICE_TIME_RESPONSES: Record<string, string> = {
 function OnboardingProgress({ step }: { step: Step }) {
   const pct = STEP_PROGRESS[step];
   return (
-    <div className="fixed top-0 left-0 right-0 z-40 px-4 pt-3 pb-1 bg-transparent">
-      <div className="w-full bg-white/20 rounded-full h-2 overflow-hidden">
+    <div className="fixed top-0 left-0 right-0 z-40 bg-transparent">
+      <div className="max-w-lg mx-auto px-4 pt-3 pb-1">
+      <div className="w-full ui-meter h-3.5">
         <div
-          className="bg-duo-green h-2 rounded-full transition-[width] duration-700"
+          className="bg-action h-full rounded-full transition-[width] duration-700"
           style={{ width: `${pct}%` }}
         />
+      </div>
       </div>
     </div>
   );
@@ -149,10 +151,10 @@ function OnboardingShell({ children, step, variant = 'dark' }: {
   variant?: 'dark' | 'white' | 'gradient';
 }) {
   const bg = variant === 'gradient'
-    ? 'bg-gradient-to-b from-duo-dark to-[#1a7a20]'
+    ? 'bg-paper'
     : variant === 'white'
       ? 'bg-white'
-      : 'bg-duo-dark';
+      : 'bg-paper';
 
   return (
     <div className={`min-h-screen flex flex-col ${bg}`}>
@@ -409,10 +411,10 @@ export default function StartPage() {
             <Sparky mood="celebrating" size={120} />
           </div>
           <div className="space-y-3">
-            <h1 className="text-3xl font-extrabold text-white leading-tight">
+            <h1 className="text-display text-ink">
               Let&apos;s build your math superpowers!
             </h1>
-            <p className="text-white/80 text-lg leading-relaxed">
+            <p className="text-ink-muted text-lg leading-relaxed">
               Quick setup — takes about 2 minutes
             </p>
           </div>
@@ -433,7 +435,7 @@ export default function StartPage() {
   if (step === 'gradeSelect') {
     return (
       <OnboardingShell step="gradeSelect">
-        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5 animate-fade-in">
+        <div className="bg-white rounded-card p-6 w-full max-w-sm border-2 border-ink shadow-hard-lg space-y-5 animate-fade-in">
           <div className="text-center space-y-1">
             <div className="text-5xl" aria-hidden="true">🎓</div>
             <h2 className="text-2xl font-extrabold text-gray-800">Which grade are you in?</h2>
@@ -449,8 +451,8 @@ export default function StartPage() {
                 onClick={() => setSelectedGrade(g)}
                 className={`flex flex-col items-center justify-center rounded-2xl py-3 px-2 border-2 transition-[colors,border-color,box-shadow,transform] active:scale-95 min-h-0 ${
                   selectedGrade === g
-                    ? 'bg-duo-blue border-duo-blue-dark text-white shadow-md scale-105'
-                    : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-duo-blue'
+                    ? 'bg-action border-ink text-white shadow-hard-sm'
+                    : 'bg-white border-line text-ink hover:border-ink'
                 }`}
               >
                 <span className="text-xl leading-none" aria-hidden="true">{GRADE_EMOJI[g]}</span>
@@ -488,7 +490,7 @@ export default function StartPage() {
 
     return (
       <OnboardingShell step="goal">
-        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5 animate-fade-in">
+        <div className="bg-white rounded-card p-6 w-full max-w-sm border-2 border-ink shadow-hard-lg space-y-5 animate-fade-in">
           <div className="text-center space-y-2">
             <h2 className="text-2xl font-extrabold text-gray-800">What are you preparing for?</h2>
           </div>
@@ -510,8 +512,8 @@ export default function StartPage() {
                 }}
                 className={`flex items-center gap-3 w-full rounded-2xl px-5 py-4 border-2 transition-[colors,border-color,transform] active:scale-95 min-h-0 ${
                   goal === g.value
-                    ? 'bg-duo-blue/10 border-duo-blue text-duo-blue-dark'
-                    : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-gray-300'
+                    ? 'bg-soft border-ink text-ink shadow-hard-sm'
+                    : 'bg-white border-line text-ink hover:border-ink'
                 }`}
               >
                 <span className="text-2xl" aria-hidden="true">{g.emoji}</span>
@@ -536,14 +538,14 @@ export default function StartPage() {
             <Sparky mood="encouraging" size={100} />
           </div>
           <div className="space-y-3">
-            <h2 className="text-2xl font-extrabold text-white leading-tight">
+            <h2 className="text-display text-ink">
               10,000+ questions from real exams
             </h2>
-            <p className="text-white/80 text-base leading-relaxed">
+            <p className="text-ink-muted text-base leading-relaxed">
               Practice with actual IPM papers from 2016–2025, topic-wise drills, and smart revision
             </p>
           </div>
-          <DuoButton variant="white" fullWidth onClick={() => setStep('dailyGoal')}>
+          <DuoButton variant="green" fullWidth onClick={() => setStep('dailyGoal')}>
             Continue
           </DuoButton>
         </div>
@@ -565,7 +567,7 @@ export default function StartPage() {
 
     return (
       <OnboardingShell step="dailyGoal">
-        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5 animate-fade-in">
+        <div className="bg-white rounded-card p-6 w-full max-w-sm border-2 border-ink shadow-hard-lg space-y-5 animate-fade-in">
           <div className="text-center space-y-1">
             <h2 className="text-xl font-extrabold text-gray-800">How much practice each day?</h2>
           </div>
@@ -587,12 +589,12 @@ export default function StartPage() {
                 }}
                 className={`relative flex flex-col items-center gap-1 rounded-2xl px-4 py-4 border-2 transition-[colors,border-color,transform] active:scale-95 min-h-0 ${
                   dailyGoal === g.mins && sparkyMessage
-                    ? 'bg-duo-green/10 border-duo-green text-duo-green-dark'
-                    : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-gray-300'
+                    ? 'bg-soft border-ink text-ink shadow-hard-sm'
+                    : 'bg-white border-line text-ink hover:border-ink'
                 }`}
               >
                 {g.recommended && (
-                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-duo-orange text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wide">
+                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-star text-ink border-2 border-ink text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wide">
                     Best
                   </span>
                 )}
@@ -620,7 +622,7 @@ export default function StartPage() {
 
     return (
       <OnboardingShell step="practiceTime">
-        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5 animate-fade-in">
+        <div className="bg-white rounded-card p-6 w-full max-w-sm border-2 border-ink shadow-hard-lg space-y-5 animate-fade-in">
           <div className="text-center space-y-1">
             <h2 className="text-xl font-extrabold text-gray-800">When do you like to practice?</h2>
           </div>
@@ -642,8 +644,8 @@ export default function StartPage() {
                 }}
                 className={`flex items-center gap-3 w-full rounded-2xl px-5 py-4 border-2 transition-[colors,border-color,transform] active:scale-95 min-h-0 ${
                   practiceTime === t.label && sparkyMessage
-                    ? 'bg-duo-blue/10 border-duo-blue text-duo-blue-dark'
-                    : 'bg-gray-50 border-gray-200 text-gray-700 hover:border-gray-300'
+                    ? 'bg-soft border-ink text-ink shadow-hard-sm'
+                    : 'bg-white border-line text-ink hover:border-ink'
                 }`}
               >
                 <span className="text-2xl" aria-hidden="true">{t.emoji}</span>
@@ -671,14 +673,14 @@ export default function StartPage() {
             <Sparky mood="thinking" size={100} />
           </div>
           <div className="space-y-3">
-            <h2 className="text-2xl font-extrabold text-white leading-tight">
+            <h2 className="text-display text-ink">
               Let&apos;s see where you stand
             </h2>
-            <p className="text-white/80 text-base leading-relaxed">
+            <p className="text-ink-muted text-base leading-relaxed">
               5 quick questions to find your strengths — then we&apos;ll build your personalised path
             </p>
           </div>
-          <DuoButton variant="white" fullWidth onClick={startQuiz}>
+          <DuoButton variant="green" fullWidth onClick={startQuiz}>
             Start Quiz
           </DuoButton>
         </div>
@@ -695,7 +697,7 @@ export default function StartPage() {
     const pct  = (answers.length / TOTAL) * 100;
 
     return (
-      <div className="min-h-screen flex flex-col px-4 py-6 gap-4 bg-white">
+      <div className="min-h-screen flex flex-col px-4 py-6 gap-4 bg-paper">
         <div className="space-y-3">
           <div className="flex items-center justify-between text-sm text-gray-500 font-semibold">
             <span>Question {qNum} of {TOTAL}</span>
@@ -734,7 +736,7 @@ export default function StartPage() {
   if (step === 'signup') {
     return (
       <OnboardingShell step="signup">
-        <div className="relative bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5 animate-fade-in">
+        <div className="relative bg-white rounded-card p-6 w-full max-w-sm border-2 border-ink shadow-hard-lg space-y-5 animate-fade-in">
           <div className="absolute -top-8 right-4 animate-sparky-wave">
             <Sparky mood="encouraging" size={64} />
           </div>
@@ -757,7 +759,7 @@ export default function StartPage() {
               placeholder="Your first name"
               aria-label="Your first name"
               maxLength={30}
-              className="w-full text-2xl font-bold text-center border-b-4 border-duo-blue bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
+              className="w-full text-2xl font-bold text-center border-b-4 border-action bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
             />
           </div>
 
@@ -773,7 +775,7 @@ export default function StartPage() {
               onChange={(e) => { const v = e.target.value.replace(/\D/g, '').slice(0, 4); setPin(v); setError(''); }}
               placeholder="••••"
               aria-label="4-digit PIN"
-              className="w-full mt-1.5 text-2xl font-bold text-center tracking-[0.5em] border-b-4 border-gray-200 bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300 focus:border-duo-blue transition-colors"
+              className="w-full mt-1.5 text-2xl font-bold text-center tracking-[0.5em] border-b-4 border-line bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300 focus:border-action transition-colors"
             />
             <p className="text-xs text-gray-500 font-medium mt-1">You'll need this to log in — keep it safe!</p>
           </div>
@@ -790,13 +792,13 @@ export default function StartPage() {
                 onChange={(e) => setParentEmail(e.target.value)}
                 placeholder="parent@email.com"
                 aria-label="Parent email"
-                className="w-full border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-duo-blue transition-colors"
+                className="w-full border-2 border-line rounded-control px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-action transition-colors"
               />
               <p className="text-xs text-gray-500 font-medium">For weekly progress reports</p>
             </div>
           </details>
 
-          {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
+          {error && <p className="text-retry text-sm text-center font-semibold">{error}</p>}
 
           <DuoButton variant="green" fullWidth onClick={handleSignUp} loading={loading} disabled={!name.trim() || pin.length !== 4}>
             Create Free Account
@@ -833,10 +835,10 @@ export default function StartPage() {
 
     return (
       <OnboardingShell step="displayName">
-        <div className="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl space-y-5 animate-fade-in">
+        <div className="bg-white rounded-card p-6 w-full max-w-sm border-2 border-ink shadow-hard-lg space-y-5 animate-fade-in">
           <div className="text-center">
             <div
-              className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white mx-auto mb-3 border-4 border-white/30 shadow-lg"
+              className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white mx-auto mb-3 border-2 border-ink shadow-hard-sm"
               style={{ backgroundColor: avatarColor }}
             >
               {initial}
@@ -860,9 +862,9 @@ export default function StartPage() {
               onKeyDown={(e) => e.key === 'Enter' && handleJoinLeague()}
               placeholder={name.trim().slice(0, 20)}
               maxLength={20}
-              className="w-full mt-1.5 text-xl font-bold text-center border-b-4 border-duo-blue bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
+              className="w-full mt-1.5 text-xl font-bold text-center border-b-4 border-action bg-transparent outline-none py-2 text-gray-800 placeholder-gray-300"
             />
-            {dnError && <p className="text-duo-red text-xs font-semibold text-center mt-1">{dnError}</p>}
+            {dnError && <p className="text-retry text-xs font-semibold text-center mt-1">{dnError}</p>}
           </div>
 
           <div>
@@ -909,7 +911,7 @@ export default function StartPage() {
   const notYet   = results.filter((r) => r.status === 'NotYet');
 
   return (
-    <div className="min-h-screen px-4 py-8 flex flex-col gap-6 bg-white pb-12 animate-fade-in">
+    <div className="min-h-screen px-4 py-8 flex flex-col gap-6 bg-paper pb-12 animate-fade-in">
       {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
 
       {/* Hero */}
@@ -920,31 +922,31 @@ export default function StartPage() {
         <h2 className="text-2xl font-extrabold text-gray-800">
           Great job! Here&apos;s how you did
         </h2>
-        <div className="inline-flex items-baseline gap-2 bg-[#FFF9E6] border-2 border-duo-gold rounded-2xl px-6 py-3">
-          <span className="text-4xl font-extrabold text-duo-dark tabular-nums">{countUp}</span>
+        <div className="inline-flex items-baseline gap-2 bg-white border-2 border-ink shadow-hard-sm rounded-card px-6 py-3">
+          <span className="text-4xl font-extrabold text-ink tabular-nums">{countUp}</span>
           <span className="text-gray-600 font-semibold text-base">out of {TOTAL} correct!</span>
         </div>
       </div>
 
       {/* XP teaser */}
-      <div className="bg-gradient-to-r from-duo-gold/20 to-duo-orange/20 border-2 border-duo-gold rounded-2xl px-4 py-3 text-center">
-        <p className="font-extrabold text-amber-800 text-lg">
+      <div className="ui-hint text-center">
+        <p className="font-extrabold text-hint-ink text-lg">
           <span aria-hidden="true">⭐ </span>+{xpCountUp} XP Welcome Bonus!
         </p>
-        <p className="text-amber-600 text-xs font-medium mt-0.5">Sign up to claim your XP</p>
+        <p className="text-hint-ink text-xs font-bold mt-0.5">Sign up to claim your XP</p>
       </div>
 
       {/* Strong */}
       {strong.length > 0 && (
         <div>
-          <h3 className="text-sm font-extrabold text-duo-green-dark uppercase tracking-wide mb-2">
+          <h3 className="text-sm font-extrabold text-success uppercase tracking-wide mb-2">
             <span aria-hidden="true">✅ </span>You nailed it!
           </h3>
           <div className="space-y-2">
             {strong.map((r) => (
-              <div key={r.topicId} className="bg-green-50 border-2 border-duo-green rounded-2xl px-4 py-3 flex justify-between items-center">
+              <div key={r.topicId} className="bg-success-soft border-2 border-success rounded-control px-4 py-3 flex justify-between items-center">
                 <span className="font-bold text-gray-800">{r.name}</span>
-                <span className="text-duo-green-dark font-extrabold">{r.correct}/{r.total}</span>
+                <span className="text-success font-extrabold">{r.correct}/{r.total}</span>
               </div>
             ))}
           </div>
@@ -954,14 +956,14 @@ export default function StartPage() {
       {/* Learning */}
       {learning.length > 0 && (
         <div>
-          <h3 className="text-sm font-extrabold text-duo-orange-dark uppercase tracking-wide mb-2">
+          <h3 className="text-sm font-extrabold text-hint-ink uppercase tracking-wide mb-2">
             <span aria-hidden="true">🟡 </span>Getting there!
           </h3>
           <div className="space-y-2">
             {learning.map((r) => (
-              <div key={r.topicId} className="bg-amber-50 border-2 border-duo-orange rounded-2xl px-4 py-3 flex justify-between items-center">
+              <div key={r.topicId} className="bg-hint border-2 border-hint-ink rounded-control px-4 py-3 flex justify-between items-center">
                 <span className="font-bold text-gray-800">{r.name}</span>
-                <span className="text-duo-orange-dark font-extrabold">{r.correct}/{r.total}</span>
+                <span className="text-hint-ink font-extrabold">{r.correct}/{r.total}</span>
               </div>
             ))}
           </div>
@@ -976,7 +978,7 @@ export default function StartPage() {
           </h3>
           <div className="space-y-2">
             {notYet.map((r) => (
-              <div key={r.topicId} className="bg-gray-50 border-2 border-gray-200 rounded-2xl px-4 py-3 flex justify-between items-center">
+              <div key={r.topicId} className="bg-white border-2 border-line rounded-control px-4 py-3 flex justify-between items-center">
                 <span className="font-bold text-gray-800">{r.name}</span>
                 <span className="text-gray-500 font-extrabold text-sm">
                   {r.total > 0 ? `${r.correct}/${r.total}` : 'Not tested yet'}

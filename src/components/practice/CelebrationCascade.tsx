@@ -106,24 +106,24 @@ export default function CelebrationCascade({
   if (stage === 1) {
     return (
       <div
-        className="fixed inset-0 z-[70] bg-[#0F172A]/95 backdrop-blur-sm flex flex-col items-center justify-center px-6 animate-fade-in"
+        className="fixed inset-0 z-[70] bg-paper flex flex-col items-center justify-center px-6 animate-fade-in"
         onClick={handleTap}
       >
         <svg width="160" height="160" viewBox="0 0 160 160" className="mb-4">
-          <circle cx="80" cy="80" r={r} fill="none" stroke="#334155" strokeWidth="12" />
+          <circle cx="80" cy="80" r={r} fill="none" stroke="#d3deee" strokeWidth="12" />
           <circle
             cx="80" cy="80" r={r} fill="none"
-            stroke={pct >= 70 ? '#58CC02' : '#FF9600'}
+            stroke={pct >= 70 ? '#12805c' : '#f5a400'}
             strokeWidth="12"
             strokeLinecap="round"
             strokeDasharray={`${dash} ${circ}`}
             transform="rotate(-90 80 80)"
             style={{ transition: 'stroke-dasharray 1s ease-out' }}
           />
-          <text x="80" y="74" textAnchor="middle" fontSize="30" fontWeight="900" fill="white">
+          <text x="80" y="74" textAnchor="middle" fontSize="30" fontWeight="900" fill="#1d2a4d">
             {animPct}%
           </text>
-          <text x="80" y="96" textAnchor="middle" fontSize="12" fill="#94a3af" fontWeight="600">
+          <text x="80" y="96" textAnchor="middle" fontSize="12" fill="#5d6b8c" fontWeight="600">
             {correct}/{total} correct
           </text>
         </svg>
@@ -146,7 +146,7 @@ export default function CelebrationCascade({
           ))}
         </div>
 
-        <p className="text-xs text-gray-400 mt-4">Tap to continue</p>
+        <p className="text-xs font-bold text-ink-muted mt-4">Tap to continue</p>
       </div>
     );
   }
@@ -155,7 +155,7 @@ export default function CelebrationCascade({
   if (stage === 2) {
     return (
       <div
-        className="fixed inset-0 z-[70] bg-white flex flex-col items-center justify-center px-6 animate-stage-crossfade"
+        className="fixed inset-0 z-[70] bg-paper flex flex-col items-center justify-center px-6 animate-stage-crossfade"
         onClick={handleTap}
       >
         <Confetti />
@@ -164,15 +164,15 @@ export default function CelebrationCascade({
           <Sparky mood="celebrating" size={140} />
         </div>
 
-        <h1 className="text-2xl font-extrabold text-gray-800 mt-4 animate-pop-in">
+        <h1 className="text-display text-ink mt-4 animate-pop-in">
           Lesson Complete!
         </h1>
 
-        <p className="text-sm text-gray-500 font-semibold mt-1">
+        <p className="text-sm text-ink-muted font-bold mt-1">
           {pct >= 90 ? 'Amazing! 🏆' : pct >= 70 ? 'Great job! 🌟' : 'Keep practicing! 💪'}
         </p>
 
-        <p className="text-xs text-gray-400 mt-6">Tap to continue</p>
+        <p className="text-xs font-bold text-ink-muted mt-6">Tap to continue</p>
       </div>
     );
   }
@@ -181,29 +181,29 @@ export default function CelebrationCascade({
   if (stage === 3) {
     return (
       <div
-        className="fixed inset-0 z-[70] bg-white flex flex-col items-center justify-center px-6 animate-stage-crossfade"
+        className="fixed inset-0 z-[70] bg-paper flex flex-col items-center justify-center px-6 animate-stage-crossfade"
         onClick={handleTap}
       >
-        <div className="bg-[#FFF9E6] border-2 border-duo-gold rounded-2xl px-10 py-5 text-center animate-pop-in">
-          <p className="text-xs text-amber-700 font-extrabold uppercase tracking-wide">Total XP earned</p>
-          <p className="text-4xl font-extrabold text-duo-dark animate-count-pulse">+{displayXp} <span aria-hidden="true">⭐</span></p>
+        <div className="bg-hint border-2 border-star rounded-card px-10 py-5 text-center animate-pop-in">
+          <p className="text-caption text-hint-ink">Total XP earned</p>
+          <p className="text-4xl font-extrabold text-ink animate-count-pulse">+{displayXp} <span aria-hidden="true">⭐</span></p>
         </div>
 
-        <div className="mt-4 text-sm text-gray-500 font-semibold space-y-1 text-center">
+        <div className="mt-4 text-sm text-ink-muted font-semibold space-y-1 text-center">
           <p>{correct} correct × 20 XP</p>
           {reviewResults.length > 0 && (
             <p>{reviewResults.filter((r) => r.wasCorrect).length} review × 10 XP</p>
           )}
         </div>
 
-        <p className="text-xs text-gray-400 mt-6">Tap to continue</p>
+        <p className="text-xs font-bold text-ink-muted mt-6">Tap to continue</p>
       </div>
     );
   }
 
   // ── Stage 4: Summary + Actions ──
   return (
-    <div className="flex flex-col items-center px-6 py-8 gap-5 bg-white min-h-screen pb-24 animate-stage-crossfade">
+    <div className="flex flex-col items-center px-6 py-8 gap-5 bg-paper min-h-screen pb-24 animate-stage-crossfade">
       {showShare && shareData && (
         <ShareSheet
           card={{ type: 'lesson', data: {
@@ -224,23 +224,23 @@ export default function CelebrationCascade({
 
       {/* Streak */}
       {streak > 0 && (
-        <div className="flex items-center gap-2 bg-orange-50 border border-orange-200 rounded-full px-4 py-2 animate-pop-in">
+        <div className="flex items-center gap-2 bg-hint border-2 border-star rounded-full px-4 py-2 animate-pop-in">
           <span className="text-lg" aria-hidden="true">🔥</span>
-          <span className="text-lg font-extrabold text-orange-700">{streak}</span>
-          <span className="text-xs text-orange-500 font-semibold">question streak</span>
+          <span className="text-lg font-extrabold text-ink">{streak}</span>
+          <span className="text-xs text-hint-ink font-bold">question streak</span>
         </div>
       )}
 
       {/* Wrong answers */}
       {wrongOnes.length > 0 && (
         <div className="w-full space-y-2">
-          <p className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">
+          <p className="text-caption text-ink-muted">
             {hasReviewMistakes ? 'Still needs work' : 'Review at home'}
           </p>
           {wrongOnes.map((r) => (
-            <div key={r.questionId} className="bg-red-50 border border-red-100 rounded-xl px-4 py-3">
-              <p className="text-xs text-gray-700 font-medium line-clamp-2">{r.questionText}</p>
-              <p className="text-xs text-duo-green font-extrabold mt-0.5">Correct: {r.correctAnswer}</p>
+            <div key={r.questionId} className="bg-white border-2 border-line rounded-note px-4 py-3">
+              <p className="text-xs text-ink font-semibold line-clamp-2">{r.questionText}</p>
+              <p className="text-sm text-success font-extrabold mt-0.5">Correct: {r.correctAnswer}</p>
             </div>
           ))}
         </div>
@@ -274,7 +274,7 @@ export default function CelebrationCascade({
           ) : (
             <button
               onClick={gradeUpCta.onPress}
-              className="w-full min-h-[48px] rounded-full border-2 border-amber-200 font-extrabold text-amber-600 text-sm hover:bg-amber-50 transition-colors"
+              className="ui-btn w-full text-sm"
             >
               Upgrade to unlock Grade {gradeUpCta.grade} 🔒
             </button>
@@ -298,7 +298,7 @@ export default function CelebrationCascade({
         {shareData && (
           <button
             onClick={() => setShowShare(true)}
-            className="w-full min-h-[48px] rounded-full border-2 border-gray-200 font-extrabold text-gray-500 text-sm hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+            className="ui-btn w-full text-sm"
           >
             <span aria-hidden="true">📤</span> Share with Parents
           </button>

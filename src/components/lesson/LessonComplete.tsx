@@ -58,10 +58,10 @@ export default function LessonComplete({
 
       {/* Message */}
       <div className="text-center">
-        <h2 className="text-xl font-extrabold text-gray-800 mb-1">
+        <h2 className="text-heading text-ink mb-1">
           {isPerfect ? 'Perfect Score!' : passed ? 'Great Job!' : 'Keep Practicing!'}
         </h2>
-        <p className="text-sm text-gray-500 font-semibold">
+        <p className="text-sm text-ink-muted font-semibold">
           {passed
             ? 'You can move on to the next level!'
             : 'Review the lessons and try again.'}
@@ -71,22 +71,22 @@ export default function LessonComplete({
       {/* Score display */}
       <div className="w-full max-w-xs">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-bold text-gray-600">Score</span>
+          <span className="text-sm font-bold text-ink-muted">Score</span>
           <span className="text-sm font-extrabold" style={{ color: accentColor }}>
             {score}/{total} ({pct}%)
           </span>
         </div>
-        <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
+        <div className="w-full h-3 ui-meter">
           <div
             className="h-full rounded-full transition-[width] duration-1000 ease-out"
             style={{
               width: `${animatedPct}%`,
-              backgroundColor: passed ? '#58CC02' : '#FF9600',
+              backgroundColor: passed ? '#12805c' : '#4f46e5',
             }}
           />
         </div>
         {pct < 75 && (
-          <p className="text-xs text-gray-400 font-semibold mt-1 text-center">
+          <p className="text-xs text-ink-muted font-semibold mt-1 text-center">
             75% needed to pass
           </p>
         )}
@@ -94,29 +94,29 @@ export default function LessonComplete({
 
       {/* XP breakdown */}
       {xp && xp.total > 0 && (
-        <div className="bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4 w-full max-w-xs">
-          <p className="text-sm font-extrabold text-amber-800 mb-2 text-center">
+        <div className="bg-white border-2 border-star rounded-card px-5 py-4 w-full max-w-xs">
+          <p className="text-sm font-extrabold text-ink mb-2 text-center">
             <span aria-hidden="true">⭐ </span>+{xp.total} XP earned!
           </p>
           <div className="space-y-1">
-            <div className="flex justify-between text-xs text-amber-700">
+            <div className="flex justify-between text-xs text-ink-muted">
               <span>Completion</span>
               <span className="font-bold">+{xp.base}</span>
             </div>
             {xp.scoreBonus > 0 && (
-              <div className="flex justify-between text-xs text-amber-700">
+              <div className="flex justify-between text-xs text-ink-muted">
                 <span>Score bonus</span>
                 <span className="font-bold">+{xp.scoreBonus}</span>
               </div>
             )}
             {xp.firstTimeBonus > 0 && (
-              <div className="flex justify-between text-xs text-amber-700">
+              <div className="flex justify-between text-xs text-ink-muted">
                 <span>First time!</span>
                 <span className="font-bold">+{xp.firstTimeBonus}</span>
               </div>
             )}
             {xp.perfectBonus > 0 && (
-              <div className="flex justify-between text-xs text-amber-700">
+              <div className="flex justify-between text-xs text-ink-muted">
                 <span>Perfect score!</span>
                 <span className="font-bold">+{xp.perfectBonus}</span>
               </div>
@@ -129,13 +129,13 @@ export default function LessonComplete({
       <div className="flex gap-3 w-full max-w-xs">
         <button
           onClick={onReview}
-          className="flex-1 py-3 rounded-2xl text-sm font-extrabold border-2 border-gray-200 text-gray-600 active:scale-95 transition-transform"
+          className="flex-1 py-3 rounded-control text-sm font-extrabold border-2 border-ink bg-white text-ink shadow-hard-sm active:scale-95 transition-transform"
         >
           Review Lessons
         </button>
         <button
           onClick={onBackToLevels}
-          className="flex-1 py-3 rounded-2xl text-sm font-extrabold text-white active:scale-95 transition-transform"
+          className="flex-1 py-3 rounded-control text-sm font-extrabold text-white border-2 border-ink shadow-hard-sm active:scale-95 transition-transform"
           style={{ backgroundColor: accentColor }}
         >
           Back to Levels

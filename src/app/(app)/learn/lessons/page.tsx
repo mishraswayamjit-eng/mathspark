@@ -54,26 +54,26 @@ export default function LessonsPage() {
   return (
     <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
+      <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
         <Link
           href="/chapters"
-          className="text-white/60 hover:text-white text-lg font-bold"
+          className="text-white/70 hover:text-white text-lg font-bold"
           aria-label="Back"
         >
           &larr;
         </Link>
-        <h1 className="text-white font-extrabold text-lg">Concept Lessons</h1>
+        <h1 className="text-white text-title">Concept Lessons</h1>
       </div>
 
       <div className="max-w-lg mx-auto px-4 pt-5 animate-fade-in">
         {/* Intro box */}
-        <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-2xl px-4 py-3 border border-purple-200 mb-5 flex items-start gap-3">
+        <div className="bg-white rounded-card px-4 py-3 border-2 border-line mb-5 flex items-start gap-3">
           <Sparky mood="happy" size={36} />
           <div>
-            <p className="text-sm font-bold text-purple-800">
+            <p className="text-sm font-bold text-ink">
               Learn new concepts step by step!
             </p>
-            <p className="text-xs text-purple-600 mt-0.5">
+            <p className="text-xs text-ink-muted mt-0.5">
               Each topic has 5 levels with lessons and quizzes.
             </p>
           </div>
@@ -83,7 +83,7 @@ export default function LessonsPage() {
         {loading && (
           <div className="grid grid-cols-2 gap-3 animate-pulse">
             {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100 h-44" />
+              <div key={i} className="bg-white rounded-card p-4 border-2 border-line h-44" />
             ))}
           </div>
         )}

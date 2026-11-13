@@ -39,33 +39,33 @@ export default function LessonStepper({ steps, onDone }: LessonStepperProps) {
             key={i}
             className={`h-2 rounded-full transition-all duration-300 ${
               i === current
-                ? 'w-6 bg-duo-blue'
+                ? 'w-6 bg-action'
                 : i < current
-                ? 'w-2 bg-duo-green'
-                : 'w-2 bg-gray-200'
+                ? 'w-2 bg-success'
+                : 'w-2 bg-line'
             }`}
           />
         ))}
       </div>
 
       {/* Step label */}
-      <p className="text-xs font-bold text-gray-400 text-center mb-3">
+      <p className="text-xs font-bold text-ink-muted text-center mb-3">
         Step {current + 1} of {steps.length}
       </p>
 
       {/* Step content */}
       <div key={current} className="animate-fade-in">
-        <p className="text-sm font-semibold text-gray-800 leading-relaxed mb-3">
+        <p className="text-sm font-semibold text-ink leading-relaxed mb-3">
           {step.text}
         </p>
 
         {/* Notation box */}
         {step.notation && (
-          <div className="bg-indigo-50 border border-indigo-200 rounded-xl px-4 py-3 mb-3 text-center">
+          <div className="bg-soft border-2 border-line rounded-note px-4 py-3 mb-3 text-center">
             {hasLatex(step.notation) ? (
               <KatexRenderer latex={step.notation} displayMode className="text-base" />
             ) : (
-              <p className="text-base font-bold text-indigo-800 font-mono">
+              <p className="text-base font-bold text-ink font-mono">
                 {step.notation}
               </p>
             )}
@@ -74,8 +74,8 @@ export default function LessonStepper({ steps, onDone }: LessonStepperProps) {
 
         {/* Tip callout (shown on last step if present) */}
         {step.tip && (
-          <div className="bg-yellow-50 border border-yellow-200 rounded-xl px-4 py-3 mt-3">
-            <p className="text-xs font-bold text-yellow-800">
+          <div className="bg-hint rounded-control px-4 py-3 mt-3">
+            <p className="text-[13px] font-bold text-hint-ink">
               <span aria-hidden="true">💡 </span>
               {step.tip}
             </p>
@@ -88,14 +88,14 @@ export default function LessonStepper({ steps, onDone }: LessonStepperProps) {
         {current > 0 && (
           <button
             onClick={back}
-            className="flex-1 py-3 rounded-2xl text-sm font-extrabold border-2 border-gray-200 text-gray-600 active:scale-95 transition-transform"
+            className="flex-1 py-3 rounded-control text-sm font-extrabold border-2 border-ink bg-white text-ink shadow-hard-sm active:scale-95 transition-transform"
           >
             Back
           </button>
         )}
         <button
           onClick={next}
-          className="flex-1 py-3 rounded-2xl text-sm font-extrabold text-white bg-duo-blue active:scale-95 transition-transform"
+          className="flex-1 py-3 rounded-control text-sm font-extrabold text-white bg-action border-2 border-ink shadow-hard-sm active:scale-95 transition-transform"
         >
           {isLast ? 'Continue' : 'Next'}
         </button>

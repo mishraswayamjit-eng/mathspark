@@ -42,7 +42,7 @@ export default function NudgeBubble({ nudge, onDismiss }: Props) {
       }`}
       style={{ transform: `translateX(-50%) ${gone ? 'translateY(-12px)' : ''}` }}
     >
-      <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 flex items-start gap-3">
+      <div className="bg-white rounded-card border-2 border-ink shadow-hard p-4 flex items-start gap-3">
         {/* Sparky mascot */}
         <div className="flex-shrink-0 animate-sparky-bounce">
           <Sparky mood={nudge.mood} size={52} />
@@ -50,18 +50,18 @@ export default function NudgeBubble({ nudge, onDismiss }: Props) {
 
         {/* Message */}
         <div className="flex-1 min-w-0">
-          <p className="font-extrabold text-gray-800 text-sm leading-snug">
+          <p className="font-extrabold text-ink text-sm leading-snug">
             {nudge.message}
           </p>
           {nudge.subtext && (
-            <p className="text-xs text-gray-500 font-medium mt-0.5">
+            <p className="text-xs text-ink-muted font-semibold mt-0.5">
               {nudge.subtext}
             </p>
           )}
           {nudge.actionLabel && (
             <button
               onClick={handleAction}
-              className="mt-2 bg-duo-green text-white text-xs font-extrabold rounded-full px-4 py-1.5 active:scale-95 transition-transform"
+              className="mt-2 bg-action text-white text-xs font-extrabold rounded-full border-2 border-ink px-4 py-1.5 active:scale-95 transition-transform"
               style={{ minHeight: 0 }}
             >
               {nudge.actionLabel}
@@ -72,7 +72,7 @@ export default function NudgeBubble({ nudge, onDismiss }: Props) {
         {/* Dismiss */}
         <button
           onClick={dismiss}
-          className="flex-shrink-0 text-gray-300 hover:text-gray-500 font-bold leading-none text-xl"
+          className="flex-shrink-0 text-ink-muted hover:text-ink font-bold leading-none text-xl"
           style={{ minHeight: 0 }}
           aria-label="Dismiss"
         >

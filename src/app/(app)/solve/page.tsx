@@ -56,22 +56,22 @@ export default function SolvePage() {
   return (
     <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
+      <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
         <Link
           href="/home"
-          className="text-white/60 hover:text-white text-lg font-bold"
+          className="text-white/70 hover:text-white text-lg font-bold"
           aria-label="Back"
         >
           &larr;
         </Link>
         <span className="text-lg" aria-hidden="true">🧮</span>
-        <h1 className="text-white font-extrabold text-lg">Homework Helper</h1>
+        <h1 className="text-white text-title">Homework Helper</h1>
       </div>
 
       <div className="max-w-lg mx-auto px-4 pt-5 animate-fade-in">
         <div className="flex items-center gap-3 mb-4">
           <Sparky mood="encouraging" size={48} />
-          <p className="text-sm text-gray-600 font-medium">
+          <p className="text-sm text-ink-muted font-medium">
             Type a math problem and I&apos;ll work through it step by step. I&apos;ll
             even double-check my own work — but you should always check it too!
           </p>
@@ -84,13 +84,13 @@ export default function SolvePage() {
           onChange={(e) => setProblem(e.target.value)}
           placeholder="e.g. What is 3/4 + 2/5?"
           rows={4}
-          className="w-full rounded-2xl border border-gray-200 p-4 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-duo-blue/40 resize-none"
+          className="w-full rounded-control border-2 border-line bg-white p-4 text-sm text-ink focus:outline-none focus:border-action resize-none"
         />
 
         <button
           onClick={handleSolve}
           disabled={!problem.trim() || state === 'loading'}
-          className="mt-3 w-full min-h-[48px] rounded-2xl bg-duo-green text-white font-extrabold text-sm active:scale-[0.98] transition-transform disabled:opacity-40"
+          className="mt-3 w-full min-h-[48px] rounded-control bg-action text-white border-2 border-ink shadow-hard-sm font-extrabold text-sm active:scale-[0.98] transition-transform disabled:opacity-40"
         >
           {state === 'loading' ? 'Working it out…' : 'Solve it!'}
         </button>
@@ -100,18 +100,18 @@ export default function SolvePage() {
             <div className="animate-sparky-bounce">
               <Sparky mood="thinking" size={64} />
             </div>
-            <p className="text-sm text-gray-500 font-semibold">
+            <p className="text-sm text-ink-muted font-semibold">
               Checking my work carefully…
             </p>
           </div>
         )}
 
         {state === 'error' && (
-          <div className="mt-5 bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3">
-            <p className="text-sm text-amber-800 font-medium">{errorMsg}</p>
+          <div className="mt-5 bg-hint border-2 border-hint-ink rounded-card px-4 py-3">
+            <p className="text-sm text-hint-ink font-medium">{errorMsg}</p>
             <Link
               href="/chat"
-              className="inline-block mt-2 text-sm font-bold text-duo-blue underline underline-offset-2"
+              className="inline-block mt-2 text-sm font-bold text-action underline underline-offset-2"
             >
               Ask Sparky in Chat →
             </Link>
@@ -119,14 +119,14 @@ export default function SolvePage() {
         )}
 
         {state === 'done' && answer && (
-          <div className="mt-5 bg-white border-2 border-line rounded-2xl px-4 py-4">
+          <div className="mt-5 bg-white border-2 border-line rounded-card px-4 py-4">
             <div className="flex items-center gap-2 mb-2">
               <Sparky mood="celebrating" size={28} />
-              <p className="text-xs font-extrabold text-duo-green-dark uppercase tracking-wide">
+              <p className="text-[13px] font-extrabold text-ink-muted">
                 Here&apos;s how I&apos;d solve it
               </p>
             </div>
-            <p className="text-sm text-gray-700 font-medium leading-snug whitespace-pre-wrap">
+            <p className="text-sm text-ink font-medium leading-snug whitespace-pre-wrap">
               {answer}
             </p>
           </div>

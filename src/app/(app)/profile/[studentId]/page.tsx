@@ -31,10 +31,10 @@ function StatTile({ emoji, label, value, color }: {
   emoji: string; label: string; value: string | number; color: string;
 }) {
   return (
-    <div className="bg-gray-50 rounded-2xl p-3 border border-gray-100 text-center">
+    <div className="bg-soft rounded-tile p-3 border-2 border-line text-center">
       <span className="text-2xl">{emoji}</span>
       <p className="text-xl font-extrabold mt-1" style={{ color }}>{value}</p>
-      <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mt-0.5">{label}</p>
+      <p className="text-xs font-bold text-ink-muted mt-0.5">{label}</p>
     </div>
   );
 }
@@ -72,7 +72,7 @@ export default function PublicProfilePage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-paper animate-pulse">
-        <div className="bg-duo-dark pt-10 pb-8 px-4">
+        <div className="bg-ink pt-10 pb-8 px-4">
           <div className="flex items-center gap-4">
             <div className="w-20 h-20 rounded-full bg-white/20" />
             <div className="flex-1 space-y-2">
@@ -82,7 +82,7 @@ export default function PublicProfilePage() {
           </div>
         </div>
         <div className="m-4 grid grid-cols-2 gap-3">
-          {[0,1,2,3].map((i) => <div key={i} className="h-24 bg-gray-200 rounded-2xl" />)}
+          {[0,1,2,3].map((i) => <div key={i} className="h-24 bg-gray-200 rounded-card" />)}
         </div>
       </div>
     );
@@ -90,15 +90,15 @@ export default function PublicProfilePage() {
 
   if (notFound || !profile) {
     return (
-      <div className="min-h-screen bg-white flex flex-col items-center justify-center gap-4 px-8 text-center">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 px-8 text-center">
         <p className="text-5xl">🔒</p>
-        <h2 className="font-extrabold text-gray-800 text-lg">Profile not found</h2>
-        <p className="text-gray-500 text-sm font-medium">
+        <h2 className="text-heading text-ink">Profile not found</h2>
+        <p className="text-ink-muted text-sm font-medium">
           This student has hidden their profile or it doesn&apos;t exist.
         </p>
         <button
           onClick={() => window.history.length > 1 ? router.back() : router.push('/home')}
-          className="mt-2 bg-duo-blue text-white font-extrabold rounded-2xl px-6 py-3 active:scale-95 transition-transform"
+          className="mt-2 bg-action text-white border-2 border-ink shadow-hard-sm font-extrabold rounded-control px-6 py-3 active:scale-95 transition-transform"
           style={{ minHeight: 48 }}
         >
           ← Go back
@@ -120,7 +120,7 @@ export default function PublicProfilePage() {
       <div className="absolute top-4 left-4 z-10">
         <button
           onClick={() => window.history.length > 1 ? router.back() : router.push('/home')}
-          className="bg-white/90 backdrop-blur rounded-full px-3 py-2 font-bold text-sm text-gray-600 shadow active:scale-95 transition-transform"
+          className="bg-white border-2 border-ink rounded-full px-3 py-2 font-bold text-sm text-ink active:scale-95 transition-transform"
           style={{ minHeight: 0 }}
         >
           ← Back
@@ -128,23 +128,23 @@ export default function PublicProfilePage() {
       </div>
 
       {/* ── Profile header ──────────────────────────────────────────────── */}
-      <div className="bg-duo-dark pt-16 pb-8 px-4 text-center">
+      <div className="bg-ink pt-16 pb-8 px-4 text-center">
         <div
-          className="w-24 h-24 rounded-full flex items-center justify-center text-3xl font-extrabold text-white border-4 border-white/30 shadow-xl mx-auto mb-3"
+          className="w-24 h-24 rounded-full flex items-center justify-center text-3xl font-extrabold text-white border-4 border-white mx-auto mb-3"
           style={{ backgroundColor: avatarColor }}
         >
           {initial}
         </div>
-        <h1 className="text-2xl font-extrabold text-white">{displayName}</h1>
+        <h1 className="text-heading text-white">{displayName}</h1>
         <div className="flex items-center justify-center gap-2 mt-1">
           <span className="text-lg">{tierBadge}</span>
           <span className="text-white/70 font-semibold text-sm">{tierName} League</span>
         </div>
-        <p className="text-white/60 text-xs font-medium mt-1">Member since {joined}</p>
+        <p className="text-white/70 text-xs font-medium mt-1">Member since {joined}</p>
         {isMe && (
           <Link
             href="/profile"
-            className="mt-3 inline-block bg-white/15 hover:bg-white/25 text-white text-xs font-bold rounded-full px-4 py-1.5 transition-colors"
+            className="mt-3 inline-block bg-white hover:bg-soft text-ink border-2 border-white text-xs font-bold rounded-full px-4 py-1.5 transition-colors"
           >
             ✏️ Edit your profile
           </Link>
@@ -152,29 +152,29 @@ export default function PublicProfilePage() {
       </div>
 
       {/* ── Stats grid ──────────────────────────────────────────────────── */}
-      <div className="bg-white px-4 py-5 border-b border-gray-100">
-        <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest mb-3">Stats</h2>
+      <div className="bg-white px-4 py-5 border-b-2 border-line">
+        <h2 className="text-title text-ink mb-3">Stats</h2>
         <div className="grid grid-cols-2 gap-3">
-          <StatTile emoji="💎"  label="Lifetime XP"     value={totalLifetimeXP.toLocaleString()} color="#9B59B6" />
-          <StatTile emoji="✅"  label="Questions Solved" value={totalSolved}                      color="#58CC02" />
-          <StatTile emoji="⭐"  label="Topics Mastered"  value={topicsMastered}                   color="#FFC800" />
-          <StatTile emoji="🔥"  label="Day Streak"       value={currentStreak}                    color="#FF9600" />
+          <StatTile emoji="💎"  label="Lifetime XP"     value={totalLifetimeXP.toLocaleString()} color="#1d2a4d" />
+          <StatTile emoji="✅"  label="Questions Solved" value={totalSolved}                      color="#12805c" />
+          <StatTile emoji="⭐"  label="Topics Mastered"  value={topicsMastered}                   color="#12805c" />
+          <StatTile emoji="🔥"  label="Day Streak"       value={currentStreak}                    color="#1d2a4d" />
         </div>
       </div>
 
       {/* ── Awards ──────────────────────────────────────────────────────── */}
       {awards.length > 0 && (
-        <div className="bg-white px-4 py-5 mt-2 border-b border-gray-100">
-          <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest mb-3">Recent Awards</h2>
+        <div className="bg-white px-4 py-5 mt-2 border-y-2 border-line">
+          <h2 className="text-title text-ink mb-3">Recent Awards</h2>
           <div className="space-y-2">
             {awards.map((a: WeeklyAwardData, i: number) => {
               const meta = AWARD_META[a.awardType] ?? { icon: '🏅', name: a.awardType };
               return (
-                <div key={i} className="flex items-center gap-3 bg-yellow-50 border border-yellow-100 rounded-2xl px-3 py-2.5">
+                <div key={i} className="flex items-center gap-3 bg-white border-2 border-star rounded-card px-3 py-2.5">
                   <span className="text-2xl">{meta.icon}</span>
                   <div>
-                    <p className="font-extrabold text-gray-800 text-sm">{meta.name}</p>
-                    <p className="text-xs text-gray-500 font-medium">{a.value}</p>
+                    <p className="font-extrabold text-ink text-sm">{meta.name}</p>
+                    <p className="text-xs text-ink-muted font-medium">{a.value}</p>
                   </div>
                 </div>
               );
@@ -188,7 +188,7 @@ export default function PublicProfilePage() {
         <div className="px-4 pt-6 text-center">
           <a
             href={`mailto:admin@mathspark.in?subject=Report profile ${targetId}&body=I want to report this profile for the following reason:`}
-            className="text-xs text-gray-500 font-medium underline"
+            className="text-xs text-ink-muted font-medium underline"
           >
             🚩 Report this profile
           </a>

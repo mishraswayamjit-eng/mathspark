@@ -52,7 +52,7 @@ export const LessonJourney = React.memo(function LessonJourney({
               <div className={`h-1 flex-1 rounded-full transition-colors duration-500 ${lineCls}`} />
             )}
             <div
-              className={`w-7 h-7 rounded-[9px] border-2 flex items-center justify-center text-[11px] font-extrabold flex-shrink-0 transition-colors duration-300 ${circleCls}`}
+              className={`w-7 h-7 rounded-[9px] border-2 flex items-center justify-center text-xs font-extrabold flex-shrink-0 transition-colors duration-300 ${circleCls}`}
             >
               {isDone ? (isCorrect ? '✓' : '✗') : i + 1}
             </div>
@@ -104,7 +104,7 @@ export const LessonProgressBar = React.memo(function LessonProgressBar({
 export function XpFloat({ amount }: { amount: number }) {
   return (
     <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[70] pointer-events-none">
-      <span className="animate-xp-float font-display text-2xl font-bold text-star drop-shadow-lg whitespace-nowrap">
+      <span className="animate-xp-float font-display text-2xl font-bold text-ink bg-star border-2 border-ink rounded-full px-4 py-1 whitespace-nowrap">
         +{amount} XP ⭐
       </span>
     </div>

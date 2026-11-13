@@ -29,19 +29,19 @@ export default function TopicGrid({ topics, progress }: TopicGridProps) {
           <Link
             key={topic.id}
             href={`/learn/lessons/${topic.id}`}
-            className="bg-white rounded-2xl p-4 border-2 border-line hover:shadow-md transition-[box-shadow] active:scale-[0.97] flex flex-col gap-2"
+            className="bg-white rounded-card p-4 border-2 border-line hover:border-ink transition-colors active:scale-[0.97] flex flex-col gap-2"
           >
             {/* Emoji + progress badge */}
             <div className="flex items-start justify-between">
               <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
+                className="w-12 h-12 rounded-tile flex items-center justify-center text-2xl"
                 style={{ backgroundColor: topic.color + '20' }}
               >
                 <span aria-hidden="true">{topic.emoji}</span>
               </div>
               {completed > 0 && (
                 <span
-                  className="text-[10px] font-extrabold px-2 py-0.5 rounded-full text-white"
+                  className="text-xs font-extrabold px-2 py-0.5 rounded-full text-white"
                   style={{ backgroundColor: topic.color }}
                 >
                   {completed}/{total}
@@ -50,22 +50,22 @@ export default function TopicGrid({ topics, progress }: TopicGridProps) {
             </div>
 
             {/* Topic name */}
-            <p className="text-sm font-extrabold text-gray-800 leading-snug line-clamp-2">
+            <p className="text-sm font-extrabold text-ink leading-snug line-clamp-2">
               {topic.topic}
             </p>
 
             {/* Grade range */}
-            <span className="text-[10px] font-bold text-gray-400">
+            <span className="text-xs font-bold text-ink-muted">
               Grades {topic.gradeRange[0]}–{topic.gradeRange[1]}
             </span>
 
             {/* Description */}
-            <p className="text-xs text-gray-500 leading-snug line-clamp-2">
+            <p className="text-xs text-ink-muted leading-snug line-clamp-2">
               {topic.description}
             </p>
 
             {/* Progress bar */}
-            <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden mt-auto">
+            <div className="w-full h-1.5 bg-soft rounded-full overflow-hidden mt-auto">
               <div
                 className="h-full rounded-full transition-[width] duration-500"
                 style={{

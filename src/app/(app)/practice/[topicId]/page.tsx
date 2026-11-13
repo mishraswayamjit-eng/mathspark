@@ -792,13 +792,13 @@ export default function PracticePage() {
 
   if (phase === 'error') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-white pb-8">
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-paper pb-8">
         <div className="animate-sparky-bounce">
           <Sparky mood="thinking" size={120} />
         </div>
         <div className="text-center space-y-2">
-          <h2 className="text-2xl font-extrabold text-gray-800">📭 No questions available yet</h2>
-          <p className="text-gray-500 font-medium">
+          <h2 className="text-heading text-ink">📭 No questions available yet</h2>
+          <p className="text-ink-muted font-semibold">
             This lesson doesn&apos;t have questions yet. Check back soon!
           </p>
         </div>
@@ -811,11 +811,11 @@ export default function PracticePage() {
 
   if (phase === 'loading') {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-white gap-4 px-6">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-paper gap-4 px-6">
         {fetchRetry ? (
           <>
             <Sparky mood="encouraging" size={100} />
-            <p className="text-gray-600 font-bold text-center">Oops! Let&apos;s try again 🔄</p>
+            <p className="text-ink font-bold text-center">Oops! Let&apos;s try again 🔄</p>
             <DuoButton variant="blue" onClick={() => {
               setFetchRetry(false);
               isAdvancingRef.current = false;
@@ -834,7 +834,7 @@ export default function PracticePage() {
             <div className="animate-sparky-bounce">
               <Sparky mood="thinking" size={100} />
             </div>
-            <p className="text-gray-500 font-semibold">Loading your lesson…</p>
+            <p className="text-ink-muted font-semibold">Loading your lesson…</p>
           </>
         )}
       </div>
@@ -961,26 +961,26 @@ export default function PracticePage() {
   if (phase === 'usage_limit') {
     const tierLimit = usageInfo.limit;
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-white pb-8">
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-paper pb-8">
         <div className="animate-sparky-bounce">
           <Sparky mood="encouraging" size={120} />
         </div>
         <div className="text-center space-y-3">
-          <h2 className="text-2xl font-extrabold text-gray-800">
+          <h2 className="text-heading text-ink">
             Daily practice limit reached! ⏰
           </h2>
-          <p className="text-gray-500 font-medium leading-relaxed">
+          <p className="text-ink-muted font-semibold leading-relaxed">
             You&apos;ve practiced for{' '}
-            <span className="font-extrabold text-gray-700">{formatMinutes(usageInfo.used)}</span>
+            <span className="font-extrabold text-ink">{formatMinutes(usageInfo.used)}</span>
             {!isUnlimitedPlan(tierLimit) && tierLimit > 0 && (
-              <> out of <span className="font-extrabold text-gray-700">{formatMinutes(tierLimit)}</span></>
+              <> out of <span className="font-extrabold text-ink">{formatMinutes(tierLimit)}</span></>
             )}{' '}
             today. Come back tomorrow — every day you practice, you get stronger! 💪
           </p>
           {!isUnlimitedPlan(tierLimit) && (
-            <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 text-left">
-              <p className="text-xs font-extrabold text-amber-700 uppercase tracking-wide mb-1">Want more practice time?</p>
-              <p className="text-sm text-gray-600">Upgrade your plan to unlock longer daily sessions and unlimited practice.</p>
+            <div className="bg-hint border-2 border-hint-ink/30 rounded-card px-4 py-3 text-left">
+              <p className="text-caption text-hint-ink mb-1">Want more practice time?</p>
+              <p className="text-sm font-semibold text-hint-ink">Upgrade your plan to unlock longer daily sessions and unlimited practice.</p>
             </div>
           )}
         </div>
@@ -1002,26 +1002,26 @@ export default function PracticePage() {
     const wasExhaustedAtBoot = (trialStatus?.lifetimeQuestions ?? 0) >= 10;
     const totalUsed = (trialStatus?.lifetimeQuestions ?? 0) + sessionQuestionsAnswered;
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-white pb-8">
+      <div className="flex flex-col items-center justify-center min-h-screen px-6 gap-6 bg-paper pb-8">
         <div className="animate-sparky-bounce">
           <Sparky mood="encouraging" size={120} />
         </div>
         <div className="text-center space-y-3">
-          <h2 className="text-2xl font-extrabold text-gray-800">
+          <h2 className="text-heading text-ink">
             {wasExhaustedAtBoot ? 'Come back tomorrow! ⏰' : 'Amazing start! 🎉'}
           </h2>
-          <p className="text-gray-500 font-medium leading-relaxed">
+          <p className="text-ink-muted font-semibold leading-relaxed">
             {wasExhaustedAtBoot
               ? "You've used your free daily question. Subscribe to practice anytime!"
               : `You've answered ${totalUsed} questions — your free trial is complete! Subscribe to keep your streak going.`
             }
           </p>
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-3 text-left">
-            <p className="text-xs font-extrabold text-amber-700 uppercase tracking-wide mb-2">Unlock with a subscription:</p>
-            <ul className="space-y-1.5 text-sm text-gray-600">
+          <div className="bg-hint border-2 border-hint-ink/30 rounded-card px-4 py-3 text-left">
+            <p className="text-caption text-hint-ink mb-2">Unlock with a subscription:</p>
+            <ul className="space-y-1.5 text-sm font-semibold text-hint-ink">
               {['Unlimited daily practice', 'Hints + step-by-step solutions', 'Progress tracking & badges', 'Full IPM mock tests'].map((item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <span className="text-duo-green">✅</span> {item}
+                  <span className="text-success">✅</span> {item}
                 </li>
               ))}
             </ul>
@@ -1064,7 +1064,7 @@ export default function PracticePage() {
       {showXpFloat && <XpFloat amount={isReviewing ? XP_REVIEW : XP_CORRECT} />}
 
       {/* ── Dark header ── */}
-      <div className="bg-duo-dark px-4 py-3 flex items-center gap-3 sticky top-0 z-30 flex-shrink-0">
+      <div className="bg-ink px-4 py-3 flex items-center gap-3 sticky top-0 z-30 flex-shrink-0">
         <button
           onClick={() => router.push('/practice')}
           className="text-white/70 hover:text-white font-bold text-xl min-h-[44px] min-w-[44px] flex items-center justify-center flex-shrink-0"
@@ -1087,16 +1087,16 @@ export default function PracticePage() {
 
       {/* ── Offline banner ── */}
       {!isOnline && (
-        <div className="bg-amber-50 border-b border-amber-200 px-4 py-2 text-xs font-bold text-amber-700 text-center">
+        <div className="bg-hint border-b-2 border-hint-ink/30 px-4 py-2 text-xs font-bold text-hint-ink text-center">
           📶 You&apos;re offline — practising with cached questions!
         </div>
       )}
 
       {/* ── Progress bar / Review badge ── */}
       {isReviewing ? (
-        <div className="bg-[#EEF6FF] px-4 py-2 flex items-center gap-2 border-b border-blue-100">
-          <span className="text-duo-blue text-sm font-extrabold">📚 Review mode</span>
-          <span className="text-gray-500 text-xs font-semibold">{reviewIndex + 1} / {reviewQueue.length}</span>
+        <div className="bg-soft px-4 py-2 flex items-center gap-2 border-b-2 border-line">
+          <span className="text-ink text-sm font-extrabold">📚 Review mode</span>
+          <span className="text-ink-muted text-xs font-semibold">{reviewIndex + 1} / {reviewQueue.length}</span>
         </div>
       ) : (
         <LessonProgressBar total={LESSON_SIZE} currentIdx={qIndex} results={results} />
@@ -1104,11 +1104,11 @@ export default function PracticePage() {
 
       {/* Speed drill timer bar */}
       {isSpeedMode && phase === 'answering' && (
-        <div className="h-2 bg-gray-100 relative">
+        <div className="h-2 bg-soft relative">
           <div
             className={`h-full transition-[width] duration-200 ${
-              speedRemaining > 60_000 ? 'bg-duo-green' :
-              speedRemaining > 30_000 ? 'bg-duo-orange' : 'bg-duo-red'
+              speedRemaining > 60_000 ? 'bg-action' :
+              speedRemaining > 30_000 ? 'bg-star' : 'bg-hint-ink'
             }`}
             style={{ width: `${(speedRemaining / SPEED_DRILL_MS) * 100}%` }}
           />
@@ -1121,14 +1121,14 @@ export default function PracticePage() {
         const questionsLeft = Math.max(0, 10 - lifetimeNow);
         if (trialStatus.lifetimeQuestions >= 10) {
           return (
-            <div className="bg-blue-50 border-b border-blue-200 px-4 py-2 text-xs font-bold text-blue-700 text-center flex items-center justify-center gap-2">
+            <div className="bg-soft border-b-2 border-line px-4 py-2 text-xs font-bold text-ink text-center flex items-center justify-center gap-2">
               🎁 Your free daily question — <button onClick={() => router.push('/pricing')} className="underline">Upgrade for unlimited</button>
             </div>
           );
         }
         if (questionsLeft <= 3 && questionsLeft > 0) {
           return (
-            <div className="bg-orange-50 border-b border-orange-200 px-4 py-2 text-xs font-bold text-orange-700 text-center flex items-center justify-center gap-2">
+            <div className="bg-hint border-b-2 border-hint-ink/30 px-4 py-2 text-xs font-bold text-hint-ink text-center flex items-center justify-center gap-2">
               ⚡ {questionsLeft} free question{questionsLeft > 1 ? 's' : ''} left — <button onClick={() => router.push('/pricing')} className="underline">Upgrade to continue</button>
             </div>
           );
@@ -1149,7 +1149,7 @@ export default function PracticePage() {
             ? `⚡ Speed Drill — Q${qIndex + 1} of ${LESSON_SIZE}`
             : `Question ${qIndex + 1} of ${LESSON_SIZE}`}
           {streak >= 3 && !isReviewing && (
-            <span className="text-orange-500 font-extrabold">🔥 {streak}</span>
+            <span className="text-ink font-extrabold">🔥 {streak}</span>
           )}
         </div>
 
@@ -1185,12 +1185,12 @@ export default function PracticePage() {
             className="flex flex-col items-end gap-1"
             aria-label="Ask Sparky"
           >
-            <div className="bg-white rounded-2xl shadow-xl px-3 py-2 border border-gray-100 max-w-[130px]">
-              <p className="text-xs font-bold text-gray-700 text-center leading-snug">
+            <div className="bg-white rounded-control px-3 py-2 border-2 border-ink shadow-hard-sm max-w-[130px]">
+              <p className="text-xs font-bold text-ink text-center leading-snug">
                 {lastCorrect ? 'Keep it up! 🎉' : 'Need help? 💬'}
               </p>
             </div>
-            <div className={`rounded-full p-1.5 shadow-lg ${lastCorrect ? 'bg-duo-green' : 'bg-duo-blue'}`}>
+            <div className={`rounded-full p-1.5 border-2 border-ink ${lastCorrect ? 'bg-success' : 'bg-action'}`}>
               <Sparky mood={lastCorrect ? 'celebrating' : 'encouraging'} size={32} />
             </div>
           </button>
@@ -1200,10 +1200,10 @@ export default function PracticePage() {
       {/* ── Sliding bottom panel (Brilliant-style answer sheet) ── */}
       {phase === 'result' && (
         <div
-          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] animate-slide-up overflow-y-auto rounded-t-2xl border-2 border-b-0 border-ink ${
+          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] animate-slide-up overflow-y-auto rounded-t-card border-2 border-b-0 border-ink ${
             lastCorrect
-              ? 'bg-duo-mint'
-              : 'bg-duo-blush'
+              ? 'bg-success-soft'
+              : 'bg-retry-soft'
           }`}
           style={{ maxHeight: '72vh' }}
         >
@@ -1246,10 +1246,10 @@ export default function PracticePage() {
       {/* ── Bonus "Repeat Similar" overlay ─────────────────────────────────── */}
       {bonusMode !== 'off' && (
         <div
-          className="fixed inset-0 bg-white z-[80] flex flex-col max-w-lg mx-auto animate-slide-from-right"
+          className="fixed inset-0 bg-paper z-[80] flex flex-col max-w-lg mx-auto animate-slide-from-right"
         >
           {/* Header */}
-          <div className="bg-duo-dark px-4 py-3 flex items-center gap-3 flex-shrink-0">
+          <div className="bg-ink px-4 py-3 flex items-center gap-3 flex-shrink-0">
             <button
               onClick={handleBonusGotIt}
               className="text-white/70 hover:text-white font-bold text-sm min-h-[44px] min-w-[44px] flex items-center gap-1"
@@ -1263,9 +1263,9 @@ export default function PracticePage() {
           </div>
 
           {/* Amber bonus banner */}
-          <div className="bg-amber-50 border-b border-amber-200 px-4 py-2 flex items-center gap-2 flex-shrink-0">
+          <div className="bg-hint border-b-2 border-star px-4 py-2 flex items-center gap-2 flex-shrink-0">
             <span>⭐</span>
-            <p className="text-amber-700 font-extrabold text-sm">Bonus Question — Same concept, different numbers!</p>
+            <p className="text-hint-ink font-extrabold text-sm">Bonus Question — Same concept, different numbers!</p>
           </div>
 
           {/* Searching */}
@@ -1274,7 +1274,7 @@ export default function PracticePage() {
               <div className="animate-sparky-bounce">
                 <Sparky mood="thinking" size={80} />
               </div>
-              <p className="text-gray-500 font-semibold text-center">Finding a similar question…</p>
+              <p className="text-ink-muted font-semibold text-center">Finding a similar question…</p>
             </div>
           )}
 
@@ -1282,7 +1282,7 @@ export default function PracticePage() {
           {bonusMode === 'unavailable' && (
             <div className="flex-1 flex flex-col items-center justify-center gap-4 px-6">
               <Sparky mood="encouraging" size={80} />
-              <p className="text-gray-700 font-bold text-center text-lg leading-snug">
+              <p className="text-ink font-bold text-center text-lg leading-snug">
                 You&apos;ve practiced all similar questions!<br />Let&apos;s keep going 💪
               </p>
               <DuoButton variant="green" onClick={handleBonusGotIt}>
@@ -1299,16 +1299,16 @@ export default function PracticePage() {
                 style={{ paddingBottom: bonusMode === 'result' ? '200px' : '80px' }}
               >
                 {/* Bonus label */}
-                <div className="inline-flex items-center gap-2 text-xs font-extrabold px-3 py-1.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
+                <div className="inline-flex items-center gap-2 text-xs font-extrabold px-3 py-1.5 rounded-full bg-hint text-hint-ink border-2 border-star">
                   ⭐ Bonus Question
                 </div>
 
                 {/* Question card — amber border */}
                 <div className="relative">
-                  <div className="absolute -top-2 -left-1 z-10 bg-amber-400 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow-sm">
+                  <div className="absolute -top-2 -left-1 z-10 bg-star text-ink text-xs font-extrabold px-2 py-0.5 rounded-full border-2 border-ink">
                     ⭐ Bonus
                   </div>
-                  <div className="border-2 border-amber-300 rounded-2xl overflow-hidden">
+                  <div className="border-2 border-star rounded-card overflow-hidden">
                     <QuestionCard
                       question={bonusQuestion}
                       answered={bonusMode === 'result'}
@@ -1322,9 +1322,9 @@ export default function PracticePage() {
                 {bonusMode === 'result' && !bonusCorrect && (
                   <>
                     {bonusMisconText && (
-                      <div className="bg-blue-50 border border-blue-200 rounded-2xl px-4 py-3">
-                        <p className="text-xs font-extrabold text-blue-700 uppercase tracking-wide mb-1">💡 Common mistake</p>
-                        <p className="text-sm text-gray-700 font-medium leading-snug">{bonusMisconText}</p>
+                      <div className="bg-soft border-2 border-line rounded-card px-4 py-3">
+                        <p className="text-caption text-ink-muted mb-1">💡 Common mistake</p>
+                        <p className="text-sm text-ink font-semibold leading-snug">{bonusMisconText}</p>
                       </div>
                     )}
                     <HintSystem
@@ -1344,34 +1344,34 @@ export default function PracticePage() {
                 <div
                   className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[90] animate-slide-up ${
                     bonusCorrect
-                      ? 'bg-duo-green'
-                      : 'bg-[#FFF0F0] border-t-2 border-duo-red'
+                      ? 'bg-success-soft border-t-2 border-ink'
+                      : 'bg-retry-soft border-t-2 border-ink'
                   }`}
                   style={{ minHeight: '160px' }}
                 >
                   <div className="px-4 pt-4 pb-6 space-y-3">
-                    <p className={`font-extrabold text-base ${bonusCorrect ? 'text-white' : 'text-duo-red'}`}>
+                    <p className={`font-extrabold text-base ${bonusCorrect ? 'text-success' : 'text-retry'}`}>
                       {bonusFeedback}
                     </p>
                     {bonusCorrect && (
-                      <p className="text-white/80 text-xs font-semibold">
+                      <p className="text-ink text-xs font-bold">
                         ✅ {bonusQuestion.correctAnswer}: {bonusCorrectText}
                       </p>
                     )}
                     {!bonusCorrect && canOneMore && (
                       <button
                         onClick={handleBonusOneMore}
-                        className="w-full min-h-[48px] bg-white/30 border border-white/40 text-duo-red font-extrabold text-sm rounded-2xl flex items-center justify-center gap-2"
+                        className="w-full min-h-[48px] bg-white border-2 border-ink shadow-hard-sm text-ink font-extrabold text-sm rounded-control flex items-center justify-center gap-2"
                       >
                         🔄 One More?
                       </button>
                     )}
                     <button
                       onClick={handleBonusGotIt}
-                      className={`w-full min-h-[48px] rounded-2xl font-extrabold text-sm flex items-center justify-center gap-2 ${
+                      className={`w-full min-h-[48px] rounded-control border-2 border-ink shadow-hard-sm font-extrabold text-sm flex items-center justify-center gap-2 ${
                         bonusCorrect
-                          ? 'bg-white/20 text-white border border-white/40'
-                          : 'bg-white text-gray-700'
+                          ? 'bg-success text-white'
+                          : 'bg-action text-white'
                       }`}
                     >
                       Back to Lesson →

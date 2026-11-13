@@ -98,15 +98,15 @@ const StatsBar = React.memo(function StatsBar({
   const leagueEmoji = LEAGUE_EMOJI[leagueTier] ?? '🥉';
   return (
     <div className="flex items-center gap-2">
-      <div className="flex items-center gap-1.5 bg-white rounded-xl px-3 py-1.5 border-2 border-line">
+      <div className="flex items-center gap-1.5 bg-white rounded-tile px-3 py-1.5 border-2 border-line">
         <span className="text-sm" aria-hidden="true">🔥</span>
         <span className="text-sm font-extrabold text-ink">{streak > 0 ? streak : '—'}</span>
       </div>
-      <div className="flex items-center gap-1.5 bg-white rounded-xl px-3 py-1.5 border-2 border-line">
+      <div className="flex items-center gap-1.5 bg-white rounded-tile px-3 py-1.5 border-2 border-line">
         <span className="text-sm" aria-hidden="true">⭐</span>
         <span className="text-sm font-extrabold text-ink">{todayXP} XP</span>
       </div>
-      <Link href="/leaderboard" className="flex items-center gap-1.5 bg-white rounded-xl px-3 py-1.5 border-2 border-line">
+      <Link href="/leaderboard" className="flex items-center gap-1.5 bg-white rounded-tile px-3 py-1.5 border-2 border-line">
         <span className="text-sm" aria-hidden="true">{leagueEmoji}</span>
         <span className="text-sm font-extrabold text-ink">
           {leagueName}{leagueRank ? ` #${leagueRank}` : ''}
@@ -132,13 +132,13 @@ const HeroCard = React.memo(function HeroCard({
 
   if (milestone && !celebrated) {
     return (
-      <div className="ui-card border-l-[10px] border-l-amber-400 animate-card-pop">
+      <div className="ui-card border-l-[10px] border-l-star animate-card-pop">
         <div className="flex items-center gap-3">
           <div className="shrink-0 animate-sparky-dance">
             <Sparky mood="celebrating" size={52} />
           </div>
           <div className="flex-1 min-w-0">
-            <p className="font-display text-xl font-semibold text-gray-800">
+            <p className="font-display text-xl font-semibold text-ink">
               {milestone.emoji} {milestone.title}
             </p>
             <p className="text-sm text-gray-600 font-medium">
@@ -151,7 +151,7 @@ const HeroCard = React.memo(function HeroCard({
               localStorage.setItem(todayKey, 'true');
               onDismissMilestone();
             }}
-            className="text-gray-300 hover:text-gray-500 text-lg leading-none px-1 shrink-0"
+            className="text-ink-muted hover:text-ink text-lg leading-none px-1 shrink-0"
           >
             ×
           </button>
@@ -187,7 +187,7 @@ const HeroCard = React.memo(function HeroCard({
   if (streak > 0) {
     return (
       <Link href="/practice/daily"
-        className="block ui-card border-l-[10px] border-l-orange-400"
+        className="block ui-card border-l-[10px] border-l-star"
       >
         <div className="flex items-center gap-3">
           <span className="text-3xl" aria-hidden="true">🎯</span>
@@ -196,9 +196,9 @@ const HeroCard = React.memo(function HeroCard({
             <p className="text-xs text-gray-500 font-medium">5 questions · Build your streak!</p>
           </div>
           {streak > 0 && (
-            <div className="flex items-center gap-1 bg-orange-100 rounded-full px-2.5 py-1 border border-orange-200">
+            <div className="flex items-center gap-1 bg-soft rounded-full px-2.5 py-1 border-2 border-line">
               <span className="text-sm" aria-hidden="true">🔥</span>
-              <span className="text-xs font-extrabold text-orange-600">{streak}</span>
+              <span className="text-xs font-extrabold text-ink">{streak}</span>
             </div>
           )}
           <span className="text-action font-extrabold text-sm shrink-0">Play →</span>
@@ -256,11 +256,11 @@ const PlanItem = React.memo(function PlanItem({
   const typeIcon = item.type === 'mock' ? '📝' : item.type === 'explore' ? '🔍' : item.type === 'flashcards' ? '🧠' : '⚡';
   return (
     <Link href={item.targetUrl} onClick={() => onToggle(item.id)}
-      className={`flex items-center gap-3 py-3 border-b border-gray-100 last:border-b-0 transition-opacity ${item.done ? 'opacity-40' : ''}`}
+      className={`flex items-center gap-3 py-3 border-b-2 border-line last:border-b-0 transition-opacity ${item.done ? 'opacity-40' : ''}`}
     >
       <div
         className={`w-6 h-6 rounded-full border-2 shrink-0 flex items-center justify-center text-xs transition-colors ${
-          item.done ? 'bg-duo-green border-duo-green text-white' : 'border-gray-300'
+          item.done ? 'bg-success border-success text-white' : 'border-gray-300'
         }`}
       >
         {item.done && '✓'}
@@ -272,7 +272,7 @@ const PlanItem = React.memo(function PlanItem({
         </p>
         <p className="text-xs text-gray-500 font-medium truncate">{reframePlanReason(item.reason)}</p>
       </div>
-      <span className="text-[10px] font-extrabold text-gray-500 bg-gray-100 rounded-full px-2 py-0.5 shrink-0">
+      <span className="text-xs font-extrabold text-ink-muted bg-soft rounded-full px-2 py-0.5 shrink-0">
         {item.estimatedMins}min
       </span>
     </Link>
@@ -281,7 +281,7 @@ const PlanItem = React.memo(function PlanItem({
 
 const TopicBar = React.memo(function TopicBar({ entry }: { entry: TopicMasteryEntry }) {
   const pct = Math.round(entry.mastery * 100);
-  const barColor = pct >= 70 ? '#12805c' : pct >= 40 ? '#FF9600' : pct > 0 ? '#c62f3d' : '#d3deee';
+  const barColor = pct >= 70 ? '#12805c' : pct >= 40 ? '#f5a400' : pct > 0 ? '#c62f3d' : '#d3deee';
   return (
     <div className="flex items-center gap-3 py-1.5">
       <span className="text-base shrink-0 w-6 text-center" aria-hidden="true">{entry.emoji}</span>
@@ -441,25 +441,25 @@ export default function HomePage() {
     }
 
     const fixed = [
-      { emoji: '🃏', label: 'Flashcards',     sub: flashcardSub, href: '/flashcards',    bg: 'bg-purple-50', accent: '#9B59B6' },
-      { emoji: '⚡', label: 'Quick Practice',  sub: '5 min',      href: topPriorityUrl,   bg: 'bg-blue-50',   accent: '#1CB0F6' },
+      { emoji: '🃏', label: 'Flashcards',     sub: flashcardSub, href: '/flashcards',    bg: 'bg-white', accent: '#9B59B6' },
+      { emoji: '⚡', label: 'Quick Practice',  sub: '5 min',      href: topPriorityUrl,   bg: 'bg-white',   accent: '#4f46e5' },
     ];
 
     // Candidate pool for slots 3-4
     const candidates: Array<{ emoji: string; label: string; sub: string; href: string; bg: string; accent: string }> = [];
 
     if (data.examReadiness?.daysUntilExam != null && data.examReadiness.daysUntilExam <= 60) {
-      candidates.push({ emoji: '📝', label: 'Exam Papers', sub: 'Practice exams', href: '/practice/papers', bg: 'bg-red-50', accent: '#FF4B4B' });
+      candidates.push({ emoji: '📝', label: 'Exam Papers', sub: 'Practice exams', href: '/practice/papers', bg: 'bg-white', accent: '#c62f3d' });
     }
     if (data.topicsExploredCount < data.totalTopics / 2) {
-      candidates.push({ emoji: '🗺️', label: 'Concept Map', sub: 'Explore topics', href: '/learn/concept-map', bg: 'bg-violet-50', accent: '#9B59B6' });
+      candidates.push({ emoji: '🗺️', label: 'Concept Map', sub: 'Explore topics', href: '/learn/concept-map', bg: 'bg-white', accent: '#9B59B6' });
     }
     candidates.push(
-      { emoji: '📖', label: 'Concept Lessons', sub: 'Step-by-step', href: '/learn/lessons', bg: 'bg-purple-50', accent: '#8B5CF6' },
-      { emoji: '🎯', label: 'Skill Drills', sub: 'Level up', href: '/practice/skill-drill', bg: 'bg-yellow-50', accent: '#FF9600' },
-      { emoji: '💡', label: 'Sparky Explains', sub: 'Step-by-step', href: '/learn/examples', bg: 'bg-indigo-50', accent: '#6366F1' },
-      { emoji: '🧠', label: 'Strategy Bank', sub: 'Exam tips', href: '/learn/strategies', bg: 'bg-amber-50', accent: '#FF9600' },
-      { emoji: '🚨', label: 'Mistake Patterns', sub: 'Common traps', href: '/learn/mistakes', bg: 'bg-red-50', accent: '#FF4B4B' },
+      { emoji: '📖', label: 'Concept Lessons', sub: 'Step-by-step', href: '/learn/lessons', bg: 'bg-white', accent: '#8B5CF6' },
+      { emoji: '🎯', label: 'Skill Drills', sub: 'Level up', href: '/practice/skill-drill', bg: 'bg-white', accent: '#f5a400' },
+      { emoji: '💡', label: 'Sparky Explains', sub: 'Step-by-step', href: '/learn/examples', bg: 'bg-white', accent: '#6366F1' },
+      { emoji: '🧠', label: 'Strategy Bank', sub: 'Exam tips', href: '/learn/strategies', bg: 'bg-white', accent: '#f5a400' },
+      { emoji: '🚨', label: 'Mistake Patterns', sub: 'Common traps', href: '/learn/mistakes', bg: 'bg-white', accent: '#c62f3d' },
     );
 
     return [...fixed, ...candidates.slice(0, 2)];
@@ -488,13 +488,13 @@ export default function HomePage() {
   if (!loading && (fetchError || !data)) {
     return (
       <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
-        <p className="text-gray-800 font-extrabold text-lg">Something went wrong</p>
+        <p className="text-ink font-extrabold text-lg">Something went wrong</p>
         <p className="text-gray-500 text-sm">Could not load your dashboard. Check your connection.</p>
         <div className="flex items-center gap-3">
-          <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
+          <button onClick={() => window.location.reload()} className="bg-action text-white font-extrabold px-6 py-2.5 rounded-control border-2 border-ink shadow-hard-sm text-sm active:scale-95 transition-transform">
             Retry
           </button>
-          <Link href="/student/login" className="text-duo-blue font-extrabold text-sm px-4 py-2.5">
+          <Link href="/student/login" className="text-action font-extrabold text-sm px-4 py-2.5">
             Log in again
           </Link>
         </div>
@@ -506,7 +506,7 @@ export default function HomePage() {
     return (
       <div className="min-h-screen bg-paper pb-24">
         {/* Header */}
-        <div className="bg-duo-dark px-4 py-3 flex items-center justify-between">
+        <div className="bg-ink px-4 py-3 flex items-center justify-between">
           <div className="h-4 bg-white/20 rounded w-20 animate-pulse" />
           <div className="h-7 bg-white/20 rounded-full w-16 animate-pulse" />
           <div className="h-8 bg-white/20 rounded-full w-14 animate-pulse" />
@@ -523,12 +523,12 @@ export default function HomePage() {
             </div>
           </div>
           {/* Hero card */}
-          <div className="bg-white rounded-2xl p-4 border border-gray-100 h-20 animate-pulse" />
+          <div className="bg-white rounded-card p-4 border-2 border-line h-20 animate-pulse" />
           {/* Plan card */}
-          <div className="bg-white rounded-2xl p-4 border border-gray-100 animate-pulse">
+          <div className="bg-white rounded-card p-4 border-2 border-line animate-pulse">
             <div className="h-3.5 bg-gray-200 rounded w-24 mb-4" />
             {[0, 1, 2].map((i) => (
-              <div key={i} className="flex items-center gap-3 py-3 border-b border-gray-100 last:border-0">
+              <div key={i} className="flex items-center gap-3 py-3 border-b-2 border-line last:border-0">
                 <div className="w-6 h-6 rounded-full bg-gray-200 shrink-0" />
                 <div className="w-6 h-6 rounded bg-gray-200 shrink-0" />
                 <div className="flex-1 space-y-1">
@@ -542,11 +542,11 @@ export default function HomePage() {
           {/* 2×2 grid */}
           <div className="grid grid-cols-2 gap-2 animate-pulse">
             {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-2xl p-3 h-20 border border-gray-100" />
+              <div key={i} className="bg-white rounded-card p-3 h-20 border-2 border-line" />
             ))}
           </div>
           {/* Topics card */}
-          <div className="bg-white rounded-2xl p-4 border border-gray-100 animate-pulse">
+          <div className="bg-white rounded-card p-4 border-2 border-line animate-pulse">
             <div className="h-3.5 bg-gray-200 rounded w-20 mb-4" />
             {[0, 1, 2].map((i) => (
               <div key={i} className="flex items-center gap-3 py-1.5">
@@ -567,11 +567,11 @@ export default function HomePage() {
   const surfaceNarration = data.surfacePlan?.narration?.trim() || null;
 
   const gradeColors: Record<number, string> = {
-    2: '#58CC02', 3: '#58CC02', 4: '#1CB0F6',
-    5: '#FF9600', 6: '#FF9600', 7: '#9B59B6',
-    8: '#9B59B6', 9: '#FF4B4B',
+    2: '#ffffff', 3: '#ffffff', 4: '#ffffff',
+    5: '#ffffff', 6: '#ffffff', 7: '#ffffff',
+    8: '#ffffff', 9: '#ffffff',
   };
-  const gradeColor = gradeColors[student.grade] ?? '#1CB0F6';
+  const gradeColor = gradeColors[student.grade] ?? '#ffffff';
 
   const hour = new Date().getHours();
   const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
@@ -580,10 +580,10 @@ export default function HomePage() {
     <div className="min-h-screen bg-paper pb-24 animate-fade-in">
 
       {/* ── STICKY HEADER ─────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-40 bg-duo-dark px-4 py-3 flex items-center justify-between shadow-md">
-        <span className="text-white font-display font-semibold text-lg">MathSpark</span>
+      <div className="sticky top-0 z-40 bg-ink px-4 py-3 flex items-center justify-between">
+        <span className="text-white font-display text-title">MathSpark</span>
         <div
-          className="text-xs font-extrabold px-3 py-1.5 rounded-full text-white"
+          className="text-xs font-extrabold px-3 py-1.5 rounded-full text-ink"
           style={{ backgroundColor: gradeColor }}
         >
           Grade {student.grade}
@@ -596,7 +596,7 @@ export default function HomePage() {
             {student.name[0]?.toUpperCase() ?? '?'}
           </div>
           {streak > 0 && (
-            <span className="text-orange-400 text-sm font-extrabold"><span aria-hidden="true">🔥</span>{streak}</span>
+            <span className="text-star text-sm font-extrabold"><span aria-hidden="true">🔥</span>{streak}</span>
           )}
         </div>
       </div>
@@ -605,10 +605,10 @@ export default function HomePage() {
 
         {/* ── § 1: GREETING + STATS BAR ────────────────────────────────── */}
         <div className="ui-card ui-card-pop">
-          <h1 className="text-[26px] font-semibold text-gray-800 leading-tight">
+          <h1 className="text-[26px] font-semibold text-ink leading-tight">
             {greeting}, {student.name}! <span aria-hidden="true">🌟</span>
           </h1>
-          <p className="text-gray-500 text-[15px] font-semibold mt-1">
+          <p className="text-ink-muted text-[15px] font-semibold mt-1">
             {surfaceNarration
               ?? `${todayCorrect > 0 ? `${todayCorrect} correct today · ` : ''}Ready to practice?`}
           </p>
@@ -625,12 +625,12 @@ export default function HomePage() {
 
         {/* ── TRIAL BANNER (if active) ─────────────────────────────────── */}
         {student.trialActive && student.trialDaysLeft !== null && (
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl px-4 py-2.5 flex items-center justify-between">
+          <div className="bg-hint border-2 border-hint-ink rounded-card px-4 py-2.5 flex items-center justify-between">
             <div>
-              <p className="text-amber-800 font-extrabold text-sm"><span aria-hidden="true">🎉 </span>Pro Trial Active</p>
-              <p className="text-amber-600 text-xs font-medium">{student.trialDaysLeft} days left</p>
+              <p className="text-hint-ink font-extrabold text-sm"><span aria-hidden="true">🎉 </span>Pro Trial Active</p>
+              <p className="text-hint-ink text-xs font-medium">{student.trialDaysLeft} days left</p>
             </div>
-            <Link href="/pricing" className="text-xs font-extrabold text-duo-orange bg-amber-100 rounded-full px-3 py-1.5">
+            <Link href="/pricing" className="text-xs font-extrabold text-ink bg-white border-2 border-ink rounded-full px-3 py-1.5">
               Upgrade →
             </Link>
           </div>
@@ -645,9 +645,9 @@ export default function HomePage() {
         />
 
         {/* ── § 3: TODAY'S PLAN (max 3) ────────────────────────────────── */}
-        <div className="bg-white rounded-2xl p-4 border-2 border-line">
+        <div className="bg-white rounded-card p-4 border-2 border-line">
           <div className="flex items-center justify-between mb-1">
-            <h2 className="font-semibold text-gray-800 text-lg">Today&apos;s Plan</h2>
+            <h2 className="text-title text-ink">Today&apos;s Plan</h2>
             <span className="text-xs font-bold text-gray-500">
               {planDoneCount}/{planWithDone.length} done
             </span>
@@ -658,12 +658,12 @@ export default function HomePage() {
               <div className="animate-sparky-dance">
                 <Sparky mood="celebrating" size={60} />
               </div>
-              <p className="text-duo-green font-extrabold text-sm"><span aria-hidden="true">🌟 </span>All done today!</p>
+              <p className="text-success font-extrabold text-[15px]"><span aria-hidden="true">🌟 </span>All done today!</p>
             </div>
           ) : planWithDone.length === 0 ? (
             <div className="py-4 text-center">
               <p className="text-gray-500 text-sm font-medium">Start practicing to build your plan!</p>
-              <Link href="/chapters" className="text-duo-blue font-extrabold text-sm mt-1 block">
+              <Link href="/chapters" className="text-action font-extrabold text-sm mt-1 block">
                 Go to Learn →
               </Link>
             </div>
@@ -680,26 +680,26 @@ export default function HomePage() {
         <div className="grid grid-cols-2 gap-2">
           {quickAccessTiles.map((action) => (
             <Link key={action.label} href={action.href}
-              className={`${action.bg} rounded-2xl p-3 flex flex-col items-center gap-1 border-2 border-line active:scale-95 transition-transform`}
+              className={`${action.bg} rounded-card p-3 flex flex-col items-center gap-1 border-2 border-line active:scale-95 transition-transform`}
             >
               <span className="text-2xl" aria-hidden="true">{action.emoji}</span>
-              <p className="text-xs font-extrabold text-gray-700 text-center leading-tight">{action.label}</p>
-              <p className="text-[10px] text-gray-500 font-semibold">{action.sub}</p>
+              <p className="text-[13px] font-extrabold text-ink text-center leading-tight">{action.label}</p>
+              <p className="text-xs text-ink-muted font-semibold">{action.sub}</p>
             </Link>
           ))}
         </div>
 
         {/* ── § 5: YOUR TOPICS (3 bars + summary) ──────────────────────── */}
-        <div className="bg-white rounded-2xl p-4 border-2 border-line">
+        <div className="bg-white rounded-card p-4 border-2 border-line">
           <div className="flex items-center justify-between mb-3">
-            <h2 className="font-semibold text-gray-800 text-lg">Your Topics</h2>
-            <Link href="/chapters" className="text-xs font-extrabold text-duo-blue">See all →</Link>
+            <h2 className="text-title text-ink">Your Topics</h2>
+            <Link href="/chapters" className="text-xs font-extrabold text-action">See all →</Link>
           </div>
 
           {displayTopics.length === 0 ? (
             <div className="py-3 text-center">
               <p className="text-gray-500 text-sm font-medium">No practice yet. Start learning!</p>
-              <Link href="/chapters" className="text-duo-blue font-extrabold text-sm mt-1 block">
+              <Link href="/chapters" className="text-action font-extrabold text-sm mt-1 block">
                 Browse Topics →
               </Link>
             </div>
@@ -718,15 +718,15 @@ export default function HomePage() {
 
         {/* ── § 6: RECENT ACTIVITY (3 items) ───────────────────────────── */}
         {recentActivity.length > 0 && (
-          <div className="bg-white rounded-2xl p-4 border-2 border-line">
+          <div className="bg-white rounded-card p-4 border-2 border-line">
             <div className="flex items-center justify-between mb-3">
-              <h2 className="font-semibold text-gray-800 text-lg">Recent Activity</h2>
-              <Link href="/chapters" className="text-xs font-extrabold text-duo-blue">View all →</Link>
+              <h2 className="text-title text-ink">Recent Activity</h2>
+              <Link href="/chapters" className="text-xs font-extrabold text-action">View all →</Link>
             </div>
             <div className="space-y-2.5">
               {recentActivity.slice(0, 3).map((act, i) => (
                 <div key={i} className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center text-sm shrink-0" aria-hidden="true">
+                  <div className="w-8 h-8 rounded-tile bg-soft flex items-center justify-center text-sm shrink-0" aria-hidden="true">
                     📚
                   </div>
                   <div className="flex-1 min-w-0">
@@ -735,10 +735,10 @@ export default function HomePage() {
                   </div>
                   <div className="text-right">
                     <p className="text-sm font-extrabold"
-                      style={{ color: act.pct >= 70 ? '#12805c' : act.pct >= 40 ? '#cc7800' : '#c62f3d' }}>
+                      style={{ color: act.pct >= 70 ? '#12805c' : act.pct >= 40 ? '#5a4300' : '#c62f3d' }}>
                       {act.pct}%
                     </p>
-                    <p className="text-[10px] text-gray-300 font-medium">{act.timeAgo}</p>
+                    <p className="text-xs text-ink-muted font-medium">{act.timeAgo}</p>
                   </div>
                 </div>
               ))}

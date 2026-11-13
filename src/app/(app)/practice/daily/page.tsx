@@ -237,9 +237,9 @@ export default function DailyChallengePage() {
   // ── Loading / Error states ─────────────────────────────────────────────────
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center px-6 gap-4">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 gap-4">
         <Sparky mood="thinking" size={64} />
-        <p className="text-sm font-bold text-gray-500 animate-pulse">
+        <p className="text-sm font-bold text-ink-muted animate-pulse">
           Loading today&apos;s challenge...
         </p>
       </div>
@@ -248,11 +248,11 @@ export default function DailyChallengePage() {
 
   if (error || (!challenge && dataLoaded && phase === 'quiz')) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center px-6 gap-4">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 gap-4">
         <Sparky mood="thinking" size={64} />
-        <p className="text-sm text-red-500 font-bold">{error || 'Something went wrong.'}</p>
-        <button onClick={() => window.location.reload()} className="bg-duo-blue text-white font-extrabold rounded-2xl px-6 py-2.5 text-sm active:scale-95 transition-transform">Retry</button>
-        <Link href="/home" className="text-sm text-gray-500 font-semibold">Go Home</Link>
+        <p className="text-sm text-ink font-bold">{error || 'Something went wrong.'}</p>
+        <button onClick={() => window.location.reload()} className="ui-btn ui-btn-primary px-6 text-sm">Retry</button>
+        <Link href="/home" className="text-sm text-ink-muted font-bold">Go Home</Link>
       </div>
     );
   }
@@ -263,39 +263,39 @@ export default function DailyChallengePage() {
       <div className="min-h-screen flex flex-col items-center px-6 py-8 gap-6 max-w-lg mx-auto">
         <div className="text-center space-y-2">
           <div className="text-5xl">✅</div>
-          <h1 className="text-xl font-extrabold text-gray-800">
+          <h1 className="text-heading text-ink">
             Today&apos;s Challenge Complete!
           </h1>
-          <p className="text-sm text-gray-500">
-            You scored <span className="font-extrabold text-duo-green">{prevResult.score}/{prevResult.total}</span>
+          <p className="text-sm font-bold text-ink-muted">
+            You scored <span className="font-extrabold text-success">{prevResult.score}/{prevResult.total}</span>
           </p>
         </div>
 
         {streak && <StreakCounter streak={streak} />}
 
-        <div className="bg-purple-50 rounded-2xl px-4 py-3 flex items-start gap-3 border border-purple-200">
+        <div className="bg-white rounded-card px-4 py-3 flex items-start gap-3 border-2 border-line">
           <Sparky mood="happy" size={40} />
-          <p className="text-sm font-semibold text-purple-800 pt-1">
+          <p className="text-sm font-bold text-ink pt-1">
             Come back tomorrow for a fresh challenge! 🌟
           </p>
         </div>
 
         {monthTheme && (
-          <div className="bg-blue-50 rounded-full px-4 py-1.5 border border-blue-200">
-            <span className="text-xs font-bold text-blue-600">{monthTheme}</span>
+          <div className="bg-soft rounded-full px-4 py-1.5 border-2 border-line">
+            <span className="text-xs font-extrabold text-ink">{monthTheme}</span>
           </div>
         )}
 
         <div className="flex flex-col gap-3 w-full mt-2">
           <Link
             href="/home"
-            className="w-full bg-duo-green hover:bg-duo-green-dark text-white font-extrabold py-3.5 rounded-2xl text-center transition-colors"
+            className="ui-btn ui-btn-primary w-full text-center"
           >
             Back to Home
           </Link>
           <Link
             href="/practice"
-            className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold py-3 rounded-2xl text-center transition-colors"
+            className="ui-btn w-full text-center"
           >
             Practice More →
           </Link>
@@ -322,25 +322,25 @@ export default function DailyChallengePage() {
 
         {/* Score */}
         <div className="text-center space-y-2">
-          <div className="text-6xl font-extrabold" style={{ color: score >= 3 ? '#58CC02' : '#FF9600' }}>
+          <div className="text-6xl font-extrabold" style={{ color: score >= 3 ? '#12805c' : '#1d2a4d' }}>
             {score}/{total}
           </div>
-          <p className="text-sm font-bold text-gray-500">
+          <p className="text-sm font-bold text-ink-muted">
             {score === total ? 'Perfect Score!' : `${score} correct`}
           </p>
         </div>
 
         {/* XP tally */}
-        <div className="bg-[#FFF9E6] border-2 border-duo-gold rounded-2xl px-8 py-3 text-center animate-pop-in">
-          <p className="text-xs text-amber-700 font-extrabold uppercase tracking-wide">XP earned</p>
-          <p className="text-3xl font-extrabold text-duo-dark">+{displayXp} <span aria-hidden="true">⭐</span></p>
+        <div className="bg-hint border-2 border-star rounded-card px-8 py-3 text-center animate-pop-in">
+          <p className="text-caption text-hint-ink">XP earned</p>
+          <p className="text-3xl font-extrabold text-ink">+{displayXp} <span aria-hidden="true">⭐</span></p>
         </div>
 
         {/* Milestone */}
         {newMilestone && (
-          <div className="bg-gradient-to-r from-yellow-100 to-orange-100 rounded-2xl px-5 py-3 border-2 border-yellow-300 text-center animate-pop-in">
-            <p className="text-lg font-extrabold text-orange-700">{newMilestone}</p>
-            <p className="text-xs font-bold text-orange-500 mt-0.5">New Milestone Unlocked!</p>
+          <div className="bg-star rounded-card px-5 py-3 border-2 border-ink text-center animate-pop-in">
+            <p className="text-lg font-extrabold text-ink">{newMilestone}</p>
+            <p className="text-xs font-extrabold text-ink mt-0.5">New Milestone Unlocked!</p>
           </div>
         )}
 
@@ -348,16 +348,16 @@ export default function DailyChallengePage() {
         {streak && <StreakCounter streak={streak} />}
 
         {/* Sparky message */}
-        <div className="bg-purple-50 rounded-2xl px-4 py-3 flex items-start gap-3 border border-purple-200 w-full">
+        <div className="bg-white rounded-card px-4 py-3 flex items-start gap-3 border-2 border-line w-full">
           <Sparky mood={emotion === 'celebrating' ? 'celebrating' : emotion === 'happy' ? 'happy' : 'encouraging'} size={40} />
-          <p className="text-sm font-semibold text-purple-800 pt-1">{sparkyText}</p>
+          <p className="text-sm font-bold text-ink pt-1">{sparkyText}</p>
         </div>
 
         {/* Fun fact */}
         {challenge?.funFact && (
-          <div className="bg-blue-50 rounded-2xl px-4 py-3 border border-blue-200 w-full">
-            <p className="text-xs font-bold text-blue-500 mb-1"><span aria-hidden="true">💡</span> Fun Fact</p>
-            <p className="text-sm text-blue-800">{challenge.funFact}</p>
+          <div className="bg-soft rounded-card px-4 py-3 border-2 border-line w-full">
+            <p className="text-xs font-extrabold text-ink-muted mb-1"><span aria-hidden="true">💡</span> Fun Fact</p>
+            <p className="text-sm font-semibold text-ink">{challenge.funFact}</p>
           </div>
         )}
 
@@ -366,8 +366,8 @@ export default function DailyChallengePage() {
           {results.map((correct, i) => (
             <div
               key={i}
-              className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs ${
-                correct ? 'bg-duo-green' : 'bg-duo-red'
+              className={`w-8 h-8 rounded-full flex items-center justify-center border-2 font-extrabold text-base ${
+                correct ? 'bg-success-soft border-success text-success' : 'bg-retry-soft border-retry text-retry'
               }`}
             >
               {correct ? '✓' : '✗'}
@@ -379,7 +379,7 @@ export default function DailyChallengePage() {
         <div className="flex flex-col gap-3 w-full mt-2">
           <Link
             href="/home"
-            className="w-full bg-duo-green hover:bg-duo-green-dark text-white font-extrabold py-3.5 rounded-2xl text-center transition-colors"
+            className="ui-btn ui-btn-primary w-full text-center"
           >
             Back to Home
           </Link>
@@ -391,12 +391,12 @@ export default function DailyChallengePage() {
   // ── Quiz in progress ──────────────────────────────────────────────────────
   if (!challenge) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center px-6 gap-4">
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 gap-4">
         <Sparky mood="thinking" size={64} />
-        <p className="text-sm text-gray-500 font-bold">
+        <p className="text-sm text-ink-muted font-bold">
           No challenge found for Grade {grade} today.
         </p>
-        <Link href="/home" className="text-sm text-blue-500 underline">Go Home</Link>
+        <Link href="/home" className="text-sm font-bold text-action underline">Go Home</Link>
       </div>
     );
   }
@@ -415,28 +415,28 @@ export default function DailyChallengePage() {
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <span className="text-xl" aria-hidden="true">🎯</span>
-          <h1 className="text-lg font-extrabold text-gray-800">Daily Challenge</h1>
+          <h1 className="text-title text-ink">Daily Challenge</h1>
         </div>
         {streak && <StreakCounter streak={streak} compact />}
       </div>
 
       {/* Month theme */}
       {monthTheme && (
-        <div className="bg-blue-50 rounded-full px-3 py-1 border border-blue-200 self-start mb-4">
-          <span className="text-xs font-bold text-blue-600">{monthTheme}</span>
+        <div className="bg-soft rounded-full px-3 py-1 border-2 border-line self-start mb-4">
+          <span className="text-xs font-extrabold text-ink">{monthTheme}</span>
         </div>
       )}
 
       {/* Progress bar */}
-      <div className="w-full bg-gray-200 rounded-full h-2.5 mb-5 overflow-hidden">
+      <div className="w-full ui-meter h-3 mb-5">
         <div
-          className="bg-duo-green h-2.5 rounded-full transition-[width] duration-500 ease-out"
+          className="bg-action h-full rounded-full transition-[width] duration-500 ease-out"
           style={{ width: `${progressPct}%` }}
         />
       </div>
 
       {/* Question counter */}
-      <p className="text-xs font-bold text-gray-500 mb-3 text-center">
+      <p className="text-xs font-bold text-ink-muted mb-3 text-center">
         Question {currentIdx + 1} of {totalQ}
       </p>
 
@@ -451,8 +451,8 @@ export default function DailyChallengePage() {
       {/* ── Sliding bottom panel (Brilliant-style answer sheet) ── */}
       {answered && (
         <div
-          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] animate-slide-up overflow-y-auto rounded-t-2xl ${
-            isCorrect ? 'bg-duo-mint' : 'bg-duo-blush'
+          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] animate-slide-up overflow-y-auto rounded-t-card border-t-2 border-ink ${
+            isCorrect ? 'bg-success-soft' : 'bg-retry-soft'
           }`}
           style={{ maxHeight: '50vh' }}
         >
@@ -460,17 +460,17 @@ export default function DailyChallengePage() {
             {isCorrect ? (
               <>
                 {/* Correct feedback */}
-                <div className="flex items-center gap-3 border-l-4 border-duo-green pl-3">
+                <div className="flex items-center gap-3 border-l-4 border-success pl-3">
                   <div className="animate-sparky-dance flex-shrink-0">
                     <Sparky mood="celebrating" size={44} />
                   </div>
                   <div className="flex-1">
-                    <p className="text-base font-extrabold text-gray-800">
+                    <p className="text-base font-extrabold text-ink">
                       {['Great job! ⭐', 'You got it! 🎯', 'Excellent! 🧠', 'Well done! 🌟', 'Awesome! 🎉'][currentIdx % 5]}
                     </p>
                   </div>
-                  <div className="animate-scale-in flex-shrink-0 bg-duo-green/15 rounded-full px-3 py-1">
-                    <span className="text-sm font-extrabold text-duo-green-dark">+20 XP</span>
+                  <div className="animate-scale-in flex-shrink-0 bg-white border-2 border-line rounded-full px-3 py-1">
+                    <span className="text-sm font-extrabold text-ink">+20 XP</span>
                   </div>
                 </div>
                 <DuoButton variant="green" fullWidth onClick={handleNext}>
@@ -480,11 +480,11 @@ export default function DailyChallengePage() {
             ) : (
               <>
                 {/* Wrong feedback */}
-                <div className="flex items-center gap-3 border-l-4 border-duo-red pl-3">
+                <div className="flex items-center gap-3 border-l-4 border-retry pl-3">
                   <div className="flex-shrink-0">
                     <Sparky mood="encouraging" size={44} />
                   </div>
-                  <p className="text-base font-extrabold text-duo-red">
+                  <p className="text-base font-extrabold text-retry">
                     Not quite!
                   </p>
                 </div>

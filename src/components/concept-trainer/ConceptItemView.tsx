@@ -48,19 +48,19 @@ export default function ConceptItemView({ module, item, index, total, onBack, on
       {/* Breadcrumb / back */}
       <button
         onClick={onBack}
-        className="text-duo-blue text-sm font-bold mb-3 min-h-[36px] flex items-center gap-1"
+        className="text-action text-sm font-bold mb-3 min-h-[36px] flex items-center gap-1"
       >
         &larr; {module.title}
       </button>
 
-      <p className="text-[11px] font-bold text-gray-400 uppercase tracking-wide">
+      <p className="text-xs font-bold text-ink-muted">
         Item {index} of {total}
       </p>
-      <h2 className="text-lg font-extrabold text-gray-800 mb-2">{item.title}</h2>
+      <h2 className="text-title text-ink mb-2">{item.title}</h2>
 
       {/* Story */}
-      <div className="bg-white rounded-2xl p-4 border-2 border-line mb-4">
-        <p className="text-[15px] leading-relaxed text-gray-800 font-medium">{item.story}</p>
+      <div className="bg-white rounded-card p-4 border-2 border-line mb-4">
+        <p className="text-[15px] leading-relaxed text-ink font-medium">{item.story}</p>
       </div>
 
       {/* Steps */}
@@ -73,21 +73,21 @@ export default function ConceptItemView({ module, item, index, total, onBack, on
             <div className="flex items-center gap-2 mb-2">
               <span
                 className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-extrabold text-white ${
-                  done ? 'bg-duo-green' : 'bg-duo-blue'
+                  done ? 'bg-success' : 'bg-action'
                 }`}
               >
                 {done ? '✓' : i + 1}
               </span>
-              <p className="font-bold text-gray-800 text-sm">{step.prompt}</p>
+              <p className="font-bold text-ink text-sm">{step.prompt}</p>
             </div>
 
             <div className="space-y-2">
               {step.choices.map((c) => {
                 const isChosen = chosen === c.letter;
                 const showState = isChosen;
-                let cls = 'border-gray-200 bg-white';
-                if (showState && c.isCorrect) cls = 'border-duo-green bg-green-50';
-                else if (showState && !c.isCorrect) cls = 'border-duo-orange bg-orange-50';
+                let cls = 'border-line bg-white';
+                if (showState && c.isCorrect) cls = 'border-success bg-success-soft';
+                else if (showState && !c.isCorrect) cls = 'border-retry bg-retry-soft';
                 // Lock further changes once the step is correctly answered.
                 const locked = done;
                 return (
@@ -95,18 +95,18 @@ export default function ConceptItemView({ module, item, index, total, onBack, on
                     key={c.letter}
                     disabled={locked}
                     onClick={() => setPicked((p) => ({ ...p, [i]: c.letter }))}
-                    className={`w-full text-left rounded-xl border-2 px-3 py-2.5 transition-colors min-h-[48px] ${cls} ${
+                    className={`w-full text-left rounded-control border-2 px-3 py-2.5 transition-colors min-h-[48px] ${cls} ${
                       locked ? 'cursor-default' : 'active:scale-[0.99]'
                     }`}
                   >
                     <div className="flex items-start gap-2">
-                      <span className="font-extrabold text-gray-400 text-sm">{c.letter}</span>
-                      <span className="text-sm text-gray-800 font-medium">{c.text}</span>
+                      <span className="font-extrabold text-ink-muted text-sm">{c.letter}</span>
+                      <span className="text-sm text-ink font-medium">{c.text}</span>
                     </div>
                     {showState && (
                       <p
-                        className={`text-xs mt-1.5 pl-5 font-medium leading-snug ${
-                          c.isCorrect ? 'text-duo-green' : 'text-duo-orange'
+                        className={`text-[13px] mt-1.5 pl-5 font-bold leading-snug ${
+                          c.isCorrect ? 'text-ink' : 'text-retry'
                         }`}
                       >
                         {c.isCorrect ? '✓ ' : '↻ '}
@@ -123,12 +123,12 @@ export default function ConceptItemView({ module, item, index, total, onBack, on
               <div className="mt-2">
                 <button
                   onClick={() => setHintOpen((h) => ({ ...h, [i]: !h[i] }))}
-                  className="text-duo-blue text-xs font-bold min-h-[32px]"
+                  className="text-action text-xs font-bold min-h-[32px]"
                 >
                   {hintOpen[i] ? 'Hide hint' : 'Need a hint? 💡'}
                 </button>
                 {hintOpen[i] && (
-                  <p className="text-xs text-gray-600 bg-blue-50 border border-blue-100 rounded-lg px-3 py-2 mt-1 leading-snug">
+                  <p className="text-[13px] font-bold text-hint-ink bg-hint border-2 border-dashed border-hint-ink rounded-control px-3 py-2 mt-1 leading-snug">
                     {step.hint}
                   </p>
                 )}
@@ -142,50 +142,50 @@ export default function ConceptItemView({ module, item, index, total, onBack, on
       {allDone && (
         <div className="animate-slide-up">
           {item.visual && (
-            <div className="bg-white rounded-2xl p-4 border-2 border-line mb-4">
-              <p className="text-[11px] font-extrabold text-gray-400 uppercase tracking-wide mb-2">
+            <div className="bg-white rounded-card p-4 border-2 border-line mb-4">
+              <p className="text-xs font-extrabold text-ink-muted mb-2">
                 Picture it
               </p>
               <ConceptVisualView visual={item.visual} />
             </div>
           )}
 
-          <div className="bg-green-50 rounded-2xl p-4 border border-green-200 mb-4">
-            <p className="text-sm font-extrabold text-duo-green mb-2">Worked solution</p>
+          <div className="bg-success-soft rounded-card p-4 border-2 border-success mb-4">
+            <p className="text-[15px] font-extrabold text-success mb-2">Worked solution</p>
             <ol className="space-y-1.5">
               {item.solution.map((s, i) => (
-                <li key={i} className="text-sm text-gray-800 font-medium leading-snug flex gap-2">
-                  <span className="text-duo-green font-bold">{i + 1}.</span>
+                <li key={i} className="text-sm text-ink font-medium leading-snug flex gap-2">
+                  <span className="text-ink font-bold">{i + 1}.</span>
                   <span>{s.text}</span>
                 </li>
               ))}
             </ol>
-            <p className="text-base font-extrabold text-gray-900 mt-3">
+            <p className="text-base font-extrabold text-ink mt-3">
               Answer: {item.answer}{item.unit ? ` ${item.unit}` : ''}
             </p>
             {item.check && (
-              <p className="text-xs text-gray-600 mt-2 font-medium">✓ Check: {item.check}</p>
+              <p className="text-xs text-ink mt-2 font-medium">✓ Check: {item.check}</p>
             )}
           </div>
 
           {item.explain && (
-            <div className="bg-purple-50 rounded-2xl p-4 border border-purple-200 mb-4">
-              <p className="text-xs font-extrabold text-purple-700 mb-1">Why it works</p>
-              <p className="text-sm text-purple-900 font-medium leading-snug">{item.explain}</p>
+            <div className="bg-soft rounded-card p-4 border-2 border-line mb-4">
+              <p className="text-[13px] font-extrabold text-ink-muted mb-1">Why it works</p>
+              <p className="text-sm text-ink font-medium leading-snug">{item.explain}</p>
             </div>
           )}
 
           <div className="flex gap-3">
             <button
               onClick={onBack}
-              className="flex-1 bg-white border-2 border-gray-200 text-gray-700 font-bold rounded-xl py-3 min-h-[48px] active:scale-[0.98] transition-transform"
+              className="flex-1 bg-white border-2 border-ink text-ink font-bold rounded-control shadow-hard-sm py-3 min-h-[48px] active:scale-[0.98] transition-transform"
             >
               Back to list
             </button>
             {onNext && (
               <button
                 onClick={onNext}
-                className="flex-1 bg-duo-green text-white font-extrabold rounded-xl py-3 min-h-[48px] active:scale-[0.98] transition-transform"
+                className="flex-1 bg-action text-white font-extrabold rounded-control border-2 border-ink shadow-hard-sm py-3 min-h-[48px] active:scale-[0.98] transition-transform"
               >
                 Next item →
               </button>

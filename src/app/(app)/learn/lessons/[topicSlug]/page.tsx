@@ -53,12 +53,12 @@ export default function TopicPage({
   if (loading) {
     return (
       <div className="min-h-screen bg-paper pb-24 animate-pulse">
-        <div className="bg-duo-dark px-4 py-4">
+        <div className="bg-ink px-4 py-4">
           <div className="h-6 bg-white/20 rounded w-32" />
         </div>
         <div className="max-w-lg mx-auto px-4 pt-6 space-y-4">
           {Array.from({ length: 5 }).map((_, i) => (
-            <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100 h-24" />
+            <div key={i} className="bg-white rounded-card p-4 border-2 border-line h-24" />
           ))}
         </div>
       </div>
@@ -69,10 +69,10 @@ export default function TopicPage({
     return (
       <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
         <Sparky mood="thinking" size={64} />
-        <p className="text-sm font-bold text-gray-500">Topic not found</p>
+        <p className="text-sm font-bold text-ink-muted">Topic not found</p>
         <button
           onClick={() => router.push('/learn/lessons')}
-          className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform"
+          className="bg-action hover:bg-action-dark text-white font-extrabold px-6 py-2.5 rounded-control border-2 border-ink shadow-hard-sm text-sm active:scale-95 transition-transform"
         >
           Back to Lessons
         </button>
@@ -83,22 +83,22 @@ export default function TopicPage({
   return (
     <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
+      <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
         <Link
           href="/learn/lessons"
-          className="text-white/60 hover:text-white text-lg font-bold"
+          className="text-white/70 hover:text-white text-lg font-bold"
           aria-label="Back"
         >
           &larr;
         </Link>
         <span className="text-xl" aria-hidden="true">{topic.emoji}</span>
-        <h1 className="text-white font-extrabold text-lg">{topic.topic}</h1>
+        <h1 className="text-white text-title">{topic.topic}</h1>
       </div>
 
       <div className="max-w-lg mx-auto px-4 pt-5 animate-fade-in">
         {/* Topic description */}
         <div
-          className="rounded-2xl px-4 py-3 mb-5 border"
+          className="rounded-card px-4 py-3 mb-5 border-2"
           style={{
             backgroundColor: topic.color + '10',
             borderColor: topic.color + '30',
@@ -107,7 +107,7 @@ export default function TopicPage({
           <p className="text-sm font-semibold" style={{ color: topic.color }}>
             {topic.description}
           </p>
-          <p className="text-xs text-gray-500 mt-1">
+          <p className="text-xs text-ink-muted mt-1">
             Grades {topic.gradeRange[0]}–{topic.gradeRange[1]} &middot; 5 levels
           </p>
         </div>

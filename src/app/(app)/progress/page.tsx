@@ -22,10 +22,10 @@ function accuracyPct(t: TopicEntry) {
 }
 
 function masteryLevel(pct: number) {
-  if (pct >= 90) return { label: 'Mastered', color: '#58CC02', emoji: '✅', bg: '#F0FDF4' };
+  if (pct >= 90) return { label: 'Mastered', color: '#12805c', emoji: '✅', bg: '#dff6ea' };
   if (pct >= 75) return { label: 'Strong',   color: '#8BC34A', emoji: '💪', bg: '#F7FEE7' };
-  if (pct >= 50) return { label: 'Developing',color: '#FFC107', emoji: '🔄', bg: '#FFFBEB' };
-  return                 { label: 'Needs Practice', color: '#FF5722', emoji: '🎯', bg: '#FEF2F2' };
+  if (pct >= 50) return { label: 'Developing',color: '#5a4300', emoji: '🔄', bg: '#fff1b8' };
+  return                 { label: 'Needs Practice', color: '#c62f3d', emoji: '🎯', bg: '#fde8ea' };
 }
 
 function readinessLabel(score: number) {
@@ -161,14 +161,14 @@ export default function ProgressPage() {
   const ringR = 46;
   const ringCircumference = 2 * Math.PI * ringR;
   const ringOffset = ringCircumference * (1 - readinessScore / 100);
-  const ringColor = readinessScore >= 75 ? '#58CC02' : readinessScore >= 50 ? '#FFC107' : '#FF5722';
+  const ringColor = readinessScore >= 75 ? '#12805c' : readinessScore >= 50 ? '#f5a400' : '#c62f3d';
 
   if (!loading && (fetchError || !data)) {
     return (
       <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
-        <p className="text-gray-800 font-extrabold text-lg">Something went wrong</p>
-        <p className="text-gray-500 text-sm">Could not load progress data. Check your connection.</p>
-        <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
+        <p className="text-ink font-extrabold text-lg">Something went wrong</p>
+        <p className="text-ink-muted text-sm">Could not load progress data. Check your connection.</p>
+        <button onClick={() => window.location.reload()} className="bg-action text-white border-2 border-ink shadow-hard-sm font-extrabold px-6 py-2.5 rounded-control text-sm active:scale-95 transition-transform">
           Retry
         </button>
       </div>
@@ -178,12 +178,12 @@ export default function ProgressPage() {
   if (loading || !data) {
     return (
       <div className="min-h-screen bg-paper pb-24">
-        <div className="bg-duo-dark px-4 py-4 flex items-center gap-3">
+        <div className="bg-ink px-4 py-4 flex items-center gap-3">
           <div className="h-5 bg-white/20 rounded w-24 animate-pulse" />
         </div>
         <div className="max-w-lg mx-auto px-4 pt-5 space-y-4">
           {[0, 1, 2, 3, 4].map((i) => (
-            <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100 animate-pulse h-28" />
+            <div key={i} className="bg-white rounded-card p-4 border-2 border-line animate-pulse h-28" />
           ))}
         </div>
       </div>
@@ -195,13 +195,13 @@ export default function ProgressPage() {
   return (
     <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
-        <Link href="/home" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
+      <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
+        <Link href="/home" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
-          <h1 className="text-white font-extrabold text-lg">My Progress</h1>
+          <h1 className="text-white text-title">My Progress</h1>
           <p className="text-white/70 text-xs font-medium">{student.name} &middot; Grade {student.grade}</p>
         </div>
-        <Link href={`/progress/report`} className="text-xs font-bold text-white/60 bg-white/10 rounded-full px-3 py-1.5 hover:bg-white/20 transition-colors">
+        <Link href={`/progress/report`} className="text-xs font-bold text-ink bg-white rounded-full px-3 py-1.5 hover:bg-soft transition-colors">
           Parent Report
         </Link>
       </div>
@@ -209,28 +209,28 @@ export default function ProgressPage() {
       <div className="max-w-lg mx-auto px-4 pt-5 space-y-4">
 
         {/* ── AT A GLANCE ──────────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl p-4 border-2 border-line">
-          <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-3">At a Glance</h2>
+        <div className="bg-white rounded-card p-4 border-2 border-line">
+          <h2 className="text-title text-ink mb-3">At a Glance</h2>
           <div className="grid grid-cols-4 gap-2">
             {[
-              { value: stats.totalSolved, label: 'Solved', emoji: '✅', color: '#58CC02' },
-              { value: `${overallAccuracy}%`, label: 'Accuracy', emoji: '🎯', color: overallAccuracy >= 70 ? '#58CC02' : '#FF9600' },
-              { value: `${stats.streakDays}d`, label: 'Streak', emoji: '🔥', color: '#FF9600' },
-              { value: `${stats.topicsMastered}`, label: 'Mastered', emoji: '⭐', color: '#1CB0F6' },
+              { value: stats.totalSolved, label: 'Solved', emoji: '✅', color: '#12805c' },
+              { value: `${overallAccuracy}%`, label: 'Accuracy', emoji: '🎯', color: overallAccuracy >= 70 ? '#12805c' : '#5a4300' },
+              { value: `${stats.streakDays}d`, label: 'Streak', emoji: '🔥', color: '#1d2a4d' },
+              { value: `${stats.topicsMastered}`, label: 'Mastered', emoji: '⭐', color: '#12805c' },
             ].map((s) => (
               <div key={s.label} className="text-center">
                 <span className="text-lg">{s.emoji}</span>
                 <p className="text-lg font-extrabold" style={{ color: s.color }}>{s.value}</p>
-                <p className="text-[10px] font-bold text-gray-500 uppercase">{s.label}</p>
+                <p className="text-xs font-bold text-ink-muted">{s.label}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* ── EXAM READINESS ───────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl p-4 border-2 border-line flex items-center gap-4">
+        <div className="bg-white rounded-card p-4 border-2 border-line flex items-center gap-4">
           <svg width="100" height="100" viewBox="0 0 100 100" className="shrink-0">
-            <circle cx="50" cy="50" r={ringR} stroke="#E5E7EB" strokeWidth="8" fill="none" />
+            <circle cx="50" cy="50" r={ringR} stroke="#d3deee" strokeWidth="8" fill="none" />
             <circle
               cx="50" cy="50" r={ringR}
               stroke={ringColor}
@@ -243,34 +243,34 @@ export default function ProgressPage() {
               style={{ transition: 'stroke-dashoffset 1s ease' }}
             />
             <text x="50" y="46" textAnchor="middle" fontSize="20" fontWeight="800" fill={ringColor}>{readinessScore}</text>
-            <text x="50" y="60" textAnchor="middle" fontSize="8" fill="#9CA3AF">/ 100</text>
+            <text x="50" y="60" textAnchor="middle" fontSize="8" fill="#5d6b8c">/ 100</text>
           </svg>
           <div>
-            <p className="text-sm font-extrabold text-gray-800">Exam Readiness</p>
-            <p className="text-xs text-gray-500 font-medium mt-0.5">
+            <p className="text-sm font-extrabold text-ink">Exam Readiness</p>
+            <p className="text-xs text-ink-muted font-medium mt-0.5">
               {readiness.emoji} {readiness.text}
             </p>
           </div>
         </div>
 
         {/* ── WEEKLY ACTIVITY ──────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl p-4 border-2 border-line">
-          <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-3">This Week</h2>
+        <div className="bg-white rounded-card p-4 border-2 border-line">
+          <h2 className="text-title text-ink mb-3">This Week</h2>
           <div className="flex items-end gap-1.5 h-24">
             {weeklyData.map(({ date, count }) => (
               <div key={date} className="flex-1 flex flex-col items-center gap-1">
-                <span className="text-[10px] text-gray-500 font-semibold min-h-[12px]">
+                <span className="text-xs text-ink-muted font-semibold min-h-[12px]">
                   {count > 0 ? count : ''}
                 </span>
-                <div className="w-full relative bg-gray-100 rounded-sm h-[56px]">
+                <div className="w-full relative bg-soft rounded-sm h-[56px]">
                   <div
-                    className="absolute bottom-0 left-0 right-0 rounded-sm transition-[height] duration-500 bg-gradient-to-t from-[#46a302] to-[#58CC02]"
+                    className="absolute bottom-0 left-0 right-0 rounded-sm transition-[height] duration-500 bg-action"
                     style={{
                       height: count > 0 ? `${Math.max(4, Math.round((count / maxBar) * 56))}px` : '0px',
                     }}
                   />
                 </div>
-                <span className="text-[10px] text-gray-500 font-bold">{date}</span>
+                <span className="text-xs text-ink-muted font-bold">{date}</span>
               </div>
             ))}
           </div>
@@ -278,20 +278,20 @@ export default function ProgressPage() {
 
         {/* ── STRENGTHS ────────────────────────────────────────────── */}
         {strengths.length > 0 && (
-          <div className="bg-white rounded-2xl p-4 border-2 border-line">
-            <h2 className="text-[10px] font-extrabold text-duo-green uppercase tracking-wide mb-3">
+          <div className="bg-white rounded-card p-4 border-2 border-line">
+            <h2 className="text-title text-ink mb-3">
               💪 Strengths — What You&apos;re Great At
             </h2>
             <div className="space-y-2">
               {strengths.slice(0, 4).map((t) => {
                 const pct = accuracyPct(t);
                 return (
-                  <div key={t.id} className="flex items-center gap-3 bg-green-50 rounded-xl px-3 py-2.5 border border-green-100">
+                  <div key={t.id} className="flex items-center gap-3 bg-success-soft rounded-control px-3 py-2.5 border-2 border-success">
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-extrabold text-gray-800 truncate">{t.name}</p>
-                      <p className="text-[10px] text-duo-green font-bold">{t.correct}/{t.attempted} correct</p>
+                      <p className="text-xs font-extrabold text-ink truncate">{t.name}</p>
+                      <p className="text-xs text-ink-muted font-bold">{t.correct}/{t.attempted} correct</p>
                     </div>
-                    <span className="text-sm font-extrabold text-duo-green shrink-0">{pct}%</span>
+                    <span className="text-label font-extrabold text-success shrink-0">{pct}%</span>
                   </div>
                 );
               })}
@@ -301,8 +301,8 @@ export default function ProgressPage() {
 
         {/* ── AREAS TO STRENGTHEN ──────────────────────────────────── */}
         {weakAreas.length > 0 && (
-          <div className="bg-white rounded-2xl p-4 border-2 border-line">
-            <h2 className="text-[10px] font-extrabold text-orange-600 uppercase tracking-wide mb-3">
+          <div className="bg-white rounded-card p-4 border-2 border-line">
+            <h2 className="text-title text-ink mb-3">
               🎯 Areas to Strengthen
             </h2>
             <div className="space-y-2">
@@ -312,13 +312,13 @@ export default function ProgressPage() {
                   <Link
                     key={t.id}
                     href={`/practice/${t.id}`}
-                    className="flex items-center gap-3 bg-orange-50 rounded-xl px-3 py-2.5 border border-orange-100 active:bg-orange-100 transition-colors"
+                    className="flex items-center gap-3 bg-hint rounded-control px-3 py-2.5 border-2 border-hint-ink active:bg-white transition-colors"
                   >
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-extrabold text-gray-800 truncate">{t.name}</p>
-                      <p className="text-[10px] text-orange-600 font-bold">{pct}% — keep practicing!</p>
+                      <p className="text-xs font-extrabold text-ink truncate">{t.name}</p>
+                      <p className="text-xs text-hint-ink font-bold">{pct}% — keep practicing!</p>
                     </div>
-                    <span className="text-xs font-extrabold text-orange-500 shrink-0">Practice →</span>
+                    <span className="text-xs font-extrabold text-action shrink-0">Practice →</span>
                   </Link>
                 );
               })}
@@ -328,22 +328,22 @@ export default function ProgressPage() {
 
         {/* ── TOP 3 MISTAKE PATTERNS ───────────────────────────────── */}
         {topMistakes.length > 0 && (
-          <div className="bg-white rounded-2xl p-4 border-2 border-line">
+          <div className="bg-white rounded-card p-4 border-2 border-line">
             <div className="flex items-center justify-between mb-3">
-              <h2 className="text-[10px] font-extrabold text-red-500 uppercase tracking-wide">
+              <h2 className="text-title text-ink">
                 🔍 Mistakes to Watch For
               </h2>
-              <Link href="/learn/mistakes" className="text-[10px] font-bold text-blue-500">See all →</Link>
+              <Link href="/learn/mistakes" className="text-xs font-bold text-action">See all →</Link>
             </div>
             <div className="space-y-2.5">
               {topMistakes.map((m) => (
-                <div key={m.id} className="bg-red-50 rounded-xl p-3 border border-red-100">
+                <div key={m.id} className="bg-soft rounded-control p-3 border-2 border-line">
                   <div className="flex items-start gap-2">
                     <span className="text-lg shrink-0">{m.emoji}</span>
                     <div className="flex-1">
-                      <p className="text-xs font-extrabold text-gray-800">{m.name}</p>
-                      <p className="text-xs text-gray-500 font-medium mt-0.5 line-clamp-2">{m.description}</p>
-                      <p className="text-[10px] text-green-700 font-bold mt-1">Fix: {m.howToFix.slice(0, 80)}…</p>
+                      <p className="text-xs font-extrabold text-ink">{m.name}</p>
+                      <p className="text-xs text-ink-muted font-medium mt-0.5 line-clamp-2">{m.description}</p>
+                      <p className="text-xs text-ink font-bold mt-1">Fix: {m.howToFix.slice(0, 80)}…</p>
                     </div>
                   </div>
                 </div>
@@ -353,22 +353,22 @@ export default function ProgressPage() {
         )}
 
         {/* ── TOPIC MASTERY HEATMAP ────────────────────────────────── */}
-        <div className="bg-white rounded-2xl p-4 border-2 border-line">
-          <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-3">
+        <div className="bg-white rounded-card p-4 border-2 border-line">
+          <h2 className="text-title text-ink mb-3">
             🗺️ Topic Mastery Map
           </h2>
           {/* Legend */}
           <div className="flex gap-2 mb-3 flex-wrap">
             {[
-              { label: 'Mastered', color: '#58CC02' },
+              { label: 'Mastered', color: '#12805c' },
               { label: 'Strong', color: '#8BC34A' },
-              { label: 'Developing', color: '#FFC107' },
-              { label: 'Needs Work', color: '#FF5722' },
-              { label: 'Not Started', color: '#E5E7EB' },
+              { label: 'Developing', color: '#5a4300' },
+              { label: 'Needs Work', color: '#c62f3d' },
+              { label: 'Not Started', color: '#d3deee' },
             ].map((l) => (
               <div key={l.label} className="flex items-center gap-1">
                 <div className="w-3 h-3 rounded" style={{ backgroundColor: l.color }} />
-                <span className="text-[10px] font-bold text-gray-500">{l.label}</span>
+                <span className="text-xs font-bold text-ink-muted">{l.label}</span>
               </div>
             ))}
           </div>
@@ -377,21 +377,21 @@ export default function ProgressPage() {
             {topics.map((t) => {
               const pct = accuracyPct(t);
               const level = t.attempted === 0
-                ? { color: '#E5E7EB', label: 'Not started', emoji: '—', bg: '#F9FAFB' }
+                ? { color: '#d3deee', label: 'Not started', emoji: '—', bg: '#ffffff' }
                 : masteryLevel(pct);
               return (
                 <Link
                   key={t.id}
                   href={`/practice/${t.id}`}
-                  className="rounded-xl p-2 text-center transition-transform active:scale-95"
+                  className="rounded-tile p-2 text-center transition-transform active:scale-95"
                   style={{ backgroundColor: level.bg, border: `1.5px solid ${level.color}` }}
                 >
                   <span className="text-sm">{level.emoji}</span>
-                  <p className="text-[8px] font-bold text-gray-700 leading-tight mt-0.5 line-clamp-2">
+                  <p className="text-xs font-bold text-ink leading-tight mt-0.5 line-clamp-2 break-words">
                     {t.name.length > 16 ? t.name.slice(0, 14) + '…' : t.name}
                   </p>
                   {t.attempted > 0 && (
-                    <p className="text-[10px] font-extrabold mt-0.5" style={{ color: level.color }}>{pct}%</p>
+                    <p className="text-xs font-extrabold mt-0.5" style={{ color: level.color }}>{pct}%</p>
                   )}
                 </Link>
               );
@@ -400,8 +400,8 @@ export default function ProgressPage() {
         </div>
 
         {/* ── RECOMMENDATIONS ──────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl p-4 border-2 border-line">
-          <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide mb-3">
+        <div className="bg-white rounded-card p-4 border-2 border-line">
+          <h2 className="text-title text-ink mb-3">
             📋 What to Do This Week
           </h2>
           <div className="space-y-2">
@@ -409,28 +409,28 @@ export default function ProgressPage() {
               <Link
                 key={i}
                 href={rec.link}
-                className="flex items-center gap-3 bg-blue-50 rounded-xl px-3 py-3 border border-blue-100 active:bg-blue-100 transition-colors"
+                className="flex items-center gap-3 bg-soft rounded-control px-3 py-3 border-2 border-line active:border-ink transition-colors"
               >
                 <span className="text-lg shrink-0">{rec.emoji}</span>
-                <p className="text-xs font-medium text-gray-700 flex-1">{rec.text}</p>
-                <span className="text-xs text-blue-500 font-bold shrink-0">Go →</span>
+                <p className="text-xs font-medium text-ink flex-1">{rec.text}</p>
+                <span className="text-xs text-action font-bold shrink-0">Go →</span>
               </Link>
             ))}
           </div>
         </div>
 
         {/* ── SPARKY ENCOURAGEMENT ─────────────────────────────────── */}
-        <div className="bg-purple-50 rounded-2xl p-4 border border-purple-200 flex items-start gap-3">
+        <div className="bg-white rounded-card p-4 border-2 border-line flex items-start gap-3">
           <Sparky mood="celebrating" size={40} />
           <div>
-            <p className="text-sm font-bold text-purple-800">
+            <p className="text-sm font-bold text-ink">
               {overallAccuracy >= 80
                 ? "You're doing incredible! Keep pushing for the top!"
                 : overallAccuracy >= 50
                 ? "Great progress! Every practice session makes you stronger!"
                 : "Every expert was once a beginner. Keep going!"}
             </p>
-            <p className="text-xs text-purple-600 mt-0.5">
+            <p className="text-xs text-ink-muted mt-0.5">
               {stats.totalSolved > 0
                 ? `You've solved ${stats.totalSolved} questions so far. That's awesome!`
                 : 'Start practicing to track your progress!'}
@@ -441,11 +441,11 @@ export default function ProgressPage() {
         {/* ── SHARE WITH PARENT ────────────────────────────────────── */}
         <Link
           href="/progress/report"
-          className="block bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 border border-green-200 shadow-sm text-center hover:shadow-md transition-shadow"
+          className="block bg-white rounded-control p-4 border-2 border-ink shadow-hard-sm text-center hover:bg-soft transition-colors"
         >
           <span className="text-2xl">📊</span>
-          <p className="text-sm font-extrabold text-green-800 mt-1">Generate Parent Report</p>
-          <p className="text-xs text-duo-green font-medium">Share your progress with your parents!</p>
+          <p className="text-sm font-extrabold text-ink mt-1">Generate Parent Report</p>
+          <p className="text-xs text-ink-muted font-medium">Share your progress with your parents!</p>
         </Link>
       </div>
     </div>

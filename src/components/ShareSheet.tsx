@@ -192,30 +192,30 @@ export default function ShareSheet({
 
       {/* Toast */}
       {toast && (
-        <div className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] bg-gray-800 text-white px-5 py-3 rounded-full text-sm font-bold animate-pop-in pointer-events-none shadow-xl max-w-xs text-center">
+        <div className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] bg-ink text-white border-2 border-white px-5 py-3 rounded-full text-sm font-bold animate-pop-in pointer-events-none max-w-xs text-center">
           {toast}
         </div>
       )}
 
       {/* Sheet */}
-      <div className="relative bg-white rounded-t-3xl max-w-lg mx-auto w-full animate-slide-up shadow-2xl">
+      <div className="relative bg-white rounded-t-card border-t-2 border-x-2 border-ink max-w-lg mx-auto w-full animate-slide-up">
 
         {/* Header */}
         <div className="flex items-center justify-between px-5 pt-5 pb-3">
           <div>
-            <p className="font-extrabold text-gray-800 text-base">Share with Parents 📤</p>
-            <p className="text-xs text-gray-500 font-medium">Choose how to share this achievement</p>
+            <p className="font-extrabold text-ink text-base">Share with Parents 📤</p>
+            <p className="text-xs text-ink-muted font-medium">Choose how to share this achievement</p>
           </div>
           <button
             onClick={onClose}
-            className="w-11 h-11 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 font-bold text-lg"
+            className="w-11 h-11 rounded-tile bg-white border-2 border-line flex items-center justify-center text-ink font-bold text-lg"
           >
             ✕
           </button>
         </div>
 
         {/* Card preview (scaled to fit) */}
-        <div className="mx-5 mb-4 overflow-hidden rounded-2xl bg-gray-50 border border-gray-100"
+        <div className="mx-5 mb-4 overflow-hidden rounded-card bg-soft border-2 border-line"
           style={{ height: 200, position: 'relative' }}>
           <div style={{
             position: 'absolute', top: 0, left: '50%',
@@ -250,7 +250,7 @@ export default function ShareSheet({
             subtitle={parentEmail
               ? `To ${parentEmail}`
               : 'Add parent email in Profile first'}
-            color="#1CB0F6"
+            color="#4f46e5"
             loading={sharing === 'email'}
             onClick={handleEmail}
           />
@@ -258,7 +258,7 @@ export default function ShareSheet({
             emoji="📸"
             title="Save to Gallery"
             subtitle="Download as image · share anywhere"
-            color="#FF9600"
+            color="#f5a400"
             loading={sharing === 'gallery'}
             onClick={handleGallery}
           />
@@ -280,10 +280,10 @@ function ShareOption({
     <button
       onClick={onClick}
       disabled={loading}
-      className="w-full flex items-center gap-4 px-4 py-3.5 rounded-2xl border-2 border-gray-100 hover:bg-gray-50 active:bg-gray-100 transition-colors disabled:opacity-60"
+      className="w-full flex items-center gap-4 px-4 py-3.5 rounded-control bg-white border-2 border-line hover:border-ink active:bg-soft transition-colors disabled:opacity-60"
     >
       <div
-        className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0"
+        className="w-12 h-12 rounded-tile flex items-center justify-center text-2xl flex-shrink-0"
         style={{ backgroundColor: `${color}20`, border: `2px solid ${color}40` }}
       >
         {loading
@@ -291,10 +291,10 @@ function ShareOption({
           : emoji}
       </div>
       <div className="text-left flex-1">
-        <p className="font-extrabold text-gray-800 text-sm">{title}</p>
-        <p className="text-xs text-gray-500 font-medium">{subtitle}</p>
+        <p className="font-extrabold text-ink text-sm">{title}</p>
+        <p className="text-xs text-ink-muted font-medium">{subtitle}</p>
       </div>
-      <span className="text-gray-300 text-xl">›</span>
+      <span className="text-ink-muted text-xl">›</span>
     </button>
   );
 }

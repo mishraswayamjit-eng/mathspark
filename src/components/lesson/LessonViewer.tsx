@@ -131,7 +131,7 @@ function SlideModeViewer({
                     ? accentColor
                     : i === lessonIndex
                     ? accentColor
-                    : '#E5E7EB',
+                    : '#d3deee',
                 opacity: i === lessonIndex ? 1 : i < lessonIndex ? 0.6 : 0.3,
               }}
             />
@@ -139,7 +139,7 @@ function SlideModeViewer({
         </div>
 
         {/* Slide progress bar */}
-        <div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+        <div className="w-full h-1.5 bg-soft rounded-full overflow-hidden">
           <div
             className="h-full rounded-full transition-[width] duration-500"
             style={{
@@ -178,14 +178,14 @@ function SlideModeViewer({
         {(slideIndex > 0 || lessonIndex > 0) && (
           <button
             onClick={prevSlide}
-            className="flex-1 py-3 rounded-2xl text-sm font-extrabold border-2 border-gray-200 text-gray-600 active:scale-95 transition-transform"
+            className="flex-1 py-3 rounded-control text-sm font-extrabold border-2 border-ink bg-white text-ink shadow-hard-sm active:scale-95 transition-transform"
           >
             Back
           </button>
         )}
         <button
           onClick={nextSlide}
-          className="flex-1 py-3 rounded-2xl text-sm font-extrabold text-white active:scale-95 transition-transform"
+          className="flex-1 py-3 rounded-control text-sm font-extrabold text-white border-2 border-ink shadow-hard-sm active:scale-95 transition-transform"
           style={{ backgroundColor: accentColor }}
         >
           {buttonLabel}
@@ -223,14 +223,14 @@ function ClassicModeViewer({
       {/* Progress bar */}
       <div className="mb-4">
         <div className="flex items-center justify-between mb-1.5">
-          <p className="text-xs font-bold text-gray-500">
+          <p className="text-xs font-bold text-ink-muted">
             Lesson {lessonIndex + 1} of {lessons.length}
           </p>
-          <p className="text-xs font-bold text-gray-400">
+          <p className="text-xs font-bold text-ink-muted">
             {Math.round(((lessonIndex + 1) / lessons.length) * 100)}%
           </p>
         </div>
-        <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+        <div className="w-full h-2 bg-soft rounded-full overflow-hidden">
           <div
             className="h-full rounded-full transition-[width] duration-500"
             style={{
@@ -243,12 +243,12 @@ function ClassicModeViewer({
 
       {/* Lesson title */}
       <div key={lessonIndex} className="animate-fade-in">
-        <h2 className="text-lg font-extrabold text-gray-800 mb-2">{lesson.title}</h2>
-        <p className="text-sm text-gray-600 mb-4">{lesson.intro}</p>
+        <h2 className="text-title text-ink mb-2">{lesson.title}</h2>
+        <p className="text-sm text-ink-muted mb-4">{lesson.intro}</p>
 
         {/* Visual (monospace box) */}
         {lesson.visual && (
-          <div className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 mb-4 font-mono text-sm text-gray-700 whitespace-pre-wrap">
+          <div className="bg-soft border-2 border-line rounded-note px-4 py-3 mb-4 font-mono text-sm text-ink whitespace-pre-wrap">
             {lesson.visual}
           </div>
         )}
@@ -262,7 +262,7 @@ function ClassicModeViewer({
                 className="border-l-4 pl-4 py-1"
                 style={{ borderColor: accentColor + '80' }}
               >
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-ink leading-relaxed">
                   {hasLatex(para) ? (
                     <KatexRenderer latex={para} className="text-sm" />
                   ) : (
@@ -284,11 +284,11 @@ function ClassicModeViewer({
 
         {/* Rule callout */}
         {lesson.rule && (
-          <div className="bg-yellow-50 border border-yellow-200 rounded-xl px-4 py-3 mb-4">
-            <p className="text-xs font-extrabold text-yellow-800 mb-1">
+          <div className="bg-soft border-2 border-line rounded-control px-4 py-3 mb-4">
+            <p className="text-[13px] font-extrabold text-ink-muted mb-1">
               <span aria-hidden="true">📝 </span>Rule
             </p>
-            <p className="text-sm font-semibold text-yellow-900">
+            <p className="text-sm font-semibold text-ink">
               {hasLatex(lesson.rule) ? (
                 <KatexRenderer latex={lesson.rule} className="text-sm" />
               ) : (
@@ -300,8 +300,8 @@ function ClassicModeViewer({
 
         {/* Tip callout */}
         {lesson.tip && (
-          <div className="bg-blue-50 border border-blue-200 rounded-xl px-4 py-3 mb-4">
-            <p className="text-xs font-bold text-blue-800">
+          <div className="bg-hint rounded-control px-4 py-3 mb-4">
+            <p className="text-[13px] font-bold text-hint-ink">
               <span aria-hidden="true">💡 </span>
               {lesson.tip}
             </p>
@@ -314,14 +314,14 @@ function ClassicModeViewer({
             {lessonIndex > 0 && (
               <button
                 onClick={prevLesson}
-                className="flex-1 py-3 rounded-2xl text-sm font-extrabold border-2 border-gray-200 text-gray-600 active:scale-95 transition-transform"
+                className="flex-1 py-3 rounded-control text-sm font-extrabold border-2 border-ink bg-white text-ink shadow-hard-sm active:scale-95 transition-transform"
               >
                 Back
               </button>
             )}
             <button
               onClick={nextLesson}
-              className="flex-1 py-3 rounded-2xl text-sm font-extrabold text-white active:scale-95 transition-transform"
+              className="flex-1 py-3 rounded-control text-sm font-extrabold text-white border-2 border-ink shadow-hard-sm active:scale-95 transition-transform"
               style={{ backgroundColor: accentColor }}
             >
               {isLast ? 'Start Quiz!' : 'Next Lesson'}

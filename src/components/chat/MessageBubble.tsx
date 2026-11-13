@@ -23,10 +23,10 @@ export default function MessageBubble({ msg, studentInitial }: MessageBubbleProp
   if (isUser) {
     return (
       <div className="flex justify-end items-end gap-2 mb-3">
-        <div className="max-w-[78%] bg-duo-green text-white rounded-2xl rounded-br-sm px-4 py-2.5 shadow-sm">
+        <div className="max-w-[78%] bg-action text-white rounded-card rounded-br-sm px-4 py-2.5">
           <p className="text-sm leading-relaxed font-medium">{msg.content}</p>
         </div>
-        <div className="w-8 h-8 rounded-full bg-duo-blue flex items-center justify-center text-white font-extrabold text-sm flex-shrink-0">
+        <div className="w-8 h-8 rounded-full bg-ink flex items-center justify-center text-white font-extrabold text-sm flex-shrink-0">
           {studentInitial}
         </div>
       </div>
@@ -38,8 +38,8 @@ export default function MessageBubble({ msg, studentInitial }: MessageBubbleProp
       <div className="flex-shrink-0">
         <Sparky mood="happy" size={36} />
       </div>
-      <div className="max-w-[78%] bg-white rounded-2xl rounded-bl-sm px-4 py-2.5 border-2 border-line">
-        <p className="text-sm leading-relaxed text-gray-800 font-medium whitespace-pre-wrap">{msg.content}</p>
+      <div className="max-w-[78%] bg-white rounded-card rounded-bl-sm px-4 py-2.5 border-2 border-line">
+        <p className="text-sm leading-relaxed text-ink font-medium whitespace-pre-wrap">{msg.content}</p>
       </div>
     </div>
   );

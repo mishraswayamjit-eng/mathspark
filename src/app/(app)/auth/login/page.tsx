@@ -39,12 +39,12 @@ function LoginForm() {
   }
 
   return (
-    <div className="min-h-screen bg-duo-dark flex flex-col items-center justify-center px-6 py-12 animate-fade-in">
+    <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 py-12 animate-fade-in">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">⚡</div>
-          <h1 className="text-2xl font-extrabold text-white">Parent sign in</h1>
-          <p className="text-white/70 text-sm mt-1">Welcome back to MathSpark</p>
+          <h1 className="text-2xl font-extrabold text-ink">Parent sign in</h1>
+          <p className="text-ink-muted text-sm mt-1">Welcome back to MathSpark</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -52,43 +52,43 @@ function LoginForm() {
             type="email" placeholder="Email address" required autoComplete="email"
             aria-label="Email address"
             value={email} onChange={(e) => setEmail(e.target.value)}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-blue focus-visible:ring-2 focus-visible:ring-duo-blue focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
+            className="w-full bg-white border-2 border-line rounded-control px-4 py-3 text-ink placeholder:text-ink-muted outline-none focus:border-action focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
           />
           <input
             type="password" placeholder="Password" required autoComplete="current-password"
             aria-label="Password"
             value={password} onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60 outline-none focus:border-duo-blue focus-visible:ring-2 focus-visible:ring-duo-blue focus-visible:ring-offset-2 focus-visible:ring-offset-duo-dark"
+            className="w-full bg-white border-2 border-line rounded-control px-4 py-3 text-ink placeholder:text-ink-muted outline-none focus:border-action focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
           />
 
-          {error && <p className="text-duo-red text-sm text-center font-semibold">{error}</p>}
+          {error && <p className="text-retry bg-retry-soft border-2 border-retry rounded-control px-3 py-2 text-sm text-center font-semibold">{error}</p>}
 
           <button
             type="submit" disabled={loading}
-            className="w-full bg-duo-blue hover:bg-duo-blue-dark disabled:opacity-50 text-white font-extrabold py-4 rounded-2xl text-lg transition-colors"
+            className="w-full bg-action hover:bg-action-dark disabled:opacity-50 text-white font-extrabold py-4 rounded-control border-2 border-ink shadow-hard-sm text-lg transition-colors"
           >
             {loading ? 'Signing in…' : 'Sign In →'}
           </button>
         </form>
 
         <p className="text-center mt-4">
-          <Link href="/auth/forgot-password" className="text-white/60 text-sm hover:text-white/70 transition-colors">
+          <Link href="/auth/forgot-password" className="text-ink-muted text-sm hover:text-ink transition-colors">
             Forgot your password?
           </Link>
         </p>
 
-        <p className="text-center text-white/60 text-sm mt-6">
+        <p className="text-center text-ink-muted text-sm mt-6">
           Don't have an account?{' '}
-          <Link href="/auth/register" className="text-duo-green font-semibold hover:underline">
+          <Link href="/auth/register" className="text-action font-semibold hover:underline">
             Create one free
           </Link>
         </p>
 
-        <div className="mt-8 border-t border-white/10 pt-6">
-          <p className="text-center text-white/70 text-xs mb-3">Is your child logging in?</p>
+        <div className="mt-8 border-t-2 border-line pt-6">
+          <p className="text-center text-ink-muted text-xs mb-3">Is your child logging in?</p>
           <Link
             href="/student/login"
-            className="block w-full text-center bg-white/5 border border-white/10 rounded-xl py-3 text-white/60 text-sm font-semibold hover:bg-white/10 transition-colors"
+            className="block w-full text-center bg-white border-2 border-ink shadow-hard-sm rounded-control py-3 text-ink text-sm font-semibold hover:bg-soft transition-colors"
           >
             Student login →
           </Link>
@@ -100,7 +100,7 @@ function LoginForm() {
 
 export default function LoginPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-duo-dark" />}>
+    <Suspense fallback={<div className="min-h-screen bg-paper" />}>
       <LoginForm />
     </Suspense>
   );

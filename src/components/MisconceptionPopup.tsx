@@ -29,13 +29,13 @@ export default function MisconceptionPopup({
   if (!text) return null;
 
   return (
-    <div className="bg-blue-50 border border-blue-200 rounded-2xl px-4 py-3 space-y-2 animate-fade-in">
+    <div className="bg-white border-2 border-line rounded-card px-4 py-3 space-y-2 animate-fade-in">
       {/* Correct answer callout */}
       <div className="flex items-center gap-2">
-        <span className="w-6 h-6 rounded-full bg-duo-green text-white flex items-center justify-center text-xs font-extrabold flex-shrink-0">
+        <span className="w-6 h-6 rounded-full bg-success text-white flex items-center justify-center text-xs font-extrabold flex-shrink-0">
           {correctAnswer}
         </span>
-        <span className="text-sm font-bold text-gray-800">
+        <span className="text-sm font-bold text-ink">
           {hasLatex(correctText) ? (
             <KatexRenderer latex={correctText} displayMode={false} />
           ) : (
@@ -46,10 +46,10 @@ export default function MisconceptionPopup({
 
       {/* Misconception explanation */}
       <div>
-        <p className="text-xs font-extrabold text-blue-700 uppercase tracking-wide mb-1">
+        <p className="text-caption text-ink-muted mb-1">
           💡 Common mistake
         </p>
-        <p className="text-sm text-gray-700 font-medium leading-snug">
+        <p className="text-sm text-ink font-semibold leading-snug">
           {hasLatex(text) ? (
             <KatexRenderer latex={text} displayMode={false} />
           ) : (

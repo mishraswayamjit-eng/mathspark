@@ -16,11 +16,11 @@ export default function TestError({
   }, [error]);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-6 text-center gap-6">
+    <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 text-center gap-6">
       <span className="text-6xl">😕</span>
       <div className="space-y-2">
-        <h2 className="text-xl font-extrabold text-gray-800">Something went wrong</h2>
-        <p className="text-gray-500 font-medium text-sm">
+        <h2 className="text-heading text-ink">Something went wrong</h2>
+        <p className="text-ink-muted font-medium text-sm">
           We couldn&apos;t load your test. Don&apos;t worry — your progress is saved!
         </p>
       </div>
@@ -28,7 +28,7 @@ export default function TestError({
         <DuoButton variant="blue" fullWidth onClick={reset}>
           Try again
         </DuoButton>
-        <a href="/test" className="block text-gray-500 text-sm font-semibold text-center py-2">
+        <a href="/test" className="block text-action text-sm font-semibold text-center py-2">
           Back to tests
         </a>
       </div>

@@ -79,10 +79,10 @@ export default function StrategyBankPage() {
   return (
     <div className="min-h-screen bg-paper pb-24 animate-fade-in">
       {/* Header */}
-      <div className="sticky top-0 z-40 bg-duo-dark px-4 py-4 flex items-center gap-3 shadow-md">
-        <Link href="/chapters" className="text-white/60 hover:text-white text-lg font-bold">&larr;</Link>
+      <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
+        <Link href="/chapters" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
-          <h1 className="text-white font-extrabold text-lg">Strategy Bank</h1>
+          <h1 className="text-white text-title">Strategy Bank</h1>
           <p className="text-white/70 text-xs font-medium">{strategies.length} exam strategies &middot; Solve like a topper!</p>
         </div>
         <span className="text-2xl">🧠</span>
@@ -90,11 +90,11 @@ export default function StrategyBankPage() {
 
       <div className="max-w-lg mx-auto px-4 pt-5">
         {/* Intro */}
-        <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl px-4 py-3 border border-amber-200 mb-5 flex items-start gap-3">
+        <div className="bg-white rounded-card px-4 py-3 border-2 border-line mb-5 flex items-start gap-3">
           <Sparky mood="happy" size={36} />
           <div>
-            <p className="text-sm font-bold text-amber-800">These aren&apos;t just math tricks...</p>
-            <p className="text-xs text-amber-600 mt-0.5">
+            <p className="text-sm font-bold text-ink">These aren&apos;t just math tricks...</p>
+            <p className="text-xs text-ink-muted mt-0.5">
               They&apos;re exam strategies that toppers use. Each one can save you minutes!
             </p>
           </div>
@@ -106,8 +106,8 @@ export default function StrategyBankPage() {
             onClick={() => setSelectedCategory(null)}
             className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
               selectedCategory === null
-                ? 'bg-duo-dark text-white border-duo-dark'
-                : 'bg-white text-gray-600 border-gray-200'
+                ? 'bg-action text-white border-action'
+                : 'bg-white text-ink border-line'
             }`}
           >
             All ({strategies.length || 35})
@@ -122,7 +122,7 @@ export default function StrategyBankPage() {
                 className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors flex items-center gap-1 ${
                   isActive
                     ? 'text-white border-transparent'
-                    : 'bg-white text-gray-600 border-gray-200'
+                    : 'bg-white text-ink border-line'
                 }`}
                 style={isActive ? { backgroundColor: meta.color, borderColor: meta.color } : {}}
               >
@@ -137,7 +137,7 @@ export default function StrategyBankPage() {
         {loading && (
           <div className="space-y-3">
             {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100 animate-pulse h-24" />
+              <div key={i} className="bg-white rounded-card p-4 border-2 border-line animate-pulse h-24" />
             ))}
           </div>
         )}
@@ -154,10 +154,10 @@ export default function StrategyBankPage() {
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-lg">{meta.emoji}</span>
                       <div>
-                        <h2 className="text-sm font-extrabold text-gray-800">{meta.label}</h2>
-                        <p className="text-[10px] text-gray-500 font-medium">{meta.description}</p>
+                        <h2 className="text-title text-ink">{meta.label}</h2>
+                        <p className="text-xs text-ink-muted font-medium">{meta.description}</p>
                       </div>
-                      <span className="ml-auto text-[10px] font-bold text-gray-500 bg-gray-100 rounded-full px-2 py-0.5">
+                      <span className="ml-auto text-xs font-bold text-ink-muted bg-soft rounded-full px-2 py-0.5">
                         {categoryStrategies.length}
                       </span>
                     </div>
@@ -170,27 +170,27 @@ export default function StrategyBankPage() {
                       return (
                         <div
                           key={s.id}
-                          className="bg-white rounded-2xl border-2 border-line overflow-hidden transition-shadow"
+                          className="bg-white rounded-card border-2 border-line overflow-hidden"
                           style={{ borderLeftWidth: '4px', borderLeftColor: meta.color }}
                         >
                           {/* Collapsed header */}
                           <button
                             onClick={() => setExpandedId(isExpanded ? null : s.id)}
-                            className="w-full px-4 py-3.5 flex items-center gap-3 text-left active:bg-gray-50 transition-colors"
+                            className="w-full px-4 py-3.5 flex items-center gap-3 text-left active:bg-soft transition-colors"
                           >
                             <span className="text-xl shrink-0">{s.emoji}</span>
                             <div className="flex-1 min-w-0">
-                              <p className="text-sm font-extrabold text-gray-800 leading-tight">{s.name}</p>
-                              <p className="text-xs text-gray-500 font-medium mt-0.5 line-clamp-1">{s.description}</p>
+                              <p className="text-sm font-extrabold text-ink leading-tight">{s.name}</p>
+                              <p className="text-xs text-ink-muted font-medium mt-0.5 line-clamp-1">{s.description}</p>
                             </div>
                             <div className="flex items-center gap-2 shrink-0">
                               {s.estimatedTimeSaved && (
-                                <span className="text-[10px] font-bold text-duo-green bg-green-50 px-2 py-0.5 rounded-full hidden sm:block">
+                                <span className="text-xs font-bold text-ink bg-soft px-2 py-0.5 rounded-full hidden sm:block">
                                   {s.estimatedTimeSaved}
                                 </span>
                               )}
                               <span
-                                className="text-gray-500 transition-transform duration-200 text-sm"
+                                className="text-ink-muted transition-transform duration-200 text-sm"
                                 style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)' }}
                               >
                                 ▾
@@ -202,14 +202,14 @@ export default function StrategyBankPage() {
                           {isExpanded && (
                             <div className="px-4 pb-4 space-y-3 animate-fade-in">
                               {/* Divider */}
-                              <div className="border-t border-gray-100" />
+                              <div className="border-t-2 border-line" />
 
                               {/* When to use */}
                               <div className="flex items-start gap-2">
                                 <span className="text-xs shrink-0 mt-0.5">🕐</span>
                                 <div>
-                                  <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide">When to Use</p>
-                                  <p className="text-sm text-gray-700 font-medium mt-0.5">{s.whenToUse}</p>
+                                  <p className="text-[13px] font-extrabold text-ink-muted">When to Use</p>
+                                  <p className="text-sm text-ink font-medium mt-0.5">{s.whenToUse}</p>
                                 </div>
                               </div>
 
@@ -217,27 +217,27 @@ export default function StrategyBankPage() {
                               <div className="flex items-start gap-2">
                                 <span className="text-xs shrink-0 mt-0.5">⚙️</span>
                                 <div>
-                                  <p className="text-[10px] font-extrabold text-gray-500 uppercase tracking-wide">How It Works</p>
-                                  <p className="text-sm text-gray-700 font-medium mt-0.5 leading-relaxed">{s.howItWorks}</p>
+                                  <p className="text-[13px] font-extrabold text-ink-muted">How It Works</p>
+                                  <p className="text-sm text-ink font-medium mt-0.5 leading-relaxed">{s.howItWorks}</p>
                                 </div>
                               </div>
 
                               {/* Example scenario */}
                               {s.example && (
-                                <div className="bg-blue-50 rounded-xl p-3 border border-blue-200 space-y-2">
-                                  <p className="text-[10px] font-extrabold text-blue-500 uppercase tracking-wide">Example</p>
+                                <div className="bg-soft rounded-control p-3 border-2 border-line space-y-2">
+                                  <p className="text-[13px] font-extrabold text-ink-muted">Example</p>
                                   <div className="space-y-1.5">
                                     <div className="flex items-start gap-2">
-                                      <span className="text-[10px] text-blue-400 font-bold shrink-0 mt-0.5">Scenario:</span>
-                                      <p className="text-xs text-blue-800 font-medium">{s.example.scenario}</p>
+                                      <span className="text-xs text-ink-muted font-bold shrink-0 mt-0.5">Scenario:</span>
+                                      <p className="text-[13px] text-ink font-medium">{s.example.scenario}</p>
                                     </div>
                                     <div className="flex items-start gap-2">
-                                      <span className="text-[10px] text-blue-400 font-bold shrink-0 mt-0.5">Action:</span>
-                                      <p className="text-xs text-blue-800 font-medium">{s.example.action}</p>
+                                      <span className="text-xs text-ink-muted font-bold shrink-0 mt-0.5">Action:</span>
+                                      <p className="text-[13px] text-ink font-medium">{s.example.action}</p>
                                     </div>
                                     <div className="flex items-start gap-2">
-                                      <span className="text-[10px] text-duo-green font-bold shrink-0 mt-0.5">Result:</span>
-                                      <p className="text-xs text-green-700 font-semibold">{s.example.result}</p>
+                                      <span className="text-xs text-ink-muted font-bold shrink-0 mt-0.5">Result:</span>
+                                      <p className="text-[13px] text-ink font-bold">{s.example.result}</p>
                                     </div>
                                   </div>
                                 </div>
@@ -245,11 +245,11 @@ export default function StrategyBankPage() {
 
                               {/* Sparky tip */}
                               {s.sparkyTip && (
-                                <div className="bg-purple-50 rounded-xl p-3 border border-purple-200 flex items-start gap-2">
+                                <div className="bg-soft rounded-control p-3 border-2 border-line flex items-start gap-2">
                                   <Sparky mood="happy" size={28} />
                                   <div>
-                                    <p className="text-[10px] font-extrabold text-purple-500 uppercase tracking-wide">Sparky Says</p>
-                                    <p className="text-xs text-purple-800 font-medium mt-0.5 italic leading-snug">{s.sparkyTip}</p>
+                                    <p className="text-[13px] font-extrabold text-ink-muted">Sparky Says</p>
+                                    <p className="text-[13px] text-ink font-medium mt-0.5 italic leading-snug">{s.sparkyTip}</p>
                                   </div>
                                 </div>
                               )}
@@ -257,14 +257,14 @@ export default function StrategyBankPage() {
                               {/* Footer: time saved + difficulty + grade range */}
                               <div className="flex items-center gap-2 flex-wrap pt-1">
                                 {s.estimatedTimeSaved && (
-                                  <span className="text-[10px] font-bold text-duo-green bg-green-50 px-2 py-0.5 rounded-full border border-green-200">
+                                  <span className="text-xs font-bold text-ink bg-soft px-2 py-0.5 rounded-full border-2 border-line">
                                     Saves {s.estimatedTimeSaved}
                                   </span>
                                 )}
-                                <span className="text-[10px] font-bold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
+                                <span className="text-xs font-bold text-ink-muted bg-soft px-2 py-0.5 rounded-full">
                                   {s.difficulty === 1 ? 'Beginner' : 'Advanced'}
                                 </span>
-                                <span className="text-[10px] font-bold text-gray-500">
+                                <span className="text-xs font-bold text-ink-muted">
                                   Grades {s.gradeRange[0]}–{s.gradeRange[1]}
                                 </span>
                               </div>
@@ -284,10 +284,10 @@ export default function StrategyBankPage() {
         {!loading && strategies.length === 0 && (
           <div className="flex flex-col items-center gap-4 py-12">
             <Sparky mood="thinking" size={64} />
-            <p className="text-sm font-bold text-gray-500">No strategies found.</p>
+            <p className="text-sm font-bold text-ink-muted">No strategies found.</p>
             <button
               onClick={() => setSelectedCategory(null)}
-              className="text-sm text-blue-500 underline"
+              className="text-sm text-action font-bold underline"
             >
               Show all
             </button>

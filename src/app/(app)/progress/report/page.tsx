@@ -13,10 +13,10 @@ function accuracyPct(t: { attempted: number; correct: number }) {
 }
 
 function masteryColor(pct: number) {
-  if (pct >= 90) return { bg: '#F0FDF4', border: '#58CC02', text: '#2D6A04', label: 'Mastered ✅' };
+  if (pct >= 90) return { bg: '#dff6ea', border: '#12805c', text: '#1d2a4d', label: 'Mastered ✅' };
   if (pct >= 75) return { bg: '#F7FEE7', border: '#8BC34A', text: '#3F6212', label: 'Strong 💪' };
-  if (pct >= 50) return { bg: '#FFFBEB', border: '#FFC107', text: '#78350F', label: 'Developing 🔄' };
-  return                 { bg: '#FEF2F2', border: '#FF5722', text: '#7F1D1D', label: 'Needs Practice 🎯' };
+  if (pct >= 50) return { bg: '#fff1b8', border: '#5a4300', text: '#5a4300', label: 'Developing 🔄' };
+  return                 { bg: '#fde8ea', border: '#c62f3d', text: '#c62f3d', label: 'Needs Practice 🎯' };
 }
 
 // ── Page ──────────────────────────────────────────────────────────────────────
@@ -44,7 +44,7 @@ export default function ParentReportPage() {
       <div className="flex items-center justify-center min-h-screen bg-paper">
         <div className="text-center">
           <div className="text-5xl mb-4 animate-bounce">📊</div>
-          <p className="text-gray-500 font-bold">Generating report…</p>
+          <p className="text-ink-muted font-bold">Generating report…</p>
         </div>
       </div>
     );
@@ -86,17 +86,17 @@ export default function ParentReportPage() {
     <div className="min-h-screen bg-paper pb-12 animate-fade-in" id="parent-report">
 
       {/* ── Header ──────────────────────────────────────────────── */}
-      <div style={{ background: 'linear-gradient(135deg, #58CC02, #46a302)' }} className="px-6 pt-8 pb-6">
+      <div style={{ background: 'linear-gradient(135deg, #1d2a4d, #1d2a4d)' }} className="px-6 pt-8 pb-6">
         <div className="max-w-lg mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <Sparky mood="happy" size={44} />
             <div>
-              <p className="text-green-100 text-xs font-semibold">MathSpark Progress Report</p>
-              <p className="text-green-100 text-[10px] font-medium">{dateStr}</p>
+              <p className="text-white/70 text-xs font-semibold">MathSpark Progress Report</p>
+              <p className="text-white/70 text-xs font-medium">{dateStr}</p>
             </div>
           </div>
-          <h1 className="text-white text-2xl font-extrabold">{student.name}&apos;s Report</h1>
-          <p className="text-green-100 text-sm font-medium">Grade {student.grade}</p>
+          <h1 className="text-white text-heading">{student.name}&apos;s Report</h1>
+          <p className="text-white/70 text-sm font-medium">Grade {student.grade}</p>
 
           {/* Quick stats */}
           <div className="grid grid-cols-4 gap-2 mt-5">
@@ -106,10 +106,10 @@ export default function ParentReportPage() {
               { value: `${stats.streakDays}d`, label: 'Streak', emoji: '🔥' },
               { value: `${stats.topicsMastered}`, label: 'Mastered', emoji: '⭐' },
             ].map((s) => (
-              <div key={s.label} className="bg-white/20 rounded-xl p-2.5 text-center">
+              <div key={s.label} className="bg-white/10 rounded-tile p-2.5 text-center">
                 <span className="text-lg">{s.emoji}</span>
                 <p className="text-white font-extrabold text-lg leading-none mt-0.5">{s.value}</p>
-                <p className="text-green-100 text-[10px] font-bold mt-0.5">{s.label}</p>
+                <p className="text-white/70 text-xs font-bold mt-0.5">{s.label}</p>
               </div>
             ))}
           </div>
@@ -119,36 +119,36 @@ export default function ParentReportPage() {
       <div className="max-w-lg mx-auto px-4">
 
         {/* ── Exam Readiness ───────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl border-2 border-line p-5 mt-4 flex items-center gap-4">
+        <div className="bg-white rounded-card border-2 border-line p-5 mt-4 flex items-center gap-4">
           <div
             className="w-16 h-16 rounded-full flex items-center justify-center text-xl font-extrabold border-4 shrink-0"
             style={{
-              borderColor: readinessScore >= 75 ? '#58CC02' : readinessScore >= 50 ? '#FFC107' : '#FF5722',
-              color: readinessScore >= 75 ? '#2D6A04' : readinessScore >= 50 ? '#78350F' : '#7F1D1D',
+              borderColor: readinessScore >= 75 ? '#12805c' : readinessScore >= 50 ? '#f5a400' : '#c62f3d',
+              color: readinessScore >= 75 ? '#12805c' : readinessScore >= 50 ? '#5a4300' : '#c62f3d',
             }}
           >
             {readinessScore}
           </div>
           <div>
-            <p className="font-extrabold text-gray-800 text-sm">Exam Readiness Score</p>
-            <p className="text-xs text-gray-500 font-medium mt-0.5">{readinessLabel}</p>
+            <p className="font-extrabold text-ink text-sm">Exam Readiness Score</p>
+            <p className="text-xs text-ink-muted font-medium mt-0.5">{readinessLabel}</p>
           </div>
         </div>
 
         {/* ── Strengths ────────────────────────────────────────────── */}
         {strengths.length > 0 && (
-          <div className="bg-white rounded-2xl border-2 border-line p-5 mt-3">
-            <h2 className="text-xs font-extrabold text-duo-green uppercase tracking-widest mb-3">
+          <div className="bg-white rounded-card border-2 border-line p-5 mt-3">
+            <h2 className="text-title text-ink mb-3">
               💪 What {student.name} is Great At
             </h2>
             <div className="space-y-2">
               {strengths.slice(0, 4).map((t) => (
-                <div key={t.id} className="bg-green-50 rounded-xl px-3 py-2.5 border border-green-100 flex items-center justify-between">
+                <div key={t.id} className="bg-success-soft rounded-control px-3 py-2.5 border-2 border-success flex items-center justify-between">
                   <div>
-                    <p className="text-xs font-bold text-gray-800">{t.name}</p>
-                    <p className="text-[10px] text-duo-green font-medium">{t.correct}/{t.attempted} correct — brilliant!</p>
+                    <p className="text-xs font-bold text-ink">{t.name}</p>
+                    <p className="text-xs text-ink-muted font-medium">{t.correct}/{t.attempted} correct — brilliant!</p>
                   </div>
-                  <span className="text-sm font-extrabold text-duo-green">{accuracyPct(t)}%</span>
+                  <span className="text-label font-extrabold text-success">{accuracyPct(t)}%</span>
                 </div>
               ))}
             </div>
@@ -157,19 +157,19 @@ export default function ParentReportPage() {
 
         {/* ── Areas to Strengthen ──────────────────────────────────── */}
         {weakAreas.length > 0 && (
-          <div className="bg-white rounded-2xl border-2 border-line p-5 mt-3">
-            <h2 className="text-xs font-extrabold text-orange-600 uppercase tracking-widest mb-3">
+          <div className="bg-white rounded-card border-2 border-line p-5 mt-3">
+            <h2 className="text-title text-ink mb-3">
               🎯 Areas to Strengthen
             </h2>
-            <p className="text-xs text-gray-500 font-medium mb-2">
+            <p className="text-xs text-ink-muted font-medium mb-2">
               These topics just need a bit more practice — totally fixable!
             </p>
             <div className="space-y-2">
               {weakAreas.slice(0, 4).map((t) => (
-                <div key={t.id} className="bg-orange-50 rounded-xl px-3 py-2.5 border border-orange-100 flex items-center justify-between">
+                <div key={t.id} className="bg-hint rounded-control px-3 py-2.5 border-2 border-hint-ink flex items-center justify-between">
                   <div>
-                    <p className="text-xs font-bold text-gray-800">{t.name}</p>
-                    <p className="text-[10px] text-orange-600 font-medium">{accuracyPct(t)}% — more practice will help</p>
+                    <p className="text-xs font-bold text-ink">{t.name}</p>
+                    <p className="text-xs text-hint-ink font-medium">{accuracyPct(t)}% — more practice will help</p>
                   </div>
                 </div>
               ))}
@@ -178,47 +178,47 @@ export default function ParentReportPage() {
         )}
 
         {/* ── Weekly Activity ──────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl border-2 border-line p-5 mt-3">
-          <h2 className="text-xs font-extrabold text-gray-500 uppercase tracking-widest mb-3">This Week&apos;s Activity</h2>
+        <div className="bg-white rounded-card border-2 border-line p-5 mt-3">
+          <h2 className="text-title text-ink mb-3">This Week&apos;s Activity</h2>
           <div className="flex items-end gap-1.5 h-16 mb-1">
             {weeklyData.map(({ date, count }) => (
               <div key={date} className="flex-1 flex flex-col items-center gap-1">
                 <div
                   className="w-full rounded-t-sm transition-[height]"
                   style={{
-                    background: count > 0 ? 'linear-gradient(to top,#46a302,#58CC02)' : 'transparent',
+                    background: count > 0 ? 'linear-gradient(to top,#4f46e5,#4f46e5)' : 'transparent',
                     height: `${Math.max(count > 0 ? 4 : 0, Math.round((count / maxBar) * 48))}px`,
                   }}
                 />
-                <span className="text-[10px] text-gray-500 font-bold">{date}</span>
+                <span className="text-xs text-ink-muted font-bold">{date}</span>
               </div>
             ))}
           </div>
-          <p className="text-[10px] text-gray-500 text-center font-medium">Questions practiced per day</p>
+          <p className="text-xs text-ink-muted text-center font-medium">Questions practiced per day</p>
         </div>
 
         {/* ── Topic Mastery Map ─────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl border-2 border-line p-5 mt-3">
-          <h2 className="text-xs font-extrabold text-gray-500 uppercase tracking-widest mb-3">
+        <div className="bg-white rounded-card border-2 border-line p-5 mt-3">
+          <h2 className="text-title text-ink mb-3">
             🗺️ Topic Mastery Map
           </h2>
           <div className="space-y-1.5">
             {topics.map((t) => {
               const pct = accuracyPct(t);
               const level = t.attempted === 0
-                ? { bg: '#F9FAFB', border: '#E5E7EB', text: '#9CA3AF', label: 'Not started' }
+                ? { bg: '#ffffff', border: '#d3deee', text: '#5d6b8c', label: 'Not started' }
                 : masteryColor(pct);
               return (
                 <div
                   key={t.id}
-                  className="flex items-center gap-3 rounded-xl px-3 py-2"
+                  className="flex items-center gap-3 rounded-control px-3 py-2"
                   style={{ backgroundColor: level.bg, border: `1px solid ${level.border}` }}
                 >
-                  <p className="text-xs font-bold text-gray-700 flex-1 truncate">{t.name}</p>
+                  <p className="text-xs font-bold text-ink flex-1 truncate">{t.name}</p>
                   {t.attempted > 0 && (
                     <span className="text-xs font-extrabold shrink-0" style={{ color: level.text }}>{pct}%</span>
                   )}
-                  <span className="text-[10px] font-bold shrink-0" style={{ color: level.text }}>{level.label}</span>
+                  <span className="text-xs font-bold shrink-0" style={{ color: level.text }}>{level.label}</span>
                 </div>
               );
             })}
@@ -226,15 +226,15 @@ export default function ParentReportPage() {
         </div>
 
         {/* ── Recommendations ──────────────────────────────────────── */}
-        <div className="bg-white rounded-2xl border-2 border-line p-5 mt-3">
-          <h2 className="text-xs font-extrabold text-gray-500 uppercase tracking-widest mb-3">
+        <div className="bg-white rounded-card border-2 border-line p-5 mt-3">
+          <h2 className="text-title text-ink mb-3">
             📋 What to Do This Week
           </h2>
           <div className="space-y-2.5">
             {weakAreas.length > 0 && (
               <div className="flex items-start gap-2">
                 <span className="text-sm shrink-0 mt-0.5">1️⃣</span>
-                <p className="text-xs text-gray-700 font-medium">
+                <p className="text-xs text-ink font-medium">
                   Spend 10 minutes on <strong>{weakAreas[0].name}</strong> — {student.name} is at {accuracyPct(weakAreas[0])}%.
                   A few focused practice sessions will make a big difference!
                 </p>
@@ -243,14 +243,14 @@ export default function ParentReportPage() {
             {strengths.length > 0 && (
               <div className="flex items-start gap-2">
                 <span className="text-sm shrink-0 mt-0.5">2️⃣</span>
-                <p className="text-xs text-gray-700 font-medium">
+                <p className="text-xs text-ink font-medium">
                   Keep <strong>{strengths[0].name}</strong> sharp with a quick 5-minute review this week!
                 </p>
               </div>
             )}
             <div className="flex items-start gap-2">
               <span className="text-sm shrink-0 mt-0.5">3️⃣</span>
-              <p className="text-xs text-gray-700 font-medium">
+              <p className="text-xs text-ink font-medium">
                 Try a practice paper to test overall exam readiness. Even 15 minutes helps!
               </p>
             </div>
@@ -258,17 +258,17 @@ export default function ParentReportPage() {
         </div>
 
         {/* ── Sparky's Message ─────────────────────────────────────── */}
-        <div className="bg-purple-50 rounded-2xl p-4 mt-3 border border-purple-200 flex items-start gap-3">
+        <div className="bg-white rounded-card p-4 mt-3 border-2 border-line flex items-start gap-3">
           <Sparky mood="happy" size={36} />
           <div>
-            <p className="text-sm font-bold text-purple-800">
+            <p className="text-sm font-bold text-ink">
               {overallAccuracy >= 80
                 ? `${student.name} is doing amazing! Top-level performance!`
                 : overallAccuracy >= 50
                 ? `${student.name} is making great progress! Consistent practice is the key.`
                 : `${student.name} is on the right track! Every question makes them stronger.`}
             </p>
-            <p className="text-xs text-purple-600 mt-0.5 italic">
+            <p className="text-xs text-ink-muted mt-0.5 italic">
               — Sparky, your math buddy
             </p>
           </div>
@@ -282,14 +282,14 @@ export default function ParentReportPage() {
               setCopied(true);
               setTimeout(() => setCopied(false), 2000);
             }}
-            className="w-full bg-duo-green text-white font-extrabold text-sm py-3 rounded-2xl shadow-md hover:bg-duo-green-dark transition-colors active:scale-[0.98]"
+            className="w-full bg-action text-white border-2 border-ink shadow-hard-sm font-extrabold text-sm py-3 rounded-control hover:bg-action-dark transition-colors active:scale-[0.98]"
           >
             {copied ? '✓ Link Copied!' : '🔗 Copy Shareable Link for Parents'}
           </button>
 
           <button
             onClick={() => window.history.length > 1 ? router.back() : router.push('/progress')}
-            className="w-full text-gray-500 font-bold text-sm py-2"
+            className="w-full text-action font-bold text-sm py-2"
           >
             ← Back to Progress
           </button>
@@ -297,7 +297,7 @@ export default function ParentReportPage() {
 
         {/* ── Footer ───────────────────────────────────────────────── */}
         <div className="mt-6 text-center pb-4">
-          <p className="text-[10px] text-gray-300 font-medium">
+          <p className="text-xs text-ink-muted font-medium">
             MathSpark · Generated {dateStr} · For parents of {student.name}
           </p>
         </div>

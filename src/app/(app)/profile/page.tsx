@@ -16,8 +16,8 @@ function Toggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
       className="relative min-w-[44px] min-h-[44px] flex items-center justify-center flex-shrink-0"
       aria-label="toggle"
     >
-      <div className={`relative w-12 h-6 rounded-full transition-colors ${on ? 'bg-duo-green' : 'bg-gray-200'}`}>
-        <div className={`absolute top-1 w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${on ? 'translate-x-7' : 'translate-x-1'}`} />
+      <div className={`relative w-12 h-6 rounded-full transition-colors ${on ? 'bg-action' : 'bg-line'}`}>
+        <div className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-transform ${on ? 'translate-x-7' : 'translate-x-1'}`} />
       </div>
     </button>
   );
@@ -27,12 +27,12 @@ function SettingRow({ icon, label, sublabel, control }: {
   icon: string; label: string; sublabel?: string; control: ReactNode;
 }) {
   return (
-    <div className="flex items-center justify-between py-3.5 border-b border-gray-100">
+    <div className="flex items-center justify-between py-3.5 border-b border-line">
       <div className="flex items-center gap-3">
         <span className="text-xl" aria-hidden="true">{icon}</span>
         <div>
-          <p className="font-bold text-gray-700 text-sm">{label}</p>
-          {sublabel && <p className="text-xs text-gray-500 font-medium">{sublabel}</p>}
+          <p className="font-bold text-ink text-sm">{label}</p>
+          {sublabel && <p className="text-xs text-ink-muted font-medium">{sublabel}</p>}
         </div>
       </div>
       {control}
@@ -49,10 +49,10 @@ function PillSelector<T extends string | number>({
         <button
           key={String(opt)}
           onClick={() => onChange(opt)}
-          className={`px-3 py-1.5 rounded-full text-xs font-extrabold transition-[colors,transform] active:scale-95 min-h-0 ${
+          className={`px-3 py-1.5 rounded-full border-2 text-xs font-extrabold transition-[colors,transform] active:scale-95 min-h-0 ${
             value === opt
-              ? 'bg-duo-green text-white shadow-sm'
-              : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+              ? 'bg-action border-action text-white'
+              : 'bg-soft border-line text-ink-muted hover:border-ink'
           }`}
         >
           {label(opt)}
@@ -64,8 +64,8 @@ function PillSelector<T extends string | number>({
 
 function Card({ title, children }: { title?: string; children: ReactNode }) {
   return (
-    <div className="bg-white px-4 py-4 mt-2 border-b border-gray-100">
-      {title && <h2 className="text-[10px] font-extrabold text-gray-500 uppercase tracking-widest mb-3">{title}</h2>}
+    <div className="bg-white px-4 py-4 mt-2 border-y-2 border-line">
+      {title && <h2 className="text-title text-ink mb-3">{title}</h2>}
       {children}
     </div>
   );
@@ -287,9 +287,9 @@ export default function ProfilePage() {
   if (fetchError) {
     return (
       <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
-        <p className="text-gray-800 font-extrabold text-lg">Something went wrong</p>
-        <p className="text-gray-500 text-sm">Could not load your profile. Check your connection.</p>
-        <button onClick={() => window.location.reload()} className="bg-duo-green text-white font-extrabold px-6 py-2.5 rounded-2xl text-sm active:scale-95 transition-transform">
+        <p className="text-ink font-extrabold text-lg">Something went wrong</p>
+        <p className="text-ink-muted text-sm">Could not load your profile. Check your connection.</p>
+        <button onClick={() => window.location.reload()} className="bg-action text-white border-2 border-ink shadow-hard-sm font-extrabold px-6 py-2.5 rounded-control text-sm active:scale-95 transition-transform">
           Retry
         </button>
       </div>
@@ -302,10 +302,10 @@ export default function ProfilePage() {
     return (
       <div className="min-h-screen bg-paper pb-24 animate-fade-in">
         {/* Identity header — real data from localStorage, no pulse */}
-        <div className="bg-duo-dark pt-10 pb-6 px-4">
+        <div className="bg-ink pt-10 pb-6 px-4">
           <div className="flex items-center gap-4">
             <div
-              className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white border-4 border-white/30 shadow-lg shrink-0"
+              className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white border-4 border-white shrink-0"
               style={{ backgroundColor: avatarColor }}
             >
               {skeletonInitial}
@@ -313,8 +313,8 @@ export default function ProfilePage() {
             <div className="flex-1 min-w-0">
               {name ? (
                 <>
-                  <h1 className="text-2xl font-extrabold text-white truncate">{name}</h1>
-                  <p className="text-white/60 text-sm font-semibold">Grade {grade}</p>
+                  <h1 className="text-heading text-white truncate">{name}</h1>
+                  <p className="text-white/70 text-sm font-semibold">Grade {grade}</p>
                 </>
               ) : (
                 <div className="space-y-2">
@@ -327,9 +327,9 @@ export default function ProfilePage() {
         </div>
         {/* Card skeletons */}
         {[0,1,2,3].map((i) => (
-          <div key={i} className="bg-white mt-2 px-4 py-6 border-b border-gray-100">
+          <div key={i} className="bg-white mt-2 px-4 py-6 border-y-2 border-line">
             <div className="h-3 bg-gray-100 rounded w-24 mb-4 animate-pulse" />
-            <div className="h-12 bg-gray-100 rounded-2xl animate-pulse" />
+            <div className="h-12 bg-gray-100 rounded-control animate-pulse" />
           </div>
         ))}
       </div>
@@ -354,7 +354,7 @@ export default function ProfilePage() {
 
       {/* ── Toast ─────────────────────────────────────────────────────────── */}
       {toast && (
-        <div className={`fixed top-4 left-1/2 -translate-x-1/2 z-[80] px-5 py-3 rounded-full shadow-xl font-bold text-sm text-white animate-pop-in pointer-events-none ${toast.ok ? 'bg-duo-green' : 'bg-duo-red'}`}>
+        <div className={`fixed top-4 left-1/2 -translate-x-1/2 z-[80] px-5 py-3 rounded-full border-2 border-ink shadow-hard-sm font-bold text-sm text-white animate-pop-in pointer-events-none ${toast.ok ? 'bg-success' : 'bg-retry'}`}>
           {toast.msg}
         </div>
       )}
@@ -362,26 +362,26 @@ export default function ProfilePage() {
       {/* ── Edit name modal ────────────────────────────────────────────────── */}
       {editingName && (
         <div className="fixed inset-0 bg-black/60 z-[70] flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl p-6 w-full max-w-xs shadow-2xl animate-pop-in space-y-4">
-            <h3 className="font-extrabold text-gray-800 text-lg">Change your name</h3>
+          <div className="bg-white rounded-card border-2 border-ink p-6 w-full max-w-xs shadow-hard-lg animate-pop-in space-y-4">
+            <h3 className="text-title text-ink">Change your name</h3>
             <div className="space-y-2">
-              <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">Your name</label>
+              <label className="text-xs font-extrabold text-ink-muted">Your name</label>
               <input
                 type="text" autoFocus value={newName}
                 onChange={(e) => setNewName(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && saveName()}
                 placeholder="First name"
-                className="w-full border-2 border-blue-200 rounded-2xl px-4 py-3 text-base font-bold text-gray-800 outline-none focus:border-duo-blue"
+                className="w-full border-2 border-line rounded-control px-4 py-3 text-base font-bold text-ink outline-none focus:border-action"
                 maxLength={30}
               />
             </div>
             <div className="space-y-2">
-              <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">Leaderboard name</label>
+              <label className="text-xs font-extrabold text-ink-muted">Leaderboard name</label>
               <input
                 type="text" value={newDisplayName}
                 onChange={(e) => setNewDisplayName(e.target.value)}
                 placeholder="Max 20 chars"
-                className="w-full border-2 border-gray-200 rounded-2xl px-4 py-3 text-base font-bold text-gray-800 outline-none focus:border-duo-blue"
+                className="w-full border-2 border-line rounded-control px-4 py-3 text-base font-bold text-ink outline-none focus:border-action"
                 maxLength={20}
               />
             </div>
@@ -394,17 +394,17 @@ export default function ProfilePage() {
       )}
 
       {/* ── 1. Identity Header ─────────────────────────────────────────────── */}
-      <div className="bg-duo-dark pt-10 pb-6 px-4">
+      <div className="bg-ink pt-10 pb-6 px-4">
         <div className="flex items-center gap-4">
           <div
-            className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white border-4 border-white/30 shadow-lg shrink-0"
+            className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white border-4 border-white shrink-0"
             style={{ backgroundColor: avatarColor }}
           >
             {initial}
           </div>
           <div className="flex-1 min-w-0">
-            <h1 className="text-2xl font-extrabold text-white truncate">{name}</h1>
-            <p className="text-white/60 text-sm font-semibold">
+            <h1 className="text-heading text-white truncate">{name}</h1>
+            <p className="text-white/70 text-sm font-semibold">
               Grade {grade}{city ? ` · ${city}` : ''}
             </p>
             <div className="flex items-center gap-2 mt-1">
@@ -412,7 +412,7 @@ export default function ProfilePage() {
                 {tierEmoji} {tierName} League
               </span>
               {streakDays > 0 && (
-                <span className="text-orange-400 text-xs font-extrabold"><span aria-hidden="true">🔥 </span>{streakDays}-day streak</span>
+                <span className="text-star text-xs font-extrabold"><span aria-hidden="true">🔥 </span>{streakDays}-day streak</span>
               )}
             </div>
             {memberSince && (
@@ -423,7 +423,7 @@ export default function ProfilePage() {
         <button
           onClick={() => setEditingName(true)}
           style={{ minHeight: 0 }}
-          className="mt-4 bg-white/15 hover:bg-white/25 text-white text-sm font-bold rounded-full px-4 py-2 transition-colors"
+          className="mt-4 bg-white hover:bg-soft text-ink border-2 border-white text-sm font-bold rounded-full px-4 py-2 transition-colors"
         >
           <span aria-hidden="true">✏️ </span>Edit name
         </button>
@@ -433,38 +433,38 @@ export default function ProfilePage() {
       <Card title="My Exam">
         <div className="space-y-3">
           <div>
-            <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">Exam name</label>
+            <label className="text-xs font-extrabold text-ink-muted">Exam name</label>
             <input
               type="text" value={examName}
               onChange={(e) => setExamName(e.target.value)}
               placeholder="e.g. IPM 2027"
-              className="w-full mt-1.5 border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-duo-blue"
+              className="w-full mt-1.5 border-2 border-line rounded-control px-3 py-2.5 text-sm font-medium text-ink outline-none focus:border-action"
             />
           </div>
           <div>
-            <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">Exam date</label>
+            <label className="text-xs font-extrabold text-ink-muted">Exam date</label>
             <input
               type="date" value={examDate}
               onChange={(e) => setExamDate(e.target.value)}
-              className="w-full mt-1.5 border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-duo-blue"
+              className="w-full mt-1.5 border-2 border-line rounded-control px-3 py-2.5 text-sm font-medium text-ink outline-none focus:border-action"
             />
             {examDaysLeft !== null && (
-              <p className="text-xs text-duo-blue font-semibold mt-1">
+              <p className="text-xs text-ink-muted font-semibold mt-1">
                 📅 {examDaysLeft} days to exam
               </p>
             )}
           </div>
           <div>
-            <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide mb-1.5 block">Target score (out of 40)</label>
+            <label className="text-xs font-extrabold text-ink-muted mb-1.5 block">Target score (out of 40)</label>
             <div className="flex gap-2">
               {[25, 30, 35, 38].map((s) => (
                 <button
                   key={s}
                   onClick={() => setTargetScore(s)}
-                  className={`flex-1 py-2 rounded-xl text-sm font-extrabold transition-colors min-h-0 ${
+                  className={`flex-1 py-2 rounded-control border-2 text-sm font-extrabold transition-colors min-h-0 ${
                     targetScore === s
-                      ? 'bg-duo-green text-white shadow-sm'
-                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                      ? 'bg-action border-action text-white'
+                      : 'bg-soft border-line text-ink-muted hover:border-ink'
                   }`}
                 >
                   {s}
@@ -476,7 +476,7 @@ export default function ProfilePage() {
             onClick={saveExam}
             disabled={savingExam}
             style={{ minHeight: 0 }}
-            className="px-4 py-2 rounded-xl bg-duo-green text-white text-xs font-extrabold disabled:opacity-60"
+            className="px-4 py-2 rounded-control bg-action border-2 border-ink shadow-hard-sm text-white text-xs font-extrabold disabled:opacity-60"
           >
             {savingExam ? 'Saving…' : 'Save goals ✓'}
           </button>
@@ -516,10 +516,10 @@ export default function ProfilePage() {
               <button
                 key={v}
                 onClick={() => updatePracticeTime(v)}
-                className={`flex-1 py-2 rounded-xl text-xs font-extrabold transition-colors min-h-0 ${
+                className={`flex-1 py-2 rounded-control border-2 text-xs font-extrabold transition-colors min-h-0 ${
                   preferredPracticeTime === v
-                    ? 'bg-duo-blue text-white shadow-sm'
-                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                    ? 'bg-action border-action text-white'
+                    : 'bg-soft border-line text-ink-muted hover:border-ink'
                 }`}
               >
                 {l}
@@ -555,10 +555,10 @@ export default function ProfilePage() {
               <button
                 key={t.id}
                 onClick={() => toggleFocus(t.id)}
-                className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-extrabold transition-colors min-h-0 ${
+                className={`flex items-center gap-1 px-3 py-1.5 rounded-full border-2 text-xs font-extrabold transition-colors min-h-0 ${
                   focusTopics.includes(t.id)
-                    ? 'bg-duo-red text-white'
-                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                    ? 'bg-retry-soft border-retry text-retry'
+                    : 'bg-soft border-line text-ink-muted hover:border-ink'
                 }`}
               >
                 <span aria-hidden="true">{t.emoji}</span>
@@ -576,10 +576,10 @@ export default function ProfilePage() {
               <button
                 key={t.id}
                 onClick={() => toggleConfident(t.id)}
-                className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-extrabold transition-colors min-h-0 ${
+                className={`flex items-center gap-1 px-3 py-1.5 rounded-full border-2 text-xs font-extrabold transition-colors min-h-0 ${
                   confidentTopics.includes(t.id)
-                    ? 'bg-duo-green text-white'
-                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                    ? 'bg-success-soft border-success text-ink'
+                    : 'bg-soft border-line text-ink-muted hover:border-ink'
                 }`}
               >
                 <span aria-hidden="true">{t.emoji}</span>
@@ -595,28 +595,28 @@ export default function ProfilePage() {
       <Card title="Parent Settings">
         <div className="space-y-3">
           <div>
-            <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">Parent email</label>
+            <label className="text-xs font-extrabold text-ink-muted">Parent email</label>
             <input
               type="email" value={parentEmail}
               onChange={(e) => setParentEmail(e.target.value)}
               placeholder="parent@email.com"
-              className="w-full mt-1.5 border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-duo-blue"
+              className="w-full mt-1.5 border-2 border-line rounded-control px-3 py-2.5 text-sm font-medium text-ink outline-none focus:border-action"
             />
           </div>
           <div>
-            <label className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">WhatsApp number</label>
+            <label className="text-xs font-extrabold text-ink-muted">WhatsApp number</label>
             <input
               type="tel" value={parentWhatsApp}
               onChange={(e) => setParentWhatsApp(e.target.value)}
               placeholder="+91 98XXX XXXXX"
-              className="w-full mt-1.5 border-2 border-gray-200 rounded-xl px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-[#25D366]"
+              className="w-full mt-1.5 border-2 border-line rounded-control px-3 py-2.5 text-sm font-medium text-ink outline-none focus:border-action"
             />
           </div>
           <button
             onClick={saveParentContact}
             disabled={savingContact}
             style={{ minHeight: 0 }}
-            className="px-4 py-2 rounded-xl bg-duo-green text-white text-xs font-extrabold disabled:opacity-60"
+            className="px-4 py-2 rounded-control bg-action border-2 border-ink shadow-hard-sm text-white text-xs font-extrabold disabled:opacity-60"
           >
             {savingContact ? 'Saving…' : 'Save contact ✓'}
           </button>
@@ -634,10 +634,10 @@ export default function ProfilePage() {
                 <button
                   key={g}
                   onClick={() => changeGrade(g)}
-                  className={`py-2 rounded-xl text-xs font-extrabold transition-colors min-h-0 ${
+                  className={`py-2 rounded-control border-2 text-xs font-extrabold transition-colors min-h-0 ${
                     grade === g
-                      ? 'bg-duo-blue text-white shadow-sm'
-                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                      ? 'bg-action border-action text-white'
+                      : 'bg-soft border-line text-ink-muted hover:border-ink'
                   }`}
                 >
                   Gr {g}
@@ -652,18 +652,18 @@ export default function ProfilePage() {
               <p className="text-sm font-bold text-gray-700">Subscription</p>
               <p className="text-xs text-gray-500 font-medium">Current plan</p>
             </div>
-            <Link href="/pricing" className="text-xs font-extrabold text-duo-blue bg-blue-50 rounded-full px-3 py-1.5">
+            <Link href="/pricing" className="text-xs font-extrabold text-action bg-soft border-2 border-line rounded-full px-3 py-1.5">
               Upgrade →
             </Link>
           </div>
 
           {/* Sparky Chat */}
-          <div className="flex items-center justify-between py-2 border-t border-gray-100">
+          <div className="flex items-center justify-between py-2 border-t border-line">
             <div className="flex items-center gap-2">
               <span className="text-lg" aria-hidden="true">💬</span>
               <p className="text-sm font-bold text-gray-700">Sparky Chat</p>
             </div>
-            <Link href="/chat" className="text-xs font-extrabold text-duo-blue bg-blue-50 rounded-full px-3 py-1.5">
+            <Link href="/chat" className="text-xs font-extrabold text-action bg-soft border-2 border-line rounded-full px-3 py-1.5">
               → Open
             </Link>
           </div>
@@ -676,7 +676,7 @@ export default function ProfilePage() {
         </div>
       </Card>
 
-      <p className="text-center text-xs text-gray-300 font-medium py-4">MathSpark · Grade {grade} Math · v1.0</p>
+      <p className="text-center text-xs text-ink-muted font-medium py-4">MathSpark · Grade {grade} Math · v1.0</p>
     </div>
   );
 }

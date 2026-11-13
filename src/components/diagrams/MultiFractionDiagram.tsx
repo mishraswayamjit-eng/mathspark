@@ -20,10 +20,10 @@ export default function MultiFractionDiagram({ figures, highlightIndex }: Props)
       {figures.map((fig, i) => (
         <div
           key={i}
-          className={`rounded-lg border p-2 ${
+          className={`rounded-lg border-2 p-2 ${
             highlightIndex === i
-              ? 'border-[#1CB0F6] bg-blue-50'
-              : 'border-gray-200 bg-white'
+              ? 'border-action bg-soft'
+              : 'border-line bg-white'
           }`}
         >
           <FractionDiagram
@@ -32,7 +32,7 @@ export default function MultiFractionDiagram({ figures, highlightIndex }: Props)
             shadedParts={fig.shadedParts}
             columns={fig.columns}
           />
-          <p className="text-center text-[10px] font-bold text-gray-600 mt-1">
+          <p className="text-center text-xs font-bold text-ink-muted mt-1">
             {fig.label}
           </p>
         </div>

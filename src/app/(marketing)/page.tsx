@@ -14,17 +14,17 @@ import ScrollButton from '@/components/landing/ScrollButton';
 const PLANS = [
   {
     id: 'starter', name: 'Starter', emoji: '🌱', monthly: 500,
-    borderColor: 'border-duo-green', ctaClass: 'bg-duo-green hover:bg-[#46a302]', popular: false,
+    borderColor: 'border-line', ctaClass: 'bg-white text-ink hover:bg-soft', popular: false,
     features: ['2,505+ practice questions','1 hour / day','3-level hint system','Step-by-step solutions','5 AI tutor chats / day','Progress tracking'],
   },
   {
     id: 'advanced', name: 'Advanced', emoji: '⚡', monthly: 1500,
-    borderColor: 'border-duo-blue', ctaClass: 'bg-duo-blue hover:bg-[#0a98dc]', popular: true,
+    borderColor: 'border-ink', ctaClass: 'bg-action text-white hover:bg-action-dark', popular: true,
     features: ['Everything in Starter','5 hours / day','Diagnostic quiz','Adaptive difficulty engine','Misconception feedback','25 AI tutor chats / day'],
   },
   {
     id: 'unlimited', name: 'Unlimited', emoji: '🏆', monthly: 5000,
-    borderColor: 'border-purple-500', ctaClass: 'bg-purple-500 hover:bg-purple-600', popular: false,
+    borderColor: 'border-line', ctaClass: 'bg-white text-ink hover:bg-soft', popular: false,
     features: ['Everything in Advanced','Unlimited time / day','100 AI tutor chats / day','Mock test mode (all papers)','Full dashboard & analytics','Parent dashboard','Badges, streaks & XP'],
   },
 ];
@@ -47,22 +47,22 @@ const COMPARISON_ROWS = [
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <div className="min-h-screen bg-paper text-ink">
       <AuthRedirect />
 
       {/* ── NAV ─────────────────────────────────────────────────────────────── */}
-      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/50 px-4 sm:px-6 py-3">
+      <nav className="sticky top-0 z-50 bg-ink px-4 sm:px-6 py-3">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Sparky size={30} mood="happy" />
-            <span className="text-duo-dark font-extrabold text-lg tracking-tight">MathSpark</span>
+            <span className="text-white font-extrabold text-lg tracking-tight">MathSpark</span>
           </div>
           <div className="flex items-center gap-3">
             {MONETIZATION_ENABLED && (
-              <Link href="/pricing" className="text-gray-600 text-sm font-semibold hover:text-gray-900 transition-colors hidden sm:block">Pricing</Link>
+              <Link href="/pricing" className="text-white/70 text-sm font-semibold hover:text-white transition-colors hidden sm:block">Pricing</Link>
             )}
-            <Link href="/auth/login" className="text-gray-600 text-sm font-semibold hover:text-gray-900 transition-colors">Sign in</Link>
-            <Link href="/start" className="bg-duo-green text-white text-sm font-extrabold px-5 py-2 rounded-full hover:bg-[#46a302] transition-colors">
+            <Link href="/auth/login" className="text-white/70 text-sm font-semibold hover:text-white transition-colors">Sign in</Link>
+            <Link href="/start" className="bg-white text-ink text-sm font-extrabold px-5 py-2 rounded-control border-2 border-white hover:bg-soft transition-colors">
               Try It Free
             </Link>
           </div>
@@ -70,31 +70,31 @@ export default function LandingPage() {
       </nav>
 
       {/* ── HERO ────────────────────────────────────────────────────────────── */}
-      <section className="gradient-mesh-hero px-4 sm:px-6 pt-16 pb-20">
+      <section className="px-4 sm:px-6 pt-16 pb-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-duo-dark leading-[1.1] mb-4">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-ink leading-[1.1] mb-4">
               Try a real IPM question<br />
-              <span className="text-duo-green">right now.</span>
+              <span className="text-action">right now.</span>
             </h1>
-            <p className="text-gray-600 text-lg leading-relaxed mb-8 max-w-md">
+            <p className="text-ink-muted text-lg leading-relaxed mb-8 max-w-md">
               No sign up. No email. Just tap an answer and see how adaptive math practice works.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/start"
-                className="flex-1 text-center bg-duo-green text-white font-extrabold py-4 rounded-2xl transition-colors hover:bg-[#46a302] active:translate-y-0.5"
+                className="flex-1 text-center bg-action text-white font-extrabold py-4 rounded-control border-2 border-ink shadow-hard-sm transition-colors hover:bg-action-dark active:translate-y-0.5"
               >
                 Start Practicing — Free
               </Link>
               <ScrollButton
                 targetId="how-it-works"
-                className="flex-1 border-2 border-gray-200 text-gray-500 hover:border-gray-300 hover:text-gray-700 font-extrabold py-4 rounded-2xl transition-colors"
+                className="flex-1 bg-white border-2 border-ink text-ink shadow-hard-sm hover:bg-soft font-extrabold py-4 rounded-control transition-colors"
               >
                 How It Works
               </ScrollButton>
             </div>
-            <p className="text-gray-400 text-xs mt-3 font-medium">No account needed to start. Create one later to save progress.</p>
+            <p className="text-ink-muted text-xs mt-3 font-medium">No account needed to start. Create one later to save progress.</p>
           </div>
           <HeroDemo />
         </div>
@@ -104,10 +104,10 @@ export default function LandingPage() {
       <StatsBar />
 
       {/* ── HOW IT WORKS ──────────────────────────────────────────────────────── */}
-      <section id="how-it-works" className="bg-gray-50 py-16 px-4 sm:px-6 scroll-mt-16">
+      <section id="how-it-works" className="bg-soft border-y-2 border-line py-16 px-4 sm:px-6 scroll-mt-16">
         <div className="max-w-3xl mx-auto">
           <SectionFade>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-duo-dark text-center mb-10">How it works</h2>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-ink text-center mb-10">How it works</h2>
           </SectionFade>
           <div className="space-y-4">
             {[
@@ -121,10 +121,10 @@ export default function LandingPage() {
                 body: 'Full IPM simulations with detailed analytics. Track score improvement week over week.' },
             ].map((s, i) => (
               <SectionFade key={s.n} delay={i * 80}>
-                <div className="flex items-start gap-4 bg-white border-2 border-line rounded-2xl p-5">
-                  <div className="text-duo-green font-extrabold text-2xl tabular-nums shrink-0 w-10 mt-0.5">{s.n}</div>
+                <div className="flex items-start gap-4 bg-white border-2 border-line rounded-card p-5">
+                  <div className="text-ink-muted font-extrabold text-2xl tabular-nums shrink-0 w-10 mt-0.5">{s.n}</div>
                   <div>
-                    <h3 className="text-duo-dark font-extrabold text-base mb-1">{s.title}</h3>
+                    <h3 className="text-ink font-extrabold text-base mb-1">{s.title}</h3>
                     <p className="text-gray-500 text-sm leading-relaxed">{s.body}</p>
                   </div>
                 </div>
@@ -135,11 +135,11 @@ export default function LandingPage() {
             <div className="mt-8 text-center">
               <Link
                 href="/start"
-                className="inline-block bg-duo-green text-white font-extrabold py-4 px-10 rounded-2xl transition-colors hover:bg-[#46a302] active:translate-y-0.5 text-base"
+                className="inline-block bg-action text-white font-extrabold py-4 px-10 rounded-control border-2 border-ink shadow-hard-sm transition-colors hover:bg-action-dark active:translate-y-0.5 text-base"
               >
                 Start Your Free Diagnostic
               </Link>
-              <p className="text-gray-400 text-xs mt-2">Takes 2 minutes. No sign up required.</p>
+              <p className="text-ink-muted text-xs mt-2">Takes 2 minutes. No sign up required.</p>
             </div>
           </SectionFade>
         </div>
@@ -150,24 +150,24 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <SectionFade>
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-duo-dark leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-ink leading-tight">
                 What makes MathSpark different
               </h2>
             </div>
           </SectionFade>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              { emoji: '🧠', bg: 'bg-green-50', title: 'Adaptive AI That Learns Your Child',
+              { emoji: '🧠', bg: 'bg-soft', title: 'Adaptive AI That Learns Your Child',
                 body: 'Tracks accuracy, speed, and misconceptions across 21 topics. Serves questions in the sweet spot — challenging enough to grow, easy enough not to frustrate.' },
-              { emoji: '🔬', bg: 'bg-blue-50', title: 'Zero Hallucination. Every Answer Verified.',
+              { emoji: '🔬', bg: 'bg-soft', title: 'Zero Hallucination. Every Answer Verified.',
                 body: '100,000+ questions built from real IPM papers and official answer keys. No AI guessing — no wrong answers ever reach your child.' },
-              { emoji: '🎮', bg: 'bg-orange-50', title: '3x More Practice Than Worksheets',
+              { emoji: '🎮', bg: 'bg-soft', title: '3x More Practice Than Worksheets',
                 body: 'Gamified streaks, XP, and encouragement keep children practicing 93% of the time. Mixed-topic practice doubles retention.' },
             ].map((card, i) => (
               <SectionFade key={card.title} delay={i * 100}>
-                <div className="bg-white border-2 border-line rounded-2xl p-6 h-full flex flex-col hover:shadow-md transition-shadow">
-                  <div className={`w-12 h-12 ${card.bg} rounded-xl flex items-center justify-center text-2xl mb-4`} aria-hidden="true">{card.emoji}</div>
-                  <h3 className="text-duo-dark font-extrabold text-base mb-2 leading-tight">{card.title}</h3>
+                <div className="bg-white border-2 border-line rounded-card p-6 h-full flex flex-col hover:border-ink transition-colors">
+                  <div className={`w-12 h-12 ${card.bg} rounded-tile flex items-center justify-center text-2xl mb-4`} aria-hidden="true">{card.emoji}</div>
+                  <h3 className="text-ink font-extrabold text-base mb-2 leading-tight">{card.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed flex-1">{card.body}</p>
                 </div>
               </SectionFade>
@@ -177,11 +177,11 @@ export default function LandingPage() {
       </section>
 
       {/* ── COMPARISON TABLE ──────────────────────────────────────────────────── */}
-      <section className="bg-gray-50 py-16 px-4 sm:px-6">
+      <section className="bg-soft border-y-2 border-line py-16 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <SectionFade>
             <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-duo-dark leading-tight mb-3">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-ink leading-tight mb-3">
                 How MathSpark compares to private tutoring
               </h2>
               <p className="text-gray-500 text-sm max-w-xl mx-auto">
@@ -190,7 +190,7 @@ export default function LandingPage() {
             </div>
           </SectionFade>
           <SectionFade delay={100}>
-            <div className="overflow-x-auto rounded-2xl border-2 border-line bg-white">
+            <div className="overflow-x-auto rounded-card border-2 border-line bg-white">
               <table className="w-full text-sm min-w-[600px]">
                 <colgroup>
                   <col className="w-[30%]" />
@@ -198,20 +198,20 @@ export default function LandingPage() {
                   <col className="w-[42%]" />
                 </colgroup>
                 <thead>
-                  <tr className="bg-gray-50 border-b border-gray-100">
-                    <th className="text-left px-4 py-3 text-gray-400 font-semibold text-xs"></th>
-                    <th className="px-4 py-3 text-gray-400 font-semibold text-center text-xs">
-                      Private Tutor<br /><span className="font-normal text-gray-300">₹1,500–2,000/hr</span>
+                  <tr className="bg-soft border-b-2 border-line">
+                    <th className="text-left px-4 py-3 text-ink-muted font-semibold text-xs"></th>
+                    <th className="px-4 py-3 text-ink-muted font-semibold text-center text-xs">
+                      Private Tutor<br /><span className="font-normal text-ink-muted">₹1,500–2,000/hr</span>
                     </th>
-                    <th className="px-4 py-3 text-duo-green font-extrabold text-center text-xs">MathSpark</th>
+                    <th className="px-4 py-3 text-ink font-extrabold text-center text-xs">MathSpark</th>
                   </tr>
                 </thead>
                 <tbody>
                   {COMPARISON_ROWS.map(([feature, tutor, ms], i) => (
-                    <tr key={feature} className={`transition-colors ${i % 2 ? 'bg-gray-50/50' : ''} hover:bg-gray-50`}>
-                      <td className="px-4 py-3 text-gray-700 font-semibold text-xs">{feature}</td>
-                      <td className="px-4 py-3 text-gray-400 text-center text-xs">{tutor}</td>
-                      <td className="px-4 py-3 text-duo-green font-semibold text-center text-xs">{ms}</td>
+                    <tr key={feature} className={`transition-colors ${i % 2 ? 'bg-soft/50' : ''} hover:bg-soft`}>
+                      <td className="px-4 py-3 text-ink font-semibold text-xs">{feature}</td>
+                      <td className="px-4 py-3 text-ink-muted text-center text-xs">{tutor}</td>
+                      <td className="px-4 py-3 text-ink font-bold text-center text-xs">{ms}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -225,29 +225,29 @@ export default function LandingPage() {
       <section className="py-16 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <SectionFade>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-duo-dark text-center mb-10 leading-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-ink text-center mb-10 leading-tight">
               Everything your child needs to ace the IPM
             </h2>
           </SectionFade>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { emoji: '📝', bg: 'bg-red-50', title: 'Real IPM Exam Simulation',
+              { emoji: '📝', bg: 'bg-soft', title: 'Real IPM Exam Simulation',
                 body: 'Full 40-question, 60-minute mock tests matching exact IPM format with actual 2016–2019 papers.' },
-              { emoji: '🎯', bg: 'bg-green-50', title: 'Adaptive Difficulty Engine',
+              { emoji: '🎯', bg: 'bg-soft', title: 'Adaptive Difficulty Engine',
                 body: '70% at current level, 20% review, 10% stretch. Difficulty adjusts in real-time to keep your child in flow.' },
-              { emoji: '💬', bg: 'bg-purple-50', title: "Sparky: AI Math Tutor",
+              { emoji: '💬', bg: 'bg-soft', title: "Sparky: AI Math Tutor",
                 body: 'Never gives answers — asks guiding questions using the Socratic method to build real mathematical thinking.' },
-              { emoji: '📊', bg: 'bg-blue-50', title: 'Weekly Parent Reports',
+              { emoji: '📊', bg: 'bg-soft', title: 'Weekly Parent Reports',
                 body: 'Every Sunday: accuracy trends, strongest topics, exact gaps. Share with your tutor — no login required.' },
-              { emoji: '🏆', bg: 'bg-yellow-50', title: 'Misconception Mapping',
+              { emoji: '🏆', bg: 'bg-soft', title: 'Misconception Mapping',
                 body: 'Tracks error patterns and explains exactly why wrong answers are wrong. Addresses root causes automatically.' },
-              { emoji: '⚡', bg: 'bg-orange-50', title: 'Speed Drills',
+              { emoji: '⚡', bg: 'bg-soft', title: 'Speed Drills',
                 body: 'Timed drills matching real IPM pace — 90 seconds per question. Builds speed, accuracy, and exam confidence.' },
             ].map((f, i) => (
               <SectionFade key={f.title} delay={(i % 3) * 80}>
-                <div className="bg-white border-2 border-line rounded-2xl p-6 h-full flex flex-col hover:shadow-md transition-shadow">
-                  <div className={`w-10 h-10 ${f.bg} rounded-lg flex items-center justify-center text-xl mb-3`} aria-hidden="true">{f.emoji}</div>
-                  <h3 className="text-duo-dark font-extrabold text-sm mb-2 leading-tight">{f.title}</h3>
+                <div className="bg-white border-2 border-line rounded-card p-6 h-full flex flex-col hover:border-ink transition-colors">
+                  <div className={`w-10 h-10 ${f.bg} rounded-tile flex items-center justify-center text-xl mb-3`} aria-hidden="true">{f.emoji}</div>
+                  <h3 className="text-ink font-extrabold text-sm mb-2 leading-tight">{f.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed flex-1">{f.body}</p>
                 </div>
               </SectionFade>
@@ -257,10 +257,10 @@ export default function LandingPage() {
       </section>
 
       {/* ── TESTIMONIALS ──────────────────────────────────────────────────────── */}
-      <section className="bg-gray-50 py-16 px-4 sm:px-6">
+      <section className="bg-soft border-y-2 border-line py-16 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <SectionFade>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-duo-dark text-center mb-10">What parents are saying</h2>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-ink text-center mb-10">What parents are saying</h2>
           </SectionFade>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
@@ -269,10 +269,10 @@ export default function LandingPage() {
               { quote: "My son used to dread math worksheets. Now he asks to 'play MathSpark' every morning before school. His tutor noticed the difference within two weeks. The streak system is magic — 23 days and counting.", city: 'Parent, Bangalore' },
             ].map((t, i) => (
               <SectionFade key={t.city} delay={i * 100}>
-                <div className="bg-white border-2 border-line rounded-2xl p-6 h-full flex flex-col">
-                  <div className="text-duo-orange text-sm mb-3 tracking-wide" aria-hidden="true">★★★★★</div>
+                <div className="bg-white border-2 border-line rounded-card p-6 h-full flex flex-col">
+                  <div className="text-star text-sm mb-3 tracking-wide" aria-hidden="true">★★★★★</div>
                   <p className="text-gray-600 text-sm leading-relaxed italic flex-1">&ldquo;{t.quote}&rdquo;</p>
-                  <p className="text-gray-400 text-xs mt-4 font-semibold">— {t.city}</p>
+                  <p className="text-ink-muted text-xs mt-4 font-semibold">— {t.city}</p>
                 </div>
               </SectionFade>
             ))}
@@ -285,8 +285,8 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <SectionFade>
             <div className="text-center mb-10">
-              <p className="text-duo-blue text-xs font-extrabold uppercase tracking-widest mb-2">Peer-Reviewed Evidence</p>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-duo-dark leading-tight">
+              <p className="text-ink-muted text-xs font-extrabold mb-2">Peer-Reviewed Evidence</p>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-ink leading-tight">
                 Don&apos;t take our word for it. Read the research.
               </h2>
             </div>
@@ -307,17 +307,17 @@ export default function LandingPage() {
                 authors: 'Sailer & Homner (2020).' },
             ].map((r, i) => (
               <SectionFade key={r.title} delay={i * 100}>
-                <div className="bg-blue-50/50 border border-blue-100 rounded-2xl p-6 h-full flex flex-col">
+                <div className="bg-white border-2 border-line rounded-card p-6 h-full flex flex-col">
                   <div className="flex items-start gap-2 mb-3">
                     <span className="text-2xl" aria-hidden="true">{r.icon}</span>
                     <div>
-                      <p className="text-duo-blue text-xs font-extrabold leading-tight">{r.journal}</p>
-                      <p className="text-gray-400 text-xs">{r.year}</p>
+                      <p className="text-ink text-xs font-extrabold leading-tight">{r.journal}</p>
+                      <p className="text-ink-muted text-xs">{r.year}</p>
                     </div>
                   </div>
-                  <h3 className="text-duo-dark font-extrabold text-sm mb-2 leading-tight">{r.title}</h3>
+                  <h3 className="text-ink font-extrabold text-sm mb-2 leading-tight">{r.title}</h3>
                   <p className="text-gray-600 text-xs leading-relaxed flex-1">{r.body}</p>
-                  <p className="text-gray-400 text-xs mt-3 italic">{r.authors}</p>
+                  <p className="text-ink-muted text-xs mt-3 italic">{r.authors}</p>
                 </div>
               </SectionFade>
             ))}
@@ -327,38 +327,38 @@ export default function LandingPage() {
 
       {/* ── PRICING ───────────────────────────────────────────────────────────── */}
       {MONETIZATION_ENABLED && (
-        <section className="bg-gray-50 py-16 px-4 sm:px-6">
+        <section className="bg-soft border-y-2 border-line py-16 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <SectionFade>
               <div className="text-center mb-10">
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-duo-dark mb-2">Simple, honest pricing.</h2>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-ink mb-2">Simple, honest pricing.</h2>
                 <p className="text-gray-500 text-sm">Start free — upgrade when you&apos;re ready. No card required.</p>
               </div>
             </SectionFade>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {PLANS.map((plan, i) => (
                 <SectionFade key={plan.id} delay={i * 100}>
-                  <div className={`bg-white border-2 ${plan.borderColor} rounded-2xl overflow-hidden h-full flex flex-col shadow-sm ${plan.popular ? 'ring-2 ring-duo-blue ring-offset-2' : ''}`}>
+                  <div className={`bg-white border-2 ${plan.borderColor} rounded-card overflow-hidden h-full flex flex-col ${plan.popular ? 'shadow-hard-lg' : ''}`}>
                     {plan.popular && (
-                      <div className="bg-duo-blue text-white text-[10px] font-extrabold text-center py-1.5 tracking-widest uppercase">Most Popular</div>
+                      <div className="bg-star text-ink text-xs font-extrabold text-center py-1.5">Most Popular</div>
                     )}
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-xl" aria-hidden="true">{plan.emoji}</span>
-                        <span className="text-duo-dark font-extrabold text-lg">{plan.name}</span>
+                        <span className="text-ink font-extrabold text-lg">{plan.name}</span>
                       </div>
                       <div className="flex items-baseline gap-1 mb-5">
-                        <span className="text-3xl font-extrabold text-duo-dark">₹{plan.monthly.toLocaleString('en-IN')}</span>
-                        <span className="text-gray-400 text-sm">/mo</span>
+                        <span className="text-3xl font-extrabold text-ink">₹{plan.monthly.toLocaleString('en-IN')}</span>
+                        <span className="text-ink-muted text-sm">/mo</span>
                       </div>
                       <ul className="space-y-2 flex-1 mb-5">
                         {plan.features.map(f => (
                           <li key={f} className="flex items-start gap-2 text-xs text-gray-600">
-                            <span className="text-duo-green font-bold shrink-0 mt-0.5" aria-hidden="true">✓</span> {f}
+                            <span className="text-success font-bold shrink-0 mt-0.5" aria-hidden="true">✓</span> {f}
                           </li>
                         ))}
                       </ul>
-                      <Link href="/start" className={`block w-full text-center ${plan.ctaClass} text-white font-extrabold py-3 rounded-2xl transition-colors text-sm`}>
+                      <Link href="/start" className={`block w-full text-center ${plan.ctaClass} border-2 border-ink shadow-hard-sm font-extrabold py-3 rounded-control transition-colors text-sm`}>
                         Start Free
                       </Link>
                     </div>
@@ -373,7 +373,7 @@ export default function LandingPage() {
       {/* ── FINAL CTA ─────────────────────────────────────────────────────────── */}
       <section className="py-16 px-4 sm:px-6">
         <SectionFade>
-          <div className="max-w-2xl mx-auto bg-gradient-to-br from-duo-green to-emerald-500 rounded-3xl px-8 py-12 text-center">
+          <div className="max-w-2xl mx-auto bg-ink rounded-card px-8 py-12 text-center">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-3 leading-tight">
               See it for yourself in 2 minutes.
             </h2>
@@ -382,23 +382,23 @@ export default function LandingPage() {
             </p>
             <Link
               href="/start"
-              className="inline-block bg-white text-duo-green font-extrabold py-4 px-10 rounded-2xl text-lg transition-colors hover:bg-gray-50 active:translate-y-0.5"
+              className="inline-block bg-action text-white border-2 border-white font-extrabold py-4 px-10 rounded-control text-lg transition-colors hover:bg-action-dark active:translate-y-0.5"
             >
               Start Free Diagnostic
             </Link>
-            <p className="text-white/60 text-xs mt-4">No account required. Save progress later.</p>
+            <p className="text-white/70 text-xs mt-4">No account required. Save progress later.</p>
           </div>
         </SectionFade>
       </section>
 
       {/* ── FOOTER ────────────────────────────────────────────────────────────── */}
-      <footer className="bg-duo-dark border-t border-white/5 px-4 sm:px-6 py-10 text-center">
+      <footer className="bg-ink px-4 sm:px-6 py-10 text-center">
         <div className="flex items-center justify-center gap-2 mb-3">
           <Sparky size={26} mood="happy" />
           <span className="text-white font-extrabold text-base">MathSpark</span>
         </div>
         <p className="text-white/70 text-xs mb-1">Built by mathletes and educationists for IPM &amp; Olympiad aspirants.</p>
-        <p className="text-white/60 text-xs mb-5">
+        <p className="text-white/70 text-xs mb-5">
           100,000+ researched questions · 4 years of real papers · Zero hallucination · Adaptive AI
         </p>
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-white/70 text-xs font-semibold mb-5">
@@ -411,7 +411,7 @@ export default function LandingPage() {
           <a href="#"                 className="hover:text-white transition-colors">Terms</a>
           <a href="mailto:hello@mathspark.app" className="hover:text-white transition-colors">Contact</a>
         </div>
-        <p className="text-white/60 text-xs">© 2026 MathSpark. Research citations available on request.</p>
+        <p className="text-white/70 text-xs">© 2026 MathSpark. Research citations available on request.</p>
       </footer>
 
     </div>
