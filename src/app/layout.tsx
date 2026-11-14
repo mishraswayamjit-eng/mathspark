@@ -1,24 +1,11 @@
 import type { Metadata, Viewport } from 'next';
-import { Fredoka, Nunito } from 'next/font/google';
+import './fonts.css';
 import './tokens.css';
 import './globals.css';
 import SessionProvider from '@/components/SessionProvider';
 import { Analytics } from '@vercel/analytics/next';
 
-const nunito = Nunito({
-  subsets: ['latin'],
-  weight: ['400', '600', '700', '800', '900'],
-  display: 'swap',
-  variable: '--font-nunito',
-});
-
-// Display face for headings (IPM look) — exposed as --font-fredoka / `font-display`
-const fredoka = Fredoka({
-  subsets: ['latin'],
-  weight: ['500', '600', '700'],
-  display: 'swap',
-  variable: '--font-fredoka',
-});
+// Fonts are self-hosted: see ./fonts.css (no request to Google Fonts at build time).
 
 export const viewport: Viewport = {
   themeColor: '#1d2a4d',
@@ -53,7 +40,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`bg-paper text-gray-800 min-h-screen ${nunito.className} ${nunito.variable} ${fredoka.variable}`}>
+      <body className="bg-paper text-gray-800 min-h-screen font-sans">
         <SessionProvider>
           {children}
           <Analytics />
