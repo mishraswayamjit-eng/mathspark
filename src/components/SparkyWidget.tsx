@@ -8,6 +8,8 @@ import TypingDots from '@/components/chat/TypingDots';
 import ChatComposer from '@/components/chat/ChatComposer';
 import { useSparkyChat, getQuickReplies } from '@/components/chat/useSparkyChat';
 import { useVoiceLoop } from '@/components/chat/useVoiceLoop';
+import VisualBoard from '@/components/visuals/VisualBoard';
+import { extractVisual } from '@/lib/visuals/spec';
 import { useScreenContext, subscribeOpenSparky, type ScreenContext } from '@/lib/sparkyContext';
 import { isAppChromeHidden } from '@/lib/navVisibility';
 
@@ -76,6 +78,9 @@ function SparkyWidgetInner() {
   }, [messages, streamingMsg, open]);
 
   const suggestions = getSuggestions(ctx, studentGrade);
+
+  // The reply being streamed, split into what to read and what to draw.
+  const live = extractVisual(streamingMsg);
 
   // The practice question on screen, if there is one: Sparky offers to help with it by default.
   const screenQuestion = ctx?.screen === 'practice' && ctx.questionText ? ctx.questionText : '';
@@ -192,19 +197,24 @@ function SparkyWidgetInner() {
                 <MessageBubble key={msg.id} msg={msg} studentInitial={studentInitial} />
               ))}
 
-              {streamingMsg && (
+              {live.text && (
                 <div className="flex items-end gap-2 mb-3">
                   <div className="flex-shrink-0">
                     <Sparky mood="thinking" size={36} />
                   </div>
-                  <div className="max-w-[85%] bg-white rounded-card rounded-bl-sm px-4 py-2.5 border-2 border-line">
-                    <p className="text-[15px] leading-relaxed text-ink font-medium whitespace-pre-wrap [overflow-wrap:anywhere]">{streamingMsg}</p>
+                  <div className={`bg-white rounded-card rounded-bl-sm px-4 py-2.5 border-2 border-line ${live.visual ? 'w-[92%]' : 'max-w-[85%]'}`}>
+                    {live.visual && (
+                      <div className="mb-3 pb-3 border-b-2 border-line">
+                        <VisualBoard spec={live.visual} />
+                      </div>
+                    )}
+                    <p className="text-[15px] leading-relaxed text-ink font-medium whitespace-pre-wrap [overflow-wrap:anywhere]">{live.text}</p>
                     <span className="inline-block w-1 h-4 bg-action animate-pulse ml-0.5 rounded" />
                   </div>
                 </div>
               )}
 
-              {isLoading && !streamingMsg && (
+              {isLoading && !live.text && (
                 <div className="flex items-end gap-2 mb-3">
                   <Sparky mood="thinking" size={36} />
                   <div className="bg-white rounded-card rounded-bl-sm border-2 border-line">

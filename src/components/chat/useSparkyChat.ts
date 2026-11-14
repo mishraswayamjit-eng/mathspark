@@ -5,6 +5,7 @@ import { logError } from '@/lib/logger';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { ScreenContext } from '@/lib/sparkyContext';
 import { PHOTO_NOTE } from '@/lib/chatPhotoNote';
+import { extractVisual } from '@/lib/visuals/spec';
 
 // Shared across the full /chat page AND the floating Sparky widget so both
 // surfaces drive one conversation (persisted session id below).
@@ -315,7 +316,8 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
       if (fullText) {
         setMessages((prev) => [...prev, { id: `asst-${Date.now()}`, role: 'assistant', content: fullText }]);
       }
-      return fullText || null;
+      // Callers (voice mode) get the words only, without the whiteboard tag.
+      return extractVisual(fullText).text || null;
     } catch {
       setMessages((prev) => [...prev, {
         id: `err-${Date.now()}`,
