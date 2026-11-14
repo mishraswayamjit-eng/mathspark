@@ -107,6 +107,8 @@ export interface Question {
   questionNumber?: number | null;
   interactionType?: InteractionType;
   interactionData?: InteractionData;
+  /** The figure this question needs and the pictures for its solution steps, when it has them. */
+  visual?: import('@/lib/figures/types').ServedVisual;
 }
 
 export interface Progress {

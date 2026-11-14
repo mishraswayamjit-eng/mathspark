@@ -1,0 +1,19 @@
+{
+  "PH3_EXT_G5_WS_B6_021_01": {
+    "origin": "authored",
+    "figure": { "kind": "triangle", "shape": "scalene", "sides": { "bc": "20 cm" }, "height": "7 cm", "note": "Area = ?" },
+    "stepFigures": [
+      { "kind": "triangle", "shape": "scalene", "sides": { "bc": "base" }, "height": "height", "enclose": true, "highlight": ["bc", "height"], "note": "The triangle is half of the rectangle around it" },
+      { "kind": "triangle", "shape": "scalene", "sides": { "bc": "20 cm" }, "height": "7 cm", "enclose": true, "highlight": ["fill"], "note": "½ × 20 × 7 = 70 sq.cm" }
+    ]
+  },
+  "EXT_G5_FP_2025_011": {
+    "origin": "authored",
+    "figure": { "kind": "clock", "hour": 9, "minute": 33, "showAngle": true, "note": "Angle between the hands = ?" },
+    "stepFigures": [
+      { "kind": "clock", "hour": 9, "minute": 33, "highlight": ["hour"], "note": "Hour hand: 286.5° from the 12" },
+      { "kind": "clock", "hour": 9, "minute": 33, "highlight": ["minute"], "note": "Minute hand: 198° from the 12" },
+      { "kind": "clock", "hour": 9, "minute": 33, "showAngle": true, "highlight": ["angle"], "note": "286.5 − 198 = 88.5°" }
+    ]
+  }
+}
