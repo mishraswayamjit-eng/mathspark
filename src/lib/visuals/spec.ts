@@ -28,6 +28,7 @@ export type VisualSpec =
   | { type: 'polygon'; sides: number; title?: string }
   | { type: 'tiling'; sides: number; count: number; title?: string }
   | { type: 'triangle'; angleA: number; angleB: number; title?: string }
+  | { type: 'rightTriangle'; base: number; height: number; unit?: string; title?: string }
   | { type: 'circle'; radius: number; unit?: string; title?: string }
   | { type: 'barChart'; bars: BarChartBar[]; unit?: string; showMean?: boolean; title?: string };
 
@@ -196,6 +197,12 @@ export function parseVisualSpec(raw: unknown): VisualSpec | null {
       const angleB = int(r.angleB, 10, 160);
       if (angleA === null || angleB === null || angleA + angleB > 170) return null;
       return { type: 'triangle', angleA, angleB, title };
+    }
+
+    case 'rightTriangle': {
+      const base = int(r.base, 1, 20);
+      const height = int(r.height, 1, 20);
+      return base === null || height === null ? null : { type: 'rightTriangle', base, height, unit: text(r.unit, 6), title };
     }
 
     case 'circle': {

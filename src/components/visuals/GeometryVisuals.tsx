@@ -283,6 +283,70 @@ export function TriangleVisual({ spec }: { spec: Of<'triangle'> }) {
   );
 }
 
+// ══ Right-angled triangle ════════════════════════════════════════════════════
+
+export function RightTriangleVisual({ spec }: { spec: Of<'rightTriangle'> }) {
+  const [base, setBase] = useState(spec.base);
+  const [height, setHeight] = useState(spec.height);
+  const [mode, setMode] = useState<'area' | 'sides'>('area');
+  const unit = spec.unit ?? 'units';
+
+  // Fit the triangle in a 220 by 170 box, keeping its proportions.
+  const k = Math.min(220 / base, 170 / height);
+  const w = base * k;
+  const h = height * k;
+  const x0 = 150 - w / 2;
+  const y0 = 200;
+  const A: Pt = { x: x0, y: y0 };           // the right angle
+  const B: Pt = { x: x0 + w, y: y0 };
+  const T: Pt = { x: x0, y: y0 - h };
+  const sq = Math.min(16, w / 3, h / 3);
+
+  const hypSquared = base * base + height * height;
+  const hyp = Math.sqrt(hypSquared);
+  const wholeHyp = Math.round(hyp) * Math.round(hyp) === hypSquared;
+  const area = (base * height) / 2;
+
+  return (
+    <div className="space-y-3">
+      <svg viewBox="0 0 300 236" className="w-full max-w-[340px] mx-auto h-auto" role="img" aria-label={`Right-angled triangle with base ${base} and height ${height}`}>
+        {/* The rectangle the triangle is half of. */}
+        {mode === 'area' && (
+          <rect x={x0} y={y0 - h} width={w} height={h} fill="none" stroke={C.muted} strokeWidth={2} strokeDasharray="6 5" />
+        )}
+        <polygon points={pointsAttr([A, B, T])} fill={mode === 'area' ? C.star : C.card} stroke={C.ink} strokeWidth={2.5} strokeLinejoin="round" />
+        {mode === 'sides' && (
+          <line x1={T.x} y1={T.y} x2={B.x} y2={B.y} stroke={C.action} strokeWidth={5} strokeLinecap="round" />
+        )}
+        <path d={`M ${A.x + sq} ${A.y} L ${A.x + sq} ${A.y - sq} L ${A.x} ${A.y - sq}`} fill="none" stroke={C.ink} strokeWidth={2} />
+        <text x={(A.x + B.x) / 2} y={A.y + 20} textAnchor="middle" fontSize={13} fontWeight={800} fill={C.ink}>base {base}</text>
+        <text x={A.x - 8} y={(A.y + T.y) / 2 + 4} textAnchor="end" fontSize={13} fontWeight={800} fill={C.ink}>height {height}</text>
+        {mode === 'sides' && (
+          <text x={(T.x + B.x) / 2 + 10} y={(T.y + B.y) / 2 - 8} fontSize={13} fontWeight={800} fill={C.action}>
+            {wholeHyp ? Math.round(hyp) : `≈ ${round1(hyp)}`}
+          </text>
+        )}
+      </svg>
+      <Toggle
+        options={[{ value: 'area', label: 'Area' }, { value: 'sides', label: 'Longest side' }]}
+        value={mode}
+        onChange={setMode}
+      />
+      <Slider label="Base" value={base} min={1} max={20} onChange={setBase} display={`${base} ${unit}`} />
+      <Slider label="Height" value={height} min={1} max={20} onChange={setHeight} display={`${height} ${unit}`} />
+      <div className="flex gap-2">
+        <Stat label="Area" value={`${fmt(area)} sq ${unit}`} />
+        <Stat label="Longest side" value={wholeHyp ? `${Math.round(hyp)} ${unit}` : `≈ ${round1(hyp)} ${unit}`} />
+      </div>
+      <Working>
+        {mode === 'area'
+          ? `The triangle is half of a ${base} by ${height} rectangle: ½ × ${base} × ${height} = ${fmt(area)} square ${unit}`
+          : `${base} × ${base} + ${height} × ${height} = ${hypSquared}, and ${wholeHyp ? `${Math.round(hyp)} × ${Math.round(hyp)} = ${hypSquared}` : `√${hypSquared} ≈ ${round1(hyp)}`}, so the longest side is ${wholeHyp ? '' : 'about '}${wholeHyp ? Math.round(hyp) : round1(hyp)} ${unit}`}
+      </Working>
+    </div>
+  );
+}
+
 // ══ Circle ═══════════════════════════════════════════════════════════════════
 
 export function CircleVisual({ spec }: { spec: Of<'circle'> }) {

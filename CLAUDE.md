@@ -53,6 +53,7 @@ When adding JSON files to `data/`:
 | XP / Leaderboard | `src/lib/leaderboard.ts` | `addWeeklyXP()` in `$transaction` |
 | Shared utils | `src/lib/sharedUtils.ts` | `TOPIC_ORDER`, `computeStreak` |
 | Topic colors | `src/data/topicColors.ts` | Extracted color map |
+| Hands-on lessons | `src/lib/handsOn/`, `src/components/handsOn/`, `/learn/hands-on` | Learn-by-doing lessons (tap a figure, Check, skill check). Content is authored and verified by `python scripts/build_hands_on_fractions.py`, which writes `src/data/handsOn/fractions.json`; edit the script, never the JSON. No XP or mastery. Sits alongside practice and concept lessons |
 | Flashcard hook | `src/hooks/useFlashcardDeck.ts` | Shared deck fetch pattern |
 | Design system | `design/tokens.json`, `design/DESIGN.md` | Source of truth for colours, type, radii, shadows. Role names: `ink`, `canvas`, `card`, `soft`, `line`, `action`, `success`, `retry`, `hint`, `star`; `ui-*` classes in `globals.css`. Regenerate `src/app/tokens.css` with `python scripts/build_tokens.py`. `duo-*` is legacy — not for new code |
 

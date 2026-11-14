@@ -235,7 +235,8 @@ export default function PracticeHubPage() {
           <h2 className="font-sans text-caption text-ink-muted mb-3">Learn & Prepare</h2>
           <div className="grid grid-cols-2 gap-2">
             {[
-              { emoji: '💡', label: 'Sparky Explains',  sub: '212 solved',     href: '/learn/examples',     bg: 'bg-white', border: 'border-line' },
+              { emoji: '🖐️', label: 'Hands-on Lessons', sub: 'New · Fractions', href: '/learn/hands-on',    bg: 'bg-white', border: 'border-line' },
+              { emoji: '💡', label: 'Sparky Explains', sub: '212 solved',     href: '/learn/examples',     bg: 'bg-white', border: 'border-line' },
               { emoji: '📖', label: 'Concept Lessons',  sub: 'Step-by-step',   href: '/learn/lessons',      bg: 'bg-white', border: 'border-line' },
               { emoji: '🎯', label: 'Concept Trainer',  sub: 'Think in steps', href: '/learn/concept-trainer', bg: 'bg-white', border: 'border-line' },
               { emoji: '🧠', label: 'Strategy Bank',    sub: '35 exam tips',   href: '/learn/strategies',   bg: 'bg-white', border: 'border-line' },

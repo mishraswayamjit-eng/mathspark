@@ -1,0 +1,2301 @@
+{
+ "topic": "Fractions",
+ "figures": {
+  "bar4": {
+   "w": 4,
+   "h": 1,
+   "pieces": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      0
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      3,
+      1
+     ]
+    ]
+   ]
+  },
+  "sq4mix": {
+   "w": 4,
+   "h": 4,
+   "pieces": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      0,
+      4
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    [
+     [
+      3,
+      0
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      4
+     ],
+     [
+      3,
+      4
+     ]
+    ]
+   ]
+  },
+  "sq8tri": {
+   "w": 4,
+   "h": 4,
+   "pieces": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    [
+     [
+      0,
+      0
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    [
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      4
+     ]
+    ],
+    [
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      0,
+      4
+     ]
+    ],
+    [
+     [
+      2,
+      2
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      4,
+      4
+     ]
+    ],
+    [
+     [
+      2,
+      2
+     ],
+     [
+      4,
+      4
+     ],
+     [
+      2,
+      4
+     ]
+    ]
+   ]
+  },
+  "tri4": {
+   "w": 4,
+   "h": 4,
+   "outline": [
+    [
+     0,
+     4
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "pieces": [
+    [
+     [
+      2,
+      0
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      0,
+      4
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      4
+     ],
+     [
+      4,
+      4
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      4
+     ]
+    ]
+   ]
+  },
+  "grid6": {
+   "w": 3,
+   "h": 2,
+   "pieces": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ]
+   ]
+  },
+  "half_q": {
+   "w": 4,
+   "h": 4,
+   "pieces": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      0,
+      4
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      2
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      4,
+      4
+     ],
+     [
+      2,
+      4
+     ]
+    ]
+   ]
+  },
+  "sq4": {
+   "w": 4,
+   "h": 4,
+   "pieces": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      0,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      0,
+      4
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      2
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      4,
+      4
+     ],
+     [
+      2,
+      4
+     ]
+    ]
+   ]
+  },
+  "window12": {
+   "w": 3,
+   "h": 4,
+   "pieces": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    [
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      0,
+      4
+     ]
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      2,
+      4
+     ]
+    ]
+   ]
+  },
+  "window12split": {
+   "w": 3,
+   "h": 4,
+   "pieces": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    [
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    [
+     [
+      0,
+      3
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      0,
+      4
+     ]
+    ],
+    [
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      1,
+      4
+     ]
+    ],
+    [
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      2,
+      4
+     ]
+    ]
+   ]
+  },
+  "sq8mix": {
+   "w": 4,
+   "h": 4,
+   "pieces": [
+    [
+     [
+      0,
+      2
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      4,
+      4
+     ],
+     [
+      0,
+      4
+     ]
+    ],
+    [
+     [
+      0,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ]
+   ]
+  },
+  "steps16": {
+   "w": 4,
+   "h": 4,
+   "pieces": [
+    [
+     [
+      0,
+      2
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      4,
+      4
+     ],
+     [
+      0,
+      4
+     ]
+    ],
+    [
+     [
+      0,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    [
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    [
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      3,
+      2
+     ]
+    ]
+   ]
+  },
+  "cols4": {
+   "w": 4,
+   "h": 2,
+   "pieces": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    [
+     [
+      3,
+      0
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      3,
+      2
+     ]
+    ]
+   ]
+  },
+  "grid8": {
+   "w": 4,
+   "h": 2,
+   "pieces": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    [
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    [
+     [
+      3,
+      0
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      3,
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      3,
+      2
+     ]
+    ]
+   ]
+  },
+  "grid12": {
+   "w": 4,
+   "h": 3,
+   "pieces": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      1,
+      3
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    [
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    [
+     [
+      3,
+      0
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      3,
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    [
+     [
+      3,
+      2
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      4,
+      3
+     ],
+     [
+      3,
+      3
+     ]
+    ]
+   ]
+  },
+  "bar10": {
+   "w": 5,
+   "h": 2,
+   "pieces": [
+    [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    [
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    [
+     [
+      2,
+      0
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    [
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    [
+     [
+      3,
+      0
+     ],
+     [
+      4,
+      0
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      3,
+      1
+     ]
+    ],
+    [
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    [
+     [
+      4,
+      0
+     ],
+     [
+      5,
+      0
+     ],
+     [
+      5,
+      1
+     ],
+     [
+      4,
+      1
+     ]
+    ],
+    [
+     [
+      4,
+      1
+     ],
+     [
+      5,
+      1
+     ],
+     [
+      5,
+      2
+     ],
+     [
+      4,
+      2
+     ]
+    ]
+   ]
+  }
+ },
+ "lessons": [
+  {
+   "id": "fr-equal-parts",
+   "title": "Equal parts",
+   "blurb": "What the top and bottom numbers of a fraction count",
+   "grades": [
+    4,
+    5
+   ],
+   "screens": [
+    {
+     "kind": "do",
+     "figure": "bar4",
+     "target": [
+      1,
+      4
+     ],
+     "prompt": "Colour 1/4 of the bar.",
+     "say": "Tap a part to colour it. Tap it again to clear it.",
+     "why": "The bar is cut into 4 equal parts. One of those parts is 1/4 of the bar."
+    },
+    {
+     "kind": "do",
+     "figure": "bar4",
+     "target": [
+      3,
+      4
+     ],
+     "prompt": "Colour 3/4 of the bar.",
+     "say": "Same bar. This time, take three parts.",
+     "why": "Each part is 1/4 of the bar. Three of them make 3/4."
+    },
+    {
+     "kind": "do",
+     "figure": "sq4mix",
+     "target": [
+      2,
+      4
+     ],
+     "prompt": "Colour 2/4 of the square.",
+     "say": "These parts have different shapes. Look at their sizes.",
+     "why": "A small square and a tall strip cover the same amount of the big square. Each is 1/4, so any two parts make 2/4."
+    },
+    {
+     "kind": "see",
+     "text": "Parts can have different shapes and still be equal. Every part here is 1/4 of the square, so any two of them make 2/4.",
+     "say": "Three ways to colour it, and every one is 2/4.",
+     "show": [
+      {
+       "figure": "sq4mix",
+       "shaded": [
+        0,
+        1
+       ],
+       "label": "2/4"
+      },
+      {
+       "figure": "sq4mix",
+       "shaded": [
+        0,
+        2
+       ],
+       "label": "2/4"
+      },
+      {
+       "figure": "sq4mix",
+       "shaded": [
+        2,
+        3
+       ],
+       "label": "2/4"
+      }
+     ]
+    },
+    {
+     "kind": "do",
+     "figure": "sq8tri",
+     "target": [
+      3,
+      8
+     ],
+     "prompt": "Colour 3/8 of the square.",
+     "say": "Now the square is cut into 8 equal parts.",
+     "why": "The square is cut into 8 equal triangles. Any three of them make 3/8."
+    },
+    {
+     "kind": "do",
+     "figure": "sq8tri",
+     "target": [
+      5,
+      8
+     ],
+     "prompt": "Colour 5/8 of the square.",
+     "say": "It does not matter which five you choose.",
+     "why": "Five of the 8 equal parts make 5/8, wherever they sit in the square."
+    },
+    {
+     "kind": "see",
+     "text": "The bottom number says how many equal parts make the whole. The top number says how many of them you take.",
+     "say": "That is all a fraction is.",
+     "show": [
+      {
+       "figure": "bar4",
+       "shaded": [
+        0,
+        1,
+        2
+       ],
+       "label": "3/4"
+      },
+      {
+       "figure": "sq8tri",
+       "shaded": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "label": "5/8"
+      }
+     ]
+    },
+    {
+     "kind": "check",
+     "figure": "tri4",
+     "target": [
+      3,
+      4
+     ],
+     "prompt": "Colour 3/4 of the triangle.",
+     "why": "The big triangle is cut into 4 equal small triangles. Three of them make 3/4."
+    },
+    {
+     "kind": "check",
+     "figure": "grid6",
+     "target": [
+      5,
+      6
+     ],
+     "prompt": "Colour 5/6 of the rectangle.",
+     "why": "There are 6 equal parts. Five of them make 5/6."
+    },
+    {
+     "kind": "check",
+     "figure": "sq8tri",
+     "target": [
+      7,
+      8
+     ],
+     "prompt": "Colour 7/8 of the square.",
+     "why": "There are 8 equal parts. Seven of them make 7/8, so only one part stays white."
+    }
+   ]
+  },
+  {
+   "id": "fr-big-and-small-parts",
+   "title": "Big parts and small parts",
+   "blurb": "Find a fraction when the parts are different sizes",
+   "grades": [
+    4,
+    5
+   ],
+   "screens": [
+    {
+     "kind": "do",
+     "figure": "half_q",
+     "target": [
+      1,
+      4
+     ],
+     "prompt": "Colour 1/4 of the square.",
+     "say": "This square has one big part and two small ones.",
+     "why": "Four of the small squares would fill the whole square, so one small square is 1/4."
+    },
+    {
+     "kind": "do",
+     "figure": "half_q",
+     "target": [
+      3,
+      4
+     ],
+     "prompt": "Colour 3/4 of the square.",
+     "say": "You will need the big part this time. How much is it worth?",
+     "why": "The big part is the same size as two small squares, so it is worth 2/4. With one small square, that makes 3/4."
+    },
+    {
+     "kind": "see",
+     "text": "Cut the big part into two equal pieces and you can count them: 3 of the 4 equal parts are coloured.",
+     "say": "Here is what you just did.",
+     "show": [
+      {
+       "figure": "half_q",
+       "shaded": [
+        0,
+        1
+       ],
+       "label": "3/4"
+      },
+      {
+       "figure": "sq4",
+       "shaded": [
+        0,
+        1,
+        2
+       ],
+       "label": "3/4"
+      }
+     ]
+    },
+    {
+     "kind": "do",
+     "figure": "window12",
+     "target": [
+      5,
+      12
+     ],
+     "prompt": "Colour 5/12 of the window.",
+     "say": "Look at the small panes first. How many of them would fill the whole window?",
+     "why": "Twelve small panes would fill the window, so each one is 1/12. The long pane at the top is the size of 3 small panes, so it is worth 3/12."
+    },
+    {
+     "kind": "do",
+     "figure": "window12",
+     "target": [
+      1,
+      4
+     ],
+     "prompt": "Colour 1/4 of the window.",
+     "say": "There is more than one way to do this one.",
+     "why": "1/4 of 12 panes is 3 panes. You can colour three small panes, or the long pane, which is the same size as three."
+    },
+    {
+     "kind": "see",
+     "text": "3/12 and 1/4 cover the same amount of the window. Fractions that name the same amount are called equivalent fractions.",
+     "say": "Same amount, two names.",
+     "show": [
+      {
+       "figure": "window12",
+       "shaded": [
+        0
+       ],
+       "label": "1/4"
+      },
+      {
+       "figure": "window12split",
+       "shaded": [
+        0,
+        1,
+        2
+       ],
+       "label": "3/12"
+      }
+     ]
+    },
+    {
+     "kind": "do",
+     "figure": "sq8mix",
+     "target": [
+      3,
+      8
+     ],
+     "prompt": "Colour 3/8 of the square.",
+     "say": "Parts of three sizes now. Start with the smallest: what fraction is one triangle?",
+     "why": "Think in eighths. Each triangle is 1/8, the small square is 2/8 and the long part is 4/8. The small square and one triangle make 3/8."
+    },
+    {
+     "kind": "see",
+     "text": "When the parts are different sizes, ask how many of the smallest part would fill the whole. Then count in those.",
+     "say": "That works for any shape.",
+     "show": [
+      {
+       "figure": "sq8mix",
+       "shaded": [
+        1,
+        2
+       ],
+       "label": "3/8"
+      },
+      {
+       "figure": "sq8tri",
+       "shaded": [
+        0,
+        1,
+        2
+       ],
+       "label": "3/8"
+      }
+     ]
+    },
+    {
+     "kind": "check",
+     "figure": "steps16",
+     "target": [
+      3,
+      16
+     ],
+     "prompt": "Colour 3/16 of the square.",
+     "why": "Sixteen of the smallest squares would fill the whole square, so each is 1/16. The parts are worth 8, 4, 2, 1 and 1 sixteenths. A 2 and a 1 make 3/16."
+    },
+    {
+     "kind": "check",
+     "figure": "steps16",
+     "target": [
+      9,
+      16
+     ],
+     "prompt": "Colour 9/16 of the square.",
+     "why": "The biggest part is 8/16. One of the smallest squares makes it 9/16."
+    },
+    {
+     "kind": "check",
+     "figure": "steps16",
+     "target": [
+      3,
+      4
+     ],
+     "prompt": "Colour 3/4 of the square.",
+     "why": "3/4 of 16 is 12, so we need 12/16. The 8/16 part and the 4/16 part together make 12/16."
+    }
+   ]
+  },
+  {
+   "id": "fr-same-amount",
+   "title": "Same amount, different names",
+   "blurb": "Meet equivalent fractions by colouring them",
+   "grades": [
+    4,
+    5
+   ],
+   "screens": [
+    {
+     "kind": "do",
+     "figure": "grid8",
+     "target": [
+      1,
+      2
+     ],
+     "prompt": "Colour 1/2 of the rectangle.",
+     "say": "There are 8 equal parts here and no halves marked. Can you still do it?",
+     "why": "Half of 8 parts is 4 parts, so 4/8 is the same amount as 1/2."
+    },
+    {
+     "kind": "do",
+     "figure": "grid8",
+     "target": [
+      1,
+      4
+     ],
+     "prompt": "Colour 1/4 of the rectangle.",
+     "say": "Now a quarter of the same rectangle.",
+     "why": "A quarter of 8 parts is 2 parts, so 2/8 is the same amount as 1/4."
+    },
+    {
+     "kind": "do",
+     "figure": "grid8",
+     "target": [
+      3,
+      4
+     ],
+     "prompt": "Colour 3/4 of the rectangle.",
+     "say": "Each quarter is two parts. So three quarters is...",
+     "why": "Each quarter is 2 parts, so three quarters is 6 parts. 3/4 is the same amount as 6/8."
+    },
+    {
+     "kind": "see",
+     "text": "3/4 and 6/8 are the same amount. Multiply the top and the bottom of 3/4 by 2 and you get 6/8.",
+     "say": "Every part was cut in two, so there are twice as many parts and you take twice as many.",
+     "show": [
+      {
+       "figure": "cols4",
+       "shaded": [
+        0,
+        1,
+        2
+       ],
+       "label": "3/4"
+      },
+      {
+       "figure": "grid8",
+       "shaded": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+       ],
+       "label": "6/8"
+      }
+     ]
+    },
+    {
+     "kind": "do",
+     "figure": "grid12",
+     "target": [
+      2,
+      3
+     ],
+     "prompt": "Colour 2/3 of the rectangle.",
+     "say": "Twelve parts this time. First find one third.",
+     "why": "One third of 12 parts is 4 parts, so two thirds is 8 parts. 2/3 is the same amount as 8/12."
+    },
+    {
+     "kind": "do",
+     "figure": "grid12",
+     "target": [
+      5,
+      6
+     ],
+     "prompt": "Colour 5/6 of the rectangle.",
+     "say": "One sixth of 12 parts is how many parts?",
+     "why": "One sixth of 12 parts is 2 parts, so five sixths is 10 parts. 5/6 is the same amount as 10/12."
+    },
+    {
+     "kind": "see",
+     "text": "To give a fraction a different bottom number, multiply or divide the top and the bottom by the same number. The amount stays the same.",
+     "say": "The shape never changed. Only the name did.",
+     "show": [
+      {
+       "figure": "grid12",
+       "shaded": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+       ],
+       "label": "2/3 = 8/12"
+      },
+      {
+       "figure": "grid12",
+       "shaded": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+       ],
+       "label": "5/6 = 10/12"
+      }
+     ]
+    },
+    {
+     "kind": "check",
+     "figure": "bar10",
+     "target": [
+      2,
+      5
+     ],
+     "prompt": "Colour 2/5 of the rectangle.",
+     "why": "One fifth of 10 parts is 2 parts, so two fifths is 4 parts. 2/5 is the same amount as 4/10."
+    },
+    {
+     "kind": "check",
+     "figure": "grid12",
+     "target": [
+      3,
+      4
+     ],
+     "prompt": "Colour 3/4 of the rectangle.",
+     "why": "One quarter of 12 parts is 3 parts, so three quarters is 9 parts. 3/4 is the same amount as 9/12."
+    },
+    {
+     "kind": "check",
+     "figure": "bar10",
+     "target": [
+      1,
+      2
+     ],
+     "prompt": "Colour 1/2 of the rectangle.",
+     "why": "Half of 10 parts is 5 parts. 1/2 is the same amount as 5/10."
+    }
+   ]
+  }
+ ]
+}

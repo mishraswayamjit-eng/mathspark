@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import type { VisualSpec } from '@/lib/visuals/spec';
-import { VISUAL_LIBRARY, type WhiteboardStarter } from '@/lib/visuals/topicMap';
+import { VISUAL_LIBRARY, allVisuals, type WhiteboardStarter } from '@/lib/visuals/topicMap';
 import { FractionVisual, NumberLineVisual, PlaceValueVisual, ArrayVisual, BarModelVisual } from './NumberVisuals';
 import { BalanceVisual, RectangleVisual, AngleVisual, PercentGridVisual, ContainerVisual } from './ShapeVisuals';
-import { PolygonVisual, TilingVisual, TriangleVisual, CircleVisual, BarChartVisual } from './GeometryVisuals';
+import { PolygonVisual, TilingVisual, TriangleVisual, RightTriangleVisual, CircleVisual, BarChartVisual } from './GeometryVisuals';
 import SketchPad from './SketchPad';
 
 function renderVisual(spec: VisualSpec) {
@@ -23,6 +23,7 @@ function renderVisual(spec: VisualSpec) {
     case 'polygon':     return <PolygonVisual spec={spec} />;
     case 'tiling':      return <TilingVisual spec={spec} />;
     case 'triangle':    return <TriangleVisual spec={spec} />;
+    case 'rightTriangle': return <RightTriangleVisual spec={spec} />;
     case 'circle':      return <CircleVisual spec={spec} />;
     case 'barChart':    return <BarChartVisual spec={spec} />;
     default:            return null;
@@ -121,6 +122,26 @@ export function WhiteboardPanel({ visual, starters, onStarter, onSketch, disable
                     </button>
                   );
                 })}
+              </div>
+              {/* The whole library, so no picture is hidden behind knowing what to ask for. */}
+              <div>
+                <p className="font-display text-title text-ink">All pictures</p>
+                <p className="text-caption text-ink-muted mt-0.5">Tap one to try it. You can also just ask Sparky for any of them.</p>
+                <div className="grid grid-cols-2 gap-2 mt-2.5">
+                  {allVisuals().map((v) => (
+                    <button
+                      key={v.kind}
+                      type="button"
+                      disabled={disabled}
+                      onClick={() => onStarter(v.try)}
+                      title={v.blurb}
+                      className="text-left bg-white rounded-tile border-2 border-line hover:border-ink px-2.5 min-h-[52px] flex items-center gap-2 transition-colors disabled:opacity-50"
+                    >
+                      <span className="text-lg flex-shrink-0" aria-hidden="true">{v.emoji}</span>
+                      <span className="text-[13px] leading-tight font-extrabold text-ink">{v.name}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           )}

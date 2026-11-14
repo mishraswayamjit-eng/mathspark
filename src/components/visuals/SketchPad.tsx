@@ -28,6 +28,117 @@ const INKS = [
   { name: 'Orange', value: C.star },
 ];
 
+/** Longest side of the photo sent to Sparky, in pixels. */
+const MAX_PHOTO_SIDE = 1600;
+
+function isPainted(color: string): boolean {
+  return color !== '' && color !== 'transparent' && color !== 'rgba(0, 0, 0, 0)';
+}
+
+/**
+ * Copy what is on the board onto `ctx`: boxes, then SVG figures, then text.
+ * A small purpose-built painter (the app has no screenshot library); it covers
+ * what the visuals are made of, not every CSS feature.
+ */
+function drawBoard(ctx: CanvasRenderingContext2D, wrap: HTMLElement, scale: number): Promise<void> {
+  const origin = wrap.getBoundingClientRect();
+  const X = (v: number) => (v - origin.left) * scale;
+  const Y = (v: number) => (v - origin.top) * scale;
+
+  // 1. Backgrounds and borders of ordinary elements.
+  const all = wrap.querySelectorAll('*');
+  for (let i = 0; i < all.length; i++) {
+    const el = all[i];
+    if (!(el instanceof HTMLElement) || el.tagName === 'CANVAS' || el.tagName === 'INPUT') continue;
+    const cs = window.getComputedStyle(el);
+    if (cs.visibility === 'hidden' || cs.display === 'none') continue;
+    const r = el.getBoundingClientRect();
+    if (r.width === 0 || r.height === 0) continue;
+    if (isPainted(cs.backgroundColor)) {
+      ctx.fillStyle = cs.backgroundColor;
+      ctx.fillRect(X(r.left), Y(r.top), r.width * scale, r.height * scale);
+    }
+    const border = parseFloat(cs.borderTopWidth) || 0;
+    if (border > 0 && isPainted(cs.borderTopColor)) {
+      ctx.strokeStyle = cs.borderTopColor;
+      ctx.lineWidth = border * scale;
+      ctx.strokeRect(X(r.left), Y(r.top), r.width * scale, r.height * scale);
+    }
+  }
+
+  // 3 (prepared now, painted last). Text, word by word so wrapped lines land where they are.
+  const paintText = () => {
+    const walker = document.createTreeWalker(wrap, NodeFilter.SHOW_TEXT);
+    const wordRange = document.createRange();
+    let node = walker.nextNode();
+    while (node) {
+      const parent = node.parentElement;
+      const data = node.nodeValue || '';
+      if (parent && data.trim() && !parent.closest('svg')) {
+        const cs = window.getComputedStyle(parent);
+        if (cs.visibility !== 'hidden' && cs.display !== 'none') {
+          ctx.fillStyle = cs.color;
+          ctx.font = `${cs.fontWeight} ${(parseFloat(cs.fontSize) || 14) * scale}px sans-serif`;
+          ctx.textBaseline = 'middle';
+          const words = /\S+/g;
+          let m = words.exec(data);
+          while (m) {
+            wordRange.setStart(node, m.index);
+            wordRange.setEnd(node, m.index + m[0].length);
+            const r = wordRange.getBoundingClientRect();
+            if (r.width > 0) ctx.fillText(m[0], X(r.left), Y(r.top + r.height / 2));
+            m = words.exec(data);
+          }
+        }
+      }
+      node = walker.nextNode();
+    }
+  };
+
+  // 2. SVG figures, each drawn from a copy that carries its own sizes and fonts.
+  const svgs = wrap.querySelectorAll('svg');
+  const jobs: Array<Promise<void>> = [];
+  for (let i = 0; i < svgs.length; i++) {
+    const svg = svgs[i];
+    const r = svg.getBoundingClientRect();
+    if (r.width === 0 || r.height === 0) continue;
+    const copy = svg.cloneNode(true) as SVGSVGElement;
+    copy.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    copy.setAttribute('width', String(r.width));
+    copy.setAttribute('height', String(r.height));
+    copy.removeAttribute('class');
+    const from = svg.querySelectorAll('*');
+    const to = copy.querySelectorAll('*');
+    for (let k = 0; k < from.length && k < to.length; k++) {
+      const cs = window.getComputedStyle(from[k]);
+      const target = to[k] as SVGElement;
+      if (cs.display === 'none' || cs.visibility === 'hidden') { target.setAttribute('display', 'none'); continue; }
+      if (from[k].tagName.toLowerCase() === 'text' || from[k].tagName.toLowerCase() === 'tspan') {
+        target.style.fontFamily = 'sans-serif';
+        target.style.fontSize = cs.fontSize;
+        target.style.fontWeight = cs.fontWeight;
+      }
+      // Colours set by a class would be lost in the copy, so carry the computed ones.
+      target.style.fill = cs.fill;
+      target.style.stroke = cs.stroke;
+      target.style.strokeWidth = cs.strokeWidth;
+      target.style.opacity = cs.opacity;
+    }
+    const src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(new XMLSerializer().serializeToString(copy))}`;
+    jobs.push(new Promise<void>((resolve) => {
+      const img = new Image();
+      img.onload = () => {
+        ctx.drawImage(img, X(r.left), Y(r.top), r.width * scale, r.height * scale);
+        resolve();
+      };
+      img.onerror = () => resolve();
+      img.src = src;
+    }));
+  }
+
+  return Promise.all(jobs).then(paintText);
+}
+
 interface SketchPadProps {
   /** Pencil on: the canvas takes the pointer. Off: the board underneath is used as normal. */
   active: boolean;
@@ -47,6 +158,7 @@ export default function SketchPad({ active, resetKey, onSend, children }: Sketch
   const [ink, setInk] = useState(C.ink);
   const [erasing, setErasing] = useState(false);
   const [strokeCount, setStrokeCount] = useState(0);
+  const [sending, setSending] = useState(false);
 
   const paint = useCallback((ctx: CanvasRenderingContext2D, s: Stroke) => {
     if (s.points.length === 0) return;
@@ -162,19 +274,29 @@ export default function SketchPad({ active, resetKey, onSend, children }: Sketch
 
   function send() {
     const canvas = canvasRef.current;
-    if (!canvas || strokesRef.current.length === 0) return;
-    // Flatten onto white so the picture reads well as a photo.
+    const wrap = wrapRef.current;
+    if (!canvas || !wrap || strokesRef.current.length === 0 || sending) return;
+    // The photo is the whole board: the picture underneath, then the pencil on top.
+    // Without the picture, a hop drawn over a number line is only a curve.
+    const shrink = Math.min(1, MAX_PHOTO_SIDE / Math.max(canvas.width, canvas.height));
     const flat = document.createElement('canvas');
-    flat.width = canvas.width;
-    flat.height = canvas.height;
+    flat.width = Math.max(1, Math.round(canvas.width * shrink));
+    flat.height = Math.max(1, Math.round(canvas.height * shrink));
     const ctx = flat.getContext('2d');
     if (!ctx) return;
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, flat.width, flat.height);
-    ctx.drawImage(canvas, 0, 0);
-    flat.toBlob((blob) => {
-      if (blob) onSend(new File([blob], 'whiteboard-sketch.jpg', { type: 'image/jpeg' }));
-    }, 'image/jpeg', 0.9);
+    setSending(true);
+    const finish = () => {
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.drawImage(canvas, 0, 0, flat.width, flat.height);
+      flat.toBlob((blob) => {
+        setSending(false);
+        if (blob) onSend(new File([blob], 'whiteboard-sketch.jpg', { type: 'image/jpeg' }));
+      }, 'image/jpeg', 0.9);
+    };
+    // If the picture cannot be copied, the pencil marks still go.
+    drawBoard(ctx, wrap, flat.width / Math.max(1, wrap.clientWidth)).then(finish, finish);
   }
 
   const tool = 'w-12 h-12 flex-shrink-0 rounded-tile border-2 flex items-center justify-center text-lg transition-colors disabled:opacity-40';
@@ -213,7 +335,7 @@ export default function SketchPad({ active, resetKey, onSend, children }: Sketch
           <button
             type="button"
             onClick={send}
-            disabled={strokeCount === 0}
+            disabled={strokeCount === 0 || sending}
             className="ml-auto flex-shrink-0 min-h-[48px] px-4 rounded-control border-2 border-ink bg-action text-white font-extrabold text-[14px] shadow-hard-sm disabled:opacity-40 disabled:shadow-none"
           >
             Show Sparky

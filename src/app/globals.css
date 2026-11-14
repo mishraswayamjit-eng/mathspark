@@ -374,3 +374,10 @@ button {
     scroll-behavior: auto !important;
   }
 }
+
+/* Hands-on lessons: a piece tints under the pointer, and shows a clear focus ring for keyboards. */
+@media (hover: hover) {
+  .hands-on-piece:hover { fill: #e0e7ff; }
+}
+.hands-on-shape polygon:focus { outline: none; }
+.hands-on-shape polygon:focus-visible { stroke: #4f46e5; stroke-width: 4; }

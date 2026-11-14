@@ -15,24 +15,27 @@ export interface VisualInfo {
   emoji: string;
   /** What the child can do with it. */
   blurb: string;
+  /** A request that opens it, used by the library list on the whiteboard. */
+  try: string;
 }
 
 export const VISUAL_LIBRARY: Record<VisualKind, VisualInfo> = {
-  fraction:    { kind: 'fraction',    name: 'Fraction bars',   emoji: '🍕', blurb: 'Shade parts of a whole and compare two fractions' },
-  numberLine:  { kind: 'numberLine',  name: 'Number line',     emoji: '📏', blurb: 'Place numbers and hop along the line' },
-  placeValue:  { kind: 'placeValue',  name: 'Place-value blocks', emoji: '🧱', blurb: 'Build a number from thousands, hundreds, tens and ones' },
-  array:       { kind: 'array',       name: 'Dot array',       emoji: '🔵', blurb: 'See multiplication as rows and columns' },
-  barModel:    { kind: 'barModel',    name: 'Bar model',       emoji: '📊', blurb: 'Lay out a word problem as bars and parts' },
-  balance:     { kind: 'balance',     name: 'Balance scale',   emoji: '⚖️', blurb: 'Keep both sides equal to solve an equation' },
-  rectangle:   { kind: 'rectangle',   name: 'Area and perimeter', emoji: '📐', blurb: 'Stretch a rectangle and watch area and perimeter change' },
-  angle:       { kind: 'angle',       name: 'Angle maker',     emoji: '📎', blurb: 'Turn an arm to make acute, right, obtuse and reflex angles' },
-  percentGrid: { kind: 'percentGrid', name: 'Hundred grid',    emoji: '💯', blurb: 'See a percentage as squares out of 100' },
-  container:   { kind: 'container',   name: 'Measuring jar',   emoji: '🫙', blurb: 'Fill a jar to see how full it is' },
-  polygon:     { kind: 'polygon',     name: 'Polygon angles',  emoji: '⬡', blurb: 'Change the number of sides and watch the angles' },
-  tiling:      { kind: 'tiling',      name: 'Shapes around a point', emoji: '🐝', blurb: 'Fit shapes around a point until they close up' },
-  triangle:    { kind: 'triangle',    name: 'Triangle',        emoji: '🔺', blurb: 'Drag a corner and watch the three angles' },
-  circle:      { kind: 'circle',      name: 'Circle',          emoji: '⭕', blurb: 'Grow the radius and see circumference and area' },
-  barChart:    { kind: 'barChart',    name: 'Bar chart',       emoji: '📶', blurb: 'Tap the bars and find the average' },
+  fraction:    { kind: 'fraction',    name: 'Fraction bars',   emoji: '🍕', blurb: 'Shade parts of a whole and compare two fractions', try: 'Show me 3/8 on a fraction bar' },
+  numberLine:  { kind: 'numberLine',  name: 'Number line',     emoji: '📏', blurb: 'Place numbers and hop along the line', try: 'Show me 8 − 13 as hops on a number line' },
+  placeValue:  { kind: 'placeValue',  name: 'Place-value blocks', emoji: '🧱', blurb: 'Build a number from thousands, hundreds, tens and ones', try: 'Build the number 2,346 with blocks' },
+  array:       { kind: 'array',       name: 'Dot array',       emoji: '🔵', blurb: 'See multiplication as rows and columns', try: 'Show me 6 × 7 as an array' },
+  barModel:    { kind: 'barModel',    name: 'Bar model',       emoji: '📊', blurb: 'Lay out a word problem as bars and parts', try: 'Show me how to split 40 sweets in the ratio 3 : 5 with a bar model' },
+  balance:     { kind: 'balance',     name: 'Balance scale',   emoji: '⚖️', blurb: 'Keep both sides equal to solve an equation', try: 'Show me how to solve 2x + 3 = 11 on a balance' },
+  rectangle:   { kind: 'rectangle',   name: 'Area and perimeter', emoji: '▭', blurb: 'Stretch a rectangle and watch area and perimeter change', try: 'Show me a 6 by 4 rectangle and its area and perimeter' },
+  angle:       { kind: 'angle',       name: 'Angle maker',     emoji: '📎', blurb: 'Turn an arm to make acute, right, obtuse and reflex angles', try: 'Show me a 120° angle and tell me what kind it is' },
+  percentGrid: { kind: 'percentGrid', name: 'Hundred grid',    emoji: '💯', blurb: 'See a percentage as squares out of 100', try: 'Show me what 35% looks like on a hundred grid' },
+  container:   { kind: 'container',   name: 'Measuring jar',   emoji: '🫙', blurb: 'Fill a jar to see how full it is', try: 'Show me a 500 ml jar with 350 ml in it' },
+  polygon:     { kind: 'polygon',     name: 'Polygon angles',  emoji: '⬡', blurb: 'Change the number of sides and watch the angles', try: 'Show me the angles inside a regular hexagon' },
+  tiling:      { kind: 'tiling',      name: 'Shapes around a point', emoji: '🐝', blurb: 'Fit shapes around a point until they close up', try: 'How many hexagons fit around a point?' },
+  triangle:    { kind: 'triangle',    name: 'Triangle',        emoji: '🔺', blurb: 'Drag a corner and watch the three angles', try: 'Show me a triangle and why its angles add up to 180°' },
+  rightTriangle: { kind: 'rightTriangle', name: 'Right-angled triangle', emoji: '📐', blurb: 'Change the base and height; see the area and the longest side', try: 'Show me a right-angled triangle with base 4 cm and height 3 cm' },
+  circle:      { kind: 'circle',      name: 'Circle',          emoji: '⭕', blurb: 'Grow the radius and see circumference and area', try: 'Show me a circle with radius 7 cm and its circumference' },
+  barChart:    { kind: 'barChart',    name: 'Bar chart',       emoji: '📶', blurb: 'Tap the bars and find the average', try: 'Show me a bar chart of 4, 7 and 10 and their average' },
 };
 
 export interface TopicVisualRule {
@@ -56,8 +59,8 @@ export const TOPIC_VISUAL_RULES: TopicVisualRule[] = [
   { keywords: ['place value', 'number system', 'numbers', 'numeration'], topic: 'Numbers and place value', visuals: ['placeValue', 'numberLine'],       starter: 'Build the number 2,346 with blocks' },
   { keywords: ['multiplication', 'division', 'table', 'factor', 'multiple', 'hcf', 'lcm', 'prime', 'divisib', 'square'], topic: 'Multiplication, division, factors and squares', visuals: ['array', 'numberLine'], starter: 'Show me 6 × 7 as an array' },
   { keywords: ['addition', 'subtraction', 'operation', 'bodmas', 'integer'], topic: 'Addition, subtraction, integers', visuals: ['numberLine', 'barModel', 'placeValue'], starter: 'Show me 8 − 13 as hops on a number line' },
-  { keywords: ['area', 'perimeter', 'mensuration', 'rectangle'], topic: 'Perimeter, area and mensuration', visuals: ['rectangle', 'circle'],          starter: 'Show me a 6 by 4 rectangle and its area and perimeter' },
-  { keywords: ['triangle'],                              topic: 'Triangles',                         visuals: ['triangle', 'angle'],                     starter: 'Show me a triangle and why its angles add up to 180°' },
+  { keywords: ['area', 'perimeter', 'mensuration', 'rectangle'], topic: 'Perimeter, area and mensuration', visuals: ['rectangle', 'rightTriangle', 'circle'],         starter: 'Show me a 6 by 4 rectangle and its area and perimeter' },
+  { keywords: ['triangle'],                              topic: 'Triangles',                         visuals: ['triangle', 'rightTriangle', 'angle'],    starter: 'Show me a triangle and why its angles add up to 180°' },
   { keywords: ['circle'],                                topic: 'Circles',                           visuals: ['circle'],                                starter: 'Show me a circle with radius 7 cm and its circumference' },
   { keywords: ['polygon', 'quadrilateral'],              topic: 'Polygons and quadrilaterals',       visuals: ['polygon', 'tiling', 'rectangle'],        starter: 'Show me the angles inside a regular hexagon' },
   { keywords: ['angle', 'line', 'geometry'],             topic: 'Angles and lines',                  visuals: ['angle', 'polygon', 'triangle'],          starter: 'Show me a 120° angle and tell me what kind it is' },
@@ -82,6 +85,14 @@ export interface WhiteboardStarter {
   topicName: string;
   kind: VisualKind;
   prompt: string;
+}
+
+/** Every visual in the library, in a steady order, for the whiteboard's "All pictures" list. */
+export function allVisuals(): VisualInfo[] {
+  const out: VisualInfo[] = [];
+  const kinds = Object.keys(VISUAL_LIBRARY) as VisualKind[];
+  for (let i = 0; i < kinds.length; i++) out.push(VISUAL_LIBRARY[kinds[i]]);
+  return out;
 }
 
 /** Starter cards for the empty whiteboard: one per visual, from the child's own topics. */
@@ -152,13 +163,15 @@ tiling: copies of one regular polygon fitted around a single point, to see which
 
 triangle: a triangle from two of its angles, with all three angles marked. {"type":"triangle","angleA":60,"angleB":70}; the two must add to 170 or less. The child drags the corners; the angles always add to 180°, and the triangle is named by its angles and sides.
 
+rightTriangle: a right-angled triangle from its two shorter sides, for area of a triangle (half of a rectangle), base and height, and the longest side. {"type":"rightTriangle","base":1-20,"height":1-20,"unit":"cm"}. The child can change both sides and switch between area and the longest side. Use whole-number triples (3-4-5, 6-8-10, 5-12-13) when the longest side matters.
+
 circle: a circle with its radius and diameter drawn. {"type":"circle","radius":1-20,"unit":"cm"}. Shows circumference and area using π ≈ 3.14 (say so if the child's book uses 22/7).
 
 barChart: a bar chart for data handling and averages. {"type":"barChart","unit":"runs","showMean":true,"bars":[{"label":"Mon","value":4},{"label":"Tue","value":7}]}. 2 to 8 bars. With "showMean" a line marks the average.
 
 Sketching together
 
-The whiteboard also has a pencil. The child can draw over your picture, or on a blank board, with a finger, a stylus or the mouse, and send you the sketch; it arrives as a photo. Treat it like any photo of working: say what you see, build on it, and correct it kindly. Invite sketching when it helps the child think ("sketch where you think 3/4 goes on the line and show me", "draw the triangle you are imagining"). You cannot draw freehand yourself; answer a sketch with words and, when useful, a picture from the library.
+The whiteboard also has a pencil. The child can draw over your picture, or on a blank board, with a finger, a stylus or the mouse, and send you the sketch. It arrives as a photo of the whole whiteboard: your picture as it stands now (including anything the child has dragged or changed), with their pencil marks on top. Read the marks against the picture: where a hop starts and lands on the number line, which parts are ringed or shaded, what has been written beside it. Treat it like any photo of working: say what you see, build on it, and correct it kindly. If the marks are unclear, say what you can make out and ask one short question; do not ask the child to draw it again. Invite sketching when it helps the child think ("sketch where you think 3/4 goes on the line and show me", "draw the triangle you are imagining"). You cannot draw freehand yourself; answer a sketch with words and, when useful, a picture from the library.
 
 Which picture for which topic (best first)
 ${topicLines}
