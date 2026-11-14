@@ -101,6 +101,16 @@ def proportion(length, breadth):
     return round(max(1.0, min(3.0, float(length) / float(breadth))), 2)
 
 
+def rect_base(l, b):
+    """A rectangle drawn with its longer side across the top, whichever the question calls the length.
+
+    Returns (figure fields, squares across, squares down).
+    """
+    across, down = max(l, b), min(l, b)
+    return ({"kind": "rectangle", "length": "%s cm" % n(across), "breadth": "%s cm" % n(down),
+             "proportion": proportion(across, down)}, across, down)
+
+
 def scale_units(values, top=10.0):
     """Bar-piece widths in honest proportion, the largest drawn `top` wide."""
     biggest = float(max(values))
@@ -147,7 +157,7 @@ def g_rect_perimeter(q):
         return None
     l, b = num(m.group(1)), num(m.group(2))
     need(q, 2 * (l + b))
-    base = {"kind": "rectangle", "length": "%s cm" % n(l), "breadth": "%s cm" % n(b), "proportion": proportion(l, b)}
+    base, across, down = rect_base(l, b)
     return {
         "figure": dict(base, note="Perimeter = ?"),
         "steps": [
@@ -168,14 +178,14 @@ def g_rect_area(q):
         return None
     l, b = num(m.group(1)), num(m.group(2))
     need(q, l * b)
-    base = {"kind": "rectangle", "length": "%s cm" % n(l), "breadth": "%s cm" % n(b), "proportion": proportion(l, b)}
+    base, across, down = rect_base(l, b)
     squares = dict(base)
-    if isinstance(l, int) and isinstance(b, int) and l <= 12 and b <= 12:
-        squares["grid"] = {"cols": l, "rows": b}
+    if isinstance(l, int) and isinstance(b, int) and across <= 12:
+        squares["grid"] = {"cols": across, "rows": down}
     return {
         "figure": dict(base, inside="Area = ?"),
         "steps": [
-            {"text": "Area is the space inside the shape, counted in unit squares. There are %s squares in each row and %s rows, so area = length × breadth." % (n(l), n(b)),
+            {"text": "Area is the space inside the shape, counted in unit squares. There are %s squares in each row and %s rows, so area = length × breadth." % (n(across), n(down)),
              "figure": dict(squares, highlight=["length", "breadth"])},
             {"text": "Multiply: %s × %s = %s. The area of the rectangle is %s sq. cm." % (n(l), n(b), n(l * b), n(l * b)),
              "figure": dict(squares, highlight=["fill"], note="%s × %s = %s sq. cm" % (n(l), n(b), n(l * b)))},
@@ -677,8 +687,8 @@ def f_compare(q):
         last = dict(same, note="%d and %d are the same, so the fractions are equal" % (x, y))
     else:
         last = dict(same, highlight=["b0" if x > y else "b1"], note="%d is more than %d" % (max(x, y), min(x, y)))
+    # No figure before answering: bars drawn to scale would show which fraction is bigger.
     return {
-        "figure": before,
         "stepFigures": [
             dict(before, note="Pieces of different sizes. Cut both into %d" % l),
             dict(same, note="Now every piece is the same size"),
@@ -933,16 +943,15 @@ def g_with_steps(q):
     need(q, ans)
     if not grounded(q, 1, ans):
         raise Skip("steps do not state the working")
-    base = {"kind": "rectangle", "length": "%d cm" % l}
     if square:
-        base["square"] = True
+        base = {"kind": "rectangle", "square": True, "length": "%d cm" % l}
+        across, down = l, l
     else:
-        base["breadth"] = "%d cm" % b
-        base["proportion"] = proportion(l, b)
+        base, across, down = rect_base(l, b)
     if what == "area":
         squares = dict(base)
-        if l <= 12 and b <= 12:
-            squares["grid"] = {"cols": l, "rows": b}
+        if across <= 12:
+            squares["grid"] = {"cols": across, "rows": down}
         return {"figure": dict(base, inside="Area = ?"),
                 "stepFigures": [
                     dict(squares, highlight=["length"] if square else ["length", "breadth"], note="Area = %s" % ("side × side" if square else "length × breadth")),
@@ -1106,7 +1115,7 @@ def e_with_steps(q):
         "figure": {"kind": "balance", "left": "%dx %s %d" % (a, sign, b), "right": str(c)},
         "stepFigures": [
             {"kind": "balance", "left": "%dx" % a, "right": right1, "highlight": ["right"],
-             "note": "%s %d on both sides keeps it level" % ("Take away" if plus else "Add", b)},
+             "note": ("Take %d off both sides to keep it level" if plus else "Add %d to both sides to keep it level") % b},
             {"kind": "balance", "left": "x", "right": str(x), "highlight": ["left", "right"],
              "note": "Split both sides into %d equal shares" % a},
         ],
