@@ -1,13 +1,15 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { fetchServerVoice, serverVoiceMayBeAvailable } from '@/lib/speech/serverVoice';
 
 /**
  * Read-aloud for verified content.
  *
- * Plays a pre-recorded narration file when one is configured, otherwise speaks
- * with the browser's built-in voice (no network call, nothing recorded, no
- * data leaves the device). The caller passes text that has already been made
+ * Plays a pre-recorded narration file when one is configured; otherwise the
+ * server voice (Sarvam) when the server has a key for it, which sends the text
+ * to Sarvam; otherwise the browser's built-in voice, where nothing leaves the
+ * device. The caller passes text that has already been made
  * speakable by `@/lib/speech/mathToSpeech`.
  *
  * Only one thing is ever read at a time across the whole page: starting a new
@@ -126,8 +128,7 @@ export function useReadAloud() {
 
     setSpeaking(true);
 
-    if (opts && opts.audioSrc) {
-      const audio = new Audio(opts.audioSrc);
+    const playAudio = (audio: HTMLAudioElement, src: string) => {
       audioRef.current = audio;
       // A missing recording fires both `error` and a rejected play(): fall back once only.
       let fellBack = false;
@@ -140,10 +141,34 @@ export function useReadAloud() {
       audio.onplaying = started;
       audio.onended   = () => finish(true);
       audio.onerror   = fallBack;
+      audio.src = src;
       audio.play().catch(fallBack);
+    };
+
+    // 1. A pre-recorded narration file, when the caller has one.
+    if (opts && opts.audioSrc) {
+      playAudio(new Audio(), opts.audioSrc);
       return;
     }
 
+    // 2. The server voice (Sarvam), when the server has a key for it.
+    if (text && serverVoiceMayBeAvailable()) {
+      // Made now, inside the tap, so the browser is more willing to play it when the sound arrives.
+      const audio = new Audio();
+      audioRef.current = audio;
+      fetchServerVoice(text).then((src) => {
+        if (!isCurrent()) return;
+        if (src) {
+          playAudio(audio, src);
+        } else {
+          audioRef.current = null;
+          speakWithBrowserVoice();
+        }
+      });
+      return;
+    }
+
+    // 3. The device's own voice.
     speakWithBrowserVoice();
   }, [halt, stop]);
 

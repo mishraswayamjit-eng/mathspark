@@ -100,7 +100,8 @@ def audio_extension(audio: bytes) -> str:
 def synthesize(text: str, api_key: str, args: argparse.Namespace) -> bytes:
     body = {
         "text": text,
-        "target_language_code": args.language,
+        # Named `language_code` in Sarvam's current API reference (older versions: `target_language_code`).
+        "language_code": args.language,
         "model": args.model,
         "speaker": args.speaker,
         "pace": args.pace,
