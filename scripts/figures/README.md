@@ -56,8 +56,7 @@ Question data is in `data/mathspark_complete_seed.json` under `questions`: `id`,
 - Every button is at least 48px tall. Decorative emoji get `aria-hidden="true"`. Icon-only buttons get an `aria-label`.
 - Child-facing copy is warm and never says "Wrong", "Incorrect", "Failed" or "Error".
 - Grading stays on the server and deterministic. Nothing in this feature changes XP, mastery or grading.
-- Do not run `git add -A`: the repo has untracked files that must stay uncommitted. Add your own files by name.
-- Do not push. Commit your work on your branch with a clear message and stop.
+- Several agents are working in this same folder at once, each on its own files. Do not run any git command that changes anything (no add, commit, stash, checkout, reset, restore, clean), and do not push. Leave your finished files in place; the lead commits. Never edit, move or delete a file outside your ownership row, even to fix something.
 - Never write secrets into files. Do not read `.env.local`.
 
 ## Who owns which files

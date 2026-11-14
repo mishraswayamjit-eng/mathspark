@@ -190,6 +190,12 @@ export interface NumberLineFigure extends FigureBase {
   max: number;
   /** Gap between ticks. At most 40 ticks. */
   step: number;
+  /**
+   * Which ticks carry a number: every one that fits ('all', the default), only
+   * the first and last ('ends'), or none. Use 'ends' or 'none' when numbering
+   * the ticks would give the answer away.
+   */
+  tickLabels?: 'all' | 'ends' | 'none';
   points?: Array<{ at: number; label?: string }>;
   hops?: Array<{ from: number; to: number; label?: string }>;
 }

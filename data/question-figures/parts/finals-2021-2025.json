@@ -1,0 +1,7509 @@
+{
+ "EXT_G5_FP_2021_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "angles",
+   "layout": "inRightAngle",
+   "parts": [
+    {
+     "label": "(25 − y)°"
+    },
+    {
+     "label": "?"
+    }
+   ],
+   "note": "The two angles together make a right angle"
+  },
+  "stepFigures": [
+   {
+    "kind": "angles",
+    "layout": "inRightAngle",
+    "parts": [
+     {
+      "label": "(25 − y)°"
+     },
+     {
+      "label": "?"
+     }
+    ],
+    "note": "Other part = 90 − (25 − y)",
+    "highlight": [
+     "p1"
+    ]
+   },
+   null,
+   {
+    "kind": "angles",
+    "layout": "inRightAngle",
+    "parts": [
+     {
+      "label": "(25 − y)°"
+     },
+     {
+      "label": "(65 + y)°"
+     }
+    ],
+    "note": "90 − 25 + y = 65 + y",
+    "highlight": [
+     "p1"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2021_033": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "Mumbai",
+    "Dubai"
+   ],
+   "legs": [
+    {
+     "top": "212.5 m/s",
+     "bottom": "6:20 to 8:50 pm"
+    }
+   ],
+   "note": "Distance = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "Mumbai",
+     "Dubai"
+    ],
+    "legs": [
+     {
+      "top": "212.5 m/s",
+      "bottom": "2 h 30 min"
+     }
+    ],
+    "note": "2 h 30 min = 9000 seconds",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Mumbai",
+     "Dubai"
+    ],
+    "legs": [
+     {
+      "top": "212.5 m/s",
+      "bottom": "9000 s"
+     }
+    ],
+    "note": "212.5 × 9000 = 1912500 m"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Mumbai",
+     "Dubai"
+    ],
+    "legs": [
+     {
+      "top": "1912.5 km",
+      "bottom": "2 h 30 min"
+     }
+    ],
+    "highlight": [
+     "l0"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2021_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "2x + 1",
+   "right": "8",
+   "note": "Both pans weigh the same. 4x + 1 = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "7",
+    "note": "Take 1 off both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "4x",
+    "right": "14",
+    "note": "Double both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "4x + 1",
+    "right": "15",
+    "note": "Put 1 back on both pans"
+   }
+  ]
+ },
+ "EXT_G5_FP_2021_007": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "66728",
+    "note": "60000 and 6000: only 10 times",
+    "highlight": [
+     "d0",
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "68726",
+    "note": "60000 and 6: that is 10000 times",
+    "highlight": [
+     "d0",
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "86762",
+    "note": "6000 and 60: only 100 times",
+    "highlight": [
+     "d1",
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "68762",
+    "note": "60000 and 60: 60000 ÷ 60 = 1000",
+    "highlight": [
+     "d0",
+     "d3"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2021_004": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "3116365",
+    "note": "Every other digit makes 12, the rest make 13. Gap is 1",
+    "highlight": [
+     "d0",
+     "d2",
+     "d4",
+     "d6"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "901351",
+    "note": "9 + 1 + 5 = 15, the rest make 4, and 15 − 4 = 11",
+    "highlight": [
+     "d0",
+     "d2",
+     "d4"
+    ]
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G5_FP_2021_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 15,
+   "max": 27,
+   "step": 4,
+   "points": [
+    {
+     "at": 15
+    },
+    {
+     "at": 19
+    },
+    {
+     "at": 23
+    },
+    {
+     "at": 27
+    }
+   ],
+   "hops": [
+    {
+     "from": 15,
+     "to": 19,
+     "label": "?"
+    },
+    {
+     "from": 19,
+     "to": 23,
+     "label": "?"
+    },
+    {
+     "from": 23,
+     "to": 27,
+     "label": "?"
+    }
+   ],
+   "note": "How big is each jump? 12th term = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 15,
+    "max": 27,
+    "step": 4,
+    "points": [
+     {
+      "at": 15
+     },
+     {
+      "at": 19
+     },
+     {
+      "at": 23
+     },
+     {
+      "at": 27
+     }
+    ],
+    "hops": [
+     {
+      "from": 15,
+      "to": 19,
+      "label": "+4"
+     },
+     {
+      "from": 19,
+      "to": 23,
+      "label": "+4"
+     },
+     {
+      "from": 23,
+      "to": 27,
+      "label": "+4"
+     }
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 15,
+    "max": 27,
+    "step": 4,
+    "points": [
+     {
+      "at": 15
+     },
+     {
+      "at": 19
+     },
+     {
+      "at": 23
+     },
+     {
+      "at": 27
+     }
+    ],
+    "hops": [
+     {
+      "from": 15,
+      "to": 19,
+      "label": "+4"
+     },
+     {
+      "from": 19,
+      "to": 23,
+      "label": "+4"
+     },
+     {
+      "from": 23,
+      "to": 27,
+      "label": "+4"
+     }
+    ],
+    "note": "11 jumps of 4 from 15: 15 + 44 = 59"
+   }
+  ]
+ },
+ "EXT_G5_FP_2021_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 10,
+   "max": 27,
+   "step": 1,
+   "points": [
+    {
+     "at": 10
+    },
+    {
+     "at": 12
+    },
+    {
+     "at": 15
+    },
+    {
+     "at": 20
+    },
+    {
+     "at": 27
+    }
+   ],
+   "hops": [
+    {
+     "from": 10,
+     "to": 12,
+     "label": "?"
+    },
+    {
+     "from": 12,
+     "to": 15,
+     "label": "?"
+    },
+    {
+     "from": 15,
+     "to": 20,
+     "label": "?"
+    },
+    {
+     "from": 20,
+     "to": 27,
+     "label": "?"
+    }
+   ],
+   "note": "Look at the size of each jump. 8th term = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 10,
+    "max": 27,
+    "step": 1,
+    "points": [
+     {
+      "at": 10
+     },
+     {
+      "at": 12
+     },
+     {
+      "at": 15
+     },
+     {
+      "at": 20
+     },
+     {
+      "at": 27
+     }
+    ],
+    "hops": [
+     {
+      "from": 10,
+      "to": 12,
+      "label": "+2"
+     },
+     {
+      "from": 12,
+      "to": 15,
+      "label": "+3"
+     },
+     {
+      "from": 15,
+      "to": 20,
+      "label": "+5"
+     },
+     {
+      "from": 20,
+      "to": 27,
+      "label": "+7"
+     }
+    ],
+    "note": "The jumps are the prime numbers"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Jump",
+      "+11",
+      "+13",
+      "+17"
+     ],
+     [
+      "Value",
+      "38",
+      "51",
+      "68"
+     ]
+    ],
+    "headers": [
+     "Term",
+     "6th",
+     "7th",
+     "8th"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2021_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Buys",
+     "5",
+     "Rs.2"
+    ],
+    [
+     "Sells",
+     "2",
+     "Rs.1"
+    ]
+   ],
+   "headers": [
+    "Deal",
+    "Candy bars",
+    "Price"
+   ],
+   "note": "He buys and sells 1000 bars. Profit or loss % = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Buys",
+      "5 for Rs.2",
+      "Rs.400"
+     ],
+     [
+      "Sells",
+      "2 for Rs.1",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Deal",
+     "Rate",
+     "1000 bars"
+    ],
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Buys",
+      "5 for Rs.2",
+      "Rs.400"
+     ],
+     [
+      "Sells",
+      "2 for Rs.1",
+      "Rs.500"
+     ]
+    ],
+    "headers": [
+     "Deal",
+     "Rate",
+     "1000 bars"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.400",
+        "tone": "a"
+       }
+      ],
+      "label": "Cost"
+     },
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.400",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "profit Rs.100",
+        "tone": "b"
+       }
+      ],
+      "label": "Sold",
+      "brace": "Rs.500"
+     }
+    ],
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.400",
+        "tone": "a"
+       }
+      ],
+      "label": "Cost"
+     },
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.400",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "profit Rs.100",
+        "tone": "b"
+       }
+      ],
+      "label": "Sold",
+      "brace": "Rs.500"
+     }
+    ],
+    "note": "100 out of 400 is 25 out of 100"
+   }
+  ]
+ },
+ "EXT_G5_FP_2021_034": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3,
+       "label": "Rs.18000",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Paid back",
+     "brace": "Rs.25,560 after 3 years"
+    }
+   ],
+   "note": "Each ? is one year of interest. Rate = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "Rs.18000",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "interest Rs.7560",
+        "tone": "b"
+       }
+      ],
+      "label": "Paid back",
+      "brace": "Rs.25,560 after 3 years"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "Rs.18000",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "14%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "14%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "14%",
+        "tone": "b"
+       }
+      ],
+      "label": "Paid back",
+      "brace": "Rs.25,560 after 3 years"
+     }
+    ],
+    "note": "Rs.7560 over 3 years on Rs.18000 is 14% a year"
+   }
+  ]
+ },
+ "EXT_G5_FP_2021_032": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 4,
+      "shaded": 1,
+      "label": "1/4 of the number"
+     },
+     {
+      "parts": 12,
+      "shaded": 1,
+      "label": "1/3 of that = 15"
+     }
+    ],
+    "note": "1 part out of 12 is 15, so the number is 180"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 10,
+      "shaded": 3,
+      "label": "3/10 of 180 = 54"
+     }
+    ]
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2021_038": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      }
+     ],
+     "label": "1 metre",
+     "brace": "8 pieces"
+    },
+    {
+     "segments": [
+      {
+       "units": 8,
+       "label": "? pieces",
+       "tone": "unknown"
+      }
+     ],
+     "label": "37.5 metres"
+    }
+   ],
+   "note": "Every metre gives 8 pieces"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       }
+      ],
+      "label": "1 metre",
+      "brace": "8 pieces"
+     },
+     {
+      "segments": [
+       {
+        "units": 8,
+        "label": "300 pieces",
+        "tone": "b"
+       }
+      ],
+      "label": "37.5 metres"
+     }
+    ],
+    "note": "37.5 × 8 = 300 pieces"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2022_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "compass",
+   "facing": "SW",
+   "turns": [
+    {
+     "degrees": 180,
+     "direction": "clockwise"
+    },
+    {
+     "degrees": 225,
+     "direction": "anticlockwise"
+    }
+   ],
+   "note": "Follow the two turns. Facing now = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "compass",
+    "facing": "SW",
+    "turns": [
+     {
+      "degrees": 180,
+      "direction": "clockwise"
+     }
+    ],
+    "showEnd": true,
+    "note": "A half turn from South-West ends at North-East",
+    "highlight": [
+     "t0"
+    ]
+   },
+   {
+    "kind": "compass",
+    "facing": "NE",
+    "turns": [
+     {
+      "degrees": 225,
+      "direction": "anticlockwise"
+     }
+    ],
+    "showEnd": true,
+    "note": "225° is 5 steps of 45°: N, NW, W, SW, S",
+    "highlight": [
+     "t0"
+    ]
+   },
+   {
+    "kind": "compass",
+    "facing": "S",
+    "note": "Now facing South",
+    "highlight": [
+     "start"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "L",
+   "breadth": "L − 6",
+   "inside": "Perimeter 96 cm",
+   "note": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "length"
+    ],
+    "length": "27 cm",
+    "breadth": "L − 6",
+    "inside": "L + B = 48",
+    "note": "2L − 6 = 48, so L = 27 cm"
+   },
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "breadth"
+    ],
+    "length": "27 cm",
+    "breadth": "21 cm",
+    "note": "27 − 6 = 21 cm"
+   },
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "fill"
+    ],
+    "length": "27 cm",
+    "breadth": "21 cm",
+    "inside": "27 × 21 = 567"
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "triangle",
+   "shape": "scalene",
+   "sides": {
+    "ab": "3a + 5",
+    "bc": "7a + 10",
+    "ca": "4a + 15"
+   },
+   "note": "a = 5. Perimeter = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "triangle",
+    "shape": "scalene",
+    "sides": {
+     "ab": "20",
+     "bc": "7a + 10",
+     "ca": "4a + 15"
+    },
+    "highlight": [
+     "ab"
+    ]
+   },
+   {
+    "kind": "triangle",
+    "shape": "scalene",
+    "sides": {
+     "ab": "20",
+     "bc": "45",
+     "ca": "4a + 15"
+    },
+    "highlight": [
+     "bc"
+    ]
+   },
+   {
+    "kind": "triangle",
+    "shape": "scalene",
+    "sides": {
+     "ab": "20",
+     "bc": "45",
+     "ca": "35"
+    },
+    "highlight": [
+     "ca"
+    ]
+   },
+   {
+    "kind": "triangle",
+    "shape": "scalene",
+    "sides": {
+     "ab": "20",
+     "bc": "45",
+     "ca": "35"
+    },
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ],
+    "note": "20 + 45 + 35 = 100 units"
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_029": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "L",
+   "breadth": "half of L",
+   "proportion": 2,
+   "inside": "Perimeter 84 cm",
+   "note": "L = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "length",
+     "breadth"
+    ],
+    "length": "L",
+    "breadth": "half of L",
+    "proportion": 2,
+    "note": "One length and one breadth make 84 ÷ 2 = 42"
+   },
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "length",
+     "breadth"
+    ],
+    "length": "L",
+    "breadth": "half of L",
+    "proportion": 2,
+    "note": "L and half of L together make 42"
+   },
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "length"
+    ],
+    "length": "28 cm",
+    "breadth": "14 cm",
+    "proportion": 2,
+    "note": "28 + 14 = 42"
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "Front at pole",
+    "End at pole"
+   ],
+   "legs": [
+    {
+     "top": "120 m",
+     "bottom": "36 km/h"
+    }
+   ],
+   "note": "The train must move its own length past the pole. Time = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "Front at pole",
+     "End at pole"
+    ],
+    "legs": [
+     {
+      "top": "120 m",
+      "bottom": "10 m/s"
+     }
+    ],
+    "note": "36 km/h is 10 metres every second",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Front at pole",
+     "End at pole"
+    ],
+    "legs": [
+     {
+      "top": "120 m",
+      "bottom": "12 seconds"
+     }
+    ],
+    "note": "120 ÷ 10 = 12 seconds"
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_030": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "Start",
+    "25 s later"
+   ],
+   "legs": [
+    {
+     "top": "600 m",
+     "bottom": "25 s"
+    }
+   ],
+   "note": "At the same speed, how far in 1 hour?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "Start",
+     "25 s later"
+    ],
+    "legs": [
+     {
+      "top": "600 m",
+      "bottom": "24 m/s"
+     }
+    ],
+    "note": "600 ÷ 25 = 24 metres every second",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Start",
+     "1 hour later"
+    ],
+    "legs": [
+     {
+      "top": "86.4 km",
+      "bottom": "3600 s"
+     }
+    ],
+    "note": "24 × 3600 = 86400 m"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2022_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1 gross",
+     "Rs.936"
+    ],
+    [
+     "48",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Books",
+    "Cost"
+   ],
+   "note": "A gross is twelve dozen"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "144",
+      "Rs.936"
+     ],
+     [
+      "1",
+      "Rs.6.50"
+     ],
+     [
+      "48",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Books",
+     "Cost"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "144",
+      "Rs.936"
+     ],
+     [
+      "1",
+      "Rs.6.50"
+     ],
+     [
+      "48",
+      "Rs.312"
+     ]
+    ],
+    "headers": [
+     "Books",
+     "Cost"
+    ],
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_038": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "16",
+     "1 decalitre"
+    ],
+    [
+     "?",
+     "15625 ml"
+    ]
+   ],
+   "headers": [
+    "Jugs",
+    "Juice"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "10000 ml"
+     ],
+     [
+      "1",
+      "625 ml"
+     ],
+     [
+      "?",
+      "15625 ml"
+     ]
+    ],
+    "headers": [
+     "Jugs",
+     "Juice"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "16",
+      "10000 ml"
+     ],
+     [
+      "1",
+      "625 ml"
+     ],
+     [
+      "25",
+      "15625 ml"
+     ]
+    ],
+    "headers": [
+     "Jugs",
+     "Juice"
+    ],
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 5,
+       "label": "Rs.400",
+       "tone": "a"
+      }
+     ],
+     "label": "Worth"
+    },
+    {
+     "segments": [
+      {
+       "units": 4,
+       "label": "Rs.324",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "loss ?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Sold for"
+    }
+   ],
+   "note": "Loss as a percent of Rs.400 = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.400",
+        "tone": "a"
+       }
+      ],
+      "label": "Worth"
+     },
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.324",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "loss Rs.76",
+        "tone": "b"
+       }
+      ],
+      "label": "Sold for"
+     }
+    ],
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.400",
+        "tone": "a"
+       }
+      ],
+      "label": "Worth"
+     },
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.324",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "loss Rs.76",
+        "tone": "b"
+       }
+      ],
+      "label": "Sold for"
+     }
+    ],
+    "note": "76 out of 400 is 19 out of 100"
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2.2,
+       "label": "94 scored",
+       "tone": "a"
+      },
+      {
+       "units": 1.8,
+       "label": "74 short",
+       "tone": "b"
+      }
+     ],
+     "label": "Pass mark",
+     "brace": "40% of maximum"
+    },
+    {
+     "segments": [
+      {
+       "units": 10,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Maximum"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.2,
+        "label": "94 scored",
+        "tone": "a"
+       },
+       {
+        "units": 1.8,
+        "label": "74 short",
+        "tone": "b"
+       }
+      ],
+      "label": "Pass mark",
+      "brace": "168 = 40% of maximum"
+     },
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Maximum"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.2,
+        "label": "94 scored",
+        "tone": "a"
+       },
+       {
+        "units": 1.8,
+        "label": "74 short",
+        "tone": "b"
+       }
+      ],
+      "label": "Pass mark",
+      "brace": "168 = 40% of maximum"
+     },
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Maximum"
+     }
+    ],
+    "note": "40% is 168, so 1% is 4.2"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.2,
+        "label": "94 scored",
+        "tone": "a"
+       },
+       {
+        "units": 1.8,
+        "label": "74 short",
+        "tone": "b"
+       }
+      ],
+      "label": "Pass mark",
+      "brace": "168 = 40% of maximum"
+     },
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "420",
+        "tone": "c"
+       }
+      ],
+      "label": "Maximum"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_031": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 5,
+       "label": "Rs.18000",
+       "tone": "a"
+      }
+     ],
+     "label": "Cost"
+    },
+    {
+     "segments": [
+      {
+       "units": 5,
+       "label": "Rs.18000",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "18% profit",
+       "tone": "b"
+      }
+     ],
+     "label": "Selling price",
+     "brace": "?"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.18000",
+        "tone": "a"
+       }
+      ],
+      "label": "Cost"
+     },
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.18000",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.3240",
+        "tone": "b"
+       }
+      ],
+      "label": "Selling price",
+      "brace": "?"
+     }
+    ],
+    "note": "1% is 180, so 18% is 3240",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.18000",
+        "tone": "a"
+       }
+      ],
+      "label": "Cost"
+     },
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.18000",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.3240",
+        "tone": "b"
+       }
+      ],
+      "label": "Selling price",
+      "brace": "Rs.21240"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "8%",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "8%",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "8%",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "8%",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "8%",
+       "tone": "b"
+      }
+     ],
+     "label": "Interest",
+     "brace": "Rs.160 in 5 years"
+    }
+   ],
+   "note": "Each piece is 8% of the principal. Principal = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "8%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "8%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "8%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "8%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "8%",
+        "tone": "b"
+       }
+      ],
+      "label": "Interest",
+      "brace": "Rs.160 in 5 years"
+     }
+    ],
+    "note": "8 × 5 = 40, so Rs.160 is 40% of the principal",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "8%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "8%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "8%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "8%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "8%",
+        "tone": "b"
+       }
+      ],
+      "label": "Interest",
+      "brace": "Rs.160 in 5 years"
+     }
+    ],
+    "note": "40% is Rs.160, so the whole principal is Rs.400"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.32",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.32",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.32",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.32",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.32",
+        "tone": "b"
+       }
+      ],
+      "label": "Interest",
+      "brace": "Rs.160 in 5 years"
+     }
+    ],
+    "note": "Check: 8% of 400 is 32 a year"
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4,
+       "label": "Rs.26500",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "8%",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "8%",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "8%",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "8%",
+       "tone": "b"
+      }
+     ],
+     "label": "After 4 years",
+     "brace": "Amount = ?"
+    }
+   ],
+   "note": "Each small piece is one year of interest"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.26500",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.2120",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.2120",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.2120",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.2120",
+        "tone": "b"
+       }
+      ],
+      "label": "After 4 years",
+      "brace": "Amount = ?"
+     }
+    ],
+    "note": "8% of 26500 is 2120",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.26500",
+        "tone": "a"
+       },
+       {
+        "units": 4,
+        "label": "Rs.8480",
+        "tone": "b"
+       }
+      ],
+      "label": "After 4 years",
+      "brace": "Amount = ?"
+     }
+    ],
+    "note": "2120 × 4 = 8480",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.26500",
+        "tone": "a"
+       },
+       {
+        "units": 4,
+        "label": "Rs.8480",
+        "tone": "b"
+       }
+      ],
+      "label": "After 4 years",
+      "brace": "Rs.34980"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_035": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4,
+       "label": "W",
+       "tone": "a"
+      }
+     ],
+     "label": "First odd"
+    },
+    {
+     "segments": [
+      {
+       "units": 4,
+       "label": "W",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "2",
+       "tone": "b"
+      }
+     ],
+     "label": "Next odd"
+    }
+   ],
+   "note": "Together the two bars make 192"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "W",
+        "tone": "a"
+       }
+      ],
+      "label": "First odd"
+     },
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "W",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "2",
+        "tone": "b"
+       }
+      ],
+      "label": "Next odd",
+      "brace": "W + 2"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "W",
+        "tone": "a"
+       }
+      ],
+      "label": "First odd"
+     },
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "W",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "2",
+        "tone": "b"
+       }
+      ],
+      "label": "Next odd",
+      "brace": "W + 2"
+     }
+    ],
+    "note": "W + (W + 2) = 192",
+    "highlight": [
+     "b0",
+     "b1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "95",
+        "tone": "a"
+       }
+      ],
+      "label": "First odd"
+     },
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "95",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "2",
+        "tone": "b"
+       }
+      ],
+      "label": "Next odd",
+      "brace": "97"
+     }
+    ],
+    "note": "95 + 97 = 192"
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "4(2x − 1)",
+   "right": "5(x + 2) + 4",
+   "note": "Both pans weigh the same. x = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "8x − 4",
+    "right": "5x + 14",
+    "note": "Open the brackets on each pan"
+   },
+   {
+    "kind": "balance",
+    "left": "3x",
+    "right": "18",
+    "note": "Take 5x off both pans and add 4 to both"
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "6",
+    "note": "Share both pans into 3 equal parts"
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 9,
+   "max": 37,
+   "step": 4,
+   "points": [
+    {
+     "at": 9
+    },
+    {
+     "at": 13
+    },
+    {
+     "at": 21
+    },
+    {
+     "at": 37
+    }
+   ],
+   "hops": [
+    {
+     "from": 9,
+     "to": 13,
+     "label": "?"
+    },
+    {
+     "from": 13,
+     "to": 21,
+     "label": "?"
+    },
+    {
+     "from": 21,
+     "to": 37,
+     "label": "?"
+    }
+   ],
+   "note": "Look at the size of each jump. After 37 come K and 133"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 9,
+    "max": 37,
+    "step": 4,
+    "points": [
+     {
+      "at": 9
+     },
+     {
+      "at": 13
+     },
+     {
+      "at": 21
+     },
+     {
+      "at": 37
+     }
+    ],
+    "hops": [
+     {
+      "from": 9,
+      "to": 13,
+      "label": "+4"
+     },
+     {
+      "from": 13,
+      "to": 21,
+      "label": "+8"
+     },
+     {
+      "from": 21,
+      "to": 37,
+      "label": "+16"
+     }
+    ],
+    "note": "Each jump is double the one before"
+   },
+   {
+    "kind": "numberLine",
+    "min": 37,
+    "max": 69,
+    "step": 4,
+    "points": [
+     {
+      "at": 37
+     },
+     {
+      "at": 69,
+      "label": "K"
+     }
+    ],
+    "hops": [
+     {
+      "from": 37,
+      "to": 69,
+      "label": "+32"
+     }
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 69,
+    "max": 133,
+    "step": 8,
+    "points": [
+     {
+      "at": 69,
+      "label": "K"
+     },
+     {
+      "at": 133
+     }
+    ],
+    "hops": [
+     {
+      "from": 69,
+      "to": 133,
+      "label": "+64"
+     }
+    ],
+    "note": "The next jump lands on 133, so the pattern fits"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2022_033": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 19,
+   "max": 55,
+   "step": 12,
+   "points": [
+    {
+     "at": 19
+    },
+    {
+     "at": 31
+    },
+    {
+     "at": 43
+    },
+    {
+     "at": 55
+    }
+   ],
+   "hops": [
+    {
+     "from": 19,
+     "to": 31,
+     "label": "?"
+    },
+    {
+     "from": 31,
+     "to": 43,
+     "label": "?"
+    },
+    {
+     "from": 43,
+     "to": 55,
+     "label": "?"
+    }
+   ],
+   "note": "How big is each jump? 11th term = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 19,
+    "max": 55,
+    "step": 12,
+    "points": [
+     {
+      "at": 19
+     },
+     {
+      "at": 31
+     },
+     {
+      "at": 43
+     },
+     {
+      "at": 55
+     }
+    ],
+    "hops": [
+     {
+      "from": 19,
+      "to": 31,
+      "label": "+12"
+     },
+     {
+      "from": 31,
+      "to": 43,
+      "label": "+12"
+     },
+     {
+      "from": 43,
+      "to": 55,
+      "label": "+12"
+     }
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 19,
+    "max": 55,
+    "step": 12,
+    "points": [
+     {
+      "at": 19
+     },
+     {
+      "at": 31
+     },
+     {
+      "at": 43
+     },
+     {
+      "at": 55
+     }
+    ],
+    "hops": [
+     {
+      "from": 19,
+      "to": 31,
+      "label": "+12"
+     },
+     {
+      "from": 31,
+      "to": 43,
+      "label": "+12"
+     },
+     {
+      "from": 43,
+      "to": 55,
+      "label": "+12"
+     }
+    ],
+    "note": "10 jumps of 12 from 19: 19 + 120 = 139"
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_025": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "6794521",
+    "note": "The number has 7 digits"
+   },
+   {
+    "kind": "placeChart",
+    "number": "6794521",
+    "note": "The 4th digit is the middle one",
+    "highlight": [
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "6794521",
+    "note": "4 in the thousands place is 4000",
+    "highlight": [
+     "d3"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2022_039": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "12",
+    "rightTitle": "90",
+    "left": "rest of 12",
+    "both": "2 × 3",
+    "right": "rest of 90",
+    "highlight": [
+     "both"
+    ],
+    "note": "Shared prime factors: 2 × 3 = 6"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "12",
+    "rightTitle": "90",
+    "left": "2",
+    "both": "2 × 3",
+    "right": "3 × 5",
+    "highlight": [
+     "left",
+     "both",
+     "right"
+    ],
+    "note": "Every factor once: 2 × 2 × 3 × 3 × 5 = 180"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2023_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 12,
+   "minute": 45,
+   "note": "The hour hand turns 214° more. New time = ?",
+   "highlight": [
+    "hour"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "clock",
+    "hour": 12,
+    "minute": 45,
+    "note": "The hour hand turns 30° an hour: 7 hours and 4° left",
+    "highlight": [
+     "hour"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 12,
+    "minute": 45,
+    "note": "4° more takes the hour hand 8 minutes",
+    "highlight": [
+     "hour"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 7,
+    "minute": 53,
+    "note": "12:45 and 7 h 8 min more is 7:53"
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "22 m",
+   "breadth": "16 m",
+   "note": "A square has the same perimeter. Area of the square = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "border"
+    ],
+    "length": "22 m",
+    "breadth": "16 m",
+    "inside": "Perimeter 76 m"
+   },
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "border"
+    ],
+    "square": true,
+    "length": "19 m",
+    "inside": "Perimeter 76 m",
+    "note": "76 ÷ 4 = 19 m for each side"
+   },
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "fill"
+    ],
+    "square": true,
+    "length": "19 m",
+    "breadth": "19 m",
+    "inside": "19 × 19 = 361"
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "triangle",
+   "shape": "right",
+   "sides": {
+    "ab": "height ?",
+    "bc": "base"
+   },
+   "note": "Area = 18 × base"
+  },
+  "stepFigures": [
+   {
+    "kind": "triangle",
+    "shape": "right",
+    "sides": {
+     "ab": "height",
+     "bc": "base"
+    },
+    "highlight": [
+     "fill"
+    ],
+    "enclose": true,
+    "note": "Half of base × height = 18 × base"
+   },
+   {
+    "kind": "triangle",
+    "shape": "right",
+    "sides": {
+     "ab": "height",
+     "bc": "base"
+    },
+    "highlight": [
+     "ab"
+    ],
+    "enclose": true,
+    "note": "So half of the height is 18"
+   },
+   {
+    "kind": "triangle",
+    "shape": "right",
+    "sides": {
+     "ab": "36 units",
+     "bc": "base"
+    },
+    "highlight": [
+     "ab"
+    ],
+    "note": "18 × 2 = 36"
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_039": {
+  "origin": "authored",
+  "figure": {
+   "kind": "triangle",
+   "shape": "scalene",
+   "sides": {
+    "ab": "7 cm",
+    "bc": "16 cm",
+    "ca": "?"
+   },
+   "note": "The third side must close the triangle"
+  },
+  "stepFigures": [
+   {
+    "kind": "triangle",
+    "shape": "scalene",
+    "sides": {
+     "ab": "7 cm",
+     "bc": "16 cm",
+     "ca": "?"
+    },
+    "highlight": [
+     "ca"
+    ],
+    "note": "Third side: longer than 9 cm, shorter than 23 cm"
+   },
+   {
+    "kind": "triangle",
+    "shape": "scalene",
+    "sides": {
+     "ab": "7 cm",
+     "bc": "16 cm",
+     "ca": "?"
+    },
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ],
+    "note": "Perimeter: more than 32 cm, less than 46 cm"
+   },
+   {
+    "kind": "triangle",
+    "shape": "scalene",
+    "sides": {
+     "ab": "7 cm",
+     "bc": "16 cm",
+     "ca": "11 cm"
+    },
+    "highlight": [
+     "ca"
+    ],
+    "note": "16 + 7 + 11 = 34 cm fits"
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_040": {
+  "origin": "authored",
+  "figure": {
+   "kind": "angles",
+   "layout": "onLine",
+   "parts": [
+    {
+     "label": "?"
+    },
+    {
+     "label": "?"
+    }
+   ],
+   "note": "Supplementary angles fit on a straight line: 180°"
+  },
+  "stepFigures": [
+   {
+    "kind": "angles",
+    "layout": "onLine",
+    "parts": [
+     {
+      "label": "127.5°",
+      "size": 127.5
+     },
+     {
+      "label": "53.5°"
+     }
+    ],
+    "note": "127.5 + 53.5 = 181, a little too much"
+   },
+   {
+    "kind": "angles",
+    "layout": "onLine",
+    "parts": [
+     {
+      "label": "83.6°",
+      "size": 83.6
+     },
+     {
+      "label": "95.4°"
+     }
+    ],
+    "note": "83.6 + 95.4 = 179, a little too small"
+   },
+   {
+    "kind": "angles",
+    "layout": "onLine",
+    "parts": [
+     {
+      "label": "111.8°",
+      "size": 111.8
+     },
+     {
+      "label": "68.2°"
+     }
+    ],
+    "note": "111.8 + 68.2 = 180, a straight line",
+    "highlight": [
+     "p0",
+     "p1"
+    ]
+   },
+   {
+    "kind": "angles",
+    "layout": "onLine",
+    "parts": [
+     {
+      "label": "115.7°",
+      "size": 115.7
+     },
+     {
+      "label": "65.3°"
+     }
+    ],
+    "note": "115.7 + 65.3 = 181, a little too much"
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "Start",
+    "100 m mark",
+    "Finish"
+   ],
+   "legs": [
+    {
+     "top": "100 m",
+     "bottom": "4 m/s"
+    },
+    {
+     "top": "300 m",
+     "bottom": "5 m/s"
+    }
+   ],
+   "note": "This is one round of 400 m. Time for five rounds = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "Start",
+     "100 m mark",
+     "Finish"
+    ],
+    "legs": [
+     {
+      "top": "100 m",
+      "bottom": "25 s"
+     },
+     {
+      "top": "300 m",
+      "bottom": "60 s"
+     }
+    ],
+    "highlight": [
+     "l0",
+     "l1"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Start",
+     "100 m mark",
+     "Finish"
+    ],
+    "legs": [
+     {
+      "top": "100 m",
+      "bottom": "25 s"
+     },
+     {
+      "top": "300 m",
+      "bottom": "60 s"
+     }
+    ],
+    "note": "One round is 85 s, so five rounds are 425 s"
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G5_FP_2023_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "12",
+     "54"
+    ],
+    [
+     "?",
+     "24"
+    ]
+   ],
+   "headers": [
+    "Men",
+    "Days"
+   ],
+   "note": "The same work in fewer days needs more men"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "12",
+      "54"
+     ],
+     [
+      "?",
+      "24"
+     ]
+    ],
+    "headers": [
+     "Men",
+     "Days"
+    ],
+    "note": "12 × 54 = 648 days of work for one man",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "12",
+      "54"
+     ],
+     [
+      "27",
+      "24"
+     ]
+    ],
+    "headers": [
+     "Men",
+     "Days"
+    ],
+    "note": "648 ÷ 24 = 27 men",
+    "highlight": [
+     "r1"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "12",
+     "126 km"
+    ],
+    [
+     "22",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Litres",
+    "Distance"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "12",
+      "126 km"
+     ],
+     [
+      "1",
+      "10.5 km"
+     ],
+     [
+      "22",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Litres",
+     "Distance"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "12",
+      "126 km"
+     ],
+     [
+      "1",
+      "10.5 km"
+     ],
+     [
+      "22",
+      "231 km"
+     ]
+    ],
+    "headers": [
+     "Litres",
+     "Distance"
+    ],
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4,
+       "label": "Rs.6420",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Amount",
+     "brace": "Rs.10,272 in 4 years"
+    }
+   ],
+   "note": "Each ? is one year of interest. Rate = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.6420",
+        "tone": "a"
+       },
+       {
+        "units": 4,
+        "label": "interest Rs.3852",
+        "tone": "b"
+       }
+      ],
+      "label": "Amount",
+      "brace": "Rs.10,272 in 4 years"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.6420",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "15%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "15%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "15%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "15%",
+        "tone": "b"
+       }
+      ],
+      "label": "Amount",
+      "brace": "Rs.10,272 in 4 years"
+     }
+    ],
+    "note": "Rs.3852 over 4 years on Rs.6420 is 15% a year"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2023_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3,
+       "label": "3042",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "869",
+       "tone": "b"
+      }
+     ],
+     "label": "Sum"
+    },
+    {
+     "segments": [
+      {
+       "units": 2,
+       "label": "2165",
+       "tone": "c"
+      },
+      {
+       "units": 2,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Same total"
+    }
+   ],
+   "note": "The two bars are the same length"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "3042",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "869",
+        "tone": "b"
+       }
+      ],
+      "label": "Sum",
+      "brace": "3911"
+     },
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "2165",
+        "tone": "c"
+       },
+       {
+        "units": 2,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Same total"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "3042",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "869",
+        "tone": "b"
+       }
+      ],
+      "label": "Sum",
+      "brace": "3911"
+     },
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "2165",
+        "tone": "c"
+       },
+       {
+        "units": 2,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Same total",
+      "brace": "3911"
+     }
+    ],
+    "note": "? = 3911 − 2165",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "3042",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "869",
+        "tone": "b"
+       }
+      ],
+      "label": "Sum",
+      "brace": "3911"
+     },
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "2165",
+        "tone": "c"
+       },
+       {
+        "units": 2,
+        "label": "1746",
+        "tone": "b"
+       }
+      ],
+      "label": "Same total",
+      "brace": "3911"
+     }
+    ],
+    "highlight": [
+     "b1s1"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_023": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3.4,
+       "label": "sold Rs.336",
+       "tone": "a"
+      },
+      {
+       "units": 0.8,
+       "label": "loss Rs.84",
+       "tone": "b"
+      }
+     ],
+     "label": "Cost price"
+    },
+    {
+     "segments": [
+      {
+       "units": 4.2,
+       "label": "cost price",
+       "tone": "a"
+      },
+      {
+       "units": 0.8,
+       "label": "profit ?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Sold at Rs.542"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.4,
+        "label": "sold Rs.336",
+        "tone": "a"
+       },
+       {
+        "units": 0.8,
+        "label": "loss Rs.84",
+        "tone": "b"
+       }
+      ],
+      "label": "Cost price",
+      "brace": "Rs.420"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.2,
+        "label": "cost price",
+        "tone": "a"
+       },
+       {
+        "units": 0.8,
+        "label": "profit ?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Sold at Rs.542"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3.4,
+        "label": "sold Rs.336",
+        "tone": "a"
+       },
+       {
+        "units": 0.8,
+        "label": "loss Rs.84",
+        "tone": "b"
+       }
+      ],
+      "label": "Cost price",
+      "brace": "Rs.420"
+     },
+     {
+      "segments": [
+       {
+        "units": 4.2,
+        "label": "Rs.420",
+        "tone": "a"
+       },
+       {
+        "units": 0.8,
+        "label": "profit Rs.122",
+        "tone": "c"
+       }
+      ],
+      "label": "Sold at Rs.542"
+     }
+    ],
+    "note": "542 − 420 = 122",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2023_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "Rs.450",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "interest",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "interest",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "interest",
+       "tone": "b"
+      }
+     ],
+     "label": "Four times"
+    }
+   ],
+   "note": "24% interest is added each year. Time = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.450",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.450",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.450",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.450",
+        "tone": "b"
+       }
+      ],
+      "label": "Four times"
+     }
+    ],
+    "note": "Interest needed = 3 × 450 = Rs.1350",
+    "highlight": [
+     "b0s1",
+     "b0s2",
+     "b0s3"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.450",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.450",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.450",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.450",
+        "tone": "b"
+       }
+      ],
+      "label": "Four times"
+     }
+    ],
+    "note": "Each year adds 24% of 450 = Rs.108"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.450",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.450",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.450",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.450",
+        "tone": "b"
+       }
+      ],
+      "label": "Four times"
+     }
+    ],
+    "note": "1350 ÷ 108 = 12.5 years"
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_032": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 8.8,
+       "label": "sold for",
+       "tone": "a"
+      },
+      {
+       "units": 1.2,
+       "label": "12% = Rs.60",
+       "tone": "b"
+      }
+     ],
+     "label": "Cost price"
+    }
+   ],
+   "note": "If it is sold at Rs.620 instead, profit % = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8.8,
+        "label": "sold for",
+        "tone": "a"
+       },
+       {
+        "units": 1.2,
+        "label": "12% = Rs.60",
+        "tone": "b"
+       }
+      ],
+      "label": "Cost price",
+      "brace": "Rs.500"
+     }
+    ],
+    "note": "12% is 60, so 1% is 5",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.500",
+        "tone": "a"
+       },
+       {
+        "units": 1.2,
+        "label": "profit Rs.120",
+        "tone": "c"
+       }
+      ],
+      "label": "Sold at",
+      "brace": "Rs.620"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.500",
+        "tone": "a"
+       },
+       {
+        "units": 1.2,
+        "label": "profit Rs.120",
+        "tone": "c"
+       }
+      ],
+      "label": "Sold at",
+      "brace": "Rs.620"
+     }
+    ],
+    "note": "120 out of 500 is 24 out of 100"
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_033": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "60 min",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "60 min",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "60 min",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "60 min",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "60 min",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "60 min",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "60 min",
+       "tone": "a"
+      }
+     ],
+     "label": "7 hours"
+    },
+    {
+     "segments": [
+      {
+       "units": 1.4,
+       "label": "84 min",
+       "tone": "b"
+      }
+     ],
+     "label": "84 minutes"
+    }
+   ],
+   "note": "What percent of the long bar is the short bar?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "60 min",
+        "tone": "a"
+       }
+      ],
+      "label": "7 hours",
+      "brace": "420 minutes"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.4,
+        "label": "84 min",
+        "tone": "b"
+       }
+      ],
+      "label": "84 minutes"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "60 min",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "60 min",
+        "tone": "a"
+       }
+      ],
+      "label": "7 hours",
+      "brace": "420 minutes"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.4,
+        "label": "84 min",
+        "tone": "b"
+       }
+      ],
+      "label": "84 minutes"
+     }
+    ],
+    "note": "84 ÷ 420 × 100 = 20%",
+    "highlight": [
+     "b1"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_018": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 20,
+      "shaded": 3,
+      "label": "216 of 1440 min"
+     }
+    ],
+    "note": "216 minutes is 3 parts out of 20 of a day"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 20,
+      "shaded": 3,
+      "label": "216 of 1440 min"
+     }
+    ],
+    "note": "3/20 = 0.15"
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "2p + 5",
+   "right": "9p − 30",
+   "note": "Find p first, then (p + 3) × (p + 2)"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "35",
+    "right": "7p",
+    "note": "Add 30 to both pans, then take 2p off both. p = 5"
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G5_FP_2023_021": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "4x − 7",
+   "right": "12",
+   "note": "Both pans weigh the same. 12x − 14 = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "4x",
+    "right": "19",
+    "note": "Add 7 to both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "12x",
+    "right": "57",
+    "note": "Make both pans 3 times as heavy"
+   },
+   {
+    "kind": "balance",
+    "left": "12x − 14",
+    "right": "43",
+    "note": "Take 14 off both pans"
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 26,
+   "max": 38,
+   "step": 4,
+   "points": [
+    {
+     "at": 26
+    },
+    {
+     "at": 30
+    },
+    {
+     "at": 34
+    },
+    {
+     "at": 38
+    }
+   ],
+   "hops": [
+    {
+     "from": 26,
+     "to": 30,
+     "label": "+4"
+    },
+    {
+     "from": 30,
+     "to": 34,
+     "label": "+4"
+    },
+    {
+     "from": 34,
+     "to": 38,
+     "label": "+4"
+    }
+   ],
+   "note": "59th term = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 26,
+    "max": 38,
+    "step": 4,
+    "points": [
+     {
+      "at": 26
+     },
+     {
+      "at": 30
+     },
+     {
+      "at": 34
+     },
+     {
+      "at": 38
+     }
+    ],
+    "hops": [
+     {
+      "from": 26,
+      "to": 30,
+      "label": "+4"
+     },
+     {
+      "from": 30,
+      "to": 34,
+      "label": "+4"
+     },
+     {
+      "from": 34,
+      "to": 38,
+      "label": "+4"
+     }
+    ],
+    "note": "Start at 26 and jump 4 each time, up to the 59th term"
+   },
+   {
+    "kind": "numberLine",
+    "min": 26,
+    "max": 38,
+    "step": 4,
+    "points": [
+     {
+      "at": 26
+     },
+     {
+      "at": 30
+     },
+     {
+      "at": 34
+     },
+     {
+      "at": 38
+     }
+    ],
+    "hops": [
+     {
+      "from": 26,
+      "to": 30,
+      "label": "+4"
+     },
+     {
+      "from": 30,
+      "to": 34,
+      "label": "+4"
+     },
+     {
+      "from": 34,
+      "to": 38,
+      "label": "+4"
+     }
+    ],
+    "note": "58 jumps of 4 from 26: 26 + 232 = 258"
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_026": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 98,
+   "max": 126,
+   "step": 1,
+   "points": [
+    {
+     "at": 126
+    },
+    {
+     "at": 124
+    },
+    {
+     "at": 121
+    },
+    {
+     "at": 116
+    },
+    {
+     "at": 109
+    },
+    {
+     "at": 98
+    }
+   ],
+   "hops": [
+    {
+     "from": 126,
+     "to": 124,
+     "label": "?"
+    },
+    {
+     "from": 124,
+     "to": 121,
+     "label": "?"
+    },
+    {
+     "from": 121,
+     "to": 116,
+     "label": "?"
+    },
+    {
+     "from": 116,
+     "to": 109,
+     "label": "?"
+    },
+    {
+     "from": 109,
+     "to": 98,
+     "label": "?"
+    }
+   ],
+   "note": "Look at the size of each jump back. 10th term = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 98,
+    "max": 126,
+    "step": 1,
+    "points": [
+     {
+      "at": 126
+     },
+     {
+      "at": 124
+     },
+     {
+      "at": 121
+     },
+     {
+      "at": 116
+     },
+     {
+      "at": 109
+     },
+     {
+      "at": 98
+     }
+    ],
+    "hops": [
+     {
+      "from": 126,
+      "to": 124,
+      "label": "−2"
+     },
+     {
+      "from": 124,
+      "to": 121,
+      "label": "−3"
+     },
+     {
+      "from": 121,
+      "to": 116,
+      "label": "−5"
+     },
+     {
+      "from": 116,
+      "to": 109,
+      "label": "−7"
+     },
+     {
+      "from": 109,
+      "to": 98,
+      "label": "−11"
+     }
+    ],
+    "note": "The jumps are the prime numbers"
+   },
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Jump",
+      "−13",
+      "−17",
+      "−19",
+      "−23"
+     ],
+     [
+      "Value",
+      "85",
+      "68",
+      "49",
+      "26"
+     ]
+    ],
+    "headers": [
+     "Term",
+     "7th",
+     "8th",
+     "9th",
+     "10th"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_027": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "96903",
+    "note": "97 × 999 = 96903"
+   },
+   {
+    "kind": "placeChart",
+    "number": "96903",
+    "note": "The 6 sits in the thousands place",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "96903",
+    "note": "6 thousands = 6000",
+    "highlight": [
+     "d1"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_034": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "36794",
+    "note": "Ending in 4, the smallest is 36794",
+    "highlight": [
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "34796",
+    "note": "Ending in 6, the smallest is 34796",
+    "highlight": [
+     "d4"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "34796",
+    "note": "34796 is the smaller of the two"
+   },
+   {
+    "kind": "placeChart",
+    "number": "34796",
+    "note": "The hundreds digit is 7",
+    "highlight": [
+     "d2"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2023_006": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "48",
+    "rightTitle": "120",
+    "left": "rest of 48",
+    "both": "2 × 2 × 2 × 3",
+    "right": "rest of 120",
+    "highlight": [
+     "both"
+    ],
+    "note": "Shared prime factors: 2 × 2 × 2 × 3 = 24"
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "48",
+    "rightTitle": "120",
+    "left": "2",
+    "both": "2 × 2 × 2 × 3",
+    "right": "5",
+    "highlight": [
+     "left",
+     "both",
+     "right"
+    ],
+    "note": "Every factor once: 2 × 24 × 5 = 240"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2024_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 7,
+   "minute": 20,
+   "showAngle": true,
+   "note": "Angle between the hands = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "clock",
+    "hour": 7,
+    "minute": 20,
+    "note": "Hour hand: 220° from the 12",
+    "highlight": [
+     "hour"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 7,
+    "minute": 20,
+    "note": "Minute hand: 120° from the 12",
+    "highlight": [
+     "minute"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 7,
+    "minute": 20,
+    "showAngle": true,
+    "note": "220 − 120 = 100°",
+    "highlight": [
+     "angle"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_034": {
+  "origin": "authored",
+  "figure": {
+   "kind": "compass",
+   "facing": "E",
+   "turns": [
+    {
+     "degrees": 135,
+     "direction": "clockwise"
+    },
+    {
+     "degrees": 315,
+     "direction": "anticlockwise"
+    }
+   ],
+   "note": "Follow the two turns. Facing now = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "compass",
+    "facing": "E",
+    "turns": [
+     {
+      "degrees": 135,
+      "direction": "clockwise"
+     }
+    ],
+    "showEnd": true,
+    "note": "135° clockwise from East ends at South-West",
+    "highlight": [
+     "t0"
+    ]
+   },
+   {
+    "kind": "compass",
+    "facing": "SW",
+    "turns": [
+     {
+      "degrees": 315,
+      "direction": "anticlockwise"
+     }
+    ],
+    "showEnd": true,
+    "note": "315° anticlockwise ends where 45° clockwise does",
+    "highlight": [
+     "t0"
+    ]
+   },
+   {
+    "kind": "compass",
+    "facing": "W",
+    "note": "Now facing West",
+    "highlight": [
+     "start"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "?",
+   "breadth": "49 cm",
+   "inside": "same area as square",
+   "note": "The square has side 56 cm. Perimeter of the rectangle = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "fill"
+    ],
+    "square": true,
+    "length": "56 cm",
+    "breadth": "56 cm",
+    "inside": "56 × 56 = 3136"
+   },
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "length"
+    ],
+    "length": "64 cm",
+    "breadth": "49 cm",
+    "inside": "Area 3136",
+    "note": "3136 ÷ 49 = 64 cm"
+   },
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "border"
+    ],
+    "length": "64 cm",
+    "breadth": "49 cm",
+    "inside": "Perimeter 226 cm",
+    "note": "2 × (64 + 49) = 226 cm"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2024_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "triangle",
+   "shape": "equilateral",
+   "sides": {
+    "ab": "12 cm",
+    "bc": "12 cm",
+    "ca": "12 cm"
+   },
+   "note": "A rectangle has the same perimeter. Which sides fit?"
+  },
+  "stepFigures": [
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "12 cm",
+     "bc": "12 cm",
+     "ca": "12 cm"
+    },
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ],
+    "note": "3 × 12 = 36 cm"
+   },
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "length",
+     "breadth"
+    ],
+    "length": "L",
+    "breadth": "B",
+    "inside": "Perimeter 36 cm",
+    "note": "One length and one breadth make 18 cm"
+   },
+   {
+    "kind": "rectangle",
+    "length": "13 cm",
+    "breadth": "5 cm",
+    "inside": "13 + 5 = 18",
+    "proportion": 2.6
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_033": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "30 cm",
+   "breadth": "30 cm",
+   "note": "One side becomes 5/4 of 30 cm, the other 3/5 of 30 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "length",
+     "breadth"
+    ],
+    "length": "37.5 cm",
+    "breadth": "18 cm",
+    "proportion": 2.1,
+    "note": "The new shape is a rectangle"
+   },
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "fill"
+    ],
+    "length": "37.5 cm",
+    "breadth": "18 cm",
+    "proportion": 2.1,
+    "inside": "Area 675"
+   },
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "fill"
+    ],
+    "square": true,
+    "length": "30 cm",
+    "breadth": "30 cm",
+    "inside": "Area 900"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "30 cm",
+    "breadth": "30 cm",
+    "inside": "Area 900",
+    "note": "900 − 675 = 225 sq.cm"
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "A",
+    "B"
+   ],
+   "legs": [
+    {
+     "top": "680 km",
+     "bottom": "8 hours"
+    }
+   ],
+   "note": "The return trip is 17 km/h slower. Time back = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "A",
+     "B"
+    ],
+    "legs": [
+     {
+      "top": "680 km",
+      "bottom": "85 km/h"
+     }
+    ],
+    "note": "680 ÷ 8 = 85 km/h",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "B",
+     "A"
+    ],
+    "legs": [
+     {
+      "top": "680 km",
+      "bottom": "68 km/h"
+     }
+    ],
+    "note": "85 − 17 = 68 km/h on the way back",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "B",
+     "A"
+    ],
+    "legs": [
+     {
+      "top": "680 km",
+      "bottom": "10 hours"
+     }
+    ],
+    "note": "680 ÷ 68 = 10 hours"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "B",
+     "A"
+    ],
+    "legs": [
+     {
+      "top": "680 km",
+      "bottom": "600 minutes"
+     }
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_023": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "London",
+    "Paris"
+   ],
+   "legs": [
+    {
+     "top": "32.5 m/s",
+     "bottom": "6:45 to 9:15 pm"
+    }
+   ],
+   "note": "Distance = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "London",
+     "Paris"
+    ],
+    "legs": [
+     {
+      "top": "32.5 m/s",
+      "bottom": "2 h 30 min"
+     }
+    ],
+    "note": "2 hours 30 minutes = 9000 seconds",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "London",
+     "Paris"
+    ],
+    "legs": [
+     {
+      "top": "32.5 m/s",
+      "bottom": "9000 s"
+     }
+    ],
+    "note": "32.5 × 9000 = 292500 m"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "London",
+     "Paris"
+    ],
+    "legs": [
+     {
+      "top": "292.5 km",
+      "bottom": "2 h 30 min"
+     }
+    ],
+    "highlight": [
+     "l0"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Three dozen",
+     "Rs.1800"
+    ],
+    [
+     "26",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Mangoes",
+    "Cost"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "36",
+      "Rs.1800"
+     ],
+     [
+      "26",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Mangoes",
+     "Cost"
+    ],
+    "note": "3 × 12 = 36 mangoes",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "36",
+      "Rs.1800"
+     ],
+     [
+      "1",
+      "Rs.50"
+     ],
+     [
+      "26",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Mangoes",
+     "Cost"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "36",
+      "Rs.1800"
+     ],
+     [
+      "1",
+      "Rs.50"
+     ],
+     [
+      "26",
+      "Rs.1300"
+     ]
+    ],
+    "headers": [
+     "Mangoes",
+     "Cost"
+    ],
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "28%",
+     "196"
+    ],
+    [
+     "43%",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Part",
+    "Value"
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "28%",
+      "196"
+     ],
+     [
+      "1%",
+      "7"
+     ],
+     [
+      "43%",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Part",
+     "Value"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "28%",
+      "196"
+     ],
+     [
+      "1%",
+      "7"
+     ],
+     [
+      "43%",
+      "301"
+     ]
+    ],
+    "headers": [
+     "Part",
+     "Value"
+    ],
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_026": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Science",
+     "44",
+     "50"
+    ],
+    [
+     "Mathematics",
+     "50",
+     "50"
+    ],
+    [
+     "English",
+     "42",
+     "50"
+    ],
+    [
+     "Social Science",
+     "84",
+     "100"
+    ]
+   ],
+   "headers": [
+    "Subject",
+    "Scored",
+    "Out of"
+   ],
+   "note": "Overall percentage = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Science",
+      "44",
+      "50"
+     ],
+     [
+      "Mathematics",
+      "50",
+      "50"
+     ],
+     [
+      "English",
+      "42",
+      "50"
+     ],
+     [
+      "Social Science",
+      "84",
+      "100"
+     ],
+     [
+      "Total",
+      "220",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Subject",
+     "Scored",
+     "Out of"
+    ],
+    "highlight": [
+     "r4"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Science",
+      "44",
+      "50"
+     ],
+     [
+      "Mathematics",
+      "50",
+      "50"
+     ],
+     [
+      "English",
+      "42",
+      "50"
+     ],
+     [
+      "Social Science",
+      "84",
+      "100"
+     ],
+     [
+      "Total",
+      "220",
+      "250"
+     ]
+    ],
+    "headers": [
+     "Subject",
+     "Scored",
+     "Out of"
+    ],
+    "highlight": [
+     "r4"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Science",
+      "44",
+      "50"
+     ],
+     [
+      "Mathematics",
+      "50",
+      "50"
+     ],
+     [
+      "English",
+      "42",
+      "50"
+     ],
+     [
+      "Social Science",
+      "84",
+      "100"
+     ],
+     [
+      "Total",
+      "220",
+      "250"
+     ]
+    ],
+    "headers": [
+     "Subject",
+     "Scored",
+     "Out of"
+    ],
+    "note": "220 out of 250 is 88 out of 100",
+    "highlight": [
+     "r4"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "Bought",
+     "26",
+     "Rs.1250"
+    ],
+    [
+     "Sold",
+     "14",
+     "Rs.1800"
+    ],
+    [
+     "Sold",
+     "the rest",
+     "Rs.825"
+    ]
+   ],
+   "headers": [
+    "Deal",
+    "Bats",
+    "Price each"
+   ],
+   "note": "Profit % or loss % overall = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Bought",
+      "26",
+      "Rs.1250",
+      "Rs.32,500"
+     ],
+     [
+      "Sold",
+      "14",
+      "Rs.1800",
+      "?"
+     ],
+     [
+      "Sold",
+      "the rest",
+      "Rs.825",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Deal",
+     "Bats",
+     "Price each",
+     "Total"
+    ],
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Bought",
+      "26",
+      "Rs.1250",
+      "Rs.32,500"
+     ],
+     [
+      "Sold",
+      "14",
+      "Rs.1800",
+      "Rs.25,200"
+     ],
+     [
+      "Sold",
+      "12",
+      "Rs.825",
+      "Rs.9,900"
+     ]
+    ],
+    "headers": [
+     "Deal",
+     "Bats",
+     "Price each",
+     "Total"
+    ],
+    "note": "25,200 + 9,900 = Rs.35,100",
+    "highlight": [
+     "r1",
+     "r2"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.32,500",
+        "tone": "a"
+       }
+      ],
+      "label": "Cost"
+     },
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.32,500",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "profit Rs.2,600",
+        "tone": "c"
+       }
+      ],
+      "label": "Sold for",
+      "brace": "Rs.35,100"
+     }
+    ],
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.32,500",
+        "tone": "a"
+       }
+      ],
+      "label": "Cost"
+     },
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.32,500",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "profit Rs.2,600",
+        "tone": "c"
+       }
+      ],
+      "label": "Sold for",
+      "brace": "Rs.35,100"
+     }
+    ],
+    "note": "2600 out of 32500 is 8 out of 100"
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10,
+       "label": "cost = 100%",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "10%",
+       "tone": "b"
+      }
+     ],
+     "label": "Sold for",
+     "brace": "Rs.440"
+    }
+   ],
+   "note": "Price for a 17% profit = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.400",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "10%",
+        "tone": "b"
+       }
+      ],
+      "label": "Sold for",
+      "brace": "Rs.440"
+     }
+    ],
+    "note": "110% is 440, so 1% is 4 and the cost is 400",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.400",
+        "tone": "a"
+       },
+       {
+        "units": 1.7,
+        "label": "17%",
+        "tone": "c"
+       }
+      ],
+      "label": "New price",
+      "brace": "Rs.468"
+     }
+    ],
+    "note": "117 × 4 = 468",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3,
+       "label": "Rs.3500",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Paid back",
+     "brace": "Rs.4340 after 3 years"
+    }
+   ],
+   "note": "Each ? is one year of interest. Rate = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "Rs.3500",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "interest Rs.840",
+        "tone": "b"
+       }
+      ],
+      "label": "Paid back",
+      "brace": "Rs.4340 after 3 years"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "Rs.3500",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "8%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "8%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "8%",
+        "tone": "b"
+       }
+      ],
+      "label": "Paid back",
+      "brace": "Rs.4340 after 3 years"
+     }
+    ],
+    "note": "Rs.840 over 3 years on Rs.3500 is 8% a year"
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_038": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "8% of 4250",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "8% of 4250",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "8% of 4250",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "8% of 4250",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "8% of 4250",
+       "tone": "b"
+      }
+     ],
+     "label": "Interest",
+     "brace": "5 years: ?"
+    }
+   ],
+   "note": "One piece for each year"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "8% of 4250",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "8% of 4250",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "8% of 4250",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "8% of 4250",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "8% of 4250",
+        "tone": "b"
+       }
+      ],
+      "label": "Interest",
+      "brace": "5 years: ?"
+     }
+    ],
+    "note": "1% of 4250 = 42.5"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.340",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.340",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.340",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.340",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.340",
+        "tone": "b"
+       }
+      ],
+      "label": "Interest",
+      "brace": "5 years: ?"
+     }
+    ],
+    "note": "8 × 42.5 = 340 for one year",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.340",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.340",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.340",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.340",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.340",
+        "tone": "b"
+       }
+      ],
+      "label": "Interest",
+      "brace": "Rs.1700"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_021": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 19,
+      "shaded": 9,
+      "label": "9/19"
+     },
+     {
+      "parts": 21,
+      "shaded": 10,
+      "label": "10/21"
+     }
+    ],
+    "note": "Both are less than half shaded"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 17,
+      "shaded": 15,
+      "label": "15/17"
+     },
+     {
+      "parts": 13,
+      "shaded": 11,
+      "label": "11/13"
+     }
+    ],
+    "note": "Each is 2 parts short of a whole"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 17,
+      "shaded": 15,
+      "label": "15/17"
+     },
+     {
+      "parts": 13,
+      "shaded": 11,
+      "label": "11/13"
+     }
+    ],
+    "note": "Parts of 17 are smaller, so 15/17 is closer to 1",
+    "highlight": [
+     "b0"
+    ]
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2024_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "6x − 9",
+   "right": "(4x + 30) ÷ 2",
+   "note": "Both pans weigh the same. x = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "6x − 9",
+    "right": "2x + 15",
+    "note": "Halve everything on the right pan",
+    "highlight": [
+     "right"
+    ]
+   },
+   null,
+   {
+    "kind": "balance",
+    "left": "4x",
+    "right": "24",
+    "note": "Take 2x off both pans and add 9 to both"
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "6",
+    "note": "Share both pans into 4 equal parts"
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_035": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "(4x − 5) ÷ 5",
+   "right": "(2x + 3) ÷ 3",
+   "note": "Both pans weigh the same. x = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "3 × (4x − 5)",
+    "right": "5 × (2x + 3)",
+    "note": "Make both pans 15 times as heavy"
+   },
+   {
+    "kind": "balance",
+    "left": "12x − 15",
+    "right": "10x + 15",
+    "note": "Open the brackets"
+   },
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "30",
+    "note": "Take 10x off both pans and add 15 to both"
+   },
+   {
+    "kind": "balance",
+    "left": "x",
+    "right": "15",
+    "note": "Halve both pans"
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 3,
+   "max": 19,
+   "step": 4,
+   "points": [
+    {
+     "at": 3
+    },
+    {
+     "at": 7
+    },
+    {
+     "at": 11
+    },
+    {
+     "at": 15
+    },
+    {
+     "at": 19
+    }
+   ],
+   "hops": [
+    {
+     "from": 3,
+     "to": 7,
+     "label": "?"
+    },
+    {
+     "from": 7,
+     "to": 11,
+     "label": "?"
+    },
+    {
+     "from": 11,
+     "to": 15,
+     "label": "?"
+    },
+    {
+     "from": 15,
+     "to": 19,
+     "label": "?"
+    }
+   ],
+   "note": "Find the 11th and the 18th terms, then add them"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 3,
+    "max": 19,
+    "step": 4,
+    "points": [
+     {
+      "at": 3
+     },
+     {
+      "at": 7
+     },
+     {
+      "at": 11
+     },
+     {
+      "at": 15
+     },
+     {
+      "at": 19
+     }
+    ],
+    "hops": [
+     {
+      "from": 3,
+      "to": 7,
+      "label": "+4"
+     },
+     {
+      "from": 7,
+      "to": 11,
+      "label": "+4"
+     },
+     {
+      "from": 11,
+      "to": 15,
+      "label": "+4"
+     },
+     {
+      "from": 15,
+      "to": 19,
+      "label": "+4"
+     }
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 3,
+    "max": 19,
+    "step": 4,
+    "points": [
+     {
+      "at": 3
+     },
+     {
+      "at": 7
+     },
+     {
+      "at": 11
+     },
+     {
+      "at": 15
+     },
+     {
+      "at": 19
+     }
+    ],
+    "hops": [
+     {
+      "from": 3,
+      "to": 7,
+      "label": "+4"
+     },
+     {
+      "from": 7,
+      "to": 11,
+      "label": "+4"
+     },
+     {
+      "from": 11,
+      "to": 15,
+      "label": "+4"
+     },
+     {
+      "from": 15,
+      "to": 19,
+      "label": "+4"
+     }
+    ],
+    "note": "11th term: 10 jumps of 4 from 3 is 43"
+   },
+   {
+    "kind": "numberLine",
+    "min": 3,
+    "max": 19,
+    "step": 4,
+    "points": [
+     {
+      "at": 3
+     },
+     {
+      "at": 7
+     },
+     {
+      "at": 11
+     },
+     {
+      "at": 15
+     },
+     {
+      "at": 19
+     }
+    ],
+    "hops": [
+     {
+      "from": 3,
+      "to": 7,
+      "label": "+4"
+     },
+     {
+      "from": 7,
+      "to": 11,
+      "label": "+4"
+     },
+     {
+      "from": 11,
+      "to": 15,
+      "label": "+4"
+     },
+     {
+      "from": 15,
+      "to": 19,
+      "label": "+4"
+     }
+    ],
+    "note": "18th term: 17 jumps of 4 from 3 is 71"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2024_029": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 237,
+   "max": 405,
+   "step": 42,
+   "points": [
+    {
+     "at": 405
+    },
+    {
+     "at": 363
+    },
+    {
+     "at": 321
+    },
+    {
+     "at": 279
+    },
+    {
+     "at": 237
+    }
+   ],
+   "hops": [
+    {
+     "from": 405,
+     "to": 363,
+     "label": "?"
+    },
+    {
+     "from": 363,
+     "to": 321,
+     "label": "?"
+    },
+    {
+     "from": 321,
+     "to": 279,
+     "label": "?"
+    },
+    {
+     "from": 279,
+     "to": 237,
+     "label": "?"
+    }
+   ],
+   "note": "How big is each jump back? 9th term = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 237,
+    "max": 405,
+    "step": 42,
+    "points": [
+     {
+      "at": 405
+     },
+     {
+      "at": 363
+     },
+     {
+      "at": 321
+     },
+     {
+      "at": 279
+     },
+     {
+      "at": 237
+     }
+    ],
+    "hops": [
+     {
+      "from": 405,
+      "to": 363,
+      "label": "−42"
+     },
+     {
+      "from": 363,
+      "to": 321,
+      "label": "−42"
+     },
+     {
+      "from": 321,
+      "to": 279,
+      "label": "−42"
+     },
+     {
+      "from": 279,
+      "to": 237,
+      "label": "−42"
+     }
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 237,
+    "max": 405,
+    "step": 42,
+    "points": [
+     {
+      "at": 405
+     },
+     {
+      "at": 363
+     },
+     {
+      "at": 321
+     },
+     {
+      "at": 279
+     },
+     {
+      "at": 237
+     }
+    ],
+    "hops": [
+     {
+      "from": 405,
+      "to": 363,
+      "label": "−42"
+     },
+     {
+      "from": 363,
+      "to": 321,
+      "label": "−42"
+     },
+     {
+      "from": 321,
+      "to": 279,
+      "label": "−42"
+     },
+     {
+      "from": 279,
+      "to": 237,
+      "label": "−42"
+     }
+    ],
+    "note": "8 jumps of 42 back from 405: 405 − 336 = 69"
+   }
+  ]
+ },
+ "EXT_G5_FP_2024_007": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 54,
+    "max": 68,
+    "step": 1,
+    "points": [
+     {
+      "at": 54
+     },
+     {
+      "at": 67,
+      "label": "7th odd"
+     }
+    ],
+    "hops": [
+     {
+      "from": 55,
+      "to": 57
+     },
+     {
+      "from": 57,
+      "to": 59
+     },
+     {
+      "from": 59,
+      "to": 61
+     },
+     {
+      "from": 61,
+      "to": 63
+     },
+     {
+      "from": 63,
+      "to": 65
+     },
+     {
+      "from": 65,
+      "to": 67
+     }
+    ],
+    "note": "55 is the 1st odd number after 54"
+   },
+   {
+    "kind": "numberLine",
+    "min": 40,
+    "max": 66,
+    "step": 2,
+    "points": [
+     {
+      "at": 64,
+      "label": "1st even"
+     },
+     {
+      "at": 42,
+      "label": "12th even"
+     }
+    ],
+    "note": "11 jumps of 2 back from 64 lands on 42"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2024_011": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "placeChart",
+    "number": "9409",
+    "note": "97 × 97 = 9409"
+   },
+   {
+    "kind": "placeChart",
+    "number": "9409",
+    "note": "4 in the hundreds place is 400",
+    "highlight": [
+     "d1"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 9,
+   "minute": 33,
+   "showAngle": true,
+   "note": "Angle between the hands = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "clock",
+    "hour": 9,
+    "minute": 33,
+    "note": "Hour hand: 286.5° from the 12",
+    "highlight": [
+     "hour"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 9,
+    "minute": 33,
+    "note": "Minute hand: 198° from the 12",
+    "highlight": [
+     "minute"
+    ]
+   },
+   {
+    "kind": "clock",
+    "hour": 9,
+    "minute": 33,
+    "showAngle": true,
+    "note": "286.5 − 198 = 88.5°",
+    "highlight": [
+     "angle"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_029": {
+  "origin": "authored",
+  "figure": {
+   "kind": "angles",
+   "layout": "single",
+   "parts": [
+    {
+     "label": "58°",
+     "size": 58
+    }
+   ],
+   "note": "Add its complement and its supplement"
+  },
+  "stepFigures": [
+   {
+    "kind": "angles",
+    "layout": "inRightAngle",
+    "parts": [
+     {
+      "label": "58°",
+      "size": 58
+     },
+     {
+      "label": "32°"
+     }
+    ],
+    "note": "Up to a right angle: 90 − 58 = 32",
+    "highlight": [
+     "p1"
+    ]
+   },
+   {
+    "kind": "angles",
+    "layout": "onLine",
+    "parts": [
+     {
+      "label": "58°",
+      "size": 58
+     },
+     {
+      "label": "122°"
+     }
+    ],
+    "note": "Up to a straight line: 180 − 58 = 122",
+    "highlight": [
+     "p1"
+    ]
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2025_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "circle",
+   "radius": "?",
+   "note": "Area 616 sq.cm. A square has the same distance around"
+  },
+  "stepFigures": [
+   {
+    "kind": "circle",
+    "radius": "14 cm",
+    "highlight": [
+     "radius"
+    ],
+    "note": "22/7 × r × r = 616 gives r × r = 196"
+   },
+   {
+    "kind": "circle",
+    "radius": "14 cm",
+    "highlight": [
+     "edge"
+    ],
+    "note": "Circumference = 2 × 22/7 × 14 = 88 cm"
+   },
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "border"
+    ],
+    "square": true,
+    "length": "22 cm",
+    "inside": "Perimeter 88 cm",
+    "note": "88 ÷ 4 = 22 cm for each side"
+   },
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "fill"
+    ],
+    "square": true,
+    "length": "22 cm",
+    "breadth": "22 cm",
+    "inside": "22 × 22 = 484"
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "?",
+   "breadth": "18 cm",
+   "inside": "Area 468",
+   "note": "Perimeter = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "length"
+    ],
+    "length": "26 cm",
+    "breadth": "18 cm",
+    "inside": "Area 468",
+    "note": "468 ÷ 18 = 26 cm"
+   },
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "border"
+    ],
+    "length": "26 cm",
+    "breadth": "18 cm",
+    "inside": "Perimeter 88 cm",
+    "note": "2 × (26 + 18) = 88 cm"
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_034": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "inside": "PQRS: 196 sq.cm",
+   "note": "Rectangle ABCD has four times this area"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "fill"
+    ],
+    "proportion": 3,
+    "grid": {
+     "cols": 4,
+     "rows": 1
+    },
+    "inside": "4 × 196 = 784",
+    "note": "ABCD holds as much as 4 of the squares"
+   },
+   null,
+   {
+    "kind": "rectangle",
+    "highlight": [
+     "length",
+     "breadth"
+    ],
+    "proportion": 3,
+    "length": "56",
+    "breadth": "14",
+    "inside": "56 × 14 = 784"
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "Front at pole",
+    "End at pole"
+   ],
+   "legs": [
+    {
+     "top": "length ?",
+     "bottom": "108 km/h for 28 s"
+    }
+   ],
+   "note": "The train moves its own length past the pole"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "Front at pole",
+     "End at pole"
+    ],
+    "legs": [
+     {
+      "top": "length ?",
+      "bottom": "30 m/s for 28 s"
+     }
+    ],
+    "note": "108 km/h is 30 metres every second",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Front at pole",
+     "End at pole"
+    ],
+    "legs": [
+     {
+      "top": "840 m",
+      "bottom": "30 m/s for 28 s"
+     }
+    ],
+    "note": "30 × 28 = 840 m"
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_027": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "Start",
+    "End"
+   ],
+   "legs": [
+    {
+     "top": "432 km",
+     "bottom": "24 m/s"
+    }
+   ],
+   "note": "Time = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "Start",
+     "End"
+    ],
+    "legs": [
+     {
+      "top": "432 km",
+      "bottom": "86.4 km/h"
+     }
+    ],
+    "note": "Change the speed into km/h to match the distance",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Start",
+     "End"
+    ],
+    "legs": [
+     {
+      "top": "432 km",
+      "bottom": "5 hours"
+     }
+    ],
+    "note": "432 ÷ 86.4 = 5 hours"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2025_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1 gross",
+     "Rs.32,400"
+    ],
+    [
+     "85",
+     "?"
+    ]
+   ],
+   "headers": [
+    "Balls",
+    "Cost"
+   ],
+   "note": "A gross is twelve dozen"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "144",
+      "Rs.32,400"
+     ],
+     [
+      "1",
+      "Rs.225"
+     ],
+     [
+      "85",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Balls",
+     "Cost"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "144",
+      "Rs.32,400"
+     ],
+     [
+      "1",
+      "Rs.225"
+     ],
+     [
+      "85",
+      "Rs.19,125"
+     ]
+    ],
+    "headers": [
+     "Balls",
+     "Cost"
+    ],
+    "highlight": [
+     "r2"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "15",
+     "28"
+    ],
+    [
+     "?",
+     "20"
+    ]
+   ],
+   "headers": [
+    "Men",
+    "Days"
+   ],
+   "note": "Find the men needed, then how many MORE than 15"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "15",
+      "28"
+     ],
+     [
+      "?",
+      "20"
+     ]
+    ],
+    "headers": [
+     "Men",
+     "Days"
+    ],
+    "note": "15 × 28 = 420 days of work for one man",
+    "highlight": [
+     "r0"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "15",
+      "28"
+     ],
+     [
+      "21",
+      "20"
+     ]
+    ],
+    "headers": [
+     "Men",
+     "Days"
+    ],
+    "note": "420 ÷ 20 = 21 men",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "15",
+      "28"
+     ],
+     [
+      "21",
+      "20"
+     ]
+    ],
+    "headers": [
+     "Men",
+     "Days"
+    ],
+    "note": "21 − 15 = 6 more men"
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2,
+       "label": "80",
+       "tone": "a"
+      },
+      {
+       "units": 2,
+       "label": "?% of 80",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Sum",
+     "brace": "square of 12"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "80",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "?% of 80",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Sum",
+      "brace": "144"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "80",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "64",
+        "tone": "b"
+       }
+      ],
+      "label": "Sum",
+      "brace": "144"
+     }
+    ],
+    "note": "144 − 80 = 64",
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "80",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "64",
+        "tone": "b"
+       }
+      ],
+      "label": "Sum",
+      "brace": "144"
+     }
+    ],
+    "note": "64 out of 80 is 80 out of 100"
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2,
+       "label": "sold for ?",
+       "tone": "unknown"
+      },
+      {
+       "units": 0.8,
+       "label": "loss Rs.80",
+       "tone": "b"
+      }
+     ],
+     "label": "Cost price"
+    },
+    {
+     "segments": [
+      {
+       "units": 2.8,
+       "label": "cost price",
+       "tone": "a"
+      },
+      {
+       "units": 1.6,
+       "label": "profit = 2 × loss",
+       "tone": "b"
+      }
+     ],
+     "label": "Sold at Rs.375"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "sold for ?",
+        "tone": "unknown"
+       },
+       {
+        "units": 0.8,
+        "label": "loss Rs.80",
+        "tone": "b"
+       }
+      ],
+      "label": "Cost price"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.8,
+        "label": "cost price",
+        "tone": "a"
+       },
+       {
+        "units": 1.6,
+        "label": "profit Rs.160",
+        "tone": "b"
+       }
+      ],
+      "label": "Sold at Rs.375"
+     }
+    ],
+    "note": "2 × 80 = 160",
+    "highlight": [
+     "b1s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "sold for ?",
+        "tone": "unknown"
+       },
+       {
+        "units": 0.8,
+        "label": "loss Rs.80",
+        "tone": "b"
+       }
+      ],
+      "label": "Cost price",
+      "brace": "Rs.215"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.8,
+        "label": "cost price",
+        "tone": "a"
+       },
+       {
+        "units": 1.6,
+        "label": "profit Rs.160",
+        "tone": "b"
+       }
+      ],
+      "label": "Sold at Rs.375"
+     }
+    ],
+    "note": "375 − 160 = 215",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "Rs.135",
+        "tone": "c"
+       },
+       {
+        "units": 0.8,
+        "label": "loss Rs.80",
+        "tone": "b"
+       }
+      ],
+      "label": "Cost price",
+      "brace": "Rs.215"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.8,
+        "label": "cost price",
+        "tone": "a"
+       },
+       {
+        "units": 1.6,
+        "label": "profit Rs.160",
+        "tone": "b"
+       }
+      ],
+      "label": "Sold at Rs.375"
+     }
+    ],
+    "note": "215 − 80 = 135",
+    "highlight": [
+     "b0s0"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_007": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3,
+       "label": "Rs.28500",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Amount",
+     "brace": "Rs.38760, three years"
+    }
+   ],
+   "note": "Each ? is one year of interest. Rate = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "Rs.28500",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "interest Rs.10,260",
+        "tone": "b"
+       }
+      ],
+      "label": "Amount",
+      "brace": "Rs.38760, three years"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "Rs.28500",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "12%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "12%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "12%",
+        "tone": "b"
+       }
+      ],
+      "label": "Amount",
+      "brace": "Rs.38760, three years"
+     }
+    ],
+    "note": "Rs.10,260 over 3 years on Rs.28,500 is 12% a year"
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3,
+       "label": "same as smaller",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "14",
+       "tone": "b"
+      }
+     ],
+     "label": "Greater"
+    },
+    {
+     "segments": [
+      {
+       "units": 3,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Smaller"
+    }
+   ],
+   "note": "Together the two bars make 92. Square of the greater = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "same as smaller",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "14",
+        "tone": "b"
+       }
+      ],
+      "label": "Greater",
+      "brace": "53"
+     },
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Smaller"
+     }
+    ],
+    "note": "92 + 14 = 106 is two of the greater, so it is 53",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "39",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "14",
+        "tone": "b"
+       }
+      ],
+      "label": "Greater",
+      "brace": "53"
+     },
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "39",
+        "tone": "a"
+       }
+      ],
+      "label": "Smaller"
+     }
+    ],
+    "note": "53 + 39 = 92",
+    "highlight": [
+     "b1"
+    ]
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2025_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 6.5,
+       "label": "sold for Rs.78",
+       "tone": "a"
+      },
+      {
+       "units": 3.5,
+       "label": "35% loss",
+       "tone": "b"
+      }
+     ],
+     "label": "Cost price"
+    }
+   ],
+   "note": "Price for a 15% profit = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.5,
+        "label": "sold for Rs.78",
+        "tone": "a"
+       },
+       {
+        "units": 3.5,
+        "label": "35% loss",
+        "tone": "b"
+       }
+      ],
+      "label": "Cost price",
+      "brace": "Rs.120"
+     }
+    ],
+    "note": "65% is 78, so 1% is 1.2 and the cost is 120",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.120",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "15%",
+        "tone": "c"
+       }
+      ],
+      "label": "New price",
+      "brace": "Rs.138"
+     }
+    ],
+    "note": "115 × 1.2 = 138",
+    "highlight": [
+     "b0s1"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_026": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "Rs.280",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      }
+     ],
+     "label": "12 months"
+    }
+   ],
+   "note": "Rs.280 every month. A year of it is 15% of the money"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.280",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       }
+      ],
+      "label": "12 months",
+      "brace": "Rs.3360 in a year"
+     }
+    ],
+    "note": "280 × 12 = 3360",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.280",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       }
+      ],
+      "label": "12 months",
+      "brace": "Rs.3360 = 15%"
+     }
+    ],
+    "note": "15% is 3360, so the money invested is Rs.22,400"
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_040": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2,
+       "label": "1 year at 8%",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "half a year",
+       "tone": "b"
+      }
+     ],
+     "label": "Interest",
+     "brace": "18 months: ?"
+    }
+   ],
+   "note": "Rs.16000 is invested"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "1 year at 8%",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "half a year",
+        "tone": "b"
+       }
+      ],
+      "label": "Interest",
+      "brace": "18 months: ?"
+     }
+    ],
+    "note": "18 months = 1.5 years"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "Rs.1280",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "half a year",
+        "tone": "b"
+       }
+      ],
+      "label": "Interest",
+      "brace": "18 months: ?"
+     }
+    ],
+    "note": "8% of 16000 is 1280",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "Rs.1280",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "half of 1280",
+        "tone": "b"
+       }
+      ],
+      "label": "Interest",
+      "brace": "Rs.1920"
+     }
+    ],
+    "note": "1280 × 1.5 = 1920",
+    "highlight": [
+     "b0"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "fractionBars",
+   "bars": [
+    {
+     "parts": 4,
+     "shaded": 3,
+     "label": "3/4"
+    },
+    {
+     "parts": 6,
+     "shaded": 5,
+     "label": "5/6"
+    },
+    {
+     "parts": 5,
+     "shaded": 4,
+     "label": "4/5"
+    }
+   ],
+   "note": "Greatest − smallest = ?"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 4,
+      "shaded": 3,
+      "label": "3/4 = 45/60"
+     },
+     {
+      "parts": 6,
+      "shaded": 5,
+      "label": "5/6 = 50/60"
+     },
+     {
+      "parts": 5,
+      "shaded": 4,
+      "label": "4/5 = 48/60"
+     }
+    ],
+    "note": "Cut every bar into 60 equal parts to compare"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 4,
+      "shaded": 3,
+      "label": "3/4 = 45/60"
+     },
+     {
+      "parts": 6,
+      "shaded": 5,
+      "label": "5/6 = 50/60"
+     },
+     {
+      "parts": 5,
+      "shaded": 4,
+      "label": "4/5 = 48/60"
+     }
+    ],
+    "note": "Greatest is 50/60, smallest is 45/60",
+    "highlight": [
+     "b0",
+     "b1"
+    ]
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 4,
+      "shaded": 3,
+      "label": "3/4 = 45/60"
+     },
+     {
+      "parts": 6,
+      "shaded": 5,
+      "label": "5/6 = 50/60"
+     },
+     {
+      "parts": 5,
+      "shaded": 4,
+      "label": "4/5 = 48/60"
+     }
+    ],
+    "note": "50/60 − 45/60 = 5/60 = 1/12",
+    "highlight": [
+     "b0",
+     "b1"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "4x + 3",
+   "right": "22",
+   "note": "Both pans weigh the same. 12x + 3 = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "4x",
+    "right": "19",
+    "note": "Take 3 off both pans"
+   },
+   {
+    "kind": "balance",
+    "left": "12x",
+    "right": "57",
+    "note": "Make both pans 3 times as heavy"
+   },
+   {
+    "kind": "balance",
+    "left": "12x + 3",
+    "right": "60",
+    "note": "Put 3 back on both pans"
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 7,
+   "max": 19,
+   "step": 4,
+   "points": [
+    {
+     "at": 7
+    },
+    {
+     "at": 11
+    },
+    {
+     "at": 15
+    },
+    {
+     "at": 19
+    }
+   ],
+   "hops": [
+    {
+     "from": 7,
+     "to": 11,
+     "label": "?"
+    },
+    {
+     "from": 11,
+     "to": 15,
+     "label": "?"
+    },
+    {
+     "from": 15,
+     "to": 19,
+     "label": "?"
+    }
+   ],
+   "note": "Carry the pattern on to 8 terms, then add them"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 7,
+    "max": 35,
+    "step": 4,
+    "points": [
+     {
+      "at": 7
+     },
+     {
+      "at": 35
+     }
+    ],
+    "hops": [
+     {
+      "from": 7,
+      "to": 11
+     },
+     {
+      "from": 11,
+      "to": 15
+     },
+     {
+      "from": 15,
+      "to": 19
+     },
+     {
+      "from": 19,
+      "to": 23
+     },
+     {
+      "from": 23,
+      "to": 27
+     },
+     {
+      "from": 27,
+      "to": 31
+     },
+     {
+      "from": 31,
+      "to": 35
+     }
+    ],
+    "note": "8 terms, from 7 up to 35"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "7",
+      "11",
+      "15",
+      "19"
+     ],
+     [
+      "35",
+      "31",
+      "27",
+      "23"
+     ]
+    ],
+    "note": "Pair first with last: every pair makes 42"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "7",
+      "11",
+      "15",
+      "19"
+     ],
+     [
+      "35",
+      "31",
+      "27",
+      "23"
+     ]
+    ],
+    "note": "4 pairs of 42 = 168"
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_032": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 157,
+   "max": 197,
+   "step": 1,
+   "points": [
+    {
+     "at": 197
+    },
+    {
+     "at": 193
+    },
+    {
+     "at": 185
+    },
+    {
+     "at": 173
+    },
+    {
+     "at": 157
+    }
+   ],
+   "hops": [
+    {
+     "from": 197,
+     "to": 193,
+     "label": "?"
+    },
+    {
+     "from": 193,
+     "to": 185,
+     "label": "?"
+    },
+    {
+     "from": 185,
+     "to": 173,
+     "label": "?"
+    },
+    {
+     "from": 173,
+     "to": 157,
+     "label": "?"
+    }
+   ],
+   "note": "Look at the size of each jump back. 8th term = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 157,
+    "max": 197,
+    "step": 1,
+    "points": [
+     {
+      "at": 197
+     },
+     {
+      "at": 193
+     },
+     {
+      "at": 185
+     },
+     {
+      "at": 173
+     },
+     {
+      "at": 157
+     }
+    ],
+    "hops": [
+     {
+      "from": 197,
+      "to": 193,
+      "label": "−4"
+     },
+     {
+      "from": 193,
+      "to": 185,
+      "label": "−8"
+     },
+     {
+      "from": 185,
+      "to": 173,
+      "label": "−12"
+     },
+     {
+      "from": 173,
+      "to": 157,
+      "label": "−16"
+     }
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 157,
+    "max": 197,
+    "step": 1,
+    "points": [
+     {
+      "at": 197
+     },
+     {
+      "at": 193
+     },
+     {
+      "at": 185
+     },
+     {
+      "at": 173
+     },
+     {
+      "at": 157
+     }
+    ],
+    "hops": [
+     {
+      "from": 197,
+      "to": 193,
+      "label": "−4"
+     },
+     {
+      "from": 193,
+      "to": 185,
+      "label": "−8"
+     },
+     {
+      "from": 185,
+      "to": 173,
+      "label": "−12"
+     },
+     {
+      "from": 173,
+      "to": 157,
+      "label": "−16"
+     }
+    ],
+    "note": "Each jump is 4 bigger than the one before"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Jump",
+      "−20",
+      "−24",
+      "−28"
+     ],
+     [
+      "Value",
+      "137",
+      "113",
+      "85"
+     ]
+    ],
+    "headers": [
+     "Term",
+     "6th",
+     "7th",
+     "8th"
+    ],
+    "highlight": [
+     "r1"
+    ]
+   }
+  ]
+ },
+ "EXT_G5_FP_2025_001": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "placeChart",
+    "number": "2425",
+    "note": "25 × 97 = 2425"
+   },
+   {
+    "kind": "placeChart",
+    "number": "2425",
+    "note": "4 in the hundreds place is 400",
+    "highlight": [
+     "d1"
+    ]
+   }
+  ]
+ }
+}

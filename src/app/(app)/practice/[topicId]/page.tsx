@@ -28,6 +28,9 @@ import { ReviewIntroScreen, NoHeartsScreen, LessonCompleteScreen, LessonIntro, C
 import { CorrectPanel, WrongPanel } from '@/components/practice';
 import { logError } from '@/lib/logger';
 import { publishScreenContext, clearScreenContext, requestOpenSparky } from '@/lib/sparkyContext';
+import FigureView from '@/components/figures/FigureView';
+import WorkPane from '@/components/figures/WorkPane';
+import StepPlayer, { hasSolutionSteps } from '@/components/figures/StepPlayer';
 
 // ── Main component ────────────────────────────────────────────────────────────
 
@@ -121,6 +124,10 @@ export default function PracticePage() {
   const [showWalkthrough,    setShowWalkthrough]    = useState(false);
   const [walkthroughClosed,  setWalkthroughClosed]  = useState(false);
   const [sparkyToast,        setSparkyToast]        = useState(false);
+
+  // Step player sheet (phones and tablets; wide screens show the steps in the side pane)
+  const [showSteps, setShowSteps] = useState(false);
+  const resultSheetRef = useRef<HTMLDivElement | null>(null);
 
   // ── Bonus "Repeat Similar" question system ──────────────────────────────────
   const [bonusMode,      setBonusMode]      = useState<BonusMode>('off');
@@ -412,6 +419,27 @@ export default function PracticePage() {
   // Clear context when leaving the practice page.
   useEffect(() => () => clearScreenContext(), []);
 
+  // ── Step player sheet ───────────────────────────────────────────────────────
+  // A different question on screen: put the sheet away.
+  const shownQuestionId = shownQuestion ? shownQuestion.id : null;
+  useEffect(() => { setShowSteps(false); }, [shownQuestionId]);
+
+  // Escape closes the sheet.
+  useEffect(() => {
+    if (!showSteps) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setShowSteps(false); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [showSteps]);
+
+  // Wide screens: the result panel sits in the page under the options, so bring it into view.
+  useEffect(() => {
+    if (phase !== 'result') return;
+    const el = resultSheetRef.current;
+    if (!el || !window.matchMedia('(min-width: 1024px)').matches) return;
+    el.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }, [phase]);
+
   // ── Boot ───────────────────────────────────────────────────────────────────
   // Fetch one adaptive question at a time. Questions are served by the adaptive
   // engine (/api/questions/next): streak/difficulty use today's DB attempts, while
@@ -604,8 +632,9 @@ export default function PracticePage() {
       setShowMiniConfetti(true);
     } else {
       playWrong();
-      // Auto-show hint level 1 after a wrong answer
-      setHintLevel(1);
+      // Auto-show hint level 1 after a wrong answer (keeping any further hints
+      // the child already opened in the working space)
+      setHintLevel((l) => Math.max(l, 1));
       // Feature 1: fire Socratic stuck-coach on the 2nd+ wrong attempt.
       const prevWrong = wrongCountByQuestionRef.current.get(currentQuestion.id) ?? 0;
       const nextWrong = prevWrong + 1;
@@ -683,6 +712,15 @@ export default function PracticePage() {
     advance(hearts);
   }
 
+  // Reading the steps or using the working space after a right answer: stay on
+  // this question until the child presses Continue.
+  function pauseAutoAdvance() {
+    if (advanceTimer.current) {
+      clearTimeout(advanceTimer.current);
+      advanceTimer.current = null;
+    }
+  }
+
   // ── Bonus "Repeat Similar" system ─────────────────────────────────────────
 
   function requestBonus(originQuestion: Question, wasOriginCorrect: boolean) {
@@ -758,7 +796,7 @@ export default function PracticePage() {
     if (correct && newStreak === 5) msg = 'Unstoppable! ⚡';
     setBonusFeedback(msg);
 
-    if (correct) playCorrect(); else { playWrong(); setBonusHintLevel(1); }
+    if (correct) playCorrect(); else { playWrong(); setBonusHintLevel((l) => Math.max(l, 1)); }
 
     // Track bonus questions toward trial count
     sessionQuestionsAnsweredRef.current += 1;
@@ -1117,8 +1155,14 @@ export default function PracticePage() {
       bonusServedRef.current < MAX_BONUS_PER_LESSON
     : false;
 
+  // The second pane: the figure or working space, then the steps once answered.
+  const mainFigure  = currentQuestion.visual && currentQuestion.visual.figure ? currentQuestion.visual.figure : null;
+  const bonusFigure = bonusQuestion && bonusQuestion.visual && bonusQuestion.visual.figure ? bonusQuestion.visual.figure : null;
+
   return (
-    <div className="flex flex-col bg-paper min-h-screen animate-fade-in">
+    // Phones and tablets: the usual single column. Wide screens: the question
+    // screen breaks out of the narrow app column (32rem) to 60rem, in two panels.
+    <div className="flex flex-col bg-paper min-h-screen animate-fade-in lg:-mx-56">
       {/* Confetti (full — lesson complete) */}
       {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
       {/* Mini confetti — per correct answer */}
@@ -1200,10 +1244,15 @@ export default function PracticePage() {
         return null;
       })()}
 
+      {/* ── Two panels on wide screens: question (left), working pane (right) ── */}
+      <div className="flex-1 flex flex-col lg:grid lg:grid-cols-2 lg:gap-5 lg:items-start lg:px-5 lg:pt-5 lg:pb-24">
+      <div className="flex-1 flex flex-col min-w-0 lg:gap-4">
+
       {/* ── Question area (scrollable, padded for bottom panel) ── */}
       <div
-        className="flex-1 overflow-y-auto px-4 py-4 space-y-4"
-        style={{ paddingBottom: phase === 'result' ? '72vh' : '80px' }}
+        className={`flex-1 overflow-y-auto px-4 pt-4 space-y-4 lg:flex-none lg:overflow-visible lg:px-0 lg:pt-0 lg:pb-0 ${
+          phase === 'result' ? 'pb-[72vh]' : 'pb-20'
+        }`}
       >
         {/* Question label with color accent */}
         <div className={`inline-flex items-center gap-2 text-[13px] font-extrabold px-3 py-1 rounded-full border-2 ${accentCls}`}>
@@ -1217,6 +1266,13 @@ export default function PracticePage() {
           )}
         </div>
 
+        {/* The question's figure (phones and tablets; wide screens show it in the side pane) */}
+        {mainFigure && (
+          <div className="lg:hidden bg-white border-2 border-line rounded-card p-3">
+            <FigureView spec={mainFigure} />
+          </div>
+        )}
+
         <QuestionCard
           question={currentQuestion}
           answered={phase === 'result'}
@@ -1226,52 +1282,28 @@ export default function PracticePage() {
         />
       </div>
 
-      {/* ── Animated Walkthrough overlay ── */}
-      {showWalkthrough && (
-        <AnimatedWalkthrough
-          question={currentQuestion}
-          studentAnswer={selected}
-          onClose={() => {
-            setShowWalkthrough(false);
-            setWalkthroughClosed(true);
-          }}
-          onSimilar={() => requestBonus(currentQuestion, lastCorrect)}
-        />
-      )}
-
-      {/* ── Sparky chat bubble (floating RHS, visible during result phase) ── */}
+      {/* ── Result panel: a sheet that slides up on phones and tablets; in the page under the options on wide screens ── */}
       {phase === 'result' && (
         <div
-          className="fixed right-3 z-[65] animate-slide-up"
-          style={{ bottom: 'calc(72vh + 12px)', animationDelay: '1.2s', animationFillMode: 'backwards' }}
-        >
-          <button
-            onClick={() => requestOpenSparky()}
-            className="flex flex-col items-end gap-1"
-            aria-label="Ask Sparky"
-          >
-            <div className="bg-white rounded-control px-3 py-2 border-2 border-ink shadow-hard-sm max-w-[130px]">
-              <p className="text-xs font-bold text-ink text-center leading-snug">
-                {lastCorrect ? 'Keep it up! 🎉' : 'Need help? 💬'}
-              </p>
-            </div>
-            <div className={`rounded-full p-1.5 border-2 border-ink ${lastCorrect ? 'bg-success' : 'bg-action'}`}>
-              <Sparky mood={lastCorrect ? 'celebrating' : 'encouraging'} size={32} />
-            </div>
-          </button>
-        </div>
-      )}
-
-      {/* ── Sliding bottom panel (Brilliant-style answer sheet) ── */}
-      {phase === 'result' && (
-        <div
-          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] animate-slide-up overflow-y-auto rounded-t-card border-2 border-b-0 border-ink ${
+          ref={resultSheetRef}
+          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] max-h-[72vh] animate-slide-up overflow-y-auto rounded-t-card border-2 border-b-0 border-ink lg:static lg:z-auto lg:max-w-none lg:mx-0 lg:max-h-none lg:overflow-visible lg:rounded-card lg:border-b-2 lg:scroll-mb-24 ${
             lastCorrect
               ? 'bg-success-soft'
               : 'bg-retry-soft'
           }`}
-          style={{ maxHeight: '72vh' }}
         >
+          {/* Phones and tablets: the steps open in a sheet. Wide screens have them in the side pane. */}
+          {hasSolutionSteps(currentQuestion) && (
+            <div className="lg:hidden px-4 pt-4">
+              <button
+                type="button"
+                onClick={() => { pauseAutoAdvance(); setShowSteps(true); }}
+                className="ui-btn w-full text-sm"
+              >
+                <span aria-hidden="true">📖</span> See the steps
+              </button>
+            </div>
+          )}
           {lastCorrect ? (
             <CorrectPanel
               feedback={feedback}
@@ -1307,11 +1339,65 @@ export default function PracticePage() {
           )}
         </div>
       )}
+      </div>
+
+      {/* ── Working pane (wide screens) ── */}
+      <aside
+        className="hidden lg:block lg:sticky lg:top-[84px] lg:max-h-[calc(100vh-164px)] lg:overflow-y-auto bg-white border-2 border-line rounded-card p-4"
+        onPointerDown={pauseAutoAdvance}
+        onKeyDown={pauseAutoAdvance}
+      >
+        <WorkPane
+          key={currentQuestion.id}
+          question={currentQuestion}
+          stage={phase === 'result' ? 'answered' : 'answering'}
+          mode="practice"
+          hintLevel={hintLevel}
+          onHintLevelUp={(n) => { setHintLevel(n); setHintUsed(true); }}
+        />
+      </aside>
+      </div>
+
+      {/* ── Animated Walkthrough overlay ── */}
+      {showWalkthrough && (
+        <AnimatedWalkthrough
+          question={currentQuestion}
+          studentAnswer={selected}
+          onClose={() => {
+            setShowWalkthrough(false);
+            setWalkthroughClosed(true);
+          }}
+          onSimilar={() => requestBonus(currentQuestion, lastCorrect)}
+        />
+      )}
+
+      {/* ── Sparky chat bubble (floating RHS, visible during result phase) ── */}
+      {phase === 'result' && (
+        <div
+          className="lg:hidden fixed right-3 z-[65] animate-slide-up"
+          style={{ bottom: 'calc(72vh + 12px)', animationDelay: '1.2s', animationFillMode: 'backwards' }}
+        >
+          <button
+            onClick={() => requestOpenSparky()}
+            className="flex flex-col items-end gap-1"
+            aria-label="Ask Sparky"
+          >
+            <div className="bg-white rounded-control px-3 py-2 border-2 border-ink shadow-hard-sm max-w-[130px]">
+              <p className="text-xs font-bold text-ink text-center leading-snug">
+                {lastCorrect ? 'Keep it up! 🎉' : 'Need help? 💬'}
+              </p>
+            </div>
+            <div className={`rounded-full p-1.5 border-2 border-ink ${lastCorrect ? 'bg-success' : 'bg-action'}`}>
+              <Sparky mood={lastCorrect ? 'celebrating' : 'encouraging'} size={32} />
+            </div>
+          </button>
+        </div>
+      )}
 
       {/* ── Bonus "Repeat Similar" overlay ─────────────────────────────────── */}
       {bonusMode !== 'off' && (
         <div
-          className="fixed inset-0 bg-paper z-[80] flex flex-col max-w-lg mx-auto animate-slide-from-right"
+          className="fixed inset-0 bg-paper z-[80] flex flex-col max-w-lg mx-auto animate-slide-from-right lg:max-w-none"
         >
           {/* Header */}
           <div className="bg-ink px-4 py-3 flex items-center gap-3 flex-shrink-0">
@@ -1356,17 +1442,26 @@ export default function PracticePage() {
             </div>
           )}
 
-          {/* Bonus question screen */}
+          {/* Bonus question screen. Wide screens: the question (left) and its working pane (right), each scrolling on its own. */}
           {(bonusMode === 'answering' || bonusMode === 'result') && bonusQuestion && (
-            <>
+            <div className="flex-1 min-h-0 flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-[minmax(0,1fr)] lg:gap-5 lg:w-full lg:max-w-[60rem] lg:mx-auto lg:p-5">
+              <div className="flex-1 min-h-0 flex flex-col min-w-0 lg:gap-4 lg:overflow-y-auto">
               <div
-                className="flex-1 overflow-y-auto px-4 py-4 space-y-4"
-                style={{ paddingBottom: bonusMode === 'result' ? '200px' : '80px' }}
+                className={`flex-1 overflow-y-auto px-4 pt-4 space-y-4 lg:flex-none lg:overflow-visible lg:px-0 lg:pt-0 lg:pb-0 ${
+                  bonusMode === 'result' ? 'pb-[200px]' : 'pb-20'
+                }`}
               >
                 {/* Bonus label */}
                 <div className="inline-flex items-center gap-2 text-xs font-extrabold px-3 py-1.5 rounded-full bg-hint text-hint-ink border-2 border-star">
                   ⭐ Bonus Question
                 </div>
+
+                {/* The question's figure (phones and tablets; wide screens show it in the side pane) */}
+                {bonusFigure && (
+                  <div className="lg:hidden bg-white border-2 border-line rounded-card p-3">
+                    <FigureView spec={bonusFigure} />
+                  </div>
+                )}
 
                 {/* Question card — amber border */}
                 <div className="relative">
@@ -1407,7 +1502,7 @@ export default function PracticePage() {
               {/* Bonus bottom panel */}
               {bonusMode === 'result' && (
                 <div
-                  className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[90] animate-slide-up ${
+                  className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[90] animate-slide-up lg:static lg:z-auto lg:max-w-none lg:mx-0 lg:flex-shrink-0 lg:border-2 lg:rounded-card ${
                     bonusCorrect
                       ? 'bg-success-soft border-t-2 border-ink'
                       : 'bg-retry-soft border-t-2 border-ink'
@@ -1422,6 +1517,15 @@ export default function PracticePage() {
                       <p className="text-ink text-xs font-bold">
                         ✅ {bonusQuestion.correctAnswer}: {bonusCorrectText}
                       </p>
+                    )}
+                    {hasSolutionSteps(bonusQuestion) && (
+                      <button
+                        type="button"
+                        onClick={() => setShowSteps(true)}
+                        className="lg:hidden w-full min-h-[48px] bg-white border-2 border-ink shadow-hard-sm text-ink font-extrabold text-sm rounded-control flex items-center justify-center gap-2"
+                      >
+                        <span aria-hidden="true">📖</span> See the steps
+                      </button>
                     )}
                     {!bonusCorrect && canOneMore && (
                       <button
@@ -1444,8 +1548,50 @@ export default function PracticePage() {
                   </div>
                 </div>
               )}
-            </>
+              </div>
+
+              {/* Working pane for the bonus question (wide screens) */}
+              <aside className="hidden lg:block min-h-0 overflow-y-auto bg-white border-2 border-line rounded-card p-4">
+                <WorkPane
+                  key={bonusQuestion.id}
+                  question={bonusQuestion}
+                  stage={bonusMode === 'result' ? 'answered' : 'answering'}
+                  mode="practice"
+                  hintLevel={bonusHintLevel}
+                  onHintLevelUp={(n) => { setBonusHintLevel(n); setBonusHintUsed(true); }}
+                />
+              </aside>
+            </div>
           )}
+        </div>
+      )}
+
+      {/* ── Step player sheet (phones and tablets) ── */}
+      {showSteps && shownQuestion && (
+        <div
+          className="lg:hidden fixed inset-0 z-[95] flex flex-col justify-end"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Step by step solution"
+        >
+          <div className="absolute inset-0 bg-ink/60" onClick={() => setShowSteps(false)} aria-hidden="true" />
+          <div className="relative w-full max-w-lg mx-auto max-h-[88vh] overflow-y-auto bg-white rounded-t-card border-2 border-b-0 border-ink px-4 pt-3 pb-8 animate-slide-up">
+            <div className="flex items-center justify-between gap-3 mb-3">
+              <p className="font-display text-title text-ink">
+                <span aria-hidden="true">📖</span> Step by step
+              </p>
+              <button
+                type="button"
+                autoFocus
+                onClick={() => setShowSteps(false)}
+                aria-label="Close the steps"
+                className="w-12 h-12 flex-shrink-0 rounded-tile bg-white border-2 border-line flex items-center justify-center text-ink font-bold text-lg hover:border-ink"
+              >
+                <span aria-hidden="true">✕</span>
+              </button>
+            </div>
+            <StepPlayer key={shownQuestion.id} question={shownQuestion} />
+          </div>
         </div>
       )}
     </div>

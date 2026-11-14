@@ -1,0 +1,354 @@
+[
+  {
+    "id": "EXT_G5_WS_B7_001",
+    "source": "pdf_extracted",
+    "subTopic": "Grade 5 — Reading fractions from figures",
+    "questionText": "Represent the unshaded portion of the figure in fractional form.",
+    "reason": "mentions: figure, unshaded; asks about shaded or unshaded parts but the text never says how many parts there are or how many are shaded",
+    "verdict": "needs figure"
+  },
+  {
+    "id": "EXT_G5_WS_B7_008",
+    "source": "pdf_extracted",
+    "subTopic": "Grade 5 — Fractions on a number line",
+    "questionText": "A line segment from 0 to 2 is divided into 5 equal parts. What fraction does point A represent?",
+    "reason": "mentions: point a; asks about point A but the text never says where point A is",
+    "verdict": "needs figure"
+  },
+  {
+    "id": "EXT_G5_FP_2016_016",
+    "source": "g5_final_2016",
+    "subTopic": "Grade 5 — HCF and LCM",
+    "questionText": "How many natural numbers below 2009 are divisible by both 4 and 6?",
+    "reason": "mentions: below; 'below' or 'above' compares with a number",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2016_019",
+    "source": "g5_final_2016",
+    "subTopic": "Grade 5 — Place value",
+    "questionText": "What will be the place value of the digit 4 in the smallest five-digit odd number formed by using all the given digits only once: 1, 8, 4, 0 and 7?",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2016_027",
+    "source": "g5_final_2016",
+    "subTopic": "Grade 5 — Equations",
+    "questionText": "At Uncle's Cafe the food costs as follows: 1 Toast and 1 Tea cost Rs.4. 2 Toast and 2 Sandwich cost Rs.9. 1 Sandwich and 2 Teas cost Rs.2. What would 1 Toast, 1 Sandwich and 1 Tea together cost?",
+    "reason": "mentions: as follows; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2016_031",
+    "source": "g5_final_2016",
+    "subTopic": "Grade 5 — BODMAS",
+    "questionText": "Of the given expressions, which expression has the least value?",
+    "reason": "mentions: the given; the phrase points at the answer choices, which hold the data",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2017_001",
+    "source": "g5_final_2017",
+    "subTopic": "Grade 5 — Equations",
+    "questionText": "The combined age of A and B is 39, B and C is 40, C and D is 38 and D and E is 44. The total of the ages of all the five is 105. Which of the following can be the age of the youngest member of the given five?",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2017_021",
+    "source": "g5_final_2017",
+    "subTopic": "Grade 5 — Percentage (money)",
+    "questionText": "In 1976 it was estimated that there were 250000 lions in Africa. Over the past 40 years this figure has decreased by 90%. What is the current estimate for the number of lions in Africa?",
+    "reason": "mentions: this figure; 'figure' here means a number, not a drawing",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2017_025",
+    "source": "g5_final_2017",
+    "subTopic": "Grade 5 — Multiplication and division",
+    "questionText": "A two-digit number ♣9 is multiplied by a three-digit number ♣♣3. The digits in the ♣ place are not necessarily the same. Which of the following can be the product of the given two numbers?",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2018_004",
+    "source": "g5_final_2018",
+    "subTopic": "Grade 5 — Algebraic expressions",
+    "questionText": "The sum of two consecutive odd numbers is 12. Which equation from the following represents the given statement using 'm' as the variable?",
+    "reason": "mentions: the given; the phrase points at the answer choices, which hold the data",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2018_006",
+    "source": "g5_final_2018",
+    "subTopic": "Grade 5 — Sequence and series",
+    "questionText": "The given series 13, 16, 19, 22 … is increasing by 3 each time. What will be the 75th number of the series?",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2018_008",
+    "source": "g5_final_2018",
+    "subTopic": "Grade 5 — Fractions",
+    "questionText": "On a number line, point A is at 1/5 and point B is at 1/3. Point C is exactly between point A and B. What fraction could be at C?",
+    "reason": "mentions: number line, point a, point b, point c; the positions on the line are stated in the text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2018_028",
+    "source": "g5_final_2018",
+    "subTopic": "Grade 5 — Decimals",
+    "questionText": "A man bought some articles. Which decimal fraction from the below CANNOT represent the number of articles he bought in dozens?",
+    "reason": "mentions: below; the phrase points at the answer choices, which hold the data",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2018_032",
+    "source": "g5_final_2018",
+    "subTopic": "Grade 5 — Multiplication and division",
+    "questionText": "A three-digit number ♣♣7 is multiplied by a two-digit number ♣8. The digits in ♣ place are not necessarily the same. Which of the following can be the product of the given two numbers?",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2019_003",
+    "source": "g5_final_2019",
+    "subTopic": "Grade 5 — Decimals",
+    "questionText": "Arrange the given decimals in descending order of their values and find the sum of the 1st and the 4th: 0.062, 0.05, 0.56, 0.034, 0.007",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2019_007",
+    "source": "g5_final_2019",
+    "subTopic": "Grade 5 — Algebraic expressions",
+    "questionText": "The sum of two consecutive odd numbers is 16. Which equation from the following represents the given statement using 'm' as the variable?",
+    "reason": "mentions: the given; the phrase points at the answer choices, which hold the data",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2019_010",
+    "source": "g5_final_2019",
+    "subTopic": "Grade 5 — BODMAS",
+    "questionText": "Where should the bracket ( ) be inserted in the given equation to make it true? 12 − 7 × 5 + 8 = 33",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2019_019",
+    "source": "g5_final_2019",
+    "subTopic": "Grade 5 — Fractions",
+    "questionText": "Which of the fractions given below is the smallest?",
+    "reason": "mentions: given below; the phrase points at the answer choices, which hold the data",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2019_024",
+    "source": "g5_final_2019",
+    "subTopic": "Grade 5 — Perimeter (area and perimeter)",
+    "questionText": "Given below are the sides of equilateral triangles and of squares in each of the alternatives. In which one does the perimeter of the equilateral triangle and the square become equal?",
+    "reason": "mentions: given below; the phrase points at the answer choices, which hold the data",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2019_040",
+    "source": "g5_final_2019",
+    "subTopic": "Grade 5 — Sequence and series",
+    "questionText": "Which will be the 8th term in the given series of numbers? 10, 12, 15, 20, 27, …",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2020_006",
+    "source": "g5_final_2020",
+    "subTopic": "Grade 5 — BODMAS",
+    "questionText": "Which of the given expressions has the greatest value?",
+    "reason": "mentions: the given; the phrase points at the answer choices, which hold the data",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2020_010",
+    "source": "g5_final_2020",
+    "subTopic": "Grade 5 — Squares and square roots",
+    "questionText": "The nine interior intersection points on a 4 × 4 grid of squares are shown (a 4 × 4 grid has 3 × 3 = 9 interior points). How many interior intersection points are there on a 16 × 16 grid of squares?",
+    "reason": "mentions: grid, shown; what is shown is also described in the text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2020_016",
+    "source": "g5_final_2020",
+    "subTopic": "Grade 5 — Place value",
+    "questionText": "In which of the numbers given below will the difference between the place values of the digits 9 and 7 be 83000?",
+    "reason": "mentions: given below; the phrase points at the answer choices, which hold the data",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2021_007",
+    "source": "g5_final_2021",
+    "subTopic": "Grade 5 — Place value",
+    "questionText": "The digit 6 is used twice in the given numbers. Only at one number the place value of one 6 is 1000 times the other 6. Find it.",
+    "reason": "mentions: the given; the phrase points at the answer choices, which hold the data",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2021_025",
+    "source": "g5_final_2021",
+    "subTopic": "Grade 5 — Sequence and series",
+    "questionText": "Which will be the 8th term in the given series of the numbers? 10, 12, 15, 20, 27, …",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2022_002",
+    "source": "g5_final_2022",
+    "subTopic": "Grade 5 — Sequence and series",
+    "questionText": "In the given series find the number in place of K: 9, 13, 21, 37, K, 133.",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2022_021",
+    "source": "g5_final_2022",
+    "subTopic": "Grade 5 — BODMAS",
+    "questionText": "Where should the bracket ( ) be inserted to make the given equation true? 6 ÷ 21 − 9 × 36 + 11 = 29.",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2022_033",
+    "source": "g5_final_2022",
+    "subTopic": "Grade 5 — Sequence and series",
+    "questionText": "Find the 11th term of the given series: 19, 31, 43, 55, …",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2022_035",
+    "source": "g5_final_2022",
+    "subTopic": "Grade 5 — Equations",
+    "questionText": "The sum of two consecutive odd numbers is 192. Which of the following equations represents the given statement using the variable 'W'?",
+    "reason": "mentions: the given; the phrase points at the answer choices, which hold the data",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2023_016",
+    "source": "g5_final_2023",
+    "subTopic": "Grade 5 — Sequence and series",
+    "questionText": "The given series 26, 30, 34, 38, … is increasing by 4 each time. What will be the 59th term of the series?",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2023_026",
+    "source": "g5_final_2023",
+    "subTopic": "Grade 5 — Sequence and series",
+    "questionText": "Find the 10th term of the given series: 126, 124, 121, 116, 109, 98, …",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2023_037",
+    "source": "g5_final_2023",
+    "subTopic": "Grade 5 — BODMAS",
+    "questionText": "Where should the brackets ( ) be inserted in the given equation to make it true? 42 ÷ 7 × 2 + 16 = 19",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2023_038",
+    "source": "g5_final_2023",
+    "subTopic": "Grade 5 — Sequence and series",
+    "questionText": "Find the 9th term of the given series: XCVII, LXXXIX, LXXXIII, LXXIX, LXXIII, …",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2023_040",
+    "source": "g5_final_2023",
+    "subTopic": "Grade 5 — Angles",
+    "questionText": "Which of the two angles given below are supplementary to each other?",
+    "reason": "mentions: given below; the phrase points at the answer choices, which hold the data",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2024_014",
+    "source": "g5_final_2024",
+    "subTopic": "Grade 5 — Equations",
+    "questionText": "Solve and find the value of x in the given equation: 6x − 9 = (4x + 30)/2",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2024_016",
+    "source": "g5_final_2024",
+    "subTopic": "Grade 5 — Sequence and series",
+    "questionText": "Find the sum of 11th and 18th term of the given series: 3, 7, 11, 15, 19 …",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2024_029",
+    "source": "g5_final_2024",
+    "subTopic": "Grade 5 — Sequence and series",
+    "questionText": "What would be the 9th term of the given series: 405, 363, 321, 279, 237 …",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2024_031",
+    "source": "g5_final_2024",
+    "subTopic": "Grade 5 — Fractions",
+    "questionText": "If the given two fractions are equivalent then what number should replace the □? 52/68 = (□)/153",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2025_014",
+    "source": "g5_final_2025",
+    "subTopic": "Grade 5 — Fractions",
+    "questionText": "3/4, 5/6, 4/5. Out of the given fractions, what is the difference between the greatest and the smallest fraction?",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_FP_2025_022",
+    "source": "g5_final_2025",
+    "subTopic": "Grade 5 — Sequence and series",
+    "questionText": "What would be the sum of the first 8 terms of the given series: 7, 11, 15, 19 …",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_WS_B2_001",
+    "source": "pdf_extracted",
+    "subTopic": "Grade 5 — Cryptarithmetic addition",
+    "questionText": "In the given sum of addition, find the digits in place of A, B and C.\n  A 4 8\n+ 3 2 B\n+ 5 C 1\n------\n1 4 7 8",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_WS_B3_009",
+    "source": "pdf_extracted",
+    "subTopic": "Grade 5 — Product digit analysis",
+    "questionText": "What can be the possible product of ✻✻7 × ✻4 from the given alternatives when ✻ denotes digits not necessarily the same?",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_WS_B4_028",
+    "source": "pdf_extracted",
+    "subTopic": "Grade 5 — BODMAS comparison",
+    "questionText": "Of the given expressions, which one has the least value?",
+    "reason": "mentions: the given; the phrase points at the answer choices, which hold the data",
+    "verdict": "fine"
+  },
+  {
+    "id": "EXT_G5_WS_B7_013",
+    "source": "pdf_extracted",
+    "subTopic": "Grade 5 — Ordering fractions",
+    "questionText": "Which fraction will be in the middle if the given fractions are arranged serially in descending order: 5/14, 13/21, 11/9, 3/7, 14/28?",
+    "reason": "mentions: the given; the thing referred to is written out in the question text",
+    "verdict": "fine"
+  }
+]

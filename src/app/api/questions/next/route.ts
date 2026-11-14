@@ -3,6 +3,7 @@ import { getNextQuestion } from '@/lib/adaptive';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { parseUnknownArray } from '@/lib/jsonFields';
 import { logError } from '@/lib/logger';
+import { withVisual } from '@/lib/figures/lookup';
 
 // GET /api/questions/next?topicId=&subTopic=&exclude=&confidence=
 export async function GET(req: Request) {
@@ -36,7 +37,8 @@ export async function GET(req: Request) {
     // post-answer reveal. The authoritative record (XP, progress, mastery) is
     // still re-graded server-side in /api/attempts, which never trusts the
     // client's isCorrect flag.
-    return NextResponse.json({ ...q, stepByStep });
+    // The figure and step pictures ride along: practice shows the solution after answering.
+    return NextResponse.json(withVisual({ ...q, stepByStep }, { withSolution: true }));
   } catch (err) {
     logError('[questions/next] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

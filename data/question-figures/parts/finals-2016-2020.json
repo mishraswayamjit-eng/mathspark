@@ -1,0 +1,9084 @@
+{
+ "EXT_G5_FP_2016_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "first",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "second",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "third",
+       "tone": "c"
+      }
+     ],
+     "brace": "24 apples"
+    }
+   ],
+   "note": "first + second = 11, second + third = 18, first + third = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "first",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "second",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "13",
+        "tone": "c"
+       }
+      ],
+      "brace": "24 apples"
+     }
+    ],
+    "highlight": [
+     "b0s2"
+    ],
+    "note": "Take away first + second: 24 − 11 = 13 in the third bag"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "second",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "third",
+        "tone": "b"
+       }
+      ],
+      "brace": "24 apples"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "Take away second + third: 24 − 18 = 6 in the first bag"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "second",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "13",
+        "tone": "a"
+       }
+      ],
+      "brace": "24 apples"
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s2"
+    ],
+    "note": "first + third = 6 + 13 = 19"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_003": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 16,
+    "max": 64,
+    "step": 4,
+    "points": [
+     {
+      "at": 16,
+      "label": "4²"
+     },
+     {
+      "at": 64,
+      "label": "4³"
+     }
+    ],
+    "note": "4² = 16 and 4³ = 64"
+   },
+   {
+    "kind": "numberLine",
+    "min": 16,
+    "max": 64,
+    "step": 4,
+    "points": [
+     {
+      "at": 16,
+      "label": "16"
+     },
+     {
+      "at": 64,
+      "label": "64"
+     }
+    ],
+    "hops": [
+     {
+      "from": 16,
+      "to": 64,
+      "label": "17 to 63"
+     }
+    ],
+    "note": "Between means 16 and 64 themselves are left out"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2016_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "fractionBars",
+   "bars": [
+    {
+     "parts": 5,
+     "shaded": 4,
+     "label": "from 12 to 1"
+    }
+   ],
+   "note": "The hour hand has gone 4/5 of the way from 12 to 1"
+  },
+  "stepFigures": [
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 5,
+      "shaded": 0,
+      "label": "12 to 1 = 60 min"
+     }
+    ],
+    "note": "The whole stretch from 12 to 1 takes 60 minutes"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 5,
+      "shaded": 4,
+      "label": "4 × 12 = 48 min"
+     }
+    ],
+    "note": "Each fifth is 12 minutes, so 4 fifths = 48 minutes"
+   },
+   {
+    "kind": "clock",
+    "hour": 12,
+    "minute": 48,
+    "highlight": [
+     "hour"
+    ],
+    "note": "The time is 12:48"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2.4,
+       "label": "12% = 36",
+       "tone": "a"
+      },
+      {
+       "units": 8.8,
+       "label": "the rest",
+       "tone": "b"
+      }
+     ],
+     "brace": "100% = ?"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.4,
+        "label": "12% = 36",
+        "tone": "a"
+       },
+       {
+        "units": 8.8,
+        "label": "the rest",
+        "tone": "b"
+       }
+      ],
+      "brace": "100% = ?"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "12% is 36, so 1% = 36 ÷ 12 = 3"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2.4,
+        "label": "12% = 36",
+        "tone": "a"
+       },
+       {
+        "units": 8.8,
+        "label": "the rest",
+        "tone": "b"
+       }
+      ],
+      "brace": "100% = 300"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "100% = 3 × 100 = 300"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_007": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "40 h at Rs.3",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "overtime: ? h",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.168 paid"
+    }
+   ],
+   "note": "Overtime is paid at twice Rs.3 per hour"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.120",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "overtime",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "Rs.168 paid"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "Regular pay = 40 × 3 = Rs.120"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.120",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.48",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.168 paid"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "Overtime pay = 168 − 120 = Rs.48"
+   },
+   null,
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.120",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.48 = 8 h",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.168 paid"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "Rs.48 at Rs.6 an hour = 8 hours of overtime"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 12,
+   "minute": 15,
+   "highlight": [
+    "minute"
+   ],
+   "note": "What part of a full hour is 15 minutes?"
+  },
+  "stepFigures": [
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 4,
+      "shaded": 1,
+      "label": "15 min = 1/4 hr"
+     }
+    ],
+    "shape": "circle",
+    "note": "15 out of 60 minutes is 1/4 of an hour = 0.25 hr"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 1,
+      "shaded": 1,
+      "label": "1 hr"
+     },
+     {
+      "parts": 4,
+      "shaded": 1,
+      "label": "0.25 hr"
+     }
+    ],
+    "shape": "circle",
+    "note": "1 hr + 0.25 hr = 1.25 hr"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "fractionBars",
+   "bars": [
+    {
+     "parts": 3,
+     "shaded": 1,
+     "label": "1/3"
+    },
+    {
+     "parts": 8,
+     "shaded": 7,
+     "label": "7/8"
+    }
+   ],
+   "note": "Which fraction is bigger than 1/3 but smaller than 7/8?"
+  },
+  "stepFigures": [
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 24,
+      "shaded": 8,
+      "label": "1/3 = 8/24"
+     },
+     {
+      "parts": 24,
+      "shaded": 21,
+      "label": "7/8 = 21/24"
+     }
+    ],
+    "note": "Cut both into 24 equal parts to compare"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 24,
+      "shaded": 6,
+      "label": "1/4 = 6/24"
+     },
+     {
+      "parts": 24,
+      "shaded": 23,
+      "label": "23/24"
+     },
+     {
+      "parts": 24,
+      "shaded": 22,
+      "label": "11/12 = 22/24"
+     }
+    ],
+    "note": "6 is below 8; 23 and 22 are above 21"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 24,
+      "shaded": 8,
+      "label": "8/24"
+     },
+     {
+      "parts": 24,
+      "shaded": 17,
+      "label": "17/24"
+     },
+     {
+      "parts": 24,
+      "shaded": 21,
+      "label": "21/24"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "17/24 sits between 8/24 and 21/24"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3,
+       "label": "walk",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "ride",
+       "tone": "b"
+      }
+     ],
+     "brace": "37 min"
+    },
+    {
+     "segments": [
+      {
+       "units": 3,
+       "label": "walk",
+       "tone": "a"
+      },
+      {
+       "units": 3,
+       "label": "walk",
+       "tone": "a"
+      }
+     ],
+     "brace": "55 min"
+    },
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "ride",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "ride",
+       "tone": "b"
+      }
+     ],
+     "brace": "? min"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "walk",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "ride",
+        "tone": "b"
+       }
+      ],
+      "brace": "37 min"
+     },
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "27.5",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "27.5",
+        "tone": "a"
+       }
+      ],
+      "brace": "55 min"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "ride",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "ride",
+        "tone": "b"
+       }
+      ],
+      "brace": "? min"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "Two walks take 55 min, so one walk = 55 ÷ 2 = 27.5 min"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "27.5",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "9.5",
+        "tone": "b"
+       }
+      ],
+      "brace": "37 min"
+     },
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "27.5",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "27.5",
+        "tone": "a"
+       }
+      ],
+      "brace": "55 min"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "ride",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "ride",
+        "tone": "b"
+       }
+      ],
+      "brace": "? min"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "One ride = 37 − 27.5 = 9.5 min"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "27.5",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "9.5",
+        "tone": "b"
+       }
+      ],
+      "brace": "37 min"
+     },
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "27.5",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "27.5",
+        "tone": "a"
+       }
+      ],
+      "brace": "55 min"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "9.5",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "9.5",
+        "tone": "b"
+       }
+      ],
+      "brace": "19 min"
+     }
+    ],
+    "highlight": [
+     "b2"
+    ],
+    "note": "Two rides = 2 × 9.5 = 19 minutes"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "?",
+   "breadth": "8 cm",
+   "inside": "Perimeter = 40 cm",
+   "note": "Find the other side first, then the area"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "?",
+    "breadth": "8 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ],
+    "note": "One length + one breadth = half the perimeter = 40 ÷ 2 = 20 cm"
+   },
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "8 cm",
+    "highlight": [
+     "length"
+    ],
+    "note": "Other side = 20 − 8 = 12 cm"
+   },
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "8 cm",
+    "inside": "Area = 96 cm²",
+    "highlight": [
+     "fill"
+    ],
+    "note": "Area = 8 × 12 = 96 cm²"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4,
+       "label": "Rs.12",
+       "tone": "a"
+      }
+     ],
+     "label": "40 gm"
+    },
+    {
+     "segments": [
+      {
+       "units": 7,
+       "label": "Rs.?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "70 gm"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.12",
+        "tone": "a"
+       }
+      ],
+      "label": "40 gm"
+     },
+     {
+      "segments": [
+       {
+        "units": 7,
+        "label": "Rs.?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "70 gm"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "1 gm costs 12 ÷ 40 = Rs.0.30"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.12",
+        "tone": "a"
+       }
+      ],
+      "label": "40 gm"
+     },
+     {
+      "segments": [
+       {
+        "units": 7,
+        "label": "Rs.21",
+        "tone": "b"
+       }
+      ],
+      "label": "70 gm"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "70 gm costs 70 × 0.30 = Rs.21"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_018": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "10000000",
+    "note": "One crore is 1 followed by seven zeros"
+   },
+   {
+    "kind": "placeChart",
+    "number": "1000000",
+    "note": "Dividing by 10 removes one zero: 1,000,000 tens"
+   },
+   {
+    "kind": "placeChart",
+    "number": "1000000",
+    "highlight": [
+     "d0"
+    ],
+    "note": "The 1 is in the ten-lakhs place: ten lakh tens"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "1",
+     "8",
+     "4",
+     "0",
+     "7"
+    ]
+   ],
+   "note": "Make the smallest odd number using every digit once"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "10487",
+    "highlight": [
+     "d4"
+    ],
+    "note": "Ending in 7, the smallest is 10487"
+   },
+   {
+    "kind": "placeChart",
+    "number": "40781",
+    "highlight": [
+     "d4"
+    ],
+    "note": "Ending in 1, the smallest is 40781 (it cannot start with 0)"
+   },
+   {
+    "kind": "placeChart",
+    "number": "10487",
+    "note": "10487 is the smaller of the two"
+   },
+   {
+    "kind": "placeChart",
+    "number": "10487",
+    "highlight": [
+     "d2"
+    ],
+    "note": "The 4 sits in the hundreds place: 4 × 100 = 400"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "2138574",
+   "note": "Sort the digits smallest first. Which digits do not move?"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "2138574",
+    "note": "The number as given: 2 1 3 8 5 7 4"
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "2138574",
+    "highlight": [
+     "d2",
+     "d4",
+     "d5"
+    ],
+    "note": "Sorted is 1 2 3 4 5 7 8: only 3, 5 and 7 stay put"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2016_029": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 12,
+      "shaded": 6,
+      "label": "1/2 = 6/12"
+     },
+     {
+      "parts": 12,
+      "shaded": 3,
+      "label": "1/4 = 3/12"
+     },
+     {
+      "parts": 12,
+      "shaded": 4,
+      "label": "1/3 = 4/12"
+     },
+     {
+      "parts": 12,
+      "shaded": 2,
+      "label": "1/6 = 2/12"
+     }
+    ],
+    "note": "Cut every strip into 12 equal parts"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 12,
+      "shaded": 1,
+      "label": "1/12"
+     }
+    ],
+    "note": "6 − 3 − 4 + 2 = 1 twelfth is left"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2016_032": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4,
+       "label": "sold for Rs.651",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "discount ?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.700 marked"
+    }
+   ],
+   "note": "What percent of Rs.700 is the discount?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "sold for Rs.651",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.49",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.700 marked"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "Discount = 700 − 651 = Rs.49"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "sold for Rs.651",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.49 = 7%",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.700 = 100%"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "49 out of 700 is 7 out of every 100, so 7%"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_033": {
+  "origin": "authored",
+  "figure": {
+   "kind": "set",
+   "total": 27,
+   "item": "eggs",
+   "note": "How many dozens (groups of 12) is this?"
+  },
+  "stepFigures": [
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 12,
+      "shaded": 12,
+      "label": "1 dozen"
+     },
+     {
+      "parts": 12,
+      "shaded": 12,
+      "label": "1 dozen"
+     },
+     {
+      "parts": 12,
+      "shaded": 3,
+      "label": "3 eggs left"
+     }
+    ],
+    "note": "27 eggs = 2 full dozens and 3 eggs left over"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 12,
+      "shaded": 12,
+      "label": "1 dozen"
+     },
+     {
+      "parts": 12,
+      "shaded": 12,
+      "label": "1 dozen"
+     },
+     {
+      "parts": 12,
+      "shaded": 3,
+      "label": "3/12 = 0.25"
+     }
+    ],
+    "highlight": [
+     "b2"
+    ],
+    "note": "3 out of 12 is a quarter of a dozen = 0.25"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 12,
+      "shaded": 12,
+      "label": "1 dozen"
+     },
+     {
+      "parts": 12,
+      "shaded": 12,
+      "label": "1 dozen"
+     },
+     {
+      "parts": 12,
+      "shaded": 3,
+      "label": "0.25 dozen"
+     }
+    ],
+    "note": "2 dozens + 0.25 dozen = 2.25 dozen"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_034": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      }
+     ],
+     "label": "12 buckets",
+     "brace": "108 litres"
+    },
+    {
+     "segments": [
+      {
+       "units": 12,
+       "label": "? buckets",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "162 litres"
+    }
+   ],
+   "note": "Every bucket holds the same amount"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "9 L",
+        "tone": "a"
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       }
+      ],
+      "label": "12 buckets",
+      "brace": "108 litres"
+     },
+     {
+      "segments": [
+       {
+        "units": 12,
+        "label": "? buckets",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "162 litres"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "One bucket holds 108 ÷ 12 = 9 litres"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "9 L",
+        "tone": "a"
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       }
+      ],
+      "label": "12 buckets",
+      "brace": "108 litres"
+     },
+     {
+      "segments": [
+       {
+        "units": 12,
+        "label": "18 buckets",
+        "tone": "b"
+       }
+      ],
+      "brace": "162 litres"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "162 ÷ 9 = 18 buckets"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_035": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "A"
+      },
+      {
+       "units": 1,
+       "label": "B"
+      },
+      {
+       "units": 1,
+       "label": "C"
+      },
+      {
+       "units": 1,
+       "label": "D"
+      },
+      {
+       "units": 1,
+       "label": "E"
+      }
+     ],
+     "brace": "Rs.21 in all"
+    }
+   ],
+   "note": "A+B = 6, B+C = 10, C+D = 7, D+E = 9. A + E = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "A",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "B",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "C",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "D",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "E"
+       }
+      ],
+      "brace": "Rs.21 in all"
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3"
+    ],
+    "note": "A + B and C + D do not overlap: 6 + 7 = 13"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "A",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "B",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "C",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "D",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "E = 8",
+        "tone": "c"
+       }
+      ],
+      "brace": "Rs.21 in all"
+     }
+    ],
+    "highlight": [
+     "b0s4"
+    ],
+    "note": "What is left is E: 21 − 13 = 8"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "A = 2"
+       },
+       {
+        "units": 1,
+        "label": "B = 4"
+       },
+       {
+        "units": 1,
+        "label": "C = 6"
+       },
+       {
+        "units": 1,
+        "label": "D = 1"
+       },
+       {
+        "units": 1,
+        "label": "E = 8"
+       }
+      ],
+      "brace": "Rs.21 in all"
+     }
+    ],
+    "note": "Work back along the pairs: D = 1, C = 6, B = 4, A = 2"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "A = 2",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "B = 4"
+       },
+       {
+        "units": 1,
+        "label": "C = 6"
+       },
+       {
+        "units": 1,
+        "label": "D = 1"
+       },
+       {
+        "units": 1,
+        "label": "E = 8",
+        "tone": "a"
+       }
+      ],
+      "brace": "Rs.21 in all"
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s4"
+    ],
+    "note": "A + E = 2 + 8 = 10"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_037": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "x",
+       "tone": "a"
+      }
+     ],
+     "label": "angle"
+    },
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "x",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "x",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "x",
+       "tone": "b"
+      }
+     ],
+     "label": "supplement"
+    }
+   ],
+   "note": "An angle and its supplement together make 180°"
+  },
+  "stepFigures": [
+   {
+    "kind": "angles",
+    "layout": "onLine",
+    "parts": [
+     {
+      "label": "x"
+     },
+     {
+      "label": "180° − x"
+     }
+    ],
+    "note": "The angle and its supplement sit together on a straight line"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "x",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "x",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "x",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "x",
+        "tone": "b"
+       }
+      ],
+      "brace": "180°"
+     }
+    ],
+    "note": "The supplement is 3 lots of x, so 4 lots of x make 180°"
+   },
+   {
+    "kind": "angles",
+    "layout": "onLine",
+    "parts": [
+     {
+      "label": "45°",
+      "size": 45
+     },
+     {
+      "label": "135°"
+     }
+    ],
+    "highlight": [
+     "p0"
+    ],
+    "note": "x = 180° ÷ 4 = 45°, and its supplement is 135°"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_038": {
+  "origin": "authored",
+  "figure": {
+   "kind": "triangle",
+   "shape": "scalene",
+   "sides": {
+    "ab": "(2a + 6) cm",
+    "bc": "(3a + 5) cm",
+    "ca": "(a + 7) cm"
+   },
+   "note": "a = 3. Perimeter = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "triangle",
+    "shape": "scalene",
+    "sides": {
+     "ab": "12 cm",
+     "bc": "(3a + 5) cm",
+     "ca": "(a + 7) cm"
+    },
+    "highlight": [
+     "ab"
+    ],
+    "note": "2 × 3 + 6 = 12 cm"
+   },
+   {
+    "kind": "triangle",
+    "shape": "scalene",
+    "sides": {
+     "ab": "12 cm",
+     "bc": "14 cm",
+     "ca": "(a + 7) cm"
+    },
+    "highlight": [
+     "bc"
+    ],
+    "note": "3 × 3 + 5 = 14 cm"
+   },
+   {
+    "kind": "triangle",
+    "shape": "scalene",
+    "sides": {
+     "ab": "12 cm",
+     "bc": "14 cm",
+     "ca": "10 cm"
+    },
+    "highlight": [
+     "ca"
+    ],
+    "note": "3 + 7 = 10 cm"
+   },
+   {
+    "kind": "triangle",
+    "shape": "scalene",
+    "sides": {
+     "ab": "12 cm",
+     "bc": "14 cm",
+     "ca": "10 cm"
+    },
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ],
+    "note": "Perimeter = 12 + 14 + 10 = 36 cm"
+   }
+  ]
+ },
+ "EXT_G5_FP_2016_039": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 5,
+       "label": "the sum = 100%",
+       "tone": "unknown"
+      },
+      {
+       "units": 0.5,
+       "label": "10%",
+       "tone": "b"
+      },
+      {
+       "units": 0.5,
+       "label": "10%",
+       "tone": "b"
+      },
+      {
+       "units": 0.5,
+       "label": "10%",
+       "tone": "b"
+      },
+      {
+       "units": 0.5,
+       "label": "10%",
+       "tone": "b"
+      },
+      {
+       "units": 0.5,
+       "label": "10%",
+       "tone": "b"
+      }
+     ],
+     "brace": "Rs.4500 after 5 years"
+    }
+   ],
+   "note": "Each year adds 10% of the sum as interest"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "the sum = 100%",
+        "tone": "unknown"
+       },
+       {
+        "units": 0.5,
+        "label": "10%",
+        "tone": "b"
+       },
+       {
+        "units": 0.5,
+        "label": "10%",
+        "tone": "b"
+       },
+       {
+        "units": 0.5,
+        "label": "10%",
+        "tone": "b"
+       },
+       {
+        "units": 0.5,
+        "label": "10%",
+        "tone": "b"
+       },
+       {
+        "units": 0.5,
+        "label": "10%",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.4500 after 5 years"
+     }
+    ],
+    "highlight": [
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4",
+     "b0s5"
+    ],
+    "note": "Interest for 5 years = 5 × 10% = 50% of the sum"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "the sum = 100%",
+        "tone": "unknown"
+       },
+       {
+        "units": 2.5,
+        "label": "interest = 50%",
+        "tone": "b"
+       }
+      ],
+      "brace": "150% = Rs.4500"
+     }
+    ],
+    "note": "Sum + interest = 100% + 50% = 150% of the sum"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.3000",
+        "tone": "a"
+       },
+       {
+        "units": 2.5,
+        "label": "interest = 50%",
+        "tone": "b"
+       }
+      ],
+      "brace": "150% = Rs.4500"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "1% = 4500 ÷ 150 = 30, so the sum = Rs.3000"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "A"
+      },
+      {
+       "units": 1,
+       "label": "B"
+      },
+      {
+       "units": 1,
+       "label": "C"
+      },
+      {
+       "units": 1,
+       "label": "D"
+      },
+      {
+       "units": 1,
+       "label": "E"
+      }
+     ],
+     "brace": "105 in all"
+    }
+   ],
+   "note": "A+B = 39, B+C = 40, C+D = 38, D+E = 44. Youngest = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "A",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "B",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "C",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "D",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "E = 28",
+        "tone": "c"
+       }
+      ],
+      "brace": "105 in all"
+     }
+    ],
+    "highlight": [
+     "b0s4"
+    ],
+    "note": "Take away A + B and C + D: 105 − 39 − 38 = 28"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "A = 21",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "B",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "C",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "D",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "E",
+        "tone": "b"
+       }
+      ],
+      "brace": "105 in all"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "Take away B + C and D + E: 105 − 40 − 44 = 21"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "A = 21"
+       },
+       {
+        "units": 1,
+        "label": "B = 18"
+       },
+       {
+        "units": 1,
+        "label": "C = 22"
+       },
+       {
+        "units": 1,
+        "label": "D = 16"
+       },
+       {
+        "units": 1,
+        "label": "E = 28"
+       }
+      ],
+      "brace": "105 in all"
+     }
+    ],
+    "note": "Work along the pairs: B = 18, C = 22, D = 16"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "A = 21"
+       },
+       {
+        "units": 1,
+        "label": "B = 18"
+       },
+       {
+        "units": 1,
+        "label": "C = 22"
+       },
+       {
+        "units": 1,
+        "label": "D = 16",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "E = 28"
+       }
+      ],
+      "brace": "105 in all"
+     }
+    ],
+    "highlight": [
+     "b0s3"
+    ],
+    "note": "The youngest is D, aged 16"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "fractionBars",
+   "bars": [
+    {
+     "parts": 6,
+     "shaded": 5,
+     "label": "before: 5/6 full"
+    },
+    {
+     "parts": 5,
+     "shaded": 4,
+     "label": "after: 4/5 full"
+    }
+   ],
+   "note": "30 litres were taken out in between. Full tank = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 6,
+      "shaded": 5,
+      "label": "5/6 = 25/30"
+     },
+     {
+      "parts": 5,
+      "shaded": 4,
+      "label": "4/5 = 24/30"
+     }
+    ],
+    "note": "In thirtieths the gap is 25/30 − 24/30 = 1/30"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 6,
+      "shaded": 5,
+      "label": "5/6 = 25/30"
+     },
+     {
+      "parts": 5,
+      "shaded": 4,
+      "label": "4/5 = 24/30"
+     }
+    ],
+    "note": "That gap of 1/30 of the tank is the 30 litres"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 1,
+      "shaded": 1,
+      "label": "full = 900 litres"
+     }
+    ],
+    "note": "30 parts of 30 litres each: 30 × 30 = 900 litres"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10,
+       "label": "100%",
+       "tone": "a"
+      }
+     ],
+     "label": "list price"
+    },
+    {
+     "segments": [
+      {
+       "units": 8,
+       "label": "shop pays ?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2,
+       "label": "20% off",
+       "tone": "b"
+      }
+     ]
+    },
+    {
+     "segments": [
+      {
+       "units": 9.2,
+       "label": "shop sells for ?",
+       "tone": "unknown"
+      },
+      {
+       "units": 0.8,
+       "label": "8%",
+       "tone": "b"
+      }
+     ]
+    }
+   ],
+   "note": "Both discounts are taken off the same list price"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.100",
+        "tone": "a"
+       }
+      ],
+      "label": "list price"
+     },
+     {
+      "segments": [
+       {
+        "units": 8,
+        "label": "shop pays ?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2,
+        "label": "20% off",
+        "tone": "b"
+       }
+      ]
+     },
+     {
+      "segments": [
+       {
+        "units": 9.2,
+        "label": "shop sells for ?",
+        "tone": "unknown"
+       },
+       {
+        "units": 0.8,
+        "label": "8%",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "Pretend the list price is Rs.100"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.100",
+        "tone": "a"
+       }
+      ],
+      "label": "list price"
+     },
+     {
+      "segments": [
+       {
+        "units": 8,
+        "label": "shop pays Rs.80",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "20% off",
+        "tone": "b"
+       }
+      ]
+     },
+     {
+      "segments": [
+       {
+        "units": 9.2,
+        "label": "shop sells for ?",
+        "tone": "unknown"
+       },
+       {
+        "units": 0.8,
+        "label": "8%",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b1s0"
+    ],
+    "note": "The shop pays 100 − 20 = Rs.80"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.100",
+        "tone": "a"
+       }
+      ],
+      "label": "list price"
+     },
+     {
+      "segments": [
+       {
+        "units": 8,
+        "label": "shop pays Rs.80",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "20% off",
+        "tone": "b"
+       }
+      ]
+     },
+     {
+      "segments": [
+       {
+        "units": 9.2,
+        "label": "shop sells Rs.92",
+        "tone": "a"
+       },
+       {
+        "units": 0.8,
+        "label": "8%",
+        "tone": "b"
+       }
+      ]
+     }
+    ],
+    "highlight": [
+     "b2s0"
+    ],
+    "note": "The shop sells for 100 − 8 = Rs.92"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8,
+        "label": "shop pays Rs.80",
+        "tone": "a"
+       },
+       {
+        "units": 1.2,
+        "label": "profit Rs.12",
+        "tone": "c"
+       }
+      ],
+      "brace": "shop sells Rs.92"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "Profit 12 on a cost of 80 = 12 ÷ 80 × 100 = 15%"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_005": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 11,
+   "minute": 0,
+   "highlight": [
+    "hour"
+   ],
+   "note": "The hour hand now turns through 165°. What time is it then?"
+  },
+  "stepFigures": [
+   {
+    "kind": "clock",
+    "hour": 11,
+    "minute": 0,
+    "highlight": [
+     "hour"
+    ],
+    "note": "The hour hand turns 30° every hour: 165 ÷ 30 = 5.5 hours"
+   },
+   {
+    "kind": "clock",
+    "hour": 4,
+    "minute": 30,
+    "highlight": [
+     "hour"
+    ],
+    "note": "5 h 30 min after 11:00 a.m. is 4:30 p.m."
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "headers": [
+    "Child",
+    "Age"
+   ],
+   "rows": [
+    [
+     "David",
+     "Chetan + 5"
+    ],
+    [
+     "Bunty",
+     "David − 3"
+    ],
+    [
+     "Anil",
+     "Chetan − 3"
+    ],
+    [
+     "All four",
+     "20 in total"
+    ]
+   ],
+   "note": "Everyone is described from Chetan or David. Anil = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "headers": [
+     "Child",
+     "Age"
+    ],
+    "rows": [
+     [
+      "Chetan",
+      "c"
+     ],
+     [
+      "David",
+      "c + 5"
+     ],
+     [
+      "Bunty",
+      "c + 2"
+     ],
+     [
+      "Anil",
+      "c − 3"
+     ]
+    ],
+    "note": "Write every age using Chetan's age c"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Child",
+     "Age"
+    ],
+    "rows": [
+     [
+      "Chetan",
+      "c"
+     ],
+     [
+      "David",
+      "c + 5"
+     ],
+     [
+      "Bunty",
+      "c + 2"
+     ],
+     [
+      "Anil",
+      "c − 3"
+     ]
+    ],
+    "note": "Add them up: 4c + 4 = 20"
+   },
+   null,
+   {
+    "kind": "table",
+    "headers": [
+     "Child",
+     "Age"
+    ],
+    "rows": [
+     [
+      "Chetan",
+      "4"
+     ],
+     [
+      "Anil",
+      "4 − 3 = 1"
+     ]
+    ],
+    "highlight": [
+     "r1"
+    ],
+    "note": "Chetan is 4, so Anil is 4 − 3 = 1 year old"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "headers": [
+    "Men",
+    "Hours"
+   ],
+   "rows": [
+    [
+     "72",
+     "40"
+    ],
+    [
+     "9",
+     "?"
+    ]
+   ],
+   "note": "Fewer men need more hours for the same work"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "headers": [
+     "Men",
+     "Hours",
+     "Work"
+    ],
+    "rows": [
+     [
+      "72",
+      "40",
+      "2880 man-hours"
+     ],
+     [
+      "9",
+      "?",
+      "2880 man-hours"
+     ]
+    ],
+    "highlight": [
+     "r0"
+    ],
+    "note": "The job is 72 × 40 = 2880 man-hours whoever does it"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Men",
+     "Hours",
+     "Work"
+    ],
+    "rows": [
+     [
+      "72",
+      "40",
+      "2880 man-hours"
+     ],
+     [
+      "9",
+      "320",
+      "2880 man-hours"
+     ]
+    ],
+    "highlight": [
+     "r1"
+    ],
+    "note": "9 men need 2880 ÷ 9 = 320 hours"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Men",
+     "Hours"
+    ],
+    "rows": [
+     [
+      "72",
+      "40"
+     ],
+     [
+      "9",
+      "320"
+     ]
+    ],
+    "note": "8 times fewer men, so 8 times as long: 40 × 8 = 320"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10,
+       "label": "Rs.3000",
+       "tone": "a"
+      }
+     ],
+     "label": "sum"
+    },
+    {
+     "segments": [
+      {
+       "units": 1.2,
+       "label": "12%",
+       "tone": "b"
+      },
+      {
+       "units": 1.2,
+       "label": "12%",
+       "tone": "b"
+      },
+      {
+       "units": 1.2,
+       "label": "12%",
+       "tone": "b"
+      },
+      {
+       "units": 1.2,
+       "label": "12%",
+       "tone": "b"
+      },
+      {
+       "units": 1.2,
+       "label": "12%",
+       "tone": "b"
+      }
+     ],
+     "label": "interest",
+     "brace": "5 years = Rs.?"
+    }
+   ],
+   "note": "Every year adds 12% of Rs.3000"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.3000",
+        "tone": "a"
+       }
+      ],
+      "label": "sum"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.2,
+        "label": "12%",
+        "tone": "b"
+       },
+       {
+        "units": 1.2,
+        "label": "12%",
+        "tone": "b"
+       },
+       {
+        "units": 1.2,
+        "label": "12%",
+        "tone": "b"
+       },
+       {
+        "units": 1.2,
+        "label": "12%",
+        "tone": "b"
+       },
+       {
+        "units": 1.2,
+        "label": "12%",
+        "tone": "b"
+       }
+      ],
+      "label": "interest",
+      "brace": "5 years = Rs.?"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "1% of 3000 = 30"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.3000",
+        "tone": "a"
+       }
+      ],
+      "label": "sum"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.2,
+        "label": "Rs.360",
+        "tone": "c"
+       },
+       {
+        "units": 1.2,
+        "label": "12%",
+        "tone": "b"
+       },
+       {
+        "units": 1.2,
+        "label": "12%",
+        "tone": "b"
+       },
+       {
+        "units": 1.2,
+        "label": "12%",
+        "tone": "b"
+       },
+       {
+        "units": 1.2,
+        "label": "12%",
+        "tone": "b"
+       }
+      ],
+      "label": "interest",
+      "brace": "5 years = Rs.?"
+     }
+    ],
+    "highlight": [
+     "b1s0"
+    ],
+    "note": "One year at 12% = 12 × 30 = Rs.360"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.3000",
+        "tone": "a"
+       }
+      ],
+      "label": "sum"
+     },
+     {
+      "segments": [
+       {
+        "units": 1.2,
+        "label": "Rs.360",
+        "tone": "c"
+       },
+       {
+        "units": 1.2,
+        "label": "Rs.360",
+        "tone": "c"
+       },
+       {
+        "units": 1.2,
+        "label": "Rs.360",
+        "tone": "c"
+       },
+       {
+        "units": 1.2,
+        "label": "Rs.360",
+        "tone": "c"
+       },
+       {
+        "units": 1.2,
+        "label": "Rs.360",
+        "tone": "c"
+       }
+      ],
+      "label": "interest",
+      "brace": "5 years = Rs.1800"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "Five years = 5 × 360 = Rs.1800"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 3,
+       "label": "now Rs.8640",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "cut ?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "was Rs.10800"
+    }
+   ],
+   "note": "What percent of the old price was taken off?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "now Rs.8640",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.2160",
+        "tone": "b"
+       }
+      ],
+      "brace": "was Rs.10800"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "Cut = 10800 − 8640 = Rs.2160"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "now Rs.8640",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20%",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.10800 = 100%"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "2160 ÷ 10800 × 100 = 20%"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_013": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "numberLine",
+    "min": 0,
+    "max": 96,
+    "step": 12,
+    "hops": [
+     {
+      "from": 0,
+      "to": 12
+     },
+     {
+      "from": 12,
+      "to": 24
+     },
+     {
+      "from": 24,
+      "to": 36
+     },
+     {
+      "from": 36,
+      "to": 48
+     },
+     {
+      "from": 48,
+      "to": 60
+     },
+     {
+      "from": 60,
+      "to": 72
+     },
+     {
+      "from": 72,
+      "to": 84
+     },
+     {
+      "from": 84,
+      "to": 96
+     }
+    ],
+    "note": "Jump in 12s: 12, 24, 36, 48, 60, 72, 84, 96 are the two-digit ones"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2017_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "set",
+   "total": 21,
+   "item": "oranges",
+   "note": "How many dozens (groups of 12) is this?"
+  },
+  "stepFigures": [
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 12,
+      "shaded": 12,
+      "label": "1 dozen"
+     },
+     {
+      "parts": 12,
+      "shaded": 9,
+      "label": "9 oranges left"
+     }
+    ],
+    "note": "21 oranges = 1 full dozen and 9 left over"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 12,
+      "shaded": 12,
+      "label": "1 dozen"
+     },
+     {
+      "parts": 12,
+      "shaded": 9,
+      "label": "9/12 = 0.75"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "9 out of 12 is 3/4 of a dozen = 0.75"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 12,
+      "shaded": 12,
+      "label": "1 dozen"
+     },
+     {
+      "parts": 12,
+      "shaded": 9,
+      "label": "0.75 dozen"
+     }
+    ],
+    "note": "1 dozen + 0.75 dozen = 1.75 dozen"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2,
+       "label": "Rs.2000 put in",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "interest ?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.3500 at the end"
+    }
+   ],
+   "note": "Each year adds 5% of Rs.2000. How many years?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "Rs.2000 put in",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "Rs.1500",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.3500 at the end"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "Interest needed = 3500 − 2000 = Rs.1500"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "Rs.2000 put in",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "Rs.1500",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.3500 at the end"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "One year adds 5% of 2000 = Rs.100"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "Rs.2000 put in",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "15 × Rs.100",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.3500 at the end"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "1500 ÷ 100 = 15 years"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "triangle",
+   "shape": "equilateral",
+   "sides": {
+    "ab": "8 cm",
+    "bc": "8 cm",
+    "ca": "8 cm"
+   },
+   "note": "A square has the same perimeter as this triangle. Its side = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "8 cm",
+     "bc": "8 cm",
+     "ca": "8 cm"
+    },
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ],
+    "note": "Triangle perimeter = 3 × 8 = 24 cm"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "6 cm",
+    "breadth": "6 cm",
+    "inside": "Perimeter = 24 cm",
+    "highlight": [
+     "border"
+    ],
+    "note": "Four equal sides share 24 cm: 24 ÷ 4 = 6 cm"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "length",
+   "breadth": "half the length",
+   "inside": "Perimeter = 48 cm",
+   "proportion": 2,
+   "note": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "16 cm",
+    "breadth": "8 cm",
+    "inside": "Perimeter = 48 cm",
+    "proportion": 2,
+    "highlight": [
+     "length",
+     "breadth"
+    ],
+    "note": "Length + breadth = 24 cm = 3 breadths, so breadth 8 cm, length 16 cm"
+   },
+   {
+    "kind": "rectangle",
+    "length": "16 cm",
+    "breadth": "8 cm",
+    "inside": "Area = 128 sq.cm",
+    "proportion": 2,
+    "highlight": [
+     "fill"
+    ],
+    "note": "Area = 16 × 8 = 128 sq.cm"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "balance",
+   "left": "2x + 1",
+   "right": "8",
+   "note": "Both pans weigh the same. What would 4x + 1 weigh?"
+  },
+  "stepFigures": [
+   {
+    "kind": "balance",
+    "left": "2x",
+    "right": "7",
+    "note": "Take 1 off both pans: 2x = 7"
+   },
+   {
+    "kind": "balance",
+    "left": "4x",
+    "right": "14",
+    "note": "Double both pans: 4x = 14"
+   },
+   {
+    "kind": "balance",
+    "left": "4x + 1",
+    "right": "15",
+    "note": "Put 1 back on both pans: 4x + 1 = 15"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_021": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "250000 lions in 1976"
+    }
+   ],
+   "note": "90% of them are gone. How many are left?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "10%",
+        "tone": "a"
+       }
+      ],
+      "brace": "250000 lions = 100%"
+     }
+    ],
+    "highlight": [
+     "b0s9"
+    ],
+    "note": "Left = 100% − 90% = 10%"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "25000",
+        "tone": "a"
+       }
+      ],
+      "brace": "250000 lions = 100%"
+     }
+    ],
+    "highlight": [
+     "b0s9"
+    ],
+    "note": "10% is one of ten equal parts: 25000"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2017_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      }
+     ],
+     "label": "7 days",
+     "brace": "Rs.504"
+    },
+    {
+     "segments": [
+      {
+       "units": 11,
+       "label": "? days",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.792"
+    }
+   ],
+   "note": "He earns the same amount every day"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.72",
+        "tone": "a"
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       }
+      ],
+      "label": "7 days",
+      "brace": "Rs.504"
+     },
+     {
+      "segments": [
+       {
+        "units": 11,
+        "label": "? days",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "Rs.792"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "One day pays 504 ÷ 7 = Rs.72"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.72",
+        "tone": "a"
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       }
+      ],
+      "label": "7 days",
+      "brace": "Rs.504"
+     },
+     {
+      "segments": [
+       {
+        "units": 11,
+        "label": "11 days",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.792"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "792 ÷ 72 = 11 days"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_023": {
+  "origin": "authored",
+  "figure": {
+   "kind": "compass",
+   "facing": "NE",
+   "highlight": [
+    "start"
+   ],
+   "note": "He turns to his left until he faces West. How big is the turn?"
+  },
+  "stepFigures": [
+   {
+    "kind": "compass",
+    "facing": "NE",
+    "turns": [
+     {
+      "degrees": 45,
+      "direction": "anticlockwise"
+     }
+    ],
+    "showEnd": true,
+    "highlight": [
+     "t0"
+    ],
+    "note": "North-East to North is 45° to the left"
+   },
+   {
+    "kind": "compass",
+    "facing": "NE",
+    "turns": [
+     {
+      "degrees": 45,
+      "direction": "anticlockwise"
+     },
+     {
+      "degrees": 45,
+      "direction": "anticlockwise"
+     }
+    ],
+    "showEnd": true,
+    "highlight": [
+     "t1"
+    ],
+    "note": "North to North-West is another 45°: 90° so far"
+   },
+   {
+    "kind": "compass",
+    "facing": "NE",
+    "turns": [
+     {
+      "degrees": 45,
+      "direction": "anticlockwise"
+     },
+     {
+      "degrees": 45,
+      "direction": "anticlockwise"
+     },
+     {
+      "degrees": 45,
+      "direction": "anticlockwise"
+     }
+    ],
+    "showEnd": true,
+    "highlight": [
+     "t2",
+     "end"
+    ],
+    "note": "North-West to West is another 45°: 135° in all"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_027": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 11,
+   "minute": 30,
+   "note": "All bark together now, then every 5, 8 and 12 minutes"
+  },
+  "stepFigures": [
+   {
+    "kind": "clock",
+    "hour": 11,
+    "minute": 30,
+    "note": "They bark together again after 120 minutes = 2 hours"
+   },
+   {
+    "kind": "clock",
+    "hour": 1,
+    "minute": 30,
+    "highlight": [
+     "hour"
+    ],
+    "note": "2 hours after 11:30 p.m. is 1:30 a.m."
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_030": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "(4a + 3b)",
+   "breadth": "(3a − b)",
+   "inside": "Perimeter = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "(4a + 3b)",
+    "breadth": "(3a − b)",
+    "highlight": [
+     "length",
+     "breadth"
+    ],
+    "note": "One length + one breadth = 7a + 2b"
+   },
+   {
+    "kind": "rectangle",
+    "length": "(4a + 3b)",
+    "breadth": "(3a − b)",
+    "inside": "14a + 4b",
+    "highlight": [
+     "border"
+    ],
+    "note": "All the way round is twice that: 2 × (7a + 2b) = 14a + 4b"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_031": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4,
+       "label": "Rs.18",
+       "tone": "a"
+      }
+     ],
+     "label": "12 pencils"
+    },
+    {
+     "segments": [
+      {
+       "units": 6,
+       "label": "Rs.?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "18 pencils"
+    }
+   ],
+   "note": "A dozen is 12"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.18",
+        "tone": "a"
+       }
+      ],
+      "label": "12 pencils"
+     },
+     {
+      "segments": [
+       {
+        "units": 6,
+        "label": "Rs.?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "18 pencils"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "1 pencil costs 18 ÷ 12 = Rs.1.50"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.18",
+        "tone": "a"
+       }
+      ],
+      "label": "12 pencils"
+     },
+     {
+      "segments": [
+       {
+        "units": 6,
+        "label": "Rs.27",
+        "tone": "b"
+       }
+      ],
+      "label": "18 pencils"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "18 pencils cost 18 × 1.50 = Rs.27"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_033": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "7",
+     "5",
+     "2",
+     "0",
+     "4"
+    ]
+   ],
+   "note": "An odd number must end in an odd digit: 7 or 5"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "74205",
+    "highlight": [
+     "d4"
+    ],
+    "note": "Ending in 5: biggest digits first gives 74205"
+   },
+   {
+    "kind": "placeChart",
+    "number": "54207",
+    "highlight": [
+     "d4"
+    ],
+    "note": "Ending in 7: the best start left is 5, giving 54207"
+   },
+   {
+    "kind": "placeChart",
+    "number": "74205",
+    "highlight": [
+     "d0"
+    ],
+    "note": "74205 starts with 7, so it is the greater one"
+   },
+   {
+    "kind": "placeChart",
+    "number": "75420",
+    "highlight": [
+     "d4"
+    ],
+    "note": "75420 ends in 0, so it is even"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_034": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 360,
+    "max": 400,
+    "step": 5,
+    "points": [
+     {
+      "at": 361,
+      "label": "19² = 361"
+     },
+     {
+      "at": 370,
+      "label": "370"
+     },
+     {
+      "at": 400,
+      "label": "20² = 400"
+     }
+    ],
+    "note": "370 lies between the squares 361 and 400"
+   },
+   {
+    "kind": "numberLine",
+    "min": 360,
+    "max": 400,
+    "step": 5,
+    "points": [
+     {
+      "at": 361,
+      "label": "361"
+     },
+     {
+      "at": 370,
+      "label": "370"
+     }
+    ],
+    "hops": [
+     {
+      "from": 370,
+      "to": 361,
+      "label": "− 9"
+     }
+    ],
+    "highlight": [
+     "h0"
+    ],
+    "note": "Step back from 370 to 361: take away 9"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_038": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "front at pole",
+    "back at pole"
+   ],
+   "legs": [
+    {
+     "top": "200 m",
+     "bottom": "9 seconds"
+    }
+   ],
+   "note": "To pass the pole the train moves its own length"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "front at pole",
+     "back at pole"
+    ],
+    "legs": [
+     {
+      "top": "200 m",
+      "bottom": "9 seconds"
+     }
+    ],
+    "highlight": [
+     "l0"
+    ],
+    "note": "Speed = 200 ÷ 9 metres every second"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "front at pole",
+     "back at pole"
+    ],
+    "legs": [
+     {
+      "top": "80 km/hr",
+      "bottom": "9 seconds"
+     }
+    ],
+    "highlight": [
+     "l0"
+    ],
+    "note": "Multiply by 18/5 to change to km/hr: 80 km/hr"
+   }
+  ]
+ },
+ "EXT_G5_FP_2017_039": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "8621",
+    "highlight": [
+     "d0",
+     "d2"
+    ],
+    "note": "Thousands 8, tens 2: the tens digit is the smaller one"
+   },
+   {
+    "kind": "placeChart",
+    "number": "2386",
+    "highlight": [
+     "d0",
+     "d2"
+    ],
+    "note": "Thousands 2, tens 8: 8 = 4 × 2"
+   },
+   {
+    "kind": "placeChart",
+    "number": "8326",
+    "highlight": [
+     "d0",
+     "d2"
+    ],
+    "note": "Thousands 8, tens 2 again, so this one does not fit"
+   },
+   {
+    "kind": "placeChart",
+    "number": "2386",
+    "highlight": [
+     "d0",
+     "d2"
+    ],
+    "note": "2386 is the one that fits"
+   }
+  ],
+  "usesOptions": true
+ },
+ "EXT_G5_FP_2017_040": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "?",
+   "inside": "Perimeter = 120 m",
+   "note": "Find one side first, then the area"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "30 m",
+    "breadth": "30 m",
+    "highlight": [
+     "length"
+    ],
+    "note": "Four equal sides: 120 ÷ 4 = 30 m each"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "30 m",
+    "breadth": "30 m",
+    "inside": "Area = 900 sq.m",
+    "highlight": [
+     "fill"
+    ],
+    "note": "Area = 30 × 30 = 900 sq.m"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "110 m",
+   "breadth": "70 m",
+   "inside": "1 g of seed per sq.m",
+   "note": "How much seed for the whole field?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "110 m",
+    "breadth": "70 m",
+    "inside": "7700 sq.m",
+    "highlight": [
+     "fill"
+    ],
+    "note": "Area = 110 × 70 = 7700 sq.m"
+   },
+   {
+    "kind": "rectangle",
+    "length": "110 m",
+    "breadth": "70 m",
+    "inside": "7700 g of seed",
+    "highlight": [
+     "fill"
+    ],
+    "note": "1 g for each sq.m: 7700 g"
+   },
+   {
+    "kind": "rectangle",
+    "length": "110 m",
+    "breadth": "70 m",
+    "inside": "7.7 kg of seed",
+    "note": "1000 g make 1 kg: 7700 ÷ 1000 = 7.7 kg"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "43541",
+   "highlight": [
+    "d1",
+    "d2"
+   ],
+   "note": "A 2 goes in between the 3 and the 5. How much bigger is it now?"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "432541",
+    "highlight": [
+     "d2"
+    ],
+    "note": "New number 432541: the 4 and 3 each moved one place left"
+   },
+   {
+    "kind": "placeChart",
+    "number": "432541",
+    "note": "432541 − 43541 = 389000"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_007": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "angles",
+    "layout": "onLine",
+    "parts": [
+     {
+      "label": "30°",
+      "size": 30
+     },
+     {
+      "label": "150°"
+     }
+    ],
+    "highlight": [
+     "p1"
+    ],
+    "note": "The supplement of 30° is 150°, which is more than 90°"
+   },
+   {
+    "kind": "angles",
+    "layout": "inRightAngle",
+    "parts": [
+     {
+      "label": "x"
+     },
+     {
+      "label": "90° − x"
+     }
+    ],
+    "highlight": [
+     "p1"
+    ],
+    "note": "Both pieces fit inside a right angle, so both are acute"
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G5_FP_2018_008": {
+  "origin": "authored",
+  "figure": {
+   "kind": "fractionBars",
+   "bars": [
+    {
+     "parts": 5,
+     "shaded": 1,
+     "label": "A = 1/5"
+    },
+    {
+     "parts": 3,
+     "shaded": 1,
+     "label": "B = 1/3"
+    }
+   ],
+   "note": "C is exactly halfway between A and B"
+  },
+  "stepFigures": [
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 15,
+      "shaded": 3,
+      "label": "A = 3/15"
+     },
+     {
+      "parts": 15,
+      "shaded": 5,
+      "label": "B = 5/15"
+     }
+    ],
+    "note": "Cut both into 15 equal parts to compare"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 15,
+      "shaded": 3,
+      "label": "A = 3/15"
+     },
+     {
+      "parts": 15,
+      "shaded": 4,
+      "label": "C = 4/15"
+     },
+     {
+      "parts": 15,
+      "shaded": 5,
+      "label": "B = 5/15"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "Halfway between 3 parts and 5 parts is 4 parts"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2018_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "length ?",
+   "breadth": "breadth ?",
+   "inside": "Perimeter = 72 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "length ?",
+    "breadth": "breadth ?",
+    "inside": "Perimeter = 72 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ],
+    "note": "One length + one breadth = 72 ÷ 2 = 36"
+   },
+   null,
+   {
+    "kind": "rectangle",
+    "length": "21",
+    "breadth": "15",
+    "inside": "Perimeter = 72 cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ],
+    "note": "21 + 15 = 36, so this pair fits"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "headers": [
+    "Men",
+    "Days"
+   ],
+   "rows": [
+    [
+     "nine",
+     "32"
+    ],
+    [
+     "72",
+     "?"
+    ]
+   ],
+   "note": "More men finish the same work in fewer days"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "headers": [
+     "Men",
+     "Days",
+     "Work"
+    ],
+    "rows": [
+     [
+      "9",
+      "32",
+      "288 man-days"
+     ],
+     [
+      "72",
+      "?",
+      "288 man-days"
+     ]
+    ],
+    "highlight": [
+     "r0"
+    ],
+    "note": "The job is 9 × 32 = 288 man-days whoever does it"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Men",
+     "Days",
+     "Work"
+    ],
+    "rows": [
+     [
+      "9",
+      "32",
+      "288 man-days"
+     ],
+     [
+      "72",
+      "4",
+      "288 man-days"
+     ]
+    ],
+    "highlight": [
+     "r1"
+    ],
+    "note": "72 men need 288 ÷ 72 = 4 days"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Men",
+     "Days"
+    ],
+    "rows": [
+     [
+      "9",
+      "32"
+     ],
+     [
+      "72",
+      "4"
+     ]
+    ],
+    "note": "8 times as many men, so 8 times quicker: 32 ÷ 8 = 4"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "adults",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "adults",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "adults",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "adults",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "120 children",
+       "tone": "b"
+      }
+     ],
+     "brace": "all visitors"
+    },
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "male",
+       "tone": "c"
+      },
+      {
+       "units": 1,
+       "label": "male",
+       "tone": "c"
+      },
+      {
+       "units": 1,
+       "label": "male",
+       "tone": "c"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      }
+     ],
+     "brace": "the adults"
+    }
+   ],
+   "note": "4/5 are adults; 3/8 of the adults are male. Male adults = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "adults",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "adults",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "adults",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "adults",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "120 children",
+        "tone": "b"
+       }
+      ],
+      "brace": "all visitors"
+     }
+    ],
+    "highlight": [
+     "b0s4"
+    ],
+    "note": "Children are the other 1/5 of the visitors = 120"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "120",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "120",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "120",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "120",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "120",
+        "tone": "b"
+       }
+      ],
+      "brace": "600 visitors"
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3"
+    ],
+    "note": "Visitors = 120 × 5 = 600; adults = 600 − 120 = 480"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "male",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "male",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "male",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       }
+      ],
+      "brace": "480 adults"
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2"
+    ],
+    "note": "3/8 of 480 = 480 ÷ 8 × 3 = 180 male adults"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_014": {
+  "origin": "authored",
+  "figure": {
+   "kind": "angles",
+   "layout": "inRightAngle",
+   "parts": [
+    {
+     "label": "(38 − x)°"
+    },
+    {
+     "label": "?"
+    }
+   ],
+   "note": "An angle and its complement together make 90°"
+  },
+  "stepFigures": [
+   {
+    "kind": "angles",
+    "layout": "inRightAngle",
+    "parts": [
+     {
+      "label": "(38 − x)°"
+     },
+     {
+      "label": "90 − (38 − x)"
+     }
+    ],
+    "highlight": [
+     "p1"
+    ],
+    "note": "The other piece is what is left of 90°"
+   },
+   null,
+   {
+    "kind": "angles",
+    "layout": "inRightAngle",
+    "parts": [
+     {
+      "label": "(38 − x)°"
+     },
+     {
+      "label": "(52 + x)°"
+     }
+    ],
+    "highlight": [
+     "p1"
+    ],
+    "note": "90 − 38 + x = (52 + x)°"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10,
+       "label": "Rs.8000",
+       "tone": "a"
+      }
+     ],
+     "label": "deposit"
+    },
+    {
+     "segments": [
+      {
+       "units": 0.6,
+       "label": "6%",
+       "tone": "b"
+      },
+      {
+       "units": 0.6,
+       "label": "6%",
+       "tone": "b"
+      }
+     ],
+     "label": "interest",
+     "brace": "2 years = Rs.?"
+    }
+   ],
+   "note": "Each year adds 6% of Rs.8000"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.8000",
+        "tone": "a"
+       }
+      ],
+      "label": "deposit"
+     },
+     {
+      "segments": [
+       {
+        "units": 0.6,
+        "label": "Rs.480",
+        "tone": "c"
+       },
+       {
+        "units": 0.6,
+        "label": "6%",
+        "tone": "b"
+       }
+      ],
+      "label": "interest",
+      "brace": "2 years = Rs.?"
+     }
+    ],
+    "highlight": [
+     "b1s0"
+    ],
+    "note": "1% of 8000 = 80, so 6% = Rs.480 for one year"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.8000",
+        "tone": "a"
+       }
+      ],
+      "label": "deposit"
+     },
+     {
+      "segments": [
+       {
+        "units": 0.6,
+        "label": "Rs.480",
+        "tone": "c"
+       },
+       {
+        "units": 0.6,
+        "label": "Rs.480",
+        "tone": "c"
+       }
+      ],
+      "label": "interest",
+      "brace": "2 years = Rs.960"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "Two years: 480 × 2 = Rs.960"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "square": true,
+   "length": "(3a − 7) cm",
+   "breadth": "(2a − 1) cm",
+   "note": "All sides of a square are equal. Perimeter = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "(3a − 7) cm",
+    "breadth": "(2a − 1) cm",
+    "highlight": [
+     "length",
+     "breadth"
+    ],
+    "note": "Equal sides: 3a − 7 = 2a − 1, so a = 6"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "11 cm",
+    "breadth": "11 cm",
+    "highlight": [
+     "length"
+    ],
+    "note": "Side = 3 × 6 − 7 = 11 cm"
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "11 cm",
+    "breadth": "11 cm",
+    "inside": "Perimeter = 44 cm",
+    "highlight": [
+     "border"
+    ],
+    "note": "Perimeter = 4 × 11 = 44 cm"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4,
+       "label": "cost of 6 dozen ?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "label": "profit Rs.180",
+       "tone": "b"
+      }
+     ],
+     "brace": "3 × Rs.150 + 3 × Rs.200"
+    }
+   ],
+   "note": "The money from selling covers the cost and the profit"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "cost of 6 dozen ?",
+        "tone": "unknown"
+       },
+       {
+        "units": 1,
+        "label": "profit Rs.180",
+        "tone": "b"
+       }
+      ],
+      "brace": "sold for Rs.1050"
+     }
+    ],
+    "note": "Sales = 3 × 150 + 3 × 200 = 450 + 600 = Rs.1050"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "cost Rs.870",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "profit Rs.180",
+        "tone": "b"
+       }
+      ],
+      "brace": "sold for Rs.1050"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "Cost = 1050 − 180 = Rs.870 for 6 dozen"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.145",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       }
+      ],
+      "brace": "Rs.870 for 6 dozen"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "One dozen cost 870 ÷ 6 = Rs.145"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "start",
+    "3 min later"
+   ],
+   "legs": [
+    {
+     "top": "? m",
+     "bottom": "3 minutes"
+    }
+   ],
+   "note": "He walks 6 km in every hour"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "start",
+     "1 hour later"
+    ],
+    "legs": [
+     {
+      "top": "6000 m",
+      "bottom": "60 minutes"
+     }
+    ],
+    "note": "6 km = 6000 m, walked in 60 minutes"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "start",
+     "1 min later"
+    ],
+    "legs": [
+     {
+      "top": "100 m",
+      "bottom": "1 minute"
+     }
+    ],
+    "note": "In one minute: 6000 ÷ 60 = 100 m"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "start",
+     "3 min later"
+    ],
+    "legs": [
+     {
+      "top": "300 m",
+      "bottom": "3 minutes"
+     }
+    ],
+    "highlight": [
+     "l0"
+    ],
+    "note": "In 3 minutes: 3 × 100 = 300 m"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "9",
+     "5",
+     "0",
+     "7",
+     "3"
+    ]
+   ],
+   "note": "Make the greatest number, then look at where 5 and 3 sit"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "97530",
+    "note": "Biggest digits first: 97530"
+   },
+   {
+    "kind": "placeChart",
+    "number": "97530",
+    "highlight": [
+     "d2",
+     "d3"
+    ],
+    "note": "5 is in the hundreds (500); 3 is in the tens (30)"
+   },
+   {
+    "kind": "placeChart",
+    "number": "97530",
+    "highlight": [
+     "d2",
+     "d3"
+    ],
+    "note": "Difference = 500 − 30 = 470"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_024": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "factorTree",
+    "number": 54,
+    "highlight": [
+     "primes"
+    ],
+    "note": "54 = 2 × 3 × 3 × 3"
+   },
+   {
+    "kind": "factorTree",
+    "number": 288,
+    "highlight": [
+     "primes"
+    ],
+    "note": "288 = 2 × 2 × 2 × 2 × 2 × 3 × 3"
+   },
+   {
+    "kind": "factorTree",
+    "number": 360,
+    "highlight": [
+     "primes"
+    ],
+    "note": "360 = 2 × 2 × 2 × 3 × 3 × 5"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Number",
+     "2s",
+     "3s"
+    ],
+    "rows": [
+     [
+      "54",
+      "one",
+      "three"
+     ],
+     [
+      "288",
+      "five",
+      "two"
+     ],
+     [
+      "360",
+      "three",
+      "two"
+     ]
+    ],
+    "note": "Shared by all: one 2 and two 3s, so 2 × 9 = 18"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 5,
+       "label": "gain Rs.45",
+       "tone": "a"
+      }
+     ],
+     "label": "15 dozens"
+    },
+    {
+     "segments": [
+      {
+       "units": 9,
+       "label": "gain Rs.84",
+       "tone": "b"
+      }
+     ],
+     "label": "? dozens"
+    }
+   ],
+   "note": "Every dozen brings the same gain"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "gain Rs.45",
+        "tone": "a"
+       }
+      ],
+      "label": "15 dozens"
+     },
+     {
+      "segments": [
+       {
+        "units": 9,
+        "label": "gain Rs.84",
+        "tone": "b"
+       }
+      ],
+      "label": "? dozens"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "One dozen gains 45 ÷ 15 = Rs.3"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "gain Rs.45",
+        "tone": "a"
+       }
+      ],
+      "label": "15 dozens"
+     },
+     {
+      "segments": [
+       {
+        "units": 9,
+        "label": "gain Rs.84",
+        "tone": "b"
+       }
+      ],
+      "label": "28 dozens"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "84 ÷ 3 = 28 dozens"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_029": {
+  "origin": "authored",
+  "figure": {
+   "kind": "triangle",
+   "shape": "equilateral",
+   "sides": {
+    "ab": "?",
+    "bc": "?",
+    "ca": "?"
+   },
+   "note": "Perimeter = 16a + 7b, with a = 2 and b = 4"
+  },
+  "stepFigures": [
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "?",
+     "bc": "?",
+     "ca": "?"
+    },
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ],
+    "note": "Perimeter = 16 × 2 + 7 × 4 = 32 + 28 = 60"
+   },
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "20",
+     "bc": "20",
+     "ca": "20"
+    },
+    "note": "Three equal sides share 60: 60 ÷ 3 = 20"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_030": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 8,
+       "label": "sale price ?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2,
+       "label": "20% off",
+       "tone": "b"
+      }
+     ],
+     "brace": "Rs.800"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8,
+        "label": "sale price ?",
+        "tone": "unknown"
+       },
+       {
+        "units": 2,
+        "label": "Rs.160 off",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.800"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "20% of 800 = Rs.160"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8,
+        "label": "Rs.640",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "Rs.160 off",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.800"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "Sale price = 800 − 160 = Rs.640"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_031": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 8,
+       "label": "Rs.4000",
+       "tone": "a"
+      }
+     ],
+     "label": "sum"
+    },
+    {
+     "segments": [
+      {
+       "units": 8,
+       "label": "interest so far",
+       "tone": "unknown"
+      }
+     ],
+     "label": "to double"
+    }
+   ],
+   "note": "Each year adds 12.5% of Rs.4000. How many years to double?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8,
+        "label": "Rs.4000",
+        "tone": "a"
+       }
+      ],
+      "label": "sum"
+     },
+     {
+      "segments": [
+       {
+        "units": 8,
+        "label": "Rs.4000",
+        "tone": "b"
+       }
+      ],
+      "label": "interest"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "To double, the interest must equal the sum: Rs.4000"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8,
+        "label": "Rs.4000",
+        "tone": "a"
+       }
+      ],
+      "label": "sum"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.500",
+        "tone": "c"
+       },
+       {
+        "units": 7,
+        "tone": "b"
+       }
+      ],
+      "label": "interest",
+      "brace": "Rs.4000"
+     }
+    ],
+    "highlight": [
+     "b1s0"
+    ],
+    "note": "One year adds 12.5% of 4000 = Rs.500"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8,
+        "label": "Rs.4000",
+        "tone": "a"
+       }
+      ],
+      "label": "sum"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "500",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "500",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "500",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "500",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "500",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "500",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "500",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "500",
+        "tone": "c"
+       }
+      ],
+      "label": "interest",
+      "brace": "Rs.4000 in 8 years"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "4000 ÷ 500 = 8 years"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_035": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "30%",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "30%",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "30%",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "30%",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "5 tests of 80 marks"
+    }
+   ],
+   "note": "He wants 35% of all the marks. Marks needed in the 5th test?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "30%",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "30%",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "30%",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "30%",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "400 marks: need 140"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "All 5 tests: 5 × 80 = 400 marks; 35% of 400 = 140"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "30%",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "30%",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "30%",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "30%",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "400 marks: need 140"
+     }
+    ],
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3"
+    ],
+    "note": "First 4 tests: 30% of 320 = 96 marks so far"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "96 marks so far",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "44",
+        "tone": "b"
+       }
+      ],
+      "brace": "400 marks: need 140"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "5th test: 140 − 96 = 44 marks"
+   }
+  ]
+ },
+ "EXT_G5_FP_2018_036": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "front at man",
+    "back at man"
+   ],
+   "legs": [
+    {
+     "top": "100 m",
+     "bottom": "? seconds"
+    }
+   ],
+   "note": "The train moves its own length at 36 km/hr"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "front at man",
+     "back at man"
+    ],
+    "legs": [
+     {
+      "top": "100 m at 10 m/s",
+      "bottom": "? seconds"
+     }
+    ],
+    "note": "36 km/hr is the same as 10 metres every second"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "front at man",
+     "back at man"
+    ],
+    "legs": [
+     {
+      "top": "100 m at 10 m/s",
+      "bottom": "10 seconds"
+     }
+    ],
+    "highlight": [
+     "l0"
+    ],
+    "note": "Time = 100 ÷ 10 = 10 seconds"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_001": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "twice the breadth",
+   "breadth": "breadth",
+   "inside": "Perimeter = 90 cm",
+   "proportion": 2,
+   "note": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "30 cm",
+    "breadth": "15 cm",
+    "inside": "Perimeter = 90 cm",
+    "proportion": 2,
+    "highlight": [
+     "length",
+     "breadth"
+    ],
+    "note": "Length + breadth = 45 cm = 3 breadths, so breadth 15 cm, length 30 cm"
+   },
+   {
+    "kind": "rectangle",
+    "length": "30 cm",
+    "breadth": "15 cm",
+    "inside": "Area = 450 sq.cm",
+    "proportion": 2,
+    "highlight": [
+     "fill"
+    ],
+    "note": "Area = 30 × 15 = 450 sq.cm"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10,
+       "label": "cost price ?",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "label": "10%",
+       "tone": "b"
+      }
+     ],
+     "brace": "sold for Rs.407"
+    }
+   ],
+   "note": "The profit is 10% of the cost price"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "cost = 100%",
+        "tone": "unknown"
+       },
+       {
+        "units": 1,
+        "label": "10%",
+        "tone": "b"
+       }
+      ],
+      "brace": "110% = Rs.407"
+     }
+    ],
+    "note": "Cost + profit = 110% of the cost, so 1% = 407 ÷ 110 = 3.7"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.370",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "10%",
+        "tone": "b"
+       }
+      ],
+      "brace": "110% = Rs.407"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "Cost price = 3.7 × 100 = Rs.370"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_003": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.062"
+     ],
+     [
+      "0.050"
+     ],
+     [
+      "0.560"
+     ],
+     [
+      "0.034"
+     ],
+     [
+      "0.007"
+     ]
+    ],
+    "note": "Give every number 3 decimal places so they line up"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.560"
+     ],
+     [
+      "0.062"
+     ],
+     [
+      "0.050"
+     ],
+     [
+      "0.034"
+     ],
+     [
+      "0.007"
+     ]
+    ],
+    "note": "Biggest first: 0.560, 0.062, 0.050, 0.034, 0.007"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "0.560"
+     ],
+     [
+      "0.062"
+     ],
+     [
+      "0.050"
+     ],
+     [
+      "0.034"
+     ],
+     [
+      "0.007"
+     ]
+    ],
+    "highlight": [
+     "r0",
+     "r3"
+    ],
+    "note": "1st is 0.56 and 4th is 0.034"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2019_004": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10,
+       "label": "sum = ?",
+       "tone": "unknown"
+      }
+     ]
+    },
+    {
+     "segments": [
+      {
+       "units": 0.9,
+       "label": "9%",
+       "tone": "b"
+      },
+      {
+       "units": 0.9,
+       "label": "9%",
+       "tone": "b"
+      },
+      {
+       "units": 0.9,
+       "label": "9%",
+       "tone": "b"
+      }
+     ],
+     "label": "interest",
+     "brace": "Rs.189 in 3 years"
+    }
+   ],
+   "note": "Each year adds 9% of the sum"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "sum = 100%",
+        "tone": "unknown"
+       }
+      ]
+     },
+     {
+      "segments": [
+       {
+        "units": 2.7,
+        "label": "27% of the sum",
+        "tone": "b"
+       }
+      ],
+      "label": "interest",
+      "brace": "Rs.189 in 3 years"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "3 years at 9% = 27% of the sum"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.700",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "segments": [
+       {
+        "units": 2.7,
+        "label": "27% of the sum",
+        "tone": "b"
+       }
+      ],
+      "label": "interest",
+      "brace": "Rs.189 in 3 years"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "Sum = 189 × 100 ÷ 27 = Rs.700"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.700",
+        "tone": "a"
+       }
+      ]
+     },
+     {
+      "segments": [
+       {
+        "units": 0.9,
+        "label": "Rs.63",
+        "tone": "c"
+       },
+       {
+        "units": 0.9,
+        "label": "Rs.63",
+        "tone": "c"
+       },
+       {
+        "units": 0.9,
+        "label": "Rs.63",
+        "tone": "c"
+       }
+      ],
+      "label": "interest",
+      "brace": "Rs.189 in 3 years"
+     }
+    ],
+    "note": "Check: 9% of 700 = 63 a year, and 63 × 3 = 189"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_006": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "start",
+    "18 min later"
+   ],
+   "legs": [
+    {
+     "top": "900 m",
+     "bottom": "18 minutes"
+    }
+   ],
+   "note": "How far in 60 minutes at the same pace?"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "start",
+     "1 min later"
+    ],
+    "legs": [
+     {
+      "top": "50 m",
+      "bottom": "1 minute"
+     }
+    ],
+    "note": "In one minute: 900 ÷ 18 = 50 m"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "start",
+     "1 hour later"
+    ],
+    "legs": [
+     {
+      "top": "3000 m",
+      "bottom": "60 minutes"
+     }
+    ],
+    "note": "In 60 minutes: 50 × 60 = 3000 m"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "start",
+     "1 hour later"
+    ],
+    "legs": [
+     {
+      "top": "3 km",
+      "bottom": "60 minutes"
+     }
+    ],
+    "highlight": [
+     "l0"
+    ],
+    "note": "3000 m = 3 km"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_008": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 840,
+    "max": 900,
+    "step": 5,
+    "points": [
+     {
+      "at": 841,
+      "label": "29 × 29"
+     },
+     {
+      "at": 850,
+      "label": "850"
+     },
+     {
+      "at": 900,
+      "label": "30 × 30"
+     }
+    ],
+    "note": "850 lies between the squares 841 and 900"
+   },
+   null,
+   {
+    "kind": "numberLine",
+    "min": 840,
+    "max": 900,
+    "step": 5,
+    "points": [
+     {
+      "at": 841,
+      "label": "841 in rows"
+     },
+     {
+      "at": 850,
+      "label": "850"
+     }
+    ],
+    "hops": [
+     {
+      "from": 841,
+      "to": 850,
+      "label": "9 left out"
+     }
+    ],
+    "highlight": [
+     "h0"
+    ],
+    "note": "850 − 841 = 9 soldiers are left out"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "headers": [
+    "People",
+    "Time",
+    "Rice"
+   ],
+   "rows": [
+    [
+     "five",
+     "1 day",
+     "1 kg"
+    ],
+    [
+     "20",
+     "1 week",
+     "?"
+    ]
+   ],
+   "note": "Change one thing at a time: first the people, then the days"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "headers": [
+     "People",
+     "Time",
+     "Rice"
+    ],
+    "rows": [
+     [
+      "5",
+      "1 day",
+      "1 kg"
+     ],
+     [
+      "20",
+      "1 day",
+      "4 kg"
+     ],
+     [
+      "20",
+      "1 week",
+      "?"
+     ]
+    ],
+    "highlight": [
+     "r1"
+    ],
+    "note": "20 people is 4 groups of 5, so 4 kg in a day"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "People",
+     "Time",
+     "Rice"
+    ],
+    "rows": [
+     [
+      "5",
+      "1 day",
+      "1 kg"
+     ],
+     [
+      "20",
+      "1 day",
+      "4 kg"
+     ],
+     [
+      "20",
+      "7 days",
+      "28 kg"
+     ]
+    ],
+    "highlight": [
+     "r2"
+    ],
+    "note": "A week is 7 days: 4 × 7 = 28 kg"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_011": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 3,
+      "shaded": 2,
+      "label": "36/54 = 2/3"
+     }
+    ],
+    "note": "Divide top and bottom by 18: 36/54 = 2/3"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 3,
+      "shaded": 2,
+      "label": "36/54 = 2/3"
+     },
+     {
+      "parts": 21,
+      "shaded": 14,
+      "label": "14/21"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "14/21 shades the same amount: divide by 7 to get 2/3"
+   },
+   null,
+   null
+  ]
+ },
+ "EXT_G5_FP_2019_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "angles",
+   "layout": "onLine",
+   "parts": [
+    {
+     "label": "obtuse angle",
+     "size": 125
+    },
+    {
+     "label": "?"
+    }
+   ],
+   "note": "An angle and its supplement together make a straight line"
+  },
+  "stepFigures": [
+   {
+    "kind": "angles",
+    "layout": "onLine",
+    "parts": [
+     {
+      "label": "obtuse angle",
+      "size": 125
+     },
+     {
+      "label": "?"
+     }
+    ],
+    "highlight": [
+     "p0"
+    ],
+    "note": "An obtuse angle is more than 90° but less than 180°"
+   },
+   {
+    "kind": "angles",
+    "layout": "onLine",
+    "parts": [
+     {
+      "label": "obtuse angle",
+      "size": 125
+     },
+     {
+      "label": "180° − x"
+     }
+    ],
+    "highlight": [
+     "p1"
+    ],
+    "note": "What is left of the straight line is less than 90°"
+   },
+   {
+    "kind": "angles",
+    "layout": "onLine",
+    "parts": [
+     {
+      "label": "obtuse angle",
+      "size": 125
+     },
+     {
+      "label": "acute angle"
+     }
+    ],
+    "highlight": [
+     "p1"
+    ],
+    "note": "An angle smaller than 90° is an acute angle"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      },
+      {
+       "units": 1
+      }
+     ],
+     "label": "five litres",
+     "brace": "Rs.370"
+    },
+    {
+     "segments": [
+      {
+       "units": 1,
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "tone": "unknown"
+      }
+     ],
+     "label": "three litres",
+     "brace": "Rs.?"
+    }
+   ],
+   "note": "Each litre costs the same"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.74",
+        "tone": "a"
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       }
+      ],
+      "label": "5 litres",
+      "brace": "Rs.370"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "tone": "unknown"
+       },
+       {
+        "units": 1,
+        "tone": "unknown"
+       },
+       {
+        "units": 1,
+        "tone": "unknown"
+       }
+      ],
+      "label": "three litres",
+      "brace": "Rs.?"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "1 litre = 370 ÷ 5 = Rs.74"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.74",
+        "tone": "a"
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       },
+       {
+        "units": 1
+       }
+      ],
+      "label": "5 litres",
+      "brace": "Rs.370"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "Rs.74",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.74",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.74",
+        "tone": "b"
+       }
+      ],
+      "label": "3 litres",
+      "brace": "Rs.222"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "3 litres = 3 × 74 = Rs.222"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_016": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4,
+       "label": "40% passed",
+       "tone": "a"
+      },
+      {
+       "units": 6,
+       "label": "420 did not pass",
+       "tone": "b"
+      }
+     ],
+     "brace": "all students = ?"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "40% passed",
+        "tone": "a"
+       },
+       {
+        "units": 6,
+        "label": "60% = 420",
+        "tone": "b"
+       }
+      ],
+      "brace": "all students = ?"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "The rest is 100% − 40% = 60%, and that is 420 students"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "40% passed",
+        "tone": "a"
+       },
+       {
+        "units": 6,
+        "label": "60% = 420",
+        "tone": "b"
+       }
+      ],
+      "brace": "all students = ?"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "1% = 420 ÷ 60 = 7 students"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "40% passed",
+        "tone": "a"
+       },
+       {
+        "units": 6,
+        "label": "60% = 420",
+        "tone": "b"
+       }
+      ],
+      "brace": "100% = 700 students"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "100% = 700 students"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "angles",
+   "layout": "inRightAngle",
+   "parts": [
+    {
+     "label": "(35 − x)°"
+    },
+    {
+     "label": "?"
+    }
+   ],
+   "note": "An angle and its complement together make 90°"
+  },
+  "stepFigures": [
+   {
+    "kind": "angles",
+    "layout": "inRightAngle",
+    "parts": [
+     {
+      "label": "(35 − x)°"
+     },
+     {
+      "label": "90 − (35 − x)"
+     }
+    ],
+    "highlight": [
+     "p1"
+    ],
+    "note": "The other piece is what is left of 90°"
+   },
+   null,
+   {
+    "kind": "angles",
+    "layout": "inRightAngle",
+    "parts": [
+     {
+      "label": "(35 − x)°"
+     },
+     {
+      "label": "(55 + x)°"
+     }
+    ],
+    "highlight": [
+     "p1"
+    ],
+    "note": "90 − 35 + x = (55 + x)°"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "fractionBars",
+   "bars": [
+    {
+     "parts": 12,
+     "shaded": 11,
+     "label": "11/12"
+    },
+    {
+     "parts": 11,
+     "shaded": 10,
+     "label": "10/11"
+    },
+    {
+     "parts": 22,
+     "shaded": 21,
+     "label": "21/22"
+    }
+   ],
+   "note": "7/6 is more than a whole. Look at the piece each of these is missing"
+  },
+  "stepFigures": [
+   null,
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 12,
+      "shaded": 11,
+      "label": "1/12 missing"
+     },
+     {
+      "parts": 11,
+      "shaded": 10,
+      "label": "1/11 missing"
+     },
+     {
+      "parts": 22,
+      "shaded": 21,
+      "label": "1/22 missing"
+     }
+    ],
+    "note": "Each is one piece short of a whole: 1/12, 1/11 and 1/22"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 12,
+      "shaded": 11,
+      "label": "11/12"
+     },
+     {
+      "parts": 11,
+      "shaded": 10,
+      "label": "10/11"
+     },
+     {
+      "parts": 22,
+      "shaded": 21,
+      "label": "21/22"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "1/11 is the biggest missing piece, so 10/11 is the smallest"
+   }
+  ],
+  "usesOptions": true
+ },
+ "EXT_G5_FP_2019_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "headers": [
+    "Th",
+    "H",
+    "T",
+    "O"
+   ],
+   "rows": [
+    [
+     "?",
+     "5",
+     "?",
+     "?"
+    ]
+   ],
+   "note": "2, 3 and 4 fill the empty places, each used once"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "headers": [
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "rows": [
+     [
+      "?",
+      "5",
+      "?",
+      "?"
+     ]
+    ],
+    "note": "Fix the 5 in the hundreds place"
+   },
+   null,
+   {
+    "kind": "table",
+    "headers": [
+     "Th",
+     "H",
+     "T",
+     "O"
+    ],
+    "rows": [
+     [
+      "3 choices",
+      "5",
+      "2 choices",
+      "1 choice"
+     ]
+    ],
+    "note": "3 × 2 × 1 = 6 different numbers"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2019_022": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "25 cm",
+   "breadth": "?",
+   "inside": "= area of 15 cm square",
+   "note": "Find the breadth, then compare the two perimeters"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "15 cm",
+    "breadth": "15 cm",
+    "inside": "225 sq.cm",
+    "highlight": [
+     "fill"
+    ],
+    "note": "Square area = 15 × 15 = 225 sq.cm"
+   },
+   {
+    "kind": "rectangle",
+    "length": "25 cm",
+    "breadth": "9 cm",
+    "inside": "225 sq.cm",
+    "proportion": 2.8,
+    "highlight": [
+     "breadth"
+    ],
+    "note": "Rectangle breadth = 225 ÷ 25 = 9 cm"
+   },
+   {
+    "kind": "rectangle",
+    "length": "25 cm",
+    "breadth": "9 cm",
+    "proportion": 2.8,
+    "highlight": [
+     "border"
+    ],
+    "note": "Rectangle: 2 × (25 + 9) = 68 cm. Square: 4 × 15 = 60 cm"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2019_023": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "start",
+    "finish"
+   ],
+   "legs": [
+    {
+     "top": "18 km at 72 km/hr",
+     "bottom": "? minutes"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "start",
+     "finish"
+    ],
+    "legs": [
+     {
+      "top": "18 km at 72 km/hr",
+      "bottom": "1/4 hour"
+     }
+    ],
+    "note": "18 km is a quarter of 72 km, so it takes 1/4 of an hour"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "start",
+     "finish"
+    ],
+    "legs": [
+     {
+      "top": "18 km at 72 km/hr",
+      "bottom": "15 minutes"
+     }
+    ],
+    "highlight": [
+     "l0"
+    ],
+    "note": "1/4 × 60 = 15 minutes"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_024": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "16",
+     "bc": "16",
+     "ca": "16"
+    },
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ],
+    "note": "Triangle: 3 × 16 = 48. Square of side 12: 4 × 12 = 48. Equal"
+   },
+   null
+  ],
+  "usesOptions": true
+ },
+ "EXT_G5_FP_2019_027": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 12,
+   "minute": 12,
+   "highlight": [
+    "minute"
+   ],
+   "note": "What part of a full hour is 12 minutes?"
+  },
+  "stepFigures": [
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 5,
+      "shaded": 1,
+      "label": "12/60 = 1/5"
+     }
+    ],
+    "shape": "circle",
+    "note": "12 minutes is 1/5 of the hour = 0.20"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "triangle",
+   "shape": "scalene",
+   "angles": {
+    "a": "(2x − 6)°",
+    "b": "x°",
+    "c": "(x + 10)°"
+   },
+   "note": "The three angles of a triangle add up to 180°"
+  },
+  "stepFigures": [
+   {
+    "kind": "triangle",
+    "shape": "scalene",
+    "angles": {
+     "a": "(2x − 6)°",
+     "b": "x°",
+     "c": "(x + 10)°"
+    },
+    "highlight": [
+     "a",
+     "b",
+     "c"
+    ],
+    "note": "x + x + 10 + 2x − 6 = 180, so 4x = 176 and x = 44"
+   },
+   {
+    "kind": "triangle",
+    "shape": "scalene",
+    "angles": {
+     "a": "82°",
+     "b": "44°",
+     "c": "54°"
+    },
+    "note": "The angles are 44°, 54° and 82°"
+   },
+   {
+    "kind": "triangle",
+    "shape": "scalene",
+    "angles": {
+     "a": "82°",
+     "b": "44°",
+     "c": "54°"
+    },
+    "highlight": [
+     "a"
+    ],
+    "note": "The greatest angle is 82°"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_029": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10,
+       "label": "150 toys",
+       "tone": "a"
+      }
+     ],
+     "label": "60 seconds"
+    },
+    {
+     "segments": [
+      {
+       "units": 3,
+       "label": "? toys",
+       "tone": "unknown"
+      }
+     ],
+     "label": "18 seconds"
+    }
+   ],
+   "note": "One minute is 60 seconds"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "150 toys",
+        "tone": "a"
+       }
+      ],
+      "label": "60 seconds"
+     },
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "? toys",
+        "tone": "unknown"
+       }
+      ],
+      "label": "18 seconds"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "In 1 second: 150 ÷ 60 = 2.5 toys"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "150 toys",
+        "tone": "a"
+       }
+      ],
+      "label": "60 seconds"
+     },
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "45 toys",
+        "tone": "b"
+       }
+      ],
+      "label": "18 seconds"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "In 18 seconds: 2.5 × 18 = 45 toys"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_030": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "75003064",
+   "note": "Use the same digits to make the smallest number"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "75003064",
+    "highlight": [
+     "d2",
+     "d3",
+     "d5"
+    ],
+    "note": "Digits 7, 5, 0, 0, 3, 0, 6, 4: there are three zeros"
+   },
+   null,
+   {
+    "kind": "placeChart",
+    "number": "30004567",
+    "highlight": [
+     "d0"
+    ],
+    "note": "Start with 3 (not 0), then the zeros, then 4, 5, 6, 7"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_031": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 5,
+       "label": "Rs.3200 put in",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "interest ?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.3680 after 3 years"
+    }
+   ],
+   "note": "What percent of Rs.3200 is added each year?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.3200 put in",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.480",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.3680 after 3 years"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "Interest = 3680 − 3200 = Rs.480"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "Rs.3200 put in",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.480",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.3680 after 3 years"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "480 × 100 ÷ (3200 × 3) = 5% each year"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_034": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 1290,
+    "max": 1370,
+    "step": 5,
+    "points": [
+     {
+      "at": 1296,
+      "label": "36² = 1296"
+     },
+     {
+      "at": 1325,
+      "label": "1325"
+     },
+     {
+      "at": 1369,
+      "label": "37² = 1369"
+     }
+    ],
+    "note": "1325 lies between the squares 1296 and 1369"
+   },
+   {
+    "kind": "numberLine",
+    "min": 1290,
+    "max": 1370,
+    "step": 5,
+    "points": [
+     {
+      "at": 1325,
+      "label": "1325"
+     },
+     {
+      "at": 1369,
+      "label": "1369"
+     }
+    ],
+    "hops": [
+     {
+      "from": 1325,
+      "to": 1369,
+      "label": "+ 44"
+     }
+    ],
+    "highlight": [
+     "h0"
+    ],
+    "note": "Step up from 1325 to 1369: add 44"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_035": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4,
+       "label": "cost Rs.40",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "25% profit",
+       "tone": "b"
+      }
+     ],
+     "brace": "selling price = ?"
+    }
+   ],
+   "note": "The profit is 25% of Rs.40"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "cost Rs.40",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.10",
+        "tone": "b"
+       }
+      ],
+      "brace": "selling price = ?"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "Profit = 25% of 40 = Rs.10"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "cost Rs.40",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.10",
+        "tone": "b"
+       }
+      ],
+      "brace": "selling price = Rs.50"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "Selling price = 40 + 10 = Rs.50"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_036": {
+  "origin": "authored",
+  "figure": {
+   "kind": "triangle",
+   "shape": "right",
+   "sides": {
+    "ab": "9 cm",
+    "bc": "40 cm",
+    "ca": "41 cm"
+   },
+   "note": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "triangle",
+    "shape": "right",
+    "sides": {
+     "ab": "9 cm",
+     "bc": "40 cm",
+     "ca": "41 cm"
+    },
+    "highlight": [
+     "ab",
+     "bc"
+    ],
+    "note": "The two sides that meet at the right angle are base 40 and height 9"
+   },
+   {
+    "kind": "triangle",
+    "shape": "right",
+    "sides": {
+     "ab": "9 cm",
+     "bc": "40 cm",
+     "ca": "41 cm"
+    },
+    "enclose": true,
+    "highlight": [
+     "fill"
+    ],
+    "note": "Half of the rectangle: ½ × 40 × 9 = 180 sq.cm"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_037": {
+  "origin": "authored",
+  "figure": {
+   "kind": "placeChart",
+   "number": "87459",
+   "highlight": [
+    "d1",
+    "d3"
+   ],
+   "note": "How many times the value of the 5 is the value of the 7?"
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "87459",
+    "highlight": [
+     "d1",
+     "d3"
+    ],
+    "note": "7 is in the thousands (7000); 5 is in the tens (50)"
+   },
+   {
+    "kind": "placeChart",
+    "number": "87459",
+    "highlight": [
+     "d1",
+     "d3"
+    ],
+    "note": "7000 ÷ 50 = 140 times"
+   }
+  ]
+ },
+ "EXT_G5_FP_2019_038": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 5,
+       "label": "735",
+       "tone": "a"
+      }
+     ],
+     "label": "girls"
+    },
+    {
+     "segments": [
+      {
+       "units": 5,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "145 more",
+       "tone": "b"
+      }
+     ],
+     "label": "boys"
+    }
+   ],
+   "note": "Commerce has 435 boys and 375 girls. The rest take science"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "735",
+        "tone": "a"
+       }
+      ],
+      "label": "girls"
+     },
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "735",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "145",
+        "tone": "b"
+       }
+      ],
+      "label": "boys",
+      "brace": "880 boys"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "Boys = 735 + 145 = 880"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 5,
+        "label": "735",
+        "tone": "a"
+       }
+      ],
+      "label": "girls"
+     },
+     {
+      "segments": [
+       {
+        "units": 6,
+        "label": "880",
+        "tone": "b"
+       }
+      ],
+      "label": "boys"
+     }
+    ],
+    "note": "All students = 880 + 735 = 1615"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "commerce",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "science ?",
+        "tone": "unknown"
+       }
+      ],
+      "brace": "1615 students"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "Commerce = 435 + 375 = 810"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "commerce 810",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "science 805",
+        "tone": "b"
+       }
+      ],
+      "brace": "1615 students"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "Science = 1615 − 810 = 805"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_002": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "m",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "m",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "m",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "m",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "m",
+       "tone": "a"
+      }
+     ],
+     "label": "Arnav"
+    },
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "p",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "p",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "p",
+       "tone": "b"
+      },
+      {
+       "units": 1,
+       "label": "p",
+       "tone": "b"
+      }
+     ],
+     "label": "Pranav"
+    }
+   ],
+   "note": "One box for each hour of messages"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       }
+      ],
+      "label": "Arnav",
+      "brace": "5m"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "p",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "p",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "p",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "p",
+        "tone": "b"
+       }
+      ],
+      "label": "Pranav"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "Arnav: 5 lots of m = 5m"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       }
+      ],
+      "label": "Arnav",
+      "brace": "5m"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "p",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "p",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "p",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "p",
+        "tone": "b"
+       }
+      ],
+      "label": "Pranav",
+      "brace": "4p"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "Pranav: 4 lots of p = 4p"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "m",
+        "tone": "a"
+       }
+      ],
+      "label": "Arnav",
+      "brace": "5m"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "p",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "p",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "p",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "p",
+        "tone": "b"
+       }
+      ],
+      "label": "Pranav",
+      "brace": "4p"
+     }
+    ],
+    "note": "Together: 5m + 4p"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_003": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 8,
+       "label": "Rs.100 to pay",
+       "tone": "a"
+      },
+      {
+       "units": 2,
+       "label": "20% off",
+       "tone": "b"
+      }
+     ],
+     "brace": "the full bill = ?"
+    }
+   ]
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8,
+        "label": "80% = Rs.100",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "20% off",
+        "tone": "b"
+       }
+      ],
+      "brace": "the full bill = 100%"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "What is left to pay is 100% − 20% = 80% of the bill"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8,
+        "label": "80% = Rs.100",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "20% off",
+        "tone": "b"
+       }
+      ],
+      "brace": "the full bill = 100%"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "1% = 100 ÷ 80 = Rs.1.25"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 8,
+        "label": "80% = Rs.100",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "20% off",
+        "tone": "b"
+       }
+      ],
+      "brace": "the full bill = Rs.125"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "100% = Rs.125"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_007": {
+  "origin": "authored",
+  "figure": {
+   "kind": "angles",
+   "layout": "inRightAngle",
+   "parts": [
+    {
+     "label": "(x − 35)°"
+    },
+    {
+     "label": "?"
+    }
+   ],
+   "note": "An angle and its complement together make 90°"
+  },
+  "stepFigures": [
+   {
+    "kind": "angles",
+    "layout": "inRightAngle",
+    "parts": [
+     {
+      "label": "(x − 35)°"
+     },
+     {
+      "label": "90 − (x − 35)"
+     }
+    ],
+    "highlight": [
+     "p1"
+    ],
+    "note": "The other piece is what is left of 90°"
+   },
+   null,
+   {
+    "kind": "angles",
+    "layout": "inRightAngle",
+    "parts": [
+     {
+      "label": "(x − 35)°"
+     },
+     {
+      "label": "(125 − x)°"
+     }
+    ],
+    "highlight": [
+     "p1"
+    ],
+    "note": "90 − x + 35 = (125 − x)°"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_009": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 4,
+       "label": "Rs.120",
+       "tone": "a"
+      }
+     ],
+     "label": "8 dozens"
+    },
+    {
+     "segments": [
+      {
+       "units": 10,
+       "label": "Rs.?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "20 dozens"
+    }
+   ],
+   "note": "Every dozen earns the same"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.120",
+        "tone": "a"
+       }
+      ],
+      "label": "8 dozens"
+     },
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "20 dozens"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "One dozen earns 120 ÷ 8 = Rs.15"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "Rs.120",
+        "tone": "a"
+       }
+      ],
+      "label": "8 dozens"
+     },
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.300",
+        "tone": "b"
+       }
+      ],
+      "label": "20 dozens"
+     }
+    ],
+    "highlight": [
+     "b1"
+    ],
+    "note": "20 dozens earn 20 × 15 = Rs.300"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_010": {
+  "origin": "authored",
+  "figure": {
+   "kind": "grid",
+   "rows": 4,
+   "cols": 4,
+   "dots": true,
+   "note": "A 4 × 4 grid of squares with its 9 inside crossing points"
+  },
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 4,
+    "cols": 4,
+    "dots": true,
+    "note": "Dots: one fewer than 4 each way, so 3 × 3 = 9"
+   },
+   null,
+   null
+  ],
+  "essential": true
+ },
+ "EXT_G5_FP_2020_011": {
+  "origin": "authored",
+  "figure": {
+   "kind": "triangle",
+   "shape": "right",
+   "sides": {
+    "ab": "24 cm",
+    "bc": "7 cm",
+    "ca": "25 cm"
+   },
+   "note": "Area = ?"
+  },
+  "stepFigures": [
+   {
+    "kind": "triangle",
+    "shape": "right",
+    "sides": {
+     "ab": "24 cm",
+     "bc": "7 cm",
+     "ca": "25 cm"
+    },
+    "highlight": [
+     "ab",
+     "bc"
+    ],
+    "note": "The two sides at the right angle are base 7 and height 24"
+   },
+   {
+    "kind": "triangle",
+    "shape": "right",
+    "sides": {
+     "ab": "24 cm",
+     "bc": "7 cm",
+     "ca": "25 cm"
+    },
+    "enclose": true,
+    "highlight": [
+     "fill"
+    ],
+    "note": "Half of the rectangle: ½ × 7 × 24 = 7 × 12"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2020_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "headers": [
+    "Month",
+    "Harry",
+    "Price"
+   ],
+   "rows": [
+    [
+     "April",
+     "buys",
+     "Rs.100"
+    ],
+    [
+     "May",
+     "sells",
+     "Rs.200"
+    ],
+    [
+     "June",
+     "buys",
+     "Rs.300"
+    ],
+    [
+     "July",
+     "sells",
+     "Rs.400"
+    ]
+   ],
+   "note": "Compare all the money paid out with all the money received"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "headers": [
+     "Month",
+     "Harry",
+     "Price"
+    ],
+    "rows": [
+     [
+      "April",
+      "buys",
+      "Rs.100"
+     ],
+     [
+      "May",
+      "sells",
+      "Rs.200"
+     ],
+     [
+      "June",
+      "buys",
+      "Rs.300"
+     ],
+     [
+      "July",
+      "sells",
+      "Rs.400"
+     ]
+    ],
+    "highlight": [
+     "r0",
+     "r2"
+    ],
+    "note": "Paid out: 100 + 300 = Rs.400"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Month",
+     "Harry",
+     "Price"
+    ],
+    "rows": [
+     [
+      "April",
+      "buys",
+      "Rs.100"
+     ],
+     [
+      "May",
+      "sells",
+      "Rs.200"
+     ],
+     [
+      "June",
+      "buys",
+      "Rs.300"
+     ],
+     [
+      "July",
+      "sells",
+      "Rs.400"
+     ]
+    ],
+    "highlight": [
+     "r1",
+     "r3"
+    ],
+    "note": "Received: 200 + 400 = Rs.600"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Paid out",
+     "Received",
+     "Profit"
+    ],
+    "rows": [
+     [
+      "Rs.400",
+      "Rs.600",
+      "Rs.200"
+     ]
+    ],
+    "note": "Profit = 600 − 400 = Rs.200"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_015": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "headers": [
+    "Fruits",
+    "Total"
+   ],
+   "rows": [
+    [
+     "A + M",
+     "400"
+    ],
+    [
+     "M + O",
+     "300"
+    ],
+    [
+     "A + O",
+     "440"
+    ]
+   ],
+   "note": "He then sells 100 of each. How many of each are left?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "headers": [
+     "Fruits",
+     "Total"
+    ],
+    "rows": [
+     [
+      "A + M",
+      "400"
+     ],
+     [
+      "M + O",
+      "300"
+     ],
+     [
+      "A + O",
+      "440"
+     ]
+    ],
+    "highlight": [
+     "r0",
+     "r1",
+     "r2"
+    ],
+    "note": "All three add to 1140, counting every fruit twice: A + M + O = 570"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Fruit",
+     "How many"
+    ],
+    "rows": [
+     [
+      "O",
+      "570 − 400 = 170"
+     ],
+     [
+      "A",
+      "570 − 300 = 270"
+     ],
+     [
+      "M",
+      "570 − 440 = 130"
+     ]
+    ],
+    "note": "Take each pair away from 570 to find the fruit left out"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Fruit",
+     "Had",
+     "Left"
+    ],
+    "rows": [
+     [
+      "A",
+      "270",
+      "170"
+     ],
+     [
+      "M",
+      "130",
+      "30"
+     ],
+     [
+      "O",
+      "170",
+      "70"
+     ]
+    ],
+    "note": "Selling 100 of each leaves 170, 30 and 70"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2020_016": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "1907000",
+    "highlight": [
+     "d1",
+     "d3"
+    ],
+    "note": "9 is worth 900000 and 7 is worth 7000: difference 893000"
+   },
+   {
+    "kind": "placeChart",
+    "number": "109700",
+    "highlight": [
+     "d2",
+     "d3"
+    ],
+    "note": "9 is worth 9000 and 7 is worth 700: difference 8300"
+   },
+   {
+    "kind": "placeChart",
+    "number": "197000",
+    "highlight": [
+     "d1",
+     "d2"
+    ],
+    "note": "9 is worth 90000 and 7 is worth 7000: 90000 − 7000 = 83000"
+   },
+   {
+    "kind": "placeChart",
+    "number": "91700",
+    "highlight": [
+     "d0",
+     "d2"
+    ],
+    "note": "9 is worth 90000 and 7 is worth 700: difference 89300"
+   }
+  ],
+  "usesOptions": true
+ },
+ "EXT_G5_FP_2020_017": {
+  "origin": "authored",
+  "figure": {
+   "kind": "clock",
+   "hour": 10,
+   "minute": 0,
+   "note": "All three beep now, then every 2, 5 and 8 minutes"
+  },
+  "stepFigures": [
+   {
+    "kind": "clock",
+    "hour": 10,
+    "minute": 0,
+    "note": "The first number that 2, 5 and 8 all divide is 40"
+   },
+   {
+    "kind": "clock",
+    "hour": 10,
+    "minute": 40,
+    "highlight": [
+     "minute"
+    ],
+    "note": "40 minutes after 10:00 is 10:40 a.m."
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 2,
+       "label": "Rs.25 put in",
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "label": "interest ?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.37 at the end"
+    }
+   ],
+   "note": "Each year adds 16% of Rs.25. How many years?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "Rs.25 put in",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.12",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.37 at the end"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "Interest needed = 37 − 25 = Rs.12"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "Rs.25 put in",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.12",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.37 at the end"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "One year adds 16% of 25 = Rs.4"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6,
+        "label": "Rs.25 put in",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "Rs.4",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.4",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "Rs.4",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.37 at the end"
+     }
+    ],
+    "highlight": [
+     "b0s1",
+     "b0s2",
+     "b0s3"
+    ],
+    "note": "12 ÷ 4 = 3 years"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_019": {
+  "origin": "authored",
+  "figure": {
+   "kind": "venn",
+   "leftTitle": "Chess 5/8",
+   "rightTitle": "Carrom 3/8",
+   "left": "chess only",
+   "both": "1/4 play both",
+   "right": "carrom only",
+   "note": "What fraction of the teachers is outside both circles?"
+  },
+  "stepFigures": [
+   {
+    "kind": "venn",
+    "leftTitle": "Chess 5/8",
+    "rightTitle": "Carrom 3/8",
+    "left": "chess only",
+    "both": "1/4 play both",
+    "right": "carrom only",
+    "highlight": [
+     "left",
+     "both",
+     "right"
+    ],
+    "note": "In the circles: 5/8 + 3/8 − 1/4 = 3/4 (overlap counted once)"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 4,
+      "shaded": 3,
+      "label": "3/4 play a game"
+     }
+    ],
+    "note": "Neither = 1 − 3/4 = 1/4"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_020": {
+  "origin": "authored",
+  "figure": {
+   "kind": "journey",
+   "places": [
+    "start",
+    "24 min",
+    "24 min 40 s"
+   ],
+   "legs": [
+    {
+     "top": "? ft",
+     "bottom": "24 minutes"
+    },
+    {
+     "top": "? ft",
+     "bottom": "40 seconds"
+    }
+   ],
+   "note": "The ant moves 15 feet every minute"
+  },
+  "stepFigures": [
+   {
+    "kind": "journey",
+    "places": [
+     "start",
+     "24 min",
+     "24 min 40 s"
+    ],
+    "legs": [
+     {
+      "top": "360 ft",
+      "bottom": "24 minutes"
+     },
+     {
+      "top": "? ft",
+      "bottom": "40 seconds"
+     }
+    ],
+    "highlight": [
+     "l0"
+    ],
+    "note": "24 minutes: 24 × 15 = 360 ft"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "start",
+     "24 min",
+     "24 min 40 s"
+    ],
+    "legs": [
+     {
+      "top": "360 ft",
+      "bottom": "24 minutes"
+     },
+     {
+      "top": "10 ft",
+      "bottom": "40 seconds"
+     }
+    ],
+    "highlight": [
+     "l1"
+    ],
+    "note": "40 seconds is two thirds of a minute: 10 ft"
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "start",
+     "24 min",
+     "24 min 40 s"
+    ],
+    "legs": [
+     {
+      "top": "360 ft",
+      "bottom": "24 minutes"
+     },
+     {
+      "top": "10 ft",
+      "bottom": "40 seconds"
+     }
+    ],
+    "highlight": [
+     "l0",
+     "l1"
+    ],
+    "note": "Total = 360 + 10 = 370 ft"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_023": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 17,
+    "max": 25,
+    "step": 1,
+    "points": [
+     {
+      "at": 19,
+      "label": "prime"
+     },
+     {
+      "at": 21,
+      "label": "half of 42"
+     },
+     {
+      "at": 23,
+      "label": "prime"
+     }
+    ],
+    "note": "Look on either side of 21: the nearest primes are 19 and 23"
+   },
+   {
+    "kind": "numberLine",
+    "min": 17,
+    "max": 25,
+    "step": 1,
+    "points": [
+     {
+      "at": 19,
+      "label": "19"
+     },
+     {
+      "at": 23,
+      "label": "23"
+     }
+    ],
+    "note": "19 + 23 = 42, and no number between them is prime"
+   },
+   {
+    "kind": "numberLine",
+    "min": 17,
+    "max": 25,
+    "step": 1,
+    "points": [
+     {
+      "at": 19,
+      "label": "19"
+     },
+     {
+      "at": 23,
+      "label": "23"
+     }
+    ],
+    "hops": [
+     {
+      "from": 19,
+      "to": 23,
+      "label": "4"
+     }
+    ],
+    "highlight": [
+     "h0"
+    ],
+    "note": "Difference = 23 − 19 = 4"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_024": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 6,
+       "label": "18 days worked",
+       "tone": "a"
+      },
+      {
+       "units": 4,
+       "label": "not worked",
+       "tone": "b"
+      }
+     ],
+     "brace": "30 days = Rs.27000"
+    }
+   ],
+   "note": "Pay him only for the days he worked"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6,
+        "label": "18 days worked",
+        "tone": "a"
+       },
+       {
+        "units": 4,
+        "label": "not worked",
+        "tone": "b"
+       }
+      ],
+      "brace": "30 days = Rs.27000"
+     }
+    ],
+    "highlight": [
+     "b0"
+    ],
+    "note": "One day pays 27000 ÷ 30 = Rs.900"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6,
+        "label": "Rs.16200",
+        "tone": "a"
+       },
+       {
+        "units": 4,
+        "label": "not worked",
+        "tone": "b"
+       }
+      ],
+      "brace": "30 days = Rs.27000"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "18 days pay 18 × 900 = Rs.16200"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_025": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 1290,
+    "max": 1370,
+    "step": 5,
+    "points": [
+     {
+      "at": 1296,
+      "label": "36² = 1296"
+     },
+     {
+      "at": 1300,
+      "label": "1300"
+     },
+     {
+      "at": 1369,
+      "label": "37² = 1369"
+     }
+    ],
+    "note": "1300 lies between the squares 1296 and 1369"
+   },
+   {
+    "kind": "numberLine",
+    "min": 1290,
+    "max": 1370,
+    "step": 5,
+    "points": [
+     {
+      "at": 1300,
+      "label": "1300"
+     },
+     {
+      "at": 1369,
+      "label": "1369"
+     }
+    ],
+    "hops": [
+     {
+      "from": 1300,
+      "to": 1369,
+      "label": "+ 69"
+     }
+    ],
+    "highlight": [
+     "h0"
+    ],
+    "note": "Step up from 1300 to 1369: add 69"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_027": {
+  "origin": "authored",
+  "figure": {
+   "kind": "rectangle",
+   "length": "16 cm",
+   "breadth": "?",
+   "inside": "same area as 12 × 8",
+   "proportion": 2.6,
+   "note": "The first rectangle is 12 cm by 8 cm"
+  },
+  "stepFigures": [
+   {
+    "kind": "rectangle",
+    "length": "12 cm",
+    "breadth": "8 cm",
+    "inside": "96 sq.cm",
+    "proportion": 1.5,
+    "highlight": [
+     "fill"
+    ],
+    "note": "First rectangle: 12 × 8 = 96 sq.cm"
+   },
+   {
+    "kind": "rectangle",
+    "length": "16 cm",
+    "breadth": "6 cm",
+    "inside": "96 sq.cm",
+    "proportion": 2.6,
+    "highlight": [
+     "breadth"
+    ],
+    "note": "Second rectangle: 96 ÷ 16 = 6 cm wide"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_028": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 3,
+   "max": 47,
+   "step": 11,
+   "points": [
+    {
+     "at": 3
+    },
+    {
+     "at": 14
+    },
+    {
+     "at": 25
+    },
+    {
+     "at": 36
+    }
+   ],
+   "note": "What is the jump from each number to the next?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 3,
+    "max": 47,
+    "step": 11,
+    "points": [
+     {
+      "at": 3
+     },
+     {
+      "at": 14
+     },
+     {
+      "at": 25
+     },
+     {
+      "at": 36
+     }
+    ],
+    "hops": [
+     {
+      "from": 3,
+      "to": 14,
+      "label": "+ 11"
+     },
+     {
+      "from": 14,
+      "to": 25,
+      "label": "+ 11"
+     },
+     {
+      "from": 25,
+      "to": 36,
+      "label": "+ 11"
+     }
+    ],
+    "note": "Every term is 3 plus some jumps of 11"
+   },
+   null,
+   {
+    "kind": "numberLine",
+    "min": 3,
+    "max": 113,
+    "step": 11,
+    "points": [
+     {
+      "at": 3,
+      "label": "3"
+     },
+     {
+      "at": 113,
+      "label": "113"
+     }
+    ],
+    "hops": [
+     {
+      "from": 3,
+      "to": 113,
+      "label": "10 jumps of 11"
+     }
+    ],
+    "highlight": [
+     "p1"
+    ],
+    "note": "113 − 3 = 110 = 11 × 10, so jumps of 11 land exactly on 113"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2020_030": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10,
+       "label": "Rs.12000 borrowed",
+       "tone": "a"
+      },
+      {
+       "units": 3,
+       "label": "interest ?",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "Rs.15600 after 5 years"
+    }
+   ],
+   "note": "What percent of Rs.12000 is added each year?"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.12000 borrowed",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "Rs.3600",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.15600 after 5 years"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "Interest = 15600 − 12000 = Rs.3600"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.12000 borrowed",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "Rs.3600",
+        "tone": "b"
+       }
+      ],
+      "brace": "Rs.15600 after 5 years"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "3600 × 100 ÷ (12000 × 5) = 6% each year"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_031": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "headers": [
+     "Decagrams",
+     "Grams"
+    ],
+    "rows": [
+     [
+      "1",
+      "10"
+     ],
+     [
+      "2",
+      "20"
+     ]
+    ],
+    "highlight": [
+     "r1"
+    ],
+    "note": "A decagram is 10 grams, so 2 decagrams = 20 grams"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Grams",
+     "Milligrams"
+    ],
+    "rows": [
+     [
+      "1",
+      "1000"
+     ],
+     [
+      "20",
+      "20000"
+     ]
+    ],
+    "highlight": [
+     "r1"
+    ],
+    "note": "A gram is 1000 milligrams, so 20 grams = 20000 milligrams"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2020_032": {
+  "origin": "authored",
+  "figure": {
+   "kind": "grid",
+   "rows": 10,
+   "cols": 10,
+   "note": "Rs.100 as 100 one-rupee squares. Take 5%, then 5% of that"
+  },
+  "stepFigures": [
+   {
+    "kind": "grid",
+    "rows": 10,
+    "cols": 10,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ]
+    ],
+    "note": "5% of 100 is 5 squares: Rs.5"
+   },
+   {
+    "kind": "grid",
+    "rows": 10,
+    "cols": 10,
+    "shaded": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ]
+    ],
+    "note": "Now 5% of those 5 rupees: 5 × 5 ÷ 100 = 0.25"
+   },
+   null
+  ]
+ },
+ "EXT_G5_FP_2020_034": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 10,
+       "label": "cost price ?",
+       "tone": "unknown"
+      },
+      {
+       "units": 2,
+       "label": "20%",
+       "tone": "b"
+      }
+     ],
+     "brace": "sold for Rs.600"
+    }
+   ],
+   "note": "The profit is 20% of the cost price"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "cost = 100%",
+        "tone": "unknown"
+       },
+       {
+        "units": 2,
+        "label": "20%",
+        "tone": "b"
+       }
+      ],
+      "brace": "120% = Rs.600"
+     }
+    ],
+    "note": "Cost + profit = 120% of the cost, so 1% = 5"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.500",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "20%",
+        "tone": "b"
+       }
+      ],
+      "brace": "120% = Rs.600"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "Cost price = 5 × 100 = Rs.500"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_036": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "label": "first",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "label": "next",
+       "tone": "unknown"
+      },
+      {
+       "units": 1,
+       "label": "next",
+       "tone": "unknown"
+      }
+     ],
+     "brace": "66 in all"
+    }
+   ],
+   "note": "Three numbers in a row: each is 1 more than the one before"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "first"
+       },
+       {
+        "units": 1,
+        "label": "22",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "last"
+       }
+      ],
+      "brace": "66 in all"
+     }
+    ],
+    "highlight": [
+     "b0s1"
+    ],
+    "note": "The middle number is the average: 66 ÷ 3 = 22"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "21"
+       },
+       {
+        "units": 1,
+        "label": "22",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "23"
+       }
+      ],
+      "brace": "66 in all"
+     }
+    ],
+    "note": "One below and one above 22: 21, 22 and 23"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "21"
+       },
+       {
+        "units": 1,
+        "label": "22"
+       },
+       {
+        "units": 1,
+        "label": "23",
+        "tone": "a"
+       }
+      ],
+      "brace": "66 in all"
+     }
+    ],
+    "highlight": [
+     "b0s2"
+    ],
+    "note": "23 is the one in the choices"
+   }
+  ]
+ },
+ "EXT_G5_FP_2020_037": {
+  "origin": "authored",
+  "stepFigures": [
+   {
+    "kind": "table",
+    "headers": [
+     "Pages",
+     "How many",
+     "Digits"
+    ],
+    "rows": [
+     [
+      "1 to 9",
+      "9",
+      "9"
+     ]
+    ],
+    "note": "One-digit pages use 9 digits"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Pages",
+     "How many",
+     "Digits"
+    ],
+    "rows": [
+     [
+      "1 to 9",
+      "9",
+      "9"
+     ],
+     [
+      "10 to 99",
+      "90",
+      "180"
+     ]
+    ],
+    "highlight": [
+     "r1"
+    ],
+    "note": "Two-digit pages use 90 × 2 = 180 digits: 189 so far"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Pages",
+     "How many",
+     "Digits"
+    ],
+    "rows": [
+     [
+      "1 to 9",
+      "9",
+      "9"
+     ],
+     [
+      "10 to 99",
+      "90",
+      "180"
+     ],
+     [
+      "100 onwards",
+      "122",
+      "366"
+     ]
+    ],
+    "highlight": [
+     "r2"
+    ],
+    "note": "555 − 189 = 366 digits left, 3 for each page: 122 pages"
+   },
+   {
+    "kind": "table",
+    "headers": [
+     "Pages",
+     "How many",
+     "Digits"
+    ],
+    "rows": [
+     [
+      "1 to 9",
+      "9",
+      "9"
+     ],
+     [
+      "10 to 99",
+      "90",
+      "180"
+     ],
+     [
+      "100 onwards",
+      "122",
+      "366"
+     ]
+    ],
+    "note": "Last page = 99 + 122 = 221"
+   }
+  ]
+ }
+}

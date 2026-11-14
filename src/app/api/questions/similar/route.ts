@@ -3,6 +3,7 @@ import { findSimilarQuestion } from '@/lib/similarQuestion';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { parseUnknownArray } from '@/lib/jsonFields';
 import { logError } from '@/lib/logger';
+import { withVisual } from '@/lib/figures/lookup';
 
 export const dynamic = 'force-dynamic';
 
@@ -41,9 +42,12 @@ export async function GET(req: Request) {
 
     const stepByStep = parseUnknownArray(q.stepByStep);
 
-    // Omit correctAnswer — grading is done server-side via /api/attempts
-    const { correctAnswer: _ca, ...rest } = q;
-    return NextResponse.json({ ...rest, stepByStep });
+    // correctAnswer is included, as in /api/questions/next: the practice screen
+    // marks the answer on the spot (and would otherwise judge every "try a
+    // similar one" answer a miss). /api/attempts still re-grades on the server,
+    // so XP, mastery and progress never depend on this value.
+    // The figure and step pictures ride along, as the steps themselves already do.
+    return NextResponse.json(withVisual({ ...q, stepByStep }, { withSolution: true }));
   } catch (err) {
     logError('[questions/similar] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

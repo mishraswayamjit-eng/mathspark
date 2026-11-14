@@ -185,7 +185,8 @@ KINDS = {
             {"label": Str(), "brace": Str(24)}), 1, 3)}),
     "numberLine": Obj(
         {"min": Num(-100000, 100000), "max": Num(-100000, 100000), "step": Num(0.001, 100000)},
-        {"points": List(Obj({"at": Num(-100000, 100000, shown=True)}, {"label": Str()}), 0, 6),
+        {"tickLabels": Enum("all", "ends", "none"),
+         "points": List(Obj({"at": Num(-100000, 100000, shown=True)}, {"label": Str()}), 0, 6),
          "hops": List(Obj({"from": Num(-100000, 100000, shown=True), "to": Num(-100000, 100000, shown=True)}, {"label": Str()}), 0, 8)}),
     "journey": Obj(
         {"places": List(Str(14), 2, 4), "legs": List(Obj(optional={"top": Str(), "bottom": Str()}), 1, 3)}),
