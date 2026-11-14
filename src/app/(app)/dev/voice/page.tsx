@@ -15,6 +15,14 @@ const V3_SPEAKERS = [
   'tarun', 'sunny', 'mani', 'gokul', 'vijay', 'shruti', 'suhani', 'mohit', 'kavitha', 'rehan', 'soham', 'rupali',
 ];
 const V2_SPEAKERS = ['anushka', 'manisha', 'vidya', 'arya', 'abhilash', 'karun', 'hitesh'];
+// bulbul:v4-flash voices are personas named <name>_<language>_<style>. These are English ones
+// from Sarvam's voice list that suit a children's tutor; any other persona name can be typed in.
+const V4_SUGGESTIONS = [
+  'nupur_en_kids', 'aparna_en_edtech', 'ritu_en_edtech', 'simran_en_edtech', 'shabana_en_edtech', 'payal_en_edtech',
+  'ishita_en_stories', 'aditi_en_stories', 'amelia_en_conversational', 'sophia_en_conversational', 'roopa_en_conversational',
+];
+
+type Model = 'bulbul:v3' | 'bulbul:v2' | 'bulbul:v4-flash';
 
 const SAMPLES = [
   { label: 'A question', text: 'A rectangle is 12 cm long and 7 cm wide. What is its perimeter?' },
@@ -27,7 +35,7 @@ const SAMPLES = [
 interface Heard { model: string; speaker: string; pace: number; temperature: number }
 
 export default function VoiceTestPage() {
-  const [model, setModel] = useState<'bulbul:v3' | 'bulbul:v2'>('bulbul:v3');
+  const [model, setModel] = useState<Model>('bulbul:v3');
   const [speaker, setSpeaker] = useState('shubh');
   const [pace, setPace] = useState(0.95);
   const [temperature, setTemperature] = useState(0.6);
@@ -41,9 +49,9 @@ export default function VoiceTestPage() {
   // What the app would actually send: symbols and fractions turned into words.
   const spoken = toSpeech(text);
 
-  function chooseModel(next: 'bulbul:v3' | 'bulbul:v2') {
+  function chooseModel(next: Model) {
     setModel(next);
-    setSpeaker(next === 'bulbul:v2' ? 'anushka' : 'shubh');
+    setSpeaker(next === 'bulbul:v2' ? 'anushka' : next === 'bulbul:v4-flash' ? V4_SUGGESTIONS[0] : 'ishita');
   }
 
   async function play() {
@@ -92,17 +100,40 @@ export default function VoiceTestPage() {
         <div className="bg-white rounded-card border-2 border-line p-4 space-y-4">
           <label className="block">
             <span className="text-caption text-ink-muted">Model</span>
-            <select className={field} value={model} onChange={(e) => chooseModel(e.target.value === 'bulbul:v2' ? 'bulbul:v2' : 'bulbul:v3')}>
-              <option value="bulbul:v3">bulbul:v3 (newest, most natural)</option>
+            <select
+              className={field}
+              value={model}
+              onChange={(e) => chooseModel(e.target.value === 'bulbul:v2' ? 'bulbul:v2' : e.target.value === 'bulbul:v4-flash' ? 'bulbul:v4-flash' : 'bulbul:v3')}
+            >
+              <option value="bulbul:v3">bulbul:v3 (natural, 37 voices)</option>
+              <option value="bulbul:v4-flash">bulbul:v4-flash (persona voices with a style, e.g. kids, edtech)</option>
               <option value="bulbul:v2">bulbul:v2 (older; allows pitch and loudness)</option>
             </select>
           </label>
 
           <label className="block">
             <span className="text-caption text-ink-muted">Speaker</span>
-            <select className={field} value={speaker} onChange={(e) => setSpeaker(e.target.value)}>
-              {speakers.map((s) => <option key={s} value={s}>{s}</option>)}
-            </select>
+            {model === 'bulbul:v4-flash' ? (
+              <>
+                <input
+                  className={field}
+                  list="v4-voices"
+                  value={speaker}
+                  onChange={(e) => setSpeaker(e.target.value.trim().toLowerCase())}
+                  spellCheck={false}
+                />
+                <datalist id="v4-voices">
+                  {V4_SUGGESTIONS.map((s) => <option key={s} value={s} />)}
+                </datalist>
+                <span className="text-caption text-ink-muted">
+                  Pick a suggestion or type any persona from Sarvam&apos;s voice list, as name_language_style. If Sarvam does not know the name, the message below says so.
+                </span>
+              </>
+            ) : (
+              <select className={field} value={speaker} onChange={(e) => setSpeaker(e.target.value)}>
+                {speakers.map((s) => <option key={s} value={s}>{s}</option>)}
+              </select>
+            )}
           </label>
 
           <label className="block">
@@ -114,7 +145,7 @@ export default function VoiceTestPage() {
             <span className="text-caption text-ink-muted">1.00 is normal. 0.85 to 0.95 suits younger children.</span>
           </label>
 
-          {model === 'bulbul:v3' && (
+          {model !== 'bulbul:v2' && (
             <label className="block">
               <span className="flex justify-between text-caption text-ink-muted">
                 <span>Liveliness (temperature)</span>
@@ -170,7 +201,7 @@ export default function VoiceTestPage() {
           <pre className="mt-3 bg-soft rounded-control px-3 py-3 text-[13px] leading-relaxed text-ink overflow-x-auto select-all">
 {`SARVAM_TTS_MODEL=${heard ? heard.model : model}
 SARVAM_TTS_SPEAKER=${heard ? heard.speaker : speaker}
-SARVAM_TTS_PACE=${(heard ? heard.pace : pace).toFixed(2)}${(heard ? heard.model : model) === 'bulbul:v3' ? `
+SARVAM_TTS_PACE=${(heard ? heard.pace : pace).toFixed(2)}${(heard ? heard.model : model) !== 'bulbul:v2' ? `
 SARVAM_TTS_TEMPERATURE=${(heard ? heard.temperature : temperature).toFixed(2)}` : ''}`}
           </pre>
         </div>
