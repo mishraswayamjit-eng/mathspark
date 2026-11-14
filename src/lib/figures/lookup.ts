@@ -8,9 +8,13 @@
  */
 
 import figures from '@/data/questionFigures/figures.json';
+import speech from '@/data/questionSpeech/speech.json';
+import type { QuestionSpeech } from '@/types';
 import type { ServedVisual } from './types';
 
 const ALL = figures as unknown as Record<string, ServedVisual>;
+// Authored narration, built by `python scripts/speech/validate.py --build`.
+const SPEECH = speech as unknown as Record<string, QuestionSpeech>;
 
 /**
  * The visual for one question, or undefined if it has none.
@@ -26,10 +30,35 @@ export function visualFor(questionId: string, opts: { withSolution: boolean }): 
   return v.figure ? { figure: v.figure } : undefined;
 }
 
-/** Adds `visual` to a question object when it has one. Returns a new object. */
-export function withVisual<T extends { id: string }>(question: T, opts: { withSolution: boolean }): T & { visual?: ServedVisual } {
+/**
+ * The narration for one question, or undefined if none has been written.
+ * With `withSolution: false` only the question and its choices are returned:
+ * hint and step narration says the working aloud.
+ */
+export function speechFor(questionId: string, opts: { withSolution: boolean }): QuestionSpeech | undefined {
+  if (!Object.prototype.hasOwnProperty.call(SPEECH, questionId)) return undefined;
+  const s = SPEECH[questionId];
+  if (!s || typeof s.q !== 'string') return undefined;
+  if (opts.withSolution) return s;
+  return { q: s.q, options: s.options, hints: [], steps: [] };
+}
+
+/**
+ * Adds `visual` and `speech` to a question object when it has them. Returns a
+ * new object. Every route that serves a question to a screen goes through
+ * here, so figures and narration always travel together.
+ */
+export function withVisual<T extends { id: string }>(
+  question: T,
+  opts: { withSolution: boolean },
+): T & { visual?: ServedVisual; speech?: QuestionSpeech } {
   const visual = visualFor(question.id, opts);
-  return visual ? { ...question, visual } : question;
+  const spoken = speechFor(question.id, opts);
+  if (!visual && !spoken) return question;
+  const out: T & { visual?: ServedVisual; speech?: QuestionSpeech } = { ...question };
+  if (visual) out.visual = visual;
+  if (spoken) out.speech = spoken;
+  return out;
 }
 
 /** Ids of every question that has a visual, in a steady order (for the review gallery). */

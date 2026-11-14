@@ -27,6 +27,13 @@ export interface NarrationQuestion {
   option4: string;
   correctAnswer: string;
   interactionType?: string | null;
+  /** Authored narration, when the question has it. Used in place of the rules below. */
+  speech?: { q: string; options: string[]; hints: string[]; steps: string[] } | null;
+}
+
+/** The authored line at `index` of a narration list, or '' when there is none. */
+function authored(list: string[] | undefined, index: number): string {
+  return list && typeof list[index] === 'string' ? list[index].trim() : '';
 }
 
 const COMMON_FRACTIONS: Record<string, string> = {
@@ -180,13 +187,17 @@ function joinSentences(parts: string[]): string {
 
 /** The question, then its four options (options are skipped for interactive questions). */
 export function questionToSpeech(q: NarrationQuestion): string {
-  const parts: string[] = [toSpeech(q.questionText)];
-  if (q.questionLatex) parts.push(toSpeech(q.questionLatex));
+  const spoken = q.speech || undefined;
+  const said = spoken && spoken.q ? spoken.q.trim() : '';
+  const parts: string[] = [said || toSpeech(q.questionText)];
+  // The authored question line already covers any maths line printed with it.
+  if (!said && q.questionLatex) parts.push(toSpeech(q.questionLatex));
   if (!q.interactionType) {
-    parts.push(`Option A: ${toSpeech(q.option1)}`);
-    parts.push(`Option B: ${toSpeech(q.option2)}`);
-    parts.push(`Option C: ${toSpeech(q.option3)}`);
-    parts.push(`Option D: ${toSpeech(q.option4)}`);
+    const options = [q.option1, q.option2, q.option3, q.option4];
+    for (let i = 0; i < options.length; i++) {
+      const choice = authored(spoken ? spoken.options : undefined, i) || toSpeech(options[i]);
+      parts.push(`Option ${'ABCD'.charAt(i)}: ${choice}`);
+    }
   }
   return joinSentences(parts);
 }
@@ -203,20 +214,24 @@ export function stepToSpeech(step: StepItem): string {
  * step also announces the verified answer.
  */
 export function walkthroughStepSpeech(q: NarrationQuestion, steps: StepItem[], index: number): string {
-  let text = stepToSpeech(steps[index]);
+  const spoken = q.speech || undefined;
+  // Authored step lines are used only when there is one for every step shown.
+  const stepLines = spoken && spoken.steps.length === steps.length ? spoken.steps : undefined;
+  let text = authored(stepLines, index) || stepToSpeech(steps[index]);
   if (index >= steps.length - 1) {
     const options = [q.option1, q.option2, q.option3, q.option4];
     const answerIdx = ['A', 'B', 'C', 'D'].indexOf(q.correctAnswer);
     if (answerIdx !== -1) {
-      text = `${text} The answer is ${q.correctAnswer}: ${toSpeech(options[answerIdx])}.`;
+      const answer = authored(spoken ? spoken.options : undefined, answerIdx) || toSpeech(options[answerIdx]);
+      text = joinSentences([text, `The answer is ${q.correctAnswer}: ${answer}`]);
     }
   }
   return text;
 }
 
 /** The hints currently on screen, in order. */
-export function hintsToSpeech(hints: string[]): string {
+export function hintsToSpeech(hints: string[], spoken?: string[]): string {
   const parts: string[] = [];
-  for (let i = 0; i < hints.length; i++) parts.push(toSpeech(hints[i]));
+  for (let i = 0; i < hints.length; i++) parts.push(authored(spoken, i) || toSpeech(hints[i]));
   return joinSentences(parts);
 }

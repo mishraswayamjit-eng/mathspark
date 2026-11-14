@@ -109,6 +109,21 @@ export interface Question {
   interactionData?: InteractionData;
   /** The figure this question needs and the pictures for its solution steps, when it has them. */
   visual?: import('@/lib/figures/types').ServedVisual;
+  /** Authored narration: the words the voice says for this question, when it has them. */
+  speech?: QuestionSpeech;
+}
+
+/**
+ * The spoken script for one question, written offline and checked to say the
+ * same numbers as the printed text (scripts/speech/validate.py). Each list
+ * lines up with what it narrates: four options, three hints, one entry per step.
+ * `hints` and `steps` are empty where the solution must stay hidden.
+ */
+export interface QuestionSpeech {
+  q: string;
+  options: string[];
+  hints: string[];
+  steps: string[];
 }
 
 export interface Progress {

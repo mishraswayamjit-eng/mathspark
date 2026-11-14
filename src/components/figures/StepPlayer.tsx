@@ -32,12 +32,16 @@ function buildSteps(question: Question): PlayerStep[] {
   const out: PlayerStep[] = [];
   const own = Array.isArray(question.stepByStep) ? question.stepByStep : [];
   const visual = question.visual;
+  // Authored narration for the steps, when there is one line for every step shown.
+  const shownCount = own.length > 0 ? own.length : (visual && visual.steps ? visual.steps.length : 0);
+  const spoken = question.speech && question.speech.steps.length === shownCount ? question.speech.steps : [];
+  const said = (i: number): string => (typeof spoken[i] === 'string' ? spoken[i].trim() : '');
 
   if (own.length === 0) {
     const computed = visual && visual.steps ? visual.steps : [];
     for (let i = 0; i < computed.length; i++) {
       const text = typeof computed[i].text === 'string' ? computed[i].text : '';
-      out.push({ text, figure: computed[i].figure || null, speech: toSpeech(text) });
+      out.push({ text, figure: computed[i].figure || null, speech: said(i) || toSpeech(text) });
     }
     return out;
   }
@@ -51,7 +55,7 @@ function buildSteps(question: Question): PlayerStep[] {
       text,
       latex,
       figure: i < figures.length ? figures[i] || null : null,
-      speech: stepToSpeech({ step: i + 1, text, latex }),
+      speech: said(i) || stepToSpeech({ step: i + 1, text, latex }),
     });
   }
   return out;

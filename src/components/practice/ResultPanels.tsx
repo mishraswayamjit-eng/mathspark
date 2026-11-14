@@ -200,6 +200,7 @@ export function WrongPanel({
         hint3={question.hint3}
         level={hintLevel}
         onLevelUp={onHintLevelUp}
+        spoken={question.speech ? question.speech.hints : undefined}
       />
 
       {/* Action strip — simplified to 2 buttons */}

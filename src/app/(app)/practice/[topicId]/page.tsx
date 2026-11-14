@@ -1534,6 +1534,7 @@ export default function PracticePage() {
                       hint3={bonusQuestion.hint3}
                       level={bonusHintLevel}
                       onLevelUp={(n) => { setBonusHintLevel(n); setBonusHintUsed(true); }}
+                      spoken={bonusQuestion.speech ? bonusQuestion.speech.hints : undefined}
                     />
                     <StepByStep steps={bonusQuestion.stepByStep} />
                   </>

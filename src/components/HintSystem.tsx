@@ -13,6 +13,8 @@ interface HintSystemProps {
   hint3: string;
   level: number;           // 0 = none shown, 1 = strategic, 2 = procedural, 3 = worked example
   onLevelUp: (next: number) => void;
+  /** Authored narration for the three hints, in order, when the question has it. */
+  spoken?: string[];
 }
 
 /** Returns true if a string contains LaTeX markup (backslash commands). */
@@ -28,13 +30,14 @@ function HintText({ text }: { text: string }) {
   return <>{text}</>;
 }
 
-const HintSystem = React.memo(function HintSystem({ hint1, hint2, hint3, level, onLevelUp }: HintSystemProps) {
+const HintSystem = React.memo(function HintSystem({ hint1, hint2, hint3, level, onLevelUp, spoken }: HintSystemProps) {
   if (level === 0 || !hint1) return null;
 
   // Read exactly the hints that are on screen right now.
   const visibleHints = [hint1];
-  if (level >= 2 && hint2) visibleHints.push(hint2);
-  if (level >= 3 && hint3) visibleHints.push(hint3);
+  const visibleSpoken = [spoken ? spoken[0] : ''];
+  if (level >= 2 && hint2) { visibleHints.push(hint2); visibleSpoken.push(spoken ? spoken[1] : ''); }
+  if (level >= 3 && hint3) { visibleHints.push(hint3); visibleSpoken.push(spoken ? spoken[2] : ''); }
 
   return (
     <div className="ui-hint space-y-3 relative animate-card-pop">
@@ -50,7 +53,7 @@ const HintSystem = React.memo(function HintSystem({ hint1, hint2, hint3, level, 
             <p className="text-sm font-extrabold">
               💡 Hint
             </p>
-            <ReadAloudButton text={hintsToSpeech(visibleHints)} label="the hint" />
+            <ReadAloudButton text={hintsToSpeech(visibleHints, visibleSpoken)} label="the hint" />
           </div>
           <p className="text-[15px] leading-relaxed font-bold">
             <HintText text={hint1} />
