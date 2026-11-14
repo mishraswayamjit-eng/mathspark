@@ -384,15 +384,30 @@ export default function PracticePage() {
   // ── Publish screen context for the Sparky widget ────────────────────────────
   // SAFETY: text only — NEVER the correctAnswer — so Sparky can guide without
   // ever being handed the answer on a live graded question.
+  // The question the child is actually looking at: a "try a similar one" question
+  // sits on top of the main one, and no question shows on the intro or finish screens.
+  const bonusShown = (bonusMode === 'answering' || bonusMode === 'result') && bonusQuestion !== null;
+  const mainShown = phase === 'answering' || phase === 'result' || phase === 'reviewing';
+  const shownQuestion = bonusShown ? bonusQuestion : mainShown ? currentQuestion : null;
+  const shownPick = bonusShown ? (bonusMode === 'result' ? bonusSelected : null) : (phase === 'result' ? selected : null);
+  const shownRight = bonusShown ? bonusCorrect : lastCorrect;
   useEffect(() => {
-    if (currentQuestion) {
-      publishScreenContext({
-        screen: 'practice',
-        topicName: topicName || undefined,
-        questionText: currentQuestion.questionText,
-      });
+    if (!shownQuestion) {
+      clearScreenContext();
+      return;
     }
-  }, [currentQuestion, topicName]);
+    const options = [shownQuestion.option1, shownQuestion.option2, shownQuestion.option3, shownQuestion.option4];
+    const pickIndex = shownPick ? 'ABCD'.indexOf(shownPick) : -1;
+    publishScreenContext({
+      screen: 'practice',
+      topicName: topicName || undefined,
+      questionText: shownQuestion.questionText,
+      // Interactive questions (tap, drag, build) have no A-D choices to list.
+      options: shownQuestion.interactionType ? undefined : options,
+      chosen: pickIndex >= 0 && !shownQuestion.interactionType ? options[pickIndex] : undefined,
+      outcome: shownPick ? (shownRight ? 'right' : 'not yet') : undefined,
+    });
+  }, [shownQuestion, shownPick, shownRight, topicName]);
 
   // Clear context when leaving the practice page.
   useEffect(() => () => clearScreenContext(), []);

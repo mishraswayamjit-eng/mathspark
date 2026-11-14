@@ -90,7 +90,14 @@ function SparkyWidgetInner() {
     if (!screenQuestion || isLoading) return;
     const asked = screenQuestion;
     // Quote the question so the request still makes sense later in the conversation.
-    sendMessage(`Please help me with this question: "${asked.slice(0, 600)}"`, ctx, { usePhoto: false })
+    // Include the choices: many questions ("which of these...") make no sense without them.
+    const choices = ctx && ctx.options && ctx.options.length > 0
+      ? ` The choices are: ${ctx.options.map((o, i) => `(${'ABCD'.charAt(i)}) ${o}`).join(', ')}.`
+      : '';
+    const mine = ctx && ctx.chosen
+      ? ` I chose "${ctx.chosen}"${ctx.outcome === 'not yet' ? ' and it was not right' : ''}.`
+      : '';
+    sendMessage(`Please help me with this question: "${asked.slice(0, 600)}"${choices}${mine}`, ctx, { usePhoto: false })
       .then((reply) => {
         // Hide the button only once Sparky has actually answered; otherwise leave it for a retry.
         if (reply) setHelpedQuestion(asked);

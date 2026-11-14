@@ -30,6 +30,12 @@ export interface ScreenContext {
   topicName?: string;
   /** The question / problem text currently shown. NEVER the answer. */
   questionText?: string;
+  /** The answer choices on screen, in order (A, B, C, D). */
+  options?: string[];
+  /** The choice the child picked, once they have answered. */
+  chosen?: string;
+  /** How their answer was marked, once they have answered. Never the correct answer itself. */
+  outcome?: 'right' | 'not yet';
 }
 
 let current: ScreenContext | null = null;

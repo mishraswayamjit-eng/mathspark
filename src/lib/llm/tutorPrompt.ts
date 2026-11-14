@@ -169,6 +169,18 @@ export function buildTutorStudentPrompt(
       if (screen) lines.push(`Screen: ${screen}`);
       if (topic) lines.push(`Topic: ${topic}`);
       if (question) lines.push(`Practice question in front of them: "${question}"`);
+      const options = (screenContext.options ?? []).map((o) => sanitizePromptText(o, 120)).filter(Boolean);
+      if (question && options.length > 0) {
+        lines.push(`Answer choices shown: ${options.map((o, i) => `(${'ABCDEF'.charAt(i)}) ${o}`).join('  ')}`);
+      }
+      const chosen = screenContext.chosen ? sanitizePromptText(screenContext.chosen, 120) : '';
+      if (question && chosen) {
+        lines.push(screenContext.outcome === 'right'
+          ? `They have answered it and chose "${chosen}", which the app marked as right.`
+          : `They have answered it and chose "${chosen}", which the app marked as not right. Start from their choice: work out what thinking leads to it.`);
+      } else if (question) {
+        lines.push('They have not answered it yet.');
+      }
     }
   }
 

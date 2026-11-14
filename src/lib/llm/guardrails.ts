@@ -52,6 +52,11 @@ export interface ChatScreenContext {
   screen?: string;
   topicName?: string;
   questionText?: string;
+  /** The answer choices shown, in order. */
+  options?: string[];
+  /** The choice the child picked, and how it was marked ('right' | 'not yet'). */
+  chosen?: string;
+  outcome?: string;
 }
 
 // The conversational tutor's own prompt lives in ./tutorPrompt.ts.

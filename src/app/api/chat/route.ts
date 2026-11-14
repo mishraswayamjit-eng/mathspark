@@ -83,6 +83,11 @@ export async function POST(req: Request) {
         screen:       typeof c.screen === 'string' ? c.screen : undefined,
         topicName:    typeof c.topicName === 'string' ? c.topicName : undefined,
         questionText: typeof c.questionText === 'string' ? c.questionText : undefined,
+        options:      Array.isArray(c.options)
+          ? c.options.filter((o): o is string => typeof o === 'string').slice(0, 6)
+          : undefined,
+        chosen:       typeof c.chosen === 'string' ? c.chosen : undefined,
+        outcome:      c.outcome === 'right' || c.outcome === 'not yet' ? c.outcome : undefined,
       };
     }
   } catch (err) {
