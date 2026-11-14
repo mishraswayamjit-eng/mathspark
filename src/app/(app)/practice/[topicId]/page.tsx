@@ -107,6 +107,9 @@ export default function PracticePage() {
   // What the child built/tapped/dragged on an interactive question (JSON string),
   // captured just before handleAnswer runs so the server can grade the real answer.
   const interactiveAnswerRef = useRef<string | null>(null);
+  // Set when the confidence answer arrives while the next question is still being
+  // fetched: that fetch was made without the answer, so its result is thrown away.
+  const discardPrefetchRef = useRef(false);
   const [askConfidence, setAskConfidence] = useState(false);
   // Feature 1: count wrong attempts per question → trigger stuck-coach on 2nd miss.
   const wrongCountByQuestionRef = useRef<Map<string, number>>(new Map());
@@ -190,15 +193,24 @@ export default function PracticePage() {
   const prefetchNext = useCallback(() => {
     if (isFetchingRef.current || prefetchRef.current) return;
     isFetchingRef.current = true;
-    fetchOneAdaptive().then((q) => {
-      // Reject the prefetch if it's already in our seen set (race with DB timing)
-      if (q && seenQuestionIdsRef.current.has(q.id)) {
-        prefetchRef.current  = null;
-      } else {
-        prefetchRef.current  = q;
-      }
-      isFetchingRef.current = false;
-    });
+    const run = () => {
+      fetchOneAdaptive().then((q) => {
+        // Picked before the child answered the confidence question: fetch again with it.
+        if (discardPrefetchRef.current) {
+          discardPrefetchRef.current = false;
+          run();
+          return;
+        }
+        // Reject the prefetch if it's already in our seen set (race with DB timing)
+        if (q && seenQuestionIdsRef.current.has(q.id)) {
+          prefetchRef.current  = null;
+        } else {
+          prefetchRef.current  = q;
+        }
+        isFetchingRef.current = false;
+      });
+    };
+    run();
   }, [fetchOneAdaptive]);
 
   // BUG 1 FIX: Register each new question in the seen-IDs set the moment it is displayed.
@@ -876,9 +888,13 @@ export default function PracticePage() {
           confidenceRef.current = confidence;
           try { localStorage.setItem(`mathspark_confidence_${topicId}`, new Date().toDateString()); } catch { /* storage unavailable */ }
           // The second question was picked before we knew this: pick it again with the signal.
-          if (confidence !== 'medium' && !isFetchingRef.current) {
-            prefetchRef.current = null;
-            prefetchNext();
+          if (confidence !== 'medium') {
+            if (isFetchingRef.current) {
+              discardPrefetchRef.current = true;   // the fetch in flight did not know this
+            } else {
+              prefetchRef.current = null;
+              prefetchNext();
+            }
           }
         } : undefined}
       />

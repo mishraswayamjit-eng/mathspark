@@ -9,6 +9,10 @@ const SARVAM_URL = 'https://api.sarvam.ai/text-to-speech';
 // Sarvam caps one request at about 2500 characters.
 const MAX_TEXT_CHARS = 2400;
 const TIMEOUT_MS = 15_000;
+// Chat allows 100 messages a day, so a child cannot legitimately need more spoken
+// replies than that. The counter is in memory, so the cap is per server instance.
+const DAILY_LIMIT = 120;
+const DAY_MS = 24 * 60 * 60 * 1000;
 
 /**
  * POST /api/voice/tts  { text }  →  { audio: <base64>, mime }
@@ -29,6 +33,9 @@ export async function POST(req: Request) {
 
   if (!checkRateLimit(`voice-tts:${studentId}`, 20, 60_000)) {
     return Response.json({ error: 'Slow down a bit! Try again in a moment.' }, { status: 429 });
+  }
+  if (!checkRateLimit(`voice-tts-day:${studentId}`, DAILY_LIMIT, DAY_MS)) {
+    return Response.json({ error: 'Voice has had a busy day. It will be back tomorrow!' }, { status: 429 });
   }
 
   let text: string;

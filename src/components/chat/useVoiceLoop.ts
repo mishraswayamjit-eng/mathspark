@@ -34,6 +34,7 @@ export function useVoiceLoop(send: (text: string) => Promise<string | null>) {
   const serverVoiceRef = useRef(true);                        // try Sarvam until it says it is unavailable
   const speakTurnRef   = useRef(0);                           // id of the reply being spoken
   const heardSoundRef  = useRef(false);                       // did the current reply actually start playing?
+  const speakWordsRef  = useRef(0);                           // length of the reply being spoken, in words
   const sendRef        = useRef(send);
   sendRef.current = send;
   const listenRef      = useRef<() => void>(() => {});
@@ -68,6 +69,7 @@ export function useVoiceLoop(send: (text: string) => Promise<string | null>) {
 
     const turn = speakTurnRef.current;
     heardSoundRef.current = false;
+    speakWordsRef.current = text.split(/\s+/).length;
     setFetchingVoice(true);
     setState('speaking');
 
@@ -118,6 +120,19 @@ export function useVoiceLoop(send: (text: string) => Promise<string | null>) {
     }, 5000);
     return () => clearTimeout(timer);
   }, [state, fetchingVoice, afterSpeaking]);
+  // 3. the voice started and then died without telling us (desktop Chrome cuts
+  //    long utterances this way): give up after a generous time for its length.
+  useEffect(() => {
+    if (state !== 'speaking' || fetchingVoice) return;
+    const turn = speakTurnRef.current;
+    const limitMs = Math.min(180000, 10000 + speakWordsRef.current * 700);
+    const timer = setTimeout(() => {
+      if (speakTurnRef.current !== turn) return;
+      stopSpeaking();
+      afterSpeaking(turn);
+    }, limitMs);
+    return () => clearTimeout(timer);
+  }, [state, fetchingVoice, afterSpeaking, stopSpeaking]);
 
   const listen = useCallback(() => {
     if (!activeRef.current) return;
@@ -174,11 +189,19 @@ export function useVoiceLoop(send: (text: string) => Promise<string | null>) {
         .then((reply) => {
           setHeard('');
           if (!activeRef.current) return;
-          if (reply) speakReply(reply);
-          else listenRef.current();
+          if (reply) {
+            speakReply(reply);
+          } else {
+            // No reply came back (daily limit, logged out, not set up, or a network
+            // problem). Listening again would only resend into the same wall.
+            setNotice("I couldn't answer just then, so I've stopped listening. Tap the mic to try again.");
+            stop();
+          }
         })
         .catch(() => {
-          if (activeRef.current) listenRef.current();
+          if (!activeRef.current) return;
+          setNotice("I couldn't answer just then, so I've stopped listening. Tap the mic to try again.");
+          stop();
         });
     };
 

@@ -143,7 +143,20 @@ export function toSpeech(input: string | null | undefined): string {
   // "3-D" and "Not quite - try again" are left alone.
   s = s.replace(/(^|[\s(])-\s*(\d)/g, '$1 minus $2');                         // -5, (-3)
   s = s.replace(/(equals\s+|\(\s*)-\s*([a-zA-Z]\b)/g, '$1 minus $2');         // = -y (the = is already "equals")
-  s = s.replace(/(\d|\))-(\d)/g, '$1 minus $2');                              // 9-4
+  // Number-hyphen-number with no spaces: a range when it climbs ("1-100",
+  // "pages 10-12"), a subtraction when it does not ("9-4") or when it is part
+  // of a sum ("3-5 = "). Date-like chains ("12-05-2024") are left as written.
+  s = s.replace(
+    /(\d+(?:\.\d+)?)-(\d+(?:\.\d+)?)/g,
+    (m: string, a: string, b: string, offset: number, whole: string) => {
+      if (whole.charAt(offset - 1) === '-' || whole.charAt(offset + m.length) === '-') return m;
+      const rest = whole.slice(offset + m.length).replace(/^\s+/, '');
+      const inSum = /^(equals|plus|times|divided)\b/.test(rest);
+      if (parseFloat(b) > parseFloat(a) && !inSum) return `${a} to ${b}`;
+      return `${a} minus ${b}`;
+    },
+  );
+  s = s.replace(/\)-(\d)/g, ') minus $1');                                    // (a+b)-4
   s = s.replace(/(\d[a-zA-Z]|\b[a-zA-Z])-(\d)/g, '$1 minus $2');              // 2n-3, x-5
   s = s.replace(/(\d[a-zA-Z]|\d|\)|\b[a-zA-Z])\s-\s(\d|\(|[a-zA-Z]\b)/g, '$1 minus $2'); // 2m - 3, a - b
 

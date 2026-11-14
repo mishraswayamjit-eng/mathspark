@@ -155,7 +155,9 @@ export function streamChat(
           // If part of a reply already streamed, start the fallback on a new line.
           const text = fullResponse ? `\n\n${callbacks.onErrorFallback}` : callbacks.onErrorFallback;
           controller.enqueue(encoder.encode(text));
-          await callbacks.onComplete?.(callbacks.onErrorFallback, true);
+          // Save what the child actually saw of the answer (marked as cut short), so the
+          // next turn can pick up from it. Only a reply with no text saves the fallback line.
+          await callbacks.onComplete?.(fullResponse.trim() ? fullResponse : callbacks.onErrorFallback, true);
         }
       } finally {
         controller.close();

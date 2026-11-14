@@ -25,6 +25,13 @@ describe('toSpeech', () => {
     expect(toSpeech('9 - 4')).toBe('9 minus 4');
   });
 
+  it('reads a climbing number-hyphen-number as a range, not a subtraction', () => {
+    expect(toSpeech('even numbers 1-100')).toBe('even numbers 1 to 100');
+    expect(toSpeech('9-4')).toBe('9 minus 4');
+    expect(toSpeech('3-5 = ?')).toBe('3 minus 5 equals?');
+    expect(toSpeech('12-05-2024')).toBe('12-05-2024');
+  });
+
   it('leaves hyphenated words alone', () => {
     expect(toSpeech('a 3-digit number')).toBe('a 3-digit number');
   });

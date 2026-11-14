@@ -4,6 +4,7 @@ import { MS_PER_DAY } from '@/lib/timeConstants';
 import { logError } from '@/lib/logger';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { ScreenContext } from '@/lib/sparkyContext';
+import { PHOTO_NOTE } from '@/lib/chatPhotoNote';
 
 // Shared across the full /chat page AND the floating Sparky widget so both
 // surfaces drive one conversation (persisted session id below).
@@ -167,7 +168,10 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
           setMessages(session.messages.map((m: { id: string; role: 'user' | 'assistant'; content: string }) => ({
             id: m.id,
             role: m.role,
-            content: m.content,
+            // Photos are not kept: show a camera in place of the internal note.
+            content: m.role === 'user' && m.content.indexOf(PHOTO_NOTE) === 0
+              ? `📷 ${m.content.slice(PHOTO_NOTE.length).trim()}`
+              : m.content,
           })));
         } else {
           showOpening();
@@ -205,15 +209,23 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
   // Resolves with Sparky's full reply (or null if nothing was sent or it did
   // not come through), so voice mode can read the reply aloud.
 
-  const sendMessage = useCallback(async (text: string, context?: ScreenContext | null): Promise<string | null> => {
-    const photo = attachment;
+  // `usePhoto: false` is for canned requests (suggestion chips, the help button,
+  // voice): a photo the child has picked but not sent stays waiting in the composer.
+  const sendMessage = useCallback(async (
+    text: string,
+    context?: ScreenContext | null,
+    opts?: { usePhoto?: boolean },
+  ): Promise<string | null> => {
+    const photo = opts && opts.usePhoto === false ? null : attachment;
     // With a photo and no words, say the obvious thing on the child's behalf.
     const trimmed = text.trim() || (photo ? 'Here is my working. Can you check it? 📷' : '');
     if (!trimmed || isLoading || !studentId) return null;
 
     setInput('');
-    setAttachment(null);
-    setAttachmentNotice('');
+    if (photo) {
+      setAttachment(null);
+      setAttachmentNotice('');
+    }
     setIsLoading(true);
     setStreamingMsg('');
 

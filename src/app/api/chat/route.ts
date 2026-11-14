@@ -10,6 +10,7 @@ import { buildTutorStablePrompt, buildTutorStudentPrompt } from '@/lib/llm/tutor
 import { streamChat } from '@/lib/llm/complete';
 import { checkAndIncrementUsage } from '@/lib/llm/usage';
 import type { LlmMessage } from '@/lib/llm/types';
+import { PHOTO_NOTE } from '@/lib/chatPhotoNote';
 
 export const dynamic = 'force-dynamic';
 // NOTE: maxDuration is ignored on Vercel Hobby (10s hard limit). Only effective on Pro+.
@@ -28,9 +29,6 @@ const IMAGE_TYPES = {
   'image/png': 'image/png',
   'image/webp': 'image/webp',
 } as const;
-// What the child's message says in the saved history when it carried a photo.
-// The photo itself is sent to the model for that one turn and never stored.
-const PHOTO_NOTE = '[Sent a photo of their working]';
 // Shown if the model declines or returns no text.
 const EMPTY_FALLBACK = "Hmm, I couldn't put that one into words. 🤔 Could you ask me in a different way?";
 // Shown when the model call fails. Never fed back to the model as if Sparky had said it.

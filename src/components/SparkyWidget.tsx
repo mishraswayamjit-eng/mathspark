@@ -50,7 +50,7 @@ function SparkyWidgetInner() {
   } = useSparkyChat();
 
   // Voice conversation: what the child says is sent with the current screen context.
-  const voice = useVoiceLoop((text) => sendMessage(text, ctx));
+  const voice = useVoiceLoop((text) => sendMessage(text, ctx, { usePhoto: false }));
 
   const [open, setOpen] = useState(false);
   // On phones the sheet takes about half the screen so the question stays in
@@ -83,9 +83,13 @@ function SparkyWidgetInner() {
 
   function helpWithScreenQuestion() {
     if (!screenQuestion || isLoading) return;
-    setHelpedQuestion(screenQuestion);
+    const asked = screenQuestion;
     // Quote the question so the request still makes sense later in the conversation.
-    sendMessage(`Please help me with this question: "${screenQuestion.slice(0, 600)}"`, ctx);
+    sendMessage(`Please help me with this question: "${asked.slice(0, 600)}"`, ctx, { usePhoto: false })
+      .then((reply) => {
+        // Hide the button only once Sparky has actually answered; otherwise leave it for a retry.
+        if (reply) setHelpedQuestion(asked);
+      });
   }
 
   return (
@@ -142,14 +146,14 @@ function SparkyWidgetInner() {
                 onClick={() => setTall((t) => !t)}
                 aria-label={tall ? 'Make the chat smaller' : 'Make the chat taller'}
                 aria-pressed={tall}
-                className="min-[1360px]:hidden text-white/70 hover:text-white text-xl font-bold min-h-[44px] min-w-[36px] flex items-center justify-center"
+                className="min-[1360px]:hidden text-white/70 hover:text-white text-xl font-bold min-h-[48px] min-w-[48px] flex items-center justify-center"
               >
                 <span aria-hidden="true">{tall ? '▾' : '▴'}</span>
               </button>
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Close"
-                className="text-white/70 hover:text-white text-xl font-bold min-h-[44px] min-w-[36px] flex items-center justify-center"
+                className="text-white/70 hover:text-white text-xl font-bold min-h-[48px] min-w-[48px] flex items-center justify-center"
               >
                 ✕
               </button>
@@ -219,7 +223,7 @@ function SparkyWidgetInner() {
                   {suggestions.map((s) => (
                     <button
                       key={s.label}
-                      onClick={() => sendMessage(s.message, ctx)}
+                      onClick={() => sendMessage(s.message, ctx, { usePhoto: false })}
                       disabled={isLoading}
                       className="flex-shrink-0 bg-white border-2 border-line text-ink text-xs font-bold rounded-full px-3 py-2 hover:border-ink transition-colors whitespace-nowrap min-h-[36px]"
                     >

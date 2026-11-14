@@ -24,7 +24,7 @@ export default function ChatPage() {
   } = useSparkyChat({ onNoStudent: () => router.replace('/start') });
 
   // Voice conversation: what the child says is sent like a typed message.
-  const voice = useVoiceLoop((text) => sendMessage(text));
+  const voice = useVoiceLoop((text) => sendMessage(text, null, { usePhoto: false }));
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -113,7 +113,7 @@ export default function ChatPage() {
             {getQuickReplies(studentGrade).map((qr) => (
               <button
                 key={qr.label}
-                onClick={() => sendMessage(qr.message)}
+                onClick={() => sendMessage(qr.message, null, { usePhoto: false })}
                 disabled={isLoading}
                 className="flex-shrink-0 bg-white border-2 border-line text-ink text-xs font-bold rounded-full px-3 py-2 hover:border-ink transition-colors whitespace-nowrap min-h-[36px]"
               >
