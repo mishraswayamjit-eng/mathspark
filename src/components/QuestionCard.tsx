@@ -62,6 +62,8 @@ interface QuestionCardProps {
   selected: AnswerKey | null;
   onAnswer: (key: AnswerKey, isCorrect: boolean) => void;
   onInteractiveAnswer?: (answer: string, isCorrect: boolean) => void;
+  /** Shown between the question and the options, e.g. the question's figure. */
+  figureSlot?: React.ReactNode;
 }
 
 const QuestionCard = React.memo(function QuestionCard({
@@ -70,6 +72,7 @@ const QuestionCard = React.memo(function QuestionCard({
   selected,
   onAnswer,
   onInteractiveAnswer,
+  figureSlot,
 }: QuestionCardProps) {
   const options: Array<{ key: AnswerKey; text: string }> = [
     { key: 'A', text: question.option1 },
@@ -148,6 +151,9 @@ const QuestionCard = React.memo(function QuestionCard({
         {/* Diagram (if this question has an associated figure) */}
         <QuestionDiagram questionId={question.id} />
       </div>
+
+      {/* ── Optional slot between the question and the options ───────── */}
+      {figureSlot}
 
       {/* ── Interactive question or MCQ options ──────────────────────── */}
       {question.interactionType && question.interactionData ? (

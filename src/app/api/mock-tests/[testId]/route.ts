@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { logError } from '@/lib/logger';
+import { withVisual } from '@/lib/figures/lookup';
 
 function safeParseSteps(json: string | null): unknown[] {
   try { return JSON.parse(json ?? '[]'); } catch { return []; }
@@ -61,11 +62,13 @@ export async function GET(
         if (!r.question) return { ...r, question: undefined };
         const { correctAnswer, stepByStep, misconceptionA, misconceptionB, misconceptionC, misconceptionD, ...qRest } = r.question;
         // Only include correctAnswer, stepByStep, and misconceptions after test is completed (for review screen)
+        // Figures follow the same rule: the before-answering figure only while the
+        // test is in progress, the step figures and computed steps once it is complete.
         return {
           ...r,
           question: isCompleted
-            ? { ...r.question, stepByStep: safeParseSteps(stepByStep) }
-            : { ...qRest, stepByStep: [] },
+            ? withVisual({ ...r.question, stepByStep: safeParseSteps(stepByStep) }, { withSolution: true })
+            : withVisual({ ...qRest, stepByStep: [] }, { withSolution: false }),
         };
       }),
     };

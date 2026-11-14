@@ -12,6 +12,7 @@ import Confetti from '@/components/Confetti';
 import { useSounds } from '@/hooks/useSounds';
 import type { Question, AnswerKey, StepItem } from '@/types';
 import { logError } from '@/lib/logger';
+import { publishScreenContext, clearScreenContext } from '@/lib/sparkyContext';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -281,6 +282,35 @@ export default function SkillDrillSessionPage() {
       setHintLevel(0);
     }
   }, [activeSession, currentIdx, results, topicId, levelId, playLevelUp, playStreak]);
+
+  // ── Publish the question on screen for the Sparky widget ─────────────────────
+  // SAFETY: the question, the choices and (once answered) the child's pick and
+  // how it was marked. NEVER the correct answer.
+  const liveQuestion =
+    phase === 'drill' && !loading && !error && activeSession ? activeSession.questions[currentIdx] || null : null;
+  const liveTopicName = topicInfo ? topicInfo.displayName : '';
+  useEffect(() => {
+    if (!liveQuestion) {
+      clearScreenContext();
+      return;
+    }
+    const opts = liveQuestion.options || [];
+    const options: string[] = [];
+    for (let i = 0; i < 4; i++) options.push(opts[i] && opts[i].text ? opts[i].text : '');
+    const pickIndex = answered && selected ? 'ABCD'.indexOf(selected) : -1;
+    publishScreenContext({
+      screen: 'practice',
+      topicName: liveTopicName || undefined,
+      questionText: liveQuestion.questionText,
+      options,
+      chosen: pickIndex >= 0 ? options[pickIndex] : undefined,
+      // The page marks the answer by comparing the pick with the key, so do the same here.
+      outcome: answered && selected ? (selected === liveQuestion.correctAnswer ? 'right' : 'not yet') : undefined,
+    });
+  }, [liveQuestion, liveTopicName, answered, selected]);
+
+  // Clear the context when leaving the page.
+  useEffect(() => () => clearScreenContext(), []);
 
   // ── Level navigation ─────────────────────────────────────────────────────────
   const allLevels = ['L1', 'L2', 'L3', 'L4', 'L5'];

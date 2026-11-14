@@ -128,6 +128,11 @@ export default function PracticePage() {
   // Step player sheet (phones and tablets; wide screens show the steps in the side pane)
   const [showSteps, setShowSteps] = useState(false);
   const resultSheetRef = useRef<HTMLDivElement | null>(null);
+  // Working space sheet (phones and tablets): hints and the pencil pad before answering
+  const [showWork, setShowWork] = useState(false);
+  // True from the start of the review round until the lesson is restarted. The
+  // phase alone cannot say this: answering a review question moves it to 'result'.
+  const [inReview, setInReview] = useState(false);
 
   // ── Bonus "Repeat Similar" question system ──────────────────────────────────
   const [bonusMode,      setBonusMode]      = useState<BonusMode>('off');
@@ -227,8 +232,10 @@ export default function PracticePage() {
   }, [phase, reviewQueue, reviewIndex, questions, qIndex]);
 
   // BUG 2 FIX: Reset the advance guard when a new answering phase begins.
+  // A review question counts too: without this the guard set by the last lesson
+  // question would still be up, and Continue would do nothing during the review.
   useEffect(() => {
-    if (phase === 'answering') {
+    if (phase === 'answering' || phase === 'reviewing') {
       isAdvancingRef.current = false;
       setFetchRetry(false);
     }
@@ -384,7 +391,9 @@ export default function PracticePage() {
   }, [phase, results, reviewResults, topicId]);
 
   // ── Helpers ────────────────────────────────────────────────────────────────
-  const isReviewing      = phase === 'reviewing';
+  // Still reviewing while the result of a review question is showing, so the
+  // result panel shows that question and Continue moves on through the review.
+  const isReviewing      = phase === 'reviewing' || (phase === 'result' && inReview);
   const currentQuestion  = isReviewing ? reviewQueue[reviewIndex] : questions[qIndex];
   const currentSlotIndex = isReviewing ? reviewIndex : qIndex;
 
@@ -424,13 +433,20 @@ export default function PracticePage() {
   const shownQuestionId = shownQuestion ? shownQuestion.id : null;
   useEffect(() => { setShowSteps(false); }, [shownQuestionId]);
 
-  // Escape closes the sheet.
+  // The working space sheet is for before answering: put it away for a new
+  // question and as soon as this one is answered (a speed drill can time out under it).
+  const shownAnswered = bonusShown ? bonusMode === 'result' : phase === 'result';
+  useEffect(() => { setShowWork(false); }, [shownQuestionId, shownAnswered]);
+
+  // Escape closes whichever sheet is open.
   useEffect(() => {
-    if (!showSteps) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setShowSteps(false); };
+    if (!showSteps && !showWork) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { setShowSteps(false); setShowWork(false); }
+    };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [showSteps]);
+  }, [showSteps, showWork]);
 
   // Wide screens: the result panel sits in the page under the options, so bring it into view.
   useEffect(() => {
@@ -849,6 +865,7 @@ export default function PracticePage() {
     reviewQueueRef.current = [];
     setReviewQueue([]);
     setReviewIndex(0);
+    setInReview(false);
     setShowConfetti(false);
     setShowWalkthrough(false);
     setWalkthroughClosed(false);
@@ -968,7 +985,7 @@ export default function PracticePage() {
     return (
       <ReviewIntroScreen
         count={reviewQueueRef.current.length}
-        onStart={() => { setPhase('reviewing'); }}
+        onStart={() => { setInReview(true); setPhase('reviewing'); }}
       />
     );
   }
@@ -1266,20 +1283,31 @@ export default function PracticePage() {
           )}
         </div>
 
-        {/* The question's figure (phones and tablets; wide screens show it in the side pane) */}
-        {mainFigure && (
-          <div className="lg:hidden bg-white border-2 border-line rounded-card p-3">
-            <FigureView spec={mainFigure} />
-          </div>
-        )}
-
+        {/* On phones and tablets the question's figure sits between the question and the
+            options; wide screens show it in the side pane. */}
         <QuestionCard
           question={currentQuestion}
           answered={phase === 'result'}
           selected={selected}
           onAnswer={handleAnswer}
           onInteractiveAnswer={(answer) => { interactiveAnswerRef.current = answer; }}
+          figureSlot={mainFigure ? (
+            <div className="lg:hidden bg-white border-2 border-line rounded-card p-3">
+              <FigureView spec={mainFigure} />
+            </div>
+          ) : undefined}
         />
+
+        {/* Hints and the pencil pad before answering (phones and tablets; wide screens have the side pane) */}
+        {phase !== 'result' && (
+          <button
+            type="button"
+            onClick={() => setShowWork(true)}
+            className="lg:hidden ui-btn w-full text-sm"
+          >
+            <span aria-hidden="true">✏️</span> Working space
+          </button>
+        )}
       </div>
 
       {/* ── Result panel: a sheet that slides up on phones and tablets; in the page under the options on wide screens ── */}
@@ -1456,14 +1484,8 @@ export default function PracticePage() {
                   ⭐ Bonus Question
                 </div>
 
-                {/* The question's figure (phones and tablets; wide screens show it in the side pane) */}
-                {bonusFigure && (
-                  <div className="lg:hidden bg-white border-2 border-line rounded-card p-3">
-                    <FigureView spec={bonusFigure} />
-                  </div>
-                )}
-
-                {/* Question card — amber border */}
+                {/* Question card — amber border. Its figure sits between the question and
+                    the options on phones and tablets; wide screens show it in the side pane. */}
                 <div className="relative">
                   <div className="absolute -top-2 -left-1 z-10 bg-star text-ink text-xs font-extrabold px-2 py-0.5 rounded-full border-2 border-ink">
                     ⭐ Bonus
@@ -1474,9 +1496,25 @@ export default function PracticePage() {
                       answered={bonusMode === 'result'}
                       selected={bonusSelected}
                       onAnswer={(key) => handleBonusAnswer(key)}
+                      figureSlot={bonusFigure ? (
+                        <div className="lg:hidden bg-white border-2 border-line rounded-card p-3">
+                          <FigureView spec={bonusFigure} />
+                        </div>
+                      ) : undefined}
                     />
                   </div>
                 </div>
+
+                {/* Hints and the pencil pad before answering (phones and tablets) */}
+                {bonusMode === 'answering' && (
+                  <button
+                    type="button"
+                    onClick={() => setShowWork(true)}
+                    className="lg:hidden ui-btn w-full text-sm"
+                  >
+                    <span aria-hidden="true">✏️</span> Working space
+                  </button>
+                )}
 
                 {/* Wrong bonus: misconception + hints + solution */}
                 {bonusMode === 'result' && !bonusCorrect && (
@@ -1563,6 +1601,41 @@ export default function PracticePage() {
               </aside>
             </div>
           )}
+        </div>
+      )}
+
+      {/* ── Working space sheet (phones and tablets, before answering) ──
+          Kept mounted while closed so pencil-pad working is still there when it opens again. */}
+      {shownQuestion && !shownAnswered && (
+        <div
+          className={`lg:hidden fixed inset-0 z-[95] ${showWork ? 'flex flex-col justify-end' : 'hidden'}`}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Working space"
+        >
+          <div className="absolute inset-0 bg-ink/60" onClick={() => setShowWork(false)} aria-hidden="true" />
+          <div className="relative w-full max-w-lg mx-auto max-h-[88vh] overflow-y-auto bg-white rounded-t-card border-2 border-b-0 border-ink px-4 pt-3 pb-8 animate-slide-up">
+            <div className="flex justify-end mb-1">
+              <button
+                type="button"
+                onClick={() => setShowWork(false)}
+                aria-label="Close the working space"
+                className="w-12 h-12 flex-shrink-0 rounded-tile bg-white border-2 border-line flex items-center justify-center text-ink font-bold text-lg hover:border-ink"
+              >
+                <span aria-hidden="true">✕</span>
+              </button>
+            </div>
+            <WorkPane
+              key={shownQuestion.id}
+              question={shownQuestion}
+              stage="answering"
+              mode="practice"
+              hintLevel={bonusShown ? bonusHintLevel : hintLevel}
+              onHintLevelUp={bonusShown
+                ? (n) => { setBonusHintLevel(n); setBonusHintUsed(true); }
+                : (n) => { setHintLevel(n); setHintUsed(true); }}
+            />
+          </div>
         </div>
       )}
 

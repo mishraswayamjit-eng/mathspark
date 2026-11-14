@@ -6,6 +6,8 @@ import Confetti from '@/components/Confetti';
 import DuoButton from '@/components/DuoButton';
 import KatexRenderer from '@/components/KatexRenderer';
 import ShareSheet from '@/components/ShareSheet';
+import FigureView from '@/components/figures/FigureView';
+import StepPlayer, { hasSolutionSteps } from '@/components/figures/StepPlayer';
 import type { MockTestDetail, MockTestResponse, TopicResult, Recommendation } from '@/types';
 
 // ── Topic metadata ────────────────────────────────────────────────────────────
@@ -170,6 +172,7 @@ function QuestionAccordion({ r, idx }: { r: MockTestResponse; idx: number }) {
         <div className="px-4 pb-4 border-t-2 border-line pt-3 space-y-3">
           <p className="text-ink text-sm font-medium">{q.questionText}</p>
           {q.questionLatex && <KatexRenderer latex={q.questionLatex} />}
+          {q.visual && q.visual.figure && <FigureView spec={q.visual.figure} />}
 
           <div className="space-y-2">
             {options.map(({ key, text }) => {
@@ -194,6 +197,16 @@ function QuestionAccordion({ r, idx }: { r: MockTestResponse; idx: number }) {
             <div className="bg-hint border-2 border-dashed border-hint-ink rounded-control px-3 py-2">
               <p className="text-xs font-extrabold text-hint-ink mb-0.5">💡 Common mistake</p>
               <p className="text-xs text-hint-ink font-medium">{misconception}</p>
+            </div>
+          )}
+
+          {/* The solution, one step at a time, with the figure for each step */}
+          {hasSolutionSteps(q) && (
+            <div className="bg-white border-2 border-line rounded-control p-3">
+              <p className="text-sm font-extrabold text-ink mb-3">
+                <span aria-hidden="true">📖</span> Step by step
+              </p>
+              <StepPlayer question={q} />
             </div>
           )}
 

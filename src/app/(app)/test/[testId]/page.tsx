@@ -5,6 +5,8 @@ import { logError } from '@/lib/logger';
 import { useParams, useRouter } from 'next/navigation';
 import KatexRenderer from '@/components/KatexRenderer';
 import QuestionDiagram from '@/components/diagrams/QuestionDiagram';
+import FigureView from '@/components/figures/FigureView';
+import WorkPane from '@/components/figures/WorkPane';
 import type { MockTestDetail, MockTestResponse, AnswerKey } from '@/types';
 
 // ── Timer hook ────────────────────────────────────────────────────────────────
@@ -370,8 +372,13 @@ export default function TestEnginePage() {
     { key: 'D', text: currentQuestion.option4 },
   ];
 
+  // The figure the question needs (givens only; the server sends nothing else during a test).
+  const figure = currentQuestion.visual && currentQuestion.visual.figure ? currentQuestion.visual.figure : null;
+
   return (
-    <div className="min-h-screen bg-paper flex flex-col max-w-lg mx-auto animate-fade-in">
+    // Phones and tablets: the usual single column. Wide screens: the test breaks
+    // out of the narrow app column (32rem) to 60rem, in two panels.
+    <div className="min-h-screen bg-paper flex flex-col max-w-lg mx-auto animate-fade-in lg:max-w-none lg:-mx-56">
       {/* ── Top bar ─────────────────────────────────────────────────────── */}
       <div className="sticky top-0 z-50 bg-white border-b-2 border-ink px-4 py-3 flex items-center gap-3">
         {/* Exit test */}
@@ -419,7 +426,9 @@ export default function TestEnginePage() {
       )}
 
       {/* ── Question area ────────────────────────────────────────────────── */}
-      <div className="flex-1 px-4 pt-4 pb-24 overflow-y-auto">
+      {/* Wide screens: question and options (left), figure and pencil pad (right) */}
+      <div className="flex-1 px-4 pt-4 pb-24 overflow-y-auto lg:overflow-visible lg:grid lg:grid-cols-2 lg:gap-5 lg:items-start lg:px-5 lg:pt-5">
+        <div className="min-w-0">
         {/* Q# + topic + flag */}
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
@@ -454,6 +463,14 @@ export default function TestEnginePage() {
           <QuestionDiagram questionId={currentQuestion.id} />
         </div>
 
+        {/* The question's figure (phones and tablets; wide screens show it in the side pane).
+            Nothing is shown here for a question with no figure. */}
+        {figure && (
+          <div className="lg:hidden bg-white border-2 border-line rounded-card p-3 mb-4">
+            <FigureView spec={figure} />
+          </div>
+        )}
+
         {/* Options */}
         <div className="space-y-3">
           {options.map(({ key, text }) => {
@@ -481,11 +498,22 @@ export default function TestEnginePage() {
             );
           })}
         </div>
+        </div>
+
+        {/* ── Side pane (wide screens): the figure and a pencil pad. A test never shows hints or steps. ── */}
+        <aside className="hidden lg:block lg:sticky lg:top-[84px] lg:max-h-[calc(100vh-164px)] lg:overflow-y-auto bg-white border-2 border-line rounded-card p-4">
+          <WorkPane
+            key={currentQuestion.id}
+            question={currentQuestion}
+            stage="answering"
+            mode="test"
+          />
+        </aside>
       </div>
 
       {/* ── Bottom navigation bar ────────────────────────────────────────── */}
       <div className="fixed bottom-0 left-0 right-0 z-[60] bg-white border-t-2 border-ink pb-[env(safe-area-inset-bottom)]">
-      <div className="max-w-lg mx-auto px-4 py-3 flex gap-3">
+      <div className="max-w-lg mx-auto px-4 py-3 flex gap-3 lg:max-w-[60rem] lg:px-5">
         <button
           onClick={() => navigateTo(currentNum - 1)}
           disabled={currentNum === 1}

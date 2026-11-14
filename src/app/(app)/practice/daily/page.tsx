@@ -26,6 +26,7 @@ import {
   type StreakData,
 } from '@/lib/streak';
 import type { Question, AnswerKey, StepItem } from '@/types';
+import { publishScreenContext, clearScreenContext } from '@/lib/sparkyContext';
 
 // ── Adapt JSON question → QuestionCard's Question type ───────────────────────
 
@@ -233,6 +234,33 @@ export default function DailyChallengePage() {
     }, 40);
     return () => clearInterval(interval);
   }, [phase, results]);
+
+  // ── Publish the question on screen for the Sparky widget ───────────────────
+  // SAFETY: the question, the choices and (once answered) the child's pick and
+  // how it was marked. NEVER the correct answer.
+  const liveQuestion =
+    phase === 'quiz' && !loading && !error && challenge ? challenge.questions[currentIdx] || null : null;
+  useEffect(() => {
+    if (!liveQuestion) {
+      clearScreenContext();
+      return;
+    }
+    const opts = liveQuestion.options || [];
+    const options: string[] = [];
+    for (let i = 0; i < 4; i++) options.push(opts[i] && opts[i].text ? opts[i].text : '');
+    const pickIndex = answered && selected ? 'ABCD'.indexOf(selected) : -1;
+    publishScreenContext({
+      screen: 'practice',
+      topicName: 'Daily Challenge',
+      questionText: liveQuestion.questionText,
+      options,
+      chosen: pickIndex >= 0 ? options[pickIndex] : undefined,
+      outcome: answered ? (isCorrect ? 'right' : 'not yet') : undefined,
+    });
+  }, [liveQuestion, answered, selected, isCorrect]);
+
+  // Clear the context when leaving the page.
+  useEffect(() => () => clearScreenContext(), []);
 
   // ── Loading / Error states ─────────────────────────────────────────────────
   if (loading) {
