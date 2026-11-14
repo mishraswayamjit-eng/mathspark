@@ -24,7 +24,12 @@ export type VisualSpec =
   | { type: 'rectangle'; width: number; height: number; unit?: string; title?: string }
   | { type: 'angle'; degrees: number; title?: string }
   | { type: 'percentGrid'; percent: number; title?: string }
-  | { type: 'container'; capacity: number; filled: number; unit?: string; title?: string };
+  | { type: 'container'; capacity: number; filled: number; unit?: string; title?: string }
+  | { type: 'polygon'; sides: number; title?: string }
+  | { type: 'tiling'; sides: number; count: number; title?: string }
+  | { type: 'triangle'; angleA: number; angleB: number; title?: string }
+  | { type: 'circle'; radius: number; unit?: string; title?: string }
+  | { type: 'barChart'; bars: BarChartBar[]; unit?: string; showMean?: boolean; title?: string };
 
 export type VisualKind = VisualSpec['type'];
 
@@ -34,6 +39,11 @@ export interface BarModelSegment {
   label?: string;
   /** Draw as the unknown ("?") the child is finding. */
   unknown?: boolean;
+}
+
+export interface BarChartBar {
+  label: string;
+  value: number;
 }
 
 export interface BarModelBar {
@@ -167,6 +177,44 @@ export function parseVisualSpec(raw: unknown): VisualSpec | null {
       const filled = num(r.filled);
       if (capacity === null || filled === null || capacity <= 0 || filled < 0) return null;
       return { type: 'container', capacity, filled: Math.min(filled, capacity), unit: text(r.unit, 6), title };
+    }
+
+    case 'polygon': {
+      const sides = int(r.sides, 3, 12);
+      return sides === null ? null : { type: 'polygon', sides, title };
+    }
+
+    case 'tiling': {
+      const sides = int(r.sides, 3, 6);
+      if (sides === null) return null;
+      const count = int(r.count, 0, 6);
+      return { type: 'tiling', sides, count: count === null ? 1 : count, title };
+    }
+
+    case 'triangle': {
+      const angleA = int(r.angleA, 10, 160);
+      const angleB = int(r.angleB, 10, 160);
+      if (angleA === null || angleB === null || angleA + angleB > 170) return null;
+      return { type: 'triangle', angleA, angleB, title };
+    }
+
+    case 'circle': {
+      const radius = int(r.radius, 1, 20);
+      return radius === null ? null : { type: 'circle', radius, unit: text(r.unit, 6), title };
+    }
+
+    case 'barChart': {
+      if (!Array.isArray(r.bars)) return null;
+      const bars: BarChartBar[] = [];
+      for (let b = 0; b < r.bars.length && bars.length < 8; b++) {
+        const bar = r.bars[b] as Record<string, unknown> | null;
+        if (!bar) continue;
+        const value = num(bar.value);
+        const label = text(bar.label, 14);
+        if (value === null || value < 0 || !label) continue;
+        bars.push({ label, value });
+      }
+      return bars.length < 2 ? null : { type: 'barChart', bars, unit: text(r.unit, 10), showMean: r.showMean === true, title };
     }
 
     default:

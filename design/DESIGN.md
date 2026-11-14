@@ -235,6 +235,10 @@ White fill with a 2px ink top border. The active tab is Action Indigo at weight 
 
 Sparky, the mascot, appears beside feedback and in empty states, never as page decoration. Emoji stand in for icons: one per card, in a 44px rounded tile tinted with the topic colour. Maths is rendered with KaTeX in Ink. There is no photography. Topic colours (the hues on list-card edges and emoji tiles) are the only place a wider palette appears; they never colour buttons or text.
 
+## Diagrams and the whiteboard
+
+Interactive visuals (`src/components/visuals/`) are drawn like a clean textbook figure: plenty of white space, 2.5px Ink outlines, and one saturated fill for the thing being looked at. That fill is Star Gold with an Ink outline for geometry (angle wedges, tiles, bars) and Action Indigo for counted or selected items (shaded fraction parts, dots, the point on a number line). Draggable handles are a filled circle with an Ink outline. The sentence of working under a visual sits in a Soft block, centred, at 16px/700. Controls inside a visual use Line borders so the figure, not its controls, carries the weight. The whiteboard panel itself is a plain white card with a Line border; the conversation beside it keeps the emphasised Ink outline.
+
 ## Layout
 
 One centred column, `max-w-lg`, with 16px side padding, on the graph-paper canvas. A page reads top to bottom: sticky ink header, one emphasised card, then plain cards with 12–16px gaps. Practice screens put the question card first, options below, and feedback in a sheet that slides up from the bottom. Bottom navigation is fixed; pages end with 96px of padding to clear it.

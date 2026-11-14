@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import type { VisualSpec } from '@/lib/visuals/spec';
 import { C, range, gcd, fmt, Stat, Working, Slider, Toggle } from './parts';
 
@@ -153,7 +153,20 @@ function angleKind(d: number): string {
 
 export function AngleVisual({ spec }: { spec: Of<'angle'> }) {
   const [deg, setDeg] = useState(spec.degrees);
+  const [sweeping, setSweeping] = useState(false);
   const svgRef = useRef<SVGSVGElement | null>(null);
+
+  // "Watch it turn": sweep the arm from 0° round to a full turn, then stop.
+  useEffect(() => {
+    if (!sweeping) return;
+    const timer = setInterval(() => {
+      setDeg((d) => {
+        if (d >= 360) { setSweeping(false); return 360; }
+        return d + 5;
+      });
+    }, 45);
+    return () => clearInterval(timer);
+  }, [sweeping]);
   const dragging = useRef(false);
   const cx = 150;
   const cy = 130;
@@ -173,6 +186,7 @@ export function AngleVisual({ spec }: { spec: Of<'angle'> }) {
     let d = Math.round((Math.atan2(y, x) * 180) / Math.PI);
     if (d < 0) d += 360;
     // Snap to the nearest 5° so tidy angles are easy to land on.
+    setSweeping(false);
     setDeg(Math.round(d / 5) * 5);
   }
 
@@ -192,11 +206,11 @@ export function AngleVisual({ spec }: { spec: Of<'angle'> }) {
       >
         {/* Angle arc */}
         {deg >= 360 ? (
-          <circle cx={cx} cy={cy} r={ar} fill={C.actionSoft} stroke={C.action} strokeWidth={2.5} />
+          <circle cx={cx} cy={cy} r={ar} fill={C.star} stroke={C.ink} strokeWidth={2} />
         ) : deg > 0 ? (
           <path
             d={`M ${cx} ${cy} L ${cx + ar} ${cy} A ${ar} ${ar} 0 ${deg > 180 ? 1 : 0} 0 ${cx + ar * Math.cos(rad)} ${cy - ar * Math.sin(rad)} Z`}
-            fill={C.actionSoft} stroke={C.action} strokeWidth={2.5} strokeLinejoin="round"
+            fill={C.star} stroke={C.ink} strokeWidth={2} strokeLinejoin="round"
           />
         ) : null}
         {/* Fixed arm and turning arm */}
@@ -206,7 +220,15 @@ export function AngleVisual({ spec }: { spec: Of<'angle'> }) {
         <circle cx={ex} cy={ey} r={12} fill={C.action} stroke={C.ink} strokeWidth={2.5} />
         <text x={cx} y={cy + 34} textAnchor="middle" fontSize={22} fontWeight={800} fill={C.ink}>{deg}°</text>
       </svg>
-      <Slider label="Turn the arm" value={deg} min={0} max={360} step={5} onChange={setDeg} display={`${deg}°`} />
+      <Slider label="Turn the arm" value={deg} min={0} max={360} step={5} onChange={(v) => { setSweeping(false); setDeg(v); }} display={`${deg}°`} />
+      <button
+        type="button"
+        onClick={() => { setDeg(0); setSweeping(true); }}
+        disabled={sweeping}
+        className="w-full min-h-[48px] rounded-control border-2 border-line bg-white text-ink font-extrabold text-[14px] hover:border-ink disabled:opacity-50 transition-colors"
+      >
+        <span aria-hidden="true">▶ </span>Watch it turn
+      </button>
       <Working>{deg}° is {angleKind(deg)}</Working>
     </div>
   );

@@ -196,6 +196,11 @@ export default function ChatPage() {
             starters={starters}
             disabled={isLoading || rateLimited}
             onStarter={(prompt) => { sendMessage(prompt, null, { usePhoto: false }); }}
+            onSketch={(file) => {
+              // The sketch waits in the composer like a photo, so the child can add a note before sending.
+              attachImage(file);
+              if (!input.trim()) setInput('Here is my sketch on the whiteboard. What do you think?');
+            }}
           />
         </div>
       </div>

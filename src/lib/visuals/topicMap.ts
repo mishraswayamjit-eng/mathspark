@@ -28,6 +28,11 @@ export const VISUAL_LIBRARY: Record<VisualKind, VisualInfo> = {
   angle:       { kind: 'angle',       name: 'Angle maker',     emoji: '📎', blurb: 'Turn an arm to make acute, right, obtuse and reflex angles' },
   percentGrid: { kind: 'percentGrid', name: 'Hundred grid',    emoji: '💯', blurb: 'See a percentage as squares out of 100' },
   container:   { kind: 'container',   name: 'Measuring jar',   emoji: '🫙', blurb: 'Fill a jar to see how full it is' },
+  polygon:     { kind: 'polygon',     name: 'Polygon angles',  emoji: '⬡', blurb: 'Change the number of sides and watch the angles' },
+  tiling:      { kind: 'tiling',      name: 'Shapes around a point', emoji: '🐝', blurb: 'Fit shapes around a point until they close up' },
+  triangle:    { kind: 'triangle',    name: 'Triangle',        emoji: '🔺', blurb: 'Drag a corner and watch the three angles' },
+  circle:      { kind: 'circle',      name: 'Circle',          emoji: '⭕', blurb: 'Grow the radius and see circumference and area' },
+  barChart:    { kind: 'barChart',    name: 'Bar chart',       emoji: '📶', blurb: 'Tap the bars and find the average' },
 };
 
 export interface TopicVisualRule {
@@ -51,11 +56,14 @@ export const TOPIC_VISUAL_RULES: TopicVisualRule[] = [
   { keywords: ['place value', 'number system', 'numbers', 'numeration'], topic: 'Numbers and place value', visuals: ['placeValue', 'numberLine'],       starter: 'Build the number 2,346 with blocks' },
   { keywords: ['multiplication', 'division', 'table', 'factor', 'multiple', 'hcf', 'lcm', 'prime', 'divisib', 'square'], topic: 'Multiplication, division, factors and squares', visuals: ['array', 'numberLine'], starter: 'Show me 6 × 7 as an array' },
   { keywords: ['addition', 'subtraction', 'operation', 'bodmas', 'integer'], topic: 'Addition, subtraction, integers', visuals: ['numberLine', 'barModel', 'placeValue'], starter: 'Show me 8 − 13 as hops on a number line' },
-  { keywords: ['area', 'perimeter', 'mensuration', 'quadrilateral', 'rectangle'], topic: 'Perimeter, area and mensuration', visuals: ['rectangle'],  starter: 'Show me a 6 by 4 rectangle and its area and perimeter' },
-  { keywords: ['angle', 'triangle', 'line', 'geometry', 'circle', 'polygon'], topic: 'Angles and geometry', visuals: ['angle', 'rectangle'],          starter: 'Show me a 120° angle and tell me what kind it is' },
+  { keywords: ['area', 'perimeter', 'mensuration', 'rectangle'], topic: 'Perimeter, area and mensuration', visuals: ['rectangle', 'circle'],          starter: 'Show me a 6 by 4 rectangle and its area and perimeter' },
+  { keywords: ['triangle'],                              topic: 'Triangles',                         visuals: ['triangle', 'angle'],                     starter: 'Show me a triangle and why its angles add up to 180°' },
+  { keywords: ['circle'],                                topic: 'Circles',                           visuals: ['circle'],                                starter: 'Show me a circle with radius 7 cm and its circumference' },
+  { keywords: ['polygon', 'quadrilateral'],              topic: 'Polygons and quadrilaterals',       visuals: ['polygon', 'tiling', 'rectangle'],        starter: 'Show me the angles inside a regular hexagon' },
+  { keywords: ['angle', 'line', 'geometry'],             topic: 'Angles and lines',                  visuals: ['angle', 'polygon', 'triangle'],          starter: 'Show me a 120° angle and tell me what kind it is' },
   { keywords: ['measurement', 'unit', 'capacity', 'volume', 'time', 'speed', 'distance'], topic: 'Measurement, capacity, speed and time', visuals: ['container', 'numberLine', 'barModel'], starter: 'Show me a 500 ml jar with 350 ml in it' },
   { keywords: ['sequence', 'series', 'pattern'],         topic: 'Sequences and patterns',            visuals: ['numberLine', 'array'],                   starter: 'Show me the pattern 3, 7, 11, 15 on a number line' },
-  { keywords: ['data', 'graph', 'statistic', 'average', 'probability'], topic: 'Data handling and averages', visuals: ['barModel', 'percentGrid'],   starter: 'Show me the average of 4, 7 and 10 with bars' },
+  { keywords: ['data', 'graph', 'statistic', 'average', 'probability'], topic: 'Data handling and averages', visuals: ['barChart', 'barModel', 'percentGrid'], starter: 'Show me a bar chart of 4, 7 and 10 and their average' },
 ];
 
 /** The visuals that suit a topic name, best first. Empty when nothing fits. */
@@ -137,6 +145,20 @@ angle: one angle the child can turn. {"type":"angle","degrees":0-360}.
 percentGrid: a 10 by 10 grid with squares shaded. {"type":"percentGrid","percent":0-100}. Shows the percentage as a fraction and a decimal too.
 
 container: a measuring jar. {"type":"container","capacity":500,"filled":350,"unit":"ml"}.
+
+polygon: a regular polygon with every interior angle marked, the angle sum and the size of each angle. {"type":"polygon","sides":3-12}. The child can change the number of sides.
+
+tiling: copies of one regular polygon fitted around a single point, to see which shapes close up with no gap (triangles, squares and hexagons do; pentagons leave a gap). {"type":"tiling","sides":3-6,"count":how many are placed to start}. The child adds and removes copies and watches the angles add towards 360°.
+
+triangle: a triangle from two of its angles, with all three angles marked. {"type":"triangle","angleA":60,"angleB":70}; the two must add to 170 or less. The child drags the corners; the angles always add to 180°, and the triangle is named by its angles and sides.
+
+circle: a circle with its radius and diameter drawn. {"type":"circle","radius":1-20,"unit":"cm"}. Shows circumference and area using π ≈ 3.14 (say so if the child's book uses 22/7).
+
+barChart: a bar chart for data handling and averages. {"type":"barChart","unit":"runs","showMean":true,"bars":[{"label":"Mon","value":4},{"label":"Tue","value":7}]}. 2 to 8 bars. With "showMean" a line marks the average.
+
+Sketching together
+
+The whiteboard also has a pencil. The child can draw over your picture, or on a blank board, with a finger, a stylus or the mouse, and send you the sketch; it arrives as a photo. Treat it like any photo of working: say what you see, build on it, and correct it kindly. Invite sketching when it helps the child think ("sketch where you think 3/4 goes on the line and show me", "draw the triangle you are imagining"). You cannot draw freehand yourself; answer a sketch with words and, when useful, a picture from the library.
 
 Which picture for which topic (best first)
 ${topicLines}

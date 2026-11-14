@@ -42,9 +42,9 @@ export function fmt(n: number): string {
 /** A labelled number in a soft tile. */
 export function Stat({ label, value }: { label: string; value: ReactNode }) {
   return (
-    <div className="flex-1 min-w-[92px] bg-soft border-2 border-line rounded-tile px-3 py-2 text-center">
+    <div className="flex-1 min-w-[92px] bg-soft rounded-tile px-3 py-2.5 text-center">
       <p className="text-caption text-ink-muted">{label}</p>
-      <p className="font-display text-title text-ink">{value}</p>
+      <p className="font-display text-heading text-ink">{value}</p>
     </div>
   );
 }
@@ -52,7 +52,7 @@ export function Stat({ label, value }: { label: string; value: ReactNode }) {
 /** The line of maths that the picture shows. */
 export function Working({ children }: { children: ReactNode }) {
   return (
-    <p className="bg-soft rounded-note border-l-[6px] border-action px-3 py-2 text-label text-ink" aria-live="polite">
+    <p className="bg-soft rounded-control px-4 py-3 text-[16px] leading-snug font-bold text-ink text-center" aria-live="polite">
       {children}
     </p>
   );
