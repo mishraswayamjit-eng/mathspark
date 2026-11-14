@@ -718,8 +718,11 @@ export default function PracticePage() {
       prefetchNext();
     }
 
-    // Auto-advance for correct answers
-    if (correct) {
+    // Auto-advance for correct answers, on phones and tablets only. On wide screens
+    // the step-by-step pane is open beside the question, so the child moves on
+    // with Continue when they have finished reading it.
+    const wideScreen = typeof window !== 'undefined' && window.matchMedia('(min-width: 1024px)').matches;
+    if (correct && !wideScreen) {
       advanceTimer.current = setTimeout(() => advance(newHearts), AUTO_ADVANCE_MS);
     }
   }

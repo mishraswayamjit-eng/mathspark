@@ -8,7 +8,8 @@ ENTRIES = {}
 
 # 020 Mishti faces south-west, turns 180° clockwise then 225° anticlockwise
 ENTRIES[P + "020"] = entry(
-    compass("SW", [(180, "cw"), (225, "acw")], note="Follow the two turns. Facing now = ?"),
+    # Start direction only: drawing the turns would point at the answer.
+    compass("SW", note="She starts facing south-west. Facing now = ?"),
     [
         compass("SW", [(180, "cw")], end=True, hl=["t0"], note="A half turn from South-West ends at North-East"),
         compass("NE", [(225, "acw")], end=True, hl=["t0"], note="225° is 5 steps of 45°: N, NW, W, SW, S"),

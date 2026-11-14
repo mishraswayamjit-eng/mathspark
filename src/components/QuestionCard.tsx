@@ -149,7 +149,8 @@ const QuestionCard = React.memo(function QuestionCard({
         )}
 
         {/* Diagram (if this question has an associated figure) */}
-        <QuestionDiagram questionId={question.id} />
+        {/* The older diagram set is used only where the question has no figure of its own. */}
+        {!(question.visual && question.visual.figure) && <QuestionDiagram questionId={question.id} />}
       </div>
 
       {/* ── Optional slot between the question and the options ───────── */}

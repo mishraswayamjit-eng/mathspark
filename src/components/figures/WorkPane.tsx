@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import FigureView from './FigureView';
 import StepPlayer from './StepPlayer';
 import ScratchPad from './ScratchPad';
-import HintSystem from '@/components/HintSystem';
 import type { Question } from '@/types';
 
 /**
@@ -83,16 +82,11 @@ export default function WorkPane({ question, stage, mode, hintLevel, onHintLevel
         </button>
       )}
       {showHints && level > 0 && (
-        // Room above for Sparky, who peeks over the top of the hint note.
-        <div className="pt-5">
-          <HintSystem
-            hint1={question.hint1}
-            hint2={question.hint2}
-            hint3={question.hint3}
-            level={level}
-            onLevelUp={levelUp}
-          />
-        </div>
+        // Only the first, strategy hint is offered before answering. The later
+        // hints work the question through, so they wait until after an answer.
+        <p role="note" className="bg-hint rounded-control border-2 border-line px-4 py-3 text-[15px] leading-relaxed font-semibold text-ink">
+          <span aria-hidden="true">💡 </span>{question.hint1}
+        </p>
       )}
 
       {/* Pencil pad */}

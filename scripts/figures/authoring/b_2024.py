@@ -17,7 +17,8 @@ ENTRIES[P + "005"] = entry(
 
 # 034 Shraddha faces East, turns 135° clockwise then 315° anticlockwise
 ENTRIES[P + "034"] = entry(
-    compass("E", [(135, "cw"), (315, "acw")], note="Follow the two turns. Facing now = ?"),
+    # Start direction only: drawing the turns would point at the answer.
+    compass("E", note="She starts facing East. Facing now = ?"),
     [
         compass("E", [(135, "cw")], end=True, hl=["t0"], note="135° clockwise from East ends at South-West"),
         compass("SW", [(315, "acw")], end=True, hl=["t0"], note="315° anticlockwise ends where 45° clockwise does"),

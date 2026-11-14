@@ -460,7 +460,7 @@ export default function TestEnginePage() {
             </div>
           )}
           {/* Diagram (if this question has an associated figure) */}
-          <QuestionDiagram questionId={currentQuestion.id} />
+          {!(currentQuestion.visual && currentQuestion.visual.figure) && <QuestionDiagram questionId={currentQuestion.id} />}
         </div>
 
         {/* The question's figure (phones and tablets; wide screens show it in the side pane).
