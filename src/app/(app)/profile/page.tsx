@@ -461,6 +461,7 @@ export default function ProfilePage() {
                 <button
                   key={s}
                   onClick={() => setTargetScore(s)}
+                  aria-pressed={targetScore === s}
                   className={`flex-1 py-2 rounded-control border-2 text-sm font-extrabold transition-colors min-h-0 ${
                     targetScore === s
                       ? 'bg-action border-action text-white'

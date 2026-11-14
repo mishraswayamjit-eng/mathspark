@@ -218,8 +218,8 @@ test.describe('Lesson Session — slide viewer', () => {
     await page.goto('/learn/lessons/fractions/1', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    // Progress bar (rounded-full div inside the main content area)
-    const progressBar = page.locator('div[class*="h-1"][class*="rounded-full"]').first();
+    // Progress bar for the lesson
+    const progressBar = page.getByRole('progressbar', { name: /lesson progress/i }).first();
     await expect(progressBar).toBeVisible({ timeout: 5_000 });
   });
 
@@ -375,7 +375,7 @@ test.describe('Lesson Session — quiz phase', () => {
       await page.waitForTimeout(500);
 
       // Hint box should appear
-      const hintBox = page.locator('div[class*="amber"]');
+      const hintBox = page.getByRole('note');
       await expect(hintBox.first()).toBeVisible({ timeout: 5_000 });
     }
   });

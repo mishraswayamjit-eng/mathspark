@@ -181,10 +181,8 @@ test.describe('Exam Simulator — exam phase', () => {
     }
 
     await optionA.click();
-    await page.waitForTimeout(300);
 
-    const classes = await optionA.getAttribute('class');
-    expect(classes).toMatch(/blue|selected/);
+    await expect(optionA).toHaveAttribute('aria-pressed', 'true');
   });
 
   test('flag button toggles', async ({ authenticatedPage: page }) => {

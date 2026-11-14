@@ -50,6 +50,7 @@ export default function BottomNav() {
             <Link
               key={href}
               href={href}
+              aria-current={active ? 'page' : undefined}
               className={`${baseClass} ${
                 active
                   ? 'text-action border-action font-extrabold'

@@ -785,6 +785,7 @@ export default function ExamSimulatorPage() {
               <button
                 key={opt.id}
                 onClick={() => selectAnswer(opt.id)}
+                aria-pressed={isSelected}
                 className={`w-full text-left rounded-control px-4 py-4 min-h-[56px] border-2 flex items-center gap-3 transition-colors duration-200 ${
                   isSelected
                     ? 'bg-soft border-action'

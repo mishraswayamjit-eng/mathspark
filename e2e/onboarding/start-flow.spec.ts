@@ -65,19 +65,12 @@ publicTest.describe('Onboarding — Grade selection', () => {
     ).toBeVisible({ timeout: 10_000 });
 
     // Click Grade 4
-    const gr4 = page.getByText('Gr 4', { exact: false }).first();
+    const gr4 = page.locator('button').filter({ hasText: /Gr\s*4/ }).first();
+    await publicExpect(gr4).toHaveAttribute('aria-pressed', 'false');
     await gr4.click();
-    await page.waitForTimeout(300);
 
-    // Selected button should have blue/highlighted styling
-    const gradeContainer = gr4.locator('..');
-    const classes = await gradeContainer.getAttribute('class').catch(() => '');
-    const grClasses = await gr4.getAttribute('class').catch(() => '');
-    const combinedClasses = (classes ?? '') + (grClasses ?? '');
-
-    // Check either the button or its parent for selection styling
-    const isSelected = /duo-blue|selected|scale-105|bg-blue/i.test(combinedClasses);
-    publicExpect(isSelected).toBeTruthy();
+    // The chosen grade is marked as pressed
+    await publicExpect(gr4).toHaveAttribute('aria-pressed', 'true');
   });
 
   publicTest('Next button enabled after grade selection', async ({ page }) => {

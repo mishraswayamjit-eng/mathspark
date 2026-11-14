@@ -370,6 +370,7 @@ export default function ChaptersPage() {
             <button
               key={g}
               onClick={() => handleGradeTabClick(g)}
+              aria-pressed={isSelected}
               className={tabCls}
             >
               <span aria-hidden="true">{GRADE_EMOJI[g]}</span>

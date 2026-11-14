@@ -462,6 +462,7 @@ export default function TestEnginePage() {
               <button
                 key={key}
                 onClick={() => selectAnswer(currentNum, key)}
+                aria-pressed={isSelected}
                 className={`w-full text-left rounded-control p-4 border-2 font-bold text-base transition-[colors,border-color,transform] duration-150 active:scale-[0.98] min-h-[56px] flex items-center gap-3 ${
                   isSelected
                     ? 'bg-soft border-action text-ink'

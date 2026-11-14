@@ -21,17 +21,27 @@ test.describe('Sparky Chat — page load', () => {
     await page.goto('/chat', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    // Send button is a green circle button
-    const sendBtn = page.locator('button[class*="duo-green"], button[class*="green"]').last();
-    const hasSend = await sendBtn.isVisible({ timeout: 10_000 }).catch(() => false);
+    const sendBtn = page.getByRole('button', { name: 'Send', exact: true });
+    await expect(sendBtn).toBeVisible({ timeout: 10_000 });
+    // Nothing typed and no photo attached: there is nothing to send yet
+    await expect(sendBtn).toBeDisabled();
+  });
 
-    // Alternatively look for a button near the input
-    if (!hasSend) {
-      const inputArea = page.locator('input[placeholder*="Ask Sparky"], textarea[placeholder*="Ask Sparky"]');
-      await expect(inputArea.first()).toBeVisible({ timeout: 10_000 });
-    }
+  test('photo button is offered next to the input', async ({ authenticatedPage: page }) => {
+    await page.goto('/chat', { waitUntil: 'domcontentloaded' });
+    await waitForDataLoad(page);
 
-    expect(true).toBeTruthy(); // Page loaded
+    await expect(
+      page.getByRole('button', { name: /add a photo of your working/i }),
+    ).toBeVisible({ timeout: 10_000 });
+  });
+
+  test('typing a message enables the send button', async ({ authenticatedPage: page }) => {
+    await page.goto('/chat', { waitUntil: 'domcontentloaded' });
+    await waitForDataLoad(page);
+
+    await page.getByLabel('Message to Sparky').fill('What is 3/4 as a percentage?');
+    await expect(page.getByRole('button', { name: 'Send', exact: true })).toBeEnabled();
   });
 
   test('quick reply chips visible', async ({ authenticatedPage: page }) => {

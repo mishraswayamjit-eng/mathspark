@@ -1,4 +1,5 @@
 import { test as publicTest, expect as publicExpect } from '@playwright/test';
+import { MONETIZATION_ENABLED } from '../../src/lib/monetization';
 
 publicTest.describe('Parent Dashboard — unauthenticated', () => {
   publicTest('redirects to login if not authenticated', async ({ page }) => {
@@ -34,6 +35,8 @@ publicTest.describe('Parent Dashboard — page structure', () => {
 });
 
 publicTest.describe('Parent — pricing link', () => {
+  publicTest.skip(!MONETIZATION_ENABLED, 'Monetization is off: no pricing page');
+
   publicTest('/pricing accessible from parent context', async ({ page }) => {
     await page.goto('/pricing', { waitUntil: 'domcontentloaded' });
 

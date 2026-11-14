@@ -1,6 +1,7 @@
 import { test, expect } from '../fixtures/auth';
 import { test as publicTest, expect as publicExpect } from '@playwright/test';
 import { waitForDataLoad } from '../helpers/wait';
+import { MONETIZATION_ENABLED } from '../../src/lib/monetization';
 
 /* ────────────────────────────────────────────────────────────────────────────
  * Deep linking — URL params are respected
@@ -109,7 +110,8 @@ test.describe('localStorage Persistence', () => {
 publicTest.describe('Public Pages — no auth required', () => {
   const publicRoutes = [
     { route: '/', heading: /mathspark|ipm|math/i },
-    { route: '/pricing', heading: /starter|advanced|unlimited/i },
+    // /pricing exists only while monetization is on (see e2e/pricing)
+    ...(MONETIZATION_ENABLED ? [{ route: '/pricing', heading: /starter|advanced|unlimited/i }] : []),
     { route: '/start', heading: /math superpowers/i },
     { route: '/student/login', heading: /student login/i },
     { route: '/auth/login', heading: /parent sign in/i },

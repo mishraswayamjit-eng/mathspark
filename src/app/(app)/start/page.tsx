@@ -449,6 +449,7 @@ export default function StartPage() {
               <button
                 key={g}
                 onClick={() => setSelectedGrade(g)}
+                aria-pressed={selectedGrade === g}
                 className={`flex flex-col items-center justify-center rounded-2xl py-3 px-2 border-2 transition-[colors,border-color,box-shadow,transform] active:scale-95 min-h-0 ${
                   selectedGrade === g
                     ? 'bg-action border-ink text-white shadow-hard-sm'

@@ -133,7 +133,7 @@ function SlideModeViewer({
         </div>
 
         {/* Slide progress bar */}
-        <div className="w-full h-2.5 ui-meter">
+        <div className="w-full h-2.5 ui-meter" role="progressbar" aria-label="Lesson progress">
           <div
             className="h-full rounded-full bg-action transition-[width] duration-500"
             style={{
@@ -221,7 +221,7 @@ function ClassicModeViewer({
             {Math.round(((lessonIndex + 1) / lessons.length) * 100)}%
           </p>
         </div>
-        <div className="w-full h-2.5 ui-meter">
+        <div className="w-full h-2.5 ui-meter" role="progressbar" aria-label="Lesson progress">
           <div
             className="h-full rounded-full bg-action transition-[width] duration-500"
             style={{

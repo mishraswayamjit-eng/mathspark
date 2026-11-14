@@ -1,6 +1,21 @@
 import { test as publicTest, expect as publicExpect } from '@playwright/test';
+import { MONETIZATION_ENABLED } from '../../src/lib/monetization';
+
+// The pricing page follows the app's monetization switch (src/lib/monetization.ts).
+// Switched off: /pricing sends visitors to the home page and the tests below are skipped.
+publicTest.describe('Pricing — switched off', () => {
+  publicTest.skip(MONETIZATION_ENABLED, 'Monetization is on: the pricing page is shown');
+
+  publicTest('/pricing sends visitors to the home page', async ({ page }) => {
+    await page.goto('/pricing', { waitUntil: 'domcontentloaded' });
+    await page.waitForURL((url) => url.pathname === '/', { timeout: 15_000 });
+    await publicExpect(page.getByText(/start free trial/i)).toHaveCount(0);
+  });
+});
 
 publicTest.describe('Pricing — page load', () => {
+  publicTest.skip(!MONETIZATION_ENABLED, 'Monetization is off: no pricing page');
+
   publicTest('shows main heading', async ({ page }) => {
     await page.goto('/pricing', { waitUntil: 'domcontentloaded' });
 
@@ -41,6 +56,8 @@ publicTest.describe('Pricing — page load', () => {
 });
 
 publicTest.describe('Pricing — toggle', () => {
+  publicTest.skip(!MONETIZATION_ENABLED, 'Monetization is off: no pricing page');
+
   publicTest('monthly/annual toggle visible', async ({ page }) => {
     await page.goto('/pricing', { waitUntil: 'domcontentloaded' });
 
@@ -68,6 +85,8 @@ publicTest.describe('Pricing — toggle', () => {
 });
 
 publicTest.describe('Pricing — features & FAQ', () => {
+  publicTest.skip(!MONETIZATION_ENABLED, 'Monetization is off: no pricing page');
+
   publicTest('compare all features section expandable', async ({ page }) => {
     await page.goto('/pricing', { waitUntil: 'domcontentloaded' });
 

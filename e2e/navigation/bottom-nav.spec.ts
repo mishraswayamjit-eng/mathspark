@@ -93,9 +93,8 @@ test.describe('BottomNav — active state', () => {
       const tab = nav.locator(`a[href="${item.href}"]`).first();
       await expect(tab).toBeVisible({ timeout: 10_000 });
 
-      // Active tab should have duo-green or green in its classes
-      const classes = await tab.getAttribute('class');
-      expect(classes).toMatch(/duo-green|green/);
+      // The active tab is marked as the current page
+      await expect(tab).toHaveAttribute('aria-current', 'page');
     });
   }
 });

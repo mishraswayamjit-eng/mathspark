@@ -152,7 +152,7 @@ test.describe('Profile — exam goals', () => {
     await page.goto('/profile', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    const pill35 = page.getByText('35', { exact: true }).first();
+    const pill35 = page.getByRole('button', { name: '35', exact: true }).first();
     const hasPill = await pill35.isVisible({ timeout: 10_000 }).catch(() => false);
     if (!hasPill) {
       test.skip(true, 'Target score pills not found');
@@ -160,14 +160,9 @@ test.describe('Profile — exam goals', () => {
     }
 
     await pill35.click();
-    await page.waitForTimeout(500);
 
-    // Selected pill should have green bg
-    const parent = pill35.locator('..');
-    const classes = await parent.getAttribute('class').catch(() => '');
-    const pillClasses = await pill35.getAttribute('class').catch(() => '');
-    const combined = (classes ?? '') + (pillClasses ?? '');
-    expect(combined).toMatch(/green|selected/i);
+    // The chosen target score is marked as pressed
+    await expect(pill35).toHaveAttribute('aria-pressed', 'true');
   });
 });
 

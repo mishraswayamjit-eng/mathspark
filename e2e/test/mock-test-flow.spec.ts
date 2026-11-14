@@ -91,10 +91,8 @@ test.describe('Test — answer selection', () => {
     }
 
     await optionA.click();
-    await page.waitForTimeout(500);
 
-    const classes = await optionA.getAttribute('class');
-    expect(classes).toMatch(/blue|selected/);
+    await expect(optionA).toHaveAttribute('aria-pressed', 'true');
   });
 
   test('clicking same option deselects it', async ({ authenticatedPage: page }) => {
@@ -120,9 +118,7 @@ test.describe('Test — answer selection', () => {
     await optionA.click();
     await page.waitForTimeout(300);
 
-    const classes = await optionA.getAttribute('class');
-    const isDeselected = !classes?.includes('blue-50') || classes?.includes('white');
-    expect(isDeselected).toBeTruthy();
+    await expect(optionA).toHaveAttribute('aria-pressed', 'false');
   });
 });
 

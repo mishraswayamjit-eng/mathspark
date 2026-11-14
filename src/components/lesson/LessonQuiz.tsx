@@ -183,7 +183,7 @@ The answer is {q.answer}
         )}
 
         {showHint && !feedback && (
-          <div className="bg-hint border-2 border-dashed border-hint-ink rounded-control px-4 py-3 mt-2 animate-fade-in">
+          <div role="note" className="bg-hint border-2 border-dashed border-hint-ink rounded-control px-4 py-3 mt-2 animate-fade-in">
             <p className="text-[13px] font-bold text-hint-ink">
               <span aria-hidden="true">💡 </span>{q.hint}
             </p>

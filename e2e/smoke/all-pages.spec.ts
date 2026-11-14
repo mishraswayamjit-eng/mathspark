@@ -1,6 +1,7 @@
 import { test, expect } from '../fixtures/auth';
 import { test as publicTest, expect as publicExpect } from '@playwright/test';
 import { waitForDataLoad } from '../helpers/wait';
+import { MONETIZATION_ENABLED } from '../../src/lib/monetization';
 
 // ─── Helper: collect JS errors during navigation ────────────────────────────
 
@@ -55,6 +56,7 @@ publicTest.describe('Public pages', () => {
   });
 
   publicTest('/pricing', async ({ page }) => {
+    publicTest.skip(!MONETIZATION_ENABLED, 'Monetization is off: no pricing page');
     await expectNoJSErrors(page, '/pricing', /IPM prep/i);
   });
 

@@ -59,9 +59,20 @@ test.describe('Chapters Hub — grade tabs', () => {
     const firstGradeBtn = gradeButtons.first();
     await expect(firstGradeBtn).toBeVisible({ timeout: 10_000 });
 
-    const classes = await firstGradeBtn.getAttribute('class');
-    // Selected tab has dark background
-    expect(classes).toMatch(/duo-dark|bg-duo-dark|selected/);
+    // The selected tab says so through aria-pressed (not through a colour class)
+    await expect(firstGradeBtn).toHaveAttribute('aria-pressed', 'true');
+  });
+
+  test('every topic is open: nothing is locked behind earlier topics', async ({
+    authenticatedPage: page,
+  }) => {
+    await page.goto('/chapters', { waitUntil: 'domcontentloaded' });
+    await waitForDataLoad(page);
+
+    await expect(page.getByText(/complete previous topics/i)).toHaveCount(0);
+    // At most one topic carries the "Start here" suggestion
+    const suggested = await page.getByText('Start here', { exact: true }).count();
+    expect(suggested).toBeLessThanOrEqual(1);
   });
 
   test('clicking different grade tab switches content', async ({ authenticatedPage: page }) => {
