@@ -105,6 +105,29 @@ export function Slider({ label, value, min, max, step = 1, onChange, display }: 
   );
 }
 
+/** A labelled drop-down, for choosing one of many (e.g. a shape). */
+export function Picker<T extends string>({ label, options, value, onChange }: {
+  label: string; options: Array<{ value: T; label: string }>; value: T; onChange: (v: T) => void;
+}) {
+  return (
+    <label className="block">
+      <span className="text-caption text-ink-muted">{label}</span>
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value as T)}
+        className="mt-1 w-full min-h-[48px] rounded-control border-2 border-line bg-white px-3 font-extrabold text-[15px] text-ink"
+      >
+        {options.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
+      </select>
+    </label>
+  );
+}
+
+/** A number without trailing noise: 2500, 0.025, 1.5. */
+export function tidy(n: number): string {
+  return String(Math.round(n * 1e6) / 1e6);
+}
+
 /** A two-or-more way switch (e.g. Area / Perimeter). */
 export function Toggle<T extends string>({ options, value, onChange }: {
   options: Array<{ value: T; label: string }>; value: T; onChange: (v: T) => void;

@@ -2,10 +2,16 @@
 
 import { useState } from 'react';
 import type { VisualSpec } from '@/lib/visuals/spec';
-import { VISUAL_LIBRARY, allVisuals, type WhiteboardStarter } from '@/lib/visuals/topicMap';
+import { VISUAL_LIBRARY, visualsByFamily, type WhiteboardStarter } from '@/lib/visuals/topicMap';
 import { FractionVisual, NumberLineVisual, PlaceValueVisual, ArrayVisual, BarModelVisual } from './NumberVisuals';
 import { BalanceVisual, RectangleVisual, AngleVisual, PercentGridVisual, ContainerVisual } from './ShapeVisuals';
 import { PolygonVisual, TilingVisual, TriangleVisual, RightTriangleVisual, CircleVisual, BarChartVisual } from './GeometryVisuals';
+import { ClockVisual, CalendarVisual, MoneyVisual, JourneyVisual, UnitLadderVisual, ProfitLossVisual, SimpleInterestVisual } from './MeasureVisuals';
+import {
+  MixedNumberVisual, FractionSetVisual, FactorTreeVisual, VennVisual, HundredChartVisual, PlaceChartVisual,
+  FigurateVisual, AreaModelVisual, CountersVisual, MagicSquareVisual, PictographVisual,
+} from './NumberToolVisuals';
+import { SymmetryVisual, CuboidVisual, CoordinateGridVisual, QuadrilateralVisual, ParallelLinesVisual } from './SpaceVisuals';
 import SketchPad from './SketchPad';
 
 function renderVisual(spec: VisualSpec) {
@@ -26,6 +32,29 @@ function renderVisual(spec: VisualSpec) {
     case 'rightTriangle': return <RightTriangleVisual spec={spec} />;
     case 'circle':      return <CircleVisual spec={spec} />;
     case 'barChart':    return <BarChartVisual spec={spec} />;
+    case 'clock':          return <ClockVisual spec={spec} />;
+    case 'calendar':       return <CalendarVisual spec={spec} />;
+    case 'money':          return <MoneyVisual spec={spec} />;
+    case 'journey':        return <JourneyVisual spec={spec} />;
+    case 'unitLadder':     return <UnitLadderVisual spec={spec} />;
+    case 'profitLoss':     return <ProfitLossVisual spec={spec} />;
+    case 'simpleInterest': return <SimpleInterestVisual spec={spec} />;
+    case 'mixedNumber':    return <MixedNumberVisual spec={spec} />;
+    case 'fractionSet':    return <FractionSetVisual spec={spec} />;
+    case 'factorTree':     return <FactorTreeVisual spec={spec} />;
+    case 'venn':           return <VennVisual spec={spec} />;
+    case 'hundredChart':   return <HundredChartVisual spec={spec} />;
+    case 'placeChart':     return <PlaceChartVisual spec={spec} />;
+    case 'figurate':       return <FigurateVisual spec={spec} />;
+    case 'areaModel':      return <AreaModelVisual spec={spec} />;
+    case 'counters':       return <CountersVisual spec={spec} />;
+    case 'magicSquare':    return <MagicSquareVisual spec={spec} />;
+    case 'pictograph':     return <PictographVisual spec={spec} />;
+    case 'symmetry':       return <SymmetryVisual spec={spec} />;
+    case 'cuboid':         return <CuboidVisual spec={spec} />;
+    case 'coordinateGrid': return <CoordinateGridVisual spec={spec} />;
+    case 'quadrilateral':  return <QuadrilateralVisual spec={spec} />;
+    case 'parallelLines':  return <ParallelLinesVisual spec={spec} />;
     default:            return null;
   }
 }
@@ -127,8 +156,11 @@ export function WhiteboardPanel({ visual, starters, onStarter, onSketch, disable
               <div>
                 <p className="font-display text-title text-ink">All pictures</p>
                 <p className="text-caption text-ink-muted mt-0.5">Tap one to try it. You can also just ask Sparky for any of them.</p>
-                <div className="grid grid-cols-2 gap-2 mt-2.5">
-                  {allVisuals().map((v) => (
+                {visualsByFamily().map((group) => (
+                <div key={group.family} className="mt-3">
+                <p className="text-caption text-ink-muted">{group.family}</p>
+                <div className="grid grid-cols-2 gap-2 mt-1.5">
+                  {group.visuals.map((v) => (
                     <button
                       key={v.kind}
                       type="button"
@@ -142,6 +174,8 @@ export function WhiteboardPanel({ visual, starters, onStarter, onSketch, disable
                     </button>
                   ))}
                 </div>
+                </div>
+                ))}
               </div>
             </div>
           )}

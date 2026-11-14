@@ -59,7 +59,7 @@ export default function ChatPage() {
 
   // Starter cards for the empty whiteboard, from this grade's own topics.
   const starters = useMemo(
-    () => startersForTopics(getTopicsForGrade(studentGrade).map((t) => t.name), 5),
+    () => startersForTopics(getTopicsForGrade(studentGrade).map((t) => t.name), 8),
     [studentGrade],
   );
 
