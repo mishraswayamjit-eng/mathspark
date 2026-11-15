@@ -131,7 +131,7 @@ export default function PricingPage() {
   if (!MONETIZATION_ENABLED) return null;
 
   return (
-    <div className="min-h-screen bg-paper pb-20 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-20">
       {/* Nav */}
       <div className="bg-ink px-4 py-3 flex items-center justify-between">
         <Link href="/" className="text-white font-extrabold text-lg">MathSpark ⭐</Link>

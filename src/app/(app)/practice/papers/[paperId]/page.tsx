@@ -12,6 +12,7 @@ import { useSounds } from '@/hooks/useSounds';
 import { calculateScore, getVerdict, type ScoreResult } from '@/lib/scoring';
 import { detectMistakes, type MistakePattern, type DetectedMistake, type WrongAnswer } from '@/lib/mistake-detector';
 import { logError } from '@/lib/logger';
+import PaperSkeleton from './PaperSkeleton';
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -297,12 +298,7 @@ export default function ExamSimulatorPage() {
   }
 
   if (phase === 'loading' || !paper) {
-    return (
-      <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 gap-4">
-        <Sparky mood="thinking" size={64} />
-        <p className="text-sm font-bold text-ink-muted animate-pulse">Loading exam paper...</p>
-      </div>
-    );
+    return <PaperSkeleton />;
   }
 
   // ── INSTRUCTIONS ───────────────────────────────────────────────────────────
@@ -703,7 +699,7 @@ export default function ExamSimulatorPage() {
   const question = paper.questions[currentQ];
 
   return (
-    <div className="min-h-screen bg-paper flex flex-col animate-fade-in">
+    <div className="min-h-screen bg-paper flex flex-col">
       {/* Timer bar */}
       <div className="sticky top-0 z-40 bg-ink px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">

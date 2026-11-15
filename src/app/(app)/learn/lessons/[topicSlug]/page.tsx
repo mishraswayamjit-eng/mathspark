@@ -95,7 +95,7 @@ export default function TopicPage({
         <h1 className="text-white text-title">{topic.topic}</h1>
       </div>
 
-      <div className="max-w-lg mx-auto px-4 pt-5 animate-fade-in">
+      <div className="max-w-lg mx-auto px-4 pt-5">
         {/* Topic description */}
         <div
           className="bg-white rounded-card px-4 py-3 mb-5 border-2 border-line border-l-[10px]"

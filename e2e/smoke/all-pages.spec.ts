@@ -81,7 +81,19 @@ test.describe('Authenticated pages', () => {
   });
 
   test('/practice', async ({ authenticatedPage: page }) => {
-    await expectNoJSErrors(page, '/practice', 'Practice Hub');
+    await expectNoJSErrors(page, '/practice', 'Pick how you want to practise');
+  });
+
+  test('/practice/tests', async ({ authenticatedPage: page }) => {
+    await expectNoJSErrors(page, '/practice/tests', 'Mock tests');
+  });
+
+  test('/practice/exam-tips', async ({ authenticatedPage: page }) => {
+    await expectNoJSErrors(page, '/practice/exam-tips', 'Strategy Bank');
+  });
+
+  test('/learn', async ({ authenticatedPage: page }) => {
+    await expectNoJSErrors(page, '/learn', 'Concept Lessons');
   });
 
   test('/practice/daily', async ({ authenticatedPage: page }) => {

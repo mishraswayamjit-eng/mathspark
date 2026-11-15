@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import { logError } from '@/lib/logger';
+import { logContentView } from '@/lib/contentView';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -77,10 +78,10 @@ export default function StrategyBankPage() {
   const categories = Object.keys(CATEGORY_META);
 
   return (
-    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
-        <Link href="/chapters" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
+        <Link href="/practice/exam-tips" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white text-title">Strategy Bank</h1>
           <p className="text-white/70 text-xs font-medium">{strategies.length} exam strategies &middot; Solve like a topper!</p>
@@ -174,7 +175,10 @@ export default function StrategyBankPage() {
                         >
                           {/* Collapsed header */}
                           <button
-                            onClick={() => setExpandedId(isExpanded ? null : s.id)}
+                            onClick={() => {
+                              if (!isExpanded) logContentView('strategy', s.id);
+                              setExpandedId(isExpanded ? null : s.id);
+                            }}
                             className="w-full px-4 py-3.5 flex items-center gap-3 text-left active:bg-soft transition-colors"
                           >
                             <span className="text-xl shrink-0">{s.emoji}</span>

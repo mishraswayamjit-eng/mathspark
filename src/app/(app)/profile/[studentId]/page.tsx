@@ -114,7 +114,7 @@ export default function PublicProfilePage() {
   const joined    = new Date(joinedAt).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' });
 
   return (
-    <div className="min-h-screen bg-paper pb-8 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-8">
 
       {/* ── Back button ─────────────────────────────────────────────────── */}
       <div className="absolute top-4 left-4 z-10">

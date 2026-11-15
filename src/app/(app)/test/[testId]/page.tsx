@@ -378,7 +378,7 @@ export default function TestEnginePage() {
   return (
     // Phones and tablets: the usual single column. Wide screens: the test breaks
     // out of the narrow app column (32rem) to 60rem, in two panels.
-    <div className="min-h-screen bg-paper flex flex-col max-w-lg mx-auto animate-fade-in lg:max-w-none lg:-mx-56">
+    <div className="min-h-screen bg-paper flex flex-col max-w-lg mx-auto lg:max-w-none lg:-mx-56">
       {/* ── Top bar ─────────────────────────────────────────────────────── */}
       <div className="sticky top-0 z-50 bg-white border-b-2 border-ink px-4 py-3 flex items-center gap-3">
         {/* Exit test */}

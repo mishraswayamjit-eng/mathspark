@@ -103,6 +103,8 @@ model Student {
   flashcardProgress       FlashcardProgress[]
   flashcardSessions       FlashcardSession[]
   lessonProgress          LessonProgress[]
+  recommendationEvents    RecommendationEvent[]
+  contentViews            ContentView[]
 
   @@index([parentId])
   @@index([deletedAt])
@@ -461,4 +463,43 @@ model LessonProgress {
   @@unique([studentId, topicSlug, levelId])
   @@index([studentId])
   @@index([studentId, topicSlug])
+}
+
+// ── Next best action: what was recommended, and whether it was taken ────────
+// One row per recommendation shown to a child (once per action, per day, per
+// surface). Ids and codes only: no free text about the child. `masteryBefore`
+// is the Brain Engine mastery (0-1) of `nodeId` when the row was written.
+
+model RecommendationEvent {
+  id            String    @id @default(cuid())
+  studentId     String
+  student       Student   @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  actionType    String    // "lesson" | "hands_on" | "explain" | "review" | "flashcards" | "drill" | "strategy" | "mock" | "practice"
+  ruleId        String    // which rule produced it, e.g. "lesson_after_misses"
+  nodeId        String?   // topic tree node id, e.g. "gr5_fractions"
+  refId         String?   // content id: lesson slug, hands-on lesson id, question id, drill "topic:level", strategy id
+  surface       String    // "home" | "session_end"
+  shownAt       DateTime  @default(now())
+  takenAt       DateTime?
+  completedAt   DateTime?
+  masteryBefore Float?
+
+  @@index([studentId])
+  @@index([studentId, shownAt])
+}
+
+// ── Content views: learning content a child opened or finished ──────────────
+// One row per child per piece of content. Never feeds XP, mastery or grading.
+
+model ContentView {
+  id          String    @id @default(cuid())
+  studentId   String
+  student     Student   @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  kind        String    // "teach" | "hands_on" | "drill" | "lesson" | "story" | "strategy"
+  refId       String
+  startedAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@unique([studentId, kind, refId])
+  @@index([studentId])
 }

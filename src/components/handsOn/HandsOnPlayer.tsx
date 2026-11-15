@@ -12,6 +12,7 @@ import {
   type HandsOnLesson, type LessonScreen,
 } from '@/lib/handsOn/partition';
 import PartitionShape, { MathText } from './PartitionShape';
+import { logContentView } from '@/lib/contentView';
 
 const SOUND_KEY = 'mathspark_handson_sound';
 export const DONE_KEY = 'mathspark_handson_done';
@@ -153,6 +154,7 @@ export default function HandsOnPlayer({ lesson }: { lesson: HandsOnLesson }) {
       let score = 0;
       for (let i = 0; i < checkResults.length; i++) if (checkResults[i]) score += 1;
       saveScore(lesson.id, score, checkCount);
+      logContentView('hands_on', lesson.id, true);
     }
     // The next screen starts clean, in the same render as the move.
     setShaded([]);
@@ -181,7 +183,7 @@ export default function HandsOnPlayer({ lesson }: { lesson: HandsOnLesson }) {
   const quiet = 'min-h-[52px] px-4 rounded-control border-2 border-line bg-white text-ink font-extrabold text-[15px] hover:border-ink transition-colors';
 
   return (
-    <div className="min-h-screen bg-paper pb-28 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-28">
       <div className="max-w-xl mx-auto px-4 pt-4">
 
         {/* ── Top bar: close, progress, sound ── */}

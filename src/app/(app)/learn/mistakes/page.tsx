@@ -100,10 +100,10 @@ export default function MistakePatternsPage() {
   const categories = Object.keys(CATEGORY_META);
 
   return (
-    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
-        <Link href="/chapters" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
+        <Link href="/practice/exam-tips" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white text-title">Mistake Patterns</h1>
           <p className="text-white/70 text-xs font-medium">50 traps &middot; Learn from common mistakes!</p>

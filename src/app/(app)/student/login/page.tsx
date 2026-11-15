@@ -83,7 +83,7 @@ export default function StudentLoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 py-12 animate-fade-in">
+    <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 py-12">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">🌟</div>

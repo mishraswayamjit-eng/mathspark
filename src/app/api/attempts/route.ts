@@ -43,10 +43,20 @@ export async function POST(req: Request) {
 
     const {
       questionId, topicId, selected,
-      hintUsed = 0, timeTakenMs = 0, misconceptionType = null,
+      hintUsed = 0, misconceptionType = null,
       isBonusQuestion = false, parentQuestionId = null,
       interactiveAnswer,
     } = body;
+
+    // Time on the question as the client measured it. Stored for analytics
+    // (the mastery "speed" figure) ONLY: the XP decision below uses the
+    // server's own timer. Kept to a whole number of milliseconds between 0 and
+    // 10 minutes so an odd value can never fail the insert; 0 means "not known".
+    const rawTimeMs = body.timeTakenMs;
+    const timeTakenMs =
+      typeof rawTimeMs === 'number' && isFinite(rawTimeMs)
+        ? Math.min(600_000, Math.max(0, Math.round(rawTimeMs)))
+        : 0;
 
     if (questionId.length > 50) {
       return NextResponse.json({ error: 'Invalid questionId' }, { status: 400 });

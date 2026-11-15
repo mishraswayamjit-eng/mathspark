@@ -90,10 +90,10 @@ export default function WorkedExamplesPage() {
   const grades = [2, 3, 4, 5, 6, 7, 8, 9];
 
   return (
-    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
-        <Link href="/chapters" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
+        <Link href="/learn" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white text-title">Sparky Explains</h1>
           <p className="text-white/70 text-xs font-medium">212 worked examples with step-by-step solutions</p>

@@ -174,6 +174,10 @@ export default function PracticePage() {
   tutorTopicRef.current = topicName !== topicId ? topicName : '';
   const tutorFirstRef     = useRef(true);
   const questionShownAtRef = useRef(0);
+  // Time the page was hidden (another tab, a locked screen) while this question
+  // was open, so it is not counted as time spent on the question.
+  const hiddenMsRef       = useRef(0);
+  const hiddenSinceRef    = useRef(0);
   const missesInARowRef   = useRef(0);
   const idleSaidForRef    = useRef<string | null>(null);
   const sessionEndSaidRef = useRef(false);
@@ -315,6 +319,11 @@ export default function PracticePage() {
     parentQuestionId?: string | null;
     /** JSON answer of an interactive question, graded by the server. */
     interactiveAnswer?: string;
+    /**
+     * Time from the question appearing to the answer being chosen. Stored for
+     * the mastery "speed" figure only: XP is decided by the server's own timer.
+     */
+    timeTakenMs?: number;
   }
 
   function queueAttempt(p: AttemptPayload) {
@@ -446,9 +455,9 @@ export default function PracticePage() {
     const accuracy   = allResults.length > 0
       ? Math.round((correct / allResults.length) * 100)
       : 0;
-    saveSessionData(topicId, accuracy);
+    saveSessionData(topicId, accuracy, subTopicParam);
     track('lesson_completed', { topicId, accuracy });
-  }, [phase, results, reviewResults, topicId]);
+  }, [phase, results, reviewResults, topicId, subTopicParam]);
 
   // ── Helpers ────────────────────────────────────────────────────────────────
   // Still reviewing while the result of a review question is showing, so the
@@ -518,10 +527,26 @@ export default function PracticePage() {
   useEffect(() => {
     if (!shownQuestionId || shownAnswered) return;
     questionShownAtRef.current = Date.now();
+    hiddenMsRef.current = 0;
+    hiddenSinceRef.current = document.hidden ? Date.now() : 0;
     const first = tutorFirstRef.current;
     tutorFirstRef.current = false;
     tutorReact({ kind: 'question', first });
   }, [shownQuestionId, shownAnswered, tutorReact]);
+
+  // Keep a running total of the time the page is hidden, for the time taken per question.
+  useEffect(() => {
+    const onVisibility = () => {
+      if (document.hidden) {
+        hiddenSinceRef.current = Date.now();
+      } else if (hiddenSinceRef.current) {
+        hiddenMsRef.current += Date.now() - hiddenSinceRef.current;
+        hiddenSinceRef.current = 0;
+      }
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    return () => document.removeEventListener('visibilitychange', onVisibility);
+  }, []);
 
   // A long pause on an open question: one nudge per question, after about 40
   // seconds with no tap or key press. Not while a lesson plays. And not once
@@ -838,6 +863,7 @@ export default function PracticePage() {
           isCorrect: correct,
           hintUsed: hintLevel,
           misconceptionType,
+          timeTakenMs: msOnQuestion(),
           ...(currentQuestion.interactionType && interactiveAnswerRef.current
             ? { interactiveAnswer: interactiveAnswerRef.current }
             : {}),
@@ -883,6 +909,19 @@ export default function PracticePage() {
   function secondsOnQuestion(): number {
     if (!questionShownAtRef.current) return 0;
     return Math.max(0, Math.round((Date.now() - questionShownAtRef.current) / 1000));
+  }
+
+  /**
+   * Milliseconds the question on screen has been open, leaving out time the
+   * page was hidden, kept within 0 to 10 minutes. 0 means "not known" (the
+   * engine leaves such attempts out of the speed figure).
+   */
+  function msOnQuestion(): number {
+    if (!questionShownAtRef.current) return 0;
+    const now = Date.now();
+    const hidden = hiddenMsRef.current + (hiddenSinceRef.current ? now - hiddenSinceRef.current : 0);
+    const ms = Math.round(now - questionShownAtRef.current - hidden);
+    return Math.min(600_000, Math.max(0, ms));
   }
 
   // A hint is opened (main question / bonus question): the same state as before, and the tutor says a line.
@@ -1029,6 +1068,7 @@ export default function PracticePage() {
         selected:        key,
         isCorrect:       correct,
         hintUsed:        bonusHintLevel,
+        timeTakenMs:     msOnQuestion(),
         isBonusQuestion: true,
         parentQuestionId: bonusOriginRef.current?.id ?? null,
       });

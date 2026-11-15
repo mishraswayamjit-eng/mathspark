@@ -139,7 +139,7 @@ test.describe('Exam Simulator — exam phase', () => {
 
     // Verify we're actually on an exam page (not still on Practice Hub)
     const visibleText = await page.locator('main').first().textContent().catch(() => '') ?? '';
-    const isStillOnHub = /Practice Hub|Choose your practice mode/i.test(visibleText);
+    const isStillOnHub = /Pick how you want to practise/i.test(visibleText);
     return !isStillOnHub;
   }
 

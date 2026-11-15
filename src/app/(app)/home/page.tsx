@@ -1,226 +1,100 @@
-'use client';
-
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
-import { logError } from '@/lib/logger';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
+import AvatarLink from '@/components/shell/AvatarLink';
+import TodayPlan from '@/components/home/TodayPlan';
+import type { PlanRow } from '@/components/home/TodayPlan';
+import MilestoneCard from '@/components/home/MilestoneCard';
+import HomeSignedOut from '@/components/home/HomeSignedOut';
+import HomeRetry from '@/components/home/HomeRetry';
+import NextActionCard from '@/components/home/NextActionCard';
+import NudgeStrip from '@/components/home/NudgeStrip';
+import { getNextActions } from '@/lib/brain/nextAction';
+import type { NextAction } from '@/lib/brain/nextAction';
+import { getAuthenticatedStudentId } from '@/lib/studentAuth';
+import { loadHomeData } from '@/lib/student/homeData';
+import type { HomeData } from '@/lib/student/homeData';
+import {
+  greetingForIndia,
+  isAppPath,
+  isRecentWin,
+  pickContinueTopic,
+  pickDisplayTopics,
+  reframePlanReason,
+} from '@/lib/student/homeView';
+import type { ContinueTopic } from '@/lib/student/homeView';
 import { STREAK_MILESTONES } from '@/lib/flashcardXP';
-import type {
-  TopicMasteryEntry,
-  ExamReadinessResult,
-  TopicPriority,
-  DailyPlanItem,
-  Nudge,
-} from '@/lib/brain/engine';
+import { logError } from '@/lib/logger';
+import type { TopicMasteryEntry } from '@/lib/brain/engine';
 
-// ── Types ─────────────────────────────────────────────────────────────────────
-
-// Feature 5c: LLM surfacing/narration over the verified Brain Engine signals.
-// Numbers come from the engine; this only reorders + narrates.
-interface SurfacePlan {
-  headline: string;
-  narration: string;
-  orderedTopicIds: string[];
-  focusTopicId: string | null;
-}
-
-interface HomeStudent {
-  id: string;
-  name: string;
-  grade: number;
-  avatarColor: string;
-  trialExpiresAt: string | null;
-  trialDaysLeft: number | null;
-  trialActive: boolean;
-  subscriptionTier: number;
-  subscriptionName: string | null;
-  examDate: string | null;
-  examName: string | null;
-  dailyGoalMins: number;
-}
-
-interface HomeData {
-  student: HomeStudent;
-  streak: number;
-  todayCorrect: number;
-  topicMastery: TopicMasteryEntry[];
-  examReadiness: ExamReadinessResult;
-  topicPriorities: TopicPriority[];
-  dailyPlan: DailyPlanItem[];
-  nudges: Nudge[];
-  surfacePlan: SurfacePlan | null;
-  recentActivity: Array<{
-    topicId: string; topicName: string;
-    correct: number; attempted: number; pct: number; timeAgo: string;
-  }>;
-  leagueTier: number;
-  leagueName: string;
-  leagueRank: number | null;
-  weeklyXP: number;
-  todayXP: number;
-  topicsMasteredCount: number;
-  topicsExploredCount: number;
-  totalTopics: number;
-}
-
-// ── Helpers ───────────────────────────────────────────────────────────────────
+// Home ("Today") is rendered on the server with the child's data in the first
+// response. It reads the session cookie, so it is per request and the response
+// is private and never stored (Next sends `private, no-cache, no-store` for it).
+export const dynamic = 'force-dynamic';
+// NOTE: maxDuration is ignored on Vercel Hobby (10s hard limit). Only effective on Pro+.
+export const maxDuration = 30;
 
 const LEAGUE_EMOJI: Record<number, string> = { 1: '🥉', 2: '🥈', 3: '🥇', 4: '💎', 5: '👑' };
 
-function reframePlanReason(reason: string): string {
-  if (reason.includes('Very low accuracy'))             return 'Great topic to build on!';
-  if (reason.includes('Not practiced in'))              return "Time to refresh — it's been a while!";
-  if (reason.includes('% of question types explored'))  return 'New question types to discover!';
-  if (reason.includes('High exam frequency'))           return 'Appears often in exams — high impact!';
-  if (reason.includes('You marked this as a focus'))    return 'Your focus area — keep going!';
-  if (reason.includes('No mock test in'))               return 'Time for a fresh mock test';
-  if (reason.includes('Very few question types'))       return 'New question types to discover!';
-  return reason;
+// Runs before first paint on a full page load. Plan ticks and the "milestone
+// put away" choice live in localStorage, which the server cannot see; this
+// applies them to the server-rendered HTML so nothing visibly swaps when React
+// starts. On in-app navigation the client components do the same in a layout
+// effect. Keys match TodayPlan.tsx and MilestoneCard.tsx.
+const RESTORE_SCRIPT = `(function(){try{
+var d=new Date().toDateString();
+var done=JSON.parse(localStorage.getItem('mathspark_plan_done_'+d)||'[]');
+if(!(done instanceof Array)){done=[];}
+var rows=document.querySelectorAll('[data-plan-id]');
+var n=0;
+for(var i=0;i<rows.length;i++){
+if(done.indexOf(rows[i].getAttribute('data-plan-id'))!==-1){rows[i].setAttribute('data-done','true');n++;}
 }
-
-function isRecentWin(timeAgo: string): boolean {
-  if (timeAgo === 'just now') return true;
-  if (timeAgo.endsWith('h ago')) {
-    const hours = parseInt(timeAgo, 10);
-    return !isNaN(hours) && hours <= 12;
-  }
-  return false;
+var c=document.querySelector('[data-plan-count]');
+if(c&&rows.length){c.textContent=n+'/'+rows.length+' done';}
+var a=document.querySelector('[data-plan-alldone]');
+if(a&&rows.length&&n>=rows.length){a.removeAttribute('hidden');}
+if(localStorage.getItem('mathspark_milestone_'+d)==='true'){
+var m=document.querySelector('[data-milestone]');
+if(m){m.setAttribute('hidden','');}
 }
+}catch(e){}})();`;
 
-// ── Sub-components ────────────────────────────────────────────────────────────
+// ── Server-rendered pieces ────────────────────────────────────────────────────
 
-const StatsBar = React.memo(function StatsBar({
-  streak, todayXP, leagueName, leagueTier, leagueRank,
-}: {
-  streak: number; todayXP: number; leagueName: string; leagueTier: number; leagueRank: number | null;
-}) {
-  const leagueEmoji = LEAGUE_EMOJI[leagueTier] ?? '🥉';
+function StatsBar({ data }: { data: HomeData }) {
+  const leagueEmoji = LEAGUE_EMOJI[data.leagueTier] ?? '🥉';
   return (
-    <div className="flex items-center gap-2">
-      <div className="flex items-center gap-1.5 bg-white rounded-tile px-3 py-1.5 border-2 border-line">
+    <div className="flex items-center gap-2 flex-wrap">
+      <div className="flex items-center gap-1.5 bg-card rounded-tile px-3 py-1.5 border-2 border-line">
         <span className="text-sm" aria-hidden="true">🔥</span>
-        <span className="text-sm font-extrabold text-ink">{streak > 0 ? streak : '—'}</span>
+        <span className="text-sm font-extrabold text-ink">{data.streak > 0 ? data.streak : '—'}</span>
       </div>
-      <div className="flex items-center gap-1.5 bg-white rounded-tile px-3 py-1.5 border-2 border-line">
+      <div className="flex items-center gap-1.5 bg-card rounded-tile px-3 py-1.5 border-2 border-line">
         <span className="text-sm" aria-hidden="true">⭐</span>
-        <span className="text-sm font-extrabold text-ink">{todayXP} XP</span>
+        <span className="text-sm font-extrabold text-ink">{`${data.todayXP} XP`}</span>
       </div>
-      <Link href="/leaderboard" className="flex items-center gap-1.5 bg-white rounded-tile px-3 py-1.5 border-2 border-line">
+      <Link
+        href="/leaderboard"
+        className="flex items-center gap-1.5 bg-card rounded-tile px-3 py-1.5 border-2 border-line"
+      >
         <span className="text-sm" aria-hidden="true">{leagueEmoji}</span>
         <span className="text-sm font-extrabold text-ink">
-          {leagueName}{leagueRank ? ` #${leagueRank}` : ''}
+          {`${data.leagueName}${data.leagueRank ? ` #${data.leagueRank}` : ''}`}
         </span>
       </Link>
     </div>
   );
-});
+}
 
-const HeroCard = React.memo(function HeroCard({
-  streak, recentActivity, topicPriorities,
-  onDismissMilestone,
-}: {
-  streak: number;
-  recentActivity: HomeData['recentActivity'];
-  topicPriorities: TopicPriority[];
-  onDismissMilestone: () => void;
-}) {
-  // Priority 1: Streak milestone
-  const milestone = STREAK_MILESTONES.find(m => m.days === streak);
-  const todayKey = `mathspark_milestone_${new Date().toDateString()}`;
-  const celebrated = typeof window !== 'undefined' && localStorage.getItem(todayKey) === 'true';
-
-  if (milestone && !celebrated) {
+function HeroCard({ continueTopic }: { continueTopic: ContinueTopic | null }) {
+  if (continueTopic) {
     return (
-      <div className="ui-card border-l-[10px] border-l-star animate-card-pop">
-        <div className="flex items-center gap-3">
-          <div className="shrink-0 animate-sparky-dance">
-            <Sparky mood="celebrating" size={52} />
-          </div>
+      <Link href={continueTopic.url} className="block ui-card ui-card-pop border-l-[10px] border-l-action">
+        <div className="flex items-center gap-3 min-h-[48px]">
+          <span className="text-2xl shrink-0" aria-hidden="true">{continueTopic.emoji}</span>
           <div className="flex-1 min-w-0">
-            <p className="font-display text-xl font-semibold text-ink">
-              {milestone.emoji} {milestone.title}
-            </p>
-            <p className="text-sm text-gray-600 font-medium">
-              <span aria-hidden="true">🔥</span> {streak} day streak · {milestone.description}
-            </p>
-          </div>
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              localStorage.setItem(todayKey, 'true');
-              onDismissMilestone();
-            }}
-            className="text-ink-muted hover:text-ink text-lg leading-none px-1 shrink-0"
-          >
-            ×
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  // Priority 2: Recent win (≥85%, within 12h)
-  const recentWin = recentActivity[0];
-  if (recentWin && recentWin.pct >= 85 && isRecentWin(recentWin.timeAgo)) {
-    return (
-      <div className="ui-card border-l-[10px] border-l-success animate-card-pop">
-        <div className="flex items-center gap-3">
-          <div className="shrink-0">
-            <Sparky mood="happy" size={52} />
-          </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-extrabold text-gray-800">
-              You aced {recentWin.topicName}! <span aria-hidden="true">🎉</span>
-            </p>
-            <p className="text-xs text-gray-500 font-medium">
-              {recentWin.correct}/{recentWin.attempted} correct · {recentWin.pct}%
-            </p>
-          </div>
-          <span className="text-2xl shrink-0" aria-hidden="true">🌟</span>
-        </div>
-      </div>
-    );
-  }
-
-  // Priority 3: Daily challenge (if streak > 0)
-  if (streak > 0) {
-    return (
-      <Link href="/practice/daily"
-        className="block ui-card border-l-[10px] border-l-star"
-      >
-        <div className="flex items-center gap-3">
-          <span className="text-3xl" aria-hidden="true">🎯</span>
-          <div className="flex-1 min-w-0">
-            <p className="font-extrabold text-gray-800 text-sm">Daily Challenge</p>
-            <p className="text-xs text-gray-500 font-medium">5 questions · Build your streak!</p>
-          </div>
-          {streak > 0 && (
-            <div className="flex items-center gap-1 bg-soft rounded-full px-2.5 py-1 border-2 border-line">
-              <span className="text-sm" aria-hidden="true">🔥</span>
-              <span className="text-xs font-extrabold text-ink">{streak}</span>
-            </div>
-          )}
-          <span className="text-action font-extrabold text-sm shrink-0">Play →</span>
-        </div>
-      </Link>
-    );
-  }
-
-  // Priority 4: Continue learning
-  if (topicPriorities[0]?.dbTopicId) {
-    const tp = topicPriorities[0];
-    return (
-      <Link href={`/practice/${tp.dbTopicId}`}
-        className="block ui-card border-l-[10px] border-l-action"
-      >
-        <div className="flex items-center gap-3">
-          <span className="text-2xl" aria-hidden="true">{tp.emoji}</span>
-          <div className="flex-1 min-w-0">
-            <p className="font-extrabold text-gray-800 text-sm">Continue: {tp.topicName}</p>
-            <p className="text-xs text-gray-500 font-medium truncate">
-              {reframePlanReason(tp.reason)}
-            </p>
+            <p className="font-extrabold text-ink text-[15px] truncate">Continue: {continueTopic.topicName}</p>
+            <p className="text-xs text-ink-muted font-medium truncate">{continueTopic.reason}</p>
           </div>
           <span className="text-action font-extrabold text-sm shrink-0">Go →</span>
         </div>
@@ -228,501 +102,221 @@ const HeroCard = React.memo(function HeroCard({
     );
   }
 
-  // Priority 5: Fallback — welcome
+  // Nothing practised yet: welcome.
   return (
-    <Link href="/chapters"
-      className="block ui-card border-l-[10px] border-l-action"
-    >
-      <div className="flex items-center gap-3">
+    <Link href="/chapters" className="block ui-card ui-card-pop border-l-[10px] border-l-action">
+      <div className="flex items-center gap-3 min-h-[48px]">
         <div className="shrink-0">
-          <Sparky mood="happy" size={52} />
+          <Sparky mood="happy" size={48} />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="font-extrabold text-gray-800 text-sm">Welcome to MathSpark!</p>
-          <p className="text-xs text-gray-500 font-medium">Start your math journey today</p>
+          <p className="font-extrabold text-ink text-[15px]">Welcome to MathSpark!</p>
+          <p className="text-xs text-ink-muted font-medium">Start your math journey today</p>
         </div>
         <span className="text-action font-extrabold text-sm shrink-0">Start →</span>
       </div>
     </Link>
   );
-});
+}
 
-const PlanItem = React.memo(function PlanItem({
-  item, onToggle,
-}: {
-  item: DailyPlanItem;
-  onToggle: (id: string) => void;
-}) {
-  const typeIcon = item.type === 'mock' ? '📝' : item.type === 'explore' ? '🔍' : item.type === 'flashcards' ? '🧠' : '⚡';
-  return (
-    <Link href={item.targetUrl} onClick={() => onToggle(item.id)}
-      className={`flex items-center gap-3 py-3 border-b-2 border-line last:border-b-0 transition-opacity ${item.done ? 'opacity-40' : ''}`}
-    >
-      <div
-        className={`w-6 h-6 rounded-full border-2 shrink-0 flex items-center justify-center text-xs transition-colors ${
-          item.done ? 'bg-success border-success text-white' : 'border-gray-300'
-        }`}
-      >
-        {item.done && '✓'}
-      </div>
-      <span className="text-lg shrink-0" aria-hidden="true">{typeIcon}</span>
-      <div className="flex-1 min-w-0">
-        <p className={`text-sm font-bold truncate ${item.done ? 'line-through text-gray-500' : 'text-gray-800'}`}>
-          {item.action}
-        </p>
-        <p className="text-xs text-gray-500 font-medium truncate">{reframePlanReason(item.reason)}</p>
-      </div>
-      <span className="text-xs font-extrabold text-ink-muted bg-soft rounded-full px-2 py-0.5 shrink-0">
-        {item.estimatedMins}min
-      </span>
-    </Link>
-  );
-});
-
-const TopicBar = React.memo(function TopicBar({ entry }: { entry: TopicMasteryEntry }) {
+function TopicBar({ entry }: { entry: TopicMasteryEntry }) {
   const pct = Math.round(entry.mastery * 100);
   const barColor = pct >= 70 ? '#12805c' : pct >= 40 ? '#f5a400' : pct > 0 ? '#c62f3d' : '#d3deee';
+  // Amber and the empty-state grey are too pale to read as text; use ink tones there.
+  const textColor = pct >= 70 ? '#12805c' : pct >= 40 ? '#5a4300' : pct > 0 ? '#c62f3d' : '#47557a';
   return (
     <div className="flex items-center gap-3 py-1.5">
       <span className="text-base shrink-0 w-6 text-center" aria-hidden="true">{entry.emoji}</span>
-      <span className="text-xs font-semibold text-gray-700 w-28 truncate">{entry.topicName}</span>
+      <span className="text-xs font-semibold text-ink w-28 truncate">{entry.topicName}</span>
       <div className="flex-1 h-2 bg-soft rounded-full overflow-hidden">
-        <div
-          className="h-full rounded-full transition-[width] duration-700"
-          style={{ width: `${pct}%`, backgroundColor: barColor }}
-        />
+        <div className="h-full rounded-full" style={{ width: `${pct}%`, backgroundColor: barColor }} />
       </div>
-      <span className="text-xs font-extrabold w-9 text-right" style={{ color: barColor }}>
-        {pct}%
+      <span className="text-xs font-extrabold w-9 text-right" style={{ color: textColor }}>
+        {`${pct}%`}
       </span>
     </div>
   );
-});
+}
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 
-export default function HomePage() {
-  const router = useRouter();
-  const [data,       setData]       = useState<HomeData | null>(null);
-  const [loading,    setLoading]    = useState(true);
-  const [fetchError, setFetchError] = useState(false);
-  const [planDone, setPlanDone] = useState<Set<string>>(new Set());
-  const [heroDismissed, setHeroDismissed] = useState(false);
-  const handleDismissMilestone = useCallback(() => setHeroDismissed(prev => !prev), []);
+export default async function HomePage() {
+  // No child session on the server. A tiny client component decides between
+  // /student/login (this device has been signed in before) and /start (new
+  // visitor), because only the browser can tell those apart.
+  const studentId = await getAuthenticatedStudentId();
+  if (!studentId) return <HomeSignedOut />;
 
-  useEffect(() => {
-    const id = localStorage.getItem('mathspark_student_id');
-    if (!id) { router.replace('/start'); return; }
-
-    // Restore today's plan done state
-    const todayKey = `mathspark_plan_done_${new Date().toDateString()}`;
-    const savedDone = JSON.parse(localStorage.getItem(todayKey) ?? '[]') as string[];
-    setPlanDone(new Set(savedDone));
-
-    const CACHE_KEY = `mathspark_home_${id}`;
-    const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
-
-    // Check cache first
-    try {
-      const cached = localStorage.getItem(CACHE_KEY);
-      if (cached) {
-        const { data: cachedData, ts } = JSON.parse(cached) as { data: HomeData; ts: number };
-        if (Date.now() - ts < CACHE_TTL) {
-          setData(cachedData);
-          setLoading(false);
-          return; // Use cached data, skip fetch
-        }
-      }
-    } catch { /* ignore parse errors */ }
-
-    // Cache miss — fetch from API
-    let redirected = false;
-    fetch('/api/home')
-      .then((r) => {
-        // 401 = the auth cookie is missing/expired while localStorage still holds
-        // an id (a session desync). Send the user back to re-login instead of a
-        // dead-end error. A timestamp guard only suppresses the redirect if we
-        // *just* bounced here (a genuine tight loop where the cookie truly isn't
-        // being sent) — a later desync in the same session still redirects.
-        if (r.status === 401) {
-          const LOOP_KEY = 'mathspark_home_401_redirect_ts';
-          const LOOP_WINDOW_MS = 10_000;
-          const last = Number(sessionStorage.getItem(LOOP_KEY) ?? 0);
-          if (!(last && Date.now() - last < LOOP_WINDOW_MS)) {
-            sessionStorage.setItem(LOOP_KEY, String(Date.now()));
-            redirected = true;
-            router.replace('/student/login');
-            return null;
-          }
-        }
-        if (!r.ok) throw new Error(`Fetch failed (${r.status})`);
-        return r.json();
-      })
-      .then((d: HomeData | null) => {
-        if (!d) return; // redirected on 401
-        sessionStorage.removeItem('mathspark_home_401_redirect_ts');
-        setData(d);
-        // Only cache if analytics are populated (avoid caching empty first-load state)
-        const hasAnalytics = d.topicMastery && Array.isArray(d.topicMastery) && d.topicMastery.length > 0;
-        if (hasAnalytics) {
-          try {
-            localStorage.setItem(CACHE_KEY, JSON.stringify({ data: d, ts: Date.now() }));
-          } catch { /* ignore storage errors */ }
-        }
-      })
-      .catch((err) => { logError('[fetch]', err); setFetchError(true); })
-      .finally(() => { if (!redirected) setLoading(false); });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const togglePlanItem = useCallback((id: string) => {
-    const todayKey = `mathspark_plan_done_${new Date().toDateString()}`;
-    setPlanDone((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id); else next.add(id);
-      localStorage.setItem(todayKey, JSON.stringify(Array.from(next)));
-      return next;
-    });
-  }, []);
-
-  // Today's plan with done state applied — cap at 3 items
-  const planWithDone = useMemo(
-    () => (data?.dailyPlan ?? []).slice(0, 3).map((item) => ({ ...item, done: planDone.has(item.id) })),
-    [data?.dailyPlan, planDone],
-  );
-  const planDoneCount = useMemo(
-    () => planWithDone.filter((i) => i.done).length,
-    [planWithDone],
-  );
-  const allDone = planDoneCount >= planWithDone.length && planWithDone.length > 0;
-
-  // 3 most recently active topics for "Your Topics"
-  const displayTopics = useMemo(() => {
-    if (!data) return [];
-    const masteryMap = new Map(data.topicMastery.map(t => [t.topicId, t]));
-    const recentTopicEntries: TopicMasteryEntry[] = [];
-
-    // From recent activity order
-    for (const act of data.recentActivity) {
-      const entry = masteryMap.get(act.topicId);
-      if (entry && !recentTopicEntries.some(e => e.topicId === entry.topicId)) {
-        recentTopicEntries.push(entry);
-      }
-      if (recentTopicEntries.length >= 3) break;
-    }
-
-    // Pad with highest mastery if fewer than 3
-    if (recentTopicEntries.length < 3) {
-      const sorted = [...data.topicMastery]
-        .filter(t => t.attemptsCount > 0)
-        .sort((a, b) => b.mastery - a.mastery);
-      for (const entry of sorted) {
-        if (!recentTopicEntries.some(e => e.topicId === entry.topicId)) {
-          recentTopicEntries.push(entry);
-        }
-        if (recentTopicEntries.length >= 3) break;
-      }
-    }
-    return recentTopicEntries;
-  }, [data]);
-
-  // Quick Access tiles — contextual slots 3-4
-  const quickAccessTiles = useMemo(() => {
-    if (!data) return [];
-    const topPriorityUrl = data.topicPriorities[0]?.dbTopicId
-      ? `/practice/${data.topicPriorities[0].dbTopicId}`
-      : '/chapters';
-
-    // Read flashcard due count from localStorage
-    let flashcardSub = 'Review cards';
-    if (typeof window !== 'undefined') {
-      const due = localStorage.getItem('mathspark_cards_due');
-      if (due && parseInt(due, 10) > 0) flashcardSub = `${due} due`;
-    }
-
-    const fixed = [
-      { emoji: '🃏', label: 'Flashcards',     sub: flashcardSub, href: '/flashcards',    bg: 'bg-white', accent: '#9B59B6' },
-      { emoji: '⚡', label: 'Quick Practice',  sub: '5 min',      href: topPriorityUrl,   bg: 'bg-white',   accent: '#4f46e5' },
-    ];
-
-    // Candidate pool for slots 3-4
-    const candidates: Array<{ emoji: string; label: string; sub: string; href: string; bg: string; accent: string }> = [];
-
-    if (data.examReadiness?.daysUntilExam != null && data.examReadiness.daysUntilExam <= 60) {
-      candidates.push({ emoji: '📝', label: 'Exam Papers', sub: 'Practice exams', href: '/practice/papers', bg: 'bg-white', accent: '#c62f3d' });
-    }
-    if (data.topicsExploredCount < data.totalTopics / 2) {
-      candidates.push({ emoji: '🗺️', label: 'Concept Map', sub: 'Explore topics', href: '/learn/concept-map', bg: 'bg-white', accent: '#9B59B6' });
-    }
-    candidates.push(
-      { emoji: '📖', label: 'Concept Lessons', sub: 'Step-by-step', href: '/learn/lessons', bg: 'bg-white', accent: '#8B5CF6' },
-      { emoji: '🎯', label: 'Skill Drills', sub: 'Level up', href: '/practice/skill-drill', bg: 'bg-white', accent: '#f5a400' },
-      { emoji: '💡', label: 'Sparky Explains', sub: 'Step-by-step', href: '/learn/examples', bg: 'bg-white', accent: '#6366F1' },
-      { emoji: '🧠', label: 'Strategy Bank', sub: 'Exam tips', href: '/learn/strategies', bg: 'bg-white', accent: '#f5a400' },
-      { emoji: '🚨', label: 'Mistake Patterns', sub: 'Common traps', href: '/learn/mistakes', bg: 'bg-white', accent: '#c62f3d' },
-    );
-
-    return [...fixed, ...candidates.slice(0, 2)];
-  }, [data]);
-
-  // Feature 5c: apply the LLM surfacing order over the verified Brain Engine
-  // priorities. Numbers/topics are unchanged — only presentation order. Any
-  // topic the LLM dropped is appended so nothing verified is lost.
-  const surfacedPriorities = useMemo<TopicPriority[]>(() => {
-    if (!data) return [];
-    const order = data.surfacePlan?.orderedTopicIds;
-    if (!order || order.length === 0) return data.topicPriorities;
-    const byId = new Map(data.topicPriorities.map((p) => [p.dbTopicId, p]));
-    const ordered: TopicPriority[] = [];
-    const seen = new Set<string>();
-    for (const id of order) {
-      const p = byId.get(id);
-      if (p && !seen.has(id)) { ordered.push(p); seen.add(id); }
-    }
-    for (const p of data.topicPriorities) {
-      if (!seen.has(p.dbTopicId)) ordered.push(p);
-    }
-    return ordered;
-  }, [data]);
-
-  if (!loading && (fetchError || !data)) {
-    return (
-      <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
-        <p className="text-ink font-extrabold text-lg">Oops! Sparky tripped over a number</p>
-        <p className="text-gray-500 text-sm">Could not load your dashboard. Check your connection.</p>
-        <div className="flex items-center gap-3">
-          <button onClick={() => window.location.reload()} className="bg-action text-white font-extrabold px-6 py-2.5 rounded-control border-2 border-ink shadow-hard-sm text-sm active:scale-95 transition-transform">
-            Retry
-          </button>
-          <Link href="/student/login" className="text-action font-extrabold text-sm px-4 py-2.5">
-            Log in again
-          </Link>
-        </div>
-      </div>
-    );
+  let data: HomeData | null = null;
+  let actions: NextAction[] = [];
+  let loadFailed = false;
+  try {
+    // The suggestion is an extra: if it cannot be worked out, Home still shows.
+    const loaded = await Promise.all([
+      loadHomeData(studentId),
+      getNextActions(studentId, { limit: 3 }).catch((err) => {
+        logError('[home] could not work out the next action', err);
+        return [] as NextAction[];
+      }),
+    ]);
+    data = loaded[0];
+    actions = loaded[1];
+  } catch (err) {
+    logError('[home] could not load home data', err);
+    loadFailed = true;
   }
+  if (loadFailed) return <HomeRetry />;
+  // A valid cookie for a student who no longer exists: treat as signed out.
+  if (!data) return <HomeSignedOut />;
 
-  if (loading || !data) {
-    return (
-      <div className="min-h-screen bg-paper pb-24">
-        {/* Header */}
-        <div className="bg-ink px-4 py-3 flex items-center justify-between">
-          <div className="h-4 bg-white/20 rounded w-20 animate-pulse" />
-          <div className="h-7 bg-white/20 rounded-full w-16 animate-pulse" />
-          <div className="h-8 bg-white/20 rounded-full w-14 animate-pulse" />
-        </div>
-        <div className="max-w-lg mx-auto px-4 pt-5 space-y-4">
-          {/* Greeting + pills */}
-          <div className="space-y-2.5 animate-pulse">
-            <div className="h-5 bg-gray-200 rounded w-48" />
-            <div className="h-3.5 bg-gray-200 rounded w-32" />
-            <div className="flex gap-2">
-              <div className="h-8 bg-gray-200 rounded-full w-16" />
-              <div className="h-8 bg-gray-200 rounded-full w-20" />
-              <div className="h-8 bg-gray-200 rounded-full w-24" />
-            </div>
-          </div>
-          {/* Hero card */}
-          <div className="bg-white rounded-card p-4 border-2 border-line h-20 animate-pulse" />
-          {/* Plan card */}
-          <div className="bg-white rounded-card p-4 border-2 border-line animate-pulse">
-            <div className="h-3.5 bg-gray-200 rounded w-24 mb-4" />
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="flex items-center gap-3 py-3 border-b-2 border-line last:border-0">
-                <div className="w-6 h-6 rounded-full bg-gray-200 shrink-0" />
-                <div className="w-6 h-6 rounded bg-gray-200 shrink-0" />
-                <div className="flex-1 space-y-1">
-                  <div className="h-3.5 bg-gray-200 rounded w-3/4" />
-                  <div className="h-2.5 bg-gray-200 rounded w-1/2" />
-                </div>
-                <div className="h-5 bg-gray-200 rounded-full w-10 shrink-0" />
-              </div>
-            ))}
-          </div>
-          {/* 2×2 grid */}
-          <div className="grid grid-cols-2 gap-2 animate-pulse">
-            {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="bg-white rounded-card p-3 h-20 border-2 border-line" />
-            ))}
-          </div>
-          {/* Topics card */}
-          <div className="bg-white rounded-card p-4 border-2 border-line animate-pulse">
-            <div className="h-3.5 bg-gray-200 rounded w-20 mb-4" />
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="flex items-center gap-3 py-1.5">
-                <div className="w-6 h-6 rounded bg-gray-200 shrink-0" />
-                <div className="w-28 h-3 bg-gray-200 rounded shrink-0" />
-                <div className="flex-1 h-2 bg-gray-200 rounded-full" />
-                <div className="w-9 h-3 bg-gray-200 rounded shrink-0" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const { student, streak, todayCorrect } = data;
+  const recentActivity = Array.isArray(data.recentActivity) ? data.recentActivity : [];
+  const greeting = greetingForIndia(new Date());
+  const surfaceNarration =
+    data.surfacePlan && typeof data.surfacePlan.narration === 'string' && data.surfacePlan.narration.trim()
+      ? data.surfacePlan.narration.trim()
+      : null;
 
-  const { student, streak, todayCorrect, recentActivity } = data;
-  const topicPriorities = surfacedPriorities;
-  const surfaceNarration = data.surfacePlan?.narration?.trim() || null;
+  const continueTopic = pickContinueTopic(data);
+  const displayTopics = pickDisplayTopics(data);
 
-  const gradeColors: Record<number, string> = {
-    2: '#ffffff', 3: '#ffffff', 4: '#ffffff',
-    5: '#ffffff', 6: '#ffffff', 7: '#ffffff',
-    8: '#ffffff', 9: '#ffffff',
-  };
-  const gradeColor = gradeColors[student.grade] ?? '#ffffff';
+  const milestone = STREAK_MILESTONES.find((m) => m.days === streak) ?? null;
 
-  const hour = new Date().getHours();
-  const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+  const recentWin = recentActivity[0];
+  const showRecentWin = !!recentWin && recentWin.pct >= 85 && isRecentWin(recentWin.timeAgo);
+
+  // Today's plan: at most three items, with links that stay inside the app.
+  const planRows: PlanRow[] = (Array.isArray(data.dailyPlan) ? data.dailyPlan : [])
+    .slice(0, 3)
+    .map((item) => ({
+      id: String(item.id),
+      action: String(item.action ?? ''),
+      type: String(item.type ?? 'practice'),
+      targetUrl: isAppPath(item.targetUrl) ? item.targetUrl : '/chapters',
+      reason: reframePlanReason(String(item.reason ?? '')),
+      estimatedMins: Number(item.estimatedMins) || 0,
+    }));
 
   return (
-    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24">
 
-      {/* ── STICKY HEADER ─────────────────────────────────────────────── */}
-      <div className="sticky top-0 z-40 bg-ink px-4 py-3 flex items-center justify-between">
-        <span className="text-white font-display text-title">MathSpark</span>
-        <div
-          className="text-xs font-extrabold px-3 py-1.5 rounded-full text-ink"
-          style={{ backgroundColor: gradeColor }}
-        >
-          Grade {student.grade}
-        </div>
-        <div className="flex items-center gap-2">
-          <div
-            className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-extrabold text-white border-2 border-white/30"
-            style={{ backgroundColor: student.avatarColor }}
-          >
-            {student.name[0]?.toUpperCase() ?? '?'}
-          </div>
-          {streak > 0 && (
-            <span className="text-star text-sm font-extrabold"><span aria-hidden="true">🔥</span>{streak}</span>
-          )}
-        </div>
-      </div>
-
-      <div className="max-w-lg mx-auto px-4 pt-5 space-y-4">
-
-        {/* ── § 1: GREETING + STATS BAR ────────────────────────────────── */}
-        <div className="ui-card ui-card-pop">
-          <h1 className="text-[26px] font-semibold text-ink leading-tight">
+      {/* ── STICKY HEADER: greeting + avatar ──────────────────────────── */}
+      <header className="sticky top-0 z-40 bg-ink px-4 py-2 flex items-center gap-3">
+        <div className="flex-1 min-w-0">
+          <h1 className="text-white font-display text-title leading-tight truncate">
             {greeting}, {student.name}! <span aria-hidden="true">🌟</span>
           </h1>
-          <p className="text-ink-muted text-[15px] font-semibold mt-1">
+          <p className="text-white/70 text-xs font-bold truncate">
+            {`Grade ${student.grade}`}
+            {streak > 0 && (
+              <>
+                {' · '}
+                <span aria-hidden="true">🔥 </span>
+                {`${streak} day streak`}
+              </>
+            )}
+          </p>
+        </div>
+        <AvatarLink />
+      </header>
+
+      <div className="px-4 pt-4 space-y-4">
+
+        {/* ── The one thing to do next, picked from the child's own practice ── */}
+        <NextActionCard actions={actions} surface="home" />
+
+        {/* ── Narration + stats ───────────────────────────────────────── */}
+        <section className="space-y-2.5">
+          <p className="text-ink-muted text-[15px] font-semibold">
             {surfaceNarration
               ?? `${todayCorrect > 0 ? `${todayCorrect} correct today · ` : ''}Ready to practice?`}
           </p>
-          <div className="mt-2.5">
-            <StatsBar
-              streak={streak}
-              todayXP={data.todayXP}
-              leagueName={data.leagueName}
-              leagueTier={data.leagueTier}
-              leagueRank={data.leagueRank}
-            />
-          </div>
-        </div>
+          <StatsBar data={data} />
+        </section>
 
-        {/* ── TRIAL BANNER (if active) ─────────────────────────────────── */}
+        {/* ── Trial banner (if active) ────────────────────────────────── */}
         {student.trialActive && student.trialDaysLeft !== null && (
           <div className="bg-hint border-2 border-hint-ink rounded-card px-4 py-2.5 flex items-center justify-between">
             <div>
               <p className="text-hint-ink font-extrabold text-sm"><span aria-hidden="true">🎉 </span>Pro Trial Active</p>
-              <p className="text-hint-ink text-xs font-medium">{student.trialDaysLeft} days left</p>
+              <p className="text-hint-ink text-xs font-medium">{`${student.trialDaysLeft} days left`}</p>
             </div>
-            <Link href="/pricing" className="text-xs font-extrabold text-ink bg-white border-2 border-ink rounded-full px-3 py-1.5">
+            <Link
+              href="/pricing"
+              className="text-xs font-extrabold text-ink bg-card border-2 border-ink rounded-full px-3 min-h-[48px] flex items-center"
+            >
               Upgrade →
             </Link>
           </div>
         )}
 
-        {/* ── § 2: HERO CARD (dynamic) ─────────────────────────────────── */}
-        <HeroCard
-          streak={streak}
-          recentActivity={recentActivity}
-          topicPriorities={topicPriorities}
-          onDismissMilestone={handleDismissMilestone}
-        />
+        {/* ── Streak milestone (only on the day it is reached) ────────── */}
+        {milestone && (
+          <MilestoneCard
+            emoji={milestone.emoji}
+            title={milestone.title}
+            description={milestone.description}
+            streak={streak}
+          />
+        )}
 
-        {/* ── § 3: TODAY'S PLAN (max 3) ────────────────────────────────── */}
-        <div className="bg-white rounded-card p-4 border-2 border-line">
-          <div className="flex items-center justify-between mb-1">
-            <h2 className="text-title text-ink">Today&apos;s Plan</h2>
-            <span className="text-xs font-bold text-gray-500">
-              {planDoneCount}/{planWithDone.length} done
-            </span>
-          </div>
+        {/* ── Hero: continue where the child left off ─────────────────── */}
+        {/* Only when there is no suggestion above, so the child is never offered the same thing twice. */}
+        {actions.length === 0 && <HeroCard continueTopic={continueTopic} />}
 
-          {allDone ? (
-            <div className="py-4 flex flex-col items-center gap-2">
-              <div className="animate-sparky-dance">
-                <Sparky mood="celebrating" size={60} />
+        {/* ── Recent win (85%+ in the last 12 hours) ──────────────────── */}
+        {showRecentWin && (
+          <div className="ui-card border-l-[10px] border-l-success">
+            <div className="flex items-center gap-3">
+              <div className="shrink-0">
+                <Sparky mood="happy" size={44} />
               </div>
-              <p className="text-success font-extrabold text-[15px]"><span aria-hidden="true">🌟 </span>All done today!</p>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-extrabold text-ink">
+                  You aced {recentWin.topicName}! <span aria-hidden="true">🎉</span>
+                </p>
+                <p className="text-xs text-ink-muted font-medium">
+                  {`${recentWin.correct}/${recentWin.attempted} correct · ${recentWin.pct}%`}
+                </p>
+              </div>
             </div>
-          ) : planWithDone.length === 0 ? (
-            <div className="py-4 text-center">
-              <p className="text-gray-500 text-sm font-medium">Start practicing to build your plan!</p>
-              <Link href="/chapters" className="text-action font-extrabold text-sm mt-1 block">
-                Go to Learn →
-              </Link>
-            </div>
-          ) : (
-            <div>
-              {planWithDone.map((item) => (
-                <PlanItem key={item.id} item={item} onToggle={togglePlanItem} />
-              ))}
-            </div>
-          )}
-        </div>
+          </div>
+        )}
 
-        {/* ── § 4: QUICK ACCESS (2×2 grid) ─────────────────────────────── */}
-        <div className="grid grid-cols-2 gap-2">
-          {quickAccessTiles.map((action) => (
-            <Link key={action.label} href={action.href}
-              className={`${action.bg} rounded-card p-3 flex flex-col items-center gap-1 border-2 border-line active:scale-95 transition-transform`}
-            >
-              <span className="text-2xl" aria-hidden="true">{action.emoji}</span>
-              <p className="text-[13px] font-extrabold text-ink text-center leading-tight">{action.label}</p>
-              <p className="text-xs text-ink-muted font-semibold">{action.sub}</p>
-            </Link>
-          ))}
-        </div>
+        {/* ── Today's Plan (max 3) + Daily Challenge ──────────────────── */}
+        <TodayPlan items={planRows} />
 
-        {/* ── § 5: YOUR TOPICS (3 bars + summary) ──────────────────────── */}
-        <div className="bg-white rounded-card p-4 border-2 border-line">
-          <div className="flex items-center justify-between mb-3">
+        {/* ── One gentle nudge at most ────────────────────────────────── */}
+        <NudgeStrip nudges={Array.isArray(data.nudges) ? data.nudges : []} />
+
+        {/* ── Your Topics (3 bars + summary) ──────────────────────────── */}
+        <section className="bg-card rounded-card p-4 border-2 border-line">
+          <div className="flex items-center justify-between mb-2">
             <h2 className="text-title text-ink">Your Topics</h2>
-            <Link href="/chapters" className="text-xs font-extrabold text-action">See all →</Link>
+            <Link href="/chapters" className="text-sm font-extrabold text-action min-h-[48px] flex items-center">
+              See all →
+            </Link>
           </div>
 
           {displayTopics.length === 0 ? (
-            <div className="py-3 text-center">
-              <p className="text-gray-500 text-sm font-medium">No practice yet. Start learning!</p>
-              <Link href="/chapters" className="text-action font-extrabold text-sm mt-1 block">
-                Browse Topics →
-              </Link>
-            </div>
+            <p className="py-2 text-ink-muted text-sm font-medium">No practice yet. Start learning!</p>
           ) : (
             <>
               {displayTopics.map((entry) => (
                 <TopicBar key={entry.topicId} entry={entry} />
               ))}
-              <p className="text-xs font-medium text-gray-500 mt-2">
-                {data.topicsExploredCount} of {data.totalTopics} topics explored
+              <p className="text-xs font-medium text-ink-muted mt-2">
+                {`${data.topicsExploredCount} of ${data.totalTopics} topics explored`}
                 {data.topicsMasteredCount > 0 ? ` · ${data.topicsMasteredCount} mastered` : ''}
               </p>
             </>
           )}
-        </div>
+        </section>
 
-        {/* ── § 6: RECENT ACTIVITY (3 items) ───────────────────────────── */}
+        {/* ── Recent Activity (3 items) ───────────────────────────────── */}
         {recentActivity.length > 0 && (
-          <div className="bg-white rounded-card p-4 border-2 border-line">
-            <div className="flex items-center justify-between mb-3">
-              <h2 className="text-title text-ink">Recent Activity</h2>
-              <Link href="/chapters" className="text-xs font-extrabold text-action">View all →</Link>
-            </div>
+          <section className="bg-card rounded-card p-4 border-2 border-line">
+            <h2 className="text-title text-ink mb-3">Recent Activity</h2>
             <div className="space-y-2.5">
               {recentActivity.slice(0, 3).map((act, i) => (
                 <div key={i} className="flex items-center gap-3">
@@ -730,23 +324,28 @@ export default function HomePage() {
                     📚
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold text-gray-700 truncate">{act.topicName}</p>
-                    <p className="text-xs text-gray-500 font-medium">{act.correct}/{act.attempted} correct</p>
+                    <p className="text-sm font-bold text-ink truncate">{act.topicName}</p>
+                    <p className="text-xs text-ink-muted font-medium">{`${act.correct}/${act.attempted} correct`}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm font-extrabold"
-                      style={{ color: act.pct >= 70 ? '#12805c' : act.pct >= 40 ? '#5a4300' : '#c62f3d' }}>
-                      {act.pct}%
+                    <p
+                      className="text-sm font-extrabold"
+                      style={{ color: act.pct >= 70 ? '#12805c' : act.pct >= 40 ? '#5a4300' : '#c62f3d' }}
+                    >
+                      {`${act.pct}%`}
                     </p>
                     <p className="text-xs text-ink-muted font-medium">{act.timeAgo}</p>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+          </section>
         )}
 
       </div>
+
+      {/* Restores localStorage-only state (plan ticks, milestone) before first paint. */}
+      <script dangerouslySetInnerHTML={{ __html: RESTORE_SCRIPT }} />
     </div>
   );
 }

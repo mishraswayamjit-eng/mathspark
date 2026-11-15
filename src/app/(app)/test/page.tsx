@@ -203,11 +203,11 @@ export default function TestConfigPage() {
   const opt = TEST_OPTIONS.find((o) => o.type === selected)!;
 
   return (
-    <div className="min-h-screen bg-paper flex flex-col pb-28 animate-fade-in">
+    <div className="min-h-screen bg-paper flex flex-col pb-28">
       {/* Header */}
       <div className="px-4 pt-8 pb-4">
         <button
-          onClick={() => window.history.length > 1 ? router.back() : router.push('/practice')}
+          onClick={() => window.history.length > 1 ? router.back() : router.push('/practice/tests')}
           className="text-ink-muted text-sm font-semibold mb-4 flex items-center gap-1 hover:text-ink transition-colors"
         >
           ← Back

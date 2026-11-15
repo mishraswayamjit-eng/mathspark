@@ -4,6 +4,7 @@ import { useEffect, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
+import AvatarLink from '@/components/shell/AvatarLink';
 import type { DashboardData } from '@/types';
 import { logError } from '@/lib/logger';
 
@@ -193,20 +194,33 @@ export default function ProgressPage() {
   const { student, stats, weeklyData } = data;
 
   return (
-    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
-        <Link href="/home" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           <h1 className="text-white text-title">My Progress</h1>
-          <p className="text-white/70 text-xs font-medium">{student.name} &middot; Grade {student.grade}</p>
+          <p className="text-white/70 text-[13px] font-semibold truncate">{student.name} &middot; Grade {student.grade}</p>
         </div>
-        <Link href={`/progress/report`} className="text-xs font-bold text-ink bg-white rounded-full px-3 py-1.5 hover:bg-soft transition-colors">
-          Parent Report
-        </Link>
+        <AvatarLink />
       </div>
 
       <div className="max-w-lg mx-auto px-4 pt-5 space-y-4">
+
+        {/* ── MY PROGRESS | LEAGUE ─────────────────────────────────── */}
+        <nav aria-label="Progress sections" className="flex gap-1 bg-soft border-2 border-line rounded-control p-1">
+          <span
+            aria-current="page"
+            className="flex-1 min-h-[48px] flex items-center justify-center rounded-note bg-white border-2 border-ink text-label font-extrabold text-ink"
+          >
+            My progress
+          </span>
+          <Link
+            href="/leaderboard"
+            className="flex-1 min-h-[48px] flex items-center justify-center rounded-note border-2 border-transparent text-label font-extrabold text-ink-muted hover:text-ink transition-colors"
+          >
+            <span aria-hidden="true">🏆&nbsp;</span>League
+          </Link>
+        </nav>
 
         {/* ── AT A GLANCE ──────────────────────────────────────────── */}
         <div className="bg-white rounded-card p-4 border-2 border-line">
@@ -443,9 +457,9 @@ export default function ProgressPage() {
           href="/progress/report"
           className="block bg-white rounded-control p-4 border-2 border-ink shadow-hard-sm text-center hover:bg-soft transition-colors"
         >
-          <span className="text-2xl">📊</span>
-          <p className="text-sm font-extrabold text-ink mt-1">Generate Parent Report</p>
-          <p className="text-xs text-ink-muted font-medium">Share your progress with your parents!</p>
+          <span className="text-2xl" aria-hidden="true">📨</span>
+          <p className="text-label font-extrabold text-ink mt-1">Share with parent</p>
+          <p className="text-[13px] text-ink-muted font-semibold">Make a report your parents can read, and send them the link.</p>
         </Link>
       </div>
     </div>

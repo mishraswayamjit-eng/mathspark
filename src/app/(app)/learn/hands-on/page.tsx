@@ -29,13 +29,13 @@ export default function HandsOnLessonsPage() {
   return (
     <div className="min-h-screen bg-paper pb-24">
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
-        <Link href="/practice" className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-center" aria-label="Back">
+        <Link href="/learn" className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-center" aria-label="Back">
           &larr;
         </Link>
         <h1 className="text-white text-title">Hands-on lessons</h1>
       </div>
 
-      <div className="max-w-lg mx-auto px-4 pt-5 animate-fade-in">
+      <div className="max-w-lg mx-auto px-4 pt-5">
         <div className="bg-white rounded-card px-4 py-3 border-2 border-line mb-5 flex items-start gap-3">
           <Sparky mood="happy" size={36} />
           <div>

@@ -97,7 +97,7 @@ export default function ConceptTrainerRunner() {
         <h1 className="text-white text-title">{trainer.title}</h1>
       </div>
 
-      <div className="max-w-lg mx-auto px-4 pt-5 animate-fade-in">
+      <div className="max-w-lg mx-auto px-4 pt-5">
         <p className="text-sm text-ink-muted font-medium mb-4">
           {trainer.modules.length} modules — each trains one way of thinking about{' '}
           {trainer.concept.toLowerCase()}.

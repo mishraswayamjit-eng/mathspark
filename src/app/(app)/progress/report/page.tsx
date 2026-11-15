@@ -83,7 +83,7 @@ export default function ParentReportPage() {
   const dateStr = today.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
 
   return (
-    <div className="min-h-screen bg-paper pb-12 animate-fade-in" id="parent-report">
+    <div className="min-h-screen bg-paper pb-12" id="parent-report">
 
       {/* ── Header ──────────────────────────────────────────────── */}
       <div style={{ background: 'linear-gradient(135deg, #1d2a4d, #1d2a4d)' }} className="px-6 pt-8 pb-6">

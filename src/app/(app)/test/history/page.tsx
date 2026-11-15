@@ -62,11 +62,11 @@ export default function TestHistoryPage() {
   }
 
   return (
-    <div className="min-h-screen bg-paper pb-28 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-28">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-ink px-4 py-4">
         <button
-          onClick={() => window.history.length > 1 ? router.back() : router.push('/test')}
+          onClick={() => window.history.length > 1 ? router.back() : router.push('/practice/tests')}
           className="text-white/70 text-sm font-semibold mb-2 flex items-center gap-1 hover:text-white transition-colors"
         >
           ← Back

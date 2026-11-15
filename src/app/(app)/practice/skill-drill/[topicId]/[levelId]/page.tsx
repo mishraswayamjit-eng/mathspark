@@ -13,6 +13,8 @@ import { useSounds } from '@/hooks/useSounds';
 import type { Question, AnswerKey, StepItem } from '@/types';
 import { logError } from '@/lib/logger';
 import { publishScreenContext, clearScreenContext } from '@/lib/sparkyContext';
+import { logContentView } from '@/lib/contentView';
+import SkillDrillLevelSkeleton from '../SkillDrillLevelSkeleton';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -267,6 +269,7 @@ export default function SkillDrillSessionPage() {
       const score = results.filter(Boolean).length;
       const updated = saveSessionScore(topicId, levelId, activeSession.sessionNumber, score);
       setProgress(updated);
+      logContentView('drill', `${topicId}:${levelId}`, true);
 
       if (score >= activeSession.masteryScore) {
         setShowConfetti(true);
@@ -325,19 +328,7 @@ export default function SkillDrillSessionPage() {
 
   // Loading
   if (loading && phase === 'sessions') {
-    return (
-      <div className="min-h-screen bg-paper pb-24">
-        <div className="bg-ink px-4 py-4 flex items-center gap-3">
-          <Link href="/practice/skill-drill" className="text-white/70 hover:text-white text-sm">&larr;</Link>
-          <h1 className="text-white text-title">Loading...</h1>
-        </div>
-        <div className="max-w-lg mx-auto px-4 pt-6 space-y-3">
-          {[0, 1, 2, 3].map((i) => (
-            <div key={i} className="bg-white rounded-card p-4 border-2 border-line animate-pulse h-20" />
-          ))}
-        </div>
-      </div>
-    );
+    return <SkillDrillLevelSkeleton />;
   }
 
   // Error
@@ -615,7 +606,7 @@ export default function SkillDrillSessionPage() {
   const isUnlocked = levelId === 'L1' || (levelProgress && levelProgress.unlocked);
 
   return (
-    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div className="bg-ink px-4 py-4 flex items-center gap-3">
         <Link href="/practice/skill-drill" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>

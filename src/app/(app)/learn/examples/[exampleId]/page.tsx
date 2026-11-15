@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import KatexRenderer from '@/components/KatexRenderer';
 import { logError } from '@/lib/logger';
+import ExampleSkeleton from './ExampleSkeleton';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -144,18 +145,7 @@ export default function WorkedExampleDetailPage() {
   // ── Loading ─────────────────────────────────────────────────────────────────
 
   if (loading) {
-    return (
-      <div className="min-h-screen bg-paper pb-24">
-        <div className="bg-ink px-4 py-4 flex items-center gap-3">
-          <Link href="/learn/examples" className="text-white/70 hover:text-white text-sm">&larr;</Link>
-          <h1 className="text-white text-title">Loading...</h1>
-        </div>
-        <div className="max-w-lg mx-auto px-4 pt-6 space-y-3">
-          <div className="bg-white rounded-card p-6 border-2 border-line animate-pulse h-40" />
-          <div className="bg-white rounded-card p-6 border-2 border-line animate-pulse h-60" />
-        </div>
-      </div>
-    );
+    return <ExampleSkeleton />;
   }
 
   if (error || !example) {
@@ -173,7 +163,7 @@ export default function WorkedExampleDetailPage() {
   const hasStarted = showThinking || revealedSteps > 0;
 
   return (
-    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div
         className="sticky top-0 z-40 px-4 py-4 flex items-center gap-3"

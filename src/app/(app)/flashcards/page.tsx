@@ -5,6 +5,7 @@ import { logError } from '@/lib/logger';
 import { useRouter } from 'next/navigation';
 import { StreakProgress } from '@/components/flashcard/StreakMilestone';
 import type { FlashcardDeck, FlashcardStats } from '@/types';
+import { FlashcardsBodySkeleton } from './FlashcardsSkeleton';
 
 // ── Mastery ring SVG ─────────────────────────────────────────────────────────
 
@@ -166,11 +167,11 @@ export default function FlashcardsPage() {
   }, [router]);
 
   return (
-    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24">
       {/* ── Header ─────────────────────────────────────────────────────────── */}
       <div className="sticky top-0 z-30 bg-ink px-4 py-3">
         <div className="flex items-center justify-between max-w-md mx-auto">
-          <button onClick={() => window.history.length > 1 ? router.back() : router.push('/home')} className="text-white text-sm font-bold">
+          <button onClick={() => window.history.length > 1 ? router.back() : router.push('/practice')} className="text-white text-sm font-bold">
             ← Back
           </button>
           <h1 className="text-white text-title"><span aria-hidden="true">🃏 </span>Sparky&apos;s Cards</h1>
@@ -251,13 +252,7 @@ export default function FlashcardsPage() {
         )}
 
         {/* ── Loading skeleton ────────────────────────────────────────────── */}
-        {loading && (
-          <div className="space-y-3">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className="h-16 bg-card border-2 border-line rounded-card animate-pulse" />
-            ))}
-          </div>
-        )}
+        {loading && <FlashcardsBodySkeleton />}
 
         {/* ── Special decks ───────────────────────────────────────────────── */}
         {!loading && specialDecks.length > 0 && (

@@ -316,7 +316,7 @@ export default function SeedPage() {
   const pct = total > 0 ? Math.round((seeded / total) * 100) : 0;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start px-6 py-10 gap-8 max-w-md mx-auto animate-fade-in">
+    <div className="min-h-screen flex flex-col items-center justify-start px-6 py-10 gap-8 max-w-md mx-auto">
 
       {/* ── Section 1: Questions ───────────────────────────────────────────────── */}
       <div className="w-full bg-white border-2 border-green-200 rounded-2xl p-6 space-y-4 shadow-sm">

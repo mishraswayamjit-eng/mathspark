@@ -4,8 +4,38 @@ import './tokens.css';
 import './globals.css';
 import SessionProvider from '@/components/SessionProvider';
 import { Analytics } from '@vercel/analytics/next';
+import localFont from 'next/font/local';
 
 // Fonts are self-hosted: see ./fonts.css (no request to Google Fonts at build time).
+//
+// The two Latin files carry almost every glyph the app shows, so they are also
+// loaded through next/font, which adds <link rel="preload"> for them on every
+// page: text paints in Nunito/Fredoka straight away instead of in a fallback
+// that is swapped out later. Each sets the same CSS variable fonts.css defines
+// (--font-nunito / --font-fredoka) on <body>, with the fonts.css family as the
+// next choice, so the extended-Latin files (rupee sign) still apply and nothing
+// in tailwind.config.ts or globals.css changes.
+const nunito = localFont({
+  src: './fonts/Nunito-latin-variable.woff2',
+  weight: '400 900',
+  style: 'normal',
+  display: 'swap',
+  variable: '--font-nunito',
+  fallback: ['Nunito'],
+  adjustFontFallback: false,
+  preload: true,
+});
+
+const fredoka = localFont({
+  src: './fonts/Fredoka-latin-variable.woff2',
+  weight: '500 700',
+  style: 'normal',
+  display: 'swap',
+  variable: '--font-fredoka',
+  fallback: ['Fredoka'],
+  adjustFontFallback: false,
+  preload: true,
+});
 
 export const viewport: Viewport = {
   themeColor: '#1d2a4d',
@@ -40,7 +70,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-paper text-gray-800 min-h-screen font-sans">
+      <body className={`${nunito.variable} ${fredoka.variable} bg-paper text-gray-800 min-h-screen font-sans`}>
         <SessionProvider>
           {children}
           <Analytics />

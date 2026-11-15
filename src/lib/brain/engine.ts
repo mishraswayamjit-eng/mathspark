@@ -1,8 +1,15 @@
-import { MS_PER_DAY, MS_PER_HOUR } from '@/lib/timeConstants';
+import { MS_PER_DAY } from '@/lib/timeConstants';
 import { prisma } from '@/lib/db';
 import { TOPIC_TREE, getTopicsForGrade } from '@/data/topicTree';
 import { parseStringArray } from '@/lib/jsonFields';
-import { matchesSubTopicKey } from '@/lib/sharedUtils';
+import { computeStreak, matchesSubTopicKey } from '@/lib/sharedUtils';
+import { practiceUrlForNode, practiceUrlForNodeId } from './practiceUrl';
+import {
+  buildNudges,
+  findAccuracyDropNodeIds,
+  speedScore,
+  streakBeforeToday,
+} from './rules';
 
 // ── Shared Types ──────────────────────────────────────────────────────────────
 
@@ -42,6 +49,12 @@ export interface TopicPriority {
   priority: number;
   reason: string;
   dbTopicId: string;
+  /**
+   * The link that practises exactly this node (with `?subTopic=` for keyed
+   * grades). Absent on rows stored before it was added: fall back to
+   * `practiceUrlForNodeId(topicId)`.
+   */
+  practiceUrl?: string;
 }
 
 export interface DailyPlanItem {
@@ -52,7 +65,19 @@ export interface DailyPlanItem {
   reason: string;
   estimatedMins: number;
   done: boolean;
+  /** The topic-tree node this item is about, when it is about one. Absent on older stored rows. */
+  topicId?: string;
 }
+
+/** What a nudge is about. The order they win in is `NUDGE_PRIORITY` in `./rules`. */
+export type NudgeKind =
+  | 'streak_milestone'
+  | 'streak_keep'
+  | 'accuracy_drop'
+  | 'exam_mock'
+  | 'idle_topic'
+  | 'explore_topic'
+  | 'weekend_mock';
 
 export interface Nudge {
   id: string;
@@ -61,6 +86,10 @@ export interface Nudge {
   actionUrl: string;
   actionLabel: string;
   priority: number;
+  /** Absent on rows stored before kinds existed; those are never shown. */
+  kind?: NudgeKind;
+  /** ISO time after which the nudge is out of date and is not shown. */
+  expiresAt?: string;
 }
 
 // ── StudentRecord: passed from recompute to avoid redundant DB fetches ────────
@@ -69,8 +98,18 @@ interface StudentRecord {
   grade: number;
   examDate: Date | null;
   focusTopics: string;
-  currentStreak: number;
+  /** Not read: this column is never updated. The streak comes from `computeStreak`. */
+  currentStreak?: number;
 }
+
+/**
+ * How many of the child's latest answers the engine reads. 200 was too few
+ * for a keyed grade: Grade 5 has 21 sub-topics, so about ten answers each
+ * filled the window and a topic practised a fortnight ago fell out of it and
+ * showed as "not started" again. Recency already fades to 0 over 30 days, so
+ * 1,000 slim rows comfortably cover a busy month.
+ */
+const MASTERY_ATTEMPT_WINDOW = 1000;
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -99,10 +138,15 @@ export async function computeTopicMastery(
   const grade = resolvedStudent.grade ?? 4;
   const topics = getTopicsForGrade(grade);
 
+  // Only this grade's questions count towards its nodes, so only those are read.
+  const gradeDbTopicIds: string[] = [];
+  for (const node of topics) {
+    if (gradeDbTopicIds.indexOf(node.dbTopicId) === -1) gradeDbTopicIds.push(node.dbTopicId);
+  }
+
   const allAttempts = await prisma.attempt.findMany({
-    where: { studentId },
+    where: { studentId, question: { topicId: { in: gradeDbTopicIds } } },
     select: {
-      id: true,
       questionId: true,
       isCorrect: true,
       timeTakenMs: true,
@@ -110,7 +154,7 @@ export async function computeTopicMastery(
       question: { select: { topicId: true, subTopic: true } },
     },
     orderBy: { createdAt: 'desc' },
-    take: 200,
+    take: MASTERY_ATTEMPT_WINDOW,
   });
 
   const entries: TopicMasteryEntry[] = [];
@@ -132,8 +176,9 @@ export async function computeTopicMastery(
     const uniqueQs = new Set(topicAttempts.map((a) => a.questionId)).size;
     const coverage = clamp(uniqueQs / 10, 0, 1);
 
-    const avgMs = mean(topicAttempts.map((a) => a.timeTakenMs).filter((ms) => ms > 0));
-    const speed = avgMs > 0 ? clamp(1 - avgMs / 90000, 0, 1) : 0.5;
+    // Real time per question once the practice page sends it. Old rows hold 0,
+    // which means "not recorded": they are left out, never read as "instant".
+    const speed = speedScore(topicAttempts.map((a) => a.timeTakenMs));
 
     let recency = 0;
     if (count > 0 && topicAttempts[0]) {
@@ -293,11 +338,14 @@ export async function computeTopicPriorities(
 
     // Pick the most relevant reason
     let reason = 'Great topic to practice';
-    if (entry.mastery < 0.2) {
-      reason = 'Very low accuracy — needs attention';
-    } else if (entry.recency < 0.3 && entry.attemptsCount > 0) {
+    if (entry.attemptsCount === 0) {
+      // Nothing answered yet, so nothing is known about accuracy.
+      reason = 'New for you — a good one to start';
+    } else if (entry.mastery < 0.2) {
+      reason = 'A little practice will help here';
+    } else if (entry.recency < 0.3) {
       const days = Math.round((1 - entry.recency) * 30);
-      reason = `Not practiced in ${days} days`;
+      reason = `Last practised ${days} days ago`;
     } else if (entry.coverage < 0.3) {
       const pct = Math.round(entry.coverage * 100);
       reason = `Only ${pct}% of question types explored`;
@@ -314,6 +362,7 @@ export async function computeTopicPriorities(
       priority,
       reason,
       dbTopicId: node?.dbTopicId ?? entry.topicId,
+      practiceUrl: node ? practiceUrlForNode(node) : '/chapters',
     };
   });
 
@@ -330,17 +379,21 @@ export async function generateDailyPlan(
   // Pass student through to computeTopicPriorities to avoid a redundant fetch
   const priorities = await computeTopicPriorities(studentId, student, masteries);
   const items: DailyPlanItem[] = [];
+  // Topic-tree nodes already in the plan, so "Explore" never repeats one.
+  const plannedNodeIds: string[] = [];
 
   if (priorities[0]) {
     items.push({
       id: 'plan_0',
       action: `Practice ${priorities[0].topicName}`,
       type: 'practice',
-      targetUrl: `/practice/${priorities[0].dbTopicId}`,
+      targetUrl: practiceUrlForNodeId(priorities[0].topicId) ?? '/chapters',
       reason: priorities[0].reason,
       estimatedMins: 12,
       done: false,
+      topicId: priorities[0].topicId,
     });
+    plannedNodeIds.push(priorities[0].topicId);
   }
 
   if (priorities[1]) {
@@ -348,11 +401,13 @@ export async function generateDailyPlan(
       id: 'plan_1',
       action: `Practice ${priorities[1].topicName}`,
       type: 'practice',
-      targetUrl: `/practice/${priorities[1].dbTopicId}`,
+      targetUrl: practiceUrlForNodeId(priorities[1].topicId) ?? '/chapters',
       reason: priorities[1].reason,
       estimatedMins: 8,
       done: false,
+      topicId: priorities[1].topicId,
     });
+    plannedNodeIds.push(priorities[1].topicId);
   }
 
   // Mock test check
@@ -379,22 +434,24 @@ export async function generateDailyPlan(
 
   // Coverage gap
   const m = masteries ?? await computeTopicMastery(studentId);
+  // Deduped on the node id. (It used to test whether a plan link contained the
+  // database topic id, which is the same "grade5" for every Grade 5 node, so
+  // this item could never appear for a keyed grade.)
   const coverageGap = m.find((t) =>
-    t.coverage < 0.2 && !items.some((i) => i.targetUrl.includes(
-      TOPIC_TREE.find((n) => n.id === t.topicId)?.dbTopicId ?? '',
-    )),
+    t.coverage < 0.2 && plannedNodeIds.indexOf(t.topicId) === -1,
   );
   if (coverageGap) {
-    const node = TOPIC_TREE.find((n) => n.id === coverageGap.topicId);
-    if (node) {
+    const exploreUrl = practiceUrlForNodeId(coverageGap.topicId);
+    if (exploreUrl) {
       items.push({
         id: 'plan_explore',
         action: `Explore ${coverageGap.topicName}`,
         type: 'explore',
-        targetUrl: `/practice/${node.dbTopicId}`,
-        reason: 'Very few question types tried',
+        targetUrl: exploreUrl,
+        reason: 'Lots of new questions to try here',
         estimatedMins: 8,
         done: false,
+        topicId: coverageGap.topicId,
       });
     }
   }
@@ -412,170 +469,74 @@ export async function generateNudges(
   // If student record not provided, fetch it (for standalone calls)
   const resolvedStudent = student ?? await prisma.student.findUnique({
     where: { id: studentId },
-    select: { grade: true, examDate: true, currentStreak: true, focusTopics: true },
+    select: { grade: true, examDate: true, focusTopics: true },
   });
 
   const m = masteries ?? (await computeTopicMastery(studentId));
   const priorities = await computeTopicPriorities(studentId, resolvedStudent ?? undefined, m);
-  const topPriorityDbTopicId = priorities[0]?.dbTopicId ?? 'ch11';
-  const streak = resolvedStudent?.currentStreak ?? 0;
+  const now = new Date();
 
-  const nudges: Nudge[] = [];
-
-  // Rule 1: Evening + streak at risk
-  const nowIST = new Date(Date.now() + 5.5 * MS_PER_HOUR);
-  const hourIST = nowIST.getUTCHours();
-  const todayStart = new Date(); todayStart.setHours(0, 0, 0, 0);
-  const todayAttempts = await prisma.attempt.count({
-    where: { studentId, createdAt: { gte: todayStart } },
-  });
-  if (hourIST >= 18 && todayAttempts === 0 && streak > 0) {
-    nudges.push({
-      id: 'nudge_streak',
-      message: `Don't break your 🔥${streak}-day streak! Practice now`,
-      sparkyEmotion: 'encouraging',
-      actionUrl: `/practice/${topPriorityDbTopicId}`,
-      actionLabel: 'Practice now',
-      priority: 10,
-    });
+  const nodes = getTopicsForGrade(resolvedStudent?.grade ?? 4);
+  const dbTopicIds: string[] = [];
+  for (const node of nodes) {
+    if (dbTopicIds.indexOf(node.dbTopicId) === -1) dbTopicIds.push(node.dbTopicId);
   }
 
-  // Rule 2: Topic with accuracy drop — batch query instead of N+1
-  if (m.length > 0) {
-    const twoWeeksAgo = new Date(Date.now() - 14 * MS_PER_DAY);
-    const oneWeekAgo  = new Date(Date.now() - 7  * MS_PER_DAY);
-
-    // Check top 5 topics max to bound the query scope
-    const topicsToCheck = m.slice(0, 5);
-    const topicDbIds = topicsToCheck
-      .map((entry) => {
-        const node = TOPIC_TREE.find((t) => t.id === entry.topicId);
-        return node?.dbTopicId;
-      })
-      .filter((id): id is string => Boolean(id));
-
-    // ONE batch query instead of N+1 per topic
-    const batchAttempts = await prisma.attempt.findMany({
+  const [streakAttempts, twoWeekAttempts, latestMock] = await Promise.all([
+    // Days practised, for the streak. `Student.currentStreak` is never
+    // updated, so the streak is worked out from the attempts themselves, the
+    // way the rest of the app does it (`computeStreak`).
+    prisma.attempt.findMany({
       where: {
         studentId,
-        createdAt: { gte: twoWeeksAgo },
-        question: { topicId: { in: topicDbIds } },
+        createdAt: { gte: new Date(now.getTime() - STREAK_LOOKBACK_DAYS * MS_PER_DAY) },
+      },
+      select: { createdAt: true },
+      orderBy: { createdAt: 'desc' },
+      take: STREAK_ATTEMPT_WINDOW,
+    }),
+    // The last fortnight in this grade's topics, WITH the sub-topic, so a
+    // drop in accuracy is found per node and not for the whole grade.
+    prisma.attempt.findMany({
+      where: {
+        studentId,
+        createdAt: { gte: new Date(now.getTime() - 14 * MS_PER_DAY) },
+        question: { topicId: { in: dbTopicIds } },
       },
       select: {
         isCorrect: true,
         createdAt: true,
-        question: { select: { topicId: true } },
+        question: { select: { topicId: true, subTopic: true } },
       },
-    });
+    }),
+    prisma.mockTest.findFirst({
+      where: { studentId },
+      orderBy: { startedAt: 'desc' },
+      select: { startedAt: true },
+    }),
+  ]);
 
-    // Group in JS by topicId + week
-    for (const entry of topicsToCheck) {
-      if (nudges.length >= 3) break;
-      const node = TOPIC_TREE.find((t) => t.id === entry.topicId);
-      if (!node) continue;
+  const examDate = resolvedStudent?.examDate;
+  const daysUntilExam = examDate
+    ? Math.ceil((new Date(examDate).getTime() - now.getTime()) / MS_PER_DAY)
+    : null;
+  const daysSinceMock = latestMock
+    ? (now.getTime() - new Date(latestMock.startedAt).getTime()) / MS_PER_DAY
+    : null;
 
-      const topicAttempts = batchAttempts.filter(
-        (a) => a.question.topicId === node.dbTopicId,
-      );
-      const recentAttempts = topicAttempts.filter(
-        (a) => new Date(a.createdAt) >= oneWeekAgo,
-      );
-      const priorAttempts = topicAttempts.filter(
-        (a) => new Date(a.createdAt) < oneWeekAgo,
-      );
-
-      if (recentAttempts.length >= 5 && priorAttempts.length >= 5) {
-        const recentAcc = recentAttempts.filter((a) => a.isCorrect).length / recentAttempts.length;
-        const priorAcc  = priorAttempts.filter((a) => a.isCorrect).length / priorAttempts.length;
-        if (priorAcc - recentAcc > 0.15) {
-          nudges.push({
-            id: `nudge_drop_${entry.topicId}`,
-            message: `${entry.topicName} needs love — accuracy dropped this week`,
-            sparkyEmotion: 'thinking',
-            actionUrl: `/practice/${node.dbTopicId}`,
-            actionLabel: 'Practice now',
-            priority: 8,
-          });
-          break;
-        }
-      }
-    }
-  }
-
-  // Rule 3: Long-idle topic
-  if (nudges.length < 3) {
-    const idleTopic = m.find((t) => {
-      const days = Math.round((1 - t.recency) * 30);
-      return t.attemptsCount > 0 && days > 14;
-    });
-    if (idleTopic) {
-      const days = Math.round((1 - idleTopic.recency) * 30);
-      const node = TOPIC_TREE.find((t) => t.id === idleTopic.topicId);
-      nudges.push({
-        id: `nudge_idle_${idleTopic.topicId}`,
-        message: `You haven't practiced ${idleTopic.topicName} in ${days} days`,
-        sparkyEmotion: 'thinking',
-        actionUrl: node ? `/practice/${node.dbTopicId}` : '/chapters',
-        actionLabel: 'Practice now',
-        priority: 6,
-      });
-    }
-  }
-
-  // Rule 4: Exam countdown
-  if (nudges.length < 3 && resolvedStudent?.examDate) {
-    const readiness = await computeExamReadiness(studentId, resolvedStudent ?? undefined, m);
-    if (readiness.daysUntilExam !== null && readiness.daysUntilExam < 30 && readiness.score < 60) {
-      nudges.push({
-        id: 'nudge_exam',
-        message: `Exam in ${readiness.daysUntilExam} days — readiness ${readiness.score}% — let's focus!`,
-        sparkyEmotion: 'encouraging',
-        actionUrl: '/home',
-        actionLabel: 'View plan',
-        priority: 9,
-      });
-    }
-  }
-
-  // Rule 5: Unexplored topic
-  if (nudges.length < 3) {
-    const unexplored = m.find((t) => t.coverage < 0.3 && t.attemptsCount > 0);
-    if (unexplored) {
-      const node = TOPIC_TREE.find((t) => t.id === unexplored.topicId);
-      nudges.push({
-        id: `nudge_explore_${unexplored.topicId}`,
-        message: `You've barely scratched ${unexplored.topicName} — let's explore!`,
-        sparkyEmotion: 'happy',
-        actionUrl: node ? `/practice/${node.dbTopicId}` : '/chapters',
-        actionLabel: 'Explore',
-        priority: 4,
-      });
-    }
-  }
-
-  // Rule 6: Weekend
-  if (nudges.length < 3 && [0, 6].includes(nowIST.getUTCDay())) {
-    nudges.push({
-      id: 'nudge_weekend',
-      message: 'Weekend is perfect for a full mock test! 🏆',
-      sparkyEmotion: 'celebrating',
-      actionUrl: '/test',
-      actionLabel: 'Take test',
-      priority: 3,
-    });
-  }
-
-  // Rule 7: Streak milestone
-  if (nudges.length < 3 && [7, 14, 21, 30, 50, 100].includes(streak)) {
-    nudges.push({
-      id: `nudge_streak_${streak}`,
-      message: `🔥 ${streak}-day streak! You're unstoppable!`,
-      sparkyEmotion: 'celebrating',
-      actionUrl: '/leaderboard',
-      actionLabel: 'View leaderboard',
-      priority: 5,
-    });
-  }
-
-  return nudges.sort((a, b) => b.priority - a.priority).slice(0, 3);
+  // All wording, conditions and the order nudges win in live in ./rules (pure, unit-tested).
+  return buildNudges({
+    now,
+    masteries: m,
+    topPriorityNodeId: priorities[0]?.topicId ?? null,
+    streakToday: computeStreak(streakAttempts),
+    streakBeforeToday: streakBeforeToday(streakAttempts, now),
+    accuracyDropNodeIds: findAccuracyDropNodeIds(nodes, twoWeekAttempts, now),
+    daysUntilExam,
+    daysSinceMock,
+  });
 }
+
+/** How far back, and how many answers, the streak looks. */
+const STREAK_LOOKBACK_DAYS = 120;
+const STREAK_ATTEMPT_WINDOW = 3000;

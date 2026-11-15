@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import { logError } from '@/lib/logger';
+import { logContentView } from '@/lib/contentView';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -85,10 +86,10 @@ export default function MathStoriesPage() {
   const categories = Object.keys(CATEGORY_META);
 
   return (
-    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
-        <Link href="/chapters" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
+        <Link href="/learn" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white text-title">Math Stories</h1>
           <p className="text-white/70 text-xs font-medium">{stories.length} stories &middot; Math in the real world!</p>
@@ -165,7 +166,10 @@ export default function MathStoriesPage() {
                 >
                   {/* Card header — always visible */}
                   <button
-                    onClick={() => setExpandedId(isExpanded ? null : story.id)}
+                    onClick={() => {
+                      if (!isExpanded) logContentView('story', story.id);
+                      setExpandedId(isExpanded ? null : story.id);
+                    }}
                     className="w-full px-4 pt-4 pb-3 text-left active:bg-soft transition-colors"
                   >
                     <div className="flex items-start gap-3">

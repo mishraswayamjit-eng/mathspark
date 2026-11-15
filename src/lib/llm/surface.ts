@@ -15,7 +15,12 @@ import { gradeDescriptor, kidSafeRules } from './guardrails';
 import { MODELS } from './models';
 
 interface PriorityInput {
-  dbTopicId: string;
+  /**
+   * The topic-tree node id (e.g. `gr5_fractions`), unique per topic. NOT the
+   * database topic id: keyed grades share one ("grade5") across all their
+   * sub-topics, so keying on it collapsed a whole grade into a single topic.
+   */
+  topicId: string;
   topicName: string;
   priority: number;
   reason: string;
@@ -39,7 +44,11 @@ export interface SurfaceInput {
 export interface SurfacePlan {
   headline: string;
   narration: string;
-  /** dbTopicIds in the LLM's recommended presentation order. */
+  /**
+   * Topic-tree node ids (`TopicPriority.topicId`) in the recommended
+   * presentation order. Plans stored before this change hold database topic
+   * ids instead; a reader that finds no match should keep the engine's order.
+   */
   orderedTopicIds: string[];
   focusTopicId: string | null;
   generatedBy: 'llm' | 'static';
@@ -50,7 +59,7 @@ export interface SurfacePlan {
 export function staticSurfacePlan(input: SurfaceInput): SurfacePlan {
   const ordered = [...input.priorities]
     .sort((a, b) => b.priority - a.priority)
-    .map((p) => p.dbTopicId);
+    .map((p) => p.topicId);
   return {
     headline: input.studentName ? `Let's learn, ${input.studentName}!` : "Let's learn!",
     narration:
@@ -77,12 +86,12 @@ function extractJson(text: string): unknown {
 export async function generateSurfacePlan(input: SurfaceInput): Promise<SurfacePlan> {
   if (input.priorities.length === 0) return staticSurfacePlan(input);
 
-  const validIds = new Set(input.priorities.map((p) => p.dbTopicId));
+  const validIds = new Set(input.priorities.map((p) => p.topicId));
 
   const prioritiesBlock = input.priorities
     .map(
       (p) =>
-        `- id=${p.dbTopicId} | ${p.topicName} | priority=${p.priority} | reason=${p.reason}`,
+        `- id=${p.topicId} | ${p.topicName} | priority=${p.priority} | reason=${p.reason}`,
     )
     .join('\n');
 
@@ -133,10 +142,12 @@ Return ONLY a JSON object:
           (id): id is string => typeof id === 'string' && validIds.has(id),
         )
       : [];
-    const seen = new Set(llmOrder);
+    // An id the model repeated is kept once.
+    const llmUnique = llmOrder.filter((id, i) => llmOrder.indexOf(id) === i);
+    const seen = new Set(llmUnique);
     const orderedTopicIds = [
-      ...llmOrder,
-      ...input.priorities.map((p) => p.dbTopicId).filter((id) => !seen.has(id)),
+      ...llmUnique,
+      ...input.priorities.map((p) => p.topicId).filter((id) => !seen.has(id)),
     ];
 
     return {

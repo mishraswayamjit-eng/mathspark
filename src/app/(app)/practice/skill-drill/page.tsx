@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import { logError } from '@/lib/logger';
+import SkillDrillTopicsSkeleton from './SkillDrillTopicsSkeleton';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -104,19 +105,7 @@ export default function SkillDrillTopicsPage() {
   }, []);
 
   if (loading) {
-    return (
-      <div className="min-h-screen bg-paper pb-24">
-        <div className="bg-ink px-4 py-4 flex items-center gap-3">
-          <Link href="/home" className="text-white/70 hover:text-white text-sm">&larr;</Link>
-          <h1 className="text-white text-title">Skill Drills</h1>
-        </div>
-        <div className="max-w-lg mx-auto px-4 pt-6 space-y-3">
-          {[0, 1, 2, 3, 4, 5].map((i) => (
-            <div key={i} className="bg-white rounded-card p-4 border-2 border-line animate-pulse h-24" />
-          ))}
-        </div>
-      </div>
-    );
+    return <SkillDrillTopicsSkeleton />;
   }
 
   if (!topics || !meta) {
@@ -133,10 +122,10 @@ export default function SkillDrillTopicsPage() {
   const levelLabels = meta.levelLabels;
 
   return (
-    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
-        <Link href="/home" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
+        <Link href="/practice" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white text-title">Skill Drills</h1>
           <p className="text-white/70 text-xs font-medium">{topicList.length} topics &middot; master step by step</p>

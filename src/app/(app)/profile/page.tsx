@@ -278,6 +278,13 @@ export default function ProfilePage() {
     }).catch((err) => logError('[fetch]', err));
   }
 
+  // Profile has no tab of its own; it opens from the avatar in a page header,
+  // so "back" returns to wherever the child came from.
+  function goBack() {
+    if (window.history.length > 1) router.back();
+    else router.push('/home');
+  }
+
   function logout() {
     Object.keys(localStorage).filter((k) => k.startsWith('mathspark_')).forEach((k) => localStorage.removeItem(k));
     router.replace('/start');
@@ -300,9 +307,16 @@ export default function ProfilePage() {
   if (loading) {
     const skeletonInitial = name ? name[0].toUpperCase() : '?';
     return (
-      <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+      <div className="min-h-screen bg-paper pb-24">
         {/* Identity header — real data from localStorage, no pulse */}
-        <div className="bg-ink pt-10 pb-6 px-4">
+        <div className="bg-ink pt-2 pb-6 px-4">
+          <button
+            onClick={goBack}
+            aria-label="Back"
+            className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-start"
+          >
+            &larr;
+          </button>
           <div className="flex items-center gap-4">
             <div
               className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white border-4 border-white shrink-0"
@@ -350,7 +364,7 @@ export default function ProfilePage() {
     : null;
 
   return (
-    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24">
 
       {/* ── Toast ─────────────────────────────────────────────────────────── */}
       {toast && (
@@ -394,7 +408,14 @@ export default function ProfilePage() {
       )}
 
       {/* ── 1. Identity Header ─────────────────────────────────────────────── */}
-      <div className="bg-ink pt-10 pb-6 px-4">
+      <div className="bg-ink pt-2 pb-6 px-4">
+        <button
+          onClick={goBack}
+          aria-label="Back"
+          className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-start"
+        >
+          &larr;
+        </button>
         <div className="flex items-center gap-4">
           <div
             className="w-20 h-20 rounded-full flex items-center justify-center text-3xl font-extrabold text-white border-4 border-white shrink-0"

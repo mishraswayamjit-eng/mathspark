@@ -3,11 +3,27 @@ import { test as publicTest, expect as publicExpect } from '@playwright/test';
 import { waitForDataLoad } from '../helpers/wait';
 
 const NAV_ITEMS = [
-  { label: 'Home', href: '/home', heading: /good (morning|afternoon|evening)/i },
-  { label: 'Practice', href: '/practice', heading: /practice hub/i },
+  { label: 'Today', href: '/home', heading: /good (morning|afternoon|evening)/i },
+  { label: 'Learn', href: '/learn', heading: /pick something new to learn/i },
+  { label: 'Practise', href: '/practice', heading: /pick how you want to practise/i },
   { label: 'Progress', href: '/progress', heading: /my progress/i },
-  { label: 'Cards', href: '/flashcards', heading: /sparky.*cards/i },
-  { label: 'Profile', href: '/profile', heading: /aarav/i },
+] as const;
+
+// Routes that have no tab of their own, and the tab that lights up for them.
+const TAB_FOR_ROUTE = [
+  { route: '/learn/lessons', tab: '/learn' },
+  { route: '/learn/stories', tab: '/learn' },
+  { route: '/learn/concept-map', tab: '/learn' },
+  { route: '/chapters', tab: '/practice' },
+  { route: '/flashcards', tab: '/practice' },
+  { route: '/practice/skill-drill', tab: '/practice' },
+  { route: '/practice/tests', tab: '/practice' },
+  { route: '/practice/exam-tips', tab: '/practice' },
+  { route: '/test', tab: '/practice' },
+  { route: '/exam-prep/predictor', tab: '/practice' },
+  { route: '/learn/strategies', tab: '/practice' },
+  { route: '/leaderboard', tab: '/progress' },
+  { route: '/profile', tab: '/progress' },
 ] as const;
 
 /** Locate the fixed bottom nav bar. */
@@ -16,7 +32,7 @@ function bottomNav(page: import('@playwright/test').Page) {
 }
 
 test.describe('BottomNav — visibility', () => {
-  test('shows 5 navigation tabs on /home', async ({ authenticatedPage: page }) => {
+  test('shows 4 navigation tabs on /home', async ({ authenticatedPage: page }) => {
     await page.goto('/home', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
@@ -26,13 +42,20 @@ test.describe('BottomNav — visibility', () => {
         nav.getByText(item.label, { exact: true }).first(),
       ).toBeVisible({ timeout: 10_000 });
     }
+
+    // Exactly four tabs, and none of the retired ones
+    const tabs = page.locator('nav[aria-label="Main"] a[href]');
+    await expect(tabs).toHaveCount(NAV_ITEMS.length);
+    for (const retired of ['/chat', '/flashcards', '/profile']) {
+      await expect(page.locator(`nav[aria-label="Main"] a[href="${retired}"]`)).toHaveCount(0);
+    }
   });
 
   test('BottomNav is hidden on landing page', async ({ page }) => {
     await page.goto('/', { waitUntil: 'domcontentloaded' });
 
     const nav = bottomNav(page);
-    const homeLink = nav.getByText('Home', { exact: true });
+    const homeLink = nav.getByText('Today', { exact: true });
     await expect(homeLink).toBeHidden({ timeout: 5_000 });
   });
 
@@ -40,7 +63,7 @@ test.describe('BottomNav — visibility', () => {
     await page.goto('/auth/login', { waitUntil: 'domcontentloaded' });
 
     const nav = bottomNav(page);
-    const homeLink = nav.getByText('Home', { exact: true });
+    const homeLink = nav.getByText('Today', { exact: true });
     await expect(homeLink).toBeHidden({ timeout: 5_000 });
   });
 
@@ -49,8 +72,19 @@ test.describe('BottomNav — visibility', () => {
     await page.waitForTimeout(1_000);
 
     const nav = bottomNav(page);
-    const homeLink = nav.getByText('Home', { exact: true });
+    const homeLink = nav.getByText('Today', { exact: true });
     await expect(homeLink).toBeHidden({ timeout: 5_000 });
+  });
+
+  test('BottomNav is shown on the new index pages', async ({ authenticatedPage: page }) => {
+    for (const route of ['/learn', '/practice/tests', '/practice/exam-tips']) {
+      await page.goto(route, { waitUntil: 'domcontentloaded' });
+      await waitForDataLoad(page);
+
+      await expect(
+        page.locator('nav[aria-label="Main"]').getByText('Today', { exact: true }),
+      ).toBeVisible({ timeout: 10_000 });
+    }
   });
 });
 
@@ -97,6 +131,22 @@ test.describe('BottomNav — active state', () => {
       await expect(tab).toHaveAttribute('aria-current', 'page');
     });
   }
+
+  for (const { route, tab: tabHref } of TAB_FOR_ROUTE) {
+    test(`${route} lights up the ${tabHref} tab`, async ({ authenticatedPage: page }) => {
+      await page.goto(route, { waitUntil: 'domcontentloaded' });
+      await waitForDataLoad(page);
+
+      const tabs = page.locator('nav[aria-label="Main"] a[href]');
+      await expect(tabs.first()).toBeVisible({ timeout: 10_000 });
+
+      // Exactly one tab is current, and it is the expected one
+      await expect(page.locator('nav[aria-label="Main"] a[aria-current="page"]')).toHaveCount(1);
+      await expect(
+        page.locator(`nav[aria-label="Main"] a[href="${tabHref}"]`),
+      ).toHaveAttribute('aria-current', 'page');
+    });
+  }
 });
 
 test.describe('BottomNav — hidden during immersive flows', () => {
@@ -116,7 +166,7 @@ test.describe('BottomNav — hidden during immersive flows', () => {
     await waitForDataLoad(page);
 
     const nav = bottomNav(page);
-    const homeLink = nav.getByText('Home', { exact: true });
+    const homeLink = nav.getByText('Today', { exact: true });
     await expect(homeLink).toBeHidden({ timeout: 5_000 });
   });
 
@@ -127,7 +177,7 @@ test.describe('BottomNav — hidden during immersive flows', () => {
     await waitForDataLoad(page);
 
     const nav = bottomNav(page);
-    const homeLink = nav.getByText('Home', { exact: true });
+    const homeLink = nav.getByText('Today', { exact: true });
     await expect(homeLink).toBeHidden({ timeout: 5_000 });
   });
 });

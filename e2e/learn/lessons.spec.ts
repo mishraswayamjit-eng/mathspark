@@ -68,11 +68,12 @@ test.describe('Lessons Hub — /learn/lessons', () => {
     expect(page.url()).toMatch(/\/learn\/lessons\/[a-z-]+/);
   });
 
-  test('back button links to /chapters', async ({ authenticatedPage: page }) => {
+  test('back button links to /learn', async ({ authenticatedPage: page }) => {
     await page.goto('/learn/lessons', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    const backLink = page.locator('a[href="/chapters"]');
+    // The Learn tab also links to /learn, so pick out the header's back arrow
+    const backLink = page.locator('a[href="/learn"][aria-label="Back"]');
     await expect(backLink).toBeVisible({ timeout: 5_000 });
   });
 });

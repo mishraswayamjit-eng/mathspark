@@ -9,6 +9,8 @@ import LessonQuiz from '@/components/lesson/LessonQuiz';
 import LessonComplete from '@/components/lesson/LessonComplete';
 import type { LessonLevel } from '@/types/lesson';
 import { logError } from '@/lib/logger';
+import { logContentView } from '@/lib/contentView';
+import LessonLevelSkeleton from './LessonLevelSkeleton';
 
 type Phase = 'lessons' | 'quiz' | 'complete';
 
@@ -65,6 +67,7 @@ export default function LessonSessionPage({
       setQuizScore(score);
       setQuizTotal(total);
       setPhase('complete');
+      logContentView('lesson', topicSlug, true);
 
       const pct = Math.round((score / total) * 100);
       const durationSec = Math.round((Date.now() - startTimeRef.current) / 1000);
@@ -124,17 +127,7 @@ export default function LessonSessionPage({
   }, [phase]);
 
   if (loading) {
-    return (
-      <div className="min-h-screen bg-paper pb-24 animate-pulse">
-        <div className="bg-ink px-4 py-4">
-          <div className="h-6 bg-white/20 rounded w-32" />
-        </div>
-        <div className="max-w-lg mx-auto px-4 pt-6 space-y-4">
-          <div className="bg-white rounded-card p-5 border-2 border-line h-64" />
-          <div className="bg-white rounded-card p-5 border-2 border-line h-16" />
-        </div>
-      </div>
-    );
+    return <LessonLevelSkeleton />;
   }
 
   if (error || !level) {

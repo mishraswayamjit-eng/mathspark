@@ -12,6 +12,7 @@ import { MONETIZATION_ENABLED, UNLIMITED_TIER } from '@/lib/monetization';
 import { getTopicsForGrade, type TopicNode } from '@/data/topicTree';
 import { TOPIC_ORDER } from '@/lib/sharedUtils';
 import SkillPath from '@/components/chapters/SkillPath';
+import ChaptersSkeleton from './ChaptersSkeleton';
 
 // ── Topic metadata ─────────────────────────────────────────────────────────────
 
@@ -61,47 +62,7 @@ function getHearts(): number {
 
 // ── Loading skeleton ───────────────────────────────────────────────────────────
 
-function Skeleton() {
-  return (
-    <div className="min-h-screen bg-paper">
-      {/* TopBar skeleton */}
-      <div className="sticky top-0 z-50 h-14 bg-ink flex items-center justify-between px-4">
-        <div className="h-5 w-24 rounded-full bg-white/20 animate-pulse" />
-        <div className="flex gap-2">
-          {[1,2,3,4].map((n) => (
-            <div key={n} className="h-6 w-12 rounded-full bg-white/20 animate-pulse" />
-          ))}
-        </div>
-      </div>
-      {/* Greeting skeleton */}
-      <div className="px-4 pt-5 pb-3">
-        <div className="h-7 w-56 rounded-xl bg-gray-200 animate-pulse mb-1" />
-        <div className="h-4 w-36 rounded-xl bg-gray-200 animate-pulse" />
-      </div>
-      {/* Grade tab placeholders */}
-      <div className="flex gap-2 px-4 pb-3 overflow-x-auto no-scrollbar">
-        {Array.from({ length: 8 }, (_, i) => (
-          <div key={i} className="flex-shrink-0 h-8 w-14 rounded-full bg-gray-200 animate-pulse" />
-        ))}
-      </div>
-      {/* Skill path skeleton */}
-      <div className="px-4 space-y-2">
-        {Array.from({ length: 8 }, (_, i) => (
-          <React.Fragment key={i}>
-            {i > 0 && <div className="flex justify-center"><div className="w-1 h-8 bg-gray-200 rounded-full" /></div>}
-            <div className={`flex items-center gap-3 px-3 py-3 ${i % 2 === 1 ? 'flex-row-reverse' : ''}`}>
-              <div className="w-14 h-14 rounded-full bg-gray-200 animate-pulse flex-shrink-0" />
-              <div className="flex-1 space-y-2">
-                <div className="h-4 w-32 rounded-xl bg-gray-200 animate-pulse" />
-                <div className="h-3 w-20 rounded-xl bg-gray-200 animate-pulse" />
-              </div>
-            </div>
-          </React.Fragment>
-        ))}
-      </div>
-    </div>
-  );
-}
+// Lives in ./ChaptersSkeleton.tsx so loading.tsx shows the very same placeholder.
 
 // ── Main component ─────────────────────────────────────────────────────────────
 
@@ -237,7 +198,7 @@ export default function ChaptersPage() {
       .slice(0, 2);
   }, [topicsForGrade]);
 
-  if (loading) return <Skeleton />;
+  if (loading) return <ChaptersSkeleton />;
   if (fetchError || !data) return (
     <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
       <p className="text-ink font-extrabold text-lg">Oops! Sparky tripped over a number</p>
@@ -265,7 +226,7 @@ export default function ChaptersPage() {
   }
 
   return (
-    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24">
       {/* ── Top bar ─────────────────────────────────────────────────────── */}
       <div className="sticky top-0 z-50 h-14 bg-ink flex items-center justify-between px-4">
         <div className="flex items-center gap-2">

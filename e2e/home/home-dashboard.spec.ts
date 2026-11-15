@@ -68,108 +68,71 @@ test.describe('Home Dashboard — core sections', () => {
   });
 });
 
-test.describe('Home Dashboard — quick actions', () => {
-  test('Quick Practice link navigates correctly', async ({ authenticatedPage: page }) => {
+// The Quick Access tile grid was removed when Home became the "Today" screen.
+test.describe('Home — Today screen', () => {
+  test('header avatar links to the profile', async ({ authenticatedPage: page }) => {
     await page.goto('/home', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    const quickPractice = page.getByText(/quick practice/i).first();
-    const hasCTA = await quickPractice.isVisible({ timeout: 10_000 }).catch(() => false);
-
-    if (hasCTA) {
-      await quickPractice.click();
-      await page.waitForTimeout(2_000);
-      // Should navigate to /chapters or /practice
-      expect(page.url()).toMatch(/\/(chapters|practice)/);
-    }
+    const avatar = page.getByRole('link', { name: 'Your profile' }).first();
+    await expect(avatar).toBeVisible({ timeout: 10_000 });
+    await expect(avatar).toHaveAttribute('href', '/profile');
   });
 
-  test('Flashcards quick action navigates to /flashcards', async ({
+  test('offers one thing to do next, or continues a topic, or welcomes a new child', async ({
     authenticatedPage: page,
   }) => {
     await page.goto('/home', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    const flashcardsLink = page.locator('a[href="/flashcards"]').first();
-    const hasLink = await flashcardsLink.isVisible({ timeout: 10_000 }).catch(() => false);
-
-    if (hasLink) {
-      await flashcardsLink.click();
-      await page.waitForURL('/flashcards', { timeout: 10_000 });
-      await expect(page.getByText("Sparky's Cards")).toBeVisible({ timeout: 10_000 });
-    }
+    await expect(
+      page.getByText(/^Next up for you$|^Continue: |Welcome to MathSpark!/).first(),
+    ).toBeVisible({ timeout: 10_000 });
   });
 
-  test('Skill Drills quick action navigates to /practice/skill-drill', async ({
+  test('Daily Challenge sits in the plan and opens /practice/daily', async ({
     authenticatedPage: page,
   }) => {
     await page.goto('/home', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    const skillLink = page.locator('a[href="/practice/skill-drill"]').first();
-    const hasLink = await skillLink.isVisible({ timeout: 10_000 }).catch(() => false);
-
-    if (hasLink) {
-      await skillLink.click();
-      await page.waitForURL('/practice/skill-drill', { timeout: 10_000 });
-    }
+    const daily = page.locator('a[href="/practice/daily"]').first();
+    await expect(daily).toBeVisible({ timeout: 10_000 });
+    await expect(daily).toContainText('Daily Challenge');
   });
 
-  test('Sparky Explains quick action navigates to /learn/examples', async ({
+  test('Quick Access tiles are gone and there is one "See all" link', async ({
     authenticatedPage: page,
   }) => {
     await page.goto('/home', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    const explainLink = page.locator('a[href="/learn/examples"]').first();
-    const hasLink = await explainLink.isVisible({ timeout: 10_000 }).catch(() => false);
-
-    if (hasLink) {
-      await explainLink.click();
-      await page.waitForURL('/learn/examples', { timeout: 10_000 });
-    }
+    await expect(page.getByText("Today's Plan")).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByText('Quick Practice')).toHaveCount(0);
+    await expect(page.getByText('See all →')).toHaveCount(1);
+    await expect(page.getByText('View all →')).toHaveCount(0);
   });
-});
 
-test.describe('Home Dashboard — quick access tiles', () => {
-  test('Quick Access grid shows action tiles', async ({
+  test('a ticked plan item is still ticked after a reload', async ({
     authenticatedPage: page,
   }) => {
     await page.goto('/home', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    // The 2×2 grid renders 2 fixed tiles (Flashcards, Quick Practice) plus 2
-    // data-driven candidates from the learn/practice pool.
-    const cards = [
-      'Flashcards', 'Quick Practice', 'Concept Lessons', 'Skill Drills',
-      'Sparky Explains', 'Strategy Bank', 'Concept Map', 'Mistake Patterns',
-    ];
-    let found = 0;
-    for (const card of cards) {
-      const visible = await page
-        .getByText(card, { exact: false })
-        .first()
-        .isVisible({ timeout: 5_000 })
-        .catch(() => false);
-      if (visible) found++;
-    }
+    const firstRow = page.locator('[data-plan-id]').first();
+    const hasPlan = await firstRow.isVisible({ timeout: 10_000 }).catch(() => false);
+    if (!hasPlan) return; // no analytics yet for this student: nothing to tick
 
-    expect(found).toBeGreaterThanOrEqual(2);
-  });
+    const id = await firstRow.getAttribute('data-plan-id');
+    await page.evaluate((planId) => {
+      const key = `mathspark_plan_done_${new Date().toDateString()}`;
+      localStorage.setItem(key, JSON.stringify([planId]));
+    }, id);
 
-  test('Strategy Bank link navigates to /learn/strategies', async ({
-    authenticatedPage: page,
-  }) => {
-    await page.goto('/home', { waitUntil: 'domcontentloaded' });
-    await waitForDataLoad(page);
-
-    const strategyLink = page.locator('a[href="/learn/strategies"]').first();
-    const hasLink = await strategyLink.isVisible({ timeout: 10_000 }).catch(() => false);
-
-    if (hasLink) {
-      await strategyLink.click();
-      await page.waitForURL('/learn/strategies', { timeout: 10_000 });
-    }
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    await expect(page.locator(`[data-plan-id="${id}"]`)).toHaveAttribute('data-done', 'true', {
+      timeout: 10_000,
+    });
   });
 });
 

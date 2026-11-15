@@ -8,6 +8,7 @@ import LessonAsk from './player/LessonAsk';
 import LessonControls from './player/LessonControls';
 import { useLessonPlayer } from './player/useLessonPlayer';
 import { rememberTeachAvailability } from './player/useTeachAvailable';
+import { logContentView } from '@/lib/contentView';
 
 /**
  * "Explain it to me": plays the teacher's lesson for one question.
@@ -82,6 +83,11 @@ export default function TeachPlayer({ questionId, onClose, closeLabel, fallback,
   const player = useLessonPlayer(beats);
   const { view, togglePause, back, forward } = player;
   const playing = load.status === 'ready';
+
+  // A record that the lesson was opened and, later, finished. Nothing is scored.
+  const finished = playing && view.stage === 'done';
+  useEffect(() => { if (playing) logContentView('teach', questionId); }, [playing, questionId]);
+  useEffect(() => { if (finished) logContentView('teach', questionId, true); }, [finished, questionId]);
 
   // Keyboard: Space pauses and carries on, the arrow keys step.
   useEffect(() => {

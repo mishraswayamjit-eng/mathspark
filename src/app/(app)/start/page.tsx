@@ -406,7 +406,7 @@ export default function StartPage() {
   if (step === 'welcome') {
     return (
       <OnboardingShell step="welcome" variant="gradient">
-        <div className="flex flex-col items-center text-center gap-8 animate-fade-in">
+        <div className="flex flex-col items-center text-center gap-8">
           <div className="animate-sparky-dance">
             <Sparky mood="celebrating" size={120} />
           </div>

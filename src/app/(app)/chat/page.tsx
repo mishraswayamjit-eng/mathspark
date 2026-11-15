@@ -68,7 +68,7 @@ export default function ChatPage() {
   return (
     // Phones: the usual single column. Wide screens: the page breaks out of the
     // narrow app column into two panels, conversation and whiteboard.
-    <div className="bg-paper animate-fade-in h-[calc(100vh-64px)] lg:fixed lg:inset-x-0 lg:top-0 lg:bottom-16 lg:h-auto lg:z-10">
+    <div className="bg-paper h-[calc(100vh-64px)] lg:fixed lg:inset-x-0 lg:top-0 lg:bottom-16 lg:h-auto lg:z-10">
       <div className="h-full mx-auto lg:max-w-6xl lg:grid lg:grid-cols-2 lg:gap-5 lg:p-5">
 
         {/* ══ Conversation ══ */}
@@ -77,7 +77,7 @@ export default function ChatPage() {
           {/* ── Header ── */}
           <div className="bg-ink px-4 py-3 flex items-center gap-3 flex-shrink-0">
             <button
-              onClick={() => router.push('/chapters')}
+              onClick={() => router.push('/home')}
               className="text-white/70 hover:text-white font-bold text-xl min-h-[48px] min-w-[48px] flex items-center justify-center"
               aria-label="Back"
             >

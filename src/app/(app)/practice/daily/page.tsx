@@ -27,6 +27,7 @@ import {
 } from '@/lib/streak';
 import type { Question, AnswerKey, StepItem } from '@/types';
 import { publishScreenContext, clearScreenContext } from '@/lib/sparkyContext';
+import DailySkeleton from './DailySkeleton';
 
 // ── Adapt JSON question → QuestionCard's Question type ───────────────────────
 
@@ -264,14 +265,7 @@ export default function DailyChallengePage() {
 
   // ── Loading / Error states ─────────────────────────────────────────────────
   if (loading) {
-    return (
-      <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 gap-4">
-        <Sparky mood="thinking" size={64} />
-        <p className="text-sm font-bold text-ink-muted animate-pulse">
-          Loading today&apos;s challenge...
-        </p>
-      </div>
-    );
+    return <DailySkeleton />;
   }
 
   if (error || (!challenge && dataLoaded && phase === 'quiz')) {
@@ -435,7 +429,7 @@ export default function DailyChallengePage() {
   const progressPct = ((currentIdx + (answered ? 1 : 0)) / totalQ) * 100;
 
   return (
-    <div className="min-h-screen flex flex-col px-4 py-6 max-w-lg mx-auto animate-fade-in" style={{ paddingBottom: answered ? '50vh' : '80px' }}>
+    <div className="min-h-screen flex flex-col px-4 py-6 max-w-lg mx-auto" style={{ paddingBottom: answered ? '50vh' : '80px' }}>
       {/* Mini confetti on correct */}
       {showMiniConfetti && <Confetti variant="mini" onDone={() => setShowMiniConfetti(false)} />}
 

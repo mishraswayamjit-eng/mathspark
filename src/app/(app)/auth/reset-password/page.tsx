@@ -89,7 +89,7 @@ function ResetForm() {
 
 export default function ResetPasswordPage() {
   return (
-    <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 py-12 animate-fade-in">
+    <div className="min-h-screen bg-paper flex flex-col items-center justify-center px-6 py-12">
       <Suspense fallback={<div className="text-ink-muted">Loading…</div>}>
         <ResetForm />
       </Suspense>

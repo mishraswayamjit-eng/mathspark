@@ -193,7 +193,7 @@ export default function FigureGalleryPage() {
   );
 
   return (
-    <div className="min-h-screen bg-paper px-4 py-8 pb-24 max-w-4xl mx-auto animate-fade-in space-y-4">
+    <div className="min-h-screen bg-paper px-4 py-8 pb-24 max-w-4xl mx-auto space-y-4">
       <div>
         <div className="flex items-center gap-2 mb-1">
           <h1 className="text-xl font-bold text-ink">Question figures</h1>

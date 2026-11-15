@@ -68,7 +68,7 @@ export default function SolvePage() {
         <h1 className="text-white text-title">Homework Helper</h1>
       </div>
 
-      <div className="max-w-lg mx-auto px-4 pt-5 animate-fade-in">
+      <div className="max-w-lg mx-auto px-4 pt-5">
         <div className="flex items-center gap-3 mb-4">
           <Sparky mood="encouraging" size={48} />
           <p className="text-sm text-ink-muted font-medium">

@@ -2,49 +2,65 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import { isAppChromeHidden } from '@/lib/navVisibility';
 
-const NAV = [
-  { href: '/home',        emoji: '🏠', label: 'Home'     },
-  { href: '/practice',    emoji: '⚡', label: 'Practice' },
-  { href: '/chat',        emoji: '💬', label: 'Sparky'   },
-  { href: '/progress',    emoji: '📊', label: 'Progress' },
-  { href: '/flashcards',  emoji: '🃏', label: 'Cards'    },
-  { href: '/profile',     emoji: '👤', label: 'Profile'  },
+type TabHref = '/home' | '/learn' | '/practice' | '/progress';
+
+const NAV: { href: TabHref; emoji: string; label: string }[] = [
+  { href: '/home',     emoji: '🏠', label: 'Today'    },
+  { href: '/learn',    emoji: '📖', label: 'Learn'    },
+  { href: '/practice', emoji: '⚡', label: 'Practise' },
+  { href: '/progress', emoji: '📊', label: 'Progress' },
 ];
+
+/** True when `pathname` is `base` itself or anything beneath it. */
+function under(pathname: string, base: string): boolean {
+  return pathname === base || pathname.startsWith(base + '/');
+}
+
+/**
+ * Which tab a route belongs to. Routes with no tab (Sparky chat, homework
+ * helper) return null, so no tab is lit.
+ */
+function activeTab(pathname: string): TabHref | null {
+  if (under(pathname, '/home')) return '/home';
+
+  // Strategy Bank and Mistake Patterns live under /learn in the URL, but they
+  // are reached from Practise → Exam tips and their back arrows return there.
+  if (under(pathname, '/learn/strategies') || under(pathname, '/learn/mistakes')) return '/practice';
+  if (under(pathname, '/learn')) return '/learn';
+
+  if (
+    under(pathname, '/practice') ||
+    under(pathname, '/chapters') ||
+    under(pathname, '/flashcards') ||
+    under(pathname, '/test') ||
+    under(pathname, '/exam-prep')
+  ) return '/practice';
+
+  if (
+    under(pathname, '/progress') ||
+    under(pathname, '/leaderboard') ||
+    under(pathname, '/profile')
+  ) return '/progress';
+
+  return null;
+}
 
 export default function BottomNav() {
   const pathname = usePathname();
-  const [cardsDue, setCardsDue] = useState(0);
-
-  // Read cached due count from localStorage (set by /flashcards page or /api/flashcards)
-  useEffect(() => {
-    try {
-      const cached = localStorage.getItem('mathspark_cards_due');
-      if (cached) setCardsDue(parseInt(cached, 10) || 0);
-    } catch { /* ignore */ }
-  }, [pathname]); // re-check on navigation
 
   // Hide on landing, auth, parent, student, pricing, onboarding, seed, test engine pages, and public profiles
   if (isAppChromeHidden(pathname)) return null;
 
+  const current = activeTab(pathname);
+
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white z-50 border-t-2 border-ink pb-[env(safe-area-inset-bottom)]">
+    <nav aria-label="Main" className="fixed bottom-0 left-0 right-0 bg-white z-50 border-t-2 border-ink pb-[env(safe-area-inset-bottom)]">
       <div className="max-w-lg mx-auto flex h-16">
         {NAV.map(({ href, emoji, label }) => {
-          const active = href === '/practice'
-            ? pathname.startsWith('/practice') || pathname.startsWith('/chapters') || pathname.startsWith('/learn') || pathname.startsWith('/exam-prep') || pathname.startsWith('/test')
-            : href === '/home'
-            ? pathname.startsWith('/home')
-            : href === '/chat'
-            ? pathname.startsWith('/chat')
-            : href === '/progress'
-            ? pathname.startsWith('/progress') || pathname.startsWith('/leaderboard')
-            : href === '/flashcards'
-            ? pathname.startsWith('/flashcards')
-            : pathname.startsWith(href);
-          const baseClass = 'flex-1 flex flex-col items-center justify-center py-2 min-h-[56px] text-xs font-bold transition-colors transition-transform active:scale-95 border-t-4 relative';
+          const active = current === href;
+          const baseClass = 'flex-1 flex flex-col items-center justify-center py-2 min-h-[56px] text-[13px] font-bold transition-colors transition-transform active:scale-95 border-t-4 relative';
 
           return (
             <Link
@@ -57,15 +73,7 @@ export default function BottomNav() {
                   : 'text-gray-500 border-transparent hover:text-ink'
               }`}
             >
-              <span className="text-xl mb-0.5 relative">
-                <span aria-hidden="true">{emoji}</span>
-                {/* Due badge on Cards tab */}
-                {href === '/flashcards' && cardsDue > 0 && (
-                  <span className="absolute -top-1.5 -right-3 bg-retry text-white text-[10px] font-bold min-w-[16px] h-4 flex items-center justify-center rounded-full px-1 leading-none">
-                    {cardsDue > 99 ? '99+' : cardsDue}
-                  </span>
-                )}
-              </span>
+              <span className="text-xl mb-0.5" aria-hidden="true">{emoji}</span>
               <span>{label}</span>
             </Link>
           );

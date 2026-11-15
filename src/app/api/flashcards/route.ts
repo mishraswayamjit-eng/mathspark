@@ -24,20 +24,42 @@ export async function GET(req: Request) {
     const gradeCards = getFlashcardsForGrade(grade);
     const gradeCardIds = gradeCards.map((c) => c.id);
 
-    // Fetch all FlashcardProgress for this student + grade's cards
-    const progress = await prisma.flashcardProgress.findMany({
-      where: { studentId, cardId: { in: gradeCardIds } },
-      select: {
-        cardId: true,
-        leitnerBox: true,
-        nextReviewAt: true,
-        timesSeen: true,
-        timesCorrect: true,
-      },
-    });
+    const now = new Date();
+    const todayStart = new Date(now);
+    todayStart.setHours(0, 0, 0, 0);
+
+    // The three queries below need only the student id (and this grade's card
+    // ids), not each other's results, so they run together.
+    const [progress, sessions, newCardsToday] = await Promise.all([
+      // All FlashcardProgress for this student + grade's cards
+      prisma.flashcardProgress.findMany({
+        where: { studentId, cardId: { in: gradeCardIds } },
+        select: {
+          cardId: true,
+          leitnerBox: true,
+          nextReviewAt: true,
+          timesSeen: true,
+          timesCorrect: true,
+        },
+      }),
+      // Recent flashcard sessions, for the study streak
+      prisma.flashcardSession.findMany({
+        where: { studentId },
+        orderBy: { createdAt: 'desc' },
+        select: { createdAt: true },
+        take: 60, // ~2 months of daily sessions max
+      }),
+      // New cards first seen today, for the daily cap
+      prisma.flashcardProgress.count({
+        where: {
+          studentId,
+          lastSeenAt: { gte: todayStart },
+          timesSeen: 1,
+        },
+      }),
+    ]);
 
     const progressMap = new Map(progress.map((p) => [p.cardId, p]));
-    const now = new Date();
 
     // ── Compute per-topic deck stats ────────────────────────────────────────
     const topics = getTopicsForGradeFlashcards(grade);
@@ -121,13 +143,6 @@ export async function GET(req: Request) {
 
     // ── Flashcard study streak ─────────────────────────────────────────────
     // Count consecutive days with at least 1 flashcard session (backwards from today)
-    const sessions = await prisma.flashcardSession.findMany({
-      where: { studentId },
-      orderBy: { createdAt: 'desc' },
-      select: { createdAt: true },
-      take: 60, // ~2 months of daily sessions max
-    });
-
     let studyStreak = 0;
     if (sessions.length > 0) {
       const today = new Date();
@@ -157,16 +172,7 @@ export async function GET(req: Request) {
       }
     }
 
-    // ── Daily new card cap info ────────────────────────────────────────────
-    const todayStart = new Date(now);
-    todayStart.setHours(0, 0, 0, 0);
-    const newCardsToday = await prisma.flashcardProgress.count({
-      where: {
-        studentId,
-        lastSeenAt: { gte: todayStart },
-        timesSeen: 1,
-      },
-    });
+    // ── Daily new card cap info: newCardsToday, fetched above ───────────────
 
     // ── Streak economy data ────────────────────────────────────────────────
     const milestoneProgress = getMilestoneProgress(studyStreak);

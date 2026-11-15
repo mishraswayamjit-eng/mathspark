@@ -303,7 +303,7 @@ export default function TestResultsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-paper pb-8 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-8">
       {showConfetti && <Confetti onDone={() => setShowConfetti(false)} />}
 
       {/* ── Share sheet ───────────────────────────────────────────────────── */}

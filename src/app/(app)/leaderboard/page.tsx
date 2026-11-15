@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Confetti from '@/components/Confetti';
 import type { LeagueData, LeagueMember, LastWeekResult } from '@/types';
 import { logError } from '@/lib/logger';
+import { LeagueListLoading } from './LeaderboardSkeleton';
 
 // ── Tier metadata ─────────────────────────────────────────────────────────────
 
@@ -536,7 +537,7 @@ export default function LeaderboardPage() {
   );
 
   return (
-    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24">
 
       {/* ── Promotion overlay ──────────────────────────────────────────── */}
       {showPromo && promoInfo && (
@@ -554,12 +555,37 @@ export default function LeaderboardPage() {
       )}
 
       {/* ── Header ─────────────────────────────────────────────────────── */}
-      <div className="bg-ink pt-10 pb-4 px-4">
-        <h1 className="text-heading text-white"><span aria-hidden="true">🏆 </span>League</h1>
-        <p className="text-white/70 text-sm font-semibold mt-0.5">
-          Compete with students around you — earn XP, get promoted!
-        </p>
+      <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
+        <Link
+          href="/progress"
+          className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-center"
+          aria-label="Back"
+        >
+          &larr;
+        </Link>
+        <div className="flex-1 min-w-0">
+          <h1 className="text-title text-white"><span aria-hidden="true">🏆 </span>League</h1>
+          <p className="text-white/70 text-[13px] font-semibold mt-0.5">
+            Compete with students around you — earn XP, get promoted!
+          </p>
+        </div>
       </div>
+
+      {/* ── My progress | League ───────────────────────────────────────── */}
+      <nav aria-label="Progress sections" className="mx-4 mt-4 flex gap-1 bg-soft border-2 border-line rounded-control p-1">
+        <Link
+          href="/progress"
+          className="flex-1 min-h-[48px] flex items-center justify-center rounded-note border-2 border-transparent text-label font-extrabold text-ink-muted hover:text-ink transition-colors"
+        >
+          My progress
+        </Link>
+        <span
+          aria-current="page"
+          className="flex-1 min-h-[48px] flex items-center justify-center rounded-note bg-white border-2 border-ink text-label font-extrabold text-ink"
+        >
+          <span aria-hidden="true">🏆&nbsp;</span>League
+        </span>
+      </nav>
 
       {/* ── Status card ────────────────────────────────────────────────── */}
       <div className="mt-4 mb-4">
@@ -597,10 +623,7 @@ export default function LeaderboardPage() {
         {tab === 'week' && (
           <>
             {weekLoading ? (
-              <div className="py-20 flex flex-col items-center gap-3">
-                <div className="w-10 h-10 rounded-full border-4 border-action border-t-transparent animate-spin" />
-                <p className="text-gray-500 font-semibold text-sm">Loading your league…</p>
-              </div>
+              <LeagueListLoading />
             ) : !leagueData ? (
               <div className="py-20 text-center px-8">
                 <p className="text-4xl mb-3" aria-hidden="true">😕</p>

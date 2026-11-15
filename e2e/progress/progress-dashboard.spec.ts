@@ -6,7 +6,7 @@ test.describe('Progress Dashboard — stats', () => {
     await page.goto('/progress', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    await expect(page.getByText('My Progress')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'My Progress' })).toBeVisible();
   });
 
   test('4-stat grid shows Solved, Accuracy, Streak, Mastered', async ({

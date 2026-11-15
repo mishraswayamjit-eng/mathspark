@@ -43,8 +43,10 @@ export async function recomputeStudentAnalytics(studentId: string): Promise<void
       surfacePlan = await generateSurfacePlan({
         grade: student.grade,
         studentName: student.name,
+        // Keyed on the topic-tree node id. The database topic id is the same
+        // ("grade5") for every node of a keyed grade and would collapse them into one.
         priorities: priorities.map((p) => ({
-          dbTopicId: p.dbTopicId,
+          topicId: p.topicId,
           topicName: p.topicName,
           priority: p.priority,
           reason: p.reason,

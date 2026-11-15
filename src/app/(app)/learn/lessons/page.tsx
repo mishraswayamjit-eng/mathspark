@@ -56,7 +56,7 @@ export default function LessonsPage() {
       {/* Header */}
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
         <Link
-          href="/chapters"
+          href="/learn"
           className="text-white/70 hover:text-white text-lg font-bold"
           aria-label="Back"
         >
@@ -65,7 +65,7 @@ export default function LessonsPage() {
         <h1 className="text-white text-title">Concept Lessons</h1>
       </div>
 
-      <div className="max-w-lg mx-auto px-4 pt-5 animate-fade-in">
+      <div className="max-w-lg mx-auto px-4 pt-5">
         {/* Intro box */}
         <div className="bg-white rounded-card px-4 py-3 border-2 border-line mb-5 flex items-start gap-3">
           <Sparky mood="happy" size={36} />

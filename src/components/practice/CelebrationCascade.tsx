@@ -8,6 +8,8 @@ import ShareSheet from '@/components/ShareSheet';
 import WhatsNextSheet from '@/components/WhatsNextSheet';
 import type { WhatsNextSuggestion } from '@/lib/whatsNext';
 import JustOneMore, { incrementTodayLessons } from './JustOneMore';
+import NextActionCard from '@/components/home/NextActionCard';
+import type { NextAction } from '@/lib/brain/nextAction';
 import type { QuestionResult, GradeUpCta } from './constants';
 
 type Stage = 1 | 2 | 3 | 4;
@@ -99,6 +101,24 @@ export default function CelebrationCascade({
     return () => clearTimeout(t);
   }, [stage, pct]);
   const dash = circ * (animPct / 100);
+
+  // ── What to do next, for the last stage ──
+  // null while it is being fetched; an empty list shows nothing extra.
+  const [nextActions, setNextActions] = useState<NextAction[] | null>(null);
+  useEffect(() => {
+    if (stage !== 4) return;
+    let live = true;
+    fetch('/api/recommendations')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data: { actions?: NextAction[] } | null) => {
+        if (live) setNextActions(data && Array.isArray(data.actions) ? data.actions : []);
+      })
+      .catch(() => {
+        // The suggestion is an extra: without it the screen is as it always was.
+        if (live) setNextActions([]);
+      });
+    return () => { live = false; };
+  }, [stage]);
 
   const wrongOnes = allResults.filter((r) => !r.wasCorrect);
 
@@ -245,6 +265,13 @@ export default function CelebrationCascade({
           ))}
         </div>
       )}
+
+      {/* What to do next: its space is held while it loads, so nothing below jumps */}
+      {nextActions === null ? (
+        <div className="w-full min-h-[190px] rounded-card border-2 border-line bg-soft animate-pulse" aria-hidden="true" />
+      ) : nextActions.length > 0 ? (
+        <NextActionCard actions={nextActions} surface="session_end" />
+      ) : null}
 
       {/* Just One More prompt */}
       {topicId && topicName && (

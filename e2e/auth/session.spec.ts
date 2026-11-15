@@ -25,7 +25,7 @@ publicTest.describe('Auth — unauthenticated redirects', () => {
     await page.waitForTimeout(2_000);
 
     const hasPracticeHub = await page
-      .getByText('Practice Hub')
+      .getByText('Pick how you want to practise')
       .isVisible({ timeout: 3_000 })
       .catch(() => false);
 

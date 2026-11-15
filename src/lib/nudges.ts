@@ -1,4 +1,5 @@
 import { MS_PER_DAY } from '@/lib/timeConstants';
+import { buildPracticeUrl } from '@/lib/brain/practiceUrl';
 // src/lib/nudges.ts — Nudge engine for proactive student engagement
 
 export interface Nudge {
@@ -20,10 +21,16 @@ const TOPIC_SHORT: Record<string, string> = {
 
 // ── Session persistence ───────────────────────────────────────────────────────
 
-export function saveSessionData(topicId: string, accuracy: number): void {
+/**
+ * Remember the lesson just finished. `subTopic` is the `?subTopic=` key the
+ * lesson ran with (empty for whole-topic practice), kept so a later
+ * "continue" link reopens the same sub-topic and not the whole grade.
+ */
+export function saveSessionData(topicId: string, accuracy: number, subTopic: string = ''): void {
   if (typeof window === 'undefined') return;
   const today = new Date().toDateString();
   localStorage.setItem('mathspark_last_session_topic',    topicId);
+  localStorage.setItem('mathspark_last_session_subtopic', subTopic);
   localStorage.setItem('mathspark_last_session_accuracy', String(accuracy));
   localStorage.setItem('mathspark_last_practice_date',    today);
 }
@@ -36,6 +43,14 @@ function getLastPracticeDate(): string | null {
 function getLastSessionTopic(): string | null {
   if (typeof window === 'undefined') return null;
   return localStorage.getItem('mathspark_last_session_topic');
+}
+
+/** The link back to the last lesson: its topic and, when it had one, its sub-topic. */
+function lastSessionUrl(topicId: string): string {
+  const subTopic = typeof window === 'undefined'
+    ? null
+    : localStorage.getItem('mathspark_last_session_subtopic');
+  return buildPracticeUrl(topicId, subTopic);
 }
 
 // Track which mastery celebrations have already been shown
@@ -92,11 +107,11 @@ export function computeNudge(input: NudgeInput): Nudge | null {
   // 2. Streak danger — has streak but hasn't practiced today
   if (streakDays >= 2 && !practicedToday) {
     return {
-      message:     `Your ${streakDays}-day streak is at risk! 🔥`,
-      subtext:     'Just one lesson will keep it going!',
+      message:     `You're on a ${streakDays}-day streak! 🔥`,
+      subtext:     'Fancy a quick lesson today?',
       mood:        'encouraging',
-      actionLabel: 'Save my streak',
-      actionPath:  lastTopic ? `/practice/${lastTopic}` : '/chapters',
+      actionLabel: 'Quick lesson',
+      actionPath:  lastTopic ? lastSessionUrl(lastTopic) : '/chapters',
     };
   }
 
@@ -125,7 +140,8 @@ export function computeNudge(input: NudgeInput): Nudge | null {
       subtext:     'Every attempt makes you smarter!',
       mood:        'thinking',
       actionLabel: 'Try again',
-      actionPath:  `/practice/${struggling.id}`,
+      // `struggling.id === lastTopic` (see the test above), so this is the last lesson's link.
+      actionPath:  lastSessionUrl(struggling.id),
     };
   }
 
@@ -140,7 +156,7 @@ export function computeNudge(input: NudgeInput): Nudge | null {
         subtext:     'Pick up where you left off!',
         mood:        'happy',
         actionLabel: 'Continue',
-        actionPath:  lastTopic ? `/practice/${lastTopic}` : '/chapters',
+        actionPath:  lastTopic ? lastSessionUrl(lastTopic) : '/chapters',
       };
     }
   }

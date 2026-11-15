@@ -6,7 +6,7 @@ test.describe('Practice Hub', () => {
     await page.goto('/practice', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    await expect(page.getByText('Practice Hub')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Practise', exact: true })).toBeVisible();
 
     // Topic cards should have /practice/ links
     const topicLinks = page.locator('a[href*="/practice/"]');

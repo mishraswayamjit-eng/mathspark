@@ -60,7 +60,7 @@ export default function PaperSelectionPage() {
   const durInfo = DURATIONS.find((d) => d.value === duration)!;
 
   return (
-    <div className="min-h-screen bg-paper pb-24 animate-fade-in">
+    <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div className="bg-ink px-4 py-4">
         <div className="max-w-lg mx-auto flex items-center justify-between">
@@ -69,10 +69,10 @@ export default function PaperSelectionPage() {
             <p className="text-white/70 text-xs font-medium">240 pre-built practice papers</p>
           </div>
           <Link
-            href="/home"
+            href="/practice/tests"
             className="text-white/70 text-sm font-bold hover:text-white transition-colors"
           >
-            ← Home
+            ← Tests
           </Link>
         </div>
       </div>
