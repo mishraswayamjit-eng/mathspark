@@ -103,6 +103,11 @@ _WORD_FRACTIONS = [
 _UNICODE = {"½": " 1 2 ", "¼": " 1 4 ", "¾": " 3 4 ", "⅓": " 1 3 ", "⅔": " 2 3 ", "²": " squared ", "³": " cubed "}
 
 
+# A grouped number may be followed by a comma that is punctuation ("32,500, which is"),
+# but not by a comma that continues into more digits.
+_GROUPED = re.compile(r"(?<![\d,])(?:\d{1,3}(?:,\d{3})+|\d{1,2}(?:,\d{2})+,\d{3})(?!\d)(?!,\d)")
+
+
 def number_tokens(text):
     """The numbers in a piece of text, in order, written the same way whether it is print or speech.
 
@@ -117,7 +122,9 @@ def number_tokens(text):
     low = s.lower()
     for pat, rep in _WORD_FRACTIONS:
         low = re.sub(pat, rep, low)
-    low = re.sub(r"(?<=\d),(?=\d)", "", low)
+    # Commas inside one number are dropped ("2,345", "23,45,678"); a list printed
+    # without spaces ("2,4,6", "10,11,12") stays a list of separate numbers.
+    low = _GROUPED.sub(lambda m: m.group(0).replace(",", ""), low)
     out = []
     for m in re.findall(r"\d+(?:\.\d+)?", low):
         out.append(("%f" % float(m)).rstrip("0").rstrip(".") if "." in m else str(int(m)))

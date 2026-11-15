@@ -1,0 +1,3723 @@
+{
+ "BOOST_EXT_G5_WS_B6_022_06": {
+  "q": "Solve: 2 x plus 15 equals 29.",
+  "options": [
+   "22",
+   "14",
+   "8",
+   "7"
+  ],
+  "hints": [
+   "First, move 15 to the other side by subtracting it from both sides.",
+   "After subtracting: 2 x equals 14. Now divide both sides by 2.",
+   "Think: 2 times what number gives 14?"
+  ],
+  "steps": [
+   "Subtract 15 from both sides. 2 x equals 29 minus 15, which is 14.",
+   "Divide both sides by 2. x equals 14 over 2, which is 7."
+  ]
+ },
+ "BOOST_EXT_G5_WS_B6_022_07": {
+  "q": "Solve: 3 x minus 5 equals 4.",
+  "options": [
+   "minus 1",
+   "3",
+   "1",
+   "9"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 5 to the right side, it becomes plus 5.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 5 to both sides. 3 x equals 4 plus 5, which is 9.",
+   "Divide both sides by 3. x equals 9 over 3, which is 3."
+  ]
+ },
+ "BOOST_EXT_G5_WS_B6_022_08": {
+  "q": "Solve: 6 x plus 11 equals 35.",
+  "options": [
+   "5",
+   "24",
+   "4",
+   "7"
+  ],
+  "hints": [
+   "First, move 11 to the other side by subtracting it from both sides.",
+   "After subtracting: 6 x equals 24. Now divide both sides by 6.",
+   "Think: 6 times what number gives 24?"
+  ],
+  "steps": [
+   "Subtract 11 from both sides. 6 x equals 35 minus 11, which is 24.",
+   "Divide both sides by 6. x equals 24 over 6, which is 4."
+  ]
+ },
+ "EXT_G5_FP_2016_015": {
+  "q": "The length of one side of the rectangle is 8 centimetres, and its perimeter is 40 centimetres. Find the area of the rectangle.",
+  "options": [
+   "160 square centimetres",
+   "96 square centimetres",
+   "144 square centimetres",
+   "Data inadequate"
+  ],
+  "hints": [
+   "Perimeter equals 2 times, length plus breadth. Half of 40 gives length plus breadth. Then find the other side.",
+   "Length plus breadth equals perimeter divided by 2. Area equals length times breadth.",
+   ""
+  ],
+  "steps": [
+   "Length plus breadth equals 40 divided by 2, which is 20.",
+   "The other side equals 20 minus 8, which is 12 centimetres.",
+   "Area equals 8 times 12, which is 96 square centimetres."
+  ]
+ },
+ "EXT_G5_FP_2016_037": {
+  "q": "Three times the measure of an angle is the measure of its supplement. What is the measure of the angle?",
+  "options": [
+   "30 degrees",
+   "20 degrees",
+   "60 degrees",
+   "45 degrees"
+  ],
+  "hints": [
+   "The supplement of an angle x is 180 degrees minus x. Write, three times the angle equals its supplement, as a balance.",
+   "Supplementary angles add up to 180 degrees. Here, 3 x equals 180 degrees minus x.",
+   ""
+  ],
+  "steps": [
+   "Let the angle be x. Its supplement equals 180 degrees minus x.",
+   "3 x equals 180 degrees minus x. So 4 x equals 180 degrees.",
+   "x equals 180 degrees divided by 4, which is 45 degrees. Check: 3 times 45 is 135, and 180 minus 45 is 135. They match."
+  ]
+ },
+ "EXT_G5_FP_2016_038": {
+  "q": "The three sides of a triangle are: 2 A plus 6, centimetres; 3 A plus 5, centimetres; and A plus 7, centimetres. What is the perimeter of the triangle, if the value of A equals 3?",
+  "options": [
+   "26 centimetres",
+   "28 centimetres",
+   "36 centimetres",
+   "34 centimetres"
+  ],
+  "hints": [
+   "Put A equals 3 into each side, to get three lengths. Perimeter means add all three sides.",
+   "The perimeter of a triangle equals the sum of its three sides.",
+   ""
+  ],
+  "steps": [
+   "2 A plus 6 equals 2 times 3, plus 6, which is 12 centimetres.",
+   "3 A plus 5 equals 3 times 3, plus 5, which is 14 centimetres.",
+   "A plus 7 equals 3 plus 7, which is 10 centimetres.",
+   "Perimeter equals 12 plus 14 plus 10, which is 36 centimetres."
+  ]
+ },
+ "EXT_G5_FP_2017_005": {
+  "q": "A clock is showing 11:00 A M now. When the hour hand has turned through 165 degrees, what will be the time?",
+  "options": [
+   "2:05 p m",
+   "4 30 p m",
+   "12 30 p m",
+   "5 30 p m"
+  ],
+  "hints": [
+   "The hour hand turns 30 degrees in every hour. How many hours is 165 degrees?",
+   "Hour hand: 30 degrees per hour. Hours passed equals the angle divided by 30.",
+   ""
+  ],
+  "steps": [
+   "165 divided by 30 equals 5.5 hours, which is 5 hours 30 minutes.",
+   "11:00 A M, plus 5 hours 30 minutes, is 4 30 p m."
+  ]
+ },
+ "EXT_G5_FP_2017_018": {
+  "q": "The perimeter of a square and an equilateral triangle are the same. If the side of the triangle is 8 centimetres, then the side of the square is:",
+  "options": [
+   "8 centimetres",
+   "24 centimetres",
+   "6 centimetres",
+   "12 centimetres"
+  ],
+  "hints": [
+   "Find the triangle's perimeter. It has 3 equal sides. Share that perimeter equally among the 4 sides of the square.",
+   "Equilateral triangle: perimeter equals 3 times side. Square: perimeter equals 4 times side.",
+   ""
+  ],
+  "steps": [
+   "Triangle perimeter equals 3 times 8, which is 24 centimetres.",
+   "Square perimeter equals 24 centimetres. So the side equals 24 divided by 4, which is 6 centimetres."
+  ]
+ },
+ "EXT_G5_FP_2017_019": {
+  "q": "The breadth of a rectangle is half the length of the rectangle. If the perimeter of the rectangle is 48 centimetres, then its area is:",
+  "options": [
+   "288 square centimetres",
+   "128 square centimetres",
+   "256 square centimetres",
+   "196 square centimetres"
+  ],
+  "hints": [
+   "If the breadth is 1 part, the length is 2 parts. Perimeter equals 2 times, length plus breadth, which is 2 times 3 parts. Find one part first.",
+   "Perimeter equals 2 times, length plus breadth. Area equals length times breadth.",
+   ""
+  ],
+  "steps": [
+   "Length plus breadth equals 48 divided by 2, which is 24. The length is 2 times the breadth, so 3 times the breadth equals 24. So the breadth is 8 centimetres, and the length is 16 centimetres.",
+   "Area equals 16 times 8, which is 128 square centimetres."
+  ]
+ },
+ "EXT_G5_FP_2017_023": {
+  "q": "A man is cycling towards the North-East direction. He turns to his left, and is now cycling towards West direction. How many degrees to his left did he turn?",
+  "options": [
+   "90 degrees",
+   "145 degrees",
+   "135 degrees",
+   "180 degrees"
+  ],
+  "hints": [
+   "Turning left means anti-clockwise. Go from North-East to North, then North-West, then West, counting 45 degrees each step.",
+   "Each step between neighbouring directions, North, North-East, East and so on, is 45 degrees.",
+   ""
+  ],
+  "steps": [
+   "North-East to North is 45 degrees, to the left.",
+   "North to North-West is another 45 degrees. The total is 90 degrees.",
+   "North-West to West is another 45 degrees. The total is 135 degrees."
+  ]
+ },
+ "EXT_G5_FP_2017_030": {
+  "q": "The length of a rectangle is 4 A plus 3 b, and the breadth is 3 A minus b. Find its perimeter.",
+  "options": [
+   "7 A plus 2 b",
+   "14 A plus 4 b",
+   "14 A minus 2 b",
+   "None of these"
+  ],
+  "hints": [
+   "First add the length and breadth, combining like terms. Then multiply by 2.",
+   "Perimeter equals 2 times, length plus breadth.",
+   ""
+  ],
+  "steps": [
+   "Length plus breadth equals 4 A plus 3 b, plus 3 A minus b, which is 7 A plus 2 b.",
+   "Perimeter equals 2 times, 7 A plus 2 b, which is 14 A plus 4 b."
+  ]
+ },
+ "EXT_G5_FP_2017_040": {
+  "q": "The perimeter of a square ground is 120 metres. What is its area?",
+  "options": [
+   "900 square metres",
+   "600 square metres",
+   "300 square metres",
+   "360 square metres"
+  ],
+  "hints": [
+   "Find one side first: perimeter divided by 4. Then area equals side times side.",
+   "For a square, perimeter equals 4 times side, and area equals side times side.",
+   ""
+  ],
+  "steps": [
+   "Side equals 120 divided by 4, which is 30 metres.",
+   "Area equals 30 times 30, which is 900 square metres."
+  ]
+ },
+ "EXT_G5_FP_2018_001": {
+  "q": "If 1 gram of grass seeds is needed to plant 1 square metre, how much grass seed will be needed to plant an entire field that is 110 metres long and 70 metres wide?",
+  "options": [
+   "77 kilograms",
+   "15 kilograms",
+   "7.7 kilograms",
+   "37.5 kilograms"
+  ],
+  "hints": [
+   "Find the area of the field first: length times width. Each square metre needs 1 gram. Then change grams into kilograms, by dividing by 1000.",
+   "Area of a rectangle equals length times breadth. 1000 grams equals 1 kilogram.",
+   ""
+  ],
+  "steps": [
+   "Area equals 110 times 70, which is 7700 square metres.",
+   "Grass seed equals 7700 times 1 gram, which is 7700 grams.",
+   "7700 grams divided by 1000 equals 7.7 kilograms."
+  ]
+ },
+ "EXT_G5_FP_2018_007": {
+  "q": "Which of the following statements is true?",
+  "options": [
+   "The supplementary angle of an angle is always less than 90 degrees.",
+   "The complementary angle of an acute angle is always an acute angle.",
+   "The complementary and the supplementary angle of a given angle always sum up to 360 degrees.",
+   "All the given statements are false."
+  ],
+  "hints": [
+   "Test each statement with an example angle, like 30 degrees. The complement equals 90 degrees minus the angle, and the supplement equals 180 degrees minus the angle.",
+   "An acute angle is less than 90 degrees. The complement equals 90 degrees minus x. The supplement equals 180 degrees minus x.",
+   ""
+  ],
+  "steps": [
+   "Statement A: the supplement of 30 degrees is 150 degrees, which is more than 90 degrees. So A is not true.",
+   "Statement B: if x is acute, between 0 degrees and 90 degrees, then 90 degrees minus x is also between 0 degrees and 90 degrees. So it is acute, and B is true.",
+   "Statement C: 90 minus x, plus 180 minus x, equals 270 minus 2 x, which isn't always 360 degrees. So C is not true.",
+   "Answer: statement B."
+  ]
+ },
+ "EXT_G5_FP_2018_009": {
+  "q": "The perimeter of a rectangle is 72 centimetres. The length and breadth of the rectangle are:",
+  "options": [
+   "9 and 4",
+   "14 and 4",
+   "19 and 15",
+   "21 and 15"
+  ],
+  "hints": [
+   "Perimeter equals 2 times, length plus breadth. So length plus breadth must be half of 72. Add the two numbers in each option.",
+   "Length plus breadth equals perimeter divided by 2.",
+   ""
+  ],
+  "steps": [
+   "Length plus breadth equals 72 divided by 2, which is 36.",
+   "9 plus 4 is 13, not a match. 14 plus 4 is 18, not a match. 19 plus 15 is 34, not a match.",
+   "21 plus 15 is 36. That matches."
+  ]
+ },
+ "EXT_G5_FP_2018_014": {
+  "q": "The measure of an angle is 38 minus x, degrees. What will be the measure of the complementary angle of it?",
+  "options": [
+   "72 minus x, degrees",
+   "62 minus x, degrees",
+   "52 minus x, degrees",
+   "52 plus x, degrees"
+  ],
+  "hints": [
+   "Complementary angles add to 90 degrees. Subtract the angle from 90, and be careful with the minus sign in front of x.",
+   "The complement equals 90 degrees minus the angle.",
+   ""
+  ],
+  "steps": [
+   "The complement equals 90 minus, open bracket, 38 minus x, close bracket.",
+   "Remove the bracket: 90 minus 38 plus x. Minus times minus gives plus.",
+   "That equals 52 plus x, degrees."
+  ]
+ },
+ "EXT_G5_FP_2018_018": {
+  "q": "The two sides of a square are 3 A minus 7, centimetres, and 2 A minus 1, centimetres. Which of the following can be its perimeter?",
+  "options": [
+   "21 centimetres",
+   "28 centimetres",
+   "44 centimetres",
+   "42 centimetres"
+  ],
+  "hints": [
+   "All sides of a square are equal, so 3 A minus 7 equals 2 A minus 1. Solve for A, then find the side and the perimeter.",
+   "In a square, all sides are equal. Perimeter equals 4 times side.",
+   ""
+  ],
+  "steps": [
+   "3 A minus 7 equals 2 A minus 1. So A equals 6.",
+   "Side equals 3 times 6, minus 7, which is 11 centimetres. Check: 2 times 6, minus 1, is 11. It matches.",
+   "Perimeter equals 4 times 11, which is 44 centimetres."
+  ]
+ },
+ "EXT_G5_FP_2018_029": {
+  "q": "The perimeter of an equilateral triangle is 16 A plus 7 b. If A equals 2 and b equals 4, then the side of the triangle is?",
+  "options": [
+   "30",
+   "20",
+   "15",
+   "None of these"
+  ],
+  "hints": [
+   "Put A equals 2 and b equals 4 into the perimeter. An equilateral triangle has 3 equal sides.",
+   "The side of an equilateral triangle equals perimeter divided by 3.",
+   ""
+  ],
+  "steps": [
+   "Perimeter equals 16 times 2, plus 7 times 4. That is 32 plus 28, which is 60.",
+   "Side equals 60 divided by 3, which is 20."
+  ]
+ },
+ "EXT_G5_FP_2019_001": {
+  "q": "The length of a rectangle is twice its breadth. If the perimeter of the rectangle is 90 centimetres, find the area of the rectangle.",
+  "options": [
+   "225 square centimetres",
+   "550 square centimetres",
+   "450 square centimetres",
+   "600 square centimetres"
+  ],
+  "hints": [
+   "If the breadth is 1 part, then the length is 2 parts, so length plus breadth is 3 parts. Half the perimeter gives length plus breadth. Find one part first.",
+   "Length plus breadth equals perimeter divided by 2. Area equals length times breadth.",
+   ""
+  ],
+  "steps": [
+   "Length plus breadth equals 90 divided by 2, which is 45. Since the length is 2 times the breadth, 3 times the breadth equals 45. So the breadth is 15 centimetres, and the length is 30 centimetres.",
+   "Area equals 30 times 15, which is 450 square centimetres."
+  ]
+ },
+ "EXT_G5_FP_2019_012": {
+  "q": "The supplementary angle of an obtuse angle will always be:",
+  "options": [
+   "supplementary angle",
+   "acute angle",
+   "right angle",
+   "reflex angle"
+  ],
+  "hints": [
+   "An obtuse angle is between 90 degrees and 180 degrees. Subtract it from 180 degrees. What size range do you get?",
+   "The supplement equals 180 degrees minus the angle.",
+   ""
+  ],
+  "steps": [
+   "For an obtuse angle x: x is more than 90 degrees, and less than 180 degrees.",
+   "The supplement, 180 degrees minus x, is between 0 degrees and 90 degrees.",
+   "An angle less than 90 degrees is an acute angle."
+  ]
+ },
+ "EXT_G5_FP_2019_018": {
+  "q": "An angle measures 35 minus x, degrees. What will be the measure of the complementary angle of it?",
+  "options": [
+   "65 minus x, degrees",
+   "65 plus x, degrees",
+   "35 plus x, degrees",
+   "55 plus x, degrees"
+  ],
+  "hints": [
+   "Complementary angles add to 90 degrees. Subtract the whole bracket from 90. Watch the sign in front of x!",
+   "The complement equals 90 degrees minus the angle.",
+   ""
+  ],
+  "steps": [
+   "The complement equals 90 minus, open bracket, 35 minus x, close bracket.",
+   "Open the bracket: 90 minus 35 plus x. The minus changes the sign of minus x.",
+   "That equals 55 plus x, degrees."
+  ]
+ },
+ "EXT_G5_FP_2019_022": {
+  "q": "The area of a square and a rectangle are the same. If the side of the square is 15 centimetres, and the length of the rectangle is 25 centimetres, then the difference between the perimeter of the square and the rectangle is?",
+  "options": [
+   "26 centimetres",
+   "10 centimetres",
+   "9 centimetres",
+   "8 centimetres"
+  ],
+  "hints": [
+   "Find the area of the square. Use it to find the rectangle's breadth: area divided by length. Then find both perimeters, and subtract.",
+   "Breadth equals area divided by length. Perimeter of a rectangle equals 2 times, length plus breadth. Perimeter of a square equals 4 times side.",
+   ""
+  ],
+  "steps": [
+   "Square area equals 15 times 15, which is 225 square centimetres.",
+   "Rectangle breadth equals 225 divided by 25, which is 9 centimetres.",
+   "Rectangle perimeter equals 2 times, 25 plus 9, which is 68 centimetres. Square perimeter equals 4 times 15, which is 60 centimetres.",
+   "Difference equals 68 minus 60, which is 8 centimetres."
+  ]
+ },
+ "EXT_G5_FP_2019_024": {
+  "q": "Given below are the sides of equilateral triangles and of squares in each of the alternatives. In which one does the perimeter of the equilateral triangle and the square become equal?",
+  "options": [
+   "E equals 9, and S equals 9",
+   "E equals 8, and S equals 9",
+   "E equals 16, and S equals 12",
+   "E equals 12, and S equals 10"
+  ],
+  "hints": [
+   "Triangle perimeter equals 3 times E. Square perimeter equals 4 times S. Work both out for each option.",
+   "Equilateral triangle: 3 times side. Square: 4 times side.",
+   ""
+  ],
+  "steps": [
+   "Option A: 3 times 9 is 27, and 4 times 9 is 36. Not equal.",
+   "Option B: 24 and 36. Not equal.",
+   "Option C: 3 times 16 is 48, and 4 times 12 is 48. They are equal.",
+   "Option D: 36 and 40. Not equal. Answer: E equals 16, and S equals 12."
+  ]
+ },
+ "EXT_G5_FP_2019_028": {
+  "q": "The three angles of a triangle are x degrees, x plus 10, degrees, and 2 x minus 6, degrees. Which one of the following is the greatest angle of this triangle?",
+  "options": [
+   "88 degrees",
+   "54 degrees",
+   "82 degrees",
+   "102 degrees"
+  ],
+  "hints": [
+   "Angles of a triangle add up to 180 degrees. Add the three angles and find x. Then work out each angle.",
+   "The angle sum of a triangle equals 180 degrees.",
+   ""
+  ],
+  "steps": [
+   "x, plus x plus 10, plus 2 x minus 6, equals 180. So 4 x plus 4 equals 180. Then 4 x equals 176. So x equals 44.",
+   "The angles are 44 degrees, 54 degrees and 82 degrees. Check: 44 plus 54 plus 82 equals 180. Correct.",
+   "The greatest is 82 degrees."
+  ]
+ },
+ "EXT_G5_FP_2019_036": {
+  "q": "The three sides of a right-angled triangle are 9 centimetres, 40 centimetres and 41 centimetres. What is the area of this triangle?",
+  "options": [
+   "180 square centimetres",
+   "90 square centimetres",
+   "210 square centimetres",
+   "820 square centimetres"
+  ],
+  "hints": [
+   "In a right-angled triangle, the two shorter sides are the base and height. The longest side, 41, is the hypotenuse. Don't use it for the area.",
+   "Area of a triangle equals half of base times height.",
+   ""
+  ],
+  "steps": [
+   "Base equals 40 centimetres, and height equals 9 centimetres, the two shorter sides.",
+   "Area equals half of 40 times 9, which is 180 square centimetres."
+  ]
+ },
+ "EXT_G5_FP_2020_007": {
+  "q": "What is the complementary angle of the angle x minus 35, degrees?",
+  "options": [
+   "x plus 35, degrees",
+   "35 minus x, degrees",
+   "125 minus x, degrees",
+   "x minus 55, degrees"
+  ],
+  "hints": [
+   "Complementary angles add to 90 degrees. Subtract the whole bracket from 90. Be careful with the signs.",
+   "The complement equals 90 degrees minus the angle.",
+   ""
+  ],
+  "steps": [
+   "The complement equals 90 minus, open bracket, x minus 35, close bracket.",
+   "Open the bracket: 90 minus x plus 35.",
+   "That equals 125 minus x, degrees."
+  ]
+ },
+ "EXT_G5_FP_2020_011": {
+  "q": "A right-angled triangle has sides measuring 7 centimetres, 24 centimetres and 25 centimetres. Which of the following calculations could work out to be its area in square centimetres?",
+  "options": [
+   "7 times 24 times 25, divided by 2",
+   "7 times 12",
+   "12 times 12.5",
+   "3.5 times 12"
+  ],
+  "hints": [
+   "The two shorter sides, 7 and 24, are the base and the height. The longest side, 25, is the hypotenuse, and is not used for the area.",
+   "Area of a triangle equals half of base times height.",
+   ""
+  ],
+  "steps": [
+   "Base equals 7 centimetres, height equals 24 centimetres.",
+   "Area equals half of 7 times 24, which is 7 times 12, because half of 24 is 12.",
+   "Answer: 7 times 12, which equals 84 square centimetres."
+  ]
+ },
+ "EXT_G5_FP_2020_027": {
+  "q": "The length and width of a rectangle are 12 centimetres and 8 centimetres respectively. Another rectangle, whose area is the same as the first rectangle, has length 16 centimetres. What could be the width of this rectangle?",
+  "options": [
+   "8 centimetres",
+   "10 centimetres",
+   "4 centimetres",
+   "6 centimetres"
+  ],
+  "hints": [
+   "Find the area of the first rectangle. The second rectangle has the same area, so divide it by 16.",
+   "Width equals area divided by length.",
+   ""
+  ],
+  "steps": [
+   "Area equals 12 times 8, which is 96 square centimetres.",
+   "Width equals 96 divided by 16, which is 6 centimetres."
+  ]
+ },
+ "EXT_G5_FP_2021_006": {
+  "q": "An angle measures 25 minus y, degrees. Which of the following is the complementary angle to this given angle?",
+  "options": [
+   "65 minus y, degrees",
+   "25 plus y, degrees",
+   "y minus 65, degrees",
+   "65 plus y, degrees"
+  ],
+  "hints": [
+   "Complementary angles add up to 90 degrees. Subtract the whole bracket from 90, and be careful with the minus sign.",
+   "The complement equals 90 degrees minus the angle.",
+   ""
+  ],
+  "steps": [
+   "The complement equals 90 minus, open bracket, 25 minus y, close bracket.",
+   "That equals 90 minus 25 plus y. Minus times minus equals plus.",
+   "That equals 65 plus y, degrees."
+  ]
+ },
+ "EXT_G5_FP_2022_016": {
+  "q": "The perimeter of a rectangle is 96 centimetres. If the breadth is 6 centimetres less than the length, find the area of the rectangle.",
+  "options": [
+   "432 square centimetres",
+   "315 square centimetres",
+   "891 square centimetres",
+   "567 square centimetres"
+  ],
+  "hints": [
+   "Length plus breadth equals half the perimeter. And breadth equals length minus 6. Put these together to find the length, then the breadth, then the area.",
+   "Length plus breadth equals perimeter divided by 2. Area equals length times breadth.",
+   ""
+  ],
+  "steps": [
+   "Length plus breadth equals 96 divided by 2, which is 48. With breadth equal to length minus 6, we get 2 times the length, minus 6, equals 48. So the length is 27 centimetres.",
+   "Breadth equals 27 minus 6, which is 21 centimetres.",
+   "Area equals 27 times 21, which is 567 square centimetres."
+  ]
+ },
+ "EXT_G5_FP_2022_020": {
+  "q": "Mishti is facing south-west. She turns 180 degrees in clockwise direction, and then turns 225 degrees in anti-clockwise direction. In which direction is she facing now?",
+  "options": [
+   "South-East",
+   "South",
+   "East",
+   "South-West"
+  ],
+  "hints": [
+   "A 180 degree turn takes her to the opposite direction. Then count 45 degree steps anti-clockwise. Each step moves to the next direction: North, then North-West, then West, and so on.",
+   "Each 45 degree step is one direction: North, North-East, East, South-East, South, South-West, West, North-West.",
+   ""
+  ],
+  "steps": [
+   "South-West, plus 180 degrees, gives North-East, the opposite direction.",
+   "225 degrees divided by 45 degrees equals 5 steps anti-clockwise from North-East: North, North-West, West, South-West, South.",
+   "Now facing South."
+  ]
+ },
+ "EXT_G5_FP_2022_028": {
+  "q": "3 A plus 5, 7 A plus 10, and 4 A plus 15, are the sides of a triangle. For A equals 5, what would be the perimeter of the triangle?",
+  "options": [
+   "125 units",
+   "120 units",
+   "80 units",
+   "100 units"
+  ],
+  "hints": [
+   "Put A equals 5 into each side. Then add the three sides.",
+   "The perimeter of a triangle equals the sum of its three sides.",
+   ""
+  ],
+  "steps": [
+   "3 A plus 5 equals 15 plus 5, which is 20.",
+   "7 A plus 10 equals 35 plus 10, which is 45.",
+   "4 A plus 15 equals 20 plus 15, which is 35.",
+   "Perimeter equals 20 plus 45 plus 35, which is 100 units."
+  ]
+ },
+ "EXT_G5_FP_2022_029": {
+  "q": "The perimeter of a rectangle is 84 centimetres. If the breadth of the rectangle is half of the length, find the length of the rectangle.",
+  "options": [
+   "42 centimetres",
+   "28 centimetres",
+   "21 centimetres",
+   "14 centimetres"
+  ],
+  "hints": [
+   "Length plus breadth equals half of 84. If the breadth is half of the length, then length plus breadth is 1.5 times the length.",
+   "Length plus breadth equals perimeter divided by 2.",
+   ""
+  ],
+  "steps": [
+   "Length plus breadth equals 84 divided by 2, which is 42.",
+   "Breadth equals length divided by 2. So length, plus length divided by 2, equals 1.5 times the length, which equals 42.",
+   "Length equals 42 divided by 1.5, which is 28 centimetres. The breadth is 14 centimetres."
+  ]
+ },
+ "EXT_G5_FP_2023_004": {
+  "q": "The perimeter of a square is equal to the perimeter of a rectangle with length 22 metres and breadth 16 metres. Find the area of the square.",
+  "options": [
+   "324 square metres",
+   "400 square metres",
+   "484 square metres",
+   "none of these"
+  ],
+  "hints": [
+   "Find the rectangle's perimeter first: 2 times, length plus breadth. The square has the same perimeter, so divide by 4 to get its side.",
+   "For a square, perimeter equals 4 times side, and area equals side times side.",
+   ""
+  ],
+  "steps": [
+   "Rectangle perimeter equals 2 times, 22 plus 16, which is 76 metres.",
+   "Square side equals 76 divided by 4, which is 19 metres.",
+   "Area equals 19 times 19, which is 361 square metres. So the answer is, none of these."
+  ]
+ },
+ "EXT_G5_FP_2023_010": {
+  "q": "A clock is showing 12 45 p m now. When the hour hand has turned through 214 degrees, what will the time be?",
+  "options": [
+   "8:07 p m",
+   "7 28 p m",
+   "8 13 p m",
+   "7 53 p m"
+  ],
+  "hints": [
+   "The hour hand turns 30 degrees each hour. How many hours and minutes is 214 degrees? It turns 0.5 degrees each minute. Then add to 12 45.",
+   "Hour hand: 30 degrees per hour, which is half a degree per minute.",
+   ""
+  ],
+  "steps": [
+   "214 degrees divided by 30 degrees equals 7 hours, with 4 degrees left over.",
+   "4 degrees divided by half a degree equals 8 minutes. So that is 7 hours 8 minutes.",
+   "12 45 p m, plus 7 hours 8 minutes, is 7 53 p m."
+  ]
+ },
+ "EXT_G5_FP_2023_017": {
+  "q": "The area of a right-angled triangle is equal to 18 times the base of the same triangle, numerically. Find the height of the triangle.",
+  "options": [
+   "54 units",
+   "9 units",
+   "36 units",
+   "27 units"
+  ],
+  "hints": [
+   "Write area equals half of base times height, and set it equal to 18 times base. The base appears on both sides!",
+   "Area of a triangle equals half of base times height.",
+   ""
+  ],
+  "steps": [
+   "Half of base times height equals 18 times base.",
+   "Cancel the base from both sides: half of the height equals 18.",
+   "Height equals 18 times 2, which is 36 units."
+  ]
+ },
+ "EXT_G5_FP_2023_039": {
+  "q": "The two sides of a triangle are 16 centimetres and 7 centimetres. Which of the following can be the possible perimeter of this triangle?",
+  "options": [
+   "none of these",
+   "34 centimetres",
+   "31 centimetres",
+   "46 centimetres"
+  ],
+  "hints": [
+   "In any triangle, the third side must be more than the difference of the other two, and less than their sum. Find that range for the third side, then the range of the perimeter.",
+   "Triangle rule: the difference of two sides is less than the third side, and the third side is less than the sum of two sides.",
+   ""
+  ],
+  "steps": [
+   "The third side is between 16 minus 7, which is 9, and 16 plus 7, which is 23. It is not equal to either.",
+   "The perimeter is between 16 plus 7 plus 9, which is 32, and 16 plus 7 plus 23, which is 46. But it is not equal to 32 or 46.",
+   "31 does not work. 46 does not work. But 34 works, with the third side equal to 11 centimetres."
+  ]
+ },
+ "EXT_G5_FP_2023_040": {
+  "q": "Which of the two angles given below are supplementary to each other?",
+  "options": [
+   "127.5 degrees and 53.5 degrees",
+   "83.6 degrees and 95.4 degrees",
+   "111.8 degrees and 68.2 degrees",
+   "115.7 degrees and 65.3 degrees"
+  ],
+  "hints": [
+   "Supplementary angles add up to exactly 180 degrees. Add the two angles in each option.",
+   "Supplementary means the sum equals 180 degrees.",
+   ""
+  ],
+  "steps": [
+   "127.5 plus 53.5 equals 181. Not a match.",
+   "83.6 plus 95.4 equals 179. Not a match.",
+   "111.8 plus 68.2 equals 180. That matches.",
+   "115.7 plus 65.3 equals 181. Not a match."
+  ]
+ },
+ "EXT_G5_FP_2024_001": {
+  "q": "The area of a square and a rectangle are equal. If the side of the square is 56 centimetres, and the breadth of the rectangle is 49 centimetres, find the perimeter of the rectangle.",
+  "options": [
+   "230 centimetres",
+   "224 centimetres",
+   "222 centimetres",
+   "None of these"
+  ],
+  "hints": [
+   "Find the area of the square: side times side. The rectangle has the same area, so use it to get the rectangle's length.",
+   "Area of a square equals side squared. Length equals area divided by breadth. Perimeter equals 2 times, length plus breadth.",
+   ""
+  ],
+  "steps": [
+   "Area equals 56 times 56, which is 3136 square centimetres.",
+   "Length of the rectangle equals 3136 divided by 49, which is 64 centimetres.",
+   "Perimeter equals 2 times, 64 plus 49. That is 2 times 113, which is 226 centimetres.",
+   "226 is not in options A to C. So the answer is, none of these."
+  ]
+ },
+ "EXT_G5_FP_2024_005": {
+  "q": "What is the angle between the hour hand and the minute hand of a clock at 7 20 p m?",
+  "options": [
+   "90 degrees",
+   "100 degrees",
+   "120 degrees",
+   "108 degrees"
+  ],
+  "hints": [
+   "The hour hand does not stay on the 7. By 7 20 it has moved a little. It moves half a degree every minute. The minute hand moves 6 degrees every minute.",
+   "Hour hand angle equals hours times 30, plus minutes times 0.5. Minute hand angle equals minutes times 6.",
+   ""
+  ],
+  "steps": [
+   "Hour hand: 7 times 30, plus 20 times 0.5. That is 210 plus 10, which is 220 degrees.",
+   "Minute hand: 20 times 6, which is 120 degrees.",
+   "The angle between them equals 220 minus 120, which is 100 degrees."
+  ]
+ },
+ "EXT_G5_FP_2024_019": {
+  "q": "If the perimeter of an equilateral triangle having side 12 centimetres is equal to the perimeter of a rectangle, which of the following can be the sides of the rectangle?",
+  "options": [
+   "length 10 centimetres and breadth 5 centimetres",
+   "length 14 centimetres and breadth 6 centimetres",
+   "length 8 centimetres and breadth 6 centimetres",
+   "length 13 centimetres and breadth 5 centimetres"
+  ],
+  "hints": [
+   "Find the triangle's perimeter first. All 3 sides are equal. A rectangle's perimeter is 2 times, length plus breadth. So length plus breadth must be half of that.",
+   "Equilateral triangle perimeter equals 3 times side. Rectangle perimeter equals 2 times, length plus breadth.",
+   ""
+  ],
+  "steps": [
+   "Triangle perimeter equals 3 times 12, which is 36 centimetres.",
+   "Rectangle: 2 times, length plus breadth, equals 36. So length plus breadth equals 18.",
+   "Check: 10 plus 5 is 15, not a match. 14 plus 6 is 20, not a match. 8 plus 6 is 14, not a match. 13 plus 5 is 18. That matches."
+  ]
+ },
+ "EXT_G5_FP_2024_033": {
+  "q": "The side of a square is 30 centimetres. If one side is increased to 5 over 4 of the original, and another side is decreased to 3 over 5 of the original, what will be the difference in the area of the square and the area of the newly formed rectangle?",
+  "options": [
+   "300 square centimetres",
+   "225 square centimetres",
+   "275 square centimetres",
+   "240 square centimetres"
+  ],
+  "hints": [
+   "Find the two new sides: 30 times 5 over 4, and 30 times 3 over 5. Multiply for the rectangle's area. Compare it with the square's area, 30 times 30.",
+   "Area of a square equals side times side. Area of a rectangle equals length times breadth.",
+   ""
+  ],
+  "steps": [
+   "New length equals 30 times 5 over 4, which is 37.5 centimetres. New breadth equals 30 times 3 over 5, which is 18 centimetres.",
+   "Rectangle area equals 37.5 times 18, which is 675 square centimetres.",
+   "Square area equals 30 times 30, which is 900 square centimetres.",
+   "Difference equals 900 minus 675, which is 225 square centimetres."
+  ]
+ },
+ "EXT_G5_FP_2024_034": {
+  "q": "Shraddha is facing East. She turns 135 degrees in clockwise direction, and then 315 degrees in anti-clockwise direction. In which direction is she facing now?",
+  "options": [
+   "North-West",
+   "South",
+   "West",
+   "South-East"
+  ],
+  "hints": [
+   "Clockwise from East goes to South, at 90 degrees, then South-West, at 135 degrees. Turning 315 degrees anti-clockwise is the same as a small turn the other way: 360 degrees minus 315 degrees.",
+   "Turning x degrees anti-clockwise is the same as turning 360 degrees minus x degrees, clockwise.",
+   ""
+  ],
+  "steps": [
+   "East, plus 135 degrees clockwise, gives South-West.",
+   "315 degrees anti-clockwise equals 360 degrees minus 315 degrees, which is 45 degrees clockwise.",
+   "South-West, plus 45 degrees clockwise, gives West."
+  ]
+ },
+ "EXT_G5_FP_2025_002": {
+  "q": "The circumference of a circle is equal to the perimeter of a square. If the area of the circle is 616 square centimetres, find the area of the square.",
+  "options": [
+   "484 square centimetres",
+   "196 square centimetres",
+   "576 square centimetres",
+   "441 square centimetres"
+  ],
+  "hints": [
+   "Use the circle's area, pi times r times r, with pi equal to 22 over 7, to find r. Then find the circumference, and share it among the 4 equal sides of the square.",
+   "Circle area equals pi r squared. Circumference equals 2 pi r. Square perimeter equals 4 times side.",
+   ""
+  ],
+  "steps": [
+   "22 over 7, times r squared, equals 616. So r squared equals 616 times 7, divided by 22, which is 196. So r equals 14 centimetres.",
+   "Circumference equals 2, times 22 over 7, times 14, which is 88 centimetres.",
+   "Square perimeter equals 88. So the side equals 88 divided by 4, which is 22 centimetres.",
+   "Area equals 22 times 22, which is 484 square centimetres."
+  ]
+ },
+ "EXT_G5_FP_2025_011": {
+  "q": "What is the angle between the hour and minute hand at 9 33 p m?",
+  "options": [
+   "88.5 degrees",
+   "91.5 degrees",
+   "87.5 degrees",
+   "84.5 degrees"
+  ],
+  "hints": [
+   "Hour hand equals 9 times 30, plus a bit more for the 33 minutes, at half a degree per minute. Minute hand equals 33 times 6.",
+   "Hour hand angle equals hours times 30, plus minutes times 0.5. Minute hand angle equals minutes times 6.",
+   ""
+  ],
+  "steps": [
+   "Hour hand: 9 times 30, plus 33 times 0.5. That is 270 plus 16.5, which is 286.5 degrees.",
+   "Minute hand: 33 times 6, which is 198 degrees.",
+   "The angle between them equals 286.5 minus 198, which is 88.5 degrees."
+  ]
+ },
+ "EXT_G5_FP_2025_012": {
+  "q": "The area of a rectangle is 468 square centimetres. If the breadth of the rectangle is 18 centimetres, find the perimeter of the rectangle.",
+  "options": [
+   "86 centimetres",
+   "72 centimetres",
+   "88 centimetres",
+   "96 centimetres"
+  ],
+  "hints": [
+   "Use area equals length times breadth to find the length first. Then use the perimeter formula.",
+   "Length equals area divided by breadth. Perimeter equals 2 times, length plus breadth.",
+   ""
+  ],
+  "steps": [
+   "Length equals 468 divided by 18, which is 26 centimetres.",
+   "Perimeter equals 2 times, 26 plus 18. That is 2 times 44, which is 88 centimetres."
+  ]
+ },
+ "EXT_G5_FP_2025_029": {
+  "q": "What is the sum of the supplementary and complementary angle of 58 degrees?",
+  "options": [
+   "144 degrees",
+   "154 degrees",
+   "164 degrees",
+   "148 degrees"
+  ],
+  "hints": [
+   "Complementary angles add up to 90 degrees. Supplementary angles add up to 180 degrees. Find both partners of 58 degrees, then add them.",
+   "Complementary equals 90 degrees minus the angle. Supplementary equals 180 degrees minus the angle.",
+   ""
+  ],
+  "steps": [
+   "Complementary angle equals 90 degrees minus 58 degrees, which is 32 degrees.",
+   "Supplementary angle equals 180 degrees minus 58 degrees, which is 122 degrees.",
+   "Sum equals 32 degrees plus 122 degrees, which is 154 degrees."
+  ]
+ },
+ "EXT_G5_FP_2025_034": {
+  "q": "Square P Q R S has an area of 196 square centimetres. A rectangle A B C D has an area four times the area of this square. Which of the following can be the sides of the rectangle?",
+  "options": [
+   "44 and 16",
+   "52 and 18",
+   "56 and 14",
+   "28 and 36"
+  ],
+  "hints": [
+   "Find the rectangle's area: 4 times 196. Then multiply the two sides in each option, and see which gives that area.",
+   "Area of a rectangle equals length times breadth.",
+   ""
+  ],
+  "steps": [
+   "Rectangle area equals 4 times 196, which is 784 square centimetres.",
+   "44 times 16 is 704, not a match. 52 times 18 is 936, not a match. 28 times 36 is 1008, not a match.",
+   "56 times 14 is 784. That matches."
+  ]
+ },
+ "EXT_G5_WS_B5_012": {
+  "q": "6 squared plus Z squared equals 10 squared. Find the value of Z.",
+  "options": [
+   "4",
+   "64",
+   "16",
+   "8"
+  ],
+  "hints": [
+   "We need Z squared equals 10 squared minus 6 squared, which is 100 minus 36.",
+   "Z squared equals 64. What number squared gives 64?",
+   "A similar one: 3 squared plus Z squared equals 5 squared. Z squared equals 25 minus 9, which is 16. So Z equals 4."
+  ],
+  "steps": [
+   "Z squared equals 10 squared minus 6 squared. That is 100 minus 36, which is 64.",
+   "Z equals the square root of 64, which is 8."
+  ]
+ },
+ "EXT_G5_WS_B6_021": {
+  "q": "The sides of a square are 2 A plus 5, centimetres, and 3 A minus 1, centimetres. Find the perimeter.",
+  "options": [
+   "68 centimetres",
+   "24 centimetres",
+   "36 centimetres",
+   "data inadequate"
+  ],
+  "hints": [
+   "A square has all sides equal. Set the two expressions equal, and solve for A.",
+   "2 A plus 5 equals 3 A minus 1. So 5 plus 1 equals 3 A minus 2 A. So A equals 6. Then the side equals 2 times 6, plus 5, which is 17.",
+   "A similar one: square sides x plus 3, centimetres, and 2 x minus 1, centimetres. x plus 3 equals 2 x minus 1, so x equals 4. Side equals 7. Perimeter equals 28."
+  ],
+  "steps": [
+   "Equal sides: 2 A plus 5 equals 3 A minus 1.",
+   "6 equals A. Subtract 2 A, and add 1.",
+   "Side equals 2 times 6, plus 5, which is 17 centimetres.",
+   "Perimeter equals 4 times 17, which is 68 centimetres."
+  ]
+ },
+ "EXT_G5_WS_B6_022": {
+  "q": "The angles of a triangle are y degrees, y minus 15, degrees, and 7 y plus 24, degrees. What is the smallest angle?",
+  "options": [
+   "19 degrees",
+   "6 degrees",
+   "4 degrees",
+   "none of these"
+  ],
+  "hints": [
+   "The three angles of a triangle always add up to 180 degrees.",
+   "y, plus y minus 15, plus 7 y plus 24, equals 180. Solve for y, then find each angle.",
+   "A similar one: angles 2 x, 3 x and 4 x. The sum equals 9 x, which equals 180, so x equals 20. The angles are 40 degrees, 60 degrees and 80 degrees. The smallest equals 40 degrees."
+  ],
+  "steps": [
+   "y, plus y minus 15, plus 7 y plus 24, equals 180.",
+   "9 y plus 9 equals 180. So 9 y equals 171. So y equals 19.",
+   "The angles are 19 degrees; 19 minus 15, which is 4 degrees; and 7 times 19, plus 24, which is 157 degrees.",
+   "The smallest angle equals 4 degrees."
+  ]
+ },
+ "PH3_EXT_G5_WS_B6_021_01": {
+  "q": "Find the area of a triangle with base 20 centimetres and height 7 centimetres.",
+  "options": [
+   "140",
+   "70",
+   "280",
+   "27"
+  ],
+  "hints": [
+   "Area of a triangle equals half of base times height.",
+   "Multiply 20 times 7, then divide by 2.",
+   "Don't forget the half!"
+  ],
+  "steps": [
+   "Area of a triangle equals half of base times height.",
+   "That equals half of 20 times 7, which is 70 square centimetres."
+  ]
+ },
+ "PH3_EXT_G5_WS_B6_021_02": {
+  "q": "Find the circumference of a circle with radius 14 centimetres. Use pi equals 22 over 7.",
+  "options": [
+   "88",
+   "616",
+   "44",
+   "28"
+  ],
+  "hints": [
+   "Circumference equals 2 times pi times radius.",
+   "Use pi equals 22 over 7. Multiply 2, times 22 over 7, times 14.",
+   "Since 14 is a multiple of 7, the calculation simplifies nicely."
+  ],
+  "steps": [
+   "Circumference equals 2 pi r.",
+   "That equals 2, times 22 over 7, times 14, which is 88 centimetres."
+  ]
+ },
+ "PH3_EXT_G5_WS_B6_021_03": {
+  "q": "Find the perimeter of a rectangle with length 25 centimetres and breadth 5 centimetres.",
+  "options": [
+   "60",
+   "125",
+   "30",
+   "100"
+  ],
+  "hints": [
+   "Perimeter equals 2 times, length plus breadth.",
+   "Add 25 plus 5 first, then multiply by 2.",
+   "Perimeter is the total distance around the shape."
+  ],
+  "steps": [
+   "Perimeter equals 2 times, length plus breadth.",
+   "That equals 2 times, 25 plus 5. That is 2 times 30, which is 60 centimetres."
+  ]
+ },
+ "PH3_EXT_G5_WS_B6_022_01": {
+  "q": "Two angles are supplementary. If one angle is 43 degrees, find the other.",
+  "options": [
+   "43",
+   "47",
+   "317",
+   "137"
+  ],
+  "hints": [
+   "Supplementary angles add up to 180 degrees.",
+   "Subtract 43 degrees from 180 degrees.",
+   "180 minus 43 equals what?"
+  ],
+  "steps": [
+   "Supplementary angles sum to 180 degrees.",
+   "The other angle equals 180 degrees minus 43 degrees, which is 137 degrees."
+  ]
+ },
+ "PH3_EXT_G5_WS_B6_022_02": {
+  "q": "In a triangle, two angles are 41 degrees and 71 degrees. Find the third angle.",
+  "options": [
+   "112",
+   "68",
+   "248",
+   "22"
+  ],
+  "hints": [
+   "All three angles in a triangle add up to 180 degrees.",
+   "Add the two known angles: 41 plus 71 equals 112.",
+   "Subtract from 180: 180 minus 112 equals what?"
+  ],
+  "steps": [
+   "Angles of a triangle sum to 180 degrees.",
+   "The third angle equals 180 degrees, minus 41 degrees, minus 71 degrees, which is 68 degrees."
+  ]
+ },
+ "PH3_EXT_G5_WS_B6_022_03": {
+  "q": "Two angles on a straight line are x degrees and 116 degrees. Find x.",
+  "options": [
+   "64",
+   "116",
+   "244",
+   "65"
+  ],
+  "hints": [
+   "A straight line makes an angle of 180 degrees.",
+   "The two angles must add up to 180 degrees.",
+   "x equals 180 minus 116."
+  ],
+  "steps": [
+   "Angles on a straight line sum to 180 degrees.",
+   "x equals 180 degrees minus 116 degrees, which is 64 degrees."
+  ]
+ },
+ "PH3_EXT_G5_WS_B6_022_04": {
+  "q": "Two straight lines cross. One angle formed is 108 degrees. Find the vertically opposite angle.",
+  "options": [
+   "72",
+   "252",
+   "108",
+   "198"
+  ],
+  "hints": [
+   "When two lines cross, opposite angles are equal.",
+   "This is called vertically opposite angles.",
+   "So the answer is simply 108 degrees."
+  ],
+  "steps": [
+   "Vertically opposite angles are equal.",
+   "Vertically opposite angle equals 108 degrees."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_012_01": {
+  "q": "Solve: 7 x minus 8 equals 6.",
+  "options": [
+   "2",
+   "minus 1",
+   "14",
+   "0"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 8 to the right side, it becomes plus 8.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 8 to both sides. 7 x equals 6 plus 8, which is 14.",
+   "Divide both sides by 7. x equals 14 over 7, which is 2."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_012_03": {
+  "q": "Solve: 3 x plus 1 equals 28.",
+  "options": [
+   "10",
+   "8",
+   "27",
+   "9"
+  ],
+  "hints": [
+   "First, move 1 to the other side by subtracting it from both sides.",
+   "After subtracting: 3 x equals 27. Now divide both sides by 3.",
+   "Think: 3 times what number gives 27?"
+  ],
+  "steps": [
+   "Subtract 1 from both sides. 3 x equals 28 minus 1, which is 27.",
+   "Divide both sides by 3. x equals 27 over 3, which is 9."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_012_04": {
+  "q": "Solve: 3 x minus 1 equals 20.",
+  "options": [
+   "8",
+   "21",
+   "6",
+   "7"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 1 to the right side, it becomes plus 1.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 1 to both sides. 3 x equals 20 plus 1, which is 21.",
+   "Divide both sides by 3. x equals 21 over 3, which is 7."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_012_04_b2": {
+  "q": "Solve: 5 x minus 11 equals 49.",
+  "options": [
+   "60",
+   "12",
+   "9",
+   "7"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 11 to the right side, it becomes plus 11.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 11 to both sides. 5 x equals 49 plus 11, which is 60.",
+   "Divide both sides by 5. x equals 60 over 5, which is 12."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_012_05_b2": {
+  "q": "Solve: 5 x plus 6 equals 46.",
+  "options": [
+   "8",
+   "9",
+   "40",
+   "10"
+  ],
+  "hints": [
+   "First, move 6 to the other side by subtracting it from both sides.",
+   "After subtracting: 5 x equals 40. Now divide both sides by 5.",
+   "Think: 5 times what number gives 40?"
+  ],
+  "steps": [
+   "Subtract 6 from both sides. 5 x equals 46 minus 6, which is 40.",
+   "Divide both sides by 5. x equals 40 over 5, which is 8."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_021_01": {
+  "q": "Solve: 5 x minus 13 equals 17.",
+  "options": [
+   "6",
+   "0",
+   "3",
+   "30"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 13 to the right side, it becomes plus 13.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 13 to both sides. 5 x equals 17 plus 13, which is 30.",
+   "Divide both sides by 5. x equals 30 over 5, which is 6."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_021_03": {
+  "q": "Solve: 6 x plus 8 equals 38.",
+  "options": [
+   "7",
+   "5",
+   "30",
+   "6"
+  ],
+  "hints": [
+   "First, move 8 to the other side by subtracting it from both sides.",
+   "After subtracting: 6 x equals 30. Now divide both sides by 6.",
+   "Think: 6 times what number gives 30?"
+  ],
+  "steps": [
+   "Subtract 8 from both sides. 6 x equals 38 minus 8, which is 30.",
+   "Divide both sides by 6. x equals 30 over 6, which is 5."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_021_04": {
+  "q": "Solve: 7 x minus 4 equals 38.",
+  "options": [
+   "42",
+   "5",
+   "4",
+   "6"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 4 to the right side, it becomes plus 4.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 4 to both sides. 7 x equals 38 plus 4, which is 42.",
+   "Divide both sides by 7. x equals 42 over 7, which is 6."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_021_04_b2": {
+  "q": "Solve: 7 x minus 10 equals 11.",
+  "options": [
+   "0",
+   "3",
+   "21",
+   "1"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 10 to the right side, it becomes plus 10.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 10 to both sides. 7 x equals 11 plus 10, which is 21.",
+   "Divide both sides by 7. x equals 21 over 7, which is 3."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_021_05_b2": {
+  "q": "Solve: 4 x plus 17 equals 25.",
+  "options": [
+   "6",
+   "2",
+   "8",
+   "10"
+  ],
+  "hints": [
+   "First, move 17 to the other side by subtracting it from both sides.",
+   "After subtracting: 4 x equals 8. Now divide both sides by 4.",
+   "Think: 4 times what number gives 8?"
+  ],
+  "steps": [
+   "Subtract 17 from both sides. 4 x equals 25 minus 17, which is 8.",
+   "Divide both sides by 4. x equals 8 over 4, which is 2."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_022_01": {
+  "q": "Solve: 7 x minus 6 equals 57.",
+  "options": [
+   "8",
+   "7",
+   "63",
+   "9"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 6 to the right side, it becomes plus 6.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 6 to both sides. 7 x equals 57 plus 6, which is 63.",
+   "Divide both sides by 7. x equals 63 over 7, which is 9."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_022_03": {
+  "q": "Solve: 7 x plus 9 equals 65.",
+  "options": [
+   "56",
+   "10",
+   "8",
+   "9"
+  ],
+  "hints": [
+   "First, move 9 to the other side by subtracting it from both sides.",
+   "After subtracting: 7 x equals 56. Now divide both sides by 7.",
+   "Think: 7 times what number gives 56?"
+  ],
+  "steps": [
+   "Subtract 9 from both sides. 7 x equals 65 minus 9, which is 56.",
+   "Divide both sides by 7. x equals 56 over 7, which is 8."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_022_04": {
+  "q": "Solve: 4 x minus 3 equals 29.",
+  "options": [
+   "6",
+   "8",
+   "32",
+   "7"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 3 to the right side, it becomes plus 3.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 3 to both sides. 4 x equals 29 plus 3, which is 32.",
+   "Divide both sides by 4. x equals 32 over 4, which is 8."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_022_04_b2": {
+  "q": "Solve: 4 x minus 9 equals 11.",
+  "options": [
+   "20",
+   "0",
+   "5",
+   "2"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 9 to the right side, it becomes plus 9.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 9 to both sides. 4 x equals 11 plus 9, which is 20.",
+   "Divide both sides by 4. x equals 20 over 4, which is 5."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_022_05_b2": {
+  "q": "Solve: 6 x plus 15 equals 51.",
+  "options": [
+   "36",
+   "6",
+   "11",
+   "8"
+  ],
+  "hints": [
+   "First, move 15 to the other side by subtracting it from both sides.",
+   "After subtracting: 6 x equals 36. Now divide both sides by 6.",
+   "Think: 6 times what number gives 36?"
+  ],
+  "steps": [
+   "Subtract 15 from both sides. 6 x equals 51 minus 15, which is 36.",
+   "Divide both sides by 6. x equals 36 over 6, which is 6."
+  ]
+ },
+ "VAR_G5_vary_angles_V03": {
+  "q": "Find the supplementary angle of 156 degrees.",
+  "options": [
+   "156 degrees",
+   "34 degrees",
+   "66 degrees",
+   "24 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 156 degrees equals 24 degrees. The supplementary angle is 24 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V05": {
+  "q": "Find the supplementary angle of 34 degrees.",
+  "options": [
+   "156 degrees",
+   "56 degrees",
+   "146 degrees",
+   "34 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 34 degrees equals 146 degrees. The supplementary angle is 146 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V103": {
+  "q": "Find the supplementary angle of 20 degrees.",
+  "options": [
+   "20 degrees",
+   "170 degrees",
+   "150 degrees",
+   "160 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 20 degrees equals 160 degrees. The supplementary angle is 160 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V11": {
+  "q": "Find the supplementary angle of 40 degrees.",
+  "options": [
+   "40 degrees",
+   "50 degrees",
+   "150 degrees",
+   "140 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 40 degrees equals 140 degrees. The supplementary angle is 140 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V111": {
+  "q": "Find the supplementary angle of 93 degrees.",
+  "options": [
+   "3 degrees",
+   "93 degrees",
+   "97 degrees",
+   "87 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 93 degrees equals 87 degrees. The supplementary angle is 87 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V117": {
+  "q": "Find the complementary angle of 61 degrees.",
+  "options": [
+   "19 degrees",
+   "39 degrees",
+   "61 degrees",
+   "29 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 61 degrees equals 29 degrees. The complementary angle is 29 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V119": {
+  "q": "Find the supplementary angle of 122 degrees.",
+  "options": [
+   "48 degrees",
+   "58 degrees",
+   "68 degrees",
+   "32 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 122 degrees equals 58 degrees. The supplementary angle is 58 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V130": {
+  "q": "Find the complementary angle of 33 degrees.",
+  "options": [
+   "33 degrees",
+   "147 degrees",
+   "57 degrees",
+   "67 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 33 degrees equals 57 degrees. The complementary angle is 57 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V134": {
+  "q": "Find the supplementary angle of 49 degrees.",
+  "options": [
+   "41 degrees",
+   "121 degrees",
+   "131 degrees",
+   "141 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 49 degrees equals 131 degrees. The supplementary angle is 131 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V136": {
+  "q": "Find the complementary angle of 16 degrees.",
+  "options": [
+   "74 degrees",
+   "64 degrees",
+   "164 degrees",
+   "16 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 16 degrees equals 74 degrees. The complementary angle is 74 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V140": {
+  "q": "Find the complementary angle of 41 degrees.",
+  "options": [
+   "49 degrees",
+   "59 degrees",
+   "139 degrees",
+   "41 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 41 degrees equals 49 degrees. The complementary angle is 49 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V147": {
+  "q": "Find the complementary angle of 36 degrees.",
+  "options": [
+   "54 degrees",
+   "44 degrees",
+   "64 degrees",
+   "144 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 36 degrees equals 54 degrees. The complementary angle is 54 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V152": {
+  "q": "Find the complementary angle of 42 degrees.",
+  "options": [
+   "138 degrees",
+   "48 degrees",
+   "58 degrees",
+   "42 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 42 degrees equals 48 degrees. The complementary angle is 48 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V160": {
+  "q": "Find the complementary angle of 62 degrees.",
+  "options": [
+   "28 degrees",
+   "62 degrees",
+   "38 degrees",
+   "18 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 62 degrees equals 28 degrees. The complementary angle is 28 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V167": {
+  "q": "Find the supplementary angle of 157 degrees.",
+  "options": [
+   "23 degrees",
+   "67 degrees",
+   "33 degrees",
+   "13 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 157 degrees equals 23 degrees. The supplementary angle is 23 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V17": {
+  "q": "Find the supplementary angle of 92 degrees.",
+  "options": [
+   "88 degrees",
+   "92 degrees",
+   "2 degrees",
+   "78 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 92 degrees equals 88 degrees. The supplementary angle is 88 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V177": {
+  "q": "Find the supplementary angle of 63 degrees.",
+  "options": [
+   "63 degrees",
+   "27 degrees",
+   "117 degrees",
+   "107 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 63 degrees equals 117 degrees. The supplementary angle is 117 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V192": {
+  "q": "Find the complementary angle of 48 degrees.",
+  "options": [
+   "48 degrees",
+   "32 degrees",
+   "42 degrees",
+   "132 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 48 degrees equals 42 degrees. The complementary angle is 42 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V195": {
+  "q": "Find the supplementary angle of 60 degrees.",
+  "options": [
+   "60 degrees",
+   "110 degrees",
+   "130 degrees",
+   "120 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 60 degrees equals 120 degrees. The supplementary angle is 120 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V196": {
+  "q": "Find the complementary angle of 44 degrees.",
+  "options": [
+   "36 degrees",
+   "136 degrees",
+   "46 degrees",
+   "56 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 44 degrees equals 46 degrees. The complementary angle is 46 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V198": {
+  "q": "Find the supplementary angle of 21 degrees.",
+  "options": [
+   "159 degrees",
+   "69 degrees",
+   "21 degrees",
+   "169 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 21 degrees equals 159 degrees. The supplementary angle is 159 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V201": {
+  "q": "Find the complementary angle of 58 degrees.",
+  "options": [
+   "58 degrees",
+   "122 degrees",
+   "32 degrees",
+   "42 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 58 degrees equals 32 degrees. The complementary angle is 32 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V226": {
+  "q": "Find the supplementary angle of 87 degrees.",
+  "options": [
+   "83 degrees",
+   "93 degrees",
+   "3 degrees",
+   "87 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 87 degrees equals 93 degrees. The supplementary angle is 93 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V234": {
+  "q": "Find the supplementary angle of 28 degrees.",
+  "options": [
+   "142 degrees",
+   "28 degrees",
+   "152 degrees",
+   "162 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 28 degrees equals 152 degrees. The supplementary angle is 152 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V247": {
+  "q": "Find the complementary angle of 34 degrees.",
+  "options": [
+   "56 degrees",
+   "146 degrees",
+   "34 degrees",
+   "66 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 34 degrees equals 56 degrees. The complementary angle is 56 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V252": {
+  "q": "Find the supplementary angle of 144 degrees.",
+  "options": [
+   "36 degrees",
+   "144 degrees",
+   "26 degrees",
+   "46 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 144 degrees equals 36 degrees. The supplementary angle is 36 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V256": {
+  "q": "Find the supplementary angle of 45 degrees.",
+  "options": [
+   "125 degrees",
+   "135 degrees",
+   "145 degrees",
+   "45 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 45 degrees equals 135 degrees. The supplementary angle is 135 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V262": {
+  "q": "Find the supplementary angle of 64 degrees.",
+  "options": [
+   "116 degrees",
+   "64 degrees",
+   "26 degrees",
+   "126 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 64 degrees equals 116 degrees. The supplementary angle is 116 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V264": {
+  "q": "Find the supplementary angle of 67 degrees.",
+  "options": [
+   "113 degrees",
+   "103 degrees",
+   "67 degrees",
+   "123 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 67 degrees equals 113 degrees. The supplementary angle is 113 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V267": {
+  "q": "Find the supplementary angle of 46 degrees.",
+  "options": [
+   "124 degrees",
+   "44 degrees",
+   "144 degrees",
+   "134 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 46 degrees equals 134 degrees. The supplementary angle is 134 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V281": {
+  "q": "Find the supplementary angle of 83 degrees.",
+  "options": [
+   "107 degrees",
+   "97 degrees",
+   "83 degrees",
+   "87 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 83 degrees equals 97 degrees. The supplementary angle is 97 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V283": {
+  "q": "Find the supplementary angle of 55 degrees.",
+  "options": [
+   "55 degrees",
+   "125 degrees",
+   "35 degrees",
+   "115 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 55 degrees equals 125 degrees. The supplementary angle is 125 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V294": {
+  "q": "Find the complementary angle of 15 degrees.",
+  "options": [
+   "75 degrees",
+   "65 degrees",
+   "85 degrees",
+   "165 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 15 degrees equals 75 degrees. The complementary angle is 75 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V297": {
+  "q": "Find the complementary angle of 49 degrees.",
+  "options": [
+   "49 degrees",
+   "41 degrees",
+   "131 degrees",
+   "51 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 49 degrees equals 41 degrees. The complementary angle is 41 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V30": {
+  "q": "Find the complementary angle of 64 degrees.",
+  "options": [
+   "26 degrees",
+   "16 degrees",
+   "64 degrees",
+   "116 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 64 degrees equals 26 degrees. The complementary angle is 26 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V303": {
+  "q": "Find the complementary angle of 11 degrees.",
+  "options": [
+   "11 degrees",
+   "89 degrees",
+   "79 degrees",
+   "169 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 11 degrees equals 79 degrees. The complementary angle is 79 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V315": {
+  "q": "Find the supplementary angle of 119 degrees.",
+  "options": [
+   "51 degrees",
+   "29 degrees",
+   "61 degrees",
+   "119 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 119 degrees equals 61 degrees. The supplementary angle is 61 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V319": {
+  "q": "Find the supplementary angle of 110 degrees.",
+  "options": [
+   "20 degrees",
+   "80 degrees",
+   "110 degrees",
+   "70 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 110 degrees equals 70 degrees. The supplementary angle is 70 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V320": {
+  "q": "Find the supplementary angle of 133 degrees.",
+  "options": [
+   "37 degrees",
+   "47 degrees",
+   "43 degrees",
+   "57 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 133 degrees equals 47 degrees. The supplementary angle is 47 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V326": {
+  "q": "Find the complementary angle of 35 degrees.",
+  "options": [
+   "145 degrees",
+   "35 degrees",
+   "55 degrees",
+   "65 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 35 degrees equals 55 degrees. The complementary angle is 55 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V345": {
+  "q": "Find the supplementary angle of 69 degrees.",
+  "options": [
+   "111 degrees",
+   "101 degrees",
+   "69 degrees",
+   "121 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 69 degrees equals 111 degrees. The supplementary angle is 111 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V349": {
+  "q": "Find the supplementary angle of 75 degrees.",
+  "options": [
+   "75 degrees",
+   "105 degrees",
+   "95 degrees",
+   "115 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 75 degrees equals 105 degrees. The supplementary angle is 105 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V356": {
+  "q": "Find the complementary angle of 56 degrees.",
+  "options": [
+   "124 degrees",
+   "56 degrees",
+   "24 degrees",
+   "34 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 56 degrees equals 34 degrees. The complementary angle is 34 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V361": {
+  "q": "Find the supplementary angle of 155 degrees.",
+  "options": [
+   "25 degrees",
+   "155 degrees",
+   "35 degrees",
+   "65 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 155 degrees equals 25 degrees. The supplementary angle is 25 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V371": {
+  "q": "Find the complementary angle of 20 degrees.",
+  "options": [
+   "60 degrees",
+   "80 degrees",
+   "160 degrees",
+   "70 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 20 degrees equals 70 degrees. The complementary angle is 70 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V375": {
+  "q": "Find the complementary angle of 51 degrees.",
+  "options": [
+   "39 degrees",
+   "29 degrees",
+   "129 degrees",
+   "51 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 51 degrees equals 39 degrees. The complementary angle is 39 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V384": {
+  "q": "Find the complementary angle of 37 degrees.",
+  "options": [
+   "63 degrees",
+   "43 degrees",
+   "53 degrees",
+   "37 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 37 degrees equals 53 degrees. The complementary angle is 53 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V388": {
+  "q": "Find the supplementary angle of 72 degrees.",
+  "options": [
+   "18 degrees",
+   "118 degrees",
+   "108 degrees",
+   "72 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 72 degrees equals 108 degrees. The supplementary angle is 108 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V394": {
+  "q": "Find the complementary angle of 12 degrees.",
+  "options": [
+   "88 degrees",
+   "78 degrees",
+   "168 degrees",
+   "68 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 12 degrees equals 78 degrees. The complementary angle is 78 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V398": {
+  "q": "Find the complementary angle of 13 degrees.",
+  "options": [
+   "13 degrees",
+   "77 degrees",
+   "67 degrees",
+   "87 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 13 degrees equals 77 degrees. The complementary angle is 77 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V403": {
+  "q": "Find the supplementary angle of 115 degrees.",
+  "options": [
+   "25 degrees",
+   "75 degrees",
+   "65 degrees",
+   "115 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 115 degrees equals 65 degrees. The supplementary angle is 65 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V410": {
+  "q": "Find the complementary angle of 23 degrees.",
+  "options": [
+   "67 degrees",
+   "77 degrees",
+   "57 degrees",
+   "157 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 23 degrees equals 67 degrees. The complementary angle is 67 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V424": {
+  "q": "Find the complementary angle of 70 degrees.",
+  "options": [
+   "10 degrees",
+   "20 degrees",
+   "70 degrees",
+   "110 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 70 degrees equals 20 degrees. The complementary angle is 20 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V432": {
+  "q": "Find the supplementary angle of 57 degrees.",
+  "options": [
+   "133 degrees",
+   "123 degrees",
+   "113 degrees",
+   "33 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 57 degrees equals 123 degrees. The supplementary angle is 123 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V433": {
+  "q": "Find the complementary angle of 45 degrees.",
+  "options": [
+   "35 degrees",
+   "135 degrees",
+   "45 degrees",
+   "55 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 45 degrees equals 45 degrees. The complementary angle is 45 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V453": {
+  "q": "Find the supplementary angle of 73 degrees.",
+  "options": [
+   "17 degrees",
+   "107 degrees",
+   "117 degrees",
+   "73 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 73 degrees equals 107 degrees. The supplementary angle is 107 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V455": {
+  "q": "Find the complementary angle of 21 degrees.",
+  "options": [
+   "79 degrees",
+   "59 degrees",
+   "21 degrees",
+   "69 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 21 degrees equals 69 degrees. The complementary angle is 69 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V461": {
+  "q": "Find the complementary angle of 31 degrees.",
+  "options": [
+   "149 degrees",
+   "49 degrees",
+   "69 degrees",
+   "59 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 31 degrees equals 59 degrees. The complementary angle is 59 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V468": {
+  "q": "Find the supplementary angle of 123 degrees.",
+  "options": [
+   "33 degrees",
+   "57 degrees",
+   "67 degrees",
+   "123 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 123 degrees equals 57 degrees. The supplementary angle is 57 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V469": {
+  "q": "Find the supplementary angle of 124 degrees.",
+  "options": [
+   "34 degrees",
+   "124 degrees",
+   "66 degrees",
+   "56 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 124 degrees equals 56 degrees. The supplementary angle is 56 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V477": {
+  "q": "Find the supplementary angle of 137 degrees.",
+  "options": [
+   "33 degrees",
+   "43 degrees",
+   "137 degrees",
+   "53 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 137 degrees equals 43 degrees. The supplementary angle is 43 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V481": {
+  "q": "Find the complementary angle of 29 degrees.",
+  "options": [
+   "51 degrees",
+   "71 degrees",
+   "29 degrees",
+   "61 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 29 degrees equals 61 degrees. The complementary angle is 61 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V487": {
+  "q": "Find the complementary angle of 52 degrees.",
+  "options": [
+   "48 degrees",
+   "128 degrees",
+   "28 degrees",
+   "38 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 52 degrees equals 38 degrees. The complementary angle is 38 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V67": {
+  "q": "Find the complementary angle of 47 degrees.",
+  "options": [
+   "33 degrees",
+   "53 degrees",
+   "133 degrees",
+   "43 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 47 degrees equals 43 degrees. The complementary angle is 43 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V72": {
+  "q": "Find the supplementary angle of 79 degrees.",
+  "options": [
+   "101 degrees",
+   "91 degrees",
+   "79 degrees",
+   "11 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 79 degrees equals 101 degrees. The supplementary angle is 101 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V73": {
+  "q": "Find the supplementary angle of 58 degrees.",
+  "options": [
+   "132 degrees",
+   "122 degrees",
+   "58 degrees",
+   "32 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 58 degrees equals 122 degrees. The supplementary angle is 122 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V76": {
+  "q": "Find the supplementary angle of 61 degrees.",
+  "options": [
+   "109 degrees",
+   "119 degrees",
+   "129 degrees",
+   "61 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 61 degrees equals 119 degrees. The supplementary angle is 119 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V93": {
+  "q": "Find the supplementary angle of 68 degrees.",
+  "options": [
+   "112 degrees",
+   "68 degrees",
+   "102 degrees",
+   "122 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
+   "Take away the angle you know: 180 degrees minus 68 degrees equals 112 degrees. The supplementary angle is 112 degrees."
+  ]
+ },
+ "VAR_G5_vary_angles_V99": {
+  "q": "Find the complementary angle of 25 degrees.",
+  "options": [
+   "75 degrees",
+   "155 degrees",
+   "65 degrees",
+   "25 degrees"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
+   "Take away the angle you know: 90 degrees minus 25 degrees equals 65 degrees. The complementary angle is 65 degrees."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V106": {
+  "q": "Find the area of a triangle with base 15 centimetres and height 17 centimetres.",
+  "options": [
+   "129 square centimetres",
+   "32 square centimetres",
+   "255 square centimetres",
+   "127.5 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 15 times 17 equals 255.",
+   "Now take half: 255 divided by 2 equals 127.5. The area of the triangle is 127.5 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V13": {
+  "q": "Find the area of a triangle with base 9 centimetres and height 7 centimetres.",
+  "options": [
+   "31.5 square centimetres",
+   "41 square centimetres",
+   "63 square centimetres",
+   "16 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 9 times 7 equals 63.",
+   "Now take half: 63 divided by 2 equals 31.5. The area of the triangle is 31.5 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V165": {
+  "q": "Find the area of a rectangle with length 17 centimetres and breadth 18 centimetres.",
+  "options": [
+   "306 square centimetres",
+   "612 square centimetres",
+   "70 square centimetres",
+   "316 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape, counted in unit squares. There are 18 squares in each row and 17 rows, so area equals length times breadth.",
+   "Multiply: 17 times 18 equals 306. The area of the rectangle is 306 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V180": {
+  "q": "Find the area of a rectangle with length 7 centimetres and breadth 10 centimetres.",
+  "options": [
+   "34 square centimetres",
+   "72 square centimetres",
+   "140 square centimetres",
+   "70 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape, counted in unit squares. There are 10 squares in each row and 7 rows, so area equals length times breadth.",
+   "Multiply: 7 times 10 equals 70. The area of the rectangle is 70 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V183": {
+  "q": "Find the perimeter of a square with side 25 centimetres.",
+  "options": [
+   "100 centimetres",
+   "625 centimetres",
+   "200 centimetres",
+   "104 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
+   "So multiply the side by 4: 4 times 25 equals 100 centimetres. The perimeter is 100 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V193": {
+  "q": "Find the perimeter of a rectangle with length 27 centimetres and breadth 9 centimetres.",
+  "options": [
+   "72 centimetres",
+   "243 centimetres",
+   "81 centimetres",
+   "144 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 27 plus 9 equals 36 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 36 equals 72 centimetres. The perimeter is 72 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V200": {
+  "q": "Find the area of a triangle with base 26 centimetres and height 11 centimetres.",
+  "options": [
+   "286 square centimetres",
+   "143 square centimetres",
+   "37 square centimetres",
+   "148 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 26 times 11 equals 286.",
+   "Now take half: 286 divided by 2 equals 143. The area of the triangle is 143 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V206": {
+  "q": "Find the area of a triangle with base 6 centimetres and height 17 centimetres.",
+  "options": [
+   "23 square centimetres",
+   "51 square centimetres",
+   "102 square centimetres",
+   "55 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 6 times 17 equals 102.",
+   "Now take half: 102 divided by 2 equals 51. The area of the triangle is 51 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V208": {
+  "q": "Find the perimeter of a rectangle with length 13 centimetres and breadth 16 centimetres.",
+  "options": [
+   "208 centimetres",
+   "64 centimetres",
+   "58 centimetres",
+   "116 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 13 plus 16 equals 29 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 29 equals 58 centimetres. The perimeter is 58 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V220": {
+  "q": "Find the perimeter of a rectangle with length 28 centimetres and breadth 18 centimetres.",
+  "options": [
+   "184 centimetres",
+   "504 centimetres",
+   "97 centimetres",
+   "92 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 28 plus 18 equals 46 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 46 equals 92 centimetres. The perimeter is 92 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V23": {
+  "q": "Find the area of a square with side 9 centimetres.",
+  "options": [
+   "36 square centimetres",
+   "87 square centimetres",
+   "162 square centimetres",
+   "81 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape. In a square the length and the breadth are the same, so area equals side times side.",
+   "Multiply: 9 times 9 equals 81. The area of the square is 81 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V231": {
+  "q": "Find the perimeter of a rectangle with length 10 centimetres and breadth 18 centimetres.",
+  "options": [
+   "180 centimetres",
+   "56 centimetres",
+   "112 centimetres",
+   "59 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 10 plus 18 equals 28 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 28 equals 56 centimetres. The perimeter is 56 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V235": {
+  "q": "Find the area of a rectangle with length 3 centimetres and breadth 6 centimetres.",
+  "options": [
+   "22 square centimetres",
+   "18 square centimetres",
+   "21 square centimetres",
+   "36 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape, counted in unit squares. There are 6 squares in each row and 3 rows, so area equals length times breadth.",
+   "Multiply: 3 times 6 equals 18. The area of the rectangle is 18 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V242": {
+  "q": "Find the area of a triangle with base 20 centimetres and height 8 centimetres.",
+  "options": [
+   "160 square centimetres",
+   "86 square centimetres",
+   "28 square centimetres",
+   "80 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 20 times 8 equals 160.",
+   "Now take half: 160 divided by 2 equals 80. The area of the triangle is 80 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V243": {
+  "q": "Find the area of a triangle with base 8 centimetres and height 20 centimetres.",
+  "options": [
+   "90 square centimetres",
+   "80 square centimetres",
+   "28 square centimetres",
+   "160 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 8 times 20 equals 160.",
+   "Now take half: 160 divided by 2 equals 80. The area of the triangle is 80 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V255": {
+  "q": "Find the area of a triangle with base 17 centimetres and height 11 centimetres.",
+  "options": [
+   "28 square centimetres",
+   "93.5 square centimetres",
+   "95 square centimetres",
+   "187 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 17 times 11 equals 187.",
+   "Now take half: 187 divided by 2 equals 93.5. The area of the triangle is 93.5 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V26": {
+  "q": "Find the area of a square with side 23 centimetres.",
+  "options": [
+   "92 square centimetres",
+   "1058 square centimetres",
+   "529 square centimetres",
+   "532 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape. In a square the length and the breadth are the same, so area equals side times side.",
+   "Multiply: 23 times 23 equals 529. The area of the square is 529 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V266": {
+  "q": "Find the area of a rectangle with length 5 centimetres and breadth 14 centimetres.",
+  "options": [
+   "38 square centimetres",
+   "70 square centimetres",
+   "140 square centimetres",
+   "73 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape, counted in unit squares. There are 14 squares in each row and 5 rows, so area equals length times breadth.",
+   "Multiply: 5 times 14 equals 70. The area of the rectangle is 70 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V271": {
+  "q": "Find the area of a square with side 7 centimetres.",
+  "options": [
+   "28 square centimetres",
+   "49 square centimetres",
+   "59 square centimetres",
+   "98 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape. In a square the length and the breadth are the same, so area equals side times side.",
+   "Multiply: 7 times 7 equals 49. The area of the square is 49 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V28": {
+  "q": "Find the perimeter of a rectangle with length 17 centimetres and breadth 2 centimetres.",
+  "options": [
+   "34 centimetres",
+   "38 centimetres",
+   "76 centimetres",
+   "45 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 17 plus 2 equals 19 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 19 equals 38 centimetres. The perimeter is 38 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V292": {
+  "q": "Find the area of a triangle with base 8 centimetres and height 13 centimetres.",
+  "options": [
+   "60 square centimetres",
+   "21 square centimetres",
+   "52 square centimetres",
+   "104 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 8 times 13 equals 104.",
+   "Now take half: 104 divided by 2 equals 52. The area of the triangle is 52 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V301": {
+  "q": "Find the area of a triangle with base 7 centimetres and height 12 centimetres.",
+  "options": [
+   "19 square centimetres",
+   "84 square centimetres",
+   "43 square centimetres",
+   "42 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 7 times 12 equals 84.",
+   "Now take half: 84 divided by 2 equals 42. The area of the triangle is 42 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V302": {
+  "q": "Find the area of a triangle with base 25 centimetres and height 11 centimetres.",
+  "options": [
+   "275 square centimetres",
+   "137.5 square centimetres",
+   "36 square centimetres",
+   "144 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 25 times 11 equals 275.",
+   "Now take half: 275 divided by 2 equals 137.5. The area of the triangle is 137.5 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V304": {
+  "q": "Find the area of a square with side 10 centimetres.",
+  "options": [
+   "200 square centimetres",
+   "100 square centimetres",
+   "107 square centimetres",
+   "40 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape. In a square the length and the breadth are the same, so area equals side times side.",
+   "Multiply: 10 times 10 equals 100. The area of the square is 100 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V307": {
+  "q": "Find the perimeter of a rectangle with length 29 centimetres and breadth 14 centimetres.",
+  "options": [
+   "86 centimetres",
+   "172 centimetres",
+   "406 centimetres",
+   "88 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 29 plus 14 equals 43 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 43 equals 86 centimetres. The perimeter is 86 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V310": {
+  "q": "Find the area of a triangle with base 5 centimetres and height 15 centimetres.",
+  "options": [
+   "44 square centimetres",
+   "20 square centimetres",
+   "75 square centimetres",
+   "37.5 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 5 times 15 equals 75.",
+   "Now take half: 75 divided by 2 equals 37.5. The area of the triangle is 37.5 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V311": {
+  "q": "Find the perimeter of a rectangle with length 23 centimetres and breadth 8 centimetres.",
+  "options": [
+   "124 centimetres",
+   "184 centimetres",
+   "70 centimetres",
+   "62 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 23 plus 8 equals 31 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 31 equals 62 centimetres. The perimeter is 62 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V312": {
+  "q": "Find the area of a triangle with base 20 centimetres and height 12 centimetres.",
+  "options": [
+   "129 square centimetres",
+   "240 square centimetres",
+   "32 square centimetres",
+   "120 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 20 times 12 equals 240.",
+   "Now take half: 240 divided by 2 equals 120. The area of the triangle is 120 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V314": {
+  "q": "Find the area of a triangle with base 5 centimetres and height 20 centimetres.",
+  "options": [
+   "100 square centimetres",
+   "50 square centimetres",
+   "52 square centimetres",
+   "25 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 5 times 20 equals 100.",
+   "Now take half: 100 divided by 2 equals 50. The area of the triangle is 50 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V317": {
+  "q": "Find the area of a rectangle with length 12 centimetres and breadth 7 centimetres.",
+  "options": [
+   "168 square centimetres",
+   "84 square centimetres",
+   "38 square centimetres",
+   "91 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape, counted in unit squares. There are 12 squares in each row and 7 rows, so area equals length times breadth.",
+   "Multiply: 12 times 7 equals 84. The area of the rectangle is 84 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V322": {
+  "q": "Find the area of a triangle with base 25 centimetres and height 14 centimetres.",
+  "options": [
+   "39 square centimetres",
+   "183 square centimetres",
+   "175 square centimetres",
+   "350 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 25 times 14 equals 350.",
+   "Now take half: 350 divided by 2 equals 175. The area of the triangle is 175 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V323": {
+  "q": "Find the perimeter of a square with side 6 centimetres.",
+  "options": [
+   "24 centimetres",
+   "36 centimetres",
+   "33 centimetres",
+   "48 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
+   "So multiply the side by 4: 4 times 6 equals 24 centimetres. The perimeter is 24 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V350": {
+  "q": "Find the area of a triangle with base 4 centimetres and height 11 centimetres.",
+  "options": [
+   "44 square centimetres",
+   "27 square centimetres",
+   "15 square centimetres",
+   "22 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 4 times 11 equals 44.",
+   "Now take half: 44 divided by 2 equals 22. The area of the triangle is 22 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V354": {
+  "q": "Find the perimeter of a rectangle with length 21 centimetres and breadth 7 centimetres.",
+  "options": [
+   "56 centimetres",
+   "112 centimetres",
+   "62 centimetres",
+   "147 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 21 plus 7 equals 28 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 28 equals 56 centimetres. The perimeter is 56 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V357": {
+  "q": "Find the perimeter of a rectangle with length 3 centimetres and breadth 14 centimetres.",
+  "options": [
+   "39 centimetres",
+   "68 centimetres",
+   "34 centimetres",
+   "42 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 3 plus 14 equals 17 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 17 equals 34 centimetres. The perimeter is 34 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V360": {
+  "q": "Find the perimeter of a square with side 17 centimetres.",
+  "options": [
+   "68 centimetres",
+   "136 centimetres",
+   "289 centimetres",
+   "73 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
+   "So multiply the side by 4: 4 times 17 equals 68 centimetres. The perimeter is 68 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V363": {
+  "q": "Find the perimeter of a square with side 24 centimetres.",
+  "options": [
+   "96 centimetres",
+   "192 centimetres",
+   "102 centimetres",
+   "576 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
+   "So multiply the side by 4: 4 times 24 equals 96 centimetres. The perimeter is 96 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V369": {
+  "q": "Find the area of a triangle with base 29 centimetres and height 19 centimetres.",
+  "options": [
+   "48 square centimetres",
+   "280 square centimetres",
+   "551 square centimetres",
+   "275.5 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 29 times 19 equals 551.",
+   "Now take half: 551 divided by 2 equals 275.5. The area of the triangle is 275.5 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V380": {
+  "q": "Find the perimeter of a square with side 7 centimetres.",
+  "options": [
+   "56 centimetres",
+   "49 centimetres",
+   "28 centimetres",
+   "33 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
+   "So multiply the side by 4: 4 times 7 equals 28 centimetres. The perimeter is 28 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V383": {
+  "q": "Find the perimeter of a rectangle with length 21 centimetres and breadth 17 centimetres.",
+  "options": [
+   "78 centimetres",
+   "76 centimetres",
+   "357 centimetres",
+   "152 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 21 plus 17 equals 38 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 38 equals 76 centimetres. The perimeter is 76 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V389": {
+  "q": "Find the area of a triangle with base 30 centimetres and height 12 centimetres.",
+  "options": [
+   "180 square centimetres",
+   "186 square centimetres",
+   "42 square centimetres",
+   "360 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 30 times 12 equals 360.",
+   "Now take half: 360 divided by 2 equals 180. The area of the triangle is 180 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V39": {
+  "q": "Find the area of a triangle with base 12 centimetres and height 7 centimetres.",
+  "options": [
+   "84 square centimetres",
+   "19 square centimetres",
+   "44 square centimetres",
+   "42 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 12 times 7 equals 84.",
+   "Now take half: 84 divided by 2 equals 42. The area of the triangle is 42 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V412": {
+  "q": "Find the area of a square with side 11 centimetres.",
+  "options": [
+   "121 square centimetres",
+   "130 square centimetres",
+   "242 square centimetres",
+   "44 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape. In a square the length and the breadth are the same, so area equals side times side.",
+   "Multiply: 11 times 11 equals 121. The area of the square is 121 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V427": {
+  "q": "Find the perimeter of a rectangle with length 7 centimetres and breadth 11 centimetres.",
+  "options": [
+   "72 centimetres",
+   "77 centimetres",
+   "43 centimetres",
+   "36 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 7 plus 11 equals 18 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 18 equals 36 centimetres. The perimeter is 36 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V431": {
+  "q": "Find the area of a triangle with base 8 centimetres and height 18 centimetres.",
+  "options": [
+   "72 square centimetres",
+   "26 square centimetres",
+   "82 square centimetres",
+   "144 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 8 times 18 equals 144.",
+   "Now take half: 144 divided by 2 equals 72. The area of the triangle is 72 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V437": {
+  "q": "Find the perimeter of a square with side 11 centimetres.",
+  "options": [
+   "44 centimetres",
+   "88 centimetres",
+   "50 centimetres",
+   "121 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
+   "So multiply the side by 4: 4 times 11 equals 44 centimetres. The perimeter is 44 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V439": {
+  "q": "Find the perimeter of a rectangle with length 22 centimetres and breadth 12 centimetres.",
+  "options": [
+   "264 centimetres",
+   "76 centimetres",
+   "68 centimetres",
+   "136 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 22 plus 12 equals 34 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 34 equals 68 centimetres. The perimeter is 68 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V445": {
+  "q": "Find the perimeter of a rectangle with length 24 centimetres and breadth 20 centimetres.",
+  "options": [
+   "88 centimetres",
+   "90 centimetres",
+   "480 centimetres",
+   "176 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 24 plus 20 equals 44 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 44 equals 88 centimetres. The perimeter is 88 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V447": {
+  "q": "Find the area of a rectangle with length 3 centimetres and breadth 19 centimetres.",
+  "options": [
+   "61 square centimetres",
+   "44 square centimetres",
+   "114 square centimetres",
+   "57 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape, counted in unit squares. There are 19 squares in each row and 3 rows, so area equals length times breadth.",
+   "Multiply: 3 times 19 equals 57. The area of the rectangle is 57 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V448": {
+  "q": "Find the perimeter of a square with side 21 centimetres.",
+  "options": [
+   "168 centimetres",
+   "84 centimetres",
+   "441 centimetres",
+   "87 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
+   "So multiply the side by 4: 4 times 21 equals 84 centimetres. The perimeter is 84 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V471": {
+  "q": "Find the area of a rectangle with length 9 centimetres and breadth 15 centimetres.",
+  "options": [
+   "135 square centimetres",
+   "48 square centimetres",
+   "138 square centimetres",
+   "270 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape, counted in unit squares. There are 15 squares in each row and 9 rows, so area equals length times breadth.",
+   "Multiply: 9 times 15 equals 135. The area of the rectangle is 135 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V48": {
+  "q": "Find the perimeter of a rectangle with length 16 centimetres and breadth 4 centimetres.",
+  "options": [
+   "80 centimetres",
+   "40 centimetres",
+   "64 centimetres",
+   "50 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 16 plus 4 equals 20 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 20 equals 40 centimetres. The perimeter is 40 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V484": {
+  "q": "Find the perimeter of a rectangle with length 16 centimetres and breadth 17 centimetres.",
+  "options": [
+   "66 centimetres",
+   "272 centimetres",
+   "75 centimetres",
+   "132 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 16 plus 17 equals 33 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 33 equals 66 centimetres. The perimeter is 66 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V486": {
+  "q": "Find the area of a rectangle with length 17 centimetres and breadth 6 centimetres.",
+  "options": [
+   "46 square centimetres",
+   "204 square centimetres",
+   "102 square centimetres",
+   "111 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape, counted in unit squares. There are 17 squares in each row and 6 rows, so area equals length times breadth.",
+   "Multiply: 17 times 6 equals 102. The area of the rectangle is 102 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V498": {
+  "q": "Find the area of a triangle with base 19 centimetres and height 16 centimetres.",
+  "options": [
+   "304 square centimetres",
+   "152 square centimetres",
+   "159 square centimetres",
+   "35 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 19 times 16 equals 304.",
+   "Now take half: 304 divided by 2 equals 152. The area of the triangle is 152 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V499": {
+  "q": "Find the perimeter of a square with side 22 centimetres.",
+  "options": [
+   "176 centimetres",
+   "91 centimetres",
+   "88 centimetres",
+   "484 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
+   "So multiply the side by 4: 4 times 22 equals 88 centimetres. The perimeter is 88 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V54": {
+  "q": "Find the area of a rectangle with length 12 centimetres and breadth 10 centimetres.",
+  "options": [
+   "240 square centimetres",
+   "120 square centimetres",
+   "127 square centimetres",
+   "44 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape, counted in unit squares. There are 12 squares in each row and 10 rows, so area equals length times breadth.",
+   "Multiply: 12 times 10 equals 120. The area of the rectangle is 120 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V61": {
+  "q": "Find the area of a rectangle with length 4 centimetres and breadth 2 centimetres.",
+  "options": [
+   "17 square centimetres",
+   "12 square centimetres",
+   "16 square centimetres",
+   "8 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "Area is the space inside the shape, counted in unit squares. There are 4 squares in each row and 2 rows, so area equals length times breadth.",
+   "Multiply: 4 times 2 equals 8. The area of the rectangle is 8 square centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V88": {
+  "q": "Find the perimeter of a rectangle with length 5 centimetres and breadth 6 centimetres.",
+  "options": [
+   "36 centimetres",
+   "44 centimetres",
+   "30 centimetres",
+   "22 centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
+   "Add one length and one breadth: 5 plus 6 equals 11 centimetres. That is halfway round.",
+   "Double it to go all the way round: 2 times 11 equals 22 centimetres. The perimeter is 22 centimetres."
+  ]
+ },
+ "VAR_G5_vary_perimeter_area_V90": {
+  "q": "Find the area of a triangle with base 16 centimetres and height 15 centimetres.",
+  "options": [
+   "31 square centimetres",
+   "127 square centimetres",
+   "120 square centimetres",
+   "240 square centimetres"
+  ],
+  "hints": [
+   "Read the question carefully and identify what's being asked.",
+   "Try working step by step.",
+   "Check your answer by substituting back."
+  ],
+  "steps": [
+   "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
+   "First multiply the base by the height: 16 times 15 equals 240.",
+   "Now take half: 240 divided by 2 equals 120. The area of the triangle is 120 square centimetres."
+  ]
+ }
+}

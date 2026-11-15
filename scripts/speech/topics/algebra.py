@@ -1,0 +1,82 @@
+"""Narration for the algebra topic. Writes data/question-speech/parts/algebra.json.
+
+    python -X utf8 scripts/speech/topics/algebra.py
+"""
+import io
+import json
+import os
+import re
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.dirname(HERE))
+
+from common import PARTS, load_grade5, source_strings, topic_of  # noqa: E402
+from algebra_rules import say  # noqa: E402
+from algebra_overrides import OVERRIDES  # noqa: E402
+
+SLUG = "algebra"
+
+
+def maths_line(latex):
+    """A step's maths line as plain print, ready for the rules: \\frac{77}{7} -> 77/7, \\boxed{11} -> 11."""
+    s = re.sub(r"\\frac\{([^{}]*)\}\{([^{}]*)\}", r"\1/\2", latex)
+    s = re.sub(r"\\boxed\{([^{}]*)\}", r"\1", s)
+    s = s.replace("\\times", "×").replace("\\div", "÷").replace("\\,", " ")
+    return re.sub(r"(?<=[\w ])-(?=[\w ])", "−", s)
+
+
+def working(q, i, text):
+    """The maths line under a step, when the step text is only an instruction ("Add 3 to both sides")."""
+    own = q.get("stepByStep") or []
+    latex = own[i].get("latex", "") if i < len(own) else ""
+    if not latex or "=" in text or "=" not in latex or "\\text" in latex:
+        return ""
+    return maths_line(latex)
+
+
+def narrate(q, counts):
+    src = source_strings(q)
+    over = OVERRIDES.get(q["id"], {})
+
+    def line(key, i, text, sentence=True):
+        if not text.strip():
+            return ""
+        hand = over.get(key) if key == "q" else (over.get(key) or {}).get(i)
+        if hand is not None:
+            counts["hand"] += 1
+            return hand
+        counts["rule"] += 1
+        spoken = say(text, sentence)
+        if key == "steps":
+            extra = working(q, i, text)
+            if extra:
+                spoken = "%s %s" % (spoken, say(extra))
+        return spoken
+
+    return {
+        "q": line("q", 0, src["q"]),
+        "options": [line("options", i, t, sentence=False) for i, t in enumerate(src["options"])],
+        "hints": [line("hints", i, t) for i, t in enumerate(src["hints"])],
+        "steps": [line("steps", i, t) for i, t in enumerate(src["steps"])],
+    }
+
+
+def main():
+    counts = {"hand": 0, "rule": 0}
+    questions = sorted((q for q in load_grade5() if topic_of(q) == SLUG), key=lambda q: q["id"])
+    unknown = sorted(set(OVERRIDES) - {q["id"] for q in questions})
+    if unknown:
+        sys.exit("overrides for ids not in this topic: %s" % ", ".join(unknown))
+    part = {q["id"]: narrate(q, counts) for q in questions}
+    os.makedirs(PARTS, exist_ok=True)
+    path = os.path.join(PARTS, SLUG + ".json")
+    with io.open(path, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(part, f, ensure_ascii=False, indent=1)
+        f.write("\n")
+    print("wrote %d questions: %d lines by hand, %d by rule" % (len(part), counts["hand"], counts["rule"]))
+
+
+if __name__ == "__main__":
+    main()
