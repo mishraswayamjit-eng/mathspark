@@ -23,14 +23,20 @@ export interface TopicContent {
   /** Skill-drill topic (data/skill-drills.json). */
   drillTopicId?: string;
   /**
-   * The lowest drill level whose gradeRange covers Grade 5. Only 'L1' is open to
-   * every child: higher levels unlock on the device once the level before is
-   * passed, and that state lives in localStorage where the server cannot see it.
+   * The lowest drill level that has sessions and whose gradeRange covers Grade 5.
+   * That level is always open to a Grade 5 child: levels below their grade are
+   * not shown to them, and the lowest level shown needs nothing finished first
+   * (src/lib/drillUnlock.ts). Higher levels unlock on the device, in
+   * localStorage where the server cannot see it, so they are never linked to.
    */
   drillLevelId?: string;
   /** `topicId` values in data/math-stories.json with a story tagged for Grade 5. */
   storyTopicIds?: string[];
-  /** Strategy ids (data/strategy-bank.json) that are a trick for this topic and cover Grade 5. */
+  /**
+   * Strategy ids (data/strategy-bank.json) that are a trick for this topic and
+   * cover Grade 5, simplest first: the first one the child has not opened is the
+   * one suggested.
+   */
   strategyIds?: string[];
   /** Grade 5 flashcard deck (`topicId` in data/concept_flashcards_all_grades.json). */
   flashcardTopicId?: string;
@@ -54,7 +60,7 @@ export const TOPIC_CONTENT_MAP: Record<string, TopicContent> = {
   gr5_operations2: {
     drillTopicId: 'arithmetic_operations',
     drillLevelId: 'L2',
-    strategyIds: ['STR_014', 'STR_016', 'STR_023', 'STR_030'],
+    strategyIds: ['STR_016', 'STR_014', 'STR_030', 'STR_023'],
   },
   gr5_divisibility: {
     lessonSlug: 'factors-primes',
@@ -133,6 +139,7 @@ export const TOPIC_CONTENT_MAP: Record<string, TopicContent> = {
     lessonSlug: 'profit-loss',
     drillTopicId: 'percentage_profit_loss',
     drillLevelId: 'L1',
+    strategyIds: ['STR_031'],
     flashcardTopicId: 'pl',
   },
   gr5_interest: {
@@ -161,6 +168,7 @@ export const TOPIC_CONTENT_MAP: Record<string, TopicContent> = {
     drillTopicId: 'area_perimeter_mensuration',
     drillLevelId: 'L1',
     storyTopicIds: ['mensuration'],
+    strategyIds: ['STR_029'],
   },
 };
 

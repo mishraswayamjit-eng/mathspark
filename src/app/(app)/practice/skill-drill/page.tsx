@@ -4,6 +4,12 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import { logError } from '@/lib/logger';
+import {
+  availableDrillLevels,
+  highestOpenDrillLevel,
+  isDrillLevelOpen,
+  type DrillLevelProgress,
+} from '@/lib/drillUnlock';
 import SkillDrillTopicsSkeleton from './SkillDrillTopicsSkeleton';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -37,11 +43,7 @@ interface Meta {
 
 // ── Progress helpers ──────────────────────────────────────────────────────────
 
-interface LevelProgress {
-  bestScore: number;
-  sessions: Record<string, number>; // sessionNumber → best score
-  unlocked: boolean;
-}
+type LevelProgress = DrillLevelProgress;
 
 type DrillProgress = Record<string, Record<string, LevelProgress>>;
 
@@ -59,23 +61,19 @@ function getTopicProgress(progress: DrillProgress, topicId: string): Record<stri
   return progress[topicId] ?? {};
 }
 
-function getHighestUnlockedLevel(topicLevels: Record<string, LevelProgress>): string {
-  const levels = ['L1', 'L2', 'L3', 'L4', 'L5'];
-  let highest = 'L1';
-  for (const lvl of levels) {
-    const lp = topicLevels[lvl];
-    if (lp && lp.unlocked) highest = lvl;
-  }
-  return highest;
-}
-
-function getLevelStatus(topicLevels: Record<string, LevelProgress>, levelId: string): 'locked' | 'available' | 'started' | 'passed' | 'mastered' {
+/**
+ * `available` is the list of levels this child is shown for the topic. Whether a
+ * level is open is decided in src/lib/drillUnlock.ts, the same rule the level
+ * page uses.
+ */
+function getLevelStatus(
+  topicLevels: Record<string, LevelProgress>,
+  levelId: string,
+  available: string[],
+): 'locked' | 'available' | 'started' | 'passed' | 'mastered' {
+  if (!isDrillLevelOpen(levelId, available, topicLevels)) return 'locked';
   const lp = topicLevels[levelId];
-  if (!lp || !lp.unlocked) {
-    // L1 is always unlocked
-    if (levelId === 'L1') return 'available';
-    return 'locked';
-  }
+  if (!lp) return 'available';
   if (lp.bestScore >= 9) return 'mastered';
   if (lp.bestScore >= 7) return 'passed';
   if (Object.keys(lp.sessions).length > 0) return 'started';
@@ -162,13 +160,15 @@ export default function SkillDrillTopicsPage() {
         <div className="space-y-3">
           {topicList.map((topic) => {
             const tp = getTopicProgress(progress, topic.topicId);
-            const highestLevel = getHighestUnlockedLevel(tp);
+            // The levels this child is shown. The lowest of them is always open.
+            const available = availableDrillLevels(topic.levels);
+            const highestLevel = highestOpenDrillLevel(available, tp);
             const levels = ['L1', 'L2', 'L3', 'L4', 'L5'];
 
             // Count mastered and started levels
-            const masteredCount = levels.filter((l) => getLevelStatus(tp, l) === 'mastered').length;
+            const masteredCount = levels.filter((l) => getLevelStatus(tp, l, available) === 'mastered').length;
             const passedCount = levels.filter((l) => {
-              const s = getLevelStatus(tp, l);
+              const s = getLevelStatus(tp, l, available);
               return s === 'passed' || s === 'mastered';
             }).length;
 
@@ -199,7 +199,7 @@ export default function SkillDrillTopicsPage() {
                           );
                         }
 
-                        const status = getLevelStatus(tp, lvl);
+                        const status = getLevelStatus(tp, lvl, available);
                         const ll = levelLabels[lvl];
 
                         let dotCls = 'w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold border-2 ';

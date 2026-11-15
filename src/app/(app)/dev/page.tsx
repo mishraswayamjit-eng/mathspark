@@ -159,6 +159,15 @@ export default function DevPage() {
           <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full font-semibold">DEV ONLY</span>
         </div>
         <p className="text-sm text-gray-500">Sets localStorage and navigates to /chapters. No password needed.</p>
+        <p className="text-xs text-gray-500 mt-2">
+          On the live site the developer pages are closed. To open them in a browser, visit{' '}
+          <code className="bg-gray-100 px-1 rounded">/api/dev/unlock?key=YOUR_KEY&amp;next=/dev</code>{' '}
+          once, where YOUR_KEY is the value of the DEV_PAGES_KEY environment variable in Vercel. They then stay
+          open in that browser for 4 hours. Other pages:{' '}
+          <a href="/dev/figures" className="underline">figures</a>,{' '}
+          <a href="/dev/voice" className="underline">voice</a>,{' '}
+          <a href="/dev/teach" className="underline">teach board</a>.
+        </p>
       </div>
 
       {/* Multi-grade students */}

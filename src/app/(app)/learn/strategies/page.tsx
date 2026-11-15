@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import { logError } from '@/lib/logger';
@@ -66,6 +66,26 @@ export default function StrategyBankPage() {
       .catch((err) => logError('[fetch]', err))
       .finally(() => setLoading(false));
   }, [selectedCategory]);
+
+  // A link to one strategy: /learn/strategies?open=STR_009 opens that card and
+  // scrolls to it, once, when the list first arrives. It counts as opening the
+  // strategy, so it is recorded the same way as a tap on the card.
+  const openHandledRef = useRef(false);
+  useEffect(() => {
+    if (openHandledRef.current || loading || strategies.length === 0) return;
+    openHandledRef.current = true;
+    const wanted = new URLSearchParams(window.location.search).get('open');
+    if (!wanted || !/^STR_\d{1,4}$/.test(wanted)) return;
+    let found = false;
+    for (let i = 0; i < strategies.length; i++) {
+      if (strategies[i].id === wanted) { found = true; break; }
+    }
+    if (!found) return;
+    logContentView('strategy', wanted);
+    setExpandedId(wanted);
+    const card = document.getElementById(`strategy-${wanted}`);
+    if (card) card.scrollIntoView({ block: 'start' });
+  }, [loading, strategies]);
 
   // Group strategies by category
   const grouped = new Map<string, Strategy[]>();
@@ -170,7 +190,8 @@ export default function StrategyBankPage() {
                       return (
                         <div
                           key={s.id}
-                          className="bg-white rounded-card border-2 border-line border-l-[10px] overflow-hidden"
+                          id={`strategy-${s.id}`}
+                          className="bg-white rounded-card border-2 border-line border-l-[10px] overflow-hidden scroll-mt-24"
                           style={{ borderLeftColor: meta.color }}
                         >
                           {/* Collapsed header */}

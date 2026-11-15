@@ -29,12 +29,17 @@
  *  4 flashcards_due        FLASHCARDS_DUE_MIN (10) or more cards the child has
  *                          seen before are due for review.
  *  5 drill_close           Accuracy 60–80% over DRILL_MIN_ATTEMPTS (8) or more
- *                          attempts, a skill drill is mapped with an open first
- *                          level, and it was not finished in the last 7 days.
- *  6 strategy_for_mistake  The same mistake MISTAKES_FOR_STRATEGY (3) or more times
- *                          AND a strategy is linked to it in the data. No such link
- *                          exists in the data today (see getNextActions), so this
- *                          rule never fires in production yet.
+ *                          attempts, a skill drill is mapped, and a session of it
+ *                          was not finished in the last 7 days. The link goes to
+ *                          the lowest level made for the child's grade, which is
+ *                          always open (src/lib/drillUnlock.ts). Higher levels are
+ *                          never linked: whether one is unlocked is known only on
+ *                          the device.
+ *  6 strategy_after_misses MISSES_FOR_STRATEGY (3) or more misses on one sub-topic
+ *                          in the last 7 days, rule 1 has no lesson left to offer
+ *                          for it (none mapped, or already done), and a strategy
+ *                          mapped to the sub-topic has never been opened. The
+ *                          first such strategy in the map is suggested.
  *  7 mock_exam_soon        Exam within EXAM_SOON_DAYS (30) and no mock in 3 days.
  *    mock_coverage         COVERAGE_FOR_MOCK (half) of the sub-topics have 5+
  *                          attempts and there has been no mock for 7 days.
@@ -49,6 +54,7 @@
  *     3 days and never taken is skipped (continue_top / new_start are the floor
  *     and are never skipped);
  *   - at most one action per sub-topic;
+ *   - at most one action per piece of content (two sub-topics can share a drill);
  *   - at most one "learn" action (lesson, hands-on, explain, strategy);
  *   - while a mock test is in progress, nothing is recommended at all.
  */
@@ -70,7 +76,7 @@ export const DROP_SIZE = 0.2;
 export const FLASHCARDS_DUE_MIN = 10;
 export const DRILL_MIN_ATTEMPTS = 8;
 export const DRILL_REST_DAYS = 7;
-export const MISTAKES_FOR_STRATEGY = 3;
+export const MISSES_FOR_STRATEGY = 3;
 export const EXAM_SOON_DAYS = 30;
 export const COVERAGE_FOR_MOCK = 0.5;
 export const SUPPRESS_SHOWN_DAYS = 2;
@@ -101,7 +107,7 @@ export const NEXT_ACTION_RULE_IDS: string[] = [
   'review_dropped',
   'flashcards_due',
   'drill_close',
-  'strategy_for_mistake',
+  'strategy_after_misses',
   'mock_exam_soon',
   'mock_coverage',
   'continue_top',
@@ -159,7 +165,10 @@ export interface RankInput {
   totalAttempts: number;
   /** Concept lesson slug → best quiz score (0–100) over its levels. */
   lessonBest: Record<string, number>;
-  /** `${kind}:${refId}` → whole days since that content was finished. */
+  /**
+   * `${kind}:${refId}` → whole days since that content was finished. A strategy
+   * has no finish step, so for `strategy:` it is days since it was first opened.
+   */
   contentDone: Record<string, number>;
   /** Flashcards seen before that are due now. */
   flashcardsDue: number;
@@ -168,8 +177,6 @@ export interface RankInput {
   /** null when no exam date is set. */
   daysUntilExam: number | null;
   mockInProgress: boolean;
-  /** A repeated mistake that the data links to a strategy. */
-  mistakeLinks: Array<{ strategyId: string; count: number; nodeId?: string }>;
   /** Recommendations shown lately: one entry per event. */
   history: Array<{ actionId: string; day: string; taken: boolean }>;
   limit?: number;
@@ -205,10 +212,10 @@ function practiceHref(dbTopicId: string, subTopicKey?: string): string {
 }
 
 /**
- * Where rule 2 sends the child. The practice page has no way to open the
- * lesson for one given question, so this is practice on the sub-topic. The
- * `teach` parameter is ignored by the page today; it is there so the lesson
- * can be opened directly once the page reads it.
+ * Where rule 2 sends the child: practice on the sub-topic, opening on the
+ * missed question with its "Explain it to me" lesson playing (the practice
+ * page reads `teach` and fetches the question from /api/questions/explain).
+ * If that question cannot be served, the page falls back to ordinary practice.
  */
 function explainHref(dbTopicId: string, subTopicKey: string | undefined, questionId: string): string {
   const qp = new URLSearchParams();
@@ -342,6 +349,7 @@ export function rankNextActions(input: RankInput): NextAction[] {
     const content = getTopicContent(n.nodeId);
 
     // ── Rule 1: a lesson after repeated misses ──
+    let lessonOffered = false;
     if (n.misses7d >= MISSES_FOR_LESSON) {
       let handsOnId: string | null = null;
       const ids = content.handsOnLessonIds || [];
@@ -349,6 +357,7 @@ export function rankNextActions(input: RankInput): NextAction[] {
         if (input.contentDone[`hands_on:${ids[k]}`] === undefined) { handsOnId = ids[k]; break; }
       }
       if (handsOnId) {
+        lessonOffered = true;
         candidates.push({
           rank: 1, score: n.misses7d, weight: n.examWeight,
           action: makeAction(
@@ -360,6 +369,7 @@ export function rankNextActions(input: RankInput): NextAction[] {
       } else if (content.lessonSlug) {
         const best = input.lessonBest[content.lessonSlug];
         if (best === undefined || best < LESSON_PASS_SCORE) {
+          lessonOffered = true;
           candidates.push({
             rank: 1, score: n.misses7d, weight: n.examWeight,
             action: makeAction(
@@ -378,7 +388,7 @@ export function rankNextActions(input: RankInput): NextAction[] {
         rank: 2, score: n.misses7d, weight: n.examWeight,
         action: makeAction(
           'explain_missed', 'explain', `Look again at ${n.name}`,
-          `One ${n.name} question was tricky lately, so try a few more and tap "Explain it to me" if you'd like Sparky to show you how.`,
+          `One ${n.name} question was tricky lately, so Sparky will show you how it works and then you can try one like it.`,
           explainHref(n.dbTopicId, n.subTopicKey, n.explainQuestionId), 5, n.nodeId, n.explainQuestionId,
         ),
       });
@@ -412,7 +422,7 @@ export function rankNextActions(input: RankInput): NextAction[] {
     // ── Rule 5: nearly there, so drill it ──
     if (
       n.attempts >= DRILL_MIN_ATTEMPTS && n.accuracy >= 0.6 && n.accuracy <= 0.8 &&
-      content.drillTopicId && content.drillLevelId === 'L1'
+      content.drillTopicId && content.drillLevelId
     ) {
       const ref = `${content.drillTopicId}:${content.drillLevelId}`;
       const doneDays = input.contentDone[`drill:${ref}`];
@@ -427,6 +437,25 @@ export function rankNextActions(input: RankInput): NextAction[] {
         });
       }
     }
+
+    // ── Rule 6: the misses go on and there is no lesson left to offer, so a trick ──
+    if (n.misses7d >= MISSES_FOR_STRATEGY && !lessonOffered) {
+      let strategyId: string | null = null;
+      const tricks = content.strategyIds || [];
+      for (let k = 0; k < tricks.length; k++) {
+        if (input.contentDone[`strategy:${tricks[k]}`] === undefined) { strategyId = tricks[k]; break; }
+      }
+      if (strategyId) {
+        candidates.push({
+          rank: 6, score: n.misses7d, weight: n.examWeight,
+          action: makeAction(
+            'strategy_after_misses', 'strategy', `A neat trick for ${n.name}`,
+            `Here's a neat trick that can make ${n.name} feel easier.`,
+            `/learn/strategies?open=${strategyId}`, 3, n.nodeId, strategyId,
+          ),
+        });
+      }
+    }
   }
 
   // ── Rule 4: flashcards waiting ──
@@ -437,20 +466,6 @@ export function rankNextActions(input: RankInput): NextAction[] {
         'flashcards_due', 'flashcards', 'Flashcards are ready',
         `${input.flashcardsDue} cards are ready for a quick look, and it only takes a few minutes.`,
         '/flashcards/session?deck=due&mode=classic', 5,
-      ),
-    });
-  }
-
-  // ── Rule 6: a repeated mistake with a linked strategy ──
-  for (let i = 0; i < input.mistakeLinks.length; i++) {
-    const m = input.mistakeLinks[i];
-    if (m.count < MISTAKES_FOR_STRATEGY || !m.strategyId) continue;
-    candidates.push({
-      rank: 6, score: m.count, weight: 0,
-      action: makeAction(
-        'strategy_for_mistake', 'strategy', 'A handy trick for you',
-        'The same little slip has popped up a few times, and this trick helps you spot it next time.',
-        '/learn/strategies', 3, m.nodeId, m.strategyId,
       ),
     });
   }
@@ -486,6 +501,7 @@ export function rankNextActions(input: RankInput): NextAction[] {
   // ── Choose ──
   const suppressed = suppressedIds(input);
   const usedNodes: Record<string, boolean> = {};
+  const usedContent: Record<string, boolean> = {};
   const out: NextAction[] = [];
   let learnUsed = false;
 
@@ -493,11 +509,15 @@ export function rankNextActions(input: RankInput): NextAction[] {
     const a = candidates[i].action;
     if (suppressed[a.id]) continue;
     if (a.nodeId && usedNodes[a.nodeId]) continue;
+    // Two sub-topics can share one drill (or lesson): offer it once.
+    const contentKey = a.refId ? `${a.actionType}:${a.refId}` : '';
+    if (contentKey && usedContent[contentKey]) continue;
     if (isLearn(a.actionType)) {
       if (learnUsed) continue;
       learnUsed = true;
     }
     if (a.nodeId) usedNodes[a.nodeId] = true;
+    if (contentKey) usedContent[contentKey] = true;
     out.push(a);
   }
 
@@ -617,9 +637,10 @@ export async function getNextActions(
       select: { topicSlug: true, quizScore: true },
       take: 200,
     }),
+    // Finished content, plus every strategy opened (a strategy is never "finished").
     prisma.contentView.findMany({
-      where: { studentId, completedAt: { not: null } },
-      select: { kind: true, refId: true, completedAt: true },
+      where: { studentId, OR: [{ completedAt: { not: null } }, { kind: 'strategy' }] },
+      select: { kind: true, refId: true, startedAt: true, completedAt: true },
       orderBy: { completedAt: 'desc' },
       take: 200,
     }),
@@ -755,9 +776,10 @@ export async function getNextActions(
   const contentDone: Record<string, number> = {};
   for (let i = 0; i < views.length; i++) {
     const v = views[i];
-    if (!v.completedAt) continue;
+    const at = v.completedAt || (v.kind === 'strategy' ? v.startedAt : null);
+    if (!at) continue;
     const key = `${v.kind}:${v.refId}`;
-    const days = Math.max(0, Math.floor((nowMs - new Date(v.completedAt).getTime()) / MS_PER_DAY));
+    const days = Math.max(0, Math.floor((nowMs - new Date(at).getTime()) / MS_PER_DAY));
     if (contentDone[key] === undefined || days < contentDone[key]) contentDone[key] = days;
   }
 
@@ -786,10 +808,6 @@ export async function getNextActions(
     daysSinceLastMock,
     daysUntilExam,
     mockInProgress: false,
-    // Rule 6 needs a link from a mistake to a strategy. Attempt.misconceptionType
-    // is free text, and every strategy in data/strategy-bank.json has
-    // linkedMistakePatternId: null, so there is nothing real to link on yet.
-    mistakeLinks: [],
     history,
     limit: opts && opts.limit ? opts.limit : DEFAULT_LIMIT,
   });

@@ -7,6 +7,7 @@ import Link from 'next/link';
 import DuoButton from '@/components/DuoButton';
 import { getTopicsForGrade } from '@/data/topicTree';
 import { logError } from '@/lib/logger';
+import { useStudent } from '@/components/shell/StudentProvider';
 
 // ── Sub-components ────────────────────────────────────────────────────────────
 
@@ -79,19 +80,18 @@ const LEAGUE_TIER_EMOJIS = ['', '🥉', '🥈', '🥇', '💎', '👑'];
 export default function ProfilePage() {
   const router = useRouter();
 
-  // Student meta — initialised from localStorage for fast-paint header
-  const [studentId,   setStudentId]   = useState(() =>
-    typeof window !== 'undefined' ? (localStorage.getItem('mathspark_student_id') ?? '') : ''
+  // Student meta — starts from the child the app shell loaded on the server, so
+  // the first render is the same on the server and in the browser (reading
+  // localStorage here made the two differ) and the header paints with real data.
+  const { student: shellStudent } = useStudent();
+  const [studentId,   setStudentId]   = useState(shellStudent ? shellStudent.id : '');
+  const [name,        setName]        = useState(shellStudent ? shellStudent.name : '');
+  const [grade,       setGrade]       = useState<number>(
+    shellStudent && shellStudent.grade >= 2 && shellStudent.grade <= 9 ? shellStudent.grade : 4,
   );
-  const [name,        setName]        = useState(() =>
-    typeof window !== 'undefined' ? (localStorage.getItem('mathspark_student_name') ?? '') : ''
+  const [avatarColor, setAvatarColor] = useState(
+    shellStudent && shellStudent.avatarColor ? shellStudent.avatarColor : '#3B82F6',
   );
-  const [grade,       setGrade]       = useState<number>(() => {
-    if (typeof window === 'undefined') return 4;
-    const g = parseInt(localStorage.getItem('mathspark_student_grade') ?? '4', 10);
-    return g >= 2 && g <= 9 ? g : 4;
-  });
-  const [avatarColor, setAvatarColor] = useState('#3B82F6');
   const [createdAt,   setCreatedAt]   = useState('');
   const [streakDays,  setStreakDays]  = useState(0);
   const [leagueTier,  setLeagueTier]  = useState(1);

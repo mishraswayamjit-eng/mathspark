@@ -56,14 +56,15 @@ describe('calculateMastery', () => {
 
 describe('updateProgress', () => {
   it('calls upsert with correct mastery + counts', async () => {
-    // calculateMastery will use this
-    prisma.attempt.findMany
-      .mockResolvedValueOnce(
-        Array.from({ length: 10 }, (_, i) => ({ isCorrect: i < 9 })),
-      )
-      .mockResolvedValueOnce(
-        Array.from({ length: 20 }, (_, i) => ({ isCorrect: i < 15 })),
-      );
+    // updateProgress reads everything in ONE batched prisma.$transaction:
+    // [the last 10 attempts, the number attempted, the number correct].
+    // (This test used to queue two attempt.findMany results, from before the
+    // three reads were batched; the mocked $transaction then returned nothing.)
+    prisma.$transaction.mockResolvedValue([
+      Array.from({ length: 10 }, (_, i) => ({ isCorrect: i < 9 })),
+      20,
+      15,
+    ]);
     prisma.progress.upsert.mockResolvedValue({});
 
     await updateProgress('s1', 'ch11');

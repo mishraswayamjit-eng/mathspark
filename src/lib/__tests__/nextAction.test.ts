@@ -47,7 +47,6 @@ function input(nodes: NodeSignal[], over?: Partial<RankInput>): RankInput {
     daysSinceLastMock: 1,
     daysUntilExam: null,
     mockInProgress: false,
-    mistakeLinks: [],
     history: [],
   };
   return { ...base, ...(over || {}) };
@@ -63,6 +62,12 @@ const fractions = (over?: Partial<NodeSignal>) => node('gr5_fractions', 'Fractio
 const integers = (over?: Partial<NodeSignal>) => node('gr5_integers', 'Integers', 'integer', over);
 const area = (over?: Partial<NodeSignal>) => node('gr5_area', 'Area & Perimeter', 'area', over);
 const placeValue = (over?: Partial<NodeSignal>) => node('gr5_placevalue', 'Numbers & Place Value', 'place value', over);
+const percentage = (over?: Partial<NodeSignal>) => node('gr5_percentage', 'Percentage & Money', 'money', over);
+const addSubtract = (over?: Partial<NodeSignal>) => node('gr5_operations1', 'Addition & Subtraction', 'addition', over);
+
+/** The same checks POST /api/recommendations makes on a refId. */
+const DRILL_REF = /^[a-z_]{1,60}:L[1-5]$/;
+const STRATEGY_REF = /^STR_\d{1,4}$/;
 
 describe('rankNextActions', () => {
   describe('a brand-new child', () => {
@@ -184,32 +189,153 @@ describe('rankNextActions', () => {
       expect(out[0].refId).toBe('area_perimeter_mensuration:L1');
     });
 
-    it('needs eight attempts, the 60–80% band, and an open first level', () => {
+    it('needs eight attempts, the 60–80% band, and a mapped drill', () => {
       expect(byRule(rankNextActions(input([area({ attempts: 7, accuracy: 0.7 })])), 'drill_close')).toBeUndefined();
       expect(byRule(rankNextActions(input([area({ attempts: 9, accuracy: 0.85 })])), 'drill_close')).toBeUndefined();
       expect(byRule(rankNextActions(input([area({ attempts: 9, accuracy: 0.5 })])), 'drill_close')).toBeUndefined();
-      // Fractions is mapped to a drill whose first Grade 5 level is not L1.
-      expect(byRule(rankNextActions(input([fractions({ attempts: 9, accuracy: 0.7 })])), 'drill_close')).toBeUndefined();
+      // Integers has no skill drill.
+      expect(byRule(rankNextActions(input([integers({ attempts: 9, accuracy: 0.7 })])), 'drill_close')).toBeUndefined();
     });
 
-    it('rests a drill finished in the last week', () => {
+    it('links Fractions and Decimals to their lowest Grade 5 level, which is not L1', () => {
+      const f = rankNextActions(input([fractions({ attempts: 9, accuracy: 0.7 })]));
+      expect(f[0].ruleId).toBe('drill_close');
+      expect(f[0].href).toBe('/practice/skill-drill/fractions_decimals/L2');
+      expect(f[0].refId).toBe('fractions_decimals:L2');
+      expect(f[0].nodeId).toBe('gr5_fractions');
+
+      const d = rankNextActions(input([decimals({ attempts: 9, accuracy: 0.7 })]));
+      expect(d[0].ruleId).toBe('drill_close');
+      expect(d[0].href).toBe('/practice/skill-drill/fractions_decimals/L2');
+      expect(d[0].nodeId).toBe('gr5_decimals');
+    });
+
+    it('maps a level to every sub-topic with a drill, as a refId the event route accepts', () => {
+      const ids = Object.keys(TOPIC_CONTENT_MAP);
+      let withDrill = 0;
+      for (let i = 0; i < ids.length; i++) {
+        const c = TOPIC_CONTENT_MAP[ids[i]];
+        if (!c.drillTopicId) continue;
+        withDrill += 1;
+        expect(c.drillLevelId).toBeDefined();
+        expect(`${c.drillTopicId}:${c.drillLevelId}`).toMatch(DRILL_REF);
+      }
+      expect(withDrill).toBe(19);
+    });
+
+    it('offers a drill shared by two sub-topics only once', () => {
+      const out = rankNextActions(input([
+        decimals({ attempts: 9, accuracy: 0.7, examWeight: 0.11 }),
+        fractions({ attempts: 9, accuracy: 0.7, examWeight: 0.14 }),
+      ]));
+      const drills = out.filter((a) => a.ruleId === 'drill_close');
+      expect(drills).toHaveLength(1);
+      // Same accuracy, so the heavier exam weight wins it.
+      expect(drills[0].nodeId).toBe('gr5_fractions');
+      expect(out).toHaveLength(2);
+      expect(out[1].ruleId).toBe('continue_top');
+      expect(out[1].nodeId).toBe('gr5_decimals');
+    });
+
+    it('rests a drill finished in the last week, and offers it again after that', () => {
       const out = rankNextActions(input([area({ attempts: 9, accuracy: 0.7 })], {
         contentDone: { 'drill:area_perimeter_mensuration:L1': 2 },
       }));
       expect(byRule(out, 'drill_close')).toBeUndefined();
+
+      const later = rankNextActions(input([area({ attempts: 9, accuracy: 0.7 })], {
+        contentDone: { 'drill:area_perimeter_mensuration:L1': 7 },
+      }));
+      expect(byRule(later, 'drill_close')).toBeDefined();
     });
   });
 
-  describe('rule 6: a strategy for a repeated mistake', () => {
-    it('fires only when the mistake is linked to a strategy three or more times', () => {
-      const three = rankNextActions(input([decimals()], { mistakeLinks: [{ strategyId: 'STR_009', count: 3 }] }));
-      const hit = byRule(three, 'strategy_for_mistake');
-      expect(hit).toBeDefined();
-      expect(hit!.refId).toBe('STR_009');
-      expect(hit!.href).toBe('/learn/strategies');
+  describe('rule 6: a trick when the misses go on', () => {
+    it('offers a mapped strategy after three misses once the lesson is passed', () => {
+      const out = rankNextActions(input([percentage({ misses7d: 3 })], { lessonBest: { percentage: 70 } }));
+      expect(out[0].ruleId).toBe('strategy_after_misses');
+      expect(out[0].actionType).toBe('strategy');
+      expect(out[0].refId).toBe('STR_009');
+      expect(out[0].nodeId).toBe('gr5_percentage');
+      expect(out[0].href).toBe('/learn/strategies?open=STR_009');
+    });
 
-      const two = rankNextActions(input([decimals()], { mistakeLinks: [{ strategyId: 'STR_009', count: 2 }] }));
-      expect(byRule(two, 'strategy_for_mistake')).toBeUndefined();
+    it('does not fire on two misses', () => {
+      const out = rankNextActions(input([percentage({ misses7d: 2 })], { lessonBest: { percentage: 70 } }));
+      expect(byRule(out, 'strategy_after_misses')).toBeUndefined();
+    });
+
+    it('gives way to the lesson while the lesson is still to do', () => {
+      const out = rankNextActions(input([percentage({ misses7d: 4 })]));
+      expect(out[0].ruleId).toBe('lesson_after_misses');
+      expect(byRule(out, 'strategy_after_misses')).toBeUndefined();
+    });
+
+    it('fires for a sub-topic that has no lesson mapped', () => {
+      expect(TOPIC_CONTENT_MAP.gr5_operations1.lessonSlug).toBeUndefined();
+      const out = rankNextActions(input([addSubtract({ misses7d: 3 })]));
+      expect(out[0].ruleId).toBe('strategy_after_misses');
+      expect(out[0].refId).toBe('STR_017');
+    });
+
+    it('moves on to the next strategy not yet opened, and stops when all are opened', () => {
+      const second = rankNextActions(input([percentage({ misses7d: 3 })], {
+        lessonBest: { percentage: 90 },
+        contentDone: { 'strategy:STR_009': 40 },
+      }));
+      const hit = byRule(second, 'strategy_after_misses');
+      expect(hit).toBeDefined();
+      expect(hit!.refId).toBe('STR_031');
+      expect(hit!.href).toBe('/learn/strategies?open=STR_031');
+
+      const none = rankNextActions(input([percentage({ misses7d: 3 })], {
+        lessonBest: { percentage: 90 },
+        contentDone: { 'strategy:STR_009': 40, 'strategy:STR_031': 0 },
+      }));
+      expect(byRule(none, 'strategy_after_misses')).toBeUndefined();
+      // The floor still gives the child something to do.
+      expect(none.length).toBeGreaterThan(0);
+    });
+
+    it('stays quiet for a sub-topic with no strategy mapped', () => {
+      expect(TOPIC_CONTENT_MAP.gr5_decimals.strategyIds).toBeUndefined();
+      const out = rankNextActions(input([decimals({ misses7d: 5 })], { lessonBest: { decimals: 90 } }));
+      expect(byRule(out, 'strategy_after_misses')).toBeUndefined();
+    });
+
+    it('is a learn action, so a lesson on another sub-topic takes its place', () => {
+      const out = rankNextActions(input(
+        [decimals({ misses7d: 3 }), percentage({ misses7d: 5 })],
+        { lessonBest: { percentage: 90 } },
+      ));
+      expect(out[0].ruleId).toBe('lesson_after_misses');
+      expect(out[0].nodeId).toBe('gr5_decimals');
+      expect(byRule(out, 'strategy_after_misses')).toBeUndefined();
+    });
+
+    it('is dropped when shown on two earlier days and never taken', () => {
+      const id = actionKey('strategy_after_misses', 'gr5_percentage', 'STR_009');
+      const out = rankNextActions(input([percentage({ misses7d: 3 })], {
+        lessonBest: { percentage: 90 },
+        history: [
+          { actionId: id, day: '2026-11-13', taken: false },
+          { actionId: id, day: '2026-11-14', taken: false },
+        ],
+      }));
+      expect(byRule(out, 'strategy_after_misses')).toBeUndefined();
+      expect(out).toHaveLength(1);
+      expect(out[0].ruleId).toBe('continue_top');
+    });
+
+    it('maps only strategy ids the event route accepts', () => {
+      const ids = Object.keys(TOPIC_CONTENT_MAP);
+      let mapped = 0;
+      for (let i = 0; i < ids.length; i++) {
+        const list = TOPIC_CONTENT_MAP[ids[i]].strategyIds || [];
+        if (list.length > 0) mapped += 1;
+        for (let k = 0; k < list.length; k++) expect(list[k]).toMatch(STRATEGY_REF);
+      }
+      expect(mapped).toBe(9);
     });
   });
 
@@ -355,20 +481,20 @@ describe('rankNextActions', () => {
         fractions({ misses7d: 1, explainQuestionId: 'Q_TEST_2' }),
         area({ attempts: 12, accuracy: 0.9, mastery: 0.7, daysSinceLastAttempt: 20 }),
         integers({ attempts: 15, priorAttempts: 10, priorCorrect: 9, recentAttempts: 5, recentCorrect: 2 }),
-        placeValue({ attempts: 9, accuracy: 0.7 }),
       ],
       {
         flashcardsDue: 12,
         daysSinceLastMock: null,
         daysUntilExam: 10,
-        mistakeLinks: [{ strategyId: 'STR_009', count: 3 }],
         limit: 5,
       },
     ))
       .concat(rankNextActions(input([fractions({ misses7d: 3 })])))
       .concat(rankNextActions(input([integers({ misses7d: 1, explainQuestionId: 'Q_TEST_1' })])))
       .concat(rankNextActions(input([area({ attempts: 8, accuracy: 0.7 })])))
-      .concat(rankNextActions(input([decimals()], { mistakeLinks: [{ strategyId: 'STR_009', count: 3 }] })))
+      .concat(rankNextActions(input([placeValue({ attempts: 9, accuracy: 0.7 })])))
+      .concat(rankNextActions(input([percentage({ misses7d: 3 })], { lessonBest: { percentage: 80 } })))
+      .concat(rankNextActions(input([addSubtract({ misses7d: 3 })])))
       .concat(rankNextActions(input([decimals({ attempts: 6 }), integers({ attempts: 6 })], { daysSinceLastMock: null })))
       .concat(rankNextActions(input([placeValue()], { totalAttempts: 0 })))
       .concat(rankNextActions(input([], { totalAttempts: 0 })));
@@ -378,7 +504,7 @@ describe('rankNextActions', () => {
     out.forEach((a) => { rules[a.ruleId] = true; });
     expect(Object.keys(rules).sort()).toEqual([
       'continue_top', 'drill_close', 'explain_missed', 'flashcards_due', 'lesson_after_misses',
-      'mock_coverage', 'mock_exam_soon', 'new_start', 'review_dropped', 'review_idle', 'strategy_for_mistake',
+      'mock_coverage', 'mock_exam_soon', 'new_start', 'review_dropped', 'review_idle', 'strategy_after_misses',
     ]);
 
     for (let i = 0; i < out.length; i++) {

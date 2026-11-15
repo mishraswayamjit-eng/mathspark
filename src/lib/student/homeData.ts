@@ -8,6 +8,8 @@
 import { MS_PER_DAY, MS_PER_HOUR } from '@/lib/timeConstants';
 import { prisma } from '@/lib/db';
 import { recomputeStudentAnalytics } from '@/lib/brain/recompute';
+import type { ComputedAnalytics } from '@/lib/brain/recompute';
+import { endOfIstDay } from '@/lib/brain/rules';
 import { getTopicsCached } from '@/lib/topicCache';
 import { computeStreak, buildTopicNameMap, matchesSubTopicKey } from '@/lib/sharedUtils';
 import { MONETIZATION_ENABLED, UNLIMITED_TIER } from '@/lib/monetization';
@@ -124,6 +126,76 @@ function resolveTreeTopicId(dbTopicId: string, subTopic: string | null | undefin
   return keylessId;
 }
 
+// ── Fresh analytics, within a time budget ─────────────────────────────────────
+
+/**
+ * The longest Home waits for a recompute. After this it shows the stored
+ * analytics instead; the recompute carries on and is there for the next visit.
+ */
+const RECOMPUTE_BUDGET_MS = 2000;
+
+// Recomputes running in this server instance, by student. The Home page and
+// GET /api/home can ask at the same moment; they share one run.
+const recomputesInFlight: Record<string, Promise<ComputedAnalytics | null> | undefined> = {};
+
+function recomputeOnce(
+  studentId: string,
+  surface: 'background' | 'skip',
+): Promise<ComputedAnalytics | null> {
+  const running = recomputesInFlight[studentId];
+  if (running) return running;
+  const started = recomputeStudentAnalytics(studentId, { surface }).then(
+    (result) => {
+      delete recomputesInFlight[studentId];
+      return result;
+    },
+    (err: unknown) => {
+      delete recomputesInFlight[studentId];
+      throw err;
+    },
+  );
+  recomputesInFlight[studentId] = started;
+  return started;
+}
+
+function startTimer(ms: number): { done: Promise<'timeout'>; cancel: () => void } {
+  let id: ReturnType<typeof setTimeout> | undefined;
+  const done = new Promise<'timeout'>((resolve) => {
+    id = setTimeout(() => resolve('timeout'), ms);
+  });
+  return {
+    done,
+    cancel: () => {
+      if (id !== undefined) clearTimeout(id);
+    },
+  };
+}
+
+/**
+ * Recompute the analytics and hand back the result for THIS response.
+ * Never throws and never takes longer than the budget: on a failure or a
+ * time-out it returns null and the caller shows the stored row.
+ */
+async function freshAnalytics(
+  studentId: string,
+  surface: 'background' | 'skip',
+): Promise<ComputedAnalytics | null> {
+  // A failure becomes null here, so one that happens after the time-out is
+  // still logged and is never an unhandled rejection.
+  const work = recomputeOnce(studentId, surface).catch((err: unknown) => {
+    logError('[homeData] recompute failed; showing stored analytics', err);
+    return null;
+  });
+  const timer = startTimer(RECOMPUTE_BUDGET_MS);
+  const winner = await Promise.race([work, timer.done]);
+  timer.cancel();
+  if (winner === 'timeout') {
+    logError(`[homeData] recompute took over ${RECOMPUTE_BUDGET_MS}ms; showing stored analytics`);
+    return null;
+  }
+  return winner;
+}
+
 // ── Loader ────────────────────────────────────────────────────────────────────
 
 /**
@@ -196,17 +268,29 @@ export async function loadHomeData(studentId: string): Promise<HomeData | null> 
 
   if (!student) return null;
 
-  // Recompute analytics if missing or stale (> 1 hour).
-  // Always fire-and-forget: return immediately with whatever we have (or empty
-  // defaults). The next page load picks up the freshly computed analytics.
-  const isStale = !student.analytics ||
-    Date.now() - new Date(student.analytics.lastComputedAt).getTime() > MS_PER_HOUR;
+  // The stored analytics (plan, priorities, nudges) are out of date when:
+  //   - there are none, or they are over an hour old;
+  //   - the child has answered a question since they were worked out
+  //     (`attempts` is newest first, and `lastComputedAt` is the moment the
+  //     recompute started reading, so nothing answered since is in the row);
+  //   - the India-time day has changed (the plan and the day's nudges are per day).
+  // Then they are recomputed NOW and this response uses the result, so the plan
+  // and nudges never lag a visit behind. The wait is bounded (`freshAnalytics`):
+  // on a time-out or failure the stored row is shown, as before.
+  const stored = student.analytics;
+  const nowMs = Date.now();
+  const computedAtMs = stored ? new Date(stored.lastComputedAt).getTime() : 0;
+  const newestAttemptMs = attempts.length > 0 ? new Date(attempts[0].createdAt).getTime() : 0;
+  const isOld = !stored || nowMs - computedAtMs > MS_PER_HOUR;
+  const hasNewAnswers = !!stored && newestAttemptMs > computedAtMs;
+  const dayChanged = !!stored && endOfIstDay(new Date(computedAtMs)).getTime() <= nowMs;
 
-  if (isStale) {
-    recomputeStudentAnalytics(studentId).catch((err) =>
-      logError('[homeData] background recompute failed:', err),
-    );
-  }
+  // The Feature 5c narration is an LLM call and is never waited for here. It is
+  // refreshed in the background, and only when the row is missing or over an
+  // hour old (as often as before), not after every practice session.
+  const fresh = isOld || hasNewAnswers || dayChanged
+    ? await freshAnalytics(studentId, isOld ? 'background' : 'skip')
+    : null;
 
   const streak = computeStreak(attempts);
 
@@ -279,12 +363,19 @@ export async function loadHomeData(studentId: string): Promise<HomeData | null> 
     : null;
   const trialActive = trialDaysLeft !== null && trialDaysLeft > 0;
 
-  const parsedMastery    = safeJson<TopicMasteryEntry[]>(analytics?.topicMastery, []);
-  const parsedReadiness  = safeJson<ExamReadinessResult>(analytics?.examReadiness, {} as ExamReadinessResult);
-  const parsedPriorities = safeJson<TopicPriority[]>(analytics?.topicPriorities, []);
-  const parsedPlan       = safeJson<DailyPlanItem[]>(analytics?.dailyPlan, []);
-  const parsedNudges     = safeJson<Nudge[]>(analytics?.nudges, []);
-  const parsedSurface    = safeJson<HomeSurfacePlan | null>(analytics?.surfacePlan, null);
+  // Just recomputed when there is a fresh result; otherwise the stored row.
+  const parsedMastery    = fresh ? fresh.topicMastery
+    : safeJson<TopicMasteryEntry[]>(analytics?.topicMastery, []);
+  const parsedReadiness  = fresh ? fresh.examReadiness
+    : safeJson<ExamReadinessResult>(analytics?.examReadiness, {} as ExamReadinessResult);
+  const parsedPriorities = fresh ? fresh.topicPriorities
+    : safeJson<TopicPriority[]>(analytics?.topicPriorities, []);
+  const parsedPlan       = fresh ? fresh.dailyPlan
+    : safeJson<DailyPlanItem[]>(analytics?.dailyPlan, []);
+  const parsedNudges     = fresh ? fresh.nudges
+    : safeJson<Nudge[]>(analytics?.nudges, []);
+  // The narration is never recomputed on this path: always the stored one.
+  const parsedSurface   = safeJson<HomeSurfacePlan | null>(analytics?.surfacePlan, null);
 
   // Topic summary counts (from already-parsed analytics, no extra DB query)
   const masteryArray = Array.isArray(parsedMastery) ? parsedMastery : [];

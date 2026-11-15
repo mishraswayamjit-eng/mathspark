@@ -155,8 +155,16 @@ export default function PracticePage() {
     paneLessonsRef.current = Math.max(0, paneLessonsRef.current + (open ? 1 : -1));
     setPaneLessons(paneLessonsRef.current);
   }, []);
+  // The `teach` link ("let me explain a question you missed"): the session opens
+  // on that question with its lesson already playing.
+  //   'lesson'  the lesson is on screen, over the question
+  //   'after'   the lesson is closed: a similar question is offered
+  //   'off'     an ordinary session (always, once the session moves on)
+  const [linked, setLinked] = useState<'off' | 'lesson' | 'after'>('off');
+  const linkedRef = useRef<'off' | 'lesson' | 'after'>('off');
+  linkedRef.current = linked;
   // A lesson is on screen somewhere: the tutor keeps quiet meanwhile.
-  const lessonOpen = paneLessons > 0 || showTeach;
+  const lessonOpen = paneLessons > 0 || showTeach || linked === 'lesson';
 
   // ── The tutor's reactions ───────────────────────────────────────────────────
   // One short line when a question appears, on a right answer, a miss, a hint,
@@ -184,6 +192,8 @@ export default function PracticePage() {
   const tutorReact = useCallback((event: TutorEvent) => {
     // Never over a lesson. (A new question always closes the lesson sheet.)
     if (paneLessonsRef.current > 0) return;
+    // The session opened straight on a lesson: it is the one talking.
+    if (linkedRef.current === 'lesson') return;
     if (showTeachRef.current && event.kind !== 'question') return;
     tutorTurnRef.current += 1;
     const line = tutorRef.current.react(event, {
@@ -514,13 +524,18 @@ export default function PracticePage() {
 
   // Escape closes whichever sheet is open.
   useEffect(() => {
-    if (!showSteps && !showWork && !showTeach) return;
+    if (!showSteps && !showWork && !showTeach && linked !== 'lesson') return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') { setShowSteps(false); setShowWork(false); setShowTeach(false); }
+      if (e.key === 'Escape') {
+        setShowSteps(false);
+        setShowWork(false);
+        setShowTeach(false);
+        setLinked((l) => (l === 'lesson' ? 'after' : l));
+      }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [showSteps, showWork, showTeach]);
+  }, [showSteps, showWork, showTeach, linked]);
 
   // ── The tutor reacts ────────────────────────────────────────────────────────
   // A question appears.
@@ -622,17 +637,61 @@ export default function PracticePage() {
       parentWhatsApp: localStorage.getItem('mathspark_parent_whatsapp') ?? '',
     });
 
+    // The `teach` link ("let me explain a question you missed") is used once. It
+    // is taken out of the address straight away (no navigation, no reload), so a
+    // reload or coming back starts ordinary practice, not the same lesson again.
+    // Done a tick later, once the router is certainly ready to be told.
+    const teachId = searchParams.get('teach') ?? '';
+    if (searchParams.get('teach') !== null) {
+      const bootPath = window.location.pathname;
+      setTimeout(() => {
+        if (window.location.pathname !== bootPath) return; // already on another screen
+        const rest = new URLSearchParams(window.location.search);
+        if (!rest.has('teach')) return;
+        rest.delete('teach');
+        const restQs = rest.toString();
+        window.history.replaceState(null, '', `${bootPath}${restQs ? `?${restQs}` : ''}`);
+      }, 0);
+    }
+    // Not in a speed drill: its timer would run under the lesson.
+    const wantLinked = teachId !== '' && teachId.length <= 50 && !isSpeedMode;
+
+    // First question from the adaptive engine
+    const fetchFirst = (): Promise<Question> =>
+      fetch(`/api/questions/next?topicId=${topicId}${subTopicParam ? `&subTopic=${encodeURIComponent(subTopicParam)}` : ''}`)
+        .then((r) => { if (!r.ok) throw new Error('fetch failed'); return r.json() as Promise<Question>; });
+
+    // With a `teach` link, the question to explain comes first. If it cannot be
+    // served (unknown, switched off, no lesson, a test in progress, or the
+    // request itself fails), ordinary practice starts instead, with no message.
+    const loadFirst = async (): Promise<{ q: Question; linked: boolean }> => {
+      if (wantLinked) {
+        try {
+          const r = await fetch(
+            `/api/questions/explain?questionId=${encodeURIComponent(teachId)}` +
+            `&topicId=${encodeURIComponent(topicId)}` +
+            (subTopicParam ? `&subTopic=${encodeURIComponent(subTopicParam)}` : ''),
+          );
+          if (r.ok) {
+            const q = (await r.json()) as Question;
+            if (q && q.id === teachId) return { q, linked: true };
+          }
+        } catch { /* ordinary practice below */ }
+      }
+      const q = await fetchFirst();
+      return { q, linked: false };
+    };
+
     Promise.all([
       // Gate check — fails open (allowed: true) so API errors never block students
       fetch('/api/usage/check')
         .then((r) => r.ok ? r.json() : { allowed: true, used: 0, limit: 0, trial: null })
         .catch((err) => { logError('[practice] usage check', err); return { allowed: true, used: 0, limit: 0, trial: null }; }),
       fetch('/api/topics').then((r) => { if (!r.ok) throw new Error('Topics fetch failed'); return r.json(); }),
-      // First question from the adaptive engine
-      fetch(`/api/questions/next?topicId=${topicId}${subTopicParam ? `&subTopic=${encodeURIComponent(subTopicParam)}` : ''}`)
-        .then((r) => { if (!r.ok) throw new Error('fetch failed'); return r.json() as Promise<Question>; }),
+      loadFirst(),
     ])
-      .then(([usageData, topics, firstQ]: [{ allowed: boolean; used: number; limit: number; trial: TrialStatus | null }, Array<{ id: string; name: string }>, Question]) => {
+      .then(([usageData, topics, first]: [{ allowed: boolean; used: number; limit: number; trial: TrialStatus | null }, Array<{ id: string; name: string }>, { q: Question; linked: boolean }]) => {
+        const firstQ = first.q;
         const t = topics.find((x) => x.id === topicId);
         setTopicName(t?.name ?? topicId);
         setUsageInfo({ used: usageData.used, limit: usageData.limit });
@@ -656,7 +715,17 @@ export default function PracticePage() {
           return;
         }
         setQuestions([firstQ]);
-        setPhase('intro');
+        if (first.linked) {
+          // The child asked Sparky to explain this one: no intro screen, straight
+          // to the question with its lesson playing. The lesson shows the whole
+          // solution, so it counts as the strongest hint, exactly as when
+          // "Explain it to me" is taken before answering in the working space.
+          tookLessonBeforeAnswer();
+          setLinked('lesson');
+          setPhase('answering');
+        } else {
+          setPhase('intro');
+        }
         // Immediately prefetch the second question
         prefetchNext();
       })
@@ -705,6 +774,8 @@ export default function PracticePage() {
     setBonusQuestion(null);
     setBonusSelected(null);
     bonusOriginRef.current = null;
+    // Moving on from the explained question: an ordinary session from here.
+    setLinked('off');
 
     if (isReviewing) {
       const nextRev = reviewIndex + 1;
@@ -1120,6 +1191,7 @@ export default function PracticePage() {
     bonusServedRef.current = 0;
     bonusCountByOriginRef.current.clear();
     bonusOriginRef.current = null;
+    setLinked('off');
     setSpeedTimedOut(false);
     setSpeedRemaining(SPEED_DRILL_MS);
     if (speedTimerRef.current) { clearInterval(speedTimerRef.current); speedTimerRef.current = null; }
@@ -1540,6 +1612,35 @@ export default function PracticePage() {
         }`}
       >
         {tutorStrip}
+
+        {/* After the lesson from a `teach` link: a similar question is offered first.
+            The explained question stays below for a child who would rather answer it. */}
+        {linked === 'after' && phase === 'answering' && (
+          <div className="bg-hint border-2 border-ink rounded-card px-4 py-3 space-y-3" role="group" aria-label="Your turn">
+            <p className="text-[16px] font-extrabold text-ink leading-snug">
+              <span aria-hidden="true">🌟</span> Now it&apos;s your turn!
+            </p>
+            <p className="text-[15px] font-semibold text-ink leading-relaxed">
+              Try a question just like the one Sparky explained, or have a go at this one below.
+            </p>
+            <button
+              type="button"
+              onClick={() => requestBonus(currentQuestion, false)}
+              disabled={bonusMode !== 'off'}
+              className="ui-btn ui-btn-primary w-full"
+            >
+              Try one like it <span aria-hidden="true">→</span>
+            </button>
+            <div className="flex flex-col sm:flex-row gap-2">
+              <button type="button" onClick={() => setLinked('lesson')} className="ui-btn flex-1 text-sm">
+                <span aria-hidden="true">🎓</span> Watch it again
+              </button>
+              <button type="button" onClick={handleGotIt} className="ui-btn flex-1 text-sm">
+                Next question <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Question label with color accent */}
         <div className={`inline-flex items-center gap-2 text-[13px] font-extrabold px-3 py-1 rounded-full border-2 ${accentCls}`}>
@@ -1987,6 +2088,31 @@ export default function PracticePage() {
               onClose={() => setShowTeach(false)}
               closeLabel="Back to the question"
               fallback={<StepPlayer question={shownQuestion} />}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* ── The lesson from a `teach` link (every screen size) ──
+          The session opened on a question the child asked Sparky to explain, so
+          the lesson is already playing over it. Closing it (the cross, Escape, or
+          the button at its end) brings up the offer of a similar question. The
+          lesson only exists while this is open, so closing it stops the voice. */}
+      {linked === 'lesson' && phase === 'answering' && (
+        <div
+          className="fixed inset-0 z-[95] flex flex-col justify-end lg:justify-center"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Explain it to me"
+        >
+          <div className="absolute inset-0 bg-ink/60" aria-hidden="true" />
+          <div className="relative w-full max-w-lg mx-auto h-[94vh] overflow-y-auto bg-white rounded-t-card border-2 border-b-0 border-ink px-4 pt-3 pb-8 animate-slide-up lg:max-w-2xl lg:h-auto lg:max-h-[92vh] lg:rounded-card lg:border-b-2">
+            <TeachPlayer
+              key={currentQuestion.id}
+              questionId={currentQuestion.id}
+              onClose={() => setLinked('after')}
+              closeLabel="Now let me try"
+              fallback={<StepPlayer question={currentQuestion} />}
             />
           </div>
         </div>

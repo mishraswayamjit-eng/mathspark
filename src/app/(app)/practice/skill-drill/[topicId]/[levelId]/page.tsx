@@ -14,6 +14,7 @@ import type { Question, AnswerKey, StepItem } from '@/types';
 import { logError } from '@/lib/logger';
 import { publishScreenContext, clearScreenContext } from '@/lib/sparkyContext';
 import { logContentView } from '@/lib/contentView';
+import { availableDrillLevels, isDrillLevelOpen, type DrillLevelProgress } from '@/lib/drillUnlock';
 import SkillDrillLevelSkeleton from '../SkillDrillLevelSkeleton';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -78,11 +79,7 @@ interface LevelMeta {
 
 // ── Progress helpers ──────────────────────────────────────────────────────────
 
-interface LevelProgress {
-  bestScore: number;
-  sessions: Record<string, number>;
-  unlocked: boolean;
-}
+type LevelProgress = DrillLevelProgress;
 
 type DrillProgressMap = Record<string, Record<string, LevelProgress>>;
 
@@ -316,8 +313,14 @@ export default function SkillDrillSessionPage() {
   useEffect(() => () => clearScreenContext(), []);
 
   // ── Level navigation ─────────────────────────────────────────────────────────
+  // The levels this child is shown (made for their grade, with sessions). "Next"
+  // and "previous" mean the neighbours in that list, and whether a level is open
+  // is decided in src/lib/drillUnlock.ts, the same rule the hub uses.
   const allLevels = ['L1', 'L2', 'L3', 'L4', 'L5'];
-  const currentLevelIdx = allLevels.indexOf(levelId);
+  const availableLevels = availableDrillLevels(topicInfo ? topicInfo.levels : null);
+  const shownIdx = availableLevels.indexOf(levelId);
+  const prevLevel = shownIdx > 0 ? availableLevels[shownIdx - 1] : null;
+  const nextLevel = shownIdx >= 0 && shownIdx < availableLevels.length - 1 ? availableLevels[shownIdx + 1] : null;
 
   // ── Render ───────────────────────────────────────────────────────────────────
 
@@ -453,12 +456,12 @@ export default function SkillDrillSessionPage() {
           >
             Back to Sessions
           </button>
-          {score >= 8 && currentLevelIdx < 4 && (
+          {score >= 8 && nextLevel && (
             <Link
-              href={`/practice/skill-drill/${topicId}/${allLevels[currentLevelIdx + 1]}`}
+              href={`/practice/skill-drill/${topicId}/${nextLevel}`}
               className="ui-btn w-full bg-star text-center"
             >
-              {levelMeta[allLevels[currentLevelIdx + 1]]?.emoji} Next Level →
+              {levelMeta[nextLevel]?.emoji} Next Level →
             </Link>
           )}
         </div>
@@ -603,7 +606,7 @@ export default function SkillDrillSessionPage() {
   // ── SESSIONS LIST PHASE ──────────────────────────────────────────────────────
   const topicProgress = progress[topicId] ?? {};
   const levelProgress = topicProgress[levelId];
-  const isUnlocked = levelId === 'L1' || (levelProgress && levelProgress.unlocked);
+  const isUnlocked = isDrillLevelOpen(levelId, availableLevels, topicProgress);
 
   return (
     <div className="min-h-screen bg-paper pb-24">
@@ -629,8 +632,7 @@ export default function SkillDrillSessionPage() {
             if (!li || li.sessionsAvailable === 0) return null;
             const lm = levelMeta[lvl];
             const isActive = lvl === levelId;
-            const tp = topicProgress[lvl];
-            const unlocked = lvl === 'L1' || (tp && tp.unlocked);
+            const unlocked = isDrillLevelOpen(lvl, availableLevels, topicProgress);
 
             return (
               <Link
@@ -661,12 +663,12 @@ export default function SkillDrillSessionPage() {
             <p className="text-sm font-semibold text-ink-muted text-center max-w-xs">
               Score 8/10 or higher on the previous level to unlock {ll?.label}!
             </p>
-            {currentLevelIdx > 0 && (
+            {prevLevel && (
               <Link
-                href={`/practice/skill-drill/${topicId}/${allLevels[currentLevelIdx - 1]}`}
+                href={`/practice/skill-drill/${topicId}/${prevLevel}`}
                 className="ui-btn ui-btn-primary px-6"
               >
-                Go to {levelMeta[allLevels[currentLevelIdx - 1]]?.label} →
+                Go to {levelMeta[prevLevel]?.label} →
               </Link>
             )}
           </div>

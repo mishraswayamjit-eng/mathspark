@@ -1,0 +1,47 @@
+name: Unit Tests
+
+# Runs the Vitest unit tests (src/**/*.test.ts). They are pure logic tests:
+# the database is mocked (src/lib/__mocks__/db.ts) or never queried, so no
+# secrets and no database are needed.
+
+on:
+  push:
+    branches: [main, ipm-frontend-port]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: unit-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    env:
+      # Not a real database and not a secret. A few tests import modules that
+      # create a Prisma client when loaded; none of them runs a query, so this
+      # address is never connected to.
+      DATABASE_URL: postgresql://localhost:5432/unit_tests_never_connects
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Same Node version as e2e.yml, and like it no dependency cache: the
+      # repository has no package-lock.json for a cache (or `npm ci`) to use.
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # The postinstall script runs `prisma generate`, which the tests that
+      # import the real Prisma client need. It does not contact a database.
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run unit tests
+        run: npm test

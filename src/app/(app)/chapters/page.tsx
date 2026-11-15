@@ -13,6 +13,7 @@ import { getTopicsForGrade, type TopicNode } from '@/data/topicTree';
 import { TOPIC_ORDER } from '@/lib/sharedUtils';
 import SkillPath from '@/components/chapters/SkillPath';
 import ChaptersSkeleton from './ChaptersSkeleton';
+import { useStudent } from '@/components/shell/StudentProvider';
 
 // ── Topic metadata ─────────────────────────────────────────────────────────────
 
@@ -74,12 +75,12 @@ export default function ChaptersPage() {
   const [fetchError,    setFetchError]    = useState(false);
   const [hearts,        setHearts]        = useState(5);
   const [nudge,         setNudge]         = useState<Nudge | null>(null);
-  // Read from localStorage immediately to avoid Grade 4 flash for non-Grade-4 students
-  const [selectedGrade, setSelectedGrade] = useState<number>(() => {
-    if (typeof window === 'undefined') return 4;
-    const stored = parseInt(localStorage.getItem('mathspark_student_grade') ?? '4', 10);
-    return stored >= 2 && stored <= 9 ? stored : 4;
-  });
+  // Start on the child's own grade, from the student the app shell loaded on the
+  // server: the same on the server and in the browser, so no Grade 4 flash.
+  const { student: shellStudent } = useStudent();
+  const [selectedGrade, setSelectedGrade] = useState<number>(
+    shellStudent && shellStudent.grade >= 2 && shellStudent.grade <= 9 ? shellStudent.grade : 4,
+  );
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const [lockedGradeTarget, setLockedGradeTarget] = useState<number | null>(null);
   const gradeTabsRef = useRef<HTMLDivElement>(null);

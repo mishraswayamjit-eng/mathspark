@@ -14,6 +14,20 @@ function makeQuestion(id: string, difficulty: string, source = 'auto_generated',
   return { id, topicId: 'ch11', subTopic, difficulty, source };
 }
 
+/**
+ * For tests that call getNextQuestion many times. Each call reads attempts
+ * twice (the session, then the misconception-tagged ones), so a queue of two
+ * `mockResolvedValueOnce` values only covers the FIRST call: every later call
+ * got `undefined` and threw. This answers every call, telling the two reads
+ * apart by their `where`.
+ */
+function mockAttemptReads(session: Array<{ questionId: string; isCorrect: boolean }>) {
+  prisma.attempt.findMany.mockImplementation(
+    (args?: { where?: { misconceptionType?: unknown } }) =>
+      Promise.resolve(args && args.where && args.where.misconceptionType ? [] : session),
+  );
+}
+
 describe('getNextQuestion', () => {
   it('returns a question from the pool', async () => {
     prisma.question.findMany.mockResolvedValue([
@@ -38,9 +52,7 @@ describe('getNextQuestion', () => {
       makeQuestion('q4', 'Medium'),
     ];
     prisma.question.findMany.mockResolvedValue(questions);
-    prisma.attempt.findMany
-      .mockResolvedValueOnce([])
-      .mockResolvedValueOnce([]);
+    mockAttemptReads([]);
     prisma.progress.findUnique.mockResolvedValue(null);
 
     // Run multiple times to verify trend
@@ -61,9 +73,7 @@ describe('getNextQuestion', () => {
       makeQuestion('q4', 'Hard'),
     ];
     prisma.question.findMany.mockResolvedValue(questions);
-    prisma.attempt.findMany
-      .mockResolvedValueOnce([])
-      .mockResolvedValueOnce([]);
+    mockAttemptReads([]);
     prisma.progress.findUnique.mockResolvedValue({ mastery: 'Mastered' });
 
     let hardCount = 0;
@@ -93,9 +103,7 @@ describe('getNextQuestion', () => {
       makeQuestion('q1', 'Easy', 'auto_generated'),
       makeQuestion('q2', 'Easy', 'hand_crafted'),
     ]);
-    prisma.attempt.findMany
-      .mockResolvedValueOnce([])
-      .mockResolvedValueOnce([]);
+    mockAttemptReads([]);
     prisma.progress.findUnique.mockResolvedValue(null);
 
     let handCraftedCount = 0;
@@ -126,13 +134,11 @@ describe('getNextQuestion', () => {
       makeQuestion('q2', 'Medium'),
       makeQuestion('q3', 'Hard'),
     ]);
-    prisma.attempt.findMany
-      .mockResolvedValueOnce([
-        { questionId: 'a', isCorrect: false },
-        { questionId: 'b', isCorrect: false },
-        { questionId: 'c', isCorrect: false },
-      ])
-      .mockResolvedValueOnce([]);
+    mockAttemptReads([
+      { questionId: 'a', isCorrect: false },
+      { questionId: 'b', isCorrect: false },
+      { questionId: 'c', isCorrect: false },
+    ]);
     prisma.progress.findUnique.mockResolvedValue({ mastery: 'Practicing' });
 
     let easyCount = 0;
@@ -175,15 +181,13 @@ describe('getNextQuestion', () => {
       makeQuestion('q2', 'Medium'),
       makeQuestion('q3', 'Hard'),
     ]);
-    prisma.attempt.findMany
-      .mockResolvedValueOnce([
-        { questionId: 'a', isCorrect: true },
-        { questionId: 'b', isCorrect: true },
-        { questionId: 'c', isCorrect: true },
-        { questionId: 'd', isCorrect: true },
-        { questionId: 'e', isCorrect: true },
-      ])
-      .mockResolvedValueOnce([]);
+    mockAttemptReads([
+      { questionId: 'a', isCorrect: true },
+      { questionId: 'b', isCorrect: true },
+      { questionId: 'c', isCorrect: true },
+      { questionId: 'd', isCorrect: true },
+      { questionId: 'e', isCorrect: true },
+    ]);
     prisma.progress.findUnique.mockResolvedValue({ mastery: 'Practicing' });
 
     let hardCount = 0;
