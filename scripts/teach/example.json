@@ -1,0 +1,62 @@
+{
+  "VAR_EXT_G5_WS_B7_024_04": {
+    "origin": "authored",
+    "check": { "variable": "x", "value": "4" },
+    "beats": [
+      {
+        "say": "Here is our equation. 4 x, minus 11, equals 5. Somewhere behind that x a number is hiding, and we are going to find it.",
+        "board": [{ "op": "write", "id": "l1", "text": "4x − 11 = 5", "tone": "given" }]
+      },
+      {
+        "say": "Think of the equals sign as a balance. Whatever we do to one side, we do to the other. So, what is in the way of the 4 x?",
+        "ask": {
+          "kind": "choose",
+          "choices": ["the − 11", "the 5", "the 4"],
+          "answer": 0,
+          "ifNot": "Look at the left side once more. The 4 x has a minus 11 hanging on to it. That is the first thing to clear away."
+        }
+      },
+      {
+        "say": "To undo minus 11, we add 11. And to keep the balance level, we add it to both sides.",
+        "board": [
+          { "op": "strike", "line": "l1", "target": { "text": "− 11" }, "note": "+ 11" },
+          { "op": "both", "line": "l1", "text": "+ 11" }
+        ]
+      },
+      {
+        "say": "On the left, minus 11 and plus 11 cancel each other out. On the right, 5 plus 11 makes 16.",
+        "board": [
+          { "op": "write", "id": "l2", "text": "4x = 5 + 11" },
+          { "op": "write", "id": "l3", "text": "4x = 16" }
+        ]
+      },
+      {
+        "say": "Nearly there. 4 x means 4 times x. What undoes times 4?",
+        "ask": {
+          "kind": "choose",
+          "choices": ["divide by 4", "subtract 4", "multiply by 4"],
+          "answer": 0,
+          "ifNot": "Times and divide are partners. Whatever times does, divide undoes. So to undo times 4, we divide by 4."
+        }
+      },
+      {
+        "say": "So we divide both sides by 4.",
+        "board": [{ "op": "divide", "line": "l3", "by": "4" }]
+      },
+      {
+        "say": "16 divided by 4 is 4. So x equals 4. There is our hidden number!",
+        "board": [
+          { "op": "write", "id": "l4", "text": "x = 4", "tone": "answer" },
+          { "op": "mark", "line": "l4", "target": { "text": "x = 4" }, "shape": "circle" }
+        ]
+      },
+      {
+        "say": "Good mathematicians always check. Put 4 back in place of x. 4 times 4 is 16, and 16 minus 11 is 5. It works.",
+        "board": [{ "op": "write", "id": "l5", "text": "4 × 4 − 11 = 5" }]
+      },
+      {
+        "say": "So here is the plan for any equation like this. First clear away what is added or taken off. Then undo the times. Your turn next!"
+      }
+    ]
+  }
+}

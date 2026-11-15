@@ -141,6 +141,19 @@ stays deterministic. Specifically:
   Its prompt lives in `src/lib/llm/tutorPrompt.ts`; child-safety boundaries there
   (age-appropriate, no personal details, trusted-adult handoff) are not optional.
 
+- **Teach mode and the tutor's voice (owner decision, Nov 2026).** "Explain it to me"
+  lessons (`src/lib/teach/`, `data/teach/`) are written offline and checked by
+  `scripts/teach/validate.py`: every line of maths on the board must be true and the
+  lesson must end on the keyed answer. No model is called when a lesson plays. The
+  tutor's spoken reactions (`src/lib/tutor/reactions.ts`) are deterministic.
+- **Live board coach (`/api/coach/board`) (owner decision, Nov 2026).** When a child
+  pauses while working on the pencil pad, a vision model may look at the pad and
+  return one or two spoken sentences on what to do next. It is coaching only: it is
+  grounded on the question's verified steps, never states the final answer on an
+  open question, never decides whether an answer is right, and feeds nothing into
+  XP, mastery or grading. Kill switch: `AI_BOARD_COACH=off`. Not available during
+  mock tests.
+
 All LLM usage goes through the single `src/lib/llm/` seam and degrades gracefully
 (static fallback) when `ANTHROPIC_API_KEY` is unset.
 

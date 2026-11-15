@@ -27,6 +27,12 @@ const PEN_WIDTH = 3;
 interface ScratchPadProps {
   /** Changing this wipes the pad. Pass the question id. */
   resetKey: string;
+  /**
+   * Turns on the live coach for this question: when the child pauses, the
+   * tutor looks at what is on the pad and says what to do next. Leave out
+   * wherever help is not allowed (a test in progress).
+   */
+  coachFor?: { questionId: string };
   /** Extra classes for the outer element. */
   className?: string;
 }
