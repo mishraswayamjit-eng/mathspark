@@ -1,5 +1,6 @@
 {
   "buildCommand": "prisma generate && prisma db push --accept-data-loss && next build",
+  "regions": ["sin1"],
   "functions": {
     "src/app/api/seed/route.ts":                          { "maxDuration": 60 },
     "src/app/api/seed-test/route.ts":                     { "maxDuration": 60 },
