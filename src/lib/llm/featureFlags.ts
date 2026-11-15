@@ -72,3 +72,16 @@ export function isAiTextbookServeEnabled(): boolean {
 export function isEqualSurfacingEnabled(): boolean {
   return flag('EQUAL_SURFACING');
 }
+
+/**
+ * Live board coach (`/api/coach/board`): a vision model glances at the pencil
+ * pad when a child pauses and says what to do next. Defaults to ON (opt-out),
+ * as the owner decided; set `AI_BOARD_COACH=off` to switch it off at once. The
+ * route answers 503 when it is off, and the pad goes quiet.
+ */
+export function isBoardCoachEnabled(): boolean {
+  const v = process.env.AI_BOARD_COACH;
+  if (v === undefined) return true; // default-on
+  const s = v.trim().toLowerCase();
+  return !(s === 'false' || s === '0' || s === 'off' || s === 'no');
+}

@@ -31,6 +31,20 @@ import { publishScreenContext, clearScreenContext, requestOpenSparky } from '@/l
 import FigureView from '@/components/figures/FigureView';
 import WorkPane from '@/components/figures/WorkPane';
 import StepPlayer, { hasSolutionSteps } from '@/components/figures/StepPlayer';
+import TeachPlayer from '@/components/teach/TeachPlayer';
+import { useTeachAvailable } from '@/components/teach/player/useTeachAvailable';
+import { useTutorVoice } from '@/hooks/useTutorVoice';
+import type { TutorEvent } from '@/lib/tutor/reactions';
+
+/** How long an open question can sit untouched before the tutor says something, once. */
+const IDLE_SECONDS = 40;
+
+/** The words of one option (A to D) of a question. */
+function optionText(q: Question, key: AnswerKey): string {
+  const idx = 'ABCD'.indexOf(key);
+  const text = idx >= 0 ? q[`option${idx + 1}` as keyof Question] : '';
+  return typeof text === 'string' ? text : '';
+}
 
 // ── Main component ────────────────────────────────────────────────────────────
 
@@ -130,6 +144,52 @@ export default function PracticePage() {
   const resultSheetRef = useRef<HTMLDivElement | null>(null);
   // Working space sheet (phones and tablets): hints and the pencil pad before answering
   const [showWork, setShowWork] = useState(false);
+  // "Explain it to me" sheet (phones and tablets, after answering; wide screens play the lesson in the side pane)
+  const [showTeach, setShowTeach] = useState(false);
+  const showTeachRef = useRef(false);
+  showTeachRef.current = showTeach;
+  // How many working panes have a lesson playing (0 or 1 in practice).
+  const [paneLessons, setPaneLessons] = useState(0);
+  const paneLessonsRef = useRef(0);
+  const onPaneLesson = useCallback((open: boolean) => {
+    paneLessonsRef.current = Math.max(0, paneLessonsRef.current + (open ? 1 : -1));
+    setPaneLessons(paneLessonsRef.current);
+  }, []);
+  // A lesson is on screen somewhere: the tutor keeps quiet meanwhile.
+  const lessonOpen = paneLessons > 0 || showTeach;
+
+  // ── The tutor's reactions ───────────────────────────────────────────────────
+  // One short line when a question appears, on a right answer, a miss, a hint,
+  // a long pause and the end of the session. Deterministic lines only: whether
+  // an answer is right is decided elsewhere and passed in.
+  const tutor = useTutorVoice();
+  const tutorRef = useRef(tutor);
+  tutorRef.current = tutor;
+  const [tutorCaption, setTutorCaption] = useState('');
+  const tutorTurnRef      = useRef(0);
+  const tutorNameRef      = useRef('');
+  const tutorTopicRef     = useRef('');
+  tutorNameRef.current  = shareInfo.studentName;
+  // The topic's name, not its id (the name falls back to the id when it is not found).
+  tutorTopicRef.current = topicName !== topicId ? topicName : '';
+  const tutorFirstRef     = useRef(true);
+  const questionShownAtRef = useRef(0);
+  const missesInARowRef   = useRef(0);
+  const idleSaidForRef    = useRef<string | null>(null);
+  const sessionEndSaidRef = useRef(false);
+  const tutorReact = useCallback((event: TutorEvent) => {
+    // Never over a lesson. (A new question always closes the lesson sheet.)
+    if (paneLessonsRef.current > 0) return;
+    if (showTeachRef.current && event.kind !== 'question') return;
+    tutorTurnRef.current += 1;
+    const line = tutorRef.current.react(event, {
+      name: tutorNameRef.current || undefined,
+      topicName: tutorTopicRef.current || undefined,
+      turn: tutorTurnRef.current,
+    });
+    // A new question clears the last line even when the tutor has nothing to say.
+    if (line || event.kind === 'question') setTutorCaption(line);
+  }, []);
   // True from the start of the review round until the lesson is restarted. The
   // phase alone cannot say this: answering a review question moves it to 'result'.
   const [inReview, setInReview] = useState(false);
@@ -373,7 +433,7 @@ export default function PracticePage() {
     // Pick a random answer that is NOT the correct one
     const wrongOptions = (['A', 'B', 'C', 'D'] as AnswerKey[]).filter((k) => k !== q.correctAnswer);
     const wrongKey = wrongOptions[Math.floor(Math.random() * wrongOptions.length)];
-    handleAnswer(wrongKey, false);
+    handleAnswer(wrongKey, false, true);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [speedTimedOut]);
 
@@ -431,7 +491,12 @@ export default function PracticePage() {
   // ── Step player sheet ───────────────────────────────────────────────────────
   // A different question on screen: put the sheet away.
   const shownQuestionId = shownQuestion ? shownQuestion.id : null;
-  useEffect(() => { setShowSteps(false); }, [shownQuestionId]);
+  useEffect(() => { setShowSteps(false); setShowTeach(false); }, [shownQuestionId]);
+
+  // Does the question on screen have an "Explain it to me" lesson? One light
+  // call per question (yes or no, never the lesson itself); the working pane
+  // asks the same thing and shares the answer.
+  const teachAvailable = useTeachAvailable(shownQuestionId) === 'yes';
 
   // The working space sheet is for before answering: put it away for a new
   // question and as soon as this one is answered (a speed drill can time out under it).
@@ -440,13 +505,74 @@ export default function PracticePage() {
 
   // Escape closes whichever sheet is open.
   useEffect(() => {
-    if (!showSteps && !showWork) return;
+    if (!showSteps && !showWork && !showTeach) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') { setShowSteps(false); setShowWork(false); }
+      if (e.key === 'Escape') { setShowSteps(false); setShowWork(false); setShowTeach(false); }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [showSteps, showWork]);
+  }, [showSteps, showWork, showTeach]);
+
+  // ── The tutor reacts ────────────────────────────────────────────────────────
+  // A question appears.
+  useEffect(() => {
+    if (!shownQuestionId || shownAnswered) return;
+    questionShownAtRef.current = Date.now();
+    const first = tutorFirstRef.current;
+    tutorFirstRef.current = false;
+    tutorReact({ kind: 'question', first });
+  }, [shownQuestionId, shownAnswered, tutorReact]);
+
+  // A long pause on an open question: one nudge per question, after about 40
+  // seconds with no tap or key press. Not while a lesson plays. And not once
+  // the child has started writing on the pencil pad (a canvas): from then on
+  // the board coach is the one who speaks about a pause, so the two never
+  // talk over each other.
+  useEffect(() => {
+    if (!shownQuestionId || shownAnswered || lessonOpen) return;
+    if (idleSaidForRef.current === shownQuestionId) return;
+    const id = shownQuestionId;
+    let timer: ReturnType<typeof setTimeout> | null = null;
+    const arm = (e?: Event) => {
+      if (timer) clearTimeout(timer);
+      timer = null;
+      const target = e && e.type === 'pointerdown' ? (e.target as HTMLElement | null) : null;
+      if (target && target.tagName === 'CANVAS') idleSaidForRef.current = id;
+      if (idleSaidForRef.current === id) return;
+      timer = setTimeout(() => {
+        timer = null;
+        idleSaidForRef.current = id;
+        tutorReact({ kind: 'idle', seconds: IDLE_SECONDS });
+      }, IDLE_SECONDS * 1000);
+    };
+    window.addEventListener('pointerdown', arm);
+    window.addEventListener('keydown', arm);
+    arm();
+    return () => {
+      if (timer) clearTimeout(timer);
+      window.removeEventListener('pointerdown', arm);
+      window.removeEventListener('keydown', arm);
+    };
+  }, [shownQuestionId, shownAnswered, lessonOpen, tutorReact]);
+
+  // The session ends (the lesson is finished, or the hearts have run out).
+  useEffect(() => {
+    if (phase === 'answering' || phase === 'reviewing') sessionEndSaidRef.current = false;
+    if (phase !== 'complete' && phase !== 'no_hearts') return;
+    if (sessionEndSaidRef.current) return;
+    sessionEndSaidRef.current = true;
+    const all = results.concat(reviewResults);
+    let right = 0;
+    for (let i = 0; i < all.length; i++) {
+      if (all[i].wasCorrect) right += 1;
+    }
+    tutorReact({ kind: 'sessionEnd', correct: right, total: all.length });
+  }, [phase, results, reviewResults, tutorReact]);
+
+  // A lesson opens: the tutor stops talking at once.
+  useEffect(() => {
+    if (lessonOpen) tutorRef.current.stop();
+  }, [lessonOpen]);
 
   // Wide screens: the result panel sits in the page under the options, so bring it into view.
   useEffect(() => {
@@ -615,7 +741,8 @@ export default function PracticePage() {
   }, [isReviewing, reviewIndex, qIndex, fetchOneAdaptive]);
 
   // ── Handle answer ──────────────────────────────────────────────────────────
-  function handleAnswer(key: AnswerKey, correct: boolean) {
+  // `timedOut` is set when a speed drill ran out of time and no option was really chosen.
+  function handleAnswer(key: AnswerKey, correct: boolean, timedOut?: boolean) {
     if (!currentQuestion) return;
     setSelected(key);
     setLastCorrect(correct);
@@ -680,6 +807,27 @@ export default function PracticePage() {
     const misconceptionKey  = `misconception${key}` as keyof Question;
     const misconceptionType = !correct ? ((currentQuestion[misconceptionKey] as string) || null) : null;
 
+    // The tutor reacts in one short line. It is told the outcome; it never decides it.
+    if (correct) {
+      missesInARowRef.current = 0;
+      tutorReact({
+        kind: 'correct',
+        streak: newStreak,
+        usedHint: hintUsed || hintLevel > 0,
+        secondsTaken: secondsOnQuestion(),
+      });
+    } else {
+      missesInARowRef.current += 1;
+      // No option was really chosen when the time ran out, or on a tap, drag or build question.
+      const reallyChose = !timedOut && !currentQuestion.interactionType;
+      tutorReact({
+        kind: 'miss',
+        chosenText: reallyChose ? optionText(currentQuestion, key) : '',
+        misconception: reallyChose && misconceptionType ? misconceptionType : undefined,
+        missesInARow: missesInARowRef.current,
+      });
+    }
+
     // Record attempt (offline-aware); show XP float only when server confirms XP was awarded
     if (studentId) {
       submitAttempt(
@@ -729,6 +877,39 @@ export default function PracticePage() {
 
   function handleGotIt() {
     advance(hearts);
+  }
+
+  /** Whole seconds since the question on screen appeared. */
+  function secondsOnQuestion(): number {
+    if (!questionShownAtRef.current) return 0;
+    return Math.max(0, Math.round((Date.now() - questionShownAtRef.current) / 1000));
+  }
+
+  // A hint is opened (main question / bonus question): the same state as before, and the tutor says a line.
+  function openHint(n: number) {
+    setHintLevel(n);
+    setHintUsed(true);
+    tutorReact({ kind: 'hint', level: n });
+  }
+
+  function openBonusHint(n: number) {
+    setBonusHintLevel(n);
+    setBonusHintUsed(true);
+    tutorReact({ kind: 'hint', level: n });
+  }
+
+  // "Explain it to me" taken before answering. The lesson shows the whole
+  // solution, so it counts like "show me how": the hint is marked as used at
+  // the highest level (no heart is lost on a later miss). Nothing else changes
+  // in what is sent to the server. The tutor says nothing: the lesson is about to talk.
+  function tookLessonBeforeAnswer() {
+    setHintLevel(3);
+    setHintUsed(true);
+  }
+
+  function tookBonusLessonBeforeAnswer() {
+    setBonusHintLevel(3);
+    setBonusHintUsed(true);
   }
 
   // Reading the steps or using the working space after a right answer: stay on
@@ -817,6 +998,26 @@ export default function PracticePage() {
 
     if (correct) playCorrect(); else { playWrong(); setBonusHintLevel((l) => Math.max(l, 1)); }
 
+    // The tutor reacts in one short line, as on a main question.
+    if (correct) {
+      missesInARowRef.current = 0;
+      tutorReact({
+        kind: 'correct',
+        streak: newStreak,
+        usedHint: bonusHintUsed || bonusHintLevel > 0,
+        secondsTaken: secondsOnQuestion(),
+      });
+    } else {
+      missesInARowRef.current += 1;
+      const bonusNote = bonusQuestion[`misconception${key}` as keyof Question];
+      tutorReact({
+        kind: 'miss',
+        chosenText: optionText(bonusQuestion, key),
+        misconception: typeof bonusNote === 'string' && bonusNote ? bonusNote : undefined,
+        missesInARow: missesInARowRef.current,
+      });
+    }
+
     // Track bonus questions toward trial count
     sessionQuestionsAnsweredRef.current += 1;
     setSessionQuestionsAnswered(sessionQuestionsAnsweredRef.current);
@@ -887,6 +1088,7 @@ export default function PracticePage() {
     isFetchingRef.current    = false;
     isAdvancingRef.current   = false;
     seenQuestionIdsRef.current = new Set();
+    missesInARowRef.current = 0;
 
     setPhase('loading');
     fetchOneAdaptive().then((q) => {
@@ -1179,6 +1381,29 @@ export default function PracticePage() {
   const mainFigure  = currentQuestion.visual && currentQuestion.visual.figure ? currentQuestion.visual.figure : null;
   const bonusFigure = bonusQuestion && bonusQuestion.visual && bonusQuestion.visual.figure ? bonusQuestion.visual.figure : null;
 
+  // The tutor's last line beside a small Sparky, and the switch for the tutor's voice.
+  // The line shows whether or not the voice is on.
+  const tutorStrip = (
+    <div className="flex items-center gap-2">
+      <div className="flex-shrink-0" aria-hidden="true">
+        <Sparky mood={tutor.speaking ? 'happy' : 'thinking'} size={36} />
+      </div>
+      <p className="flex-1 min-w-0 text-[14px] font-bold text-ink leading-snug [overflow-wrap:anywhere]" aria-live="polite">
+        {tutorCaption}
+      </p>
+      <button
+        type="button"
+        role="switch"
+        aria-checked={tutor.enabled}
+        onClick={() => tutor.setEnabled(!tutor.enabled)}
+        className="flex-shrink-0 min-h-[48px] px-3 rounded-control border-2 border-line bg-white text-ink font-extrabold text-[13px] flex items-center gap-1.5 hover:border-ink transition-colors"
+      >
+        <span aria-hidden="true">{tutor.enabled ? '🗣️' : '🤫'}</span>
+        <span>Sparky&apos;s voice: {tutor.enabled ? 'on' : 'off'}</span>
+      </button>
+    </div>
+  );
+
   return (
     // Phones and tablets: the usual single column. Wide screens: the question
     // screen breaks out of the narrow app column (32rem) to 60rem, in two panels.
@@ -1274,6 +1499,8 @@ export default function PracticePage() {
           phase === 'result' ? 'pb-[72vh]' : 'pb-20'
         }`}
       >
+        {tutorStrip}
+
         {/* Question label with color accent */}
         <div className={`inline-flex items-center gap-2 text-[13px] font-extrabold px-3 py-1 rounded-full border-2 ${accentCls}`}>
           {isReviewing
@@ -1324,15 +1551,27 @@ export default function PracticePage() {
           }`}
         >
           {/* Phones and tablets: the steps open in a sheet. Wide screens have them in the side pane. */}
-          {hasSolutionSteps(currentQuestion) && (
-            <div className="lg:hidden px-4 pt-4">
-              <button
-                type="button"
-                onClick={() => { pauseAutoAdvance(); setShowSteps(true); }}
-                className="ui-btn w-full text-sm"
-              >
-                <span aria-hidden="true">📖</span> See the steps
-              </button>
+          {/* "Explain it to me" sits beside it when this question has a lesson. */}
+          {(teachAvailable || hasSolutionSteps(currentQuestion)) && (
+            <div className="lg:hidden px-4 pt-4 flex gap-2">
+              {teachAvailable && (
+                <button
+                  type="button"
+                  onClick={() => { pauseAutoAdvance(); setShowTeach(true); }}
+                  className="ui-btn ui-btn-primary flex-1 text-sm"
+                >
+                  <span aria-hidden="true">🎓</span> Explain it to me
+                </button>
+              )}
+              {hasSolutionSteps(currentQuestion) && (
+                <button
+                  type="button"
+                  onClick={() => { pauseAutoAdvance(); setShowSteps(true); }}
+                  className="ui-btn flex-1 text-sm"
+                >
+                  <span aria-hidden="true">📖</span> See the steps
+                </button>
+              )}
             </div>
           )}
           {lastCorrect ? (
@@ -1361,7 +1600,7 @@ export default function PracticePage() {
               selected={selected}
               onGotIt={handleGotIt}
               hintLevel={hintLevel}
-              onHintLevelUp={(n) => { setHintLevel(n); setHintUsed(true); }}
+              onHintLevelUp={openHint}
               onWatchSolution={() => setShowWalkthrough(true)}
               onTrySimilar={() => requestBonus(currentQuestion, false)}
               canTrySimilar={bonusMode === 'off'}
@@ -1372,7 +1611,8 @@ export default function PracticePage() {
       )}
       </div>
 
-      {/* ── Working pane (wide screens) ── */}
+      {/* ── Working pane (wide screens) ──
+          `active` goes false while a bonus question or the walkthrough covers it, so a lesson here stops. */}
       <aside
         className="hidden lg:block lg:sticky lg:top-[84px] lg:max-h-[calc(100vh-164px)] lg:overflow-y-auto bg-white border-2 border-line rounded-card p-4"
         onPointerDown={pauseAutoAdvance}
@@ -1384,7 +1624,10 @@ export default function PracticePage() {
           stage={phase === 'result' ? 'answered' : 'answering'}
           mode="practice"
           hintLevel={hintLevel}
-          onHintLevelUp={(n) => { setHintLevel(n); setHintUsed(true); }}
+          onHintLevelUp={openHint}
+          onLessonBeforeAnswer={tookLessonBeforeAnswer}
+          onLessonChange={onPaneLesson}
+          active={bonusMode === 'off' && !showWalkthrough}
         />
       </aside>
       </div>
@@ -1482,6 +1725,8 @@ export default function PracticePage() {
                   bonusMode === 'result' ? 'pb-[200px]' : 'pb-20'
                 }`}
               >
+                {tutorStrip}
+
                 {/* Bonus label */}
                 <div className="inline-flex items-center gap-2 text-xs font-extrabold px-3 py-1.5 rounded-full bg-hint text-hint-ink border-2 border-star">
                   ⭐ Bonus Question
@@ -1533,7 +1778,7 @@ export default function PracticePage() {
                       hint2={bonusQuestion.hint2}
                       hint3={bonusQuestion.hint3}
                       level={bonusHintLevel}
-                      onLevelUp={(n) => { setBonusHintLevel(n); setBonusHintUsed(true); }}
+                      onLevelUp={openBonusHint}
                       spoken={bonusQuestion.speech ? bonusQuestion.speech.hints : undefined}
                     />
                     <StepByStep steps={bonusQuestion.stepByStep} />
@@ -1559,6 +1804,15 @@ export default function PracticePage() {
                       <p className="text-ink text-xs font-bold">
                         ✅ {bonusQuestion.correctAnswer}: {bonusCorrectText}
                       </p>
+                    )}
+                    {teachAvailable && (
+                      <button
+                        type="button"
+                        onClick={() => setShowTeach(true)}
+                        className="lg:hidden w-full min-h-[48px] bg-action border-2 border-ink shadow-hard-sm text-white font-extrabold text-sm rounded-control flex items-center justify-center gap-2"
+                      >
+                        <span aria-hidden="true">🎓</span> Explain it to me
+                      </button>
                     )}
                     {hasSolutionSteps(bonusQuestion) && (
                       <button
@@ -1600,7 +1854,9 @@ export default function PracticePage() {
                   stage={bonusMode === 'result' ? 'answered' : 'answering'}
                   mode="practice"
                   hintLevel={bonusHintLevel}
-                  onHintLevelUp={(n) => { setBonusHintLevel(n); setBonusHintUsed(true); }}
+                  onHintLevelUp={openBonusHint}
+                  onLessonBeforeAnswer={tookBonusLessonBeforeAnswer}
+                  onLessonChange={onPaneLesson}
                 />
               </aside>
             </div>
@@ -1635,9 +1891,10 @@ export default function PracticePage() {
               stage="answering"
               mode="practice"
               hintLevel={bonusShown ? bonusHintLevel : hintLevel}
-              onHintLevelUp={bonusShown
-                ? (n) => { setBonusHintLevel(n); setBonusHintUsed(true); }
-                : (n) => { setHintLevel(n); setHintUsed(true); }}
+              onHintLevelUp={bonusShown ? openBonusHint : openHint}
+              onLessonBeforeAnswer={bonusShown ? tookBonusLessonBeforeAnswer : tookLessonBeforeAnswer}
+              onLessonChange={onPaneLesson}
+              active={showWork}
             />
           </div>
         </div>
@@ -1668,6 +1925,29 @@ export default function PracticePage() {
               </button>
             </div>
             <StepPlayer key={shownQuestion.id} question={shownQuestion} />
+          </div>
+        </div>
+      )}
+
+      {/* ── "Explain it to me" sheet (phones and tablets, after answering) ──
+          Full height, built like the steps sheet. The lesson only exists while the
+          sheet is open, so closing it stops the voice. */}
+      {showTeach && shownQuestion && shownAnswered && (
+        <div
+          className="lg:hidden fixed inset-0 z-[95] flex flex-col justify-end"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Explain it to me"
+        >
+          <div className="absolute inset-0 bg-ink/60" onClick={() => setShowTeach(false)} aria-hidden="true" />
+          <div className="relative w-full max-w-lg mx-auto h-[94vh] overflow-y-auto bg-white rounded-t-card border-2 border-b-0 border-ink px-4 pt-3 pb-8 animate-slide-up">
+            <TeachPlayer
+              key={shownQuestion.id}
+              questionId={shownQuestion.id}
+              onClose={() => setShowTeach(false)}
+              closeLabel="Back to the question"
+              fallback={<StepPlayer question={shownQuestion} />}
+            />
           </div>
         </div>
       )}
