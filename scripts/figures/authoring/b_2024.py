@@ -125,8 +125,10 @@ ENTRIES[P + "024"] = entry(
 ENTRIES[P + "002"] = entry(
     bars([bar([seg(10, "cost = 100%", "a"), seg(1, "10%", "b")], "Sold for", "Rs.440")], note="Price for a 17% profit = ?"),
     [
-        bars([bar([seg(10, "Rs.400", "a"), seg(1, "10%", "b")], "Sold for", "Rs.440")], hl=["b0s0"], note="110% is 440, so 1% is 4 and the cost is 400"),
-        bars([bar([seg(10, "Rs.400", "a"), seg(1.7, "17%", "c")], "New price", "Rs.468")], hl=["b0s1"], note="117 × 4 = 468"),
+        bars([bar([seg(10, "cost = 100%", "a"), seg(1, "10%", "b")], "Sold for", "Rs.440 = 110%")], hl=["b0"], note="Cost and profit together are 110% of the cost"),
+        bars([bar([seg(10, "Rs.400", "a"), seg(1, "10%", "b")], "Sold for", "Rs.440")], hl=["b0s0"], note="1% is 4, so the cost price is 400"),
+        bars([bar([seg(10, "Rs.400", "a"), seg(1.7, "17%", "c")], "New price", "117% of the cost")], hl=["b0s1"], note="117 × 4 = 468"),
+        bars([bar([seg(10, "Rs.400", "a"), seg(1.7, "17%", "c")], "New price", "Rs.468")], hl=["b0"]),
     ])
 
 # 017 Medha borrows 3500, repays 4340 after 3 years

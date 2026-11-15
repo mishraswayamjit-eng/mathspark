@@ -8,8 +8,8 @@ _f = lambda note, hl=None: fb([(8, 5)], note, hl)
 E["EXT_G5_WS_B7_001"] = entry(
     figure=_f("What fraction of the figure is NOT shaded?"),
     steps=[
-        _f("8 equal parts, 5 of them shaded"),
-        _f("8 − 5 = 3 parts are not shaded"),
+        _f("8 equal parts, so the bottom number is 8"),
+        _f("5 parts are shaded, so 8 − 5 = 3 are not shaded"),
         _f("Not shaded: 3 out of 8 = 3/8"),
     ],
     essential=True,
@@ -21,8 +21,9 @@ E["EXT_G5_WS_B7_008"] = entry(
     figure=nl(0, 2, 0.4, points=[(0, "0"), (0.8, "A"), (2, "2")],
               note="0 to 2 is cut into 5 equal parts. A is on the 2nd mark."),
     steps=[
-        _parts("Each part is 2 ÷ 5 = 2/5"),
-        _parts("A is 2 parts along: 2 × 2/5 = 4/5", ["b0s0", "b0s1"]),
+        _parts("Each part is 2 ÷ 5 = 2/5 long"),
+        _parts("A is on the 2nd mark: 2 parts away from 0", ["b0s0", "b0s1"]),
+        _parts("2/5 + 2/5 = 4/5", ["b0s0", "b0s1"]),
     ],
     essential=True,
 )
@@ -57,9 +58,10 @@ E["EXT_G5_WS_B6_022"] = entry(
 # Hour hand two-fifths of the way from 9 to 10 (the fraction is in words, so no before-figure).
 E["EXT_G5_WS_B7_027"] = entry(
     steps=[
-        fb([(5, 2, "from 9 to 10")], "2/5 of the hour has passed: 2/5 × 60 = 24 minutes"),
-        clock(9, 24, "The time is 9:24", ["minute"]),
         None,
+        None,
+        fb([(5, 2, "from 9 to 10")], "One fifth is 60 ÷ 5 = 12 minutes, so two fifths is 24"),
+        clock(9, 24, "24 minutes past 9 is 9:24", ["minute"]),
     ],
 )
 
@@ -83,17 +85,19 @@ E["EXT_G5_WS_B5_024"] = entry(
                 note="Boxes and pencils per box are the same number"),
     steps=[
         rect("n boxes", "n pencils each", "Total = n × n", square=True, note="The total must be a square number"),
-        rect("27 boxes", "27 pencils each", "27 × 27 = 729", square=True, hl=["fill"]),
         None,
+        None,
+        rect("27 boxes", "27 pencils each", "27 × 27 = 729", square=True, hl=["fill"]),
     ],
 )
 E["EXT_G5_WS_B5_025"] = entry(
     figure=rect("n groups", "n in each group", "n × n, at most 245", square=True,
                 note="Groups and students per group are the same number"),
     steps=[
-        rect("15 groups", "15 in each group", "15 × 15 = 225", square=True, note="The biggest square that fits in 245"),
-        rect("15 groups", "15 in each group", "225", square=True, note="245 − 225 = 20 students left out"),
-        None,
+        rect("n groups", "n in each group", "n × n", square=True, note="The students in groups make a square number"),
+        rect("15 groups", "15 in each group", "15 × 15 = 225", square=True, note="16 × 16 = 256 is too many, so 15 × 15 is the biggest"),
+        rect("15 groups", "15 in each group", "225 students", square=True, note="15 groups of 15 use 225 students", hl=["fill"]),
+        rect("15 groups", "15 in each group", "225 students", square=True, note="245 − 225 = 20 students left out"),
     ],
 )
 E["EXT_G5_WS_B5_026"] = entry(
@@ -109,7 +113,8 @@ E["EXT_G5_WS_B5_016"] = entry(
     figure=rect("36", "35", "35 × 36", note="How much more turns this into a square?"),
     steps=[
         rect("36", "35", "1260", note="35 × 36 = 1260"),
-        rect("36", "35", "1260", note="35 rows of 36: one row short of 36 × 36", hl=["breadth"]),
-        rect("36", "36", "1260 + 36 = 1296", square=True, note="Add one more row of 36", hl=["fill"]),
+        rect("36", "35", "1260", note="The next square number is 36 × 36 = 1296", hl=["breadth"]),
+        rect("36", "36", "1296 − 1260 = 36", square=True, note="One more row of 36 makes the square", hl=["fill"]),
+        None,
     ],
 )

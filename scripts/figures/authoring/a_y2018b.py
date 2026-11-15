@@ -24,11 +24,14 @@ VISUALS["EXT_G5_FP_2018_013"] = V(
          note="4/5 are adults; 3/8 of the adults are male. Male adults = ?"),
     [
         bars(bar(_ad + [seg("120 children", 1, "b")], brace="all visitors"),
-             hl=["b0s4"], note="Children are the other 1/5 of the visitors = 120"),
+             hl=["b0s4"], note="Adults are 4/5, so the children are the other 1/5"),
         bars(bar([seg("120", 1, "a") for _ in range(4)] + [seg("120", 1, "b")], brace="600 visitors"),
-             hl=["b0s0", "b0s1", "b0s2", "b0s3"], note="Visitors = 120 × 5 = 600; adults = 600 − 120 = 480"),
-        bars(bar([seg("male", 1, "c") for _ in range(3)] + [seg(None, 1, "a") for _ in range(5)], brace="480 adults"),
-             hl=["b0s0", "b0s1", "b0s2"], note="3/8 of 480 = 480 ÷ 8 × 3 = 180 male adults"),
+             hl=["b0"], note="One fifth is 120, so all five fifths are 5 × 120 = 600"),
+        bars(bar([seg("480 adults", 4, "a"), seg("120 children", 1, "b")], brace="600 visitors"),
+             hl=["b0s0"], note="Adults: 600 − 120 = 480"),
+        bars(bar([seg("60", 1, "c") for _ in range(3)] + [seg(None, 1, "a") for _ in range(5)], brace="480 adults"),
+             hl=["b0s0", "b0s1", "b0s2"], note="One eighth is 480 ÷ 8 = 60; three eighths are 3 × 60 = 180"),
+        None,
     ])
 
 # Interest on Rs.8000 at 6% for 2 years.
@@ -67,6 +70,7 @@ VISUALS["EXT_G5_FP_2018_025"] = V(
              hl=["b0"], note="One dozen gains 45 ÷ 15 = Rs.3"),
         bars(bar([seg("gain Rs.45", 5, "a")], label="15 dozens"), bar([seg("gain Rs.84", 9, "b")], label="28 dozens"),
              hl=["b1"], note="84 ÷ 3 = 28 dozens"),
+        None,
     ])
 
 # Rs.800 article at 20% discount.

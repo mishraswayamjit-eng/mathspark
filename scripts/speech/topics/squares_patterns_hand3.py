@@ -49,13 +49,15 @@ HAND = {
         ],
         "hints": [
             None,
-            "Pythagorean triples: 5, 12 and 13. Then 8, 15 and 17. Then 12, 35 and 37. And 13, 84 and 85.",
+            None,
+            "For example, is 6 squared plus 8 squared equal to 10 squared? 36 plus 64 equals 100, and 10 times 10 equals 100, so yes. Test each statement like this.",
         ],
         "steps": [
-            "Option A: 64 plus 144 equals 208, but 15 squared is 225. Not true.",
-            "Option B: 144 plus 1225 equals 1369, and 37 squared is 1369. True.",
-            "Option C: 121 plus 3481 equals 3602, but 60 squared is 3600. Not true.",
-            "Option D: 169 plus 7056 equals 7225, but 87 squared is 7569. Not true. 7225 is 85 squared.",
+            "8 squared plus 12 squared: 64 plus 144 equals 208, but 15 squared is 225. Not equal.",
+            "11 squared plus 59 squared: 121 plus 3481 equals 3602, but 60 squared is 3600. Not equal.",
+            "13 squared plus 84 squared: 169 plus 7056 equals 7225, but 87 squared is 7569. Not equal.",
+            "12 squared plus 35 squared: 144 plus 1225 equals 1369, and 37 squared is 37 times 37, which equals 1369. Equal.",
+            "So the true statement is 12 squared plus 35 squared equals 37 squared.",
         ],
     },
     "EXT_G5_FP_2025_013": {
@@ -102,7 +104,8 @@ HAND = {
         ],
         "hints": [
             None,
-            "The last digit of a square comes only from the last digit: 18 squared ends in 4, and 23 squared ends in 9. 4 plus 9 is 13, so the sum ends in 3.",
+            "Start with the smallest numbers: 7 squared is 49, and 11 squared is 121. Add them, and compare with 150. Then do the same for the other three statements.",
+            "For example, to test whether 5 squared plus 12 squared makes 169: 25 plus 144 equals 169, so that statement would be true.",
         ],
         "steps": [
             "7 squared plus 11 squared is 49 plus 121, which equals 170, not 150.",
@@ -118,9 +121,10 @@ HAND = {
             "When gaps themselves form a pattern, keep extending the gaps: minus 4, minus 8, minus 12, minus 16, minus 20, and so on.",
         ],
         "steps": [
-            "The gaps: from 197 to 193 is minus 4. From 193 to 185 is minus 8. From 185 to 173 is minus 12. From 173 to 157 is minus 16.",
-            "The gaps grow by 4 each time: the next gaps are minus 20, minus 24, minus 28.",
-            "The 6th term is 157 minus 20, which is 137. The 7th is 137 minus 24, which is 113. The 8th is 113 minus 28, which is 85.",
+            "Find the gaps between the terms: 197 minus 193 is 4. 193 minus 185 is 8. 185 minus 173 is 12. 173 minus 157 is 16.",
+            "The gaps grow by 4 each time, so the next gaps are 20, 24 and 28.",
+            "The 6th term: 157 minus 20 equals 137. The 7th term: 137 minus 24 equals 113.",
+            "The 8th term: 113 minus 28 equals 85.",
         ],
     },
     "EXT_G5_WS_01_018": {
@@ -130,9 +134,9 @@ HAND = {
             "Try the 3rd even number before 11: 10, 8, 6. That's 11 minus 5, which equals 6. The formula gives 11 minus, open bracket, 2 times 3, minus 1, close bracket. That is 11 minus 5, which equals 6.",
         ],
         "steps": [
-            "105 is odd. The nth even number before an odd number M is M minus, open bracket, 2 n minus 1, close bracket.",
-            "Substitute M equals 105, and n equals 23. We get 105 minus, open bracket, 2 times 23, minus 1, close bracket, which is 105 minus 45.",
-            "Calculate: 105 minus 45 equals 60.",
+            "105 is odd, so the 1st even number before it is 104.",
+            "Each even number before that is 2 less. To go from the 1st to the 23rd, you step back 22 times: 22 times 2 is 44.",
+            "104 minus 44 equals 60. So the 23rd even number prior to 105 is 60.",
         ],
     },
     "EXT_G5_WS_01_020": {
@@ -151,8 +155,8 @@ HAND = {
     "EXT_G5_WS_B2_006": {
         "hints": [
             None,
-            "The first 25 even numbers are 2, 4, 6, and so on, up to 50. Their sum is 25 times 26, which equals 650. The first 25 odd numbers are 1, 3, 5, and so on, up to 49. Their sum is 25 squared, which equals 625.",
-            "Try smaller. The first 3 even numbers, 2, 4 and 6, add up to 12. The first 3 odd numbers, 1, 3 and 5, add up to 9. The difference is 3. The pattern: the difference equals n.",
+            None,
+            "An example with the first 3: 2 plus 4 plus 6 equals 12, and 1 plus 3 plus 5 equals 9. The difference is 12 minus 9, which is 3. That is 1 for each of the 3 pairs.",
         ],
         "steps": [
             "The sum of the first 25 even natural numbers is 2 plus 4, and so on, up to 50. That equals 2 times, open bracket, 1 plus 2, and so on, up to 25, close bracket. That is 2 times 325, which equals 650.",
@@ -174,9 +178,9 @@ HAND = {
     },
     "EXT_G5_WS_B2_013": {
         "hints": [
-            "For 7 consecutive odd numbers, the average equals the middle number, the 4th.",
-            "The middle is 31. The 7 consecutive odd numbers centred at 31 are: 25, 27, 29, 31, 33, 35 and 37.",
-            "Try 3 consecutive odd numbers with average 5: 3, 5 and 7. The middle is 5, and the largest is 7, which is 5 plus 2.",
+            None,
+            "So the 4th number is 31, and three more odd numbers come after it. Odd numbers go up by 2 each time. Count on from 31, three times.",
+            "An example: 5 consecutive odd numbers have an average of 9. The middle number, the 3rd, is 9. So the numbers are 5, 7, 9, 11, 13, and the largest is 13.",
         ],
         "steps": [
             "The average of 7 consecutive odd numbers equals the middle number, which is 31.",

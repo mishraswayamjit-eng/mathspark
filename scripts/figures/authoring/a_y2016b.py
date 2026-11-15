@@ -46,12 +46,13 @@ VISUALS["EXT_G5_FP_2016_032"] = V(
 VISUALS["EXT_G5_FP_2016_033"] = V(
     F("set", total=27, item="eggs", note="How many dozens (groups of 12) is this?"),
     [
+        F("set", total=27, item="eggs", note="One dozen is 12 eggs. How many 12s are in 27?"),
         fb((12, 12, "1 dozen"), (12, 12, "1 dozen"), (12, 3, "3 eggs left"),
-           note="27 eggs = 2 full dozens and 3 eggs left over"),
+           note="2 full dozens use 2 × 12 = 24 eggs, with 3 left over"),
         fb((12, 12, "1 dozen"), (12, 12, "1 dozen"), (12, 3, "3/12 = 0.25"), hl=["b2"],
-           note="3 out of 12 is a quarter of a dozen = 0.25"),
+           note="3 out of 12 is 1/4 of a dozen = 0.25"),
         fb((12, 12, "1 dozen"), (12, 12, "1 dozen"), (12, 3, "0.25 dozen"),
-           note="2 dozens + 0.25 dozen = 2.25 dozen"),
+           note="2 + 0.25 = 2.25 dozen"),
     ])
 
 # 12 buckets hold 108 litres; how many for 162 litres?

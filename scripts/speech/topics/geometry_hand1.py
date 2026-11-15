@@ -51,8 +51,11 @@ HAND["EXT_G5_FP_2016_038"] = E(
 HAND["EXT_G5_FP_2017_005"] = E(
     "A clock is showing 11:00 A M now. When the hour hand has turned through 165 degrees, what will be the time?",
     ["2:05 p m", "4 30 p m", "12 30 p m", "5 30 p m"],
-    ["The hour hand turns 30 degrees in every hour. How many hours is 165 degrees?",
-     "Hour hand: 30 degrees per hour. Hours passed equals the angle divided by 30."],
+    ["The hour hand goes all the way round, 360 degrees, in 12 hours. How many degrees does it turn in one hour?",
+     "Divide 165 degrees by the degrees turned in one hour, to find how many hours pass. Half an hour counts too. "
+     "Then add that time to 11:00 A M.",
+     "Try a smaller one. If the hour hand turns 90 degrees starting from 2:00, that is a quarter of the full circle. "
+     "So 3 hours pass, and the time is 5:00."],
     ["165 divided by 30 equals 5.5 hours, which is 5 hours 30 minutes.",
      "11:00 A M, plus 5 hours 30 minutes, is 4 30 p m."],
 )
@@ -128,11 +131,13 @@ HAND["EXT_G5_FP_2018_007"] = E(
     ["Test each statement with an example angle, like 30 degrees. "
      "The complement equals 90 degrees minus the angle, and the supplement equals 180 degrees minus the angle.",
      "An acute angle is less than 90 degrees. The complement equals 90 degrees minus x. The supplement equals 180 degrees minus x."],
-    ["Statement A: the supplement of 30 degrees is 150 degrees, which is more than 90 degrees. So A is not true.",
-     "Statement B: if x is acute, between 0 degrees and 90 degrees, then 90 degrees minus x is also between 0 degrees and 90 degrees. "
-     "So it is acute, and B is true.",
-     "Statement C: 90 minus x, plus 180 minus x, equals 270 minus 2 x, which isn't always 360 degrees. So C is not true.",
-     "Answer: statement B."],
+    ["Test each statement. The supplement of 30 degrees is 180 degrees minus 30 degrees, which is 150 degrees. "
+     "That is more than 90 degrees. So the first statement is not true.",
+     "For an acute angle, between 0 degrees and 90 degrees, the complement is 90 degrees minus the angle, "
+     "which is also between 0 degrees and 90 degrees. So the second statement is true.",
+     "For 30 degrees, the complement is 60 degrees, and the supplement is 150 degrees. "
+     "Together they make 210 degrees, not 360 degrees. So the third statement is not true.",
+     "So the true statement is: the complementary angle of an acute angle is always an acute angle."],
 )
 
 HAND["EXT_G5_FP_2018_009"] = E(

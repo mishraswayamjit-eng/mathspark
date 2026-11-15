@@ -1294,7 +1294,7 @@
   ]
  },
  "EXT_G5_FP_2019_025": {
-  "q": "A student scored 72 percent on a test of 25 questions. How many of his answers were wrong?",
+  "q": "A student scored 72 percent on a test of 25 questions. How many of his answers were not correct?",
   "options": [
    "15",
    "12",
@@ -1302,13 +1302,13 @@
    "7"
   ],
   "hints": [
-   "First find how many he got right, 72 percent of 25. The wrong ones are the rest. Careful: the question asks for wrong.",
-   "Wrong equals total minus right.",
-   ""
+   "First find how many answers he got right: that is 72 percent of 25. The rest are the ones he did not get right.",
+   "72 percent of 25 means 72 times 25, divided by 100. Work that out, then take it away from 25.",
+   "A similar one: 80 percent on a test of 20 questions. Right answers: 80 times 20, divided by 100, equals 16. Not right: 20 minus 16 equals 4."
   ],
   "steps": [
-   "Right equals 72 percent of 25. That is 72 times 25, divided by 100, which is 18.",
-   "Wrong equals 25 minus 18, which is 7."
+   "He got 72 percent of the 25 answers right: 72 times 25, divided by 100, equals 18.",
+   "The rest were not correct: 25 minus 18 equals 7. So 7 of his answers were not correct."
   ]
  },
  "EXT_G5_FP_2019_031": {
@@ -1436,9 +1436,9 @@
    ""
   ],
   "steps": [
-   "5 percent of 100 equals 5.",
-   "5 percent of 5 equals 5 times 5, divided by 100, which is 0.25.",
-   "Answer: 0.25 rupees."
+   "Work in two stages. First, 5 percent of 100 rupees is 5 rupees.",
+   "Now find 5 percent of 5 rupees: 5 times 5, divided by 100, equals 0.25.",
+   "So the answer is 0.25 rupees."
   ]
  },
  "EXT_G5_FP_2020_034": {
@@ -1623,9 +1623,9 @@
    ""
   ],
   "steps": [
-   "16 percent of 150 equals 16 times 1.5, which is 24.",
-   "13 percent of 600 equals 13 times 6, which is 78.",
-   "Z plus 24 equals 78, so Z equals 54."
+   "1 percent of 150 is 1.5, so 16 percent of 150 is 16 times 1.5, which is 24.",
+   "1 percent of 600 is 6, so 13 percent of 600 is 13 times 6, which is 78.",
+   "So Z plus 24 equals 78, which gives Z equals 78 minus 24, which is 54."
   ]
  },
  "EXT_G5_FP_2023_009": {
@@ -1642,9 +1642,9 @@
    ""
   ],
   "steps": [
-   "Simple interest equals 10272 minus 6420, which is 3852 rupees.",
-   "Rate equals 3852 times 100, divided by, open bracket, 6420 times 4, close bracket. That is 385200 divided by 25680, which is 15 percent.",
-   "15 percent is not among options B to D, so the answer is none of these."
+   "Interest equals amount minus principal: 10272 minus 6420 equals 3852, so the simple interest is 3852 rupees.",
+   "Rate equals simple interest times 100, divided by, open bracket, principal times time, close bracket. That is 3852 times 100, divided by, open bracket, 6420 times 4, close bracket. That equals 385200 divided by 25680, which is 15.",
+   "So the rate is 15 percent per annum. 15 percent is not one of the choices given, so the answer is none of these."
   ]
  },
  "EXT_G5_FP_2023_019": {
@@ -1680,9 +1680,9 @@
    ""
   ],
   "steps": [
-   "Cost price equals 336 plus 84, which is 420 rupees.",
-   "Profit at 542 rupees equals 542 minus 420, which is 122 rupees.",
-   "122 is not in options A to C, so the answer is none of these."
+   "A loss means the cost price is more than the selling price: 336 plus 84 equals 420, so the cost price is 420 rupees.",
+   "Sold for 542 rupees, the profit is 542 minus 420, which is 122, that is 122 rupees.",
+   "122 rupees is not one of the choices given, so the answer is none of these."
   ]
  },
  "EXT_G5_FP_2023_024": {
@@ -1718,9 +1718,10 @@
    ""
   ],
   "steps": [
-   "12 percent of cost price equals 60, so 1 percent equals 5, so cost price equals 500 rupees.",
-   "Profit equals 620 minus 500, which is 120 rupees.",
-   "Profit percent equals 120 divided by 500, times 100, which is 24 percent. That is not among options B to D, so the answer is none of these."
+   "The loss of 60 rupees is 12 percent of the cost price. So 1 percent of the cost price is 60 divided by 12, which is 5, and the cost price is 100 times 5, which is 500, that is 500 rupees.",
+   "Sold at 620 rupees, the profit is 620 minus 500, which is 120, that is 120 rupees.",
+   "Profit percent: 120 divided by 500, times 100, equals 24, so the profit is 24 percent.",
+   "24 percent is not one of the choices given, so the answer is none of these."
   ]
  },
  "EXT_G5_FP_2023_033": {
@@ -1755,8 +1756,10 @@
    ""
   ],
   "steps": [
-   "110 percent of cost price equals 440, so 1 percent equals 4, so cost price equals 400.",
-   "For 17 percent profit: selling price equals 117 percent of 400. That is 117 times 4, which is 468 rupees."
+   "A 10 percent profit means 440 rupees is 110 percent of the cost price.",
+   "So 1 percent of the cost price is 440 divided by 110, which is 4, and the cost price is 100 times 4, which is 400, that is 400 rupees.",
+   "For a 17 percent profit the selling price is 117 percent of the cost price: 117 times 4 equals 468.",
+   "So it should be sold for 468 rupees."
   ]
  },
  "EXT_G5_FP_2024_015": {
@@ -1810,8 +1813,8 @@
   ],
   "steps": [
    "Total cost price equals 26 times 1250, which is 32,500 rupees.",
-   "Selling price equals 14 times 1800, plus 12 times 825. That is 25,200 plus 9900, which is 35,100 rupees.",
-   "Profit equals 35,100 minus 32500, which is 2,600 rupees.",
+   "Selling price equals 14 times 1800, plus 12 times 825. That is 25,200 plus 9,900, which is 35,100 rupees.",
+   "Profit equals 35,100 minus 32,500, which is 2,600 rupees.",
    "Profit percent equals 2600 divided by 32500, times 100, which is 8 percent profit."
   ]
  },
@@ -1905,8 +1908,8 @@
    ""
   ],
   "steps": [
-   "Simple interest equals 38,760 minus 28500, which is 10,260 rupees.",
-   "Rate equals 10,260 times 100, divided by, open bracket, 28,500 times 3, close bracket. That is 1,026,000 divided by 85500, which is 12 percent per annum."
+   "Simple interest equals 38,760 minus 28,500, which is 10,260 rupees.",
+   "Rate equals 10,260 times 100, divided by, open bracket, 28,500 times 3, close bracket. That is 1,026,000 divided by 85,500, which is 12 percent per annum."
   ]
  },
  "EXT_G5_FP_2025_020": {
@@ -1923,9 +1926,9 @@
    ""
   ],
   "steps": [
-   "6.5 percent of 800 equals 6.5 times 8, which is 52.",
-   "8 percent of 250 equals 8 times 2.5, which is 20.",
-   "52 equals 20 plus M, so M equals 52 minus 20, which is 32."
+   "1 percent of 800 is 8, so 6.5 percent of 800 is 6.5 times 8, which is 52.",
+   "1 percent of 250 is 2.5, so 8 percent of 250 is 8 times 2.5, which is 20.",
+   "So 52 equals 20 plus M, which gives M equals 52 minus 20, which is 32."
   ]
  },
  "EXT_G5_FP_2025_024": {
@@ -1942,8 +1945,10 @@
    ""
   ],
   "steps": [
-   "65 percent of cost price equals 78, so 1 percent equals 1.2, so cost price equals 120 rupees.",
-   "For 15 percent profit: selling price equals 115 percent of 120. That is 115 times 1.2, which is 138 rupees."
+   "A 35 percent loss means 78 rupees is only 65 percent of the cost price, because 100 minus 35 equals 65.",
+   "So 1 percent of the cost price is 78 divided by 65, which is 1.2, and the cost price is 100 times 1.2, which is 120, that is 120 rupees.",
+   "For a 15 percent profit the selling price is 115 percent of the cost price: 115 times 1.2 equals 138.",
+   "So it should be sold for 138 rupees."
   ]
  },
  "EXT_G5_FP_2025_026": {
@@ -1997,9 +2002,9 @@
    "Try: Balance shown equals 100. 10 rupees expenditure shown as income. Correct balance equals 100 minus 10 minus 10, which is 80."
   ],
   "steps": [
-   "600 rupees was added, as income, instead of subtracted, as expenditure. Error equals 2 times 600, which is 1200.",
-   "Correct balance equals 15000 minus 1200, which is 13800.",
-   "Verify: check the answer matches option D."
+   "600 rupees was spent, so it should have been taken away from the balance. By mistake it was added instead.",
+   "First undo the mistaken addition: 15000 minus 600 equals 14400.",
+   "Then take away the 600 rupees that was really spent: 14400 minus 600 equals 13800. So the correct cash balance is 13800 rupees."
   ]
  },
  "EXT_G5_WS_B2_025": {
@@ -2011,14 +2016,14 @@
    "13800 rupees"
   ],
   "hints": [
-   "Income was wrongly subtracted instead of added. Need to reverse this error.",
-   "To correct: add 600 twice, once to remove wrong subtraction, once to apply correct addition.",
-   "Try: Balance shown 100 rupees. 10 rupees expenditure recorded as income. Real balance equals 100 minus 10 minus 10, which is 80 rupees."
+   "600 rupees was money coming in, so it should have been added to the balance. By mistake it was taken away instead.",
+   "Fix it in two moves. First add 600 rupees back to 15000 to undo the mistake. Then add 600 rupees once more, because the income still has to be counted.",
+   "Example: a balance shows 100 rupees after an income of 10 rupees was written as spending. Undo the mistake: 100 plus 10 equals 110. Count the income: 110 plus 10 equals 120 rupees."
   ],
   "steps": [
-   "600 rupees was subtracted, as expenditure, instead of added, as income. Error equals 2 times 600, which is 1200.",
-   "Correct balance equals 15000 plus 1200, which is 16200.",
-   "Verify: check the answer matches option B."
+   "600 rupees was income, so it should have been added to the balance. By mistake it was taken away instead.",
+   "First undo the mistaken subtraction: 15000 plus 600 equals 15600.",
+   "Then add the 600 rupees income that was never counted: 15600 plus 600 equals 16200. So the correct cash balance is 16200 rupees."
   ]
  },
  "VAR2_EXT_G5_WS_01_006_01": {
@@ -3542,9 +3547,9 @@
    "300"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 50 percent girls means 50 girls in every 100 students.",
+   "50 percent is the same as one half. So half of the 500 students are girls. What is half of 500?",
+   "Try another one: 50 percent of 80. 50 percent is one half, and half of 80 is 40. So 50 percent of 80 is 40."
   ],
   "steps": [
    "50 percent means 50 out of every 100. Picture the whole 500 students as a bar, with 50 percent of it shaded.",
@@ -3561,9 +3566,9 @@
    "800"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So scoring 20 percent means getting 20 marks for every 100 marks in the test.",
+   "1000 marks is 10 lots of 100 marks. The student gets 20 marks from each lot. So how many marks come from 10 lots?",
+   "Try another one: 30 percent of 400. 400 is 4 lots of 100, and each lot gives 30. 4 times 30 equals 120, so 30 percent of 400 is 120."
   ],
   "steps": [
    "20 percent means 20 out of every 100. Picture the whole 1000 marks as a bar, with 20 percent of it shaded.",
@@ -3580,9 +3585,9 @@
    "850"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So scoring 15 percent means getting 15 marks for every 100 marks in the test.",
+   "1000 marks is 10 lots of 100 marks. The student gets 15 marks from each lot. So how many marks come from 10 lots?",
+   "Try another one: 30 percent of 200. 200 is 2 lots of 100, and each lot gives 30. 2 times 30 equals 60, so 30 percent of 200 is 60."
   ],
   "steps": [
    "15 percent means 15 out of every 100. Picture the whole 1000 marks as a bar, with 15 percent of it shaded.",
@@ -3599,9 +3604,9 @@
    "200"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So scoring 15 percent means getting 15 marks for every 100 marks in the test.",
+   "800 marks is 8 lots of 100 marks. The student gets 15 marks from each lot. So how many marks come from 8 lots?",
+   "Try another one: 30 percent of 300. 300 is 3 lots of 100, and each lot gives 30. 3 times 30 equals 90, so 30 percent of 300 is 90."
   ],
   "steps": [
    "15 percent means 15 out of every 100. Picture the whole 800 marks as a bar, with 15 percent of it shaded.",
@@ -3618,9 +3623,9 @@
    "505"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 50 percent of a number means 50 for every 100 in it.",
+   "50 percent is the same as one half. So you need half of 1000.",
+   "Try another one: 50 percent of 80. 50 percent is one half, and half of 80 is 40. So 50 percent of 80 is 40."
   ],
   "steps": [
    "50 percent means 50 out of every 100. Picture the whole number 1000 as a bar, with 50 percent of it shaded.",
@@ -3637,9 +3642,9 @@
    "25"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 5 percent girls means 5 girls in every 100 students.",
+   "500 students is 5 lots of 100 students. Each lot of 100 has 5 girls. So how many girls are in 5 lots?",
+   "Try another one: 30 percent of 200. 200 is 2 lots of 100, and each lot gives 30. 2 times 30 equals 60, so 30 percent of 200 is 60."
   ],
   "steps": [
    "5 percent means 5 out of every 100. Picture the whole 500 students as a bar, with 5 percent of it shaded.",
@@ -3656,9 +3661,9 @@
    "80"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. Now look at how many students there are in this question. That makes it a quick one.",
+   "There are exactly 100 students here. 20 percent means 20 out of every 100. So how many of these 100 students are girls?",
+   "Try another one: 40 percent of 100 is 40, because 40 percent means 40 out of every 100. Any per cent of 100 works the same way."
   ],
   "steps": [
    "20 percent means 20 out of every 100. Picture the whole 100 students as a bar, with 20 percent of it shaded.",
@@ -3675,9 +3680,9 @@
    "75"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 75 percent girls means 75 girls in every 100 students.",
+   "300 students is 3 lots of 100 students. Each lot of 100 has 75 girls. So how many girls are in 3 lots?",
+   "Try another one: 30 percent of 200. 200 is 2 lots of 100, and each lot gives 30. 2 times 30 equals 60, so 30 percent of 200 is 60."
   ],
   "steps": [
    "75 percent means 75 out of every 100. Picture the whole 300 students as a bar, with 75 percent of it shaded.",
@@ -3694,9 +3699,9 @@
    "155"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 25 percent girls means 25 girls in every 100 students.",
+   "25 percent is the same as one quarter. So share the 600 students into 4 equal groups. One group is the girls.",
+   "Try another one: 25 percent of 80. 25 percent is one quarter, and 80 divided by 4 equals 20. So 25 percent of 80 is 20."
   ],
   "steps": [
    "25 percent means 25 out of every 100. Picture the whole 600 students as a bar, with 25 percent of it shaded.",
@@ -3713,9 +3718,9 @@
    "140"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 50 percent girls means 50 girls in every 100 students.",
+   "50 percent is the same as one half. So half of the 300 students are girls. What is half of 300?",
+   "Try another one: 50 percent of 80. 50 percent is one half, and half of 80 is 40. So 50 percent of 80 is 40."
   ],
   "steps": [
    "50 percent means 50 out of every 100. Picture the whole 300 students as a bar, with 50 percent of it shaded.",
@@ -3732,9 +3737,9 @@
    "400"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every hundred. So 20 percent girls means 20 girls in every hundred students.",
+   "First find 10 percent of 500 by dividing 500 by 10. Then 20 percent is 2 lots of that.",
+   "Try another one: 30 percent of 70. 10 percent of 70 is 70 divided by 10, which is 7. 30 percent is 3 lots of that, and 3 times 7 equals 21. So 30 percent of 70 is 21."
   ],
   "steps": [
    "20 percent means 20 out of every 100. Picture the whole 500 students as a bar, with 20 percent of it shaded.",
@@ -3751,9 +3756,9 @@
    "300"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every hundred. So scoring 25 percent means getting 25 marks for every hundred marks in the test.",
+   "25 percent is the same as one quarter. So share the 400 marks into 4 equal parts. The student scored one part.",
+   "Try another one: 25 percent of 80. 25 percent is one quarter, and 80 divided by 4 equals 20. So 25 percent of 80 is 20."
   ],
   "steps": [
    "25 percent means 25 out of every 100. Picture the whole 400 marks as a bar, with 25 percent of it shaded.",
@@ -3770,9 +3775,9 @@
    "250"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 25 percent of a number means 25 for every 100 in it.",
+   "25 percent is the same as one quarter. So share 1000 into 4 equal parts and take one part.",
+   "Try another one: 25 percent of 80. 25 percent is one quarter, and 80 divided by 4 equals 20. So 25 percent of 80 is 20."
   ],
   "steps": [
    "25 percent means 25 out of every 100. Picture the whole number 1000 as a bar, with 25 percent of it shaded.",
@@ -3781,7 +3786,7 @@
   ]
  },
  "VAR_G5_vary_percentage_V287": {
-  "q": "Out of 250 students, 5 percent are girls. How many girls are there?",
+  "q": "Out of 240 students, 5 percent are girls. How many girls are there?",
   "options": [
    "237",
    "37",
@@ -3789,26 +3794,34 @@
    "12"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 5 percent girls means 5 girls in every 100 students.",
+   "Find 10 percent first: that is one tenth, so divide 240 by 10. Then 5 percent is half of that.",
+   "Try another one: 5 percent of 60. 10 percent of 60 is 60 divided by 10, which is 6, and half of 6 is 3, so 5 percent of 60 is 3."
   ],
-  "steps": []
+  "steps": [
+   "5 percent means 5 out of every 100. Picture the whole 240 students as a bar, with 5 percent of it shaded.",
+   "Multiply by 5, then divide by 100: 240 times 5 equals 1200.",
+   "1200 divided by 100 equals 12. There are 12 girls."
+  ]
  },
  "VAR_G5_vary_percentage_V29": {
   "q": "A test has 250 marks. A student scored 5 percent. How many marks did the student score?",
   "options": [
    "237",
    "37",
-   "12",
+   "12.5",
    "17"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of 100. So 5 percent of the marks means 5 marks for every 100 marks.",
+   "The test has 250 marks. That is 100 and 100 and 50. Find 5 percent of each part and add them up.",
+   "A similar one: to find 5 percent of 300, first find 10 percent, which is 300 divided by 10, that is 30. Then halve it: 5 percent of 300 is 15."
   ],
-  "steps": []
+  "steps": [
+   "5 percent means 5 out of every 100. So multiply 250 by 5 and divide by 100.",
+   "250 times 5 equals 1250, and 1250 divided by 100 equals 12.5.",
+   "So the student scored 12.5 marks, which is 12 and a half marks."
+  ]
  },
  "VAR_G5_vary_percentage_V293": {
   "q": "A test has 500 marks. A student scored 20 percent. How many marks did the student score?",
@@ -3819,9 +3832,9 @@
    "100"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every hundred. So scoring 20 percent means getting 20 marks for every hundred marks in the test.",
+   "First find 10 percent of 500 by dividing 500 by 10. Then 20 percent is 2 lots of that.",
+   "Try another one: 30 percent of 70. 10 percent of 70 is 70 divided by 10, which is 7. 30 percent is 3 lots of that, and 3 times 7 equals 21. So 30 percent of 70 is 21."
   ],
   "steps": [
    "20 percent means 20 out of every 100. Picture the whole 500 marks as a bar, with 20 percent of it shaded.",
@@ -3838,9 +3851,9 @@
    "290"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 60 percent girls means 60 girls in every 100 students.",
+   "500 students is 5 lots of 100 students. Each lot of 100 has 60 girls. So how many girls are in 5 lots?",
+   "Try another one: 30 percent of 400. 400 is 4 lots of 100, and each lot gives 30. 4 times 30 equals 120, so 30 percent of 400 is 120."
   ],
   "steps": [
    "60 percent means 60 out of every 100. Picture the whole 500 students as a bar, with 60 percent of it shaded.",
@@ -3857,9 +3870,9 @@
    "120"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So scoring 5 percent means getting 5 marks for every 100 marks in the test.",
+   "800 marks is 8 lots of 100 marks. The student gets 5 marks from each lot. So how many marks come from 8 lots?",
+   "Try another one: 30 percent of 200. 200 is 2 lots of 100, and each lot gives 30. 2 times 30 equals 60, so 30 percent of 200 is 60."
   ],
   "steps": [
    "5 percent means 5 out of every 100. Picture the whole 800 marks as a bar, with 5 percent of it shaded.",
@@ -3876,9 +3889,9 @@
    "10"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 5 percent girls means 5 girls in every 100 students.",
+   "200 students is 2 lots of 100 students. Each lot of 100 has 5 girls. So how many girls are in 2 lots?",
+   "Try another one: 20 percent of 300. 300 is 3 lots of 100, and each lot gives 20. 3 times 20 equals 60, so 20 percent of 300 is 60."
   ],
   "steps": [
    "5 percent means 5 out of every 100. Picture the whole 200 students as a bar, with 5 percent of it shaded.",
@@ -3895,9 +3908,9 @@
    "50"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So scoring 20 percent means getting 20 marks for every 100 marks in the test.",
+   "First find 10 percent of 250 by dividing 250 by 10. Then 20 percent is 2 lots of that.",
+   "Try another one: 30 percent of 70. 10 percent of 70 is 70 divided by 10, which is 7. 30 percent is 3 lots of that, and 3 times 7 equals 21. So 30 percent of 70 is 21."
   ],
   "steps": [
    "20 percent means 20 out of every 100. Picture the whole 250 marks as a bar, with 20 percent of it shaded.",
@@ -3914,9 +3927,9 @@
    "45"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So scoring 15 percent means getting 15 marks for every 100 marks in the test.",
+   "300 marks is 3 lots of 100 marks. The student gets 15 marks from each lot. So how many marks come from 3 lots?",
+   "Try another one: 30 percent of 200. 200 is 2 lots of 100, and each lot gives 30. 2 times 30 equals 60, so 30 percent of 200 is 60."
   ],
   "steps": [
    "15 percent means 15 out of every 100. Picture the whole 300 marks as a bar, with 15 percent of it shaded.",
@@ -3933,9 +3946,9 @@
    "560"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 30 percent girls means 30 girls in every 100 students.",
+   "800 students is 8 lots of 100 students. Each lot of 100 has 30 girls. So how many girls are in 8 lots?",
+   "Try another one: 20 percent of 200. 200 is 2 lots of 100, and each lot gives 20. 2 times 20 equals 40, so 20 percent of 200 is 40."
   ],
   "steps": [
    "30 percent means 30 out of every 100. Picture the whole 800 students as a bar, with 30 percent of it shaded.",
@@ -3952,9 +3965,9 @@
    "600"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So scoring 50 percent means getting 50 marks for every 100 marks in the test.",
+   "50 percent is the same as one half. So the student scored half of the 1000 marks. What is half of 1000?",
+   "Try another one: 50 percent of 80. 50 percent is one half, and half of 80 is 40. So 50 percent of 80 is 40."
   ],
   "steps": [
    "50 percent means 50 out of every 100. Picture the whole 1000 marks as a bar, with 50 percent of it shaded.",
@@ -3971,9 +3984,9 @@
    "60"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 10 percent girls means 10 girls in every 100 students.",
+   "10 percent is the same as one tenth. So share the 600 students into 10 equal groups. One group is the girls.",
+   "Try another one: 10 percent of 70. 10 percent is one tenth, and 70 divided by 10 equals 7. So 10 percent of 70 is 7."
   ],
   "steps": [
    "10 percent means 10 out of every 100. Picture the whole 600 students as a bar, with 10 percent of it shaded.",
@@ -3990,9 +4003,9 @@
    "330"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 40 percent girls means 40 girls in every 100 students.",
+   "800 students is 8 lots of 100 students. Each lot of 100 has 40 girls. So how many girls are in 8 lots?",
+   "Try another one: 30 percent of 200. 200 is 2 lots of 100, and each lot gives 30. 2 times 30 equals 60, so 30 percent of 200 is 60."
   ],
   "steps": [
    "40 percent means 40 out of every 100. Picture the whole 800 students as a bar, with 40 percent of it shaded.",
@@ -4009,9 +4022,9 @@
    "180"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So scoring 10 percent means getting 10 marks for every 100 marks in the test.",
+   "10 percent is the same as one tenth. So share the 200 marks into 10 equal parts. The student scored one part.",
+   "Try another one: 10 percent of 70. 10 percent is one tenth, and 70 divided by 10 equals 7. So 10 percent of 70 is 7."
   ],
   "steps": [
    "10 percent means 10 out of every 100. Picture the whole 200 marks as a bar, with 10 percent of it shaded.",
@@ -4028,9 +4041,9 @@
    "105"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every hundred. So 40 percent girls means 40 girls in every hundred students.",
+   "First find 10 percent of 250 by dividing 250 by 10. Then 40 percent is 4 lots of that.",
+   "Try another one: 30 percent of 70. 10 percent of 70 is 70 divided by 10, which is 7. 30 percent is 3 lots of that, and 3 times 7 equals 21. So 30 percent of 70 is 21."
   ],
   "steps": [
    "40 percent means 40 out of every 100. Picture the whole 250 students as a bar, with 40 percent of it shaded.",
@@ -4039,7 +4052,7 @@
   ]
  },
  "VAR_G5_vary_percentage_V43": {
-  "q": "Out of 250 students, 25 percent are girls. How many girls are there?",
+  "q": "Out of 248 students, 25 percent are girls. How many girls are there?",
   "options": [
    "67",
    "187",
@@ -4047,11 +4060,15 @@
    "87"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 25 percent girls means 25 girls in every 100 students.",
+   "25 percent is the same as one quarter. So share the 248 students into 4 equal groups. How many are in one group?",
+   "Try another one: 25 percent of 80. A quarter of 80 is 80 divided by 4, which is 20, so 25 percent of 80 is 20."
   ],
-  "steps": []
+  "steps": [
+   "25 percent means 25 out of every 100. Picture the whole 248 students as a bar, with 25 percent of it shaded.",
+   "Multiply by 25, then divide by 100: 248 times 25 equals 6200.",
+   "6200 divided by 100 equals 62. There are 62 girls."
+  ]
  },
  "VAR_G5_vary_percentage_V44": {
   "q": "Out of 500 students, 15 percent are girls. How many girls are there?",
@@ -4062,9 +4079,9 @@
    "125"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 15 percent girls means 15 girls in every 100 students.",
+   "500 students is 5 lots of 100 students. Each lot of 100 has 15 girls. So how many girls are in 5 lots?",
+   "Try another one: 30 percent of 200. 200 is 2 lots of 100, and each lot gives 30. 2 times 30 equals 60, so 30 percent of 200 is 60."
   ],
   "steps": [
    "15 percent means 15 out of every 100. Picture the whole 500 students as a bar, with 15 percent of it shaded.",
@@ -4081,9 +4098,9 @@
    "400"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So scoring 60 percent means getting 60 marks for every 100 marks in the test.",
+   "1000 marks is 10 lots of 100 marks. The student gets 60 marks from each lot. So how many marks come from 10 lots?",
+   "Try another one: 30 percent of 300. 300 is 3 lots of 100, and each lot gives 30. 3 times 30 equals 90, so 30 percent of 300 is 90."
   ],
   "steps": [
    "60 percent means 60 out of every 100. Picture the whole 1000 marks as a bar, with 60 percent of it shaded.",
@@ -4100,9 +4117,9 @@
    "360"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So scoring 50 percent means getting 50 marks for every 100 marks in the test.",
+   "50 percent is the same as one half. So the student scored half of the 600 marks. What is half of 600?",
+   "Try another one: 50 percent of 80. 50 percent is one half, and half of 80 is 40. So 50 percent of 80 is 40."
   ],
   "steps": [
    "50 percent means 50 out of every 100. Picture the whole 600 marks as a bar, with 50 percent of it shaded.",
@@ -4119,9 +4136,9 @@
    "150"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So scoring 5 percent means getting 5 marks for every 100 marks in the test.",
+   "1000 marks is 10 lots of 100 marks. The student gets 5 marks from each lot. So how many marks come from 10 lots?",
+   "Try another one: 30 percent of 200. 200 is 2 lots of 100, and each lot gives 30. 2 times 30 equals 60, so 30 percent of 200 is 60."
   ],
   "steps": [
    "5 percent means 5 out of every 100. Picture the whole 1000 marks as a bar, with 5 percent of it shaded.",
@@ -4138,9 +4155,9 @@
    "110"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 30 percent girls means 30 girls in every 100 students.",
+   "400 students is 4 lots of 100 students. Each lot of 100 has 30 girls. So how many girls are in 4 lots?",
+   "Try another one: 20 percent of 200. 200 is 2 lots of 100, and each lot gives 20. 2 times 20 equals 40, so 20 percent of 200 is 40."
   ],
   "steps": [
    "30 percent means 30 out of every 100. Picture the whole 400 students as a bar, with 30 percent of it shaded.",
@@ -4157,9 +4174,9 @@
    "475"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So scoring 5 percent means getting 5 marks for every 100 marks in the test.",
+   "500 marks is 5 lots of 100 marks. The student gets 5 marks from each lot. So how many marks come from 5 lots?",
+   "Try another one: 30 percent of 200. 200 is 2 lots of 100, and each lot gives 30. 2 times 30 equals 60, so 30 percent of 200 is 60."
   ],
   "steps": [
    "5 percent means 5 out of every 100. Picture the whole 500 marks as a bar, with 5 percent of it shaded.",
@@ -4176,9 +4193,9 @@
    "85"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. Now look at how many students there are in this question. That makes it a quick one.",
+   "There are exactly 100 students here. 15 percent means 15 out of every 100. So how many of these 100 students are girls?",
+   "Try another one: 30 percent of 100 is 30, because 30 percent means 30 out of every 100. Any per cent of 100 works the same way."
   ],
   "steps": [
    "15 percent means 15 out of every 100. Picture the whole 100 students as a bar, with 15 percent of it shaded.",
@@ -4195,9 +4212,9 @@
    "305"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So scoring 75 percent means getting 75 marks for every 100 marks in the test.",
+   "400 marks is 4 lots of 100 marks. The student gets 75 marks from each lot. So how many marks come from 4 lots?",
+   "Try another one: 30 percent of 200. 200 is 2 lots of 100, and each lot gives 30. 2 times 30 equals 60, so 30 percent of 200 is 60."
   ],
   "steps": [
    "75 percent means 75 out of every 100. Picture the whole 400 marks as a bar, with 75 percent of it shaded.",
@@ -4214,9 +4231,9 @@
    "95"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. Now look at how many marks the test has. That makes it a quick one.",
+   "This test has exactly 100 marks. 5 percent means 5 out of every 100. So how many of these 100 marks did the student score?",
+   "Try another one: 30 percent of 100 is 30, because 30 percent means 30 out of every 100. Any per cent of 100 works the same way."
   ],
   "steps": [
    "5 percent means 5 out of every 100. Picture the whole 100 marks as a bar, with 5 percent of it shaded.",
@@ -4233,9 +4250,9 @@
    "300"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 40 percent girls means 40 girls in every 100 students.",
+   "500 students is 5 lots of 100 students. Each lot of 100 has 40 girls. So how many girls are in 5 lots?",
+   "Try another one: 30 percent of 400. 400 is 4 lots of 100, and each lot gives 30. 4 times 30 equals 120, so 30 percent of 400 is 120."
   ],
   "steps": [
    "40 percent means 40 out of every 100. Picture the whole 500 students as a bar, with 40 percent of it shaded.",
@@ -4252,9 +4269,9 @@
    "10"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 10 percent girls means 10 girls in every 100 students.",
+   "10 percent is the same as one tenth. So share the 200 students into 10 equal groups. One group is the girls.",
+   "Try another one: 10 percent of 70. 10 percent is one tenth, and 70 divided by 10 equals 7. So 10 percent of 70 is 7."
   ],
   "steps": [
    "10 percent means 10 out of every 100. Picture the whole 200 students as a bar, with 10 percent of it shaded.",
@@ -4271,9 +4288,9 @@
    "180"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 20 percent girls means 20 girls in every 100 students.",
+   "600 students is 6 lots of 100 students. Each lot of 100 has 20 girls. So how many girls are in 6 lots?",
+   "Try another one: 30 percent of 200. 200 is 2 lots of 100, and each lot gives 30. 2 times 30 equals 60, so 30 percent of 200 is 60."
   ],
   "steps": [
    "20 percent means 20 out of every 100. Picture the whole 600 students as a bar, with 20 percent of it shaded.",
@@ -4290,9 +4307,9 @@
    "150"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Per cent means out of every 100. So 15 percent of a number means 15 for every 100 in it.",
+   "1000 is 10 lots of 100. Each lot of 100 gives 15. So how much do 10 lots give?",
+   "Try another one: 30 percent of 200. 200 is 2 lots of 100, and each lot gives 30. 2 times 30 equals 60, so 30 percent of 200 is 60."
   ],
   "steps": [
    "15 percent means 15 out of every 100. Picture the whole number 1000 as a bar, with 15 percent of it shaded.",
@@ -4309,9 +4326,9 @@
    "360 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 12 percent simple interest means every 100 rupees earns 12 rupees each year.",
+   "Find the interest for 1 year first: 500 rupees is 5 hundreds, and each hundred earns 12 rupees. Multiply by 5 for the 5 years. Then add that interest to the 500 rupees you started with.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. Add the money at the start: 200 plus 24 equals 224. So the amount is 224 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 12 percent means 12 out of every 100, so one year's interest is 500 times 12, divided by 100, which is 60 rupees.",
@@ -4328,9 +4345,9 @@
    "1680 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 6 percent simple interest means every 100 rupees earns 6 rupees each year.",
+   "Find the interest for 1 year first: 1500 rupees is 15 hundreds, and each hundred earns 6 rupees. Multiply by 2 for the 2 years. Then add that interest to the 1500 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 6 percent means 6 out of every 100, so one year's interest is 1500 times 6, divided by 100, which is 90 rupees.",
@@ -4347,9 +4364,9 @@
    "425 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 5 percent per annum means every 100 rupees earns 5 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 1500 rupees is 15 hundreds, and each hundred earns 5 rupees. Then multiply that 1-year interest by 5 for the 5 years.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. So the simple interest is 24 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 5 percent means 5 out of every 100, so one year's interest is 1500 times 5, divided by 100, which is 75 rupees.",
@@ -4365,9 +4382,9 @@
    "200 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 8 percent per annum means every 100 rupees earns 8 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 500 rupees is 5 hundreds, and each hundred earns 8 rupees. Then multiply that 1-year interest by 5 for the 5 years.",
+   "Try another one: 300 rupees at 4 percent for 2 years. 300 rupees is 3 hundreds, so 1 year earns 3 times 4, which is 12 rupees. 2 years earn 2 times 12, which is 24 rupees. So the simple interest is 24 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 8 percent means 8 out of every 100, so one year's interest is 500 times 8, divided by 100, which is 40 rupees.",
@@ -4383,9 +4400,9 @@
    "300 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 10 percent simple interest means every 100 rupees earns 10 rupees each year.",
+   "Find the interest for 1 year first: 1000 rupees is 10 hundreds, and each hundred earns 10 rupees. Multiply by 2 for the 2 years. Then add that interest to the 1000 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 10 percent means 10 out of every 100, so one year's interest is 1000 times 10, divided by 100, which is 100 rupees.",
@@ -4402,9 +4419,9 @@
    "750 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 10 percent per annum means every 100 rupees earns 10 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 2500 rupees is 25 hundreds, and each hundred earns 10 rupees. Then multiply that 1-year interest by 2 for the 2 years.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. So the simple interest is 30 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 10 percent means 10 out of every 100, so one year's interest is 2500 times 10, divided by 100, which is 250 rupees.",
@@ -4420,9 +4437,9 @@
    "2950 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 4 percent simple interest means every 100 rupees earns 4 rupees each year.",
+   "Find the interest for 1 year first: 2500 rupees is 25 hundreds, and each hundred earns 4 rupees. Multiply by 4 for the 4 years. Then add that interest to the 2500 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 4 percent means 4 out of every 100, so one year's interest is 2500 times 4, divided by 100, which is 100 rupees.",
@@ -4439,9 +4456,9 @@
    "3910 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 8 percent simple interest means every 100 rupees earns 8 rupees each year.",
+   "Find the interest for 1 year first: 3000 rupees is 30 hundreds, and each hundred earns 8 rupees. Multiply by 4 for the 4 years. Then add that interest to the 3000 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 8 percent means 8 out of every 100, so one year's interest is 3000 times 8, divided by 100, which is 240 rupees.",
@@ -4458,9 +4475,9 @@
    "530 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 4 percent per annum means every 100 rupees earns 4 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 4000 rupees is 40 hundreds, and each hundred earns 4 rupees. Then multiply that 1-year interest by 3 for the 3 years.",
+   "Try another one: 300 rupees at 5 percent for 2 years. 300 rupees is 3 hundreds, so 1 year earns 3 times 5, which is 15 rupees. 2 years earn 2 times 15, which is 30 rupees. So the simple interest is 30 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 4 percent means 4 out of every 100, so one year's interest is 4000 times 4, divided by 100, which is 160 rupees.",
@@ -4476,9 +4493,9 @@
    "1600 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 8 percent per annum means every 100 rupees earns 8 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 4000 rupees is 40 hundreds, and each hundred earns 8 rupees. Then multiply that 1-year interest by 5 for the 5 years.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. So the simple interest is 24 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 8 percent means 8 out of every 100, so one year's interest is 4000 times 8, divided by 100, which is 320 rupees.",
@@ -4494,9 +4511,9 @@
    "1130 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 4 percent simple interest means every 100 rupees earns 4 rupees each year.",
+   "Find the interest for 1 year first: 1000 rupees is 10 hundreds, and each hundred earns 4 rupees. Multiply by 2 for the 2 years. Then add that interest to the 1000 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 4 percent means 4 out of every 100, so one year's interest is 1000 times 4, divided by 100, which is 40 rupees.",
@@ -4513,9 +4530,9 @@
    "800 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 4 percent simple interest means every 100 rupees earns 4 rupees each year.",
+   "Find the interest for 1 year first: 4000 rupees is 40 hundreds, and each hundred earns 4 rupees. Multiply by 4 for the 4 years. Then add that interest to the 4000 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 4 percent means 4 out of every 100, so one year's interest is 4000 times 4, divided by 100, which is 160 rupees.",
@@ -4532,9 +4549,9 @@
    "350 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 5 percent per annum means every 100 rupees earns 5 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 3000 rupees is 30 hundreds, and each hundred earns 5 rupees. Then multiply that 1-year interest by 2 for the 2 years.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. So the simple interest is 24 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 5 percent means 5 out of every 100, so one year's interest is 3000 times 5, divided by 100, which is 150 rupees.",
@@ -4550,9 +4567,9 @@
    "140 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 7 percent simple interest means every 100 rupees earns 7 rupees each year.",
+   "Find the interest for 1 year first: 500 rupees is 5 hundreds, and each hundred earns 7 rupees. Multiply by 3 for the 3 years. Then add that interest to the 500 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 4 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 4 years earn 4 times 10, which is 40 rupees. Add the money at the start: 200 plus 40 equals 240. So the amount is 240 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 7 percent means 7 out of every 100, so one year's interest is 500 times 7, divided by 100, which is 35 rupees.",
@@ -4569,9 +4586,9 @@
    "450 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 15 percent per annum means every 100 rupees earns 15 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 1000 rupees is 10 hundreds, and each hundred earns 15 rupees. Then multiply that 1-year interest by 3 for the 3 years.",
+   "Try another one: 200 rupees at 5 percent for 4 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 4 years earn 4 times 10, which is 40 rupees. So the simple interest is 40 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 15 percent means 15 out of every 100, so one year's interest is 1000 times 15, divided by 100, which is 150 rupees.",
@@ -4587,9 +4604,9 @@
    "750 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 8 percent simple interest means every 100 rupees earns 8 rupees each year.",
+   "Find the interest for 1 year first: 500 rupees is 5 hundreds, and each hundred earns 8 rupees. Multiply by 5 for the 5 years. Then add that interest to the 500 rupees you started with.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. Add the money at the start: 200 plus 24 equals 224. So the amount is 224 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 8 percent means 8 out of every 100, so one year's interest is 500 times 8, divided by 100, which is 40 rupees.",
@@ -4606,9 +4623,9 @@
    "700 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 10 percent simple interest means every 100 rupees earns 10 rupees each year.",
+   "Find the interest for 1 year first: 500 rupees is 5 hundreds, and each hundred earns 10 rupees. Multiply by 5 for the 5 years. Then add that interest to the 500 rupees you started with.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. Add the money at the start: 200 plus 24 equals 224. So the amount is 224 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 10 percent means 10 out of every 100, so one year's interest is 500 times 10, divided by 100, which is 50 rupees.",
@@ -4625,9 +4642,9 @@
    "350 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 12 percent per annum means every 100 rupees earns 12 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 500 rupees is 5 hundreds, and each hundred earns 12 rupees. Then multiply that 1-year interest by 5 for the 5 years.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. So the simple interest is 24 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 12 percent means 12 out of every 100, so one year's interest is 500 times 12, divided by 100, which is 60 rupees.",
@@ -4643,9 +4660,9 @@
    "1390 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 5 percent simple interest means every 100 rupees earns 5 rupees each year.",
+   "Find the interest for 1 year first: 1200 rupees is 12 hundreds, and each hundred earns 5 rupees. Multiply by 4 for the 4 years. Then add that interest to the 1200 rupees you started with.",
+   "Try another one: 200 rupees at 6 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 6, which is 12 rupees. 3 years earn 3 times 12, which is 36 rupees. Add the money at the start: 200 plus 36 equals 236. So the amount is 236 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 5 percent means 5 out of every 100, so one year's interest is 1200 times 5, divided by 100, which is 60 rupees.",
@@ -4662,9 +4679,9 @@
    "130 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 4 percent per annum means every 100 rupees earns 4 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 500 rupees is 5 hundreds, and each hundred earns 4 rupees. Then multiply that 1-year interest by 4 for the 4 years.",
+   "Try another one: 200 rupees at 6 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 6, which is 12 rupees. 3 years earn 3 times 12, which is 36 rupees. So the simple interest is 36 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 4 percent means 4 out of every 100, so one year's interest is 500 times 4, divided by 100, which is 20 rupees.",
@@ -4680,9 +4697,9 @@
    "350 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 10 percent per annum means every 100 rupees earns 10 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 2000 rupees is 20 hundreds, and each hundred earns 10 rupees. Then multiply that 1-year interest by 2 for the 2 years.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. So the simple interest is 30 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 10 percent means 10 out of every 100, so one year's interest is 2000 times 10, divided by 100, which is 200 rupees.",
@@ -4698,9 +4715,9 @@
    "6200 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 12 percent simple interest means every 100 rupees earns 12 rupees each year.",
+   "Find the interest for 1 year first: 5000 rupees is 50 hundreds, and each hundred earns 12 rupees. Multiply by 2 for the 2 years. Then add that interest to the 5000 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 12 percent means 12 out of every 100, so one year's interest is 5000 times 12, divided by 100, which is 600 rupees.",
@@ -4717,9 +4734,9 @@
    "450 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 10 percent per annum means every 100 rupees earns 10 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 1500 rupees is 15 hundreds, and each hundred earns 10 rupees. Then multiply that 1-year interest by 3 for the 3 years.",
+   "Try another one: 200 rupees at 5 percent for 4 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 4 years earn 4 times 10, which is 40 rupees. So the simple interest is 40 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 10 percent means 10 out of every 100, so one year's interest is 1500 times 10, divided by 100, which is 150 rupees.",
@@ -4735,9 +4752,9 @@
    "7950 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 15 percent simple interest means every 100 rupees earns 15 rupees each year.",
+   "Find the interest for 1 year first: 5000 rupees is 50 hundreds, and each hundred earns 15 rupees. Multiply by 4 for the 4 years. Then add that interest to the 5000 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 15 percent means 15 out of every 100, so one year's interest is 5000 times 15, divided by 100, which is 750 rupees.",
@@ -4754,9 +4771,9 @@
    "2350 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 12 percent per annum means every 100 rupees earns 12 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 4000 rupees is 40 hundreds, and each hundred earns 12 rupees. Then multiply that 1-year interest by 5 for the 5 years.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. So the simple interest is 24 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 12 percent means 12 out of every 100, so one year's interest is 4000 times 12, divided by 100, which is 480 rupees.",
@@ -4772,9 +4789,9 @@
    "600 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 6 percent simple interest means every 100 rupees earns 6 rupees each year.",
+   "Find the interest for 1 year first: 2000 rupees is 20 hundreds, and each hundred earns 6 rupees. Multiply by 4 for the 4 years. Then add that interest to the 2000 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 6 percent means 6 out of every 100, so one year's interest is 2000 times 6, divided by 100, which is 120 rupees.",
@@ -4791,9 +4808,9 @@
    "5250 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 10 percent simple interest means every 100 rupees earns 10 rupees each year.",
+   "Find the interest for 1 year first: 4000 rupees is 40 hundreds, and each hundred earns 10 rupees. Multiply by 3 for the 3 years. Then add that interest to the 4000 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 4 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 4 years earn 4 times 10, which is 40 rupees. Add the money at the start: 200 plus 40 equals 240. So the amount is 240 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 10 percent means 10 out of every 100, so one year's interest is 4000 times 10, divided by 100, which is 400 rupees.",
@@ -4810,9 +4827,9 @@
    "250 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 5 percent per annum means every 100 rupees earns 5 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 1000 rupees is 10 hundreds, and each hundred earns 5 rupees. Then multiply that 1-year interest by 4 for the 4 years.",
+   "Try another one: 300 rupees at 6 percent for 2 years. 300 rupees is 3 hundreds, so 1 year earns 3 times 6, which is 18 rupees. 2 years earn 2 times 18, which is 36 rupees. So the simple interest is 36 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 5 percent means 5 out of every 100, so one year's interest is 1000 times 5, divided by 100, which is 50 rupees.",
@@ -4828,9 +4845,9 @@
    "1125 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 15 percent per annum means every 100 rupees earns 15 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 1500 rupees is 15 hundreds, and each hundred earns 15 rupees. Then multiply that 1-year interest by 4 for the 4 years.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. So the simple interest is 30 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 15 percent means 15 out of every 100, so one year's interest is 1500 times 15, divided by 100, which is 225 rupees.",
@@ -4846,9 +4863,9 @@
    "1200 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 4 percent simple interest means every 100 rupees earns 4 rupees each year.",
+   "Find the interest for 1 year first: 5000 rupees is 50 hundreds, and each hundred earns 4 rupees. Multiply by 5 for the 5 years. Then add that interest to the 5000 rupees you started with.",
+   "Try another one: 200 rupees at 6 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 6, which is 12 rupees. 3 years earn 3 times 12, which is 36 rupees. Add the money at the start: 200 plus 36 equals 236. So the amount is 236 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 4 percent means 4 out of every 100, so one year's interest is 5000 times 4, divided by 100, which is 200 rupees.",
@@ -4865,9 +4882,9 @@
    "3700 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 10 percent simple interest means every 100 rupees earns 10 rupees each year.",
+   "Find the interest for 1 year first: 2500 rupees is 25 hundreds, and each hundred earns 10 rupees. Multiply by 5 for the 5 years. Then add that interest to the 2500 rupees you started with.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. Add the money at the start: 200 plus 24 equals 224. So the amount is 224 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 10 percent means 10 out of every 100, so one year's interest is 2500 times 10, divided by 100, which is 250 rupees.",
@@ -4884,9 +4901,9 @@
    "600 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 5 percent per annum means every 100 rupees earns 5 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 3000 rupees is 30 hundreds, and each hundred earns 5 rupees. Then multiply that 1-year interest by 3 for the 3 years.",
+   "Try another one: 200 rupees at 6 percent for 4 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 6, which is 12 rupees. 4 years earn 4 times 12, which is 48 rupees. So the simple interest is 48 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 5 percent means 5 out of every 100, so one year's interest is 3000 times 5, divided by 100, which is 150 rupees.",
@@ -4902,9 +4919,9 @@
    "800 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 8 percent per annum means every 100 rupees earns 8 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 2000 rupees is 20 hundreds, and each hundred earns 8 rupees. Then multiply that 1-year interest by 4 for the 4 years.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. So the simple interest is 30 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 8 percent means 8 out of every 100, so one year's interest is 2000 times 8, divided by 100, which is 160 rupees.",
@@ -4920,9 +4937,9 @@
    "300 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 10 percent per annum means every 100 rupees earns 10 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 1000 rupees is 10 hundreds, and each hundred earns 10 rupees. Then multiply that 1-year interest by 2 for the 2 years.",
+   "Try another one: 400 rupees at 5 percent for 3 years. 400 rupees is 4 hundreds, so 1 year earns 4 times 5, which is 20 rupees. 3 years earn 3 times 20, which is 60 rupees. So the simple interest is 60 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 10 percent means 10 out of every 100, so one year's interest is 1000 times 10, divided by 100, which is 100 rupees.",
@@ -4938,9 +4955,9 @@
    "310 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 6 percent per annum means every 100 rupees earns 6 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 1200 rupees is 12 hundreds, and each hundred earns 6 rupees. Then multiply that 1-year interest by 5 for the 5 years.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. So the simple interest is 24 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 6 percent means 6 out of every 100, so one year's interest is 1200 times 6, divided by 100, which is 72 rupees.",
@@ -4956,9 +4973,9 @@
    "360 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 15 percent per annum means every 100 rupees earns 15 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 1200 rupees is 12 hundreds, and each hundred earns 15 rupees. Then multiply that 1-year interest by 2 for the 2 years.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. So the simple interest is 30 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 15 percent means 15 out of every 100, so one year's interest is 1200 times 15, divided by 100, which is 180 rupees.",
@@ -4974,9 +4991,9 @@
    "2950 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 10 percent simple interest means every 100 rupees earns 10 rupees each year.",
+   "Find the interest for 1 year first: 2000 rupees is 20 hundreds, and each hundred earns 10 rupees. Multiply by 5 for the 5 years. Then add that interest to the 2000 rupees you started with.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. Add the money at the start: 200 plus 24 equals 224. So the amount is 224 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 10 percent means 10 out of every 100, so one year's interest is 2000 times 10, divided by 100, which is 200 rupees.",
@@ -4993,9 +5010,9 @@
    "5300 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 15 percent simple interest means every 100 rupees earns 15 rupees each year.",
+   "Find the interest for 1 year first: 3000 rupees is 30 hundreds, and each hundred earns 15 rupees. Multiply by 5 for the 5 years. Then add that interest to the 3000 rupees you started with.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. Add the money at the start: 200 plus 24 equals 224. So the amount is 224 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 15 percent means 15 out of every 100, so one year's interest is 3000 times 15, divided by 100, which is 450 rupees.",
@@ -5012,9 +5029,9 @@
    "750 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 6 percent simple interest means every 100 rupees earns 6 rupees each year.",
+   "Find the interest for 1 year first: 2500 rupees is 25 hundreds, and each hundred earns 6 rupees. Multiply by 4 for the 4 years. Then add that interest to the 2500 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 6 percent means 6 out of every 100, so one year's interest is 2500 times 6, divided by 100, which is 150 rupees.",
@@ -5031,9 +5048,9 @@
    "375 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 15 percent simple interest means every 100 rupees earns 15 rupees each year.",
+   "Find the interest for 1 year first: 500 rupees is 5 hundreds, and each hundred earns 15 rupees. Multiply by 4 for the 4 years. Then add that interest to the 500 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 15 percent means 15 out of every 100, so one year's interest is 500 times 15, divided by 100, which is 75 rupees.",
@@ -5050,9 +5067,9 @@
    "242 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 8 percent per annum means every 100 rupees earns 8 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 1200 rupees is 12 hundreds, and each hundred earns 8 rupees. Then multiply that 1-year interest by 2 for the 2 years.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. So the simple interest is 30 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 8 percent means 8 out of every 100, so one year's interest is 1200 times 8, divided by 100, which is 96 rupees.",
@@ -5068,9 +5085,9 @@
    "4000 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 15 percent simple interest means every 100 rupees earns 15 rupees each year.",
+   "Find the interest for 1 year first: 2500 rupees is 25 hundreds, and each hundred earns 15 rupees. Multiply by 4 for the 4 years. Then add that interest to the 2500 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 15 percent means 15 out of every 100, so one year's interest is 2500 times 15, divided by 100, which is 375 rupees.",
@@ -5087,9 +5104,9 @@
    "3670 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 6 percent simple interest means every 100 rupees earns 6 rupees each year.",
+   "Find the interest for 1 year first: 3000 rupees is 30 hundreds, and each hundred earns 6 rupees. Multiply by 4 for the 4 years. Then add that interest to the 3000 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 6 percent means 6 out of every 100, so one year's interest is 3000 times 6, divided by 100, which is 180 rupees.",
@@ -5106,9 +5123,9 @@
    "1440 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 12 percent simple interest means every 100 rupees earns 12 rupees each year.",
+   "Find the interest for 1 year first: 3000 rupees is 30 hundreds, and each hundred earns 12 rupees. Multiply by 3 for the 3 years. Then add that interest to the 3000 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 4 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 4 years earn 4 times 10, which is 40 rupees. Add the money at the start: 200 plus 40 equals 240. So the amount is 240 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 12 percent means 12 out of every 100, so one year's interest is 3000 times 12, divided by 100, which is 360 rupees.",
@@ -5125,9 +5142,9 @@
    "550 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 10 percent simple interest means every 100 rupees earns 10 rupees each year.",
+   "Find the interest for 1 year first: 500 rupees is 5 hundreds, and each hundred earns 10 rupees. Multiply by 2 for the 2 years. Then add that interest to the 500 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 10 percent means 10 out of every 100, so one year's interest is 500 times 10, divided by 100, which is 50 rupees.",
@@ -5144,9 +5161,9 @@
    "480 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 6 percent simple interest means every 100 rupees earns 6 rupees each year.",
+   "Find the interest for 1 year first: 2000 rupees is 20 hundreds, and each hundred earns 6 rupees. Multiply by 3 for the 3 years. Then add that interest to the 2000 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 4 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 4 years earn 4 times 10, which is 40 rupees. Add the money at the start: 200 plus 40 equals 240. So the amount is 240 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 6 percent means 6 out of every 100, so one year's interest is 2000 times 6, divided by 100, which is 120 rupees.",
@@ -5163,9 +5180,9 @@
    "4840 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 7 percent simple interest means every 100 rupees earns 7 rupees each year.",
+   "Find the interest for 1 year first: 4000 rupees is 40 hundreds, and each hundred earns 7 rupees. Multiply by 3 for the 3 years. Then add that interest to the 4000 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 4 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 4 years earn 4 times 10, which is 40 rupees. Add the money at the start: 200 plus 40 equals 240. So the amount is 240 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 7 percent means 7 out of every 100, so one year's interest is 4000 times 7, divided by 100, which is 280 rupees.",
@@ -5182,9 +5199,9 @@
    "120 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 12 percent per annum means every 100 rupees earns 12 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 500 rupees is 5 hundreds, and each hundred earns 12 rupees. Then multiply that 1-year interest by 2 for the 2 years.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. So the simple interest is 30 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 12 percent means 12 out of every 100, so one year's interest is 500 times 12, divided by 100, which is 60 rupees.",
@@ -5200,9 +5217,9 @@
    "375 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 15 percent per annum means every 100 rupees earns 15 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 500 rupees is 5 hundreds, and each hundred earns 15 rupees. Then multiply that 1-year interest by 5 for the 5 years.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. So the simple interest is 24 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 15 percent means 15 out of every 100, so one year's interest is 500 times 15, divided by 100, which is 75 rupees.",
@@ -5218,9 +5235,9 @@
    "96 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 4 percent per annum means every 100 rupees earns 4 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 1200 rupees is 12 hundreds, and each hundred earns 4 rupees. Then multiply that 1-year interest by 2 for the 2 years.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. So the simple interest is 30 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 4 percent means 4 out of every 100, so one year's interest is 1200 times 4, divided by 100, which is 48 rupees.",
@@ -5236,9 +5253,9 @@
    "3800 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 5 percent simple interest means every 100 rupees earns 5 rupees each year.",
+   "Find the interest for 1 year first: 3000 rupees is 30 hundreds, and each hundred earns 5 rupees. Multiply by 5 for the 5 years. Then add that interest to the 3000 rupees you started with.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. Add the money at the start: 200 plus 24 equals 224. So the amount is 224 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 5 percent means 5 out of every 100, so one year's interest is 3000 times 5, divided by 100, which is 150 rupees.",
@@ -5255,9 +5272,9 @@
    "2250 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 5 percent simple interest means every 100 rupees earns 5 rupees each year.",
+   "Find the interest for 1 year first: 2000 rupees is 20 hundreds, and each hundred earns 5 rupees. Multiply by 2 for the 2 years. Then add that interest to the 2000 rupees you started with.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. Add the money at the start: 200 plus 24 equals 224. So the amount is 224 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 5 percent means 5 out of every 100, so one year's interest is 2000 times 5, divided by 100, which is 100 rupees.",
@@ -5274,9 +5291,9 @@
    "4510 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 7 percent simple interest means every 100 rupees earns 7 rupees each year.",
+   "Find the interest for 1 year first: 4000 rupees is 40 hundreds, and each hundred earns 7 rupees. Multiply by 2 for the 2 years. Then add that interest to the 4000 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 7 percent means 7 out of every 100, so one year's interest is 4000 times 7, divided by 100, which is 280 rupees.",
@@ -5293,9 +5310,9 @@
    "750 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 5 percent simple interest means every 100 rupees earns 5 rupees each year.",
+   "Find the interest for 1 year first: 2500 rupees is 25 hundreds, and each hundred earns 5 rupees. Multiply by 5 for the 5 years. Then add that interest to the 2500 rupees you started with.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. Add the money at the start: 200 plus 24 equals 224. So the amount is 224 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 5 percent means 5 out of every 100, so one year's interest is 2500 times 5, divided by 100, which is 125 rupees.",
@@ -5312,9 +5329,9 @@
    "1250 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 15 percent per annum means every 100 rupees earns 15 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 2000 rupees is 20 hundreds, and each hundred earns 15 rupees. Then multiply that 1-year interest by 4 for the 4 years.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. So the simple interest is 30 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 15 percent means 15 out of every 100, so one year's interest is 2000 times 15, divided by 100, which is 300 rupees.",
@@ -5330,9 +5347,9 @@
    "3050 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 12 percent per annum means every 100 rupees earns 12 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 5000 rupees is 50 hundreds, and each hundred earns 12 rupees. Then multiply that 1-year interest by 5 for the 5 years.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. So the simple interest is 24 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 12 percent means 12 out of every 100, so one year's interest is 5000 times 12, divided by 100, which is 600 rupees.",
@@ -5348,9 +5365,9 @@
    "105 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 7 percent simple interest means every 100 rupees earns 7 rupees each year.",
+   "Find the interest for 1 year first: 500 rupees is 5 hundreds, and each hundred earns 7 rupees. Multiply by 2 for the 2 years. Then add that interest to the 500 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 7 percent means 7 out of every 100, so one year's interest is 500 times 7, divided by 100, which is 35 rupees.",
@@ -5367,9 +5384,9 @@
    "675 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 15 percent per annum means every 100 rupees earns 15 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 1500 rupees is 15 hundreds, and each hundred earns 15 rupees. Then multiply that 1-year interest by 3 for the 3 years.",
+   "Try another one: 200 rupees at 5 percent for 4 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 4 years earn 4 times 10, which is 40 rupees. So the simple interest is 40 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 15 percent means 15 out of every 100, so one year's interest is 1500 times 15, divided by 100, which is 225 rupees.",
@@ -5385,9 +5402,9 @@
    "850 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 10 percent per annum means every 100 rupees earns 10 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 2000 rupees is 20 hundreds, and each hundred earns 10 rupees. Then multiply that 1-year interest by 4 for the 4 years.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. So the simple interest is 30 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 10 percent means 10 out of every 100, so one year's interest is 2000 times 10, divided by 100, which is 200 rupees.",
@@ -5403,9 +5420,9 @@
    "200 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 10 percent per annum means every 100 rupees earns 10 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 500 rupees is 5 hundreds, and each hundred earns 10 rupees. Then multiply that 1-year interest by 4 for the 4 years.",
+   "Try another one: 300 rupees at 5 percent for 2 years. 300 rupees is 3 hundreds, so 1 year earns 3 times 5, which is 15 rupees. 2 years earn 2 times 15, which is 30 rupees. So the simple interest is 30 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 10 percent means 10 out of every 100, so one year's interest is 500 times 10, divided by 100, which is 50 rupees.",
@@ -5421,9 +5438,9 @@
    "2190 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 6 percent simple interest means every 100 rupees earns 6 rupees each year.",
+   "Find the interest for 1 year first: 2000 rupees is 20 hundreds, and each hundred earns 6 rupees. Multiply by 2 for the 2 years. Then add that interest to the 2000 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 6 percent means 6 out of every 100, so one year's interest is 2000 times 6, divided by 100, which is 120 rupees.",
@@ -5440,9 +5457,9 @@
    "875 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 7 percent per annum means every 100 rupees earns 7 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 2500 rupees is 25 hundreds, and each hundred earns 7 rupees. Then multiply that 1-year interest by 5 for the 5 years.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. So the simple interest is 24 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 7 percent means 7 out of every 100, so one year's interest is 2500 times 7, divided by 100, which is 175 rupees.",
@@ -5458,9 +5475,9 @@
    "150 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 6 percent simple interest means every 100 rupees earns 6 rupees each year.",
+   "Find the interest for 1 year first: 500 rupees is 5 hundreds, and each hundred earns 6 rupees. Multiply by 4 for the 4 years. Then add that interest to the 500 rupees you started with.",
+   "Try another one: 200 rupees at 5 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 5, which is 10 rupees. 3 years earn 3 times 10, which is 30 rupees. Add the money at the start: 200 plus 30 equals 230. So the amount is 230 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 6 percent means 6 out of every 100, so one year's interest is 500 times 6, divided by 100, which is 30 rupees.",
@@ -5477,9 +5494,9 @@
    "840 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Simple interest is the extra money that a sum of money earns. 7 percent per annum means every 100 rupees earns 7 rupees each year, and it earns the same again every year.",
+   "First find the interest for 1 year: 2000 rupees is 20 hundreds, and each hundred earns 7 rupees. Then multiply that 1-year interest by 5 for the 5 years.",
+   "Try another one: 200 rupees at 4 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 4, which is 8 rupees. 3 years earn 3 times 8, which is 24 rupees. So the simple interest is 24 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 7 percent means 7 out of every 100, so one year's interest is 2000 times 7, divided by 100, which is 140 rupees.",
@@ -5495,9 +5512,9 @@
    "1150 rupees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "The amount is the money at the start plus the interest it earns. 4 percent simple interest means every 100 rupees earns 4 rupees each year.",
+   "Find the interest for 1 year first: 1000 rupees is 10 hundreds, and each hundred earns 4 rupees. Multiply by 5 for the 5 years. Then add that interest to the 1000 rupees you started with.",
+   "Try another one: 200 rupees at 6 percent for 3 years. 200 rupees is 2 hundreds, so 1 year earns 2 times 6, which is 12 rupees. 3 years earn 3 times 12, which is 36 rupees. Add the money at the start: 200 plus 36 equals 236. So the amount is 236 rupees."
   ],
   "steps": [
    "Simple interest adds the same amount every year. 4 percent means 4 out of every 100, so one year's interest is 1000 times 4, divided by 100, which is 40 rupees.",

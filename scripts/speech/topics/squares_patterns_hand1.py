@@ -42,8 +42,9 @@ HAND = {
     },
     "EXT_G5_FP_2017_016": {
         "hints": [
-            "Find the square roots nearby: 100 squared is 10000, and 105 squared is 11025. Check which numbers land exactly.",
-            "A perfect square has a whole number square root. Use 100 squared equals 10000, and 101 squared equals 10201.",
+            None,
+            "Start from 100 times 100, which is 10000, and 101 times 101, which is 10201. Is 10025 either of these? Test the other choices in the same way: a number ending in 25 could be the square of a number ending in 5.",
+            "For example, 35 times 35 equals 1225, so 1225 is a perfect square. A shortcut for squaring a number ending in 5: for 35, work out 3 times 4, which is 12, and write 25 after it.",
         ],
         "steps": [
             "10025 lies between 100 squared, which is 10000, and 101 squared, which is 10201. So it is not a perfect square.",
@@ -54,8 +55,9 @@ HAND = {
     "EXT_G5_FP_2017_034": {
         "q": "The least number that should be subtracted from 370, so that the resulting number is a square number, is:",
         "hints": [
-            "Find the biggest perfect square that is less than 370. 19 squared and 20 squared are close.",
-            "Subtract the number from the nearest perfect square below it.",
+            None,
+            "Try squares near 370: 19 times 19 is 361, and 20 times 20 is 400. Which of these is just below 370? Subtract that square from 370.",
+            "A similar one: for 150, the square just below is 12 times 12, which is 144. So the least number to subtract is 150 minus 144, which equals 6.",
         ],
         "steps": [
             "19 squared is 361, and 20 squared is 400. The square just below 370 is 361.",
@@ -69,10 +71,11 @@ HAND = {
             "The nth term equals 2 to the power n, minus 1. The last digits of 2 to the power n repeat every 4: 2, 4, 8, 6.",
         ],
         "steps": [
-            "The terms: 2 to the power one, minus 1, is 1. 2 squared, minus 1, is 3. 2 cubed, minus 1, is 7. 2 to the power four, minus 1, is 15. So the nth term equals 2 to the power n, minus 1.",
-            "The units digit of 2 to the power n repeats: 2, 4, 8, 6, every 4 steps.",
-            "30 divided by 4 is 7, remainder 2. So 2 to the power thirty ends in 4.",
-            "The units digit of 2 to the power thirty, minus 1, is 4 minus 1, which equals 3.",
+            "Each term is 1 less than a power of 2: 2 minus 1, 4 minus 1, 8 minus 1, 16 minus 1, and so on. So the 30th term is 2 to the power thirty, minus 1.",
+            "The units digits of the powers of 2 go 2, 4, 8, 6, and then repeat every 4 powers.",
+            "30 is 7 lots of 4, with 2 left over, because 7 times 4 is 28. So 2 to the power thirty has the 2nd digit of the cycle: it ends in 4.",
+            "Take away 1: the 30th term ends in 4 minus 1, which is 3.",
+            "So the units digit is 3.",
         ],
     },
     "EXT_G5_FP_2018_006": {
@@ -88,14 +91,15 @@ HAND = {
     },
     "EXT_G5_FP_2018_017": {
         "hints": [
-            "Square both numbers in each option, add them, and check whether the total is a perfect square. Remember the famous triple 8, 15, 17!",
-            "Pythagorean triples: 3, 4 and 5. Then 5, 12 and 13. Then 8, 15 and 17. And 9, 12 and 15.",
+            None,
+            "Start with 9 and 16: 9 times 9 is 81, and 16 times 16 is 256, total 337. Is 337 a square? 18 times 18 is 324, and 19 times 19 is 361, so no. Test the other pairs the same way.",
+            "A similar one: 6 and 8. 6 times 6 is 36, and 8 times 8 is 64. 36 plus 64 equals 100, which is 10 times 10. So 6 and 8 work.",
         ],
         "steps": [
-            "10 squared plus 15 squared is 100 plus 225, which equals 325. That is not a square number.",
-            "8 squared plus 15 squared is 64 plus 225, which equals 289. That is 17 squared, so it is a square number.",
-            "12 squared plus 15 squared is 144 plus 225, which equals 369. Not a square number. 9 squared plus 16 squared is 81 plus 256, which equals 337. Not a square number.",
-            "Answer: 8 and 15.",
+            "10 and 15: 100 plus 225 equals 325. Not a square, because 18 times 18 is 324, and 19 times 19 is 361.",
+            "8 and 15: 64 plus 225 equals 289, and 17 times 17 is 289. This is a square number.",
+            "12 and 15: 144 plus 225 equals 369, which lies between 19 times 19, or 361, and 20 times 20, or 400. 9 and 16: 81 plus 256 equals 337, which lies between 18 times 18, or 324, and 19 times 19, or 361. Neither is a square.",
+            "So the two numbers are 8 and 15.",
         ],
     },
     "EXT_G5_FP_2018_034": {

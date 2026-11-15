@@ -699,7 +699,7 @@ def f_compare(q):
 
 @rule("fractions: a/n + b/n with steps")
 def f_add_like(q):
-    m = M(r"Simplify: (\d+)/(\d+) \+ (\d+)/(\d+)", q["questionText"].strip())
+    m = M(r"(?:Simplify|Add, and give the answer in its simplest form): (\d+)/(\d+) \+ (\d+)/(\d+)", q["questionText"].strip())
     if not m:
         return None
     a, d1, b, d2 = [int(g) for g in m.groups()]
@@ -774,7 +774,9 @@ def pv_times(q):
     if not m:
         return None
     number, d1, p1, d2, p2 = m.groups()
-    own_steps(q, 2)
+    count = len(own_steps(q))
+    if count not in (2, 3):
+        raise Skip("unexpected number of steps")
     if len(number) > 9 or d2 == "0":
         raise Skip("cannot divide by a zero place value")
     i1, i2 = digit_index(number, p1, d1), digit_index(number, p2, d2)
@@ -789,7 +791,8 @@ def pv_times(q):
         "stepFigures": [
             dict(chart, note="%s in %s is %d. %s in %s is %d." % (d1, p1, v1, d2, p2, v2)),
             dict(chart, note="%d ÷ %d = %s" % (v1, v2, n(ratio))),
-        ],
+            dict(chart, note="%d is %s times %d" % (v1, n(ratio), v2)),
+        ][:count],
     }
 
 
@@ -935,13 +938,20 @@ def g_with_steps(q):
         square = True
     if not m or not own_steps(q):
         return None
-    own_steps(q, 2)
+    # The bank's steps: the formula, the numbers put in (two steps for a rectangle's
+    # perimeter: add, then double), and a closing sentence. Older two-step versions
+    # (formula, then working) are still accepted.
+    steps = own_steps(q)
+    count = len(steps)
     what = m.group(1)
     l = int(m.group(2))
     b = l if square else int(m.group(3))
     ans = l * b if what == "area" else 2 * (l + b)
     need(q, ans)
-    if not grounded(q, 1, ans):
+    expected = 4 if (what == "perimeter" and not square) else 3
+    if count not in (2, expected):
+        raise Skip("unexpected number of steps")
+    if not grounded(q, 1 if count < 4 else 2, ans):
         raise Skip("steps do not state the working")
     if square:
         base = {"kind": "rectangle", "square": True, "length": "%d cm" % l}
@@ -952,18 +962,35 @@ def g_with_steps(q):
         squares = dict(base)
         if across <= 12:
             squares["grid"] = {"cols": across, "rows": down}
-        return {"figure": dict(base, inside="Area = ?"),
-                "stepFigures": [
-                    dict(squares, highlight=["length"] if square else ["length", "breadth"], note="Area = %s" % ("side × side" if square else "length × breadth")),
-                    dict(squares, highlight=["fill"], note="%d × %d = %d sq. cm" % (l, b, ans))]}
+        figs = [
+            dict(squares, highlight=["length"] if square else ["length", "breadth"], note="Area = %s" % ("side × side" if square else "length × breadth")),
+            dict(squares, highlight=["fill"], note="%d × %d = %d" % (l, b, ans)),
+            dict(base, inside="%d sq. cm" % ans, highlight=["fill"]),
+        ]
+        return {"figure": dict(base, inside="Area = ?"), "stepFigures": figs[:count]}
     if square:
-        working = "%d + %d + %d + %d = %d cm" % (l, l, l, l, ans)
+        four = grounded(q, 0, 4)
+        figs = [
+            dict(base, highlight=["border"], note="4 equal sides" if four else "Perimeter = all the sides added together"),
+            dict(base, highlight=["border"], note=("4 × %d = %d" % (l, ans)) if four else ("%d + %d + %d + %d = %d" % (l, l, l, l, ans))),
+            dict(base, highlight=["border"], note="Perimeter = %d cm" % ans),
+        ]
+        return {"figure": dict(base, note="Perimeter = ?"), "stepFigures": figs[:count]}
+    if count == 2:
+        figs = [
+            dict(base, highlight=["border"], note="Perimeter = all the sides added together"),
+            dict(base, highlight=["border"], note="%d + %d + %d + %d = %d cm" % (l, b, l, b, ans)),
+        ]
     else:
-        working = "%d + %d + %d + %d = %d cm" % (l, b, l, b, ans)
-    return {"figure": dict(base, note="Perimeter = ?"),
-            "stepFigures": [
-                dict(base, highlight=["border"], note="Perimeter = all the sides added together"),
-                dict(base, highlight=["border"], note=working)]}
+        if not grounded(q, 1, l + b):
+            raise Skip("steps do not state the working")
+        figs = [
+            dict(base, highlight=["border"], note="Perimeter = 2 × (length + width)"),
+            dict(base, highlight=["length", "breadth"], note="Halfway round: %d + %d = %d" % (l, b, l + b)),
+            dict(base, highlight=["border"], note="All the way round: 2 × %d = %d" % (l + b, ans)),
+            dict(base, highlight=["border"], note="Perimeter = %d cm" % ans),
+        ]
+    return {"figure": dict(base, note="Perimeter = ?"), "stepFigures": figs}
 
 
 @rule("geometry with steps: area of a triangle")
@@ -1097,7 +1124,7 @@ def e_with_steps(q):
     m = M(r"Solve: (\d+)x ([+−-]) (\d+) = (\d+)", q["questionText"].strip())
     if not m:
         return None
-    steps = own_steps(q, 2)
+    steps = own_steps(q, 3)
     a, op, b, c = int(m.group(1)), m.group(2), int(m.group(3)), int(m.group(4))
     plus = op == "+"
     rhs = c - b if plus else c + b
@@ -1105,19 +1132,24 @@ def e_with_steps(q):
         raise Skip("does not divide exactly")
     x = rhs // a
     need(q, x)
-    expect = ("Subtract %d from both sides" if plus else "Add %d to both sides") % b
-    if steps[0]["text"].strip() != expect or steps[1]["text"].strip() != "Divide both sides by %d" % a:
-        raise Skip("steps are not the usual two moves")
+    # The bank's steps: undo the ± b, divide by a, then check by putting x back.
+    texts = [s.get("text", "").strip() for s in steps]
+    first = ("Subtract %d from both sides" if plus else "Add %d to both sides") % b
+    if not (texts[0].startswith(first) and texts[1].startswith("Divide both sides by %d" % a) and texts[2].startswith("Check:")):
+        raise Skip("steps are not the usual three moves")
+    if not grounded(q, 0, rhs) or not grounded(q, 1, x):
+        raise Skip("steps do not state the working")
     sign = "+" if plus else "−"
     undo = "−" if plus else "+"
-    right1 = str(rhs) if grounded(q, 0, rhs) else "%d %s %d" % (c, undo, b)
+    start = {"kind": "balance", "left": "%dx %s %d" % (a, sign, b), "right": str(c)}
     return {
-        "figure": {"kind": "balance", "left": "%dx %s %d" % (a, sign, b), "right": str(c)},
+        "figure": dict(start),
         "stepFigures": [
-            {"kind": "balance", "left": "%dx" % a, "right": right1, "highlight": ["right"],
-             "note": ("Take %d off both sides to keep it level" if plus else "Add %d to both sides to keep it level") % b},
+            {"kind": "balance", "left": "%dx" % a, "right": str(rhs), "highlight": ["right"],
+             "note": "%s %d on both sides: %d %s %d = %d" % ("Take off" if plus else "Add", b, c, undo, b, rhs)},
             {"kind": "balance", "left": "x", "right": str(x), "highlight": ["left", "right"],
-             "note": "Split both sides into %d equal shares" % a},
+             "note": "Share both sides into %d equal parts: %d ÷ %d = %d" % (a, rhs, a, x)},
+            dict(start, highlight=["left"], note="Check: %d × %d %s %d = %d. It balances." % (a, x, sign, b, c)),
         ],
     }
 
@@ -1206,29 +1238,41 @@ def r_share(q):
         if not m:
             return None
         total, item, a, b, which = int(m.group(2)), " " + m.group(3), int(m.group(4)), int(m.group(5)), m.group(6)
-    own_steps(q, 2)
+    # The bank's steps: add the parts, find one part, multiply for the share asked, state the answer.
+    own_steps(q, 4)
     if a == b or a + b > 12 or total % (a + b) or min(a, b) < 1:
         raise Skip("ratio does not share the total exactly")
     unit = total // (a + b)
     wanted = max(a, b) if which == "larger" else min(a, b)
     ans = unit * wanted
     need(q, ans)
-    if not grounded(q, 1, ans):
+    if not grounded(q, 0, a + b) or not grounded(q, 1, unit) or not grounded(q, 2, ans):
         raise Skip("steps do not state the working")
     brace = ("%d%s" % (total, item))[:24]
-    pieces = [{"units": 1, "tone": "a" if i < a else "b"} for i in range(a + b)]
     first_wanted = a == wanted
+
+    def pieces(label=None):
+        return [dict({"units": 1, "tone": "a" if i < a else "b"}, **({"label": label} if label else {})) for i in range(a + b)]
+
+    wanted_keys = ["b0s%d" % i for i in (range(a) if first_wanted else range(a, a + b))]
     after = {"kind": "barModel", "highlight": ["b0s0" if first_wanted else "b0s1"],
              "note": "The %s share is %d" % (which, ans),
              "bars": [{"brace": brace, "segments": [
                  dict({"units": a, "tone": "a"}, **({"label": str(ans)} if first_wanted else {})),
                  dict({"units": b, "tone": "b"}, **({} if first_wanted else {"label": str(ans)}))]}]}
     before = {"kind": "barModel", "note": "Ratio %d:%d. The %s share = ?" % (a, b, which),
-              "bars": [{"brace": brace, "segments": pieces}]}
+              "bars": [{"brace": brace, "segments": pieces()}]}
+    third = {"kind": "barModel", "note": "%d parts of %d: %d × %d = %d" % (wanted, unit, wanted, unit, ans),
+             "bars": [{"brace": brace, "segments": pieces(str(unit))}]}
+    if len(wanted_keys) <= 8:
+        third["highlight"] = wanted_keys
     return {
         "figure": before,
         "stepFigures": [
-            dict(before, note="%d equal parts on one side, %d on the other" % (a, b)),
+            dict(before, note="%d + %d = %d equal parts in all" % (a, b, a + b)),
+            {"kind": "barModel", "note": "One part: %d ÷ %d = %d" % (total, a + b, unit),
+             "bars": [{"brace": brace, "segments": pieces(str(unit))}]},
+            third,
             after,
         ],
     }
@@ -1306,30 +1350,98 @@ def sp_average(q):
     }
 
 
-# ── Family: HCF with steps (factor trees) ────────────────────────────────────
-# The bank's own steps for these are terse ("Find factors of 75 and 45." / "HCF = 15"),
-# so the only numbers a step figure may show are the two numbers and the HCF.
-# A factor tree needs nothing else: the renderer works the tree out itself.
+# ── Family: HCF with steps (Venn of factors, or of prime factors) ────────────
+# The bank's steps come in two shapes, both four steps long:
+#   listing:  "List the factors of A: ..." / "List the factors of B: ..." /
+#             "The factors in both lists are ... The largest of them is H." / "So the HCF ... is H."
+#   primes:   "Break each number into prime factors: A = ..., and B = ..." /
+#             "Pick out the prime factors that appear in both: ..." / "Multiply them: ... = H." / "So the HCF ... is H."
+# Either way the factors are stated in the steps, so a Venn diagram can show them.
 
-@rule("HCF with steps: factor trees")
+def prime_factors(x):
+    out, d = [], 2
+    while d * d <= x:
+        while x % d == 0:
+            out.append(d)
+            x //= d
+        d += 1
+    if x > 1:
+        out.append(x)
+    return out
+
+
+def region(values):
+    """Text for one Venn region: the numbers, or "none" when the region is empty."""
+    return listed(values) if values else "none"
+
+
+def factor_pairs(x, fx):
+    """A small table of the pairs that multiply to x (every factor appears in it), or None if it will not fit."""
+    pairs = [(d, x // d) for d in fx if d * d <= x]
+    if not 1 <= len(pairs) <= 6:
+        return None
+    return {"kind": "table", "headers": ["Pairs making %d" % x], "rows": [["%d × %d" % p] for p in pairs],
+            "note": "Each pair multiplies to %d, so both numbers are factors" % x}
+
+
+@rule("HCF with steps: Venn of factors")
 def hcf_with_steps(q):
     m = M(r"Find the HCF of (\d+) and (\d+)\.", q["questionText"].strip())
     if not m or not own_steps(q):
         return None
-    own_steps(q, 2)
+    steps = own_steps(q, 4)
     a, b = int(m.group(1)), int(m.group(2))
-    if a == b or not (4 <= a <= 1000 and 4 <= b <= 1000):
-        raise Skip("numbers outside the factor-tree range")
+    if a == b or not (2 <= a <= 1000 and 2 <= b <= 1000):
+        raise Skip("numbers outside the supported range")
     h = math.gcd(a, b)
     need(q, h)
-    if not grounded(q, 1, h):
-        raise Skip("steps do not state the working")
-    return {"stepFigures": [
-        {"kind": "factorTree", "number": a, "highlight": ["primes"], "note": "Break %d into its prime factors" % a},
-        {"kind": "factorTree", "number": b, "highlight": ["primes"],
-         "note": ("%d and %d share no prime factor, so the HCF is 1" % (a, b)) if h == 1 else
-                 ("Now %d. The primes both trees share multiply to %d" % (b, h))},
-    ]}
+    texts = [s.get("text", "").strip() for s in steps]
+
+    if texts[0].startswith("List the factors of %d:" % a) and texts[1].startswith("List the factors of %d:" % b) \
+            and texts[2].startswith("The factors in both lists are"):
+        fa, fb = factors(a), factors(b)
+        both = [d for d in fa if d in fb]
+        if not grounded(q, 0, *fa) or not grounded(q, 1, *fb) or not grounded(q, 2, *both):
+            raise Skip("steps do not list the factors")
+        left, mid, right = region([d for d in fa if d not in both]), region(both), region([d for d in fb if d not in both])
+        if max(len(left), len(mid), len(right)) > 40:
+            raise Skip("too many factors to fit in the diagram")
+        venn = {"kind": "venn", "leftTitle": "Factors of %d" % a, "rightTitle": "Factors of %d" % b,
+                "left": left, "both": mid, "right": right}
+        return {"stepFigures": [
+            factor_pairs(a, fa),
+            factor_pairs(b, fb),
+            dict(venn, highlight=["both"], note="Factors in both lists go in the middle"),
+            dict(venn, highlight=["both"], note="Biggest shared factor: %d" % h),
+        ]}
+
+    if texts[0].startswith("Break each number into prime factors:") and texts[1].startswith("Pick out the prime factors that appear in both:") \
+            and texts[2].startswith("Multiply them:"):
+        pa, pb = prime_factors(a), prime_factors(b)
+        common, rest_b = [], list(pb)
+        only_a = []
+        for p in pa:
+            if p in rest_b:
+                rest_b.remove(p)
+                common.append(p)
+            else:
+                only_a.append(p)
+        if not common or not grounded(q, 0, *(pa + pb)) or not grounded(q, 2, h):
+            raise Skip("steps do not state the prime factors")
+        venn = {"kind": "venn", "leftTitle": "Primes of %d" % a, "rightTitle": "Primes of %d" % b,
+                "left": region(only_a), "both": region(common), "right": region(rest_b)}
+        product = " × ".join(str(p) for p in common)
+        times = "%s = %d" % (product, h) if len(common) > 1 else "Only %d is shared" % h
+        if a < 4 or len(times) > 70:
+            raise Skip("outside the factor-tree range")
+        return {"stepFigures": [
+            {"kind": "factorTree", "number": a, "highlight": ["primes"], "note": "%d = %s" % (a, " × ".join(str(p) for p in pa))},
+            dict(venn, highlight=["both"], note="Shared prime factors go in the middle"),
+            dict(venn, highlight=["both"], note=times),
+            dict(venn, highlight=["both"], note="HCF of %d and %d = %d" % (a, b, h)),
+        ]}
+
+    raise Skip("steps are not one of the two usual methods")
 
 
 # ── Family: ages in a ratio (step figures) ───────────────────────────────────
@@ -1361,6 +1473,38 @@ def age_ratio(q):
             model(None, "?", note="%d equal parts for %s, %d for %s" % (a, first, b, second)),
             model(str(unit), "?", highlight=["b1"], note="One part: %d ÷ %d = %d" % (age, b, unit)),
             model(str(unit), "%d years" % (unit * a), highlight=["b0"], note="%d × %d = %d" % (a, unit, unit * a)),
+        ],
+    }
+
+
+# ── Family: proportion a : b = c : x (ratio table) ───────────────────────────
+
+@rule("proportion: a : b = c : x")
+def proportion_x(q):
+    m = M(r"If (\d+) : (\d+) = (\d+) : x, find x\.", q["questionText"].strip())
+    if not m:
+        return None
+    # The bank's steps: the idea, the multiplier from the first terms, the second term multiplied, the answer.
+    own_steps(q, 4)
+    a, b, c = int(m.group(1)), int(m.group(2)), int(m.group(3))
+    if a < 1 or c % a or c == a:
+        raise Skip("first terms are not a whole-number multiple")
+    k = c // a
+    x = b * k
+    need(q, x)
+    if not grounded(q, 1, k) or not grounded(q, 2, x):
+        raise Skip("steps do not state the working")
+
+    def table(last, **extra):
+        return dict({"kind": "table", "headers": ["First term", "Second term"], "rows": [[str(a), str(b)], [str(c), last]]}, **extra)
+
+    return {
+        "figure": table("x"),
+        "stepFigures": [
+            table("x", note="Both terms are multiplied by the same number"),
+            table("x", highlight=["r1"], note="First terms: %d × %d = %d" % (a, k, c)),
+            table(str(x), highlight=["r1"], note="Second terms: %d × %d = %d" % (b, k, x)),
+            table(str(x), highlight=["r1"], note="x = %d" % x),
         ],
     }
 
@@ -1447,5 +1591,54 @@ def main():
         print("  %4d  %s" % (c, topic))
 
 
+def survey(only=""):
+    """Maintenance aid: list the wording patterns of templated questions that get no entry.
+
+        python -X utf8 scripts/figures/templated.py --survey [text the sub-topic or id must contain]
+
+    Run it after the question bank changes to see which templates the rules no longer match.
+    """
+    with io.open(SEED, encoding="utf-8") as f:
+        questions = [q for q in json.load(f)["questions"] if is_templated(q)]
+
+    def shape(text):
+        text = re.sub(r"\d+(?:\.\d+)?", "N", text)
+        return re.sub(r"\b[A-Z][a-z]{2,}\b", "W", text)
+
+    groups = collections.OrderedDict()
+    for q in questions:
+        if only and only not in q.get("subTopic", "") and only not in q["id"]:
+            continue
+        why = "no rule matched"
+        entry = None
+        for name, fn in RULES:
+            try:
+                entry = fn(q)
+            except Skip as reason:
+                why = "%s: %s" % (name, reason)
+                break
+            if entry:
+                break
+        if entry:
+            entry["origin"] = "rule"
+            problems = validate.check_entry(q["id"], entry, q)
+            if not problems:
+                continue
+            why = "checker: " + problems[0]
+        steps = q.get("stepByStep") or []
+        key = (shape(q["questionText"]), len(steps), " // ".join(shape(s.get("text", ""))[:40] for s in steps))
+        groups.setdefault(key, []).append((q, why))
+    for key, members in sorted(groups.items(), key=lambda kv: -len(kv[1])):
+        q, why = members[0]
+        print("\n%d x  [%s]  %s" % (len(members), q.get("subTopic", ""), why))
+        print("   %s | %s" % (q["id"], q["questionText"].replace("\n", " / ")))
+        print("   choices: %s   key: %s" % (" ; ".join(validate.option_texts(q)), key_text(q)))
+        for s in q.get("stepByStep") or []:
+            print("     - %s" % s.get("text", ""))
+
+
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == "--survey":
+        survey(sys.argv[2] if len(sys.argv) > 2 else "")
+    else:
+        main()

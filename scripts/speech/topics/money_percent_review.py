@@ -34,10 +34,24 @@ def main():
             for kind, a, b in pairs:
                 k = kind + " " + re.sub(r"\d[\d,]*(\.\d+)?", "N", re.sub(r"\b[A-Z][a-z]+ (buys|bought|is buying|paid)", r"X \1", a))
                 k = re.sub(r"(a|N|one|Each) [a-z]+( set)?( for| at| cost| costs|\?)", r"\1 ITEM\3", k)
+                if kind == "o":
+                    k = "o " + re.sub(r"\d[\d,]*(\.\d+)?", "N", b)
                 seen[k] += 1
-                example.setdefault(k, b)
+                example.setdefault(k, (a, b))
         for k, v in sorted(seen.items(), key=lambda x: (x[0][0], -x[1])):
-            print(v, "|", example[k])
+            print(v, "| P:", example[k][0])
+            print("   | S:", example[k][1])
+    elif mode == "hand":
+        sys.path.insert(0, HERE)
+        import money_percent_hand as hand
+        byid = {q["id"]: q for q in qs}
+        for qid, lines in hand.LINES.items():
+            s = source_strings(byid[qid])
+            for key, spoken in lines.items():
+                src = s["q"] if key == "q" else s[{"o": "options", "h": "hints", "s": "steps"}[key[0]]][int(key[1:])]
+                print(qid, key)
+                print("   P:", src)
+                print("   S:", spoken)
     elif mode == "ext":
         for q in qs:
             if not q["id"].startswith("EXT_"):

@@ -53,6 +53,44 @@ TEMPLATES = {
     "nth term of an AP = a + (n−N)d.":
         "The nth term of an A P equals A plus, " + OPEN + " n minus {0}, " + CLOSE + " times d.",
 
+    # ── hints, rewritten content pass ──
+    "The square root of N is the number that, multiplied by itself, gives N.":
+        "The square root of {0} is the number that, multiplied by itself, gives {1}.",
+    "Narrow it down: N × N = N and N × N = N. N lies between them, so its square root is between N and N. Now use the last digit of N.":
+        "Narrow it down: {0} times {1} is {2}, and {3} times {4} is {5}. {6} lies between them, "
+        "so its square root is between {7} and {8}. Now use the last digit of {9}.",
+    "Try a smaller one: for N, N × N = N and N × N = N, so the root is between N and N. N ends in N, so try N or N: N × N = N.":
+        "Try a smaller one. For {0}: {1} times {2} is {3}, and {4} times {5} is {6}. "
+        "So the root is between {7} and {8}. {9} ends in {10}, so try {11} or {12}. {13} times {14} equals {15}.",
+    "Go through the squares in order: N × N, N × N, N × N and so on. Which one gives N?":
+        "Go through the squares in order: {0} times {1}, {2} times {3}, {4} times {5}, and so on. Which one gives {6}?",
+    "Try a smaller one: the square root of N is N, because N × N = N.":
+        "Try a smaller one: the square root of {0} is {1}, because {2} times {3} equals {4}.",
+    "N = N × N. Find the number whose square is N and the number whose square is N, then multiply the two.":
+        "{0} equals {1} times {2}. Find the number whose square is {3}, and the number whose square is {4}. Then multiply the two.",
+    "Try a smaller one: N = N × N. Since N × N = N and N × N = N, the square root of N is N × N = N.":
+        "Try a smaller one: {0} equals {1} times {2}. Since {3} times {4} is {5}, and {6} times {7} is {8}, "
+        "the square root of {9} is {10} times {11}, which equals {12}.",
+    "Square a few whole numbers near the choices: work out N × N, N × N and N × N. Does one of the choices turn up?":
+        "Square a few whole numbers near the choices: work out {0} times {1}, {2} times {3}, and {4} times {5}. "
+        "Does one of the choices turn up?",
+    "For example, N is a perfect square because N × N = N. But N is not: N × N is too small and N × N = N is too big.":
+        "For example, {0} is a perfect square, because {1} times {2} equals {3}. "
+        "But {4} is not: {5} times {6} is too small, and {7} times {8}, which is {9}, is too big.",
+
+    # ── steps, rewritten content pass ──
+    "Squaring a number means multiplying it by itself, so the square of N is N × N.":
+        "Squaring a number means multiplying it by itself. So the square of {0} is {1} times {2}.",
+    "N × N = N. So the square of N is N.": "{0} times {1} equals {2}. So the square of {3} is {4}.",
+    "Add N to both sides to undo the − N: Nx = N + N = N.":
+        "Add {0} to both sides, to undo the minus {1}. {2} x equals {3} plus {4}, which is {5}.",
+    "Subtract N from both sides to undo the + N: Nx = N − N = N.":
+        "Subtract {0} from both sides, to undo the plus {1}. {2} x equals {3} minus {4}, which is {5}.",
+    "Divide both sides by N: x = N ÷ N = N.":
+        "Divide both sides by {0}. x equals {1} divided by {2}, which is {3}.",
+    "Check: N × N − N = N. So x = N.": "Check: {0} times {1}, minus {2}, equals {3}. So x equals {4}.",
+    "Check: N × N + N = N. So x = N.": "Check: {0} times {1}, plus {2}, equals {3}. So x equals {4}.",
+
     # ── steps ──
     "= N": "That equals {0}.",
     "Check each: √N = N (exact). It's a perfect square!":

@@ -52,6 +52,39 @@ def main():
                 seen.add(key)
                 print("%s steps[%d]\n    T: %s\n    L: %s\n    S: %s" % (q["id"], i, s.get("text", ""), s["latex"], part[q["id"]]["steps"][i]))
         return
+    if mode == "fam":
+        # One example of every distinct wording in the generated families (numbers masked).
+        seen = set()
+        for q in qs:
+            if q["id"].startswith("EXT_"):
+                continue
+            own = q.get("stepByStep") or []
+            for label, a, b in lines(q, part[q["id"]]):
+                key = re.sub(r"\d+", "N", a)
+                if key in seen or not re.search(r"[A-Za-z]{3}", a):
+                    continue
+                seen.add(key)
+                latex = ""
+                if label.startswith("steps"):
+                    i = int(label[6:-1])
+                    latex = own[i].get("latex", "") if i < len(own) else ""
+                print("%s %s\n    P: %s%s\n    S: %s" % (q["id"], label, a, ("\n    L: " + latex) if latex else "", b))
+        return
+    if mode == "ext":
+        lo = int(sys.argv[2]) if len(sys.argv) > 2 else 0
+        hi = int(sys.argv[3]) if len(sys.argv) > 3 else 10 ** 6
+        ext = [q for q in qs if q["id"].startswith("EXT_")]
+        for q in ext[lo:hi]:
+            own = q.get("stepByStep") or []
+            for label, a, b in lines(q, part[q["id"]]):
+                if not a.strip() or (label.startswith("options") and not re.search(r"[A-Za-z]", a)):
+                    continue
+                latex = ""
+                if label.startswith("steps"):
+                    i = int(label[6:-1])
+                    latex = own[i].get("latex", "") if i < len(own) else ""
+                print("%s %s\n    P: %s%s\n    S: %s" % (q["id"], label, a, ("\n    L: " + latex) if latex else "", b))
+        return
     for q in qs:
         entry = part[q["id"]]
         for label, a, b in lines(q, entry):

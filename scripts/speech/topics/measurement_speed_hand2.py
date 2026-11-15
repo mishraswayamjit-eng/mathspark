@@ -76,8 +76,9 @@ HAND["EXT_G5_FP_2022_030"] = {
         "",
     ],
     "steps": [
-        "Speed equals 600 divided by 25, which is 24 metres per second.",
-        "In 1 hour: 24 times 3600 equals 86,400 metres, which is 86.4 kilometres.",
-        "86.4 is not among options A to C. So, none of these.",
+        "Speed: 600 divided by 25 equals 24 metres every second.",
+        "One hour has 3600 seconds. So in 1 hour, the car covers 24 times 3600, which equals 86400 metres.",
+        "86400 divided by 1000 equals 86.4, so that is 86.4 kilometres.",
+        "86.4 kilometres is not one of the choices given, so the answer is: none of these.",
     ],
 }

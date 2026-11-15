@@ -94,6 +94,10 @@ FIXED = {
     "Distance = Speed × Time": "Distance equals speed times time.",
     "Speed = Distance ÷ Time": "Speed equals distance divided by time.",
     "The answer is in sq.cm.": "The answer is in square centimetres.",
+    "Perimeter of a rectangle = 2 × (length + width).":
+        "Perimeter of a rectangle equals 2 times, open bracket, length plus width, close bracket.",
+    "Perimeter of a square = 4 × side, because all 4 sides are equal.":
+        "Perimeter of a square equals 4 times side, because all 4 sides are equal.",
 }
 
 
@@ -103,7 +107,41 @@ def _legs(m):
     return "Time for each leg: " + ", ".join(said[:-1]) + ", and " + said[-1] + "."
 
 
-TEMPLATES = [
+def _cm(n):
+    return "%s %s" % (n, "centimetre" if n == "1" else "centimetres")
+
+
+def _ml(n):
+    return "%s %s" % (n, "millilitre" if n == "1" else "millilitres")
+
+
+# The rewritten hints and steps: worked examples with a full sum, said with pauses.
+NEW_TEMPLATES = [
+    (r"^Try a smaller one: a rectangle (\d+) cm long and (\d+) cm wide has an area of (\d+) × (\d+) = (\d+) sq\.cm\.$",
+     lambda m: "Try a smaller one. A rectangle %s long, and %s wide, has an area of %s times %s, which equals %s square centimetres."
+     % (_cm(m.group(1)), _cm(m.group(2)), m.group(3), m.group(4), m.group(5))),
+    (r"^Try a smaller one: a square with side (\d+) cm has an area of (\d+) × (\d+) = (\d+) sq\.cm\.$",
+     lambda m: "Try a smaller one. A square with side %s has an area of %s times %s, which equals %s square centimetres."
+     % (_cm(m.group(1)), m.group(2), m.group(3), m.group(4))),
+    (r"^Try a smaller one: a square with side (\d+) cm has a perimeter of (\d+) × (\d+) = (\d+) cm\.$",
+     lambda m: "Try a smaller one. A square with side %s has a perimeter of %s times %s, which equals %s."
+     % (_cm(m.group(1)), m.group(2), m.group(3), _cm(m.group(4)))),
+    (r"^Try a smaller one: a rectangle (\d+) cm long and (\d+) cm wide has a perimeter of (\d+) × \((\d+) \+ (\d+)\) = (\d+) cm\.$",
+     lambda m: "Try a smaller one. A rectangle %s long, and %s wide, has a perimeter of %s times, open bracket, %s plus %s, close bracket, which equals %s."
+     % (_cm(m.group(1)), _cm(m.group(2)), m.group(3), m.group(4), m.group(5), _cm(m.group(6)))),
+    (r"^Change litres to millilitres: (\d+) litres? is (\d+) × (\d+) = (\d+) ml\.$",
+     lambda m: "Change litres to millilitres. %s %s is %s times %s, which equals %s."
+     % (m.group(1), "litre" if m.group(1) == "1" else "litres", m.group(2), m.group(3), _ml(m.group(4)))),
+    (r"^See how many (\d+) ml glasses fit: (\d+) × (\d+) = (\d+)\. One more glass would need (\d+) × (\d+) = (\d+) ml, which is more than the (\w+) holds\.$",
+     lambda m: "See how many %s millilitre glasses fit. %s times %s equals %s. One more glass would need %s times %s, which is %s. That is more than the %s holds."
+     % (m.group(1), m.group(2), m.group(3), m.group(4), m.group(5), m.group(6), _ml(m.group(7)), m.group(8))),
+    (r"^After (\d+) glasses, (\d+) − (\d+) = (\d+) ml is left, which is not enough for another glass\. So (\d+) glasses can be filled\.$",
+     lambda m: "After %s glasses, %s minus %s leaves %s, which is not enough for another glass. So, %s glasses can be filled."
+     % (m.group(1), m.group(2), m.group(3), _ml(m.group(4)), m.group(5))),
+]
+
+
+TEMPLATES = NEW_TEMPLATES + [
     (r"^Time for each leg: (.+)$", _legs),
     (r"^Answer = (\d+) (sq\.cm|cm)$",
      lambda m: "The answer is %s %s." % (m.group(1), "square centimetres" if m.group(2) != "cm" else "centimetres")),

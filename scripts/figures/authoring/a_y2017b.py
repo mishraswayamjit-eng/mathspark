@@ -110,6 +110,7 @@ VISUALS["EXT_G5_FP_2017_022"] = V(
         bars(bar([seg("Rs.72", tone="a")] + [seg() for _ in range(6)], label="7 days", brace="Rs.504"),
              bar([seg("11 days", 11, "b")], brace="Rs.792"),
              hl=["b1"], note="792 ÷ 72 = 11 days"),
+        None,
     ])
 
 # A dozen pencils cost Rs.18; cost of 18 pencils.

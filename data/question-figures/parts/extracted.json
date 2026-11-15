@@ -138,10 +138,11 @@
  "EXT_G5_WS_01_007": {
   "origin": "authored",
   "stepFigures": [
+   null,
    {
     "kind": "placeChart",
     "number": "134639",
-    "note": "30000 and 30: 1000 times",
+    "note": "30000 and 30: 1000 times, so not a match",
     "highlight": [
      "d1",
      "d4"
@@ -149,26 +150,17 @@
    },
    {
     "kind": "placeChart",
-    "number": "752339",
-    "note": "300 and 30: only 10 times",
+    "number": "307638",
+    "note": "300000 and 30: 10000 times, so not a match",
     "highlight": [
-     "d3",
+     "d0",
      "d4"
     ]
    },
    {
     "kind": "placeChart",
     "number": "863135",
-    "note": "3000 and 30: 100 times",
-    "highlight": [
-     "d2",
-     "d4"
-    ]
-   },
-   {
-    "kind": "placeChart",
-    "number": "863135",
-    "note": "863135 is the one we want",
+    "note": "3000 and 30: 3000 ÷ 30 = 100 times",
     "highlight": [
      "d2",
      "d4"
@@ -409,9 +401,28 @@
      "T",
      "U"
     ],
-    "note": "d × 1000 − d × 10 = 990 × d"
+    "note": "The difference is always the digit times 990"
    },
-   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "6",
+      "9",
+      "8",
+      "9",
+      "4"
+     ]
+    ],
+    "headers": [
+     "Ten Th",
+     "Th",
+     "H",
+     "T",
+     "U"
+    ],
+    "note": "990 × 9 = 8910, so the digit 9 gives 8910"
+   },
    null
   ]
  },
@@ -593,16 +604,16 @@
      "T",
      "U"
     ],
-    "note": "The other 3 digits fill the rest"
+    "note": "Other three places: 3 × 2 × 1 = 6 ways"
    },
    {
     "kind": "table",
     "rows": [
      [
-      "3",
-      "3",
-      "2",
-      "1"
+      "3 choices",
+      "3 choices",
+      "2 choices",
+      "1 choice"
      ]
     ],
     "headers": [
@@ -611,7 +622,7 @@
      "T",
      "U"
     ],
-    "note": "3 × 3 × 2 × 1 = 18 numbers"
+    "note": "3 × 6 = 18 numbers"
    }
   ]
  },
@@ -670,16 +681,46 @@
      "T",
      "U"
     ],
-    "note": "5, 0 and 8 fill the other 3 places"
+    "note": "Other three places: 3 × 2 × 1 = 6 ways"
    },
    {
     "kind": "table",
     "rows": [
      [
-      "1",
-      "3",
       "2",
-      "1"
+      "0",
+      "5",
+      "8"
+     ],
+     [
+      "2",
+      "0",
+      "8",
+      "5"
+     ],
+     [
+      "2",
+      "5",
+      "0",
+      "8"
+     ],
+     [
+      "2",
+      "5",
+      "8",
+      "0"
+     ],
+     [
+      "2",
+      "8",
+      "0",
+      "5"
+     ],
+     [
+      "2",
+      "8",
+      "5",
+      "0"
      ]
     ],
     "headers": [
@@ -688,7 +729,7 @@
      "T",
      "U"
     ],
-    "note": "1 × 3 × 2 × 1 = 6 numbers"
+    "note": "All 6 numbers below 5000"
    }
   ]
  },
@@ -838,6 +879,81 @@
      }
     ],
     "note": "10 + 5 + 8 = 23"
+   }
+  ]
+ },
+ "EXT_G5_WS_01_018": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 96,
+   "max": 106,
+   "step": 1,
+   "points": [
+    {
+     "at": 105,
+     "label": "105"
+    }
+   ],
+   "note": "Count the even numbers going back from 105"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 96,
+    "max": 106,
+    "step": 1,
+    "points": [
+     {
+      "at": 105,
+      "label": "105"
+     },
+     {
+      "at": 104,
+      "label": "1st"
+     }
+    ],
+    "note": "105 is odd, so the 1st even number before it is 104"
+   },
+   {
+    "kind": "numberLine",
+    "min": 60,
+    "max": 106,
+    "step": 2,
+    "points": [
+     {
+      "at": 104,
+      "label": "1st"
+     }
+    ],
+    "hops": [
+     {
+      "from": 104,
+      "to": 60,
+      "label": "22 steps of 2"
+     }
+    ],
+    "note": "From the 1st to the 23rd: 22 × 2 = 44 back"
+   },
+   {
+    "kind": "numberLine",
+    "min": 60,
+    "max": 106,
+    "step": 2,
+    "points": [
+     {
+      "at": 104,
+      "label": "1st"
+     },
+     {
+      "at": 60,
+      "label": "23rd"
+     }
+    ],
+    "note": "104 − 44 = 60",
+    "highlight": [
+     "p1"
+    ]
    }
   ]
  },
@@ -1246,7 +1362,42 @@
       "brace": "?"
      }
     ],
-    "note": "Other number = 4905 + 17638",
+    "note": "17638 is bigger than 4905, so 4905 is the smaller number",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "4905",
+        "tone": "a"
+       }
+      ],
+      "label": "One number"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "4905",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "17638",
+        "tone": "b"
+       }
+      ],
+      "label": "Other number",
+      "brace": "22543"
+     }
+    ],
+    "note": "Larger number = 4905 + 17638 = 22543",
     "highlight": [
      "b1"
     ]
@@ -1281,10 +1432,7 @@
       "brace": "22543"
      }
     ],
-    "note": "4905 + 17638 = 22543",
-    "highlight": [
-     "b1"
-    ]
+    "note": "Check: 22543 − 4905 = 17638"
    }
   ]
  },
@@ -1298,7 +1446,44 @@
     "d1",
     "d3"
    ]
-  }
+  },
+  "stepFigures": [
+   {
+    "kind": "placeChart",
+    "number": "469571",
+    "note": "6 is in the ten-thousands place, 5 in the hundreds place",
+    "highlight": [
+     "d1",
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "459671",
+    "note": "After the swap the number is 459671",
+    "highlight": [
+     "d1",
+     "d3"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "459671",
+    "note": "Ten-thousands digit fell from 6 to 5, so it is smaller",
+    "highlight": [
+     "d1"
+    ]
+   },
+   {
+    "kind": "placeChart",
+    "number": "459671",
+    "note": "469571 − 459671 = 9900 less",
+    "highlight": [
+     "d1",
+     "d3"
+    ]
+   }
+  ]
  },
  "EXT_G5_WS_B2_012": {
   "origin": "authored",
@@ -1486,12 +1671,11 @@
       "20"
      ]
     ],
-    "note": "The 4th number is 18",
+    "note": "The fourth number is 18",
     "highlight": [
      "r0"
     ]
-   },
-   null
+   }
   ]
  },
  "EXT_G5_WS_B2_015": {
@@ -2016,6 +2200,63 @@
        }
       ],
       "label": "5 years ago",
+      "brace": "?"
+     },
+     {
+      "segments": [
+       {
+        "units": 2.5,
+        "label": "Vijay",
+        "tone": "a"
+       },
+       {
+        "units": 2.5,
+        "label": "Vinay",
+        "tone": "b"
+       }
+      ],
+      "label": "Now",
+      "brace": "59 years"
+     },
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "Vijay",
+        "tone": "a"
+       },
+       {
+        "units": 3,
+        "label": "Vinay",
+        "tone": "b"
+       }
+      ],
+      "label": "In 4 years",
+      "brace": "67 years"
+     }
+    ],
+    "note": "5 years ago both were 5 years younger: take away 2 × 5 = 10",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "Vijay",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "Vinay",
+        "tone": "b"
+       }
+      ],
+      "label": "5 years ago",
       "brace": "49 years"
      },
      {
@@ -2051,12 +2292,11 @@
       "brace": "67 years"
      }
     ],
-    "note": "Both were 5 years younger: 59 − 2 × 5 = 49",
+    "note": "59 − 10 = 49",
     "highlight": [
      "b0"
     ]
-   },
-   null
+   }
   ]
  },
  "EXT_G5_WS_B2_019": {
@@ -2221,7 +2461,7 @@
      "brace": "19 oranges"
     }
    ],
-   "note": "The second bag is in both pairs. First + third = ?"
+   "note": "Compare each pair with all three bags. First + third = ?"
   },
   "stepFigures": [
    {
@@ -2236,12 +2476,12 @@
        },
        {
         "units": 2,
-        "label": "5",
+        "label": "second",
         "tone": "b"
        },
        {
         "units": 2,
-        "label": "third",
+        "label": "14",
         "tone": "c"
        }
       ],
@@ -2257,7 +2497,7 @@
        },
        {
         "units": 2,
-        "label": "5",
+        "label": "second",
         "tone": "b"
        }
       ],
@@ -2268,12 +2508,12 @@
       "segments": [
        {
         "units": 2,
-        "label": "5",
+        "label": "second",
         "tone": "b"
        },
        {
         "units": 2,
-        "label": "third",
+        "label": "14",
         "tone": "c"
        }
       ],
@@ -2281,9 +2521,9 @@
       "brace": "19 oranges"
      }
     ],
-    "note": "The second bag is counted twice: 13 + 19 − 27 = 5",
+    "note": "All three minus the first two: 27 − 13 = 14 in the third",
     "highlight": [
-     "b0s1"
+     "b0s2"
     ]
    },
    {
@@ -2293,17 +2533,17 @@
       "segments": [
        {
         "units": 2,
-        "label": "first",
+        "label": "8",
         "tone": "a"
        },
        {
         "units": 2,
-        "label": "5",
+        "label": "second",
         "tone": "b"
        },
        {
         "units": 2,
-        "label": "third",
+        "label": "14",
         "tone": "c"
        }
       ],
@@ -2314,12 +2554,12 @@
       "segments": [
        {
         "units": 2,
-        "label": "first",
+        "label": "8",
         "tone": "a"
        },
        {
         "units": 2,
-        "label": "5",
+        "label": "second",
         "tone": "b"
        }
       ],
@@ -2330,12 +2570,12 @@
       "segments": [
        {
         "units": 2,
-        "label": "5",
+        "label": "second",
         "tone": "b"
        },
        {
         "units": 2,
-        "label": "third",
+        "label": "14",
         "tone": "c"
        }
       ],
@@ -2343,13 +2583,74 @@
       "brace": "19 oranges"
      }
     ],
-    "note": "First + third = 27 − 5 = 22",
+    "note": "All three minus the last two: 27 − 19 = 8 in the first",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "8",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "second",
+        "tone": "b"
+       },
+       {
+        "units": 2,
+        "label": "14",
+        "tone": "c"
+       }
+      ],
+      "label": "All three",
+      "brace": "27 oranges"
+     },
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "8",
+        "tone": "a"
+       },
+       {
+        "units": 2,
+        "label": "second",
+        "tone": "b"
+       }
+      ],
+      "label": "first + second",
+      "brace": "13 oranges"
+     },
+     {
+      "segments": [
+       {
+        "units": 2,
+        "label": "second",
+        "tone": "b"
+       },
+       {
+        "units": 2,
+        "label": "14",
+        "tone": "c"
+       }
+      ],
+      "label": "second + third",
+      "brace": "19 oranges"
+     }
+    ],
+    "note": "First + third = 8 + 14 = 22",
     "highlight": [
      "b0s0",
      "b0s2"
     ]
-   },
-   null
+   }
   ]
  },
  "EXT_G5_WS_B2_022": {
@@ -2571,6 +2872,19 @@
       "label": "shown"
      }
     ],
+    "note": "600 was added but should have been taken away"
+   },
+   {
+    "kind": "numberLine",
+    "min": 13800,
+    "max": 15000,
+    "step": 600,
+    "points": [
+     {
+      "at": 15000,
+      "label": "shown"
+     }
+    ],
     "hops": [
      {
       "from": 15000,
@@ -2578,7 +2892,7 @@
       "label": "undo the + 600"
      }
     ],
-    "note": "600 was added but should have been taken away"
+    "note": "Undo the slip: 15000 − 600 = 14400"
    },
    {
     "kind": "numberLine",
@@ -2607,14 +2921,26 @@
       "label": "now − 600"
      }
     ],
-    "note": "15000 − 1200 = 13800"
-   },
-   null
+    "note": "Now take away the 600 spent: 14400 − 600 = 13800"
+   }
   ]
  },
  "EXT_G5_WS_B2_025": {
   "origin": "authored",
   "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 15000,
+    "max": 16200,
+    "step": 600,
+    "points": [
+     {
+      "at": 15000,
+      "label": "shown"
+     }
+    ],
+    "note": "600 was taken away but should have been added"
+   },
    {
     "kind": "numberLine",
     "min": 15000,
@@ -2633,7 +2959,7 @@
       "label": "undo the − 600"
      }
     ],
-    "note": "600 was taken away but should have been added"
+    "note": "Undo the slip: 15000 + 600 = 15600"
    },
    {
     "kind": "numberLine",
@@ -2662,9 +2988,8 @@
       "label": "now + 600"
      }
     ],
-    "note": "15000 + 1200 = 16200"
-   },
-   null
+    "note": "Now add the 600 income: 15600 + 600 = 16200"
+   }
   ]
  },
  "EXT_G5_WS_B2_026": {
@@ -2683,10 +3008,22 @@
     "kind": "venn",
     "leftTitle": "Delhi",
     "rightTitle": "Kashmir",
+    "left": "?",
+    "both": "6",
+    "right": "?",
+    "note": "18 + 15 = 33 counts the middle 6 twice",
+    "highlight": [
+     "both"
+    ]
+   },
+   {
+    "kind": "venn",
+    "leftTitle": "Delhi",
+    "rightTitle": "Kashmir",
     "left": "18 − 6",
     "both": "6",
     "right": "15 − 6",
-    "note": "At least one place: 18 + 15 − 6 = 27"
+    "note": "Take the 6 away once: 33 − 6 = 27 inside the circles"
    },
    {
     "kind": "venn",
@@ -2696,8 +3033,7 @@
     "both": "6",
     "right": "15 − 6",
     "note": "Outside both circles: 40 − 27 = 13"
-   },
-   null
+   }
   ]
  },
  "EXT_G5_WS_B2_027": {
@@ -2716,22 +3052,22 @@
     "kind": "venn",
     "leftTitle": "Hindi",
     "rightTitle": "Marathi",
-    "left": "16",
+    "left": "?",
     "both": "5",
     "right": "?",
-    "note": "Hindi only = 21 − 5 = 16",
+    "note": "Anyone outside the Hindi circle speaks only Marathi",
     "highlight": [
-     "left"
+     "right"
     ]
    },
    {
     "kind": "venn",
     "leftTitle": "Hindi",
     "rightTitle": "Marathi",
-    "left": "16",
+    "left": "21 − 5",
     "both": "5",
     "right": "9",
-    "note": "Marathi only = 30 − 16 − 5 = 9",
+    "note": "The Hindi circle holds 21, so 30 − 21 = 9",
     "highlight": [
      "right"
     ]
@@ -2778,7 +3114,7 @@
       "to": 3
      }
     ],
-    "note": "Each line joins 2 of the 4 players: that is one game"
+    "note": "Players A, B, C and D. Each line joining two is one game."
    },
    {
     "kind": "polygon",
@@ -2816,9 +3152,50 @@
       "to": 3
      }
     ],
-    "note": "4 × 3 ÷ 2 = 6 lines, so 6 games"
+    "note": "A plays 3 games. B has 2 new ones. C has 1 new one.",
+    "highlight": [
+     "e0",
+     "e3"
+    ]
    },
-   null
+   {
+    "kind": "polygon",
+    "points": [
+     [
+      2,
+      2
+     ],
+     [
+      10,
+      2
+     ],
+     [
+      10,
+      10
+     ],
+     [
+      2,
+      10
+     ]
+    ],
+    "corners": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "dashed": [
+     {
+      "from": 0,
+      "to": 2
+     },
+     {
+      "from": 1,
+      "to": 3
+     }
+    ],
+    "note": "3 + 2 + 1 = 6 lines, so 6 games"
+   }
   ]
  },
  "EXT_G5_WS_B3_002": {
@@ -3056,36 +3433,74 @@
       "segments": [
        {
         "units": 1,
-        "label": "× 2"
+        "label": "2"
        },
        {
         "units": 1,
-        "label": "× 2"
+        "label": "4"
        },
        {
         "units": 1,
-        "label": "× 2"
+        "label": "8"
        },
        {
         "units": 1,
-        "label": "× 2"
+        "label": "16"
        },
        {
         "units": 1,
-        "label": "× 2"
+        "label": "32"
        },
        {
         "units": 1,
-        "label": "× 2"
+        "label": "64"
        }
       ],
       "label": "2 hours",
-      "brace": "1 becomes 64"
+      "brace": "6 doublings"
      }
     ],
-    "note": "Double 6 times: 64 amoebas"
+    "note": "Start with 1 and double 6 times"
    },
-   null
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "2"
+       },
+       {
+        "units": 1,
+        "label": "4"
+       },
+       {
+        "units": 1,
+        "label": "8"
+       },
+       {
+        "units": 1,
+        "label": "16"
+       },
+       {
+        "units": 1,
+        "label": "32"
+       },
+       {
+        "units": 1,
+        "label": "64"
+       }
+      ],
+      "label": "2 hours",
+      "brace": "6 doublings"
+     }
+    ],
+    "note": "After two hours there are 64 amoebas",
+    "highlight": [
+     "b0s5"
+    ]
+   }
   ]
  },
  "EXT_G5_WS_B3_006": {
@@ -3190,6 +3605,211 @@
    }
   ]
  },
+ "EXT_G5_WS_B3_012": {
+  "origin": "authored",
+  "figure": {
+   "kind": "barModel",
+   "bars": [
+    {
+     "segments": [
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 1,
+       "tone": "a"
+      },
+      {
+       "units": 0.6,
+       "label": "?",
+       "tone": "unknown"
+      }
+     ],
+     "label": "Wire",
+     "brace": "10 m"
+    }
+   ],
+   "note": "7 equal pieces, each a whole number of centimetres"
+  },
+  "stepFigures": [
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "tone": "a"
+       },
+       {
+        "units": 0.6,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Wire",
+      "brace": "1000 cm"
+     }
+    ],
+    "note": "10 m = 1000 cm"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "142",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "142",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "142",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "142",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "142",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "142",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "142",
+        "tone": "a"
+       },
+       {
+        "units": 0.6,
+        "label": "?",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Wire",
+      "brace": "1000 cm"
+     }
+    ],
+    "note": "Longest pieces that fit: 7 × 142 = 994 cm",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "142",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "142",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "142",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "142",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "142",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "142",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "142",
+        "tone": "a"
+       },
+       {
+        "units": 0.6,
+        "label": "6 cm",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Wire",
+      "brace": "1000 cm"
+     }
+    ],
+    "note": "Left over: 1000 − 994 = 6 cm",
+    "highlight": [
+     "b0s7"
+    ]
+   }
+  ]
+ },
  "EXT_G5_WS_B3_021": {
   "origin": "authored",
   "figure": {
@@ -3272,6 +3892,66 @@
    }
   ]
  },
+ "EXT_G5_WS_B3_025": {
+  "origin": "authored",
+  "figure": {
+   "kind": "table",
+   "rows": [
+    [
+     "each turn",
+     "4 apples out",
+     "3 oranges in"
+    ],
+    [
+     "all the turns",
+     "56 apples out",
+     "? oranges in"
+    ]
+   ],
+   "note": "How many turns does it take to empty the apples?"
+  },
+  "stepFigures": [
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "each turn",
+      "4 apples out",
+      "3 oranges in"
+     ],
+     [
+      "14 turns",
+      "56 apples out",
+      "? oranges in"
+     ]
+    ],
+    "note": "56 ÷ 4 = 14 turns",
+    "highlight": [
+     "r1"
+    ]
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "each turn",
+      "4 apples out",
+      "3 oranges in"
+     ],
+     [
+      "14 turns",
+      "56 apples out",
+      "42 oranges in"
+     ]
+    ],
+    "note": "14 × 3 = 42 oranges",
+    "highlight": [
+     "r1"
+    ]
+   },
+   null
+  ]
+ },
  "EXT_G5_WS_B3_026": {
   "origin": "authored",
   "figure": {
@@ -3307,69 +3987,41 @@
   },
   "stepFigures": [
    {
-    "kind": "barModel",
-    "bars": [
+    "kind": "numberLine",
+    "min": 58,
+    "max": 66,
+    "step": 1,
+    "points": [
      {
-      "segments": [
-       {
-        "units": 3,
-        "label": "n",
-        "tone": "a"
-       }
-      ],
-      "label": "Smaller"
-     },
-     {
-      "segments": [
-       {
-        "units": 3,
-        "label": "n",
-        "tone": "a"
-       },
-       {
-        "units": 1,
-        "label": "2",
-        "tone": "b"
-       }
-      ],
-      "label": "Larger"
+      "at": 62,
+      "label": "half of 124"
      }
     ],
-    "note": "n + (n + 2) = 124"
+    "note": "124 ÷ 2 = 62. The two numbers sit either side of 62."
    },
    {
-    "kind": "barModel",
-    "bars": [
+    "kind": "numberLine",
+    "min": 58,
+    "max": 66,
+    "step": 1,
+    "points": [
      {
-      "segments": [
-       {
-        "units": 3,
-        "label": "n",
-        "tone": "a"
-       }
-      ],
-      "label": "Smaller"
+      "at": 61,
+      "label": "61"
      },
      {
-      "segments": [
-       {
-        "units": 3,
-        "label": "n",
-        "tone": "a"
-       },
-       {
-        "units": 1,
-        "label": "2",
-        "tone": "b"
-       }
-      ],
-      "label": "Larger"
+      "at": 62,
+      "label": "half"
+     },
+     {
+      "at": 63,
+      "label": "63"
      }
     ],
-    "note": "Without the extra 2, two equal parts make 122",
+    "note": "Odd numbers either side of 62: 61 + 63 = 124",
     "highlight": [
-     "b0s0",
-     "b1s0"
+     "p0",
+     "p2"
     ]
    },
    {
@@ -3401,7 +4053,7 @@
       "label": "Larger"
      }
     ],
-    "note": "n = 61, the smaller number",
+    "note": "The smaller number is 61",
     "highlight": [
      "b0"
     ]
@@ -3449,7 +4101,7 @@
       "segments": [
        {
         "units": 3,
-        "label": "9k",
+        "label": "?",
         "tone": "a"
        }
       ],
@@ -3459,7 +4111,7 @@
       "segments": [
        {
         "units": 3,
-        "label": "9k",
+        "label": "?",
         "tone": "a"
        },
        {
@@ -3471,7 +4123,10 @@
       "label": "Larger"
      }
     ],
-    "note": "9k + 9(k + 1) = 153"
+    "note": "Take the extra 9 away: 153 − 9 = 144",
+    "highlight": [
+     "b1s1"
+    ]
    },
    {
     "kind": "barModel",
@@ -3480,7 +4135,7 @@
       "segments": [
        {
         "units": 3,
-        "label": "9k",
+        "label": "72",
         "tone": "a"
        }
       ],
@@ -3490,7 +4145,7 @@
       "segments": [
        {
         "units": 3,
-        "label": "9k",
+        "label": "72",
         "tone": "a"
        },
        {
@@ -3502,7 +4157,11 @@
       "label": "Larger"
      }
     ],
-    "note": "18k + 9 = 153, so k = 8"
+    "note": "Two equal parts: 144 ÷ 2 = 72",
+    "highlight": [
+     "b0s0",
+     "b1s0"
+    ]
    },
    {
     "kind": "barModel",
@@ -3582,7 +4241,7 @@
       "segments": [
        {
         "units": 3,
-        "label": "D",
+        "label": "?",
         "tone": "a"
        }
       ],
@@ -3592,7 +4251,7 @@
       "segments": [
        {
         "units": 3,
-        "label": "D",
+        "label": "?",
         "tone": "a"
        },
        {
@@ -3604,7 +4263,42 @@
       "label": "Siya"
      }
     ],
-    "note": "The age gap never changes: S = D + 3"
+    "note": "The age gap never changes: Siya is 3 years older now too"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "16",
+        "tone": "a"
+       }
+      ],
+      "label": "Diya"
+     },
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "16",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "3",
+        "tone": "b"
+       }
+      ],
+      "label": "Siya"
+     }
+    ],
+    "note": "35 − 3 = 32 is twice Diya's age: 32 ÷ 2 = 16",
+    "highlight": [
+     "b0s0",
+     "b1s0"
+    ]
    },
    {
     "kind": "barModel",
@@ -3636,12 +4330,11 @@
       "brace": "19 years"
      }
     ],
-    "note": "D + D + 3 = 35, so D = 16 and Siya = 19",
+    "note": "Siya = 16 + 3 = 19",
     "highlight": [
      "b1"
     ]
-   },
-   null
+   }
   ]
  },
  "EXT_G5_WS_B3_029": {
@@ -3979,12 +4672,12 @@
       "segments": [
        {
         "units": 1,
-        "label": "20",
+        "label": "?",
         "tone": "a"
        },
        {
         "units": 1,
-        "label": "20",
+        "label": "?",
         "tone": "a"
        },
        {
@@ -4010,17 +4703,17 @@
       "segments": [
        {
         "units": 1,
-        "label": "20",
+        "label": "?",
         "tone": "a"
        },
        {
         "units": 1,
-        "label": "20",
+        "label": "?",
         "tone": "a"
        },
        {
         "units": 1,
-        "label": "20",
+        "label": "?",
         "tone": "a"
        },
        {
@@ -4038,7 +4731,7 @@
       "brace": "?"
      }
     ],
-    "note": "Apples: 85 − 45 = 40 for two, so Rs. 20 each",
+    "note": "3 oranges: 3 × 15 = 45. So 2 apples: 85 − 45 = 40",
     "highlight": [
      "b0s0",
      "b0s1"
@@ -4107,15 +4800,157 @@
        }
       ],
       "label": "3 apples 2 oranges",
-      "brace": "Rs. 90"
+      "brace": "?"
      }
     ],
-    "note": "3 apples + 2 oranges = 60 + 30 = 90",
+    "note": "One apple: 40 ÷ 2 = 20",
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "b"
+       }
+      ],
+      "label": "2 apples 3 oranges",
+      "brace": "Rs. 85"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "b"
+       }
+      ],
+      "label": "3 apples 2 oranges",
+      "brace": "?"
+     }
+    ],
+    "note": "3 apples: 3 × 20 = 60. 2 oranges: 2 × 15 = 30",
     "highlight": [
      "b1"
     ]
    },
-   null
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "b"
+       }
+      ],
+      "label": "2 apples 3 oranges",
+      "brace": "Rs. 85"
+     },
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "b"
+       }
+      ],
+      "label": "3 apples 2 oranges",
+      "brace": "Rs. 90"
+     }
+    ],
+    "note": "60 + 30 = 90",
+    "highlight": [
+     "b1"
+    ]
+   }
   ]
  },
  "EXT_G5_WS_B3_032": {
@@ -4383,28 +5218,57 @@
      {
       "segments": [
        {
-        "units": 2.5,
-        "label": "below Manav",
+        "units": 3,
+        "label": "13 steps",
         "tone": "a"
        },
        {
         "units": 1,
-        "label": "Manav",
+        "label": "middle",
         "tone": "b"
        },
        {
-        "units": 4,
-        "label": "above Manav",
-        "tone": "c"
+        "units": 3,
+        "label": "13 steps",
+        "tone": "a"
        }
       ],
       "label": "Staircase",
       "brace": "27 steps"
      }
     ],
-    "note": "Middle step = (27 + 1) ÷ 2 = 14th"
+    "note": "27 − 1 = 26, and 26 ÷ 2 = 13 steps on each side"
    },
-   null
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 3,
+        "label": "13 steps",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "middle",
+        "tone": "b"
+       },
+       {
+        "units": 3,
+        "label": "13 steps",
+        "tone": "a"
+       }
+      ],
+      "label": "Staircase",
+      "brace": "27 steps"
+     }
+    ],
+    "note": "The middle step is the 14th from the bottom",
+    "highlight": [
+     "b0s1"
+    ]
+   }
   ]
  },
  "EXT_G5_WS_B3_035": {
@@ -4473,26 +5337,29 @@
      {
       "segments": [
        {
-        "units": 4,
-        "label": "in front",
+        "units": 3,
+        "label": "14 people",
         "tone": "a"
        },
        {
         "units": 1,
-        "label": "Nisha",
+        "label": "Disha",
         "tone": "b"
        },
        {
-        "units": 2.5,
-        "label": "behind",
-        "tone": "c"
+        "units": 3,
+        "label": "14 people",
+        "tone": "a"
        }
       ],
       "label": "Queue",
       "brace": "29 people"
      }
     ],
-    "note": "The middle of 29 people is the 15th: Disha"
+    "note": "14 + 1 + 14 = 29, so Disha is 15th from the front",
+    "highlight": [
+     "b0s1"
+    ]
    },
    {
     "kind": "numberLine",
@@ -4505,28 +5372,25 @@
       "label": "Disha"
      },
      {
-      "at": 19,
-      "label": "Nisha"
-     }
-    ],
-    "note": "Count the places between the 15th and the 19th"
-   },
-   {
-    "kind": "numberLine",
-    "min": 14,
-    "max": 20,
-    "step": 1,
-    "points": [
+      "at": 16
+     },
      {
-      "at": 15,
-      "label": "Disha"
+      "at": 17
+     },
+     {
+      "at": 18
      },
      {
       "at": 19,
       "label": "Nisha"
      }
     ],
-    "note": "Three places lie between them, so 3 people"
+    "note": "16th, 17th and 18th: 3 people between them",
+    "highlight": [
+     "p1",
+     "p2",
+     "p3"
+    ]
    }
   ]
  },
@@ -5066,6 +5930,283 @@
    }
   ]
  },
+ "EXT_G5_WS_B4_013": {
+  "origin": "authored",
+  "figure": {
+   "kind": "numberLine",
+   "min": 550,
+   "max": 566,
+   "step": 1,
+   "points": [
+    {
+     "at": 555,
+     "label": "555"
+    }
+   ],
+   "note": "How far is it to the next multiple of 12?"
+  },
+  "stepFigures": [
+   {
+    "kind": "numberLine",
+    "min": 550,
+    "max": 566,
+    "step": 1,
+    "points": [
+     {
+      "at": 552,
+      "label": "12 × 46"
+     },
+     {
+      "at": 555,
+      "label": "555"
+     }
+    ],
+    "hops": [
+     {
+      "from": 552,
+      "to": 555,
+      "label": "+ 3"
+     }
+    ],
+    "note": "555 is 3 more than 552 = 12 × 46"
+   },
+   {
+    "kind": "numberLine",
+    "min": 550,
+    "max": 566,
+    "step": 1,
+    "points": [
+     {
+      "at": 552,
+      "label": "12 × 46"
+     },
+     {
+      "at": 555,
+      "label": "555"
+     },
+     {
+      "at": 564,
+      "label": "next"
+     }
+    ],
+    "note": "Next multiple: 552 + 12 = 564",
+    "highlight": [
+     "p2"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 550,
+    "max": 566,
+    "step": 1,
+    "points": [
+     {
+      "at": 555,
+      "label": "555"
+     },
+     {
+      "at": 564,
+      "label": "next"
+     }
+    ],
+    "hops": [
+     {
+      "from": 555,
+      "to": 564,
+      "label": "+ 9"
+     }
+    ],
+    "note": "564 − 555 = 9"
+   }
+  ]
+ },
+ "EXT_G5_WS_B4_020": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "?",
+      "?",
+      "?",
+      "2"
+     ]
+    ],
+    "headers": [
+     "Th",
+     "H",
+     "T",
+     "U"
+    ],
+    "note": "2 is the only even digit, so it goes in the ones place"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "5",
+      "7",
+      "2"
+     ],
+     [
+      "3",
+      "7",
+      "5",
+      "2"
+     ],
+     [
+      "5",
+      "3",
+      "7",
+      "2"
+     ],
+     [
+      "5",
+      "7",
+      "3",
+      "2"
+     ],
+     [
+      "7",
+      "3",
+      "5",
+      "2"
+     ],
+     [
+      "7",
+      "5",
+      "3",
+      "2"
+     ]
+    ],
+    "headers": [
+     "Th",
+     "H",
+     "T",
+     "U"
+    ],
+    "note": "3, 5 and 7 fill the other three places"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "3",
+      "5",
+      "7",
+      "2"
+     ],
+     [
+      "3",
+      "7",
+      "5",
+      "2"
+     ],
+     [
+      "5",
+      "3",
+      "7",
+      "2"
+     ],
+     [
+      "5",
+      "7",
+      "3",
+      "2"
+     ],
+     [
+      "7",
+      "3",
+      "5",
+      "2"
+     ],
+     [
+      "7",
+      "5",
+      "3",
+      "2"
+     ]
+    ],
+    "headers": [
+     "Th",
+     "H",
+     "T",
+     "U"
+    ],
+    "note": "6 even numbers"
+   }
+  ]
+ },
+ "EXT_G5_WS_B4_021": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "22",
+      "23",
+      "25",
+      "27"
+     ],
+     [
+      "32",
+      "33",
+      "35",
+      "37"
+     ],
+     [
+      "52",
+      "53",
+      "55",
+      "57"
+     ],
+     [
+      "72",
+      "73",
+      "75",
+      "77"
+     ]
+    ],
+    "note": "Only 23, 37, 53 and 73 are prime"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "22",
+      "23",
+      "25",
+      "27"
+     ],
+     [
+      "32",
+      "33",
+      "35",
+      "37"
+     ],
+     [
+      "52",
+      "53",
+      "55",
+      "57"
+     ],
+     [
+      "72",
+      "73",
+      "75",
+      "77"
+     ]
+    ],
+    "note": "23, 37, 53, 73: that is 4 numbers"
+   }
+  ]
+ },
  "EXT_G5_WS_B5_005": {
   "origin": "authored",
   "stepFigures": [
@@ -5220,6 +6361,26 @@
       "label": "38 × 38"
      }
     ],
+    "note": "The first square number after 1400 is 1444",
+    "highlight": [
+     "p1"
+    ]
+   },
+   {
+    "kind": "numberLine",
+    "min": 1365,
+    "max": 1445,
+    "step": 5,
+    "points": [
+     {
+      "at": 1400,
+      "label": "1400"
+     },
+     {
+      "at": 1444,
+      "label": "38 × 38"
+     }
+    ],
     "hops": [
      {
       "from": 1400,
@@ -5227,9 +6388,8 @@
       "label": "+ 44"
      }
     ],
-    "note": "Step up to 1444: 1444 − 1400 = 44"
-   },
-   null
+    "note": "1444 − 1400 = 44"
+   }
   ]
  },
  "EXT_G5_WS_B5_016": {
@@ -5254,7 +6414,7 @@
     "length": "36",
     "breadth": "35",
     "inside": "1260",
-    "note": "35 rows of 36: one row short of 36 × 36",
+    "note": "The next square number is 36 × 36 = 1296",
     "highlight": [
      "breadth"
     ]
@@ -5264,12 +6424,13 @@
     "square": true,
     "length": "36",
     "breadth": "36",
-    "inside": "1260 + 36 = 1296",
-    "note": "Add one more row of 36",
+    "inside": "1296 − 1260 = 36",
+    "note": "One more row of 36 makes the square",
     "highlight": [
      "fill"
     ]
-   }
+   },
+   null
   ]
  },
  "EXT_G5_WS_B5_017": {
@@ -5286,22 +6447,24 @@
    {
     "kind": "factorTree",
     "number": 588,
-    "note": "The 2s pair up and the 7s pair up. The 3 has no partner."
+    "note": "The 2s pair up and the 7s pair up. The 3 is on its own."
    },
    {
     "kind": "factorTree",
     "number": 196,
     "note": "588 ÷ 3 = 196 = 14 × 14"
-   }
+   },
+   null
   ]
  },
  "EXT_G5_WS_B5_019": {
   "origin": "authored",
   "stepFigures": [
+   null,
    {
     "kind": "factorTree",
     "number": 360,
-    "note": "3 × 4 × 5 × 6 = 360 = 2 × 2 × 2 × 3 × 3 × 5",
+    "note": "360 = 2 × 2 × 2 × 3 × 3 × 5. One 2 and the 5 have no partner.",
     "highlight": [
      "primes"
     ]
@@ -5309,12 +6472,15 @@
    {
     "kind": "factorTree",
     "number": 360,
-    "note": "One 2 and the 5 have no partner"
+    "note": "Give each a partner: 360 × 10 = 3600"
    },
    {
-    "kind": "factorTree",
-    "number": 360,
-    "note": "Give each a partner: multiply by 2 × 5 = 10"
+    "kind": "rectangle",
+    "square": true,
+    "length": "60",
+    "breadth": "60",
+    "inside": "60 × 60 = 3600",
+    "note": "3600 is a square number"
    }
   ]
  },
@@ -5386,6 +6552,42 @@
    }
   ]
  },
+ "EXT_G5_WS_B5_023": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   null,
+   {
+    "kind": "grid",
+    "rows": 3,
+    "cols": 3,
+    "shaded": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "note": "1 + 3 + 5 = 9: each new layer of odd squares makes a 3 × 3 square"
+   },
+   null
+  ]
+ },
  "EXT_G5_WS_B5_024": {
   "origin": "authored",
   "figure": {
@@ -5405,6 +6607,8 @@
     "inside": "Total = n × n",
     "note": "The total must be a square number"
    },
+   null,
+   null,
    {
     "kind": "rectangle",
     "square": true,
@@ -5414,8 +6618,7 @@
     "highlight": [
      "fill"
     ]
-   },
-   null
+   }
   ]
  },
  "EXT_G5_WS_B5_025": {
@@ -5432,20 +6635,38 @@
    {
     "kind": "rectangle",
     "square": true,
-    "length": "15 groups",
-    "breadth": "15 in each group",
-    "inside": "15 × 15 = 225",
-    "note": "The biggest square that fits in 245"
+    "length": "n groups",
+    "breadth": "n in each group",
+    "inside": "n × n",
+    "note": "The students in groups make a square number"
    },
    {
     "kind": "rectangle",
     "square": true,
     "length": "15 groups",
     "breadth": "15 in each group",
-    "inside": "225",
-    "note": "245 − 225 = 20 students left out"
+    "inside": "15 × 15 = 225",
+    "note": "16 × 16 = 256 is too many, so 15 × 15 is the biggest"
    },
-   null
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "15 groups",
+    "breadth": "15 in each group",
+    "inside": "225 students",
+    "note": "15 groups of 15 use 225 students",
+    "highlight": [
+     "fill"
+    ]
+   },
+   {
+    "kind": "rectangle",
+    "square": true,
+    "length": "15 groups",
+    "breadth": "15 in each group",
+    "inside": "225 students",
+    "note": "245 − 225 = 20 students left out"
+   }
   ]
  },
  "EXT_G5_WS_B5_026": {
@@ -5518,7 +6739,25 @@
      "Number",
      "Prime factors"
     ],
-    "note": "Shared factors: 2 × 2 × 2 = 8"
+    "note": "41 and 53 differ, so they share only the three 2s"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "328",
+      "2 × 2 × 2 × 41"
+     ],
+     [
+      "424",
+      "2 × 2 × 2 × 53"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Prime factors"
+    ],
+    "note": "HCF = 2 × 2 × 2 = 8"
    }
   ]
  },
@@ -5577,7 +6816,7 @@
      "Number",
      "Prime factors"
     ],
-    "note": "LCM = most of each prime: 8 × 27 = 216"
+    "note": "LCM needs three 2s and three 3s: 216"
    },
    {
     "kind": "table",
@@ -5618,7 +6857,43 @@
      "Number",
      "Prime factors"
     ],
-    "note": "HCF = 3 × 3 = 9. LCM = 270"
+    "note": "Break both numbers into prime factors"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "45",
+      "3 × 3 × 5"
+     ],
+     [
+      "54",
+      "2 × 3 × 3 × 3"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Prime factors"
+    ],
+    "note": "They share two 3s: HCF = 3 × 3 = 9"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "45",
+      "3 × 3 × 5"
+     ],
+     [
+      "54",
+      "2 × 3 × 3 × 3"
+     ]
+    ],
+    "headers": [
+     "Number",
+     "Prime factors"
+    ],
+    "note": "LCM = 2 × 3 × 3 × 3 × 5 = 270"
    },
    null,
    null
@@ -5740,6 +7015,7 @@
  "EXT_G5_WS_B6_008": {
   "origin": "authored",
   "stepFigures": [
+   null,
    {
     "kind": "table",
     "rows": [
@@ -5800,13 +7076,14 @@
   "stepFigures": [
    null,
    null,
+   null,
+   null,
    {
     "kind": "balance",
-    "left": "5 × 8 + 7",
-    "right": "8 × 8 − 17",
+    "left": "40 + 7",
+    "right": "64 − 17",
     "note": "Both sides come to 47, so this one balances"
-   },
-   null
+   }
   ]
  },
  "EXT_G5_WS_B6_015": {
@@ -6247,7 +7524,7 @@
       "shaded": 5
      }
     ],
-    "note": "8 equal parts, 5 of them shaded"
+    "note": "8 equal parts, so the bottom number is 8"
    },
    {
     "kind": "fractionBars",
@@ -6257,7 +7534,7 @@
       "shaded": 5
      }
     ],
-    "note": "8 − 5 = 3 parts are not shaded"
+    "note": "5 parts are shaded, so 8 − 5 = 3 are not shaded"
    },
    {
     "kind": "fractionBars",
@@ -6283,21 +7560,21 @@
   "stepFigures": [
    {
     "kind": "balance",
-    "left": "7 × (b − 8)",
-    "right": "210",
-    "note": "Cross-multiply: 5 × 42 = 210"
+    "left": "(b − 8)/42",
+    "right": "30/42",
+    "note": "5/7 = 30/42, because 7 × 6 = 42 and 5 × 6 = 30"
    },
    {
     "kind": "balance",
     "left": "b − 8",
     "right": "30",
-    "note": "Share both sides into 7"
+    "note": "Same bottom number, so the tops are equal"
    },
    {
     "kind": "balance",
     "left": "b",
     "right": "38",
-    "note": "Add 8 to both sides"
+    "note": "Add 8 to both sides: 30 + 8 = 38"
    }
   ]
  },
@@ -6355,7 +7632,7 @@
       "brace": "from 0 to 2"
      }
     ],
-    "note": "Each part is 2 ÷ 5 = 2/5"
+    "note": "Each part is 2 ÷ 5 = 2/5 long"
    },
    {
     "kind": "barModel",
@@ -6386,7 +7663,42 @@
       "brace": "from 0 to 2"
      }
     ],
-    "note": "A is 2 parts along: 2 × 2/5 = 4/5",
+    "note": "A is on the 2nd mark: 2 parts away from 0",
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "2/5"
+       },
+       {
+        "units": 1,
+        "label": "2/5"
+       },
+       {
+        "units": 1,
+        "label": "2/5"
+       },
+       {
+        "units": 1,
+        "label": "2/5"
+       },
+       {
+        "units": 1,
+        "label": "2/5"
+       }
+      ],
+      "brace": "from 0 to 2"
+     }
+    ],
+    "note": "2/5 + 2/5 = 4/5",
     "highlight": [
      "b0s0",
      "b0s1"
@@ -6418,25 +7730,79 @@
     "kind": "fractionBars",
     "bars": [
      {
-      "parts": 3,
-      "shaded": 1,
-      "label": "1/3"
+      "parts": 24,
+      "shaded": 8,
+      "label": "1/3 = 8/24"
      },
      {
-      "parts": 8,
-      "shaded": 5,
-      "label": "5/8"
+      "parts": 24,
+      "shaded": 15,
+      "label": "5/8 = 15/24"
      }
     ],
-    "note": "The answer must lie between these two"
+    "note": "In twenty-fourths the top must be between 8 and 15"
    },
    {
     "kind": "fractionBars",
     "bars": [
      {
-      "parts": 3,
-      "shaded": 1,
-      "label": "1/3"
+      "parts": 24,
+      "shaded": 4,
+      "label": "1/6 = 4/24"
+     },
+     {
+      "parts": 24,
+      "shaded": 8,
+      "label": "1/3 = 8/24"
+     },
+     {
+      "parts": 24,
+      "shaded": 15,
+      "label": "5/8 = 15/24"
+     },
+     {
+      "parts": 24,
+      "shaded": 22,
+      "label": "11/12 = 22/24"
+     }
+    ],
+    "note": "1/6 is too small and 11/12 is too big",
+    "highlight": [
+     "b0",
+     "b3"
+    ]
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 24,
+      "shaded": 8,
+      "label": "1/3 = 8/24"
+     },
+     {
+      "parts": 24,
+      "shaded": 15,
+      "label": "5/8 = 15/24"
+     },
+     {
+      "parts": 24,
+      "shaded": 17,
+      "label": "17/24"
+     }
+    ],
+    "note": "17 is more than 15, so 17/24 is too big",
+    "highlight": [
+     "b2"
+    ]
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 24,
+      "shaded": 8,
+      "label": "1/3 = 8/24"
      },
      {
       "parts": 24,
@@ -6444,15 +7810,70 @@
       "label": "13/24"
      },
      {
-      "parts": 8,
-      "shaded": 5,
-      "label": "5/8"
+      "parts": 24,
+      "shaded": 15,
+      "label": "5/8 = 15/24"
      }
     ],
-    "note": "13/24 sits between them",
+    "note": "13 lies between 8 and 15",
     "highlight": [
      "b1"
     ]
+   }
+  ]
+ },
+ "EXT_G5_WS_B7_016": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 8,
+      "shaded": 8,
+      "label": "1 whole = 8/8"
+     },
+     {
+      "parts": 8,
+      "shaded": 3,
+      "label": "3/8"
+     }
+    ],
+    "note": "8 eighths + 3 eighths = 11 eighths"
+   },
+   null
+  ]
+ },
+ "EXT_G5_WS_B7_017": {
+  "origin": "authored",
+  "stepFigures": [
+   null,
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 5,
+      "shaded": 5,
+      "label": "1 whole"
+     },
+     {
+      "parts": 5,
+      "shaded": 5,
+      "label": "1 whole"
+     },
+     {
+      "parts": 5,
+      "shaded": 5,
+      "label": "1 whole"
+     },
+     {
+      "parts": 5,
+      "shaded": 1,
+      "label": "1/5"
+     }
+    ],
+    "note": "15 fifths + 1 fifth = 16 fifths"
    },
    null
   ]
@@ -6460,6 +7881,7 @@
  "EXT_G5_WS_B7_018": {
   "origin": "authored",
   "stepFigures": [
+   null,
    null,
    {
     "kind": "fractionBars",
@@ -6512,6 +7934,27 @@
       "label": "x = 11/12"
      },
      {
+      "parts": 3,
+      "shaded": 2,
+      "label": "y = 2/3"
+     },
+     {
+      "parts": 4,
+      "shaded": 1,
+      "label": "z = 1/4"
+     }
+    ],
+    "note": "x − y + z is 11/12 − 2/3 + 1/4"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 12,
+      "shaded": 11,
+      "label": "x = 11/12"
+     },
+     {
       "parts": 12,
       "shaded": 8,
       "label": "y = 8/12"
@@ -6530,17 +7973,34 @@
      {
       "parts": 12,
       "shaded": 6,
-      "label": "6/12 = 1/2"
+      "label": "6/12"
      }
     ],
-    "note": "11 − 8 + 3 = 6 twelfths, which is one half"
+    "note": "11 − 8 + 3 = 6 twelfths"
    },
-   null
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 12,
+      "shaded": 6,
+      "label": "6/12"
+     },
+     {
+      "parts": 2,
+      "shaded": 1,
+      "label": "1/2"
+     }
+    ],
+    "note": "6/12 is the same as 1/2"
+   }
   ]
  },
  "EXT_G5_WS_B7_027": {
   "origin": "authored",
   "stepFigures": [
+   null,
+   null,
    {
     "kind": "fractionBars",
     "bars": [
@@ -6550,18 +8010,17 @@
       "label": "from 9 to 10"
      }
     ],
-    "note": "2/5 of the hour has passed: 2/5 × 60 = 24 minutes"
+    "note": "One fifth is 60 ÷ 5 = 12 minutes, so two fifths is 24"
    },
    {
     "kind": "clock",
     "hour": 9,
     "minute": 24,
-    "note": "The time is 9:24",
+    "note": "24 minutes past 9 is 9:24",
     "highlight": [
      "minute"
     ]
-   },
-   null
+   }
   ]
  },
  "EXT_G5_WS_B7_028": {
@@ -6658,10 +8117,16 @@
        }
       ],
       "label": "The number",
-      "brace": "54"
+      "brace": "?"
      }
     ],
-    "note": "4 of the 9 parts are 24, so the number is 24 × 9/4 = 54"
+    "note": "4 of the 9 equal parts make 24",
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3"
+    ]
    },
    {
     "kind": "barModel",
@@ -6670,18 +8135,22 @@
       "segments": [
        {
         "units": 1,
+        "label": "6",
         "tone": "a"
        },
        {
         "units": 1,
+        "label": "6",
         "tone": "a"
        },
        {
         "units": 1,
+        "label": "6",
         "tone": "a"
        },
        {
         "units": 1,
+        "label": "6",
         "tone": "a"
        },
        {
@@ -6706,10 +8175,124 @@
        }
       ],
       "label": "The number",
+      "brace": "?"
+     }
+    ],
+    "note": "One part = 24 ÷ 4 = 6"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "b"
+       }
+      ],
+      "label": "The number",
       "brace": "54"
      }
     ],
-    "note": "Half of 54 = 27"
+    "note": "All 9 parts: 9 × 6 = 54"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "6",
+        "tone": "b"
+       }
+      ],
+      "label": "The number",
+      "brace": "54"
+     }
+    ],
+    "note": "Half of 54 = 54 ÷ 2 = 27"
    }
   ]
  },
@@ -6933,7 +8516,7 @@
       "brace": "? litres"
      }
     ],
-    "note": "3/7 of the tank = 120 litres",
+    "note": "Empty part: 7/7 − 4/7 = 3/7 of the tank",
     "highlight": [
      "b0s4",
      "b0s5",
@@ -6967,17 +8550,69 @@
        },
        {
         "units": 1,
-        "label": "empty",
+        "label": "40",
         "tone": "unknown"
        },
        {
         "units": 1,
-        "label": "empty",
+        "label": "40",
         "tone": "unknown"
        },
        {
         "units": 1,
-        "label": "empty",
+        "label": "40",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Tank",
+      "brace": "? litres"
+     }
+    ],
+    "note": "3/7 holds 120 litres, so one part is 120 ÷ 3 = 40",
+    "highlight": [
+     "b0s4",
+     "b0s5",
+     "b0s6"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "40",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "40",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "40",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "40",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "40",
+        "tone": "unknown"
+       },
+       {
+        "units": 1,
+        "label": "40",
+        "tone": "unknown"
+       },
+       {
+        "units": 1,
+        "label": "40",
         "tone": "unknown"
        }
       ],
@@ -6985,7 +8620,7 @@
       "brace": "280 litres"
      }
     ],
-    "note": "Whole tank = 120 × 7/3 = 280 litres"
+    "note": "All 7 parts: 7 × 40 = 280"
    },
    null
   ]
@@ -7023,8 +8658,7 @@
        "tone": "unknown"
       }
      ],
-     "label": "Account",
-     "brace": "?"
+     "label": "Account"
     }
    ],
    "note": "The parts taken out come to Rs. 2700. How much is left?"
@@ -7061,11 +8695,15 @@
         "tone": "unknown"
        }
       ],
-      "label": "Account",
-      "brace": "Rs. 4500"
+      "label": "Account"
      }
     ],
-    "note": "Whole amount = 2700 × 5/3 = 4500"
+    "note": "3 of the 5 equal parts make Rs. 2700",
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2"
+    ]
    },
    {
     "kind": "barModel",
@@ -7074,17 +8712,17 @@
       "segments": [
        {
         "units": 1,
-        "label": "taken out",
+        "label": "900",
         "tone": "a"
        },
        {
         "units": 1,
-        "label": "taken out",
+        "label": "900",
         "tone": "a"
        },
        {
         "units": 1,
-        "label": "taken out",
+        "label": "900",
         "tone": "a"
        },
        {
@@ -7098,17 +8736,91 @@
         "tone": "unknown"
        }
       ],
-      "label": "Account",
-      "brace": "Rs. 4500"
+      "label": "Account"
      }
     ],
-    "note": "Left = 4500 − 2700 = 1800",
+    "note": "One part = 2700 ÷ 3 = 900"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "900",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "900",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "900",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "left",
+        "tone": "unknown"
+       },
+       {
+        "units": 1,
+        "label": "left",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Account"
+     }
+    ],
+    "note": "5 − 3 = 2 parts are left in the account",
     "highlight": [
      "b0s3",
      "b0s4"
     ]
    },
-   null
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "900",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "900",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "900",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "900",
+        "tone": "unknown"
+       },
+       {
+        "units": 1,
+        "label": "900",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Account"
+     }
+    ],
+    "note": "2 × 900 = 1800 left",
+    "highlight": [
+     "b0s3",
+     "b0s4"
+    ]
+   }
   ]
  },
  "EXT_G5_WS_B7_032": {
@@ -7202,14 +8914,16 @@
         "tone": "c"
        }
       ],
-      "label": "Class",
-      "brace": "? students"
+      "label": "Class"
      }
     ],
-    "note": "Playground: 2/7 of the class = 14",
+    "note": "Library and lab together: 3/7 + 2/7 = 5/7",
     "highlight": [
-     "b0s5",
-     "b0s6"
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4"
     ]
    },
    {
@@ -7253,11 +8967,14 @@
         "tone": "c"
        }
       ],
-      "label": "Class",
-      "brace": "49 students"
+      "label": "Class"
      }
     ],
-    "note": "Whole class = 49"
+    "note": "Playground: 7/7 − 5/7 = 2/7, and that is 14 students",
+    "highlight": [
+     "b0s5",
+     "b0s6"
+    ]
    },
    {
     "kind": "barModel",
@@ -7291,20 +9008,69 @@
        },
        {
         "units": 1,
-        "label": "play",
+        "label": "7",
         "tone": "c"
        },
        {
         "units": 1,
-        "label": "play",
+        "label": "7",
         "tone": "c"
        }
       ],
-      "label": "Class",
-      "brace": "49 students"
+      "label": "Class"
      }
     ],
-    "note": "Library = 3/7 × 49 = 21",
+    "note": "One part: 14 ÷ 2 = 7 students",
+    "highlight": [
+     "b0s5",
+     "b0s6"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "7",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "lab",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "lab",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "7",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "7",
+        "tone": "c"
+       }
+      ],
+      "label": "Class"
+     }
+    ],
+    "note": "Library = 3 parts: 3 × 7 = 21",
     "highlight": [
      "b0s0",
      "b0s1",
@@ -7424,14 +9190,18 @@
         "tone": "unknown"
        }
       ],
-      "label": "Garden",
-      "brace": "135 plants"
+      "label": "Garden"
      }
     ],
-    "note": "Hibiscus: 2/9 of the garden = 30, so 135 plants in all",
+    "note": "Roses, sunflowers, marigolds: 2/9 + 1/9 + 4/9 = 7/9",
     "highlight": [
-     "b0s7",
-     "b0s8"
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4",
+     "b0s5",
+     "b0s6"
     ]
    },
    {
@@ -7485,11 +9255,130 @@
         "tone": "unknown"
        }
       ],
-      "label": "Garden",
-      "brace": "135 plants"
+      "label": "Garden"
      }
     ],
-    "note": "Sunflower + marigold = 5/9 × 135 = 75",
+    "note": "Hibiscus: 9/9 − 7/9 = 2/9, and that is 30 plants",
+    "highlight": [
+     "b0s7",
+     "b0s8"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "rose",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "rose",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "sun",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "mari",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "mari",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "mari",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "mari",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "unknown"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Garden"
+     }
+    ],
+    "note": "One part: 30 ÷ 2 = 15 plants",
+    "highlight": [
+     "b0s7",
+     "b0s8"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "rose",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "rose",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "c"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "unknown"
+       },
+       {
+        "units": 1,
+        "label": "15",
+        "tone": "unknown"
+       }
+      ],
+      "label": "Garden"
+     }
+    ],
+    "note": "Sunflower + marigold: 5 parts, 5 × 15 = 75",
     "highlight": [
      "b0s2",
      "b0s3",
@@ -7534,7 +9423,7 @@
       "label": "? litres"
      }
     ],
-    "note": "Whole tank = 120 × 8/5 = 192 litres",
+    "note": "5 parts hold 120, so one part is 120 ÷ 5 = 24 litres",
     "highlight": [
      "b0"
     ]
@@ -7544,8 +9433,27 @@
     "bars": [
      {
       "parts": 8,
-      "shaded": 5,
-      "label": "120 litres"
+      "shaded": 8,
+      "label": "192 litres"
+     },
+     {
+      "parts": 3,
+      "shaded": 2,
+      "label": "? litres"
+     }
+    ],
+    "note": "Full tank = 8 parts: 8 × 24 = 192 litres",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 8,
+      "shaded": 8,
+      "label": "192 litres"
      },
      {
       "parts": 3,
@@ -7553,7 +9461,7 @@
       "label": "128 litres"
      }
     ],
-    "note": "2/3 × 192 = 128 litres",
+    "note": "192 ÷ 3 = 64, and 2 × 64 = 128 litres",
     "highlight": [
      "b1"
     ]
@@ -7632,11 +9540,10 @@
         "tone": "b"
        }
       ],
-      "label": "Visitors",
-      "brace": "300 visitors"
+      "label": "Visitors"
      }
     ],
-    "note": "Children: 2/5 of all = 120, so 300 visitors",
+    "note": "Children: 5/5 − 3/5 = 2/5, and that is 120",
     "highlight": [
      "b0s3",
      "b0s4"
@@ -7649,35 +9556,34 @@
       "segments": [
        {
         "units": 1,
-        "label": "adults",
+        "label": "60",
         "tone": "a"
        },
        {
         "units": 1,
-        "label": "adults",
+        "label": "60",
         "tone": "a"
        },
        {
         "units": 1,
-        "label": "adults",
+        "label": "60",
         "tone": "a"
        },
        {
         "units": 1,
-        "label": "children",
+        "label": "60",
         "tone": "b"
        },
        {
         "units": 1,
-        "label": "children",
+        "label": "60",
         "tone": "b"
        }
       ],
-      "label": "Visitors",
-      "brace": "300 visitors"
+      "label": "Visitors"
      }
     ],
-    "note": "Adults = 180",
+    "note": "One part: 120 ÷ 2 = 60. Adults: 3 × 60 = 180",
     "highlight": [
      "b0s0",
      "b0s1",
@@ -7685,15 +9591,125 @@
     ]
    },
    {
-    "kind": "fractionBars",
+    "kind": "barModel",
     "bars": [
      {
-      "parts": 9,
-      "shaded": 5,
-      "label": "female adults"
+      "segments": [
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "b"
+       }
+      ],
+      "label": "Adults",
+      "brace": "180 adults"
      }
     ],
-    "note": "5/9 of the 180 adults = 100"
+    "note": "One ninth of 180 is 180 ÷ 9 = 20"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "20",
+        "tone": "b"
+       }
+      ],
+      "label": "Adults",
+      "brace": "180 adults"
+     }
+    ],
+    "note": "Female adults: 5 × 20 = 100",
+    "highlight": [
+     "b0s0",
+     "b0s1",
+     "b0s2",
+     "b0s3",
+     "b0s4"
+    ]
    }
   ]
  },
@@ -7742,7 +9758,7 @@
       "brace": "360 kg"
      }
     ],
-    "note": "Total = 360 kg"
+    "note": "Total: 308 + 52 = 360 kg"
    },
    {
     "kind": "barModel",
@@ -7751,27 +9767,27 @@
       "segments": [
        {
         "units": 1,
-        "label": "Joshi",
+        "label": "72",
         "tone": "a"
        },
        {
         "units": 1,
-        "label": "Joshi",
+        "label": "72",
         "tone": "a"
        },
        {
         "units": 1,
-        "label": "rest",
+        "label": "72",
         "tone": "b"
        },
        {
         "units": 1,
-        "label": "rest",
+        "label": "72",
         "tone": "b"
        },
        {
         "units": 1,
-        "label": "rest",
+        "label": "72",
         "tone": "b"
        }
       ],
@@ -7779,7 +9795,11 @@
       "brace": "360 kg"
      }
     ],
-    "note": "Joshi: 2/5 × 360 = 144. Rest = 216"
+    "note": "One fifth: 360 ÷ 5 = 72. Joshi buys 2 × 72 = 144 kg",
+    "highlight": [
+     "b0s0",
+     "b0s1"
+    ]
    },
    {
     "kind": "barModel",
@@ -7788,30 +9808,112 @@
       "segments": [
        {
         "units": 1,
-        "label": "Shinde",
+        "label": "72",
         "tone": "a"
        },
        {
         "units": 1,
-        "label": "left",
+        "label": "72",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "72",
         "tone": "b"
        },
        {
         "units": 1,
-        "label": "left",
+        "label": "72",
         "tone": "b"
        },
        {
         "units": 1,
-        "label": "left",
+        "label": "72",
         "tone": "b"
        }
       ],
-      "label": "The rest",
+      "label": "Stock",
+      "brace": "360 kg"
+     }
+    ],
+    "note": "Remaining: 360 − 144 = 216 kg",
+    "highlight": [
+     "b0s2",
+     "b0s3",
+     "b0s4"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "54",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "54",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "54",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "54",
+        "tone": "b"
+       }
+      ],
+      "label": "Remaining",
       "brace": "216 kg"
      }
     ],
-    "note": "Shinde: 1/4 × 216 = 54. Left = 162 kg"
+    "note": "Shinde buys a quarter: 216 ÷ 4 = 54 kg",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 1,
+        "label": "54",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "54",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "54",
+        "tone": "b"
+       },
+       {
+        "units": 1,
+        "label": "54",
+        "tone": "b"
+       }
+      ],
+      "label": "Remaining",
+      "brace": "216 kg"
+     }
+    ],
+    "note": "Left: 216 − 54 = 162 kg",
+    "highlight": [
+     "b0s1",
+     "b0s2",
+     "b0s3"
+    ]
    }
   ]
  }

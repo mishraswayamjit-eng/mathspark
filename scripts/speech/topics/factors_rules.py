@@ -61,7 +61,7 @@ def say(text):
     s = re.sub(r"\bQ(\d+)\b", r"question \1", s)
     s = re.sub(r"(\d)\s*[–—]\s*(\d)", r"\1 to \2", s)
     s = re.sub(r"(^|[\s(])[-−](\d)", r"\1minus \2", s)
-    s = re.sub(r"(\d)([a-zA-Z])\b", r"\1 \2", s)
+    s = re.sub(r"(\d)([a-rt-zA-Z])\b", r"\1 \2", s)  # "5a" is "5 a", but "the 2s" stays a plural
     s = speak(s)
     s = s.replace("(", ", ").replace(")", ", ").replace("—", ", ")
     s = re.sub(r"\s*,\s*", ", ", s)
@@ -130,7 +130,59 @@ _PATTERNS = [
     (r"The numbers in both lists are %s\. The biggest of these is %s, so the HCF of %s and %s is %s\." % (_LIST, _N, _N, _N, _N),
      "The numbers in both lists are {L1}. The biggest of these is {2}, so the H C F of {3} and {4} is {5}."),
 ]
+
+# Wordings from the rewritten hints and solutions.
+_ALIST = r"(\d+(?:, \d+)*(?: and \d+)?)"
+_PROD = r"(\d+(?: × \d+)*)"
+_TAIL = r" Each time, ask: is this number in the %s times table too\? The first one that is, is the LCM\." % _N
+_TAIL_SAID = " Each time, ask: is this number in the {%d} times table too? The first one that is, is the L C M."
+_PATTERNS += [
+    (r"LCM means Lowest Common Multiple: the smallest number that is in both the %s times table and the %s times table\." % (_N, _N),
+     "L C M means Lowest Common Multiple: the smallest number that is in both the {1} times table, and the {2} times table."),
+    (r"HCF means Highest Common Factor: the biggest number that divides both %s and %s exactly, with nothing left over\." % (_N, _N),
+     "H C F means Highest Common Factor: the biggest number that divides both {1} and {2} exactly, with nothing left over."),
+    (r"Write down every number that divides %s exactly\. These are its factors, and they come in pairs: 1 × %s is one pair\. Do the same for %s\. Then look for the biggest number that is on both lists\." % (_N, _N, _N),
+     "Write down every number that divides {1} exactly. These are its factors, and they come in pairs: 1 times {2} is one pair. Do the same for {3}. Then look for the biggest number that is on both lists."),
+    (r"Count up in %ss: %s, and keep going\.%s" % (_N, _LIST, _TAIL),
+     "Count up in {1}s: {C2}, and keep going." + _TAIL_SAID % 3),
+    (r"Count up in %ss, starting with %s itself\.%s" % (_N, _N, _TAIL),
+     "Count up in {1}s, starting with {2} itself." + _TAIL_SAID % 3),
+    (r"Try another one: the LCM of %s and %s\. Count up in %ss: %s\. The first one that is also in the %s times table is %s, because %s × %s = %s\. So the LCM of %s and %s is %s\." % (_N, _N, _N, _LIST, _N, _N, _N, _N, _N, _N, _N, _N),
+     "Try another one: the L C M of {1} and {2}. Count up in {3}s: {C4}. The first one that is also in the {5} times table is {6}, because {7} times {8} equals {9}. So the L C M of {10} and {11} is {12}."),
+    (r"Try another one: the HCF of %s and %s\. Factors of %s: %s\. Factors of %s: %s\. The biggest number on both lists is %s, so the HCF is %s\." % (_N, _N, _N, _LIST, _N, _LIST, _N, _N),
+     "Try another one: the H C F of {1} and {2}. The factors of {3} are {L4}. The factors of {5} are {L6}. The biggest number on both lists is {7}, so the H C F is {8}."),
+    (r"So the HCF of %s and %s is %s\." % (_N, _N, _N), "So the H C F of {1} and {2} is {3}."),
+    (r"List the factors of %s: %s\." % (_N, _ALIST), "List the factors of {1}: {2}."),
+    (r"The factors in both lists are %s\. The largest of them is %s\." % (_ALIST, _N),
+     "The factors in both lists are {1}. The largest of them is {2}."),
+    (r"Pick out the prime factors that appear in both: %s\." % _ALIST, "Pick out the prime factors that appear in both: {1}."),
+    (r"Multiply them: %s = %s\." % (_PROD, _N), "Multiply them: {P1} equals {2}."),
+    (r"Break each number into prime factors: %s = %s, and %s = %s\." % (_N, _PROD, _N, _PROD),
+     "Break each number into prime factors. {1} equals {G2}. And {3} equals {G4}."),
+    (r"Add %s to both sides to undo the [−-] %s: %sx = %s \+ %s = %s\." % ((_N,) * 6),
+     "Add {1} to both sides, to undo the minus {2}. {3} x equals {4} plus {5}, which is {6}."),
+    (r"Subtract %s from both sides to undo the \+ %s: %sx = %s [−-] %s = %s\." % ((_N,) * 6),
+     "Subtract {1} from both sides, to undo the plus {2}. {3} x equals {4} minus {5}, which is {6}."),
+    (r"Divide both sides by %s: x = %s ÷ %s = %s\." % ((_N,) * 4),
+     "Divide both sides by {1}. x equals {2} divided by {3}, which is {4}."),
+    (r"Check: %s × %s ([−+-]) %s = %s\. So x = %s\." % ((_N,) * 5),
+     "Check: {1} times {2}, {S3} {4}, equals {5}. So x equals {6}."),
+]
 _COMPILED = [(re.compile(p), t) for p, t in _PATTERNS]
+
+
+def grouped_product(text):
+    """'2 × 2 × 2 × 3 × 5' -> '2 times 2 times 2, times 3, times 5': a breath between different primes."""
+    nums = [n.strip() for n in text.split("×")]
+    groups = []
+    for n in nums:
+        if groups and groups[-1][0] == n:
+            groups[-1].append(n)
+        else:
+            groups.append([n])
+    if len(groups) == len(nums) and len(nums) <= 3:
+        return " times ".join(nums)
+    return ", times ".join(" times ".join(g) for g in groups)
 
 
 def _fill(template, groups):
@@ -145,8 +197,12 @@ def _fill(template, groups):
             return " ".join(g)
         if kind == "S":
             return "plus" if g == "+" else "minus"
+        if kind == "P":
+            return " times ".join(n.strip() for n in g.split("×"))
+        if kind == "G":
+            return grouped_product(g)
         return g
-    return re.sub(r"\{([LCAS]?)(\d+)\}", sub, template)
+    return re.sub(r"\{([LCASPG]?)(\d+)\}", sub, template)
 
 
 def family_line(text):

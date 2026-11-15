@@ -83,8 +83,9 @@ ENTRIES[P + "034"] = entry(
 
 # 032 one third of one fourth of a number is 15
 ENTRIES[P + "032"] = entry(None, [
-    fbars([(4, 1, "1/4 of the number"), (12, 1, "1/3 of that = 15")], note="1 part out of 12 is 15, so the number is 180"),
-    fbars([(10, 3, "3/10 of 180 = 54")]),
+    fbars([(4, 1, "1/4 of the number"), (12, 1, "1/3 of that = 15")], note="1 part out of 12 of the number is 15"),
+    fbars([(12, 1, "each part is 15")], note="12 parts of 15 make 180"),
+    fbars([(10, 3, "3/10 of 180")], note="One part is 18, so three parts are 54"),
     None,
 ])
 

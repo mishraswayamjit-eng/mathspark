@@ -25,7 +25,11 @@ def _d(brace, note, hl=None):
 
 E["EXT_G5_WS_B2_009"] = entry(
     figure=_d("?", "The two numbers differ by 17638"),
-    steps=[_d("?", "Other number = 4905 + 17638", ["b1"]), _d("22543", "4905 + 17638 = 22543", ["b1"])],
+    steps=[
+        _d("?", "17638 is bigger than 4905, so 4905 is the smaller number", ["b0"]),
+        _d("22543", "Larger number = 4905 + 17638 = 22543", ["b1"]),
+        _d("22543", "Check: 22543 − 4905 = 17638"),
+    ],
 )
 
 # Consecutive numbers around an average.
@@ -49,8 +53,7 @@ E["EXT_G5_WS_B2_014"] = entry(
     steps=[
         _row(["□", "□", "16", "?", "□"], "80 ÷ 5 = 16 is the middle number"),
         _row(["12", "14", "16", "18", "20"], "Even numbers go up in 2s"),
-        _row(["12", "14", "16", "18", "20"], "The 4th number is 18", ["r0"]),
-        None,
+        _row(["12", "14", "16", "18", "20"], "The fourth number is 18", ["r0"]),
     ],
 )
 
@@ -94,8 +97,8 @@ E["EXT_G5_WS_B2_018"] = entry(
     figure=_vv("?", "?", "Work back from the sum in 4 years"),
     steps=[
         _vv("59 years", "?", "Both are 4 years younger now: 67 − 2 × 4 = 59", ["b1"]),
-        _vv("59 years", "49 years", "Both were 5 years younger: 59 − 2 × 5 = 49", ["b0"]),
-        None,
+        _vv("59 years", "?", "5 years ago both were 5 years younger: take away 2 × 5 = 10", ["b0"]),
+        _vv("59 years", "49 years", "59 − 10 = 49", ["b0"]),
     ],
 )
 
@@ -115,17 +118,17 @@ E["EXT_G5_WS_B2_019"] = entry(
 )
 
 # Three bags, two overlapping pairs.
-def _bags(second, note, hl=None):
-    return bm([bar([seg("first", 2, "a"), seg(second, 2, "b"), seg("third", 2, "c")], label="All three", brace="27 oranges"),
-               bar([seg("first", 2, "a"), seg(second, 2, "b")], label="first + second", brace="13 oranges"),
-               bar([seg(second, 2, "b"), seg("third", 2, "c")], label="second + third", brace="19 oranges")], note, hl)
+def _bags(first, third, note, hl=None):
+    return bm([bar([seg(first, 2, "a"), seg("second", 2, "b"), seg(third, 2, "c")], label="All three", brace="27 oranges"),
+               bar([seg(first, 2, "a"), seg("second", 2, "b")], label="first + second", brace="13 oranges"),
+               bar([seg("second", 2, "b"), seg(third, 2, "c")], label="second + third", brace="19 oranges")], note, hl)
 
 E["EXT_G5_WS_B2_021"] = entry(
-    figure=_bags("second", "The second bag is in both pairs. First + third = ?"),
+    figure=_bags("first", "third", "Compare each pair with all three bags. First + third = ?"),
     steps=[
-        _bags("5", "The second bag is counted twice: 13 + 19 − 27 = 5", ["b0s1"]),
-        _bags("5", "First + third = 27 − 5 = 22", ["b0s0", "b0s2"]),
-        None,
+        _bags("first", "14", "All three minus the first two: 27 − 13 = 14 in the third", ["b0s2"]),
+        _bags("8", "14", "All three minus the last two: 27 − 19 = 8 in the first", ["b0s0"]),
+        _bags("8", "14", "First + third = 8 + 14 = 22", ["b0s0", "b0s2"]),
     ],
 )
 
@@ -149,42 +152,47 @@ E["EXT_G5_WS_B2_023"] = entry(
 
 # Account slip: the 600 went the opposite way, so the balance is out by two lots of 600.
 E["EXT_G5_WS_B2_024"] = entry(steps=[
+    nl(13800, 15000, 600, points=[(15000, "shown")], note="600 was added but should have been taken away"),
     nl(13800, 15000, 600, points=[(15000, "shown")], hops=[(15000, 14400, "undo the + 600")],
-       note="600 was added but should have been taken away"),
+       note="Undo the slip: 15000 − 600 = 14400"),
     nl(13800, 15000, 600, points=[(15000, "shown"), (13800, "correct")],
-       hops=[(15000, 14400, "undo the + 600"), (14400, 13800, "now − 600")], note="15000 − 1200 = 13800"),
-    None,
+       hops=[(15000, 14400, "undo the + 600"), (14400, 13800, "now − 600")], note="Now take away the 600 spent: 14400 − 600 = 13800"),
 ])
 E["EXT_G5_WS_B2_025"] = entry(steps=[
+    nl(15000, 16200, 600, points=[(15000, "shown")], note="600 was taken away but should have been added"),
     nl(15000, 16200, 600, points=[(15000, "shown")], hops=[(15000, 15600, "undo the − 600")],
-       note="600 was taken away but should have been added"),
+       note="Undo the slip: 15000 + 600 = 15600"),
     nl(15000, 16200, 600, points=[(15000, "shown"), (16200, "correct")],
-       hops=[(15000, 15600, "undo the − 600"), (15600, 16200, "now + 600")], note="15000 + 1200 = 16200"),
-    None,
+       hops=[(15000, 15600, "undo the − 600"), (15600, 16200, "now + 600")], note="Now add the 600 income: 15600 + 600 = 16200"),
 ])
 
 E["EXT_G5_WS_B2_026"] = entry(
     figure=venn("Delhi", "Kashmir", "?", "6", "?", "40 students. 18 went to Delhi, 15 to Kashmir, 6 to both."),
     steps=[
-        venn("Delhi", "Kashmir", "18 − 6", "6", "15 − 6", "At least one place: 18 + 15 − 6 = 27"),
+        venn("Delhi", "Kashmir", "?", "6", "?", "18 + 15 = 33 counts the middle 6 twice", ["both"]),
+        venn("Delhi", "Kashmir", "18 − 6", "6", "15 − 6", "Take the 6 away once: 33 − 6 = 27 inside the circles"),
         venn("Delhi", "Kashmir", "18 − 6", "6", "15 − 6", "Outside both circles: 40 − 27 = 13"),
-        None,
     ],
 )
 E["EXT_G5_WS_B2_027"] = entry(
     figure=venn("Hindi", "Marathi", "?", "5", "?", "30 students. The Hindi circle holds 21 in all."),
     steps=[
-        venn("Hindi", "Marathi", "16", "5", "?", "Hindi only = 21 − 5 = 16", ["left"]),
-        venn("Hindi", "Marathi", "16", "5", "9", "Marathi only = 30 − 16 − 5 = 9", ["right"]),
+        venn("Hindi", "Marathi", "?", "5", "?", "Anyone outside the Hindi circle speaks only Marathi", ["right"]),
+        venn("Hindi", "Marathi", "21 − 5", "5", "9", "The Hindi circle holds 21, so 30 − 21 = 9", ["right"]),
         None,
     ],
 )
 
 # Four players: every line joining two of them is one game.
-_sq = lambda note: {"kind": "polygon", "points": [[2, 2], [10, 2], [10, 10], [2, 10]],
-                    "corners": ["A", "B", "C", "D"], "dashed": [{"from": 0, "to": 2}, {"from": 1, "to": 3}], "note": note}
+def _sq(note, hl=None):
+    fig = {"kind": "polygon", "points": [[2, 2], [10, 2], [10, 10], [2, 10]],
+           "corners": ["A", "B", "C", "D"], "dashed": [{"from": 0, "to": 2}, {"from": 1, "to": 3}], "note": note}
+    if hl:
+        fig["highlight"] = hl
+    return fig
+
 E["EXT_G5_WS_B2_029"] = entry(steps=[
-    _sq("Each line joins 2 of the 4 players: that is one game"),
-    _sq("4 × 3 ÷ 2 = 6 lines, so 6 games"),
-    None,
+    _sq("Players A, B, C and D. Each line joining two is one game."),
+    _sq("A plays 3 games. B has 2 new ones. C has 1 new one.", ["e0", "e3"]),
+    _sq("3 + 2 + 1 = 6 lines, so 6 games"),
 ])

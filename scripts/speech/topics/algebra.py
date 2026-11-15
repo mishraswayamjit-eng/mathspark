@@ -12,7 +12,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.dirname(HERE))
 
-from common import PARTS, load_grade5, source_strings, topic_of  # noqa: E402
+from common import PARTS, load_grade5, number_tokens, source_strings, topic_of  # noqa: E402
 from algebra_rules import say  # noqa: E402
 from algebra_overrides import OVERRIDES  # noqa: E402
 
@@ -45,8 +45,16 @@ def narrate(q, counts):
             return ""
         hand = over.get(key) if key == "q" else (over.get(key) or {}).get(i)
         if hand is not None:
-            counts["hand"] += 1
-            return hand
+            # A hand line is only used while it still matches its source; the question bank changes.
+            wanted = [number_tokens(text)]
+            if key == "steps":
+                own = q.get("stepByStep") or []
+                if i < len(own) and own[i].get("latex"):
+                    wanted.append(number_tokens("%s %s" % (text, re.sub(r"\\[a-zA-Z]+", " ", own[i]["latex"]))))
+            if number_tokens(hand) in wanted:
+                counts["hand"] += 1
+                return hand
+            counts["stale"].append("%s %s[%d]" % (q["id"], key, i))
         counts["rule"] += 1
         spoken = say(text, sentence)
         if key == "steps":
@@ -64,7 +72,7 @@ def narrate(q, counts):
 
 
 def main():
-    counts = {"hand": 0, "rule": 0}
+    counts = {"hand": 0, "rule": 0, "stale": []}
     questions = sorted((q for q in load_grade5() if topic_of(q) == SLUG), key=lambda q: q["id"])
     unknown = sorted(set(OVERRIDES) - {q["id"] for q in questions})
     if unknown:
@@ -76,6 +84,8 @@ def main():
         json.dump(part, f, ensure_ascii=False, indent=1)
         f.write("\n")
     print("wrote %d questions: %d lines by hand, %d by rule" % (len(part), counts["hand"], counts["rule"]))
+    for where in counts["stale"]:
+        print("  stale hand line ignored: " + where)
 
 
 if __name__ == "__main__":

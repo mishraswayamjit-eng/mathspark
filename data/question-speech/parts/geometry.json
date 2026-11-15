@@ -13,8 +13,9 @@
    "Think: 2 times what number gives 14?"
   ],
   "steps": [
-   "Subtract 15 from both sides. 2 x equals 29 minus 15, which is 14.",
-   "Divide both sides by 2. x equals 14 over 2, which is 7."
+   "Subtract 15 from both sides to undo the plus 15: 2 x equals 29 minus 15, which is 14.",
+   "Divide both sides by 2: x equals 14 divided by 2, which is 7.",
+   "Check: 2 times 7, plus 15, equals 29. So x equals 7."
   ]
  },
  "BOOST_EXT_G5_WS_B6_022_07": {
@@ -31,8 +32,9 @@
    "After that, divide both sides by the coefficient of x."
   ],
   "steps": [
-   "Add 5 to both sides. 3 x equals 4 plus 5, which is 9.",
-   "Divide both sides by 3. x equals 9 over 3, which is 3."
+   "Add 5 to both sides to undo the minus 5: 3 x equals 4 plus 5, which is 9.",
+   "Divide both sides by 3: x equals 9 divided by 3, which is 3.",
+   "Check: 3 times 3, minus 5, equals 4. So x equals 3."
   ]
  },
  "BOOST_EXT_G5_WS_B6_022_08": {
@@ -49,8 +51,9 @@
    "Think: 6 times what number gives 24?"
   ],
   "steps": [
-   "Subtract 11 from both sides. 6 x equals 35 minus 11, which is 24.",
-   "Divide both sides by 6. x equals 24 over 6, which is 4."
+   "Subtract 11 from both sides to undo the plus 11: 6 x equals 35 minus 11, which is 24.",
+   "Divide both sides by 6: x equals 24 divided by 6, which is 4.",
+   "Check: 6 times 4, plus 11, equals 35. So x equals 4."
   ]
  },
  "EXT_G5_FP_2016_015": {
@@ -120,9 +123,9 @@
    "5 30 p m"
   ],
   "hints": [
-   "The hour hand turns 30 degrees in every hour. How many hours is 165 degrees?",
-   "Hour hand: 30 degrees per hour. Hours passed equals the angle divided by 30.",
-   ""
+   "The hour hand goes all the way round, 360 degrees, in 12 hours. How many degrees does it turn in one hour?",
+   "Divide 165 degrees by the degrees turned in one hour, to find how many hours pass. Half an hour counts too. Then add that time to 11:00 A M.",
+   "Try a smaller one. If the hour hand turns 90 degrees starting from 2:00, that is a quarter of the full circle. So 3 hours pass, and the time is 5:00."
   ],
   "steps": [
    "165 divided by 30 equals 5.5 hours, which is 5 hours 30 minutes.",
@@ -253,10 +256,10 @@
    ""
   ],
   "steps": [
-   "Statement A: the supplement of 30 degrees is 150 degrees, which is more than 90 degrees. So A is not true.",
-   "Statement B: if x is acute, between 0 degrees and 90 degrees, then 90 degrees minus x is also between 0 degrees and 90 degrees. So it is acute, and B is true.",
-   "Statement C: 90 minus x, plus 180 minus x, equals 270 minus 2 x, which isn't always 360 degrees. So C is not true.",
-   "Answer: statement B."
+   "Test each statement. The supplement of 30 degrees is 180 degrees minus 30 degrees, which is 150 degrees. That is more than 90 degrees. So the first statement is not true.",
+   "For an acute angle, between 0 degrees and 90 degrees, the complement is 90 degrees minus the angle, which is also between 0 degrees and 90 degrees. So the second statement is true.",
+   "For 30 degrees, the complement is 60 degrees, and the supplement is 150 degrees. Together they make 210 degrees, not 360 degrees. So the third statement is not true.",
+   "So the true statement is: the complementary angle of an acute angle is always an acute angle."
   ]
  },
  "EXT_G5_FP_2018_009": {
@@ -424,10 +427,11 @@
    ""
   ],
   "steps": [
-   "Option A: 3 times 9 is 27, and 4 times 9 is 36. Not equal.",
-   "Option B: 24 and 36. Not equal.",
-   "Option C: 3 times 16 is 48, and 4 times 12 is 48. They are equal.",
-   "Option D: 36 and 40. Not equal. Answer: E equals 16, and S equals 12."
+   "Perimeter of an equilateral triangle equals 3 times side, and perimeter of a square equals 4 times side. Test each pair.",
+   "E equals 9, S equals 9: 3 times 9 is 27, but 4 times 9 is 36. E equals 8, S equals 9: 3 times 8 is 24, but 4 times 9 is 36. Not equal.",
+   "E equals 12, S equals 10: 3 times 12 is 36, but 4 times 10 is 40. Not equal.",
+   "E equals 16, S equals 12: 3 times 16 is 48, and 4 times 12 is 48. Equal.",
+   "So the perimeters are equal when E equals 16, and S equals 12."
   ]
  },
  "EXT_G5_FP_2019_028": {
@@ -633,9 +637,10 @@
    ""
   ],
   "steps": [
-   "Rectangle perimeter equals 2 times, 22 plus 16, which is 76 metres.",
-   "Square side equals 76 divided by 4, which is 19 metres.",
-   "Area equals 19 times 19, which is 361 square metres. So the answer is, none of these."
+   "Rectangle perimeter: 2 times, 22 plus 16, which is 76 metres.",
+   "The square has the same perimeter, so its side is 76 divided by 4, which is 19 metres.",
+   "Area of the square: 19 times 19, which is 361 square metres.",
+   "361 square metres is not one of the choices given, so the answer is, none of these."
   ]
  },
  "EXT_G5_FP_2023_010": {
@@ -729,10 +734,10 @@
    ""
   ],
   "steps": [
-   "Area equals 56 times 56, which is 3136 square centimetres.",
-   "Length of the rectangle equals 3136 divided by 49, which is 64 centimetres.",
-   "Perimeter equals 2 times, 64 plus 49. That is 2 times 113, which is 226 centimetres.",
-   "226 is not in options A to C. So the answer is, none of these."
+   "Area of the square: 56 times 56, which is 3136 square centimetres.",
+   "The rectangle has the same area, so its length is 3136 divided by 49, which is 64 centimetres.",
+   "Perimeter of the rectangle: 2 times, 64 plus 49. That is 2 times 113, which is 226 centimetres.",
+   "226 centimetres is not one of the choices given, so the answer is, none of these."
   ]
  },
  "EXT_G5_FP_2024_005": {
@@ -934,9 +939,9 @@
    "data inadequate"
   ],
   "hints": [
-   "A square has all sides equal. Set the two expressions equal, and solve for A.",
-   "2 A plus 5 equals 3 A minus 1. So 5 plus 1 equals 3 A minus 2 A. So A equals 6. Then the side equals 2 times 6, plus 5, which is 17.",
-   "A similar one: square sides x plus 3, centimetres, and 2 x minus 1, centimetres. x plus 3 equals 2 x minus 1, so x equals 4. Side equals 7. Perimeter equals 28."
+   "All four sides of a square are equal. So the two expressions for the side must be equal to each other.",
+   "Write 2 A plus 5 equals 3 A minus 1, and solve for A. Then put your value of A back into 2 A plus 5 to get the side, and remember the perimeter is 4 times the side.",
+   "Try a similar one. A square has sides x plus 3, centimetres, and 2 x minus 1, centimetres. x plus 3 equals 2 x minus 1 gives x equals 4. The side is 4 plus 3, which is 7 centimetres, and the perimeter is 4 times 7, which is 28 centimetres."
   ],
   "steps": [
    "Equal sides: 2 A plus 5 equals 3 A minus 1.",
@@ -1084,7 +1089,7 @@
   "hints": [
    "When two lines cross, opposite angles are equal.",
    "This is called vertically opposite angles.",
-   "So the answer is simply 108 degrees."
+   "For example, if two crossing lines make an angle of 50 degrees, the angle directly opposite it is also 50 degrees."
   ],
   "steps": [
    "Vertically opposite angles are equal.",
@@ -1105,8 +1110,9 @@
    "After that, divide both sides by the coefficient of x."
   ],
   "steps": [
-   "Add 8 to both sides. 7 x equals 6 plus 8, which is 14.",
-   "Divide both sides by 7. x equals 14 over 7, which is 2."
+   "Add 8 to both sides to undo the minus 8: 7 x equals 6 plus 8, which is 14.",
+   "Divide both sides by 7: x equals 14 divided by 7, which is 2.",
+   "Check: 7 times 2, minus 8, equals 6. So x equals 2."
   ]
  },
  "VAR_EXT_G5_WS_B5_012_03": {
@@ -1123,8 +1129,9 @@
    "Think: 3 times what number gives 27?"
   ],
   "steps": [
-   "Subtract 1 from both sides. 3 x equals 28 minus 1, which is 27.",
-   "Divide both sides by 3. x equals 27 over 3, which is 9."
+   "Subtract 1 from both sides to undo the plus 1: 3 x equals 28 minus 1, which is 27.",
+   "Divide both sides by 3: x equals 27 divided by 3, which is 9.",
+   "Check: 3 times 9, plus 1, equals 28. So x equals 9."
   ]
  },
  "VAR_EXT_G5_WS_B5_012_04": {
@@ -1141,8 +1148,9 @@
    "After that, divide both sides by the coefficient of x."
   ],
   "steps": [
-   "Add 1 to both sides. 3 x equals 20 plus 1, which is 21.",
-   "Divide both sides by 3. x equals 21 over 3, which is 7."
+   "Add 1 to both sides to undo the minus 1: 3 x equals 20 plus 1, which is 21.",
+   "Divide both sides by 3: x equals 21 divided by 3, which is 7.",
+   "Check: 3 times 7, minus 1, equals 20. So x equals 7."
   ]
  },
  "VAR_EXT_G5_WS_B5_012_04_b2": {
@@ -1159,8 +1167,9 @@
    "After that, divide both sides by the coefficient of x."
   ],
   "steps": [
-   "Add 11 to both sides. 5 x equals 49 plus 11, which is 60.",
-   "Divide both sides by 5. x equals 60 over 5, which is 12."
+   "Add 11 to both sides to undo the minus 11: 5 x equals 49 plus 11, which is 60.",
+   "Divide both sides by 5: x equals 60 divided by 5, which is 12.",
+   "Check: 5 times 12, minus 11, equals 49. So x equals 12."
   ]
  },
  "VAR_EXT_G5_WS_B5_012_05_b2": {
@@ -1177,8 +1186,9 @@
    "Think: 5 times what number gives 40?"
   ],
   "steps": [
-   "Subtract 6 from both sides. 5 x equals 46 minus 6, which is 40.",
-   "Divide both sides by 5. x equals 40 over 5, which is 8."
+   "Subtract 6 from both sides to undo the plus 6: 5 x equals 46 minus 6, which is 40.",
+   "Divide both sides by 5: x equals 40 divided by 5, which is 8.",
+   "Check: 5 times 8, plus 6, equals 46. So x equals 8."
   ]
  },
  "VAR_EXT_G5_WS_B6_021_01": {
@@ -1195,8 +1205,9 @@
    "After that, divide both sides by the coefficient of x."
   ],
   "steps": [
-   "Add 13 to both sides. 5 x equals 17 plus 13, which is 30.",
-   "Divide both sides by 5. x equals 30 over 5, which is 6."
+   "Add 13 to both sides to undo the minus 13: 5 x equals 17 plus 13, which is 30.",
+   "Divide both sides by 5: x equals 30 divided by 5, which is 6.",
+   "Check: 5 times 6, minus 13, equals 17. So x equals 6."
   ]
  },
  "VAR_EXT_G5_WS_B6_021_03": {
@@ -1213,8 +1224,9 @@
    "Think: 6 times what number gives 30?"
   ],
   "steps": [
-   "Subtract 8 from both sides. 6 x equals 38 minus 8, which is 30.",
-   "Divide both sides by 6. x equals 30 over 6, which is 5."
+   "Subtract 8 from both sides to undo the plus 8: 6 x equals 38 minus 8, which is 30.",
+   "Divide both sides by 6: x equals 30 divided by 6, which is 5.",
+   "Check: 6 times 5, plus 8, equals 38. So x equals 5."
   ]
  },
  "VAR_EXT_G5_WS_B6_021_04": {
@@ -1231,8 +1243,9 @@
    "After that, divide both sides by the coefficient of x."
   ],
   "steps": [
-   "Add 4 to both sides. 7 x equals 38 plus 4, which is 42.",
-   "Divide both sides by 7. x equals 42 over 7, which is 6."
+   "Add 4 to both sides to undo the minus 4: 7 x equals 38 plus 4, which is 42.",
+   "Divide both sides by 7: x equals 42 divided by 7, which is 6.",
+   "Check: 7 times 6, minus 4, equals 38. So x equals 6."
   ]
  },
  "VAR_EXT_G5_WS_B6_021_04_b2": {
@@ -1249,8 +1262,9 @@
    "After that, divide both sides by the coefficient of x."
   ],
   "steps": [
-   "Add 10 to both sides. 7 x equals 11 plus 10, which is 21.",
-   "Divide both sides by 7. x equals 21 over 7, which is 3."
+   "Add 10 to both sides to undo the minus 10: 7 x equals 11 plus 10, which is 21.",
+   "Divide both sides by 7: x equals 21 divided by 7, which is 3.",
+   "Check: 7 times 3, minus 10, equals 11. So x equals 3."
   ]
  },
  "VAR_EXT_G5_WS_B6_021_05_b2": {
@@ -1267,8 +1281,9 @@
    "Think: 4 times what number gives 8?"
   ],
   "steps": [
-   "Subtract 17 from both sides. 4 x equals 25 minus 17, which is 8.",
-   "Divide both sides by 4. x equals 8 over 4, which is 2."
+   "Subtract 17 from both sides to undo the plus 17: 4 x equals 25 minus 17, which is 8.",
+   "Divide both sides by 4: x equals 8 divided by 4, which is 2.",
+   "Check: 4 times 2, plus 17, equals 25. So x equals 2."
   ]
  },
  "VAR_EXT_G5_WS_B6_022_01": {
@@ -1285,8 +1300,9 @@
    "After that, divide both sides by the coefficient of x."
   ],
   "steps": [
-   "Add 6 to both sides. 7 x equals 57 plus 6, which is 63.",
-   "Divide both sides by 7. x equals 63 over 7, which is 9."
+   "Add 6 to both sides to undo the minus 6: 7 x equals 57 plus 6, which is 63.",
+   "Divide both sides by 7: x equals 63 divided by 7, which is 9.",
+   "Check: 7 times 9, minus 6, equals 57. So x equals 9."
   ]
  },
  "VAR_EXT_G5_WS_B6_022_03": {
@@ -1303,8 +1319,9 @@
    "Think: 7 times what number gives 56?"
   ],
   "steps": [
-   "Subtract 9 from both sides. 7 x equals 65 minus 9, which is 56.",
-   "Divide both sides by 7. x equals 56 over 7, which is 8."
+   "Subtract 9 from both sides to undo the plus 9: 7 x equals 65 minus 9, which is 56.",
+   "Divide both sides by 7: x equals 56 divided by 7, which is 8.",
+   "Check: 7 times 8, plus 9, equals 65. So x equals 8."
   ]
  },
  "VAR_EXT_G5_WS_B6_022_04": {
@@ -1321,8 +1338,9 @@
    "After that, divide both sides by the coefficient of x."
   ],
   "steps": [
-   "Add 3 to both sides. 4 x equals 29 plus 3, which is 32.",
-   "Divide both sides by 4. x equals 32 over 4, which is 8."
+   "Add 3 to both sides to undo the minus 3: 4 x equals 29 plus 3, which is 32.",
+   "Divide both sides by 4: x equals 32 divided by 4, which is 8.",
+   "Check: 4 times 8, minus 3, equals 29. So x equals 8."
   ]
  },
  "VAR_EXT_G5_WS_B6_022_04_b2": {
@@ -1339,8 +1357,9 @@
    "After that, divide both sides by the coefficient of x."
   ],
   "steps": [
-   "Add 9 to both sides. 4 x equals 11 plus 9, which is 20.",
-   "Divide both sides by 4. x equals 20 over 4, which is 5."
+   "Add 9 to both sides to undo the minus 9: 4 x equals 11 plus 9, which is 20.",
+   "Divide both sides by 4: x equals 20 divided by 4, which is 5.",
+   "Check: 4 times 5, minus 9, equals 11. So x equals 5."
   ]
  },
  "VAR_EXT_G5_WS_B6_022_05_b2": {
@@ -1357,8 +1376,9 @@
    "Think: 6 times what number gives 36?"
   ],
   "steps": [
-   "Subtract 15 from both sides. 6 x equals 51 minus 15, which is 36.",
-   "Divide both sides by 6. x equals 36 over 6, which is 6."
+   "Subtract 15 from both sides to undo the plus 15: 6 x equals 51 minus 15, which is 36.",
+   "Divide both sides by 6: x equals 36 divided by 6, which is 6.",
+   "Check: 6 times 6, plus 15, equals 51. So x equals 6."
   ]
  },
  "VAR_G5_vary_angles_V03": {
@@ -1370,9 +1390,9 @@
    "24 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 156 degrees. So ask: 156 degrees plus what makes 180 degrees? You can find it by taking 156 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1388,9 +1408,9 @@
    "34 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 34 degrees. So ask: 34 degrees plus what makes 180 degrees? You can find it by taking 34 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1406,9 +1426,9 @@
    "160 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 20 degrees. So ask: 20 degrees plus what makes 180 degrees? You can find it by taking 20 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1424,9 +1444,9 @@
    "140 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 40 degrees. So ask: 40 degrees plus what makes 180 degrees? You can find it by taking 40 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1442,9 +1462,9 @@
    "87 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 93 degrees. So ask: 93 degrees plus what makes 180 degrees? You can find it by taking 93 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1460,9 +1480,9 @@
    "29 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 61 degrees. So ask: 61 degrees plus what makes 90 degrees? You can find it by taking 61 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -1478,9 +1498,9 @@
    "32 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 122 degrees. So ask: 122 degrees plus what makes 180 degrees? You can find it by taking 122 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1496,9 +1516,9 @@
    "67 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 33 degrees. So ask: 33 degrees plus what makes 90 degrees? You can find it by taking 33 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -1514,9 +1534,9 @@
    "141 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 49 degrees. So ask: 49 degrees plus what makes 180 degrees? You can find it by taking 49 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1532,9 +1552,9 @@
    "16 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 16 degrees. So ask: 16 degrees plus what makes 90 degrees? You can find it by taking 16 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -1550,9 +1570,9 @@
    "41 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 41 degrees. So ask: 41 degrees plus what makes 90 degrees? You can find it by taking 41 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -1568,9 +1588,9 @@
    "144 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 36 degrees. So ask: 36 degrees plus what makes 90 degrees? You can find it by taking 36 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -1586,9 +1606,9 @@
    "42 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 42 degrees. So ask: 42 degrees plus what makes 90 degrees? You can find it by taking 42 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -1604,9 +1624,9 @@
    "18 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 62 degrees. So ask: 62 degrees plus what makes 90 degrees? You can find it by taking 62 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -1622,9 +1642,9 @@
    "13 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 157 degrees. So ask: 157 degrees plus what makes 180 degrees? You can find it by taking 157 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1640,9 +1660,9 @@
    "78 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 92 degrees. So ask: 92 degrees plus what makes 180 degrees? You can find it by taking 92 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1658,9 +1678,9 @@
    "107 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 63 degrees. So ask: 63 degrees plus what makes 180 degrees? You can find it by taking 63 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1676,9 +1696,9 @@
    "132 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 48 degrees. So ask: 48 degrees plus what makes 90 degrees? You can find it by taking 48 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -1694,9 +1714,9 @@
    "120 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 60 degrees. So ask: 60 degrees plus what makes 180 degrees? You can find it by taking 60 away from 180.",
+   "Try another one. The supplementary angle of 100 degrees is 80 degrees, because 180 degrees minus 100 degrees equals 80 degrees. Check: 100 degrees plus 80 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1712,9 +1732,9 @@
    "56 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 44 degrees. So ask: 44 degrees plus what makes 90 degrees? You can find it by taking 44 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -1730,9 +1750,9 @@
    "169 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 21 degrees. So ask: 21 degrees plus what makes 180 degrees? You can find it by taking 21 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1748,9 +1768,9 @@
    "42 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 58 degrees. So ask: 58 degrees plus what makes 90 degrees? You can find it by taking 58 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -1766,9 +1786,9 @@
    "87 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 87 degrees. So ask: 87 degrees plus what makes 180 degrees? You can find it by taking 87 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1784,9 +1804,9 @@
    "162 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 28 degrees. So ask: 28 degrees plus what makes 180 degrees? You can find it by taking 28 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1802,9 +1822,9 @@
    "66 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 34 degrees. So ask: 34 degrees plus what makes 90 degrees? You can find it by taking 34 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -1820,9 +1840,9 @@
    "46 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 144 degrees. So ask: 144 degrees plus what makes 180 degrees? You can find it by taking 144 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1838,9 +1858,9 @@
    "45 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 45 degrees. So ask: 45 degrees plus what makes 180 degrees? You can find it by taking 45 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1856,9 +1876,9 @@
    "126 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 64 degrees. So ask: 64 degrees plus what makes 180 degrees? You can find it by taking 64 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1874,9 +1894,9 @@
    "123 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 67 degrees. So ask: 67 degrees plus what makes 180 degrees? You can find it by taking 67 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1892,9 +1912,9 @@
    "134 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 46 degrees. So ask: 46 degrees plus what makes 180 degrees? You can find it by taking 46 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1910,9 +1930,9 @@
    "87 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 83 degrees. So ask: 83 degrees plus what makes 180 degrees? You can find it by taking 83 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1928,9 +1948,9 @@
    "115 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 55 degrees. So ask: 55 degrees plus what makes 180 degrees? You can find it by taking 55 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -1946,9 +1966,9 @@
    "165 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 15 degrees. So ask: 15 degrees plus what makes 90 degrees? You can find it by taking 15 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -1964,9 +1984,9 @@
    "51 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 49 degrees. So ask: 49 degrees plus what makes 90 degrees? You can find it by taking 49 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -1982,9 +2002,9 @@
    "116 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 64 degrees. So ask: 64 degrees plus what makes 90 degrees? You can find it by taking 64 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2000,9 +2020,9 @@
    "169 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 11 degrees. So ask: 11 degrees plus what makes 90 degrees? You can find it by taking 11 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2018,9 +2038,9 @@
    "119 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 119 degrees. So ask: 119 degrees plus what makes 180 degrees? You can find it by taking 119 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2036,9 +2056,9 @@
    "70 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 110 degrees. So ask: 110 degrees plus what makes 180 degrees? You can find it by taking 110 away from 180.",
+   "Try another one. The supplementary angle of 130 degrees is 50 degrees, because 180 degrees minus 130 degrees equals 50 degrees. Check: 130 degrees plus 50 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2054,9 +2074,9 @@
    "57 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 133 degrees. So ask: 133 degrees plus what makes 180 degrees? You can find it by taking 133 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2072,9 +2092,9 @@
    "65 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 35 degrees. So ask: 35 degrees plus what makes 90 degrees? You can find it by taking 35 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2090,9 +2110,9 @@
    "121 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 69 degrees. So ask: 69 degrees plus what makes 180 degrees? You can find it by taking 69 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2108,9 +2128,9 @@
    "115 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 75 degrees. So ask: 75 degrees plus what makes 180 degrees? You can find it by taking 75 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2126,9 +2146,9 @@
    "34 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 56 degrees. So ask: 56 degrees plus what makes 90 degrees? You can find it by taking 56 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2144,9 +2164,9 @@
    "65 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 155 degrees. So ask: 155 degrees plus what makes 180 degrees? You can find it by taking 155 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2162,9 +2182,9 @@
    "70 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 20 degrees. So ask: 20 degrees plus what makes 90 degrees? You can find it by taking 20 away from 90.",
+   "Try another one. The complementary angle of 40 degrees is 50 degrees, because 90 degrees minus 40 degrees equals 50 degrees. Check: 40 degrees plus 50 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2180,9 +2200,9 @@
    "51 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 51 degrees. So ask: 51 degrees plus what makes 90 degrees? You can find it by taking 51 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2198,9 +2218,9 @@
    "37 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 37 degrees. So ask: 37 degrees plus what makes 90 degrees? You can find it by taking 37 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2216,9 +2236,9 @@
    "72 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 72 degrees. So ask: 72 degrees plus what makes 180 degrees? You can find it by taking 72 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2234,9 +2254,9 @@
    "68 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 12 degrees. So ask: 12 degrees plus what makes 90 degrees? You can find it by taking 12 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2252,9 +2272,9 @@
    "87 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 13 degrees. So ask: 13 degrees plus what makes 90 degrees? You can find it by taking 13 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2270,9 +2290,9 @@
    "115 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 115 degrees. So ask: 115 degrees plus what makes 180 degrees? You can find it by taking 115 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2288,9 +2308,9 @@
    "157 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 23 degrees. So ask: 23 degrees plus what makes 90 degrees? You can find it by taking 23 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2306,9 +2326,9 @@
    "110 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 70 degrees. So ask: 70 degrees plus what makes 90 degrees? You can find it by taking 70 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2324,9 +2344,9 @@
    "33 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 57 degrees. So ask: 57 degrees plus what makes 180 degrees? You can find it by taking 57 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2342,9 +2362,9 @@
    "55 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 45 degrees. So ask: 45 degrees plus what makes 90 degrees? You can find it by taking 45 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2360,9 +2380,9 @@
    "73 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 73 degrees. So ask: 73 degrees plus what makes 180 degrees? You can find it by taking 73 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2378,9 +2398,9 @@
    "69 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 21 degrees. So ask: 21 degrees plus what makes 90 degrees? You can find it by taking 21 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2396,9 +2416,9 @@
    "59 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 31 degrees. So ask: 31 degrees plus what makes 90 degrees? You can find it by taking 31 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2414,9 +2434,9 @@
    "123 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 123 degrees. So ask: 123 degrees plus what makes 180 degrees? You can find it by taking 123 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2432,9 +2452,9 @@
    "56 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 124 degrees. So ask: 124 degrees plus what makes 180 degrees? You can find it by taking 124 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2450,9 +2470,9 @@
    "53 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 137 degrees. So ask: 137 degrees plus what makes 180 degrees? You can find it by taking 137 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2468,9 +2488,9 @@
    "61 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 29 degrees. So ask: 29 degrees plus what makes 90 degrees? You can find it by taking 29 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2486,9 +2506,9 @@
    "38 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 52 degrees. So ask: 52 degrees plus what makes 90 degrees? You can find it by taking 52 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2504,9 +2524,9 @@
    "43 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 47 degrees. So ask: 47 degrees plus what makes 90 degrees? You can find it by taking 47 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2522,9 +2542,9 @@
    "11 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 79 degrees. So ask: 79 degrees plus what makes 180 degrees? You can find it by taking 79 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2540,9 +2560,9 @@
    "32 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 58 degrees. So ask: 58 degrees plus what makes 180 degrees? You can find it by taking 58 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2558,9 +2578,9 @@
    "61 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 61 degrees. So ask: 61 degrees plus what makes 180 degrees? You can find it by taking 61 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2576,9 +2596,9 @@
    "122 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Supplementary angles are two angles that sit together on a straight line. What do the angles on a straight line add up to?",
+   "The two angles add up to 180 degrees. One of them is 68 degrees. So ask: 68 degrees plus what makes 180 degrees? You can find it by taking 68 away from 180.",
+   "Try another one. The supplementary angle of 110 degrees is 70 degrees, because 180 degrees minus 110 degrees equals 70 degrees. Check: 110 degrees plus 70 degrees equals 180 degrees."
   ],
   "steps": [
    "Supplementary angles fit together to make a straight line. So the two angles add up to 180 degrees.",
@@ -2594,9 +2614,9 @@
    "25 degrees"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Complementary angles are two angles that fit together to make a right angle, like the corner of a page. How many degrees is a right angle?",
+   "The two angles add up to 90 degrees. One of them is 25 degrees. So ask: 25 degrees plus what makes 90 degrees? You can find it by taking 25 away from 90.",
+   "Try another one. The complementary angle of 30 degrees is 60 degrees, because 90 degrees minus 30 degrees equals 60 degrees. Check: 30 degrees plus 60 degrees equals 90 degrees."
   ],
   "steps": [
    "Complementary angles fit together to make a right angle. So the two angles add up to 90 degrees.",
@@ -2612,9 +2632,9 @@
    "127.5 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 15 times 17. To make it easier, split 17 into 10 and 7: 15 times 17 equals 15 times 10, plus 15 times 7. Then find half of that number.",
+   "Try another one. A triangle with base 5 centimetres and height 7 centimetres. 5 times 7 equals 35, and half of 35 is 17.5. So its area is 17.5 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -2631,9 +2651,9 @@
    "16 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 9 times 7. Then find half of that number.",
+   "Try another one. A triangle with base 3 centimetres and height 5 centimetres. 3 times 5 equals 15, and half of 15 is 7.5. So its area is 7.5 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -2650,9 +2670,9 @@
    "316 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. Picture the rectangle filled with small squares, each 1 centimetre wide: 18 rows, with 17 squares in each row.",
+   "To count all the squares, multiply the length by the breadth: 17 times 18. To make it easier, split 18 into 10 and 8: 17 times 18 equals 17 times 10, plus 17 times 8.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 times 3 equals 15, so its area is 15 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape, counted in unit squares. There are 18 squares in each row and 17 rows, so area equals length times breadth.",
@@ -2668,9 +2688,9 @@
    "70 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. Picture the rectangle filled with small squares, each 1 centimetre wide: 10 rows, with 7 squares in each row.",
+   "To count all the squares, multiply the length by the breadth: 7 times 10. A quick way to multiply a whole number by 10 is to write a 0 on the end of it.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 times 3 equals 15, so its area is 15 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape, counted in unit squares. There are 10 squares in each row and 7 rows, so area equals length times breadth.",
@@ -2686,9 +2706,9 @@
    "104 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A square has 4 sides, and they are all the same length.",
+   "Each of the 4 sides is 25 centimetres. So add 25 four times, or work out 4 times 25.",
+   "Try another one. A square with side 3 centimetres. 4 times 3 equals 12, so its perimeter is 12 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
@@ -2704,9 +2724,9 @@
    "144 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 27 plus 9. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 plus 3 equals 8, and 8 times 2 equals 16. So its perimeter is 16 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -2723,9 +2743,9 @@
    "148 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 26 times 11. To make it easier, split 26 into 20 and 6: 26 times 11 equals 20 times 11, plus 6 times 11. Then find half of that number.",
+   "Try another one. A triangle with base 6 centimetres and height 4 centimetres. 6 times 4 equals 24, and half of 24 is 12. So its area is 12 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -2742,9 +2762,9 @@
    "55 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 6 times 17. To make it easier, split 17 into 10 and 7: 6 times 17 equals 6 times 10, plus 6 times 7. Then find half of that number.",
+   "Try another one. A triangle with base 8 centimetres and height 5 centimetres. 8 times 5 equals 40, and half of 40 is 20. So its area is 20 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -2761,9 +2781,9 @@
    "116 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 13 plus 16. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 6 centimetres and breadth 4 centimetres. 6 plus 4 equals 10, and 10 times 2 equals 20. So its perimeter is 20 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -2780,9 +2800,9 @@
    "92 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 28 plus 18. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 plus 3 equals 8, and 8 times 2 equals 16. So its perimeter is 16 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -2799,9 +2819,9 @@
    "81 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. A square's length and breadth are the same, so picture 9 rows with 9 small squares in each row.",
+   "Multiply the side by itself: 9 times 9. Take care not to work out 9 times 4: that is the perimeter, the distance round the outside.",
+   "Try another one. A square with side 5 centimetres. 5 times 5 equals 25, so its area is 25 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape. In a square the length and the breadth are the same, so area equals side times side.",
@@ -2817,9 +2837,9 @@
    "59 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 10 plus 18. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 plus 3 equals 8, and 8 times 2 equals 16. So its perimeter is 16 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -2836,9 +2856,9 @@
    "36 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. Picture the rectangle filled with small squares, each 1 centimetre wide: 6 rows, with 3 squares in each row.",
+   "To count all the squares, multiply the length by the breadth: 3 times 6. You can also count up in 3s, once for each of the 6 rows.",
+   "Try another one. A rectangle with length 7 centimetres and breadth 2 centimetres. 7 times 2 equals 14, so its area is 14 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape, counted in unit squares. There are 6 squares in each row and 3 rows, so area equals length times breadth.",
@@ -2854,9 +2874,9 @@
    "80 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 20 times 8. Then find half of that number.",
+   "Try another one. A triangle with base 6 centimetres and height 4 centimetres. 6 times 4 equals 24, and half of 24 is 12. So its area is 12 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -2873,9 +2893,9 @@
    "160 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 8 times 20. Then find half of that number.",
+   "Try another one. A triangle with base 6 centimetres and height 4 centimetres. 6 times 4 equals 24, and half of 24 is 12. So its area is 12 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -2892,9 +2912,9 @@
    "187 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 17 times 11. To make it easier, split 17 into 10 and 7: 17 times 11 equals 10 times 11, plus 7 times 11. Then find half of that number.",
+   "Try another one. A triangle with base 3 centimetres and height 5 centimetres. 3 times 5 equals 15, and half of 15 is 7.5. So its area is 7.5 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -2911,9 +2931,9 @@
    "532 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. A square's length and breadth are the same, so picture 23 rows with 23 small squares in each row.",
+   "Multiply the side by itself: 23 times 23. Take care not to work out 23 times 4: that is the perimeter, the distance round the outside. To make it easier, split 23 into 20 and 3: 23 times 23 equals 20 times 23, plus 3 times 23.",
+   "Try another one. A square with side 3 centimetres. 3 times 3 equals 9, so its area is 9 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape. In a square the length and the breadth are the same, so area equals side times side.",
@@ -2929,9 +2949,9 @@
    "73 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. Picture the rectangle filled with small squares, each 1 centimetre wide: 14 rows, with 5 squares in each row.",
+   "To count all the squares, multiply the length by the breadth: 5 times 14. To make it easier, split 14 into 10 and 4: 5 times 14 equals 5 times 10, plus 5 times 4.",
+   "Try another one. A rectangle with length 6 centimetres and breadth 4 centimetres. 6 times 4 equals 24, so its area is 24 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape, counted in unit squares. There are 14 squares in each row and 5 rows, so area equals length times breadth.",
@@ -2947,9 +2967,9 @@
    "98 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. A square's length and breadth are the same, so picture 7 rows with 7 small squares in each row.",
+   "Multiply the side by itself: 7 times 7. Take care not to work out 7 times 4: that is the perimeter, the distance round the outside.",
+   "Try another one. A square with side 3 centimetres. 3 times 3 equals 9, so its area is 9 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape. In a square the length and the breadth are the same, so area equals side times side.",
@@ -2965,9 +2985,9 @@
    "45 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 17 plus 2. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 plus 3 equals 8, and 8 times 2 equals 16. So its perimeter is 16 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -2984,9 +3004,9 @@
    "104 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 8 times 13. To make it easier, split 13 into 10 and 3: 8 times 13 equals 8 times 10, plus 8 times 3. Then find half of that number.",
+   "Try another one. A triangle with base 6 centimetres and height 4 centimetres. 6 times 4 equals 24, and half of 24 is 12. So its area is 12 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -3003,9 +3023,9 @@
    "42 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 7 times 12. To make it easier, split 12 into 10 and 2: 7 times 12 equals 7 times 10, plus 7 times 2. Then find half of that number.",
+   "Try another one. A triangle with base 8 centimetres and height 5 centimetres. 8 times 5 equals 40, and half of 40 is 20. So its area is 20 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -3022,9 +3042,9 @@
    "144 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 25 times 11. To make it easier, split 25 into 20 and 5: 25 times 11 equals 20 times 11, plus 5 times 11. Then find half of that number.",
+   "Try another one. A triangle with base 3 centimetres and height 5 centimetres. 3 times 5 equals 15, and half of 15 is 7.5. So its area is 7.5 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -3041,9 +3061,9 @@
    "40 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. A square's length and breadth are the same, so picture 10 rows with 10 small squares in each row.",
+   "Multiply the side by itself: 10 times 10. Take care not to work out 10 times 4: that is the perimeter, the distance round the outside.",
+   "Try another one. A square with side 3 centimetres. 3 times 3 equals 9, so its area is 9 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape. In a square the length and the breadth are the same, so area equals side times side.",
@@ -3059,9 +3079,9 @@
    "88 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 29 plus 14. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 plus 3 equals 8, and 8 times 2 equals 16. So its perimeter is 16 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -3078,9 +3098,9 @@
    "37.5 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 5 times 15. To make it easier, split 15 into 10 and 5: 5 times 15 equals 5 times 10, plus 5 times 5. Then find half of that number.",
+   "Try another one. A triangle with base 3 centimetres and height 7 centimetres. 3 times 7 equals 21, and half of 21 is 10.5. So its area is 10.5 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -3097,9 +3117,9 @@
    "62 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 23 plus 8. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 6 centimetres and breadth 4 centimetres. 6 plus 4 equals 10, and 10 times 2 equals 20. So its perimeter is 20 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -3116,9 +3136,9 @@
    "120 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 20 times 12. To make it easier, split 12 into 10 and 2: 20 times 12 equals 20 times 10, plus 20 times 2. Then find half of that number.",
+   "Try another one. A triangle with base 10 centimetres and height 3 centimetres. 10 times 3 equals 30, and half of 30 is 15. So its area is 15 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -3135,9 +3155,9 @@
    "25 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 5 times 20. Then find half of that number.",
+   "Try another one. A triangle with base 6 centimetres and height 4 centimetres. 6 times 4 equals 24, and half of 24 is 12. So its area is 12 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -3154,9 +3174,9 @@
    "91 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. Picture the rectangle filled with small squares, each 1 centimetre wide: 7 rows, with 12 squares in each row.",
+   "To count all the squares, multiply the length by the breadth: 12 times 7. To make it easier, split 12 into 10 and 2: 12 times 7 equals 10 times 7, plus 2 times 7.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 times 3 equals 15, so its area is 15 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape, counted in unit squares. There are 12 squares in each row and 7 rows, so area equals length times breadth.",
@@ -3172,9 +3192,9 @@
    "350 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 25 times 14. To make it easier, split 25 into 20 and 5: 25 times 14 equals 20 times 14, plus 5 times 14. Then find half of that number.",
+   "Try another one. A triangle with base 6 centimetres and height 4 centimetres. 6 times 4 equals 24, and half of 24 is 12. So its area is 12 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -3191,9 +3211,9 @@
    "48 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A square has 4 sides, and they are all the same length.",
+   "Each of the 4 sides is 6 centimetres. So add 6 four times, or work out 4 times 6.",
+   "Try another one. A square with side 3 centimetres. 4 times 3 equals 12, so its perimeter is 12 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
@@ -3209,9 +3229,9 @@
    "22 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 4 times 11. To make it easier, split 11 into 10 and 1: 4 times 11 equals 4 times 10, plus 4 times 1. Then find half of that number.",
+   "Try another one. A triangle with base 8 centimetres and height 5 centimetres. 8 times 5 equals 40, and half of 40 is 20. So its area is 20 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -3228,9 +3248,9 @@
    "147 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 21 plus 7. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 plus 3 equals 8, and 8 times 2 equals 16. So its perimeter is 16 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -3247,9 +3267,9 @@
    "42 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 3 plus 14. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 6 centimetres and breadth 4 centimetres. 6 plus 4 equals 10, and 10 times 2 equals 20. So its perimeter is 20 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -3266,9 +3286,9 @@
    "73 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A square has 4 sides, and they are all the same length.",
+   "Each of the 4 sides is 17 centimetres. So add 17 four times, or work out 4 times 17.",
+   "Try another one. A square with side 3 centimetres. 4 times 3 equals 12, so its perimeter is 12 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
@@ -3284,9 +3304,9 @@
    "576 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A square has 4 sides, and they are all the same length.",
+   "Each of the 4 sides is 24 centimetres. So add 24 four times, or work out 4 times 24.",
+   "Try another one. A square with side 3 centimetres. 4 times 3 equals 12, so its perimeter is 12 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
@@ -3302,9 +3322,9 @@
    "275.5 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 29 times 19. To make it easier, split 29 into 20 and 9: 29 times 19 equals 20 times 19, plus 9 times 19. Then find half of that number.",
+   "Try another one. A triangle with base 3 centimetres and height 5 centimetres. 3 times 5 equals 15, and half of 15 is 7.5. So its area is 7.5 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -3321,9 +3341,9 @@
    "33 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A square has 4 sides, and they are all the same length.",
+   "Each of the 4 sides is 7 centimetres. So add 7 four times, or work out 4 times 7.",
+   "Try another one. A square with side 3 centimetres. 4 times 3 equals 12, so its perimeter is 12 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
@@ -3339,9 +3359,9 @@
    "152 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 21 plus 17. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 plus 3 equals 8, and 8 times 2 equals 16. So its perimeter is 16 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -3358,9 +3378,9 @@
    "360 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 30 times 12. To make it easier, split 12 into 10 and 2: 30 times 12 equals 30 times 10, plus 30 times 2. Then find half of that number.",
+   "Try another one. A triangle with base 8 centimetres and height 5 centimetres. 8 times 5 equals 40, and half of 40 is 20. So its area is 20 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -3377,9 +3397,9 @@
    "42 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 12 times 7. To make it easier, split 12 into 10 and 2: 12 times 7 equals 10 times 7, plus 2 times 7. Then find half of that number.",
+   "Try another one. A triangle with base 8 centimetres and height 5 centimetres. 8 times 5 equals 40, and half of 40 is 20. So its area is 20 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -3396,9 +3416,9 @@
    "44 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. A square's length and breadth are the same, so picture 11 rows with 11 small squares in each row.",
+   "Multiply the side by itself: 11 times 11. Take care not to work out 11 times 4: that is the perimeter, the distance round the outside. To make it easier, split 11 into 10 and 1: 11 times 11 equals 10 times 11, plus 1 times 11.",
+   "Try another one. A square with side 3 centimetres. 3 times 3 equals 9, so its area is 9 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape. In a square the length and the breadth are the same, so area equals side times side.",
@@ -3414,9 +3434,9 @@
    "36 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 7 plus 11. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 plus 3 equals 8, and 8 times 2 equals 16. So its perimeter is 16 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -3433,9 +3453,9 @@
    "144 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 8 times 18. To make it easier, split 18 into 10 and 8: 8 times 18 equals 8 times 10, plus 8 times 8. Then find half of that number.",
+   "Try another one. A triangle with base 6 centimetres and height 4 centimetres. 6 times 4 equals 24, and half of 24 is 12. So its area is 12 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -3452,9 +3472,9 @@
    "121 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A square has 4 sides, and they are all the same length.",
+   "Each of the 4 sides is 11 centimetres. So add 11 four times, or work out 4 times 11.",
+   "Try another one. A square with side 3 centimetres. 4 times 3 equals 12, so its perimeter is 12 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
@@ -3470,9 +3490,9 @@
    "136 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 22 plus 12. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 plus 3 equals 8, and 8 times 2 equals 16. So its perimeter is 16 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -3489,9 +3509,9 @@
    "176 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 24 plus 20. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 plus 3 equals 8, and 8 times 2 equals 16. So its perimeter is 16 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -3508,9 +3528,9 @@
    "57 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. Picture the rectangle filled with small squares, each 1 centimetre wide: 19 rows, with 3 squares in each row.",
+   "To count all the squares, multiply the length by the breadth: 3 times 19. To make it easier, split 19 into 10 and 9: 3 times 19 equals 3 times 10, plus 3 times 9.",
+   "Try another one. A rectangle with length 6 centimetres and breadth 4 centimetres. 6 times 4 equals 24, so its area is 24 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape, counted in unit squares. There are 19 squares in each row and 3 rows, so area equals length times breadth.",
@@ -3526,9 +3546,9 @@
    "87 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A square has 4 sides, and they are all the same length.",
+   "Each of the 4 sides is 21 centimetres. So add 21 four times, or work out 4 times 21.",
+   "Try another one. A square with side 3 centimetres. 4 times 3 equals 12, so its perimeter is 12 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
@@ -3544,9 +3564,9 @@
    "270 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. Picture the rectangle filled with small squares, each 1 centimetre wide: 15 rows, with 9 squares in each row.",
+   "To count all the squares, multiply the length by the breadth: 9 times 15. To make it easier, split 15 into 10 and 5: 9 times 15 equals 9 times 10, plus 9 times 5.",
+   "Try another one. A rectangle with length 6 centimetres and breadth 4 centimetres. 6 times 4 equals 24, so its area is 24 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape, counted in unit squares. There are 15 squares in each row and 9 rows, so area equals length times breadth.",
@@ -3562,9 +3582,9 @@
    "50 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 16 plus 4. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 7 centimetres and breadth 2 centimetres. 7 plus 2 equals 9, and 9 times 2 equals 18. So its perimeter is 18 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -3581,9 +3601,9 @@
    "132 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 16 plus 17. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 6 centimetres and breadth 4 centimetres. 6 plus 4 equals 10, and 10 times 2 equals 20. So its perimeter is 20 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -3600,9 +3620,9 @@
    "111 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. Picture the rectangle filled with small squares, each 1 centimetre wide: 6 rows, with 17 squares in each row.",
+   "To count all the squares, multiply the length by the breadth: 17 times 6. To make it easier, split 17 into 10 and 7: 17 times 6 equals 10 times 6, plus 7 times 6.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 times 3 equals 15, so its area is 15 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape, counted in unit squares. There are 17 squares in each row and 6 rows, so area equals length times breadth.",
@@ -3618,9 +3638,9 @@
    "35 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 19 times 16. To make it easier, split 19 into 10 and 9: 19 times 16 equals 10 times 16, plus 9 times 16. Then find half of that number.",
+   "Try another one. A triangle with base 6 centimetres and height 4 centimetres. 6 times 4 equals 24, and half of 24 is 12. So its area is 12 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",
@@ -3637,9 +3657,9 @@
    "484 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A square has 4 sides, and they are all the same length.",
+   "Each of the 4 sides is 22 centimetres. So add 22 four times, or work out 4 times 22.",
+   "Try another one. A square with side 3 centimetres. 4 times 3 equals 12, so its perimeter is 12 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A square has 4 sides, and they are all the same length.",
@@ -3655,9 +3675,9 @@
    "44 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. Picture the rectangle filled with small squares, each 1 centimetre wide: 10 rows, with 12 squares in each row.",
+   "To count all the squares, multiply the length by the breadth: 12 times 10. A quick way to multiply a whole number by 10 is to write a 0 on the end of it.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 times 3 equals 15, so its area is 15 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape, counted in unit squares. There are 12 squares in each row and 10 rows, so area equals length times breadth.",
@@ -3673,9 +3693,9 @@
    "8 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Area is the amount of flat space inside a shape. Picture the rectangle filled with small squares, each 1 centimetre wide: 2 rows, with 4 squares in each row.",
+   "To count all the squares, multiply the length by the breadth: 4 times 2. You can also count up in 4s, once for each of the 2 rows.",
+   "Try another one. A rectangle with length 5 centimetres and breadth 3 centimetres. 5 times 3 equals 15, so its area is 15 square centimetres."
   ],
   "steps": [
    "Area is the space inside the shape, counted in unit squares. There are 4 squares in each row and 2 rows, so area equals length times breadth.",
@@ -3691,9 +3711,9 @@
    "22 centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "Perimeter is the distance all the way round a shape. A rectangle has 2 lengths and 2 breadths, and you go along every one of them.",
+   "Add one length and one breadth: 5 plus 6. That takes you halfway round. Then double it to go all the way round.",
+   "Try another one. A rectangle with length 7 centimetres and breadth 2 centimetres. 7 plus 2 equals 9, and 9 times 2 equals 18. So its perimeter is 18 centimetres."
   ],
   "steps": [
    "The perimeter is the distance all the way round the edge. A rectangle has 2 lengths and 2 breadths.",
@@ -3710,9 +3730,9 @@
    "240 square centimetres"
   ],
   "hints": [
-   "Read the question carefully and identify what's being asked.",
-   "Try working step by step.",
-   "Check your answer by substituting back."
+   "A triangle is half of a rectangle that has the same base and height. So its area is half of base times height.",
+   "First multiply the base by the height: 16 times 15. To make it easier, split 16 into 10 and 6: 16 times 15 equals 10 times 15, plus 6 times 15. Then find half of that number.",
+   "Try another one. A triangle with base 6 centimetres and height 4 centimetres. 6 times 4 equals 24, and half of 24 is 12. So its area is 12 square centimetres."
   ],
   "steps": [
    "A triangle is half of the rectangle drawn around it. So the area of a triangle is half of base times height.",

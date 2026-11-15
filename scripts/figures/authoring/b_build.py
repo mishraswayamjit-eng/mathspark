@@ -14,6 +14,10 @@ OUT = os.path.join(ROOT, "data", "question-figures", "parts", "finals-2021-2025.
 sys.path.insert(0, HERE)
 sys.dont_write_bytecode = True
 
+# Set to True to print every step next to its figure's note (for a read-through
+# after the question bank changes). Leave False for a normal build.
+REVIEW = False
+
 merged = {}
 for year in ("2021", "2022", "2023", "2024", "2025"):
     if not os.path.exists(os.path.join(HERE, "b_%s.py" % year)):
@@ -29,3 +33,26 @@ with io.open(OUT, "w", encoding="utf-8", newline="\n") as f:
     json.dump(merged, f, ensure_ascii=False, indent=1)
     f.write("\n")
 print("wrote", len(merged), "entries")
+
+# Show the current steps of any question whose stepFigures no longer line up,
+# so the figures can be rewritten against the question as it now stands.
+with io.open(os.path.join(ROOT, "data", "mathspark_complete_seed.json"), encoding="utf-8") as f:
+    seed = {q["id"]: q for q in json.load(f)["questions"]}
+for qid in sorted(merged):
+    q = seed.get(qid)
+    figs = merged[qid].get("stepFigures")
+    if q is None or figs is None:
+        continue
+    own = q.get("stepByStep") or []
+    if REVIEW and len(own) == len(figs):
+        # Side by side: each step as it now reads, and what its figure says.
+        print("\n%s" % qid[-8:])
+        for i, s in enumerate(own):
+            f_ = figs[i]
+            says = "-" if f_ is None else "%s | %s" % (f_["kind"], f_.get("note", ""))
+            print("  s%d: %s\n      => %s" % (i, s.get("text", ""), says))
+    if len(own) != len(figs):
+        print("\nREALIGN %s: %d step figures, %d steps" % (qid, len(figs), len(own)))
+        print("  Q:", q["questionText"])
+        for i, s in enumerate(own):
+            print("  s%d: %s" % (i, s.get("text", "")))

@@ -9,9 +9,10 @@ HAND["EXT_G5_FP_2023_004"] = E(
     ["324 square metres", "400 square metres", "484 square metres", "none of these"],
     ["Find the rectangle's perimeter first: 2 times, length plus breadth. The square has the same perimeter, so divide by 4 to get its side.",
      "For a square, perimeter equals 4 times side, and area equals side times side."],
-    ["Rectangle perimeter equals 2 times, 22 plus 16, which is 76 metres.",
-     "Square side equals 76 divided by 4, which is 19 metres.",
-     "Area equals 19 times 19, which is 361 square metres. So the answer is, none of these."],
+    ["Rectangle perimeter: 2 times, 22 plus 16, which is 76 metres.",
+     "The square has the same perimeter, so its side is 76 divided by 4, which is 19 metres.",
+     "Area of the square: 19 times 19, which is 361 square metres.",
+     "361 square metres is not one of the choices given, so the answer is, none of these."],
 )
 
 HAND["EXT_G5_FP_2023_010"] = E(
@@ -63,10 +64,10 @@ HAND["EXT_G5_FP_2024_001"] = E(
     ["230 centimetres", "224 centimetres", "222 centimetres", "None of these"],
     ["Find the area of the square: side times side. The rectangle has the same area, so use it to get the rectangle's length.",
      "Area of a square equals side squared. Length equals area divided by breadth. Perimeter equals 2 times, length plus breadth."],
-    ["Area equals 56 times 56, which is 3136 square centimetres.",
-     "Length of the rectangle equals 3136 divided by 49, which is 64 centimetres.",
-     "Perimeter equals 2 times, 64 plus 49. That is 2 times 113, which is 226 centimetres.",
-     "226 is not in options A to C. So the answer is, none of these."],
+    ["Area of the square: 56 times 56, which is 3136 square centimetres.",
+     "The rectangle has the same area, so its length is 3136 divided by 49, which is 64 centimetres.",
+     "Perimeter of the rectangle: 2 times, 64 plus 49. That is 2 times 113, which is 226 centimetres.",
+     "226 centimetres is not one of the choices given, so the answer is, none of these."],
 )
 
 HAND["EXT_G5_FP_2024_005"] = E(
@@ -185,10 +186,12 @@ HAND["EXT_G5_WS_B5_012"] = E(
 HAND["EXT_G5_WS_B6_021"] = E(
     "The sides of a square are 2 A plus 5, centimetres, and 3 A minus 1, centimetres. Find the perimeter.",
     ["68 centimetres", "24 centimetres", "36 centimetres", "data inadequate"],
-    ["A square has all sides equal. Set the two expressions equal, and solve for A.",
-     "2 A plus 5 equals 3 A minus 1. So 5 plus 1 equals 3 A minus 2 A. So A equals 6. Then the side equals 2 times 6, plus 5, which is 17.",
-     "A similar one: square sides x plus 3, centimetres, and 2 x minus 1, centimetres. "
-     "x plus 3 equals 2 x minus 1, so x equals 4. Side equals 7. Perimeter equals 28."],
+    ["All four sides of a square are equal. So the two expressions for the side must be equal to each other.",
+     "Write 2 A plus 5 equals 3 A minus 1, and solve for A. Then put your value of A back into 2 A plus 5 to get the side, "
+     "and remember the perimeter is 4 times the side.",
+     "Try a similar one. A square has sides x plus 3, centimetres, and 2 x minus 1, centimetres. "
+     "x plus 3 equals 2 x minus 1 gives x equals 4. "
+     "The side is 4 plus 3, which is 7 centimetres, and the perimeter is 4 times 7, which is 28 centimetres."],
     ["Equal sides: 2 A plus 5 equals 3 A minus 1.",
      "6 equals A. Subtract 2 A, and add 1.",
      "Side equals 2 times 6, plus 5, which is 17 centimetres.",

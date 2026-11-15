@@ -30,7 +30,7 @@ def _lower_shouting(s):
 
 
 def _money(s):
-    s = re.sub(r"(?:₹|Rs\.?)\s*(\d[\d,]*(?:\.\d+)?)", r"\1 rupees", s)
+    s = re.sub(r"(?:₹|Rs\.?)\s*(\d+(?:,\d+)*(?:\.\d+)?)", r"\1 rupees", s)
     return s
 
 
@@ -131,6 +131,8 @@ def _equals(s):
             if j:
                 if seen == 0 and not "".join(buf).strip():
                     buf.append("That equals " if i == 0 else " equals ")
+                elif seen == 0 and re.search(r"\b(?:is|gives|becomes|holds?)\s+[\d\s+−×÷().]+$", "".join(buf)):
+                    buf.append(", which is ")      # "4x − 5 is 26 − 5 = 21"
                 elif seen == 0:
                     buf.append(" equals ")
                 else:
@@ -170,6 +172,7 @@ def _tidy(s, sentence):
     # Breaths in long working: "5 times 5, plus 1 times 1" and "6 x plus 9, plus 8 x minus 5".
     s = re.sub(r"\b(\d+ times \d+) (plus|minus)\b", r"\1, \2", s)
     s = re.sub(r"\b(\d+ [A-Za-z] (?:plus|minus) \d+) (plus|minus) (\d+ [A-Za-z])\b", r"\1, \2 \3", s)
+    s = re.sub(r"\b(\d+ times \d+, (?:plus|minus) \d+) equals\b", r"\1, equals", s)
     s = re.sub(r"\b(all over \S+) (equals|and)\b", r"\1, \2", s)
     s = re.sub(r"\b((?:which is|equals) [\d.]*\d) (and|but)\b", r"\1, \2", s)
     if sentence and s:

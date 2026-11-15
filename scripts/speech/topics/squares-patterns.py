@@ -34,9 +34,9 @@ stats = {"hand": 0, "template": 0, "fallback": 0}
 def by_rule(text, latex=""):
     if not text.strip():
         return ""
-    out = rules.equation_step(text, latex) if latex else None
-    if out is None:
-        out = rules.by_template(text)
+    out = rules.by_template(text)
+    if out is None and latex:
+        out = rules.equation_step(text, latex)
     if out is not None:
         stats["template"] += 1
         return out

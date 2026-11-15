@@ -12,9 +12,9 @@ HAND = {
             "Try this. Start with 100, 5 leave, and 10 join. That makes 105. If 95 pass, the number who failed is 105 minus 95, which is 10.",
         ],
         "steps": [
-            "Students at the end: 1005 minus 13, plus 42, which is 1034.",
-            "The number who failed is 1034 minus 1000, which is 34.",
-            "Verify: check the answer matches option A.",
+            "13 students left, so 1005 minus 13 is 992 students remained.",
+            "42 students joined. So the school had 992 plus 42, which is 1034 students, at the end of the year.",
+            "1000 of them passed, so 1034 minus 1000 is 34. So 34 students did not pass.",
         ],
     },
     "EXT_G5_WS_B2_022": {
@@ -37,22 +37,22 @@ HAND = {
             "Try this. A gets 100, and B wins by 20. So B gets 120. The total is 220.",
         ],
         "steps": [
-            "B won by 35 means B got 35 more than A. So B got 275 plus 35, which is 310.",
-            "The total votes are 275 plus 310, which is 585.",
-            "Verify: check the answer matches option C.",
+            "B won by 35 votes, which means B got 35 more votes than A: 275 plus 35, which is 310 votes.",
+            "Add the votes of A and B, to get all the votes cast: 275 plus 310 is 585.",
+            "So, 585 votes were cast in this election.",
         ],
     },
     "EXT_G5_WS_B2_026": {
         "q": "In a class of 40 students, exactly 18 have been to Delhi, and exactly 15 have been to Kashmir. 6 students have been to both Delhi and Kashmir. How many students have not been to Delhi or Kashmir?",
         "hints": [
-            "Use the inclusion exclusion principle: the total who visited equals Delhi, plus Kashmir, minus both.",
-            "Visited at least one: 18 plus 15, minus 6, which is 27. Not visited: 40 minus 27.",
-            "Try this. In a class of 20, 10 play cricket, 8 play football, and 3 play both. At least one: 10 plus 8, minus 3, which is 15. Neither: 20 minus 15, which is 5.",
+            "The 6 students who have been to both places are counted in the 18, and also in the 15. If you just add 18 and 15, they get counted twice.",
+            "Find how many have been to at least one place: add 18 and 15, then take away 6, so nobody is counted twice. Then subtract that from the 40 students in the class.",
+            "Here is an example. In a class of 20, 10 play cricket, 8 play football, and 3 play both. At least one game: 10 plus 8, minus 3, which is 15. Neither game: 20 minus 15, which is 5 students.",
         ],
         "steps": [
-            "Students who visited at least one place: 18 plus 15, minus 6, which is 27.",
-            "Students who visited neither: 40 minus 27, which is 13.",
-            "Verify: check the answer matches option A.",
+            "Add the two groups: 18 plus 15 is 33. The 6 students who went to both places are counted twice in this total.",
+            "Take the 6 away once: 33 minus 6 is 27 students, who have been to at least one of the places.",
+            "The rest of the class went to neither: 40 minus 27 is 13. So 13 students have not been to Delhi or Kashmir.",
         ],
     },
     "EXT_G5_WS_B2_027": {
@@ -63,35 +63,35 @@ HAND = {
             "Try this. 20 students, 15 speak English, and 3 speak both. English only is 12. Other only is 20 minus 12, minus 3, which is 5.",
         ],
         "steps": [
-            "Hindi only is 21 minus 5, which is 16.",
-            "Marathi only is 30 minus 16, minus 5, which is 9.",
-            "Hmm, wait. That gives 9, which is option B. Let me recheck. The total equals Hindi only, plus both, plus Marathi only. 30 equals 16 plus 5, plus Marathi only. So Marathi only is 9.",
+            "Every student speaks Hindi, Marathi, or both. So the students who do not speak Hindi must speak only Marathi.",
+            "21 of the 30 students speak Hindi. This already includes the 5 who speak both. 30 minus 21 is 9.",
+            "So, 9 students speak only Marathi.",
         ],
     },
     "EXT_G5_WS_B2_029": {
         "q": "Four players joined a chess tournament. Each player played one game against the other players. How many games were played in all, in this tournament?",
         "hints": [
-            "If each player plays every other player once, count the pairs.",
-            "With 4 players, A, B, C and D, the games are: A B, A C, A D, B C, B D, C D. That is 6 games.",
-            "Try 3 players: A B, A C, B C. That is 3 games. The formula is n, times n minus 1, divided by 2.",
+            "Each game needs two players. So count the pairs of players, taking care not to count the same game twice.",
+            "Call the players A, B, C and D. A plays 3 games, against B, C and D. B has already played A, so count only B's new games. Carry on for C.",
+            "Here is an example with 3 players, A, B and C. A plays B and C, which is 2 games. Then B plays C, which is 1 new game. The total is 2 plus 1, which is 3 games.",
         ],
         "steps": [
-            "The number of games equals the number of ways to choose 2 players from 4.",
-            "That equals 4 times 3, divided by 2, which is 6.",
-            "Verify: check the answer matches option C.",
+            "Call the players A, B, C and D. Each game is played by one pair of players.",
+            "A plays B, C and D: 3 games. B has already played A, so B has 2 new games, against C and D. C has 1 new game, against D. D has no new games.",
+            "3 plus 2 plus 1 is 6. So 6 games were played in all.",
         ],
     },
     "EXT_G5_WS_B2_030": {
         "q": "At a meeting, 13 people shook hands with each other. How many handshakes took place in all?",
         "hints": [
-            "Same idea as the chess problem: count pairs of people.",
-            "The formula is n, times n minus 1, divided by 2, where n is 13.",
-            "Try 4 people: 4 times 3, divided by 2, is 6 handshakes. For 13 people: 13 times 12, divided by 2.",
+            "Each handshake is between two people. Count the pairs of people, taking care not to count the same handshake twice.",
+            "Each of the 13 people shakes hands with the 12 others, which looks like 13 times 12. But that counts every handshake twice, once for each person in it. So, what must you do to 13 times 12?",
+            "Here is an example with 4 people. Each shakes hands with 3 others: 4 times 3 is 12. Every handshake was counted twice, so there are 12 divided by 2, which is 6 handshakes.",
         ],
         "steps": [
-            "Handshakes: 13 times 12, divided by 2.",
-            "That equals 156 divided by 2, which is 78.",
-            "Verify: check the answer matches option A.",
+            "Each of the 13 people shakes hands with the 12 others: 13 times 12 is 156.",
+            "This counts every handshake twice, once for each of the two people in it. So divide by 2.",
+            "156 divided by 2 is 78. So 78 handshakes took place in all.",
         ],
     },
     "EXT_G5_WS_B3_005": {
@@ -109,61 +109,61 @@ HAND = {
     "EXT_G5_WS_B3_013": {
         "q": "12.5 kilograms of sweets were distributed equally amongst 25 students, out of which 17 are girls, and the rest are boys. What quantity of sweets did each boy receive?",
         "hints": [
-            "Sweets per student: 12.5 kilograms divided by 25. They are distributed equally among all students, not just boys.",
-            "12.5 kilograms is 12500 grams. Each student gets 12500 divided by 25, which is 500 grams.",
-            "Try this. Number equals divisor times quotient, plus remainder. For example, 27 equals 5 times 5, plus 2.",
+            "The sweets are shared equally among all 25 students. So a boy gets the same amount as any other student. The numbers of girls and boys do not matter.",
+            "Change 12.5 kilograms into grams first. 1 kilogram is 1000 grams, so 12.5 kilograms is 12500 grams. Then share 12500 grams equally among 25 students.",
+            "Here is an example. 1.5 kilograms of rice is shared equally among 5 families. 1.5 kilograms is 1500 grams, and 1500 divided by 5 is 300. So each family gets 300 grams.",
         ],
         "steps": [
-            "12.5 kilograms is 12500 grams.",
-            "Each student gets 12500 divided by 25, which is 500 grams.",
-            "The answer is option B.",
+            "The sweets are shared equally among all 25 students, so each boy gets the same as every other student.",
+            "Change kilograms to grams: 12.5 kilograms is 12.5 times 1000 grams, which is 12500 grams.",
+            "12500 divided by 25 is 500. So each boy received 500 grams of sweets.",
         ],
     },
     "EXT_G5_WS_B3_019": {
         "q": "Instead of multiplying, a student divided a number by 13, and got 11 as the quotient, and 4 as the remainder. What was the correct answer to the problem?",
         "hints": [
-            "The student divided instead of multiplying. First, find the number.",
-            "The number is 13 times 11, plus 4, which is 147. The correct operation is 147 times 13, which is 1911.",
-            "Try this. Divided by 5, the quotient is 3 and the remainder is 1, so the number is 16. We should multiply: 16 times 5 is 80.",
+            "First, find the number the student started with. In a division, the number equals divisor times quotient, plus remainder.",
+            "The number is 13 times 11, plus 4. Work that out. Then do what the student was meant to do: multiply that number by 13.",
+            "Here is an example. A student divided a number by 5, and got quotient 3, and remainder 1. The number is 5 times 3, plus 1, which is 16. He should have multiplied: 16 times 5 is 80.",
         ],
         "steps": [
-            "The number is 13 times 11, plus 4, which is 147.",
-            "The correct answer is 147 times 13, which is 1911.",
-            "The answer is option A.",
+            "Find the number. Divisor times quotient, plus remainder, is 13 times 11, plus 4. That is 143 plus 4, which is 147.",
+            "The student should have multiplied this number by 13: 147 times 13 is 1911.",
+            "So, the correct answer to the problem was 1911.",
         ],
     },
     "EXT_G5_WS_B3_025": {
         "q": "In a basket, there are 56 apples. Amey takes out 4 apples at a time, and replaces them with 3 oranges. He continues this process till all the apples in the basket are replaced. How many oranges will there be in the basket in the end?",
         "hints": [
-            "Each round: remove 4 apples, add 3 oranges. How many rounds until 56 apples are gone?",
-            "Rounds: 56 divided by 4, which is 14. Oranges: 14 times 3, which is 42.",
-            "Try this. 8 apples. Remove 2, and add 1, each round. That is 4 rounds, and 4 oranges.",
+            "Each turn, 4 apples come out, and 3 oranges go in. So first, count how many turns it takes to remove all 56 apples.",
+            "The number of turns is 56 divided by 4. Each turn puts 3 oranges in the basket, so multiply the number of turns by 3.",
+            "Here is an example. A basket has 10 apples. Each turn, 2 apples are swapped for 1 orange. That takes 10 divided by 2, which is 5 turns. So there are 5 times 1, which is 5 oranges, at the end.",
         ],
         "steps": [
-            "Rounds: 56 divided by 4, which is 14.",
-            "Oranges: 14 times 3, which is 42.",
-            "The answer is option A.",
+            "Amey removes 4 apples each turn. So emptying 56 apples takes 56 divided by 4, which is 14 turns.",
+            "Each turn, he puts in 3 oranges: 14 times 3 is 42.",
+            "So, there will be 42 oranges in the basket in the end.",
         ],
     },
     "EXT_G5_WS_B3_028": {
         "q": "Four years hence, Siya will be 3 years older than Diya. The sum of their present ages is 35 years. How old is Siya at present?",
         "hints": [
-            "In 4 years, Siya will be 3 years older than Diya. This means Siya is always 3 years older.",
-            "S equals D plus 3. S plus D equals 35. So, D plus 3, plus D, equals 35. 2 D equals 32. D equals 16, and S equals 19.",
-            "Try this. A is 5 years older, and the sum is 25. Then B is 10, and A is 15.",
+            "The gap between two people's ages never changes. If Siya will be 3 years older in four years, she is 3 years older right now too.",
+            "Their ages add up to 35, and Siya's is 3 more than Diya's. Take the extra 3 away: 35 minus 3 is 32. That is two equal parts, each one Diya's age. Find Diya's age, then add 3.",
+            "Here is an example. Anu is 5 years older than Binu, and their ages add up to 25. 25 minus 5 is 20, and 20 divided by 2 is 10. So Binu is 10, and Anu is 10 plus 5, which is 15.",
         ],
         "steps": [
-            "Siya is 3 years older than Diya, which is always true. So S equals D plus 3.",
-            "S plus D equals 35. So, D plus 3, plus D, equals 35. D equals 16, and S equals 19.",
-            "The answer is option A.",
+            "The gap between two ages never changes. So Siya is 3 years older than Diya now as well.",
+            "Take the extra 3 years away from the sum: 35 minus 3 is 32. This is twice Diya's age, so Diya is 32 divided by 2, which is 16 years old.",
+            "Siya is 16 plus 3, which is 19. So Siya is 19 years old at present.",
         ],
     },
     "EXT_G5_WS_B3_030": {
         "q": "At a sports meet, there were 14 events, and in each event, gold, silver and bronze medals were awarded. If the total number of medals won by boys is 6 less than those won by the girls, how many medals did the boys win?",
         "hints": [
-            "The total medals are 14 events, times 3 medals, which is 42.",
-            "Boys plus girls equals 42. Girls equal boys plus 6. So boys, plus boys, plus 6, equals 42.",
-            "Try with simple numbers first, to check your method. Then apply it to the real problem.",
+            "First, find the total number of medals: 14 events, with 3 medals in each. Then split that total between boys and girls, with the boys getting 6 fewer.",
+            "There are 14 times 3, which is 42 medals. Take away the girls' extra 6: 42 minus 6 is 36. Now both shares are equal, and each one equals the boys' share.",
+            "Here is an example. 20 sweets are shared, so that Ravi gets 4 fewer than Sita. 20 minus 4 is 16, and 16 divided by 2 is 8. So Ravi gets 8, and Sita gets 12.",
         ],
         "steps": [
             "The total medals are 14 times 3, which is 42.",
@@ -174,9 +174,9 @@ HAND = {
     "EXT_G5_WS_B3_032": {
         "q": "Jiya has an equal number of notes of denomination 5 rupees, 10 rupees and 20 rupees. If she has 910 rupees in all, how many notes of each kind does she have?",
         "hints": [
-            "Read the question carefully. This tests your understanding of equal distribution. Identify what information is given, and what you need to find.",
-            "Write down the key formula or relationship for equal distribution. Think step by step about how to connect the given values to the answer.",
-            "Try a simpler version of the problem first. Then apply the same method to the actual numbers.",
+            "She has the same number of each note. So group the notes into sets of one 5 rupee, one 10 rupee, and one 20 rupee note.",
+            "One set is worth 5 plus 10 plus 20, which is 35 rupees. Work out how many such sets make 910 rupees. That is the number of notes of each kind.",
+            "Here is an example. Ali has equal numbers of 1 rupee and 2 rupee coins, worth 30 rupees in all. One set is worth 1 plus 2, which is 3 rupees, and 30 divided by 3 is 10. So he has 10 coins of each kind.",
         ],
         "steps": [
             "The value of one set is 5 plus 10 plus 20, which is 35.",
@@ -186,9 +186,9 @@ HAND = {
     "EXT_G5_WS_B3_033": {
         "q": "Minal purchased an equal number of stamps of 5 paise, 20 paise and 25 paise. She paid 9 rupees in all for these stamps. What is the total number of stamps that Minal bought?",
         "hints": [
-            "Each set of 3 stamps costs 5 plus 20 plus 25, which is 50 paise.",
-            "9 rupees is 900 paise. Sets: 900 divided by 50, which is 18. Total stamps: 18 times 3, which is 54.",
-            "Try a simpler version with smaller numbers, to check your method works. Then apply it to the real question.",
+            "She bought the same number of each stamp. Group them into sets of one 5 paise, one 20 paise, and one 25 paise stamp. Remember, 1 rupee is 100 paise.",
+            "One set costs 5 plus 20 plus 25, which is 50 paise, and 9 rupees is 900 paise. Find how many sets she bought. Each set has 3 stamps, so multiply the number of sets by 3.",
+            "Here is an example. Equal numbers of 10 paise and 15 paise stamps cost 1 rupee in all. One set costs 25 paise, and 100 divided by 25 is 4 sets. Each set has 2 stamps, so that is 4 times 2, which is 8 stamps.",
         ],
         "steps": [
             "A set of 3 stamps costs 5 plus 20 plus 25, which is 50 paise.",
@@ -199,9 +199,9 @@ HAND = {
     "EXT_G5_WS_B3_037": {
         "q": "If six people consume 1 kilogram of rice in a day, what quantity of rice will be consumed by 24 people in a week?",
         "hints": [
-            "Scale up the people: 24 divided by 6 is 4 times more people, which means 4 kilograms a day.",
-            "Scale up the time: 1 week is 7 days, which means 4 times 7, or 28 kilograms.",
-            "Try this. 3 people eat 2 kilograms a day. 6 people, in 3 days, eat 2 times 2 times 3, which is 12 kilograms.",
+            "Two things change here: the number of people, and the number of days. Deal with one at a time.",
+            "24 people is 24 divided by 6, which is 4 groups of six, and each group eats 1 kilogram a day. Find how much 24 people eat in one day, then multiply by the 7 days in a week.",
+            "Here is an example. 3 people eat 2 kilograms of rice a day. 6 people are 2 groups of three, so they eat 2 times 2, which is 4 kilograms a day. In 3 days, they eat 4 times 3, which is 12 kilograms.",
         ],
         "steps": [
             "24 people is 4 groups of 6, which means 4 kilograms a day.",
@@ -211,9 +211,9 @@ HAND = {
     "EXT_G5_WS_B3_040": {
         "q": "In a school, there are 4 girls for every 7 boys, and for every 55 students, there is a teacher. If the total strength of the boys in the school is 455, how many teachers are there in the school?",
         "hints": [
-            "4 girls, for every 7 boys. If there are 455 boys, find the girls.",
-            "Girls: 455 times 4 over 7, which is 260. Total students: 455 plus 260, which is 715.",
-            "Try with simple numbers first, to check your method. Then apply it to the real problem.",
+            "First, find the number of girls from the boys. Then the total number of students. And last, the number of teachers.",
+            "There are 7 boys in each group, and 455 divided by 7 is 65 groups. Each group also has 4 girls. Find the girls, add the boys to get all the students, then count how many 55s are in that total.",
+            "Here is an example. 2 girls for every 3 boys, and 30 boys. That is 30 divided by 3, which is 10 groups. So 10 times 2 is 20 girls, and 50 students. With one teacher for every 25 students, 50 divided by 25 is 2 teachers.",
         ],
         "steps": [
             "There are 455 boys, and the ratio is 4 is to 7. So the girls are 455 times 4 over 7, which is 260.",

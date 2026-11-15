@@ -56,7 +56,7 @@ def _is_math(c):
 
 def _brackets(s):
     """Innermost first: maths brackets become markers, word brackets become commas."""
-    s = re.sub(r"\(([^()\[\]{}]*)\):",
+    s = re.sub(r"(?:\b[Bb]racket\s+)?\(([^()\[\]{}]*)\):",
                lambda m: "brackets around %s:" % m.group(1) if _is_math(m.group(1)) and re.search(r"[+−×÷]", m.group(1)) else m.group(0), s)
     pat = re.compile(r"([\(\[\{])([^()\[\]{}]*)[\)\]\}]")
     while True:
@@ -112,6 +112,9 @@ def _equals(s):
                     return EQT
                 # A long or bracketed left side needs a breath before "equals".
                 long_left = any(c in left for c in _MARKS) or len(re.findall(r"[+−×÷]|\s-\s", left)) >= 3
+                # A sum inside a sentence: "There are 18 × 30 = 540 girls" is "18 times 30, which is 540 girls".
+                if n == 1 and not long_left and re.search(r"\b(?:is|are|was|were|costs?|uses?|earns?|with|ha(?:s|ve)|out|doubles?|to|needs?|by)\s+\d[\d.,/]*(?:\s*[+−×÷]\s*\d[\d.,/]*)+\s*$", left):
+                    return EQL
                 return EQ1C if long_left else EQ1
             return EQL if k[0] == n else EQM
         out.append(re.sub("=", rep, seg))
@@ -153,7 +156,7 @@ def _plural(m, one, many):
 
 
 def _units(s):
-    s = re.sub(r"Rs\.?\s*(\d+(?:,\d{2,3})*(?:\.\d+)?)", r"\1 rupees", s)
+    s = re.sub(r"Rs\.?\s*(\d+(?:,\d{2,3})*(?:\.\d+)?)", lambda m: _plural(m, "rupee", "rupees"), s)
     s = re.sub(r"(\d)\s*%", r"\1 percent", s)
     s = re.sub(r"(\d+(?:\.\d+)?)\s*hrs?\b", lambda m: _plural(m, "hour", "hours"), s)
     s = re.sub(r"\bhrs?\b", "hour", s)
@@ -192,18 +195,27 @@ def say(text, stop=True):
     s = re.sub(r"\s*✓\s*[.!]?", ". That works. ", s)
     s = re.sub(r"\s*✗\s*[.!]?", ". That does not work. ", s)
     s = re.sub(r"\s*(?:→|⇒)\s*", ", so ", s)
+    # A sum or a list that trails off: "1 + 2 + … + 28", "1 + 2 + 3 + … up to 28", "1, 2, 4, …".
+    s = re.sub(r"\+\s*(?:\.\.\.|…)\s*\+\s*(?=\d)", " plus, and so on, up to ", s)
+    s = re.sub(r"\+\s*(?:\.\.\.|…)\s*", " plus, and so on, ", s)
+    s = re.sub(r",\s*(?:\.\.\.|…)\s*,\s*(?=\d)", ", and so on up to ", s)
+    s = re.sub(r",\s*(?:\.\.\.|…)", ", and so on", s)
+    # A bare run of signs, "+ × −" or "+, × and −", is a list of signs, not of operations.
+    s = re.sub(r"[+−×÷](?:\s*,?\s*[+−×÷])+(?:\s+and\s+(?:then\s+)?[+−×÷=])?(?!\s*[\w(\[{])",
+               lambda m: re.sub(r"[+−×÷=]", lambda c: _SIGN[c.group(0)], re.sub(r"(?<=[+−×÷])\s+(?=[+−×÷])", ", ", m.group(0))), s)
     s = re.sub(r"(?<=\d)\s*(?:\.\.\.|…)", " and so on", s)
     s = re.sub(r"\s*(?:\.\.\.|…)\s*", ". ", s)
-    s = re.sub(r"\b(\d+)([a-zA-Z]{1,2})\b", lambda m: m.group(0) if _ORDINAL.match(m.group(0)) or m.group(2) in ("cm", "mg", "hr", "m", "g") else m.group(1) + " " + " ".join(m.group(2)), s)
+    s = re.sub(r"\b(\d+)([a-zA-Z]{1,2})\b", lambda m: m.group(0) if _ORDINAL.match(m.group(0)) or m.group(2) in ("cm", "mg", "hr", "m", "g", "s") else m.group(1) + " " + " ".join(m.group(2)), s)
     s = _units(s)
     s = re.sub(r"(brackets?)\s*\(\s*\)", r"\1", s)
+    s = re.sub(r"\b(round|curly|square)\s*[\(\[\{]\s*[\)\]\}]", r"\1", s)
     s = _brackets(s)
     s = _equals(s)
     # A minus sign that belongs to a number, not between two numbers.
     s = re.sub(r"(?:^|(?<=[^\w%s]))[−-](?=\d)" % (C_R + C_S + C_C), "minus ", s)
     s = _RUN.sub(_run, s)
     # Operators left over sit next to a bracket, or stand alone as the name of an operation.
-    s = re.sub(r"([+−×÷])(?=\s*(?:and|or|first|before|next|last|signs?)\b|\s*[,.;:!?)]|\s*$|\s*[+−×÷])",
+    s = re.sub(r"([+−×÷])(?=\s*(?:and|or|first|before|next|last|after|signs?)\b|\s*[,.;:!?)]|\s*$|\s*[+−×÷])",
                lambda m: " %s " % _OP_NAME[m.group(1)], s)
     s = re.sub(r"[+−×÷]", lambda m: " %s " % _OP_WORD[m.group(0)], s)
     s = re.sub(r"(?<=\s)-(?=\s)", "minus", s)

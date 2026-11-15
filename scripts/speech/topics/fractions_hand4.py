@@ -1,57 +1,49 @@
-"""Hand-written narration: worksheet questions 001 to 010, and lines that repeat across the worksheet."""
-
-LINES = {
-    "To compare fractions: find common denominator. 2/3 vs 3/4: 8/12 vs 9/12.":
-        "To compare fractions, find a common denominator. For 2 over 3 and 3 over 4, that gives 8 over 12 and 9 over 12.",
-    "Similar: SI on Rs.500 at 8% for 3yr = 500×8×3/100 = Rs.120.":
-        "A similar one: simple interest on 500 rupees, at 8 percent for 3 years, equals 500 times 8 times 3, over 100, which is 120 rupees.",
-    "Similar: If 3x+5=20, then 3x=15, x=5. Check: 3(5)+5=20 ✓.":
-        "A similar one: if 3 x plus 5 equals 20, then 3 x equals 15, so x equals 5. Check: 3 times 5, plus 5, equals 20. Correct.",
-    "Similar: Compare 3/5 and 2/3. LCD=15: 9/15 vs 10/15. So 2/3 is bigger.":
-        "A similar one: compare 3 over 5 and 2 over 3. The L C D is 15, giving 9 over 15 and 10 over 15. So 2 over 3 is bigger.",
-    "Similar: 1/4 play cricket, 1/4 play football, rest=15 students play nothing. 2/4=15→total=30.":
-        "A similar one: 1 over 4 play cricket, 1 over 4 play football, and the rest, 15 students, play nothing. So 2 over 4 is 15 students, and the total is 30.",
-    "Try a simpler version with easy fractions (like halves or thirds) to check your method.":
-        "Try a simpler version with easy fractions, like halves or thirds, to check your method.",
-}
+"""Hand-written narration: worksheet questions 001 to 008. None (or a missing key) means 'use the rules'."""
 
 HAND = {
     "EXT_G5_WS_B7_001": {
         "hints": [
+            "A fraction is parts you want, over total equal parts. Here, the parts you want are the ones that are not shaded.",
             None,
-            "The figure shows 8 equal parts, with 5 shaded. Unshaded equals 8 minus 5, which is 3 out of 8.",
-            "A similar one: a pizza is cut into 4 slices, and 1 is eaten. What remains is 3 over 4.",
+            "A similar one: a bar has 6 equal parts, and 4 are shaded. Then 6 minus 4, which is 2, are unshaded. So the unshaded fraction is 2 over 6.",
         ],
         "steps": [
-            "Total parts, 8. Shaded, 5.",
-            "Unshaded equals 8 minus 5, which is 3.",
-            "The fraction is 3 over 8.",
+            "The bar is divided into 8 equal parts, so the bottom number of the fraction is 8.",
+            "5 parts are shaded, so 8 minus 5, which is 3 parts, are unshaded.",
+            "So the unshaded portion is 3 out of 8, which is 3 over 8.",
         ],
     },
     "EXT_G5_WS_B7_002": {
         "q": "The numerator of a fraction is 21, and the denominator is 16 less than the numerator. Express this fraction as a mixed number.",
+        "hints": [
+            "First find the denominator. 16 less than the numerator means subtract 16 from 21.",
+            None,
+            "Try a different one: 17 over 3. 17 divided by 3 gives 5 with remainder 2, because 3 times 5 is 15, and 17 minus 15 is 2. So 17 over 3, as a mixed number, is 5 and 2 over 3.",
+        ],
         "steps": [
-            "The denominator is 21 minus 16, which is 5.",
-            "21 over 5 is 4 remainder 1, which is 4 and 1 over 5.",
+            "The denominator is 16 less than 21. 21 minus 16 equals 5. So the fraction is 21 over 5.",
+            "Divide 21 by 5. 5 times 4 is 20, and 21 minus 20 leaves 1 left over.",
+            "So there are 4 wholes and 1 fifth left. 21 over 5, as a mixed number, is 4 and 1 over 5.",
         ],
     },
     "EXT_G5_WS_B7_003": {
         "q": "Which of the following is the lowest form of 187 over 136?",
         "hints": [
-            "Find the G C D of 187 and 136 to simplify.",
-            "187 equals 11 times 17. 136 equals 8 times 17. The G C D is 17.",
-            "A similar one: 51 over 34. 51 equals 3 times 17, and 34 equals 2 times 17. The G C D is 17. So 51 over 34 equals 3 over 2.",
+            "To reach the lowest form, divide the top and the bottom by the same number, until no number other than 1 divides both.",
+            "187 and 136 are both multiples of 17. Try dividing each of them by 17.",
+            "Try a smaller one: 51 over 34. Both are multiples of 17. 51 divided by 17 is 3, and 34 divided by 17 is 2. So 51 over 34, in lowest form, is 3 over 2.",
         ],
         "steps": [
-            "187 equals 11 times 17, and 136 equals 8 times 17.",
-            "The G C D is 17.",
-            "187 over 136 equals 11 over 8.",
+            "Look for a number that divides both 187 and 136. Both are multiples of 17.",
+            "187 divided by 17 equals 11, and 136 divided by 17 equals 8.",
+            "11 and 8 share no factor other than 1, so the lowest form of 187 over 136 is 11 over 8.",
         ],
     },
     "EXT_G5_WS_B7_004": {
         "hints": [
-            "Count the two-digit numbers: 10 to 99 makes 90. Then count the two-digit perfect squares.",
-            "Squares: 4 squared is 16. 5 squared is 25. 6 squared is 36. 7 squared is 49. 8 squared is 64. 9 squared is 81. That's 6.",
+            "A portion is a fraction: how many two-digit numbers are perfect squares, over how many two-digit numbers there are.",
+            "The two-digit numbers run from 10 to 99. That is 99 minus 9, which is 90 numbers. Now list the two-digit squares, starting with 4 times 4, which is 16, and count them. Write the fraction and simplify it.",
+            "A similar one: what portion of the one-digit numbers, 1 to 9, are perfect squares? The squares are 1, 4 and 9. So it is 3 out of 9, which is 3 over 9, or 1 over 3.",
         ],
         "steps": [
             "Two-digit numbers: 90.",
@@ -63,66 +55,53 @@ HAND = {
         "q": "Which numbers should replace the star and the triangle, in that order? Star over 96, equals 3 over 16, equals 12 over triangle.",
         "options": ["18 and 64", "6 and 4", "18 and 80", "18 and 4"],
         "hints": [
-            "If star over 96 equals 3 over 16, cross multiply: 16 times star equals 3 times 96, which is 288. So star is 18.",
-            "If 3 over 16 equals 12 over triangle, cross multiply: 3 times triangle equals 16 times 12, which is 192. So triangle is 64.",
-            "A similar one: star over 12, equals 2 over 3, equals 8 over triangle. Star is 8, and triangle is 12.",
+            None,
+            "Compare 3 over 16 with star over 96. What was 16 multiplied by to make 96? Multiply 3 by the same number. Then compare 3 over 16 with 12 over triangle. What was 3 multiplied by to make 12?",
+            "Try a smaller one: the fractions star over 12, 2 over 3, and 8 over triangle are all equal. 3 times 4 is 12, so star is 2 times 4, which is 8. And 2 times 4 is 8, so triangle is 3 times 4, which is 12.",
         ],
         "steps": [
-            "Star over 96 equals 3 over 16. So star equals 96 times 3, divided by 16, which is 18.",
-            "3 over 16 equals 12 over triangle. So triangle equals 16 times 12, divided by 3, which is 64.",
+            None,
+            "From 3 over 16 to star over 96: 16 times 6 is 96, so star is 3 times 6, which is 18.",
+            "From 3 over 16 to 12 over triangle: 3 times 4 is 12, so triangle is 16 times 4, which is 64.",
+            "So star is 18, and triangle is 64.",
         ],
     },
     "EXT_G5_WS_B7_006": {
         "q": "Find the number in place of the asterisk: 45 over 36 equals what, over 32?",
         "hints": [
-            "Cross multiply: 36 times the missing number equals 45 times 32.",
-            "36 times the missing number equals 1440. So the missing number is 1440 divided by 36, which is 40.",
-            "A similar one: 3 over 5 equals what, over 15? Since 15 equals 5 times 3, multiply the top by 3 too. The missing number is 9.",
+            "The two fractions are equal. It is easier if you first write 45 over 36 in its lowest form.",
+            "Both 45 and 36 are in the 9 times table, so divide top and bottom by 9. Then ask: what must the new bottom number be multiplied by to make 32? Do the same to the top.",
+            "Try a smaller one: 6 over 9 and asterisk over 15 are equal. In lowest form, 6 over 9 is 2 over 3. Since 3 times 5 is 15, the asterisk is 2 times 5, which is 10.",
         ],
         "steps": [
-            "45 over 36 simplifies to 5 over 4.",
-            "5 over 4 equals the missing number over 32. So the missing number is 5 times 8, which is 40.",
+            "Write 45 over 36 in lowest form: divide top and bottom by 9, to get 5 over 4.",
+            "Now 5 over 4 and asterisk over 32 are equal. 4 times 8 is 32, so multiply the top by 8 as well.",
+            "5 times 8 is 40, so the number in place of the asterisk is 40.",
         ],
     },
     "EXT_G5_WS_B7_007": {
         "q": "Find the value of b, if b minus 8, all over 42, equals 5 over 7.",
+        "hints": [
+            "Two equal fractions. First make 5 over 7 into an equal fraction with 42 at the bottom, so the tops can be compared.",
+            "7 times 6 is 42, so multiply the top of 5 over 7 by 6 as well. That number equals b minus 8. To find b, add the 8 back.",
+            "Try a smaller one: c minus 2, all over 12, and 3 over 4 are equal. 4 times 3 is 12, so 3 over 4 equals 9 over 12. Then c minus 2 is 9, so c is 11.",
+        ],
         "steps": [
-            "7 times, open bracket, b minus 8, close bracket, equals 5 times 42, which is 210.",
-            "b minus 8 equals 30.",
-            "b equals 38.",
+            "Make 5 over 7 into a fraction with 42 at the bottom. 7 times 6 is 42, and 5 times 6 is 30, so 5 over 7 equals 30 over 42.",
+            "Now b minus 8, all over 42, and 30 over 42 are equal, so the tops are equal: b minus 8 is 30.",
+            "Add 8 back: b equals 30 plus 8, which is 38.",
         ],
     },
     "EXT_G5_WS_B7_008": {
         "hints": [
-            "The segment from 0 to 2 is split into 5 equal parts. Each part is 2 over 5.",
-            "Point A appears to be at the 2nd division mark from 0. Its position is 2 times 2 over 5, which is 4 over 5.",
-            "A similar one: 0 to 1, split into 4 parts, has marks at 1 over 4, 2 over 4, 3 over 4, and 1.",
-        ],
-        "steps": [
-            "Each part is 2 divided by 5, which is 2 over 5.",
-            "A is at the 2nd mark: 2 times 2 over 5 equals 4 over 5.",
-        ],
-    },
-    "EXT_G5_WS_B7_009": {
-        "hints": [
             None,
-            "9 over 8 equals 1.125, which is greater than 1. All the others are less than 1.",
+            "Each part is 2 divided by 5, which is 2 over 5 long. Now count how many parts there are from 0 to point A on the number line, and add up that many parts.",
+            "A similar one: a line from 0 to 3 is cut into 4 equal parts. Each part is 3 over 4. A point on the 3rd mark is at 3 over 4, plus 3 over 4, plus 3 over 4, which is 9 over 4.",
         ],
         "steps": [
-            "19 over 21 is about 0.905. 11 over 15 is about 0.733. 23 over 32 is about 0.719.",
-            "9 over 8 equals 1.125, which is greater than 1!",
-            "9 over 8 is the greatest.",
-        ],
-    },
-    "EXT_G5_WS_B7_010": {
-        "hints": [
-            "Convert each to decimals: 14 over 29 is about 0.483. 11 over 15 is about 0.733. 21 over 32 is about 0.656. 17 over 28 is about 0.607.",
-            "The smallest decimal is 14 over 29, which is about 0.483.",
-        ],
-        "steps": [
-            "14 over 29 is about 0.483. 11 over 15 is about 0.733. 21 over 32 is about 0.656. 17 over 28 is about 0.607.",
-            "The smallest is 14 over 29.",
-            "The answer is A.",
+            "The line from 0 to 2 is cut into 5 equal parts, so each part is 2 divided by 5, which is 2 over 5 long.",
+            "Point A is on the 2nd mark after 0, so it is 2 parts away from 0.",
+            "2 over 5, plus 2 over 5, equals 4 over 5. So point A represents 4 over 5.",
         ],
     },
 }

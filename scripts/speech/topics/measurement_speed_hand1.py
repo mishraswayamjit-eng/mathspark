@@ -48,8 +48,10 @@ HAND["EXT_G5_FP_2017_029"] = {
         "",
     ],
     "steps": [
-        "30 times 18, divided by 5, equals 30 divided by 5, times 18. "
-        "That is 6 times 18, which equals 108 kilometres per hour.",
+        "1 kilometre is 1000 metres, and 1 hour is 3600 seconds. So, to change metres per second into "
+        "kilometres per hour, multiply by 3600 and divide by 1000, which is the same as multiplying by 18 over 5.",
+        "30 times 18 over 5. First, 30 divided by 5 equals 6. Then, 6 times 18 equals 108.",
+        "So the speed is 108 kilometres per hour.",
     ],
 }
 

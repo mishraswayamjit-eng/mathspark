@@ -20,9 +20,9 @@ HAND = {
     "EXT_G5_WS_01_002": {
         "q": "Which of the following digits has the same place value and face value, irrespective of the place it is in?",
         "hints": [
-            "Think about what happens when you put each digit in different places: tens, hundreds, and so on.",
-            "Place value equals the digit, times the position value. Face value is the digit itself. Which digit always gives the same result?",
-            "Try 0 in the tens place. Its place value is 0 times 10, which is 0, and its face value is 0. They match! For 9 in the tens place, 90 is not equal to 9.",
+            "Face value is the digit itself. Place value is the digit times the worth of its place: 1, 10, 100, and so on. When could these two be equal in every place?",
+            "Test each choice in the tens place. 9 in the tens place is worth 9 times 10, which is 90, and that is not 9. Now test the other digits the same way.",
+            "Here is how to test a digit. 4 in the hundreds place has face value 4, but place value 4 times 100, which is 400. They differ, so 4 does not work. Look for a digit that stays the same when multiplied by 10 or 100.",
         ],
         "steps": [
             "Face value is the digit itself. Place value equals the digit, times the position value.",
@@ -33,9 +33,9 @@ HAND = {
     "EXT_G5_WS_01_003": {
         "q": "If the place value of a digit is an odd number, which place is that digit in?",
         "hints": [
-            "Think about what happens when you multiply any digit by 10, 100 or 1000. Is the result ever odd?",
-            "The tens place value is always a multiple of 10, so it is even. The hundreds place value is always a multiple of 100, so it is even.",
-            "Try 3 in the tens place: that gives 30, which is even. 7 in the units place gives 7, which is odd. Only the units place can give odd values.",
+            "Place value is the digit times 1, 10, 100 or 1000, depending on its place. Think about which of these products can ever be odd.",
+            "Multiply any digit by 10: the result ends in 0, so it is even. Check what happens with 1000, and with 1, in the same way.",
+            "An example: 5 in the hundreds place is worth 5 times 100, which is 500. That is even, even though 5 is odd. So the hundreds place can never give an odd place value. Test the places in the choices like this.",
         ],
         "steps": [
             "The place value in the tens place is the digit times 10, which is always even.",
@@ -60,9 +60,9 @@ HAND = {
     "EXT_G5_WS_01_005": {
         "q": "In the number 76025, how many times is the place value of 6 to that of 2?",
         "hints": [
-            "Find the place value of 6, and the place value of 2, separately in 76025.",
-            "6 is in the thousands place, so its place value is 6000. 2 is in the tens place, so its place value is 20.",
-            "Try this: in 5030, the place value of 5 is 5000, and the place value of 3 is 30. The ratio is 5000 divided by 30.",
+            "Find the place value of 6, and the place value of 2, in 76025. How many times, means you divide the bigger place value by the smaller one.",
+            "6 is in the thousands place, so it is worth 6000. 2 is in the tens place, so it is worth 20. Now divide 6000 by 20.",
+            "An example: in 8040, the 8 is worth 8000, and the 4 is worth 40. 8000 divided by 40 equals 200. So the place value of 8 is 200 times that of 4.",
         ],
         "steps": [
             "The place value of 6, in the thousands place: 6 times 1000 equals 6000.",
@@ -73,9 +73,9 @@ HAND = {
     "EXT_G5_WS_01_006": {
         "q": "The digit 8 is used twice in each of the following numbers. In which number is the place value of one 8, a thousand times that of the other 8?",
         "hints": [
-            "For one 8 to be 1000 times the other, the two 8s must be exactly 3 place-positions apart.",
-            "3 positions apart means units and thousands, or tens and ten-thousands.",
-            "Check 85168. 8 is in the ten-thousands place, worth 80000, and in the units place, worth 8. 80000 divided by 8 is 10000. Check 68815. 8 is in the thousands place, worth 8000, and the hundreds place, worth 800. 8000 divided by 800 is 10.",
+            "Each step to the left makes a digit worth 10 times more. So for one 8 to be worth 1000 times the other, how many places apart must the two 8s be?",
+            "1000 equals 10 times 10 times 10, so the two 8s must be three places apart, like units and thousands, or tens and ten-thousands. In each number, find the places of the two 8s.",
+            "An example: in 5052, one 5 is worth 5000, and the other is worth 50. 5000 divided by 50 equals 100, so one is only 100 times the other. Two places apart gives 100 times. You need three places apart.",
         ],
         "steps": [
             "Check 68815. The 8s are in the thousands place, worth 8000, and the hundreds place, worth 800. 8000 divided by 800 is 10, not 1000.",
@@ -87,15 +87,15 @@ HAND = {
     "EXT_G5_WS_01_007": {
         "q": "In which of the following is the place value of one 3, a hundred times that of the other 3 in the same number?",
         "hints": [
-            "For one 3 to be 100 times the other, the two 3s must be exactly 2 place-positions apart.",
-            "2 positions apart means units and hundreds, or tens and thousands, or hundreds and ten-thousands.",
-            "Check each number: find where the two 3s are, and compare their place values.",
+            "Each step to the left makes a digit worth 10 times more. For one 3 to be worth 100 times the other, how many places apart must the two 3s be?",
+            "100 equals 10 times 10, so the two 3s must be two places apart, like tens and thousands. In each number, write down the places of the two 3s.",
+            "An example: in 7479, one 7 is worth 7000, and the other is worth 70. 7000 divided by 70 equals 100, so one 7 is 100 times the other. Look for the number where the 3s sit like this.",
         ],
         "steps": [
-            "Check 134639. There is a 3 in the ten-thousands place, worth 30000, and a 3 in the tens place, worth 30. 30000 divided by 30 is 1000, not 100.",
-            "Check 752339. There is a 3 in the hundreds place, worth 300, and a 3 in the tens place, worth 30. 300 divided by 30 is 10, not 100.",
-            "Check 863135. There is a 3 in the thousands place, worth 3000, and a 3 in the tens place, worth 30. 3000 divided by 30 is 100. That works.",
-            "This is the answer: 863135.",
+            "For one 3 to be worth 100 times the other, the two 3s must be two places apart, because 10 times 10 equals 100.",
+            "In 134639 the 3s are worth 30000 and 30. 30000 divided by 30 equals 1000, so this is not a match. In 752339 they are worth 300 and 30. 300 divided by 30 equals 10, not a match.",
+            "In 307638 the 3s are worth 300000 and 30. 300000 divided by 30 equals 10000, not a match.",
+            "In 863135 the 3s are worth 3000 and 30. 3000 divided by 30 equals 100. So the number is 863135.",
         ],
     },
     "EXT_G5_WS_01_011": {
@@ -113,9 +113,9 @@ HAND = {
     "EXT_G5_WS_01_012": {
         "q": "Which digit is exactly in the middle of the greatest odd number formed by using the digits 5, 8, 0, 7 and 4, each only once?",
         "hints": [
-            "First form the greatest odd number with 5, 8, 0, 7 and 4, each used once. It must end in an odd digit.",
-            "For the greatest odd number, start with the largest digits, and end with the largest odd digit. The options for the units place are 5 or 7. With 5 at the end: 87405. With 7 at the end: 85407. Compare: 87405 is greater than 85407.",
-            "The greatest is 87405. The middle digit, the 3rd, is 4. Check again: 8, 7, 4, 0, 5. The middle is 4. But one option is 5. Ending in 7 gives 85407, with middle 4. Ending in 5 gives 87405, with middle 4.",
+            "An odd number ends in an odd digit. Which of the digits 5, 8, 0, 7 and 4 are odd? One of them must go in the units place.",
+            "To make the number as big as possible, put the biggest digits on the left. Try both ways. End with 5, and arrange 8, 7, 4, 0 from biggest to smallest. Then end with 7, and arrange 8, 5, 4, 0. Which number is greater?",
+            "An example with 1, 6, 3: the greatest odd number ends in 1 or 3. Ending in 1 gives 631. Ending in 3 gives 613. 631 is greater, and its middle digit is 3.",
         ],
         "steps": [
             "The greatest odd number must end in an odd digit, 5 or 7.",
@@ -128,9 +128,9 @@ HAND = {
     "EXT_G5_WS_01_013": {
         "q": "What is the place value of 7, in the smallest even number formed by using the digits 2, 7, 3, 9 and 6, each only once?",
         "hints": [
-            "Form the smallest even number using 2, 7, 3, 9 and 6. It must end in an even digit.",
-            "The even digits available are 2 and 6. For the smallest number, start with the smallest digits. If it ends in 2, you get 36792. If it ends in 6, you get 23796.",
-            "23796 is less than 36792, so the smallest even number is 23796. Where is 7? In the hundreds place. Its place value is 700.",
+            "An even number ends in an even digit. Which of the digits 2, 7, 3, 9 and 6 are even? One of them must go in the units place.",
+            "To make the number as small as possible, put the smallest digits on the left. Try both ways. End with 2, and arrange 3, 6, 7, 9 from smallest to biggest. Then end with 6, and arrange 2, 3, 7, 9. Which number is smaller, and where is the 7?",
+            "An example with 1, 4, 5: the smallest even number must end in 4, so it is 154. The 5 is in the tens place, so its place value is 5 times 10, which is 50.",
         ],
         "steps": [
             "The smallest even number must end in an even digit: 2 or 6.",

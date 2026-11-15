@@ -196,10 +196,21 @@
      {
       "parts": 5,
       "shaded": 4,
+      "label": "4/5 of 60 minutes"
+     }
+    ],
+    "note": "4 of the 5 equal parts of the hour have passed"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 5,
+      "shaded": 4,
       "label": "4 × 12 = 48 min"
      }
     ],
-    "note": "Each fifth is 12 minutes, so 4 fifths = 48 minutes"
+    "note": "Each fifth is 60 ÷ 5 = 12 minutes, so 4 fifths = 48 minutes"
    },
    {
     "kind": "clock",
@@ -1079,6 +1090,12 @@
   },
   "stepFigures": [
    {
+    "kind": "set",
+    "total": 27,
+    "item": "eggs",
+    "note": "One dozen is 12 eggs. How many 12s are in 27?"
+   },
+   {
     "kind": "fractionBars",
     "bars": [
      {
@@ -1097,7 +1114,7 @@
       "label": "3 eggs left"
      }
     ],
-    "note": "27 eggs = 2 full dozens and 3 eggs left over"
+    "note": "2 full dozens use 2 × 12 = 24 eggs, with 3 left over"
    },
    {
     "kind": "fractionBars",
@@ -1121,7 +1138,7 @@
     "highlight": [
      "b2"
     ],
-    "note": "3 out of 12 is a quarter of a dozen = 0.25"
+    "note": "3 out of 12 is 1/4 of a dozen = 0.25"
    },
    {
     "kind": "fractionBars",
@@ -1142,7 +1159,7 @@
       "label": "0.25 dozen"
      }
     ],
-    "note": "2 dozens + 0.25 dozen = 2.25 dozen"
+    "note": "2 + 0.25 = 2.25 dozen"
    }
   ]
  },
@@ -3412,7 +3429,8 @@
      "b1"
     ],
     "note": "792 ÷ 72 = 11 days"
-   }
+   },
+   null
   ]
  },
  "EXT_G5_FP_2017_023": {
@@ -4270,7 +4288,7 @@
     "highlight": [
      "b0s4"
     ],
-    "note": "Children are the other 1/5 of the visitors = 120"
+    "note": "Adults are 4/5, so the children are the other 1/5"
    },
    {
     "kind": "barModel",
@@ -4307,12 +4325,33 @@
      }
     ],
     "highlight": [
-     "b0s0",
-     "b0s1",
-     "b0s2",
-     "b0s3"
+     "b0"
     ],
-    "note": "Visitors = 120 × 5 = 600; adults = 600 − 120 = 480"
+    "note": "One fifth is 120, so all five fifths are 5 × 120 = 600"
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 4,
+        "label": "480 adults",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "120 children",
+        "tone": "b"
+       }
+      ],
+      "brace": "600 visitors"
+     }
+    ],
+    "highlight": [
+     "b0s0"
+    ],
+    "note": "Adults: 600 − 120 = 480"
    },
    {
     "kind": "barModel",
@@ -4321,17 +4360,17 @@
       "segments": [
        {
         "units": 1,
-        "label": "male",
+        "label": "60",
         "tone": "c"
        },
        {
         "units": 1,
-        "label": "male",
+        "label": "60",
         "tone": "c"
        },
        {
         "units": 1,
-        "label": "male",
+        "label": "60",
         "tone": "c"
        },
        {
@@ -4363,8 +4402,9 @@
      "b0s1",
      "b0s2"
     ],
-    "note": "3/8 of 480 = 480 ÷ 8 × 3 = 180 male adults"
-   }
+    "note": "One eighth is 480 ÷ 8 = 60; three eighths are 3 × 60 = 180"
+   },
+   null
   ]
  },
  "EXT_G5_FP_2018_014": {
@@ -4925,7 +4965,8 @@
      "b1"
     ],
     "note": "84 ÷ 3 = 28 dozens"
-   }
+   },
+   null
   ]
  },
  "EXT_G5_FP_2018_029": {
@@ -6553,7 +6594,36 @@
   "origin": "authored",
   "stepFigures": [
    null,
-   null,
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "9",
+     "bc": "9",
+     "ca": "9"
+    },
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ],
+    "note": "Triangle of side 9: 3 × 9 = 27. Square of side 9: 4 × 9 = 36"
+   },
+   {
+    "kind": "triangle",
+    "shape": "equilateral",
+    "sides": {
+     "ab": "12",
+     "bc": "12",
+     "ca": "12"
+    },
+    "highlight": [
+     "ab",
+     "bc",
+     "ca"
+    ],
+    "note": "Triangle of side 12: 3 × 12 = 36. Square of side 10: 4 × 10 = 40"
+   },
    {
     "kind": "triangle",
     "shape": "equilateral",
@@ -6586,6 +6656,15 @@
   },
   "stepFigures": [
    {
+    "kind": "clock",
+    "hour": 12,
+    "minute": 12,
+    "highlight": [
+     "minute"
+    ],
+    "note": "12 of the 60 minutes have gone: 12/60 of an hour"
+   },
+   {
     "kind": "fractionBars",
     "bars": [
      {
@@ -6595,8 +6674,25 @@
      }
     ],
     "shape": "circle",
-    "note": "12 minutes is 1/5 of the hour = 0.20"
-   }
+    "note": "12 minutes is one of 5 equal parts of the hour"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 5,
+      "shaded": 1,
+      "label": "1/5"
+     },
+     {
+      "parts": 10,
+      "shaded": 2,
+      "label": "2/10 = 0.2"
+     }
+    ],
+    "note": "1/5 is the same as 2/10, which is 0.2"
+   },
+   null
   ]
  },
  "EXT_G5_FP_2019_028": {

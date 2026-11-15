@@ -13,7 +13,8 @@ OVERRIDES = {}
 
 OVERRIDES["EXT_G5_FP_2016_009"] = {
     "steps": {
-        2: "x equals minus 24. Check: 3 times minus 24, minus 4 times minus 18, equals minus 72 plus 72, which is 0. That works.",
+        3: "Check: 3 times minus 24, minus 4 times, open bracket, minus 24 plus 6, close bracket, "
+           "equals minus 72 plus 72, which is 0. So x equals minus 24.",
     },
 }
 
@@ -110,14 +111,14 @@ OVERRIDES["EXT_G5_FP_2021_015"] = {
     },
     "steps": {
         1: "Bottom: x minus y equals 3 minus, minus 2. That is 3 plus 2, which is 5.",
-        2: "Minus 6, over 5, equals minus 6 over 5.",
+        2: "Divide the top by the bottom: minus 6 divided by 5 is the fraction, minus 6 over 5.",
     },
 }
 
 OVERRIDES["EXT_G5_FP_2021_031"] = {
     "steps": {
-        0: "Option 5: 5 plus 17 equals 22, and 60 divided by 5 equals 12. That does not work.",
-        2: "Check 17: 34 versus 3.5. That does not work. Check 12: 29 versus 5. That does not work.",
+        3: "The other two are not a match either: 17 plus 17 equals 34, and 12 plus 17 equals 29. "
+           "Both are much bigger than 60 divided by 12, which is 5. And 60 divided by 17 is smaller still.",
     },
 }
 
@@ -157,12 +158,6 @@ OVERRIDES["EXT_G5_FP_2023_022"] = {
     "hints": {1: "Find values in order: A, then m, then p."},
 }
 
-OVERRIDES["EXT_G5_FP_2024_012"] = {
-    "steps": {
-        2: "Option C: 12 times 6, minus 14, equals 72 minus 14, which is 58. And 16, plus 7 times 6, equals 16 plus 42, which is 58. That works.",
-    },
-}
-
 OVERRIDES["EXT_G5_FP_2024_035"] = {
     "q": "Solve: 4 x minus 5, all over 5, equals 2 x plus 3, all over 3. And find the value of x?",
 }
@@ -176,8 +171,9 @@ OVERRIDES["EXT_G5_FP_2025_010"] = {
 
 OVERRIDES["EXT_G5_FP_2025_017"] = {
     "steps": {
-        0: "q equals 2 times 7, minus 9. That is 14 minus 9, which is 5.",
-        5: "Greatest is 6, which comes from 4 q minus 2 p.",
+        0: "First find q: q equals 2 times 7, minus 9. That is 14 minus 9, which is 5.",
+        1: "2 p minus 3 q plus 5 is 14 minus 15 plus 5, which is 4. And 4 q minus 2 p is 20 minus 14, which is 6.",
+        2: "p plus q minus 12 is 7 plus 5 minus 12, which is 0. And 7 q minus 5 p plus 3 is 35 minus 35 plus 3, which is 3.",
     },
 }
 
@@ -198,13 +194,24 @@ OVERRIDES["EXT_G5_FP_2025_037"] = {
 OVERRIDES["EXT_G5_WS_01_008"] = {
     "q": "7, star, star, 19 is a five-digit number. The stars denote the same digit, and the difference between their place values is 5400. "
          "Find the digit in place of the star.",
-    "hints": {0: "The two stars are in the thousands and hundreds places of 7, star, star, 19."},
+    "hints": {
+        1: "If the digit is 1, the place values are 1000 and 100, a difference of 900. Each bigger digit adds another 900. "
+           "How many 900s make 5400?",
+        2: "Example: in 4, star, star, 61, with a difference of 1800, think 1800 divided by 900 equals 2, so the digit is 2. "
+           "Check: 2000 minus 200 equals 1800.",
+    },
     "steps": {0: "The two stars are in thousands and hundreds places."},
 }
 
 OVERRIDES["EXT_G5_WS_01_009"] = {
     "q": "In the five-digit number 3, star, 8, star, 2, the digits in place of the stars are the same, "
          "and the difference between their place values is 6930. Find the repeated digit.",
+    "hints": {
+        1: "If the digit is 1, the place values are 1000 and 10, a difference of 990. Each bigger digit adds another 990. "
+           "How many 990s make 6930?",
+        2: "Example: in 5, star, 4, star, 1, with a difference of 1980, think 1980 divided by 990 equals 2, so the digit is 2. "
+           "Check: 2000 minus 20 equals 1980.",
+    },
     "steps": {0: "The stars are in thousands and tens places."},
 }
 
@@ -212,14 +219,14 @@ OVERRIDES["EXT_G5_WS_01_010"] = {
     "q": "In the five-digit number 6, star, 8, star, 4, the star represents the same digit. "
          "Which of the following can be the difference between the place values of the repeated digit?",
     "hints": {
-        0: "The stars are in the thousands and tens places of 6, star, 8, star, 4.",
-        2: "Check: 3030 divided by 990 equals 3.06, and so on. Hmm. Let me re-examine positions.",
+        0: "Look at where the two stars sit in 6, star, 8, star, 4. One is in the thousands place and the other is in the tens place.",
+        2: "A similar one: in 5, star, 3, star, the stars are in the hundreds and units places. "
+           "The digit 4 gives 400 minus 4, which is 396. That is 4 times 99. So there the difference is always a multiple of 99.",
     },
     "steps": {
-        0: "The stars are in the thousands and tens places.",
-        3: "Wait, rechecking. If the star is in ten-thousands and hundreds: no, 6 is in ten-thousands. "
-           "If positions are 4th and 2nd, thousands and tens, then 990 d. "
-           "990 times 1 equals 990. 990 times 2 equals 1980. 990 times 3 equals 2970.",
+        0: "In 6, star, 8, star, 4, the stars are in the thousands place and the tens place.",
+        3: "The others are not multiples of 990. Its multiples start 990, 1980, 2970, 3960. So 540, 1880 and 3030 are skipped. "
+           "So the difference can be 8910.",
     },
 }
 
@@ -235,22 +242,16 @@ OVERRIDES["EXT_G5_WS_B2_005"] = {
 
 OVERRIDES["EXT_G5_WS_B2_021"] = {
     "hints": {
-        2: "Actually: A plus C equals, open bracket, A plus B plus C, close bracket, minus B. "
-           "B equals A plus B, plus B plus C, minus, open bracket, A plus B plus C, close bracket. "
-           "That is 13 plus 19 minus 27, which is 5. A plus C equals 27 minus 5, which is 22.",
-    },
-    "steps": {
-        0: "B equals A plus B, plus B plus C, minus, open bracket, A plus B plus C, close bracket. That is 13 plus 19 minus 27, which is 5.",
-        2: "Hmm, but let me check the question again: How many oranges in all in the first and the third bags? "
-           "That equals A plus C, which is 22. But option C is 22, not A.",
+        2: "Try a smaller one: three boxes hold 10 pens. The first two hold 6, and the last two hold 7. "
+           "The third holds 10 minus 6, which is 4. The first holds 10 minus 7, which is 3. "
+           "So the first and third hold 3 plus 4, which is 7.",
     },
 }
 
 OVERRIDES["EXT_G5_WS_B3_029"] = {
     "hints": {
-        0: "Let pencil equal P, and pen equal P plus 10. Total: P plus, open bracket, P plus 10, close bracket, equals 18.",
-        1: "2 P plus 10 equals 18. 2 P equals 8. P equals 4. Cost of 3 pencils equals 3 times 4, which is 12.",
-        2: "Try: pen plus pencil equals 10, and pen is 6 more. P plus, open bracket, P plus 6, close bracket, equals 10. P equals 2. 3 pencils equals 6.",
+        2: "Example: a bat and a ball cost 50 rupees, and the bat costs 30 rupees more than the ball. "
+           "50 minus 30 equals 20, which is two balls. So one ball costs 10 rupees, and the bat costs 40 rupees.",
     },
     "steps": {
         0: "P plus, open bracket, P plus 10, close bracket, equals 18.",
@@ -271,32 +272,14 @@ OVERRIDES["EXT_G5_WS_B6_013"] = {
 
 OVERRIDES["EXT_G5_WS_B6_014"] = {
     "hints": {
-        1: "Try C: Left equals 5 times 8, plus 7, which is 47. Right equals 8 times 8, minus 17, which is 47. Equal!",
-        2: "Similar: For x equals 3, is 2 x plus 1 equals x plus 4 true? Left equals 7. Right equals 7. Yes.",
-    },
-    "steps": {
-        0: "Option A: 8, plus 5 times 8, equals 48. Against 3 times 8, plus 18, equals 42. 48 is not equal to 42.",
-        1: "Option B: 9, minus 4 times 8, equals minus 23. Against 2 times 8, plus 6, equals 22. Minus 23 is not equal to 22.",
-        2: "Option C: 5 times 8, plus 7, equals 47. Against 8 times 8, minus 17, equals 47. 47 equals 47. That works.",
-        3: "Option D: 4 times 8, plus 7, equals 39. Against 21, plus 2 times 8, equals 37. 39 is not equal to 37.",
-    },
-}
-
-OVERRIDES["EXT_G5_WS_B6_015"] = {
-    "hints": {
-        1: "Shortcut: Notice that 4 m plus 5 equals 2 times 2 m, plus 5. From 2 m plus 1 equals 8, we get 2 m equals 7. "
-           "So 4 m equals 14, and 4 m plus 5 equals 19.",
-        2: "Similar: If 3 x plus 2 equals 11, find 6 x minus 1. 3 x equals 9. 6 x equals 18. 6 x minus 1 equals 17.",
+        1: "Try the first one: left side, 8 plus 5 times 8, equals 48. Right side, 3 times 8, plus 18, equals 42. "
+           "48 and 42 are different, so it is not true for x equals 8. Test the others the same way.",
+        2: "Similar: for x equals 3, is 2 x plus 1 equals x plus 4 true? Left side: 2 times 3, plus 1, equals 7. "
+           "Right side: 3 plus 4 equals 7. Both sides are 7, so yes.",
     },
 }
 
 OVERRIDES["EXT_G5_WS_B6_016"] = {
-    "hints": {
-        1: "Left: 2 times, open bracket, 3 d plus 4, close bracket, equals 6 d plus 8. "
-           "Right: 4 times, open bracket, 5 minus 2 d, close bracket, plus 2, equals 20 minus 8 d plus 2, which is 22 minus 8 d.",
-        2: "Similar: 3 times, open bracket, 2 x plus 1, close bracket, equals 2 times, open bracket, 4 minus x, close bracket, plus 5. "
-           "So 6 x plus 3 equals 13 minus 2 x. So 8 x equals 10. So x equals 1.25.",
-    },
     "steps": {
         2: "6 d plus 8 equals 22 minus 8 d. So 14 d equals 14. So d equals 1.",
     },

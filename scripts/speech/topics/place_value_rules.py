@@ -67,6 +67,33 @@ RULES = [
      r"The formula for the sum of the first \1 natural numbers is n, times n plus 1, divided by 2. That is \2 times \3, divided by 2."),
     (r"= N", r"That equals \1."),
 
+    # ── wordings from the content pass ──
+    # No comma is put straight after a number that may be printed with grouping commas (4,270).
+    (r"For example, in N the digit N is in the ([a-z-]+) place, so its place value is N × N = N\.",
+     r"For example, in \1 the digit \2 is in the \3 place. So its place value is \4 times \5, which is \6."),
+    (r"Count them all: N − N \+ 1\. Then remember that even and odd numbers take turns\.",
+     r"Count them all: \1 minus \2, plus 1. Then remember that even and odd numbers take turns."),
+    (r"To count from N to N, subtract and then add 1, so that both ends are counted: N − N \+ 1\.",
+     r"To count from \1 to \2, subtract and then add 1, so that both ends are counted. That is \3 minus \4, plus 1."),
+    (r"Try a smaller one: from N to N there are N − N \+ 1 = N numbers\. Count them to check: ([\d, ]+)\.",
+     r"Try a smaller one. From \1 to \2 there are \3 minus \4, plus 1, which is \5 numbers. Count them to check: \6."),
+    (r"Count from N to N, counting both ends: N − N \+ 1 = N\.",
+     r"Count from \1 to \2, counting both ends. \3 minus \4, plus 1, equals \5."),
+    (r"Count them all, counting both ends: N − N \+ 1 = N\.",
+     r"Count them all, counting both ends. \1 minus \2, plus 1, equals \3."),
+    (r"Even and odd numbers alternate\. The list starts with an even number and ends with an odd number, so exactly half are (even|odd): N ÷ N = N\.",
+     r"Even and odd numbers alternate. The list starts with an even number and ends with an odd number, so exactly half are \1. \2 divided by \3 equals \4."),
+    (r"Pages N to N: N pages with N (digits?) each, so N × N = N digits\.",
+     r"Pages \1 to \2: that is \3 pages with \4 \5 each. So \6 times \7 equals \8 digits."),
+    (r"Add them up: N \+ N \+ N = N\. So N digits are used\.",
+     r"Add them up: \1 plus \2 plus \3 equals \4. So \5 digits are used."),
+    (r"Add them up: N \+ N = N\. So N digits are used\.",
+     r"Add them up: \1 plus \2 equals \3. So \4 digits are used."),
+    (r"To find how many times N the number N is, divide: N ÷ N = N\.",
+     r"To find how many times \1 the number \2 is, divide. \3 divided by \4 equals \5."),
+    (r"So the place value of the (units|tens) N is N times \(one tenth of\) the place value of the (units|tens) N\.",
+     r"So the place value of the \1 \2 is \3 times, or one tenth of, the place value of the \4 \5."),
+
     # ── options ──
     (r"-N", r"minus \1"),
 ]

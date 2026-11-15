@@ -36,18 +36,54 @@ E["EXT_G5_WS_B5_014"] = entry(steps=[
 ])
 E["EXT_G5_WS_B5_015"] = entry(steps=[
     nl(1365, 1445, 5, points=[(1369, "37 × 37"), (1400, "1400"), (1444, "38 × 38")], note="1400 lies between two square numbers"),
-    nl(1365, 1445, 5, points=[(1400, "1400"), (1444, "38 × 38")], hops=[(1400, 1444, "+ 44")], note="Step up to 1444: 1444 − 1400 = 44"),
-    None,
+    nl(1365, 1445, 5, points=[(1400, "1400"), (1444, "38 × 38")], note="The first square number after 1400 is 1444", hl=["p1"]),
+    nl(1365, 1445, 5, points=[(1400, "1400"), (1444, "38 × 38")], hops=[(1400, 1444, "+ 44")], note="1444 − 1400 = 44"),
 ])
 E["EXT_G5_WS_B5_017"] = entry(steps=[
     ftree(588, "588 = 2 × 2 × 3 × 7 × 7", ["primes"]),
-    ftree(588, "The 2s pair up and the 7s pair up. The 3 has no partner."),
+    ftree(588, "The 2s pair up and the 7s pair up. The 3 is on its own."),
     ftree(196, "588 ÷ 3 = 196 = 14 × 14"),
+    None,
 ])
 E["EXT_G5_WS_B5_019"] = entry(steps=[
-    ftree(360, "3 × 4 × 5 × 6 = 360 = 2 × 2 × 2 × 3 × 3 × 5", ["primes"]),
-    ftree(360, "One 2 and the 5 have no partner"),
-    ftree(360, "Give each a partner: multiply by 2 × 5 = 10"),
+    None,
+    ftree(360, "360 = 2 × 2 × 2 × 3 × 3 × 5. One 2 and the 5 have no partner.", ["primes"]),
+    ftree(360, "Give each a partner: 360 × 10 = 3600"),
+    rect("60", "60", "60 × 60 = 3600", square=True, note="3600 is a square number"),
+])
+# 1 + 3 + 5 builds a square, one L-shaped layer at a time.
+E["EXT_G5_WS_B5_023"] = entry(steps=[
+    None,
+    None,
+    {"kind": "grid", "rows": 3, "cols": 3, "shaded": [[0, 2], [1, 2], [2, 0], [2, 1], [2, 2]],
+     "note": "1 + 3 + 5 = 9: each new layer of odd squares makes a 3 × 3 square"},
+    None,
+])
+# Next multiple of 12 after 555.
+E["EXT_G5_WS_B4_013"] = entry(
+    figure=nl(550, 566, 1, points=[(555, "555")], note="How far is it to the next multiple of 12?"),
+    steps=[
+        nl(550, 566, 1, points=[(552, "12 × 46"), (555, "555")], hops=[(552, 555, "+ 3")], note="555 is 3 more than 552 = 12 × 46"),
+        nl(550, 566, 1, points=[(552, "12 × 46"), (555, "555"), (564, "next")], note="Next multiple: 552 + 12 = 564", hl=["p2"]),
+        nl(550, 566, 1, points=[(555, "555"), (564, "next")], hops=[(555, 564, "+ 9")], note="564 − 555 = 9"),
+    ],
+)
+# Even numbers from the digits 2, 3, 5, 7.
+E["EXT_G5_WS_B4_020"] = entry(steps=[
+    None,
+    table([["?", "?", "?", "2"]], "2 is the only even digit, so it goes in the ones place", headers=["Th", "H", "T", "U"]),
+    table([["3", "5", "7", "2"], ["3", "7", "5", "2"], ["5", "3", "7", "2"], ["5", "7", "3", "2"],
+           ["7", "3", "5", "2"], ["7", "5", "3", "2"]], "3, 5 and 7 fill the other three places", headers=["Th", "H", "T", "U"]),
+    table([["3", "5", "7", "2"], ["3", "7", "5", "2"], ["5", "3", "7", "2"], ["5", "7", "3", "2"],
+           ["7", "3", "5", "2"], ["7", "5", "3", "2"]], "6 even numbers", headers=["Th", "H", "T", "U"]),
+])
+# Two-digit numbers whose digits are both prime.
+_pg = [["22", "23", "25", "27"], ["32", "33", "35", "37"], ["52", "53", "55", "57"], ["72", "73", "75", "77"]]
+E["EXT_G5_WS_B4_021"] = entry(steps=[
+    None,
+    None,
+    table(_pg, "Only 23, 37, 53 and 73 are prime"),
+    table(_pg, "23, 37, 53, 73: that is 4 numbers"),
 ])
 E["EXT_G5_WS_B5_022"] = entry(steps=[
     nl(16, 36, 1, points=[(16, "4 × 4"), (36, "6 × 6")], note="The two ends are 16 and 36"),
@@ -61,17 +97,21 @@ _pf = lambda rows, note, hl=None: table(rows, note, hl, headers=["Number", "Prim
 E["EXT_G5_WS_B6_001"] = entry(steps=[
     ftree(328, "328 = 2 × 2 × 2 × 41", ["primes"]),
     ftree(424, "424 = 2 × 2 × 2 × 53", ["primes"]),
-    _pf([["328", "2 × 2 × 2 × 41"], ["424", "2 × 2 × 2 × 53"]], "Shared factors: 2 × 2 × 2 = 8"),
+    _pf([["328", "2 × 2 × 2 × 41"], ["424", "2 × 2 × 2 × 53"]], "41 and 53 differ, so they share only the three 2s"),
+    _pf([["328", "2 × 2 × 2 × 41"], ["424", "2 × 2 × 2 × 53"]], "HCF = 2 × 2 × 2 = 8"),
 ])
 _a = [["27", "3 × 3 × 3"], ["72", "2 × 2 × 2 × 3 × 3"]]
 E["EXT_G5_WS_B6_003"] = entry(steps=[
     _pf(_a, "Break both numbers into prime factors"),
     _pf(_a, "HCF = the shared factors: 3 × 3 = 9"),
-    _pf(_a, "LCM = most of each prime: 8 × 27 = 216"),
+    _pf(_a, "LCM needs three 2s and three 3s: 216"),
     _pf(_a, "HCF + LCM = 9 + 216 = 225"),
 ])
+_d4 = [["45", "3 × 3 × 5"], ["54", "2 × 3 × 3 × 3"]]
 E["EXT_G5_WS_B6_004"] = entry(steps=[
-    _pf([["45", "3 × 3 × 5"], ["54", "2 × 3 × 3 × 3"]], "HCF = 3 × 3 = 9. LCM = 270"),
+    _pf(_d4, "Break both numbers into prime factors"),
+    _pf(_d4, "They share two 3s: HCF = 3 × 3 = 9"),
+    _pf(_d4, "LCM = 2 × 3 × 3 × 3 × 5 = 270"),
     None,
     None,
 ])
@@ -88,6 +128,7 @@ E["EXT_G5_WS_B6_007"] = entry(steps=[
     _pf(_c, "HCF = shared factors: 2 × 2 × 3 = 12"),
 ])
 E["EXT_G5_WS_B6_008"] = entry(steps=[
+    None,
     _pf([["8", "2 × 2 × 2"], ["10", "2 × 5"], ["12", "2 × 2 × 3"]], "LCM = 2 × 2 × 2 × 3 × 5 = 120"),
     None,
     None,
@@ -105,8 +146,9 @@ E["EXT_G5_WS_B6_013"] = entry(
 E["EXT_G5_WS_B6_014"] = entry(steps=[
     None,
     None,
-    balance("5 × 8 + 7", "8 × 8 − 17", "Both sides come to 47, so this one balances"),
     None,
+    None,
+    balance("40 + 7", "64 − 17", "Both sides come to 47, so this one balances"),
 ])
 E["EXT_G5_WS_B6_015"] = entry(
     figure=balance("2m + 1", "8", "Use this to find 4m + 5"),
@@ -160,8 +202,8 @@ E["EXT_G5_WS_B6_020"] = entry(
 E["EXT_G5_WS_B7_007"] = entry(
     figure=balance("(b − 8)/42", "5/7", "What must b − 8 be?"),
     steps=[
-        balance("7 × (b − 8)", "210", "Cross-multiply: 5 × 42 = 210"),
-        balance("b − 8", "30", "Share both sides into 7"),
-        balance("b", "38", "Add 8 to both sides"),
+        balance("(b − 8)/42", "30/42", "5/7 = 30/42, because 7 × 6 = 42 and 5 × 6 = 30"),
+        balance("b − 8", "30", "Same bottom number, so the tops are equal"),
+        balance("b", "38", "Add 8 to both sides: 30 + 8 = 38"),
     ],
 )

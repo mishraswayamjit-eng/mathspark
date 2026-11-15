@@ -110,8 +110,10 @@ def _clause(sent):
         if i == 1 and not out:
             out = "That equals " + said
         elif i == 1:
-            verb = re.search(r"(?:^|[ ,])(?:is|are) [^a-z]*$", parts[0]) is not None
-            if re.match(r"(?:For|Per year|At) ", parts[0]) and not first_ops:
+            verb = re.search(r"(?:^|[ ,])(?:is|are|earns?|gives?|costs?) [^a-z]*$", parts[0]) is not None
+            if re.search(r"\bwhich is [^a-z]*$", parts[0]):
+                out += ", that is " + said  # avoid "which is ..., which is ..."
+            elif re.match(r"(?:For|Per year|At) ", parts[0]) and not first_ops:
                 out += ", that is " + said  # "For 5 years = ..." is a label, not a quantity
             elif not re.search(r"[A-Za-z]", parts[0]):
                 out += (", equals " if hard else " equals ") + said  # bare working: "a ÷ b × c = d"
@@ -127,7 +129,12 @@ def _clause(sent):
 
 def _sentence(sent):
     """An arrow joins two clauses: 'so'."""
-    return ", so ".join(_clause(c.strip()) for c in sent.split("→"))
+    out = []
+    for arrow_part in sent.split("→"):
+        # ", and", ", so", ", then" start a fresh piece of working inside the sentence.
+        pieces = re.split(r"(, (?:and|so|then|which gives) )", arrow_part.strip())
+        out.append("".join(p if i % 2 else _clause(p) for i, p in enumerate(pieces)))
+    return ", so ".join(out)
 
 
 def _tidy(s, option):
@@ -139,9 +146,6 @@ def _tidy(s, option):
     s = re.sub(r"\.(\s*\.)+", ".", s)
     s = re.sub(r"^[,\s]+", "", s)
     s = re.sub(r"(^|[.?!]\s+)([a-z])", lambda m: m.group(1) + m.group(2).upper(), s)
-    # The checker reads "32,500," (a grouped number with a comma straight after it) as two
-    # numbers, so such a number is written without its grouping commas. It is said the same.
-    s = re.sub(r"(?<![\d,])\d{1,3}(?:,\d{2,3})+(?=,(?!\d))", lambda m: m.group(0).replace(",", ""), s)
     if option:
         s = s.rstrip(".").strip()
         s = s[:1] + re.sub(r"\b(Profit|Loss)\b", lambda m: m.group(1).lower(), s[1:])
@@ -157,7 +161,7 @@ def say(text, option=False, si=False):
         return ""
     if s in EXACT:
         return EXACT[s]
-    s = s.replace("✓", "").replace("✗", "").replace("—", ", ")
+    s = s.replace("✓", "").replace("✗", "").replace("—", ", ").replace('"', "")
     for printed, spoken in FORMULAS:
         s = s.replace(printed, spoken)
     s = re.sub(r"\s*÷ \((%s) × (%s)\)" % (NUM, NUM), r", divided by, open bracket, \1 times \2, close bracket", s)

@@ -8,9 +8,10 @@ HAND = {
             "A over B, divided by C over D, equals A over B, times D over C. If X times A equals Y, then A equals Y divided by X.",
         ],
         "steps": [
-            "Bracket: 3 over 4, divided by 9 over 4, equals 3 over 4, times 4 over 9, which is 1 over 3.",
-            "1 over 3, times A, equals 9 over 4. So A equals 9 over 4, divided by 1 over 3.",
-            "A equals 9 over 4, times 3, which is 27 over 4.",
+            "Dividing by 9 over 4 is the same as multiplying by 4 over 9. So the bracket is 3 over 4, times 4 over 9, which equals 12 over 36. That simplifies to 1 over 3.",
+            "So 1 over 3 of A is 9 over 4.",
+            "A is 3 times as much: 3 times 9 over 4 equals 27 over 4.",
+            "So the fraction in place of A is 27 over 4.",
         ],
     },
     "EXT_G5_FP_2024_021": {

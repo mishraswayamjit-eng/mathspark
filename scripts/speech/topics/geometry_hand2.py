@@ -53,10 +53,12 @@ HAND["EXT_G5_FP_2019_024"] = E(
     ["E equals 9, and S equals 9", "E equals 8, and S equals 9", "E equals 16, and S equals 12", "E equals 12, and S equals 10"],
     ["Triangle perimeter equals 3 times E. Square perimeter equals 4 times S. Work both out for each option.",
      "Equilateral triangle: 3 times side. Square: 4 times side."],
-    ["Option A: 3 times 9 is 27, and 4 times 9 is 36. Not equal.",
-     "Option B: 24 and 36. Not equal.",
-     "Option C: 3 times 16 is 48, and 4 times 12 is 48. They are equal.",
-     "Option D: 36 and 40. Not equal. Answer: E equals 16, and S equals 12."],
+    ["Perimeter of an equilateral triangle equals 3 times side, and perimeter of a square equals 4 times side. Test each pair.",
+     "E equals 9, S equals 9: 3 times 9 is 27, but 4 times 9 is 36. "
+     "E equals 8, S equals 9: 3 times 8 is 24, but 4 times 9 is 36. Not equal.",
+     "E equals 12, S equals 10: 3 times 12 is 36, but 4 times 10 is 40. Not equal.",
+     "E equals 16, S equals 12: 3 times 16 is 48, and 4 times 12 is 48. Equal.",
+     "So the perimeters are equal when E equals 16, and S equals 12."],
 )
 
 HAND["EXT_G5_FP_2019_028"] = E(

@@ -60,7 +60,8 @@ ENTRIES[P + "030"] = entry(
     journey(["Start", "25 s later"], [("600 m", "25 s")], note="At the same speed, how far in 1 hour?"),
     [
         journey(["Start", "25 s later"], [("600 m", "24 m/s")], hl=["l0"], note="600 ÷ 25 = 24 metres every second"),
-        journey(["Start", "1 hour later"], [("86.4 km", "3600 s")], note="24 × 3600 = 86400 m"),
+        journey(["Start", "1 hour later"], [("86400 m", "3600 s")], hl=["l0"], note="24 × 3600 = 86400 metres"),
+        journey(["Start", "1 hour later"], [("86.4 km", "1 hour")], note="86400 ÷ 1000 = 86.4 km"),
         None,
     ])
 

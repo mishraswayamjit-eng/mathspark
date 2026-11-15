@@ -36,10 +36,10 @@ E["EXT_G5_WS_01_006"] = entry(steps=[
 ])
 
 E["EXT_G5_WS_01_007"] = entry(steps=[
-    pc("134639", "30000 and 30: 1000 times", ["d1", "d4"]),
-    pc("752339", "300 and 30: only 10 times", ["d3", "d4"]),
-    pc("863135", "3000 and 30: 100 times", ["d2", "d4"]),
-    pc("863135", "863135 is the one we want", ["d2", "d4"]),
+    None,
+    pc("134639", "30000 and 30: 1000 times, so not a match", ["d1", "d4"]),
+    pc("307638", "300000 and 30: 10000 times, so not a match", ["d0", "d4"]),
+    pc("863135", "3000 and 30: 3000 ÷ 30 = 100 times", ["d2", "d4"]),
 ])
 
 _r = lambda cells, note: table([cells], note, headers=PV)
@@ -66,8 +66,8 @@ E["EXT_G5_WS_01_010"] = entry(
     figure=_r(["6", "✻", "8", "✻", "4"], "Both ✻ are the same digit"),
     steps=[
         _r(["6", "✻", "8", "✻", "4"], "The ✻s are in the thousands and tens places"),
-        _r(["6", "d", "8", "d", "4"], "d × 1000 − d × 10 = 990 × d"),
-        None,
+        _r(["6", "d", "8", "d", "4"], "The difference is always the digit times 990"),
+        _r(["6", "9", "8", "9", "4"], "990 × 9 = 8910, so the digit 9 gives 8910"),
         None,
     ],
 )
@@ -102,22 +102,38 @@ E["EXT_G5_WS_01_015"] = entry(
     figure=table([["not 0", "?", "?", "?"]], "Digits 7, 0, 3, 9, each used once", headers=TH),
     steps=[
         table([["3 choices", "?", "?", "?"]], "7, 3 or 9 can go first", headers=TH),
-        table([["3 choices", "3 choices", "2 choices", "1 choice"]], "The other 3 digits fill the rest", headers=TH),
-        table([["3", "3", "2", "1"]], "3 × 3 × 2 × 1 = 18 numbers", headers=TH),
+        table([["3 choices", "3 choices", "2 choices", "1 choice"]], "Other three places: 3 × 2 × 1 = 6 ways", headers=TH),
+        table([["3 choices", "3 choices", "2 choices", "1 choice"]], "3 × 6 = 18 numbers", headers=TH),
     ],
 )
 E["EXT_G5_WS_01_016"] = entry(
     figure=table([["?", "?", "?", "?"]], "Digits 2, 5, 0, 8 once each; number below 5000", headers=TH),
     steps=[
         table([["2", "?", "?", "?"]], "Only 2 can go in the thousands place", headers=TH),
-        table([["2", "3 choices", "2 choices", "1 choice"]], "5, 0 and 8 fill the other 3 places", headers=TH),
-        table([["1", "3", "2", "1"]], "1 × 3 × 2 × 1 = 6 numbers", headers=TH),
+        table([["2", "3 choices", "2 choices", "1 choice"]], "Other three places: 3 × 2 × 1 = 6 ways", headers=TH),
+        table([["2", "0", "5", "8"], ["2", "0", "8", "5"], ["2", "5", "0", "8"], ["2", "5", "8", "0"],
+               ["2", "8", "0", "5"], ["2", "8", "5", "0"]], "All 6 numbers below 5000", headers=TH),
     ],
 )
 
-# Steps for this one are generic, so only the before-figure is given.
 E["EXT_G5_WS_B2_011"] = entry(
     figure=pc("469571", "Swap the 5 and the 6. Which places do they move between?", ["d1", "d3"]),
+    steps=[
+        pc("469571", "6 is in the ten-thousands place, 5 in the hundreds place", ["d1", "d3"]),
+        pc("459671", "After the swap the number is 459671", ["d1", "d3"]),
+        pc("459671", "Ten-thousands digit fell from 6 to 5, so it is smaller", ["d1"]),
+        pc("459671", "469571 − 459671 = 9900 less", ["d1", "d3"]),
+    ],
+)
+
+# The 23rd even number before 105.
+E["EXT_G5_WS_01_018"] = entry(
+    figure=nl(96, 106, 1, points=[(105, "105")], note="Count the even numbers going back from 105"),
+    steps=[
+        nl(96, 106, 1, points=[(105, "105"), (104, "1st")], note="105 is odd, so the 1st even number before it is 104"),
+        nl(60, 106, 2, points=[(104, "1st")], hops=[(104, 60, "22 steps of 2")], note="From the 1st to the 23rd: 22 × 2 = 44 back"),
+        nl(60, 106, 2, points=[(104, "1st"), (60, "23rd")], note="104 − 44 = 60", hl=["p1"]),
+    ],
 )
 
 # Column sums with letters.

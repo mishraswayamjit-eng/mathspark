@@ -58,8 +58,14 @@ def say(text, sentence=True):
     s = re.sub(r"(?:½|\bhalf)\s*×\s*", "half of ", s)
     s = s.replace("½", "half")
     s = s.replace("π", " pi ")
-    # Algebra: 7x is "7 x".
-    s = re.sub(r"(\d)([a-z])\b", r"\1 \2", s)
+    # Algebra: 7x is "7 x". (Not "3s", as in "count up in 3s".)
+    s = re.sub(r"(\d)([xyz])\b", r"\1 \2", s)
+    # A product inside a longer sum gets a breath after it: "15 × 10 + 15 × 7", "2 × 7 + 15".
+    s = re.sub(r"(\d\s*×\s*\d+(?:\.\d+)?)\s*([+−])", r"\1, \2", s)
+    # ... and another before the result: "2 × 7, + 15 = 29" is "2 times 7, plus 15, equals 29".
+    s = re.sub(r"(, [+−]\s*\d+(?:\.\d+)?)\s*=", r"\1, =", s)
+    # A worked example is announced, then read as its own sentences.
+    s = re.sub(r"^(Try another one): ([a-z])", lambda m: "%s. %s" % (m.group(1), m.group(2).upper()), s)
     # Signed numbers: "move −8", "becomes +8", an option "-1".
     s = re.sub(r"(^|(?<=[a-z] ))[−-](\d)", r"\1minus \2", s)
     s = re.sub(r"(?<=[a-z] )\+(\d)", r"plus \1", s)
@@ -67,14 +73,18 @@ def say(text, sentence=True):
     s = re.sub(r"×\s*\(([^()]*)\)", r"times, \1,", s)
     s = re.sub(r"(\d+)\s*/\s*(\d+)", r"\1 over \2", s)
     # A chain of equals signs: the first is "equals", the rest are ", which is".
+    # A new sentence or clause (after . ? ! : or a comma) starts a new chain.
     first = [not chained]
 
     def eq(m):
+        if m.group(1):
+            first[0] = True
+            return m.group(1)
         if first[0]:
             first[0] = False
             return " equals "
         return ", which is "
-    s = re.sub(r"\s*=\s*", eq, s)
+    s = re.sub(r"([.?!:,]\s)|\s*=\s*", eq, s)
     s = s.replace("×", " times ").replace("÷", " divided by ").replace("+", " plus ")
     s = re.sub(r"\s*[−–]\s*", " minus ", s)
     s = re.sub(r"\s+", " ", s).strip()
@@ -118,9 +128,10 @@ def narrate(q, counts):
                 spoken = "%s %s" % (spoken, maths)
         return spoken
 
+    # A step's maths line is read only when the step text does not already state the working.
     steps = []
     for i, t in enumerate(src["steps"]):
-        latex = own[i].get("latex") if (solve and i < len(own)) else None
+        latex = own[i].get("latex") if (solve and i < len(own) and "=" not in t) else None
         steps.append(line(t, latex=latex))
     return {
         "q": line(src["q"]),

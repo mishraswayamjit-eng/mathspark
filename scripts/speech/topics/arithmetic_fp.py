@@ -22,7 +22,6 @@ OVERRIDES = {
     },
     "EXT_G5_FP_2017_010": {
         "q": "Which set of signs of operations should be replaced in the boxes so that the equation is true: 10, blank, 6, blank, 4, blank, 6, equals 28?",
-        "steps": {1: "Option B: 10 plus 6, minus 4 divided by 6, is not 28. " + _NOT},
     },
     "EXT_G5_FP_2017_015": {
         "hints": {1: "Bracket order: round brackets, then curly brackets, then square brackets. Then BODMAS."},
@@ -71,15 +70,8 @@ OVERRIDES = {
         "hints": {1: "BODMAS: B, then multiplication before addition and subtraction."},
         "steps": {4: "The greatest is, open bracket, 10 plus 3, close bracket, times 3."},
     },
-    "EXT_G5_FP_2021_030": {
-        "steps": {
-            0: "87 times 156 equals 13572. That is 87 times 150 equals 13050, and 87 times 6 equals 522.",
-            2: "So 13601 divided by 87 equals 156, remainder 29. Subtract 29.",
-        },
-    },
     "EXT_G5_FP_2022_017": {
         "q": "Solve: 5 over 6 of 72, minus 2 times, open square bracket, 2 over 5 of 40, plus 1 over 9 of 27, close square bracket.",
-        "steps": {1: "2 over 5 of 40 equals 16, and 1 over 9 of 27 equals 3. So the bracket equals 16 plus 3, which is 19."},
     },
     "EXT_G5_FP_2022_021": {
         "hints": {0: "Without brackets the answer is a big negative number. A bracket around a subtraction can make the divisor smaller. Try brackets around 21 minus 9."},
@@ -114,10 +106,7 @@ OVERRIDES = {
     "EXT_G5_FP_2023_015": {
         "q": "Simplify using BODMAS rule: open bracket, 9, plus 3 over 5 of 25, minus 7 over 13 of 39, close bracket, divided by 4 over 3.",
         "hints": {0: "'Of' means multiply. Do both 'of' parts first inside the bracket, then add and subtract, then divide by 4 over 3, which means multiply by 3 over 4."},
-        "steps": {
-            0: "3 over 5 of 25 equals 15, and 7 over 13 of 39 equals 21.",
-            2: "3 divided by 4 over 3, equals 3 times 3 over 4, that is 9 over 4, which is 2.25.",
-        },
+        "steps": {2: "Dividing by 4 over 3 is the same as multiplying by 3 over 4: 3 times 3 over 4 equals 9 over 4."},
     },
     "EXT_G5_FP_2023_018": {
         "q": "What fraction of a day is 216 minutes, as a decimal?",
@@ -165,8 +154,5 @@ OVERRIDES = {
             2: "Largest possible equals 997 times 996, which is 993012, so 994312 is too big.",
             3: "Only 353362 is left, and it works. It equals 547 times 646.",
         },
-    },
-    "EXT_G5_FP_2025_035": {
-        "steps": {0: "Option B: 192 divided by 36, minus 4 plus 13, equals 5.33 and so on, minus 4 plus 13. " + _NOT},
     },
 }

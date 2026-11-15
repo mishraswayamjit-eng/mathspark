@@ -63,8 +63,9 @@ HAND = {
             "",
         ],
         "steps": [
-            "The pay per day is 504 divided by 7, which is 72 rupees.",
-            "Days for 792 rupees: 792 divided by 72, which is 11 days.",
+            "Find the pay for one day: 504 divided by 7 is 72. So he earns 72 rupees a day.",
+            "Now see how many days, at 72 rupees a day, make 792 rupees: 792 divided by 72 is 11.",
+            "So, he should work 11 days.",
         ],
     },
     "EXT_G5_FP_2017_031": {
@@ -100,8 +101,9 @@ HAND = {
             "",
         ],
         "steps": [
-            "The gain per dozen is 45 divided by 15, which is 3 rupees.",
-            "Dozens for 84 rupees: 84 divided by 3, which is 28.",
+            "Find the gain on one dozen: 45 divided by 15 is 3. So he gains 3 rupees on each dozen.",
+            "Now see how many dozens give a gain of 84 rupees: 84 divided by 3 is 28.",
+            "So, he should sell 28 dozens.",
         ],
     },
     "EXT_G5_FP_2019_009": {

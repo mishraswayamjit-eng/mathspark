@@ -22,6 +22,7 @@ ENTRIES[P + "004"] = entry(
         rect(length="22 m", breadth="16 m", inside="Perimeter 76 m", hl=["border"]),
         rect(square=True, length="19 m", inside="Perimeter 76 m", hl=["border"], note="76 ÷ 4 = 19 m for each side"),
         rect(square=True, length="19 m", breadth="19 m", inside="19 × 19 = 361", hl=["fill"]),
+        None,
     ])
 
 # 017 right-angled triangle, area = 18 × base
@@ -127,6 +128,7 @@ ENTRIES[P + "032"] = entry(
         bars([bar([seg(8.8, "sold for", "a"), seg(1.2, "12% = Rs.60", "b")], "Cost price", "Rs.500")], hl=["b0"], note="12% is 60, so 1% is 5"),
         bars([bar([seg(5, "Rs.500", "a"), seg(1.2, "profit Rs.120", "c")], "Sold at", "Rs.620")], hl=["b0s1"]),
         bars([bar([seg(5, "Rs.500", "a"), seg(1.2, "profit Rs.120", "c")], "Sold at", "Rs.620")], note="120 out of 500 is 24 out of 100"),
+        None,
     ])
 
 # 033 84 minutes as a percent of 7 hours

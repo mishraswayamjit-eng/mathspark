@@ -68,9 +68,10 @@ HAND = {
             "One third times one quarter equals 1 over 12.",
         ],
         "steps": [
-            "One third of one quarter is 1 over 12 of the number, and that equals 15. So the number is 15 times 12, which equals 180.",
-            "3 over 10 of 180 is 54.",
-            "54 squared is 54 times 54, which equals 2916.",
+            "One third of one fourth is one third times one quarter, which equals 1 over 12. So 1 over 12 of the number is 15.",
+            "The number is 12 times 15, which equals 180.",
+            "Three tenths, 3 over 10, of 180: 180 divided by 10 is 18, and 3 times 18 is 54.",
+            "The square of 54 is 54 times 54, which equals 2916.",
         ],
     },
     "EXT_G5_FP_2021_036": {

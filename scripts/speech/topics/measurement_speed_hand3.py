@@ -17,9 +17,9 @@ HAND["EXT_G5_FP_2023_003"] = {
     ],
     "steps": [
         "First 100 metres: 100 divided by 4 equals 25 seconds. Remaining 300 metres: 300 divided by 5 equals 60 seconds.",
-        "One round equals 25 plus 60, which is 85 seconds. Five rounds equals 85 times 5, which is 425 seconds.",
-        "425 seconds equals 7 minutes 5 seconds, because 7 times 60 equals 420.",
-        "That is not among options A to C. So, none of these.",
+        "One round takes 25 plus 60, which equals 85 seconds. So five rounds take 85 times 5, which equals 425 seconds.",
+        "425 seconds is 7 minutes 5 seconds, because 7 times 60 equals 420, and 5 seconds are left.",
+        "7 minutes 5 seconds is not one of the choices given, so the answer is: none of these.",
     ],
 }
 
@@ -85,9 +85,10 @@ HAND["EXT_G5_FP_2025_027"] = {
         "",
     ],
     "steps": [
-        "24 metres per second equals 24 times 18, divided by 5, which is 86.4 kilometres per hour.",
-        "Time equals 432 divided by 86.4, which is 5 hours.",
-        "5 hours is not among options A to C. So, none of these.",
+        "Make the units match. 24 metres per second, in kilometres per hour, is 24 times 18, divided by 5, "
+        "which equals 86.4 kilometres per hour.",
+        "Time equals distance divided by speed: 432 divided by 86.4 equals 5 hours.",
+        "5 hours is not one of the choices given, so the answer is: none of these.",
     ],
 }
 
@@ -95,11 +96,11 @@ HAND["EXT_G5_WS_B3_021"] = {
     "q": "If Anay can type 126 words in 3 minutes, how many words can he type in half a minute?",
     "options": ["42", "189", "21", "84"],
     "hints": [
-        "Read the question carefully. This tests your understanding of rate problems. "
-        "Identify what information is given, and what you need to find.",
-        "Write down the key formula or relationship for rate problems. "
-        "Think step by step about how to connect the given values to the answer.",
-        "Try a simpler version of the problem first, then apply the same method to the actual numbers.",
+        "First find how many words Anay types in 1 minute. Then think about what half of a minute means.",
+        "In 3 minutes he types 126 words, so in 1 minute he types 126 divided by 3 words. "
+        "Half a minute gives half of that.",
+        "Example: Meera reads 80 pages in 4 hours. In 1 hour, she reads 80 divided by 4, which equals 20 pages. "
+        "So in half an hour, she reads 20 divided by 2, which equals 10 pages.",
     ],
     "steps": [
         "Rate equals 126 divided by 3, which is 42 words per minute.",
@@ -112,13 +113,16 @@ HAND["EXT_G5_WS_B3_036"] = {
          "If the factory has 56 workers in all, how many toys are produced every hour?",
     "options": ["14", "224", "504", "324"],
     "hints": [
-        "Toys per worker, per hour, equals 36 divided by 9, which is 4.",
-        "Total per hour equals 4 times 56 workers, which is 224.",
-        "Try: 10 toys a day, in 5 hours, is 2 per hour. 3 workers make 6 per hour.",
+        "First find how many toys one worker makes in one hour. "
+        "Then think about all 56 workers working during that hour.",
+        "One worker makes 36 toys in 9 hours. That is 36 divided by 9, which equals 4 toys an hour. "
+        "Now multiply by the number of workers.",
+        "Example: one baker makes 30 cakes in 5 hours. That is 30 divided by 5, which equals 6 cakes an hour. "
+        "With 3 bakers, 3 times 6, which is 18 cakes, are made every hour.",
     ],
     "steps": [
-        "Per worker, per hour, equals 36 divided by 9, which is 4.",
-        "Total per hour equals 4 times 56, which is 224.",
-        "The answer is option B.",
+        "One worker makes 36 toys in 9 hours. So in one hour, a worker makes 36 divided by 9, which equals 4 toys.",
+        "There are 56 workers, each making 4 toys an hour. 56 times 4 equals 224.",
+        "So the factory produces 224 toys every hour.",
     ],
 }

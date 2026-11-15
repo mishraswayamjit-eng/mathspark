@@ -132,8 +132,10 @@ ENTRIES[P + "010"] = entry(
 ENTRIES[P + "024"] = entry(
     bars([bar([seg(6.5, "sold for Rs.78", "a"), seg(3.5, "35% loss", "b")], "Cost price")], note="Price for a 15% profit = ?"),
     [
-        bars([bar([seg(6.5, "sold for Rs.78", "a"), seg(3.5, "35% loss", "b")], "Cost price", "Rs.120")], hl=["b0s0"], note="65% is 78, so 1% is 1.2 and the cost is 120"),
-        bars([bar([seg(10, "Rs.120", "a"), seg(1.5, "15%", "c")], "New price", "Rs.138")], hl=["b0s1"], note="115 × 1.2 = 138"),
+        bars([bar([seg(6.5, "Rs.78 = 65%", "a"), seg(3.5, "35% loss", "b")], "Cost price")], hl=["b0s0"], note="100 − 35 = 65, so Rs.78 is 65% of the cost"),
+        bars([bar([seg(6.5, "Rs.78 = 65%", "a"), seg(3.5, "35% loss", "b")], "Cost price", "Rs.120")], hl=["b0"], note="1% is 1.2, so the cost price is 120"),
+        bars([bar([seg(10, "Rs.120", "a"), seg(1.5, "15%", "c")], "New price", "115% of the cost")], hl=["b0s1"], note="115 × 1.2 = 138"),
+        bars([bar([seg(10, "Rs.120", "a"), seg(1.5, "15%", "c")], "New price", "Rs.138")], hl=["b0"]),
     ])
 
 # 026 Rs.280 interest every month at 15% a year
@@ -193,8 +195,9 @@ ENTRIES[P + "032"] = entry(
     nl(157, 197, 1, points=_p32, hops=_h32(["?"] * 4), note="Look at the size of each jump back. 8th term = ?"),
     [
         nl(157, 197, 1, points=_p32, hops=_h32(["−4", "−8", "−12", "−16"])),
-        nl(157, 197, 1, points=_p32, hops=_h32(["−4", "−8", "−12", "−16"]), note="Each jump is 4 bigger than the one before"),
-        tbl([["Jump", "−20", "−24", "−28"], ["Value", "137", "113", "85"]], headers=["Term", "6th", "7th", "8th"], hl=["r1"]),
+        nl(157, 197, 1, points=_p32, hops=_h32(["−4", "−8", "−12", "−16"]), note="Each jump is 4 bigger: next come 20, 24 and 28"),
+        tbl([["Jump", "−20", "−24", "−28"], ["Value", "137", "113", "?"]], headers=["Term", "6th", "7th", "8th"], hl=["r1"]),
+        tbl([["Jump", "−20", "−24", "−28"], ["Value", "137", "113", "85"]], headers=["Term", "6th", "7th", "8th"], hl=["r1"], note="113 − 28 = 85"),
     ])
 
 # 001 hundreds digit of 25 × 97

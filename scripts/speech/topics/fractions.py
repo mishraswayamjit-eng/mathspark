@@ -28,7 +28,7 @@ SLUG = "fractions"
 
 HAND = {}
 LINES = {}  # hand-written lines for source lines that repeat across worksheet questions, keyed by the printed line
-for name in ("fractions_hand1", "fractions_hand2", "fractions_hand3", "fractions_hand4", "fractions_hand5", "fractions_hand6"):
+for name in ("fractions_hand1", "fractions_hand2", "fractions_hand3", "fractions_hand4", "fractions_hand5", "fractions_hand6", "fractions_hand7"):
     try:
         module = __import__(name)
     except ImportError:

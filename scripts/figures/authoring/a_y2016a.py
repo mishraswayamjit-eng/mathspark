@@ -30,7 +30,8 @@ VISUALS["EXT_G5_FP_2016_004"] = V(
     fb((5, 4, "from 12 to 1"), note="The hour hand has gone 4/5 of the way from 12 to 1"),
     [
         fb((5, 0, "12 to 1 = 60 min"), note="The whole stretch from 12 to 1 takes 60 minutes"),
-        fb((5, 4, "4 × 12 = 48 min"), note="Each fifth is 12 minutes, so 4 fifths = 48 minutes"),
+        fb((5, 4, "4/5 of 60 minutes"), note="4 of the 5 equal parts of the hour have passed"),
+        fb((5, 4, "4 × 12 = 48 min"), note="Each fifth is 60 ÷ 5 = 12 minutes, so 4 fifths = 48 minutes"),
         F("clock", hour=12, minute=48, hl=["hour"], note="The time is 12:48"),
     ])
 

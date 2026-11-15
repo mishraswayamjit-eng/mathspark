@@ -127,14 +127,15 @@ HAND = {
     "EXT_G5_FP_2022_009": {
         "q": "How many odd three-digit square numbers are there in all?",
         "hints": [
-            "A square is odd only when the number being squared is odd. List the numbers whose squares have 3 digits: from 10 squared, which is 100, up to 31 squared, which is 961.",
-            "Odd times odd is odd. The 3-digit squares come from n equals 10, to 31.",
-            "",
+            "An odd number times itself is odd, and an even number times itself is even. So count only the odd numbers whose squares have three digits.",
+            "Three-digit squares start at 10 times 10, which is 100, and stop at 31 times 31, which is 961, because 32 times 32, which is 1024, has four digits. Now count the odd numbers from 10 to 31.",
+            "A similar one: odd two-digit squares. Two-digit squares come from the numbers 4 to 9, and the odd numbers there are 5, 7 and 9. So there are 3 of them: 25, 49 and 81.",
         ],
         "steps": [
-            "10 squared is 100, and 31 squared is 961. 32 squared is 1024, which is too big.",
-            "The odd numbers from 11 to 31 are 11, 13, 15, and so on, up to 31.",
-            "The count is 31 minus 11, divided by 2, plus 1. That equals 11, which is not among options A to C. So the answer is None of these.",
+            "A square number is odd only when the number being squared is odd.",
+            "Three-digit squares run from 10 times 10, which is 100, to 31 times 31, which is 961, since 32 times 32, which is 1024, is too big.",
+            "The odd numbers from 10 to 31 are 11, 13, 15, 17, 19, 21, 23, 25, 27, 29 and 31. That is 11 numbers, so there are 11 odd three-digit squares.",
+            "11 is not one of the numbers offered: 10, 12 or 13. So the answer is None of these.",
         ],
     },
     "EXT_G5_FP_2022_025": {

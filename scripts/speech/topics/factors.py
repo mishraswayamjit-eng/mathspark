@@ -50,7 +50,8 @@ def line(text, hand=None):
 def step_line(q, i, text, hand=None):
     """A step; a generated 'Solve' step also reads the maths line printed under it."""
     own = q.get("stepByStep") or []
-    if hand is None and i < len(own) and own[i].get("latex") and not q["id"].startswith("EXT_"):
+    if (hand is None and i < len(own) and own[i].get("latex") and not q["id"].startswith("EXT_")
+            and R.family_line(text) is None):
         words = R.latex_words(own[i]["latex"])
         if words:
             counts["family"] += 1

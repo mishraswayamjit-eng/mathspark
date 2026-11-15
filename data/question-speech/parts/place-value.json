@@ -80,9 +80,9 @@
    "10000"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The thousands place has a value of 1000.",
-   "Multiply 1 by 1000."
+   "A digit's place value is the digit multiplied by what its place is worth.",
+   "The digit 1 sits in the thousands place, so it stands for 1 thousand. How do you write 1 thousand as a number?",
+   "For example, in 365 the digit 6 is in the tens place. So its place value is 6 times 10, which is 60."
   ],
   "steps": [
    "The digit 1 is in the thousands place.",
@@ -206,9 +206,9 @@
    "11"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The tens place has a value of 10.",
-   "Multiply 1 by 10."
+   "A digit's place value is the digit multiplied by what its place is worth.",
+   "The digit 1 sits in the tens place, so it stands for 1 ten. How do you write 1 ten as a number?",
+   "For example, in 4,270 the digit 2 is in the hundreds place. So its place value is 2 times 100, which is 200."
   ],
   "steps": [
    "The digit 1 is in the tens place.",
@@ -977,14 +977,15 @@
    "None of these"
   ],
   "hints": [
-   "A square is odd only when the number being squared is odd. List the numbers whose squares have 3 digits: from 10 squared, which is 100, up to 31 squared, which is 961.",
-   "Odd times odd is odd. The 3-digit squares come from n equals 10, to 31.",
-   ""
+   "An odd number times itself is odd, and an even number times itself is even. So count only the odd numbers whose squares have three digits.",
+   "Three-digit squares start at 10 times 10, which is 100, and stop at 31 times 31, which is 961, because 32 times 32, which is 1024, has four digits. Now count the odd numbers from 10 to 31.",
+   "A similar one: odd two-digit squares. Two-digit squares come from the numbers 4 to 9, and the odd numbers there are 5, 7 and 9. So there are 3 of them: 25, 49 and 81."
   ],
   "steps": [
-   "10 squared is 100, and 31 squared is 961. 32 squared is 1024, which is too big.",
-   "The odd numbers from 11 to 31 are 11, 13, 15, and so on, up to 31.",
-   "The count is 31 minus 11, divided by 2, plus 1. That equals 11, which is not among options A to C. So the answer is None of these."
+   "A square number is odd only when the number being squared is odd.",
+   "Three-digit squares run from 10 times 10, which is 100, to 31 times 31, which is 961, since 32 times 32, which is 1024, is too big.",
+   "The odd numbers from 10 to 31 are 11, 13, 15, 17, 19, 21, 23, 25, 27, 29 and 31. That is 11 numbers, so there are 11 odd three-digit squares.",
+   "11 is not one of the numbers offered: 10, 12 or 13. So the answer is None of these."
   ]
  },
  "EXT_G5_FP_2022_025": {
@@ -1244,9 +1245,9 @@
    "None of these"
   ],
   "hints": [
-   "Think about what happens when you put each digit in different places: tens, hundreds, and so on.",
-   "Place value equals the digit, times the position value. Face value is the digit itself. Which digit always gives the same result?",
-   "Try 0 in the tens place. Its place value is 0 times 10, which is 0, and its face value is 0. They match! For 9 in the tens place, 90 is not equal to 9."
+   "Face value is the digit itself. Place value is the digit times the worth of its place: 1, 10, 100, and so on. When could these two be equal in every place?",
+   "Test each choice in the tens place. 9 in the tens place is worth 9 times 10, which is 90, and that is not 9. Now test the other digits the same way.",
+   "Here is how to test a digit. 4 in the hundreds place has face value 4, but place value 4 times 100, which is 400. They differ, so 4 does not work. Look for a digit that stays the same when multiplied by 10 or 100."
   ],
   "steps": [
    "Face value is the digit itself. Place value equals the digit, times the position value.",
@@ -1263,9 +1264,9 @@
    "Can't say"
   ],
   "hints": [
-   "Think about what happens when you multiply any digit by 10, 100 or 1000. Is the result ever odd?",
-   "The tens place value is always a multiple of 10, so it is even. The hundreds place value is always a multiple of 100, so it is even.",
-   "Try 3 in the tens place: that gives 30, which is even. 7 in the units place gives 7, which is odd. Only the units place can give odd values."
+   "Place value is the digit times 1, 10, 100 or 1000, depending on its place. Think about which of these products can ever be odd.",
+   "Multiply any digit by 10: the result ends in 0, so it is even. Check what happens with 1000, and with 1, in the same way.",
+   "An example: 5 in the hundreds place is worth 5 times 100, which is 500. That is even, even though 5 is odd. So the hundreds place can never give an odd place value. Test the places in the choices like this."
   ],
   "steps": [
    "The place value in the tens place is the digit times 10, which is always even.",
@@ -1302,9 +1303,9 @@
    "30"
   ],
   "hints": [
-   "Find the place value of 6, and the place value of 2, separately in 76025.",
-   "6 is in the thousands place, so its place value is 6000. 2 is in the tens place, so its place value is 20.",
-   "Try this: in 5030, the place value of 5 is 5000, and the place value of 3 is 30. The ratio is 5000 divided by 30."
+   "Find the place value of 6, and the place value of 2, in 76025. How many times, means you divide the bigger place value by the smaller one.",
+   "6 is in the thousands place, so it is worth 6000. 2 is in the tens place, so it is worth 20. Now divide 6000 by 20.",
+   "An example: in 8040, the 8 is worth 8000, and the 4 is worth 40. 8000 divided by 40 equals 200. So the place value of 8 is 200 times that of 4."
   ],
   "steps": [
    "The place value of 6, in the thousands place: 6 times 1000 equals 6000.",
@@ -1321,9 +1322,9 @@
    "85168"
   ],
   "hints": [
-   "For one 8 to be 1000 times the other, the two 8s must be exactly 3 place-positions apart.",
-   "3 positions apart means units and thousands, or tens and ten-thousands.",
-   "Check 85168. 8 is in the ten-thousands place, worth 80000, and in the units place, worth 8. 80000 divided by 8 is 10000. Check 68815. 8 is in the thousands place, worth 8000, and the hundreds place, worth 800. 8000 divided by 800 is 10."
+   "Each step to the left makes a digit worth 10 times more. So for one 8 to be worth 1000 times the other, how many places apart must the two 8s be?",
+   "1000 equals 10 times 10 times 10, so the two 8s must be three places apart, like units and thousands, or tens and ten-thousands. In each number, find the places of the two 8s.",
+   "An example: in 5052, one 5 is worth 5000, and the other is worth 50. 5000 divided by 50 equals 100, so one is only 100 times the other. Two places apart gives 100 times. You need three places apart."
   ],
   "steps": [
    "Check 68815. The 8s are in the thousands place, worth 8000, and the hundreds place, worth 800. 8000 divided by 800 is 10, not 1000.",
@@ -1341,15 +1342,15 @@
    "307638"
   ],
   "hints": [
-   "For one 3 to be 100 times the other, the two 3s must be exactly 2 place-positions apart.",
-   "2 positions apart means units and hundreds, or tens and thousands, or hundreds and ten-thousands.",
-   "Check each number: find where the two 3s are, and compare their place values."
+   "Each step to the left makes a digit worth 10 times more. For one 3 to be worth 100 times the other, how many places apart must the two 3s be?",
+   "100 equals 10 times 10, so the two 3s must be two places apart, like tens and thousands. In each number, write down the places of the two 3s.",
+   "An example: in 7479, one 7 is worth 7000, and the other is worth 70. 7000 divided by 70 equals 100, so one 7 is 100 times the other. Look for the number where the 3s sit like this."
   ],
   "steps": [
-   "Check 134639. There is a 3 in the ten-thousands place, worth 30000, and a 3 in the tens place, worth 30. 30000 divided by 30 is 1000, not 100.",
-   "Check 752339. There is a 3 in the hundreds place, worth 300, and a 3 in the tens place, worth 30. 300 divided by 30 is 10, not 100.",
-   "Check 863135. There is a 3 in the thousands place, worth 3000, and a 3 in the tens place, worth 30. 3000 divided by 30 is 100. That works.",
-   "This is the answer: 863135."
+   "For one 3 to be worth 100 times the other, the two 3s must be two places apart, because 10 times 10 equals 100.",
+   "In 134639 the 3s are worth 30000 and 30. 30000 divided by 30 equals 1000, so this is not a match. In 752339 they are worth 300 and 30. 300 divided by 30 equals 10, not a match.",
+   "In 307638 the 3s are worth 300000 and 30. 300000 divided by 30 equals 10000, not a match.",
+   "In 863135 the 3s are worth 3000 and 30. 3000 divided by 30 equals 100. So the number is 863135."
   ]
  },
  "EXT_G5_WS_01_011": {
@@ -1379,9 +1380,9 @@
    "0"
   ],
   "hints": [
-   "First form the greatest odd number with 5, 8, 0, 7 and 4, each used once. It must end in an odd digit.",
-   "For the greatest odd number, start with the largest digits, and end with the largest odd digit. The options for the units place are 5 or 7. With 5 at the end: 87405. With 7 at the end: 85407. Compare: 87405 is greater than 85407.",
-   "The greatest is 87405. The middle digit, the 3rd, is 4. Check again: 8, 7, 4, 0, 5. The middle is 4. But one option is 5. Ending in 7 gives 85407, with middle 4. Ending in 5 gives 87405, with middle 4."
+   "An odd number ends in an odd digit. Which of the digits 5, 8, 0, 7 and 4 are odd? One of them must go in the units place.",
+   "To make the number as big as possible, put the biggest digits on the left. Try both ways. End with 5, and arrange 8, 7, 4, 0 from biggest to smallest. Then end with 7, and arrange 8, 5, 4, 0. Which number is greater?",
+   "An example with 1, 6, 3: the greatest odd number ends in 1 or 3. Ending in 1 gives 631. Ending in 3 gives 613. 631 is greater, and its middle digit is 3."
   ],
   "steps": [
    "The greatest odd number must end in an odd digit, 5 or 7.",
@@ -1400,9 +1401,9 @@
    "700"
   ],
   "hints": [
-   "Form the smallest even number using 2, 7, 3, 9 and 6. It must end in an even digit.",
-   "The even digits available are 2 and 6. For the smallest number, start with the smallest digits. If it ends in 2, you get 36792. If it ends in 6, you get 23796.",
-   "23796 is less than 36792, so the smallest even number is 23796. Where is 7? In the hundreds place. Its place value is 700."
+   "An even number ends in an even digit. Which of the digits 2, 7, 3, 9 and 6 are even? One of them must go in the units place.",
+   "To make the number as small as possible, put the smallest digits on the left. Try both ways. End with 2, and arrange 3, 6, 7, 9 from smallest to biggest. Then end with 6, and arrange 2, 3, 7, 9. Which number is smaller, and where is the 7?",
+   "An example with 1, 4, 5: the smallest even number must end in 4, so it is 154. The 5 is in the tens place, so its place value is 5 times 10, which is 50."
   ],
   "steps": [
    "The smallest even number must end in an even digit: 2 or 6.",
@@ -1440,14 +1441,14 @@
    "12"
   ],
   "hints": [
-   "For a four-digit number, the first digit cannot be 0.",
-   "The thousands place has 3 choices: 7, 3 or 9, but not 0. The remaining 3 digits can go in any order in the other 3 places.",
-   "Try this with the digits 1, 0 and 2, making three-digit numbers. The first digit has 2 choices, 1 or 2. Then 2 factorial for the rest. That is 2 times 2, which equals 4."
+   "A four-digit number cannot begin with 0. So think about which digits are allowed in the thousands place.",
+   "The thousands place can be 7, 3 or 9: that is 3 choices. After that, count how many ways the other three digits can fill the remaining three places.",
+   "An example with 1, 0, 2: a three-digit number can start with 1 or 2. That is 2 choices. The other two digits can then be placed in 2 ways. 2 times 2 equals 4 numbers: 102, 120, 201 and 210."
   ],
   "steps": [
-   "The thousands place cannot be 0, so it has 3 choices: 7, 3 or 9.",
-   "The remaining 3 digits fill 3 places in any order. 3 factorial equals 6 arrangements.",
-   "The total of four-digit numbers: 3 times 6 equals 18."
+   "The thousands place cannot be 0, so it can be 7, 3 or 9. That is 3 choices.",
+   "The 3 digits left over fill the other three places: 3 choices for the hundreds, then 2 for the tens, then 1 for the units. 3 times 2 times 1 equals 6 ways.",
+   "Multiply the choices: 3 times 6 equals 18. So 18 different four-digit numbers can be formed."
   ]
  },
  "EXT_G5_WS_01_016": {
@@ -1459,14 +1460,14 @@
    "24"
   ],
   "hints": [
-   "For a number less than 5000, the thousands digit must be less than 5.",
-   "From the digits 2, 5, 0 and 8, the digits less than 5 that can be in the thousands place: only 2. Not 0, since that makes a 3-digit number.",
-   "With 2 in the thousands place, the remaining digits, 5, 0 and 8, go in 3 factorial, which is 6 arrangements."
+   "A number less than 5000 must have a thousands digit smaller than 5. And a four-digit number cannot begin with 0.",
+   "From 2, 5, 0 and 8, only 2 can go in the thousands place. Now count the ways to arrange 5, 0 and 8 in the other three places.",
+   "An example: numbers less than 300, using 1, 4, 6 once each, must start with 1. Then 4 and 6 can go in 2 ways: 146 and 164. So there are 2 such numbers."
   ],
   "steps": [
-   "The thousands digit must be less than 5, and not 0. Only 2 works.",
-   "The remaining digits, 5, 0 and 8, can be arranged in 3 factorial ways. 3 factorial equals 6.",
-   "The total numbers: 1 times 6 equals 6."
+   "A number less than 5000 needs a thousands digit below 5, and it cannot be 0. From 2, 5, 0 and 8, only 2 works.",
+   "The digits 5, 0 and 8 fill the other three places: 3 choices for the hundreds, then 2 for the tens, then 1 for the units. 3 times 2 times 1 equals 6 ways.",
+   "So 6 four-digit numbers less than 5000 can be formed: 2058, 2085, 2508, 2580, 2805 and 2850."
   ]
  },
  "EXT_G5_WS_B2_011": {
@@ -1478,14 +1479,15 @@
    "less by 9990"
   ],
   "hints": [
-   "First find where 5 and 6 are in the number 469571, then swap them.",
-   "The original is 469571. Swap 5 and 6: 569471. The 5 in hundred-thousands becomes 6, and the 6 in ten-thousands becomes 5. Wait, let me re-examine.",
-   "Actually, look at 469571. The 5 is at the hundreds place, worth 500, and the 6 is at ten-thousands, worth 60000. Swapping, 5 goes to ten-thousands, worth 50000, and 6 goes to hundreds, worth 600. The new number is 459671. Need to be more careful."
+   "Find the digits 5 and 6 in 469571, and say which place each one is in. Then swap them, and compare the new number with the old one.",
+   "The 6 is in the ten-thousands place, and the 5 is in the hundreds place. After the swap, the new number is 459671. Is that bigger or smaller than 469571, and by how much?",
+   "A similar one: swap 2 and 7 in 1274, to get 1724. The new number is more, by 1724 minus 1274, which is 450."
   ],
   "steps": [
-   "This is a place value and digit manipulation problem. Note the given information.",
-   "Apply the relevant formula or method to compute the answer.",
-   "The answer is B."
+   "In 469571 the digit 6 is in the ten-thousands place, and the digit 5 is in the hundreds place.",
+   "Swap them: the new number is 459671.",
+   "The ten-thousands digit went down from 6 to 5, so the new number is smaller than the original.",
+   "Subtract to find by how much: 469571 minus 459671 equals 9900. So the new number is less by 9900."
   ]
  },
  "EXT_G5_WS_B3_010": {
@@ -1502,9 +1504,9 @@
    "Try this: notes from 1 to 5 make 5 notes. 5 times 5 rupees equals 25 rupees."
   ],
   "steps": [
-   "The number of notes is 40901 minus 40801, plus 1, which is 101.",
-   "The total amount is 101 times 5, which is 505 rupees.",
-   "The answer is option B."
+   "Count the notes from 40801 to 40901. Subtract and add 1, because both the first and the last note are counted. 40901 minus 40801, plus 1, equals 101 notes.",
+   "Each note is worth 5 rupees, so multiply: 101 times 5 equals 505.",
+   "So the bundle holds 505 rupees in all."
   ]
  },
  "EXT_G5_WS_B4_018": {
@@ -1516,9 +1518,9 @@
    "6"
   ],
   "hints": [
-   "List all the prime numbers up to 100, then count how many times the digit 7 appears.",
-   "The primes are 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89 and 97. Which contain 7?",
-   "A similar example: count the digit 3 in primes up to 50: 3, 13, 23, 31, 37, 43. That's 3, then 13 with one 3, 23 with one 3, 31 with one 3, 37 with one 3, and 43 with one 3. That makes 6 threes."
+   "Write out all the prime numbers from 1 to 100. Then go through your list and tick every 7 you see, in the tens place or the ones place.",
+   "Do it in two parts. First, the primes that end in 7, starting 7, 17, 37, and so on. Then the primes that begin with 7, in the seventies. Careful: 27, 57, 77 and 87 are not prime.",
+   "Try a smaller one: the digit 3 in the primes up to 50. Ending in 3: 3, 13, 23, 43. Starting with 3: 31, 37. That is 6 threes."
   ],
   "steps": [
    "The primes containing the digit 7 are 7, 17, 37, 47, 67, 71, 73, 79 and 97.",
@@ -1554,14 +1556,15 @@
    "12"
   ],
   "hints": [
-   "One-digit primes are 2, 3, 5 and 7. For an even number, the last digit must be even.",
-   "The only even digit among 2, 3, 5 and 7 is 2. So 2 must be in the units place.",
-   "With 2 fixed at the units place, the remaining digits, 3, 5 and 7, fill the other 3 positions. 3 factorial equals 6 arrangements."
+   "The one-digit primes are 2, 3, 5 and 7. An even number must end in an even digit. Which of these four digits is even?",
+   "The digit 2 has to go in the ones place. Now arrange 3, 5 and 7 in the other three places. List them in order: 3572, 3752, and so on, and count.",
+   "Try a smaller one: using 2, 3 and 5 once each, the even numbers must end in 2. They are 352 and 532, so there are 2."
   ],
   "steps": [
-   "The one-digit primes are 2, 3, 5 and 7. Only 2 is even.",
-   "For an even 4-digit number using all four digits, the units digit must be 2.",
-   "The remaining 3 digits, 3, 5 and 7, can go in 3 factorial, which is 6 arrangements."
+   "The one-digit primes are 2, 3, 5 and 7. All four digits are used, so each number has four digits.",
+   "An even number ends in an even digit, and 2 is the only even one. So 2 goes in the ones place.",
+   "The digits 3, 5 and 7 fill the other three places: 3572, 3752, 5372, 5732, 7352 and 7532.",
+   "So 6 even numbers can be formed."
   ]
  },
  "PH3_EXT_G5_WS_01_001_01": {
@@ -1611,13 +1614,15 @@
    "460"
   ],
   "hints": [
-   "The smallest 3-digit number is 100.",
-   "The largest is 999.",
-   "The total count is largest minus smallest, plus 1, which is 900."
+   "The smallest 3-digit number is 100 and the largest is 999. Count all of them first, then think about how many are even.",
+   "Count them all: 999 minus 100, plus 1. Then remember that even and odd numbers take turns.",
+   "Even and odd numbers alternate, so here exactly half are even. Try a smaller one: from 10 to 19 there are 10 numbers, and 5 of them are even."
   ],
   "steps": [
-   "The smallest 3-digit number is 100, and the largest is 999.",
-   "The total of 3-digit numbers is 900. The even ones are 450."
+   "The smallest 3-digit number is 100 and the largest is 999.",
+   "Count them all, counting both ends. 999 minus 100, plus 1, equals 900.",
+   "Even and odd numbers alternate. The list starts with an even number and ends with an odd number, so exactly half are even. 900 divided by 2 equals 450.",
+   "So there are 450 3-digit even numbers."
   ]
  },
  "PH3_EXT_G5_WS_01_003_01": {
@@ -1653,10 +1658,10 @@
    "There are 9 single-digit pages."
   ],
   "steps": [
-   "Pages 1 to 9: that is 9 pages, times 1 digit, which is 9 digits.",
-   "Pages 10 to 99: that is 90 pages, times 2 digits, which is 180.",
-   "Pages 100 to 100: that is 1 page, times 3 digits, which is 3.",
-   "The total is 192 digits."
+   "Pages 1 to 9: that is 9 pages with 1 digit each. So 9 times 1 equals 9 digits.",
+   "Pages 10 to 99: that is 90 pages with 2 digits each. So 90 times 2 equals 180 digits.",
+   "Page 100 is the only page with 3 digits, so it uses 3 digits.",
+   "Add them up: 9 plus 180 plus 3 equals 192. So 192 digits are used."
   ]
  },
  "PH3_EXT_G5_WS_01_003_03": {
@@ -1668,13 +1673,14 @@
    "9000"
   ],
   "hints": [
-   "The smallest 3-digit number is 100.",
-   "The largest is 999.",
-   "The total count is largest minus smallest, plus 1, which is 900."
+   "The smallest 3-digit number is 100 and the largest is 999. You need to count every number from one to the other.",
+   "To count from 100 to 999, subtract and then add 1, so that both ends are counted. That is 999 minus 100, plus 1.",
+   "Try a smaller one. From 5 to 9 there are 9 minus 5, plus 1, which is 5 numbers. Count them to check: 5, 6, 7, 8, 9."
   ],
   "steps": [
-   "The smallest 3-digit number is 100, and the largest is 999.",
-   "The total of 3-digit numbers is 900. So all of them make 900."
+   "The smallest 3-digit number is 100 and the largest is 999.",
+   "Count from 100 to 999, counting both ends. 999 minus 100, plus 1, equals 900.",
+   "So there are 900 3-digit numbers in all."
   ]
  },
  "PH3_EXT_G5_WS_01_012_01": {
@@ -1725,13 +1731,15 @@
    "55"
   ],
   "hints": [
-   "The smallest 2-digit number is 10.",
-   "The largest is 99.",
-   "The total count is largest minus smallest, plus 1, which is 90."
+   "The smallest 2-digit number is 10 and the largest is 99. Count all of them first, then think about how many are even.",
+   "Count them all: 99 minus 10, plus 1. Then remember that even and odd numbers take turns.",
+   "Even and odd numbers alternate, so here exactly half are even. Try a smaller one: from 10 to 19 there are 10 numbers, and 5 of them are even."
   ],
   "steps": [
-   "The smallest 2-digit number is 10, and the largest is 99.",
-   "The total of 2-digit numbers is 90. The even ones are 45."
+   "The smallest 2-digit number is 10 and the largest is 99.",
+   "Count them all, counting both ends. 99 minus 10, plus 1, equals 90.",
+   "Even and odd numbers alternate. The list starts with an even number and ends with an odd number, so exactly half are even. 90 divided by 2 equals 45.",
+   "So there are 45 2-digit even numbers."
   ]
  },
  "PH3_EXT_G5_WS_01_014_01": {
@@ -1839,13 +1847,14 @@
    "90000"
   ],
   "hints": [
-   "The smallest 4-digit number is 1000.",
-   "The largest is 9999.",
-   "The total count is largest minus smallest, plus 1, which is 9000."
+   "The smallest 4-digit number is 1000 and the largest is 9999. You need to count every number from one to the other.",
+   "To count from 1000 to 9999, subtract and then add 1, so that both ends are counted. That is 9999 minus 1000, plus 1.",
+   "Try a smaller one. From 5 to 9 there are 9 minus 5, plus 1, which is 5 numbers. Count them to check: 5, 6, 7, 8, 9."
   ],
   "steps": [
-   "The smallest 4-digit number is 1000, and the largest is 9999.",
-   "The total of 4-digit numbers is 9000. So all of them make 9000."
+   "The smallest 4-digit number is 1000 and the largest is 9999.",
+   "Count from 1000 to 9999, counting both ends. 9999 minus 1000, plus 1, equals 9000.",
+   "So there are 9000 4-digit numbers in all."
   ]
  },
  "PH3_EXT_G5_WS_01_016_01": {
@@ -1876,13 +1885,15 @@
    "2250"
   ],
   "hints": [
-   "The smallest 4-digit number is 1000.",
-   "The largest is 9999.",
-   "The total count is largest minus smallest, plus 1, which is 9000."
+   "The smallest 4-digit number is 1000 and the largest is 9999. Count all of them first, then think about how many are odd.",
+   "Count them all: 9999 minus 1000, plus 1. Then remember that even and odd numbers take turns.",
+   "Even and odd numbers alternate, so here exactly half are odd. Try a smaller one: from 10 to 19 there are 10 numbers, and 5 of them are odd."
   ],
   "steps": [
-   "The smallest 4-digit number is 1000, and the largest is 9999.",
-   "The total of 4-digit numbers is 9000. The odd ones are 4500."
+   "The smallest 4-digit number is 1000 and the largest is 9999.",
+   "Count them all, counting both ends. 9999 minus 1000, plus 1, equals 9000.",
+   "Even and odd numbers alternate. The list starts with an even number and ends with an odd number, so exactly half are odd. 9000 divided by 2 equals 4500.",
+   "So there are 4500 4-digit odd numbers."
   ]
  },
  "PH3_EXT_G5_WS_01_016_03_b": {
@@ -1988,13 +1999,14 @@
    "45"
   ],
   "hints": [
-   "The smallest 2-digit number is 10.",
-   "The largest is 99.",
-   "The total count is largest minus smallest, plus 1, which is 90."
+   "The smallest 2-digit number is 10 and the largest is 99. You need to count every number from one to the other.",
+   "To count from 10 to 99, subtract and then add 1, so that both ends are counted. That is 99 minus 10, plus 1.",
+   "Try a smaller one. From 5 to 9 there are 9 minus 5, plus 1, which is 5 numbers. Count them to check: 5, 6, 7, 8, 9."
   ],
   "steps": [
-   "The smallest 2-digit number is 10, and the largest is 99.",
-   "The total of 2-digit numbers is 90. So all of them make 90."
+   "The smallest 2-digit number is 10 and the largest is 99.",
+   "Count from 10 to 99, counting both ends. 99 minus 10, plus 1, equals 90.",
+   "So there are 90 2-digit numbers in all."
   ]
  },
  "PH3_EXT_G5_WS_01_019_03_b": {
@@ -2044,13 +2056,15 @@
    "900"
   ],
   "hints": [
-   "The smallest 3-digit number is 100.",
-   "The largest is 999.",
-   "The total count is largest minus smallest, plus 1, which is 900."
+   "The smallest 3-digit number is 100 and the largest is 999. Count all of them first, then think about how many are odd.",
+   "Count them all: 999 minus 100, plus 1. Then remember that even and odd numbers take turns.",
+   "Even and odd numbers alternate, so here exactly half are odd. Try a smaller one: from 10 to 19 there are 10 numbers, and 5 of them are odd."
   ],
   "steps": [
-   "The smallest 3-digit number is 100, and the largest is 999.",
-   "The total of 3-digit numbers is 900. The odd ones are 450."
+   "The smallest 3-digit number is 100 and the largest is 999.",
+   "Count them all, counting both ends. 999 minus 100, plus 1, equals 900.",
+   "Even and odd numbers alternate. The list starts with an even number and ends with an odd number, so exactly half are odd. 900 divided by 2 equals 450.",
+   "So there are 450 3-digit odd numbers."
   ]
  },
  "PH3_EXT_G5_WS_01_020_03_b": {
@@ -2099,13 +2113,15 @@
    "2250"
   ],
   "hints": [
-   "The smallest 4-digit number is 1000.",
-   "The largest is 9999.",
-   "The total count is largest minus smallest, plus 1, which is 9000."
+   "The smallest 4-digit number is 1000 and the largest is 9999. Count all of them first, then think about how many are even.",
+   "Count them all: 9999 minus 1000, plus 1. Then remember that even and odd numbers take turns.",
+   "Even and odd numbers alternate, so here exactly half are even. Try a smaller one: from 10 to 19 there are 10 numbers, and 5 of them are even."
   ],
   "steps": [
-   "The smallest 4-digit number is 1000, and the largest is 9999.",
-   "The total of 4-digit numbers is 9000. The even ones are 4500."
+   "The smallest 4-digit number is 1000 and the largest is 9999.",
+   "Count them all, counting both ends. 9999 minus 1000, plus 1, equals 9000.",
+   "Even and odd numbers alternate. The list starts with an even number and ends with an odd number, so exactly half are even. 9000 divided by 2 equals 4500.",
+   "So there are 4500 4-digit even numbers."
   ]
  },
  "PH3_EXT_G5_WS_B2_004_03_b": {
@@ -2154,13 +2170,15 @@
    "22"
   ],
   "hints": [
-   "The smallest 2-digit number is 10.",
-   "The largest is 99.",
-   "The total count is largest minus smallest, plus 1, which is 90."
+   "The smallest 2-digit number is 10 and the largest is 99. Count all of them first, then think about how many are odd.",
+   "Count them all: 99 minus 10, plus 1. Then remember that even and odd numbers take turns.",
+   "Even and odd numbers alternate, so here exactly half are odd. Try a smaller one: from 10 to 19 there are 10 numbers, and 5 of them are odd."
   ],
   "steps": [
-   "The smallest 2-digit number is 10, and the largest is 99.",
-   "The total of 2-digit numbers is 90. The odd ones are 45."
+   "The smallest 2-digit number is 10 and the largest is 99.",
+   "Count them all, counting both ends. 99 minus 10, plus 1, equals 90.",
+   "Even and odd numbers alternate. The list starts with an even number and ends with an odd number, so exactly half are odd. 90 divided by 2 equals 45.",
+   "So there are 45 2-digit odd numbers."
   ]
  },
  "PH3_EXT_G5_WS_B2_006_03_b": {
@@ -4047,9 +4065,9 @@
    "11"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The tens place has a value of 10.",
-   "Multiply 1 by 10."
+   "A digit's place value is the digit multiplied by what its place is worth.",
+   "The digit 1 sits in the tens place, so it stands for 1 ten. How do you write 1 ten as a number?",
+   "For example, in 4,270 the digit 2 is in the hundreds place. So its place value is 2 times 100, which is 200."
   ],
   "steps": [
    "The digit 1 is in the tens place.",
@@ -4083,13 +4101,14 @@
    "9"
   ],
   "hints": [
-   "Find the place value of each digit first.",
-   "Place value equals the digit, times the value of its position.",
-   "Then divide the first by the second."
+   "First find the place value of each 1. The 1 in the units place is worth 1, and the 1 in the tens place is worth 10.",
+   "The question asks: 1 is how many times 10? The first number is the smaller one, so the answer is less than 1. Divide 1 by 10.",
+   "A similar one: in 4455, the 5 in the units place is worth 5 and the 5 in the tens place is worth 50. 5 is one tenth of 50."
   ],
   "steps": [
-   "The place value of 1, in the units place, is 1. The place value of 1, in the tens place, is 10.",
-   "The ratio is 1 divided by 10, which is 0.1."
+   "In 27511, the 1 in the units place has place value 1. The 1 in the tens place has place value 10.",
+   "To find how many times 10 the number 1 is, divide. 1 divided by 10 equals 0.1.",
+   "So the place value of the units 1 is 0.1 times, or one tenth of, the place value of the tens 1."
   ]
  },
  "VAR_EXT_G5_WS_B2_001_02": {
@@ -4317,9 +4336,9 @@
    "101"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The hundreds place has a value of 100.",
-   "Multiply 1 by 100."
+   "A digit's place value is the digit multiplied by what its place is worth.",
+   "The digit 1 sits in the hundreds place, so it stands for 1 hundred. How do you write 1 hundred as a number?",
+   "For example, in 365 the digit 6 is in the tens place. So its place value is 6 times 10, which is 60."
   ],
   "steps": [
    "The digit 1 is in the hundreds place.",

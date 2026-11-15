@@ -9,15 +9,17 @@ HAND = {
         ],
         "steps": [
             "From 12 to 1, the hour hand takes 60 minutes.",
-            "4 over 5 of 60 is 60 divided by 5, times 4. That is 12 times 4, which equals 48 minutes.",
-            "The time is 12 48.",
+            "The hand has gone 4 over 5 of the way, so 4 over 5 of the 60 minutes have passed.",
+            "One fifth of 60 is 60 divided by 5, which is 12. So four fifths is 4 times 12, which is 48 minutes.",
+            "So the time is 48 minutes past 12, which is 12 48.",
         ],
     },
     "EXT_G5_FP_2016_012": {
         "q": "Which of the following fractions is greater than 1 over 3, but less than 7 over 8?",
         "hints": [
-            "Change everything into 24ths. 1 over 3 and 7 over 8 both fit into 24ths.",
-            "Common denominator: the L C M of 3, 8 and the option denominators, which is 24.",
+            "Give all the fractions the same denominator, so that you can compare them. Pick a number that 3, 8 and 12 all divide into exactly.",
+            "Rewrite 1 over 3 and 7 over 8 with that common denominator first. Then rewrite each choice the same way, and see which one lies between them.",
+            "Try a smaller one: is 5 over 8 between 1 over 2 and 3 over 4? In eighths, they are 4 over 8, 5 over 8 and 6 over 8. So yes, 5 over 8 lies between them.",
         ],
         "steps": [
             "1 over 3 equals 8 over 24, and 7 over 8 equals 21 over 24. We need a fraction between 8 over 24 and 21 over 24.",
@@ -28,8 +30,9 @@ HAND = {
     "EXT_G5_FP_2016_029": {
         "q": "Simplify: 1 over 2, minus 1 over 4, minus 1 over 3, plus 1 over 6.",
         "hints": [
-            "Make all the fractions have the same bottom number, the denominator. The L C M of 2, 4, 3 and 6 is 12.",
-            "Same denominator first, then add or subtract only the numerators.",
+            "Make all four fractions have the same bottom number. Find the smallest number that 2, 4, 3 and 6 all divide into.",
+            None,
+            "Try a smaller one: 1 over 2, minus 1 over 4, plus 1 over 8. In eighths, that is 4 over 8, minus 2 over 8, plus 1 over 8, which equals 3 over 8.",
         ],
         "steps": [
             "1 over 2 equals 6 over 12. 1 over 4 equals 3 over 12. 1 over 3 equals 4 over 12. And 1 over 6 equals 2 over 12.",
@@ -58,7 +61,8 @@ HAND = {
         "steps": [
             "Top: 2 over 3, plus 1 over 3, equals 3 over 3, which is 1.",
             "Bottom: 2 over 3, minus 1 over 3, equals 1 over 3.",
-            "1 divided by 1 over 3, equals 1 times 3, which is 3.",
+            "Now divide the top by the bottom: 1 divided by 1 over 3. Dividing by 1 over 3 is the same as multiplying by 3, so 1 times 3 equals 3.",
+            "So the value is 3.",
         ],
     },
     "EXT_G5_FP_2018_008": {
@@ -80,9 +84,11 @@ HAND = {
             "The whole equals the part divided by the fraction.",
         ],
         "steps": [
-            "Children: 1 minus 4 over 5 equals 1 over 5 of the visitors, which is 120.",
-            "All visitors: 120 times 5 equals 600. Adults: 600 minus 120 equals 480.",
-            "Male adults: 3 over 8 of 480. That is 480 divided by 8, times 3, which is 180.",
+            "Adults are 4 over 5 of the visitors, so children are 1 minus 4 over 5, which is 1 over 5 of the visitors.",
+            "That 1 over 5 is 120 children, so there were 5 times 120, which is 600 visitors in all.",
+            "Adults: 600 minus 120 equals 480.",
+            "Male adults are 3 over 8 of 480. 480 divided by 8 equals 60, and 3 times 60 equals 180.",
+            "So 180 male adults visited the museum.",
         ],
     },
     "EXT_G5_FP_2018_023": {

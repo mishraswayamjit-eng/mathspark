@@ -44,13 +44,14 @@
    "299"
   ],
   "hints": [
-   "Area equals length times width.",
-   "Plug in the given values.",
-   "The answer is in square centimetres."
+   "Area is the space inside the shape. For a rectangle, area equals length times width.",
+   "Multiply the length, 23 centimetres, by the width, 13 centimetres.",
+   "Try a smaller one. A rectangle 5 centimetres long, and 3 centimetres wide, has an area of 5 times 3, which equals 15 square centimetres."
   ],
   "steps": [
-   "Use the formula for area of a rectangle.",
-   "The answer is 299 square centimetres."
+   "Area of a rectangle equals length times width.",
+   "Put in the numbers: 23 times 13 equals 299.",
+   "So the area is 299 square centimetres."
   ]
  },
  "BOOST_EXT_G5_WS_B2_027_05": {
@@ -98,13 +99,15 @@
    "80"
   ],
   "hints": [
-   "Perimeter equals 2 times, open bracket, length plus width, close bracket.",
-   "Plug in the given values.",
-   "The answer is in centimetres."
+   "Perimeter is the distance all the way round. A rectangle has two lengths and two widths.",
+   "Add the length and the width first: 21 plus 19. Then double it, because each appears twice.",
+   "Try a smaller one. A rectangle 5 centimetres long, and 2 centimetres wide, has a perimeter of 2 times, open bracket, 5 plus 2, close bracket, which equals 14 centimetres."
   ],
   "steps": [
-   "Use the formula for perimeter of a rectangle.",
-   "The answer is 80 centimetres."
+   "Perimeter of a rectangle equals 2 times, open bracket, length plus width, close bracket.",
+   "Add the length and the width: 21 plus 19 equals 40.",
+   "Double it: 2 times 40 equals 80.",
+   "So the perimeter is 80 centimetres."
   ]
  },
  "BOOST_EXT_G5_WS_B3_006_05": {
@@ -170,13 +173,14 @@
    "432"
   ],
   "hints": [
-   "Area equals length times width.",
-   "Plug in the given values.",
-   "The answer is in square centimetres."
+   "Area is the space inside the shape. For a rectangle, area equals length times width.",
+   "Multiply the length, 18 centimetres, by the width, 12 centimetres.",
+   "Try a smaller one. A rectangle 5 centimetres long, and 3 centimetres wide, has an area of 5 times 3, which equals 15 square centimetres."
   ],
   "steps": [
-   "Use the formula for area of a rectangle.",
-   "The answer is 216 square centimetres."
+   "Area of a rectangle equals length times width.",
+   "Put in the numbers: 18 times 12 equals 216.",
+   "So the area is 216 square centimetres."
   ]
  },
  "BOOST_EXT_G5_WS_B3_012_06": {
@@ -321,7 +325,9 @@
    ""
   ],
   "steps": [
-   "30 times 18, divided by 5, equals 30 divided by 5, times 18. That is 6 times 18, which equals 108 kilometres per hour."
+   "1 kilometre is 1000 metres, and 1 hour is 3600 seconds. So, to change metres per second into kilometres per hour, multiply by 3600 and divide by 1000, which is the same as multiplying by 18 over 5.",
+   "30 times 18 over 5. First, 30 divided by 5 equals 6. Then, 6 times 18 equals 108.",
+   "So the speed is 108 kilometres per hour."
   ]
  },
  "EXT_G5_FP_2017_038": {
@@ -504,9 +510,10 @@
    ""
   ],
   "steps": [
-   "Speed equals 600 divided by 25, which is 24 metres per second.",
-   "In 1 hour: 24 times 3600 equals 86,400 metres, which is 86.4 kilometres.",
-   "86.4 is not among options A to C. So, none of these."
+   "Speed: 600 divided by 25 equals 24 metres every second.",
+   "One hour has 3600 seconds. So in 1 hour, the car covers 24 times 3600, which equals 86400 metres.",
+   "86400 divided by 1000 equals 86.4, so that is 86.4 kilometres.",
+   "86.4 kilometres is not one of the choices given, so the answer is: none of these."
   ]
  },
  "EXT_G5_FP_2023_003": {
@@ -524,9 +531,9 @@
   ],
   "steps": [
    "First 100 metres: 100 divided by 4 equals 25 seconds. Remaining 300 metres: 300 divided by 5 equals 60 seconds.",
-   "One round equals 25 plus 60, which is 85 seconds. Five rounds equals 85 times 5, which is 425 seconds.",
-   "425 seconds equals 7 minutes 5 seconds, because 7 times 60 equals 420.",
-   "That is not among options A to C. So, none of these."
+   "One round takes 25 plus 60, which equals 85 seconds. So five rounds take 85 times 5, which equals 425 seconds.",
+   "425 seconds is 7 minutes 5 seconds, because 7 times 60 equals 420, and 5 seconds are left.",
+   "7 minutes 5 seconds is not one of the choices given, so the answer is: none of these."
   ]
  },
  "EXT_G5_FP_2024_008": {
@@ -600,9 +607,9 @@
    ""
   ],
   "steps": [
-   "24 metres per second equals 24 times 18, divided by 5, which is 86.4 kilometres per hour.",
-   "Time equals 432 divided by 86.4, which is 5 hours.",
-   "5 hours is not among options A to C. So, none of these."
+   "Make the units match. 24 metres per second, in kilometres per hour, is 24 times 18, divided by 5, which equals 86.4 kilometres per hour.",
+   "Time equals distance divided by speed: 432 divided by 86.4 equals 5 hours.",
+   "5 hours is not one of the choices given, so the answer is: none of these."
   ]
  },
  "EXT_G5_WS_B3_021": {
@@ -614,9 +621,9 @@
    "84"
   ],
   "hints": [
-   "Read the question carefully. This tests your understanding of rate problems. Identify what information is given, and what you need to find.",
-   "Write down the key formula or relationship for rate problems. Think step by step about how to connect the given values to the answer.",
-   "Try a simpler version of the problem first, then apply the same method to the actual numbers."
+   "First find how many words Anay types in 1 minute. Then think about what half of a minute means.",
+   "In 3 minutes he types 126 words, so in 1 minute he types 126 divided by 3 words. Half a minute gives half of that.",
+   "Example: Meera reads 80 pages in 4 hours. In 1 hour, she reads 80 divided by 4, which equals 20 pages. So in half an hour, she reads 20 divided by 2, which equals 10 pages."
   ],
   "steps": [
    "Rate equals 126 divided by 3, which is 42 words per minute.",
@@ -632,14 +639,14 @@
    "324"
   ],
   "hints": [
-   "Toys per worker, per hour, equals 36 divided by 9, which is 4.",
-   "Total per hour equals 4 times 56 workers, which is 224.",
-   "Try: 10 toys a day, in 5 hours, is 2 per hour. 3 workers make 6 per hour."
+   "First find how many toys one worker makes in one hour. Then think about all 56 workers working during that hour.",
+   "One worker makes 36 toys in 9 hours. That is 36 divided by 9, which equals 4 toys an hour. Now multiply by the number of workers.",
+   "Example: one baker makes 30 cakes in 5 hours. That is 30 divided by 5, which equals 6 cakes an hour. With 3 bakers, 3 times 6, which is 18 cakes, are made every hour."
   ],
   "steps": [
-   "Per worker, per hour, equals 36 divided by 9, which is 4.",
-   "Total per hour equals 4 times 56, which is 224.",
-   "The answer is option B."
+   "One worker makes 36 toys in 9 hours. So in one hour, a worker makes 36 divided by 9, which equals 4 toys.",
+   "There are 56 workers, each making 4 toys an hour. 56 times 4 equals 224.",
+   "So the factory produces 224 toys every hour."
   ]
  },
  "VAR2_EXT_G5_WS_B2_026_01": {
@@ -674,8 +681,9 @@
    "20 litres equals 20000 millilitres."
   ],
   "steps": [
-   "Convert: 20 litres equals 20000 millilitres.",
-   "Number of glasses equals 20000 divided by 300, which is 66."
+   "Change litres to millilitres. 20 litres is 20 times 1000, which equals 20000 millilitres.",
+   "See how many 300 millilitre glasses fit. 300 times 66 equals 19800. One more glass would need 300 times 67, which is 20100 millilitres. That is more than the drum holds.",
+   "After 66 glasses, 20000 minus 19800 leaves 200 millilitres, which is not enough for another glass. So, 66 glasses can be filled."
   ]
  },
  "VAR2_EXT_G5_WS_B2_026_03": {
@@ -687,13 +695,14 @@
    "204"
   ],
   "hints": [
-   "Area equals length times width.",
-   "Plug in the given values.",
-   "The answer is in square centimetres."
+   "Area is the space inside the shape. For a rectangle, area equals length times width.",
+   "Multiply the length, 17 centimetres, by the width, 6 centimetres.",
+   "Try a smaller one. A rectangle 5 centimetres long, and 3 centimetres wide, has an area of 5 times 3, which equals 15 square centimetres."
   ],
   "steps": [
-   "Use the formula for area of a rectangle.",
-   "The answer is 102 square centimetres."
+   "Area of a rectangle equals length times width.",
+   "Put in the numbers: 17 times 6 equals 102.",
+   "So the area is 102 square centimetres."
   ]
  },
  "VAR2_EXT_G5_WS_B2_026_04": {
@@ -759,13 +768,14 @@
    "342"
   ],
   "hints": [
-   "Area equals side times side.",
-   "Plug in the given values.",
-   "The answer is in square centimetres."
+   "Area is the space inside the shape. For a square, area equals side times side.",
+   "Every side is 18 centimetres, so multiply 18 by itself.",
+   "Try a smaller one. A square with side 4 centimetres has an area of 4 times 4, which equals 16 square centimetres."
   ],
   "steps": [
-   "Use the formula for area of a square.",
-   "The answer is 324 square centimetres."
+   "Area of a square equals side times side.",
+   "Put in the numbers: 18 times 18 equals 324.",
+   "So the area is 324 square centimetres."
   ]
  },
  "VAR2_EXT_G5_WS_B2_027_04": {
@@ -818,8 +828,9 @@
    "8 litres equals 8000 millilitres."
   ],
   "steps": [
-   "Convert: 8 litres equals 8000 millilitres.",
-   "Number of glasses equals 8000 divided by 300, which is 26."
+   "Change litres to millilitres. 8 litres is 8 times 1000, which equals 8000 millilitres.",
+   "See how many 300 millilitre glasses fit. 300 times 26 equals 7800. One more glass would need 300 times 27, which is 8100 millilitres. That is more than the bottle holds.",
+   "After 26 glasses, 8000 minus 7800 leaves 200 millilitres, which is not enough for another glass. So, 26 glasses can be filled."
   ]
  },
  "VAR2_EXT_G5_WS_B3_006_03": {
@@ -831,13 +842,14 @@
    "30"
   ],
   "hints": [
-   "Area equals side times side.",
-   "Plug in the given values.",
-   "The answer is in square centimetres."
+   "Area is the space inside the shape. For a square, area equals side times side.",
+   "Every side is 5 centimetres, so multiply 5 by itself.",
+   "Try a smaller one. A square with side 4 centimetres has an area of 4 times 4, which equals 16 square centimetres."
   ],
   "steps": [
-   "Use the formula for area of a square.",
-   "The answer is 25 square centimetres."
+   "Area of a square equals side times side.",
+   "Put in the numbers: 5 times 5 equals 25.",
+   "So the area is 25 square centimetres."
   ]
  },
  "VAR2_EXT_G5_WS_B3_006_04": {
@@ -903,13 +915,14 @@
    "32"
   ],
   "hints": [
-   "Perimeter equals 4 times side.",
-   "Plug in the given values.",
-   "The answer is in centimetres."
+   "Perimeter is the distance all the way round. A square has 4 equal sides.",
+   "Each side is 16 centimetres, and there are 4 of them. Multiply.",
+   "Try a smaller one. A square with side 3 centimetres has a perimeter of 4 times 3, which equals 12 centimetres."
   ],
   "steps": [
-   "Use the formula for perimeter of a square.",
-   "The answer is 64 centimetres."
+   "Perimeter of a square equals 4 times side, because all 4 sides are equal.",
+   "Put in the number: 4 times 16 equals 64.",
+   "So the perimeter is 64 centimetres."
   ]
  },
  "VAR2_EXT_G5_WS_B3_012_04": {
@@ -975,13 +988,15 @@
    "9"
   ],
   "hints": [
-   "Perimeter equals 2 times, open bracket, length plus width, close bracket.",
-   "Plug in the given values.",
-   "The answer is in centimetres."
+   "Perimeter is the distance all the way round. A rectangle has two lengths and two widths.",
+   "Add the length and the width first: 6 plus 3. Then double it, because each appears twice.",
+   "Try a smaller one. A rectangle 5 centimetres long, and 2 centimetres wide, has a perimeter of 2 times, open bracket, 5 plus 2, close bracket, which equals 14 centimetres."
   ],
   "steps": [
-   "Use the formula for perimeter of a rectangle.",
-   "The answer is 18 centimetres."
+   "Perimeter of a rectangle equals 2 times, open bracket, length plus width, close bracket.",
+   "Add the length and the width: 6 plus 3 equals 9.",
+   "Double it: 2 times 9 equals 18.",
+   "So the perimeter is 18 centimetres."
   ]
  },
  "VAR2_EXT_G5_WS_B3_013_04": {
@@ -1034,8 +1049,9 @@
    "8 litres equals 8000 millilitres."
   ],
   "steps": [
-   "Convert: 8 litres equals 8000 millilitres.",
-   "Number of glasses equals 8000 divided by 300, which is 26."
+   "Change litres to millilitres. 8 litres is 8 times 1000, which equals 8000 millilitres.",
+   "See how many 300 millilitre glasses fit. 300 times 26 equals 7800. One more glass would need 300 times 27, which is 8100 millilitres. That is more than the tank holds.",
+   "After 26 glasses, 8000 minus 7800 leaves 200 millilitres, which is not enough for another glass. So, 26 glasses can be filled."
   ]
  },
  "VAR2_EXT_G5_WS_B3_037_03": {
@@ -1047,13 +1063,14 @@
    "72"
   ],
   "hints": [
-   "Area equals side times side.",
-   "Plug in the given values.",
-   "The answer is in square centimetres."
+   "Area is the space inside the shape. For a square, area equals side times side.",
+   "Every side is 8 centimetres, so multiply 8 by itself.",
+   "Try a smaller one. A square with side 4 centimetres has an area of 4 times 4, which equals 16 square centimetres."
   ],
   "steps": [
-   "Use the formula for area of a square.",
-   "The answer is 64 square centimetres."
+   "Area of a square equals side times side.",
+   "Put in the numbers: 8 times 8 equals 64.",
+   "So the area is 64 square centimetres."
   ]
  },
  "VAR2_EXT_G5_WS_B3_037_04": {
@@ -1106,8 +1123,9 @@
    "10 litres equals 10000 millilitres."
   ],
   "steps": [
-   "Convert: 10 litres equals 10000 millilitres.",
-   "Number of glasses equals 10000 divided by 300, which is 33."
+   "Change litres to millilitres. 10 litres is 10 times 1000, which equals 10000 millilitres.",
+   "See how many 300 millilitre glasses fit. 300 times 33 equals 9900. One more glass would need 300 times 34, which is 10200 millilitres. That is more than the tank holds.",
+   "After 33 glasses, 10000 minus 9900 leaves 100 millilitres, which is not enough for another glass. So, 33 glasses can be filled."
   ]
  },
  "VAR2_EXT_G5_WS_B6_003_03": {
@@ -1119,13 +1137,14 @@
    "36"
   ],
   "hints": [
-   "Area equals side times side.",
-   "Plug in the given values.",
-   "The answer is in square centimetres."
+   "Area is the space inside the shape. For a square, area equals side times side.",
+   "Every side is 9 centimetres, so multiply 9 by itself.",
+   "Try a smaller one. A square with side 4 centimetres has an area of 4 times 4, which equals 16 square centimetres."
   ],
   "steps": [
-   "Use the formula for area of a square.",
-   "The answer is 81 square centimetres."
+   "Area of a square equals side times side.",
+   "Put in the numbers: 9 times 9 equals 81.",
+   "So the area is 81 square centimetres."
   ]
  },
  "VAR2_EXT_G5_WS_B6_003_04": {
@@ -1191,13 +1210,14 @@
    "72"
   ],
   "hints": [
-   "Area equals length times width.",
-   "Plug in the given values.",
-   "The answer is in square centimetres."
+   "Area is the space inside the shape. For a rectangle, area equals length times width.",
+   "Multiply the length, 18 centimetres, by the width, 4 centimetres.",
+   "Try a smaller one. A rectangle 5 centimetres long, and 3 centimetres wide, has an area of 5 times 3, which equals 15 square centimetres."
   ],
   "steps": [
-   "Use the formula for area of a rectangle.",
-   "The answer is 72 square centimetres."
+   "Area of a rectangle equals length times width.",
+   "Put in the numbers: 18 times 4 equals 72.",
+   "So the area is 72 square centimetres."
   ]
  },
  "VAR2_EXT_G5_WS_B6_004_04": {
@@ -1263,13 +1283,14 @@
    "20"
   ],
   "hints": [
-   "Perimeter equals 4 times side.",
-   "Plug in the given values.",
-   "The answer is in centimetres."
+   "Perimeter is the distance all the way round. A square has 4 equal sides.",
+   "Each side is 10 centimetres, and there are 4 of them. Multiply.",
+   "Try a smaller one. A square with side 3 centimetres has a perimeter of 4 times 3, which equals 12 centimetres."
   ],
   "steps": [
-   "Use the formula for perimeter of a square.",
-   "The answer is 40 centimetres."
+   "Perimeter of a square equals 4 times side, because all 4 sides are equal.",
+   "Put in the number: 4 times 10 equals 40.",
+   "So the perimeter is 40 centimetres."
   ]
  },
  "VAR2_EXT_G5_WS_B6_005_04": {
@@ -1317,13 +1338,14 @@
    "33"
   ],
   "hints": [
-   "Perimeter equals 4 times side.",
-   "Plug in the given values.",
-   "The answer is in centimetres."
+   "Perimeter is the distance all the way round. A square has 4 equal sides.",
+   "Each side is 11 centimetres, and there are 4 of them. Multiply.",
+   "Try a smaller one. A square with side 3 centimetres has a perimeter of 4 times 3, which equals 12 centimetres."
   ],
   "steps": [
-   "Use the formula for perimeter of a square.",
-   "The answer is 44 centimetres."
+   "Perimeter of a square equals 4 times side, because all 4 sides are equal.",
+   "Put in the number: 4 times 11 equals 44.",
+   "So the perimeter is 44 centimetres."
   ]
  },
  "VAR2_EXT_G5_WS_B6_006_03_p2b": {
@@ -1407,13 +1429,14 @@
    "240"
   ],
   "hints": [
-   "Area equals side times side.",
-   "Plug in the given values.",
-   "The answer is in square centimetres."
+   "Area is the space inside the shape. For a square, area equals side times side.",
+   "Every side is 15 centimetres, so multiply 15 by itself.",
+   "Try a smaller one. A square with side 4 centimetres has an area of 4 times 4, which equals 16 square centimetres."
   ],
   "steps": [
-   "Use the formula for area of a square.",
-   "The answer is 225 square centimetres."
+   "Area of a square equals side times side.",
+   "Put in the numbers: 15 times 15 equals 225.",
+   "So the area is 225 square centimetres."
   ]
  },
  "VAR2_EXT_G5_WS_B6_008_04": {
@@ -1479,13 +1502,14 @@
    "9"
   ],
   "hints": [
-   "Area equals length times width.",
-   "Plug in the given values.",
-   "The answer is in square centimetres."
+   "Area is the space inside the shape. For a rectangle, area equals length times width.",
+   "Multiply the length, 6 centimetres, by the width, 3 centimetres.",
+   "Try a smaller one. A rectangle 4 centimetres long, and 2 centimetres wide, has an area of 4 times 2, which equals 8 square centimetres."
   ],
   "steps": [
-   "Use the formula for area of a rectangle.",
-   "The answer is 18 square centimetres."
+   "Area of a rectangle equals length times width.",
+   "Put in the numbers: 6 times 3 equals 18.",
+   "So the area is 18 square centimetres."
   ]
  },
  "VAR2_EXT_G5_WS_B6_009_04_p2b": {
@@ -1551,13 +1575,14 @@
    "182"
   ],
   "hints": [
-   "Area equals side times side.",
-   "Plug in the given values.",
-   "The answer is in square centimetres."
+   "Area is the space inside the shape. For a square, area equals side times side.",
+   "Every side is 13 centimetres, so multiply 13 by itself.",
+   "Try a smaller one. A square with side 4 centimetres has an area of 4 times 4, which equals 16 square centimetres."
   ],
   "steps": [
-   "Use the formula for area of a square.",
-   "The answer is 169 square centimetres."
+   "Area of a square equals side times side.",
+   "Put in the numbers: 13 times 13 equals 169.",
+   "So the area is 169 square centimetres."
   ]
  },
  "VAR2_EXT_G5_WS_B6_010_04_p2b": {
@@ -1610,8 +1635,9 @@
    "10 litres equals 10000 millilitres."
   ],
   "steps": [
-   "Convert: 10 litres equals 10000 millilitres.",
-   "Number of glasses equals 10000 divided by 300, which is 33."
+   "Change litres to millilitres. 10 litres is 10 times 1000, which equals 10000 millilitres.",
+   "See how many 300 millilitre glasses fit. 300 times 33 equals 9900. One more glass would need 300 times 34, which is 10200 millilitres. That is more than the drum holds.",
+   "After 33 glasses, 10000 minus 9900 leaves 100 millilitres, which is not enough for another glass. So, 33 glasses can be filled."
   ]
  },
  "VAR2_EXT_G5_WS_B6_012_03": {
@@ -1623,13 +1649,14 @@
    "22"
   ],
   "hints": [
-   "Area equals length times width.",
-   "Plug in the given values.",
-   "The answer is in square centimetres."
+   "Area is the space inside the shape. For a rectangle, area equals length times width.",
+   "Multiply the length, 6 centimetres, by the width, 5 centimetres.",
+   "Try a smaller one. A rectangle 4 centimetres long, and 2 centimetres wide, has an area of 4 times 2, which equals 8 square centimetres."
   ],
   "steps": [
-   "Use the formula for area of a rectangle.",
-   "The answer is 30 square centimetres."
+   "Area of a rectangle equals length times width.",
+   "Put in the numbers: 6 times 5 equals 30.",
+   "So the area is 30 square centimetres."
   ]
  },
  "VAR2_EXT_G5_WS_B6_012_04": {

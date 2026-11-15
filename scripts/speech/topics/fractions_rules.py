@@ -34,6 +34,9 @@ def _equals(sentence):
     tail = re.search(r"\s*$", sentence).group(0)
     if not out.strip():
         out = "That equals " + parts[1].strip()
+    elif re.search(r"\bis\s+[\d(]", out):
+        # 'One third of 12 is 12 ÷ 3 = 4' reads as '... is 12 divided by 3, which is 4'
+        out = out.rstrip() + ", which is " + parts[1].strip()
     else:
         out = out.rstrip() + " equals " + parts[1].strip()
     for p in parts[2:]:
@@ -91,4 +94,10 @@ def say(text):
     s = re.sub(r"(\d)\s*-\s*(?=\d)", r"\1 minus ", s)
     s = re.sub(r"[()\[\]{}]", " ", s)
     s = s.replace("/", " or ")
-    return tidy(s)
+    s = tidy(s)
+    # balance the pauses in a sum of fractions: '1 over 7, plus 2 over 7, equals 3 over 7'
+    s = re.sub(r"((?:plus|minus|times|divided by) \d+ over \d+) equals\b", r"\1, equals", s)
+    s = re.sub(r"(all over \d+) equals\b", r"\1, equals", s)
+    s = re.sub(r"(\d+ times \d+) (plus|minus) (\d+) equals\b", r"\1, \2 \3, equals", s)
+    s = re.sub(r"^Convert (\d+ over \d+) equals ", r"Convert \1 to ", s)
+    return s

@@ -2,10 +2,11 @@
 
 HAND = {
     "EXT_G5_FP_2020_019": {
-        "q": "If 5 over 8 of the teachers of a coaching class plays chess, 3 over 8 teachers play carrom, and 1 over 4 play both chess and carrom. What fraction of the teachers play neither of the two games?",
+        "q": "If 5 over 8 of the teachers of a coaching class play chess, 3 over 8 of the teachers play carrom, and 1 over 4 play both chess and carrom, what fraction of the teachers play neither of the two games?",
         "hints": [
-            "Those who play chess or carrom equals chess plus carrom minus both, because the both group is counted twice. Then take it away from the whole, which is 1.",
-            "Union equals A plus B minus both. Neither equals 1 minus union.",
+            None,
+            "Add the chess and carrom fractions, 5 over 8 plus 3 over 8. Then take away the 1 over 4 who were counted twice. That gives the fraction who play at least one game.",
+            "A similar one: 1 over 2 of a class like apples, 1 over 3 like mangoes, and 1 over 6 like both. At least one fruit: 1 over 2, plus 1 over 3, minus 1 over 6, equals 2 over 3. Neither fruit: 1 minus 2 over 3, which is 1 over 3.",
         ],
         "steps": [
             "Play chess or carrom: 5 over 8, plus 3 over 8, minus 1 over 4. That is 1 minus 1 over 4, which equals 3 over 4.",
@@ -19,17 +20,18 @@ HAND = {
             "First bracket, the L C D is 60. Second bracket, the L C D is 90. A divided by B equals A times the flip of B.",
         ],
         "steps": [
-            "First bracket: 30 minus 15, plus 12, minus 10, all over 60, equals 17 over 60.",
-            "Second bracket: 36 minus 50, plus 54, minus 35, all over 90, equals 5 over 90, which is 1 over 18.",
-            "17 over 60, divided by 1 over 18, equals 17 over 60, times 18. That is 306 over 60, which equals 5.1.",
-            "That equals 5 and 1 over 10.",
+            "First bracket, in sixtieths: 30 minus 15, plus 12, minus 10, all over 60, equals 17 over 60.",
+            "Second bracket, in ninetieths: 36 minus 50, plus 54, minus 35, all over 90, equals 5 over 90, which simplifies to 1 over 18.",
+            "Dividing by 1 over 18 is the same as multiplying by 18. 17 over 60, times 18, equals 306 over 60.",
+            "306 over 60 equals 51 over 10, which is the mixed number 5 and 1 over 10.",
         ],
     },
     "EXT_G5_FP_2022_010": {
         "q": "Which of the following fractions should be added to 2 over 5, to get 5 over 2?",
         "hints": [
-            "Subtract: 5 over 2, minus 2 over 5. Use 10 as the common denominator.",
-            "The missing part equals the total minus the known part.",
+            "Something is added to 2 over 5 to make 5 over 2. To find the missing part, subtract 2 over 5 from 5 over 2.",
+            "To subtract, give both fractions the same denominator: a number that both 5 and 2 divide into.",
+            "Try a smaller one: what must be added to 1 over 2 to get 3 over 4? 3 over 4, minus 1 over 2, equals 3 over 4, minus 2 over 4, which is 1 over 4.",
         ],
         "steps": [
             "5 over 2 equals 25 over 10, and 2 over 5 equals 4 over 10.",
@@ -39,8 +41,9 @@ HAND = {
     "EXT_G5_FP_2022_013": {
         "q": "Find the common number in place of each box. 15 and 7 over 17, plus 10 and box over 17, plus 7 and box over 17, plus box over 17, equals 34.",
         "hints": [
-            "Add the whole numbers first: 15 plus 10 plus 7. Whatever is left to reach 34 must come from the fractions. Three boxes plus 7, over 17.",
+            "Add the whole numbers first: 15 plus 10 plus 7. Whatever is still needed to reach 34 must come from the four fractions.",
             None,
+            "Try a smaller one: 1 and 1 over 5, plus 2 and box over 5, plus box over 5, makes 4. The whole numbers make 3, so the fifths must make 1, which is 5 over 5. Then 1 and two boxes make 5, so each box is 2.",
         ],
         "steps": [
             "Whole parts: 15 plus 10 plus 7 equals 32. So the fractions must add to 34 minus 32, which is 2.",

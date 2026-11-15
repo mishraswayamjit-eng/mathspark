@@ -19,41 +19,41 @@ HAND = {
     "EXT_G5_WS_01_015": {
         "q": "Using the digits 7, 0, 3 and 9, each only once, how many distinct four-digit numbers can be formed?",
         "hints": [
-            "For a four-digit number, the first digit cannot be 0.",
-            "The thousands place has 3 choices: 7, 3 or 9, but not 0. The remaining 3 digits can go in any order in the other 3 places.",
-            "Try this with the digits 1, 0 and 2, making three-digit numbers. The first digit has 2 choices, 1 or 2. Then 2 factorial for the rest. That is 2 times 2, which equals 4.",
+            "A four-digit number cannot begin with 0. So think about which digits are allowed in the thousands place.",
+            "The thousands place can be 7, 3 or 9: that is 3 choices. After that, count how many ways the other three digits can fill the remaining three places.",
+            "An example with 1, 0, 2: a three-digit number can start with 1 or 2. That is 2 choices. The other two digits can then be placed in 2 ways. 2 times 2 equals 4 numbers: 102, 120, 201 and 210.",
         ],
         "steps": [
-            "The thousands place cannot be 0, so it has 3 choices: 7, 3 or 9.",
-            "The remaining 3 digits fill 3 places in any order. 3 factorial equals 6 arrangements.",
-            "The total of four-digit numbers: 3 times 6 equals 18.",
+            "The thousands place cannot be 0, so it can be 7, 3 or 9. That is 3 choices.",
+            "The 3 digits left over fill the other three places: 3 choices for the hundreds, then 2 for the tens, then 1 for the units. 3 times 2 times 1 equals 6 ways.",
+            "Multiply the choices: 3 times 6 equals 18. So 18 different four-digit numbers can be formed.",
         ],
     },
     "EXT_G5_WS_01_016": {
         "q": "How many four-digit numbers less than 5000 can be formed using the digits 2, 5, 0 and 8, each only once?",
         "hints": [
-            "For a number less than 5000, the thousands digit must be less than 5.",
-            "From the digits 2, 5, 0 and 8, the digits less than 5 that can be in the thousands place: only 2. Not 0, since that makes a 3-digit number.",
-            "With 2 in the thousands place, the remaining digits, 5, 0 and 8, go in 3 factorial, which is 6 arrangements.",
+            "A number less than 5000 must have a thousands digit smaller than 5. And a four-digit number cannot begin with 0.",
+            "From 2, 5, 0 and 8, only 2 can go in the thousands place. Now count the ways to arrange 5, 0 and 8 in the other three places.",
+            "An example: numbers less than 300, using 1, 4, 6 once each, must start with 1. Then 4 and 6 can go in 2 ways: 146 and 164. So there are 2 such numbers.",
         ],
         "steps": [
-            "The thousands digit must be less than 5, and not 0. Only 2 works.",
-            "The remaining digits, 5, 0 and 8, can be arranged in 3 factorial ways. 3 factorial equals 6.",
-            "The total numbers: 1 times 6 equals 6.",
+            "A number less than 5000 needs a thousands digit below 5, and it cannot be 0. From 2, 5, 0 and 8, only 2 works.",
+            "The digits 5, 0 and 8 fill the other three places: 3 choices for the hundreds, then 2 for the tens, then 1 for the units. 3 times 2 times 1 equals 6 ways.",
+            "So 6 four-digit numbers less than 5000 can be formed: 2058, 2085, 2508, 2580, 2805 and 2850.",
         ],
     },
-    # Source is poor here: hints 2 and 3 think aloud (and hint 2 swaps wrongly), the steps are filler.
     "EXT_G5_WS_B2_011": {
         "q": "If the digits 5 and 6 are interchanged in the number 469571, by how much is the new number more than, or less than, the original number?",
         "hints": [
-            "First find where 5 and 6 are in the number 469571, then swap them.",
-            "The original is 469571. Swap 5 and 6: 569471. The 5 in hundred-thousands becomes 6, and the 6 in ten-thousands becomes 5. Wait, let me re-examine.",
-            "Actually, look at 469571. The 5 is at the hundreds place, worth 500, and the 6 is at ten-thousands, worth 60000. Swapping, 5 goes to ten-thousands, worth 50000, and 6 goes to hundreds, worth 600. The new number is 459671. Need to be more careful.",
+            "Find the digits 5 and 6 in 469571, and say which place each one is in. Then swap them, and compare the new number with the old one.",
+            "The 6 is in the ten-thousands place, and the 5 is in the hundreds place. After the swap, the new number is 459671. Is that bigger or smaller than 469571, and by how much?",
+            "A similar one: swap 2 and 7 in 1274, to get 1724. The new number is more, by 1724 minus 1274, which is 450.",
         ],
         "steps": [
-            "This is a place value and digit manipulation problem. Note the given information.",
-            "Apply the relevant formula or method to compute the answer.",
-            "The answer is B.",
+            "In 469571 the digit 6 is in the ten-thousands place, and the digit 5 is in the hundreds place.",
+            "Swap them: the new number is 459671.",
+            "The ten-thousands digit went down from 6 to 5, so the new number is smaller than the original.",
+            "Subtract to find by how much: 469571 minus 459671 equals 9900. So the new number is less by 9900.",
         ],
     },
     "EXT_G5_WS_B3_010": {
@@ -64,17 +64,17 @@ HAND = {
             "Try this: notes from 1 to 5 make 5 notes. 5 times 5 rupees equals 25 rupees.",
         ],
         "steps": [
-            "The number of notes is 40901 minus 40801, plus 1, which is 101.",
-            "The total amount is 101 times 5, which is 505 rupees.",
-            "The answer is option B.",
+            "Count the notes from 40801 to 40901. Subtract and add 1, because both the first and the last note are counted. 40901 minus 40801, plus 1, equals 101 notes.",
+            "Each note is worth 5 rupees, so multiply: 101 times 5 equals 505.",
+            "So the bundle holds 505 rupees in all.",
         ],
     },
     "EXT_G5_WS_B4_018": {
         "q": "In writing all the prime numbers from 1 to 100, how many times is the digit 7 used?",
         "hints": [
-            "List all the prime numbers up to 100, then count how many times the digit 7 appears.",
-            "The primes are 2, 3, 5, 7, " + PRIMES_2_DIGIT + ". Which contain 7?",
-            "A similar example: count the digit 3 in primes up to 50: 3, 13, 23, 31, 37, 43. That's 3, then 13 with one 3, 23 with one 3, 31 with one 3, 37 with one 3, and 43 with one 3. That makes 6 threes.",
+            "Write out all the prime numbers from 1 to 100. Then go through your list and tick every 7 you see, in the tens place or the ones place.",
+            "Do it in two parts. First, the primes that end in 7, starting 7, 17, 37, and so on. Then the primes that begin with 7, in the seventies. Careful: 27, 57, 77 and 87 are not prime.",
+            "Try a smaller one: the digit 3 in the primes up to 50. Ending in 3: 3, 13, 23, 43. Starting with 3: 31, 37. That is 6 threes.",
         ],
         "steps": [
             "The primes containing the digit 7 are 7, 17, 37, 47, 67, 71, 73, 79 and 97.",
@@ -98,14 +98,15 @@ HAND = {
     "EXT_G5_WS_B4_020": {
         "q": "Using all the one-digit prime numbers, each only once, how many even numbers can be formed?",
         "hints": [
-            "One-digit primes are 2, 3, 5 and 7. For an even number, the last digit must be even.",
-            "The only even digit among 2, 3, 5 and 7 is 2. So 2 must be in the units place.",
-            "With 2 fixed at the units place, the remaining digits, 3, 5 and 7, fill the other 3 positions. 3 factorial equals 6 arrangements.",
+            "The one-digit primes are 2, 3, 5 and 7. An even number must end in an even digit. Which of these four digits is even?",
+            "The digit 2 has to go in the ones place. Now arrange 3, 5 and 7 in the other three places. List them in order: 3572, 3752, and so on, and count.",
+            "Try a smaller one: using 2, 3 and 5 once each, the even numbers must end in 2. They are 352 and 532, so there are 2.",
         ],
         "steps": [
-            "The one-digit primes are 2, 3, 5 and 7. Only 2 is even.",
-            "For an even 4-digit number using all four digits, the units digit must be 2.",
-            "The remaining 3 digits, 3, 5 and 7, can go in 3 factorial, which is 6 arrangements.",
+            "The one-digit primes are 2, 3, 5 and 7. All four digits are used, so each number has four digits.",
+            "An even number ends in an even digit, and 2 is the only even one. So 2 goes in the ones place.",
+            "The digits 3, 5 and 7 fill the other three places: 3572, 3752, 5372, 5732, 7352 and 7532.",
+            "So 6 even numbers can be formed.",
         ],
     },
 }

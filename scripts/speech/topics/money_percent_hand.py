@@ -56,16 +56,13 @@ LINES = {
         "h1": "25 percent equals one quarter. If one quarter of A equals 4, then A equals 4 times 4.",
     },
     "EXT_G5_FP_2023_009": {
-        "s2": "15 percent is not among options B to D, so the answer is none of these.",
+        "s1": "Rate equals simple interest times 100, divided by, open bracket, principal times time, close bracket. "
+              "That is 3852 times 100, divided by, open bracket, 6420 times 4, close bracket. "
+              "That equals 385200 divided by 25680, which is 15.",
     },
     "EXT_G5_FP_2023_023": {
         "h0": "Loss equals cost price minus selling price, so cost price equals selling price plus loss. "
               "Find the cost price, then compare it with 542 rupees.",
-        "s2": "122 is not in options A to C, so the answer is none of these.",
-    },
-    "EXT_G5_FP_2023_032": {
-        "s2": "Profit percent equals 120 divided by 500, times 100, which is 24 percent. "
-              "That is not among options B to D, so the answer is none of these.",
     },
     "EXT_G5_FP_2024_017": {
         "h0": "The amount repaid includes the borrowed money plus interest. Subtract to find the interest, "
@@ -84,11 +81,5 @@ LINES = {
     "EXT_G5_FP_2025_024": {
         "h1": "Selling price equals cost price times, open bracket, 100 minus loss percent, close bracket, divided by 100. "
               "So cost price equals selling price times 100, divided by, open bracket, 100 minus loss percent, close bracket.",
-    },
-    "EXT_G5_WS_B2_024": {
-        "s0": "600 rupees was added, as income, instead of subtracted, as expenditure. Error equals 2 times 600, which is 1200.",
-    },
-    "EXT_G5_WS_B2_025": {
-        "s0": "600 rupees was subtracted, as expenditure, instead of added, as income. Error equals 2 times 600, which is 1200.",
     },
 }

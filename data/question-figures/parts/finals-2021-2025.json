@@ -703,7 +703,18 @@
       "label": "1/3 of that = 15"
      }
     ],
-    "note": "1 part out of 12 is 15, so the number is 180"
+    "note": "1 part out of 12 of the number is 15"
+   },
+   {
+    "kind": "fractionBars",
+    "bars": [
+     {
+      "parts": 12,
+      "shaded": 1,
+      "label": "each part is 15"
+     }
+    ],
+    "note": "12 parts of 15 make 180"
    },
    {
     "kind": "fractionBars",
@@ -711,9 +722,10 @@
      {
       "parts": 10,
       "shaded": 3,
-      "label": "3/10 of 180 = 54"
+      "label": "3/10 of 180"
      }
-    ]
+    ],
+    "note": "One part is 18, so three parts are 54"
    },
    null
   ]
@@ -1107,11 +1119,28 @@
     ],
     "legs": [
      {
-      "top": "86.4 km",
+      "top": "86400 m",
       "bottom": "3600 s"
      }
     ],
-    "note": "24 × 3600 = 86400 m"
+    "note": "24 × 3600 = 86400 metres",
+    "highlight": [
+     "l0"
+    ]
+   },
+   {
+    "kind": "journey",
+    "places": [
+     "Start",
+     "1 hour later"
+    ],
+    "legs": [
+     {
+      "top": "86.4 km",
+      "bottom": "1 hour"
+     }
+    ],
+    "note": "86400 ÷ 1000 = 86.4 km"
    },
    null
   ]
@@ -2430,7 +2459,8 @@
     "length": "19 m",
     "breadth": "19 m",
     "inside": "19 × 19 = 361"
-   }
+   },
+   null
   ]
  },
  "EXT_G5_FP_2023_017": {
@@ -3434,7 +3464,8 @@
      }
     ],
     "note": "120 out of 500 is 24 out of 100"
-   }
+   },
+   null
   ]
  },
  "EXT_G5_FP_2023_033": {
@@ -4930,6 +4961,31 @@
       "segments": [
        {
         "units": 10,
+        "label": "cost = 100%",
+        "tone": "a"
+       },
+       {
+        "units": 1,
+        "label": "10%",
+        "tone": "b"
+       }
+      ],
+      "label": "Sold for",
+      "brace": "Rs.440 = 110%"
+     }
+    ],
+    "note": "Cost and profit together are 110% of the cost",
+    "highlight": [
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
         "label": "Rs.400",
         "tone": "a"
        },
@@ -4943,9 +4999,34 @@
       "brace": "Rs.440"
      }
     ],
-    "note": "110% is 440, so 1% is 4 and the cost is 400",
+    "note": "1% is 4, so the cost price is 400",
     "highlight": [
      "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.400",
+        "tone": "a"
+       },
+       {
+        "units": 1.7,
+        "label": "17%",
+        "tone": "c"
+       }
+      ],
+      "label": "New price",
+      "brace": "117% of the cost"
+     }
+    ],
+    "note": "117 × 4 = 468",
+    "highlight": [
+     "b0s1"
     ]
    },
    {
@@ -4968,9 +5049,8 @@
       "brace": "Rs.468"
      }
     ],
-    "note": "117 × 4 = 468",
     "highlight": [
-     "b0s1"
+     "b0"
     ]
    }
   ]
@@ -6713,7 +6793,31 @@
       "segments": [
        {
         "units": 6.5,
-        "label": "sold for Rs.78",
+        "label": "Rs.78 = 65%",
+        "tone": "a"
+       },
+       {
+        "units": 3.5,
+        "label": "35% loss",
+        "tone": "b"
+       }
+      ],
+      "label": "Cost price"
+     }
+    ],
+    "note": "100 − 35 = 65, so Rs.78 is 65% of the cost",
+    "highlight": [
+     "b0s0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 6.5,
+        "label": "Rs.78 = 65%",
         "tone": "a"
        },
        {
@@ -6726,9 +6830,34 @@
       "brace": "Rs.120"
      }
     ],
-    "note": "65% is 78, so 1% is 1.2 and the cost is 120",
+    "note": "1% is 1.2, so the cost price is 120",
     "highlight": [
-     "b0s0"
+     "b0"
+    ]
+   },
+   {
+    "kind": "barModel",
+    "bars": [
+     {
+      "segments": [
+       {
+        "units": 10,
+        "label": "Rs.120",
+        "tone": "a"
+       },
+       {
+        "units": 1.5,
+        "label": "15%",
+        "tone": "c"
+       }
+      ],
+      "label": "New price",
+      "brace": "115% of the cost"
+     }
+    ],
+    "note": "115 × 1.2 = 138",
+    "highlight": [
+     "b0s1"
     ]
    },
    {
@@ -6751,9 +6880,8 @@
       "brace": "Rs.138"
      }
     ],
-    "note": "115 × 1.2 = 138",
     "highlight": [
-     "b0s1"
+     "b0"
     ]
    }
   ]
@@ -7436,7 +7564,33 @@
       "label": "−16"
      }
     ],
-    "note": "Each jump is 4 bigger than the one before"
+    "note": "Each jump is 4 bigger: next come 20, 24 and 28"
+   },
+   {
+    "kind": "table",
+    "rows": [
+     [
+      "Jump",
+      "−20",
+      "−24",
+      "−28"
+     ],
+     [
+      "Value",
+      "137",
+      "113",
+      "?"
+     ]
+    ],
+    "headers": [
+     "Term",
+     "6th",
+     "7th",
+     "8th"
+    ],
+    "highlight": [
+     "r1"
+    ]
    },
    {
     "kind": "table",
@@ -7460,6 +7614,7 @@
      "7th",
      "8th"
     ],
+    "note": "113 − 28 = 85",
     "highlight": [
      "r1"
     ]

@@ -281,9 +281,9 @@
    "All are perfect squares"
   ],
   "hints": [
-   "Find the square roots nearby: 100 squared is 10000, and 105 squared is 11025. Check which numbers land exactly.",
-   "A perfect square has a whole number square root. Use 100 squared equals 10000, and 101 squared equals 10201.",
-   ""
+   "A perfect square is a whole number multiplied by itself. Look for whole numbers whose squares land near each choice.",
+   "Start from 100 times 100, which is 10000, and 101 times 101, which is 10201. Is 10025 either of these? Test the other choices in the same way: a number ending in 25 could be the square of a number ending in 5.",
+   "For example, 35 times 35 equals 1225, so 1225 is a perfect square. A shortcut for squaring a number ending in 5: for 35, work out 3 times 4, which is 12, and write 25 after it."
   ],
   "steps": [
    "10025 lies between 100 squared, which is 10000, and 101 squared, which is 10201. So it is not a perfect square.",
@@ -300,9 +300,9 @@
    "6"
   ],
   "hints": [
-   "Find the biggest perfect square that is less than 370. 19 squared and 20 squared are close.",
-   "Subtract the number from the nearest perfect square below it.",
-   ""
+   "You want the biggest square number that is not more than 370. The less you subtract, the closer you stay to 370.",
+   "Try squares near 370: 19 times 19 is 361, and 20 times 20 is 400. Which of these is just below 370? Subtract that square from 370.",
+   "A similar one: for 150, the square just below is 12 times 12, which is 144. So the least number to subtract is 150 minus 144, which equals 6."
   ],
   "steps": [
    "19 squared is 361, and 20 squared is 400. The square just below 370 is 361.",
@@ -323,10 +323,11 @@
    ""
   ],
   "steps": [
-   "The terms: 2 to the power one, minus 1, is 1. 2 squared, minus 1, is 3. 2 cubed, minus 1, is 7. 2 to the power four, minus 1, is 15. So the nth term equals 2 to the power n, minus 1.",
-   "The units digit of 2 to the power n repeats: 2, 4, 8, 6, every 4 steps.",
-   "30 divided by 4 is 7, remainder 2. So 2 to the power thirty ends in 4.",
-   "The units digit of 2 to the power thirty, minus 1, is 4 minus 1, which equals 3."
+   "Each term is 1 less than a power of 2: 2 minus 1, 4 minus 1, 8 minus 1, 16 minus 1, and so on. So the 30th term is 2 to the power thirty, minus 1.",
+   "The units digits of the powers of 2 go 2, 4, 8, 6, and then repeat every 4 powers.",
+   "30 is 7 lots of 4, with 2 left over, because 7 times 4 is 28. So 2 to the power thirty has the 2nd digit of the cycle: it ends in 4.",
+   "Take away 1: the 30th term ends in 4 minus 1, which is 3.",
+   "So the units digit is 3."
   ]
  },
  "EXT_G5_FP_2018_006": {
@@ -356,15 +357,15 @@
    "9 and 16"
   ],
   "hints": [
-   "Square both numbers in each option, add them, and check whether the total is a perfect square. Remember the famous triple 8, 15 and 17!",
-   "Pythagorean triples: 3, 4 and 5. Then 5, 12 and 13. Then 8, 15 and 17. And 9, 12 and 15.",
-   ""
+   "For each pair, square both numbers and add the two squares. Then ask: is the total itself a square number?",
+   "Start with 9 and 16: 9 times 9 is 81, and 16 times 16 is 256, total 337. Is 337 a square? 18 times 18 is 324, and 19 times 19 is 361, so no. Test the other pairs the same way.",
+   "A similar one: 6 and 8. 6 times 6 is 36, and 8 times 8 is 64. 36 plus 64 equals 100, which is 10 times 10. So 6 and 8 work."
   ],
   "steps": [
-   "10 squared plus 15 squared is 100 plus 225, which equals 325. That is not a square number.",
-   "8 squared plus 15 squared is 64 plus 225, which equals 289. That is 17 squared, so it is a square number.",
-   "12 squared plus 15 squared is 144 plus 225, which equals 369. Not a square number. 9 squared plus 16 squared is 81 plus 256, which equals 337. Not a square number.",
-   "Answer: 8 and 15."
+   "10 and 15: 100 plus 225 equals 325. Not a square, because 18 times 18 is 324, and 19 times 19 is 361.",
+   "8 and 15: 64 plus 225 equals 289, and 17 times 17 is 289. This is a square number.",
+   "12 and 15: 144 plus 225 equals 369, which lies between 19 times 19, or 361, and 20 times 20, or 400. 9 and 16: 81 plus 256 equals 337, which lies between 18 times 18, or 324, and 19 times 19, or 361. Neither is a square.",
+   "So the two numbers are 8 and 15."
   ]
  },
  "EXT_G5_FP_2018_034": {
@@ -549,9 +550,10 @@
    ""
   ],
   "steps": [
-   "One third of one quarter is 1 over 12 of the number, and that equals 15. So the number is 15 times 12, which equals 180.",
-   "3 over 10 of 180 is 54.",
-   "54 squared is 54 times 54, which equals 2916."
+   "One third of one fourth is one third times one quarter, which equals 1 over 12. So 1 over 12 of the number is 15.",
+   "The number is 12 times 15, which equals 180.",
+   "Three tenths, 3 over 10, of 180: 180 divided by 10 is 18, and 3 times 18 is 54.",
+   "The square of 54 is 54 times 54, which equals 2916."
   ]
  },
  "EXT_G5_FP_2021_036": {
@@ -826,15 +828,16 @@
    "13 squared plus 84 squared equals 87 squared"
   ],
   "hints": [
-   "Work out the left side and the right side of each option. Squares can be checked quickly with the last digit too.",
-   "Pythagorean triples: 5, 12 and 13. Then 8, 15 and 17. Then 12, 35 and 37. And 13, 84 and 85.",
-   ""
+   "Work out the left side and the right side of each statement separately, then see whether they are equal.",
+   "A quick first test: look only at the last digits. The last digit of the sum on the left must match the last digit of the square on the right.",
+   "For example, is 6 squared plus 8 squared equal to 10 squared? 36 plus 64 equals 100, and 10 times 10 equals 100, so yes. Test each statement like this."
   ],
   "steps": [
-   "Option A: 64 plus 144 equals 208, but 15 squared is 225. Not true.",
-   "Option B: 144 plus 1225 equals 1369, and 37 squared is 1369. True.",
-   "Option C: 121 plus 3481 equals 3602, but 60 squared is 3600. Not true.",
-   "Option D: 169 plus 7056 equals 7225, but 87 squared is 7569. Not true. 7225 is 85 squared."
+   "8 squared plus 12 squared: 64 plus 144 equals 208, but 15 squared is 225. Not equal.",
+   "11 squared plus 59 squared: 121 plus 3481 equals 3602, but 60 squared is 3600. Not equal.",
+   "13 squared plus 84 squared: 169 plus 7056 equals 7225, but 87 squared is 7569. Not equal.",
+   "12 squared plus 35 squared: 144 plus 1225 equals 1369, and 37 squared is 37 times 37, which equals 1369. Equal.",
+   "So the true statement is 12 squared plus 35 squared equals 37 squared."
   ]
  },
  "EXT_G5_FP_2025_013": {
@@ -904,9 +907,9 @@
    "18 squared plus 23 squared equals 853"
   ],
   "hints": [
-   "Calculate each square and add. Use the last digit: the last digit of the sum must match the last digit of the answer given.",
-   "The last digit of a square comes only from the last digit: 18 squared ends in 4, and 23 squared ends in 9. 4 plus 9 is 13, so the sum ends in 3.",
-   ""
+   "Work out each pair of squares and add them. Does the total match the number on the right?",
+   "Start with the smallest numbers: 7 squared is 49, and 11 squared is 121. Add them, and compare with 150. Then do the same for the other three statements.",
+   "For example, to test whether 5 squared plus 12 squared makes 169: 25 plus 144 equals 169, so that statement would be true."
   ],
   "steps": [
    "7 squared plus 11 squared is 49 plus 121, which equals 170, not 150.",
@@ -929,9 +932,10 @@
    ""
   ],
   "steps": [
-   "The gaps: from 197 to 193 is minus 4. From 193 to 185 is minus 8. From 185 to 173 is minus 12. From 173 to 157 is minus 16.",
-   "The gaps grow by 4 each time: the next gaps are minus 20, minus 24, minus 28.",
-   "The 6th term is 157 minus 20, which is 137. The 7th is 137 minus 24, which is 113. The 8th is 113 minus 28, which is 85."
+   "Find the gaps between the terms: 197 minus 193 is 4. 193 minus 185 is 8. 185 minus 173 is 12. 173 minus 157 is 16.",
+   "The gaps grow by 4 each time, so the next gaps are 20, 24 and 28.",
+   "The 6th term: 157 minus 20 equals 137. The 7th term: 137 minus 24 equals 113.",
+   "The 8th term: 113 minus 28 equals 85."
   ]
  },
  "EXT_G5_WS_01_018": {
@@ -948,9 +952,9 @@
    "Try the 3rd even number before 11: 10, 8 and 6. That's 11 minus 5, which equals 6. The formula gives 11 minus, open bracket, 2 times 3, minus 1, close bracket. That is 11 minus 5, which equals 6."
   ],
   "steps": [
-   "105 is odd. The nth even number before an odd number M is M minus, open bracket, 2 n minus 1, close bracket.",
-   "Substitute M equals 105, and n equals 23. We get 105 minus, open bracket, 2 times 23, minus 1, close bracket, which is 105 minus 45.",
-   "Calculate: 105 minus 45 equals 60."
+   "105 is odd, so the 1st even number before it is 104.",
+   "Each even number before that is 2 less. To go from the 1st to the 23rd, you step back 22 times: 22 times 2 is 44.",
+   "104 minus 44 equals 60. So the 23rd even number prior to 105 is 60."
   ]
  },
  "EXT_G5_WS_01_020": {
@@ -981,9 +985,9 @@
    "100"
   ],
   "hints": [
-   "Write out the first few even and odd natural numbers and find their sums.",
-   "The first 25 even numbers are 2, 4, 6, and so on, up to 50. Their sum is 25 times 26, which equals 650. The first 25 odd numbers are 1, 3, 5, and so on, up to 49. Their sum is 25 squared, which equals 625.",
-   "Try smaller. The first 3 even numbers, 2, 4 and 6, add up to 12. The first 3 odd numbers, 1, 3 and 5, add up to 9. The difference is 3. The pattern: the difference equals n."
+   "Pair them up: the 1st even number with the 1st odd number, the 2nd with the 2nd, and so on. How much bigger is each even number than its partner?",
+   "2 is 1 more than 1, 4 is 1 more than 3, 6 is 1 more than 5. Every pair differs by 1. Count how many pairs there are.",
+   "An example with the first 3: 2 plus 4 plus 6 equals 12, and 1 plus 3 plus 5 equals 9. The difference is 12 minus 9, which is 3. That is 1 for each of the 3 pairs."
   ],
   "steps": [
    "The sum of the first 25 even natural numbers is 2 plus 4, and so on, up to 50. That equals 2 times, open bracket, 1 plus 2, and so on, up to 25, close bracket. That is 2 times 325, which equals 650.",
@@ -1019,9 +1023,9 @@
    "39"
   ],
   "hints": [
-   "For 7 consecutive odd numbers, the average equals the middle number, the 4th.",
-   "The middle is 31. The 7 consecutive odd numbers centred at 31 are: 25, 27, 29, 31, 33, 35 and 37.",
-   "Try 3 consecutive odd numbers with average 5: 3, 5 and 7. The middle is 5, and the largest is 7, which is 5 plus 2."
+   "When numbers are evenly spaced, the average is the middle number. With 7 numbers, the middle one is the 4th.",
+   "So the 4th number is 31, and three more odd numbers come after it. Odd numbers go up by 2 each time. Count on from 31, three times.",
+   "An example: 5 consecutive odd numbers have an average of 9. The middle number, the 3rd, is 9. So the numbers are 5, 7, 9, 11, 13, and the largest is 13."
   ],
   "steps": [
    "The average of 7 consecutive odd numbers equals the middle number, which is 31.",
@@ -1076,15 +1080,15 @@
    "4000"
   ],
   "hints": [
-   "A perfect square is a number that equals some whole number times itself.",
-   "Try square roots: the square root of 4628 is about 68. 68 squared is 4624, which is not 4628. What is the square root of 6241? Try 79 squared, which is 6241!",
-   "Try with smaller numbers first: 3 squared is 9, 4 squared is 16, 5 squared is 25. Check if the pattern you found works."
+   "A perfect square is a whole number times itself. Look at the last digits: square numbers never end in 2, 3, 7 or 8.",
+   "4628 ends in 8, so it cannot be a square. A square ending in 5 always ends in 25, like 225 or 625. And a square ending in 0 ends in an even number of zeros, like 100 or 10000. Use these to test the other choices.",
+   "Try a smaller one: which of 138, 196 and 245 is a perfect square? 138 ends in 8, and 245 does not end in 25, so only 196 can be. Check: 14 times 14 equals 196."
   ],
   "steps": [
-   "Test each: 68 squared is 4624, and 69 squared is 4761. 4628 is between them, so it is not a perfect square.",
-   "75 squared is 5625, and 76 squared is 5776. 5665 is between them, so no.",
-   "79 squared is 6241. Yes.",
-   "63 squared is 3969, and 64 squared is 4096. 4000 is between them, so no."
+   "Square numbers never end in 2, 3, 7 or 8, so 4628 is not a perfect square.",
+   "A square that ends in 5 always ends in 25. 5665 ends in 65, so it is not a perfect square.",
+   "4000 lies between 63 times 63, which is 3969, and 64 times 64, which is 4096. So it is not a perfect square.",
+   "That leaves 6241. Check: 79 times 79 equals 6241. So 6241 is the perfect square."
   ]
  },
  "EXT_G5_WS_B5_004": {
@@ -1096,9 +1100,9 @@
    "1"
   ],
   "hints": [
-   "Find the smallest 4 digit perfect square. Then find the greatest 1 digit prime. Divide, and find the remainder.",
-   "The smallest 4 digit square is 32 squared, which is 1024. The greatest 1 digit prime is 7. What is 1024 divided by 7?",
-   "A similar one: 100, the smallest 3 digit square, divided by 7, is 14 remainder 2."
+   "There are two numbers to find first: the smallest four-digit square number and the greatest one-digit prime. Then divide the first by the second.",
+   "31 times 31 is 961, which has only three digits. So try 32 times 32 for the smallest four-digit square. The one-digit primes are 2, 3, 5 and 7. Divide your square by the greatest of them, and see what is left over.",
+   "Try a smaller one: the smallest two-digit square is 4 times 4, which is 16, and the smallest odd prime is 3. 16 equals 3 times 5, plus 1, so the remainder is 1."
   ],
   "steps": [
    "The smallest 4 digit perfect square is 32 squared, which is 1024.",
@@ -1112,13 +1116,13 @@
   "options": [
    "80",
    "800",
-   "80",
+   "8000",
    "none of these"
   ],
   "hints": [
-   "First find the greatest 4 digit perfect square.",
-   "99 squared is 9801. The digit 8 is in the hundreds place. Its place value is 8 times 100, which equals 800.",
-   "A similar one: in 7396, which is 86 squared, the place value of 3 is 3 times 100, which equals 300."
+   "First find the greatest four-digit square number. Which is the biggest number you can multiply by itself and still get four digits?",
+   "100 times 100 is 10000, which has five digits. So try 99 times 99. Then see which place the digit 8 sits in.",
+   "A similar one: 86 times 86 equals 7396. Here, the digit 3 is in the hundreds place, so its place value is 3 times 100, which is 300."
   ],
   "steps": [
    "The greatest 4 digit perfect square is 99 squared, which is 9801.",
@@ -1135,9 +1139,9 @@
    "168"
   ],
   "hints": [
-   "Read the question carefully. This tests your understanding of sum of squares. Identify what information is given and what you need to find.",
-   "Write down the key formula or relationship for sum of squares. Think step by step about how to connect the given values to the answer.",
-   "Perfect squares: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, and so on."
+   "Read the order carefully: first square each one-digit prime, then add the squares.",
+   "The one-digit primes are 2, 3, 5 and 7. 1 is not a prime. Work out 2 times 2, 3 times 3, 5 times 5, and 7 times 7. Then add the four results.",
+   "Try a smaller one: the sum of the squares of 1, 2 and 3 is 1 plus 4 plus 9, which equals 14."
   ],
   "steps": [
    "2 squared is 4, 3 squared is 9, 5 squared is 25, and 7 squared is 49.",
@@ -1153,14 +1157,15 @@
    "1251"
   ],
   "hints": [
-   "Use: dividend equals divisor times quotient, plus remainder. Here, 1000 equals d times 25, plus 25.",
-   "1000 equals 25 d plus 25, which is 25 times, open bracket, d plus 1, close bracket. So d plus 1 equals 40, and d equals 39.",
-   "A similar one: 50 equals d times 4, plus 4. d equals, open bracket, 50 minus 4, close bracket, divided by 4, which is 46 divided by 4. Hmm, try: 100 equals d times 9, plus 1. d is 11. 11 squared is 121."
+   "In any division: dividend equals divisor times quotient, plus remainder. Here, the dividend is 1000, and the quotient and remainder are both 25.",
+   "Take the remainder away first: 1000 minus 25 is 975. This is the divisor times 25. So divide 975 by 25 to find the divisor, then square it.",
+   "Try a smaller one: 50 divided by a number gives quotient 4 and remainder 2. 50 minus 2 is 48, and 48 divided by 4 is 12. So the divisor is 12, and its square is 144."
   ],
   "steps": [
-   "1000 equals d times 25, plus 25.",
-   "25 d equals 975, so d equals 39.",
-   "d squared is 39 squared, which equals 1521."
+   "Dividend equals divisor times quotient, plus remainder. So 1000 equals the divisor times 25, plus 25.",
+   "Take away the remainder: 1000 minus 25 is 975. So the divisor times 25 is 975.",
+   "The divisor is 975 divided by 25, which equals 39.",
+   "39 times 39 equals 1521, so the square of the divisor is 1521."
   ]
  },
  "EXT_G5_WS_B5_010": {
@@ -1172,15 +1177,16 @@
    "all of these"
   ],
   "hints": [
-   "Compute A squared minus b squared for each pair, and check if the result is a perfect square.",
-   "10 squared minus 1 squared is 99, not a square. 13 squared minus 4 squared is 153, not a square. 41 squared minus 9 squared is 1600. Is 1600 a perfect square?",
-   "Try with smaller numbers first: 3 squared is 9, 4 squared is 16, 5 squared is 25. Check if the pattern you found works."
+   "For each pair, square both numbers and subtract the smaller square from the bigger one. Then ask: is the result a square number?",
+   "Start with 10 and 1: 10 times 10, minus 1 times 1, is 100 minus 1, which equals 99. 99 is between 9 times 9, which is 81, and 10 times 10, which is 100. So it is not a square. Now test the other pairs.",
+   "Try a smaller one: 5 and 4. 5 times 5, minus 4 times 4, is 25 minus 16, which equals 9. And 3 times 3 is 9, so that difference is a square number."
   ],
   "steps": [
-   "10 squared minus 1 squared is 100 minus 1, which equals 99. The square root of 99 is about 9.95, so no.",
-   "13 squared minus 4 squared is 169 minus 16, which equals 153. The square root of 153 is about 12.4, so no.",
-   "41 squared minus 9 squared is 1681 minus 81, which equals 1600. That is 40 squared. Yes.",
-   "Answer: 41 and 9."
+   "10 and 1: 100 minus 1 is 99, which lies between 9 times 9, or 81, and 10 times 10, or 100. Not a square.",
+   "13 and 4: 169 minus 16 is 153, which lies between 12 times 12, or 144, and 13 times 13, or 169. Not a square.",
+   "41 and 9: 41 times 41 is 1681, and 9 times 9 is 81. 1681 minus 81 equals 1600.",
+   "40 times 40 equals 1600, so 1600 is a square number. The other two pairs do not work, so it cannot be all of these.",
+   "So the two numbers are 41 and 9."
   ]
  },
  "EXT_G5_WS_B5_011": {
@@ -1192,9 +1198,9 @@
    "11 squared"
   ],
   "hints": [
-   "Read the question carefully. This tests your understanding of substitution with squares. Identify what information is given and what you need to find.",
-   "Write down the key formula or relationship for substitution with squares. Think step by step about how to connect the given values to the answer.",
-   "Perfect squares: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, and so on."
+   "m squared means m times m. Put the numbers in place of the letters, square each one, then add.",
+   "With m equal to 5, and n equal to 6, you need 5 times 5, and 6 times 6. Square each number first, and only then add the two results.",
+   "Try a smaller one: if m is 2 and n is 3, then m squared plus n squared is 4 plus 9, which equals 13. Notice this is not the same as squaring 2 plus 3."
   ],
   "steps": [
    "m squared is 5 squared, which equals 25.",
@@ -1211,14 +1217,15 @@
    "none of these"
   ],
   "hints": [
-   "If 2 times, open bracket, n plus n plus 1, close bracket, equals 18, then 2 times, open bracket, 2 n plus 1, close bracket, equals 18. So 2 n plus 1 equals 9, and n equals 4. The numbers are 4 and 5.",
-   "The sum of the squares is 4 squared plus 5 squared, which is 16 plus 25.",
-   "A similar one: 2 times, open bracket, n plus n plus 1, close bracket, equals 10, which gives n equals 2. Then 2 squared plus 3 squared is 4 plus 9, which equals 13."
+   "Work backwards. If twice the sum is 18, what is the sum? Then find two next-door numbers that add up to it.",
+   "The sum is 18 divided by 2, which is 9. Which two consecutive numbers, numbers next to each other, like 6 and 7, add up to 9? Square each of them, and add.",
+   "Try a smaller one: twice the sum of two consecutive numbers is 10. The sum is 5, so the numbers are 2 and 3. Their squares add up to 4 plus 9, which equals 13."
   ],
   "steps": [
-   "2 times, open bracket, n plus n plus 1, close bracket, equals 18. So 2 n plus 1 equals 9, which means n equals 4.",
-   "The numbers are 4 and 5.",
-   "4 squared plus 5 squared is 16 plus 25, which equals 41."
+   "Twice the sum is 18, so the sum is 18 divided by 2, which is 9.",
+   "Two consecutive numbers that add up to 9 are 4 and 5, because 4 plus 5 equals 9.",
+   "Their squares are 4 times 4, which is 16, and 5 times 5, which is 25.",
+   "16 plus 25 equals 41, so the sum of their squares is 41."
   ]
  },
  "EXT_G5_WS_B5_014": {
@@ -1230,9 +1237,9 @@
    "22"
   ],
   "hints": [
-   "Find the largest perfect square that is less than or equal to 386.",
-   "19 squared is 361, and 20 squared is 400. Since 400 is greater than 386, use 361. Subtract: 386 minus 361 equals 25. Hmm, but option A is 25 and B is 19.",
-   "Try with smaller numbers first: 3 squared is 9, 4 squared is 16, 5 squared is 25. Check if the pattern you found works."
+   "Find the biggest square number that is not more than 386. The gap between 386 and that square is what you subtract.",
+   "20 times 20 is 400, which is too big. Try 19 times 19. Then take that square away from 386.",
+   "Try a smaller one: what least number must be subtracted from 70 to make a perfect square? 8 times 8 is 64, which fits, but 9 times 9 is 81, which is too big. 70 minus 64 is 6, so subtract 6."
   ],
   "steps": [
    "19 squared is 361, and 20 squared is 400.",
@@ -1249,14 +1256,14 @@
    "31"
   ],
   "hints": [
-   "Find the smallest perfect square that is greater than or equal to 1400.",
-   "37 squared is 1369, which is too small. 38 squared is 1444. Add: 1444 minus 1400 equals 44.",
-   "A similar one: what do we add to 50 to make a square? 8 squared is 64, and 64 minus 50 equals 14."
+   "Find the first square number that is bigger than 1400. The gap from 1400 up to that square is what you add.",
+   "37 times 37 is 1369, which is too small. Work out 38 times 38, then subtract 1400 from it.",
+   "Try a smaller one: what smallest number must be added to 50 to make a perfect square? 7 times 7 is 49, which is too small. 8 times 8 is 64, the next square, and 64 minus 50 is 14. So add 14."
   ],
   "steps": [
-   "37 squared is 1369, which is less than 1400. 38 squared is 1444, which is greater than 1400.",
-   "1444 minus 1400 equals 44.",
-   "The answer is C."
+   "37 times 37 is 1369, which is less than 1400. 38 times 38 is 1444, which is more than 1400.",
+   "So the first square number after 1400 is 1444.",
+   "1444 minus 1400 equals 44, so the smallest number to add is 44."
   ]
  },
  "EXT_G5_WS_B5_016": {
@@ -1268,14 +1275,15 @@
    "1"
   ],
   "hints": [
-   "First compute 35 times 36, then find the nearest perfect square above it.",
-   "35 times 36 equals 1260. The next perfect square is 36 squared, which is 1296. The difference is 36. But wait: check if there's something smaller.",
-   "Try with smaller numbers first: 3 squared is 9, 4 squared is 16, 5 squared is 25. Check if the pattern you found works."
+   "First work out 35 times 36. Then find the first square number that is bigger than it.",
+   "35 times 36 equals 1260. Compare with squares nearby: 35 times 35 is 1225, which is smaller, so the next square up is 36 times 36. How far is 1260 from it?",
+   "Try a smaller one: 4 times 5 is 20. The next square is 5 times 5, which is 25, and 25 minus 20 is 5. So you add 5."
   ],
   "steps": [
    "35 times 36 equals 1260.",
-   "Note: 35 times 36 equals 36 squared minus 36.",
-   "Add 36: 1260 plus 36 equals 1296, which is 36 squared."
+   "35 times 35 is 1225, which is less than 1260. So the next square number is 36 times 36, which is 1296.",
+   "1296 minus 1260 equals 36.",
+   "So the smallest number to add is 36."
   ]
  },
  "EXT_G5_WS_B5_018": {
@@ -1287,15 +1295,16 @@
    "9 times 12 times 4"
   ],
   "hints": [
-   "Compute each product and check if it's a perfect square.",
-   "25 times 49 is 1225, which is 35 squared. 3 times 9 times 12 is 324, which is 18 squared. 7 times 14 times 18 is 1764, which is 42 squared.",
-   "Try with smaller numbers first: 3 squared is 9, 4 squared is 16, 5 squared is 25. Check if the pattern you found works."
+   "A product is a square number when its prime factors can all be put into pairs. Break each number into primes and try to pair them up.",
+   "Start with 25 times 49: 25 is 5 times 5, and 49 is 7 times 7. Every prime has a partner, so this product is a square: it is 35 times 35. Test the other products the same way, and look for one with a prime left over.",
+   "Try a smaller one: 2 times 6 times 3 is the same as 2 times 2, times 3 times 3. The 2s pair up and the 3s pair up, so it is a square: 6 times 6 equals 36. But 2 times 6 times 5 is the same as 2 times 2, times 3, times 5. That has 3 and 5 left alone, so 60 is not a square."
   ],
   "steps": [
-   "Option A: 25 times 49 equals 1225, which is 35 squared. A square number.",
-   "Option B: 3 times 9 times 12 equals 324, which is 18 squared. A square number.",
-   "Option C: 7 times 14 times 18 equals 1764, which is 42 squared. A square number.",
-   "Option D: 9 times 12 times 4 equals 432. 20 squared is 400, and 21 squared is 441. Not a perfect square."
+   "25 times 49 is the same as 5 times 5, times 7 times 7, which equals 1225. And 35 times 35 is 1225. A square.",
+   "3 times 9 times 12 equals 324, and 18 times 18 is 324. A square.",
+   "7 times 14 times 18 equals 1764, and 42 times 42 is 1764. A square.",
+   "9 times 12 times 4 equals 432, which lies between 20 times 20, or 400, and 21 times 21, or 441. Not a square.",
+   "So the product that is not a square number is 9 times 12 times 4."
   ]
  },
  "EXT_G5_WS_B5_020": {
@@ -1326,14 +1335,15 @@
    "none of these"
   ],
   "hints": [
-   "Even perfect squares come from squaring even numbers. Which even numbers give 3 digit squares?",
-   "The even numbers from 10 to 30 are: 10, 12, 14, 16, 18, 20, 22, 24, 26, 28 and 30.",
-   "A similar one: how many 2 digit squares? The smallest is 4 squared, which is 16. The largest is 9 squared, which is 81. The count is 9 minus 4 plus 1, which equals 6."
+   "An even square comes from squaring an even number, and an odd square from an odd number. So count the even numbers whose squares have three digits.",
+   "The smallest three-digit square is 10 times 10, which is 100, and the largest is 31 times 31, which is 961. So the even numbers to count go 10, 12, 14, and so on, up to 30. Count them carefully.",
+   "Try a smaller one: even two-digit squares. Two-digit squares come from 4 to 9. The even numbers there are 4, 6 and 8, giving 16, 36 and 64. So there are 3."
   ],
   "steps": [
-   "The even numbers whose squares have 3 digits are 10, 12, and so on, up to 30.",
-   "The count is, open bracket, 30 minus 10, close bracket, divided by 2, plus 1, which equals 11.",
-   "The answer is C."
+   "An even square number comes from squaring an even number.",
+   "Three-digit squares run from 10 times 10, which is 100, to 31 times 31, which is 961, because 32 times 32 is 1024, which has four digits.",
+   "The even numbers from 10 to 31 are 10, 12, 14, 16, 18, 20, 22, 24, 26, 28 and 30.",
+   "That is 11 numbers, so there are 11 even three-digit square numbers."
   ]
  },
  "EXT_G5_WS_B5_022": {
@@ -1345,9 +1355,9 @@
    "21"
   ],
   "hints": [
-   "4 squared is 16, and 6 squared is 36. Count the natural numbers strictly between 16 and 36.",
-   "The numbers are 17, 18, and so on, up to 35. The count is 35 minus 17 plus 1, which equals 19.",
-   "A similar one: between 2 squared, which is 4, and 3 squared, which is 9, there are 5, 6, 7 and 8. That is 4 numbers."
+   "First work out the two squares. 'Between' means the two end numbers themselves are not counted.",
+   "4 times 4 is 16, and 6 times 6 is 36. So count the numbers after 16 and before 36: they start at 17 and stop at 35.",
+   "Try a smaller one: between 2 times 2, which is 4, and 3 times 3, which is 9, lie 5, 6, 7 and 8. That is 4 numbers."
   ],
   "steps": [
    "4 squared is 16, and 6 squared is 36.",
@@ -1364,14 +1374,15 @@
    "616"
   ],
   "hints": [
-   "If there are n boxes with n pencils each, the total is n times n, which is n squared. So the total must be a perfect square.",
-   "Check each: 729 is 27 squared, a perfect square. 1440, 1028, 616: are any of these perfect squares?",
-   "A similar one: n boxes with n items each makes n squared items. If there are 100 items, n is 10, since 10 squared is 100."
+   "If there are 6 boxes, each has 6 pencils: 6 times 6 in all. So the total is always a number times itself, a square number.",
+   "Find which choice is a perfect square. Last digits help: a square never ends in 2, 3, 7 or 8, and a square that ends in 0 ends in an even number of zeros. Test what remains by squaring nearby numbers.",
+   "Try a smaller one: could the total be 40, 44 or 49? 40 ends in a single zero. 6 times 6 is 36, and 7 times 7 is 49, so 44 is not a square. Only 49 works: 7 boxes of 7 pencils."
   ],
   "steps": [
-   "The total is n squared, so it must be a perfect square.",
-   "729 is 27 squared. Yes.",
-   "The answer is A."
+   "If there are n boxes, each box holds n pencils, so the total is n times n. The total must be a perfect square.",
+   "1440 ends in a single zero and 1028 ends in 8, so neither is a square.",
+   "616 lies between 24 times 24, which is 576, and 25 times 25, which is 625. So it is not a square.",
+   "27 times 27 equals 729. So the total can be 729 pencils: 27 boxes of 27 pencils."
   ]
  },
  "EXT_G5_WS_B5_025": {
@@ -1388,9 +1399,10 @@
    "A similar one: 30 students, in n groups of n. 5 squared is 25, so the leftover is 5."
   ],
   "steps": [
-   "The largest n, with n squared less than or equal to 245, is n equals 15. 15 squared is 225.",
-   "Left out: 245 minus 225, which equals 20.",
-   "The answer is B."
+   "Each group has as many students as there are groups, so the students in groups make a square number.",
+   "Find the biggest square that is not more than 245: 15 times 15 is 225, which fits, but 16 times 16 is 256, which is too many.",
+   "So there are 15 groups of 15, using 225 students.",
+   "245 minus 225 equals 20, so 20 students will be left out."
   ]
  },
  "EXT_G5_WS_B5_026": {
@@ -1641,9 +1653,9 @@
    "21"
   ],
   "hints": [
-   "Square root asks: what number times itself gives this?",
-   "Try numbers: is it 21? 21 times 21 equals 441. No.",
-   "Try 22: 22 times 22 equals 484. Yes!"
+   "The square root of 484 is the number that, multiplied by itself, gives 484.",
+   "Narrow it down: 20 times 20 is 400, and 30 times 30 is 900. 484 lies between them, so its square root is between 20 and 30. Now use the last digit of 484.",
+   "Try a smaller one. For 169: 10 times 10 is 100, and 20 times 20 is 400. So the root is between 10 and 20. 169 ends in 9, so try 13 or 17. 13 times 13 equals 169."
   ],
   "steps": [
    "We need: what number, times itself, equals 484?",
@@ -1660,8 +1672,8 @@
   ],
   "hints": [
    "A perfect square has an exact whole number as its square root.",
-   "Try finding the square root of each option.",
-   "12 squared equals 144. Check the others too."
+   "Square a few whole numbers near the choices: work out 11 times 11, 12 times 12, and 13 times 13. Does one of the choices turn up?",
+   "For example, 49 is a perfect square, because 7 times 7 equals 49. But 50 is not: 7 times 7 is too small, and 8 times 8, which is 64, is too big."
   ],
   "steps": [
    "Check each: the square root of 144 is 12, exactly. It's a perfect square!",
@@ -1700,8 +1712,8 @@
    "Multiply carefully!"
   ],
   "steps": [
-   "The square of 9 is 9 times 9.",
-   "That equals 81."
+   "Squaring a number means multiplying it by itself. So the square of 9 is 9 times 9.",
+   "9 times 9 equals 81. So the square of 9 is 81."
   ]
  },
  "VAR2_EXT_G5_WS_B5_002_01": {
@@ -1713,9 +1725,9 @@
    "14"
   ],
   "hints": [
-   "Square root asks: what number times itself gives this?",
-   "Try numbers: is it 13? 13 times 13 equals 169. No.",
-   "Try 14: 14 times 14 equals 196. Yes!"
+   "The square root of 196 is the number that, multiplied by itself, gives 196.",
+   "Narrow it down: 10 times 10 is 100, and 20 times 20 is 400. 196 lies between them, so its square root is between 10 and 20. Now use the last digit of 196.",
+   "Try a smaller one. For 169: 10 times 10 is 100, and 20 times 20 is 400. So the root is between 10 and 20. 169 ends in 9, so try 13 or 17. 13 times 13 equals 169."
   ],
   "steps": [
    "We need: what number, times itself, equals 196?",
@@ -1754,8 +1766,8 @@
    "Multiply carefully!"
   ],
   "steps": [
-   "The square of 8 is 8 times 8.",
-   "That equals 64."
+   "Squaring a number means multiplying it by itself. So the square of 8 is 8 times 8.",
+   "8 times 8 equals 64. So the square of 8 is 64."
   ]
  },
  "VAR2_EXT_G5_WS_B5_002_04_p2b": {
@@ -1767,9 +1779,9 @@
    "18"
   ],
   "hints": [
-   "Square root asks: what number times itself gives this?",
-   "Try numbers: is it 5? 5 times 5 equals 25. No.",
-   "Try 6: 6 times 6 equals 36. Yes!"
+   "The square root of 36 is the number that, multiplied by itself, gives 36.",
+   "Go through the squares in order: 1 times 1, 2 times 2, 3 times 3, and so on. Which one gives 36?",
+   "Try a smaller one: the square root of 49 is 7, because 7 times 7 equals 49."
   ],
   "steps": [
    "We need: what number, times itself, equals 36?",
@@ -1785,9 +1797,9 @@
    "31"
   ],
   "hints": [
-   "Square root asks: what number times itself gives this?",
-   "Try numbers: is it 29? 29 times 29 equals 841. No.",
-   "Try 30: 30 times 30 equals 900. Yes!"
+   "The square root of 900 is the number that, multiplied by itself, gives 900.",
+   "900 equals 9 times 100. Find the number whose square is 9, and the number whose square is 100. Then multiply the two.",
+   "Try a smaller one: 400 equals 4 times 100. Since 2 times 2 is 4, and 10 times 10 is 100, the square root of 400 is 2 times 10, which equals 20."
   ],
   "steps": [
    "We need: what number, times itself, equals 900?",
@@ -1826,8 +1838,8 @@
    "Multiply carefully!"
   ],
   "steps": [
-   "The square of 11 is 11 times 11.",
-   "That equals 121."
+   "Squaring a number means multiplying it by itself. So the square of 11 is 11 times 11.",
+   "11 times 11 equals 121. So the square of 11 is 121."
   ]
  },
  "VAR2_EXT_G5_WS_B5_003_04_p2b": {
@@ -1839,9 +1851,9 @@
    "33"
   ],
   "hints": [
-   "Square root asks: what number times itself gives this?",
-   "Try numbers: is it 33? 33 times 33 equals 1089. No.",
-   "Try 34: 34 times 34 equals 1156. Yes!"
+   "The square root of 1156 is the number that, multiplied by itself, gives 1156.",
+   "Narrow it down: 30 times 30 is 900, and 40 times 40 is 1600. 1156 lies between them, so its square root is between 30 and 40. Now use the last digit of 1156.",
+   "Try a smaller one. For 169: 10 times 10 is 100, and 20 times 20 is 400. So the root is between 10 and 20. 169 ends in 9, so try 13 or 17. 13 times 13 equals 169."
   ],
   "steps": [
    "We need: what number, times itself, equals 1156?",
@@ -1857,9 +1869,9 @@
    "480"
   ],
   "hints": [
-   "Square root asks: what number times itself gives this?",
-   "Try numbers: is it 30? 30 times 30 equals 900. No.",
-   "Try 31: 31 times 31 equals 961. Yes!"
+   "The square root of 961 is the number that, multiplied by itself, gives 961.",
+   "Narrow it down: 30 times 30 is 900, and 40 times 40 is 1600. 961 lies between them, so its square root is between 30 and 40. Now use the last digit of 961.",
+   "Try a smaller one. For 169: 10 times 10 is 100, and 20 times 20 is 400. So the root is between 10 and 20. 169 ends in 9, so try 13 or 17. 13 times 13 equals 169."
   ],
   "steps": [
    "We need: what number, times itself, equals 961?",
@@ -1916,8 +1928,8 @@
    "Multiply carefully!"
   ],
   "steps": [
-   "The square of 6 is 6 times 6.",
-   "That equals 36."
+   "Squaring a number means multiplying it by itself. So the square of 6 is 6 times 6.",
+   "6 times 6 equals 36. So the square of 6 is 36."
   ]
  },
  "VAR2_EXT_G5_WS_B5_007_01": {
@@ -1929,9 +1941,9 @@
    "8"
   ],
   "hints": [
-   "Square root asks: what number times itself gives this?",
-   "Try numbers: is it 8? 8 times 8 equals 64. No.",
-   "Try 9: 9 times 9 equals 81. Yes!"
+   "The square root of 81 is the number that, multiplied by itself, gives 81.",
+   "Go through the squares in order: 1 times 1, 2 times 2, 3 times 3, and so on. Which one gives 81?",
+   "Try a smaller one: the square root of 49 is 7, because 7 times 7 equals 49."
   ],
   "steps": [
    "We need: what number, times itself, equals 81?",
@@ -1970,8 +1982,8 @@
    "Multiply carefully!"
   ],
   "steps": [
-   "The square of 14 is 14 times 14.",
-   "That equals 196."
+   "Squaring a number means multiplying it by itself. So the square of 14 is 14 times 14.",
+   "14 times 14 equals 196. So the square of 14 is 196."
   ]
  },
  "VAR2_EXT_G5_WS_B5_007_04_p2b": {
@@ -2001,9 +2013,9 @@
    "16"
   ],
   "hints": [
-   "Square root asks: what number times itself gives this?",
-   "Try numbers: is it 14? 14 times 14 equals 196. No.",
-   "Try 15: 15 times 15 equals 225. Yes!"
+   "The square root of 225 is the number that, multiplied by itself, gives 225.",
+   "Narrow it down: 10 times 10 is 100, and 20 times 20 is 400. 225 lies between them, so its square root is between 10 and 20. Now use the last digit of 225.",
+   "Try a smaller one. For 169: 10 times 10 is 100, and 20 times 20 is 400. So the root is between 10 and 20. 169 ends in 9, so try 13 or 17. 13 times 13 equals 169."
   ],
   "steps": [
    "We need: what number, times itself, equals 225?",
@@ -2042,8 +2054,8 @@
    "Multiply carefully!"
   ],
   "steps": [
-   "The square of 10 is 10 times 10.",
-   "That equals 100."
+   "Squaring a number means multiplying it by itself. So the square of 10 is 10 times 10.",
+   "10 times 10 equals 100. So the square of 10 is 100."
   ]
  },
  "VAR2_EXT_G5_WS_B5_009_04_p2b": {
@@ -2073,9 +2085,9 @@
    "24"
   ],
   "hints": [
-   "Square root asks: what number times itself gives this?",
-   "Try numbers: is it 24? 24 times 24 equals 576. No.",
-   "Try 25: 25 times 25 equals 625. Yes!"
+   "The square root of 625 is the number that, multiplied by itself, gives 625.",
+   "Narrow it down: 20 times 20 is 400, and 30 times 30 is 900. 625 lies between them, so its square root is between 20 and 30. Now use the last digit of 625.",
+   "Try a smaller one. For 169: 10 times 10 is 100, and 20 times 20 is 400. So the root is between 10 and 20. 169 ends in 9, so try 13 or 17. 13 times 13 equals 169."
   ],
   "steps": [
    "We need: what number, times itself, equals 625?",
@@ -2217,9 +2229,9 @@
    "19"
   ],
   "hints": [
-   "Square root asks: what number times itself gives this?",
-   "Try numbers: is it 18? 18 times 18 equals 324. No.",
-   "Try 19: 19 times 19 equals 361. Yes!"
+   "The square root of 361 is the number that, multiplied by itself, gives 361.",
+   "Narrow it down: 10 times 10 is 100, and 20 times 20 is 400. 361 lies between them, so its square root is between 10 and 20. Now use the last digit of 361.",
+   "Try a smaller one. For 169: 10 times 10 is 100, and 20 times 20 is 400. So the root is between 10 and 20. 169 ends in 9, so try 13 or 17. 13 times 13 equals 169."
   ],
   "steps": [
    "We need: what number, times itself, equals 361?",
@@ -2258,8 +2270,8 @@
    "Multiply carefully!"
   ],
   "steps": [
-   "The square of 25 is 25 times 25.",
-   "That equals 625."
+   "Squaring a number means multiplying it by itself. So the square of 25 is 25 times 25.",
+   "25 times 25 equals 625. So the square of 25 is 625."
   ]
  },
  "VAR2_EXT_G5_WS_B5_015_04_p2b": {
@@ -2330,8 +2342,8 @@
    "Multiply carefully!"
   ],
   "steps": [
-   "The square of 21 is 21 times 21.",
-   "That equals 441."
+   "Squaring a number means multiplying it by itself. So the square of 21 is 21 times 21.",
+   "21 times 21 equals 441. So the square of 21 is 441."
   ]
  },
  "VAR2_EXT_G5_WS_B5_017_04_p2b": {
@@ -2361,9 +2373,9 @@
    "4"
   ],
   "hints": [
-   "Square root asks: what number times itself gives this?",
-   "Try numbers: is it 4? 4 times 4 equals 16. No.",
-   "Try 5: 5 times 5 equals 25. Yes!"
+   "The square root of 25 is the number that, multiplied by itself, gives 25.",
+   "Go through the squares in order: 1 times 1, 2 times 2, 3 times 3, and so on. Which one gives 25?",
+   "Try a smaller one: the square root of 49 is 7, because 7 times 7 equals 49."
   ],
   "steps": [
    "We need: what number, times itself, equals 25?",
@@ -2402,8 +2414,8 @@
    "Multiply carefully!"
   ],
   "steps": [
-   "The square of 12 is 12 times 12.",
-   "That equals 144."
+   "Squaring a number means multiplying it by itself. So the square of 12 is 12 times 12.",
+   "12 times 12 equals 144. So the square of 12 is 144."
   ]
  },
  "VAR2_EXT_G5_WS_B5_024_04_p2b": {
@@ -2415,9 +2427,9 @@
    "26"
   ],
   "hints": [
-   "Square root asks: what number times itself gives this?",
-   "Try numbers: is it 26? 26 times 26 equals 676. No.",
-   "Try 27: 27 times 27 equals 729. Yes!"
+   "The square root of 729 is the number that, multiplied by itself, gives 729.",
+   "Narrow it down: 20 times 20 is 400, and 30 times 30 is 900. 729 lies between them, so its square root is between 20 and 30. Now use the last digit of 729.",
+   "Try a smaller one. For 169: 10 times 10 is 100, and 20 times 20 is 400. So the root is between 10 and 20. 169 ends in 9, so try 13 or 17. 13 times 13 equals 169."
   ],
   "steps": [
    "We need: what number, times itself, equals 729?",
@@ -2433,9 +2445,9 @@
    "50"
   ],
   "hints": [
-   "Square root asks: what number times itself gives this?",
-   "Try numbers: is it 9? 9 times 9 equals 81. No.",
-   "Try 10: 10 times 10 equals 100. Yes!"
+   "The square root of 100 is the number that, multiplied by itself, gives 100.",
+   "Go through the squares in order: 1 times 1, 2 times 2, 3 times 3, and so on. Which one gives 100?",
+   "Try a smaller one: the square root of 49 is 7, because 7 times 7 equals 49."
   ],
   "steps": [
    "We need: what number, times itself, equals 100?",
@@ -2474,8 +2486,8 @@
    "Multiply carefully!"
   ],
   "steps": [
-   "The square of 13 is 13 times 13.",
-   "That equals 169."
+   "Squaring a number means multiplying it by itself. So the square of 13 is 13 times 13.",
+   "13 times 13 equals 169. So the square of 13 is 169."
   ]
  },
  "VAR2_EXT_G5_WS_B5_025_04_p2b": {
@@ -2510,8 +2522,9 @@
    "After that, divide both sides by the coefficient of x."
   ],
   "steps": [
-   "Add 11 to both sides. 5 x equals 14 plus 11, which is 25.",
-   "Divide both sides by 5. x equals 25 divided by 5, which is 5."
+   "Add 11 to both sides, to undo the minus 11. 5 x equals 14 plus 11, which is 25.",
+   "Divide both sides by 5. x equals 25 divided by 5, which is 5.",
+   "Check: 5 times 5, minus 11, equals 14. So x equals 5."
   ]
  },
  "VAR_EXT_G5_WS_B5_011_03": {
@@ -2528,8 +2541,9 @@
    "Think: 8 times what number gives 48?"
   ],
   "steps": [
-   "Subtract 8 from both sides. 8 x equals 56 minus 8, which is 48.",
-   "Divide both sides by 8. x equals 48 divided by 8, which is 6."
+   "Subtract 8 from both sides, to undo the plus 8. 8 x equals 56 minus 8, which is 48.",
+   "Divide both sides by 8. x equals 48 divided by 8, which is 6.",
+   "Check: 8 times 6, plus 8, equals 56. So x equals 6."
   ]
  },
  "VAR_EXT_G5_WS_B5_011_04": {
@@ -2546,8 +2560,9 @@
    "After that, divide both sides by the coefficient of x."
   ],
   "steps": [
-   "Add 4 to both sides. 7 x equals 80 plus 4, which is 84.",
-   "Divide both sides by 7. x equals 84 divided by 7, which is 12."
+   "Add 4 to both sides, to undo the minus 4. 7 x equals 80 plus 4, which is 84.",
+   "Divide both sides by 7. x equals 84 divided by 7, which is 12.",
+   "Check: 7 times 12, minus 4, equals 80. So x equals 12."
   ]
  },
  "VAR_EXT_G5_WS_B5_011_04_b2": {
@@ -2564,8 +2579,9 @@
    "After that, divide both sides by the coefficient of x."
   ],
   "steps": [
-   "Add 3 to both sides. 3 x equals 21 plus 3, which is 24.",
-   "Divide both sides by 3. x equals 24 divided by 3, which is 8."
+   "Add 3 to both sides, to undo the minus 3. 3 x equals 21 plus 3, which is 24.",
+   "Divide both sides by 3. x equals 24 divided by 3, which is 8.",
+   "Check: 3 times 8, minus 3, equals 21. So x equals 8."
   ]
  },
  "VAR_EXT_G5_WS_B5_011_05_b2": {
@@ -2582,8 +2598,9 @@
    "After that, divide both sides by the coefficient of x."
   ],
   "steps": [
-   "Add 3 to both sides. 7 x equals 53 plus 3, which is 56.",
-   "Divide both sides by 7. x equals 56 divided by 7, which is 8."
+   "Add 3 to both sides, to undo the minus 3. 7 x equals 53 plus 3, which is 56.",
+   "Divide both sides by 7. x equals 56 divided by 7, which is 8.",
+   "Check: 7 times 8, minus 3, equals 53. So x equals 8."
   ]
  }
 }

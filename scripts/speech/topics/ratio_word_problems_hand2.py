@@ -19,9 +19,9 @@ HAND = {
     "EXT_G5_FP_2020_024": {
         "q": "A man takes up a work to be completed in 30 days, for 27000 rupees. He works for 18 days, and then leaves. If you were the employer, how much would you pay him?",
         "hints": [
-            "Find the pay for one day: 27000 divided by 30. Then multiply by the 18 days he actually worked.",
-            "Unitary method: the pay per day, times the days worked.",
-            "",
+            "He should be paid only for the days he worked. Find the pay for one day first: 27000 divided by 30.",
+            "Then multiply one day's pay by the 18 days he worked.",
+            "Try a smaller one. 1000 rupees for 10 days, is 100 rupees a day. For 4 days of work, the pay is 4 times 100, which is 400 rupees.",
         ],
         "steps": [
             "The pay per day is 27000 divided by 30, which is 900 rupees.",
@@ -129,14 +129,14 @@ HAND = {
     "EXT_G5_WS_B2_007": {
         "q": "In how many ways can 28 be written as a sum of two odd numbers?",
         "hints": [
-            "For the sum to be 28, both numbers must be odd. List pairs of odd numbers that add to 28.",
-            "Start with 1 plus 27, 3 plus 25, 5 plus 23, 7 plus 21, and so on. Keep going until the first number exceeds the second.",
-            "Try with 3 people: A B, A C, B C. That is 3 handshakes. The formula is n, times n minus 1, divided by 2.",
+            "You need pairs of odd numbers that add up to 28. Swapping the two numbers, like 1 plus 27, and 27 plus 1, counts as the same way.",
+            "Start with the smallest odd number, and list in order: 1 plus 27, 3 plus 25, 5 plus 23, and so on. Stop when the first number would become bigger than the second.",
+            "Here is an example with 12. The pairs of odd numbers are 1 plus 11, 3 plus 9, and 5 plus 7. The next would be 7 plus 5, a repeat. So 12 can be written in 3 ways.",
         ],
         "steps": [
-            "List pairs of odd numbers summing to 28: 1 and 27, 3 and 25, 5 and 23, 7 and 21, 9 and 19, 11 and 17, 13 and 15.",
-            "Count the pairs: 7 pairs.",
-            "Verify: check the answer matches option C.",
+            "List the pairs of odd numbers that add up to 28, starting with the smallest odd number: 1 plus 27, 3 plus 25, 5 plus 23, 7 plus 21, 9 plus 19, 11 plus 17, 13 plus 15.",
+            "The next pair would be 15 plus 13, which repeats 13 plus 15. So the list is complete.",
+            "Count the pairs. So 28 can be written as a sum of two odd numbers in 7 ways.",
         ],
     },
     "EXT_G5_WS_B2_010": {
@@ -192,22 +192,22 @@ HAND = {
     "EXT_G5_WS_B2_018": {
         "q": "4 years from now, the ages of Vijay and Vinay will add up to 67 years. What was the sum of their ages, 5 years ago?",
         "hints": [
-            "First, find their current total age. Then go back 5 years.",
-            "The current sum is 67 minus 2 times 4. That is 67 minus 8, which is 59. The sum 5 years ago is 59 minus 2 times 5. That is 59 minus 10, which is 49.",
-            "Try this. If ages will sum to 30 in 2 years, the current sum is 30 minus 4, which is 26. 3 years ago, it was 26 minus 6, which is 20.",
+            "There are two people, so every year that passes adds 2 years to the sum of their ages. Going back in time takes 2 years off, for each year.",
+            "From 4 years in the future, back to 5 years in the past, is 4 plus 5, which is 9 years. In 9 years, the sum of two ages changes by 2 times 9. Take that away from 67.",
+            "Here is an example. In 2 years, two ages will add up to 30. What was the sum, 3 years ago? That is 2 plus 3, which is 5 years earlier. So the sum is 2 times 5, which is 10 less: 30 minus 10 is 20 years.",
         ],
         "steps": [
-            "In 4 years, the sum is 67. The current sum is 67 minus 2 times 4, which is 59.",
-            "5 years ago, the sum is 59 minus 2 times 5, which is 49.",
-            "Verify: check the answer matches option D.",
+            "In 4 years, each of the two will be 4 years older. So the sum now is 67, minus 2 times 4, which is 59 years.",
+            "5 years ago, each of them was 5 years younger. So take away 2 times 5, which is 10 years.",
+            "59 minus 10 is 49. So the sum of their ages, 5 years ago, was 49 years.",
         ],
     },
     "EXT_G5_WS_B2_019": {
         "q": "The sum of the ages of Aman and Suman, in the year 2015, was 87 years. If Aman celebrated his 37th birthday in the year 2005, in which year was Suman born?",
         "hints": [
-            "Find Aman's age in 2015. Then find Suman's age in 2015. Then find Suman's birth year.",
-            "Aman was 37 in 2005, so in 2015 he was 37 plus 10, which is 47. Suman's age in 2015 is 87 minus 47, which is 40.",
-            "Try this. If Riya was 10 in 2000, she was 15 in 2005. If the sum of ages in 2005 is 30, the other person is 15, born in 1990.",
+            "Work in three small steps. Find Aman's age in 2015, then Suman's age in 2015, then count back to the year Suman was born.",
+            "From 2005 to 2015 is 10 years. So Aman was 37 plus 10, which is 47, in 2015. Take 47 away from 87, to get Suman's age in 2015. Then subtract that age from 2015.",
+            "Here is an example. Riya turned 10 in 2000, so she was 15 in 2005. If Riya and Tara's ages added up to 35 in 2005, Tara was 35 minus 15, which is 20. So Tara was born in 2005 minus 20, which is 1985.",
         ],
         "steps": [
             "Aman was 37 in 2005, so in 2015 he was 37 plus 10, which is 47.",

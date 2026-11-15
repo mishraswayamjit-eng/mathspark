@@ -10,8 +10,35 @@ E["EXT_G5_WS_B3_004"] = entry(
     steps=[
         bm([bar([seg("× 2") for _ in range(6)], label="2 hours", brace="120 min = 6 doublings")],
            "120 ÷ 20 = 6 doublings"),
-        bm([bar([seg("× 2") for _ in range(6)], label="2 hours", brace="1 becomes 64")],
-           "Double 6 times: 64 amoebas"),
+        bm([bar([seg(n) for n in ["2", "4", "8", "16", "32", "64"]], label="2 hours", brace="6 doublings")],
+           "Start with 1 and double 6 times"),
+        bm([bar([seg(n) for n in ["2", "4", "8", "16", "32", "64"]], label="2 hours", brace="6 doublings")],
+           "After two hours there are 64 amoebas", ["b0s5"]),
+    ],
+)
+
+# 10 m of wire cut into 7 equal whole-centimetre pieces, with a little left over.
+def _wire(piece, left, brace, note, hl=None):
+    return bm([bar([seg(piece, 1, "a") for _ in range(7)] + [seg(left, 0.6, "unknown")], label="Wire", brace=brace)], note, hl)
+
+E["EXT_G5_WS_B3_012"] = entry(
+    figure=_wire(None, "?", "10 m", "7 equal pieces, each a whole number of centimetres"),
+    steps=[
+        _wire(None, "?", "1000 cm", "10 m = 1000 cm"),
+        _wire("142", "?", "1000 cm", "Longest pieces that fit: 7 × 142 = 994 cm", ["b0s0"]),
+        _wire("142", "6 cm", "1000 cm", "Left over: 1000 − 994 = 6 cm", ["b0s7"]),
+    ],
+)
+
+# 56 apples leave 4 at a time; 3 oranges go in each time.
+def _swap(turns, oranges, note, hl=None):
+    return table([["each turn", "4 apples out", "3 oranges in"], [turns, "56 apples out", oranges]], note, hl)
+
+E["EXT_G5_WS_B3_025"] = entry(
+    figure=_swap("all the turns", "? oranges in", "How many turns does it take to empty the apples?"),
+    steps=[
+        _swap("14 turns", "? oranges in", "56 ÷ 4 = 14 turns", ["r1"]),
+        _swap("14 turns", "42 oranges in", "14 × 3 = 42 oranges", ["r1"]),
         None,
     ],
 )
@@ -46,25 +73,26 @@ def _pair(l0, l1, small, extra, note, hl=None, brace1=None):
 E["EXT_G5_WS_B3_026"] = entry(
     figure=_pair("Smaller", "Larger", "?", "2", "Odd numbers next to each other. Together they make 124."),
     steps=[
-        _pair("Smaller", "Larger", "n", "2", "n + (n + 2) = 124"),
-        _pair("Smaller", "Larger", "n", "2", "Without the extra 2, two equal parts make 122", ["b0s0", "b1s0"]),
-        _pair("Smaller", "Larger", "61", "2", "n = 61, the smaller number", ["b0"]),
+        nl(58, 66, 1, points=[(62, "half of 124")], note="124 ÷ 2 = 62. The two numbers sit either side of 62."),
+        nl(58, 66, 1, points=[(61, "61"), (62, "half"), (63, "63")], note="Odd numbers either side of 62: 61 + 63 = 124",
+           hl=["p0", "p2"]),
+        _pair("Smaller", "Larger", "61", "2", "The smaller number is 61", ["b0"]),
     ],
 )
 E["EXT_G5_WS_B3_027"] = entry(
     figure=_pair("Smaller", "Larger", "?", "9", "Multiples of 9 next to each other. Together 153."),
     steps=[
-        _pair("Smaller", "Larger", "9k", "9", "9k + 9(k + 1) = 153"),
-        _pair("Smaller", "Larger", "9k", "9", "18k + 9 = 153, so k = 8"),
+        _pair("Smaller", "Larger", "?", "9", "Take the extra 9 away: 153 − 9 = 144", ["b1s1"]),
+        _pair("Smaller", "Larger", "72", "9", "Two equal parts: 144 ÷ 2 = 72", ["b0s0", "b1s0"]),
         _pair("Smaller", "Larger", "72", "9", "Larger = 72 + 9 = 81", ["b1"], brace1="81"),
     ],
 )
 E["EXT_G5_WS_B3_028"] = entry(
     figure=_pair("Diya", "Siya", "?", "3", "Siya is always 3 years older. Together 35 years now."),
     steps=[
-        _pair("Diya", "Siya", "D", "3", "The age gap never changes: S = D + 3"),
-        _pair("Diya", "Siya", "16", "3", "D + D + 3 = 35, so D = 16 and Siya = 19", ["b1"], brace1="19 years"),
-        None,
+        _pair("Diya", "Siya", "?", "3", "The age gap never changes: Siya is 3 years older now too"),
+        _pair("Diya", "Siya", "16", "3", "35 − 3 = 32 is twice Diya's age: 32 ÷ 2 = 16", ["b0s0", "b1s0"]),
+        _pair("Diya", "Siya", "16", "3", "Siya = 16 + 3 = 19", ["b1"], brace1="19 years"),
     ],
 )
 E["EXT_G5_WS_B3_029"] = entry(
@@ -93,9 +121,10 @@ def _fruit(apple, brace2, note, hl=None):
 E["EXT_G5_WS_B3_031"] = entry(
     figure=_fruit("?", "?", "Each orange costs Rs. 15. Find the apple price first."),
     steps=[
-        _fruit("20", "?", "Apples: 85 − 45 = 40 for two, so Rs. 20 each", ["b0s0", "b0s1"]),
-        _fruit("20", "Rs. 90", "3 apples + 2 oranges = 60 + 30 = 90", ["b1"]),
-        None,
+        _fruit("?", "?", "3 oranges: 3 × 15 = 45. So 2 apples: 85 − 45 = 40", ["b0s0", "b0s1"]),
+        _fruit("20", "?", "One apple: 40 ÷ 2 = 20", ["b0s0", "b0s1"]),
+        _fruit("20", "?", "3 apples: 3 × 20 = 60. 2 oranges: 2 × 15 = 30", ["b1"]),
+        _fruit("20", "Rs. 90", "60 + 30 = 90", ["b1"]),
     ],
 )
 
@@ -129,8 +158,10 @@ E["EXT_G5_WS_B3_034"] = entry(
     figure=_stairs("? steps", "Manav's step is 11th from the bottom and 17th from the top"),
     steps=[
         _stairs("27 steps", "11 + 17 counts Manav's step twice: 11 + 17 − 1 = 27", ["b0s1"]),
-        _stairs("27 steps", "Middle step = (27 + 1) ÷ 2 = 14th"),
-        None,
+        bm([bar([seg("13 steps", 3, "a"), seg("middle", 1, "b"), seg("13 steps", 3, "a")], label="Staircase", brace="27 steps")],
+           "27 − 1 = 26, and 26 ÷ 2 = 13 steps on each side"),
+        bm([bar([seg("13 steps", 3, "a"), seg("middle", 1, "b"), seg("13 steps", 3, "a")], label="Staircase", brace="27 steps")],
+           "The middle step is the 14th from the bottom", ["b0s1"]),
     ],
 )
 
@@ -142,9 +173,10 @@ E["EXT_G5_WS_B3_035"] = entry(
     figure=_queue("? people", "Nisha is 19th from the front and 11th from the back"),
     steps=[
         _queue("29 people", "19 + 11 counts Nisha twice: 19 + 11 − 1 = 29", ["b0s1"]),
-        _queue("29 people", "The middle of 29 people is the 15th: Disha"),
-        nl(14, 20, 1, points=[(15, "Disha"), (19, "Nisha")], note="Count the places between the 15th and the 19th"),
-        nl(14, 20, 1, points=[(15, "Disha"), (19, "Nisha")], note="Three places lie between them, so 3 people"),
+        bm([bar([seg("14 people", 3, "a"), seg("Disha", 1, "b"), seg("14 people", 3, "a")], label="Queue", brace="29 people")],
+           "14 + 1 + 14 = 29, so Disha is 15th from the front", ["b0s1"]),
+        nl(14, 20, 1, points=[(15, "Disha"), (16,), (17,), (18,), (19, "Nisha")],
+           note="16th, 17th and 18th: 3 people between them", hl=["p1", "p2", "p3"]),
     ],
 )
 

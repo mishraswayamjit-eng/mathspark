@@ -45,6 +45,8 @@ _QUESTIONS = [
          m.group(1), m.group(2), m.group(3), _of(m.group(4), m.group(5)), m.group(6))),
     (r"Which is greater: %s or %s\?" % (F, F), r"Which is greater: \1 over \2, or \3 over \4?"),
     (r"Simplify: %s \+ %s" % (F, F), r"Simplify: \1 over \2, plus \3 over \4."),
+    (r"Add, and give the answer in its simplest form: %s \+ %s" % (F, F),
+     r"Add, and give the answer in its simplest form: \1 over \2, plus \3 over \4."),
     (r"What is %s of %s\?" % (F, N), lambda m: "What is %s of %s?" % (_of(m.group(1), m.group(2)), m.group(3))),
     (r"Find the missing number: %s = \?/%s" % (F, N), r"Find the missing number. \1 over \2 equals what, over \3?"),
     (r"Solve: %sx − %s = %s" % (N, N, N), r"Solve: \1 x, minus \2, equals \3."),

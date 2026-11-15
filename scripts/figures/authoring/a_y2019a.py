@@ -79,7 +79,10 @@ VISUALS["EXT_G5_FP_2019_036"] = V(
 VISUALS["EXT_G5_FP_2019_027"] = V(
     F("clock", hour=12, minute=12, hl=["minute"], note="What part of a full hour is 12 minutes?"),
     [
-        fb((5, 1, "12/60 = 1/5"), shape="circle", note="12 minutes is 1/5 of the hour = 0.20"),
+        F("clock", hour=12, minute=12, hl=["minute"], note="12 of the 60 minutes have gone: 12/60 of an hour"),
+        fb((5, 1, "12/60 = 1/5"), shape="circle", note="12 minutes is one of 5 equal parts of the hour"),
+        fb((5, 1, "1/5"), (10, 2, "2/10 = 0.2"), note="1/5 is the same as 2/10, which is 0.2"),
+        None,
     ])
 
 # 900 m in 18 minutes; how far in an hour?
@@ -108,7 +111,10 @@ VISUALS["EXT_G5_FP_2019_023"] = V(
 # Equilateral triangle and square with equal perimeters: the pair that works.
 VISUALS["EXT_G5_FP_2019_024"] = V(None, [
     None,
-    None,
+    F("triangle", shape="equilateral", sides={"ab": "9", "bc": "9", "ca": "9"}, hl=["ab", "bc", "ca"],
+      note="Triangle of side 9: 3 × 9 = 27. Square of side 9: 4 × 9 = 36"),
+    F("triangle", shape="equilateral", sides={"ab": "12", "bc": "12", "ca": "12"}, hl=["ab", "bc", "ca"],
+      note="Triangle of side 12: 3 × 12 = 36. Square of side 10: 4 × 10 = 40"),
     F("triangle", shape="equilateral", sides={"ab": "16", "bc": "16", "ca": "16"}, hl=["ab", "bc", "ca"],
       note="Triangle: 3 × 16 = 48. Square of side 12: 4 × 12 = 48. Equal"),
     None,
