@@ -128,6 +128,10 @@ def false_arithmetic(text):
             continue
         if after and after in "×*÷/+−–%^":
             continue
+        # "20000 ÷ 300 = 66 remainder 200" is a true statement about a division that does not go exactly.
+        tail = clean[match.end():].lstrip().lower()
+        if tail.startswith(("remainder", "rem ", "r ", "left over")) and "÷" in run:
+            continue
         sides = run.split("=")
         values = [_value(s) for s in sides]
         for i in range(len(sides) - 1):

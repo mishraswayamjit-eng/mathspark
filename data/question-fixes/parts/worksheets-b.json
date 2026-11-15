@@ -1,0 +1,1142 @@
+{
+  "EXT_G5_WS_B4_001": {
+    "hints": [
+      "A number is a multiple of 3 when its digits add up to a multiple of 3.",
+      "Add the digits you know: 7 + 1 + 4 = 12. Now add each choice to 12 in turn and see whether the total is in the 3 times table.",
+      "Try a smaller one: 2✻4 with ✻ = 3 has digit sum 2 + 3 + 4 = 9, a multiple of 3, so 234 works. With ✻ = 5 the sum is 11, so 254 does not work. Test every choice this way."
+    ],
+    "steps": [
+      {"text": "A number is a multiple of 3 when its digits add up to a multiple of 3. The known digits add up to 7 + 1 + 4 = 12.", "latex": ""},
+      {"text": "With 6 the total is 12 + 6 = 18. With 9 it is 12 + 9 = 21. With 0 it is 12 + 0 = 12.", "latex": ""},
+      {"text": "18, 21 and 12 are all multiples of 3, so 7614, 7914 and 7014 are all multiples of 3.", "latex": ""},
+      {"text": "So any of the three digits can replace the asterisk: all of these.", "latex": ""}
+    ],
+    "why": "Hint 3's example was garbled, and a step used 'mod' notation a 10-year-old has not met."
+  },
+  "EXT_G5_WS_B4_002": {
+    "hints": [
+      "A number is divisible by 3 when its digits add up to a multiple of 3. Here the same digit is added twice.",
+      "The digit sum is 5 + ✻ + ✻. You want the largest digit, so test the biggest choice first: with 9 the sum is 5 + 9 + 9 = 23. Is 23 a multiple of 3? If not, try the next biggest choice.",
+      "Try a smaller one: for 4✻✻ with ✻ = 7 the digit sum is 4 + 7 + 7 = 18, a multiple of 3, so 477 is divisible by 3."
+    ],
+    "steps": [
+      {"text": "For 5✻✻ to be divisible by 3, the digit sum 5 + ✻ + ✻ must be a multiple of 3.", "latex": ""},
+      {"text": "Test the biggest choice first. With 9: 5 + 9 + 9 = 23, which is not a multiple of 3.", "latex": ""},
+      {"text": "With 8: 5 + 8 + 8 = 21, and 21 = 3 × 7, so 588 is divisible by 3.", "latex": ""},
+      {"text": "So the largest digit that can replace the asterisk is 8.", "latex": ""}
+    ],
+    "why": "Hint 1 said nothing useful, hint 3's example gave the same answer as the question, and a step used 'mod' notation."
+  },
+  "EXT_G5_WS_B4_005": {
+    "hints": [
+      "A number is divisible by 5 only when it ends in 0 or 5. So all that matters is the last digit of the product.",
+      "You do not need the whole product. Multiply the last digits, 7 × 8, to find the digit the product ends in. Then count up to the next number ending in 0 or 5.",
+      "Try a smaller one: 13 × 14 ends in 2, because 3 × 4 = 12. The next number ending in 0 or 5 ends in 5, which is 3 more. So the least number to add there is 3."
+    ],
+    "why": "Hint 2 worked the whole question and stated the answer."
+  },
+  "EXT_G5_WS_B4_006": {
+    "hints": [
+      "A number is exactly divisible by 5 only when it ends in 0 or 5. So find the last digit of the product.",
+      "Multiply just the last digits: 9 × 7 = 63, so the product ends in the same digit as 63. What must you take away to make it end in 0? Check that your number is among the choices.",
+      "Try a smaller one: 23 × 17 ends in 1, because 3 × 7 = 21. Take away 1 and the number ends in 0, so it is divisible by 5."
+    ],
+    "steps": [
+      {"text": "A number is divisible by 5 when it ends in 0 or 5. The last digit of 169 × 47 comes from 9 × 7 = 63, so the product ends in 3.", "latex": ""},
+      {"text": "Taking away 3 makes it end in 0. Taking away 8 would make it end in 5, but 8 is not one of the choices.", "latex": ""},
+      {"text": "Check: 169 × 47 = 7943, and 7943 − 3 = 7940, which ends in 0.", "latex": ""},
+      {"text": "So 3 should be subtracted.", "latex": ""}
+    ],
+    "why": "Hint 1 referred to 'Q5' of a worksheet the child cannot see, and the solution ended on 7940 instead of the number to subtract."
+  },
+  "EXT_G5_WS_B4_007": {
+    "hints": [
+      "There are only four choices, so put each digit in place of the asterisk and see whether the number is in the 7 times table.",
+      "Start with 7: is 796 a multiple of 7? 7 × 100 = 700 leaves 96, and 96 is not a multiple of 7 (7 × 13 = 91, 7 × 14 = 98). So 796 does not work. Test the other digits the same way.",
+      "Try a smaller one: is 342 divisible by 7? 7 × 40 = 280 leaves 62, and 7 × 8 = 56 leaves 6 over. So 342 is not divisible by 7."
+    ],
+    "steps": [
+      {"text": "Put each choice in place of the asterisk and divide the number by 7.", "latex": ""},
+      {"text": "796 = 7 × 113 + 5 and 696 = 7 × 99 + 3, so the digits 7 and 6 both leave a remainder.", "latex": ""},
+      {"text": "396 = 7 × 56 + 4, so the digit 3 leaves a remainder too.", "latex": ""},
+      {"text": "896 = 7 × 128 exactly, with nothing left over.", "latex": ""},
+      {"text": "So the digit in place of the asterisk is 8.", "latex": ""}
+    ],
+    "why": "Hint 2 tested every choice and gave the answer; the steps referred to option letters and tested only two choices."
+  },
+  "EXT_G5_WS_B4_010": {
+    "hints": [
+      "A number is divisible by 10 only when it ends in 0. So find the last digit of the product.",
+      "Multiply just the last digits: 7 × 8 = 56. The product ends in the same digit as 56. What must you take away so that it ends in 0?",
+      "Try a smaller one: 13 × 19 ends in 7, because 3 × 9 = 27. Take away 7 and the number ends in 0, so it is divisible by 10."
+    ],
+    "steps": [
+      {"text": "A number is divisible by 10 when it ends in 0. The last digit of 97 × 238 comes from 7 × 8 = 56, so the product ends in 6.", "latex": ""},
+      {"text": "Taking away 6 makes the number end in 0.", "latex": ""},
+      {"text": "Check: 97 × 238 = 23086, and 23086 − 6 = 23080, which ends in 0.", "latex": ""},
+      {"text": "So 6 should be subtracted.", "latex": ""}
+    ],
+    "why": "Hint 2 stated the answer, and the solution ended on 23080 instead of the number to subtract."
+  },
+  "EXT_G5_WS_B4_011": {
+    "hints": [
+      "For 11, make two totals: add the 1st and 3rd digits, then add the 2nd and 4th digits. The number is a multiple of 11 when the two totals are equal or differ by 11.",
+      "In 56✻8 the 2nd and 4th digits give 6 + 8 = 14. The 1st and 3rd digits give 5 + ✻. Which digit makes the two totals match?",
+      "Try a smaller one: 2✻53. The 2nd and 4th digits give ✻ + 3 and the 1st and 3rd give 2 + 5 = 7. They match when ✻ = 4, and 2453 = 11 × 223."
+    ],
+    "steps": [
+      {"text": "Rule for 11: add the 1st and 3rd digits, then add the 2nd and 4th digits. The number is a multiple of 11 when the two totals are equal or differ by 11.", "latex": ""},
+      {"text": "In 56✻8 the 2nd and 4th digits give 6 + 8 = 14, and the 1st and 3rd digits give 5 + ✻.", "latex": ""},
+      {"text": "The totals match when 5 + ✻ is 14, so ✻ = 9. No single digit could make the totals differ by 11.", "latex": ""},
+      {"text": "Check: 5698 = 11 × 518. So the digit is 9.", "latex": ""}
+    ],
+    "why": "Hint 3's example was confusing (it used absolute-value bars), and the steps used '±11' without explaining the rule."
+  },
+  "EXT_G5_WS_B4_012": {
+    "hints": [
+      "For 11, make two totals: add the 1st and 3rd digits, then add the 2nd and 4th digits. The number is a multiple of 11 when the two totals are equal or differ by 11.",
+      "In ✻5✻0 the 2nd and 4th digits give 5 + 0 = 5. The 1st and 3rd give ✻ + ✻, which is always even, so it can never equal 5. So look for ✻ + ✻ that is 11 more than 5.",
+      "Try a similar one: ✻1✻6. The 2nd and 4th digits give 1 + 6 = 7. ✻ + ✻ cannot be 7, so make it 11 more, which is 18. Then ✻ = 9, and 9196 = 11 × 836."
+    ],
+    "why": "Hint 1 referred to 'Q11' of a worksheet the child cannot see, and hint 3 was an abandoned example that ended 'so need different approach...'."
+  },
+  "EXT_G5_WS_B4_013": {
+    "hints": [
+      "Find how far 555 is past a multiple of 12. Then work out how much more takes you to the next multiple.",
+      "12 × 46 = 552. How much bigger than 552 is 555? The next multiple of 12 is one more 12 after 552.",
+      "Try a smaller one: what is the least number to add to 20 to make it divisible by 7? 7 × 2 = 14 and 20 − 14 = 6, so 20 is 6 past a multiple of 7. Add 7 − 6 = 1 to reach 21."
+    ],
+    "steps": [
+      {"text": "Divide 555 by 12: 12 × 46 = 552, and 555 − 552 = 3. So 555 is 3 more than a multiple of 12.", "latex": ""},
+      {"text": "The next multiple of 12 is 552 + 12 = 564.", "latex": ""},
+      {"text": "564 − 555 = 9, so the least number to add is 9.", "latex": ""}
+    ],
+    "why": "Hint 2 worked the whole question and stated the answer; the solution ended on 564 instead of the number to add."
+  },
+  "EXT_G5_WS_B4_014": {
+    "hints": [
+      "18 = 2 × 9, so a number divisible by 18 must be divisible by both 2 and 9. That means it is even AND its digits add up to a multiple of 9.",
+      "Start with 1881: its last digit is odd, so it is not divisible by 2 and cannot be divisible by 18. For each even choice, add the digits and see whether the total is a multiple of 9.",
+      "Try a smaller one: is 594 divisible by 18? It is even, and 5 + 9 + 4 = 18, a multiple of 9. So yes: 594 = 18 × 33."
+    ],
+    "steps": [
+      {"text": "18 = 2 × 9, so the number must be even and its digits must add up to a multiple of 9.", "latex": ""},
+      {"text": "1881 is odd, so it is not a match.", "latex": ""},
+      {"text": "3072: 3 + 0 + 7 + 2 = 12, not a multiple of 9. 6666: 6 + 6 + 6 + 6 = 24, not a multiple of 9.", "latex": ""},
+      {"text": "3978 is even and 3 + 9 + 7 + 8 = 27, which is 9 × 3.", "latex": ""},
+      {"text": "So 3978 is exactly divisible by 18 (3978 = 18 × 221).", "latex": ""}
+    ],
+    "why": "Hint 2 tested every choice and named the answer; hint 3 was not a worked example; the steps skipped 6666 and ended on 221."
+  },
+  "EXT_G5_WS_B4_015": {
+    "hints": [
+      "For each statement, hunt for one example that breaks it. If you can find one, the statement is not always true.",
+      "Test the first one: 4 is a multiple of 4. Is it a multiple of 8? Then test the primes: 7 and 3 are both prime. Is 7 − 3 a prime number? Keep going until one statement cannot be broken.",
+      "A statement like this is always true: 'every multiple of 10 is a multiple of 5'. That is because 10 = 5 × 2, so every multiple of 10 is made of 5s."
+    ],
+    "steps": [
+      {"text": "4 is a multiple of 4 but not a multiple of 8, so the first statement is not true.", "latex": ""},
+      {"text": "7 and 3 are prime, but 7 − 3 = 4 is not prime. So the statement about the difference of two primes is not true.", "latex": ""},
+      {"text": "3 is an odd multiple of 3, but it is not divisible by 9. So the last statement is not true.", "latex": ""},
+      {"text": "12 = 6 × 2, so any number made of 12s is also made of 6s. For example 36 = 12 × 3 = 6 × 6.", "latex": ""},
+      {"text": "So the true statement is: every number divisible by 12 is also a multiple of 6.", "latex": ""}
+    ],
+    "why": "Hint 2 named the true statement; the steps used algebra (n = 12k) and ended on an option letter."
+  },
+  "EXT_G5_WS_B4_016": {
+    "hints": [
+      "Think about which last digits make a number even. How many even numbers are prime?",
+      "Test each digit by looking for a prime that ends in it. 11 is a prime ending in 1. Is there a prime ending in 2? Remember 2 itself. Now look for a prime ending in the remaining digit.",
+      "Similar: can a prime number end in 4? Numbers ending in 4 are 4, 14, 24, 34 and so on. All are even and bigger than 2, so each can be divided by 2. No prime ends in 4."
+    ],
+    "why": "Hints 1 and 2 pointed straight at the answer instead of guiding the child to test each digit."
+  },
+  "EXT_G5_WS_B4_017": {
+    "hints": [
+      "'Prior to 59' means going backwards. List the prime numbers just below 59, largest first, and count to the fourth.",
+      "Go down from 59 and test each odd number: 57 = 3 × 19 and 55 = 5 × 11 are not prime, but 53 is. So 53 is the first prime before 59. Keep going down for three more.",
+      "Try a smaller one: the third prime before 30. Going down: 29 is prime (1st), 23 is prime (2nd), 19 is prime (3rd). So it is 19."
+    ],
+    "why": "Hint 2 listed all four primes and so stated the answer."
+  },
+  "EXT_G5_WS_B4_018": {
+    "hints": [
+      "Write out all the prime numbers from 1 to 100. Then go through your list and tick every 7 you see, in the tens place or the ones place.",
+      "Do it in two parts. First the primes that end in 7, starting 7, 17, 37 ... Then the primes that begin with 7, in the seventies. Careful: 27, 57, 77 and 87 are not prime.",
+      "Try a smaller one: the digit 3 in the primes up to 50. Ending in 3: 3, 13, 23, 43. Starting with 3: 31, 37. That is 6 threes."
+    ],
+    "why": "Hint 3's example was muddled and hard to follow."
+  },
+  "EXT_G5_WS_B4_020": {
+    "hints": [
+      "The one-digit primes are 2, 3, 5 and 7. An even number must end in an even digit. Which of these four digits is even?",
+      "The digit 2 has to go in the ones place. Now arrange 3, 5 and 7 in the other three places. List them in order: 3572, 3752, ... and count.",
+      "Try a smaller one: using 2, 3 and 5 once each, the even numbers must end in 2. They are 352 and 532, so there are 2."
+    ],
+    "steps": [
+      {"text": "The one-digit primes are 2, 3, 5 and 7. All four digits are used, so each number has four digits.", "latex": ""},
+      {"text": "An even number ends in an even digit, and 2 is the only even one. So 2 goes in the ones place.", "latex": ""},
+      {"text": "The digits 3, 5 and 7 fill the other three places: 3572, 3752, 5372, 5732, 7352, 7532.", "latex": ""},
+      {"text": "So 6 even numbers can be formed.", "latex": ""}
+    ],
+    "why": "Hint 3 stated the answer and used factorial notation (3!), which a 10-year-old has not met; the steps did the same."
+  },
+  "EXT_G5_WS_B4_021": {
+    "hints": [
+      "Both digits must be prime, so each digit is 2, 3, 5 or 7. The whole two-digit number must be prime as well.",
+      "A number ending in 2 is even and one ending in 5 is in the 5 times table, so the ones digit must be 3 or 7. That leaves 23, 33, 53, 73, 27, 37, 57 and 77. Test each: is it prime?",
+      "Similar: two-digit primes whose digits are both 1 or 3. The numbers are 11, 13, 31 and 33. 33 = 3 × 11 is not prime, the other three are. So there are 3."
+    ],
+    "why": "Hint 3's example was confusing ('Even+even = always even') and did not show the method."
+  },
+  "EXT_G5_WS_B4_022": {
+    "hints": [
+      "First find M. Start at 99 and go down until you reach a prime number.",
+      "99 = 9 × 11 and 98 is even, so neither is prime. The next one down, 97, is prime, so M = 97. Now work out each choice, like 97 + 5, and see which is in the 4 times table.",
+      "Try a smaller one: the greatest one-digit prime is 7. Then 7 + 1 = 8 and 8 = 4 × 2, so there it is the prime plus 1 that is divisible by 4."
+    ],
+    "why": "Hint 2 stated the answer, thought aloud and used a word the tone rule bans."
+  },
+  "EXT_G5_WS_B4_023": {
+    "hints": [
+      "Put each set of signs into the blanks. Then work out the left side: do × and ÷ first, from left to right, and + and − after. You want the left side to come to 0.",
+      "Try the first set: 10 + 10 × 10 − 10. Multiply first: 10 × 10 = 100. Then 10 + 100 − 10 = 100, which is not 0. So that set does not work. Test the other sets the same way.",
+      "Try a smaller one: 8 + 8 ÷ 8 − 8. Divide first: 8 ÷ 8 = 1. Then 8 + 1 − 8 = 1, so those signs would not give 0."
+    ],
+    "steps": [
+      {"text": "Test each set of signs, doing × and ÷ before + and −.", "latex": ""},
+      {"text": "10 + 10 × 10 − 10 = 10 + 100 − 10 = 100, and 10 − 10 ÷ 10 + 10 = 10 − 1 + 10 = 19. Neither is 0.", "latex": ""},
+      {"text": "10 + 10 ÷ 10 − 10 = 10 + 1 − 10 = 1, which is not 0 either.", "latex": ""},
+      {"text": "10 × 10 ÷ 10 − 10: first 10 × 10 = 100, then 100 ÷ 10 = 10, then 10 − 10 = 0.", "latex": ""},
+      {"text": "So the signs are ×, ÷, − and then =.", "latex": ""}
+    ],
+    "why": "Hint 2 named the answer by its option letter and worked it out; hint 3 repeated the answer's pattern; the steps tested only the keyed choice."
+  },
+  "EXT_G5_WS_B4_024": {
+    "hints": [
+      "Put each set of signs into the blanks and work out the left side. Do × and ÷ before + and −. You want it to come to 35.",
+      "Try the first set: 4 + 8 ÷ 15 × 5. But 8 ÷ 15 is not a whole number, so that set will not give 35. Test the other sets the same way.",
+      "Try a smaller one: 2 × 3 + 8 ÷ 4. Do × and ÷ first: 2 × 3 = 6 and 8 ÷ 4 = 2. Then add: 6 + 2 = 8."
+    ],
+    "steps": [
+      {"text": "Test each set of signs, doing × and ÷ before + and −.", "latex": ""},
+      {"text": "Three of the sets put ÷ between 8 and 15. 8 ÷ 15 is not a whole number, so those sets cannot give 35.", "latex": ""},
+      {"text": "The remaining set gives 4 × 8 + 15 ÷ 5. Do × and ÷ first: 4 × 8 = 32 and 15 ÷ 5 = 3.", "latex": ""},
+      {"text": "Then add: 32 + 3 = 35. So the signs are ×, + and ÷.", "latex": ""}
+    ],
+    "why": "Hint 2 named the answer by its option letter and worked it out; hint 3's example never reached a result; the steps began 'Try B'."
+  },
+  "EXT_G5_WS_B4_025": {
+    "hints": [
+      "Brackets change what gets done first. Without brackets, 45 ÷ 7 does not even give a whole number, so look for a bracket that gives 45 a friendlier number to be divided by.",
+      "Try each choice. For example, with (2 × 4) you get 45 ÷ 7 + 8, which is still not a whole number, so that does not work. Which bracket makes a number that divides 45 exactly?",
+      "Try a similar one: make 24 ÷ 2 + 4 × 3 equal to 12. Put brackets round 2 + 4: 24 ÷ (2 + 4) × 3 = 24 ÷ 6 × 3 = 4 × 3 = 12."
+    ],
+    "why": "Hint 1 contained a sum that is not true as written, and hint 2 named the bracket and worked the answer."
+  },
+  "EXT_G5_WS_B4_027": {
+    "hints": [
+      "Work out the left side of each one yourself. Do brackets first, then × and ÷, then + and −. Then see whether it matches the number on the right.",
+      "Start with 15 − 15 × 15. Multiply first: 15 × 15 = 225, and 15 − 225 is not 0. So that one does not follow BODMAS. A number written next to a bracket, like 18(18 + 0), means multiply.",
+      "Similar: is 20 − 4 × 3 = 8 right? Multiply first: 4 × 3 = 12, then 20 − 12 = 8. Yes. Going left to right would give 16 × 3 = 48, which is not what BODMAS says."
+    ],
+    "steps": [
+      {"text": "15 − 15 × 15: multiply first, 15 × 15 = 225, and 15 − 225 is below zero, not 0.", "latex": ""},
+      {"text": "18(18 + 0) means 18 × 18 = 324, not 36.", "latex": ""},
+      {"text": "17 − 5 × 0: multiply first, 5 × 0 = 0, so 17 − 0 = 17, not 0.", "latex": ""},
+      {"text": "6 × 6 − 6 ÷ 6: do × and ÷ first, 6 × 6 = 36 and 6 ÷ 6 = 1. Then 36 − 1 = 35.", "latex": ""},
+      {"text": "So the one that follows BODMAS is 6 × 6 − 6 ÷ 6 = 35.", "latex": ""}
+    ],
+    "why": "Hint 1 was generic, hint 2 worked the keyed choice and confirmed it, hint 3 copied the answer's pattern; the solution did not end on the answer."
+  },
+  "EXT_G5_WS_B4_028": {
+    "hints": [
+      "Work out the value of each expression, then compare. Remember: brackets first, and multiply before you subtract.",
+      "In the choices with brackets, do the bracket first, for example 7 − 5 = 2. Where there is no bracket, do 7 × 5 before subtracting. If you must take away more than you have, the value goes below zero.",
+      "Try a smaller one: 4 − 2 × 5. Multiply first: 2 × 5 = 10. Then 4 − 10 = −6, which is 6 below zero. A number below zero is less than any positive number."
+    ],
+    "steps": [
+      {"text": "15 × (7 − 5) = 15 × 2 = 30.", "latex": ""},
+      {"text": "15 − 7 × 5: multiply first, so 15 − 35 = −20, which is 20 below zero.", "latex": ""},
+      {"text": "15 − 7 − 5 = 3, and (15 − 7) × 5 = 8 × 5 = 40.", "latex": ""},
+      {"text": "The values are 30, −20, 3 and 40. Only −20 is below zero, so it is the least.", "latex": ""},
+      {"text": "So the expression with the least value is 15 − 7 × 5.", "latex": ""}
+    ],
+    "why": "Hint 2 worked out all four values and named the least; the solution ended on −20 without naming the expression."
+  },
+  "EXT_G5_WS_B4_030": {
+    "hints": [
+      "Follow BODMAS: brackets first (the round ones inside, then the curly ones), then × and ÷, then + and −.",
+      "Start inside the curly brackets: 6 + 6 − 3 = 9, then double it. After that, do 6 × 6 and 6 ÷ 2 before you add and subtract. Then compare your value with the choices.",
+      "Try a smaller one: 4 × 4 + 4 ÷ 2 − {(4 + 4 − 2) × 2}. Curly brackets: 6 × 2 = 12. Then 16 + 2 − 12 = 6."
+    ],
+    "steps": [
+      {"text": "Curly brackets first: 6 + 6 − 3 = 9, and 9 × 2 = 18.", "latex": ""},
+      {"text": "Now the expression is 6 × 6 + 6 ÷ 2 − 18. Do × and ÷ next: 6 × 6 = 36 and 6 ÷ 2 = 3.", "latex": ""},
+      {"text": "Then 36 + 3 − 18 = 21.", "latex": ""},
+      {"text": "21 is not 24, 16 or 12, so the answer is none of these.", "latex": ""}
+    ],
+    "why": "Hints 2 and 3 worked the whole question and stated the answer; hint 3 was not an example; the last step referred to option letters."
+  },
+  "EXT_G5_WS_B4_031": {
+    "hints": [
+      "Work from the inside out: round brackets first, then the curly brackets, then the final division.",
+      "Round brackets: 48 ÷ 3 = 16 and 2 + 3 = 5. So the curly brackets hold 16 × 4 − 5 × 5. Do both multiplications before you subtract, then divide by 3.",
+      "Try a smaller one: {(36 ÷ 6) × 2 − 3 × (1 + 2)} ÷ 3. Round brackets give 6 and 3. Then 6 × 2 − 3 × 3 = 12 − 9 = 3, and 3 ÷ 3 = 1."
+    ],
+    "why": "Hint 2 worked the whole question and stated the answer."
+  },
+  "EXT_G5_WS_B5_002": {
+    "hints": [
+      "A perfect square is a whole number times itself. Look at the last digits: square numbers never end in 2, 3, 7 or 8.",
+      "4628 ends in 8, so it cannot be a square. A square ending in 5 always ends in 25 (like 225 or 625), and a square ending in 0 ends in an even number of zeros (like 100 or 10000). Use these to test the other choices.",
+      "Try a smaller one: which of 138, 196 and 245 is a perfect square? 138 ends in 8 and 245 does not end in 25, so only 196 can be. Check: 14 × 14 = 196."
+    ],
+    "steps": [
+      {"text": "Square numbers never end in 2, 3, 7 or 8, so 4628 is not a perfect square.", "latex": ""},
+      {"text": "A square that ends in 5 always ends in 25. 5665 ends in 65, so it is not a perfect square.", "latex": ""},
+      {"text": "4000 lies between 63 × 63 = 3969 and 64 × 64 = 4096, so it is not a perfect square.", "latex": ""},
+      {"text": "That leaves 6241. Check: 79 × 79 = 6241. So 6241 is the perfect square.", "latex": ""}
+    ],
+    "why": "Hint 2 stated the answer, hint 3 was a pasted line that does not fit this question, and the solution did not end on the answer."
+  },
+  "EXT_G5_WS_B5_003": {
+    "hints": [
+      "Take it one piece at a time: find the smallest two-digit prime, square it, then find the successor (the number that comes just after).",
+      "The two-digit numbers start at 10, which is even, so it is not prime. The next number, 11, is prime. Now work out 11 × 11 and then add 1.",
+      "Try a smaller one: the successor of the square of the smallest odd prime. The smallest odd prime is 3, 3 × 3 = 9, and the number after 9 is 10."
+    ],
+    "why": "Hint 2 worked the whole question and stated the answer."
+  },
+  "EXT_G5_WS_B5_004": {
+    "hints": [
+      "There are two numbers to find first: the smallest four-digit square number and the greatest one-digit prime. Then divide the first by the second.",
+      "31 × 31 = 961 has only three digits, so try 32 × 32 for the smallest four-digit square. The one-digit primes are 2, 3, 5 and 7. Divide your square by the greatest of them and see what is left over.",
+      "Try a smaller one: the smallest two-digit square is 4 × 4 = 16 and the smallest odd prime is 3. 16 = 3 × 5 + 1, so the remainder is 1."
+    ],
+    "why": "Hint 3's example happened to have the same remainder as the question, so it gave the answer away."
+  },
+  "EXT_G5_WS_B5_006": {
+    "hints": [
+      "First find the greatest two-digit prime, then multiply it by itself, then read off the digit in the hundreds place.",
+      "99 and 98 are not prime, but 97 is. To square it, split the sum: 97 × 97 = 97 × 100 − 97 × 3. Work that out, then look at the hundreds digit.",
+      "Try a smaller one: 13 × 13 = 13 × 10 + 13 × 3 = 130 + 39 = 169. In 169 the hundreds digit is 1."
+    ],
+    "why": "Hint 2 stated the answer and hint 3's example had no hundreds digit, so it showed nothing."
+  },
+  "EXT_G5_WS_B5_007": {
+    "hints": [
+      "Read the order carefully: first ADD the one-digit primes, then SQUARE the total.",
+      "The one-digit primes are 2, 3, 5 and 7 (1 is not a prime). Add them up, then multiply the total by itself.",
+      "Try a smaller one: the square of the sum of 1, 2 and 3. The sum is 1 + 2 + 3 = 6, and 6 × 6 = 36."
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate and hint 3 was an unrelated list of primes."
+  },
+  "EXT_G5_WS_B5_008": {
+    "hints": [
+      "Read the order carefully: first SQUARE each one-digit prime, then ADD the squares.",
+      "The one-digit primes are 2, 3, 5 and 7 (1 is not a prime). Work out 2 × 2, 3 × 3, 5 × 5 and 7 × 7, then add the four results.",
+      "Try a smaller one: the sum of the squares of 1, 2 and 3 is 1 + 4 + 9 = 14."
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate and hint 3 was only a list of square numbers."
+  },
+  "EXT_G5_WS_B5_009": {
+    "hints": [
+      "In any division: dividend = divisor × quotient + remainder. Here the dividend is 1000, and the quotient and remainder are both 25.",
+      "Take the remainder away first: 1000 − 25 = 975. This is divisor × 25. So divide 975 by 25 to find the divisor, then square it.",
+      "Try a smaller one: 50 divided by a number gives quotient 4 and remainder 2. 50 − 2 = 48 and 48 ÷ 4 = 12, so the divisor is 12 and its square is 144."
+    ],
+    "steps": [
+      {"text": "Dividend = divisor × quotient + remainder, so 1000 = divisor × 25 + 25.", "latex": ""},
+      {"text": "Take away the remainder: 1000 − 25 = 975, so divisor × 25 is 975.", "latex": ""},
+      {"text": "Divisor = 975 ÷ 25 = 39.", "latex": ""},
+      {"text": "39 × 39 = 1521, so the square of the divisor is 1521.", "latex": ""}
+    ],
+    "why": "Hint 3 thought aloud and abandoned its example halfway; the steps skipped how 975 was found."
+  },
+  "EXT_G5_WS_B5_010": {
+    "hints": [
+      "For each pair, square both numbers and subtract the smaller square from the bigger one. Then ask: is the result a square number?",
+      "Start with 10 and 1: 10 × 10 − 1 × 1 = 100 − 1 = 99. 99 is between 9 × 9 = 81 and 10 × 10 = 100, so it is not a square. Now test the other pairs.",
+      "Try a smaller one: 5 and 4. 5 × 5 − 4 × 4 = 25 − 16 = 9, and 3 × 3 = 9, so that difference is a square number."
+    ],
+    "steps": [
+      {"text": "10 and 1: 100 − 1 = 99, which lies between 9 × 9 = 81 and 10 × 10 = 100. Not a square.", "latex": ""},
+      {"text": "13 and 4: 169 − 16 = 153, which lies between 12 × 12 = 144 and 13 × 13 = 169. Not a square.", "latex": ""},
+      {"text": "41 and 9: 41 × 41 = 1681 and 9 × 9 = 81, and 1681 − 81 = 1600.", "latex": ""},
+      {"text": "40 × 40 = 1600, so 1600 is a square number. The other two pairs do not work, so it cannot be all of these.", "latex": ""},
+      {"text": "So the two numbers are 41 and 9.", "latex": ""}
+    ],
+    "why": "Hint 2 worked every pair and pointed at the answer, hint 3 was a pasted line that does not fit, and the solution ended on an option letter."
+  },
+  "EXT_G5_WS_B5_011": {
+    "hints": [
+      "m² means m × m. Put the numbers in place of the letters, square each one, then add.",
+      "With m = 5 and n = 6, you need 5 × 5 and 6 × 6. Square each number first, and only then add the two results.",
+      "Try a smaller one: if m = 2 and n = 3, then m² + n² is 4 + 9 = 13. Notice this is not the same as squaring 2 + 3."
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate and hint 3 was only a list of square numbers."
+  },
+  "EXT_G5_WS_B5_013": {
+    "hints": [
+      "Work backwards. If twice the sum is 18, what is the sum? Then find two next-door numbers that add up to it.",
+      "The sum is 18 ÷ 2 = 9. Which two consecutive numbers (numbers next to each other, like 6 and 7) add up to 9? Square each of them and add.",
+      "Try a smaller one: twice the sum of two consecutive numbers is 10. The sum is 5, so the numbers are 2 and 3. Their squares add up to 4 + 9 = 13."
+    ],
+    "steps": [
+      {"text": "Twice the sum is 18, so the sum is 18 ÷ 2 = 9.", "latex": ""},
+      {"text": "Two consecutive numbers that add up to 9 are 4 and 5, because 4 + 5 = 9.", "latex": ""},
+      {"text": "Their squares are 4 × 4 = 16 and 5 × 5 = 25.", "latex": ""},
+      {"text": "16 + 25 = 41, so the sum of their squares is 41.", "latex": ""}
+    ],
+    "why": "Hint 1 jumped into algebra a 10-year-old would not follow and gave both numbers at once; the steps did the same."
+  },
+  "EXT_G5_WS_B5_014": {
+    "hints": [
+      "Find the biggest square number that is not more than 386. The gap between 386 and that square is what you subtract.",
+      "20 × 20 = 400 is too big. Try 19 × 19. Then take that square away from 386.",
+      "Try a smaller one: what least number must be subtracted from 70 to make a perfect square? 8 × 8 = 64 fits but 9 × 9 = 81 is too big. 70 − 64 = 6, so subtract 6."
+    ],
+    "why": "Hint 2 stated the answer and thought aloud about the options; hint 3 was a pasted line that does not fit this question."
+  },
+  "EXT_G5_WS_B5_015": {
+    "hints": [
+      "Find the first square number that is bigger than 1400. The gap from 1400 up to that square is what you add.",
+      "37 × 37 = 1369 is too small. Work out 38 × 38, then subtract 1400 from it.",
+      "Try a smaller one: what smallest number must be added to 50 to make a perfect square? 7 × 7 = 49 is too small, 8 × 8 = 64 is the next square, and 64 − 50 = 14. So add 14."
+    ],
+    "steps": [
+      {"text": "37 × 37 = 1369, which is less than 1400. 38 × 38 = 1444, which is more than 1400.", "latex": ""},
+      {"text": "So the first square number after 1400 is 1444.", "latex": ""},
+      {"text": "1444 − 1400 = 44, so the smallest number to add is 44.", "latex": ""}
+    ],
+    "why": "Hint 2 stated the answer, and the solution ended with a filler step naming the option letter."
+  },
+  "EXT_G5_WS_B5_016": {
+    "hints": [
+      "First work out 35 × 36. Then find the first square number that is bigger than it.",
+      "35 × 36 = 1260. Compare with squares nearby: 35 × 35 = 1225 is smaller, so the next square up is 36 × 36. How far is 1260 from it?",
+      "Try a smaller one: 4 × 5 = 20. The next square is 5 × 5 = 25, and 25 − 20 = 5. So you add 5."
+    ],
+    "steps": [
+      {"text": "35 × 36 = 1260.", "latex": ""},
+      {"text": "35 × 35 = 1225 is less than 1260, so the next square number is 36 × 36 = 1296.", "latex": ""},
+      {"text": "1296 − 1260 = 36.", "latex": ""},
+      {"text": "So the smallest number to add is 36.", "latex": ""}
+    ],
+    "why": "Hint 2 thought aloud ('But wait'), hint 3 was a pasted line that does not fit, and the solution ended on 1296 instead of the number to add."
+  },
+  "EXT_G5_WS_B5_017": {
+    "hints": [
+      "Break 588 into prime factors. In a square number every prime factor comes in pairs. Look for the factor that has no partner.",
+      "588 = 2 × 2 × 3 × 7 × 7. Pair them up: two 2s, two 7s ... which factor is left on its own? Dividing by it leaves only pairs.",
+      "Try a smaller one: 50 = 2 × 5 × 5. The 5s make a pair but the 2 is alone. Divide by 2: 50 ÷ 2 = 25, and 5 × 5 = 25."
+    ],
+    "steps": [
+      {"text": "Break 588 into prime factors: 588 = 2 × 2 × 3 × 7 × 7.", "latex": ""},
+      {"text": "In a perfect square every prime factor has a partner. The 2s make a pair and the 7s make a pair, but the 3 is on its own.", "latex": ""},
+      {"text": "Divide by 3: 588 ÷ 3 = 196, and 14 × 14 = 196.", "latex": ""},
+      {"text": "So the least number to divide by is 3.", "latex": ""}
+    ],
+    "why": "The hints spoke of 'odd exponents', hint 2 stated the answer, and the solution ended on 14² instead of the number to divide by."
+  },
+  "EXT_G5_WS_B5_018": {
+    "hints": [
+      "A product is a square number when its prime factors can all be put into pairs. Break each number into primes and try to pair them up.",
+      "Start with 25 × 49: 25 = 5 × 5 and 49 = 7 × 7. Every prime has a partner, so this product is a square (it is 35 × 35). Test the other products the same way and look for one with a prime left over.",
+      "Try a smaller one: 2 × 6 × 3 = 2 × 2 × 3 × 3. The 2s pair and the 3s pair, so it is a square: 6 × 6 = 36. But 2 × 6 × 5 = 2 × 2 × 3 × 5 has 3 and 5 left alone, so 60 is not a square."
+    ],
+    "steps": [
+      {"text": "25 × 49 = 5 × 5 × 7 × 7 = 1225, and 35 × 35 = 1225. A square.", "latex": ""},
+      {"text": "3 × 9 × 12 = 324, and 18 × 18 = 324. A square.", "latex": ""},
+      {"text": "7 × 14 × 18 = 1764, and 42 × 42 = 1764. A square.", "latex": ""},
+      {"text": "9 × 12 × 4 = 432, which lies between 20 × 20 = 400 and 21 × 21 = 441. Not a square.", "latex": ""},
+      {"text": "So the product that is not a square number is 9 × 12 × 4.", "latex": ""}
+    ],
+    "why": "Hint 2 cleared three choices and so gave the answer, hint 3 was a pasted line that does not fit, and the solution ended on an option letter."
+  },
+  "EXT_G5_WS_B5_019": {
+    "hints": [
+      "A square number has prime factors that all come in pairs. Break the product into primes and see which ones are missing a partner.",
+      "3 × 4 × 5 × 6 = 3 × 2 × 2 × 5 × 2 × 3. Pair them up: the 3s pair, and two of the 2s pair. Which primes are left without a partner? Multiply by exactly those.",
+      "Try a smaller one: 2 × 3 × 6 × 7 = 2 × 3 × 2 × 3 × 7. The 2s pair and the 3s pair, but 7 is alone. Multiply by 7: 252 × 7 = 1764, and 42 × 42 = 1764."
+    ],
+    "steps": [
+      {"text": "3 × 4 × 5 × 6 = 360.", "latex": ""},
+      {"text": "In prime factors, 360 = 2 × 2 × 2 × 3 × 3 × 5. The 3s pair and two of the 2s pair, but one 2 and the 5 have no partner.", "latex": ""},
+      {"text": "Multiply by 2 × 5 = 10 to give each a partner: 360 × 10 = 3600.", "latex": ""},
+      {"text": "60 × 60 = 3600, a square number. So the smallest number to multiply by is 10.", "latex": ""}
+    ],
+    "why": "The hints spoke of 'odd exponents', hint 2 stated the answer, and the solution ended on 60² instead of the number to multiply by."
+  },
+  "EXT_G5_WS_B5_021": {
+    "hints": [
+      "An even square comes from squaring an even number, and an odd square from an odd number. So count the EVEN numbers whose squares have three digits.",
+      "The smallest three-digit square is 10 × 10 = 100 and the largest is 31 × 31 = 961. So the even numbers to count go 10, 12, 14 ... up to 30. Count them carefully.",
+      "Try a smaller one: even two-digit squares. Two-digit squares come from 4 to 9. The even numbers there are 4, 6 and 8, giving 16, 36 and 64. So there are 3."
+    ],
+    "steps": [
+      {"text": "An even square number comes from squaring an even number.", "latex": ""},
+      {"text": "Three-digit squares run from 10 × 10 = 100 to 31 × 31 = 961, because 32 × 32 = 1024 has four digits.", "latex": ""},
+      {"text": "The even numbers from 10 to 31 are 10, 12, 14, 16, 18, 20, 22, 24, 26, 28 and 30.", "latex": ""},
+      {"text": "That is 11 numbers, so there are 11 even three-digit square numbers.", "latex": ""}
+    ],
+    "why": "Hint 2 listed all the numbers so the answer could be read off, hint 3 was about a different question, and the solution ended with a filler step."
+  },
+  "EXT_G5_WS_B5_022": {
+    "hints": [
+      "First work out the two squares. 'Between' means the two end numbers themselves are not counted.",
+      "4 × 4 = 16 and 6 × 6 = 36. So count the numbers after 16 and before 36: they start at 17 and stop at 35.",
+      "Try a smaller one: between 2 × 2 = 4 and 3 × 3 = 9 lie 5, 6, 7 and 8. That is 4 numbers."
+    ],
+    "why": "Hint 2 worked the whole question and stated the answer."
+  },
+  "EXT_G5_WS_B5_023": {
+    "hints": [
+      "Try adding odd numbers from 1 and watch the totals: 1, then 1 + 3, then 1 + 3 + 5. Do you notice what kind of numbers the totals are?",
+      "1 + 3 = 4 (that is 2 × 2) and 1 + 3 + 5 = 9 (that is 3 × 3). Adding the first few odd numbers gives the square of HOW MANY you added. So count how many odd numbers there are from 1 to 29.",
+      "Example: the odd numbers less than 8 are 1, 3, 5 and 7. There are 4 of them, and 1 + 3 + 5 + 7 = 16, which is 4 × 4."
+    ],
+    "steps": [
+      {"text": "The odd numbers less than 30 are 1, 3, 5, ... , 29.", "latex": ""},
+      {"text": "Count them: 1 to 30 has 30 numbers and half of them are odd, so there are 30 ÷ 2 = 15 odd numbers.", "latex": ""},
+      {"text": "The sum of the first few odd numbers is the square of how many there are: 1 + 3 = 4 = 2 × 2, and 1 + 3 + 5 = 9 = 3 × 3.", "latex": ""},
+      {"text": "So the sum of these 15 odd numbers is 15 × 15 = 225, which is 15².", "latex": ""}
+    ],
+    "why": "Hint 2 stated the count that is the answer, hint 3 was written as a sum that is not true, and the steps did not explain the rule."
+  },
+  "EXT_G5_WS_B5_024": {
+    "hints": [
+      "If there are 6 boxes, each has 6 pencils: 6 × 6 in all. So the total is always a number times itself, a square number.",
+      "Find which choice is a perfect square. Last digits help: a square never ends in 2, 3, 7 or 8, and a square that ends in 0 ends in an even number of zeros. Test what remains by squaring nearby numbers.",
+      "Try a smaller one: could the total be 40, 44 or 49? 40 ends in a single zero. 6 × 6 = 36 and 7 × 7 = 49, so 44 is not a square. Only 49 works: 7 boxes of 7 pencils."
+    ],
+    "steps": [
+      {"text": "If there are n boxes, each box holds n pencils, so the total is n × n. The total must be a perfect square.", "latex": ""},
+      {"text": "1440 ends in a single zero and 1028 ends in 8, so neither is a square.", "latex": ""},
+      {"text": "616 lies between 24 × 24 = 576 and 25 × 25 = 625, so it is not a square.", "latex": ""},
+      {"text": "27 × 27 = 729. So the total can be 729 pencils: 27 boxes of 27 pencils.", "latex": ""}
+    ],
+    "why": "Hint 2 stated the answer, and the solution skipped the other choices and ended with a filler step."
+  },
+  "EXT_G5_WS_B5_025": {
+    "steps": [
+      {"text": "Each group has as many students as there are groups, so the students in groups make a square number.", "latex": ""},
+      {"text": "Find the biggest square that is not more than 245: 15 × 15 = 225 fits, but 16 × 16 = 256 is too many.", "latex": ""},
+      {"text": "So there are 15 groups of 15, using 225 students.", "latex": ""},
+      {"text": "245 − 225 = 20, so 20 students will be left out.", "latex": ""}
+    ],
+    "why": "The solution ended with a filler step naming the option letter."
+  },
+  "EXT_G5_WS_B6_001": {
+    "hints": [
+      "The HCF is the largest number that divides both numbers exactly. Break each number into prime factors and see what they share.",
+      "Both numbers are even, so keep halving: 328, 164, 82, 41 and 424, 212, 106, 53. Now 41 and 53 are both prime. How many 2s do the two numbers share?",
+      "Try a smaller one: 36 = 2 × 2 × 3 × 3 and 48 = 2 × 2 × 2 × 2 × 3. They share two 2s and one 3, so the HCF is 2 × 2 × 3 = 12."
+    ],
+    "steps": [
+      {"text": "Break each number into prime factors: 328 = 2 × 2 × 2 × 41.", "latex": ""},
+      {"text": "424 = 2 × 2 × 2 × 53.", "latex": ""},
+      {"text": "41 and 53 are different primes, so the only factors the two numbers share are the three 2s.", "latex": ""},
+      {"text": "HCF = 2 × 2 × 2 = 8.", "latex": ""}
+    ],
+    "why": "Hint 2 handed over both factorisations in power notation, and the steps mixed two notations in one line that reads as a sum that is not true."
+  },
+  "EXT_G5_WS_B6_002": {
+    "hints": [
+      "The HCF is 7, so 7 must divide both numbers exactly. 56 = 7 × 8 already. So the other number, 1✻9, must be in the 7 times table.",
+      "Put each choice in place of the asterisk and test it. Start with 7: 179. 7 × 25 = 175, and 179 is 4 more, so 179 is not a multiple of 7. Test 189, 199 and 109 the same way.",
+      "Try a smaller one: the HCF of 21 and ✻5 is 7. Which of 25, 35, 45 is a multiple of 7? 7 × 5 = 35, so ✻ = 3. And 21 and 35 share no bigger factor."
+    ],
+    "steps": [
+      {"text": "If the HCF is 7, then 7 divides both numbers. 56 = 7 × 8, so we need 1✻9 to be a multiple of 7.", "latex": ""},
+      {"text": "179 = 7 × 25 + 4, 199 = 7 × 28 + 3 and 109 = 7 × 15 + 4, so the digits 7, 9 and 0 do not work.", "latex": ""},
+      {"text": "189 = 7 × 27 exactly, so the digit 8 works.", "latex": ""},
+      {"text": "Check: 56 = 7 × 8 and 189 = 7 × 27, and 8 and 27 share no factor, so the HCF is 7. The digit is 8.", "latex": ""}
+    ],
+    "why": "Hint 2 tested every digit and showed the answer (and also a digit that is not among the choices); the steps used rounded decimals and HCF( ) notation."
+  },
+  "EXT_G5_WS_B6_003": {
+    "hints": [
+      "Find the HCF and the LCM of 27 and 72 separately, then add them.",
+      "27 = 3 × 3 × 3 and 72 = 2 × 2 × 2 × 3 × 3. The HCF is made of the factors they share. The LCM uses every factor the greatest number of times it appears in either number.",
+      "Try a smaller one: 12 = 2 × 2 × 3 and 18 = 2 × 3 × 3. HCF = 2 × 3 = 6. LCM = 2 × 2 × 3 × 3 = 36. Sum = 6 + 36 = 42."
+    ],
+    "steps": [
+      {"text": "Prime factors: 27 = 3 × 3 × 3 and 72 = 2 × 2 × 2 × 3 × 3.", "latex": ""},
+      {"text": "They share two 3s, so HCF = 3 × 3 = 9.", "latex": ""},
+      {"text": "The LCM needs three 2s and three 3s: LCM = 2 × 2 × 2 × 3 × 3 × 3 = 216.", "latex": ""},
+      {"text": "Sum = 9 + 216 = 225.", "latex": ""}
+    ],
+    "why": "Hint 2 gave both the HCF and the LCM, leaving only an addition; the power notation was terse for a 10-year-old."
+  },
+  "EXT_G5_WS_B6_004": {
+    "hints": [
+      "Find the HCF and LCM of 45 and 54 first. Then work out 13 times the HCF and take it away from the LCM.",
+      "45 = 3 × 3 × 5 and 54 = 2 × 3 × 3 × 3. The HCF is the part they share. The LCM uses every factor the greatest number of times it appears in either number.",
+      "Try a smaller one: for 12 and 18, the HCF is 6 and the LCM is 36. Then LCM − 2 times HCF is 36 − 2 × 6 = 36 − 12 = 24."
+    ],
+    "steps": [
+      {"text": "Prime factors: 45 = 3 × 3 × 5 and 54 = 2 × 3 × 3 × 3.", "latex": ""},
+      {"text": "They share two 3s, so HCF = 3 × 3 = 9.", "latex": ""},
+      {"text": "LCM = 2 × 3 × 3 × 3 × 5 = 270.", "latex": ""},
+      {"text": "13 times the HCF is 13 × 9 = 117.", "latex": ""},
+      {"text": "LCM − 13 times HCF = 270 − 117 = 153.", "latex": ""}
+    ],
+    "why": "Hint 2 gave both the HCF and the LCM, and the first step crammed the factorising, HCF and LCM into one terse line."
+  },
+  "EXT_G5_WS_B6_008": {
+    "steps": [
+      {"text": "Take away the remainder 3 and the number is divisible by 8, 10 and 12. The smallest such number is their LCM.", "latex": ""},
+      {"text": "8 = 2 × 2 × 2, 10 = 2 × 5 and 12 = 2 × 2 × 3, so LCM = 2 × 2 × 2 × 3 × 5 = 120.", "latex": ""},
+      {"text": "Add the remainder back: 120 + 3 = 123.", "latex": ""},
+      {"text": "Check: 123 = 8 × 15 + 3, 123 = 10 × 12 + 3 and 123 = 12 × 10 + 3. So the smallest number is 123.", "latex": ""}
+    ],
+    "why": "The solution never said why the LCM is used, and its last step was a check written as '123÷8=15R3', not the answer."
+  },
+  "EXT_G5_WS_B6_010": {
+    "hints": [
+      "GCD is another name for HCF. For any two numbers, HCF × LCM = the product of the two numbers. Use this to find the other number, then halve it.",
+      "HCF × LCM = 12 × 240. Divide that by the number you know, 48, to get the other number. Don't forget the last part: the question asks for half of it.",
+      "Try a smaller one: HCF 4, LCM 60, one number 12. The other is 4 × 60 ÷ 12 = 20, and half of 20 is 10."
+    ],
+    "why": "Hint 2 worked the whole question and stated the answer."
+  },
+  "EXT_G5_WS_B6_012": {
+    "hints": [
+      "Both numbers must be multiples of the HCF, 13. And for two numbers, HCF × LCM = the product of the numbers.",
+      "Test each pair. First, are both numbers multiples of 13 and greater than 50? Then multiply the pair and see whether it equals 13 × 260 = 3380.",
+      "Try a smaller one: HCF 4 and LCM 24. The pair 8 and 12: both are multiples of 4, their HCF is 4, and 8 × 12 = 96 = 4 × 24. So 8 and 12 fit."
+    ],
+    "steps": [
+      {"text": "Both numbers are multiples of 13. The multiples of 13 in the choices are 52 = 13 × 4, 65 = 13 × 5 and 78 = 13 × 6.", "latex": ""},
+      {"text": "HCF × LCM = product of the numbers, so the product must be 13 × 260 = 3380.", "latex": ""},
+      {"text": "52 × 78 = 4056 and 65 × 78 = 5070, so those pairs do not fit. 52 × 65 = 3380, which fits.", "latex": ""},
+      {"text": "Check: 4 and 5 share no factor, so the HCF of 52 and 65 is 13. The numbers are 52 and 65.", "latex": ""}
+    ],
+    "why": "The hints and steps used 'gcd' and 'coprime', words beyond a 10-year-old, and hints 2 and 3 stated the answer."
+  },
+  "EXT_G5_WS_B6_014": {
+    "hints": [
+      "Put 8 in place of x in each equation. Work out the left side and the right side separately. The equation is true only if both sides come out the same.",
+      "Try the first one: left side 8 + 5 × 8 = 48, right side 3 × 8 + 18 = 42. 48 and 42 are different, so it is not true for x = 8. Test the others the same way.",
+      "Similar: for x = 3, is 2x + 1 = x + 4 true? Left side: 2 × 3 + 1 = 7. Right side: 3 + 4 = 7. Both sides are 7, so yes."
+    ],
+    "steps": [
+      {"text": "Put x = 8 into each equation and compare the two sides.", "latex": ""},
+      {"text": "8 + 5x gives 8 + 40 = 48 but 3x + 18 gives 24 + 18 = 42. Not equal.", "latex": ""},
+      {"text": "9 − 4x would mean taking 32 away from 9, but 2x + 6 gives 16 + 6 = 22. Not equal.", "latex": ""},
+      {"text": "4x + 7 gives 32 + 7 = 39 but 21 + 2x gives 21 + 16 = 37. Not equal.", "latex": ""},
+      {"text": "5x + 7 gives 40 + 7 = 47 and 8x − 17 gives 64 − 17 = 47. Both sides are 47, so 5x+7=8x−17 is true.", "latex": ""}
+    ],
+    "why": "Hint 2 named the answer by its option letter and confirmed it; the solution ended on a choice that does not work instead of the answer."
+  },
+  "EXT_G5_WS_B6_015": {
+    "hints": [
+      "You can find m first, or spot a shortcut: 4m is just double 2m.",
+      "From 2m + 1 = 8, take 1 from both sides to find what 2m is. Double it to get 4m, then add 5.",
+      "Try a similar one: if 3x + 2 = 11, find 6x − 1. Take away 2: 3x = 9. Double: 6x = 18. Then 18 − 1 = 17."
+    ],
+    "why": "Hint 2 worked the whole question and stated the answer."
+  },
+  "EXT_G5_WS_B6_016": {
+    "hints": [
+      "Open the brackets on both sides first. Then gather the d terms on one side and the plain numbers on the other.",
+      "Left side: 2 times 3d is 6d and 2 times 4 is 8, so it becomes 6d + 8. Right side: 20 − 8d + 2, which is 22 − 8d. Now add 8d to both sides so all the d terms are together.",
+      "Try a simpler one: 2(x + 3) = 3(4 − x) + 4. Open the brackets: 2x + 6 = 16 − 3x. Add 3x to both sides: 5x + 6 = 16. So 5x = 10 and x = 2."
+    ],
+    "why": "Hint 3's example ended in an awkward decimal (x = 1.25), which distracts from the method."
+  },
+  "EXT_G5_WS_B6_017": {
+    "hints": [
+      "Work backwards through the clues: 3p = 27 gives p, then p = q + r gives q. Last of all, square q.",
+      "3p = 27, so p = 27 ÷ 3 = 9. Now put p = 9 and r = 5 into p = q + r to find q. Remember the question asks for q², not q.",
+      "Try a similar one: if 2a = 10 and a = b + 2, find b². a = 5, so b = 3, and b² = 3 × 3 = 9."
+    ],
+    "why": "Hint 2 worked out q, leaving the answer one squaring away; the hints did not build up in order."
+  },
+  "EXT_G5_WS_B6_018": {
+    "hints": [
+      "You want c all by itself on one side. Undo what has been done to c, one step at a time, doing the same thing to both sides.",
+      "c has been multiplied by b, and then a has been added. Undo the adding first: take a away from both sides. Then undo the multiplying.",
+      "Try a similar one: if p + q × r = 10, take p from both sides to get q × r = 10 − p. Then divide both sides by q: r = (10 − p) ÷ q."
+    ],
+    "why": "Hint 2 stated the answer in full."
+  },
+  "EXT_G5_WS_B6_021": {
+    "hints": [
+      "All four sides of a square are equal. So the two expressions for the side must be equal to each other.",
+      "Write 2a + 5 = 3a − 1 and solve for a. Then put your value of a back into 2a + 5 to get the side, and remember the perimeter is 4 times the side.",
+      "Try a similar one: a square has sides (x + 3) cm and (2x − 1) cm. x + 3 = 2x − 1 gives x = 4. The side is 4 + 3 = 7 cm and the perimeter is 4 × 7 = 28 cm."
+    ],
+    "why": "Hint 2 solved for a and the side, leaving only one multiplication to the answer."
+  },
+  "EXT_G5_WS_B7_001": {
+    "hints": [
+      "A fraction is 'parts you want' over 'total equal parts'. Here the parts you want are the ones that are NOT shaded.",
+      "Count all the equal parts in the bar: that is the bottom number. Then count only the unshaded parts: that is the top number.",
+      "Similar: a bar has 6 equal parts and 4 are shaded. Then 6 − 4 = 2 are unshaded, so the unshaded fraction is 2/6."
+    ],
+    "steps": [
+      {"text": "The bar is divided into 8 equal parts, so the bottom number of the fraction is 8.", "latex": ""},
+      {"text": "5 parts are shaded, so 8 − 5 = 3 parts are unshaded.", "latex": ""},
+      {"text": "So the unshaded portion is 3 out of 8, which is 3/8.", "latex": ""}
+    ],
+    "why": "Hint 2 stated the answer; rewritten to match the bar the app now draws (8 equal parts, 5 shaded)."
+  },
+  "EXT_G5_WS_B7_002": {
+    "hints": [
+      "First find the denominator. '16 less than the numerator' means subtract 16 from 21.",
+      "Once you have the fraction, the top is bigger than the bottom. Divide the top by the bottom: the quotient is the whole number and the remainder goes over the same denominator.",
+      "Try a different one: 17/3. 17 ÷ 3 gives 5 with remainder 2, because 3 × 5 = 15 and 17 − 15 = 2. So 17/3 as a mixed number is 5 2/3."
+    ],
+    "steps": [
+      {"text": "The denominator is 16 less than 21: 21 − 16 = 5. So the fraction is 21/5.", "latex": ""},
+      {"text": "Divide 21 by 5: 5 × 4 = 20, and 21 − 20 = 1 is left over.", "latex": ""},
+      {"text": "So there are 4 wholes and 1 fifth left: 21/5 as a mixed number is 4 1/5.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate, hint 3 was a fraction-comparison example from another kind of question, and a step wrote '21/5 = 4 remainder 1'."
+  },
+  "EXT_G5_WS_B7_003": {
+    "hints": [
+      "To reach the lowest form, divide the top and the bottom by the same number until no number (other than 1) divides both.",
+      "187 and 136 are both multiples of 17: try dividing each of them by 17.",
+      "Try a smaller one: 51/34. Both are multiples of 17: 51 ÷ 17 = 3 and 34 ÷ 17 = 2. So 51/34 in lowest form is 3/2."
+    ],
+    "steps": [
+      {"text": "Look for a number that divides both 187 and 136. Both are multiples of 17.", "latex": ""},
+      {"text": "187 ÷ 17 = 11 and 136 ÷ 17 = 8.", "latex": ""},
+      {"text": "11 and 8 share no factor other than 1, so the lowest form of 187/136 is 11/8.", "latex": ""}
+    ],
+    "why": "The hints used 'GCD' and hint 2 gave both factorisations, which shows the answer."
+  },
+  "EXT_G5_WS_B7_004": {
+    "hints": [
+      "A portion is a fraction: (how many two-digit numbers are perfect squares) over (how many two-digit numbers there are).",
+      "The two-digit numbers run from 10 to 99: that is 99 − 9 = 90 numbers. Now list the two-digit squares, starting 4 × 4 = 16, and count them. Write the fraction and simplify it.",
+      "Similar: what portion of the one-digit numbers 1 to 9 are perfect squares? The squares are 1, 4 and 9, so it is 3 out of 9, which is 3/9 = 1/3."
+    ],
+    "why": "Hint 3 was generic ('try a simpler version with easy fractions') and hints 1 and 2 did all the counting."
+  },
+  "EXT_G5_WS_B7_005": {
+    "hints": [
+      "All three fractions are equal. To get an equal fraction, multiply the top and the bottom by the same number.",
+      "Compare 3/16 with ✻/96: what was 16 multiplied by to make 96? Multiply 3 by the same number. Then compare 3/16 with 12/△: what was 3 multiplied by to make 12?",
+      "Try a smaller one: the fractions ✻/12, 2/3 and 8/△ are all equal. 3 × 4 = 12, so ✻ = 2 × 4 = 8. And 2 × 4 = 8, so △ = 3 × 4 = 12."
+    ],
+    "steps": [
+      {"text": "Equal fractions come from multiplying the top and bottom by the same number.", "latex": ""},
+      {"text": "From 3/16 to ✻/96: 16 × 6 = 96, so ✻ = 3 × 6 = 18.", "latex": ""},
+      {"text": "From 3/16 to 12/△: 3 × 4 = 12, so △ = 16 × 4 = 64.", "latex": ""},
+      {"text": "So ✻ = 18 and △ = 64.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 each worked out half of the answer, and the solution never brought the two values together."
+  },
+  "EXT_G5_WS_B7_006": {
+    "hints": [
+      "The two fractions are equal. It is easier if you first write 45/36 in its lowest form.",
+      "Both 45 and 36 are in the 9 times table, so divide top and bottom by 9. Then ask: what must the new bottom number be multiplied by to make 32? Do the same to the top.",
+      "Try a smaller one: 6/9 and ✻/15 are equal. In lowest form 6/9 is 2/3. Since 3 × 5 = 15, ✻ = 2 × 5 = 10."
+    ],
+    "steps": [
+      {"text": "Write 45/36 in lowest form: divide top and bottom by 9 to get 5/4.", "latex": ""},
+      {"text": "Now 5/4 and ✻/32 are equal. 4 × 8 = 32, so multiply the top by 8 as well.", "latex": ""},
+      {"text": "5 × 8 = 40, so the number in place of the asterisk is 40.", "latex": ""}
+    ],
+    "why": "Hint 2 stated the answer, and the hints used a different method (cross-multiplying big numbers) from the solution."
+  },
+  "EXT_G5_WS_B7_007": {
+    "hints": [
+      "Two equal fractions. First make 5/7 into an equal fraction with 42 at the bottom, so the tops can be compared.",
+      "7 × 6 = 42, so multiply the top of 5/7 by 6 as well. That number equals b − 8. To find b, add the 8 back.",
+      "Try a smaller one: (c − 2)/12 and 3/4 are equal. 4 × 3 = 12, so 3/4 = 9/12. Then c − 2 is 9, so c is 11."
+    ],
+    "steps": [
+      {"text": "Make 5/7 into a fraction with 42 at the bottom: 7 × 6 = 42 and 5 × 6 = 30, so 5/7 = 30/42.", "latex": ""},
+      {"text": "Now (b − 8)/42 and 30/42 are equal, so the tops are equal: b − 8 is 30.", "latex": ""},
+      {"text": "Add 8 back: b = 30 + 8 = 38.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate and hint 3 was not about fractions; the steps skipped the working."
+  },
+  "EXT_G5_WS_B7_008": {
+    "hints": [
+      "The line runs from 0 to 2, not 0 to 1. So first find how long each of the 5 equal parts is.",
+      "Each part is 2 ÷ 5 = 2/5 long. Now count how many parts there are from 0 to point A on the number line, and add up that many parts.",
+      "Similar: a line from 0 to 3 is cut into 4 equal parts. Each part is 3/4. A point on the 3rd mark is at 3/4 + 3/4 + 3/4 = 9/4."
+    ],
+    "steps": [
+      {"text": "The line from 0 to 2 is cut into 5 equal parts, so each part is 2 ÷ 5 = 2/5 long.", "latex": ""},
+      {"text": "Point A is on the 2nd mark after 0, so it is 2 parts away from 0.", "latex": ""},
+      {"text": "2/5 + 2/5 = 4/5, so point A represents 4/5.", "latex": ""}
+    ],
+    "why": "Hint 2 said the point 'appears to be' at a mark and stated the answer; rewritten to match the number line the app now draws."
+  },
+  "EXT_G5_WS_B7_009": {
+    "hints": [
+      "Before doing any working, compare each fraction with 1. Is the top smaller or bigger than the bottom?",
+      "When the top is smaller than the bottom, the fraction is less than 1. When the top is bigger than the bottom, the fraction is more than 1. Sort the four choices this way.",
+      "Similar: which is greatest of 5/6, 7/4 and 2/3? Only 7/4 has a top bigger than its bottom, so it is more than 1 and the others are less than 1. 7/4 is the greatest."
+    ],
+    "steps": [
+      {"text": "Compare each fraction with 1.", "latex": ""},
+      {"text": "In 19/21, 11/15 and 23/32 the top is smaller than the bottom, so each of them is less than 1.", "latex": ""},
+      {"text": "In 9/8 the top is bigger than the bottom, so it is more than 1.", "latex": ""},
+      {"text": "So the greatest fraction is 9/8.", "latex": ""}
+    ],
+    "why": "Hint 2 named the answer, hint 3 used 'LCD' and a method this question does not need, and the steps used rounded decimals."
+  },
+  "EXT_G5_WS_B7_010": {
+    "hints": [
+      "Compare each fraction with 1/2. A fraction is less than 1/2 when its top is less than half of its bottom.",
+      "Take 11/15: half of 15 is 7 1/2, and 11 is more than that, so 11/15 is more than 1/2. Do the same for the other three fractions.",
+      "Similar: which is smallest of 5/8, 4/9 and 7/12? Half of 8 is 4, half of 9 is 4 1/2, half of 12 is 6. Only 4/9 has a top below half its bottom, so 4/9 is the smallest."
+    ],
+    "steps": [
+      {"text": "Compare each fraction with 1/2 by checking whether the top is more or less than half of the bottom.", "latex": ""},
+      {"text": "11/15: half of 15 is 7 1/2, and 11 is more. 21/32: half of 32 is 16, and 21 is more. 17/28: half of 28 is 14, and 17 is more.", "latex": ""},
+      {"text": "So those three are all more than 1/2.", "latex": ""},
+      {"text": "14/29: half of 29 is 14 1/2, and 14 is less. So 14/29 is less than 1/2, and it is the smallest fraction.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 gave long-division decimals and named the answer; the solution ended with a filler step."
+  },
+  "EXT_G5_WS_B7_012": {
+    "hints": [
+      "All four numerators are the same number. Think of sharing the same cake among more and more people: what happens to each share?",
+      "With the same top number, the more parts the whole is cut into, the smaller each fraction is. So look at the four bottom numbers and decide which one cuts the whole into the most parts.",
+      "Similar: 5/3, 5/7 and 5/9 have the same top. Ninths are the smallest pieces, so 5/9 is the smallest of the three."
+    ],
+    "why": "Hints 1 and 2 stated the rule and then named the answer's denominator."
+  },
+  "EXT_G5_WS_B7_013": {
+    "hints": [
+      "Put the five fractions in order from greatest to smallest. With five fractions, the middle one is the 3rd.",
+      "Use 1/2 and 1 as markers. 11/9 is more than 1. 14/28 is exactly 1/2. Now decide for 5/14, 13/21 and 3/7: is each one more than 1/2 or less than 1/2?",
+      "Similar: order 3/8, 5/4, 2/4, 5/6 and 1/3 from greatest. 5/4 is more than 1, 5/6 is more than 1/2, 2/4 is exactly 1/2, and 3/8 and 1/3 are less than 1/2. So the middle one is 2/4."
+    ],
+    "steps": [
+      {"text": "Use 1/2 and 1 as markers. 11/9 is more than 1, so it is the greatest.", "latex": ""},
+      {"text": "13/21 is more than 1/2, because half of 21 is 10 1/2 and 13 is more. It is less than 1, so it comes second.", "latex": ""},
+      {"text": "14/28 is exactly 1/2, because 14 is half of 28.", "latex": ""},
+      {"text": "3/7 and 5/14 are both less than 1/2 (half of 7 is 3 1/2, half of 14 is 7), so they come last.", "latex": ""},
+      {"text": "In descending order the 3rd of the five fractions is 14/28, so 14/28 is in the middle.", "latex": ""}
+    ],
+    "why": "Hint 2 gave the full order and named the answer, hint 3 was generic, and the steps were a bare list of rounded decimals."
+  },
+  "EXT_G5_WS_B7_014": {
+    "hints": [
+      "To compare fractions, give them all the same bottom number. Two of the choices are already in twenty-fourths, so change 1/3 and 5/8 into twenty-fourths as well.",
+      "For 1/3, multiply top and bottom by 8. For 5/8, multiply top and bottom by 3. Now you know the two tops your answer must lie between. Change 1/6 and 11/12 the same way.",
+      "Similar: which of 3/12, 7/12 and 11/12 is greater than 1/3 but less than 3/4? In twelfths, 1/3 is 4/12 and 3/4 is 9/12. Only 7/12 has a top between 4 and 9."
+    ],
+    "steps": [
+      {"text": "Write everything in twenty-fourths. 1/3 = 8/24 and 5/8 = 15/24, so the top number must be more than 8 and less than 15.", "latex": ""},
+      {"text": "1/6 = 4/24 (too small) and 11/12 = 22/24 (too big).", "latex": ""},
+      {"text": "17/24 has a top of 17, which is more than 15, so it is too big.", "latex": ""},
+      {"text": "13/24 has a top of 13, which lies between 8 and 15. So the fraction is 13/24.", "latex": ""}
+    ],
+    "why": "Hint 2 tested every choice in decimals and ticked the answer, hint 3 was an unrelated comparison using 'LCD', and the solution ended with a filler step."
+  },
+  "EXT_G5_WS_B7_015": {
+    "hints": [
+      "'What should be added' is a missing-number question: take 3/8 away from 1 1/12 to find it.",
+      "First write 1 1/12 as an improper fraction: 12/12 + 1/12 = 13/12. Then give 13/12 and 3/8 the same bottom number (the smallest number that both 12 and 8 divide into) and subtract.",
+      "Try a smaller one: what should be added to 1/4 to get 1 1/6? 1 1/6 is 7/6. In twelfths, 7/6 = 14/12 and 1/4 = 3/12. 14/12 − 3/12 = 11/12."
+    ],
+    "steps": [
+      {"text": "The number to add is 1 1/12 take away 3/8. Write 1 1/12 as 13/12.", "latex": ""},
+      {"text": "The smallest number that both 12 and 8 divide into is 24. So 13/12 = 26/24 and 3/8 = 9/24.", "latex": ""},
+      {"text": "26/24 − 9/24 = 17/24.", "latex": ""},
+      {"text": "So 17/24 should be added to 3/8.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 worked the whole question and stated the answer; the solution was one line followed by a filler step."
+  },
+  "EXT_G5_WS_B7_016": {
+    "hints": [
+      "Split 7 3/8 into a whole-number part and a fraction part. The 6 on the left takes care of only some of the wholes.",
+      "7 3/8 − 6 = 1 3/8. So □/8 must equal 1 3/8. Change 1 3/8 into eighths: one whole is 8/8.",
+      "Try a smaller one: 2 + □/3 gives 4 1/3. Taking 2 away leaves 2 1/3. Two wholes are 6/3, and 6/3 + 1/3 = 7/3, so □ = 7."
+    ],
+    "steps": [
+      {"text": "Take 6 away from 7 3/8: that leaves 1 3/8. So □/8 must equal 1 3/8.", "latex": ""},
+      {"text": "One whole is 8/8, so 1 3/8 = 8/8 + 3/8 = 11/8.", "latex": ""},
+      {"text": "So the number in the box is 11.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate and hint 3 was a simple-interest example from another topic."
+  },
+  "EXT_G5_WS_B7_017": {
+    "hints": [
+      "Split 11 1/5 into wholes and a fraction. The 8 on the left covers only some of the wholes; the rest must come from □/5.",
+      "11 1/5 − 8 = 3 1/5. So □/5 must equal 3 1/5. Change 3 1/5 into fifths: each whole is 5/5.",
+      "Try a smaller one: 5 + □/4 gives 7 3/4. Taking 5 away leaves 2 3/4. Two wholes are 8/4, and 8/4 + 3/4 = 11/4, so □ = 11."
+    ],
+    "steps": [
+      {"text": "Take 8 away from 11 1/5: that leaves 3 1/5. So □/5 must equal 3 1/5.", "latex": ""},
+      {"text": "Three wholes are 15/5, so 3 1/5 = 15/5 + 1/5 = 16/5.", "latex": ""},
+      {"text": "So the number in the box is 16.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate and hint 3 was a simple-interest example from another topic."
+  },
+  "EXT_G5_WS_B7_018": {
+    "hints": [
+      "The two fractions have the same bottom number, so you add only the tops. And a fraction equals 1 when its top and bottom are the same.",
+      "Add the tops: 7 + 2. The sum of the two fractions is that total over ✻. What must ✻ be for the fraction to equal 1?",
+      "Similar: 3/✻ and 2/✻ add up to 1. The tops add to 5, so the sum is 5/✻. That equals 1 when ✻ = 5, because 5/5 = 1."
+    ],
+    "steps": [
+      {"text": "The fractions have the same bottom number, so add the tops: 7 + 2 = 9. The sum is 9/✻.", "latex": ""},
+      {"text": "A fraction equals 1 when the top and the bottom are the same number.", "latex": ""},
+      {"text": "So ✻ = 9, because 7/9 + 2/9 = 9/9 = 1.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate and hint 3 was a simple-interest example from another topic; the steps gave no reasons."
+  },
+  "EXT_G5_WS_B7_019": {
+    "hints": [
+      "First add the three fractions on the left: same bottom number, so add the tops. Then turn the result into an equal fraction with 33 at the bottom.",
+      "1/11 + 1/11 + 1/11 = 3/11. Now 11 × 3 = 33, so multiply the top by 3 as well.",
+      "Similar: 1/5 + 1/5 is the same as ✻/20. The left side is 2/5. Since 5 × 4 = 20, ✻ = 2 × 4 = 8."
+    ],
+    "steps": [
+      {"text": "Add the tops on the left: 1/11 + 1/11 + 1/11 = 3/11.", "latex": ""},
+      {"text": "Change 3/11 into thirty-thirds: 11 × 3 = 33, so multiply the top by 3 too.", "latex": ""},
+      {"text": "3 × 3 = 9, so 3/11 = 9/33 and the asterisk is 9.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate and hint 3 was a fraction-comparison example from another kind of question."
+  },
+  "EXT_G5_WS_B7_020": {
+    "hints": [
+      "Add the three fractions on the left first. They share a bottom number, so only the tops are added. Then make an equal fraction with 12 at the bottom.",
+      "5/4 + 5/4 + 5/4 = 15/4. Now 4 × 3 = 12, so multiply the top by 3 as well.",
+      "Similar: 3/2 + 3/2 is the same as ✻/10. The left side is 6/2. Since 2 × 5 = 10, ✻ = 6 × 5 = 30."
+    ],
+    "steps": [
+      {"text": "Add the tops on the left: 5/4 + 5/4 + 5/4 = 15/4.", "latex": ""},
+      {"text": "Change 15/4 into twelfths: 4 × 3 = 12, so multiply the top by 3 too.", "latex": ""},
+      {"text": "15 × 3 = 45, so 15/4 = 45/12 and the asterisk is 45.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate and hint 3 was a fraction-comparison example from another kind of question."
+  },
+  "EXT_G5_WS_B7_021": {
+    "hints": [
+      "The four fractions on the left have the same bottom number, 7. Make the right side into sevenths too, so the tops can be compared.",
+      "Divide the top and bottom of 48/28 by 4 to get a fraction in sevenths. The four equal tops on the left must add up to its top.",
+      "Similar: three lots of ✻/5 add up to 18/15. Dividing top and bottom by 3, 18/15 = 6/5. Three equal tops add up to 6, so ✻ is 6 ÷ 3 = 2."
+    ],
+    "steps": [
+      {"text": "Write 48/28 in sevenths: divide top and bottom by 4 to get 12/7.", "latex": ""},
+      {"text": "On the left, the four fractions have the same bottom number, so their tops add up: four equal tops make 12.", "latex": ""},
+      {"text": "12 ÷ 4 = 3, so the number is 3. Check: 3/7 + 3/7 + 3/7 + 3/7 = 12/7.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate and hint 3 was not about fractions."
+  },
+  "EXT_G5_WS_B7_022": {
+    "hints": [
+      "Like fractions have the same denominator, so you add only the numerators and keep the denominator.",
+      "Add the numerators: 3 + 5 + 6 = 14. So the sum is 14 over the denominator. What denominator makes that fraction equal to 2?",
+      "Similar: like fractions with numerators 1, 2 and 5 add up to 4. The tops add to 8, so the sum is 8 over the denominator. 8 ÷ 4 = 2, so the denominator is 2 (8/2 = 4)."
+    ],
+    "steps": [
+      {"text": "Like fractions share one denominator, so add the numerators: 3 + 5 + 6 = 14.", "latex": ""},
+      {"text": "The sum is 14 over the denominator, and it equals 2. So 14 divided by the denominator is 2.", "latex": ""},
+      {"text": "14 ÷ 2 = 7, so the denominator is 7. Check: 14/7 = 2.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate, hint 3 was a fraction-comparison example from another kind of question, and the solution ended with a filler step."
+  },
+  "EXT_G5_WS_B7_023": {
+    "hints": [
+      "Two jobs first: pick the smallest fraction in group A and the greatest in group B. Then multiply them.",
+      "In group A every top is 7, so the biggest bottom number gives the smallest fraction. In group B every bottom is 8, so the biggest top gives the greatest fraction. Multiply your two picks: top × top and bottom × bottom, then simplify.",
+      "Similar: multiply 2/9 by 6/8. First 6/8 = 3/4. Then 2/9 × 3/4 = 6/36 = 1/6."
+    ],
+    "steps": [
+      {"text": "Group A: every top is 7, so the biggest bottom gives the smallest fraction: 7/12.", "latex": ""},
+      {"text": "Group B: every bottom is 8, so the biggest top gives the greatest fraction: 6/8, which is 3/4 in lowest form.", "latex": ""},
+      {"text": "Multiply: 7/12 × 3/4 = 21/48.", "latex": ""},
+      {"text": "Divide top and bottom by 3: 21/48 = 7/16. So the product is 7/16.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 worked the whole question and stated the answer; the solution ended with a filler step."
+  },
+  "EXT_G5_WS_B7_024": {
+    "hints": [
+      "The three fractions have different bottom numbers. Change them all to the same bottom number before you subtract and add.",
+      "12 is in the 3 times table and the 4 times table, so use twelfths: 2/3 = 8/12 and 1/4 = 3/12. Now work out 11/12 − 8/12 + 3/12 from left to right, and simplify.",
+      "Try a smaller one: 5/6 − 1/2 + 1/3. In sixths that is 5/6 − 3/6 + 2/6 = 4/6, which is 2/3 in lowest form."
+    ],
+    "steps": [
+      {"text": "Put the values in: x − y + z is 11/12 − 2/3 + 1/4.", "latex": ""},
+      {"text": "Change to twelfths: 2/3 = 8/12 and 1/4 = 3/12.", "latex": ""},
+      {"text": "11/12 − 8/12 + 3/12 = 6/12.", "latex": ""},
+      {"text": "6/12 in lowest form is 1/2, so the value is 1/2.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate, hint 3 was a one-line BODMAS reminder, and the solution ended with a filler step."
+  },
+  "EXT_G5_WS_B7_025": {
+    "hints": [
+      "Work out the right side first. Then m is that answer with 1/4 added back, because 1/4 was taken away from m.",
+      "Right side: change 3/5 into twentieths (multiply top and bottom by 4), then subtract it from 13/20. To that result, add 1/4, also written in twentieths, and simplify.",
+      "Try a smaller one: n − 1/3 equals 5/6 − 1/2. Right side: 5/6 − 3/6 = 2/6. Add 1/3 back: 2/6 + 2/6 = 4/6, so n is 2/3."
+    ],
+    "steps": [
+      {"text": "Right side: 3/5 = 12/20, so 13/20 − 12/20 = 1/20.", "latex": ""},
+      {"text": "So m with 1/4 taken away is 1/20. To find m, add 1/4 back.", "latex": ""},
+      {"text": "1/4 = 5/20, so m = 1/20 + 5/20 = 6/20.", "latex": ""},
+      {"text": "6/20 in lowest form is 3/10, so m = 3/10.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 worked the whole question and stated the answer, hint 3 was an unrelated cross-multiplying example, and the solution ended with a filler step."
+  },
+  "EXT_G5_WS_B7_026": {
+    "hints": [
+      "Follow BODMAS: do 'of' first, then ÷ and ×, and only then + and −. Here 'of' means multiply.",
+      "Work out three pieces separately: 2/9 of 27/20, then 2/7 ÷ 5/14 (to divide by a fraction, flip it and multiply), then 3/4 × 1/5. Last, put the three results over 20 and add and subtract.",
+      "Try a smaller one: 1/2 ÷ 3/4 + 1/3 of 1/2. Of: 1/3 × 1/2 = 1/6. Divide: 1/2 × 4/3 = 4/6. Add: 4/6 + 1/6 = 5/6."
+    ],
+    "steps": [
+      {"text": "'Of' first: 2/9 of 27/20 is 2/9 × 27/20 = 54/180, which is 3/10.", "latex": ""},
+      {"text": "Division: 2/7 ÷ 5/14 is 2/7 × 14/5 = 28/35, which is 4/5.", "latex": ""},
+      {"text": "Multiplication: 3/4 × 1/5 = 3/20.", "latex": ""},
+      {"text": "Now 4/5 + 3/20 − 3/10. In twentieths: 16/20 + 3/20 − 6/20 = 13/20.", "latex": ""},
+      {"text": "So the expression simplifies to 13/20.", "latex": ""}
+    ],
+    "why": "Hint 2 did every piece of the working in one run-on line, hint 3 was generic, and the solution ended with a filler step."
+  },
+  "EXT_G5_WS_B7_027": {
+    "hints": [
+      "The hour hand takes one whole hour, 60 minutes, to move from 9 to 10. So how far it has gone tells you how much of the hour has passed.",
+      "The hand has gone two-fifths of the way, so two-fifths of 60 minutes have passed since 9 o'clock. Find one-fifth of 60 first, then double it.",
+      "Similar: if the hour hand were three-quarters of the way from 4 to 5, then 3/4 of 60 minutes have passed. One quarter is 15 minutes, so that is 45 minutes: the time is 4:45."
+    ],
+    "steps": [
+      {"text": "The hour hand moves from 9 to 10 in one hour, which is 60 minutes.", "latex": ""},
+      {"text": "It is two-fifths of the way, so two-fifths of 60 minutes have passed since 9 o'clock.", "latex": ""},
+      {"text": "One-fifth of 60 minutes is 60 ÷ 5 = 12 minutes, so two-fifths is 2 × 12 = 24 minutes.", "latex": ""},
+      {"text": "So the correct time is 24 minutes past 9, which is 9:24.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate, hint 3 was a fraction-comparison example from another kind of question, and the solution ended with a filler step."
+  },
+  "EXT_G5_WS_B7_028": {
+    "hints": [
+      "'Four-ninths of a number is 24' means 4 of the 9 equal parts of the number add up to 24. Find one part first.",
+      "4 parts make 24, so 1 part is 24 ÷ 4 = 6. The whole number is 9 parts. Find it, then take half.",
+      "Try a smaller one: two-fifths of a number is 8. One fifth is 8 ÷ 2 = 4, so the number is 5 × 4 = 20, and half of it is 10."
+    ],
+    "steps": [
+      {"text": "Four-ninths of the number is 24, so 4 of its 9 equal parts make 24.", "latex": ""},
+      {"text": "One part is 24 ÷ 4 = 6.", "latex": ""},
+      {"text": "The whole number is 9 parts: 9 × 6 = 54.", "latex": ""},
+      {"text": "Half of 54 is 54 ÷ 2 = 27. So half of the number is 27.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate, hint 3 was a fraction-comparison example from another kind of question, and the steps were bare algebra."
+  },
+  "EXT_G5_WS_B7_029": {
+    "hints": [
+      "3/5 of the exercise takes 24 minutes. Find how long 1/5 takes, then how long the whole exercise (5/5) takes.",
+      "3 fifths take 24 minutes, so 1 fifth takes 24 ÷ 3 = 8 minutes. Multiply by 5 for the whole exercise, then count that many minutes on from 11 am.",
+      "Try a smaller one: 2/3 of a job takes 10 minutes. 1/3 takes 10 ÷ 2 = 5 minutes, so the whole job takes 3 × 5 = 15 minutes. Starting at 2 pm, it ends at 2:15 pm."
+    ],
+    "steps": [
+      {"text": "3/5 of the exercise takes 24 minutes, so 1/5 takes 24 ÷ 3 = 8 minutes.", "latex": ""},
+      {"text": "The whole exercise is 5/5, so it takes 5 × 8 = 40 minutes.", "latex": ""},
+      {"text": "40 minutes after 11 am is 11:40 am. So she will complete the exercise at 11:40 am.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate, hint 3 was a fraction-comparison example from another kind of question, and a step wrote '1/5 = 24÷3', which is not true as a sum."
+  },
+  "EXT_G5_WS_B7_030": {
+    "hints": [
+      "The 120 litres fill the EMPTY part of the tank. So first find what fraction of the tank is empty.",
+      "If 4/7 is full, then 7/7 − 4/7 = 3/7 is empty. So 3 of the 7 equal parts hold 120 litres. Find one part, then all 7 parts.",
+      "Try a smaller one: a jug is 3/5 full and needs 4 litres more to fill it. The empty part is 2/5, so 1/5 is 4 ÷ 2 = 2 litres and the full jug holds 5 × 2 = 10 litres."
+    ],
+    "steps": [
+      {"text": "The tank is 4/7 full, so the empty part is 7/7 − 4/7 = 3/7 of the tank.", "latex": ""},
+      {"text": "That empty 3/7 holds 120 litres, so 1/7 of the tank is 120 ÷ 3 = 40 litres.", "latex": ""},
+      {"text": "The whole tank is 7 parts: 7 × 40 = 280.", "latex": ""},
+      {"text": "So the total capacity of the tank is 280 litres.", "latex": ""}
+    ],
+    "why": "Hint 2 stated the answer, and the solution ended with a filler step."
+  },
+  "EXT_G5_WS_B7_031": {
+    "hints": [
+      "Rs. 2700 is 3 of the 5 equal parts of his money. So what is left in the account is the other 2 parts.",
+      "3 parts make Rs. 2700, so 1 part is Rs. 2700 ÷ 3 = Rs. 900. How many parts are still in the account? Multiply.",
+      "Try a smaller one: Rs. 60 is three-quarters of Meena's money. One quarter is 60 ÷ 3 = 20, so Rs. 20. She has 1 quarter left, so her balance is Rs. 20."
+    ],
+    "steps": [
+      {"text": "Rs. 2700 is three-fifths of the total, so 3 of the 5 equal parts make Rs. 2700.", "latex": ""},
+      {"text": "One part is 2700 ÷ 3 = 900, so one-fifth is Rs. 900.", "latex": ""},
+      {"text": "After the withdrawal, 5 − 3 = 2 parts are left in the account.", "latex": ""},
+      {"text": "2 × 900 = 1800, so the balance is Rs. 1800.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate, hint 3 was a fraction-comparison example from another kind of question, and the solution ended with a filler step."
+  },
+  "EXT_G5_WS_B7_032": {
+    "hints": [
+      "First find what fraction of the class went to the playground. Those are the 14 students.",
+      "Library and lab together are 3/7 + 2/7 = 5/7 of the class, so the playground group is the remaining 2/7. If 2 parts are 14 students, how many is 1 part? The library group is 3 parts.",
+      "Try a smaller one: 1/5 of a class sing, 2/5 dance and the remaining 12 paint. The painters are 2/5, so 1/5 is 12 ÷ 2 = 6 students. The dancers are 2 × 6 = 12."
+    ],
+    "steps": [
+      {"text": "Library and science lab together: 3/7 + 2/7 = 5/7 of the class.", "latex": ""},
+      {"text": "So the playground group is 7/7 − 5/7 = 2/7 of the class, and that is 14 students.", "latex": ""},
+      {"text": "One-seventh of the class is 14 ÷ 2 = 7 students.", "latex": ""},
+      {"text": "The library group is 3/7 of the class: 3 × 7 = 21. So 21 students went to the library.", "latex": ""}
+    ],
+    "why": "Hint 2 stated the answer, hint 3's example was written as a sum that is not true ('2/4=15'), and the steps skipped the working."
+  },
+  "EXT_G5_WS_B7_033": {
+    "hints": [
+      "Add up the fractions for roses, sunflowers and marigolds. What is left over is the fraction for the 30 hibiscus plants.",
+      "2/9 + 1/9 + 4/9 = 7/9, so the hibiscus plants are the remaining 2/9. If 2 parts are 30 plants, find 1 part. Sunflowers and marigolds together are 1 + 4 = 5 parts.",
+      "Try a smaller one: 1/6 of the fruit are apples, 2/6 are pears and the remaining 12 are plums. Plums are 3/6, so 1/6 is 12 ÷ 3 = 4. Apples and pears together are 3 parts: 3 × 4 = 12."
+    ],
+    "steps": [
+      {"text": "Roses, sunflowers and marigolds together: 2/9 + 1/9 + 4/9 = 7/9 of the plants.", "latex": ""},
+      {"text": "So the hibiscus plants are 9/9 − 7/9 = 2/9 of the plants, and that is 30 plants.", "latex": ""},
+      {"text": "One-ninth of the plants is 30 ÷ 2 = 15.", "latex": ""},
+      {"text": "Sunflowers and marigolds together are 1/9 + 4/9 = 5/9, which is 5 × 15 = 75.", "latex": ""},
+      {"text": "So there are 75 sunflower and marigold plants in all.", "latex": ""}
+    ],
+    "why": "Hint 2 stated the answer, hint 3's example was written as a sum that is not true ('2/4=15'), and the solution ended with a filler step."
+  },
+  "EXT_G5_WS_B7_034": {
+    "hints": [
+      "First find the size of one small part of the tank. 5/8 full means 5 of the tank's 8 equal parts hold 120 litres.",
+      "5 parts hold 120 litres, so 1 part holds 120 ÷ 5 = 24 litres. Find the full tank (8 parts), then take 2/3 of it.",
+      "Try a smaller one: a tank that is 3/4 full holds 30 litres. 1/4 is 30 ÷ 3 = 10 litres, so the full tank holds 40 litres. When it is 1/2 full it holds 20 litres."
+    ],
+    "steps": [
+      {"text": "5/8 of the tank is 120 litres, so 1/8 of the tank is 120 ÷ 5 = 24 litres.", "latex": ""},
+      {"text": "The full tank is 8 parts: 8 × 24 = 192 litres.", "latex": ""},
+      {"text": "One-third of 192 is 192 ÷ 3 = 64 litres, so two-thirds is 2 × 64 = 128 litres.", "latex": ""},
+      {"text": "So the tank holds 128 litres when it is 2/3 full.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate, hint 3 was a compound-interest example from another topic, and the solution ended with a filler step."
+  },
+  "EXT_G5_WS_B7_035": {
+    "hints": [
+      "Start with the children: if 3/5 of the visitors were adults, what fraction were children? That fraction is the 120 children.",
+      "Children are 5/5 − 3/5 = 2/5 of the visitors. 2 parts are 120, so 1 part is 120 ÷ 2 = 60 visitors. Adults are 3 parts. Then find 5/9 of the adults.",
+      "Try a smaller one: 2/3 of the visitors are adults and there are 10 children. Children are 1/3, so adults are 2 × 10 = 20. If 3/4 of the adults are women, that is 20 ÷ 4 × 3 = 15 women."
+    ],
+    "steps": [
+      {"text": "3/5 of the visitors were adults, so 5/5 − 3/5 = 2/5 were children. That is 120 children.", "latex": ""},
+      {"text": "One-fifth of the visitors is 120 ÷ 2 = 60, so the adults (3/5) number 3 × 60 = 180.", "latex": ""},
+      {"text": "5/9 of the adults were female. One-ninth of 180 is 180 ÷ 9 = 20.", "latex": ""},
+      {"text": "5 × 20 = 100, so 100 female adults visited the zoo.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate, hint 3 was a fraction-comparison example from another kind of question, and the steps skipped the working."
+  },
+  "EXT_G5_WS_B7_036": {
+    "hints": [
+      "Take it in order: find the total stock, take off what Mr. Joshi bought, and then take a quarter off what REMAINS (not off the total).",
+      "Total stock: 308 + 52 = 360 kg. Mr. Joshi buys 2/5 of 360: one-fifth is 360 ÷ 5 = 72 kg, so double it. Subtract to find what remains, then take away a quarter of that.",
+      "Try a smaller one: a shop has 40 kg. It sells 1/4 (10 kg), leaving 30 kg. Then it sells 1/3 of the remainder (10 kg). 30 − 10 = 20 kg are left."
+    ],
+    "steps": [
+      {"text": "Total stock: 308 + 52 = 360 kg.", "latex": ""},
+      {"text": "Mr. Joshi buys 2/5 of 360 kg. One-fifth is 360 ÷ 5 = 72 kg, so he buys 2 × 72 = 144 kg.", "latex": ""},
+      {"text": "Remaining: 360 − 144 = 216 kg.", "latex": ""},
+      {"text": "Mr. Shinde buys a quarter of the remaining 216 kg: 216 ÷ 4 = 54 kg.", "latex": ""},
+      {"text": "Left with the grocer: 216 − 54 = 162 kg.", "latex": ""}
+    ],
+    "why": "Hints 1 and 2 worked the whole question and stated the answer, hint 3's example was written as a sum that is not true ('2/4=15'), and the steps skipped the working."
+  }
+}

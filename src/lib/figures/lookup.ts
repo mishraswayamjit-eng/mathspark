@@ -11,6 +11,7 @@ import figures from '@/data/questionFigures/figures.json';
 import speech from '@/data/questionSpeech/speech.json';
 import type { QuestionSpeech } from '@/types';
 import type { ServedVisual } from './types';
+import { withFixes } from '@/lib/questionFixes';
 
 const ALL = figures as unknown as Record<string, ServedVisual>;
 // Authored narration, built by `python scripts/speech/validate.py --build`.
@@ -44,18 +45,20 @@ export function speechFor(questionId: string, opts: { withSolution: boolean }): 
 }
 
 /**
- * Adds `visual` and `speech` to a question object when it has them. Returns a
- * new object. Every route that serves a question to a screen goes through
- * here, so figures and narration always travel together.
+ * Applies any corrected content to a question, then adds `visual` and `speech`
+ * when it has them. Returns a new object. Every route that serves a question
+ * to a screen goes through here, so fixes, figures and narration always
+ * travel together and describe the same text.
  */
 export function withVisual<T extends { id: string }>(
   question: T,
   opts: { withSolution: boolean },
 ): T & { visual?: ServedVisual; speech?: QuestionSpeech } {
+  const fixed = withFixes(question, opts);
   const visual = visualFor(question.id, opts);
   const spoken = speechFor(question.id, opts);
-  if (!visual && !spoken) return question;
-  const out: T & { visual?: ServedVisual; speech?: QuestionSpeech } = { ...question };
+  if (!visual && !spoken) return fixed;
+  const out: T & { visual?: ServedVisual; speech?: QuestionSpeech } = { ...fixed };
   if (visual) out.visual = visual;
   if (spoken) out.speech = spoken;
   return out;

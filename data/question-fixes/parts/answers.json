@@ -1,0 +1,975 @@
+{
+ "EXT_G5_WS_B2_021": {
+  "hints": [
+   "The three bags hold 27 oranges altogether. If you know how many are in two of the bags together, what is left must be in the other bag.",
+   "The first and second bags hold 13, so the third bag holds 27 − 13 oranges. Use the same idea with 19 to find the first bag.",
+   "Try a smaller one: three boxes hold 10 pens. The first two hold 6, and the last two hold 7. The third holds 10 − 6 = 4, the first holds 10 − 7 = 3, so the first and third hold 3 + 4 = 7."
+  ],
+  "steps": [
+   {
+    "text": "All three bags hold 27 oranges, and the first and second hold 13. So the third bag holds 27 − 13 = 14 oranges.",
+    "latex": ""
+   },
+   {
+    "text": "The second and third bags hold 19. So the first bag holds 27 − 19 = 8 oranges.",
+    "latex": ""
+   },
+   {
+    "text": "Add the first and third bags: 8 + 14 = 22. So the first and third bags hold 22 oranges in all.",
+    "latex": "8 + 14 = \\boxed{22}"
+   }
+  ],
+  "why": "Key (22) is right. The hints and steps contained thinking aloud ('Hmm', 'let me recheck', 'But option C is 22 not A') and a hint worked the whole answer."
+ },
+ "EXT_G5_WS_B5_005": {
+  "options": [
+   "80",
+   "800",
+   "8000",
+   "none of these"
+  ],
+  "hints": [
+   "First find the greatest four-digit square number. Which is the biggest number you can multiply by itself and still get four digits?",
+   "100 × 100 = 10000 has five digits, so try 99 × 99. Then see which place the digit 8 sits in.",
+   "A similar one: 86 × 86 = 7396. Here the digit 3 is in the hundreds place, so its place value is 3 × 100 = 300."
+  ],
+  "why": "Choices A and C were both '80'. The third choice is changed to '8000' so the four choices differ; the key (B, 800) is unchanged. The old second hint also stated the answer.",
+  "proof": "99 × 99 = 9801 and 100 × 100 = 10000 (five digits), so the greatest four-digit square is 9801. Its digits are 9 thousands, 8 hundreds, 0 tens, 1 unit. Place value of 8 = 8 × 100 = 800 = choice B. The new choice 8000 is not 800, so exactly one choice is right."
+ },
+ "VAR_G5_vary_percentage_V29": {
+  "options": [
+   "237",
+   "37",
+   "12.5",
+   "17"
+  ],
+  "hints": [
+   "Per cent means 'out of 100'. So 5% of the marks means 5 marks for every 100 marks.",
+   "The test has 250 marks. That is 100 and 100 and 50. Find 5% of each part and add them up.",
+   "A similar one: to find 5% of 300, first find 10%, which is 300 ÷ 10 = 30. Then halve it: 5% of 300 is 15."
+  ],
+  "steps": [
+   {
+    "text": "5% means 5 out of every 100. So multiply 250 by 5 and divide by 100.",
+    "latex": ""
+   },
+   {
+    "text": "250 × 5 = 1250, and 1250 ÷ 100 = 12.5.",
+    "latex": ""
+   },
+   {
+    "text": "So the student scored 12.5 marks, which is 12 and a half marks.",
+    "latex": ""
+   }
+  ],
+  "why": "The keyed choice said 12, but 5% of 250 is 12.5 (the generator rounded down). The keyed choice C is corrected to 12.5; the key letter is unchanged. Hints were generic and there were no steps.",
+  "proof": "5% of 250 = 250 × 5 ÷ 100 = 1250 ÷ 100 = 12.5. Check: 10% of 250 = 25, and half of 25 is 12.5. No original choice equals 12.5 (237, 37, 12, 17), so choice C is corrected from 12 to 12.5."
+ },
+ "EXT_G5_WS_B3_001": {
+  "options": [
+   "8",
+   "12",
+   "8 tens",
+   "8 hundreds"
+  ],
+  "hints": [
+   "Twelve hundreds is a number: 12 × 100. The question asks how many 15s fit into it, so this is a division.",
+   "Write twelve hundreds as 1200. Now divide 1200 by 15. It can help to think of 1200 as 120 tens.",
+   "A similar one: how many fives make six hundreds? 600 ÷ 5 = 120, and 120 is 12 tens."
+  ],
+  "steps": [
+   {
+    "text": "Twelve hundreds = 12 × 100 = 1200.",
+    "latex": ""
+   },
+   {
+    "text": "Count the fifteens in 1200: 1200 ÷ 15 = 80.",
+    "latex": "1200 \\div 15 = 80"
+   },
+   {
+    "text": "80 is the same as 8 tens. So 8 tens of fifteens make up twelve hundreds.",
+    "latex": ""
+   }
+  ],
+  "why": "Choices C and D were printed as the abbreviations '8T' and '8H', which a child cannot read. They are spelled out as '8 tens' and '8 hundreds'; the key (C) is unchanged. Two hints were generic and the third was a simple-interest example from another question.",
+  "proof": "Twelve hundreds = 12 × 100 = 1200. 1200 ÷ 15 = 80 (check: 15 × 80 = 1200). 80 = 8 tens, which is choice C. The other choices are 8, 12 and 8 hundreds (800), none of which is 80."
+ },
+ "EXT_G5_WS_B6_011": {
+  "hints": [
+   "The HCF is 5, so both numbers are multiples of 5. Write them as 5 × a and 5 × b, where a and b share no factor other than 1.",
+   "The product is 600, so a × b must be 600 ÷ 25. Now list every pair a, b that fits, not just the first one you find.",
+   "A similar one: two numbers have product 72 and HCF 2. They could be 2 and 36, or 4 and 18. With two possible pairs, you cannot tell which pair is meant."
+  ],
+  "steps": [
+   {
+    "text": "The HCF is 5, so write the numbers as 5 × a and 5 × b, where a and b have no common factor other than 1.",
+    "latex": ""
+   },
+   {
+    "text": "Their product is 25 × a × b, and it equals 600. So a × b is 600 ÷ 25 = 24.",
+    "latex": ""
+   },
+   {
+    "text": "Pairs with product 24 and no common factor: 1 and 24, or 3 and 8. (2 and 12, and 4 and 6, both share the factor 2.)",
+    "latex": ""
+   },
+   {
+    "text": "So the numbers could be 5 and 120, or 15 and 40. The greater number could be 120 or 40.",
+    "latex": ""
+   },
+   {
+    "text": "Two answers are possible, so we cannot tell which one is meant: the data is inadequate.",
+    "latex": "\\boxed{\\text{data inadequate}}"
+   }
+  ],
+  "why": "Key ('data inadequate') is right: two pairs fit, and that is the point of the question. The third hint gave the conclusion away and the steps used 'gcd' notation a child does not know."
+ },
+ "EXT_G5_WS_01_010": {
+  "hints": [
+   "Look at where the two stars sit in 6*8*4. One is in the thousands place and the other is in the tens place.",
+   "Try the digit 1: its two place values would be 1000 and 10, and 1000 − 10 = 990. For any other digit the difference is that digit times 990. Which choice is in the 990 times table?",
+   "A similar one: in 5*3*, the stars are in the hundreds and units places. The digit 4 gives 400 − 4 = 396, which is 4 times 99. So there the difference is always a multiple of 99."
+  ],
+  "steps": [
+   {
+    "text": "In 6*8*4 the stars are in the thousands place and the tens place.",
+    "latex": "6\\,*\\,8\\,*\\,4"
+   },
+   {
+    "text": "If the digit is 1, the place values are 1000 and 10, and the difference is 1000 − 10 = 990. For any digit, the difference is that digit times 990.",
+    "latex": ""
+   },
+   {
+    "text": "So the answer must be a multiple of 990. Test the choices: 990 × 9 = 8910, so 8910 works when the digit is 9.",
+    "latex": "990 \\times 9 = 8910"
+   },
+   {
+    "text": "The others are not multiples of 990: its multiples start 990, 1980, 2970, 3960, so 540, 1880 and 3030 are skipped. So the difference can be 8910.",
+    "latex": ""
+   }
+  ],
+  "why": "Key (8910) is right. The hints and steps contained thinking aloud ('Hmm. Let me re-examine', 'Wait — rechecking') and never reached the answer: 990 × 9 = 8910 did not appear."
+ },
+ "EXT_G5_WS_B2_011": {
+  "hints": [
+   "Find the digits 5 and 6 in 469571 and say which place each one is in. Then swap them and compare the new number with the old one.",
+   "The 6 is in the ten-thousands place and the 5 is in the hundreds place. After the swap the new number is 459671. Is that bigger or smaller than 469571, and by how much?",
+   "A similar one: swap 2 and 7 in 1274 to get 1724. The new number is more, by 1724 − 1274 = 450."
+  ],
+  "steps": [
+   {
+    "text": "In 469571 the digit 6 is in the ten-thousands place and the digit 5 is in the hundreds place.",
+    "latex": ""
+   },
+   {
+    "text": "Swap them: the new number is 459671.",
+    "latex": ""
+   },
+   {
+    "text": "The ten-thousands digit went down from 6 to 5, so the new number is smaller than the original.",
+    "latex": ""
+   },
+   {
+    "text": "Subtract to find by how much: 469571 − 459671 = 9900. So the new number is less by 9900.",
+    "latex": ""
+   }
+  ],
+  "why": "Key (less by 9900) is right. The steps were placeholders ('Apply the relevant formula', 'The answer is B') and the hints were thinking aloud, one giving a mistaken swapped number (569471)."
+ },
+ "EXT_G5_WS_B4_032": {
+  "hints": [
+   "Work from the innermost bracket outwards: round brackets ( ) first, then curly { }, then square [ ]. Inside a bracket, multiply before you add.",
+   "Start inside the round bracket: 6 + 3 × 2. Do 3 × 2 first, then add 6. Put that number back and move out to the curly bracket. Take care: the curly bracket gives a number below zero.",
+   "A similar one: 3 + [4 − {2 − (1 + 2 × 2)}]. Round bracket: 1 + 4 = 5. Curly: 2 − 5 = −3. Square: 4 − (−3) = 4 + 3 = 7. Last: 3 + 7 = 10."
+  ],
+  "steps": [
+   {
+    "text": "Round bracket first, multiplying before adding: 6 + 3 × 2 = 6 + 6 = 12.",
+    "latex": "(6 + 3 \\times 2) = 12"
+   },
+   {
+    "text": "Curly bracket: 6 − 12 = −6. Taking 12 away from 6 goes 6 below zero.",
+    "latex": "6 - 12 = -6"
+   },
+   {
+    "text": "Square bracket: 5 take away −6. Taking away a negative number is the same as adding, so 5 + 6 = 11.",
+    "latex": "5 + 6 = 11"
+   },
+   {
+    "text": "Last, add the 4 outside: 4 + 11 = 15. So the answer is 15.",
+    "latex": "4 + 11 = \\boxed{15}"
+   }
+  ],
+  "why": "Key (15) is right for the question as printed. The hints and steps spoke of a bar (vinculum) that the question does not show (it prints a round bracket), and the second hint worked the whole answer."
+ },
+ "EXT_G5_WS_B3_012": {
+  "questionText": "A 10 metre long wire is cut into 7 equal parts, each a whole number of centimetres long. What is the minimum length of the wire that would be left over?",
+  "hints": [
+   "Change the wire's length to centimetres first. To leave as little wire as possible, the 7 equal parts must be as long as they can be.",
+   "10 metres is 1000 cm. Divide 1000 by 7. The whole-number part tells you how long each piece is, and the remainder is the wire left over.",
+   "A similar one: a 50 cm ribbon is cut into 6 equal pieces, each a whole number of centimetres. 6 × 8 = 48, so each piece is 8 cm and 50 − 48 = 2 cm is left over."
+  ],
+  "steps": [
+   {
+    "text": "Change metres to centimetres: 10 m is 1000 cm.",
+    "latex": ""
+   },
+   {
+    "text": "The 7 parts should be as long as possible. 7 × 142 = 994, and 7 × 143 = 1001 is more than 1000, so each part is 142 cm.",
+    "latex": "1000 = 7 \\times 142 + 6"
+   },
+   {
+    "text": "Wire left over: 1000 − 994 = 6. So the minimum length left over is 6 cm.",
+    "latex": "\\boxed{6\\text{ cm}}"
+   }
+  ],
+  "why": "As printed, nothing said the parts must be whole centimetres, so the wire could be cut with nothing left over and '6 cm' did not follow. The question now says each part is a whole number of centimetres, which is what the key (6 cm) assumes. A hint also contained thinking aloud ('... Hmm.').",
+  "proof": "10 m = 1000 cm. If each of the 7 parts is n cm (n a whole number), then 7 × n must not exceed 1000, so n is at most 142 (7 × 142 = 994, 7 × 143 = 1001). Wire left over = 1000 − 7 × n, which is smallest when n = 142: 1000 − 994 = 6 cm = choice B. Key unchanged."
+ },
+ "VAR_EXT_G5_WS_B4_023_03": {
+  "options": [
+   "64",
+   "21",
+   "20.5",
+   "8"
+  ],
+  "hints": [
+   "Use BODMAS: do the division and the multiplication first, and the addition last.",
+   "Work out 18 ÷ 4 and 4 × 4 separately. 18 ÷ 4 does not come out whole: 4 fours are 16 and there are 2 left over, which is half of 4.",
+   "A similar one: 10 ÷ 4 + 2 × 3. First 10 ÷ 4 = 2.5 and 2 × 3 = 6. Then 2.5 + 6 = 8.5."
+  ],
+  "steps": [
+   {
+    "text": "BODMAS says to divide and multiply before adding. First divide: 18 ÷ 4 = 4.5.",
+    "latex": ""
+   },
+   {
+    "text": "Next multiply: 4 × 4 = 16.",
+    "latex": ""
+   },
+   {
+    "text": "Last, add the two results: 4.5 + 16 = 20.5. So the answer is 20.5.",
+    "latex": "\\boxed{20.5}"
+   }
+  ],
+  "why": "The keyed choice said 20, but 18 ÷ 4 is not exact: the value is 20.5 (the generator dropped the half). The keyed choice C is corrected to 20.5; the key letter is unchanged. The steps were filler ('The answer is 20').",
+  "proof": "18 ÷ 4 + 4 × 4: division and multiplication first. 18 ÷ 4 = 4.5 (4 × 4.5 = 18). 4 × 4 = 16. 4.5 + 16 = 20.5. No original choice equals 20.5 (64, 21, 20, 8), so choice C is corrected from 20 to 20.5."
+ },
+ "VAR_EXT_G5_WS_B4_029_03": {
+  "options": [
+   "9",
+   "54",
+   "16",
+   "15 2/3"
+  ],
+  "hints": [
+   "Use BODMAS: do the division and the multiplication first, and the addition last.",
+   "Work out 20 ÷ 3 and 3 × 3 separately. 20 ÷ 3 does not come out whole: 6 threes are 18 with 2 left over, so write it as a mixed number.",
+   "A similar one: 7 ÷ 2 + 2 × 2. First 7 ÷ 2 is 3 and 1/2, and 2 × 2 = 4. Adding them gives 7 and 1/2."
+  ],
+  "steps": [
+   {
+    "text": "BODMAS says to divide and multiply before adding. First divide: 20 ÷ 3 is 6 with 2 left over, which is 6 and 2/3.",
+    "latex": ""
+   },
+   {
+    "text": "Next multiply: 3 × 3 = 9.",
+    "latex": ""
+   },
+   {
+    "text": "Last, add the two results: 6 and 2/3 plus 9 makes 15 and 2/3. So the answer is 15 2/3.",
+    "latex": "\\boxed{15\\tfrac{2}{3}}"
+   }
+  ],
+  "why": "The keyed choice said 15, but 20 ÷ 3 is not exact: the value is 15 2/3 (the generator dropped the fraction). The keyed choice D is corrected to 15 2/3; the key letter is unchanged. The steps were filler ('The answer is 15').",
+  "proof": "20 ÷ 3 + 3 × 3: division and multiplication first. 20 ÷ 3 = 20/3 = 6 2/3 (3 × 6 = 18, remainder 2). 3 × 3 = 9. 6 2/3 + 9 = 15 2/3 = 47/3. No original choice equals 15 2/3 (9, 54, 16, 15), so choice D is corrected from 15 to 15 2/3."
+ },
+ "VAR_EXT_G5_WS_01_014_04_b2": {
+  "hints": [
+   "First find the place value of each 1. The 1 in the units place is worth 1, and the 1 in the tens place is worth 10.",
+   "The question asks: 1 is how many times 10? The first number is the smaller one, so the answer is less than 1. Divide 1 by 10.",
+   "A similar one: in 4455, the 5 in the units place is worth 5 and the 5 in the tens place is worth 50. 5 is one tenth of 50."
+  ],
+  "steps": [
+   {
+    "text": "In 27511, the 1 in the units place has place value 1. The 1 in the tens place has place value 10.",
+    "latex": ""
+   },
+   {
+    "text": "To find how many times 10 the number 1 is, divide: 1 ÷ 10 = 0.1.",
+    "latex": ""
+   },
+   {
+    "text": "So the place value of the units 1 is 0.1 times (one tenth of) the place value of the tens 1.",
+    "latex": "\\boxed{0.1}"
+   }
+  ],
+  "why": "Key (0.1) is right: the units 1 is worth 1 and the tens 1 is worth 10, and 1 is 0.1 times 10. The old step read 'PV of 1 = 1, PV of 1 = 10', which does not say which 1 is which, and the hints did not explain why the answer is less than 1."
+ },
+ "PH3_EXT_G5_WS_01_003_02": {
+  "steps": [
+   {
+    "text": "Pages 1 to 9: 9 pages with 1 digit each, so 9 × 1 = 9 digits.",
+    "latex": ""
+   },
+   {
+    "text": "Pages 10 to 99: 90 pages with 2 digits each, so 90 × 2 = 180 digits.",
+    "latex": ""
+   },
+   {
+    "text": "Page 100 is the only page with 3 digits, so it uses 3 digits.",
+    "latex": ""
+   },
+   {
+    "text": "Add them up: 9 + 180 + 3 = 192. So 192 digits are used.",
+    "latex": "\\boxed{192}"
+   }
+  ],
+  "why": "Key (192) is right. A step read 'Pages 100-100: 1 pages × 3 digits', a machine-made line that makes no sense to a child."
+ },
+ "VAR2_EXT_G5_WS_B2_026_02": {
+  "steps": [
+   {
+    "text": "Change litres to millilitres: 20 litres is 20 × 1000 = 20000 ml.",
+    "latex": ""
+   },
+   {
+    "text": "See how many 300 ml glasses fit: 300 × 66 = 19800. One more glass would need 300 × 67 = 20100 ml, which is more than the drum holds.",
+    "latex": ""
+   },
+   {
+    "text": "After 66 glasses, 20000 − 19800 = 200 ml is left, which is not enough for another glass. So 66 glasses can be filled.",
+    "latex": "\\boxed{66}"
+   }
+  ],
+  "why": "Key (66 full glasses) is right, but the step stated '20000 ÷ 300 = 66' as if the division were exact. It leaves 200 ml over."
+ },
+ "VAR2_EXT_G5_WS_B3_006_02": {
+  "steps": [
+   {
+    "text": "Change litres to millilitres: 8 litres is 8 × 1000 = 8000 ml.",
+    "latex": ""
+   },
+   {
+    "text": "See how many 300 ml glasses fit: 300 × 26 = 7800. One more glass would need 300 × 27 = 8100 ml, which is more than the bottle holds.",
+    "latex": ""
+   },
+   {
+    "text": "After 26 glasses, 8000 − 7800 = 200 ml is left, which is not enough for another glass. So 26 glasses can be filled.",
+    "latex": "\\boxed{26}"
+   }
+  ],
+  "why": "Key (26 full glasses) is right, but the step stated '8000 ÷ 300 = 26' as if the division were exact. It leaves 200 ml over."
+ },
+ "VAR2_EXT_G5_WS_B3_037_02": {
+  "steps": [
+   {
+    "text": "Change litres to millilitres: 8 litres is 8 × 1000 = 8000 ml.",
+    "latex": ""
+   },
+   {
+    "text": "See how many 300 ml glasses fit: 300 × 26 = 7800. One more glass would need 300 × 27 = 8100 ml, which is more than the tank holds.",
+    "latex": ""
+   },
+   {
+    "text": "After 26 glasses, 8000 − 7800 = 200 ml is left, which is not enough for another glass. So 26 glasses can be filled.",
+    "latex": "\\boxed{26}"
+   }
+  ],
+  "why": "Key (26 full glasses) is right, but the step stated '8000 ÷ 300 = 26' as if the division were exact. It leaves 200 ml over."
+ },
+ "VAR2_EXT_G5_WS_B6_003_02": {
+  "steps": [
+   {
+    "text": "Change litres to millilitres: 10 litres is 10 × 1000 = 10000 ml.",
+    "latex": ""
+   },
+   {
+    "text": "See how many 300 ml glasses fit: 300 × 33 = 9900. One more glass would need 300 × 34 = 10200 ml, which is more than the tank holds.",
+    "latex": ""
+   },
+   {
+    "text": "After 33 glasses, 10000 − 9900 = 100 ml is left, which is not enough for another glass. So 33 glasses can be filled.",
+    "latex": "\\boxed{33}"
+   }
+  ],
+  "why": "Key (33 full glasses) is right, but the step stated '10000 ÷ 300 = 33' as if the division were exact. It leaves 100 ml over."
+ },
+ "VAR2_EXT_G5_WS_B6_012_02": {
+  "steps": [
+   {
+    "text": "Change litres to millilitres: 10 litres is 10 × 1000 = 10000 ml.",
+    "latex": ""
+   },
+   {
+    "text": "See how many 300 ml glasses fit: 300 × 33 = 9900. One more glass would need 300 × 34 = 10200 ml, which is more than the drum holds.",
+    "latex": ""
+   },
+   {
+    "text": "After 33 glasses, 10000 − 9900 = 100 ml is left, which is not enough for another glass. So 33 glasses can be filled.",
+    "latex": "\\boxed{33}"
+   }
+  ],
+  "why": "Key (33 full glasses) is right, but the step stated '10000 ÷ 300 = 33' as if the division were exact. It leaves 100 ml over."
+ },
+ "EXT_G5_FP_2022_009": {
+  "hints": [
+   "An odd number times itself is odd, and an even number times itself is even. So count only the odd numbers whose squares have three digits.",
+   "Three-digit squares start at 10 × 10 = 100 and stop at 31 × 31 = 961, because 32 × 32 = 1024 has four digits. Now count the odd numbers from 10 to 31.",
+   "A similar one: odd two-digit squares. Two-digit squares come from the numbers 4 to 9, and the odd numbers there are 5, 7 and 9. So there are 3 of them: 25, 49 and 81."
+  ],
+  "steps": [
+   {
+    "text": "A square number is odd only when the number being squared is odd.",
+    "latex": ""
+   },
+   {
+    "text": "Three-digit squares run from 10 × 10 = 100 to 31 × 31 = 961, since 32 × 32 = 1024 is too big.",
+    "latex": ""
+   },
+   {
+    "text": "The odd numbers from 10 to 31 are 11, 13, 15, 17, 19, 21, 23, 25, 27, 29 and 31. That is 11 numbers, so there are 11 odd three-digit squares.",
+    "latex": ""
+   },
+   {
+    "text": "11 is not one of the numbers offered (10, 12 or 13). So the answer is 'None of these'.",
+    "latex": ""
+   }
+  ],
+  "why": "Key ('None of these') is right: the count is 11, which is not offered. The third hint was empty, the second repeated the first, and the last step referred to choices by letter."
+ },
+ "EXT_G5_FP_2021_031": {
+  "hints": [
+   "The reciprocal of a number is 1 divided by it. So '60 times the reciprocal' of a number is the same as 60 ÷ that number.",
+   "Test each choice: add 17 to it, then work out 60 ÷ the number. You want the choice where the two results are the same.",
+   "A similar one: which number, when increased by 4, equals 12 times its reciprocal? Try 2: 2 + 4 = 6 and 12 ÷ 2 = 6. They match, so it is 2."
+  ],
+  "steps": [
+   {
+    "text": "60 times the reciprocal of a number means 60 ÷ the number. So we need the number plus 17 to equal 60 ÷ the number.",
+    "latex": ""
+   },
+   {
+    "text": "Try 5: 5 + 17 = 22, but 60 ÷ 5 = 12. Not a match.",
+    "latex": ""
+   },
+   {
+    "text": "Try 3: 3 + 17 = 20, and 60 ÷ 3 = 20. They match.",
+    "latex": ""
+   },
+   {
+    "text": "The other two are not a match either: 17 + 17 = 34 and 12 + 17 = 29 are both much bigger than 60 ÷ 12 = 5, and 60 ÷ 17 is smaller still.",
+    "latex": ""
+   },
+   {
+    "text": "So the number is 3.",
+    "latex": ""
+   }
+  ],
+  "why": "Key (3) is right. A step called the value 3 'Option C' although 3 is choice B, the third hint was empty, and the steps used tick and cross marks instead of words."
+ },
+ "EXT_G5_FP_2020_019": {
+  "questionText": "If 5/8 of the teachers of a coaching class play chess, 3/8 of the teachers play carrom and 1/4 play both chess and carrom, what fraction of the teachers play neither of the two games?",
+  "hints": [
+   "Some teachers play both games, so they are counted in the chess group and again in the carrom group. Make sure you count them only once.",
+   "Add the chess and carrom fractions, 5/8 + 3/8, then take away the 1/4 who were counted twice. That gives the fraction who play at least one game.",
+   "A similar one: 1/2 of a class like apples, 1/3 like mangoes and 1/6 like both. At least one fruit: 1/2 + 1/3 − 1/6 = 2/3. Neither fruit: 1 − 2/3 = 1/3."
+  ],
+  "why": "Grammar only: 'teachers ... plays chess' becomes 'play chess', '3/8 teachers' becomes '3/8 of the teachers', and the 'If ...' clause is joined to its question. The numbers, choices and key (1/4) are unchanged. The third hint was empty and the second used set-theory words ('Union').",
+  "proof": "Wording change only; the mathematics is untouched. Check of the key: play at least one game = 5/8 + 3/8 − 1/4 = 8/8 − 2/8 = 6/8 = 3/4. Play neither = 1 − 3/4 = 1/4 = choice A."
+ },
+ "EXT_G5_FP_2019_025": {
+  "questionText": "A student scored 72% on a test of 25 questions. How many of his answers were not correct?",
+  "hints": [
+   "First find how many answers he got right: that is 72% of 25. The rest are the ones he did not get right.",
+   "72% of 25 means 72 × 25 ÷ 100. Work that out, then take it away from 25.",
+   "A similar one: 80% on a test of 20 questions. Right answers: 80 × 20 ÷ 100 = 16. Not right: 20 − 16 = 4."
+  ],
+  "steps": [
+   {
+    "text": "He got 72% of the 25 answers right: 72 × 25 ÷ 100 = 18.",
+    "latex": ""
+   },
+   {
+    "text": "The rest were not correct: 25 − 18 = 7. So 7 of his answers were not correct.",
+    "latex": ""
+   }
+  ],
+  "why": "The question, a hint and a step used the word 'wrong', which the app's tone rule bans in anything a child reads. 'were wrong' becomes 'were not correct'; the numbers, choices and key (7) are unchanged. The third hint was empty.",
+  "proof": "Wording change only ('wrong' to 'not correct'); the mathematics is untouched. Check of the key: right answers = 72% of 25 = 72 × 25 ÷ 100 = 1800 ÷ 100 = 18. Not correct = 25 − 18 = 7 = choice D."
+ },
+ "EXT_G5_FP_2018_017": {
+  "hints": [
+   "For each pair, square both numbers and add the two squares. Then ask: is the total itself a square number?",
+   "Start with 9 and 16: 9 × 9 = 81 and 16 × 16 = 256, total 337. Is 337 a square? 18 × 18 = 324 and 19 × 19 = 361, so no. Test the other pairs the same way.",
+   "A similar one: 6 and 8. 6 × 6 = 36 and 8 × 8 = 64, and 36 + 64 = 100, which is 10 × 10. So 6 and 8 work."
+  ],
+  "steps": [
+   {
+    "text": "10 and 15: 100 + 225 = 325. Not a square, because 18 × 18 = 324 and 19 × 19 = 361.",
+    "latex": ""
+   },
+   {
+    "text": "8 and 15: 64 + 225 = 289, and 17 × 17 = 289. This is a square number.",
+    "latex": ""
+   },
+   {
+    "text": "12 and 15: 144 + 225 = 369, which lies between 19 × 19 = 361 and 20 × 20 = 400. 9 and 16: 81 + 256 = 337, which lies between 18 × 18 = 324 and 19 × 19 = 361. Neither is a square.",
+    "latex": ""
+   },
+   {
+    "text": "So the two numbers are 8 and 15.",
+    "latex": ""
+   }
+  ],
+  "why": "Key (8 and 15) is right. The first hint named the answer ('the famous triple 8, 15, 17'), the second listed (9, 12, 15) next to the choice '12 and 15', which does not work and would mislead, and the third was empty."
+ },
+ "EXT_G5_FP_2017_034": {
+  "hints": [
+   "You want the biggest square number that is not more than 370. The less you subtract, the closer you stay to 370.",
+   "Try squares near 370: 19 × 19 = 361 and 20 × 20 = 400. Which of these is just below 370? Subtract that square from 370.",
+   "A similar one: for 150, the square just below is 12 × 12 = 144. So the least number to subtract is 150 − 144 = 6."
+  ],
+  "why": "Key (9) is right and the steps are fine. The second hint was worded backwards ('Subtract the number from the nearest perfect square below it') and the third was empty."
+ },
+ "VAR2_EXT_G5_WS_B7_003_02": {
+  "questionText": "Add, and give the answer in its simplest form: 10/12 + 10/12",
+  "why": "Found by the scan. Choices A (20/12) and B (5/3) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 20/12 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "10/12 + 10/12 = 20/12. Divide top and bottom by 4: 20/12 = 5/3, which is in simplest form = choice B. Choice A (20/12) has the same value but is not in simplest form, so with the new wording only B is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 12. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 10 and 10, and keep the bottom number 12. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (10 + 10)/12 = 20/12.",
+    "latex": ""
+   },
+   {
+    "text": "Simplify by dividing the top and the bottom by 4: 20/12 = 5/3.",
+    "latex": "\\boxed{5/3}"
+   }
+  ]
+ },
+ "VAR2_EXT_G5_WS_B7_005_02": {
+  "questionText": "Add, and give the answer in its simplest form: 1/10 + 5/10",
+  "why": "Found by the scan. Choices D (6/10) and A (3/5) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 6/10 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "1/10 + 5/10 = 6/10. Divide top and bottom by 2: 6/10 = 3/5, which is in simplest form = choice A. Choice D (6/10) has the same value but is not in simplest form, so with the new wording only A is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 10. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 1 and 5, and keep the bottom number 10. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (1 + 5)/10 = 6/10.",
+    "latex": ""
+   },
+   {
+    "text": "Simplify by dividing the top and the bottom by 2: 6/10 = 3/5.",
+    "latex": "\\boxed{3/5}"
+   }
+  ]
+ },
+ "VAR2_EXT_G5_WS_B7_012_02": {
+  "questionText": "Add, and give the answer in its simplest form: 3/10 + 7/10",
+  "why": "Found by the scan. Choices B (10/10) and C (1) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 10/10 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "3/10 + 7/10 = 10/10 = 1, which is the simplest form = choice C. Choice B (10/10) has the same value but is not in simplest form, so with the new wording only C is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 10. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 3 and 7, and keep the bottom number 10. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (3 + 7)/10 = 10/10.",
+    "latex": ""
+   },
+   {
+    "text": "10 ÷ 10 = 1, so 10/10 is the whole number 1.",
+    "latex": "\\boxed{1}"
+   }
+  ]
+ },
+ "VAR2_EXT_G5_WS_B7_014_02": {
+  "questionText": "Add, and give the answer in its simplest form: 2/5 + 3/5",
+  "why": "Found by the scan. Choices C (5/5) and D (1) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 5/5 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "2/5 + 3/5 = 5/5 = 1, which is the simplest form = choice D. Choice C (5/5) has the same value but is not in simplest form, so with the new wording only D is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 5. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 2 and 3, and keep the bottom number 5. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (2 + 3)/5 = 5/5.",
+    "latex": ""
+   },
+   {
+    "text": "5 ÷ 5 = 1, so 5/5 is the whole number 1.",
+    "latex": "\\boxed{1}"
+   }
+  ]
+ },
+ "VAR2_EXT_G5_WS_B7_015_02": {
+  "questionText": "Add, and give the answer in its simplest form: 2/10 + 8/10",
+  "why": "Found by the scan. Choices C (10/10) and B (1) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 10/10 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "2/10 + 8/10 = 10/10 = 1, which is the simplest form = choice B. Choice C (10/10) has the same value but is not in simplest form, so with the new wording only B is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 10. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 2 and 8, and keep the bottom number 10. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (2 + 8)/10 = 10/10.",
+    "latex": ""
+   },
+   {
+    "text": "10 ÷ 10 = 1, so 10/10 is the whole number 1.",
+    "latex": "\\boxed{1}"
+   }
+  ]
+ },
+ "VAR2_EXT_G5_WS_B7_016_02": {
+  "questionText": "Add, and give the answer in its simplest form: 1/9 + 2/9",
+  "why": "Found by the scan. Choices A (3/9) and C (1/3) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 3/9 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "1/9 + 2/9 = 3/9. Divide top and bottom by 3: 3/9 = 1/3, which is in simplest form = choice C. Choice A (3/9) has the same value but is not in simplest form, so with the new wording only C is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 9. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 1 and 2, and keep the bottom number 9. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (1 + 2)/9 = 3/9.",
+    "latex": ""
+   },
+   {
+    "text": "Simplify by dividing the top and the bottom by 3: 3/9 = 1/3.",
+    "latex": "\\boxed{1/3}"
+   }
+  ]
+ },
+ "VAR2_EXT_G5_WS_B7_020_02": {
+  "questionText": "Add, and give the answer in its simplest form: 1/6 + 5/6",
+  "why": "Found by the scan. Choices D (6/6) and C (1) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 6/6 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "1/6 + 5/6 = 6/6 = 1, which is the simplest form = choice C. Choice D (6/6) has the same value but is not in simplest form, so with the new wording only C is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 6. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 1 and 5, and keep the bottom number 6. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/8 + 5/8 = 6/8. Both 6 and 8 can be divided by 2, so 6/8 simplifies to 3/4."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (1 + 5)/6 = 6/6.",
+    "latex": ""
+   },
+   {
+    "text": "6 ÷ 6 = 1, so 6/6 is the whole number 1.",
+    "latex": "\\boxed{1}"
+   }
+  ]
+ },
+ "VAR2_EXT_G5_WS_B7_021_02": {
+  "questionText": "Add, and give the answer in its simplest form: 3/4 + 3/4",
+  "why": "Found by the scan. Choices A (6/4) and B (3/2) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 6/4 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "3/4 + 3/4 = 6/4. Divide top and bottom by 2: 6/4 = 3/2, which is in simplest form = choice B. Choice A (6/4) has the same value but is not in simplest form, so with the new wording only B is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 4. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 3 and 3, and keep the bottom number 4. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (3 + 3)/4 = 6/4.",
+    "latex": ""
+   },
+   {
+    "text": "Simplify by dividing the top and the bottom by 2: 6/4 = 3/2.",
+    "latex": "\\boxed{3/2}"
+   }
+  ]
+ },
+ "VAR2_EXT_G5_WS_B7_025_02": {
+  "questionText": "Add, and give the answer in its simplest form: 1/6 + 3/6",
+  "why": "Found by the scan. Choices C (4/6) and B (2/3) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 4/6 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "1/6 + 3/6 = 4/6. Divide top and bottom by 2: 4/6 = 2/3, which is in simplest form = choice B. Choice C (4/6) has the same value but is not in simplest form, so with the new wording only B is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 6. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 1 and 3, and keep the bottom number 6. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/8 + 5/8 = 6/8. Both 6 and 8 can be divided by 2, so 6/8 simplifies to 3/4."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (1 + 3)/6 = 4/6.",
+    "latex": ""
+   },
+   {
+    "text": "Simplify by dividing the top and the bottom by 2: 4/6 = 2/3.",
+    "latex": "\\boxed{2/3}"
+   }
+  ]
+ },
+ "VAR2_EXT_G5_WS_B7_028_02": {
+  "questionText": "Add, and give the answer in its simplest form: 7/8 + 5/8",
+  "why": "Found by the scan. Choices B (12/8) and D (3/2) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 12/8 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "7/8 + 5/8 = 12/8. Divide top and bottom by 4: 12/8 = 3/2, which is in simplest form = choice D. Choice B (12/8) has the same value but is not in simplest form, so with the new wording only D is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 8. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 7 and 5, and keep the bottom number 8. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (7 + 5)/8 = 12/8.",
+    "latex": ""
+   },
+   {
+    "text": "Simplify by dividing the top and the bottom by 4: 12/8 = 3/2.",
+    "latex": "\\boxed{3/2}"
+   }
+  ]
+ },
+ "VAR2_EXT_G5_WS_B7_033_02": {
+  "questionText": "Add, and give the answer in its simplest form: 2/12 + 10/12",
+  "why": "Found by the scan. Choices B (12/12) and A (1) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 12/12 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "2/12 + 10/12 = 12/12 = 1, which is the simplest form = choice A. Choice B (12/12) has the same value but is not in simplest form, so with the new wording only A is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 12. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 2 and 10, and keep the bottom number 12. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (2 + 10)/12 = 12/12.",
+    "latex": ""
+   },
+   {
+    "text": "12 ÷ 12 = 1, so 12/12 is the whole number 1.",
+    "latex": "\\boxed{1}"
+   }
+  ]
+ },
+ "BOOST_EXT_G5_WS_B7_002_05": {
+  "questionText": "Add, and give the answer in its simplest form: 2/10 + 6/10",
+  "why": "Found by the scan. Choices C (8/10) and D (4/5) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 8/10 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "2/10 + 6/10 = 8/10. Divide top and bottom by 2: 8/10 = 4/5, which is in simplest form = choice D. Choice C (8/10) has the same value but is not in simplest form, so with the new wording only D is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 10. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 2 and 6, and keep the bottom number 10. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (2 + 6)/10 = 8/10.",
+    "latex": ""
+   },
+   {
+    "text": "Simplify by dividing the top and the bottom by 2: 8/10 = 4/5.",
+    "latex": "\\boxed{4/5}"
+   }
+  ]
+ },
+ "BOOST_EXT_G5_WS_B7_005_07": {
+  "questionText": "Add, and give the answer in its simplest form: 7/9 + 2/9",
+  "why": "Found by the scan. Choices D (9/9) and C (1) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 9/9 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "7/9 + 2/9 = 9/9 = 1, which is the simplest form = choice C. Choice D (9/9) has the same value but is not in simplest form, so with the new wording only C is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 9. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 7 and 2, and keep the bottom number 9. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (7 + 2)/9 = 9/9.",
+    "latex": ""
+   },
+   {
+    "text": "9 ÷ 9 = 1, so 9/9 is the whole number 1.",
+    "latex": "\\boxed{1}"
+   }
+  ]
+ },
+ "BOOST_EXT_G5_WS_B7_010_05": {
+  "questionText": "Add, and give the answer in its simplest form: 4/10 + 4/10",
+  "why": "Found by the scan. Choices D (8/10) and C (4/5) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 8/10 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "4/10 + 4/10 = 8/10. Divide top and bottom by 2: 8/10 = 4/5, which is in simplest form = choice C. Choice D (8/10) has the same value but is not in simplest form, so with the new wording only C is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 10. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 4 and 4, and keep the bottom number 10. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (4 + 4)/10 = 8/10.",
+    "latex": ""
+   },
+   {
+    "text": "Simplify by dividing the top and the bottom by 2: 8/10 = 4/5.",
+    "latex": "\\boxed{4/5}"
+   }
+  ]
+ },
+ "BOOST_EXT_G5_WS_B7_012_06": {
+  "questionText": "Add, and give the answer in its simplest form: 1/4 + 3/4",
+  "why": "Found by the scan. Choices A (4/4) and D (1) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 4/4 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "1/4 + 3/4 = 4/4 = 1, which is the simplest form = choice D. Choice A (4/4) has the same value but is not in simplest form, so with the new wording only D is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 4. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 1 and 3, and keep the bottom number 4. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (1 + 3)/4 = 4/4.",
+    "latex": ""
+   },
+   {
+    "text": "4 ÷ 4 = 1, so 4/4 is the whole number 1.",
+    "latex": "\\boxed{1}"
+   }
+  ]
+ },
+ "BOOST_EXT_G5_WS_B7_013_07": {
+  "questionText": "Add, and give the answer in its simplest form: 4/9 + 8/9",
+  "why": "Found by the scan. Choices B (12/9) and D (4/3) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 12/9 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "4/9 + 8/9 = 12/9. Divide top and bottom by 3: 12/9 = 4/3, which is in simplest form = choice D. Choice B (12/9) has the same value but is not in simplest form, so with the new wording only D is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 9. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 4 and 8, and keep the bottom number 9. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (4 + 8)/9 = 12/9.",
+    "latex": ""
+   },
+   {
+    "text": "Simplify by dividing the top and the bottom by 3: 12/9 = 4/3.",
+    "latex": "\\boxed{4/3}"
+   }
+  ]
+ },
+ "BOOST_EXT_G5_WS_B7_014_05": {
+  "questionText": "Add, and give the answer in its simplest form: 11/12 + 11/12",
+  "why": "Found by the scan. Choices A (22/12) and C (11/6) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 22/12 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "11/12 + 11/12 = 22/12. Divide top and bottom by 2: 22/12 = 11/6, which is in simplest form = choice C. Choice A (22/12) has the same value but is not in simplest form, so with the new wording only C is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 12. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 11 and 11, and keep the bottom number 12. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (11 + 11)/12 = 22/12.",
+    "latex": ""
+   },
+   {
+    "text": "Simplify by dividing the top and the bottom by 2: 22/12 = 11/6.",
+    "latex": "\\boxed{11/6}"
+   }
+  ]
+ },
+ "BOOST_EXT_G5_WS_B7_016_06": {
+  "questionText": "Add, and give the answer in its simplest form: 8/12 + 8/12",
+  "why": "Found by the scan. Choices C (16/12) and B (4/3) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 16/12 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "8/12 + 8/12 = 16/12. Divide top and bottom by 4: 16/12 = 4/3, which is in simplest form = choice B. Choice C (16/12) has the same value but is not in simplest form, so with the new wording only B is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 12. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 8 and 8, and keep the bottom number 12. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (8 + 8)/12 = 16/12.",
+    "latex": ""
+   },
+   {
+    "text": "Simplify by dividing the top and the bottom by 4: 16/12 = 4/3.",
+    "latex": "\\boxed{4/3}"
+   }
+  ]
+ },
+ "BOOST_EXT_G5_WS_B7_023_06": {
+  "questionText": "Add, and give the answer in its simplest form: 6/8 + 2/8",
+  "why": "Found by the scan. Choices B (8/8) and C (1) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 8/8 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "6/8 + 2/8 = 8/8 = 1, which is the simplest form = choice C. Choice B (8/8) has the same value but is not in simplest form, so with the new wording only C is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 8. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 6 and 2, and keep the bottom number 8. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (6 + 2)/8 = 8/8.",
+    "latex": ""
+   },
+   {
+    "text": "8 ÷ 8 = 1, so 8/8 is the whole number 1.",
+    "latex": "\\boxed{1}"
+   }
+  ]
+ },
+ "BOOST_EXT_G5_WS_B7_028_07": {
+  "questionText": "Add, and give the answer in its simplest form: 10/12 + 4/12",
+  "why": "Found by the scan. Choices B (14/12) and C (7/6) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 14/12 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "10/12 + 4/12 = 14/12. Divide top and bottom by 2: 14/12 = 7/6, which is in simplest form = choice C. Choice B (14/12) has the same value but is not in simplest form, so with the new wording only C is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 12. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 10 and 4, and keep the bottom number 12. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (10 + 4)/12 = 14/12.",
+    "latex": ""
+   },
+   {
+    "text": "Simplify by dividing the top and the bottom by 2: 14/12 = 7/6.",
+    "latex": "\\boxed{7/6}"
+   }
+  ]
+ },
+ "BOOST_EXT_G5_WS_B7_029_06": {
+  "questionText": "Add, and give the answer in its simplest form: 9/10 + 5/10",
+  "why": "Found by the scan. Choices B (14/10) and D (7/5) have the same value, and 'Simplify:' did not say the answer must be in simplest form, so a child choosing 14/10 had a correct sum marked as not right. The question now asks for the simplest form. Choices and key unchanged. Hints and steps carried over unchanged from variants-papers.json (Hint 2 worked out the sum (the answer, or one step short of it); the last step was a no-op such as 'Simplify: 8/9 = 8/9' where nothing simplifies).",
+  "proof": "9/10 + 5/10 = 14/10. Divide top and bottom by 2: 14/10 = 7/5, which is in simplest form = choice D. Choice B (14/10) has the same value but is not in simplest form, so with the new wording only D is right.",
+  "hints": [
+   "Both fractions have the same bottom number, 10. So the size of the pieces stays the same and you only add the top numbers.",
+   "Add the top numbers 9 and 5, and keep the bottom number 10. Then see whether the result can be simplified.",
+   "Try a smaller one: 1/6 + 3/6 = 4/6. Both 4 and 6 can be divided by 2, so 4/6 simplifies to 2/3."
+  ],
+  "steps": [
+   {
+    "text": "The denominators are the same, so add the numerators: (9 + 5)/10 = 14/10.",
+    "latex": ""
+   },
+   {
+    "text": "Simplify by dividing the top and the bottom by 2: 14/10 = 7/5.",
+    "latex": "\\boxed{7/5}"
+   }
+  ]
+ },
+ "VAR_G5_vary_percentage_V43": {
+  "questionText": "Out of 248 students, 25% are girls. How many girls are there?",
+  "hints": [
+   "Per cent means 'out of every 100'. So 25% girls means 25 girls in every 100 students.",
+   "25% is the same as one quarter. So share the 248 students into 4 equal groups. How many are in one group?",
+   "Try another one: 25% of 80. A quarter of 80 is 80 ÷ 4 = 20, so 25% of 80 is 20."
+  ],
+  "why": "The question asked for a per cent of 250 students that is not a whole number of children, and the key was rounded down. The number of students is changed so that the keyed choice is exactly right. The three hints were also the generic lines given to every generated question.",
+  "proof": "25% of 248 = 25 × 248 ÷ 100 = 62, a whole number of children and the value of the keyed choice. With the old total, 25% of 250 = 62.5."
+ },
+ "VAR_G5_vary_percentage_V287": {
+  "questionText": "Out of 240 students, 5% are girls. How many girls are there?",
+  "hints": [
+   "Per cent means 'out of every 100'. So 5% girls means 5 girls in every 100 students.",
+   "Find 10% first: that is one tenth, so divide 240 by 10. Then 5% is half of that.",
+   "Try another one: 5% of 60. 10% of 60 is 60 ÷ 10 = 6, and half of 6 is 3, so 5% of 60 is 3."
+  ],
+  "why": "The question asked for a per cent of 250 students that is not a whole number of children, and the key was rounded down. The number of students is changed so that the keyed choice is exactly right. The three hints were also the generic lines given to every generated question.",
+  "proof": "5% of 240 = 5 × 240 ÷ 100 = 12, a whole number of children and the value of the keyed choice. With the old total, 5% of 250 = 12.5."
+ }
+}

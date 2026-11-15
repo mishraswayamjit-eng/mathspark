@@ -1,0 +1,713 @@
+{
+  "EXT_G5_WS_01_002": {
+    "hints": [
+      "Face value is the digit itself. Place value is the digit times the worth of its place (1, 10, 100, ...). When could these two be equal in every place?",
+      "Test each choice in the tens place. 9 in the tens place is worth 9 × 10 = 90, which is not 9. Now test the other digits the same way.",
+      "Here is how to test a digit: 4 in the hundreds place has face value 4 but place value 4 × 100 = 400. They differ, so 4 does not work. Look for a digit that stays the same when multiplied by 10 or 100."
+    ],
+    "why": "Hint 3 worked the question's own answer instead of giving a different example."
+  },
+  "EXT_G5_WS_01_003": {
+    "hints": [
+      "Place value is the digit times 1, 10, 100 or 1000, depending on its place. Think about which of these products can ever be odd.",
+      "Multiply any digit by 10: the result ends in 0, so it is even. Check what happens with 1000 and with 1 in the same way.",
+      "Example: 5 in the hundreds place is worth 5 × 100 = 500, which is even, even though 5 is odd. So the hundreds place can never give an odd place value. Test the places in the choices like this."
+    ],
+    "why": "Hint 3 stated the answer outright (only the units place)."
+  },
+  "EXT_G5_WS_01_005": {
+    "hints": [
+      "Find the place value of 6 and the place value of 2 in 76025. 'How many times' means you divide the bigger place value by the smaller one.",
+      "6 is in the thousands place, so it is worth 6000. 2 is in the tens place, so it is worth 20. Now divide 6000 by 20.",
+      "Example: in 8040, the 8 is worth 8000 and the 4 is worth 40. 8000 ÷ 40 = 200, so the place value of 8 is 200 times that of 4."
+    ],
+    "why": "Hint 3's example (5000 ÷ 30) does not divide exactly and was left unfinished."
+  },
+  "EXT_G5_WS_01_006": {
+    "hints": [
+      "Each step to the left makes a digit worth 10 times more. So for one 8 to be worth 1000 times the other, how many places apart must the two 8s be?",
+      "1000 = 10 × 10 × 10, so the two 8s must be three places apart, like units and thousands, or tens and ten-thousands. In each number, find the places of the two 8s.",
+      "Example: in 5052, one 5 is worth 5000 and the other is worth 50. 5000 ÷ 50 = 100, so one is only 100 times the other. Two places apart gives 100 times; you need three places apart."
+    ],
+    "why": "Hint 3 worked through the question's own choices instead of giving a different example."
+  },
+  "EXT_G5_WS_01_007": {
+    "hints": [
+      "Each step to the left makes a digit worth 10 times more. For one 3 to be worth 100 times the other, how many places apart must the two 3s be?",
+      "100 = 10 × 10, so the two 3s must be two places apart, like tens and thousands. In each number, write down the places of the two 3s.",
+      "Example: in 7479, one 7 is worth 7000 and the other is worth 70. 7000 ÷ 70 = 100, so one 7 is 100 times the other. Look for the number where the 3s sit like this."
+    ],
+    "steps": [
+      {"text": "For one 3 to be worth 100 times the other, the two 3s must be two places apart, because 10 × 10 = 100.", "latex": ""},
+      {"text": "In 134639 the 3s are worth 30000 and 30. 30000 ÷ 30 = 1000, so this is not a match. In 752339 they are worth 300 and 30. 300 ÷ 30 = 10, not a match.", "latex": ""},
+      {"text": "In 307638 the 3s are worth 300000 and 30. 300000 ÷ 30 = 10000, not a match.", "latex": ""},
+      {"text": "In 863135 the 3s are worth 3000 and 30. 3000 ÷ 30 = 100. So the number is 863135.", "latex": "\\frac{3000}{30} = 100 \\Rightarrow \\boxed{863135}"}
+    ],
+    "why": "Hint 3 was generic; the last step was filler ('This is the answer!') and the fourth choice was never checked."
+  },
+  "EXT_G5_WS_01_008": {
+    "hints": [
+      "The two stars sit in the thousands place and the hundreds place. The same digit is worth 10 times more in the thousands place than in the hundreds place.",
+      "If the digit is 1, the place values are 1000 and 100, a difference of 900. Each bigger digit adds another 900. How many 900s make 5400?",
+      "Example: in 4**61 with a difference of 1800, think 1800 ÷ 900 = 2, so the digit is 2. Check: 2000 − 200 = 1800."
+    ],
+    "why": "Hint 3 used the question's own numbers and stated the answer."
+  },
+  "EXT_G5_WS_01_009": {
+    "hints": [
+      "The two stars sit in the thousands place and the tens place. Think about how much the same digit is worth in each of those places.",
+      "If the digit is 1, the place values are 1000 and 10, a difference of 990. Each bigger digit adds another 990. How many 990s make 6930?",
+      "Example: in 5*4*1 with a difference of 1980, think 1980 ÷ 990 = 2, so the digit is 2. Check: 2000 − 20 = 1980."
+    ],
+    "why": "All three hints were generic boilerplate."
+  },
+  "EXT_G5_WS_01_012": {
+    "hints": [
+      "An odd number ends in an odd digit. Which of the digits 5, 8, 0, 7 and 4 are odd? One of them must go in the units place.",
+      "To make the number as big as possible, put the biggest digits on the left. Try both ways: end with 5 and arrange 8, 7, 4, 0 from biggest to smallest; then end with 7 and arrange 8, 5, 4, 0. Which number is greater?",
+      "Example with 1, 6, 3: the greatest odd number ends in 1 or 3. Ending in 1 gives 631; ending in 3 gives 613. 631 is greater, and its middle digit is 3."
+    ],
+    "why": "Hint 3 was thinking aloud and stated the answer."
+  },
+  "EXT_G5_WS_01_013": {
+    "hints": [
+      "An even number ends in an even digit. Which of the digits 2, 7, 3, 9 and 6 are even? One of them must go in the units place.",
+      "To make the number as small as possible, put the smallest digits on the left. Try both ways: end with 2 and arrange 3, 6, 7, 9 from smallest to biggest; then end with 6 and arrange 2, 3, 7, 9. Which number is smaller, and where is the 7?",
+      "Example with 1, 4, 5: the smallest even number must end in 4, so it is 154. The 5 is in the tens place, so its place value is 5 × 10 = 50."
+    ],
+    "why": "Hint 3 stated the answer; hint 2 already gave both candidate numbers."
+  },
+  "EXT_G5_WS_01_015": {
+    "hints": [
+      "A four-digit number cannot begin with 0. So think about which digits are allowed in the thousands place.",
+      "The thousands place can be 7, 3 or 9: that is 3 choices. After that, count how many ways the other three digits can fill the remaining three places.",
+      "Example with 1, 0, 2: a three-digit number can start with 1 or 2 (2 choices). The other two digits can then be placed in 2 ways. 2 × 2 = 4 numbers: 102, 120, 201, 210."
+    ],
+    "steps": [
+      {"text": "The thousands place cannot be 0, so it can be 7, 3 or 9. That is 3 choices.", "latex": "3 \\text{ choices}"},
+      {"text": "The 3 digits left over fill the other three places: 3 choices for the hundreds, then 2 for the tens, then 1 for the units. 3 × 2 × 1 = 6 ways.", "latex": "3 \\times 2 \\times 1 = 6"},
+      {"text": "Multiply the choices: 3 × 6 = 18. So 18 different four-digit numbers can be formed.", "latex": "3 \\times 6 = \\boxed{18}"}
+    ],
+    "why": "Hint 3 and the steps used factorial notation (2!, 3!) that a Grade 5 child has not met."
+  },
+  "EXT_G5_WS_01_016": {
+    "hints": [
+      "A number less than 5000 must have a thousands digit smaller than 5. And a four-digit number cannot begin with 0.",
+      "From 2, 5, 0 and 8, only 2 can go in the thousands place. Now count the ways to arrange 5, 0 and 8 in the other three places.",
+      "Example: numbers less than 300 using 1, 4, 6 once each must start with 1. Then 4 and 6 can go in 2 ways: 146 and 164. So there are 2 such numbers."
+    ],
+    "steps": [
+      {"text": "A number less than 5000 needs a thousands digit below 5, and it cannot be 0. From 2, 5, 0 and 8, only 2 works.", "latex": "\\text{Thousands digit} = 2"},
+      {"text": "The digits 5, 0 and 8 fill the other three places: 3 choices for the hundreds, then 2 for the tens, then 1 for the units. 3 × 2 × 1 = 6 ways.", "latex": "3 \\times 2 \\times 1 = 6"},
+      {"text": "So 6 four-digit numbers less than 5000 can be formed: 2058, 2085, 2508, 2580, 2805 and 2850.", "latex": "1 \\times 6 = \\boxed{6}"}
+    ],
+    "why": "Hint 3 stated the answer and, like the steps, used factorial notation (3!)."
+  },
+  "EXT_G5_WS_01_017": {
+    "hints": [
+      "Picture the queue from front to back: Anay with the people ahead of him, then the people in between, then Vinay with the people behind him.",
+      "Counting from the front up to Anay gives 10 people. Counting from Vinay to the end gives 8 people. The 5 people in between are not in either group. Add the three groups.",
+      "Example: Ram is 3rd from the front, Shyam is 2nd from the end, and 1 person stands between them. Total = 3 + 1 + 2 = 6 people."
+    ],
+    "why": "Hint 2 stated the answer."
+  },
+  "EXT_G5_WS_01_018": {
+    "steps": [
+      {"text": "105 is odd, so the 1st even number before it is 104.", "latex": "105 - 1 = 104"},
+      {"text": "Each even number before that is 2 less. To go from the 1st to the 23rd you step back 22 times: 22 × 2 = 44.", "latex": "22 \\times 2 = 44"},
+      {"text": "104 − 44 = 60. So the 23rd even number prior to 105 is 60.", "latex": "104 - 44 = \\boxed{60}"}
+    ],
+    "why": "The steps only substituted into a formula and the last step said just 'Calculate' without stating the answer."
+  },
+  "EXT_G5_WS_01_019": {
+    "hints": [
+      "Even and odd numbers take turns on the number line. So an odd number always has an even number right before it and right after it.",
+      "The even number just before Q is Q − 1 and the even number just after is Q + 1. How far apart are these two numbers?",
+      "Try it with a real odd number, say 7. Write down the even number just before 7 and the even number just after 7, then subtract. The gap is the same for every odd number."
+    ],
+    "why": "Hints 2 and 3 both stated the answer."
+  },
+  "EXT_G5_WS_B2_001": {
+    "hints": [
+      "Work one column at a time, starting from the units column on the right. Remember that a column total of 10 or more carries over to the next column.",
+      "Units column: 8 + B + 1 must end in 8. Since 8 + 1 = 9, ask what you add to 9 to get a number ending in 8. Carry over, then do the tens column the same way.",
+      "Example: in 27 + 4B = 70, the units column is 7 + B, which must end in 0. So B = 3, because 7 + 3 = 10. Write 0 and carry 1 to the tens: 2 + 4 + 1 = 7."
+    ],
+    "why": "Hint 3's example was full of blanks and was never worked through, so it showed no method."
+  },
+  "EXT_G5_WS_B2_002": {
+    "hints": [
+      "Work one column at a time from the right. If the top digit is too small to subtract from, you borrow 1 from the next column.",
+      "Tens column: P − 6 gives 8. No single digit minus 6 is 8, so there must be a borrow: (10 + P) − 6 = 8. Find P, then remember the hundreds column has lent 1.",
+      "Example: in 5A − 28 = 26, the units are A − 8 = 6. No digit does that, so borrow: 10 + A − 8 = 6, which gives A = 4. Check: 54 − 28 = 26."
+    ],
+    "why": "Hint 3's example was full of blanks and hard to follow."
+  },
+  "EXT_G5_WS_B2_003": {
+    "hints": [
+      "Natural numbers are the counting numbers and begin at 1. Whole numbers begin at 0. Write out the first ten of each.",
+      "The first 10 natural numbers are 1 to 10. The first 10 whole numbers are 0 to 9. Many numbers are in both lists. Which number is only in the first list, and which is only in the second?",
+      "Example with the first 3: natural numbers 1, 2, 3 add up to 6. Whole numbers 0, 1, 2 add up to 3. The gap is 6 − 3 = 3, because 3 swapped places with 0."
+    ],
+    "why": "Hint 3 was thinking aloud and stated the answer."
+  },
+  "EXT_G5_WS_B2_006": {
+    "hints": [
+      "Pair them up: the 1st even number with the 1st odd number, the 2nd with the 2nd, and so on. How much bigger is each even number than its partner?",
+      "2 is 1 more than 1, 4 is 1 more than 3, 6 is 1 more than 5. Every pair differs by 1. Count how many pairs there are.",
+      "Example with the first 3: 2 + 4 + 6 = 12 and 1 + 3 + 5 = 9. The difference is 12 − 9 = 3, which is 1 for each of the 3 pairs."
+    ],
+    "why": "Hint 2 gave both sums and hint 3 gave the rule that states the answer."
+  },
+  "EXT_G5_WS_B2_007": {
+    "hints": [
+      "You need pairs of odd numbers that add up to 28. Swapping the two numbers, like 1 + 27 and 27 + 1, counts as the same way.",
+      "Start with the smallest odd number and list in order: 1 + 27, 3 + 25, 5 + 23, and so on. Stop when the first number would become bigger than the second.",
+      "Example with 12: the pairs of odd numbers are 1 + 11, 3 + 9 and 5 + 7. The next would be 7 + 5, a repeat. So 12 can be written in 3 ways."
+    ],
+    "steps": [
+      {"text": "List the pairs of odd numbers that add up to 28, starting with the smallest odd number: 1 + 27, 3 + 25, 5 + 23, 7 + 21, 9 + 19, 11 + 17, 13 + 15.", "latex": ""},
+      {"text": "The next pair would be 15 + 13, which repeats 13 + 15, so the list is complete.", "latex": ""},
+      {"text": "Count the pairs. So 28 can be written as a sum of two odd numbers in 7 ways.", "latex": "\\boxed{7}"}
+    ],
+    "why": "Hint 3 was a handshake example from a different question; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B2_008": {
+    "hints": [
+      "The carry is biggest when the numbers are as big as they can be. What is the biggest two-digit number?",
+      "Imagine adding five 99s. Add the units column first: 9 + 9 + 9 + 9 + 9. What do you write down and what do you carry? Then do the tens column, with that carry added.",
+      "Example with 3 two-digit numbers: 99 + 99 + 99. Units: 9 × 3 = 27, write 7 and carry 2. Tens: 27 + 2 = 29, write 9 and carry 2. So the biggest carry for 3 numbers is 2."
+    ],
+    "steps": [
+      {"text": "The carry is greatest when every number is as big as possible, so take five 99s.", "latex": ""},
+      {"text": "Units column: 9 × 5 = 45. Write 5 and carry 4 to the tens column.", "latex": "9 \\times 5 = 45"},
+      {"text": "Tens column: 9 × 5 = 45, plus the carry 4 makes 49. Write 9 and carry 4 to the hundreds column.", "latex": "45 + 4 = 49"},
+      {"text": "Both times the carry is 4, so the maximum carry over is 4.", "latex": "\\boxed{4}"}
+    ],
+    "why": "Hints 2 and 3 stated the answer; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B2_009": {
+    "hints": [
+      "The difference (17638) is bigger than the number you are given (4905). So is 4905 the smaller number or the larger number of the two?",
+      "4905 must be the smaller number, because a difference cannot be bigger than the larger number. So the other number is 17638 more than 4905. Add them.",
+      "Example: the difference of two numbers is 100 and one of them is 30. 30 is too small to be the larger one, so the other number is 30 + 100 = 130."
+    ],
+    "steps": [
+      {"text": "The difference 17638 is bigger than 4905, so 4905 must be the smaller of the two numbers.", "latex": ""},
+      {"text": "The larger number is the smaller number plus the difference: 4905 + 17638 = 22543.", "latex": "4905 + 17638 = 22543"},
+      {"text": "Check: 22543 − 4905 = 17638. So the other number is 22543.", "latex": "\\boxed{22543}"}
+    ],
+    "why": "The hints leaned on negative numbers, which Grade 5 has not met; the steps never said why you add."
+  },
+  "EXT_G5_WS_B2_013": {
+    "hints": [
+      "When numbers are evenly spaced, the average is the middle number. With 7 numbers, the middle one is the 4th.",
+      "So the 4th number is 31, and three more odd numbers come after it. Odd numbers go up in 2s. Count on from 31 three times.",
+      "Example: 5 consecutive odd numbers have an average of 9. The middle (3rd) number is 9, so the numbers are 5, 7, 9, 11, 13 and the largest is 13."
+    ],
+    "why": "Hint 2 listed all seven numbers, which states the answer."
+  },
+  "EXT_G5_WS_B2_014": {
+    "hints": [
+      "When numbers are evenly spaced, the average is the middle number. With 5 numbers, the middle one is the 3rd.",
+      "Find the average: 80 ÷ 5 = 16. So the 3rd number is 16. Even numbers go up in 2s, so what is the next one after it?",
+      "Example: three consecutive even numbers add up to 30. The average is 30 ÷ 3 = 10, so the middle number is 10 and the numbers are 8, 10, 12."
+    ],
+    "steps": [
+      {"text": "For evenly spaced numbers, the average is the middle number. Average = 80 ÷ 5 = 16, so the 3rd number is 16.", "latex": "80 \\div 5 = 16"},
+      {"text": "Even numbers go up in 2s, so the five numbers are 12, 14, 16, 18, 20. Check: 12 + 14 + 16 + 18 + 20 = 80.", "latex": "12, 14, 16, 18, 20"},
+      {"text": "The fourth number in this sequence is 18.", "latex": "\\boxed{18}"}
+    ],
+    "why": "Hint 2 stated the answer and the steps were thinking aloud about option letters."
+  },
+  "EXT_G5_WS_B2_018": {
+    "hints": [
+      "There are two people, so every year that passes adds 2 years to the sum of their ages. Going back in time takes 2 years off for each year.",
+      "From 4 years in the future back to 5 years in the past is 4 + 5 = 9 years. In 9 years the sum of two ages changes by 2 × 9. Take that away from 67.",
+      "Example: in 2 years two ages will add up to 30. What was the sum 3 years ago? That is 2 + 3 = 5 years earlier, so the sum is 2 × 5 = 10 less: 30 − 10 = 20 years."
+    ],
+    "steps": [
+      {"text": "In 4 years each of the two will be 4 years older, so the sum now is 67 − 2 × 4 = 59 years.", "latex": "67 - 8 = 59"},
+      {"text": "5 years ago each of them was 5 years younger, so take away 2 × 5 = 10 years.", "latex": "2 \\times 5 = 10"},
+      {"text": "59 − 10 = 49. So the sum of their ages 5 years ago was 49 years.", "latex": "59 - 10 = \\boxed{49}"}
+    ],
+    "why": "Hint 2 stated the answer; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B2_019": {
+    "hints": [
+      "Work in three small steps: find Aman's age in 2015, then Suman's age in 2015, then count back to the year Suman was born.",
+      "From 2005 to 2015 is 10 years, so Aman was 37 + 10 = 47 in 2015. Take 47 away from 87 to get Suman's age in 2015, then subtract that age from 2015.",
+      "Example: Riya turned 10 in 2000, so she was 15 in 2005. If Riya and Tara's ages added up to 35 in 2005, Tara was 35 − 15 = 20, so Tara was born in 2005 − 20 = 1985."
+    ],
+    "why": "Hint 3's example was garbled and read as an untrue sum ('2005 = 30')."
+  },
+  "EXT_G5_WS_B2_020": {
+    "steps": [
+      {"text": "13 students left, so 1005 − 13 = 992 students remained.", "latex": "1005 - 13 = 992"},
+      {"text": "42 students joined, so the school had 992 + 42 = 1034 students at the end of the year.", "latex": "992 + 42 = 1034"},
+      {"text": "1000 of them passed, so 1034 − 1000 = 34. So 34 students did not pass.", "latex": "1034 - 1000 = \\boxed{34}"}
+    ],
+    "why": "The last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B2_023": {
+    "steps": [
+      {"text": "B won by 35 votes, which means B got 35 more votes than A: 275 + 35 = 310 votes.", "latex": "275 + 35 = 310"},
+      {"text": "Add the votes of A and B to get all the votes cast: 275 + 310 = 585.", "latex": "275 + 310 = 585"},
+      {"text": "So 585 votes were cast in this election.", "latex": "\\boxed{585}"}
+    ],
+    "why": "The last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B2_024": {
+    "steps": [
+      {"text": "Rs. 600 was spent, so it should have been taken away from the balance. By mistake it was added instead.", "latex": ""},
+      {"text": "First undo the mistaken addition: 15000 − 600 = 14400.", "latex": "15000 - 600 = 14400"},
+      {"text": "Then take away the Rs. 600 that was really spent: 14400 − 600 = 13800. So the correct cash balance is Rs. 13800.", "latex": "14400 - 600 = \\boxed{13800}"}
+    ],
+    "why": "The last step was filler naming the option letter, and the first step did not explain why 600 is taken away twice."
+  },
+  "EXT_G5_WS_B2_025": {
+    "hints": [
+      "Rs. 600 was money coming in, so it should have been added to the balance. By mistake it was taken away instead.",
+      "Fix it in two moves. First add Rs. 600 back to 15000 to undo the mistake. Then add Rs. 600 once more, because the income still has to be counted.",
+      "Example: a balance shows Rs. 100 after an income of Rs. 10 was written as spending. Undo the mistake: 100 + 10 = 110. Count the income: 110 + 10 = Rs. 120."
+    ],
+    "steps": [
+      {"text": "Rs. 600 was income, so it should have been added to the balance. By mistake it was taken away instead.", "latex": ""},
+      {"text": "First undo the mistaken subtraction: 15000 + 600 = 15600.", "latex": "15000 + 600 = 15600"},
+      {"text": "Then add the Rs. 600 income that was never counted: 15600 + 600 = 16200. So the correct cash balance is Rs. 16200.", "latex": "15600 + 600 = \\boxed{16200}"}
+    ],
+    "why": "Hint 3's example was for the opposite mistake (copied from the previous question); the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B2_026": {
+    "hints": [
+      "The 6 students who have been to both places are counted in the 18 and also in the 15. If you just add 18 and 15, they get counted twice.",
+      "Find how many have been to at least one place: add 18 and 15, then take away 6 so nobody is counted twice. Then subtract that from the 40 students in the class.",
+      "Example: in a class of 20, 10 play cricket, 8 play football and 3 play both. At least one game: 10 + 8 − 3 = 15. Neither game: 20 − 15 = 5 students."
+    ],
+    "steps": [
+      {"text": "Add the two groups: 18 + 15 = 33. The 6 students who went to both places are counted twice in this total.", "latex": "18 + 15 = 33"},
+      {"text": "Take the 6 away once: 33 − 6 = 27 students have been to at least one of the places.", "latex": "33 - 6 = 27"},
+      {"text": "The rest of the class went to neither: 40 − 27 = 13. So 13 students have not been to Delhi or Kashmir.", "latex": "40 - 27 = \\boxed{13}"}
+    ],
+    "why": "Hint 1 used jargon ('inclusion-exclusion principle'); the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B2_027": {
+    "steps": [
+      {"text": "Every student speaks Hindi, Marathi or both. So the students who do not speak Hindi must speak only Marathi.", "latex": ""},
+      {"text": "21 of the 30 students speak Hindi (this already includes the 5 who speak both). 30 − 21 = 9.", "latex": "30 - 21 = 9"},
+      {"text": "So 9 students speak only Marathi.", "latex": "\\boxed{9}"}
+    ],
+    "why": "The last step was thinking aloud about option letters."
+  },
+  "EXT_G5_WS_B2_028": {
+    "hints": [
+      "On the 1st she saves Rs. 1, on the 2nd Rs. 2, and so on until the last day of the month. How many days did February 2022 have? (2022 was not a leap year.)",
+      "February 2022 had 28 days, so you need 1 + 2 + 3 + ... up to 28. A quick way: pair the first and last numbers. 1 + 28 = 29, 2 + 27 = 29, and so on. How many pairs are there?",
+      "Example: 1 + 2 + 3 + 4 + 5 + 6. Pair them: 1 + 6 = 7, 2 + 5 = 7, 3 + 4 = 7. That is 3 pairs of 7, so the total is 3 × 7 = 21."
+    ],
+    "steps": [
+      {"text": "2022 was not a leap year, so February had 28 days. Siya saved Rs. 1, Rs. 2, Rs. 3 and so on up to Rs. 28.", "latex": ""},
+      {"text": "Pair the first and last amounts: 1 + 28 = 29, 2 + 27 = 29, and so on. The 28 numbers make 14 pairs, each adding up to 29.", "latex": "28 \\div 2 = 14 \\text{ pairs}"},
+      {"text": "14 × 29 = 406. So her total savings were Rs. 406.", "latex": "14 \\times 29 = \\boxed{406}"}
+    ],
+    "why": "All three hints were generic boilerplate; the steps were thinking aloud and ended with filler naming the option letter."
+  },
+  "EXT_G5_WS_B2_029": {
+    "hints": [
+      "Each game needs two players. So count the pairs of players, taking care not to count the same game twice.",
+      "Call the players A, B, C and D. A plays 3 games (against B, C and D). B has already played A, so count only B's new games. Carry on for C.",
+      "Example with 3 players A, B and C: A plays B and C (2 games), then B plays C (1 new game). Total = 2 + 1 = 3 games."
+    ],
+    "steps": [
+      {"text": "Call the players A, B, C and D. Each game is played by one pair of players.", "latex": ""},
+      {"text": "A plays B, C and D: 3 games. B has already played A, so B has 2 new games (against C and D). C has 1 new game (against D). D has no new games.", "latex": ""},
+      {"text": "3 + 2 + 1 = 6. So 6 games were played in all.", "latex": "3 + 2 + 1 = \\boxed{6}"}
+    ],
+    "why": "Hint 2 listed every game and stated the answer; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B2_030": {
+    "hints": [
+      "Each handshake is between two people. Count the pairs of people, taking care not to count the same handshake twice.",
+      "Each of the 13 people shakes hands with the 12 others, which looks like 13 × 12. But that counts every handshake twice, once for each person in it. So what must you do to 13 × 12?",
+      "Example with 4 people: each shakes hands with 3 others, 4 × 3 = 12. Every handshake was counted twice, so there are 12 ÷ 2 = 6 handshakes."
+    ],
+    "steps": [
+      {"text": "Each of the 13 people shakes hands with the 12 others: 13 × 12 = 156.", "latex": "13 \\times 12 = 156"},
+      {"text": "This counts every handshake twice, once for each of the two people in it. So divide by 2.", "latex": ""},
+      {"text": "156 ÷ 2 = 78. So 78 handshakes took place in all.", "latex": "156 \\div 2 = \\boxed{78}"}
+    ],
+    "why": "Hint 1 referred to 'the chess problem', a different question; hint 2 was a bare formula; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B3_002": {
+    "hints": [
+      "Start from the units. The last digit of the product is 1, and it comes from 7 times the units digit of the second number. Which digit times 7 ends in 1?",
+      "7 × 3 = 21, so the second number is 43. The first row is 5✻7 × 3 and it must look like ✻58✻. Try the missing digit until the row fits, then multiply by 43.",
+      "Example: in 3✻ × 3 = 1✻1, the product ends in 1, so the star times 3 must end in 1. Only 7 × 3 = 21 does that. Check: 37 × 3 = 111, which fits the pattern."
+    ],
+    "why": "Hint 3 worked the question itself and stated the answer."
+  },
+  "EXT_G5_WS_B3_004": {
+    "hints": [
+      "Doubling means multiplying by 2. First work out how many times the amoebas double in two hours.",
+      "Two hours is 120 minutes, and 120 ÷ 20 = 6, so they double 6 times. Start at 1 and double it 6 times: 1, 2, 4, ...",
+      "Example: a plant doubles its leaves every 10 minutes, starting with 1 leaf. In 30 minutes it doubles 30 ÷ 10 = 3 times: 1, then 2, then 4, then 8 leaves."
+    ],
+    "steps": [
+      {"text": "Two hours is 120 minutes. The amoebas double every 20 minutes, so they double 120 ÷ 20 = 6 times.", "latex": "120 \\div 20 = 6"},
+      {"text": "Start with 1 and double 6 times: 2, 4, 8, 16, 32, 64.", "latex": "1 \\to 2 \\to 4 \\to 8 \\to 16 \\to 32 \\to 64"},
+      {"text": "So there will be 64 amoebas at the end of two hours.", "latex": "\\boxed{64}"}
+    ],
+    "why": "The hints and steps used power notation (2⁶) and hint 3 was not an example; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B3_006": {
+    "hints": [
+      "Build a chain from small to big: cups fill a bottle, bottles fill a jug, jugs fill a bucket. Turn each one into cups.",
+      "1 bottle = 4 cups, so 1 jug = 3 × 4 = 12 cups. Next find the cups in 1 bucket (7 jugs), and then in 2 buckets.",
+      "Example: 2 spoons fill a cup and 5 cups fill a bowl. Then 1 bowl = 5 × 2 = 10 spoons, and 3 bowls = 3 × 10 = 30 spoons."
+    ],
+    "why": "Hint 3 was generic boilerplate."
+  },
+  "EXT_G5_WS_B3_007": {
+    "hints": [
+      "You do not need to know the two numbers. Think about what happens to a product when one of its numbers is made 2 times as big, and the other 3 times as big.",
+      "Doubling one number doubles the product. Tripling the other number then triples it again. So the new product is 2 × 3 = 6 times the old product of 108.",
+      "Example: 4 × 5 = 20. Double the 4 and triple the 5: 8 × 15 = 120. That is 6 times 20, because 2 × 3 = 6."
+    ],
+    "steps": [
+      {"text": "Doubling one number makes the product 2 times as big. Tripling the other makes it 3 times as big again.", "latex": ""},
+      {"text": "So the new product is 2 × 3 = 6 times the old product.", "latex": "2 \\times 3 = 6"},
+      {"text": "6 × 108 = 648. So the new product is 648.", "latex": "6 \\times 108 = \\boxed{648}"}
+    ],
+    "why": "All three hints were generic boilerplate; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B3_008": {
+    "hints": [
+      "Look at the last digits first. The product of a number ending in 6 and a number ending in 9 must end in the same digit as 6 × 9.",
+      "6 × 9 = 54, so the product ends in 4. That leaves two of the choices. Now think about size: can a three-digit number times a two-digit number have six digits?",
+      "Example: could ✻3 × ✻4 be 345? 3 × 4 = 12, so the product must end in 2. 345 ends in 5, so it is not a match."
+    ],
+    "steps": [
+      {"text": "Last digits: 6 × 9 = 54, so the product must end in 4. This rules out 5417 and 86996.", "latex": "6 \\times 9 = 54"},
+      {"text": "Size: the biggest possible product is 996 × 99 = 98604, which has five digits. So the six-digit number 357604 is too big.", "latex": "996 \\times 99 = 98604"},
+      {"text": "Check the one that is left: 176 × 29 = 5104, and 176 and 29 fit the patterns. So the product could be 5104.", "latex": "176 \\times 29 = \\boxed{5104}"}
+    ],
+    "why": "Hint 2 named the answer among the choices; the steps were thinking aloud and named option letters."
+  },
+  "EXT_G5_WS_B3_009": {
+    "hints": [
+      "Look at the last digits first. The product of a number ending in 7 and a number ending in 4 must end in the same digit as 7 × 4.",
+      "7 × 4 = 28, so the product ends in 8. Three choices still fit. Now think about size: what are the smallest and the biggest products a three-digit number times a two-digit number can give?",
+      "Example: could ✻✻2 × ✻3 be 986? It ends in 6 and 2 × 3 = 6, so the ending fits. But the smallest such product is 102 × 13 = 1326, so 986 is too small."
+    ],
+    "steps": [
+      {"text": "Last digits: 7 × 4 = 28, so the product must end in 8. This rules out 35271.", "latex": "7 \\times 4 = 28"},
+      {"text": "Smallest possible product: 107 × 14 = 1498, so 1398 is too small. Biggest possible: 997 × 94 = 93718, so 104978 is too big.", "latex": ""},
+      {"text": "Check the one that is left: 257 × 64 = 16448, and 257 and 64 fit the patterns. So the product can be 16448.", "latex": "257 \\times 64 = \\boxed{16448}"}
+    ],
+    "why": "Hint 2 named the answer among the choices; the steps never ruled out 1398 and ended by naming the option letter."
+  },
+  "EXT_G5_WS_B3_010": {
+    "steps": [
+      {"text": "Count the notes from 40801 to 40901. Subtract and add 1, because both the first and the last note are counted: 40901 − 40801 + 1 = 101 notes.", "latex": "40901 - 40801 + 1 = 101"},
+      {"text": "Each note is worth Rs. 5, so multiply: 101 × 5 = 505.", "latex": "101 \\times 5 = 505"},
+      {"text": "So the bundle holds Rs. 505 in all.", "latex": "\\boxed{505}"}
+    ],
+    "why": "The last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B3_011": {
+    "hints": [
+      "The number of girls does not change. First find how many girls there are from the 18-in-a-row arrangement.",
+      "There are 18 × 30 = 540 girls. With 26 in a row, 20 full rows use 26 × 20 = 520 girls. How many girls are left for the 21st row, and how many short of 26 is that?",
+      "Example: 12 children stand 5 in a row. Two full rows use 10 children, so the 3rd row has 2. It needs 5 − 2 = 3 more children to be complete."
+    ],
+    "why": "Hint 2 worked the whole question and stated the answer."
+  },
+  "EXT_G5_WS_B3_013": {
+    "hints": [
+      "The sweets are shared equally among all 25 students. So a boy gets the same amount as any other student. The numbers of girls and boys do not matter.",
+      "Change 12.5 kg into grams first: 1 kg = 1000 g, so 12.5 kg = 12500 g. Then share 12500 g equally among 25 students.",
+      "Example: 1.5 kg of rice is shared equally among 5 families. 1.5 kg = 1500 g, and 1500 ÷ 5 = 300, so each family gets 300 g."
+    ],
+    "steps": [
+      {"text": "The sweets are shared equally among all 25 students, so each boy gets the same as every other student.", "latex": ""},
+      {"text": "Change kilograms to grams: 12.5 kg = 12.5 × 1000 g = 12500 g.", "latex": "12.5 \\times 1000 = 12500"},
+      {"text": "12500 ÷ 25 = 500. So each boy received 500 g of sweets.", "latex": "12500 \\div 25 = \\boxed{500}"}
+    ],
+    "why": "Hint 2 stated the answer; hint 3 was a remainder formula from a different kind of question; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B3_015": {
+    "hints": [
+      "In any division: dividend = divisor × quotient + remainder. Here you know the dividend, the quotient and the remainder.",
+      "Take the remainder away first: 3000 − 36 = 2964. This is exactly divisor × 76. So divide 2964 by 76.",
+      "Example: 50 divided by a number gives quotient 6 and remainder 2. 50 − 2 = 48, and 48 ÷ 6 = 8, so the divisor is 8. Check: 8 × 6 + 2 = 50."
+    ],
+    "why": "Hint 3 was generic boilerplate."
+  },
+  "EXT_G5_WS_B3_016": {
+    "hints": [
+      "You want the biggest multiple of 57 that still has three digits. The biggest three-digit number is 999, so see how many 57s fit into 999.",
+      "57 × 10 = 570, and 57 × 20 = 1140 is too big. So try multiples in between, like 57 × 17 and 57 × 18, and pick the largest one that stays below 1000.",
+      "Example: the greatest two-digit number divisible by 23. 23 × 4 = 92 and 23 × 5 = 115, which has three digits. So it is 92."
+    ],
+    "steps": [
+      {"text": "The answer must be a multiple of 57 that is no bigger than 999. 57 × 10 = 570, so try larger multiples.", "latex": ""},
+      {"text": "57 × 17 = 969 and 57 × 18 = 1026. 1026 has four digits, so it is too big.", "latex": "57 \\times 17 = 969, \\quad 57 \\times 18 = 1026"},
+      {"text": "So the greatest three-digit number divisible by 57 is 969.", "latex": "\\boxed{969}"}
+    ],
+    "why": "Hint 2 stated the answer; hint 3 was generic boilerplate; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B3_017": {
+    "hints": [
+      "You want the first multiple of 57 that reaches four digits. The smallest four-digit number is 1000, so find the first multiple of 57 that is 1000 or more.",
+      "57 × 10 = 570 and 57 × 20 = 1140. The one you want lies between these. Try 57 × 17, then 57 × 18, and stop at the first one that passes 999.",
+      "Example: the smallest three-digit number divisible by 23. 23 × 4 = 92 has two digits, and 23 × 5 = 115 has three. So it is 115."
+    ],
+    "steps": [
+      {"text": "The answer is the first multiple of 57 that is 1000 or more. 57 × 10 = 570, so try larger multiples.", "latex": ""},
+      {"text": "57 × 17 = 969, which has only three digits. The next multiple is 57 × 18 = 1026.", "latex": "57 \\times 17 = 969, \\quad 57 \\times 18 = 1026"},
+      {"text": "So the smallest four-digit number divisible by 57 is 1026.", "latex": "\\boxed{1026}"}
+    ],
+    "why": "Hint 2 stated the answer and used the word 'ceiling'; hint 3 was generic boilerplate; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B3_018": {
+    "steps": [
+      {"text": "Find the number being divided. The student divided it by 24 and got 91, so the number is 24 × 91 = 2184.", "latex": "24 \\times 91 = 2184"},
+      {"text": "Now divide by the correct divisor: 2184 ÷ 42 = 52.", "latex": "2184 \\div 42 = 52"},
+      {"text": "So the correct answer was 52.", "latex": "\\boxed{52}"}
+    ],
+    "why": "The last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B3_019": {
+    "hints": [
+      "First find the number the student started with. In a division: number = divisor × quotient + remainder.",
+      "The number is 13 × 11 + 4. Work that out. Then do what the student was meant to do: multiply that number by 13.",
+      "Example: a student divided a number by 5 and got quotient 3 and remainder 1. The number is 5 × 3 + 1 = 16. He should have multiplied: 16 × 5 = 80."
+    ],
+    "steps": [
+      {"text": "Find the number: divisor × quotient + remainder = 13 × 11 + 4 = 143 + 4 = 147.", "latex": "13 \\times 11 + 4 = 147"},
+      {"text": "The student should have multiplied this number by 13: 147 × 13 = 1911.", "latex": "147 \\times 13 = 1911"},
+      {"text": "So the correct answer to the problem was 1911.", "latex": "\\boxed{1911}"}
+    ],
+    "why": "Hint 2 stated the answer; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B3_020": {
+    "hints": [
+      "First find the number the student was dividing. In a division: number = divisor × quotient + remainder.",
+      "The number is 18 × 71 + 6. Work that out, then divide it by 12 and see what is left over.",
+      "Example: a number divided by 7 gives quotient 4 and remainder 2, so it is 7 × 4 + 2 = 30. Divide 30 by 4 instead: 4 × 7 = 28, and 30 − 28 = 2 is left over."
+    ],
+    "why": "Hint 2 worked the whole question and stated the answer; hint 3 was a bare formula, not an example of this method."
+  },
+  "EXT_G5_WS_B3_021": {
+    "hints": [
+      "First find how many words Anay types in 1 minute. Then think about what half of a minute means.",
+      "In 3 minutes he types 126 words, so in 1 minute he types 126 ÷ 3 words. Half a minute gives half of that.",
+      "Example: Meera reads 80 pages in 4 hours. In 1 hour she reads 80 ÷ 4 = 20 pages, so in half an hour she reads 20 ÷ 2 = 10 pages."
+    ],
+    "why": "All three hints were generic boilerplate."
+  },
+  "EXT_G5_WS_B3_022": {
+    "hints": [
+      "Three numbers multiplied together give 2880. If you know two of them, dividing the product by those two leaves the third.",
+      "Multiply the two known numbers: 12 × 15 = 180. Now work out how many 180s make 2880.",
+      "Example: the product of three numbers is 60 and two of them are 3 and 4. 3 × 4 = 12, and 60 ÷ 12 = 5, so the third number is 5."
+    ],
+    "why": "Hint 1 gave the whole method at once and hint 2 stated the answer."
+  },
+  "EXT_G5_WS_B3_023": {
+    "hints": [
+      "First find the total number of chocolates needed. Then change that total into dozens. One dozen is 12.",
+      "72 students each get 7 chocolates, so you need 72 × 7 chocolates. Then divide that total by 12 to get dozens.",
+      "Example: 24 children each get 3 sweets. That is 24 × 3 = 72 sweets, and 72 ÷ 12 = 6, so you need 6 dozen."
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate and hint 3 was a simple-interest example from a different question."
+  },
+  "EXT_G5_WS_B3_024": {
+    "hints": [
+      "Multiplying by 53 gives 53 lots of the number. Multiplying by 35 gives only 35 lots. How many lots of the number went missing?",
+      "53 − 35 = 18, so the product is short by 18 lots of the number. Those 18 lots add up to 378. Divide to find one lot.",
+      "Example: a number multiplied by 4 instead of 7 gives a product that is 30 less. 7 − 4 = 3 lots are missing, so the number is 30 ÷ 3 = 10."
+    ],
+    "steps": [
+      {"text": "Multiplying by 35 instead of 53 leaves out 53 − 35 = 18 lots of the number.", "latex": "53 - 35 = 18"},
+      {"text": "Those 18 lots make up the difference of 378, so the number is 378 ÷ 18 = 21.", "latex": "378 \\div 18 = 21"},
+      {"text": "Check: 21 × 53 = 1113 and 21 × 35 = 735, and 1113 − 735 = 378. So the number is 21.", "latex": "\\boxed{21}"}
+    ],
+    "why": "All three hints were generic boilerplate; the steps jumped from N × 18 = 378 to the answer without showing the division."
+  },
+  "EXT_G5_WS_B3_025": {
+    "hints": [
+      "Each turn, 4 apples come out and 3 oranges go in. So first count how many turns it takes to remove all 56 apples.",
+      "Number of turns = 56 ÷ 4. Each turn puts 3 oranges in the basket, so multiply the number of turns by 3.",
+      "Example: a basket has 10 apples. Each turn, 2 apples are swapped for 1 orange. That takes 10 ÷ 2 = 5 turns, so there are 5 × 1 = 5 oranges at the end."
+    ],
+    "steps": [
+      {"text": "Amey removes 4 apples each turn, so emptying 56 apples takes 56 ÷ 4 = 14 turns.", "latex": "56 \\div 4 = 14"},
+      {"text": "Each turn he puts in 3 oranges: 14 × 3 = 42.", "latex": "14 \\times 3 = 42"},
+      {"text": "So there will be 42 oranges in the basket in the end.", "latex": "\\boxed{42}"}
+    ],
+    "why": "Hint 2 stated the answer; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B3_026": {
+    "hints": [
+      "Consecutive odd numbers are 2 apart, like 7 and 9. So the two numbers sit just below and just above half of their sum.",
+      "Half of 124 is 62. The two odd numbers are right next to 62, one on each side.",
+      "Example: two consecutive odd numbers add up to 40. Half of 40 is 20, so the numbers are 19 and 21. Check: 19 + 21 = 40. The smaller is 19."
+    ],
+    "steps": [
+      {"text": "Two consecutive odd numbers are 2 apart, so they lie on either side of half of their sum. Half of 124 is 124 ÷ 2 = 62.", "latex": "124 \\div 2 = 62"},
+      {"text": "The odd numbers on either side of 62 are 61 and 63. Check: 61 + 63 = 124.", "latex": "61 + 63 = 124"},
+      {"text": "So the smaller of the two numbers is 61.", "latex": "\\boxed{61}"}
+    ],
+    "why": "All three hints were generic boilerplate; the steps were bare algebra with no explanation."
+  },
+  "EXT_G5_WS_B3_027": {
+    "hints": [
+      "Consecutive multiples of 9 are 9 apart, like 27 and 36. So the larger one is the smaller one plus 9.",
+      "Take the extra 9 away from the sum: 153 − 9 = 144. That leaves two equal numbers, each the same as the smaller multiple. Halve 144, then add 9 for the larger one.",
+      "Example: two consecutive multiples of 5 add up to 35. 35 − 5 = 30, and 30 ÷ 2 = 15. So the multiples are 15 and 20, and the larger is 20."
+    ],
+    "steps": [
+      {"text": "Consecutive multiples of 9 differ by 9. Take that extra 9 away from the sum: 153 − 9 = 144.", "latex": "153 - 9 = 144"},
+      {"text": "Now the two parts are equal, so the smaller multiple is 144 ÷ 2 = 72.", "latex": "144 \\div 2 = 72"},
+      {"text": "The larger multiple is 72 + 9 = 81. Check: 72 + 81 = 153. So the larger multiple is 81.", "latex": "72 + 9 = \\boxed{81}"}
+    ],
+    "why": "Hint 2 stated the answer; the hints and steps used algebra with k that skipped the working."
+  },
+  "EXT_G5_WS_B3_028": {
+    "hints": [
+      "The gap between two people's ages never changes. If Siya will be 3 years older in four years, she is 3 years older right now too.",
+      "Their ages add up to 35 and Siya's is 3 more than Diya's. Take the extra 3 away: 35 − 3 = 32. That is two equal parts, each one Diya's age. Find Diya's age, then add 3.",
+      "Example: Anu is 5 years older than Binu and their ages add up to 25. 25 − 5 = 20, and 20 ÷ 2 = 10, so Binu is 10 and Anu is 10 + 5 = 15."
+    ],
+    "steps": [
+      {"text": "The gap between two ages never changes, so Siya is 3 years older than Diya now as well.", "latex": ""},
+      {"text": "Take the extra 3 years away from the sum: 35 − 3 = 32. This is twice Diya's age, so Diya is 32 ÷ 2 = 16 years old.", "latex": "(35 - 3) \\div 2 = 16"},
+      {"text": "Siya is 16 + 3 = 19. So Siya is 19 years old at present.", "latex": "16 + 3 = \\boxed{19}"}
+    ],
+    "why": "Hint 2 stated the answer; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B3_029": {
+    "hints": [
+      "A pen costs the same as a pencil plus Rs. 10. So a pen and a pencil together cost the same as two pencils plus Rs. 10.",
+      "Take the extra Rs. 10 away from the total: 18 − 10 = 8. That Rs. 8 is the cost of two pencils. Find the cost of one pencil, then of three.",
+      "Example: a bat and a ball cost Rs. 50, and the bat costs Rs. 30 more than the ball. 50 − 30 = 20 is two balls, so one ball costs Rs. 10 and the bat costs Rs. 40."
+    ],
+    "why": "Hint 2 stated the answer."
+  },
+  "EXT_G5_WS_B3_030": {
+    "hints": [
+      "First find the total number of medals: 14 events with 3 medals in each. Then split that total between boys and girls, with the boys getting 6 fewer.",
+      "There are 14 × 3 = 42 medals. Take away the girls' extra 6: 42 − 6 = 36. Now both shares are equal, and each one equals the boys' share.",
+      "Example: 20 sweets are shared so that Ravi gets 4 fewer than Sita. 20 − 4 = 16, and 16 ÷ 2 = 8, so Ravi gets 8 and Sita gets 12."
+    ],
+    "why": "Hint 3 was generic boilerplate."
+  },
+  "EXT_G5_WS_B3_031": {
+    "hints": [
+      "You know the price of an orange, so you can find the cost of the 3 oranges. What is left of the Rs. 85 must be the cost of the 2 apples.",
+      "3 oranges cost 3 × 15 = Rs. 45. So 2 apples cost 85 − 45 = Rs. 40. Find the price of one apple, then add up 3 apples and 2 oranges.",
+      "Example: 2 pens and 1 book cost Rs. 50, and the book costs Rs. 30. The 2 pens cost 50 − 30 = Rs. 20, so one pen is Rs. 10. Then 1 pen and 2 books cost 10 + 60 = Rs. 70."
+    ],
+    "steps": [
+      {"text": "3 oranges cost 3 × 15 = Rs. 45. So the 2 apples cost 85 − 45 = Rs. 40.", "latex": "85 - 45 = 40"},
+      {"text": "One apple costs 40 ÷ 2 = Rs. 20.", "latex": "40 \\div 2 = 20"},
+      {"text": "3 apples cost 3 × 20 = Rs. 60 and 2 oranges cost 2 × 15 = Rs. 30.", "latex": ""},
+      {"text": "60 + 30 = 90. So 3 apples and 2 oranges cost Rs. 90.", "latex": "60 + 30 = \\boxed{90}"}
+    ],
+    "why": "All three hints were generic boilerplate; the last step was thinking aloud and named the option letter."
+  },
+  "EXT_G5_WS_B3_032": {
+    "hints": [
+      "She has the same number of each note. So group the notes into sets of one Rs. 5, one Rs. 10 and one Rs. 20 note.",
+      "One set is worth 5 + 10 + 20 = Rs. 35. Work out how many such sets make Rs. 910. That is the number of notes of each kind.",
+      "Example: Ali has equal numbers of Rs. 1 and Rs. 2 coins, worth Rs. 30 in all. One set is worth 1 + 2 = Rs. 3, and 30 ÷ 3 = 10, so he has 10 coins of each kind."
+    ],
+    "why": "All three hints were generic boilerplate."
+  },
+  "EXT_G5_WS_B3_033": {
+    "hints": [
+      "She bought the same number of each stamp. Group them into sets of one 5 paise, one 20 paise and one 25 paise stamp. Remember Rs. 1 = 100 paise.",
+      "One set costs 5 + 20 + 25 = 50 paise, and Rs. 9 is 900 paise. Find how many sets she bought. Each set has 3 stamps, so multiply the number of sets by 3.",
+      "Example: equal numbers of 10 paise and 15 paise stamps cost Rs. 1 in all. One set costs 25 paise, and 100 ÷ 25 = 4 sets. Each set has 2 stamps, so that is 4 × 2 = 8 stamps."
+    ],
+    "why": "Hint 2 stated the answer and hint 3 was generic boilerplate."
+  },
+  "EXT_G5_WS_B3_034": {
+    "hints": [
+      "First find how many steps the staircase has. Manav's own step is counted both in '11th from the bottom' and in '17th from the top'.",
+      "Add 11 and 17, then take away 1 so Manav's step is counted only once. That gives the total number of steps. The middle step has the same number of steps below it as above it.",
+      "Example: Tina is on the 3rd step from the bottom and the 5th from the top. Steps = 3 + 5 − 1 = 7. The middle step is the 4th: 3 steps below it and 3 above."
+    ],
+    "steps": [
+      {"text": "Manav's step is counted in both positions, so the staircase has 11 + 17 − 1 = 27 steps.", "latex": "11 + 17 - 1 = 27"},
+      {"text": "Take away the middle step: 27 − 1 = 26 steps, half below it and half above. 26 ÷ 2 = 13 steps are below the middle step.", "latex": "(27 - 1) \\div 2 = 13"},
+      {"text": "So the middle step is the 14th from the bottom. Rahul is on the fourteenth step.", "latex": "13 + 1 = \\boxed{14}"}
+    ],
+    "why": "Hints 1 and 2 worked the whole question and stated the answer; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B3_035": {
+    "hints": [
+      "First find how many people are in the queue. Nisha is counted both in '19th from the front' and in '11th from the back'.",
+      "The queue has 19 + 11 − 1 = 29 people. The middle person has 14 people in front and 14 behind. Find Disha's place, then count the places strictly between hers and Nisha's 19th place.",
+      "Example: 9 people stand in a line. The middle person is 5th. Between the 5th and the 8th person stand the 6th and the 7th, so 2 people are between them."
+    ],
+    "steps": [
+      {"text": "Nisha is counted in both positions, so the queue has 19 + 11 − 1 = 29 people.", "latex": "19 + 11 - 1 = 29"},
+      {"text": "The middle person has 14 people on each side, since 14 + 1 + 14 = 29. So Disha is 15th from the front.", "latex": "14 + 1 = 15"},
+      {"text": "Between the 15th and the 19th places are the 16th, 17th and 18th. So 3 people are standing between Nisha and Disha.", "latex": "19 - 15 - 1 = \\boxed{3}"}
+    ],
+    "why": "Hints 1 and 2 were generic boilerplate and hint 3 was a simple-interest example from a different question; the steps were thinking aloud."
+  },
+  "EXT_G5_WS_B3_036": {
+    "hints": [
+      "First find how many toys one worker makes in one hour. Then think about all 56 workers working during that hour.",
+      "One worker makes 36 toys in 9 hours, which is 36 ÷ 9 = 4 toys an hour. Now multiply by the number of workers.",
+      "Example: one baker makes 30 cakes in 5 hours, which is 30 ÷ 5 = 6 cakes an hour. With 3 bakers, 3 × 6 = 18 cakes are made every hour."
+    ],
+    "steps": [
+      {"text": "One worker makes 36 toys in 9 hours, so in one hour a worker makes 36 ÷ 9 = 4 toys.", "latex": "36 \\div 9 = 4"},
+      {"text": "There are 56 workers, each making 4 toys an hour: 56 × 4 = 224.", "latex": "56 \\times 4 = 224"},
+      {"text": "So the factory produces 224 toys every hour.", "latex": "\\boxed{224}"}
+    ],
+    "why": "Hint 2 stated the answer; the last step was filler naming the option letter."
+  },
+  "EXT_G5_WS_B3_037": {
+    "hints": [
+      "Two things change here: the number of people and the number of days. Deal with one at a time.",
+      "24 people is 24 ÷ 6 = 4 groups of six, and each group eats 1 kg a day. Find how much 24 people eat in one day, then multiply by the 7 days in a week.",
+      "Example: 3 people eat 2 kg of rice a day. 6 people are 2 groups of three, so they eat 2 × 2 = 4 kg a day. In 3 days they eat 4 × 3 = 12 kg."
+    ],
+    "why": "Hint 2 stated the answer."
+  },
+  "EXT_G5_WS_B3_038": {
+    "hints": [
+      "Split the pay into two parts: the pay for the first 30 hours at the usual wage, and the extra pay for overtime.",
+      "The first 30 hours earn 30 × 8 = Rs. 240. Take that away from Rs. 336 to get the overtime pay. Each overtime hour pays twice Rs. 8. How many such hours make up the overtime pay?",
+      "Example: Rs. 5 an hour up to 10 hours, double for overtime, total pay Rs. 80. Usual pay: 10 × 5 = Rs. 50. Overtime pay: 80 − 50 = Rs. 30. At Rs. 10 an hour, that is 30 ÷ 10 = 3 overtime hours."
+    ],
+    "why": "Hint 2 stated the answer and hint 3's example came out as 2.4 hours, written in shorthand."
+  },
+  "EXT_G5_WS_B3_039": {
+    "hints": [
+      "A remainder is what is left over after making groups of 6. When you add P and Q, their leftovers get added too.",
+      "P leaves 2 over and Q leaves 5 over, so together the leftovers are 2 + 5 = 7. But 7 is big enough to make another group of 6. What is left after that?",
+      "Example with dividing by 5: 8 leaves remainder 3 and 9 leaves remainder 4. The leftovers add to 3 + 4 = 7, which is one more group of 5 with 2 left. Check: 8 + 9 = 17, and 17 − 15 = 2."
+    ],
+    "steps": [
+      {"text": "P is some groups of 6 with 2 left over. Q is some groups of 6 with 5 left over.", "latex": ""},
+      {"text": "Add them: P + Q is some groups of 6, with 2 + 5 = 7 left over.", "latex": "2 + 5 = 7"},
+      {"text": "7 makes one more group of 6, with 7 − 6 = 1 left over. Check with P = 8 and Q = 11: 8 + 11 = 19, and 19 − 18 = 1.", "latex": "7 - 6 = 1"},
+      {"text": "So the remainder when P + Q is divided by 6 is 1.", "latex": "\\boxed{1}"}
+    ],
+    "why": "The hints and steps used algebra (6a + 2, 6b + 5) beyond Grade 5, and hint 2 stated the answer."
+  },
+  "EXT_G5_WS_B3_040": {
+    "hints": [
+      "First find the number of girls from the boys, then the total number of students, and last the number of teachers.",
+      "There are 7 boys in each group, and 455 ÷ 7 = 65 groups. Each group also has 4 girls. Find the girls, add the boys to get all the students, then count how many 55s are in that total.",
+      "Example: 2 girls for every 3 boys, and 30 boys. That is 30 ÷ 3 = 10 groups, so 10 × 2 = 20 girls and 50 students. With one teacher for every 25 students, 50 ÷ 25 = 2 teachers."
+    ],
+    "why": "Hint 3 was generic boilerplate."
+  }
+}
