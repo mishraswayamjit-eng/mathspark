@@ -1,0 +1,151 @@
+"""Geometry lessons written for one question each: the 2024 paper."""
+from geometry_lib import (B, FIG, W, choose, lesson, mark)
+
+LESSONS = {}
+
+
+# Square of side 56 cm and rectangle of breadth 49 cm have equal areas. Perimeter of the rectangle?
+LESSONS["EXT_G5_FP_2024_001"] = lesson([
+    B("A square has a side of 56 centimetres. A rectangle with a breadth of 49 centimetres has the same area. We want the perimeter of the rectangle.",
+      W("l1", "Square: side 56 cm. Rectangle: breadth 49 cm.", tone="given", label=True),
+      W("l2", "Same area. Perimeter of rectangle = ?", tone="given", label=True),
+      FIG("f1", kind="rectangle", square=True, length="56 cm", inside="Area = ?")),
+    B("The area of the square is side times side: 56 times 56. That comes to 3136 square centimetres, a big number. Keep it as 56 times 56 for a moment.",
+      W("l3", "56 × 56 = 3136")),
+    B("The rectangle has that same area, and its breadth is 49. How do we find its length?",
+      FIG("f2", kind="rectangle", length="?", breadth="49 cm", inside="same area", proportion=1.3),
+      ask=choose(["area − 49", "area ÷ 49", "area × 49"], 1,
+                 "Area is length times breadth. So to get back from the area to the length, we divide by the breadth.")),
+    B("So the length is 56 times 56, divided by 49. Here is a neat way to do it. 49 is 7 times 7, and 56 is in the 7 times table: 56 divided by 7 is 8.",
+      W("l4", "49 = 7 × 7"), W("l5", "56 ÷ 7 = 8")),
+    B("So divide each 56 by one of the 7s. We are left with 8 times 8, which is 64. The length is 64 centimetres.",
+      W("l6", "56 × 56 ÷ 49 = 8 × 8"), W("l7", "8 × 8 = 64"),
+      FIG("f3", kind="rectangle", length="64 cm", breadth="49 cm", proportion=1.3)),
+    B("Now the perimeter of the rectangle, the walk all the way round. Which sum gives it?",
+      ask=choose(["64 + 49", "64 × 49", "2 × (64 + 49)"], 2,
+                 "64 plus 49 is only one length and one breadth, which is halfway round. We double it for the whole walk.")),
+    B("64 plus 49 is 113, and that is halfway. Double it: 2 times 113 is 226 centimetres.",
+      W("l8", "64 + 49 = 113"), W("l9", "2 × 113 = 226")),
+    B("Now look at the choices: 230, 224 and 222. Our 226 is not among them. Check the length before deciding: 64 times 49 is 3136, the same as the square. So it is right.",
+      W("l10", "Choices: 230, 224, 222 cm", label=True), W("l11", "64 × 49 = 3136")),
+    B("So the answer is: none of these.",
+      W("l12", "226 cm: none of these", tone="answer", label=True), mark("l12", "none of these", "circle"),
+      FIG("f4", kind="rectangle", length="64 cm", breadth="49 cm", proportion=1.3, highlight=["border"], note="Perimeter = 226 cm")),
+    B("So: the square's area, then the rectangle's length, then its perimeter. And when careful working gives an answer that is not on the list, none of these is the one to pick."),
+], "authored")
+
+
+# Angle between the hands at 7:20.
+LESSONS["EXT_G5_FP_2024_005"] = lesson([
+    B("The clock shows 7:20. We want the angle between the hour hand and the minute hand.",
+      W("l1", "Clock at 7:20. Angle between the hands = ?", tone="given", label=True),
+      FIG("f1", kind="clock", hour=7, minute=20, showAngle=True)),
+    B("Here is the plan. We measure how far each hand has turned from the 12 at the top, one hand at a time. The whole clock face is a full turn, 360 degrees.",
+      W("l2", "Clock face: 360°, 12 hours, 60 minutes", label=True)),
+    B("The minute hand first. It goes all the way round, 360 degrees, in 60 minutes. That is 6 degrees every minute. So at 20 minutes it has turned 20 times 6, which is 120 degrees.",
+      W("l3", "360 ÷ 60 = 6"), W("l4", "20 × 6 = 120"),
+      FIG("f2", kind="clock", hour=7, minute=20, highlight=["minute"])),
+    B("Now the hour hand. At 7:20, where exactly is it pointing?",
+      ask=choose(["exactly at the 7", "a little past the 7", "exactly at the 8"], 1,
+                 "The hour hand never stops. By 20 minutes past, it has crept on from the 7 towards the 8.")),
+    B("It is a little past the 7. Take the 7 first. Each hour is 360 divided by 12, which is 30 degrees. So from the 12 round to the 7 is 7 times 30, which is 210 degrees.",
+      W("l5", "360 ÷ 12 = 30"), W("l6", "7 × 30 = 210")),
+    B("Now the creep. The hour hand moves 30 degrees in 60 minutes, so half a degree each minute. In 20 minutes that is 10 degrees more. The hour hand is at 220 degrees.",
+      W("l7", "20 × ½ = 10"), W("l8", "210 + 10 = 220"),
+      FIG("f3", kind="clock", hour=7, minute=20, highlight=["hour"])),
+    B("The minute hand is at 120 degrees and the hour hand is at 220 degrees. How do we get the angle between them?",
+      ask=choose(["220 + 120", "210 − 120", "220 − 120"], 2,
+                 "The angle between the hands is the gap between their two positions, so we subtract. And we use 220, not 210, because the hour hand has moved past the 7.")),
+    B("220 take away 120 is 100. The angle between the hands is 100 degrees.",
+      W("l9", "220 − 120 = 100"), W("l10", "Angle = 100°", tone="answer", label=True), mark("l10", "100°", "circle"),
+      FIG("f4", kind="clock", hour=7, minute=20, showAngle=True, highlight=["angle"])),
+    B("So work the two hands separately: 6 degrees a minute for the minute hand, 30 degrees an hour plus half a degree a minute for the hour hand. Forget the creep, and you are 10 degrees out."),
+], "authored")
+
+
+# Equilateral triangle of side 12 cm has the same perimeter as a rectangle. Which sides?
+LESSONS["EXT_G5_FP_2024_019"] = lesson([
+    B("An equilateral triangle has a side of 12 centimetres. A rectangle has the same perimeter as the triangle. We have to pick the length and breadth it could have.",
+      W("l1", "Equilateral triangle: side 12 cm", tone="given", label=True),
+      W("l2", "Rectangle: same perimeter. L and B = ?", tone="given", label=True),
+      FIG("f1", kind="triangle", shape="equilateral", sides={"ab": "12 cm", "bc": "12 cm", "ca": "12 cm"})),
+    B("Equilateral means all 3 sides are equal. Which sum gives the walk all the way round the triangle?",
+      ask=choose(["12 + 12", "12 + 12 + 12", "12 × 12"], 1,
+                 "The walk goes along all 3 sides, so we add 12 three times. That is the same as 3 times 12.")),
+    B("3 times 12 is 36. The triangle's perimeter is 36 centimetres, and so is the rectangle's.",
+      W("l3", "3 × 12 = 36"),
+      FIG("f2", kind="rectangle", length="L = ?", breadth="B = ?", note="Perimeter = 36 cm")),
+    B("The walk round a rectangle is 2 lengths and 2 breadths. So what must one length and one breadth add up to?",
+      ask=choose(["36", "36 ÷ 4", "36 ÷ 2"], 2,
+                 "One length and one breadth take us exactly halfway round. So together they make half of 36.")),
+    B("Half of 36 is 18. So we are looking for a pair that adds up to 18.",
+      W("l4", "36 ÷ 2 = 18"), W("l5", "L + B = 18", label=True), mark("l5", "18", "box")),
+    B("Test the pairs. 10 plus 5 is 15: too small. 14 plus 6 is 20: too big.",
+      W("l6", "10 + 5 = 15"), W("l7", "14 + 6 = 20")),
+    B("8 plus 6 is 14: too small. And 13 plus 5 is 18. That is the one.",
+      W("l8", "8 + 6 = 14"), W("l9", "13 + 5 = 18"), mark("l9", "18", "circle")),
+    B("So the rectangle can have a length of 13 centimetres and a breadth of 5 centimetres.",
+      W("l10", "L = 13 cm, B = 5 cm", tone="answer", label=True), mark("l10", "L = 13 cm, B = 5 cm", "circle"),
+      FIG("f3", kind="rectangle", length="13 cm", breadth="5 cm", proportion=2.6, highlight=["border"], note="Perimeter = 36 cm")),
+    B("Check the whole walk: 2 times 18 is 36, the same as the triangle.",
+      W("l11", "2 × (13 + 5) = 36")),
+    B("The trap is to look for a pair that makes 36. Each side of a rectangle is walked twice, so the pair only makes half of the perimeter."),
+], "authored")
+
+
+# Square of side 30 cm; one side becomes 5/4, another 3/5. Difference in areas?
+LESSONS["EXT_G5_FP_2024_033"] = lesson([
+    B("A square has a side of 30 centimetres. One side is stretched to 5 quarters of its length, and another is shrunk to 3 fifths. That makes a rectangle. How different are the two areas?",
+      W("l1", "Square: side 30 cm", tone="given", label=True),
+      W("l2", "Sides become 5/4 and 3/5 of 30. Area difference = ?", tone="given", label=True),
+      FIG("f1", kind="rectangle", square=True, length="30 cm", breadth="30 cm")),
+    B("The square's area first. Side times side: 3 times 3 is 9, so 30 times 30 is 900 square centimetres.",
+      W("l3", "30 × 30 = 900")),
+    B("Now the stretched side: 5 quarters of 30. Before we work it out, will it be bigger or smaller than 30?",
+      ask=choose(["smaller than 30", "exactly 30", "bigger than 30"], 2,
+                 "4 quarters make the whole. 5 quarters is one quarter more than the whole, so it is bigger than 30.")),
+    B("It is bigger. One quarter of 30 is 30 divided by 4, which is 7.5. So 5 quarters is 5 times 7.5, which is 37.5 centimetres.",
+      W("l4", "30 ÷ 4 = 7.5"), W("l5", "5 × 7.5 = 37.5")),
+    B("Now the shrunk side: 3 fifths of 30. One fifth of 30 is 6, so 3 fifths is 3 times 6, which is 18 centimetres.",
+      W("l6", "30 ÷ 5 = 6"), W("l7", "3 × 6 = 18"),
+      FIG("f2", kind="rectangle", length="37.5 cm", breadth="18 cm", proportion=2.1, inside="Area = ?")),
+    B("The rectangle's area is 37.5 times 18. Here is a neat trick: double one number and halve the other, and the product stays the same. So it is 75 times 9.",
+      W("l8", "37.5 × 2 = 75"), W("l9", "18 ÷ 2 = 9"), W("l10", "37.5 × 18 = 75 × 9")),
+    B("75 times 9: 70 times 9 is 630, and 5 times 9 is 45. Together that is 675 square centimetres.",
+      W("l11", "70 × 9 = 630"), W("l12", "630 + 45 = 675"), W("l13", "75 × 9 = 675")),
+    B("The square covers 900 and the rectangle covers 675. Which sum gives the difference?",
+      ask=choose(["900 + 675", "900 − 675", "37.5 − 18"], 1,
+                 "Difference means how much bigger one is than the other. So we take the smaller area away from the larger one.")),
+    B("900 take away 675 is 225. The difference is 225 square centimetres.",
+      W("l14", "900 − 675 = 225"), W("l15", "Difference = 225 sq. cm", tone="answer", label=True), mark("l15", "225 sq. cm", "circle")),
+    B("So: find each new side, then each area, then subtract. One side grew and one shrank, but the area did not stay the same."),
+], "authored")
+
+
+# Facing East; 135° clockwise, then 315° anticlockwise.
+LESSONS["EXT_G5_FP_2024_034"] = lesson([
+    B("Shraddha is facing East. She turns 135 degrees clockwise, and then 315 degrees anticlockwise. Which way is she facing at the end?",
+      W("l1", "Facing East. Turns 135° clockwise,", tone="given", label=True),
+      W("l2", "then 315° anticlockwise. Facing = ?", tone="given", label=True),
+      FIG("f1", kind="compass", facing="E")),
+    B("The compass has 8 points, spaced evenly round a full turn of 360 degrees. 360 divided by 8 is 45. So each step from one point to the next is 45 degrees.",
+      W("l3", "8 points in 360°: each step is 45°", label=True), W("l4", "360 ÷ 8 = 45")),
+    B("The first turn is 135 degrees, and 3 times 45 is 135. So it is 3 steps clockwise from East. Where does that take her?",
+      W("l5", "3 × 45 = 135"),
+      ask=choose(["South", "South-West", "North-West"], 1,
+                 "Clockwise from East goes to South-East, then South, then South-West. Count all 3 steps.")),
+    B("South-East, South, South-West. After the first turn she is facing South-West.",
+      W("l6", "East, 3 steps clockwise: South-West", label=True),
+      FIG("f2", kind="compass", facing="E", turns=[{"degrees": 135, "direction": "clockwise"}], showEnd=True)),
+    B("Now the second turn: 315 degrees anticlockwise. That is a big one, nearly a full turn. How far short of a full turn is it? 360 take away 315 is 45.",
+      W("l7", "360 − 315 = 45")),
+    B("A full turn would bring her right back to South-West. She stops 45 degrees short of that. So where does she end up, compared with South-West?",
+      ask=choose(["45° on the clockwise side", "45° on the anticlockwise side", "exactly at South-West"], 0,
+                 "She is turning anticlockwise and stops before she gets all the way back. So she is still 45 degrees on the clockwise side of South-West.")),
+    B("So turning 315 degrees anticlockwise ends in the same place as turning 45 degrees clockwise. And 1 step clockwise from South-West is West.",
+      W("l8", "South-West, 1 step clockwise: West", label=True),
+      FIG("f3", kind="compass", facing="SW", turns=[{"degrees": 315, "direction": "anticlockwise"}], showEnd=True)),
+    B("So Shraddha is facing West.",
+      W("l9", "Facing West", tone="answer", label=True), mark("l9", "West", "circle")),
+    B("So take one turn at a time, in steps of 45 degrees. And for a very big turn, it is quicker to ask how far short of a full turn it is."),
+], "authored")

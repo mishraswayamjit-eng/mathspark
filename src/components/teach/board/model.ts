@@ -183,7 +183,20 @@ export function buildModel(ops: BoardOp[]): BoardModel {
     } else if (op.op === 'figure') {
       if (!op.spec || typeof op.spec !== 'object') continue;
       const key = 'r' + i;
-      rows.push({ kind: 'figure', key: key, id: String(op.id), opIndex: i, spec: op.spec });
+      const figureId = String(op.id);
+      // A figure drawn again under the same id is the same picture moved on a
+      // step (pieces labelled, a part highlighted): it takes the old one's
+      // place instead of appearing a second time further down the board.
+      let replaced = false;
+      for (let r = 0; r < rows.length; r++) {
+        const existing = rows[r];
+        if (existing.kind === 'figure' && existing.id === figureId) {
+          rows[r] = { kind: 'figure', key: key, id: figureId, opIndex: i, spec: op.spec };
+          replaced = true;
+          break;
+        }
+      }
+      if (!replaced) rows.push({ kind: 'figure', key: key, id: figureId, opIndex: i, spec: op.spec });
       focusKey = key;
     } else if (typeof op.line === 'string') {
       if (!Object.prototype.hasOwnProperty.call(byId, op.line)) continue;

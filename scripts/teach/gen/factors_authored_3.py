@@ -1,0 +1,247 @@
+"""Hand-written lessons, part 3: primes and squares, and the first HCF / LCM worksheet questions."""
+from factors_lib import *  # noqa: F401,F403
+
+LESSONS = {}
+
+# If M is the greatest two-digit prime, which of M − 1, M − 4, M + 1, M + 5 is divisible by 4?
+LESSONS["EXT_G5_WS_B4_022"] = LESSON(
+    B("M is the greatest two-digit prime number. So first we must find M, and then test the four choices.",
+      GIVEN("q", "M = the greatest 2-digit prime")),
+    B("Start from the top, 99, and walk down. 99 is 9 times 11, so it is not prime. 98 is even, so it is not prime either.",
+      W("a", "99 = 9 × 11"), W("b", "98 = 2 × 49")),
+    B("Next is 97. It is odd and does not end in 5. Its digits make 16, so 3 misses. And 7 leaves 6 over. So is 97 prime?",
+      W("c1", "9 + 7 = 16"), W("c2", "97 = 7 × 13 + 6"),
+      ask=CHOOSE(["No: 7 goes in", "Yes: none of 2, 3, 5, 7 goes in", "No: 3 goes in"], 1,
+                 "97 is odd and does not end in 5. Its digits add up to 16, which is not in the 3 times table. And 97 is 7 times 13, plus 6 left over.")),
+    B("So M is 97.",
+      LB("m", "M = 97"), CIRC("m", "97")),
+    B("Now the choices. M minus 1 is 96. For 4 we test the last two digits, and 96 is 4 times 24. That works!",
+      W("d1", "97 − 1 = 96"), W("d2", "96 = 4 × 24")),
+    B("Test the others to be sure. M minus 4 is 93, M plus 1 is 98, and M plus 5 is 102.",
+      W("e1", "97 − 4 = 93"), W("e2", "97 + 1 = 98"), W("e3", "97 + 5 = 102")),
+    B("93 is odd, so 4 misses. 98 is 4 times 24, plus 2. And 102 is 4 times 25, plus 2. None of these works.",
+      STRIKE("e1", "93", "odd"), W("f2", "98 = 4 × 24 + 2"), W("f3", "102 = 4 × 25 + 2")),
+    B("So the one that 4 divides exactly is M minus 1.",
+      ANS("ans", "M − 1 = 96 is divisible by 4"), CIRC("ans", "M − 1")),
+    B("Two jobs in one question: find the prime by trying small divisors in turn, then test each choice with the rule for 4."),
+)
+
+# The successor of the square of the smallest two-digit prime number.
+LESSONS["EXT_G5_WS_B5_003"] = LESSON(
+    B("This question packs three jobs into one sentence. Find the smallest two-digit prime, square it, then take the successor. One at a time.",
+      GIVEN("q", "Successor of (smallest 2-digit prime)²")),
+    B("Two-digit numbers start at 10. What is the smallest two-digit prime?",
+      ask=CHOOSE(["10", "11", "13"], 1,
+                 "10 is even, so 2 goes into it and it is not prime. The very next number, 11, has no factors except 1 and itself.")),
+    B("11 it is. Now square it: that means 11 times 11.",
+      LB("p", "Smallest 2-digit prime: 11")),
+    B("11 times 10 is 110, and one more 11 makes 121.",
+      W("s1", "11 × 10 = 110"), W("s2", "110 + 11 = 121"), W("s3", "11² = 121")),
+    B("Last job. What does successor mean?",
+      ask=CHOOSE(["The number just before: take away 1", "The number just after: add 1", "Double the number"], 1,
+                 "The successor comes straight after, like the next person in a queue. So we add 1. The one before is called the predecessor.")),
+    B("121 plus 1 is 122. That is our answer.",
+      W("s4", "121 + 1 = 122"), ANS("ans", "Answer: 122"), CIRC("ans", "122")),
+    B("Watch the two traps. Taking 1 away gives the predecessor, not the successor. And 10 is not prime, so we could not start from 10."),
+    B("When a question stacks several jobs, do them in order, one line each."),
+)
+
+# The hundreds digit of the square of the greatest two-digit prime.
+LESSONS["EXT_G5_WS_B5_006"] = LESSON(
+    B("Three jobs here. Find the greatest two-digit prime, square it, and read the digit in the hundreds place.",
+      GIVEN("q", "Hundreds digit of (greatest 2-digit prime)²")),
+    B("Walk down from 99. 99 is 9 times 11, and 98 is even. But 97 passes every test: 2, 3, 5 and 7 all miss. So 97 is the prime.",
+      W("a", "99 = 9 × 11"), W("a2", "98 = 2 × 49"), LB("p", "Greatest 2-digit prime: 97")),
+    B("Now we need 97 times 97. What is a clever way to do that?",
+      ask=CHOOSE(["97 × 100, then add 97 × 3", "Just 9 × 9 and 7 × 7", "97 × 100, then take off 97 × 3"], 2,
+                 "97 is 3 less than 100. So 97 lots of 97 is 100 lots, take away 3 lots.")),
+    B("97 times 100 is 9700. And 97 times 3 is 291.",
+      W("b1", "97 × 100 = 9700"), W("b2", "97 × 3 = 291")),
+    B("Now 9700 minus 291. Take off 300 to get 9400, then give 9 back. That is 9409.",
+      W("b3", "9700 − 300 = 9400"), W("b4", "9400 + 9 = 9409"), W("sq", "97² = 9409")),
+    B("Read the places in 9409, from the right. Ones 9, tens 0, hundreds 4.",
+      FIG("chart", {"kind": "placeChart", "number": "9409", "highlight": ["d1"]}),
+      UL("sq", "4"), NOTE("sq", "4", "hundreds", "below")),
+    B("So the digit in the hundreds place is 4.",
+      ANS("ans", "Hundreds digit = 4"), CIRC("ans", "4")),
+    B("Find the prime, square it with a round-number trick, then read off the place. Take the jobs one at a time."),
+)
+
+# The square of the sum of all the one-digit prime numbers.
+LESSONS["EXT_G5_WS_B5_007"] = LESSON(
+    B("We need the square of the sum of all the one-digit primes. So first we must list those primes.",
+      GIVEN("q", "(sum of the one-digit primes)² = ?")),
+    B("Which are the one-digit prime numbers?",
+      ask=CHOOSE(["1, 2, 3, 5, 7", "2, 3, 5, 7", "1, 3, 5, 7, 9"], 1,
+                 "1 is not prime, because it has only one factor. 9 is 3 times 3, so it is not prime. That leaves 2, 3, 5 and 7.")),
+    B("2, 3, 5 and 7. Remember that 1 is not a prime: a prime needs exactly two factors.",
+      LB("p", "One-digit primes: 2, 3, 5, 7")),
+    B("The order matters: add first, then square. 2 plus 3 plus 5 plus 7 is 17.",
+      W("s", "2 + 3 + 5 + 7 = 17")),
+    B("Now 17 times 17. Split it up: 17 times 10 is 170, and 17 times 7 is 119.",
+      W("m1", "17 × 10 = 170"), W("m2", "17 × 7 = 119")),
+    B("170 plus 119 is 289. So 17 squared is 289.",
+      W("m3", "170 + 119 = 289"), W("m4", "17² = 289"), ANS("ans", "Answer: 289"), CIRC("ans", "289")),
+    B("Name the trap: squaring each prime first and adding afterwards gives a different number. The words say the square of the sum, so the sum comes first."),
+    B("So read the sentence from the inside out: list the primes, add them, and square the total last."),
+)
+
+# Least number by which 588 should be divided to give a perfect square.
+LESSONS["EXT_G5_WS_B5_017"] = LESSON(
+    B("We want to divide 588 by the least number that leaves a perfect square.",
+      GIVEN("q", "588 ÷ ? = a perfect square")),
+    B("A perfect square is a number times itself, like 6 times 6. Split it into primes and every prime comes in pairs.",
+      W("ex", "6 × 6 = 2 × 3 × 2 × 3")),
+    B("So let's break 588 into primes. It is even, so 2 comes out, and 2 again. Then 3 comes out, and 7 times 7 is left.",
+      TREE("t", 588), W("f", "588 = 2 × 2 × 3 × 7 × 7")),
+    B("Pair them up. The two 2s make a pair. The two 7s make a pair.",
+      GROUP("f", [T("2", 1), T("2", 2)], "pair"), GROUP("f", [T("7", 1), T("7", 2)], "pair")),
+    B("Which prime is left without a partner?",
+      ask=CHOOSE(["2", "3", "7"], 1,
+                 "Look along the line. The 2s are paired and the 7s are paired. Only the 3 stands alone.")),
+    B("The 3 has no partner. Divide by 3 and it is gone, leaving only pairs.",
+      CIRC("f", "3"), W("d", "588 ÷ 3 = 196"), W("d2", "196 = 2 × 2 × 7 × 7")),
+    B("And 196 is 14 times 14, a perfect square. So the least number to divide by is 3.",
+      W("d3", "196 = 14 × 14"), ANS("ans", "Divide by 3"), CIRC("ans", "3")),
+    B("Why not 2 or 7? Dividing by one of those would break up a pair, and then more primes would be left alone."),
+    B("For a perfect square: split into primes, pair them up, and deal with whatever has no partner."),
+)
+
+# Smallest number to multiply 3 × 4 × 5 × 6 by to make a square number.
+LESSONS["EXT_G5_WS_B5_019"] = LESSON(
+    B("We multiply 3 times 4 times 5 times 6 by the smallest number that turns it into a square number.",
+      GIVENM("q", "3 × 4 × 5 × 6 × ? = a square number")),
+    B("We could multiply it out, but primes tell us more. 3 and 5 are prime already. 4 is 2 times 2, and 6 is 2 times 3.",
+      W("a", "4 = 2 × 2"), W("b", "6 = 2 × 3")),
+    B("So the whole product, sorted into primes, has three 2s, two 3s and one 5.",
+      W("f", "3 × 4 × 5 × 6 = 2 × 2 × 2 × 3 × 3 × 5")),
+    B("In a square number every prime has a partner. Two of the 2s pair up, and the two 3s pair up.",
+      GROUP("f", [T("2", 1), T("2", 2)], "pair"), GROUP("f", [T("3", 2), T("3", 3)], "pair")),
+    B("Which primes are left without a partner?",
+      ask=CHOOSE(["Only the 5", "One 2 and the 5", "One 3 and the 5"], 1,
+                 "Count along the line. Three 2s means one pair, with one 2 left over. And the 5 is on its own as well.")),
+    B("The third 2 and the 5 are alone. Give each a partner: multiply by 2 times 5, which is 10.",
+      CIRC("f", "2", 3), CIRC("f", "5", 2), W("m", "2 × 5 = 10")),
+    B("Check. The product is 360, and 360 times 10 is 3600. That is 60 times 60, a square number.",
+      W("c1", "3 × 4 × 5 × 6 = 360"), W("c2", "360 × 10 = 3600"), W("c3", "60 × 60 = 3600")),
+    B("So the smallest number to multiply by is 10.",
+      ANS("ans", "Multiply by 10"), CIRC("ans", "10")),
+    B("Multiplying by 5 alone would still leave a 2 without a partner. Every lonely prime needs a partner of its own."),
+)
+
+# The HCF of 328 and 424.
+LESSONS["EXT_G5_WS_B6_001"] = LESSON(
+    B("We need the H C F of 328 and 424: the biggest number that divides both of them exactly.",
+      GIVEN("q", "HCF of 328 and 424 = ?")),
+    B("Both numbers are even, so keep halving. 328, then 164, then 82, then 41. Three halvings, and 41 is prime.",
+      W("h1", "328 ÷ 2 = 164"), W("h2", "164 ÷ 2 = 82"), W("h3", "82 ÷ 2 = 41"), factor_write("a", 328)),
+    B("The same for 424. Halve it: 212, then 106, then 53. Three halvings again, and 53 is prime.",
+      W("g1", "424 ÷ 2 = 212"), W("g2", "212 ÷ 2 = 106"), W("g3", "106 ÷ 2 = 53"), factor_write("b", 424)),
+    B("The H C F is built only from primes that both numbers have. Which of these do 328 and 424 share?",
+      ask=CHOOSE(["2 × 2 × 2 × 41", "41 and 53", "2 × 2 × 2"], 2,
+                 "41 is only in 328, and 53 is only in 424. The primes on both lines are the three 2s.")),
+    B("Ring the 2s on both lines. 41 and 53 are different primes, so they stay out.",
+      *(factor_marks("a", 328, [2, 2, 2]) + factor_marks("b", 424, [2, 2, 2]))),
+    B("Multiply what is shared: 2 times 2 times 2 is 8. So the H C F is 8.",
+      VENN("v", "Primes of 328", "Primes of 424", "41", "2 × 2 × 2", "53", ["both"], "The overlap holds the primes both numbers share."),
+      W("m", "2 × 2 × 2 = 8"), ANS("ans", "HCF = 8"), CIRC("ans", "HCF = 8")),
+    B("Check: 328 divided by 8 is 41, and 424 divided by 8 is 53. 41 and 53 share nothing, so 8 is the biggest.",
+      W("c1", "328 ÷ 8 = 41"), W("c2", "424 ÷ 8 = 53")),
+    B("Notice the trap: 41 is a factor of 328, but it does not go into 424. A common factor has to divide both numbers."),
+)
+
+# The HCF of 56 and 1✻9 is 7. Which digit can replace the asterisk?
+LESSONS["EXT_G5_WS_B6_002"] = LESSON(
+    B("The H C F of 56 and a number with a hidden digit is 7. We must find the hidden digit.",
+      GIVEN("q", "HCF of 56 and 1✻9 is 7")),
+    B("The H C F is 7. What does that tell us about the number with the star?",
+      ask=CHOOSE(["It is smaller than 7", "7 divides it exactly", "It ends in 7"], 1,
+                 "The H C F is a common factor, so it divides both numbers. That means 7 goes into 56, and 7 goes into the star number too.")),
+    B("56 is 7 times 8, so that one is fine. Now we test each choice in the star number. A handy anchor: 7 times 20 is 140.",
+      W("a", "56 = 7 × 8"), W("anchor", "7 × 20 = 140")),
+    B("With 7 we get 179. Take off 140 and 39 is left. 39 is 7 times 5, plus 4 over. So 179 is out.",
+      W("b1", "179 − 140 = 39"), W("b2", "39 = 7 × 5 + 4"), STRIKE("b1", "179", "out")),
+    B("With 8 we get 189. Take off 140 and 49 is left. And 49 is 7 times 7!",
+      W("c1", "189 − 140 = 49"), W("c2", "49 = 7 × 7")),
+    B("So 189 is 7 times 27. The digit 8 works.",
+      W("c3", "189 = 7 × 27"), CIRC("c3", "189")),
+    B("The other choices give 199 and 109. 199 is 10 more than 189, and 109 is 80 less. 10 and 80 are not in the 7 times table, so both miss.",
+      W("d1", "199 − 189 = 10"), W("d2", "189 − 109 = 80")),
+    B("One last check. 56 is 7 times 8 and 189 is 7 times 27. 8 and 27 share no factor, so the H C F is exactly 7. The digit is 8.",
+      ANS("ans", "✻ = 8"), CIRC("ans", "8")),
+    B("If you know the H C F, you know it divides both numbers. That turns the puzzle into a divisibility test."),
+)
+
+# The sum of the HCF and the LCM of 27 and 72.
+LESSONS["EXT_G5_WS_B6_003"] = LESSON(
+    B("Two jobs, then an addition. The H C F is the biggest number that divides both. The L C M is the first number both tables reach.",
+      GIVEN("q", "HCF + LCM of 27 and 72 = ?")),
+    B("Split each number into primes. 27 is 3 times 3 times 3.",
+      TREE("ta", 27), factor_write("a", 27)),
+    B("72 is even: halve it three times and 9 is left, which is 3 times 3. So 72 is 2 times 2 times 2 times 3 times 3.",
+      TREE("tb", 72), factor_write("b", 72)),
+    B("For the H C F, which primes do we take?",
+      ask=CHOOSE(["Every prime: 2 × 2 × 2 × 3 × 3 × 3", "Only the shared ones: 3 × 3", "3 × 3 × 3"], 1,
+                 "The H C F uses only what both numbers have. 27 has three 3s but 72 has only two, so they share two 3s.")),
+    B("They share two 3s. 3 times 3 is 9, so the H C F is 9.",
+      *(factor_marks("a", 27, [3, 3]) + factor_marks("b", 72, [3, 3]) + [W("h", "3 × 3 = 9"), LB("hh", "HCF = 9")])),
+    B("For the L C M we take every prime the most times it appears: three 2s from 72, and three 3s from 27.",
+      VENN("v", "Primes of 27", "Primes of 72", "3", "3 × 3", "2 × 2 × 2", ["left", "both", "right"],
+           "The L C M uses every prime in the picture, once each.")),
+    B("2 times 2 times 2 is 8, and 3 times 3 times 3 is 27. 8 times 27 is 216, so the L C M is 216.",
+      W("l1", "2 × 2 × 2 × 3 × 3 × 3 = 8 × 27"), W("l2", "8 × 27 = 216"), LB("ll", "LCM = 216")),
+    B("Careful not to mix them up. The H C F is the small one, 9. The L C M is the big one, 216. Now add: 9 plus 216 is 225.",
+      W("s", "9 + 216 = 225"), ANS("ans", "HCF + LCM = 225"), CIRC("ans", "225")),
+    B("A quick check on the L C M: 216 divided by 27 is 8, and 216 divided by 72 is 3. Both exact.",
+      W("c1", "216 ÷ 27 = 8"), W("c2", "216 ÷ 72 = 3")),
+    B("Shared primes give the H C F. Every prime, the most times it appears, gives the L C M. Then do what the question asks with them."),
+)
+
+# For 45 and 54, find LCM − 13 times HCF.
+LESSONS["EXT_G5_WS_B6_004"] = LESSON(
+    B("For 45 and 54 we need the L C M, take away 13 times the H C F. So first we find the H C F and the L C M.",
+      GIVEN("q", "LCM − 13 × HCF, for 45 and 54")),
+    B("45 ends in 5, so 5 goes in, and 9 is left. So 45 is 3 times 3 times 5.",
+      TREE("ta", 45), factor_write("a", 45)),
+    B("54 is even, so 2 comes out. What is left splits into 3 times 3 times 3.",
+      TREE("tb", 54), factor_write("b", 54)),
+    B("They share two 3s. 3 times 3 is 9, so the H C F is 9.",
+      *(factor_marks("a", 45, [3, 3]) + factor_marks("b", 54, [3, 3]) + [W("h", "3 × 3 = 9"), LB("hh", "HCF = 9")])),
+    B("Now the L C M. How many 3s does it need?",
+      ask=CHOOSE(["Two, the shared ones", "Five, all of them", "Three, the most in one number"], 2,
+                 "The L C M must hold all of 54, and 54 has three 3s. Those three already cover the two 3s in 45, so we do not need five.")),
+    B("So the L C M is 2, times three 3s, times 5. That is 54 times 5, which is 270.",
+      W("l1", "2 × 3 × 3 × 3 × 5 = 54 × 5"), W("l2", "54 × 5 = 270"), LB("ll", "LCM = 270")),
+    B("Now the expression: 270, minus 13 times 9. Which part do we work out first?",
+      W("e", "270 − 13 × 9"),
+      ask=CHOOSE(["270 − 13", "13 × 9"], 1,
+                 "Multiplying comes before subtracting. So first work out 13 times the H C F, then take that away from the L C M.")),
+    B("13 times 9 is 117. And 270 minus 117 is 153.",
+      UL("e", "13 × 9"), W("e1", "13 × 9 = 117"), W("e2", "270 − 117 = 153"), ANS("ans", "Answer: 153"), CIRC("ans", "153")),
+    B("Find the H C F from the shared primes, the L C M from every prime the most times, and then follow the order of operations."),
+)
+
+# The LCM of 12, 36 and 120.
+LESSONS["EXT_G5_WS_B6_005"] = LESSON(
+    B("We need the L C M of three numbers: the first number that the 12, 36 and 120 times tables all reach.",
+      GIVEN("q", "LCM of 12, 36 and 120 = ?")),
+    B("With three numbers, prime factors are the tidy way. 12 is 2 times 2 times 3.",
+      factor_write("a", 12)),
+    B("36 is 2 times 2 times 3 times 3. And 120 is 2 times 2 times 2 times 3 times 5.",
+      factor_write("b", 36), factor_write("c", 120)),
+    B("Count how many of each prime every number has. The table shows it.",
+      TABLE("t", ["Number", "2s", "3s", "5s"], [["12", "2", "1", "0"], ["36", "2", "2", "0"], ["120", "3", "1", "1"]],
+            None, "For the L C M, take the biggest count in each column.")),
+    B("For the L C M, how many 2s do we take?",
+      ask=CHOOSE(["2, the smallest count", "3, the biggest count", "7, all of them added"], 1,
+                 "The L C M must hold all of 120, which has three 2s. Those cover the two 2s in 12 and in 36. So we take the biggest count, 3.")),
+    B("The same goes for the others: three 2s from 120, two 3s from 36, and the 5 from 120.",
+      *(factor_marks("c", 120, [2, 2, 2, 5], "box") + factor_marks("b", 36, [3, 3], "box"))),
+    B("2 times 2 times 2 is 8, and 3 times 3 is 9. 8 times 9 is 72, and 72 times 5 is 360.",
+      W("m1", "2 × 2 × 2 × 3 × 3 × 5 = 8 × 9 × 5"), W("m2", "8 × 9 = 72"), W("m3", "72 × 5 = 360")),
+    B("So the L C M is 360.",
+      ANS("ans", "LCM = 360"), CIRC("ans", "LCM = 360")),
+    B("Check: 360 divided by 12 is 30, divided by 36 is 10, and divided by 120 is 3. All exact.",
+      W("c1", "360 ÷ 12 = 30"), W("c2", "360 ÷ 36 = 10"), W("c3", "360 ÷ 120 = 3")),
+    B("Notice that 120 could not be the answer, because 36 does not go into 120. The L C M must be a multiple of every number."),
+)

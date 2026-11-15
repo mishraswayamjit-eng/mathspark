@@ -1,0 +1,225 @@
+"""Hand-written lessons, part 2: divisibility by 7, 9, 10, 11, 12, 18, and prime numbers."""
+from factors_lib import *  # noqa: F401,F403
+
+LESSONS = {}
+
+# ✻96 is completely divisible by 7.
+LESSONS["EXT_G5_WS_B4_007"] = LESSON(
+    B("A three-digit number ends in 96, and its first digit is hidden. 7 divides it exactly. There is no handy digit trick for 7, so we test each choice.",
+      GIVEN("q", "✻96 is divisible by 7")),
+    B("Here is an anchor to make the testing easy. 7 times 100 is 700. We can peel 700 off a number and test the small piece that is left.",
+      W("anchor", "7 × 100 = 700")),
+    B("Try 7 first, which gives 796. Take away 700 and 96 is left. 96 is 7 times 13, plus 5 left over. So 796 is out.",
+      W("a1", "796 − 700 = 96"), W("a2", "96 = 7 × 13 + 5"), STRIKE("a1", "796", "out")),
+    B("Now 8, which gives 896. Take away 700 and 196 is left. 7 times 20 is 140, and that leaves 56. Is 56 in the 7 times table?",
+      W("b1", "896 − 700 = 196"), W("b2", "7 × 20 = 140"), W("b3", "196 − 140 = 56"),
+      ask=CHOOSE(["Yes: 7 × 8 = 56", "No: there is a remainder"], 0,
+                 "7 times 8 is 56, so yes. That means 196 splits into 140 and 56, both in the 7 times table.")),
+    B("So 896 is 700 plus 140 plus 56, and every piece is a multiple of 7. In fact 896 is 7 times 128.",
+      W("b4", "896 = 700 + 140 + 56"), W("b5", "896 = 7 × 128"), CIRC("b5", "896")),
+    B("Check the other two quickly. 696 is just 4 short of 700, so 7 misses it. And 396 is 7 times 56, plus 4 left over.",
+      W("c1", "700 − 696 = 4"), W("c2", "396 = 7 × 56 + 4")),
+    B("Only 896 works. So the hidden digit is 8.",
+      ANS("ans", "✻ = 8"), CIRC("ans", "8")),
+    B("When there is no quick rule, peel off an easy multiple, like 700, and test the small piece that is left."),
+)
+
+# 7✻✻5 leaves no remainder when divided by 9; smallest digit.
+LESSONS["EXT_G5_WS_B4_009"] = LESSON(
+    B("Two stars hide the same digit. The whole number leaves no remainder when divided by 9, and we want the smallest digit that works.",
+      GIVEN("q", "7✻✻5 is divisible by 9 (same digit twice)")),
+    B("What is the quick test for 9?",
+      ask=CHOOSE(["Add up the digits", "Look at the last digit", "Halve the number"], 0,
+                 "For 9, add up all the digits. If the sum is in the 9 times table, then the whole number is too.")),
+    B("Add the digits we can see: 7 plus 5 is 12. Then the hidden digit comes in twice.",
+      UL("q", "7"), UL("q", "5"), W("s", "7 + 5 = 12"), LB("s2", "Digit sum = 12 + ✻ + ✻")),
+    B("We want the smallest digit, so start from the smallest choice, 0. 12 plus 0 plus 0 is 12. That is 9 plus 3 left over, so 0 is out.",
+      W("t0", "12 + 0 + 0 = 12"), NOTE("t0", "12", "9 + 3", "below", 2)),
+    B("The next smallest choice is 2. 12 plus 2 plus 2 is 16. That is 9 plus 7 left over, so 2 is out as well.",
+      W("t2", "12 + 2 + 2 = 16"), NOTE("t2", "16", "9 + 7", "below")),
+    B("Now 3. 12 plus 3 plus 3 is 18. Is 18 in the 9 times table?",
+      W("t3", "12 + 3 + 3 = 18"),
+      ask=CHOOSE(["Yes: 9 × 2 = 18", "No: there is a remainder"], 0,
+                 "9 times 2 is 18, so yes, it is in the 9 times table.")),
+    B("So 3 works. The number is 7335, and 7335 divided by 9 is 815 exactly.",
+      NOTE("t3", "18", "9 × 2", "below"), W("d", "7335 ÷ 9 = 815"), ANS("ans", "Smallest digit = 3"), CIRC("ans", "3")),
+    B("What about 1, which is not among the choices? 12 plus 1 plus 1 is 14, and that is not in the 9 times table either. So 3 really is the smallest.",
+      W("t1", "12 + 1 + 1 = 14")),
+    B("So: write the digit sum, then test the choices from the smallest up, and stop at the first one that lands in the 9 times table."),
+)
+
+# What to subtract from 97 × 238 so the result is divisible by 10.
+LESSONS["EXT_G5_WS_B4_010"] = LESSON(
+    B("We take a number away from 97 times 238 so that 10 divides what is left. We will not need the whole product.",
+      GIVEN("q", "97 × 238 − ? is divisible by 10")),
+    B("When is a number divisible by 10?",
+      ask=CHOOSE(["When it ends in 0 or 5", "When it is even", "When it ends in 0"], 2,
+                 "Every number in the 10 times table ends in 0. Ending in 5 is enough for 5, but not for 10.")),
+    B("So we need the last digit of the product, and that comes from the last digits alone: 7 times 8.",
+      UL("q", "7"), UL("q", "8"), W("m", "7 × 8 = 56")),
+    B("56 ends in 6, so the whole product ends in 6. What must we take away to make it end in 0?",
+      CIRC("m", "6"),
+      ask=CHOOSE(["4", "6", "10"], 1,
+                 "The number ends in 6. Take away 6 and the ones place becomes 0. Taking away 10 changes the tens, but leaves that 6 right where it is.")),
+    B("Take away 6 and the last digit is 0. So 6 should be subtracted.",
+      W("a", "6 − 6 = 0"), ANS("ans", "Subtract 6"), CIRC("ans", "6")),
+    B("Check with the full product. 97 times 238 is 23086. Take away 6 and we get 23080, which ends in 0.",
+      W("c1", "97 × 238 = 23086"), W("c2", "23086 − 6 = 23080")),
+    B("So for 10, only the last digit matters. Find it from the last digits of the two numbers, and take exactly that much away."),
+)
+
+# 56✻8 is a four-digit multiple of 11.
+LESSONS["EXT_G5_WS_B4_011"] = LESSON(
+    B("One digit of this four-digit number is hidden. The number is a multiple of 11, and 11 has its own special test.",
+      GIVEN("q", "56✻8 is a multiple of 11")),
+    B("The test for 11 uses two totals. Add the 1st and 3rd digits. Then add the 2nd and 4th digits.",
+      LB("r1", "Add the 1st and 3rd digits. Add the 2nd and 4th.")),
+    B("If the two totals are equal, or exactly 11 apart, the number is a multiple of 11.",
+      LB("r2", "Totals equal, or 11 apart: multiple of 11")),
+    B("The 2nd and 4th digits are 6 and 8. Together they make 14.",
+      UL("q", "6"), UL("q", "8"), W("t1", "6 + 8 = 14")),
+    B("The 1st and 3rd digits are 5 and the star. So the other total is 5 plus the hidden digit. Which digit makes that total 14?",
+      LB("t2", "5 + ✻"),
+      ask=CHOOSE(["3", "6", "9"], 2,
+                 "We need 5 plus something to make 14. Count on from 5 up to 14: that takes 9 steps.")),
+    B("5 plus 9 is 14, so both totals are 14. The hidden digit is 9.",
+      W("t3", "5 + 9 = 14"), ANS("ans", "✻ = 9"), CIRC("ans", "9")),
+    B("Could the totals be 11 apart instead? Then 5 plus the star would have to be 3 or 25, and no single digit can do that.",
+      W("k1", "14 − 11 = 3"), W("k2", "14 + 11 = 25")),
+    B("Check: the number is 5698, and 5698 divided by 11 is 518 exactly.",
+      W("c", "5698 ÷ 11 = 518")),
+    B("So for 11: add every other digit to make two totals, and find the digit that makes them match."),
+)
+
+# ✻5✻0 is divisible by 11; the stars are the same digit.
+LESSONS["EXT_G5_WS_B4_012"] = LESSON(
+    B("Two stars hide the same digit, and 11 divides the whole number. Let's use the test for 11.",
+      GIVEN("q", "✻5✻0 is divisible by 11 (same digit twice)")),
+    B("For 11, add the 1st and 3rd digits, then the 2nd and 4th. The number passes when the two totals are equal, or exactly 11 apart.",
+      LB("r", "Totals equal, or 11 apart: divisible by 11")),
+    B("The 2nd and 4th digits are 5 and 0, which make 5.",
+      UL("q", "5"), UL("q", "0"), W("t1", "5 + 0 = 5")),
+    B("The 1st and 3rd digits are both the star. So the other total is the hidden digit, doubled.",
+      LB("t2", "✻ + ✻")),
+    B("Can a digit doubled ever be equal to 5?",
+      ask=CHOOSE(["Yes: 2 and 3", "No: a double is always even", "Yes: 5 and 0"], 1,
+                 "The two stars are the same digit, so their total is a double: 2, 4, 6, 8 and so on. Doubles are always even, and 5 is odd.")),
+    B("So the totals cannot be equal. The other way to pass is to be 11 apart. 5 plus 11 is 16.",
+      W("t3", "5 + 11 = 16")),
+    B("Which digit doubled makes 16? 8 plus 8. So the hidden digit is 8.",
+      W("t4", "8 + 8 = 16"), ANS("ans", "✻ = 8"), CIRC("ans", "8")),
+    B("Check: the number is 8580, and 8580 divided by 11 is 780 exactly.",
+      W("c", "8580 ÷ 11 = 780")),
+    B("With 11, remember there are two ways to pass: totals equal, or totals 11 apart. When the first cannot happen, try the second."),
+)
+
+# Least number to add to 555 to make it divisible by 12.
+LESSONS["EXT_G5_WS_B4_013"] = LESSON(
+    B("We want the least number to add to 555 so that 12 divides it. First we find where 555 sits among the multiples of 12.",
+      GIVEN("q", "555 + ? is divisible by 12")),
+    B("12 times 40 is 480. Take that from 555 and 75 is left. And 12 times 6 is 72.",
+      W("a1", "12 × 40 = 480"), W("a2", "555 − 480 = 75"), W("a3", "12 × 6 = 72")),
+    B("40 twelves and 6 twelves make 46 twelves, which is 552. And 555 is 3 more than that.",
+      W("a4", "12 × 46 = 552"), W("a5", "555 − 552 = 3")),
+    B("555 is 3 past a multiple of 12. So how far is it to the next multiple?",
+      ask=CHOOSE(["3", "12 − 3 = 9", "12"], 1,
+                 "Multiples of 12 are 12 apart. We have already come 3 of those 12 steps, so 9 steps are left.")),
+    B("The next multiple is 552 plus 12, which is 564. And 564 minus 555 is 9.",
+      W("b1", "552 + 12 = 564"), W("b2", "564 − 555 = 9"),
+      FIG("line", {"kind": "numberLine", "min": 552, "max": 564, "step": 1, "tickLabels": "ends",
+                   "points": [{"at": 555, "label": "555"}],
+                   "hops": [{"from": 552, "to": 555, "label": "3"}, {"from": 555, "to": 564, "label": "9"}]})),
+    B("So the least number to add is 9.",
+      ANS("ans", "Least number to add = 9"), CIRC("ans", "9")),
+    B("Check: 564 is 12 times 47, so it is in the 12 times table.",
+      W("c", "12 × 47 = 564")),
+    B("The trap is to answer 3, the remainder. The remainder says how far past a multiple you are. What you add is the rest of the jump: 12 minus the remainder."),
+)
+
+# Which of the following is exactly divisible by 18?
+LESSONS["EXT_G5_WS_B4_014"] = LESSON(
+    B("Which of these four numbers does 18 divide exactly? Four long divisions would be slow, so let's find a rule.",
+      GIVEN("q", "Which number is divisible by 18?")),
+    B("18 is 2 times 9. So what must be true of a number that 18 divides?",
+      W("r", "18 = 2 × 9"),
+      ask=CHOOSE(["Even, OR digit sum in the 9s", "Even, AND digit sum in the 9s", "It ends in 18"], 1,
+                 "If 18 goes into a number, then 2 and 9 both go into it. So the number must be even, and its digits must add up to a multiple of 9. Both tests, not just one.")),
+    B("First, 1881. It ends in 1, so it is odd. 2 will not go in, so 18 cannot.",
+      W("a", "1881"), UL("a", "1", 2), STRIKE("a", "1881", "odd")),
+    B("Next, 3072. It is even. 3 plus 0 plus 7 plus 2 makes 12, which is 9 plus 3 left over. So it is out.",
+      W("b", "3072"), W("bs", "3 + 0 + 7 + 2 = 12"), NOTE("bs", "12", "9 + 3", "below"), STRIKE("b", "3072", "out")),
+    B("Now 6666. Even again. 6 plus 6 plus 6 plus 6 makes 24, which is 9 times 2, plus 6 left over. Out.",
+      W("c", "6666"), W("cs", "6 + 6 + 6 + 6 = 24"), NOTE("cs", "24", "9 × 2 + 6", "below"), STRIKE("c", "6666", "out")),
+    B("Last one: 3978. It ends in 8, so it is even. 3 plus 9 plus 7 plus 8 makes 27. Is 27 in the 9 times table?",
+      W("d", "3978"), UL("d", "8"), W("ds", "3 + 9 + 7 + 8 = 27"),
+      ask=CHOOSE(["Yes: 9 × 3 = 27", "No: there is a remainder"], 0,
+                 "9 times 3 is 27, so yes, it is in the 9 times table.")),
+    B("So 3978 passes both tests. It is exactly divisible by 18, and the division gives 221.",
+      CIRC("d", "3978"), W("k", "3978 ÷ 18 = 221"), ANS("ans", "3978 is divisible by 18"), CIRC("ans", "3978")),
+    B("So for 18, think 2 times 9. The number must be even, and its digit sum must be in the 9 times table."),
+)
+
+# Which digit cannot be in the units place of a prime number?
+LESSONS["EXT_G5_WS_B4_016"] = LESSON(
+    B("A prime number has exactly two factors: 1 and itself. We must find the digit that can never be the last digit of a prime.",
+      GIVEN("q", "Which digit can never end a prime number?")),
+    B("Test each choice by hunting for a prime that ends in it. Start with 1. The number 11 ends in 1, and 11 is prime.",
+      LB("a", "Ends in 1: 11 is prime")),
+    B("Now 2. Is there any prime number that ends in 2?",
+      ask=CHOOSE(["No: they are all even", "Yes: 2 itself"], 1,
+                 "Bigger numbers ending in 2 are even, so they are not prime. But do not forget 2 itself. Its only factors are 1 and 2, so it is prime.")),
+    B("So 2 can be the last digit of a prime, because 2 itself is prime.",
+      LB("b", "Ends in 2: 2 is prime")),
+    B("Now 6. Numbers ending in 6 are 6, 16, 26, 36 and so on. Every one of them is even.",
+      LB("c", "Ends in 6: 6, 16, 26, 36 ... all even")),
+    B("An even number can always be divided by 2. And each of these is bigger than 2, so each has an extra factor. None of them can be prime.",
+      W("c1", "6 = 2 × 3"), W("c2", "16 = 2 × 8"), W("c3", "26 = 2 × 13")),
+    B("So 6 can never be in the units place of a prime number.",
+      ANS("ans", "Answer: 6"), CIRC("ans", "6")),
+    B("Careful with all of these: 1 and 2 both passed our test, so only 6 is impossible. And remember, 2 is the only even prime."),
+)
+
+# Which is the fourth consecutive prime number prior to 59?
+LESSONS["EXT_G5_WS_B4_017"] = LESSON(
+    B("Prior to means before. So we walk backwards from 59, collecting prime numbers, and stop at the fourth one.",
+      GIVEN("q", "4th prime before 59 = ?")),
+    B("Skip the even numbers, since none of them is prime. Start with 57. Its digits add up to 12, so 3 goes in: 57 is 3 times 19. Not prime.",
+      W("a0", "5 + 7 = 12"), W("a", "57 = 3 × 19")),
+    B("55 ends in 5, so 5 goes in: 55 is 5 times 11. Not prime.",
+      W("b", "55 = 5 × 11")),
+    B("53. Try the small primes in turn: 2, 3, 5 and 7. None of them goes in, so 53 is prime. That is our 1st.",
+      LB("p1", "53 is prime: 1st")),
+    B("Next down is 51. Is 51 prime?",
+      ask=CHOOSE(["Yes, it is prime", "No: 51 = 3 × 17"], 1,
+                 "Add the digits: 5 plus 1 is 6, which is in the 3 times table. So 3 goes into 51, and 51 is 3 times 17.")),
+    B("51 is out, and 49 is 7 times 7, so that is out too. But 47 is prime: 2, 3, 5 and 7 all miss. That is our 2nd.",
+      W("c", "51 = 3 × 17"), W("d", "49 = 7 × 7"), LB("p2", "47 is prime: 2nd")),
+    B("45 ends in 5, so it is out. 43 is prime: our 3rd.",
+      W("e", "45 = 5 × 9"), LB("p3", "43 is prime: 3rd")),
+    B("And 41 is prime as well. That is the 4th, so we stop.",
+      LB("p4", "41 is prime: 4th"),
+      TABLE("t", ["1st", "2nd", "3rd", "4th"], [["53", "47", "43", "41"]]),
+      ANS("ans", "4th prime before 59 = 41"), CIRC("ans", "41")),
+    B("The traps were 51 and 55. They look prime, but 3 goes into 51 and 5 goes into 55. And 43 is only the 3rd, so count carefully."),
+    B("To test a two-digit number for being prime, try 2, 3, 5 and 7 in turn. If none of them goes in, it is prime."),
+)
+
+# How many two-digit primes have both digits prime?
+LESSONS["EXT_G5_WS_B4_021"] = LESSON(
+    B("We want two-digit prime numbers whose two digits are prime numbers as well. Let's narrow it down step by step.",
+      GIVEN("q", "2-digit primes whose digits are both prime: how many?")),
+    B("First, which digits are prime? 2, 3, 5 and 7. So each digit of our number must be one of these.",
+      LB("d", "Prime digits: 2, 3, 5, 7")),
+    B("Think about the last digit. Which last digits could a two-digit prime have?",
+      ask=CHOOSE(["2 or 5", "3 or 7", "Any of 2, 3, 5, 7"], 1,
+                 "A two-digit number ending in 2 is even, and one ending in 5 is in the 5 times table. Neither can be prime. So the last digit must be 3 or 7.")),
+    B("That leaves only 8 numbers to test. Ending in 3: 23, 33, 53 and 73. Ending in 7: 27, 37, 57 and 77.",
+      LB("l3", "23, 33, 53, 73"), LB("l7", "27, 37, 57, 77")),
+    B("Cross out the ones that split. 33 is 3 times 11. 27 is 3 times 9. 57 is 3 times 19. And 77 is 7 times 11.",
+      STRIKE("l3", "33", "3 × 11"), STRIKE("l7", "27", "3 × 9"), STRIKE("l7", "57", "3 × 19"), STRIKE("l7", "77", "7 × 11")),
+    B("The ones left are 23, 53, 73 and 37. Try 2, 3, 5 and 7 on each one: nothing goes in. They are all prime.",
+      CIRC("l3", "23"), CIRC("l3", "53"), CIRC("l3", "73"), CIRC("l7", "37")),
+    B("So there are 4 such numbers.",
+      ANS("ans", "4 numbers: 23, 37, 53, 73"), CIRC("ans", "4 numbers")),
+    B("Notice how we cut the work down: prime digits first, then the last digit, and only then test what was left."),
+)
