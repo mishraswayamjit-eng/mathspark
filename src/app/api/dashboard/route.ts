@@ -91,7 +91,7 @@ export async function GET() {
       },
       {
         headers: {
-          'Cache-Control': 's-maxage=30, stale-while-revalidate=120',
+          'Cache-Control': 'private, no-store',
         },
       },
     );
