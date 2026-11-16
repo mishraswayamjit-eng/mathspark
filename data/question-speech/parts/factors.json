@@ -1632,6 +1632,27 @@
    "So 3978 is exactly divisible by 18. 3978 is 18 times 221."
   ]
  },
+ "EXT_G5_WS_B4_015": {
+  "q": "Which of the following statements is true?",
+  "options": [
+   "Any multiple of 4 is also a multiple of 8.",
+   "Every number divisible by 12 is also a multiple of 6.",
+   "The difference of two prime numbers is always a prime number.",
+   "Every odd multiple of 3 is also divisible by 9."
+  ],
+  "hints": [
+   "For each statement, hunt for one example that breaks it. If you can find one, the statement is not always true.",
+   "Test the first one: 4 is a multiple of 4. Is it a multiple of 8? Then test the primes: 7 and 3 are both prime. Is 7 minus 3 a prime number? Keep going until one statement cannot be broken.",
+   "A statement like this is always true: 'every multiple of 10 is a multiple of 5'. That is because 10 equals 5 times 2, so every multiple of 10 is made of 5s."
+  ],
+  "steps": [
+   "4 is a multiple of 4 but not a multiple of 8, so the first statement is not true.",
+   "7 and 3 are prime, but 7 minus 3 equals 4 is not prime. So the statement about the difference of two primes is not true.",
+   "3 is an odd multiple of 3, but it is not divisible by 9. So the last statement is not true.",
+   "12 equals 6 times 2, so any number made of 12s is also made of 6s. For example 36 equals 12 times 3, which is 6 times 6.",
+   "So the true statement is: every number divisible by 12 is also a multiple of 6."
+  ]
+ },
  "EXT_G5_WS_B4_016": {
   "q": "Which of the following cannot be in the units place of a prime number?",
   "options": [
@@ -1983,6 +2004,25 @@
    "The product equals H C F times L C M.",
    "640 equals H C F times 80.",
    "The H C F is 640 divided by 80, which is 8."
+  ]
+ },
+ "EXT_G5_WS_B6_010": {
+  "q": "The G C D and L C M of two numbers are 12 and 240. If one number is 48, find half of the other.",
+  "options": [
+   "20",
+   "30",
+   "48",
+   "60"
+  ],
+  "hints": [
+   "G C D is another name for H C F. For any two numbers, H C F times L C M equals the product of the two numbers. Use this to find the other number, then halve it.",
+   "H C F times L C M equals 12 times 240. Divide that by the number you know, 48, to get the other number. Don't forget the last part: the question asks for half of it.",
+   "Try a smaller one: H C F 4, L C M 60, one number 12. The other is 4 times 60 divided by 12, which is 20, and half of 20 is 10."
+  ],
+  "steps": [
+   "Product equals H C F times L C M, that is 12 times 240, which is 2880.",
+   "Other number equals 2880 divided by 48, which is 60.",
+   "Half equals 60 divided by 2, which is 30."
   ]
  },
  "EXT_G5_WS_B6_011": {

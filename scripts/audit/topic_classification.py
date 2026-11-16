@@ -75,6 +75,11 @@ OWN = {
     "angle": r"angle|°|degree|line|parallel|perpendicular|acute|obtuse|reflex|complement|supplement|clock|ray|turn",
     "triangle": r"triangle|isosceles|equilateral|scalene|hypotenuse|vertex|vertices|sides",
     "area": r"area|perimeter|rectangle|square|length|breadth|side|cm|sq|m²|fence|boundary|circumference|tile|floor|field|wall",
+    # The extra-practice topics (extra: true in the tree). "mixed" holds whatever no other
+    # topic covers, so any text is its own.
+    "counting": r"how many|digit|number|formed|count|multiple|even|odd|page",
+    "measurement": r"\bkg\b|\bg\b|gram|litre|\bml\b|\bcm\b|\bmm\b|\bkm\b|\bm\b|metre|convert|weigh|capacity|length",
+    "mixed": r".",
 }
 # Narrow: words that all but name a topic (tested on the question text only).
 STRONG = {
@@ -105,6 +110,16 @@ STRONG_RE = dict((k, re.compile(v)) for k, v in STRONG.items())
 
 load_seed = bank.load_bank
 matches = bank.matches  # same rule as matchesSubTopicKey: the key must start a word
+
+
+EXTRA_NODE = re.compile(r"\{\s*id:\s*'([^']+)'[^}\n]*\bextra:\s*true")
+
+
+def extra_node_ids():
+    """Ids of the extra-practice topics (`extra: true` in src/data/topicTree.ts): not
+    chapters of the real paper, so they hold no real paper questions by design."""
+    with open(bank.TREE, encoding="utf-8") as f:
+        return set(EXTRA_NODE.findall(f.read()))
 
 
 def tree_nodes(grade):
@@ -151,6 +166,8 @@ def main():
         print("GRADE %d has no topics with a subTopicKey in the tree (Grade 4 uses chapter topics): nothing to check" % GRADE)
         return
     keys = [n["key"] for n in nodes]
+    extra_ids = extra_node_ids()
+    extra_keys = [n["key"] for n in nodes if n["id"] in extra_ids]
     name_of = dict((n["key"], n["name"]) for n in nodes)
     db_ids = sorted(set(n["db"] for n in nodes))
     pool = [q for q in load_seed() if q.get("topicId") in db_ids]
@@ -243,6 +260,8 @@ def main():
                 notes.append("thin %s" % step)
         if not mine and not extra:
             notes = ["NO QUESTIONS: no ladder, practice has nothing to serve"]
+        elif n["id"] in extra_ids:
+            notes.append("extra practice: exam-style by design" if not real else "EXTRA PRACTICE HOLDS %d REAL PAPER QUESTIONS" % len(real))
         elif len(real) < EXAM_REAL_MIN:
             notes.append("EXAM-STYLE ONLY (%d real)" % len(real))
         elif len(real) < THIN:
@@ -287,6 +306,9 @@ def main():
     real = [q for q in pool if is_real[q["id"]]]
     print("\n5. REAL PAST-PAPER QUESTIONS: %d held; %d reach no topic, %d reach several" % (
         len(real), sum(1 for q in real if not hit[q["id"]]), sum(1 for q in real if len(hit[q["id"]]) > 1)))
+    if extra_keys:
+        print("   in an extra-practice topic (%s): %d (must be 0: extra practice is not part of the real paper)" % (
+            ", ".join(extra_keys), sum(1 for q in real if any(k in extra_keys for k in hit[q["id"]]))))
     lost = collections.Counter(short(q.get("subTopic")) for q in real if not hit[q["id"]])
     for label, c in lost.most_common():
         print("   reaches no topic: %-40s %3d" % (label[:40], c))

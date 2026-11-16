@@ -1,6 +1,6 @@
 import { MS_PER_DAY } from '@/lib/timeConstants';
 import { prisma } from '@/lib/db';
-import { TOPIC_TREE, getTopicsForGrade } from '@/data/topicTree';
+import { TOPIC_TREE, getTopicsForGrade, isExtraTopicId } from '@/data/topicTree';
 import { parseStringArray } from '@/lib/jsonFields';
 import { computeStreak, matchesSubTopicKey } from '@/lib/sharedUtils';
 import { practiceUrlForNode, practiceUrlForNodeId } from './practiceUrl';
@@ -225,7 +225,9 @@ export async function computeExamReadiness(
     select: { grade: true, examDate: true },
   });
 
-  const m = masteries ?? (await computeTopicMastery(studentId));
+  // Extra-practice topics are not on the real paper: they neither raise nor
+  // lower exam readiness (average mastery, share of the syllabus covered).
+  const m = examTopicEntries(masteries ?? (await computeTopicMastery(studentId)));
   if (!m.length) {
     return {
       score: 0, predictedMin: 0, predictedMax: 4, daysUntilExam: null,
@@ -366,7 +368,27 @@ export async function computeTopicPriorities(
     };
   });
 
-  return priorities.sort((a, b) => b.priority - a.priority);
+  return orderPriorities(priorities);
+}
+
+/** The entries of exam topics only: extra-practice topics (topicTree `extra`) are left out. */
+export function examTopicEntries<T extends { topicId: string }>(entries: T[]): T[] {
+  return entries.filter((e) => !isExtraTopicId(e.topicId));
+}
+
+/**
+ * Highest priority first, with every exam topic ahead of every extra-practice
+ * topic: an extra topic is offered only once no exam topic is left to offer.
+ * (With examWeight 0 alone, an untouched extra topic would still outrank an
+ * exam topic the child has started, because the gap counts for more.)
+ */
+export function orderPriorities<T extends { topicId: string; priority: number }>(priorities: T[]): T[] {
+  return priorities.slice().sort((a, b) => {
+    const aExtra = isExtraTopicId(a.topicId);
+    const bExtra = isExtraTopicId(b.topicId);
+    if (aExtra !== bExtra) return aExtra ? 1 : -1;
+    return b.priority - a.priority;
+  });
 }
 
 // ── d) generateDailyPlan ──────────────────────────────────────────────────────
@@ -437,9 +459,10 @@ export async function generateDailyPlan(
   // Deduped on the node id. (It used to test whether a plan link contained the
   // database topic id, which is the same "grade5" for every Grade 5 node, so
   // this item could never appear for a keyed grade.)
-  const coverageGap = m.find((t) =>
-    t.coverage < 0.2 && plannedNodeIds.indexOf(t.topicId) === -1,
-  );
+  // An exam topic if one has a gap; an extra-practice topic only when none does.
+  const gaps = m.filter((t) => t.coverage < 0.2 && plannedNodeIds.indexOf(t.topicId) === -1);
+  const examGaps = examTopicEntries(gaps);
+  const coverageGap = examGaps.length > 0 ? examGaps[0] : gaps[0];
   if (coverageGap) {
     const exploreUrl = practiceUrlForNodeId(coverageGap.topicId);
     if (exploreUrl) {

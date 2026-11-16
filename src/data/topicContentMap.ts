@@ -8,6 +8,8 @@
  * content really is about that node; nothing is guessed, so gaps are real gaps.
  *
  * Grade 5 only for now. Other grades have no entry and so get no content actions.
+ * The topic page (src/app/(app)/topic/[nodeId]) reads every field; the
+ * next-action rules read all but conceptTrainerSlug and exampleTopic.
  *
  * Server-side use only (it reads the hands-on lesson list through
  * src/lib/handsOn/partition.ts). Do not import it into a client component.
@@ -40,6 +42,13 @@ export interface TopicContent {
   strategyIds?: string[];
   /** Grade 5 flashcard deck (`topicId` in data/concept_flashcards_all_grades.json). */
   flashcardTopicId?: string;
+  /** Concept trainer slug (src/data/conceptTrainers.ts) → /learn/concept-trainer/[slug]. */
+  conceptTrainerSlug?: string;
+  /**
+   * `topic` in data/worked-examples.json that has Grade 5 examples about this
+   * node. Shown on the topic page only; the next-action rules do not read it.
+   */
+  exampleTopic?: string;
 }
 
 const GRADE5_HANDS_ON_FRACTIONS: string[] = HANDS_ON_LESSONS
@@ -51,13 +60,16 @@ export const TOPIC_CONTENT_MAP: Record<string, TopicContent> = {
     lessonSlug: 'place-value',
     drillTopicId: 'place_value_number_system',
     drillLevelId: 'L2',
+    exampleTopic: 'place_value',
   },
   gr5_operations1: {
+    lessonSlug: 'addition-subtraction',
     drillTopicId: 'arithmetic_operations',
     drillLevelId: 'L2',
     strategyIds: ['STR_017'],
   },
   gr5_operations2: {
+    lessonSlug: 'multiplication-division',
     drillTopicId: 'arithmetic_operations',
     drillLevelId: 'L2',
     strategyIds: ['STR_016', 'STR_014', 'STR_030', 'STR_023'],
@@ -76,6 +88,7 @@ export const TOPIC_CONTENT_MAP: Record<string, TopicContent> = {
     lessonSlug: 'bodmas',
     drillTopicId: 'arithmetic_operations',
     drillLevelId: 'L2',
+    exampleTopic: 'bodmas',
   },
   gr5_squares: {
     lessonSlug: 'squares-roots',
@@ -83,17 +96,21 @@ export const TOPIC_CONTENT_MAP: Record<string, TopicContent> = {
     drillLevelId: 'L1',
     storyTopicIds: ['squares'],
     strategyIds: ['STR_015'],
+    exampleTopic: 'squares',
   },
   gr5_hcflcm: {
     lessonSlug: 'hcf-lcm',
     drillTopicId: 'factors_multiples',
     drillLevelId: 'L2',
     flashcardTopicId: 'lcmhcf',
+    exampleTopic: 'hcf_lcm',
   },
   gr5_algebra: {
+    lessonSlug: 'algebraic-expressions',
     drillTopicId: 'algebra_equations',
     drillLevelId: 'L2',
     flashcardTopicId: 'alg',
+    exampleTopic: 'algebra',
   },
   gr5_equations: {
     lessonSlug: 'equations',
@@ -107,6 +124,8 @@ export const TOPIC_CONTENT_MAP: Record<string, TopicContent> = {
     drillLevelId: 'L2',
     storyTopicIds: ['fractions'],
     strategyIds: ['STR_026'],
+    conceptTrainerSlug: 'fractions-g5',
+    exampleTopic: 'fractions',
   },
   gr5_decimals: {
     lessonSlug: 'decimals',
@@ -119,12 +138,14 @@ export const TOPIC_CONTENT_MAP: Record<string, TopicContent> = {
     drillTopicId: 'patterns_sequences',
     drillLevelId: 'L2',
     storyTopicIds: ['patterns'],
+    exampleTopic: 'patterns',
   },
   gr5_variation: {
     lessonSlug: 'ratios',
     drillTopicId: 'ratio_proportion',
     drillLevelId: 'L1',
     storyTopicIds: ['ratio'],
+    exampleTopic: 'ratio',
   },
   gr5_percentage: {
     lessonSlug: 'percentage',
@@ -133,6 +154,7 @@ export const TOPIC_CONTENT_MAP: Record<string, TopicContent> = {
     storyTopicIds: ['percentage'],
     strategyIds: ['STR_009', 'STR_031'],
     flashcardTopicId: 'pct',
+    conceptTrainerSlug: 'percent',
   },
   gr5_profitloss: {
     lessonSlug: 'profit-loss',
@@ -146,7 +168,7 @@ export const TOPIC_CONTENT_MAP: Record<string, TopicContent> = {
     flashcardTopicId: 'si',
   },
   gr5_speed: {
-    lessonSlug: 'time-calendar',
+    lessonSlug: 'speed-distance-time',
     drillTopicId: 'speed_time_distance',
     drillLevelId: 'L1',
     storyTopicIds: ['speed_distance'],

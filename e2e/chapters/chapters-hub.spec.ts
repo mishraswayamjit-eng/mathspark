@@ -29,7 +29,11 @@ test.describe('Chapters Hub — page load', () => {
     await page.goto('/chapters', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    // Topic cards are buttons (router.push) — look for mastery labels or question counts
+    // The shared topic list: a group heading, then one link per topic
+    await expect(page.getByRole('heading', { name: 'Exam topics' })).toBeVisible({ timeout: 10_000 });
+    expect(await page.locator('a[href^="/topic/"]').count()).toBeGreaterThan(0);
+
+    // Rows carry mastery labels or question counts
     const pageText = await page.textContent('body');
     const hasTopics = /mastered|learning|not started|question|solved/i.test(pageText ?? '');
     expect(hasTopics).toBeTruthy();
@@ -128,41 +132,22 @@ test.describe('Chapters Hub — topic interaction', () => {
     expect(hasMastery).toBeTruthy();
   });
 
-  test('clicking topic card navigates to practice page', async ({ authenticatedPage: page }) => {
+  test('clicking a topic opens its topic page, whose first action is Practise', async ({
+    authenticatedPage: page,
+  }) => {
     await page.goto('/chapters', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    // Topic cards are buttons that use router.push — find first clickable topic
-    const topicCard = page.locator('button').filter({
-      hasText: /mastered|learning|not started|question|solved/i,
-    }).first();
-    const hasCard = await topicCard.isVisible({ timeout: 10_000 }).catch(() => false);
+    // Topic rows are links to /topic/<nodeId>
+    const topicCard = page.locator('a[href^="/topic/"]').first();
+    await expect(topicCard).toBeVisible({ timeout: 10_000 });
+    await topicCard.click();
+    await page.waitForURL(/\/topic\/[a-z0-9_]+/, { timeout: 15_000 });
 
-    if (hasCard) {
-      await topicCard.click();
-      await page.waitForTimeout(3_000);
-      // Should navigate to practice page or show topic content
-      const url = page.url();
-      const pageText = await page.textContent('body');
-      expect(url.includes('/practice/') || (pageText?.length ?? 0) > 100).toBeTruthy();
-    } else {
-      // Fallback: just verify the page has topic content
-      const pageText = await page.textContent('body');
-      expect(pageText?.length).toBeGreaterThan(100);
-    }
-  });
-
-  test('flashcard banner links to /flashcards', async ({ authenticatedPage: page }) => {
-    await page.goto('/chapters', { waitUntil: 'domcontentloaded' });
-    await waitForDataLoad(page);
-
-    const flashcardBanner = page.locator('a[href*="/flashcards"]').first();
-    const hasBanner = await flashcardBanner.isVisible({ timeout: 10_000 }).catch(() => false);
-
-    if (hasBanner) {
-      await flashcardBanner.click();
-      await page.waitForURL(/\/flashcards/, { timeout: 10_000 });
-    }
+    // The topic page leads with Practise, which goes to that topic's practice
+    const practise = page.locator('[data-testid="topic-practise"]');
+    await expect(practise).toBeVisible({ timeout: 10_000 });
+    await expect(practise).toHaveAttribute('href', /^\/practice\//);
   });
 
   test('mock test banner links to /test', async ({ authenticatedPage: page }) => {

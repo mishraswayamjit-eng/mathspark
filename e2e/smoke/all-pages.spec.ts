@@ -96,6 +96,10 @@ test.describe('Authenticated pages', () => {
     await expectNoJSErrors(page, '/learn', 'Concept Lessons');
   });
 
+  test('/topic/gr5_fractions', async ({ authenticatedPage: page }) => {
+    await expectNoJSErrors(page, '/topic/gr5_fractions', 'Start practising');
+  });
+
   test('/practice/daily', async ({ authenticatedPage: page }) => {
     await expectNoJSErrors(page, '/practice/daily', 'Daily Challenge');
   });

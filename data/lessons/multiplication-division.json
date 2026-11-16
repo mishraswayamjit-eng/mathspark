@@ -1,0 +1,856 @@
+{
+  "id": "multiplication-division",
+  "topic": "Multiplication & Division",
+  "emoji": "✖️",
+  "color": "#6366F1",
+  "gradeRange": [
+    4,
+    6
+  ],
+  "description": "Multiplying, dividing, remainders and clever shortcuts",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Multiplying Big Numbers",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "One digit, then two",
+      "lessons": [
+        {
+          "id": "md-l1-les1",
+          "title": "Multiplying by One Digit",
+          "intro": "Multiply each digit of the big number, starting from the ones. Carry just as you do in addition.",
+          "visual": "",
+          "explanation": [
+            "For 346 × 7, start with the ones: 6 × 7 = 42. Write 2, carry 4.",
+            "Tens: 4 × 7 = 28, and 28 + 4 = 32. Write 2, carry 3.",
+            "Hundreds: 3 × 7 = 21, and 21 + 3 = 24. So 346 × 7 = 2,422."
+          ],
+          "rule": "Multiply from the ones, and add each carry after you multiply.",
+          "tip": "Multiply first, then add the carry. Never the other way round.",
+          "steps": [
+            {
+              "text": "Ones: 6 times 7.",
+              "notation": "6 \\times 7 = 42",
+              "tip": "Write 2, carry 4."
+            },
+            {
+              "text": "Tens: 4 times 7, plus the carried 4.",
+              "notation": "4 \\times 7 + 4 = 32",
+              "tip": "Write 2, carry 3."
+            },
+            {
+              "text": "Hundreds: 3 times 7, plus the carried 3.",
+              "notation": "3 \\times 7 + 3 = 24"
+            },
+            {
+              "text": "Read the answer.",
+              "notation": "346 \\times 7 = 2{,}422"
+            }
+          ]
+        },
+        {
+          "id": "md-l1-les2",
+          "title": "Multiplying by 10, 100 and 1,000",
+          "intro": "Multiplying by 10 moves every digit one place to the left. A zero fills the ones place.",
+          "visual": "",
+          "explanation": [
+            "47 × 10 = 470.",
+            "47 × 100 = 4,700 and 47 × 1,000 = 47,000.",
+            "For 30 × 400, multiply 3 × 4 = 12 and then write the three zeros: 30 × 400 = 12,000."
+          ],
+          "rule": "Count the zeros, multiply the other digits, then write the zeros back.",
+          "tip": "30 has one zero and 400 has two, so the answer ends in three zeros."
+        },
+        {
+          "id": "md-l1-les3",
+          "title": "Multiplying by Two Digits",
+          "intro": "Split the two-digit number into tens and ones. Multiply by each part and add.",
+          "visual": "",
+          "explanation": [
+            "For 46 × 23, think of 23 as 20 and 3.",
+            "46 × 3 = 138 and 46 × 20 = 920.",
+            "138 + 920 = 1,058, so 46 × 23 = 1,058."
+          ],
+          "rule": "Multiply by the ones, multiply by the tens, then add the two rows.",
+          "tip": "Put a 0 in the ones place before you start the tens row.",
+          "steps": [
+            {
+              "text": "Split 23 into 20 and 3.",
+              "notation": "23 = 20 + 3"
+            },
+            {
+              "text": "Multiply 46 by the ones part.",
+              "notation": "46 \\times 3 = 138"
+            },
+            {
+              "text": "Multiply 46 by the tens part.",
+              "notation": "46 \\times 20 = 920",
+              "tip": "This row always ends in 0."
+            },
+            {
+              "text": "Add the two rows.",
+              "notation": "138 + 920 = 1{,}058"
+            }
+          ]
+        },
+        {
+          "id": "md-l1-les4",
+          "title": "Any Order, Same Product",
+          "intro": "Like addition, multiplication does not mind the order.",
+          "visual": "",
+          "explanation": [
+            "8 × 25 = 200 and 25 × 8 = 200.",
+            "With three numbers, do the easy pair first: 4 × 17 × 25 = 4 × 25 × 17 = 100 × 17 = 1,700.",
+            "Pairs like 4 and 25, or 8 and 125, make round numbers."
+          ],
+          "rule": "You may multiply in any order. Choose the order that makes it easy.",
+          "tip": "Remember 4 × 25 = 100 and 8 × 125 = 1,000."
+        },
+        {
+          "id": "md-l1-les5",
+          "title": "Estimating a Product",
+          "intro": "Round each number to get a quick idea of how big the answer is.",
+          "visual": "",
+          "explanation": [
+            "For 48 × 21, round to 50 × 20 = 1,000.",
+            "The exact answer is 48 × 21 = 1,008. Very close.",
+            "If you had got 10,080, the estimate would tell you an extra zero had slipped in."
+          ],
+          "rule": "Round, multiply, and use the result to judge your exact answer.",
+          "tip": "An estimate tells you how many digits the answer should have."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "md-l1-q1",
+          "question": "What is 234 × 6?",
+          "answer": "1404",
+          "hint": "Start with the ones: 4 times 6. Remember to add each carry.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "md-l1-q2",
+          "question": "What is 58 × 100?",
+          "answer": "5800",
+          "hint": "Every digit moves two places to the left.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "md-l1-q3",
+          "question": "What is 60 × 700? Type your answer without commas.",
+          "answer": "42000",
+          "hint": "Multiply 6 by 7, then write back the three zeros.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "md-l1-q4",
+          "question": "What is 37 × 24?",
+          "answer": "888",
+          "hint": "Find 37 × 4 and 37 × 20, then add the two rows.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "md-l1-q5",
+          "question": "Each box holds 144 notebooks. The school buys 25 boxes. How many notebooks is that?",
+          "answer": "3600",
+          "hint": "Multiply 144 by 5 and by 20, then add the two rows.",
+          "difficulty": "stretch",
+          "story": "A school in Kochi is buying new notebooks.",
+          "isWord": true
+        },
+        {
+          "id": "md-l1-q6",
+          "question": "One ticket costs ₹485. The family needs 6 tickets. How many rupees do the tickets cost in all?",
+          "answer": "2910",
+          "hint": "Equal amounts, six times: multiply.",
+          "difficulty": "stretch",
+          "story": "Farhan's family is going on a train journey.",
+          "isWord": true
+        },
+        {
+          "id": "md-l1-q7",
+          "question": "What is 4 × 39 × 25?",
+          "answer": "3900",
+          "hint": "Multiply 4 by 25 first. It makes a round number.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "md-l1-q8",
+          "question": "What is 125 × 48?",
+          "answer": "6000",
+          "hint": "48 is 8 times 6, and 125 × 8 is a round number.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Dividing Big Numbers",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Share, group and bring down",
+      "lessons": [
+        {
+          "id": "md-l2-les1",
+          "title": "What Division Means",
+          "intro": "Division shares a number into equal groups. 20 ÷ 4 asks: how many fours make 20?",
+          "visual": "",
+          "explanation": [
+            "20 ÷ 4 = 5 because 4 × 5 = 20.",
+            "Every division fact has a multiplication fact behind it.",
+            "So your times tables do most of the work in division."
+          ],
+          "rule": "To divide, ask what times the divisor gives the number.",
+          "tip": "Stuck on 56 ÷ 7? Think: 7 times what makes 56?",
+          "steps": [
+            {
+              "text": "How many fours make 20?",
+              "notation": "20 \\div 4 = 5"
+            },
+            {
+              "text": "Check with multiplication.",
+              "notation": "4 \\times 5 = 20"
+            },
+            {
+              "text": "A bigger one: how many sevens make 56?",
+              "notation": "56 \\div 7 = 8",
+              "tip": "Because 7 × 8 = 56."
+            }
+          ]
+        },
+        {
+          "id": "md-l2-les2",
+          "title": "Long Division by One Digit",
+          "intro": "For big numbers, divide one digit at a time from the left. Divide, multiply, subtract, bring down.",
+          "visual": "",
+          "explanation": [
+            "For 936 ÷ 4, start with the 9 hundreds. 4 goes into 9 two times, with 1 left over.",
+            "Bring down the 3 to make 13. 4 goes into 13 three times, with 1 left over.",
+            "Bring down the 6 to make 16. 16 ÷ 4 = 4. So 936 ÷ 4 = 234."
+          ],
+          "rule": "Divide, multiply, subtract, bring down. Then repeat.",
+          "tip": "Division starts from the left, not from the ones.",
+          "steps": [
+            {
+              "text": "Hundreds: 4 goes into 9 two times. 1 is left.",
+              "notation": "9 - 4 \\times 2 = 1"
+            },
+            {
+              "text": "Bring down 3 to make 13. 4 goes into 13 three times. 1 is left.",
+              "notation": "13 - 4 \\times 3 = 1"
+            },
+            {
+              "text": "Bring down 6 to make 16. 4 goes into 16 four times.",
+              "notation": "16 \\div 4 = 4"
+            },
+            {
+              "text": "Read the answer, 234, and check it.",
+              "notation": "234 \\times 4 = 936"
+            }
+          ]
+        },
+        {
+          "id": "md-l2-les3",
+          "title": "Dividing by 10, 100 and 1,000",
+          "intro": "Dividing by 10 moves every digit one place to the right.",
+          "visual": "",
+          "explanation": [
+            "4,700 ÷ 10 = 470.",
+            "4,700 ÷ 100 = 47.",
+            "For 12,000 ÷ 400, remove two zeros from both numbers: 120 ÷ 4 = 30. So 12,000 ÷ 400 = 30."
+          ],
+          "rule": "Remove the same number of zeros from both numbers, then divide.",
+          "tip": "Only remove zeros from the end, and from both numbers together."
+        },
+        {
+          "id": "md-l2-les4",
+          "title": "When There Is a Remainder",
+          "intro": "Sometimes the groups do not come out even. What is left over is called the remainder.",
+          "visual": "",
+          "explanation": [
+            "Divide 23 by 5. Four 5s make 20, and 3 are left over.",
+            "We say the quotient is 4 and the remainder is 3.",
+            "Check: 5 × 4 + 3 = 23."
+          ],
+          "rule": "The remainder is always smaller than the divisor.",
+          "tip": "If your remainder is as big as the divisor, one more group will fit."
+        },
+        {
+          "id": "md-l2-les5",
+          "title": "Dividing by Two Digits",
+          "intro": "The steps are the same. It helps to write a few multiples of the divisor first.",
+          "visual": "",
+          "explanation": [
+            "For 864 ÷ 24, list the multiples 24, 48, 72 and 96.",
+            "24 goes into 86 three times, because 24 × 3 = 72. 86 − 72 = 14.",
+            "Bring down the 4 to make 144. 24 × 6 = 144. So 864 ÷ 24 = 36."
+          ],
+          "rule": "Write the first few multiples of the divisor, then divide as usual.",
+          "tip": "Check with multiplication: 36 × 24 = 864."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "md-l2-q1",
+          "question": "What is 72 ÷ 8?",
+          "answer": "9",
+          "hint": "Think: 8 times what makes 72?",
+          "difficulty": "direct"
+        },
+        {
+          "id": "md-l2-q2",
+          "question": "What is 852 ÷ 4?",
+          "answer": "213",
+          "hint": "Start from the left. How many 4s are in 8?",
+          "difficulty": "direct"
+        },
+        {
+          "id": "md-l2-q3",
+          "question": "What is 36,000 ÷ 900?",
+          "answer": "40",
+          "hint": "Remove two zeros from both numbers first.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "md-l2-q4",
+          "question": "What is the remainder when 47 is divided by 6?",
+          "answer": "5",
+          "hint": "Find the biggest multiple of 6 that is not more than 47.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "md-l2-q5",
+          "question": "She has 1,296 laddoos and packs 8 in each box. How many boxes does she fill?",
+          "answer": "162",
+          "hint": "Equal groups of 8: divide.",
+          "difficulty": "stretch",
+          "story": "A baker in Amritsar is packing laddoos for Diwali.",
+          "isWord": true
+        },
+        {
+          "id": "md-l2-q6",
+          "question": "There are 230 children. Each bus carries 45 children, and every bus is filled before the next one is used. How many children are in the last bus, which is not full?",
+          "answer": "5",
+          "hint": "Find how many full buses there are. The children left over go in the last bus.",
+          "difficulty": "stretch",
+          "story": "Class 5 is going on a picnic by bus.",
+          "isWord": true
+        },
+        {
+          "id": "md-l2-q7",
+          "question": "What is 1,344 ÷ 32?",
+          "answer": "42",
+          "hint": "List a few multiples of 32 first: 32, 64, 96, 128.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "md-l2-q8",
+          "question": "What is 7,035 ÷ 7?",
+          "answer": "1005",
+          "hint": "7 does not go into 0 or into 3. Write a 0 in the quotient each time.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "The Division Rule",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Four parts, one rule",
+      "lessons": [
+        {
+          "id": "md-l3-les1",
+          "title": "Four Names in a Division",
+          "intro": "Every division has four parts, and each part has a name.",
+          "visual": "",
+          "explanation": [
+            "In 23 ÷ 5, the number being divided, 23, is the dividend.",
+            "The number you divide by, 5, is the divisor.",
+            "The answer, 4, is the quotient. What is left over, 3, is the remainder."
+          ],
+          "rule": "Dividend ÷ divisor gives a quotient and a remainder.",
+          "tip": "The dividend is usually the biggest of the four numbers."
+        },
+        {
+          "id": "md-l3-les2",
+          "title": "The Division Rule",
+          "intro": "One rule ties the four parts together. It is the most useful rule in this topic.",
+          "visual": "",
+          "explanation": [
+            "Dividend = Divisor × Quotient + Remainder.",
+            "For 23 ÷ 5 it reads 5 × 4 + 3 = 23.",
+            "Use the rule to check any division."
+          ],
+          "rule": "Dividend = Divisor × Quotient + Remainder.",
+          "tip": "Multiply first, then add the remainder.",
+          "steps": [
+            {
+              "text": "Divide 23 by 5. Four 5s make 20.",
+              "notation": "5 \\times 4 = 20"
+            },
+            {
+              "text": "3 are left over. That is the remainder.",
+              "notation": "23 - 20 = 3"
+            },
+            {
+              "text": "Put the parts back together.",
+              "notation": "5 \\times 4 + 3 = 23",
+              "tip": "Divisor times quotient, plus remainder, gives the dividend."
+            }
+          ]
+        },
+        {
+          "id": "md-l3-les3",
+          "title": "Finding the Dividend",
+          "intro": "If you know the divisor, the quotient and the remainder, the rule gives you the dividend straight away.",
+          "visual": "",
+          "explanation": [
+            "A number divided by 12 gives quotient 7 and remainder 5. What is the number?",
+            "12 × 7 = 84, and 84 + 5 = 89.",
+            "The number is 89."
+          ],
+          "rule": "Multiply the divisor by the quotient, then add the remainder.",
+          "tip": "Do not forget to add the remainder at the end."
+        },
+        {
+          "id": "md-l3-les4",
+          "title": "Finding the Divisor",
+          "intro": "Sometimes the divisor is the missing part. Take the remainder away first.",
+          "visual": "",
+          "explanation": [
+            "When 500 is divided by a number, the quotient is 13 and the remainder is 19.",
+            "Take away the remainder: 500 − 19 = 481. This is the divisor times 13.",
+            "481 ÷ 13 = 37, so the divisor is 37."
+          ],
+          "rule": "Divisor = (dividend − remainder) ÷ quotient.",
+          "tip": "The divisor must be bigger than the remainder. Use that to check.",
+          "steps": [
+            {
+              "text": "Remove the remainder from the dividend.",
+              "notation": "500 - 19 = 481"
+            },
+            {
+              "text": "What is left is the divisor times the quotient. Divide by the quotient.",
+              "notation": "481 \\div 13 = 37"
+            },
+            {
+              "text": "Check with the rule.",
+              "notation": "37 \\times 13 + 19 = 500",
+              "tip": "The remainder 19 is smaller than 37. Good."
+            }
+          ]
+        },
+        {
+          "id": "md-l3-les5",
+          "title": "Remainder Smaller Than Divisor",
+          "intro": "A remainder can never be as big as the divisor.",
+          "visual": "",
+          "explanation": [
+            "When you divide by 6, the only possible remainders are 0, 1, 2, 3, 4 and 5.",
+            "If 6 were left over, one more group of 6 would fit.",
+            "So when you divide by 9, the largest possible remainder is 8."
+          ],
+          "rule": "The largest possible remainder is one less than the divisor.",
+          "tip": "Remainder 0 means the number divides exactly."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "md-l3-q1",
+          "question": "In 59 ÷ 7 the quotient is 8. What is the remainder?",
+          "answer": "3",
+          "hint": "Find 7 × 8, then see how far it is from 59.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "md-l3-q2",
+          "question": "What is the largest possible remainder when a number is divided by 15?",
+          "answer": "14",
+          "hint": "The remainder is always smaller than the divisor.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "md-l3-q3",
+          "question": "A number divided by 9 gives quotient 12 and remainder 4. What is the number?",
+          "answer": "112",
+          "hint": "Divisor times quotient, then add the remainder.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "md-l3-q4",
+          "question": "A number divided by 25 gives quotient 16 and remainder 9. What is the number?",
+          "answer": "409",
+          "hint": "Find 25 × 16 first, then add the remainder.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "md-l3-q5",
+          "question": "He makes 18 full rows of 24 chairs and has 7 chairs left over. How many chairs did he start with?",
+          "answer": "439",
+          "hint": "Rows times chairs in a row, then add the ones left over.",
+          "difficulty": "stretch",
+          "story": "Ishaan is arranging chairs for the school annual day.",
+          "isWord": true
+        },
+        {
+          "id": "md-l3-q6",
+          "question": "The shop packs 365 rasgullas into tins of 12. After filling as many tins as possible, how many rasgullas are left over?",
+          "answer": "5",
+          "hint": "Find the biggest multiple of 12 that is not more than 365.",
+          "difficulty": "stretch",
+          "story": "A sweet shop in Kolkata packs rasgullas in tins.",
+          "isWord": true
+        },
+        {
+          "id": "md-l3-q7",
+          "question": "When 2,000 is divided by a number, the quotient is 29 and the remainder is 57. What is the number?",
+          "answer": "67",
+          "hint": "Take away the remainder first. Then divide by the quotient.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "md-l3-q8",
+          "question": "When 1,000 is divided by a number, the quotient is 23 and the remainder is 11. What is the number?",
+          "answer": "43",
+          "hint": "Take away the remainder first. Then divide by the quotient.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Shortcuts and Patterns",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Work less, think more",
+      "lessons": [
+        {
+          "id": "md-l4-les1",
+          "title": "Split and Multiply",
+          "intro": "You can break a number into easy parts, multiply each part, and put the answers together.",
+          "visual": "",
+          "explanation": [
+            "7 × 98 = 7 × 100 − 7 × 2 = 700 − 14 = 686.",
+            "6 × 105 = 6 × 100 + 6 × 5 = 600 + 30 = 630.",
+            "Splitting turns one hard product into two easy ones."
+          ],
+          "rule": "To multiply by a number near 100, multiply by 100 and adjust.",
+          "tip": "Just below 100: subtract. Just above 100: add.",
+          "steps": [
+            {
+              "text": "98 is 2 less than 100.",
+              "notation": "98 = 100 - 2"
+            },
+            {
+              "text": "Multiply 7 by 100 and by 2.",
+              "notation": "7 \\times 100 = 700 \\quad 7 \\times 2 = 14"
+            },
+            {
+              "text": "Take the small product from the big one.",
+              "notation": "700 - 14 = 686",
+              "tip": "So 7 × 98 = 686."
+            }
+          ]
+        },
+        {
+          "id": "md-l4-les2",
+          "title": "Multiplying by 5 and 25",
+          "intro": "5 is half of 10, and 25 is a quarter of 100. That gives two quick tricks.",
+          "visual": "",
+          "explanation": [
+            "To multiply by 5, multiply by 10 and halve: 68 × 5 = 680 ÷ 2 = 340.",
+            "To multiply by 25, multiply by 100 and divide by 4: 36 × 25 = 3,600 ÷ 4 = 900.",
+            "These tricks are easiest with even numbers."
+          ],
+          "rule": "Times 5 is times 10, then halve. Times 25 is times 100, then divide by 4.",
+          "tip": "36 ÷ 4 = 9, so 36 × 25 is 9 hundreds."
+        },
+        {
+          "id": "md-l4-les3",
+          "title": "Multiplying by 9, 99 and 999",
+          "intro": "A number made of nines is always 1 less than a round number.",
+          "visual": "",
+          "explanation": [
+            "47 × 99 = 47 × 100 − 47 = 4,700 − 47 = 4,653.",
+            "23 × 999 = 23 × 1,000 − 23 = 23,000 − 23 = 22,977.",
+            "Multiply by the round number, then take the number away once."
+          ],
+          "rule": "To multiply by 99, multiply by 100 and subtract the number once.",
+          "tip": "99 lots is 100 lots take away 1 lot."
+        },
+        {
+          "id": "md-l4-les4",
+          "title": "The Last Digit of a Product",
+          "intro": "The last digit of a product depends only on the last digits of the numbers you multiply.",
+          "visual": "",
+          "explanation": [
+            "In 39 × 23 the last digits are 9 and 3. 9 × 3 = 27, so the product ends in 7.",
+            "Check: 39 × 23 = 897. It does end in 7.",
+            "In the exam this lets you cross out options that end in a different digit."
+          ],
+          "rule": "Multiply the last digits. The last digit of that answer is the last digit of the product.",
+          "tip": "Look at the last digits first, before any long working.",
+          "steps": [
+            {
+              "text": "A number ending in 9 is multiplied by a number ending in 3.",
+              "notation": "\\square 9 \\times \\square\\square 3"
+            },
+            {
+              "text": "Multiply just the last digits.",
+              "notation": "9 \\times 3 = 27"
+            },
+            {
+              "text": "So the product must end in 7. Try one.",
+              "notation": "39 \\times 23 = 897",
+              "tip": "Any option that does not end in 7 is out."
+            }
+          ]
+        },
+        {
+          "id": "md-l4-les5",
+          "title": "How Big Is the Product?",
+          "intro": "You can also tell roughly how many digits a product has.",
+          "visual": "",
+          "explanation": [
+            "A two-digit number times a three-digit number is at least 10 × 100 = 1,000.",
+            "It is less than 100 × 1,000 = 1,00,000.",
+            "So the product has 4 or 5 digits. An option with 6 digits cannot be right."
+          ],
+          "rule": "Use the smallest and largest possible numbers to find the size of a product.",
+          "tip": "Use the last digit and the number of digits together to pick the right option."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "md-l4-q1",
+          "question": "What is 8 × 99?",
+          "answer": "792",
+          "hint": "Multiply by 100, then take 8 away once.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "md-l4-q2",
+          "question": "What is 84 × 5?",
+          "answer": "420",
+          "hint": "Multiply by 10, then halve.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "md-l4-q3",
+          "question": "What is 44 × 25?",
+          "answer": "1100",
+          "hint": "Multiply by 100, then divide by 4.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "md-l4-q4",
+          "question": "What is 36 × 999? Type your answer without commas.",
+          "answer": "35964",
+          "hint": "Multiply by 1,000, then take 36 away once.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "md-l4-q5",
+          "question": "One packet costs ₹98. A teacher buys 15 packets. How many rupees does she pay?",
+          "answer": "1470",
+          "hint": "98 is 2 less than 100. Find 15 hundreds, then take away 15 twos.",
+          "difficulty": "stretch",
+          "story": "A stationery shop in Bhopal sells pens in packets.",
+          "isWord": true
+        },
+        {
+          "id": "md-l4-q6",
+          "question": "The floor has 25 rows with 48 tiles in each row. How many tiles are there?",
+          "answer": "1200",
+          "hint": "Multiply 48 by 100, then divide by 4.",
+          "difficulty": "stretch",
+          "story": "Tara is counting the tiles on a floor.",
+          "isWord": true
+        },
+        {
+          "id": "md-l4-q7",
+          "question": "What is the last digit of 47 × 68?",
+          "answer": "6",
+          "hint": "Multiply only the last digits, 7 and 8.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "md-l4-q8",
+          "question": "What is the last digit of 123 × 457 × 9?",
+          "answer": "9",
+          "hint": "Multiply the last digits two at a time. Keep only the last digit each time.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Exam Twists",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Remainders and repeats",
+      "lessons": [
+        {
+          "id": "md-l5-les1",
+          "title": "Making a Number Divide Exactly",
+          "intro": "To make a number divide exactly, remove the remainder.",
+          "visual": "",
+          "explanation": [
+            "What is the least number to subtract from 100 so that 7 divides it exactly?",
+            "100 divided by 7 gives quotient 14 and remainder 2, because 7 × 14 + 2 = 100.",
+            "Subtract the remainder: 100 − 2 = 98, and 98 ÷ 7 = 14 exactly."
+          ],
+          "rule": "The least number to subtract is the remainder.",
+          "tip": "Do the division first. The remainder is your answer.",
+          "steps": [
+            {
+              "text": "Divide 100 by 7 and find the remainder.",
+              "notation": "7 \\times 14 + 2 = 100"
+            },
+            {
+              "text": "The remainder is 2. Take it away.",
+              "notation": "100 - 2 = 98"
+            },
+            {
+              "text": "Check that 7 now divides exactly.",
+              "notation": "98 \\div 7 = 14",
+              "tip": "So the least number to subtract is 2."
+            }
+          ]
+        },
+        {
+          "id": "md-l5-les2",
+          "title": "Adding to Reach the Next Multiple",
+          "intro": "You can also add a little to reach the next number that divides exactly.",
+          "visual": "",
+          "explanation": [
+            "What is the least number to add to 100 so that 7 divides it exactly?",
+            "The remainder is 2, so 100 is 2 past a multiple of 7.",
+            "It needs 7 − 2 = 5 more. 100 + 5 = 105, and 105 ÷ 7 = 15 exactly."
+          ],
+          "rule": "The least number to add is the divisor minus the remainder.",
+          "tip": "Subtract the remainder to go down. Add divisor minus remainder to go up."
+        },
+        {
+          "id": "md-l5-les3",
+          "title": "Remainders of a Sum",
+          "intro": "When two numbers are added, their remainders are added too.",
+          "visual": "",
+          "explanation": [
+            "17 leaves remainder 2 when divided by 5. 9 leaves remainder 4.",
+            "The remainders add up to 2 + 4 = 6. But 6 is bigger than 5, so take out one more 5: 6 − 5 = 1.",
+            "Check: 17 + 9 = 26, and 26 = 5 × 5 + 1. The remainder is 1."
+          ],
+          "rule": "Add the remainders. If the total is as big as the divisor, divide once more.",
+          "tip": "Try small numbers of your own to test the idea."
+        },
+        {
+          "id": "md-l5-les4",
+          "title": "Equal Swaps",
+          "intro": "Some problems repeat the same step again and again. Count how many times it happens.",
+          "visual": "",
+          "explanation": [
+            "A basket has 60 mangoes. Each time, 4 mangoes are taken out and 3 apples are put in.",
+            "The step is repeated 60 ÷ 4 = 15 times, until no mangoes are left.",
+            "Each time 3 apples go in, so there are 15 × 3 = 45 apples at the end."
+          ],
+          "rule": "Divide to count the repeats, then multiply by what each repeat gives.",
+          "tip": "Ask two things: how many times, and how much each time.",
+          "steps": [
+            {
+              "text": "Count how many times 4 mangoes can be taken out of 60.",
+              "notation": "60 \\div 4 = 15"
+            },
+            {
+              "text": "Each time, 3 apples go in.",
+              "notation": "15 \\times 3 = 45",
+              "tip": "45 apples at the end."
+            }
+          ]
+        },
+        {
+          "id": "md-l5-les5",
+          "title": "Long Chains of Products",
+          "intro": "A long chain of multiplying can often be made shorter before you start.",
+          "visual": "",
+          "explanation": [
+            "How many days are there in 6 × 5 × 4 × 3 × 2 × 1 hours?",
+            "A day has 24 hours, and 4 × 3 × 2 × 1 = 24.",
+            "So the chain is 6 × 5 lots of 24 hours. That is 6 × 5 = 30 days."
+          ],
+          "rule": "Look for a part of the chain that equals the number you must divide by.",
+          "tip": "Do not multiply everything out first. Cancel what you can."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "md-l5-q1",
+          "question": "What is the least number that must be subtracted from 50 so that 6 divides it exactly?",
+          "answer": "2",
+          "hint": "Divide 50 by 6. What is left over?",
+          "difficulty": "direct"
+        },
+        {
+          "id": "md-l5-q2",
+          "question": "What is the least number that must be added to 50 so that 6 divides it exactly?",
+          "answer": "4",
+          "hint": "Find the remainder first. How much more is needed to make one more 6?",
+          "difficulty": "direct"
+        },
+        {
+          "id": "md-l5-q3",
+          "question": "What least number should be subtracted from 500 so that the result is divisible by 23?",
+          "answer": "17",
+          "hint": "Find the biggest multiple of 23 that is not more than 500.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "md-l5-q4",
+          "question": "When X is divided by 5 the remainder is 2. When Y is divided by 5 the remainder is 4. What is the remainder when X + Y is divided by 5?",
+          "answer": "1",
+          "hint": "Add the two remainders. Is the total as big as 5?",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "md-l5-q5",
+          "question": "The basket has 104 mangoes. Each time she takes out 4 mangoes and puts in 3 apples, until no mangoes are left. How many apples are in the basket at the end?",
+          "answer": "78",
+          "hint": "How many times can 4 mangoes be taken out? Each time, 3 apples go in.",
+          "difficulty": "stretch",
+          "story": "A fruit seller in Nagpur is changing what is in her basket.",
+          "isWord": true
+        },
+        {
+          "id": "md-l5-q6",
+          "question": "The experiment runs for 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1 minutes. How many weeks is that?",
+          "answer": "4",
+          "hint": "An hour has 60 minutes, a day has 24 hours and a week has 7 days. Look for those numbers inside the chain.",
+          "difficulty": "stretch",
+          "story": "Dev set a timer for a very long science experiment.",
+          "isWord": true
+        },
+        {
+          "id": "md-l5-q7",
+          "question": "What least number should be subtracted from 13,601 so that the result is divisible by 87?",
+          "answer": "29",
+          "hint": "Divide 13,601 by 87. The remainder is the number to take away.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "md-l5-q8",
+          "question": "What is the remainder when 1 × 3 × 5 × 7 × 9 is divided by 18?",
+          "answer": "9",
+          "hint": "Multiply the chain out first. It comes to 945.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

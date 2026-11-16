@@ -15,6 +15,9 @@ const TAB_FOR_ROUTE = [
   { route: '/learn/stories', tab: '/learn' },
   { route: '/learn/concept-map', tab: '/learn' },
   { route: '/chapters', tab: '/practice' },
+  // A topic page lights the tab the child came from (Practise unless told otherwise)
+  { route: '/topic/gr5_fractions', tab: '/practice' },
+  { route: '/topic/gr5_fractions?from=learn', tab: '/learn' },
   { route: '/flashcards', tab: '/practice' },
   { route: '/practice/skill-drill', tab: '/practice' },
   { route: '/practice/exam-tips', tab: '/practice' },

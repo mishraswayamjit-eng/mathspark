@@ -29,9 +29,20 @@ load_seed = bank.load_bank
 matches = bank.matches  # same rule as matchesSubTopicKey: the key must start a word
 
 
+EXTRA_NODE = re.compile(r"\{\s*id:\s*'([^']+)'[^}\n]*\bextra:\s*true")
+
+
+def extra_node_ids():
+    """Ids of the extra-practice topics (`extra: true` in src/data/topicTree.ts)."""
+    with open(bank.TREE, encoding="utf-8") as f:
+        return set(EXTRA_NODE.findall(f.read()))
+
+
 def tree_nodes(grade):
-    """The grade's topics, without the past-papers node (it is not in the mock blueprint)."""
-    return [n for n in bank.tree_nodes(grade) if not n["id"].endswith("_ipm")]
+    """The grade's topics that can be on a test: without the past-papers node and without
+    the extra-practice topics (neither is in the mock blueprint, as in buildGradeBlueprint)."""
+    extra = extra_node_ids()
+    return [n for n in bank.tree_nodes(grade) if not n["id"].endswith("_ipm") and n["id"] not in extra]
 
 
 def js_round(x):

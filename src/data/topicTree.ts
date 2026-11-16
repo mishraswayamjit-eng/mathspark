@@ -11,6 +11,10 @@ export interface TopicNode {
   examWeight: number;  // 0.0–1.0 relative IPM importance within grade
   dbTopicId: string;   // actual topicId in Question table
   subTopicKey?: string; // if set, filter by subTopic ILIKE '%key%' within dbTopicId
+  // A topic that is not a chapter of the real exam paper: extra practice. It is listed
+  // apart from the exam chapters ("Extra practice"), carries examWeight 0, and is never
+  // part of a mock test or of any exam-weight sum (blueprints, exam readiness).
+  extra?: boolean;
 }
 
 // ── Grade 4 — Full ch-series + IPM pool ──────────────────────────────────────
@@ -85,6 +89,11 @@ const GRADE5_TOPICS: TopicNode[] = [
   { id: 'gr5_angles',       name: 'Angles & Lines',                 emoji: '📐', grade: 5, examWeight: 0.04, dbTopicId: 'grade5', subTopicKey: 'angle' },
   { id: 'gr5_triangles',    name: 'Triangles',                      emoji: '🔺', grade: 5, examWeight: 0.04, dbTopicId: 'grade5', subTopicKey: 'triangle' },
   { id: 'gr5_area',         name: 'Area & Perimeter',               emoji: '📏', grade: 5, examWeight: 0.05, dbTopicId: 'grade5', subTopicKey: 'area' },
+  // Extra practice: not chapters of the real paper (extra: true, examWeight 0). They hold
+  // the worksheet questions no exam chapter covers (scripts/fixes/home_orphans.py).
+  { id: 'gr5_counting',     name: 'Counting & Number Formation',    emoji: '🔟', grade: 5, examWeight: 0, dbTopicId: 'grade5', subTopicKey: 'counting', extra: true },
+  { id: 'gr5_measurement',  name: 'Measurement',                    emoji: '🧪', grade: 5, examWeight: 0, dbTopicId: 'grade5', subTopicKey: 'measurement', extra: true },
+  { id: 'gr5_mixed',        name: 'Mixed Problem Solving',          emoji: '🧩', grade: 5, examWeight: 0, dbTopicId: 'grade5', subTopicKey: 'mixed', extra: true },
 ];
 
 // ── Grade 6 ───────────────────────────────────────────────────────────────────
@@ -145,4 +154,25 @@ export const TOPIC_TREE: TopicNode[] = [
 
 export function getTopicsForGrade(grade: number): TopicNode[] {
   return TOPIC_TREE.filter((t) => t.grade === grade);
+}
+
+/** True for an extra-practice topic (`extra: true`): not a chapter of the real exam paper. */
+export function isExtraTopicId(nodeId: string): boolean {
+  for (let i = 0; i < TOPIC_TREE.length; i++) {
+    if (TOPIC_TREE[i].id === nodeId) return TOPIC_TREE[i].extra === true;
+  }
+  return false;
+}
+
+/**
+ * The subTopicKeys of a grade's extra-practice topics (none for most grades). A question
+ * whose sub-topic label one of these reaches belongs to extra practice, not to the exam.
+ */
+export function extraTopicKeys(grade: number): string[] {
+  const keys: string[] = [];
+  for (let i = 0; i < TOPIC_TREE.length; i++) {
+    const t = TOPIC_TREE[i];
+    if (t.grade === grade && t.extra === true && t.subTopicKey) keys.push(t.subTopicKey);
+  }
+  return keys;
 }

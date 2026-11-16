@@ -1187,6 +1187,44 @@
    "Verify: Left equals 2 times 7, which is 14. Right equals 4 times 3, plus 2, which is 14. That works."
   ]
  },
+ "EXT_G5_WS_B6_017": {
+  "q": "If p equals q plus r, r equals 5, find q squared when 3 p equals 27.",
+  "options": [
+   "4",
+   "8",
+   "9",
+   "16"
+  ],
+  "hints": [
+   "Work backwards through the clues: 3 p equals 27 gives p, then p equals q plus r gives q. Last of all, square q.",
+   "3 p equals 27, so p equals 27 divided by 3, which is 9. Now put p equals 9 and r equals 5 into p equals q plus r, to find q. Remember the question asks for q squared, not q.",
+   "Try a similar one: if 2 a equals 10 and a equals b plus 2, find b squared. a equals 5, so b equals 3, and b squared equals 3 times 3, which is 9."
+  ],
+  "steps": [
+   "3 p equals 27, so p equals 9.",
+   "p equals q plus r: 9 equals q plus 5, so q equals 4.",
+   "q squared equals 4 squared, which is 16."
+  ]
+ },
+ "EXT_G5_WS_B6_018": {
+  "q": "If a plus b times c equals 5, then c equals what?",
+  "options": [
+   "5 a minus b",
+   "5 b plus a",
+   "Open bracket, 5 minus a, close bracket, over b",
+   "Open bracket, 5 minus b, close bracket, over a"
+  ],
+  "hints": [
+   "You want c all by itself on one side. Undo what has been done to c, one step at a time, doing the same thing to both sides.",
+   "c has been multiplied by b, and then a has been added. Undo the adding first: take a away from both sides. Then undo the multiplying.",
+   "Try a similar one: if p plus q times r equals 10, take p from both sides to get q times r equals 10 minus p. Then divide both sides by q: r equals, open bracket, 10 minus p, close bracket, divided by q."
+  ],
+  "steps": [
+   "Start: a plus b c equals 5.",
+   "Subtract a: b c equals 5 minus a.",
+   "Divide by b: c equals, open bracket, 5 minus a, close bracket, over b."
+  ]
+ },
  "EXT_G5_WS_B6_019": {
   "q": "p equals m plus 3, q equals 5 minus m. If 2 p plus 3 q equals 0, find m.",
   "options": [
@@ -1205,6 +1243,25 @@
    "Expand: 2 m plus 6 plus 15 minus 3 m equals 0.",
    "Simplify: minus m plus 21 equals 0.",
    "m equals 21."
+  ]
+ },
+ "EXT_G5_WS_B6_020": {
+  "q": "If x plus y equals 12, y plus z equals 16, z plus x equals 10, find x plus y plus z.",
+  "options": [
+   "38",
+   "18",
+   "19",
+   "16"
+  ],
+  "hints": [
+   "Adding all three equations gives 2 times, open bracket, x plus y plus z, close bracket, equals sum of right sides.",
+   "Open bracket, x plus y, close bracket, plus, open bracket, y plus z, close bracket, plus, open bracket, z plus x, close bracket, equals 12 plus 16 plus 10, which is 38. Each variable appears twice.",
+   "Similar: a plus b equals 7, b plus c equals 9, c plus a equals 8. Sum equals 24. 2 times, open bracket, a plus b plus c, close bracket, equals 24, so a plus b plus c equals 12."
+  ],
+  "steps": [
+   "Add all three: open bracket, x plus y, close bracket, plus, open bracket, y plus z, close bracket, plus, open bracket, z plus x, close bracket, equals 12 plus 16 plus 10.",
+   "2 x plus 2 y plus 2 z equals 38.",
+   "x plus y plus z equals 19."
   ]
  },
  "VAR2_EXT_G5_WS_01_003_01": {

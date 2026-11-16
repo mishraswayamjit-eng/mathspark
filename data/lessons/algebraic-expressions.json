@@ -1,0 +1,849 @@
+{
+  "id": "algebraic-expressions",
+  "topic": "Algebraic Expressions",
+  "emoji": "🔤",
+  "color": "#EC4899",
+  "gradeRange": [
+    4,
+    7
+  ],
+  "description": "Letters for numbers: terms, like terms and substitution",
+  "levels": [
+    {
+      "id": 1,
+      "label": "Letters for Numbers",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "Variables, terms, coefficients",
+      "lessons": [
+        {
+          "id": "ae-l1-les1",
+          "title": "A Letter Can Stand for a Number",
+          "intro": "In algebra a letter stands for a number we do not know yet, or a number that can change. The letter is called a variable.",
+          "visual": "",
+          "explanation": [
+            "If a pencil costs x rupees, then x could be 5, or 8, or any other price.",
+            "We can still work with x, even before we know its value.",
+            "x + 2 means 2 more than x. If x = 5, then x + 2 = 7."
+          ],
+          "rule": "A variable is a letter that stands for a number.",
+          "tip": "Any letter will do. x, y and n are common choices.",
+          "steps": [
+            {
+              "text": "Let x be the number of marbles in a bag.",
+              "notation": "x"
+            },
+            {
+              "text": "Two more marbles are added.",
+              "notation": "x + 2"
+            },
+            {
+              "text": "If the bag had 5 marbles, put 5 in place of x.",
+              "notation": "5 + 2 = 7",
+              "tip": "With 5 marbles to begin with, there are now 7."
+            }
+          ]
+        },
+        {
+          "id": "ae-l1-les2",
+          "title": "The Hidden Times Sign",
+          "intro": "In algebra we do not write the × sign between a number and a letter.",
+          "visual": "",
+          "explanation": [
+            "3x = 3 × x. It means three lots of x.",
+            "xy = x × y. Two letters side by side are multiplied.",
+            "The number is always written first. We write 3x, not x3."
+          ],
+          "rule": "A number next to a letter means multiply.",
+          "tip": "3x is three lots of x added together: x + x + x = 3x."
+        },
+        {
+          "id": "ae-l1-les3",
+          "title": "Terms",
+          "intro": "An expression is made of parts called terms. Terms are joined by plus and minus signs.",
+          "visual": "",
+          "explanation": [
+            "4x + 7 has two terms: 4x and 7.",
+            "2x + 3y − 5 has three terms: 2x, 3y and 5.",
+            "To count the terms, count the parts between the plus and minus signs."
+          ],
+          "rule": "Terms are the parts of an expression joined by plus or minus signs.",
+          "tip": "There is always one more term than there are plus and minus signs."
+        },
+        {
+          "id": "ae-l1-les4",
+          "title": "Coefficients and Constants",
+          "intro": "The number in front of a letter is called its coefficient. A term with no letter is called a constant.",
+          "visual": "",
+          "explanation": [
+            "In 7x the coefficient of x is 7.",
+            "In x + 4 the coefficient of x is 1, because x = 1 × x.",
+            "In 5y + 9 the constant is 9. It stays the same whatever y is."
+          ],
+          "rule": "Coefficient: the number multiplying the letter. Constant: the number standing alone.",
+          "tip": "No number in front of the letter? Then the coefficient is 1."
+        },
+        {
+          "id": "ae-l1-les5",
+          "title": "Reading an Expression",
+          "intro": "Now you can read any expression aloud.",
+          "visual": "",
+          "explanation": [
+            "3x + 5 reads: three times a number, plus five.",
+            "2y − 1 reads: twice a number, minus one.",
+            "x ÷ 4 reads: a number divided by four."
+          ],
+          "rule": "Read the coefficient first, then the letter, then what is added or taken away.",
+          "tip": "Saying an expression aloud makes word problems much easier later."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ae-l1-q1",
+          "question": "In the term 9x, what is the coefficient of x?",
+          "answer": "9",
+          "hint": "The coefficient is the number written in front of the letter.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ae-l1-q2",
+          "question": "How many terms are there in 3x + 4y + 7?",
+          "answer": "3",
+          "hint": "Count the parts between the plus signs.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ae-l1-q3",
+          "question": "What is the constant term in 6x + 11?",
+          "answer": "11",
+          "hint": "The constant is the term with no letter.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ae-l1-q4",
+          "question": "What is the coefficient of y in 4x + y + 2?",
+          "answer": "1",
+          "hint": "There is no number written in front of y. What does that mean?",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ae-l1-q5",
+          "question": "Anil buys 4 samosas. The cost in rupees is written as a number followed by x. What is that number?",
+          "answer": "4",
+          "hint": "Four lots of x. How do we write that?",
+          "difficulty": "stretch",
+          "story": "A samosa costs x rupees at the school canteen.",
+          "isWord": true
+        },
+        {
+          "id": "ae-l1-q6",
+          "question": "Six auto-rickshaws carry 6n passengers. If n = 3, how many passengers is that?",
+          "answer": "18",
+          "hint": "6n means 6 times n.",
+          "difficulty": "stretch",
+          "story": "Each auto-rickshaw carries n passengers.",
+          "isWord": true
+        },
+        {
+          "id": "ae-l1-q7",
+          "question": "How many terms are there in 5x + 2y − 3x + 8 − y?",
+          "answer": "5",
+          "hint": "Count the parts between the plus and minus signs.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "ae-l1-q8",
+          "question": "In 2x + 9y + 4, add the coefficient of x, the coefficient of y and the constant. What do you get?",
+          "answer": "15",
+          "hint": "Pick out the three numbers first, then add them.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Finding the Value",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Put the number in",
+      "lessons": [
+        {
+          "id": "ae-l2-les1",
+          "title": "Putting a Number In",
+          "intro": "To find the value of an expression, put the number in place of the letter. This is called substitution.",
+          "visual": "",
+          "explanation": [
+            "Find the value of 3x + 5 when x = 4.",
+            "3x means 3 times x, so 3x = 3 × 4 = 12.",
+            "Then 12 + 5 = 17. So 3x + 5 = 17 when x = 4."
+          ],
+          "rule": "Replace the letter with its number, put the × sign back, then calculate.",
+          "tip": "When x = 4, 3x is 3 × 4 = 12. It is not 34.",
+          "steps": [
+            {
+              "text": "Write the expression.",
+              "notation": "3x + 5"
+            },
+            {
+              "text": "Put 4 in place of x. Bring back the times sign.",
+              "notation": "3 \\times 4 + 5"
+            },
+            {
+              "text": "Multiply first, then add.",
+              "notation": "12 + 5 = 17",
+              "tip": "The value is 17."
+            }
+          ]
+        },
+        {
+          "id": "ae-l2-les2",
+          "title": "Two Letters",
+          "intro": "An expression can have more than one letter. Replace each one with its own value.",
+          "visual": "",
+          "explanation": [
+            "Find the value of 2x + 3y when x = 5 and y = 2.",
+            "2x = 2 × 5 = 10 and 3y = 3 × 2 = 6.",
+            "10 + 6 = 16, so 2x + 3y = 16."
+          ],
+          "rule": "Replace every letter, one at a time, with its own value.",
+          "tip": "Write each value above its letter before you start."
+        },
+        {
+          "id": "ae-l2-les3",
+          "title": "Multiplying Letters",
+          "intro": "When letters sit side by side, multiply their values.",
+          "visual": "",
+          "explanation": [
+            "Find the value of xy when x = 3 and y = 4.",
+            "xy = x × y = 3 × 4 = 12.",
+            "In the same way 2xy = 2 × 3 × 4 = 24."
+          ],
+          "rule": "Letters written together are multiplied.",
+          "tip": "With 3 and 4, xy is 12. It is not 34 and it is not 7."
+        },
+        {
+          "id": "ae-l2-les4",
+          "title": "Squares",
+          "intro": "x² means x times x. Work out the square before anything else.",
+          "visual": "",
+          "explanation": [
+            "x² = x × x.",
+            "If x = 5, then x² = 5 × 5 = 25.",
+            "So x² + 1 = 25 + 1 = 26 when x = 5."
+          ],
+          "rule": "x² is x times x, not x times 2.",
+          "tip": "5² = 25, but 5 × 2 = 10. They are different."
+        },
+        {
+          "id": "ae-l2-les5",
+          "title": "One Letter Depends on Another",
+          "intro": "In some exam questions the value of one letter is built from another. Find them in order.",
+          "visual": "",
+          "explanation": [
+            "Suppose x = 7, y = x − 2 and p = y + 5.",
+            "First y = 7 − 2 = 5. Then p = 5 + 5 = 10.",
+            "Now any expression is easy: (x + y) × p = (7 + 5) × 10 = 120."
+          ],
+          "rule": "Find the letters in the order they are given, then substitute.",
+          "tip": "Write each new value down as soon as you find it.",
+          "steps": [
+            {
+              "text": "Start with the letter you know.",
+              "notation": "x = 7"
+            },
+            {
+              "text": "Use x to find y.",
+              "notation": "y = x - 2 = 7 - 2 = 5"
+            },
+            {
+              "text": "Use y to find p.",
+              "notation": "p = y + 5 = 5 + 5 = 10"
+            },
+            {
+              "text": "Now find the value of the expression.",
+              "notation": "(x + y) \\times p = 12 \\times 10 = 120"
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ae-l2-q1",
+          "question": "Find the value of 4x + 3 when x = 5.",
+          "answer": "23",
+          "hint": "4x means 4 times x. Multiply first, then add.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ae-l2-q2",
+          "question": "Find the value of 20 − 3y when y = 4.",
+          "answer": "8",
+          "hint": "Work out 3y first, then take it away from 20.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ae-l2-q3",
+          "question": "Find the value of 3x + 2y when x = 4 and y = 5.",
+          "answer": "22",
+          "hint": "Find 3x and 2y separately, then add them.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ae-l2-q4",
+          "question": "Find the value of xy + 6 when x = 7 and y = 3.",
+          "answer": "27",
+          "hint": "xy means x times y.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ae-l2-q5",
+          "question": "Diya's bill is 5x + 2y rupees. If x = 30 and y = 10, how many rupees is the bill?",
+          "answer": "170",
+          "hint": "Five notebooks and two pens. Find each cost, then add.",
+          "difficulty": "stretch",
+          "story": "A notebook costs x rupees and a pen costs y rupees.",
+          "isWord": true
+        },
+        {
+          "id": "ae-l2-q6",
+          "question": "Its perimeter is 2p + 2q centimetres. If p = 12 and q = 7, what is the perimeter in centimetres?",
+          "answer": "38",
+          "hint": "Find 2p and 2q separately, then add them.",
+          "difficulty": "stretch",
+          "story": "A rectangle has length p centimetres and width q centimetres.",
+          "isWord": true
+        },
+        {
+          "id": "ae-l2-q7",
+          "question": "If x = 7, y = x − 2 and p = y + 5, find the value of (p + x) × y.",
+          "answer": "85",
+          "hint": "Find y first, then p. Work out the bracket before you multiply.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "ae-l2-q8",
+          "question": "If x = 6, find the value of x² + 3x − 4.",
+          "answer": "50",
+          "hint": "x² means x times x. Work that out first.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Like Terms",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "Collect and simplify",
+      "lessons": [
+        {
+          "id": "ae-l3-les1",
+          "title": "Like and Unlike Terms",
+          "intro": "Terms with exactly the same letters are called like terms.",
+          "visual": "",
+          "explanation": [
+            "3x and 5x are like terms. Both are lots of x.",
+            "3x and 5y are unlike terms. One is lots of x and the other is lots of y.",
+            "4 and 9 are like terms too, because both are plain numbers."
+          ],
+          "rule": "Like terms have the same letter part.",
+          "tip": "Think of x as apples and y as bananas. Apples go with apples."
+        },
+        {
+          "id": "ae-l3-les2",
+          "title": "Adding Like Terms",
+          "intro": "To add like terms, add their coefficients. The letter stays the same.",
+          "visual": "",
+          "explanation": [
+            "3x + 5x = 8x.",
+            "Three apples and five apples make eight apples.",
+            "Check with x = 2: 3x + 5x = 6 + 10 = 16, and 8x = 16."
+          ],
+          "rule": "Add the coefficients and keep the letter.",
+          "tip": "x + x = 2x, because x on its own means 1x.",
+          "steps": [
+            {
+              "text": "Both terms are lots of x, so they are like terms.",
+              "notation": "3x + 5x"
+            },
+            {
+              "text": "Add the coefficients.",
+              "notation": "3 + 5 = 8"
+            },
+            {
+              "text": "Keep the letter.",
+              "notation": "3x + 5x = 8x",
+              "tip": "The letter does not change when you add."
+            }
+          ]
+        },
+        {
+          "id": "ae-l3-les3",
+          "title": "Subtracting Like Terms",
+          "intro": "Subtracting works the same way. Subtract the coefficients and keep the letter.",
+          "visual": "",
+          "explanation": [
+            "9y − 4y = 5y.",
+            "y on its own means 1y, so 6y − y = 5y.",
+            "7x − 7x = 0. Nothing is left."
+          ],
+          "rule": "Subtract the coefficients and keep the letter.",
+          "tip": "A letter with no number in front has coefficient 1."
+        },
+        {
+          "id": "ae-l3-les4",
+          "title": "Collecting Mixed Terms",
+          "intro": "When an expression has different kinds of terms, collect each kind separately.",
+          "visual": "",
+          "explanation": [
+            "Simplify 4x + 3y + 2x + 5y.",
+            "The x terms: 4x + 2x = 6x. The y terms: 3y + 5y = 8y.",
+            "So 4x + 3y + 2x + 5y = 6x + 8y. Unlike terms cannot be joined any further."
+          ],
+          "rule": "Collect each kind of term separately.",
+          "tip": "Underline the x terms once and the y terms twice, so you do not mix them.",
+          "steps": [
+            {
+              "text": "Find the x terms and add them.",
+              "notation": "4x + 2x = 6x"
+            },
+            {
+              "text": "Find the y terms and add them.",
+              "notation": "3y + 5y = 8y"
+            },
+            {
+              "text": "Write the two answers together.",
+              "notation": "4x + 3y + 2x + 5y = 6x + 8y",
+              "tip": "6x + 8y cannot be made any shorter."
+            }
+          ]
+        },
+        {
+          "id": "ae-l3-les5",
+          "title": "Adding Whole Expressions",
+          "intro": "To add expressions, drop the brackets and collect like terms.",
+          "visual": "",
+          "explanation": [
+            "Add 3x + 2y − 1 and x − 2y + 4.",
+            "The x terms: 3x + x = 4x. The y terms: 2y − 2y = 0. The numbers: 4 − 1 = 3.",
+            "So (3x + 2y − 1) + (x − 2y + 4) = 4x + 3."
+          ],
+          "rule": "When expressions are added, like terms from each one are collected together.",
+          "tip": "Terms can cancel. 2y − 2y leaves nothing."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ae-l3-q1",
+          "question": "3x + 6x simplifies to a single term. What is its coefficient?",
+          "answer": "9",
+          "hint": "Add the coefficients and keep the letter.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ae-l3-q2",
+          "question": "10y − 4y simplifies to a single term. What is its coefficient?",
+          "answer": "6",
+          "hint": "Subtract the coefficients and keep the letter.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ae-l3-q3",
+          "question": "5x + x + 2x simplifies to a single term. What is its coefficient?",
+          "answer": "8",
+          "hint": "x on its own means 1x.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ae-l3-q4",
+          "question": "Simplify 7x + 2y + 3x + 6y. What is the coefficient of x in the answer?",
+          "answer": "10",
+          "hint": "Collect only the x terms.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ae-l3-q5",
+          "question": "He has 4x marbles in a tin and 5x marbles in a box. If x = 6, how many marbles does he have in all?",
+          "answer": "54",
+          "hint": "Add the like terms first, then put 6 in place of x.",
+          "difficulty": "stretch",
+          "story": "Rohan keeps his marbles in a tin and a box.",
+          "isWord": true
+        },
+        {
+          "id": "ae-l3-q6",
+          "question": "Team A spends 3x + 4y rupees. Team B spends 2x + y rupees. The total is written as one expression. What is the coefficient of y in the total?",
+          "answer": "5",
+          "hint": "Collect only the y terms. y on its own means 1y.",
+          "difficulty": "stretch",
+          "story": "A shop sells cricket bats for x rupees and balls for y rupees.",
+          "isWord": true
+        },
+        {
+          "id": "ae-l3-q7",
+          "question": "Add 4x + 5y − 3, 2x − 3y + 2 and 4y − 3x + 4. What is the coefficient of y in the sum?",
+          "answer": "6",
+          "hint": "Pick out the three y terms. Watch the minus sign on one of them.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "ae-l3-q8",
+          "question": "Add x + y − 1, y − x + 1 and 1 − 2y. All the letters cancel. What number is left?",
+          "answer": "1",
+          "hint": "Collect the x terms, then the y terms, then the plain numbers.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "From Words to Expressions",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "Turn a story into algebra",
+      "lessons": [
+        {
+          "id": "ae-l4-les1",
+          "title": "More Than and Less Than",
+          "intro": "Words can be turned into expressions one phrase at a time.",
+          "visual": "",
+          "explanation": [
+            "5 more than x is written x + 5.",
+            "3 less than x is written x − 3.",
+            "Take care with the order. 3 less than x is x − 3, not 3 − x."
+          ],
+          "rule": "More than means add. Less than means subtract from the letter.",
+          "tip": "Try a number. If x is 10, then 3 less than x is 7. Check: 10 − 3 = 7."
+        },
+        {
+          "id": "ae-l4-les2",
+          "title": "Times and Shared",
+          "intro": "Other words point to multiplying and dividing.",
+          "visual": "",
+          "explanation": [
+            "Twice x, or double x, is 2x.",
+            "The product of 4 and y is 4y.",
+            "x shared equally among 3 is x ÷ 3."
+          ],
+          "rule": "Twice, double, product and times mean multiply. Shared and each mean divide.",
+          "tip": "Half of x is x ÷ 2."
+        },
+        {
+          "id": "ae-l4-les3",
+          "title": "Two Steps in Words",
+          "intro": "Longer phrases are built up step by step.",
+          "visual": "",
+          "explanation": [
+            "'5 more than twice x' is built in two steps.",
+            "Twice x is 2x. Then 5 more gives 2x + 5.",
+            "'Twice the sum of x and 5' is different: 2(x + 5) = 2x + 10."
+          ],
+          "rule": "Follow the words in order, one step at a time.",
+          "tip": "The words 'the sum of' need brackets.",
+          "steps": [
+            {
+              "text": "Start with x. Twice x.",
+              "notation": "2x"
+            },
+            {
+              "text": "Then 5 more.",
+              "notation": "2x + 5"
+            },
+            {
+              "text": "Check with 3 in place of x. Twice 3 is 6, and 5 more is 11.",
+              "notation": "2 \\times 3 + 5 = 11"
+            }
+          ]
+        },
+        {
+          "id": "ae-l4-les4",
+          "title": "Totals from Stories",
+          "intro": "Stories with two kinds of things need two terms.",
+          "visual": "",
+          "explanation": [
+            "Arnav sends m messages each hour for 5 hours. That is 5m messages.",
+            "Pranav sends p messages each hour for 4 hours. That is 4p messages.",
+            "Together they send 5m + 4p messages. The two terms are unlike, so they stay separate."
+          ],
+          "rule": "Make one term for each kind of thing, then add the terms.",
+          "tip": "5m + 4p is not 9mp. Only like terms can be joined."
+        },
+        {
+          "id": "ae-l4-les5",
+          "title": "Numbers in a Row",
+          "intro": "Numbers that follow each other can share one letter.",
+          "visual": "",
+          "explanation": [
+            "If a number is n, the next number is n + 1.",
+            "Odd numbers go up in twos: 5, 7, 9. So if an odd number is n, the next odd number is n + 2.",
+            "The sum of two odd numbers in a row is n + (n + 2) = 2n + 2."
+          ],
+          "rule": "Next number: add 1. Next odd number or next even number: add 2.",
+          "tip": "Test your expression with a real number to be sure.",
+          "steps": [
+            {
+              "text": "Call the first odd number n. The next odd number is 2 more.",
+              "notation": "n + 2"
+            },
+            {
+              "text": "Add the two numbers.",
+              "notation": "n + (n + 2) = 2n + 2"
+            },
+            {
+              "text": "Suppose the question says the sum is 12.",
+              "notation": "n + (n + 2) = 12",
+              "tip": "This is true when n = 5, because 5 + 7 = 12."
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ae-l4-q1",
+          "question": "8 more than x is written x + 8. What is its value when x = 12?",
+          "answer": "20",
+          "hint": "Put 12 in place of x.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ae-l4-q2",
+          "question": "Twice a number n, minus 3, is written 2n − 3. What is its value when n = 10?",
+          "answer": "17",
+          "hint": "Work out 2n first.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ae-l4-q3",
+          "question": "'5 more than three times x' is written as an expression. What is its value when x = 4?",
+          "answer": "17",
+          "hint": "Three times x comes first. Then add 5.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ae-l4-q4",
+          "question": "'Twice the sum of x and 5' is written as an expression. What is its value when x = 4?",
+          "answer": "18",
+          "hint": "Find the sum in the brackets first, then double it.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ae-l4-q5",
+          "question": "Arnav sends m messages each hour for 5 hours. Pranav sends p messages each hour for 4 hours. If m = 6 and p = 10, how many messages do they send in all?",
+          "answer": "70",
+          "hint": "The total is 5m + 4p. Find each term, then add.",
+          "difficulty": "stretch",
+          "story": "Arnav and Pranav are sending messages on Saturday afternoon.",
+          "isWord": true
+        },
+        {
+          "id": "ae-l4-q6",
+          "question": "Mangoes cost x rupees each and bananas cost y rupees each. Sana buys 3 mangoes and 12 bananas. If x = 25 and y = 5, how many rupees does she pay?",
+          "answer": "135",
+          "hint": "The cost is 3x + 12y. Find each term, then add.",
+          "difficulty": "stretch",
+          "story": "Sana is buying fruit at a market in Lucknow.",
+          "isWord": true
+        },
+        {
+          "id": "ae-l4-q7",
+          "question": "The sum of two odd numbers in a row is 16. If the smaller one is n, then n + (n + 2) = 16. What is n?",
+          "answer": "7",
+          "hint": "The two numbers are 2 apart. Take 2 from the sum, then halve.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "ae-l4-q8",
+          "question": "Three numbers in a row add up to 48. If the smallest is n, the sum is n + (n + 1) + (n + 2). What is n?",
+          "answer": "15",
+          "hint": "The sum is three lots of n and 3 more. Take the 3 away first.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Multiply, Divide and Test",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Brackets, division and exam twists",
+      "lessons": [
+        {
+          "id": "ae-l5-les1",
+          "title": "A Number Times a Term",
+          "intro": "To multiply a term by a number, multiply the coefficient. The letter stays.",
+          "visual": "",
+          "explanation": [
+            "3 × 2x = 6x.",
+            "Three lots of 2x make 6x.",
+            "Check with x = 5: 2x = 10, and 3 × 10 = 30. Also 6x = 30."
+          ],
+          "rule": "To multiply a term by a number, multiply the coefficient.",
+          "tip": "4 × 5y = 20y. The y just comes along."
+        },
+        {
+          "id": "ae-l5-les2",
+          "title": "A Number Times a Bracket",
+          "intro": "A number outside a bracket multiplies every term inside.",
+          "visual": "",
+          "explanation": [
+            "2(x + 3) = 2x + 6.",
+            "The 2 multiplies the x, and it also multiplies the 3.",
+            "Check with x = 4: 2(x + 3) = 2 × 7 = 14, and 2x + 6 = 8 + 6 = 14."
+          ],
+          "rule": "Multiply every term inside the bracket by the number outside.",
+          "tip": "Draw an arrow from the outside number to each term inside.",
+          "steps": [
+            {
+              "text": "Multiply the first term in the bracket.",
+              "notation": "2 \\times x = 2x"
+            },
+            {
+              "text": "Multiply the second term too.",
+              "notation": "2 \\times 3 = 6"
+            },
+            {
+              "text": "Write both parts.",
+              "notation": "2(x + 3) = 2x + 6",
+              "tip": "Both terms are multiplied, not just the first."
+            }
+          ]
+        },
+        {
+          "id": "ae-l5-les3",
+          "title": "Dividing a Term",
+          "intro": "Dividing undoes multiplying. Divide the numbers, and cancel any letter that is in both.",
+          "visual": "",
+          "explanation": [
+            "12x ÷ 4 = 3x.",
+            "12xy ÷ 4y = 3x. The y on top and the y below cancel.",
+            "Check with x = 2 and y = 5: 12xy = 120 and 4y = 20, and 120 ÷ 20 = 6. Also 3x = 6."
+          ],
+          "rule": "Divide the coefficients and cancel the letters that match.",
+          "tip": "A letter divided by itself is 1, so it disappears.",
+          "steps": [
+            {
+              "text": "Divide the numbers.",
+              "notation": "12 \\div 4 = 3"
+            },
+            {
+              "text": "Cancel the y that is in both.",
+              "notation": "xy \\div y = x"
+            },
+            {
+              "text": "Put the two parts together.",
+              "notation": "12xy \\div 4y = 3x"
+            }
+          ]
+        },
+        {
+          "id": "ae-l5-les4",
+          "title": "Dividing a Sum",
+          "intro": "To divide a sum, divide each term.",
+          "visual": "",
+          "explanation": [
+            "In (12xy + 8y) ÷ 4y, both terms are divided by 4y.",
+            "12xy ÷ 4y = 3x and 8y ÷ 4y = 2.",
+            "So (12xy + 8y) ÷ 4y = 3x + 2."
+          ],
+          "rule": "Divide every term of the sum by the divisor.",
+          "tip": "It is the reverse of multiplying a bracket: 4y(3x + 2) = 12xy + 8y."
+        },
+        {
+          "id": "ae-l5-les5",
+          "title": "Testing a Statement",
+          "intro": "Some exam questions give a value and ask which statement is true. Work out both sides.",
+          "visual": "",
+          "explanation": [
+            "Is 5x + 6 = 7x − 8 true when x = 7?",
+            "Left side: 5 × 7 + 6 = 41. Right side: 7 × 7 − 8 = 41.",
+            "Both sides come to 41, so the statement is true when x is 7."
+          ],
+          "rule": "A statement is true for a value when both sides come out equal.",
+          "tip": "Work out each side separately. Do not move terms across.",
+          "steps": [
+            {
+              "text": "Put 7 in place of x on the left side.",
+              "notation": "5 \\times 7 + 6 = 41"
+            },
+            {
+              "text": "Put 7 in place of x on the right side.",
+              "notation": "7 \\times 7 - 8 = 41"
+            },
+            {
+              "text": "Compare the two sides.",
+              "notation": "41 = 41",
+              "tip": "They match, so the statement is true."
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ae-l5-q1",
+          "question": "5 × 3x simplifies to a single term. What is its coefficient?",
+          "answer": "15",
+          "hint": "Multiply the two numbers. The letter stays.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ae-l5-q2",
+          "question": "3(x + 4) is written without brackets as 3x plus a number. What is the number?",
+          "answer": "12",
+          "hint": "The 3 multiplies the 4 as well as the x.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "ae-l5-q3",
+          "question": "20xy ÷ 5y simplifies to a single term. What is its coefficient?",
+          "answer": "4",
+          "hint": "Divide the numbers. The y cancels.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ae-l5-q4",
+          "question": "(15xy + 10y) ÷ 5y simplifies to 3x plus a number. What is the number?",
+          "answer": "2",
+          "hint": "Divide each term by 5y. Look at the second term.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "ae-l5-q5",
+          "question": "A fence goes all the way round, so it would be 4x metres long. A gate takes up 2 metres, so the fence is 4x − 2 metres. If x = 9, how long is the fence in metres?",
+          "answer": "34",
+          "hint": "Work out 4x first, then take away the gate.",
+          "difficulty": "stretch",
+          "story": "A square garden has sides of x metres.",
+          "isWord": true
+        },
+        {
+          "id": "ae-l5-q6",
+          "question": "The cake costs 6x rupees and the sweets cost 9 rupees, so each friend pays (6x + 9) ÷ 3 rupees. If x = 20, how many rupees does each friend pay?",
+          "answer": "43",
+          "hint": "Find the total cost first, then share it among three.",
+          "difficulty": "stretch",
+          "story": "Three friends share the cost of a cake and a box of sweets equally.",
+          "isWord": true
+        },
+        {
+          "id": "ae-l5-q7",
+          "question": "When x is 6, the value of 12x − 14 is the same as the value of 7x + 16. What is that value?",
+          "answer": "58",
+          "hint": "Put 6 in place of x in either expression. You can use the other one to check.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "ae-l5-q8",
+          "question": "If x = 7 and y = 2x − 9, find the value of 4y − 2x.",
+          "answer": "6",
+          "hint": "Find y first. Then work out 4y and 2x.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

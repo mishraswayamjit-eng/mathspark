@@ -1799,6 +1799,25 @@
    "Check the one that is left: 257 times 64 equals 16448, and 257 and 64 fit the patterns. So the product can be 16448."
   ]
  },
+ "EXT_G5_WS_B3_010": {
+  "q": "In a bundle of notes of 5 rupees denomination, the notes are numbered serially from 40801 to 40901. What is the total amount of money in this bundle?",
+  "options": [
+   "500 rupees",
+   "505 rupees",
+   "625 rupees",
+   "555 rupees"
+  ],
+  "hints": [
+   "How many notes are there from 40801 to 40901?",
+   "The count is 40901 minus 40801, plus 1, which is 101 notes. The total is 101 times 5.",
+   "Try this: notes from 1 to 5 make 5 notes. 5 times 5 rupees equals 25 rupees."
+  ],
+  "steps": [
+   "Count the notes from 40801 to 40901. Subtract and add 1, because both the first and the last note are counted. 40901 minus 40801, plus 1, equals 101 notes.",
+   "Each note is worth 5 rupees, so multiply: 101 times 5 equals 505.",
+   "So the bundle holds 505 rupees in all."
+  ]
+ },
  "EXT_G5_WS_B3_011": {
   "q": "When 18 girls are made to stand in each row, 30 rows can be formed. If 26 girls are made to stand in each row, 21 rows are formed but the 21st row falls short of some number of girls. How many more girls are needed to complete that row?",
   "options": [
@@ -2027,25 +2046,6 @@
    "Between the 15th and the 19th places are the 16th, 17th and 18th. So 3 people are standing between Nisha and Disha."
   ]
  },
- "EXT_G5_WS_B3_038": {
-  "q": "A worker is paid 8 rupees per hour up to 30 hours. Overtime is twice the usual wage. If he is paid 336 rupees, how many hours did he work overtime?",
-  "options": [
-   "8",
-   "16",
-   "6",
-   "9"
-  ],
-  "hints": [
-   "Split the pay into two parts: the pay for the first 30 hours at the usual wage, and the extra pay for overtime.",
-   "The first 30 hours earn 30 times 8, which is 240 rupees. Take that away from 336 rupees to get the overtime pay. Each overtime hour pays twice 8 rupees. How many such hours make up the overtime pay?",
-   "Example: 5 rupees an hour up to 10 hours, double for overtime, total pay 80 rupees. Usual pay: 10 times 5 equals 50 rupees. Overtime pay: 80 minus 50 equals 30 rupees. At 10 rupees an hour, that is 30 divided by 10, which is 3 overtime hours."
-  ],
-  "steps": [
-   "Regular equals 30 times 8, which is 240 rupees.",
-   "Overtime pay equals 336 minus 240, which is 96 rupees.",
-   "Overtime hours equals 96 divided by 16, which is 6."
-  ]
- },
  "EXT_G5_WS_B3_039": {
   "q": "When a number P is divided by 6, the remainder is 2. When another number Q is divided by 6, the remainder is 5. What will the remainder be if P plus Q is divided by 6?",
   "options": [
@@ -2084,27 +2084,6 @@
    "3010 minus 4 equals 3006. 3006 divided by 7 equals 429.4 and so on. That does not work.",
    "4008 minus 4 equals 4004. 4004 divided by 7 equals 572. That works.",
    "Answer: 4008."
-  ]
- },
- "EXT_G5_WS_B4_015": {
-  "q": "Which of the following statements is true?",
-  "options": [
-   "Any multiple of 4 is also a multiple of 8.",
-   "Every number divisible by 12 is also a multiple of 6.",
-   "The difference of two prime numbers is always a prime number.",
-   "Every odd multiple of 3 is also divisible by 9."
-  ],
-  "hints": [
-   "For each statement, hunt for one example that breaks it. If you can find one, the statement is not always true.",
-   "Test the first one: 4 is a multiple of 4. Is it a multiple of 8? Then test the primes: 7 and 3 are both prime. Is 7 minus 3 a prime number? Keep going until one statement cannot be broken.",
-   "A statement like this is always true: 'every multiple of 10 is a multiple of 5'. That is because 10 equals 5 times 2, so every multiple of 10 is made of 5s."
-  ],
-  "steps": [
-   "4 is a multiple of 4 but not a multiple of 8, so the first statement is not true.",
-   "7 and 3 are prime, but 7 minus 3 equals 4 is not prime. So the statement about the difference of two primes is not true.",
-   "3 is an odd multiple of 3, but it is not divisible by 9. So the last statement is not true.",
-   "12 equals 6 times 2, so any number made of 12s is also made of 6s. For example 36 equals 12 times 3, which is 6 times 6.",
-   "So the true statement is: every number divisible by 12 is also a multiple of 6."
   ]
  },
  "EXT_G5_WS_B4_023": {
@@ -2326,82 +2305,6 @@
    "Count them: 1 to 30 has 30 numbers and half of them are odd, so there are 30 divided by 2, which is 15 odd numbers.",
    "The sum of the first few odd numbers is the square of how many there are: 1 plus 3 equals 4, which is 2 times 2, and 1 plus 3 plus 5 equals 9, which is 3 times 3.",
    "So the sum of these 15 odd numbers is 15 times 15, which is 225, or 15 squared."
-  ]
- },
- "EXT_G5_WS_B6_010": {
-  "q": "The G C D and L C M of two numbers are 12 and 240. If one number is 48, find half of the other.",
-  "options": [
-   "20",
-   "30",
-   "48",
-   "60"
-  ],
-  "hints": [
-   "G C D is another name for H C F. For any two numbers, H C F times L C M equals the product of the two numbers. Use this to find the other number, then halve it.",
-   "H C F times L C M equals 12 times 240. Divide that by the number you know, 48, to get the other number. Don't forget the last part: the question asks for half of it.",
-   "Try a smaller one: H C F 4, L C M 60, one number 12. The other is 4 times 60 divided by 12, which is 20, and half of 20 is 10."
-  ],
-  "steps": [
-   "Product equals H C F times L C M, that is 12 times 240, which is 2880.",
-   "Other number equals 2880 divided by 48, which is 60.",
-   "Half equals 60 divided by 2, which is 30."
-  ]
- },
- "EXT_G5_WS_B6_017": {
-  "q": "If p equals q plus r, r equals 5, find q squared when 3 p equals 27.",
-  "options": [
-   "4",
-   "8",
-   "9",
-   "16"
-  ],
-  "hints": [
-   "Work backwards through the clues: 3 p equals 27 gives p, then p equals q plus r gives q. Last of all, square q.",
-   "3 p equals 27, so p equals 27 divided by 3, which is 9. Now put p equals 9 and r equals 5 into p equals q plus r, to find q. Remember the question asks for q squared, not q.",
-   "Try a similar one: if 2 a equals 10 and a equals b plus 2, find b squared. a equals 5, so b equals 3, and b squared equals 3 times 3, which is 9."
-  ],
-  "steps": [
-   "3 p equals 27, so p equals 9.",
-   "p equals q plus r: 9 equals q plus 5, so q equals 4.",
-   "q squared equals 4 squared, which is 16."
-  ]
- },
- "EXT_G5_WS_B6_018": {
-  "q": "If a plus b times c equals 5, then c equals what?",
-  "options": [
-   "5 a minus b",
-   "5 b plus a",
-   "Open bracket, 5 minus a, close bracket, over b",
-   "Open bracket, 5 minus b, close bracket, over a"
-  ],
-  "hints": [
-   "You want c all by itself on one side. Undo what has been done to c, one step at a time, doing the same thing to both sides.",
-   "c has been multiplied by b, and then a has been added. Undo the adding first: take a away from both sides. Then undo the multiplying.",
-   "Try a similar one: if p plus q times r equals 10, take p from both sides to get q times r equals 10 minus p. Then divide both sides by q: r equals, open bracket, 10 minus p, close bracket, divided by q."
-  ],
-  "steps": [
-   "Start: a plus b c equals 5.",
-   "Subtract a: b c equals 5 minus a.",
-   "Divide by b: c equals, open bracket, 5 minus a, close bracket, over b."
-  ]
- },
- "EXT_G5_WS_B6_020": {
-  "q": "If x plus y equals 12, y plus z equals 16, z plus x equals 10, find x plus y plus z.",
-  "options": [
-   "38",
-   "18",
-   "19",
-   "16"
-  ],
-  "hints": [
-   "Adding all three equations gives 2 times, open bracket, x plus y plus z, close bracket, equals sum of right sides.",
-   "Open bracket, x plus y, close bracket, plus, open bracket, y plus z, close bracket, plus, open bracket, z plus x, close bracket, equals 12 plus 16 plus 10, which is 38. Each variable appears twice.",
-   "Similar: a plus b equals 7, b plus c equals 9, c plus a equals 8. Sum equals 24. 2 times, open bracket, a plus b plus c, close bracket, equals 24, so a plus b plus c equals 12."
-  ],
-  "steps": [
-   "Add all three: open bracket, x plus y, close bracket, plus, open bracket, y plus z, close bracket, plus, open bracket, z plus x, close bracket, equals 12 plus 16 plus 10.",
-   "2 x plus 2 y plus 2 z equals 38.",
-   "x plus y plus z equals 19."
   ]
  },
  "VAR_EXT_G5_WS_B2_012_01": {

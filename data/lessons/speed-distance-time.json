@@ -1,0 +1,853 @@
+{
+  "id": "speed-distance-time",
+  "topic": "Time, Distance & Speed",
+  "emoji": "🚄",
+  "color": "#14B8A6",
+  "gradeRange": [
+    5,
+    7
+  ],
+  "description": "Speed, distance and time, with km/h, m/s and trains",
+  "levels": [
+    {
+      "id": 1,
+      "label": "What Is Speed?",
+      "emoji": "🟢",
+      "color": "#58CC02",
+      "bgGradient": "from-green-400 to-green-600",
+      "subtitle": "Distance in each hour",
+      "lessons": [
+        {
+          "id": "sd-l1-les1",
+          "title": "Fast and Slow",
+          "intro": "Speed tells us how fast something moves. A faster thing covers more distance in the same time.",
+          "visual": "",
+          "explanation": [
+            "A car and a cycle both travel for 1 hour.",
+            "The car covers 60 km. The cycle covers 15 km.",
+            "The car covers more distance in the same time, so the car has the greater speed."
+          ],
+          "rule": "Speed is the distance covered in one unit of time.",
+          "tip": "Same time, more distance: that one is faster."
+        },
+        {
+          "id": "sd-l1-les2",
+          "title": "The Speed Formula",
+          "intro": "To find speed, divide the distance by the time taken.",
+          "visual": "",
+          "explanation": [
+            "Speed = Distance ÷ Time.",
+            "A bus covers 120 km in 3 hours. 120 ÷ 3 = 40.",
+            "So the bus travels 40 km in each hour. Its speed is 40 km per hour."
+          ],
+          "rule": "Speed = Distance ÷ Time.",
+          "tip": "Speed is the distance shared equally over the time.",
+          "steps": [
+            {
+              "text": "A bus covers 120 km in 3 hours. Use the formula.",
+              "notation": "\\text{Speed} = \\text{Distance} \\div \\text{Time}"
+            },
+            {
+              "text": "Divide the distance by the time.",
+              "notation": "120 \\div 3 = 40"
+            },
+            {
+              "text": "Say the answer with its unit.",
+              "notation": "40 \\text{ km/h}",
+              "tip": "40 km in every hour."
+            }
+          ]
+        },
+        {
+          "id": "sd-l1-les3",
+          "title": "Units of Speed",
+          "intro": "Speed always has two units in it: one for distance and one for time.",
+          "visual": "",
+          "explanation": [
+            "km/h means kilometres per hour. It is also written km/hr.",
+            "m/s means metres per second. It is also written m/sec.",
+            "Cars and trains usually use km/h. Runners and short distances usually use m/s."
+          ],
+          "rule": "The unit of speed is a distance unit per time unit.",
+          "tip": "'Per' means 'in each'. 50 km/h is 50 km in each hour."
+        },
+        {
+          "id": "sd-l1-les4",
+          "title": "Who Is Faster?",
+          "intro": "To compare two movers, find each speed in the same unit.",
+          "visual": "",
+          "explanation": [
+            "Asha cycles 36 km in 2 hours. 36 ÷ 2 = 18, so her speed is 18 km/h.",
+            "Bilal cycles 51 km in 3 hours. 51 ÷ 3 = 17, so his speed is 17 km/h.",
+            "Asha is faster, even though Bilal went further."
+          ],
+          "rule": "Compare speeds, not distances, to see who is faster.",
+          "tip": "Further does not always mean faster. Look at the time too."
+        },
+        {
+          "id": "sd-l1-les5",
+          "title": "Speed per Day or per Minute",
+          "intro": "Speed can use any unit of time: a day, a minute or a second.",
+          "visual": "",
+          "explanation": [
+            "A bird flies 125 km each day. That is a speed of 125 km per day.",
+            "At that speed a journey of 1,000 km takes 1,000 ÷ 125 = 8 days.",
+            "An ant that crawls 15 cm each minute has a speed of 15 cm per minute."
+          ],
+          "rule": "Whatever the units, speed is still distance divided by time.",
+          "tip": "Read the units in the question. They tell you what the answer should look like."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sd-l1-q1",
+          "question": "A car covers 150 km in 3 hours. What is its speed in km/h?",
+          "answer": "50",
+          "hint": "Divide the distance by the time.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sd-l1-q2",
+          "question": "A boy runs 100 metres in 20 seconds. What is his speed in m/s?",
+          "answer": "5",
+          "hint": "Metres divided by seconds gives m/s.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sd-l1-q3",
+          "question": "A train covers 480 km in 6 hours. What is its speed in km/h?",
+          "answer": "80",
+          "hint": "Share 480 km equally over 6 hours.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sd-l1-q4",
+          "question": "A cyclist rides 45 km in 3 hours. A runner covers 26 km in 2 hours. What is the speed of the faster one, in km/h?",
+          "answer": "15",
+          "hint": "Find both speeds first, then compare them.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sd-l1-q5",
+          "question": "It covers 702 km in 9 hours. What is its speed in km/h?",
+          "answer": "78",
+          "hint": "Divide 702 by 9.",
+          "difficulty": "stretch",
+          "story": "The Shatabdi Express is running between Delhi and Bhopal.",
+          "isWord": true
+        },
+        {
+          "id": "sd-l1-q6",
+          "question": "It flies 16,500 km at a steady 125 km each day. How many days does the journey take?",
+          "answer": "132",
+          "hint": "How many lots of 125 km fit into 16,500 km?",
+          "difficulty": "stretch",
+          "story": "A seagull is flying a very long way, from Finland to Australia.",
+          "isWord": true
+        },
+        {
+          "id": "sd-l1-q7",
+          "question": "A snail crawls 84 cm in 7 minutes. What is its speed in cm per minute?",
+          "answer": "12",
+          "hint": "Centimetres divided by minutes.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sd-l1-q8",
+          "question": "A plane flies 2,550 km in 3 hours. What is its speed in km/h?",
+          "answer": "850",
+          "hint": "Divide 2,550 by 3.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Finding Distance and Time",
+      "emoji": "🔵",
+      "color": "#1CB0F6",
+      "bgGradient": "from-blue-400 to-blue-600",
+      "subtitle": "Three formulas from one",
+      "lessons": [
+        {
+          "id": "sd-l2-les1",
+          "title": "Finding Distance",
+          "intro": "If you know the speed and the time, multiply to get the distance.",
+          "visual": "",
+          "explanation": [
+            "Distance = Speed × Time.",
+            "A car travels at 60 km/h for 4 hours. 60 × 4 = 240.",
+            "It covers 240 km."
+          ],
+          "rule": "Distance = Speed × Time.",
+          "tip": "Speed is the distance for one hour. Multiply by the number of hours.",
+          "steps": [
+            {
+              "text": "The car covers 60 km in each hour.",
+              "notation": "60 \\text{ km/h}"
+            },
+            {
+              "text": "It drives for 4 hours. That is four lots of 60.",
+              "notation": "60 \\times 4 = 240"
+            },
+            {
+              "text": "Say the answer with its unit.",
+              "notation": "240 \\text{ km}"
+            }
+          ]
+        },
+        {
+          "id": "sd-l2-les2",
+          "title": "Finding Time",
+          "intro": "If you know the distance and the speed, divide to get the time.",
+          "visual": "",
+          "explanation": [
+            "Time = Distance ÷ Speed.",
+            "A train must cover 300 km at 75 km/h. 300 ÷ 75 = 4.",
+            "The journey takes 4 hours."
+          ],
+          "rule": "Time = Distance ÷ Speed.",
+          "tip": "Ask: how many lots of 75 km fit into 300 km?"
+        },
+        {
+          "id": "sd-l2-les3",
+          "title": "One Fact, Three Formulas",
+          "intro": "The three formulas are one fact seen three ways. Learn one and you can find the others.",
+          "visual": "",
+          "explanation": [
+            "Speed = Distance ÷ Time.",
+            "Distance = Speed × Time.",
+            "Time = Distance ÷ Speed."
+          ],
+          "rule": "Distance is the product. Speed and time are the two numbers that multiply to make it.",
+          "tip": "Test with easy numbers. 60 × 2 = 120, so 120 ÷ 2 = 60 and 120 ÷ 60 = 2."
+        },
+        {
+          "id": "sd-l2-les4",
+          "title": "Parts of an Hour",
+          "intro": "Times are often given in minutes. Change them to a part of an hour when the speed is in km/h.",
+          "visual": "",
+          "explanation": [
+            "30 minutes is half an hour, and 15 minutes is a quarter of an hour.",
+            "A cyclist rides at 12 km/h. 12 ÷ 2 = 6, so she covers 6 km in half an hour.",
+            "12 ÷ 4 = 3, so she covers 3 km in a quarter of an hour."
+          ],
+          "rule": "For half an hour, halve the hourly distance. For a quarter of an hour, divide it by 4.",
+          "tip": "1 hour = 60 minutes, so 20 minutes is one third of an hour."
+        },
+        {
+          "id": "sd-l2-les5",
+          "title": "Answers in Minutes",
+          "intro": "Sometimes the time comes out as a part of an hour. Change it to minutes.",
+          "visual": "",
+          "explanation": [
+            "A car travels 18 km at 72 km/h. How long does it take?",
+            "72 km/h means 72 km in 60 minutes. 72 ÷ 18 = 4, so 18 km is a quarter of 72 km.",
+            "A quarter of the distance takes a quarter of the time. 60 ÷ 4 = 15, so it takes 15 minutes."
+          ],
+          "rule": "A part of the hourly distance takes the same part of 60 minutes.",
+          "tip": "You can also divide 18 by 72 and then multiply by 60. It gives the same answer.",
+          "steps": [
+            {
+              "text": "72 km/h means 72 km in 60 minutes.",
+              "notation": "72 \\text{ km in } 60 \\text{ minutes}"
+            },
+            {
+              "text": "How many times does 18 km fit into 72 km?",
+              "notation": "72 \\div 18 = 4"
+            },
+            {
+              "text": "So the car needs a quarter of 60 minutes.",
+              "notation": "60 \\div 4 = 15",
+              "tip": "15 minutes."
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sd-l2-q1",
+          "question": "A bus travels at 45 km/h for 4 hours. How many km does it cover?",
+          "answer": "180",
+          "hint": "Distance is speed times time.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sd-l2-q2",
+          "question": "A car must cover 280 km at 70 km/h. How many hours does it take?",
+          "answer": "4",
+          "hint": "Time is distance divided by speed.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sd-l2-q3",
+          "question": "A scooter travels at 40 km/h for 30 minutes. How many km does it cover?",
+          "answer": "20",
+          "hint": "30 minutes is half an hour.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sd-l2-q4",
+          "question": "A boy walks at 6 km/h. How many minutes does he take to walk 2 km?",
+          "answer": "20",
+          "hint": "2 km is one third of 6 km. Take the same part of 60 minutes.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sd-l2-q5",
+          "question": "They drive at 50 km/h and the trip takes 3 hours. How many km is the trip?",
+          "answer": "150",
+          "hint": "Three lots of the distance covered in one hour.",
+          "difficulty": "stretch",
+          "story": "Nikhil's family is driving from Bengaluru to Mysuru.",
+          "isWord": true
+        },
+        {
+          "id": "sd-l2-q6",
+          "question": "It crawls 15 cm every minute. How many cm does it crawl in 24 minutes and 40 seconds?",
+          "answer": "370",
+          "hint": "Find the distance for 24 minutes. Then 40 seconds is two thirds of a minute.",
+          "difficulty": "stretch",
+          "story": "An ant is marching along a wall.",
+          "isWord": true
+        },
+        {
+          "id": "sd-l2-q7",
+          "question": "At 90 km/h, how many minutes does a car take to cover 30 km?",
+          "answer": "20",
+          "hint": "30 km is one third of 90 km. Take one third of 60 minutes.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sd-l2-q8",
+          "question": "A man walks 900 metres in 18 minutes. At the same speed, how many km does he walk in 1 hour?",
+          "answer": "3",
+          "hint": "Find the metres for 1 minute, then for 60 minutes. Then change metres to km.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Changing Units",
+      "emoji": "🟡",
+      "color": "#FFC800",
+      "bgGradient": "from-yellow-400 to-yellow-600",
+      "subtitle": "km/h and m/s",
+      "lessons": [
+        {
+          "id": "sd-l3-les1",
+          "title": "Kilometres, Metres, Hours and Seconds",
+          "intro": "To change the unit of a speed you need two facts, one for distance and one for time.",
+          "visual": "",
+          "explanation": [
+            "1 km = 1,000 m.",
+            "1 hour = 60 minutes and 1 minute = 60 seconds.",
+            "So 1 hour = 60 × 60 = 3,600 seconds."
+          ],
+          "rule": "1 km = 1,000 m and 1 hour = 3,600 seconds.",
+          "tip": "Learn these two numbers: 1,000 and 3,600. Every speed conversion uses them."
+        },
+        {
+          "id": "sd-l3-les2",
+          "title": "From km/h to m/s",
+          "intro": "To change km/h into m/s, multiply by 5 and divide by 18.",
+          "visual": "",
+          "explanation": [
+            "18 km/h means 18,000 m in 3,600 seconds.",
+            "18,000 ÷ 3,600 = 5. So 18 km/h = 5 m/s.",
+            "That is where the 5 and the 18 come from. For 72 km/h, 72 × 5 ÷ 18 = 20, so it is 20 m/s."
+          ],
+          "rule": "km/h to m/s: multiply by 5, then divide by 18.",
+          "tip": "The number gets smaller. A second is short, so only a few metres are covered.",
+          "steps": [
+            {
+              "text": "Start with the speed in km/h.",
+              "notation": "72 \\text{ km/h}"
+            },
+            {
+              "text": "Multiply by 5.",
+              "notation": "72 \\times 5 = 360"
+            },
+            {
+              "text": "Divide by 18.",
+              "notation": "360 \\div 18 = 20",
+              "tip": "72 km/h is 20 m/s."
+            }
+          ]
+        },
+        {
+          "id": "sd-l3-les3",
+          "title": "From m/s to km/h",
+          "intro": "To go the other way, multiply by 18 and divide by 5.",
+          "visual": "",
+          "explanation": [
+            "5 m/s is the same as 18 km/h.",
+            "For 30 m/s, 30 × 18 ÷ 5 = 108, so it is 108 km/h.",
+            "A quick way: 30 ÷ 5 = 6, and 6 × 18 = 108."
+          ],
+          "rule": "m/s to km/h: multiply by 18, then divide by 5.",
+          "tip": "The number gets bigger. An hour is long, so many kilometres are covered."
+        },
+        {
+          "id": "sd-l3-les4",
+          "title": "Pairs Worth Remembering",
+          "intro": "A few conversions come up again and again. Knowing them saves time.",
+          "visual": "",
+          "explanation": [
+            "18 km/h = 5 m/s.",
+            "36 km/h = 10 m/s and 72 km/h = 20 m/s.",
+            "54 km/h = 15 m/s, 90 km/h = 25 m/s and 108 km/h = 30 m/s."
+          ],
+          "rule": "Every 18 km/h is worth 5 m/s.",
+          "tip": "Is the km/h number a multiple of 18? Then the conversion is easy."
+        },
+        {
+          "id": "sd-l3-les5",
+          "title": "Match the Units First",
+          "intro": "Before you calculate, make sure the units agree.",
+          "visual": "",
+          "explanation": [
+            "A man walks at 6 km/h. How far does he go in 3 minutes?",
+            "6 km/h is 6,000 m in 60 minutes. 6,000 ÷ 60 = 100, so he walks 100 m each minute.",
+            "100 × 3 = 300, so in 3 minutes he walks 300 m."
+          ],
+          "rule": "Change the units so that they match before you multiply or divide.",
+          "tip": "If the time is in minutes, a speed in metres per minute is easiest.",
+          "steps": [
+            {
+              "text": "Change 6 km into metres.",
+              "notation": "6 \\times 1{,}000 = 6{,}000"
+            },
+            {
+              "text": "He covers 6,000 m in 60 minutes. Find the distance for 1 minute.",
+              "notation": "6{,}000 \\div 60 = 100"
+            },
+            {
+              "text": "Multiply by 3 minutes.",
+              "notation": "100 \\times 3 = 300",
+              "tip": "300 metres."
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sd-l3-q1",
+          "question": "How many metres are there in 7 km?",
+          "answer": "7000",
+          "hint": "Each km is 1,000 m.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sd-l3-q2",
+          "question": "Change 36 km/h into m/s.",
+          "answer": "10",
+          "hint": "Multiply by 5, then divide by 18.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sd-l3-q3",
+          "question": "Change 90 km/h into m/s.",
+          "answer": "25",
+          "hint": "90 is five lots of 18.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sd-l3-q4",
+          "question": "Change 15 m/s into km/h.",
+          "answer": "54",
+          "hint": "Multiply by 18, then divide by 5.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sd-l3-q5",
+          "question": "Its speed is 30 m/s. What is its speed in km/h?",
+          "answer": "108",
+          "hint": "Divide by 5 first, then multiply by 18.",
+          "difficulty": "stretch",
+          "story": "A motorcycle is moving along a highway near Pune.",
+          "isWord": true
+        },
+        {
+          "id": "sd-l3-q6",
+          "question": "It flies at 10 m/s. What is its speed in km/h?",
+          "answer": "36",
+          "hint": "Multiply by 18, then divide by 5.",
+          "difficulty": "stretch",
+          "story": "A dragonfly is darting across a pond.",
+          "isWord": true
+        },
+        {
+          "id": "sd-l3-q7",
+          "question": "A girl cycles at 12 km/h. How many metres does she cover in 4 minutes?",
+          "answer": "800",
+          "hint": "Change 12 km to metres. Find the distance for 1 minute, then for 4.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sd-l3-q8",
+          "question": "A car travels 500 metres in 25 seconds. What is its speed in km/h?",
+          "answer": "72",
+          "hint": "Find the speed in m/s first. Then change it to km/h.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Trains and Poles",
+      "emoji": "🟠",
+      "color": "#FF9600",
+      "bgGradient": "from-orange-400 to-orange-600",
+      "subtitle": "A train covers its own length",
+      "lessons": [
+        {
+          "id": "sd-l4-les1",
+          "title": "A Train Passing a Pole",
+          "intro": "When a train passes a pole, it moves forward by exactly its own length.",
+          "visual": "",
+          "explanation": [
+            "The front of the train reaches the pole first.",
+            "The train has passed only when its last coach has gone by.",
+            "So the distance covered is the length of the train."
+          ],
+          "rule": "Passing a pole or a standing person: the distance is the length of the train.",
+          "tip": "Picture the last coach. It has to travel the whole length of the train."
+        },
+        {
+          "id": "sd-l4-les2",
+          "title": "How Long Does It Take?",
+          "intro": "Time is distance divided by speed. Here the distance is the length of the train.",
+          "visual": "",
+          "explanation": [
+            "A train 150 m long runs at 15 m/s.",
+            "150 ÷ 15 = 10.",
+            "It takes 10 seconds to pass a pole."
+          ],
+          "rule": "Time to pass a pole = length of the train ÷ speed.",
+          "tip": "Length in metres and speed in m/s give the time in seconds.",
+          "steps": [
+            {
+              "text": "The distance is the length of the train.",
+              "notation": "150 \\text{ m}"
+            },
+            {
+              "text": "Divide by the speed in m/s.",
+              "notation": "150 \\div 15 = 10"
+            },
+            {
+              "text": "Say the answer with its unit.",
+              "notation": "10 \\text{ seconds}"
+            }
+          ]
+        },
+        {
+          "id": "sd-l4-les3",
+          "title": "Change km/h to m/s First",
+          "intro": "Train lengths are in metres, but speeds are often in km/h. Change the speed first.",
+          "visual": "",
+          "explanation": [
+            "A train 120 m long runs at 36 km/h. How long does it take to pass a pole?",
+            "36 km/h = 10 m/s.",
+            "120 ÷ 10 = 12, so it takes 12 seconds."
+          ],
+          "rule": "Metres go with m/s. Change km/h into m/s before you divide.",
+          "tip": "36 km/h is 10 m/s. That one is worth knowing by heart.",
+          "steps": [
+            {
+              "text": "Change the speed into m/s.",
+              "notation": "36 \\times 5 \\div 18 = 10"
+            },
+            {
+              "text": "Divide the length by the speed.",
+              "notation": "120 \\div 10 = 12",
+              "tip": "12 seconds."
+            }
+          ]
+        },
+        {
+          "id": "sd-l4-les4",
+          "title": "Finding the Speed of a Train",
+          "intro": "If you know the length and the time, you can find the speed.",
+          "visual": "",
+          "explanation": [
+            "A train 200 m long passes a pole in 10 seconds.",
+            "200 ÷ 10 = 20, so its speed is 20 m/s.",
+            "In km/h that is 20 × 18 ÷ 5 = 72 km/h."
+          ],
+          "rule": "Speed of the train = its length ÷ the time to pass the pole.",
+          "tip": "The answer comes in m/s. Change it to km/h if the question asks for that."
+        },
+        {
+          "id": "sd-l4-les5",
+          "title": "Finding the Length of a Train",
+          "intro": "If you know the speed and the time, you can find the length.",
+          "visual": "",
+          "explanation": [
+            "A train passes a pole in 28 seconds at 108 km/h. How long is the train?",
+            "108 km/h = 30 m/s.",
+            "Length is speed times time. 30 × 28 = 840, so the train is 840 m long."
+          ],
+          "rule": "Length of the train = speed × time to pass the pole.",
+          "tip": "Use m/s and seconds together to get metres.",
+          "steps": [
+            {
+              "text": "Change the speed into m/s.",
+              "notation": "108 \\times 5 \\div 18 = 30"
+            },
+            {
+              "text": "Multiply by the time in seconds.",
+              "notation": "30 \\times 28 = 840",
+              "tip": "The train is 840 m long."
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sd-l4-q1",
+          "question": "A train 180 m long runs at 20 m/s. How many seconds does it take to pass a pole?",
+          "answer": "9",
+          "hint": "Divide the length by the speed.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sd-l4-q2",
+          "question": "A train 240 m long passes a pole in 12 seconds. What is its speed in m/s?",
+          "answer": "20",
+          "hint": "Divide the length by the time.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sd-l4-q3",
+          "question": "A train runs at 25 m/s and passes a pole in 8 seconds. How many metres long is the train?",
+          "answer": "200",
+          "hint": "Length is speed times time.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sd-l4-q4",
+          "question": "A train 100 m long runs at 36 km/h. How many seconds does it take to pass a man standing beside the track?",
+          "answer": "10",
+          "hint": "Change 36 km/h into m/s first.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sd-l4-q5",
+          "question": "The train is 300 m long and its speed is 72 km/h. How many seconds does it take to pass the pole?",
+          "answer": "15",
+          "hint": "Change 72 km/h into m/s, then divide the length by it.",
+          "difficulty": "stretch",
+          "story": "The Rajdhani Express is rushing past a signal pole.",
+          "isWord": true
+        },
+        {
+          "id": "sd-l4-q6",
+          "question": "A train 250 m long passes her in 10 seconds without stopping. What is its speed in km/h?",
+          "answer": "90",
+          "hint": "Find the speed in m/s first. Then multiply by 18 and divide by 5.",
+          "difficulty": "stretch",
+          "story": "Zoya is standing on the platform at Nagpur station.",
+          "isWord": true
+        },
+        {
+          "id": "sd-l4-q7",
+          "question": "A train running at 54 km/h passes a pole in 20 seconds. How many metres long is the train?",
+          "answer": "300",
+          "hint": "Change 54 km/h into m/s, then multiply by the time.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sd-l4-q8",
+          "question": "A train 200 m long passes a pole in 9 seconds. What is its speed in km/h?",
+          "answer": "80",
+          "hint": "The speed is 200 ÷ 9 m/s. Multiply 200 by 18 first, then divide by 9 and by 5.",
+          "difficulty": "challenge"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Journeys with a Twist",
+      "emoji": "🔴",
+      "color": "#FF4B4B",
+      "bgGradient": "from-red-400 to-red-600",
+      "subtitle": "Clock times, returns and two speeds",
+      "lessons": [
+        {
+          "id": "sd-l5-les1",
+          "title": "Time from the Clock",
+          "intro": "Some questions give the start and finish times. Find the time taken first.",
+          "visual": "",
+          "explanation": [
+            "A train leaves at 6:45 pm and arrives at 9:15 pm.",
+            "From 6:45 to 8:45 is 2 hours. From 8:45 to 9:15 is 30 minutes.",
+            "The journey takes 2 hours 30 minutes, which is 2.5 hours."
+          ],
+          "rule": "Find the time taken before you use any speed formula.",
+          "tip": "Count on in whole hours, then add the minutes that are left.",
+          "steps": [
+            {
+              "text": "Count the whole hours first: 6:45 to 8:45.",
+              "notation": "2 \\text{ hours}"
+            },
+            {
+              "text": "Then the minutes that are left: 8:45 to 9:15.",
+              "notation": "30 \\text{ minutes}"
+            },
+            {
+              "text": "30 minutes is half an hour, which is 0.5 hours.",
+              "notation": "2 + 0.5 = 2.5",
+              "tip": "2.5 hours in all."
+            }
+          ]
+        },
+        {
+          "id": "sd-l5-les2",
+          "title": "Clock Times and Distance",
+          "intro": "Now use the time taken to find the distance.",
+          "visual": "",
+          "explanation": [
+            "The train above travels for 2.5 hours at 80 km/h.",
+            "80 × 2.5 = 200.",
+            "The two cities are 200 km apart."
+          ],
+          "rule": "Use the time taken, in hours, with a speed in km/h.",
+          "tip": "2.5 hours is 2 hours and half an hour. 80 × 2 = 160, and half of 80 is 40. 160 + 40 = 200."
+        },
+        {
+          "id": "sd-l5-les3",
+          "title": "The Return Journey",
+          "intro": "On a return trip the distance stays the same. Only the speed and the time change.",
+          "visual": "",
+          "explanation": [
+            "Nirav drives 360 km in 6 hours. On the way back he drives 15 km/h slower.",
+            "Going: 360 ÷ 6 = 60, so his speed is 60 km/h. Coming back: 60 − 15 = 45, so his speed is 45 km/h.",
+            "360 ÷ 45 = 8, so the return takes 8 hours."
+          ],
+          "rule": "Same road, new speed: find the new speed, then divide the distance by it.",
+          "tip": "The distance does not change on the way back.",
+          "steps": [
+            {
+              "text": "Find the speed on the way there.",
+              "notation": "360 \\div 6 = 60"
+            },
+            {
+              "text": "Find the slower speed on the way back.",
+              "notation": "60 - 15 = 45"
+            },
+            {
+              "text": "The distance is the same. Divide it by the new speed.",
+              "notation": "360 \\div 45 = 8",
+              "tip": "8 hours to come back."
+            }
+          ]
+        },
+        {
+          "id": "sd-l5-les4",
+          "title": "Two Parts, Two Speeds",
+          "intro": "When a journey has parts at different speeds, find the time for each part.",
+          "visual": "",
+          "explanation": [
+            "Shreya runs 100 m at 4 m/s and then 300 m at 5 m/s.",
+            "First part: 100 ÷ 4 = 25 seconds. Second part: 300 ÷ 5 = 60 seconds.",
+            "Total time: 25 + 60 = 85 seconds."
+          ],
+          "rule": "Find the time for each part separately, then add the times.",
+          "tip": "Never add the two speeds. Add the times."
+        },
+        {
+          "id": "sd-l5-les5",
+          "title": "Walking and Riding",
+          "intro": "Some puzzles mix two ways of travelling. Break each trip into one-way parts.",
+          "visual": "",
+          "explanation": [
+            "Amar walks to school and rides back. That takes 40 minutes altogether. Walking both ways takes 60 minutes.",
+            "Walking one way takes 60 ÷ 2 = 30 minutes. So riding one way takes 40 − 30 = 10 minutes.",
+            "Riding both ways takes 10 × 2 = 20 minutes."
+          ],
+          "rule": "Split each trip into one-way parts, then build the trip you need.",
+          "tip": "Both ways is double one way. One way is half of both ways.",
+          "steps": [
+            {
+              "text": "Walking both ways takes 60 minutes. Halve it for one way.",
+              "notation": "60 \\div 2 = 30"
+            },
+            {
+              "text": "One walk and one ride take 40 minutes. Take away the walk.",
+              "notation": "40 - 30 = 10"
+            },
+            {
+              "text": "Double it for riding both ways.",
+              "notation": "10 \\times 2 = 20",
+              "tip": "20 minutes."
+            }
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "id": "sd-l5-q1",
+          "question": "A bus leaves at 2:15 pm and arrives at 5:45 pm. How many minutes does the journey take?",
+          "answer": "210",
+          "hint": "Count the whole hours first, then the extra minutes. Each hour is 60 minutes.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sd-l5-q2",
+          "question": "A car travels for 2.5 hours at 60 km/h. How many km does it cover?",
+          "answer": "150",
+          "hint": "Find the distance for 2 hours, then add the distance for half an hour.",
+          "difficulty": "direct"
+        },
+        {
+          "id": "sd-l5-q3",
+          "question": "Meena runs 200 m at 5 m/s and then 300 m at 6 m/s. How many seconds does she take altogether?",
+          "answer": "90",
+          "hint": "Find the time for each part, then add the two times.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sd-l5-q4",
+          "question": "A man drives 240 km in 4 hours. On the way back he drives 20 km/h slower. How many hours does the return journey take?",
+          "answer": "6",
+          "hint": "Find his speed on the way there. Take 20 off for the way back.",
+          "difficulty": "near_transfer"
+        },
+        {
+          "id": "sd-l5-q5",
+          "question": "The train leaves at 6:45 pm and arrives at 9:15 pm the same day. Its speed is 30 m/s. How many km apart are the two cities?",
+          "answer": "270",
+          "hint": "Find the time taken in hours. Change the speed into km/h. Then multiply.",
+          "difficulty": "stretch",
+          "story": "A fast train runs between Mumbai and Surat in the evening.",
+          "isWord": true
+        },
+        {
+          "id": "sd-l5-q6",
+          "question": "He covers 680 km in 8 hours on the way there. On the way back he drives 17 km/h slower. How many minutes does the return journey take?",
+          "answer": "600",
+          "hint": "Find the first speed, then the slower speed, then the time in hours. Each hour is 60 minutes.",
+          "difficulty": "stretch",
+          "story": "Nirav is driving from Ahmedabad to Indore and back.",
+          "isWord": true
+        },
+        {
+          "id": "sd-l5-q7",
+          "question": "Amar walks from A to B and rides back in 37 minutes altogether. Walking both ways takes him 55 minutes. How many minutes does riding both ways take?",
+          "answer": "19",
+          "hint": "Halve 55 to get one walk. Take that from 37 to get one ride. Then double it.",
+          "difficulty": "challenge"
+        },
+        {
+          "id": "sd-l5-q8",
+          "question": "Shraddha runs 5 rounds of a 400 m track. In each round she runs the first 100 m at 4 m/s and the remaining 300 m at 5 m/s. How many seconds does she take for all 5 rounds?",
+          "answer": "425",
+          "hint": "Find the time for one round first: the time for 100 m plus the time for 300 m.",
+          "difficulty": "challenge"
+        }
+      ]
+    }
+  ]
+}

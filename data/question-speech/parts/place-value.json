@@ -1490,25 +1490,6 @@
    "Subtract to find by how much: 469571 minus 459671 equals 9900. So the new number is less by 9900."
   ]
  },
- "EXT_G5_WS_B3_010": {
-  "q": "In a bundle of notes of 5 rupees denomination, the notes are numbered serially from 40801 to 40901. What is the total amount of money in this bundle?",
-  "options": [
-   "500 rupees",
-   "505 rupees",
-   "625 rupees",
-   "555 rupees"
-  ],
-  "hints": [
-   "How many notes are there from 40801 to 40901?",
-   "The count is 40901 minus 40801, plus 1, which is 101 notes. The total is 101 times 5.",
-   "Try this: notes from 1 to 5 make 5 notes. 5 times 5 rupees equals 25 rupees."
-  ],
-  "steps": [
-   "Count the notes from 40801 to 40901. Subtract and add 1, because both the first and the last note are counted. 40901 minus 40801, plus 1, equals 101 notes.",
-   "Each note is worth 5 rupees, so multiply: 101 times 5 equals 505.",
-   "So the bundle holds 505 rupees in all."
-  ]
- },
  "EXT_G5_WS_B4_018": {
   "q": "In writing all the prime numbers from 1 to 100, how many times is the digit 7 used?",
   "options": [
@@ -2292,24 +2273,6 @@
    "The count is 70 minus 20, divided by 2, plus 1. That equals 26."
   ]
  },
- "PH3_EXT_G5_WS_B2_013_03_b": {
-  "q": "Find the sum of the first 14 even numbers.",
-  "options": [
-   "224",
-   "196",
-   "420",
-   "210"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 14 even numbers.",
-   "For even numbers, it is n, times n plus 1, which is 14 times 15.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 14 even numbers is n, times n plus 1, which is 14 times 15.",
-   "That equals 210."
-  ]
- },
  "PH3_EXT_G5_WS_B2_024_01": {
   "q": "How many numbers from 50 to 250 are divisible by 4?",
   "options": [
@@ -2440,24 +2403,6 @@
    "The count is 30 minus 10, divided by 2, plus 1. That equals 11."
   ]
  },
- "PH3_EXT_G5_WS_B3_003_02_b": {
-  "q": "Find the sum of the first 23 odd numbers.",
-  "options": [
-   "1058",
-   "530",
-   "552",
-   "529"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 23 odd numbers.",
-   "For odd numbers, it is n squared, which is 23 squared.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 23 odd numbers is n squared, which is 23 squared.",
-   "That equals 529."
-  ]
- },
  "PH3_EXT_G5_WS_B3_003_03_b": {
   "q": "How many odd numbers are there from 10 to 30?",
   "options": [
@@ -2493,24 +2438,6 @@
    "The first multiple of 8, from 100 onwards, is 104.",
    "The last multiple of 8, up to 150, is 144.",
    "The count is 144 minus 104, divided by 8, plus 1. That equals 6."
-  ]
- },
- "PH3_EXT_G5_WS_B3_010_02_b": {
-  "q": "Find the sum of the first 8 odd numbers.",
-  "options": [
-   "64",
-   "65",
-   "72",
-   "128"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 8 odd numbers.",
-   "For odd numbers, it is n squared, which is 8 squared.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 8 odd numbers is n squared, which is 8 squared.",
-   "That equals 64."
   ]
  },
  "PH3_EXT_G5_WS_B3_010_03_b": {
@@ -2566,42 +2493,6 @@
   "steps": [
    "The first odd number is 11, and the last odd number is 59.",
    "The count is 59 minus 11, divided by 2, plus 1. That equals 25."
-  ]
- },
- "PH3_EXT_G5_WS_B3_026_03_b": {
-  "q": "Find the sum of the first 20 natural numbers.",
-  "options": [
-   "420",
-   "230",
-   "400",
-   "210"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 20 natural numbers.",
-   "For natural numbers, it is n, times n plus 1, divided by 2. That is 20 times 21, divided by 2.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 20 natural numbers is n, times n plus 1, divided by 2. That is 20 times 21, divided by 2.",
-   "That equals 210."
-  ]
- },
- "PH3_EXT_G5_WS_B4_003_01_b": {
-  "q": "Find the sum of the first 8 natural numbers.",
-  "options": [
-   "36",
-   "72",
-   "64",
-   "44"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 8 natural numbers.",
-   "For natural numbers, it is n, times n plus 1, divided by 2. That is 8 times 9, divided by 2.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 8 natural numbers is n, times n plus 1, divided by 2. That is 8 times 9, divided by 2.",
-   "That equals 36."
   ]
  },
  "PH3_EXT_G5_WS_B4_003_02_b": {
@@ -2660,24 +2551,6 @@
    "The count is 198 minus 108, divided by 9, plus 1. That equals 11."
   ]
  },
- "PH3_EXT_G5_WS_B4_004_02_b": {
-  "q": "Find the sum of the first 14 odd numbers.",
-  "options": [
-   "392",
-   "210",
-   "197",
-   "196"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 14 odd numbers.",
-   "For odd numbers, it is n squared, which is 14 squared.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 14 odd numbers is n squared, which is 14 squared.",
-   "That equals 196."
-  ]
- },
  "PH3_EXT_G5_WS_B4_004_03_b": {
   "q": "How many odd numbers are there from 1 to 101?",
   "options": [
@@ -2713,24 +2586,6 @@
    "The first multiple of 7, from 10 onwards, is 14.",
    "The last multiple of 7, up to 210, is 210.",
    "The count is 210 minus 14, divided by 7, plus 1. That equals 29."
-  ]
- },
- "PH3_EXT_G5_WS_B4_018_02_b": {
-  "q": "Find the sum of the first 25 even numbers.",
-  "options": [
-   "625",
-   "650",
-   "1300",
-   "675"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 25 even numbers.",
-   "For even numbers, it is n, times n plus 1, which is 25 times 26.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 25 even numbers is n, times n plus 1, which is 25 times 26.",
-   "That equals 650."
   ]
  },
  "PH3_EXT_G5_WS_B4_018_03_b": {
@@ -2788,24 +2643,6 @@
    "The count is 30 minus 2, divided by 2, plus 1. That equals 15."
   ]
  },
- "PH3_EXT_G5_WS_B4_019_03_b": {
-  "q": "Find the sum of the first 11 natural numbers.",
-  "options": [
-   "121",
-   "66",
-   "77",
-   "132"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 11 natural numbers.",
-   "For natural numbers, it is n, times n plus 1, divided by 2. That is 11 times 12, divided by 2.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 11 natural numbers is n, times n plus 1, divided by 2. That is 11 times 12, divided by 2.",
-   "That equals 66."
-  ]
- },
  "PH3_EXT_G5_WS_B4_020_01": {
   "q": "How many numbers from 50 to 250 are divisible by 3?",
   "options": [
@@ -2843,24 +2680,6 @@
    "The count is 40 minus 2, divided by 2, plus 1. That equals 20."
   ]
  },
- "PH3_EXT_G5_WS_B4_020_03_b": {
-  "q": "Find the sum of the first 24 odd numbers.",
-  "options": [
-   "577",
-   "576",
-   "600",
-   "1152"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 24 odd numbers.",
-   "For odd numbers, it is n squared, which is 24 squared.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 24 odd numbers is n squared, which is 24 squared.",
-   "That equals 576."
-  ]
- },
  "PH3_EXT_G5_WS_B4_021_01": {
   "q": "How many numbers from 50 to 250 are divisible by 9?",
   "options": [
@@ -2878,24 +2697,6 @@
    "The first multiple of 9, from 50 onwards, is 54.",
    "The last multiple of 9, up to 250, is 243.",
    "The count is 243 minus 54, divided by 9, plus 1. That equals 22."
-  ]
- },
- "PH3_EXT_G5_WS_B4_021_02_b": {
-  "q": "Find the sum of the first 12 odd numbers.",
-  "options": [
-   "156",
-   "145",
-   "288",
-   "144"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 12 odd numbers.",
-   "For odd numbers, it is n squared, which is 12 squared.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 12 odd numbers is n squared, which is 12 squared.",
-   "That equals 144."
   ]
  },
  "PH3_EXT_G5_WS_B4_021_03_b": {
@@ -2935,24 +2736,6 @@
    "The count is 45 minus 9, divided by 9, plus 1. That equals 5."
   ]
  },
- "PH3_EXT_G5_WS_B5_020_02_b": {
-  "q": "Find the sum of the first 15 natural numbers.",
-  "options": [
-   "120",
-   "225",
-   "135",
-   "240"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 15 natural numbers.",
-   "For natural numbers, it is n, times n plus 1, divided by 2. That is 15 times 16, divided by 2.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 15 natural numbers is n, times n plus 1, divided by 2. That is 15 times 16, divided by 2.",
-   "That equals 120."
-  ]
- },
  "PH3_EXT_G5_WS_B5_020_03_b": {
   "q": "How many odd numbers are there from 10 to 50?",
   "options": [
@@ -2989,42 +2772,6 @@
    "The count is 51 minus 1, divided by 2, plus 1. That equals 26."
   ]
  },
- "PH3_EXT_G5_WS_B5_021_02_b": {
-  "q": "Find the sum of the first 7 odd numbers.",
-  "options": [
-   "56",
-   "50",
-   "98",
-   "49"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 7 odd numbers.",
-   "For odd numbers, it is n squared, which is 7 squared.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 7 odd numbers is n squared, which is 7 squared.",
-   "That equals 49."
-  ]
- },
- "PH3_EXT_G5_WS_B5_021_03_b": {
-  "q": "Find the sum of the first 14 natural numbers.",
-  "options": [
-   "210",
-   "119",
-   "196",
-   "105"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 14 natural numbers.",
-   "For natural numbers, it is n, times n plus 1, divided by 2. That is 14 times 15, divided by 2.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 14 natural numbers is n, times n plus 1, divided by 2. That is 14 times 15, divided by 2.",
-   "That equals 105."
-  ]
- },
  "PH3_EXT_G5_WS_B5_022_01_b": {
   "q": "How many numbers from 50 to 250 are divisible by 5?",
   "options": [
@@ -3042,24 +2789,6 @@
    "The first multiple of 5, from 50 onwards, is 50.",
    "The last multiple of 5, up to 250, is 250.",
    "The count is 250 minus 50, divided by 5, plus 1. That equals 41."
-  ]
- },
- "PH3_EXT_G5_WS_B5_022_02_b": {
-  "q": "Find the sum of the first 17 even numbers.",
-  "options": [
-   "323",
-   "306",
-   "612",
-   "289"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 17 even numbers.",
-   "For even numbers, it is n, times n plus 1, which is 17 times 18.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 17 even numbers is n, times n plus 1, which is 17 times 18.",
-   "That equals 306."
   ]
  },
  "PH3_EXT_G5_WS_B5_022_03_b": {
@@ -3226,24 +2955,6 @@
   "steps": [
    "The first odd number is 51, and the last odd number is 69.",
    "The count is 69 minus 51, divided by 2, plus 1. That equals 10."
-  ]
- },
- "PH3_EXT_G5_WS_B7_031_03_b": {
-  "q": "Find the sum of the first 20 odd numbers.",
-  "options": [
-   "400",
-   "401",
-   "800",
-   "420"
-  ],
-  "hints": [
-   "There's a formula for the sum of the first 20 odd numbers.",
-   "For odd numbers, it is n squared, which is 20 squared.",
-   "Plug in and calculate."
-  ],
-  "steps": [
-   "The formula for the sum of the first 20 odd numbers is n squared, which is 20 squared.",
-   "That equals 400."
   ]
  },
  "VAR_EXT_G5_WS_01_001_01": {

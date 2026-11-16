@@ -9,9 +9,9 @@ import NudgeBubble from '@/components/NudgeBubble';
 import { computeNudge, markMasteryShown, type Nudge } from '@/lib/nudges';
 import { getAccessibleGrades, isGradeAccessible } from '@/lib/gradeAccess';
 import { MONETIZATION_ENABLED, UNLIMITED_TIER } from '@/lib/monetization';
-import { getTopicsForGrade, type TopicNode } from '@/data/topicTree';
 import { TOPIC_ORDER } from '@/lib/sharedUtils';
-import SkillPath from '@/components/chapters/SkillPath';
+import TopicList from '@/components/topics/TopicList';
+import { progressByTopicId } from '@/components/topics/useTopicProgress';
 import ChaptersSkeleton from './ChaptersSkeleton';
 import { useStudent } from '@/components/shell/StudentProvider';
 
@@ -29,25 +29,6 @@ const TOPIC_EMOJI: Record<string, string> = {
 };
 
 const DAILY_GOAL = 10;
-
-// ── Mastery sort weight (Practicing → NotStarted → Mastered) ──────────────────
-function masteryWeight(m: string): number {
-  if (m === 'Practicing') return 0;
-  if (m === 'NotStarted') return 1;
-  return 2; // Mastered
-}
-
-function sortTopics(topics: TopicWithProgress[]): TopicWithProgress[] {
-  return [...topics].sort((a, b) => {
-    const wDiff = masteryWeight(a.mastery) - masteryWeight(b.mastery);
-    if (wDiff !== 0) return wDiff;
-    // Within same mastery group, sort weakest (lowest accuracy) first
-    const accA = a.attempted > 0 ? a.correct / a.attempted : 0.5;
-    const accB = b.attempted > 0 ? b.correct / b.attempted : 0.5;
-    if (Math.abs(accA - accB) > 0.01) return accA - accB;
-    return TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id);
-  });
-}
 
 function getHearts(): number {
   if (typeof window === 'undefined') return 5;
@@ -173,15 +154,9 @@ export default function ChaptersPage() {
     [fullAccess, selectedGrade],
   );
 
-  // Grade 4: curriculum order for skill path; other grades: mastery-weight sort
-  const sortedTopics = useMemo(() => {
-    if (selectedGrade === 4) {
-      return [...topicsForGrade].sort(
-        (a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id),
-      );
-    }
-    return sortTopics(topicsForGrade);
-  }, [topicsForGrade, selectedGrade]);
+  // Progress by database topic id, for the shared topic list. The dashboard
+  // only reports the child's own grade, so another grade's tab shows no numbers.
+  const topicProgress = useMemo(() => progressByTopicId(data?.topics), [data?.topics]);
 
   // Syllabus coverage stats (used by the coverage bar)
   const syllabusCoverage = useMemo(() => {
@@ -293,19 +268,6 @@ export default function ChaptersPage() {
         </p>
       </div>
 
-      {/* ── Concept Lessons banner ───────────────────────────────────────── */}
-      <button
-        onClick={() => router.push('/learn/lessons')}
-        className="mx-4 mb-3 w-[calc(100%-2rem)] bg-white border-2 border-line rounded-card px-4 py-3 flex items-center gap-3 active:scale-[0.98] transition-transform text-left"
-      >
-        <span className="text-2xl" aria-hidden="true">📖</span>
-        <div className="flex-1 min-w-0">
-          <p className="text-sm font-extrabold text-ink">Learn New Concepts</p>
-          <p className="text-xs text-ink-muted font-semibold">Step-by-step lessons with quizzes</p>
-        </div>
-        <span className="text-ink-muted text-lg" aria-hidden="true">&rsaquo;</span>
-      </button>
-
       {/* ── Grade switcher tabs ──────────────────────────────────────────── */}
       <div
         ref={gradeTabsRef}
@@ -395,23 +357,8 @@ export default function ChaptersPage() {
         </div>
       )}
 
-      {/* ── Flashcard review banner ─────────────────────────────────────── */}
-      <div className="px-4 pt-1">
-        <button
-          onClick={() => router.push('/flashcards')}
-          className="w-full bg-white border-2 border-line rounded-card px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-transform"
-        >
-          <span className="text-2xl" aria-hidden="true">🃏</span>
-          <div className="text-left flex-1">
-            <p className="text-ink font-extrabold text-sm leading-tight">Sparky&apos;s Flashcards</p>
-            <p className="text-ink-muted text-xs">Tap · Flip · Master concepts</p>
-          </div>
-          <span className="text-action text-sm font-bold">Review →</span>
-        </button>
-      </div>
-
       {/* ── Mock test entry card ────────────────────────────────────────── */}
-      <div className="px-4 pt-0">
+      <div className="px-4 pt-1">
         <button
           onClick={() => router.push('/test')}
           className="w-full bg-white border-2 border-line rounded-card px-4 py-3.5 flex items-center gap-3 mb-3 active:scale-[0.98] transition-transform"
@@ -425,17 +372,21 @@ export default function ChaptersPage() {
         </button>
       </div>
 
-      {/* ── Topic content for selected grade ────────────────────────────── */}
-      <div className="px-4 pt-0">
-        {selectedGrade === 4 ? (
-          // Grade 4: vertical skill path + IPM pool card at bottom
-          <>
-            <SkillPath
-              topics={sortedTopics}
-              onTopicClick={(id) => router.push(`/practice/${id}`)}
-            />
+      {/* ── Topics for the selected grade ───────────────────────────────── */}
+      {/* The same list as the Learn tab. A topic opens its own page, where
+          Practise comes first and its lesson, drill, flashcards and the rest
+          follow (so this page no longer links to lessons or flashcards itself). */}
+      <div className="px-4 pt-1">
+        <TopicList
+          grade={selectedGrade}
+          from="practice"
+          progress={selectedGrade === studentGrade ? topicProgress : null}
+          sample={isGradeAccessible(selectedGrade, studentGrade, subscriptionTier).sample}
+        />
 
-            {/* Grade 4 IPM Past Papers card */}
+        {selectedGrade === 4 ? (
+          <>
+            {/* Grade 4 IPM Past Papers card (the whole-grade pool, not a topic) */}
             {grade4PoolTopic && (
               <div className="mt-6">
                 <p className="text-xs font-extrabold mb-2 text-ink-muted">
@@ -458,55 +409,8 @@ export default function ChaptersPage() {
             )}
           </>
         ) : (
-          // Other grades: topicTree skill path + lower-grade tiles
+          // Other grades: lower-grade tiles
           <>
-            {/* Skill path from topicTree */}
-            {(() => {
-              const treeNodes: TopicNode[] = getTopicsForGrade(selectedGrade);
-              const access = isGradeAccessible(selectedGrade, studentGrade, subscriptionTier);
-              const isSample = access.sample;
-              const poolTopic = topicsForGrade[0]; // the single gradeN DB topic (for correct count)
-
-              if (!treeNodes.length) {
-                return (
-                  <div className="text-center py-12 text-ink-muted">
-                    <p className="font-semibold">No lessons available yet for Grade {selectedGrade}</p>
-                  </div>
-                );
-              }
-
-              // Adapt TopicNode[] → TopicWithProgress[] for SkillPath
-              const adapted: TopicWithProgress[] = treeNodes.map((node) => ({
-                id: node.subTopicKey ? `${node.dbTopicId}__${node.subTopicKey}` : node.dbTopicId,
-                name: node.name,
-                chapterNumber: '',
-                grade: node.grade,
-                mastery: poolTopic?.mastery ?? ('NotStarted' as const),
-                attempted: poolTopic?.attempted ?? 0,
-                correct: poolTopic?.correct ?? 0,
-              }));
-
-              return (
-                <SkillPath
-                  topics={adapted}
-                  onTopicClick={(adaptedId) => {
-                    // Reverse the adapted ID to find original TopicNode
-                    const node = treeNodes.find((n) =>
-                      n.subTopicKey
-                        ? `${n.dbTopicId}__${n.subTopicKey}` === adaptedId
-                        : n.dbTopicId === adaptedId,
-                    );
-                    if (!node) return;
-                    const qp = new URLSearchParams();
-                    if (node.subTopicKey) qp.set('subTopic', node.subTopicKey);
-                    if (isSample) qp.set('sample', 'true');
-                    const qs = qp.toString() ? `?${qp.toString()}` : '';
-                    router.push(`/practice/${node.dbTopicId}${qs}`);
-                  }}
-                />
-              );
-            })()}
-
             {/* Also accessible: lower grades */}
             {lowerGrades.length > 0 && (
               <div className="mt-6">

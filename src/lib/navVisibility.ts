@@ -41,6 +41,14 @@ export function isPracticeSessionPath(pathname: string): boolean {
 }
 
 /**
+ * True on a topic page, `/topic/<nodeId>`. The bottom tab bar is shown there;
+ * which tab is lit depends on where the child came from (see BottomNav).
+ */
+export function isTopicPagePath(pathname: string): boolean {
+  return pathname.indexOf('/topic/') === 0;
+}
+
+/**
  * The bottom tab bar is hidden wherever the app chrome is, and also during a
  * practice session, which has its own back arrow. (The Sparky widget keeps
  * running there so the session's own "Ask Sparky" buttons can open the chat;

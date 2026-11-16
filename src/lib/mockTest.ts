@@ -1,7 +1,7 @@
 import { MS_PER_DAY } from '@/lib/timeConstants';
 import { prisma, USABLE_QUESTION_FILTER } from '@/lib/db';
 import { isAiTextbookServeEnabled, isAiQuestionsServeEnabled, isEqualSurfacingEnabled } from '@/lib/llm/featureFlags';
-import { getTopicsForGrade } from '@/data/topicTree';
+import { getTopicsForGrade, extraTopicKeys } from '@/data/topicTree';
 import { shuffle } from '@/lib/shuffle';
 import { matchesSubTopicKey } from '@/lib/sharedUtils';
 import type { TestType, PYQYear } from '@/types';
@@ -20,7 +20,7 @@ export const TEST_CONFIG = {
 // Each entry: topicId (DB), count, difficulty breakdown (E/M/H)
 // Source: ch01→ch01-05, ch07→ch07-08, ch09→ch09-10, roman→ch01-05 (merged)
 
-interface BlueprintSlot {
+export interface BlueprintSlot {
   topicId: string;
   subTopicKey?: string;
   count: number;
@@ -155,8 +155,10 @@ function spreadDifficulty(slots: BlueprintSlot[], cfg: PaperConfig): void {
   }
 }
 
-function buildGradeBlueprint(grade: number, cfg: PaperConfig): BlueprintSlot[] {
-  const topics = getTopicsForGrade(grade).filter(t => !t.id.endsWith('_ipm'));
+export function buildGradeBlueprint(grade: number, cfg: PaperConfig): BlueprintSlot[] {
+  // Extra-practice topics are not chapters of the real paper: they never get a slot
+  // (without this, the floor of 1 below would hand each of them a question).
+  const topics = getTopicsForGrade(grade).filter(t => !t.id.endsWith('_ipm') && !t.extra);
   const totalQuestions = cfg.totalQuestions;
 
   // Where the real paper's shape is known, the paper is built to it. The slots
@@ -350,12 +352,24 @@ const QUESTION_SELECT = {
   subTopic: true,
 } as const;
 
-interface PaperConfig {
+export interface PaperConfig {
   totalQuestions: number;
   timeLimitMs: number;
   easy: number;
   medium: number;
   hard: number;
+}
+
+/**
+ * True for a question of one of the grade's extra-practice topics (topicTree
+ * `extra: true`). Those are not chapters of the real paper, so no test draws them:
+ * not from a slot, and not from the whole-grade pool a slot falls back on.
+ */
+export function isExtraPracticeQuestion(subTopic: string | null | undefined, extraKeys: string[]): boolean {
+  for (let i = 0; i < extraKeys.length; i++) {
+    if (matchesSubTopicKey(subTopic, extraKeys[i])) return true;
+  }
+  return false;
 }
 
 /**
@@ -384,14 +398,17 @@ async function generateBlueprintPaper(studentId: string, grade: number, cfg: Pap
   // Collect all DB topic IDs needed
   const topicIds = Array.from(new Set(blueprint.map(b => b.topicId)));
 
-  const allQuestions = await prisma.question.findMany({
+  // Extra-practice questions are dropped here, so neither a slot nor the
+  // whole-grade fallback pool below can put one on a test.
+  const extraKeys = extraTopicKeys(grade);
+  const allQuestions = (await prisma.question.findMany({
     where: {
       topicId: { in: topicIds },
       source: { notIn: mockExcludedSources() },
       ...USABLE_QUESTION_FILTER,
     },
     select: QUESTION_SELECT,
-  });
+  })).filter((q) => !isExtraPracticeQuestion(q.subTopic, extraKeys));
 
   type QRow = typeof allQuestions[number];
 
@@ -689,7 +706,9 @@ export async function generateMegaTest(studentId: string, grade: number) {
     orderBy: { id: 'asc' },
   });
 
-  const shuffled = shuffle(questions).slice(0, 15);
+  // Extra-practice topics are not on the real paper, so not on this test either.
+  const extraKeys = extraTopicKeys(grade);
+  const shuffled = shuffle(questions.filter((q) => !isExtraPracticeQuestion(q.subTopic, extraKeys))).slice(0, 15);
 
   return {
     questions: shuffled.map((q) => ({ ...q, stepByStep: safeParseSteps(q.stepByStep) })),

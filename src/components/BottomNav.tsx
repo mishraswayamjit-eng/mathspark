@@ -1,8 +1,9 @@
 'use client';
 
+import { Suspense } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { isBottomNavHidden } from '@/lib/navVisibility';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { isBottomNavHidden, isTopicPagePath } from '@/lib/navVisibility';
 
 type TabHref = '/home' | '/learn' | '/practice' | '/progress';
 
@@ -21,9 +22,14 @@ function under(pathname: string, base: string): boolean {
 /**
  * Which tab a route belongs to. Routes with no tab (Sparky chat, homework
  * helper) return null, so no tab is lit.
+ *
+ * `from` is the page's `?from=` hint. Only a topic page reads it: a topic
+ * opened from the Learn tab keeps Learn lit; otherwise Practise is.
  */
-function activeTab(pathname: string): TabHref | null {
+function activeTab(pathname: string, from: string | null): TabHref | null {
   if (under(pathname, '/home')) return '/home';
+
+  if (isTopicPagePath(pathname)) return from === 'learn' ? '/learn' : '/practice';
 
   // Strategy Bank and Mistake Patterns live under /learn in the URL, but they
   // are reached from Practise → Exam tips and their back arrows return there.
@@ -47,14 +53,14 @@ function activeTab(pathname: string): TabHref | null {
   return null;
 }
 
-export default function BottomNav() {
+function NavBar({ from }: { from: string | null }) {
   const pathname = usePathname();
 
   // Hide on landing, auth, parent, student, pricing, onboarding, seed, test engine pages,
   // public profiles, and during a practice session (/practice/<topicId>)
   if (isBottomNavHidden(pathname)) return null;
 
-  const current = activeTab(pathname);
+  const current = activeTab(pathname, from);
 
   return (
     <nav aria-label="Main" className="fixed bottom-0 left-0 right-0 bg-white z-50 border-t-2 border-ink pb-[env(safe-area-inset-bottom)]">
@@ -81,5 +87,21 @@ export default function BottomNav() {
         })}
       </div>
     </nav>
+  );
+}
+
+/** Reads the `?from=` hint. Kept apart so only this part waits on the query string. */
+function NavBarWithOrigin() {
+  const searchParams = useSearchParams();
+  return <NavBar from={searchParams.get('from')} />;
+}
+
+export default function BottomNav() {
+  // If the query string is not available yet, the bar still shows (Practise is
+  // lit on a topic page until the hint is known).
+  return (
+    <Suspense fallback={<NavBar from={null} />}>
+      <NavBarWithOrigin />
+    </Suspense>
   );
 }

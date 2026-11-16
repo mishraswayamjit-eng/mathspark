@@ -271,9 +271,9 @@ describe('rankNextActions', () => {
       expect(byRule(out, 'strategy_after_misses')).toBeUndefined();
     });
 
-    it('fires for a sub-topic that has no lesson mapped', () => {
-      expect(TOPIC_CONTENT_MAP.gr5_operations1.lessonSlug).toBeUndefined();
-      const out = rankNextActions(input([addSubtract({ misses7d: 3 })]));
+    it('fires for another sub-topic once its lesson is done', () => {
+      expect(TOPIC_CONTENT_MAP.gr5_operations1.lessonSlug).toBe('addition-subtraction');
+      const out = rankNextActions(input([addSubtract({ misses7d: 3 })], { lessonBest: { 'addition-subtraction': 90 } }));
       expect(out[0].ruleId).toBe('strategy_after_misses');
       expect(out[0].refId).toBe('STR_017');
     });

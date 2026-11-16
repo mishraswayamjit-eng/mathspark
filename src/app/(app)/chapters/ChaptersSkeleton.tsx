@@ -2,8 +2,8 @@ import React from 'react';
 
 // The one loading skeleton for /chapters. Used by both loading.tsx (while the
 // route loads) and page.tsx (while its data loads), so the child sees a single
-// placeholder that keeps the page's real layout: dark top bar, greeting, the
-// lessons banner, grade tabs, coverage bar, two entry cards and the skill path.
+// placeholder that keeps the page's real layout: dark top bar, greeting, grade
+// tabs, coverage bar, the mock test card, the list heading and the topic rows.
 export default function ChaptersSkeleton() {
   return (
     <div className="min-h-screen bg-paper pb-24">
@@ -22,8 +22,6 @@ export default function ChaptersSkeleton() {
         <div className="h-7 w-40 rounded-xl bg-gray-200 animate-pulse mb-1" />
         <div className="h-4 w-36 rounded-xl bg-gray-200 animate-pulse" />
       </div>
-      {/* Concept lessons banner */}
-      <div className="mx-4 mb-3 h-16 bg-white border-2 border-line rounded-card animate-pulse" />
       {/* Grade tabs */}
       <div className="flex gap-2 px-4 pb-3 overflow-hidden">
         {Array.from({ length: 8 }, (_, i) => (
@@ -38,25 +36,18 @@ export default function ChaptersSkeleton() {
         </div>
         <div className="h-2 bg-soft rounded-full" />
       </div>
-      {/* Flashcards + mock test entry cards */}
+      {/* Mock test entry card */}
       <div className="px-4 pt-1">
         <div className="h-[68px] mb-3 bg-white border-2 border-line rounded-card animate-pulse" />
-        <div className="h-[68px] mb-3 bg-white border-2 border-line rounded-card animate-pulse" />
       </div>
-      {/* Skill path */}
-      <div className="px-4 space-y-2">
-        {Array.from({ length: 6 }, (_, i) => (
-          <React.Fragment key={i}>
-            {i > 0 && <div className="flex justify-center"><div className="w-1 h-8 bg-gray-200 rounded-full" /></div>}
-            <div className={`flex items-center gap-3 px-3 py-3 ${i % 2 === 1 ? 'flex-row-reverse' : ''}`}>
-              <div className="w-14 h-14 rounded-full bg-gray-200 animate-pulse flex-shrink-0" />
-              <div className="flex-1 space-y-2">
-                <div className="h-4 w-32 rounded-xl bg-gray-200 animate-pulse" />
-                <div className="h-3 w-20 rounded-xl bg-gray-200 animate-pulse" />
-              </div>
-            </div>
-          </React.Fragment>
-        ))}
+      {/* Topic list: group heading, then one card per topic */}
+      <div className="px-4 pt-1">
+        <div className="h-[25px] w-36 mb-3 rounded-full bg-gray-200 animate-pulse" />
+        <div className="space-y-3">
+          {Array.from({ length: 6 }, (_, i) => (
+            <div key={i} className="h-[76px] bg-white border-2 border-line rounded-card animate-pulse" />
+          ))}
+        </div>
       </div>
     </div>
   );
