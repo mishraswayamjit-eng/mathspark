@@ -5,6 +5,13 @@ import type { LadderInfo } from '@/lib/practice/ladderTypes';
 
 interface TopicLadderProps {
   ladder: LadderInfo;
+  /**
+   * 'full' (default): the card with four spread-out steps and a line of words.
+   * 'compact': one row for the strip under the practice header: four small
+   * markers (their names beside them on wide screens) and, at the right, how
+   * far through the current step the child is.
+   */
+  variant?: 'full' | 'compact';
 }
 
 /** What changed since the ladder we showed last, if anything worth saying. */
@@ -27,7 +34,7 @@ const NO_MOMENT: Moment = { kind: 'none' };
  * newly ticked step) is scale-only and is switched off by the global
  * reduced-motion rule.
  */
-export default function TopicLadder({ ladder }: TopicLadderProps) {
+export default function TopicLadder({ ladder, variant }: TopicLadderProps) {
   const previous = useRef<LadderInfo | null>(null);
   const [moment, setMoment] = useState<Moment>(NO_MOMENT);
 
@@ -76,6 +83,82 @@ export default function TopicLadder({ ladder }: TopicLadderProps) {
     line = 'Get ' + ladder.needed + ' right to finish ' + currentLabel + '.';
   } else {
     line = ladder.got + ' of ' + ladder.needed + ' right to finish ' + currentLabel + '.';
+  }
+
+  if (variant === 'compact') {
+    // A moment worth saying (a step finished, a step back, everything done)
+    // takes the right-hand side for one line; otherwise it is the plain count.
+    const saying = ladder.complete || moment.kind !== 'none';
+    const shortLine = moment.kind === 'refresher' && !ladder.complete
+      ? 'A little more ' + currentLabel + ': ' + left + ' right to move up.'
+      : line;
+    return (
+      <div
+        role="group"
+        aria-label={'Your steps in ' + ladder.topicLabel}
+        className="w-full min-w-0 flex items-center gap-3"
+      >
+        <ol className="flex flex-shrink-0 items-center gap-1.5 lg:gap-4 list-none m-0 p-0">
+          {steps.map((step, i) => {
+            const isCurrent = i === ladder.current && !ladder.complete;
+            const justDone = moment.kind === 'finished' && moment.index === i;
+            const dot = step.done
+              ? 'bg-success border-success text-card'
+              : isCurrent
+                ? 'bg-action border-action text-card'
+                : 'bg-soft border-line text-ink-muted';
+            const status = step.done ? 'done' : isCurrent ? 'you are here' : 'coming up';
+            return (
+              <li
+                key={step.id}
+                className="flex items-center gap-1.5"
+                aria-current={isCurrent ? 'step' : undefined}
+              >
+                <span
+                  aria-hidden="true"
+                  className={
+                    'flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border-2 text-xs font-extrabold leading-none ' +
+                    dot +
+                    (justDone ? ' animate-pop-in' : '')
+                  }
+                >
+                  {step.done ? '✓' : i + 1}
+                </span>
+                {/* The names sit beside the markers only where the strip is wide (the two-panel layout). */}
+                <span
+                  className={
+                    'sr-only lg:not-sr-only lg:whitespace-nowrap lg:text-[13px] lg:leading-none ' +
+                    (isCurrent ? 'lg:font-extrabold lg:text-ink' : 'lg:font-bold lg:text-ink-muted')
+                  }
+                >
+                  {step.label}
+                  <span className="sr-only">{', ' + status}</span>
+                </span>
+              </li>
+            );
+          })}
+        </ol>
+        <p
+          aria-live="polite"
+          title={saying ? shortLine : undefined}
+          className="flex-1 min-w-0 truncate text-right text-[13px] font-extrabold leading-tight text-ink"
+        >
+          {saying ? (
+            <>
+              {cheer && <span aria-hidden="true">{'⭐ '}</span>}
+              {shortLine}
+            </>
+          ) : (
+            <>
+              <span className="lg:hidden">{currentLabel + ' · '}</span>
+              {ladder.got + ' of ' + ladder.needed}
+              <span className="hidden lg:inline">{' right'}</span>
+              <span className="sr-only lg:hidden">{' right'}</span>
+            </>
+          )}
+        </p>
+      </div>
+    );
   }
 
   return (

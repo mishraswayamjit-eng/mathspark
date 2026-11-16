@@ -3,9 +3,13 @@
 import React from 'react';
 import { HEARTS_MAX, type QuestionResult } from './constants';
 
-export function HeartsBar({ hearts, max = HEARTS_MAX }: { hearts: number; max?: number }) {
-  return (
-    <div className="flex items-center gap-0.5">
+/**
+ * The hearts left. `compact` (for a crowded header) shows one heart and the
+ * number on phones, and the usual row of hearts from 640px up.
+ */
+export function HeartsBar({ hearts, max = HEARTS_MAX, compact }: { hearts: number; max?: number; compact?: boolean }) {
+  const row = (
+    <div className={compact ? 'hidden sm:flex items-center gap-0.5' : 'flex items-center gap-0.5'}>
       {Array.from({ length: max }, (_, i) => (
         <span
           key={i}
@@ -15,6 +19,16 @@ export function HeartsBar({ hearts, max = HEARTS_MAX }: { hearts: number; max?: 
           ❤️
         </span>
       ))}
+    </div>
+  );
+  if (!compact) return row;
+  return (
+    <div className="flex-shrink-0" role="img" aria-label={`${Math.max(0, hearts)} of ${max} hearts left`}>
+      <div className="flex sm:hidden items-center gap-1 text-white font-extrabold text-[15px] leading-none">
+        <span className="text-base" aria-hidden="true">❤️</span>
+        <span aria-hidden="true">{Math.max(0, hearts)}</span>
+      </div>
+      {row}
     </div>
   );
 }
@@ -67,16 +81,26 @@ export const LessonProgressBar = React.memo(function LessonProgressBar({
   total,
   currentIdx,
   results,
+  compact,
 }: {
   total: number;
   currentIdx: number;
   results: QuestionResult[];
+  /** No padding of its own and a slightly thinner bar, to sit inside a strip. */
+  compact?: boolean;
 }) {
   const pct = total > 0 ? (currentIdx / total) * 100 : 0;
 
   return (
-    <div className="px-4 py-3">
-      <div className="relative h-3.5 ui-meter">
+    <div
+      className={compact ? 'w-full' : 'px-4 py-3'}
+      role="progressbar"
+      aria-label="Session progress"
+      aria-valuemin={0}
+      aria-valuemax={total}
+      aria-valuenow={Math.min(total, currentIdx)}
+    >
+      <div className={`relative ${compact ? 'h-3' : 'h-3.5'} ui-meter`}>
         {/* Fill */}
         <div
           className="absolute inset-y-0 left-0 bg-action rounded-full transition-[width] duration-700"

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { isAppChromeHidden } from '@/lib/navVisibility';
+import { isBottomNavHidden } from '@/lib/navVisibility';
 
 type TabHref = '/home' | '/learn' | '/practice' | '/progress';
 
@@ -50,8 +50,9 @@ function activeTab(pathname: string): TabHref | null {
 export default function BottomNav() {
   const pathname = usePathname();
 
-  // Hide on landing, auth, parent, student, pricing, onboarding, seed, test engine pages, and public profiles
-  if (isAppChromeHidden(pathname)) return null;
+  // Hide on landing, auth, parent, student, pricing, onboarding, seed, test engine pages,
+  // public profiles, and during a practice session (/practice/<topicId>)
+  if (isBottomNavHidden(pathname)) return null;
 
   const current = activeTab(pathname);
 

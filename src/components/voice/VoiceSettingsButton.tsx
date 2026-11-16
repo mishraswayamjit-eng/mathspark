@@ -8,15 +8,42 @@ const FOCUSABLE = 'button:not([disabled]), [href], input:not([disabled]), select
 
 /**
  * A 48px button that opens the voice picker in a sheet at the bottom of the
- * screen. Takes no props, so any screen can drop it in.
+ * screen. Every prop is optional, so any screen can drop it in.
+ *
+ * `tone="dark"` draws the button for a dark (ink) header bar. Passing
+ * `voiceOn` + `onVoiceOnChange` puts a "Sparky talks" switch at the top of the
+ * sheet and makes the button's icon show whether the voice is on;
+ * `soundsOn` + `onSoundsOnChange` adds a "Sound effects" switch under it.
  *
  * The sheet is a modal dialog: Escape, the backdrop and the Done button close
  * it; focus moves into it when it opens, stays inside it while it is open, and
  * goes back to the button when it closes. It is drawn at the end of the page
  * body, so it sits above whatever screen the button was placed on.
  */
-export default function VoiceSettingsButton() {
+interface VoiceSettingsButtonProps {
+  /** 'light' (default): for a white or paper surface. 'dark': for the ink header bar. */
+  tone?: 'light' | 'dark';
+  voiceOn?: boolean;
+  onVoiceOnChange?: (on: boolean) => void;
+  soundsOn?: boolean;
+  onSoundsOnChange?: (on: boolean) => void;
+}
+
+export default function VoiceSettingsButton({
+  tone, voiceOn, onVoiceOnChange, soundsOn, onSoundsOnChange,
+}: VoiceSettingsButtonProps) {
   const [open, setOpen] = useState(false);
+  // Only a screen that passes the on/off setting gets the muted icon and the longer label.
+  const knowsVoice = voiceOn !== undefined;
+  const voiceOff = voiceOn === false;
+  const triggerLabel = !knowsVoice
+    ? "Choose Sparky's voice"
+    : voiceOff
+      ? "Sparky's voice is off. Open voice settings"
+      : "Sparky's voice is on. Open voice settings";
+  const triggerCls = tone === 'dark'
+    ? 'border-white/40 bg-white/10 text-white hover:border-white'
+    : 'border-line bg-white text-ink hover:border-ink';
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const sheetRef = useRef<HTMLDivElement | null>(null);
   const closeRef = useRef<HTMLButtonElement | null>(null);
@@ -71,12 +98,12 @@ export default function VoiceSettingsButton() {
         ref={triggerRef}
         type="button"
         onClick={() => setOpen(true)}
-        aria-label="Choose Sparky's voice"
+        aria-label={triggerLabel}
         aria-haspopup="dialog"
         aria-expanded={open}
-        className="w-12 h-12 flex-shrink-0 rounded-control border-2 border-line bg-white text-ink text-xl flex items-center justify-center transition-colors hover:border-ink"
+        className={`w-12 h-12 flex-shrink-0 rounded-control border-2 text-xl flex items-center justify-center transition-colors ${triggerCls}`}
       >
-        <span aria-hidden="true">🗣️</span>
+        <span aria-hidden="true">{voiceOff ? '🔇' : '🗣️'}</span>
       </button>
 
       {open && typeof document !== 'undefined' && createPortal(
@@ -93,7 +120,9 @@ export default function VoiceSettingsButton() {
           >
             <div className="flex items-start justify-between gap-3 mb-3">
               <div className="min-w-0">
-                <h2 id="voice-sheet-title" className="text-lg font-extrabold text-ink">Choose Sparky&apos;s voice</h2>
+                <h2 id="voice-sheet-title" className="text-lg font-extrabold text-ink">
+                  {knowsVoice ? <>Sparky&apos;s voice</> : <>Choose Sparky&apos;s voice</>}
+                </h2>
                 <p className="text-sm font-medium text-ink-muted">Tap Listen to hear each one, then pick your favourite.</p>
               </div>
               <button
@@ -105,7 +134,12 @@ export default function VoiceSettingsButton() {
                 Done
               </button>
             </div>
-            <VoicePicker />
+            <VoicePicker
+              voiceOn={voiceOn}
+              onVoiceOnChange={onVoiceOnChange}
+              soundsOn={soundsOn}
+              onSoundsOnChange={onSoundsOnChange}
+            />
           </div>
         </div>,
         document.body,

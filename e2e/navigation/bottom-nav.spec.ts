@@ -170,6 +170,31 @@ test.describe('BottomNav — hidden during immersive flows', () => {
     await expect(homeLink).toBeHidden({ timeout: 5_000 });
   });
 
+  test('hidden during a practice session, along with the floating Sparky button', async ({
+    authenticatedPage: page,
+  }) => {
+    await page.goto('/practice/ch01-05', { waitUntil: 'domcontentloaded' });
+    await waitForDataLoad(page);
+
+    // A practice session (/practice/<topicId>) has its own back arrow and no tab bar.
+    await expect(page.locator('nav[aria-label="Main"]')).toHaveCount(0, { timeout: 5_000 });
+    // The floating chat button is put away too (the session has its own "Ask Sparky" buttons).
+    await expect(page.locator('button[aria-label="Ask Sparky"][class*="fixed"]')).toHaveCount(0);
+  });
+
+  test('still shown on the practice hub and the other screens under /practice', async ({
+    authenticatedPage: page,
+  }) => {
+    for (const route of ['/practice', '/practice/daily', '/practice/skill-drill', '/practice/exam-tips']) {
+      await page.goto(route, { waitUntil: 'domcontentloaded' });
+      await waitForDataLoad(page);
+
+      await expect(
+        page.locator('nav[aria-label="Main"]').getByText('Today', { exact: true }),
+      ).toBeVisible({ timeout: 10_000 });
+    }
+  });
+
   test('hidden during flashcard session', async ({ authenticatedPage: page }) => {
     await page.goto('/flashcards/session?deck=quick&mode=classic', {
       waitUntil: 'domcontentloaded',

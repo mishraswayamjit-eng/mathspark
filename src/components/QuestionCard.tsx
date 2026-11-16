@@ -83,6 +83,11 @@ interface QuestionCardProps {
   onInteractiveAnswer?: (answer: string, isCorrect: boolean) => void;
   /** Shown between the question and the options, e.g. the question's figure. */
   figureSlot?: React.ReactNode;
+  /**
+   * Leave the topic chip out of the card, for a screen whose header already
+   * names the topic. Default false: the chip shows.
+   */
+  hideTopicChip?: boolean;
 }
 
 const QuestionCard = React.memo(function QuestionCard({
@@ -92,6 +97,7 @@ const QuestionCard = React.memo(function QuestionCard({
   onAnswer,
   onInteractiveAnswer,
   figureSlot,
+  hideTopicChip,
 }: QuestionCardProps) {
   const options: Array<{ key: AnswerKey; text: string }> = [
     { key: 'A', text: question.option1 },
@@ -143,7 +149,7 @@ const QuestionCard = React.memo(function QuestionCard({
         {/* Topic first, then difficulty; the read-aloud button at the right */}
         <div className="flex items-center gap-2 mb-3">
           <div className="flex items-center gap-2 flex-wrap flex-1 min-w-0">
-            {topicLabel && (
+            {topicLabel && !hideTopicChip && (
               <span className="ui-chip min-w-0 max-w-full" title={question.subTopic}>
                 <span className="truncate">{topicLabel}</span>
               </span>

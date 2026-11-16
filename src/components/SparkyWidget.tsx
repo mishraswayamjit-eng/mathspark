@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
 import Sparky from '@/components/Sparky';
 import { subscribeOpenSparky } from '@/lib/sparkyContext';
-import { isAppChromeHidden } from '@/lib/navVisibility';
+import { isAppChromeHidden, isPracticeSessionPath } from '@/lib/navVisibility';
 import { useStudent } from '@/components/shell/StudentProvider';
 
 // Only this button is in the app shell's eager bundle. The chat panel (and with
@@ -60,6 +60,10 @@ export default function SparkyWidget() {
     pathname === '/chat' ||
     pathname.startsWith('/chat/');
 
+  // A practice session keeps the screen clear: no floating button there. The
+  // widget itself stays, so the session's own "Ask Sparky" buttons still open the chat.
+  const noFloatingButton = isPracticeSessionPath(pathname);
+
   // Auto-close the sheet whenever the student navigates to another page.
   useEffect(() => { setOpen(false); }, [pathname]);
 
@@ -89,7 +93,7 @@ export default function SparkyWidget() {
   return (
     <>
       {/* ── Floating action button ── */}
-      {!open && (
+      {!open && !noFloatingButton && (
         <button
           type="button"
           onClick={openPanel}

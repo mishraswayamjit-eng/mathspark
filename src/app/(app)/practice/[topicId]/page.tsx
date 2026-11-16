@@ -20,7 +20,7 @@ import { MONETIZATION_ENABLED, UNLIMITED_TIER } from '@/lib/monetization';
 import {
   LESSON_SIZE, HEARTS_MAX, XP_CORRECT, XP_REVIEW, AUTO_ADVANCE_MS,
   SPEED_DRILL_MS, MAX_BONUS_PER_LESSON, MAX_BONUS_PER_ORIGIN,
-  TOPIC_EMOJI, CARD_ACCENTS,
+  TOPIC_EMOJI,
   type Phase, type TrialStatus, type BonusMode, type QuestionResult, type GradeUpCta,
 } from '@/components/practice';
 import { HeartsBar, LessonProgressBar, XpFloat } from '@/components/practice';
@@ -39,6 +39,7 @@ import TopicLadder from '@/components/practice/TopicLadder';
 import VoiceSettingsButton from '@/components/voice/VoiceSettingsButton';
 import type { LadderInfo } from '@/lib/practice/ladderTypes';
 import { ladderAfterAnswer } from '@/lib/practice/ladder';
+import { TOPIC_TREE } from '@/data/topicTree';
 
 /** How long an open question can sit untouched before the tutor says something, once. */
 const IDLE_SECONDS = 40;
@@ -517,7 +518,6 @@ export default function PracticePage() {
   // result panel shows that question and Continue moves on through the review.
   const isReviewing      = phase === 'reviewing' || (phase === 'result' && inReview);
   const currentQuestion  = isReviewing ? reviewQueue[reviewIndex] : questions[qIndex];
-  const currentSlotIndex = isReviewing ? reviewIndex : qIndex;
 
   // ── Publish screen context for the Sparky widget ────────────────────────────
   // SAFETY: text only — NEVER the correctAnswer — so Sparky can guide without
@@ -1303,6 +1303,10 @@ export default function PracticePage() {
             }}>
               Retry →
             </DuoButton>
+            {/* The tab bar is hidden during a session, so this screen needs its own way out. */}
+            <DuoButton variant="white" onClick={() => router.push('/practice')}>
+              Back to practice
+            </DuoButton>
           </>
         ) : (
           <>
@@ -1531,7 +1535,16 @@ export default function PracticePage() {
 
   if (!currentQuestion) return null;
 
-  const accentCls = CARD_ACCENTS[currentSlotIndex % CARD_ACCENTS.length];
+  // The header names the topic being practised when one was chosen: the
+  // ladder's topic, or the topic-tree node the `subTopic` parameter points at.
+  // Otherwise it is the chapter or grade name, as before.
+  const wantedKey = subTopicParam.trim().toLowerCase();
+  const focusNode = wantedKey
+    ? TOPIC_TREE.filter((n) => n.dbTopicId === topicId && (n.subTopicKey ?? '').toLowerCase() === wantedKey)[0]
+    : undefined;
+  const focusTitle = ladder ? ladder.topicLabel : focusNode ? focusNode.name : '';
+  const barTitle = focusTitle || topicName;
+
   // Bonus helpers
   const bonusOptKey      = bonusSelected ? `misconception${bonusSelected}` as keyof Question : null;
   const bonusMisconText  = bonusOptKey && bonusQuestion ? bonusQuestion[bonusOptKey] as string : '';
@@ -1545,56 +1558,74 @@ export default function PracticePage() {
   const mainFigure  = currentQuestion.visual && currentQuestion.visual.figure ? currentQuestion.visual.figure : null;
   const bonusFigure = bonusQuestion && bonusQuestion.visual && bonusQuestion.visual.figure ? bonusQuestion.visual.figure : null;
 
-  // The tutor's last line, in a speech bubble joined to a small Sparky. The line
-  // shows whether or not the voice is on. The bubble always has room for two
-  // lines, so the question below does not move when the line changes; a longer
-  // line wraps and the bubble grows. With nothing to say, the bubble holds a
-  // quiet standing line (never spoken, never announced) instead of a bare face.
+  // The tutor's last line, as a slim caption beside a small Sparky: plain text,
+  // no box, so the question card below is the thing that stands out. The line
+  // shows whether or not the voice is on. The row always keeps the height of
+  // two lines (40px), so the card never moves when the line changes; a longer
+  // line is cut off after two. The paragraph is always there, empty when there
+  // is nothing to say, so a new line is announced to screen readers as before.
   const tutorRow = (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-2 min-h-[40px]">
       <div className="flex-shrink-0" aria-hidden="true">
-        <Sparky mood={tutor.speaking ? 'happy' : 'thinking'} size={40} />
+        <Sparky mood={tutor.speaking ? 'happy' : 'thinking'} size={28} />
       </div>
-      <div className="relative flex-1 min-w-0 min-h-[60px] flex items-center bg-white border-2 border-line rounded-control px-3 py-2">
-        {/* The bubble's tail, pointing at Sparky */}
-        <span
-          className="absolute -left-[7px] top-1/2 -mt-1.5 w-3 h-3 bg-white border-l-2 border-b-2 border-line rotate-45"
-          aria-hidden="true"
-        />
-        <p
-          className={tutorCaption ? 'text-[15px] font-bold text-ink leading-snug [overflow-wrap:anywhere]' : 'sr-only'}
-          aria-live="polite"
-        >
-          {tutorCaption}
-        </p>
-        {!tutorCaption && (
-          <p className="text-[15px] font-semibold text-ink-muted leading-snug">
-            I&apos;m here if you need me.
-          </p>
-        )}
-      </div>
+      <p
+        className="flex-1 min-w-0 text-[15px] font-bold text-ink-muted leading-5 line-clamp-2 [overflow-wrap:anywhere]"
+        aria-live="polite"
+      >
+        {tutorCaption}
+      </p>
     </div>
   );
 
-  // The tutor's voice: on or off, and which voice. A small group at the right of
-  // the label row above the question, so it never competes with the question.
-  const voiceControls = (
-    <div className="flex-shrink-0 flex items-center gap-2" role="group" aria-label="Sparky's voice">
-      <button
-        type="button"
-        role="switch"
-        aria-checked={tutor.enabled}
-        aria-label="Sparky's voice"
-        title={tutor.enabled ? 'Sparky reads out loud' : 'Sparky is quiet'}
-        onClick={() => tutor.setEnabled(!tutor.enabled)}
-        className={`min-h-[48px] min-w-[48px] px-3 rounded-tile border-2 border-line font-extrabold text-[13px] flex items-center justify-center gap-1.5 hover:border-ink transition-colors ${
-          tutor.enabled ? 'bg-white text-ink' : 'bg-soft text-ink-muted'
-        }`}
-      >
-        <span className="text-lg leading-none" aria-hidden="true">{tutor.enabled ? '🗣️' : '🤫'}</span>
-        <span className="hidden sm:inline whitespace-nowrap">Voice {tutor.enabled ? 'on' : 'off'}</span>
-      </button>
-      <VoiceSettingsButton />
+  // The one voice control, in the header: it opens the sheet that holds
+  // "Sparky talks" (the tutor's voice on or off), "Sound effects" (the answer
+  // sounds, which the header's speaker icon used to switch) and the choice of voice.
+  const voiceButton = (
+    <VoiceSettingsButton
+      tone="dark"
+      voiceOn={tutor.enabled}
+      onVoiceOnChange={tutor.setEnabled}
+      soundsOn={!muted}
+      onSoundsOnChange={(on) => { if (on === muted) toggleMute(); }}
+    />
+  );
+
+  // A run of right answers, shown small in the progress strip.
+  const streakMark = streak >= 3 && !isReviewing ? (
+    <span className="flex-shrink-0 whitespace-nowrap text-[13px] font-extrabold text-ink">
+      <span aria-hidden="true">🔥</span> {streak}<span className="sr-only"> right in a row</span>
+    </span>
+  ) : null;
+
+  // The one "where am I" strip under the header. On one topic: that topic's
+  // ladder, in a single row. Otherwise: which question this is, and the
+  // session's progress bar. In the review round: which review question.
+  const progressStrip = (
+    <div className="bg-white border-b-2 border-line px-4 h-11 flex items-center gap-3 flex-shrink-0">
+      {isReviewing ? (
+        <p className="flex-1 min-w-0 truncate text-sm font-extrabold text-ink">
+          <span aria-hidden="true">🔁</span> Review question {reviewIndex + 1} of {reviewQueue.length}
+        </p>
+      ) : ladder ? (
+        <>
+          <TopicLadder ladder={ladder} variant="compact" />
+          {streakMark && <span className="hidden lg:inline-flex flex-shrink-0">{streakMark}</span>}
+        </>
+      ) : (
+        <>
+          <p className="flex-shrink-0 whitespace-nowrap text-sm font-extrabold text-ink">
+            {isSpeedMode && <span aria-hidden="true">⚡ </span>}
+            Question {qIndex + 1} of {LESSON_SIZE}
+          </p>
+          {streakMark}
+          <div className="flex-1 min-w-0 flex justify-end">
+            <div className="w-full max-w-[280px]">
+              <LessonProgressBar compact total={LESSON_SIZE} currentIdx={qIndex} results={results} />
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 
@@ -1613,8 +1644,8 @@ export default function PracticePage() {
       {/* XP Float */}
       {showXpFloat && <XpFloat amount={isReviewing ? XP_REVIEW : XP_CORRECT} />}
 
-      {/* ── Dark header ── */}
-      <div className="bg-ink px-4 py-3 flex items-center gap-3 sticky top-0 z-30 flex-shrink-0">
+      {/* ── Dark header: one row, 56px. Back, the topic, hearts, the one voice button ── */}
+      <div className="bg-ink px-4 h-14 flex items-center gap-2 sticky top-0 z-30 flex-shrink-0">
         <button
           onClick={() => router.push('/practice')}
           className="text-white/70 hover:text-white font-bold text-xl min-h-[44px] min-w-[44px] flex items-center justify-center flex-shrink-0"
@@ -1623,38 +1654,22 @@ export default function PracticePage() {
           ←
         </button>
         <div className="flex-1 min-w-0">
-          <p className="text-white font-display font-semibold text-lg leading-tight truncate">{topicName}</p>
+          <p className="text-white font-display font-semibold text-lg leading-tight truncate" title={barTitle}>{barTitle}</p>
         </div>
-        <HeartsBar hearts={hearts} />
-        <button
-          onClick={toggleMute}
-          className="text-white/70 hover:text-white text-lg min-h-[44px] min-w-[44px] flex items-center justify-center ml-1"
-          aria-label={muted ? 'Unmute' : 'Mute'}
-        >
-          {muted ? '🔇' : '🔊'}
-        </button>
+        <HeartsBar hearts={hearts} compact />
+        {voiceButton}
       </div>
 
-      {/* ── Where the child is on this topic's ladder (only when the server sends one) ──
+      {/* ── The one progress strip: the topic's ladder, or the session's progress ──
           Not repeated on the bonus question's own screen: a bonus question is a
-          side step, and the ladder does not move while it is open. */}
-      {ladder && <TopicLadder ladder={ladder} />}
+          side step, and neither the ladder nor the count moves while it is open. */}
+      {progressStrip}
 
       {/* ── Offline banner ── */}
       {!isOnline && (
         <div className="bg-hint border-b-2 border-hint-ink/30 px-4 py-2 text-xs font-bold text-hint-ink text-center">
           📶 You&apos;re offline — practising with cached questions!
         </div>
-      )}
-
-      {/* ── Progress bar / Review badge ── */}
-      {isReviewing ? (
-        <div className="bg-soft px-4 py-2 flex items-center gap-2 border-b-2 border-line">
-          <span className="text-ink text-sm font-extrabold">📚 Review mode</span>
-          <span className="text-ink-muted text-xs font-semibold">{reviewIndex + 1} / {reviewQueue.length}</span>
-        </div>
-      ) : (
-        <LessonProgressBar total={LESSON_SIZE} currentIdx={qIndex} results={results} />
       )}
 
       {/* Speed drill timer bar */}
@@ -1694,13 +1709,15 @@ export default function PracticePage() {
       {/* ── Two panels on wide screens: question (left), working pane (right) ──
           The page itself scrolls; neither panel has a scrollbar of its own while
           the question is open. */}
-      <div className={`flex-1 flex flex-col ${WORKSPACE_COLS} lg:px-4 lg:pt-5 lg:pb-24`}>
+      <div className={`flex-1 flex flex-col ${WORKSPACE_COLS} lg:px-4 lg:pt-3 lg:pb-8`}>
       <div className="flex-1 flex flex-col min-w-0 lg:gap-4">
 
-      {/* ── Question area (scrollable, padded for bottom panel) ── */}
+      {/* ── Question area: Sparky's caption, then the question card straight under it.
+          No room is kept for the tab bar: it is hidden during a session. After
+          answering, phones keep room for the result sheet. ── */}
       <div
-        className={`flex-1 overflow-y-auto px-4 pt-4 space-y-4 lg:flex-none lg:overflow-visible lg:px-0 lg:pt-0 lg:pb-0 ${
-          phase === 'result' ? 'pb-[72vh]' : 'pb-20'
+        className={`flex-1 overflow-y-auto px-4 pt-2 space-y-3 lg:flex-none lg:overflow-visible lg:px-0 lg:pt-0 lg:pb-0 ${
+          phase === 'result' ? 'pb-[72vh]' : 'pb-6'
         }`}
       >
         {tutorRow}
@@ -1734,29 +1751,15 @@ export default function PracticePage() {
           </div>
         )}
 
-        {/* Label row: which question this is (left), the tutor's voice controls (right) */}
-        <div className="flex items-center gap-2">
-          <div className="flex-1 min-w-0">
-            <div className={`inline-flex items-center gap-2 text-[13px] font-extrabold px-3 py-1 rounded-full border-2 ${accentCls}`}>
-              {isReviewing
-                ? `🔁 Review question ${reviewIndex + 1} of ${reviewQueue.length}`
-                : isSpeedMode
-                ? `⚡ Speed Drill — Q${qIndex + 1} of ${LESSON_SIZE}`
-                : `Question ${qIndex + 1} of ${LESSON_SIZE}`}
-              {streak >= 3 && !isReviewing && (
-                <span className="text-ink font-extrabold">🔥 {streak}</span>
-              )}
-            </div>
-          </div>
-          {voiceControls}
-        </div>
-
-        {/* On phones and tablets the question's figure sits between the question and the
+        {/* The question card, straight under the caption. Its topic chip is left out
+            when the header already names that topic.
+            On phones and tablets the question's figure sits between the question and the
             options; wide screens show it in the side pane. */}
         <QuestionCard
           question={currentQuestion}
           answered={phase === 'result'}
           selected={selected}
+          hideTopicChip={focusTitle !== ''}
           onAnswer={handleAnswer}
           onInteractiveAnswer={(answer) => { interactiveAnswerRef.current = answer; }}
           figureSlot={mainFigure ? (
@@ -1776,13 +1779,23 @@ export default function PracticePage() {
             <span aria-hidden="true">✏️</span> Working space
           </button>
         )}
+        {/* The floating Sparky button is hidden during a session: the chat is reached from here. */}
+        {phase !== 'result' && (
+          <button
+            type="button"
+            onClick={() => requestOpenSparky()}
+            className="lg:hidden w-full min-h-[48px] px-4 rounded-control border-2 border-line bg-white text-ink-muted font-extrabold text-sm hover:border-ink hover:text-ink transition-colors"
+          >
+            <span aria-hidden="true">💬</span> Ask Sparky
+          </button>
+        )}
       </div>
 
       {/* ── Result panel: a sheet that slides up on phones and tablets; in the page under the options on wide screens ── */}
       {phase === 'result' && (
         <div
           ref={resultSheetRef}
-          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] max-h-[72vh] animate-slide-up overflow-y-auto rounded-t-card border-2 border-b-0 border-ink lg:static lg:z-auto lg:max-w-none lg:mx-0 lg:max-h-none lg:overflow-visible lg:rounded-card lg:border-b-2 lg:scroll-mb-24 ${
+          className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] max-h-[72vh] animate-slide-up overflow-y-auto rounded-t-card border-2 border-b-0 border-ink lg:static lg:z-auto lg:max-w-none lg:mx-0 lg:max-h-none lg:overflow-visible lg:rounded-card lg:border-b-2 lg:scroll-mb-6 ${
             lastCorrect
               ? 'bg-success-soft'
               : 'bg-retry-soft'
@@ -1854,10 +1867,14 @@ export default function PracticePage() {
           While the question is open the pane is part of the page and scrolls with
           it (no scrollbar of its own). Once answered, the page grows a long
           result panel on the left, so the pane (now the solution) stays in view
-          beside it, and only scrolls inside itself if it is taller than the window. */}
+          beside it, and only scrolls inside itself if it is taller than the window.
+          A plain card with a Line border, quieter than the question card. Its top
+          edge lines up with the question card, not with Sparky's caption: the
+          52px margin is the caption row (40px) plus the gap under it (12px).
+          When it sticks, it sits 16px under the 56px header. */}
       <aside
-        className={`hidden lg:block bg-white border-2 border-line rounded-card p-4 ${
-          phase === 'result' ? 'lg:sticky lg:top-[84px] lg:max-h-[calc(100vh-164px)] lg:overflow-y-auto' : ''
+        className={`hidden lg:block lg:mt-[52px] bg-white border-2 border-line rounded-card p-4 ${
+          phase === 'result' ? 'lg:sticky lg:top-[72px] lg:max-h-[calc(100vh-88px)] lg:overflow-y-auto' : ''
         }`}
         onPointerDown={pauseAutoAdvance}
         onKeyDown={pauseAutoAdvance}
@@ -1873,6 +1890,15 @@ export default function PracticePage() {
           onLessonChange={onPaneLesson}
           active={bonusMode === 'off' && !showWalkthrough}
         />
+        {/* The floating Sparky button is hidden during a session, so wide screens
+            reach the chat from here. (Phones have the bubble over the result sheet.) */}
+        <button
+          type="button"
+          onClick={() => requestOpenSparky()}
+          className="mt-4 w-full min-h-[48px] px-4 rounded-control border-2 border-line bg-white text-ink-muted font-extrabold text-[15px] hover:border-ink hover:text-ink transition-colors"
+        >
+          <span aria-hidden="true">💬</span> Ask Sparky
+        </button>
       </aside>
       </div>
 
@@ -1923,19 +1949,32 @@ export default function PracticePage() {
         >
           {/* Header: the bar runs the full width; what is in it lines up with the workspace below */}
           <div className="bg-ink flex-shrink-0 lg:sticky lg:top-0 lg:z-10">
-            <div className="px-4 py-3 flex items-center gap-3 lg:w-full lg:max-w-[60rem] xl:max-w-[72rem] lg:mx-auto">
+            <div className="px-4 h-14 flex items-center gap-2 lg:w-full lg:max-w-[60rem] xl:max-w-[72rem] lg:mx-auto">
               <button
                 onClick={handleBonusGotIt}
-                className="text-white/70 hover:text-white font-bold text-sm min-h-[44px] min-w-[44px] flex items-center gap-1 flex-shrink-0"
+                className="text-white/70 hover:text-white font-bold text-sm whitespace-nowrap min-h-[44px] min-w-[44px] flex items-center gap-1 flex-shrink-0"
               >
                 ← Back
               </button>
               <div className="flex-1 min-w-0">
-                <p className="text-white font-display font-semibold text-lg leading-tight truncate">{topicName}</p>
+                <p className="text-white font-display font-semibold text-lg leading-tight truncate" title={barTitle}>{barTitle}</p>
               </div>
-              <HeartsBar hearts={hearts} />
+              <HeartsBar hearts={hearts} compact />
+              {voiceButton}
             </div>
           </div>
+
+          {/* The strip under the header: the one bonus marker. It sits where the
+              ladder or "Question 3 of 10" sits in the lesson. */}
+          {(bonusMode === 'answering' || bonusMode === 'result') && bonusQuestion && (
+            <div className="bg-hint border-b-2 border-line flex-shrink-0">
+              <div className="px-4 h-11 flex items-center lg:w-full lg:max-w-[60rem] xl:max-w-[72rem] lg:mx-auto">
+                <p className="flex-1 min-w-0 truncate text-[13px] font-extrabold text-hint-ink">
+                  <span aria-hidden="true">⭐ </span>Bonus question — same idea, new numbers
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* Searching */}
           {bonusMode === 'searching' && (
@@ -1963,25 +2002,14 @@ export default function PracticePage() {
           {/* Bonus question screen. Wide screens: the question (left) and its working pane (right)
               in the same centred workspace as the lesson, scrolling together with the page. */}
           {(bonusMode === 'answering' || bonusMode === 'result') && bonusQuestion && (
-            <div className={`flex-1 min-h-0 flex flex-col lg:flex-none ${WORKSPACE_COLS} lg:w-full lg:max-w-[60rem] xl:max-w-[72rem] lg:mx-auto lg:px-4 lg:pt-5 lg:pb-10`}>
+            <div className={`flex-1 min-h-0 flex flex-col lg:flex-none ${WORKSPACE_COLS} lg:w-full lg:max-w-[60rem] xl:max-w-[72rem] lg:mx-auto lg:px-4 lg:pt-3 lg:pb-8`}>
               <div className="flex-1 min-h-0 flex flex-col min-w-0 lg:gap-4">
               <div
-                className={`flex-1 overflow-y-auto px-4 pt-4 space-y-4 lg:flex-none lg:overflow-visible lg:px-0 lg:pt-0 lg:pb-0 ${
-                  bonusMode === 'result' ? 'pb-[200px]' : 'pb-20'
+                className={`flex-1 overflow-y-auto px-4 pt-2 space-y-3 lg:flex-none lg:overflow-visible lg:px-0 lg:pt-0 lg:pb-0 ${
+                  bonusMode === 'result' ? 'pb-[200px]' : 'pb-6'
                 }`}
               >
                 {tutorRow}
-
-                {/* Label row: the one bonus marker (left), the tutor's voice controls (right).
-                    It sits where "Question 3 of 10" sits in the lesson. */}
-                <div className="flex items-center gap-2">
-                  <div className="flex-1 min-w-0">
-                    <p className="inline-block text-[13px] font-extrabold leading-snug px-3 py-1.5 rounded-control bg-hint text-hint-ink border-2 border-star">
-                      <span aria-hidden="true">⭐ </span>Bonus Question — Same concept, different numbers!
-                    </p>
-                  </div>
-                  {voiceControls}
-                </div>
 
                 {/* The question card, exactly as in the lesson. Its figure sits between the question
                     and the options on phones and tablets; wide screens show it in the side pane. */}
@@ -1989,6 +2017,7 @@ export default function PracticePage() {
                   question={bonusQuestion}
                   answered={bonusMode === 'result'}
                   selected={bonusSelected}
+                  hideTopicChip={focusTitle !== ''}
                   onAnswer={(key) => handleBonusAnswer(key)}
                   figureSlot={bonusFigure ? (
                     <div className="lg:hidden bg-white border-2 border-line rounded-card p-3">
@@ -2092,9 +2121,10 @@ export default function PracticePage() {
 
               {/* Working pane for the bonus question (wide screens): part of the page while the
                   question is open; once answered it stays in view beside the result, under the header. */}
+              {/* As in the lesson: its top edge lines up with the question card (caption 40px + 12px gap). */}
               <aside
-                className={`hidden lg:block bg-white border-2 border-line rounded-card p-4 ${
-                  bonusMode === 'result' ? 'lg:sticky lg:top-[84px] lg:max-h-[calc(100vh-100px)] lg:overflow-y-auto' : ''
+                className={`hidden lg:block lg:mt-[52px] bg-white border-2 border-line rounded-card p-4 ${
+                  bonusMode === 'result' ? 'lg:sticky lg:top-[72px] lg:max-h-[calc(100vh-88px)] lg:overflow-y-auto' : ''
                 }`}
               >
                 <WorkPane
