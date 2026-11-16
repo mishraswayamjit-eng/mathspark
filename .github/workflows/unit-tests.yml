@@ -45,3 +45,14 @@ jobs:
 
       - name: Run unit tests
         run: npm test
+
+      # The same checks the production build makes, so a type or lint problem
+      # shows here, with its message, on a branch push. Each runs even if an
+      # earlier step did not pass, so one run reports everything.
+      - name: Typecheck
+        if: always()
+        run: npx tsc --noEmit
+
+      - name: Lint
+        if: always()
+        run: npm run lint
