@@ -81,9 +81,10 @@ test.describe('Leaderboard — tabs', () => {
     await page.getByText('Last Week', { exact: true }).first().click();
     await page.waitForTimeout(1_000);
 
-    // Last Week may show awards or "You weren't in a league" message
+    // Last Week shows awards, last week's league table ("Last Week — Bronze League"),
+    // or the "You weren't in a league" message.
     const pageText = await page.textContent('body');
-    const hasLastWeek = /award|improved|speed|accuracy|league last week|weren.*t in a league/i.test(
+    const hasLastWeek = /award|improved|speed|accuracy|last week — .+ league|league last week|weren.*t in a league/i.test(
       pageText ?? '',
     );
     expect(hasLastWeek).toBeTruthy();
