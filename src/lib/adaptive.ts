@@ -3,6 +3,15 @@ import { isEqualSurfacingEnabled } from './llm/featureFlags';
 import { matchesSubTopicKey } from './sharedUtils';
 import { getTopicsForGrade } from '@/data/topicTree';
 import type { Difficulty } from '@/types';
+import {
+  LADDER_WINDOW_DAYS,
+  computeLadder,
+  isRealExamSource,
+  isStrongStart,
+  ladderTiers,
+  variantIdPrefixes,
+  withServedQuestion,
+} from './practice/ladder';
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -92,6 +101,27 @@ export async function getNextQuestion(
   // Optional self-reported confidence from the lesson intro ("Could you solve
   // these?"). It only shifts the starting difficulty one level for the first
   // few questions of the day; after that the real streak signal takes over.
+  confidence?: 'low' | 'high',
+) {
+  const picked = await getNextQuestionWithLadder(studentId, topicId, clientExcludeIds, subTopicKey, confidence);
+  return picked.question;
+}
+
+/**
+ * The same pick, plus where the child is on the topic ladder.
+ *
+ * `ladder` is set only for focused topic practice on a keyed grade (`grade5`
+ * with `subTopicKey` naming one of that grade's topics). There the ladder
+ * (`src/lib/practice/ladder.ts`) decides the difficulty and source band, so
+ * the child meets Easy, then Medium, then Hard, then real exam questions. In
+ * every other case `ladder` is null and the pick is exactly the one described
+ * above. Set `TOPIC_LADDER=off` to switch the ladder off everywhere.
+ */
+export async function getNextQuestionWithLadder(
+  studentId: string,
+  topicId: string,
+  clientExcludeIds: string[] = [],
+  subTopicKey: string = '',
   confidence?: 'low' | 'high',
 ) {
   // Session window: midnight today → midnight tomorrow (drives streak/difficulty).
@@ -285,11 +315,122 @@ export async function getNextQuestion(
 
       for (const k of ordered) {
         const q = await pickForSubtopic(k);
-        if (q) return q; // first non-exhausted sub-topic wins
+        if (q) return { question: q, ladder: null }; // first non-exhausted sub-topic wins
       }
       // Every sub-topic exhausted → fall through to whole-pool (original behavior).
     }
   }
 
-  return pickForSubtopic(subTopicKey); // ch-series, focused path, and safety fallback
+  // ── Topic ladder (focused practice on a keyed grade) ──────────────────────
+  // One topic of a keyed grade: Warm-up → Build → Challenge → Exam. The rules
+  // live in `practice/ladder.ts`; here we read the topic's questions and the
+  // child's answers, and choose inside the band the ladder asks for. The seen
+  // window, the usable-question filter, the generated-source kill-switches and
+  // the source ranking (`pickBest`) all still apply.
+  async function pickOnLadder(key: string, topicLabel: string, gradeNum: number) {
+    // Generated questions whose topic is only in their id (see ladder.ts).
+    const idPrefixes = variantIdPrefixes(gradeNum, key);
+    const inTopic = {
+      topicId,
+      OR: [
+        { subTopic: { contains: key, mode: 'insensitive' as const } },
+        ...idPrefixes.map((p) => ({ id: { startsWith: p } })),
+      ],
+    };
+    const belongs = (id: string, subTopic: string) =>
+      matchesSubTopicKey(subTopic, key) || idPrefixes.some((p) => id.indexOf(p) === 0);
+
+    const ladderWindowStart = new Date(todayStart);
+    ladderWindowStart.setDate(ladderWindowStart.getDate() - LADDER_WINDOW_DAYS);
+
+    const [lightPool, windowAttempts] = await Promise.all([
+      // The whole topic, light columns only: the ladder needs every band's size,
+      // and `take: 200` on full rows would cut large topics short.
+      prisma.question.findMany({
+        where: { ...inTopic, ...USABLE_QUESTION_FILTER, ...aiSourceFilter() },
+        select: { id: true, subTopic: true, difficulty: true, source: true },
+      }),
+      prisma.attempt.findMany({
+        where: {
+          studentId,
+          createdAt: { gte: ladderWindowStart, lt: tomorrowStart },
+          question: inTopic,
+        },
+        orderBy: { createdAt: 'asc' },
+        select: {
+          questionId: true,
+          isCorrect: true,
+          createdAt: true,
+          question: { select: { subTopic: true, difficulty: true, source: true } },
+        },
+      }),
+    ]);
+
+    const pool = lightPool.filter((q) => belongs(q.id, q.subTopic));
+    if (pool.length === 0) return null;
+    const topicAttempts = windowAttempts.filter((a) => belongs(a.questionId, a.question.subTopic));
+
+    // "Already doing well": the child's last 10 answers in this grade before
+    // they began this topic (or up to now, if they have not begun). Fixed once
+    // the topic is begun, so the starting step does not move under the child.
+    const firstAttempt = topicAttempts.length > 0 ? topicAttempts[0] : null;
+    const before = await prisma.attempt.findMany({
+      where: {
+        studentId,
+        createdAt: { lt: firstAttempt ? firstAttempt.createdAt : tomorrowStart },
+        question: { topicId },
+      },
+      orderBy: { createdAt: 'desc' },
+      take: 10,
+      select: { isCorrect: true },
+    });
+
+    const plan = computeLadder({
+      topicLabel,
+      pool,
+      attempts: topicAttempts.map((a) => ({
+        questionId: a.questionId,
+        isCorrect: a.isCorrect,
+        difficulty: a.question.difficulty,
+        source: a.question.source,
+      })),
+      startHigher: isStrongStart(before.map((a) => a.isCorrect)),
+    });
+    if (!plan) return null;
+
+    // Not seen in the rolling window (shorter than the ladder's), nor in this lesson.
+    const seen = new Set<string>(clientExcludeIds);
+    for (const a of topicAttempts) {
+      if (!a.createdAt || new Date(a.createdAt) >= seenWindowStart) seen.add(a.questionId);
+    }
+    let tiers = ladderTiers(plan, pool.filter((q) => !seen.has(q.id)));
+    if (tiers.length === 0) {
+      // Everything seen: serve again rather than stop, but never a question
+      // that is already in this lesson.
+      const inLesson = new Set<string>(clientExcludeIds);
+      tiers = ladderTiers(plan, pool.filter((q) => !inLesson.has(q.id)));
+    }
+    if (tiers.length === 0) return { question: null, ladder: null }; // truly exhausted
+
+    const chosen = pickBest(tiers[0]);
+    const question = chosen ? await prisma.question.findUnique({ where: { id: chosen.id } }) : null;
+    if (!question) return null;
+    return { question, ladder: withServedQuestion(plan.info, isRealExamSource(question.source)) };
+  }
+
+  if (gradeMatch && subTopicKey && process.env.TOPIC_LADDER !== 'off') {
+    const gradeNum = Number(gradeMatch[1]);
+    const wanted = subTopicKey.trim().toLowerCase();
+    const node = getTopicsForGrade(gradeNum).filter(
+      (n) => (n.subTopicKey ?? '').toLowerCase() === wanted,
+    )[0];
+    if (node) {
+      const onLadder = await pickOnLadder(wanted, node.name, gradeNum);
+      if (onLadder) return onLadder;
+      // No questions for this topic: the scoped pick below decides what happens.
+    }
+  }
+
+  // ch-series, focused path without a ladder, and safety fallback
+  return { question: await pickForSubtopic(subTopicKey), ladder: null };
 }

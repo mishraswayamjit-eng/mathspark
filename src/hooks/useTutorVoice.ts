@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useReadAloud } from '@/hooks/useReadAloud';
-import { tutorLineWith, type TutorContext, type TutorEvent } from '@/lib/tutor/reactions';
+import { lineSaysName, tutorLineWith, type TutorContext, type TutorEvent } from '@/lib/tutor/reactions';
 
 export interface TutorVoice {
   /** React to something the child did: picks a line and says it (when the voice is on). Returns the line. */
@@ -124,9 +124,13 @@ export function useTutorVoice(): TutorVoice {
     if (!speaking) talkingRef.current = null;
   }, [speaking]);
 
-  const speakNow = useCallback((text: string, weight: number) => {
+  // `personal` lines are made for this child alone and never stored for others:
+  // a stock reaction is the same for every child and is stored once, but a
+  // line with the child's name in it, or one written for them just now, is not.
+  const speakNow = useCallback((text: string, weight: number, personal: boolean) => {
     talkingRef.current = { weight, until: Date.now() + 4000 + text.length * 120 };
     speak(text, {
+      personal,
       onEnd: () => {
         talkingRef.current = null;
       },
@@ -145,7 +149,9 @@ export function useTutorVoice(): TutorVoice {
     setLastLine(text);
     if (!enabledRef.current) return;
     cancelWaiting();
-    speakNow(text, ANSWER_WEIGHT);
+    // Whatever a screen asks the tutor to say may have been written for this
+    // child (the board coach's remark is), so it is always treated as personal.
+    speakNow(text, ANSWER_WEIGHT, true);
   }, [cancelWaiting, speakNow]);
 
   const react = useCallback((event: TutorEvent, ctx: TutorContext): string => {
@@ -180,6 +186,7 @@ export function useTutorVoice(): TutorVoice {
 
     remember(line);
     cancelWaiting();
+    const personal = lineSaysName(line, ctx.name);
     const timer = window.setTimeout(() => {
       waitingRef.current = null;
       if (!mountedRef.current || !enabledRef.current) return;
@@ -190,7 +197,7 @@ export function useTutorVoice(): TutorVoice {
         // Another reader on the page is speaking: leave the line as a caption only.
         return;
       }
-      speakNow(line, weight);
+      speakNow(line, weight, personal);
     }, REACTION_GAP_MS);
     waitingRef.current = { timer, weight };
     return line;

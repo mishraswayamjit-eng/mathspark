@@ -2,11 +2,17 @@
 
 import { useRef, useState } from 'react';
 import { toSpeech } from '@/lib/speech/mathToSpeech';
+import { DEFAULT_VOICE_ID, VOICE_PROFILES, type VoiceProfile } from '@/lib/speech/voices';
 
 /**
- * Voice test page: try Sarvam voices, speeds and liveliness by ear, then copy
- * the winning settings into Vercel. Nothing here changes what children hear;
- * that is set by the SARVAM_TTS_* environment variables.
+ * Voice test page: try Sarvam voices, speeds and liveliness by ear.
+ *
+ * Children choose between the voice profiles in `src/lib/speech/voices.ts`.
+ * The buttons at the top load a profile into the controls so it can be heard
+ * and adjusted; a setting that sounds better is then written into that file
+ * (speaker, pace, temperature: one line each). The SARVAM_TTS_* environment
+ * variables only override the default profile. Nothing on this page changes
+ * what children hear.
  */
 
 const V3_SPEAKERS = [
@@ -54,6 +60,14 @@ export default function VoiceTestPage() {
     setSpeaker(next === 'bulbul:v2' ? 'anushka' : next === 'bulbul:v4-flash' ? V4_SUGGESTIONS[0] : 'ishita');
   }
 
+  /** Put one of the children's voice profiles into the controls, exactly as written in voices.ts. */
+  function loadProfile(profile: VoiceProfile) {
+    setModel('bulbul:v3');
+    setSpeaker(profile.speaker);
+    setPace(profile.pace);
+    setTemperature(profile.temperature);
+  }
+
   async function play() {
     if (!spoken || busy) return;
     setBusy(true);
@@ -93,8 +107,34 @@ export default function VoiceTestPage() {
         <div>
           <h1 className="font-display text-display text-ink">Voice test</h1>
           <p className="text-label text-ink-muted mt-1">
-            Try Sarvam voices by ear. When one sounds right, copy the settings at the bottom into Vercel. Children only hear a new voice after that.
+            Try Sarvam voices by ear. Children choose between the profiles below; to change one, write the speaker, pace and temperature that sound right into src/lib/speech/voices.ts and add 1 to VOICE_CACHE_VERSION there.
           </p>
+        </div>
+
+        <div className="bg-white rounded-card border-2 border-line p-4 space-y-3">
+          <div>
+            <p className="font-display text-title text-ink">Voices children can choose</p>
+            <p className="text-caption text-ink-muted mt-0.5">
+              Tap one to load it into the controls, then press Play. These were chosen without anyone hearing them, so each needs a listen.
+            </p>
+          </div>
+          <div className="flex flex-col gap-2">
+            {VOICE_PROFILES.map((profile) => (
+              <button
+                key={profile.id}
+                type="button"
+                onClick={() => loadProfile(profile)}
+                className="min-h-[48px] px-3 py-2 rounded-control border-2 border-line bg-white text-left hover:border-ink"
+              >
+                <span className="block text-ink font-extrabold">
+                  {profile.label}{profile.id === DEFAULT_VOICE_ID ? ' (default)' : ''}
+                </span>
+                <span className="block text-caption text-ink-muted">
+                  {profile.speaker} · pace {profile.pace.toFixed(2)} · temperature {profile.temperature.toFixed(2)}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="bg-white rounded-card border-2 border-line p-4 space-y-4">
@@ -142,7 +182,7 @@ export default function VoiceTestPage() {
               <span className="text-ink font-extrabold">{pace.toFixed(2)}</span>
             </span>
             <input type="range" min={0.5} max={1.5} step={0.05} value={pace} onChange={(e) => setPace(Number(e.target.value))} className="w-full h-12 accent-action" />
-            <span className="text-caption text-ink-muted">1.00 is normal. 0.85 to 0.95 suits younger children.</span>
+            <span className="text-caption text-ink-muted">1.00 is Sarvam&apos;s normal. The profiles use about 1.10; children can also pick Calm or Quick.</span>
           </label>
 
           {model !== 'bulbul:v2' && (
@@ -196,7 +236,7 @@ export default function VoiceTestPage() {
         <div className="bg-white rounded-card border-2 border-line p-4">
           <p className="font-display text-title text-ink">Settings for Vercel</p>
           <p className="text-caption text-ink-muted mt-0.5">
-            {heard ? 'From the reading you just heard.' : 'These update when you play a reading.'} Add them under Project, Settings, Environment Variables, then redeploy.
+            {heard ? 'From the reading you just heard.' : 'These update when you play a reading.'} These override the default profile only (the other profiles always use voices.ts). Add them under Project, Settings, Environment Variables, then redeploy. If old values are set there now, the default profile is still using them.
           </p>
           <pre className="mt-3 bg-soft rounded-control px-3 py-3 text-[13px] leading-relaxed text-ink overflow-x-auto select-all">
 {`SARVAM_TTS_MODEL=${heard ? heard.model : model}

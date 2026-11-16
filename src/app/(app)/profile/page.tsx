@@ -5,6 +5,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import DuoButton from '@/components/DuoButton';
+import VoicePicker from '@/components/voice/VoicePicker';
 import { getTopicsForGrade } from '@/data/topicTree';
 import { logError } from '@/lib/logger';
 import { useStudent } from '@/components/shell/StudentProvider';
@@ -564,6 +565,12 @@ export default function ProfilePage() {
             control={<Toggle on={hiddenFromLeaderboard} onToggle={toggleHidden} />}
           />
         </div>
+      </Card>
+
+      {/* ── Sparky's voice (kept on this device, like the sound setting) ──── */}
+      <Card title="Sparky's Voice">
+        <p className="text-xs text-ink-muted font-medium mb-3">Tap Listen to hear each one, then pick your favourite.</p>
+        <VoicePicker />
       </Card>
 
       {/* ── 5. Focus Areas ────────────────────────────────────────────────── */}

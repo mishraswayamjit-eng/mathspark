@@ -15,6 +15,7 @@ export const prisma = {
   },
   question: {
     findMany: vi.fn(),
+    findUnique: vi.fn(),
   },
   student: {
     findUnique: vi.fn(),

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getNextQuestion } from '@/lib/adaptive';
+import { getNextQuestionWithLadder } from '@/lib/adaptive';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { parseUnknownArray } from '@/lib/jsonFields';
 import { logError } from '@/lib/logger';
@@ -25,7 +25,7 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: 'topicId required' }, { status: 400 });
     }
 
-    const q = await getNextQuestion(studentId, topicId, excludeIds, subTopic, confidence);
+    const { question: q, ladder } = await getNextQuestionWithLadder(studentId, topicId, excludeIds, subTopic, confidence);
 
     if (!q) {
       return NextResponse.json({ error: 'No more questions available' }, { status: 404 });
@@ -38,7 +38,11 @@ export async function GET(req: Request) {
     // still re-graded server-side in /api/attempts, which never trusts the
     // client's isCorrect flag.
     // The figure and step pictures ride along: practice shows the solution after answering.
-    return NextResponse.json(withVisual({ ...q, stepByStep }, { withSolution: true }));
+    const payload = withVisual({ ...q, stepByStep }, { withSolution: true });
+    // `ladder` (where the child is in this topic: Warm-up → Build → Challenge →
+    // Exam) is sent only for focused topic practice on a keyed grade; it was
+    // worked out before this question is answered. Absent in every other case.
+    return NextResponse.json(ladder ? { ...payload, ladder } : payload);
   } catch (err) {
     logError('[questions/next] error:', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

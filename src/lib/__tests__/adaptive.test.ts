@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 // Mock the db module
 vi.mock('../db', () => import('../__mocks__/db'));
 
-import { getNextQuestion } from '../adaptive';
+import { getNextQuestion, getNextQuestionWithLadder } from '../adaptive';
 import { prisma } from '../__mocks__/db';
 
 beforeEach(() => {
@@ -197,5 +197,195 @@ describe('getNextQuestion', () => {
     }
     // After 5 right, difficulty should shift towards hard
     expect(hardCount).toBeGreaterThan(5);
+  });
+});
+
+// ── Topic ladder: focused practice on one topic of a keyed grade ─────────────
+
+const HCF = 'Grade 5 — HCF and LCM';
+const GEN = 'variant_generator_phase1';
+const REAL = 'g5_final_2019';
+
+interface LadderRow {
+  id: string;
+  topicId: string;
+  subTopic: string;
+  difficulty: string;
+  source: string;
+}
+
+function hcfQuestion(id: string, difficulty: string, source: string = GEN, subTopic: string = HCF): LadderRow {
+  return { id, topicId: 'grade5', subTopic, difficulty, source };
+}
+
+/** Two Easy, one Medium, one Hard, and three real paper questions. */
+function hcfPool(): LadderRow[] {
+  return [
+    hcfQuestion('e1', 'Easy'),
+    hcfQuestion('e2', 'Easy'),
+    hcfQuestion('m1', 'Medium'),
+    hcfQuestion('h1', 'Hard'),
+    hcfQuestion('x1', 'Medium', REAL),
+    hcfQuestion('x2', 'Medium', REAL),
+    hcfQuestion('x3', 'Medium', REAL),
+  ];
+}
+
+interface LadderAnswer {
+  questionId: string;
+  isCorrect: boolean;
+  question: { subTopic: string; difficulty: string; source: string };
+}
+
+function hcfAnswer(questionId: string, difficulty: string, isCorrect: boolean, source: string = GEN): LadderAnswer {
+  return { questionId, isCorrect, question: { subTopic: HCF, difficulty, source } };
+}
+
+/** `n` right answers on earlier questions (not in the pool) of one difficulty. */
+function hcfRights(prefix: string, difficulty: string, n: number): LadderAnswer[] {
+  const out: LadderAnswer[] = [];
+  for (let i = 1; i <= n; i++) out.push(hcfAnswer(prefix + i, difficulty, true));
+  return out;
+}
+
+/**
+ * The ladder path reads: the topic's questions (light), the child's answers on
+ * the topic, the child's last 10 answers in the grade (`take: 10`), then the
+ * chosen question in full.
+ */
+function mockLadderReads(pool: LadderRow[], answers: LadderAnswer[], earlier: boolean[] = []) {
+  prisma.question.findMany.mockResolvedValue(pool);
+  prisma.question.findUnique.mockImplementation((args: { where: { id: string } }) =>
+    Promise.resolve(pool.filter((row) => row.id === args.where.id)[0] ?? null),
+  );
+  prisma.attempt.findMany.mockImplementation((args?: { take?: number }) =>
+    Promise.resolve(args && args.take === 10 ? earlier.map((ok) => ({ isCorrect: ok })) : answers),
+  );
+}
+
+describe('getNextQuestionWithLadder', () => {
+  it('starts a topic on Warm-up with an Easy question and reports the ladder', async () => {
+    mockLadderReads(hcfPool(), []);
+
+    const picked = await getNextQuestionWithLadder('s1', 'grade5', [], 'hcf');
+    expect(picked.question).not.toBeNull();
+    expect(picked.question!.difficulty).toBe('Easy');
+    expect(picked.ladder).not.toBeNull();
+    expect(picked.ladder!.topicLabel).toBe('HCF & LCM');
+    expect(picked.ladder!.current).toBe(0);
+    expect(picked.ladder!.got).toBe(0);
+    expect(picked.ladder!.needed).toBe(3);
+    expect(picked.ladder!.steps.map((s) => s.label)).toEqual(['Warm-up', 'Build', 'Challenge', 'Real exam']);
+  });
+
+  it('getNextQuestion returns the same pick without the ladder', async () => {
+    mockLadderReads(hcfPool(), hcfRights('old-e', 'Easy', 3));
+
+    const question = await getNextQuestion('s1', 'grade5', [], 'hcf');
+    expect(question!.id).toBe('m1');
+  });
+
+  it('moves to Medium once three Warm-up questions are right', async () => {
+    mockLadderReads(hcfPool(), hcfRights('old-e', 'Easy', 3));
+
+    const picked = await getNextQuestionWithLadder('s1', 'grade5', [], 'hcf');
+    expect(picked.question!.id).toBe('m1');
+    expect(picked.ladder!.current).toBe(1);
+    expect(picked.ladder!.steps[0].done).toBe(true);
+  });
+
+  it('finishes on real exam questions', async () => {
+    const answers = hcfRights('old-e', 'Easy', 3).concat(hcfRights('old-m', 'Medium', 3), hcfRights('old-h', 'Hard', 3));
+    mockLadderReads(hcfPool(), answers);
+
+    const picked = await getNextQuestionWithLadder('s1', 'grade5', [], 'hcf');
+    expect(picked.question!.source).toBe(REAL);
+    expect(picked.ladder!.current).toBe(3);
+    expect(picked.ladder!.steps[3].label).toBe('Real exam');
+  });
+
+  it('says Exam-style when the real exam questions have run out, and serves the hardest left', async () => {
+    const answers = hcfRights('old-e', 'Easy', 3).concat(hcfRights('old-m', 'Medium', 3), hcfRights('old-h', 'Hard', 3));
+    mockLadderReads(hcfPool(), answers);
+
+    const picked = await getNextQuestionWithLadder('s1', 'grade5', ['x1', 'x2', 'x3'], 'hcf');
+    expect(picked.question!.id).toBe('h1');
+    expect(picked.ladder!.steps[3].label).toBe('Exam-style');
+  });
+
+  it('never repeats a question: falls forward when the step has run out', async () => {
+    mockLadderReads(hcfPool(), [hcfAnswer('e1', 'Easy', false), hcfAnswer('e2', 'Easy', false)]);
+
+    const picked = await getNextQuestionWithLadder('s1', 'grade5', [], 'hcf');
+    expect(picked.question!.id).toBe('m1');
+    expect(picked.ladder!.current).toBe(0);
+  });
+
+  it('serves a seen question again only when the whole topic has been seen', async () => {
+    const pool = [hcfQuestion('e1', 'Easy'), hcfQuestion('e2', 'Easy')];
+    mockLadderReads(pool, [hcfAnswer('e1', 'Easy', true), hcfAnswer('e2', 'Easy', true)]);
+
+    const again = await getNextQuestionWithLadder('s1', 'grade5', ['e1'], 'hcf');
+    expect(again.question!.id).toBe('e2');
+
+    const none = await getNextQuestionWithLadder('s1', 'grade5', ['e1', 'e2'], 'hcf');
+    expect(none.question).toBeNull();
+  });
+
+  it('a child who is already doing well skips Warm-up', async () => {
+    mockLadderReads(hcfPool(), [], [true, true, true, true, true]);
+
+    const picked = await getNextQuestionWithLadder('s1', 'grade5', [], 'hcf');
+    expect(picked.question!.id).toBe('m1');
+    expect(picked.ladder!.current).toBe(1);
+    expect(picked.ladder!.steps[0].done).toBe(true);
+  });
+
+  it('reaches generated questions whose topic is only in their id, and only this topic’s', async () => {
+    const pool = [
+      hcfQuestion('VAR_G5_vary_hcf_lcm_V81', 'Easy', 'auto_generated_v2', 'Auto-generated variant'),
+      hcfQuestion('VAR_G5_vary_angles_V03', 'Easy', 'auto_generated_v2', 'Auto-generated variant'),
+      hcfQuestion('m1', 'Medium'),
+    ];
+    mockLadderReads(pool, []);
+
+    for (let i = 0; i < 10; i++) {
+      const picked = await getNextQuestionWithLadder('s1', 'grade5', [], 'hcf');
+      expect(picked.question!.id).toBe('VAR_G5_vary_hcf_lcm_V81');
+    }
+  });
+
+  it('has no ladder for a chapter topic, for whole-grade practice, or for an unknown topic key', async () => {
+    prisma.question.findMany.mockResolvedValue([makeQuestion('q1', 'Easy'), makeQuestion('q2', 'Medium')]);
+    mockAttemptReads([]);
+    prisma.progress.findUnique.mockResolvedValue(null);
+
+    const chapter = await getNextQuestionWithLadder('s1', 'ch11');
+    expect(chapter.question).not.toBeNull();
+    expect(chapter.ladder).toBeNull();
+
+    prisma.question.findMany.mockResolvedValue(hcfPool());
+    const wholeGrade = await getNextQuestionWithLadder('s1', 'grade5');
+    expect(wholeGrade.question).not.toBeNull();
+    expect(wholeGrade.ladder).toBeNull();
+
+    const unknownKey = await getNextQuestionWithLadder('s1', 'grade5', [], 'zzz');
+    expect(unknownKey.question).toBeNull();
+    expect(unknownKey.ladder).toBeNull();
+  });
+
+  it('TOPIC_LADDER=off switches the ladder off', async () => {
+    prisma.question.findMany.mockResolvedValue(hcfPool());
+    mockAttemptReads([]);
+    prisma.progress.findUnique.mockResolvedValue(null);
+
+    process.env.TOPIC_LADDER = 'off';
+    try {
+      const picked = await getNextQuestionWithLadder('s1', 'grade5', [], 'hcf');
+      expect(picked.question).not.toBeNull();
+      expect(picked.ladder).toBeNull();
+    } finally {
+      delete process.env.TOPIC_LADDER;
+    }
   });
 });

@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { getVoicePrefs } from '@/lib/speech/voicePrefs';
 import { useReadAloud } from '@/hooks/useReadAloud';
 import { toSpeech } from '@/lib/speech/mathToSpeech';
 import { canRecord, recordUtterance, type Recording } from '@/lib/speech/recorder';
@@ -102,7 +103,8 @@ export function useVoiceLoop(send: (text: string) => Promise<string | null>) {
         const res = await fetch('/api/voice/tts', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ text }),
+          // Sparky speaks in the voice and at the speed the child chose.
+          body: JSON.stringify({ text, voice: getVoicePrefs().voiceId, speed: getVoicePrefs().speedId }),
         });
         if (res.ok) {
           const data = (await res.json()) as { audio?: string; mime?: string };

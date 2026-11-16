@@ -105,6 +105,17 @@ function firstName(name: string | undefined): string {
   return first;
 }
 
+/**
+ * True when `line` says this child's first name. Such a line is about one
+ * child, so its audio must not be stored where anyone could fetch it: the
+ * voice then makes it for that child only (see `useTutorVoice`). It errs
+ * towards true: a name that happens to appear inside another word counts.
+ */
+export function lineSaysName(line: string, name: string | undefined): boolean {
+  const first = firstName(name);
+  return first !== '' && line.indexOf(first) !== -1;
+}
+
 /** The topic in speakable words, or "this topic". */
 function topicWords(topic: string | undefined): string {
   if (!topic) return 'this topic';

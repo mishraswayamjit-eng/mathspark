@@ -6,6 +6,7 @@ import QuestionDiagram from './diagrams/QuestionDiagram';
 import ReadAloudButton from './ReadAloudButton';
 import { questionToSpeech } from '@/lib/speech/mathToSpeech';
 import { narrationAudioSrc } from '@/hooks/useReadAloud';
+import { tidyQuestionText, questionTextSize, topicChipLabel, type QuestionTextSize } from '@/lib/questionDisplay';
 import type { AnswerKey, Difficulty, Question } from '@/types';
 
 // Lazy-load interactive components (only loaded when needed)
@@ -45,12 +46,30 @@ function hasLatex(text: string): boolean {
   return text.includes('\\');
 }
 
-/** Color tokens for each difficulty level. */
-function difficultyColors(d: Difficulty) {
-  if (d === 'Easy') return { dot: 'bg-success', label: 'text-success', bg: 'bg-success-soft border-success/30' };
-  if (d === 'Hard') return { dot: 'bg-retry', label: 'text-retry', bg: 'bg-retry-soft border-retry/30' };
-  return { dot: 'bg-star', label: 'text-hint-ink', bg: 'bg-hint border-hint-ink/30' }; // Medium
+/**
+ * How many of the three level dots are filled. Difficulty is shown in ink, not
+ * in green or red: those two colours only ever mean "correct" and "not quite".
+ */
+function difficultyLevel(d: Difficulty): number {
+  if (d === 'Easy') return 1;
+  if (d === 'Hard') return 3;
+  return 2; // Medium
 }
+
+const LEVEL_DOTS = [1, 2, 3];
+
+/**
+ * Question text scales with how much there is to read: a one-liner is set
+ * large, a long word problem a step smaller with more room between lines.
+ */
+const QUESTION_TEXT_CLS: Record<QuestionTextSize, string> = {
+  short: 'text-[22px] leading-[1.35]',
+  medium: 'text-[19px] leading-normal',
+  long: 'text-[17px] leading-[1.6]',
+};
+
+/** Options this short (numbers, one or two words) sit two to a row on wider screens. */
+const COMPACT_OPTION_MAX = 12;
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
@@ -81,7 +100,16 @@ const QuestionCard = React.memo(function QuestionCard({
     { key: 'D', text: question.option4 },
   ];
 
-  const diff = difficultyColors(question.difficulty);
+  const level = difficultyLevel(question.difficulty);
+  const topicLabel = topicChipLabel(question.subTopic);
+  // Display only: the stored text, the spoken text and the grading are untouched.
+  const shownText = tidyQuestionText(question.questionText || '');
+  const textCls = QUESTION_TEXT_CLS[questionTextSize(shownText)];
+  let compactOptions = true;
+  for (let i = 0; i < options.length; i++) {
+    const t = options[i].text;
+    if (typeof t !== 'string' || t.length > COMPACT_OPTION_MAX || hasLatex(t)) compactOptions = false;
+  }
 
   // ── Style builders ──────────────────────────────────────────────────────────
 
@@ -112,18 +140,22 @@ const QuestionCard = React.memo(function QuestionCard({
       {/* ── Question card ─────────────────────────────────────────────── */}
       <div className="ui-card ui-card-pop animate-card-pop">
 
-        {/* SubTopic + Difficulty tags at TOP */}
+        {/* Topic first, then difficulty; the read-aloud button at the right */}
         <div className="flex items-center gap-2 mb-3">
           <div className="flex items-center gap-2 flex-wrap flex-1 min-w-0">
-          <div className={`flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border-2 ${diff.bg}`}>
-            <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${diff.dot}`} />
-            <span className={`text-[13px] font-extrabold ${diff.label}`}>
+            {topicLabel && (
+              <span className="ui-chip min-w-0 max-w-full" title={question.subTopic}>
+                <span className="truncate">{topicLabel}</span>
+              </span>
+            )}
+            <span className="ui-chip bg-white flex-shrink-0">
+              <span className="flex items-center gap-0.5" aria-hidden="true">
+                {LEVEL_DOTS.map((n) => (
+                  <span key={n} className={`w-1.5 h-1.5 rounded-full ${n <= level ? 'bg-ink' : 'bg-line'}`} />
+                ))}
+              </span>
               {question.difficulty}
             </span>
-          </div>
-          <span className="ui-chip max-w-[220px]">
-            <span className="truncate">{question.subTopic}</span>
-          </span>
           </div>
           <ReadAloudButton
             text={questionToSpeech(question)}
@@ -132,12 +164,13 @@ const QuestionCard = React.memo(function QuestionCard({
           />
         </div>
 
-        {/* Question text (min 18px) — render KaTeX if LaTeX markers detected */}
-        <div className="text-[19px] font-bold text-ink leading-normal [overflow-wrap:anywhere]">
+        {/* Question text (17px at the smallest). KaTeX when LaTeX markers are found;
+            otherwise the wording, tidied for display. */}
+        <div className={`font-bold text-ink [overflow-wrap:anywhere] ${textCls}`}>
           {hasLatex(question.questionText) ? (
             <KatexRenderer latex={question.questionText} displayMode={false} />
           ) : (
-            question.questionText
+            shownText
           )}
         </div>
 
@@ -218,7 +251,7 @@ const QuestionCard = React.memo(function QuestionCard({
           )}
         </Suspense>
       ) : (
-      <div className="grid gap-2.5">
+      <div className={`grid gap-2.5 ${compactOptions ? 'sm:grid-cols-2' : ''}`}>
         {options.map(({ key, text }) => (
           <button
             key={key}

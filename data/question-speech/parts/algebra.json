@@ -2083,6 +2083,101 @@
    "That equals 35 plus 12 minus 6, which is 41."
   ]
  },
+ "VAR_EXT_G5_WS_B2_002_01": {
+  "q": "Solve: 3 x minus 15 equals 3.",
+  "options": [
+   "6",
+   "1",
+   "18",
+   "Minus 4"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 15 to the right side, it becomes plus 15.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 15 to both sides to undo the minus 15: 3 x equals 3 plus 15, which is 18.",
+   "Divide both sides by 3: x equals 18 divided by 3, which is 6.",
+   "Check: 3 times 6 minus 15 equals 3. So x equals 6."
+  ]
+ },
+ "VAR_EXT_G5_WS_B2_002_03": {
+  "q": "Solve: 8 x plus 3 equals 51.",
+  "options": [
+   "6",
+   "48",
+   "7",
+   "5"
+  ],
+  "hints": [
+   "First, move 3 to the other side by subtracting it from both sides.",
+   "After subtracting: 8 x equals 48. Now divide both sides by 8.",
+   "Think: 8 times what number gives 48?"
+  ],
+  "steps": [
+   "Subtract 3 from both sides to undo the plus 3: 8 x equals 51 minus 3, which is 48.",
+   "Divide both sides by 8: x equals 48 divided by 8, which is 6.",
+   "Check: 8 times 6 plus 3 equals 51. So x equals 6."
+  ]
+ },
+ "VAR_EXT_G5_WS_B2_002_04": {
+  "q": "Solve: 7 x minus 9 equals 47.",
+  "options": [
+   "6",
+   "8",
+   "5",
+   "56"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 9 to the right side, it becomes plus 9.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 9 to both sides to undo the minus 9: 7 x equals 47 plus 9, which is 56.",
+   "Divide both sides by 7: x equals 56 divided by 7, which is 8.",
+   "Check: 7 times 8 minus 9 equals 47. So x equals 8."
+  ]
+ },
+ "VAR_EXT_G5_WS_B2_002_04_b2": {
+  "q": "Solve: 4 x plus 14 equals 22.",
+  "options": [
+   "5",
+   "9",
+   "8",
+   "2"
+  ],
+  "hints": [
+   "First, move 14 to the other side by subtracting it from both sides.",
+   "After subtracting: 4 x equals 8. Now divide both sides by 4.",
+   "Think: 4 times what number gives 8?"
+  ],
+  "steps": [
+   "Subtract 14 from both sides to undo the plus 14: 4 x equals 22 minus 14, which is 8.",
+   "Divide both sides by 4: x equals 8 divided by 4, which is 2.",
+   "Check: 4 times 2 plus 14 equals 22. So x equals 2."
+  ]
+ },
+ "VAR_EXT_G5_WS_B2_002_05_b2": {
+  "q": "Solve: 7 x plus 19 equals 61.",
+  "options": [
+   "6",
+   "8",
+   "11",
+   "42"
+  ],
+  "hints": [
+   "First, move 19 to the other side by subtracting it from both sides.",
+   "After subtracting: 7 x equals 42. Now divide both sides by 7.",
+   "Think: 7 times what number gives 42?"
+  ],
+  "steps": [
+   "Subtract 19 from both sides to undo the plus 19: 7 x equals 61 minus 19, which is 42.",
+   "Divide both sides by 7: x equals 42 divided by 7, which is 6.",
+   "Check: 7 times 6 plus 19 equals 61. So x equals 6."
+  ]
+ },
  "VAR_EXT_G5_WS_B2_005_03": {
   "q": "Solve: 6 x plus 14 equals 32.",
   "options": [
@@ -2271,6 +2366,386 @@
    "Subtract 17 from both sides to undo the plus 17: 5 x equals 57 minus 17, which is 40.",
    "Divide both sides by 5: x equals 40 divided by 5, which is 8.",
    "Check: 5 times 8, plus 17, equals 57. So x equals 8."
+  ]
+ },
+ "VAR_EXT_G5_WS_B4_031_01": {
+  "q": "Solve: 7 x minus 12 equals 2.",
+  "options": [
+   "0",
+   "14",
+   "2",
+   "Minus 2"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 12 to the right side, it becomes plus 12.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 12 to both sides to undo the minus 12: 7 x equals 2 plus 12, which is 14.",
+   "Divide both sides by 7: x equals 14 divided by 7, which is 2.",
+   "Check: 7 times 2 minus 12 equals 2. So x equals 2."
+  ]
+ },
+ "VAR_EXT_G5_WS_B4_031_03": {
+  "q": "Solve: 5 x plus 14 equals 34.",
+  "options": [
+   "20",
+   "4",
+   "6",
+   "9"
+  ],
+  "hints": [
+   "First, move 14 to the other side by subtracting it from both sides.",
+   "After subtracting: 5 x equals 20. Now divide both sides by 5.",
+   "Think: 5 times what number gives 20?"
+  ],
+  "steps": [
+   "Subtract 14 from both sides to undo the plus 14: 5 x equals 34 minus 14, which is 20.",
+   "Divide both sides by 5: x equals 20 divided by 5, which is 4.",
+   "Check: 5 times 4 plus 14 equals 34. So x equals 4."
+  ]
+ },
+ "VAR_EXT_G5_WS_B4_031_04": {
+  "q": "Solve: 2 x minus 5 equals 5.",
+  "options": [
+   "10",
+   "5",
+   "2",
+   "0"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 5 to the right side, it becomes plus 5.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 5 to both sides to undo the minus 5: 2 x equals 5 plus 5, which is 10.",
+   "Divide both sides by 2: x equals 10 divided by 2, which is 5.",
+   "Check: 2 times 5 minus 5 equals 5. So x equals 5."
+  ]
+ },
+ "VAR_EXT_G5_WS_B4_031_04_b2": {
+  "q": "Solve: 4 x plus 19 equals 59.",
+  "options": [
+   "14",
+   "19",
+   "40",
+   "10"
+  ],
+  "hints": [
+   "First, move 19 to the other side by subtracting it from both sides.",
+   "After subtracting: 4 x equals 40. Now divide both sides by 4.",
+   "Think: 4 times what number gives 40?"
+  ],
+  "steps": [
+   "Subtract 19 from both sides to undo the plus 19: 4 x equals 59 minus 19, which is 40.",
+   "Divide both sides by 4: x equals 40 divided by 4, which is 10.",
+   "Check: 4 times 10 plus 19 equals 59. So x equals 10."
+  ]
+ },
+ "VAR_EXT_G5_WS_B4_031_05_b2": {
+  "q": "Solve: 7 x minus 14 equals 21.",
+  "options": [
+   "35",
+   "3",
+   "1",
+   "5"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 14 to the right side, it becomes plus 14.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 14 to both sides to undo the minus 14: 7 x equals 21 plus 14, which is 35.",
+   "Divide both sides by 7: x equals 35 divided by 7, which is 5.",
+   "Check: 7 times 5 minus 14 equals 21. So x equals 5."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_011_01": {
+  "q": "Solve: 5 x, minus 11, equals 14.",
+  "options": [
+   "25",
+   "2",
+   "5",
+   "0"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 11 to the right side, it becomes plus 11.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 11 to both sides, to undo the minus 11. 5 x equals 14 plus 11, which is 25.",
+   "Divide both sides by 5. x equals 25 divided by 5, which is 5.",
+   "Check: 5 times 5, minus 11, equals 14. So x equals 5."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_011_03": {
+  "q": "Solve: 8 x, plus 8, equals 56.",
+  "options": [
+   "48",
+   "7",
+   "8",
+   "6"
+  ],
+  "hints": [
+   "First, move 8 to the other side by subtracting it from both sides.",
+   "After subtracting: 8 x equals 48. Now divide both sides by 8.",
+   "Think: 8 times what number gives 48?"
+  ],
+  "steps": [
+   "Subtract 8 from both sides, to undo the plus 8. 8 x equals 56 minus 8, which is 48.",
+   "Divide both sides by 8. x equals 48 divided by 8, which is 6.",
+   "Check: 8 times 6, plus 8, equals 56. So x equals 6."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_011_04": {
+  "q": "Solve: 7 x, minus 4, equals 80.",
+  "options": [
+   "84",
+   "11",
+   "12",
+   "10"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 4 to the right side, it becomes plus 4.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 4 to both sides, to undo the minus 4. 7 x equals 80 plus 4, which is 84.",
+   "Divide both sides by 7. x equals 84 divided by 7, which is 12.",
+   "Check: 7 times 12, minus 4, equals 80. So x equals 12."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_011_04_b2": {
+  "q": "Solve: 3 x, minus 3, equals 21.",
+  "options": [
+   "7",
+   "6",
+   "24",
+   "8"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 3 to the right side, it becomes plus 3.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 3 to both sides, to undo the minus 3. 3 x equals 21 plus 3, which is 24.",
+   "Divide both sides by 3. x equals 24 divided by 3, which is 8.",
+   "Check: 3 times 8, minus 3, equals 21. So x equals 8."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_011_05_b2": {
+  "q": "Solve: 7 x, minus 3, equals 53.",
+  "options": [
+   "9",
+   "7",
+   "56",
+   "8"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 3 to the right side, it becomes plus 3.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 3 to both sides, to undo the minus 3. 7 x equals 53 plus 3, which is 56.",
+   "Divide both sides by 7. x equals 56 divided by 7, which is 8.",
+   "Check: 7 times 8, minus 3, equals 53. So x equals 8."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_012_01": {
+  "q": "Solve: 7 x minus 8 equals 6.",
+  "options": [
+   "2",
+   "minus 1",
+   "14",
+   "0"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 8 to the right side, it becomes plus 8.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 8 to both sides to undo the minus 8: 7 x equals 6 plus 8, which is 14.",
+   "Divide both sides by 7: x equals 14 divided by 7, which is 2.",
+   "Check: 7 times 2, minus 8, equals 6. So x equals 2."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_012_03": {
+  "q": "Solve: 3 x plus 1 equals 28.",
+  "options": [
+   "10",
+   "8",
+   "27",
+   "9"
+  ],
+  "hints": [
+   "First, move 1 to the other side by subtracting it from both sides.",
+   "After subtracting: 3 x equals 27. Now divide both sides by 3.",
+   "Think: 3 times what number gives 27?"
+  ],
+  "steps": [
+   "Subtract 1 from both sides to undo the plus 1: 3 x equals 28 minus 1, which is 27.",
+   "Divide both sides by 3: x equals 27 divided by 3, which is 9.",
+   "Check: 3 times 9, plus 1, equals 28. So x equals 9."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_012_04": {
+  "q": "Solve: 3 x minus 1 equals 20.",
+  "options": [
+   "8",
+   "21",
+   "6",
+   "7"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 1 to the right side, it becomes plus 1.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 1 to both sides to undo the minus 1: 3 x equals 20 plus 1, which is 21.",
+   "Divide both sides by 3: x equals 21 divided by 3, which is 7.",
+   "Check: 3 times 7, minus 1, equals 20. So x equals 7."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_012_04_b2": {
+  "q": "Solve: 5 x minus 11 equals 49.",
+  "options": [
+   "60",
+   "12",
+   "9",
+   "7"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 11 to the right side, it becomes plus 11.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 11 to both sides to undo the minus 11: 5 x equals 49 plus 11, which is 60.",
+   "Divide both sides by 5: x equals 60 divided by 5, which is 12.",
+   "Check: 5 times 12, minus 11, equals 49. So x equals 12."
+  ]
+ },
+ "VAR_EXT_G5_WS_B5_012_05_b2": {
+  "q": "Solve: 5 x plus 6 equals 46.",
+  "options": [
+   "8",
+   "9",
+   "40",
+   "10"
+  ],
+  "hints": [
+   "First, move 6 to the other side by subtracting it from both sides.",
+   "After subtracting: 5 x equals 40. Now divide both sides by 5.",
+   "Think: 5 times what number gives 40?"
+  ],
+  "steps": [
+   "Subtract 6 from both sides to undo the plus 6: 5 x equals 46 minus 6, which is 40.",
+   "Divide both sides by 5: x equals 40 divided by 5, which is 8.",
+   "Check: 5 times 8, plus 6, equals 46. So x equals 8."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_004_01": {
+  "q": "Solve: 2 x minus 11 equals 1.",
+  "options": [
+   "0",
+   "6",
+   "minus 5",
+   "12"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 11 to the right side, it becomes plus 11.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 11 to both sides, to undo the minus 11. 2 x equals 1 plus 11, which is 12.",
+   "Divide both sides by 2. x equals 12 divided by 2, which is 6.",
+   "Check: 2 times 6, minus 11, equals 1. So x equals 6."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_004_03": {
+  "q": "Solve: 3 x plus 10 equals 34.",
+  "options": [
+   "8",
+   "14",
+   "24",
+   "11"
+  ],
+  "hints": [
+   "First, move 10 to the other side, by subtracting it from both sides.",
+   "After subtracting, 3 x equals 24. Now divide both sides by 3.",
+   "Think: 3 times what number gives 24?"
+  ],
+  "steps": [
+   "Subtract 10 from both sides, to undo the plus 10. 3 x equals 34 minus 10, which is 24.",
+   "Divide both sides by 3. x equals 24 divided by 3, which is 8.",
+   "Check: 3 times 8, plus 10, equals 34. So x equals 8."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_004_04": {
+  "q": "Solve: 7 x minus 4 equals 73.",
+  "options": [
+   "9",
+   "10",
+   "77",
+   "11"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 4 to the right side, it becomes plus 4.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 4 to both sides, to undo the minus 4. 7 x equals 73 plus 4, which is 77.",
+   "Divide both sides by 7. x equals 77 divided by 7, which is 11.",
+   "Check: 7 times 11, minus 4, equals 73. So x equals 11."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_004_04_b2": {
+  "q": "Solve: 3 x minus 1 equals 17.",
+  "options": [
+   "6",
+   "7",
+   "18",
+   "5"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 1 to the right side, it becomes plus 1.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 1 to both sides, to undo the minus 1. 3 x equals 17 plus 1, which is 18.",
+   "Divide both sides by 3. x equals 18 divided by 3, which is 6.",
+   "Check: 3 times 6, minus 1, equals 17. So x equals 6."
+  ]
+ },
+ "VAR_EXT_G5_WS_B6_004_05_b2": {
+  "q": "Solve: 4 x plus 14 equals 38.",
+  "options": [
+   "6",
+   "9",
+   "24",
+   "13"
+  ],
+  "hints": [
+   "First, move 14 to the other side, by subtracting it from both sides.",
+   "After subtracting, 4 x equals 24. Now divide both sides by 4.",
+   "Think: 4 times what number gives 24?"
+  ],
+  "steps": [
+   "Subtract 14 from both sides, to undo the plus 14. 4 x equals 38 minus 14, which is 24.",
+   "Divide both sides by 4. x equals 24 divided by 4, which is 6.",
+   "Check: 4 times 6, plus 14, equals 38. So x equals 6."
   ]
  },
  "VAR_EXT_G5_WS_B6_013_01": {
@@ -2746,6 +3221,101 @@
    "Subtract 12 from both sides to undo the plus 12: 2 x equals 24 minus 12, which is 12.",
    "Divide both sides by 2: x equals 12 divided by 2, which is 6.",
    "Check: 2 times 6, plus 12, equals 24. So x equals 6."
+  ]
+ },
+ "VAR_EXT_G5_WS_B7_024_01": {
+  "q": "Solve: 3 x, minus 5, equals 16.",
+  "options": [
+   "7",
+   "5",
+   "21",
+   "3"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 5 to the right side, it becomes plus 5.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 5 to both sides to undo the minus 5: 3 x equals 16 plus 5, which is 21.",
+   "Divide both sides by 3: x equals 21 divided by 3, which is 7.",
+   "Check: 3 times 7, minus 5, equals 16. So x equals 7."
+  ]
+ },
+ "VAR_EXT_G5_WS_B7_024_03": {
+  "q": "Solve: 4 x, plus 5, equals 29.",
+  "options": [
+   "7",
+   "6",
+   "8",
+   "24"
+  ],
+  "hints": [
+   "First, move 5 to the other side by subtracting it from both sides.",
+   "After subtracting: 4 x equals 24. Now divide both sides by 4.",
+   "Think: 4 times what number gives 24?"
+  ],
+  "steps": [
+   "Subtract 5 from both sides to undo the plus 5: 4 x equals 29 minus 5, which is 24.",
+   "Divide both sides by 4: x equals 24 divided by 4, which is 6.",
+   "Check: 4 times 6, plus 5, equals 29. So x equals 6."
+  ]
+ },
+ "VAR_EXT_G5_WS_B7_024_04": {
+  "q": "Solve: 4 x, minus 11, equals 5.",
+  "options": [
+   "16",
+   "4",
+   "Minus 2",
+   "1"
+  ],
+  "hints": [
+   "Move the constant to the other side first.",
+   "When you move minus 11 to the right side, it becomes plus 11.",
+   "After that, divide both sides by the coefficient of x."
+  ],
+  "steps": [
+   "Add 11 to both sides to undo the minus 11: 4 x equals 5 plus 11, which is 16.",
+   "Divide both sides by 4: x equals 16 divided by 4, which is 4.",
+   "Check: 4 times 4, minus 11, equals 5. So x equals 4."
+  ]
+ },
+ "VAR_EXT_G5_WS_B7_024_04_b2": {
+  "q": "Solve: 6 x, plus 10, equals 46.",
+  "options": [
+   "6",
+   "36",
+   "9",
+   "7"
+  ],
+  "hints": [
+   "First, move 10 to the other side by subtracting it from both sides.",
+   "After subtracting: 6 x equals 36. Now divide both sides by 6.",
+   "Think: 6 times what number gives 36?"
+  ],
+  "steps": [
+   "Subtract 10 from both sides to undo the plus 10: 6 x equals 46 minus 10, which is 36.",
+   "Divide both sides by 6: x equals 36 divided by 6, which is 6.",
+   "Check: 6 times 6, plus 10, equals 46. So x equals 6."
+  ]
+ },
+ "VAR_EXT_G5_WS_B7_024_05_b2": {
+  "q": "Solve: 2 x, plus 18, equals 22.",
+  "options": [
+   "20",
+   "4",
+   "2",
+   "11"
+  ],
+  "hints": [
+   "First, move 18 to the other side by subtracting it from both sides.",
+   "After subtracting: 2 x equals 4. Now divide both sides by 2.",
+   "Think: 2 times what number gives 4?"
+  ],
+  "steps": [
+   "Subtract 18 from both sides to undo the plus 18: 2 x equals 22 minus 18, which is 4.",
+   "Divide both sides by 2: x equals 4 divided by 2, which is 2.",
+   "Check: 2 times 2, plus 18, equals 22. So x equals 2."
   ]
  },
  "VAR_G5_vary_equation_V101": {

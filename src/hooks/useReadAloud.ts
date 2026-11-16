@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { fetchServerVoice, serverVoiceMayBeAvailable } from '@/lib/speech/serverVoice';
+import { getVoicePrefs } from '@/lib/speech/voicePrefs';
+import { voiceProfileOrDefault, voiceSpeedOrDefault, type VoiceGender } from '@/lib/speech/voices';
 
 /**
  * Read-aloud for verified content.
@@ -12,6 +14,9 @@ import { fetchServerVoice, serverVoiceMayBeAvailable } from '@/lib/speech/server
  * device. The caller passes text that has already been made
  * speakable by `@/lib/speech/mathToSpeech`.
  *
+ * The server voice speaks in the profile and at the speed the child chose
+ * (`@/lib/speech/voicePrefs`). A pre-recorded file is played as recorded.
+ *
  * Only one thing is ever read at a time across the whole page: starting a new
  * reading stops whichever instance was reading before.
  */
@@ -19,6 +24,13 @@ import { fetchServerVoice, serverVoiceMayBeAvailable } from '@/lib/speech/server
 interface SpeakOptions {
   /** Pre-recorded audio to try first; falls back to the browser voice if it cannot play. */
   audioSrc?: string;
+  /**
+   * The text is about this child (their name is in it, or it was written for
+   * them just now), so its audio must not be stored where others could fetch it.
+   */
+  personal?: boolean;
+  /** Speak in this voice profile instead of the child's chosen one (the "Listen" buttons). */
+  voiceId?: string;
   /** Called once sound has actually started. */
   onStart?: () => void;
   /** Called when playback finishes naturally (not when it is stopped or interrupted). */
@@ -42,9 +54,50 @@ export function narrationAudioSrc(questionId: string, part: string): string | un
 // The stop() of whichever hook instance is currently reading, if any.
 let stopActiveReader: (() => void) | null = null;
 
-function pickVoice(): SpeechSynthesisVoice | null {
+// Browsers do not say whether a device voice is male or female. Some put it in
+// the name ("Google UK English Male"), and the common system voices have
+// well-known first names. This is a best guess from those names and nothing
+// more: a voice we cannot place is treated as unknown, and when no voice of
+// the wanted kind is found the choice is made exactly as it was before.
+const FEMALE_VOICE_NAMES = [
+  'female', 'woman', 'heera', 'neerja', 'veena', 'lekha', 'zira', 'hazel', 'susan', 'libby', 'sonia', 'aria',
+  'jenny', 'samantha', 'karen', 'moira', 'tessa', 'fiona', 'victoria', 'serena', 'kate', 'allison', 'ava',
+];
+const MALE_VOICE_NAMES = [
+  'male', 'man', 'ravi', 'prabhat', 'rishi', 'david', 'mark', 'george', 'ryan', 'guy', 'daniel', 'oliver',
+  'alex', 'fred', 'tom', 'thomas', 'arthur', 'aaron', 'gordon',
+];
+
+function nameHasWord(name: string, words: string[]): boolean {
+  const parts = name.toLowerCase().split(/[^a-z]+/);
+  for (let i = 0; i < parts.length; i++) {
+    if (parts[i] && words.indexOf(parts[i]) !== -1) return true;
+  }
+  return false;
+}
+
+function voiceGender(voice: SpeechSynthesisVoice): VoiceGender | null {
+  const name = voice.name || '';
+  if (nameHasWord(name, FEMALE_VOICE_NAMES)) return 'female';
+  if (nameHasWord(name, MALE_VOICE_NAMES)) return 'male';
+  return null;
+}
+
+/**
+ * The device voice to fall back on. `gender` is that of the profile the child
+ * chose: a fallback that sounds like a different person is jarring, so a
+ * device voice that appears (by its name) to match is preferred.
+ */
+function pickVoice(gender?: VoiceGender): SpeechSynthesisVoice | null {
   const voices = window.speechSynthesis.getVoices();
   const prefer = ['en-IN', 'en_IN', 'en-GB', 'en_GB', 'en-US', 'en_US'];
+  if (gender) {
+    for (let p = 0; p < prefer.length; p++) {
+      for (let i = 0; i < voices.length; i++) {
+        if (voices[i].lang === prefer[p] && voiceGender(voices[i]) === gender) return voices[i];
+      }
+    }
+  }
   for (let p = 0; p < prefer.length; p++) {
     for (let i = 0; i < voices.length; i++) {
       if (voices[i].lang === prefer[p]) return voices[i];
@@ -116,10 +169,13 @@ export function useReadAloud() {
         return;
       }
       const utter = new SpeechSynthesisUtterance(text);
-      const voice = pickVoice();
+      const prefs = getVoicePrefs();
+      const profile = voiceProfileOrDefault((opts && opts.voiceId) || prefs.voiceId);
+      const voice = pickVoice(profile.gender);
       if (voice) utter.voice = voice;
       utter.lang  = voice ? voice.lang : 'en-IN';
-      utter.rate  = 0.92;
+      // 0.92 at the "Normal" speed, as before; Calm and Quick move it a little.
+      utter.rate  = 0.92 * voiceSpeedOrDefault(prefs.speedId).multiplier;
       utter.onstart = started;
       utter.onend   = () => finish(true);
       utter.onerror = () => finish(false);
@@ -156,7 +212,10 @@ export function useReadAloud() {
       // Made now, inside the tap, so the browser is more willing to play it when the sound arrives.
       const audio = new Audio();
       audioRef.current = audio;
-      fetchServerVoice(text).then((src) => {
+      fetchServerVoice(text, {
+        personal: Boolean(opts && opts.personal),
+        voiceId: opts ? opts.voiceId : undefined,
+      }).then((src) => {
         if (!isCurrent()) return;
         if (src) {
           playAudio(audio, src);
