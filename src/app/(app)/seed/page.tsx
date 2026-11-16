@@ -66,6 +66,15 @@ export default function SeedPage() {
       blueprintNeed: number; coverage: string;
     }>;
     totalQuestions: number; totalUsable: number;
+    bank?: {
+      total: number; inSeedFile: number; databaseOnly: number;
+      reachedByNoTopic: number; reachedBySeveral: number;
+      bySource: Array<{
+        source: string; total: number; inSeedFile: number; databaseOnly: number;
+        reachedByNoTopic: number; servedInPractice: boolean;
+      }>;
+      unreachedLabels: Array<{ label: string; total: number; databaseOnly: number }>;
+    };
   }> | null>(null);
 
   // ── Redistribute Grade 4 ─────────────────────────────────────────────────
@@ -892,6 +901,12 @@ export default function SeedPage() {
               >
                 Grade 4 Only
               </button>
+              <button
+                onClick={() => runTopicAudit(5)}
+                className="flex-1 bg-teal-100 hover:bg-teal-200 text-teal-800 font-bold py-3.5 rounded-2xl transition-colors text-sm"
+              >
+                Grade 5 Only
+              </button>
             </div>
           </>
         ) : auditStatus === 'running' ? (
@@ -917,6 +932,59 @@ export default function SeedPage() {
                         {gradeData.totalUsable} usable / {gradeData.totalQuestions} total
                       </p>
                     </div>
+
+                    {gradeData.bank && (
+                      <div className="mb-3 space-y-2 text-xs">
+                        <p className="font-bold text-gray-700">
+                          The whole bank: {gradeData.bank.total} questions · {gradeData.bank.inSeedFile} in the seed file ·{' '}
+                          <span className={gradeData.bank.databaseOnly > 0 ? 'text-amber-700' : 'text-green-700'}>
+                            {gradeData.bank.databaseOnly} only in the database
+                          </span>
+                        </p>
+                        <p className="text-gray-600">
+                          {gradeData.bank.reachedByNoTopic} reached by no topic · {gradeData.bank.reachedBySeveral} reached by more than one
+                        </p>
+                        <table className="w-full text-left">
+                          <thead>
+                            <tr className="text-gray-400">
+                              <th className="font-semibold py-0.5">Source</th>
+                              <th className="font-semibold text-right">All</th>
+                              <th className="font-semibold text-right">Seed</th>
+                              <th className="font-semibold text-right">DB only</th>
+                              <th className="font-semibold text-right">No topic</th>
+                              <th className="font-semibold text-right">Served</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {gradeData.bank.bySource.map((row) => (
+                              <tr key={row.source} className="text-gray-700">
+                                <td className="py-0.5 truncate max-w-[140px]">{row.source}</td>
+                                <td className="text-right tabular-nums">{row.total}</td>
+                                <td className="text-right tabular-nums">{row.inSeedFile}</td>
+                                <td className={`text-right tabular-nums ${row.databaseOnly > 0 ? 'text-amber-700 font-bold' : ''}`}>{row.databaseOnly}</td>
+                                <td className="text-right tabular-nums">{row.reachedByNoTopic}</td>
+                                <td className="text-right">{row.servedInPractice ? 'yes' : 'off'}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                        {gradeData.bank.unreachedLabels.length > 0 && (
+                          <details>
+                            <summary className="cursor-pointer font-semibold text-gray-600">Labels no topic reaches</summary>
+                            <ul className="mt-1 space-y-0.5 text-gray-600">
+                              {gradeData.bank.unreachedLabels.map((row) => (
+                                <li key={row.label} className="flex justify-between gap-2">
+                                  <span className="truncate">{row.label}</span>
+                                  <span className="tabular-nums flex-shrink-0">
+                                    {row.total}{row.databaseOnly > 0 ? ` (${row.databaseOnly} DB only)` : ''}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                          </details>
+                        )}
+                      </div>
+                    )}
 
                     <div className="space-y-1.5">
                       {gradeData.topics.map((t) => {

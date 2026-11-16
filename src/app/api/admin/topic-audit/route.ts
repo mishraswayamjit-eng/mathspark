@@ -3,6 +3,35 @@ import { prisma } from '@/lib/db';
 import { getTopicsForGrade } from '@/data/topicTree';
 import { verifySecret } from '@/lib/adminAuth';
 import { matchesSubTopicKey } from '@/lib/sharedUtils';
+import { aiSourceFilter } from '@/lib/db';
+import seedIdList from '@/data/bank/seedIds.json';
+
+// The ids in the seed file (built by scripts/bank/build_seed_ids.py). A
+// question in the database whose id is not here exists only in the database.
+const SEED_IDS: { [id: string]: true } = {};
+for (let i = 0; i < (seedIdList as string[]).length; i++) SEED_IDS[(seedIdList as string[])[i]] = true;
+
+/** How the whole bank of one grade is made up, counting each question once. */
+interface BankReport {
+  total: number;
+  inSeedFile: number;
+  databaseOnly: number;
+  /** Questions no topic of the grade picks up: they only appear in mixed practice. */
+  reachedByNoTopic: number;
+  /** Questions picked up by more than one topic. */
+  reachedBySeveral: number;
+  bySource: Array<{
+    source: string;
+    total: number;
+    inSeedFile: number;
+    databaseOnly: number;
+    reachedByNoTopic: number;
+    /** False when this source is switched off for practice (see aiSourceFilter). */
+    servedInPractice: boolean;
+  }>;
+  /** The commonest sub-topic labels no topic picks up, largest first. */
+  unreachedLabels: Array<{ label: string; total: number; databaseOnly: number }>;
+}
 
 export const dynamic = 'force-dynamic';
 
@@ -25,6 +54,7 @@ export async function GET(req: NextRequest) {
 
   try {
     const report: Record<string, {
+      bank: BankReport;
       topics: Array<{
         topicId: string;
         name: string;
@@ -52,7 +82,7 @@ export async function GET(req: NextRequest) {
       const dbTopicIds = Array.from(new Set(topics.map(t => t.dbTopicId)));
       const allQuestions = await prisma.question.findMany({
         where: { topicId: { in: dbTopicIds } },
-        select: { topicId: true, subTopic: true, difficulty: true, questionText: true, correctAnswer: true, option1: true, option2: true, option3: true, option4: true },
+        select: { id: true, source: true, topicId: true, subTopic: true, difficulty: true, questionText: true, correctAnswer: true, option1: true, option2: true, option3: true, option4: true },
       });
 
       for (const topic of topics) {
@@ -106,7 +136,63 @@ export async function GET(req: NextRequest) {
         gradeTotalU += usable;
       }
 
+      // The whole bank of the grade, each question counted once.
+      const switchedOff = aiSourceFilter().source?.notIn ?? [];
+      const keys: string[] = [];
+      topics.forEach((t) => {
+        if (!t.id.endsWith('_ipm') && t.subTopicKey && keys.indexOf(t.subTopicKey) === -1) keys.push(t.subTopicKey);
+      });
+      const sources: { [source: string]: { total: number; inSeedFile: number; databaseOnly: number; reachedByNoTopic: number } } = {};
+      const labels: { [label: string]: { total: number; databaseOnly: number } } = {};
+      let inSeedFile = 0;
+      let reachedByNoTopic = 0;
+      let reachedBySeveral = 0;
+      for (let i = 0; i < allQuestions.length; i++) {
+        const q = allQuestions[i];
+        const inSeed = SEED_IDS[q.id] === true;
+        // A grade with no sub-topic keys (Grade 4 chapters) reaches every question through its chapter.
+        let hits = keys.length === 0 ? 1 : 0;
+        for (let k = 0; k < keys.length; k++) {
+          if (matchesSubTopicKey(q.subTopic, keys[k])) hits++;
+        }
+        const src = q.source || '(none)';
+        if (!sources[src]) sources[src] = { total: 0, inSeedFile: 0, databaseOnly: 0, reachedByNoTopic: 0 };
+        sources[src].total++;
+        if (inSeed) { sources[src].inSeedFile++; inSeedFile++; } else { sources[src].databaseOnly++; }
+        if (hits > 1) reachedBySeveral++;
+        if (hits === 0) {
+          reachedByNoTopic++;
+          sources[src].reachedByNoTopic++;
+          const label = q.subTopic || '(no label)';
+          if (!labels[label]) labels[label] = { total: 0, databaseOnly: 0 };
+          labels[label].total++;
+          if (!inSeed) labels[label].databaseOnly++;
+        }
+      }
+      const bank: BankReport = {
+        total: allQuestions.length,
+        inSeedFile,
+        databaseOnly: allQuestions.length - inSeedFile,
+        reachedByNoTopic,
+        reachedBySeveral,
+        bySource: Object.keys(sources)
+          .map((source) => ({
+            source,
+            total: sources[source].total,
+            inSeedFile: sources[source].inSeedFile,
+            databaseOnly: sources[source].databaseOnly,
+            reachedByNoTopic: sources[source].reachedByNoTopic,
+            servedInPractice: switchedOff.indexOf(source) === -1,
+          }))
+          .sort((x, y) => y.total - x.total),
+        unreachedLabels: Object.keys(labels)
+          .map((label) => ({ label, total: labels[label].total, databaseOnly: labels[label].databaseOnly }))
+          .sort((x, y) => y.total - x.total)
+          .slice(0, 30),
+      };
+
       report[`grade${grade}`] = {
+        bank,
         topics: topicResults,
         totalQuestions: gradeTotalQ,
         totalUsable: gradeTotalU,
