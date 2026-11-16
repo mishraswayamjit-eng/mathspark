@@ -109,6 +109,23 @@ function sarvamBody(text: string, v: VoiceSettings, languageField: string): Reco
  * 503 when SARVAM_API_KEY is not set, and the app then uses the device's own
  * voice, so everything works with or without Sarvam.
  */
+/**
+ * GET /api/voice/tts  →  { available, voice: { model, speaker, pace, temperature } }
+ *
+ * Which voice this deployment is set up to use, for checking that a change to
+ * the environment variables has taken effect. Holds no key and nothing secret.
+ */
+export async function GET() {
+  const voice = voiceSettings({});
+  return Response.json(
+    {
+      available: Boolean(process.env.SARVAM_API_KEY),
+      voice: { model: voice.model, speaker: voice.speaker, pace: voice.pace, temperature: voice.temperature },
+    },
+    { headers: { 'Cache-Control': 'no-store' } },
+  );
+}
+
 export async function POST(req: Request) {
   const studentId = await getAuthenticatedStudentId();
   if (!studentId) {

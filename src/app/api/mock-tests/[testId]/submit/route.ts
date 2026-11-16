@@ -43,6 +43,10 @@ export async function POST(
     if (mockTest.status === 'completed') {
       return NextResponse.json({ testId });
     }
+    // A test the child ended without a score stays that way.
+    if (mockTest.status === 'abandoned') {
+      return NextResponse.json({ error: 'This test has ended.' }, { status: 409 });
+    }
 
     // Grade each response
     const graded = mockTest.responses.map((r) => ({

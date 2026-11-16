@@ -1,5 +1,5 @@
 import { test, expect } from '../fixtures/auth';
-import { waitForDataLoad } from '../helpers/wait';
+import { waitForDataLoad, carryOnIfOpen } from '../helpers/wait';
 import { createMockTest } from '../helpers/api';
 
 test.describe('Test Hub', () => {
@@ -41,6 +41,7 @@ test.describe('Test Creation & UI', () => {
     const startButton = page.locator('button').filter({ hasText: /start/i }).first();
     await expect(startButton).toBeVisible({ timeout: 10_000 });
     await startButton.click();
+    await carryOnIfOpen(page);
 
     await page.waitForURL(/\/test\//, { timeout: 20_000 });
     await waitForDataLoad(page);
@@ -54,6 +55,7 @@ test.describe('Test Creation & UI', () => {
     await waitForDataLoad(page);
 
     await page.locator('button').filter({ hasText: /start/i }).first().click();
+    await carryOnIfOpen(page);
     await page.waitForURL(/\/test\//, { timeout: 20_000 });
     await waitForDataLoad(page);
 
@@ -66,6 +68,7 @@ test.describe('Test Creation & UI', () => {
     await waitForDataLoad(page);
 
     await page.locator('button').filter({ hasText: /start/i }).first().click();
+    await carryOnIfOpen(page);
     await page.waitForURL(/\/test\//, { timeout: 20_000 });
     await waitForDataLoad(page);
 
@@ -80,6 +83,7 @@ test.describe('Test — answer selection', () => {
     await waitForDataLoad(page);
 
     await page.locator('button').filter({ hasText: /start/i }).first().click();
+    await carryOnIfOpen(page);
     await page.waitForURL(/\/test\//, { timeout: 20_000 });
     await waitForDataLoad(page);
 

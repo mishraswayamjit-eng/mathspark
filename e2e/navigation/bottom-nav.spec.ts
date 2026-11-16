@@ -1,6 +1,6 @@
 import { test, expect } from '../fixtures/auth';
 import { test as publicTest, expect as publicExpect } from '@playwright/test';
-import { waitForDataLoad } from '../helpers/wait';
+import { waitForDataLoad, carryOnIfOpen } from '../helpers/wait';
 
 const NAV_ITEMS = [
   { label: 'Today', href: '/home', heading: /good (morning|afternoon|evening)/i },
@@ -162,6 +162,7 @@ test.describe('BottomNav — hidden during immersive flows', () => {
     }
 
     await startButton.click();
+    await carryOnIfOpen(page);
     await page.waitForURL(/\/test\//, { timeout: 20_000 });
     await waitForDataLoad(page);
 

@@ -28,3 +28,16 @@ export async function waitForHydration(page: Page): Promise<void> {
       || document.readyState === 'complete';
   }, { timeout: 10_000 });
 }
+
+/**
+ * After tapping a start button on /test: when a test is already open, the page
+ * asks whether to carry on with it or end it. Carry on, so the caller lands in
+ * a test either way. Does nothing when the dialog does not appear.
+ */
+export async function carryOnIfOpen(page: Page): Promise<void> {
+  const carryOn = page.locator('button').filter({ hasText: /carry on with it/i }).first();
+  await carryOn
+    .waitFor({ state: 'visible', timeout: 3_000 })
+    .then(() => carryOn.click())
+    .catch(() => { /* no test was open: the new one is starting */ });
+}

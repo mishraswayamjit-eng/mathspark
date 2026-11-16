@@ -76,6 +76,30 @@ const PYQ_YEARS: Array<{
   { year: 2016, label: 'IPM 2016',  subtitle: '40 Qs · 60 min · First Year',  color: 'bg-white' },
 ];
 
+// ── A test left open, and what a start request carries ────────────────────────
+
+interface OpenTest {
+  testId: string;
+  type: string;
+  totalQuestions: number;
+  answered: number;
+}
+
+interface StartBody {
+  type: TestType;
+  topicIds?: string[];
+  year?: PYQYear;
+}
+
+function testLabel(type: string): string {
+  if (type === 'pyq') return 'past paper';
+  if (type === 'mega') return 'Mega Final';
+  for (let i = 0; i < TEST_OPTIONS.length; i++) {
+    if (TEST_OPTIONS[i].type === type) return TEST_OPTIONS[i].label;
+  }
+  return 'test';
+}
+
 // ── Component ──────────────────────────────────────────────────────────────────
 
 export default function TestConfigPage() {
@@ -89,6 +113,9 @@ export default function TestConfigPage() {
   const [studentGrade,      setStudentGrade]      = useState<number>(4);
   const [subscriptionTier,  setSubscriptionTier]  = useState<number>(0);
   const [trialActive,       setTrialActive]       = useState(false);
+  const [openTest,          setOpenTest]          = useState<OpenTest | null>(null);
+  const [pendingStart,      setPendingStart]      = useState<StartBody | null>(null);
+  const [ending,            setEnding]            = useState(false);
 
   useEffect(() => {
     const id    = localStorage.getItem('mathspark_student_id');
@@ -119,85 +146,103 @@ export default function TestConfigPage() {
 
   const IS_MEGA_ACCESSIBLE = !MONETIZATION_ENABLED || subscriptionTier >= 2 || trialActive;
 
-  // Start a synthetic test (quick / half / ipm / full)
-  async function handleStart() {
-    if (!studentId) return;
-    setLoading(true);
+  // The test this child still has open, if any. Starting another one asks first.
+  useEffect(() => {
+    let alive = true;
+    fetch('/api/mock-tests')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data: { inProgress?: OpenTest | null } | null) => {
+        if (alive && data && data.inProgress) setOpenTest(data.inProgress);
+      })
+      .catch((err) => logError('[test] open test check', err));
+    return () => { alive = false; };
+  }, []);
+
+  function clearBusy() {
+    setLoading(false);
+    setPyqLoading(null);
+    setMegaLoading(false);
+  }
+
+  // Creates a test and opens it. `replace` ends the open test first.
+  async function createTest(body: StartBody, replace: boolean) {
     setError('');
     try {
-      // For non-Grade-4 students, scope quick/half/full to their grade pool
-      // IPM generator handles grade-aware topic selection server-side
-      const topicIds = studentGrade !== 4 && selected !== 'ipm'
-        ? [`grade${studentGrade}`]
-        : undefined;
-
       const res = await fetch('/api/mock-tests', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ type: selected, topicIds }),
+        body: JSON.stringify(replace ? { ...body, replace: true } : body),
       });
       if (!res.ok) {
-        const body = await res.json().catch(() => null);
+        const failure = await res.json().catch(() => null);
         if (res.status === 401) throw new Error('Session expired — please log in again.');
         if (res.status === 429) throw new Error('Too many tests created. Wait a minute and try again.');
-        throw new Error(body?.error || 'Failed to create test. Please try again.');
+        throw new Error(failure?.error || "We couldn't set up that test. Please try again.");
       }
       const { testId } = await res.json();
       router.push(`/test/${testId}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : "We couldn't finish that. Please try again!");
-      setLoading(false);
+      clearBusy();
     }
+  }
+
+  // A test is already open: ask before swapping it for a new one.
+  function start(body: StartBody, markBusy: () => void) {
+    if (!studentId) return;
+    if (openTest) {
+      setPendingStart(body);
+      return;
+    }
+    markBusy();
+    createTest(body, false);
+  }
+
+  // Start a practice test (quick / half / ipm / full)
+  function handleStart() {
+    // For non-Grade-4 students, scope quick/half/full to their grade pool
+    // IPM generator handles grade-aware topic selection server-side
+    const topicIds = studentGrade !== 4 && selected !== 'ipm'
+      ? [`grade${studentGrade}`]
+      : undefined;
+    start({ type: selected, topicIds }, () => setLoading(true));
   }
 
   // Start a previous-year paper
-  async function handlePYQ(year: PYQYear) {
-    if (!studentId) return;
-    setPyqLoading(year);
-    setError('');
-    try {
-      const res = await fetch('/api/mock-tests', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ type: 'pyq', year }),
-      });
-      if (!res.ok) {
-        const body = await res.json().catch(() => null);
-        if (res.status === 401) throw new Error('Session expired — please log in again.');
-        if (res.status === 429) throw new Error('Too many tests created. Wait a minute and try again.');
-        throw new Error(body?.error || 'Failed to create test. Please try again.');
-      }
-      const { testId } = await res.json();
-      router.push(`/test/${testId}`);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "We couldn't finish that. Please try again!");
-      setPyqLoading(null);
-    }
+  function handlePYQ(year: PYQYear) {
+    start({ type: 'pyq', year }, () => setPyqLoading(year));
   }
 
   // Start a Mega Final test
-  async function handleMega() {
-    if (!studentId) return;
-    setMegaLoading(true);
+  function handleMega() {
+    start({ type: 'mega', topicIds: [`grade${studentGrade}`] }, () => setMegaLoading(true));
+  }
+
+  // End the open test without a score.
+  async function endOpenTest() {
+    if (!openTest) return;
+    setEnding(true);
     setError('');
     try {
-      const res = await fetch('/api/mock-tests', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ type: 'mega', topicIds: [`grade${studentGrade}`] }),
-      });
-      if (!res.ok) {
-        const body = await res.json().catch(() => null);
-        if (res.status === 401) throw new Error('Session expired — please log in again.');
-        if (res.status === 429) throw new Error('Too many tests created. Wait a minute and try again.');
-        throw new Error(body?.error || 'Failed to create test. Please try again.');
-      }
-      const { testId } = await res.json();
-      router.push(`/test/${testId}`);
+      const res = await fetch(`/api/mock-tests/${openTest.testId}/abandon`, { method: 'POST' });
+      if (!res.ok) throw new Error('abandon was not accepted');
+      setOpenTest(null);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "We couldn't finish that. Please try again!");
-      setMegaLoading(false);
+      logError('[test] end open test', err);
+      setError("We couldn't end that test just now. Please check your connection and try again.");
     }
+    setEnding(false);
+  }
+
+  // From the dialog: end the open test and start the one that was asked for.
+  async function endAndStartPending() {
+    const body = pendingStart;
+    if (!body) return;
+    setEnding(true);
+    setPendingStart(null);
+    setOpenTest(null);
+    await createTest(body, true);
+    setEnding(false);
   }
 
   const opt = TEST_OPTIONS.find((o) => o.type === selected)!;
@@ -223,10 +268,40 @@ export default function TestConfigPage() {
         </div>
       </div>
 
-      {/* ── Section: Synthetic tests ────────────────────────────────────────── */}
+      {/* ── A test still open: carry on with it, or end it ─────────────────── */}
+      {openTest && (
+        <div className="px-4 mb-4">
+          <div className="bg-hint border-2 border-ink rounded-card p-4 space-y-3">
+            <div>
+              <p className="text-ink font-extrabold text-sm">You have a {testLabel(openTest.type)} open</p>
+              <p className="text-ink-muted text-xs font-semibold mt-0.5">
+                {`${openTest.answered} of ${openTest.totalQuestions} answered · the clock is still running`}
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <button
+                onClick={() => router.push(`/test/${openTest.testId}`)}
+                disabled={ending}
+                className="flex-1 min-h-[48px] rounded-control bg-action border-2 border-ink shadow-hard-sm font-extrabold text-white disabled:opacity-60"
+              >
+                Carry on
+              </button>
+              <button
+                onClick={() => { endOpenTest(); }}
+                disabled={ending}
+                className="flex-1 min-h-[48px] rounded-control bg-white border-2 border-ink font-extrabold text-ink disabled:opacity-60"
+              >
+                {ending ? 'Ending…' : 'End it'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── Section: Practice tests ─────────────────────────────────────────── */}
       <div className="px-4">
         <p className="text-caption text-ink-muted mb-2">
-          Synthetic Papers
+          Practice tests
         </p>
         <div className="space-y-2">
           {TEST_OPTIONS.map((o) => {
@@ -344,9 +419,11 @@ export default function TestConfigPage() {
                   <p className="text-ink-muted text-xs">Full Mega Mock · 15 Qs · 45 min</p>
                 </div>
               </div>
-              <span className="text-xs font-bold px-2 py-1 rounded-full bg-soft text-ink border-2 border-line shrink-0">
-                PRO
-              </span>
+              {MONETIZATION_ENABLED && (
+                <span className="text-xs font-bold px-2 py-1 rounded-full bg-soft text-ink border-2 border-line shrink-0">
+                  PRO
+                </span>
+              )}
             </div>
             <div className="space-y-1">
               <p className="text-ink-muted text-xs">✦ Grade {studentGrade}-specific · Hard difficulty only</p>
@@ -377,31 +454,37 @@ export default function TestConfigPage() {
           )}
         </div>
 
-        {/* Untimed Challenge card */}
-        <div className="relative">
-          <div className={`bg-white border-2 ${IS_MEGA_ACCESSIBLE ? 'border-line' : 'border-line'} rounded-card p-4`}>
-            <div className="flex items-center justify-between mb-2">
-              <div>
-                <p className="text-ink font-extrabold text-sm">MEGA CHALLENGE MODE</p>
-                <p className="text-ink-muted text-xs">Untimed · Random hard questions</p>
-              </div>
-              <span className="text-xs font-bold px-2 py-1 rounded-full bg-soft text-ink border-2 border-line shrink-0">
-                PRO
-              </span>
-            </div>
-            <DuoButton variant="blue" fullWidth loading={false} onClick={handleMega}>
-              Start Challenge ⚡
-            </DuoButton>
-          </div>
-
-          {!IS_MEGA_ACCESSIBLE && (
-            <div
-              className="absolute inset-0 rounded-card"
-              style={{ backdropFilter: 'blur(4px)', background: 'rgba(13,26,32,0.6)' }}
-            />
-          )}
-        </div>
       </div>
+
+      {/* ── Starting a test while another is open ──────────────────────────── */}
+      {pendingStart && openTest && (
+        <div className="fixed inset-0 z-[90] bg-black/60 flex items-center justify-center px-4">
+          <div className="bg-white rounded-card border-2 border-ink p-6 w-full max-w-sm space-y-4 shadow-hard-lg">
+            <h3 className="text-heading text-ink text-center">You already have a test open</h3>
+            <p className="text-ink-muted text-sm text-center">
+              {`Your ${testLabel(openTest.type)} has ${openTest.answered} of ${openTest.totalQuestions} answered. Carry on with it, or end it (no score) and start the new one.`}
+            </p>
+            <button
+              onClick={() => router.push(`/test/${openTest.testId}`)}
+              className="w-full min-h-[48px] rounded-control bg-action border-2 border-ink shadow-hard-sm font-extrabold text-white"
+            >
+              Carry on with it
+            </button>
+            <button
+              onClick={() => { endAndStartPending(); }}
+              className="w-full min-h-[48px] rounded-control bg-white border-2 border-ink font-extrabold text-ink"
+            >
+              End it and start the new one
+            </button>
+            <button
+              onClick={() => setPendingStart(null)}
+              className="w-full min-h-[48px] font-extrabold text-ink-muted"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* View history link */}
       <div className="px-4 mt-4">

@@ -183,6 +183,8 @@ export default function TestEnginePage() {
   const [showNavigator,  setShowNavigator]  = useState(false);
   const [showSubmitModal,setShowSubmitModal] = useState(false);
   const [showQuitModal,  setShowQuitModal]  = useState(false);
+  const [ending,         setEnding]         = useState(false);
+  const [endError,       setEndError]       = useState('');
   const [submitting,     setSubmitting]     = useState(false);
   const [submitError,    setSubmitError]    = useState('');
   const [autoSubmitted,  setAutoSubmitted]  = useState(false);
@@ -202,6 +204,11 @@ export default function TestEnginePage() {
         const data: MockTestDetail = await res.json();
         if (data.status === 'completed') {
           router.replace(`/test/${testId}/results`);
+          return;
+        }
+        // Ended without a score (or closed after its time ran out): nothing to sit.
+        if (data.status === 'abandoned') {
+          router.replace('/test');
           return;
         }
         setTest(data);
@@ -311,6 +318,21 @@ export default function TestEnginePage() {
       r.questionNumber === questionNumber ? { ...r, flagged: newFlagged } : r,
     ));
     saveResponse(questionNumber, { flagged: newFlagged });
+  }
+
+  // End the test without a score, so a different one can be started.
+  async function handleEndTest() {
+    setEnding(true);
+    setEndError('');
+    try {
+      const res = await fetch(`/api/mock-tests/${testId}/abandon`, { method: 'POST' });
+      if (!res.ok) throw new Error('abandon was not accepted');
+      router.replace('/test');
+    } catch (err) {
+      logError('[test] end test', err);
+      setEndError("We couldn't end the test just now. Please check your connection and try again.");
+      setEnding(false);
+    }
   }
 
   // Submit
@@ -573,7 +595,7 @@ export default function TestEnginePage() {
           <div className="bg-white rounded-card border-2 border-ink p-6 w-full max-w-sm space-y-4 shadow-hard-lg">
             <h3 className="text-heading text-ink text-center">Leave the test?</h3>
             <p className="text-ink-muted text-sm text-center">
-              Your progress is saved — you can resume from where you left off.
+              You can come back and finish it later (the clock keeps running), or end it now.
             </p>
             <div className="flex gap-3">
               <button
@@ -584,11 +606,20 @@ export default function TestEnginePage() {
               </button>
               <button
                 onClick={() => router.push('/test')}
-                className="flex-1 min-h-[48px] rounded-control bg-ink border-2 border-ink font-extrabold text-white hover:bg-gray-700 transition-colors"
+                disabled={ending}
+                className="flex-1 min-h-[48px] rounded-control bg-ink border-2 border-ink font-extrabold text-white hover:bg-gray-700 transition-colors disabled:opacity-60"
               >
-                Leave
+                Leave for now
               </button>
             </div>
+            <button
+              onClick={handleEndTest}
+              disabled={ending}
+              className="w-full min-h-[48px] rounded-control border-2 border-line bg-white font-extrabold text-ink-muted hover:border-ink hover:text-ink transition-colors disabled:opacity-60"
+            >
+              {ending ? 'Ending…' : 'End this test (no score)'}
+            </button>
+            {endError && <p className="text-ink-muted text-sm text-center font-semibold">{endError}</p>}
           </div>
         </div>
       )}

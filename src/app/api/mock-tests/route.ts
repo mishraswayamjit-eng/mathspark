@@ -7,8 +7,85 @@ import { validateBody, ValidationError } from '@/lib/validateBody';
 import { logError } from '@/lib/logger';
 import type { TestType, PYQYear } from '@/types';
 
+/** A test left open this long after its time ran out is over: nobody can still be sitting it. */
+const EXPIRY_GRACE_MS = 10 * 60_000;
+
+interface OpenTest {
+  id: string;
+  type: string;
+  startedAt: Date;
+  timeLimitMs: number;
+  totalQuestions: number;
+}
+
+function hasRunOut(test: { startedAt: Date; timeLimitMs: number }): boolean {
+  return Date.now() > test.startedAt.getTime() + test.timeLimitMs + EXPIRY_GRACE_MS;
+}
+
+/** Closes every open test of this student without a score. */
+async function closeOpenTests(studentId: string): Promise<void> {
+  await prisma.mockTest.updateMany({
+    where: { studentId, status: 'in_progress' },
+    data: { status: 'abandoned', completedAt: new Date() },
+  });
+}
+
+/**
+ * The test this student still has open, if any. One whose time ran out long
+ * ago is closed here, so an old forgotten test can never get in the way.
+ */
+async function findOpenTest(studentId: string): Promise<OpenTest | null> {
+  const open = await prisma.mockTest.findFirst({
+    where: { studentId, status: 'in_progress' },
+    orderBy: { startedAt: 'desc' },
+    select: { id: true, type: true, startedAt: true, timeLimitMs: true, totalQuestions: true },
+  });
+  if (!open) return null;
+  if (hasRunOut(open)) {
+    await closeOpenTests(studentId);
+    return null;
+  }
+  return open;
+}
+
+// GET /api/mock-tests
+// → { inProgress: null | { testId, type, startedAt, timeLimitMs, totalQuestions, answered } }
+export async function GET() {
+  try {
+    const studentId = await getAuthenticatedStudentId();
+    if (!studentId) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+    const open = await findOpenTest(studentId);
+    if (!open) {
+      return NextResponse.json({ inProgress: null }, { headers: { 'Cache-Control': 'private, no-store' } });
+    }
+    const answered = await prisma.mockTestResponse.count({
+      where: { mockTestId: open.id, selectedAnswer: { not: null } },
+    });
+    return NextResponse.json(
+      {
+        inProgress: {
+          testId: open.id,
+          type: open.type,
+          startedAt: open.startedAt.toISOString(),
+          timeLimitMs: open.timeLimitMs,
+          totalQuestions: open.totalQuestions,
+          answered,
+        },
+      },
+      { headers: { 'Cache-Control': 'private, no-store' } },
+    );
+  } catch (err) {
+    logError('[mock-tests GET]', err);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
+}
+
 // POST /api/mock-tests
-// Body: { type, topicIds?, year?, grade? }
+// Body: { type, topicIds?, year?, grade?, replace? }
+// With a test already open: `replace: true` closes it and starts the new one;
+// otherwise the open test is returned ({ resumed: true }) and nothing is created.
 export async function POST(req: Request) {
   try {
     const studentId = await getAuthenticatedStudentId();
@@ -21,14 +98,15 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Too many tests created. Try again later.' }, { status: 429 });
     }
 
-    const { type, topicIds, year, grade } = validateBody<{
+    const { type, topicIds, year, grade, replace } = validateBody<{
       type: TestType;
       topicIds?: string[];
       year?: PYQYear;
       grade?: number;
+      replace?: boolean;
     }>(
       await req.json(),
-      { type: 'string', topicIds: 'array?', year: 'number?', grade: 'number?' },
+      { type: 'string', topicIds: 'array?', year: 'number?', grade: 'number?', replace: 'boolean?' },
     );
 
     if (!type) {
@@ -63,14 +141,15 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Invalid grade for mega test (must be 2-9)' }, { status: 400 });
     }
 
-    // Check for existing in-progress test first (fast, no heavy lock)
-    const existing = await prisma.mockTest.findFirst({
-      where: { studentId, status: 'in_progress' },
-      orderBy: { startedAt: 'desc' },
-      select: { id: true },
-    });
+    // A test already open (and still within its time)? Either the child asked
+    // to end it and start this one, or they get it back instead of a new one.
+    const existing = await findOpenTest(studentId);
     if (existing) {
-      return NextResponse.json({ testId: existing.id, resumed: true });
+      if (replace === true) {
+        await closeOpenTests(studentId);
+      } else {
+        return NextResponse.json({ testId: existing.id, resumed: true, type: existing.type });
+      }
     }
 
     // Generate paper OUTSIDE the transaction — these run multiple DB queries
