@@ -1,82 +1,18 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { logError } from '@/lib/logger';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { logError } from '@/lib/logger';
 import DuoButton from '@/components/DuoButton';
-import Sparky from '@/components/Sparky';
-import type { TestType, PYQYear } from '@/types';
-import { MONETIZATION_ENABLED } from '@/lib/monetization';
+import { useStudent } from '@/components/shell/StudentProvider';
 
-// ── Synthetic test options ─────────────────────────────────────────────────────
+// Three kinds of test, and no more:
+//   quick  a short check across many topics
+//   ipm    a full mock built to the shape of the real paper
+//   pyq    a real past paper for the child's grade, in the paper's own order
 
-const TEST_OPTIONS: Array<{
-  type: TestType;
-  label: string;
-  emoji: string;
-  questions: number;
-  time: string;
-  desc: string;
-  color: string;
-  border: string;
-}> = [
-  {
-    type: 'quick',
-    label: 'Quick Test',
-    emoji: '⚡',
-    questions: 15,
-    time: '20 min',
-    desc: 'Fast check-in across key topics',
-    color: 'bg-soft',
-    border: 'border-action',
-  },
-  {
-    type: 'half',
-    label: 'Half Paper',
-    emoji: '📄',
-    questions: 30,
-    time: '40 min',
-    desc: 'Mid-term style practice paper',
-    color: 'bg-soft',
-    border: 'border-action',
-  },
-  {
-    type: 'ipm',
-    label: 'IPM Blueprint',
-    emoji: '🎯',
-    questions: 40,
-    time: '60 min',
-    desc: 'Matches real IPM topic & difficulty distribution',
-    color: 'bg-soft',
-    border: 'border-action',
-  },
-  {
-    type: 'full',
-    label: 'Full Paper',
-    emoji: '🏆',
-    questions: 50,
-    time: '60 min',
-    desc: 'Extended paper — full grade question pool',
-    color: 'bg-soft',
-    border: 'border-action',
-  },
-];
-
-// ── Previous year paper cards ──────────────────────────────────────────────────
-
-const PYQ_YEARS: Array<{
-  year: PYQYear;
-  label: string;
-  subtitle: string;
-  color: string;
-}> = [
-  { year: 2019, label: 'IPM 2019',  subtitle: '40 Qs · 60 min · Most Recent', color: 'bg-white' },
-  { year: 2018, label: 'IPM 2018',  subtitle: '40 Qs · 60 min',               color: 'bg-white' },
-  { year: 2017, label: 'IPM 2017',  subtitle: '40 Qs · 60 min',               color: 'bg-white' },
-  { year: 2016, label: 'IPM 2016',  subtitle: '40 Qs · 60 min · First Year',  color: 'bg-white' },
-];
-
-// ── A test left open, and what a start request carries ────────────────────────
+// ── What the server tells this page ───────────────────────────────────────────
 
 interface OpenTest {
   testId: string;
@@ -85,84 +21,75 @@ interface OpenTest {
   answered: number;
 }
 
-interface StartBody {
-  type: TestType;
-  topicIds?: string[];
-  year?: PYQYear;
+interface PastPaper {
+  year: number;
+  /** Questions of this paper held in the bank. */
+  questions: number;
+  /** Questions on the real paper. */
+  fullSize: number;
+  minutes: number;
 }
 
+interface TestsInfo {
+  grade?: number;
+  pastPapers?: PastPaper[];
+  inProgress?: OpenTest | null;
+}
+
+interface StartBody {
+  type: 'quick' | 'ipm' | 'pyq';
+  year?: number;
+}
+
+type Busy = 'quick' | 'ipm' | number | null;
+
 function testLabel(type: string): string {
+  if (type === 'quick') return 'quick test';
+  if (type === 'ipm') return 'full mock';
   if (type === 'pyq') return 'past paper';
-  if (type === 'mega') return 'Mega Final';
-  for (let i = 0; i < TEST_OPTIONS.length; i++) {
-    if (TEST_OPTIONS[i].type === type) return TEST_OPTIONS[i].label;
-  }
   return 'test';
+}
+
+/** What the full mock promises, said only as strongly as it is true for the grade. */
+function mockPromise(grade: number): string {
+  if (grade === 5) return 'Built like the real paper: two questions from every chapter.';
+  if (grade === 4) return 'Topics balanced the way the real papers balance them.';
+  return 'Covers every topic of your grade.';
 }
 
 // ── Component ──────────────────────────────────────────────────────────────────
 
 export default function TestConfigPage() {
   const router = useRouter();
-  const [selected, setSelected] = useState<TestType>('ipm');
-  const [loading,           setLoading]           = useState(false);
-  const [pyqLoading,        setPyqLoading]        = useState<PYQYear | null>(null);
-  const [megaLoading,       setMegaLoading]       = useState(false);
-  const [error,             setError]             = useState('');
-  const [studentId,         setStudentId]         = useState<string | null>(null);
-  const [studentGrade,      setStudentGrade]      = useState<number>(4);
-  const [subscriptionTier,  setSubscriptionTier]  = useState<number>(0);
-  const [trialActive,       setTrialActive]       = useState(false);
-  const [openTest,          setOpenTest]          = useState<OpenTest | null>(null);
-  const [pendingStart,      setPendingStart]      = useState<StartBody | null>(null);
-  const [ending,            setEnding]            = useState(false);
+  const { student } = useStudent();
 
+  const [grade,        setGrade]        = useState<number>(student ? student.grade : 4);
+  const [pastPapers,   setPastPapers]   = useState<PastPaper[] | null>(null);
+  const [openTest,     setOpenTest]     = useState<OpenTest | null>(null);
+  const [pendingStart, setPendingStart] = useState<StartBody | null>(null);
+  const [busy,         setBusy]         = useState<Busy>(null);
+  const [ending,       setEnding]       = useState(false);
+  const [error,        setError]        = useState('');
+
+  // The child's grade, the real papers that grade can sit, and any test still open.
   useEffect(() => {
-    const id    = localStorage.getItem('mathspark_student_id');
-    const grade = parseInt(localStorage.getItem('mathspark_student_grade') ?? '4', 10);
-    if (!id) { router.replace('/start'); return; }
-    setStudentId(id);
-    setStudentGrade(isNaN(grade) ? 4 : grade);
-
-    // Check trial status from localStorage (fast, synchronous)
-    const trialExpires = localStorage.getItem('mathspark_trial_expires');
-    if (trialExpires) {
-      setTrialActive(new Date(trialExpires) > new Date());
-    }
-
-    // Fetch subscription tier + authoritative trial from home API
-    fetch('/api/home')
-      .then(r => r.ok ? r.json() : null)
-      .then(data => {
-        if (data?.student?.subscriptionTier != null) {
-          setSubscriptionTier(data.student.subscriptionTier);
-        }
-        if (data?.student?.trialExpiresAt) {
-          setTrialActive(new Date(data.student.trialExpiresAt) > new Date());
-        }
-      })
-      .catch((err) => logError('[fetch]', err));
-  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
-
-  const IS_MEGA_ACCESSIBLE = !MONETIZATION_ENABLED || subscriptionTier >= 2 || trialActive;
-
-  // The test this child still has open, if any. Starting another one asks first.
-  useEffect(() => {
+    if (!localStorage.getItem('mathspark_student_id')) { router.replace('/start'); return; }
     let alive = true;
     fetch('/api/mock-tests')
       .then((r) => (r.ok ? r.json() : null))
-      .then((data: { inProgress?: OpenTest | null } | null) => {
-        if (alive && data && data.inProgress) setOpenTest(data.inProgress);
+      .then((data: TestsInfo | null) => {
+        if (!alive) return;
+        if (!data) { setPastPapers([]); return; }
+        if (typeof data.grade === 'number') setGrade(data.grade);
+        setPastPapers(Array.isArray(data.pastPapers) ? data.pastPapers : []);
+        if (data.inProgress) setOpenTest(data.inProgress);
       })
-      .catch((err) => logError('[test] open test check', err));
+      .catch((err) => {
+        logError('[test] could not load the tests', err);
+        if (alive) setPastPapers([]);
+      });
     return () => { alive = false; };
-  }, []);
-
-  function clearBusy() {
-    setLoading(false);
-    setPyqLoading(null);
-    setMegaLoading(false);
-  }
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   // Creates a test and opens it. `replace` ends the open test first.
   async function createTest(body: StartBody, replace: boolean) {
@@ -171,7 +98,7 @@ export default function TestConfigPage() {
       const res = await fetch('/api/mock-tests', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(replace ? { ...body, replace: true } : body),
+        body: JSON.stringify(replace ? { type: body.type, year: body.year, replace: true } : body),
       });
       if (!res.ok) {
         const failure = await res.json().catch(() => null);
@@ -183,39 +110,19 @@ export default function TestConfigPage() {
       router.push(`/test/${testId}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : "We couldn't finish that. Please try again!");
-      clearBusy();
+      setBusy(null);
     }
   }
 
   // A test is already open: ask before swapping it for a new one.
-  function start(body: StartBody, markBusy: () => void) {
-    if (!studentId) return;
+  function start(body: StartBody) {
+    if (busy !== null) return;
     if (openTest) {
       setPendingStart(body);
       return;
     }
-    markBusy();
+    setBusy(body.type === 'pyq' && body.year ? body.year : body.type === 'ipm' ? 'ipm' : 'quick');
     createTest(body, false);
-  }
-
-  // Start a practice test (quick / half / ipm / full)
-  function handleStart() {
-    // For non-Grade-4 students, scope quick/half/full to their grade pool
-    // IPM generator handles grade-aware topic selection server-side
-    const topicIds = studentGrade !== 4 && selected !== 'ipm'
-      ? [`grade${studentGrade}`]
-      : undefined;
-    start({ type: selected, topicIds }, () => setLoading(true));
-  }
-
-  // Start a previous-year paper
-  function handlePYQ(year: PYQYear) {
-    start({ type: 'pyq', year }, () => setPyqLoading(year));
-  }
-
-  // Start a Mega Final test
-  function handleMega() {
-    start({ type: 'mega', topicIds: [`grade${studentGrade}`] }, () => setMegaLoading(true));
   }
 
   // End the open test without a score.
@@ -245,32 +152,29 @@ export default function TestConfigPage() {
     setEnding(false);
   }
 
-  const opt = TEST_OPTIONS.find((o) => o.type === selected)!;
+  const somePaperIsShort = !!pastPapers && pastPapers.some((p) => p.questions < p.fullSize);
 
   return (
-    <div className="min-h-screen bg-paper flex flex-col pb-28">
+    <div className="min-h-screen bg-paper pb-28">
       {/* Header */}
-      <div className="px-4 pt-8 pb-4">
-        <button
-          onClick={() => window.history.length > 1 ? router.back() : router.push('/practice/tests')}
-          className="text-ink-muted text-sm font-semibold mb-4 flex items-center gap-1 hover:text-ink transition-colors"
+      <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
+        <Link
+          href="/practice"
+          className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-center"
+          aria-label="Back"
         >
-          ← Back
-        </button>
-        <div className="flex items-center gap-3 mb-2">
-          <div className="animate-sparky-bounce">
-            <Sparky mood="thinking" size={48} />
-          </div>
-          <div>
-            <h1 className="text-display text-ink">IPM Mock Test</h1>
-            <p className="text-ink-muted text-sm font-medium">No hints · Timed · Full simulation</p>
-          </div>
+          &larr;
+        </Link>
+        <div>
+          <h1 className="text-white text-title">Tests</h1>
+          <p className="text-white/70 text-xs font-bold">Timed · No hints · Your score at the end</p>
         </div>
       </div>
 
-      {/* ── A test still open: carry on with it, or end it ─────────────────── */}
-      {openTest && (
-        <div className="px-4 mb-4">
+      <div className="max-w-lg mx-auto px-4 pt-5 space-y-4">
+
+        {/* ── A test still open: carry on with it, or end it ───────────────── */}
+        {openTest && (
           <div className="bg-hint border-2 border-ink rounded-card p-4 space-y-3">
             <div>
               <p className="text-ink font-extrabold text-sm">You have a {testLabel(openTest.type)} open</p>
@@ -295,165 +199,104 @@ export default function TestConfigPage() {
               </button>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* ── Section: Practice tests ─────────────────────────────────────────── */}
-      <div className="px-4">
-        <p className="text-caption text-ink-muted mb-2">
-          Practice tests
-        </p>
-        <div className="space-y-2">
-          {TEST_OPTIONS.map((o) => {
-            const isSelected = selected === o.type;
-            return (
-              <button
-                key={o.type}
-                onClick={() => setSelected(o.type)}
-                className={`w-full text-left rounded-control p-4 border-2 transition-[colors,border-color,box-shadow,transform] duration-150 ${
-                  isSelected
-                    ? `${o.color} ${o.border} active:scale-[0.97]`
-                    : 'bg-white border-line hover:border-ink active:scale-[0.97]'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">{o.emoji}</span>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between">
-                      <span className={`font-extrabold text-sm ${isSelected ? 'text-ink' : 'text-ink'}`}>
-                        {o.label}
-                      </span>
-                      <div className="flex items-center gap-1.5">
-                        <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
-                          isSelected ? 'bg-white text-ink' : 'bg-soft text-ink-muted'
-                        }`}>{o.questions} Qs</span>
-                        <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
-                          isSelected ? 'bg-white text-ink' : 'bg-soft text-ink-muted'
-                        }`}>{o.time}</span>
-                      </div>
-                    </div>
-                    <p className={`text-xs mt-0.5 font-medium ${isSelected ? 'text-ink-muted' : 'text-ink-muted'}`}>
-                      {o.desc}
-                    </p>
-                  </div>
-                  {isSelected && <span className="text-action text-base ml-1">✓</span>}
-                </div>
-              </button>
-            );
-          })}
-        </div>
-      </div>
+        {error && <p className="text-ink text-sm text-center font-semibold">{error}</p>}
 
-      {/* Rules callout */}
-      <div className="px-4 mt-3">
-        <div className="bg-white border-2 border-line rounded-card p-3 space-y-1">
-          <p className="text-ink font-extrabold text-xs">📋 Exam Rules</p>
-          <ul className="text-ink-muted text-xs font-medium space-y-0.5">
-            <li>• No hints or feedback during the test</li>
-            <li>• Jump between questions freely · Flag for review</li>
-            <li>• Full analytics shown after submission</li>
-          </ul>
-        </div>
-      </div>
-
-      {error && <p className="text-retry text-sm text-center font-semibold px-4 mt-2">{error}</p>}
-
-      {/* Start CTA */}
-      <div className="px-4 mt-4">
-        <DuoButton variant="green" fullWidth loading={loading} onClick={handleStart}>
-          Start {opt.label} {opt.emoji}
-        </DuoButton>
-      </div>
-
-      {/* ── Section: Previous Year Papers ──────────────────────────────────── */}
-      <div className="px-4 mt-6">
-        <div className="flex items-center gap-2 mb-3">
-          <p className="text-caption text-ink-muted">
-            Previous Year Papers
-          </p>
-        </div>
-        <div className="grid grid-cols-2 gap-3">
-          {PYQ_YEARS.map(({ year, label, subtitle, color }) => (
-            <button
-              key={year}
-              onClick={() => handlePYQ(year)}
-              disabled={pyqLoading !== null}
-              className={`relative ${color} border-2 border-ink shadow-hard-sm rounded-control p-4 text-left transition-[opacity,transform] duration-150 min-h-[100px] flex flex-col justify-between active:scale-[0.97] disabled:opacity-60`}
-            >
-              <div>
-                <p className="text-ink font-extrabold text-base leading-tight">{label}</p>
-                <p className="text-ink-muted text-xs font-semibold mt-1">{subtitle}</p>
-              </div>
-              <div className="flex items-center justify-between mt-3">
-                <span className="text-ink-muted text-xs font-bold">Shuffled order</span>
-                {pyqLoading === year ? (
-                  <span className="inline-block w-4 h-4 border-2 border-line border-t-action rounded-full animate-spin" />
-                ) : (
-                  <span className="text-action text-sm">→</span>
-                )}
-              </div>
-            </button>
-          ))}
-        </div>
-        <p className="text-ink-muted text-xs text-center mt-2 font-medium">
-          Actual questions from 2016–2019 IPM papers
-        </p>
-      </div>
-
-      {/* ── Section: Mega Final ─────────────────────────────────────────────── */}
-      <div className="px-4 mt-6">
-        <div className="flex items-center gap-2 mb-3">
-          <p className="text-caption text-ink-muted">
-            Mega Final Experience
-          </p>
-        </div>
-
-        {/* Timed Mega Final card */}
-        <div className="relative mb-3">
-          <div className={`bg-white border-2 ${IS_MEGA_ACCESSIBLE ? 'border-ink shadow-hard-lg' : 'border-line'} rounded-card p-4 space-y-3`}>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
-                <span className="text-2xl">🏆</span>
-                <div>
-                  <p className="text-ink font-extrabold text-sm leading-tight">THE ULTIMATE CHALLENGE</p>
-                  <p className="text-ink-muted text-xs">Full Mega Mock · 15 Qs · 45 min</p>
-                </div>
-              </div>
-              {MONETIZATION_ENABLED && (
-                <span className="text-xs font-bold px-2 py-1 rounded-full bg-soft text-ink border-2 border-line shrink-0">
-                  PRO
-                </span>
-              )}
+        {/* ── 1. Quick test ─────────────────────────────────────────────────── */}
+        <section className="bg-white border-2 border-line rounded-card p-4 space-y-3">
+          <div className="flex items-start gap-3">
+            <span className="text-2xl" aria-hidden="true">⚡</span>
+            <div className="flex-1 min-w-0">
+              <h2 className="text-title text-ink">Quick test</h2>
+              <p className="text-ink-muted text-sm font-bold">15 questions · 20 minutes</p>
+              <p className="text-ink-muted text-sm font-medium mt-1">One question each from 15 different topics.</p>
             </div>
-            <div className="space-y-1">
-              <p className="text-ink-muted text-xs">✦ Grade {studentGrade}-specific · Hard difficulty only</p>
-              <p className="text-ink-muted text-xs">✦ No repeats · No hints · Full simulation</p>
-              <p className="text-ink-muted text-xs">✦ Detailed performance report after</p>
+          </div>
+          <DuoButton variant="green" fullWidth loading={busy === 'quick'} onClick={() => start({ type: 'quick' })}>
+            Start quick test
+          </DuoButton>
+        </section>
+
+        {/* ── 2. Full mock ──────────────────────────────────────────────────── */}
+        <section className="bg-white border-2 border-line rounded-card p-4 space-y-3">
+          <div className="flex items-start gap-3">
+            <span className="text-2xl" aria-hidden="true">🎯</span>
+            <div className="flex-1 min-w-0">
+              <h2 className="text-title text-ink">Full mock</h2>
+              <p className="text-ink-muted text-sm font-bold">40 questions · 60 minutes</p>
+              <p className="text-ink-muted text-sm font-medium mt-1">{mockPromise(grade)}</p>
             </div>
-            <DuoButton variant="green" fullWidth loading={megaLoading} onClick={handleMega}>
-              Begin Mega Final 🚀
-            </DuoButton>
+          </div>
+          <DuoButton variant="blue" fullWidth loading={busy === 'ipm'} onClick={() => start({ type: 'ipm' })}>
+            Start full mock
+          </DuoButton>
+        </section>
+
+        {/* ── 3. Past papers ────────────────────────────────────────────────── */}
+        <section className="bg-white border-2 border-line rounded-card p-4 space-y-3">
+          <div className="flex items-start gap-3">
+            <span className="text-2xl" aria-hidden="true">📜</span>
+            <div className="flex-1 min-w-0">
+              <h2 className="text-title text-ink">Past papers</h2>
+              <p className="text-ink-muted text-sm font-medium mt-1">
+                {`The real questions from the actual IPM papers for Grade ${grade}, in the paper's own order.`}
+              </p>
+            </div>
           </div>
 
-          {/* Frosted overlay for non-subscribers */}
-          {!IS_MEGA_ACCESSIBLE && (
-            <div
-              className="absolute inset-0 rounded-card flex flex-col items-center justify-center"
-              style={{ backdropFilter: 'blur(6px)', background: 'rgba(13,26,32,0.75)' }}
-            >
-              <span className="text-3xl mb-2">🔒</span>
-              <p className="text-white font-extrabold text-sm mb-1">Pro Feature</p>
-              <p className="text-white/70 text-xs mb-3 text-center px-8">Start your free trial to unlock the Ultimate Challenge</p>
-              <button
-                onClick={() => router.push('/pricing')}
-                className="bg-star border-2 border-ink shadow-hard-sm text-ink font-extrabold px-5 py-2 rounded-control text-xs active:translate-x-[2px] active:translate-y-[2px] active:shadow-hard-xs transition-[colors,border-color,transform]"
-              >
-                Unlock with Pro Trial →
-              </button>
+          {pastPapers === null ? (
+            <div className="grid grid-cols-2 gap-3" aria-hidden="true">
+              {[0, 1, 2, 3].map((i) => (
+                <div key={i} className="h-[72px] rounded-control bg-soft border-2 border-line animate-pulse" />
+              ))}
             </div>
+          ) : pastPapers.length === 0 ? (
+            <p className="text-ink-muted text-sm font-semibold">
+              {`We don't have past papers for Grade ${grade} yet.`}
+            </p>
+          ) : (
+            <>
+              <div className="grid grid-cols-2 gap-3">
+                {pastPapers.map((p) => (
+                  <button
+                    key={p.year}
+                    onClick={() => start({ type: 'pyq', year: p.year })}
+                    disabled={busy !== null}
+                    className="min-h-[72px] rounded-control bg-white border-2 border-ink shadow-hard-sm p-3 text-left active:scale-[0.97] transition-transform disabled:opacity-60"
+                  >
+                    <span className="flex items-center justify-between">
+                      <span className="text-ink font-extrabold text-base">{`IPM ${p.year}`}</span>
+                      {busy === p.year ? (
+                        <span className="inline-block w-4 h-4 border-2 border-line border-t-action rounded-full animate-spin" />
+                      ) : (
+                        <span className="text-action text-sm" aria-hidden="true">→</span>
+                      )}
+                    </span>
+                    <span className="block text-ink-muted text-xs font-semibold mt-1">
+                      {p.questions < p.fullSize
+                        ? `${p.questions} of ${p.fullSize} questions · ${p.minutes} min`
+                        : `${p.questions} questions · ${p.minutes} min`}
+                    </span>
+                  </button>
+                ))}
+              </div>
+              {somePaperIsShort && (
+                <p className="text-ink-muted text-xs font-medium">
+                  Questions that need a picture are left out for now, so some papers are a little shorter than the real one.
+                </p>
+              )}
+            </>
           )}
-        </div>
+        </section>
 
+        {/* Past results */}
+        <Link
+          href="/test/history"
+          className="block w-full text-action text-sm font-extrabold text-center min-h-[48px] leading-[48px]"
+        >
+          See my past results →
+        </Link>
       </div>
 
       {/* ── Starting a test while another is open ──────────────────────────── */}
@@ -485,16 +328,6 @@ export default function TestConfigPage() {
           </div>
         </div>
       )}
-
-      {/* View history link */}
-      <div className="px-4 mt-4">
-        <button
-          onClick={() => router.push('/test/history')}
-          className="w-full text-action text-sm font-semibold text-center py-2 hover:text-action-dark transition-colors"
-        >
-          View past tests →
-        </button>
-      </div>
     </div>
   );
 }

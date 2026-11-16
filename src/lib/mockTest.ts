@@ -94,9 +94,82 @@ function safeParseSteps(json: string | null): unknown[] {
 // Builds a blueprint from topicTree examWeight values.
 // Uses subTopicKey for filtering within the gradeN pool.
 
+/**
+ * The shape of the real paper, where it has been measured from the real papers
+ * held in the bank: questions per topic in a 40-question paper, by subTopicKey.
+ *
+ * Grade 5 (Std V finals 2016-2025, `python scripts/audit/past_papers.py`): the
+ * paper has 20 chapters with about two questions each. Two pairs of chapters
+ * share a topic here (Numbers + Place value; Perimeter + Area), hence the 4s.
+ * Triangles, Integers and Divisibility are in the topic tree but not in the
+ * real papers, so a paper built to this shape leaves them out.
+ */
+const REAL_PAPER_SHAPE: Record<number, Array<[string, number]>> = {
+  5: [
+    ['place value', 4], ['sequence', 2], ['square', 2], ['addition', 2], ['multiplication', 2],
+    ['bodmas', 2], ['equation', 2], ['algebra', 2], ['hcf', 2], ['fraction', 2],
+    ['decimal', 2], ['ratio', 2], ['money', 2], ['profit', 2], ['interest', 2],
+    ['speed', 2], ['angle', 2], ['area', 4],
+  ], // Total: 40
+};
+
+/**
+ * Topic counts for a paper of `total` questions built to the real paper's
+ * shape. A 40-question paper gets the shape exactly; a shorter one keeps the
+ * proportions and spreads what is left over across as many different topics as
+ * it can, a different set each time.
+ */
+function realShapeCounts(grade: number, total: number): Array<{ subTopicKey: string; count: number }> | null {
+  const shape = REAL_PAPER_SHAPE[grade];
+  if (!shape) return null;
+  const full = shape.reduce((s, row) => s + row[1], 0);
+  const rows = shape.map((row) => {
+    const exact = (row[1] * total) / full;
+    return { subTopicKey: row[0], count: Math.floor(exact), rest: exact - Math.floor(exact), tie: Math.random() };
+  });
+  let left = total - rows.reduce((s, r) => s + r.count, 0);
+  const byRest = rows.slice().sort((a, b) => (b.rest - a.rest) || (a.tie - b.tie));
+  for (let i = 0; left > 0 && byRest.length > 0; i = (i + 1) % byRest.length) {
+    byRest[i].count++;
+    left--;
+  }
+  return rows.filter((r) => r.count > 0).map((r) => ({ subTopicKey: r.subTopicKey, count: r.count }));
+}
+
+/** Hands the paper's easy/medium/hard budget out across the slots, in place. */
+function spreadDifficulty(slots: BlueprintSlot[], cfg: PaperConfig): void {
+  const remaining: Record<'easy' | 'medium' | 'hard', number> = {
+    easy: cfg.easy, medium: cfg.medium, hard: cfg.hard,
+  };
+  for (const slot of slots) {
+    for (let i = 0; i < slot.count; i++) {
+      const pick = (['easy', 'medium', 'hard'] as const)
+        .reduce((best, d) => (remaining[d] > remaining[best] ? d : best), 'medium' as 'easy' | 'medium' | 'hard');
+      if (remaining[pick] > 0) {
+        remaining[pick]--;
+        slot[pick]++;
+      } else {
+        slot.medium++;
+      }
+    }
+  }
+}
+
 function buildGradeBlueprint(grade: number, cfg: PaperConfig): BlueprintSlot[] {
   const topics = getTopicsForGrade(grade).filter(t => !t.id.endsWith('_ipm'));
   const totalQuestions = cfg.totalQuestions;
+
+  // Where the real paper's shape is known, the paper is built to it. The slots
+  // are shuffled so the difficulty budget lands on different topics each time.
+  const real = realShapeCounts(grade, totalQuestions);
+  if (real) {
+    const dbTopicId = topics.length > 0 ? topics[0].dbTopicId : `grade${grade}`;
+    const slots: BlueprintSlot[] = shuffle(real).map((r) => ({
+      topicId: dbTopicId, subTopicKey: r.subTopicKey, count: r.count, easy: 0, medium: 0, hard: 0,
+    }));
+    spreadDifficulty(slots, cfg);
+    return slots;
+  }
 
   // Calculate raw counts from examWeight, then adjust to hit totalQuestions.
   // Floor of 1 keeps every topic represented when the paper is at least as long
@@ -137,36 +210,91 @@ function buildGradeBlueprint(grade: number, cfg: PaperConfig): BlueprintSlot[] {
     .filter(r => r.rawCount > 0)
     .map(r => ({ topicId: r.topicId, subTopicKey: r.subTopicKey, count: r.rawCount, easy: 0, medium: 0, hard: 0 }));
 
-  const remaining: Record<'easy' | 'medium' | 'hard', number> = {
-    easy: cfg.easy, medium: cfg.medium, hard: cfg.hard,
-  };
-  for (const slot of slots) {
-    for (let i = 0; i < slot.count; i++) {
-      // Draw from the largest remaining bucket so the global mix matches cfg and
-      // difficulties spread across topics; fall back to medium once exhausted.
-      const pick = (['easy', 'medium', 'hard'] as const)
-        .reduce((best, d) => (remaining[d] > remaining[best] ? d : best), 'medium' as 'easy' | 'medium' | 'hard');
-      if (remaining[pick] > 0) {
-        remaining[pick]--;
-        slot[pick]++;
-      } else {
-        slot.medium++;
-      }
-    }
-  }
+  // Draws from the largest remaining bucket so the global mix matches cfg and
+  // difficulties spread across topics; falls back to medium once exhausted.
+  spreadDifficulty(slots, cfg);
 
   return slots;
 }
 
 // ── PYQ Paper Generator ───────────────────────────────────────────────────────
 
-export async function generatePYQPaper(year: PYQYear) {
-  const source = `previous_year_${year}`;
-  const cfg = TEST_CONFIG.pyq;
+/**
+ * Where each grade's real past papers live in the bank: the `source` is the
+ * prefix followed by the year. `topicId` is set where a prefix is shared by
+ * more than one grade. `fullSize` is the number of questions on the real paper.
+ * Grades 2 and 7 have no papers split by year.
+ */
+const PAST_PAPER_FAMILY: Record<number, { prefix: string; topicId?: string; fullSize: number }> = {
+  3: { prefix: 'g3_mega_final_', topicId: 'grade3', fullSize: 15 },
+  4: { prefix: 'previous_year_', fullSize: 40 },
+  5: { prefix: 'g5_final_', topicId: 'grade5', fullSize: 40 },
+  6: { prefix: 'g6_final_', topicId: 'grade6', fullSize: 40 },
+  8: { prefix: 'mega_final_', topicId: 'grade8', fullSize: 15 },
+  9: { prefix: 'mega_final_', topicId: 'grade9', fullSize: 15 },
+};
+
+/** A paper is only offered when at least this share of its questions is in the bank. */
+const PAST_PAPER_MIN_SHARE = 0.75;
+/** Time allowed per question on a past paper: the real 40-question paper allows 60 minutes. */
+const PAST_PAPER_MS_PER_QUESTION = 90 * 1000;
+
+export interface PastPaperInfo {
+  year: number;
+  /** Questions of this paper held in the bank. */
+  questions: number;
+  /** Questions on the real paper. */
+  fullSize: number;
+  minutes: number;
+}
+
+function pastPaperMinutes(questions: number): number {
+  return Math.ceil((questions * PAST_PAPER_MS_PER_QUESTION) / 60000);
+}
+
+/** The real past papers that can be offered to a grade, newest first. */
+export async function listPastPapers(grade: number): Promise<PastPaperInfo[]> {
+  const family = PAST_PAPER_FAMILY[grade];
+  if (!family) return [];
+
+  const groups = await prisma.question.groupBy({
+    by: ['source'],
+    where: {
+      source: { startsWith: family.prefix },
+      ...(family.topicId ? { topicId: family.topicId } : {}),
+      ...USABLE_QUESTION_FILTER,
+    },
+    _count: { _all: true },
+  });
+
+  const papers: PastPaperInfo[] = [];
+  for (let i = 0; i < groups.length; i++) {
+    const source = groups[i].source;
+    const tail = source.slice(family.prefix.length);
+    if (!/^\d{4}$/.test(tail)) continue;
+    const questions = groups[i]._count._all;
+    if (questions < family.fullSize * PAST_PAPER_MIN_SHARE) continue;
+    papers.push({ year: parseInt(tail, 10), questions, fullSize: family.fullSize, minutes: pastPaperMinutes(questions) });
+  }
+  papers.sort((a, b) => b.year - a.year);
+  return papers;
+}
+
+/**
+ * A real past paper for the child's grade: the actual questions of that year,
+ * in the paper's own order, and nothing else.
+ */
+export async function generatePYQPaper(year: PYQYear, grade: number = 4) {
+  const family = PAST_PAPER_FAMILY[grade];
+  if (!family) {
+    throw new Error(`No past papers for grade ${grade}`);
+  }
+  const source = `${family.prefix}${year}`;
 
   const questions = await prisma.question.findMany({
-    where: { source, ...USABLE_QUESTION_FILTER },
-    orderBy: { questionNumber: 'asc' },
+    where: { source, ...(family.topicId ? { topicId: family.topicId } : {}), ...USABLE_QUESTION_FILTER },
+    // Ids carry the question number (PYQ_2016_Q01, EXT_G5_FP_2016_002), so this is the paper's order.
+    orderBy: { id: 'asc' },
     select: {
       id: true, topicId: true, difficulty: true, source: true,
       questionText: true, questionLatex: true,
@@ -182,16 +310,13 @@ export async function generatePYQPaper(year: PYQYear) {
     throw new Error(`No PYQ questions found for year ${year}`);
   }
 
-  // Shuffle so students don't memorize question order across attempts
-  const shuffled = shuffle(questions);
-
   return {
-    questions: shuffled.map((q) => ({
+    questions: questions.map((q) => ({
       ...q,
       stepByStep: safeParseSteps(q.stepByStep),
     })),
-    timeLimitMs:    cfg.timeLimitMs,
-    totalQuestions: shuffled.length,
+    timeLimitMs:    questions.length * PAST_PAPER_MS_PER_QUESTION,
+    totalQuestions: questions.length,
   };
 }
 
@@ -309,6 +434,16 @@ async function generateBlueprintPaper(studentId: string, grade: number, cfg: Pap
     let candidates = pool.filter(q => !used.has(q.id) && !recentIds.has(q.id) && (equalSurfacing || q.source === 'hand_crafted'));
     if (!candidates.length) candidates = pool.filter(q => !used.has(q.id) && !recentIds.has(q.id));
     if (!candidates.length) candidates = pool.filter(q => !used.has(q.id));
+    // The topic has run out at this difficulty: stay on the topic and take the
+    // nearest difficulty, since the paper's promise is its spread of topics.
+    if (!candidates.length && slot.subTopicKey) {
+      const nearest = difficulty === 'Medium' ? ['Easy', 'Hard'] : ['Medium', difficulty === 'Easy' ? 'Hard' : 'Easy'];
+      for (let n = 0; n < nearest.length && !candidates.length; n++) {
+        const other = poolMap.get(buildPoolKey(slot, nearest[n])) ?? [];
+        candidates = other.filter(q => !used.has(q.id) && !recentIds.has(q.id));
+        if (!candidates.length) candidates = other.filter(q => !used.has(q.id));
+      }
+    }
     // Fallback: try the broader pool (ignoring subTopicKey)
     if (!candidates.length && slot.subTopicKey) {
       const fbKey = `${slot.topicId}__${difficulty}`;
@@ -400,7 +535,7 @@ export async function generateMockPaper(
   grade: number = 4,
 ) {
   // Delegate to specialised generators
-  if (type === 'pyq' && year) return generatePYQPaper(year);
+  if (type === 'pyq' && year) return generatePYQPaper(year, grade);
   if (type === 'ipm')        return generateBlueprintPaper(studentId, grade, TEST_CONFIG.ipm);
 
   const cfg = TEST_CONFIG[type as 'quick' | 'half' | 'full'];

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
-import { generateMockPaper, generateMegaTest } from '@/lib/mockTest';
+import { generateMockPaper, generateMegaTest, listPastPapers } from '@/lib/mockTest';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { validateBody, ValidationError } from '@/lib/validateBody';
@@ -49,22 +49,33 @@ async function findOpenTest(studentId: string): Promise<OpenTest | null> {
 }
 
 // GET /api/mock-tests
-// → { inProgress: null | { testId, type, startedAt, timeLimitMs, totalQuestions, answered } }
+// → { grade, pastPapers: [{ year, questions, fullSize, minutes }], inProgress: null | { testId, type, startedAt, timeLimitMs, totalQuestions, answered } }
 export async function GET() {
   try {
     const studentId = await getAuthenticatedStudentId();
     if (!studentId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
-    const open = await findOpenTest(studentId);
+    const [open, student] = await Promise.all([
+      findOpenTest(studentId),
+      prisma.student.findUnique({ where: { id: studentId }, select: { grade: true } }),
+    ]);
+    const grade = student?.grade ?? 4;
+    // The real past papers this grade can sit, counted from the bank itself.
+    const pastPapers = await listPastPapers(grade);
     if (!open) {
-      return NextResponse.json({ inProgress: null }, { headers: { 'Cache-Control': 'private, no-store' } });
+      return NextResponse.json(
+        { inProgress: null, grade, pastPapers },
+        { headers: { 'Cache-Control': 'private, no-store' } },
+      );
     }
     const answered = await prisma.mockTestResponse.count({
       where: { mockTestId: open.id, selectedAnswer: { not: null } },
     });
     return NextResponse.json(
       {
+        grade,
+        pastPapers,
         inProgress: {
           testId: open.id,
           type: open.type,
@@ -139,6 +150,15 @@ export async function POST(req: Request) {
     const effectiveGrade = grade ?? (topicIds?.[0]?.startsWith('grade') ? parseInt(topicIds[0].replace('grade', ''), 10) : student.grade) ?? 4;
     if (type === 'mega' && (effectiveGrade < 2 || effectiveGrade > 9)) {
       return NextResponse.json({ error: 'Invalid grade for mega test (must be 2-9)' }, { status: 400 });
+    }
+
+    // A past paper must be one this grade really has: the year decides which
+    // real questions are served, so it is never taken on trust.
+    if (type === 'pyq') {
+      const papers = await listPastPapers(student.grade);
+      if (!papers.some((p) => p.year === year)) {
+        return NextResponse.json({ error: 'That past paper is not available for your grade.' }, { status: 400 });
+      }
     }
 
     // A test already open (and still within its time)? Either the child asked

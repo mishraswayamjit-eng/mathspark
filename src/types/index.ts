@@ -236,7 +236,8 @@ export interface TopicNode {
 // ── Mock test types ───────────────────────────────────────────────────────────
 
 export type TestType = 'quick' | 'half' | 'full' | 'ipm' | 'pyq' | 'mega';
-export type PYQYear = 2016 | 2017 | 2018 | 2019;
+/** The year of a real past paper. Which years exist depends on the grade (see listPastPapers). */
+export type PYQYear = number;
 
 export interface TestConfig {
   type: TestType;

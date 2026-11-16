@@ -7,22 +7,22 @@ test.describe('Test Hub', () => {
     await page.goto('/test', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    await expect(page.getByText('IPM Mock Test')).toBeVisible();
-    await expect(page.getByText(/Quick Test/i)).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Tests', exact: true })).toBeVisible();
+    await expect(page.getByText(/Quick test/i).first()).toBeVisible();
   });
 
   test('test hub shows all test types', async ({ authenticatedPage: page }) => {
     await page.goto('/test', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 
-    const testTypes = ['Quick Test', 'Half Paper', 'IPM Blueprint', 'Full Paper'];
+    const testTypes = ['Quick test', 'Full mock', 'Past papers'];
     for (const type of testTypes) {
       const visible = await page
         .getByText(type, { exact: false })
         .first()
         .isVisible({ timeout: 5_000 })
         .catch(() => false);
-      if (type === 'Quick Test') expect(visible).toBeTruthy();
+      expect(visible).toBeTruthy();
     }
   });
 

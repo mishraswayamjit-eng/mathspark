@@ -85,7 +85,7 @@ test.describe('Authenticated pages', () => {
   });
 
   test('/practice/tests', async ({ authenticatedPage: page }) => {
-    await expectNoJSErrors(page, '/practice/tests', 'Mock tests');
+    await expectNoJSErrors(page, '/practice/tests', 'Quick test');
   });
 
   test('/practice/exam-tips', async ({ authenticatedPage: page }) => {
@@ -129,7 +129,7 @@ test.describe('Authenticated pages', () => {
   });
 
   test('/test — mock test hub', async ({ authenticatedPage: page }) => {
-    await expectNoJSErrors(page, '/test', 'IPM Mock Test');
+    await expectNoJSErrors(page, '/test', 'Quick test');
   });
 
   test('/test/history', async ({ authenticatedPage: page }) => {

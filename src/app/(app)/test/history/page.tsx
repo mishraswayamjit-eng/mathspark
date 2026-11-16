@@ -66,7 +66,7 @@ export default function TestHistoryPage() {
       {/* Header */}
       <div className="sticky top-0 z-40 bg-ink px-4 py-4">
         <button
-          onClick={() => window.history.length > 1 ? router.back() : router.push('/practice/tests')}
+          onClick={() => window.history.length > 1 ? router.back() : router.push('/test')}
           className="text-white/70 text-sm font-semibold mb-2 flex items-center gap-1 hover:text-white transition-colors"
         >
           ← Back

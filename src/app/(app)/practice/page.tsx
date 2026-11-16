@@ -29,7 +29,7 @@ const CHOICES = [
   { href: '/chapters',             emoji: '📚', label: 'By topic',     sub: 'Choose a chapter' },
   { href: '/practice/skill-drill', emoji: '🎯', label: 'Skill Drills', sub: 'One skill at a time' },
   { href: '/flashcards',           emoji: '🃏', label: 'Flashcards',   sub: 'Quick cards to remember' },
-  { href: '/practice/tests',       emoji: '📝', label: 'Tests',        sub: 'Mock tests and papers' },
+  { href: '/test',                 emoji: '📝', label: 'Tests',        sub: 'Quick test, full mock and past papers' },
   { href: '/practice/exam-tips',   emoji: '🧠', label: 'Exam tips',    sub: 'Tricks and traps' },
 ];
 

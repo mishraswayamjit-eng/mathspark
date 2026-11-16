@@ -69,7 +69,7 @@ export default function PaperSelectionPage() {
             <p className="text-white/70 text-xs font-medium">240 pre-built practice papers</p>
           </div>
           <Link
-            href="/practice/tests"
+            href="/test"
             className="text-white/70 text-sm font-bold hover:text-white transition-colors"
           >
             ← Tests
