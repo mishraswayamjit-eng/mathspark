@@ -16,6 +16,8 @@ interface BankReport {
   total: number;
   inSeedFile: number;
   databaseOnly: number;
+  /** Questions marked retired (no longer in the bank): kept, never served. Counted in the totals here. */
+  retired: number;
   /** Questions no topic of the grade picks up: they only appear in mixed practice. */
   reachedByNoTopic: number;
   /** Questions picked up by more than one topic. */
@@ -82,7 +84,8 @@ export async function GET(req: NextRequest) {
       const dbTopicIds = Array.from(new Set(topics.map(t => t.dbTopicId)));
       const allQuestions = await prisma.question.findMany({
         where: { topicId: { in: dbTopicIds } },
-        select: { id: true, source: true, topicId: true, subTopic: true, difficulty: true, questionText: true, correctAnswer: true, option1: true, option2: true, option3: true, option4: true },
+        // An audit shows everything, retired questions included (they are counted below).
+        select: { id: true, source: true, topicId: true, subTopic: true, difficulty: true, questionText: true, correctAnswer: true, option1: true, option2: true, option3: true, option4: true, retired: true },
       });
 
       for (const topic of topics) {
@@ -147,8 +150,10 @@ export async function GET(req: NextRequest) {
       let inSeedFile = 0;
       let reachedByNoTopic = 0;
       let reachedBySeveral = 0;
+      let retired = 0;
       for (let i = 0; i < allQuestions.length; i++) {
         const q = allQuestions[i];
+        if (q.retired) retired++;
         const inSeed = SEED_IDS[q.id] === true;
         // A grade with no sub-topic keys (Grade 4 chapters) reaches every question through its chapter.
         let hits = keys.length === 0 ? 1 : 0;
@@ -173,6 +178,7 @@ export async function GET(req: NextRequest) {
         total: allQuestions.length,
         inSeedFile,
         databaseOnly: allQuestions.length - inSeedFile,
+        retired,
         reachedByNoTopic,
         reachedBySeveral,
         bySource: Object.keys(sources)

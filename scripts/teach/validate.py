@@ -37,7 +37,9 @@ sys.path.insert(0, os.path.join(ROOT, "scripts", "figures"))
 from common import number_tokens  # noqa: E402  (scripts/speech/common.py)
 import validate as figure_check  # noqa: E402  (scripts/figures/validate.py)
 
-SEED = os.path.join(ROOT, "data", "mathspark_complete_seed.json")
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
+
 PARTS = os.path.join(ROOT, "data", "teach", "parts")
 OUT = os.path.join(ROOT, "src", "data", "teach", "scripts.json")
 
@@ -449,8 +451,7 @@ def check_script(qid, script, q):
 # ── Running it ───────────────────────────────────────────────────────────────
 
 def load_seed():
-    with io.open(SEED, encoding="utf-8") as f:
-        return {q["id"]: q for q in json.load(f)["questions"] if q.get("topicId") == "grade5"}
+    return bank.load_by_id(topic_id="grade5")
 
 
 def show(qid, questions):

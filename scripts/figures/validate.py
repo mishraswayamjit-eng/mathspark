@@ -31,7 +31,9 @@ import re
 import sys
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
-SEED = os.path.join(ROOT, "data", "mathspark_complete_seed.json")
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
+
 PARTS = os.path.join(ROOT, "data", "question-figures", "parts")
 OUT = os.path.join(ROOT, "src", "data", "questionFigures", "figures.json")
 
@@ -370,9 +372,7 @@ def check_entry(qid, entry, q):
 
 
 def load_seed():
-    with io.open(SEED, encoding="utf-8") as f:
-        data = json.load(f)
-    return {q["id"]: q for q in data["questions"]}
+    return bank.load_by_id()
 
 
 def main():
@@ -398,7 +398,7 @@ def main():
             continue
         for qid, entry in part.items():
             if qid not in questions:
-                problems.append("%s: %s is not a question in the seed file" % (os.path.basename(path), qid))
+                problems.append("%s: %s is not a question in the bank" % (os.path.basename(path), qid))
                 continue
             if qid in merged:
                 problems.append("%s: %s is already in %s" % (os.path.basename(path), qid, owner[qid]))

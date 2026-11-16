@@ -26,7 +26,7 @@ export async function POST(req: Request) {
     // reveal answers for the handful of hand-crafted Medium preview questions,
     // not enumerate the entire 6k-question answer key by guessing ids.
     const question = await prisma.question.findFirst({
-      where: { id: questionId, difficulty: 'Medium', source: 'hand_crafted' },
+      where: { id: questionId, difficulty: 'Medium', source: 'hand_crafted', retired: false },
       select: { correctAnswer: true },
     });
 

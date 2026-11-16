@@ -18,7 +18,9 @@ from math import gcd, isqrt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, "..", "..", ".."))
-SEED = os.path.join(ROOT, "data", "mathspark_complete_seed.json")
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
+
 PART = os.path.join(ROOT, "data", "question-fixes", "parts", "answers.json")
 
 sys.path.insert(0, HERE)
@@ -270,8 +272,7 @@ WITHDRAW = {
 
 
 def main():
-    with io.open(SEED, encoding="utf-8") as f:
-        seed = {q["id"]: q for q in json.load(f)["questions"]}
+    seed = bank.load_by_id()
     with io.open(PART, encoding="utf-8") as f:
         part = json.load(f)
 

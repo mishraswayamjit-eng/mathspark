@@ -192,12 +192,17 @@ model Question {
   questionNumber Int?      // PYQ questions: original exam order (1-40)
   interactionType  String?   // 'tapToColor' | 'dragToSort' | 'chartTap'
   interactionData  Json?     // type-specific config for interactive questions
+  // The question bank (data/bank) is the source of truth; scripts/bank/sync.mjs
+  // mirrors it into this table when production is built.
+  nodeId         String?   // topic-tree node id (src/data/topicTree.ts), e.g. "gr5_fractions"
+  retired        Boolean   @default(false) // no longer in the bank: never served, never deleted
   attempts       Attempt[]
   mockTestResponses MockTestResponse[]
 
   @@index([topicId])
   @@index([topicId, difficulty])
   @@index([source])
+  @@index([nodeId])
 }
 
 // ── Progress ───────────────────────────────────────────────────────────────

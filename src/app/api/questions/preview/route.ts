@@ -6,10 +6,11 @@ import { prisma } from '@/lib/db';
 // No authentication required.
 export async function GET() {
   try {
-    const count   = await prisma.question.count({ where: { difficulty: 'Medium', source: 'hand_crafted' } });
+    // Retired questions (no longer in the question bank) are never served.
+    const count   = await prisma.question.count({ where: { difficulty: 'Medium', source: 'hand_crafted', retired: false } });
     const skip    = Math.max(0, Math.floor(Math.random() * Math.max(1, count - 3)));
     const questions = await prisma.question.findMany({
-      where:  { difficulty: 'Medium', source: 'hand_crafted' },
+      where:  { difficulty: 'Medium', source: 'hand_crafted', retired: false },
       select: {
         id:            true,
         questionText:  true,

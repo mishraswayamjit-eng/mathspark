@@ -67,7 +67,7 @@ export default function SeedPage() {
     }>;
     totalQuestions: number; totalUsable: number;
     bank?: {
-      total: number; inSeedFile: number; databaseOnly: number;
+      total: number; inSeedFile: number; databaseOnly: number; retired?: number;
       reachedByNoTopic: number; reachedBySeveral: number;
       bySource: Array<{
         source: string; total: number; inSeedFile: number; databaseOnly: number;
@@ -85,6 +85,11 @@ export default function SeedPage() {
   const [redistMoved,    setRedistMoved]    = useState(0);
   const [redistByMethod, setRedistByMethod] = useState<Record<string, number>>({});
   const [redistPerTopic, setRedistPerTopic] = useState<Record<string, number>>({});
+
+  // ── Export database-only questions ───────────────────────────────────────
+  const [exportGrade,   setExportGrade]   = useState('5');
+  const [exportStatus,  setExportStatus]  = useState<Status>('idle');
+  const [exportMessage, setExportMessage] = useState('');
 
   // ── Handlers ─────────────────────────────────────────────────────────────────
   async function runSeed() {
@@ -319,6 +324,66 @@ export default function SeedPage() {
     } catch (err) {
       setAuditMessage(`Network error: ${err}`);
       setAuditStatus('error');
+    }
+  }
+
+  // Questions that are in the database and not in the question bank, saved as
+  // one file in the bank's shape. Asked for in slices so a large grade fits.
+  async function runBankExport() {
+    const sec = secret || testSecret || fixSecret || diffSecret;
+    if (!sec.trim()) { setExportMessage('Enter your SEED_SECRET in a field above first.'); setExportStatus('error'); return; }
+    setExportStatus('running');
+    setExportMessage('Reading the database…');
+    const gradeParam = exportGrade === 'all' ? '' : `&grade=${exportGrade}`;
+    const questions: unknown[] = [];
+    let exportedAt = '';
+    let offset = 0;
+    try {
+      while (true) {
+        const res = await fetch(`/api/admin/bank-export?secret=${encodeURIComponent(sec)}${gradeParam}&offset=${offset}&limit=300`);
+        const text = await res.text();
+        let data;
+        try { data = JSON.parse(text); } catch {
+          setExportMessage(`Server error: ${text.slice(0, 200)}`);
+          setExportStatus('error');
+          return;
+        }
+        if (!res.ok) { setExportMessage(data.error ?? 'Something went wrong.'); setExportStatus('error'); return; }
+        const slice: unknown[] = Array.isArray(data.questions) ? data.questions : [];
+        for (let i = 0; i < slice.length; i++) questions.push(slice[i]);
+        exportedAt = data.exportedAt ?? exportedAt;
+        setExportMessage(`Reading… ${questions.length} of ${data.total ?? '?'}`);
+        if (typeof data.nextOffset !== 'number' || data.nextOffset <= offset) break;
+        offset = data.nextOffset;
+      }
+
+      if (questions.length === 0) {
+        setExportMessage('Nothing to download: every question here is already in the bank.');
+        setExportStatus('done');
+        return;
+      }
+
+      const file = {
+        exportedAt,
+        grade: exportGrade === 'all' ? null : Number(exportGrade),
+        count: questions.length,
+        questions,
+      };
+      const blob = new Blob([JSON.stringify(file, null, 2)], { type: 'application/json' });
+      const url  = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `bank-export-${exportGrade === 'all' ? 'all-grades' : `grade${exportGrade}`}-${exportedAt.slice(0, 10)}.json`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+
+      setExportMessage(`${questions.length} questions saved.`);
+      setExportStatus('done');
+    } catch (err) {
+      setExportMessage(`Network error: ${err}`);
+      setExportStatus('error');
     }
   }
 
@@ -943,6 +1008,7 @@ export default function SeedPage() {
                         </p>
                         <p className="text-gray-600">
                           {gradeData.bank.reachedByNoTopic} reached by no topic · {gradeData.bank.reachedBySeveral} reached by more than one
+                          {' '}· {gradeData.bank.retired ?? 0} retired (kept, never served)
                         </p>
                         <table className="w-full text-left">
                           <thead>
@@ -1034,6 +1100,45 @@ export default function SeedPage() {
             </button>
           </div>
         )}
+      </div>
+
+      {/* ── Section 8: Export database-only questions ───────────────────────── */}
+      <div className="w-full bg-white border-2 border-sky-200 rounded-2xl p-6 space-y-4 shadow-sm">
+        <div className="flex items-center gap-3">
+          <span className="text-3xl" aria-hidden="true">📥</span>
+          <div>
+            <p className="font-bold text-gray-800">Database-only Questions</p>
+            <p className="text-xs text-gray-500">Saves the questions that are in the database and not in the question bank, in the bank&rsquo;s format. Nothing is changed.</p>
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="export-grade" className="block text-xs font-semibold text-gray-600 mb-1">Grade</label>
+          <select
+            id="export-grade"
+            value={exportGrade}
+            onChange={(e) => setExportGrade(e.target.value)}
+            disabled={exportStatus === 'running'}
+            className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-800 outline-none focus:border-sky-400 text-sm bg-white"
+          >
+            <option value="all">All grades</option>
+            {[2, 3, 4, 5, 6, 7, 8, 9].map((g) => (
+              <option key={g} value={String(g)}>Grade {g}</option>
+            ))}
+          </select>
+        </div>
+
+        {exportMessage && (
+          <p className={`text-sm ${exportStatus === 'error' ? 'text-red-500' : 'text-gray-600'}`}>{exportMessage}</p>
+        )}
+
+        <button
+          onClick={runBankExport}
+          disabled={exportStatus === 'running'}
+          className="w-full bg-sky-500 hover:bg-sky-600 disabled:opacity-60 text-white font-bold py-3.5 rounded-2xl transition-colors"
+        >
+          {exportStatus === 'running' ? 'Reading…' : 'Download database-only questions'}
+        </button>
       </div>
 
       <p className="text-xs text-gray-500 text-center pb-4">

@@ -27,7 +27,9 @@ import sys
 from fractions import Fraction
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
-SEED = os.path.join(ROOT, "data", "mathspark_complete_seed.json")
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
+
 PARTS = os.path.join(ROOT, "data", "question-fixes", "parts")
 
 BANNED = re.compile(r"\b(wrong|incorrect|failed|fail|error)\b", re.I)
@@ -245,8 +247,7 @@ def check_entry(qid, fix, q, part_name):
 
 
 def load_seed():
-    with io.open(SEED, encoding="utf-8") as f:
-        return {q["id"]: q for q in json.load(f)["questions"] if q.get("topicId") == "grade5"}
+    return bank.load_by_id(topic_id="grade5")
 
 
 def show(qid, questions):

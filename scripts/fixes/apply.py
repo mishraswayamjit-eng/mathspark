@@ -1,10 +1,10 @@
 """Apply checked fixes to the question bank, and build the file the app serves them from.
 
     python -X utf8 scripts/fixes/apply.py            # check everything, show what would change
-    python -X utf8 scripts/fixes/apply.py --write    # write the seed file and the served fixes
+    python -X utf8 scripts/fixes/apply.py --write    # write the bank and the served fixes
 
 Two things are written, from the same part files:
-  1. data/mathspark_complete_seed.json: the source of truth, used by every other
+  1. data/bank/ (through scripts/bank/bank.py): the source of truth, used by every other
      offline check (figures, narration) and by the next re-seed of the database.
   2. src/data/questionFixes/fixes.json: the corrected fields for each fixed
      question. The app lays these over what the database returns, so the fixes
@@ -22,7 +22,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from check import PARTS, ROOT, SEED, check_entry  # noqa: E402
+from check import PARTS, ROOT, bank, check_entry  # noqa: E402
 
 OUT = os.path.join(ROOT, "src", "data", "questionFixes", "fixes.json")
 
@@ -32,12 +32,8 @@ def main():
     parser.add_argument("--write", action="store_true")
     args = parser.parse_args()
 
-    with io.open(SEED, encoding="utf-8") as f:
-        raw = f.read()
-    data = json.loads(raw)
-    # The seed file is one compact line; make sure we can write it back the same way.
-    same_format = json.dumps(data, ensure_ascii=True, separators=(",", ":")) == raw.rstrip("\n")
-    by_id = {q["id"]: q for q in data["questions"]}
+    questions = bank.load_bank()
+    by_id = bank.by_id(questions)
 
     fixes = {}
     problems = []
@@ -93,22 +89,17 @@ def main():
         served[qid] = out
 
     print("%d questions fixed: %s" % (len(served), ", ".join("%d %s" % (n, k) for k, n in counts.items())))
-    if not same_format:
-        print("NOTE: the seed file is not in the compact one-line form this tool writes; the diff will be large.")
     if not args.write:
         print("dry run: nothing written (use --write)")
         return
 
-    with io.open(SEED, "w", encoding="utf-8", newline="") as f:
-        # The seed file is ASCII-only JSON on one line: keep it so, and the diff shows only real changes.
-        f.write(json.dumps(data, ensure_ascii=True, separators=(",", ":")))
-        if raw.endswith("\n"):
-            f.write("\n")
+    # Only the bank files whose questions changed are rewritten.
+    changed = bank.save_bank(questions)
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with io.open(OUT, "w", encoding="utf-8", newline="\n") as f:
         json.dump(served, f, ensure_ascii=False, separators=(",", ":"))
         f.write("\n")
-    print("wrote %s and %s" % (os.path.relpath(SEED, ROOT), os.path.relpath(OUT, ROOT)))
+    print("wrote %d bank files under %s, and %s" % (len(changed), os.path.relpath(bank.BANK, ROOT), os.path.relpath(OUT, ROOT)))
 
 
 if __name__ == "__main__":

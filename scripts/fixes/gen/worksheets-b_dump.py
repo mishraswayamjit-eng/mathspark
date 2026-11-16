@@ -8,13 +8,13 @@ import os
 import sys
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
-SEED = os.path.join(ROOT, "data", "mathspark_complete_seed.json")
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
 
 prefix = sys.argv[1]
 start = int(sys.argv[2]) if len(sys.argv) > 2 else 0
 end = int(sys.argv[3]) if len(sys.argv) > 3 else 10 ** 6
-with io.open(SEED, encoding="utf-8") as f:
-    qs = [q for q in json.load(f)["questions"] if q["id"].startswith(prefix)]
+qs = [q for q in bank.load_bank() if q["id"].startswith(prefix)]
 qs.sort(key=lambda q: q["id"])
 print(len(qs), "questions")
 for q in qs:

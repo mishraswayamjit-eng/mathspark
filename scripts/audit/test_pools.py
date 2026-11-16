@@ -12,46 +12,26 @@ For one grade (default 5) it reports:
 The blueprint arithmetic mirrors buildGradeBlueprint in src/lib/mockTest.ts.
 """
 import collections
-import io
-import json
 import os
 import re
 import sys
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
+
 GRADE = int(sys.argv[1]) if len(sys.argv) > 1 else 5
 CONFIG = {"quick": (15, 4, 6, 5), "ipm": (40, 9, 19, 12)}
 PAST = re.compile(r"^(g\d_final_|g\d_mse_final_|g\d_mega_final_|mega_final_|previous_year_)(\d{4})$")
 
 
-def load_seed():
-    with io.open(os.path.join(ROOT, "data", "mathspark_complete_seed.json"), encoding="utf-8") as f:
-        return json.load(f)["questions"]
+load_seed = bank.load_bank
+matches = bank.matches  # same rule as matchesSubTopicKey: the key must start a word
 
 
 def tree_nodes(grade):
-    with io.open(os.path.join(ROOT, "src", "data", "topicTree.ts"), encoding="utf-8") as f:
-        text = f.read()
-    nodes = []
-    for m in re.finditer(r"\{\s*id:\s*'([^']+)',\s*name:\s*'([^']+)'.*?grade:\s*(\d+),\s*examWeight:\s*([\d.]+),\s*dbTopicId:\s*'([^']+)'(?:,\s*subTopicKey:\s*'([^']+)')?", text):
-        if int(m.group(3)) == grade and not m.group(1).endswith("_ipm"):
-            nodes.append({"id": m.group(1), "name": m.group(2), "w": float(m.group(4)), "db": m.group(5), "key": m.group(6)})
-    return nodes
-
-
-def matches(sub, key):
-    """Same rule as matchesSubTopicKey: the key must start a word."""
-    if not key:
-        return True
-    hay, needle = (sub or "").lower(), key.lower()
-    start = 0
-    while True:
-        i = hay.find(needle, start)
-        if i == -1:
-            return False
-        if i == 0 or not re.match(r"[a-z0-9]", hay[i - 1]):
-            return True
-        start = i + 1
+    """The grade's topics, without the past-papers node (it is not in the mock blueprint)."""
+    return [n for n in bank.tree_nodes(grade) if not n["id"].endswith("_ipm")]
 
 
 def js_round(x):

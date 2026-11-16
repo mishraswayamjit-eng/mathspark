@@ -8,9 +8,12 @@ import io
 import json
 import os
 import re
+import sys
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
-SEED = os.path.join(ROOT, "data", "mathspark_complete_seed.json")
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
+
 FIGURES = os.path.join(ROOT, "src", "data", "questionFigures", "figures.json")
 PARTS = os.path.join(ROOT, "data", "question-speech", "parts")
 
@@ -56,8 +59,7 @@ def topic_of(q):
 
 
 def load_grade5():
-    with io.open(SEED, encoding="utf-8") as f:
-        return [q for q in json.load(f)["questions"] if q.get("topicId") == "grade5"]
+    return bank.load_pool("grade5")
 
 
 _figures_cache = None

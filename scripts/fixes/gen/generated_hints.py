@@ -2,7 +2,7 @@
 
     python -X utf8 scripts/fixes/gen/generated_hints.py
 
-Reads data/mathspark_complete_seed.json and writes data/question-fixes/parts/generated-hints.json.
+Reads the question bank (data/bank/, through scripts/bank/bank.py) and writes data/question-fixes/parts/generated-hints.json.
 Every question with source "auto_generated_v2" is matched against one rule per wording (re.fullmatch on
 the question text). A rule pulls out the numbers, works out the answer itself, and writes:
   hint 1  the idea for this kind of question;
@@ -25,7 +25,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.normpath(os.path.join(HERE, "..")))
 
-from check import PARTS, SEED, answer_numbers, check_entry, correct_text, numbers_in, option_texts  # noqa: E402
+from check import PARTS, bank, answer_numbers, check_entry, correct_text, numbers_in, option_texts  # noqa: E402
 from generated_hints_common import Skip, pick  # noqa: E402
 from generated_hints_rules_a import RULES_A  # noqa: E402
 from generated_hints_rules_b import RULES_B  # noqa: E402
@@ -43,9 +43,8 @@ def reserved_ids():
 
 
 def load_questions():
-    with io.open(SEED, encoding="utf-8") as f:
-        qs = [q for q in json.load(f)["questions"]
-              if q.get("source") == "auto_generated_v2" and q.get("topicId") == "grade5" and ID.fullmatch(q["id"])]
+    qs = [q for q in bank.load_pool("grade5")
+          if q.get("source") == "auto_generated_v2" and ID.fullmatch(q["id"])]
     return sorted(qs, key=lambda q: (ID.fullmatch(q["id"]).group(1), int(ID.fullmatch(q["id"]).group(2))))
 
 

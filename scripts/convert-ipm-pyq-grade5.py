@@ -2,10 +2,10 @@
 
 Source : <ipm-maths-practice>/index.html  (question data is inline JavaScript)
 Output : data/ipm-pyq-grade5.json          (Socratic question objects + a report)
-Merge  : --merge appends the converted questions to data/mathspark_complete_seed.json
-         (idempotent: ids already present are skipped).
+Merge  : --merge adds the converted questions to the question bank (data/bank/,
+         through scripts/bank/bank.py; idempotent: ids already present are skipped).
 
-The converted rows follow the existing past-paper convention in the seed file
+The converted rows follow the existing past-paper convention in the bank
 (e.g. source 'g6_final_2017', id 'EXT_G6_FP_2017_001'):
 
     id      EXT_G5_FP_<year>_<question number>
@@ -31,7 +31,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "ipm-pyq-grade5.json"
-SEED = ROOT / "data" / "mathspark_complete_seed.json"
+sys.path.append(str(ROOT / "scripts" / "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
 
 # IPM chapter number -> Socratic subTopic. Each label contains exactly the
 # Grade 5 `subTopicKey` (src/data/topicTree.ts) it should be filed under.
@@ -406,25 +407,18 @@ def convert(chapters, questions):
 
 
 def merge(new_questions) -> None:
-    raw = SEED.read_text(encoding="utf-8")
-    seed = json.loads(raw)
-    existing = {q["id"] for q in seed["questions"]}
-    add = [q for q in new_questions if q["id"] not in existing]
+    questions = bank.load_bank()
+    existing = {q["id"] for q in questions}
+    add = [dict(q) for q in new_questions if q["id"] not in existing]
     if not add:
-        print("merge: nothing to add (all ids already in the seed)")
+        print("merge: nothing to add (all ids already in the bank)")
         return
-    tail = "]}"
-    assert raw.rstrip().endswith(tail), "unexpected seed file ending"
-    # Splice into the questions array so the existing 15 MB of text is untouched.
-    body = raw.rstrip()[: -len(tail)]
-    chunk = ",".join(json.dumps(q, ensure_ascii=True, separators=(",", ":")) for q in add)
-    SEED.write_text(body + "," + chunk + tail, encoding="utf-8", newline="")
-    check = json.loads(SEED.read_text(encoding="utf-8"))
-    assert len(check["questions"]) == len(seed["questions"]) + len(add)
-    assert len({q["id"] for q in check["questions"]}) == len(check["questions"]), "duplicate ids after merge"
-    first = len(seed["questions"])
-    print(f"merge: appended {len(add)} questions at index {first}..{first + len(add) - 1} "
-          f"(seed pages {first // 200}..{(first + len(add) - 1) // 200}, 200 per page)")
+    nodes = bank.tree_nodes()
+    for q in add:
+        q["node"] = bank.assign_node(q, nodes)
+    # save_bank checks every row and rewrites only the files that gain a question.
+    changed = bank.save_bank(questions + add)
+    print(f"merge: added {len(add)} questions to the bank ({len(changed)} files written)")
 
 
 def main() -> None:

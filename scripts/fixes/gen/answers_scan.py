@@ -25,7 +25,9 @@ from math import gcd, isqrt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, "..", "..", ".."))
-SEED = os.path.join(ROOT, "data", "mathspark_complete_seed.json")
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
+
 RESERVED = os.path.join(ROOT, "scripts", "fixes", "answers_ids.txt")
 GENERATED = ("VAR_G5_vary_", "VAR_EXT_", "VAR2_EXT_", "BOOST_EXT_", "PH3_EXT_")
 
@@ -440,8 +442,7 @@ def judge(q, computed):
 
 
 def main():
-    with io.open(SEED, encoding="utf-8") as f:
-        qs = [q for q in json.load(f)["questions"] if q.get("topicId") == "grade5"]
+    qs = bank.load_pool("grade5")
     with io.open(RESERVED, encoding="utf-8") as f:
         reserved = {line.strip() for line in f if line.strip()}
 

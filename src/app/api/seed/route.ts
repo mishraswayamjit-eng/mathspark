@@ -4,6 +4,11 @@ import { verifySecret } from '@/lib/adminAuth';
 import { logError } from '@/lib/logger';
 import * as fs from 'fs';
 import * as path from 'path';
+// The bank reader and the one mapping from a bank question to a database row.
+// Shared with the build-time sync (scripts/bank/sync.mjs), which is plain Node
+// and cannot import TypeScript, so the shared module is plain JavaScript.
+import { BANK_TOPICS, bankQuestionToRow, loadBank } from '../../../../scripts/bank/bankRows.mjs';
+import type { BankQuestion } from '../../../../scripts/bank/bankRows.mjs';
 
 export const dynamic = 'force-dynamic';
 
@@ -11,99 +16,51 @@ export const dynamic = 'force-dynamic';
 // Helpers
 // ---------------------------------------------------------------------------
 
-/** Strip null bytes — PostgreSQL rejects \x00 in text columns (error 22021) */
-function s(str: string | undefined | null): string {
-  return (str ?? '').replace(/\x00/g, '');
-}
-
 /** Derive grade from topicId: gradeN → N; ch-series / dh → 4 */
 function getTopicGrade(topicId: string): number {
   const m = topicId.match(/^grade(\d)$/);
   return m ? parseInt(m[1], 10) : 4;
 }
 
-/**
- * Remap topicIds that appear in the seed JSON but are not valid FK targets.
- * The seed JSON uses bare chapter numbers (ch01, ch07, ch09) where the DB
- * uses merged-range IDs (ch01-05, ch07-08, ch09-10).
- */
-const TOPIC_ID_REMAP: Record<string, string> = {
-  'ch01': 'ch01-05', 'ch02': 'ch01-05', 'ch03': 'ch01-05',
-  'ch04': 'ch01-05', 'ch05': 'ch01-05',
-  'ch07': 'ch07-08', 'ch08': 'ch07-08',
-  'ch09': 'ch09-10', 'ch10': 'ch09-10',
-};
+// ---------------------------------------------------------------------------
+// The questions to seed
+// ---------------------------------------------------------------------------
 
-/**
- * Derive topicId from question ID when no explicit topicId is in the JSON.
- */
-function getTopicId(questionId: string): string {
-  const upper = questionId.toUpperCase();
-  if (upper.startsWith('Q_DH_'))  return 'dh';
-  if (upper.startsWith('PYQ_'))   return 'grade4'; // real IPM Std.4 past papers
-  // EXT_G*, VAR_EXT_G*, VAR_G* patterns → grade pool
-  const gradeMatch = upper.match(/(?:EXT|VAR_EXT|VAR)_G(\d)/);
-  if (gradeMatch) {
-    const g = parseInt(gradeMatch[1], 10);
-    if (g >= 2 && g <= 9) return `grade${g}`;
-  }
-  const match = upper.match(/^Q_CH(\d+)_/);
-  if (!match) return 'ch11';
-  const n = parseInt(match[1], 10);
-  if (n <= 5)              return 'ch01-05';
-  if (n === 6)             return 'ch06';
-  if (n === 7 || n === 8)  return 'ch07-08';
-  if (n === 9 || n === 10) return 'ch09-10';
-  return `ch${String(n).padStart(2, '0')}`;
+interface SeedQuestions {
+  /** 'bank' = data/bank (carries topic nodes); 'file' = the old single file. */
+  from: 'bank' | 'file';
+  questions: BankQuestion[];
 }
 
-/** Resolve a question's topicId with remapping + fallback chain */
-function resolveTopicId(questionId: string, rawTopicId: string | undefined, validIds: Set<string>): string {
-  // 1. Start with explicit JSON value (or derive from ID)
-  let tid = rawTopicId ?? getTopicId(questionId);
-  // 2. Remap known bad values (ch01→ch01-05, ch07→ch07-08, ch09→ch09-10, etc.)
-  tid = TOPIC_ID_REMAP[tid] ?? tid;
-  // 3. If still invalid, derive from ID
-  if (!validIds.has(tid)) tid = getTopicId(questionId);
-  // 4. If still invalid (unexpected ID format), default to ch11
-  if (!validIds.has(tid)) tid = 'ch11';
-  return tid;
+// Read once per warm instance: the files do not change within a deployment.
+let cachedSeedQuestions: SeedQuestions | null = null;
+
+/** The questions, in a fixed order so that paging is stable. Null when there is nothing to read. */
+function loadSeedQuestions(): SeedQuestions | null {
+  if (cachedSeedQuestions) return cachedSeedQuestions;
+
+  const bank = loadBank(process.cwd());
+  if (bank.exists && bank.questions.length > 0) {
+    cachedSeedQuestions = { from: 'bank', questions: bank.questions };
+    return cachedSeedQuestions;
+  }
+
+  // Fallback for the time before data/bank exists: the old single seed file.
+  // This branch (and the `from` flag) can go once data/mathspark_complete_seed.json is deleted.
+  const dataPath = path.join(process.cwd(), 'data', 'mathspark_complete_seed.json');
+  if (!fs.existsSync(dataPath)) return null;
+  const { questions } = JSON.parse(fs.readFileSync(dataPath, 'utf-8')) as { questions: BankQuestion[] };
+  cachedSeedQuestions = { from: 'file', questions };
+  return cachedSeedQuestions;
 }
 
 // ---------------------------------------------------------------------------
 // Topic + Subscription definitions
 // ---------------------------------------------------------------------------
 
-const TOPICS = [
-  // Grade 4 curriculum chapters
-  { id: 'ch01-05', name: 'Number System & Place Value',    chapterNumber: '1-5'  },
-  { id: 'ch06',    name: 'Factors & Multiples',             chapterNumber: '6'    },
-  { id: 'ch07-08', name: 'Fractions',                       chapterNumber: '7-8'  },
-  { id: 'ch09-10', name: 'Operations & BODMAS',             chapterNumber: '9-10' },
-  { id: 'ch11',    name: 'Decimal Fractions',               chapterNumber: '11'   },
-  { id: 'ch12',    name: 'Decimal Units of Measurement',    chapterNumber: '12'   },
-  { id: 'ch13',    name: 'Algebraic Expressions',           chapterNumber: '13'   },
-  { id: 'ch14',    name: 'Equations',                       chapterNumber: '14'   },
-  { id: 'ch15',    name: 'Puzzles & Magic Squares',         chapterNumber: '15'   },
-  { id: 'ch16',    name: 'Sequence & Series',               chapterNumber: '16'   },
-  { id: 'ch17',    name: 'Measurement of Time & Calendar',  chapterNumber: '17'   },
-  { id: 'ch18',    name: 'Angles',                          chapterNumber: '18'   },
-  { id: 'ch19',    name: 'Triangles',                       chapterNumber: '19'   },
-  { id: 'ch20',    name: 'Quadrilaterals',                  chapterNumber: '20'   },
-  { id: 'ch21',    name: 'Circle',                          chapterNumber: '21'   },
-  { id: 'dh',      name: 'Data Handling & Graphs',          chapterNumber: 'DH'   },
-  // IPM past-paper / practice pools (Grades 2–9)
-  { id: 'grade2',  name: 'Grade 2 — IPM Practice',         chapterNumber: 'G2'   },
-  { id: 'grade3',  name: 'Grade 3 — IPM Practice',         chapterNumber: 'G3'   },
-  { id: 'grade4',  name: 'Grade 4 — IPM Past Papers',      chapterNumber: 'G4'   },
-  { id: 'grade5',  name: 'Grade 5 — IPM Practice',         chapterNumber: 'G5'   },
-  { id: 'grade6',  name: 'Grade 6 — IPM Practice',         chapterNumber: 'G6'   },
-  { id: 'grade7',  name: 'Grade 7 — IPM Practice',         chapterNumber: 'G7'   },
-  { id: 'grade8',  name: 'Grade 8 — IPM Practice',         chapterNumber: 'G8'   },
-  { id: 'grade9',  name: 'Grade 9 — IPM Practice',         chapterNumber: 'G9'   },
-];
-
-const VALID_TOPIC_IDS = new Set(TOPICS.map((t) => t.id));
+// The pools live beside the mapping (scripts/bank/bankRows.mjs) so the seed
+// route and the build-time sync agree on which pool ids are valid.
+const TOPICS = BANK_TOPICS;
 
 const PLANS = [
   { id: 'plan_starter_monthly',   name: 'Starter',          tier: 1, priceINR: 50000,   durationDays: 30,  dailyLimitMinutes: 60,   aiChatDailyLimit: 5,   features: '{"practice":true,"chapters":true,"hints":true,"stepByStep":true,"progressTracking":true,"diagnosticQuiz":false,"adaptiveEngine":false,"dashboard":false,"misconceptionFeedback":false,"badges":false,"streaks":false,"aiTutor":true,"mockTest":false,"parentDashboard":false}' },
@@ -381,23 +338,16 @@ export async function GET(req: Request) {
   try {
     const page = parseInt(searchParams.get('page') ?? '0', 10);
 
-    // ── Load seed JSON ──────────────────────────────────────────────────────
-    const dataPath = path.join(process.cwd(), 'data', 'mathspark_complete_seed.json');
-    if (!fs.existsSync(dataPath)) {
+    // ── Load the questions: the bank (data/bank), or the old file before it exists ──
+    const loaded = loadSeedQuestions();
+    if (!loaded) {
       return NextResponse.json(
-        { error: 'Seed file not found. Make sure data/mathspark_complete_seed.json is committed.' },
+        { error: 'No questions found. Expected the question bank (data/bank/gradeN/*.json) or data/mathspark_complete_seed.json.' },
         { status: 500 },
       );
     }
-    const { questions } = JSON.parse(fs.readFileSync(dataPath, 'utf-8')) as {
-      questions: Array<{
-        id: string; topicId?: string; year?: number; questionNumber?: number;
-        subTopic?: string; difficulty?: string; questionText?: string;
-        questionLatex?: string; options?: Array<{ id: string; text: string }>;
-        correctAnswer?: string; hints?: string[]; stepByStep?: unknown[];
-        misconceptions?: Record<string, string>; source?: string;
-      }>;
-    };
+    const questions = loaded.questions;
+    const fromBank = loaded.from === 'bank';
 
     // ── ALWAYS ensure topics + plans exist (idempotent, fast) ──────────────
     // This runs on every page so a retry after failure never hits a missing-topic FK error.
@@ -430,36 +380,17 @@ export async function GET(req: Request) {
       const chunk = batch.slice(i, i + CHUNK_SIZE);
       const results = await Promise.all(chunk.map(async (q) => {
         try {
-          const topicId = resolveTopicId(q.id, q.topicId, VALID_TOPIC_IDS);
-          const f = {
-            topicId,
-            subTopic:       s(q.subTopic),
-            difficulty:     s(q.difficulty)    || 'Medium',
-            questionText:   s(q.questionText),
-            questionLatex:  s(q.questionLatex),
-            option1:        s(q.options?.[0]?.text),
-            option2:        s(q.options?.[1]?.text),
-            option3:        s(q.options?.[2]?.text),
-            option4:        s(q.options?.[3]?.text),
-            correctAnswer:  s(q.correctAnswer)  || 'A',
-            hint1:          s(q.hints?.[0]),
-            hint2:          s(q.hints?.[1]),
-            hint3:          s(q.hints?.[2]),
-            stepByStep:     s(JSON.stringify(q.stepByStep ?? [])),
-            misconceptionA: s(q.misconceptions?.['A']),
-            misconceptionB: s(q.misconceptions?.['B']),
-            misconceptionC: s(q.misconceptions?.['C']),
-            misconceptionD: s(q.misconceptions?.['D']),
-            source:         s(q.source)         || 'auto_generated',
-            year:           q.year              ?? null,
-            questionNumber: q.questionNumber    ?? null,
-          };
-          await prisma.question.upsert({ where: { id: q.id }, update: f, create: { id: q.id, ...f } });
-          return { ok: true as const, id: q.id };
+          // The one mapping, shared with the build-time sync. `retired` is never written here.
+          const { id, nodeId, ...content } = bankQuestionToRow(q);
+          // The old file carries no topic nodes: leave `nodeId` alone rather than clearing it.
+          const f = fromBank ? { ...content, nodeId } : content;
+          await prisma.question.upsert({ where: { id }, update: f, create: { id, ...f } });
+          return { ok: true as const, id };
         } catch (err) {
           const msg = err instanceof Error ? err.message : String(err);
-          logError(`[seed] Skipping question ${q.id}:`, msg);
-          return { ok: false as const, id: q.id };
+          const badId = q && typeof q.id === 'string' ? q.id : '(no id)';
+          logError(`[seed] Skipping question ${badId}:`, msg);
+          return { ok: false as const, id: badId };
         }
       }));
       for (const r of results) {

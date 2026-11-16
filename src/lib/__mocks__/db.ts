@@ -45,6 +45,7 @@ export const prisma = {
 };
 
 export const USABLE_QUESTION_FILTER = {
+  retired: false,
   correctAnswer: { not: '' },
   option1: { not: '' },
 };

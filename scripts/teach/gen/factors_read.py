@@ -13,7 +13,8 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, "..", "..", ".."))
 PART = os.path.join(ROOT, "data", "teach", "parts", "factors.json")
-SEED = os.path.join(ROOT, "data", "mathspark_complete_seed.json")
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
 
 
 def brief(op):
@@ -49,8 +50,7 @@ def main():
         ids = list(part)[start::step]
     else:
         ids = [qid for qid in part if any(qid == a or qid.startswith(a) for a in args)]
-    with io.open(SEED, encoding="utf-8") as f:
-        questions = {q["id"]: q for q in json.load(f)["questions"]}
+    questions = bank.load_by_id()
     for qid in ids:
         q = questions[qid]
         print("=" * 78)

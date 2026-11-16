@@ -4,7 +4,7 @@
     python -X utf8 scripts/speech/rehome.py --write
 
 A question's topic comes from its sub-topic label (common.topic_of). When a label is
-corrected in the seed file, the question's narration is still right but sits in the old
+corrected in the bank (data/bank/), the question's narration is still right but sits in the old
 topic's part file, which validate.py reports. This moves the entry, unchanged.
 """
 import argparse

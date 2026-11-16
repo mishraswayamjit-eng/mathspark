@@ -36,8 +36,9 @@ print("wrote", len(merged), "entries")
 
 # Show the current steps of any question whose stepFigures no longer line up,
 # so the figures can be rewritten against the question as it now stands.
-with io.open(os.path.join(ROOT, "data", "mathspark_complete_seed.json"), encoding="utf-8") as f:
-    seed = {q["id"]: q for q in json.load(f)["questions"]}
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
+seed = bank.load_by_id()
 for qid in sorted(merged):
     q = seed.get(qid)
     figs = merged[qid].get("stepFigures")

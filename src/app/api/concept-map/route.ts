@@ -124,7 +124,7 @@ export async function GET(req: Request) {
           }),
           prisma.question.groupBy({
             by: ['difficulty'],
-            where: { topicId },
+            where: { topicId, retired: false }, // retired questions are never served, so not counted
             _count: { id: true },
           }),
         ]);

@@ -14,9 +14,12 @@ if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
 
 /**
  * Shared Prisma `where` clause that excludes broken questions
- * (empty correctAnswer or empty options). Spread into any Question.findMany().
+ * (empty correctAnswer or empty options) and retired ones (no longer in the
+ * question bank; kept only because recorded answers point at them).
+ * Spread into any Question.findMany().
  */
 export const USABLE_QUESTION_FILTER = {
+  retired:       false,
   questionText:  { not: '' },
   correctAnswer: { not: '' },
   option1:       { not: '' },

@@ -1,4 +1,4 @@
-"""Print the whole seed record of one or more Grade 5 questions (read-only).
+"""Print the whole bank record of one or more Grade 5 questions (read-only).
 
     python -X utf8 scripts/fixes/gen/answers_dump.py <id> [<id> ...]
     python -X utf8 scripts/fixes/gen/answers_dump.py --brief <id> [...]   # one compact block each
@@ -9,10 +9,10 @@ import os
 import sys
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
-SEED = os.path.join(ROOT, "data", "mathspark_complete_seed.json")
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
 
-with io.open(SEED, encoding="utf-8") as f:
-    qs = {q["id"]: q for q in json.load(f)["questions"]}
+qs = bank.load_by_id()
 
 args = sys.argv[1:]
 brief = "--brief" in args

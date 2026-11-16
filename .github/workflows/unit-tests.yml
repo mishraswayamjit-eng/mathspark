@@ -43,7 +43,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # Reads the question bank (data/bank) and checks it is fit to sync: ids
+      # unique, required fields present. No database is contacted. The same
+      # check runs first in the production build's sync.
+      - name: Check the question bank
+        run: node scripts/bank/sync.mjs --check
+
       - name: Run unit tests
+        if: always()
         run: npm test
 
       # The same checks the production build makes, so a type or build problem

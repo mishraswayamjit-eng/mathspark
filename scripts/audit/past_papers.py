@@ -3,12 +3,14 @@
     python -X utf8 scripts/audit/past_papers.py
 """
 import collections
-import io
-import json
 import os
 import re
+import sys
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
+
 PAST = re.compile(r"^(g\d_final_|g\d_mse_final_|g\d_mega_final_|mega_final_|previous_year_)(\d{4})$")
 
 
@@ -17,8 +19,7 @@ def norm(text):
 
 
 def main():
-    with io.open(os.path.join(ROOT, "data", "mathspark_complete_seed.json"), encoding="utf-8") as f:
-        seed = json.load(f)["questions"]
+    seed = bank.load_bank()
 
     papers = collections.defaultdict(list)
     for q in seed:

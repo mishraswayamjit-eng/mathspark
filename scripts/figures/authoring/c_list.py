@@ -3,11 +3,12 @@
 """
 import io, json, os, sys
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
 
 
 def load():
-    with io.open(os.path.join(ROOT, "data", "mathspark_complete_seed.json"), encoding="utf-8") as f:
-        qs = json.load(f)["questions"]
+    qs = bank.load_bank()
     return [q for q in qs if q.get("topicId") == "grade5" and q.get("source") == "pdf_extracted"]
 
 

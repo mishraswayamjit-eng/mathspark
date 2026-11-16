@@ -4,8 +4,9 @@
 """
 import io, json, os, sys
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
-with io.open(os.path.join(ROOT, "data", "mathspark_complete_seed.json"), encoding="utf-8") as f:
-    qs = json.load(f)["questions"]
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
+qs = bank.load_bank()
 years = sys.argv[1:] or ["2021", "2022", "2023", "2024", "2025"]
 for y in years:
     for q in qs:

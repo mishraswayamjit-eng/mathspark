@@ -1,7 +1,7 @@
 """Give Grade 5 questions a sub-topic label that says which topic they belong to.
 
     python -X utf8 scripts/fixes/relabel_topics.py            # show what would change
-    python -X utf8 scripts/fixes/relabel_topics.py --write    # write the seed file
+    python -X utf8 scripts/fixes/relabel_topics.py --write    # write the bank (data/bank/)
 
 Topic practice, "try one like it" and the topic ladder all find a topic's questions
 through the sub-topic label (src/data/topicTree.ts keys, matched by matchesSubTopicKey).
@@ -14,18 +14,19 @@ Three groups of Grade 5 questions carried a label that reaches the wrong topic o
   3. 15 generated variants that are plain equations ("Solve: 3x - 5 = 16") filed under
      the label of the question they were varied from.
 
-Only the `subTopic` field changes. Question text, options, answers, hints and steps are
+Only the `subTopic` field changes, and with it the question's `node` (the topic the new
+label reaches, by bank.assign_node). Question text, options, answers, hints and steps are
 not touched. The database takes the new labels at the next re-seed.
 """
 import argparse
 import collections
-import io
-import json
 import os
 import re
+import sys
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
-SEED = os.path.join(ROOT, "data", "mathspark_complete_seed.json")
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
 
 FAMILY_LABEL = {
     "bodmas": "Grade 5 — BODMAS",
@@ -62,14 +63,12 @@ def main():
     parser.add_argument("--write", action="store_true")
     args = parser.parse_args()
 
-    with io.open(SEED, encoding="utf-8") as f:
-        raw = f.read()
-    data = json.loads(raw)
-    same_format = json.dumps(data, ensure_ascii=True, separators=(",", ":")) == raw.rstrip("\n")
+    questions = bank.load_bank()
+    nodes = bank.tree_nodes()
 
     changes = collections.Counter()
     unknown_family = collections.Counter()
-    for q in data["questions"]:
+    for q in questions:
         if q.get("topicId") != "grade5":
             continue
         m = VARIANT_ID.match(q.get("id", ""))
@@ -79,6 +78,7 @@ def main():
         if label and label != q.get("subTopic"):
             changes[(q.get("subTopic"), label)] += 1
             q["subTopic"] = label
+            q["node"] = bank.assign_node(q, nodes)
 
     for (old, new), n in sorted(changes.items(), key=lambda kv: -kv[1]):
         print("%4d  %-36s -> %s" % (n, old, new))
@@ -89,13 +89,8 @@ def main():
     if not args.write:
         print("nothing written (use --write)")
         return
-    if not same_format:
-        raise SystemExit("The seed file is not in the compact one-line form this tool writes; stopping.")
-    with io.open(SEED, "w", encoding="utf-8", newline="") as f:
-        f.write(json.dumps(data, ensure_ascii=True, separators=(",", ":")))
-        if raw.endswith("\n"):
-            f.write("\n")
-    print("wrote %s" % os.path.relpath(SEED, ROOT))
+    changed = bank.save_bank(questions)
+    print("wrote %d bank files under %s" % (len(changed), os.path.relpath(bank.BANK, ROOT)))
 
 
 if __name__ == "__main__":

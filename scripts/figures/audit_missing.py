@@ -21,9 +21,12 @@ import io
 import json
 import os
 import re
+import sys
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
-SEED = os.path.join(ROOT, "data", "mathspark_complete_seed.json")
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
+
 OUT = os.path.join(ROOT, "data", "question-figures", "missing-figure-audit.json")
 
 # Words that can point at something drawn or laid out on the page.
@@ -110,8 +113,7 @@ def judge(q):
 
 
 def main():
-    with io.open(SEED, encoding="utf-8") as f:
-        questions = [q for q in json.load(f)["questions"] if q.get("topicId") == "grade5"]
+    questions = bank.load_pool("grade5")
 
     rows = []
     for q in questions:

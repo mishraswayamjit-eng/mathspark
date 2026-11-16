@@ -2,7 +2,7 @@
 
     python -X utf8 scripts/figures/templated.py
 
-Reads data/mathspark_complete_seed.json and writes
+Reads the question bank (data/bank/, through scripts/bank/bank.py) and writes
 data/question-figures/parts/templated.json  ({ "<question id>": QuestionVisual }, origin "rule").
 
 Everything here is computed from the question's own text by regex and
@@ -31,7 +31,7 @@ sys.path.insert(0, HERE)
 import validate  # noqa: E402  (the checker next to this file)
 
 ROOT = validate.ROOT
-SEED = validate.SEED
+bank = validate.bank
 OUT = os.path.join(ROOT, "data", "question-figures", "parts", "templated.json")
 
 
@@ -1517,8 +1517,7 @@ def is_templated(q):
 
 
 def main():
-    with io.open(SEED, encoding="utf-8") as f:
-        questions = [q for q in json.load(f)["questions"] if is_templated(q)]
+    questions = [q for q in bank.load_pool("grade5") if is_templated(q)]
 
     out = {}
     by_rule = collections.Counter()
@@ -1598,8 +1597,7 @@ def survey(only=""):
 
     Run it after the question bank changes to see which templates the rules no longer match.
     """
-    with io.open(SEED, encoding="utf-8") as f:
-        questions = [q for q in json.load(f)["questions"] if is_templated(q)]
+    questions = [q for q in bank.load_pool("grade5") if is_templated(q)]
 
     def shape(text):
         text = re.sub(r"\d+(?:\.\d+)?", "N", text)

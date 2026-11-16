@@ -11,12 +11,12 @@ import re
 import sys
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", ".."))
-SEED = os.path.join(ROOT, "data", "mathspark_complete_seed.json")
+sys.path.append(os.path.join(ROOT, "scripts", "bank"))
+import bank  # noqa: E402  (scripts/bank/bank.py: the question bank, data/bank/)
 
 
 def load():
-    with io.open(SEED, encoding="utf-8") as f:
-        return [q for q in json.load(f)["questions"] if q.get("source") == "auto_generated_v2" and q.get("topicId") == "grade5"]
+    return [q for q in bank.load_pool("grade5") if q.get("source") == "auto_generated_v2"]
 
 
 def family(qid):

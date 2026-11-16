@@ -43,7 +43,7 @@ Run the checker on your own part file until it passes:
 
     python -X utf8 scripts/figures/validate.py --part data/question-figures/parts/<yours>.json
 
-Question data is in `data/mathspark_complete_seed.json` under `questions`: `id`, `topicId` (`grade5`), `subTopic`, `questionText`, `options` (`[{id, text}]`), `correctAnswer`, `stepByStep` (`[{step, text, latex}]`), `source`.
+Question data is in the bank, `data/bank/` (one file per grade and topic; see `scripts/bank/README.md`). Read it only through `scripts/bank/bank.py` (`bank.load_pool("grade5")`, `bank.load_by_id()`), never by opening the files. Each question has: `id`, `node` (its topic), `topicId` (`grade5`), `subTopic`, `questionText`, `options` (`[{id, text}]`), `correctAnswer`, `stepByStep` (`[{step, text, latex}]`), `source`.
 
 ## This machine and this codebase
 

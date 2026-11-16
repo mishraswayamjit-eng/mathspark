@@ -63,7 +63,7 @@ The teacher is Sparky: a kind, quick, slightly playful teacher who loves maths a
 
 ## Writing lessons for a topic
 
-Question data is in `data/mathspark_complete_seed.json` under `questions` (`topicId == "grade5"`): `id`, `subTopic`, `questionText`, `options`, `correctAnswer`, `hints`, `stepByStep`, `misconceptions`, `source`. The steps were recently rewritten and are sound: build the lesson on them. Your lesson must reach the keyed answer.
+Question data is in the bank, `data/bank/grade5/` (one file per topic; see `scripts/bank/README.md`). Read it only through `scripts/bank/bank.py` (`bank.load_pool("grade5")`), never by opening the files. Each question has: `id`, `node` (its topic), `subTopic`, `questionText`, `options`, `correctAnswer`, `hints`, `stepByStep`, `misconceptions`, `source`. The steps were recently rewritten and are sound: build the lesson on them. Your lesson must reach the keyed answer.
 
 - **Generated families** (ids starting `VAR_`, `VAR2_`, `BOOST_`, `PH3_`) share a wording, so write the lesson once per wording as a Python rule that fills in the numbers, computes every line, and adapts the words to the case (a plus or a minus, a divide that leaves 1, a zero). Vary the phrasing across a family with a few alternatives picked by a stable hash of the question id, so a child doing five in a row does not hear the same sentences five times.
 - **One-off questions** (past papers `EXT_G5_FP_...`, worksheets `EXT_G5_WS_...`) each need a lesson written for that question.
