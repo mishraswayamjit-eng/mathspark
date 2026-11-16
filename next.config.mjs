@@ -16,6 +16,9 @@ const nextConfig = {
               "script-src 'self' 'unsafe-inline' https://checkout.razorpay.com",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob:",
+              // The voice route returns audio as data in its answer; without this line the
+              // browser refuses to play it and the app falls back to the device voice.
+              "media-src 'self' data: blob:",
               "connect-src 'self' https://api.razorpay.com",
               "frame-src https://api.razorpay.com",
             ].join('; '),
