@@ -101,7 +101,7 @@ export default function VoicePicker({ voiceOn, onVoiceOnChange, soundsOn, onSoun
     <div className="space-y-4">
       {(showVoiceSwitch || showSoundsSwitch) && (
         <div className="space-y-2">
-          {showVoiceSwitch && onVoiceOnChange && (
+          {showVoiceSwitch && (
             <SwitchRow
               label="Sparky talks"
               note={voiceIsOn ? 'Sparky says his lines out loud.' : 'Sparky is quiet. His lines still show on the screen.'}
