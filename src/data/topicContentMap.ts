@@ -99,7 +99,6 @@ export const TOPIC_CONTENT_MAP: Record<string, TopicContent> = {
     lessonSlug: 'equations',
     drillTopicId: 'algebra_equations',
     drillLevelId: 'L2',
-    strategyIds: ['STR_007'],
   },
   gr5_fractions: {
     lessonSlug: 'fractions',

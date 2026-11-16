@@ -335,7 +335,7 @@ describe('rankNextActions', () => {
         if (list.length > 0) mapped += 1;
         for (let k = 0; k < list.length; k++) expect(list[k]).toMatch(STRATEGY_REF);
       }
-      expect(mapped).toBe(9);
+      expect(mapped).toBe(8);
     });
   });
 
