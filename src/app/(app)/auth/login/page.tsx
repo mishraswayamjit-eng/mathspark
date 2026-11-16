@@ -49,13 +49,13 @@ function LoginForm() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
-            type="email" placeholder="Email address" required autoComplete="email"
+            type="email" name="email" id="email" placeholder="Email address" required autoComplete="username"
             aria-label="Email address"
             value={email} onChange={(e) => setEmail(e.target.value)}
             className="w-full bg-white border-2 border-line rounded-control px-4 py-3 text-ink placeholder:text-ink-muted outline-none focus:border-action focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
           />
           <input
-            type="password" placeholder="Password" required autoComplete="current-password"
+            type="password" name="password" id="password" placeholder="Password" required autoComplete="current-password"
             aria-label="Password"
             value={password} onChange={(e) => setPassword(e.target.value)}
             className="w-full bg-white border-2 border-line rounded-control px-4 py-3 text-ink placeholder:text-ink-muted outline-none focus:border-action focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"

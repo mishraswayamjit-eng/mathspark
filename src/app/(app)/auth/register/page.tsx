@@ -63,13 +63,13 @@ export default function RegisterPage() {
             className="w-full bg-white border-2 border-line rounded-control px-4 py-3 text-ink placeholder:text-ink-muted outline-none focus:border-action focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
           />
           <input
-            type="email" placeholder="Email address" required
+            type="email" name="email" id="email" placeholder="Email address" required autoComplete="username"
             aria-label="Email address"
             value={form.email} onChange={field('email')}
             className="w-full bg-white border-2 border-line rounded-control px-4 py-3 text-ink placeholder:text-ink-muted outline-none focus:border-action focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
           />
           <input
-            type="password" placeholder="Password (min 8 characters)" required minLength={8}
+            type="password" name="password" id="new-password" placeholder="Password (min 8 characters)" required minLength={8} autoComplete="new-password"
             aria-label="Password (min 8 characters)"
             value={form.password} onChange={field('password')}
             className="w-full bg-white border-2 border-line rounded-control px-4 py-3 text-ink placeholder:text-ink-muted outline-none focus:border-action focus-visible:ring-2 focus-visible:ring-action focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
