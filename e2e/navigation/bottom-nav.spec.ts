@@ -17,7 +17,6 @@ const TAB_FOR_ROUTE = [
   { route: '/chapters', tab: '/practice' },
   { route: '/flashcards', tab: '/practice' },
   { route: '/practice/skill-drill', tab: '/practice' },
-  { route: '/practice/tests', tab: '/practice' },
   { route: '/practice/exam-tips', tab: '/practice' },
   { route: '/test', tab: '/practice' },
   { route: '/exam-prep/predictor', tab: '/practice' },
@@ -77,7 +76,7 @@ test.describe('BottomNav — visibility', () => {
   });
 
   test('BottomNav is shown on the new index pages', async ({ authenticatedPage: page }) => {
-    for (const route of ['/learn', '/practice/tests', '/practice/exam-tips']) {
+    for (const route of ['/learn', '/test', '/practice/exam-tips']) {
       await page.goto(route, { waitUntil: 'domcontentloaded' });
       await waitForDataLoad(page);
 
