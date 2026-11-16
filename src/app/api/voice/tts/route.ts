@@ -115,15 +115,58 @@ function sarvamBody(text: string, v: VoiceSettings, languageField: string): Reco
  * Which voice this deployment is set up to use, for checking that a change to
  * the environment variables has taken effect. Holds no key and nothing secret.
  */
-export async function GET() {
+export async function GET(req: Request) {
   const voice = voiceSettings({});
-  return Response.json(
-    {
-      available: Boolean(process.env.SARVAM_API_KEY),
-      voice: { model: voice.model, speaker: voice.speaker, pace: voice.pace, temperature: voice.temperature },
-    },
-    { headers: { 'Cache-Control': 'no-store' } },
-  );
+  const settings = { model: voice.model, speaker: voice.speaker, pace: voice.pace, temperature: voice.temperature };
+  const apiKey = process.env.SARVAM_API_KEY;
+  const headers = { 'Cache-Control': 'no-store' };
+
+  // ?check=1 (signed in only): asks Sarvam for one short line with these
+  // settings and reports what came back, so a voice that is set but not heard
+  // can be told apart from one Sarvam is turning down.
+  const wantsCheck = new URL(req.url).searchParams.get('check') === '1';
+  if (!wantsCheck || !apiKey) {
+    return Response.json({ available: Boolean(apiKey), voice: settings }, { headers });
+  }
+  const studentId = await getAuthenticatedStudentId();
+  if (!studentId) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401, headers });
+  }
+  if (!checkRateLimit(`voice-tts-check:${studentId}`, 5, 10 * 60_000)) {
+    return Response.json({ error: 'Too many checks. Try again in a few minutes.' }, { status: 429, headers });
+  }
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 8000);
+  const started = Date.now();
+  try {
+    const res = await fetch(SARVAM_URL, {
+      method: 'POST',
+      headers: { 'api-subscription-key': apiKey, 'Content-Type': 'application/json' },
+      body: JSON.stringify(sarvamBody('Hello! This is a voice check.', voice, 'language_code')),
+      signal: controller.signal,
+    });
+    const ms = Date.now() - started;
+    if (!res.ok) {
+      const detail = (await res.text()).slice(0, 300);
+      return Response.json({ available: true, voice: settings, check: { ok: false, status: res.status, ms, detail } }, { headers });
+    }
+    const data: unknown = await res.json();
+    const audios = (data as { audios?: unknown }).audios;
+    const audio = Array.isArray(audios) && typeof audios[0] === 'string' ? audios[0] : '';
+    return Response.json(
+      { available: true, voice: settings, check: { ok: audio.length > 0, status: res.status, ms, audioBytes: Math.round(audio.length * 0.75) } },
+      { headers },
+    );
+  } catch (err) {
+    logError('[voice/tts] check failed', err);
+    return Response.json(
+      { available: true, voice: settings, check: { ok: false, status: 0, ms: Date.now() - started, detail: 'No answer from Sarvam within 8 seconds.' } },
+      { headers },
+    );
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 export async function POST(req: Request) {
