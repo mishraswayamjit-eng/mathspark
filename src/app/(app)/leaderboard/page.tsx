@@ -7,6 +7,7 @@ import Confetti from '@/components/Confetti';
 import type { LeagueData, LeagueMember, LastWeekResult } from '@/types';
 import { logError } from '@/lib/logger';
 import { LeagueListLoading } from './LeaderboardSkeleton';
+import { MONETIZATION_ENABLED } from '@/lib/monetization';
 
 // ── Tier metadata ─────────────────────────────────────────────────────────────
 
@@ -57,7 +58,7 @@ function StatusCard({
 
   const zoneMsg =
     myRank <= promo                ? '⬆️ Promotion zone! Keep it up!' :
-    myRank > total - demote        ? '⚠️ Danger zone — practice more!' :
+    myRank > total - demote        ? '💪 A few more questions will keep you in this league!' :
     myRank <= Math.ceil(total / 2) ? '👍 Mid-table — push for promotion!' :
                                      '💪 You can climb higher!';
 
@@ -109,8 +110,10 @@ const MemberRow = React.memo(function MemberRow({
 }) {
   const isTop3      = rank <= 3;
   const isPromoZone = rank <= promoteCount;
-  const isDangerZone = rank > total - demoteCount;
-  const blurred     = !isFree && rank > 5;
+  const isDangerZone = !isPromoZone && rank > total - demoteCount;
+  // Only a child on the free plan (and only while payments are switched on)
+  // has the lower rows hidden. Their own row is always readable.
+  const blurred     = isFree && rank > 5 && !member.isMe;
 
   const medals = ['🥇', '🥈', '🥉'];
   const bg     = isTop3 ? `${['#FFD70020','#C0C0C020','#CD7F3220'][rank - 1]}` :
@@ -150,7 +153,7 @@ const MemberRow = React.memo(function MemberRow({
         </p>
         <p className="text-xs text-gray-500 font-semibold">
           {isPromoZone && !isTop3 && '⬆️ Promotion zone ·'}
-          {isDangerZone && '⚠️ Danger zone ·'}{' '}
+          {isDangerZone && '💪 Keep practising ·'}{' '}
           {member.weeklyXP.toLocaleString()} XP
         </p>
       </div>
@@ -255,9 +258,13 @@ function DemotionBanner({ tier, onDismiss }: { tier: number; onDismiss: () => vo
     <div className="bg-hint border-b-2 border-hint-ink px-4 py-3 flex items-center gap-3">
       <span className="text-lg" aria-hidden="true">⬇️</span>
       <p className="flex-1 text-sm font-bold text-hint-ink">
-        You were demoted to {tierName} League this week. Practice more to climb back up!
+        You&apos;re in {tierName} League this week. Keep practising and you&apos;ll climb back up!
       </p>
-      <button onClick={onDismiss} className="text-hint-ink font-extrabold text-lg leading-none" style={{ minHeight: 0 }}>
+      <button
+        onClick={onDismiss}
+        aria-label="Close this message"
+        className="text-hint-ink font-extrabold text-lg leading-none min-h-[48px] min-w-[48px] flex items-center justify-center"
+      >
         ✕
       </button>
     </div>
@@ -329,7 +336,7 @@ function LastWeekTab({ data }: { data: LastWeekResult | null }) {
                 <p className={`font-extrabold text-sm truncate ${m.isMe ? 'text-action' : 'text-ink'}`}>
                   {m.displayName} {m.isMe && '(you)'}
                   {m.promoted && <span className="ml-1 text-ink-muted text-xs">⬆️ Promoted</span>}
-                  {m.demoted  && <span className="ml-1 text-hint-ink text-xs">⬇️ Demoted</span>}
+                  {m.demoted  && <span className="ml-1 text-hint-ink text-xs">⬇️ Moved down</span>}
                 </p>
                 <p className="text-xs text-gray-500 font-semibold">{m.weeklyXP.toLocaleString()} XP</p>
               </div>
@@ -453,8 +460,9 @@ export default function LeaderboardPage() {
   const [myRowVisible, setMyRowVisible] = useState(true);
   const myRowRef = useRef<HTMLDivElement | null>(null);
 
-  // Is the student on free plan (simplified: check localStorage flag, default true)
-  const [isFree, setIsFree] = useState(true);
+  // Is the student on the free plan. Starts false so nothing is hidden (and no
+  // upgrade card shows) unless payments are on and the plan really is free.
+  const [isFree, setIsFree] = useState(false);
 
   // ── Load student + this-week league ─────────────────────────────────────
   useEffect(() => {
@@ -462,13 +470,19 @@ export default function LeaderboardPage() {
     if (!id) { router.replace('/start'); return; }
     setStudentId(id);
 
-    // Check subscription (simplified: if subscription stored, not free)
+    // Free plan = payments switched on AND no paid tier stored on this device
+    // ("0" is the free tier). With payments off nobody is on a free plan.
     const sub = localStorage.getItem('mathspark_subscription_tier');
-    setIsFree(!sub || sub === 'free');
+    setIsFree(MONETIZATION_ENABLED && (!sub || sub === 'free' || sub === '0'));
 
     fetch('/api/leaderboard')
-      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
-      .then((d: LeagueData) => { setLeagueData(d); setWeekLoading(false); })
+      .then((r) => {
+        // Signed out (the session ran out): go and sign in again.
+        if (r.status === 401) { router.replace('/student/login'); return null; }
+        if (!r.ok) throw new Error("Fetch failed");
+        return r.json();
+      })
+      .then((d: LeagueData | null) => { if (d) { setLeagueData(d); setWeekLoading(false); } })
       .catch((err) => { logError('[leaderboard] fetch weekly', err); setWeekLoading(false); });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 

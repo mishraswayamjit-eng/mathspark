@@ -13,7 +13,7 @@ export async function GET() {
 
   try {
     const top = await prisma.student.findMany({
-      where:   { hiddenFromLeaderboard: false, totalLifetimeXP: { gt: 0 } },
+      where:   { hiddenFromLeaderboard: false, deletedAt: null, totalLifetimeXP: { gt: 0 } },
       orderBy: { totalLifetimeXP: 'desc' },
       take:    50,
       select:  { id: true, name: true, displayName: true, avatarColor: true, totalLifetimeXP: true, currentLeagueTier: true },
@@ -40,7 +40,7 @@ export async function GET() {
       });
       if (me) {
         const aboveCount = await prisma.student.count({
-          where: { hiddenFromLeaderboard: false, totalLifetimeXP: { gt: me.totalLifetimeXP } },
+          where: { hiddenFromLeaderboard: false, deletedAt: null, totalLifetimeXP: { gt: me.totalLifetimeXP } },
         });
         myEntry = {
           studentId:   me.id,
@@ -54,7 +54,7 @@ export async function GET() {
       }
     }
 
-    return NextResponse.json({ members, myEntry });
+    return NextResponse.json({ members, myEntry }, { headers: { 'Cache-Control': 'private, no-store' } });
   } catch (err) {
     logError('[leaderboard/all-time GET]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

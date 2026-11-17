@@ -1,5 +1,21 @@
 import { describe, it, expect } from 'vitest';
-import { computeXPForAttempt, getWeekBounds } from '../leaderboard';
+import { computeXPForAttempt, getWeekBounds, leagueDemoteCount } from '../leaderboard';
+
+describe('leagueDemoteCount', () => {
+  it('nobody moves down in a league of fewer than 5', () => {
+    expect(leagueDemoteCount(1, 3)).toBe(0);
+    expect(leagueDemoteCount(4, 3)).toBe(0);
+  });
+
+  it('nobody moves down in the lowest tier', () => {
+    expect(leagueDemoteCount(25, 1)).toBe(0);
+  });
+
+  it('the bottom fifth moves down otherwise (at least one)', () => {
+    expect(leagueDemoteCount(5, 2)).toBe(1);
+    expect(leagueDemoteCount(25, 2)).toBe(5);
+  });
+});
 
 describe('computeXPForAttempt', () => {
   it('correct answer → 20 XP', () => {

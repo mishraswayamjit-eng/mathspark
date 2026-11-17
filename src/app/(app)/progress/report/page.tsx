@@ -27,6 +27,7 @@ export default function ParentReportPage() {
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
   const [studentId, setStudentId] = useState('');
+  const [loadFailed, setLoadFailed] = useState(false);
 
   useEffect(() => {
     const id = localStorage.getItem('mathspark_student_id');
@@ -34,10 +35,30 @@ export default function ParentReportPage() {
     setStudentId(id);
 
     fetch('/api/dashboard')
-      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
-      .then((d: DashboardData) => { setData(d); setLoading(false); })
-      .catch((err) => { logError('[progress/report] fetch dashboard', err); setLoading(false); });
+      .then((r) => {
+        // Signed out (the session ran out): go and sign in again.
+        if (r.status === 401) { router.replace('/student/login'); return null; }
+        if (!r.ok) throw new Error("Fetch failed");
+        return r.json();
+      })
+      .then((d: DashboardData | null) => { if (d) { setData(d); setLoading(false); } })
+      .catch((err) => { logError('[progress/report] fetch dashboard', err); setLoadFailed(true); setLoading(false); });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
+
+  if (loadFailed) {
+    return (
+      <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 px-8 text-center">
+        <p className="text-ink font-extrabold text-lg">We couldn&apos;t make the report just now</p>
+        <p className="text-ink-muted text-sm">Check your connection and try again.</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="min-h-[48px] bg-action text-white border-2 border-ink shadow-hard-sm font-extrabold px-6 rounded-control text-sm active:scale-95 transition-transform"
+        >
+          Try again
+        </button>
+      </div>
+    );
+  }
 
   if (loading || !data) {
     return (
@@ -284,8 +305,11 @@ export default function ParentReportPage() {
             }}
             className="w-full bg-action text-white border-2 border-ink shadow-hard-sm font-extrabold text-sm py-3 rounded-control hover:bg-action-dark transition-colors active:scale-[0.98]"
           >
-            {copied ? '✓ Link Copied!' : '🔗 Copy Shareable Link for Parents'}
+            {copied ? '✓ Link Copied!' : '🔗 Copy Link for Your Parent'}
           </button>
+          <p className="text-xs text-ink-muted font-medium text-center">
+            Your parent opens the link after signing in to their MathSpark parent account.
+          </p>
 
           <button
             onClick={() => window.history.length > 1 ? router.back() : router.push('/progress')}

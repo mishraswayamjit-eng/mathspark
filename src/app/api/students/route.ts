@@ -6,6 +6,8 @@ import { MS_PER_DAY } from '@/lib/timeConstants';
 import { logError } from '@/lib/logger';
 import bcrypt from 'bcryptjs';
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const AVATAR_COLORS = [
   '#FF9600', '#58CC02', '#1CB0F6', '#FF4B4B',
   '#9B59B6', '#00BCD4', '#FFC800', '#FF69B4',
@@ -27,12 +29,26 @@ export async function POST(req: Request) {
       dailyGoalMins?: number; preferredPracticeTime?: string; pin?: string;
     }>(
       await req.json(),
-      { name: 'string', grade: 'number?', parentEmail: 'string?', examName: 'string?', dailyGoalMins: 'number?', preferredPracticeTime: 'string?', pin: 'string?' },
+      {
+        name: 'string', grade: 'number?', parentEmail: 'string?', examName: 'string?',
+        focusTopics: 'array?', confidentTopics: 'array?',
+        dailyGoalMins: 'number?', preferredPracticeTime: 'string?', pin: 'string?',
+      },
     );
 
-    if (!name.trim()) {
+    // Same bounds as PATCH /api/student, so sign-up cannot store what an edit could not.
+    const cleanName = name.trim().slice(0, 50);
+    if (!cleanName) {
       return NextResponse.json({ error: 'name is required' }, { status: 400 });
     }
+    const cleanEmail = typeof parentEmail === 'string' ? parentEmail.trim().toLowerCase().slice(0, 254) : '';
+    if (cleanEmail && !EMAIL_RE.test(cleanEmail)) {
+      return NextResponse.json({ error: 'Please check the parent email address.' }, { status: 400 });
+    }
+    const cleanExamName = typeof examName === 'string' ? examName.trim().slice(0, 100) : '';
+    const cleanPracticeTime = typeof preferredPracticeTime === 'string' ? preferredPracticeTime.trim().slice(0, 50) : '';
+    const cleanTopics = (list: unknown[]): string[] =>
+      list.filter((t): t is string => typeof t === 'string').slice(0, 50).map((t) => t.slice(0, 50));
 
     // PIN is mandatory — every account must have one so a session can never be
     // issued without a verified PIN (closes the account-takeover hole where any
@@ -43,26 +59,24 @@ export async function POST(req: Request) {
     const pinHash = await bcrypt.hash(pin, 10);
 
     const avatarColor = AVATAR_COLORS[Math.floor(Math.random() * AVATAR_COLORS.length)];
-    const gradeValue  = typeof grade === 'number' && grade >= 2 && grade <= 9 ? grade : 4;
+    const gradeValue  = typeof grade === 'number' && Math.floor(grade) === grade && grade >= 2 && grade <= 9 ? grade : 4;
 
     // 7-day trial for new onboarding students
     const trialExpiresAt = new Date(Date.now() + 7 * MS_PER_DAY);
 
     const student = await prisma.student.create({
       data: {
-        name:          name.trim(),
+        name:          cleanName,
         avatarColor,
         grade:         gradeValue,
         trialExpiresAt,
         pinHash,
-        ...(parentEmail && typeof parentEmail === 'string' && parentEmail.trim()
-          ? { parentEmail: parentEmail.trim() }
-          : {}),
-        ...(examName && typeof examName === 'string' ? { examName } : {}),
-        ...(Array.isArray(focusTopics) ? { focusTopics: JSON.stringify(focusTopics) } : {}),
-        ...(Array.isArray(confidentTopics) ? { confidentTopics: JSON.stringify(confidentTopics) } : {}),
-        ...(typeof dailyGoalMins === 'number' && dailyGoalMins > 0 ? { dailyGoalMins } : {}),
-        ...(preferredPracticeTime && typeof preferredPracticeTime === 'string' ? { preferredPracticeTime } : {}),
+        ...(cleanEmail ? { parentEmail: cleanEmail } : {}),
+        ...(cleanExamName ? { examName: cleanExamName } : {}),
+        ...(Array.isArray(focusTopics) ? { focusTopics: JSON.stringify(cleanTopics(focusTopics)) } : {}),
+        ...(Array.isArray(confidentTopics) ? { confidentTopics: JSON.stringify(cleanTopics(confidentTopics)) } : {}),
+        ...(typeof dailyGoalMins === 'number' && dailyGoalMins > 0 ? { dailyGoalMins: Math.min(600, Math.round(dailyGoalMins)) } : {}),
+        ...(cleanPracticeTime ? { preferredPracticeTime: cleanPracticeTime } : {}),
       },
     });
 

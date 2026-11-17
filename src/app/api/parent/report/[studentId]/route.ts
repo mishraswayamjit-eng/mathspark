@@ -35,7 +35,11 @@ export async function GET(
     return NextResponse.json({ error: 'Student not found' }, { status: 404 });
   }
 
-  const [student, progress, attempts, allTopics] = await Promise.all([
+  // Streak and the weekly chart only need recent days; the lifetime total is
+  // counted in the database, so it is not capped by how many rows are read.
+  const recentSince = new Date(Date.now() - 60 * 24 * 60 * 60 * 1000);
+
+  const [student, progress, attempts, allTopics, totalSolved] = await Promise.all([
     prisma.student.findUnique({
       where: { id: studentId },
       select: {
@@ -46,12 +50,13 @@ export async function GET(
     }),
     prisma.progress.findMany({ where: { studentId }, include: { topic: true } }),
     prisma.attempt.findMany({
-      where: { studentId },
+      where: { studentId, createdAt: { gte: recentSince } },
       select: { isCorrect: true, createdAt: true },
       orderBy: { createdAt: 'desc' },
-      take: 100,
+      take: 5000,
     }),
     getTopicsCached(),
+    prisma.attempt.count({ where: { studentId, isCorrect: true } }),
   ]);
 
   if (!student) {
@@ -59,7 +64,10 @@ export async function GET(
   }
 
   const progressMap = buildLookupMap(progress, 'topicId');
+  // Only the child's own grade: a Grade 5 report must not list the Grade 4
+  // chapters. (filter() also copies, so the shared topic cache is not re-sorted.)
   const topics = allTopics
+    .filter((t) => t.grade === student.grade)
     .sort((a, b) => TOPIC_ORDER.indexOf(a.id) - TOPIC_ORDER.indexOf(b.id))
     .map((t) => {
       const p = progressMap.get(t.id);
@@ -76,8 +84,8 @@ export async function GET(
     {
       student: { name: getDisplayName(student.name, student.displayName), grade: student.grade },
       stats: {
-        totalSolved:    attempts.filter((a) => a.isCorrect).length,
-        topicsMastered: progress.filter((p) => p.mastery === 'Mastered').length,
+        totalSolved,
+        topicsMastered: topics.filter((t) => t.mastery === 'Mastered').length,
         streakDays:     computeStreak(attempts),
       },
       topics,

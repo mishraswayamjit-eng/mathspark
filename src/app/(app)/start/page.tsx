@@ -75,6 +75,15 @@ type Step =
 
 type Diff = 'Easy' | 'Medium' | 'Hard';
 
+/** What POST /api/students answers with. */
+interface CreatedStudent {
+  id: string;
+  name: string;
+  grade: number;
+  avatarColor?: string;
+  trialExpiresAt?: string | null;
+}
+
 const STEP_PROGRESS: Record<Step, number> = {
   welcome: 0, gradeSelect: 10, goal: 20, valueProp1: 30,
   dailyGoal: 40, practiceTime: 50, valueProp2: 60,
@@ -188,6 +197,9 @@ export default function StartPage() {
   const [trialDaysLeft, setTrialDaysLeft] = useState<number | null>(null);
   const [trialExpiry,   setTrialExpiry]  = useState<string | null>(null);
   const [pin,           setPin]          = useState('');
+  // The account made by "Create Free Account", kept so a second tap (after a
+  // sign-in hiccup) does not make another one.
+  const [createdStudent, setCreatedStudent] = useState<CreatedStudent | null>(null);
 
   // ── Personalization state (saved to profile on sign-up) ───────────────────
   const [goal,          setGoal]         = useState<string>('');
@@ -334,27 +346,48 @@ export default function StartPage() {
     setError('');
     try {
       // 1. Create student with all collected preferences
-      const res = await fetch('/api/students', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({
-          name:                  name.trim(),
-          grade:                 selectedGrade,
-          parentEmail:           parentEmail.trim() || undefined,
-          examName:              goal || undefined,
-          dailyGoalMins:         dailyGoal,
-          preferredPracticeTime: practiceTime || undefined,
-          pin,
-        }),
-      });
-      const student = await res.json();
+      // (If an earlier tap made the account but could not sign in, reuse it
+      // instead of making a second one.)
+      let student = createdStudent;
+      if (!student) {
+        const res = await fetch('/api/students', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            name:                  name.trim(),
+            grade:                 selectedGrade,
+            parentEmail:           parentEmail.trim() || undefined,
+            examName:              goal || undefined,
+            dailyGoalMins:         dailyGoal,
+            preferredPracticeTime: practiceTime || undefined,
+            pin,
+          }),
+        });
+        const body = await res.json().catch(() => null);
+        if (!res.ok || !body || typeof body.id !== 'string') {
+          setError(
+            res.status === 429
+              ? 'Lots of new accounts were just made here. Please wait a few minutes and try again!'
+              : res.status === 400 && body && typeof body.error === 'string' && body.error.indexOf('email') !== -1
+                ? 'Please check the parent email address.'
+                : "We couldn't finish that. Please try again!",
+          );
+          return;
+        }
+        student = body as CreatedStudent;
+        setCreatedStudent(student);
+      }
 
       // 2. Set auth cookie (PIN is mandatory, so the session call must send it)
-      await fetch('/api/student/session', {
+      const sessionRes = await fetch('/api/student/session', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ studentId: student.id, pin }),
       });
+      if (!sessionRes.ok) {
+        setError("Your account is ready, but we couldn't sign you in yet. Tap the button to try again!");
+        return;
+      }
 
       // 3. localStorage for UI
       localStorage.setItem('mathspark_student_id',    student.id);
@@ -782,9 +815,9 @@ export default function StartPage() {
           </div>
 
           <details className="group">
-            <summary className="text-xs font-extrabold text-gray-500 uppercase tracking-wide cursor-pointer select-none list-none flex items-center gap-1">
+            <summary className="text-xs font-extrabold text-gray-500 uppercase tracking-wide cursor-pointer select-none list-none flex items-center gap-1 min-h-[48px]">
               <span className="text-gray-400 group-open:rotate-90 transition-transform">▶</span>
-              Add parent email for reports
+              Add parent email (to log in again later)
             </summary>
             <div className="mt-2 space-y-1">
               <input
@@ -795,7 +828,9 @@ export default function StartPage() {
                 aria-label="Parent email"
                 className="w-full border-2 border-line rounded-control px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-action transition-colors"
               />
-              <p className="text-xs text-gray-500 font-medium">For weekly progress reports</p>
+              <p className="text-xs text-gray-500 font-medium">
+                You&apos;ll use this email and your PIN to log in on another phone or after logging out. It is also where weekly progress reports go.
+              </p>
             </div>
           </details>
 
@@ -825,11 +860,31 @@ export default function StartPage() {
       const trimmed = displayName.trim().slice(0, 20) || name.trim().slice(0, 20);
       if (!trimmed) return;
       if (studentId) {
-        await fetch('/api/student', {
-          method: 'PATCH',
-          headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ displayName: trimmed, avatarColor }),
-        }).catch((err) => logError('[fetch]', err));
+        try {
+          // The colour is saved on its own first, so it is kept even when the
+          // name needs another go.
+          await fetch('/api/student', {
+            method: 'PATCH',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ avatarColor }),
+          });
+          const res = await fetch('/api/student', {
+            method: 'PATCH',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ displayName: trimmed }),
+          });
+          if (res.status === 409) {
+            setDnError('That name is already taken — try adding a number!');
+            return;
+          }
+          if (res.status === 422) {
+            setDnError("Let's pick a different name.");
+            return;
+          }
+        } catch (err) {
+          // Offline or a hiccup: carry on; the name can be set later in the profile.
+          logError('[start] save leaderboard name', err);
+        }
       }
       router.push(pendingRoute);
     };

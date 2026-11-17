@@ -26,8 +26,10 @@ export default function StudentLoginPage() {
       const res  = await fetch(`/api/student/lookup?email=${encodeURIComponent(email.trim().toLowerCase())}`);
       const data = await res.json();
 
-      if (!res.ok || !data.children?.length) {
-        setError('No account found for that email, or no children added yet.');
+      if (res.status === 429) {
+        setError('Too many tries. Please wait a minute and try again.');
+      } else if (!res.ok || !data.children?.length) {
+        setError("We couldn't find a profile for that email. Try the parent email you gave when you signed up.");
       } else {
         setChildren(data.children);
       }
@@ -62,13 +64,18 @@ export default function StudentLoginPage() {
           setLoading(false);
           return;
         }
-        setError(data.error || 'Login failed');
+        setError(data.error || "We couldn't sign you in just now. Please try again.");
+        setPin('');
         setLoading(false);
         return;
       }
 
       localStorage.setItem('mathspark_student_id',   child.id);
       localStorage.setItem('mathspark_student_name', child.name);
+      // Many screens read the grade from this device; without it they fall back to Grade 4.
+      if (typeof data.grade === 'number') {
+        localStorage.setItem('mathspark_student_grade', String(data.grade));
+      }
       router.push('/home');
     } catch {
       setError("We couldn't finish that. Please try again.");

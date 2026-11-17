@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
-import { ensureCurrentWeekLeague, getWeekBounds, TIER_NAMES, buildLeagueMembers } from '@/lib/leaderboard';
+import { ensureCurrentWeekLeague, getWeekBounds, TIER_NAMES, buildLeagueMembers, leagueDemoteCount } from '@/lib/leaderboard';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { logError } from '@/lib/logger';
 import type { LeagueData, LeagueMember } from '@/types';
@@ -31,10 +31,15 @@ export async function GET() {
     const { league } = membership;
 
     // Build ranked members (live ranks by weeklyXP desc)
-    const members: LeagueMember[] = buildLeagueMembers(league.members, studentId);
+    // A child who chose "Hide from leaderboard" is not shown to league-mates
+    // (they still see themself).
+    const visibleMembers = league.members.filter(
+      (m) => !m.student.hiddenFromLeaderboard || m.studentId === studentId,
+    );
+    const members: LeagueMember[] = buildLeagueMembers(visibleMembers, studentId);
     const total  = members.length;
     const promoteCount = Math.max(1, Math.floor(total * 0.2));
-    const demoteCount  = Math.max(1, Math.floor(total * 0.2));
+    const demoteCount  = leagueDemoteCount(total, league.tier);
 
     const myMember = members.find((m) => m.isMe);
 
@@ -52,7 +57,7 @@ export async function GET() {
       demoteCount,
     };
 
-    return NextResponse.json(data);
+    return NextResponse.json(data, { headers: { 'Cache-Control': 'private, no-store' } });
   } catch (err) {
     logError('[leaderboard GET]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

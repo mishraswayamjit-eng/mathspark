@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
-import { getWeekBounds, TIER_NAMES, buildLeagueMembers } from '@/lib/leaderboard';
+import { getWeekBounds, TIER_NAMES, buildLeagueMembers, leagueDemoteCount } from '@/lib/leaderboard';
 import { getDisplayName } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { logError } from '@/lib/logger';
@@ -31,7 +31,7 @@ export async function GET() {
               orderBy: { weeklyXP: 'desc' },
               include: {
                 student: {
-                  select: { id: true, name: true, displayName: true, avatarColor: true },
+                  select: { id: true, name: true, displayName: true, avatarColor: true, hiddenFromLeaderboard: true },
                 },
               },
             },
@@ -66,10 +66,18 @@ export async function GET() {
     }
 
     const { league } = membership;
-    const members: LeagueMember[] = buildLeagueMembers(league.members, studentId);
+    // Hidden children are not shown to league-mates (they still see themself).
+    // Rows stored before small leagues stopped moving anyone down may carry a
+    // "demoted" flag that changed nothing (lowest tier) or sits beside
+    // "promoted"; those are not shown as a move down.
+    const visibleMembers = league.members
+      .filter((m) => !m.student.hiddenFromLeaderboard || m.studentId === studentId)
+      .map((m) => ({ ...m, demoted: m.demoted && !m.promoted && league.tier > 1 }));
+    const members: LeagueMember[] = buildLeagueMembers(visibleMembers, studentId);
     const total  = members.length;
     const promoteCount = Math.max(1, Math.floor(total * 0.2));
-    const demoteCount  = Math.max(1, Math.floor(total * 0.2));
+    const demoteCount  = leagueDemoteCount(total, league.tier);
+    const myDemoted    = membership.demoted && !membership.promoted && league.tier > 1;
 
     const leagueData: LeagueData = {
       leagueId:     league.id,
@@ -93,7 +101,7 @@ export async function GET() {
     const currentTier = student?.currentLeagueTier ?? 1;
     const prevTier    = membership.promoted
       ? currentTier - 1
-      : membership.demoted
+      : myDemoted
         ? currentTier + 1
         : currentTier;
 
@@ -108,12 +116,12 @@ export async function GET() {
       league:   leagueData,
       myRank:   membership.rank,
       promoted: membership.promoted,
-      demoted:  membership.demoted,
+      demoted:  myDemoted,
       awards,
       myPromotion,
     };
 
-    return NextResponse.json(result);
+    return NextResponse.json(result, { headers: { 'Cache-Control': 'private, no-store' } });
   } catch (err) {
     logError('[leaderboard/last-week GET]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

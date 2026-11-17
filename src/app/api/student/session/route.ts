@@ -14,7 +14,10 @@ export async function POST(req: Request) {
   // Rate limit: 10 per minute per IP
   const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown';
   if (!checkRateLimit(`student-session:${ip}`, 10, 60_000)) {
-    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+    return NextResponse.json(
+      { error: 'Too many tries. Take a short break and try again in a minute.' },
+      { status: 429 },
+    );
   }
 
   let studentId: string;
@@ -67,9 +70,17 @@ export async function POST(req: Request) {
     if (!pin) {
       return NextResponse.json({ error: 'PIN required', requiresPin: true }, { status: 401 });
     }
+    // Per-account limit on PIN tries, on top of the per-IP limit above: a
+    // 4-digit PIN must not be guessable by trying them all.
+    if (!checkRateLimit(`student-pin:${student.id}`, 8, 15 * 60_000)) {
+      return NextResponse.json(
+        { error: 'Too many tries. Take a short break and try again in a few minutes.' },
+        { status: 429 },
+      );
+    }
     const pinValid = await bcrypt.compare(pin, student.pinHash);
     if (!pinValid) {
-      return NextResponse.json({ error: 'Incorrect PIN' }, { status: 401 });
+      return NextResponse.json({ error: "That PIN didn't match — let's try again!" }, { status: 401 });
     }
   }
 

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
+import { MONETIZATION_ENABLED } from '@/lib/monetization';
 
 export default function AddChildPage() {
   const router         = useRouter();
@@ -93,7 +94,9 @@ export default function AddChildPage() {
         </form>
 
         <p className="text-ink-muted text-xs text-center mt-4">
-          After adding your child, subscribe to unlock full access.
+          {MONETIZATION_ENABLED
+            ? 'After adding your child, subscribe to unlock full access.'
+            : 'After adding your child, set a login PIN for them on your dashboard.'}
         </p>
       </div>
     </div>

@@ -73,16 +73,26 @@ export default function ParentDashboardPage() {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-paper p-8 text-center">
         <div className="text-5xl mb-4">😕</div>
-        <h2 className="text-xl font-extrabold text-ink mb-2">Report not found</h2>
-        <p className="text-gray-500 text-sm">This link may have expired or the student ID is invalid.</p>
+        <h2 className="text-xl font-extrabold text-ink mb-2">Sign in to see this report</h2>
+        <p className="text-gray-500 text-sm">
+          This report opens for the parent account that the child was added to.
+        </p>
+        <a
+          href="/auth/login"
+          className="mt-4 inline-flex items-center justify-center min-h-[48px] bg-action text-white border-2 border-ink shadow-hard-sm font-extrabold rounded-control px-6 text-sm"
+        >
+          Parent sign in →
+        </a>
       </div>
     );
   }
 
   const { student, stats, topics, weeklyData } = data;
-  const accuracy = stats.totalSolved > 0
-    ? Math.round((stats.totalSolved / Math.max(topics.reduce((s, t) => s + t.attempted, 0), 1)) * 100)
-    : 0;
+  // Both numbers come from the same per-topic totals, so the ratio is always a
+  // true percentage (the "Solved" stat counts every grade the child has tried).
+  const totalAttempted = topics.reduce((s, t) => s + t.attempted, 0);
+  const totalCorrect   = topics.reduce((s, t) => s + t.correct, 0);
+  const accuracy = totalAttempted > 0 ? Math.round((totalCorrect / totalAttempted) * 100) : 0;
   const maxBar = Math.max(...weeklyData.map((d) => d.count), 1);
 
   const sortedTopics = [...topics].sort(
@@ -113,7 +123,7 @@ export default function ParentDashboardPage() {
             {[
               { emoji: '✅', value: `${stats.totalSolved}`, label: 'Solved' },
               { emoji: '🔥', value: `${stats.streakDays}d`, label: 'Streak' },
-              { emoji: '⭐', value: `${stats.topicsMastered}/16`, label: 'Mastered' },
+              { emoji: '⭐', value: `${stats.topicsMastered}/${topics.length}`, label: 'Mastered' },
             ].map(({ emoji, value, label }) => (
               <div key={label} className="bg-white/10 border-2 border-white/30 rounded-tile p-3 text-center">
                 <div className="text-xl mb-0.5">{emoji}</div>
@@ -164,7 +174,7 @@ export default function ParentDashboardPage() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-gray-500 text-center font-medium">Correct answers per day</p>
+          <p className="text-xs text-gray-500 text-center font-medium">Questions practised per day</p>
         </div>
 
         {/* ── Strongest & Weakest ───────────────────────────────────────── */}
@@ -193,7 +203,7 @@ export default function ParentDashboardPage() {
 
         {/* ── All topics ────────────────────────────────────────────────── */}
         <div className="bg-white rounded-card border-2 border-line p-5 mt-3">
-          <h2 className="text-title text-ink mb-4">All 16 Topics</h2>
+          <h2 className="text-title text-ink mb-4">Grade {student.grade} Topics</h2>
           <div className="space-y-2">
             {sortedTopics.map((t) => {
               const pct = t.attempted > 0 ? Math.round(t.correct / t.attempted * 100) : 0;
@@ -272,7 +282,7 @@ export default function ParentDashboardPage() {
         {/* ── Footer ───────────────────────────────────────────────────── */}
         <div className="mt-8 text-center">
           <p className="text-xs text-ink-muted font-medium">
-            MathSpark · Grade 4 Math · India
+            MathSpark · Grade {student.grade} Math · India
           </p>
           <p className="text-xs text-ink-muted font-medium mt-1">
             This is a read-only progress view for parents.

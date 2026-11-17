@@ -9,14 +9,18 @@ import VoicePicker from '@/components/voice/VoicePicker';
 import { getTopicsForGrade } from '@/data/topicTree';
 import { logError } from '@/lib/logger';
 import { useStudent } from '@/components/shell/StudentProvider';
+import { MONETIZATION_ENABLED } from '@/lib/monetization';
 
 // ── Sub-components ────────────────────────────────────────────────────────────
 
-function Toggle({ on, onToggle }: { on: boolean; onToggle: () => void }) {
+function Toggle({ on, onToggle, label }: { on: boolean; onToggle: () => void; label: string }) {
   return (
     <button onClick={onToggle}
-      className="relative min-w-[44px] min-h-[44px] flex items-center justify-center flex-shrink-0"
-      aria-label="toggle"
+      type="button"
+      role="switch"
+      aria-checked={on}
+      aria-label={label}
+      className="relative min-w-[48px] min-h-[48px] flex items-center justify-center flex-shrink-0"
     >
       <div className={`relative w-12 h-6 rounded-full transition-colors ${on ? 'bg-action' : 'bg-line'}`}>
         <div className={`absolute top-1 w-4 h-4 rounded-full bg-white transition-transform ${on ? 'translate-x-7' : 'translate-x-1'}`} />
@@ -51,7 +55,8 @@ function PillSelector<T extends string | number>({
         <button
           key={String(opt)}
           onClick={() => onChange(opt)}
-          className={`px-3 py-1.5 rounded-full border-2 text-xs font-extrabold transition-[colors,transform] active:scale-95 min-h-0 ${
+          aria-pressed={value === opt}
+          className={`px-4 min-h-[48px] rounded-full border-2 text-xs font-extrabold transition-[colors,transform] active:scale-95 ${
             value === opt
               ? 'bg-action border-action text-white'
               : 'bg-soft border-line text-ink-muted hover:border-ink'
@@ -84,7 +89,7 @@ export default function ProfilePage() {
   // Student meta — starts from the child the app shell loaded on the server, so
   // the first render is the same on the server and in the browser (reading
   // localStorage here made the two differ) and the header paints with real data.
-  const { student: shellStudent } = useStudent();
+  const { student: shellStudent, refresh: refreshShell } = useStudent();
   const [studentId,   setStudentId]   = useState(shellStudent ? shellStudent.id : '');
   const [name,        setName]        = useState(shellStudent ? shellStudent.name : '');
   const [grade,       setGrade]       = useState<number>(
@@ -101,6 +106,11 @@ export default function ProfilePage() {
   const [editingName,    setEditingName]    = useState(false);
   const [newName,        setNewName]        = useState('');
   const [newDisplayName, setNewDisplayName] = useState('');
+  // The leaderboard name the server holds ('' when none has been set).
+  const [savedDisplayName, setSavedDisplayName] = useState('');
+  // The grade a child tapped, waiting for "Yes, change" (null when not asking).
+  const [pendingGrade,   setPendingGrade]   = useState<number | null>(null);
+  const [savingGrade,    setSavingGrade]    = useState(false);
   const [city,           setCity]           = useState('');
 
   // Exam goals
@@ -129,6 +139,7 @@ export default function ProfilePage() {
   // UI
   const [loading,    setLoading]    = useState(true);
   const [fetchError, setFetchError] = useState(false);
+  const [loggingOut, setLoggingOut] = useState(false);
   const [toast,   setToast]     = useState<{ msg: string; ok: boolean } | null>(null);
 
   function showToast(msg: string, ok: boolean) {
@@ -147,12 +158,19 @@ export default function ProfilePage() {
 
     // Fetch student data
     fetch('/api/profile')
-      .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
+      .then((r) => {
+        // Signed out (the session ran out): go and sign in again.
+        if (r.status === 401) { router.replace('/student/login'); return null; }
+        if (!r.ok) throw new Error("Fetch failed");
+        return r.json();
+      })
       .then((d) => {
+        if (!d) return;
         const s = d.student ?? d;
         setName(s.name ?? '');
         setNewName(s.name ?? '');
-        setNewDisplayName(s.displayName ?? s.name ?? '');
+        setNewDisplayName(s.displayName ?? '');
+        setSavedDisplayName(s.displayName ?? '');
         setGrade(s.grade ?? 4);
         setAvatarColor(s.avatarColor ?? '#3B82F6');
         setCreatedAt(s.createdAt ?? '');
@@ -175,50 +193,81 @@ export default function ProfilePage() {
       .catch((err) => { logError('[profile] fetch student settings', err); setFetchError(true); setLoading(false); });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
-  async function patchStudent(fields: Record<string, unknown>) {
-    if (!studentId) return;
-    await fetch('/api/student', {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...fields }),
-    }).catch((err) => logError('[fetch]', err));
+  const NOT_SAVED = "That didn't save. Please try again.";
+
+  // Saves fields and says whether the server kept them, so no screen claims a
+  // save that did not happen. `error` is the server's own message when it sent one.
+  async function patchStudent(fields: Record<string, unknown>): Promise<{ ok: boolean; status: number; error: string }> {
+    if (!studentId) return { ok: false, status: 0, error: NOT_SAVED };
+    try {
+      const res = await fetch('/api/student', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...fields }),
+      });
+      if (res.ok) return { ok: true, status: res.status, error: '' };
+      const body = await res.json().catch(() => null);
+      const message = body && typeof body.error === 'string' && res.status < 500 && res.status !== 401
+        ? body.error
+        : NOT_SAVED;
+      return { ok: false, status: res.status, error: message };
+    } catch (err) {
+      logError('[profile] save settings', err);
+      return { ok: false, status: 0, error: NOT_SAVED };
+    }
   }
 
   async function saveName() {
     const t = newName.trim();
     if (!t) return;
-    localStorage.setItem('mathspark_student_name', t);
-    setName(t);
+    // The name and the leaderboard name are saved apart: a leaderboard name
+    // that is already taken must not stop the real name from changing.
+    if (t !== name) {
+      const saved = await patchStudent({ name: t });
+      if (!saved.ok) { showToast(saved.error, false); return; }
+      localStorage.setItem('mathspark_student_name', t);
+      setName(t);
+      refreshShell();
+    }
+    // An empty box leaves the leaderboard name as it is (league-mates then see the first name).
+    const dn = newDisplayName.trim().slice(0, 20);
+    if (dn && dn !== savedDisplayName) {
+      const saved = await patchStudent({ displayName: dn });
+      if (!saved.ok) {
+        // Keep the box open so the child can pick another leaderboard name.
+        showToast(saved.error, false);
+        return;
+      }
+      setSavedDisplayName(dn);
+    }
     setEditingName(false);
-    await patchStudent({ name: t, displayName: newDisplayName.trim().slice(0, 20) || t });
     showToast('Name updated ✓', true);
   }
 
   async function saveExam() {
     setSavingExam(true);
-    await patchStudent({ examName, examDate: examDate || undefined, targetScore });
+    // An empty date is sent as '' so the server clears it.
+    const saved = await patchStudent({ examName, examDate, targetScore });
     setSavingExam(false);
-    showToast('Exam goal saved ✓', true);
+    showToast(saved.ok ? 'Exam goal saved ✓' : saved.error, saved.ok);
   }
 
   async function saveParentContact() {
     setSavingContact(true);
-    localStorage.setItem('mathspark_parent_email', parentEmail.trim());
-    localStorage.setItem('mathspark_parent_whatsapp', parentWhatsApp.trim());
-    try {
-      await patchStudent({ parentEmail: parentEmail.trim(), parentWhatsApp: parentWhatsApp.trim() });
-      showToast('Contact saved ✓', true);
-    } catch {
-      showToast('Could not save. Try again.', false);
-    } finally {
-      setSavingContact(false);
+    const saved = await patchStudent({ parentEmail: parentEmail.trim(), parentWhatsApp: parentWhatsApp.trim() });
+    if (saved.ok) {
+      localStorage.setItem('mathspark_parent_email', parentEmail.trim());
+      localStorage.setItem('mathspark_parent_whatsapp', parentWhatsApp.trim());
     }
+    setSavingContact(false);
+    showToast(saved.ok ? 'Contact saved ✓' : saved.error, saved.ok);
   }
 
   async function toggleHidden() {
     const next = !hiddenFromLeaderboard;
     setHiddenFromLeaderboard(next);
-    await patchStudent({ hiddenFromLeaderboard: next });
+    const saved = await patchStudent({ hiddenFromLeaderboard: next });
+    if (!saved.ok) { setHiddenFromLeaderboard(!next); showToast(saved.error, false); }
   }
 
   function toggleMuted() {
@@ -233,43 +282,66 @@ export default function ProfilePage() {
     localStorage.setItem('mathspark_notifications', String(next));
   }
 
+  // The choices below show at once and go back to what they were if the save does not go through.
   async function updateDailyGoal(mins: number) {
+    const before = dailyGoalMins;
     setDailyGoalMins(mins);
-    await patchStudent({ dailyGoalMins: mins });
+    const saved = await patchStudent({ dailyGoalMins: mins });
+    if (!saved.ok) { setDailyGoalMins(before); showToast(saved.error, false); }
   }
 
   async function updateSessionLength(mins: number) {
+    const before = sessionLengthMins;
     setSessionLengthMins(mins);
-    await patchStudent({ sessionLengthMins: mins });
+    const saved = await patchStudent({ sessionLengthMins: mins });
+    if (!saved.ok) { setSessionLengthMins(before); showToast(saved.error, false); }
   }
 
   async function updatePracticeTime(t: string) {
+    const before = preferredPracticeTime;
     setPreferredPracticeTime(t);
-    await patchStudent({ preferredPracticeTime: t });
+    const saved = await patchStudent({ preferredPracticeTime: t });
+    if (!saved.ok) { setPreferredPracticeTime(before); showToast(saved.error, false); }
   }
 
   async function toggleFocus(topicId: string) {
+    const before = focusTopics;
     const next = focusTopics.includes(topicId)
       ? focusTopics.filter((t) => t !== topicId)
       : [...focusTopics, topicId];
     setFocusTopics(next);
-    await patchStudent({ focusTopics: next });
+    const saved = await patchStudent({ focusTopics: next });
+    if (!saved.ok) { setFocusTopics(before); showToast(saved.error, false); }
   }
 
   async function toggleConfident(topicId: string) {
+    const before = confidentTopics;
     const next = confidentTopics.includes(topicId)
       ? confidentTopics.filter((t) => t !== topicId)
       : [...confidentTopics, topicId];
     setConfidentTopics(next);
-    await patchStudent({ confidentTopics: next });
+    const saved = await patchStudent({ confidentTopics: next });
+    if (!saved.ok) { setConfidentTopics(before); showToast(saved.error, false); }
   }
 
+  // Runs only after the child has said "Yes, change" (see the Account card).
   async function changeGrade(g: number) {
+    setSavingGrade(true);
+    const saved = await patchStudent({ grade: g, focusTopics: [], confidentTopics: [] });
+    setSavingGrade(false);
+    setPendingGrade(null);
+    if (!saved.ok) { showToast(saved.error, false); return; }
+
     setGrade(g);
     setFocusTopics([]);
     setConfidentTopics([]);
     localStorage.setItem('mathspark_student_grade', String(g));
-    await patchStudent({ grade: g, focusTopics: [], confidentTopics: [] });
+    // The topic list keeps a short-lived copy of the old grade on this device;
+    // left alone it would put the old grade back.
+    localStorage.removeItem(`mathspark_dashboard_${studentId}`);
+    // Tell the rest of the app (Learn, the header) about the new grade now,
+    // not after the next full page load.
+    refreshShell();
     showToast(`Grade changed to ${g} ✓`, true);
     // Invalidate brain analytics so the new grade's topics are recomputed
     fetch('/api/brain/recompute', {
@@ -286,9 +358,27 @@ export default function ProfilePage() {
     else router.push('/home');
   }
 
-  function logout() {
+  async function logout() {
+    if (loggingOut) return;
+    setLoggingOut(true);
+    // End the session on the server first: clearing this device's storage alone
+    // left the child signed in (the cookie lasts 30 days).
+    let ended = false;
+    try {
+      const res = await fetch('/api/student/session', { method: 'DELETE' });
+      ended = res.ok;
+    } catch (err) {
+      logError('[profile] log out', err);
+    }
+    if (!ended) {
+      // Offline or a hiccup: stay signed in and say so, never half logged out.
+      setLoggingOut(false);
+      showToast("We couldn't log you out just now. Please try again.", false);
+      return;
+    }
     Object.keys(localStorage).filter((k) => k.startsWith('mathspark_')).forEach((k) => localStorage.removeItem(k));
-    router.replace('/start');
+    // A full page load, so nothing of this child stays in memory for the next person.
+    window.location.href = '/start';
   }
 
   // ── Error state ─────────────────────────────────────────────────────────
@@ -297,7 +387,7 @@ export default function ProfilePage() {
       <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
         <p className="text-ink font-extrabold text-lg">Oops! Sparky tripped over a number</p>
         <p className="text-ink-muted text-sm">Could not load your profile. Check your connection.</p>
-        <button onClick={() => window.location.reload()} className="bg-action text-white border-2 border-ink shadow-hard-sm font-extrabold px-6 py-2.5 rounded-control text-sm active:scale-95 transition-transform">
+        <button onClick={() => window.location.reload()} className="min-h-[48px] bg-action text-white border-2 border-ink shadow-hard-sm font-extrabold px-6 py-2.5 rounded-control text-sm active:scale-95 transition-transform">
           Retry
         </button>
       </div>
@@ -358,7 +448,8 @@ export default function ProfilePage() {
     ? new Date(createdAt).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })
     : '';
 
-  const gradeTopics = getTopicsForGrade(grade);
+  // Every exam chapter of the child's grade (the "extra practice" pools are left out).
+  const gradeTopics = getTopicsForGrade(grade).filter((t) => !t.extra);
 
   const examDaysLeft = examDate
     ? Math.max(0, Math.ceil((new Date(examDate).getTime() - Date.now()) / MS_PER_DAY))
@@ -380,8 +471,9 @@ export default function ProfilePage() {
           <div className="bg-white rounded-card border-2 border-ink p-6 w-full max-w-xs shadow-hard-lg animate-pop-in space-y-4">
             <h3 className="text-title text-ink">Change your name</h3>
             <div className="space-y-2">
-              <label className="text-xs font-extrabold text-ink-muted">Your name</label>
+              <label htmlFor="profile-name" className="text-xs font-extrabold text-ink-muted">Your name</label>
               <input
+                id="profile-name"
                 type="text" autoFocus value={newName}
                 onChange={(e) => setNewName(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && saveName()}
@@ -391,8 +483,9 @@ export default function ProfilePage() {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-xs font-extrabold text-ink-muted">Leaderboard name</label>
+              <label htmlFor="profile-leaderboard-name" className="text-xs font-extrabold text-ink-muted">Leaderboard name</label>
               <input
+                id="profile-leaderboard-name"
                 type="text" value={newDisplayName}
                 onChange={(e) => setNewDisplayName(e.target.value)}
                 placeholder="Max 20 chars"
@@ -444,8 +537,7 @@ export default function ProfilePage() {
         </div>
         <button
           onClick={() => setEditingName(true)}
-          style={{ minHeight: 0 }}
-          className="mt-4 bg-white hover:bg-soft text-ink border-2 border-white text-sm font-bold rounded-full px-4 py-2 transition-colors"
+          className="mt-4 min-h-[48px] bg-white hover:bg-soft text-ink border-2 border-white text-sm font-bold rounded-full px-4 py-2 transition-colors"
         >
           <span aria-hidden="true">✏️ </span>Edit name
         </button>
@@ -455,8 +547,9 @@ export default function ProfilePage() {
       <Card title="My Exam">
         <div className="space-y-3">
           <div>
-            <label className="text-xs font-extrabold text-ink-muted">Exam name</label>
+            <label htmlFor="profile-exam-name" className="text-xs font-extrabold text-ink-muted">Exam name</label>
             <input
+              id="profile-exam-name"
               type="text" value={examName}
               onChange={(e) => setExamName(e.target.value)}
               placeholder="e.g. IPM 2027"
@@ -464,8 +557,9 @@ export default function ProfilePage() {
             />
           </div>
           <div>
-            <label className="text-xs font-extrabold text-ink-muted">Exam date</label>
+            <label htmlFor="profile-exam-date" className="text-xs font-extrabold text-ink-muted">Exam date</label>
             <input
+              id="profile-exam-date"
               type="date" value={examDate}
               onChange={(e) => setExamDate(e.target.value)}
               className="w-full mt-1.5 border-2 border-line rounded-control px-3 py-2.5 text-sm font-medium text-ink outline-none focus:border-action"
@@ -484,7 +578,7 @@ export default function ProfilePage() {
                   key={s}
                   onClick={() => setTargetScore(s)}
                   aria-pressed={targetScore === s}
-                  className={`flex-1 py-2 rounded-control border-2 text-sm font-extrabold transition-colors min-h-0 ${
+                  className={`flex-1 min-h-[48px] rounded-control border-2 text-sm font-extrabold transition-colors ${
                     targetScore === s
                       ? 'bg-action border-action text-white'
                       : 'bg-soft border-line text-ink-muted hover:border-ink'
@@ -498,8 +592,7 @@ export default function ProfilePage() {
           <button
             onClick={saveExam}
             disabled={savingExam}
-            style={{ minHeight: 0 }}
-            className="px-4 py-2 rounded-control bg-action border-2 border-ink shadow-hard-sm text-white text-xs font-extrabold disabled:opacity-60"
+            className="px-4 min-h-[48px] rounded-control bg-action border-2 border-ink shadow-hard-sm text-white text-xs font-extrabold disabled:opacity-60"
           >
             {savingExam ? 'Saving…' : 'Save goals ✓'}
           </button>
@@ -539,7 +632,8 @@ export default function ProfilePage() {
               <button
                 key={v}
                 onClick={() => updatePracticeTime(v)}
-                className={`flex-1 py-2 rounded-control border-2 text-xs font-extrabold transition-colors min-h-0 ${
+                aria-pressed={preferredPracticeTime === v}
+                className={`flex-1 min-h-[48px] rounded-control border-2 text-xs font-extrabold transition-colors ${
                   preferredPracticeTime === v
                     ? 'bg-action border-action text-white'
                     : 'bg-soft border-line text-ink-muted hover:border-ink'
@@ -552,17 +646,17 @@ export default function ProfilePage() {
           <SettingRow
             icon="🔊" label="Sound effects"
             sublabel={muted ? 'Sounds are off' : 'Sounds are on'}
-            control={<Toggle on={!muted} onToggle={toggleMuted} />}
+            control={<Toggle on={!muted} onToggle={toggleMuted} label="Sound effects" />}
           />
           <SettingRow
             icon="🔔" label="Daily reminders"
             sublabel="Coming soon"
-            control={<Toggle on={notifications} onToggle={toggleNotifications} />}
+            control={<Toggle on={notifications} onToggle={toggleNotifications} label="Daily reminders" />}
           />
           <SettingRow
             icon="🙈" label="Hide from leaderboard"
             sublabel={hiddenFromLeaderboard ? 'Your profile is hidden' : 'Others can see your rank'}
-            control={<Toggle on={hiddenFromLeaderboard} onToggle={toggleHidden} />}
+            control={<Toggle on={hiddenFromLeaderboard} onToggle={toggleHidden} label="Hide from leaderboard" />}
           />
         </div>
       </Card>
@@ -580,19 +674,20 @@ export default function ProfilePage() {
         <div className="mb-4">
           <p className="text-sm font-bold text-gray-700 mb-2"><span aria-hidden="true">📌 </span>Topics I Find Hard</p>
           <div className="flex flex-wrap gap-1.5">
-            {gradeTopics.slice(0, 10).map((t) => (
+            {gradeTopics.map((t) => (
               <button
                 key={t.id}
                 onClick={() => toggleFocus(t.id)}
-                className={`flex items-center gap-1 px-3 py-1.5 rounded-full border-2 text-xs font-extrabold transition-colors min-h-0 ${
+                aria-pressed={focusTopics.includes(t.id)}
+                className={`flex items-center gap-1 px-3 min-h-[48px] rounded-full border-2 text-xs font-extrabold text-left transition-colors ${
                   focusTopics.includes(t.id)
                     ? 'bg-retry-soft border-retry text-retry'
                     : 'bg-soft border-line text-ink-muted hover:border-ink'
                 }`}
               >
                 <span aria-hidden="true">{t.emoji}</span>
-                <span>{t.name.split(' ')[0]}</span>
-                {focusTopics.includes(t.id) && <span>×</span>}
+                <span>{t.name}</span>
+                {focusTopics.includes(t.id) && <span aria-hidden="true">×</span>}
               </button>
             ))}
           </div>
@@ -601,19 +696,20 @@ export default function ProfilePage() {
         <div>
           <p className="text-sm font-bold text-gray-700 mb-2"><span aria-hidden="true">💪 </span>Topics I&apos;m Confident In</p>
           <div className="flex flex-wrap gap-1.5">
-            {gradeTopics.slice(0, 10).map((t) => (
+            {gradeTopics.map((t) => (
               <button
                 key={t.id}
                 onClick={() => toggleConfident(t.id)}
-                className={`flex items-center gap-1 px-3 py-1.5 rounded-full border-2 text-xs font-extrabold transition-colors min-h-0 ${
+                aria-pressed={confidentTopics.includes(t.id)}
+                className={`flex items-center gap-1 px-3 min-h-[48px] rounded-full border-2 text-xs font-extrabold text-left transition-colors ${
                   confidentTopics.includes(t.id)
                     ? 'bg-success-soft border-success text-ink'
                     : 'bg-soft border-line text-ink-muted hover:border-ink'
                 }`}
               >
                 <span aria-hidden="true">{t.emoji}</span>
-                <span>{t.name.split(' ')[0]}</span>
-                {confidentTopics.includes(t.id) && <span>×</span>}
+                <span>{t.name}</span>
+                {confidentTopics.includes(t.id) && <span aria-hidden="true">×</span>}
               </button>
             ))}
           </div>
@@ -624,8 +720,9 @@ export default function ProfilePage() {
       <Card title="Parent Settings">
         <div className="space-y-3">
           <div>
-            <label className="text-xs font-extrabold text-ink-muted">Parent email</label>
+            <label htmlFor="profile-parent-email" className="text-xs font-extrabold text-ink-muted">Parent email</label>
             <input
+              id="profile-parent-email"
               type="email" value={parentEmail}
               onChange={(e) => setParentEmail(e.target.value)}
               placeholder="parent@email.com"
@@ -633,8 +730,9 @@ export default function ProfilePage() {
             />
           </div>
           <div>
-            <label className="text-xs font-extrabold text-ink-muted">WhatsApp number</label>
+            <label htmlFor="profile-parent-whatsapp" className="text-xs font-extrabold text-ink-muted">WhatsApp number</label>
             <input
+              id="profile-parent-whatsapp"
               type="tel" value={parentWhatsApp}
               onChange={(e) => setParentWhatsApp(e.target.value)}
               placeholder="+91 98XXX XXXXX"
@@ -644,8 +742,7 @@ export default function ProfilePage() {
           <button
             onClick={saveParentContact}
             disabled={savingContact}
-            style={{ minHeight: 0 }}
-            className="px-4 py-2 rounded-control bg-action border-2 border-ink shadow-hard-sm text-white text-xs font-extrabold disabled:opacity-60"
+            className="px-4 min-h-[48px] rounded-control bg-action border-2 border-ink shadow-hard-sm text-white text-xs font-extrabold disabled:opacity-60"
           >
             {savingContact ? 'Saving…' : 'Save contact ✓'}
           </button>
@@ -662,8 +759,10 @@ export default function ProfilePage() {
               {[2,3,4,5,6,7,8,9].map((g) => (
                 <button
                   key={g}
-                  onClick={() => changeGrade(g)}
-                  className={`py-2 rounded-control border-2 text-xs font-extrabold transition-colors min-h-0 ${
+                  onClick={() => { if (g !== grade) setPendingGrade(g); }}
+                  aria-pressed={grade === g}
+                  disabled={savingGrade}
+                  className={`min-h-[48px] rounded-control border-2 text-xs font-extrabold transition-colors disabled:opacity-60 ${
                     grade === g
                       ? 'bg-action border-action text-white'
                       : 'bg-soft border-line text-ink-muted hover:border-ink'
@@ -673,18 +772,45 @@ export default function ProfilePage() {
                 </button>
               ))}
             </div>
+            {/* One tap must not switch the whole app to another grade: ask first. */}
+            {pendingGrade !== null && (
+              <div className="mt-3 rounded-control border-2 border-ink bg-soft p-3" role="alertdialog" aria-label="Change grade">
+                <p className="text-sm font-bold text-ink">Change to Grade {pendingGrade}?</p>
+                <p className="text-xs text-ink-muted font-medium mt-0.5">
+                  Your topics and practice will switch to Grade {pendingGrade}. Everything you have done so far is kept.
+                </p>
+                <div className="flex gap-2 mt-3">
+                  <button
+                    onClick={() => changeGrade(pendingGrade)}
+                    disabled={savingGrade}
+                    className="flex-1 min-h-[48px] rounded-control bg-action border-2 border-ink shadow-hard-sm text-white text-sm font-extrabold disabled:opacity-60"
+                  >
+                    {savingGrade ? 'Changing…' : 'Yes, change'}
+                  </button>
+                  <button
+                    onClick={() => setPendingGrade(null)}
+                    disabled={savingGrade}
+                    className="flex-1 min-h-[48px] rounded-control bg-white border-2 border-line text-ink text-sm font-extrabold disabled:opacity-60"
+                  >
+                    Keep Grade {grade}
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
 
-          {/* Subscription */}
-          <div className="flex items-center justify-between py-2">
-            <div>
-              <p className="text-sm font-bold text-gray-700">Subscription</p>
-              <p className="text-xs text-gray-500 font-medium">Current plan</p>
+          {/* Subscription (only while payments are switched on) */}
+          {MONETIZATION_ENABLED && (
+            <div className="flex items-center justify-between py-2">
+              <div>
+                <p className="text-sm font-bold text-gray-700">Subscription</p>
+                <p className="text-xs text-gray-500 font-medium">Current plan</p>
+              </div>
+              <Link href="/pricing" className="min-h-[48px] inline-flex items-center text-xs font-extrabold text-action bg-soft border-2 border-line rounded-full px-3">
+                Upgrade →
+              </Link>
             </div>
-            <Link href="/pricing" className="text-xs font-extrabold text-action bg-soft border-2 border-line rounded-full px-3 py-1.5">
-              Upgrade →
-            </Link>
-          </div>
+          )}
 
           {/* Sparky Chat */}
           <div className="flex items-center justify-between py-2 border-t border-line">
@@ -692,13 +818,13 @@ export default function ProfilePage() {
               <span className="text-lg" aria-hidden="true">💬</span>
               <p className="text-sm font-bold text-gray-700">Sparky Chat</p>
             </div>
-            <Link href="/chat" className="text-xs font-extrabold text-action bg-soft border-2 border-line rounded-full px-3 py-1.5">
+            <Link href="/chat" className="min-h-[48px] inline-flex items-center text-xs font-extrabold text-action bg-soft border-2 border-line rounded-full px-3">
               → Open
             </Link>
           </div>
 
           <div className="pt-2">
-            <DuoButton variant="red" fullWidth onClick={logout}>
+            <DuoButton variant="red" fullWidth onClick={logout} loading={loggingOut}>
               Log out
             </DuoButton>
           </div>

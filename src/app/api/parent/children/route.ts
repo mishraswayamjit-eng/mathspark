@@ -14,9 +14,10 @@ export async function GET() {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const children = await prisma.student.findMany({
+    const rows = await prisma.student.findMany({
       where: { parentId: session.user.id, deletedAt: null },
       select: {
+        pinHash:                 true,
         id:                      true,
         name:                    true,
         grade:                   true,
@@ -32,7 +33,11 @@ export async function GET() {
       orderBy: { createdAt: 'asc' },
     });
 
-    return NextResponse.json({ children });
+    // The hash never leaves the server; the dashboard only needs to know
+    // whether a PIN has been set.
+    const children = rows.map(({ pinHash, ...child }) => ({ ...child, hasPin: Boolean(pinHash) }));
+
+    return NextResponse.json({ children }, { headers: { 'Cache-Control': 'private, no-store' } });
   } catch (err) {
     logError('[parent/children GET]', err);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

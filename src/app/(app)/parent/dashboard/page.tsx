@@ -12,6 +12,8 @@ interface Child {
   id:                      string;
   name:                    string;
   grade:                   number;
+  /** Whether a login PIN has been set (the PIN itself never reaches the browser). */
+  hasPin?:                 boolean;
   subscriptionId:          string | null;
   dailyUsageMinutes:       number;
   lastActiveDate:          string | null;
@@ -39,6 +41,13 @@ export default function ParentDashboard() {
   const [confirmId, setConfirmId] = useState<string | null>(null);
   const [busyId,    setBusyId]    = useState<string | null>(null);
   const [removeError, setRemoveError] = useState<string | null>(null);
+  // "Set / change PIN": which child's form is open, what is typed, and the last result.
+  const [pinEditId, setPinEditId] = useState<string | null>(null);
+  const [pinValue,  setPinValue]  = useState('');
+  const [pinBusy,   setPinBusy]   = useState(false);
+  const [pinMsg,    setPinMsg]    = useState<{ childId: string; ok: boolean; text: string } | null>(null);
+  // The child whose "Practice →" could not start a session, if any.
+  const [loginError, setLoginError] = useState<string | null>(null);
 
   useEffect(() => {
     if (status === 'unauthenticated') router.replace('/auth/login');
@@ -79,13 +88,75 @@ export default function ParentDashboard() {
     }
   }
 
+  // Save a new 4-digit PIN for one child (also the way back in after a forgotten PIN).
+  async function saveChildPin(childId: string) {
+    if (!/^\d{4}$/.test(pinValue)) {
+      setPinMsg({ childId, ok: false, text: 'Enter exactly 4 digits.' });
+      return;
+    }
+    setPinBusy(true);
+    setPinMsg(null);
+    try {
+      const res = await fetch(`/api/parent/children/${childId}`, {
+        method: 'PATCH',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ pin: pinValue }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error ?? 'Could not save the PIN. Please try again.');
+      }
+      setChildren((prev) => prev.map((c) => (c.id === childId ? { ...c, hasPin: true } : c)));
+      setPinEditId(null);
+      setPinValue('');
+      setPinMsg({ childId, ok: true, text: 'PIN saved. Your child can now log in with it.' });
+    } catch (err) {
+      logError('[parent/dashboard] set child PIN', err);
+      setPinMsg({
+        childId,
+        ok: false,
+        text: err instanceof Error ? err.message : 'Could not save the PIN. Please try again.',
+      });
+    } finally {
+      setPinBusy(false);
+    }
+  }
+
+  // Signing out as the parent also ends any child session started from here
+  // ("Practice →"), so the next person on this device does not land in it.
+  async function signOutEverywhere() {
+    try {
+      await fetch('/api/student/session', { method: 'DELETE' });
+    } catch (err) {
+      logError('[parent/dashboard] end child session', err);
+    }
+    try {
+      Object.keys(localStorage)
+        .filter((k) => k.startsWith('mathspark_'))
+        .forEach((k) => localStorage.removeItem(k));
+    } catch { /* storage unavailable */ }
+    signOut({ callbackUrl: '/auth/login' });
+  }
+
   async function loginAsChild(childId: string, childName: string, childGrade: number) {
     // Set httpOnly cookie for API auth
-    await fetch('/api/student/session', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ studentId: childId }),
-    });
+    setLoginError(null);
+    let ok = false;
+    try {
+      const res = await fetch('/api/student/session', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ studentId: childId }),
+      });
+      ok = res.ok;
+    } catch (err) {
+      logError('[parent/dashboard] start child session', err);
+    }
+    // Without the cookie the app would open as whoever was signed in before.
+    if (!ok) {
+      setLoginError(childId);
+      return;
+    }
     // Keep localStorage for UI display only
     localStorage.setItem('mathspark_student_id',    childId);
     localStorage.setItem('mathspark_student_name',  childName);
@@ -105,8 +176,8 @@ export default function ParentDashboard() {
             </h1>
           </div>
           <button
-            onClick={() => signOut({ callbackUrl: '/auth/login' })}
-            className="bg-white text-ink text-xs font-semibold hover:bg-soft transition-colors border-2 border-ink shadow-hard-sm rounded-control px-3 py-2"
+            onClick={signOutEverywhere}
+            className="bg-white text-ink text-xs font-semibold hover:bg-soft transition-colors border-2 border-ink shadow-hard-sm rounded-control px-3 py-2 min-h-[48px]"
           >
             Sign out
           </button>
@@ -184,10 +255,76 @@ export default function ParentDashboard() {
                     <button
                       onClick={() => loginAsChild(child.id, child.name, child.grade)}
                       disabled={busyId === child.id}
-                      className="bg-action hover:bg-action-dark text-white text-xs font-extrabold px-3 py-2 rounded-control border-2 border-ink shadow-hard-sm transition-colors whitespace-nowrap disabled:opacity-50"
+                      className="bg-action hover:bg-action-dark text-white text-xs font-extrabold px-3 py-2 min-h-[48px] rounded-control border-2 border-ink shadow-hard-sm transition-colors whitespace-nowrap disabled:opacity-50"
                     >
                       Practice →
                     </button>
+                  </div>
+
+                  {loginError === child.id && (
+                    <p className="text-retry text-xs font-semibold mt-2" role="alert">
+                      We couldn&apos;t open {child.name}&apos;s practice just now. Please try again.
+                    </p>
+                  )}
+
+                  {/* Login PIN: set one for a child added here, or replace a forgotten one */}
+                  <div className="mt-3 border-t-2 border-line pt-3">
+                    {pinEditId === child.id ? (
+                      <div className="space-y-2">
+                        <label htmlFor={`pin-${child.id}`} className="block text-ink-muted text-xs font-semibold">
+                          New 4-digit PIN for {child.name}
+                        </label>
+                        <div className="flex items-center gap-2">
+                          <input
+                            id={`pin-${child.id}`}
+                            type="password"
+                            inputMode="numeric"
+                            autoComplete="off"
+                            maxLength={4}
+                            value={pinValue}
+                            onChange={(e) => { setPinValue(e.target.value.replace(/\D/g, '').slice(0, 4)); setPinMsg(null); }}
+                            placeholder="••••"
+                            className="w-28 min-h-[48px] text-xl font-bold text-center tracking-[0.4em] bg-white border-2 border-line rounded-control px-3 text-ink placeholder:text-ink-muted outline-none focus:border-action"
+                          />
+                          <button
+                            onClick={() => saveChildPin(child.id)}
+                            disabled={pinBusy || pinValue.length !== 4}
+                            className="min-h-[48px] bg-action hover:bg-action-dark text-white text-xs font-extrabold px-4 rounded-control border-2 border-ink shadow-hard-sm transition-colors disabled:opacity-50"
+                          >
+                            {pinBusy ? 'Saving…' : 'Save PIN'}
+                          </button>
+                          <button
+                            onClick={() => { setPinEditId(null); setPinValue(''); setPinMsg(null); }}
+                            disabled={pinBusy}
+                            className="min-h-[48px] text-ink-muted text-xs font-semibold px-3 rounded-control hover:text-ink transition-colors disabled:opacity-50"
+                          >
+                            Cancel
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex items-center justify-between gap-3">
+                        <p className="text-ink-muted text-xs">
+                          {child.hasPin
+                            ? 'Login PIN is set.'
+                            : `No login PIN yet. ${child.name} needs one to log in on their own.`}
+                        </p>
+                        <button
+                          onClick={() => { setPinEditId(child.id); setPinValue(''); setPinMsg(null); }}
+                          className="min-h-[48px] bg-white text-ink text-xs font-extrabold px-3 rounded-control border-2 border-ink shadow-hard-sm hover:bg-soft transition-colors whitespace-nowrap"
+                        >
+                          {child.hasPin ? 'Change PIN' : 'Set PIN'}
+                        </button>
+                      </div>
+                    )}
+                    {pinMsg && pinMsg.childId === child.id && (
+                      <p
+                        className={`text-xs font-semibold mt-2 ${pinMsg.ok ? 'text-success' : 'text-retry'}`}
+                        role="status"
+                      >
+                        {pinMsg.text}
+                      </p>
+                    )}
                   </div>
 
                   {MONETIZATION_ENABLED && !child.subscriptionId && (

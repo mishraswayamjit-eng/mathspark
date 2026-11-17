@@ -3,6 +3,7 @@ import { prisma } from '@/lib/db';
 import { isClean } from '@/lib/profanityFilter';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
 import { validateBody, ValidationError } from '@/lib/validateBody';
+import { checkRateLimit } from '@/lib/rateLimit';
 import { logError } from '@/lib/logger';
 import bcrypt from 'bcryptjs';
 
@@ -21,6 +22,11 @@ export async function PATCH(req: Request) {
     const studentId = await getAuthenticatedStudentId();
     if (!studentId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    // Settings are saved one tap at a time, so this is generous.
+    if (!checkRateLimit(`student-patch:${studentId}`, 60, 60_000)) {
+      return NextResponse.json({ error: 'Too many changes at once. Please wait a moment.' }, { status: 429 });
     }
 
     let rawBody: unknown;
@@ -48,25 +54,51 @@ export async function PATCH(req: Request) {
       city?: string;
       preferredPracticeTime?: string;
       pin?: string;
+      currentPin?: string;
     }>(rawBody, {
       parentEmail: 'string?', parentWhatsApp: 'string?', name: 'string?',
       displayName: 'string?', avatarColor: 'string?', hiddenFromLeaderboard: 'boolean?',
       grade: 'number?', examName: 'string?', examDate: 'string?', targetScore: 'number?',
       dailyGoalMins: 'number?', sessionLengthMins: 'number?',
       focusTopics: 'array?', confidentTopics: 'array?',
-      city: 'string?', preferredPracticeTime: 'string?', pin: 'string?',
+      city: 'string?', preferredPracticeTime: 'string?', pin: 'string?', currentPin: 'string?',
     });
 
     const data: Record<string, unknown> = {};
 
     // PIN update — must be exactly 4 digits. Clearing is NOT allowed: a PIN is
     // mandatory, so an account can only ever change to a new valid PIN.
-    if (typeof body.pin !== 'undefined') {
-      if (typeof body.pin === 'string' && /^\d{4}$/.test(body.pin)) {
-        data.pinHash = await bcrypt.hash(body.pin, 10);
-      } else {
+    if (typeof body.pin !== 'undefined' && body.pin !== null) {
+      if (typeof body.pin !== 'string' || !/^\d{4}$/.test(body.pin)) {
         return NextResponse.json({ error: 'PIN must be exactly 4 digits' }, { status: 400 });
       }
+      // Changing a PIN needs the current one: a session left open on a shared
+      // device must not be enough to lock the real owner out. A parent can set
+      // a new PIN from the parent dashboard when it is forgotten.
+      const current = await prisma.student.findUnique({
+        where:  { id: studentId },
+        select: { pinHash: true },
+      });
+      if (!current) {
+        return NextResponse.json({ error: 'Student not found' }, { status: 404 });
+      }
+      if (current.pinHash) {
+        if (!checkRateLimit(`student-pin:${studentId}`, 8, 15 * 60_000)) {
+          return NextResponse.json(
+            { error: 'Too many tries. Take a short break and try again in a few minutes.' },
+            { status: 429 },
+          );
+        }
+        const currentPin = typeof body.currentPin === 'string' ? body.currentPin : '';
+        const matches = currentPin ? await bcrypt.compare(currentPin, current.pinHash) : false;
+        if (!matches) {
+          return NextResponse.json(
+            { error: "That PIN didn't match — let's try again!", requiresCurrentPin: true },
+            { status: 403 },
+          );
+        }
+      }
+      data.pinHash = await bcrypt.hash(body.pin, 10);
     }
 
     // parentEmail is an email *sink* (weekly reports are sent here) — it must be a
@@ -92,8 +124,13 @@ export async function PATCH(req: Request) {
       }
       data.avatarColor = body.avatarColor;
     }
-    if (typeof body.hiddenFromLeaderboard !== 'undefined') data.hiddenFromLeaderboard = body.hiddenFromLeaderboard;
-    if (typeof body.grade !== 'undefined' && body.grade >= 2 && body.grade <= 9) data.grade = body.grade;
+    if (typeof body.hiddenFromLeaderboard === 'boolean') data.hiddenFromLeaderboard = body.hiddenFromLeaderboard;
+    if (typeof body.grade !== 'undefined' && body.grade !== null) {
+      if (Math.floor(body.grade) !== body.grade || body.grade < 2 || body.grade > 9) {
+        return NextResponse.json({ error: 'Grade must be a whole number from 2 to 9.' }, { status: 400 });
+      }
+      data.grade = body.grade;
+    }
     if (typeof body.examName !== 'undefined') data.examName = cleanStr(body.examName ?? '', 100);
     if (typeof body.examDate !== 'undefined') {
       if (body.examDate) {

@@ -14,6 +14,20 @@ export const TIER_NAMES: Record<number, LeagueTierName> = {
 
 const MAX_LEAGUE_SIZE = 25;
 
+// A league smaller than this has nobody moved down: with two or three children
+// "the bottom 20%" would be whoever happened to come last.
+const MIN_LEAGUE_SIZE_FOR_DEMOTION = 5;
+
+/**
+ * How many members at the bottom of a league move down a tier at week-end.
+ * Zero in a small league and in the lowest tier (there is nowhere to go down to).
+ * Shared by the weekly cron and the routes that draw the "zone" on the list.
+ */
+export function leagueDemoteCount(total: number, tier: number): number {
+  if (total < MIN_LEAGUE_SIZE_FOR_DEMOTION || tier <= 1) return 0;
+  return Math.max(1, Math.floor(total * 0.2));
+}
+
 // ── Week bounds (IST-aware) ────────────────────────────────────────────────────
 // IST = UTC+5:30 (330 minutes ahead)
 // Week runs Monday 00:00 IST → Sunday 23:59:59 IST
@@ -241,12 +255,13 @@ export async function processWeeklyLeagues(): Promise<{ processed: number }> {
     if (total === 0) continue;
 
     const promoteCount = Math.max(1, Math.floor(total * 0.2));
-    const demoteCount  = Math.max(1, Math.floor(total * 0.2));
+    const demoteCount  = leagueDemoteCount(total, league.tier);
 
     const updates = league.members.map((m, idx) => {
       const rank      = idx + 1;
       const promoted  = rank <= promoteCount;
-      const demoted   = rank > total - demoteCount;
+      // Never both: a member who is promoted is not also moved down.
+      const demoted   = !promoted && rank > total - demoteCount;
       const tierDelta = promoted ? 1 : demoted ? -1 : 0;
       const newTier   = Math.min(5, Math.max(1, (m.student.currentLeagueTier ?? 1) + tierDelta));
 
@@ -303,7 +318,7 @@ async function computeAndSaveAwards(
       studentId:   true,
       isCorrect:   true,
       timeTakenMs: true,
-      question:    { select: { topicId: true } },
+      question:    { select: { topicId: true, nodeId: true } },
     },
   });
 
@@ -349,7 +364,9 @@ async function computeAndSaveAwards(
   const topicMap: Record<string, Set<string>> = {};
   for (const a of attempts) {
     if (!topicMap[a.studentId]) topicMap[a.studentId] = new Set();
-    topicMap[a.studentId].add(a.question.topicId);
+    // Grades other than 4 keep every question under one database topic
+    // ("grade5"), so count the topic-tree node when the question has one.
+    topicMap[a.studentId].add(a.question.nodeId || a.question.topicId);
   }
   const topicEntries = Object.entries(topicMap)
     .map(([sid, s]) => ({ sid, count: s.size }))

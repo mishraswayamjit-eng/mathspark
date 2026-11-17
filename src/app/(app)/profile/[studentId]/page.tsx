@@ -59,7 +59,9 @@ export default function PublicProfilePage() {
 
     fetch(`/api/profile/${targetId}`)
       .then((r) => {
-        if (r.status === 404) { setNotFound(true); setLoading(false); return null; }
+        // 404 = hidden or gone. Anything else that is not OK (busy server, too
+        // many requests) has no profile in it either, so it must not be drawn.
+        if (!r.ok) { setNotFound(true); setLoading(false); return null; }
         return r.json();
       })
       .then((d: PublicProfile | null) => {
