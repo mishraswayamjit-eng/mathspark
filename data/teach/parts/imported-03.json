@@ -1,0 +1,7430 @@
+{
+ "AIGEN_grade5_e3d6e974-3349-4999-8241-fec781fef1ec": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera is painting a wall, but not the door and not the two windows. One can covers 10 square metres, and we want to know how many cans to buy.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Wall 15 m × 8 m, door 2 m × 3 m",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "2 windows, each 1.5 m × 1.5 m; 1 can covers 10 sq m",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the whole wall. 15 times 8 is 120 square metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "15 × 8 = 120"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "120"
+      },
+      "text": "whole wall",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Not all of that gets painted. Which parts do we take away from the 120?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the door only",
+      "the door and one window",
+      "the door and both windows"
+     ],
+     "answer": 2,
+     "ifNot": "Read it once more: a door, and two windows, are left unpainted. So all three pieces come off the wall."
+    }
+   },
+   {
+    "say": "The door is 2 times 3, which is 6 square metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "2 × 3 = 6"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "6"
+      },
+      "text": "door",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "One window is 1.5 times 1.5, which is 2.25. Careful, there are two of them, so that is 4.5 square metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "1.5 × 1.5 = 2.25"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "2 × 2.25 = 4.5"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "4.5"
+      },
+      "text": "both windows",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now take them off. 120 minus 6 is 114, and 114 minus 4.5 is 109.5 square metres to paint.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "120 − 6 = 114"
+     },
+     {
+      "op": "write",
+      "id": "f",
+      "text": "114 − 4.5 = 109.5"
+     },
+     {
+      "op": "mark",
+      "line": "f",
+      "target": {
+       "text": "109.5"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Each can covers 10 square metres, so we divide by 10. 109.5 divided by 10 is 10.95.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "109.5 ÷ 10 = 10.95"
+     }
+    ]
+   },
+   {
+    "say": "But a shop sells whole cans only. So how many must Meera buy?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10 cans",
+      "11 cans",
+      "10.95 cans"
+     ],
+     "answer": 1,
+     "ifNot": "10 cans would run out just before the wall is finished. She cannot buy part of a can, so she needs one more whole can."
+    }
+   },
+   {
+    "say": "We round up, to 11 cans. Look: 10 cans cover only 100 square metres, but 11 cans cover 110, which is enough.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "i",
+      "text": "11 × 10 = 110"
+     },
+     {
+      "op": "write",
+      "id": "j",
+      "text": "Cans to buy = 11",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "j",
+      "target": {
+       "text": "11"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So: the whole area, take away what is left out, divide by what one can covers. And when you are buying, always round up."
+   }
+  ]
+ },
+ "AIGEN_grade5_e478fc9b-40f9-4f7d-976b-89e955b793df": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya's floor is 12 metres by 9 metres, with a square pillar standing in one corner. We want to know how many 30 centimetre tiles cover the rest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Floor 12 m × 9 m, pillar 1.5 m × 1.5 m",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Square tiles of side 30 cm. How many?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First the whole floor. 12 times 9 is 108 square metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "12 × 9 = 108"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "108"
+      },
+      "text": "whole floor",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The pillar is a square, 1.5 by 1.5, which is 2.25 square metres. No tile can go there, so 108 minus 2.25 leaves 105.75.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "1.5 × 1.5 = 2.25"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "108 − 2.25 = 105.75"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "105.75"
+      },
+      "text": "floor to tile",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the tile. Its side is in centimetres, but the floor is in metres. What is 30 centimetres, written in metres?",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "1 m = 100 cm",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 m",
+      "0.3 m",
+      "0.03 m"
+     ],
+     "answer": 1,
+     "ifNot": "100 centimetres make 1 metre. So 30 centimetres is 30 out of 100 of a metre, and that is 0.3 metres."
+    }
+   },
+   {
+    "say": "Mixing metres and centimetres is the big trap here. In metres, one tile is 0.3 times 0.3, which is 0.09 square metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "0.3 × 0.3 = 0.09"
+     },
+     {
+      "op": "note",
+      "line": "e",
+      "target": {
+       "text": "0.09"
+      },
+      "text": "one tile",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "How many tiles fit? Divide the floor by one tile. To clear the decimals, multiply both numbers by 100: that is 10575 divided by 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "105.75 ÷ 0.09 = 10575 ÷ 9"
+     }
+    ]
+   },
+   {
+    "say": "10575 divided by 9 is 1175. Riya needs 1175 tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "10575 ÷ 9 = 1175",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "g",
+      "target": {
+       "text": "1175"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by multiplying back. 1175 tiles, times 0.09 each, is 105.75 square metres. It fits exactly.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "1175 × 0.09 = 105.75"
+     }
+    ]
+   },
+   {
+    "say": "And if we had forgotten the pillar? 108 divided by 0.09 is 1200, which is too many. Always take away what is in the way first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i",
+      "text": "108 ÷ 0.09 = 1200"
+     }
+    ]
+   },
+   {
+    "say": "So: make the units match, take away the part that is not covered, then divide by the area of one tile."
+   }
+  ]
+ },
+ "AIGEN_grade5_ef6cb45e-313d-4a8b-ad68-323821573d54": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya's room is 12 metres by 9 metres, with a square rangoli in the middle. Tiles go everywhere except the rangoli, at 45 rupees for each square metre.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Room 12 m × 9 m, rangoli 3 m × 3 m",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Tiles cost ₹45 per sq m. Total cost = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "length": "12 m",
+       "breadth": "9 m",
+       "inside": "rangoli 3 m × 3 m"
+      }
+     }
+    ]
+   },
+   {
+    "say": "First the whole room. 12 times 9 is 108 square metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "12 × 9 = 108"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "108"
+      },
+      "text": "whole room",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Which area do we pay for?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the whole room",
+      "only the rangoli",
+      "the room without the rangoli"
+     ],
+     "answer": 2,
+     "ifNot": "The tiles cover everything except the rangoli. So we want the room with the rangoli taken out."
+    }
+   },
+   {
+    "say": "The rangoli is a square, 3 by 3, so it is 9 square metres. And 108 minus 9 leaves 99 square metres to tile.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "3 × 3 = 9"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "108 − 9 = 99"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "99"
+      },
+      "text": "to tile",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Each square metre costs 45 rupees, so we need 99 times 45. Here is a neat trick: 99 is just 1 less than 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "99 × 45 = 100 × 45 − 45"
+     }
+    ]
+   },
+   {
+    "say": "100 times 45 is 4500. Take away one 45, and we get 4455 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "100 × 45 = 4500"
+     },
+     {
+      "op": "write",
+      "id": "g",
+      "text": "4500 − 45 = 4455"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "99 × 45 = 4455",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "h",
+      "target": {
+       "text": "4455"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: if we forget to take out the rangoli, we pay for all 108 square metres. That would be 4860 rupees, which is too much.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i",
+      "text": "108 × 45 = 4860"
+     }
+    ]
+   },
+   {
+    "say": "So: the big shape, minus the piece that is left out, then times the price of one square metre."
+   }
+  ]
+ },
+ "AIGEN_grade5_f1073203-4e2f-485c-b5c4-0c7798d3f14b": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Lots of clues here. A rangoli 3 times as long as it is wide, 640 rupees of ribbon round its edge, and powder to fill the inside. We take one clue at a time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Length = 3 × breadth",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Ribbon: ₹8 per cm, ₹640 in all",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Powder: ₹2 per sq cm. Cost of powder = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The ribbon costs 8 rupees for each centimetre, and Arjun spent 640 rupees. So the ribbon is 640 divided by 8, which is 80 centimetres long.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "640 ÷ 8 = 80"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "80"
+      },
+      "text": "cm of ribbon",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The ribbon runs all the way round the rangoli. So what is that 80 centimetres?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the area",
+      "the perimeter",
+      "the length"
+     ],
+     "answer": 1,
+     "ifNot": "A border runs round the outside edge. The distance all the way round a shape is its perimeter."
+    }
+   },
+   {
+    "say": "Now picture the sides. Call the breadth 1 part. Then the length is 3 parts. Going all the way round, that is 3 plus 1 plus 3 plus 1, which is 8 parts.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "length": "3 parts",
+       "breadth": "1 part",
+       "proportion": 3
+      }
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "3 + 1 + 3 + 1 = 8"
+     }
+    ]
+   },
+   {
+    "say": "8 parts make 80 centimetres, so one part is 10. The breadth is 10 centimetres, and the length is 3 times that, which is 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "80 ÷ 8 = 10"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "10"
+      },
+      "text": "breadth",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "3 × 10 = 30"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "30"
+      },
+      "text": "length",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The powder fills the inside. Which sum tells us how much there is to fill?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "30 + 10",
+      "30 × 10",
+      "2 × (30 + 10)"
+     ],
+     "answer": 1,
+     "ifNot": "Powder covers the whole flat inside, and that is area. For a rectangle, area is length times breadth."
+    }
+   },
+   {
+    "say": "30 times 10 is 300. Careful, that is 300 square centimetres, not rupees yet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "30 × 10 = 300"
+     },
+     {
+      "op": "note",
+      "line": "e",
+      "target": {
+       "text": "300"
+      },
+      "text": "sq cm",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Each square centimetre costs 2 rupees. 300 times 2 is 600 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "300 × 2 = 600",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "g",
+      "target": {
+       "text": "600"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the ribbon clue. Twice 30 plus 10 is 80 centimetres, and 80 times 8 is 640 rupees. It matches.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "2 × (30 + 10) = 80"
+     },
+     {
+      "op": "write",
+      "id": "i",
+      "text": "80 × 8 = 640"
+     }
+    ]
+   },
+   {
+    "say": "So the money gave us the perimeter, the perimeter gave us the sides, and the sides gave us the area. One clue at a time."
+   }
+  ]
+ },
+ "AIGEN_grade5_f49a4fc2-7ff9-4e00-a772-b4edc36d8aa1": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Raju bends a wire into a triangle with sides 12, 16 and 20 centimetres, and it has a right angle. We want its area.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Right-angled triangle: sides 12 cm, 16 cm, 20 cm",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "right",
+       "sides": {
+        "ab": "12 cm",
+        "bc": "16 cm",
+        "ca": "20 cm"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "The area of a triangle is half of base times height. And the height must stand straight up from the base, at a right angle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Area = ½ × base × height",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Two of the sides meet at the right angle. Which two?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 and 16",
+      "16 and 20",
+      "12 and 20"
+     ],
+     "answer": 0,
+     "ifNot": "The longest side, 20, always lies across from the right angle. So the two shorter sides, 12 and 16, are the ones that meet there."
+    }
+   },
+   {
+    "say": "So 12 and 16 are our base and height. The 20 is the sloping side, and here is the trap: we do not need it at all.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q1",
+      "target": {
+       "text": "12 cm"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "q1",
+      "target": {
+       "text": "16 cm"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "strike",
+      "line": "q1",
+      "target": {
+       "text": "20 cm"
+      },
+      "note": "not needed"
+     }
+    ]
+   },
+   {
+    "say": "12 times 16 is 192.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "12 × 16 = 192"
+     }
+    ]
+   },
+   {
+    "say": "Are we finished?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, it is 192",
+      "No, halve it",
+      "No, double it"
+     ],
+     "answer": 1,
+     "ifNot": "Look back at the rule on the board. It starts with a half, so we still have to halve the 192."
+    }
+   },
+   {
+    "say": "Half of 192 is 96. The area is 96 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "½ × 12 × 16 = 96",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "96"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Why half? Two of these triangles fit together to make a rectangle, 12 by 16. So each triangle is half of that rectangle: 96 and 96 make 192.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "96 + 96 = 192"
+     }
+    ]
+   },
+   {
+    "say": "So in a right-angled triangle, take the two sides that make the right angle, multiply them, and halve."
+   }
+  ]
+ },
+ "AIGEN_grade5_f5ea4cf7-8fb6-4d7e-b4ad-01f3c1bb87c2": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Grandma's tablecloth is 120 centimetres by 80 centimetres, with a border 10 centimetres wide all round the inside edge. We want the area of the border only.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Cloth 120 cm × 80 cm, border 10 cm wide inside the edge",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "length": "120 cm",
+       "breadth": "80 cm",
+       "inside": "middle",
+       "highlight": [
+        "border"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The border is like a picture frame. The easy way to find a frame is the whole cloth, minus the middle piece.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Border = whole cloth − middle",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The whole cloth is 120 times 80, which is 9600 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "120 × 80 = 9600"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "9600"
+      },
+      "text": "whole cloth",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the middle piece. The border is 10 centimetres wide at each end. So how long is the middle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "110 cm",
+      "100 cm",
+      "120 cm"
+     ],
+     "answer": 1,
+     "ifNot": "There is border at the left end and at the right end. So the length loses 10, and then another 10. That leaves 100."
+    }
+   },
+   {
+    "say": "That is the trap: the 10 comes off both ends. For the length, 120 minus 10 minus 10 is 100. For the width, 80 minus 10 minus 10 is 60.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "120 − 10 − 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "80 − 10 − 10 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So the middle piece is 100 times 60, which is 6000 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "100 × 60 = 6000"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "6000"
+      },
+      "text": "middle",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The border is what is left. 9600 minus 6000 is 3600 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "9600 − 6000 = 3600",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "3600"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check it another way, strip by strip. Two long strips, 120 by 10, make 2400. Two short strips, 60 by 10, make 1200. Together that is 3600 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "2 × 120 × 10 = 2400"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "2 × 60 × 10 = 1200"
+     },
+     {
+      "op": "write",
+      "id": "i",
+      "text": "2400 + 1200 = 3600"
+     }
+    ]
+   },
+   {
+    "say": "So for a border, find the whole, find the middle, and subtract. And remember the width comes off at both ends."
+   }
+  ]
+ },
+ "AIGEN_grade5_f86da0d0-6b3a-43b9-952f-63498f453508": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun's ground is 120 metres by 80 metres, with a track 5 metres wide all round the outside. Grass on the track costs 12 rupees for each square metre.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Ground 120 m × 80 m, track 5 m wide round the outside",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Grass on the track: ₹12 per sq m. Cost = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "length": "120 m",
+       "breadth": "80 m",
+       "inside": "ground",
+       "highlight": [
+        "border"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The track is a frame round the ground. So its area is the big outer rectangle, minus the ground.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Track = outer rectangle − ground",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The track adds 5 metres at each end of the ground. So how long is the outer rectangle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "125 m",
+      "130 m",
+      "120 m"
+     ],
+     "answer": 1,
+     "ifNot": "There is track at both ends of the ground. So the length grows by 5, and then by 5 again. That makes 130."
+    }
+   },
+   {
+    "say": "The outer length is 120 plus 5 plus 5, which is 130. The outer breadth is 80 plus 5 plus 5, which is 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "120 + 5 + 5 = 130"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "80 + 5 + 5 = 90"
+     }
+    ]
+   },
+   {
+    "say": "So the outer rectangle is 130 times 90, which is 11700. And the ground itself is 120 times 80, which is 9600.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "130 × 90 = 11700"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "11700"
+      },
+      "text": "outer",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "120 × 80 = 9600"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "9600"
+      },
+      "text": "ground",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Take the ground away. 11700 minus 9600 is 2100 square metres of track.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "11700 − 9600 = 2100"
+     },
+     {
+      "op": "note",
+      "line": "e",
+      "target": {
+       "text": "2100"
+      },
+      "text": "track",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the cost, 2100 times 12. 2100 times 10 is 21000, and 2100 times 2 is 4200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "2100 × 10 = 21000"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "2100 × 2 = 4200"
+     }
+    ]
+   },
+   {
+    "say": "21000 plus 4200 is 25200. The grass costs 25200 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i",
+      "text": "2100 × 12 = 25200",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "i",
+      "target": {
+       "text": "25200"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The classic slip is adding the 5 only once. A track all the way round adds its width twice to the length, and twice to the breadth."
+   },
+   {
+    "say": "So for a path round the outside: make the outer rectangle, subtract the inner one, then multiply by the price."
+   }
+  ]
+ },
+ "AIGEN_grade5_fb3af582-18f8-4a20-89a1-4469c4e0ff31": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera's tablecloth is 90 centimetres by 60 centimetres. She cuts a piece, 30 centimetres by 20 centimetres, out of one corner. How much cloth is left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Cloth 90 cm × 60 cm",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Piece cut from a corner: 30 cm × 20 cm",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How do we find the area that is left?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "whole cloth + piece",
+      "whole cloth − piece",
+      "just the piece"
+     ],
+     "answer": 1,
+     "ifNot": "Cutting a piece out makes the cloth smaller. So we take the area of the piece away from the area of the whole cloth."
+    }
+   },
+   {
+    "say": "First the whole cloth, 90 times 60. 9 times 6 is 54, and the two zeros go on the end: 5400 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "9 × 6 = 54"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "90 × 60 = 5400"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "5400"
+      },
+      "text": "whole cloth",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the piece. 30 times 20 is 600 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "30 × 20 = 600"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "600"
+      },
+      "text": "cut out",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Take it away. 5400 minus 600 is 4800 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "5400 − 600 = 4800",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "d",
+      "target": {
+       "text": "4800"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to subtract the sides first. That would give 60 by 40, which is only 2400. It slices off a whole strip, not just one corner.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "90 − 30 = 60"
+     },
+     {
+      "op": "write",
+      "id": "g",
+      "text": "60 − 20 = 40"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "60 × 40 = 2400"
+     }
+    ]
+   },
+   {
+    "say": "Check by putting the piece back. 4800 plus 600 is 5400, the whole cloth.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i",
+      "text": "4800 + 600 = 5400"
+     }
+    ]
+   },
+   {
+    "say": "So when a piece is cut out, work out both areas first, and then subtract the areas, never the sides."
+   }
+  ]
+ },
+ "AIGEN_grade5_fc28c7c1-dbaf-4128-9a49-7d6f93f21d7f": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun has a square sheet of side 20 centimetres. He cuts a 4 centimetre square from each corner and folds up the sides to make a tray. We want the area of the flat base.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Square sheet, side 20 cm",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "A 4 cm square is cut from each corner",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "When the flaps fold up, the flat middle is the base. So first we need to know how long the base is.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Base = the middle that stays flat",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Look along one edge of the sheet. There is a corner cut at both ends. How long is the base along that edge?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "16 cm",
+      "12 cm",
+      "20 cm"
+     ],
+     "answer": 1,
+     "ifNot": "One corner takes 4 off the left end, and another takes 4 off the right end. 20 minus 4, and minus 4 again, leaves 12."
+    }
+   },
+   {
+    "say": "That is the trap. Take off 4 only once and you get 16. But there is a corner at each end, so it is 20 minus 4 minus 4, which is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "20 − 4 − 4 = 12"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "4"
+      },
+      "text": "left corner",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "4",
+       "nth": 2
+      },
+      "text": "right corner",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The sheet was a square, so the very same thing happens the other way. The base is a square, 12 by 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "Base: 12 cm by 12 cm",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "12 times 12 is 144. The base is 144 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "12 × 12 = 144",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "144"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check that every bit of the sheet is counted. The whole sheet is 20 times 20, 400. The four corners are 4 times 16, which is 64.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "20 × 20 = 400"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "4 × 4 = 16"
+     },
+     {
+      "op": "write",
+      "id": "g",
+      "text": "4 × 16 = 64"
+     }
+    ]
+   },
+   {
+    "say": "Each flap is 12 by 4, which is 48, and four of them make 192. Then 144 plus 64 plus 192 is 400, the whole sheet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "12 × 4 = 48"
+     },
+     {
+      "op": "write",
+      "id": "i",
+      "text": "4 × 48 = 192"
+     },
+     {
+      "op": "write",
+      "id": "j",
+      "text": "144 + 64 + 192 = 400"
+     }
+    ]
+   },
+   {
+    "say": "So when corners are cut from a sheet, each side of the base loses the cut twice. Then the base is just length times breadth."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is an equilateral triangle, and each side is 5.3 centimetres. We want the perimeter, the distance all the way round.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Equilateral triangle, each side 5.3 cm. Perimeter = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "equilateral",
+       "sides": {
+        "ab": "5.3 cm",
+        "bc": "5.3 cm",
+        "ca": "5.3 cm"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "How many equal sides does it have?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "3",
+      "4"
+     ],
+     "answer": 1,
+     "ifNot": "Equilateral means all the sides are equal, and a triangle has 3 sides."
+    }
+   },
+   {
+    "say": "So going round, we walk 5.3 centimetres, 3 times over. A quicker way to write that is 3 times 5.3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "5.3 + 5.3 + 5.3 = 3 × 5.3"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "3 × 5.3"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "To multiply, split 5.3 into 5 and 0.3. 3 times 5 is 15, and 3 times 0.3 is 0.9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "3 × 5 = 15"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "3 × 0.3 = 0.9"
+     }
+    ]
+   },
+   {
+    "say": "Put the two pieces together. 15 plus 0.9 is 15.9, so the perimeter is 15.9 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "15 + 0.9 = 15.9"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "3 × 5.3 = 15.9",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "15.9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to lose the decimal part. 3 times 5 alone gives 15, but those 3 lots of 0.3 count too."
+   },
+   {
+    "say": "Check by sharing it back out. 15.9 divided by 3 is 5.3, the side we started with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "15.9 ÷ 3 = 5.3"
+     }
+    ]
+   },
+   {
+    "say": "So for any shape with equal sides, the perimeter is the number of sides times one side."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square has a perimeter of 16 centimetres. We want the length of one side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Square, perimeter 16 cm. Each side = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "length": "?",
+       "breadth": "?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The perimeter is all the sides added together. How many equal sides share this 16?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "4",
+      "6"
+     ],
+     "answer": 1,
+     "ifNot": "A square has 4 sides, and all 4 are the same length."
+    }
+   },
+   {
+    "say": "So 4 equal sides, put end to end, make 16 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "4 × side = 16",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How do we get back to just one side?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "16 × 4",
+      "16 ÷ 4",
+      "16 − 4"
+     ],
+     "answer": 1,
+     "ifNot": "The 4 equal sides together make 16. To get back to one side, we share 16 equally among 4, and sharing is dividing."
+    }
+   },
+   {
+    "say": "16 divided by 4. Well, 4 times 4 is 16, so each side is 4 centimetres.",
+    "board": [
+     {
+      "op": "divide",
+      "line": "r",
+      "by": "4"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "16 ÷ 4 = 4",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "4",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to just halve it. Half of 16 is 8, but a square has 4 sides, not 2."
+   },
+   {
+    "say": "Let's check by going back round. 4 times 4 is 16, the perimeter. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "4 × 4 = 16"
+     }
+    ]
+   },
+   {
+    "say": "So when all the sides are equal, one side is the perimeter divided by the number of sides."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A rectangle with a perimeter of 40 centimetres and a length of 12 centimetres. We need its breadth.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Rectangle: perimeter 40 cm, length 12 cm. Breadth = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "length": "12 cm",
+       "breadth": "?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Walk round a rectangle and you pass a length, a breadth, another length and another breadth. So the perimeter is 2 lengths and 2 breadths.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Perimeter = 2 × (length + breadth)",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So what does half of the perimeter give us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "one length",
+      "one length + one breadth",
+      "two breadths"
+     ],
+     "answer": 1,
+     "ifNot": "Half of the walk round takes you along one length and one breadth. So half the perimeter is length plus breadth."
+    }
+   },
+   {
+    "say": "Half of 40 is 20. So the length and the breadth together make 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "40 ÷ 2 = 20"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "20"
+      },
+      "text": "length + breadth",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The length is 12. So the breadth is 20 minus 12, which is 8 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "20 − 12 = 8",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap. Take both lengths off the 40 and you get 16. But that is two breadths, so it still has to be halved.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "40 − 12 − 12 = 16"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "16 ÷ 2 = 8"
+     }
+    ]
+   },
+   {
+    "say": "Check: 12 plus 8 is 20, and twice 20 is 40. It matches the perimeter.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "2 × (12 + 8) = 40"
+     }
+    ]
+   },
+   {
+    "say": "So to find a missing side of a rectangle, halve the perimeter, then take away the side you know."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A regular hexagon has a perimeter of 54 centimetres. We want the length of one side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Regular hexagon, perimeter 54 cm. Each side = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The perimeter is all the sides added together. How many equal sides share this 54?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5",
+      "6",
+      "8"
+     ],
+     "answer": 1,
+     "ifNot": "Hex means 6. A hexagon has 6 sides, and regular means they are all the same length."
+    }
+   },
+   {
+    "say": "So 6 equal sides, put end to end, make 54 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "6 × side = 54",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How do we get back to just one side?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "54 × 6",
+      "54 ÷ 6",
+      "54 − 6"
+     ],
+     "answer": 1,
+     "ifNot": "The 6 equal sides together make 54. To get back to one side, we share 54 equally among 6, and sharing is dividing."
+    }
+   },
+   {
+    "say": "54 divided by 6. Well, 6 times 9 is 54, so each side is 9 centimetres.",
+    "board": [
+     {
+      "op": "divide",
+      "line": "r",
+      "by": "6"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "54 ÷ 6 = 9",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A trap here is to answer 6, the number of sides. The 6 is what we divide by. The side is what comes out, 9."
+   },
+   {
+    "say": "Let's check by going back round. 6 times 9 is 54, the perimeter. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "6 × 9 = 54"
+     }
+    ]
+   },
+   {
+    "say": "So when all the sides are equal, one side is the perimeter divided by the number of sides."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This rectangle is twice as long as it is wide, and its perimeter is 42 centimetres. We want both the length and the breadth.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Rectangle: length = 2 × breadth, perimeter 42 cm",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Length = ?  Breadth = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Call the breadth 1 part. Then the length is 2 parts, because it is 2 times as long.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "length": "2 parts",
+       "breadth": "1 part",
+       "proportion": 2
+      }
+     }
+    ]
+   },
+   {
+    "say": "Going all the way round the rectangle, how many parts do we pass?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 parts",
+      "6 parts",
+      "4 parts"
+     ],
+     "answer": 1,
+     "ifNot": "One length and one breadth make 3 parts. But the walk round passes two lengths and two breadths, so it is 3 parts, twice over."
+    }
+   },
+   {
+    "say": "2 plus 1 plus 2 plus 1 is 6 parts. And those 6 parts together are the whole perimeter, 42 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "2 + 1 + 2 + 1 = 6"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "6 parts = 42 cm",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So one part is 42 divided by 6, which is 7. That is the breadth: 7 centimetres.",
+    "board": [
+     {
+      "op": "divide",
+      "line": "b",
+      "by": "6"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "42 ÷ 6 = 7"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "7"
+      },
+      "text": "breadth",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The length is 2 parts. 2 times 7 is 14 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "2 × 7 = 14"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "14"
+      },
+      "text": "length",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "Length 14 cm, breadth 7 cm",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "14 cm, breadth 7 cm"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to share 42 among 3 parts only. That forgets we pass every side twice on the way round."
+   },
+   {
+    "say": "Check: 14 plus 7 is 21, and twice 21 is 42. That is the perimeter, so it all fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "14 + 7 = 21"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "2 × 21 = 42"
+     }
+    ]
+   },
+   {
+    "say": "The plan to keep: turn the sides into parts, count the parts round the whole edge, and divide the perimeter by that."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square with a perimeter of 20 centimetres. We want its area.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Square, perimeter 20 cm. Area = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Area needs the side, and all we have is the perimeter. So this takes two steps: first the side, then the area.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "perimeter, then side, then area",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A square has 4 equal sides. How do we get one side from the perimeter?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "20 ÷ 2",
+      "20 × 4",
+      "20 ÷ 4"
+     ],
+     "answer": 2,
+     "ifNot": "The 4 equal sides add up to the perimeter. So one side is the perimeter shared among 4."
+    }
+   },
+   {
+    "say": "20 divided by 4 is 5. Each side is 5 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "20 ÷ 4 = 5"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "5"
+      },
+      "text": "side",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now for the area of the square. Which sum is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 + 5",
+      "5 × 5",
+      "4 × 5"
+     ],
+     "answer": 1,
+     "ifNot": "Area counts the little squares inside: 5 rows, with 5 in each row. That is side times side. 4 times the side only takes us back to the perimeter."
+    }
+   },
+   {
+    "say": "5 times 5 is 25. The area is 25 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "5 × 5 = 25",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "25"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Don't stop at 5, that is only the side. And notice that the perimeter, 20, and the area, 25, are different numbers, measuring different things."
+   },
+   {
+    "say": "Check the first step: 4 sides of 5 make 20, the perimeter we were given.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "4 × 5 = 20"
+     }
+    ]
+   },
+   {
+    "say": "So from perimeter to area in a square: divide by 4 for the side, then multiply the side by itself."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A rectangle with a perimeter of 50 centimetres, and its length is 5 centimetres more than its breadth. We want the area, so first we need both sides.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Rectangle: perimeter 50 cm, length = breadth + 5 cm",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Area = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Half of the perimeter is one length plus one breadth. Half of 50 is 25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "50 ÷ 2 = 25"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "25"
+      },
+      "text": "length + breadth",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The length is a breadth with 5 extra. If we take that extra 5 away from the 25, what is left?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "two breadths",
+      "one breadth",
+      "two lengths"
+     ],
+     "answer": 0,
+     "ifNot": "Without its extra 5, the length is exactly as long as the breadth. So what is left is one breadth, and another breadth."
+    }
+   },
+   {
+    "say": "25 minus 5 is 20, and that is two breadths.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "25 − 5 = 20"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "20"
+      },
+      "text": "2 breadths",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So one breadth is half of 20, which is 10. And the length is 10 plus 5, which is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "20 ÷ 2 = 10"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "10"
+      },
+      "text": "breadth",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "10 + 5 = 15"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "15"
+      },
+      "text": "length",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the area, which is length times breadth. 15 times 10 is 150 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "15 × 10 = 150",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "150"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two traps to dodge. Don't stop at the sides, because the question asks for the area. And don't halve the 25 straight away: the extra 5 has to come off first."
+   },
+   {
+    "say": "Check: 15 plus 10 is 25, and twice 25 is 50. And 15 is 5 more than 10. Both clues fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "2 × (15 + 10) = 50"
+     }
+    ]
+   },
+   {
+    "say": "So: halve the perimeter, take off the extra, and halve again for the shorter side. Then it is length times breadth."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square with an area of 441 square centimetres. We want its perimeter.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Square, area 441 sq cm. Perimeter = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The perimeter needs the side. And the area of a square is side times side. So we want a number that, multiplied by itself, makes 441.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "side × side = 441",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's get close first. 20 times 20 is 400. So what can we say about the side?",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "20 × 20 = 400"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "it is less than 20",
+      "it is more than 20",
+      "it is exactly 20"
+     ],
+     "answer": 1,
+     "ifNot": "400 is smaller than 441. So the side has to be a bit bigger than 20."
+    }
+   },
+   {
+    "say": "441 ends in 1, and 1 times 1 is 1. So let's try 21. 21 times 21 is 441, so the side is 21 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "21 × 21 = 441"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "21 × 21"
+      },
+      "text": "side = 21 cm",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the perimeter. A square has 4 equal sides, so which sum do we want?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "21 × 21",
+      "4 × 21",
+      "2 × 21"
+     ],
+     "answer": 1,
+     "ifNot": "The perimeter is the walk round all 4 sides. Each side is 21, so it is 4 times 21."
+    }
+   },
+   {
+    "say": "4 times 21 is 84. The perimeter is 84 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "4 × 21 = 84",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "84"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two things to watch. 21 is only the side, so don't stop there. And a perimeter is a length, so it is 84 centimetres, not square centimetres."
+   },
+   {
+    "say": "Check by going backwards. 84 divided by 4 is 21, and 21 times 21 is 441, the area we were given.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "84 ÷ 4 = 21"
+     }
+    ]
+   },
+   {
+    "say": "Two steps to keep: the area tells you the side, and 4 times the side is the perimeter."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A rectangle with an area of 98 square centimetres, and its length is double its breadth. We want the perimeter, so we need the sides.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Rectangle: area 98 sq cm, length = 2 × breadth",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Perimeter = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here is a picture that helps. If the length is double the breadth, the rectangle is really two equal squares, side by side.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "length": "2 × breadth",
+       "breadth": "breadth",
+       "proportion": 2,
+       "grid": {
+        "cols": 2,
+        "rows": 1
+       }
+      }
+     },
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Rectangle = 2 equal squares",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The two squares together have an area of 98. So what is the area of one square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "196",
+      "49",
+      "98"
+     ],
+     "answer": 1,
+     "ifNot": "Two equal squares share the 98 between them. So each one is half of 98."
+    }
+   },
+   {
+    "say": "Half of 98 is 49. So each square has an area of 49.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "98 ÷ 2 = 49"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "49"
+      },
+      "text": "one square",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Which number, multiplied by itself, makes 49? 7 times 7. So the breadth is 7 centimetres, and the length is double that, 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "7 × 7 = 49"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "7",
+       "nth": 2
+      },
+      "text": "breadth",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "2 × 7 = 14"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "14"
+      },
+      "text": "length",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the perimeter, 2 lengths and 2 breadths. 14 plus 7 is 21, and twice 21 is 42 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "14 + 7 = 21"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "2 × (14 + 7) = 42",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "42"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Don't stop at 7, or 14, or 21. Those are steps on the way. The question asks for the whole walk round, and that is 42."
+   },
+   {
+    "say": "Check the area clue: 14 times 7 is 98. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "14 × 7 = 98"
+     }
+    ]
+   },
+   {
+    "say": "So when you are given an area, find the sides first. Once you have the sides, the perimeter is easy."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The distance all the way round an equilateral triangle is 23.1 centimetres. How long is each side?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Equilateral triangle, perimeter 23.1 cm. Each side = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "equilateral",
+       "sides": {
+        "ab": "?",
+        "bc": "?",
+        "ca": "?"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "The perimeter is all the sides added together. How many equal sides share this 23.1?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "3",
+      "4"
+     ],
+     "answer": 1,
+     "ifNot": "Equilateral means all the sides are equal, and a triangle has 3 sides."
+    }
+   },
+   {
+    "say": "So 3 equal sides, put end to end, make 23.1 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "3 × side = 23.1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How do we get back to just one side?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "23.1 × 3",
+      "23.1 ÷ 3",
+      "23.1 − 3"
+     ],
+     "answer": 1,
+     "ifNot": "The 3 equal sides together make 23.1. To get back to one side, we share 23.1 equally among 3, and sharing is dividing."
+    }
+   },
+   {
+    "say": "To divide 23.1 by 3, split it into 21 and 2.1. 21 divided by 3 is 7, and 2.1 divided by 3 is 0.7.",
+    "board": [
+     {
+      "op": "divide",
+      "line": "r",
+      "by": "3"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "23.1 = 21 + 2.1"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "21 ÷ 3 = 7"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "2.1 ÷ 3 = 0.7"
+     }
+    ]
+   },
+   {
+    "say": "7 plus 0.7 is 7.7. Each side is 7.7 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "7 + 0.7 = 7.7"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "23.1 ÷ 3 = 7.7",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "7.7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Don't drop the decimal part. A side of just 7 would give a perimeter of only 21, and ours is 23.1."
+   },
+   {
+    "say": "Check: 3 sides of 7.7 make 23.1. That is the perimeter we were given.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "3 × 7.7 = 23.1"
+     }
+    ]
+   },
+   {
+    "say": "The rule to keep: count the equal sides, then divide the perimeter by that number."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "An isosceles triangle with a perimeter of 26 centimetres. Each of its two equal sides is 8 centimetres, and we want the third side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Isosceles triangle: perimeter 26 cm",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Equal sides 8 cm each. Third side = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "isosceles",
+       "sides": {
+        "ab": "8 cm",
+        "ca": "8 cm",
+        "bc": "?"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "Isosceles means two sides are equal, and congruent is just another word for equal. So the sides are 8, 8, and one we do not know yet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "8 + 8 + ? = 26"
+     }
+    ]
+   },
+   {
+    "say": "What should we work out first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "26 − 8",
+      "8 + 8",
+      "26 + 8"
+     ],
+     "answer": 1,
+     "ifNot": "There are two equal sides, and both are part of the perimeter. So first find how much the two of them make together."
+    }
+   },
+   {
+    "say": "8 plus 8 is 16. That is how much of the perimeter the two equal sides use up.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "8 + 8 = 16"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "16"
+      },
+      "text": "two equal sides",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The rest belongs to the third side. 26 minus 16 is 10 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "26 − 16 = 10",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "10"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is taking away only one 8. That gives 18, but there are two equal sides to take off, not one.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "26 − 8 = 18"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding all three sides. 8 plus 8 plus 10 is 26. It matches the perimeter.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "8 + 8 + 10 = 26"
+     }
+    ]
+   },
+   {
+    "say": "The plan to keep: perimeter, minus all the sides you already know, leaves the side you want."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is a square, and each side is 4.6 centimetres. We want the perimeter, the distance all the way round.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Square, each side 4.6 cm. Perimeter = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "length": "4.6 cm",
+       "breadth": "4.6 cm"
+      }
+     }
+    ]
+   },
+   {
+    "say": "How many equal sides does it have?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "4",
+      "6"
+     ],
+     "answer": 1,
+     "ifNot": "A square has 4 sides, and all 4 are the same length."
+    }
+   },
+   {
+    "say": "So going round, we walk 4.6 centimetres, 4 times over. A quicker way to write that is 4 times 4.6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "4.6 + 4.6 + 4.6 + 4.6 = 4 × 4.6"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "4 × 4.6"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "To multiply, split 4.6 into 4 and 0.6. 4 times 4 is 16, and 4 times 0.6 is 2.4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "4 × 4 = 16"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "4 × 0.6 = 2.4"
+     }
+    ]
+   },
+   {
+    "say": "Put the two pieces together. 16 plus 2.4 is 18.4, so the perimeter is 18.4 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "16 + 2.4 = 18.4"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "4 × 4.6 = 18.4",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "18.4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Now look at the units. A perimeter is a length, so it stays in centimetres. Square centimetres are for area, and nothing here was changed to millimetres."
+   },
+   {
+    "say": "Check by sharing it back out. 18.4 divided by 4 is 4.6, the side we started with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "18.4 ÷ 4 = 4.6"
+     }
+    ]
+   },
+   {
+    "say": "So for any shape with equal sides, the perimeter is the number of sides times one side."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This is an equilateral triangle with every side 5.4 centimetres long. The perimeter is how far it is all the way round.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Equilateral triangle, each side 5.4 cm. Perimeter = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "equilateral",
+       "sides": {
+        "ab": "5.4 cm",
+        "bc": "5.4 cm",
+        "ca": "5.4 cm"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "How many equal sides does it have?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "3",
+      "4"
+     ],
+     "answer": 1,
+     "ifNot": "Equilateral means all the sides are equal, and a triangle has 3 sides."
+    }
+   },
+   {
+    "say": "So going round, we walk 5.4 centimetres, 3 times over. A quicker way to write that is 3 times 5.4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "5.4 + 5.4 + 5.4 = 3 × 5.4"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "3 × 5.4"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "To multiply, split 5.4 into 5 and 0.4. 3 times 5 is 15, and 3 times 0.4 is 1.2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "3 × 5 = 15"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "3 × 0.4 = 1.2"
+     }
+    ]
+   },
+   {
+    "say": "Put the two pieces together. 15 plus 1.2 is 16.2, so the perimeter is 16.2 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "15 + 1.2 = 16.2"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "3 × 5.4 = 16.2",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "16.2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two things to watch. A triangle has 3 sides, not 4. And a perimeter is a length, so it is in centimetres, not square centimetres."
+   },
+   {
+    "say": "Let's check. Share 16.2 equally among the 3 sides, and each one gets 5.4. That is our side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "16.2 ÷ 3 = 5.4"
+     }
+    ]
+   },
+   {
+    "say": "So for any shape with equal sides, the perimeter is the number of sides times one side."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square has a perimeter of 24.4 centimetres. We want the length of one side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Square, perimeter 24.4 cm. Each side = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "length": "?",
+       "breadth": "?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The perimeter is all the sides added together. How many equal sides share this 24.4?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "4",
+      "6"
+     ],
+     "answer": 1,
+     "ifNot": "A square has 4 sides, and all 4 are the same length."
+    }
+   },
+   {
+    "say": "So 4 equal sides, put end to end, make 24.4 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "4 × side = 24.4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How do we get back to just one side?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "24.4 × 4",
+      "24.4 ÷ 4",
+      "24.4 − 4"
+     ],
+     "answer": 1,
+     "ifNot": "The 4 equal sides together make 24.4. To get back to one side, we share 24.4 equally among 4, and sharing is dividing."
+    }
+   },
+   {
+    "say": "To divide 24.4 by 4, split it into 24 and 0.4. 24 divided by 4 is 6, and 0.4 divided by 4 is 0.1.",
+    "board": [
+     {
+      "op": "divide",
+      "line": "r",
+      "by": "4"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "24.4 = 24 + 0.4"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "24 ÷ 4 = 6"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "0.4 ÷ 4 = 0.1"
+     }
+    ]
+   },
+   {
+    "say": "6 plus 0.1 is 6.1. Each side is 6.1 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "6 + 0.1 = 6.1"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "24.4 ÷ 4 = 6.1",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "6.1"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Now the units. The perimeter was in centimetres, so the side is in centimetres too. Not millimetres, and not square units, which are for area."
+   },
+   {
+    "say": "Let's check by going back round. 4 times 6.1 is 24.4, the perimeter. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "4 × 6.1 = 24.4"
+     }
+    ]
+   },
+   {
+    "say": "So when all the sides are equal, one side is the perimeter divided by the number of sides."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A rectangle with a perimeter of 48 centimetres and a length of 14 centimetres. We need its breadth.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Rectangle: perimeter 48 cm, length 14 cm. Breadth = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "length": "14 cm",
+       "breadth": "?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Walk round a rectangle and you pass a length, a breadth, another length and another breadth. So the perimeter is 2 lengths and 2 breadths.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Perimeter = 2 × (length + breadth)",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So what does half of the perimeter give us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "one length",
+      "one length + one breadth",
+      "two breadths"
+     ],
+     "answer": 1,
+     "ifNot": "Half of the walk round takes you along one length and one breadth. So half the perimeter is length plus breadth."
+    }
+   },
+   {
+    "say": "Half of 48 is 24. So the length and the breadth together make 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "48 ÷ 2 = 24"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "24"
+      },
+      "text": "length + breadth",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The length is 14. So the breadth is 24 minus 14, which is 10 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "24 − 14 = 10",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "10"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap. Take both lengths off the 48 and you get 20. But that is two breadths, so it still has to be halved. And keep the unit: centimetres, like the question.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "48 − 14 − 14 = 20"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "20 ÷ 2 = 10"
+     }
+    ]
+   },
+   {
+    "say": "Check: 14 plus 10 is 24, and twice 24 is 48. It matches the perimeter.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "2 × (14 + 10) = 48"
+     }
+    ]
+   },
+   {
+    "say": "So to find a missing side of a rectangle, halve the perimeter, then take away the side you know."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A regular hexagon has a perimeter of 72 centimetres. We want the length of one side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Regular hexagon, perimeter 72 cm. Each side = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The perimeter is all the sides added together. How many equal sides share this 72?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5",
+      "6",
+      "8"
+     ],
+     "answer": 1,
+     "ifNot": "Hex means 6. A hexagon has 6 sides, and regular means they are all the same length."
+    }
+   },
+   {
+    "say": "So 6 equal sides, put end to end, make 72 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "6 × side = 72",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How do we get back to just one side?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "72 × 6",
+      "72 ÷ 6",
+      "72 − 6"
+     ],
+     "answer": 1,
+     "ifNot": "The 6 equal sides together make 72. To get back to one side, we share 72 equally among 6, and sharing is dividing."
+    }
+   },
+   {
+    "say": "72 divided by 6. Well, 6 times 12 is 72, so each side is 12 centimetres.",
+    "board": [
+     {
+      "op": "divide",
+      "line": "r",
+      "by": "6"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "72 ÷ 6 = 12",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the 6 times table. 6 times 10 is 60, and 2 more sixes take us up to 72. So each side is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "6 × 10 = 60"
+     }
+    ]
+   },
+   {
+    "say": "Check: 6 sides of 12 make 72. That is the perimeter we were given.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "6 × 12 = 72"
+     }
+    ]
+   },
+   {
+    "say": "So when all the sides are equal, one side is the perimeter divided by the number of sides."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q017": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square with a perimeter of 36 centimetres. We want its area.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Square, perimeter 36 cm. Area = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Area needs the side, and all we have is the perimeter. So this takes two steps: first the side, then the area.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "perimeter, then side, then area",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A square has 4 equal sides. How do we get one side from the perimeter?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "36 ÷ 2",
+      "36 × 4",
+      "36 ÷ 4"
+     ],
+     "answer": 2,
+     "ifNot": "The 4 equal sides add up to the perimeter. So one side is the perimeter shared among 4."
+    }
+   },
+   {
+    "say": "36 divided by 4 is 9. Each side is 9 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "36 ÷ 4 = 9"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "9"
+      },
+      "text": "side",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now for the area of the square. Which sum is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9 + 9",
+      "9 × 9",
+      "4 × 9"
+     ],
+     "answer": 1,
+     "ifNot": "Area counts the little squares inside: 9 rows, with 9 in each row. That is side times side. 4 times the side only takes us back to the perimeter."
+    }
+   },
+   {
+    "say": "9 times 9 is 81. The area is 81 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "9 × 9 = 81",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "81"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to do something quick with the 36, like doubling it. The area always comes from the side, and 9 times 9 is exactly 81."
+   },
+   {
+    "say": "Check the first step: 4 sides of 9 make 36, the perimeter we were given.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "4 × 9 = 36"
+     }
+    ]
+   },
+   {
+    "say": "So from perimeter to area in a square: divide by 4 for the side, then multiply the side by itself."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q018": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A rectangle with a perimeter of 40 centimetres, and its length is 8 centimetres more than its breadth. We want the area, so first we need both sides.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Rectangle: perimeter 40 cm, length = breadth + 8 cm",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Area = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Half of the perimeter is one length plus one breadth. Half of 40 is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "40 ÷ 2 = 20"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "20"
+      },
+      "text": "length + breadth",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The length is a breadth with 8 extra. If we take that extra 8 away from the 20, what is left?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "two breadths",
+      "one breadth",
+      "two lengths"
+     ],
+     "answer": 0,
+     "ifNot": "Without its extra 8, the length is exactly as long as the breadth. So what is left is one breadth, and another breadth."
+    }
+   },
+   {
+    "say": "20 minus 8 is 12, and that is two breadths.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "20 − 8 = 12"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "12"
+      },
+      "text": "2 breadths",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So one breadth is half of 12, which is 6. And the length is 6 plus 8, which is 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "12 ÷ 2 = 6"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "6"
+      },
+      "text": "breadth",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "6 + 8 = 14"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "14"
+      },
+      "text": "length",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the area, which is length times breadth. 14 times 6 is 84 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "14 × 6 = 84",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "84"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to multiply the numbers in the question. 40 is a perimeter and 8 is a difference, so 40 times 8 means nothing here. We need the two sides first."
+   },
+   {
+    "say": "Check: 14 plus 6 is 20, and twice 20 is 40. And 14 is 8 more than 6. Both clues fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "2 × (14 + 6) = 40"
+     }
+    ]
+   },
+   {
+    "say": "So: halve the perimeter, take off the extra, and halve again for the shorter side. Then it is length times breadth."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square with an area of 676 square centimetres. We want its perimeter.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Square, area 676 sq cm. Perimeter = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The perimeter needs the side. And the area of a square is side times side. So we want a number that, multiplied by itself, makes 676.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "side × side = 676",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's get close first. 25 times 25 is 625. So what can we say about the side?",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "25 × 25 = 625"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "it is less than 25",
+      "it is more than 25",
+      "it is exactly 25"
+     ],
+     "answer": 1,
+     "ifNot": "625 is smaller than 676. So the side has to be a bit bigger than 25."
+    }
+   },
+   {
+    "say": "676 ends in 6, and 6 times 6 ends in 6. So let's try 26. 26 times 26 is 676, so the side is 26 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "26 × 26 = 676"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "26 × 26"
+      },
+      "text": "side = 26 cm",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the perimeter. A square has 4 equal sides, so which sum do we want?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "26 × 26",
+      "4 × 26",
+      "2 × 26"
+     ],
+     "answer": 1,
+     "ifNot": "The perimeter is the walk round all 4 sides. Each side is 26, so it is 4 times 26."
+    }
+   },
+   {
+    "say": "4 times 26 is 104. The perimeter is 104 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "4 × 26 = 104",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "104"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Mind the units. Area is in square centimetres, but a perimeter is a length. So the answer is 104 centimetres, plain centimetres."
+   },
+   {
+    "say": "Check by going backwards. 104 divided by 4 is 26, and 26 times 26 is 676, the area we were given.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "104 ÷ 4 = 26"
+     }
+    ]
+   },
+   {
+    "say": "Two steps to keep: the area tells you the side, and 4 times the side is the perimeter."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q020": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The length of this rectangle is twice its breadth, and the perimeter is 78 centimetres. We need the length and the breadth.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Rectangle: length = 2 × breadth, perimeter 78 cm",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Length = ?  Breadth = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Call the breadth 1 part. Then the length is 2 parts, because it is 2 times as long.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "length": "2 parts",
+       "breadth": "1 part",
+       "proportion": 2
+      }
+     }
+    ]
+   },
+   {
+    "say": "Going all the way round the rectangle, how many parts do we pass?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 parts",
+      "6 parts",
+      "4 parts"
+     ],
+     "answer": 1,
+     "ifNot": "One length and one breadth make 3 parts. But the walk round passes two lengths and two breadths, so it is 3 parts, twice over."
+    }
+   },
+   {
+    "say": "2 plus 1 plus 2 plus 1 is 6 parts. And those 6 parts together are the whole perimeter, 78 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "2 + 1 + 2 + 1 = 6"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "6 parts = 78 cm",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So one part is 78 divided by 6, which is 13. That is the breadth: 13 centimetres.",
+    "board": [
+     {
+      "op": "divide",
+      "line": "b",
+      "by": "6"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "78 ÷ 6 = 13"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "13"
+      },
+      "text": "breadth",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The length is 2 parts. 2 times 13 is 26 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "2 × 13 = 26"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "26"
+      },
+      "text": "length",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "Length 26 cm, breadth 13 cm",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "26 cm, breadth 13 cm"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to share 78 among 3 parts only. That makes both sides twice too big, because we pass every side twice on the way round."
+   },
+   {
+    "say": "Check: 26 plus 13 is 39, and twice 39 is 78. That is the perimeter, so it all fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "26 + 13 = 39"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "2 × 39 = 78"
+     }
+    ]
+   },
+   {
+    "say": "So when one side is so many times the other, count the parts all the way round, find one part, and build the sides from it."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q021": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "An equilateral triangle has a perimeter of 29.1 centimetres. We want the length of one side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Equilateral triangle, perimeter 29.1 cm. Each side = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "equilateral",
+       "sides": {
+        "ab": "?",
+        "bc": "?",
+        "ca": "?"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "The perimeter is all the sides added together. How many equal sides share this 29.1?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "3",
+      "4"
+     ],
+     "answer": 1,
+     "ifNot": "Equilateral means all the sides are equal, and a triangle has 3 sides."
+    }
+   },
+   {
+    "say": "So 3 equal sides, put end to end, make 29.1 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "3 × side = 29.1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How do we get back to just one side?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "29.1 × 3",
+      "29.1 ÷ 3",
+      "29.1 − 3"
+     ],
+     "answer": 1,
+     "ifNot": "The 3 equal sides together make 29.1. To get back to one side, we share 29.1 equally among 3, and sharing is dividing."
+    }
+   },
+   {
+    "say": "To divide 29.1 by 3, split it into 27 and 2.1. 27 divided by 3 is 9, and 2.1 divided by 3 is 0.7.",
+    "board": [
+     {
+      "op": "divide",
+      "line": "r",
+      "by": "3"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "29.1 = 27 + 2.1"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "27 ÷ 3 = 9"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "2.1 ÷ 3 = 0.7"
+     }
+    ]
+   },
+   {
+    "say": "9 plus 0.7 is 9.7. Each side is 9.7 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "9 + 0.7 = 9.7"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "29.1 ÷ 3 = 9.7",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "9.7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the whole part. 3 times 9 is 27, so the side starts with 9, not with 8 or 7."
+   },
+   {
+    "say": "Let's check by going back round. 3 times 9.7 is 29.1, the perimeter. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "3 × 9.7 = 29.1"
+     }
+    ]
+   },
+   {
+    "say": "The rule to keep: count the equal sides, then divide the perimeter by that number."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q022": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A regular hexagon has a perimeter of 42 centimetres. We want the total of just 5 of its sides.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Regular hexagon, perimeter 42 cm. Sum of 5 sides = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, how many equal sides does a regular hexagon have?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5",
+      "6",
+      "8"
+     ],
+     "answer": 1,
+     "ifNot": "Hex means 6. A hexagon has 6 sides, and regular means they are all the same length."
+    }
+   },
+   {
+    "say": "So 6 equal sides make 42. One side is 42 divided by 6, which is 7 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "42 ÷ 6 = 7"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "7"
+      },
+      "text": "one side",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "We want 5 of the sides, not all 6. What is the quickest way to get that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "42 − 7",
+      "42 + 7",
+      "42 ÷ 5"
+     ],
+     "answer": 0,
+     "ifNot": "5 sides is all 6 sides with one side left out. So we can take one side, 7, away from the whole perimeter."
+    }
+   },
+   {
+    "say": "42 minus 7 is 35. The 5 sides add up to 35 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "42 − 7 = 35",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "35"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "We can also multiply. 5 sides of 7 centimetres is 35. Two ways, one answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "5 × 7 = 35"
+     }
+    ]
+   },
+   {
+    "say": "The trap is dividing 42 by 5. The 42 belongs to all 6 sides, so we must find one side first."
+   },
+   {
+    "say": "So with a regular shape, always find one side first. After that you can build any number of sides you like."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q023": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is a regular hexagon, and each side is 6.1 centimetres. We want the perimeter, the distance all the way round.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Regular hexagon, each side 6.1 cm. Perimeter = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How many equal sides does it have?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5",
+      "6",
+      "8"
+     ],
+     "answer": 1,
+     "ifNot": "Hex means 6. A hexagon has 6 sides, and regular means they are all the same length."
+    }
+   },
+   {
+    "say": "So going round, we walk 6.1 centimetres, 6 times over. A quicker way to write that is 6 times 6.1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "6.1 + 6.1 + 6.1 + 6.1 + 6.1 + 6.1 = 6 × 6.1"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "6 × 6.1"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "To multiply, split 6.1 into 6 and 0.1. 6 times 6 is 36, and 6 times 0.1 is 0.6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "6 × 6 = 36"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "6 × 0.1 = 0.6"
+     }
+    ]
+   },
+   {
+    "say": "Put the two pieces together. 36 plus 0.6 is 36.6, so the perimeter is 36.6 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "36 + 0.6 = 36.6"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "6 × 6.1 = 36.6",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "36.6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Don't drop the little 0.1. It is on all 6 sides, so together it adds 0.6. The answer is 36.6, not just 36."
+   },
+   {
+    "say": "Check by sharing it back out. 36.6 divided by 6 is 6.1, the side we started with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "36.6 ÷ 6 = 6.1"
+     }
+    ]
+   },
+   {
+    "say": "The rule to keep: when every side is equal, count the sides and multiply by the length of one."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q024": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A triangle with sides 3.2, 4.6 and 5.3 centimetres. The perimeter is the walk all the way round, so we add the three sides.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Triangle: sides 3.2 cm, 4.6 cm, 5.3 cm. Perimeter = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "sides": {
+        "ab": "3.2 cm",
+        "bc": "5.3 cm",
+        "ca": "4.6 cm"
+       }
+      }
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "3.2 + 4.6 + 5.3"
+     }
+    ]
+   },
+   {
+    "say": "Add the whole numbers first. 3 plus 4 plus 5 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "3 + 4 + 5 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Now the tenths: 2 tenths, 6 tenths and 3 tenths. How many tenths is that altogether?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "11 tenths",
+      "10 tenths",
+      "1 tenth"
+     ],
+     "answer": 0,
+     "ifNot": "Add them like ordinary numbers. 2 plus 6 is 8, and 3 more makes 11. So there are 11 tenths."
+    }
+   },
+   {
+    "say": "11 tenths is more than one whole. It is 1 whole and 1 tenth, which we write as 1.1. This is the step that often gets dropped.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "0.2 + 0.6 + 0.3 = 1.1"
+     }
+    ]
+   },
+   {
+    "say": "12 plus 1.1 is 13.1. The perimeter is 13.1 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "12 + 1.1 = 13.1"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "3.2 + 4.6 + 5.3 = 13.1",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "13.1"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding in order. 3.2 plus 4.6 is 7.8, and 7.8 plus 5.3 is 13.1 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "3.2 + 4.6 = 7.8"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "7.8 + 5.3 = 13.1"
+     }
+    ]
+   },
+   {
+    "say": "So with decimals, add the wholes, add the tenths, and when the tenths go past 10, carry a whole across."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q025": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Thrice means 3 times. So this rectangle is 3 times as long as it is wide, and its perimeter is 64 centimetres. We want the breadth.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Rectangle: length = 3 × breadth, perimeter 64 cm",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Breadth = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Call the breadth 1 part. Then the length is 3 parts, because it is 3 times as long.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "length": "3 parts",
+       "breadth": "1 part",
+       "proportion": 3
+      }
+     }
+    ]
+   },
+   {
+    "say": "Going all the way round the rectangle, how many parts do we pass?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 parts",
+      "8 parts",
+      "6 parts"
+     ],
+     "answer": 1,
+     "ifNot": "One length and one breadth make 4 parts. But the walk round passes two lengths and two breadths, so it is 4 parts, twice over."
+    }
+   },
+   {
+    "say": "3 plus 1 plus 3 plus 1 is 8 parts. And those 8 parts together are the whole perimeter, 64 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "3 + 1 + 3 + 1 = 8"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "8 parts = 64 cm",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So one part is 64 divided by 8, which is 8. And one part is the breadth: 8 centimetres.",
+    "board": [
+     {
+      "op": "divide",
+      "line": "b",
+      "by": "8"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "64 ÷ 8 = 8",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "8",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The length is 3 parts, so 3 times 8 is 24 centimetres. We were not asked for it, but it helps us check.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "3 × 8 = 24"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "24"
+      },
+      "text": "length",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Two traps here. Sharing 64 among 4 parts forgets we pass every side twice. And the question wants the breadth, not the length."
+   },
+   {
+    "say": "Check: 24 plus 8 is 32, and twice 32 is 64. That is the perimeter, so it all fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "24 + 8 = 32"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "2 × 32 = 64"
+     }
+    ]
+   },
+   {
+    "say": "The plan to keep: turn the sides into parts, count the parts round the whole edge, and divide the perimeter by that."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch19_q026": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "An isosceles triangle with a perimeter of 32 centimetres. Each of its two equal sides is 9 centimetres, and we want the third side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Isosceles triangle: perimeter 32 cm",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Equal sides 9 cm each. Third side = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "isosceles",
+       "sides": {
+        "ab": "9 cm",
+        "ca": "9 cm",
+        "bc": "?"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "Isosceles means two sides are equal, and congruent is just another word for equal. So the sides are 9, 9, and one we do not know yet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "9 + 9 + ? = 32"
+     }
+    ]
+   },
+   {
+    "say": "What should we work out first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "32 − 9",
+      "9 + 9",
+      "32 + 9"
+     ],
+     "answer": 1,
+     "ifNot": "There are two equal sides, and both are part of the perimeter. So first find how much the two of them make together."
+    }
+   },
+   {
+    "say": "9 plus 9 is 18. That is how much of the perimeter the two equal sides use up.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "9 + 9 = 18"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "18"
+      },
+      "text": "two equal sides",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The rest belongs to the third side. 32 minus 18 is 14 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "32 − 18 = 14",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "14"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Don't stop at 18. That is the two equal sides together, not the third side. The third side is what is left of the perimeter."
+   },
+   {
+    "say": "Check by adding all three sides. 9 plus 9 plus 14 is 32. It matches the perimeter.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "9 + 9 + 14 = 32"
+     }
+    ]
+   },
+   {
+    "say": "The plan to keep: perimeter, minus all the sides you already know, leaves the side you want."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A rectangle with a length of 1.2 metres and a breadth of 50 centimetres. We want its area.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Rectangle: length 1.2 m, breadth 50 cm. Area = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Before we multiply anything, look at the units. What do you notice?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "both are in metres",
+      "one is metres, one is centimetres",
+      "both are in centimetres"
+     ],
+     "answer": 1,
+     "ifNot": "Read the two measurements again. The length is in metres, but the breadth is in centimetres. They do not match yet."
+    }
+   },
+   {
+    "say": "The answer is wanted in square centimetres, so let's turn the length into centimetres. 1 metre is 100 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "1 m = 100 cm",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So 1.2 metres is 1.2 times 100, which is 120 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "1.2 × 100 = 120"
+     },
+     {
+      "op": "strike",
+      "line": "q1",
+      "target": {
+       "text": "1.2 m"
+      },
+      "note": "120 cm"
+     }
+    ]
+   },
+   {
+    "say": "Now both sides are in centimetres, and area is length times breadth. 12 times 5 is 60, and the two zeros go on the end: 6000 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "12 × 5 = 60"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "120 × 50 = 6000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "6000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap. Multiply 1.2 by 50 straight away and you get 60. But that mixes metres with centimetres, so it means nothing.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "1.2 × 50 = 60"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "1.2 × 50"
+      },
+      "text": "m × cm: mixed units",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So before any area sum, make the units match. Then it is just length times breadth."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square whose area and perimeter are the very same number. We have to find its side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Square: area = perimeter. Side = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Write the two rules side by side. Area is side times side. Perimeter is 4 times the side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r1",
+      "text": "Area = side × side",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "r2",
+      "text": "Perimeter = 4 × side",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's try a small square and watch. With side 2, the area is 2 times 2, which is 4. The perimeter is 4 times 2, which is 8. Not equal.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "2 × 2 = 4"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "4 × 2 = 8"
+     }
+    ]
+   },
+   {
+    "say": "Look at the two rules again. Both multiply the side by something. When will they give the same answer?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "r1",
+      "target": {
+       "text": "side"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "r2",
+      "target": {
+       "text": "4"
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "when the side is 4",
+      "when the side is 1",
+      "when the side is 0"
+     ],
+     "answer": 0,
+     "ifNot": "One rule multiplies the side by the side, the other multiplies it by 4. They agree when those two are the same, so the side must be 4."
+    }
+   },
+   {
+    "say": "Try 4. The area is 4 times 4, which is 16. The perimeter is 4 times 4, which is 16. Equal!",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "4 × 4 = 16"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "Side = 4 units",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "d",
+      "target": {
+       "text": "4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "What about 0? The numbers do match, but a square with side 0 is no square at all. So we leave that one out."
+   },
+   {
+    "say": "And bigger squares? With side 5, the area is 25 but the perimeter is only 20. From here on the area runs ahead, so 4 is the only answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "5 × 5 = 25"
+     },
+     {
+      "op": "write",
+      "id": "g",
+      "text": "4 × 5 = 20"
+     }
+    ]
+   },
+   {
+    "say": "So when a question gives a rule but no numbers, write the formulas side by side and test small numbers."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A rectangle with a perimeter of 50 centimetres. Its length is 3 over 2 times its breadth, and we want the area.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Rectangle: perimeter 50 cm, length = 3/2 × breadth",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Area = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "3 over 2 times sounds hard, so let's make it easy. Cut the breadth into 2 equal parts. Then the length is 3 of those same parts.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "label": "length",
+         "segments": [
+          {
+           "units": 1,
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "tone": "a"
+          },
+          {
+           "units": 1,
+           "tone": "a"
+          }
+         ]
+        },
+        {
+         "label": "breadth",
+         "segments": [
+          {
+           "units": 1,
+           "tone": "b"
+          },
+          {
+           "units": 1,
+           "tone": "b"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "op": "write",
+      "id": "r",
+      "text": "breadth = 2 parts, length = 3 parts",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Half of the perimeter is one length plus one breadth. Half of 50 is 25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "50 ÷ 2 = 25"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "25"
+      },
+      "text": "length + breadth",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "One length and one breadth together: how many parts is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 parts",
+      "6 parts",
+      "3 parts"
+     ],
+     "answer": 0,
+     "ifNot": "The length is 3 parts and the breadth is 2 parts. Together that is 3 plus 2."
+    }
+   },
+   {
+    "say": "3 plus 2 is 5 parts, and they make 25. So one part is 25 divided by 5, which is 5 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "3 + 2 = 5"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "25 ÷ 5 = 5"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "5",
+       "nth": 3
+      },
+      "text": "one part",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The breadth is 2 parts: 2 times 5 is 10. The length is 3 parts: 3 times 5 is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "2 × 5 = 10"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "10"
+      },
+      "text": "breadth",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "3 × 5 = 15"
+     },
+     {
+      "op": "note",
+      "line": "e",
+      "target": {
+       "text": "15"
+      },
+      "text": "length",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Area is length times breadth. 15 times 10 is 150 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "15 × 10 = 150",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "g",
+      "target": {
+       "text": "150"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check both clues. Twice 15 plus 10 is 50, the perimeter. And 15 is one and a half times 10. Everything fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "2 × (15 + 10) = 50"
+     }
+    ]
+   },
+   {
+    "say": "So when one side is a fraction of the other, turn the sides into equal parts. Find one part, and the rest follows."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two playgrounds. One is a rectangle, 25 metres by 20 metres. The other is a square with sides of 22 metres. Which one is bigger?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Rectangle: 25 m by 20 m",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Square: each side 22 m",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A bigger playground means more room to play. Which measurement tells us that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the perimeter",
+      "the area",
+      "the longest side"
+     ],
+     "answer": 1,
+     "ifNot": "Room to run about is the flat space inside the edges. That is the area."
+    }
+   },
+   {
+    "say": "The rectangle first. 25 times 20 is 500 square metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "25 × 20 = 500"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "500"
+      },
+      "text": "rectangle",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the square, 22 times 22. Take it in two bites: 22 times 20 is 440, and 22 times 2 is 44.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "22 × 20 = 440"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "22 × 2 = 44"
+     }
+    ]
+   },
+   {
+    "say": "440 plus 44 is 484 square metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "440 + 44 = 484"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "22 × 22 = 484"
+     },
+     {
+      "op": "note",
+      "line": "e",
+      "target": {
+       "text": "484"
+      },
+      "text": "square",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "500 is more than 484. So the rectangular playground is the bigger one.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "500 > 484"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "Bigger: the rectangular playground",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "h",
+      "target": {
+       "text": "rectangular"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Don't judge by the side lengths. 22 looks big next to 20, but the rectangle has that long 25. Only working out both areas settles it."
+   },
+   {
+    "say": "So to compare two shapes for size, find the area of each one, then compare the two numbers."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A plot of land is 16 metres long and 10 metres wide. Each square metre costs 1000 rupees. What does the whole plot cost?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Plot 16 m × 10 m. 1 sq m costs Rs. 1000. Cost = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The price is for each square metre. So what must we find first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the perimeter",
+      "the area",
+      "the length only"
+     ],
+     "answer": 1,
+     "ifNot": "Square metres measure the flat surface of the plot, and that is its area."
+    }
+   },
+   {
+    "say": "Area is length times breadth. 16 times 10 is 160 square metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "16 × 10 = 160"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "160"
+      },
+      "text": "sq m",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Picture 160 squares, each one metre by one metre, and every one of them costs 1000 rupees. So the cost is 160 times 1000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "160 × 1000"
+     }
+    ]
+   },
+   {
+    "say": "To multiply by 1000, write 160 and put three zeros after it. That makes 1,60,000 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "160 × 1000 = 160000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "160000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the trap. 16 times 1000 is only 16000. That leaves out the breadth altogether.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "16 × 1000 = 16000"
+     }
+    ]
+   },
+   {
+    "say": "Check by dividing back. 1,60,000 divided by 1000 is 160, the area we found.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "160000 ÷ 1000 = 160"
+     }
+    ]
+   },
+   {
+    "say": "So for a cost on land or floors, find the area first, then multiply by the price of one square metre."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A ground 30 metres long and 20 metres wide has to be levelled. The charge is 5 rupees for every square metre.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Ground 30 m × 20 m. Levelling: Rs. 5 per sq m. Cost = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We pay for every square metre of ground. So which sum comes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "30 + 20",
+      "30 × 20",
+      "30 × 5"
+     ],
+     "answer": 1,
+     "ifNot": "The number of square metres is the area of the ground. For a rectangle, that is length times breadth."
+    }
+   },
+   {
+    "say": "30 times 20. 3 times 2 is 6, and the two zeros go on the end: 600 square metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "30 × 20 = 600"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "600"
+      },
+      "text": "sq m",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 600 is the area, not the cost. Each of those 600 square metres costs 5 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "600 × 5"
+     }
+    ]
+   },
+   {
+    "say": "6 times 5 is 30, so 600 times 5 is 3000. The levelling costs 3000 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "6 × 5 = 30"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "600 × 5 = 3000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "d",
+      "target": {
+       "text": "3000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by sharing the money back out. 3000 rupees divided by 5 rupees is 600 square metres, the area we found.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "3000 ÷ 5 = 600"
+     }
+    ]
+   },
+   {
+    "say": "So it is always two steps: the area first, then area times the rate."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square with an area of 144 square centimetres. We want its perimeter.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Square, area 144 sq cm. Perimeter = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The perimeter needs the side. And the area of a square is side times side. So we want a number that, multiplied by itself, makes 144.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "side × side = 144",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's get close first. 10 times 10 is 100. So what can we say about the side?",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "10 × 10 = 100"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "it is less than 10",
+      "it is more than 10",
+      "it is exactly 10"
+     ],
+     "answer": 1,
+     "ifNot": "100 is smaller than 144. So the side has to be a bit bigger than 10."
+    }
+   },
+   {
+    "say": "144 ends in 4, and 2 times 2 is 4. So let's try 12. 12 times 12 is 144, so the side is 12 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "12 × 12 = 144"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "12 × 12"
+      },
+      "text": "side = 12 cm",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the perimeter. A square has 4 equal sides, so which sum do we want?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 × 12",
+      "4 × 12",
+      "2 × 12"
+     ],
+     "answer": 1,
+     "ifNot": "The perimeter is the walk round all 4 sides. Each side is 12, so it is 4 times 12."
+    }
+   },
+   {
+    "say": "4 times 12 is 48. The perimeter is 48 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "4 × 12 = 48",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "48"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to divide 144 by 4, and don't stop at 12. The side comes first, then all 4 sides. And the answer is a length, in centimetres."
+   },
+   {
+    "say": "Check by going backwards. 48 divided by 4 is 12, and 12 times 12 is 144, the area we were given.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "48 ÷ 4 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Two steps to keep: the area tells you the side, and 4 times the side is the perimeter."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A triangle with an area of 5 square centimetres and a height of 2 centimetres. We want its base. It is isosceles, but that does not change the area rule.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Triangle: area 5 sq cm, height 2 cm. Base = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The area of a triangle is half of base times height.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Area = ½ × base × height",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Put in what we know. 5 equals half, times the base, times 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "5 = ½ × base × 2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Look at the half and the 2 on that line. What is half of 2?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "4",
+      "2"
+     ],
+     "answer": 0,
+     "ifNot": "Half of 2 means 2 split into two equal parts. Each part is 1."
+    }
+   },
+   {
+    "say": "So the half and the 2 together make just 1. And 1 times the base is simply the base.",
+    "board": [
+     {
+      "op": "group",
+      "line": "a",
+      "targets": [
+       {
+        "text": "½"
+       },
+       {
+        "text": "2"
+       }
+      ],
+      "label": "= 1"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "½ × 2 = 1"
+     }
+    ]
+   },
+   {
+    "say": "That leaves 5 equals the base. The base is 5 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "Base = 5 cm",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check it in the rule. Half of 5 times 2 is half of 10, which is 5. That is our area.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "½ × 5 × 2 = 5"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to forget the half and say 5 divided by 2. The steady way is: double the area, then divide by the height.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "2 × 5 ÷ 2 = 5"
+     }
+    ]
+   },
+   {
+    "say": "So for a missing base, double the area and divide by the height."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A room has a floor 5 metres long and 4 metres wide. Its four walls have a total area of 108 square metres. How high is the room?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Floor 5 m × 4 m. Four walls: 108 sq m. Height = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Imagine unfolding the four walls and laying them flat in a row. They make one long rectangle, exactly as tall as the room.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "4 walls = one long strip",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How long is that strip of walls?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the area of the floor",
+      "the perimeter of the floor",
+      "the length of the room"
+     ],
+     "answer": 1,
+     "ifNot": "The walls stand on the edges of the floor, all the way round. So the strip is as long as the walk round the floor, its perimeter."
+    }
+   },
+   {
+    "say": "The floor's perimeter is 2 lengths and 2 breadths. 5 plus 4 is 9, and twice 9 is 18 metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "2 × (5 + 4) = 18"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "18"
+      },
+      "text": "strip length",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So the strip is 18 metres long, and its area is 108. Length times height gives area.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "18 × height = 108",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The height is 108 divided by 18. Now 18 times 6 is 108, so the room is 6 metres high.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "108 ÷ 18 = 6",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check wall by wall. Two walls are 5 by 6, which is 30 each. Two are 4 by 6, which is 24 each. And 30, 30, 24 and 24 make 108.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "5 × 6 = 30"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "4 × 6 = 24"
+     },
+     {
+      "op": "write",
+      "id": "g",
+      "text": "30 + 30 + 24 + 24 = 108"
+     }
+    ]
+   },
+   {
+    "say": "The trap is dividing 108 by the floor area, 20. The walls stand on the floor's edges, so it is the perimeter we need.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "5 × 4 = 20"
+     },
+     {
+      "op": "note",
+      "line": "h",
+      "target": {
+       "text": "20"
+      },
+      "text": "floor area: not needed",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So the area of four walls is the perimeter of the floor times the height. Divide to get the height back."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "One side of a square grows by 50 percent, and the other shrinks by 50 percent. It becomes a rectangle. Is its area bigger, smaller, or the same?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Square: one side + 50%, the other side − 50%",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "New area: bigger, smaller or the same?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "No numbers are given, so let's choose an easy square. Say each side is 10. Its area is 10 times 10, which is 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "100"
+      },
+      "text": "square",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "50 percent means half. So what is 50 percent of 10?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5",
+      "50",
+      "2"
+     ],
+     "answer": 0,
+     "ifNot": "50 percent is the same as half. And half of 10 is 5."
+    }
+   },
+   {
+    "say": "One side grows by 5: 10 plus 5 is 15. The other shrinks by 5: 10 minus 5 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "10 + 5 = 15"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "10 − 5 = 5"
+     }
+    ]
+   },
+   {
+    "say": "One side went up by 5 and the other came down by 5. What do you think happens to the area?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "it stays the same",
+      "it gets smaller",
+      "it gets bigger"
+     ],
+     "answer": 1,
+     "ifNot": "It feels as if up 5 and down 5 should cancel out. But area multiplies the sides, so let's work it out and see."
+    }
+   },
+   {
+    "say": "The new rectangle is 15 times 5, which is 75. And 75 is less than 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "15 × 5 = 75"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "75"
+      },
+      "text": "rectangle",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "75 < 100"
+     }
+    ]
+   },
+   {
+    "say": "So the rectangle's area is smaller than the square's.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "The new area is smaller than the square",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "g",
+      "target": {
+       "text": "smaller"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "That is the trap: the same percent up and down does not cancel. One side became one and a half times as long, but the other became only half. Together that makes just three quarters of the square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "3/2 × 1/2 = 3/4"
+     },
+     {
+      "op": "note",
+      "line": "h",
+      "target": {
+       "text": "3/4"
+      },
+      "text": "of the square",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So when a question gives no numbers, pick easy ones and try it. The sums will show you what really happens."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q017": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A hall is 5 metres long and 4 metres wide. It is covered with square tiles of side 25 centimetres. How many tiles are needed?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Hall 5 m × 4 m, square tiles of side 25 cm. Tiles = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Metres and centimetres are mixed, so first we make them match. 1 metre is 100 centimetres, so the hall is 500 centimetres by 400 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "1 m = 100 cm",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "5 × 100 = 500"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "4 × 100 = 400"
+     }
+    ]
+   },
+   {
+    "say": "How many 25 centimetre tiles fit in one row along the 500 centimetre length?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "20",
+      "25",
+      "50"
+     ],
+     "answer": 0,
+     "ifNot": "Four 25s make 100. There are 5 hundreds in 500, so that is 4 times 5, which is 20 tiles."
+    }
+   },
+   {
+    "say": "500 divided by 25 is 20 tiles in a row. And across the breadth, 400 divided by 25 is 16 rows.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "500 ÷ 25 = 20"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "20"
+      },
+      "text": "tiles in a row",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "400 ÷ 25 = 16"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "16"
+      },
+      "text": "rows",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So the floor is a grid of tiles: 16 rows, with 20 tiles in each row. 20 times 16 is 320 tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "20 × 16 = 320",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "320"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check it with areas. The floor is 500 times 400, which is 200000 square centimetres. One tile is 25 times 25, which is 625.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "500 × 400 = 200000"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "25 × 25 = 625"
+     }
+    ]
+   },
+   {
+    "say": "And 200000 divided by 625 is 320. The same answer both ways.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i",
+      "text": "200000 ÷ 625 = 320"
+     }
+    ]
+   },
+   {
+    "say": "The trap is using 5 and 4 with 25 without changing units. Metres and centimetres must never be mixed in one sum."
+   },
+   {
+    "say": "So for tiles: same units first, count how many fit along each side, then multiply."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q018": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A wire 100 centimetres long is bent into a square. Then the same wire makes a rectangle, 5 centimetres longer and 5 centimetres narrower than the square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Wire 100 cm, bent into a square",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Rectangle: length = side + 5 cm, breadth = side − 5 cm",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Difference between the two areas = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The wire goes all the way round the square, so 100 centimetres is its perimeter. One side is 100 divided by 4, which is 25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "100 ÷ 4 = 25"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "25"
+      },
+      "text": "side of square",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The area of the square is 25 times 25, which is 625 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "25 × 25 = 625"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "625"
+      },
+      "text": "square",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the rectangle. Its length is 5 more than 25, and its breadth is 5 less than 25. What are they?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "30 and 20",
+      "30 and 25",
+      "25 and 20"
+     ],
+     "answer": 0,
+     "ifNot": "Both sides change. 25 plus 5 is 30 for the length, and 25 minus 5 is 20 for the breadth."
+    }
+   },
+   {
+    "say": "So the rectangle is 30 by 20, and 30 times 20 is 600 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "25 + 5 = 30"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "25 − 5 = 20"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "30 × 20 = 600"
+     },
+     {
+      "op": "note",
+      "line": "e",
+      "target": {
+       "text": "600"
+      },
+      "text": "rectangle",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The difference is 625 minus 600, which is 25 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "625 − 600 = 25",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "g",
+      "target": {
+       "text": "25",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Don't answer 625 or 600. Those are the two areas, and the question wants the gap between them."
+   },
+   {
+    "say": "Notice something. Both shapes use the same wire: twice 30 plus 20 is 100 too. Yet the square holds more, by exactly 5 times 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "2 × (30 + 20) = 100"
+     },
+     {
+      "op": "write",
+      "id": "i",
+      "text": "5 × 5 = 25"
+     }
+    ]
+   },
+   {
+    "say": "So: the perimeter gives the side, the side gives each area, and then we subtract."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q021": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A triangle with a base of 5.2 centimetres and a height of 2.9 centimetres. We want its area.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Triangle: base 5.2 cm, height 2.9 cm. Area = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "sides": {
+        "bc": "5.2 cm"
+       },
+       "height": "2.9 cm"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The area of a triangle is half of base times height.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Area = ½ × base × height",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A smart move is to halve one of the numbers first. Which one halves more easily?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5.2",
+      "2.9",
+      "neither"
+     ],
+     "answer": 0,
+     "ifNot": "5.2 ends in an even digit, so it halves neatly. 2.9 ends in an odd digit, so its half would be messier."
+    }
+   },
+   {
+    "say": "Half of 5.2 is 2.6. So the area is 2.6 times 2.9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "5.2 ÷ 2 = 2.6"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "½ × 5.2 × 2.9 = 2.6 × 2.9"
+     }
+    ]
+   },
+   {
+    "say": "Leave the decimal points out for a moment: 26 times 29. Now 26 times 30 is 780, and taking away one 26 leaves 754.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "26 × 30 = 780"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "780 − 26 = 754"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "26 × 29 = 754"
+     }
+    ]
+   },
+   {
+    "say": "Time to put the point back. 2.6 and 2.9 have one decimal place each. So how many decimal places does the answer have?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "2",
+      "3"
+     ],
+     "answer": 1,
+     "ifNot": "Count the decimal places in both numbers: one, and one more. Together that makes 2 decimal places in the answer."
+    }
+   },
+   {
+    "say": "So 754 becomes 7.54. The area is 7.54 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "2.6 × 2.9 = 7.54",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "g",
+      "target": {
+       "text": "7.54"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Does that look right? Half of 5 times 3 is 7 and a half, so 7.54 is sensible. And area is in square centimetres, not plain centimetres."
+   },
+   {
+    "say": "So for a triangle: halve the easy number, multiply, then count the decimal places."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q022": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square with each side 6.1 centimetres. We want its area.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Square, each side 6.1 cm. Area = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "length": "6.1 cm",
+       "breadth": "6.1 cm",
+       "inside": "Area = ?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Which sum gives the area of a square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 × 6.1",
+      "6.1 × 6.1",
+      "6.1 + 6.1"
+     ],
+     "answer": 1,
+     "ifNot": "4 times the side is the walk round the edge, which is the perimeter. Area is the space inside: side times side."
+    }
+   },
+   {
+    "say": "That is the trap in this question. 4 times 6.1 is 24.4, but that is the perimeter, a length.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "4 × 6.1 = 24.4"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "24.4"
+      },
+      "text": "perimeter, not area",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So we need 6.1 times 6.1. Leave the points out for now: 61 times 61. Well, 61 times 60 is 3660, and one more 61 makes 3721.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "61 × 60 = 3660"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "3660 + 61 = 3721"
+     }
+    ]
+   },
+   {
+    "say": "Each 6.1 has one decimal place. So where does the point go in 3721?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "372.1",
+      "37.21",
+      "3.721"
+     ],
+     "answer": 1,
+     "ifNot": "One decimal place and one more make two. So count two digits from the right, and put the point there."
+    }
+   },
+   {
+    "say": "That gives 37.21. The area is 37.21 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "6.1 × 6.1 = 37.21",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "d",
+      "target": {
+       "text": "37.21"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A quick sense check: 6 times 6 is 36, and 6.1 is a little more than 6. So a little more than 36 is just right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "6 × 6 = 36"
+     }
+    ]
+   },
+   {
+    "say": "So for the area of a square, multiply the side by itself, then count the decimal places in the answer."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q023": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A rectangle with a length of 1.1 centimetres and a breadth of 30 centimetres. We want its area.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Rectangle: length 1.1 cm, breadth 30 cm. Area = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Both sides are already in centimetres, so we can multiply straight away. Area is length times breadth.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Area = length × breadth",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "1.1 × 30"
+     }
+    ]
+   },
+   {
+    "say": "1.1 is 1 whole and 1 tenth. What is 1 tenth of 30?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "0.3",
+      "30"
+     ],
+     "answer": 0,
+     "ifNot": "A tenth means divide by 10. And 30 divided by 10 is 3."
+    }
+   },
+   {
+    "say": "So split the sum in two. 1 times 30 is 30, and 0.1 times 30 is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "1 × 30 = 30"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "0.1 × 30 = 3"
+     }
+    ]
+   },
+   {
+    "say": "30 plus 3 is 33. The area is 33 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "30 + 3 = 33"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "1.1 × 30 = 33",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "33"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is another way to see it. 11 times 30 is 330, and one decimal place brings that back to 33.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "11 × 30 = 330"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "330 ÷ 10 = 33"
+     }
+    ]
+   },
+   {
+    "say": "Watch the decimal point: it is 33, not 330. And we multiplied centimetres by centimetres, so the answer is in square centimetres."
+   },
+   {
+    "say": "So for an area with a decimal, split the decimal into its whole and its tenths, multiply each, and add."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q025": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A triangle with an area of 120 square centimetres and a base of 40 centimetres. We want its height.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Triangle: area 120 sq cm, base 40 cm. Height = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The area of a triangle is half of base times height.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Area = ½ × base × height",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Put in what we know. Half of the base is half of 40, which is 20. So 20 times the height is 120.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "½ × 40 = 20"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "20 × height = 120",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "20 times the height is 120. So how do we find the height?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "120 ÷ 20",
+      "120 × 20",
+      "120 − 20"
+     ],
+     "answer": 0,
+     "ifNot": "20 times something gives 120. To undo the times, we divide 120 by 20."
+    }
+   },
+   {
+    "say": "120 divided by 20 is 6. The height is 6 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "120 ÷ 20 = 6"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "6"
+      },
+      "text": "cm",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now look at the choices: none of them says 6 centimetres. A height is a length, so which unit could be right?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "sq cm",
+      "mm",
+      "sq mm"
+     ],
+     "answer": 1,
+     "ifNot": "Square units are for area. A height is a length, so it needs a plain length unit, like millimetres."
+    }
+   },
+   {
+    "say": "1 centimetre is 10 millimetres. So 6 centimetres is 6 times 10, which is 60 millimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "1 cm = 10 mm",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "6 × 10 = 60"
+     },
+     {
+      "op": "write",
+      "id": "g",
+      "text": "Height = 6 cm = 60 mm",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "g",
+      "target": {
+       "text": "60 mm"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check it in the rule. Half of 40 is 20, and 20 times 6 is 120. And mind the trap: 120 divided by 40 gives 3, which forgets the half.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "½ × 40 × 6 = 120"
+     }
+    ]
+   },
+   {
+    "say": "So for a missing height: halve the base, divide the area by that, and then check which unit the answer is wanted in."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch20_q027": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square with a perimeter of 52 millimetres. We want its area.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "Square, perimeter 52 mm. Area = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Area needs the side, and all we have is the perimeter. So this takes two steps: first the side, then the area.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "perimeter, then side, then area",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A square has 4 equal sides. How do we get one side from the perimeter?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "52 ÷ 4",
+      "52 ÷ 2",
+      "52 × 4"
+     ],
+     "answer": 0,
+     "ifNot": "The 4 equal sides add up to the perimeter. So one side is the perimeter shared among 4."
+    }
+   },
+   {
+    "say": "52 divided by 4 is 13. Each side is 13 millimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "52 ÷ 4 = 13"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "13"
+      },
+      "text": "side",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now for the area of the square. Which sum is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "13 + 13",
+      "13 × 13",
+      "4 × 13"
+     ],
+     "answer": 1,
+     "ifNot": "Area counts the little squares inside: 13 rows, with 13 in each row. That is side times side. 4 times the side only takes us back to the perimeter."
+    }
+   },
+   {
+    "say": "13 times 13. Take it in two bites: 13 times 10 is 130, and 13 times 3 is 39.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "13 × 10 = 130"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "13 × 3 = 39"
+     }
+    ]
+   },
+   {
+    "say": "130 plus 39 is 169. The area is 169 square millimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "130 + 39 = 169"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "13 × 13 = 169",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "169"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Look at the units. The side is in millimetres, so the area is in square millimetres. Not square centimetres, and not plain millimetres."
+   },
+   {
+    "say": "Check the first step: 4 sides of 13 make 52, the perimeter we were given.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "4 × 13 = 52"
+     }
+    ]
+   },
+   {
+    "say": "So from perimeter to area in a square: divide by 4 for the side, then multiply the side by itself."
+   }
+  ]
+ },
+ "AIGEN_grade5_095d2be2-8a79-49d5-9077-143409859d27": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera starts with 30 packets. She gives away 2 groups of 6, and gets 3 groups of 4. Here is the whole story as one sum.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "30 − 2 × 6 + 3 × 4",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There is a minus, a plus and two times signs. What do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "30 − 2",
+      "the two multiplications",
+      "6 + 3"
+     ],
+     "answer": 1,
+     "ifNot": "BODMAS puts multiplication before adding and subtracting. So the two times sums go first, wherever they sit in the line."
+    }
+   },
+   {
+    "say": "2 times 6 is 12. Those are the packets she gives away.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q1",
+      "target": {
+       "text": "2 × 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "q1",
+      "target": {
+       "text": "2 × 6"
+      },
+      "text": "12",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "3 times 4 is also 12. Those are the packets she gets from her teacher.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q1",
+      "target": {
+       "text": "3 × 4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "q1",
+      "target": {
+       "text": "3 × 4"
+      },
+      "text": "12",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the line is much simpler: 30 minus 12 plus 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "30 − 12 + 12"
+     }
+    ]
+   },
+   {
+    "say": "Only a minus and a plus are left. Which way do we go?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "left to right",
+      "the plus first",
+      "right to left"
+     ],
+     "answer": 0,
+     "ifNot": "Plus and minus are equal partners, so neither one jumps the queue. We simply work from left to right."
+    }
+   },
+   {
+    "say": "30 minus 12 is 18. Then 18 plus 12 is 30. Meera has 30 packets.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "30 − 12 = 18"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "18 + 12 = 30"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "30 − 2 × 6 + 3 × 4 = 30",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "d",
+      "target": {
+       "text": "30",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is starting from the left with 30 minus 2, before the times sums are done. That mixes up loose packets with groups of packets."
+   },
+   {
+    "say": "It makes sense in the story too. She gave away 12 and got 12 back, so she still has her 30."
+   },
+   {
+    "say": "So: multiplications first, then plus and minus from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_0abdbafc-1973-41a8-acbd-7f83d8122ddf": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya buys 3 boxes of 12 diyas, gets 8 more, shares them into 4 rows, and adds 5 to each row. This sum tells the whole story.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "(3 × 12 + 8) ÷ 4 + 5",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Where do we start?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the brackets",
+      "the ÷ 4",
+      "the + 5"
+     ],
+     "answer": 0,
+     "ifNot": "The B in BODMAS comes first, and B is for brackets. We finish everything inside them before we touch the rest."
+    }
+   },
+   {
+    "say": "Inside the brackets there is a times and a plus. The times goes first: 3 times 12 is 36.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q1",
+      "target": {
+       "text": "3 × 12"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "q1",
+      "target": {
+       "text": "3 × 12"
+      },
+      "text": "36",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Then add the 8. 36 plus 8 is 44, and that is all of Riya's diyas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "36 + 8 = 44"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "44"
+      },
+      "text": "all the diyas",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The brackets are done, so the sum is now 44 divided by 4, plus 5. What comes next?",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "44 ÷ 4 + 5"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 + 5 first",
+      "44 ÷ 4 first"
+     ],
+     "answer": 1,
+     "ifNot": "Division comes before addition. So we share the 44 into 4 rows first, and add the 5 afterwards."
+    }
+   },
+   {
+    "say": "44 divided by 4 is 11. That is 11 diyas in each row.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "44 ÷ 4 = 11"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "11"
+      },
+      "text": "in each row",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Then 5 more go into each row. 11 plus 5 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "11 + 5 = 16",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "d",
+      "target": {
+       "text": "16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap. Add the 4 and the 5 first, and you would be sharing 44 diyas among 9 rows. The story has only 4 rows."
+   },
+   {
+    "say": "So: brackets first, then divide and multiply, then add and subtract."
+   }
+  ]
+ },
+ "AIGEN_grade5_116040d3-d979-4293-a092-9018abc373f1": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya's sum has every kind of sign in it, and brackets too. The order we work in decides the answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "60 ÷ (2 + 3) × 4 − 8 + 5",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Brackets first, always. 2 plus 3 is 5.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q1",
+      "target": {
+       "text": "(2 + 3)"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "note",
+      "line": "q1",
+      "target": {
+       "text": "(2 + 3)"
+      },
+      "text": "5",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "60 ÷ 5 × 4 − 8 + 5"
+     }
+    ]
+   },
+   {
+    "say": "Now there is a divide and a times, side by side. Which one goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the ×, so 5 × 4",
+      "the ÷, so 60 ÷ 5",
+      "it does not matter"
+     ],
+     "answer": 1,
+     "ifNot": "Divide and multiply are equal partners, so we take them from left to right. The divide is on the left, so it goes first."
+    }
+   },
+   {
+    "say": "60 divided by 5 is 12. Then 12 times 4 is 48.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "60 ÷ 5 = 12"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "12 × 4 = 48"
+     }
+    ]
+   },
+   {
+    "say": "Careful here. If you multiplied the 5 by the 4 first, the 60 would be divided by a much bigger number, and the whole answer would change."
+   },
+   {
+    "say": "What is left is 48 minus 8 plus 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "48 − 8 + 5"
+     }
+    ]
+   },
+   {
+    "say": "A minus and a plus now. Which one first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 + 5 first",
+      "48 − 8 first"
+     ],
+     "answer": 1,
+     "ifNot": "Plus and minus are equal partners too. So it is left to right again, and the minus is on the left."
+    }
+   },
+   {
+    "say": "48 minus 8 is 40, and 40 plus 5 is 45. Priya needs 45 packets.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "48 − 8 = 40"
+     },
+     {
+      "op": "write",
+      "id": "g",
+      "text": "40 + 5 = 45",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "g",
+      "target": {
+       "text": "45"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So: brackets first. Then divide and multiply, left to right. Then add and subtract, left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_144fb76b-3e40-448b-8de5-3798287ec4d9": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is the coach's formula for Rohit's score. It has brackets, a divide, a times and a minus.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "48 ÷ (4 + 2) × 3 − 5",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What is the very first job?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "48 ÷ 4",
+      "4 + 2",
+      "3 − 5"
+     ],
+     "answer": 1,
+     "ifNot": "The brackets are like a fence round 4 plus 2. Whatever is inside the fence gets done before anything else."
+    }
+   },
+   {
+    "say": "4 plus 2 is 6. So now we have 48 divided by 6, times 3, minus 5.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q1",
+      "target": {
+       "text": "(4 + 2)"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "note",
+      "line": "q1",
+      "target": {
+       "text": "(4 + 2)"
+      },
+      "text": "6",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "48 ÷ 6 × 3 − 5"
+     }
+    ]
+   },
+   {
+    "say": "That was the trap. The 4 sits right next to the divide sign, so it is tempting to do 48 divided by 4. But the bracket has to be finished first."
+   },
+   {
+    "say": "Next there is a divide, a times and a minus. Which one now?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "48 ÷ 6",
+      "6 × 3",
+      "3 − 5"
+     ],
+     "answer": 0,
+     "ifNot": "The minus waits till last. Divide and times are equal partners, so we take whichever comes first from the left, and that is the divide."
+    }
+   },
+   {
+    "say": "48 divided by 6 is 8. Then 8 times 3 is 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "48 ÷ 6 = 8"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "8 × 3 = 24"
+     }
+    ]
+   },
+   {
+    "say": "Last of all, the minus. 24 minus 5 is 19, so Rohit's score is 19.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "24 − 5 = 19",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "d",
+      "target": {
+       "text": "19"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So: brackets, then divide and multiply from left to right, and the minus right at the end."
+   }
+  ]
+ },
+ "AIGEN_grade5_17fb61ee-1992-4602-8c18-a1fe1a4d38e9": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya pays with a 100 rupee note. She buys 5 packets of samosas at 12 rupees each, then spends 8 rupees on chai. Here is the sum.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "100 − 5 × 12 − 8",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Which part do we work out first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "100 − 5",
+      "5 × 12",
+      "12 − 8"
+     ],
+     "answer": 1,
+     "ifNot": "Multiplication goes before subtraction. It fits the story too: we must know what the samosas cost before we take it off the 100."
+    }
+   },
+   {
+    "say": "5 times 12 is 60. That is the cost of the samosas.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q1",
+      "target": {
+       "text": "5 × 12"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "q1",
+      "target": {
+       "text": "5 × 12"
+      },
+      "text": "60",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "100 − 60 − 8"
+     }
+    ]
+   },
+   {
+    "say": "Now there are two subtractions, and we go from left to right. 100 minus 60 is 40.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "100 − 60 = 40"
+     }
+    ]
+   },
+   {
+    "say": "Then the chai. 40 minus 8 is 32, so Riya has 32 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "40 − 8 = 32",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "32"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The classic slip is doing 100 minus 5 first, and then multiplying. That would leave Riya with far more money than the note she started with!"
+   },
+   {
+    "say": "Check with the story. 60 for samosas and 8 for chai is 68 rupees spent. And 68 plus 32 makes the 100 rupee note.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "60 + 8 = 68"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "68 + 32 = 100"
+     }
+    ]
+   },
+   {
+    "say": "So: do the times first, then the subtractions from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_1ee7a7c7-db2b-43ac-9baf-e466c39d5d80": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ananya has 48 laddoos. She packs them equally into 6 boxes, and then her mom adds 5 more to each box. How many are in each box now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "48 laddoos, 6 equal boxes, then 5 more in each box",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "What happens first in the story?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "mom adds 5 laddoos",
+      "48 is shared into 6 boxes"
+     ],
+     "answer": 1,
+     "ifNot": "Read it again: she packs the 48 into boxes first. Mom's extra laddoos come afterwards, when the boxes are already filled."
+    }
+   },
+   {
+    "say": "So the sum is 48 divided by 6, plus 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "48 ÷ 6 + 5"
+     }
+    ]
+   },
+   {
+    "say": "BODMAS agrees with the story: divide before you add. 48 divided by 6 is 8, so there are 8 laddoos in each box.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "48 ÷ 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "48 ÷ 6 = 8"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "8",
+       "nth": 2
+      },
+      "text": "in each box",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Then mom adds 5 to each box. 8 plus 5 is 13 laddoos.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "8 + 5 = 13",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "13"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap. The 5 goes into each box, so it is added after the sharing. Add 5 to the 48 first and you get 53, which is a different story.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "48 + 5 = 53"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "48 + 5"
+      },
+      "text": "not this story",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by counting every laddoo. Mom gave 5 to each of the 6 boxes, which is 30. So there are 48 plus 30, 78 laddoos, and 6 boxes of 13 is 78 too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "6 × 5 = 30"
+     },
+     {
+      "op": "write",
+      "id": "g",
+      "text": "48 + 30 = 78"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "6 × 13 = 78"
+     }
+    ]
+   },
+   {
+    "say": "So follow the story in order. And if you are unsure, BODMAS says the same thing: divide before you add."
+   }
+  ]
+ }
+}

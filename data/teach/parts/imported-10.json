@@ -1,0 +1,8012 @@
+{
+ "AIGEN_grade5_9a285be2-59d8-48a3-a6c0-bef1adb36e89": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun puts 4000 rupees in a bank that pays 5 per cent simple interest a year, for 3 years. Then he buys a bat for 4500. We want what he has left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹4,000 at 5% a year for 3 years. Bat costs ₹4,500.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "5 per cent a year means every 100 rupees earns 5 rupees in a year. So how many hundreds are in 4000? 4000 divided by 100 is 40.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ah",
+      "text": "4,000 ÷ 100 = 40"
+     },
+     {
+      "op": "note",
+      "line": "ah",
+      "target": {
+       "text": "= 40"
+      },
+      "text": "hundreds",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Each of those 40 hundreds earns 5 rupees. 40 times 5 is 200. So 1 year brings 200 rupees of interest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ay",
+      "text": "40 × 5 = 200"
+     },
+     {
+      "op": "note",
+      "line": "ay",
+      "target": {
+       "text": "= 200"
+      },
+      "text": "interest for 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The money stays in the bank for 3 years. So what is the interest altogether?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "200 + 3",
+      "just 200",
+      "200 × 3"
+     ],
+     "answer": 2,
+     "ifNot": "Simple interest pays the same 200 rupees every single year. So 3 years means 3 lots of 200."
+    }
+   },
+   {
+    "say": "3 lots of 200 is 600. That is all the interest Arjun earns.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i",
+      "text": "200 × 3 = 600"
+     },
+     {
+      "op": "note",
+      "line": "i",
+      "target": {
+       "text": "= 600"
+      },
+      "text": "interest for 3 years",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Careful here: the bank gives back his 4000 as well as the interest. 4000 plus 600 is 4600.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "4,000 + 600 = 4,600"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "= 4,600"
+      },
+      "text": "what he has",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the bat. 4600 minus 4500 leaves 100 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "4,600 − 4,500 = 100",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "100"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by going back. The bat, 4500, plus the 100 left over, is 4600. That is exactly what the bank gave him.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "4,500 + 100 = 4,600"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: interest for 1 year, times the years, add it to the deposit, and only then do the shopping."
+   }
+  ]
+ },
+ "AIGEN_grade5_9d213c43-daf5-4358-8a6f-e4ca823aa429": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi deposits 4500 rupees at 6 per cent. Priya deposits 3500 at 8 per cent. We want to know when their interest will be the same.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Ravi: ₹4,500 at 6%.   Priya: ₹3,500 at 8%.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Same interest after ? years",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's see what each of them earns in 1 year. Ravi first. 4500 is 45 hundreds, and each hundred earns 6 rupees. 45 times 6 is 270.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r1",
+      "text": "4,500 ÷ 100 = 45"
+     },
+     {
+      "op": "write",
+      "id": "r2",
+      "text": "45 × 6 = 270"
+     },
+     {
+      "op": "note",
+      "line": "r2",
+      "target": {
+       "text": "= 270"
+      },
+      "text": "Ravi, 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now Priya. 3500 is 35 hundreds, and each hundred earns 8 rupees. 35 times 8 is 280.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p1",
+      "text": "3,500 ÷ 100 = 35"
+     },
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "35 × 8 = 280"
+     },
+     {
+      "op": "note",
+      "line": "p2",
+      "target": {
+       "text": "= 280"
+      },
+      "text": "Priya, 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So every year Ravi gets 270 and Priya gets 280. As the years go by, what happens to the gap between them?",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "280 − 270 = 10"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "It shrinks until they are level",
+      "It stays at 10 for ever",
+      "It grows by 10 every year"
+     ],
+     "answer": 2,
+     "ifNot": "Each year Priya adds 10 rupees more than Ravi does. So she is 10 ahead after 1 year, and every year after that puts another 10 on the gap."
+    }
+   },
+   {
+    "say": "Here are the first 3 years in a table. After 3 years Ravi has 810 and Priya has 840. Priya is ahead in every row.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "t",
+      "spec": {
+       "kind": "table",
+       "headers": [
+        "Years",
+        "Ravi",
+        "Priya"
+       ],
+       "rows": [
+        [
+         "1",
+         "270",
+         "280"
+        ],
+        [
+         "2",
+         "540",
+         "560"
+        ],
+        [
+         "3",
+         "810",
+         "840"
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "They both start from 0, and Priya pulls ahead in the very first year. Ravi never catches up, so their interest can never be equal.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Never equal: Priya always earns more",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "Never equal"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to look at only one thing. Ravi has more money in the bank, but Priya has the higher rate. Only the interest for a year settles it."
+   },
+   {
+    "say": "So to compare two deposits, work out 1 year for each. If one earns more every year, it stays ahead for good."
+   }
+  ]
+ },
+ "AIGEN_grade5_a133bece-80e9-4082-a185-a8b191b3d3c8": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Some money is in a bank at simple interest. After 3 years it has become 6500 rupees, and after 5 years, 7500. We want the money first put in, and the interest after 7 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "After 3 years: ₹6,500.   After 5 years: ₹7,500.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Between year 3 and year 5 the amount grew. What made it grow?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 more years of interest",
+      "5 more years of interest",
+      "more money was put in"
+     ],
+     "answer": 0,
+     "ifNot": "Nothing new was put in. The only thing added between year 3 and year 5 is the interest for those 2 extra years."
+    }
+   },
+   {
+    "say": "So 2 years of interest is 7500 minus 6500, which is 1000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "7,500 − 6,500 = 1,000"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "= 1,000"
+      },
+      "text": "interest for 2 years",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Simple interest is the same every year. So 1 year is half of 1000, which is 500 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "y",
+      "text": "1,000 ÷ 2 = 500"
+     },
+     {
+      "op": "note",
+      "line": "y",
+      "target": {
+       "text": "= 500"
+      },
+      "text": "interest for 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "After 3 years the amount was 6500. How do we get back to the money first put in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "take off 1 year of interest",
+      "add 3 years of interest",
+      "take off 3 years of interest"
+     ],
+     "answer": 2,
+     "ifNot": "The 6500 is the starting money with 3 years of interest on top. To get back to the start, peel those 3 years off."
+    }
+   },
+   {
+    "say": "3 years of interest is 3 times 500, which is 1500. And 6500 minus 1500 is 5000. So the principal is 5000 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i3",
+      "text": "500 × 3 = 1,500"
+     },
+     {
+      "op": "write",
+      "id": "p",
+      "text": "6,500 − 1,500 = 5,000"
+     },
+     {
+      "op": "mark",
+      "line": "p",
+      "target": {
+       "text": "5,000"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Now 7 years of interest. 7 times 500 is 3500.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i7",
+      "text": "500 × 7 = 3,500"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Principal = ₹5,000; 7 years' interest = ₹3,500",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "₹3,500"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with the other fact. 5 years of interest is 5 times 500, which is 2500. And 5000 plus 2500 is 7500, just as the question says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "500 × 5 = 2,500"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "5,000 + 2,500 = 7,500"
+     }
+    ]
+   },
+   {
+    "say": "So when you know the amount at two different times, the difference is pure interest. Find 1 year of it, then peel the interest off to reach the principal."
+   }
+  ]
+ },
+ "AIGEN_grade5_ac8c904a-97de-47ef-977a-08f81faff5da": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ananya deposits 30000 rupees for 4 years. From the interest she spends 4200 and has 1800 left. Then she deposits the 30000 and that 1800 again, at the same rate, for 3 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹30,000 for 4 years. Interest: ₹4,200 spent, ₹1,800 left.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Then ₹30,000 + ₹1,800 for 3 years, same rate. Interest = ?",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, how much interest did the first deposit earn? She spent 4200 of it and still had 1800. So it was 6000 in all.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i",
+      "text": "4,200 + 1,800 = 6,000"
+     },
+     {
+      "op": "note",
+      "line": "i",
+      "target": {
+       "text": "= 6,000"
+      },
+      "text": "interest for 4 years",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "That took 4 years, and simple interest is the same every year. 6000 divided by 4 is 1500 a year.",
+    "board": [
+     {
+      "op": "write",
+      "id": "y",
+      "text": "6,000 ÷ 4 = 1,500"
+     },
+     {
+      "op": "note",
+      "line": "y",
+      "target": {
+       "text": "= 1,500"
+      },
+      "text": "interest for 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The rate is what every 100 rupees earns in a year. 30000 is 300 hundreds, and together they earn 1500. So what does each hundred earn?",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "30,000 ÷ 100 = 300"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1500 × 300",
+      "1500 ÷ 300",
+      "1500 ÷ 100"
+     ],
+     "answer": 1,
+     "ifNot": "The 1500 rupees is shared equally among the 300 hundreds. So divide 1500 by 300."
+    }
+   },
+   {
+    "say": "1500 divided by 300 is 5. Each hundred earns 5 rupees a year, so the rate is 5 per cent.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "1,500 ÷ 300 = 5"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 5"
+      },
+      "text": "rate: 5% a year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the second deposit. 30000 plus 1800 is 31800. Careful: this is more money than before, so it will not earn 1500 a year any more.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "30,000 + 1,800 = 31,800"
+     }
+    ]
+   },
+   {
+    "say": "31800 is 318 hundreds, and each hundred earns 5 rupees. 318 times 5 is 1590 a year.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h2",
+      "text": "31,800 ÷ 100 = 318"
+     },
+     {
+      "op": "write",
+      "id": "y2",
+      "text": "318 × 5 = 1,590"
+     },
+     {
+      "op": "note",
+      "line": "y2",
+      "target": {
+       "text": "= 1,590"
+      },
+      "text": "interest for 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "And for 3 years, 1590 times 3 is 4770 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "1,590 × 3 = 4,770",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "4,770"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check another way. The 30000 alone would earn 3 times 1500, which is 4500. The extra 1800 is 18 hundreds: 18 times 5 times 3 is 270. And 4500 plus 270 is 4770.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "1,500 × 3 = 4,500"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "18 × 5 × 3 = 270"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "4,500 + 270 = 4,770"
+     }
+    ]
+   },
+   {
+    "say": "So first use what you know to find the rate. Then start again with the new deposit: new money, new interest for a year."
+   }
+  ]
+ },
+ "AIGEN_grade5_ad2aecc1-d666-4f4a-adb1-77982b0b09e4": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A bank pays 5 per cent simple interest a year. After 4 years the interest is 800 rupees. We want to know how much was deposited.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "5% a year for 4 years gives ₹800 interest. Deposit = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The 800 came over 4 years, the same amount each year. So 1 year is 800 divided by 4, which is 200 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "y",
+      "text": "800 ÷ 4 = 200"
+     },
+     {
+      "op": "note",
+      "line": "y",
+      "target": {
+       "text": "= 200"
+      },
+      "text": "interest for 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "5 per cent means every 100 rupees earns 5 rupees a year. The bank paid 200 a year. So how many hundreds were deposited?",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "5% a year: every ₹100 earns ₹5",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "200 ÷ 5",
+      "200 × 5",
+      "200 ÷ 100"
+     ],
+     "answer": 0,
+     "ifNot": "Each hundred brings in 5 rupees. To see how many hundreds it takes to make 200 rupees, divide 200 by 5."
+    }
+   },
+   {
+    "say": "200 divided by 5 is 40. So there were 40 hundreds in the bank, and 40 hundreds is 4000 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "200 ÷ 5 = 40"
+     },
+     {
+      "op": "note",
+      "line": "h",
+      "target": {
+       "text": "= 40"
+      },
+      "text": "hundreds",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "40 × 100 = 4,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "4,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to add the interest on. 4000 plus 800 is 4800, but that is the deposit and the interest together. The question asks only for the deposit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "4,000 + 800 = 4,800"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "= 4,800"
+      },
+      "text": "not the deposit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check it forwards. 5 per cent of 4000 is 200 a year, and 4 years of 200 is 800. It matches the question.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "5% of 4,000 = 200"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "200 × 4 = 800"
+     }
+    ]
+   },
+   {
+    "say": "So to go from interest back to the deposit: find 1 year's interest, see how many hundreds earn that much, and turn the hundreds into rupees."
+   }
+  ]
+ },
+ "AIGEN_grade5_b1a13a45-5076-4ae2-9412-4d7dc3aee230": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "5000 rupees goes into a bank at 6 per cent simple interest a year, and grows to 6500. We want to know how many years it stayed there.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹5,000 at 6% a year becomes ₹6,500. Years = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How much of that 6500 is interest?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "all 6500 of it",
+      "6500 − 5000",
+      "6500 + 5000"
+     ],
+     "answer": 1,
+     "ifNot": "The 6500 is the 5000 he put in, with the interest on top. Take the 5000 away, and the interest is what is left."
+    }
+   },
+   {
+    "say": "6500 minus 5000 is 1500. So the bank added 1500 rupees of interest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i",
+      "text": "6,500 − 5,000 = 1,500"
+     },
+     {
+      "op": "note",
+      "line": "i",
+      "target": {
+       "text": "= 1,500"
+      },
+      "text": "all the interest",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "6 per cent a year means every 100 rupees earns 6 rupees in a year. So how many hundreds are in 5000? 5000 divided by 100 is 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ah",
+      "text": "5,000 ÷ 100 = 50"
+     },
+     {
+      "op": "note",
+      "line": "ah",
+      "target": {
+       "text": "= 50"
+      },
+      "text": "hundreds",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Each of those 50 hundreds earns 6 rupees. 50 times 6 is 300. So 1 year brings 300 rupees of interest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ay",
+      "text": "50 × 6 = 300"
+     },
+     {
+      "op": "note",
+      "line": "ay",
+      "target": {
+       "text": "= 300"
+      },
+      "text": "interest for 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Each year adds 300 rupees, and the interest reached 1500. How do we find the number of years?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1500 − 300",
+      "1500 ÷ 300",
+      "6500 ÷ 300"
+     ],
+     "answer": 1,
+     "ifNot": "We are counting how many lots of 300 fit into the 1500 of interest. That is a division: 1500 divided by 300."
+    }
+   },
+   {
+    "say": "300 times 5 is 1500. So it took 5 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "300 × 5 = 1,500"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "1,500 ÷ 300 = 5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check from the start. 5 years of 300 is 1500, and 5000 plus 1500 is 6500. Just what the question says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "5,000 + 1,500 = 6,500"
+     }
+    ]
+   },
+   {
+    "say": "So for a how-many-years question: find the interest alone, find 1 year's interest, and divide."
+   }
+  ]
+ },
+ "AIGEN_grade5_b47ed985-d181-40b0-91be-8aef3f1dbbc4": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "12000 rupees is in Bank A at 8 per cent, and 9000 rupees is in Bank B at a rate we do not know. After 5 years the two banks have paid 9300 in interest between them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Bank A: ₹12,000 at 8%.   Bank B: ₹9,000 at ?%.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "After 5 years, interest from both = ₹9,300",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with Bank A, because we know everything about it. 12000 is 120 hundreds, each earning 8 rupees a year. 120 times 8 is 960.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a1",
+      "text": "12,000 ÷ 100 = 120"
+     },
+     {
+      "op": "write",
+      "id": "a2",
+      "text": "120 × 8 = 960"
+     },
+     {
+      "op": "note",
+      "line": "a2",
+      "target": {
+       "text": "= 960"
+      },
+      "text": "Bank A, 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Over 5 years, Bank A pays 960 times 5, which is 4800.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a3",
+      "text": "960 × 5 = 4,800"
+     },
+     {
+      "op": "note",
+      "line": "a3",
+      "target": {
+       "text": "= 4,800"
+      },
+      "text": "Bank A, 5 years",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Both banks together paid 9300, and Bank A paid 4800 of it. So how much came from Bank B?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9300 + 4800",
+      "9300 ÷ 2",
+      "9300 − 4800"
+     ],
+     "answer": 2,
+     "ifNot": "The 9300 is made of two parts, Bank A's and Bank B's. Take Bank A's 4800 away and Bank B's part is left."
+    }
+   },
+   {
+    "say": "9300 minus 4800 is 4500. Careful: that is Bank B's interest for all 5 years. For 1 year, divide by 5: 900 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b1",
+      "text": "9,300 − 4,800 = 4,500"
+     },
+     {
+      "op": "write",
+      "id": "b2",
+      "text": "4,500 ÷ 5 = 900"
+     },
+     {
+      "op": "note",
+      "line": "b2",
+      "target": {
+       "text": "= 900"
+      },
+      "text": "Bank B, 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Bank B holds 9000, which is 90 hundreds. Share the 900 among 90 hundreds, and each hundred earns 10 rupees. So the rate is 10 per cent.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b3",
+      "text": "9,000 ÷ 100 = 90"
+     },
+     {
+      "op": "write",
+      "id": "b4",
+      "text": "900 ÷ 90 = 10"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Bank B's rate = 10% a year",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "10%"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check Bank B forwards. 10 per cent of 9000 is 900 a year, so 4500 in 5 years. And 4800 plus 4500 is 9300.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "10% of 9,000 = 900"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "900 × 5 = 4,500"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "4,800 + 4,500 = 9,300"
+     }
+    ]
+   },
+   {
+    "say": "So with two banks, finish the one you know first. Take its interest out of the total, and what is left tells you about the other bank."
+   }
+  ]
+ },
+ "AIGEN_grade5_b9233dff-d528-458a-82d3-73a188067064": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera's 15000 rupees is split in two. 9000 goes to Bank P at 4 per cent, and the rest goes to Bank Q. After 2 years both banks have paid the same interest. We want Bank Q's rate.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹15,000: ₹9,000 in Bank P at 4%, the rest in Bank Q",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "After 2 years: the same interest from both",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, the rest. 15000 minus 9000 is 6000, so Bank Q holds 6000 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "15,000 − 9,000 = 6,000"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 6,000"
+      },
+      "text": "in Bank Q",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now Bank P for 1 year. 9000 is 90 hundreds, each earning 4 rupees. 90 times 4 is 360.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p1",
+      "text": "9,000 ÷ 100 = 90"
+     },
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "90 × 4 = 360"
+     },
+     {
+      "op": "note",
+      "line": "p2",
+      "target": {
+       "text": "= 360"
+      },
+      "text": "Bank P, 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Both banks pay the same interest over the same 2 years. So what does Bank Q pay in 1 year?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "half of 360",
+      "double 360",
+      "360, the same as Bank P"
+     ],
+     "answer": 2,
+     "ifNot": "The totals match and the number of years match. So each single year must match too: Bank Q also pays 360 a year."
+    }
+   },
+   {
+    "say": "Bank Q holds 6000, which is 60 hundreds. Share the 360 among 60 hundreds, and each hundred earns 6 rupees. So Bank Q pays 6 per cent.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "6,000 ÷ 100 = 60"
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "360 ÷ 60 = 6"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Bank Q's rate = 6% a year",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6%"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Does that make sense? Bank Q has less money but pays just as much interest. So its rate had to be higher than 4, and 6 is."
+   },
+   {
+    "say": "Check over the 2 years. Bank P pays 2 times 360, which is 720. Bank Q: 6 per cent of 6000 is 360 a year, so 720 as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "360 × 2 = 720"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "6% of 6,000 = 360"
+     }
+    ]
+   },
+   {
+    "say": "So when two deposits earn the same interest in the same time, match them year for year, then ask what each hundred earns."
+   }
+  ]
+ },
+ "AIGEN_grade5_b9f2d16b-25bc-4c4a-89f1-707435ea6dd2": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi deposits 4500 rupees at 6 per cent a year and earns 810 rupees of interest. He takes out everything and spends 2000 on cricket gear. We want what is left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Deposit ₹4,500. Interest ₹810. Cricket gear ₹2,000.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The story already tells us the interest: 810 rupees. Do we still need the 6 per cent, or the number of years?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No: the interest is already known",
+      "Yes: work out the years first",
+      "Yes: find 6% of 4500 first"
+     ],
+     "answer": 0,
+     "ifNot": "The rate and the years are only there to find the interest. Here the story hands us the interest, 810 rupees, so that job is done."
+    }
+   },
+   {
+    "say": "He withdraws all of it: the money he put in, and the interest. 4500 plus 810 is 5310.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "4,500 + 810 = 5,310"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "= 5,310"
+      },
+      "text": "deposit + interest",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Then the cricket gear. 5310 minus 2000 is 3310 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "5,310 − 2,000 = 3,310",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "3,310"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: taking the 2000 from just the 4500 would forget the interest he earned. The interest is his money too."
+   },
+   {
+    "say": "Check by adding back. 3310 plus the 2000 he spent is 5310, which is what he took out of the bank.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "3,310 + 2,000 = 5,310"
+     }
+    ]
+   },
+   {
+    "say": "If you are curious about the years: 45 hundreds at 6 rupees each is 270 a year, and 3 lots of 270 is 810. So it was 3 years, and the story holds together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x1",
+      "text": "45 × 6 = 270"
+     },
+     {
+      "op": "write",
+      "id": "x2",
+      "text": "270 × 3 = 810"
+     }
+    ]
+   },
+   {
+    "say": "So read for what you are given. If the interest is already there, go straight to the amount: deposit plus interest."
+   }
+  ]
+ },
+ "AIGEN_grade5_bf836bd4-0d94-47a3-84b3-1b52536639ee": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "1500 rupees goes into a bank at 10 per cent simple interest a year. Later she takes it all out, spends 200 on decorations, and has 1600 left. How many years was it in the bank?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹1,500 at 10% a year. Spent ₹200, left with ₹1,600.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's work backwards. Just before she spent the 200, how much did she have?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1600 + 200",
+      "1600 − 200",
+      "1500 + 200"
+     ],
+     "answer": 0,
+     "ifNot": "She spent 200 and ended up with 1600. So just before spending, she had 200 more than 1600."
+    }
+   },
+   {
+    "say": "1600 plus 200 is 1800. That is what the bank gave back. Her own deposit was 1500, so the interest is 1800 minus 1500, which is 300.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "1,600 + 200 = 1,800"
+     },
+     {
+      "op": "write",
+      "id": "i",
+      "text": "1,800 − 1,500 = 300"
+     },
+     {
+      "op": "note",
+      "line": "i",
+      "target": {
+       "text": "= 300"
+      },
+      "text": "all the interest",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "10 per cent a year means every 100 rupees earns 10 rupees in a year. So how many hundreds are in 1500? 1500 divided by 100 is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ah",
+      "text": "1,500 ÷ 100 = 15"
+     },
+     {
+      "op": "note",
+      "line": "ah",
+      "target": {
+       "text": "= 15"
+      },
+      "text": "hundreds",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Each of those 15 hundreds earns 10 rupees. 15 times 10 is 150. So 1 year brings 150 rupees of interest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ay",
+      "text": "15 × 10 = 150"
+     },
+     {
+      "op": "note",
+      "line": "ay",
+      "target": {
+       "text": "= 150"
+      },
+      "text": "interest for 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The interest was 300, and each year brings 150. 300 is 2 lots of 150, so the money stayed for 2 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "300 ÷ 150 = 2",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap. Forget to put the 200 back, and the interest looks like only 100, which is not even 1 full year. Always undo the spending first."
+   },
+   {
+    "say": "Check from the start. 1500, plus 2 years of 150, minus the 200 she spent, is 1600. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "1,500 + 150 × 2 − 200 = 1,600"
+     }
+    ]
+   },
+   {
+    "say": "So when a story ends after some spending, walk backwards: undo the spending, take off the deposit, and count the years in what is left."
+   }
+  ]
+ },
+ "AIGEN_grade5_c8e400d8-61de-499a-8065-2a80ea906940": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ankit's mother puts 2000 rupees in Bank A at 10 per cent and 3000 rupees in Bank B at 6 per cent, saving for his school trip. After 2 years all the money is taken out. How much is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Bank A: ₹2,000 at 10%.  Bank B: ₹3,000 at 6%.  2 years.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Take Bank A first. 2000 is 20 hundreds, and each hundred earns 10 rupees a year. 20 times 10 is 200 a year.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a1",
+      "text": "2,000 ÷ 100 = 20"
+     },
+     {
+      "op": "write",
+      "id": "a2",
+      "text": "20 × 10 = 200"
+     },
+     {
+      "op": "note",
+      "line": "a2",
+      "target": {
+       "text": "= 200"
+      },
+      "text": "Bank A, 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The money stays for 2 years, so Bank A pays 200 times 2, which is 400.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a3",
+      "text": "200 × 2 = 400"
+     },
+     {
+      "op": "note",
+      "line": "a3",
+      "target": {
+       "text": "= 400"
+      },
+      "text": "Bank A interest",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Bank B the same way. 3000 is 30 hundreds, each earning 6 rupees. 30 times 6 is 180 a year, so 360 in 2 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b1",
+      "text": "3,000 ÷ 100 = 30"
+     },
+     {
+      "op": "write",
+      "id": "b2",
+      "text": "30 × 6 = 180"
+     },
+     {
+      "op": "write",
+      "id": "b3",
+      "text": "180 × 2 = 360"
+     },
+     {
+      "op": "note",
+      "line": "b3",
+      "target": {
+       "text": "= 360"
+      },
+      "text": "Bank B interest",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now all the money is withdrawn from both banks. What comes back?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "both deposits and both interests",
+      "only the two interests",
+      "only the two deposits"
+     ],
+     "answer": 0,
+     "ifNot": "A bank hands back what was put in, with the interest on top. So there are 4 things to add: 2 deposits and 2 lots of interest."
+    }
+   },
+   {
+    "say": "The deposits: 2000 plus 3000 is 5000. The interest: 400 plus 360 is 760.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "2,000 + 3,000 = 5,000"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "= 5,000"
+      },
+      "text": "deposits",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "i",
+      "text": "400 + 360 = 760"
+     },
+     {
+      "op": "note",
+      "line": "i",
+      "target": {
+       "text": "= 760"
+      },
+      "text": "interest",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Altogether, 5000 plus 760 is 5760 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "5,000 + 760 = 5,760",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "5,760"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check it bank by bank. Bank A gives back 2400, Bank B gives back 3360, and together that is 5760 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "2,000 + 400 = 2,400"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "3,000 + 360 = 3,360"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "2,400 + 3,360 = 5,760"
+     }
+    ]
+   },
+   {
+    "say": "So treat each bank on its own: 1 year's interest, times the years. Then remember that the deposits come back too."
+   }
+  ]
+ },
+ "AIGEN_grade5_d2fb6b24-dea0-445a-a531-a812249c751b": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's 4500 rupees becomes 5310 in 3 years. Meena puts 6000 in the same bank, at the same rate, for 4 years. We want Meena's interest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Ravi: ₹4,500 becomes ₹5,310 in 3 years.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Meena: ₹6,000 for 4 years, same rate. Interest = ?",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We do not know the rate yet, but Ravi's money can tell us. His interest is 5310 minus 4500, which is 810.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i",
+      "text": "5,310 − 4,500 = 810"
+     },
+     {
+      "op": "note",
+      "line": "i",
+      "target": {
+       "text": "= 810"
+      },
+      "text": "Ravi, 3 years",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "That is for 3 years. So in 1 year Ravi earns 810 divided by 3, which is 270.",
+    "board": [
+     {
+      "op": "write",
+      "id": "y",
+      "text": "810 ÷ 3 = 270"
+     },
+     {
+      "op": "note",
+      "line": "y",
+      "target": {
+       "text": "= 270"
+      },
+      "text": "Ravi, 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Ravi's 4500 is 45 hundreds, and together they earn 270 a year. What does each hundred earn?",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "4,500 ÷ 100 = 45"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "270 × 45",
+      "270 ÷ 100",
+      "270 ÷ 45"
+     ],
+     "answer": 2,
+     "ifNot": "The 270 rupees is shared equally among the 45 hundreds. So divide 270 by 45."
+    }
+   },
+   {
+    "say": "270 divided by 45 is 6. Every hundred earns 6 rupees a year, so the rate is 6 per cent.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "270 ÷ 45 = 6"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 6"
+      },
+      "text": "rate: 6% a year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now Meena. Her 6000 is 60 hundreds, and each one earns 6 rupees. 60 times 6 is 360 a year.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m1",
+      "text": "6,000 ÷ 100 = 60"
+     },
+     {
+      "op": "write",
+      "id": "m2",
+      "text": "60 × 6 = 360"
+     },
+     {
+      "op": "note",
+      "line": "m2",
+      "target": {
+       "text": "= 360"
+      },
+      "text": "Meena, 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the years: Meena's money stays for 4 years. The 3 years belonged to Ravi. 360 times 4 is 1440 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "360 × 4 = 1,440",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "1,440"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the rate on Ravi. 45 hundreds, 6 rupees each, for 3 years: 45 times 6 times 3 is 810. That is his interest, so the rate is right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "45 × 6 × 3 = 810"
+     }
+    ]
+   },
+   {
+    "say": "So when two people share a rate, use the one you know to find what each hundred earns in a year. Then give that rate to the other."
+   }
+  ]
+ },
+ "AIGEN_grade5_e15d0d87-8f02-4c13-aebf-ef1157e00ef6": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "12000 rupees is deposited when Ravi turns 10. By his 13th birthday it has earned 2880. Then he adds 8000 more at the same rate. We want all the interest by the time he turns 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹12,000 earns ₹2,880 in 3 years.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Then ₹8,000 more, same rate, for 3 years",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Total interest by age 16 = ?",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with what the first deposit earns in 1 year. 2880 came in 3 years, and 2880 divided by 3 is 960.",
+    "board": [
+     {
+      "op": "write",
+      "id": "y",
+      "text": "2,880 ÷ 3 = 960"
+     },
+     {
+      "op": "note",
+      "line": "y",
+      "target": {
+       "text": "= 960"
+      },
+      "text": "₹12,000, 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The 12000 went in on his 10th birthday. By the time he turns 16, for how many years has it been earning?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 years",
+      "3 years",
+      "9 years"
+     ],
+     "answer": 0,
+     "ifNot": "Count from his 10th birthday to his 16th. That is 6 years, and the first deposit earns interest in every one of them."
+    }
+   },
+   {
+    "say": "6 years at 960 a year: 960 times 6 is 5760. Careful: this already includes the 2880 from the first 3 years, so we must not add that again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i1",
+      "text": "960 × 6 = 5,760"
+     },
+     {
+      "op": "note",
+      "line": "i1",
+      "target": {
+       "text": "= 5,760"
+      },
+      "text": "first deposit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "For the second deposit we need the rate. 12000 is 120 hundreds, earning 960 a year. 960 divided by 120 is 8, so the rate is 8 per cent.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "12,000 ÷ 100 = 120"
+     },
+     {
+      "op": "write",
+      "id": "r",
+      "text": "960 ÷ 120 = 8"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 8"
+      },
+      "text": "rate: 8% a year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The 8000 is 80 hundreds, each earning 8 rupees. 80 times 8 is 640 a year.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h2",
+      "text": "8,000 ÷ 100 = 80"
+     },
+     {
+      "op": "write",
+      "id": "y2",
+      "text": "80 × 8 = 640"
+     },
+     {
+      "op": "note",
+      "line": "y2",
+      "target": {
+       "text": "= 640"
+      },
+      "text": "₹8,000, 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The second deposit is in the bank for only 3 years. 640 times 3 is 1920.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i2",
+      "text": "640 × 3 = 1,920"
+     },
+     {
+      "op": "note",
+      "line": "i2",
+      "target": {
+       "text": "= 1,920"
+      },
+      "text": "second deposit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now put the two together. 5760 plus 1920 is 7680 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "5,760 + 1,920 = 7,680",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "7,680"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check it by time instead. The first 3 years gave 2880. In the next 3 years both deposits earn: 960 plus 640 is 1600 a year, so 4800. And 2880 plus 4800 is 7680.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "960 + 640 = 1,600"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "1,600 × 3 = 4,800"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "2,880 + 4,800 = 7,680"
+     }
+    ]
+   },
+   {
+    "say": "So give every deposit its own number of years. Find 1 year's interest for each, multiply by its own years, and then add."
+   }
+  ]
+ },
+ "AIGEN_grade5_ea9dae78-b6a0-4142-b445-a4bfe6dcb00a": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "6000 rupees is in a post office scheme at 6 per cent simple interest a year. So far it has earned 1800 rupees. For how many years has it been there?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹6,000 at 6% a year earns ₹1,800. Years = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "6 per cent a year means every 100 rupees earns 6 rupees in a year. So how many hundreds are in 6000? 6000 divided by 100 is 60.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ah",
+      "text": "6,000 ÷ 100 = 60"
+     },
+     {
+      "op": "note",
+      "line": "ah",
+      "target": {
+       "text": "= 60"
+      },
+      "text": "hundreds",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Each of those 60 hundreds earns 6 rupees. 60 times 6 is 360. So 1 year brings 360 rupees of interest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ay",
+      "text": "60 × 6 = 360"
+     },
+     {
+      "op": "note",
+      "line": "ay",
+      "target": {
+       "text": "= 360"
+      },
+      "text": "interest for 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Every year adds 360 rupees, and the interest has reached 1800. How do we find the number of years?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1800 ÷ 360",
+      "1800 − 360",
+      "1800 ÷ 6"
+     ],
+     "answer": 0,
+     "ifNot": "We are counting how many lots of 360 fit into 1800. That is a division: 1800 divided by 360."
+    }
+   },
+   {
+    "say": "To make the division friendlier, drop a zero from both numbers: 180 divided by 36. And 36 times 5 is 180. So the answer is 5 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "180 ÷ 36 = 5"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "1,800 ÷ 360 = 5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the 6 in the question. It is the rate, not the time. The number of years always has to be worked out."
+   },
+   {
+    "say": "Check by building it up. 5 years of 360 is 1800. That is exactly the interest in the question.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "360 × 5 = 1,800"
+     }
+    ]
+   },
+   {
+    "say": "So for a how-many-years question: find what 1 year earns, then see how many of those make the whole interest."
+   }
+  ]
+ },
+ "AIGEN_grade5_ef719755-3b55-403d-a6c2-a196d3f5cb0e": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ankit's father puts 5000 rupees in Bank A at 8 per cent and 7000 rupees in Bank B at 5 per cent, for the school fees. After 2 years all the money is taken out. How much is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Bank A: ₹5,000 at 8%.  Bank B: ₹7,000 at 5%.  2 years.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Take Bank A first. 5000 is 50 hundreds, and each hundred earns 8 rupees a year. 50 times 8 is 400 a year.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a1",
+      "text": "5,000 ÷ 100 = 50"
+     },
+     {
+      "op": "write",
+      "id": "a2",
+      "text": "50 × 8 = 400"
+     },
+     {
+      "op": "note",
+      "line": "a2",
+      "target": {
+       "text": "= 400"
+      },
+      "text": "Bank A, 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The money stays for 2 years, so Bank A pays 400 times 2, which is 800.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a3",
+      "text": "400 × 2 = 800"
+     },
+     {
+      "op": "note",
+      "line": "a3",
+      "target": {
+       "text": "= 800"
+      },
+      "text": "Bank A interest",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Bank B the same way. 7000 is 70 hundreds, each earning 5 rupees. 70 times 5 is 350 a year, so 700 in 2 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b1",
+      "text": "7,000 ÷ 100 = 70"
+     },
+     {
+      "op": "write",
+      "id": "b2",
+      "text": "70 × 5 = 350"
+     },
+     {
+      "op": "write",
+      "id": "b3",
+      "text": "350 × 2 = 700"
+     },
+     {
+      "op": "note",
+      "line": "b3",
+      "target": {
+       "text": "= 700"
+      },
+      "text": "Bank B interest",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now all the money is withdrawn from both banks. What comes back?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "only the two interests",
+      "only the two deposits",
+      "both deposits and both interests"
+     ],
+     "answer": 2,
+     "ifNot": "A bank hands back what was put in, with the interest on top. So there are 4 things to add: 2 deposits and 2 lots of interest."
+    }
+   },
+   {
+    "say": "The deposits: 5000 plus 7000 is 12000. The interest: 800 plus 700 is 1500.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "5,000 + 7,000 = 12,000"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "= 12,000"
+      },
+      "text": "deposits",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "i",
+      "text": "800 + 700 = 1,500"
+     },
+     {
+      "op": "note",
+      "line": "i",
+      "target": {
+       "text": "= 1,500"
+      },
+      "text": "interest",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Altogether, 12000 plus 1500 is 13500 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "12,000 + 1,500 = 13,500",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "13,500"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check it bank by bank. Bank A gives back 5800, Bank B gives back 7700, and together that is 13500 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "5,000 + 800 = 5,800"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "7,000 + 700 = 7,700"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "5,800 + 7,700 = 13,500"
+     }
+    ]
+   },
+   {
+    "say": "So work each bank out separately, a year at a time. And when everything is withdrawn, the deposits are part of the total."
+   }
+  ]
+ },
+ "AIGEN_grade5_f5b795fe-bd8f-4c47-bbd7-a611565c5807": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Raju's 15000 rupees is split: 9000 in Bank A at 6 per cent, and the rest in Bank B at 10 per cent, for 2 years. He buys a bat for 2000 from the interest. How much interest is left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹15,000: ₹9,000 at 6% (Bank A), the rest at 10% (Bank B)",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "2 years. Then a ₹2,000 bat, paid from the interest.",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, the rest. 15000 minus 9000 is 6000, so Bank B holds 6000 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "15,000 − 9,000 = 6,000"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 6,000"
+      },
+      "text": "in Bank B",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Bank A: 9000 is 90 hundreds, each earning 6 rupees a year. 90 times 6 is 540. Careful, the money stays 2 years, so double it: 1080.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a1",
+      "text": "9,000 ÷ 100 = 90"
+     },
+     {
+      "op": "write",
+      "id": "a2",
+      "text": "90 × 6 = 540"
+     },
+     {
+      "op": "write",
+      "id": "a3",
+      "text": "540 × 2 = 1,080"
+     },
+     {
+      "op": "note",
+      "line": "a3",
+      "target": {
+       "text": "= 1,080"
+      },
+      "text": "Bank A interest",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Bank B: 6000 is 60 hundreds, each earning 10 rupees a year. 60 times 10 is 600, and for 2 years that is 1200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b1",
+      "text": "6,000 ÷ 100 = 60"
+     },
+     {
+      "op": "write",
+      "id": "b2",
+      "text": "60 × 10 = 600"
+     },
+     {
+      "op": "write",
+      "id": "b3",
+      "text": "600 × 2 = 1,200"
+     },
+     {
+      "op": "note",
+      "line": "b3",
+      "target": {
+       "text": "= 1,200"
+      },
+      "text": "Bank B interest",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Raju pays for the bat. Which money does he pay from?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the whole 15000",
+      "the interest from both banks",
+      "Bank B's interest only"
+     ],
+     "answer": 1,
+     "ifNot": "The story says he uses the total interest earned from both banks. The 15000 itself is not touched."
+    }
+   },
+   {
+    "say": "So add the two lots of interest. 1080 plus 1200 is 2280.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "1,080 + 1,200 = 2,280"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "= 2,280"
+      },
+      "text": "all the interest",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now buy the bat. 2280 minus 2000 leaves 280 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "2,280 − 2,000 = 280",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "280"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back. The 280 left, plus the 2000 for the bat, is 2280, all the interest he earned.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "280 + 2,000 = 2,280"
+     }
+    ]
+   },
+   {
+    "say": "So split the money first, work out each bank's interest for all the years, add them, and only then spend."
+   }
+  ]
+ },
+ "AIGEN_grade5_ff2b2ef6-acfe-491f-b308-26146e0fd3ae": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi puts 5000 rupees in a bank at 6 per cent simple interest a year, for 3 years. With just the interest he buys cricket balls at 150 rupees each. How many can he buy?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹5,000 at 6% a year for 3 years. A ball costs ₹150.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "6 per cent a year means every 100 rupees earns 6 rupees in a year. So how many hundreds are in 5000? 5000 divided by 100 is 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ah",
+      "text": "5,000 ÷ 100 = 50"
+     },
+     {
+      "op": "note",
+      "line": "ah",
+      "target": {
+       "text": "= 50"
+      },
+      "text": "hundreds",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Each of those 50 hundreds earns 6 rupees. 50 times 6 is 300. So 1 year brings 300 rupees of interest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ay",
+      "text": "50 × 6 = 300"
+     },
+     {
+      "op": "note",
+      "line": "ay",
+      "target": {
+       "text": "= 300"
+      },
+      "text": "interest for 1 year",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The money stays for 3 years. 300 times 3 is 900. So the interest is 900 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i",
+      "text": "300 × 3 = 900"
+     },
+     {
+      "op": "note",
+      "line": "i",
+      "target": {
+       "text": "= 900"
+      },
+      "text": "interest for 3 years",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "He spends only the interest on balls that cost 150 each. Which sum tells us how many balls?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "900 ÷ 150",
+      "5000 ÷ 150",
+      "900 − 150"
+     ],
+     "answer": 0,
+     "ifNot": "Only the interest is being spent, and that is 900 rupees. Each ball uses up 150 of it, so we count how many 150s fit into 900."
+    }
+   },
+   {
+    "say": "2 balls cost 300. And 900 is 3 lots of 300, so that is 3 lots of 2 balls: 6 balls.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "150 × 2 = 300"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "900 ÷ 150 = 6",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by multiplying. 6 balls at 150 each is 900, which uses up the interest exactly.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "150 × 6 = 900"
+     }
+    ]
+   },
+   {
+    "say": "Notice his 5000 is still safe in the bank. The question only let him spend the interest, so only the interest gets divided."
+   },
+   {
+    "say": "So: 1 year's interest, times the years, and then share that interest out by the price of 1 ball."
+   }
+  ]
+ },
+ "AIGEN_grade5_11110146-bc2b-480d-ba40-ef6d7c85e7b2": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "After 5 innings Arjun's average is 40.5 runs, though one of his 5 scores is hidden. After a 6th innings his average drops by 2.75. We want the 6th score.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "5 innings: average 40.5.   6 innings: average drops 2.75",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "6th innings = ?",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "One of the first 5 scores is unknown. Do we have to find it before we can go on?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes: nothing works without it",
+      "No: the average gives the total",
+      "Yes: it must be 40.5"
+     ],
+     "answer": 1,
+     "ifNot": "An average times the number of innings gives the total of all of them, the hidden score included. So we can get the total without it."
+    }
+   },
+   {
+    "say": "Total for 5 innings is 40.5 times 5. Do it in two bits: 40 times 5 is 200, and 0.5 times 5 is 2.5. Together, 202.5 runs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "40 × 5 = 200"
+     },
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "0.5 × 5 = 2.5"
+     },
+     {
+      "op": "write",
+      "id": "t5",
+      "text": "40.5 × 5 = 202.5"
+     },
+     {
+      "op": "note",
+      "line": "t5",
+      "target": {
+       "text": "= 202.5"
+      },
+      "text": "5 innings",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the new average. It dropped by 2.75, so it is 40.5 minus 2.75, which is 37.75.",
+    "board": [
+     {
+      "op": "write",
+      "id": "na",
+      "text": "40.5 − 2.75 = 37.75"
+     },
+     {
+      "op": "note",
+      "line": "na",
+      "target": {
+       "text": "= 37.75"
+      },
+      "text": "new average",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "That new average of 37.75 is spread over how many innings?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5",
+      "6",
+      "1"
+     ],
+     "answer": 1,
+     "ifNot": "The new average is worked out after the 6th innings. So it covers all 6 innings, the old 5 and the new one."
+    }
+   },
+   {
+    "say": "Total for 6 innings is 37.75 times 6. 37 times 6 is 222, and 0.75 times 6 is 4.5. Together, 226.5 runs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "u1",
+      "text": "37 × 6 = 222"
+     },
+     {
+      "op": "write",
+      "id": "u2",
+      "text": "0.75 × 6 = 4.5"
+     },
+     {
+      "op": "write",
+      "id": "t6",
+      "text": "37.75 × 6 = 226.5"
+     },
+     {
+      "op": "note",
+      "line": "t6",
+      "target": {
+       "text": "= 226.5"
+      },
+      "text": "6 innings",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The 6th innings is the only difference between those two totals. 226.5 minus 202.5 is 24. Arjun scored 24 runs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "226.5 − 202.5 = 24",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "24"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Does 24 make sense? Yes. It is well below his average of 40.5, and a low score is exactly what pulls an average down."
+   },
+   {
+    "say": "Check: the 6 innings add up to 202.5 plus 24, which is 226.5. Divide by 6 and we get 37.75, the new average.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "(202.5 + 24) ÷ 6 = 37.75"
+     }
+    ]
+   },
+   {
+    "say": "So with averages, think in totals. Average times how many gives the total, and the new score is the new total minus the old one."
+   }
+  ]
+ },
+ "AIGEN_grade5_59dc509c-bc8b-4a65-8572-f95838c8194a": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "After 5 matches Arjun's average is 34.6 runs. Then the scorer finds that his 3rd match score should have been 2.5 runs higher. We want the corrected average for the 5 matches.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "5 matches: average 34.6.   One score is 2.5 too low.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Corrected average = ?",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The story gives two averages: 32.75 after 4 matches, and 34.6 after 5. Which one do we need?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "34.6, for all 5 matches",
+      "32.75, for 4 matches",
+      "both, added together"
+     ],
+     "answer": 0,
+     "ifNot": "We want the average across all 5 matches. The 34.6 already covers all 5 of them, so the 32.75 is not needed at all."
+    }
+   },
+   {
+    "say": "An average times the number of matches gives the total. 34 times 5 is 170, and 0.6 times 5 is 3. So the recorded total is 173 runs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "34 × 5 = 170"
+     },
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "0.6 × 5 = 3"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "34.6 × 5 = 173"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "= 173"
+      },
+      "text": "recorded total",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The 3rd match score goes up by 2.5, and nothing else changes. So the total goes up by 2.5 as well: 175.5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ct",
+      "text": "173 + 2.5 = 175.5"
+     },
+     {
+      "op": "note",
+      "line": "ct",
+      "target": {
+       "text": "= 175.5"
+      },
+      "text": "corrected total",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The total went up by 2.5. What happens to the average of the 5 matches?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "It goes up by 2.5 ÷ 5",
+      "It goes up by 2.5",
+      "It stays at 34.6"
+     ],
+     "answer": 0,
+     "ifNot": "The extra 2.5 runs are shared out over all 5 matches. So the average rises by only a fifth of 2.5, not by the whole 2.5."
+    }
+   },
+   {
+    "say": "Divide the corrected total by 5. 175 divided by 5 is 35, and 0.5 divided by 5 is 0.1. So the corrected average is 35.1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "175 ÷ 5 = 35"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "0.5 ÷ 5 = 0.1"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "175.5 ÷ 5 = 35.1",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "35.1"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with the shortcut. The extra 2.5 runs shared over 5 matches is 0.5 each. And 34.6 plus 0.5 is 35.1. Same answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "2.5 ÷ 5 = 0.5"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "34.6 + 0.5 = 35.1"
+     }
+    ]
+   },
+   {
+    "say": "So when a score is corrected, fix the total first and divide again. A change to one score is shared out across every match."
+   }
+  ]
+ },
+ "AIGEN_grade5_074fe35c-810d-4965-8a8a-be0ef12fc11f": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A tournament ran for 3 days. Each day some tickets were sold and some were refunded. For every ticket really used, 50 rupees goes to charity. We want the donation.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹50 donated for every ticket used (sold − refunded)",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "t",
+      "spec": {
+       "kind": "table",
+       "headers": [
+        "Day",
+        "Sold",
+        "Refunded"
+       ],
+       "rows": [
+        [
+         "1",
+         "4,768",
+         "235"
+        ],
+        [
+         "2",
+         "3,594",
+         "187"
+        ],
+        [
+         "3",
+         "5,213",
+         "342"
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The question also says each ticket costs 125 rupees. Do we need that 125 to find the donation?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes: multiply the tickets by 125",
+      "Yes: add 125 and 50",
+      "No: the donation is ₹50 a ticket"
+     ],
+     "answer": 2,
+     "ifNot": "The 125 is what people paid for a ticket. The charity gets 50 rupees for each ticket used, so the 125 is only there to distract us."
+    }
+   },
+   {
+    "say": "Add up the tickets sold. 4768 plus 3594 is 8362, and 5213 more makes 13575.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "4,768 + 3,594 = 8,362"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "8,362 + 5,213 = 13,575"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 13,575"
+      },
+      "text": "sold",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the refunds. 235 plus 187 is 422, and 342 more makes 764.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r1",
+      "text": "235 + 187 = 422"
+     },
+     {
+      "op": "write",
+      "id": "r2",
+      "text": "422 + 342 = 764"
+     },
+     {
+      "op": "note",
+      "line": "r2",
+      "target": {
+       "text": "= 764"
+      },
+      "text": "refunded",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "A refunded ticket was not used, so it comes off. Mind the borrowing here: 13575 minus 764 is 12811.",
+    "board": [
+     {
+      "op": "write",
+      "id": "used",
+      "text": "13,575 − 764 = 12,811"
+     },
+     {
+      "op": "note",
+      "line": "used",
+      "target": {
+       "text": "= 12,811"
+      },
+      "text": "tickets used",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now 12811 tickets at 50 rupees each. 50 is 5 tens. So what is an easy way to multiply by 50?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "× 5, then × 10",
+      "× 5, then + 10",
+      "× 5 and stop"
+     ],
+     "answer": 0,
+     "ifNot": "50 is 5 times 10. So multiply by 5 first, and then by 10, which just puts a zero on the end."
+    }
+   },
+   {
+    "say": "12811 times 5 is 64055. Times 10 puts a zero on the end: 640550. So the donation is 640550 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m1",
+      "text": "12,811 × 5 = 64,055"
+     },
+     {
+      "op": "write",
+      "id": "m2",
+      "text": "64,055 × 10 = 6,40,550"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "12,811 × 50 = 6,40,550",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6,40,550"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the used tickets day by day: 4533, 3407 and 4871. Add those and we get 12811 again, so the count is right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "4,768 − 235 = 4,533"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "3,594 − 187 = 3,407"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "5,213 − 342 = 4,871"
+     },
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "4,533 + 3,407 + 4,871 = 12,811"
+     }
+    ]
+   },
+   {
+    "say": "So pick out the numbers the question really uses: tickets sold, minus tickets refunded, times the donation for each."
+   }
+  ]
+ },
+ "AIGEN_grade5_08d11006-5566-483e-a79a-bbbd3f407726": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya takes 500 rupees to the Diwali mela. She buys ladoos for 178 and diyas for 145. Then her uncle gives her 75. How much does she have now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Had ₹500. Spent ₹178 and ₹145. Uncle gave ₹75.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Three amounts follow the 500. Which of them are money going out of Priya's purse?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "178, 145 and 75",
+      "178 and 145",
+      "only 178"
+     ],
+     "answer": 1,
+     "ifNot": "The ladoos and the diyas were bought, so 178 and 145 went out. The 75 came from her uncle, so that is money coming in."
+    }
+   },
+   {
+    "say": "First, the total spent. 178 plus 145 is 323.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "178 + 145 = 323"
+     },
+     {
+      "op": "note",
+      "line": "s1",
+      "target": {
+       "text": "= 323"
+      },
+      "text": "spent",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now take that away from the 500. Careful: the zeros in 500 make the borrowing fiddly.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s1",
+      "target": {
+       "text": "= 323"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "A neat way round it: slide both numbers down by 1. The gap does not change, and 499 minus 322 needs no borrowing at all. It is 177.",
+    "board": [
+     {
+      "op": "write",
+      "id": "leftt",
+      "text": "499 − 322 = 177"
+     },
+     {
+      "op": "write",
+      "id": "left",
+      "text": "500 − 323 = 177"
+     }
+    ]
+   },
+   {
+    "say": "So 177 rupees are left after the shopping. Is that our final answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, 177 is the answer",
+      "Not yet: take away the 75",
+      "Not yet: add the 75"
+     ],
+     "answer": 2,
+     "ifNot": "Read the end of the story again. Her uncle gave her 75 rupees, and a gift is money coming in. It still has to be added."
+    }
+   },
+   {
+    "say": "177 plus 75 is 252. So Priya has 252 rupees now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fin",
+      "text": "177 + 75 = 252",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "fin",
+      "target": {
+       "text": "= 252"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. Take away the 75 that came in, and we are at 177. Put back the 323 that went out, and we are at 500, where Priya began.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "252 − 75 = 177"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "177 + 323 = 500"
+     }
+    ]
+   },
+   {
+    "say": "So in a money story, sort the amounts first. Add up what goes out, take it from the start, then add what comes in."
+   }
+  ]
+ },
+ "AIGEN_grade5_0e2d6d8d-fdda-4215-9693-91c26e6bef86": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's father has 7500 rupees. He buys firecrackers at 3 shops, for 2475, 1368 and 2157. Then he gives the helper a Diwali bonus of 500. How much is left in his wallet?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Had ₹7,500. Spent ₹2,475, ₹1,368, ₹2,157. Bonus ₹500.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First the shopping. He paid at 3 shops, so what do we need?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the total spent at the 3 shops",
+      "the amount at the last shop only",
+      "7500 plus the 3 amounts"
+     ],
+     "answer": 0,
+     "ifNot": "All 3 payments came from the same wallet. Add them to see how much the firecrackers cost altogether."
+    }
+   },
+   {
+    "say": "First, the total spent. 2475 plus 1368 is 3843, and 2157 more makes 6000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "2,475 + 1,368 = 3,843"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "3,843 + 2,157 = 6,000"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 6,000"
+      },
+      "text": "spent",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "After the shopping he gives the helper a bonus of 500. What does that do to the money in his wallet?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "It goes out as well",
+      "It comes in, so the wallet grows",
+      "Nothing: it is not shopping"
+     ],
+     "answer": 0,
+     "ifNot": "A bonus is money he hands to someone else. It leaves his wallet just as the shopping money did."
+    }
+   },
+   {
+    "say": "So the bonus joins the money going out. 6000 plus 500 is 6500 gone altogether.",
+    "board": [
+     {
+      "op": "write",
+      "id": "o0",
+      "text": "6,000 + 500 = 6,500"
+     },
+     {
+      "op": "note",
+      "line": "o0",
+      "target": {
+       "text": "= 6,500"
+      },
+      "text": "gone altogether",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now take that away from the 7500. 7500 minus 6500 is 1000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "left",
+      "text": "7,500 − 6,500 = 1,000",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So 1000 rupees are left in the wallet.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "left",
+      "target": {
+       "text": "= 1,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop after the 3 shops. That would leave 500 too much in the wallet, because the bonus was paid from it too."
+   },
+   {
+    "say": "Check it the other way. The 1000 left, plus the 6500 that went out, makes 7500. That is what Ravi's father began with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "1,000 + 6,500 = 7,500"
+     }
+    ]
+   },
+   {
+    "say": "So gather everything that leaves the wallet, the shopping and the bonus, into one total. Then subtract it once."
+   }
+  ]
+ },
+ "AIGEN_grade5_0ee6cea0-5796-45f2-bd1d-3a33caa1beb8": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya's piggy bank starts with 2450 rupees. She adds 375 in January, and her uncle drops in 1280 in February. A telescope costs 4500. How much more does she need?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Has ₹2,450 + ₹375 + ₹1,280. Telescope costs ₹4,500.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, how much is in the piggy bank now? 2450 plus 375 is 2825, and 1280 more makes 4105.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "2,450 + 375 = 2,825"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "2,825 + 1,280 = 4,105"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 4,105"
+      },
+      "text": "what she has",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "She has 4105 and the telescope costs 4500. Which sum tells us how much more she needs?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4500 + 4105",
+      "4500 − 4105",
+      "4500 − 2450"
+     ],
+     "answer": 1,
+     "ifNot": "How much more means the gap between what she has and what she needs. A gap is found by subtracting: the price, minus all her savings."
+    }
+   },
+   {
+    "say": "4500 minus 4105. Careful: the zeros in 4500 make the borrowing fiddly.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s2",
+      "target": {
+       "text": "= 4,105"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "A neat way round it: slide both numbers down by 1. The gap does not change, and 4499 minus 4104 needs no borrowing at all. It is 395.",
+    "board": [
+     {
+      "op": "write",
+      "id": "anst",
+      "text": "4,499 − 4,104 = 395"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "4,500 − 4,105 = 395",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So Priya still needs 395 rupees.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "395"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: all 3 amounts in the piggy bank are hers. Leave out the pocket money or her uncle's money, and she would seem to need far more than she does."
+   },
+   {
+    "say": "Check by adding on. 4105 plus 395 is 4500, exactly the price of the telescope.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "4,105 + 395 = 4,500"
+     }
+    ]
+   },
+   {
+    "say": "So for a how-much-more question: total what you have, then subtract it from what you need."
+   }
+  ]
+ },
+ "AIGEN_grade5_170dc4d7-e228-4bec-afa0-ac1ab54bbcfa": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Village A collected 1275 kilograms of rice and then 1548. Village B collected 2106 but returned 389 that was spoiled. Village C collected as much as A and B combined. How much altogether?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "A: 1,275 + 1,548.   B: 2,106 − 389.   C = A + B.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Village A first. 1275 plus 1548 is 2823 kilograms.",
+    "board": [
+     {
+      "op": "write",
+      "id": "va",
+      "text": "1,275 + 1,548 = 2,823"
+     },
+     {
+      "op": "note",
+      "line": "va",
+      "target": {
+       "text": "= 2,823"
+      },
+      "text": "Village A",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Village B collected 2106 kilograms but returned 389 of spoiled rice. What is Village B's real collection?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2106 − 389",
+      "2106 + 389",
+      "just 2106"
+     ],
+     "answer": 0,
+     "ifNot": "Rice that was returned is no longer part of the collection. So it comes off: 2106 minus 389."
+    }
+   },
+   {
+    "say": "So the spoiled rice comes off. Mind the borrowing here: 2106 minus 389 is 1717.",
+    "board": [
+     {
+      "op": "write",
+      "id": "vb",
+      "text": "2,106 − 389 = 1,717"
+     },
+     {
+      "op": "note",
+      "line": "vb",
+      "target": {
+       "text": "= 1,717"
+      },
+      "text": "Village B",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Village C collected as much as A and B combined. 2823 plus 1717 is 4540. So Village C has 4540 kilograms.",
+    "board": [
+     {
+      "op": "write",
+      "id": "vc",
+      "text": "2,823 + 1,717 = 4,540"
+     },
+     {
+      "op": "note",
+      "line": "vc",
+      "target": {
+       "text": "= 4,540"
+      },
+      "text": "A + B, and also C",
+      "place": "below"
+     },
+     {
+      "op": "figure",
+      "id": "bars",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 6.2,
+           "label": "A: 2,823",
+           "tone": "a"
+          },
+          {
+           "units": 3.8,
+           "label": "B: 1,717",
+           "tone": "b"
+          }
+         ]
+        },
+        {
+         "segments": [
+          {
+           "units": 10,
+           "label": "C: 4,540",
+           "tone": "c"
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Look at the two bars. A and B together make 4540, and C is 4540 on its own. So what do all three villages make?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "just 4540",
+      "2 lots of 4540",
+      "4540 + 2823"
+     ],
+     "answer": 1,
+     "ifNot": "The top bar is A and B, and that is 4540. The bottom bar is C, another 4540. Altogether that is 2 lots of 4540."
+    }
+   },
+   {
+    "say": "4540 plus 4540 is 9080. All three villages collected 9080 kilograms.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "4,540 + 4,540 = 9,080",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "9,080"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at 4540. That is only Village C, or only A and B. The question asks for all three villages."
+   },
+   {
+    "say": "Check by adding the three villages one by one. 2823 plus 1717 plus 4540 is 9080 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "2,823 + 1,717 + 4,540 = 9,080"
+     }
+    ]
+   },
+   {
+    "say": "So work out each village's real amount first. And when one part equals the rest put together, the whole is double that."
+   }
+  ]
+ },
+ "AIGEN_grade5_1b46a3a2-1615-42a8-9234-f29baf7cc72c": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is the scorecard for 3 days. Rajasthan's Day 3 score is missing. But we know that over all 3 days, Rajasthan scored exactly 50 runs more than their opponents.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Rajasthan's total = opponents' total + 50",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "t",
+      "spec": {
+       "kind": "table",
+       "headers": [
+        "Day",
+        "Rajasthan",
+        "Opponents"
+       ],
+       "rows": [
+        [
+         "1",
+         "247",
+         "189"
+        ],
+        [
+         "2",
+         "198",
+         "256"
+        ],
+        [
+         "3",
+         "?",
+         "213"
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The opponents' column is complete, so start there. 189 plus 256 is 445, and 213 more makes 658.",
+    "board": [
+     {
+      "op": "write",
+      "id": "o1",
+      "text": "189 + 256 = 445"
+     },
+     {
+      "op": "write",
+      "id": "o2",
+      "text": "445 + 213 = 658"
+     },
+     {
+      "op": "note",
+      "line": "o2",
+      "target": {
+       "text": "= 658"
+      },
+      "text": "opponents' total",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Rajasthan finished 50 runs ahead of the opponents. So what is Rajasthan's total for the 3 days?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "658 − 50",
+      "658 + 50",
+      "just 658"
+     ],
+     "answer": 1,
+     "ifNot": "Ahead means more. Rajasthan's total is 50 runs bigger than the opponents' 658, so we add the 50."
+    }
+   },
+   {
+    "say": "658 plus 50 is 708. That is what Rajasthan's 3 days must add up to.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "658 + 50 = 708"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 708"
+      },
+      "text": "Rajasthan's total",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "We know 2 of Rajasthan's days. 247 plus 198 is 445.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "247 + 198 = 445"
+     },
+     {
+      "op": "note",
+      "line": "k",
+      "target": {
+       "text": "= 445"
+      },
+      "text": "Days 1 and 2",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So Day 3 is whatever is still missing from 708. Mind the borrowing here: 708 minus 445 is 263.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "708 − 445 = 263",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "Rajasthan scored 263 runs on Day 3.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "= 263"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is a lovely check. After 2 days both sides had 445, dead level. So on Day 3 Rajasthan had to beat the opponents' 213 by exactly 50, and 213 plus 50 is 263.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "213 + 50 = 263"
+     }
+    ]
+   },
+   {
+    "say": "So when one score is missing, finish the complete column first, use the clue to get the other total, and subtract what you already know."
+   }
+  ]
+ },
+ "AIGEN_grade5_1ec9d0ee-14d0-46dd-bf59-f61af1d2a0d5": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi has 5000 rupees. He buys a saree for 1475, a bat for 1260 and sweets for 785. His uncle gives him 750. Then he donates some money, and has 1980 left. How much did he donate?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Had ₹5,000. Spent ₹1,475, ₹1,260, ₹785. Got ₹750.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Donated ₹? and then had ₹1,980 left",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We cannot see the donation, so let's find how much he had just before it. First the shopping: 1475 plus 1260 is 2735, and 785 more makes 3520.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "1,475 + 1,260 = 2,735"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "2,735 + 785 = 3,520"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 3,520"
+      },
+      "text": "spent",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Take that from his 5000. Careful: borrowing across those zeros is where slips happen.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s2",
+      "target": {
+       "text": "= 3,520"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So here is a trick: take 1 off both numbers, and the gap between them stays the same. 4999 minus 3519 needs no borrowing, and it is 1480.",
+    "board": [
+     {
+      "op": "write",
+      "id": "leftt",
+      "text": "4,999 − 3,519 = 1,480"
+     },
+     {
+      "op": "write",
+      "id": "left",
+      "text": "5,000 − 3,520 = 1,480"
+     }
+    ]
+   },
+   {
+    "say": "Then his uncle's gift comes in. 1480 plus 750 is 2230. That is what Ravi held just before the donation.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "1,480 + 750 = 2,230"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "= 2,230"
+      },
+      "text": "before donating",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "He had 2230 before the donation and 1980 after it. Which sum gives the donation?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2230 + 1980",
+      "2230 − 1980",
+      "1980 − 750"
+     ],
+     "answer": 1,
+     "ifNot": "The donation is what disappeared between before and after. So it is the gap between 2230 and 1980, and a gap is a subtraction."
+    }
+   },
+   {
+    "say": "For 2230 minus 1980, counting up is easier than borrowing. From 1980 up to 2000 is 20, and from 2000 up to 2230 is 230 more.",
+    "board": [
+     {
+      "op": "write",
+      "id": "u1",
+      "text": "1,980 + 20 = 2,000"
+     },
+     {
+      "op": "write",
+      "id": "u2",
+      "text": "2,000 + 230 = 2,230"
+     }
+    ]
+   },
+   {
+    "say": "20 plus 230 is 250. So he donated 250 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "u3",
+      "text": "20 + 230 = 250"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "2,230 − 1,980 = 250",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "250"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to leave out the uncle's 750. Without it, Ravi would seem to have less than 1980 before donating, and that cannot be."
+   },
+   {
+    "say": "Check the whole story forwards on the board: spend, spend, spend, add the gift, donate 250. It ends on 1980, just as it should.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "5,000 − 3,520 + 750 − 250 = 1,980"
+     }
+    ]
+   },
+   {
+    "say": "So when the missing number is in the middle of a story, work up to the moment just before it, then compare before and after."
+   }
+  ]
+ },
+ "AIGEN_grade5_228c971f-b4fb-435b-abd3-1cdfea1c80a7": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "4 teams each played 3 matches. The 2 teams with the highest total runs go to the finals, and we want those 2 totals added together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Top 2 teams by total runs. Their totals added = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "t",
+      "spec": {
+       "kind": "table",
+       "headers": [
+        "Team",
+        "Match 1",
+        "Match 2",
+        "Match 3"
+       ],
+       "rows": [
+        [
+         "A",
+         "247",
+         "183",
+         "312"
+        ],
+        [
+         "B",
+         "198",
+         "276",
+         "159"
+        ],
+        [
+         "C",
+         "305",
+         "144",
+         "268"
+        ],
+        [
+         "D",
+         "172",
+         "289",
+         "231"
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "We cannot pick the top 2 by looking, so total every team. Team A: 247 plus 183 is 430, and 312 more makes 742.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a1",
+      "text": "247 + 183 = 430"
+     },
+     {
+      "op": "write",
+      "id": "a2",
+      "text": "430 + 312 = 742"
+     },
+     {
+      "op": "note",
+      "line": "a2",
+      "target": {
+       "text": "= 742"
+      },
+      "text": "Team A",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Team B: 198 plus 276 is 474, and 159 more makes 633.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b1",
+      "text": "198 + 276 = 474"
+     },
+     {
+      "op": "write",
+      "id": "b2",
+      "text": "474 + 159 = 633"
+     },
+     {
+      "op": "note",
+      "line": "b2",
+      "target": {
+       "text": "= 633"
+      },
+      "text": "Team B",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Team C: 305 plus 144 is 449, and 268 more makes 717.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "305 + 144 = 449"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "449 + 268 = 717"
+     },
+     {
+      "op": "note",
+      "line": "c2",
+      "target": {
+       "text": "= 717"
+      },
+      "text": "Team C",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Team D: 172 plus 289 is 461, and 231 more makes 692.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "172 + 289 = 461"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "461 + 231 = 692"
+     },
+     {
+      "op": "note",
+      "line": "d2",
+      "target": {
+       "text": "= 692"
+      },
+      "text": "Team D",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The totals are 742, 633, 717 and 692. Which 2 teams go to the finals?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "A and C",
+      "A and D",
+      "C and D",
+      "A and B"
+     ],
+     "answer": 0,
+     "ifNot": "Put the totals in order, biggest first: 742, 717, 692, 633. The 2 biggest belong to Team A and Team C."
+    }
+   },
+   {
+    "say": "So Team A and Team C qualify. 742 plus 717 is 1459.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "a2",
+      "target": {
+       "text": "= 742"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "mark",
+      "line": "c2",
+      "target": {
+       "text": "= 717"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "742 + 717 = 1,459",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "1,459"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with Team D. Its 692 is close behind Team C's 717, so it is an easy one to mix up. Always put the totals in order before choosing."
+   },
+   {
+    "say": "Check by taking one away. 1459 minus 742 leaves 717, which is Team C's total.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ch",
+      "text": "1,459 − 742 = 717"
+     }
+    ]
+   },
+   {
+    "say": "So when a question says top 2 by total: total everyone, put the totals in order, and only then add the 2 biggest."
+   }
+  ]
+ },
+ "AIGEN_grade5_28ada5d8-b5fd-4601-af9c-03ccd1851975": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Team A scored 247 runs and then 189 runs. Team B scored 312 in the first innings. How many must Team B score in the second innings to tie the match?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Team A: 247 and 189.   Team B: 312 and ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with Team A's two innings. 247 plus 189 is 436.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ta",
+      "text": "247 + 189 = 436"
+     },
+     {
+      "op": "note",
+      "line": "ta",
+      "target": {
+       "text": "= 436"
+      },
+      "text": "Team A's total",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "To tie the match, what must Team B's total be at the end?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "437, one more than Team A",
+      "312, what they have now",
+      "436, the same as Team A"
+     ],
+     "answer": 2,
+     "ifNot": "A tie means both teams finish on exactly the same total. So Team B must end on 436, no more and no less."
+    }
+   },
+   {
+    "say": "Team B already has 312 from the first innings, so the second innings must bring the rest. 436 minus 312 is 124.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "436 − 312 = 124",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So Team B needs 124 runs in the second innings.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "= 124"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to answer 436. That is the whole total Team B needs, and 312 of it is already on the scoreboard."
+   },
+   {
+    "say": "Check: 312 plus 124 is 436, level with Team A. A tie.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "312 + 124 = 436"
+     }
+    ]
+   },
+   {
+    "say": "So for a tie: find the other team's total, then subtract what you already have."
+   }
+  ]
+ },
+ "AIGEN_grade5_2bd94bfc-187f-4006-904e-ac28c1d6ec77": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "At the book fair they buy a storybook for 245, a puzzle book for 178 and a colouring set for 367. Father pays with a 1000 rupee note. How much change comes back?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Bought for ₹245, ₹178 and ₹367. Paid with ₹1,000.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Change is what comes back out of the 1000. What must we know before we can find it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the total cost of all 3 things",
+      "the cost of the storybook only",
+      "1000 plus the 3 prices"
+     ],
+     "answer": 0,
+     "ifNot": "The shopkeeper adds up everything they bought and keeps all of it out of the note. So first we need the total of the 3 prices."
+    }
+   },
+   {
+    "say": "Add up the spending first. 245 plus 178 is 423, and 367 more makes 790.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "245 + 178 = 423"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "423 + 367 = 790"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 790"
+      },
+      "text": "spent",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Careful with that adding. The ones make more than 10, and so do the tens, so there are carries to pass along. One missed carry and the change comes out a little off."
+   },
+   {
+    "say": "Now take that away from the 1000. Careful: borrowing across those zeros is where slips happen.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s2",
+      "target": {
+       "text": "= 790"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So here is a trick: take 1 off both numbers, and the gap between them stays the same. 999 minus 789 needs no borrowing, and it is 210.",
+    "board": [
+     {
+      "op": "write",
+      "id": "leftt",
+      "text": "999 − 789 = 210"
+     },
+     {
+      "op": "write",
+      "id": "left",
+      "text": "1,000 − 790 = 210",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So the change is 210 rupees.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "left",
+      "target": {
+       "text": "= 210"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check it the other way. The 210 left, plus the 790 that went out, makes 1000. That is what Ankit's father began with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "210 + 790 = 1,000"
+     }
+    ]
+   },
+   {
+    "say": "So for a what-is-left question: add up everything spent, then take that total from the money at the start."
+   }
+  ]
+ },
+ "AIGEN_grade5_33da2932-e35a-47e8-9754-14c7202175e6": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Team A scored 287 and 194. Team B scored 315 in the first innings, and won the match by exactly 38 runs. How many did Team B score in the second innings?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Team A: 287 and 194.   Team B: 315 and ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, Team A's total. 287 plus 194 is 481.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ta",
+      "text": "287 + 194 = 481"
+     },
+     {
+      "op": "note",
+      "line": "ta",
+      "target": {
+       "text": "= 481"
+      },
+      "text": "Team A's total",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Team B must finish exactly 38 runs ahead of Team A. So what is Team B's total?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "481 − 38",
+      "just 481",
+      "481 + 38"
+     ],
+     "answer": 2,
+     "ifNot": "Winning by 38 means finishing 38 above the other team. Team A has 481, so Team B's total is 481 plus 38."
+    }
+   },
+   {
+    "say": "481 plus 38 is 519. That is the total Team B needs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "tg",
+      "text": "481 + 38 = 519"
+     },
+     {
+      "op": "note",
+      "line": "tg",
+      "target": {
+       "text": "= 519"
+      },
+      "text": "Team B's target",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Team B already has 315 from the first innings, so the second innings must bring the rest. 519 minus 315 is 204.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "519 − 315 = 204",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So the second innings for Team B must be 204 runs.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "= 204"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to forget the 38. Reaching 481 only ties the match. The 38 extra runs are what make the win."
+   },
+   {
+    "say": "Check: 315 plus 204 is 519, and 519 is 38 more than 481.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "315 + 204 = 519"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "519 − 481 = 38"
+     }
+    ]
+   },
+   {
+    "say": "So for a win by so many runs: the other team's total, plus the winning gap, minus the runs already scored."
+   }
+  ]
+ },
+ "AIGEN_grade5_3a43f7d1-9784-4807-b5fb-731249823ca6": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Team A scored 247 and 183. Team B scored 198 in the first innings, and must win by exactly 15 runs. How many must Team B score in the second innings?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Team A: 247 and 183.   Team B: 198 and ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, Team A's total. 247 plus 183 is 430.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ta",
+      "text": "247 + 183 = 430"
+     },
+     {
+      "op": "note",
+      "line": "ta",
+      "target": {
+       "text": "= 430"
+      },
+      "text": "Team A's total",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Team B must finish exactly 15 runs ahead of Team A. So what is Team B's total?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "430 + 15",
+      "430 − 15",
+      "just 430"
+     ],
+     "answer": 0,
+     "ifNot": "Winning by 15 means finishing 15 above the other team. Team A has 430, so Team B's total is 430 plus 15."
+    }
+   },
+   {
+    "say": "430 plus 15 is 445. That is the total Team B needs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "tg",
+      "text": "430 + 15 = 445"
+     },
+     {
+      "op": "note",
+      "line": "tg",
+      "target": {
+       "text": "= 445"
+      },
+      "text": "Team B's target",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Team B already has 198 from the first innings, so the second innings must bring the rest. That is 445 minus 198."
+   },
+   {
+    "say": "198 is just 2 short of 200. So take away 200, which leaves 245, and then give the 2 back: 247.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ansr",
+      "text": "445 − 200 = 245"
+     },
+     {
+      "op": "write",
+      "id": "ansg",
+      "text": "245 + 2 = 247"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "445 − 198 = 247",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So the second innings for Team B must be 247 runs.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "= 247"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to forget the 15. Reaching 430 only ties the match. The 15 extra runs are what make the win."
+   },
+   {
+    "say": "Check: 198 plus 247 is 445, and 445 is 15 more than 430.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "198 + 247 = 445"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "445 − 430 = 15"
+     }
+    ]
+   },
+   {
+    "say": "So build the target first: the other team's total plus the gap. Then subtract what is already scored."
+   }
+  ]
+ },
+ "AIGEN_grade5_3a892c05-4d86-4368-9fe2-e718b43ae720": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya has 500 rupees at the Diwali mela. She buys bangles for 137, ladoos for 218 and a diya set for 89. On the way home she finds 20 rupees. How much does she have now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Had ₹500. Spent ₹137, ₹218 and ₹89. Found ₹20.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Four amounts follow the 500. Which of them are money going out?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "all four of them",
+      "only 137 and 218",
+      "137, 218 and 89"
+     ],
+     "answer": 2,
+     "ifNot": "The bangles, the ladoos and the diya set were all bought, so 137, 218 and 89 went out. The 20 was found, so that is money coming in."
+    }
+   },
+   {
+    "say": "So add up what was spent. 137 plus 218 is 355, and 89 more makes 444.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "137 + 218 = 355"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "355 + 89 = 444"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 444"
+      },
+      "text": "spent",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now take that from the 500 Priya started with. Careful: borrowing across those zeros is where slips happen.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s2",
+      "target": {
+       "text": "= 444"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So here is a trick: take 1 off both numbers, and the gap between them stays the same. 499 minus 443 needs no borrowing, and it is 56.",
+    "board": [
+     {
+      "op": "write",
+      "id": "leftt",
+      "text": "499 − 443 = 56"
+     },
+     {
+      "op": "write",
+      "id": "left",
+      "text": "500 − 444 = 56"
+     }
+    ]
+   },
+   {
+    "say": "So 56 rupees are left after the shopping. Is that our final answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, 56 is the answer",
+      "Not yet: add the 20",
+      "Not yet: take away the 20"
+     ],
+     "answer": 1,
+     "ifNot": "Do not forget the walk home. She found 20 rupees, and found money is money coming in. So it is added."
+    }
+   },
+   {
+    "say": "56 plus 20 is 76. So Priya has 76 rupees now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fin",
+      "text": "56 + 20 = 76",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "fin",
+      "target": {
+       "text": "= 76"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. Take away the 20 that came in, and we are at 56. Put back the 444 that went out, and we are at 500, where Priya began.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "76 − 20 = 56"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "56 + 444 = 500"
+     }
+    ]
+   },
+   {
+    "say": "So before any sums, decide which amounts go out and which come in. Take away the outs, add the ins."
+   }
+  ]
+ },
+ "AIGEN_grade5_49848a61-8cfa-4821-ba6a-da096f074ea5": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "4 shopkeepers counted their Diwali sales. They donate the difference between the top 2 earners' total and the bottom 2 earners' total. We want that donation.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Donation = (top 2 added) − (bottom 2 added)",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "t",
+      "spec": {
+       "kind": "table",
+       "headers": [
+        "Shopkeeper",
+        "Earned (₹)"
+       ],
+       "rows": [
+        [
+         "Ravi",
+         "4,75,628"
+        ],
+        [
+         "Meena",
+         "3,89,457"
+        ],
+        [
+         "Kiran",
+         "5,12,345"
+        ],
+        [
+         "Priya",
+         "2,98,076"
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "First we must rank them. Who are the 2 highest earners?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Kiran and Ravi",
+      "Ravi and Meena",
+      "Kiran and Priya"
+     ],
+     "answer": 0,
+     "ifNot": "Compare the lakhs first. Kiran has 5 lakhs and Ravi has 4 lakhs. Meena has 3 lakhs and Priya has only 2."
+    }
+   },
+   {
+    "say": "So the top 2 are Kiran and Ravi. Add their earnings: 512345 plus 475628 is 987973.",
+    "board": [
+     {
+      "op": "write",
+      "id": "top",
+      "text": "5,12,345 + 4,75,628 = 9,87,973"
+     },
+     {
+      "op": "note",
+      "line": "top",
+      "target": {
+       "text": "= 9,87,973"
+      },
+      "text": "top 2",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The bottom 2 are Meena and Priya. 389457 plus 298076 is 687533.",
+    "board": [
+     {
+      "op": "write",
+      "id": "bot",
+      "text": "3,89,457 + 2,98,076 = 6,87,533"
+     },
+     {
+      "op": "note",
+      "line": "bot",
+      "target": {
+       "text": "= 6,87,533"
+      },
+      "text": "bottom 2",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the difference between those two totals. No borrowing is needed here, so go column by column. 987973 minus 687533 is 300440.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "9,87,973 − 6,87,533 = 3,00,440",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So they donated 300440 rupees.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "= 3,00,440"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: it is not the highest earner minus the lowest. Each pair is added first, and only then do we subtract."
+   },
+   {
+    "say": "Check by adding back. 687533 plus 300440 is 987973, the top 2 total.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "6,87,533 + 3,00,440 = 9,87,973"
+     }
+    ]
+   },
+   {
+    "say": "So read the instruction in order: rank, add each pair, then find the difference."
+   }
+  ]
+ },
+ "AIGEN_grade5_538cb8ab-f187-453f-9a26-229497da7d6f": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi gets 4750 rupees from his grandmother. He spends 1285 on crackers and 968 on sweets. His uncle gives him 1150. Later he donates 500. How much does he have now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Got ₹4,750. Spent ₹1,285, ₹968. Got ₹1,150. Gave ₹500.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "That is a lot of ins and outs, so let's sort them. Which amounts went out of Ravi's hands?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1285 and 968 only",
+      "1285, 968 and 500",
+      "1285, 968 and 1150"
+     ],
+     "answer": 1,
+     "ifNot": "Crackers, sweets and the donation all left his hands: 1285, 968 and 500. The 1150 from his uncle came in."
+    }
+   },
+   {
+    "say": "Add up everything that came in. 4750 from grandmother plus 1150 from uncle is 5900.",
+    "board": [
+     {
+      "op": "write",
+      "id": "in",
+      "text": "4,750 + 1,150 = 5,900"
+     },
+     {
+      "op": "note",
+      "line": "in",
+      "target": {
+       "text": "= 5,900"
+      },
+      "text": "money in",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now everything that went out. 1285 plus 968 is 2253, and 500 more makes 2753.",
+    "board": [
+     {
+      "op": "write",
+      "id": "o1",
+      "text": "1,285 + 968 = 2,253"
+     },
+     {
+      "op": "write",
+      "id": "o2",
+      "text": "2,253 + 500 = 2,753"
+     },
+     {
+      "op": "note",
+      "line": "o2",
+      "target": {
+       "text": "= 2,753"
+      },
+      "text": "money out",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Money in, take away money out. That is 5900 minus 2753. Careful: the zeros in 5900 make the borrowing fiddly.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "o2",
+      "target": {
+       "text": "= 2,753"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So here is a trick: take 1 off both numbers, and the gap between them stays the same. 5899 minus 2752 needs no borrowing, and it is 3147.",
+    "board": [
+     {
+      "op": "write",
+      "id": "leftt",
+      "text": "5,899 − 2,752 = 3,147"
+     },
+     {
+      "op": "write",
+      "id": "left",
+      "text": "5,900 − 2,753 = 3,147",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So Ravi has 3147 rupees now.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "left",
+      "target": {
+       "text": "3,147"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the donation. It comes after the uncle's gift in the story, but it is still money going out. The order in the story does not change which way the money moves."
+   },
+   {
+    "say": "Check it in story order, step by step: take 1285, take 968, add 1150, take 500. The board shows it comes to 3147 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "4,750 − 1,285 − 968 + 1,150 − 500 = 3,147"
+     }
+    ]
+   },
+   {
+    "say": "So when a story has many ins and outs, make two piles. Total the ins, total the outs, and subtract once."
+   }
+  ]
+ },
+ "AIGEN_grade5_548a38da-6cfc-42c5-8ce4-61cca19c2bb4": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's family set aside 5000 rupees for Diwali shopping. They buy firecrackers for 2475, sweets for 1368 and decorations for 957. How much is left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Set aside ₹5,000. Spent ₹2,475, ₹1,368 and ₹957.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "They bought 3 kinds of things out of the 5000. What should we find first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5000 plus the 3 purchases",
+      "only the biggest purchase",
+      "the total of the 3 purchases"
+     ],
+     "answer": 2,
+     "ifNot": "Money left means the budget minus everything that was spent. So first add up all 3 purchases."
+    }
+   },
+   {
+    "say": "Add up the spending first. 2475 plus 1368 is 3843, and 957 more makes 4800.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "2,475 + 1,368 = 3,843"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "3,843 + 957 = 4,800"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 4,800"
+      },
+      "text": "spent",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the carries in that adding. Miss one and the total drifts, and then the money left drifts with it."
+   },
+   {
+    "say": "Now take that from the 5000 the family started with. Careful: the zeros in 5000 make the borrowing fiddly.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s2",
+      "target": {
+       "text": "= 4,800"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So here is a trick: take 1 off both numbers, and the gap between them stays the same. 4999 minus 4799 needs no borrowing, and it is 200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "leftt",
+      "text": "4,999 − 4,799 = 200"
+     },
+     {
+      "op": "write",
+      "id": "left",
+      "text": "5,000 − 4,800 = 200",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So 200 rupees are left.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "left",
+      "target": {
+       "text": "= 200"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check it the other way. The 200 left, plus the 4800 that went out, makes 5000. That is what the family began with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "200 + 4,800 = 5,000"
+     }
+    ]
+   },
+   {
+    "say": "So total the spending first, then subtract once. One careful subtraction is easier than three."
+   }
+  ]
+ },
+ "AIGEN_grade5_555fbc6a-c850-4337-9d81-0fec7f9e3059": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "4 teams collected money, and the recorded total was 50000 rupees. Then it turned out that Team C really collected 1250 more than was recorded. We want the correct total.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Recorded total = ₹50,000.  Team C: ₹1,250 more.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Correct total = ?",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We are not told Team C's amount. Do we have to work it out before we can fix the total?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes: nothing works without it",
+      "No: only the change matters"
+     ],
+     "answer": 1,
+     "ifNot": "Look at what the question asks for: the total, not Team C's amount. And we already have a total. It only needs correcting."
+    }
+   },
+   {
+    "say": "Here is why. The total is just the 4 amounts added together. If one of them changes and the other 3 stay put, the total changes by exactly the same amount."
+   },
+   {
+    "say": "Team C's real amount is 1250 more than recorded, and the other 3 teams stay the same. What happens to the total?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "₹1,250 more"
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "It goes down by 1250",
+      "It stays at 50000",
+      "It goes up by 1250"
+     ],
+     "answer": 2,
+     "ifNot": "One of the 4 amounts has grown by 1250 and nothing else has changed. So the total grows by 1250 as well."
+    }
+   },
+   {
+    "say": "So the correct total is 50000 plus 1250, which is 51250 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "50,000 + 1,250 = 51,250",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "51,250"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check the long way. Teams A, B and D collected 12475, 8963 and 15208, which is 36646 together. So Team C was recorded as 50000 minus 36646, which is 13354.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "12,475 + 8,963 + 15,208 = 36,646"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "50,000 − 36,646 = 13,354"
+     },
+     {
+      "op": "note",
+      "line": "c2",
+      "target": {
+       "text": "= 13,354"
+      },
+      "text": "Team C, recorded",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Team C's real amount is 13354 plus 1250, which is 14604. And 36646 plus 14604 is 51250. The short way and the long way agree.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "13,354 + 1,250 = 14,604"
+     },
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "36,646 + 14,604 = 51,250"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the word more. More than recorded pushes the total up, not down, and it pushes it up only once."
+   },
+   {
+    "say": "So when one part of a total is corrected, you do not need to rebuild everything. Just move the total by the same amount."
+   }
+  ]
+ },
+ "AIGEN_grade5_5dd61b5e-91dc-47f4-92e3-fd5a16ac4722": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meena and Rohan want a cricket bat that costs 1250 rupees. Meena has saved 485, Rohan has saved 378, and their mother gives them 200. How much more do they need?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Have ₹485 + ₹378 + ₹200. Bat costs ₹1,250.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Whose money counts towards the bat?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "only Meena's and Rohan's savings",
+      "only mother's gift",
+      "Meena's, Rohan's and mother's gift"
+     ],
+     "answer": 2,
+     "ifNot": "They are buying the bat together, and mother's 200 is a gift to help with it. So all 3 amounts go into the pot."
+    }
+   },
+   {
+    "say": "So add all 3. 485 plus 378 is 863, and 200 more makes 1063.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "485 + 378 = 863"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "863 + 200 = 1,063"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 1,063"
+      },
+      "text": "what they have",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "How much more is the gap between the price and what they have. Mind the borrowing here: 1250 minus 1063 is 187.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "1,250 − 1,063 = 187",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So they still need 187 rupees.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "187"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap. Forget mother's 200, and the answer comes out 200 too big. Every rupee they have makes the gap smaller."
+   },
+   {
+    "say": "Check by adding on. 1063 plus 187 is 1250, the price of the bat.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "1,063 + 187 = 1,250"
+     }
+    ]
+   },
+   {
+    "say": "So for a how-much-more question: put all the money you have together, then subtract it from the price."
+   }
+  ]
+ },
+ "AIGEN_grade5_619fc94d-229b-44e5-a80a-ac44c2c02651": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya's grandmother gives her some money for Pongal. She spends 2365 on clothes, 1480 on sweets and 955 on rangoli supplies, and still has 3200 left. How much was she given?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Spent ₹2,365, ₹1,480 and ₹955. Still has ₹3,200.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with what went out. 2365 plus 1480 is 3845, and 955 more makes 4800.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "2,365 + 1,480 = 3,845"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "3,845 + 955 = 4,800"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 4,800"
+      },
+      "text": "gone",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "She spent 4800 and still has 3200. How do we get back to what she was given?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4800 + 3200",
+      "4800 − 3200",
+      "just 4800"
+     ],
+     "answer": 0,
+     "ifNot": "Every rupee she was given was either spent or is still there. So put those two piles back together: add them."
+    }
+   },
+   {
+    "say": "Look at the bar: the spent part and the left part together make the whole gift. 4800 plus 3200 is 8000. Grandmother gave her 8000 rupees.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "bar",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 6.0,
+           "label": "gone: 4,800",
+           "tone": "a"
+          },
+          {
+           "units": 4.0,
+           "label": "left: 3,200",
+           "tone": "b"
+          }
+         ],
+         "brace": "given = ?"
+        }
+       ]
+      }
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "4,800 + 3,200 = 8,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "= 8,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to stop at 4800. That is only the money she spent. The 3200 in her piggy bank was part of the gift as well.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s2",
+      "target": {
+       "text": "= 4,800"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Check it forwards. Start with 8000, spend 4800, and 3200 is left. Just as the story says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "8,000 − 4,800 = 3,200"
+     }
+    ]
+   },
+   {
+    "say": "So when you know what was spent and what is left, add them to find the start. Spending is undone by adding."
+   }
+  ]
+ },
+ "AIGEN_grade5_6ad2d1b7-37cd-4840-90df-d57a8878342d": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "4 shopkeepers collected 52000 rupees in all. A collected 12475, B collected 8960 and D collected 15340. Someone says C collected exactly A plus B, minus 1275. We must find C, and test that claim.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "A = 12,475.  B = 8,960.  C = ?  D = 15,340.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Total = 52,000.  Claim: C = A + B − 1,275",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "There are two statements about C: the total, and the claim. Which one do we use to find what C really collected?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "A + B − 1,275",
+      "52,000 − (A + B + D)",
+      "52,000 − (A + B)"
+     ],
+     "answer": 1,
+     "ifNot": "The total of 52000 is a fact. The other statement is only something they noticed, and we are asked to test it. So use the total, and take away A, B and D."
+    }
+   },
+   {
+    "say": "Add A, B and D. 12475 plus 8960 is 21435, and 15340 more makes 36775.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "12,475 + 8,960 = 21,435"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "21,435 + 15,340 = 36,775"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 36,775"
+      },
+      "text": "A + B + D",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "What is left of the 52000 belongs to C. Go column by column, borrowing where you need to: 52000 minus 36775 is 15225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "52,000 − 36,775 = 15,225"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "= 15,225"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Now test the claim. A plus B is the 21435 we already found. Mind the borrowing here: 21435 minus 1275 is 20160.",
+    "board": [
+     {
+      "op": "write",
+      "id": "claim",
+      "text": "21,435 − 1,275 = 20,160"
+     },
+     {
+      "op": "note",
+      "line": "claim",
+      "target": {
+       "text": "= 20,160"
+      },
+      "text": "what the claim says",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "C really collected 15225. The claim says 20160. So is the observation correct?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No: the two amounts differ",
+      "Yes: they are the same"
+     ],
+     "answer": 0,
+     "ifNot": "Put the two numbers side by side: 15225 and 20160. They are not equal, so the observation does not hold."
+    }
+   },
+   {
+    "say": "15225 is not equal to 20160. So C collected 15225 rupees, and the observation is not correct.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ne",
+      "text": "15,225 ≠ 20,160"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "C = ₹15,225; the observation is not correct",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "₹15,225"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check C against the total. 12475, 8960, 15225 and 15340 add up to 52000 exactly.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ch",
+      "text": "12,475 + 8,960 + 15,225 + 15,340 = 52,000"
+     }
+    ]
+   },
+   {
+    "say": "So keep facts and claims apart. Find the answer from the facts, then hold the claim up against it."
+   }
+  ]
+ },
+ "AIGEN_grade5_7576aebc-29c3-4f3a-88ae-acb5ccc157f5": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi goes to the Diwali mela with 500 rupees. He buys sparklers for 127 and diyas for 89. Then his grandmother gives him 75. How much does he have now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Had ₹500. Spent ₹127 and ₹89. Grandmother gave ₹75.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Before any sums, sort the amounts. Which ones are money leaving Ravi's pocket?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "127, 89 and 75",
+      "127 and 89",
+      "only 127"
+     ],
+     "answer": 1,
+     "ifNot": "He paid for the sparklers and the diyas, so 127 and 89 went out. The 75 is a gift from his grandmother, so that one comes in."
+    }
+   },
+   {
+    "say": "So add up what was spent. 127 plus 89 is 216.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "127 + 89 = 216"
+     },
+     {
+      "op": "note",
+      "line": "s1",
+      "target": {
+       "text": "= 216"
+      },
+      "text": "spent",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now take that from the 500 Ravi started with. Careful: borrowing across those zeros is where slips happen.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s1",
+      "target": {
+       "text": "= 216"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So here is a trick: take 1 off both numbers, and the gap between them stays the same. 499 minus 215 needs no borrowing, and it is 284.",
+    "board": [
+     {
+      "op": "write",
+      "id": "leftt",
+      "text": "499 − 215 = 284"
+     },
+     {
+      "op": "write",
+      "id": "left",
+      "text": "500 − 216 = 284"
+     }
+    ]
+   },
+   {
+    "say": "So 284 rupees are left after the shopping. Is that our final answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, 284 is the answer",
+      "Not yet: add the 75",
+      "Not yet: take away the 75"
+     ],
+     "answer": 1,
+     "ifNot": "The story does not stop at the shopping. His grandmother gave him 75 rupees afterwards, and money coming in is added."
+    }
+   },
+   {
+    "say": "284 plus 75 is 359. So Ravi has 359 rupees now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fin",
+      "text": "284 + 75 = 359",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "fin",
+      "target": {
+       "text": "= 359"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. Take away the 75 that came in, and we are at 284. Put back the 216 that went out, and we are at 500, where Ravi began.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "359 − 75 = 284"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "284 + 216 = 500"
+     }
+    ]
+   },
+   {
+    "say": "So before any sums, decide which amounts go out and which come in. Take away the outs, add the ins."
+   }
+  ]
+ },
+ "AIGEN_grade5_7c14587f-cbc0-4273-a16a-48c374e6a2cc": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya has a box of ladoos to share during Navratri. She gives away 168 on the first day, 245 on the second and 137 on the third. 150 are still in the box. How many were there at first?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Gave away 168, 245 and 137 ladoos. 150 are left.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with what went out. 168 plus 245 is 413, and 137 more makes 550.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "168 + 245 = 413"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "413 + 137 = 550"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 550"
+      },
+      "text": "gone",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "She gave away 550 ladoos and 150 are still in the box. How do we find how many there were at first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "550 − 150",
+      "just 550",
+      "550 + 150"
+     ],
+     "answer": 2,
+     "ifNot": "Every ladoo was either given away or is still in the box. So put those two groups back together: add them."
+    }
+   },
+   {
+    "say": "The bar shows it: the ladoos given away and the ladoos left make the full box. 550 plus 150 is 700. There were 700 ladoos at first.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "bar",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 7.9,
+           "label": "gone: 550",
+           "tone": "a"
+          },
+          {
+           "units": 2.1,
+           "label": "left: 150",
+           "tone": "b"
+          }
+         ],
+         "brace": "at first = ?"
+        }
+       ]
+      }
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "550 + 150 = 700",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "= 700"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to stop at 550. Those are only the ladoos she gave away. The 150 still in the box were there at the start too.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s2",
+      "target": {
+       "text": "= 550"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Check it forwards. Start with 700, give away 550, and 150 are left in the box. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "700 − 550 = 150"
+     }
+    ]
+   },
+   {
+    "say": "So to find how many there were at the start, add what went out to what is left."
+   }
+  ]
+ },
+ "AIGEN_grade5_853202d9-ae29-4e34-bf4c-7b92c751c450": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's family spent 2475 on firecrackers, 1368 on sweets and 957 on clothes. Father says that makes 5000 in all. Ravi is not so sure. What is the real total?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹2,475 + ₹1,368 + ₹957 = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Father says: ₹5,000",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Father says 5000. How can we find out whether he is right?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Take his word for it",
+      "Take 957 away from 5000",
+      "Add the 3 amounts ourselves"
+     ],
+     "answer": 2,
+     "ifNot": "A total that someone tells you is only a claim. The real total comes from adding the 3 amounts ourselves."
+    }
+   },
+   {
+    "say": "Start with the first two. 2475 plus 1368 is 3843.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "2,475 + 1,368 = 3,843"
+     }
+    ]
+   },
+   {
+    "say": "Careful: we are not finished. 3843 covers only the firecrackers and the sweets. The clothes still have to go on.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s1",
+      "target": {
+       "text": "3,843"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "₹957"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "3843 plus 957. Look at the ends of the two numbers: 43 and 57 make exactly 100. Then 3800 plus 900 plus that 100 is 4800.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "43 + 57 = 100"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "3,800 + 900 + 100 = 4,800"
+     }
+    ]
+   },
+   {
+    "say": "So the real total is 4800 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "3,843 + 957 = 4,800",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "4,800"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Ravi was right to doubt. Father's 5000 is 200 too much. It was a rough guess, not a sum.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "5,000 − 4,800 = 200"
+     },
+     {
+      "op": "strike",
+      "line": "q2",
+      "target": {
+       "text": "₹5,000"
+      },
+      "note": "200 too much"
+     }
+    ]
+   },
+   {
+    "say": "Check by taking the clothes off again. 4800 minus 957 is 3843, the total of the first two.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "4,800 − 957 = 3,843"
+     }
+    ]
+   },
+   {
+    "say": "So add in steps, look for ends that make a round 100, and never stop before the last amount is in."
+   }
+  ]
+ },
+ "AIGEN_grade5_978019ae-bdb6-4ded-9bd2-7686251827ab": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Rohan's father has 7500 rupees in his wallet. He buys firecrackers at 3 shops: 2475 at the first, 1368 at the second and 2157 at the third. How much is left in the wallet?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Had ₹7,500. Spent ₹2,475, ₹1,368 and ₹2,157.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "He paid at 3 different shops. Before we can see what is left, what do we need?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the amount at the first shop only",
+      "the total spent at all 3 shops",
+      "7500 plus the 3 amounts"
+     ],
+     "answer": 1,
+     "ifNot": "All 3 payments came out of the same wallet. So add the 3 amounts to see how much left the wallet altogether."
+    }
+   },
+   {
+    "say": "First, the total spent. 2475 plus 1368 is 3843, and 2157 more makes 6000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "2,475 + 1,368 = 3,843"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "3,843 + 2,157 = 6,000"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 6,000"
+      },
+      "text": "spent",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now take that from the 7500 Rohan's father started with. 7500 minus 6000 is 1500.",
+    "board": [
+     {
+      "op": "write",
+      "id": "left",
+      "text": "7,500 − 6,000 = 1,500",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So 1500 rupees are left in the wallet.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "left",
+      "target": {
+       "text": "= 1,500"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to stop at 6000. That is the money that was spent. The question asks for the money that is left."
+   },
+   {
+    "say": "Check by adding back. 1500 plus the 6000 that went out is 7500, the money Rohan's father began with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "1,500 + 6,000 = 7,500"
+     }
+    ]
+   },
+   {
+    "say": "So for a what-is-left question: add up everything spent, then take that total from the money at the start."
+   }
+  ]
+ },
+ "AIGEN_grade5_9a6b3e78-62ce-483f-88ce-d03bd1579564": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Team A scored 248 and 176 in its two innings. Team B scored 195 and 213. We want to know by how many runs the winning team won.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Team A: 248 and 176.   Team B: 195 and 213.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "t",
+      "spec": {
+       "kind": "table",
+       "headers": [
+        "Team",
+        "1st innings",
+        "2nd innings"
+       ],
+       "rows": [
+        [
+         "A",
+         "248",
+         "176"
+        ],
+        [
+         "B",
+         "195",
+         "213"
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Team A scored more in the first innings, and Team B scored more in the second. Can we name the winner yet?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No: add each team's two innings",
+      "Yes: Team A, it has the top score",
+      "Yes: Team B, it won the last innings"
+     ],
+     "answer": 0,
+     "ifNot": "A match is decided by the runs over both innings together. One good innings is not enough, so add up each team's two scores."
+    }
+   },
+   {
+    "say": "Team A first. 248 plus 176 is 424.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ta",
+      "text": "248 + 176 = 424"
+     },
+     {
+      "op": "note",
+      "line": "ta",
+      "target": {
+       "text": "= 424"
+      },
+      "text": "Team A",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now Team B. 195 plus 213 is 408.",
+    "board": [
+     {
+      "op": "write",
+      "id": "tb",
+      "text": "195 + 213 = 408"
+     },
+     {
+      "op": "note",
+      "line": "tb",
+      "target": {
+       "text": "= 408"
+      },
+      "text": "Team B",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "424 is more than 408, so Team A wins. By how many? Mind the borrowing here: 424 minus 408 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "424 − 408 = 16",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So Team A won by 16 runs.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "= 16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: comparing just one innings gives a different gap. Only the totals decide a match."
+   },
+   {
+    "say": "Check by adding on. Team B's 408 plus 16 is 424, which is Team A's total.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "408 + 16 = 424"
+     }
+    ]
+   },
+   {
+    "say": "So to find a winning margin: total each team, see which is bigger, and subtract the smaller from it."
+   }
+  ]
+ },
+ "AIGEN_grade5_9c6bcc16-4a95-4559-9a33-020e23216286": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi takes 500 rupees to the Diwali mela. He buys sparklers for 127, rangoli colours for 89 and sweets for 156. Going home, he finds 20 rupees and keeps it. How much does he have now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Had ₹500. Spent ₹127, ₹89 and ₹156. Found ₹20.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Sort the amounts before adding anything. Which ones did Ravi pay out?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "127, 89, 156 and 20",
+      "127, 89 and 156",
+      "only 127 and 89"
+     ],
+     "answer": 1,
+     "ifNot": "He paid for sparklers, colours and sweets, so 127, 89 and 156 went out. The 20 he found came in."
+    }
+   },
+   {
+    "say": "Add up the spending first. 127 plus 89 is 216, and 156 more makes 372.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "127 + 89 = 216"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "216 + 156 = 372"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 372"
+      },
+      "text": "spent",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now take that from the 500 Ravi started with. Careful: borrowing across those zeros is where slips happen.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s2",
+      "target": {
+       "text": "= 372"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So here is a trick: take 1 off both numbers, and the gap between them stays the same. 499 minus 371 needs no borrowing, and it is 128.",
+    "board": [
+     {
+      "op": "write",
+      "id": "leftt",
+      "text": "499 − 371 = 128"
+     },
+     {
+      "op": "write",
+      "id": "left",
+      "text": "500 − 372 = 128"
+     }
+    ]
+   },
+   {
+    "say": "So 128 rupees are left after the shopping. Is that our final answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Not yet: add the 20",
+      "Yes, 128 is the answer",
+      "Not yet: take away the 20"
+     ],
+     "answer": 0,
+     "ifNot": "The story carries on after the mela. He found 20 rupees and kept it, so his money grows by 20."
+    }
+   },
+   {
+    "say": "128 plus 20 is 148. So Ravi has 148 rupees now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fin",
+      "text": "128 + 20 = 148",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "fin",
+      "target": {
+       "text": "= 148"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. Take away the 20 that came in, and we are at 128. Put back the 372 that went out, and we are at 500, where Ravi began.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "148 − 20 = 128"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "128 + 372 = 500"
+     }
+    ]
+   },
+   {
+    "say": "So in a money story, sort the amounts first. Add up what goes out, take it from the start, then add what comes in."
+   }
+  ]
+ },
+ "AIGEN_grade5_9fcdcd29-ac9f-4d01-b69b-3a98bbb464b8": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Team India scored 247 and 189 in their two innings. Team Australia scored 312 in their first. How many runs does Team Australia need in the second innings to tie?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Team India: 247 and 189.   Team Australia: 312 and ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with Team India's two innings. 247 plus 189 is 436.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ta",
+      "text": "247 + 189 = 436"
+     },
+     {
+      "op": "note",
+      "line": "ta",
+      "target": {
+       "text": "= 436"
+      },
+      "text": "Team India's total",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "To tie the match, what must Team Australia's total be at the end?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "437, one more than Team India",
+      "436, the same as Team India",
+      "312, what they have now"
+     ],
+     "answer": 1,
+     "ifNot": "A tie means both teams finish on exactly the same total. So Team Australia must end on 436, no more and no less."
+    }
+   },
+   {
+    "say": "Team Australia already has 312 from the first innings, so the second innings must bring the rest. 436 minus 312 is 124.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "436 − 312 = 124",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So the second innings for Team Australia must be 124 runs.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "= 124"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful not to answer 436. That is the whole total Team Australia needs, and 312 of it is already on the scoreboard."
+   },
+   {
+    "say": "Check: 312 plus 124 is 436, level with Team India. A tie.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "312 + 124 = 436"
+     }
+    ]
+   },
+   {
+    "say": "So a target question has two steps: build the total to be matched, then take away the runs already scored."
+   }
+  ]
+ },
+ "AIGEN_grade5_b2bc5126-fa13-453a-86f7-9943d2b3a790": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Team A scored 247 and 189. Team B scored 315 in the first innings. How many runs does Team B need in the second innings to beat Team A by exactly 1 run?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Team A: 247 and 189.   Team B: 315 and ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with Team A's two innings. 247 plus 189 is 436.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ta",
+      "text": "247 + 189 = 436"
+     },
+     {
+      "op": "note",
+      "line": "ta",
+      "target": {
+       "text": "= 436"
+      },
+      "text": "Team A's total",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Team B must finish exactly 1 run ahead of Team A. So what is Team B's total?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "436 + 1",
+      "436 − 1",
+      "just 436"
+     ],
+     "answer": 0,
+     "ifNot": "Winning by 1 means finishing 1 above the other team. Team A has 436, so Team B's total is 436 plus 1."
+    }
+   },
+   {
+    "say": "436 plus 1 is 437. That is the total Team B needs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "tg",
+      "text": "436 + 1 = 437"
+     },
+     {
+      "op": "note",
+      "line": "tg",
+      "target": {
+       "text": "= 437"
+      },
+      "text": "Team B's target",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Team B already has 315 from the first innings, so the second innings must bring the rest. 437 minus 315 is 122.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "437 − 315 = 122",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So Team B needs 122 runs in the second innings.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "= 122"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 121 runs would only bring the scores level, and that is a tie. The 1 extra run is what makes it a win.",
+    "board": [
+     {
+      "op": "write",
+      "id": "tie",
+      "text": "436 − 315 = 121"
+     },
+     {
+      "op": "note",
+      "line": "tie",
+      "target": {
+       "text": "= 121"
+      },
+      "text": "only a tie",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check: 315 plus 122 is 437, which is 1 more than 436.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "315 + 122 = 437"
+     }
+    ]
+   },
+   {
+    "say": "So to win by 1: the other team's total, plus 1, minus the runs you already have."
+   }
+  ]
+ },
+ "AIGEN_grade5_b3cd211a-20be-433b-98f0-47aef5cadb8f": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's grandmother gives him 4750 rupees for Diwali. He spends 1285 on crackers and 965 on sweets. Then his uncle gives him 1200 more. How much does he have now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Had ₹4,750. Spent ₹1,285 and ₹965. Uncle gave ₹1,200.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which amounts are money going out of Ravi's hands?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1285, 965 and 1200",
+      "4750 and 1285",
+      "1285 and 965"
+     ],
+     "answer": 2,
+     "ifNot": "Crackers and sweets were paid for, so 1285 and 965 went out. The 4750 and the 1200 were both given to him, so they came in."
+    }
+   },
+   {
+    "say": "Add up the spending first. 1285 plus 965 is 2250.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "1,285 + 965 = 2,250"
+     },
+     {
+      "op": "note",
+      "line": "s1",
+      "target": {
+       "text": "= 2,250"
+      },
+      "text": "spent",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now take that from the 4750 Ravi started with. 4750 minus 2250 is 2500.",
+    "board": [
+     {
+      "op": "write",
+      "id": "left",
+      "text": "4,750 − 2,250 = 2,500"
+     }
+    ]
+   },
+   {
+    "say": "So 2500 rupees are left after the shopping. Is that our final answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Not yet: add the 1200",
+      "Yes, 2500 is the answer",
+      "Not yet: take away the 1200"
+     ],
+     "answer": 0,
+     "ifNot": "One more thing happened after the spending. His uncle gave him 1200 rupees, and that is money coming in."
+    }
+   },
+   {
+    "say": "2500 plus 1200 is 3700. So Ravi has 3700 rupees now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fin",
+      "text": "2,500 + 1,200 = 3,700",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "fin",
+      "target": {
+       "text": "= 3,700"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. Take away the 1200 that came in, and we are at 2500. Put back the 2250 that went out, and we are at 4750, where Ravi began.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "3,700 − 1,200 = 2,500"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "2,500 + 2,250 = 4,750"
+     }
+    ]
+   },
+   {
+    "say": "So read a money story twice. Once to sort the ins from the outs, and once to do the sums in order."
+   }
+  ]
+ },
+ "AIGEN_grade5_bc224c31-2795-4b7e-92c5-f10a7d43181a": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Team A scored 247 and 189. Team B scored 312 in the first innings. What is the smallest number of runs Team B can score in the second innings and still win?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Team A: 247 and 189.   Team B: 312 and ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with Team A's two innings. 247 plus 189 is 436.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ta",
+      "text": "247 + 189 = 436"
+     },
+     {
+      "op": "note",
+      "line": "ta",
+      "target": {
+       "text": "= 436"
+      },
+      "text": "Team A's total",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "To win, Team B must finish above 436. What is the smallest total that does it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "436",
+      "436 + 312",
+      "437"
+     ],
+     "answer": 2,
+     "ifNot": "436 would only tie the match. To win, Team B needs at least 1 run more than that."
+    }
+   },
+   {
+    "say": "436 plus 1 is 437. That is the total Team B needs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "tg",
+      "text": "436 + 1 = 437"
+     },
+     {
+      "op": "note",
+      "line": "tg",
+      "target": {
+       "text": "= 437"
+      },
+      "text": "Team B's target",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Team B already has 312 from the first innings, so the second innings must bring the rest. 437 minus 312 is 125.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "437 − 312 = 125",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So Team B needs 125 runs in the second innings.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "= 125"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 124 runs would only bring the scores level, and that is a tie. The 1 extra run is what makes it a win.",
+    "board": [
+     {
+      "op": "write",
+      "id": "tie",
+      "text": "436 − 312 = 124"
+     },
+     {
+      "op": "note",
+      "line": "tie",
+      "target": {
+       "text": "= 124"
+      },
+      "text": "only a tie",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check: 312 plus 125 is 437, which is 1 more than 436.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "312 + 125 = 437"
+     }
+    ]
+   },
+   {
+    "say": "So the smallest winning total is 1 more than the other team's total. Then take away the runs already scored."
+   }
+  ]
+ },
+ "AIGEN_grade5_bf9ee9bc-8c4d-4b4b-bd9e-97cc4d6f11b9": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi has 500 rupees at the Diwali mela. Sparklers cost him 128 and diyas cost him 97. After that, his grandmother gives him 75 as a gift. How much does he have now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Had ₹500. Spent ₹128 and ₹97. Grandmother gave ₹75.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which of these amounts make Ravi's money smaller?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "128 and 97",
+      "128, 97 and 75",
+      "all of them, and the 500 too"
+     ],
+     "answer": 0,
+     "ifNot": "Spending makes money smaller, so the 128 and the 97 do that. The 75 from his grandmother makes it bigger."
+    }
+   },
+   {
+    "say": "So add up what was spent. 128 plus 97 is 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "128 + 97 = 225"
+     },
+     {
+      "op": "note",
+      "line": "s1",
+      "target": {
+       "text": "= 225"
+      },
+      "text": "spent",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now take that away from the 500. Careful: borrowing across those zeros is where slips happen.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s1",
+      "target": {
+       "text": "= 225"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So here is a trick: take 1 off both numbers, and the gap between them stays the same. 499 minus 224 needs no borrowing, and it is 275.",
+    "board": [
+     {
+      "op": "write",
+      "id": "leftt",
+      "text": "499 − 224 = 275"
+     },
+     {
+      "op": "write",
+      "id": "left",
+      "text": "500 − 225 = 275"
+     }
+    ]
+   },
+   {
+    "say": "So 275 rupees are left after the shopping. Is that our final answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, 275 is the answer",
+      "Not yet: take away the 75",
+      "Not yet: add the 75"
+     ],
+     "answer": 2,
+     "ifNot": "Look at the last thing that happened. Grandmother gave him 75 rupees, so his money went up by 75 after the shopping."
+    }
+   },
+   {
+    "say": "275 plus 75 is 350. So Ravi has 350 rupees now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fin",
+      "text": "275 + 75 = 350",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "fin",
+      "target": {
+       "text": "= 350"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. Take away the 75 that came in, and we are at 275. Put back the 225 that went out, and we are at 500, where Ravi began.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "350 − 75 = 275"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "275 + 225 = 500"
+     }
+    ]
+   },
+   {
+    "say": "So read a money story twice. Once to sort the ins from the outs, and once to do the sums in order."
+   }
+  ]
+ },
+ "AIGEN_grade5_c654dc44-0b9b-488f-9b58-8c57f5fe7ae9": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's grandmother gives him some money. Before spending, he lends 750 to Arjun. Then he spends 1275 on crackers, 850 on sweets and 1460 on clothes, and has 2165 left. How much was he given?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Lent ₹750. Spent ₹1,275, ₹850, ₹1,460. Has ₹2,165.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with what went out. 1275 plus 850 is 2125, and 1460 more makes 3585.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "1,275 + 850 = 2,125"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "2,125 + 1,460 = 3,585"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 3,585"
+      },
+      "text": "gone",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "He spent 3585 and still has 2165. How do we get back to what he had before the shopping?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3585 − 2165",
+      "3585 + 2165",
+      "just 3585"
+     ],
+     "answer": 1,
+     "ifNot": "Think of it backwards. What went out and what is left were once all together. To rebuild the start, add them."
+    }
+   },
+   {
+    "say": "The spent part and the left part together make what he had before the shopping. 3585 plus 2165 is 5750.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "bar",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 6.2,
+           "label": "gone: 3,585",
+           "tone": "a"
+          },
+          {
+           "units": 3.8,
+           "label": "left: 2,165",
+           "tone": "b"
+          }
+         ],
+         "brace": "before shopping = ?"
+        }
+       ]
+      }
+     },
+     {
+      "op": "write",
+      "id": "base",
+      "text": "3,585 + 2,165 = 5,750"
+     },
+     {
+      "op": "note",
+      "line": "base",
+      "target": {
+       "text": "= 5,750"
+      },
+      "text": "before spending",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 5750 is what he had before the shopping. Is that everything grandmother gave him?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No: add the 750 he lent",
+      "Yes, 5750 is the answer",
+      "No: take away the 750"
+     ],
+     "answer": 0,
+     "ifNot": "The 750 he lent to Arjun came out of grandmother's gift too, and it has not come back. So it has to be added on."
+    }
+   },
+   {
+    "say": "5750 plus 750 is 6500. Grandmother gave him 6500 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "5,750 + 750 = 6,500",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6,500"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "That lent money is the trap. It is not spent and it is not in the piggy bank, so it is easy to lose. But it was part of the gift."
+   },
+   {
+    "say": "Check it forwards. From 6500, lend 750, then spend 3585, and 2165 is left. It matches.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "6,500 − 750 − 3,585 = 2,165"
+     }
+    ]
+   },
+   {
+    "say": "So to rebuild the start, add back everything that left: what was spent, what was lent, and what is still there."
+   }
+  ]
+ },
+ "AIGEN_grade5_c767e364-fcd9-44c3-a3ed-08d45be7cd1b": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's father brings 7500 rupees to the market. He buys firecrackers at 3 shops, for 2475, 1368 and 2157. Then he gives Ravi 250 as pocket money. How much does father have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Had ₹7,500. Spent ₹2,475, ₹1,368, ₹2,157. Gave Ravi ₹250.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the firecrackers. He paid at 3 shops, so what do we need?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the amount at the first shop only",
+      "7500 plus the 3 amounts",
+      "the total spent at the 3 shops"
+     ],
+     "answer": 2,
+     "ifNot": "The 3 payments all came out of father's money. Add them to see what the firecrackers cost altogether."
+    }
+   },
+   {
+    "say": "First, the total spent. 2475 plus 1368 is 3843, and 2157 more makes 6000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "2,475 + 1,368 = 3,843"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "3,843 + 2,157 = 6,000"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 6,000"
+      },
+      "text": "spent",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Then he gives Ravi 250 as pocket money. We are counting father's money. What does the 250 do to it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "It goes out of father's money",
+      "It comes in, so add it",
+      "Nothing: it stays in the family"
+     ],
+     "answer": 0,
+     "ifNot": "The pocket money moves from father to Ravi. We are counting what father has, so the 250 has left his hands."
+    }
+   },
+   {
+    "say": "So the pocket money joins the money going out. 6000 plus 250 is 6250 gone altogether.",
+    "board": [
+     {
+      "op": "write",
+      "id": "o0",
+      "text": "6,000 + 250 = 6,250"
+     },
+     {
+      "op": "note",
+      "line": "o0",
+      "target": {
+       "text": "= 6,250"
+      },
+      "text": "gone altogether",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now take that from the 7500 Ravi's father started with. Careful: the zeros in 7500 make the borrowing fiddly.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "o0",
+      "target": {
+       "text": "= 6,250"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So here is a trick: take 1 off both numbers, and the gap between them stays the same. 7499 minus 6249 needs no borrowing, and it is 1250.",
+    "board": [
+     {
+      "op": "write",
+      "id": "leftt",
+      "text": "7,499 − 6,249 = 1,250"
+     },
+     {
+      "op": "write",
+      "id": "left",
+      "text": "7,500 − 6,250 = 1,250",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So father has 1250 rupees left.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "left",
+      "target": {
+       "text": "= 1,250"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check it the other way. The 1250 left, plus the 6250 that went out, makes 7500. That is what Ravi's father began with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "1,250 + 6,250 = 7,500"
+     }
+    ]
+   },
+   {
+    "say": "So ask whose money you are counting. Everything that leaves that person's hands goes into one total, and then you subtract once."
+   }
+  ]
+ },
+ "AIGEN_grade5_ce3e7583-3236-4f1e-ad0e-bb6c4f48b54c": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Team A scored 2748 runs. Team B scored 1965 runs more than Team A. Team C scored 3210 runs fewer than Team A and Team B put together. We want Team C's runs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "A = 2,748.   B = A + 1,965.   C = (A + B) − 3,210.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Team B scored 1965 runs more than Team A. So how many runs did Team B score?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "just 1965",
+      "2748 + 1965",
+      "2748 − 1965"
+     ],
+     "answer": 1,
+     "ifNot": "1965 is not Team B's score. It is how far ahead of Team A they finished. So start from Team A's 2748 and add 1965."
+    }
+   },
+   {
+    "say": "2748 plus 1965 is 4713. That is Team B's score. Look at the bars: Team B's bar is Team A's bar with 1965 more on the end.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "2,748 + 1,965 = 4,713"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "= 4,713"
+      },
+      "text": "Team B",
+      "place": "below"
+     },
+     {
+      "op": "figure",
+      "id": "bars",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 5.5,
+           "label": "2,748",
+           "tone": "a"
+          }
+         ],
+         "label": "A"
+        },
+        {
+         "segments": [
+          {
+           "units": 5.5,
+           "label": "2,748",
+           "tone": "a"
+          },
+          {
+           "units": 3.9,
+           "label": "1,965 more",
+           "tone": "b"
+          }
+         ],
+         "label": "B"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Next we need Team A and Team B combined. Which sum is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2748 + 1965",
+      "just 4713",
+      "2748 + 4713"
+     ],
+     "answer": 2,
+     "ifNot": "Combined means both whole scores together. Team A's score is 2748 and Team B's whole score is 4713, so add those two."
+    }
+   },
+   {
+    "say": "2748 plus 4713 is 7461. Careful: 2748 plus 1965 was only Team B's score. The combined total counts Team A's runs as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ab",
+      "text": "2,748 + 4,713 = 7,461"
+     },
+     {
+      "op": "note",
+      "line": "ab",
+      "target": {
+       "text": "= 7,461"
+      },
+      "text": "A and B together",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Team C scored 3210 fewer than that. Fewer means take away. 7461 minus 3210 is 4251.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "7,461 − 3,210 = 4,251",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So Team C scored 4251 runs.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "= 4,251"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back. 4251 plus 3210 is 7461, the combined score of Team A and Team B.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "4,251 + 3,210 = 7,461"
+     }
+    ]
+   },
+   {
+    "say": "So take a chain of clues one link at a time. More than means add, fewer than means subtract, and each answer feeds the next step."
+   }
+  ]
+ },
+ "AIGEN_grade5_d3d99cf4-334e-44f3-a182-ee48fa3a72cc": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi spends 1245 on firecrackers, 876 on sweets and 1389 on clothes, and has 2490 left. The money he began with included 500 from his uncle and 750 from his aunt. How much came from grandmother alone?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Spent ₹1,245, ₹876, ₹1,389. Has ₹2,490 left.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, total what went out. 1245 plus 876 is 2121, and 1389 more makes 3510.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "1,245 + 876 = 2,121"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "2,121 + 1,389 = 3,510"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 3,510"
+      },
+      "text": "gone",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "He spent 3510 and still has 2490. How do we get back to all the money he began with?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3510 − 2490",
+      "3510 + 2490",
+      "just 3510"
+     ],
+     "answer": 1,
+     "ifNot": "Think of it backwards. What went out and what is left were once all together. To rebuild the start, add them."
+    }
+   },
+   {
+    "say": "The spent part and the left part together make everything he began with. 3510 plus 2490 is 6000.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "bar",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 5.8,
+           "label": "gone: 3,510",
+           "tone": "a"
+          },
+          {
+           "units": 4.2,
+           "label": "left: 2,490",
+           "tone": "b"
+          }
+         ],
+         "brace": "began with = ?"
+        }
+       ]
+      }
+     },
+     {
+      "op": "write",
+      "id": "base",
+      "text": "3,510 + 2,490 = 6,000"
+     },
+     {
+      "op": "note",
+      "line": "base",
+      "target": {
+       "text": "= 6,000"
+      },
+      "text": "before spending",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "He began with 6000. Did all of that come from grandmother?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No: take off uncle's and aunt's",
+      "Yes, 6000 is the answer",
+      "No: add uncle's and aunt's"
+     ],
+     "answer": 0,
+     "ifNot": "The story says the 500 from his uncle and the 750 from his aunt were already inside that total. So they must come off."
+    }
+   },
+   {
+    "say": "Uncle and aunt together gave 500 plus 750, which is 1250.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "The start includes uncle's ₹500 and aunt's ₹750",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "u",
+      "text": "500 + 750 = 1,250"
+     }
+    ]
+   },
+   {
+    "say": "Take that from the 6000. Careful: the zeros in 6000 make the borrowing fiddly.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "u",
+      "target": {
+       "text": "= 1,250"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "A neat way round it: slide both numbers down by 1. The gap does not change, and 5999 minus 1249 needs no borrowing at all. It is 4750.",
+    "board": [
+     {
+      "op": "write",
+      "id": "anst",
+      "text": "5,999 − 1,249 = 4,750"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "6,000 − 1,250 = 4,750",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So grandmother alone gave him 4750 rupees.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "4,750"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by putting the three gifts together. 4750 plus 500 plus 750 is 6000, everything he began with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "4,750 + 500 + 750 = 6,000"
+     }
+    ]
+   },
+   {
+    "say": "So rebuild the whole starting amount first, by adding. Then take away the parts that came from other people."
+   }
+  ]
+ },
+ "AIGEN_grade5_d529fc5b-0cc2-43e2-afc0-c2ec1c9d5425": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Team A scored 247 and 189. Team B scored 198 and 215. The team with the higher total wins, and we want to know by how many runs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Team A: 247 and 189.   Team B: 198 and 215.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "t",
+      "spec": {
+       "kind": "table",
+       "headers": [
+        "Team",
+        "1st innings",
+        "2nd innings"
+       ],
+       "rows": [
+        [
+         "A",
+         "247",
+         "189"
+        ],
+        [
+         "B",
+         "198",
+         "215"
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Team A scored more in the first innings, and Team B scored more in the second. Can we name the winner yet?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes: Team A, it has the top score",
+      "No: add each team's two innings",
+      "Yes: Team B, it won the last innings"
+     ],
+     "answer": 1,
+     "ifNot": "A match is decided by the runs over both innings together. One good innings is not enough, so add up each team's two scores."
+    }
+   },
+   {
+    "say": "Team A first. 247 plus 189 is 436.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ta",
+      "text": "247 + 189 = 436"
+     },
+     {
+      "op": "note",
+      "line": "ta",
+      "target": {
+       "text": "= 436"
+      },
+      "text": "Team A",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now Team B. 198 plus 215 is 413.",
+    "board": [
+     {
+      "op": "write",
+      "id": "tb",
+      "text": "198 + 215 = 413"
+     },
+     {
+      "op": "note",
+      "line": "tb",
+      "target": {
+       "text": "= 413"
+      },
+      "text": "Team B",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "436 is more than 413, so Team A wins. By how many? 436 minus 413 is 23.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "436 − 413 = 23",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So Team A won by 23 runs.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "= 23"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: comparing just one innings gives a different gap. Only the totals decide a match."
+   },
+   {
+    "say": "Check by adding on. Team B's 413 plus 23 is 436, which is Team A's total.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "413 + 23 = 436"
+     }
+    ]
+   },
+   {
+    "say": "So add each team's innings first. The margin is the bigger total minus the smaller one."
+   }
+  ]
+ },
+ "AIGEN_grade5_e013e536-273f-4cd8-ab81-88027f2a6efe": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's piggy bank already held 1500 rupees from his birthday. Grandmother gives him some more for Diwali. He spends 1245, 876 and 1534, and 2345 is left. How much did grandmother give?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Spent ₹1,245, ₹876, ₹1,534. Has ₹2,345 left.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, total what went out. 1245 plus 876 is 2121, and 1534 more makes 3655.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "1,245 + 876 = 2,121"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "2,121 + 1,534 = 3,655"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 3,655"
+      },
+      "text": "gone",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "He spent 3655 and still has 2345. How do we get back to all the money he had before spending?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3655 − 2345",
+      "3655 + 2345",
+      "just 3655"
+     ],
+     "answer": 1,
+     "ifNot": "Think of it backwards. What went out and what is left were once all together. To rebuild the start, add them."
+    }
+   },
+   {
+    "say": "The spent part and the left part together make everything he had before spending. 3655 plus 2345 is 6000.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "bar",
+      "spec": {
+       "kind": "barModel",
+       "bars": [
+        {
+         "segments": [
+          {
+           "units": 6.1,
+           "label": "gone: 3,655",
+           "tone": "a"
+          },
+          {
+           "units": 3.9,
+           "label": "left: 2,345",
+           "tone": "b"
+          }
+         ],
+         "brace": "before spending = ?"
+        }
+       ]
+      }
+     },
+     {
+      "op": "write",
+      "id": "base",
+      "text": "3,655 + 2,345 = 6,000"
+     },
+     {
+      "op": "note",
+      "line": "base",
+      "target": {
+       "text": "= 6,000"
+      },
+      "text": "before spending",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "He had 6000 before spending. Was all of that grandmother's gift?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, 6000 is the answer",
+      "No: take off his 1500 savings",
+      "No: add his 1500 savings"
+     ],
+     "answer": 1,
+     "ifNot": "The piggy bank already held 1500 from his birthday. That part of the 6000 is his own, so it must come off."
+    }
+   },
+   {
+    "say": "6000 minus 1500 is 4500. Grandmother gave him 4500 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Already saved before Diwali: ₹1,500",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "6,000 − 1,500 = 4,500",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "4,500"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "That is the trap in this story: 6000 looks like a finished answer. But it mixes two things, the birthday savings and the gift."
+   },
+   {
+    "say": "Check it forwards. 1500 of savings plus the 4500 gift is 6000. Spend 3655, and 2345 is left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "1,500 + 4,500 = 6,000"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "6,000 − 3,655 = 2,345"
+     }
+    ]
+   },
+   {
+    "say": "So rebuild the whole amount first, by adding. Then take away what was already there before the gift arrived."
+   }
+  ]
+ },
+ "AIGEN_grade5_eef4d432-89b7-4196-b5f5-0fd67cfc9e65": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Grandfather has 1200 rupees in his wallet. At the book fair he buys a storybook for 345, a puzzle book for 278 and a maths workbook for 467. How much does he have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Had ₹1,200. Books cost ₹345, ₹278 and ₹467.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "3 books are paid for out of one wallet. What do we work out first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the cost of the dearest book",
+      "1200 plus the 3 prices",
+      "the total cost of the 3 books"
+     ],
+     "answer": 2,
+     "ifNot": "Every book was paid for from the same 1200. So first find what the 3 books cost together."
+    }
+   },
+   {
+    "say": "So add up what was spent. 345 plus 278 is 623, and 467 more makes 1090.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "345 + 278 = 623"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "623 + 467 = 1,090"
+     },
+     {
+      "op": "note",
+      "line": "s2",
+      "target": {
+       "text": "= 1,090"
+      },
+      "text": "spent",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the carries in that adding. The ones column and the tens column both go past 10."
+   },
+   {
+    "say": "Now take that from the 1200 grandfather started with. Careful: borrowing across those zeros is where slips happen.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s2",
+      "target": {
+       "text": "= 1,090"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "A neat way round it: slide both numbers down by 1. The gap does not change, and 1199 minus 1089 needs no borrowing at all. It is 110.",
+    "board": [
+     {
+      "op": "write",
+      "id": "leftt",
+      "text": "1,199 − 1,089 = 110"
+     },
+     {
+      "op": "write",
+      "id": "left",
+      "text": "1,200 − 1,090 = 110",
+      "tone": "answer"
+     }
+    ]
+   },
+   {
+    "say": "So grandfather has 110 rupees left.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "left",
+      "target": {
+       "text": "= 110"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back. 110 plus the 1090 that went out is 1200, the money grandfather began with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "110 + 1,090 = 1,200"
+     }
+    ]
+   },
+   {
+    "say": "So total the spending first, then subtract once. One careful subtraction is easier than three."
+   }
+  ]
+ },
+ "AIGEN_grade5_f35bf34f-8b13-4b6f-9a95-7479aba1b6e0": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "4 families pooled their money, spent 9625 on firecrackers and 4150 on sweets, and shared what was left equally. We want each family's share.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Spent ₹9,625 and ₹4,150. The rest is shared by 4.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "t",
+      "spec": {
+       "kind": "table",
+       "headers": [
+        "Family",
+        "Gave (₹)"
+       ],
+       "rows": [
+        [
+         "Sharma",
+         "4,375"
+        ],
+        [
+         "Gupta",
+         "3,948"
+        ],
+        [
+         "Patel",
+         "5,217"
+        ],
+        [
+         "Mehta",
+         "2,860"
+        ]
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "First the pool. 4375 plus 3948 is 8323. Then 5217 more makes 13540, and 2860 more makes 16400.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p1",
+      "text": "4,375 + 3,948 = 8,323"
+     },
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "8,323 + 5,217 = 13,540"
+     },
+     {
+      "op": "write",
+      "id": "p3",
+      "text": "13,540 + 2,860 = 16,400"
+     },
+     {
+      "op": "note",
+      "line": "p3",
+      "target": {
+       "text": "= 16,400"
+      },
+      "text": "collected",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next, the spending. 9625 plus 4150 is 13775.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sp",
+      "text": "9,625 + 4,150 = 13,775"
+     },
+     {
+      "op": "note",
+      "line": "sp",
+      "target": {
+       "text": "= 13,775"
+      },
+      "text": "spent",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The families share money equally among the 4 of them. Which amount gets shared?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "what is left after the spending",
+      "all the money collected",
+      "the money that was spent"
+     ],
+     "answer": 0,
+     "ifNot": "The story says they share the remaining money. So first take the spending out of the pool, and share only what is left."
+    }
+   },
+   {
+    "say": "So take the spending out of the pool. Mind the borrowing here: 16400 minus 13775 is 2625.",
+    "board": [
+     {
+      "op": "write",
+      "id": "left",
+      "text": "16,400 − 13,775 = 2,625"
+     },
+     {
+      "op": "note",
+      "line": "left",
+      "target": {
+       "text": "= 2,625"
+      },
+      "text": "left over",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 2625 is for all 4 families together. Dividing by 4 can be done in 2 easy steps. Which?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "halve it once",
+      "halve it, then halve again",
+      "take away 4"
+     ],
+     "answer": 1,
+     "ifNot": "Half of a half is a quarter. So to divide by 4, cut the amount in half, and then cut that half in half."
+    }
+   },
+   {
+    "say": "Half of 2625 is 1312.5. Half of that is 656.25. So each family gets back 656.25 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h1",
+      "text": "2,625 ÷ 2 = 1,312.5"
+     },
+     {
+      "op": "write",
+      "id": "h2",
+      "text": "1,312.5 ÷ 2 = 656.25"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "2,625 ÷ 4 = 656.25",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "656.25"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by multiplying. 656.25 times 4 is 2625, all the money that was left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "656.25 × 4 = 2,625"
+     }
+    ]
+   },
+   {
+    "say": "So: total the pool, total the spending, subtract, and only then share. And an equal share does not have to be a whole number."
+   }
+  ]
+ }
+}

@@ -1,0 +1,8506 @@
+{
+ "AIGEN_grade5_375b8984-54d9-4135-b0f0-ba86330bca04": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Aarav's teacher has written the samosa stall's profit as one long line. It has brackets, a times and a divide in it, so the order we work in matters.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "120 − (8 + 4) × 6 + 18 ÷ 3",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Before we work anything out, look along the whole line. Which piece do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "120 − 8",
+      "4 × 6",
+      "8 + 4"
+     ],
+     "answer": 2,
+     "ifNot": "Look for the brackets. Whatever sits inside them is worked out before anything else, so 8 plus 4 goes first."
+    }
+   },
+   {
+    "say": "The brackets get done first. Inside them, 8 plus 4 is 12, so we write 12 where the bracket was.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(8 + 4)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(8 + 4)"
+      },
+      "text": "12",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "120 − 12 × 6 + 18 ÷ 3"
+     }
+    ]
+   },
+   {
+    "say": "With the brackets gone, times and divide come next. 12 times 6 is 72.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "12 × 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "12 × 6"
+      },
+      "text": "72",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The divide goes early too: 18 divided by 3 is 6. Write the line again with 72 and 6 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "18 ÷ 3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "18 ÷ 3"
+      },
+      "text": "6",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "120 − 72 + 6"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left: 120 minus 72 plus 6. Which do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "120 − 72",
+      "72 + 6"
+     ],
+     "answer": 0,
+     "ifNot": "Plus and minus are equal partners, so we read from left to right, like a sentence. That means 120 minus 72 comes first."
+    }
+   },
+   {
+    "say": "Left to right it is: 120 minus 72 is 48.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "120 − 72 = 48"
+     }
+    ]
+   },
+   {
+    "say": "And 48 plus 6 is 54. So the expression is worth 54.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "48 + 6 = 54",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "54"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 54 minus 6 is 48, and 48 plus 72 is 120, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "54 − 6 = 48"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "48 + 72 = 120"
+     }
+    ]
+   },
+   {
+    "say": "So here is the plan for a line like this. Brackets, then times and divide, then plus and minus, always reading left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_375bd5f2-103e-42ed-b8a2-e5b2dd7dbdb7": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Rohan starts with 200 rupees, earns 15 rupees from each of 6 players, spends 25, then earns 8 rupees from each of 4 more. Here is his line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "200 + 15 × 6 − 25 + 8 × 4",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "200 + 15",
+      "6 − 25",
+      "15 × 6"
+     ],
+     "answer": 2,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 15 times 6."
+    }
+   },
+   {
+    "say": "Starting on the left with 200 plus 15 is the classic slip. Times goes before plus, so 15 times 6 is first, and that makes 90.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "15 × 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "15 × 6"
+      },
+      "text": "90",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "There is another times waiting: 8 times 4 is 32. Write the line again with 90 and 32 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "8 × 4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "8 × 4"
+      },
+      "text": "32",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "200 + 90 − 25 + 32"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 200 plus 90 is 290.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "200 + 90 = 290"
+     }
+    ]
+   },
+   {
+    "say": "Then 290 minus 25 is 265. Careful: the 25 comes off before the 32 goes on, because we read left to right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "290 − 25 = 265"
+     }
+    ]
+   },
+   {
+    "say": "And 265 plus 32 is 297. Rohan finishes the day with 297 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "265 + 32 = 297",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "297"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 297 minus 32 is 265, and 265 plus 25 is 290, just as it says on the board.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "297 − 32 = 265"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "265 + 25 = 290"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: hunt for the times and divide signs first. When only plus and minus are left, read from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_470db5aa-8284-4ed5-9ddc-6aa1bd35aa3d": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is the scorer's formula for Kabir's team. Notice that the brackets hold two jobs, a divide and a plus.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(48 ÷ 6 + 3) × 4 − 18 ÷ 2",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Before we work anything out, look along the whole line. Which piece do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 + 3",
+      "4 − 18",
+      "48 ÷ 6"
+     ],
+     "answer": 2,
+     "ifNot": "Brackets go first. And inside the brackets, divide goes before plus, so 48 divided by 6 is the very first job."
+    }
+   },
+   {
+    "say": "Brackets come first. In there the same order holds, so divide goes before plus: 48 divided by 6 is 8.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "48 ÷ 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "48 ÷ 6"
+      },
+      "text": "8",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "(8 + 3) × 4 − 18 ÷ 2"
+     }
+    ]
+   },
+   {
+    "say": "Now finish the bracket: 8 plus 3 is 11.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "(8 + 3)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "(8 + 3)"
+      },
+      "text": "11",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "11 × 4 − 18 ÷ 2"
+     }
+    ]
+   },
+   {
+    "say": "No brackets are left, so now we look for times and divide. 11 times 4 is 44.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "11 × 4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "11 × 4"
+      },
+      "text": "44",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The divide goes early too: 18 divided by 2 is 9. Write the line again with 44 and 9 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "18 ÷ 2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "18 ÷ 2"
+      },
+      "text": "9",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "44 − 9"
+     }
+    ]
+   },
+   {
+    "say": "Just one job left: 44 minus 9 is 35. Kabir's team earns 35 bonus points.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "44 − 9 = 35",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "35"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by undoing the last step: 35 plus 9 is 44. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "35 + 9 = 44"
+     }
+    ]
+   },
+   {
+    "say": "So the order is: brackets first, then times and divide from left to right, then plus and minus from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_47203ffd-4bce-4ce2-bd93-5e72c9b6b0b1": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya has 60 packets. She gives away 4 bags of 7, then her brother brings 3 boxes of 5. The line says exactly that.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "60 − 4 × 7 + 3 × 5",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 × 7",
+      "60 − 4",
+      "7 + 3"
+     ],
+     "answer": 0,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 4 times 7."
+    }
+   },
+   {
+    "say": "Starting on the left with 60 minus 4 is the classic slip. Times goes before minus, so 4 times 7 is first, and that makes 28.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "4 × 7"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "4 × 7"
+      },
+      "text": "28",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "There is another times waiting: 3 times 5 is 15. Write the line again with 28 and 15 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3 × 5"
+      },
+      "text": "15",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 − 28 + 15"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left: 60 minus 28 plus 15. Which do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "60 − 28",
+      "28 + 15"
+     ],
+     "answer": 0,
+     "ifNot": "Plus and minus are equal partners, so we read from left to right, like a sentence. That means 60 minus 28 comes first."
+    }
+   },
+   {
+    "say": "Left to right it is: 60 minus 28 is 32.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "60 − 28 = 32"
+     }
+    ]
+   },
+   {
+    "say": "And 32 plus 15 is 47. Priya has 47 colour packets now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "32 + 15 = 47",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "47"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 47 minus 15 is 32, and 32 plus 28 is 60, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "47 − 15 = 32"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "32 + 28 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So remember: times and divide go first, wherever they sit in the line. Then plus and minus, from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_587aa540-6468-4889-94e7-9eaeb4d22a26": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun's coach has a formula for his performance points. There is a bracket tucked in the middle of it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "12 + 8 × (15 − 9) ÷ 4 − 3",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 + 8",
+      "9 ÷ 4",
+      "15 − 9"
+     ],
+     "answer": 2,
+     "ifNot": "Look for the brackets. Whatever sits inside them is worked out before anything else, so 15 minus 9 goes first."
+    }
+   },
+   {
+    "say": "The brackets get done first. Inside them, 15 minus 9 is 6, so we write 6 where the bracket was.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(15 − 9)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(15 − 9)"
+      },
+      "text": "6",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12 + 8 × 6 ÷ 4 − 3"
+     }
+    ]
+   },
+   {
+    "say": "Now look at 8 times 6 divided by 4. Times and divide sit side by side. Which goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 ÷ 4",
+      "8 × 6"
+     ],
+     "answer": 1,
+     "ifNot": "Times and divide are equal partners, so neither one is stronger. We take them from left to right, and 8 times 6 is on the left."
+    }
+   },
+   {
+    "say": "Left to right it is: 8 times 6 is 48.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "8 × 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "8 × 6"
+      },
+      "text": "48",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 + 48 ÷ 4 − 3"
+     }
+    ]
+   },
+   {
+    "say": "Keep going with that same piece: 48 divided by 4 is 12.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "48 ÷ 4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "48 ÷ 4"
+      },
+      "text": "12",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "12 + 12 − 3"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 12 plus 12 is 24.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 + 12 = 24"
+     }
+    ]
+   },
+   {
+    "say": "And 24 minus 3 is 21. Arjun gets 21 performance points.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "24 − 3 = 21",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "21"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 21 plus 3 is 24, and 24 minus 12 is 12, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "21 + 3 = 24"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "24 − 12 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So here is the plan for a line like this. Brackets, then times and divide, then plus and minus, always reading left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_633ee290-ad2f-4f7f-8ed7-bdf8c7e17ef7": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera has a budget of 200 rupees. Out go 5 ribbons at 9 rupees and 4 boxes of sweets at 25 rupees, in comes 50 from Grandmother, and out goes 15 for paper.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "200 − 5 × 9 − 4 × 25 + 50 − 15",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There are several jobs in this line. Which one comes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "200 − 5",
+      "9 − 4",
+      "5 × 9"
+     ],
+     "answer": 2,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 5 times 9."
+    }
+   },
+   {
+    "say": "Starting on the left with 200 minus 5 is the classic slip. Times goes before minus, so 5 times 9 is first, and that makes 45.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "5 × 9"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "5 × 9"
+      },
+      "text": "45",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "There is another times waiting: 4 times 25 is 100. Write the line again with 45 and 100 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "4 × 25"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "4 × 25"
+      },
+      "text": "100",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "200 − 45 − 100 + 50 − 15"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 200 minus 45 is 155, and 155 minus 100 is 55. Careful: the 100 comes off before the 50 goes on, because we read left to right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "200 − 45 = 155"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "155 − 100 = 55"
+     }
+    ]
+   },
+   {
+    "say": "Next, 55 plus 50 is 105.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "55 + 50 = 105"
+     }
+    ]
+   },
+   {
+    "say": "And 105 minus 15 is 90. Meera has 90 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "105 − 15 = 90",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "90"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 90 plus 15 is 105, and 105 minus 50 is 55, just as it says on the board.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "90 + 15 = 105"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "105 − 50 = 55"
+     }
+    ]
+   },
+   {
+    "say": "So in a line with no brackets: times and divide before plus and minus, and left to right when the signs are equal partners."
+   }
+  ]
+ },
+ "AIGEN_grade5_655c1341-b66e-4f1a-bc46-09fb8103432b": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is the scorer's formula for the bonus points. One bracket, with a times, a divide, a plus and a minus around it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 + 3 × (12 − 4) ÷ 2 − 1",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 + 3",
+      "4 ÷ 2",
+      "12 − 4"
+     ],
+     "answer": 2,
+     "ifNot": "Look for the brackets. Whatever sits inside them is worked out before anything else, so 12 minus 4 goes first."
+    }
+   },
+   {
+    "say": "Brackets are always the first job. Inside them, 12 minus 4 is 8, so we write 8 where the bracket was.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(12 − 4)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(12 − 4)"
+      },
+      "text": "8",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 + 3 × 8 ÷ 2 − 1"
+     }
+    ]
+   },
+   {
+    "say": "Now look at 3 times 8 divided by 2. Times and divide sit side by side. Which goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 ÷ 2",
+      "3 × 8"
+     ],
+     "answer": 1,
+     "ifNot": "Times and divide are equal partners, so neither one is stronger. We take them from left to right, and 3 times 8 is on the left."
+    }
+   },
+   {
+    "say": "Left to right it is: 3 times 8 is 24.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "3 × 8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "3 × 8"
+      },
+      "text": "24",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 + 24 ÷ 2 − 1"
+     }
+    ]
+   },
+   {
+    "say": "Carry on along that piece: 24 divided by 2 is 12.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "24 ÷ 2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "24 ÷ 2"
+      },
+      "text": "12",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 + 12 − 1"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 5 plus 12 is 17.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 + 12 = 17"
+     }
+    ]
+   },
+   {
+    "say": "And 17 minus 1 is 16. The expression is worth 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "17 − 1 = 16",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 16 plus 1 is 17, and 17 minus 12 is 5, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "16 + 1 = 17"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "17 − 12 = 5"
+     }
+    ]
+   },
+   {
+    "say": "So every time: clear the brackets, then do times and divide as you meet them, then finish with plus and minus, left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_6b60e562-f08a-408b-a88c-fb58d25a0975": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya's mother makes 5 batches of 12 samosas, sells 3 boxes of 8, gives away 6, then makes 2 more batches of 9. The line tells the whole day.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 × 12 − 3 × 8 − 6 + 2 × 9",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 × 12",
+      "12 − 3",
+      "8 − 6"
+     ],
+     "answer": 0,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 5 times 12."
+    }
+   },
+   {
+    "say": "Times is stronger than plus and minus, so it goes first. 5 times 12 is 60.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "5 × 12"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "5 × 12"
+      },
+      "text": "60",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "There is another times waiting: 3 times 8 is 24.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3 × 8"
+      },
+      "text": "24",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "And the last one: 2 times 9 is 18. Write the line again with 60, 24 and 18 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "2 × 9"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "2 × 9"
+      },
+      "text": "18",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 − 24 − 6 + 18"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 60 minus 24 is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "60 − 24 = 36"
+     }
+    ]
+   },
+   {
+    "say": "Next, 36 minus 6 is 30. Careful: the 6 comes off before the 18 goes on, because we read left to right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "36 − 6 = 30"
+     }
+    ]
+   },
+   {
+    "say": "And 30 plus 18 is 48. She has 48 samosas at the end of the day.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "30 + 18 = 48",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "48"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 48 minus 18 is 30, and 30 plus 6 is 36, just as it says on the board.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "48 − 18 = 30"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "30 + 6 = 36"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: hunt for the times and divide signs first. When only plus and minus are left, read from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_70ac2e6a-0c92-4780-8370-b36c4cac37ce": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya buys 6 boxes of diyas at 8 rupees each, returns 2 of those boxes, and buys candles for 15 rupees. The line says the same thing in numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "6 × 8 − 2 × 8 + 15",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 × 8",
+      "8 − 2",
+      "8 + 15"
+     ],
+     "answer": 0,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 6 times 8."
+    }
+   },
+   {
+    "say": "Times is stronger than plus and minus, so it goes first. 6 times 8 is 48.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "6 × 8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "6 × 8"
+      },
+      "text": "48",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "There is another times waiting: 2 times 8 is 16. Write the line again with 48 and 16 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "2 × 8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "2 × 8"
+      },
+      "text": "16",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "48 − 16 + 15"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left: 48 minus 16 plus 15. Which do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "16 + 15",
+      "48 − 16"
+     ],
+     "answer": 1,
+     "ifNot": "Plus and minus are equal partners, so we read from left to right, like a sentence. That means 48 minus 16 comes first."
+    }
+   },
+   {
+    "say": "Left to right it is: 48 minus 16 is 32.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "48 − 16 = 32"
+     }
+    ]
+   },
+   {
+    "say": "And 32 plus 15 is 47. Priya spends 47 rupees in all.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "32 + 15 = 47",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "47"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 47 minus 15 is 32, and 32 plus 16 is 48, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "47 − 15 = 32"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "32 + 16 = 48"
+     }
+    ]
+   },
+   {
+    "say": "So in a line with no brackets: times and divide before plus and minus, and left to right when the signs are equal partners."
+   }
+  ]
+ },
+ "AIGEN_grade5_78d6ed4c-5aef-48ee-a8ce-e74d636c22a0": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This is the profit formula from the samosa stall. It has a bracket, with a divide just before it and a times just after it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "60 − 48 ÷ (2 + 6) × 5 + 15",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There are several jobs in this line. Which one comes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "60 − 48",
+      "6 × 5",
+      "2 + 6"
+     ],
+     "answer": 2,
+     "ifNot": "Look for the brackets. Whatever sits inside them is worked out before anything else, so 2 plus 6 goes first."
+    }
+   },
+   {
+    "say": "Brackets come first. Inside them, 2 plus 6 is 8, so we write 8 where the bracket was.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(2 + 6)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(2 + 6)"
+      },
+      "text": "8",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 − 48 ÷ 8 × 5 + 15"
+     }
+    ]
+   },
+   {
+    "say": "Now look at 48 divided by 8 times 5. Divide and times sit side by side. Which goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 × 5",
+      "48 ÷ 8"
+     ],
+     "answer": 1,
+     "ifNot": "Times and divide are equal partners, so neither one is stronger. We take them from left to right, and 48 divided by 8 is on the left."
+    }
+   },
+   {
+    "say": "Left to right it is: 48 divided by 8 is 6.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "48 ÷ 8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "48 ÷ 8"
+      },
+      "text": "6",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "60 − 6 × 5 + 15"
+     }
+    ]
+   },
+   {
+    "say": "Keep going with that same piece: 6 times 5 is 30.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "6 × 5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "6 × 5"
+      },
+      "text": "30",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "60 − 30 + 15"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 60 minus 30 is 30. Careful: the 30 comes off before the 15 goes on, because we read left to right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "60 − 30 = 30"
+     }
+    ]
+   },
+   {
+    "say": "And 30 plus 15 is 45. The profit is 45 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "30 + 15 = 45",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "45"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 45 minus 15 is 30, and 30 plus 30 is 60, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "45 − 15 = 30"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "30 + 30 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So every time: clear the brackets, then do times and divide as you meet them, then finish with plus and minus, left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_7945cdef-e505-4b96-8158-35ce53d4b3a9": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera starts with 50 diyas, gives 6 each to 3 neighbours, and then gets 4 times 5 more from her grandmother. Here is her line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "50 − 6 × 3 + 4 × 5",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 × 3",
+      "50 − 6",
+      "3 + 4"
+     ],
+     "answer": 0,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 6 times 3."
+    }
+   },
+   {
+    "say": "It is tempting to start on the left with 50 minus 6. But times is stronger than minus, so 6 times 3 goes first: that makes 18.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "6 × 3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "6 × 3"
+      },
+      "text": "18",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "There is another times waiting: 4 times 5 is 20. Write the line again with 18 and 20 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "4 × 5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "4 × 5"
+      },
+      "text": "20",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "50 − 18 + 20"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left: 50 minus 18 plus 20. Which do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "50 − 18",
+      "18 + 20"
+     ],
+     "answer": 0,
+     "ifNot": "Plus and minus are equal partners, so we read from left to right, like a sentence. That means 50 minus 18 comes first."
+    }
+   },
+   {
+    "say": "Left to right it is: 50 minus 18 is 32.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "50 − 18 = 32"
+     }
+    ]
+   },
+   {
+    "say": "And 32 plus 20 is 52. Meera has 52 diyas now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "32 + 20 = 52",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "52"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 52 minus 20 is 32, and 32 plus 18 is 50, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "52 − 20 = 32"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "32 + 18 = 50"
+     }
+    ]
+   },
+   {
+    "say": "So in a line with no brackets: times and divide before plus and minus, and left to right when the signs are equal partners."
+   }
+  ]
+ },
+ "AIGEN_grade5_82f232bb-eec4-49fb-bffb-8a2a8ceeb543": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meena's line for the laddoos has a bracket, a times, a divide and a plus. Let's take them in the proper order.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 + 3 × (12 − 4) ÷ 2",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There are several jobs in this line. Which one comes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 + 3",
+      "4 ÷ 2",
+      "12 − 4"
+     ],
+     "answer": 2,
+     "ifNot": "Look for the brackets. Whatever sits inside them is worked out before anything else, so 12 minus 4 goes first."
+    }
+   },
+   {
+    "say": "The brackets get done first. Inside them, 12 minus 4 is 8, so we write 8 where the bracket was.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(12 − 4)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(12 − 4)"
+      },
+      "text": "8",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 + 3 × 8 ÷ 2"
+     }
+    ]
+   },
+   {
+    "say": "Now look at 3 times 8 divided by 2. Times and divide sit side by side. Which goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 × 8",
+      "8 ÷ 2"
+     ],
+     "answer": 0,
+     "ifNot": "Times and divide are equal partners, so neither one is stronger. We take them from left to right, and 3 times 8 is on the left."
+    }
+   },
+   {
+    "say": "Left to right it is: 3 times 8 is 24.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "3 × 8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "3 × 8"
+      },
+      "text": "24",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 + 24 ÷ 2"
+     }
+    ]
+   },
+   {
+    "say": "Keep going with that same piece: 24 divided by 2 is 12.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "24 ÷ 2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "24 ÷ 2"
+      },
+      "text": "12",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 + 12"
+     }
+    ]
+   },
+   {
+    "say": "One job is left: 5 plus 12 is 17. Meena packs 17 laddoos.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 + 12 = 17",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "17"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by undoing the last step: 17 minus 12 is 5. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "17 − 12 = 5"
+     }
+    ]
+   },
+   {
+    "say": "So here is the plan for a line like this. Brackets, then times and divide, then plus and minus, always reading left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_87f340c6-ac43-47ab-aeb2-c54122f05d17": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya pays for 5 packets at 12 rupees each and a chai for 8 rupees, then gets 20 rupees back from her brother. The line shows how much less money she has.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 × 12 + 8 − 20",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There are several jobs in this line. Which one comes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 + 8",
+      "8 − 20",
+      "5 × 12"
+     ],
+     "answer": 2,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 5 times 12."
+    }
+   },
+   {
+    "say": "Times is stronger than plus and minus, so it goes first. 5 times 12 is 60.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "5 × 12"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "5 × 12"
+      },
+      "text": "60",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 + 8 − 20"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 60 plus 8 is 68.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "60 + 8 = 68"
+     }
+    ]
+   },
+   {
+    "say": "And 68 minus 20 is 48. Riya has 48 rupees less than when she left home.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "68 − 20 = 48",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "48"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 48 plus 20 is 68, and 68 minus 8 is 60, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "48 + 20 = 68"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "68 − 8 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So in a line with no brackets: times and divide before plus and minus, and left to right when the signs are equal partners."
+   }
+  ]
+ },
+ "AIGEN_grade5_9ce0b59d-2bb8-491b-bf77-57c93d366339": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Rohan's team made 48 runs, then 5 batsmen made 12 each, the rest made 15, and 3 runs were taken off 2 times as a penalty. Here is the line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "48 + 5 × 12 + 15 − 3 × 2",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 × 12",
+      "48 + 5",
+      "12 + 15"
+     ],
+     "answer": 0,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 5 times 12."
+    }
+   },
+   {
+    "say": "Starting on the left with 48 plus 5 is the classic slip. Times goes before plus, so 5 times 12 is first, and that makes 60.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "5 × 12"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "5 × 12"
+      },
+      "text": "60",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "There is another times waiting: 3 times 2 is 6. Write the line again with 60 and 6 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3 × 2"
+      },
+      "text": "6",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "48 + 60 + 15 − 6"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 48 plus 60 is 108.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "48 + 60 = 108"
+     }
+    ]
+   },
+   {
+    "say": "Keep going: 108 plus 15 is 123.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "108 + 15 = 123"
+     }
+    ]
+   },
+   {
+    "say": "And 123 minus 6 is 117. The team's total is 117 runs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "123 − 6 = 117",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "117"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 117 plus 6 is 123, and 123 minus 15 is 108, just as it says on the board.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "117 + 6 = 123"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "123 − 15 = 108"
+     }
+    ]
+   },
+   {
+    "say": "So remember: times and divide go first, wherever they sit in the line. Then plus and minus, from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_9f317157-0b60-4b26-8973-e320d7fc03f0": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya's line for the samosas she sold has two pairs of brackets, and one of them has a times hiding inside it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "150 − (6 + 2) × (15 − 3 × 4) + 5 × 2",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 + 2",
+      "150 − 6",
+      "2 × 15"
+     ],
+     "answer": 0,
+     "ifNot": "Look for the brackets. Whatever sits inside them is worked out before anything else, so 6 plus 2 goes first."
+    }
+   },
+   {
+    "say": "Brackets come first, and there are two pairs. In the first pair, 6 plus 2 is 8.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(6 + 2)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(6 + 2)"
+      },
+      "text": "8",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "In the second pair, times goes before minus, so 3 times 4 is 12. Write the line again with those in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3 × 4"
+      },
+      "text": "12",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "150 − 8 × (15 − 12) + 5 × 2"
+     }
+    ]
+   },
+   {
+    "say": "Now finish the bracket: 15 minus 12 is 3.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "(15 − 12)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "(15 − 12)"
+      },
+      "text": "3",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "150 − 8 × 3 + 5 × 2"
+     }
+    ]
+   },
+   {
+    "say": "No brackets are left, so now we look for times and divide. 8 times 3 is 24.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "8 × 3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "8 × 3"
+      },
+      "text": "24",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "There is another times waiting: 5 times 2 is 10. Write the line again with 24 and 10 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "5 × 2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "5 × 2"
+      },
+      "text": "10",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "150 − 24 + 10"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left: 150 minus 24 plus 10. Which do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "24 + 10",
+      "150 − 24"
+     ],
+     "answer": 1,
+     "ifNot": "Plus and minus are equal partners, so we read from left to right, like a sentence. That means 150 minus 24 comes first."
+    }
+   },
+   {
+    "say": "Left to right it is: 150 minus 24 is 126.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "150 − 24 = 126"
+     }
+    ]
+   },
+   {
+    "say": "And 126 plus 10 is 136. Priya sold 136 samosas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "126 + 10 = 136",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "136"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 136 minus 10 is 126, and 126 plus 24 is 150, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "136 − 10 = 126"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "126 + 24 = 150"
+     }
+    ]
+   },
+   {
+    "say": "So every time: clear the brackets, then do times and divide as you meet them, then finish with plus and minus, left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_a9f006e7-6234-410d-b916-14c42f82a6b8": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is the coach's line for Ravi's runs. It opens with a divide, and a bracket comes straight after.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "48 ÷ (4 + 2) × 3 − 5 + 12",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "48 ÷ 4",
+      "4 + 2",
+      "2 × 3"
+     ],
+     "answer": 1,
+     "ifNot": "Look for the brackets. Whatever sits inside them is worked out before anything else, so 4 plus 2 goes first."
+    }
+   },
+   {
+    "say": "The brackets get done first. Inside them, 4 plus 2 is 6, so we write 6 where the bracket was.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(4 + 2)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(4 + 2)"
+      },
+      "text": "6",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "48 ÷ 6 × 3 − 5 + 12"
+     }
+    ]
+   },
+   {
+    "say": "Now look at 48 divided by 6 times 3. Divide and times sit side by side. Which goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 × 3",
+      "48 ÷ 6"
+     ],
+     "answer": 1,
+     "ifNot": "Times and divide are equal partners, so neither one is stronger. We take them from left to right, and 48 divided by 6 is on the left."
+    }
+   },
+   {
+    "say": "Left to right it is: 48 divided by 6 is 8.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "48 ÷ 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "48 ÷ 6"
+      },
+      "text": "8",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "8 × 3 − 5 + 12"
+     }
+    ]
+   },
+   {
+    "say": "Carry on along that piece: 8 times 3 is 24.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "8 × 3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "8 × 3"
+      },
+      "text": "24",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "24 − 5 + 12"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 24 minus 5 is 19. Careful: the 5 comes off before the 12 goes on, because we read left to right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "24 − 5 = 19"
+     }
+    ]
+   },
+   {
+    "say": "And 19 plus 12 is 31. The expression is worth 31.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "19 + 12 = 31",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "31"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 31 minus 12 is 19, and 19 plus 5 is 24, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "31 − 12 = 19"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "19 + 5 = 24"
+     }
+    ]
+   },
+   {
+    "say": "So here is the plan for a line like this. Brackets, then times and divide, then plus and minus, always reading left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_bd9fc1f3-e26c-4f09-b3ce-f4b04a76568b": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kabir starts with 50 rupees, earns 6 rupees for each of 8 glasses, and pays 10 rupees for lemons. Here is his line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "50 + 6 × 8 − 10",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There are several jobs in this line. Which one comes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "50 + 6",
+      "8 − 10",
+      "6 × 8"
+     ],
+     "answer": 2,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 6 times 8."
+    }
+   },
+   {
+    "say": "Starting on the left with 50 plus 6 is the classic slip. Times goes before plus, so 6 times 8 is first, and that makes 48.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "6 × 8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "6 × 8"
+      },
+      "text": "48",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "50 + 48 − 10"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 50 plus 48 is 98.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "50 + 48 = 98"
+     }
+    ]
+   },
+   {
+    "say": "And 98 minus 10 is 88. Kabir has 88 rupees now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "98 − 10 = 88",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "88"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 88 plus 10 is 98, and 98 minus 48 is 50, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "88 + 10 = 98"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "98 − 48 = 50"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: hunt for the times and divide signs first. When only plus and minus are left, read from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_c3bd4edc-3a3b-42c6-9f20-4d592c3261a9": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun's line has no brackets at all. But it does have a divide and a times sitting side by side in the middle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "30 + 12 ÷ 4 × 2 − 5",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 ÷ 4",
+      "30 + 12",
+      "4 × 2"
+     ],
+     "answer": 0,
+     "ifNot": "Times and divide go before plus and minus. And when they sit side by side, we take them from left to right, so 12 divided by 4 goes first."
+    }
+   },
+   {
+    "say": "Starting on the left with 30 plus 12 is the classic slip. Divide goes before plus, so 12 divided by 4 is first, and that makes 3.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "12 ÷ 4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "12 ÷ 4"
+      },
+      "text": "3",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "30 + 3 × 2 − 5"
+     }
+    ]
+   },
+   {
+    "say": "Carry on along that piece: 3 times 2 is 6.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "3 × 2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "3 × 2"
+      },
+      "text": "6",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "30 + 6 − 5"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 30 plus 6 is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "30 + 6 = 36"
+     }
+    ]
+   },
+   {
+    "say": "And 36 minus 5 is 31. The correct result is 31.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "36 − 5 = 31",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "31"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 31 plus 5 is 36, and 36 minus 6 is 30, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "31 + 5 = 36"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "36 − 6 = 30"
+     }
+    ]
+   },
+   {
+    "say": "So remember: times and divide go first, wherever they sit in the line. Then plus and minus, from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_c5ecf669-5f04-4d10-81f0-77af3c6678a5": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The question itself says this line does not quite match Riya's shopping. So we leave the story alone and simply find what the line is worth.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "100 − 3 × 12 + 2 × 8",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There are several jobs in this line. Which one comes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 × 12",
+      "100 − 3",
+      "12 + 2"
+     ],
+     "answer": 0,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 3 times 12."
+    }
+   },
+   {
+    "say": "It is tempting to start on the left with 100 minus 3. But times is stronger than minus, so 3 times 12 goes first: that makes 36.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 12"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3 × 12"
+      },
+      "text": "36",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "There is another times waiting: 2 times 8 is 16. Write the line again with 36 and 16 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "2 × 8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "2 × 8"
+      },
+      "text": "16",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "100 − 36 + 16"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left: 100 minus 36 plus 16. Which do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "100 − 36",
+      "36 + 16"
+     ],
+     "answer": 0,
+     "ifNot": "Plus and minus are equal partners, so we read from left to right, like a sentence. That means 100 minus 36 comes first."
+    }
+   },
+   {
+    "say": "Left to right it is: 100 minus 36 is 64.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "100 − 36 = 64"
+     }
+    ]
+   },
+   {
+    "say": "And 64 plus 16 is 80. The line is worth 80.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "64 + 16 = 80",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "80"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 80 minus 16 is 64, and 64 plus 36 is 100, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "80 − 16 = 64"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "64 + 36 = 100"
+     }
+    ]
+   },
+   {
+    "say": "So in a line with no brackets: times and divide before plus and minus, and left to right when the signs are equal partners."
+   }
+  ]
+ },
+ "AIGEN_grade5_c63da34f-565d-466d-8558-af09ebb10bba": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya buys 5 packets at 8 rupees each and a bottle of chutney for 12 rupees, then gets 3 rupees off. Here is her bill as one line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 × 8 + 12 − 3",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Before we work anything out, look along the whole line. Which piece do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 × 8",
+      "8 + 12",
+      "12 − 3"
+     ],
+     "answer": 0,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 5 times 8."
+    }
+   },
+   {
+    "say": "Times is stronger than plus and minus, so it goes first. 5 times 8 is 40.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "5 × 8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "5 × 8"
+      },
+      "text": "40",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "40 + 12 − 3"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 40 plus 12 is 52.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "40 + 12 = 52"
+     }
+    ]
+   },
+   {
+    "say": "And 52 minus 3 is 49. Riya pays 49 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "52 − 3 = 49",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "49"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 49 plus 3 is 52, and 52 minus 12 is 40, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "49 + 3 = 52"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "52 − 12 = 40"
+     }
+    ]
+   },
+   {
+    "say": "So in a line with no brackets: times and divide before plus and minus, and left to right when the signs are equal partners."
+   }
+  ]
+ },
+ "AIGEN_grade5_c9bc6cdd-74cf-4a20-96c2-2c64466c4fe8": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya has 200 rupees. She buys 3 packets at 25 rupees each, gets 50 more from her mother, then buys 2 boxes at 30 rupees each. Here is the line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "200 − 3 × 25 + 50 − 2 × 30",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There are several jobs in this line. Which one comes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "200 − 3",
+      "25 + 50",
+      "3 × 25"
+     ],
+     "answer": 2,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 3 times 25."
+    }
+   },
+   {
+    "say": "It is tempting to start on the left with 200 minus 3. But times is stronger than minus, so 3 times 25 goes first: that makes 75.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 25"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3 × 25"
+      },
+      "text": "75",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "There is another times waiting: 2 times 30 is 60. Write the line again with 75 and 60 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "2 × 30"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "2 × 30"
+      },
+      "text": "60",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "200 − 75 + 50 − 60"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left: 200 minus 75 plus 50. Which do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "75 + 50",
+      "200 − 75"
+     ],
+     "answer": 1,
+     "ifNot": "Plus and minus are equal partners, so we read from left to right, like a sentence. That means 200 minus 75 comes first."
+    }
+   },
+   {
+    "say": "Left to right it is: 200 minus 75 is 125.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "200 − 75 = 125"
+     }
+    ]
+   },
+   {
+    "say": "Keep going: 125 plus 50 is 175.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "125 + 50 = 175"
+     }
+    ]
+   },
+   {
+    "say": "And 175 minus 60 is 115. Riya has 115 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "175 − 60 = 115",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "115"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 115 plus 60 is 175, and 175 minus 50 is 125, just as it says on the board.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "115 + 60 = 175"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "175 − 50 = 125"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: hunt for the times and divide signs first. When only plus and minus are left, read from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_c9c12930-1b79-4192-a7a9-b764929f4bc8": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun has 500 rupees, spends 4 lots of 35, and gets 150 from his uncle. The brackets hold all of that, because the whole amount is then shared among 5 people.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(500 − 4 × 35 + 150) ÷ 5",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "500 − 4",
+      "35 + 150",
+      "4 × 35"
+     ],
+     "answer": 2,
+     "ifNot": "Brackets go first. And inside the brackets, times goes before minus, so 4 times 35 is the very first job."
+    }
+   },
+   {
+    "say": "The brackets get done first. In there the same order holds, so times goes before minus: 4 times 35 is 140.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "4 × 35"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "4 × 35"
+      },
+      "text": "140",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "(500 − 140 + 150) ÷ 5"
+     }
+    ]
+   },
+   {
+    "say": "Still inside the brackets, we go left to right: 500 minus 140 is 360.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "500 − 140"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "500 − 140"
+      },
+      "text": "360",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "(360 + 150) ÷ 5"
+     }
+    ]
+   },
+   {
+    "say": "That bracket has one job left: 360 plus 150 is 510.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "(360 + 150)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "(360 + 150)"
+      },
+      "text": "510",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "510 ÷ 5"
+     }
+    ]
+   },
+   {
+    "say": "Just one job left: 510 divided by 5 is 102. Each person gets 102 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "510 ÷ 5 = 102",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "102"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the last step backwards: 102 times 5 is 510. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "102 × 5 = 510"
+     }
+    ]
+   },
+   {
+    "say": "So every time: clear the brackets, then do times and divide as you meet them, then finish with plus and minus, left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_ccd223d3-1454-4ace-88be-a2da0a701940": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun's dad has set a puzzle for the Diwali lights. It has two pairs of brackets, one near the start and one at the very end.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "120 ÷ (4 + 2) × 3 − 8 + 5 × (10 − 7)",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 + 2",
+      "120 ÷ 4",
+      "2 × 3"
+     ],
+     "answer": 0,
+     "ifNot": "Look for the brackets. Whatever sits inside them is worked out before anything else, so 4 plus 2 goes first."
+    }
+   },
+   {
+    "say": "The brackets get done first, and there are two pairs. In the first pair, 4 plus 2 is 6.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(4 + 2)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(4 + 2)"
+      },
+      "text": "6",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "In the second pair, 10 minus 7 is 3. Write the line again with 6 and 3 where the brackets were.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(10 − 7)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(10 − 7)"
+      },
+      "text": "3",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "120 ÷ 6 × 3 − 8 + 5 × 3"
+     }
+    ]
+   },
+   {
+    "say": "Now look at 120 divided by 6 times 3. Divide and times sit side by side. Which goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "120 ÷ 6",
+      "6 × 3"
+     ],
+     "answer": 0,
+     "ifNot": "Times and divide are equal partners, so neither one is stronger. We take them from left to right, and 120 divided by 6 is on the left."
+    }
+   },
+   {
+    "say": "Left to right it is: 120 divided by 6 is 20.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "120 ÷ 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "120 ÷ 6"
+      },
+      "text": "20",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The times goes early too: 5 times 3 is 15. Write the line again with 20 and 15 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "5 × 3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "5 × 3"
+      },
+      "text": "15",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 × 3 − 8 + 15"
+     }
+    ]
+   },
+   {
+    "say": "Keep going with that same piece: 20 times 3 is 60.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "20 × 3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "20 × 3"
+      },
+      "text": "60",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "60 − 8 + 15"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 60 minus 8 is 52. Careful: the 8 comes off before the 15 goes on, because we read left to right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "60 − 8 = 52"
+     }
+    ]
+   },
+   {
+    "say": "And 52 plus 15 is 67. They need 67 lights.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "52 + 15 = 67",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "67"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 67 minus 15 is 52, and 52 plus 8 is 60, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "67 − 15 = 52"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "52 + 8 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So every time: clear the brackets, then do times and divide as you meet them, then finish with plus and minus, left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_cde4569b-9af5-4d4b-978b-ddc1a035f908": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's line for the cricket balls has two pairs of brackets, with a times in front of one and a divide in front of the other.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 × (12 − 4) + 36 ÷ (3 + 6) − 2 × 3",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Before we work anything out, look along the whole line. Which piece do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 × 12",
+      "12 − 4",
+      "4 + 36"
+     ],
+     "answer": 1,
+     "ifNot": "Look for the brackets. Whatever sits inside them is worked out before anything else, so 12 minus 4 goes first."
+    }
+   },
+   {
+    "say": "Brackets are always the first job, and there are two pairs. In the first pair, 12 minus 4 is 8.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(12 − 4)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(12 − 4)"
+      },
+      "text": "8",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "In the second pair, 3 plus 6 is 9. Write the line again with 8 and 9 where the brackets were.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(3 + 6)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(3 + 6)"
+      },
+      "text": "9",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 × 8 + 36 ÷ 9 − 2 × 3"
+     }
+    ]
+   },
+   {
+    "say": "With the brackets gone, times and divide come next. 5 times 8 is 40.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "5 × 8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "5 × 8"
+      },
+      "text": "40",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The divide goes early too: 36 divided by 9 is 4.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "36 ÷ 9"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "36 ÷ 9"
+      },
+      "text": "4",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "And the last one: 2 times 3 is 6. Write the line again with 40, 4 and 6 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "2 × 3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "2 × 3"
+      },
+      "text": "6",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "40 + 4 − 6"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 40 plus 4 is 44.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "40 + 4 = 44"
+     }
+    ]
+   },
+   {
+    "say": "And 44 minus 6 is 38. Ravi needs 38 cricket balls.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "44 − 6 = 38",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "38"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 38 plus 6 is 44, and 44 minus 4 is 40, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "38 + 6 = 44"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "44 − 4 = 40"
+     }
+    ]
+   },
+   {
+    "say": "So every time: clear the brackets, then do times and divide as you meet them, then finish with plus and minus, left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_d13a7b01-01a5-4a46-aba3-e1cb9c81a581": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The cash box starts with 50 rupees. In come 8 cups of chai at 12 rupees, out go 3 packets of biscuits at 15 rupees, and in comes a tip of 10. Here is the line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "50 + 8 × 12 − 3 × 15 + 10",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Before we work anything out, look along the whole line. Which piece do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 × 12",
+      "50 + 8",
+      "12 − 3"
+     ],
+     "answer": 0,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 8 times 12."
+    }
+   },
+   {
+    "say": "Starting on the left with 50 plus 8 is the classic slip. Times goes before plus, so 8 times 12 is first, and that makes 96.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "8 × 12"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "8 × 12"
+      },
+      "text": "96",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "There is another times waiting: 3 times 15 is 45. Write the line again with 96 and 45 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 15"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3 × 15"
+      },
+      "text": "45",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "50 + 96 − 45 + 10"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 50 plus 96 is 146.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "50 + 96 = 146"
+     }
+    ]
+   },
+   {
+    "say": "Next, 146 minus 45 is 101. Careful: the 45 comes off before the 10 goes on, because we read left to right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "146 − 45 = 101"
+     }
+    ]
+   },
+   {
+    "say": "And 101 plus 10 is 111. The cash box holds 111 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "101 + 10 = 111",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "111"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 111 minus 10 is 101, and 101 plus 45 is 146, just as it says on the board.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "111 − 10 = 101"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "101 + 45 = 146"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: hunt for the times and divide signs first. When only plus and minus are left, read from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_d50ffcdb-8b78-47cf-abe1-d3370f97aa4c": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is the coach's line for Aarav's score. No brackets, but there is a divide and a times side by side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "15 + 12 ÷ 3 × 2 − 5",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15 + 12",
+      "12 ÷ 3",
+      "3 × 2"
+     ],
+     "answer": 1,
+     "ifNot": "Times and divide go before plus and minus. And when they sit side by side, we take them from left to right, so 12 divided by 3 goes first."
+    }
+   },
+   {
+    "say": "It is tempting to start on the left with 15 plus 12. But divide is stronger than plus, so 12 divided by 3 goes first: that makes 4.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "12 ÷ 3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "12 ÷ 3"
+      },
+      "text": "4",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "15 + 4 × 2 − 5"
+     }
+    ]
+   },
+   {
+    "say": "Keep going with that same piece: 4 times 2 is 8.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "4 × 2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "4 × 2"
+      },
+      "text": "8",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15 + 8 − 5"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 15 plus 8 is 23.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "15 + 8 = 23"
+     }
+    ]
+   },
+   {
+    "say": "And 23 minus 5 is 18. Aarav's total score is 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "23 − 5 = 18",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "18"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 18 plus 5 is 23, and 23 minus 8 is 15, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "18 + 5 = 23"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "23 − 8 = 15"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: hunt for the times and divide signs first. When only plus and minus are left, read from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_d69fa5f3-a643-4a83-b887-5043f633652b": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The brackets work out the diyas for each rangoli: 3 boxes of 12, less 6, shared among 6. After the brackets come 4 packets of 5 sparklers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(3 × 12 − 6) ÷ 6 + 4 × 5",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 − 6",
+      "6 + 4",
+      "3 × 12"
+     ],
+     "answer": 2,
+     "ifNot": "Brackets go first. And inside the brackets, times goes before minus, so 3 times 12 is the very first job."
+    }
+   },
+   {
+    "say": "Brackets come first. In there the same order holds, so times goes before minus: 3 times 12 is 36.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 12"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3 × 12"
+      },
+      "text": "36",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "(36 − 6) ÷ 6 + 4 × 5"
+     }
+    ]
+   },
+   {
+    "say": "That bracket has one job left: 36 minus 6 is 30.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "(36 − 6)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "(36 − 6)"
+      },
+      "text": "30",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "30 ÷ 6 + 4 × 5"
+     }
+    ]
+   },
+   {
+    "say": "With the brackets gone, times and divide come next. 30 divided by 6 is 5.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "30 ÷ 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "30 ÷ 6"
+      },
+      "text": "5",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The times goes early too: 4 times 5 is 20. Write the line again with 5 and 20 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "4 × 5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "4 × 5"
+      },
+      "text": "20",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 + 20"
+     }
+    ]
+   },
+   {
+    "say": "Just one job left: 5 plus 20 is 25. The expression is worth 25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 + 20 = 25",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "25"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the last step backwards: 25 minus 20 is 5. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "25 − 20 = 5"
+     }
+    ]
+   },
+   {
+    "say": "So the order is: brackets first, then times and divide from left to right, then plus and minus from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_d9bb5286-5a2e-48de-a2cb-3853188571d0": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is the chai stall's earnings line, in rupees. It starts with a divide and a bracket, and ends with a times.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "120 ÷ (4 + 2) × 3 + 50 − 8 × 5",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Before we work anything out, look along the whole line. Which piece do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "120 ÷ 4",
+      "2 × 3",
+      "4 + 2"
+     ],
+     "answer": 2,
+     "ifNot": "Look for the brackets. Whatever sits inside them is worked out before anything else, so 4 plus 2 goes first."
+    }
+   },
+   {
+    "say": "Brackets are always the first job. Inside them, 4 plus 2 is 6, so we write 6 where the bracket was.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(4 + 2)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(4 + 2)"
+      },
+      "text": "6",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "120 ÷ 6 × 3 + 50 − 8 × 5"
+     }
+    ]
+   },
+   {
+    "say": "Now look at 120 divided by 6 times 3. Divide and times sit side by side. Which goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "120 ÷ 6",
+      "6 × 3"
+     ],
+     "answer": 0,
+     "ifNot": "Times and divide are equal partners, so neither one is stronger. We take them from left to right, and 120 divided by 6 is on the left."
+    }
+   },
+   {
+    "say": "Left to right it is: 120 divided by 6 is 20.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "120 ÷ 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "120 ÷ 6"
+      },
+      "text": "20",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The times goes early too: 8 times 5 is 40. Write the line again with 20 and 40 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "8 × 5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "8 × 5"
+      },
+      "text": "40",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 × 3 + 50 − 40"
+     }
+    ]
+   },
+   {
+    "say": "Carry on along that piece: 20 times 3 is 60.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "20 × 3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "20 × 3"
+      },
+      "text": "60",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "60 + 50 − 40"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 60 plus 50 is 110.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "60 + 50 = 110"
+     }
+    ]
+   },
+   {
+    "say": "And 110 minus 40 is 70. She earned 70 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "110 − 40 = 70",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "70"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 70 plus 40 is 110, and 110 minus 50 is 60, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "70 + 40 = 110"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "110 − 50 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So the order is: brackets first, then times and divide from left to right, then plus and minus from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_da4b169b-95b0-44a8-8340-c6a2fd3a8efb": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun's profit line, in rupees, has a bracket near the front, and a divide and a times side by side at the end.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "200 − 3 × (15 + 5) + 48 ÷ 6 × 2",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Before we work anything out, look along the whole line. Which piece do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "200 − 3",
+      "15 + 5",
+      "5 + 48"
+     ],
+     "answer": 1,
+     "ifNot": "Look for the brackets. Whatever sits inside them is worked out before anything else, so 15 plus 5 goes first."
+    }
+   },
+   {
+    "say": "Brackets come first. Inside them, 15 plus 5 is 20, so we write 20 where the bracket was.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(15 + 5)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(15 + 5)"
+      },
+      "text": "20",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "200 − 3 × 20 + 48 ÷ 6 × 2"
+     }
+    ]
+   },
+   {
+    "say": "No brackets are left, so now we look for times and divide. 3 times 20 is 60.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "3 × 20"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "3 × 20"
+      },
+      "text": "60",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now look at 48 divided by 6 times 2. Divide and times sit side by side. Which goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "48 ÷ 6",
+      "6 × 2"
+     ],
+     "answer": 0,
+     "ifNot": "Times and divide are equal partners, so neither one is stronger. We take them from left to right, and 48 divided by 6 is on the left."
+    }
+   },
+   {
+    "say": "Left to right it is: 48 divided by 6 is 8. Write the line again with 60 and 8 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "48 ÷ 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "48 ÷ 6"
+      },
+      "text": "8",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "200 − 60 + 8 × 2"
+     }
+    ]
+   },
+   {
+    "say": "Carry on along that piece: 8 times 2 is 16.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "8 × 2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "8 × 2"
+      },
+      "text": "16",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "200 − 60 + 16"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 200 minus 60 is 140. Careful: the 60 comes off before the 16 goes on, because we read left to right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "200 − 60 = 140"
+     }
+    ]
+   },
+   {
+    "say": "And 140 plus 16 is 156. Arjun's profit is 156 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "140 + 16 = 156",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "156"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 156 minus 16 is 140, and 140 plus 60 is 200, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "156 − 16 = 140"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "140 + 60 = 200"
+     }
+    ]
+   },
+   {
+    "say": "So every time: clear the brackets, then do times and divide as you meet them, then finish with plus and minus, left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_da97fe1f-3c2b-4356-852f-a003539f0eeb": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ananya's cost line, in rupees, has one bracket, a times, a divide, a minus and a plus.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "120 − 4 × (3 + 7) + 60 ÷ 5",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 + 7",
+      "120 − 4",
+      "7 + 60"
+     ],
+     "answer": 0,
+     "ifNot": "Look for the brackets. Whatever sits inside them is worked out before anything else, so 3 plus 7 goes first."
+    }
+   },
+   {
+    "say": "The brackets get done first. Inside them, 3 plus 7 is 10, so we write 10 where the bracket was.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(3 + 7)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(3 + 7)"
+      },
+      "text": "10",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "120 − 4 × 10 + 60 ÷ 5"
+     }
+    ]
+   },
+   {
+    "say": "No brackets are left, so now we look for times and divide. 4 times 10 is 40.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "4 × 10"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "4 × 10"
+      },
+      "text": "40",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The divide goes early too: 60 divided by 5 is 12. Write the line again with 40 and 12 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "60 ÷ 5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "60 ÷ 5"
+      },
+      "text": "12",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "120 − 40 + 12"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left: 120 minus 40 plus 12. Which do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "40 + 12",
+      "120 − 40"
+     ],
+     "answer": 1,
+     "ifNot": "Plus and minus are equal partners, so we read from left to right, like a sentence. That means 120 minus 40 comes first."
+    }
+   },
+   {
+    "say": "Left to right it is: 120 minus 40 is 80.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "120 − 40 = 80"
+     }
+    ]
+   },
+   {
+    "say": "And 80 plus 12 is 92. Ananya needs to spend 92 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "80 + 12 = 92",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "92"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 92 minus 12 is 80, and 80 plus 40 is 120, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "92 − 12 = 80"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "80 + 40 = 120"
+     }
+    ]
+   },
+   {
+    "say": "So here is the plan for a line like this. Brackets, then times and divide, then plus and minus, always reading left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_dd8a4ba1-cb76-4fe7-b226-feb11a02a4d4": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya's mother starts with 50 millilitres of water, adds 4 cups of milk of 8 millilitres each, and loses 6 millilitres. The line says just that.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "50 + 4 × 8 − 6",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 × 8",
+      "50 + 4",
+      "8 − 6"
+     ],
+     "answer": 0,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 4 times 8."
+    }
+   },
+   {
+    "say": "Starting on the left with 50 plus 4 is the classic slip. Times goes before plus, so 4 times 8 is first, and that makes 32.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "4 × 8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "4 × 8"
+      },
+      "text": "32",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "50 + 32 − 6"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 50 plus 32 is 82.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "50 + 32 = 82"
+     }
+    ]
+   },
+   {
+    "say": "And 82 minus 6 is 76. She has 76 millilitres now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "82 − 6 = 76",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "76"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 76 plus 6 is 82, and 82 minus 32 is 50, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "76 + 6 = 82"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "82 − 32 = 50"
+     }
+    ]
+   },
+   {
+    "say": "So in a line with no brackets: times and divide before plus and minus, and left to right when the signs are equal partners."
+   }
+  ]
+ },
+ "AIGEN_grade5_e3a14a5a-d6db-4677-8315-20fee3f39bef": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun made 15 runs in the first over, then 6 runs in each of the next 4 overs, and got 2 bonus runs. Here is his line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "15 + 4 × 6 + 2",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 × 6",
+      "15 + 4",
+      "6 + 2"
+     ],
+     "answer": 0,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 4 times 6."
+    }
+   },
+   {
+    "say": "It is tempting to start on the left with 15 plus 4. But times is stronger than plus, so 4 times 6 goes first: that makes 24.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "4 × 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "4 × 6"
+      },
+      "text": "24",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "15 + 24 + 2"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 15 plus 24 is 39.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15 + 24 = 39"
+     }
+    ]
+   },
+   {
+    "say": "And 39 plus 2 is 41. Arjun's total is 41 runs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "39 + 2 = 41",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "41"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 41 minus 2 is 39, and 39 minus 24 is 15, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "41 − 2 = 39"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "39 − 24 = 15"
+     }
+    ]
+   },
+   {
+    "say": "So remember: times and divide go first, wherever they sit in the line. Then plus and minus, from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_eba70c91-7be5-4aaf-8677-d4c0e34ffc00": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The team starts with 50 runs, hits 4 sixes worth 6 runs each, and loses 2 runs for each of 3 wickets. Here is the line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "50 + 4 × 6 − 3 × 2",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Before we work anything out, look along the whole line. Which piece do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "50 + 4",
+      "4 × 6",
+      "6 − 3"
+     ],
+     "answer": 1,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 4 times 6."
+    }
+   },
+   {
+    "say": "It is tempting to start on the left with 50 plus 4. But times is stronger than plus, so 4 times 6 goes first: that makes 24.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "4 × 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "4 × 6"
+      },
+      "text": "24",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "There is another times waiting: 3 times 2 is 6. Write the line again with 24 and 6 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3 × 2"
+      },
+      "text": "6",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "50 + 24 − 6"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 50 plus 24 is 74.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "50 + 24 = 74"
+     }
+    ]
+   },
+   {
+    "say": "And 74 minus 6 is 68. The team's final score is 68.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "74 − 6 = 68",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "68"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 68 plus 6 is 74, and 74 minus 24 is 50, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "68 + 6 = 74"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "74 − 24 = 50"
+     }
+    ]
+   },
+   {
+    "say": "So in a line with no brackets: times and divide before plus and minus, and left to right when the signs are equal partners."
+   }
+  ]
+ },
+ "AIGEN_grade5_ed1dfb29-7d00-47c9-82a6-4eb82d03cf77": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kabir starts with 60 rupees. He buys 3 boxes of diyas at 8 rupees each and a packet of sparklers for 15 rupees. Here is the line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "60 − 3 × 8 − 15",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Before we work anything out, look along the whole line. Which piece do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 × 8",
+      "60 − 3",
+      "8 − 15"
+     ],
+     "answer": 0,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 3 times 8."
+    }
+   },
+   {
+    "say": "It is tempting to start on the left with 60 minus 3. But times is stronger than minus, so 3 times 8 goes first: that makes 24.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3 × 8"
+      },
+      "text": "24",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 − 24 − 15"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 60 minus 24 is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "60 − 24 = 36"
+     }
+    ]
+   },
+   {
+    "say": "And 36 minus 15 is 21. Kabir has 21 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "36 − 15 = 21",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "21"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 21 plus 15 is 36, and 36 plus 24 is 60, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "21 + 15 = 36"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "36 + 24 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: hunt for the times and divide signs first. When only plus and minus are left, read from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_f2e7d837-306a-4d34-b9fe-eac659a7ea0c": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi buys 5 packets at 12 rupees each and a bottle of chutney for 8 rupees, then gets 3 rupees off. Here is his bill as one line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 × 12 + 8 − 3",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 + 8",
+      "5 × 12",
+      "8 − 3"
+     ],
+     "answer": 1,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 5 times 12."
+    }
+   },
+   {
+    "say": "Times is stronger than plus and minus, so it goes first. 5 times 12 is 60.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "5 × 12"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "5 × 12"
+      },
+      "text": "60",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 + 8 − 3"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 60 plus 8 is 68.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "60 + 8 = 68"
+     }
+    ]
+   },
+   {
+    "say": "And 68 minus 3 is 65. Ravi pays 65 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "68 − 3 = 65",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "65"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 65 plus 3 is 68, and 68 minus 8 is 60, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "65 + 3 = 68"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "68 − 8 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So remember: times and divide go first, wherever they sit in the line. Then plus and minus, from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_f71c32d3-dbdc-4b1d-8bad-0746b5478f62": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Aarav's line for the chai stall has two pairs of brackets, and a divide, two times signs, a minus and a plus.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "120 ÷ (4 + 2) × 3 − 5 × (8 − 6) + 15",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Before we work anything out, look along the whole line. Which piece do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 + 2",
+      "120 ÷ 4",
+      "2 × 3"
+     ],
+     "answer": 0,
+     "ifNot": "Look for the brackets. Whatever sits inside them is worked out before anything else, so 4 plus 2 goes first."
+    }
+   },
+   {
+    "say": "Brackets are always the first job, and there are two pairs. In the first pair, 4 plus 2 is 6.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(4 + 2)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(4 + 2)"
+      },
+      "text": "6",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "In the second pair, 8 minus 6 is 2. Write the line again with 6 and 2 where the brackets were.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(8 − 6)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(8 − 6)"
+      },
+      "text": "2",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "120 ÷ 6 × 3 − 5 × 2 + 15"
+     }
+    ]
+   },
+   {
+    "say": "Now look at 120 divided by 6 times 3. Divide and times sit side by side. Which goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 × 3",
+      "120 ÷ 6"
+     ],
+     "answer": 1,
+     "ifNot": "Times and divide are equal partners, so neither one is stronger. We take them from left to right, and 120 divided by 6 is on the left."
+    }
+   },
+   {
+    "say": "Left to right it is: 120 divided by 6 is 20.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "120 ÷ 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "120 ÷ 6"
+      },
+      "text": "20",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The times goes early too: 5 times 2 is 10. Write the line again with 20 and 10 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "5 × 2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "5 × 2"
+      },
+      "text": "10",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 × 3 − 10 + 15"
+     }
+    ]
+   },
+   {
+    "say": "Carry on along that piece: 20 times 3 is 60.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "20 × 3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "20 × 3"
+      },
+      "text": "60",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "60 − 10 + 15"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 60 minus 10 is 50. Careful: the 10 comes off before the 15 goes on, because we read left to right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "60 − 10 = 50"
+     }
+    ]
+   },
+   {
+    "say": "And 50 plus 15 is 65. The expression is worth 65.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "50 + 15 = 65",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "65"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 65 minus 15 is 50, and 50 plus 10 is 60, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "65 − 15 = 50"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "50 + 10 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So here is the plan for a line like this. Brackets, then times and divide, then plus and minus, always reading left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_fa924757-fe85-405f-9147-036f9e33c886": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is the earnings line from Ravi's family chai stall. Watch the middle: a divide, then a bracket, then a times.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "120 − 48 ÷ (2 + 6) × 3 + 15",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There are several jobs in this line. Which one comes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "120 − 48",
+      "6 × 3",
+      "2 + 6"
+     ],
+     "answer": 2,
+     "ifNot": "Look for the brackets. Whatever sits inside them is worked out before anything else, so 2 plus 6 goes first."
+    }
+   },
+   {
+    "say": "Brackets come first. Inside them, 2 plus 6 is 8, so we write 8 where the bracket was.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(2 + 6)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(2 + 6)"
+      },
+      "text": "8",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "120 − 48 ÷ 8 × 3 + 15"
+     }
+    ]
+   },
+   {
+    "say": "Now look at 48 divided by 8 times 3. Divide and times sit side by side. Which goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 × 3",
+      "48 ÷ 8"
+     ],
+     "answer": 1,
+     "ifNot": "Times and divide are equal partners, so neither one is stronger. We take them from left to right, and 48 divided by 8 is on the left."
+    }
+   },
+   {
+    "say": "Left to right it is: 48 divided by 8 is 6.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "48 ÷ 8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "48 ÷ 8"
+      },
+      "text": "6",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "120 − 6 × 3 + 15"
+     }
+    ]
+   },
+   {
+    "say": "Carry on along that piece: 6 times 3 is 18.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "6 × 3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "6 × 3"
+      },
+      "text": "18",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "120 − 18 + 15"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 120 minus 18 is 102. Careful: the 18 comes off before the 15 goes on, because we read left to right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "120 − 18 = 102"
+     }
+    ]
+   },
+   {
+    "say": "And 102 plus 15 is 117. The expression is worth 117.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "102 + 15 = 117",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "117"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 117 minus 15 is 102, and 102 plus 18 is 120, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "117 − 15 = 102"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "102 + 18 = 120"
+     }
+    ]
+   },
+   {
+    "say": "So every time: clear the brackets, then do times and divide as you meet them, then finish with plus and minus, left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_fda86098-5028-4f4a-8061-a86ca2071505": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera has 30 packets. She gives away 2 groups of 5, then buys 3 times 4 more. The line says the same in numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "30 − 2 × 5 + 3 × 4",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Before we work anything out, look along the whole line. Which piece do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "30 − 2",
+      "2 × 5",
+      "5 + 3"
+     ],
+     "answer": 1,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 2 times 5."
+    }
+   },
+   {
+    "say": "Starting on the left with 30 minus 2 is the classic slip. Times goes before minus, so 2 times 5 is first, and that makes 10.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "2 × 5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "2 × 5"
+      },
+      "text": "10",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "There is another times waiting: 3 times 4 is 12. Write the line again with 10 and 12 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3 × 4"
+      },
+      "text": "12",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "30 − 10 + 12"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left: 30 minus 10 plus 12. Which do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "30 − 10",
+      "10 + 12"
+     ],
+     "answer": 0,
+     "ifNot": "Plus and minus are equal partners, so we read from left to right, like a sentence. That means 30 minus 10 comes first."
+    }
+   },
+   {
+    "say": "Left to right it is: 30 minus 10 is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "30 − 10 = 20"
+     }
+    ]
+   },
+   {
+    "say": "And 20 plus 12 is 32. Meera has 32 packets now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "20 + 12 = 32",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "32"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing our steps. 32 minus 12 is 20, and 20 plus 10 is 30, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "32 − 12 = 20"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "20 + 10 = 30"
+     }
+    ]
+   },
+   {
+    "say": "So remember: times and divide go first, wherever they sit in the line. Then plus and minus, from left to right."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch07_q006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "No brackets in this one. But look how many times and divide signs are mixed in with the plus and the minus.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "7 × 2 − 7 ÷ 7 + 3 × 1",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 − 7",
+      "7 × 2",
+      "7 + 3"
+     ],
+     "answer": 1,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 7 times 2."
+    }
+   },
+   {
+    "say": "Times is stronger than plus and minus, so it goes first. 7 times 2 is 14.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "7 × 2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "7 × 2"
+      },
+      "text": "14",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The divide goes early too: 7 divided by 7 is 1.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "7 ÷ 7"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "7 ÷ 7"
+      },
+      "text": "1",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "And the last one: 3 times 1 is 3. Write the line again with 14, 1 and 3 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 1"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3 × 1"
+      },
+      "text": "3",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "14 − 1 + 3"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left: 14 minus 1 plus 3. Which do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "14 − 1",
+      "1 + 3"
+     ],
+     "answer": 0,
+     "ifNot": "Plus and minus are equal partners, so we read from left to right, like a sentence. That means 14 minus 1 comes first."
+    }
+   },
+   {
+    "say": "Left to right it is: 14 minus 1 is 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "14 − 1 = 13"
+     }
+    ]
+   },
+   {
+    "say": "And 13 plus 3 is 16. The answer is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "13 + 3 = 16",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 16 minus 3 is 13, and 13 plus 1 is 14, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "16 − 3 = 13"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "13 + 1 = 14"
+     }
+    ]
+   },
+   {
+    "say": "So remember: times and divide go first, wherever they sit in the line. Then plus and minus, from left to right."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch07_q016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A long line with no brackets. Don't let the length worry you: we just take the jobs in the right order.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "16 × 5 + 5 − 2 × 10 ÷ 5 + 5 × 2 − 1",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "16 × 5",
+      "5 + 5",
+      "5 − 2"
+     ],
+     "answer": 0,
+     "ifNot": "Times is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 16 times 5."
+    }
+   },
+   {
+    "say": "Times is stronger than plus and minus, so it goes first. 16 times 5 is 80.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "16 × 5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "16 × 5"
+      },
+      "text": "80",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now look at 2 times 10 divided by 5. Times and divide sit side by side. Which goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10 ÷ 5",
+      "2 × 10"
+     ],
+     "answer": 1,
+     "ifNot": "Times and divide are equal partners, so neither one is stronger. We take them from left to right, and 2 times 10 is on the left."
+    }
+   },
+   {
+    "say": "Left to right it is: 2 times 10 is 20.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "2 × 10"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "2 × 10"
+      },
+      "text": "20",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "And the last one: 5 times 2 is 10. Write the line again with 80, 20 and 10 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "5 × 2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "5 × 2"
+      },
+      "text": "10",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "80 + 5 − 20 ÷ 5 + 10 − 1"
+     }
+    ]
+   },
+   {
+    "say": "Carry on along that piece: 20 divided by 5 is 4.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "20 ÷ 5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "20 ÷ 5"
+      },
+      "text": "4",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "80 + 5 − 4 + 10 − 1"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 80 plus 5 is 85, and 85 minus 4 is 81. Careful: the 4 comes off before the 10 goes on, because we read left to right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "80 + 5 = 85"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "85 − 4 = 81"
+     }
+    ]
+   },
+   {
+    "say": "Then 81 plus 10 is 91.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "81 + 10 = 91"
+     }
+    ]
+   },
+   {
+    "say": "And 91 minus 1 is 90. The answer is 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "91 − 1 = 90",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "90"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 90 plus 1 is 91, and 91 minus 10 is 81, just as it says on the board.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "90 + 1 = 91"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "91 − 10 = 81"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: hunt for the times and divide signs first. When only plus and minus are left, read from left to right."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch07_q025": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Three divides, joined by plus signs. Each divide is a little job of its own.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "35 ÷ 7 + 25 ÷ 5 + 15 ÷ 5",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't rush in from the left. Which piece of this line has to be done first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7 + 25",
+      "35 ÷ 7",
+      "5 + 15"
+     ],
+     "answer": 1,
+     "ifNot": "Divide is stronger than plus and minus, so it goes first, wherever it sits in the line. Here that is 35 divided by 7."
+    }
+   },
+   {
+    "say": "Divide is stronger than plus and minus, so it goes first. 35 divided by 7 is 5.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "35 ÷ 7"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "35 ÷ 7"
+      },
+      "text": "5",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "There is another divide waiting: 25 divided by 5 is 5.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "25 ÷ 5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "25 ÷ 5"
+      },
+      "text": "5",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "And the last one: 15 divided by 5 is 3. Write the line again with 5, 5 and 3 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "15 ÷ 5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "15 ÷ 5"
+      },
+      "text": "3",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 + 5 + 3"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus are left now, so we go left to right: 5 plus 5 is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 + 5 = 10"
+     }
+    ]
+   },
+   {
+    "say": "And 10 plus 3 is 13. The answer is 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "10 + 3 = 13",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "13"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 13 minus 3 is 10, and 10 minus 5 is 5, right where that line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "13 − 3 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "10 − 5 = 5"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: hunt for the times and divide signs first. When only plus and minus are left, read from left to right."
+   }
+  ]
+ },
+ "AIGEN_grade5_38dd3071-b434-4c5b-8213-3369e40a515a": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Raju's team fund starts with 200 rupees. Then 6 players put in 15 rupees each, and the coach takes out 10 rupees for a ball. How much is in the fund now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Start ₹200, 6 players × ₹15 in, ₹10 out",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Let's write the whole story as one line. Start with 200, add 6 lots of 15, then take away 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "200 + 6 × 15 − 10"
+     }
+    ]
+   },
+   {
+    "say": "Which piece of this line do we work out first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "200 + 6",
+      "6 × 15",
+      "15 − 10"
+     ],
+     "answer": 1,
+     "ifNot": "Think about the story. The players give 6 lots of 15 rupees, and we need that amount before we can add it. Times goes before plus and minus."
+    }
+   },
+   {
+    "say": "6 times 15 is 90. That is what the players put in altogether.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "6 × 15"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "6 × 15"
+      },
+      "text": "90",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "200 + 90 − 10"
+     }
+    ]
+   },
+   {
+    "say": "Now only plus and minus are left, so we go left to right. 200 plus 90 is 290.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "200 + 90 = 290"
+     }
+    ]
+   },
+   {
+    "say": "Then the coach takes out 10. 290 minus 10 is 280, so the fund has 280 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "290 − 10 = 280",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "280"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap. Adding 200 and 6 first, just because they come first, would be adding rupees to players. The story tells you that makes no sense."
+   },
+   {
+    "say": "Check by walking backwards. 280 plus 10 is 290, and 290 minus 90 is 200, the money the fund started with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "280 + 10 = 290"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "290 − 90 = 200"
+     }
+    ]
+   },
+   {
+    "say": "So in a money story, work out each lot of so many each first. Then add and take away in the order things happened."
+   }
+  ]
+ },
+ "AIGEN_grade5_a1a76164-cb03-4478-8bc5-db4371e36f61": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya has 100 rupees. She buys 6 boxes of sparklers at 9 rupees each, then shares what is left equally between her 2 cousins.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹100, buys 6 boxes × ₹9, rest shared by 2",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What do we need to find first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "100 ÷ 2",
+      "6 × 9, the cost of the sparklers",
+      "100 − 6"
+     ],
+     "answer": 1,
+     "ifNot": "The cousins only share what is left after the shopping. So first we need to know what the sparklers cost: 6 boxes at 9 rupees each."
+    }
+   },
+   {
+    "say": "6 times 9 is 54. The sparklers cost 54 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "6 × 9 = 54"
+     }
+    ]
+   },
+   {
+    "say": "Take that away from her 100 rupees. 100 minus 54 is 46, so 46 rupees are left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "100 − 54 = 46"
+     }
+    ]
+   },
+   {
+    "say": "Now share the 46 rupees between the 2 cousins. 46 divided by 2 is 23, so each cousin gets 23 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "46 ÷ 2 = 23",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "23"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "As one line it looks like this. The brackets say: finish the shopping first, and only then share.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "(100 − 6 × 9) ÷ 2 = 23"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "(100 − 6 × 9)"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 46 is one of the choices, but 46 is the money left over. The question asks for one cousin's share, so there is still a divide to do."
+   },
+   {
+    "say": "Check: 23 plus 23 is 46, and 46 plus 54 is 100. Every rupee is accounted for.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "23 + 23 = 46"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "46 + 54 = 100"
+     }
+    ]
+   },
+   {
+    "say": "So follow the story in order: spend first, see what is left, then share it out."
+   }
+  ]
+ },
+ "AIGEN_grade5_c060004c-cd2d-4c04-a71d-dfb43a9db862": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meena buys 3 packets of coloured powder at 15 rupees each and 2 packets of glitter at 9 rupees each. She pays with 80 rupees. How much change comes back?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3 × ₹15 and 2 × ₹9, paid with ₹80",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Change is what is left after paying for everything. So we start with 80 and take away both costs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "80 − 3 × 15 − 2 × 9"
+     }
+    ]
+   },
+   {
+    "say": "Which pieces of this line do we work out first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "80 − 3",
+      "3 × 15 and 2 × 9",
+      "15 − 2"
+     ],
+     "answer": 1,
+     "ifNot": "We cannot take a cost away until we know it. So the two times come first: 3 times 15, and 2 times 9."
+    }
+   },
+   {
+    "say": "3 times 15 is 45. That is the coloured powder.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 15"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3 × 15"
+      },
+      "text": "45",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "2 times 9 is 18. That is the glitter. Now write the line again with 45 and 18 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "2 × 9"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "2 × 9"
+      },
+      "text": "18",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "80 − 45 − 18"
+     }
+    ]
+   },
+   {
+    "say": "Take them off one at a time, left to right. 80 minus 45 is 35.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "80 − 45 = 35"
+     }
+    ]
+   },
+   {
+    "say": "And 35 minus 18 is 17. Meena gets 17 rupees back.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "35 − 18 = 17",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "17"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is stopping after one item. Taking off only the powder leaves 35, but the glitter has to be paid for too."
+   },
+   {
+    "say": "Check another way. The whole bill is 45 plus 18, which is 63. And 63 plus 17 is 80, the money she paid.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "45 + 18 = 63"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "63 + 17 = 80"
+     }
+    ]
+   },
+   {
+    "say": "So for change: find the cost of each kind of thing, take every cost away from the money paid, and check by adding back."
+   }
+  ]
+ },
+ "AIGEN_grade5_e4d78058-ffe3-43c7-8dfb-8107f58e4dba": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun buys 4 packets of 15 diyas and gives away 2 packets of 6. Grandmother gifts him 3 plus 5, in brackets, times 3 more, and then 4 break. How many are left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "4 × 15 bought, 2 × 6 given, (3 + 5) × 3 gift, 4 broken",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Let's put the story in one line. Diyas bought, minus diyas given away, plus the gift, minus the broken ones.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4 × 15 − 2 × 6 + (3 + 5) × 3 − 4"
+     }
+    ]
+   },
+   {
+    "say": "Which piece of this line do we work out first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 × 15",
+      "3 + 5",
+      "6 + 3"
+     ],
+     "answer": 1,
+     "ifNot": "Look for the brackets. Whatever sits inside brackets is done before anything else, even before a times. So 3 plus 5 goes first."
+    }
+   },
+   {
+    "say": "3 plus 5 is 8, so the gift is 8 times 3.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(3 + 5)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(3 + 5)"
+      },
+      "text": "8",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 × 15 − 2 × 6 + 8 × 3 − 4"
+     }
+    ]
+   },
+   {
+    "say": "Now the times, before any plus or minus. 4 times 15 is 60 diyas bought, and 2 times 6 is 12 given away.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "4 × 15"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "4 × 15"
+      },
+      "text": "60",
+      "place": "below"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "2 × 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "2 × 6"
+      },
+      "text": "12",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "And 8 times 3 is 24 from Grandmother. Write the line again with 60, 12 and 24 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "8 × 3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "8 × 3"
+      },
+      "text": "24",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "60 − 12 + 24 − 4"
+     }
+    ]
+   },
+   {
+    "say": "Only plus and minus now, so we go left to right. 60 minus 12 is 48, and 48 plus 24 is 72.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "60 − 12 = 48"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "48 + 24 = 72"
+     }
+    ]
+   },
+   {
+    "say": "Last, the 4 broken ones. 72 minus 4 is 68, so Arjun has 68 diyas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "72 − 4 = 68",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "68"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Name the trap: the gift. Skip the brackets and you might do 5 times 3 first, which gives a different gift. The brackets say add 3 and 5 first."
+   },
+   {
+    "say": "Check by walking backwards. 68 plus 4 is 72, 72 minus 24 is 48, and 48 plus 12 is 60, the diyas he bought.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "68 + 4 = 72"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "72 − 24 = 48"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "48 + 12 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So turn the story into one line. Then brackets first, times next, and plus and minus from left to right."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch07_q003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Three kinds of brackets here, one inside another, like boxes inside boxes. We open the innermost box first and work our way out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "11 − [17 − {15 − 3(7 − 4)}]",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Which brackets are the innermost ones?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the square ones [ ]",
+      "the curly ones { }",
+      "the round ones ( )"
+     ],
+     "answer": 2,
+     "ifNot": "Look for the brackets that have no other brackets inside them. Those are the round ones, around 7 minus 4."
+    }
+   },
+   {
+    "say": "7 minus 4 is 3. And the 3 standing right outside that bracket means 3 times, so now we have 3 times 3.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(7 − 4)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(7 − 4)"
+      },
+      "text": "3",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "11 − [17 − {15 − 3 × 3}]"
+     }
+    ]
+   },
+   {
+    "say": "Inside the curly brackets we now have 15 minus 3 times 3. What comes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15 − 3",
+      "3 × 3"
+     ],
+     "answer": 1,
+     "ifNot": "Times goes before minus, even inside brackets. So 3 times 3 comes first."
+    }
+   },
+   {
+    "say": "3 times 3 is 9. Careful: taking 3 away from 15 first is the classic slip here.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "3 × 3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "3 × 3"
+      },
+      "text": "9",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "11 − [17 − {15 − 9}]"
+     }
+    ]
+   },
+   {
+    "say": "Now the curly brackets hold 15 minus 9, and that is 6.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "{15 − 9}"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "{15 − 9}"
+      },
+      "text": "6",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "11 − [17 − 6]"
+     }
+    ]
+   },
+   {
+    "say": "Next, the square brackets. 17 minus 6 is 11.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "[17 − 6]"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l4",
+      "target": {
+       "text": "[17 − 6]"
+      },
+      "text": "11",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "11 − 11"
+     }
+    ]
+   },
+   {
+    "say": "And 11 minus 11 is 0. All that work, and it comes to nothing at all!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "11 − 11 = 0",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "0"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the layers once more: the round brackets gave 3, the curly ones gave 6, the square ones gave 11. And 11 take away 11 is 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "11 − [17 − {15 − 9}] = 0"
+     }
+    ]
+   },
+   {
+    "say": "So with brackets inside brackets, work from the inside out: round, then curly, then square."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch07_q004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This line has round brackets, square brackets, and a bar over 5 minus 1. A bar works like the tightest bracket of all.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(8 − 7) × [8 + 2 × bar(5 − 1)]",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "So which piece do we work out first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 − 7",
+      "8 + 2",
+      "5 − 1, under the bar"
+     ],
+     "answer": 2,
+     "ifNot": "The bar is the innermost bracket. So the piece under the bar, 5 minus 1, goes before everything else."
+    }
+   },
+   {
+    "say": "5 minus 1 is 4. Write the line again with 4 where the bar was.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "bar(5 − 1)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "bar(5 − 1)"
+      },
+      "text": "4",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "(8 − 7) × [8 + 2 × 4]"
+     }
+    ]
+   },
+   {
+    "say": "Now look inside the square brackets: 8 plus 2 times 4. What comes first in there?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 + 2",
+      "2 × 4"
+     ],
+     "answer": 1,
+     "ifNot": "Times goes before plus, even inside brackets. So 2 times 4 comes first."
+    }
+   },
+   {
+    "say": "2 times 4 is 8. Careful: adding the 8 and the 2 first is the trap in this one.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "2 × 4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "2 × 4"
+      },
+      "text": "8",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "(8 − 7) × [8 + 8]"
+     }
+    ]
+   },
+   {
+    "say": "Now finish both brackets. 8 minus 7 is 1, and 8 plus 8 is 16.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "(8 − 7)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "(8 − 7)"
+      },
+      "text": "1",
+      "place": "below"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "[8 + 8]"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "[8 + 8]"
+      },
+      "text": "16",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1 × 16"
+     }
+    ]
+   },
+   {
+    "say": "1 times 16 is 16. Multiplying by 1 changes nothing, so the answer is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "1 × 16 = 16",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "16",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the square brackets backwards: 16 minus 8 is 8, and that 8 was our 2 times 4. It all fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "16 − 8 = 8"
+     }
+    ]
+   },
+   {
+    "say": "So work from the inside out: the bar, then the brackets. And inside each one, times before plus."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch07_q011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This line has a minus, a divide, a plus, and the little word of. Let's sort out what of means first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "16 − 12 ÷ 4 + 1/2 of 10",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What does half of 10 ask us to do?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 1/2 and 10",
+      "multiply: 1/2 × 10",
+      "take 1/2 away from 10"
+     ],
+     "answer": 1,
+     "ifNot": "Of means times. Half of 10 means a half times 10, which is the same as cutting 10 into 2 equal parts."
+    }
+   },
+   {
+    "say": "Half of 10 is 5. Of is a kind of times, so it is done early, before any plus or minus.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "1/2 of 10"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "1/2 of 10"
+      },
+      "text": "5",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The divide goes early too: 12 divided by 4 is 3. Now write the line again with 3 and 5 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "12 ÷ 4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "12 ÷ 4"
+      },
+      "text": "3",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "16 − 3 + 5"
+     }
+    ]
+   },
+   {
+    "say": "The trap was at the very start: 16 minus 12 looks ready to go. But that 12 belongs to the divide, so it had to be divided by 4 first."
+   },
+   {
+    "say": "Only minus and plus are left, so we go left to right. 16 minus 3 is 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "16 − 3 = 13"
+     }
+    ]
+   },
+   {
+    "say": "And 13 plus 5 is 18. That is our answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "13 + 5 = 18",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "18"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards. 18 minus 5 is 13, and 13 plus 3 is 16, right where the line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "18 − 5 = 13"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "13 + 3 = 16"
+     }
+    ]
+   },
+   {
+    "say": "So: of and divide first, then plus and minus from left to right."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch07_q027": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A minus, a divide, a plus, and a fraction of a number, all in one line. The order we choose decides the answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "20 − 8 ÷ 2 + 1/3 of 18",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Which pieces get done before the minus and the plus?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "20 − 8",
+      "8 ÷ 2 and 1/3 of 18",
+      "2 + 1/3"
+     ],
+     "answer": 1,
+     "ifNot": "Of means times, and times and divide always go before plus and minus. So the two early jobs are 8 divided by 2, and a third of 18."
+    }
+   },
+   {
+    "say": "Start with the of. A third of 18 means 18 shared into 3 equal parts, and 18 divided by 3 is 6.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "1/3 of 18"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "1/3 of 18"
+      },
+      "text": "6",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "18 ÷ 3 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Now the divide. 8 divided by 2 is 4. Write the line again with 4 and 6 in place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "8 ÷ 2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "8 ÷ 2"
+      },
+      "text": "4",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 − 4 + 6"
+     }
+    ]
+   },
+   {
+    "say": "Only minus and plus are left: 20 minus 4 plus 6. Which do we do first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "20 − 4",
+      "4 + 6"
+     ],
+     "answer": 0,
+     "ifNot": "Plus and minus are equal partners, so we read from left to right, like a sentence. That means 20 minus 4 comes first."
+    }
+   },
+   {
+    "say": "Left to right it is: 20 minus 4 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "20 − 4 = 16"
+     }
+    ]
+   },
+   {
+    "say": "And 16 plus 6 is 22. That is our answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "16 + 6 = 22",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "22"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Name the trap: starting with 20 minus 8 because it is on the left. That 8 belongs to the divide, so it must be halved first."
+   },
+   {
+    "say": "Check by walking backwards. 22 minus 6 is 16, and 16 plus 4 is 20, right where the line started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "22 − 6 = 16"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "16 + 4 = 20"
+     }
+    ]
+   },
+   {
+    "say": "So: of and divide go first, then plus and minus from left to right."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch07_q014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two sides, and they must be worth the same. On the left, 10 plus 10 times 10. On the right, 100 plus a missing number in the box.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "10 + 10 × 10 = 100 + □",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start with the left side. What is 10 plus 10 times 10?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "200",
+      "110",
+      "30"
+     ],
+     "answer": 1,
+     "ifNot": "Times goes before plus. So first 10 times 10 is 100, and only then do we add the other 10."
+    }
+   },
+   {
+    "say": "10 times 10 is 100. Then 10 plus 100 is 110, so the left side is worth 110.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "10 × 10"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "10 × 10"
+      },
+      "text": "100",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 + 100 = 110"
+     }
+    ]
+   },
+   {
+    "say": "The trap is adding the two 10s first and then multiplying. That gives 200, but it is a different sum: the one with brackets round 10 plus 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "(10 + 10) × 10 = 200"
+     }
+    ]
+   },
+   {
+    "say": "Now the right side has to be worth 110 as well. So 100 plus what makes 110?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "100 + ? = 110"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10",
+      "100",
+      "0"
+     ],
+     "answer": 0,
+     "ifNot": "We need to climb from 100 up to 110. The gap between them is the number in the box."
+    }
+   },
+   {
+    "say": "110 minus 100 is 10. So the box holds 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "110 − 100 = 10",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "10",
+       "nth": 3
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: with 10 in the box, the right side is 100 plus 10, which is 110. The left side is 110 too, so the two sides match.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "10 + 10 × 10 = 100 + 10"
+     }
+    ]
+   },
+   {
+    "say": "So when one side has a box: work out the complete side first, with times before plus. Then find what makes the other side match."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch07_q015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Four number sentences, and only one of them is true. We will test each one, using the proper order every time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Which one is correct?",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7 + 7 × 7 = 77",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "25 + 7 × 0 = 0",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "6 + 6 − 6 × 6 ÷ 6 = 6",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "16[2 + 3 × 2 − 8] = 16",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Take the first one, 7 plus 7 times 7. What do we work out first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7 + 7",
+      "7 × 7"
+     ],
+     "answer": 1,
+     "ifNot": "Times goes before plus, wherever it sits. So 7 times 7 comes first."
+    }
+   },
+   {
+    "say": "7 times 7 is 49, and 7 plus 49 is 56. The sentence says 77, so it is not true.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a1",
+      "text": "7 × 7 = 49"
+     },
+     {
+      "op": "write",
+      "id": "a2",
+      "text": "7 + 49 = 56"
+     },
+     {
+      "op": "strike",
+      "line": "a",
+      "target": {
+       "text": "77"
+      },
+      "note": "56"
+     }
+    ]
+   },
+   {
+    "say": "Next one. The 0 only wipes out the 7 it multiplies: 7 times 0 is 0. So this is 25 plus 0, which is 25, not 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b1",
+      "text": "25 + 7 × 0 = 25"
+     },
+     {
+      "op": "strike",
+      "line": "b",
+      "target": {
+       "text": "0",
+       "nth": 2
+      },
+      "note": "25"
+     }
+    ]
+   },
+   {
+    "say": "Now the third one. Which piece of it goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 + 6",
+      "6 × 6",
+      "6 − 6"
+     ],
+     "answer": 1,
+     "ifNot": "Times and divide go before plus and minus. Reading from the left, the first of them is 6 times 6."
+    }
+   },
+   {
+    "say": "6 times 6 is 36, and 36 divided by 6 is 6. So that whole piece is worth 6.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "6 × 6 ÷ 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "6 × 6 = 36"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "36 ÷ 6 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Now the line reads 6 plus 6 minus 6. Left to right, 6 plus 6 is 12, and 12 minus 6 is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "6 + 6 = 12"
+     },
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "12 − 6 = 6"
+     }
+    ]
+   },
+   {
+    "say": "The sentence says 6, and we got 6. This one is true!",
+    "board": [
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "6 + 6 − 6 × 6 ÷ 6 = 6"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Let's make sure of the last one. Inside the brackets, 3 times 2 is 6, then 2 plus 6 is 8, and 8 minus 8 is 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "2 + 3 × 2 − 8 = 0"
+     }
+    ]
+   },
+   {
+    "say": "A number standing right outside a bracket means times. 16 times 0 is 0, not 16, so that one is not true.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "16 × 0 = 0"
+     },
+     {
+      "op": "strike",
+      "line": "d",
+      "target": {
+       "text": "16",
+       "nth": 2
+      },
+      "note": "0"
+     }
+    ]
+   },
+   {
+    "say": "So the only true sentence is 6 plus 6, minus 6 times 6 divided by 6, equals 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "6 + 6 − 6 × 6 ÷ 6 = 6",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6 + 6 − 6 × 6 ÷ 6 = 6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "To test a number sentence, work out the left side by the rules. Then see whether it really matches the right side."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch07_q031": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Four number sentences. Three of them are true and one is not, and we are hunting for the one that is not.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Which one is NOT correct?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Take the first one. Of means times, so we need a fifth of 125. 125 shared into 5 equal parts is 25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "1/5 of 125 ÷ 25 − 1 = 0"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1/5 of 125"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "a1",
+      "text": "1/5 of 125 = 25"
+     }
+    ]
+   },
+   {
+    "say": "Then 25 divided by 25 is 1, and 1 minus 1 is 0. It says 0, so this one is true.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a2",
+      "text": "25 ÷ 25 − 1 = 0"
+     }
+    ]
+   },
+   {
+    "say": "The next one ends in times 0. Anything times 0 is 0, so it is true whatever the brackets come to.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "{9 − 3 − (7 + 6 − 6 − 6 − 7)} × 0 = 0"
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "× 0"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Now this one, which claims to equal 3. Which pieces do we work out first?",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "8 ÷ 2 × 6 − 3 ÷ 9 + 27 = 3",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 ÷ 2 × 6, and 3 ÷ 9",
+      "2 × 6 − 3",
+      "9 + 27"
+     ],
+     "answer": 0,
+     "ifNot": "Divide and times go before minus and plus. So the early jobs are 8 divided by 2 times 6, and 3 divided by 9."
+    }
+   },
+   {
+    "say": "Left to right: 8 divided by 2 is 4, and 4 times 6 is 24.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "8 ÷ 2 × 6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "8 ÷ 2 × 6 = 24"
+     }
+    ]
+   },
+   {
+    "say": "3 divided by 9 does not come out whole. It is 3 parts out of 9, which is just a third.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "3 ÷ 9"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "3 ÷ 9 = 1/3"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "24 − 1/3 + 27"
+     }
+    ]
+   },
+   {
+    "say": "24 plus 27 is 51, and taking away a third leaves more than 50. That is nowhere near 3!",
+    "board": [
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "24 + 27 = 51"
+     },
+     {
+      "op": "write",
+      "id": "c5",
+      "text": "51 − 1/3 > 50"
+     },
+     {
+      "op": "strike",
+      "line": "c",
+      "target": {
+       "text": "3",
+       "nth": 2
+      },
+      "note": "over 50"
+     }
+    ]
+   },
+   {
+    "say": "So this sentence is not true. Let's make sure the last one is fine. It starts with a quarter divided by three quarters.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "(1/4) ÷ (3/4) ÷ (2/4) × (4/3) = 8/9"
+     }
+    ]
+   },
+   {
+    "say": "Three quarters is 3 times as big as a quarter. So a quarter divided by three quarters is a third.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "(1/4) ÷ (3/4) = 1/3"
+     }
+    ]
+   },
+   {
+    "say": "Next, divide that third by two quarters. Two quarters is a half, and dividing by a half doubles, so we get two thirds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "(1/3) ÷ (2/4) = 2/3"
+     }
+    ]
+   },
+   {
+    "say": "Last, two thirds times 4 over 3. On top 2 times 4 is 8, underneath 3 times 3 is 9, so we get 8 over 9, just as it says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "(2/3) × (4/3) = 8/9"
+     }
+    ]
+   },
+   {
+    "say": "So the one that is not correct is 8 divided by 2, times 6, minus 3 divided by 9, plus 27. It does not equal 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "8 ÷ 2 × 6 − 3 ÷ 9 + 27 ≠ 3",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "≠ 3"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two traps here: stopping at the first sentence that looks odd, and forgetting the question wants the one that is not true. Work every sentence out by the rules."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch07_q018": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Round brackets inside curly ones inside square ones, and a times 3 waiting at the end. We start in the middle and work outwards.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "[70 + {5 × 8 − (12 − 3 × 5)}] × 3",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The round brackets hold 12 minus 3 times 5. What goes first in there?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 − 3",
+      "3 × 5"
+     ],
+     "answer": 1,
+     "ifNot": "Times goes before minus, even inside brackets. So 3 times 5 comes first."
+    }
+   },
+   {
+    "say": "3 times 5 is 15. So the round brackets now hold 12 minus 15.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "3 × 5"
+      },
+      "text": "15",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "[70 + {5 × 8 − (12 − 15)}] × 3"
+     }
+    ]
+   },
+   {
+    "say": "Here is something unusual: 15 is bigger than 12. Taking 15 from 12 lands us 3 below zero, and we write that as minus 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 − 15 = −3"
+     }
+    ]
+   },
+   {
+    "say": "Now the curly brackets. 5 times 8 is 40, so they hold 40, take away minus 3.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "5 × 8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "5 × 8"
+      },
+      "text": "40",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "[70 + {40 − (−3)}] × 3"
+     }
+    ]
+   },
+   {
+    "say": "What does taking away minus 3 do to the 40?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "makes it 3 smaller: 37",
+      "makes it 3 bigger: 43",
+      "leaves it at 40"
+     ],
+     "answer": 1,
+     "ifNot": "Think of minus 3 as owing 3 rupees. If someone takes that debt away, you are 3 rupees better off. So taking away minus 3 is the same as adding 3."
+    }
+   },
+   {
+    "say": "So 40 take away minus 3 is 40 plus 3, which is 43. That finishes the curly brackets.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "40 − (−3) = 40 + 3"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "[70 + 43] × 3"
+     }
+    ]
+   },
+   {
+    "say": "Square brackets next: 70 plus 43 is 113.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "[70 + 43]"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l6",
+      "target": {
+       "text": "[70 + 43]"
+      },
+      "text": "113",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "113 × 3"
+     }
+    ]
+   },
+   {
+    "say": "Last of all, the times 3. 113 times 3 is 339.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "113 × 3 = 339",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l8",
+      "target": {
+       "text": "339"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap was in the middle. Treat 12 minus 15 as a plain 3 and you would take 3 off the 40, when really 3 gets added on."
+   },
+   {
+    "say": "Check that last times: 100 times 3 is 300, 13 times 3 is 39, and 300 plus 39 is 339.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "100 × 3 + 13 × 3 = 339"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "300 + 39 = 339"
+     }
+    ]
+   },
+   {
+    "say": "So peel the brackets from the inside out: round, curly, square. And inside each one, times goes before plus and minus."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch07_q026": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A long bracket, full of work to do. But before starting any of it, look at what is waiting right at the end of the line.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "(7 + 2 − 14 × (1/2) − 5 − 2) × 0",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The whole bracket is multiplied by 0. What does that do?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "× 0"
+      },
+      "shape": "box"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Nothing: the answer is the bracket",
+      "It makes the whole answer 0",
+      "It takes 0 away"
+     ],
+     "answer": 1,
+     "ifNot": "Times 0 means zero lots of something. Zero lots of any number, big or small, is nothing at all."
+    }
+   },
+   {
+    "say": "Think of 3 times 0 as 3 empty plates: nothing on any of them. Even 1000 empty plates still hold nothing.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 0 = 0"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1000 × 0 = 0"
+     }
+    ]
+   },
+   {
+    "say": "So whatever the bracket comes to, the answer will be 0. We do not even need to work the bracket out!",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "(7 + 2 − 14 × (1/2) − 5 − 2)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "(7 + 2 − 14 × (1/2) − 5 − 2)"
+      },
+      "text": "any number",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The bracket, times 0, equals 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "(7 + 2 − 14 × (1/2) − 5 − 2) × 0 = 0",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "0",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is diving into the bracket, with its half of 14 and all those take aways, and making a slip in there. None of it was needed."
+   },
+   {
+    "say": "So look before you leap: scan the whole line first. If everything is multiplied by 0, the answer is 0."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch07_q032": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Only times and divide in this line, no plus or minus at all. Times and divide are equal partners, so we go from left to right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 × 125 × 15 ÷ 625 × 3 × 45",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start on the left with 5 times 125. 5 times 100 is 500, and 5 times 25 is 125, so together that is 625.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "5 × 125"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 × 100 = 500"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 × 25 = 125"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 × 125 = 625"
+     }
+    ]
+   },
+   {
+    "say": "So now the line starts 625 times 15, divided by 625. Do you spot anything?",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "625 × 15 ÷ 625 × 3 × 45"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Work out 625 × 15 the long way",
+      "× 625 and ÷ 625 undo each other",
+      "Divide 15 by 625"
+     ],
+     "answer": 1,
+     "ifNot": "We multiply by 625 and then divide by 625. One undoes the other, like a step forward and then a step back. So only the 15 is left."
+    }
+   },
+   {
+    "say": "Times 625 and divided by 625 cancel each other out. That leaves just the 15.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l5",
+      "target": {
+       "text": "625 ×"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "l5",
+      "target": {
+       "text": "÷ 625"
+      }
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "15 × 3 × 45"
+     }
+    ]
+   },
+   {
+    "say": "Carry on, left to right. 15 times 3 is 45, so we are left with 45 times 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "15 × 3 = 45"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "45 × 45"
+     }
+    ]
+   },
+   {
+    "say": "Split one 45 into 40 and 5. 45 times 40 is 1800, and 45 times 5 is 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "45 × 40 = 1800"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "45 × 5 = 225"
+     }
+    ]
+   },
+   {
+    "say": "1800 plus 225 is 2025. So the whole line is worth 2025.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "1800 + 225 = 2025"
+     },
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "45 × 45 = 2025",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l12",
+      "target": {
+       "text": "2025"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the divide sign: it only belongs to the 625 right after it. The 3 and the 45 are still multiplying, so the answer stays big."
+   },
+   {
+    "say": "Check the shortcut the long way: 625 times 15 is 9375, and 9375 divided by 625 is 15 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l13",
+      "text": "625 × 15 = 9375"
+     },
+     {
+      "op": "write",
+      "id": "l14",
+      "text": "9375 ÷ 625 = 15"
+     }
+    ]
+   },
+   {
+    "say": "So with only times and divide: go left to right, and watch for a times and a divide by the same number, because they cancel."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q018": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "How many three-digit numbers are even? Counting them one by one would take all day, so let's be clever about it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Three-digit even numbers: how many?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, all the three-digit numbers. The numbers from 1 to 99 have one or two digits, so the three-digit ones run from 100 up to 999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r0",
+      "text": "1 to 99: one or two digits",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "r1",
+      "text": "100 to 999: three digits",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How many numbers is that, from 100 to 999?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "899",
+      "900",
+      "999"
+     ],
+     "answer": 1,
+     "ifNot": "Think of all the numbers from 1 to 999. That is 999 numbers. The first 99 of them are too short, so we take those away."
+    }
+   },
+   {
+    "say": "999 minus 99 is 900. So there are 900 three-digit numbers altogether.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "999 − 99 = 900"
+     }
+    ]
+   },
+   {
+    "say": "Now walk along them. 100 is even, 101 is odd, 102 is even, 103 is odd. Even and odd take turns, all the way to 999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "seq",
+      "text": "100, 101, 102, 103, … 998, 999",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "seq",
+      "target": {
+       "text": "100"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "seq",
+      "target": {
+       "text": "102"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "seq",
+      "target": {
+       "text": "998"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The run starts on an even number, 100, and ends on an odd one, 999. So the 900 numbers pair up exactly, one even with one odd, and none left over."
+   },
+   {
+    "say": "So what share of the 900 numbers is even?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "all of them",
+      "half of them",
+      "a third of them"
+     ],
+     "answer": 1,
+     "ifNot": "Even and odd take turns the whole way, and every even number has an odd partner. So exactly half of them are even."
+    }
+   },
+   {
+    "say": "Half of 900 is 450. So there are 450 three-digit even numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "900 ÷ 2 = 450",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "450"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check another way. The even ones go 100, 102, 104, and on up to 998. From 100 to 998 is a gap of 898.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ev",
+      "text": "100, 102, 104, … 998",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "998 − 100 = 898"
+     }
+    ]
+   },
+   {
+    "say": "Each jump is 2, so that is 449 jumps. And 449 jumps join up 450 numbers, because the starting number counts too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "898 ÷ 2 = 449"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "449 + 1 = 450"
+     }
+    ]
+   },
+   {
+    "say": "So count the whole run first, then take half, because even and odd take turns. The trap is stopping at 900, which counts the odd ones too."
+   }
+  ]
+ }
+}
