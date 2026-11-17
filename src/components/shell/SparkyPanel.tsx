@@ -9,7 +9,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
-import MessageBubble from '@/components/chat/MessageBubble';
+import MessageBubble, { plainReply } from '@/components/chat/MessageBubble';
 import TypingDots from '@/components/chat/TypingDots';
 import ChatComposer from '@/components/chat/ChatComposer';
 import { useSparkyChat, getQuickReplies } from '@/components/chat/useSparkyChat';
@@ -132,18 +132,31 @@ export default function SparkyPanel({ open, onClose }: SparkyPanelProps) {
         </div>
         <button
           onClick={startNewChat}
-          className="text-white/70 hover:text-white text-xs font-bold px-2.5 py-1.5 rounded-full border-2 border-white/30 hover:border-white/60 transition-colors min-h-[36px]"
+          disabled={isLoading}
+          className="text-white/70 hover:text-white text-xs font-bold px-2.5 py-1.5 rounded-full border-2 border-white/30 hover:border-white/60 transition-colors min-h-[36px] disabled:opacity-40"
         >
           New
         </button>
-        <Link
-          href="/chat"
-          aria-label="Open full screen"
-          title="Open full screen"
-          className="text-white/70 hover:text-white text-xl font-bold min-h-[48px] min-w-[40px] flex items-center justify-center"
-        >
-          <span aria-hidden="true">⤢</span>
-        </Link>
+        {/* Not while a reply is arriving: leaving now would lose the rest of it. */}
+        {isLoading ? (
+          <button
+            type="button"
+            disabled
+            aria-label="Open full screen"
+            className="text-white/70 text-xl font-bold min-h-[48px] min-w-[40px] flex items-center justify-center opacity-40"
+          >
+            <span aria-hidden="true">⤢</span>
+          </button>
+        ) : (
+          <Link
+            href="/chat"
+            aria-label="Open full screen"
+            title="Open full screen"
+            className="text-white/70 hover:text-white text-xl font-bold min-h-[48px] min-w-[40px] flex items-center justify-center"
+          >
+            <span aria-hidden="true">⤢</span>
+          </Link>
+        )}
         <button
           onClick={() => setTall((t) => !t)}
           aria-label={tall ? 'Make the chat smaller' : 'Make the chat taller'}
@@ -205,7 +218,7 @@ export default function SparkyPanel({ open, onClose }: SparkyPanelProps) {
                   <VisualBoard spec={live.visual} />
                 </div>
               )}
-              <p className="text-[15px] leading-relaxed text-ink font-medium whitespace-pre-wrap [overflow-wrap:anywhere]">{live.text}</p>
+              <p className="text-[15px] leading-relaxed text-ink font-medium whitespace-pre-wrap [overflow-wrap:anywhere]">{plainReply(live.text)}</p>
               <span className="inline-block w-1 h-4 bg-action animate-pulse ml-0.5 rounded" />
             </div>
           </div>

@@ -210,6 +210,9 @@ const VERDICT_PATTERNS: RegExp[] = [
   /\b(got|have) (it|the answer|that) right\b/i,
 ];
 
+/** Words that point at one choice ("0.5 is the greatest"). Used when the answer's numbers are in the question. */
+const POINTS_AT_A_CHOICE = /\b(greatest|largest|biggest|smallest|least|most|highest|lowest|longest|shortest|heaviest|lightest|answer|choose|pick|option|choice)\b/i;
+
 const NUMBER_WORDS: Record<string, string> = {
   two: '2', three: '3', four: '4', five: '5', six: '6', seven: '7', eight: '8',
   nine: '9', ten: '10', eleven: '11', twelve: '12',
@@ -267,8 +270,27 @@ export function leaksAnswer(say: string, q: BoardCoachQuestion): boolean {
     for (let i = 0; i < answerNumbers.length; i++) {
       if (!inQuestion[answerNumbers[i]]) fresh.push(answerNumbers[i]);
     }
-    if (fresh.length === 0) return false;
     const said = asLookup(numbersIn(numberWordsToDigits(say)));
+    if (fresh.length === 0) {
+      // Every number of the answer is printed in the question ("Which is the
+      // greatest: 0.5, 0.25 or 0.3?"), so saying it is not in itself a leak.
+      // It is one when the remark singles the answer out: it says the answer's
+      // numbers, none that belong only to the other choices, and uses a word
+      // that points at a choice.
+      for (let i = 0; i < answerNumbers.length; i++) {
+        if (!said[answerNumbers[i]]) return false;
+      }
+      const inAnswer = asLookup(answerNumbers);
+      const others = [q.option1, q.option2, q.option3, q.option4];
+      for (let o = 0; o < others.length; o++) {
+        if (o === idx) continue;
+        const otherNumbers = numbersIn(others[o] || '');
+        for (let i = 0; i < otherNumbers.length; i++) {
+          if (!inAnswer[otherNumbers[i]] && said[otherNumbers[i]]) return false;
+        }
+      }
+      return POINTS_AT_A_CHOICE.test(say);
+    }
     for (let i = 0; i < fresh.length; i++) {
       if (!said[fresh[i]]) return false;
     }

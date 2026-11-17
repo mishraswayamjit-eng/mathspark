@@ -26,6 +26,24 @@ const DB_DAILY_FEATURES: ReadonlySet<LlmFeature> = new Set<LlmFeature>([
   'solve',
 ]);
 
+/** India is UTC+5:30 all year round. */
+const IST_OFFSET_MS = 330 * 60_000;
+
+/** The moment today began in India: the daily budget resets at midnight there. */
+function istDayStart(now: Date): Date {
+  const shifted = new Date(now.getTime() + IST_OFFSET_MS);
+  return new Date(
+    Date.UTC(shifted.getUTCFullYear(), shifted.getUTCMonth(), shifted.getUTCDate()) - IST_OFFSET_MS,
+  );
+}
+
+/** The `UsageLog` row for today. Keyed on the UTC date, as the usage heartbeat does. */
+function usageLogDate(now: Date): Date {
+  const d = new Date(now.getTime());
+  d.setUTCHours(0, 0, 0, 0);
+  return d;
+}
+
 export interface UsageResult {
   allowed: boolean;
   remaining: number;
@@ -35,8 +53,9 @@ export interface UsageResult {
  * Per-feature usage check + increment. Generalised from the original
  * `chat/route.ts` implementation.
  *
- * For features in {@link DB_DAILY_FEATURES} this performs an atomic
- * read-check-increment of the student's shared daily AI budget. For all other
+ * For features in {@link DB_DAILY_FEATURES} this counts one message against the
+ * student's shared daily AI budget with a conditional update (only while the
+ * count is under the limit). The day runs midnight to midnight in India. For all other
  * features it is a no-op that always allows (gating happens at the route level).
  */
 export async function checkAndIncrementUsage(
@@ -47,14 +66,14 @@ export async function checkAndIncrementUsage(
     return { allowed: true, remaining: Number.POSITIVE_INFINITY };
   }
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  const now = new Date();
+  const dayStart = istDayStart(now);
+  const logDate = usageLogDate(now);
 
   return prisma.$transaction(async (tx) => {
     const student = await tx.student.findUnique({
       where: { id: studentId },
       select: {
-        aiChatMessagesUsedToday: true,
         lastActiveDate: true,
         subscription: { select: { aiChatDailyLimit: true } },
       },
@@ -65,28 +84,62 @@ export async function checkAndIncrementUsage(
     const limit = MONETIZATION_ENABLED
       ? (student.subscription?.aiChatDailyLimit ?? FREE_DAILY_LIMIT)
       : MONETIZATION_OFF_DAILY_LIMIT;
+    if (limit <= 0) return { allowed: false, remaining: 0 };
 
-    // Reset counter if last active date was before today.
+    // A new day in India starts the count again. Both writes below carry their
+    // own condition, so two requests arriving together cannot both slip past
+    // the limit: the database lets only one of them through.
     const lastActive = student.lastActiveDate ? new Date(student.lastActiveDate) : null;
-    const isNewDay = !lastActive || lastActive < today;
-    const usedToday = isNewDay ? 0 : student.aiChatMessagesUsedToday;
+    const isNewDay = !lastActive || lastActive < dayStart;
 
-    if (usedToday >= limit) return { allowed: false, remaining: 0 };
+    let counted = false;
+    if (isNewDay) {
+      const reset = await tx.student.updateMany({
+        where: {
+          id: studentId,
+          OR: [{ lastActiveDate: null }, { lastActiveDate: { lt: dayStart } }],
+        },
+        data: { aiChatMessagesUsedToday: 1, lastActiveDate: now },
+      });
+      counted = reset.count === 1;
+    }
+    if (!counted) {
+      const bumped = await tx.student.updateMany({
+        where: { id: studentId, aiChatMessagesUsedToday: { lt: limit } },
+        data: { aiChatMessagesUsedToday: { increment: 1 }, lastActiveDate: now },
+      });
+      if (bumped.count !== 1) return { allowed: false, remaining: 0 };
+    }
 
-    await tx.student.update({
+    const after = await tx.student.findUnique({
       where: { id: studentId },
-      data: {
-        aiChatMessagesUsedToday: usedToday + 1,
-        lastActiveDate: new Date(),
-      },
+      select: { aiChatMessagesUsedToday: true },
     });
 
     await tx.usageLog.upsert({
-      where: { studentId_date: { studentId, date: today } },
-      create: { studentId, date: today, aiChatMessages: 1 },
+      where: { studentId_date: { studentId, date: logDate } },
+      create: { studentId, date: logDate, aiChatMessages: 1 },
       update: { aiChatMessages: { increment: 1 } },
     });
 
-    return { allowed: true, remaining: limit - usedToday - 1 };
+    const used = after ? after.aiChatMessagesUsedToday : limit;
+    return { allowed: true, remaining: Math.max(0, limit - used) };
+  });
+}
+
+/**
+ * Give back one message of the daily budget: used when the model call failed
+ * and the child got nothing for it. Never takes the count below zero.
+ */
+export async function refundUsage(studentId: string, feature: LlmFeature): Promise<void> {
+  if (!DB_DAILY_FEATURES.has(feature)) return;
+
+  await prisma.student.updateMany({
+    where: { id: studentId, aiChatMessagesUsedToday: { gt: 0 } },
+    data: { aiChatMessagesUsedToday: { decrement: 1 } },
+  });
+  await prisma.usageLog.updateMany({
+    where: { studentId, date: usageLogDate(new Date()), aiChatMessages: { gt: 0 } },
+    data: { aiChatMessages: { decrement: 1 } },
   });
 }

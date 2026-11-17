@@ -25,6 +25,18 @@ interface MessageBubbleProps {
 }
 
 /**
+ * Sparky is asked to write plain text, and the chat shows it as written. If a
+ * reply slips into Markdown anyway, take out the marks a child would otherwise
+ * see: `**bold**` and `# heading`. Nothing else is touched (a single * can be
+ * a multiplication sign).
+ */
+export function plainReply(text: string): string {
+  return text
+    .replace(/\*\*/g, '')
+    .replace(/^[ \t]*#{1,6}[ \t]+/gm, '');
+}
+
+/**
  * Presentational chat bubble shared by the full `/chat` page and the floating
  * Sparky widget. Height-agnostic — no viewport assumptions so it slots into any
  * scroll container.
@@ -68,7 +80,7 @@ export default function MessageBubble({ msg, studentInitial, onShowVisual }: Mes
           </div>
         )}
         {text && (
-          <p className="text-[15px] leading-relaxed text-ink font-medium whitespace-pre-wrap [overflow-wrap:anywhere]">{text}</p>
+          <p className="text-[15px] leading-relaxed text-ink font-medium whitespace-pre-wrap [overflow-wrap:anywhere]">{plainReply(text)}</p>
         )}
         {visual && onShowVisual && (
           <button

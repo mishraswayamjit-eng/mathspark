@@ -8,7 +8,7 @@ import type Anthropic from '@anthropic-ai/sdk';
 import type { ChatScreenContext } from '@/lib/llm/guardrails';
 import { buildTutorStablePrompt, buildTutorStudentPrompt } from '@/lib/llm/tutorPrompt';
 import { streamChat } from '@/lib/llm/complete';
-import { checkAndIncrementUsage } from '@/lib/llm/usage';
+import { checkAndIncrementUsage, refundUsage } from '@/lib/llm/usage';
 import type { LlmMessage } from '@/lib/llm/types';
 import { PHOTO_NOTE } from '@/lib/chatPhotoNote';
 
@@ -33,6 +33,8 @@ const IMAGE_TYPES = {
 const EMPTY_FALLBACK = "Hmm, I couldn't put that one into words. 🤔 Could you ask me in a different way?";
 // Shown when the model call fails. Never fed back to the model as if Sparky had said it.
 const ERROR_FALLBACK = "I'm having a little trouble thinking right now! 🤔 Could you try again in a moment?";
+// Added to the end of a reply that stopped part-way.
+const CUT_OFF_NOTE = 'Oh, I got cut off before I finished! 🙈 Shall I carry on?';
 
 // ── POST /api/chat ────────────────────────────────────────────────────────────
 
@@ -44,7 +46,8 @@ export async function POST(req: Request) {
 
   // Rate limit: 10 messages per minute per student
   if (!checkRateLimit(`chat:${studentId}`, 10, 60_000)) {
-    return Response.json({ error: 'Slow down a bit! Try again in a moment.' }, { status: 429 });
+    // `reason` tells the app which limit this is: "rate" passes in a minute, "daily" lasts until tomorrow.
+    return Response.json({ error: 'Slow down a bit! Try again in a moment.', reason: 'rate' }, { status: 429 });
   }
 
   let sessionId: string | undefined;
@@ -106,11 +109,17 @@ export async function POST(req: Request) {
   // What the child said, as text. With a photo and no words, ask for the obvious thing.
   const typed = message.trim() || 'Here is a photo of my working. Can you check it and help me?';
 
+  // Guard: the API key must exist before anything is counted or stored.
+  if (!isLlmConfigured()) {
+    logError('[chat] ANTHROPIC_API_KEY is not set');
+    return Response.json({ error: 'AI tutor is not configured. Set ANTHROPIC_API_KEY in Vercel env vars.' }, { status: 503 });
+  }
+
   // Rate limit / usage check
   const usage = await checkAndIncrementUsage(studentId, 'chat');
   if (!usage.allowed) {
     return Response.json(
-      { error: 'Sparky needs to recharge! Keep practicing questions and chat again tomorrow 🔋' },
+      { error: 'Sparky needs to recharge! Keep practicing questions and chat again tomorrow 🔋', reason: 'daily' },
       { status: 429 },
     );
   }
@@ -169,6 +178,12 @@ export async function POST(req: Request) {
   await prisma.chatMessage.create({
     data: { sessionId: session.id, role: 'user', content: imageBase64 ? `${PHOTO_NOTE} ${typed}` : typed },
   });
+  // Mark the session as just used, so "most recent session" in /api/chat/history
+  // means the one last talked in, not the one last created.
+  await prisma.conversationSession.update({
+    where: { id: session.id },
+    data: { updatedAt: new Date() },
+  });
 
   // Build conversation history for Anthropic: the most recent messages, oldest
   // first. (They are loaded newest-first so a long chat keeps its LATEST turns;
@@ -200,12 +215,6 @@ export async function POST(req: Request) {
     messages.push({ role: 'user', content: typed });
   }
 
-  // Guard: API key must exist before we even open the stream
-  if (!isLlmConfigured()) {
-    logError('[chat] ANTHROPIC_API_KEY is not set');
-    return Response.json({ error: 'AI tutor is not configured. Set ANTHROPIC_API_KEY in Vercel env vars.' }, { status: 503 });
-  }
-
   const currentSessionId = session.id;
 
   const stream = streamChat(
@@ -223,12 +232,22 @@ export async function POST(req: Request) {
     {
       onErrorFallback: ERROR_FALLBACK,
       onEmptyFallback: EMPTY_FALLBACK,
+      onCutOffNote: CUT_OFF_NOTE,
       onError: (err) => {
         const e = err as { status?: number; message?: string };
         logError(`[chat] Anthropic error: ${e.status} ${e.message}`, err);
       },
       onComplete: async (text, truncated) => {
         if (!text) return;
+        // The call broke before a single word came through: that turn does not
+        // count against the child's daily messages.
+        if (text === ERROR_FALLBACK) {
+          try {
+            await refundUsage(studentId, 'chat');
+          } catch (err) {
+            logError('[chat] could not give the message back', err);
+          }
+        }
         await prisma.chatMessage.create({
           data: {
             sessionId: currentSessionId,

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Sparky from '@/components/Sparky';
-import MessageBubble from '@/components/chat/MessageBubble';
+import MessageBubble, { plainReply } from '@/components/chat/MessageBubble';
 import TypingDots from '@/components/chat/TypingDots';
 import ChatComposer from '@/components/chat/ChatComposer';
 import { useSparkyChat, getQuickReplies } from '@/components/chat/useSparkyChat';
@@ -68,7 +68,7 @@ export default function ChatPage() {
   return (
     // Phones: the usual single column. Wide screens: the page breaks out of the
     // narrow app column into two panels, conversation and whiteboard.
-    <div className="bg-paper h-[calc(100vh-64px)] lg:fixed lg:inset-x-0 lg:top-0 lg:bottom-16 lg:h-auto lg:z-10">
+    <div className="bg-paper h-[calc(100dvh-64px)] lg:fixed lg:inset-x-0 lg:top-0 lg:bottom-16 lg:h-auto lg:z-10">
       <div className="h-full mx-auto lg:max-w-6xl lg:grid lg:grid-cols-2 lg:gap-5 lg:p-5">
 
         {/* ══ Conversation ══ */}
@@ -95,7 +95,8 @@ export default function ChatPage() {
             </div>
             <button
               onClick={startNewChat}
-              className="text-white/70 hover:text-white text-xs font-bold px-3 rounded-full border-2 border-white/30 hover:border-white/60 transition-colors min-h-[48px]"
+              disabled={isLoading}
+              className="text-white/70 hover:text-white text-xs font-bold px-3 rounded-full border-2 border-white/30 hover:border-white/60 transition-colors min-h-[48px] disabled:opacity-40"
             >
               New chat
             </button>
@@ -129,7 +130,7 @@ export default function ChatPage() {
                         <VisualBoard spec={live.visual} />
                       </div>
                     )}
-                    <p className="text-[15px] leading-relaxed text-ink font-medium whitespace-pre-wrap [overflow-wrap:anywhere]">{live.text}</p>
+                    <p className="text-[15px] leading-relaxed text-ink font-medium whitespace-pre-wrap [overflow-wrap:anywhere]">{plainReply(live.text)}</p>
                     <span className="inline-block w-1 h-4 bg-action animate-pulse ml-0.5 rounded" />
                   </div>
                 ) : (

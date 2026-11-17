@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import type { RefObject } from 'react';
 import type { ChatAttachment } from '@/components/chat/useSparkyChat';
+import { MAX_CHAT_MESSAGE_CHARS } from '@/components/chat/useSparkyChat';
 import type { VoiceState } from '@/components/chat/useVoiceLoop';
 
 interface ChatComposerProps {
@@ -124,6 +125,7 @@ export default function ChatComposer({
           onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); if (canSend) onSend(); } }}
           placeholder="Ask Sparky anything math…"
           aria-label="Message to Sparky"
+          maxLength={MAX_CHAT_MESSAGE_CHARS}
           disabled={isLoading}
           className="flex-1 min-w-0 bg-white border-2 border-line rounded-control px-4 py-2.5 text-sm text-ink outline-none focus:border-action font-medium placeholder-gray-400 min-h-[48px]"
         />

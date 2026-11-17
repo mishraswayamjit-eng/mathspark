@@ -6,6 +6,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { ScreenContext } from '@/lib/sparkyContext';
 import { PHOTO_NOTE } from '@/lib/chatPhotoNote';
 import { extractVisual } from '@/lib/visuals/spec';
+import { useStudent } from '@/components/shell/StudentProvider';
 
 // Shared across the full /chat page AND the floating Sparky widget so both
 // surfaces drive one conversation (persisted session id below).
@@ -104,6 +105,51 @@ function getOpeningMessage(name: string, grade: number, lastPracticeDate: string
   return `Hi ${name}! 🌟 Ready for some math magic today? Ask me anything or I can quiz you!`;
 }
 
+/** The current streak, from the object the streak tracker keeps in localStorage. */
+function readStreakDays(): number {
+  try {
+    const raw = localStorage.getItem('mathspark_streak');
+    if (!raw) return 0;
+    const parsed = JSON.parse(raw) as { currentStreak?: unknown } | null;
+    const days = parsed ? parsed.currentStreak : 0;
+    return typeof days === 'number' && isFinite(days) ? days : 0;
+  } catch {
+    return 0;
+  }
+}
+
+// ── Reading saved history ─────────────────────────────────────────────────────
+
+interface StoredChatMessage {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  /** ISO time the message was saved. */
+  createdAt?: string;
+}
+
+function toUiMessages(stored: StoredChatMessage[]): ChatUiMessage[] {
+  return stored.map((m) => ({
+    id: m.id,
+    role: m.role,
+    // Photos are not kept: show a camera in place of the internal note.
+    content: m.role === 'user' && m.content.indexOf(PHOTO_NOTE) === 0
+      ? `📷 ${m.content.slice(PHOTO_NOTE.length).trim()}`
+      : m.content,
+  }));
+}
+
+// A reply that was still being written when this view opened (the child came
+// from the other chat view mid-reply): how long to wait before looking again.
+const PENDING_REPLY_RECHECK_MS = 6000;
+const PENDING_REPLY_WINDOW_MS = 2 * 60_000;
+
+// Added when the connection drops part-way through a reply: what arrived is kept.
+const CUT_OFF_NOTE = 'Oh, I got cut off there! 🙈 Ask me to carry on and I will finish.';
+
+// The longest message the server accepts (see /api/chat).
+export const MAX_CHAT_MESSAGE_CHARS = 6000;
+
 // ── Hook ──────────────────────────────────────────────────────────────────────
 
 interface UseSparkyChatOptions {
@@ -114,9 +160,15 @@ interface UseSparkyChatOptions {
 export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
   const { onNoStudent } = opts;
 
-  const [studentId,    setStudentId]    = useState<string | null>(null);
-  const [studentName,  setStudentName]  = useState('');
-  const [studentGrade, setStudentGrade] = useState(4);
+  // The signed-in child comes from the app shell (server truth). localStorage is
+  // only a fallback for the moment before the shell knows who is signed in.
+  const { student } = useStudent();
+  const [storedId,    setStudentId]    = useState<string | null>(null);
+  const [storedName,  setStudentName]  = useState('');
+  const [storedGrade, setStudentGrade] = useState(4);
+  const studentId    = student ? student.id : storedId;
+  const studentName  = student ? student.name : storedName;
+  const studentGrade = student ? student.grade : storedGrade;
   const [sessionId,    setSessionId]    = useState<string | null>(null);
   const [messages,     setMessages]     = useState<ChatUiMessage[]>([]);
   const [input,        setInput]        = useState('');
@@ -142,48 +194,79 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
   // Boot: load student + rehydrate the shared session (persisted id first, else
   // most recent) + proactive opening nudge.
   useEffect(() => {
-    const sid   = localStorage.getItem('mathspark_student_id');
-    const name  = localStorage.getItem('mathspark_student_name') ?? '';
-    const grade = parseInt(localStorage.getItem('mathspark_student_grade') ?? '4', 10);
+    const storedGradeNum = parseInt(localStorage.getItem('mathspark_student_grade') ?? '4', 10);
+    const sid   = student ? student.id : localStorage.getItem('mathspark_student_id');
+    const name  = student ? student.name : (localStorage.getItem('mathspark_student_name') ?? '');
+    const grade = student ? student.grade : (isNaN(storedGradeNum) ? 4 : storedGradeNum);
     if (!sid) { onNoStudent?.(); setInitialized(true); return; }
     setStudentId(sid);
     setStudentName(name);
-    setStudentGrade(isNaN(grade) ? 4 : grade);
+    setStudentGrade(grade);
 
     const persisted = (() => { try { return localStorage.getItem(SESSION_KEY); } catch { return null; } })();
     const url = persisted ? `/api/chat/history?sessionId=${encodeURIComponent(persisted)}` : '/api/chat/history';
 
     const showOpening = () => {
-      const lastPractice = localStorage.getItem('mathspark_last_practice') ?? null;
-      const streak = parseInt(localStorage.getItem('mathspark_streak') ?? '0', 10);
-      const opening = getOpeningMessage(name || 'friend', isNaN(grade) ? 4 : grade, lastPractice, streak);
+      // Written by the practice screens (a `toDateString()` value) and the streak tracker.
+      const lastPractice = localStorage.getItem('mathspark_last_practice_date') ?? null;
+      const opening = getOpeningMessage(name || 'friend', grade, lastPractice, readStreakDays());
       setMessages([{ id: 'opening', role: 'assistant', content: opening }]);
     };
 
+    let alive = true;
+    let recheckTimer: ReturnType<typeof setTimeout> | null = null;
+
     fetch(url)
       .then((r) => { if (!r.ok) throw new Error('Fetch failed'); return r.json(); })
-      .then((session) => {
-        if (session?.messages?.length > 0) {
-          setSessionId(session.id);
-          persistSession(session.id);
-          setMessages(session.messages.map((m: { id: string; role: 'user' | 'assistant'; content: string }) => ({
-            id: m.id,
-            role: m.role,
-            // Photos are not kept: show a camera in place of the internal note.
-            content: m.role === 'user' && m.content.indexOf(PHOTO_NOTE) === 0
-              ? `📷 ${m.content.slice(PHOTO_NOTE.length).trim()}`
-              : m.content,
-          })));
+      .then((session: { id: string; messages?: StoredChatMessage[] } | null) => {
+        if (!alive) return;
+        const stored = session && session.messages ? session.messages : [];
+        if (session && stored.length > 0) {
+          const loadedId = session.id;
+          setSessionId(loadedId);
+          persistSession(loadedId);
+          setMessages(toUiMessages(stored));
+
+          // The last word is the child's: Sparky's reply is probably still being
+          // written (they moved here from the other chat view mid-reply). Show
+          // the waiting state and look once more after a short while.
+          // Only for a message sent in the last couple of minutes: an old
+          // unanswered one is not going to get its reply now.
+          const last = stored[stored.length - 1];
+          const sentAt = last.createdAt ? new Date(last.createdAt).getTime() : NaN;
+          if (last.role === 'user' && !isNaN(sentAt) && Math.abs(Date.now() - sentAt) < PENDING_REPLY_WINDOW_MS) {
+            setIsLoading(true);
+            recheckTimer = setTimeout(() => {
+              recheckTimer = null;
+              fetch(`/api/chat/history?sessionId=${encodeURIComponent(loadedId)}`)
+                .then((r) => (r.ok ? r.json() : null))
+                .then((again: { messages?: StoredChatMessage[] } | null) => {
+                  if (!alive) return;
+                  if (again && again.messages && again.messages.length > 0
+                    && again.messages[again.messages.length - 1].id !== last.id) {
+                    setMessages(toUiMessages(again.messages));
+                  }
+                })
+                .catch((err) => logError('[sparky] recheck session history', err))
+                .then(() => { if (alive) setIsLoading(false); });
+            }, PENDING_REPLY_RECHECK_MS);
+          }
         } else {
           showOpening();
         }
         setInitialized(true);
       })
       .catch((err) => {
+        if (!alive) return;
         logError('[sparky] fetch session history', err);
         showOpening();
         setInitialized(true);
       });
+
+    return () => {
+      alive = false;
+      if (recheckTimer !== null) clearTimeout(recheckTimer);
+    };
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── Photo of working ──────────────────────────────────────────────────────
@@ -236,6 +319,21 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
       ...(photo ? { imageUrl: photo.previewUrl } : {}),
     }]);
 
+    // A message typed in the composer that did not get through goes back into
+    // the composer (words and photo), so the child can send it again without
+    // retyping. Canned requests (chips, the help button, voice) are left alone.
+    const fromComposer = !(opts && opts.usePhoto === false);
+    const putDraftBack = () => {
+      if (!fromComposer) return;
+      setMessages((prev) => prev.filter((m) => m.id !== userMsgId));
+      setInput(text);
+      if (photo) setAttachment(photo);
+    };
+
+    // What has arrived of the reply so far. Kept outside the `try` so a dropped
+    // connection does not throw away what the child was already reading.
+    let fullText = '';
+
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
@@ -249,13 +347,23 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
       });
 
       if (res.status === 429) {
-        setRateLimited(true);
-        // Two distinct 429 reasons: per-minute rate limit vs daily usage budget.
-        let content = "You've been chatting a lot today — great work! 🌟 Come back tomorrow for more math adventures!";
+        // Two distinct 429 reasons: the per-minute rate limit ("rate", passes in a
+        // moment) and the daily budget ("daily", lasts until tomorrow). Only the
+        // daily one takes the composer away.
+        let content = '';
+        let reason = '';
         try {
           const body = await res.clone().json();
           if (typeof body?.error === 'string' && body.error) content = body.error;
-        } catch { /* keep default */ }
+          if (typeof body?.reason === 'string') reason = body.reason;
+        } catch { /* keep defaults */ }
+        if (reason === 'daily') {
+          setRateLimited(true);
+          if (!content) content = "You've been chatting a lot today — great work! 🌟 Come back tomorrow for more math adventures!";
+        } else {
+          putDraftBack();
+          if (!content) content = "Let's slow down a little! 🐢 Try again in a moment.";
+        }
         setMessages((prev) => [...prev, { id: `limit-${Date.now()}`, role: 'assistant', content }]);
         return null;
       }
@@ -304,7 +412,6 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
 
       const reader  = res.body.getReader();
       const decoder = new TextDecoder();
-      let fullText  = '';
 
       while (true) {
         const { done, value } = await reader.read();
@@ -319,6 +426,13 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
       // Callers (voice mode) get the words only, without the whiteboard tag.
       return extractVisual(fullText).text || null;
     } catch {
+      if (fullText.trim()) {
+        // The connection dropped part-way: keep what arrived, and say it was cut off.
+        const kept = `${fullText}\n\n${CUT_OFF_NOTE}`;
+        setMessages((prev) => [...prev, { id: `asst-${Date.now()}`, role: 'assistant', content: kept }]);
+        return null;
+      }
+      putDraftBack();
       setMessages((prev) => [...prev, {
         id: `err-${Date.now()}`,
         role: 'assistant',
@@ -335,6 +449,8 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
   // ── New conversation ──────────────────────────────────────────────────────
 
   const startNewChat = useCallback(() => {
+    // Not while a reply is arriving: it would land in the new conversation.
+    if (isLoading) return;
     setSessionId(null);
     persistSession(null);
     setRateLimited(false);
@@ -343,7 +459,7 @@ export function useSparkyChat(opts: UseSparkyChatOptions = {}) {
       role: 'assistant',
       content: `Starting fresh! 🌟 What math topic shall we explore today, ${studentName || 'friend'}?`,
     }]);
-  }, [studentName, persistSession]);
+  }, [studentName, persistSession, isLoading]);
 
   const studentInitial = studentName ? studentName[0].toUpperCase() : '?';
 
