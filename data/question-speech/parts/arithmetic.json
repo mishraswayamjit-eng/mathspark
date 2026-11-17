@@ -197,7 +197,7 @@
   "hints": [
    "You don't need the prices at all for this question! Focus on what's being asked, the weight per box.",
    "First, find the total weight of all sweets by adding 4.75 kilograms and 3.25 kilograms together.",
-   "Here's a similar problem: If you have 2.4 kilograms of ladoos and 1.6 kilograms of barfi, and you split them equally into 4 boxes, the total weight is 2.4 plus 1.6, which is 4.0 kilograms. Each box gets 4.0 divided by 4 equals 1.0 kilogram. Easy, right? Now try yours!"
+   "Here's a similar problem. You have 2.4 kilograms of ladoos and 1.6 kilograms of barfi, and you share them equally into 5 boxes. The total weight is 2.4 plus 1.6, which equals 4 kilograms. Each box gets 4 divided by 5, which equals 0.8 kilograms."
   ],
   "steps": [
    "Read carefully! The question asks for the weight in each box, not the cost. So the prices are extra information, a little trick!",
@@ -494,7 +494,7 @@
    "12.83 seconds"
   ],
   "hints": [
-   "Think carefully: if Kiran was faster, does that mean his time was more or less than Rohan's?",
+   "Think carefully: if Kiran was faster, was his time more or less than Rohan's?",
    "Faster means less time! So subtract 1.65 from 14.38.",
    "Here's a similar problem: Priya ran a race in 18.52 seconds. Sneha finished 2.34 seconds faster. Sneha's time equals 18.52 minus 2.34, which is 16.18 seconds. Notice we subtract because faster means a shorter time!"
   ],
@@ -633,27 +633,6 @@
    "Ravi donated 250 rupees to the charity stall!"
   ]
  },
- "AIGEN_grade5_2069901c-f587-4275-b283-28732d16980b": {
-  "q": "Neha is playing a treasure hunt game at her school's Science Fair. The game uses a vertical number line where the ground floor is marked as 0. She starts at floor 3, which is 3 floors above the ground. First, she takes a lift down 5 floors to pick up a clue. Then, she climbs up 2 floors to find the treasure. At which floor does Neha find the treasure?",
-  "options": [
-   "Floor 0",
-   "Floor minus 2",
-   "Floor 6",
-   "Floor 10"
-  ],
-  "hints": [
-   "Think carefully: going down means subtracting, and going up means adding. Start from floor 3 and do each move one at a time!",
-   "First, calculate where Neha is after going down 5 floors: 3 minus 5 equals what?",
-   "Here's a similar problem: Ravi starts at floor 2. He goes down 4 floors, then up 1 floor. Step 1: 2 minus 4 equals minus 2. Step 2: minus 2 plus 1 equals minus 1. So Ravi ends up at floor minus 1, one floor below ground."
-  ],
-  "steps": [
-   "Neha starts at floor 3.",
-   "She takes a lift down 5 floors. Going down means we subtract.",
-   "So after the lift ride, she is at floor minus 2, two floors below the ground.",
-   "Then she climbs up 2 floors. Going up means we add.",
-   "Neha finds the treasure at floor 0, which is the ground floor!"
-  ]
- },
  "AIGEN_grade5_214a159e-f463-42ca-820a-3cf3c3a4746f": {
   "q": "Riya goes to a Diwali mela with 500 rupees. She buys 3 boxes of sparklers costing 45.75 rupees each and 4 packets of diyas costing 32.50 rupees each. She also pays 12.25 rupees for a bag to carry everything. How much money does Riya have left after all her purchases?",
   "options": [
@@ -673,26 +652,6 @@
    "Add the bag cost to find the total amount spent.",
    "Subtract the total spent from 500 rupees to find how much Riya has left.",
    "Riya has 220.50 rupees left!"
-  ]
- },
- "AIGEN_grade5_223c949d-adbe-438c-bf25-ff76ccf7fb0a": {
-  "q": "Priya went to a Diwali mela with 50.00 rupees. She bought a packet of sparklers for 18.75 rupees and a box of diyas for 14.50 rupees. She then found a 5 rupee coin on the ground! How much money does Priya have now?",
-  "options": [
-   "21.75 rupees",
-   "16.75 rupees",
-   "33.25 rupees",
-   "11.75 rupees"
-  ],
-  "hints": [
-   "Think carefully: Priya spends some money and finds some money. Which operations do you need?",
-   "First, add up the total amount she spent: 18.75 rupees plus 14.50 rupees. Then subtract that from 50.00 rupees, and finally add the 5 rupees she found.",
-   "Here's a similar problem: Rahul has 40.00 rupees. He buys a toy for 12.25 rupees and a snack for 10.50 rupees. He then receives 3 rupees from his friend. Money left equals 40.00 rupees minus 12.25 rupees minus 10.50 rupees plus 3.00 rupees, that is 40.00 rupees minus 22.75 rupees plus 3.00 rupees, that is 17.25 rupees plus 3.00 rupees, which is 20.25 rupees."
-  ],
-  "steps": [
-   "Find the total amount Priya spent on sparklers and diyas.",
-   "Subtract the total spending from the money she started with.",
-   "Now add the 5 rupee coin she found on the ground.",
-   "So Priya now has 21.75 rupees!"
   ]
  },
  "AIGEN_grade5_228c971f-b4fb-435b-abd3-1cdfea1c80a7": {
@@ -738,26 +697,6 @@
    "So Meera's family needs exactly 25 gift boxes. Let's verify: 25 times 48 equals 1,200."
   ]
  },
- "AIGEN_grade5_28ada5d8-b5fd-4601-af9c-03ccd1851975": {
-  "q": "During a cricket tournament in Pune, Team A scored 247 runs in the first innings and 189 runs in the second innings. Team B scored 312 runs in the first innings. In the second innings, Team B needed to match Team A's total score to tie the match. How many runs does Team B need to score in their second innings to tie the match?",
-  "options": [
-   "124",
-   "134",
-   "58",
-   "436"
-  ],
-  "hints": [
-   "First figure out Team A's total across both innings, then think about how much Team B still needs after their first innings!",
-   "Start by adding Team A's two innings: 247 plus 189 equals what?",
-   "Here's a similar problem: If Team X scores 150 and 120 in two innings, total equals 270, and Team Y scores 200 in the first innings, then Team Y needs 270 minus 200, which is 70 runs in the second innings to tie. See the pattern?"
-  ],
-  "steps": [
-   "Find Team A's total score by adding both innings.",
-   "Team B already scored 312 in their first innings. To tie, Team B's total must equal Team A's total of 436.",
-   "Subtract to find how many runs Team B needs in the second innings.",
-   "So Team B needs exactly 124 runs in their second innings to tie the match!"
-  ]
- },
  "AIGEN_grade5_28f3d667-ab18-4f7f-941c-dc93bd1f3668": {
   "q": "Arjun's father runs a chai stall at a railway station. Every day, he fills large kettles with chai. Each kettle serves exactly 18 cups. On Monday, he sold 47 kettles. On Tuesday, he sold 35 kettles. On Wednesday, he sold 28 kettles. He earns 15 rupees per cup of chai. However, every day he spends 1200 rupees on milk, sugar, and tea leaves. What was Arjun's father's total profit, earnings minus expenses, over these three days?",
   "options": [
@@ -791,7 +730,7 @@
   "hints": [
    "Think of 'Sandstorm' moves as negative numbers and 'Oasis' moves as positive numbers. Add them all up to find Vikram's final position!",
    "Start by writing each move as an integer: Round 1 is minus 8, Round 2 is plus 5, Round 3 is minus 11, Round 4 is plus 3, Round 5 is minus 6. Now add them step by step.",
-   "Here's a similar problem: Suppose someone starts at 0, moves 4 left, minus 4, then 7 right, plus 7, then 2 left, minus 2. Their position equals minus 4 plus 7 plus negative 2, which is plus 1. They are at position plus 1, so they are 1 step to the left of 0 to get back, wait, they need to go 1 step left to reach 0. The distance is 1, direction is left. Always check: if your final position is negative, you must go right to reach 0!"
+   "A similar problem: someone starts at 0, moves 4 steps left, then 7 steps right, then 5 steps left. As integers that is minus 4, plus 7, minus 5, which equals minus 2. They end at minus 2, which is 2 steps to the left of 0, so they must walk 2 steps to the right to get back to 0."
   ],
   "steps": [
    "Convert each round into an integer. Sandstorm, left, means negative, Oasis, right, means positive.",
@@ -1069,26 +1008,6 @@
    "So Team B must score 247 runs in their second innings to win by exactly 15 runs."
   ]
  },
- "AIGEN_grade5_3a892c05-4d86-4368-9fe2-e718b43ae720": {
-  "q": "Priya went to a Diwali mela with 500 rupees. She bought bangles for 137 rupees, a box of ladoos for 218 rupees, and a small diya set for 89 rupees. On her way home, she found a 20 rupee coin on the ground! How much money does Priya have now?",
-  "options": [
-   "76 rupees",
-   "64 rupees",
-   "96 rupees",
-   "56 rupees"
-  ],
-  "hints": [
-   "First figure out how much Priya spent in total, then subtract from 500 rupees. But wait, don't forget about the coin she found!",
-   "Add up all three purchases: 137 rupees plus 218 rupees plus 89 rupees equals what?",
-   "Here's a similar problem: Ravi had 300 rupees. He spent 80 rupees on a book and 150 rupees on a toy. Then he found 10 rupees. Money left equals 300 minus, open bracket, 80 plus 150, close bracket, plus 10, that is 300 minus 230 plus 10, which is 80 rupees. Try the same approach with Priya's numbers!"
-  ],
-  "steps": [
-   "Add up everything Priya spent at the mela.",
-   "Subtract the total spending from the money she started with.",
-   "She found a 20 rupee coin, so add that back!",
-   "Priya now has 76 rupees."
-  ]
- },
  "AIGEN_grade5_3c480d38-865b-48b5-babb-23231022d8bf": {
   "q": "Ravi's father runs a chai stall near a railway station. Every morning, he prepares chai in big pots. Each pot makes exactly 24 cups of chai. On a busy Monday, he sold 13 full pots of chai at 15 rupees per cup. How much money did he earn that Monday?",
   "options": [
@@ -1160,8 +1079,8 @@
   ],
   "hints": [
    "After each instruction, carefully track the floor number before moving to the next. Pay special attention to 'distance from 0', that's always a positive number!",
-   "Start at 0. After going down 6: you're at minus 6. After going up 3: you're at minus 3. Now, the distance from 0 is 3, so 'twice as many' is 6. Go down 6 floors from minus 3 and so on.",
-   "Here's a similar problem: An ant starts at 0. It goes left 4, then right 2, now at minus 2. Then it goes left by 3 times its distance from 0: distance equals 2, so 3 times 2 equals 6, now at minus 2 minus 6 equals minus 8. Then it goes right by the absolute value of its position: the absolute value of minus 8, which is 8, so minus 8 plus 8 equals 0. See how tracking each step carefully is the key?"
+   "Start at 0. Going down 6 floors takes you to minus 6, and going up 3 floors takes you to minus 3. Now work out how far minus 3 is from 0 before the next move.",
+   "A similar problem: an ant starts at 0. It goes left 5 and right 3, so it is at minus 2. Its distance from 0 is 2. Next it goes left by 3 times that distance, which is 6, so it is at minus 2, minus 6, which equals minus 8. Then it goes right 1 and ends at minus 7."
   ],
   "steps": [
    "Start at floor 0. Go down 6 floors.",
@@ -1184,7 +1103,7 @@
   "hints": [
    "First find the total number of batches over both days, then figure out the total milk needed, and finally see how many full packets that requires. Watch out, they asked for full packets used, so think about whether there's leftover milk!",
    "Start by adding the batches: 48 plus 36. Then multiply by 375 millilitres to get total milk used.",
-   "Here's a similar problem: A bakery uses 250 millilitres of cream per cake. They bake 30 cakes on Monday and 20 on Tuesday. Cream comes in 3000 millilitre cartons. Total cakes equals 50, total cream equals 50 times 250, which is 12500 millilitres. Number of cartons equals 12500 divided by 3000, which is 4, remainder 500. So they needed to open 5 cartons, 4 full ones used up completely, plus a 5th one partially used. That means 5 cartons were used total."
+   "Here's a similar problem: A bakery uses 200 millilitres of cream per cake. They bake 30 cakes on Monday and 20 on Tuesday, so 30 plus 20 equals 50 cakes. Total cream is 50 times 200, which equals 10,000 millilitres. Cream comes in 2,000 millilitre cartons, so they use 10,000 divided by 2,000, which equals 5 cartons."
   ],
   "steps": [
    "Find the total number of batches over the weekend.",
@@ -1226,7 +1145,7 @@
   "hints": [
    "First, figure out who the two highest earners are and who the two lowest earners are by ranking all four amounts!",
    "Rank the earnings: Kiran, 5,12,345 rupees, is more than Ravi, 4,75,628 rupees, who is more than Meena, 3,89,457 rupees, who is more than Priya, 2,98,076 rupees. Now add the top two and the bottom two separately.",
-   "Here's a similar problem: Three friends scored 85, 72, and 63 in a test. The difference between the highest score and the sum of the other two is: 85 minus, open bracket, 72 plus 63, close bracket, equals 85 minus 135, which is 50, we'd take the positive difference. Notice how you need to add first, then subtract!"
+   "A similar problem: four friends scored 95, 85, 60 and 50 in a test. The two highest scores add to 95 plus 85, which is 180, and the two lowest add to 60 plus 50, which is 110. The difference is 180 minus 110, which is 70."
   ],
   "steps": [
    "List all four earnings and rank them from highest to lowest.",
@@ -1333,7 +1252,7 @@
   "hints": [
    "First find each player's total score separately, then compare them. Remember, \"how many more\" means you subtract the smaller from the larger!",
    "Start by adding Meera's scores step by step: positive 6 plus negative 9 equals what? Then keep adding the remaining rounds.",
-   "Here's a similar problem: If Player A scores plus 3, minus 7, plus 2 and Player B scores minus 4, plus 5, plus 1, then A's total equals 3 minus 7 plus 2, which is minus 2 and B's total equals minus 4 plus 5 plus 1, which is 2. B has 2 minus negative 2 equals 4 more points than A."
+   "A similar problem: Player A scores plus 5, minus 8 and plus 2, and Player B scores minus 2, plus 6 and plus 3. A's total is 5 minus 8 plus 2, which equals minus 1. B's total is minus 2, plus 6, plus 3, which equals 7. B has 7 take away minus 1, which is 8 more points than A."
   ],
   "steps": [
    "Calculate Meera's total score by adding her 4 rounds: positive 6 plus negative 9 plus positive 4 plus negative 3.",
@@ -1366,27 +1285,6 @@
    "Ravi now has 3,147 rupees!"
   ]
  },
- "AIGEN_grade5_548a38da-6cfc-42c5-8ce4-61cca19c2bb4": {
-  "q": "During Diwali, Ravi's family bought firecrackers worth 2,475 rupees, sweets worth 1,368 rupees, and decorations worth 957 rupees. They had set aside 5,000 rupees for Diwali shopping. How much money is left after all the purchases?",
-  "options": [
-   "190 rupees",
-   "300 rupees",
-   "210 rupees",
-   "200 rupees"
-  ],
-  "hints": [
-   "First, find the total amount spent by adding all three purchases together. Then subtract from 5,000 rupees!",
-   "Start by adding: 2,475 rupees plus 1,368 rupees plus 957 rupees. Line up the digits carefully!",
-   "Here's a similar problem: Priya spent 1,200 rupees on books, 350 rupees on pens, and 450 rupees on a bag. She had 2,500 rupees. Money left equals 2,500 rupees minus, open bracket, 1,200 rupees plus 350 rupees plus 450 rupees, close bracket, equals 2,500 rupees minus 2,000 rupees, which is 500 rupees. Try the same approach for Ravi's family!"
-  ],
-  "steps": [
-   "Add the cost of firecrackers and sweets first.",
-   "Now add the cost of decorations.",
-   "Total amount spent on Diwali shopping is 4,800 rupees.",
-   "Subtract the total spent from the budget of 5,000 rupees.",
-   "Ravi's family has 200 rupees left after all the purchases!"
-  ]
- },
  "AIGEN_grade5_555fbc6a-c850-4337-9d81-0fec7f9e3059": {
   "q": "During a cricket tournament in Kolkata, four teams collected donations for charity. Team A collected 12,475 rupees, Team B collected 8,963 rupees, Team C collected some amount, and Team D collected 15,208 rupees. The total collection by all four teams was 50,000 rupees. After the tournament, the organizers noticed that Team C's collection was actually 1,250 rupees more than what was originally recorded. What is the correct total collection by all four teams?",
   "options": [
@@ -1409,7 +1307,7 @@
   ]
  },
  "AIGEN_grade5_59dc509c-bc8b-4a65-8572-f95838c8194a": {
-  "q": "During a cricket tournament, Arjun keeps track of his batting average after each match. After 4 matches, his average runs per match is 32.75. In the 5th match, he scores some runs and his new average becomes 34.6. But then the scorer realizes there was an error, Arjun's 3rd match score was actually 2.5 runs more than what was originally recorded. After correcting this error, what is Arjun's corrected average runs per match across all 5 matches?",
+  "q": "During a cricket tournament, Arjun keeps track of his batting average after each match. After 4 matches, his average runs per match is 32.75. In the 5th match, he scores some runs and his new average becomes 34.6. But then the scorer realizes there was a mistake, Arjun's 3rd match score was actually 2.5 runs more than what was originally recorded. After correcting this mistake, what is Arjun's corrected average runs per match across all 5 matches?",
   "options": [
    "35.1",
    "34.6",
@@ -1419,7 +1317,7 @@
   "hints": [
    "Think about it in two parts: first figure out the total runs across 5 matches using the new average, then think about what happens to the total when you add the correction of 2.5 runs.",
    "Start by finding the total runs after 5 matches before the correction: Total equals Average times Number of matches, which is 34.6 times 5.",
-   "Here's a similar problem: If someone's average over 3 tests is 45.2, their total marks equals 45.2 times 3, which is 135.6. If one test score was actually 4 marks higher, new total equals 135.6 plus 4, which is 139.6, and new average equals 139.6 divided by 3, which is 46.533 and so on. See how adding to one score changes the total and then the average?"
+   "A similar problem: someone's average over 4 tests is 45.5, so the total is 45.5 times 4, which is 182 marks. One score should have been 4 marks higher, so the new total is 182 plus 4, which is 186. The new average is 186 divided by 4, which is 46.5."
   ],
   "steps": [
    "Find the total runs after 4 matches using the first average.",
@@ -1608,7 +1506,7 @@
   "hints": [
    "First, find Shopkeeper C's actual collection using the total. Then separately check the observation by computing A plus B minus 1275. Are they the same?",
    "Start by finding C's actual amount: C equals 52,000 minus, open bracket, A plus B plus D, close bracket, which is 52,000 minus, open bracket, 12,475 plus 8,960 plus 15,340, close bracket.",
-   "Here's a similar problem: Three friends collected 5,000 rupees, 3,200 rupees, and some unknown amount. Total was 12,000 rupees. Unknown equals 12,000 minus 5,000 minus 3,200, which is 3,800 rupees. If someone claims the unknown equals 5,000 plus 3,200 minus 4,000 equals 4,200, that's 400 rupees more than 3,800, so the claim would be incorrect!"
+   "A similar problem: three friends collected 5,000 rupees, 3,200 rupees and an unknown amount, and the total was 12,000 rupees. The unknown amount is 12,000 minus 5,000 minus 3,200, which is 3,800 rupees. Someone claims it equals 5,000 plus 3,200 minus 4,000, which is 4,200 rupees. That is not 3,800 rupees, so the claim does not match."
   ],
   "steps": [
    "Find the sum of amounts collected by A, B, and D.",
@@ -1783,26 +1681,6 @@
    "Arjun receives 1 point, so his final score is: 4 plus 1 equals 5."
   ]
  },
- "AIGEN_grade5_7576aebc-29c3-4f3a-88ae-acb5ccc157f5": {
-  "q": "Ravi went to a Diwali mela with 500 rupees. He bought a box of sparklers for 127 rupees and a packet of diyas for 89 rupees. His grandmother then gave him 75 rupees as a Diwali gift. How much money does Ravi have now?",
-  "options": [
-   "359 rupees",
-   "284 rupees",
-   "291 rupees",
-   "341 rupees"
-  ],
-  "hints": [
-   "Think carefully, Ravi spends money on two things, subtract, but then receives money from his grandmother, add back!",
-   "First, find the total amount Ravi spent: 127 rupees plus 89 rupees equals what?",
-   "Here's a similar problem: Priya has 400 rupees. She buys a book for 115 rupees and a pen for 60 rupees. Her uncle gives her 50 rupees. Money left equals 400 minus 115 minus 60 plus 50, that is 400 minus 175 plus 50, that is 225 plus 50, which is 275 rupees."
-  ],
-  "steps": [
-   "Find the total amount Ravi spent at the mela.",
-   "Subtract the total spending from the money he started with.",
-   "Now add the 75 rupee gift from his grandmother.",
-   "So Ravi now has 359 rupees."
-  ]
- },
  "AIGEN_grade5_76d19823-7cd7-4fb0-be0c-18f0181de900": {
   "q": "During a school cricket tournament in Chennai, Ananya scored runs in 5 innings: 12.5, 8.75, 15.25, 9.50, and 14.00. Her coach told her that to win the 'Best Batter' award, she needs a total of at least 65 runs. How many more runs does Ananya need to reach exactly 65 runs?",
   "options": [
@@ -1922,8 +1800,8 @@
   ],
   "hints": [
    "First, find the total of all five days by carefully adding the positive and negative amounts. Then compare that total to 50 rupees.",
-   "Start by adding all the profits: 45 rupees plus 60 rupees equals 105 rupees. Then add all the losses: 30 rupees plus 15 rupees plus 25 rupees equals 70 rupees. Subtract losses from profits to get the net result.",
-   "Here's a similar problem: Suppose someone earns plus 20 rupees, minus 10 rupees, plus 30 rupees over 3 days. Total profits equals 20 rupees plus 30 rupees, which is 50 rupees. Total losses equals 10 rupees. Net equals 50 rupees minus 10 rupees, which is 40 rupees. If the target was 55 rupees, then they fell short by 55 rupees minus 40 rupees equals 15 rupees. See how that works? Now try the original!"
+   "Start by adding the two profits, 45 rupees and 60 rupees. Then add the three losses, 30 rupees, 15 rupees and 25 rupees. Take the losses away from the profits to get Ravi's total.",
+   "A similar problem: someone has plus 20 rupees, minus 10 rupees and plus 30 rupees over 3 days. The profits add to 20 rupees plus 30 rupees, which is 50 rupees, and the loss is 10 rupees, so the total is 50 rupees minus 10 rupees, which is 40 rupees. With a target of 60 rupees, they fell short by 60 rupees minus 40 rupees, which is 20 rupees."
   ],
   "steps": [
    "Add up all the profits, positive values.",
@@ -1966,7 +1844,7 @@
   "hints": [
    "First figure out what fraction, as a decimal, of the ladoos Ravi gave away in total, then find how many are left before dividing into boxes!",
    "Add up all the decimals he gave away: 0.35 plus 0.25 plus 0.15 equals what? Then subtract from 1 to find the fraction remaining.",
-   "Similar problem: Priya has 300 samosas. She gives 0.4 to neighbors and 0.2 to friends. Remaining equals 1 minus 0.4 minus 0.2, that is 0.4 of 300, which is 120 samosas. If she packs them in boxes of 6, she fills 120 divided by 6 equals 20 boxes. Now try Ravi's problem the same way!"
+   "Here's a similar problem. Priya has 300 samosas. She gives 0.4 of them to neighbours and 0.2 to friends, so 1 minus 0.4 minus 0.2 equals 0.4 of them are left. 0.4 of 300 is 120 samosas. Packed 4 to a box, they fill 120 divided by 4, which equals 30 boxes."
   ],
   "steps": [
    "Find the total fraction of ladoos Ravi gave away by adding the three decimals.",
@@ -2134,7 +2012,7 @@
   "hints": [
    "First, find the total amount spent at all three shops. Then subtract that total from what Rohan's father started with!",
    "Start by adding: 2,475 rupees plus 1,368 rupees plus 2,157 rupees. Line up the digits carefully!",
-   "Here's a similar problem: If you have 5,000 rupees and spend 1,200 rupees, 800 rupees, and 1,500 rupees, first add: 1,200 plus 800 plus 1,500 equals 3,500. Then subtract: 5,000 minus 3,500 equals 1,500 rupees left. Try the same approach with your numbers!"
+   "A similar problem: you have 5,000 rupees and spend 1,200 rupees, 900 rupees and 1,500 rupees. First add: 1,200 plus 900 plus 1,500, which is 3,600. Then subtract: 5,000 minus 3,600, which leaves 1,400 rupees."
   ],
   "steps": [
    "Add the amounts spent at the first two shops.",
@@ -2328,28 +2206,6 @@
    "Subtract the discount from the total cost to get the final amount Ananya pays."
   ]
  },
- "AIGEN_grade5_aa51d21b-91e9-4811-ba54-2c93ae112588": {
-  "q": "Riya's grandmother makes special laddoos for Diwali. She packs them in boxes of 48 laddoos each. This year, she made 25 such boxes for relatives and 17 such boxes for neighbours. How many laddoos did she make in total?",
-  "options": [
-   "1992",
-   "2010",
-   "2106",
-   "2016"
-  ],
-  "hints": [
-   "Think about whether it's easier to first add the number of boxes and then multiply, or multiply separately and then add. Both ways work!",
-   "First find the total number of boxes: 25 plus 17 equals what?",
-   "Here's a similar problem: If a baker packs 36 cookies per box and prepares 12 boxes for a shop and 8 boxes for a fair, total cookies equals, open bracket, 12 plus 8, close bracket, times 36, that is 20 times 36, which is 720 cookies. Try the same approach with Riya's laddoos!"
-  ],
-  "steps": [
-   "Find the total number of boxes Riya's grandmother made.",
-   "Each box contains 48 laddoos. Now multiply the total boxes by 48.",
-   "Break it down to make multiplication easier: 42 times 48 equals 42 times 50, minus 42 times 2.",
-   "Now subtract 42 times 2 from 2100.",
-   "Final subtraction to get the answer.",
-   "So Riya's grandmother made 2016 laddoos in total!"
-  ]
- },
  "AIGEN_grade5_aad20ffd-0e63-400e-9836-72d773fd8af6": {
   "q": "Ravi bought 3.5 kilograms of mangoes at 64.50 rupees per kilogram from a fruit market in Pune. He paid the shopkeeper with a 500 rupee note. How much change did Ravi receive?",
   "options": [
@@ -2477,26 +2333,6 @@
    "Team B needs exactly 122 runs in the second innings to win by 1 run!"
   ]
  },
- "AIGEN_grade5_b3cd211a-20be-433b-98f0-47aef5cadb8f": {
-  "q": "Ravi's grandmother gave him 4,750 rupees as a Diwali gift. He spent 1,285 rupees on crackers and 965 rupees on sweets for his neighbors. His uncle then gave him 1,200 rupees more as a surprise! How much money does Ravi have now?",
-  "options": [
-   "3,500 rupees",
-   "3,700 rupees",
-   "4,900 rupees",
-   "2,500 rupees"
-  ],
-  "hints": [
-   "Think step by step: first figure out how much Ravi spent in total, then subtract that from what he started with, and finally add what his uncle gave him!",
-   "Start by adding the two amounts Ravi spent: 1,285 rupees plus 965 rupees equals what?",
-   "Here's a similar problem: Priya had 3,000 rupees. She spent 800 rupees on books and 700 rupees on art supplies. Her aunt gave her 500 rupees. How much does she have? Total spent equals 800 rupees plus 700 rupees, which is 1,500 rupees. After spending: 3,000 rupees minus 1,500 rupees equals 1,500 rupees. After aunt's gift: 1,500 rupees plus 500 rupees equals 2,000 rupees. So Priya has 2,000 rupees!"
-  ],
-  "steps": [
-   "Find the total amount Ravi spent on crackers and sweets.",
-   "Subtract the total spending from his Diwali gift.",
-   "Add the surprise money from his uncle.",
-   "So Ravi now has 3,700 rupees!"
-  ]
- },
  "AIGEN_grade5_b3e45ca3-0aa0-45f6-9cbc-7d47aadd3402": {
   "q": "Ravi buys 2.5 kilograms of apples at 120.50 rupees per kilogram and 1.75 kilograms of oranges at 80.40 rupees per kilogram. He pays with a 500 rupee note. How much change does he receive?",
   "options": [
@@ -2515,46 +2351,6 @@
    "Find the cost of oranges: 1.75 times 80.40 rupees.",
    "Find the total cost by adding the cost of apples and oranges.",
    "Subtract the total cost from 500 rupees to find the change Ravi receives."
-  ]
- },
- "AIGEN_grade5_bc224c31-2795-4b7e-92c5-f10a7d43181a": {
-  "q": "During a school cricket tournament, Team A scored 247 runs in the first innings and 189 runs in the second innings. Team B scored 312 runs in the first innings. In the second innings, Team B needed to beat Team A's total score by at least 1 run to win. What is the minimum number of runs Team B must score in their second innings to win the match?",
-  "options": [
-   "123",
-   "124",
-   "125",
-   "136"
-  ],
-  "hints": [
-   "First find Team A's total across both innings, then figure out what Team B needs in total to beat that, and don't forget they already scored some runs in their first innings!",
-   "Start by adding Team A's two innings: 247 plus 189 equals what?",
-   "Here's a similar problem: If Team X scored 150 plus 120 equals 270 total, and Team Y scored 200 in their first innings, then Team Y needs at least 270 plus 1 equals 271 total. So Team Y needs 271 minus 200, which is 71 runs in their second innings to win. See the pattern?"
-  ],
-  "steps": [
-   "Find Team A's total score by adding both innings.",
-   "To win, Team B needs at least 1 run more than Team A's total.",
-   "Team B already scored 312 in their first innings. Subtract that from the required total to find the minimum second innings score.",
-   "So Team B must score at least 125 runs in their second innings to win!"
-  ]
- },
- "AIGEN_grade5_bf9ee9bc-8c4d-4b4b-bd9e-97cc4d6f11b9": {
-  "q": "Ravi went to a Diwali mela with 500 rupees. He bought a box of sparklers for 128 rupees and a packet of diyas for 97 rupees. His grandmother then gave him 75 rupees as a Diwali gift. How much money does Ravi have now?",
-  "options": [
-   "340 rupees",
-   "350 rupees",
-   "275 rupees",
-   "450 rupees"
-  ],
-  "hints": [
-   "Think about what reduces Ravi's money and what increases it, handle the spending first, then add the gift!",
-   "Start by finding how much Ravi spent in total: 128 rupees plus 97 rupees equals what?",
-   "Here's a similar problem: Priya has 400 rupees. She spends 85 rupees and 60 rupees, then receives 50 rupees. First, total spent equals 85 rupees plus 60 rupees, which is 145 rupees. Money left equals 400 rupees minus 145 rupees, which is 255 rupees. After receiving 50 rupees: 255 rupees plus 50 rupees equals 305 rupees. Try the same steps with Ravi's numbers!"
-  ],
-  "steps": [
-   "Find the total amount Ravi spent at the mela.",
-   "Subtract the total spending from the money he started with.",
-   "Now add the Diwali gift from his grandmother.",
-   "So Ravi now has 350 rupees."
   ]
  },
  "AIGEN_grade5_c0469b90-2d89-4fdc-aea0-946899187f2c": {
@@ -2614,28 +2410,6 @@
    "He also had 2,165 rupees remaining in his piggy bank. So money accounted for so far.",
    "But remember, he also lent 750 rupees to Arjun. That money also came from grandmother's gift!",
    "So Ravi's grandmother originally gave him 6,500 rupees!"
-  ]
- },
- "AIGEN_grade5_c767e364-fcd9-44c3-a3ed-08d45be7cd1b": {
-  "q": "During Diwali, Ravi's family bought firecrackers from three different shops in the market. At the first shop, they spent 2,475 rupees. At the second shop, they spent 1,368 rupees. At the third shop, they spent 2,157 rupees. Ravi's father had brought 7,500 rupees to the market. After buying all the firecrackers, he also gave 250 rupees to Ravi as pocket money. How much money does Ravi's father have left with him now?",
-  "options": [
-   "1,500 rupees",
-   "1,250 rupees",
-   "1,750 rupees",
-   "6,000 rupees"
-  ],
-  "hints": [
-   "First, find the total amount spent at all three shops. Then don't forget about the pocket money Ravi received!",
-   "Start by adding: 2,475 rupees plus 1,368 rupees plus 2,157 rupees. What total do you get?",
-   "Here's a similar problem: Priya had 500 rupees. She bought a book for 120 rupees and a pen for 80 rupees, then gave 50 rupees to her brother. Money left equals 500 rupees minus, open bracket, 120 rupees plus 80 rupees, close bracket, minus 50 rupees equals 500 rupees minus 200 rupees minus 50 rupees, which is 250 rupees. Follow the same approach for Ravi's father!"
-  ],
-  "steps": [
-   "Add the amounts spent at the three shops.",
-   "First add the amounts from shop 1 and shop 2.",
-   "Now add the amount from shop 3.",
-   "Total money spent on firecrackers is 6,000 rupees. But Ravi's father also gave 250 rupees as pocket money to Ravi. So total money given away equals 6,000 rupees plus 250 rupees, which is 6,250 rupees.",
-   "Subtract the total from the original amount Ravi's father brought.",
-   "So Ravi's father has 1,250 rupees left with him. The answer is B!"
   ]
  },
  "AIGEN_grade5_cbf1e9cf-0305-4f05-be8f-f03f20d78ae1": {
@@ -2880,7 +2654,7 @@
   "hints": [
    "Think about this in stages: first find the total number of crates, then the total number of mangoes, and finally multiply by the price per mango.",
    "Start by adding the crates from both days: 125 plus 78 equals what?",
-   "Here's a similar problem: If a farmer fills 60 baskets on Day 1 and 40 baskets on Day 2, with 30 apples per basket, sold at 10 rupees each, so Total baskets equals 100, Total apples equals 100 times 30, which is 3000, Total money equals 3000 times 10, which is 30,000 rupees. Now try the mango problem the same way!"
+   "Here's a similar problem: A farmer fills 60 baskets on Day 1 and 40 baskets on Day 2. Each basket has 30 apples, and each apple sells for 10 rupees. Total baskets are 60 plus 40, which equals 100. Total apples are 100 times 30, which equals 3,000. Total money is 3,000 times 10, which equals 30,000 rupees."
   ],
   "steps": [
    "Find the total number of crates filled on both days.",
@@ -2987,7 +2761,7 @@
   "hints": [
    "First figure out Deepa's final position by doing all her moves one by one, then add 10 to find Arjun's position!",
    "Start at 0. After climbing up 12: position equals 0 plus 12, which is 12. Now continue with each move.",
-   "Here's a similar problem: Sam starts at 0, goes up 5, down 9, up 3. His position equals 0 plus 5 minus 9 plus 3, which is minus 1. If his friend is 7 metres higher, the friend is at minus 1 plus 7 equals 6. See how we first find one person's position, then use it to find the other's?"
+   "A similar problem: Sam starts at 0, goes up 5, down 9 and up 2. His position is 0 plus 5, minus 9, plus 2, which equals minus 2. His friend is 5 metres higher, so the friend is at minus 2 plus 5, which equals 3. That is 3 metres above sea level."
   ],
   "steps": [
    "Start at sea level, 0 metres, and track Deepa's moves one by one.",
@@ -3075,7 +2849,7 @@
   "hints": [
    "First figure out how many days are in 4 complete weeks, then multiply by the daily cups sold!",
    "4 weeks equals 4 times 7, which is 28 days. Now multiply 215 times 28.",
-   "Similar problem: If a shop sells 120 ice creams per day, how many in 3 weeks? So 3 weeks equals 21 days, so 120 times 21 equals 2,520 ice creams. Follow the same approach for your problem!"
+   "Here's a similar problem: A shop sells 120 ice creams per day. How many does it sell in 3 weeks? 3 weeks is 3 times 7, which equals 21 days. So it sells 120 times 21, which equals 2,520 ice creams."
   ],
   "steps": [
    "Find the total number of days in 4 weeks.",
@@ -5714,7 +5488,7 @@
   "hints": [
    "Think about what happens when you flip all the digits of a number around, the first digit becomes the last, and the last becomes the first! Then you just need to subtract the smaller from the bigger.",
    "Start by reversing the digits of 5,341. Write each digit in reverse order: the digits are 5, 3, 4, 1, so reversed they become 1, 4, 3, 5. Now form the new number and subtract!",
-   "Here's a similar problem: Find the difference between 7,261 and its reverse. Reverse of 7,261, which gives 1,627. Difference: 7,261 minus 1,627 equals 5,634. See? Just reverse, then subtract the smaller from the bigger!"
+   "Here's a similar problem: find the difference between 7,261 and its reverse. The reverse of 7,261 is 1,627. The difference is 7,261 minus 1,627, which equals 5,634. Reverse first, then subtract the smaller from the bigger!"
   ],
   "steps": [
    "Write down the original number and identify its digits.",
@@ -5784,8 +5558,8 @@
   ],
   "hints": [
    "Think about what the smallest 5-digit number and the greatest 4-digit number actually are. How close are they to each other?",
-   "The smallest 5-digit number is 10000 and the greatest 4-digit number is 9999. Now just subtract!",
-   "Here's a similar problem: Subtract the greatest 3-digit number from the smallest 4-digit number. The smallest 4-digit number is 1000 and the greatest 3-digit number is 999. So 1000 minus 999 equals 1. See the pattern?"
+   "Write down the smallest 5 digit number: a 1 followed by zeros. Then write the greatest 4 digit number, which has the biggest digit in every place. Now subtract.",
+   "Here's a similar problem: Subtract the greatest 2 digit number from the smallest 4 digit number. The greatest 2 digit number is 99 and the smallest 4 digit number is 1000. So 1000 minus 99 equals 901."
   ],
   "steps": [
    "First, let's identify the smallest 5-digit number. A 5-digit number has exactly 5 digits, so the smallest one is: 10000.",
@@ -5913,7 +5687,7 @@
   "hints": [
    "Think about this: you're comparing two groups of consecutive numbers. What's the difference between each matching pair, 11 and 21, 12 and 22, etc.?",
    "First, find the sum of numbers from 11 to 15, then find the sum of numbers from 21 to 25, and subtract the first from the second.",
-   "Here's a similar problem: What's the difference between the sum of numbers from 1 to 5 and the sum of numbers from 11 to 15? Sum of 1 to 5 equals 1 plus 2 plus 3 plus 4 plus 5, which is 15. Sum of 11 to 15 equals 11 plus 12 plus 13 plus 14 plus 15, which is 65. Difference equals 65 minus 15, which is 50. Or notice: each pair differs by 10, 11 minus 1, 12 minus 2, and so on up to 15 minus 5, and there are 5 pairs, so 10 times 5 equals 50."
+   "Here's a similar problem: What is the difference between the sum of numbers from 1 to 4 and the sum of numbers from 21 to 24? The first sum is 1 plus 2 plus 3 plus 4, which equals 10. The second sum is 21 plus 22 plus 23 plus 24, which equals 90. The difference is 90 minus 10, which equals 80."
   ],
   "steps": [
    "Find the sum of numbers from 11 to 15.",
@@ -5965,7 +5739,7 @@
   ]
  },
  "IPMTB_grade5_ch05_q017": {
-  "q": "In the beginning of the year there were 1007 students in a school. During the year 17 students left the school and 49 student joined the school. In the final examination, 1000 passed. How many students failed?",
+  "q": "In the beginning of the year there were 1007 students in a school. During the year 17 students left the school and 49 students joined the school. In the final examination, 1000 passed. How many students did not pass?",
   "options": [
    "39",
    "17",
@@ -5973,9 +5747,9 @@
    "None of these"
   ],
   "hints": [
-   "This is a step-by-step word problem, first figure out the total number of students at the end of the year, then subtract those who passed to find how many failed.",
+   "This is a step by step word problem. First find the total number of students at the end of the year, then subtract those who passed to find how many did not pass.",
    "Start with the initial number of students, 1007, subtract those who left, 17, and add those who joined, 49. That gives you the total students at exam time!",
-   "Here's a similar problem: A cricket academy starts with 200 players. During the season, 10 players leave and 30 new players join. If 205 players pass the fitness test, how many didn't pass? Total equals 200 minus 10 plus 30, which is 220. Failed equals 220 minus 205, which is 15. See how we tracked the changes first?"
+   "Here's a similar problem: A cricket academy starts with 200 players. During the season, 10 players leave and 30 new players join. If 205 players pass the fitness test, how many did not pass? The total is 200 minus 10 plus 30, which equals 220. The number who did not pass is 220 minus 205, which equals 15."
   ],
   "steps": [
    "Start with the number of students at the beginning of the year.",
@@ -5986,7 +5760,7 @@
   ]
  },
  "IPMTB_grade5_ch05_q019": {
-  "q": "Instead of writing sixteen thousand, the student wrote sixty thousand by how much was his answer wrong?",
+  "q": "Instead of writing sixteen thousand, the student wrote sixty thousand. By how much was his answer off?",
   "options": [
    "16,000",
    "4,000",
@@ -6080,7 +5854,7 @@
   "hints": [
    "Think of this like a puzzle, you need to find the missing digit that makes the subtraction equation true. What number minus 4005 gives you 4000?",
    "Start by figuring out what 80 star 5 must equal. If 80 star 5 minus 4005 equals 4000, then 80 star 5 equals 4000 plus 4005. What does that give you?",
-   "Here's a similar problem: Find star in 30 star 2 minus 1002 equals 2000. First, 30 star 2 equals 2000 plus 1002, which is 3002. So star equals 0! See how we worked backwards? Now try the same approach with your problem."
+   "Here's a similar problem: Find the missing digit in 52 blank 6, minus 1206, equals 4010. Work backwards: 4010 plus 1206 equals 5216. Compare 52 blank 6 with 5216, and the missing digit is 1."
   ],
   "steps": [
    "We know that 80 star 5 minus 4005 equals 4000. Let's find what 80 star 5 must be by moving 4005 to the other side.",
@@ -6142,7 +5916,7 @@
   "hints": [
    "This is a perimeter problem, you just need to add up all the sides of the triangle!",
    "Start by carefully adding the three side lengths: 230 plus 402 plus 270. Line up the digits by place value to avoid mistakes!",
-   "Here's a similar problem: A triangle has sides 150 metres, 305 metres, and 260 metres. Its perimeter equals 150 plus 305 plus 260, which is 715 metres. If the options were A, 615 metres, B, 705 metres, C, 725 metres, D, None of these, the answer would be D, None of these, since 715 metres isn't listed!"
+   "Here's a similar problem: A triangle has sides 150 metres, 305 metres and 260 metres. Its perimeter is 150 plus 305 plus 260, which equals 715 metres. Add your three sides the same way, then look for your total among the choices."
   ],
   "steps": [
    "The perimeter of a triangle is the sum of all three sides. Let's add them up!",
@@ -6163,7 +5937,7 @@
   "hints": [
    "Think about this step by step: first figure out Mahesh's current age, then add 17 more years to find his future age!",
    "If Mahesh was 17 years old exactly 17 years ago, what is his age today? Just add 17 to 17 to find his present age.",
-   "Here's a similar problem: Priya was 10 years old 5 years ago. What will her age be after 5 years? Step 1: Her current age equals 10 plus 5, which is 15. Step 2: Her age after 5 years equals 15 plus 5, which is 20 years. Now check: is 20 in the options? If not, the answer would be 'None of these'!"
+   "Here's a similar problem: Priya was 10 years old 5 years ago. What will her age be after 5 years? Her age now is 10 plus 5, which equals 15 years. Her age after 5 years is 15 plus 5, which equals 20 years."
   ],
   "steps": [
    "First, let's find Mahesh's current age. He was 17 years old, 17 years ago. So we add those 17 years to get his age now.",
@@ -6260,7 +6034,7 @@
   ]
  },
  "IPMTB_grade5_ch05_q044": {
-  "q": "Instead of writing eighteen thousand a student wrote eighty thousand, by how much was his answer wrong?",
+  "q": "Instead of writing eighteen thousand a student wrote eighty thousand. By how much was his answer off?",
   "options": [
    "64,000",
    "54,000",
@@ -6281,7 +6055,7 @@
   ]
  },
  "IPMTB_grade5_ch05_q047": {
-  "q": "In the beginning of the year there were 1900 students in a school. During the year 170 students left the school and 143 students joined the school. In the final examination 1300 students passed. How many students failed?",
+  "q": "In the beginning of the year there were 1900 students in a school. During the year 170 students left the school and 143 students joined the school. In the final examination 1300 students passed. How many students did not pass?",
   "options": [
    "572",
    "573",
@@ -6289,7 +6063,7 @@
    "None of these"
   ],
   "hints": [
-   "This is a multi-step word problem! First figure out how many students are in the school at the end of the year, then use that to find how many failed.",
+   "This is a multi step word problem! First figure out how many students are in the school at the end of the year, then use that to find how many did not pass.",
    "Start with the original number of students, 1900, subtract those who left, 170, and add those who joined, 143. That gives you the total students at exam time.",
    "Here's a similar problem: A cricket club starts with 500 members. During the season, 40 members leave and 25 new members join. If 350 members attended the final match, how many didn't attend? First: 500 minus 40 plus 25 equals 485 members total. Then: 485 minus 350 equals 135 members didn't attend. See how we tracked the changes step by step?"
   ],
@@ -6312,7 +6086,7 @@
   "hints": [
    "Think about this in two parts: first, figure out the original number using the division information, then multiply that number by 16 instead!",
    "Start by finding the original number. Remember the division formula: Dividend equals Divisor times Quotient plus Remainder. So the number equals 16 times 7 plus 14.",
-   "Here's a similar problem: A student divided a number by 12 and got quotient 5 and remainder 3. What's the correct answer if they should have multiplied? Step 1: Find the number, so 12 times 5 plus 3 equals 63. Step 2: Multiply instead, so 63 times 12 equals 756. So the correct answer would be 756!"
+   "Here's a similar problem: Instead of multiplying, a student divided a number by 12 and got quotient 5 and remainder 3. First find the number: 12 times 5, plus 3, equals 63. Then multiply as the student should have: 63 times 12 equals 756."
   ],
   "steps": [
    "The student divided a number by 16 and got quotient 7 and remainder 14. Let's first find what that original number was using the division formula!",
@@ -6485,7 +6259,7 @@
   "hints": [
    "This is a simple division problem, you need to split a total amount equally among a group of students. Think: total divided by number of students equals each student's share!",
    "Set up the division: 7070 divided by 35. A great first step is to simplify, both numbers are divisible by 5. Try dividing both by 5 first to make the division easier!",
-   "Here's a similar problem: If 25 students share a total expense of 5050 rupees, how much does each contribute? We do 5050 divided by 25. Simplify: 5050 divided by 25 equals 202. So each student pays 202 rupees. Now try the same approach with 7070 divided by 35!"
+   "Here's a similar problem: 12 students share a total expense of 3,660 rupees equally. Each student's share is 3,660 divided by 12, which equals 305 rupees. Now try the same approach with your numbers!"
   ],
   "steps": [
    "We need to find how much each student contributes. That means we divide the total expenditure by the number of students.",
@@ -6530,7 +6304,7 @@
   "hints": [
    "When you know the product of three numbers and two of them, you can find the third by dividing the product by the product of the two known numbers!",
    "First, multiply the two known numbers together: 16 times 34. Then divide 13,600 by that result to find the missing number.",
-   "Here's a similar problem: The product of three numbers is 1,200. Two of the numbers are 8 and 6. To find the third: First, 8 times 6 equals 48. Then, 1,200 divided by 48 equals 25. So the third number is 25!"
+   "Here's a similar problem: The product of three numbers is 1,800. Two of the numbers are 5 and 12. First, 5 times 12 equals 60. Then, 1,800 divided by 60 equals 30. So the third number is 30!"
   ],
   "steps": [
    "We know that three numbers multiplied together give 13,600, and two of those numbers are 16 and 34. Let's call the unknown third number 'n'.",
@@ -6549,7 +6323,7 @@
    "1300"
   ],
   "hints": [
-   "Think about it this way: the student used the wrong divisor, but the dividend, the number being divided, stayed the same. Can you figure out the original dividend first?",
+   "Think about it this way: the student divided by a different number by mistake, but the dividend, the number being divided, stayed the same. Can you figure out the original dividend first?",
    "If the student divided by 32 and got 1380, find the dividend by multiplying: dividend equals 32 times 1380. Then divide that dividend by the correct divisor, 23.",
    "Here's a similar problem: A student divided by 15 instead of 12 and got 240. What's the correct answer? Dividend equals 15 times 240, which is 3600. Correct answer equals 3600 divided by 12, which is 300. See how we first recovered the dividend, then divided by the right number? Try the same approach with your problem!"
   ],
@@ -6593,7 +6367,7 @@
   "hints": [
    "This is a division relationship problem! Remember the golden formula: Dividend equals Divisor times Quotient plus Remainder. Can you figure out which number is missing?",
    "You know the dividend, 3695, the quotient, 230, and the remainder, 15. Plug these into the formula and solve for the divisor: Divisor equals, Dividend minus Remainder, divided by Quotient.",
-   "Here's a similar problem: When 1523 is divided by a certain number, the quotient is 150 and the remainder is 23. Find the number. Using the formula: Divisor equals, open bracket, 1523 minus 23, close bracket, divided by 150, that is 1500 divided by 150, which is 10. So the divisor is 10! Now try the same approach with your question."
+   "Here's a similar problem: When 3,020 is divided by a certain number, the quotient is 120 and the remainder is 20. Find the number. Take 3,020 minus 20, and divide by 120. That is 3,000 divided by 120, which equals 25. So the number is 25."
   ],
   "steps": [
    "Recall the division formula: Dividend equals Divisor times Quotient plus Remainder.",
@@ -6654,7 +6428,7 @@
   ],
   "hints": [
    "Think about the relationship between dividend, divisor, quotient, and remainder. There's a neat formula that connects all four!",
-   "Use the formula: Dividend equals Divisor times Quotient plus Remainder. Plug in the values: Divisor equals 15, Quotient equals 6, Remainder equals 13.",
+   "Use the formula: Dividend equals Divisor times Quotient, plus Remainder. Plug in the values: Divisor is 15, Quotient is 6, Remainder is 13.",
    "Here's a similar problem: A student divided a number by 12 and got quotient 5 and remainder 7. What's the number? Using the formula: Number equals 12 times 5 plus 7, that is 60 plus 7, which is 67. Easy peasy!"
   ],
   "steps": [
@@ -6847,8 +6621,8 @@
   ],
   "hints": [
    "This is a classic 'find the number' problem using the relationship between dividend, divisor, quotient, and remainder. Think about the formula that connects all four!",
-   "Use the formula: Number equals Divisor times Quotient plus Remainder. Plug in the values: Divisor equals 15, Quotient equals 6, Remainder equals 14.",
-   "Here's a similar problem: If you divide a number by 12 and get quotient 5 and remainder 7, then the number equals 12 times 5 plus 7, that is 60 plus 7, which is 67. See how we just multiply and add? Try the same approach with your problem!"
+   "Use the formula: Number equals Divisor times Quotient, plus Remainder. Plug in the values: Divisor is 15, Quotient is 6, Remainder is 14.",
+   "Here's a similar problem: If you divide a number by 12 and get quotient 5 and remainder 7, then the number is 12 times 5, plus 7. That is 60 plus 7, which equals 67. See how we just multiply and add? Try the same approach with your problem!"
   ],
   "steps": [
    "Recall the division formula that connects all the parts: Number equals Divisor times Quotient plus Remainder.",
@@ -6938,7 +6712,7 @@
   "hints": [
    "Think about what happened here: the student accidentally swapped the digits of the divisor. Can you figure out what number was being divided first?",
    "Start by finding the original dividend. The student divided by 61 and got 16, so the dividend equals 61 times 16. Then divide that dividend by the correct divisor, 16, to get the right answer.",
-   "Here's a similar problem: A student divided by 35 instead of 53 and got 53. What's the correct answer? Dividend equals 35 times 53, which is 1855. Correct answer equals 1855 divided by 53, which is 35. See how the swapped numbers flip the answer? Cool pattern!"
+   "Here's a similar problem: A student divided by 24 instead of 12 and got 15. First find the dividend: 24 times 15 equals 360. Then divide by the divisor that was meant: 360 divided by 12 equals 30."
   ],
   "steps": [
    "First, let's figure out what number was being divided, the dividend. The student divided by 61 and got 16.",

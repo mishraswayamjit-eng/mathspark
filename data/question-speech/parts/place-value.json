@@ -10,7 +10,7 @@
   "hints": [
    "Start by figuring out the digit in the ten-thousands place from its place value. Remember, place value is digit times value of the position!",
    "If the place value of the ten-thousands digit is 50,000, then the digit itself is 50,000 divided by 10,000, which is 5.",
-   "Here's a similar problem: If a digit's place value in the thousands place is 8,000, the digit is 8,000 divided by 1,000, which is 8. If that digit is 4 more than the units digit, then the units digit is 8 minus 4, which is 4. If the tens digit is 3 times the units digit, then the tens digit is 3 times 4, which is 12. Wait, that's not a single digit! So you'd need to re-check. Always verify each digit is 0 to 9."
+   "Here's a similar problem: a digit in the thousands place has a place value of 8,000, so the digit is 8,000 divided by 1,000 equals 8. If it is 5 more than the units digit, the units digit is 8 minus 5 equals 3. If the tens digit is twice the units digit, the tens digit is 2 times 3 equals 6."
   ],
   "steps": [
    "Find the ten-thousands digit from its place value.",
@@ -62,30 +62,6 @@
    "So Rohan's answer should be 2,997!"
   ]
  },
- "AIGEN_grade5_0e7fdbc0-6472-4534-ba11-2b690bf40b2d": {
-  "q": "Arjun is setting up a stall at his school's Diwali mela in Jaipur. He writes a secret 6-digit number on a board and gives these clues to his friends: The digit in the lakhs place is twice the digit in the tens place. The digit in the ten-thousands place is 5. The digit in the thousands place is the sum of the digits in the hundreds place and the units place. The digit in the hundreds place is 3. The digit in the units place is 1. The digit in the tens place is one more than the units place. Arjun then asks: \"What is the difference between the place value of the digit in the lakhs place and the place value of the digit in the tens place?\" What is the answer?",
-  "options": [
-   "380",
-   "399,800",
-   "400,000",
-   "399,980"
-  ],
-  "hints": [
-   "First, figure out each digit one by one using the clues, starting from the ones you can find directly, units, hundreds, ten-thousands. Then build the full number!",
-   "Start with what you know for sure: units is 1, hundreds is 3, ten-thousands is 5. Then use the clue about the tens digit being one more than the units digit.",
-   "Here's a similar problem: If a 4-digit number has digits where the thousands digit is 7 and the tens digit is 3, then the place value of 7 is 7000 and the place value of 3 is 30. Their difference is 7000 minus 30, which is 6970. Apply the same idea to the 6-digit number!"
-  ],
-  "steps": [
-   "Let's find the digits we know directly from the clues: Units digit is 1, Hundreds digit is 3, Ten-thousands digit is 5.",
-   "The tens digit is one more than the units digit: Tens digit is 1 plus 1, which is 2.",
-   "The lakhs digit is twice the tens digit: Lakhs digit is 2 times 2, which is 4.",
-   "The thousands digit is the sum of the hundreds and units digits: Thousands digit is 3 plus 1, which is 4.",
-   "So the full 6-digit number is: 4, 5, 4, 3, 2, 1. That makes 454321.",
-   "Now find the place values. The lakhs digit is 4, so its place value is: 4 times 100000 equals 400000.",
-   "The tens digit is 2, so its place value is: 2 times 10 equals 20.",
-   "The difference between these place values is: 400000 minus 20 equals 399980."
-  ]
- },
  "AIGEN_grade5_1075cba6-ed27-49f0-a925-414a7d5d0d4d": {
   "q": "Rohan is at a cricket stadium and sees the attendance number 47,562 displayed on the big screen. His sister Meera asks him, \"What is the difference between the place value of the digit 5 and the face value of the digit 5 in this number?\" Can you help Rohan answer?",
   "options": [
@@ -117,7 +93,7 @@
   ],
   "hints": [
    "Start from the clue that's easiest, you already know the units digit and the thousands digit. Build the other digits from there!",
-   "The units digit is 2. The ten-thousands digit is 2 plus 3, which is 5. The thousands digit is 7. The hundreds digit is half of 7, rounded down, which is 3. Now find the tens digit!",
+   "Start with the units digit, which is 2. The ten-thousands digit is 3 more than that. Then use the thousands digit to find the hundreds digit.",
    "Here's a similar problem: A 4-digit number where the thousands digit is 6, the hundreds digit is half of 6, which is 3, the tens digit is 1, and the units digit is the sum of hundreds and tens, which is 3 plus 1, which is 4. The number would be 6,314. Use the same step-by-step approach for Riya's cheque!"
   ],
   "steps": [
@@ -127,26 +103,6 @@
    "The hundreds digit is half the thousands digit, rounded down. 7 divided by 2 is 3.5. Rounded down, that is 3.",
    "The tens digit is the sum of the units digit and the hundreds digit. Tens digit is 2 plus 3, which is 5.",
    "Put all the digits together: ten-thousands is 5, thousands is 7, hundreds is 3, tens is 5, units is 2."
-  ]
- },
- "AIGEN_grade5_206b268a-69f9-4bb8-811b-f193929fff14": {
-  "q": "Riya is reading a book about Indian history. She comes across the number 74,086 which tells the number of soldiers in an ancient army. She notices something interesting: the digit 7 appears once and the digit 0 also appears once. She wonders, how many times greater is the place value of the digit 7 compared to the face value of the digit 8 in this number?",
-  "options": [
-   "875",
-   "8750",
-   "7000",
-   "700"
-  ],
-  "hints": [
-   "Remember, place value depends on where a digit sits, while face value is just the digit itself. Find both values first, then divide!",
-   "First, identify the place value of 7 in 74,086. The digit 7 is in the ten-thousands place, so its place value is 70,000. Now find the face value of 8.",
-   "Here's a similar problem: In the number 53,042, how many times greater is the place value of 5 compared to the face value of 4? The place value of 5 is 50,000. The face value of 4 is 4. So 50,000 divided by 4 equals 12,500. Now try the original problem the same way!"
-  ],
-  "steps": [
-   "Identify where the digit 7 sits in 74,086. It is in the ten-thousands place.",
-   "Find the face value of the digit 8. The face value of any digit is simply the digit itself, regardless of its position.",
-   "Now divide the place value of 7 by the face value of 8 to find how many times greater it is.",
-   "So the place value of 7 is 8,750 times greater than the face value of 8. The answer is B!"
   ]
  },
  "AIGEN_grade5_20ea0eaf-d2fc-4e33-9d93-64ce1ba52ca1": {
@@ -196,27 +152,6 @@
    "So the place value of 7 is 1,000 times its face value. The answer is 1,000!"
   ]
  },
- "AIGEN_grade5_2b3c80ef-88f2-4f2c-a505-dc3965e151f0": {
-  "q": "At a school book fair in Mumbai, Aarav notices that the total number of books sold is 63,509. His teacher asks him, \"What is the difference between the place value of the digit 5 and the face value of the digit 5 in this number?\" What should Aarav's answer be?",
-  "options": [
-   "495",
-   "505",
-   "5",
-   "500"
-  ],
-  "hints": [
-   "Remember: the place value of a digit depends on where it sits in the number, while the face value is just the digit itself!",
-   "First, figure out which place the 5 is in. In 63,509, count from the right: 9 is in ones, 0 is in tens, 5 is in hundreds. So the place value of 5 is what?",
-   "Here's a similar problem: In the number 4,271, the place value of 2 is 200, since it's in the hundreds place, and the face value of 2 is just 2. The difference is 200 minus 2, which is 198. Now try the same idea with the digit 5!"
-  ],
-  "steps": [
-   "Identify where the digit 5 sits in 63,509. Counting from the right: 9 in the ones place, 0 in the tens place, 5 in the hundreds place, 3 in the thousands place, 6 in the ten-thousands place. So 5 is in the hundreds place.",
-   "Calculate the place value of 5. Place value of 5 is 5 times 100, which is 500.",
-   "The face value of any digit is simply the digit itself. Face value of 5 is 5.",
-   "Find the difference between the place value and the face value. 500 minus 5 equals 495.",
-   "So Aarav's answer should be 495!"
-  ]
- },
  "AIGEN_grade5_2d8f2714-399f-4b72-a474-5a82fa4b1a25": {
   "q": "Meera is organizing a rangoli competition at her school in Jaipur. She assigns a secret 5-digit code number to each team. Her team's code is 74,283. She notices something cool: if she takes the place value of the digit 7 and divides it by the place value of the digit 8, she gets a certain number. She then multiplies that result by the face value of the digit 4. What final number does Meera get?",
   "options": [
@@ -228,7 +163,7 @@
   "hints": [
    "Think carefully about the difference between 'place value' and 'face value', they mean different things!",
    "First, find the place value of 7 in 74,283. The digit 7 is in the ten-thousands place, so its place value is 7 times 10,000, which is 70,000. Now find the place value of 8.",
-   "Here's a similar problem: In the number 56,192, the place value of 5 is 50,000 and the place value of 9 is 90. Dividing: 50,000 divided by 90 is not a whole number, so let's pick a cleaner example. In 63,481, the place value of 6 is 60,000 and the place value of 4 is 400. So 60,000 divided by 400 equals 150. If you then multiply by the face value of 3, which is just 3, you get 150 times 3, which is 450."
+   "Here's a similar problem: in 63,481, the place value of 6 is 60,000 and the place value of 4 is 400. Divide them: 60,000 divided by 400 equals 150. Then multiply by the face value of 3, which is just 3: 150 times 3 equals 450."
   ],
   "steps": [
    "Identify the place value of 7 in 74,283. The digit 7 is in the ten-thousands place.",
@@ -263,27 +198,6 @@
    "Find the difference between these two place values:"
   ]
  },
- "AIGEN_grade5_43332488-b05e-4e16-87c5-0a02f0b1c989": {
-  "q": "Arjun is saving money in his piggy bank for a new cricket bat. He has saved 76,482 rupees so far. His dad says, \"I'll give you bonus money equal to the difference between the place value of the digit 7 and the place value of the digit 4 in your savings amount.\" How much bonus money does Arjun get from his dad?",
-  "options": [
-   "69,518 rupees",
-   "3 rupees",
-   "70,000 rupees",
-   "69,600 rupees"
-  ],
-  "hints": [
-   "First, figure out which place each digit sits in, the 7 is not in the thousands place! Count carefully from the right.",
-   "In 76,482: the digit 7 is in the ten-thousands place, so its place value is 70,000, and the digit 4 is in the hundreds place, so its place value is 400. Now find the difference!",
-   "Here's a similar problem: In the number 53,261, the place value of 5 is 50,000 and the place value of 2 is 200. The difference would be 50,000 minus 200, which is 49,800. Use the same method for your problem!"
-  ],
-  "steps": [
-   "Identify the positions of each digit in 76,482: 7 is in the ten-thousands place, 6 is in the thousands place, 4 is in the hundreds place, 8 is in the tens place, and 2 is in the units place.",
-   "Find the place value of the digit 7:",
-   "Find the place value of the digit 4: 4 times 100 equals 400.",
-   "Calculate the difference between the two place values:",
-   "So Arjun's dad gives him a bonus of 69,600 rupees!"
-  ]
- },
  "AIGEN_grade5_45aa0de4-ab33-4797-af61-e9ed6d841218": {
   "q": "Ravi is reading train ticket numbers at the railway station. He spots the number 76,308 on a ticket. He tells his friend, \"If I subtract the place value of the digit 3 from the place value of the digit 7, I get a cool number!\" What number does Ravi get?",
   "options": [
@@ -294,7 +208,7 @@
   ],
   "hints": [
    "First figure out which place each digit sits in, the 7 is in the ten-thousands place and the 3 is in the hundreds place. What are their place values?",
-   "Place value of 7 is 7 times 10,000, which is 70,000. Place value of 3 is 3 times 100, which is 300. Now subtract!",
+   "Start with the digit 7 in 76,308. It is in the ten-thousands place, so its place value is 7 times 10,000. Find the place value of 3 in the same way.",
    "Here's a similar problem: In 52,416, the place value of 5 is 50,000 and the place value of 4 is 400. So 50,000 minus 400 equals 49,600. Use the same method for Ravi's ticket!"
   ],
   "steps": [
@@ -358,38 +272,13 @@
   "hints": [
    "Think carefully: place value is different from the digit itself. What is the place value of 7 in the ten-thousands place? And 3 in the hundreds place?",
    "Start by finding each place value separately. The place value of 7 in the ten-thousands place is 7 times 10,000, which is 70,000. Now do the same for 3 in the hundreds place.",
-   "Here's a similar problem: If a digit 5 is in the thousands place and a digit 2 is in the tens place, their place values are 5,000 and 20. Their sum is 5,020, and the number with all other digits as 0 would be 05020, which is 5,020. Now try the same approach with Riya's clues!"
+   "Here's a similar problem: a 4-digit number has 5 in the thousands place, 2 in the tens place and 0 everywhere else. The place values are 5,000 and 20, and 5,000 plus 20 equals 5,020. So the number is 5,020."
   ],
   "steps": [
    "Find the place value of 7 in the ten-thousands place.",
    "Find the place value of 3 in the hundreds place. 3 times 100 equals 300.",
    "Add the two place values together.",
    "Since all other digits are 0, Riya's number is 70,300. This matches option B!"
-  ]
- },
- "AIGEN_grade5_54ce7dae-0b5f-4ae5-b4a7-ef9876cb50ea": {
-  "q": "Ravi is playing a number game at his school's math fest. He writes a 6-digit number on the board where: The digit in the lakhs place is 3 more than the digit in the tens place. The digit in the ten-thousands place is half the digit in the hundreds place. The digit in the thousands place is 7. The digit in the units place equals the digit in the ten-thousands place plus the digit in the tens place. The digit in the hundreds place is 8. The digit in the tens place is 2. What is the difference between the place value of the digit in the lakhs place and the place value of the digit in the ten-thousands place?",
-  "options": [
-   "460000",
-   "500000",
-   "100000",
-   "54000"
-  ],
-  "hints": [
-   "First, figure out every digit one by one using the clues, start with the digits you know for sure, tens, hundreds, thousands, then find the rest!",
-   "The tens digit is 2, so the lakhs digit is 2 plus 3, which is 5. The hundreds digit is 8, so the ten-thousands digit is 8 divided by 2, which is 4. Now find the place values, digit times its place, and subtract!",
-   "Here's a similar problem: If a digit 3 is in the ten-thousands place and digit 6 is in the thousands place, the difference in their place values is 3 times 10000, minus 6 times 1000. That is 30000 minus 6000, which is 24000. Use the same approach for your problem!"
-  ],
-  "steps": [
-   "Identify the digits we know directly from the clues: Tens digit is 2, Hundreds digit is 8, Thousands digit is 7.",
-   "Find the lakhs digit: it is 3 more than the tens digit. Lakhs digit is 2 plus 3, which is 5.",
-   "Find the ten-thousands digit: it is half the hundreds digit. Ten-thousands digit is 8 divided by 2, which is 4.",
-   "Find the units digit: it equals the ten-thousands digit plus the tens digit. Units digit is 4 plus 2, which is 6.",
-   "So the full 6-digit number is: 5, 4, 7, 8, 2, 6. That makes 547826.",
-   "Now find the place value of the lakhs digit, 5: 5 times 100000 equals 500000.",
-   "Find the place value of the ten-thousands digit, 4: 4 times 10000 equals 40000.",
-   "Calculate the difference: 500000 minus 40000 equals 460000.",
-   "The answer is 4,60,000!"
   ]
  },
  "AIGEN_grade5_578a4973-9cc6-4c60-bf80-a19e9e9dbc5e": {
@@ -503,27 +392,6 @@
    "Find the difference:"
   ]
  },
- "AIGEN_grade5_7eab7fb8-c267-4184-b19e-c911814b45ed": {
-  "q": "Priya is helping her dad count the money collected at their chai stall during a Diwali mela. The total collection is 52,748 rupees. Priya's dad asks her: \"What is the difference between the place value of the digit 5 and the place value of the digit 7 in this amount?\" Can you help Priya find the answer?",
-  "options": [
-   "50,700 rupees",
-   "49,300 rupees",
-   "2 rupees",
-   "49,252 rupees"
-  ],
-  "hints": [
-   "Think carefully, place value is different from face value! The place value of a digit depends on where it sits in the number.",
-   "First, find the place value of 5, it's in the ten-thousands place, so its place value is 5 times 10,000. Then find the place value of 7, it's in the hundreds place, so its place value is 7 times 100.",
-   "Here's a similar problem: In the number 83,264, the place value of 8 is 8 times 10,000, which is 80,000 and the place value of 2 is 2 times 100, which is 200. The difference is 80,000 minus 200, which is 79,800. Now try the same approach with Priya's number!"
-  ],
-  "steps": [
-   "Identify where each digit sits in the number 52,748. 5 is in the ten-thousands place, and 7 is in the hundreds place.",
-   "Calculate the place value of 5.",
-   "Calculate the place value of 7. 7 times 100 equals 700.",
-   "Find the difference between the two place values.",
-   "So the answer is 49,300 rupees!"
-  ]
- },
  "AIGEN_grade5_84e4d085-09e6-4cfb-a036-c9dd3fc658ff": {
   "q": "During Diwali, Arjun's family buys firecrackers worth 56,482 rupees. His dad says, \"Arjun, can you figure out how many times the place value of the digit 5 in this number is greater than the place value of the digit 4?\" Arjun thinks carefully. What should his answer be?",
   "options": [
@@ -544,26 +412,6 @@
    "So the place value of 5 is 125 times the place value of 4. The answer is 125!"
   ]
  },
- "AIGEN_grade5_8c0fae1e-edf2-40ff-91b3-c909ad16c251": {
-  "q": "At a school book fair in Pune, Aarav's class collected 46,352 rupees from selling old books. His teacher asks, \"What is the difference between the place value of the digit 3 and the face value of the digit 3 in this number?\" What should Aarav's answer be?",
-  "options": [
-   "347 rupees",
-   "3 rupees",
-   "300 rupees",
-   "297 rupees"
-  ],
-  "hints": [
-   "Remember, the place value of a digit depends on where it sits in the number, while the face value is just the digit itself!",
-   "First, find the place value of 3 in the number 46,352. Which position is the 3 in, tens, hundreds, or thousands?",
-   "Here's a similar problem: In the number 52,714, the digit 7 is in the hundreds place, so its place value is 700. Its face value is just 7. The difference is 700 minus 7, which is 693. Now try the same idea with your number!"
-  ],
-  "steps": [
-   "Let's find where the digit 3 sits in the number 46,352. Reading from right to left: 2 is in the ones place, 5 is in the tens place, 3 is in the hundreds place.",
-   "The place value of 3 in the hundreds place is 3 times 100, which is 300.",
-   "The face value of any digit is simply the digit itself, so the face value of 3 is just 3.",
-   "Now find the difference: 300 minus 3 equals 297. So Aarav's answer is 297 rupees!"
-  ]
- },
  "AIGEN_grade5_98fdf2e6-d5a7-477d-8fea-58c99d7758e3": {
   "q": "Riya is planning a rangoli competition at her school. She writes down the number of colored powder packets ordered: 74,208. She notices something interesting, the digit 2 appears once in this number. She wonders: \"The place value of 7 in this number is how many times the face value of 8 in this number?\" Can you help Riya figure it out?",
   "options": [
@@ -575,7 +423,7 @@
   "hints": [
    "Remember, place value depends on where the digit sits, while face value is just the digit itself!",
    "First find the place value of 7. It's in the ten-thousands place, so its place value is 7 times 10,000, which is 70,000. The face value of 8 is simply 8.",
-   "Here's a similar problem: In 53,106, the place value of 5 is 50,000, since it's in the ten-thousands place. The face value of 6 is just 6. So 50,000 divided by 6 equals 8,333.33, and so on. But if the question were: place value of 5 divided by face value of 5, that would be 50,000 divided by 5, which is 10,000. Always check which digit and which type of value!"
+   "Here's a similar problem: in 54,106, the place value of 5 is 50,000 because it is in the ten-thousands place. The face value of 4 is just 4. So the place value of 5 is 50,000 divided by 4 equals 12,500 times the face value of 4."
   ],
   "steps": [
    "Identify the position of 7 in 74,208. It is in the ten-thousands place.",
@@ -658,7 +506,7 @@
   "hints": [
    "First, figure out what each 2 is actually worth based on where it sits in the number. Then divide the bigger value by the smaller one!",
    "The 2 in the thousands place has a place value of 2 times 1000 equals 2000. What is the place value of the 2 in the units place?",
-   "Here's a similar problem: In the number 63,636, how many times greater is the place value of the 6 in the ten-thousands place compared to the 6 in the tens place? The 6 in the ten-thousands place is 60,000 and the 6 in the tens place is 60. So 60,000 divided by 60 equals 1,000 times. Try the same approach with your problem!"
+   "Here's a similar problem: in 75,152, the digit 5 is in the thousands place and in the tens place. The place values are 5,000 and 50. So 5,000 divided by 50 equals 100, which means the bigger place value is 100 times the smaller."
   ],
   "steps": [
    "Identify where the digit 2 appears in 52,752. It appears in the thousands place and in the units place.",
@@ -814,27 +662,6 @@
    "Identify the position of digit 2 in 72,836. It is in the thousands place.",
    "Subtract the place value of 2 from the place value of 7.",
    "So Priya's number is 68,000!"
-  ]
- },
- "AIGEN_grade5_e4f3ec79-bcf9-441c-a7c5-ea590866ec99": {
-  "q": "Arjun is saving up to buy a cricket bat. He writes the amount he has saved so far as a 5-digit number in rupees: 76,308 rupees. He notices something cool, the digit 3 appears once in this number. He wonders: \"How many times is the place value of 7 in this number greater than the face value of 8 in this number?\" Can you help Arjun figure it out?",
-  "options": [
-   "8,750",
-   "10,000",
-   "875",
-   "7,000"
-  ],
-  "hints": [
-   "Think carefully: place value depends on where the digit sits, while face value is just the digit itself. What place is the 7 in?",
-   "First find the place value of 7. It's in the ten-thousands place, so its place value is 7 times 10,000, which is 70,000. Now find the face value of 8.",
-   "Here's a similar problem: In the number 54,621, how many times is the place value of 5 greater than the face value of 2? Place value of 5 is 5 times 10,000, which is 50,000. Face value of 2 is 2. So the answer is 50,000 divided by 2, which is 25,000. Now try the same approach with Arjun's number!"
-  ],
-  "steps": [
-   "Identify the position of 7 in 76,308. The digit 7 is in the ten-thousands place.",
-   "Calculate the place value of 7.",
-   "Find the face value of 8. The face value of any digit is just the digit itself, regardless of its position.",
-   "Divide the place value of 7 by the face value of 8 to find how many times greater it is.",
-   "So the place value of 7 is 8,750 times greater than the face value of 8. The answer is A!"
   ]
  },
  "AIGEN_grade5_f4e5ebb5-48e9-4336-82ea-09cdcba6b3b0": {
@@ -2438,7 +2265,7 @@
   "hints": [
    "Think about which even numbers are sitting right next to 50, one just before it and one just after it.",
    "List the even numbers near 50: 46, 48, 50, 52, 54, and so on. Now pick the even number that comes right before 50 and the one that comes right after 50.",
-   "Here's a similar problem: 'What is the difference between the odd number just before 25 and the odd number just after 25?' The odd number before 25 is 23, and the odd number after 25 is 27. Their difference is 27 minus 23, which is 4. Try the same approach with even numbers around 50!"
+   "Here's a similar problem: find the difference between the multiple of 5 just before 40 and the multiple of 5 just after 40. The one before is 35 and the one after is 45. Their difference is 45 minus 35 equals 10."
   ],
   "steps": [
    "Let's find the even number that comes right before 50. Counting even numbers: 44, 46, 48, 50. So the even number one prior to, just before, 50 is 48.",
@@ -2560,7 +2387,7 @@
   ],
   "hints": [
    "Think carefully: what is the smallest 4-digit number, and what is the greatest 5-digit number? Make sure you identify each one correctly!",
-   "The smallest 4-digit number is 1000, the first number with 4 digits. The greatest 5-digit number is 99,999, the largest number with 5 digits. Now just add them!",
+   "The smallest 4-digit number is 1,000. Now find the greatest 5-digit number: it has 9 in every place. Then add the two numbers.",
    "Here's a similar problem: Add the smallest 3-digit number to the greatest 4-digit number. Smallest 3-digit number is 100. Greatest 4-digit number is 9,999. Sum is 100 plus 9,999, which is 10,099. See how it works? Now try the same idea with 4-digit and 5-digit numbers!"
   ],
   "steps": [
@@ -2580,7 +2407,7 @@
   ],
   "hints": [
    "Think carefully about what the 'greatest 4-digit number' and 'smallest 3-digit number' really are. Are you sure about the smallest 3-digit number?",
-   "The greatest 4-digit number is 9999. Now, what is the smallest 3-digit number? Remember, a 3-digit number must have exactly 3 digits, so it starts from 100!",
+   "The greatest 4-digit number is 9,999. Now find the smallest 3-digit number: it has 1 in the hundreds place and 0 in the other places. Then subtract.",
    "Here's a similar problem: Find the difference between the greatest 3-digit number and the smallest 2-digit number. The greatest 3-digit number is 999, and the smallest 2-digit number is 10. So the difference is 999 minus 10, which is 989. See how it works? Now try the same approach with 4-digit and 3-digit numbers!"
   ],
   "steps": [
@@ -2600,7 +2427,7 @@
   ],
   "hints": [
    "Think carefully: what is the greatest 4-digit even number and what is the smallest 4-digit even number? Remember, even numbers end in 0, 2, 4, 6, or 8!",
-   "The greatest 4-digit even number is 9998, ends in 8, the largest even digit. Now, what's the smallest 4-digit even number? It must be a 4-digit number and even, so it's 1000, which ends in 0. Subtract to find the difference!",
+   "The greatest 4-digit number is 9,999, but it is odd, so step down to the nearest even number. Then find the smallest 4-digit number and check that it is even. Subtract the two.",
    "Here's a similar problem: Find the difference between the greatest 3-digit even number and the smallest 3-digit even number. Greatest 3-digit even number is 998. Smallest 3-digit even number is 100. Difference is 998 minus 100, which is 898."
   ],
   "steps": [
@@ -2621,7 +2448,7 @@
   "hints": [
    "Think about a special number that never changes no matter where you put it, ones place, tens place, hundreds place. What happens when you multiply it by any place value?",
    "Remember: the place value of a digit is the digit, times the value of its position. Ones means times 1, tens means times 10, hundreds means times 100, and so on. Which digit gives the same result no matter what you multiply it by?",
-   "Here's a similar problem: What is the place value of 0 in the number 3,045? The 0 is in the hundreds place, so its place value is 0 times 100, which is 0. Now check the tens place in 2,087: place value of 0 is 0 times 10, which is 0. In every case, the place value of 0 is always 0, which is its own face value!"
+   "Here's an example with the digit 4. In 345 it is in the tens place, so its place value is 4 times 10 equals 40. In 4,321 it is in the thousands place, so its place value is 4 times 1,000 equals 4,000. The place value of 4 changes with its place, so look for a digit whose place value never changes."
   ],
   "steps": [
    "Let's recall two important ideas: Face value of a digit is just the digit itself. Place value of a digit is digit times value of its position.",
@@ -2642,7 +2469,7 @@
   ],
   "hints": [
    "Think about what the greatest 3-digit number and the smallest 4-digit number are. Remember, 'digited' here means how many digits the number has!",
-   "The greatest 3-digit number is 999 and the smallest 4-digit number is 1000. Now just add them together!",
+   "The greatest 3-digit number is 999. Now find the smallest 4-digit number: it has 1 in the thousands place and 0 in the other places. Then add the two numbers.",
    "Here's a similar problem: Find the sum of the greatest 2-digit number and the smallest 3-digit number. The greatest 2-digit number is 99, and the smallest 3-digit number is 100. So the sum is 99 plus 100, which is 199. See the pattern? Now try the same idea with 3-digit and 4-digit numbers!"
   ],
   "steps": [
@@ -2704,7 +2531,7 @@
   "hints": [
    "Think about what makes a number both small and odd. Which digit should go in the ten-thousands place, and which digit must go in the ones place?",
    "For the smallest number: put the smallest non-zero digit in the highest place. For an odd number: the ones digit must be odd. Your available digits are 3, 0, 4, 8, 7. Which digits are odd?",
-   "Here's a similar problem: Form the smallest even number using 5, 1, 0, 6, 2. Even means the last digit must be even, 0, 2, or 6. The first digit can't be 0, so use the smallest non-zero digit first, so 1. To make it smallest, use the smallest even digit at the end, so 0. Remaining digits 2, 5, 6 go in ascending order in the middle, so 10,256. Same logic applies to your problem!"
+   "Here's a similar problem: form the smallest odd number using 5, 0, 2, 9, 6. Put the smallest non-zero digit, 2, first and then 0. The number must end in an odd digit, so keep 9 for the end and put 5 and 6 before it: 20,569."
   ],
   "steps": [
    "Identify which digits are odd. From 3, 0, 4, 8, 7, the odd digits are 3 and 7. One of these must go in the ones place to make the number odd.",
@@ -2833,7 +2660,7 @@
   "hints": [
    "This problem asks you to arrange digits to form the greatest and smallest possible 5-digit numbers, then subtract. Think carefully about how to place digits, especially where 0 goes in the smallest number!",
    "First, arrange the digits 3, 0, 9, 2, 4 in descending order for the greatest number and ascending order for the smallest number. Remember: the smallest 5-digit number can't start with 0!",
-   "Here's a similar problem: Using digits 1, 5, 0, 7, 3, Greatest number is 75310, Smallest number is 10357. Subtract: 75310 minus 10357 equals 64953. The middle digit, 3rd digit, is 9. See how that works? Now try the same approach with your digits!"
+   "Here's a similar problem with 4 digits: 2, 0, 7, 5. The greatest number is 7,520 and the smallest is 2,057, because a number cannot start with 0. Subtract: 7,520 minus 2,057 equals 5,463. The hundreds digit of the result is 4."
   ],
   "steps": [
    "Find the greatest 5-digit number using digits 3, 0, 9, 2, 4. Arrange them in descending order: Greatest is 94320.",
@@ -2956,8 +2783,8 @@
   ],
   "hints": [
    "Think about what the smallest 5-digit number and the greatest 4-digit number actually are. They're neighbors on the number line!",
-   "The smallest 5-digit number is 10000 and the greatest 4-digit number is 9999. Now just subtract!",
-   "Here's a similar problem: What's the difference between the smallest 3-digit number and the greatest 2-digit number? The smallest 3-digit number is 100, and the greatest 2-digit number is 99. So the difference is 100 minus 99, which is 1. See the pattern?"
+   "The greatest 4-digit number is 9,999. Now find the smallest 5-digit number: it has 1 in the ten-thousands place and 0 in the other places. Then subtract.",
+   "Here's a similar problem: find the difference between the smallest 4-digit number and the greatest 2-digit number. The smallest 4-digit number is 1,000 and the greatest 2-digit number is 99. The difference is 1,000 minus 99 equals 901."
   ],
   "steps": [
    "First, let's find the smallest 5-digit number. A 5-digit number has exactly 5 digits, so the smallest one is: 10000.",
@@ -2976,7 +2803,7 @@
   ],
   "hints": [
    "Think carefully: what is the smallest 3-digit number and what is the greatest 4-digit number? Make sure you pick the right ones!",
-   "The smallest 3-digit number is 100, not 999! and the greatest 4-digit number is 9,999, not 10,000! Now just add them together!",
+   "The smallest 3-digit number is 100. Now find the greatest 4-digit number: it has 9 in every place. Then add the two numbers.",
    "Here's a similar problem: Add the smallest 2-digit number and the greatest 3-digit number. The smallest 2-digit number is 10, and the greatest 3-digit number is 999. So the answer is 10 plus 999, which is 1,009. Now try the same approach with 3-digit and 4-digit numbers!"
   ],
   "steps": [
@@ -3017,7 +2844,7 @@
   ],
   "hints": [
    "Think carefully: what is the greatest 5-digit even number, and what is the smallest 4-digit even number? Remember, even numbers end in 0, 2, 4, 6, or 8.",
-   "The greatest 5-digit even number is 99,998, the biggest 5-digit number ending in an even digit. The smallest 4-digit even number is 1,000, the smallest 4-digit number that's also even. Now subtract!",
+   "The greatest 5-digit number is 99,999, but it is odd, so step down to the nearest even number. Then find the smallest 4-digit number and check that it is even. Subtract the two.",
    "Here's a similar problem: Find the difference between the greatest 3-digit even number and the smallest 2-digit even number. Greatest 3-digit even number is 998. Smallest 2-digit even number is 10. Difference is 998 minus 10, which is 988. Now apply the same logic to 5-digit and 4-digit even numbers!"
   ],
   "steps": [
@@ -3039,7 +2866,7 @@
   "hints": [
    "Think about where the digit 7 appears in the number and what each position is worth. The question asks for the maximum, largest, place value among all the 7s!",
    "First, write out the number 17,32,727 and label each digit's place value from right to left: ones, tens, hundreds, thousands, ten-thousands, lakhs, ten-lakhs. Then find every 7 and compare their place values.",
-   "Here's a similar problem: Find the maximum place value of digit 5 in 25,15,350. The 5s appear at: ones place, but wait, it's 0 there, no 5! Tens place, which is 50. Hundreds place, nope, it's 3. Thousands place, which is 5,000. Ten-thousands place, which is 50,000, nope, it's 1. And lakhs place, which is 5,00,000. The maximum place value of 5 would be 5,00,000."
+   "Here's a similar problem: find the maximum place value of the digit 5 in 25,15,350. The 5 in the tens place is worth 50, the 5 in the thousands place is worth 5,000 and the 5 in the lakhs place is worth 5,00,000. The biggest of these is 5,00,000."
   ],
   "steps": [
    "Let's write out 17,32,727 and label each digit's position from right to left:",
@@ -3085,8 +2912,8 @@
   ],
   "hints": [
    "Think about what 'place value' means, it's the value a digit has because of its position in the number. Find the place value of every digit, then pick the biggest and smallest!",
-   "Write out the place value of each digit. 9 is in the lakhs place, so its place value is 9,00,000. 3 is in the ten-thousands place: 30,000. 7 is in the thousands place: 7,000. 4 is in the hundreds place: 400. 5 is in the tens place: 50. And 1 is in the ones place: 1. Now find the maximum and minimum place values!",
-   "Here's a similar problem: Find the difference between the maximum and minimum place value in 5,23,461. The place values are: 5 gives 5,00,000. 2 gives 20,000. 3 gives 3,000. 4 gives 400. 6 gives 60. 1 gives 1. The maximum place value is 5,00,000. The minimum place value is 1. The difference is 5,00,000 minus 1, which is 4,99,999."
+   "Write down the place value of each digit, starting with the 9 in the lakhs place. Then pick the biggest place value and the smallest place value.",
+   "Here's a similar problem: in 5,23,461 the biggest place value is 5,00,000, from the 5 in the lakhs place. The smallest is 1, from the 1 in the ones place. The difference is 5,00,000 minus 1 equals 4,99,999."
   ],
   "steps": [
    "Let's list out each digit and its place value in 9,37,451:",
@@ -3106,7 +2933,7 @@
   ],
   "hints": [
    "This question asks you to find the difference between two place values of the digit 7, first, spot where each 7 appears in the number!",
-   "Write out the number 58,70,257 and identify each 7. The first 7 is in the ten-thousands place, value is 70,000, and the second 7 is in the ones place, value is 7. Now subtract!",
+   "Write out 58,70,257 and find the digit 7 in two places. One 7 is in the ten-thousands place. Find the place of the other 7, then work out both place values.",
    "Here's a similar problem: In the number 3,45,636, the digit 3 appears twice. The first 3 is in the lakhs place, value is 3,00,000, and the second 3 is in the tens place, value is 30. The difference is 3,00,000 minus 30, which is 2,99,970. See how we subtract the smaller place value from the larger one?"
   ],
   "steps": [
@@ -3150,7 +2977,7 @@
   ],
   "hints": [
    "Think about what the greatest 2-digit number and the smallest 4-digit number are. Remember, 'greatest' means the largest possible, and 'smallest' means the least possible!",
-   "The greatest 2-digit number uses the biggest digit, 9, in both places: it's 99. The smallest 4-digit number is the first number that has exactly 4 digits: it's 1,000. Now just add them!",
+   "The greatest 2-digit number is 99. Now find the smallest 4-digit number: it has 1 in the thousands place and 0 in the other places. Then add the two numbers.",
    "Here's a similar problem: Find the sum of the greatest 1-digit number and the smallest 3-digit number. Greatest 1-digit number is 9. Smallest 3-digit number is 100. Sum is 9 plus 100, which is 109. Use the same logic for your problem!"
   ],
   "steps": [
@@ -3171,7 +2998,7 @@
   "hints": [
    "Think about what makes a number as small as possible, you want the smallest digits in the highest place values! And remember, the number must be odd, so the last digit matters.",
    "First, figure out which digits can go in the ones place to make the number odd. From 0, 1, 2, 4, 6, only 1 is odd. So 1 must be the last digit. Now arrange the remaining digits 0, 2, 4, 6 to make the rest of the number as small as possible.",
-   "Here's a similar problem: Form the smallest odd number using 3, 0, 5, 8, 2. The odd digits are 3 and 5. To make the number smallest, put the smallest odd digit, 3, at the end. Remaining digits: 0, 5, 8, 2. We can't start with 0, so the smallest non-zero digit, 2, goes first: 2, then three blanks, then 3. Then arrange 0, 5, 8 in ascending order: 20,583."
+   "Here's a similar problem: form the smallest odd number using 3, 0, 8, 4, 6. Only 3 is odd, so 3 must go at the end. Put the smallest non-zero digit, 4, first and then 0, 6 and 8 in order: 40,683."
   ],
   "steps": [
    "Identify which digits can go in the ones place to make the number odd. From 0, 1, 2, 4, 6, only 1 is odd.",
@@ -3192,7 +3019,7 @@
   "hints": [
    "Think about which numbers are two-digit numbers, and then figure out how many of those are odd. What makes a number odd?",
    "Two-digit numbers range from 10 to 99. List out which digits can appear in the ones place to make a number odd, 1, 3, 5, 7, 9. Now count systematically!",
-   "Here's a similar problem: How many two-digit even numbers are there? Two-digit numbers go from 10 to 99. Even numbers end in 0, 2, 4, 6, or 8. For tens digit 1, that is, 10 to 19, the even ones are 10, 12, 14, 16, 18, so that's 5 numbers. Same for tens digit 2, 3, and so on, up to 9. That's 9 times 5 equals 45 even numbers. Now try the same approach for odd numbers!"
+   "Here's a similar problem. How many two-digit numbers end in 3 or 7? The tens digit can be any digit from 1 to 9, so there are 9 choices, and the ones digit has 2 choices. That makes 9 times 2, which equals 18 numbers."
   ],
   "steps": [
    "First, identify all two-digit numbers. They go from 10 to 99.",
@@ -3235,7 +3062,7 @@
   "hints": [
    "Think about arranging digits to make the biggest possible number and the smallest possible number, then subtract!",
    "To make the greatest number, arrange the digits 3, 1, 4, 7 in descending order, largest digit first. To make the smallest number, arrange them in ascending order, smallest digit first.",
-   "Here's a similar example: Using digits 2, 5, 8, 6, the greatest number is 8652, and the smallest number is 2568. The difference is 8652 minus 2568, which is 6084. See how it works? Now try the same idea with 3, 1, 4, 7!"
+   "Here's a similar example: using the digits 6, 2, 9, 5, the greatest number is 9,652 and the smallest is 2,569. The difference is 9,652 minus 2,569 equals 7,083. Now try the same idea with 3, 1, 4, 7!"
   ],
   "steps": [
    "First, let's find the greatest number using digits 3, 1, 4, 7. Arrange them from largest to smallest.",
@@ -3254,7 +3081,7 @@
   ],
   "hints": [
    "First, think about which digits are one-digit prime numbers. Remember, a prime number has exactly two factors: 1 and itself. List all one-digit primes!",
-   "The one-digit prime numbers are 2, 3, 5, and 7. Now, to form the smallest number using all four digits, arrange them from smallest to largest. But wait, the number must also be odd. Check if the smallest arrangement gives an odd number!",
+   "The one-digit prime numbers are 2, 3, 5 and 7. To make the smallest number, put the smallest digit in the thousands place and work upwards. Then check that your number ends in an odd digit.",
    "Here's a similar problem: 'Find the smallest even number using digits 1, 3, 5, 6.' The smallest arrangement is 1,356. Is it even? Yes, because it ends in 6! So 1,356 is the answer. Now apply the same thinking to your problem!"
   ],
   "steps": [
@@ -3275,7 +3102,7 @@
   "hints": [
    "Think about how many ways you can arrange 3 different items in a row, this is a counting or permutation problem!",
    "Start by figuring out how many choices you have for the hundreds place, then the tens place, then the ones place. Multiply those choices together!",
-   "Imagine you have the digits 1, 2, and 3. How many two-digit numbers can you make using each digit only once? For the tens place, you have 3 choices, 1, 2, or 3. For the ones place, you have 2 remaining choices. So total is 3 times 2, which is 6 two-digit numbers: 12, 13, 21, 23, 31, 32. Now try the same idea with three-digit numbers!"
+   "Here's a similar problem. Using the digits 1, 2, 3 and 4, with no digit used twice, how many two-digit numbers can you make? There are 4 choices for the tens place, and then 3 choices left for the ones place. So there are 4 times 3, which equals 12 numbers."
   ],
   "steps": [
    "We need to form 3-digit numbers using the digits 3, 4, and 5, where each digit is used exactly once.",
@@ -3339,7 +3166,7 @@
   "hints": [
    "This is a place value problem where you need to form the greatest and smallest 5-digit numbers from given digits, then subtract. Think carefully about what 'middle digit' means in a 5-digit number!",
    "First, arrange the digits 1, 5, 0, 9, 7 in descending order for the greatest number and ascending order for the smallest number. Remember: the smallest number can't start with 0!",
-   "Here's a similar problem: Using digits 2, 4, 0, 8, 6, the greatest is 86420, and the smallest is 20468. Subtract: 86420 minus 20468 equals 65952. The middle digit, the 3rd digit, is 9. See how we found the middle digit? Now try the same approach with your digits!"
+   "Here's a similar problem with 4 digits: 3, 0, 8, 6. The greatest number is 8,630 and the smallest is 3,068, because a number cannot start with 0. Subtract: 8,630 minus 3,068 equals 5,562. The tens digit of the result is 6."
   ],
   "steps": [
    "Find the greatest number using digits 1, 5, 0, 9, 7. Arrange them in descending order: 97510.",
@@ -3360,7 +3187,7 @@
   "hints": [
    "Think about what 'place value' means, it's not the face value of a digit, but the value it holds based on its position in the number!",
    "First, figure out which place each digit occupies. In 73,46,125, count from the right: 5 is in ones place, 2 is in tens place, 1 is in hundreds place, keep going until you reach 7. Then multiply each digit by the value of its place.",
-   "Here's a similar problem: In the number 45,23,678, find the sum of place values of 4 and 6. 4 is in the crores place, so place value is 4 times 10,00,000, which is 40,00,000. 6 is in the hundreds place, so place value is 6 times 100, which is 600. Sum is 40,00,000 plus 600, which is 40,00,600."
+   "Here's a similar problem: in the number 45,23,678, find the sum of the place values of 4 and 6. The 4 is in the ten-lakhs place, so its place value is 40,00,000. The 6 is in the hundreds place, so its place value is 600. The sum is 40,00,000 plus 600 equals 40,00,600."
   ],
   "steps": [
    "Let's write out the number 73,46,125 and label each digit's place from right to left.",

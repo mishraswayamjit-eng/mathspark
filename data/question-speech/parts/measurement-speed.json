@@ -75,7 +75,7 @@
   "hints": [
    "Think carefully: splitting a journey by equal distance versus splitting by equal time gives different average speeds. Which method gives a higher average?",
    "For the trip to Pondicherry, use the formula: Average speed equals Total distance divided by Total time. Pick a convenient total distance like 120 kilometres to make the fractions easy.",
-   "Here's a similar problem: A cyclist rides 50 kilometres at 10 kilometres per hour and 50 kilometres at 25 kilometres per hour. Total distance equals 100 kilometres. Time equals 50 divided by 10 plus 50 divided by 25, which is 5 plus 2, which is 7 hours. Average speed equals 100 divided by 7, which is about 14.3 kilometres per hour. But if the cyclist rides for 3 hours at 10 kilometres per hour and 3 hours at 25 kilometres per hour, distance equals 30 plus 75, which is 105 kilometres in 6 hours, average speed equals 105 divided by 6, which is 17.5 kilometres per hour. Splitting by equal time gives a higher average speed!"
+   "Here's a similar problem. A cyclist rides 30 kilometres at 10 kilometres per hour, and 30 kilometres at 30 kilometres per hour. That takes 3 plus 1, which is 4 hours, for 60 kilometres, so the average speed is 60 divided by 4, which is 15 kilometres per hour. If the cyclist instead rides 2 hours at 10 kilometres per hour and 2 hours at 30 kilometres per hour, the distance is 20 plus 60, which is 80 kilometres, in 4 hours, so the average speed is 80 divided by 4, which is 20 kilometres per hour. Here the equal time trip is faster by 20 minus 15, which is 5 kilometres per hour."
   ],
   "steps": [
    "Let's pick a convenient total distance for the one-way trip. Let the total distance be 120 kilometres, Chennai to Pondicherry.",
@@ -181,7 +181,7 @@
   "hints": [
    "Average speed isn't just the average of the two speeds! Think: Average Speed equals Total Distance divided by Total Time.",
    "First, find the distance traveled upstream using Distance equals Speed times Time. Then figure out how long the return trip takes.",
-   "Here's a similar problem: A cyclist rides 20 kilometres at 10 kilometres per hour and returns the same 20 kilometres at 20 kilometres per hour. Total distance equals 20 plus 20, which is 40 kilometres. Total time equals 2 plus 1, which is 3 hours. Average speed equals 40 divided by 3, which is about 13.33 kilometres per hour. Notice this is not simply 10 plus 20, all divided by 2, which is 15!"
+   "Here's a similar problem. A cyclist rides 30 kilometres at 10 kilometres per hour, and returns the same 30 kilometres at 15 kilometres per hour. Total distance equals 30 plus 30, which is 60 kilometres. Total time equals 3 plus 2, which is 5 hours. Average speed equals 60 divided by 5, which is 12 kilometres per hour."
   ],
   "steps": [
    "Find the distance traveled upstream. They go at 6 kilometres per hour for 2 hours. Distance upstream equals 6 times 2, which is 12 kilometres.",
@@ -189,27 +189,6 @@
    "Calculate the total distance for the entire journey, both ways. Total distance equals 12 plus 12, which is 24 kilometres.",
    "Calculate the total travel time, excluding prayer time, as the question says. Total time equals 2 plus 1, which is 3 hours.",
    "Now find the average speed using the formula. Average speed equals 24 divided by 3, which is 8 kilometres per hour."
-  ]
- },
- "AIGEN_grade5_2964efcc-7362-4bd3-bf12-d08dc12a1c73": {
-  "q": "Arjun and his family are driving from Bangalore to Mysore for Dasara celebrations. The total distance is 150 kilometres. They drive at 50 kilometres per hour for the first part of the journey until they stop for chai at a dhaba after covering 75 kilometres. After the break, they drive the remaining distance at 25 kilometres per hour because of heavy festival traffic. What is their average speed for the entire journey, not counting the chai break?",
-  "options": [
-   "37.5 kilometres per hour",
-   "100 kilometres per hour",
-   "33.33 kilometres per hour",
-   "75 kilometres per hour"
-  ],
-  "hints": [
-   "Average speed isn't just the average of the two speeds! You need to find the total distance and divide by the total time.",
-   "First, find the time taken for each part: Time equals Distance divided by Speed. Calculate the time for the first 75 kilometres and then for the next 75 kilometres.",
-   "Here's a similar problem: A cyclist rides 20 kilometres at 10 kilometres per hour and then 20 kilometres at 5 kilometres per hour. Time one equals 20 divided by 10, which is 2 hours, Time two equals 20 divided by 5, which is 4 hours. Total time equals 6 hours. Total distance equals 40 kilometres. Average speed equals 40 divided by 6, which is 6.67 kilometres per hour. Notice this is not 10 plus 5, all divided by 2, which is 7.5!"
-  ],
-  "steps": [
-   "Find the distance for each part of the journey. First part equals 75 kilometres, Second part equals 150 minus 75, which is 75 kilometres.",
-   "Find the time taken for the first part at 50 kilometres per hour. t 1 equals 75 divided by 50, which is 1.5 hours.",
-   "Find the time taken for the second part at 25 kilometres per hour. t 2 equals 75 divided by 25, which is 3 hours.",
-   "Find the total time for the journey, excluding the break. t total equals 1.5 plus 3, which is 4.5 hours.",
-   "Calculate average speed using the formula: Total Distance divided by Total Time. Average Speed equals 150 divided by 4.5, which is 1500 divided by 45, which is 33.33 kilometres per hour."
   ]
  },
  "AIGEN_grade5_2ba5dc32-4f7d-4ba2-b99e-762057eb2571": {
@@ -221,9 +200,9 @@
    "160 kilometres"
   ],
   "hints": [
-   "Think about it this way: if you call the distance at 80 kilometres per hour d, then the remaining distance at 40 kilometres per hour is 240 minus d. The total time for both parts equals 4 hours.",
+   "Think about it this way. If you call the distance at 80 kilometres per hour d, then the remaining distance at 40 kilometres per hour is 240 minus d. The total time for both parts equals 4 hours.",
    "Write the time equation: d divided by 80, plus, open bracket, 240 minus d, close bracket, divided by 40, equals 4. Now try to solve for d!",
-   "Here's a similar problem, solved. A car travels a total of 180 kilometres. It goes at 60 kilometres per hour for the first part, and 30 kilometres per hour for the rest, taking 4 hours total. Let the first distance be x. Then x over 60, plus, open bracket, 180 minus x, close bracket, over 30, equals 4. Multiply everything by 60: x plus 2 times, open bracket, 180 minus x, close bracket, equals 240. So x plus 360 minus 2 x equals 240. So minus x equals minus 120, which gives x equals 120 kilometres, at 60 kilometres per hour. Use the same approach for your problem!"
+   "Here's a similar problem. A car travels 180 kilometres in 4 hours, part at 60 kilometres per hour and the rest at 30 kilometres per hour. Let the first distance be x. Then x divided by 60, plus, open bracket 180 minus x close bracket, divided by 30, equals 4. Multiply everything by 60. We get x plus 2 times, open bracket 180 minus x close bracket, equals 240. So 360 minus x equals 240, and x equals 120 kilometres."
   ],
   "steps": [
    "Let the distance travelled at 80 kilometres per hour be d kilometres. Then the distance at 40 kilometres per hour is 240 minus d kilometres. d, plus 240 minus d, equals 240.",
@@ -244,7 +223,7 @@
   "hints": [
    "Average speed isn't just the average of the two speeds! Think about total distance divided by total time.",
    "First find the total distance, there and back, and the total time taken for the whole trip.",
-   "Here's a similar problem: A cyclist rides 10 kilometres in 1 hour and returns the same 10 kilometres in 2 hours. Total distance equals 10 plus 10, which is 20 kilometres. Total time equals 1 plus 2, which is 3 hours. Average speed equals 20 divided by 3, which is 6.67 kilometres per hour. Notice it's not simply 10 plus 5, all divided by 2!"
+   "Here's a similar problem. A cyclist rides 30 kilometres in 2 hours, and returns the same 30 kilometres in 3 hours. Total distance equals 30 plus 30, which is 60 kilometres. Total time equals 2 plus 3, which is 5 hours. Average speed equals 60 divided by 5, which is 12 kilometres per hour."
   ],
   "steps": [
    "Find the total distance. The boat goes 18 kilometres downstream and 18 kilometres upstream. Total distance equals 18 plus 18, which is 36 kilometres.",
@@ -264,7 +243,7 @@
   "hints": [
    "Average speed isn't just the average of the two speeds! Think: Average speed equals Total distance divided by Total time.",
    "First find the total distance, across plus back equals 600 plus 600. Then find the time for each leg separately using Time equals Distance divided by Speed.",
-   "Here's a similar problem: A cyclist goes 100 kilometres at 25 kilometres per hour and returns at 20 kilometres per hour. Total distance equals 200 kilometres. Time going equals 100 divided by 25, which is 4 hours. Time returning equals 100 divided by 20, which is 5 hours. Total time equals 9 hours. Average speed equals 200 divided by 9, which is about 22.2 kilometres per hour. Notice this is not 25 plus 20, all divided by 2, which is 22.5!"
+   "Here's a similar problem. A boat crosses a river 60 metres wide at 6 metres per second, and comes back at 3 metres per second. Total distance equals 60 plus 60, which is 120 metres. Time going equals 60 divided by 6, which is 10 seconds, and time returning equals 60 divided by 3, which is 20 seconds, so total time equals 30 seconds. Average speed equals 120 divided by 30, which is 4 metres per second."
   ],
   "steps": [
    "Find the total distance for the round trip. Total distance equals 600 plus 600, which is 1200 metres.",
@@ -305,9 +284,9 @@
    "Priya reaches first, by 15 minutes"
   ],
   "hints": [
-   "Think carefully: when Kiran cycles half the distance at each speed, her average speed is not simply the average of 10 and 20. Calculate each person's total time separately!",
+   "Think carefully: when Kiran cycles half the distance at each speed, her average speed is NOT simply the average of 10 and 20. Calculate each person's total time separately!",
    "Start by finding Priya's total time: Time equals Distance divided by Speed, which is 60 divided by 15. Then find Kiran's time for the first 30 kilometres and the next 30 kilometres separately.",
-   "Here's a similar problem: If Amit walks 20 kilometres total, the first 10 kilometres at 2 kilometres per hour and the next 10 kilometres at 5 kilometres per hour, his total time is 10 divided by 2 plus 10 divided by 5, which is 5 plus 2, which is 7 hours. His average speed is 20 divided by 7, which is about 2.86 kilometres per hour, which is not 2 plus 5, all divided by 2, which is 3.5 kilometres per hour. The slower portion always drags the average down!"
+   "Here's a similar problem. Asha walks 24 kilometres at a steady 8 kilometres per hour, so she takes 24 divided by 8, which is 3 hours. Bala walks the first 12 kilometres at 4 kilometres per hour, and the next 12 kilometres at 12 kilometres per hour, so he takes 3 plus 1, which is 4 hours. Asha arrives first, by 4 minus 3, which is 1 hour."
   ],
   "steps": [
    "Find Priya's total time. She cycles 60 kilometres at a constant 15 kilometres per hour. Priya's time equals 60 divided by 15, which is 4 hours.",
@@ -329,7 +308,7 @@
   "hints": [
    "Remember: average speed equals total distance divided by total time. You'll need to find the distance covered in each part separately!",
    "First convert each time from minutes to hours: 45 minutes equals three quarters of an hour, 40 minutes equals two thirds of an hour, 20 minutes equals one third of an hour. Then use Distance equals Speed times Time for each part.",
-   "Here's a similar problem: A car goes at 40 kilometres per hour for 30 minutes and 20 kilometres per hour for 30 minutes. Distance one equals 40 times 0.5, which is 20 kilometres, Distance two equals 20 times 0.5, which is 10 kilometres. Total distance equals 30 kilometres, Total time equals 1 hour. Average speed equals 30 divided by 1, which is 30 kilometres per hour. Notice that the average speed is not simply 40 plus 20, all divided by 2, which is 30, it worked out the same here only because the times were equal!"
+   "Here's a similar problem. A car goes at 40 kilometres per hour for 30 minutes, covering 20 kilometres, and then at 20 kilometres per hour for 90 minutes, covering 30 kilometres. Total distance equals 20 plus 30, which is 50 kilometres. Total time equals 30 plus 90, which is 120 minutes, or 2 hours. Average speed equals 50 divided by 2, which is 25 kilometres per hour."
   ],
   "steps": [
    "Convert each time period from minutes to hours. 45 minutes equals 45 divided by 60, which is three quarters of an hour, 40 minutes equals 40 divided by 60, which is two thirds of an hour, 20 minutes equals 20 divided by 60, which is one third of an hour.",
@@ -339,28 +318,6 @@
    "Find the total distance and total time. Total distance equals 45 plus 20 plus 5, which is 70 kilometres.",
    "Total time: three quarters plus two thirds plus one third, which is three quarters plus 1, which is 7 over 4 hours, or 1 hour 45 minutes.",
    "Calculate the average speed. Average speed equals 70 divided by 7 over 4, which is 70 times 4 over 7, which is 40 kilometres per hour."
-  ]
- },
- "AIGEN_grade5_54aca949-2fcf-42bd-9525-fa6bfec7cb40": {
-  "q": "Kavya's family is travelling by car from Pune to Mahabaleshwar for a weekend trip. The total distance is 120 kilometres. They drive the first 60 kilometres on the highway at 60 kilometres per hour. Then they stop at a dhaba for a 30-minute chai break. After that, they drive the remaining 60 kilometres on the winding ghat road at 30 kilometres per hour. What is the average speed of their entire journey, including the chai break?",
-  "options": [
-   "Approximately 34.3 kilometres per hour",
-   "120 divided by 3 equals 40 kilometres per hour",
-   "40 kilometres per hour",
-   "45 kilometres per hour"
-  ],
-  "hints": [
-   "Average speed equals Total Distance divided by Total Time. Don't forget to include the chai break in the total time!",
-   "First, find the time for each part: Time equals Distance divided by Speed. Calculate time for the highway, the break, and the ghat road separately.",
-   "Here's a similar problem: A boy walks 10 kilometres at 5 kilometres per hour, rests for 1 hour, then walks 10 kilometres at 10 kilometres per hour. Total distance equals 20 kilometres. Total time equals 2 plus 1 plus 1, which is 4 hours. Average speed equals 20 divided by 4, which is 5 kilometres per hour. Notice how the rest time is included!"
-  ],
-  "steps": [
-   "Find the time for the highway part. Time 1 equals 60 divided by 60, which is 1 hour.",
-   "Note the chai break time. Break equals 30 minutes, which is half an hour.",
-   "Find the time for the ghat road part. Time 2 equals 60 divided by 30, which is 2 hours.",
-   "Add up the total time, including the break. Total Time equals 1 plus one half plus 2, which is 3.5 hours.",
-   "Calculate the total distance. Total Distance equals 60 plus 60, which is 120 kilometres.",
-   "Calculate the average speed. Average Speed equals 120 divided by 3.5, which is 240 divided by 7, which is about 34.3 kilometres per hour."
   ]
  },
  "AIGEN_grade5_57d787f5-2ed4-4fc2-9026-dac42c105c56": {
@@ -414,7 +371,7 @@
   "hints": [
    "Think about the two parts of the journey separately, the time going and the time coming back. Then add them up!",
    "Use Time equals Distance divided by Speed for each part. The distance each way is 4 kilometres.",
-   "Here's a similar problem: If someone cycles 6 kilometres at 12 kilometres per hour and walks back 6 kilometres at 6 kilometres per hour, the cycling time equals 6 divided by 12, which is 0.5 hours, 30 minutes, and the walking time equals 6 divided by 6, which is 1 hour, 60 minutes. Total equals 30 plus 60, which is 90 minutes."
+   "Here's a similar problem. Someone cycles 6 kilometres to a shop at 6 kilometres per hour, and walks back the same 6 kilometres at 3 kilometres per hour. Cycling time equals 6 divided by 6, which is 1 hour, and walking time equals 6 divided by 3, which is 2 hours. Total equals 1 plus 2, which is 3 hours."
   ],
   "steps": [
    "Find the time Vikram takes to jog to the cricket ground. Jogging time equals Distance divided by Speed, which is 4 divided by 8, which is 0.5 hours, which is 30 minutes.",
@@ -477,7 +434,7 @@
   "hints": [
    "Think carefully: average speed equals total distance divided by total travel time. Don't just average the two speeds!",
    "First, find the distance traveled downstream using Speed times Time. Remember to convert 40 minutes into hours!",
-   "Here's a similar problem: A cyclist rides 10 kilometres at 20 kilometres per hour and returns the same 10 kilometres at 10 kilometres per hour. Total distance equals 20 kilometres. Time going equals 10 divided by 20, which is 0.5 hours, time returning equals 10 divided by 10, which is 1 hour. Total time equals 1.5 hours. Average speed equals 20 divided by 1.5, which is 13.33 kilometres per hour. Notice it's not simply 20 plus 10, all divided by 2, which is 15!"
+   "Here's a similar problem. A boat goes downstream at 30 kilometres per hour for 20 minutes, so it covers 10 kilometres. It returns the same 10 kilometres at 15 kilometres per hour, which takes 40 minutes. Total distance equals 20 kilometres, and total time equals 60 minutes, or 1 hour, so average speed equals 20 kilometres per hour."
   ],
   "steps": [
    "Find the distance traveled downstream. Speed equals 18 kilometres per hour, Time equals 40 minutes, which is two thirds of an hour. Distance equals 18 times two thirds, which is 12 kilometres.",
@@ -497,7 +454,7 @@
   "hints": [
    "Think about what 'average speed' means when the distance is the same both ways, it's not just the simple average of the two speeds!",
    "First find the time Suresh takes to go to the park, 6 kilometres at 6 kilometres per hour, and the time he takes to come back, 6 kilometres at 4 kilometres per hour. Add them up!",
-   "Here's a similar problem: If someone walks 10 kilometres at 5 kilometres per hour and returns 10 kilometres at 10 kilometres per hour, total time equals 2 plus 1, which is 3 hours, total distance equals 20 kilometres, so average speed equals 20 divided by 3, which is 6.67 kilometres per hour, not 7.5 kilometres per hour! If another person covers the same 20 kilometres in 3 hours at a constant speed, their speed is also 6.67 kilometres per hour."
+   "Here's a similar problem. Someone cycles 30 kilometres at 15 kilometres per hour, and returns the same 30 kilometres at 10 kilometres per hour. Total time equals 2 plus 3, which is 5 hours, and total distance equals 60 kilometres. A friend who covers the same 60 kilometres in the same 5 hours at a steady speed travels at 60 divided by 5, which is 12 kilometres per hour."
   ],
   "steps": [
    "Find the time Suresh takes to jog to the park. Time 1 equals 6 divided by 6, which is 1 hour.",
@@ -540,7 +497,7 @@
   "hints": [
    "Remember: average speed equals total distance divided by total time. Don't just average the two speeds!",
    "First, find the distance covered in each part separately. For the first part: distance equals 90 times 1. For the second part: remember 30 minutes equals 0.5 hours.",
-   "Here's a similar problem: A car goes at 40 kilometres per hour for 2 hours and then at 60 kilometres per hour for 1 hour. Total distance equals 40 times 2 plus 60 times 1, which is 80 plus 60, which is 140 kilometres. Total time equals 2 plus 1, which is 3 hours. Average speed equals 140 divided by 3, which is about 46.67 kilometres per hour. Notice how the average speed is not simply 40 plus 60, all divided by 2, which is 50!"
+   "Here's a similar problem. A car goes at 30 kilometres per hour for 2 hours, and then at 60 kilometres per hour for 1 hour. Total distance equals 30 times 2, plus 60 times 1. That is 60 plus 60, which is 120 kilometres. Total time equals 2 plus 1, which is 3 hours. Average speed equals 120 divided by 3, which is 40 kilometres per hour."
   ],
   "steps": [
    "Find the distance covered in the first part of the journey. Distance 1 equals 90 times 1, which is 90 kilometres.",
@@ -669,7 +626,7 @@
   "hints": [
    "Average speed isn't just the average of the two speeds! Think about total distance divided by total time.",
    "First, find the time taken for each part of the trip: Time equals Distance divided by Speed.",
-   "Here's a similar problem: Ravi walks 10 kilometres at 5 kilometres per hour and returns at 10 kilometres per hour. Time going equals 10 divided by 5, which is 2 hours. Time returning equals 10 divided by 10, which is 1 hour. Total distance equals 20 kilometres, total time equals 3 hours. Average speed equals 20 divided by 3, which is 6.67 kilometres per hour, not 7.5 kilometres per hour!"
+   "Here's a similar problem. Ravi walks 18 kilometres at 6 kilometres per hour, and returns at 3 kilometres per hour. Time going equals 18 divided by 6, which is 3 hours. Time returning equals 18 divided by 3, which is 6 hours. Total distance equals 36 kilometres and total time equals 9 hours, so average speed equals 36 divided by 9, which is 4 kilometres per hour."
   ],
   "steps": [
    "Find the total distance for the round trip. Total distance equals 24 plus 24, which is 48 kilometres.",
@@ -775,7 +732,7 @@
   "hints": [
    "First figure out how far the temple is, you know the speed and time for the downstream trip! Then use that distance for the return trip.",
    "Convert 40 minutes to hours: 40 minutes equals 40 divided by 60, which is two thirds of an hour. Now find the distance using Distance equals Speed times Time.",
-   "Here's a similar problem. A cyclist rides at 15 kilometres per hour for 20 minutes to reach a park. She returns at 10 kilometres per hour. How long does the return take? First, 20 minutes is one third of an hour, so the distance is 15 times one third, which is 5 kilometres. Then, the return time is 5 divided by 10, which is half an hour, or 30 minutes. See the pattern?"
+   "Here's a similar problem. A cyclist rides at 15 kilometres per hour for 20 minutes to reach a park. 20 minutes is one third of an hour, so the park is 15 divided by 3, which is 5 kilometres away. She returns at 10 kilometres per hour, so the return takes 5 divided by 10, which is half an hour, or 30 minutes."
   ],
   "steps": [
    "Convert the downstream travel time from minutes to hours. 40 minutes equals 40 divided by 60, which is two thirds of an hour.",
@@ -795,7 +752,7 @@
   "hints": [
    "Let the distance at 90 kilometres per hour be 'd one' and at 60 kilometres per hour be 'd two'. You know two things: d one plus d two equals 360, and the total time equals 5 hours. Can you write the time equation?",
    "Time equals Distance divided by Speed. So the time for the first part is d one divided by 90 and for the second part is d two divided by 60. Their sum equals 5 hours.",
-   "Here's a similar problem. A car travels 200 kilometres total. It goes at 50 kilometres per hour for part, and 40 kilometres per hour for the rest, taking 4.5 hours total. If the fast part is d, then d over 50, plus, open bracket, 200 minus d, close bracket, over 40, equals 4.5. Solving: 4 d over 200, plus 5 times, open bracket, 200 minus d, close bracket, over 200, equals 4.5. So 4 d plus 1000 minus 5 d equals 900, which gives d equals 100 kilometres. So the slower part is 100 kilometres. Try the same approach for Rohan's train!"
+   "Here's a similar problem. A car travels 150 kilometres in 3 hours, part at 60 kilometres per hour and the rest at 30 kilometres per hour. If the fast part is d kilometres, then d divided by 60, plus, open bracket 150 minus d close bracket, divided by 30, equals 3. Multiply everything by 60. We get d plus 2 times, open bracket 150 minus d close bracket, equals 180. So 300 minus d equals 180, and d equals 120. The slower part is 150 minus 120, which is 30 kilometres."
   ],
   "steps": [
    "Let the distance travelled at 90 kilometres per hour be d one and the distance at 60 kilometres per hour be d two. d 1 plus d 2 equals 360.",
@@ -862,7 +819,7 @@
    "25 kilometres"
   ],
   "hints": [
-   "Remember, the times are given in minutes, you'll need to convert them to hours before using the speed formula!",
+   "Remember, the times are given in minutes, so you'll need to convert them to hours before using the speed formula!",
    "Convert 20 minutes to hours: 20 divided by 60 equals one third of an hour. Now find the distance for the first part using Distance equals Speed times Time.",
    "Here's a similar problem: A cyclist rides at 12 kilometres per hour for 30 minutes and then at 18 kilometres per hour for 20 minutes. Distance one equals 12 times 30 divided by 60, which is 12 times 0.5, which is 6 kilometres. Distance two equals 18 times 20 divided by 60, which is 18 times one third, which is 6 kilometres. Total equals 6 plus 6, which is 12 kilometres."
   ],
@@ -886,7 +843,7 @@
   "hints": [
    "Average speed equals Total distance divided by Total travel time, don't count the lunch break! First figure out how far they drove in the first part, then find the remaining distance.",
    "Start by finding the distance covered in the first part: Distance equals Speed times Time, which is 60 times 3, which is 180 kilometres. Then the remaining distance is 420 minus 180, which is 240 kilometres.",
-   "Here's a similar problem: A bus covers 200 kilometres total. It goes at 50 kilometres per hour for 2 hours, covering 100 kilometres, then covers the remaining 100 kilometres at 100 kilometres per hour, taking 1 hour. Total travel time equals 2 plus 1, which is 3 hours. Average speed equals 200 divided by 3, which is about 66.7 kilometres per hour."
+   "Here's a similar problem. A bus covers 300 kilometres in total. It goes at 50 kilometres per hour for 2 hours, covering 100 kilometres, then covers the remaining 200 kilometres at 100 kilometres per hour, taking 2 hours. Total travel time equals 2 plus 2, which is 4 hours. Average speed equals 300 divided by 4, which is 75 kilometres per hour."
   ],
   "steps": [
    "Find the distance covered in the first part of the journey. Distance 1 equals 60 times 3, which is 180 kilometres.",
@@ -907,7 +864,7 @@
   "hints": [
    "Think about it this way: she travels the same distance twice, once slowly and once quickly. Can you write the time for each part using Time equals Distance divided by Speed?",
    "Let the distance to the market be d kilometres. Time walking equals d over 4 hours, Time by auto equals d over 20 hours. Their sum equals 3 hours.",
-   "Here's a similar problem. Suppose someone cycles 6 kilometres per hour one way, and 12 kilometres per hour back, and the total time is 3 hours. Then d over 6, plus d over 12, equals 3. So, open bracket, 2 d plus d, close bracket, over 12, equals 3. So 3 d equals 36, which gives d equals 12 kilometres. Use the same method for your question!"
+   "Here's a similar problem. Someone cycles to a park at 6 kilometres per hour and back at 12 kilometres per hour, and the total time is 6 hours. If the park is d kilometres away, then d divided by 6, plus d divided by 12, equals 6. Multiply everything by 12. We get 2 d plus d equals 72. So 3 d equals 72, and d equals 24 kilometres."
   ],
   "steps": [
    "Let the distance from Meera's house to the market be d kilometres.",
@@ -951,33 +908,13 @@
   "hints": [
    "Think about how far ahead Grandfather is when Ravi starts. Then figure out how quickly Ravi closes that gap.",
    "First, find the distance Grandfather covers in 20 minutes at 3 kilometres per hour. That's the head start Ravi needs to make up!",
-   "Here's a similar problem. If person A starts walking at 2 kilometres per hour, and person B starts 30 minutes later at 5 kilometres per hour, then A's head start is 2 times 30 over 60, which is 1 kilometre. B gains on A at 5 minus 2, which is 3 kilometres per hour. Time for B to catch up is 1 divided by 3, which is one third of an hour. Distance B covers is 5 times one third, which is 5 over 3, or about 1.67 kilometres."
+   "Here's a similar problem. Person A starts walking at 4 kilometres per hour, and person B starts 30 minutes later at 6 kilometres per hour. In 30 minutes, which is half an hour, A walks 4 divided by 2, which is 2 kilometres. B gains on A at 6 minus 4, which is 2 kilometres per hour, so B catches up in 2 divided by 2, which is 1 hour. In that hour B covers 6 kilometres."
   ],
   "steps": [
    "Find Grandfather's head start. He walks for 20 minutes, which is one third of an hour, at 3 kilometres per hour before Ravi starts. Head start equals 3 times one third, which is 1 kilometre.",
    "Find the relative speed at which Ravi closes the gap. Ravi walks at 5 kilometres per hour and Grandfather walks at 3 kilometres per hour, so Ravi gains on him at: Relative speed equals 5 minus 3, which is 2 kilometres per hour.",
    "Find the time Ravi takes to catch up. He needs to close a 1-kilometre gap at 2 kilometres per hour: Time equals half an hour, which is 30 minutes.",
    "Find how far from home Ravi is when he catches up. Ravi walks at 5 kilometres per hour for half an hour: Distance from home equals 5 times one half, which is 2.5 kilometres."
-  ]
- },
- "AIGEN_grade5_f2d37300-cb9d-44ee-9f66-16bb5fe2098b": {
-  "q": "Ananya's father drives her to school every morning. He drives at 30 kilometres per hour for the first 10 minutes and then at 60 kilometres per hour for the next 10 minutes. What is the total distance from Ananya's home to her school?",
-  "options": [
-   "10 kilometres",
-   "20 kilometres",
-   "45 kilometres",
-   "15 kilometres"
-  ],
-  "hints": [
-   "Remember, the times are given in minutes, but the speeds are in kilometres per hour. You'll need to convert!",
-   "First, convert 10 minutes into hours: 10 minutes equals 10 divided by 60, which is 1 over 6 of an hour. Then use Distance equals Speed times Time for each part.",
-   "Here's a similar problem: A cyclist rides at 12 kilometres per hour for 30 minutes and then at 18 kilometres per hour for 20 minutes. Distance one equals 12 times 30 divided by 60, which is 12 times 0.5, which is 6 kilometres. Distance two equals 18 times 20 divided by 60, which is 18 times one third, which is 6 kilometres. Total equals 6 plus 6, which is 12 kilometres."
-  ],
-  "steps": [
-   "Convert the time from minutes to hours. Both parts of the journey take 10 minutes each. 10 minutes equals 10 divided by 60, which is 1 over 6 of an hour.",
-   "Find the distance covered in the first part using Distance equals Speed times Time. d 1 equals 30 times 1 over 6, which is 5 kilometres.",
-   "Find the distance covered in the second part. d 2 equals 60 times 1 over 6, which is 10 kilometres.",
-   "Add both distances to get the total distance. d total equals 5 plus 10, which is 15 kilometres."
   ]
  },
  "BOOST_EXT_G5_WS_B2_026_05": {

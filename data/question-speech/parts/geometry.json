@@ -119,30 +119,6 @@
    "So the vegetable patch has an area of 112 square metres! You can verify: the path area equals 216 minus 112, which is 104 square metres, which makes sense."
   ]
  },
- "AIGEN_grade5_09382572-179c-40c1-a137-3308a7a1d8d4": {
-  "q": "Rahul is making a triangular stand out of cardboard for his Science exhibition in Bengaluru. He cuts out a triangle where the first angle is 3 times the second angle, and the third angle is 20 degrees more than the second angle. He wants to classify the triangle by its angles. What type of triangle is it?",
-  "options": [
-   "Obtuse-angled triangle",
-   "Acute-angled triangle",
-   "Equilateral triangle",
-   "Right-angled triangle"
-  ],
-  "hints": [
-   "First, find all three angles! Remember, the sum of all angles in a triangle is 180 degrees. Set up an equation using the second angle as your unknown.",
-   "Let the second angle be x degrees. Then the first angle is 3 x degrees and the third angle is x plus 20 degrees. Add them all up and set equal to 180 degrees.",
-   "Here's a similar problem: If a triangle has angles 2 y degrees, y degrees, and y plus 40 degrees, then 2 y plus y plus y plus 40 equals 180, so 4 y equals 140, y equals 35. The angles are 70 degrees, 35 degrees, and 75 degrees. All angles are less than 90 degrees, so it's an acute-angled triangle. Now try your problem the same way!"
-  ],
-  "steps": [
-   "Let the second angle be x degrees. Then the first angle is 3 x degrees and the third angle is x plus 20 degrees.",
-   "The sum of all angles in a triangle is 180 degrees. So we write the equation: 3 x plus x, plus x plus 20, equals 180.",
-   "Simplify the left side: 5 x plus 20 equals 180.",
-   "Subtract 20 from both sides: 5 x equals 160.",
-   "Divide both sides by 5: x equals 32.",
-   "Now find all three angles: Second angle equals 32 degrees, First angle equals 3 times 32, which is 96 degrees, Third angle equals 32 plus 20, which is 52 degrees.",
-   "Check: 96 degrees plus 32 degrees plus 52 degrees equals 180 degrees.",
-   "Since the first angle, 96 degrees, is greater than 90 degrees, the triangle is an obtuse-angled triangle!"
-  ]
- },
  "AIGEN_grade5_0bcee95c-177d-4b67-afaf-eb909069f2a6": {
   "q": "Riya is making a rangoli design using straight lines. Two straight lines cross each other at a point. She measures one of the angles and finds it is 72 degrees. She then draws a third straight line from the same crossing point, which splits the angle opposite to the 72 degree angle into two equal parts. What is the measure of each of the two parts?",
   "options": [
@@ -154,34 +130,13 @@
   "hints": [
    "First, figure out the angle that is vertically opposite to 72 degrees. Then think about what splits into two equal parts means!",
    "Vertically opposite angles are always equal. So what is the angle opposite to 72 degrees?",
-   "Here's a similar problem: Two lines cross and one angle is 90 degrees. A new line bisects the angle adjacent to it. The adjacent angle equals 180 degrees minus 90 degrees, which is 90 degrees. Each half equals 90 degrees divided by 2, which is 45 degrees. Now try your problem the same way!"
+   "A similar problem: two lines cross and one angle is 80 degrees. The angle opposite to it is also 80 degrees. A line that splits it into two equal parts makes each part 80 degrees divided by 2, which equals 40 degrees."
   ],
   "steps": [
    "When two straight lines cross, vertically opposite angles are equal. So the angle opposite to 72 degrees is also 72 degrees.",
    "The third line splits, bisects, this 72 degree angle into two equal parts. Each part equals 72 degrees divided by 2.",
    "Divide 72 degrees by 2 to get each part. 72 degrees divided by 2 equals 36 degrees.",
    "So each of the two parts measures 36 degrees."
-  ]
- },
- "AIGEN_grade5_0c769cf5-835c-4728-af0b-bd4e0da4db6d": {
-  "q": "Riya is decorating her room for Diwali. She has a rectangular room that is 12 metres long and 8 metres wide. In one corner of the room, she places a square rangoli that has a side of 3 metres. She then paints the remaining floor area with a special Diwali paint that costs 45 rupees per square metre. How much does Riya spend on paint for the floor, excluding the rangoli area?",
-  "options": [
-   "3,915 rupees",
-   "3,780 rupees",
-   "4,320 rupees",
-   "4,275 rupees"
-  ],
-  "hints": [
-   "Think about it in two parts: first find the total floor area, then subtract the area covered by the rangoli, and finally multiply by the cost per square metre.",
-   "Start by finding the area of the rectangular room: Area equals length times breadth, which is 12 times 8.",
-   "Here's a similar problem: A garden is 10 metres by 6 metres. A square fountain of side 2 metres sits inside it. The remaining area is grassed at 30 rupees per square metre. Garden area equals 60 square metres. Fountain area equals 4 square metres. Remaining equals 56 square metres. Cost equals 56 times 30, which is 1,680 rupees. Now try the original problem with its own numbers!"
-  ],
-  "steps": [
-   "Find the area of the rectangular room. Room area equals 12 times 8, which is 96 square metres.",
-   "Find the area of the square rangoli. Rangoli area equals 3 times 3, which is 9 square metres.",
-   "Subtract the rangoli area from the room area to get the area to be painted. Painted area equals 96 minus 9, which is 87 square metres.",
-   "Multiply the painted area by the cost per square metre. Cost equals 87 times 45, which is 3 thousand 915 rupees.",
-   "So Riya spends 3,915 rupees on paint."
   ]
  },
  "AIGEN_grade5_0cefe8e7-7fc1-4460-b97e-d0a2d511127e": {
@@ -195,7 +150,7 @@
   "hints": [
    "First, check whether the garden triangle is a special type of triangle by testing the Pythagorean theorem. Then think about what happens to angles when you scale a triangle down.",
    "Check if 12 squared plus 16 squared equals 20 squared. If yes, the triangle is right-angled, and the largest angle is 90 degrees.",
-   "Similar problem: A triangle has sides 3 centimetres, 4 centimetres, and 5 centimetres. Since 3 squared plus 4 squared equals 9 plus 16, which is 25, which is 5 squared, it's a right triangle with the largest angle equal to 90 degrees. A triangle with sides 6, 8, and 10, doubled, is also a right triangle with the largest angle equal to 90 degrees. So the sum of their largest angles equals 90 degrees plus 90 degrees, which is 180 degrees."
+   "Similar problem: a triangle has sides 5 centimetres, 12 centimetres and 13 centimetres. Since 5 squared plus 12 squared equals 25 plus 144, which is 169, and 13 squared equals 169, it has a right angle of 90 degrees, and that is its largest angle. A triangle with every side doubled, 10 centimetres, 24 centimetres and 26 centimetres, has the same shape, so its angles are the same."
   ],
   "steps": [
    "Check if the garden triangle is a right triangle using the Pythagorean theorem. The longest side is 20 centimetres, so check if 12 squared plus 16 squared equals 20 squared. 12 squared plus 16 squared equals 144 plus 256, which is 400, which is 20 squared.",
@@ -204,46 +159,6 @@
    "Check if the tile triangle is also a right triangle. 6 squared plus 8 squared equals 36 plus 64, which is 100, which is 10 squared.",
    "The tile is also a right triangle, so its largest angle is also 90 degrees. In fact, when you scale all sides of a triangle by the same factor, all angles stay exactly the same! This is called a similar triangle.",
    "Add the two largest angles together. 90 degrees plus 90 degrees equals 180 degrees."
-  ]
- },
- "AIGEN_grade5_121d3f62-a051-44fb-ac6e-cfa6b8b4e92e": {
-  "q": "Priya is decorating her room for Diwali. She has a rectangular floor that is 12 metres long and 8 metres wide. She places a square rangoli in the center of the room, with each side of the square being 3 metres. She wants to paint the remaining floor area, everything except the rangoli, with a special rangoli paint that costs 15 rupees per square metre. How much will she spend on the paint?",
-  "options": [
-   "1,440 rupees",
-   "1,350 rupees",
-   "1,260 rupees",
-   "1,305 rupees"
-  ],
-  "hints": [
-   "Think about it in two parts: first find the total floor area, then subtract the area covered by the rangoli to get the area that needs painting!",
-   "Start by computing the area of the rectangular floor: length times breadth equals 12 times 8.",
-   "Here's a similar problem: A garden is 10 metres by 6 metres with a 2 metre by 2 metre fountain in the middle. Remaining area equals 10 times 6, minus 2 times 2, equals 60 minus 4, which is 56 square metres. If tiling costs 5 rupees per square metre, total cost equals 56 times 5, which is 280 rupees. Now try the same approach with Priya's room!"
-  ],
-  "steps": [
-   "Find the area of the rectangular floor. Floor area equals 12 times 8, which is 96 square metres.",
-   "Find the area of the square rangoli. Rangoli area equals 3 times 3, which is 9 square metres.",
-   "Find the remaining area to be painted by subtracting the rangoli area from the floor area. Painted area equals 96 minus 9, which is 87 square metres.",
-   "Multiply the remaining area by the cost per square metre to find the total cost. Total cost equals 87 times 15, which is 1 thousand 305 rupees."
-  ]
- },
- "AIGEN_grade5_12e17c4c-46ad-4382-a6a0-9ad8e7881076": {
-  "q": "Riya is decorating a rectangular greeting card for Diwali. The card has a length of 24 centimetres and a breadth of 18 centimetres. She pastes a square photo of side 10 centimetres right in the centre of the card. She wants to cover the remaining area of the card with glitter paper. How many square centimetres of glitter paper does she need?",
-  "options": [
-   "432 square centimetres",
-   "332 square centimetres",
-   "84 square centimetres",
-   "532 square centimetres"
-  ],
-  "hints": [
-   "Think about it this way: the glitter paper covers everything on the card except the photo. What operation helps you find the leftover area?",
-   "First, find the area of the whole rectangular card, length times breadth. Then find the area of the square photo, side times side. Now subtract!",
-   "Here's a similar problem: A wall is 20 centimetres times 15 centimetres, which is 300 square centimetres. A poster of 8 centimetres times 8 centimetres, which is 64 square centimetres is placed on it. Remaining area equals 300 minus 64, which is 236 square centimetres. Use the same approach for your problem!"
-  ],
-  "steps": [
-   "Find the area of the rectangular card. Area of card equals 24 times 18, which is 432 square centimetres.",
-   "Find the area of the square photo. Area of photo equals 10 times 10, which is 100 square centimetres.",
-   "Subtract the photo area from the card area to get the glitter paper area. 432 minus 100 equals 332 square centimetres.",
-   "So Riya needs 332 square centimetres of glitter paper!"
   ]
  },
  "AIGEN_grade5_1984a5bf-7467-488c-bc74-9691aa369e86": {
@@ -371,85 +286,6 @@
    "So the larger angle is 135 degrees. Ravi's rangoli has angles of 45 degrees, 135 degrees, 45 degrees, and 135 degrees, nice!"
   ]
  },
- "AIGEN_grade5_2f271f17-776d-443e-9029-37b5526035e1": {
-  "q": "Priya is making a rectangular rangoli in her courtyard for Diwali. The rangoli is 15 centimetres long and 8 centimetres wide. She wants to cut out a smaller rectangle of 5 centimetres by 3 centimetres from one corner to place a diya there. What is the area of the rangoli that will actually be covered with coloured powder?",
-  "options": [
-   "105 square centimetres",
-   "46 square centimetres",
-   "120 square centimetres",
-   "135 square centimetres"
-  ],
-  "hints": [
-   "Think about it this way: first find the total area of the big rectangle, then subtract the part that was cut out!",
-   "Start by calculating the area of the full rangoli: length times breadth equals 15 times 8.",
-   "Here's a similar problem: A rectangular card is 10 centimetres by 6 centimetres. A 3 centimetres by 2 centimetre piece is cut from a corner. Remaining area equals 10 times 6, minus 3 times 2, equals 60 minus 6, which is 54 square centimetres. Now try the same approach with your numbers!"
-  ],
-  "steps": [
-   "Find the area of the full rectangular rangoli. 15 times 8 equals 120 square centimetres.",
-   "Find the area of the small rectangle that was cut out for the diya. 5 times 3 equals 15 square centimetres.",
-   "Subtract the cut-out area from the total area to find the coloured portion. 120 minus 15 equals 105 square centimetres.",
-   "So the area covered with coloured powder is 105 square centimetres!"
-  ]
- },
- "AIGEN_grade5_2f3e11f6-8afa-42cc-a0d7-b1b22d92b341": {
-  "q": "Riya is decorating a rectangular greeting card for Diwali. The card has a length of 18 centimetres and a breadth of 12 centimetres. She wants to paste a square golden sticker right in the centre of the card. If the sticker has a side of 5 centimetres, what is the area of the card that is not covered by the sticker?",
-  "options": [
-   "156 square centimetres",
-   "191 square centimetres",
-   "35 square centimetres",
-   "216 square centimetres"
-  ],
-  "hints": [
-   "Think about it in two parts: first find the total area of the card, then subtract the area that the sticker covers!",
-   "Start by calculating the area of the rectangle: Area equals length times breadth, which is 18 times 12.",
-   "Here's a similar problem: A wall is 10 metres by 8 metres, and a painting of 3 metres by 3 metres is hung on it. Uncovered area equals 10 times 8, minus 3 times 3, equals 80 minus 9, which is 71 square metres. Use the same approach for your problem!"
-  ],
-  "steps": [
-   "Find the area of the rectangular card. Area of card equals 18 times 12, which is 216 square centimetres.",
-   "Find the area of the square sticker. Area of sticker equals 5 times 5, which is 25 square centimetres.",
-   "Subtract the sticker's area from the card's area to find the uncovered region. Uncovered area equals 216 minus 25, which is 191 square centimetres."
-  ]
- },
- "AIGEN_grade5_33b0f63c-6058-4389-b8f7-7e5634b6278b": {
-  "q": "During a cricket match, Rohit notices something cool about the clock at the stadium! Two straight roads meet at a crossing near the stadium, forming 4 angles. A traffic police officer tells Rohit that one of the angles is 3 times the angle next to it on the same straight line. What is the measure of the smaller angle?",
-  "options": [
-   "45 degrees",
-   "35 degrees",
-   "135 degrees",
-   "60 degrees"
-  ],
-  "hints": [
-   "Remember: two angles that sit next to each other on a straight line always add up to 180 degrees. Can you set up an equation using that?",
-   "Let the smaller angle be x degrees. The angle next to it on the same line is 3 x degrees. Now write: x plus 3 x equals 180.",
-   "Here's a similar problem: Two angles on a straight line are such that one is 5 times the other. So x plus 5 x equals 180, so 6 x equals 180, so x equals 30 degrees. The angles are 30 degrees and 150 degrees. Now try the same approach with 3 times!"
-  ],
-  "steps": [
-   "Two adjacent angles on a straight line are supplementary, meaning they add up to 180 degrees.",
-   "Let the smaller angle be x degrees. The problem says the other angle is 3 times this, so it is 3 x degrees. x plus 3 x equals 180.",
-   "Combine like terms on the left side. 4 x equals 180.",
-   "Divide both sides by 4 to find x. x equals 180 divided by 4, which is 45.",
-   "So the smaller angle is 45 degrees and the larger angle is 3 times 45 degrees, which is 135 degrees. Let's verify: 45 degrees plus 135 degrees equals 180 degrees."
-  ]
- },
- "AIGEN_grade5_3490db5c-1ed7-4cc8-8343-99d4c3c4d933": {
-  "q": "Ananya is making a rectangular rangoli in her courtyard for Diwali. The rangoli is 12 centimetres long and 8 centimetres wide. She then cuts out a smaller rectangle of length 4 centimetres and width 3 centimetres from one corner to place a diya there. What is the area of the remaining rangoli design, in square centimetres?",
-  "options": [
-   "84",
-   "96",
-   "108",
-   "48"
-  ],
-  "hints": [
-   "Think about it in two parts: first find the area of the full rangoli, then subtract the piece she removed!",
-   "Start by calculating the area of the big rectangle: length times breadth equals 12 times 8.",
-   "Here's a similar problem: A rectangular card is 10 centimetres by 6 centimetres. A square of side 2 centimetres is cut from a corner. Remaining area equals 10 times 6, minus 2 times 2, equals 60 minus 4, which is 56 square centimetres. See the pattern?"
-  ],
-  "steps": [
-   "Find the area of the full rectangular rangoli. Big area equals 12 times 8, which is 96 square centimetres.",
-   "Find the area of the smaller rectangle that was cut out for the diya. Small area equals 4 times 3, which is 12 square centimetres.",
-   "Subtract the cut-out area from the full area to get the remaining rangoli area. Remaining Area equals 96 minus 12, which is 84 square centimetres."
-  ]
- },
  "AIGEN_grade5_37f1c808-f5f1-42e6-9b01-858f41d54856": {
   "q": "Priya is decorating a rectangular courtyard for Diwali. The courtyard is 12 metres long and 8 metres wide. She wants to lay a beautiful rangoli border that is 1 metre wide all around the inside edge of the courtyard. What is the area of the rangoli border, in square metres?",
   "options": [
@@ -557,28 +393,6 @@
    "So the smaller angle is 45 degrees and the larger angle is 3 times 45 degrees, which is 135 degrees. Quick check: 45 degrees plus 135 degrees equals 180 degrees."
   ]
  },
- "AIGEN_grade5_46c8ae29-a5b7-437c-ae3e-616613f7a121": {
-  "q": "Riya is decorating her room for Diwali. She has a rectangular room that is 12 metres long and 8 metres wide. In one corner of the room, she places a square rangoli mat with side 3 metres. She wants to cover the rest of the floor, not covered by the rangoli mat, with special tiles. Each tile covers an area of 500 square centimetres. How many tiles does Riya need to buy?",
-  "options": [
-   "1740",
-   "174",
-   "1920",
-   "1710"
-  ],
-  "hints": [
-   "First find the area of the floor not covered by the rangoli. Then think carefully about unit conversion, the room is in metres but the tiles are in square centimetres!",
-   "Start by calculating the total room area, 12 times 8, and the rangoli area, 3 times 3, both in square metres. Then subtract to find the uncovered area.",
-   "Here's a similar problem: A garden is 10 metres by 6 metres with a 2 metre by 2 metre fountain in the middle. The remaining area equals 60 minus 4, which is 56 square metres. Converting to square centimetres: 56 times 10,000 equals 560,000 square centimetres. If each brick covers 200 square centimetres, you need 560,000 divided by 200, which is 2,800 bricks. Notice how 1 square metre equals 10,000 square centimetres!"
-  ],
-  "steps": [
-   "Find the total area of the rectangular room. Room area equals 12 times 8, which is 96 square metres.",
-   "Find the area of the square rangoli mat. Rangoli area equals 3 times 3, which is 9 square metres.",
-   "Find the uncovered floor area by subtracting. Uncovered area equals 96 minus 9, which is 87 square metres.",
-   "Convert the uncovered area from square metres to square centimetres. Remember: 1 metre equals 100 centimetres, so 1 square metre equals 10,000 square centimetres.",
-   "Divide the uncovered area by the area of one tile to find how many tiles Riya needs.",
-   "Riya needs to buy 1,740 tiles!"
-  ]
- },
  "AIGEN_grade5_4783ddb3-7bc8-47dd-b969-3d922cac0d13": {
   "q": "Arjun is flying a kite during Makar Sankranti. He notices that the kite string makes an angle with the ground. His friend Priya, standing nearby, measures the angle between the string and the ground as 53 degrees. Arjun says, The angle between the string and a vertical pole standing straight up from the ground must be easy to find! What is the angle between the kite string and the vertical pole?",
   "options": [
@@ -637,46 +451,6 @@
    "A triangle where all three angles are less than 90 degrees is called an acute-angled triangle. So Farhan's triangle is an acute-angled triangle!"
   ]
  },
- "AIGEN_grade5_51c32ebb-0d7c-4c91-8fa1-e830b3f84462": {
-  "q": "Rohan is building a paper boat for a school project. He folds a rectangular sheet of paper along a straight crease. On one side of the crease, he measures an angle of 65 degrees. What is the angle on the other side of the crease, on the same straight edge?",
-  "options": [
-   "115 degrees",
-   "25 degrees",
-   "65 degrees",
-   "125 degrees"
-  ],
-  "hints": [
-   "Think about what angles on the same side of a straight line always add up to!",
-   "Angles on a straight line are supplementary, they add up to 180 degrees. So subtract the given angle from 180 degrees.",
-   "Here's a similar problem: If one angle on a straight line is 72 degrees, the other angle equals 180 degrees minus 72 degrees, which is 108 degrees. Try the same idea with 65 degrees!"
-  ],
-  "steps": [
-   "The crease lies along a straight edge of the paper. Angles on a straight line are called supplementary angles, and they always add up to 180 degrees. Angle 1 plus Angle 2 equals 180 degrees.",
-   "We know one angle is 65 degrees. So the other angle is: Angle 2 equals 180 degrees minus 65 degrees, which is 115 degrees.",
-   "So the angle on the other side of the crease is 115 degrees."
-  ]
- },
- "AIGEN_grade5_52dd3f2c-80e8-4374-ae63-f9ea8b27d64b": {
-  "q": "Ankit is setting up a tent for a school camping trip. Two tent poles cross each other at a point P. He notices that one of the four angles formed is 3 times the angle next to it, on the same side. What is the measure of the smaller angle?",
-  "options": [
-   "60 degrees",
-   "135 degrees",
-   "45 degrees",
-   "90 degrees"
-  ],
-  "hints": [
-   "When two lines cross, adjacent angles, angles next to each other, sit on a straight line. What do angles on a straight line add up to?",
-   "Let the smaller angle be x degrees. The angle next to it is 3 x degrees. Since they are on a straight line, write the equation: x plus 3 x equals 180.",
-   "Here's a similar problem: Two angles on a straight line are in the ratio 2 is to 3. Find them. 2 x plus 3 x equals 180, so 5 x equals 180, x equals 36. The angles are 72 degrees and 108 degrees. Now try the same approach with ratio 1 is to 3!"
-  ],
-  "steps": [
-   "When two straight lines cross, adjacent angles, next to each other, are supplementary, they add up to 180 degrees.",
-   "Let the smaller angle be x degrees. The problem says the angle next to it is 3 times as large, so it is 3 x degrees.",
-   "Since these two adjacent angles are on a straight line, they add up to 180 degrees. x plus 3 x equals 180.",
-   "Combine like terms and solve for x. 4 x equals 180, so x equals 45.",
-   "So the smaller angle is 45 degrees and the larger adjacent angle is 3 times 45 degrees, which is 135 degrees. Quick check: 45 plus 135 equals 180."
-  ]
- },
  "AIGEN_grade5_55700548-8de3-454e-9cda-14843e62777a": {
   "q": "Ankit is helping his dad tile their rectangular kitchen floor. The floor is 9 metres long and 5 metres wide. Each square tile has a side of 1 metre and costs 45 rupees. How much will Ankit's dad spend on tiles to cover the entire kitchen floor?",
   "options": [
@@ -708,7 +482,7 @@
   "hints": [
    "First, figure out the breadth and length using the perimeter and the relationship between them. Then find the full rectangle's area before subtracting the square hole!",
    "If the breadth is b, then the length is 2 b. The perimeter formula gives you: 2 times, 2 b plus b, equals 120. Solve for b first!",
-   "Here's a similar problem: A rectangular garden has a perimeter of 60 metres, and its length is 3 times its breadth. A square fountain of side 2 metres is built inside. Perimeter: 2 times, 3 b plus b, equals 60, so 8 b equals 60, so b equals 7.5 metres, length equals 22.5 metres. Area of garden equals 22.5 times 7.5, which is 168.75 square metres. Area of fountain equals 4 square metres. Remaining area equals 168.75 minus 4, which is 164.75 square metres. Follow the same steps for your problem!"
+   "A similar problem: a rectangular garden has a perimeter of 48 metres and its length is 3 times its breadth. So 2 times, open bracket, 3 b plus b, close bracket, equals 48. That gives 8 b equals 48, and b equals 6 metres, so the length is 18 metres. The area is 18 times 6, which equals 108 square metres. A square fountain of side 2 metres takes 2 times 2, which equals 4 square metres, so the remaining area is 108 minus 4, which equals 104 square metres."
   ],
   "steps": [
    "Let the breadth be b metres. Since the length is twice the breadth, length equals 2 b.",
@@ -751,7 +525,7 @@
   "hints": [
    "First find the third angle using the angle sum property. Then check: are all angles less than 90 degrees? Is any angle exactly 90 degrees? Is any angle greater than 90 degrees?",
    "The sum of all angles in a triangle is 180 degrees. So the third angle equals 180 degrees, minus 48 degrees, minus 67 degrees. Calculate that first!",
-   "Here's a similar problem: A triangle has angles 50 degrees and 70 degrees. Third angle equals 180 degrees, minus 50 degrees, minus 70 degrees, which is 60 degrees. Since all three angles, 50 degrees, 60 degrees, 70 degrees, are less than 90 degrees, it is an acute-angled triangle. And since all three angles are different, all three sides must be different, making it scalene. So it's an acute-angled scalene triangle! Now try the same approach with 48 degrees and 67 degrees."
+   "Here's a similar problem: A triangle has all three sides of different lengths, and two of its angles are 30 degrees and 40 degrees. The third angle equals 180 degrees minus 30 degrees minus 40 degrees, which is 110 degrees. Since 110 degrees is greater than 90 degrees, it is obtuse-angled. All its sides are different, so it is scalene. So it's an obtuse-angled scalene triangle!"
   ],
   "steps": [
    "Find the third angle using the angle sum property of a triangle. Third angle equals 180 degrees, minus 48 degrees, minus 67 degrees, which is 65 degrees.",
@@ -772,7 +546,7 @@
   "hints": [
    "Think about two things separately: Are any sides equal? And what does having a 90 degree angle tell you about the triangle's angle type?",
    "First, check the sides: 6, 8, and 10, are any of these numbers the same? That tells you if it's scalene, isosceles, or equilateral.",
-   "Here's a similar problem: A triangle has sides 5 centimetres, 12 centimetres, and 13 centimetres, with a 90 degree angle between the 5 centimetre and 12 centimetre sides. Since all three sides are different, it's scalene. Since it has a 90 degree angle, it's right-angled. So it's a scalene right-angled triangle!"
+   "Here's a similar problem: A triangle has sides 7 centimetres, 7 centimetres and 9 centimetres, and every angle is less than 90 degrees. Two sides are equal, so it is isosceles. Every angle is less than 90 degrees, so it is acute-angled. So it's an isosceles acute-angled triangle!"
   ],
   "steps": [
    "First, let's classify by sides. The three sides are 6 centimetres, 8 centimetres, and 10 centimetres. Are any sides equal?",
@@ -800,26 +574,6 @@
    "Plug in the two known angles, 60 degrees and 60 degrees, and solve for the third angle. 60 degrees plus 60 degrees plus angle C equals 180 degrees, so angle C equals 180 degrees minus 120 degrees, which is 60 degrees.",
    "Now all three angles are 60 degrees, 60 degrees, and 60 degrees. Since all three angles are equal, this is an equilateral triangle.",
    "An equilateral triangle has all three angles equal, each 60 degrees, and all three sides equal. So the answer is: Third angle equals 60 degrees, Equilateral triangle."
-  ]
- },
- "AIGEN_grade5_62647a3d-5e4d-4910-a575-a336a0e2bc10": {
-  "q": "Riya is making a rangoli design using straight lines. She draws two straight lines that cross each other at a point. She measures one of the angles and finds it is 65 degrees. What is the measure of the angle that is right next to it, adjacent to it, on the same side?",
-  "options": [
-   "25 degrees",
-   "65 degrees",
-   "125 degrees",
-   "115 degrees"
-  ],
-  "hints": [
-   "Think about what happens when two angles sit together on a straight line, what do they always add up to?",
-   "Angles on a straight line add up to 180 degrees. So subtract the known angle from 180 degrees.",
-   "Here's a similar problem: If two lines cross and one angle is 50 degrees, the adjacent angle equals 180 degrees minus 50 degrees, which is 130 degrees. The vertically opposite angle to 50 degrees would also be 50 degrees. See the difference?"
-  ],
-  "steps": [
-   "When two straight lines cross, they form 4 angles. An angle and the one right next to it, adjacent, sit together on a straight line.",
-   "Angles on a straight line are supplementary, they add up to 180 degrees. Adjacent angle plus 65 degrees equals 180 degrees.",
-   "Subtract 65 degrees from 180 degrees to find the adjacent angle. Adjacent angle equals 180 degrees minus 65 degrees, which is 115 degrees.",
-   "So the angle right next to the 65 degree angle is 115 degrees. Riya's rangoli is looking great!"
   ]
  },
  "AIGEN_grade5_65379f85-e849-4fde-8113-e6a098a7febf": {
@@ -864,26 +618,6 @@
    "Check: Is the sum of the two shorter sides greater than the longest side? 8 plus 6 equals 14.",
    "Compare 14 to 15. Since 14 is less than 15, the sum of the two shorter sides is less than the longest side.",
    "This violates the Triangle Inequality Property! So Karthik is right, these three sides cannot form a triangle. The two shorter sticks wouldn't be able to meet to close the shape."
-  ]
- },
- "AIGEN_grade5_70b6e4ec-4222-43c5-83c1-5bdbab90304b": {
-  "q": "Meera is making a beautiful square rangoli for Onam in her courtyard. Each side of the rangoli is 14 centimetres. She places a rectangular mirror in the center of the rangoli that is 8 centimetres long and 5 centimetres wide. What is the area of the rangoli that is not covered by the mirror, in square centimetres?",
-  "options": [
-   "156 square centimetres",
-   "196 square centimetres",
-   "40 square centimetres",
-   "236 square centimetres"
-  ],
-  "hints": [
-   "Think about it in two parts, first find the total area, then subtract the part that's covered!",
-   "Start by finding the area of the square rangoli: side times side equals 14 times 14.",
-   "Here's a similar problem: A square garden has side 10 metres. A rectangular pond of 6 metres by 3 metres is in the middle. Area not covered by the pond equals 10 times 10, minus 6 times 3, equals 100 minus 18, which is 82 square metres. Now try the same approach with Meera's rangoli!"
-  ],
-  "steps": [
-   "Find the area of the square rangoli. Area of square equals 14 times 14, which is 196 square centimetres.",
-   "Find the area of the rectangular mirror. Area of rectangle equals 8 times 5, which is 40 square centimetres.",
-   "Subtract the mirror's area from the rangoli's area to find the uncovered part. 196 minus 40 equals 156 square centimetres.",
-   "So the area of the rangoli not covered by the mirror is 156 square centimetres."
   ]
  },
  "AIGEN_grade5_73cf3a7b-eb15-45c3-b2e1-b98b97c6974c": {
@@ -1082,7 +816,7 @@
   "hints": [
    "Three lines through one point create 6 angles. Opposite angles are equal, and all six angles add up to 360 degrees. Can you figure out the three pairs?",
    "Start by finding what the three angles on one side of any straight line must add up to, remember, angles on a straight line sum to 180 degrees.",
-   "Here's a similar problem: Two lines cross at a point making angles. If you know two adjacent angles are 40 degrees and 70 degrees, the third angle on that straight line is 180 degrees, minus 40 degrees, minus 70 degrees, which is 70 degrees. Then the opposite angles are equal: 40 degrees, 70 degrees, 70 degrees, and the other three are 40 degrees, 70 degrees, 70 degrees. All six add to 360 degrees."
+   "A similar problem: three lines cross at one point. Two angles next to each other are 30 degrees and 50 degrees. With the third angle they make a straight line, so the third angle is 180 degrees minus 30 degrees minus 50 degrees, which equals 100 degrees."
   ],
   "steps": [
    "Three straight lines pass through point O, creating 6 angles around the point. All 6 angles must add up to 360 degrees.",
@@ -1102,7 +836,7 @@
   "hints": [
    "Think about what happens when you connect the midpoints of a triangle's sides. Each side of the inner triangle is related to a side of the outer triangle in a special way!",
    "The Midpoint Theorem says that the segment connecting the midpoints of two sides of a triangle is parallel to the third side and exactly half its length. Use this for all three sides of the inner triangle.",
-   "Here's a similar problem: Suppose a triangle has sides 10 centimetres, 14 centimetres, and 16 centimetres, perimeter equals 40 centimetres, with angles 40 degrees, 55 degrees, and 85 degrees. Connecting midpoints gives an inner triangle with sides 5, 7, and 8 centimetres, perimeter equals 20 centimetres, exactly half! Since each inner side is parallel to a corresponding outer side, the inner triangle has the same angles: 40 degrees, 55 degrees, and 85 degrees."
+   "Here's a similar problem: A triangle has a perimeter of 40 centimetres and angles of 40 degrees, 60 degrees and 80 degrees. Join the midpoints of its sides to make an inner triangle. Each inner side is an outer side divided by 2, so the inner perimeter is 40 divided by 2, which is 20 centimetres. The inner sides are parallel to the outer sides, so the angles stay 40 degrees, 60 degrees and 80 degrees."
   ],
   "steps": [
    "Let the large triangle have sides a, b, and c. We know the perimeter is 84 centimetres, so: a plus b plus c equals 84 centimetres.",
@@ -1124,7 +858,7 @@
   "hints": [
    "Think about two things: how many sides are equal, and does the triangle inequality rule hold, the sum of any two sides must be greater than the third side?",
    "First, check: are any two sides equal? Then verify: is 6 plus 6 greater than 10, is 6 plus 10 greater than 6, and is 6 plus 10 greater than 6?",
-   "For a triangle with sides 4 centimetres, 4 centimetres, and 7 centimetres: Two sides are equal, so isosceles. Check: 4 plus 4 equals 8, which is greater than 7, 4 plus 7 equals 11, which is greater than 4, 4 plus 7 equals 11, which is greater than 4. So it is a valid isosceles triangle!"
+   "Similar problem: a triangle has sides 4 centimetres, 6 centimetres and 7 centimetres. All three sides are different, so it is scalene. Now test the two shorter sides against the longest: 4 plus 6 equals 10, and 10 is greater than 7. So this scalene triangle can exist!"
   ],
   "steps": [
    "Classify by sides: Two sides are 6 metres each and one side is 10 metres. Since exactly two sides are equal, this is an isosceles triangle.",
@@ -1278,65 +1012,6 @@
    "Riya needs to buy 348 tiles!"
   ]
  },
- "AIGEN_grade5_9460cd3a-01c7-4798-9beb-066c669f03c8": {
-  "q": "During a school maths fair in Chennai, Farhan draws a triangle on a chart paper. He measures two of the angles and finds them to be 55 degrees and 75 degrees. His teacher then asks him: What is the third angle, and what type of triangle is this based on its angles? Which of the following is Farhan's correct answer?",
-  "options": [
-   "Third angle equals 50 degrees, and it is an acute triangle",
-   "Third angle equals 50 degrees, and it is an obtuse triangle",
-   "Third angle equals 60 degrees, and it is an acute triangle",
-   "Third angle equals 130 degrees, and it is an obtuse triangle"
-  ],
-  "hints": [
-   "Remember, all three angles of any triangle add up to 180 degrees. Once you find the third angle, check whether all angles are less than 90 degrees, or if any angle is exactly 90 degrees, or if any angle is greater than 90 degrees.",
-   "Start by subtracting the two known angles from 180 degrees: Third angle equals 180 degrees, minus 55 degrees, minus 75 degrees.",
-   "Here's a similar problem: If a triangle has angles 40 degrees and 60 degrees, the third angle equals 180 degrees, minus 40 degrees, minus 60 degrees, which is 80 degrees. Since all three angles, 40 degrees, 60 degrees, 80 degrees, are less than 90 degrees, it's an acute triangle. Now try the same steps with 55 degrees and 75 degrees!"
-  ],
-  "steps": [
-   "Use the angle sum property of a triangle: the three angles always add up to 180 degrees. Angle 1 plus angle 2 plus angle 3 equals 180 degrees.",
-   "Substitute the two known angles and solve for the third angle. 55 degrees plus 75 degrees plus angle 3 equals 180 degrees, so angle 3 equals 180 degrees minus 130 degrees, which is 50 degrees.",
-   "Now classify the triangle by its angles. The three angles are 55 degrees, 75 degrees, and 50 degrees. Check: Is any angle equal to 90 degrees? No. Is any angle greater than 90 degrees? No. Are all angles less than 90 degrees? Yes!",
-   "Since all three angles are less than 90 degrees, this is an acute triangle. So the answer is: Third angle equals 50 degrees, and it is an acute triangle."
-  ]
- },
- "AIGEN_grade5_9994fe74-ae30-42d7-ae90-f772c6f33893": {
-  "q": "Riya is making a rangoli design using straight sticks. She places two sticks so they cross each other. She measures one of the angles formed and finds it is 65 degrees. What is the measure of the angle that is right next to it, adjacent to it, on the same side?",
-  "options": [
-   "115 degrees",
-   "125 degrees",
-   "65 degrees",
-   "25 degrees"
-  ],
-  "hints": [
-   "Think about what angles on a straight line always add up to!",
-   "Two angles that sit next to each other on a straight line are called supplementary, they add up to 180 degrees.",
-   "Here's a similar problem: If one angle at a crossing point is 50 degrees, the adjacent angle equals 180 degrees minus 50 degrees, which is 130 degrees. Now try the same idea with 65 degrees!"
-  ],
-  "steps": [
-   "When two straight sticks cross, they form 4 angles. Angles that are next to each other, adjacent, sit on a straight line together.",
-   "Angles on a straight line are supplementary, meaning they add up to 180 degrees. Adjacent angle plus 65 degrees equals 180 degrees.",
-   "Subtract 65 degrees from 180 degrees to find the adjacent angle. Adjacent angle equals 180 degrees minus 65 degrees, which is 115 degrees."
-  ]
- },
- "AIGEN_grade5_9b1b91fa-2688-4680-be8b-6e5a7824d12d": {
-  "q": "Priya is decorating her room for Diwali. She has a rectangular floor that is 12 metres long and 8 metres wide. In one corner of the room, there is a square pillar that takes up space, the pillar has a side of 2 metres. Priya wants to cover the remaining floor area, excluding the pillar, with rangoli tiles that cost 15 rupees per square metre. How much will she spend on tiles?",
-  "options": [
-   "1,320 rupees",
-   "1,500 rupees",
-   "1,440 rupees",
-   "1,380 rupees"
-  ],
-  "hints": [
-   "Think about it in two parts: first find the total floor area, then subtract the area the pillar occupies, and finally multiply by the cost per square metre.",
-   "Start by finding the area of the rectangular floor: length times breadth equals 12 times 8.",
-   "Here's a similar problem: A garden is 10 metres by 6 metres with a square fountain of side 3 metres. Remaining area equals 10 times 6, minus 3 times 3, equals 60 minus 9, which is 51 square metres. If tiling costs 20 rupees per square metre, total cost equals 51 times 20, which is 1,020 rupees. Now try the original problem the same way!"
-  ],
-  "steps": [
-   "Find the area of the rectangular floor. 12 times 8 equals 96 square metres.",
-   "Find the area of the square pillar. 2 times 2 equals 4 square metres.",
-   "Subtract the pillar area from the total floor area to get the area to be tiled. 96 minus 4 equals 92 square metres.",
-   "Multiply the remaining area by the cost per square metre to find the total cost. 92 times 15 equals 1 thousand 380 rupees."
-  ]
- },
  "AIGEN_grade5_9b4803d2-885c-4ff2-a575-f8e11a861684": {
   "q": "Ravi is cutting triangular pieces of colored paper to make a collage for his Art class. He picks up one triangle and measures two of its angles: 60 degrees and 70 degrees. His teacher asks him to name what type of triangle it is based on its angles. What should Ravi answer?",
   "options": [
@@ -1348,7 +1023,7 @@
   "hints": [
    "First, find the third angle using the angle sum property of a triangle. Then check whether all three angles are less than 90 degrees, or if one equals 90 degrees, or if one is greater than 90 degrees.",
    "The sum of all angles in a triangle is 180 degrees. So the third angle equals 180 degrees, minus 60 degrees, minus 70 degrees.",
-   "Here's a similar problem: If a triangle has angles 50 degrees and 80 degrees, the third angle equals 180 degrees, minus 50 degrees, minus 80 degrees, which is 50 degrees. Since all three angles, 50 degrees, 80 degrees, 50 degrees, are less than 90 degrees, it's an acute-angled triangle!"
+   "Here's a similar problem: If a triangle has angles 30 degrees and 40 degrees, the third angle equals 180 degrees minus 30 degrees minus 40 degrees, which is 110 degrees. Since 110 degrees is greater than 90 degrees, it's an obtuse-angled triangle!"
   ],
   "steps": [
    "Use the angle sum property: the three angles of any triangle add up to 180 degrees. Angle 1 plus angle 2 plus angle 3 equals 180 degrees.",
@@ -1376,28 +1051,6 @@
    "So the three sides are: 3 times 6 equals 18 metres, 4 times 6 equals 24 metres, and 5 times 6 equals 30 metres.",
    "Check if this is a right triangle: Does 18 squared plus 24 squared equal 30 squared? 324 plus 576 equals 900, which is 30 squared.",
    "Since it's a right triangle, the two legs, 18 metres and 24 metres, are the base and height. The area is half of base times height. Area equals half of 18 times 24, which is 432 divided by 2, which is 216 square metres."
-  ]
- },
- "AIGEN_grade5_a125fe02-aab3-4711-85cf-23c25b9a8b74": {
-  "q": "Tara is designing a triangular patch for a quilt project at her school in Hyderabad. She knows that the triangle has three angles. The first angle is 3 times the second angle, and the third angle is 20 degrees more than the second angle. She wants to figure out the type of triangle before cutting the cloth. What is the measure of the largest angle, and what type of triangle is it?",
-  "options": [
-   "96 degrees, Obtuse triangle",
-   "80 degrees, Acute triangle",
-   "90 degrees, Right triangle",
-   "108 degrees, Obtuse triangle"
-  ],
-  "hints": [
-   "Remember, all three angles of a triangle add up to 180 degrees. Try writing each angle in terms of the second angle and solve!",
-   "Let the second angle be x. Then the first angle is 3 x and the third angle is x plus 20 degrees. Now set up the equation: 3 x plus x, plus x plus 20, equals 180.",
-   "Here's a similar problem: Suppose a triangle has angles that are 2 x, x, and x plus 10 degrees. Then 2 x plus x plus x plus 10 equals 180, so 4 x equals 170, x equals 42.5 degrees. The angles would be 85 degrees, 42.5 degrees, and 52.5 degrees. The largest angle is 85 degrees, less than 90 degrees, so it's an acute triangle. Now try the original problem the same way!"
-  ],
-  "steps": [
-   "Let the second angle be x. Second angle equals x.",
-   "The first angle is 3 times the second angle, so it equals 3 x. The third angle is 20 degrees more than the second angle, so it equals x plus 20 degrees.",
-   "The sum of all angles in a triangle is 180 degrees. So we write the equation: 3 x plus x, plus x plus 20, equals 180.",
-   "Combine like terms: 5 x plus 20 equals 180. Subtract 20 from both sides: 5 x equals 160. Divide by 5: x equals 32 degrees.",
-   "Now find each angle: Second angle equals 32 degrees, First angle equals 3 times 32 degrees, which is 96 degrees, Third angle equals 32 degrees plus 20 degrees, which is 52 degrees.",
-   "The largest angle is 96 degrees. Since 96 degrees is greater than 90 degrees, this is an obtuse triangle!"
   ]
  },
  "AIGEN_grade5_a41aeda1-2994-45eb-bd4f-e1569ca5e01d": {
@@ -1442,26 +1095,6 @@
    "So the area increases by 162 square centimetres. Fun fact: when you double all sides, the area becomes 4 times as large, so the increase is 3 times the original area equals 3 times 54, which is 162!"
   ]
  },
- "AIGEN_grade5_a87f8d98-9bd5-446c-a9d1-a0b60c9f6ec8": {
-  "q": "Priya is decorating her room for Diwali and wants to cover a rectangular wall with beautiful rangoli paper. The wall is 8 metres long and 5 metres wide. She already has a rectangular window on the wall that is 2 metres long and 1 metre wide, which she does not need to cover. How many square metres of rangoli paper does Priya need?",
-  "options": [
-   "37 square metres",
-   "40 square metres",
-   "42 square metres",
-   "38 square metres"
-  ],
-  "hints": [
-   "Think about what part of the wall Priya actually needs to cover, she skips the window!",
-   "First, find the total area of the wall, length times width. Then subtract the area of the window.",
-   "Here's a similar problem: A garden is 10 metres times 6 metres, which is 60 square metres. There's a pond of 3 metres times 2 metres, which is 6 square metres inside it. The grassy area equals 60 minus 6, which is 54 square metres. Use the same idea for Priya's wall!"
-  ],
-  "steps": [
-   "Find the area of the entire wall. Area of wall equals 8 times 5, which is 40 square metres.",
-   "Find the area of the window that doesn't need covering. Area of window equals 2 times 1, which is 2 square metres.",
-   "Subtract the window area from the wall area to get the rangoli paper needed. Paper needed equals 40 minus 2, which is 38 square metres.",
-   "So Priya needs 38 square metres of rangoli paper!"
-  ]
- },
  "AIGEN_grade5_ab9fa105-f0a7-421b-a019-753633cff300": {
   "q": "Arjun is helping his father tile their rectangular kitchen floor, which is 9 metres long and 7 metres wide. In one corner of the kitchen, there is a square pillar that takes up space, each side of the pillar is 1.5 metres. Arjun's father buys tiles that cost 120 rupees per square metre. How much money will they spend on tiles to cover the remaining kitchen floor, excluding the pillar area?",
   "options": [
@@ -1480,26 +1113,6 @@
    "Find the area of the square pillar. Area of pillar equals 1.5 times 1.5, which is 2.25 square metres.",
    "Subtract the pillar area from the kitchen area to get the area that needs tiling. Tiling area equals 63 minus 2.25, which is 60.75 square metres.",
    "Multiply the tiling area by the cost per square metre to find the total cost. Total cost equals 60.75 times 120, which is 7,290 rupees."
-  ]
- },
- "AIGEN_grade5_af918b14-ab07-445c-8e1a-e3e95633593d": {
-  "q": "Sunita is cutting out triangle-shaped torans, door hangings, from colorful cloth for Navratri. She picks up one triangular piece and measures two of its angles: one is 60 degrees and another is 60 degrees. She wants to figure out the third angle and also what type of triangle it is. What is the third angle, and what type of triangle is it?",
-  "options": [
-   "Third angle equals 60 degrees, and it is an isosceles triangle",
-   "Third angle equals 80 degrees, and it is an acute triangle",
-   "Third angle equals 60 degrees, and it is an equilateral triangle",
-   "Third angle equals 120 degrees, and it is an obtuse triangle"
-  ],
-  "hints": [
-   "Remember, all three angles of any triangle always add up to a special number. Once you find the third angle, think about what it means when all three angles are equal!",
-   "Start by finding the third angle: Third angle equals 180 degrees, minus 60 degrees, minus 60 degrees. Then check, if all three angles are equal, what does that tell you about the sides?",
-   "Here's a similar problem: A triangle has two angles of 50 degrees and 50 degrees. The third angle equals 180 degrees, minus 50 degrees, minus 50 degrees, which is 80 degrees. Since two angles are equal, not all three, it's an isosceles triangle. Now apply the same logic to your problem where the two given angles are each 60 degrees!"
-  ],
-  "steps": [
-   "Use the angle sum property of a triangle: all three angles add up to 180 degrees. Angle 1 plus Angle 2 plus Angle 3 equals 180 degrees.",
-   "Plug in the two known angles and solve for the third angle. 60 degrees plus 60 degrees plus Angle 3 equals 180 degrees, so Angle 3 equals 180 degrees minus 120 degrees, which is 60 degrees.",
-   "Now all three angles are 60 degrees, 60 degrees, and 60 degrees. Since all three angles are equal, all three sides must also be equal.",
-   "A triangle with all three sides, and all three angles, equal is called an equilateral triangle. So the answer is: third angle equals 60 degrees, and it is an equilateral triangle!"
   ]
  },
  "AIGEN_grade5_b0d31ddd-4a6f-4633-b304-8cb390ddc1b4": {
@@ -1525,24 +1138,6 @@
    "So the correct answer is: It is an acute-angled triangle and the largest angle is 84 degrees."
   ]
  },
- "AIGEN_grade5_b22920c0-5356-4556-a726-365e88c4f35e": {
-  "q": "Vikram is helping his dad tile their kitchen floor. He notices that where two rectangular tiles meet at a corner, they form four angles. He measures one of the angles and finds it is 65 degrees. What is the measure of the angle right next to it, adjacent to it, along the same straight edge?",
-  "options": [
-   "25 degrees",
-   "65 degrees",
-   "115 degrees",
-   "125 degrees"
-  ],
-  "hints": [
-   "Think about what angles along a straight line always add up to!",
-   "Angles on a straight line are called supplementary angles, they add up to 180 degrees.",
-   "Here's a similar problem: If one angle on a straight line is 70 degrees, the adjacent angle equals 180 degrees minus 70 degrees, which is 110 degrees. Try the same idea with 65 degrees!"
-  ],
-  "steps": [
-   "The two tiles meet along a straight edge, so the adjacent angles along that edge must add up to 180 degrees, angles on a straight line. Adjacent angle plus 65 degrees equals 180 degrees.",
-   "Subtract 65 degrees from 180 degrees to find the adjacent angle. Adjacent angle equals 180 degrees minus 65 degrees, which is 115 degrees."
-  ]
- },
  "AIGEN_grade5_b2292806-b0b8-44bb-b6f9-7abc9b43ebde": {
   "q": "Riya is making a rangoli design using straight lines. She draws two straight lines that cross at a point P. She measures one of the angles and finds it is 3 times a certain mystery angle x. The angle next to it, on the same straight line, is 5 times the mystery angle x minus 20 degrees. What is the value of the mystery angle x, and what is the smallest angle formed at point P?",
   "options": [
@@ -1554,7 +1149,7 @@
   "hints": [
    "When two angles sit on the same straight line, they always add up to 180 degrees. Use that to build an equation!",
    "Write it out: the two adjacent angles are 3 x and 5 x minus 20 degrees. Since they're on a straight line, set up 3 x, plus 5 x minus 20, equals 180.",
-   "Here's a similar problem: Two angles on a straight line are 2 y and 4 y plus 30 degrees. So 2 y plus 4 y plus 30 equals 180, so 6 y equals 150, so y equals 25 degrees. The angles are 50 degrees and 130 degrees. The smallest angle at the crossing point is 50 degrees, since vertically opposite angles are equal, you get two pairs: 50 degrees and 130 degrees."
+   "A similar problem: two angles on a straight line are 2 y, and 2 y plus 20 degrees. So 2 y plus 2 y plus 20 equals 180, which gives 4 y equals 160, and y equals 40 degrees. The angles are 80 degrees and 100 degrees, so the smallest angle at the crossing is 80 degrees."
   ],
   "steps": [
    "Two adjacent angles on a straight line are supplementary, add up to 180 degrees. We're told they are 3 x and 5 x minus 20 degrees. 3 x, plus 5 x minus 20, equals 180.",
@@ -1564,26 +1159,6 @@
    "Now find the two angles. The first angle is 3 x equals 3 times 25, which is 75 degrees. The second angle is 5 x minus 20, which is 125 minus 20, which is 105 degrees. Angle 1 equals 75 degrees, Angle 2 equals 105 degrees.",
    "When two lines cross, they form two pairs of vertically opposite angles. So the four angles at point P are: 75 degrees, 105 degrees, 75 degrees, 105 degrees. The smallest angle is 75 degrees.",
    "Let's verify: 75 degrees plus 105 degrees equals 180 degrees and all four angles add to 360 degrees. So x equals 25 degrees and the smallest angle is 75 degrees!"
-  ]
- },
- "AIGEN_grade5_b2c0c32e-ebf3-4701-abe4-09f931109c0d": {
-  "q": "Arjun is flying a kite during Makar Sankranti. He notices that the kite string makes an angle with the ground. His friend Priya, standing nearby, measures the angle between the string and the ground as 52 degrees. The string then goes up and meets the kite, where it bends and comes back down to Arjun's hand, forming a triangle. If the angle at the kite, at the top of the triangle, is 34 degrees, what is the angle that the string on Arjun's side makes with the ground?",
-  "options": [
-   "146 degrees",
-   "96 degrees",
-   "94 degrees",
-   "84 degrees"
-  ],
-  "hints": [
-   "Remember, all three angles inside any triangle always add up to the same special number. What is that number?",
-   "Start by writing the equation: Priya's angle plus Kite's angle plus Arjun's angle inside the triangle equals 180 degrees. Solve for Arjun's angle inside the triangle first.",
-   "Here's a similar problem: In a triangle, two angles are 60 degrees and 45 degrees. The third angle equals 180 degrees, minus 60 degrees, minus 45 degrees, which is 75 degrees. If you need the angle that side makes with the ground, a straight line, and the triangle sits on the ground, then the angle with the ground equals 180 degrees minus 75 degrees, which is 105 degrees. Notice you need two steps!"
-  ],
-  "steps": [
-   "We have a triangle formed by the two parts of the kite string and the ground. The three angles of this triangle are: Priya's angle, 52 degrees, the kite's angle, 34 degrees, and Arjun's interior angle. Together, these three angles add up to 180 degrees.",
-   "Find Arjun's interior angle of the triangle. It equals 180 degrees, minus 52 degrees, minus 34 degrees, which is 94 degrees.",
-   "The question asks for the angle that the string on Arjun's side makes with the ground. Since Arjun stands on the ground and the string goes upward, the angle between the string and the ground is the interior angle of the triangle at Arjun's position. That angle is 94 degrees.",
-   "So the angle that the string on Arjun's side makes with the ground is 94 degrees."
   ]
  },
  "AIGEN_grade5_ba446241-34aa-4ec7-bc0c-29506f6cc1a3": {
@@ -1676,7 +1251,7 @@
   "hints": [
    "Let the smallest angle be x. Write expressions for all three angles using x, then remember they must add up to 180 degrees!",
    "If the smallest angle is x, then the largest angle is 3 x and the middle angle is x plus 20. Set up the equation: x, plus x plus 20, plus 3 x equals 180.",
-   "Here's a similar problem: Suppose a triangle has angles where the second angle is twice the first, and the third is 30 degrees more than the first. Let the first be y. Then y plus 2 y, plus y plus 30, equals 180, so 4 y plus 30 equals 180, so 4 y equals 150, so y equals 37.5 degrees. So the angles are 37.5 degrees, 75 degrees, and 67.5 degrees, all less than 90 degrees, making it an acute triangle!"
+   "Here's a similar problem: In a triangle, the second angle is twice the first, and the third is 20 degrees more than the first. Let the first be y. Then y plus 2 y plus y plus 20 equals 180, so 4 y equals 160 and y equals 40 degrees. The angles are 40 degrees, 80 degrees and 60 degrees. All are less than 90 degrees, so it's an acute triangle!"
   ],
   "steps": [
    "Let the smallest angle be x degrees. Then the largest angle is 3 x and the middle angle is x plus 20 degrees. Smallest equals x, Middle equals x plus 20, Largest equals 3 x.",
@@ -1697,7 +1272,7 @@
   "hints": [
    "In an isosceles triangle, the two base angles are always equal. Use the angle sum property, 180 degrees, to find each base angle for both triangles.",
    "Start with the original triangle: the angle between equal sides is 40 degrees. The two base angles are equal and all three angles sum to 180 degrees. So each base angle equals 180 degrees minus 40 degrees, divided by 2.",
-   "Here's a similar problem: An isosceles triangle has the angle between equal sides equal to 50 degrees. Each base angle equals 180 degrees minus 50 degrees, divided by 2, which is 65 degrees. If the angle changes to 90 degrees, each base angle equals 180 degrees minus 90 degrees, divided by 2, which is 45 degrees. The difference per base angle equals 65 degrees minus 45 degrees, which is 20 degrees. Since both base angles change by the same amount, the total difference is also 20 degrees per angle, but the question asks about the difference between the base angles of one triangle and those of the other!"
+   "Here's a similar problem: An isosceles triangle has an angle of 50 degrees between its equal sides. Each base angle equals 180 degrees minus 50 degrees, then divided by 2, which is 65 degrees. If that angle changes to 90 degrees, each base angle equals 180 degrees minus 90 degrees, then divided by 2, which is 45 degrees. The difference between the base angles is 65 degrees minus 45 degrees, which is 20 degrees."
   ],
   "steps": [
    "Find the base angles of the original triangle. The angle between the two equal sides is 40 degrees. The sum of all angles in a triangle is 180 degrees. Each base angle equals 180 degrees minus 40 degrees, divided by 2 equals 140 degrees divided by 2, which is 70 degrees.",
@@ -1727,26 +1302,6 @@
    "So the third angle of Arjun's triangular bamboo piece is 55 degrees."
   ]
  },
- "AIGEN_grade5_cbcf98a0-0b99-4673-a484-5c0205dabff3": {
-  "q": "Arjun is designing a kite for Makar Sankranti. The kite has two sticks crossing each other. At the point where the sticks cross, four angles are formed. Arjun measures the first angle and finds it is 3 times the second angle. If the first and second angles are on a straight line, next to each other, what is the measure of the smaller angle?",
-  "options": [
-   "60 degrees",
-   "135 degrees",
-   "50 degrees",
-   "45 degrees"
-  ],
-  "hints": [
-   "When two angles sit on a straight line, they add up to a special number. What is it?",
-   "The two angles are supplementary, they add up to 180 degrees. If the second angle is x degrees, then the first angle is 3 x degrees. Set up the equation: x plus 3 x equals 180.",
-   "Here's a similar problem: Two angles on a straight line are in the ratio 2 is to 3. Find the smaller angle. Let the angles be 2 x and 3 x. 2 x plus 3 x equals 180 degrees, so 5 x equals 180 degrees, so x equals 36 degrees. Smaller angle equals 2 times 36 degrees, which is 72 degrees, Larger angle equals 3 times 36 degrees, which is 108 degrees."
-  ],
-  "steps": [
-   "Since the first and second angles are next to each other on a straight line, they are supplementary, they add up to 180 degrees. Angle 1 plus Angle 2 equals 180 degrees.",
-   "Let the second, smaller, angle be x degrees. The first angle is 3 times the second, so the first angle is 3 x degrees. Angle 1 equals 3 x degrees, Angle 2 equals x degrees.",
-   "Substitute into the equation and solve: 3 x plus x equals 180, so 4 x equals 180, so x equals 45.",
-   "So the smaller angle is 45 degrees and the larger angle is 3 times 45 degrees, which is 135 degrees. Let's verify: 45 degrees plus 135 degrees equals 180 degrees."
-  ]
- },
  "AIGEN_grade5_cd2d25aa-ed71-40c4-b2b9-8168cc15950b": {
   "q": "Meera is decorating a triangular banner for her school's cricket tournament. She measures the three angles of the triangle. The first angle is 15 degrees more than the second angle, and the third angle is 25 degrees more than the second angle. What type of triangle is Meera's banner based on its angles?",
   "options": [
@@ -1758,7 +1313,7 @@
   "hints": [
    "Start by letting the second angle be some value, then write all three angles using that value. Remember, all angles in a triangle add up to 180 degrees!",
    "If the second angle is x degrees, then the first angle is x plus 15 degrees and the third angle is x plus 25 degrees. Set up the equation: x, plus x plus 15, plus x plus 25, equals 180.",
-   "Here's a similar problem: A triangle has angles where the first is 10 degrees more than the second, and the third is 20 degrees more than the second. So: x, plus x plus 10, plus x plus 20, equals 180, so 3 x plus 30 equals 180, so 3 x equals 150, so x equals 50 degrees. The angles are 50 degrees, 60 degrees, and 70 degrees. All are less than 90 degrees, so it's an acute-angled triangle!"
+   "Here's a similar problem: In a triangle, the first angle is 30 degrees more than the second, and the third is 60 degrees more than the second. So x, plus x plus 30, plus x plus 60, equals 180. That gives 3 x plus 90 equals 180, so 3 x equals 90 and x equals 30 degrees. The angles are 60 degrees, 30 degrees and 90 degrees. One angle is exactly 90 degrees, so it's a right-angled triangle!"
   ],
   "steps": [
    "Let the second angle be x degrees. Then the first angle is x plus 15 degrees and the third angle is x plus 25 degrees.",
@@ -1976,27 +1531,6 @@
    "Since Ravi's father can't buy 0.6 of a can, he must round up to the next whole number. He needs 5 cans."
   ]
  },
- "AIGEN_grade5_e2b4be33-589a-4848-ad94-d70b34a2725e": {
-  "q": "Arjun is flying a kite during Makar Sankranti. He notices that the kite string makes a straight line from his hand to the kite. A bird flies across, creating two lines that intersect at a point P in the sky. At point P, one of the four angles formed is 3 times the angle next to it. Arjun also notices that a third line passes through point P, splitting the largest angle at P into two equal parts. What is the measure of each of the two equal parts?",
-  "options": [
-   "135 degrees",
-   "45 degrees",
-   "90 degrees",
-   "67.5 degrees"
-  ],
-  "hints": [
-   "When two lines cross, adjacent angles are supplementary, add up to 180 degrees. Use that to find the angles first, then split the largest one!",
-   "Let the smaller angle be x degrees. The angle next to it is 3 x degrees. Since they're on a straight line: x plus 3 x equals 180 degrees. Solve for x first!",
-   "Here's a similar problem: Two lines cross, and one angle is twice the angle next to it. Adjacent angles: y plus 2 y equals 180 degrees, so y equals 60 degrees and 2 y equals 120 degrees. The four angles are 60 degrees, 120 degrees, 60 degrees, 120 degrees. If a line bisects the 120 degree angle, each half equals 60 degrees. Now try your problem with the ratio 1 is to 3!"
-  ],
-  "steps": [
-   "Let the smaller angle at point P be x degrees. The angle adjacent to it is 3 times as large, so it's 3 x degrees. x plus 3 x equals 180 degrees.",
-   "Adjacent angles on a straight line are supplementary, add to 180 degrees. So we solve: 4 x equals 180 degrees, so x equals 45 degrees.",
-   "The four angles at point P are: 45 degrees, 135 degrees, 45 degrees, 135 degrees, vertically opposite angles are equal.",
-   "The largest angle is 135 degrees. A third line bisects, splits into two equal parts, this largest angle. 135 degrees divided by 2 equals 67.5 degrees.",
-   "So each of the two equal parts is 67.5 degrees!"
-  ]
- },
  "AIGEN_grade5_e3b7c930-6f05-43c4-9e7c-fe1cc7980313": {
   "q": "Arjun is flying a kite during Makar Sankranti. He notices that the kite string makes an angle of 55 degrees with the ground. His friend Priya, standing nearby, says: The angle between the string and the vertical line going straight up must be complementary to 55 degrees! Arjun disagrees and says: No, the angle between the string and the vertical line is supplementary to 55 degrees! What is the actual angle between the kite string and the vertical line going straight up from where Arjun stands?",
   "options": [
@@ -2038,28 +1572,6 @@
    "Since Meera can't buy a fraction of a can, she needs to round up to the next whole number. So she needs 11 cans!"
   ]
  },
- "AIGEN_grade5_e478fc9b-40f9-4f7d-976b-89e955b793df": {
-  "q": "Riya is decorating her room for Diwali. She has a rectangular floor that measures 12 metres by 9 metres. In one corner of the room, there is a square pillar with side 1.5 metres that takes up floor space. She wants to cover the remaining floor area with square tiles, each having a side of 30 centimetres. How many tiles does she need to cover the entire remaining floor?",
-  "options": [
-   "1200",
-   "1175",
-   "375",
-   "1025"
-  ],
-  "hints": [
-   "Think step by step: first find the total floor area, then subtract the pillar area, then figure out how many tiles fit in the remaining area. Watch your units!",
-   "Convert everything to the same unit first. 30 centimetres equals 0.3 metres. Now find the area of one tile in square metres.",
-   "Here's a similar problem: A garden is 10 metres by 8 metres with a 2 metre by 2 metre fountain in the middle. To pave the rest with 50 centimetres by 50 centimetres stones: Garden area equals 80 square metres, fountain equals 4 square metres, remaining equals 76 square metres. Each stone equals 0.5 times 0.5, which is 0.25 square metres. Stones needed equals 76 divided by 0.25, which is 304 stones. Use the same approach for Riya's room!"
-  ],
-  "steps": [
-   "Find the total floor area of the rectangular room. 12 times 9 equals 108 square metres.",
-   "Find the area of the square pillar. 1.5 times 1.5 equals 2.25 square metres.",
-   "Subtract the pillar area from the total floor area to get the remaining area. 108 minus 2.25 equals 105.75 square metres.",
-   "Convert the tile side from centimetres to metres: 30 centimetres equals 0.3 metres. Now find the area of one tile. 0.3 times 0.3 equals 0.09 square metres.",
-   "Divide the remaining floor area by the area of one tile to find the number of tiles needed. 105.75 divided by 0.09 equals 1175 tiles.",
-   "Riya needs exactly 1175 tiles!"
-  ]
- },
  "AIGEN_grade5_e5c10ca9-1d56-4647-8cb7-43622e0856fb": {
   "q": "Kavya is making a paper fan for a school craft project. She folds a straight strip of paper so that it forms two angles on one side. The first angle is twice the second angle. She then looks at the angle vertically opposite to the smaller angle where two fold lines cross. What is the measure of that vertically opposite angle?",
   "options": [
@@ -2078,25 +1590,6 @@
    "Combine like terms and solve for x. 3 x equals 180 degrees, so x equals 60 degrees.",
    "So the smaller angle is 60 degrees and the larger angle is 2 times 60 degrees, which is 120 degrees.",
    "Vertically opposite angles are equal. The angle vertically opposite to the smaller angle, 60 degrees, is also 60 degrees."
-  ]
- },
- "AIGEN_grade5_edcfe902-58ed-4108-be24-f52764e67984": {
-  "q": "Ravi is making a rangoli design using straight sticks. He places two sticks so they cross each other, forming 4 angles. He measures one of the angles and finds it is 65 degrees. What is the measure of the angle right next to it, adjacent to it?",
-  "options": [
-   "115 degrees",
-   "25 degrees",
-   "125 degrees",
-   "65 degrees"
-  ],
-  "hints": [
-   "Think about what happens when two lines cross, what do the angles on one side of a line add up to?",
-   "Two angles that sit next to each other on a straight line are called supplementary angles. They add up to 180 degrees.",
-   "Here's a similar problem: If two sticks cross and one angle is 50 degrees, the adjacent angle equals 180 degrees minus 50 degrees, which is 130 degrees. The vertically opposite angle to 50 degrees would also be 50 degrees. Try the same idea with 65 degrees!"
-  ],
-  "steps": [
-   "When two straight lines cross, they form two pairs of angles. Adjacent angles, angles next to each other, lie on a straight line, so they are supplementary, they add up to 180 degrees.",
-   "The given angle is 65 degrees. So the adjacent angle is: 180 degrees minus 65 degrees equals 115 degrees.",
-   "So the angle right next to the 65 degree angle is 115 degrees. That's our answer!"
   ]
  },
  "AIGEN_grade5_ef6cb45e-313d-4a8b-ad68-323821573d54": {
@@ -2130,7 +1623,7 @@
   "hints": [
    "Start by figuring out the perimeter from the ribbon cost, then work backwards to find the breadth and length.",
    "Total ribbon used equals 640 rupees divided by 8 rupees per centimetre, which is 80 centimetres. This 80 centimetres is the perimeter of the rectangle!",
-   "Here's a similar problem: A rectangle has length equal to 2 times breadth. Its perimeter is 60 centimetres. So 2 times, 2 b plus b, equals 60, so 6 b equals 60, so b equals 10, length equals 20. Area equals 20 times 10, which is 200 square centimetres. If paint costs 3 rupees per square centimetre, total equals 600 rupees."
+   "A similar problem: a rectangle's length is 2 times its breadth and its perimeter is 60 centimetres. So 2 times, open bracket, 2 b plus b, close bracket, equals 60. That gives 6 b equals 60, and b equals 10 centimetres, so the length is 20 centimetres. The area is 20 times 10, which equals 200 square centimetres. If paint costs 4 rupees per square centimetre, the total is 200 times 4, which equals 800 rupees."
   ],
   "steps": [
    "Find the total length of ribbon Arjun bought. Ribbon length equals 640 divided by 8, which is 80 centimetres.",
@@ -3306,7 +2799,7 @@
   "hints": [
    "Think about a clock face, where do the hour and minute hands point at exactly 9 o'clock? Picture the clock like a circle divided into 12 equal parts.",
    "Each number on the clock is separated by 30 degrees, since 360 degrees divided by 12 equals 30 degrees. At 9 o'clock, the minute hand points at 12 and the hour hand points at 9. Count how many numbers apart they are!",
-   "Here's a similar problem: At 3 o'clock, the minute hand is at 12 and the hour hand is at 3. That's 3 numbers apart, so the angle equals 3 times 30 degrees, which is 90 degrees. Now try the same method for 9 o'clock!"
+   "A similar problem: at 2 o'clock the minute hand is at 12 and the hour hand is at 2. That is 2 numbers apart, so the angle is 2 times 30 degrees, which equals 60 degrees."
   ],
   "steps": [
    "A clock is a full circle, which is 360 degrees. There are 12 numbers on a clock, so the angle between any two consecutive numbers is: 360 degrees divided by 12 equals 30 degrees.",
@@ -3432,7 +2925,7 @@
   "hints": [
    "Think about what linear pair means, two angles that sit on a straight line and add up to something special!",
    "A linear pair of angles always adds up to 180 degrees. If one angle is acute, less than 90 degrees, what must the other angle be to make the total 180 degrees?",
-   "Here's a similar problem: Imagine two angles form a linear pair, and one of them is 50 degrees. The other angle equals 180 degrees minus 50 degrees, which is 130 degrees. Since 130 degrees is greater than 90 degrees, it's an obtuse angle!"
+   "A similar example: suppose one angle of a linear pair is 50 degrees. The other angle is 180 degrees minus 50 degrees, which equals 130 degrees. Now decide what kind of angle 130 degrees is. Is it less than 90 degrees, or more than 90 degrees?"
   ],
   "steps": [
    "Recall the definition: A linear pair is two adjacent angles formed on a straight line. They always add up to 180 degrees.",
@@ -3498,7 +2991,7 @@
   ],
   "hints": [
    "Think about the special names we give to pairs of angles based on what their measures add up to. There's one name for angles adding to 90 degrees and another for angles adding to 180 degrees.",
-   "Remember the keyword: Supplementary comes from supplement, which means to complete something to a full straight line, 180 degrees. Try connecting 180 with the right term!",
+   "Go through the four names one at a time and recall what each one means. Two of them are about what the angles add up to: one goes with 90 degrees and the other goes with 180 degrees.",
    "Here's a similar problem: If two angles add up to 90 degrees, what are they called? Answer: Complementary angles! So if someone asks about angles adding to 90 degrees, think Complementary. Now apply the same logic, what's the special name when angles add to 180 degrees?"
   ],
   "steps": [
@@ -3542,7 +3035,7 @@
   "hints": [
    "Think about a compass! How are the four main directions, North, South, East, West, arranged around a full circle?",
    "A full circle is 360 degrees. The four cardinal directions divide it into equal parts. How many degrees is each part?",
-   "Here's a similar problem: What is the angle between North and West? Well, starting from North and going clockwise to West, we pass through East, 90 degrees, and South, 180 degrees, reaching West at 270 degrees. But the shortest angle between North and West is just one quarter turn equals 90 degrees. Now try the same thinking for East and South!"
+   "A similar problem: what is the angle between North and South? A full turn is 360 degrees. North and South point in opposite directions, so the angle is 360 degrees divided by 2, which equals 180 degrees."
   ],
   "steps": [
    "Picture a compass. The four main directions, North, East, South, and West, are equally spaced around a circle.",
@@ -3625,7 +3118,7 @@
   "hints": [
    "Think about a clock face, where do the hour and minute hands point at exactly 9 o'clock? Imagine the clock as a circle divided into 12 equal parts.",
    "A full circle is 360 degrees, and a clock has 12 hours. So each hour mark is separated by 360 degrees divided by 12 equals 30 degrees. Count how many hour marks apart the two hands are at 9 o'clock!",
-   "Here's a similar problem: At 3 o'clock, the minute hand points to 12 and the hour hand points to 3. That's 3 hour marks apart. Each hour mark equals 30 degrees, so the angle equals 3 times 30 degrees, which is 90 degrees. Now try the same method for 9 o'clock!"
+   "A similar problem: at 5 o'clock the minute hand points to 12 and the hour hand points to 5. That is 5 hour marks apart. Each hour mark is 30 degrees, so the angle is 5 times 30 degrees, which equals 150 degrees."
   ],
   "steps": [
    "At 9 o'clock, the minute hand points straight up at 12, and the hour hand points to 9.",
@@ -3732,7 +3225,7 @@
   "hints": [
    "Think about what linear pair means, two angles that sit on a straight line and add up to something special!",
    "A linear pair of angles always adds up to 180 degrees. If one angle is obtuse, greater than 90 degrees, what must the other angle be to make the total 180 degrees?",
-   "Here's a similar problem: Imagine two friends sharing 180 samosas. If one friend takes 120 samosas, more than 90, the other friend gets 180 minus 120 equals 60 samosas, less than 90. Similarly, if one angle in a linear pair is 120 degrees, obtuse, the other is 180 degrees minus 120 degrees, which is 60 degrees, acute!"
+   "A similar example: suppose one angle of a linear pair is 120 degrees. The other angle is 180 degrees minus 120 degrees, which equals 60 degrees. Now decide what kind of angle 60 degrees is. Is it less than 90 degrees, or more than 90 degrees?"
   ],
   "steps": [
    "Recall the definition: A linear pair is a pair of adjacent angles formed on a straight line. They always add up to 180 degrees.",
@@ -3774,7 +3267,7 @@
   "hints": [
    "Think about the compass directions, North, East, South, West, and how they divide a full circle into equal parts!",
    "A full circle is 360 degrees. The four main compass directions, North, East, South and West, divide the circle into 4 equal parts. What is 360 degrees divided by 4?",
-   "Here's a similar problem: What is the angle between North and East? Well, starting from North and turning clockwise to East, we pass through one-quarter of the full circle. That's 360 degrees divided by 4 equals 90 degrees. Now try the same idea for North to West!"
+   "A similar problem: what is the angle between North and South? A full turn is 360 degrees. North and South point in opposite directions, so the angle is 360 degrees divided by 2, which equals 180 degrees."
   ],
   "steps": [
    "Picture a compass! The four main directions, North, East, South, and West, are equally spaced around a full circle.",
@@ -3793,7 +3286,7 @@
   ],
   "hints": [
    "Think about the different types of angles you've learned, each one has a special name based on how wide it opens!",
-   "Start by recalling what each type of angle measures: a right angle is exactly 90 degrees, an acute angle is less than 90 degrees, and an obtuse angle is... what range?",
+   "Compare the angle with a right angle, which is exactly 90 degrees. Angles smaller than 90 degrees have one name, and angles bigger than 90 degrees have another. Which side of 90 degrees is this angle on?",
    "Here's a similar problem: An angle whose measure is less than 90 degrees is called blank. The answer would be an acute angle, because acute angles are the small, sharp ones, like the pointy tip of a samosa!"
   ],
   "steps": [
@@ -4006,7 +3499,7 @@
   "hints": [
    "This is a problem where you know the area and a relationship between length and breadth. Try expressing both dimensions using a single variable!",
    "Let the breadth be b. Since the length is double the breadth, length equals 2 b. Now use the area formula: length times breadth equals 98. Solve for b first!",
-   "Here's a similar problem: A rectangle has area 72 square centimetres and its length is 3 times its breadth. Let breadth be b, so length equals 3 b. Then 3 b times b equals 72, so 3 b squared equals 72, so b squared equals 24, so b equals the square root of 24. Hmm, let's pick a cleaner one! Say area equals 50 square centimetres and length equals 2 times breadth. Then 2 b times b equals 50, so 2 b squared equals 50, so b squared equals 25, so b equals 5. So length equals 10, breadth equals 5. Perimeter equals 2 times, 10 plus 5, equals 30 centimetres. Same method applies to your question!"
+   "A similar problem: a rectangle has area 50 square centimetres and its length is double its breadth. Let the breadth be b, so the length is 2 b. Then 2 b times b equals 50, so b times b equals 25, and b equals 5 centimetres. The length is 10 centimetres, and the perimeter is 2 times, open bracket, 10 plus 5, close bracket, which equals 30 centimetres."
   ],
   "steps": [
    "Let the breadth of the rectangle be b centimetres.",
@@ -4074,7 +3567,7 @@
   "hints": [
    "This is a perimeter problem! Remember, perimeter means the total distance around the outside of a shape. For a square, all four sides are equal, so how do you find the total distance around it?",
    "Since a square has 4 equal sides, multiply the side length by 4: Perimeter equals 4 times side length. Here, each side is 4.6 centimetres.",
-   "Here's a similar problem: A square has each side equal to 3.5 centimetres. Its perimeter equals 4 times 3.5, which is 14.0 centimetres. Notice the answer is in centimetres, not millimetres, not square centimetres, because perimeter is a length!"
+   "A similar problem: a square has each side 3.5 centimetres. Its perimeter is 4 times 3.5, which equals 14 centimetres. Notice the answer is in centimetres, not millimetres or square centimetres, because perimeter is a length."
   ],
   "steps": [
    "Identify what we need: the perimeter of a square. Perimeter is the total length around the shape.",
@@ -4139,7 +3632,7 @@
   "hints": [
    "This is a perimeter problem! Remember, the perimeter of a rectangle uses both length and breadth. Can you recall the formula?",
    "Start with the perimeter formula: Perimeter equals 2 times, Length plus Breadth. Plug in the values you know, Perimeter is 48 centimetres and Length is 14 centimetres, then solve for Breadth.",
-   "Here's a similar problem: If a rectangular cricket pitch has a perimeter of 60 centimetres and its length is 20 centimetres, find the breadth. 60 equals 2 times, 20 plus Breadth. 30 equals 20 plus Breadth. Breadth equals 30 minus 20, which is 10 centimetres. Now try the same steps with your numbers!"
+   "A similar problem: a rectangle has a perimeter of 60 centimetres and its length is 18 centimetres. So 60 equals 2 times, open bracket, 18 plus breadth, close bracket. Divide by 2, and 30 equals 18 plus breadth. So the breadth is 30 minus 18, which equals 12 centimetres."
   ],
   "steps": [
    "Write down the perimeter formula for a rectangle. P equals 2 times, L plus B.",
@@ -4437,7 +3930,7 @@
   "hints": [
    "This is a problem where you know the perimeter and the relationship between length and breadth. Use both clues together to find each side!",
    "Start by letting the breadth be b. Then length equals 3 over 2, times b. Plug both into the perimeter formula: 2 times, length plus breadth, equals 50.",
-   "Here's a similar problem: If the perimeter of a rectangle is 40 centimetres and the length is twice the breadth, find the area. Let breadth be b, so length equals 2 b. 2 times, 2 b plus b, equals 40, so 2 times 3 b equals 40, so 6 b equals 40, so b equals 20 over 3 centimetres. Length equals 40 over 3 centimetres. Area equals 40 over 3, times 20 over 3, equals 800 over 9, which is about 88.9 square centimetres. Now try the same method with your numbers!"
+   "Here's a similar problem. A rectangle has a perimeter of 36 centimetres, and its length is twice its breadth. Let the breadth be b, so the length is 2 b. Then 2 times, open bracket, 2 b plus b, close bracket, equals 36. So 6 b equals 36, and b equals 6 centimetres. The length is 12 centimetres, so the area is 12 times 6, which equals 72 square centimetres."
   ],
   "steps": [
    "Let the breadth of the rectangle be b centimetres. Since the length is 3 over 2 times the breadth: Length equals 3 over 2 times b.",
@@ -4460,7 +3953,7 @@
   "hints": [
    "This is a comparison problem, you need to find the area of both playgrounds and see which one is larger!",
    "Start by recalling the formulas: Area of a rectangle equals length times breadth, and Area of a square equals side times side. Calculate both and compare!",
-   "Imagine you have two gardens: one is a rectangle with length 30 metres and breadth 18 metres, and the other is a square with side 23 metres. Rectangle's area equals 30 times 18, which is 540 square metres. Square's area equals 23 times 23, which is 529 square metres. Since 540 is greater than 529, the rectangular garden is bigger!"
+   "Here's a similar problem. One garden is a rectangle 30 metres long and 16 metres wide. Another is a square with each side 23 metres. The rectangle's area is 30 times 16, which equals 480 square metres. The square's area is 23 times 23, which equals 529 square metres. So the square garden is bigger."
   ],
   "steps": [
    "Let's find the area of the rectangular playground first. We use the formula: Area equals length times breadth. Rectangle area equals 25 times 20, which is 500 square metres.",
@@ -4583,7 +4076,7 @@
   "hints": [
    "Think about what happens when you change the sides of a square, try using actual numbers to see how the area changes!",
    "Start by picking a nice number for the side of the square, like 10. Then increase one side by 50 percent and decrease the other by 50 percent. Compare the two areas!",
-   "Here's a similar problem: Imagine a square with side 8 centimetres. Its area equals 8 times 8, which is 64 square centimetres. Now increase one side by 25 percent, so 8 plus 2 equals 10, and decrease the other by 25 percent, so 8 minus 2 equals 6. The rectangle's area equals 10 times 6, which is 60 square centimetres. That's less than 64! So increasing one side and decreasing the other by the same percentage makes the area smaller."
+   "Here's a similar problem. A square has side 8 centimetres, so its area is 8 times 8, which equals 64 square centimetres. Make one side 25 percent longer: 8 plus 2 equals 10 centimetres. Make the other side 25 percent shorter: 8 minus 2 equals 6 centimetres. The new rectangle's area is 10 times 6, which equals 60 square centimetres. Compare the two areas in your question the same way."
   ],
   "steps": [
    "Let's say the side of the square is a. The area of the square is: Area of square equals a times a, which is a squared.",
@@ -4733,7 +4226,7 @@
   "hints": [
    "This is a square problem! When you know the perimeter of a square, you can find the side length first, and then use it to calculate the area. Remember: all four sides of a square are equal!",
    "Start by finding the side length: since a square has 4 equal sides, divide the perimeter by 4. So side equals 52 divided by 4, which is how many millimetres?",
-   "Here's a similar problem: If a square has a perimeter of 40 centimetres, find its area. Side equals 40 divided by 4, which is 10 centimetres. Area equals 10 times 10, which is 100 square centimetres. Now try the same steps with 52 millimetres!"
+   "Here's a similar problem. A square has a perimeter of 40 centimetres. Each side is 40 divided by 4, which equals 10 centimetres. So its area is 10 times 10, which equals 100 square centimetres."
   ],
   "steps": [
    "We know the perimeter of the square is 52 millimetres. Since a square has 4 equal sides, we find the side length by dividing the perimeter by 4. Side equals Perimeter divided by 4, which is 52 divided by 4, which is 13 millimetres.",

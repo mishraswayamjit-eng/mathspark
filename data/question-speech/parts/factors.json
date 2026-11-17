@@ -10,7 +10,7 @@
   "hints": [
    "You need the longest piece that divides both ribbon lengths perfectly, that's the H C F!",
    "Start by listing the factors of 84 and 60, or use prime factorisation for each number.",
-   "Here's a similar problem: If you had ribbons of 48 centimetres and 36 centimetres, their prime factorisations are 48 equals 2 times 2 times 2 times 2, times 3. And 36 equals 2 times 2, times 3 times 3. Common prime factors: 2 times 2 times 3 equals 12. So the H C F is 12 centimetres. Now try the same method with 84 and 60!"
+   "A similar problem: for ribbons of 40 centimetres and 24 centimetres, write 40 equals 2 times 2 times 2 times 5 and 24 equals 2 times 2 times 2 times 3. The common prime factors are 2 times 2 times 2 equals 8, so the H C F is 8 centimetres."
   ],
   "steps": [
    "Find the prime factorisation of 84. 84 equals 2 times 2, times 3, times 7, which is 2 squared, times 3 to the power of 1, times 7 to the power of 1.",
@@ -18,30 +18,6 @@
    "Identify the common prime factors and take the lowest power of each. Common factors: 2 squared and 3 to the power of 1.",
    "Multiply the common prime factors together to get the H C F. H C F equals 2 squared, times 3, which is 4 times 3, which is 12.",
    "So the greatest possible length of each ribbon piece is 12 centimetres. Sanya can cut the 84 centimetre ribbon into 7 pieces and the 60 centimetre ribbon into 5 pieces, each 12 centimetres long!"
-  ]
- },
- "AIGEN_grade5_172308a8-cf16-4ed7-8108-6edb34ac6ac4": {
-  "q": "Arjun is organizing a cricket tournament and needs to distribute prizes equally. He has 180 cricket balls, 240 bats, and 300 stumps. He wants to pack them into the greatest number of identical prize boxes, with each box having the same number of balls, the same number of bats, and the same number of stumps. How many stumps will each prize box contain?",
-  "options": [
-   "10",
-   "5",
-   "4",
-   "15"
-  ],
-  "hints": [
-   "Think about what decides the greatest number of identical boxes, it's the biggest number that divides all three quantities evenly!",
-   "First, find the H C F, the Highest Common Factor, of 180, 240, and 300. Start by finding the prime factorization of each number.",
-   "Here's a similar problem: If you have 12 apples, 18 oranges, and 24 bananas, the H C F of 12, 18 and 24 equals 6 boxes. Each box gets 12 divided by 6, which is 2 apples, 18 divided by 6, which is 3 oranges, and 24 divided by 6, which is 4 bananas. Now try the same approach with 180, 240, and 300!"
-  ],
-  "steps": [
-   "We need the greatest number of identical boxes, so we find the H C F of 180, 240, and 300.",
-   "Prime factorization of each number: 180 equals 2 squared, times 3 squared, times 5.",
-   "Prime factorization of 240: 240 equals 2 to the power of 4, times 3 times 5.",
-   "Prime factorization of 300: 300 equals 2 squared, times 3 times 5 squared.",
-   "H C F equals the product of the lowest powers of all common prime factors: H C F equals 2 squared, times 3 to the power of 1, times 5 to the power of 1, which is 4 times 3 times 5, which is 60.",
-   "So Arjun can make 60 identical prize boxes.",
-   "Stumps per box: 300 divided by 60 equals 5.",
-   "Each prize box will contain 5 stumps!"
   ]
  },
  "AIGEN_grade5_1b0a44dc-0873-432b-92da-7f134649afbb": {
@@ -54,8 +30,8 @@
   ],
   "hints": [
    "The greatest length that divides both strips perfectly is the H C F of 126 and 90. Once you find that, figure out how many pieces come from each strip!",
-   "Start by finding the prime factorisation of both numbers: 126 equals 2 times 3 squared, times 7. And 90 equals 2 times 3 squared, times 5.",
-   "Here's a similar problem: If you have ropes of 84 centimetres and 60 centimetres and want equal pieces with no waste, find the H C F of 84 and 60. Prime factorisations: 84 equals 2 squared, times 3 times 7. 60 equals 2 squared, times 3 times 5. Common factors: 2 squared, times 3 equals 12. So each piece equals 12 centimetres. Pieces from first rope equals 84 divided by 12, which is 7, from second equals 60 divided by 12, which is 5. Total equals 12 pieces."
+   "Start by breaking 126 and 90 into their prime factors. Then look for the prime factors that both numbers share.",
+   "A similar problem: ropes of 45 centimetres and 30 centimetres are cut into equal pieces with no waste. 45 equals 3 times 3 times 5 and 30 equals 2 times 3 times 5, so the H C F is 3 times 5 equals 15 centimetres. The pieces: 45 divided by 15 equals 3 and 30 divided by 15 equals 2, which makes 5 pieces in total."
   ],
   "steps": [
    "Find the prime factorisation of 126. 126 equals 2 times 3 squared, times 7.",
@@ -103,7 +79,7 @@
   "hints": [
    "Think about it, the number must be divisible by both 3 and 5. What kind of number is divisible by both?",
    "First find the L C M of 3 and 5. Then look for multiples of that L C M between 40 and 60.",
-   "Here's a similar problem: A number between 20 and 40 is divisible by both 4 and 6. The L C M of 4 and 6 is 12. Multiples of 12 between 20 and 40: only 24 and 36. If the problem said exactly one answer, you'd pick the one that fits!"
+   "Here's a similar problem. A number between 20 and 30 can be divided exactly by both 4 and 6. The L C M of 4 and 6 is 12, and the multiples of 12 are 12, 24, 36 and so on. Only 24 lies between 20 and 30, so the number is 24."
   ],
   "steps": [
    "The number of coins must be divisible by both 3 and 5. To find such numbers, we need the L C M, the Least Common Multiple, of 3 and 5. The L C M of 3 and 5 equals 15.",
@@ -208,53 +184,6 @@
    "Answer: 18 bags with 15 sweets each!"
   ]
  },
- "AIGEN_grade5_2e3d1406-1e7e-4e33-afa0-2a26f1aeebaf": {
-  "q": "Riya is making gift bags for her Diwali party. She has 84 chocolates, 126 toffees, and 210 biscuits. She wants to divide them equally into gift bags so that each bag has the same number of chocolates, the same number of toffees, and the same number of biscuits, with nothing left over. What is the greatest number of gift bags she can make, and how many toffees will be in each bag?",
-  "options": [
-   "14 bags, 9 toffees each",
-   "42 bags, 3 toffees each",
-   "42 bags, 5 toffees each",
-   "21 bags, 6 toffees each"
-  ],
-  "hints": [
-   "Think about what mathematical concept helps you split different quantities into the largest number of equal groups with nothing left over!",
-   "Start by finding the H C F, the Highest Common Factor, of 84, 126, and 210. First, find the prime factorization of each number.",
-   "Here's a similar problem: If you have 36 red beads, 48 blue beads, and 60 green beads, the H C F of 36, 48, and 60 is 12. So you can make 12 bags. Each bag gets 36 divided by 12, which is 3 red, 48 divided by 12, which is 4 blue, and 60 divided by 12, which is 5 green beads."
-  ],
-  "steps": [
-   "We need to find the greatest number of bags, so we find the H C F, the Highest Common Factor, of 84, 126, and 210.",
-   "Prime factorization of each number: 84 equals 2 squared, times 3 times 7.",
-   "Prime factorization of 126: 126 equals 2 times 3 squared, times 7.",
-   "Prime factorization of 210: 210 equals 2, times 3, times 5, times 7.",
-   "H C F equals the product of the lowest powers of all common prime factors: H C F equals 2 to the power of 1, times 3 to the power of 1, times 7 to the power of 1, which is 42.",
-   "So Riya can make 42 gift bags!",
-   "Toffees per bag: 126 divided by 42 equals 3 toffees per bag.",
-   "We can verify: 84 divided by 42 equals 2 chocolates, 126 divided by 42 equals 3 toffees, 210 divided by 42 equals 5 biscuits per bag. Everything divides perfectly!"
-  ]
- },
- "AIGEN_grade5_2e6c04e9-40f1-4714-91ef-4609f5372d1b": {
-  "q": "Riya is making gift bags for her Diwali party. She has 84 chocolates, 126 toffees, and 210 biscuits. She wants to divide them equally among the gift bags, with no items left over. What is the greatest number of gift bags she can make, and how many chocolates will each bag have?",
-  "options": [
-   "14 bags, 6 chocolates each",
-   "7 bags, 12 chocolates each",
-   "42 bags, 2 chocolates each",
-   "21 bags, 4 chocolates each"
-  ],
-  "hints": [
-   "Think about what mathematical concept helps you split multiple groups evenly with nothing left over. It's related to factors!",
-   "You need to find the H C F, the Highest Common Factor, of 84, 126, and 210. Start by finding the prime factorization of each number.",
-   "Here's a similar problem: If you have 36 apples, 48 oranges, and 60 bananas, find the H C F. 36 equals 2 squared, times 3 squared. 48 equals 2 to the power of four, times 3. 60 equals 2 squared, times 3 times 5. H C F equals 2 squared, times 3, which is 12. So 12 bags, with 36 divided by 12, which is 3 apples each."
-  ],
-  "steps": [
-   "We need the greatest number of bags that divides 84, 126, and 210 evenly. This means we need the H C F, the Highest Common Factor, of these three numbers.",
-   "Find the prime factorization of each number: 84 equals 2 squared, times 3 times 7.",
-   "Prime factorization of 126: 126 equals 2 times 3 squared, times 7.",
-   "Prime factorization of 210: 210 equals 2, times 3, times 5, times 7.",
-   "The H C F is the product of the lowest powers of all common prime factors. The common primes are 2, 3, and 7. H C F equals 2 to the power of 1, times 3 to the power of 1, times 7 to the power of 1, which is 42.",
-   "So Riya can make 42 gift bags. Each bag gets: 84 divided by 42 equals 2 chocolates per bag.",
-   "Let's verify: 126 divided by 42 equals 3 toffees per bag and 210 divided by 42 equals 5 biscuits per bag. Everything divides evenly!"
-  ]
- },
  "AIGEN_grade5_37cb2537-7c1d-4219-961c-305b6967a546": {
   "q": "Priya's grandmother is making rangoli decorations for Pongal. She has three different colored powders: 180 grams of red, 240 grams of yellow, and 300 grams of white. She wants to pack all the powder into small identical packets such that each packet contains only one color, every packet has the same weight, and no powder is left over. She wants each packet to be as heavy as possible. If each packet costs 5 rupees to make, how much does Priya's grandmother spend in total on packets?",
   "options": [
@@ -265,7 +194,7 @@
   ],
   "hints": [
    "First figure out the heaviest each packet can be, that's the H C F of the three quantities. Then find out how many packets of each color she needs!",
-   "Start by finding the H C F of 180, 240, and 300. Use prime factorization: 180 equals 2 squared, times 3 squared, times 5. 240 equals 2 to the power of four, times 3 times 5. 300 equals 2 squared, times 3 times 5 squared.",
+   "Start by finding the H C F of 180, 240 and 300. Break each number into its prime factors and pick out the ones all three share.",
    "Similar problem: If you have 36 red beads and 48 blue beads, and want equal-sized groups as large as possible, the H C F of 36 and 48 is 12. So you get 36 divided by 12, which is 3 red groups, and 48 divided by 12, which is 4 blue groups. That makes 7 groups in total. If each group costs 10 rupees, the total is 70 rupees."
   ],
   "steps": [
@@ -290,7 +219,7 @@
   "hints": [
    "Think about which numbers less than 50 are divisible by 5, and then check which of those leave a remainder of 1 when divided by both 2 and 3.",
    "First, list the multiples of 5 below 50: 5, 10, 15, 20, 25, 30, 35, 40, 45. Now check each one, does it leave remainder 1 when divided by 2 and by 3?",
-   "Here's a similar problem: A number is divisible by 4, leaves remainder 2 when divided by 3, and is less than 30. Multiples of 4 below 30 are 4, 8, 12, 16, 20, 24 and 28. Check the remainder when divided by 3. 4 divided by 3 leaves remainder 1. 8 divided by 3 leaves remainder 2. Answer: 8. There could also be 20. Use the same approach for your problem!"
+   "Here's a similar problem. A number less than 20 is divisible by 5 and leaves remainder 1 when divided by 3. The multiples of 5 below 20 are 5, 10 and 15. Dividing by 3, 5 leaves remainder 2, 10 leaves remainder 1, and 15 leaves remainder 0. So the number is 10."
   ],
   "steps": [
    "The number of coins is divisible by 5 and less than 50. List those multiples: 5, 10, 15, 20, 25, 30, 35, 40, 45.",
@@ -315,7 +244,7 @@
   "hints": [
    "If N must be divisible by both 4 and 9, what single number must N be divisible by? Think about L C M!",
    "L C M of 4 and 9 is 36. So find the largest multiple of 36 that is between 300 and 400.",
-   "Similar problem: Find the largest multiple of 12 between 200 and 300. 300 divided by 12 equals 25, so 12 times 25 equals 300. But 300 is not strictly between 200 and 300. So try 12 times 24, which is 288. That's between 200 and 300. The sum of the digits of 288 is 2 plus 8 plus 8, which is 18."
+   "Here's a similar problem. Find the largest number between 100 and 150 that is divisible by both 2 and 7, then add its digits. The L C M of 2 and 7 is 14. Now 14 times 10 equals 140, which fits, but 14 times 11 equals 154, which is too big, so the number is 140. Its digits add up to 1 plus 4 plus 0, which equals 5."
   ],
   "steps": [
    "A number divisible by both 4 and 9 must be divisible by their L C M. The L C M of 4 and 9 equals 36.",
@@ -324,52 +253,6 @@
    "Check: Is 396 between 300 and 400? Yes! Is 396 divisible by 4? 396 divided by 4 equals 99. Is 396 divisible by 9? 3 plus 9 plus 6 equals 18, and 18 divided by 9 equals 2.",
    "Now find the sum of digits of 396: 3 plus 9 plus 6 equals 18.",
    "The answer is 18!"
-  ]
- },
- "AIGEN_grade5_3c6dac28-fa0c-49e9-a2e7-f32247e02337": {
-  "q": "Riya is making gift bags for a Diwali party. She has 84 chocolates and 60 packets of sparklers. She wants to divide them equally into as many gift bags as possible, with no chocolates or sparklers left over. Each bag must have the same number of chocolates and the same number of sparklers. How many gift bags can she make, and how many chocolates will be in each bag?",
-  "options": [
-   "12 bags, with 7 chocolates each",
-   "6 bags, with 14 chocolates each",
-   "4 bags, with 21 chocolates each",
-   "12 bags, with 5 chocolates each"
-  ],
-  "hints": [
-   "The number of gift bags is the largest number that divides both 84 and 60 evenly. What's that called?",
-   "Start by finding the prime factorisation of 84 and 60 separately.",
-   "Here's a similar problem: If you have 36 roses and 48 marigolds and want to make equal bunches, find the H C F of 36 and 48. 36 equals 2 squared, times 3 squared. And 48 equals 2 to the power of four, times 3. Common factors: 2 squared, times 3 equals 12. So 12 bunches, with 36 divided by 12, which is 3 roses each."
-  ],
-  "steps": [
-   "We need the H C F, the Highest Common Factor, of 84 and 60 to find the maximum number of equal gift bags.",
-   "Find the prime factorisation of 84. 84 equals 2 squared, times 3 times 7.",
-   "Find the prime factorisation of 60. 60 equals 2 squared, times 3 times 5.",
-   "Identify the common prime factors with the smallest powers: 2 squared and 3. H C F equals 2 squared, times 3, which is 12.",
-   "So Riya can make 12 gift bags. Now find chocolates per bag: 84 divided by 12 equals 7 chocolates per bag.",
-   "Quick check, sparklers per bag: 60 divided by 12 equals 5 sparklers per bag. Everything divides perfectly!"
-  ]
- },
- "AIGEN_grade5_3c89d0c8-38ba-48cf-b27b-9d0868a1524d": {
-  "q": "Riya is preparing gift bags for a Diwali party. She has 120 chocolates, 84 small diyas, and 156 rangoli stickers. She wants to make identical gift bags using all the items, with no leftovers. Each bag must have the same number of chocolates, the same number of diyas, and the same number of stickers. What is the greatest number of gift bags she can make, and how many diyas will be in each bag?",
-  "options": [
-   "4 bags, 21 diyas each",
-   "12 bags, 10 diyas each",
-   "6 bags, 14 diyas each",
-   "12 bags, 7 diyas each"
-  ],
-  "hints": [
-   "The greatest number of identical bags means you need the biggest number that divides all three quantities evenly. What's that called?",
-   "Start by finding the prime factorization of each number: 120, 84, and 156. Then pick out only the common prime factors with their smallest powers.",
-   "Similar problem: If you have 36 apples, 48 bananas, and 60 oranges, the H C F of 36, 48, and 60 is found as: 36 equals 2 squared, times 3 squared. 48 equals 2 to the power of four, times 3. 60 equals 2 squared, times 3 times 5. Common factors: 2 squared, times 3 equals 12. So 12 bags, with 36 divided by 12, which is 3 apples, 48 divided by 12, which is 4 bananas, 60 divided by 12, which is 5 oranges per bag."
-  ],
-  "steps": [
-   "We need the H C F, the Highest Common Factor, of 120, 84, and 156 to find the greatest number of identical bags.",
-   "Find the prime factorization of each number: 120 equals 2 cubed, times 3 times 5.",
-   "Prime factorization of 84: 84 equals 2 squared, times 3 times 7.",
-   "Prime factorization of 156: 156 equals 2 squared, times 3 times 13.",
-   "Identify the common prime factors and take the smallest power of each. Common primes are 2 and 3. H C F equals 2 squared, times 3, which is 4 times 3, which is 12.",
-   "So Riya can make 12 gift bags!",
-   "Now find how many diyas per bag: 84 divided by 12 equals 7 diyas per bag.",
-   "Quick check: 120 divided by 12 equals 10 chocolates, 84 divided by 12 equals 7 diyas, 156 divided by 12 equals 13 stickers. No leftovers! The answer is 12 bags with 7 diyas each."
   ]
  },
  "AIGEN_grade5_43d0718d-21a3-4301-9ef4-d6fff9d3f4e1": {
@@ -407,7 +290,7 @@
   "hints": [
    "The greatest number of identical bags means you need to find the H C F of all three numbers. Then divide the toffee count by that H C F!",
    "Start by finding the prime factorization of each number: 132, 96, and 60. The H C F uses only the common prime factors with their smallest powers.",
-   "Here's a similar problem: If you have 48 apples, 36 bananas, and 24 oranges, find the H C F of 48, 36 and 24. Prime factors: 48 equals 2 to the power of four, times 3. 36 equals 2 squared, times 3 squared. 24 equals 2 cubed, times 3. Common primes: 2 and 3. Smallest powers: 2 squared and 3 to the power of one. So H C F equals 4 times 3, which is 12. Each bag gets 48 divided by 12, which is 4 apples."
+   "A similar problem: you have 30 mangoes, 45 guavas and 75 oranges. 30 equals 2 times 3 times 5, 45 equals 3 times 3 times 5 and 75 equals 3 times 5 times 5, so the H C F is 3 times 5 equals 15. That makes 15 bags, and each bag gets 30 divided by 15 equals 2 mangoes."
   ],
   "steps": [
    "Find the prime factorization of each number. 132 equals 2 squared, times 3 times 11.",
@@ -440,29 +323,6 @@
    "So Ankit can make 40 combo plates! Each plate will have 80 divided by 40, which is 2 biscuits and 120 divided by 40, which is 3 chai cups."
   ]
  },
- "AIGEN_grade5_49874afe-1b9b-441d-821d-b155779d975d": {
-  "q": "Riya is making gift bags for a Diwali party. She has 84 chocolates and 60 packets of sparklers. She wants to divide them into identical gift bags so that each bag has the same number of chocolates and the same number of sparklers, with nothing left over. What is the greatest number of gift bags she can make, and how many chocolates will each bag have?",
-  "options": [
-   "12 bags, 7 chocolates each",
-   "6 bags, 14 chocolates each",
-   "12 bags, 5 chocolates each",
-   "4 bags, 21 chocolates each"
-  ],
-  "hints": [
-   "The greatest number of identical bags means you need to find the largest number that divides both 84 and 60 evenly. What's that called?",
-   "Start by listing the prime factors of each number: 84 equals 2 times 2, times 3, times 7. And 60 equals 2 times 2, times 3, times 5. Now find the common factors!",
-   "Here's a similar problem: If you have 36 apples and 48 bananas, H C F of 36 and 48. 36 equals 2 times 2, times 3 times 3. 48 equals 2 times 2 times 2 times 2, times 3. Common factors equals 2 times 2 times 3, which is 12. So 12 bags, each with 36 divided by 12, which is 3 apples and 48 divided by 12, which is 4 bananas."
-  ],
-  "steps": [
-   "We need the H C F, the Highest Common Factor, of 84 and 60, because that tells us the greatest number of identical bags.",
-   "Find the prime factorisation of 84: 84 equals 2 times 2, times 3, times 7, which is 2 squared, times 3 times 7.",
-   "Find the prime factorisation of 60: 60 equals 2 times 2, times 3, times 5, which is 2 squared, times 3 times 5.",
-   "Pick out the common prime factors with the smallest powers: H C F equals 2 squared, times 3, which is 4 times 3, which is 12.",
-   "So Riya can make 12 gift bags.",
-   "Chocolates per bag: 84 divided by 12 equals 7.",
-   "We can verify sparklers too: 60 divided by 12 equals 5 sparkler packets per bag. Everything checks out!"
-  ]
- },
  "AIGEN_grade5_49d5aa70-465a-4479-b039-4b96de676312": {
   "q": "Kiran's grandmother makes special laddoos for Pongal. She made 144 coconut laddoos and 108 jaggery laddoos. She wants to pack them into identical boxes so that each box has the same number of coconut laddoos and the same number of jaggery laddoos, with no laddoos left over. What is the maximum number of boxes she can make, and how many jaggery laddoos will be in each box?",
   "options": [
@@ -473,7 +333,7 @@
   ],
   "hints": [
    "The maximum number of boxes is the H C F of 144 and 108. Once you find the number of boxes, divide each type of laddoo by that number to see how many go in each box!",
-   "Start by finding the prime factorisation of both numbers: 144 equals 2 times 2 times 2 times 2, times 3 times 3. And 108 equals 2 times 2, times 3 times 3 times 3.",
+   "Start by breaking 144 and 108 into their prime factors. Then look for the prime factors that both numbers share.",
    "Here's a similar problem: If you have 60 apples and 48 oranges, the H C F of 60 and 48. 60 equals 2 squared, times 3 times 5. 48 equals 2 to the power of four, times 3. Common factors: 2 squared, times 3 equals 12. So 12 boxes, with 60 divided by 12, which is 5 apples and 48 divided by 12, which is 4 oranges per box."
   ],
   "steps": [
@@ -509,52 +369,6 @@
    "The largest tile is 72 centimetres by 72 centimetres, and Vikram needs 35 tiles in total!"
   ]
  },
- "AIGEN_grade5_506adcba-5776-43ab-8945-9d3c267122e1": {
-  "q": "Riya is making gift bags for a Diwali party. She has 84 chocolate barfis, 126 kaju katlis, and 210 coconut laddoos. She wants to divide all the sweets equally into gift bags so that each bag has the same number of barfis, the same number of kaju katlis, and the same number of laddoos, with no sweets left over. What is the greatest number of gift bags she can make, and how many kaju katlis will be in each bag?",
-  "options": [
-   "14 bags, 9 kaju katlis each",
-   "21 bags, 6 kaju katlis each",
-   "7 bags, 18 kaju katlis each",
-   "42 bags, 3 kaju katlis each"
-  ],
-  "hints": [
-   "Think about it: the number of bags must divide evenly into all three quantities, 84, 126, and 210. What's the biggest number that does that?",
-   "Start by finding the prime factorization of each number: 84 equals 2 times 2, times 3, times 7, now do the same for 126 and 210.",
-   "Here's a similar problem: If you have 36 red beads and 48 blue beads and want to split them equally into bags with none left over, find the H C F of 36 and 48. 36 equals 2 squared, times 3 squared. 48 equals 2 to the power of four, times 3. H C F equals 2 squared, times 3, which is 12 bags. Each bag gets 36 divided by 12, which is 3 red and 48 divided by 12, which is 4 blue beads."
-  ],
-  "steps": [
-   "We need the greatest number of bags, so we find the H C F of 84, 126, and 210.",
-   "Prime factorize each number: 84 equals 2 squared, times 3 times 7.",
-   "Next number: 126 equals 2 times 3 squared, times 7.",
-   "Last number: 210 equals 2, times 3, times 5, times 7.",
-   "For H C F, take the lowest power of each common prime factor. The primes common to all three are 2, 3, and 7. H C F equals 2 to the power of 1, times 3 to the power of 1, times 7 to the power of 1, which is 42.",
-   "So the greatest number of gift bags equals 42. Let's verify: 84 divided by 42 equals 2, 126 divided by 42 equals 3, 210 divided by 42 equals 5. All divide evenly!",
-   "Each bag gets 126 divided by 42, which is 3 kaju katlis. So the answer is 42 bags with 3 kaju katlis each!"
-  ]
- },
- "AIGEN_grade5_523d815f-d257-4aab-80eb-1b961dd959fc": {
-  "q": "Arjun is setting up a cricket training camp. He has 168 red balls, 252 white balls, and 126 tennis balls. He wants to pack them into identical kit bags so that each bag has the same number of red balls, the same number of white balls, and the same number of tennis balls, with no balls left over. What is the greatest number of kit bags he can make, and how many white balls will each bag contain?",
-  "options": [
-   "42 bags, 6 white balls each",
-   "14 bags, 18 white balls each",
-   "42 bags, 3 white balls each",
-   "21 bags, 12 white balls each"
-  ],
-  "hints": [
-   "The greatest number of identical bags means you need the H C F of all three quantities. Once you find that, divide the white balls by the H C F to get the count per bag!",
-   "Start by finding the prime factorisation of each number: 168, 252, and 126. Then pick the common prime factors with the smallest powers.",
-   "Here's a similar problem: Suppose you have 60 apples, 90 bananas, and 30 mangoes. Prime factorisations: 60 equals 2 squared, times 3 times 5. 90 equals 2 times 3 squared, times 5. 30 equals 2 times 3 times 5. H C F equals 2 times 3 times 5, which is 30. So you can make 30 bags. Bananas per bag equals 90 divided by 30, which is 3. Apply the same idea to the cricket problem!"
-  ],
-  "steps": [
-   "Find the prime factorisation of each number. 168 equals 2 cubed, times 3 times 7.",
-   "Factorise 252. 252 equals 2 squared, times 3 squared, times 7.",
-   "Factorise 126. 126 equals 2 times 3 squared, times 7.",
-   "Find the H C F by taking the lowest power of each common prime factor. Common primes are 2, 3, and 7. H C F equals 2 to the power of 1, times 3 to the power of 1, times 7 to the power of 1, which is 42.",
-   "So the greatest number of kit bags equals 42.",
-   "White balls per bag equals 252 divided by 42, which is 6.",
-   "Quick check: Red per bag equals 168 divided by 42, which is 4. Tennis per bag equals 126 divided by 42, which is 3. Everything divides evenly, perfect!"
-  ]
- },
  "AIGEN_grade5_5555e2f5-13bc-427e-8342-f376e3c717f6": {
   "q": "Riya is decorating her house for Diwali. She has a box of 2023 diyas, small lamps. She wants to arrange them in equal rows with no diyas left over. She tries row sizes of 7, 11, and 17. For how many of these three row sizes can she arrange all the diyas perfectly, with zero remaining?",
   "options": [
@@ -588,7 +402,7 @@
    "54"
   ],
   "hints": [
-   "Think about it, Meera needs a number that can be made by multiplying 6, 8, and 9. What's the smallest such number?",
+   "Meera needs a number that is in the 6 times table, the 8 times table and the 9 times table. Which is the smallest number that is in all three?",
    "Start by finding the L C M of 6, 8, and 9. Break each number into its prime factors first!",
    "Here's a similar problem: If packets come in bundles of 4, 5, and 6, the L C M would be found as: 4 equals 2 squared. 5 equals 5. 6 equals 2 times 3. L C M equals 2 squared, times 3 times 5, which is 60. So 60 packets of each colour would be the answer in that case!"
   ],
@@ -597,72 +411,6 @@
    "Find the prime factorisation of each number: 6 equals 2 times 3. 8 equals 2 cubed. 9 equals 3 squared.",
    "To find the L C M, take the highest power of each prime factor that appears: L C M equals 2 cubed, times 3 squared, which is 8 times 9, which is 72.",
    "So Meera needs 72 packets of each colour. Let's verify: 72 divided by 6 equals 12 bundles, 72 divided by 8 equals 9 bundles, 72 divided by 9 equals 8 bundles. It works!"
-  ]
- },
- "AIGEN_grade5_5bbecd37-c30a-4751-9a38-549bbacfe704": {
-  "q": "Aarav is packing laddoos for a temple festival. He has 60 kaju laddoos and 84 besan laddoos. He wants to pack them into boxes so that each box has the same number of kaju laddoos and the same number of besan laddoos, with no laddoos left over. What is the greatest number of boxes he can make?",
-  "options": [
-   "6",
-   "12",
-   "24",
-   "4"
-  ],
-  "hints": [
-   "Think about it, you need a number that divides both 60 and 84 perfectly. What's the biggest such number?",
-   "Start by listing the factors of 60 and 84, or use prime factorization for each number.",
-   "Here's a similar problem: If you have 36 roses and 48 marigolds and want identical bunches, find the H C F of 36 and 48. Prime factorize: 36 equals 2 squared, times 3 squared. And 48 equals 2 to the power of four, times 3 to the power of one. H C F equals 2 squared, times 3 to the power of one, which is 12. So you can make 12 bunches!"
-  ],
-  "steps": [
-   "We need to find the H C F, the Highest Common Factor, of 60 and 84, since that gives us the greatest number of identical boxes.",
-   "Prime factorize 60: 60 equals 2 squared, times 3 times 5.",
-   "Prime factorize 84: 84 equals 2 squared, times 3 times 7.",
-   "Identify the common prime factors with the smallest powers: Common factors: 2 squared and 3 to the power of 1.",
-   "Multiply the common factors to get the H C F: H C F equals 2 squared, times 3, which is 4 times 3, which is 12.",
-   "So Aarav can make 12 boxes! Each box will have 60 divided by 12, which is 5 kaju laddoos and 84 divided by 12, which is 7 besan laddoos."
-  ]
- },
- "AIGEN_grade5_5d780329-aff5-4a4f-8b2b-420cdf0f5db8": {
-  "q": "Rahul and his sister Ananya are making identical rangoli kits to donate at an orphanage for Diwali. They have 168 coloured powders, 120 diyas, and 96 candles. They want to pack these into as many identical kits as possible, with no items left over. How many coloured powders will be in each kit?",
-  "options": [
-   "12",
-   "6",
-   "7",
-   "24"
-  ],
-  "hints": [
-   "First, figure out the greatest number of identical kits they can make, that's the H C F of all three numbers! Then divide the coloured powders by that number.",
-   "Start by finding the prime factorization of each number: 168, 120, and 96.",
-   "Here's a similar problem: If you have 60 apples, 48 bananas, and 36 oranges, find the H C F. Prime factors: 60 equals 2 squared, times 3 times 5. 48 equals 2 to the power of four, times 3. 36 equals 2 squared, times 3 squared. H C F equals 2 squared, times 3, which is 12. So you'd make 12 baskets, each with 60 divided by 12, which is 5 apples. Same idea applies here!"
-  ],
-  "steps": [
-   "Find the prime factorization of each number. 168 equals 2 cubed, times 3 times 7.",
-   "Prime factorization of 120. 120 equals 2 cubed, times 3 times 5.",
-   "Prime factorization of 96. 96 equals 2 to the power of 5, times 3.",
-   "Find the H C F by taking the lowest power of each common prime factor. The common primes are 2 and 3. H C F equals 2 cubed, times 3, which is 8 times 3, which is 24.",
-   "So they can make 24 identical kits. Now divide the coloured powders by 24. 168 divided by 24 equals 7.",
-   "Each kit will have 7 coloured powders! You can verify: 120 divided by 24 equals 5 diyas and 96 divided by 24 equals 4 candles per kit."
-  ]
- },
- "AIGEN_grade5_5fe440c7-79bc-4bfd-a8fa-8275ff9d4359": {
-  "q": "Meera is decorating her school hall for Republic Day. She has 108 marigold flowers and 84 tricolour ribbons. She wants to make identical bundles using all the flowers and all the ribbons, with each bundle having the same number of flowers and the same number of ribbons. What is the greatest number of bundles she can make, and how many ribbons will each bundle have?",
-  "options": [
-   "6 bundles, 14 ribbons each",
-   "12 bundles, 7 ribbons each",
-   "12 bundles, 9 ribbons each",
-   "4 bundles, 21 ribbons each"
-  ],
-  "hints": [
-   "Think about it, the number of bundles must divide both 108 and 84 evenly. What's the biggest number that does that?",
-   "Start by finding the H C F of 108 and 84 using prime factorisation. Break each number into its prime factors first!",
-   "Here's a similar problem: If you have 60 roses and 48 lilies and want identical bunches, find the H C F of 60 and 48. 60 equals 2 squared, times 3 times 5. 48 equals 2 to the power of four, times 3. H C F equals 2 squared, times 3, which is 12. So 12 bunches, with 60 divided by 12, which is 5 roses and 48 divided by 12, which is 4 lilies each. Now try the same approach with 108 and 84!"
-  ],
-  "steps": [
-   "Find the prime factorisation of 108. 108 equals 2 squared, times 3 cubed.",
-   "Find the prime factorisation of 84. 84 equals 2 squared, times 3 times 7.",
-   "Find the H C F by taking the lowest power of each common prime factor. H C F equals 2 squared, times 3, which is 4 times 3, which is 12.",
-   "So Meera can make 12 bundles. Now find how many ribbons go in each bundle. Ribbons per bundle equals 84 divided by 12, which is 7.",
-   "Let's also check flowers per bundle to make sure it works. Flowers per bundle equals 108 divided by 12, which is 9.",
-   "Answer: 12 bundles, with 7 ribbons each, and 9 flowers each."
   ]
  },
  "AIGEN_grade5_6014d1f7-1bec-4137-8c73-15da60a30ab4": {
@@ -697,7 +445,7 @@
   "hints": [
    "Think about it this way: the greatest number of identical plates means you need the largest number that divides all three quantities evenly. What's that called?",
    "Start by finding the prime factorization of each number: 96, 72, and 48. Then pick the common prime factors with the smallest powers.",
-   "Here's a similar problem: If you have 60 apples and 45 oranges, find the H C F of 60 and 45. 60 equals 2 squared, times 3 times 5. And 45 equals 3 squared, times 5. Common factors: 3 to the power of one, times 5 to the power of one equals 15. So 15 bags, with 60 divided by 15, which is 4 apples each and 45 divided by 15, which is 3 oranges each. Now try the same approach with 96, 72, and 48!"
+   "A similar problem: 45 apples and 75 oranges go into identical bags. The biggest number that divides both 45 and 75 is 15, so there are 15 bags. Each bag has 45 divided by 15, which is 3 apples, and 75 divided by 15, which is 5 oranges."
   ],
   "steps": [
    "Find the prime factorization of each number. 96 equals 2 to the power of 5, times 3 to the power of 1. 72 equals 2 cubed, times 3 squared. 48 equals 2 to the power of 4, times 3 to the power of 1.",
@@ -705,27 +453,6 @@
    "Calculate the H C F. 2 cubed, times 3 equals 8 times 3, which is 24.",
    "So the greatest number of thali plates is 24. Now find how many laddoos per plate. 96 divided by 24 equals 4 laddoos per plate.",
    "Quick check: 72 divided by 24 equals 3 banana chips packets per plate, and 48 divided by 24 equals 2 diyas per plate. Everything divides evenly!"
-  ]
- },
- "AIGEN_grade5_69ec5531-46a7-4c15-98ee-9884b16c964e": {
-  "q": "Vikram runs a chai stall at a village mela. He has 156 cardamom biscuits and 104 pakoras. He wants to make identical snack boxes where each box has the same number of biscuits and the same number of pakoras, with nothing left over. What is the greatest number of snack boxes he can make, and how many pakoras will each box contain?",
-  "options": [
-   "44 boxes, 3 pakoras each",
-   "52 boxes, 2 pakoras each",
-   "26 boxes, 4 pakoras each",
-   "12 boxes, 8 pakoras each"
-  ],
-  "hints": [
-   "Think about what number divides both 156 and 104 perfectly, that's the H C F! The number of boxes equals the H C F.",
-   "Start by finding the prime factorization of each number: 156 equals 2 times 2, times 3, times 13. And 104 equals 2 times 2 times 2, times 13.",
-   "Here's a similar problem: If you have 60 apples and 84 oranges, find the H C F. 60 equals 2 squared, times 3 times 5. And 84 equals 2 squared, times 3 times 7. Common factors: 2 squared, times 3 equals 12. So H C F equals 12, meaning 12 boxes. Each box gets 60 divided by 12, which is 5 apples and 84 divided by 12, which is 7 oranges."
-  ],
-  "steps": [
-   "Find the prime factorization of 156. 156 equals 2 times 78, which is 2 times 2 times 39, which is 2 squared, times 3 times 13.",
-   "Find the prime factorization of 104. 104 equals 2 times 52, which is 2 times 2 times 26, which is 2 times 2 times 2, times 13, which is 2 cubed, times 13.",
-   "To find the H C F, take the lowest power of each common prime factor. The common primes are 2 and 13. H C F equals 2 squared, times 13, which is 4 times 13, which is 52.",
-   "So Vikram can make 52 snack boxes! Now find how many pakoras go in each box. Pakoras per box equals 104 divided by 52, which is 2.",
-   "Quick check: biscuits per box equals 156 divided by 52, which is 3. Each box gets 3 biscuits and 2 pakoras, nothing left over!"
   ]
  },
  "AIGEN_grade5_6bf8718c-182d-476c-9ada-5a867a94e72d": {
@@ -738,7 +465,7 @@
   ],
   "hints": [
    "The greatest length that divides both ribbons perfectly is the H C F of 126 and 84. Once you find that, divide each ribbon length by the H C F to get the number of pieces from each ribbon, then add them up!",
-   "Start by finding the prime factorization of both numbers: 126 equals 2 times 3 squared, times 7. And 84 equals 2 squared, times 3 times 7. The H C F uses the lowest power of each common prime factor.",
+   "Start by finding the prime factors of 126 and of 84. Then look for the prime factors they share.",
    "Here's a similar problem: Suppose two ropes are 60 centimetres and 48 centimetres. Prime factorizations: 60 equals 2 squared, times 3 times 5. 48 equals 2 to the power of four, times 3. H C F equals 2 squared, times 3, which is 12. Pieces from rope 1 equals 60 divided by 12, which is 5, pieces from rope 2 equals 48 divided by 12, which is 4. Total pieces equals 5 plus 4, which is 9. Now try the same method with 126 and 84!"
   ],
   "steps": [
@@ -831,32 +558,13 @@
   "hints": [
    "First, find all the factors of 180. Then pick only the ones that are between 10 and 25, not including 10 and 25.",
    "Start by finding the prime factorization of 180: 180 equals 2 squared, times 3 squared, times 5. Use this to list every factor.",
-   "Here's a similar problem: Suppose you have 120 players and need teams of more than 5 but fewer than 15. Factors of 120 are: 1, 2, 3, 4, 5, 6, 8, 10, 12, 15, 20, 24, 30, 40, 60, 120. Factors strictly between 5 and 15 are: 6, 8, 10, 12, that's 4 possible team sizes. Now try the same approach with 180!"
+   "Here's a similar problem. 30 players must be put in equal teams of more than 5 but fewer than 12 players. The factors of 30 are 1, 2, 3, 5, 6, 10, 15 and 30. Only 6 and 10 lie between 5 and 12, so there are 2 possible team sizes."
   ],
   "steps": [
    "Find the prime factorization of 180. 180 equals 2 squared, times 3 squared, times 5.",
    "List all factors of 180. The number of factors is open bracket 2 plus 1 close bracket, times open bracket 2 plus 1 close bracket, times open bracket 1 plus 1 close bracket, which equals 18. They are: 1, 2, 3, 4, 5, 6, 9, 10, 12, 15, 18, 20, 30, 36, 45, 60, 90 and 180.",
    "Now pick only the factors that are more than 10 and fewer than 25. So we need factors strictly between 10 and 25.",
    "From our list, the factors between 10 and 25, exclusive, are: 12, 15, 18, 20. That gives us 4 possible team sizes."
-  ]
- },
- "AIGEN_grade5_7ba06750-8e75-483a-9e5b-cc7627c95f09": {
-  "q": "Ananya is planning a rangoli competition for her school's Republic Day celebration. She has 60 coloured powder packets and wants to distribute them equally among some teams. She realizes that the number of ways she can form teams, where each team gets at least 1 packet and every packet is used, is the same as the total number of factors of 60. How many different team sizes can Ananya choose?",
-  "options": [
-   "12",
-   "8",
-   "6",
-   "10"
-  ],
-  "hints": [
-   "Think about it this way: each factor of 60 represents a possible team size. So you just need to count all the factors of 60!",
-   "Start by finding the prime factorization of 60. Break it down step by step: 60 equals 2 times 30, which is 2 times 2 times 15, and so on.",
-   "Here's a similar problem: To find the number of factors of 36, first write 36 equals 2 squared, times 3 squared. Then use the formula: open bracket 2 plus 1 close bracket, times open bracket 2 plus 1 close bracket equals 9. So 36 has 9 factors. Try the same approach for 60!"
-  ],
-  "steps": [
-   "Find the prime factorization of 60. 60 equals 2 squared, times 3 to the power of 1, times 5 to the power of 1.",
-   "Use the factor-counting formula: add 1 to each exponent in the prime factorization, then multiply them together. Open bracket 2 plus 1 close bracket, times open bracket 1 plus 1 close bracket, times open bracket 1 plus 1 close bracket equals 3 times 2 times 2, which is 12.",
-   "So 60 has 12 factors. This means Ananya can choose from 12 different team sizes: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, and 60."
   ]
  },
  "AIGEN_grade5_7d9ce17b-bd6a-4b2c-8dda-69c558aa923c": {
@@ -869,7 +577,7 @@
   ],
   "hints": [
    "The largest weight that divides all three quantities equally is the H C F of 168, 252, and 108. Once you find that, figure out how many boxes each ingredient needs!",
-   "Start by finding the prime factorisation of each number: 168 equals 2 cubed, times 3 times 7. 252 equals 2 squared, times 3 squared, times 7. 108 equals 2 squared, times 3 cubed.",
+   "Start by finding the prime factors of 168, of 252 and of 108. Then look for the prime factors they share.",
    "Here's a similar problem: If you have 60, 90, and 150 grams of three items, the H C F is found by prime factorising: 60 equals 2 squared, times 3 times 5. 90 equals 2 times 3 squared, times 5. 150 equals 2 times 3 times 5 squared. The H C F equals 2 to the power of one, times 3 to the power of one, times 5 to the power of one, which is 30. Total boxes equals 60 divided by 30 plus 90 divided by 30 plus 150 divided by 30, which is 2 plus 3 plus 5, which is 10 boxes."
   ],
   "steps": [
@@ -880,33 +588,6 @@
    "Each box weighs 12 grams. Now count the boxes for each ingredient: 168 divided by 12 equals 14, 252 divided by 12 equals 21, 108 divided by 12 equals 9.",
    "Add up all the boxes. 14 plus 21 plus 9 equals 44 boxes.",
    "So the largest box weight is 12 grams and the total number of boxes is 44."
-  ]
- },
- "AIGEN_grade5_85eb9b06-a31b-4755-8256-e5da1f267719": {
-  "q": "Riya is making gift bags for a Diwali party. She has 180 chocolates, 252 toffees, and 324 biscuits. She wants to divide them equally into the largest possible number of gift bags, with no items left over. Each bag gets the same number of chocolates, the same number of toffees, and the same number of biscuits. After filling all the bags, how many total items, chocolates plus toffees plus biscuits, will be in each gift bag?",
-  "options": [
-   "21",
-   "18",
-   "36",
-   "42"
-  ],
-  "hints": [
-   "The largest number of bags that divides all three quantities equally is the H C F, the Highest Common Factor, of 180, 252, and 324. Find that first!",
-   "Start by finding the prime factorization of each number: 180 equals 2 squared, times 3 squared, times 5, now do the same for 252 and 324.",
-   "Here's a similar problem: If you have 48 apples, 72 bananas, and 120 oranges, the H C F of 48, 72 and 120 equals 24. So you'd make 24 bags. Each bag gets 48 divided by 24, which is 2 apples, 72 divided by 24, which is 3 bananas, 120 divided by 24, which is 5 oranges. Total per bag equals 2 plus 3 plus 5, which is 10 items."
-  ],
-  "steps": [
-   "We need the H C F of 180, 252, and 324 to find the largest number of identical gift bags.",
-   "Prime factorization of 180: 180 equals 2 squared, times 3 squared, times 5.",
-   "Prime factorization of 252: 252 equals 2 squared, times 3 squared, times 7.",
-   "Prime factorization of 324: 324 equals 2 squared, times 3 to the power of 4.",
-   "H C F equals the product of the lowest powers of all common prime factors: H C F equals 2 squared, times 3 squared, which is 4 times 9, which is 36.",
-   "So Riya makes 36 gift bags. Now find how many of each item goes in one bag:",
-   "Chocolates per bag: 180 divided by 36 equals 5.",
-   "Toffees per bag: 252 divided by 36 equals 7.",
-   "Biscuits per bag: 324 divided by 36 equals 9.",
-   "Total items per bag: 5 plus 7 plus 9 equals 21.",
-   "So each gift bag has 21 items in total!"
   ]
  },
  "AIGEN_grade5_879964f3-19f6-4646-8752-8302e1adbf64": {
@@ -930,25 +611,6 @@
    "So each piece is 24 centimetres long and Priya gets 10 pieces in total!"
   ]
  },
- "AIGEN_grade5_905c1d7b-ed53-42fa-bd43-f2c424c5c743": {
-  "q": "Arjun is arranging samosas on plates for a family gathering. He has 72 samosas and wants to find out how many factors the number 72 has. He knows that the number of factors will tell him all the different ways he can arrange the samosas equally on plates. How many factors does 72 have?",
-  "options": [
-   "8",
-   "12",
-   "9",
-   "10"
-  ],
-  "hints": [
-   "Start by breaking 72 into its prime factorization, what prime numbers multiply together to give 72?",
-   "72 equals 2 times 36, which is 2 times 2 times 18, which is 2 times 2 times 2, times 9, which is 2 cubed, times 3 squared. Now use the factor-counting formula!",
-   "Here's a similar problem: How many factors does 36 have? Prime factorization: 36 equals 2 squared, times 3 squared. Number of factors equals open bracket 2 plus 1 close bracket, times open bracket 2 plus 1 close bracket, which is 3 times 3, which is 9. So 36 has 9 factors: 1, 2, 3, 4, 6, 9, 12, 18, 36."
-  ],
-  "steps": [
-   "Find the prime factorization of 72. Divide step by step: 72 equals 2 times 36, which is 2 times 2 times 18, which is 2 times 2 times 2, times 9, which is 2 cubed, times 3 squared.",
-   "Use the factor-counting formula: if a number equals P to the power A, times Q to the power B, then the number of factors equals open bracket A plus 1 close bracket, times open bracket B plus 1 close bracket. Here, the number of factors equals open bracket 3 plus 1 close bracket, times open bracket 2 plus 1 close bracket. That is 4 times 3, which is 12.",
-   "Let's verify by listing all 12 factors: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72. That's exactly 12 factors!"
-  ]
- },
  "AIGEN_grade5_9630683a-6cce-40b5-a39e-d887f856b868": {
   "q": "Riya is decorating her house for Diwali. She has 720 L E D lights and wants to divide them equally into groups. She notices that 720 has a lot of factors! She makes a list of all the factors of 720 that are themselves prime numbers, and then she adds all those prime factors together. What sum does Riya get?",
   "options": [
@@ -960,7 +622,7 @@
   "hints": [
    "To find all prime factors, try breaking 720 down completely into its prime factorization, like a factor tree!",
    "Start by dividing 720 by the smallest prime: 720 divided by 2 equals 360. Keep going!",
-   "Here's a similar problem: Find the sum of prime factors of 60. Factor tree: 60 equals 2 times 2, times 3, times 5. The distinct prime factors are 2, 3, and 5. Their sum equals 2 plus 3 plus 5, which is 10. Now try the same approach with 720!"
+   "Here's a similar problem. Find the sum of the prime factors of 70. A factor tree gives 70 equals 2 times 5 times 7. The prime factors are 2, 5 and 7, and their sum is 2 plus 5 plus 7, which equals 14."
   ],
   "steps": [
    "Let's find the prime factorization of 720 using a factor tree. 720 equals 2 times 360.",
@@ -985,7 +647,7 @@
   ],
   "hints": [
    "Think about it: the number of plates must divide both 126 and 90 evenly. What's the biggest number that does that?",
-   "Start by finding the prime factorization of each number: 126 equals 2 times 3 squared, times 7. And 90 equals 2 times 3 squared, times 5.",
+   "Start by finding the prime factors of 126 and of 90. Then look for the prime factors they share.",
    "Here's a similar problem: Suppose you have 60 laddoos and 84 barfis. Prime factorize: 60 equals 2 squared, times 3 times 5. And 84 equals 2 squared, times 3 times 7. The H C F equals 2 squared, times 3, which is 12. So the greatest number of plates would be 12, with 5 laddoos and 7 barfis on each plate!"
   ],
   "steps": [
@@ -994,27 +656,6 @@
    "Prime factorize 90: 90 equals 2 times 45, which is 2 times 9 times 5, which is 2 times 3 squared, times 5.",
    "Pick the common prime factors with the smallest powers: H C F equals 2 to the power of 1, times 3 squared, which is 2 times 9, which is 18.",
    "So Arjun can make 18 plates. Each plate gets 126 divided by 18, which is 7 samosas and 90 divided by 18, which is 5 gulab jamuns."
-  ]
- },
- "AIGEN_grade5_9cf7e5e4-d259-4ad2-aa1e-41390c5d0d1a": {
-  "q": "Riya is making gift bags for a Diwali party. She has 72 chocolates, 108 toffees, and 90 small diyas. She wants to divide them equally into bags so that each bag has the same number of chocolates, the same number of toffees, and the same number of diyas, with nothing left over. What is the greatest number of gift bags she can make, and how many chocolates will each bag contain?",
-  "options": [
-   "36 bags, 2 chocolates each",
-   "18 bags, 4 chocolates each",
-   "9 bags, 8 chocolates each",
-   "6 bags, 12 chocolates each"
-  ],
-  "hints": [
-   "Think about what mathematical concept helps you split different quantities equally with nothing left over, it's related to factors!",
-   "You need to find the H C F, the Highest Common Factor, of 72, 108, and 90. Start by finding the prime factorisation of each number.",
-   "Here's a similar problem: If you have 24 apples, 36 bananas, and 60 oranges, find the H C F of 24, 36 and 60. Prime factorisations: 24 equals 2 cubed, times 3. 36 equals 2 squared, times 3 squared. 60 equals 2 squared, times 3 times 5. H C F equals 2 squared, times 3, which is 12. So 12 bags, with 24 divided by 12, which is 2 apples each."
-  ],
-  "steps": [
-   "We need the greatest number of bags, so we find the H C F, the Highest Common Factor, of 72, 108, and 90.",
-   "Find the prime factorisation of each number: 72 equals 2 cubed, times 3 squared. 108 equals 2 squared, times 3 cubed. 90 equals 2 times 3 squared, times 5.",
-   "To find the H C F, take the lowest power of each common prime factor. The common primes are 2 and 3. H C F equals 2 to the power of 1, times 3 squared, which is 2 times 9, which is 18.",
-   "So the greatest number of bags is 18. Now find chocolates per bag: 72 divided by 18 equals 4 chocolates per bag.",
-   "Quick check: 108 divided by 18 equals 6 toffees per bag and 90 divided by 18 equals 5 diyas per bag. Everything divides evenly!"
   ]
  },
  "AIGEN_grade5_a157f53d-ee23-4909-9dc2-1e56c48673c5": {
@@ -1058,29 +699,6 @@
    "The largest square tile they can use has a side length of 30 centimetres. Check: 120 divided by 30 equals 4 tiles, and 90 divided by 30 equals 3 tiles. Both fit perfectly!"
   ]
  },
- "AIGEN_grade5_a57a0e02-fd83-4721-9e41-aa8e59c1c907": {
-  "q": "Riya is making gift bags for her Diwali party. She has 72 chocolates and 108 packets of rangoli colours. She wants to divide them equally into gift bags so that each bag has the same number of chocolates and the same number of rangoli packets, with nothing left over. What is the maximum number of gift bags she can make, and how many chocolates will each bag contain?",
-  "options": [
-   "36 gift bags, 2 chocolates each",
-   "18 gift bags, 4 chocolates each",
-   "12 gift bags, 6 chocolates each",
-   "36 gift bags, 3 chocolates each"
-  ],
-  "hints": [
-   "Think about what mathematical concept helps you find the largest number that divides two quantities evenly, it's the Greatest Common Factor, G C F or H C F!",
-   "Start by finding the prime factorization of both 72 and 108. For 72: divide by 2, then 2, then 2, then 3, then 3.",
-   "Here's a similar problem: If you have 48 samosas and 60 jalebis to pack equally into boxes, find the H C F of 48 and 60. 48 equals 2 to the power of four, times 3. And 60 equals 2 squared, times 3 times 5. H C F equals 2 squared, times 3, which is 12 boxes. Each box gets 48 divided by 12, which is 4 samosas and 60 divided by 12, which is 5 jalebis."
-  ],
-  "steps": [
-   "We need the maximum number of equal gift bags, so we find the H C F, the Highest Common Factor, of 72 and 108.",
-   "Prime factorization of 72: 72 equals 2 cubed, times 3 squared.",
-   "Prime factorization of 108: 108 equals 2 squared, times 3 cubed.",
-   "H C F equals the product of common prime factors with the smallest powers: H C F equals 2 squared, times 3 squared, which is 4 times 9, which is 36.",
-   "So Riya can make 36 gift bags at most.",
-   "Chocolates per bag: 72 divided by 36 equals 2 chocolates per bag.",
-   "Quick check, rangoli packets per bag: 108 divided by 36 equals 3 packets per bag. Everything divides evenly!"
-  ]
- },
  "AIGEN_grade5_adc40db0-b11c-4d90-a8e8-c4fc49d77d32": {
   "q": "Riya is making goodie bags for her Diwali party. She has 84 chocolates and wants to divide them equally among her friends with no chocolates left over. Which of the following cannot be the number of friends she invites?",
   "options": [
@@ -1091,8 +709,8 @@
   ],
   "hints": [
    "Think about which numbers divide 84 exactly, in other words, which numbers are factors of 84?",
-   "Start by checking: does 84 divided by 16 give a whole number? Try dividing 84 by each option.",
-   "Here's a similar problem: If you have 60 stickers and want to share them equally, can you share among 8 friends? 60 divided by 8 equals 7.5, not a whole number, so 8 is not a factor of 60. But 60 divided by 6 equals 10, so 6 is a factor of 60."
+   "Divide 84 by each of the four numbers in turn, and look for the one that does not divide exactly. Start with 84 divided by 6. Is the result a whole number?",
+   "Here's a similar problem. Can 60 stickers be shared equally among 8 friends? 60 divided by 8 equals 7.5, which is a decimal, and that means 8 is not a factor of 60. But 60 divided by 6 equals 10, a whole number, which means 6 is a factor of 60."
   ],
   "steps": [
    "We need to find which number is not a factor of 84. A factor divides 84 with zero remainder.",
@@ -1101,30 +719,6 @@
    "Check option C: 84 divided by 14. 84 divided by 14 equals 6, no remainder.",
    "Check option D: 84 divided by 16. 84 divided by 16 equals 5 remainder 4, not exact.",
    "Since 16 does not divide 84 evenly, Riya cannot invite exactly 16 friends. The answer is D!"
-  ]
- },
- "AIGEN_grade5_afa1df3d-5f5f-4ef9-95ab-9cb1b090803d": {
-  "q": "Riya is making gift bags for a Diwali party. She has 120 chocolate barfis, 84 kaju katlis, and 108 gulab jamuns. She wants to divide them into identical gift bags so that each bag has the same number of barfis, the same number of kaju katlis, and the same number of gulab jamuns, with nothing left over! What is the greatest number of gift bags she can make, and how many kaju katlis will be in each bag?",
-  "options": [
-   "6 bags, 14 kaju katlis each",
-   "12 bags, 7 kaju katlis each",
-   "4 bags, 21 kaju katlis each",
-   "24 bags, 3 kaju katlis each"
-  ],
-  "hints": [
-   "The greatest number of identical bags means you need the biggest number that divides all three quantities evenly. What's that called?",
-   "Start by finding the prime factorization of each number: 120, 84, and 108. Then pick the common prime factors with the smallest powers.",
-   "Similar problem: If you have 36 apples, 48 bananas, and 60 oranges, find H C F. 36 equals 2 squared, times 3 squared. 48 equals 2 to the power of four, times 3. 60 equals 2 squared, times 3 times 5. Common factors: 2 squared, times 3 equals 12. So 12 bags, with 48 divided by 12, which is 4 bananas each."
-  ],
-  "steps": [
-   "We need the H C F, the Highest Common Factor, of 120, 84, and 108 to find the greatest number of identical bags.",
-   "Prime factorization of 120: 120 equals 2 cubed, times 3 times 5.",
-   "Prime factorization of 84: 84 equals 2 squared, times 3 times 7.",
-   "Prime factorization of 108: 108 equals 2 squared, times 3 cubed.",
-   "Identify common prime factors and take the lowest power of each. Both 2 and 3 appear in all three numbers. H C F equals 2 squared, times 3, which is 4 times 3, which is 12.",
-   "So Riya can make 12 gift bags.",
-   "Kaju katlis per bag: 84 divided by 12 equals 7.",
-   "Let's verify: 120 divided by 12 equals 10 barfis, 84 divided by 12 equals 7 kaju katlis, 108 divided by 12 equals 9 gulab jamuns. Everything divides perfectly!"
   ]
  },
  "AIGEN_grade5_b57f52e4-8858-4ada-9f01-9534a10f66ce": {
@@ -1170,27 +764,6 @@
    "So Aarav can use 12 different numbers of plates."
   ]
  },
- "AIGEN_grade5_bd9683ef-33e9-4aa7-91d7-6522cfda9609": {
-  "q": "Priya is decorating her house for Diwali with fairy lights. She has 72 L E D bulbs and wants to arrange them in equal rows along her balcony railing. She tries different row sizes and discovers that she can make equal rows with no bulbs left over for quite a few different row sizes! How many different ways can Priya arrange her 72 bulbs into equal rows, counting each different row size as a separate way?",
-  "options": [
-   "10",
-   "12",
-   "9",
-   "8"
-  ],
-  "hints": [
-   "Think about it this way, each 'way' of arranging bulbs into equal rows means picking a number that divides 72 exactly. So you need to count all the factors of 72!",
-   "Start by finding the prime factorisation of 72. Break it down: 72 equals 2 times 36, then keep going until you only have prime numbers.",
-   "Here's a similar example: How many factors does 60 have? First, 60 equals 2 squared, times 3 times 5. To count factors, add 1 to each exponent and multiply: open bracket 2 plus 1 close bracket, times open bracket 1 plus 1 close bracket, times open bracket 1 plus 1 close bracket equals 3 times 2 times 2, which is 12. So 60 has 12 factors!"
-  ],
-  "steps": [
-   "We need to find how many factors 72 has, since each factor represents a valid row size.",
-   "Find the prime factorisation of 72: 72 equals 2 cubed, times 3 squared.",
-   "To count the total number of factors, add 1 to each exponent in the prime factorisation and multiply them together: Open bracket 3 plus 1 close bracket, times open bracket 2 plus 1 close bracket equals 4 times 3, which is 12.",
-   "So 72 has 12 factors. Let's verify by listing them: 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72. That's 12 factors!",
-   "Priya can arrange her bulbs in 12 different ways."
-  ]
- },
  "AIGEN_grade5_c2bc13fb-2c18-4a24-8b13-564560d9871e": {
   "q": "Riya is making gift bags for her Diwali party. She has 84 chocolates and wants to divide them equally among her friends so that no chocolates are left over. She also wants each friend to get more than 5 chocolates. How many friends can she invite at most?",
   "options": [
@@ -1201,7 +774,7 @@
   ],
   "hints": [
    "Think about all the factors of 84. Which is the largest factor where each friend still gets more than 5 chocolates?",
-   "First, list all the factors of 84: 1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42 and 84. The number of friends must be a factor, and 84 divided by the number of friends must be more than 5.",
+   "The number of friends must be a factor of 84. Start listing the factor pairs of 84, such as 1 times 84 and 2 times 42.",
    "Similar problem: If you have 60 sweets and each person must get more than 4, what's the maximum number of people? Factors of 60 include 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60. We need 60 divided by people is greater than 4, so people is less than 15. The largest factor of 60 less than 15 is 12. Answer: 12 people, each gets 5 sweets."
   ],
   "steps": [
@@ -1211,54 +784,6 @@
    "Each friend must get more than 5 chocolates. So 84 divided by the number of friends is greater than 5. That means the number of friends is less than 84 divided by 5, which is 16.8.",
    "So the number of friends must be a factor of 84 that is less than 16.8. The largest such factor is 14.",
    "Check: 84 divided by 14 equals 6, and 6 is greater than 5. So Riya can invite at most 14 friends!"
-  ]
- },
- "AIGEN_grade5_cc76adb0-06ba-478e-8c3f-96e9dcfa316d": {
-  "q": "Rohan and his friends are organizing a Holi celebration at their colony park. They bought three types of color packets: 180 packets of red gulaal, 240 packets of yellow gulaal, and 300 packets of green gulaal. They want to make identical gift hampers using all the packets, with each hamper having the same number of red, the same number of yellow, and the same number of green gulaal packets, no packets left over! What is the maximum number of hampers they can make, and how many yellow gulaal packets will be in each hamper?",
-  "options": [
-   "30 hampers, 8 yellow packets each",
-   "20 hampers, 12 yellow packets each",
-   "12 hampers, 20 yellow packets each",
-   "60 hampers, 4 yellow packets each"
-  ],
-  "hints": [
-   "The maximum number of hampers is the largest number that divides all three quantities evenly. What's the name for the largest number that divides multiple numbers?",
-   "Start by finding the prime factorization of each number: 180, 240, and 300. Then find their H C F!",
-   "Here's a similar problem: If you have 36 apples, 48 bananas, and 60 oranges, the prime factorizations are 36 equals 2 squared, times 3 squared. 48 equals 2 to the power of four, times 3. 60 equals 2 squared, times 3 times 5. The H C F equals 2 squared, times 3, which is 12. So you'd make 12 baskets, with 48 divided by 12, which is 4 bananas each."
-  ],
-  "steps": [
-   "We need to find the H C F of 180, 240, and 300, because the maximum number of identical hampers equals the H C F of all three quantities.",
-   "Find the prime factorization of 180: 180 equals 2 squared, times 3 squared, times 5.",
-   "Find the prime factorization of 240: 240 equals 2 to the power of 4, times 3 times 5.",
-   "Find the prime factorization of 300: 300 equals 2 squared, times 3 times 5 squared.",
-   "To find the H C F, take the lowest power of each common prime factor: H C F equals 2 squared, times 3 to the power of 1, times 5 to the power of 1, which is 4 times 3 times 5, which is 60.",
-   "So the maximum number of hampers equals 60.",
-   "Yellow packets per hamper: 240 divided by 60 equals 4.",
-   "Quick check, Red per hamper: 180 divided by 60 equals 3. Green per hamper: 300 divided by 60 equals 5. Everything divides perfectly with nothing left over!"
-  ]
- },
- "AIGEN_grade5_d02117b0-8e1f-4925-97b7-a132c21cdcae": {
-  "q": "Arjun runs a chai stall at a village mela. He bought three different types of biscuit packets to give free with chai. He has 168 glucose biscuits, 252 cream biscuits, and 336 chocolate biscuits. He wants to make identical combo plates using all the biscuits, each plate must have the same number of glucose, the same number of cream, and the same number of chocolate biscuits, with nothing left over. What is the maximum number of combo plates he can make, and how many chocolate biscuits will be on each plate?",
-  "options": [
-   "12 plates, 28 chocolate biscuits each",
-   "84 plates, 4 chocolate biscuits each",
-   "42 plates, 8 chocolate biscuits each",
-   "84 plates, 3 chocolate biscuits each"
-  ],
-  "hints": [
-   "The maximum number of plates is the H C F of all three quantities. Once you find that, divide the chocolate biscuit count by the number of plates!",
-   "Start by finding the prime factorisation of each number: 168, 252, and 336. Then pick the common prime factors with the smallest powers.",
-   "Here's a similar problem: If you have 60 red balls, 90 blue balls, and 120 green balls, and want identical groups, find the H C F of 60, 90 and 120. Prime factorisations: 60 equals 2 squared, times 3 times 5. 90 equals 2 times 3 squared, times 5. 120 equals 2 cubed, times 3 times 5. H C F equals 2 to the power of one, times 3 to the power of one, times 5 to the power of one, which is 30. So 30 groups, with 120 divided by 30, which is 4 green balls each."
-  ],
-  "steps": [
-   "Find the prime factorisation of each number. 168 equals 2 cubed, times 3 times 7.",
-   "Prime factorisation of 252. 252 equals 2 squared, times 3 squared, times 7.",
-   "Prime factorisation of 336. 336 equals 2 to the power of 4, times 3 times 7.",
-   "To find the H C F, take each common prime factor with the smallest power. Common primes: 2, 3, 7.",
-   "Pick the smallest powers. 2 squared is the smallest of 2 cubed, 2 squared, and 2 to the power of four. 3 to the power of one is the smallest of 3 to the power of one, 3 squared, and 3 to the power of one. And 7 to the power of one, because all have 7 to the power of one. H C F equals 2 squared, times 3 to the power of 1, times 7 to the power of 1. That is 4 times 3 times 7, which is 84.",
-   "So the maximum number of combo plates is 84!",
-   "Now find how many chocolate biscuits per plate: 336 divided by 84 equals 4.",
-   "Each plate gets 4 chocolate biscuits. Let's verify the others too: 168 divided by 84 equals 2 glucose, 252 divided by 84 equals 3 cream. Everything works out perfectly!"
   ]
  },
  "AIGEN_grade5_d17b8290-7c53-41d5-9330-05a8e1c0adb8": {
@@ -1283,28 +808,6 @@
    "Pieces from the second roll: 252 divided by 36 equals 7 pieces.",
    "Total pieces: 5 plus 7 equals 12 pieces.",
    "The longest piece is 36 centimetres and they get 12 total pieces!"
-  ]
- },
- "AIGEN_grade5_d1d9e427-b9b8-41b1-b138-2e833319c14e": {
-  "q": "Ankit is organizing a cricket practice session. He has 54 tennis balls and 90 rubber balls. He wants to divide them into identical groups so that each group has the same number of tennis balls and the same number of rubber balls, with no balls left over. What is the greatest number of groups he can make?",
-  "options": [
-   "9",
-   "18",
-   "6",
-   "27"
-  ],
-  "hints": [
-   "Think about it, you need to find the largest number that divides both 54 and 90 evenly. What's the name for that?",
-   "Start by listing the prime factorization of each number: 54 equals 2, times 3 times 3 times 3. And 90 equals 2, times 3 times 3, times 5.",
-   "Here's a similar problem: If you have 24 apples and 36 mangoes, find H C F. Prime factors: 24 equals 2 cubed, times 3. And 36 equals 2 squared, times 3 squared. Common factors: 2 squared, times 3 equals 12. So H C F equals 12. Now try the same method with 54 and 90!"
-  ],
-  "steps": [
-   "We need the H C F, the Highest Common Factor, of 54 and 90, because we want the greatest number of identical groups.",
-   "Find the prime factorization of 54. 54 equals 2 times 3 cubed.",
-   "Find the prime factorization of 90. 90 equals 2 times 3 squared, times 5.",
-   "Identify the common prime factors and take the lowest power of each. Common factors: 2 to the power of 1 and 3 squared.",
-   "Multiply the common factors together to get the H C F. H C F equals 2 times 3 squared, which is 2 times 9, which is 18.",
-   "So Ankit can make 18 groups! Each group will have 54 divided by 18, which is 3 tennis balls and 90 divided by 18, which is 5 rubber balls."
   ]
  },
  "AIGEN_grade5_d2d891ad-f5a3-456a-884a-6265abe8f31e": {
@@ -1350,28 +853,6 @@
    "Now find the total pencils needed. Each of the 60 bags needs 5 pencils. 60 times 5 equals 300 pencils."
   ]
  },
- "AIGEN_grade5_d7825e00-6124-406a-a87e-b0b4e7a67b66": {
-  "q": "Meera is decorating her house for Pongal. She has 126 marigold flowers and 84 jasmine flowers. She wants to make identical bouquets using all the flowers, with each bouquet having the same number of marigold flowers and the same number of jasmine flowers. What is the greatest number of bouquets she can make, and how many jasmine flowers will each bouquet have?",
-  "options": [
-   "42 bouquets, 2 jasmine flowers each",
-   "21 bouquets, 4 jasmine flowers each",
-   "14 bouquets, 6 jasmine flowers each",
-   "6 bouquets, 14 jasmine flowers each"
-  ],
-  "hints": [
-   "The greatest number of identical bouquets means you need to find the largest number that divides both 126 and 84 evenly. What's the H C F?",
-   "Start by finding the prime factorization of both numbers: 126 equals 2 times 3 squared, times 7. And 84 equals 2 squared, times 3 times 7.",
-   "Here's a similar problem: If you have 60 roses and 48 lilies, the H C F of 60 and 48 is 12. So you can make 12 bouquets with 60 divided by 12, which is 5 roses and 48 divided by 12, which is 4 lilies in each bouquet."
-  ],
-  "steps": [
-   "We need to find the H C F, the Highest Common Factor, of 126 and 84, since we want the greatest number of identical bouquets.",
-   "Find the prime factorization of each number: 126 equals 2 times 3 squared, times 7.",
-   "Prime factorization of 84: 84 equals 2 squared, times 3 times 7.",
-   "H C F equals the product of the lowest powers of all common prime factors: H C F equals 2 to the power of 1, times 3 to the power of 1, times 7 to the power of 1, which is 42.",
-   "So Meera can make 42 bouquets. Now find jasmine flowers per bouquet: 84 divided by 42 equals 2 jasmine flowers per bouquet.",
-   "Quick check, marigolds per bouquet: 126 divided by 42 equals 3. Each bouquet has 3 marigolds and 2 jasmines. Everything is used up!"
-  ]
- },
  "AIGEN_grade5_dcb89086-c7ca-4199-a4ee-8a046ca56014": {
   "q": "Priya is organizing a Rangoli competition at her school festival. She has 60 colored powder packets and wants to distribute them equally among teams. She notices that she can divide the packets equally among 2, 3, 4, 5, or 6 teams with none left over. How many factors does 60 have in total?",
   "options": [
@@ -1382,59 +863,13 @@
   ],
   "hints": [
    "To find all factors of 60, think about which numbers divide 60 exactly, start by breaking 60 into its prime factors!",
-   "First, find the prime factorization: 60 equals 2 times 2, times 3, times 5, which is 2 squared, times 3 to the power of one, times 5 to the power of one. Then use the factor-counting formula!",
+   "Find the factors in pairs. Start with 1 times 60 and 2 times 30, and keep going until the pairs meet in the middle.",
    "Here's a similar problem: How many factors does 36 have? Prime factorization: 36 equals 2 squared, times 3 squared. Number of factors equals open bracket 2 plus 1 close bracket, times open bracket 2 plus 1 close bracket, which is 9. The factors are: 1, 2, 3, 4, 6, 9, 12, 18, 36, that's 9 factors!"
   ],
   "steps": [
    "Find the prime factorization of 60. Break it down step by step: 60 equals 2 times 30, which is 2 times 2 times 15, which is 2 times 2, times 3, times 5, which is 2 squared, times 3 to the power of 1, times 5 to the power of 1.",
    "Use the factor-counting formula: add 1 to each exponent in the prime factorization, then multiply them together. Number of factors equals open bracket 2 plus 1 close bracket, times open bracket 1 plus 1 close bracket, times open bracket 1 plus 1 close bracket, which is 3 times 2 times 2, which is 12.",
    "Let's verify by listing all 12 factors of 60: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60. Count them, that's exactly 12!"
-  ]
- },
- "AIGEN_grade5_e0f53444-21e0-40cc-9bf5-c74993dd62dd": {
-  "q": "Priya is making gift bags for a Diwali party. She has 120 chocolates, 84 small diyas, and 156 rangoli stickers. She wants to divide them equally into as many identical gift bags as possible, with no items left over. Each bag must have the same number of chocolates, the same number of diyas, and the same number of stickers. How many gift bags can she make, and how many chocolates will be in each bag?",
-  "options": [
-   "4 bags, 30 chocolates each",
-   "12 bags, 7 chocolates each",
-   "6 bags, 20 chocolates each",
-   "12 bags, 10 chocolates each"
-  ],
-  "hints": [
-   "The number of bags must divide all three quantities evenly. What's the biggest number that divides 120, 84, and 156 with no remainder?",
-   "Start by finding the prime factorization of each number: 120 equals 2 cubed, times 3 times 5. 84 equals 2 squared, times 3 times 7. 156 equals 2 squared, times 3 times 13.",
-   "Here's a similar problem: If you have 60 apples and 90 bananas, the H C F of 60 and 90. 60 equals 2 squared, times 3 times 5. 90 equals 2 times 3 squared, times 5. H C F equals 2 times 3 times 5, which is 30. So 30 bags, with 2 apples and 3 bananas each. Now try the same approach with three numbers!"
-  ],
-  "steps": [
-   "We need to find the H C F of 120, 84, and 156, since the number of bags must divide all three quantities evenly.",
-   "Prime factorize each number: 120 equals 2 cubed, times 3 times 5.",
-   "Next number: 84 equals 2 squared, times 3 times 7.",
-   "Last number: 156 equals 2 squared, times 3 times 13.",
-   "The H C F uses the lowest power of each common prime factor. The common primes are 2 and 3. H C F equals 2 squared, times 3, which is 4 times 3, which is 12.",
-   "So Priya can make 12 gift bags.",
-   "Chocolates per bag: 120 divided by 12 equals 10.",
-   "Let's verify: Diyas per bag equals 84 divided by 12, which is 7. Stickers per bag equals 156 divided by 12, which is 13. Everything divides evenly!"
-  ]
- },
- "AIGEN_grade5_e2cd3eee-f02b-4ad9-853d-c7a074e7342b": {
-  "q": "Ankit is organizing a school cricket tournament. He has 108 red balls and 90 white balls. He wants to pack them into identical kits so that each kit has the same number of red balls and the same number of white balls, with no balls left over. What is the greatest number of kits he can make, and how many red and white balls will each kit contain?",
-  "options": [
-   "18 kits, 6 red and 5 white balls each",
-   "9 kits, 12 red and 10 white balls each",
-   "6 kits, 18 red and 15 white balls each",
-   "36 kits, 3 red and 2.5 white balls each"
-  ],
-  "hints": [
-   "Think about it this way: the number of kits must divide both 108 and 90 evenly. You want the greatest such number!",
-   "Start by finding the prime factorization of both numbers: 108 equals 2 times 2, times 3 times 3 times 3. And 90 equals 2, times 3 times 3, times 5.",
-   "Here's a similar problem: If you have 60 apples and 48 oranges, the prime factorizations are 60 equals 2 squared, times 3 times 5. And 48 equals 2 to the power of four, times 3. The H C F equals 2 squared, times 3, which is 12. So you can make 12 bags with 5 apples and 4 oranges each. Now try the same approach with 108 and 90!"
-  ],
-  "steps": [
-   "We need to find the H C F of 108 and 90, because the greatest number of identical kits equals the H C F.",
-   "Find the prime factorization of 108: 108 equals 2 squared, times 3 cubed.",
-   "Find the prime factorization of 90: 90 equals 2 times 3 squared, times 5.",
-   "The H C F is the product of the common prime factors raised to their lowest powers: H C F equals 2 to the power of 1, times 3 squared, which is 2 times 9, which is 18.",
-   "So Ankit can make 18 kits. Each kit gets: Red balls per kit equals 108 divided by 18, which is 6. White balls per kit equals 90 divided by 18, which is 5.",
-   "Answer: 18 kits with 6 red and 5 white balls each!"
   ]
  },
  "AIGEN_grade5_eca45cd9-40e1-4b75-98c6-0f929c169ad0": {
@@ -1448,7 +883,7 @@
   "hints": [
    "First, list all the prime numbers between 40 and 50. Then check which one leaves a remainder of 1 when divided by 3!",
    "The prime numbers between 40 and 50 are: 41, 43, and 47. Now divide each by 3 and check the remainder.",
-   "Here's a similar problem: Find a prime number between 20 and 30 that leaves remainder 2 when divided by 5. Primes between 20 and 30 are 23 and 29. 23 divided by 5 equals 4 remainder 3. 29 divided by 5 equals 5 remainder 4. Hmm, neither works, so you'd adjust your range! The key idea is: check each prime one by one."
+   "A similar problem: find a prime number between 20 and 30 that leaves a remainder of 1 when divided by 4. The primes are 23 and 29. 23 divided by 4 equals 5 remainder 3, and 29 divided by 4 equals 7 remainder 1, so it is 29."
   ],
   "steps": [
    "List all prime numbers between 40 and 50. A prime number has exactly 2 factors: 1 and itself.",
@@ -1458,30 +893,6 @@
    "Check 43:",
    "Check 47 just to be sure: 47 divided by 3 equals 15 remainder 2.",
    "Only 43 satisfies both conditions, it's prime and leaves remainder 1 when divided by 3. Priya has 43 coins!"
-  ]
- },
- "AIGEN_grade5_fbfa8d72-7cab-4b58-8b67-55c05a1c1335": {
-  "q": "Riya is making gift bags for a Diwali party. She has 84 chocolate barfis, 126 kaju katlis, and 210 gulab jamuns. She wants to divide all the sweets equally into gift bags so that each bag has the same number of each type of sweet, with no sweets left over. What is the greatest number of gift bags she can make, and how many gulab jamuns will be in each bag?",
-  "options": [
-   "21 bags, 10 gulab jamuns each",
-   "14 bags, 15 gulab jamuns each",
-   "7 bags, 30 gulab jamuns each",
-   "42 bags, 5 gulab jamuns each"
-  ],
-  "hints": [
-   "To find the greatest number of bags where every sweet type divides evenly, you need to find the H C F of all three numbers!",
-   "Start by finding the prime factorisation of each number: 84, 126, and 210.",
-   "Here's a similar problem: If you have 36 red balls, 48 blue balls, and 60 green balls, first find the H C F of 36, 48 and 60. Prime factorisations: 36 equals 2 squared, times 3 squared. 48 equals 2 to the power of four, times 3. 60 equals 2 squared, times 3 times 5. H C F equals 2 squared, times 3, which is 12. So 12 bags, with 60 divided by 12, which is 5 green balls each."
-  ],
-  "steps": [
-   "We need to find the H C F of 84, 126, and 210 to get the greatest number of equal gift bags.",
-   "Prime factorisation of 84: 84 equals 2 squared, times 3 times 7.",
-   "Prime factorisation of 126: 126 equals 2 times 3 squared, times 7.",
-   "Prime factorisation of 210: 210 equals 2, times 3, times 5, times 7.",
-   "H C F equals the product of the lowest powers of all common prime factors. H C F equals 2 to the power of 1, times 3 to the power of 1, times 7 to the power of 1, which is 42.",
-   "So Riya can make 42 gift bags.",
-   "Gulab jamuns per bag: 210 divided by 42 equals 5.",
-   "Let's verify the others too: 84 divided by 42 equals 2 barfis per bag, 126 divided by 42 equals 3 kaju katlis per bag. Everything divides perfectly!"
   ]
  },
  "BOOST_EXT_G5_WS_B3_016_05": {
@@ -3562,7 +2973,7 @@
   "hints": [
    "Think about what makes a number prime, it can only be divided evenly by 1 and itself. Now check each number between 90 and 100 one by one!",
    "Start by listing all numbers between 90 and 100: 91, 92, 93, 94, 95, 96, 97, 98, 99. Now test each one, can you divide it by 2, 3, 5, 7, or any small prime?",
-   "Here's a similar problem: How many primes between 80 and 90? List them. 81, divided by 3, is 27. 82 is even. 83 is not divisible by 2, 3, 5 or 7, so it is prime! 84 is even. 85, divided by 5, is 17. 86 is even. 87, divided by 3, is 29. 88 is even. 89 is not divisible by 2, 3, 5 or 7, so it is prime! So there are 2 primes between 80 and 90."
+   "A similar problem: how many prime numbers are there between 80 and 90? The even numbers are out, 81 and 87 can be divided by 3, and 85 can be divided by 5. That leaves 83 and 89, so there are 2 primes."
   ],
   "steps": [
    "List all numbers between 90 and 100, not including 90 and 100 themselves: 91, 92, 93, 94, 95, 96, 97, 98, 99.",
@@ -3586,7 +2997,7 @@
   "hints": [
    "This is a counting problem, you need to recall what makes a number 'prime' and then carefully list all such numbers between 1 and 50. Remember: 1 is not a prime number!",
    "Start by remembering the definition: a prime number has exactly 2 factors, 1 and itself. Begin checking each number from 2 onwards: Is 2 prime? Is 3 prime? Is 4 prime? Keep going up to 49.",
-   "Here's a similar example: How many prime numbers are there between 1 and 20? Let's list them: 2, 3, 5, 7, 11, 13, 17, 19. That gives us 8 prime numbers between 1 and 20. Now try the same approach all the way up to 50!"
+   "A similar example: how many prime numbers are there between 1 and 20? List them: 2, 3, 5, 7, 11, 13, 17, 19. That makes 8 prime numbers."
   ],
   "steps": [
    "Recall the definition: A prime number has exactly two factors, 1 and itself. Note that 1 is not prime, it has only one factor.",
@@ -3611,7 +3022,7 @@
   "hints": [
    "This is a counting problem about prime numbers! Remember, a prime number has exactly 2 factors: 1 and itself. Think about which primes are odd and which aren't.",
    "First, list all prime numbers between 1 and 100. Then ask yourself: is there any prime number that is not odd? If so, remove it from your count!",
-   "Let's try a similar problem: How many odd prime numbers are there between 1 and 20? Primes between 1 and 20: 2, 3, 5, 7, 11, 13, 17, 19. That's 8 primes. But 2 is even, so odd primes equals 8 minus 1, which is 7 odd primes. See the trick?"
+   "A similar problem: how many odd prime numbers are there between 1 and 20? The primes are 2, 3, 5, 7, 11, 13, 17 and 19, which makes 8. Only 2 is even, so there are 8 minus 1 equals 7 odd primes."
   ],
   "steps": [
    "Let's first recall: a prime number has exactly two factors, 1 and itself. The number 1 is not a prime, it has only one factor.",
@@ -3631,7 +3042,7 @@
    "None of these"
   ],
   "hints": [
-   "Think carefully about what makes a number both even and prime at the same time. Can you list the even numbers and check which ones are prime?",
+   "Think carefully about what makes a number both even and prime at the same time. Can you list some even numbers and check which ones are prime?",
    "Start by recalling: a prime number has exactly 2 factors, 1 and itself. Now, which even numbers have exactly 2 factors? Try checking 2, 4, 6, 8, 10, and see which ones qualify.",
    "Here's a similar problem: How many odd prime numbers are there between 1 and 10? The odd numbers are 3, 5, 7 and 9. Check each: 3 is prime, 5 is prime, 7 is prime, and 9 equals 3 times 3, so it is not prime. Answer: 3 odd primes between 1 and 10. Now use the same approach for even primes between 1 and 100!"
   ],
@@ -3679,7 +3090,7 @@
   ],
   "hints": [
    "Think about what makes most of these numbers special, what property do 13, 17, 19, 23, and 29 all share?",
-   "Check each number: is it a prime number, divisible only by 1 and itself? Try dividing 27 by small numbers like 3.",
+   "Check each number in turn: can it be divided exactly by a small number such as 2, 3 or 5? A prime number cannot.",
    "Here's a similar problem: Which doesn't belong in 7, 11, 15, 17, 19? Let's check, 7 prime, 11 prime, 15 equals 3 times 5 not prime, 17 prime, 19 prime. So 15 is the odd one out!"
   ],
   "steps": [

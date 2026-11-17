@@ -1,48 +1,4 @@
 {
- "AIGEN_grade5_0095ccb9-0d88-44c3-9fdb-b29654aa1edc": {
-  "q": "During a school mela, Priya and her friends are arranging diyas (lamps) in a special pattern. They start by placing diyas in a perfect square arrangement. Then they notice that if they add 57 more diyas to their collection, they can rearrange all the diyas into the next larger perfect square! If the side of the smaller square has more than 10 diyas, how many diyas did they originally have?",
-  "options": [
-   "784",
-   "841",
-   "729",
-   "676"
-  ],
-  "hints": [
-   "Think about two consecutive perfect squares. The difference between n squared and n plus 1, all squared, follows a neat pattern, can you figure it out?",
-   "The difference between consecutive perfect squares n squared and n plus 1, all squared, is always n plus 1, all squared, minus n squared equals 2 n plus 1. Set this equal to 57 and solve for n!",
-   "Here's a similar problem: Suppose adding 41 more tiles lets you go from one perfect square to the next. Then 2 n plus 1 equals 41, so 2 n equals 40, meaning n equals 20. The original square had 20 squared, which equals 400 tiles, and the new square has 21 squared, which equals 441 tiles. Check: 441 minus 400 equals 41."
-  ],
-  "steps": [
-   "Let the side of the smaller square be n. So the original number of diyas is n squared.",
-   "The next larger perfect square has side n plus 1, so it contains n plus 1, all squared, diyas.",
-   "The difference between consecutive perfect squares is: N plus 1, all squared, minus n squared equals n squared plus 2 n plus 1 minus n squared, which equals 2 n plus 1.",
-   "We're told this difference is 57, so: 2 n plus 1 equals 57.",
-   "Solving for n: 2 n equals 56, so n equals 28.",
-   "Since n equals 28 (which is more than 10), the original number of diyas is: N squared equals 28 squared, which equals 784.",
-   "Let's verify: The next perfect square is 29 squared, which equals 841, and 841 minus 784 equals 57."
-  ]
- },
- "AIGEN_grade5_0215544c-a5ee-475a-9501-ee690589e4fb": {
-  "q": "Ravi is saving money in his piggy bank for Diwali shopping. On Monday, he puts in 7 rupees. On Tuesday, he puts in 12 rupees. On Wednesday, he puts in 17 rupees. He keeps adding the same extra amount each day. How much money will Ravi have saved in total by the end of Saturday (6 days)?",
-  "options": [
-   "32 rupees",
-   "117 rupees",
-   "112 rupees",
-   "102 rupees"
-  ],
-  "hints": [
-   "First, figure out how much extra Ravi adds each day compared to the day before. Then list out all 6 days' amounts and add them up!",
-   "The common difference is 12 rupees minus 7 rupees, which equals 5 rupees. So each day he saves 5 rupees more than the previous day. Write out all 6 amounts first.",
-   "Similar problem: If someone saves 3 rupees, 6 rupees, 9 rupees, 12 rupees over 4 days (adding 3 rupees more each day), the total equals 3 plus 6 plus 9 plus 12, which equals 30 rupees. Notice how you list each day's amount and then add them all up!"
-  ],
-  "steps": [
-   "Find the common difference: each day Ravi saves 5 rupees more than the previous day. 12 minus 7 equals 5.",
-   "List the amount saved each day from Monday to Saturday: 7, 12, 17, 22, 27 and 32.",
-   "Now add all six amounts together to find the total savings. 7 plus 12 plus 17 plus 22 plus 27 plus 32.",
-   "Add step by step: 7 plus 12 equals 19, then 19 plus 17 equals 36, then 36 plus 22 equals 58, then 58 plus 27 equals 85, then 85 plus 32 equals 117.",
-   "Ravi will have saved 117 rupees in total by the end of Saturday!"
-  ]
- },
  "AIGEN_grade5_09f86469-4a41-4a73-b3f3-4ecb779627dd": {
   "q": "Priya is making a rangoli pattern using coloured dots. In the 1st row she places 5 dots, in the 2nd row 9 dots, in the 3rd row 13 dots, and so on, each row has 4 more dots than the previous one. How many dots does she place in the 8th row?",
   "options": [
@@ -96,7 +52,7 @@
   "hints": [
    "You need to find a number where both number plus 25 and number minus 11 are perfect squares. Try listing out perfect squares and checking!",
    "Start by listing perfect squares: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, and so on. If the number plus 25 equals one perfect square, and the number minus 11 equals another, the two perfect squares must differ by exactly 36.",
-   "Here's a similar problem: Suppose adding 20 gives a perfect square and removing 5 also gives a perfect square. The two perfect squares differ by 25. Check pairs: 36 minus 11 equals 25 (differ by 25). So the number would be 11 plus 5, which equals 16. Check: 16 plus 20 equals 36, which equals 6 squared and 16 minus 5 equals 11, that's not a perfect square, so try the next pair: 100 minus 75 equals 25. Number equals 75 plus 5, which equals 80. Check: 80 plus 20 equals 100, which equals 10 squared and 80 minus 5 equals 75, not perfect square either. Keep going until both conditions work!"
+   "Here's a similar problem. Suppose adding 10 gives a perfect square and removing 6 also gives a perfect square. The two perfect squares differ by 10 plus 6, which is 16. From the list, 25 minus 9 equals 16, so the number is 25 minus 10, which is 15. Check: 15 plus 10 equals 25, and 15 minus 6 equals 9, and both are perfect squares."
   ],
   "steps": [
    "Let Riya's current number of tiles be n. We need both n plus 25 and n minus 11 to be perfect squares.",
@@ -107,26 +63,6 @@
    "For A plus b equals 6 and A minus b equals 6: solving gives A equals 6, b equals 0. So A squared equals 36 and b squared equals 0. This means n minus 11 equals 0, so n equals 11. Check: 11 plus 25 equals 36 but n minus 11 equals 0, technically 0 is a perfect square, but Riya can't make a rangoli with 0 tiles, so this doesn't make practical sense.",
    "Using A equals 10, b equals 8: n plus 25 equals 100, so n equals 75. Check: 75 plus 25 equals 100, which equals 10 squared and 75 minus 11 equals 64, which equals 8 squared.",
    "Riya currently has 75 tiles!"
-  ]
- },
- "AIGEN_grade5_10a6094c-c43e-4500-8b47-7efa676353df": {
-  "q": "During a cricket tournament, Arjun keeps track of his runs scored in each match. In his 1st match he scored 14 runs, in his 2nd match he scored 21 runs, in his 3rd match he scored 28 runs, and so on, following the same pattern. After playing 8 matches, what is the total number of runs Arjun scored across all 8 matches?",
-  "options": [
-   "308",
-   "336",
-   "63",
-   "280"
-  ],
-  "hints": [
-   "First figure out the pattern, how much more does Arjun score in each match compared to the previous one? Then find his score in each match up to the 8th.",
-   "The common difference is 21 minus 14, which equals 7. So the 8th term is 14 plus, open bracket, 8 minus 1, close bracket, times 7. Then use the sum formula: Sum equals, open bracket, number of terms divided by 2, close bracket, times, open bracket, first term plus last term, close bracket.",
-   "Here's a similar problem: If someone scores 10, 15, 20, and so on, in each match, the common difference is 5. The 6th term equals 10 plus, open bracket, 6 minus 1, close bracket, times 5, which equals 35. The total for 6 matches equals, open bracket, 6 divided by 2, close bracket, times, open bracket, 10 plus 35, close bracket, which equals 3 times 45, which equals 135. Now try the same approach with Arjun's scores!"
-  ],
-  "steps": [
-   "Identify the pattern. Each match, Arjun scores 7 more runs than the previous match. D equals 21 minus 14, which equals 7.",
-   "Find the 8th term using the formula for the nth term of an arithmetic sequence. A 8 equals 14 plus, open bracket, 8 minus 1, close bracket, times 7, which equals 14 plus 49, which equals 63.",
-   "Now find the sum of all 8 terms using the sum formula. S 8 equals 8 over 2, times, open bracket, A 1 plus A 8, close bracket, which equals 4 times, open bracket, 14 plus 63, close bracket.",
-   "Calculate the final answer. S 8 equals 4 times 77, which equals 308."
   ]
  },
  "AIGEN_grade5_11c4b58f-95a7-4b0c-b7d5-90d81de16586": {
@@ -167,26 +103,6 @@
    "Find Day 5 packets: multiply Day 4 by 2. Day 5 equals 24 times 2, which equals 48.",
    "Find Day 6 packets: multiply Day 5 by 2. Day 6 equals 48 times 2, which equals 96.",
    "Add up all six days to find the total. 3 plus 6 plus 12 plus 24 plus 48 plus 96 equals 189."
-  ]
- },
- "AIGEN_grade5_17ee5d48-e964-4848-b9a9-d07e7dd6ee49": {
-  "q": "During a cricket tournament, Ravi's team plays matches over several weeks. In Week 1, they scored 45 runs in their practice match. Each week after that, they scored 12 more runs than the previous week. After 8 weeks of practice matches, what is the total number of runs they scored across all 8 weeks?",
-  "options": [
-   "129",
-   "708",
-   "672",
-   "696"
-  ],
-  "hints": [
-   "First figure out how many runs they scored each week, then add them all up. There's a shortcut for adding an arithmetic series!",
-   "Start by finding the score in Week 8. The nth term of an arithmetic sequence is: first term plus, open bracket, n minus 1, close bracket, times common difference.",
-   "Here's a similar problem: If a team scores 10 runs in Week 1 and increases by 5 each week for 4 weeks, the scores are 10, 15, 20 and 25. The sum equals, open bracket, number of terms divided by 2, close bracket, times, open bracket, first term plus last term, close bracket, which equals, open bracket, 4 divided by 2, close bracket, times, open bracket, 10 plus 25, close bracket, which equals 2 times 35, which equals 70. Try the same approach with your problem!"
-  ],
-  "steps": [
-   "Identify the sequence. First term (A) equals 45, common difference (d) equals 12, and number of terms (n) equals 8.",
-   "Find the 8th term (the score in Week 8) using the formula for the nth term. A 8 equals 45 plus, open bracket, 8 minus 1, close bracket, times 12, which equals 45 plus 84, which equals 129.",
-   "Now use the sum formula for an arithmetic series: Sum equals, open bracket, number of terms divided by 2, close bracket, times, open bracket, first term plus last term, close bracket. S 8 equals 8 over 2, times, open bracket, 45 plus 129, close bracket, which equals 4 times 174, which equals 696.",
-   "So the total runs scored across all 8 weeks equals 696."
   ]
  },
  "AIGEN_grade5_17f60309-f899-4a48-915b-349b90244ebb": {
@@ -273,49 +189,6 @@
    "So Ravi puts 42 rupees in his piggy bank on Day 8!"
   ]
  },
- "AIGEN_grade5_1b8bf098-fced-43ae-b719-7634c8bb105d": {
-  "q": "Ravi is saving money in his piggy bank for a new cricket bat. On Monday, he puts in 3 rupees. On Tuesday, he puts in 6 rupees. On Wednesday, he puts in 12 rupees. On Thursday, he puts in 24 rupees. If he continues this pattern, how much money in total will be in his piggy bank from Monday through Saturday?",
-  "options": [
-   "96 rupees",
-   "93 rupees",
-   "192 rupees",
-   "189 rupees"
-  ],
-  "hints": [
-   "First figure out the pattern, is Ravi adding the same amount each day, or is each amount related to the previous one by multiplication?",
-   "Each day, Ravi puts in double what he put in the day before. So find Friday's and Saturday's amounts first, then add all six days together.",
-   "Similar problem: If someone saves 2 rupees, 4 rupees, 8 rupees, 16 rupees on four days (doubling each day), then Day 5 equals 32 rupees and Day 6 equals 64 rupees. Total equals 2 plus 4 plus 8 plus 16 plus 32 plus 64, which equals 126 rupees."
-  ],
-  "steps": [
-   "Identify the pattern: each day Ravi puts in double the previous day's amount. 3, 6, 12, 24, and so on, (each term equals previous term times 2).",
-   "Find Friday's amount: Thursday was 24 rupees, so Friday equals 24 times 2, which equals 48 rupees.",
-   "Find Saturday's amount: Friday was 48 rupees, so Saturday equals 48 times 2, which equals 96 rupees.",
-   "Add up all six days: 3 plus 6 plus 12 plus 24 plus 48 plus 96.",
-   "So the total money in Ravi's piggy bank from Monday through Saturday is 189 rupees!"
-  ]
- },
- "AIGEN_grade5_1c64058c-db47-461e-8457-8a0ed3fbd305": {
-  "q": "Ananya is arranging diyas (lamps) for Diwali in a square grid pattern. She notices that when she adds 17 more diyas to her current square arrangement, she gets a new perfect square arrangement. If both arrangements use fewer than 100 diyas each, how many diyas does she start with?",
-  "options": [
-   "64",
-   "81",
-   "36",
-   "49"
-  ],
-  "hints": [
-   "You're looking for two perfect square numbers whose difference is exactly 17. Think about which consecutive (or nearby) square numbers are 17 apart!",
-   "Start listing perfect squares less than 100: 1, 4, 9, 16, 25, 36, 49, 64 and 81. Now check which pair has a difference of 17.",
-   "Here's a similar problem: If adding 11 diyas to a square arrangement gives another perfect square, find the starting number. Perfect squares: 25 and 36. Since 36 minus 25 equals 11, the answer would be 25 diyas. Now try the same approach with a difference of 17!"
-  ],
-  "steps": [
-   "We need two perfect squares where the larger one minus the smaller one equals 17, and both are less than 100.",
-   "Let's list all perfect squares less than 100: 1, 4, 9, 16, 25, 36, 49, 64 and 81.",
-   "Now let's check differences between pairs to find a difference of 17.",
-   "81 minus 64 equals 17. That's it!",
-   "Let's verify no other pair works: 64 minus 49 equals 15, 49 minus 36 equals 13, 36 minus 25 equals 11. No other pair gives 17.",
-   "So Ananya starts with 64 diyas (an 8 by 8 grid) and after adding 17, she has 81 diyas (a 9 by 9 grid). The answer is 64!"
-  ]
- },
  "AIGEN_grade5_20aef6ce-b282-46c1-bba7-1510804545cd": {
   "q": "Arjun is organizing a cricket tournament in his school playground. He wants to arrange all the players in a perfect square formation for the opening ceremony photo. He currently has 196 players. The school principal says, \"If we add some more students so that the total becomes the next perfect square, we can make a bigger square formation!\" Arjun then notices that the difference between that next perfect square and the one after it is exactly the number of samosas he needs to order for the party. How many samosas does Arjun need to order?",
   "options": [
@@ -380,27 +253,6 @@
    "So Riya needs 184 more petals for the border!"
   ]
  },
- "AIGEN_grade5_2936a290-17d6-48fa-8a00-043f0cb3c530": {
-  "q": "Ananya is arranging diyas (lamps) for Diwali in a triangular pattern. She places 3 diyas in the 1st row, 7 diyas in the 2nd row, 11 diyas in the 3rd row, and so on. How many diyas does she need in total for the first 6 rows?",
-  "options": [
-   "68",
-   "78",
-   "58",
-   "23"
-  ],
-  "hints": [
-   "First figure out the pattern, how much does each row increase by? Then find all 6 row values and add them up!",
-   "The difference between consecutive rows is 4. So the rows go: 3, 7, 11, 15, 19 and 23. Now add them all!",
-   "Here's a similar problem: If rows have 2, 5, 8, 11, 14 items, the total for 5 rows equals 2 plus 5 plus 8 plus 11 plus 14, which equals 40. Notice the common difference is 3, and you just add up all the terms!"
-  ],
-  "steps": [
-   "Find the common difference between rows. 7 minus 3 equals 4.",
-   "List out all 6 rows by adding 4 each time. 3, 7, 11, 15, 19 and 23.",
-   "Add up all the diyas in the 6 rows. 3 plus 7 plus 11 plus 15 plus 19 plus 23.",
-   "Group pairs from the outside in to add quickly: open bracket, 3 plus 23, close bracket, plus, open bracket, 7 plus 19, close bracket, plus, open bracket, 11 plus 15, close bracket. 26 plus 26 plus 26 equals 78.",
-   "So Ananya needs 78 diyas in total for 6 rows!"
-  ]
- },
  "AIGEN_grade5_31ca7208-ca49-4c95-90f3-ca89c7d76a0c": {
   "q": "Vikram is building a square garden using small square tiles, each 1 metre by 1 metre. He currently has a perfect square garden that uses 81 tiles in total. He wants to expand it so that the new garden is also a perfect square, but with 5 more tiles along each side than before. How many more tiles does Vikram need to buy for the bigger garden?",
   "options": [
@@ -441,46 +293,6 @@
    "After 7 rings, Priya has used 98 stones. The 8th ring would need 26 stones, but she only has 100 minus 98, which equals 2 stones left. She can't complete ring 8.",
    "So the maximum number of complete rings is 7, with 2 stones left over.",
    "We can verify using the sum formula: S n equals n over 2, times, open bracket, 2 A plus, open bracket, n minus 1, close bracket, times d, close bracket. For n equals 7: S 7 equals 7 over 2, times, open bracket, 2 times 5 plus 6 times 3, close bracket, which equals 7 over 2, times 28, which equals 98."
-  ]
- },
- "AIGEN_grade5_32d9f65a-f751-4094-acba-c394181debf4": {
-  "q": "At a chai stall near a railway station, the owner tracks how many cups of chai he sells each hour after opening. In the 1st hour he sells 14 cups, in the 2nd hour he sells 21 cups, in the 3rd hour he sells 28 cups, and so on, following the same pattern. If the stall stays open for 8 hours, how many total cups of chai does he sell during the entire day?",
-  "options": [
-   "308",
-   "294",
-   "63",
-   "310"
-  ],
-  "hints": [
-   "First figure out the pattern, what's the common difference between consecutive hours? Then find the number of cups sold in each hour up to the 8th hour.",
-   "The common difference is 21 minus 14, which equals 7. The cups sold in the nth hour equals 14 plus, open bracket, n minus 1, close bracket, times 7. Find the 8th term first, then use the sum formula.",
-   "Here's a similar problem: If someone sells 10, 15, 20, and so on, cups over 5 hours, the common difference is 5. The 5th term equals 10 plus, open bracket, 5 minus 1, close bracket, times 5, which equals 30. The total equals 5 over 2, times, open bracket, 10 plus 30, close bracket, which equals 5 over 2, times 40, which equals 100 cups. Now try the same approach with your problem!"
-  ],
-  "steps": [
-   "Find the common difference (d) of the sequence: 21 minus 14 equals 7, and 28 minus 21 equals 7. So d equals 7.",
-   "Find the 8th term using the formula for the nth term of an arithmetic sequence. A 8 equals 14 plus, open bracket, 8 minus 1, close bracket, times 7, which equals 14 plus 49, which equals 63.",
-   "Now use the sum formula to find the total cups sold over 8 hours. The sum of an arithmetic series is S equals n over 2, times, open bracket, first term plus last term, close bracket. S 8 equals 8 over 2, times, open bracket, 14 plus 63, close bracket, which equals 4 times 77, which equals 308.",
-   "So the chai stall owner sells a total of 308 cups of chai over 8 hours!"
-  ]
- },
- "AIGEN_grade5_33c9445d-35d6-4a05-aa52-71f500156066": {
-  "q": "Ravi is saving money in his piggy bank for Diwali shopping. On Day 1, he puts in 7 rupees. On Day 2, he puts in 12 rupees. On Day 3, he puts in 17 rupees, and so on, adding the same extra amount each day. How much money will Ravi have saved in total after 8 days?",
-  "options": [
-   "336 rupees",
-   "196 rupees",
-   "42 rupees",
-   "56 rupees"
-  ],
-  "hints": [
-   "First, figure out how much extra Ravi adds each day compared to the previous day. Then find what he saves on Day 8, and use a trick to add up all 8 days quickly!",
-   "The common difference is 12 rupees minus 7 rupees, which equals 5 rupees. The amount on Day n is 7 plus, open bracket, n minus 1, close bracket, times 5. Start by finding the Day 8 amount.",
-   "Similar problem: If someone saves 3 rupees, 6 rupees, 9 rupees, 12 rupees over 4 days, the total equals, open bracket, first plus last, close bracket, times number of days divided by 2, which equals, open bracket, 3 plus 12, close bracket, times 4 divided by 2, which equals 15 times 4 divided by 2, which equals 30. Try using this pairing method for Ravi's problem!"
-  ],
-  "steps": [
-   "Find the common difference: each day Ravi adds 5 rupees more than the previous day. D equals 12 minus 7, which equals 5.",
-   "Find the amount saved on Day 8 using the formula for the nth term of an arithmetic sequence. A 8 equals 7 plus, open bracket, 8 minus 1, close bracket, times 5, which equals 7 plus 35, which equals 42.",
-   "Now find the total saved over all 8 days using the sum formula: Sum equals, open bracket, first term plus last term, close bracket, times number of terms divided by 2. S 8 equals, open bracket, 7 plus 42, close bracket, times 8, all divided by 2, which equals 49 times 8, all divided by 2, which equals 392 over 2, which equals 196.",
-   "So Ravi will have saved a total of 196 rupees after 8 days!"
   ]
  },
  "AIGEN_grade5_35be4d4b-bbdc-4eb5-aa9c-a67710a8b666": {
@@ -545,27 +357,6 @@
    "So Meera saves 96 rupees on Day 6!"
   ]
  },
- "AIGEN_grade5_3e2ffe5d-60d2-471a-8463-81db406f8cfb": {
-  "q": "During Diwali, Priya arranges diyas (oil lamps) in rows to make a beautiful triangular pattern. The 1st row has 5 diyas, the 2nd row has 9 diyas, the 3rd row has 13 diyas, and so on. She makes 8 rows in total. How many diyas does Priya use altogether?",
-  "options": [
-   "152",
-   "148",
-   "144",
-   "136"
-  ],
-  "hints": [
-   "First figure out the pattern, what's being added each time? Then find how many diyas are in each row before adding them all up.",
-   "The common difference is 4. Use this to find the number of diyas in the 8th row: start with 5 and add 4 seven times (not eight!).",
-   "Here's a similar problem: If a sequence starts at 3 with a common difference of 2, and you want the sum of the first 6 terms, the 6th term is 3 plus 2 times 5, which equals 13, and the sum equals (number of terms) times, open bracket, first term plus last term, close bracket, divided by 2, which equals 6 times, open bracket, 3 plus 13, close bracket, divided by 2, which equals 48."
-  ],
-  "steps": [
-   "Identify the pattern: 5, 9, 13, and so on, each row adds 4 more diyas. So the common difference d equals 4.",
-   "Find the 8th term (diyas in the 8th row). The nth term of an arithmetic sequence is: first term plus, open bracket, n minus 1, close bracket, times d. A 8 equals 5 plus, open bracket, 8 minus 1, close bracket, times 4, which equals 5 plus 28, which equals 33.",
-   "Now find the total diyas across all 8 rows using the sum formula: S equals n times, open bracket, A 1 plus A n, close bracket, all divided by 2, which equals 8 times, open bracket, 5 plus 33, close bracket, all divided by 2.",
-   "Calculate: S equals 8 times 38, all divided by 2, which equals 304 over 2, which equals 152.",
-   "Priya uses 152 diyas in total!"
-  ]
- },
  "AIGEN_grade5_4018fb94-5a51-48e9-8353-5f51d2dd081e": {
   "q": "At a school cricket tournament, the coach wants to arrange all the players for a group photo in equal rows and columns (forming a perfect square). He counts 225 players in total. How many players will stand in each row?",
   "options": [
@@ -576,7 +367,7 @@
   ],
   "hints": [
    "If players are arranged in equal rows and columns, you need to find a number that, when multiplied by itself, gives 225. What operation is that?",
-   "You need to find the square root of 225. Start by checking: does 15 times 15 equal 225?",
+   "You need the square root of 225. We know 10 times 10 equals 100, and 20 times 20 equals 400, so try the numbers between 10 and 20.",
    "Here's a similar problem: If 144 students are arranged in a perfect square, each row has the square root of 144, which equals 12 students, because 12 times 12 equals 144. Now try the same approach with 225!"
   ],
   "steps": [
@@ -680,7 +471,7 @@
   "hints": [
    "If 9 coins fit on each side of the square, how many coins fill the entire square?",
    "A square with 9 coins on each side means 9 times 9 coins in total. Try computing that!",
-   "Similar problem: If Meera arranges beads in a square with 7 beads on each side, she uses 7 times 7 equals 49 beads in total. If she had 5 left over from a 6 by 6 square, check: 6 times 6 equals 36, and 36 plus 5 equals 41, but that doesn't equal 49, so something's off. The correct total is found from the bigger square: 49 beads."
+   "Similar problem: Meera makes a square with 6 beads on each side and has 13 beads left over. A bigger square with 7 beads on each side uses every bead. So she has 7 times 7, which is 49 beads."
   ],
   "steps": [
    "The problem says Raju arranges all his coins perfectly in a square with 9 coins on each side. 9 times 9 equals 81.",
@@ -701,7 +492,7 @@
   "hints": [
    "Work backwards from 51! Start by undoing the last operation (subtracting the square of 4), then undo the multiplication, and finally undo the square root.",
    "First, calculate the square of 4, which is 16. Then subtract it from 51 to get 35. Now figure out what number was multiplied by 5 to give 35.",
-   "Here's a similar problem: 'If you take a number, find its square root, multiply by 3, and add the square of 2, you get 21.' Working backwards: square of 2 equals 4, so 21 minus 4 equals 17, wait, that doesn't give a whole number. Let's try: 'square root of number times 3 plus 9 equals 27.' Then 27 minus 9 equals 18, and 18 divided by 3 equals 6. So the square root is 6, meaning the number is 6 times 6, which equals 36."
+   "Similar problem: take a number, find its square root, multiply by 3 and add the square of 2 to get 22. Work backwards: the square of 2 is 4, and 22 minus 4 equals 18. Then 18 divided by 3 equals 6, so the number is 6 times 6, which is 36."
   ],
   "steps": [
    "Let's call Coach Sharma's secret number x. The clue says: the square root of x times 5 plus 4 squared equals 51.",
@@ -733,27 +524,6 @@
    "Priya's rangoli has 15 dots!"
   ]
  },
- "AIGEN_grade5_54059d0e-e01d-4f8f-a71d-9f0edf64b65b": {
-  "q": "Riya is making a rangoli pattern with dots. In the first row she places 5 dots, in the second row 9 dots, in the third row 13 dots, and so on, each row has the same number of extra dots compared to the previous row. How many dots will she place in the 8th row?",
-  "options": [
-   "41",
-   "35",
-   "37",
-   "33"
-  ],
-  "hints": [
-   "First, figure out how many extra dots Riya adds in each new row. Then use that pattern to jump ahead to the 8th row!",
-   "The difference between consecutive rows is 9 minus 5, which equals 4. So each row adds 4 more dots than the previous one.",
-   "Similar example: If a pattern starts at 3 and increases by 5 each time (3, 8, 13, 18, and so on), the 6th term equals 3 plus, open bracket, 6 minus 1, close bracket, times 5, which equals 3 plus 25, which equals 28. Use the same idea for Riya's rangoli!"
-  ],
-  "steps": [
-   "Identify the common difference: 9 minus 5 equals 4, 13 minus 9 equals 4. So each row adds 4 dots.",
-   "Use the formula for the nth term of an arithmetic sequence: first term plus, open bracket, n minus 1, close bracket, times common difference. A n equals A 1 plus, open bracket, n minus 1, close bracket, times d.",
-   "Plug in the values: first term equals 5, n equals 8, d equals 4.",
-   "Calculate: 8 minus 1 equals 7, and 7 times 4 equals 28.",
-   "So the 8th row has 5 plus 28, which equals 33 dots!"
-  ]
- },
  "AIGEN_grade5_5524f10a-fe86-4778-93d9-513c93e0c371": {
   "q": "During a school cricket tournament, the coach arranges cricket balls in square layers inside a big box. The bottom layer is a perfect square of balls, the next layer up is also a perfect square but with 1 fewer ball on each side, and so on until the top layer has just 1 ball. If the bottom layer has 6 balls on each side, how many cricket balls are in the box in total?",
   "options": [
@@ -776,48 +546,6 @@
    "Almost there! 86 plus 4 equals 90.",
    "Add the top layer (just 1 ball): 90 plus 1 equals 91.",
    "So the total number of cricket balls in the box is 91!"
-  ]
- },
- "AIGEN_grade5_668e115a-f041-4553-9337-08910c395980": {
-  "q": "During Diwali, Priya arranges diyas (lamps) in rows to make a beautiful triangular pattern. The 1st row has 5 diyas, the 2nd row has 9 diyas, the 3rd row has 13 diyas, and so on, each row has 4 more diyas than the previous one. If Priya makes 8 rows in total, how many diyas does she use altogether?",
-  "options": [
-   "33",
-   "148",
-   "152",
-   "156"
-  ],
-  "hints": [
-   "First figure out how many diyas are in the 8th row, then think about a shortcut to add all 8 rows together!",
-   "The number of diyas in each row forms an arithmetic sequence: 5, 9, 13, 17, and so on. Find the 8th term using the pattern: first term plus, open bracket, row number minus 1, close bracket, times common difference.",
-   "Here's a similar problem: If a sequence starts at 3 and increases by 2 each time (3, 5, 7, 9, and so on), the 6th term equals 3 plus, open bracket, 6 minus 1, close bracket, times 2, which equals 13. The sum of 6 terms equals, open bracket, 6 divided by 2, close bracket, times, open bracket, first term plus last term, close bracket, which equals 3 times, open bracket, 3 plus 13, close bracket, which equals 3 times 16, which equals 48. Try the same method for Priya's diyas!"
-  ],
-  "steps": [
-   "Identify the sequence: 5, 9, 13, 17, and so on, with first term A equals 5 and common difference d equals 4.",
-   "Find the 8th term using the formula: A 8 equals A plus, open bracket, n minus 1, close bracket, times d, which equals 5 plus, open bracket, 8 minus 1, close bracket, times 4, which equals 5 plus 28, which equals 33.",
-   "Now find the sum of all 8 rows using the sum formula: S equals n over 2, times, open bracket, first term plus last term, close bracket, which equals 8 over 2, times, open bracket, 5 plus 33, close bracket.",
-   "Calculate: S equals 4 times 38, which equals 152.",
-   "So Priya uses 152 diyas in total!"
-  ]
- },
- "AIGEN_grade5_676c13e0-9b3e-45bb-87f3-9e4f8c5cca9f": {
-  "q": "During Diwali, Priya makes a rangoli pattern using diyas (small lamps). She places 5 diyas in the first row, 9 diyas in the second row, 13 diyas in the third row, and so on, adding the same number of extra diyas in each new row. If she makes 7 rows in total, how many diyas does she place in the 7th row?",
-  "options": [
-   "25",
-   "29",
-   "33",
-   "31"
-  ],
-  "hints": [
-   "First, figure out how many extra diyas Priya adds each time she goes to the next row. Then use that pattern to keep counting up to the 7th row!",
-   "The common difference is 9 minus 5, which equals 4. So each row has 4 more diyas than the previous one.",
-   "Here's a similar problem: If a sequence starts at 3 and increases by 5 each time (3, 8, 13, 18, and so on), the 6th term would be 3 plus, open bracket, 6 minus 1, close bracket, times 5 equals 3 plus 25, which equals 28. Use the same idea for Priya's rangoli!"
-  ],
-  "steps": [
-   "Identify the pattern. The sequence is 5, 9, 13, and so on. Each row increases by the same amount. D equals 9 minus 5, which equals 4.",
-   "Use the formula for the nth term of an arithmetic sequence: first term plus, open bracket, n minus 1, close bracket, times common difference. A n equals A 1 plus, open bracket, n minus 1, close bracket, times d.",
-   "Plug in the values: first term equals 5, common difference equals 4, and n equals 7. A 7 equals 5 plus, open bracket, 7 minus 1, close bracket, times 4.",
-   "Simplify step by step. A 7 equals 5 plus 6 times 4, which equals 5 plus 24, which equals 29.",
-   "So Priya places 29 diyas in the 7th row!"
   ]
  },
  "AIGEN_grade5_6bbe6abc-c0c0-42b4-926a-2a31c04afbf5": {
@@ -883,49 +611,6 @@
    "Subtract the seated players from the total to find how many are still standing. 196 minus 28 equals 168."
   ]
  },
- "AIGEN_grade5_7d88b8b1-a54a-4471-b01c-d449a771ab6e": {
-  "q": "Ananya is tiling her kitchen floor with square tiles. She uses small square tiles, each having a side of 1 centimetre, to completely fill one big square tile. She counts and finds she used exactly 15 tiles along one row and the same number along one column. Her brother Karan says, \"I bet the total number of small tiles you used is more than 200!\" Is Karan right, and how many small tiles did Ananya actually use?",
-  "options": [
-   "Yes, she used 225 tiles",
-   "Yes, she used 250 tiles",
-   "No, she used 196 tiles",
-   "Yes, she used 210 tiles"
-  ],
-  "hints": [
-   "Think about what it means to fill a square with rows and columns, how do you find the total number of tiles in a square arrangement?",
-   "If there are 15 tiles in each row and 15 tiles in each column, the total number of tiles is 15 times 15. Try computing that!",
-   "Here's a similar problem: If you arrange tiles in a square with 12 tiles along each side, the total equals 12 times 12, which equals 144 tiles. Since 144 is less than 200, Karan would not be right in that case. Now try the same idea with 15!"
-  ],
-  "steps": [
-   "Ananya placed 15 tiles along each row and 15 tiles along each column, forming a square.",
-   "To find the total number of small tiles, we calculate the square of 15. 15 squared equals 15 times 15, which equals 225.",
-   "Now we check: Is 225 more than 200? Yes! So Karan is right.",
-   "Ananya used 225 small tiles in total."
-  ]
- },
- "AIGEN_grade5_8328bb29-7e38-4413-80dd-d3d06b4adf46": {
-  "q": "During a Diwali mela, Arjun is arranging diyas (lamps) in square patterns on a large floor. He first makes a perfect square using some diyas. Then he adds 45 more diyas around that square to make the next bigger perfect square. How many diyas did Arjun use in the first square?",
-  "options": [
-   "484",
-   "441",
-   "529",
-   "506"
-  ],
-  "hints": [
-   "If a square has n squared diyas and the next perfect square is n plus 1, all squared, then the difference between consecutive perfect squares is n plus 1, all squared, minus n squared. Can you simplify that expression?",
-   "Use the identity: n plus 1, all squared, minus n squared equals 2 n plus 1. Set 2 n plus 1 equal to 45 and solve for n first!",
-   "Similar problem: If the difference between two consecutive perfect squares is 31, then 2 n plus 1 equals 31, so n equals 15. The first square equals 15 squared, which equals 225, and the next square equals 16 squared, which equals 256. Check: 256 minus 225 equals 31."
-  ],
-  "steps": [
-   "Let the first square pattern have n squared diyas, so it's an n by n square.",
-   "The next bigger perfect square would be n plus 1, all squared, diyas. N plus 1, all squared, minus n squared equals 45.",
-   "Expand n plus 1, all squared, using the identity: N plus 1, all squared, equals n squared plus 2 n plus 1.",
-   "So the difference is: N squared plus 2 n plus 1 minus n squared equals 2 n plus 1, which equals 45.",
-   "Solve for n: 2 n equals 44, so n equals 22.",
-   "The first square has n squared diyas: 22 squared equals 484.",
-   "Quick check: The next square is 23 squared, which equals 529. Difference equals 529 minus 484, which equals 45."
-  ]
- },
  "AIGEN_grade5_84c9d9c7-ee2f-4f36-bc7b-0f3f64d1f90e": {
   "q": "Priya is making a rangoli pattern for Diwali using coloured dots. She places dots in rings around a central dot. The 1st ring has 6 dots, the 2nd ring has 12 dots, the 3rd ring has 18 dots, and so on, each ring has 6 more dots than the previous ring. After completing 8 rings (plus the 1 central dot), she realizes she has used exactly half her dots. How many dots did Priya have in total before she started?",
   "options": [
@@ -947,27 +632,6 @@
    "Priya had 434 dots in total before she started!"
   ]
  },
- "AIGEN_grade5_84f898e4-3b49-472b-98e3-07f3d561f6cf": {
-  "q": "During a school mela, Ananya sets up a samosa stall. On the first day, she sells 14 samosas. Each day after that, she sells 6 more samosas than the previous day. She runs the stall for 8 days. How many samosas does she sell in total across all 8 days?",
-  "options": [
-   "56",
-   "280",
-   "276",
-   "244"
-  ],
-  "hints": [
-   "First, figure out how many samosas she sells on the last day (Day 8). Then use a neat trick to find the total sum!",
-   "The number of samosas each day forms a sequence: 14, 20, 26, 32, and so on. Find the 8th term using: first term plus, open bracket, n minus 1, close bracket, times common difference.",
-   "Here's a similar problem: If someone sells 10 chapatis on Day 1 and 5 more each day for 5 days, the sequence is 10, 15, 20, 25 and 30. The 5th term equals 10 plus, open bracket, 5 minus 1, close bracket, times 5, which equals 30. Total equals, open bracket, number of terms divided by 2, close bracket, times, open bracket, first term plus last term, close bracket, which equals, open bracket, 5 divided by 2, close bracket, times, open bracket, 10 plus 30, close bracket, which equals 2.5 times 40, which equals 100 chapatis. Try the same method for samosas!"
-  ],
-  "steps": [
-   "Identify the sequence. First term (A) equals 14, common difference (d) equals 6, number of terms (n) equals 8.",
-   "Find the 8th term (last day's sales). A 8 equals A plus, open bracket, n minus 1, close bracket, times d, which equals 14 plus, open bracket, 8 minus 1, close bracket, times 6, which equals 14 plus 42, which equals 56.",
-   "Now find the total samosas sold over all 8 days using the sum formula. S equals n over 2, times, open bracket, first term plus last term, close bracket, which equals 8 over 2, times, open bracket, 14 plus 56, close bracket.",
-   "Calculate the sum. S equals 4 times 70, which equals 280.",
-   "Ananya sells a total of 280 samosas across all 8 days!"
-  ]
- },
  "AIGEN_grade5_8d0b5363-745a-41f0-a7ba-0665631dedcc": {
   "q": "During a cricket tournament, Ravi's team plays 7 matches. In the 1st match, Ravi scores 12 runs. In each following match, he scores 6 more runs than the previous match. After all 7 matches, Ravi's coach calculates his total runs. But Ravi also gets a bonus of 10 runs added to his total for being the most consistent player. What is Ravi's final total (including the bonus)?",
   "options": [
@@ -978,7 +642,7 @@
   ],
   "hints": [
    "First, figure out Ravi's score in each of the 7 matches using the pattern. Then add them all up, and don't forget the bonus at the end!",
-   "The sequence of scores is: 12, 18, 24, 30, 36, 42 and 48. Start by adding these up carefully.",
+   "The scores start at 12 and go up by 6 each match: 12, 18, 24, and so on. Write down all 7 scores first, then add them.",
    "Here's a similar problem: If someone scores 10, 15, 20, 25 in 4 matches (going up by 5 each time), the total is 10 plus 15 plus 20 plus 25, which equals 70. You can also use the shortcut: Sum equals (number of terms) times, open bracket, first term plus last term, close bracket, divided by 2, which equals 4 times, open bracket, 10 plus 25, close bracket, divided by 2, which equals 4 times 35 divided by 2, which equals 70. Then add any bonus on top!"
   ],
   "steps": [
@@ -1008,25 +672,6 @@
    "Calculate the perimeter of the first frame (since LEDs go along the border). 4 times 7 equals 28 centimetres.",
    "Calculate the perimeter of the second frame. 4 times 12 equals 48 centimetres.",
    "Since one L E D is placed every 1 centimetre, the total number of LEDs equals sum of both perimeters. 28 plus 48 equals 76 LEDs."
-  ]
- },
- "AIGEN_grade5_9634fbd4-d138-4fbe-96ab-2c5423b7c938": {
-  "q": "At a school cricket tournament, the coach wants to arrange all the players into a perfect square formation for a group photo. He notices that he has 196 players. How many players will stand in each row of the square formation?",
-  "options": [
-   "14",
-   "13",
-   "12",
-   "16"
-  ],
-  "hints": [
-   "Think about it this way, if players stand in a square formation, the number in each row is the square root of the total!",
-   "Start by figuring out which number, when multiplied by itself, gives 196. Try numbers close to 15 and work from there.",
-   "Here's a similar problem: If 225 students stand in a square formation, each row has the square root of 225, which equals 15 students, because 15 times 15 equals 225. Now try the same approach with 196!"
-  ],
-  "steps": [
-   "A square formation means the same number of players in each row and each column. So we need to find the square root of 196.",
-   "Let's test some numbers! We know 10 times 10 equals 100 and 15 times 15 equals 225, so the answer is between 10 and 15. Let's try 14: 14 times 14 equals 196.",
-   "So 14 players will stand in each row of the square formation! The square root of 196 equals 14."
   ]
  },
  "AIGEN_grade5_9810a55e-70aa-440c-be5c-b09ea5a517f9": {
@@ -1063,34 +708,13 @@
   "hints": [
    "First find the total number of players after 17 join. Then check, is that total already a perfect square, or do you need to go up to the next one?",
    "Start by computing 64 plus 17 equals what? Then check if that result is a perfect square number.",
-   "Here's a similar problem: Suppose 49 students are in a square formation and 2 more join, making 51. The next perfect square after 51 is 64 (which is 8 squared). So you'd need 64 minus 51 equals 13 more students. But what if the total itself is already a perfect square? Then you need 0 more!"
+   "Similar problem: 49 students stand in a square and 2 more join, making 51. Now 51 is not a square number. The next square number is 8 times 8, which is 64. They need 64 minus 51, which is 13 more students."
   ],
   "steps": [
    "Find the total number of players after 17 more join the original 64. 64 plus 17 equals 81.",
    "Check if 81 is a perfect square. We know that 9 times 9 equals 81, so yes, 81 is already a perfect square!",
    "Since 81 is already a perfect square, the number of additional players needed is 0.",
    "Answer: 0 additional players are needed. The 81 players can stand in a 9 by 9 square formation."
-  ]
- },
- "AIGEN_grade5_9aaa69ce-883c-41e6-a34d-2d9552a0242f": {
-  "q": "Ravi is arranging diyas (lamps) for Diwali in a triangular pattern. In the 1st row he places 5 diyas, in the 2nd row he places 8 diyas, in the 3rd row he places 11 diyas, and so on, each row has 3 more diyas than the previous row. He keeps going until he has placed exactly 12 rows. How many diyas does Ravi use in total?",
-  "options": [
-   "264",
-   "252",
-   "246",
-   "258"
-  ],
-  "hints": [
-   "First figure out how many diyas are in the 12th row using the pattern. Then find the total for all 12 rows, there's a neat shortcut for summing an arithmetic series!",
-   "The number of diyas in row n is: 5 plus, open bracket, n minus 1, close bracket, times 3. Start by finding the number of diyas in the 12th row.",
-   "Similar problem: If a pattern starts at 4 and increases by 2 each row for 10 rows, the last row has 4 plus 9 times 2, which equals 22 diyas. The total equals (number of rows) times, open bracket, first row plus last row, close bracket, divided by 2, which equals 10 times, open bracket, 4 plus 22, close bracket, divided by 2, which equals 10 times 26 divided by 2, which equals 130 diyas."
-  ],
-  "steps": [
-   "Identify the sequence. The first row has 5 diyas and each row adds 3 more. So this is an arithmetic sequence with first term A equals 5 and common difference d equals 3.",
-   "Find the number of diyas in the 12th row using the formula for the nth term. A 12 equals 5 plus, open bracket, 12 minus 1, close bracket, times 3, which equals 5 plus 33, which equals 38.",
-   "Now find the total number of diyas across all 12 rows using the sum formula. S equals n times, open bracket, A 1 plus A n, close bracket, all divided by 2, which equals 12 times, open bracket, 5 plus 38, close bracket, all divided by 2.",
-   "Compute the sum step by step. S equals 12 times 43, all divided by 2, which equals 516 over 2, which equals 258.",
-   "Ravi uses 258 diyas in total!"
   ]
  },
  "AIGEN_grade5_a58b48cf-6b71-4d3b-904e-a16f27fc528c": {
@@ -1155,27 +779,6 @@
    "So Ravi has 12 dots along each side of his square rangoli!"
   ]
  },
- "AIGEN_grade5_ae902ba4-e7e2-41d6-a812-67f448cfe685": {
-  "q": "During Diwali, Priya makes a rangoli pattern using coloured dots. In the 1st row she places 5 dots, in the 2nd row 9 dots, in the 3rd row 13 dots, and so on, each row has 4 more dots than the previous one. If her rangoli has 12 rows in total, how many dots does she use altogether?",
-  "options": [
-   "384",
-   "336",
-   "380",
-   "324"
-  ],
-  "hints": [
-   "This is an arithmetic sequence! First figure out how many dots are in the last (12th) row, then use the sum formula for an arithmetic series.",
-   "The nth term of an arithmetic sequence is: first term plus, open bracket, n minus 1, close bracket, times common difference. Find the 12th term first!",
-   "Here's a similar problem: If a sequence starts at 3 with a common difference of 2, and has 10 terms, the 10th term equals 3 plus, open bracket, 10 minus 1, close bracket, times 2, which equals 21. The sum equals, open bracket, number of terms divided by 2, close bracket, times, open bracket, first term plus last term, close bracket, which equals, open bracket, 10 divided by 2, close bracket, times, open bracket, 3 plus 21, close bracket, which equals 5 times 24, which equals 120. Try the same approach with Priya's rangoli!"
-  ],
-  "steps": [
-   "Identify the sequence: first term A equals 5, common difference d equals 4, number of terms n equals 12.",
-   "Find the 12th term using the formula: A 12 equals 5 plus, open bracket, 12 minus 1, close bracket, times 4, which equals 5 plus 44, which equals 49.",
-   "Use the sum formula for an arithmetic series: S equals n over 2, times, open bracket, A 1 plus A n, close bracket, which equals 12 over 2, times, open bracket, 5 plus 49, close bracket.",
-   "Calculate the sum: S equals 6 times 54, which equals 324.",
-   "So Priya uses 324 dots in total for her beautiful rangoli!"
-  ]
- },
  "AIGEN_grade5_afcda5cb-5f01-4e9b-ad14-6f127bff29df": {
   "q": "Meera is making a square rangoli for Diwali. She uses small tiles to fill the rangoli. First, she makes a square using 15 tiles on each side. Then her brother Arjun makes a smaller square rangoli using 9 tiles on each side. How many more tiles does Meera use than Arjun?",
   "options": [
@@ -1196,27 +799,6 @@
    "So Meera uses 144 more tiles than Arjun. The answer is 144!"
   ]
  },
- "AIGEN_grade5_b3225de1-9fdb-4b8b-b854-fbd541626efb": {
-  "q": "Priya is making a rangoli pattern for Diwali. In the first row, she places 5 diyas. In the second row, she places 8 diyas. In the third row, she places 11 diyas, and so on, each row has 3 more diyas than the previous one. How many diyas does Priya need in total for the first 6 rows of her rangoli?",
-  "options": [
-   "75",
-   "20",
-   "78",
-   "72"
-  ],
-  "hints": [
-   "First, figure out how many diyas are in each of the 6 rows. Then add them all up!",
-   "The pattern starts at 5 and adds 3 each time. So the rows are: 5, 8, 11, 14, and so on. Keep going to find all 6 rows.",
-   "Here's a similar problem: If a pattern starts at 2 and adds 4 each time, the first 4 rows would be 2, 6, 10 and 14. The total equals 2 plus 6 plus 10 plus 14, which equals 32. Try the same approach with Priya's pattern!"
-  ],
-  "steps": [
-   "Identify the pattern: starts at 5, common difference is 3.",
-   "List the number of diyas in each of the 6 rows: 5, 8, 11, 14, 17 and 20.",
-   "Row 1 equals 5, Row 2 equals 5 plus 3, which equals 8, Row 3 equals 8 plus 3, which equals 11, Row 4 equals 11 plus 3, which equals 14, Row 5 equals 14 plus 3, which equals 17, Row 6 equals 17 plus 3, which equals 20.",
-   "Now add them all up: 5 plus 8 plus 11 plus 14 plus 17 plus 20 equals 75.",
-   "Priya needs 75 diyas in total for the first 6 rows!"
-  ]
- },
  "AIGEN_grade5_b5495610-aeff-4c64-b3a6-d3658e9e4932": {
   "q": "Arjun is helping his father tile their square courtyard. His father tells him, \"The total number of tiles we need is more than the square of 15 but less than the square of 17.\" Arjun counts that each row has exactly 16 tiles. After finishing the courtyard, Arjun's mother asks him to also tile a small square stepping-stone path using 49 tiles. How many tiles did Arjun use in total (courtyard plus stepping-stone path)?",
   "options": [
@@ -1235,48 +817,6 @@
    "Let's verify: 256 is more than 15 squared, which is 225, and less than 17 squared, which is 289. This matches the father's clue!",
    "The stepping-stone path uses 49 tiles. We add this to the courtyard tiles. 256 plus 49 equals 305.",
    "So Arjun used a total of 305 tiles."
-  ]
- },
- "AIGEN_grade5_b5826a5e-9dbc-4728-9980-27b47d5d3f45": {
-  "q": "Ravi is making a square-shaped rangoli for Pongal using coloured rice grains. He places grains along each side of the square. If the total number of grains he uses to fill the entire square is 225, how many grains are along each side of his rangoli?",
-  "options": [
-   "25",
-   "15",
-   "56",
-   "13"
-  ],
-  "hints": [
-   "If grains fill a perfect square, the total number of grains equals side times side. So you need to find which number multiplied by itself gives 225!",
-   "Start by checking: does 14 times 14 equal 225? Does 15 times 15 equal 225? Try it out!",
-   "Here's a similar problem: If 144 tiles are arranged in a perfect square, how many tiles are on each side? Since 12 times 12 equals 144, the answer is 12. Now use the same idea for 225!"
-  ],
-  "steps": [
-   "We know the total grains form a perfect square, so total equals side times side. 225 equals s times s.",
-   "We need to find the square root of 225. Let's test some numbers: 14 times 14 equals 196, (too small).",
-   "Try 15: 15 times 15 equals 225.",
-   "So Ravi places 15 grains along each side of his rangoli. The square root of 225 equals 15."
-  ]
- },
- "AIGEN_grade5_bdbed473-8d4b-4c8c-b95d-ebd04d868784": {
-  "q": "During Diwali, Priya makes a beautiful rangoli pattern using coloured stones. In the 1st ring she places 5 stones, in the 2nd ring she places 8 stones, in the 3rd ring she places 11 stones, and so on, each ring has 3 more stones than the previous one. She keeps going until she completes the 12th ring. How many stones does Priya use in total across all 12 rings?",
-  "options": [
-   "264",
-   "258",
-   "38",
-   "252"
-  ],
-  "hints": [
-   "Think about this in two parts: first figure out how many stones are in the 12th ring, then find a smart way to add up all 12 rings without adding one by one!",
-   "The number of stones in the nth ring is 5 plus, open bracket, n minus 1, close bracket, times 3. Start by finding the 12th term.",
-   "Here's a similar problem: If a sequence starts at 2 and increases by 4 each time, find the total of the first 10 terms. The 10th term equals 2 plus 9 times 4, which equals 38. Sum equals (number of terms) divided by 2 times, open bracket, first term plus last term, close bracket, which equals 10 over 2, times, open bracket, 2 plus 38, close bracket, which equals 5 times 40, which equals 200. Use the same approach for Priya's rangoli!"
-  ],
-  "steps": [
-   "Identify the sequence: first term A equals 5, common difference d equals 3.",
-   "Find the 12th term using the formula for the nth term of an arithmetic sequence. A 12 equals 5 plus, open bracket, 12 minus 1, close bracket, times 3, which equals 5 plus 33, which equals 38.",
-   "Now use the sum formula for an arithmetic series with n equals 12 terms.",
-   "Plug in the values. S 12 equals 12 over 2, times, open bracket, 5 plus 38, close bracket, which equals 6 times 43.",
-   "Calculate the final answer. 6 times 43 equals 258.",
-   "So Priya uses 258 stones in total across all 12 rings!"
   ]
  },
  "AIGEN_grade5_c1429cf6-78e1-40bb-9fa8-b77c5ca16e08": {
@@ -1341,26 +881,6 @@
    "Let's verify: Original garden equals 19 times 19, which equals 361 square metres. After adding 5 metres to each side: 24 times 24 equals 576 square metres. The original side length was 19 metres!"
   ]
  },
- "AIGEN_grade5_c80525ab-9c57-4ba0-8937-5993ea75befe": {
-  "q": "During a cricket tournament, Ravi scores runs in a pattern over 7 innings. In his 1st innings he scores 15 runs, in his 2nd innings he scores 21 runs, in his 3rd innings he scores 27 runs, and so on, increasing by the same amount each innings. What is the total number of runs Ravi scores across all 7 innings?",
-  "options": [
-   "213",
-   "231",
-   "51",
-   "189"
-  ],
-  "hints": [
-   "First figure out the common difference (how much his score increases each innings), then find the 7th term, and finally add up all 7 scores.",
-   "The common difference is 21 minus 15, which equals 6. So each innings, Ravi scores 6 more runs than the previous one. Can you list all 7 scores?",
-   "Here's a similar problem: If someone scores 10, 14, 18, and so on, over 5 innings (common difference equals 4), the scores are 10, 14, 18, 22 and 26. The sum equals, open bracket, 5 divided by 2, close bracket, times, open bracket, 10 plus 26, close bracket, which equals 2.5 times 36, which equals 90. Try the same approach for Ravi's 7 innings!"
-  ],
-  "steps": [
-   "Find the common difference: 21 minus 15 equals 6. So each innings, Ravi scores 6 more runs.",
-   "List all 7 innings scores: 15, 21, 27, 33, 39, 45 and 51. A n equals 15 plus, open bracket, n minus 1, close bracket, times 6.",
-   "Find the 7th term to confirm: A seven equals 15 plus, open bracket, 7 minus 1, close bracket, times 6, which equals 15 plus 36, which equals 51.",
-   "Use the sum formula: Sum equals, open bracket, number of terms divided by 2, close bracket, times, open bracket, first term plus last term, close bracket, which equals, open bracket, 7 divided by 2, close bracket, times, open bracket, 15 plus 51, close bracket, which equals 3.5 times 66, which equals 231."
-  ]
- },
  "AIGEN_grade5_cb7d8549-92bd-4854-9123-f86ccb6ef4b3": {
   "q": "Ravi sells chai at a cricket match. In the 1st over, he sells 6 cups. In the 2nd over, he sells 10 cups. In the 3rd over, he sells 14 cups, and so on, the pattern continues the same way. How many cups of chai does Ravi sell in total during the first 5 overs?",
   "options": [
@@ -1401,29 +921,6 @@
    "Expand n plus 1, all squared: n squared plus 2 n plus 1. Subtract n squared: N squared plus 2 n plus 1 minus n squared equals 2 n plus 1, which equals 45.",
    "Solve for n: 2 n plus 1 equals 45, so 2 n equals 44, which gives n equals 22.",
    "Priya currently has n squared equals 22 squared, which equals 484 diyas!"
-  ]
- },
- "AIGEN_grade5_cf8117ab-cb21-4886-8760-a41c3e92bc45": {
-  "q": "During Diwali, Priya makes a beautiful rangoli pattern using coloured stones. In the first ring, she places 5 stones. In the second ring, she places 8 stones. In the third ring, she places 11 stones, and so on, each ring has 3 more stones than the previous one. If she completes 12 rings in total, how many stones does she use altogether?",
-  "options": [
-   "38",
-   "258",
-   "270",
-   "282"
-  ],
-  "hints": [
-   "First figure out how many stones are in the 12th ring, then think about a shortcut to add up all 12 rings without adding one by one!",
-   "The number of stones in ring n is: 5 plus, open bracket, n minus 1, close bracket, times 3. Start by finding the 12th term.",
-   "Here's a similar problem: If a sequence starts at 2 with a common difference of 4, the 10th term equals 2 plus, open bracket, 10 minus 1, close bracket, times 4, which equals 38. The sum of 10 terms equals 10 times, open bracket, 2 plus 38, close bracket, divided by 2, which equals 200. Use the same approach for your problem!"
-  ],
-  "steps": [
-   "Identify the sequence. First term A equals 5, common difference d equals 3.",
-   "Find the 12th term using the formula: last term equals A plus, open bracket, n minus 1, close bracket, times d. A 12 equals 5 plus, open bracket, 12 minus 1, close bracket, times 3, which equals 5 plus 33, which equals 38.",
-   "Now find the sum of all 12 terms using the sum formula: S equals n times, open bracket, A 1 plus A n, close bracket, all divided by 2, which equals 12 times, open bracket, 5 plus 38, close bracket, all divided by 2.",
-   "Calculate inside the brackets first: 5 plus 38 equals 43.",
-   "Multiply by the number of terms: 12 times 43 equals 516.",
-   "Divide by 2 to get the final sum: 516 over 2 equals 258.",
-   "Priya uses 258 stones in total for her Diwali rangoli!"
   ]
  },
  "AIGEN_grade5_d1258e2b-ee26-4aa6-96dd-b95e249144d9": {
@@ -1481,7 +978,7 @@
   "hints": [
    "The bigger square has 23 diyas on each side. Find the total diyas in the bigger square first, then think about what was added!",
    "Start by computing 23 times 23 to get the total diyas in the bigger square. Then subtract the 45 diyas she added to find the original count.",
-   "Here's a similar problem: Ravi has a square arrangement of marbles. He adds 31 more marbles to make a bigger square with side 15. The bigger square equals 15 times 15, which equals 225 marbles. Original count equals 225 minus 31, which equals 194 marbles. Now check: is 194 a perfect square? 13 squared equals 169, 14 squared equals 196, so 194 is not a perfect square. But in your problem, the original count is a perfect square, verify it!"
+   "Similar problem: Ravi adds 31 marbles to a square of marbles and makes a bigger square with 16 marbles on each side. The bigger square has 16 times 16, which is 256 marbles. So he started with 256 minus 31, which is 225 marbles, and that is 15 times 15."
   ],
   "steps": [
    "Find the total number of diyas in the bigger square arrangement. 23 squared equals 23 times 23, which equals 529.",
@@ -1509,27 +1006,6 @@
    "Riya added 7 rows and 7 columns, so the original side length is 15 minus 7. 15 minus 7 equals 8.",
    "The original square rangoli has 8 tiles on each side, so the total number of tiles is: 8 times 8 equals 64.",
    "Riya's original rangoli has 64 tiles!"
-  ]
- },
- "AIGEN_grade5_dce37ab5-d7d4-47cb-b9b8-46548d866784": {
-  "q": "Priya is making a rangoli pattern using coloured stones. In the 1st row she places 5 stones, in the 2nd row she places 9 stones, in the 3rd row she places 13 stones, and so on, each row has the same number of extra stones compared to the previous row. How many stones does Priya need for the 8th row?",
-  "options": [
-   "37",
-   "36",
-   "33",
-   "29"
-  ],
-  "hints": [
-   "First, figure out how many extra stones Priya adds each time she moves to the next row.",
-   "The common difference is 9 minus 5, which equals 4. Now use the pattern: nth term equals first term plus, open bracket, n minus 1, close bracket, times common difference.",
-   "Similar example: If a sequence starts at 3 with a common difference of 5, the 6th term equals 3 plus, open bracket, 6 minus 1, close bracket, times 5, which equals 3 plus 25, which equals 28. Try the same approach with Priya's pattern!"
-  ],
-  "steps": [
-   "Identify the first term and common difference. A equals 5, d equals 9 minus 5, which equals 4.",
-   "Use the formula for the nth term of an arithmetic sequence. A n equals A plus, open bracket, n minus 1, close bracket, times d.",
-   "Plug in n equals 8. A 8 equals 5 plus, open bracket, 8 minus 1, close bracket, times 4, which equals 5 plus 7 times 4.",
-   "Calculate the result. A 8 equals 5 plus 28, which equals 33.",
-   "So Priya needs 33 stones for the 8th row!"
   ]
  },
  "AIGEN_grade5_e344c1e4-4633-4147-9ff3-d5e942eae3be": {
@@ -1637,27 +1113,6 @@
    "So Riya needs to buy 60 more tiles for the border!"
   ]
  },
- "AIGEN_grade5_f42fa286-32cb-4c1b-ad00-e3084e2ce698": {
-  "q": "Rohan is stacking cups of chai for a school fair. He makes 6 cups in the first hour, 11 cups in the second hour, 16 cups in the third hour, and so on (increasing by the same amount each hour). If the fair lasts for 8 hours, how many total cups of chai does Rohan make during the entire fair?",
-  "options": [
-   "188",
-   "41",
-   "180",
-   "192"
-  ],
-  "hints": [
-   "First figure out how many cups he makes in each hour, the pattern adds the same number each time. Then add up all 8 hours!",
-   "The common difference is 11 minus 6, which equals 5. Find the 8th term first: 8th term equals 6 plus, open bracket, 8 minus 1, close bracket, times 5.",
-   "Similar problem: If someone makes 2 items in hour 1, 5 in hour 2, 8 in hour 3, and so on, how many total in 5 hours? The 5th term equals 2 plus 4 times 3, which equals 14. Sum equals, open bracket, 5 divided by 2, close bracket, times, open bracket, 2 plus 14, close bracket, which equals 5 times 8, which equals 40. Use the same approach for your problem!"
-  ],
-  "steps": [
-   "Identify the pattern. The sequence is 6, 11, 16, and so on, with a common difference of 5. D equals 11 minus 6, which equals 5.",
-   "Find the 8th term using the formula for the nth term of an arithmetic sequence. A 8 equals 6 plus, open bracket, 8 minus 1, close bracket, times 5, which equals 6 plus 35, which equals 41.",
-   "Now find the total cups over 8 hours using the sum formula. S 8 equals 8 over 2, times, open bracket, A 1 plus A 8, close bracket, which equals 4 times, open bracket, 6 plus 41, close bracket.",
-   "Calculate the final answer. S 8 equals 4 times 47, which equals 188.",
-   "Rohan makes a total of 188 cups of chai during the 8-hour fair!"
-  ]
- },
  "AIGEN_grade5_f4882e9b-324f-411b-909a-28b56a00f003": {
   "q": "Ananya is stacking samosas on a tray for a school fair. On the bottom layer, she places 20 samosas. On the next layer up, she places 17 samosas. On the layer above that, she places 14 samosas. She keeps following this pattern until a layer has only 2 samosas on top. How many samosas does Ananya use in total?",
   "options": [
@@ -1668,7 +1123,7 @@
   ],
   "hints": [
    "First, figure out how many layers there are by listing out the pattern. Then add up all the samosas on every layer!",
-   "The pattern decreases by 3 each time: 20, 17, 14, 11, 8, 5 and 2. Now count and add!",
+   "Each layer has 3 fewer samosas than the one below it: 20, 17, 14, and so on. Keep subtracting 3 until you reach 2, and write down every layer.",
    "Here's a similar problem: If you have layers with 15, 12, 9, 6, 3 items, the total equals 15 plus 12 plus 9 plus 6 plus 3, which equals 45. Try the same approach with Ananya's samosas!"
   ],
   "steps": [
@@ -1676,27 +1131,6 @@
    "Count the layers, there are 7 layers in total (from 20 down to 2, subtracting 3 each time).",
    "Add up all the samosas on every layer: 20 plus 17 plus 14 plus 11 plus 8 plus 5 plus 2 equals 77.",
    "So Ananya uses 77 samosas in total!"
-  ]
- },
- "AIGEN_grade5_f8c6d539-e27a-4cbe-98dc-2a3376aaaee5": {
-  "q": "Meera is threading marigold flowers to make garlands for a temple festival. She threads 4 flowers in the 1st minute, 7 flowers in the 2nd minute, 10 flowers in the 3rd minute, and so on. How many flowers in total will she have threaded by the end of the 8th minute?",
-  "options": [
-   "25",
-   "116",
-   "120",
-   "100"
-  ],
-  "hints": [
-   "First figure out the pattern, how many more flowers does Meera thread each minute? Then find how many she threads in each of the 8 minutes and add them all up!",
-   "The common difference is 3 (each minute she threads 3 more flowers than the previous minute). Start by listing the number of flowers for each minute from 1 to 8.",
-   "Similar problem: Suppose someone makes 2 items in minute 1, 5 in minute 2, 8 in minute 3, and so on, (common difference equals 3). The 5th minute would be 2 plus 4 times 3, which equals 14 items. The total for 5 minutes equals 2 plus 5 plus 8 plus 11 plus 14, which equals 40. You can also use the formula: Sum equals, open bracket, number of terms divided by 2, close bracket, times, open bracket, first term plus last term, close bracket, which equals 5 over 2, times, open bracket, 2 plus 14, close bracket, which equals 5 over 2, times 16, which equals 40."
-  ],
-  "steps": [
-   "Identify the pattern. Each minute, Meera threads 3 more flowers than the previous minute. So the common difference d equals 3.",
-   "Find the number of flowers threaded in the 8th minute using the formula for the nth term. A 8 equals 4 plus, open bracket, 8 minus 1, close bracket, times 3, which equals 4 plus 21, which equals 25.",
-   "List all 8 terms: 4, 7, 10, 13, 16, 19, 22 and 25.",
-   "Find the total using the sum formula. S 8 equals 8 over 2, times, open bracket, 4 plus 25, close bracket, which equals 4 times 29, which equals 116.",
-   "So Meera threads a total of 116 flowers by the end of the 8th minute!"
   ]
  },
  "AIGEN_grade5_fa67bc6b-3a6d-4eef-b478-ded5e4569af1": {
@@ -1710,7 +1144,7 @@
   "hints": [
    "Look at how much more Arjun adds each day compared to the previous day. What's the common difference?",
    "The difference between consecutive days is 4 rupees. The first term is 3 rupees. To find the 7th term, use: first term plus, open bracket, 7 minus 1, close bracket, times common difference.",
-   "Similar problem: If a sequence starts at 2 and increases by 5 each time (2, 7, 12, 17, and so on), the 6th term equals 2 plus, open bracket, 6 minus 1, close bracket, times 5, which equals 2 plus 25, which equals 27. Now try the same approach with Arjun's pattern!"
+   "Similar problem. If a sequence starts at 5 and increases by 6 each time, 5, 11, 17, 23, and so on, the 6th term equals 5 plus, open bracket 6 minus 1 close bracket, times 6. That equals 5 plus 30, which is 35. Now try the same approach with Arjun's pattern!"
   ],
   "steps": [
    "Write out the amounts Arjun saves each day: 3 rupees, 7 rupees, 11 rupees, 15 rupees, and so on.",
@@ -1731,7 +1165,7 @@
   "hints": [
    "First figure out how many tiles Riya removed, then check if that number is a perfect square!",
    "Start by finding: 625 minus 576 equals what? Then find the square root of that result.",
-   "Here's a similar problem: Suppose you start with 400 tiles (a 20 by 20 square) and 324 remain after removing some. Removed equals 400 minus 324, which equals 76. Since 76 isn't a perfect square, you couldn't form a square. But if 400 minus 289 equals 111, keep trying until the removed amount is a perfect square! In our actual problem, the numbers work out nicely."
+   "Similar problem: a square is made of 100 tiles. A smaller square is removed and 75 tiles remain. The removed tiles are 100 minus 75, which is 25. Since 5 times 5 equals 25, they make a square with 5 tiles on each side."
   ],
   "steps": [
    "Find the number of tiles removed from the large square. 625 minus 576 equals 49.",
@@ -3220,7 +2654,7 @@
   "hints": [
    "Look at each number in the series carefully, can you spot a pattern in the digits of each number?",
    "Write out the digits of each number: 1, 2, 3. Then 2, 3, 4. Then 3, 4, 5. Then 4, 5, 6. What do you notice about how each number is formed?",
-   "Here's a similar problem: What comes next in 246, 357, 468, blank? Each number is made of 3 consecutive even-odd-even digits shifting up by 1. So 246, then 357, then 468, then 579. See how the starting digit goes up by 1 each time? Try the same idea with your series!"
+   "Here's a similar problem. What comes next in 135, 246, 357? Every digit goes up by 1 each time, so each number is 111 more than the one before. The next number is 357 plus 111, which equals 468. Try the same idea with your series!"
   ],
   "steps": [
    "Let's write out each number and look at its individual digits. 123 has the digits 1, 2 and 3.",
@@ -3349,7 +2783,7 @@
   "hints": [
    "Look at how each number changes to the next. What operation turns 0.0001 into 0.001?",
    "Try dividing each term by the one before it. What's 0.001 divided by 0.0001? That gives you the common ratio, then use it to find the next two terms.",
-   "Here's a similar problem: In the series 0.002, 0.02, 0.2, and so on, each term is 10 times the previous one. So the next two terms would be 0.2 times 10, which equals 2 and 2 times 10 equals 20. Now check if 2 and 20 match any of the given options!"
+   "Here's a similar problem. In the series 0.002, 0.02, 0.2, and so on, each term is 10 times the one before it. So the next two terms are 0.2 times 10, which equals 2, and 2 times 10, which equals 20. Find your two terms the same way, then check each choice carefully for both of them."
   ],
   "steps": [
    "Let's find the pattern! Divide the second term by the first term: 0.001 over 0.0001 equals 10.",
@@ -3365,7 +2799,7 @@
   ]
  },
  "IPMTB_grade5_ch03_q013": {
-  "q": "Find the odd man out (Wrong number in the series). 1, 8, 15, 22, 29, 38.",
+  "q": "Find the odd man out, the number that does not fit the series. 1, 8, 15, 22, 29, 38.",
   "options": [
    "1",
    "29",
@@ -3375,7 +2809,7 @@
   "hints": [
    "Look at the difference between each pair of consecutive numbers, is the pattern consistent throughout?",
    "Subtract each number from the next one: 8 minus 1, 15 minus 8, 22 minus 15, 29 minus 22, 38 minus 29. Do all the differences match?",
-   "Here's a similar problem: Find the odd one out in 3, 10, 17, 24, 31 and 40. The differences are 7, 7, 7, 7 and 9. Every step should add 7, so the last term should be 38, not 40. The odd one out is 40!"
+   "Here's a similar problem. Find the odd one out in 4, 10, 16, 23, 28, 34. The differences are 6, 6, 7, 5, 6. Every step should add 6, so the fourth number should be 22, not 23. The odd one out is 23!"
   ],
   "steps": [
    "Let's find the difference between each pair of consecutive numbers in the series. 8 minus 1 equals 7.",
@@ -3419,7 +2853,7 @@
   "hints": [
    "Look at the denominators (bottom numbers) of each fraction, do you notice a pattern?",
    "List out just the denominators: 2, 3, 4, 5, 6, blank, blank. What comes next?",
-   "Here's a similar problem: If the sequence is 1 over 3, 1 over 4, 1 over 5, 1 over 6, then the next two terms would be 1 over 7 and 1 over 8 because the numerator stays 1 and the denominator increases by 1 each time. Try the same idea with your sequence!"
+   "Here's a similar problem. If the sequence is 1 over 10, 1 over 11, 1 over 12, 1 over 13, then the next two terms are 1 over 14 and 1 over 15, because the numerator stays 1 and the denominator increases by 1 each time. Try the same idea with your sequence!"
   ],
   "steps": [
    "Let's write out the sequence and look at each fraction carefully: 1 over 2, 1 over 3, 1 over 4, 1 over 5, 1 over 6, blank, blank.",
@@ -3495,7 +2929,7 @@
   ]
  },
  "IPMTB_grade5_ch03_q020": {
-  "q": "Find the odd man out. (Wrong number) in the given series. 7, 14, 21, 25, 35, 42.",
+  "q": "Find the odd man out, the number that does not fit, in the given series. 7, 14, 21, 25, 35, 42.",
   "options": [
    "25",
    "42",
@@ -3546,7 +2980,7 @@
   "hints": [
    "Look at the digits in each number, what pattern do you notice about which digit is used and how many times it repeats?",
    "Write each term as: 8888 equals four 8s, 666 equals three 6s, 44 equals two 4s. What's happening to both the digit and the count?",
-   "Here's a similar problem: Find the next term in 9999, 777, 55, blank. Notice: four 9s, then three 7s, then two 5s. The digit drops by 2 each time (9, then 7, then 5, then 3) and the count drops by 1 each time (4, then 3, then 2, then 1). So the answer would be one 3, which is just 3. Apply the same logic to your series!"
+   "Here's a similar problem. Find the next term in 9999, 777, 55. The digit 9 is written four times, then 7 three times, then 5 two times. The digit drops by 2 each time and the count drops by 1 each time, so the next term is a single 3."
   ],
   "steps": [
    "Let's look at each term and break it into two parts: which digit is used, and how many times it repeats. 8888 equals digit 8 repeated 4 times.",
@@ -3631,7 +3065,7 @@
   "hints": [
    "Look closely at the digits in each number, they're all made from the same three digits! Can you spot the pattern in how the digits are rearranged?",
    "List out all the numbers: 123, 132, 231, 213, 312, blank. Notice these are all the possible arrangements (permutations) of the digits 1, 2, and 3. Which arrangement is missing?",
-   "Here's a similar problem: If I write all arrangements of digits 1 and 2, I get: 12, 21. That's all possible orderings! Now imagine doing the same thing with three digits, how many arrangements would there be? (Answer: 6!) So if you see 5 numbers listed, the 6th is the missing arrangement."
+   "Here's a similar problem. 456, 465, 546, 564, 645, and so on. Every number uses the digits 4, 5 and 6, and each one puts them in a different order. The only order not used yet is 654, so the next number is 654."
   ],
   "steps": [
    "First, let's notice something cool, every number in the series uses the same three digits: 1, 2, and 3!",
@@ -3695,7 +3129,7 @@
   "hints": [
    "Look at each number carefully, do you notice they're all perfect cubes? Try writing each as something cubed!",
    "Start by expressing each number as a cube: 125 equals 5 cubed, 64 equals 4 cubed, and 8 equals 2 cubed. What pattern do you see in the bases 5, 4, blank, 2, blank?",
-   "Here's a similar problem: Fill in the blanks: 81, 27, star, 3, star. Notice 81 equals 3 to the power four, and 27 equals 3 cubed. So the pattern is powers of 3 going down: 3 to the power four, 3 cubed, 3 squared, 3 to the power one, 3 to the power zero. That is 81, 27, 9, 3 and 1. Use the same kind of thinking for your problem!"
+   "Here's a similar problem. Fill in the blanks in 100, 81, blank, 49, blank. These are square numbers. 100 equals 10 times 10, 81 equals 9 times 9, and 49 equals 7 times 7. The numbers being squared go 10, 9, 8, 7, 6, so the blanks are 8 times 8, which is 64, and 6 times 6, which is 36."
   ],
   "steps": [
    "Let's write each given number as a perfect cube: 125 equals 5 cubed, 64 equals 4 cubed, 8 equals 2 cubed.",
@@ -3715,7 +3149,7 @@
   "hints": [
    "Look at how many digits each number has, do you see a pattern? Count the 1s in each term!",
    "The first term has seven 1s, the second has five 1s, the third has three 1s. How many 1s does the next term have?",
-   "Here's a similar problem: If you had the series 99999, 999, 9, star, the number of 9s goes 5, 3, 1, decreasing by 2 each time. So the next term would have, well, you'd continue the pattern! The answer would be a number with just one 9, which is 9 itself."
+   "Here's a similar problem. 22222222, 222222, 2222, and so on. The digit 2 is written 8 times, then 6 times, then 4 times, so the count drops by 2 each time. The next term has the digit 2 written 2 times, which is 22."
   ],
   "steps": [
    "Let's count how many digits (all 1s) each number in the series has. 1111111 has 7 digits.",
@@ -3840,8 +3274,8 @@
   ],
   "hints": [
    "Look at each term carefully, can you spot how much is being added each time? Try writing all terms with the same denominator to see the pattern!",
-   "Rewrite 1 as 4 over 4. Now your sequence is 1 over 4, 2 over 4, 4 over 4, blank. Hmm, wait, look at the numerators: 1, 2 and 4. What pattern do you see? Think about doubling!",
-   "Here's a similar problem: Fill in the blank: 1 over 3, 2 over 3, 4 over 3, blank. Rewrite with same denominator: 1 over 3, 2 over 3, 4 over 3. The numerators are 1, 2, 4, each one doubles! So the next numerator is 4 times 2, which equals 8, giving us 8 over 3."
+   "Rewrite 1 as 4 over 4, so the sequence is 1 over 4, 2 over 4, 4 over 4, blank. Now look at just the numerators: 1, 2, 4. How do you get from each one to the next?",
+   "Here's a similar problem. Fill in the blank: 3 over 8, 6 over 8, 12 over 8, blank. The numerators are 3, 6, 12, and each one is double the one before. So the next numerator is 12 times 2, which is 24, giving 24 over 8, which is 3."
   ],
   "steps": [
    "Let's write all the terms with the same denominator of 4. We know 1 equals 4 over 4, so the sequence becomes: 1 over 4, 2 over 4, 4 over 4, blank.",
@@ -3971,7 +3405,7 @@
   ],
   "hints": [
    "Look at the differences between consecutive numbers in the series. Do you notice a pattern in how those differences grow?",
-   "Find each gap: 2 minus 1 equals 1, 4 minus 2 equals 2, 7 minus 4 equals 3, 11 minus 7 equals 4, 16 minus 11 equals 5. The differences increase by 1 each time! So the next difference should be 6, then 7.",
+   "Find each gap: 2 minus 1, 4 minus 2, 7 minus 4, 11 minus 7, and 16 minus 11. Then look at how the gaps change from one to the next.",
    "Here's a similar problem: Consider the series 3, 4, 6, 9, 13, 18, blank. The differences are 1, 2, 3, 4, 5, each going up by 1. So the next difference is 6, and the next term is 18 plus 6, which equals 24. Easy peasy!"
   ],
   "steps": [
@@ -4005,7 +3439,7 @@
   ]
  },
  "IPMTB_grade5_ch03_q046": {
-  "q": "Find the odd man out (wrong number in the series). 2, 10, 18, 26, 35, 42.",
+  "q": "Find the odd man out, the number that does not fit the series. 2, 10, 18, 26, 35, 42.",
   "options": [
    "2",
    "42",
@@ -4101,7 +3535,7 @@
   "hints": [
    "Think about what happens when you square each digit from 0 to 9, what digits appear in the unit's place of those results?",
    "Make a list! Square every number from 0 to 9 and write down just the last digit (unit's place) of each result. Which digits show up?",
-   "Here's a similar problem: 'Can 8 appear in the unit's place of a perfect square?' Let's check, squares of 0 to 9 give unit digits: 0, 1, 4, 9, 6, 5, 6, 9, 4 and 1. Since 8 is not in this list, 8 can never be the unit's digit of a perfect square."
+   "Here's a similar problem: which digits can be in the unit's place of an odd number? Look at 1, 3, 5, 7, 9, 11 and 13. The last digits are 1, 3, 5, 7, 9, and then they repeat. So 4 can never be in the unit's place of an odd number. Now do the same for square numbers!"
   ],
   "steps": [
    "Let's square every single digit from 0 to 9 and note the unit's place digit of each result: 0 squared equals 0, 1 squared equals 1, 2 squared equals 4, 3 squared equals 9, 4 squared equals 16, 5 squared equals 25, 6 squared equals 36, 7 squared equals 49, 8 squared equals 64, 9 squared equals 81.",
@@ -4122,7 +3556,7 @@
   "hints": [
    "Think about what happens when you square each digit from 0 to 9, what digits show up in the units place?",
    "Start by listing the squares of all single digits: 0 squared, 1 squared, 2 squared, 3 squared, 4 squared, 5 squared, 6 squared, 7 squared, 8 squared, 9 squared. Now look at only the units digit of each result.",
-   "Here's a similar problem: 'Can 3 appear in the units place of a perfect square?' Let's check, 0 squared equals 0, 1 squared equals 1, 2 squared equals 4, 3 squared equals 9, 4 squared equals 16, 5 squared equals 25, 6 squared equals 36, 7 squared equals 49, 8 squared equals 64, 9 squared equals 81. The units digits we get are 0, 1, 4, 5, 6 and 9. Since 3 is not in this set, 3 can never be in the units place of a square number!"
+   "Here's a similar problem: which digits can be in the units place of a multiple of 5? Look at 5, 10, 15, 20, 25 and 30. The last digit is always 5 or 0. So 3 can never be in the units place of a multiple of 5. Now do the same for square numbers!"
   ],
   "steps": [
    "Let's square every single digit from 0 to 9 and note the units digit of each result. 0 squared equals 0, 1 squared equals 1, 2 squared equals 4, 3 squared equals 9, 4 squared equals 16, 5 squared equals 25.",
@@ -4182,7 +3616,7 @@
    "411 centimetres"
   ],
   "hints": [
-   "This is about finding the area of a square! Remember, area equals side times side. Also, pay close attention to the units, area is always measured in square units!",
+   "This is about finding the area of a square! Remember, area equals side times side. Also, pay close attention to the units. Area is always measured in square units!",
    "Start by writing down the formula: Area of a square equals side times side. Here, side equals 21 centimetres. So calculate 21 times 21.",
    "Let's try a similar problem! If a square has a side of 12 centimetres, its area equals 12 times 12, which is 144 square centimetres. Notice how we write square centimetres for area, not just centimetres! That's because area covers a flat surface, like a rangoli pattern on the floor."
   ],
@@ -4294,7 +3728,7 @@
   "hints": [
    "This is a substitution problem, first plug in the values of x and y, then use your knowledge of square numbers!",
    "Start by finding the value inside the parentheses: what is x plus y when x equals 3 and y equals 2?",
-   "Here's a similar problem: If A equals 4 and b equals 1, find A plus b, all squared. First, A plus b equals 4 plus 1, which equals 5. Then 5 squared equals 5 times 5, which equals 25. See how we first add, then square?"
+   "Here's a similar problem: If a equals 5 and b equals 1, find open bracket a plus b close bracket, squared. First, a plus b equals 5 plus 1, which is 6. Then 6 squared equals 6 times 6, which is 36. See how we first add, then square?"
   ],
   "steps": [
    "We're given x equals 3 and y equals 2, and we need to find x plus y, all squared.",
@@ -4399,7 +3833,7 @@
   "hints": [
    "This problem asks you to find a number whose square equals the sum of two other squares. Start by computing 3 squared plus 7 squared and then check if the result is a perfect square!",
    "First, calculate 3 squared equals 9 and 7 squared equals 49. Now add them: 9 plus 49 equals what? Then ask yourself: is that sum a perfect square?",
-   "Here's a similar problem: 'The square of which number equals the sum of 3 squared and 4 squared?'. 3 squared equals 9, 4 squared equals 16, so 9 plus 16 equals 25. And 25 equals 5 squared. So the answer would be 5! But what if the sum turned out to be, say, 20? No whole number squared gives 20 (4 squared equals 16, 5 squared equals 25), so the answer would be 'None of these.'"
+   "Here's a similar problem: the square of which number equals the sum of the square of 6 and the square of 8? 6 times 6 equals 36, and 8 times 8 equals 64, so the sum is 36 plus 64, which is 100. Since 10 times 10 equals 100, the number is 10. Always check whether your sum is a square number."
   ],
   "steps": [
    "Calculate 3 squared. 3 squared equals 9.",
@@ -4506,7 +3940,7 @@
   "hints": [
    "Think about what arrangements of the digits 2, 4, 0, 1 give you a four-digit number, and which of those are perfect squares!",
    "Start by listing all possible four-digit numbers you can make with digits 2, 4, 0, 1 (each used exactly once). The smallest four-digit number starts with 1. Then check which ones are perfect squares.",
-   "Here's a similar problem: 'Form the smallest four-digit square number using digits 1, 6, 9, 0.' You'd try arrangements starting with 1: 1069, 1096, 1609, 1690, 1906, 1960, and so on, and check which is a perfect square. Since 33 squared equals 1089 doesn't use the right digits, you'd keep checking until you find one that works!"
+   "Here's a similar problem: form the smallest three-digit square number using the digits 1, 6 and 9. The numbers you can make are 169, 196, 619, 691, 916 and 961. Start from the smallest: 13 times 13 equals 169, so the answer is 169."
   ],
   "steps": [
    "We need a four-digit number using digits 2, 4, 0, 1 (each exactly once) that is a perfect square. Let's think about which perfect squares use exactly these digits.",
@@ -4569,7 +4003,7 @@
   "hints": [
    "This is a substitution problem, first plug in the values of x and y, then simplify inside the parentheses before squaring!",
    "Start by replacing x with 1 and y with 4. What do you get inside the parentheses? Then square that number!",
-   "Here's a similar problem: If A equals 2 and b equals 3, find A plus b, all squared. First, A plus b equals 2 plus 3, which equals 5. Then 5 squared equals 5 times 5, which equals 25. See how we add first, then square? Try the same approach with x and y!"
+   "Here's a similar problem: If a equals 2 and b equals 4, find open bracket a plus b close bracket, squared. First, a plus b equals 2 plus 4, which is 6. Then 6 squared equals 6 times 6, which is 36. See how we add first, then square? Try the same approach with x and y!"
   ],
   "steps": [
    "Write down what we know: x equals 1 and y equals 4. We need to find x plus y, all squared.",

@@ -36,7 +36,24 @@ FLAWED = {
     "AIGEN_grade5_e9d46e9a": "the base is given shorter than the equal sides, against the angles",
     "AIGEN_grade5_6603373f": "story gives 40 (an option), the expression gives the keyed 58",
     "AIGEN_grade5_e9fcd7d2": "story gives 16 (an option), the expression gives the keyed 91",
+    # found while the hints were being reviewed
+    "AIGEN_grade5_c5ecf669": "the question itself says its expression does not fit the story",
+    "AIGEN_grade5_d69fa5f3": "asks for diyas per rangoli, keys diyas per rangoli plus sparklers",
+    "AIGEN_grade5_4db3b22f": "the story contradicts itself about the mother's 47 coins",
+    "AIGEN_grade5_920aaa2e": "answer is a never-ending decimal of rupees (4,615.38...)",
+    "AIGEN_grade5_3a906d76": "answer is 40/7 percent, found only with algebra beyond Grade 5",
+    "AIGEN_grade5_b22920c0": "two rectangular tiles cannot meet at 65 degrees",
+    "AIGEN_grade5_54aca949": "two of the options are the same value, one with its working shown",
+    "AIGEN_grade5_e4f3ec79": "fourth copy of 'place value of 7 against face value of 8' (8,750)",
 }
+
+# Repeated templates thinned by reviewers: { id: "topic: template" }, written by
+# collect_duplicates.py.
+DUPLICATES = os.path.join(ROOT, "scripts", "fixes", "removed_duplicates.json")
+if os.path.exists(DUPLICATES):
+    with io.open(DUPLICATES, encoding="utf-8") as _f:
+        for _qid, _template in json.load(_f).items():
+            FLAWED.setdefault(_qid, "repeats a template: " + _template)
 
 PART_DIRS = [
     os.path.join(ROOT, "data", "question-speech", "parts"),
