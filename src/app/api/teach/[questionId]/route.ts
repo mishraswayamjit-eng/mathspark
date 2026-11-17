@@ -5,6 +5,9 @@ import { checkRateLimit } from '@/lib/rateLimit';
 import { logError } from '@/lib/logger';
 import { teachFor } from '@/lib/teach/lookup';
 
+/** A test left open this long after its time ran out no longer counts as in progress. */
+const TEST_GRACE_MS = 10 * 60_000;
+
 /**
  * GET /api/teach/[questionId]
  *
@@ -47,14 +50,29 @@ export async function GET(
   }
 
   try {
-    // Is this question sitting in a test the student has not finished?
-    const inOpenTest = await prisma.mockTestResponse.findFirst({
+    // Is this question sitting in a test the student is still doing? A test
+    // that was left open and whose time ran out long ago no longer counts
+    // (the same rule as /api/questions/explain), so walking away from a test
+    // does not hold its lessons back for good.
+    const openTests = await prisma.mockTest.findMany({
       where: {
-        questionId,
-        mockTest: { studentId, status: 'in_progress' },
+        studentId,
+        status: 'in_progress',
+        responses: { some: { questionId } },
       },
-      select: { id: true },
+      select: { startedAt: true, timeLimitMs: true },
+      orderBy: { startedAt: 'desc' },
+      take: 10,
     });
+    const nowMs = Date.now();
+    let inOpenTest = false;
+    for (let i = 0; i < openTests.length; i++) {
+      const t = openTests[i];
+      if (nowMs < new Date(t.startedAt).getTime() + t.timeLimitMs + TEST_GRACE_MS) {
+        inOpenTest = true;
+        break;
+      }
+    }
 
     if (inOpenTest) {
       if (checkOnly) return NextResponse.json({ questionId, available: false });

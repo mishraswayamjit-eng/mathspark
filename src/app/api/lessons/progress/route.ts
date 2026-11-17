@@ -7,6 +7,7 @@ import { checkRateLimit } from '@/lib/rateLimit';
 import { validateBody, ValidationError } from '@/lib/validateBody';
 import { addWeeklyXP } from '@/lib/leaderboard';
 import { logError } from '@/lib/logger';
+import { LESSON_TOPICS } from '@/data/lessonTopics';
 
 // GET — return all lesson progress for the authenticated student
 export async function GET() {
@@ -53,15 +54,27 @@ export async function POST(req: Request) {
       durationSec: 'number',
     });
 
-    const { topicSlug, levelId, quizScore, durationSec } = body;
+    const { topicSlug, levelId } = body;
 
-    // Validate ranges
-    if (levelId < 1 || levelId > 5) {
-      return NextResponse.json({ error: 'levelId must be 1-5' }, { status: 400 });
+    // The topic must be a real concept lesson. Every lesson has levels 1 to 5
+    // (data/lessons/*.json), so a whole number in that range is a real level.
+    let knownTopic = false;
+    for (let i = 0; i < LESSON_TOPICS.length; i++) {
+      if (LESSON_TOPICS[i].id === topicSlug) { knownTopic = true; break; }
     }
-    if (quizScore < 0 || quizScore > 100) {
+    if (!knownTopic) {
+      return NextResponse.json({ error: 'Unknown lesson topic' }, { status: 400 });
+    }
+    if (!Number.isInteger(levelId) || levelId < 1 || levelId > 5) {
+      return NextResponse.json({ error: 'levelId must be a whole number from 1 to 5' }, { status: 400 });
+    }
+    if (!Number.isFinite(body.quizScore) || body.quizScore < 0 || body.quizScore > 100) {
       return NextResponse.json({ error: 'quizScore must be 0-100' }, { status: 400 });
     }
+    const quizScore = Math.round(body.quizScore);
+    const durationSec = Number.isFinite(body.durationSec)
+      ? Math.min(86_400, Math.max(0, Math.round(body.durationSec)))
+      : 0;
 
     // Check if this is a first-time completion
     const existing = await prisma.lessonProgress.findUnique({
@@ -95,14 +108,28 @@ export async function POST(req: Request) {
       },
     });
 
-    // XP calculation
-    const base = 20;
-    const scoreBonus = Math.round((quizScore / 100) * 30); // 0-30
-    const firstTimeBonus = isFirstTime ? 20 : 0;
-    const perfectBonus = isPerfect ? 15 : 0;
+    // XP calculation. A level pays once: in full the first time it is finished,
+    // and after that only for the part of the score that is better than the
+    // best so far. Doing the same quiz again for the same (or a lower) score
+    // earns nothing, so a level can never pay more than one perfect first go.
+    // (The score itself is still the one the quiz screen worked out.)
+    const bonusFor = (score: number) => Math.round((score / 100) * 30); // 0-30
+    let base = 0;
+    let scoreBonus = 0;
+    let firstTimeBonus = 0;
+    let perfectBonus = 0;
+    if (isFirstTime) {
+      base = 20;
+      scoreBonus = bonusFor(quizScore);
+      firstTimeBonus = 20;
+      perfectBonus = isPerfect ? 15 : 0;
+    } else if (existing && quizScore > existing.quizScore) {
+      scoreBonus = Math.max(0, bonusFor(quizScore) - bonusFor(existing.quizScore));
+      perfectBonus = isPerfect ? 15 : 0;
+    }
     const totalXP = base + scoreBonus + firstTimeBonus + perfectBonus;
 
-    await addWeeklyXP(studentId, totalXP);
+    if (totalXP > 0) await addWeeklyXP(studentId, totalXP);
 
     return NextResponse.json({
       ok: true,

@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import { logError } from '@/lib/logger';
 import { logContentView } from '@/lib/contentView';
+import { useRouter } from 'next/navigation';
+import { useStudentGrade } from '@/components/lesson/useStudentGrade';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -52,20 +54,33 @@ export default function StrategyBankPage() {
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  // True when this page was opened by a link to one strategy (from a topic
+  // page): the back arrow then goes back to where the child came from.
+  const [cameByLink, setCameByLink] = useState(false);
+  const router = useRouter();
+  // The child's grade from the app shell (null for a moment when it is not known yet).
+  const grade = useStudentGrade();
 
   useEffect(() => {
+    setCameByLink(new URLSearchParams(window.location.search).get('open') !== null);
+  }, []);
+
+  useEffect(() => {
+    if (grade === null) return;
+    let live = true;
     const params = new URLSearchParams();
     if (selectedCategory) params.set('category', selectedCategory);
-    params.set('grade', localStorage.getItem('mathspark_student_grade') || '4');
+    params.set('grade', String(grade));
     setLoading(true);
     fetch(`/api/strategies?${params.toString()}`)
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
-        setStrategies(data.strategies ?? []);
+        if (live) setStrategies(data.strategies ?? []);
       })
       .catch((err) => logError('[fetch]', err))
-      .finally(() => setLoading(false));
-  }, [selectedCategory]);
+      .finally(() => { if (live) setLoading(false); });
+    return () => { live = false; };
+  }, [selectedCategory, grade]);
 
   // A link to one strategy: /learn/strategies?open=STR_009 opens that card and
   // scrolls to it, once, when the list first arrives. It counts as opening the
@@ -101,12 +116,26 @@ export default function StrategyBankPage() {
     <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
-        <Link href="/practice/exam-tips" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
+        {cameByLink ? (
+          <button
+            type="button"
+            onClick={() => {
+              if (window.history.length > 1) router.back();
+              else router.push('/learn');
+            }}
+            aria-label="Back"
+            className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-center"
+          >
+            &larr;
+          </button>
+        ) : (
+          <Link href="/practice/exam-tips" aria-label="Back" className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-center">&larr;</Link>
+        )}
         <div className="flex-1">
           <h1 className="text-white text-title">Strategy Bank</h1>
-          <p className="text-white/70 text-xs font-medium">{strategies.length} exam strategies &middot; Solve like a topper!</p>
+          <p className="text-white/70 text-sm font-medium">{strategies.length} exam strategies &middot; Solve like a topper!</p>
         </div>
-        <span className="text-2xl">🧠</span>
+        <span className="text-2xl" aria-hidden="true">🧠</span>
       </div>
 
       <div className="max-w-lg mx-auto px-4 pt-5">
@@ -115,7 +144,7 @@ export default function StrategyBankPage() {
           <Sparky mood="happy" size={36} />
           <div>
             <p className="text-sm font-bold text-ink">These aren&apos;t just math tricks...</p>
-            <p className="text-xs text-ink-muted mt-0.5">
+            <p className="text-sm text-ink-muted mt-0.5">
               They&apos;re exam strategies that toppers use. Each one can save you minutes!
             </p>
           </div>
@@ -125,13 +154,13 @@ export default function StrategyBankPage() {
         <div className="flex gap-1.5 mb-5 overflow-x-auto pb-1 flex-wrap">
           <button
             onClick={() => setSelectedCategory(null)}
-            className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
+            className={`min-h-[48px] px-4 rounded-full text-sm font-bold border-2 shrink-0 transition-colors ${
               selectedCategory === null
                 ? 'bg-action text-white border-ink'
                 : 'bg-white text-ink border-line'
             }`}
           >
-            All ({strategies.length || 35})
+            All{selectedCategory === null && !loading ? ` (${strategies.length})` : ''}
           </button>
           {categories.map((cat) => {
             const meta = getCategoryMeta(cat);
@@ -140,13 +169,13 @@ export default function StrategyBankPage() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors flex items-center gap-1 ${
+                className={`min-h-[48px] px-4 rounded-full text-sm font-bold border-2 shrink-0 transition-colors flex items-center gap-1 ${
                   isActive
                     ? 'bg-action text-white border-ink'
                     : 'bg-white text-ink border-line'
                 }`}
               >
-                <span>{meta.emoji}</span>
+                <span aria-hidden="true">{meta.emoji}</span>
                 <span>{meta.label}</span>
               </button>
             );
@@ -175,9 +204,9 @@ export default function StrategyBankPage() {
                       <span className="text-lg">{meta.emoji}</span>
                       <div>
                         <h2 className="text-title text-ink">{meta.label}</h2>
-                        <p className="text-xs text-ink-muted font-medium">{meta.description}</p>
+                        <p className="text-sm text-ink-muted font-medium">{meta.description}</p>
                       </div>
-                      <span className="ml-auto text-xs font-bold text-ink-muted bg-soft rounded-full px-2 py-0.5">
+                      <span className="ml-auto text-sm font-bold text-ink-muted bg-soft rounded-full px-2 py-0.5">
                         {categoryStrategies.length}
                       </span>
                     </div>
@@ -205,11 +234,11 @@ export default function StrategyBankPage() {
                             <span className="text-xl shrink-0">{s.emoji}</span>
                             <div className="flex-1 min-w-0">
                               <p className="text-sm font-extrabold text-ink leading-tight">{s.name}</p>
-                              <p className="text-xs text-ink-muted font-medium mt-0.5 line-clamp-1">{s.description}</p>
+                              <p className="text-sm text-ink-muted font-medium mt-0.5 line-clamp-1">{s.description}</p>
                             </div>
                             <div className="flex items-center gap-2 shrink-0">
                               {s.estimatedTimeSaved && (
-                                <span className="text-xs font-bold text-ink bg-soft px-2 py-0.5 rounded-full hidden sm:block">
+                                <span className="text-sm font-bold text-ink bg-soft px-2 py-0.5 rounded-full hidden sm:block">
                                   {s.estimatedTimeSaved}
                                 </span>
                               )}
@@ -230,18 +259,18 @@ export default function StrategyBankPage() {
 
                               {/* When to use */}
                               <div className="flex items-start gap-2">
-                                <span className="text-xs shrink-0 mt-0.5">🕐</span>
+                                <span className="text-sm shrink-0 mt-0.5">🕐</span>
                                 <div>
-                                  <p className="text-[13px] font-extrabold text-ink-muted">When to Use</p>
+                                  <p className="text-sm font-extrabold text-ink-muted">When to Use</p>
                                   <p className="text-sm text-ink font-medium mt-0.5">{s.whenToUse}</p>
                                 </div>
                               </div>
 
                               {/* How it works */}
                               <div className="flex items-start gap-2">
-                                <span className="text-xs shrink-0 mt-0.5">⚙️</span>
+                                <span className="text-sm shrink-0 mt-0.5">⚙️</span>
                                 <div>
-                                  <p className="text-[13px] font-extrabold text-ink-muted">How It Works</p>
+                                  <p className="text-sm font-extrabold text-ink-muted">How It Works</p>
                                   <p className="text-sm text-ink font-medium mt-0.5 leading-relaxed">{s.howItWorks}</p>
                                 </div>
                               </div>
@@ -249,19 +278,19 @@ export default function StrategyBankPage() {
                               {/* Example scenario */}
                               {s.example && (
                                 <div className="bg-soft rounded-control p-3 border-2 border-line space-y-2">
-                                  <p className="text-[13px] font-extrabold text-ink-muted">Example</p>
+                                  <p className="text-sm font-extrabold text-ink-muted">Example</p>
                                   <div className="space-y-1.5">
                                     <div className="flex items-start gap-2">
-                                      <span className="text-xs text-ink-muted font-bold shrink-0 mt-0.5">Scenario:</span>
-                                      <p className="text-[13px] text-ink font-medium">{s.example.scenario}</p>
+                                      <span className="text-sm text-ink-muted font-bold shrink-0 mt-0.5">Scenario:</span>
+                                      <p className="text-sm text-ink font-medium">{s.example.scenario}</p>
                                     </div>
                                     <div className="flex items-start gap-2">
-                                      <span className="text-xs text-ink-muted font-bold shrink-0 mt-0.5">Action:</span>
-                                      <p className="text-[13px] text-ink font-medium">{s.example.action}</p>
+                                      <span className="text-sm text-ink-muted font-bold shrink-0 mt-0.5">Action:</span>
+                                      <p className="text-sm text-ink font-medium">{s.example.action}</p>
                                     </div>
                                     <div className="flex items-start gap-2">
-                                      <span className="text-xs text-ink-muted font-bold shrink-0 mt-0.5">Result:</span>
-                                      <p className="text-[13px] text-ink font-bold">{s.example.result}</p>
+                                      <span className="text-sm text-ink-muted font-bold shrink-0 mt-0.5">Result:</span>
+                                      <p className="text-sm text-ink font-bold">{s.example.result}</p>
                                     </div>
                                   </div>
                                 </div>
@@ -272,8 +301,8 @@ export default function StrategyBankPage() {
                                 <div className="bg-soft rounded-control p-3 border-2 border-line flex items-start gap-2">
                                   <Sparky mood="happy" size={28} />
                                   <div>
-                                    <p className="text-[13px] font-extrabold text-ink-muted">Sparky Says</p>
-                                    <p className="text-[13px] text-ink font-medium mt-0.5 italic leading-snug">{s.sparkyTip}</p>
+                                    <p className="text-sm font-extrabold text-ink-muted">Sparky Says</p>
+                                    <p className="text-sm text-ink font-medium mt-0.5 italic leading-snug">{s.sparkyTip}</p>
                                   </div>
                                 </div>
                               )}
@@ -281,14 +310,14 @@ export default function StrategyBankPage() {
                               {/* Footer: time saved + difficulty + grade range */}
                               <div className="flex items-center gap-2 flex-wrap pt-1">
                                 {s.estimatedTimeSaved && (
-                                  <span className="text-xs font-bold text-ink bg-soft px-2 py-0.5 rounded-full border-2 border-line">
+                                  <span className="text-sm font-bold text-ink bg-soft px-2 py-0.5 rounded-full border-2 border-line">
                                     Saves {s.estimatedTimeSaved}
                                   </span>
                                 )}
-                                <span className="text-xs font-bold text-ink-muted bg-soft px-2 py-0.5 rounded-full">
+                                <span className="text-sm font-bold text-ink-muted bg-soft px-2 py-0.5 rounded-full">
                                   {s.difficulty === 1 ? 'Beginner' : 'Advanced'}
                                 </span>
-                                <span className="text-xs font-bold text-ink-muted">
+                                <span className="text-sm font-bold text-ink-muted">
                                   Grades {s.gradeRange[0]}–{s.gradeRange[1]}
                                 </span>
                               </div>
@@ -311,7 +340,7 @@ export default function StrategyBankPage() {
             <p className="text-sm font-bold text-ink-muted">No strategies found.</p>
             <button
               onClick={() => setSelectedCategory(null)}
-              className="text-sm text-action font-bold underline"
+              className="min-h-[48px] px-4 text-sm text-action font-bold underline"
             >
               Show all
             </button>

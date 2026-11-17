@@ -47,6 +47,8 @@ export default function AiExplainInline({
         body: JSON.stringify(body),
       });
       if (!res.ok || !res.body) {
+        // Let the child ask again: the "Try again" button below calls run().
+        startedRef.current = false;
         setState('error');
         return;
       }
@@ -61,6 +63,7 @@ export default function AiExplainInline({
       }
       setState('done');
     } catch {
+      startedRef.current = false;
       setState('error');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -92,9 +95,18 @@ export default function AiExplainInline({
       </div>
 
       {state === 'error' ? (
-        <p className="text-sm text-ink font-semibold">
-          I&apos;m having a little trouble right now! 🤔 Please try again in a moment.
-        </p>
+        <>
+          <p className="text-sm text-ink font-semibold">
+            I&apos;m having a little trouble right now! <span aria-hidden="true">🤔</span> Please try again in a moment.
+          </p>
+          <button
+            type="button"
+            onClick={() => void run()}
+            className="mt-3 w-full min-h-[48px] rounded-control border-2 border-ink bg-white text-ink font-extrabold text-sm shadow-hard-sm flex items-center justify-center gap-2 active:scale-[0.98] transition-transform"
+          >
+            <span aria-hidden="true">↺</span> Try again
+          </button>
+        </>
       ) : (
         <p className="text-sm text-ink font-semibold leading-snug whitespace-pre-wrap">
           {text}

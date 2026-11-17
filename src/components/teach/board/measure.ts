@@ -24,6 +24,8 @@ export interface RowLayout {
   f: number;
   /** How far the line is pushed in from the left edge of the board, in pixels. */
   left: number;
+  /** True for a line of words too long for the board: it fills the width and wraps. */
+  wrap: boolean;
 }
 
 export interface BoardLayout {
@@ -38,6 +40,9 @@ export interface BoardLayout {
 
 /** Where the equals signs line up, as a fraction of the board's width. Left sides are usually the longer ones. */
 const AXIS = 0.54;
+
+/** A line of words (a label) is never shrunk below this size, in pixels: it wraps instead. */
+const MIN_LABEL_FONT = 14;
 
 function round2(value: number): number {
   return Math.round(value * 100) / 100;
@@ -122,18 +127,34 @@ export function measureBoard(root: HTMLElement, model: BoardModel): BoardLayout 
 
     const natural = round2(base * toneScale(row));
     let f = natural;
+    let wrap = false;
+    // Measure the line as one unbroken line first, whatever it was last time.
+    textEl.style.whiteSpace = '';
+    textEl.style.width = '';
+    textEl.style.textAlign = '';
     textEl.style.fontSize = f + 'px';
     textEl.style.left = '0px';
     let w = textEl.getBoundingClientRect().width;
     if (w > width) {
-      // Too long for the board: this one line is written smaller.
-      f = round2(Math.max(natural * 0.5, natural * (width / w) * 0.985));
-      textEl.style.fontSize = f + 'px';
-      w = textEl.getBoundingClientRect().width;
+      const fitted = round2(Math.max(natural * 0.5, natural * (width / w) * 0.985));
+      if (row.label && fitted < MIN_LABEL_FONT) {
+        // A line of words too long for the board: it keeps its size and runs
+        // on to a second line, rather than shrinking until it cannot be read.
+        wrap = true;
+        textEl.style.whiteSpace = 'pre-wrap';
+        textEl.style.width = width + 'px';
+        textEl.style.textAlign = 'center';
+        w = width;
+      } else {
+        // Too long for the board: this one line is written smaller.
+        f = fitted;
+        textEl.style.fontSize = f + 'px';
+        w = textEl.getBoundingClientRect().width;
+      }
     }
 
     let left = (width - w) / 2;
-    if (row.eq >= 0) {
+    if (!wrap && row.eq >= 0) {
       const segs = textEl.querySelectorAll('[data-seg]');
       if (segs.length >= 2) {
         const textBox = textEl.getBoundingClientRect();
@@ -144,7 +165,7 @@ export function measureBoard(root: HTMLElement, model: BoardModel): BoardLayout 
     // Keep the whole line on the board, even if that pulls its equals sign off the shared axis.
     left = round2(clamp(left, 0, Math.max(0, width - w)));
     textEl.style.left = left + 'px';
-    rows[row.key] = { f: f, left: left };
+    rows[row.key] = { f: f, left: left, wrap: wrap };
   }
 
   // 2. With every line in its final place, measure the marks.

@@ -56,6 +56,12 @@ function Line({ row, marks, layout, timing }: LineProps) {
     fontSize: f,
     left: placed ? placed.left : 0,
   };
+  if (placed && placed.wrap && layout) {
+    // The same three properties `measureBoard` sets for a wrapped line of words.
+    textStyle.whiteSpace = 'pre-wrap';
+    textStyle.width = layout.width;
+    textStyle.textAlign = 'center';
+  }
   const write = animation('wb-write', t);
   if (write) textStyle.animation = write.animation;
 

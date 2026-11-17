@@ -95,10 +95,12 @@ export default function LessonComplete({
             <span aria-hidden="true">⭐ </span>+{xp.total} XP earned!
           </p>
           <div className="space-y-1">
-            <div className="flex justify-between text-xs text-ink-muted">
-              <span>Completion</span>
-              <span className="font-bold">+{xp.base}</span>
-            </div>
+            {xp.base > 0 && (
+              <div className="flex justify-between text-xs text-ink-muted">
+                <span>Completion</span>
+                <span className="font-bold">+{xp.base}</span>
+              </div>
+            )}
             {xp.scoreBonus > 0 && (
               <div className="flex justify-between text-xs text-ink-muted">
                 <span>Score bonus</span>

@@ -86,7 +86,7 @@ export default function TopicPage({
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
         <Link
           href="/learn/lessons"
-          className="text-white/70 hover:text-white text-lg font-bold"
+          className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-center"
           aria-label="Back"
         >
           &larr;
@@ -104,7 +104,7 @@ export default function TopicPage({
           <p className="text-sm font-semibold text-ink">
             {topic.description}
           </p>
-          <p className="text-xs text-ink-muted mt-1">
+          <p className="text-sm text-ink-muted mt-1">
             Grades {topic.gradeRange[0]}–{topic.gradeRange[1]} &middot; 5 levels
           </p>
         </div>

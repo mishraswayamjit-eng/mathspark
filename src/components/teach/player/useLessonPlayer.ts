@@ -78,6 +78,8 @@ export function useLessonPlayer(beats: TeachBeat[]) {
   // True once the current sentence has been said and only the pause after it is left.
   const saidRef = useRef(false);
   const replyRef = useRef('');
+  // How many sentences in a row the voice has not started for.
+  const voiceMissesRef = useRef(0);
   // The sentence in the air: when it began, how long it should take, how to end it.
   const currentRef = useRef<{ startedAt: number; ms: number; done: () => void } | null>(null);
   const enterRef = useRef<Enter>(() => undefined);
@@ -144,18 +146,26 @@ export function useLessonPlayer(beats: TeachBeat[]) {
 
     let started = false;
     speak(text, {
-      onStart: () => { started = true; },
+      onStart: () => {
+        started = true;
+        voiceMissesRef.current = 0;
+      },
       onEnd: done,
     });
-    // The voice did not start (blocked, offline): carry on with the caption alone.
-    // From here the lesson runs on captions, so later beats do not each wait
-    // for a voice that is not coming. The speaker button brings the voice back.
+    // The voice did not start in time (slow, blocked, offline): this one
+    // sentence carries on with its caption alone, and the next one is still
+    // fetched ahead and tried. Only when two sentences in a row get no voice
+    // does the lesson switch to captions, so later beats do not each wait for
+    // a voice that is not coming. The speaker button brings the voice back.
     later(() => {
       if (started || finished) return;
       stop();
-      mutedRef.current = true;
-      setMuted(true);
-      setVoiceLost(true);
+      voiceMissesRef.current += 1;
+      if (voiceMissesRef.current >= 2) {
+        mutedRef.current = true;
+        setMuted(true);
+        setVoiceLost(true);
+      }
       later(done, Math.max(800, ms - START_WAIT_MS));
     }, START_WAIT_MS);
     // The voice started but never reported its end.
@@ -273,6 +283,17 @@ export function useLessonPlayer(beats: TeachBeat[]) {
     }
   }, [apply, begin, carryOn, sayReply]);
 
+  // The child looks away (another tab, another app, the screen locked): the
+  // lesson waits, voice included, and is there paused when they come back.
+  useEffect(() => {
+    if (typeof document === 'undefined') return undefined;
+    const onVisibility = () => {
+      if (document.hidden) pause();
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    return () => document.removeEventListener('visibilitychange', onVisibility);
+  }, [pause]);
+
   const togglePause = useCallback(() => {
     if (viewRef.current.paused) resume();
     else pause();
@@ -325,6 +346,7 @@ export function useLessonPlayer(beats: TeachBeat[]) {
     mutedRef.current = next;
     setMuted(next);
     setVoiceLost(false);
+    voiceMissesRef.current = 0;
     if (!next) return;
     // Voice off part-way through a sentence: the caption stays for the time that was left.
     stop();

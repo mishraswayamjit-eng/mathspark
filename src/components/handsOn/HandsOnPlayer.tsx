@@ -97,6 +97,15 @@ export default function HandsOnPlayer({ lesson }: { lesson: HandsOnLesson }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stepIndex, sound, supported]);
 
+  // The child looks away (another tab, another app, the screen locked): Sparky stops talking.
+  useEffect(() => {
+    const onVisibility = () => {
+      if (document.hidden) stop();
+    };
+    document.addEventListener('visibilitychange', onVisibility);
+    return () => document.removeEventListener('visibilitychange', onVisibility);
+  }, [stop]);
+
   // Tell the Sparky widget what is on screen, so "help me with this" works here too.
   const colouredNow = figure && task ? colouredFraction(figure, shaded, task.target[1]) : '';
   useEffect(() => {

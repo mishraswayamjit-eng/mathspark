@@ -3,6 +3,7 @@
 import { Suspense, useEffect, useState, useCallback, useRef } from 'react';
 import { logError } from '@/lib/logger';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { useStudent } from '@/components/shell/StudentProvider';
 import FlashCardComponent from '@/components/flashcard/FlashCard';
 import ProgressDots from '@/components/flashcard/ProgressDots';
 import Confetti from '@/components/Confetti';
@@ -321,6 +322,11 @@ function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: stri
   const [correctCount, setCorrectCount] = useState(0);
   const [startTime] = useState(() => Date.now());
   const sessionSavedRef = useRef(false);
+  // The child's grade comes from the student the app shell loaded; the grade
+  // stored on the device is only a fallback (it can be missing or another child's).
+  const { student } = useStudent();
+  const shellGradeRef = useRef<number | null>(null);
+  shellGradeRef.current = student && student.grade >= 2 && student.grade <= 9 ? student.grade : null;
 
   // Celebration state
   const [transitions, setTransitions] = useState<BoxTransition[]>([]);
@@ -350,7 +356,10 @@ function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: stri
 
   useEffect(() => {
     const sid = localStorage.getItem('mathspark_student_id');
-    const grade = gradeOverride || localStorage.getItem('mathspark_student_grade') || '4';
+    const grade = gradeOverride
+      || (shellGradeRef.current !== null ? String(shellGradeRef.current) : null)
+      || localStorage.getItem('mathspark_student_grade')
+      || '4';
     if (!sid) {
       router.replace('/start');
       return;
@@ -587,7 +596,10 @@ function ClassicFlipSession({ deckId, gradeOverride, conceptId }: { deckId: stri
             setPhase('loading');
 
           const sid = localStorage.getItem('mathspark_student_id');
-          const grade = localStorage.getItem('mathspark_student_grade') || '4';
+          const grade = gradeOverride
+            || (shellGradeRef.current !== null ? String(shellGradeRef.current) : null)
+            || localStorage.getItem('mathspark_student_grade')
+            || '4';
           if (!sid) return;
 
           fetch(`/api/flashcards/deck?grade=${grade}&deck=${encodeURIComponent(deckId)}`)

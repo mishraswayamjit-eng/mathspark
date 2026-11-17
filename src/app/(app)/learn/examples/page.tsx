@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import { logError } from '@/lib/logger';
+import { useStudentGrade } from '@/components/lesson/useStudentGrade';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -69,8 +70,27 @@ export default function WorkedExamplesPage() {
   const [loading, setLoading] = useState(true);
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
   const [selectedGrade, setSelectedGrade] = useState<number | null>(null);
+  // False until the starting filters have been chosen (see below).
+  const [ready, setReady] = useState(false);
+  // The child's grade from the app shell (null for a moment when it is not known yet).
+  const studentGrade = useStudentGrade();
+
+  // The list opens on the child's own grade. A link from a topic page
+  // (/learn/examples?topic=bodmas&grade=5) opens on that topic and grade.
+  // Chosen once; after that the chips are in charge.
+  useEffect(() => {
+    if (ready || studentGrade === null) return;
+    const params = new URLSearchParams(window.location.search);
+    const topicParam = params.get('topic');
+    const gradeParam = Number(params.get('grade'));
+    if (topicParam && /^[a-z_]{1,40}$/.test(topicParam)) setSelectedTopic(topicParam);
+    setSelectedGrade(gradeParam >= 2 && gradeParam <= 9 ? Math.floor(gradeParam) : studentGrade);
+    setReady(true);
+  }, [ready, studentGrade]);
 
   useEffect(() => {
+    if (!ready) return;
+    let live = true;
     const params = new URLSearchParams();
     if (selectedTopic) params.set('topic', selectedTopic);
     if (selectedGrade) params.set('grade', String(selectedGrade));
@@ -79,12 +99,15 @@ export default function WorkedExamplesPage() {
     fetch(`/api/worked-examples${qs ? `?${qs}` : ''}`)
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
+        if (!live) return;
         setExamples(data.examples ?? []);
-        if (!selectedTopic && !selectedGrade) setTopics(data.topics ?? []);
+        // The topic chips are the topics that have examples for the chosen grade.
+        setTopics(data.topics ?? []);
       })
       .catch((err) => logError('[fetch]', err))
-      .finally(() => setLoading(false));
-  }, [selectedTopic, selectedGrade]);
+      .finally(() => { if (live) setLoading(false); });
+    return () => { live = false; };
+  }, [ready, selectedTopic, selectedGrade]);
 
   // Available grades
   const grades = [2, 3, 4, 5, 6, 7, 8, 9];
@@ -93,12 +116,12 @@ export default function WorkedExamplesPage() {
     <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
-        <Link href="/learn" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
+        <Link href="/learn" aria-label="Back" className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-center">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white text-title">Sparky Explains</h1>
-          <p className="text-white/70 text-xs font-medium">212 worked examples with step-by-step solutions</p>
+          <p className="text-white/70 text-sm font-medium">Worked examples with step-by-step solutions</p>
         </div>
-        <span className="text-2xl">💡</span>
+        <span className="text-2xl" aria-hidden="true">💡</span>
       </div>
 
       <div className="max-w-lg mx-auto px-4 pt-5">
@@ -107,7 +130,7 @@ export default function WorkedExamplesPage() {
           <Sparky mood="happy" size={36} />
           <div>
             <p className="text-sm font-bold text-ink">Watch me solve it step-by-step!</p>
-            <p className="text-xs text-ink-muted mt-0.5">
+            <p className="text-sm text-ink-muted mt-0.5">
               Tap any example to see how I think through the problem. Includes trap warnings!
             </p>
           </div>
@@ -117,7 +140,7 @@ export default function WorkedExamplesPage() {
         <div className="flex gap-1.5 mb-4 overflow-x-auto pb-1">
           <button
             onClick={() => { setSelectedGrade(null); setLoading(true); }}
-            className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
+            className={`min-h-[48px] px-4 rounded-full text-sm font-bold border-2 shrink-0 transition-colors ${
               selectedGrade === null
                 ? 'bg-action text-white border-ink'
                 : 'bg-white text-ink border-line'
@@ -129,7 +152,7 @@ export default function WorkedExamplesPage() {
             <button
               key={g}
               onClick={() => { setSelectedGrade(g); setLoading(true); }}
-              className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
+              className={`min-h-[48px] px-4 rounded-full text-sm font-bold border-2 shrink-0 transition-colors ${
                 selectedGrade === g
                   ? 'bg-action text-white border-ink'
                   : 'bg-white text-ink border-line'
@@ -145,7 +168,7 @@ export default function WorkedExamplesPage() {
           <div className="flex gap-1.5 mb-5 overflow-x-auto pb-1 flex-wrap">
             <button
               onClick={() => { setSelectedTopic(null); setLoading(true); }}
-              className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
+              className={`min-h-[48px] px-4 rounded-full text-sm font-bold border-2 shrink-0 transition-colors ${
                 selectedTopic === null
                   ? 'bg-action text-white border-ink'
                   : 'bg-white text-ink border-line'
@@ -159,13 +182,13 @@ export default function WorkedExamplesPage() {
                 <button
                   key={t.topic}
                   onClick={() => { setSelectedTopic(t.topic); setLoading(true); }}
-                  className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors flex items-center gap-1 ${
+                  className={`min-h-[48px] px-4 rounded-full text-sm font-bold border-2 shrink-0 transition-colors flex items-center gap-1 ${
                     selectedTopic === t.topic
                       ? 'bg-action text-white border-ink'
                       : 'bg-white text-ink border-line'
                   }`}
                 >
-                  <span>{meta.emoji}</span>
+                  <span aria-hidden="true">{meta.emoji}</span>
                   <span className="capitalize">{t.topic.replace(/_/g, ' ')}</span>
                   <span className="opacity-60">({t.count})</span>
                 </button>
@@ -209,11 +232,11 @@ export default function WorkedExamplesPage() {
                         <span className="ui-chip">
                           {ex.topic.replace(/_/g, ' ')}
                         </span>
-                        <span className="text-xs font-bold text-ink-muted">
+                        <span className="text-sm font-bold text-ink-muted">
                           Grade {ex.grade}
                         </span>
                         <span
-                          className="text-xs font-bold px-1.5 py-0.5 rounded-full"
+                          className="text-sm font-bold px-1.5 py-0.5 rounded-full"
                           style={{
                             color: DIFF_COLORS[ex.difficulty] ?? '#999',
                             backgroundColor: (DIFF_COLORS[ex.difficulty] ?? '#999') + '15',
@@ -229,7 +252,7 @@ export default function WorkedExamplesPage() {
                       </p>
 
                       {/* Sub-topic */}
-                      <p className="text-xs text-ink-muted mt-1">{ex.subTopic}</p>
+                      <p className="text-sm text-ink-muted mt-1">{ex.subTopic}</p>
                     </div>
 
                     {/* Arrow */}
@@ -248,7 +271,7 @@ export default function WorkedExamplesPage() {
             <p className="text-sm font-bold text-ink-muted">No examples found for this filter.</p>
             <button
               onClick={() => { setSelectedTopic(null); setSelectedGrade(null); setLoading(true); }}
-              className="text-sm text-action font-bold underline"
+              className="min-h-[48px] px-4 text-sm text-action font-bold underline"
             >
               Clear filters
             </button>

@@ -56,15 +56,17 @@ export async function GET(req: Request) {
 
   let examples = data.examples;
 
-  // Filter by topic
-  if (topicFilter) {
-    examples = examples.filter((e) => e.topic === topicFilter);
-  }
-
-  // Filter by grade
+  // Filter by grade first: the topic summary below counts the examples of the
+  // chosen grade, so the page only offers topics that have something to show.
   if (gradeFilter) {
     const grade = parseInt(gradeFilter, 10);
     examples = examples.filter((e) => e.grade === grade);
+  }
+  const forGrade = examples;
+
+  // Filter by topic
+  if (topicFilter) {
+    examples = examples.filter((e) => e.topic === topicFilter);
   }
 
   // Return lightweight list (no steps/sparkyThinking/voiceScript)
@@ -81,7 +83,7 @@ export async function GET(req: Request) {
 
   // Build topic summary
   const topicMap = new Map<string, number>();
-  for (const e of data.examples) {
+  for (const e of forGrade) {
     topicMap.set(e.topic, (topicMap.get(e.topic) ?? 0) + 1);
   }
   const topics = Array.from(topicMap.entries())

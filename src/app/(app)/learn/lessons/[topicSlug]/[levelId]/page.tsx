@@ -109,22 +109,9 @@ export default function LessonSessionPage({
     startTimeRef.current = Date.now();
   }, []);
 
-  // Keyboard shortcuts
-  useEffect(() => {
-    function onKeyDown(e: KeyboardEvent) {
-      if (e.target instanceof HTMLInputElement) return;
-      if (e.key === ' ' && phase === 'lessons') {
-        e.preventDefault();
-        // Space triggers the "next" button if visible
-        const nextBtn = document.querySelector<HTMLButtonElement>(
-          'button:last-of-type',
-        );
-        nextBtn?.click();
-      }
-    }
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [phase]);
+  // There is no page-wide Space shortcut here: it used to press whichever
+  // button came first on the page, which was not always "Continue". The lesson
+  // buttons are ordinary buttons, so Tab then Space or Enter still works.
 
   if (loading) {
     return <LessonLevelSkeleton />;
@@ -151,7 +138,7 @@ export default function LessonSessionPage({
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
         <Link
           href={`/learn/lessons/${topicSlug}`}
-          className="text-white/70 hover:text-white text-lg font-bold"
+          className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-center"
           aria-label="Back"
         >
           &larr;
@@ -159,7 +146,7 @@ export default function LessonSessionPage({
         <span className="text-lg" aria-hidden="true">{level.emoji}</span>
         <h1 className="text-white text-title truncate">{level.label}</h1>
         {phase !== 'complete' && (
-          <span className="ml-auto text-xs font-bold text-white/70 capitalize">
+          <span className="ml-auto text-sm font-bold text-white/70 capitalize">
             {phase === 'lessons' ? 'Learning' : 'Quiz'}
           </span>
         )}

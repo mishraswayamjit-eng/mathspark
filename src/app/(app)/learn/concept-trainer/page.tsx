@@ -1,20 +1,19 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import { CONCEPT_TRAINERS } from '@/data/conceptTrainers';
 import { gradeInRange } from '@/lib/sharedUtils';
+import { useStudentGrade } from '@/components/lesson/useStudentGrade';
 
 export default function ConceptTrainerCatalog() {
-  const [grade, setGrade] = useState(4);
-
-  useEffect(() => {
-    setGrade(Number(localStorage.getItem('mathspark_student_grade')) || 4);
-  }, []);
+  // The child's grade from the app shell (null for a moment when it is not known yet,
+  // and then nothing is listed, so another grade's trainers never show first).
+  const grade = useStudentGrade();
 
   const visible = useMemo(
-    () => CONCEPT_TRAINERS.filter((t) => gradeInRange(t.gradeRange, grade)),
+    () => (grade === null ? [] : CONCEPT_TRAINERS.filter((t) => gradeInRange(t.gradeRange, grade))),
     [grade],
   );
 
@@ -24,7 +23,7 @@ export default function ConceptTrainerCatalog() {
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
         <Link
           href="/learn"
-          className="text-white/70 hover:text-white text-lg font-bold"
+          className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-center"
           aria-label="Back"
         >
           &larr;
@@ -46,7 +45,7 @@ export default function ConceptTrainerCatalog() {
           </div>
         </div>
 
-        {visible.length === 0 && (
+        {grade !== null && visible.length === 0 && (
           <p className="text-center text-ink-muted text-sm py-10">
             No concept trainers for your grade yet — check back soon! 🌟
           </p>

@@ -190,8 +190,9 @@ export async function GET(req: Request) {
               avgBox: Math.round((fcProgress._avg.leitnerBox ?? 0) * 10) / 10,
             };
           }
-        } catch {
-          // Graceful fail if flashcard data unavailable
+        } catch (err) {
+          // The concept still opens without its flashcard progress, but say why it is missing.
+          logError('[concept-map] flashcard progress', err);
         }
       }
 

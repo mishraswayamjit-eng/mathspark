@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import React, { useEffect, useState, useCallback, useMemo, useRef } from 'react';
 import { logError } from '@/lib/logger';
+import { useStudent } from '@/components/shell/StudentProvider';
 import { useRouter } from 'next/navigation';
 import { StreakProgress } from '@/components/flashcard/StreakMilestone';
 import type { FlashcardDeck, FlashcardStats } from '@/types';
@@ -131,10 +132,17 @@ export default function FlashcardsPage() {
   const [stats, setStats] = useState<FlashcardStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [fetchError, setFetchError] = useState(false);
+  // The child's grade comes from the student the app shell loaded; the grade
+  // stored on the device is only a fallback (it can be missing or another child's).
+  const { student } = useStudent();
+  const shellGradeRef = useRef<number | null>(null);
+  shellGradeRef.current = student && student.grade >= 2 && student.grade <= 9 ? student.grade : null;
 
   useEffect(() => {
     const sid = localStorage.getItem('mathspark_student_id');
-    const grade = localStorage.getItem('mathspark_student_grade') || '4';
+    const grade = shellGradeRef.current !== null
+      ? String(shellGradeRef.current)
+      : (localStorage.getItem('mathspark_student_grade') || '4');
     if (!sid) { router.replace('/start'); return; }
 
     fetch(`/api/flashcards?grade=${grade}`)

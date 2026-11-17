@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import { logError } from '@/lib/logger';
 import { logContentView } from '@/lib/contentView';
+import { useStudentGrade } from '@/components/lesson/useStudentGrade';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -57,23 +58,33 @@ function FunStars({ level }: { level: number }) {
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function MathStoriesPage() {
-  const [stories, setStories] = useState<Story[]>([]);
+  // Every story for the child's grade. The category chips filter this list on
+  // the page, so only categories that have a story for this grade are offered.
+  const [allStories, setAllStories] = useState<Story[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [showAnswer, setShowAnswer] = useState<Set<string>>(new Set());
+  // The child's grade from the app shell (null for a moment when it is not known yet).
+  const grade = useStudentGrade();
 
   useEffect(() => {
+    if (grade === null) return;
+    let live = true;
     const params = new URLSearchParams();
-    if (selectedCategory) params.set('category', selectedCategory);
-    params.set('grade', localStorage.getItem('mathspark_student_grade') || '4');
+    params.set('grade', String(grade));
     setLoading(true);
     fetch(`/api/stories?${params.toString()}`)
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
-      .then((data) => setStories(data.stories ?? []))
+      .then((data) => { if (live) setAllStories(data.stories ?? []); })
       .catch((err) => logError('[fetch]', err))
-      .finally(() => setLoading(false));
-  }, [selectedCategory]);
+      .finally(() => { if (live) setLoading(false); });
+    return () => { live = false; };
+  }, [grade]);
+
+  const stories = selectedCategory
+    ? allStories.filter((s) => s.contextCategory === selectedCategory)
+    : allStories;
 
   function toggleAnswer(id: string) {
     setShowAnswer((prev) => {
@@ -83,18 +94,24 @@ export default function MathStoriesPage() {
     });
   }
 
-  const categories = Object.keys(CATEGORY_META);
+  // Only the categories that have at least one story for this grade.
+  const categories = Object.keys(CATEGORY_META).filter((cat) => {
+    for (let i = 0; i < allStories.length; i++) {
+      if (allStories[i].contextCategory === cat) return true;
+    }
+    return false;
+  });
 
   return (
     <div className="min-h-screen bg-paper pb-24">
       {/* Header */}
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
-        <Link href="/learn" className="text-white/70 hover:text-white text-lg font-bold">&larr;</Link>
+        <Link href="/learn" aria-label="Back" className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-center">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white text-title">Math Stories</h1>
-          <p className="text-white/70 text-xs font-medium">{stories.length} stories &middot; Math in the real world!</p>
+          <p className="text-white/70 text-sm font-medium">{stories.length} stories &middot; Math in the real world!</p>
         </div>
-        <span className="text-2xl">📖</span>
+        <span className="text-2xl" aria-hidden="true">📖</span>
       </div>
 
       <div className="max-w-lg mx-auto px-4 pt-5">
@@ -103,7 +120,7 @@ export default function MathStoriesPage() {
           <Sparky mood="happy" size={36} />
           <div>
             <p className="text-sm font-bold text-ink">Did you know math is everywhere?</p>
-            <p className="text-xs text-ink-muted mt-0.5">
+            <p className="text-sm text-ink-muted mt-0.5">
               Cricket, rockets, pizza, money — every story ends with a Sparky challenge!
             </p>
           </div>
@@ -113,7 +130,7 @@ export default function MathStoriesPage() {
         <div className="flex gap-1.5 mb-5 overflow-x-auto pb-1 flex-wrap">
           <button
             onClick={() => setSelectedCategory(null)}
-            className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors ${
+            className={`min-h-[48px] px-4 rounded-full text-sm font-bold border-2 shrink-0 transition-colors ${
               selectedCategory === null
                 ? 'bg-action text-white border-ink'
                 : 'bg-white text-ink border-line'
@@ -128,13 +145,13 @@ export default function MathStoriesPage() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 rounded-full text-xs font-bold border-2 shrink-0 transition-colors flex items-center gap-1 ${
+                className={`min-h-[48px] px-4 rounded-full text-sm font-bold border-2 shrink-0 transition-colors flex items-center gap-1 ${
                   isActive
                     ? 'bg-action text-white border-ink'
                     : 'bg-white text-ink border-line'
                 }`}
               >
-                <span>{meta.emoji}</span>
+                <span aria-hidden="true">{meta.emoji}</span>
                 <span>{meta.label}</span>
               </button>
             );
@@ -179,14 +196,14 @@ export default function MathStoriesPage() {
                           <span className="ui-chip">
                             {catMeta.label}
                           </span>
-                          <span className="text-xs font-bold text-ink-muted capitalize">
+                          <span className="text-sm font-bold text-ink-muted capitalize">
                             {story.topicId.replace(/_/g, ' ')}
                           </span>
                           <FunStars level={story.funFactor} />
                         </div>
                         <h3 className="text-title text-ink leading-tight">{story.title}</h3>
                         {!isExpanded && (
-                          <p className="text-xs text-ink-muted font-medium mt-1 line-clamp-2">{story.storyText}</p>
+                          <p className="text-sm text-ink-muted font-medium mt-1 line-clamp-2">{story.storyText}</p>
                         )}
                       </div>
                       <span
@@ -210,7 +227,7 @@ export default function MathStoriesPage() {
                       <div className="bg-white rounded-control p-3 border-2 border-line flex items-start gap-2">
                         <span className="text-sm shrink-0">🔗</span>
                         <div>
-                          <p className="text-[13px] font-extrabold text-ink-muted">Math Connection</p>
+                          <p className="text-sm font-extrabold text-ink-muted">Math Connection</p>
                           <p className="text-sm text-ink font-medium mt-0.5">{story.mathConnection}</p>
                         </div>
                       </div>
@@ -220,7 +237,7 @@ export default function MathStoriesPage() {
                         <div className="flex items-start gap-2">
                           <Sparky mood="thinking" size={28} />
                           <div className="flex-1">
-                            <p className="text-[13px] font-extrabold text-ink-muted">Sparky&apos;s Challenge</p>
+                            <p className="text-sm font-extrabold text-ink-muted">Sparky&apos;s Challenge</p>
                             <p className="text-sm text-ink font-semibold mt-0.5">{story.sparkyQuestion}</p>
                           </div>
                         </div>
@@ -229,7 +246,7 @@ export default function MathStoriesPage() {
                         <div className="mt-2 flex justify-end">
                           <button
                             onClick={(e) => { e.stopPropagation(); toggleAnswer(story.id); }}
-                            className="text-xs font-bold text-action bg-white border-2 border-line px-2.5 py-1 rounded-full hover:border-ink transition-colors"
+                            className="min-h-[48px] text-sm font-bold text-action bg-white border-2 border-line px-4 rounded-full hover:border-ink transition-colors"
                           >
                             {answerShown ? 'Hide hint' : 'Think about it... 🤔'}
                           </button>
@@ -237,7 +254,7 @@ export default function MathStoriesPage() {
 
                         {answerShown && (
                           <div className="mt-2 bg-hint rounded-control px-3 py-2 border-2 border-dashed border-hint-ink animate-fade-in">
-                            <p className="text-[13px] text-hint-ink font-bold">
+                            <p className="text-sm text-hint-ink font-bold">
                               Try working it out! Re-read the story for the numbers you need.
                               {story.linkedConcepts.length > 0 && (
                                 <span className="block mt-1 text-hint-ink">
@@ -251,7 +268,7 @@ export default function MathStoriesPage() {
 
                       {/* Footer */}
                       <div className="flex items-center gap-2 flex-wrap pt-1">
-                        <span className="text-xs font-bold text-ink-muted">
+                        <span className="text-sm font-bold text-ink-muted">
                           Grades {story.gradeRange[0]}–{story.gradeRange[story.gradeRange.length - 1]}
                         </span>
                         <FunStars level={story.funFactor} />
@@ -271,7 +288,7 @@ export default function MathStoriesPage() {
             <p className="text-sm font-bold text-ink-muted">No stories found for this category.</p>
             <button
               onClick={() => setSelectedCategory(null)}
-              className="text-sm text-action font-bold underline"
+              className="min-h-[48px] px-4 text-sm text-action font-bold underline"
             >
               Show all
             </button>

@@ -7,6 +7,7 @@ import TopicGrid from '@/components/lesson/TopicGrid';
 import { LESSON_TOPICS } from '@/data/lessonTopics';
 import { gradeInRange } from '@/lib/sharedUtils';
 import { logError } from '@/lib/logger';
+import { useStudentGrade } from '@/components/lesson/useStudentGrade';
 
 interface ProgressRow {
   topicSlug: string;
@@ -17,10 +18,10 @@ interface ProgressRow {
 export default function LessonsPage() {
   const [progress, setProgress] = useState<ProgressRow[]>([]);
   const [loading, setLoading] = useState(true);
-  const [grade, setGrade] = useState(4);
+  // The child's grade from the app shell (null for a moment when it is not known yet).
+  const grade = useStudentGrade();
 
   useEffect(() => {
-    setGrade(Number(localStorage.getItem('mathspark_student_grade')) || 4);
     fetch('/api/lessons/progress')
       .then((r) => {
         if (!r.ok) return { progress: [] };
@@ -32,7 +33,7 @@ export default function LessonsPage() {
   }, []);
 
   const visibleTopics = useMemo(
-    () => LESSON_TOPICS.filter((t) => gradeInRange(t.gradeRange, grade)),
+    () => (grade === null ? [] : LESSON_TOPICS.filter((t) => gradeInRange(t.gradeRange, grade))),
     [grade],
   );
 
@@ -57,7 +58,7 @@ export default function LessonsPage() {
       <div className="sticky top-0 z-40 bg-ink px-4 py-4 flex items-center gap-3">
         <Link
           href="/learn"
-          className="text-white/70 hover:text-white text-lg font-bold"
+          className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-center"
           aria-label="Back"
         >
           &larr;
@@ -73,14 +74,14 @@ export default function LessonsPage() {
             <p className="text-sm font-bold text-ink">
               Learn new concepts step by step!
             </p>
-            <p className="text-xs text-ink-muted mt-0.5">
+            <p className="text-sm text-ink-muted mt-0.5">
               Each topic has 5 levels with lessons and quizzes.
             </p>
           </div>
         </div>
 
         {/* Loading */}
-        {loading && (
+        {(loading || grade === null) && (
           <div className="grid grid-cols-2 gap-3 animate-pulse">
             {Array.from({ length: 6 }).map((_, i) => (
               <div key={i} className="bg-white rounded-card p-4 border-2 border-line h-44" />
@@ -89,7 +90,7 @@ export default function LessonsPage() {
         )}
 
         {/* Topic grid */}
-        {!loading && (
+        {!loading && grade !== null && (
           <TopicGrid topics={visibleTopics} progress={topicProgress} />
         )}
       </div>
