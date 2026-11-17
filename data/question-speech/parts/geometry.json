@@ -309,27 +309,6 @@
    "Since all three angles are less than 90 degrees, this is an acute triangle."
   ]
  },
- "AIGEN_grade5_28e0cae9-e12e-4b24-9d39-8b2cac17a1ee": {
-  "q": "Priya is designing a triangular garden bed in her backyard in Pune. She uses rope to mark the three sides. The first side is 5 metres, the second side is 7 metres, and the third side is 5 metres. She also measures the angles and finds that the angle between the two equal sides is 84 degrees. What type of triangle is Priya's garden bed based on its sides and what are the other two angles?",
-  "options": [
-   "Scalene triangle; the other two angles are 48 degrees and 48 degrees",
-   "Isosceles triangle; each of the other two angles is 42 degrees",
-   "Equilateral triangle; each of the other two angles is 60 degrees",
-   "Isosceles triangle; each of the other two angles is 48 degrees"
-  ],
-  "hints": [
-   "Think about what makes a triangle isosceles, how many sides need to be equal? Then use the angle sum property to find the missing angles.",
-   "First, classify the triangle by looking at its side lengths, 5 metres, 7 metres, 5 metres. Then remember: all three angles of a triangle add up to 180 degrees.",
-   "Here's a similar problem: A triangle has sides 6 centimetres, 8 centimetres, and 6 centimetres, with the angle between the equal sides being 70 degrees. Since two sides are equal, it's isosceles. The other two angles are equal, so each equals 180 degrees minus 70 degrees, divided by 2, which is 110 degrees divided by 2, which is 55 degrees."
-  ],
-  "steps": [
-   "Classify the triangle by its sides. The three sides are 5 metres, 7 metres, and 5 metres. Since exactly two sides are equal, both 5 metres, this is an isosceles triangle.",
-   "Now let's find the unknown angles. We know the angle sum property: all angles in a triangle add up to 180 degrees. Angle 1 plus angle 2 plus angle 3 equals 180 degrees.",
-   "The angle between the two equal sides is 84 degrees. In an isosceles triangle, the angles opposite the equal sides are also equal. Let each of the other two angles be x. 84 degrees plus x plus x equals 180 degrees.",
-   "Solve for x: 2 x equals 180 degrees minus 84 degrees, which is 96 degrees, so x equals 96 degrees divided by 2, which is 48 degrees.",
-   "So Priya's garden bed is an isosceles triangle, and each of the other two angles is 48 degrees."
-  ]
- },
  "AIGEN_grade5_2ccc6511-7533-486b-b0a8-599a82d1fa8e": {
   "q": "Aarav is helping his mother tile the kitchen floor with square tiles. The kitchen floor is a rectangle that is 12 metres long and 9 metres wide. Each square tile has a side of 3 metres. How many tiles does Aarav need to cover the entire kitchen floor?",
   "options": [
@@ -469,27 +448,6 @@
    "Find the area of the full rectangular rangoli. Big area equals 12 times 8, which is 96 square centimetres.",
    "Find the area of the smaller rectangle that was cut out for the diya. Small area equals 4 times 3, which is 12 square centimetres.",
    "Subtract the cut-out area from the full area to get the remaining rangoli area. Remaining Area equals 96 minus 12, which is 84 square centimetres."
-  ]
- },
- "AIGEN_grade5_352cbeaf-fdd9-435f-9e60-a906f4bf9b96": {
-  "q": "Ananya is making a triangular pendant out of silver wire for a Navratri craft fair in Ahmedabad. She wants the pendant to be an isosceles triangle where the two equal angles are each three times the third angle. She also knows that the two equal sides are each 5 centimetres long, and the third, unequal, side is 3.4 centimetres long. After making the pendant, she wants to wrap gold thread around its entire border exactly 4 times for decoration. She buys gold thread at 12 rupees per centimetre. How much does Ananya spend on the gold thread?",
-  "options": [
-   "536.40 rupees",
-   "480.00 rupees",
-   "160.80 rupees",
-   "643.20 rupees"
-  ],
-  "hints": [
-   "First figure out the perimeter of the triangle, then think about how many times the thread goes around it, and finally calculate the cost!",
-   "Start by finding the perimeter: add up all three sides of the triangle, 5 centimetres plus 5 centimetres plus 3.4 centimetres.",
-   "Here's a similar problem: If a triangle has sides 6 centimetres, 6 centimetres, and 4 centimetres, its perimeter equals 16 centimetres. Wrapping thread around it 3 times needs 3 times 16, which is 48 centimetres of thread. At 10 rupees per centimetre, the cost equals 48 times 10, which is 480 rupees. Now try Ananya's problem with her measurements!"
-  ],
-  "steps": [
-   "Find the three angles, to verify it's a valid triangle. Let the smallest angle be x. The two equal angles are each 3 x. x plus 3 x plus 3 x equals 180 degrees, so 7 x equals 180 degrees, so x is about 25.7 degrees.",
-   "So the angles are approximately 25.7 degrees, 77.1 degrees, and 77.1 degrees. This is a valid isosceles triangle!",
-   "Find the perimeter of the triangle by adding all three sides. P equals 5 plus 5 plus 3.4, which is 13.4 centimetres.",
-   "Ananya wraps the gold thread around the border exactly 4 times, so find the total length of thread needed. Total thread equals 4 times 13.4, which is 53.6 centimetres.",
-   "Now calculate the cost at 12 rupees per centimetre. Cost equals 53.6 times 12, which is 643.20 rupees."
   ]
  },
  "AIGEN_grade5_37f1c808-f5f1-42e6-9b01-858f41d54856": {
@@ -696,27 +654,6 @@
    "The crease lies along a straight edge of the paper. Angles on a straight line are called supplementary angles, and they always add up to 180 degrees. Angle 1 plus Angle 2 equals 180 degrees.",
    "We know one angle is 65 degrees. So the other angle is: Angle 2 equals 180 degrees minus 65 degrees, which is 115 degrees.",
    "So the angle on the other side of the crease is 115 degrees."
-  ]
- },
- "AIGEN_grade5_5293d35a-c128-4d52-9663-bf562ad3b78f": {
-  "q": "Sanjay is building a triangular frame out of wooden sticks for his school science project in Bengaluru. He has sticks of lengths 8 centimetres, 15 centimetres, and 10 centimetres. He successfully builds the triangle and then measures all three angles. He finds that the largest angle is 108 degrees, and the smallest angle is 27 degrees. What type of triangle has Sanjay built, and what is the measure of the third angle?",
-  "options": [
-   "Obtuse-angled scalene triangle; third angle equals 55 degrees",
-   "Acute-angled scalene triangle; third angle equals 45 degrees",
-   "Obtuse-angled isosceles triangle; third angle equals 45 degrees",
-   "Obtuse-angled scalene triangle; third angle equals 45 degrees"
-  ],
-  "hints": [
-   "Think about two things: what do all angles in a triangle add up to? And what makes a triangle obtuse versus acute, and scalene versus isosceles?",
-   "First, find the third angle using the angle sum property: Third angle equals 180 degrees, minus 108 degrees, minus 27 degrees. Then check if any angle is greater than 90 degrees and if all sides are different lengths.",
-   "Here's a similar problem: A triangle has angles 95 degrees, 50 degrees, and an unknown angle. The third angle equals 180 degrees, minus 95 degrees, minus 50 degrees, which is 35 degrees. Since 95 degrees is greater than 90 degrees, it's obtuse-angled. If the three sides are all different lengths, say 6 centimetres, 9 centimetres, 12 centimetres, then it's scalene. So it would be an obtuse-angled scalene triangle!"
-  ],
-  "steps": [
-   "Use the angle sum property of a triangle. The three angles of any triangle add up to 180 degrees. Third angle equals 180 degrees, minus 108 degrees, minus 27 degrees.",
-   "Calculate the third angle. Third angle equals 180 degrees minus 135 degrees, which is 45 degrees.",
-   "Classify by angles: Since one angle, 108 degrees, is greater than 90 degrees, the triangle is an obtuse-angled triangle.",
-   "Classify by sides: The three sides are 8 centimetres, 15 centimetres, and 10 centimetres, all different lengths. So the triangle is scalene, no two sides are equal.",
-   "Putting it together: Sanjay's triangle is an obtuse-angled scalene triangle with the third angle measuring 45 degrees."
   ]
  },
  "AIGEN_grade5_52dd3f2c-80e8-4374-ae63-f9ea8b27d64b": {
@@ -949,27 +886,6 @@
    "So the area of the rangoli not covered by the mirror is 156 square centimetres."
   ]
  },
- "AIGEN_grade5_73792540-78bd-487a-bb05-2b0a029cf253": {
-  "q": "Vikram is making a triangle-shaped pennant flag for his school's cricket team. He cuts out a triangle from cloth and notices that all three sides are different lengths: 5 centimetres, 7 centimetres, and 5 centimetres. His friend Priya says, Wait, two sides are the same! Vikram looks again and realizes Priya is right, two sides are 5 centimetres each. What type of triangle is this pennant, and what is the measure of the angle between the two equal sides if each of the other two equal angles is 55 degrees?",
-  "options": [
-   "Isosceles triangle; the angle between the equal sides is 110 degrees",
-   "Scalene triangle; the angle between the equal sides is 70 degrees",
-   "Isosceles triangle; the angle between the equal sides is 70 degrees",
-   "Equilateral triangle; the angle between the equal sides is 60 degrees"
-  ],
-  "hints": [
-   "Remember: a triangle with exactly two equal sides has a special name. And all three angles in any triangle always add up to the same number!",
-   "First, identify the triangle type by its sides. Then use the angle sum property: add the two given angles and subtract from 180 degrees to find the third angle.",
-   "Here's a similar problem: A triangle has two sides of 6 centimetres each and a third side of 8 centimetres. The two angles opposite the equal sides are each 40 degrees. The triangle is isosceles, and the third angle equals 180 degrees, minus 40 degrees, minus 40 degrees, which is 100 degrees. See how that works?"
-  ],
-  "steps": [
-   "Identify the triangle type by its sides. The pennant has sides 5 centimetres, 7 centimetres, and 5 centimetres. Since exactly two sides are equal, both 5 centimetres, this is an isosceles triangle.",
-   "Now find the missing angle. We know all angles in a triangle add up to 180 degrees.",
-   "The two base angles, opposite the equal sides, are each 55 degrees. So we add them up. 55 degrees plus 55 degrees equals 110 degrees.",
-   "Subtract from 180 degrees to find the angle between the two equal sides. 180 degrees minus 110 degrees equals 70 degrees.",
-   "So the pennant is an isosceles triangle, and the angle between the two equal sides is 70 degrees."
-  ]
- },
  "AIGEN_grade5_73cf3a7b-eb15-45c3-b2e1-b98b97c6974c": {
   "q": "Ananya's grandmother is making a beautiful rangoli in their courtyard for Pongal. She first makes a large square rangoli with side 20 centimetres. Then she places a smaller square rangoli with side 12 centimetres right in the middle of the large one. The space between the two squares is filled with coloured powder. What is the area of the region filled with coloured powder, in square centimetres?",
   "options": [
@@ -1069,25 +985,6 @@
    "Add the two known angles together. 52 degrees plus 74 degrees equals 126 degrees.",
    "Subtract this sum from 180 degrees to find the missing angle. 180 degrees minus 126 degrees equals 54 degrees.",
    "So the angle where the right pole touches the ground is 54 degrees."
-  ]
- },
- "AIGEN_grade5_7f275cb5-83e1-4b41-94ae-298adaf3098e": {
-  "q": "Meera is decorating her classroom bulletin board for Diwali. She cuts out a triangle from a piece of chart paper. When she measures the three sides, she finds they are 5 centimetres, 5 centimetres, and 8 centimetres. She also measures one of the angles and finds it is 110 degrees. What type of triangle is this based on its sides and based on its angles?",
-  "options": [
-   "Isosceles and Obtuse",
-   "Equilateral and Obtuse",
-   "Isosceles and Acute",
-   "Scalene and Obtuse"
-  ],
-  "hints": [
-   "Think about what it means when exactly two sides of a triangle are equal. Then think about what kind of angle is greater than 90 degrees!",
-   "First classify by sides: Are all three sides equal? Are exactly two sides equal? Are all sides different? Then classify by angles: Is any angle greater than 90 degrees?",
-   "Here's a similar problem: A triangle has sides 7 centimetres, 7 centimetres, and 10 centimetres, with one angle measuring 100 degrees. Since exactly two sides are equal, 7 and 7, it's isosceles. Since 100 degrees is greater than 90 degrees, it's obtuse. So it's an isosceles obtuse triangle!"
-  ],
-  "steps": [
-   "Let's classify by sides first. The three sides are 5 centimetres, 5 centimetres, and 8 centimetres. Two sides are equal, both 5 centimetres, so this is an isosceles triangle.",
-   "Now let's classify by angles. One angle is 110 degrees. Since 110 degrees is greater than 90 degrees, the triangle has an obtuse angle, so it is an obtuse triangle.",
-   "Putting both together, Meera's triangle is an Isosceles and Obtuse triangle!"
   ]
  },
  "AIGEN_grade5_7f314a77-bc15-46f9-81aa-6aa186eb0fd5": {
@@ -1810,29 +1707,6 @@
    "The difference between the base angles of the two triangles is 30 degrees."
   ]
  },
- "AIGEN_grade5_c29423a2-fba4-4974-a8de-7e81fe91a8af": {
-  "q": "Sunita is making a triangular pennant flag for her school's annual Sports Day in Pune. She cuts the flag from a large rectangular piece of cloth. The triangle has the following properties: It is an isosceles triangle, two sides are equal. The perimeter of the triangle is 84 centimetres. The unequal side is 12 centimetres shorter than each of the equal sides. Sunita also notices that the angle between the two equal sides is 40 degrees. What is the measure of each of the other two equal angles, and what is the length of each equal side?",
-  "options": [
-   "Each equal angle equals 70 degrees, each equal side equals 32 centimetres",
-   "Each equal angle equals 70 degrees, each equal side equals 28 centimetres",
-   "Each equal angle equals 80 degrees, each equal side equals 32 centimetres",
-   "Each equal angle equals 60 degrees, each equal side equals 36 centimetres"
-  ],
-  "hints": [
-   "Think about two things separately: use the perimeter to find the side lengths, and use the angle sum property of a triangle to find the angles. Then combine your answers!",
-   "Let each equal side be a centimetres. Then the unequal side is a minus 12, centimetres. Now set up the perimeter equation: a plus a, plus a minus 12, equals 84.",
-   "Here's a similar problem: An isosceles triangle has a perimeter of 50 centimetres, and the unequal side is 8 centimetres shorter than each equal side. If the angle between the equal sides is 50 degrees, find the sides and base angles. Solution: Let each equal side be a. Then unequal side equals a minus 8. Perimeter: a plus a, plus a minus 8, equals 50, so 3 a minus 8 equals 50, so 3 a equals 58, so a equals 19 and one third centimetres. Base angles: 180 degrees minus 50 degrees, divided by 2 equals 130 degrees divided by 2, which is 65 degrees each. So each equal side is 19 and one third centimetres and each base angle is 65 degrees."
-  ],
-  "steps": [
-   "Let each equal side of the isosceles triangle be a centimetres. Since the unequal side is 12 centimetres shorter than each equal side, the unequal side equals a minus 12, centimetres.",
-   "Use the perimeter to set up an equation. The perimeter is the sum of all three sides. a plus a, plus a minus 12, equals 84.",
-   "Simplify and solve for a. 3 a minus 12 equals 84, so 3 a equals 96, so a equals 32.",
-   "So each equal side is 32 centimetres, and the unequal side is 32 minus 12, which is 20 centimetres. Let's verify: 32 plus 32 plus 20 equals 84 centimetres.",
-   "Now find the angles. The angle between the two equal sides, the vertex angle, is given as 40 degrees. In any triangle, the sum of all angles is 180 degrees. Sum of base angles equals 180 degrees minus 40 degrees, which is 140 degrees.",
-   "Since the triangle is isosceles, the two base angles are equal. Divide 140 degrees by 2. Each base angle equals 140 degrees divided by 2, which is 70 degrees.",
-   "Final answer: Each equal side equals 32 centimetres, and each equal angle, base angle, equals 70 degrees. That's option A!"
-  ]
- },
  "AIGEN_grade5_cad77791-6999-46e9-b829-6524c68a8048": {
   "q": "Arjun is building a kite frame for Makar Sankranti. He needs a triangular piece of bamboo where one angle is 90 degrees and another angle is 35 degrees. What is the measure of the third angle of this triangular piece?",
   "options": [
@@ -1915,26 +1789,6 @@
    "So Priya needs 15 packets of coloured powder to completely fill her rangoli!"
   ]
  },
- "AIGEN_grade5_d316dfa5-a728-45f3-8596-e1e99bb9f2c1": {
-  "q": "Vikram is building a triangular frame out of wooden sticks for his school science project in Bengaluru. He picks three sticks with lengths 8 centimetres, 15 centimetres, and 8 centimetres. He notices that the triangle has exactly two equal sides. His teacher asks him: What is the measure of the angle between the two equal sides, if each of the other two equal angles is 28 degrees? What should Vikram's answer be?",
-  "options": [
-   "124 degrees",
-   "152 degrees",
-   "114 degrees",
-   "56 degrees"
-  ],
-  "hints": [
-   "Think about what kind of triangle has exactly two equal sides, and what special property its angles have! Then use the angle sum of a triangle.",
-   "The sum of all three angles in any triangle is 180 degrees. The two base angles are each 28 degrees. Start by adding them up!",
-   "Here's a similar problem: If a triangle has two equal angles of 35 degrees each, the third angle equals 180 degrees, minus 35 degrees, minus 35 degrees, which is 180 degrees minus 70 degrees, which is 110 degrees. Try the same approach with 28 degrees!"
-  ],
-  "steps": [
-   "Identify the triangle type. Since two sides are equal, both 8 centimetres, this is an isosceles triangle. The two angles opposite the equal sides, called base angles, are equal.",
-   "We're told each of the two equal, base, angles is 28 degrees. Let's add them up. 28 degrees plus 28 degrees equals 56 degrees.",
-   "Use the triangle angle sum property: all three angles add up to 180 degrees. Third angle equals 180 degrees minus 56 degrees, which is 124 degrees.",
-   "So the angle between the two equal sides is 124 degrees. Vikram's answer should be 124 degrees!"
-  ]
- },
  "AIGEN_grade5_d3681d12-6a3c-4748-995f-cff90f89236e": {
   "q": "Sanjay is making a triangular kite for the Uttarayan festival in Ahmedabad. He has three bamboo sticks of lengths 15 centimetres, 20 centimetres, and 25 centimetres for the frame. After building the triangle, his friend tells him: Hey, this triangle is special, one of its angles is exactly 90 degrees! Sanjay wants to verify this. He also wants to find the area of the cloth needed to cover the kite. If cloth costs 2 rupees per square centimetre, how much will Sanjay spend on cloth for this triangular kite?",
   "options": [
@@ -1954,29 +1808,6 @@
    "Calculate the area of the triangle using the formula for a right triangle: Area equals half of base times height, which is half of 15 times 20, which is 150 square centimetres.",
    "Now calculate the cost of cloth at 2 rupees per square centimetre: Cost equals 150 times 2, which is 300 rupees.",
    "So Sanjay will spend 300 rupees on cloth for his triangular kite!"
-  ]
- },
- "AIGEN_grade5_d38bd58a-0efe-4558-845b-451ba6dc7fe1": {
-  "q": "Priya is designing a triangular patch for her school bag using colored fabric. She knows that the triangle has angles in the ratio 2 is to 3 is to 5. She wants to classify the triangle based on its angles. Also, if the longest side of the triangle is 13 centimetres and the shortest side is 7 centimetres, what is the perimeter of the triangle if the remaining side is 2 centimetres more than the shortest side?",
-  "options": [
-   "22 centimetres, and the triangle is an acute triangle",
-   "27 centimetres, and the triangle is a right triangle",
-   "29 centimetres, and the triangle is a right triangle",
-   "29 centimetres, and the triangle is an obtuse triangle"
-  ],
-  "hints": [
-   "First, find the three angles using the ratio 2 is to 3 is to 5 and the fact that all angles in a triangle add up to 180 degrees. Then check, is any angle exactly 90 degrees? Greater than 90 degrees?",
-   "If the ratio is 2 is to 3 is to 5, let the angles be 2 x, 3 x, and 5 x. Set up the equation: 2 x plus 3 x plus 5 x equals 180 degrees. Solve for x first!",
-   "Here's a similar problem: A triangle has angles in the ratio 1 is to 2 is to 3. So the angles are 1 x, 2 x, 3 x. Since 1 x plus 2 x plus 3 x equals 180 degrees, we get 6 x equals 180 degrees, so x equals 30 degrees. The angles are 30 degrees, 60 degrees, and 90 degrees. Since one angle is exactly 90 degrees, it's a right triangle! If its sides are 5 centimetres, 8 centimetres, and 10 centimetres, the perimeter equals 5 plus 8 plus 10, which is 23 centimetres."
-  ],
-  "steps": [
-   "Find the angles using the ratio 2 is to 3 is to 5. Let the angles be 2 x, 3 x, and 5 x. 2 x plus 3 x plus 5 x equals 180 degrees.",
-   "Combine like terms and solve for x. 10 x equals 180 degrees, so x equals 18 degrees.",
-   "Calculate each angle: The three angles are 2 times 18 degrees, which is 36 degrees, 3 times 18 degrees equals 54 degrees, and 5 times 18 degrees equals 90 degrees.",
-   "Classify the triangle: Since one angle is exactly 90 degrees, this is a right triangle!",
-   "Now find the perimeter. The shortest side equals 7 centimetres, the longest side equals 13 centimetres, and the remaining side is 2 centimetres more than the shortest side. Remaining side equals 7 plus 2, which is 9 centimetres.",
-   "Add all three sides to get the perimeter. Perimeter equals 7 plus 9 plus 13, which is 29 centimetres.",
-   "So the triangle is a right triangle with a perimeter of 29 centimetres!"
   ]
  },
  "AIGEN_grade5_d510200e-62ae-4d85-b72a-391c89b1e09a": {
@@ -2247,30 +2078,6 @@
    "Combine like terms and solve for x. 3 x equals 180 degrees, so x equals 60 degrees.",
    "So the smaller angle is 60 degrees and the larger angle is 2 times 60 degrees, which is 120 degrees.",
    "Vertically opposite angles are equal. The angle vertically opposite to the smaller angle, 60 degrees, is also 60 degrees."
-  ]
- },
- "AIGEN_grade5_e9d46e9a-a871-492a-8574-e37fd925328d": {
-  "q": "Riya is designing a triangular mosaic tile for her school's art competition in Chennai. She knows the following about her triangle: The triangle is isosceles, two sides are equal. The angle between the two equal sides is 20 degrees more than each of the equal base angles. The perimeter of the triangle is 55 centimetres. Each of the two equal sides is 5 centimetres longer than the base. What is the length of each equal side of the triangle?",
-  "options": [
-   "15 centimetres",
-   "20 centimetres",
-   "18 centimetres",
-   "22 centimetres"
-  ],
-  "hints": [
-   "This problem has two parts, one about angles and one about sides. First, check if the angle information is consistent, it helps confirm it's a valid triangle. Then use the perimeter and the side relationship to find the lengths!",
-   "Let each base angle be x degrees. Then the angle between the equal sides equals x plus 20 degrees. Use the angle sum property: x plus x, plus x plus 20, equals 180. Solve for x to verify the triangle is valid. Then set up an equation for the sides using the perimeter.",
-   "Here's a similar problem: A triangle has angles in ratio 1 is to 1 is to 2 and perimeter 40 centimetres. The two equal sides are each 3 centimetres more than the third side. If each equal side equals s, then the base equals s minus 3. So s plus s, plus s minus 3, equals 40, so 3 s minus 3 equals 40, so 3 s equals 43, so s equals 43 over 3, which is about 14.33 centimetres. Your actual problem will give a whole number!"
-  ],
-  "steps": [
-   "First, let's verify the triangle is valid using the angle information. Let each base angle be x degrees. The angle between the equal sides equals x plus 20 degrees. x plus x, plus x plus 20, equals 180.",
-   "Simplify and solve for x. 3 x plus 20 equals 180, so 3 x equals 160, so x equals 53 point 3 recurring, degrees.",
-   "So the base angles are each about 53.3 degrees and the top angle is about 73.3 degrees. All angles are positive and add to 180 degrees, the triangle is valid! Now let's work on the sides.",
-   "Let the base of the triangle be b centimetres. Each equal side is 5 centimetres longer than the base, so each equal side equals b plus 5, centimetres.",
-   "The perimeter is 55 centimetres. Set up the equation: b, plus b plus 5, plus b plus 5, equals 55.",
-   "Simplify and solve: b plus b plus 5 plus b plus 5 equals 55, so 3 b plus 10 equals 55, so 3 b equals 45, so b equals 15.",
-   "The base is 15 centimetres, and each equal side equals 15 plus 5, which is 20 centimetres. Let's verify: 15 plus 20 plus 20 equals 55 centimetres.",
-   "Each equal side of Riya's triangle is 20 centimetres!"
   ]
  },
  "AIGEN_grade5_edcfe902-58ed-4108-be24-f52764e67984": {

@@ -1,0 +1,235 @@
+"""Square-number lessons for batch 18, written one by one (first group)."""
+from imported_18_lib import ANS, ANSC, B, CHOOSE, CIRC, GIVEN, LB, LESSON, NOTE, P, STRIKE, UL, W  # noqa: F401
+
+LESSONS = {}
+
+# tiles + 25 is a square, tiles − 11 is a square.
+LESSONS[P + "0cdecfa8-87ec-4400-80d9-f03ad30f025a"] = LESSON(
+    B("Riya has some tiles. With 25 more, she would have a perfect square number of tiles. With 11 fewer, she would also have a perfect square number. How many tiles does she have?",
+      GIVEN("q", "tiles + 25 = a square; tiles − 11 = a square")),
+    B("Two square numbers are hiding in this story: a bigger one, 25 above her tiles, and a smaller one, 11 below."),
+    B("How far apart are those two square numbers?",
+      ask=CHOOSE(["25 − 11 = 14", "25 + 11 = 36", "25"], 1,
+                 "Start at the smaller square. Climb 11 to reach her tiles, then climb 25 more to reach the bigger square. Two climbs, so we add them.")),
+    B("11 up, and then 25 up, makes 36. So we need two square numbers that are exactly 36 apart.",
+      W("l1", "11 + 25 = 36")),
+    B("Here are the square numbers in order. Somewhere in this list is a pair with a gap of 36.",
+      LB("sq", "1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121")),
+    B("Neighbours in the list are too close together, so try squares that are two places apart. 100 minus 64 is 36. There is our pair!",
+      W("l2", "100 − 64 = 36"), CIRC("sq", "64"), CIRC("sq", "100")),
+    B("The bigger square, 100, is 25 more than her tiles. So her tiles are 100 minus 25, which is 75.",
+      *ANSC("l3", "100 − 25 = 75", 75)),
+    B("Check the other clue: 75 minus 11 is 64, and 64 is 8 times 8. Both clues fit.",
+      W("l4", "75 − 11 = 64"), W("l5", "8 × 8 = 64")),
+    B("The trap is 36 itself. It is the gap between the two squares, and it happens to be a square number too, but it is not how many tiles Riya has."),
+    B("So when a number sits between two squares: add the two steps to get the gap, find squares that far apart, then step back to the number."),
+)
+
+# n² − 15² = 64.
+LESSONS[P + "11c4b58f-95a7-4b0c-b7d5-90d81de16586"] = LESSON(
+    B("Meera squares her mystery number, takes away the square of 15, and gets 64. What is her number?",
+      W("q", "?² − 15² = 64", "given")),
+    B("We will work backwards. But first we need the square of 15. 15 times 10 is 150, and 15 times 5 is 75. 150 plus 75 is 225.",
+      W("l1", "15 × 10 = 150"), W("l2", "15 × 5 = 75"), W("l3", "15² = 225")),
+    B("So the story now reads: her number squared, take away 225, leaves 64.",
+      W("l4", "?² − 225 = 64")),
+    B("How do we get back to her number squared?",
+      ask=CHOOSE(["225 − 64", "64 + 225", "64 ÷ 2"], 1,
+                 "She took 225 away and landed on 64. To undo taking away, we add it back on.")),
+    B("64 plus 225 is 289. So her number, squared, is 289.",
+      W("l5", "64 + 225 = 289")),
+    B("Which number times itself makes 289? 10 times 10 is 100 and 20 times 20 is 400, so it lies between 10 and 20.",
+      W("l6", "10 × 10 = 100"), W("l7", "20 × 20 = 400")),
+    B("289 ends in 9. Which of these could the number be?",
+      ask=CHOOSE(["15", "13 or 17", "16 or 19"], 1,
+                 "A number times itself ends in 9 only when the number ends in 3 or 7. 3 times 3 is 9, and 7 times 7 ends in 9 as well.")),
+    B("Test 17. 17 times 10 is 170, and 17 times 7 is 119. 170 plus 119 is 289. Yes!",
+      W("l8", "17 × 10 = 170"), W("l9", "17 × 7 = 119"), W("l10", "170 + 119 = 289")),
+    B("So the mystery number is 17. Careful not to stop at 289: that is her number squared, not her number.",
+      *ANSC("l11", "√289 = 17", 17)),
+    B("Check: 17 squared is 289, and 289 minus 225 is 64, just as Meera said.",
+      W("l12", "17² − 15² = 64")),
+    B("So work backwards: undo the take away by adding, then undo the squaring with a square root."),
+)
+
+# A square of stickers, 15 in each row.
+LESSONS[P + "17f60309-f899-4a48-915b-349b90244ebb"] = LESSON(
+    B("Kavya fills a square card with stickers, 15 in each row. Her brother bets she used more than 200. How many stickers did she use?",
+      GIVEN("q", "A square of stickers, 15 in each row: how many?")),
+    B("The card is a square. So how many rows of stickers are there?",
+      ask=CHOOSE(["4", "15", "30"], 1,
+                 "A square is as tall as it is wide. If 15 stickers fit across, then 15 rows fit down.")),
+    B("15 rows, with 15 stickers in each. That is 15 times 15, which we call 15 squared.",
+      W("l1", "15² = 15 × 15")),
+    B("Split it up to make it easy. 15 times 10 is 150.",
+      W("l2", "15 × 10 = 150")),
+    B("And 15 times 5 is 75. Together, 150 plus 75 is 225.",
+      W("l3", "15 × 5 = 75"), W("l4", "150 + 75 = 225")),
+    B("So Kavya used 225 stickers. And her brother was right: 225 is more than 200.",
+      *ANSC("l5", "15 × 15 = 225", 225)),
+    B("Two slips to dodge. 15 times 4 is 60, but that only goes round the edge. And 15 plus 15 is 30, which is just two rows.",
+      W("l6", "15 × 4 = 60"), W("l7", "15 + 15 = 30")),
+    B("Check by dividing: 225 stickers put into rows of 15 make exactly 15 rows. A perfect square.",
+      W("l8", "225 ÷ 15 = 15")),
+    B("So to fill a square, multiply the side by itself. That is what squaring a number means."),
+)
+
+# 3 equal square trays, 75 in all.
+LESSONS[P + "18d73e41-33b8-4678-9bfe-d40e06aea1c4"] = LESSON(
+    B("A sweet shop has 3 square trays of gulab jamuns, all the same, holding 75 altogether. On each tray, the rows are as long as the number of rows. How many are in one row?",
+      GIVEN("q", "3 equal square trays, 75 in all: how many in each row?")),
+    B("What do we find first?",
+      ask=CHOOSE(["the square root of 75", "how many are on one tray", "75 × 3"], 1,
+                 "The 75 are spread over 3 trays. The square is one single tray, so first we find how many sit on one tray.")),
+    B("75 shared equally among 3 trays. 75 divided by 3 is 25, so each tray holds 25.",
+      W("l1", "75 ÷ 3 = 25")),
+    B("Each tray is a square: as many rows as there are in each row. So we need a number that, multiplied by itself, makes 25.",
+      W("l2", "? × ? = 25")),
+    B("Which number times itself makes 25?",
+      ask=CHOOSE(["4", "5", "6"], 1,
+                 "Multiply each one by itself and see which lands exactly on 25. 5 times 5 does.")),
+    B("5 times 5 is 25. So each row has 5 gulab jamuns.",
+      W("l3", "5 × 5 = 25"), *ANSC("l4", "√25 = 5", 5)),
+    B("Careful with 25 among the choices. That is a whole tray, not one row."),
+    B("Check: one tray is 5 rows of 5, which is 25. And 3 trays of 25 make 75. It all fits.",
+      W("l5", "3 × 25 = 75")),
+    B("So ask yourself what the square is. Here it was one tray, so we shared first and took the square root second."),
+)
+
+# square + 17 = another square, both under 100.
+LESSONS[P + "1c64058c-db47-461e-8457-8a0ed3fbd305"] = LESSON(
+    B("Ananya's diyas are in a square grid. When she adds 17 more, she gets a new perfect square. Both squares have fewer than 100 diyas. How many did she start with?",
+      GIVEN("q", "square + 17 = another square, both under 100")),
+    B("Both numbers are square numbers below 100. There are not many of those, so let's write them all out.",
+      LB("sq", "1, 4, 9, 16, 25, 36, 49, 64, 81")),
+    B("We want two of them that are 17 apart. Look at the gaps between neighbours. From 1 to 4 is 3. From 4 to 9 is 5. From 9 to 16 is 7.",
+      W("l1", "4 − 1 = 3"), W("l2", "9 − 4 = 5"), W("l3", "16 − 9 = 7")),
+    B("The gaps go 3, 5, 7 and keep growing. So where should we look for a gap as big as 17?",
+      ask=CHOOSE(["near the start of the list", "near the end of the list", "right in the middle"], 1,
+                 "The gaps keep growing as the squares get bigger. 17 is a large gap, so it must lie between two of the bigger squares.")),
+    B("Try the last pair. 81 minus 64 is 17. Found it!",
+      W("l4", "81 − 64 = 17"), CIRC("sq", "64"), CIRC("sq", "81")),
+    B("She started with the smaller one, and adding 17 took her to the bigger one. So she started with 64 diyas.",
+      ANS("l5", "64 + 17 = 81"), CIRC("l5", "64")),
+    B("Careful: 81 is among the choices as well. But 81 is what she has after adding. The question asks what she started with."),
+    B("Check: 64 is 8 times 8, and 81 is 9 times 9. Both are perfect squares, and both are under 100.",
+      W("l6", "8 × 8 = 64"), W("l7", "9 × 9 = 81")),
+    B("So when the numbers are small, list the squares and look at the gaps. The gaps between neighbours are the odd numbers, in order."),
+)
+
+# 196 = 14²; the gap between 15² and 16².
+LESSONS[P + "20aef6ce-b282-46c1-bba7-1510804545cd"] = LESSON(
+    B("Arjun has 196 players in a perfect square. The principal talks about the next perfect square. Arjun needs as many samosas as the gap between that next square and the one after it.",
+      GIVEN("q", "196, then the next square, then the one after: gap?")),
+    B("Three squares in a row, then. Start with the one we know. 14 times 10 is 140, 14 times 4 is 56, and 140 plus 56 is 196. So 196 is 14 times 14.",
+      W("l1", "14 × 10 = 140"), W("l2", "14 × 4 = 56"), W("l3", "14 × 14 = 196")),
+    B("Which two squares come next after 14 times 14?",
+      ask=CHOOSE(["14 × 15 and 14 × 16", "15 × 15 and 16 × 16", "196 + 1 and 196 + 2"], 1,
+                 "A square number is a number times itself. After 14 times 14, the next ones use the next counting numbers: 15 times 15, and then 16 times 16.")),
+    B("15 times 15: 15 times 10 is 150, 15 times 5 is 75, and together that is 225.",
+      W("l4", "15 × 15 = 225"), NOTE("l4", "15 × 15", "150 + 75")),
+    B("16 times 16: 16 times 10 is 160, 16 times 6 is 96, and together that is 256.",
+      W("l5", "16 × 16 = 256"), NOTE("l5", "16 × 16", "160 + 96")),
+    B("We have 196, then 225, then 256. Which two do we subtract?",
+      ask=CHOOSE(["225 − 196", "256 − 225", "256 − 196"], 1,
+                 "Read the story once more. The gap is between the next square, 225, and the one after it, 256. The 196 is only where we started.")),
+    B("256 minus 225 is 31. Arjun needs 31 samosas.",
+      *ANSC("l6", "256 − 225 = 31", 31)),
+    B("The trap is 29. That is 225 minus 196, the gap from Arjun's own square to the next one. The question wanted the gap after that.",
+      W("l7", "225 − 196 = 29")),
+    B("Check another way. To grow a 15 by 15 square, you add a row of 15, a column of 15 and 1 for the corner. 15 plus 15 plus 1 is 31.",
+      W("l8", "15 + 15 + 1 = 31")),
+    B("So name the squares in order first, then subtract exactly the two the question points at."),
+)
+
+# 2025 petals in a square, then a border all round.
+LESSONS[P + "23016ea9-2ce6-4898-a7f5-80e5a81e130a"] = LESSON(
+    B("Riya's 2025 petals make a perfect square. She adds a border all the way round: one extra row on top, one on the bottom, one column on the left and one on the right. How many more petals is that?",
+      GIVEN("q", "2025 petals in a square, then a border all round")),
+    B("First, the side of her square. 40 times 40 is 1600 and 50 times 50 is 2500, so the side is between 40 and 50.",
+      W("l1", "40 × 40 = 1600"), W("l2", "50 × 50 = 2500")),
+    B("2025 ends in 5, so the side ends in 5. Test 45: 45 times 40 is 1800, 45 times 5 is 225, and 1800 plus 225 is 2025. The side is 45.",
+      W("l3", "45 × 40 = 1800"), W("l4", "45 × 5 = 225"), W("l5", "45 × 45 = 2025")),
+    B("The border adds a row on top and a row at the bottom, a column on the left and a column on the right. What is the new side?",
+      ask=CHOOSE(["45 + 1 = 46", "45 + 2 = 47", "45 + 4 = 49"], 1,
+                 "Look at one direction at a time. Top and bottom make the square 2 taller. Left and right make it 2 wider. So each side grows by 2, not by 4.")),
+    B("Each side grows by 2, so the new square is 47 by 47. 47 times 40 is 1880, 47 times 7 is 329, and together that is 2209.",
+      W("l6", "47 × 40 = 1880"), W("l7", "47 × 7 = 329"), W("l8", "47 × 47 = 2209")),
+    B("The border is the difference between the two squares. 2209 minus 2025 is 184. She needs 184 more petals.",
+      *ANSC("l9", "2209 − 2025 = 184", 184)),
+    B("The trap is 4 times 45, which is 180. Four strips of 45 miss the 4 petals at the corners of the border.",
+      W("l10", "4 × 45 = 180")),
+    B("And that gives us a check: 180 for the four strips, plus 4 for the corners, is 184.",
+      W("l11", "180 + 4 = 184")),
+    B("So for a border all round a square, the side grows by 2. Square the new side, and take away the old square."),
+)
+
+# A square of 81 tiles; new square with 5 more along each side: how many more tiles?
+LESSONS[P + "31ca7208-ca49-4c95-90f3-ca89c7d76a0c"] = LESSON(
+    B("Vikram's square garden uses 81 tiles. He wants a bigger square garden, with 5 more tiles along each side. How many more tiles must he buy?",
+      GIVEN("q", "Square of 81 tiles. New square: 5 more along each side")),
+    B("How many tiles are along each side of the garden he has now?",
+      ask=CHOOSE(["20", "9", "41"], 1,
+                 "We need a number that, multiplied by itself, makes 81. That is 9, because 9 times 9 is 81.")),
+    B("9 times 9 is 81, so each side has 9 tiles.",
+      W("l1", "9 × 9 = 81")),
+    B("The new garden has 5 more along each side. 9 plus 5 is 14.",
+      W("l2", "9 + 5 = 14")),
+    B("The new garden needs 14 times 14 tiles. 14 times 10 is 140, 14 times 4 is 56, and 140 plus 56 is 196.",
+      W("l3", "14 × 10 = 140"), W("l4", "14 × 4 = 56"), W("l5", "14 × 14 = 196")),
+    B("Is 196 our answer?",
+      ask=CHOOSE(["yes, 196 tiles", "no: take away the 81 he has", "no: add the 81 he has"], 1,
+                 "196 is the whole new garden. But Vikram already owns 81 of those tiles. The question asks how many more he must buy.")),
+    B("196 minus 81 is 115. Vikram must buy 115 more tiles.",
+      *ANSC("l6", "196 − 81 = 115", 115)),
+    B("Another slip is to think that 5 more on each side means just 5 times 5, or 25, more tiles. But the new tiles also run along two whole sides of the old garden.",
+      W("l7", "5 × 5 = 25")),
+    B("Check: 81 plus 115 is 196, and 196 is 14 times 14. A perfect square again.",
+      W("l8", "81 + 115 = 196")),
+    B("So: take the square root for the old side, add to get the new side, square it, then subtract the tiles he already had."),
+)
+
+# A square 4 rows and 4 columns bigger than a square of 81.
+LESSONS[P + "35be4d4b-bbdc-4eb5-aa9c-a67710a8b666"] = LESSON(
+    B("A small square rangoli uses 81 tiles. Riya's rangoli is a bigger square, with 4 more rows and 4 more columns than the small one. How many tiles does Riya need?",
+      GIVEN("q", "Small square: 81 tiles. Riya's: 4 more rows and columns")),
+    B("Start with the small rangoli. Which number times itself makes 81? 9 times 9. So it has 9 rows and 9 columns.",
+      W("l1", "9 × 9 = 81")),
+    B("Riya's has 4 more rows and 4 more columns. So what is the side of her square?",
+      ask=CHOOSE(["9 + 4 + 4 = 17", "9 + 4 = 13", "81 + 4 = 85"], 1,
+                 "The 4 more rows make it taller, and the 4 more columns make it wider. Each one changes a different direction, so each side goes up by 4 just once.")),
+    B("9 plus 4 is 13. Her rangoli is 13 by 13.",
+      W("l2", "9 + 4 = 13")),
+    B("Now 13 times 13. 13 times 10 is 130, and 13 times 3 is 39.",
+      W("l3", "13 × 10 = 130"), W("l4", "13 × 3 = 39")),
+    B("130 plus 39 is 169. Riya needs 169 tiles.",
+      W("l5", "130 + 39 = 169"), *ANSC("l6", "13 × 13 = 169", 169)),
+    B("The trap is adding the 4 to the 81 tiles. The 4 belongs with the side, 9, not with the total."),
+    B("Check by dividing: 169 tiles put into rows of 13 make exactly 13 rows. A perfect square.",
+      W("l7", "169 ÷ 13 = 13")),
+    B("So rows and columns change the side of a square. Find the old side, change it, then square the new one."),
+)
+
+# (n + 3)² − n² = 105.
+_L = LESSON(
+    B("Ananya's kitchen floor is a square of tiles. Her mother says a kitchen with 3 more tiles along each side would need 105 more tiles. How many tiles are along one edge now?",
+      GIVEN("q", "Square floor. 3 more tiles on each side needs 105 more")),
+    B("Call the number of tiles along one edge n. Now picture the bigger floor: the old square sits in one corner, and the new tiles wrap round two of its sides."),
+    B("Along one side there is a strip 3 tiles wide and n tiles long, so it has 3 n tiles. Along the next side there is another strip just like it. Together, 6 n.",
+      W("l1", "3n + 3n = 6n")),
+    B("The two strips leave a gap in the corner where they meet. How many tiles fill that corner?",
+      ask=CHOOSE(["3", "6", "9"], 2,
+                 "The corner is 3 tiles wide and 3 tiles long, a little square of its own. 3 times 3 is 9.")),
+    B("The corner is 3 by 3, so 9 tiles. The new tiles are the two strips and the corner, and there are 105 of them.",
+      W("l2", "6n + 9 = 105"), UL("l2", "9"), NOTE("l2", "9", "corner")),
+    B("Now find n. Take the 9 corner tiles away from both sides. 105 minus 9 is 96, so 6 n is 96.",
+      STRIKE("l2", "+ 9", "− 9"), {"op": "both", "line": "l2", "text": "− 9"}, W("l3", "6n = 96")),
+    B("6 n means 6 times n, so divide both sides by 6. 96 divided by 6 is 16. There are 16 tiles along one edge.",
+      {"op": "divide", "line": "l3", "by": "6"}, ANS("l4", "n = 16"), CIRC("l4", "n = 16")),
+    B("Check: the floor now is 16 times 16, which is 256. The bigger one is 19 times 19, which is 361. And 361 minus 256 is 105.",
+      W("l5", "16 × 16 = 256"), W("l6", "19 × 19 = 361"), W("l7", "361 − 256 = 105")),
+    B("The trap is forgetting the corner. Without it you would share 105 by 6, and that does not come out as a whole number. A sign that something is missing."),
+    B("So when a square grows by 3 on each side, the new tiles are two strips and a 3 by 3 corner. Take off the corner, then share between the strips."),
+)
+_L["check"] = {"variable": "n", "value": "16"}
+LESSONS[P + "433beb48-bc06-44eb-b701-2a7f1ca2c03c"] = _L

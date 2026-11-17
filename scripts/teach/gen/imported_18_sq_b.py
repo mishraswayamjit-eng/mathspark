@@ -1,0 +1,208 @@
+"""Square-number lessons for batch 18, written one by one (second group)."""
+from imported_18_lib import ANS, ANSC, B, CHOOSE, CIRC, GIVEN, LB, LESSON, NOTE, P, UL, W  # noqa: F401
+
+LESSONS = {}
+
+# 11 × 11 tiles; the tiles at square-number positions are red.
+LESSONS[P + "4795774d-0053-45e7-9bed-8a0ea96b6b46"] = LESSON(
+    B("Riya's rangoli is an 11 by 11 square of tiles. Counting the tiles in order, the 1st, 4th, 9th, 16th and every other square-number position is red. The rest are blue. How many are blue?",
+      GIVEN("q", "11 × 11 tiles. Positions 1, 4, 9, 16, 25, ... are red")),
+    B("Don't let the layers in the story distract you. All we need is how many tiles there are in all, and how many of them are red."),
+    B("The total is 11 times 11, which is 121. So the tiles are numbered from 1 up to 121.",
+      W("l1", "11 × 11 = 121")),
+    B("The red tiles sit at the square numbers: 1 times 1, 2 times 2, 3 times 3, and so on up the list.",
+      LB("sq", "1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121")),
+    B("The very last tile is number 121. Is that one red or blue?",
+      ask=CHOOSE(["blue, because it is the last tile", "red, because 121 = 11 × 11", "blue, because 121 is odd"], 1,
+                 "121 is 11 times 11, so it is a square number itself. That makes the very last tile red.")),
+    B("So the red positions run from 1 times 1 all the way to 11 times 11. That is one red tile for each number from 1 to 11, so 11 red tiles.",
+      UL("sq", "121"), NOTE("sq", "121", "11 × 11")),
+    B("The blue tiles are everything else. 121 minus 11 is 110 blue tiles.",
+      *ANSC("l2", "121 − 11 = 110", 110)),
+    B("The trap is 111. That comes from stopping the reds at 100 and missing that 121 is a square number too.",
+      W("l3", "121 − 10 = 111")),
+    B("Check by counting the list on the board: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121. That is 11 numbers."),
+    B("So to count the square numbers up to a square, take its square root. Up to 11 times 11 there are exactly 11 of them."),
+)
+
+# 8 on a side leaves 17 over; 9 on a side fits exactly.
+LESSONS[P + "50b30071-3fdf-4d1d-9940-0b73a0416b99"] = LESSON(
+    B("Raju tries his coins in a square with 8 on each side, and has 17 left over. Then he tries 9 on each side, and every coin fits with none to spare. How many coins does he have?",
+      GIVEN("q", "8 on a side: 17 left over. 9 on a side: fits exactly")),
+    B("Which clue gives us the answer straight away?",
+      ask=CHOOSE(["the 17 left over", "the 9 by 9 square that fits exactly", "8 + 9"], 1,
+                 "When the coins fill a 9 by 9 square with none left over, the number of coins is exactly the number of places in that square.")),
+    B("A square with 9 on each side has 9 rows of 9. 9 times 9 is 81. So Raju has 81 coins.",
+      *ANSC("l1", "9 × 9 = 81", 81)),
+    B("The first clue lets us check. A square with 8 on each side uses 8 times 8, which is 64 coins.",
+      W("l2", "8 × 8 = 64")),
+    B("If he has 81 coins and the smaller square uses 64, how do we find how many are left over?",
+      ask=CHOOSE(["81 + 64", "81 − 64", "64 − 17"], 1,
+                 "Left over means what remains once the square is made. So take the 64 that were used away from the 81 he has.")),
+    B("81 minus 64 is 17. Exactly the 17 left over in the story. Both clues agree.",
+      W("l3", "81 − 64 = 17")),
+    B("Name the traps. 64 is only the smaller square, with coins still in his hand. And adding 17 to 81 would count the leftover coins twice."),
+    B("So when one clue says the square fits exactly, use that one to find the number. Then use the other clue as your check."),
+)
+
+# √x × 5 + 4² = 51.
+LESSONS[P + "526036b1-7a9f-43bf-b605-10667a6b0fc8"] = LESSON(
+    B("Coach Sharma's clue: take my number, find its square root, multiply that by 5, then add the square of 4, and you get 51. What is his number?",
+      GIVEN("q", "number → square root → × 5 → + 4² → 51")),
+    B("The coach did his steps in order and ended on 51. We start at 51 and undo them, the last one first."),
+    B("The last thing he did was add the square of 4. 4 times 4 is 16.",
+      W("l1", "4² = 16"), UL("q", "+ 4²")),
+    B("He added 16 and reached 51. How do we undo that?",
+      ask=CHOOSE(["51 + 16", "51 − 16", "51 ÷ 16"], 1,
+                 "Adding is undone by taking away. He added 16 to land on 51, so we take 16 off again.")),
+    B("51 minus 16 is 35. So before that last step, he had 35.",
+      W("l2", "51 − 16 = 35")),
+    B("Before that, he multiplied by 5. Divide undoes times, and 35 divided by 5 is 7. So the square root of his number is 7.",
+      W("l3", "35 ÷ 5 = 7"), UL("q", "× 5")),
+    B("The square root of his number is 7. So what is his number?",
+      ask=CHOOSE(["7 × 2 = 14", "7 × 7 = 49", "7 ÷ 2"], 1,
+                 "Taking a square root is undone by squaring, which means multiplying the number by itself. So we need 7 times 7.")),
+    B("7 times 7 is 49. The coach's secret number is 49.",
+      *ANSC("l4", "7 × 7 = 49", 49)),
+    B("Careful with 35 among the choices. That is a number we passed on the way back, not the secret number."),
+    B("Check forwards: the square root of 49 is 7. 7 times 5 is 35. And 35 plus 16 is 51. It works.",
+      W("l5", "√49 × 5 + 4² = 51")),
+    B("So to find a hidden number, walk the steps backwards: take away to undo add, divide to undo times, square to undo square root."),
+)
+
+# The first 15 odd numbers add to 15²; its square root.
+LESSONS[P + "532b6f1c-e072-4b9e-aa0c-e32d18bfb233"] = LESSON(
+    B("Ravi's rangoli has as many dots as the first 15 odd numbers added together. Priya's has as many dots as the square root of Ravi's number. How many dots does Priya have?",
+      GIVEN("q", "Ravi: first 15 odd numbers added. Priya: its square root")),
+    B("Adding 15 odd numbers one at a time would take a while. Let's look for a pattern with small cases first."),
+    B("The first odd number on its own is 1. The first 2 add up to 4. The first 3 add up to 9.",
+      W("l1", "1 + 3 = 4"), W("l2", "1 + 3 + 5 = 9")),
+    B("1, then 4, then 9. What do you notice about these totals?",
+      ask=CHOOSE(["they are odd numbers", "they are square numbers", "they go up by 3 each time"], 1,
+                 "1 is 1 times 1. 4 is 2 times 2. 9 is 3 times 3. Each total is a square number.")),
+    B("Each total is a square. 2 odd numbers give 2 times 2, and 3 odd numbers give 3 times 3. Each new odd number wraps a row, a column and a corner round the square before.",
+      W("l3", "1 + 3 = 2 × 2"), W("l4", "1 + 3 + 5 = 3 × 3")),
+    B("So the first 15 odd numbers add up to 15 times 15, which is 225. That is Ravi's number of dots.",
+      W("l5", "15 × 15 = 225")),
+    B("Priya's number is the square root of 15 times 15. What is it?",
+      ask=CHOOSE(["225", "15", "30"], 1,
+                 "A square root asks: which number, times itself, gives this? Ravi's number is 15 times 15, so the answer is sitting right there.")),
+    B("The square root of 15 times 15 is simply 15. Priya's rangoli has 15 dots.",
+      *ANSC("l6", "√225 = 15", 15)),
+    B("The trap is 225. That is Ravi's number. Squaring and taking the square root undo each other, so we land back on 15."),
+    B("Check the 225: 15 times 10 is 150, 15 times 5 is 75, and 150 plus 75 is 225.",
+      W("l7", "150 + 75 = 225")),
+    B("So remember the pattern: add up the first so many odd numbers, and you get that many squared."),
+)
+
+# Square layers of balls: 6², 5², ... 1².
+LESSONS[P + "5524f10a-fe86-4778-93d9-513c93e0c371"] = LESSON(
+    B("Cricket balls are stacked in square layers. The bottom layer has 6 balls on each side, the next has 1 fewer on each side, and so on, up to a single ball on top. How many balls altogether?",
+      GIVEN("q", "Square layers: 6 on a side at the bottom, down to 1 on top")),
+    B("How many balls are in the bottom layer?",
+      ask=CHOOSE(["6", "6 × 4 = 24", "6 × 6 = 36"], 2,
+                 "The layer is a full square, 6 rows of 6. So it holds 6 times 6 balls, not just the ones round the edge.")),
+    B("The bottom layer is 6 times 6, which is 36. The layer above has 5 on a side, so 5 times 5, which is 25.",
+      W("l1", "6 × 6 = 36"), W("l2", "5 × 5 = 25")),
+    B("Carry on up the stack. 4 times 4 is 16, 3 times 3 is 9, 2 times 2 is 4, and the top layer is just 1.",
+      W("l3", "4 × 4 = 16"), W("l4", "3 × 3 = 9"), W("l5", "2 × 2 = 4"), W("l6", "1 × 1 = 1")),
+    B("Six layers, so six numbers to add.",
+      W("l7", "36 + 25 + 16 + 9 + 4 + 1")),
+    B("Add them in friendly pairs. 36 plus 4 is 40. 25 plus 16 is 41. 9 plus 1 is 10.",
+      W("l8", "36 + 4 = 40"), W("l9", "25 + 16 = 41"), W("l10", "9 + 1 = 10")),
+    B("40 plus 41 is 81, and 10 more makes 91. There are 91 balls in the box.",
+      W("l11", "40 + 41 = 81"), *ANSC("l12", "81 + 10 = 91", 91)),
+    B("The trap is losing a layer. Leave out the bottom layer of 36, and you get 55. Count your layers: there must be 6 of them.",
+      W("l13", "91 − 36 = 55")),
+    B("Check by adding in order, from the bottom up. The running total goes 36, 61, 77, 86, 90, and then 91. The same answer.",
+      LB("l14", "36 → 61 → 77 → 86 → 90 → 91")),
+    B("So for a stack of square layers: square each side, from the biggest down to 1, and add them all up."),
+)
+
+# 196 players in a square; the last 2 rows sit down.
+LESSONS[P + "7a3ad5fa-f41b-4ebd-b11c-0258d8068800"] = LESSON(
+    B("Coach Sharma lines up 196 players in a perfect square, in equal rows and columns. Then the last 2 rows sit down. How many players are still standing?",
+      GIVEN("q", "196 players in a square. The last 2 rows sit down")),
+    B("To know how many sit down, what must we find first?",
+      ask=CHOOSE(["196 ÷ 2", "how many players are in one row", "196 − 2"], 1,
+                 "2 rows sit down, not 2 players. So we need to know how many players make up one row.")),
+    B("In a square, the number in a row times itself gives the total. 10 times 10 is 100 and 20 times 20 is 400, so the row is between 10 and 20.",
+      W("l1", "10 × 10 = 100"), W("l2", "20 × 20 = 400")),
+    B("196 ends in 6, so try 14. 14 times 10 is 140, 14 times 4 is 56, and 140 plus 56 is 196. Each row has 14 players.",
+      W("l3", "14 × 10 = 140"), W("l4", "14 × 4 = 56"), W("l5", "14 × 14 = 196")),
+    B("2 rows sit down. 2 times 14 is 28 players sitting.",
+      W("l6", "2 × 14 = 28")),
+    B("Take them away from the total. 196 minus 28 is 168 players still standing.",
+      *ANSC("l7", "196 − 28 = 168", 168)),
+    B("The trap is 196 minus 2: taking away 2 players when 2 whole rows sat down. Each row is 14 players."),
+    B("Check another way. 14 rows, less the 2 that sat, leaves 12 rows standing. And 12 rows of 14 is 168.",
+      W("l8", "14 − 2 = 12"), W("l9", "12 × 14 = 168")),
+    B("So in a square of people, find the size of a row with a square root first. Then rows turn into people by multiplying."),
+)
+
+# 15 in a row, 15 in a column: more than 200?
+LESSONS[P + "7d88b8b1-a54a-4471-b01c-d449a771ab6e"] = LESSON(
+    B("Ananya fills a big square with small tiles: 15 along one row, and 15 along one column. Karan bets she used more than 200. Is he right, and how many did she use?",
+      GIVEN("q", "15 tiles in a row, 15 in a column. More than 200?")),
+    B("How do we find all the tiles in the square?",
+      ask=CHOOSE(["15 + 15", "15 × 15", "15 × 4"], 1,
+                 "There are 15 in a row, and 15 rows going down. That is 15 lots of 15, so we multiply.")),
+    B("15 rows of 15 is 15 times 15, which we call 15 squared.",
+      W("l1", "15² = 15 × 15")),
+    B("Do it in two bites. 10 rows of 15 are 150.",
+      W("l2", "10 × 15 = 150")),
+    B("The other 5 rows of 15 are 75. And 150 plus 75 is 225.",
+      W("l3", "5 × 15 = 75"), W("l4", "150 + 75 = 225")),
+    B("She used 225 tiles. So was Karan right that it is more than 200?",
+      ask=CHOOSE(["no, 225 is less than 200", "yes, 225 is more than 200"], 1,
+                 "Compare them. 200 is 2 hundreds exactly, and 225 is 2 hundreds with some more on top. So 225 is the bigger one.")),
+    B("Yes. 225 is more than 200, so Karan wins his bet, and Ananya used 225 tiles.",
+      *ANSC("l5", "15 × 15 = 225", 225), W("l6", "225 > 200")),
+    B("Some of the choices say yes but give a different count. Getting the yes right is not enough: the number has to be right too."),
+    B("Check by dividing: 225 tiles in rows of 15 make exactly 15 rows.",
+      W("l7", "225 ÷ 15 = 15")),
+    B("So a square with 15 on a side holds 15 squared. Work out the number first, and only then answer the yes or no."),
+)
+
+# Frames with sides √49 cm and √144 cm; one light per cm of border.
+LESSONS[P + "95408d7a-99df-4b42-9da6-728a79b04c27"] = LESSON(
+    B("Meena has two square frames. One has a side of the square root of 49 centimetres, the other the square root of 144 centimetres. She puts one light every 1 centimetre along both borders. How many lights?",
+      GIVEN("q", "Sides: √49 cm and √144 cm. One light per cm of border")),
+    B("First turn those square roots into plain numbers. Which number times itself is 49? 7 times 7. So the first frame has a side of 7 centimetres.",
+      W("l1", "√49 = 7")),
+    B("And 12 times 12 is 144, so the second frame has a side of 12 centimetres.",
+      W("l2", "12 × 12 = 144"), W("l3", "√144 = 12")),
+    B("The lights go along the border. So what do we need for each frame?",
+      ask=CHOOSE(["its area: side × side", "its perimeter: 4 × side", "just its side"], 1,
+                 "The border is the edge all the way round, and a square has 4 equal sides. So we need 4 times the side. Area would be for lights filling the inside.")),
+    B("First frame: 4 times 7 is 28 centimetres of border, so 28 lights.",
+      W("l4", "4 × 7 = 28")),
+    B("Second frame: 4 times 12 is 48 centimetres of border, so 48 lights.",
+      W("l5", "4 × 12 = 48")),
+    B("Together, 28 plus 48 is 76 lights.",
+      *ANSC("l6", "28 + 48 = 76", 76)),
+    B("Two traps. Adding the sides, 7 plus 12, gives 19: that is one side of each frame and nothing more. And using 49 and 144 as the sides forgets the square roots.",
+      W("l7", "7 + 12 = 19")),
+    B("That 19 gives us a check, though. One side of each is 19 centimetres, and there are 4 sides. 4 times 19 is 76.",
+      W("l8", "4 × 19 = 76")),
+    B("So take the square roots first to get the sides. Then a border means perimeter: 4 times the side."),
+)
+
+# 64 players in a square, 17 more join: how many more for a square? None.
+LESSONS[P + "99d886e8-daf8-4711-acef-12a57e9a965d"] = LESSON(
+    B("Coach Sharma has 64 players standing in a square. Then 17 more join. What is the least number of extra players needed so that everyone can stand in a perfect square again?",
+      GIVEN("q", "64 players in a square, 17 more join. How many more needed?")),
+    B("First, how many players are there now? 64 plus 17 is 81.",
+      W("l1", "64 + 17 = 81")),
+    B("Before we add anyone else, what should we check about 81?",
+      ask=CHOOSE(["whether 81 is even", "whether 81 is already a square number", "how far 81 is from 100"], 1,
+                 "The least number to add could be none at all. So first we test whether 81 players can already make a square.")),
+    B("Is there a number that, multiplied by itself, makes 81? Yes: 9 times 9 is 81.",
+      W("l2", "9 × 9 = 81")),
+    B("So the 81 players can already stand in 9 rows of 9. Nobody else is needed, and the answer is 0.",
+      ANS("l3", "81 − 81 = 0"), CIRC("l3", "0")),
+    B("This question is a little sneaky. 17 and 81 are both among the choices, and both appear in our working. But the question asks how many more are needed, and that is none."),
+    B("Here is why it worked out so neatly. The old square was 8 by 8. A row of 8, a column of 8 and 1 for the corner make 17, exactly what the next square needs.",
+      W("l4", "8 + 8 + 1 = 17")),
+    B("So before adding anything to reach a square, always check whether you are standing on one already."),
+)

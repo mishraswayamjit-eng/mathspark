@@ -1,0 +1,7846 @@
+{
+ "AIGEN_grade5_e344c1e4-4633-4147-9ff3-d5e942eae3be": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya has a square of diyas. Add 15 more, and she can make the very next bigger square. How many diyas are in her square now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "A square + 15 = the next square",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's write the square numbers in a row. 1 times 1 is 1, 2 times 2 is 4, 3 times 3 is 9, and so on.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sq",
+      "text": "Squares: 1, 4, 9, 16, 25, 36, 49, 64, 81",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We need two neighbours in this list with a gap of exactly 15. Try 25 and 36. What is the gap between them?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "sq",
+      "target": {
+       "text": "25"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "sq",
+      "target": {
+       "text": "36"
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "11",
+      "9"
+     ],
+     "answer": 1,
+     "ifNot": "Count on from 25 until you reach 36. How many steps did you take?"
+    }
+   },
+   {
+    "say": "11. Too small. But look at how the gaps grow: 3, 5, 7, 9, 11. Each gap is 2 more than the one before.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "36 − 25 = 11"
+     },
+     {
+      "op": "write",
+      "id": "gp",
+      "text": "Gaps: 3, 5, 7, 9, 11, 13, 15",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So after 11 comes 13, and then 15. The gap of 15 sits between 49 and 64.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "gp",
+      "target": {
+       "text": "15"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "64 − 49 = 15"
+     }
+    ]
+   },
+   {
+    "say": "Now, careful. Priya's square today is the one before the 15 extra diyas go in. Which number is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "64",
+      "15",
+      "49"
+     ],
+     "answer": 2,
+     "ifNot": "64 is the bigger square, after the extra diyas are added. Her square today is the smaller of the two neighbours."
+    }
+   },
+   {
+    "say": "49. That is 7 rows with 7 diyas in each.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7 × 7 = 49",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "49"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check it against the story. 49 plus 15 is 64, and 64 is 8 times 8. The next square, just as it should be.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "49 + 15 = 64"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "8 × 8 = 64"
+     }
+    ]
+   },
+   {
+    "say": "So when you know the gap between two squares that are neighbours, list the squares, find that gap, and pick the one the question asks for."
+   }
+  ]
+ },
+ "AIGEN_grade5_e419e561-ff8c-4daf-bae2-02021e8fdf47": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Aarav had a square of coins with 8 on each side. Now he has a bigger square, with 11 on each side. How many coins did his uncle give him?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Square of side 8 → square of side 11. Coins added?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "grid",
+       "rows": 8,
+       "cols": 8
+      }
+     }
+    ]
+   },
+   {
+    "say": "Start with last week. 8 coins on each side means 8 rows, with 8 coins in every row. How do we count them all?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 + 8",
+      "8 × 8",
+      "8 × 4"
+     ],
+     "answer": 1,
+     "ifNot": "8 plus 8 only counts two edges. The square is filled in: 8 rows, and 8 coins in each row. So it is rows times coins in a row."
+    }
+   },
+   {
+    "say": "8 times 8 is 64. He had 64 coins last week.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "8 × 8 = 64"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "64"
+      },
+      "text": "last week",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "This week the square is 11 rows of 11. 11 times 10 is 110, and one more 11 makes 121.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "11 × 11 = 110 + 11"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "11 × 11 = 121"
+     },
+     {
+      "op": "note",
+      "line": "w3",
+      "target": {
+       "text": "121"
+      },
+      "text": "this week",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The uncle's coins are the extra ones. Which sum finds them?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "121 + 64",
+      "11 − 8",
+      "121 − 64"
+     ],
+     "answer": 2,
+     "ifNot": "11 minus 8 compares the sides, not the coins. We want how many more coins there are this week than last week."
+    }
+   },
+   {
+    "say": "121 minus 64. Take away 60 first, which leaves 61. Then take away 4 more: 57.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "121 − 60 = 61"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "121 − 64 = 57",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "57"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back. 64 plus 57 is 121. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "64 + 57 = 121"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to subtract the sides, 11 minus 8, and say 3. Sides are not coins!"
+   },
+   {
+    "say": "So: side times side gives the coins in each square. Then subtract to find what was added."
+   }
+  ]
+ },
+ "AIGEN_grade5_e9baf609-4fe9-456e-b861-2647dd4dd744": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This story is long, so let's pull out what it asks. Riya has 200 tiles and adds 25 more to make a square. We want the side squared, plus the square root of 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "(side)² + √225 = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "Tiles: 200 + 25",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, the tiles. 200 plus 25 is 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "200 + 25 = 225"
+     }
+    ]
+   },
+   {
+    "say": "225 tiles make a perfect square. The side is the number that, times itself, gives 225. Which of these could it be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "25",
+      "15",
+      "5"
+     ],
+     "answer": 1,
+     "ifNot": "5 times 5 is only 25, and 25 times 25 is far more than 225. Try the number in between."
+    }
+   },
+   {
+    "say": "15. Let's test it. 15 times 10 is 150, and 15 times 5 is 75. Together that is 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "15 × 15 = 150 + 75"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "15 × 15 = 225"
+     }
+    ]
+   },
+   {
+    "say": "So the side is 15 tiles. That also tells us the square root of 225: it is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "√225 = 15"
+     },
+     {
+      "op": "mark",
+      "line": "w4",
+      "target": {
+       "text": "15"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now the sum. The first part is the side squared. The side is 15. What is 15 squared?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "30",
+      "225",
+      "15"
+     ],
+     "answer": 1,
+     "ifNot": "Squared means times itself, not times 2. And 15 times 15 is already on the board."
+    }
+   },
+   {
+    "say": "225. Squaring the side takes us straight back to the number of tiles. Squaring and square root undo each other.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "15² = 225"
+     }
+    ]
+   },
+   {
+    "say": "Now add the two parts. 225 plus 15 is 240.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w6",
+      "text": "15² + √225 = 225 + 15"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "225 + 15 = 240",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "240"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Watch the trap. One part is the square, 225. The other is the root, 15. Adding 225 twice, or 15 twice, mixes them up."
+   },
+   {
+    "say": "In a long question, find what it really asks, work out each part, then put the parts together."
+   }
+  ]
+ },
+ "AIGEN_grade5_f1fe077a-4169-4b2d-8add-83014e721e8e": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya makes a square from 196 tiles. Then she puts a border of tiles all the way round, one tile wide, to make a bigger square. How many more tiles does she need?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "196 tiles in a square. Border all round: how many more?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, how long is a side? We need the number that times itself gives 196. It ends in 6, so let's try 14. 14 times 10 is 140, and 14 times 4 is 56.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "14 × 14 = 140 + 56"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "14 × 14 = 196"
+     }
+    ]
+   },
+   {
+    "say": "140 and 56 make 196. So each side has 14 tiles.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "w2",
+      "target": {
+       "text": "14"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "length": "14",
+       "breadth": "14",
+       "inside": "196 tiles"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Now the border goes all the way round. Here is the turning point. How long is a side of the bigger square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15 tiles",
+      "16 tiles",
+      "18 tiles"
+     ],
+     "answer": 1,
+     "ifNot": "The border adds one tile at each end of a side: one on the left, and one on the right. So how much longer does the side get?"
+    }
+   },
+   {
+    "say": "16. One extra tile at each end, so the side grows by 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "14 + 2 = 16"
+     }
+    ]
+   },
+   {
+    "say": "The bigger square is 16 rows of 16. 16 times 10 is 160, 16 times 6 is 96, and together they make 256.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "16 × 16 = 160 + 96"
+     },
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "16 × 16 = 256"
+     }
+    ]
+   },
+   {
+    "say": "Riya already has 196 of those tiles. Which sum gives the tiles she must buy?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "256 − 196",
+      "256 + 196",
+      "16 × 4"
+     ],
+     "answer": 0,
+     "ifNot": "The big square needs 256 tiles, and she has 196 of them already. The ones to buy are the difference."
+    }
+   },
+   {
+    "say": "256 minus 196 is 60. She needs 60 more tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "256 − 196 = 60",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "60"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check it another way. Four strips of 14 along the sides make 56. Add the 4 corner tiles, and we get 60 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "4 × 14 = 56"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "56 + 4 = 60"
+     }
+    ]
+   },
+   {
+    "say": "The corners are the trap. It is easy to count the four sides and forget them. Big square minus small square never forgets anything."
+   }
+  ]
+ },
+ "AIGEN_grade5_fccc2071-ac7c-4d33-beab-d71273d4cc65": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya has a big square of 625 tiles. She takes a small square out of one corner, and 576 tiles are left. We want the side of the square she can make from the tiles she took out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "625 tiles − a small square = 576 tiles. Its side?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, how many tiles did she take out? Which sum tells us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "625 + 576",
+      "625 − 576",
+      "625 ÷ 576"
+     ],
+     "answer": 1,
+     "ifNot": "She started with 625, and 576 are still there. The missing tiles are the difference between those two numbers."
+    }
+   },
+   {
+    "say": "625 minus 576. Let's count up. From 576, 24 more gets us to 600. Then 25 more gets us to 625.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "576 + 24 = 600"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "600 + 25 = 625"
+     }
+    ]
+   },
+   {
+    "say": "24 and 25 make 49. So she took out 49 tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "625 − 576 = 49"
+     },
+     {
+      "op": "mark",
+      "line": "w3",
+      "target": {
+       "text": "49"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now those 49 tiles make a new square. The question asks for its side, not the number of tiles. Which number times itself makes 49?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "49",
+      "7",
+      "9"
+     ],
+     "answer": 1,
+     "ifNot": "49 is how many tiles are in the whole square. The side is the number that, multiplied by itself, makes 49. Think of the 7 times table."
+    }
+   },
+   {
+    "say": "7 times 7 is 49. So the new square has 7 tiles on each side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "7 × 7 = 49"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "√49 = 7",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check that no tile has gone missing. The 576 left, plus the 49 taken out, make 625.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "576 + 49 = 625"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at 49. That is how many tiles there are. The side is its square root."
+   },
+   {
+    "say": "So: subtract to find what was removed, then take the square root to find the side."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Four numbers. Three of them are square numbers, and one is not. We want the odd one out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Which is NOT a square number?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "o",
+      "text": "529    144    117    625",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A square number is a whole number times itself, like 3 times 3 is 9. Here is a quick test: a square number can only end in 0, 1, 4, 5, 6 or 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Squares end in 0, 1, 4, 5, 6 or 9",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So look at the last digit of each number. Which one ends in a digit that is not on the list?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "144",
+      "625",
+      "117"
+     ],
+     "answer": 2,
+     "ifNot": "144 ends in 4 and 625 ends in 5. Both of those are on the list. One of the numbers ends in 7."
+    }
+   },
+   {
+    "say": "117 ends in 7, so it cannot be a square. Let's make sure. 10 times 10 is 100, and 11 times 11 is 121.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "117"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "11 × 11 = 121"
+     }
+    ]
+   },
+   {
+    "say": "117 sits between 100 and 121. There is no whole number between 10 and 11, so nothing times itself gives 117.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "100 < 117 < 121"
+     }
+    ]
+   },
+   {
+    "say": "Now the other three, to be sure they really are squares. 12 times 12 is 144.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "12 × 12 = 144"
+     }
+    ]
+   },
+   {
+    "say": "23 times 23 is 529. And 25 times 25 is 625. All three are squares.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "23 × 23 = 529"
+     },
+     {
+      "op": "write",
+      "id": "w6",
+      "text": "25 × 25 = 625"
+     }
+    ]
+   },
+   {
+    "say": "So the one that is not a square number is 117.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "117 is not a square number",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "117"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice the word not in the question. Three of the choices are squares, so it is easy to pick the first square you spot."
+   },
+   {
+    "say": "The method: look at the last digit first. Then trap the number between two squares that are next to each other."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Four numbers, and only one of them is a square number. Let's hunt for it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Which is a square number?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "o",
+      "text": "554    289    111    69",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "To test a number, we trap it between two squares that are next door to each other. Start with 69. 8 times 8 is 64, and 9 times 9 is 81.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "8 × 8 = 64"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "9 × 9 = 81"
+     }
+    ]
+   },
+   {
+    "say": "69 is between 64 and 81, and there is no whole number between 8 and 9. So 69 is out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "64 < 69 < 81"
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "69"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Now 111. 10 times 10 is 100, and 11 times 11 is 121. 111 is stuck between them. Out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4a",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "w4b",
+      "text": "11 × 11 = 121"
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "111"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Now 289. It is between 100 and 20 times 20, which is 400. So we want a number in the teens. 289 ends in 9. Which of these, squared, ends in 9?",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "20 × 20 = 400"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "16",
+      "17"
+     ],
+     "answer": 2,
+     "ifNot": "Look at the last digits. 5 times 5 ends in 5, and 6 times 6 ends in 6. Now work out 7 times 7, and look at its last digit."
+    }
+   },
+   {
+    "say": "17. Let's try it. 17 times 10 is 170, and 17 times 7 is 119. Together they make 289.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w6",
+      "text": "17 × 17 = 170 + 119"
+     },
+     {
+      "op": "write",
+      "id": "w7",
+      "text": "170 + 119 = 289"
+     }
+    ]
+   },
+   {
+    "say": "So 289 is 17 times 17. It is a square number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "17 × 17 = 289",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "289"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "289"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "And 554? 23 times 23 is 529, and 24 times 24 is 576. 554 is trapped between them, so it is not a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w8",
+      "text": "23 × 23 = 529"
+     },
+     {
+      "op": "write",
+      "id": "w9",
+      "text": "24 × 24 = 576"
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "554"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Notice that 69 and 111 end in 9 and 1, just as many squares do. A friendly last digit is not enough on its own."
+   },
+   {
+    "say": "So, to test for a square: guess the size, use the last digit to choose a number to try, and multiply it by itself."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "31 students in every row, and 31 rows in all. How many students altogether?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "31 in each row, 31 rows. Total?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "These are equal groups, counted again and again. Which sum gives the total?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "31 + 31",
+      "31 × 31",
+      "31 × 2"
+     ],
+     "answer": 1,
+     "ifNot": "31 plus 31 counts only two rows. There are 31 rows, each with 31 in it, so we multiply."
+    }
+   },
+   {
+    "say": "31 times 31. A number times itself: that is a square number. It is a big sum, so let's split one 31 into 30 and 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "31 × 31 = 31 × 30 + 31 × 1"
+     },
+     {
+      "op": "mark",
+      "line": "w1",
+      "target": {
+       "text": "31 × 30"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "w1",
+      "target": {
+       "text": "31 × 1"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Take the first part. What is 31 times 30?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "93",
+      "930",
+      "900"
+     ],
+     "answer": 1,
+     "ifNot": "Work out 31 times 3 first. Then make it ten times bigger, because 30 is 3 tens."
+    }
+   },
+   {
+    "say": "930. Now the second part: 31 times 1 is just 31.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "31 × 30 = 930"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "31 × 1 = 31"
+     }
+    ]
+   },
+   {
+    "say": "Add the two parts. 930 plus 31 is 961. So there are 961 students.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "930 + 31 = 961",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "961"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Does that look sensible? 30 times 30 is 900, so our answer should be a bit more than 900. It is.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "30 × 30 = 900"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at 31 times 30. That leaves out one whole row of 31 students."
+   },
+   {
+    "say": "So for 31 rows of 31, multiply 31 by itself. Split it into tens and ones to make the sum easy."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We have four digits. Only one of them can be the last digit of a square number. Which?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Which digit can be in the units place of a square?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "o",
+      "text": "2    3    0    7",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The units place is the last digit. And here is a lovely fact: the last digit of a square depends only on the last digit of the number you square. So we only need to test 0 to 9."
+   },
+   {
+    "say": "Let's square them. 0 times 0 is 0. 1 times 1 is 1. 2 times 2 is 4. 3 times 3 is 9. 4 times 4 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "0×0 = 0   1×1 = 1   2×2 = 4   3×3 = 9   4×4 = 16",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "5 times 5 is 25. 6 times 6 is 36. 7 times 7 is 49. 8 times 8 is 64. 9 times 9 is 81.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "5×5 = 25   6×6 = 36   7×7 = 49   8×8 = 64   9×9 = 81",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now look only at the last digit of each answer. 16 ends in 6. What does 49 end in?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s1",
+      "target": {
+       "text": "16"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "s2",
+      "target": {
+       "text": "49"
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "9",
+      "7"
+     ],
+     "answer": 1,
+     "ifNot": "The last digit is the one on the right, in the units place. 49 has 4 tens and 9 units."
+    }
+   },
+   {
+    "say": "9. Collect all ten last digits, and only six different ones turn up: 0, 1, 4, 5, 6 and 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Last digits of squares: 0, 1, 4, 5, 6, 9",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "0, 1, 4, 5, 6, 9"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Now test the choices. 2, 3 and 7 are not on our list. 0 is.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "2"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "3"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "7"
+      }
+     },
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "0"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So a square number can end in 0. For example, 10 times 10 is 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "A square can end in 0",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "0"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "e",
+      "text": "10 × 10 = 100"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to think any digit can turn up at the end of a square. No square ever ends in 2, 3, 7 or 8."
+   },
+   {
+    "say": "So remember the six endings a square can have: 0, 1, 4, 5, 6 and 9."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We have four digits. Three of them can be the last digit of a square number. One never can. Which?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Which digit can NOT be in the units place of a square?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "o",
+      "text": "1    4    5    8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The units place is the last digit. And here is a lovely fact: the last digit of a square depends only on the last digit of the number you square. So we only need to test 0 to 9."
+   },
+   {
+    "say": "Let's square them. 0 times 0 is 0. 1 times 1 is 1. 2 times 2 is 4. 3 times 3 is 9. 4 times 4 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "0×0 = 0   1×1 = 1   2×2 = 4   3×3 = 9   4×4 = 16",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "5 times 5 is 25. 6 times 6 is 36. 7 times 7 is 49. 8 times 8 is 64. 9 times 9 is 81.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "5×5 = 25   6×6 = 36   7×7 = 49   8×8 = 64   9×9 = 81",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now look only at the last digit of each answer. 16 ends in 6. What does 49 end in?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s1",
+      "target": {
+       "text": "16"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "s2",
+      "target": {
+       "text": "49"
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "9",
+      "7"
+     ],
+     "answer": 1,
+     "ifNot": "The last digit is the one on the right, in the units place. 49 has 4 tens and 9 units."
+    }
+   },
+   {
+    "say": "9. Collect all ten last digits, and only six different ones turn up: 0, 1, 4, 5, 6 and 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Last digits of squares: 0, 1, 4, 5, 6, 9",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "0, 1, 4, 5, 6, 9"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Now test the choices. 1, 4 and 5 are all on our list. 8 is not.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So a square number can never end in 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "A square never ends in 8",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice the words can not in the question. Three of the choices are fine endings, and we want the one that is not. The four digits that never end a square are 2, 3, 7 and 8."
+   },
+   {
+    "say": "So remember the six endings a square can have: 0, 1, 4, 5, 6 and 9."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This question is a mouthful. In short: square 3, square 4, add the two answers, and then find which number squared gives that total.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "?² = 3² + 4²",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the square of 3. What does squaring a number mean?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 × 2",
+      "3 × 3",
+      "3 + 3"
+     ],
+     "answer": 1,
+     "ifNot": "Squaring is multiplying a number by itself. So the square of 3 is 3 times 3."
+    }
+   },
+   {
+    "say": "3 times 3 is 9. And the square of 4 is 4 times 4, which is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "3² = 3 × 3 = 9"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "4² = 4 × 4 = 16"
+     }
+    ]
+   },
+   {
+    "say": "Now add the two squares. 9 plus 16 is 25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "9 + 16 = 25"
+     },
+     {
+      "op": "mark",
+      "line": "w3",
+      "target": {
+       "text": "25"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Last step. Which number, times itself, makes 25?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7",
+      "25",
+      "5"
+     ],
+     "answer": 2,
+     "ifNot": "7 is just 3 plus 4, and 7 times 7 is much more than 25. We need the number whose square is 25."
+    }
+   },
+   {
+    "say": "5 times 5 is 25. So the number is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "5 × 5 = 25"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "5² = 3² + 4²",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the trap: you cannot add 3 and 4 first and say 7. Square each number first, then add."
+   },
+   {
+    "say": "So: square each number, add the squares, then find the number whose square is that total."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Students stand in rows. The number of rows is the same as the number of students in each row, and there are 576 students in all. How many rows?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "rows = students in each row. Total 576. Rows = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Rows times students in a row gives the total. Here those two numbers are the same. So what are we looking for?",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "□ × □ = 576",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "576 ÷ 2",
+      "the square root of 576",
+      "576 × 576"
+     ],
+     "answer": 1,
+     "ifNot": "Halving would work if the number were added to itself. Here it is multiplied by itself, so we need the number whose square is 576."
+    }
+   },
+   {
+    "say": "Let's close in on it. 20 times 20 is 400: too small. 30 times 30 is 900: too big. So our number is in the twenties.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "20 × 20 = 400"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "30 × 30 = 900"
+     }
+    ]
+   },
+   {
+    "say": "Now the last digit. 576 ends in 6. 4 times 4 is 16, and 6 times 6 is 36, and both end in 6. So the number is 24 or 26.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "4 × 4 = 16"
+     },
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "6 × 6 = 36"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "Try 24 or 26",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here is a helper: 25 times 25 is 625, and that is more than 576. So which one is it?",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "25 × 25 = 625"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "26",
+      "24"
+     ],
+     "answer": 1,
+     "ifNot": "25 squared is already too big, so 26 squared would be bigger still. We need the one below 25."
+    }
+   },
+   {
+    "say": "24. Let's check it. 24 times 20 is 480, and 24 times 4 is 96. Together they make 576. Yes!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w6",
+      "text": "24 × 24 = 480 + 96"
+     },
+     {
+      "op": "write",
+      "id": "w7",
+      "text": "480 + 96 = 576"
+     }
+    ]
+   },
+   {
+    "say": "So there are 24 rows, with 24 students in each.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "√576 = 24",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "24"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to halve the total. Halving undoes adding a number to itself. A square root undoes multiplying it by itself."
+   },
+   {
+    "say": "So to find a square root: trap it between two easy squares, use the last digit to narrow it down, then multiply to check."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is a square, and each side is 21 centimetres. We want its area: how much flat space it covers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Square: side 21 cm. Area = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "length": "21 cm",
+       "breadth": "21 cm",
+       "inside": "Area = ?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "How do we find the area of a square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "side × 4",
+      "side × side",
+      "side + side"
+     ],
+     "answer": 1,
+     "ifNot": "Side times 4 goes round the edge. That is the perimeter. Area fills the inside: rows of little squares, so it is side times side."
+    }
+   },
+   {
+    "say": "Side times side. So the area is 21 times 21.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Area = side × side",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "w0",
+      "text": "Area = 21 × 21",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Split one 21 into 20 and 1. 21 times 20 is 420, and 21 times 1 is just 21.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "21 × 21 = 21 × 20 + 21 × 1"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "21 × 20 = 420"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "21 × 1 = 21"
+     }
+    ]
+   },
+   {
+    "say": "Add the two parts. 420 plus 21 is 441.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "420 + 21 = 441"
+     },
+     {
+      "op": "mark",
+      "line": "w4",
+      "target": {
+       "text": "441"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now the unit, and this matters. The sides are in centimetres. What is the area measured in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "cm",
+      "sq.cm"
+     ],
+     "answer": 1,
+     "ifNot": "Plain centimetres measure a length, like a side. Area is counted in little squares, each 1 centimetre by 1 centimetre."
+    }
+   },
+   {
+    "say": "Square centimetres. So the area is 441 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Area = 441 sq.cm",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "441 sq.cm"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Quick check: 20 times 20 is 400. A square of side 21 should cover a little more than that, and 441 does.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "20 × 20 = 400"
+     }
+    ]
+   },
+   {
+    "say": "Two things to watch: keep the digits of the number in the right order, and write square centimetres for an area. Side times side, then square units."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We want the smallest number with 4 digits that is also a perfect square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Least 4-digit number that is a perfect square?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the smallest 4 digit number of all. Which is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1,111",
+      "1,000",
+      "9,999"
+     ],
+     "answer": 1,
+     "ifNot": "The smallest 4 digit number uses the smallest digits it can: a 1 to start, and then zeros."
+    }
+   },
+   {
+    "say": "1,000. If 1,000 were a square, we would be done. So let's test it. 30 times 30 is 900: close, but below.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "Smallest 4-digit number: 1,000",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "30 × 30 = 900"
+     }
+    ]
+   },
+   {
+    "say": "31 times 31 is 961. Still only 3 digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "31 × 31 = 961"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "961"
+      },
+      "text": "3 digits",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now 32 times 32. 32 times 30 is 960, and 32 times 2 is 64. Together they make 1,024.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "32 × 32 = 960 + 64"
+     },
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "960 + 64 = 1,024"
+     }
+    ]
+   },
+   {
+    "say": "So 961 is just below 1,000, and 1,024 is just above it. Is 1,000 itself a square?",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "961 < 1,000 < 1,024"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes",
+      "No, it falls in the gap"
+     ],
+     "answer": 1,
+     "ifNot": "31 squared is 961 and 32 squared is 1,024. There is no whole number between 31 and 32, so nothing squares to 1,000."
+    }
+   },
+   {
+    "say": "It is not. The squares jump from 961 straight to 1,024. So the first square with 4 digits is 1,024.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "32 × 32 = 1,024",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1,024"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to answer 1,000 just because it is the least 4 digit number. It also has to be a perfect square."
+   },
+   {
+    "say": "So: start at the smallest 4 digit number, and find the first square at or above it."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We want the largest number with 4 digits that is also a perfect square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Largest 4-digit number that is a perfect square?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The largest 4 digit number is 9,999. The very next number, 10,000, has 5 digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "Largest 4-digit number: 9,999",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "Next number: 10,000 (5 digits)",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here is a lucky fact. 10,000 is a square: 100 times 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "100 × 100 = 10,000"
+     }
+    ]
+   },
+   {
+    "say": "That square has 5 digits, so it is too big. Which square comes just before it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "90 × 90",
+      "99 × 99",
+      "9,999"
+     ],
+     "answer": 1,
+     "ifNot": "Squares come in order, one after another. The square just before 100 squared comes from the number just before 100."
+    }
+   },
+   {
+    "say": "99 times 99. Here is an easy way. 100 lots of 99 make 9,900. We only want 99 lots, so we take one 99 away.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "99 × 100 = 9,900"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "99 × 99 = 9,900 − 99"
+     }
+    ]
+   },
+   {
+    "say": "What is 9,900 minus 99?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9,811",
+      "9,899",
+      "9,801"
+     ],
+     "answer": 2,
+     "ifNot": "Take away 100 first. That is 1 too many, because 99 is 1 less than 100. So give 1 back."
+    }
+   },
+   {
+    "say": "9,900 minus 100 is 9,800, and 1 back makes 9,801. So 99 times 99 is 9,801.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "9,900 − 100 = 9,800"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "99 × 99 = 9,801",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "9,801"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 9,999. It is the largest 4 digit number, but it sits between 9,801 and 10,000, so it is not a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "9,801 < 9,999 < 10,000"
+     }
+    ]
+   },
+   {
+    "say": "So: find the first square that is too big, then step back one. 100 squared has 5 digits, so 99 squared is the largest with 4."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A man offers flowers at every temple in the city. In each temple he puts as many flowers as there are temples. He uses 4 baskets, with 100 flowers in each. How many temples?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "4 baskets of 100 flowers.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Flowers in each temple = number of temples",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, how many flowers did he use? 4 baskets of 100 is 400.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "4 × 100 = 400"
+     }
+    ]
+   },
+   {
+    "say": "Now the clever clue. Suppose there were just 3 temples. He would put 3 flowers in each, and use 3 times 3, which is 9 flowers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "If 3 temples: 3 × 3 = 9 flowers",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So the total is always the number of temples times itself. Which number, times itself, makes 400?",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "temples × temples = 400",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "200",
+      "100",
+      "20"
+     ],
+     "answer": 2,
+     "ifNot": "200 is half of 400, but 200 times 200 is far too big. Think: 2 times 2 is 4. So which number times itself is 400?"
+    }
+   },
+   {
+    "say": "20. 2 times 2 is 4, so 20 times 20 is 400.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "20 × 20 = 400"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "√400 = 20",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "20"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So there are 20 temples, and he puts 20 flowers in each one."
+   },
+   {
+    "say": "Check with the story: 20 temples with 20 flowers each is 400 flowers. That is exactly 4 baskets of 100."
+   },
+   {
+    "say": "The other choices are numbers from the story: 4 is the baskets, and 100 is the flowers in one basket. Neither is the number of temples."
+   },
+   {
+    "say": "When the number in each group equals the number of groups, the total is a square. Find the total, then take its square root."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here x is 2 and y is 1, and we need the value of x squared plus y squared.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "x = 2, y = 1. Find x² + y²",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A letter is just a box with a number inside. So put the numbers in. Where x was, write 2. Where y was, write 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "2² + 1²"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "2²"
+      },
+      "text": "x²",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "1²"
+      },
+      "text": "y²",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, which comes first: squaring each number, or working out 2 plus 1?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 + 1 first",
+      "square each number first"
+     ],
+     "answer": 1,
+     "ifNot": "Look where the little 2 sits: on the x alone, and on the y alone. There is no bracket joining them, so each one is squared first."
+    }
+   },
+   {
+    "say": "Each one is squared first. Start with x. 2 squared is 2 times 2, which is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "2² = 2 × 2 = 4"
+     }
+    ]
+   },
+   {
+    "say": "Now y. What does 1 squared mean?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1 × 2",
+      "1 × 1",
+      "1 + 2"
+     ],
+     "answer": 1,
+     "ifNot": "The little 2 does not mean times 2. It tells us to multiply the number by itself."
+    }
+   },
+   {
+    "say": "1 times 1 is 1. Not 2!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "1² = 1 × 1 = 1"
+     }
+    ]
+   },
+   {
+    "say": "Now add the two squares. 4 plus 1 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "4 + 1 = 5"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "x² + y² = 5",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to do 2 plus 1 first, and then square. That gives 3 squared, which is 9. It would only be right with a bracket round x plus y.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "(2 + 1)² = 9"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "(2 + 1)²"
+      },
+      "text": "a different sum",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So: put the numbers in, square each one, and only then add."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here x is 3 and y is 2. We need the value of x plus y, all squared.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "x = 3, y = 2. Find (x + y)²",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A letter is just a box with a number inside. So put the numbers in. Where x was, write 3. Where y was, write 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "(3 + 2)²"
+     }
+    ]
+   },
+   {
+    "say": "There is a bracket, with a little 2 sitting outside it. What do we do first?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "w1",
+      "target": {
+       "text": "(3 + 2)"
+      },
+      "shape": "box"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "square 3 and square 2",
+      "work out the bracket"
+     ],
+     "answer": 1,
+     "ifNot": "The little 2 is outside the bracket, so it squares everything inside together. Brackets always come first."
+    }
+   },
+   {
+    "say": "The bracket first. 3 plus 2 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "3 + 2 = 5"
+     }
+    ]
+   },
+   {
+    "say": "So now we have 5 squared. What is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "5²"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10",
+      "25"
+     ],
+     "answer": 1,
+     "ifNot": "Squared means the number is multiplied by itself. It does not mean times 2."
+    }
+   },
+   {
+    "say": "25. 5 squared is 5 times 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "5² = 5 × 5 = 25"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "(x + y)² = 25",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "25"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to square each number on its own. 3 squared plus 2 squared is 9 plus 4, which is 13. That is a different sum, with no bracket.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "3² + 2² = 9 + 4 = 13"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "3² + 2²"
+      },
+      "text": "a different sum",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So: numbers in, bracket first, then square."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here x is 5 and y is 2. We need the value of x minus y, all squared.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "x = 5, y = 2. Find (x − y)²",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A letter is just a box with a number inside. So put the numbers in. Where x was, write 5. Where y was, write 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "(5 − 2)²"
+     }
+    ]
+   },
+   {
+    "say": "There is a bracket, with a little 2 sitting outside it. What do we do first?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "w1",
+      "target": {
+       "text": "(5 − 2)"
+      },
+      "shape": "box"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "square 5 and square 2",
+      "work out the bracket"
+     ],
+     "answer": 1,
+     "ifNot": "The little 2 is outside the bracket, so it squares everything inside together. Brackets always come first."
+    }
+   },
+   {
+    "say": "The bracket first. 5 minus 2 is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "5 − 2 = 3"
+     }
+    ]
+   },
+   {
+    "say": "So now we have 3 squared. What is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "3²"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6",
+      "9"
+     ],
+     "answer": 1,
+     "ifNot": "Squared means the number is multiplied by itself. It does not mean times 2."
+    }
+   },
+   {
+    "say": "9. 3 squared is 3 times 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "3² = 3 × 3 = 9"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "(x − y)² = 9",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to square each number on its own. 5 squared minus 2 squared is 25 minus 4, which is 21. That is a different sum, with no bracket.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "5² − 2² = 25 − 4 = 21"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "5² − 2²"
+      },
+      "text": "a different sum",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So: numbers in, bracket first, then square."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q021": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Four numbers, and one of them is a square. Let's find it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Which is a square?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "o",
+      "text": "800    8,381    1,000    1,089",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A handy fact to start: 30 times 30 is 900. So 800 comes from a number just under 30, if it is a square at all.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w0",
+      "text": "30 × 30 = 900"
+     }
+    ]
+   },
+   {
+    "say": "28 times 28 is 784, and 29 times 29 is 841. 800 falls in the gap between them, so it is not a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "28 × 28 = 784"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "29 × 29 = 841"
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "800"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Now 1,000. 31 times 31 is 961, and 32 times 32 is 1,024. 1,000 falls in that gap. Not a square either.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "31 × 31 = 961"
+     },
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "32 × 32 = 1,024"
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "1,000"
+      }
+     }
+    ]
+   },
+   {
+    "say": "1,089 comes just after 1,024. So which number should we try squaring?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "31",
+      "33",
+      "30"
+     ],
+     "answer": 1,
+     "ifNot": "32 times 32 gave 1,024, which is a little too small. So try the next number up."
+    }
+   },
+   {
+    "say": "33. 33 times 30 is 990, and 33 times 3 is 99. Together they make 1,089. Got it!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "33 × 33 = 990 + 99"
+     },
+     {
+      "op": "write",
+      "id": "w6",
+      "text": "990 + 99 = 1,089"
+     }
+    ]
+   },
+   {
+    "say": "So 1,089 is 33 times 33. That is our square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "33 × 33 = 1,089",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1,089"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "1,089"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "What about 8,381? It ends in 1, which looks promising. But 91 times 91 is 8,281, and 92 times 92 is 8,464. 8,381 sits in the gap.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w7",
+      "text": "91 × 91 = 8,281"
+     },
+     {
+      "op": "write",
+      "id": "w8",
+      "text": "92 × 92 = 8,464"
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "8,381"
+      }
+     }
+    ]
+   },
+   {
+    "say": "So a friendly last digit is not proof. Trap the number between two squares that are next to each other, or find the number that squares to it."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q022": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We are told x is 6 and y is 8. We want the square of x squared plus y squared.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "x = 6, y = 8. Find the square of x² + y²",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Read that slowly, because there are two jobs. First find x squared plus y squared. Then square that whole answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "j1",
+      "text": "Job 1: x² + y²",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "j2",
+      "text": "Job 2: square the result",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Job 1. x is 6, so x squared is 6 times 6, which is 36. y is 8, so y squared is 8 times 8, which is 64.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "6² = 6 × 6 = 36"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "8² = 8 × 8 = 64"
+     }
+    ]
+   },
+   {
+    "say": "Now add them. What is 36 plus 64?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "90",
+      "100",
+      "110"
+     ],
+     "answer": 1,
+     "ifNot": "Add the units first: 6 and 4 make 10. Then add the tens, and do not forget the ten you just made."
+    }
+   },
+   {
+    "say": "100. A lovely round number. That is job 1 done.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "36 + 64 = 100"
+     },
+     {
+      "op": "strike",
+      "line": "j1",
+      "target": {
+       "text": "Job 1: x² + y²"
+      },
+      "note": "done"
+     }
+    ]
+   },
+   {
+    "say": "So, are we finished?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes: the answer is 100",
+      "No: now square the 100"
+     ],
+     "answer": 1,
+     "ifNot": "Look back at the question. It asks for the square of x squared plus y squared. So far we have only found the part inside."
+    }
+   },
+   {
+    "say": "Job 2. 100 squared is 100 times 100, and that is 10,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "100² = 100 × 100 = 10,000"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "(x² + y²)² = 10,000",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "10,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the whole thing in one line: 6 squared plus 8 squared, all squared, is 10,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "(6² + 8²)² = 10,000"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at 100, which is waiting among the choices. And when you square 100, count the zeros: two zeros times two zeros gives four."
+   },
+   {
+    "say": "So when a question says the square of something, find the something first, then square it."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q024": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "34 boys in every room, and 34 rooms in all. How many boys altogether?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "34 in each room, 34 rooms. Total?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "These are equal groups, counted again and again. Which sum gives the total?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "34 + 34",
+      "34 × 34",
+      "34 × 2"
+     ],
+     "answer": 1,
+     "ifNot": "34 plus 34 counts only two rooms. There are 34 rooms, each with 34 in it, so we multiply."
+    }
+   },
+   {
+    "say": "34 times 34. A number times itself: that is a square number. It is a big sum, so let's split one 34 into 30 and 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "34 × 34 = 34 × 30 + 34 × 4"
+     },
+     {
+      "op": "mark",
+      "line": "w1",
+      "target": {
+       "text": "34 × 30"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "w1",
+      "target": {
+       "text": "34 × 4"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Take the first part. What is 34 times 30?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "102",
+      "1,020",
+      "900"
+     ],
+     "answer": 1,
+     "ifNot": "Work out 34 times 3 first. Then make it ten times bigger, because 30 is 3 tens."
+    }
+   },
+   {
+    "say": "1,020. Now the second part: 34 times 4 is 136.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "34 × 30 = 1,020"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "34 × 4 = 136"
+     }
+    ]
+   },
+   {
+    "say": "Add the two parts. 1,020 plus 136 is 1,156. So there are 1,156 boys.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "1,020 + 136 = 1,156",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1,156"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Does that look sensible? 30 times 30 is 900, so our answer should be a bit more than 900. It is.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "30 × 30 = 900"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to add. 34 plus 34 is only 68, and that counts just two of the rooms.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "34 + 34 = 68"
+     },
+     {
+      "op": "strike",
+      "line": "t",
+      "target": {
+       "text": "34 + 34 = 68"
+      },
+      "note": "only 2 rooms"
+     }
+    ]
+   },
+   {
+    "say": "So for 34 rooms of 34, multiply 34 by itself. Split it into tens and ones to make the sum easy."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q025": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This question is a mouthful. In short: square 3, square 7, add the two answers, and then find which number squared gives that total.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "?² = 3² + 7²",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the square of 3. What does squaring a number mean?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 × 2",
+      "3 × 3",
+      "3 + 3"
+     ],
+     "answer": 1,
+     "ifNot": "Squaring is multiplying a number by itself. So the square of 3 is 3 times 3."
+    }
+   },
+   {
+    "say": "3 times 3 is 9. And the square of 7 is 7 times 7, which is 49.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "3² = 3 × 3 = 9"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "7² = 7 × 7 = 49"
+     }
+    ]
+   },
+   {
+    "say": "Now add the two squares. 9 plus 49 is 58.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "9 + 49 = 58"
+     },
+     {
+      "op": "mark",
+      "line": "w3",
+      "target": {
+       "text": "58"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Last step. Which number, times itself, makes 58? Try 7. 7 times 7 is 49. Too small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "7 × 7 = 49"
+     }
+    ]
+   },
+   {
+    "say": "Try the next number, 8. 8 times 8 is 64. What does that tell us?",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "8 × 8 = 64"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the number is 7",
+      "the number is 8",
+      "58 is not a square"
+     ],
+     "answer": 2,
+     "ifNot": "49 is below 58, and 64 is above it. So 58 falls in the gap between two squares that are next door."
+    }
+   },
+   {
+    "say": "58 is stuck between 49 and 64. No whole number squared gives 58, so 5, 6 and 7 are all out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w6",
+      "text": "49 < 58 < 64"
+     }
+    ]
+   },
+   {
+    "say": "So the answer is: none of these.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "None of these",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "None of these"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "It can feel odd to pick none of these. But we did the sum and tested the numbers on both sides, so we can be sure."
+   },
+   {
+    "say": "So: square each number, add the squares, then look for a number whose square is that total. Sometimes there is none."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q026": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A mystery number. Add it to itself and we get 4. Multiply it by itself and we get 4 again. Both clues must be true.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "□ + □ = 4   and   □ × □ = 4",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the adding clue. Two equal numbers add up to 4. What is each one?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "□ + □ = 4"
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "2",
+      "8"
+     ],
+     "answer": 1,
+     "ifNot": "Two equal numbers make 4 together. So share 4 into two equal parts."
+    }
+   },
+   {
+    "say": "2, because 2 plus 2 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "2 + 2 = 4"
+     }
+    ]
+   },
+   {
+    "say": "We are not done. The second clue has to fit as well. 2 times 2 is 4. Yes, it does!",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "□ × □ = 4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "2 × 2 = 4"
+     }
+    ]
+   },
+   {
+    "say": "Both clues fit, so the number is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "The number is 2",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's see why the other choices do not work. 1 plus 1 is only 2. And 3 plus 3 is 6. Neither gives 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "1 + 1 = 2"
+     },
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "3 + 3 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Here is something to watch. For 2, doubling and squaring give the same answer. For most numbers they do not: 3 doubled is 6, but 3 squared is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "3 × 3 = 9"
+     }
+    ]
+   },
+   {
+    "say": "So with two clues, use one clue to find the number and the other clue to check it."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q027": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Students sit in rooms. The number of rooms is the same as the number of students in each room, and there are 625 students in all. How many rooms?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "rooms = students in each room. Total 625. Rooms = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Rooms times students in a room gives the total, and here those two numbers are the same. So what do we need?",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "□ × □ = 625",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the square root of 625",
+      "625 ÷ 2",
+      "625 × 2"
+     ],
+     "answer": 0,
+     "ifNot": "Halving would work if the number were added to itself. Here it is multiplied by itself, so we need the number whose square is 625."
+    }
+   },
+   {
+    "say": "Close in on it. 20 times 20 is 400: too small. 30 times 30 is 900: too big. So the number is in the twenties.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "20 × 20 = 400"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "30 × 30 = 900"
+     }
+    ]
+   },
+   {
+    "say": "Now the last digit. 625 ends in 5. Only a number ending in 5 has a square ending in 5. So the one to try is 25.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "625"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "Try 25",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "25 times 25. 25 times 20 is 500, and 25 times 5 is 125. What do they make together?",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "25 × 25 = 500 + 125"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "525",
+      "625",
+      "650"
+     ],
+     "answer": 1,
+     "ifNot": "Add the two parts on the board: 500, and then 125 more."
+    }
+   },
+   {
+    "say": "625, exactly what we wanted. So there are 25 rooms, with 25 students in each.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "500 + 125 = 625"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "√625 = 25",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "25",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The other choices are close on purpose: 24, 26 and 27. Only a number ending in 5 can give a square ending in 5, so they are out at once.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "24, 26, 27: their squares cannot end in 5",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The trap is to halve the total. Halving undoes adding a number to itself. A square root undoes multiplying it by itself."
+   },
+   {
+    "say": "So to find a square root: trap it between two easy squares, use the last digit to narrow it down, then multiply to check."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q028": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A square has an area of 169 square centimetres. We want the length of each side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Square: area 169 sq.cm. Side = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "length": "?",
+       "inside": "169 sq.cm"
+      }
+     }
+    ]
+   },
+   {
+    "say": "For a square, area is side times side. We know the area and want the side. So what must we find?",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "side × side = 169",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "169 ÷ 4",
+      "169 ÷ 2",
+      "the square root of 169"
+     ],
+     "answer": 2,
+     "ifNot": "Dividing by 4 is for a perimeter, where four sides are added. Here the side is multiplied by itself, so we need the number whose square is 169."
+    }
+   },
+   {
+    "say": "Close in on it. 10 times 10 is 100: too small. 20 times 20 is 400: too big. So the side is in the teens.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "20 × 20 = 400"
+     }
+    ]
+   },
+   {
+    "say": "Now the last digit. 169 ends in 9. 3 times 3 is 9, and 7 times 7 is 49. So the side is 13 or 17.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "3 × 3 = 9"
+     },
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "7 × 7 = 49"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "Try 13 or 17",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "169 is much nearer to 100 than to 400. So which one should we try?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "17",
+      "13"
+     ],
+     "answer": 1,
+     "ifNot": "17 is close to 20, so its square would be close to 400. 169 is down near 100, so try the smaller one."
+    }
+   },
+   {
+    "say": "13. Check it: 13 times 10 is 130, and 13 times 3 is 39. Together they make 169. Yes!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "13 × 13 = 130 + 39"
+     },
+     {
+      "op": "write",
+      "id": "w6",
+      "text": "130 + 39 = 169"
+     }
+    ]
+   },
+   {
+    "say": "So each side is 13 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Side = 13 cm",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "13 cm"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Mind the unit. The area is in square centimetres, so the side is in plain centimetres. Not millimetres, and not square centimetres."
+   },
+   {
+    "say": "So for the side of a square, take the square root of the area. to find a square root: trap it between two easy squares, use the last digit to narrow it down, then multiply to check."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q029": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is a square, and each side is 26 centimetres. We want its area: how much flat space it covers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Square: side 26 cm. Area = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "rectangle",
+       "square": true,
+       "length": "26 cm",
+       "breadth": "26 cm",
+       "inside": "Area = ?"
+      }
+     }
+    ]
+   },
+   {
+    "say": "How do we find the area of a square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "side × 4",
+      "side × side",
+      "side + side"
+     ],
+     "answer": 1,
+     "ifNot": "Side times 4 goes round the edge. That is the perimeter. Area fills the inside: rows of little squares, so it is side times side."
+    }
+   },
+   {
+    "say": "Side times side. So the area is 26 times 26.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Area = side × side",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "w0",
+      "text": "Area = 26 × 26",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Split one 26 into 20 and 6. 26 times 20 is 520, and 26 times 6 is 156.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "26 × 26 = 26 × 20 + 26 × 6"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "26 × 20 = 520"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "26 × 6 = 156"
+     }
+    ]
+   },
+   {
+    "say": "Add the two parts. 520 plus 156 is 676.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "520 + 156 = 676"
+     },
+     {
+      "op": "mark",
+      "line": "w4",
+      "target": {
+       "text": "676"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now the unit, and this matters. The sides are in centimetres. What is the area measured in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "sq.mm",
+      "cm",
+      "sq.cm"
+     ],
+     "answer": 2,
+     "ifNot": "Plain centimetres measure a length, not an area. And the side was given in centimetres, so the little squares we count are centimetre squares."
+    }
+   },
+   {
+    "say": "Square centimetres. So the area is 676 square centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Area = 676 sq.cm",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "676 sq.cm"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Quick check: 20 times 20 is 400, and 30 times 30 is 900. A square of side 26 should be in between, and 676 is.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "20 × 20 = 400"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "30 × 30 = 900"
+     }
+    ]
+   },
+   {
+    "say": "The choices try to catch you on the unit. The number alone is not the answer. Side times side, then square units to match the side."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q030": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We have the digits 2, 4, 0 and 1. We must arrange them into a 4 digit number that is a square, and we want the smallest one.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Smallest 4-digit square using the digits 2, 4, 0, 1",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "o",
+      "text": "1240    412    1,024    2410",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Two things must be true: the number uses all four digits, and it is a square. One choice fails the first test straight away. Which?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1240",
+      "412",
+      "2410"
+     ],
+     "answer": 1,
+     "ifNot": "Count the digits in each choice. The number must have four digits, and one of them must be the 0."
+    }
+   },
+   {
+    "say": "412 has only 3 digits, and no 0. Out.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "412"
+      },
+      "note": "3 digits"
+     }
+    ]
+   },
+   {
+    "say": "Now look at 1240 and 2410. Both end in one zero. A square that ends in 0 comes from 10, 20, 30 and so on, and those squares end in two zeros.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "20 × 20 = 400"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "30 × 30 = 900"
+     }
+    ]
+   },
+   {
+    "say": "So a number ending in just one zero can never be a square. 1240 and 2410 are out.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "1240"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "2410"
+      }
+     }
+    ]
+   },
+   {
+    "say": "That leaves 1,024. Let's make sure. 30 times 30 is 900, so we want a number a little more than 30. And 1,024 ends in 4. Which shall we try?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "31",
+      "35",
+      "32"
+     ],
+     "answer": 2,
+     "ifNot": "Look at last digits. 1 times 1 ends in 1, and 5 times 5 ends in 5. But 2 times 2 is 4, so try the one ending in 2."
+    }
+   },
+   {
+    "say": "32. 32 times 30 is 960, and 32 times 2 is 64. Together they make 1,024. It is a square!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "32 × 32 = 960 + 64"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "32 × 32 = 1,024",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1,024"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Is it the smallest? Yes. The square before it is 31 times 31, which is 961, and that has only 3 digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "31 × 31 = 961"
+     }
+    ]
+   },
+   {
+    "say": "So check both things every time: the right digits, and a true square."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q031": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We have the digits 1, 8, 9 and 0. We must arrange them into a 4 digit number that is a square, and we want the largest one.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Largest 4-digit square using the digits 1, 8, 9, 0",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "o",
+      "text": "9810    9081    8910    9801",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "All four choices use the right digits. So the real question is: which one is a square? Look at 10 times 10, 20 times 20 and 30 times 30. How many zeros do those squares end in?",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "20 × 20 = 400"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "30 × 30 = 900"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "one",
+      "two"
+     ],
+     "answer": 1,
+     "ifNot": "Look at 100, 400 and 900 on the board, and count the zeros at the end of each."
+    }
+   },
+   {
+    "say": "Two. A square that ends in 0 always ends in two zeros. 9810 and 8910 end in just one, so they are out.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "9810"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "8910"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Now 9801. It is just below 10,000, and 10,000 is 100 times 100. So let's try the number just below 100, which is 99.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "100 × 100 = 10,000"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "Try 99",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "100 lots of 99 make 9,900. We only want 99 lots, so take one 99 away. What is 9,900 minus 99?",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "99 × 100 = 9,900"
+     },
+     {
+      "op": "write",
+      "id": "w6",
+      "text": "99 × 99 = 9,900 − 99"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9,801",
+      "9,811",
+      "9,899"
+     ],
+     "answer": 0,
+     "ifNot": "Take away 100 first. That is 1 too many, because 99 is 1 less than 100. So give 1 back."
+    }
+   },
+   {
+    "say": "9,801. So 99 times 99 is 9,801. It is a square, and it uses 9, 8, 0 and 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "99 × 99 = 9,801",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "9,801"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "o",
+      "target": {
+       "text": "9801"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "And it is the largest. The next square is 100 times 100, which already has 5 digits."
+   },
+   {
+    "say": "What about 9081? 95 times 95 is 9,025, and 96 times 96 is 9,216. 9081 falls in the gap, so it is not a square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w7",
+      "text": "95 × 95 = 9,025"
+     },
+     {
+      "op": "write",
+      "id": "w8",
+      "text": "96 × 96 = 9,216"
+     },
+     {
+      "op": "strike",
+      "line": "o",
+      "target": {
+       "text": "9081"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The trap is 9810. It is the biggest number these digits can make, but it is not a square. Biggest is not enough: it must be a square too."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q032": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here x is 2 and y is 3, and we need the value of x squared plus y squared.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "x = 2, y = 3. Find x² + y²",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A letter is just a box with a number inside. So put the numbers in. Where x was, write 2. Where y was, write 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "2² + 3²"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "2²"
+      },
+      "text": "x²",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "3²"
+      },
+      "text": "y²",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, which comes first: squaring each number, or working out 2 plus 3?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 + 3 first",
+      "square each number first"
+     ],
+     "answer": 1,
+     "ifNot": "Look where the little 2 sits: on the x alone, and on the y alone. There is no bracket joining them, so each one is squared first."
+    }
+   },
+   {
+    "say": "Each one is squared first. Start with x. 2 squared is 2 times 2, which is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "2² = 2 × 2 = 4"
+     }
+    ]
+   },
+   {
+    "say": "Now y. What does 3 squared mean?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 × 2",
+      "3 × 3",
+      "3 + 2"
+     ],
+     "answer": 1,
+     "ifNot": "The little 2 does not mean times 2. It tells us to multiply the number by itself."
+    }
+   },
+   {
+    "say": "3 times 3 is 9. Not 6!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "3² = 3 × 3 = 9"
+     }
+    ]
+   },
+   {
+    "say": "Now add the two squares. 4 plus 9 is 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "4 + 9 = 13"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "x² + y² = 13",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "13"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to do 2 plus 3 first, and then square. That gives 5 squared, which is 25. It would only be right with a bracket round x plus y.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "(2 + 3)² = 25"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "(2 + 3)²"
+      },
+      "text": "a different sum",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So: put the numbers in, square each one, and only then add."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q033": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We are told that x is 1 and y is 4. We want x plus y, all squared.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "x = 1, y = 4. Find (x + y)²",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A letter is just a box with a number inside. So put the numbers in. Where x was, write 1. Where y was, write 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "(1 + 4)²"
+     }
+    ]
+   },
+   {
+    "say": "There is a bracket, with a little 2 sitting outside it. What do we do first?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "w1",
+      "target": {
+       "text": "(1 + 4)"
+      },
+      "shape": "box"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "square 1 and square 4",
+      "work out the bracket"
+     ],
+     "answer": 1,
+     "ifNot": "The little 2 is outside the bracket, so it squares everything inside together. Brackets always come first."
+    }
+   },
+   {
+    "say": "The bracket first. 1 plus 4 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "1 + 4 = 5"
+     }
+    ]
+   },
+   {
+    "say": "So now we have 5 squared. What is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "5²"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10",
+      "25"
+     ],
+     "answer": 1,
+     "ifNot": "Squared means the number is multiplied by itself. It does not mean times 2."
+    }
+   },
+   {
+    "say": "25. 5 squared is 5 times 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "5² = 5 × 5 = 25"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "(x + y)² = 25",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "25"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to square each number on its own. 1 squared plus 4 squared is 1 plus 16, which is 17. That is a different sum, with no bracket.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "1² + 4² = 1 + 16 = 17"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "1² + 4²"
+      },
+      "text": "a different sum",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So: numbers in, bracket first, then square."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q034": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We are told that x is 3 and y is 2. We want x minus y, all squared.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "x = 3, y = 2. Find (x − y)²",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A letter is just a box with a number inside. So put the numbers in. Where x was, write 3. Where y was, write 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "(3 − 2)²"
+     }
+    ]
+   },
+   {
+    "say": "There is a bracket, with a little 2 sitting outside it. What do we do first?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "w1",
+      "target": {
+       "text": "(3 − 2)"
+      },
+      "shape": "box"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "square 3 and square 2",
+      "work out the bracket"
+     ],
+     "answer": 1,
+     "ifNot": "The little 2 is outside the bracket, so it squares everything inside together. Brackets always come first."
+    }
+   },
+   {
+    "say": "The bracket first. 3 minus 2 is 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "3 − 2 = 1"
+     }
+    ]
+   },
+   {
+    "say": "So now we have 1 squared. What is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "1²"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "1"
+     ],
+     "answer": 1,
+     "ifNot": "Squared means the number is multiplied by itself. It does not mean times 2."
+    }
+   },
+   {
+    "say": "1. 1 squared is 1 times 1, and that is just 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "1² = 1 × 1 = 1"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "(x − y)² = 1",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to square each number on its own. 3 squared minus 2 squared is 9 minus 4, which is 5. That is a different sum, with no bracket.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "3² − 2² = 9 − 4 = 5"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "3² − 2²"
+      },
+      "text": "a different sum",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So: numbers in, bracket first, then square."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q035": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here x is 4 and y is 2, and we need the value of x squared minus y squared.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "x = 4, y = 2. Find x² − y²",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A letter is just a box with a number inside. So put the numbers in. Where x was, write 4. Where y was, write 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "4² − 2²"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "4²"
+      },
+      "text": "x²",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "2²"
+      },
+      "text": "y²",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, which comes first: squaring each number, or working out 4 minus 2?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 − 2 first",
+      "square each number first"
+     ],
+     "answer": 1,
+     "ifNot": "Look where the little 2 sits: on the x alone, and on the y alone. There is no bracket joining them, so each one is squared first."
+    }
+   },
+   {
+    "say": "Each one is squared first. Start with y. 2 squared is 2 times 2, which is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "2² = 2 × 2 = 4"
+     }
+    ]
+   },
+   {
+    "say": "Now x. What does 4 squared mean?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 × 2",
+      "4 × 4",
+      "4 + 2"
+     ],
+     "answer": 1,
+     "ifNot": "The little 2 does not mean times 2. It tells us to multiply the number by itself."
+    }
+   },
+   {
+    "say": "4 times 4 is 16. Not 8!",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "4² = 4 × 4 = 16"
+     }
+    ]
+   },
+   {
+    "say": "Now take y squared away from x squared. 16 minus 4 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "16 − 4 = 12"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "x² − y² = 12",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to do 4 minus 2 first, and then square. That gives 2 squared, which is 4. It would only be right with a bracket round x minus y.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "(4 − 2)² = 4"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "(4 − 2)²"
+      },
+      "text": "a different sum",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So: put the numbers in, square each one, and only then subtract."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch04_q036": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We are told that x minus y is 4. We want x minus y, all squared.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "(x − y) = 4. Find (x − y)²",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We are not told x, and we are not told y. Do we need to know them?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes: find x and y first",
+      "No: we know the whole bracket"
+     ],
+     "answer": 1,
+     "ifNot": "Look at what is being squared: the whole bracket, x minus y. And the question tells us what that bracket is worth."
+    }
+   },
+   {
+    "say": "We do not. The bracket x minus y is worth 4. So where we see that bracket, we can write 4.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "(x − y)",
+       "nth": 2
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "(x − y)² = 4²",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So what is 4 squared?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8",
+      "4",
+      "16"
+     ],
+     "answer": 2,
+     "ifNot": "Squared means the number is multiplied by itself. Not times 2, and not left as it is."
+    }
+   },
+   {
+    "say": "4 times 4 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "4² = 4 × 4 = 16"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "(x − y)² = 16",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Test it with real numbers. Say x is 7 and y is 3. 7 minus 3 is 4, and 4 squared is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "(7 − 3)² = 16"
+     }
+    ]
+   },
+   {
+    "say": "Or say x is 5 and y is 1. Again 5 minus 1 is 4, and we get 16. It does not matter which numbers hide inside.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "(5 − 1)² = 16"
+     }
+    ]
+   },
+   {
+    "say": "Two traps: 8 comes from doubling, and 4 from forgetting to square. When you know what a whole bracket is worth, just use it."
+   }
+  ]
+ },
+ "AIGEN_grade5_09382572-179c-40c1-a137-3308a7a1d8d4": {
+  "origin": "authored",
+  "check": {
+   "variable": "x",
+   "value": "32"
+  },
+  "beats": [
+   {
+    "say": "Rahul cuts out a triangle. The first angle is 3 times the second. The third is 20 degrees more than the second. We must name the triangle by its angles, so first we need the angles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "First = 3 × second. Third = second + 20°. Kind?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Every angle here is described using the second angle. So let's give that one a name: x.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "second angle = x",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "3 times it = 3x",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "20° more than it = x + 20",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We have three angles, all written with x. What do we know about the three angles of any triangle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "they are all equal",
+      "they add up to 180°",
+      "they add up to 360°"
+     ],
+     "answer": 1,
+     "ifNot": "360 degrees is a full turn. The three angles of a triangle make a half turn between them."
+    }
+   },
+   {
+    "say": "They add up to 180 degrees. So we add our three angles and set the total equal to 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e1",
+      "text": "x + 3x + x + 20 = 180"
+     },
+     {
+      "op": "group",
+      "line": "e1",
+      "targets": [
+       {
+        "text": "x"
+       },
+       {
+        "text": "3x"
+       },
+       {
+        "text": "x",
+        "nth": 3
+       }
+      ],
+      "label": "5x"
+     }
+    ]
+   },
+   {
+    "say": "Gather the x terms. x and 3 x and x make 5 x. So 5 x, plus 20, equals 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e2",
+      "text": "5x + 20 = 180"
+     }
+    ]
+   },
+   {
+    "say": "To undo plus 20, we take 20 away. And to keep the balance level, we take it from both sides. 180 minus 20 is 160.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "e2",
+      "target": {
+       "text": "+ 20"
+      },
+      "note": "− 20"
+     },
+     {
+      "op": "both",
+      "line": "e2",
+      "text": "− 20"
+     },
+     {
+      "op": "write",
+      "id": "e3",
+      "text": "5x = 160"
+     }
+    ]
+   },
+   {
+    "say": "5 x means 5 times x. How do we undo times 5?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "subtract 5",
+      "multiply by 5",
+      "divide by 5"
+     ],
+     "answer": 2,
+     "ifNot": "Times and divide are partners. Whatever times does, divide undoes."
+    }
+   },
+   {
+    "say": "Divide both sides by 5. 160 divided by 5 is 32. So x is 32.",
+    "board": [
+     {
+      "op": "divide",
+      "line": "e3",
+      "by": "5"
+     },
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "160 ÷ 5 = 32"
+     },
+     {
+      "op": "write",
+      "id": "e4",
+      "text": "x = 32"
+     }
+    ]
+   },
+   {
+    "say": "Now build the three angles. The second is 32. 3 times 32 is 96. And 32 plus 20 is 52.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "3 × 32 = 96"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "32 + 20 = 52"
+     }
+    ]
+   },
+   {
+    "say": "Check that they make a triangle: 32 plus 96 plus 52 is 180. They do.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "32 + 96 + 52 = 180"
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "angles": {
+        "a": "96°",
+        "b": "32°",
+        "c": "52°"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "Now name it. The biggest angle is 96 degrees, and that is more than 90. One angle over 90 makes the triangle obtuse angled.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "96° is more than 90°: obtuse-angled triangle",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "obtuse-angled triangle"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at x equals 32, see a small angle, and say acute. Find all three angles before you name the triangle."
+   },
+   {
+    "say": "So: call one angle x, write the others with x, make them add up to 180, and solve."
+   }
+  ]
+ },
+ "AIGEN_grade5_0cefe8e7-7fc1-4460-b97e-d0a2d511127e": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya's garden is a triangle with sides of 12, 16 and 20 centimetres. A tile inside it is a triangle with every side half as long. We must add the largest angle of each.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Garden: 12 cm, 16 cm, 20 cm. Tile: each side half.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Largest angle of garden + largest angle of tile = ?",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The story hints that one angle is special. There is a test for a right angle: square the two shorter sides and add. If that equals the square of the longest side, there is a right angle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r1",
+      "text": "Right angle test: short² + short² = long²",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "12 times 12 is 144. 16 times 16 is 256. Together they make 400.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "12² = 144"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "16² = 256"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "144 + 256 = 400"
+     }
+    ]
+   },
+   {
+    "say": "Now the longest side. What is 20 squared?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "40",
+      "400",
+      "200"
+     ],
+     "answer": 1,
+     "ifNot": "20 squared is 20 times 20, not 20 times 2. Work out 2 times 2, and then put the two zeros back."
+    }
+   },
+   {
+    "say": "400. The totals match, so the garden has a right angle. And in a right angled triangle, 90 degrees is the largest angle, because the other two share the other 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "20² = 400"
+     },
+     {
+      "op": "write",
+      "id": "g",
+      "text": "Garden: largest angle 90°",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "right",
+       "sides": {
+        "ab": "12 cm",
+        "bc": "16 cm",
+        "ca": "20 cm"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "Now the tile. Halve each side: 6, 8 and 10 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "12 ÷ 2 = 6"
+     },
+     {
+      "op": "write",
+      "id": "w6",
+      "text": "16 ÷ 2 = 8"
+     },
+     {
+      "op": "write",
+      "id": "w7",
+      "text": "20 ÷ 2 = 10"
+     }
+    ]
+   },
+   {
+    "say": "The tile is the same shape as the garden, only smaller. So what is its largest angle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "45°",
+      "90°",
+      "180°"
+     ],
+     "answer": 1,
+     "ifNot": "Shrinking a shape makes its sides shorter, but its corners open just as wide as before. Angles do not shrink."
+    }
+   },
+   {
+    "say": "90 degrees again. We can test it: 6 squared is 36, 8 squared is 64, and together they make 100. And 10 squared is 100. A match.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w8",
+      "text": "6² + 8² = 36 + 64"
+     },
+     {
+      "op": "write",
+      "id": "w9",
+      "text": "36 + 64 = 100"
+     },
+     {
+      "op": "write",
+      "id": "w10",
+      "text": "10² = 100"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "Tile: largest angle 90°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now add the two largest angles. 90 plus 90 is 180 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "90 + 90 = 180",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "180"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to think a smaller triangle must have smaller angles. Halve the sides, and the angles stay exactly as they were."
+   },
+   {
+    "say": "So: use the squares test to spot the right angle, and remember that a smaller copy keeps the same angles."
+   }
+  ]
+ },
+ "AIGEN_grade5_1f04f2bb-4e87-42ce-9fd7-e8c15ddf73ea": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya has a triangle shaped tile. Two of its angles are 55 degrees and 70 degrees. We want the third angle, and the kind of triangle it is.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Angles 55° and 70°. Third angle? Kind of triangle?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "angles": {
+        "a": "?",
+        "b": "55°",
+        "c": "70°"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "We cannot name the triangle until we know all three angles. So first, the rule: the three angles of a triangle add up to 180 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Angles of a triangle add up to 180°",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "180°"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Add the two we know. 55 plus 70 is 125.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "55 + 70 = 125"
+     }
+    ]
+   },
+   {
+    "say": "Now, which sum gives the third angle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "125 − 90",
+      "180 + 125",
+      "180 − 125"
+     ],
+     "answer": 2,
+     "ifNot": "The three angles share 180 degrees. Two of them use up 125, so the third is what is left over."
+    }
+   },
+   {
+    "say": "180 minus 125 is 55. So the third angle is 55 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "180 − 125 = 55"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "55"
+      },
+      "text": "third angle",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now we can name the triangle by its angles. If all three angles are less than 90 degrees, it is acute. If one is exactly 90, it is right. If one is more than 90, it is obtuse.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "Acute: all three angles less than 90°",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "Right: one angle is exactly 90°",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "k3",
+      "text": "Obtuse: one angle is more than 90°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Our angles are 55, 70 and 55. Is any of them 90 degrees or more?",
+    "board": [
+     {
+      "op": "write",
+      "id": "an",
+      "text": "Angles: 55°, 70°, 55°",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, one of them",
+      "No, all are less than 90°"
+     ],
+     "answer": 1,
+     "ifNot": "Compare each angle with 90, one at a time: 55, then 70, then 55. Is any of them as big as 90?"
+    }
+   },
+   {
+    "say": "None of them. All three angles are less than 90 degrees, so this is an acute triangle.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "k1",
+      "target": {
+       "text": "Acute"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Third angle 55°: an acute triangle",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "acute triangle"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the angles: 55 plus 70 plus 55 is 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "55 + 70 + 55 = 180"
+     }
+    ]
+   },
+   {
+    "say": "Notice that the third angle came out as 55, the same as one we were given. That is fine. And one angle over 90 would have been enough to make it obtuse, so always look at all three."
+   },
+   {
+    "say": "So: find the third angle from 180, then compare all three angles with 90."
+   }
+  ]
+ },
+ "AIGEN_grade5_2d8106ce-086a-4ba1-a8ae-c35ec1451036": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Vikram's flag is a triangle with angles of 45 degrees and 65 degrees. His friend Sanya says it has an obtuse angle, so it is an obtuse triangle. Is she right? Let's find out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Angles 45° and 65°. Kind of triangle?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "angles": {
+        "a": "?",
+        "b": "45°",
+        "c": "65°"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "Two angles are not enough to name a triangle. We need the third. Here is the rule that finds it: the three angles add up to 180 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Angles of a triangle add up to 180°",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "180°"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Add the two we know. 45 plus 65 is 110.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "45 + 65 = 110"
+     }
+    ]
+   },
+   {
+    "say": "Now, which sum gives the third angle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "110 − 90",
+      "180 + 110",
+      "180 − 110"
+     ],
+     "answer": 2,
+     "ifNot": "The three angles share 180 degrees. Two of them use up 110, so the third is what is left over."
+    }
+   },
+   {
+    "say": "180 minus 110 is 70. So the third angle is 70 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "180 − 110 = 70"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "70"
+      },
+      "text": "third angle",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now we can name the triangle by its angles. If all three angles are less than 90 degrees, it is acute. If one is exactly 90, it is right. If one is more than 90, it is obtuse.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "Acute: all three angles less than 90°",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "Right: one angle is exactly 90°",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "k3",
+      "text": "Obtuse: one angle is more than 90°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Our angles are 45, 65 and 70. Is any of them 90 degrees or more?",
+    "board": [
+     {
+      "op": "write",
+      "id": "an",
+      "text": "Angles: 45°, 65°, 70°",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, one of them",
+      "No, all are less than 90°"
+     ],
+     "answer": 1,
+     "ifNot": "Compare each angle with 90, one at a time: 45, then 65, then 70. Is any of them as big as 90?"
+    }
+   },
+   {
+    "say": "None of them. All three angles are less than 90 degrees, so this is an acute triangle.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "k1",
+      "target": {
+       "text": "Acute"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Acute triangle",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "Acute triangle"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the angles: 45 plus 65 plus 70 is 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "45 + 65 + 70 = 180"
+     }
+    ]
+   },
+   {
+    "say": "So Sanya was a little too quick. Obtuse means more than 90 degrees, and our biggest angle is only 70. Always work out the third angle before you decide."
+   },
+   {
+    "say": "So: find the third angle from 180, then compare all three angles with 90."
+   }
+  ]
+ },
+ "AIGEN_grade5_3a216919-51a0-4f8b-a087-88b3a93ee342": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A triangular frame. One angle is 3 times the smallest angle. The third is 20 degrees more than the smallest. We want the largest angle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Angles: smallest, 3 × smallest, smallest + 20°",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Every angle here is described using the smallest angle. So let's give that one a name: x.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "smallest angle = x",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "3 times it = 3x",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "20° more than it = x + 20",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We have three angles, all written with x. What do we know about the three angles of any triangle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "they are all equal",
+      "they add up to 180°",
+      "they add up to 360°"
+     ],
+     "answer": 1,
+     "ifNot": "360 degrees is a full turn. The three angles of a triangle make a half turn between them."
+    }
+   },
+   {
+    "say": "They add up to 180 degrees. So we add our three angles and set the total equal to 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e1",
+      "text": "x + 3x + x + 20 = 180",
+      "label": true
+     },
+     {
+      "op": "group",
+      "line": "e1",
+      "targets": [
+       {
+        "text": "x"
+       },
+       {
+        "text": "3x"
+       },
+       {
+        "text": "x",
+        "nth": 3
+       }
+      ],
+      "label": "5x"
+     }
+    ]
+   },
+   {
+    "say": "Gather the x terms. x and 3 x and x make 5 x. So 5 x, plus 20, equals 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e2",
+      "text": "5x + 20 = 180",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "To undo plus 20, we take 20 away. And to keep the balance level, we take it from both sides. 180 minus 20 is 160.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "e2",
+      "target": {
+       "text": "+ 20"
+      },
+      "note": "− 20"
+     },
+     {
+      "op": "both",
+      "line": "e2",
+      "text": "− 20"
+     },
+     {
+      "op": "write",
+      "id": "e3",
+      "text": "5x = 160",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "5 x means 5 times x. How do we undo times 5?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "subtract 5",
+      "multiply by 5",
+      "divide by 5"
+     ],
+     "answer": 2,
+     "ifNot": "Times and divide are partners. Whatever times does, divide undoes."
+    }
+   },
+   {
+    "say": "Divide both sides by 5. 160 divided by 5 is 32. So x is 32.",
+    "board": [
+     {
+      "op": "divide",
+      "line": "e3",
+      "by": "5"
+     },
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "160 ÷ 5 = 32"
+     },
+     {
+      "op": "write",
+      "id": "e4",
+      "text": "x = 32",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now build the three angles. The smallest is 32. 3 times 32 is 96. And 32 plus 20 is 52.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "3 × 32 = 96"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "32 + 20 = 52"
+     }
+    ]
+   },
+   {
+    "say": "Check that they make a triangle: 32 plus 96 plus 52 is 180. They do.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "32 + 96 + 52 = 180"
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "angles": {
+        "a": "96°",
+        "b": "32°",
+        "c": "52°"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "The question asks for the largest angle. The three are 32, 96 and 52, so the largest is 96 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Largest angle = 96°",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "96°"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at x. 32 is the smallest angle, and 52 is the middle one. Read the question again before you pick."
+   },
+   {
+    "say": "So: call one angle x, write the others with x, make them add up to 180, and solve."
+   }
+  ]
+ },
+ "AIGEN_grade5_4e7b0c83-7daa-4e72-8385-1128b745b155": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Farhan's triangle has angles of 50, 60 and 70 degrees. We want to name it by its angles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Angles 50°, 60°, 70°. Kind of triangle?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "angles": {
+        "a": "60°",
+        "b": "50°",
+        "c": "70°"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "First, a quick check that these really make a triangle. The three angles must add up to 180 degrees. 50 plus 60 plus 70 is 180. Good.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Angles of a triangle add up to 180°",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "180°"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "50 + 60 + 70 = 180"
+     }
+    ]
+   },
+   {
+    "say": "To name a triangle by its angles, we compare each angle with 90 degrees. If all three angles are less than 90 degrees, it is acute. If one is exactly 90, it is right. If one is more than 90, it is obtuse.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "Acute: all three angles less than 90°",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "Right: one angle is exactly 90°",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "k3",
+      "text": "Obtuse: one angle is more than 90°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So look at 50, 60 and 70. Is any of them 90 degrees or more?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, one of them",
+      "No, all are less than 90°"
+     ],
+     "answer": 1,
+     "ifNot": "Compare each angle with 90, one at a time: 50, then 60, then 70. Is any of them as big as 90?"
+    }
+   },
+   {
+    "say": "None. 50 is less than 90. 60 is less than 90. 70 is less than 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "50 < 90"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "60 < 90"
+     },
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "70 < 90"
+     }
+    ]
+   },
+   {
+    "say": "All three angles are acute, so this is an acute angled triangle.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "k1",
+      "target": {
+       "text": "Acute"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Acute-angled triangle",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "Acute-angled triangle"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "One choice says equilateral. An equilateral triangle has three equal angles, sharing 180 degrees. How big would each one be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "90°",
+      "60°",
+      "45°"
+     ],
+     "answer": 1,
+     "ifNot": "Three equal angles share 180 degrees. So split 180 into 3 equal parts."
+    }
+   },
+   {
+    "say": "60 degrees each. Our angles are 50, 60 and 70. Only one of them is 60, so the triangle is not equilateral.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "180 ÷ 3 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So to name a triangle by its angles, hold every angle up against 90. All three must be smaller for it to be acute."
+   }
+  ]
+ },
+ "AIGEN_grade5_5c40eab7-a96f-4251-ba88-7228edeee2ee": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Pooja's triangle has one angle of 50 degrees. Another angle is exactly twice that. We want the third angle, and the kind of triangle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Angles: 50°, twice 50°, and ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the second angle. Twice means 2 times. 2 times 50 is 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "2 × 50 = 100"
+     },
+     {
+      "op": "note",
+      "line": "w1",
+      "target": {
+       "text": "100"
+      },
+      "text": "second angle",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the rule for every triangle: the three angles add up to 180 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Angles of a triangle add up to 180°",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "180°"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Which sum gives the third angle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "180 − 50",
+      "180 − 50 − 100",
+      "180 − 100"
+     ],
+     "answer": 1,
+     "ifNot": "Both of the angles we know have to come off the 180: the 50, and the 100 as well."
+    }
+   },
+   {
+    "say": "50 plus 100 is 150. And 180 minus 150 is 30. So the third angle is 30 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "50 + 100 = 150"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "180 − 150 = 30"
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "angles": {
+        "a": "100°",
+        "b": "50°",
+        "c": "30°"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "The angles are 50, 100 and 30. Here are the three kinds of triangle. Look at our biggest angle. Which kind is this?",
+    "board": [
+     {
+      "op": "write",
+      "id": "an",
+      "text": "Angles: 50°, 100°, 30°",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "an",
+      "target": {
+       "text": "100°"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "Acute: all three angles less than 90°",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "Right: one angle is exactly 90°",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "k3",
+      "text": "Obtuse: one angle is more than 90°",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "acute",
+      "right",
+      "obtuse"
+     ],
+     "answer": 2,
+     "ifNot": "Acute needs all three angles to be less than 90. Right needs one of exactly 90. Here one angle is 100, which is more than 90."
+    }
+   },
+   {
+    "say": "Obtuse. One angle of more than 90 degrees is all it takes.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "k3",
+      "target": {
+       "text": "Obtuse"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Obtuse triangle; third angle 30°",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "30°"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 50 plus 100 plus 30 is 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "50 + 100 + 30 = 180"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to forget the doubling. Taking 50 and 50 from 180 leaves 80, and that is one of the choices, waiting.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "180 − 50 − 50 = 80"
+     },
+     {
+      "op": "strike",
+      "line": "t",
+      "target": {
+       "text": "180 − 50 − 50 = 80"
+      },
+      "note": "forgot to double"
+     }
+    ]
+   },
+   {
+    "say": "So: work out every angle the story describes, find the last one from 180, then compare the biggest with 90."
+   }
+  ]
+ },
+ "AIGEN_grade5_5e6fe38d-c05d-4e47-a529-38d1a76c14a3": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ananya's triangle has three sides of different lengths. Two of its angles are 48 degrees and 67 degrees. We must name it two ways: by its angles and by its sides.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Angles 48° and 67°. All three sides different.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "angles": {
+        "a": "?",
+        "b": "48°",
+        "c": "67°"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "Angles first. We need all three, and the three angles of a triangle add up to 180 degrees. 48 plus 67 is 115.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Angles of a triangle add up to 180°",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "180°"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "48 + 67 = 115"
+     }
+    ]
+   },
+   {
+    "say": "Which sum gives the third angle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "180 − 115",
+      "115 − 90",
+      "180 + 115"
+     ],
+     "answer": 0,
+     "ifNot": "The three angles share 180 degrees. Two of them use up 115, so the third is what is left over."
+    }
+   },
+   {
+    "say": "180 minus 115 is 65. So the angles are 48, 67 and 65.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "180 − 115 = 65"
+     },
+     {
+      "op": "write",
+      "id": "an",
+      "text": "Angles: 48°, 67°, 65°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Compare each with 90 degrees. All three are less than 90. So by its angles, the triangle is acute angled.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "All angles less than 90°: acute-angled",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the sides. All three are different lengths. What do we call a triangle like that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "isosceles",
+      "equilateral",
+      "scalene"
+     ],
+     "answer": 2,
+     "ifNot": "Equilateral means all three sides are equal, and isosceles means two are equal. When no two sides match, there is a third name."
+    }
+   },
+   {
+    "say": "Scalene. No two sides are the same.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "No two sides equal: scalene",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Put the two names together: an acute angled scalene triangle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Acute-angled scalene triangle",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "Acute-angled scalene triangle"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the angles: 48 plus 67 plus 65 is 180. And see how all three angles are different too. That always goes with three different sides.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "48 + 67 + 65 = 180"
+     }
+    ]
+   },
+   {
+    "say": "Two names need two tests. Angles are tested against 90 degrees. Sides are tested against each other."
+   }
+  ]
+ },
+ "AIGEN_grade5_60493d60-649c-475b-b092-ef43922e580c": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya's napkin is a triangle with sides of 6, 8 and 10 centimetres, and one of its angles is exactly 90 degrees. We must name it by its sides and by its angles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Sides 6 cm, 8 cm, 10 cm. One angle is 90°.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "right",
+       "sides": {
+        "ab": "6 cm",
+        "bc": "8 cm",
+        "ca": "10 cm"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "A triangle can carry two names. One comes from comparing its sides. The other comes from looking at its angles. So we do two separate tests.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "By sides: equilateral, isosceles or scalene",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "By angles: acute, right or obtuse",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Sides first: 6, 8 and 10. How many of them are equal?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "all three",
+      "two",
+      "none"
+     ],
+     "answer": 2,
+     "ifNot": "Compare them in pairs: 6 with 8, 8 with 10, and 6 with 10. Do any two match?"
+    }
+   },
+   {
+    "say": "None. When no two sides are equal, the triangle is scalene.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "6, 8, 10: no two equal → scalene",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "s1",
+      "target": {
+       "text": "scalene"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Now the angles. One angle is exactly 90 degrees. What do we call a triangle with a 90 degree angle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "acute-angled",
+      "right-angled",
+      "obtuse-angled"
+     ],
+     "answer": 1,
+     "ifNot": "Acute is for a triangle with every angle under 90, and obtuse needs one over 90. Exactly 90, a square corner, has its own name."
+    }
+   },
+   {
+    "say": "Right angled. A 90 degree angle is a right angle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "One angle of 90°: right-angled",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "s2",
+      "target": {
+       "text": "right-angled"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Put the two names together: scalene and right angled.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Scalene and right-angled",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "Scalene and right-angled"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Could the other two angles change the name? No. All three add up to 180, so the other two share just 90 between them. Each one is smaller than 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "180 − 90 = 90"
+     }
+    ]
+   },
+   {
+    "say": "One choice says equilateral and right angled. That can never happen: the angles of an equilateral triangle are all 60 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "180 ÷ 3 = 60"
+     }
+    ]
+   },
+   {
+    "say": "So: compare the sides with each other for one name, and the angles with 90 degrees for the other."
+   }
+  ]
+ },
+ "AIGEN_grade5_625e57c9-413c-4a89-a07c-74a9225bda2d": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Sanya's triangle has two angles of 60 degrees each. We want the third angle, and the name of the triangle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Angles 60° and 60°. Third angle? Kind of triangle?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "equilateral",
+       "angles": {
+        "a": "?",
+        "b": "60°",
+        "c": "60°"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "The rule for every triangle: its three angles add up to 180 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Angles of a triangle add up to 180°",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "180°"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Add the two we know. 60 plus 60 is 120.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "60 + 60 = 120"
+     }
+    ]
+   },
+   {
+    "say": "So what is the third angle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "120°",
+      "80°",
+      "60°"
+     ],
+     "answer": 2,
+     "ifNot": "120 is the two known angles added together. The third angle is what is left when we take 120 away from 180."
+    }
+   },
+   {
+    "say": "180 minus 120 is 60. The third angle is 60 degrees as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "180 − 120 = 60"
+     }
+    ]
+   },
+   {
+    "say": "Look at that. All three angles are 60 degrees. And when all three angles are equal, all three sides are equal too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "an",
+      "text": "Angles: 60°, 60°, 60°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "What do we call a triangle with all three sides equal?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "isosceles",
+      "equilateral",
+      "scalene"
+     ],
+     "answer": 1,
+     "ifNot": "Isosceles means just two equal sides. Here all three match. The name we want begins with equi, which means equal."
+    }
+   },
+   {
+    "say": "Equilateral. So the third angle is 60 degrees, and the triangle is equilateral.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Third angle 60°: equilateral triangle",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "equilateral triangle"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 60 plus 60 plus 60 is 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "60 + 60 + 60 = 180"
+     }
+    ]
+   },
+   {
+    "say": "One choice says isosceles. Two equal angles would make it isosceles, but here the third one matches as well. So find the third angle before you choose a name."
+   }
+  ]
+ },
+ "AIGEN_grade5_6cb0fd51-b9ec-4af4-ae61-e10d51f80241": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Deepa wants a triangle with sides of 8, 15 and 6 centimetres. Her brother says it will not work. We need to say why he is right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Sides 8 cm, 15 cm, 6 cm. Why is this not a triangle?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Picture it. Lay the longest side, 15, flat. Hinge the 8 at one end and the 6 at the other, and swing them towards each other. Will their tips meet?"
+   },
+   {
+    "say": "Here is the rule. The two shorter sides, added together, must be longer than the longest side. If not, they cannot reach each other.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Rule: two shorter sides together > longest side",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So which sum do we test, and against which side?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 + 15 against 6",
+      "8 + 6 against 15",
+      "15 + 6 against 8"
+     ],
+     "answer": 1,
+     "ifNot": "Any pair that includes the longest side will always beat the small side left over. The pair that might fall short is the two shortest sides."
+    }
+   },
+   {
+    "say": "The two shorter sides are 8 and 6. 8 plus 6 is 14.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "8 cm"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "6 cm"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "8 + 6 = 14"
+     }
+    ]
+   },
+   {
+    "say": "Now compare. Is 14 more than 15?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, it is more",
+      "No, it is less"
+     ],
+     "answer": 1,
+     "ifNot": "Put 14 and 15 side by side. Which of them is the bigger number?"
+    }
+   },
+   {
+    "say": "No. 14 is less than 15. Even laid end to end, the two short sides cannot stretch across the long one. The shape will not close.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "14 < 15"
+     }
+    ]
+   },
+   {
+    "say": "So the reason is: 8 plus 6 is 14, which is less than 15, so these sides cannot form a triangle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "8 + 6 = 14, less than 15: no triangle",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "no triangle"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Watch the other choices. One tests 8 plus 15, which is 23, against 6. That pair always passes, so it proves nothing.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "8 + 15 = 23"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "23"
+      },
+      "text": "always passes",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "And three different side lengths are no problem at all. That is just a scalene triangle. The trouble here is the two short sides."
+   },
+   {
+    "say": "So to test three lengths: add the two shortest, and make sure the total beats the longest."
+   }
+  ]
+ },
+ "AIGEN_grade5_7597470a-e967-4738-98ee-69f2f4eedead": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya's triangle has two sides of 5 centimetres each, and the angle between those two sides is 80 degrees. We want the other two angles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Two sides 5 cm and 5 cm. Angle between them 80°.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "isosceles",
+       "angles": {
+        "a": "80°",
+        "b": "?",
+        "c": "?"
+       },
+       "sides": {
+        "ab": "5 cm",
+        "ca": "5 cm"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "Two equal sides make this an isosceles triangle. And an isosceles triangle has a secret: the two angles facing the equal sides are equal too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r1",
+      "text": "Isosceles: two equal sides, two equal angles",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Next, the rule for every triangle: the three angles add up to 180 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Angles of a triangle add up to 180°",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "180°"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "The angle at the top uses 80 of those degrees. How many are left for the other two angles together?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "80",
+      "100",
+      "260"
+     ],
+     "answer": 1,
+     "ifNot": "The three angles share 180 degrees. Take away the 80 at the top to see what is left."
+    }
+   },
+   {
+    "say": "180 minus 80 is 100. The other two angles share 100 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "180 − 80 = 100"
+     }
+    ]
+   },
+   {
+    "say": "And those two angles are equal. So how big is each one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "40°",
+      "100°",
+      "50°"
+     ],
+     "answer": 2,
+     "ifNot": "Two equal angles make 100 degrees together. So split 100 into 2 equal parts."
+    }
+   },
+   {
+    "say": "100 divided by 2 is 50. Each of the other angles is 50 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "100 ÷ 2 = 50"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "50° and 50°",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "50° and 50°"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 80 plus 50 plus 50 is 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "80 + 50 + 50 = 180"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to halve the 80 and say 40 and 40. It is the leftover 100 that gets shared, not the angle we were given."
+   },
+   {
+    "say": "So for an isosceles triangle: take the angle you know from 180, then share what is left equally."
+   }
+  ]
+ },
+ "AIGEN_grade5_7e937a6a-c649-499a-9a5e-b4c6e9efa2c2": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two tent poles lean together and stand on the ground, making a triangle. The angle at the top is 52 degrees, and the left pole meets the ground at 74 degrees. What is the angle on the right?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Top 52°, left 74°. Right angle = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "angles": {
+        "a": "52°",
+        "b": "74°",
+        "c": "?"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "Every triangle keeps one rule about its angles. What do the three angles of any triangle add up to?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "90°",
+      "180°",
+      "360°"
+     ],
+     "answer": 1,
+     "ifNot": "90 degrees is one square corner, and 360 is a full turn. The three angles of a triangle together make a half turn."
+    }
+   },
+   {
+    "say": "180 degrees. Always, for every triangle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Angles of a triangle add up to 180°",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "180°"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "We know two of the angles, so add them. 52 plus 74 is 126.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "52 + 74 = 126"
+     }
+    ]
+   },
+   {
+    "say": "So 126 of the 180 degrees are used up. How do we find the third angle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "180 + 126",
+      "180 − 126",
+      "126 − 90"
+     ],
+     "answer": 1,
+     "ifNot": "The three angles share 180 degrees between them. Two of them have used 126, so the third is whatever is left."
+    }
+   },
+   {
+    "say": "180 minus 126 is 54. So the right pole meets the ground at 54 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "180 − 126 = 54",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "54"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding all three: 52 plus 74 plus 54 is 180. A full set.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "52 + 74 + 54 = 180"
+     }
+    ]
+   },
+   {
+    "say": "Subtract with care here. The choices are all close together, so one small slip lands on one of them. That is why we add all three to check."
+   },
+   {
+    "say": "So for a missing angle in a triangle: add the two you know, and take the total away from 180."
+   }
+  ]
+ },
+ "AIGEN_grade5_7f314a77-bc15-46f9-81aa-6aa186eb0fd5": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun makes a triangle from sticks of 9, 12 and 15 centimetres. There are three questions here, so we take them one at a time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Sticks 9 cm, 12 cm, 15 cm.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "1) Kind by angles  2) Perimeter  3) New triangle?",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Question 1. There is a test for a right angle. Square the two shorter sides and add them. If that equals the square of the longest side, the triangle is right angled.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r1",
+      "text": "Right angle test: short² + short² = long²",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "9 times 9 is 81. 12 times 12 is 144. Together they make 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "9² = 81"
+     },
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "12² = 144"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "81 + 144 = 225"
+     }
+    ]
+   },
+   {
+    "say": "Now the longest side. 15 times 10 is 150, and 15 times 5 is 75. So what is 15 squared?",
+    "board": [
+     {
+      "op": "write",
+      "id": "w4",
+      "text": "15 × 15 = 150 + 75"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "215",
+      "225",
+      "175"
+     ],
+     "answer": 1,
+     "ifNot": "Add the two parts on the board: 150, and then 75 more."
+    }
+   },
+   {
+    "say": "225. The two totals match! So the triangle is right angled.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w5",
+      "text": "15² = 225"
+     },
+     {
+      "op": "note",
+      "line": "w5",
+      "target": {
+       "text": "225"
+      },
+      "text": "a match",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Question 2. The perimeter is the distance all the way round, so add the three sides. 9 plus 12 plus 15 is 36 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w6",
+      "text": "9 + 12 + 15 = 36"
+     }
+    ]
+   },
+   {
+    "say": "Question 3. Arjun cuts the 15 stick into two equal pieces. 15 divided by 2 is 7.5. So the new sticks are 7.5, 7.5 and 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w7",
+      "text": "15 ÷ 2 = 7.5"
+     },
+     {
+      "op": "write",
+      "id": "n",
+      "text": "New sticks: 7.5 cm, 7.5 cm, 9 cm",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Three sticks make a triangle only if the two shorter ones together are longer than the longest. The longest is now 9. Which sum do we test?",
+    "board": [
+     {
+      "op": "write",
+      "id": "r2",
+      "text": "Rule: two shorter sides together > longest side",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7.5 + 9",
+      "7.5 + 7.5",
+      "9 + 9"
+     ],
+     "answer": 1,
+     "ifNot": "The longest stick is the 9. The pair that has to reach across it is the two shorter sticks."
+    }
+   },
+   {
+    "say": "7.5 plus 7.5 is 15, and 15 is more than 9. So yes, the new triangle can be made.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w8",
+      "text": "7.5 + 7.5 = 15"
+     },
+     {
+      "op": "write",
+      "id": "w9",
+      "text": "15 > 9"
+     }
+    ]
+   },
+   {
+    "say": "So the three answers are: right angled, 36 centimetres, and yes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Right-angled; 36 cm; Yes",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "36 cm"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice something neat. The two pieces together are just the old 15 stick. It was longer than 9 before the cut, so it still is."
+   },
+   {
+    "say": "Three questions, three tools: the squares test, adding the sides, and the two shorter sides against the longest."
+   }
+  ]
+ },
+ "AIGEN_grade5_87ad8698-a1e0-45de-a77f-0ba953734090": {
+  "origin": "authored",
+  "check": {
+   "variable": "s",
+   "value": "16"
+  },
+  "beats": [
+   {
+    "say": "Rahul's kite frame is an isosceles triangle with a perimeter of 56 centimetres. The unequal side is 8 centimetres longer than each equal side. We want the sides, and where the largest angle is.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Isosceles, perimeter 56 cm. Third side = equal side + 8",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We do not know the equal sides yet, so give them a name: s. Then the unequal side is s plus 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "equal sides: s and s",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "unequal side: s + 8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The perimeter is all the sides added together, and it is 56. Which equation says that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "s + 8 = 56",
+      "s + s + 8 = 56",
+      "s + s + s + 8 = 56"
+     ],
+     "answer": 2,
+     "ifNot": "A triangle has three sides: s, then s again, and then the longer one, which is s plus 8. All three go into the perimeter."
+    }
+   },
+   {
+    "say": "s plus s plus s plus 8 equals 56. Three lots of s, so 3 s plus 8 equals 56.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e1",
+      "text": "s + s + s + 8 = 56"
+     },
+     {
+      "op": "group",
+      "line": "e1",
+      "targets": [
+       {
+        "text": "s"
+       },
+       {
+        "text": "s",
+        "nth": 2
+       },
+       {
+        "text": "s",
+        "nth": 3
+       }
+      ],
+      "label": "3s"
+     },
+     {
+      "op": "write",
+      "id": "e2",
+      "text": "3s + 8 = 56"
+     }
+    ]
+   },
+   {
+    "say": "To undo plus 8, we take 8 away, from both sides to keep the balance. 56 minus 8 is 48.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "e2",
+      "target": {
+       "text": "+ 8"
+      },
+      "note": "− 8"
+     },
+     {
+      "op": "both",
+      "line": "e2",
+      "text": "− 8"
+     },
+     {
+      "op": "write",
+      "id": "e3",
+      "text": "3s = 48"
+     }
+    ]
+   },
+   {
+    "say": "3 s means 3 times s, so divide both sides by 3. 48 divided by 3 is 16. Each equal side is 16 centimetres.",
+    "board": [
+     {
+      "op": "divide",
+      "line": "e3",
+      "by": "3"
+     },
+     {
+      "op": "write",
+      "id": "e4",
+      "text": "s = 16"
+     }
+    ]
+   },
+   {
+    "say": "And the unequal side is 8 more: 16 plus 8 is 24 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "16 + 8 = 24"
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "isosceles",
+       "sides": {
+        "ab": "16 cm",
+        "ca": "16 cm",
+        "bc": "24 cm"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "Check the perimeter: 16 plus 16 plus 24 is 56. And 16 plus 16 is 32, which is more than 24, so the sides really do close up.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "16 + 16 + 24 = 56"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "16 + 16 = 32"
+     }
+    ]
+   },
+   {
+    "say": "Now the largest angle. Think of opening a pair of scissors: the wider the angle, the further apart the tips. So where is the largest angle of a triangle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "opposite a 16 cm side",
+      "opposite the 24 cm side"
+     ],
+     "answer": 1,
+     "ifNot": "The widest angle pushes its two arms furthest apart. So it faces the longest side of the triangle."
+    }
+   },
+   {
+    "say": "Opposite the longest side, which is the 24 centimetre side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Largest angle is opposite the longest side",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So each equal side is 16 centimetres, and the largest angle is opposite the 24 centimetre side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Equal sides 16 cm; largest angle faces 24 cm",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "24 cm"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to mix up s and s plus 8, and call 24 the equal side. Always go back and read what your letter stood for."
+   },
+   {
+    "say": "So: name the unknown side, add up the perimeter, solve, and then answer every part of the question."
+   }
+  ]
+ },
+ "AIGEN_grade5_8b35f7a2-1834-4508-a1e2-d5e13234deb9": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ananya draws a big triangle with a perimeter of 84 centimetres and angles of 50, 60 and 70 degrees. She joins the midpoints of its sides to make a smaller triangle inside. We want its perimeter and its angles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Big triangle: perimeter 84 cm, angles 50°, 60°, 70°",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Join the midpoints of the sides. Inner triangle?",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "angles": {
+        "a": "60°",
+        "b": "50°",
+        "c": "70°"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "A midpoint is the halfway point of a side. Joining the three midpoints cuts the big triangle into 4 small triangles, and all 4 are exactly alike.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "4 small triangles, all the same",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Each small one is a half size copy of the big triangle: the same shape, with every side half as long.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "Each inner side = half of a big side",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So every side of the inner triangle is half of a big side. What happens to the perimeter?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "it stays 84 cm",
+      "it is halved too",
+      "it becomes a quarter"
+     ],
+     "answer": 1,
+     "ifNot": "The perimeter is the three sides added together. If each of the three is cut in half, their total is cut in half as well."
+    }
+   },
+   {
+    "say": "It is halved too. 84 divided by 2 is 42 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "84 ÷ 2 = 42"
+     }
+    ]
+   },
+   {
+    "say": "Let's see it with numbers. Suppose the big sides were 24, 28 and 32, which add up to 84. Their halves are 12, 14 and 16, and those add up to 42.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "24 + 28 + 32 = 84"
+     },
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "12 + 14 + 16 = 42"
+     }
+    ]
+   },
+   {
+    "say": "Now the angles. The inner triangle is the same shape as the big one, only smaller. So what happens to its angles?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "they are halved",
+      "they stay the same",
+      "they double"
+     ],
+     "answer": 1,
+     "ifNot": "An angle measures how wide a corner opens, not how long its arms are. Shrinking a shape does not change its corners."
+    }
+   },
+   {
+    "say": "They stay the same: 50, 60 and 70 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "Same shape → same angles: 50°, 60°, 70°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here is the proof that halving the angles cannot be right. 25, 30 and 35 add up to only 90, and a triangle's angles must add up to 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "25 + 30 + 35 = 90"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "50 + 60 + 70 = 180"
+     }
+    ]
+   },
+   {
+    "say": "So the inner triangle has a perimeter of 42 centimetres, and angles of 50, 60 and 70 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Perimeter 42 cm; angles 50°, 60°, 70°",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "42 cm"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Remember this: shrink a shape and its lengths shrink, but its angles do not."
+   }
+  ]
+ },
+ "AIGEN_grade5_8b6664e9-c712-46b8-9b03-162ddfa6dd61": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A garden bed is to be a triangle with sides of 6, 6 and 10 metres. Two questions: what kind of triangle is it, and can it really be built?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Sides 6 m, 6 m, 10 m. What kind? Can it exist?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The kind first. Look at the sides: 6, 6 and 10. What do we call this triangle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "equilateral",
+      "scalene",
+      "isosceles"
+     ],
+     "answer": 2,
+     "ifNot": "Equilateral needs all three sides equal, and scalene means no two match. Here exactly two sides are 6 metres."
+    }
+   },
+   {
+    "say": "Isosceles: exactly two equal sides.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "6, 6, 10: two equal → isosceles",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "s1",
+      "target": {
+       "text": "isosceles"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Now, can it exist? Not every set of three lengths makes a triangle. Picture the 10 metre side on the ground, with a 6 metre side hinged at each end. They must be long enough to meet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Rule: two shorter sides together > longest side",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So we add the two shorter sides. 6 plus 6 is 12. Is that more than the longest side, 10?",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "6 + 6 = 12"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No, 12 is too short",
+      "Yes, 12 is more than 10"
+     ],
+     "answer": 1,
+     "ifNot": "Compare 12 with the longest side, which is 10. The two shorter sides need to add up to more than it."
+    }
+   },
+   {
+    "say": "Yes. 12 is more than 10, so the two sides meet with room to spare. The triangle can exist.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "12 > 10"
+     }
+    ]
+   },
+   {
+    "say": "The other pairs are safe too: 6 plus 10 is 16, far more than 6. Any pair that includes the longest side always passes. That is why we only test the two shorter ones.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w3",
+      "text": "6 + 10 = 16"
+     }
+    ]
+   },
+   {
+    "say": "So it is an isosceles triangle, and it can exist.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Isosceles, and it CAN exist",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "CAN exist"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two jobs: count the equal sides for the name. Then add the two shorter sides and compare with the longest."
+   }
+  ]
+ },
+ "AIGEN_grade5_9207ef7a-1aa5-492d-8002-900c48f3f55c": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two sticks stand on a plank and lean in until they meet, making a triangle. The left stick makes 65 degrees with the plank, and the right stick makes 48 degrees. What is the angle at the top?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Left 65°, right 48°. Top angle = ?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "angles": {
+        "a": "?",
+        "b": "65°",
+        "c": "48°"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "Every triangle keeps one rule about its angles. What do the three angles of any triangle add up to?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "90°",
+      "180°",
+      "360°"
+     ],
+     "answer": 1,
+     "ifNot": "90 degrees is one square corner, and 360 is a full turn. The three angles of a triangle together make a half turn."
+    }
+   },
+   {
+    "say": "180 degrees. Always, for every triangle.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Angles of a triangle add up to 180°",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "180°"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "We know two of the angles, so add them. 65 plus 48 is 113.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "65 + 48 = 113"
+     }
+    ]
+   },
+   {
+    "say": "So 113 of the 180 degrees are used up. How do we find the third angle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "180 + 113",
+      "180 − 113",
+      "113 − 90"
+     ],
+     "answer": 1,
+     "ifNot": "The three angles share 180 degrees between them. Two of them have used 113, so the third is whatever is left."
+    }
+   },
+   {
+    "say": "180 minus 113 is 67. So the two sticks meet at 67 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "180 − 113 = 67",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "67"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding all three: 65 plus 48 plus 67 is 180. A full set.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "65 + 48 + 67 = 180"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at 113. That is the two angles we were given, added together. The question wants the angle that is left."
+   },
+   {
+    "say": "So for a missing angle in a triangle: add the two you know, and take the total away from 180."
+   }
+  ]
+ },
+ "AIGEN_grade5_9460cd3a-01c7-4798-9beb-066c669f03c8": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Farhan draws a triangle. Two of its angles are 55 degrees and 75 degrees. His teacher asks for the third angle, and the kind of triangle it is.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Angles 55° and 75°. Third angle? Kind of triangle?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "angles": {
+        "a": "?",
+        "b": "55°",
+        "c": "75°"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "Two angles are not enough to name a triangle. We need the third. Here is the rule that finds it: the three angles add up to 180 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Angles of a triangle add up to 180°",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "180°"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Add the two we know. 55 plus 75 is 130.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "55 + 75 = 130"
+     }
+    ]
+   },
+   {
+    "say": "Now, which sum gives the third angle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "130 − 90",
+      "180 + 130",
+      "180 − 130"
+     ],
+     "answer": 2,
+     "ifNot": "The three angles share 180 degrees. Two of them use up 130, so the third is what is left over."
+    }
+   },
+   {
+    "say": "180 minus 130 is 50. So the third angle is 50 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "180 − 130 = 50"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "50"
+      },
+      "text": "third angle",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now we can name the triangle by its angles. If all three angles are less than 90 degrees, it is acute. If one is exactly 90, it is right. If one is more than 90, it is obtuse.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "Acute: all three angles less than 90°",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "Right: one angle is exactly 90°",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "k3",
+      "text": "Obtuse: one angle is more than 90°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Our angles are 55, 75 and 50. Is any of them 90 degrees or more?",
+    "board": [
+     {
+      "op": "write",
+      "id": "an",
+      "text": "Angles: 55°, 75°, 50°",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, one of them",
+      "No, all are less than 90°"
+     ],
+     "answer": 1,
+     "ifNot": "Compare each angle with 90, one at a time: 55, then 75, then 50. Is any of them as big as 90?"
+    }
+   },
+   {
+    "say": "None of them. All three angles are less than 90 degrees, so this is an acute triangle.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "k1",
+      "target": {
+       "text": "Acute"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Third angle 50°: an acute triangle",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "acute triangle"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the angles: 55 plus 75 plus 50 is 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "55 + 75 + 50 = 180"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to stop at 130. That is the two given angles added together, not the third angle. And 130 would have made the triangle look obtuse."
+   },
+   {
+    "say": "So: find the third angle from 180, then compare all three angles with 90."
+   }
+  ]
+ },
+ "AIGEN_grade5_9b4803d2-885c-4ff2-a575-f8e11a861684": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi has a paper triangle. He measures two of its angles: 60 degrees and 70 degrees. What kind of triangle is it, going by its angles?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Angles 60° and 70°. Kind of triangle?",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "angles": {
+        "a": "?",
+        "b": "60°",
+        "c": "70°"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "We cannot name the triangle until we know all three angles. So first, the rule: the three angles of a triangle add up to 180 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "Angles of a triangle add up to 180°",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "180°"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Add the two we know. 60 plus 70 is 130.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w1",
+      "text": "60 + 70 = 130"
+     }
+    ]
+   },
+   {
+    "say": "Now, which sum gives the third angle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "130 − 90",
+      "180 + 130",
+      "180 − 130"
+     ],
+     "answer": 2,
+     "ifNot": "The three angles share 180 degrees. Two of them use up 130, so the third is what is left over."
+    }
+   },
+   {
+    "say": "180 minus 130 is 50. So the third angle is 50 degrees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w2",
+      "text": "180 − 130 = 50"
+     },
+     {
+      "op": "note",
+      "line": "w2",
+      "target": {
+       "text": "50"
+      },
+      "text": "third angle",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now we can name the triangle by its angles. If all three angles are less than 90 degrees, it is acute. If one is exactly 90, it is right. If one is more than 90, it is obtuse.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "Acute: all three angles less than 90°",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "Right: one angle is exactly 90°",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "k3",
+      "text": "Obtuse: one angle is more than 90°",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Our angles are 60, 70 and 50. Is any of them 90 degrees or more?",
+    "board": [
+     {
+      "op": "write",
+      "id": "an",
+      "text": "Angles: 60°, 70°, 50°",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, one of them",
+      "No, all are less than 90°"
+     ],
+     "answer": 1,
+     "ifNot": "Compare each angle with 90, one at a time: 60, then 70, then 50. Is any of them as big as 90?"
+    }
+   },
+   {
+    "say": "None of them. All three angles are less than 90 degrees, so this is an acute triangle.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "k1",
+      "target": {
+       "text": "Acute"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Acute-angled triangle",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "Acute-angled triangle"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the angles: 60 plus 70 plus 50 is 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "60 + 70 + 50 = 180"
+     }
+    ]
+   },
+   {
+    "say": "With only two angles you cannot be sure. The hidden third angle might have been the big one! That is why we found it first."
+   },
+   {
+    "say": "So: find the third angle from 180, then compare all three angles with 90."
+   }
+  ]
+ }
+}

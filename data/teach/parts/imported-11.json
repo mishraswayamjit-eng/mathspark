@@ -1,0 +1,7221 @@
+{
+ "AIGEN_grade5_f5e9568c-1246-4f58-bd0c-b166c1fe39cf": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya's family starts the week with 3,500 rupees in the cash box. Over four days, money comes in three times and goes out once. Let's follow it day by day.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Start ₹3,500. Mon +2,475, Tue +1,860, Wed 1,345, Thu +2,190",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "On Wednesday they spent 1,345 rupees on milk, tea leaves and sugar. What does spending do to the cash box?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Wed 1,345"
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 1,345",
+      "take away 1,345",
+      "leave it out"
+     ],
+     "answer": 1,
+     "ifNot": "Money that is spent leaves the cash box. So Wednesday is the one day we take away. On every other day we add."
+    }
+   },
+   {
+    "say": "Start with Monday's earnings. 3,500 plus 2,475 makes 5,975 rupees in the box.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3,500 + 2,475 = 5,975"
+     }
+    ]
+   },
+   {
+    "say": "Tuesday brings in 1,860 more. 5,975 plus 1,860 is 7,835.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5,975 + 1,860 = 7,835"
+     }
+    ]
+   },
+   {
+    "say": "Now Wednesday, the spending day. Careful here: this one comes off. 7,835 minus 1,345 is 6,490.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "7,835 − 1,345 = 6,490"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "− 1,345"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "On Thursday they earn again. 6,490 plus 2,190 is 8,680. So the cash box holds 8,680 rupees at the end of Thursday.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "6,490 + 2,190 = 8,680",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "8,680"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap in this story is adding all five numbers, just because they are all money. Ask of each amount: did it come in, or did it go out?"
+   },
+   {
+    "say": "Check another way. All the money that came in adds up to 10,025. Take off the 1,345 that was spent, and we get 8,680 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3,500 + 2,475 + 1,860 + 2,190 = 10,025"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "10,025 − 1,345 = 8,680"
+     }
+    ]
+   },
+   {
+    "say": "So in a money story, start with what was there. Add what comes in, take away what goes out, one step at a time."
+   }
+  ]
+ },
+ "AIGEN_grade5_f8abac9a-d1af-40d5-b9e2-e7fc2785e5cd": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi bought crackers, sweets and gifts, and still had 2,350 rupees left. Part of his money was 500 rupees from an old envelope. We want only what Grandmother gave him.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Spent 1,245 + 867 + 1,538. Left 2,350. Envelope 500",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "This is a work backwards story: we know the end and we want the start. First, the spending. 1,245 plus 867 plus 1,538 is 3,650 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1,245 + 867 + 1,538 = 3,650"
+     }
+    ]
+   },
+   {
+    "say": "He spent 3,650 and still had 2,350 left. How do we find what he had before he started spending?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3,650 + 2,350",
+      "3,650 − 2,350",
+      "2,350 − 500"
+     ],
+     "answer": 0,
+     "ifNot": "Before the shopping, he was holding the money he spent and the money he kept. So we put the two back together: 3,650 plus 2,350."
+    }
+   },
+   {
+    "say": "3,650 plus 2,350 is 6,000. So Ravi had 6,000 rupees before he bought anything.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3,650 + 2,350 = 6,000"
+     }
+    ]
+   },
+   {
+    "say": "Careful here. 6,000 is one of the choices, but it did not all come from Grandmother. 500 of it came from the envelope.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Envelope 500"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So what do we do with the 500?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add it to 6,000",
+      "take it away from 6,000"
+     ],
+     "answer": 1,
+     "ifNot": "The 6,000 already has the envelope money inside it. To leave only Grandmother's gift, we take the 500 out."
+    }
+   },
+   {
+    "say": "6,000 minus 500 is 5,500. Grandmother gave him 5,500 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6,000 − 500 = 5,500",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "5,500"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by playing the story forwards. 5,500 plus 500 is 6,000. Take away the 3,650 he spent, and 2,350 is left, just as the story says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5,500 + 500 = 6,000"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6,000 − 3,650 = 2,350"
+     }
+    ]
+   },
+   {
+    "say": "So when a story gives you the end, walk backwards. Put back what was spent, then take out anything that came from somewhere else."
+   }
+  ]
+ },
+ "AIGEN_grade5_ffd98e99-960b-4a49-ae2e-f6b3c7441d56": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's family set aside 5,000 rupees for Diwali shopping. They bought crackers, sweets and decorations, and shared what was left between 2 charity boxes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹5,000 set aside. Spent 2,475, 1,368, 957. Rest ÷ 2",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What do we need to find first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5,000 ÷ 2",
+      "the total they spent",
+      "5,000 − 2,475"
+     ],
+     "answer": 1,
+     "ifNot": "Only the leftover money is shared. And we cannot know the leftover until we know what the three things cost altogether."
+    }
+   },
+   {
+    "say": "Add the crackers and the sweets first. 2,475 plus 1,368 is 3,843.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2,475 + 1,368 = 3,843"
+     }
+    ]
+   },
+   {
+    "say": "Now the decorations. 3,843 plus 957 is 4,800. So they spent 4,800 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3,843 + 957 = 4,800"
+     }
+    ]
+   },
+   {
+    "say": "Take that from the 5,000 they set aside. 5,000 minus 4,800 leaves 200 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5,000 − 4,800 = 200"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 200 is one of the choices, but that is the whole leftover. It still has to be split between the 2 boxes.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Rest ÷ 2"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "200 divided by 2 is 100. Each charity box gets 100 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "200 ÷ 2 = 100",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "100"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check it. 2 boxes of 100 make 200, and 200 plus the 4,800 they spent is 5,000. Every rupee is accounted for.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2 × 100 = 200"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "200 + 4,800 = 5,000"
+     }
+    ]
+   },
+   {
+    "say": "So follow the story in order: total the spending, find what is left, then share it out."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q007": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We have the number 2371. We must flip its digits round, and then find the difference between the two numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "2371",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Reversing means writing the digits in the opposite order, last digit first. What do we get?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1372",
+      "1732",
+      "3217"
+     ],
+     "answer": 1,
+     "ifNot": "Read the digits from the back: 1, 7, 3, 2. Written in that order, the new number is 1732."
+    }
+   },
+   {
+    "say": "So the reversed number is 1732. Difference means subtract, and we always take the smaller number from the bigger one.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2371 − 1732 = ?"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "2371"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "2371"
+      },
+      "text": "bigger, on top",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Start at the ones. 1 minus 2 cannot be done, so we borrow 1 from the tens. That makes 11, and 11 minus 2 is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c0",
+      "text": "Ones: 11 − 2 = 9",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "c0",
+      "target": {
+       "text": "11"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Careful at the tens. The 7 lent 1, so it is now 6. 6 minus 3 is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "Tens: 6 − 3 = 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Hundreds: 3 minus 7 cannot be done, so we borrow 1 from the thousands. That makes 13, and 13 minus 7 is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "Hundreds: 13 − 7 = 6",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "c2",
+      "target": {
+       "text": "13"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "The same thing happens at the thousands. The 2 lent 1, so it is now 1. 1 minus 1 is 0. We do not write a 0 at the front of a number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "Thousands: 1 − 1 = 0",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now read the digits from the top place down. The difference is 639.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2371 − 1732 = 639",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "639"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The classic slip is to take the smaller digit from the bigger one in every column, whichever is on top. The top number stays on top, and we borrow when its digit is too small."
+   },
+   {
+    "say": "Check by adding back. 639 plus 1732 should give 2371, and it does.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "639 + 1732 = 2371"
+     }
+    ]
+   },
+   {
+    "say": "So: reverse the digits, put the bigger number on top, subtract place by place from the ones, and borrow when you need to."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q032": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We have the number 5,341. We must flip its digits round, and then find the difference between the two numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "5,341",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Reversing means writing the digits in the opposite order, last digit first. What do we get?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1,435",
+      "1,345",
+      "3,514"
+     ],
+     "answer": 0,
+     "ifNot": "Read the digits from the back: 1, 4, 3, 5. Written in that order, the new number is 1,435."
+    }
+   },
+   {
+    "say": "So the reversed number is 1,435. Difference means subtract, and we always take the smaller number from the bigger one.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5,341 − 1,435 = ?"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "5,341"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "5,341"
+      },
+      "text": "bigger, on top",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Start at the ones. 1 minus 5 cannot be done, so we borrow 1 from the tens. That makes 11, and 11 minus 5 is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c0",
+      "text": "Ones: 11 − 5 = 6",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "c0",
+      "target": {
+       "text": "11"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Careful at the tens. The 4 lent 1, so it is now 3. 3 minus 3 is 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "Tens: 3 − 3 = 0",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Hundreds: 3 minus 4 cannot be done, so we borrow 1 from the thousands. That makes 13, and 13 minus 4 is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "Hundreds: 13 − 4 = 9",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "c2",
+      "target": {
+       "text": "13"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "The same thing happens at the thousands. The 5 lent 1, so it is now 4. 4 minus 1 is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "Thousands: 4 − 1 = 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now read the digits from the top place down. The difference is 3,906.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5,341 − 1,435 = 3,906",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "3,906"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The classic slip is to take the smaller digit from the bigger one in every column, whichever is on top. The top number stays on top, and we borrow when its digit is too small."
+   },
+   {
+    "say": "Check by adding back. 3,906 plus 1,435 should give 5,341, and it does.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3,906 + 1,435 = 5,341"
+     }
+    ]
+   },
+   {
+    "say": "So: reverse the digits, put the bigger number on top, subtract place by place from the ones, and borrow when you need to."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two numbers are given in words, and we must add them. The hard part is not the adding. It is writing each number with every digit in its right place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "25 crore 756  +  61 lakh 12 thousand 54",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Take the first one: 25 crore, 756. After crores come lakhs, then thousands, then the last three digits. This number has no lakhs and no thousands. How is it written?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "25,756",
+      "25,00,00,756",
+      "25,00,756"
+     ],
+     "answer": 1,
+     "ifNot": "The lakhs and the thousands are empty, but their places still have to be there. So two zeros go in for the lakhs and two more for the thousands."
+    }
+   },
+   {
+    "say": "So the first number is 25, then two zeros for the lakhs, two zeros for the thousands, then 756.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "25,00,00,756"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "00,00"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "00,00"
+      },
+      "text": "empty places",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The second is 61 lakh, 12 thousand, 54. Careful with the 54: it has no hundreds, so the last group is written 0, 5, 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "61,12,054"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "054"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Line them up by place, ones under ones, and add from the right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "25,00,00,756 + 61,12,054 = ?"
+     }
+    ]
+   },
+   {
+    "say": "Ones: 6 plus 4 is 10. Write 0, carry 1. Tens: 5 plus 5, plus the carried 1, is 11. Write 1, carry 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "Ones: 6 + 4 = 10",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "Tens: 5 + 5 + 1 = 11",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Hundreds: 7 plus 0, plus the carried 1, is 8. So the last three digits are 810.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "Hundreds: 7 + 0 + 1 = 8",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "756 + 54 = 810"
+     }
+    ]
+   },
+   {
+    "say": "The rest is easy, because the first number has only zeros in its thousands and lakhs. The 12 thousand and the 61 lakh drop straight in."
+   },
+   {
+    "say": "So the sum is 25 crore, 61 lakh, 12 thousand, 810.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "25,00,00,756 + 61,12,054 = 25,61,12,810",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "25,61,12,810"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap here is the commas. In the Indian system only the last group has three digits. Every group before it has two."
+   },
+   {
+    "say": "Check by taking the second number away again. We land back on 25 crore, 756.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "25,61,12,810 − 61,12,054 = 25,00,00,756"
+     }
+    ]
+   },
+   {
+    "say": "So write each number in digits, with zeros in the empty places. Line up the places, and then add."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is a subtraction given in words. Notice which number is said first: 25 thousand, 276. That is the one being taken away.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Subtract 25 thousand 276 from 7 lakh 481",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Which number goes on top in the subtraction?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "25 thousand 276",
+      "7 lakh 481"
+     ],
+     "answer": 1,
+     "ifNot": "Subtract this from that means: start with that. So 7 lakh 481 goes on top, and 25 thousand 276 is taken away from it."
+    }
+   },
+   {
+    "say": "Write them in digits. 7 lakh 481 has no thousands at all, so zeros hold those places.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "7,00,481 − 25,276 = ?"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "00"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "00"
+      },
+      "text": "no thousands",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Ones: 1 minus 6 cannot be done. Borrow from the 8 tens, which leaves 7 tens. Now 11 minus 6 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "Ones: 11 − 6 = 5",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "c1",
+      "target": {
+       "text": "11"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Tens: 7 minus 7 is 0. Hundreds: 4 minus 2 is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "Tens: 7 − 7 = 0",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "Hundreds: 4 − 2 = 2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Thousands: 0 minus 5. We need to borrow, but the ten-thousands place is 0 as well. So we go all the way to the 7 lakhs."
+   },
+   {
+    "say": "The 7 lakhs become 6. That lakh turns into 10 ten-thousands. One of those moves along, leaving 9, and the thousands place gets 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "7 lakhs → 6 lakhs, 9 ten-thousands, 10 thousands",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the thousands: 10 minus 5 is 5. Ten-thousands: 9 minus 2 is 7. And the 6 lakhs have nothing to lose.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c5",
+      "text": "Thousands: 10 − 5 = 5",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c6",
+      "text": "Ten-thousands: 9 − 2 = 7",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c7",
+      "text": "Lakhs: 6 − 0 = 6",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Read it from the top place: 6 lakh, 75 thousand, 205.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "7,00,481 − 25,276 = 6,75,205",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "6,75,205"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "6,75,205"
+      },
+      "text": "6 lakh 75 thousand 205",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Borrowing across zeros is where most slips happen. A zero that passes the borrow along becomes 9, not 10, because it hands 1 on to its neighbour."
+   },
+   {
+    "say": "Check by adding back. The answer plus 25 thousand 276 should rebuild 7 lakh 481, and it does.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6,75,205 + 25,276 = 7,00,481"
+     }
+    ]
+   },
+   {
+    "say": "So write both numbers in digits, put the one you start with on top, and take extra care where zeros have to lend."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "No numbers are given here, only descriptions. We have to find the greatest 4 digit number and the smallest 5 digit number ourselves, and then subtract.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "smallest 5-digit number − greatest 4-digit number",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What is the greatest number you can write with 4 digits?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9000",
+      "9999",
+      "1000"
+     ],
+     "answer": 1,
+     "ifNot": "To make a number as big as possible, make every digit as big as possible. The biggest digit is 9, so we use a 9 in all four places."
+    }
+   },
+   {
+    "say": "So the greatest 4 digit number is 9999. Every place is full.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "greatest 4-digit number = 9999",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "9999"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now the smallest 5 digit number. It has to start with 1, because a number cannot start with 0. After that, every digit is as small as it can be.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "smallest 5-digit number = 10,000",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "10,000"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Before subtracting, look at the two numbers. When we count, 10,000 comes straight after 9999. They are next door neighbours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "9999 + 1 = 10,000"
+     }
+    ]
+   },
+   {
+    "say": "So the difference between them is just 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "10,000 − 9999 = 1",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "1",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Don't be fooled by how different they look. One is all 9s and the other is nearly all 0s, yet they are only 1 apart."
+   },
+   {
+    "say": "So remember: the greatest number with some digits is all 9s, and the smallest number with one more digit is just 1 more than it."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A triangular ground has sides of 225 metres, 362 metres and 289 metres. We want its perimeter.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Triangle with sides 225 m, 362 m, 289 m",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "sides": {
+        "ab": "225 m",
+        "bc": "362 m",
+        "ca": "289 m"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "What does perimeter mean?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the space inside",
+      "the distance all the way round",
+      "the longest side"
+     ],
+     "answer": 1,
+     "ifNot": "Imagine walking along the edge of the ground until you are back where you started. The distance you walk is the perimeter, so we add all three sides."
+    }
+   },
+   {
+    "say": "So the perimeter is the three sides added together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Perimeter = side + side + side",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "225 + 362 + 289 = ?"
+     }
+    ]
+   },
+   {
+    "say": "Add the ones first. 5 plus 2 plus 9 is 16. Write the 6 and carry the 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "Ones: 5 + 2 + 9 = 16",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "c1",
+      "target": {
+       "text": "16"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Tens next, and don't forget the carried 1. 2 plus 6 plus 8, plus 1, is 17. Write 7, carry 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "Tens: 2 + 6 + 8 + 1 = 17",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "c2",
+      "target": {
+       "text": "17"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Hundreds: 2 plus 3 plus 2, plus the carried 1, is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "Hundreds: 2 + 3 + 2 + 1 = 8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So the perimeter is 876 metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "225 + 362 + 289 = 876",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "876"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The carried 1 is the one that gets lost. Forget it in the tens and your answer comes out 10 short. Write each carry small, above the next column."
+   },
+   {
+    "say": "Check by adding in a different order. 362 plus 289 is 651, and 651 plus 225 is 876.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "362 + 289 = 651"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "651 + 225 = 876"
+     }
+    ]
+   },
+   {
+    "say": "So perimeter means all the way round: add every side, and watch the carries."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A digit has gone missing from the first number. It starts with 7, then the hidden digit, then 3 and 5. When 5467 is taken away from it, 2268 is left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "7□35 − 5467 = 2268",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "□"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "We cannot subtract from a number with a hole in it. So how can we find the whole number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2268 + 5467",
+      "5467 − 2268",
+      "2268 − 5467"
+     ],
+     "answer": 0,
+     "ifNot": "Adding undoes taking away. If taking 5467 away left 2268, then putting 5467 back on to 2268 gives the number we started with."
+    }
+   },
+   {
+    "say": "So we add 2268 and 5467, column by column.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2268 + 5467 = ?"
+     }
+    ]
+   },
+   {
+    "say": "Ones: 8 plus 7 is 15. Write 5, carry 1. Tens: 6 plus 6, plus the carried 1, is 13. Write 3, carry 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "Ones: 8 + 7 = 15",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "Tens: 6 + 6 + 1 = 13",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Hundreds: 2 plus 4 is 6, and the carried 1 makes 7. Thousands: 2 plus 5 is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "Hundreds: 2 + 4 + 1 = 7",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "Thousands: 2 + 5 = 7",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So the starting number is 7735.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2268 + 5467 = 7735"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "7735"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Lay 7735 beside the number with the hole. The 7 in front, the 3 and the 5 all match. The hidden digit sits in the hundreds place, and it is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "7□35 = 7735, so □ = 7",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "□ = 7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the answer is not the whole number. The question asks only for the digit behind the star."
+   },
+   {
+    "say": "Check with the real subtraction. 7735 minus 5467 is 2268. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "7735 − 5467 = 2268"
+     }
+    ]
+   },
+   {
+    "say": "So for a missing digit in a subtraction, add the result back to the number taken away, then read off the hidden digit."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "What should be added to 70,369 to get 99,999? We know the total and one part of it, and we want the missing part.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "70,369 + ? = 99,999",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "?"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Which sum finds the missing part?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "99,999 − 70,369",
+      "99,999 + 70,369",
+      "70,369 − 99,999"
+     ],
+     "answer": 0,
+     "ifNot": "The missing part is what is left when we take the part we know out of the total. So we subtract: 99,999 minus 70,369."
+    }
+   },
+   {
+    "say": "Write it as a subtraction. Good news: every digit on top is a 9, so there is no borrowing anywhere.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "99,999 − 70,369 = ?"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "99,999"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Start at the ones. 9 minus 9 is 0. Tens: 9 minus 6 is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c0",
+      "text": "Ones: 9 − 9 = 0",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "Tens: 9 − 6 = 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Hundreds: 9 minus 3 is 6. Thousands: 9 minus 0 is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "Hundreds: 9 − 3 = 6",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "Thousands: 9 − 0 = 9",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "And the ten-thousands: 9 minus 7 is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "Ten-thousands: 9 − 7 = 2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now read the digits from the biggest place down: 2, 9, 6, 3, 0. That is 29,630.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "99,999 − 70,369 = 29,630",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "29,630"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the 0 at the end. It has to be written, because it holds the ones place. Leave it out and every other digit slides into a smaller place."
+   },
+   {
+    "say": "Check by adding. 70,369 plus 29,630 is 99,999. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "70,369 + 29,630 = 99,999"
+     }
+    ]
+   },
+   {
+    "say": "So when a question asks what should be added, subtract: the total minus the part you know."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q010": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Pawan is 14 years old and Akash is 10. We want the sum of their ages after 7 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Now: Pawan 14, Akash 10. Sum of ages after 7 years = ?",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "after 7 years"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "In 7 years, how many of them grow 7 years older?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "just one of them",
+      "both of them"
+     ],
+     "answer": 1,
+     "ifNot": "Time passes for everybody. In 7 years Pawan is 7 years older, and so is Akash. So the 7 is added once for each of them."
+    }
+   },
+   {
+    "say": "Pawan first. 14 plus 7 is 21.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "14 + 7 = 21"
+     }
+    ]
+   },
+   {
+    "say": "Now Akash. 10 plus 7 is 17.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 + 7 = 17"
+     }
+    ]
+   },
+   {
+    "say": "Add the two new ages. 21 plus 17 is 38. The sum of their ages will be 38 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "21 + 17 = 38",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "38"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap: adding the 7 only once. The sum of their ages today is 24, and two people each grow 7 years older.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "14 + 10 = 24"
+     }
+    ]
+   },
+   {
+    "say": "That gives us a second way, and a check. The sum grows by 2 times 7, which is 14. And 24 plus 14 is 38 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2 × 7 = 14"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "24 + 14 = 38"
+     }
+    ]
+   },
+   {
+    "say": "So when time passes, every person in the story gets older. Add the years to each age, then add the ages."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Sujata is 7 years older than Madhuri. In 10 years their ages will add up to 67. We want their ages today.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Sujata = Madhuri + 7. Sum after 10 years = 67",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The 67 belongs to 10 years from now. What is the sum of their ages today?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "67 − 10",
+      "67 − 20",
+      "67 + 20"
+     ],
+     "answer": 1,
+     "ifNot": "Both of them grow 10 years older, so the sum grows by 10 two times. That is 20 extra years to take off, not 10."
+    }
+   },
+   {
+    "say": "2 times 10 is 20, and 67 minus 20 is 47. So today their ages add up to 47.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2 × 10 = 20"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "67 − 20 = 47"
+     }
+    ]
+   },
+   {
+    "say": "Now the other clue: Sujata is 7 years older. Take those 7 extra years away, and what is left is two equal ages, both Madhuri's. 47 minus 7 is 40.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Madhuri + 7"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "47 − 7 = 40"
+     }
+    ]
+   },
+   {
+    "say": "Two equal ages add up to 40, so each one is 40 divided by 2, which is 20. Madhuri is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "40 ÷ 2 = 20"
+     }
+    ]
+   },
+   {
+    "say": "And Sujata is 7 more. 20 plus 7 is 27.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "20 + 7 = 27"
+     }
+    ]
+   },
+   {
+    "say": "So today Sujata is 27 years old and Madhuri is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "Sujata 27 years, Madhuri 20 years",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "Sujata 27 years, Madhuri 20 years"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the names. One choice has the same two numbers the other way round. Sujata is the older one, so she must be the 27."
+   },
+   {
+    "say": "Check with the story. In 10 years Madhuri is 30 and Sujata is 37. And 30 plus 37 is 67.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "20 + 10 = 30"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "27 + 10 = 37"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "30 + 37 = 67"
+     }
+    ]
+   },
+   {
+    "say": "So go back to today's sum first. Take off the extra years of the older one, and halve what is left."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We have two lists: the numbers from 11 to 15, and the numbers from 21 to 25. We want the difference between their sums.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "11 + 12 + 13 + 14 + 15   and   21 + 22 + 23 + 24 + 25",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We could add up each list and subtract. But before all that work, compare the lists. Put 11 next to 21, 12 next to 22, and so on."
+   },
+   {
+    "say": "How much bigger is each number in the second list than its partner in the first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "5",
+      "10"
+     ],
+     "answer": 2,
+     "ifNot": "Look at the pairs. 21 is 10 more than 11. 22 is 10 more than 12. Every number in the second list is exactly 10 bigger than its partner."
+    }
+   },
+   {
+    "say": "Every pair differs by 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "21 − 11 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "22 − 12 = 10"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "25 − 15 = 10"
+     }
+    ]
+   },
+   {
+    "say": "And how many pairs are there? Count from 11 to 15: that is 5 numbers. So the second sum is bigger by 5 lots of 10, which is 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 × 10 = 50",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "50"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful when counting from 11 to 15. It is 5 numbers, not 4, because both ends are included."
+   },
+   {
+    "say": "Check the long way. 11 to 15 add up to 65. 21 to 25 add up to 115. And 115 minus 65 is 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "11 + 12 + 13 + 14 + 15 = 65"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "21 + 22 + 23 + 24 + 25 = 115"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "115 − 65 = 50"
+     }
+    ]
+   },
+   {
+    "say": "So before a long sum, look for a pattern. When every number moves up by the same amount, multiply that amount by how many numbers there are."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "10 years ago, Manisha was 19. We want her age 10 years from now. Notice there are three moments in this story: back then, today, and later.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "10 years ago: 19 years old. After 10 years: ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Which age must we find first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "her age today",
+      "her age after 10 years",
+      "her age 20 years ago"
+     ],
+     "answer": 0,
+     "ifNot": "The story jumps from the past to the future, but today sits in between. Find her age today first, then step forward."
+    }
+   },
+   {
+    "say": "From 10 years ago up to today is 10 years. So today she is 19 plus 10, which is 29.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "19 + 10 = 29"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "29"
+      },
+      "text": "today",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 29 is one of the choices, but that is her age today. The question asks about 10 years later."
+   },
+   {
+    "say": "Step forward 10 more years. 29 plus 10 is 39. Manisha will be 39 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "29 + 10 = 39",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "39"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "See it on a number line. From 19, one hop of 10 lands on today. A second hop of 10 lands on 39.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "numberLine",
+       "min": 19,
+       "max": 39,
+       "step": 10,
+       "tickLabels": "all",
+       "hops": [
+        {
+         "from": 19,
+         "to": 29,
+         "label": "+10"
+        },
+        {
+         "from": 29,
+         "to": 39,
+         "label": "+10"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Two hops of 10 make 20 years in all, and 19 plus 20 is 39. The same answer, so we can be sure.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "19 + 20 = 39"
+     }
+    ]
+   },
+   {
+    "say": "So when a story has ago and after in it, find today first. Then count on from today."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q017": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A school begins the year with 1007 students. Some leave, some join, and at the end 1000 pass the examination. We want the number who did not pass.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1007 students. 17 left, 49 joined. 1000 passed",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Before we think about the examination, what do we need to know?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1007 − 1000",
+      "students at the end of the year",
+      "17 + 49"
+     ],
+     "answer": 1,
+     "ifNot": "The examination comes at the end of the year, after students have left and joined. So first we need the number of students at the end of the year."
+    }
+   },
+   {
+    "say": "17 students left, so they come off. 1007 minus 17 is 990.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "17 left"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1007 − 17 = 990"
+     }
+    ]
+   },
+   {
+    "say": "49 joined, so they go on. 990 plus 49 is 1039. That is how many took the final examination.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "49 joined"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "990 + 49 = 1039"
+     }
+    ]
+   },
+   {
+    "say": "Out of 1039, 1000 passed. The rest did not. 1039 minus 1000 is 39.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1039 − 1000 = 39",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "39"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is to rush in with 1007 minus 1000, which gives only 7. That forgets the school changed during the year."
+   },
+   {
+    "say": "Check with a shortcut. 49 came in and 17 went out, so the school grew by 32. And 1007 plus 32 is 1039, the same as before.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "49 − 17 = 32"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "1007 + 32 = 1039"
+     }
+    ]
+   },
+   {
+    "say": "So when a group changes over time, bring the group up to date first: take off who left, add who joined. Then answer the question."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A student meant to write sixteen thousand, but wrote sixty thousand. The two sound almost the same! We want to know how far apart they really are.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "meant: sixteen thousand   wrote: sixty thousand",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, sixteen thousand in digits. Which is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "16,000",
+      "60,000",
+      "1,600"
+     ],
+     "answer": 0,
+     "ifNot": "Sixteen is 1 ten and 6 ones. So sixteen thousand starts with a 1 and a 6, and then has three zeros for the thousands."
+    }
+   },
+   {
+    "say": "So sixteen thousand is 16,000. And sixty is 6 tens, so sixty thousand starts with a 6 and a 0, then three zeros: 60,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "sixteen thousand = 16,000",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "sixty thousand = 60,000",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "16,000"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "60,000"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "How far off was the answer? That is the difference, so we subtract the smaller number from the bigger.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "60,000 − 16,000 = ?"
+     }
+    ]
+   },
+   {
+    "say": "Both numbers are whole thousands, so just think 60 minus 16. Take 10 away to get 50, then 6 more away to get 44.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "60 − 16 = ?"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "60 − 10 = 50"
+     },
+     {
+      "op": "write",
+      "id": "l5b",
+      "text": "50 − 6 = 44"
+     }
+    ]
+   },
+   {
+    "say": "44 thousands is 44,000. The answer was off by 44,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "60,000 − 16,000 = 44,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "44,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Listen to the endings. Sixteen ends in teen, which means ten and some more. Sixty ends differently, and means 6 tens. One small sound, one very big difference."
+   },
+   {
+    "say": "Check by adding back. 16,000 plus 44,000 is 60,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "16,000 + 44,000 = 60,000"
+     }
+    ]
+   },
+   {
+    "say": "So write both numbers in digits first. Then subtract the smaller from the bigger."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q022": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A school has 1600 students, and 987 of them are boys. The rest are girls. We want to know how many more boys there are than girls.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1600 students, 987 boys. Boys − girls = ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What must we find before we can compare?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the number of girls",
+      "1600 + 987",
+      "nothing, it is 987"
+     ],
+     "answer": 0,
+     "ifNot": "To say how many more boys there are, we need both numbers. We know the boys. The girls are the rest of the school."
+    }
+   },
+   {
+    "say": "The girls are 1600 minus 987. Here is a quick way. 987 is just 13 less than 1000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1600 − 987 = ?"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1000 − 987 = 13"
+     }
+    ]
+   },
+   {
+    "say": "So take away 1000, which leaves 600. We took 13 too many, so give 13 back. 600 plus 13 is 613 girls.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1600 − 1000 = 600"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "600 + 13 = 613"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 613 is among the choices, but that is only the number of girls. The question asks how many more boys.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "613"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "How many more means subtract. 987 minus 613 needs no borrowing: 7 minus 3 is 4, 8 minus 1 is 7, and 9 minus 6 is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "987 − 613 = ?"
+     }
+    ]
+   },
+   {
+    "say": "So there are 374 more boys than girls.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "987 − 613 = 374",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "374"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check both steps. 613 girls plus 987 boys make 1600, the whole school. And 613 plus 374 is 987.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "613 + 987 = 1600"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "613 + 374 = 987"
+     }
+    ]
+   },
+   {
+    "say": "So find the missing group first. Then subtract the smaller group from the bigger to see how many more."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q026": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This question describes two numbers without telling us what they are. So first we work out each one, and then we add.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "greatest 4-digit number + smallest 5-digit number",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The greatest 4 digit number has the biggest digit, 9, in every place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "greatest 4-digit number = 9,999",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "9,999"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "And what is the smallest number with 5 digits?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10,000",
+      "11,111",
+      "99,999"
+     ],
+     "answer": 0,
+     "ifNot": "The smallest 5 digit number has a 1 in front, because a number cannot start with 0. Then the smallest digit, 0, goes in every other place."
+    }
+   },
+   {
+    "say": "So it is 10,000: a 1 and four 0s.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "smallest 5-digit number = 10,000",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "10,000"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now add them. Adding 10,000 only changes the ten-thousands place. The four 9s stay just as they are.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "9,999 + 10,000 = ?"
+     }
+    ]
+   },
+   {
+    "say": "So we get a 1 in front of the four 9s: 19,999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "9,999 + 10,000 = 19,999",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "19,999"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Read the question word slowly. A question just like this one says subtract, and then the answer is 1. This one says add."
+   },
+   {
+    "say": "Check by taking away. 19,999 minus 10,000 is 9,999. Good.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "19,999 − 10,000 = 9,999"
+     }
+    ]
+   },
+   {
+    "say": "So turn each description into a number first: all 9s for the greatest, a 1 and then 0s for the smallest. Then do what the question asks."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q028": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Some number, added to 65,269, makes 99,999. The total is known, one part is known, and the other part is hiding.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "65,269 + ? = 99,999",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "?"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "How do we find the part that is hiding?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "99,999 + 65,269",
+      "99,999 − 65,269",
+      "65,269 − 99,999"
+     ],
+     "answer": 1,
+     "ifNot": "The missing part is what is left when we take the part we know out of the total. So we subtract: 99,999 minus 65,269."
+    }
+   },
+   {
+    "say": "So it is a subtraction. Look at the top number: all 9s. No column will need to borrow.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "99,999 − 65,269 = ?"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "99,999"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Start at the ones. 9 minus 9 is 0. Tens: 9 minus 6 is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c0",
+      "text": "Ones: 9 − 9 = 0",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "Tens: 9 − 6 = 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Hundreds: 9 minus 2 is 7. Thousands: 9 minus 5 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "Hundreds: 9 − 2 = 7",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "Thousands: 9 − 5 = 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "And the ten-thousands: 9 minus 6 is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "Ten-thousands: 9 − 6 = 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now read the digits from the biggest place down: 3, 4, 7, 3, 0. That is 34,730.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "99,999 − 65,269 = 34,730",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "34,730"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the 0 at the end. It has to be written, because it holds the ones place. Leave it out and every other digit slides into a smaller place."
+   },
+   {
+    "say": "Check it. 65,269 plus 34,730 gives 99,999, just as the question wanted.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "65,269 + 34,730 = 99,999"
+     }
+    ]
+   },
+   {
+    "say": "So when a question asks what should be added, subtract: the total minus the part you know."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q029": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A digit is hiding behind the star. The number starts 8, 0, then the hidden digit, then 5. Take 4005 away from it, and 4000 is left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "80□5 − 4005 = 4000",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "□"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "How can we find the whole number first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4005 − 4000",
+      "4000 + 4005",
+      "4000 − 4005"
+     ],
+     "answer": 1,
+     "ifNot": "Adding undoes taking away. If 4005 was taken away and 4000 is left, then 4000 plus 4005 brings the starting number back."
+    }
+   },
+   {
+    "say": "So we add. 4000 plus 4000 is 8000, and 5 more makes 8005.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4000 + 4000 = 8000"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8000 + 5 = 8005"
+     }
+    ]
+   },
+   {
+    "say": "So the starting number is 8005.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4000 + 4005 = 8005"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "8005"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Lay 8005 beside the number with the hole. The 8, the first 0 and the 5 all match. So the hidden digit is the other 0, the one in the tens place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "80□5 = 8005, so □ = 0",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "□ = 0"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Does it feel odd for the answer to be 0? Zero is a digit like any other. Here it holds the tens place, and without it the number would lose a whole place."
+   },
+   {
+    "say": "Check with the real subtraction. 8005 minus 4005 is 4000. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "8005 − 4005 = 4000"
+     }
+    ]
+   },
+   {
+    "say": "So work backwards with addition to find the whole number, then read off the digit that was hidden."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q032": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "An equilateral triangle has sides of 223 metres. We want its perimeter, the distance all the way round.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Equilateral triangle, side 223 m. Perimeter = ?",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "equilateral",
+       "sides": {
+        "ab": "223 m",
+        "bc": "223 m",
+        "ca": "223 m"
+       }
+      }
+     }
+    ]
+   },
+   {
+    "say": "The question gives only one length. What do we know about the other two sides?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "We cannot tell",
+      "They are shorter",
+      "They are 223 metres too"
+     ],
+     "answer": 2,
+     "ifNot": "Equilateral means equal sides. All three sides of this triangle are the same length, 223 metres each."
+    }
+   },
+   {
+    "say": "So the perimeter is 223, three times over. Adding the same number 3 times is the same as multiplying by 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "223 + 223 + 223 = 3 × 223"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "3 × 223"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Multiply place by place. 3 times 3 ones is 9. 3 times 2 tens is 6 tens. 3 times 2 hundreds is 6 hundreds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 3 = 9"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 × 20 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 × 200 = 600"
+     }
+    ]
+   },
+   {
+    "say": "6 hundreds, 6 tens and 9 ones make 669. The perimeter is 669 metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 × 223 = 669",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "669"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding instead. 223 plus 223 is 446, and 446 plus 223 is 669.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "223 + 223 = 446"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "446 + 223 = 669"
+     }
+    ]
+   },
+   {
+    "say": "Notice that 446 is among the choices. That is only two sides. And 223 alone is just one. A triangle has three.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "446"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "So for a shape whose sides are all equal, the perimeter is one side times the number of sides."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q033": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Today Rajesh is 15 and Rakesh is 9. The question jumps 8 years ahead and asks for the sum of their ages then.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Now: Rajesh 15, Rakesh 9. Sum of ages after 8 years = ?",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "after 8 years"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "In 8 years, how many of them grow 8 years older?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "both of them",
+      "just one of them"
+     ],
+     "answer": 0,
+     "ifNot": "Time passes for everybody. In 8 years Rajesh is 8 years older, and so is Rakesh. So the 8 is added once for each of them."
+    }
+   },
+   {
+    "say": "Rajesh first. 15 plus 8 is 23.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "15 + 8 = 23"
+     }
+    ]
+   },
+   {
+    "say": "Now Rakesh. 9 plus 8 is 17.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "9 + 8 = 17"
+     }
+    ]
+   },
+   {
+    "say": "Add the two new ages. 23 plus 17 is 40. The sum of their ages will be 40 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "23 + 17 = 40",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "40"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap: adding the 8 only once. The sum of their ages today is 24, and two people each grow 8 years older.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "15 + 9 = 24"
+     }
+    ]
+   },
+   {
+    "say": "That gives us a second way, and a check. The sum grows by 2 times 8, which is 16. And 24 plus 16 is 40 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2 × 8 = 16"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "24 + 16 = 40"
+     }
+    ]
+   },
+   {
+    "say": "So when time passes, every person in the story gets older. Add the years to each age, then add the ages."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q037": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A triangular ground has sides of 230 metres, 402 metres and 270 metres. Perimeter means the distance all the way round, so we add the three sides.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Triangle with sides 230 m, 402 m, 270 m",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "triangle",
+       "shape": "scalene",
+       "sides": {
+        "ab": "230 m",
+        "bc": "402 m",
+        "ca": "270 m"
+       }
+      }
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "230 + 402 + 270 = ?"
+     }
+    ]
+   },
+   {
+    "say": "We may add in any order we like. Which two of these make a nice round number together?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "230 and 402",
+      "402 and 270",
+      "230 and 270"
+     ],
+     "answer": 2,
+     "ifNot": "Look for endings that fit together. 230 has 3 tens and 270 has 7 tens, and 3 tens plus 7 tens make a whole hundred."
+    }
+   },
+   {
+    "say": "230 plus 270 is exactly 500.",
+    "board": [
+     {
+      "op": "group",
+      "line": "l1",
+      "targets": [
+       {
+        "text": "230"
+       },
+       {
+        "text": "270"
+       }
+      ],
+      "label": "500"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "230 + 270 = 500"
+     }
+    ]
+   },
+   {
+    "say": "Now add the third side. 500 plus 402 is 902. The perimeter is 902 metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "500 + 402 = 902"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "902"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now look at the choices. 902 is not there. Two of them are close to it, but close is not the same."
+   },
+   {
+    "say": "So we check before we decide. Add in the order given: 230 plus 402 is 632, and 632 plus 270 is 902 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "230 + 402 = 632"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "632 + 270 = 902"
+     }
+    ]
+   },
+   {
+    "say": "Our working is sound, and 902 is not listed. So the answer is, none of these.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "Perimeter = 902 m → None of these",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "None of these"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So add all the sides, check the sum a second way, and only then pick none of these. When your checked number is not listed, trust your working."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q038": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "17 years ago, Mahesh was 17. We want his age 17 years from now. So many 17s! Let's keep them apart.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "17 years ago: 17 years old. After 17 years: ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, his age today. From 17 years ago up to now is 17 years, so today he is 17 plus 17, which is 34.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "17 + 17 = 34"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "34"
+      },
+      "text": "today",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Is 34 our answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, he is 34",
+      "No, go 17 years further"
+     ],
+     "answer": 1,
+     "ifNot": "34 is his age today, and it is waiting among the choices to catch us. The question asks for his age 17 years after today."
+    }
+   },
+   {
+    "say": "So step forward. 34 plus 17 is 51. Mahesh will be 51 years old.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "34 + 17 = 51"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "51"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "See it on a number line. Start at 17, hop 17 to reach today, and hop 17 again to reach 51.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f1",
+      "spec": {
+       "kind": "numberLine",
+       "min": 17,
+       "max": 51,
+       "step": 17,
+       "tickLabels": "all",
+       "hops": [
+        {
+         "from": 17,
+         "to": 34,
+         "label": "+17"
+        },
+        {
+         "from": 34,
+         "to": 51,
+         "label": "+17"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Now look at the choices. None of the three numbers is 51. So the right choice is the last one: none of these.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "51 years → None of these",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "None of these"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Don't let none of these worry you. When your working is checked and your number is not listed, trust your working."
+   },
+   {
+    "say": "So when ago and after come together, find today's age first, then count on."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q040": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Seeta's and Reeta's ages add up to 12, and the difference between them is 6. Two clues, and both must be true at once.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Sum of ages = 12, difference = 6",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The older girl is the younger girl plus 6. If we take those 6 extra years away from the sum, what is left?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the older girl's age",
+      "two equal ages",
+      "nothing useful"
+     ],
+     "answer": 1,
+     "ifNot": "Take the extra 6 away from the older girl and she is the same age as the younger one. So what remains of the sum is two equal ages."
+    }
+   },
+   {
+    "say": "12 minus 6 is 6. That 6 is two equal ages put together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "12 − 6 = 6"
+     }
+    ]
+   },
+   {
+    "say": "So the younger age is 6 divided by 2, which is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "6 ÷ 2 = 3"
+     }
+    ]
+   },
+   {
+    "say": "The older age is 6 more. 3 plus 6 is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 + 6 = 9"
+     }
+    ]
+   },
+   {
+    "say": "The question does not say which girl is older, so look at the choices. Only one has 9 and 3: Seeta 9 years, Reeta 3 years.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "Seeta 9 years, Reeta 3 years",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "Seeta 9 years, Reeta 3 years"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Here is the trap: testing only one clue. 6 and 6 add up to 12, but their difference is 0. The right pair must pass both tests."
+   },
+   {
+    "say": "Our pair does. 9 plus 3 is 12, and 9 minus 3 is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "9 + 3 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "9 − 3 = 6"
+     }
+    ]
+   },
+   {
+    "say": "So with a sum and a difference: take the difference off the sum, halve it for the smaller number, then add the difference back for the bigger."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q041": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This sentence has two sums inside it, and then a difference between them. Brackets help us see the two sums.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "(22 + 47) − (11 + 22) = ?",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Which do we work out first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the difference",
+      "the two sums"
+     ],
+     "answer": 1,
+     "ifNot": "The difference is between the two sums, so the sums have to exist first. Work out each bracket, then subtract."
+    }
+   },
+   {
+    "say": "First sum: 22 plus 47 is 69.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "(22 + 47)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "22 + 47 = 69"
+     }
+    ]
+   },
+   {
+    "say": "Second sum: 11 plus 22 is 33.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "(11 + 22)"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "11 + 22 = 33"
+     }
+    ]
+   },
+   {
+    "say": "Now the difference. 69 minus 33 is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "69 − 33 = 36",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "36"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The words sum and difference sit close together here. Sum means add, difference means subtract. Adding all four numbers is the slip this question is hoping for."
+   },
+   {
+    "say": "Here is a neat check. 22 is in both sums, so it cancels out. What is left is 47 minus 11, and that is 36 too.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "22"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "q",
+      "target": {
+       "text": "22",
+       "nth": 2
+      }
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "47 − 11 = 36"
+     }
+    ]
+   },
+   {
+    "say": "So read the sentence in pieces: find each sum, then take the smaller from the bigger."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q042": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A school has 1500 students. 643 are boys and the rest are girls. How many girls are there?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1500 students, 643 boys, the rest are girls",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The school is boys and girls together. Which sum finds the girls?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1500 + 643",
+      "1500 − 643",
+      "643 − 1500"
+     ],
+     "answer": 1,
+     "ifNot": "The girls are what is left when the boys are taken out of the whole school. So we subtract 643 from 1500."
+    }
+   },
+   {
+    "say": "Now the subtraction. The top number ends in two zeros, so we shall have to borrow carefully.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1500 − 643 = ?"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "00"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Ones: 0 minus 3 cannot be done, and the tens place is 0 too. So borrow from the 5 hundreds. That leaves 4 hundreds and gives 10 tens.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "5 hundreds → 4 hundreds and 10 tens",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now one of those tens moves to the ones. 9 tens stay behind, and the ones place has 10. 10 minus 3 is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "Ones: 10 − 3 = 7",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Tens: 9 minus 4 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "Tens: 9 − 4 = 5",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "c3",
+      "target": {
+       "text": "9"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Hundreds: 4 minus 6 cannot be done, so borrow the 1 thousand. That makes 14, and 14 minus 6 is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "Hundreds: 14 − 6 = 8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Read the digits from the top place: 857. There are 857 girls.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1500 − 643 = 857",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "857"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The slip to watch is at the tens. After lending, that zero becomes 9, not 10. Miss it, and the answer comes out a whole hundred too big."
+   },
+   {
+    "say": "Check by adding. 857 girls plus 643 boys is 1500.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "857 + 643 = 1500"
+     }
+    ]
+   },
+   {
+    "say": "So the whole minus one part gives the other part. And when the top number has zeros, borrow one place at a time."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q044": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A student meant to write eighteen thousand, but wrote eighty thousand. The two sound almost the same! We want to know how far apart they really are.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "meant: eighteen thousand   wrote: eighty thousand",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, eighteen thousand in digits. Which is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "80,000",
+      "18,000",
+      "1,800"
+     ],
+     "answer": 1,
+     "ifNot": "Eighteen is 1 ten and 8 ones. So eighteen thousand starts with a 1 and an 8, and then has three zeros for the thousands."
+    }
+   },
+   {
+    "say": "So eighteen thousand is 18,000. And eighty is 8 tens, so eighty thousand starts with an 8 and a 0, then three zeros: 80,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "eighteen thousand = 18,000",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "eighty thousand = 80,000",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "18,000"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "80,000"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "By how much means the gap between the two. To find a gap we subtract, smaller from bigger.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "80,000 − 18,000 = ?"
+     }
+    ]
+   },
+   {
+    "say": "Both numbers are whole thousands, so just think 80 minus 18. Take 10 away to get 70, then 8 more away to get 62.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "80 − 18 = ?"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "80 − 10 = 70"
+     },
+     {
+      "op": "write",
+      "id": "l5b",
+      "text": "70 − 8 = 62"
+     }
+    ]
+   },
+   {
+    "say": "62 thousands is 62,000. The answer was off by 62,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "80,000 − 18,000 = 62,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "62,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Listen to the endings. Eighteen ends in teen, which means ten and some more. Eighty ends differently, and means 8 tens. One small sound, one very big difference."
+   },
+   {
+    "say": "Check by adding back. 18,000 plus 62,000 is 80,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "18,000 + 62,000 = 80,000"
+     }
+    ]
+   },
+   {
+    "say": "So write both numbers in digits first. Then subtract the smaller from the bigger."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q047": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A school starts the year with 1900 students. During the year 170 leave and 143 join. In the final examination 1300 pass. How many did not pass?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1900 students. 170 left, 143 joined. 1300 passed",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Let's keep count as the year goes by. First, 170 students leave. 1900 minus 170 is 1730.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "170 left"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1900 − 170 = 1730"
+     }
+    ]
+   },
+   {
+    "say": "Then 143 new students join. What do we do with the 143?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "take it away",
+      "add it"
+     ],
+     "answer": 1,
+     "ifNot": "Students who join make the school bigger. So the 143 is added on."
+    }
+   },
+   {
+    "say": "1730 plus 143 is 1873. That is how many students were there for the examination.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "143 joined"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1730 + 143 = 1873"
+     }
+    ]
+   },
+   {
+    "say": "1300 of them passed. The others are what is left when 1300 is taken away from 1873, and that is 573.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1873 − 1300 = 573",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "573"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Don't start from 1900 and go straight to the examination. 1900 minus 1300 is 600, but the school had changed by then.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1900 − 1300 = 600"
+     }
+    ]
+   },
+   {
+    "say": "Look how close the choices are to one another. One slip in the adding changes the answer, so we check. 573 plus 1300 is 1873.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "573 + 1300 = 1873"
+     }
+    ]
+   },
+   {
+    "say": "So follow the year in order: take off the leavers, add the joiners, and only then take away those who passed."
+   }
+  ]
+ },
+ "AIGEN_grade5_0119bf1e-5661-4552-8e73-77c429ba95ce": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun's team played 18 matches and scored 145 runs in each, on average. Then the coach says something about 37 more runs. But read the last line: what are we asked for?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "18 matches, average 145 runs. Actual total = ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Which numbers do we need?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "18, 145 and 37",
+      "18 and 145",
+      "145 and 37"
+     ],
+     "answer": 1,
+     "ifNot": "The question asks for the runs the team actually scored. The 37 belongs to an if only story that never happened, so we leave it out."
+    }
+   },
+   {
+    "say": "An average of 145 over 18 matches means the total is the same as 145 runs, 18 times over.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "18 × 145 = ?"
+     }
+    ]
+   },
+   {
+    "say": "Split 145 into 100, 40 and 5, and let the 18 multiply each part.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "18 × (100 + 40 + 5)"
+     },
+     {
+      "op": "arc",
+      "line": "l2",
+      "from": {
+       "text": "18"
+      },
+      "to": [
+       {
+        "text": "100"
+       },
+       {
+        "text": "40"
+       },
+       {
+        "text": "5"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "say": "18 times 100 is 1800. 18 times 40 is 720. 18 times 5 is 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "18 × 100 = 1800"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "18 × 40 = 720"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "18 × 5 = 90"
+     }
+    ]
+   },
+   {
+    "say": "Add the three parts. 1800 plus 720 plus 90 is 2610. The team scored 2610 runs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1800 + 720 + 90 = 2610",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "2610"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Extra numbers in a story are there to test you. Always go back to the question line and ask: what exactly do they want?"
+   },
+   {
+    "say": "Check with a different split. 18 is 20 minus 2. 20 times 145 is 2900, 2 times 145 is 290, and 2900 minus 290 is 2610.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "20 × 145 = 2900"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "2 × 145 = 290"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "2900 − 290 = 2610"
+     }
+    ]
+   },
+   {
+    "say": "So a total is the average times the number of matches. And a big multiplication gets easy when you split it into parts."
+   }
+  ]
+ },
+ "AIGEN_grade5_057b4470-005b-4ab5-b894-c3715a9b1ffc": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Chai costs 12 rupees a cup. On the first day the stall sold 145 cups, and on the second day 3 times as many. We want the money from the second day.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹12 a cup. Day 1: 145 cups. Day 2: 3 times as many",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What do we need first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "145 × 12",
+      "the cups sold on day 2",
+      "145 + 3"
+     ],
+     "answer": 1,
+     "ifNot": "Money comes from cups. Before we can count the second day's money, we need the second day's cups: 3 times as many as 145."
+    }
+   },
+   {
+    "say": "3 times 145. 3 times 100 is 300, 3 times 40 is 120, and 3 times 5 is 15. Together that is 435 cups.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l0",
+      "text": "145 = 100 + 40 + 5"
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "300 + 120 + 15 = 435"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 145 = 435"
+     }
+    ]
+   },
+   {
+    "say": "Each cup earns 12 rupees. So the money is 435 times 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "435 × 12 = ?"
+     }
+    ]
+   },
+   {
+    "say": "12 is 10 and 2. 435 times 10 is 4350. 435 times 2 is 870.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "435 × 10 = 4350"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "435 × 2 = 870"
+     }
+    ]
+   },
+   {
+    "say": "4350 plus 870 is 5220. They earned 5,220 rupees on the second day.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "4350 + 870 = 5220",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "5220"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 145 times 12 is the first day's money, 1740 rupees, and it is sitting among the choices. The question asks about the second day.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "145 × 12 = 1740"
+     }
+    ]
+   },
+   {
+    "say": "And that gives us a check. The second day should earn 3 times as much as the first. 3 times 1740 is 5220. It matches.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "3 × 1740 = 5220"
+     }
+    ]
+   },
+   {
+    "say": "So when one amount is so many times another, find that amount first. Then carry on with the story."
+   }
+  ]
+ },
+ "AIGEN_grade5_068f0daa-ce98-4932-9534-1c75e6826d7e": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Raju's father sells small cups at 12 rupees and large cups at 18 rupees. Over Saturday and Sunday there are four lots of cups. We want all the money.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Small ₹12: 245 and 312. Large ₹18: 168 and 195",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What is a smart first step?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add all four cup numbers",
+      "add cups of the same size",
+      "multiply 12 by 18"
+     ],
+     "answer": 1,
+     "ifNot": "Small cups and large cups have different prices, so they must stay in separate piles. Add small with small, and large with large."
+    }
+   },
+   {
+    "say": "Small cups: 245 plus 312 is 557. Large cups: 168 plus 195 is 363.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "245 + 312 = 557"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "168 + 195 = 363"
+     }
+    ]
+   },
+   {
+    "say": "Money from small cups is 557 times 12. 557 times 10 is 5570, and 557 times 2 is 1114. Together, 6684 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "557 × 10 = 5570"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "557 × 2 = 1114"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5570 + 1114 = 6684"
+     }
+    ]
+   },
+   {
+    "say": "Large cups cost 18. A handy trick: 18 is 20 minus 2. 363 times 20 is 7260, and 363 times 2 is 726.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "363 × 20 = 7260"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "363 × 2 = 726"
+     }
+    ]
+   },
+   {
+    "say": "7260 minus 726 is 6534. That is the money from large cups.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "7260 − 726 = 6534"
+     }
+    ]
+   },
+   {
+    "say": "Add the two amounts. 6684 plus 6534 is 13,218 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "6684 + 6534 = 13,218",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "13,218"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is mixing the piles: adding up all the cups and using one price. Each size of cup keeps its own price."
+   },
+   {
+    "say": "Check day by day instead. Saturday earned 5964 and Sunday earned 7254. Together that is 13,218 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "245 × 12 + 168 × 18 = 5964"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "312 × 12 + 195 × 18 = 7254"
+     },
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "5964 + 7254 = 13,218"
+     }
+    ]
+   },
+   {
+    "say": "So sort the things by price, total each kind, multiply by its own price, and add at the end."
+   }
+  ]
+ },
+ "AIGEN_grade5_0765706f-d726-4606-8014-11270ab113ad": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This story is full of numbers: 48 boxes, 36 in each, then boxes of 24. But look at what is asked. All the laddoos go into hampers of 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Mon 48 × 36, Tue boxes of 24. Total 2,880. Hampers of 45",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Which number tells us how many laddoos there are altogether?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "48 × 36",
+      "2,880",
+      "24"
+     ],
+     "answer": 1,
+     "ifNot": "The story tells us straight out: by the end of Tuesday, the total for both days was 2,880. All of them are repacked, so 2,880 is the number to share out."
+    }
+   },
+   {
+    "say": "So the job is one division. 2,880 divided by 45.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "2,880"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "2,880 ÷ 45 = ?"
+     }
+    ]
+   },
+   {
+    "say": "45 is not a friendly number to divide by. But 45 is 5 times 9, so we can divide by 5 first, and then by 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "45 = 5 × 9"
+     }
+    ]
+   },
+   {
+    "say": "2,880 divided by 5 is 576.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2,880 ÷ 5 = 576"
+     }
+    ]
+   },
+   {
+    "say": "And 576 divided by 9 is 64. So he makes 64 gift hampers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "576 ÷ 9 = 64",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "64"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "What about Monday and Tuesday? They are a side story. Monday was 48 times 36, which is 1,728, so Tuesday was 1,152. We never needed either.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "48 × 36 = 1,728"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "2,880 − 1,728 = 1,152"
+     }
+    ]
+   },
+   {
+    "say": "Check by multiplying back. 64 times 40 is 2,560, 64 times 5 is 320, and together that is 2,880.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "64 × 40 = 2,560"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "64 × 5 = 320"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "2,560 + 320 = 2,880"
+     }
+    ]
+   },
+   {
+    "say": "So find what the question really needs before you calculate. And to divide by an awkward number, divide by its factors one at a time."
+   }
+  ]
+ },
+ "AIGEN_grade5_078d2c63-53bc-489d-9bd6-5fc5110dbe17": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Aarav's family orders 125 boxes of rockets, 48 in a box, and 175 boxes of sparklers, 36 in a box. We want the number of fireworks in total.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "125 boxes × 48 rockets, 175 boxes × 36 sparklers",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Can we add the boxes, 125 plus 175, and multiply just once?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, add the boxes first",
+      "No, the boxes hold different amounts"
+     ],
+     "answer": 1,
+     "ifNot": "Adding boxes only works when every box holds the same number. Here a rocket box holds 48 and a sparkler box holds 36, so each kind is multiplied on its own."
+    }
+   },
+   {
+    "say": "Rockets first: 125 times 48. Here is a lovely trick. 125 times 8 is exactly 1000, and 48 is 8 times 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "48 = 8 × 6"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "125 × 8 = 1000"
+     }
+    ]
+   },
+   {
+    "say": "So 125 times 48 is 1000 times 6, which is 6000 rockets.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "125 × 48 = 6000"
+     }
+    ]
+   },
+   {
+    "say": "Sparklers: 175 times 36. Think of 36 as 40 minus 4. 175 times 40 is 7000, and 175 times 4 is 700.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "175 × 40 = 7000"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "175 × 4 = 700"
+     }
+    ]
+   },
+   {
+    "say": "7000 minus 700 is 6300 sparklers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "7000 − 700 = 6300"
+     }
+    ]
+   },
+   {
+    "say": "Now add the two kinds. 6000 plus 6300 is 12300 fireworks.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "6000 + 6300 = 12300",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "12300"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice that 6000 and 6300 are both among the choices. Each one is only half the story. The question says in total.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "6000"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "6300"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Check the rockets another way. 100 boxes hold 4800. 25 boxes hold a quarter of that, 1200. And 4800 plus 1200 is 6000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "100 × 48 = 4800"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "25 × 48 = 1200"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "4800 + 1200 = 6000"
+     }
+    ]
+   },
+   {
+    "say": "So multiply each kind by its own box size, then add. And look out for friendly pairs like 125 and 8."
+   }
+  ]
+ },
+ "AIGEN_grade5_0b977b20-9cbc-4669-9e15-be326c9d7a40": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meena's father has 125 crates of 48 mangoes. He shares them equally among 3 vendors, and each vendor packs baskets of 25. How many baskets does each vendor need?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "125 crates × 48 mangoes → 3 vendors → baskets of 25",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "This is a chain of three steps. Which step comes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "48 ÷ 3",
+      "125 ÷ 25",
+      "125 × 48"
+     ],
+     "answer": 2,
+     "ifNot": "We cannot share mangoes out until we know how many there are. So first find the total: 125 crates of 48."
+    }
+   },
+   {
+    "say": "125 times 48. Use the 8 hiding in 48: 48 is 8 times 6, and 125 times 8 is 1000. So the total is 1000 times 6, which is 6000 mangoes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "125 × 8 = 1000"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1000 × 6 = 6000"
+     }
+    ]
+   },
+   {
+    "say": "Three vendors share them equally. 6000 divided by 3 is 2000 mangoes each.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6000 ÷ 3 = 2000"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 2000 is among the choices, but it counts mangoes, not baskets. There is one more step.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "2000"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Each basket takes 25. There are 4 lots of 25 in every 100. And 2000 is 20 hundreds, so that is 20 times 4 baskets.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "100 ÷ 25 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "20 × 4 = 80"
+     }
+    ]
+   },
+   {
+    "say": "So each vendor needs 80 baskets.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "2000 ÷ 25 = 80",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "80"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The other slip is to make baskets for all the mangoes together. That gives 3 times 80, which is 240: the baskets for all three vendors, not for each one.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "3 × 80 = 240"
+     }
+    ]
+   },
+   {
+    "say": "Check backwards. 80 baskets of 25 is 2000 mangoes. Times 3 vendors is 6000, the whole harvest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "80 × 25 = 2000"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "2000 × 3 = 6000"
+     }
+    ]
+   },
+   {
+    "say": "So in a chain story, do one link at a time. After each link, ask: is this what the question wants yet?"
+   }
+  ]
+ },
+ "AIGEN_grade5_0d529bc2-cde3-4353-9a6f-3c94a582874d": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Father says the shop earned more than 1,50,000 rupees. Mother says less. We cannot settle it by guessing, so we find the total: three kinds of saree, three multiplications.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "48 × ₹1,250, 125 × ₹480, 96 × ₹375. Over ₹1,50,000?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Silk: 48 sarees at 1,250 rupees. 48 times 1000 is 48,000, and 48 times 250 is 12,000. Together, 60,000 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "48 × 1000 = 48,000"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "48 × 250 = 12,000"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "48,000 + 12,000 = 60,000"
+     }
+    ]
+   },
+   {
+    "say": "Cotton is 125 times 480. Which fact about 125 makes this easy?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "125 × 2 = 250",
+      "125 × 8 = 1000",
+      "125 + 480 = 605"
+     ],
+     "answer": 1,
+     "ifNot": "125 times 8 is exactly 1000, a lovely number to multiply by. And 480 has an 8 hiding inside it, which is what makes the trick work."
+    }
+   },
+   {
+    "say": "480 is 8 times 60. So 125 times 480 is 1000 times 60. That is 60,000 rupees again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "480 = 8 × 60"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "125 × 8 = 1000"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "125 × 480 = 60,000"
+     }
+    ]
+   },
+   {
+    "say": "Printed: 96 times 375. Think of 375 as 400 minus 25. 96 times 400 is 38,400, and 96 times 25 is 2,400.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "96 × 400 = 38,400"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "96 × 25 = 2,400"
+     }
+    ]
+   },
+   {
+    "say": "38,400 minus 2,400 is 36,000 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "38,400 − 2,400 = 36,000"
+     }
+    ]
+   },
+   {
+    "say": "Add the three amounts. Counting in thousands, 60 plus 60 plus 36 is 156. So the total is 1,56,000 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "60 + 60 + 36 = 156"
+     },
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "60,000 + 60,000 + 36,000 = 1,56,000"
+     }
+    ]
+   },
+   {
+    "say": "Now, who is right? Is 1,56,000 more or less than 1,50,000?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Less, so Mother is right",
+      "More, so Father is right"
+     ],
+     "answer": 1,
+     "ifNot": "Line the two numbers up. Both start with 1 lakh, and after that our total has more thousands. So the total is the bigger one."
+    }
+   },
+   {
+    "say": "1,56,000 is more than 1,50,000. Father is correct, and the total is 1,56,000 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "1,56,000 > 1,50,000"
+     },
+     {
+      "op": "write",
+      "id": "l13",
+      "text": "Father is correct. Total = ₹1,56,000",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l13",
+      "target": {
+       "text": "₹1,56,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "With three multiplications, one small slip can change the verdict. That is why some of the choices are near misses of the total. Take each product slowly."
+   },
+   {
+    "say": "Check the silk another way. 50 sarees would cost 62,500. Take off 2 sarees, which is 2,500, and we are back at 60,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l14",
+      "text": "50 × 1,250 = 62,500"
+     },
+     {
+      "op": "write",
+      "id": "l15",
+      "text": "2 × 1,250 = 2,500"
+     },
+     {
+      "op": "write",
+      "id": "l16",
+      "text": "62,500 − 2,500 = 60,000"
+     }
+    ]
+   },
+   {
+    "say": "So when two people disagree about a total, work it out part by part, add the parts, and then compare."
+   }
+  ]
+ },
+ "AIGEN_grade5_16657318-3a52-4cc5-8e72-b26e71f65c11": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Grandmother packs 48 laddoos in a box, and 12 of them are coconut. The rest are besan. She made 125 boxes and then 75 more. How many besan laddoos is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "48 in a box (12 coconut). Boxes: 125 + 75",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Boxes first. 125 plus 75 is 200 boxes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "125 + 75 = 200"
+     }
+    ]
+   },
+   {
+    "say": "Now, how many besan laddoos are in one box?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "48",
+      "48 − 12",
+      "48 + 12"
+     ],
+     "answer": 1,
+     "ifNot": "Each box has 48 laddoos, and 12 of those are coconut. The rest are besan, so we take 12 away from 48."
+    }
+   },
+   {
+    "say": "48 minus 12 is 36. Every box has 36 besan laddoos.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "12 coconut"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "48 − 12 = 36"
+     }
+    ]
+   },
+   {
+    "say": "200 boxes with 36 in each. 36 times 2 is 72, so 36 times 200 is 7200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "36 × 2 = 72"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "36 × 200 = 7200",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "7200"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 48 times 200 is 9600, and that is among the choices. But it counts every laddoo, the coconut ones too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "48 × 200 = 9600"
+     }
+    ]
+   },
+   {
+    "say": "That gives us a check. The coconut laddoos are 12 times 200, which is 2400. And 9600 minus 2400 is 7200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "12 × 200 = 2400"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "9600 − 2400 = 7200"
+     }
+    ]
+   },
+   {
+    "say": "So first find how many of the thing you want are in one box. Then multiply by the number of boxes."
+   }
+  ]
+ },
+ "AIGEN_grade5_18d937a8-b573-4d92-9004-07fc3ba99c0d": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Each batch of chai uses 175 millilitres of milk. Priya's father made 48 batches on Monday and 36 on Tuesday. We want the milk in litres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "175 mL each batch. Batches: 48 + 36. Litres = ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Every batch uses the same amount, so we can add the batches first. 48 plus 36 is 84 batches.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "48 + 36 = 84"
+     }
+    ]
+   },
+   {
+    "say": "84 batches of 175. Split 175 into 100 and 75. 84 times 100 is 8400. And 75 is three quarters of 100, so 84 times 75 is three quarters of 8400, which is 6300.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "84 × 100 = 8400"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "84 × 75 = 6300"
+     }
+    ]
+   },
+   {
+    "say": "8400 plus 6300 is 14,700 millilitres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "8400 + 6300 = 14,700"
+     }
+    ]
+   },
+   {
+    "say": "The question asks for litres. How many millilitres make 1 litre?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Litres"
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10",
+      "100",
+      "1000"
+     ],
+     "answer": 2,
+     "ifNot": "Milli means a thousandth. It takes 1000 millilitres to fill 1 litre."
+    }
+   },
+   {
+    "say": "So count the thousands in 14,700. There are 14 of them, and 700 millilitres are left over.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "14,700 = 14 × 1000 + 700"
+     }
+    ]
+   },
+   {
+    "say": "He used 14 litres 700 millilitres of milk.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "14 litres 700 mL",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "14 litres 700 mL"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "One choice has the right digits but far too many litres. That comes from dividing by 100. A litre is 1000 millilitres."
+   },
+   {
+    "say": "Check with a rough guess. 84 batches of 200 millilitres would be 16,800. Our answer is a little less, as it should be, because 175 is a little less than 200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "84 × 200 = 16,800"
+     }
+    ]
+   },
+   {
+    "say": "So add the batches, multiply by the milk for one batch, and change the unit at the end: every 1000 millilitres is 1 litre."
+   }
+  ]
+ },
+ "AIGEN_grade5_1c84217b-13f9-4b89-993f-c75d3ff13bd5": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Each cup of chai takes 175 millilitres of milk, and milk costs 56 rupees a litre. He sold 48 cups in the morning and 36 in the evening. What did the milk cost?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "175 ml a cup. Cups: 48 + 36. Milk ₹56 a litre",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First the cups. 48 plus 36 is 84 cups.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "48 + 36 = 84"
+     }
+    ]
+   },
+   {
+    "say": "Each takes 175 millilitres. 84 times 100 is 8400, 84 times 75 is 6300, and together that is 14,700 millilitres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "84 × 100 = 8400"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "84 × 75 = 6300"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "8400 + 6300 = 14,700"
+     }
+    ]
+   },
+   {
+    "say": "The price is 56 rupees for a litre, but our milk is in millilitres. What must we do before we use the price?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiply 14,700 by 56",
+      "change millilitres to litres",
+      "nothing"
+     ],
+     "answer": 1,
+     "ifNot": "The price is for each litre, so the milk has to be counted in litres too. The units must match before we multiply."
+    }
+   },
+   {
+    "say": "1000 millilitres make 1 litre. So 14,700 millilitres is 14 litres and 700 millilitres, which is 14.7 litres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "14,700 ÷ 1000 = 14.7"
+     },
+     {
+      "op": "note",
+      "line": "l5",
+      "target": {
+       "text": "14.7"
+      },
+      "text": "14 litres 700 ml",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The 14 whole litres cost 14 times 56, which is 784 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "14 × 56 = 784"
+     }
+    ]
+   },
+   {
+    "say": "Now the 700 millilitres, which is 7 tenths of a litre. One tenth of 56 rupees is 5 rupees 60 paise, and 7 of those make 39 rupees 20 paise.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "56 ÷ 10 = 5.60"
+     },
+     {
+      "op": "note",
+      "line": "l7",
+      "target": {
+       "text": "5.60"
+      },
+      "text": "5 rupees 60 paise",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "7 × 5.60 = 39.20"
+     },
+     {
+      "op": "note",
+      "line": "l8",
+      "target": {
+       "text": "39.20"
+      },
+      "text": "39 rupees 20 paise",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Add them. 784 rupees, and 39 rupees 20 paise, make 823 rupees 20 paise.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "784 + 39.20 = 823.20",
+      "tone": "answer"
+     },
+     {
+      "op": "note",
+      "line": "l9",
+      "target": {
+       "text": "823.20"
+      },
+      "text": "823 rupees 20 paise",
+      "place": "below"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "823.20"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The big trap is skipping the litres. 14,700 is the milk in millilitres, not the cost. It is among the choices, dressed up as rupees."
+   },
+   {
+    "say": "Does it make sense? 15 litres would cost 15 times 56, which is 840 rupees. We used a little under 15 litres, and our cost is a little under 840.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "15 × 56 = 840"
+     }
+    ]
+   },
+   {
+    "say": "So make the units match the price first. Then the cost is the number of litres times the price of one litre."
+   }
+  ]
+ },
+ "AIGEN_grade5_1c899890-0a3a-4c6c-b4f7-ee854c4c0ec7": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun and his father need 24 rows of 35 chairs. The school already has 250 chairs. How many more must they buy?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "24 rows × 35 chairs. Already have 250",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What do we find first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "250 − 24",
+      "35 − 24",
+      "the chairs needed in all"
+     ],
+     "answer": 2,
+     "ifNot": "We can only tell how many more to buy once we know how many are needed in all. That is 24 rows of 35."
+    }
+   },
+   {
+    "say": "24 times 35. Split 35 into 30 and 5. 24 times 30 is 720, and 24 times 5 is 120.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "24 × 30 = 720"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "24 × 5 = 120"
+     }
+    ]
+   },
+   {
+    "say": "720 plus 120 is 840. They need 840 chairs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "720 + 120 = 840"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 840 is among the choices. But the school already has 250 of them, so they do not buy all 840.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Already have 250"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Take away the chairs they have. 840 minus 250 is 590. They must buy 590 more.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "840 − 250 = 590",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "590"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back. 590 new chairs plus 250 old ones is 840, enough for every row.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "590 + 250 = 840"
+     }
+    ]
+   },
+   {
+    "say": "So how many more means: find what is needed, then take away what you already have."
+   }
+  ]
+ },
+ "AIGEN_grade5_23250a27-e0f2-4232-bc5a-2df5f2eaa407": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Each gift box holds 48 sweets, and Meera's family needs exactly 1,200 sweets. How many boxes should they buy?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1,200 sweets, 48 in each box. Boxes = ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We know the total, and the size of each box. Which operation finds the number of boxes?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiply",
+      "divide",
+      "subtract"
+     ],
+     "answer": 1,
+     "ifNot": "We are asking how many 48s fit into 1,200. How many groups fit is always a division."
+    }
+   },
+   {
+    "say": "Dividing by 48 in one go is hard. But 48 is 8 times 6, so we can divide by 8 first, and then by 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1,200 ÷ 48 = ?"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "48 = 8 × 6"
+     }
+    ]
+   },
+   {
+    "say": "1,200 divided by 8 is 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1,200 ÷ 8 = 150"
+     }
+    ]
+   },
+   {
+    "say": "And 150 divided by 6 is 25. They need 25 boxes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "150 ÷ 6 = 25",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "25"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The choices are all close together, so a rough guess is not enough here. We have to check exactly."
+   },
+   {
+    "say": "25 times 48. 25 times 4 is 100, and 48 is 4 times 12. So that is 100 times 12, which is 1,200. Exactly right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "25 × 4 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "100 × 12 = 1,200"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "25 × 48 = 1,200"
+     }
+    ]
+   },
+   {
+    "say": "So how many boxes is a division. And to divide by a big number, divide by its factors, one after the other."
+   }
+  ]
+ },
+ "AIGEN_grade5_28f3d667-ab18-4f7f-941c-dc93bd1f3668": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Each kettle serves 18 cups, and a cup earns 15 rupees. Over three days he sold 47, 35 and 28 kettles, and he spends 1200 rupees every day. We want the profit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "18 cups a kettle. Kettles 47, 35, 28. ₹15 a cup. ₹1200 a day",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Profit is the money that comes in, minus the money that goes out. So we need two totals: earnings and expenses.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Profit = earnings − expenses",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the kettles. 47 plus 35 plus 28 is 110 kettles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "47 + 35 + 28 = 110"
+     }
+    ]
+   },
+   {
+    "say": "110 kettles of 18 cups. 100 kettles make 1800 cups and 10 more make 180, so that is 1980 cups.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "100 × 18 = 1800"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "10 × 18 = 180"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "1800 + 180 = 1980"
+     }
+    ]
+   },
+   {
+    "say": "Each cup earns 15 rupees. 1980 times 10 is 19,800. 1980 times 5 is half of that, 9,900. Together, 29,700 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1980 × 10 = 19,800"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "1980 × 5 = 9,900"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "19,800 + 9,900 = 29,700"
+     }
+    ]
+   },
+   {
+    "say": "He spends 1200 rupees every day. How much is that over this story?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "₹1200 a day"
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1200",
+      "1200 × 3",
+      "1200 × 110"
+     ],
+     "answer": 1,
+     "ifNot": "The 1200 rupees is spent every day, and the story covers three days: Monday, Tuesday and Wednesday. So the expenses are 3 times 1200."
+    }
+   },
+   {
+    "say": "3 times 1200 is 3600 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "3 × 1200 = 3600"
+     }
+    ]
+   },
+   {
+    "say": "Profit is earnings minus expenses. 29,700 minus 3600 is 26,100 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "29,700 − 3600 = 26,100",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "26,100"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two traps here. 29,700 is among the choices, but that is the earnings before any costs. And taking off 1200 only once forgets two of the days."
+   },
+   {
+    "say": "Check by adding back. 26,100 plus 3600 is 29,700.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "26,100 + 3600 = 29,700"
+     }
+    ]
+   },
+   {
+    "say": "So profit means earnings minus expenses. Find each one fully, for all the days, before you subtract."
+   }
+  ]
+ },
+ "AIGEN_grade5_30e29770-e6ed-418e-a504-7ae1b1df10c6": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi sold 148 samosas, then 237, at 12 rupees each, and on the third day 115 at 15 rupees each. He spent 3,750 rupees on ingredients. We want his profit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "148 × ₹12, 237 × ₹12, 115 × ₹15. Costs ₹3,750",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Profit is what he earned minus what he spent. First, the earnings from the three days.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "Profit = earnings − costs",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The first two days have the same price, 12 rupees. What shortcut does that allow?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add all three days' samosas",
+      "add 148 and 237, then × 12",
+      "multiply 12 by 12"
+     ],
+     "answer": 1,
+     "ifNot": "When the price is the same, we can add the samosas first and multiply once. The third day has a different price, so it stays separate."
+    }
+   },
+   {
+    "say": "148 plus 237 is 385 samosas at 12 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "148 + 237 = 385"
+     }
+    ]
+   },
+   {
+    "say": "385 times 12. 385 times 10 is 3850, and 385 times 2 is 770. Together, 4620 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "385 × 10 = 3850"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "385 × 2 = 770"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3850 + 770 = 4620"
+     }
+    ]
+   },
+   {
+    "say": "The third day: 115 samosas at 15 rupees. 115 times 10 is 1150. 115 times 5 is half of that, 575. Together, 1725.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "115 × 10 = 1150"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "115 × 5 = 575"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "1150 + 575 = 1725"
+     }
+    ]
+   },
+   {
+    "say": "All the earnings: 4620 plus 1725 is 6345 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "4620 + 1725 = 6345"
+     }
+    ]
+   },
+   {
+    "say": "Now take away the cost of the ingredients. 6345 minus 3,750 is 2,595. That is Ravi's profit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "6345 − 3,750 = 2,595",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l10",
+      "target": {
+       "text": "2,595"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: profit is not the same as earnings. Stop before the last subtraction, and the answer is far too big."
+   },
+   {
+    "say": "Check by adding back. 2,595 plus 3,750 is 6,345, his earnings.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "2,595 + 3,750 = 6,345"
+     }
+    ]
+   },
+   {
+    "say": "So group what has the same price, total the earnings, then subtract the costs to get the profit."
+   }
+  ]
+ },
+ "AIGEN_grade5_30f964e1-aa7c-4b8c-8e34-9fa245732030": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera's class bought 164 packets of red powder and 236 packets of blue, and every packet cost 45 rupees. Meera found a shortcut for the total.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "164 packets and 236 packets, each ₹45",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Both colours cost the same. What is Meera's shortcut?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiply 164 by 236",
+      "add the packets, then multiply once",
+      "add 45 and 45"
+     ],
+     "answer": 1,
+     "ifNot": "When every packet costs the same, the colour does not matter. Count all the packets together first, then multiply by 45 just once."
+    }
+   },
+   {
+    "say": "164 plus 236 is 400. A lovely round number, which is why the shortcut is worth spotting.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "164 + 236 = 400"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "400"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now 400 times 45. Start with 4 times 45, which is 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "4 × 45 = 180"
+     }
+    ]
+   },
+   {
+    "say": "400 is 4 hundreds, so 400 times 45 is 180 hundreds. That is 18,000 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "400 × 45 = 18,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "18,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is why the shortcut works. 164 lots of 45 and 236 lots of 45 are the same as 164 plus 236 lots of 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "164 × 45 + 236 × 45 = (164 + 236) × 45"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "(164 + 236)"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Check the long way. Red costs 7,380 and blue costs 10,620. Together they make 18,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "164 × 45 = 7,380"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "236 × 45 = 10,620"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "7,380 + 10,620 = 18,000"
+     }
+    ]
+   },
+   {
+    "say": "Both of those, 7,380 and 10,620, are among the choices. Each is just one colour. The question asks for the total."
+   },
+   {
+    "say": "So when different things cost the same, add them first and multiply once."
+   }
+  ]
+ },
+ "AIGEN_grade5_321a7e1c-9ab9-466f-96b4-afe1f6e12b8a": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ananya's mother makes 125 laddoos each day for 8 days. On the last day she gives 40 away. How many does she have at the end?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "125 laddoos a day for 8 days. 40 given away",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "125 laddoos every day, for 8 days. How do we find how many she made?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "125 + 8",
+      "125 × 8",
+      "125 − 40"
+     ],
+     "answer": 1,
+     "ifNot": "The same number, 125, is made again and again, 8 times over. Adding the same number many times is multiplication."
+    }
+   },
+   {
+    "say": "125 times 8. Split 125 into 100 and 25. 100 times 8 is 800, and 25 times 8 is 200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "100 × 8 = 800"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "25 × 8 = 200"
+     }
+    ]
+   },
+   {
+    "say": "800 plus 200 is 1000. She made 1000 laddoos.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "800 + 200 = 1000"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 1000 is among the choices, but the story is not over. She gives 40 away.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "40 given away"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Giving away means taking off. 1000 minus 40 is 960. She has 960 laddoos.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1000 − 40 = 960",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "960"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back. 960 plus 40 is 1000, and 1000 is 8 days of 125.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "960 + 40 = 1000"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "125 × 8 = 1000"
+     }
+    ]
+   },
+   {
+    "say": "So read to the very end of the story. Multiply to find what was made, then take away what was given."
+   }
+  ]
+ },
+ "AIGEN_grade5_3c480d38-865b-48b5-babb-23231022d8bf": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Each pot makes 24 cups of chai. Ravi's father sold 13 full pots, at 15 rupees a cup. How much did he earn?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "24 cups a pot, 13 pots, ₹15 a cup",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "He is paid for each cup, not for each pot. So what do we need first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "13 × 15",
+      "24 + 13",
+      "the number of cups"
+     ],
+     "answer": 2,
+     "ifNot": "The price, 15 rupees, is for one cup. So before any money, we must know how many cups came out of 13 pots."
+    }
+   },
+   {
+    "say": "13 pots of 24 cups. 10 pots make 240 cups, and 3 pots make 72.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "10 × 24 = 240"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 24 = 72"
+     }
+    ]
+   },
+   {
+    "say": "240 plus 72 is 312 cups.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "240 + 72 = 312"
+     }
+    ]
+   },
+   {
+    "say": "Each cup is 15 rupees. 312 times 10 is 3120. 312 times 5 is half of that, 1560.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "312 × 10 = 3120"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "312 × 5 = 1560"
+     }
+    ]
+   },
+   {
+    "say": "3120 plus 1560 is 4680. He earned 4,680 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3120 + 1560 = 4680",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "4680"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice we used all three numbers. Multiply only two of them, and a piece of the story is missing."
+   },
+   {
+    "say": "Check in a different order. One pot earns 24 times 15, which is 360 rupees. And 13 pots earn 13 times 360, which is 4680.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "24 × 15 = 360"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "13 × 360 = 4680"
+     }
+    ]
+   },
+   {
+    "say": "So pots become cups, and cups become rupees. Two multiplications, one after the other."
+   }
+  ]
+ },
+ "AIGEN_grade5_3d39e7e2-2749-41f1-921e-c8b59b14b97f": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "There are 45 teams with 11 players each, and every player gets a jersey costing 215 rupees. What does the school spend?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "45 teams, 11 players each, ₹215 a jersey",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Every player needs a jersey. How many jerseys is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "45",
+      "45 × 11",
+      "45 + 11"
+     ],
+     "answer": 1,
+     "ifNot": "There are 45 teams, and each team has 11 players. So the jerseys are 45 lots of 11."
+    }
+   },
+   {
+    "say": "45 times 11. A neat way: 45 times 10 is 450, and one more 45 makes 495 jerseys.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "45 × 10 = 450"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "450 + 45 = 495"
+     }
+    ]
+   },
+   {
+    "say": "Each jersey costs 215 rupees. 495 is awkward, but it is just 5 less than 500. So price 500 jerseys, then take 5 jerseys off.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "495 = 500 − 5"
+     }
+    ]
+   },
+   {
+    "say": "5 times 215 is 1,075. So 500 times 215 is 1,07,500.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "5 × 215 = 1,075"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "500 × 215 = 1,07,500"
+     }
+    ]
+   },
+   {
+    "say": "Now take off the 5 extra jerseys, which cost 1,075. 1,07,500 minus 1,075 is 1,06,425 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1,07,500 − 1,075 = 1,06,425",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "1,06,425"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is forgetting the players. 45 times 215 is only 9,675: one jersey for each team. That is among the choices.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "45 × 215 = 9,675"
+     }
+    ]
+   },
+   {
+    "say": "Check with a different split. 495 times 200 is 99,000. 495 times 15 is 7,425. Together, 1,06,425.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "495 × 200 = 99,000"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "495 × 15 = 7,425"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "99,000 + 7,425 = 1,06,425"
+     }
+    ]
+   },
+   {
+    "say": "So count the things first, teams times players. Then multiply by the price of one."
+   }
+  ]
+ },
+ "AIGEN_grade5_46e0bf0c-88df-4f60-9eaf-ff0b9af8b449": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Each batch of chai uses 375 millilitres of milk. Priya's family made 48 batches on Saturday and 36 on Sunday. Milk comes in packets of 4500 millilitres. How many packets?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "375 mL a batch. Batches 48 + 36. Packets of 4500 mL",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Every batch uses the same milk, so add the batches. 48 plus 36 is 84.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "48 + 36 = 84"
+     }
+    ]
+   },
+   {
+    "say": "What do we need next?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "84 + 375",
+      "the milk used, 84 × 375",
+      "4500 − 375"
+     ],
+     "answer": 1,
+     "ifNot": "Packets are measured in millilitres of milk. So we need to know how many millilitres 84 batches use: 84 times 375."
+    }
+   },
+   {
+    "say": "84 times 375. Split 375 into 300 and 75. 84 times 300 is 25,200. 84 times 75 is 6,300.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "84 × 300 = 25,200"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "84 × 75 = 6,300"
+     }
+    ]
+   },
+   {
+    "say": "25,200 plus 6,300 is 31,500 millilitres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "25,200 + 6,300 = 31,500"
+     }
+    ]
+   },
+   {
+    "say": "How many packets of 4500 is that? 31,500 divided by 4500. Drop two zeros from each number, and it becomes 315 divided by 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "31,500 ÷ 4500 = 315 ÷ 45"
+     }
+    ]
+   },
+   {
+    "say": "45 times 7 is 315. So they used exactly 7 packets, with nothing left over.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "45 × 7 = 315"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "31,500 ÷ 4500 = 7",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check a second way. One packet makes 4500 divided by 375, which is 12 batches. And 84 batches divided by 12 is 7 packets.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "4500 ÷ 375 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "84 ÷ 12 = 7"
+     }
+    ]
+   },
+   {
+    "say": "The word full is a warning. If the division had left a remainder, we would have had to think again. Here it comes out exactly."
+   },
+   {
+    "say": "So find the total used, in the same unit as the packet, and then divide by the size of one packet."
+   }
+  ]
+ },
+ "AIGEN_grade5_476bc237-c567-43a4-9a54-bced0f8e2037": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Grandmother made 156, 228 and 216 laddoos over three days. She packs them in boxes of 24 and wants none left over. How many boxes does she need?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Boxes of 24. Made 156, 228 and 216 laddoos",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First we need all the laddoos. 156 plus 228 is 384, and 384 plus 216 is 600.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "156 + 228 = 384"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "384 + 216 = 600"
+     }
+    ]
+   },
+   {
+    "say": "She wants no laddoo left over. What must be true about 600?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "it is an even number",
+      "it divides exactly by 24",
+      "it is bigger than 24"
+     ],
+     "answer": 1,
+     "ifNot": "No leftovers means the laddoos fill boxes of 24 exactly. So 600 divided by 24 must leave no remainder."
+    }
+   },
+   {
+    "say": "Let's test it. 24 is 4 times 6, so divide by 4 first. 600 divided by 4 is 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "24 = 4 × 6"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "600 ÷ 4 = 150"
+     }
+    ]
+   },
+   {
+    "say": "Then 150 divided by 6 is 25, with nothing left over.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "150 ÷ 6 = 25"
+     }
+    ]
+   },
+   {
+    "say": "So 600 divides exactly. She does not need to make even one more laddoo, and she needs 25 boxes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "600 ÷ 24 = 25",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "25"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The story talks about making a few more. That only happens when there is a remainder. Always test first, and don't add extras that are not needed."
+   },
+   {
+    "say": "Check. 25 boxes of 24: 25 times 4 is 100, and 100 times 6 is 600.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "25 × 4 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "100 × 6 = 600"
+     }
+    ]
+   },
+   {
+    "say": "So find the total first, then divide. A remainder of 0 means everything packs exactly."
+   }
+  ]
+ },
+ "AIGEN_grade5_66077f8a-0238-49e4-8803-3c2d3a5dea3f": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya's family bought 148 boxes of sparklers at 235 rupees each and sold them at 310 rupees each. The whole profit is shared equally among 5 orphanages.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "148 boxes. Bought at ₹235, sold at ₹310. Shared by 5",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "How much profit does one box make?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "310 + 235",
+      "310",
+      "310 − 235"
+     ],
+     "answer": 2,
+     "ifNot": "The profit on a box is what it sold for, minus what it cost. It sold for 310 and cost 235, so we subtract."
+    }
+   },
+   {
+    "say": "310 minus 235 is 75 rupees on every box.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "310 − 235 = 75"
+     }
+    ]
+   },
+   {
+    "say": "148 boxes, each making 75. Think of 75 as three quarters of 100. 148 times 100 is 14,800.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "148 × 100 = 14,800"
+     }
+    ]
+   },
+   {
+    "say": "A quarter of 14,800 is 3,700. Take that quarter away, and three quarters are left: 11,100 rupees of profit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "14,800 ÷ 4 = 3,700"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "14,800 − 3,700 = 11,100"
+     }
+    ]
+   },
+   {
+    "say": "Share it equally among the 5 orphanages. 11,100 divided by 5 is 2,220 rupees each.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "11,100 ÷ 5 = 2,220",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "2,220"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Don't share out all the money from the sales. Only the profit is given away, so the cost of the boxes comes off first."
+   },
+   {
+    "say": "Check the sharing. 5 lots of 2,220 make 11,100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "5 × 2,220 = 11,100"
+     }
+    ]
+   },
+   {
+    "say": "And check the profit with a different split. 148 times 70 is 10,360, 148 times 5 is 740, and together they make 11,100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "148 × 70 = 10,360"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "148 × 5 = 740"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "10,360 + 740 = 11,100"
+     }
+    ]
+   },
+   {
+    "say": "So find the profit on one, multiply by how many, and then share."
+   }
+  ]
+ },
+ "AIGEN_grade5_6d058827-0035-4f1d-9410-97607edc8933": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kiran's family filled 248 crates with 35 mangoes each, and had 15 loose mangoes left over. How many mangoes did the orchard produce?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "248 crates × 35 mangoes, and 15 loose mangoes",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The mangoes are in two places: packed in crates, and lying loose. Crates first. That is 248 times 35.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "248 × 35 = ?"
+     }
+    ]
+   },
+   {
+    "say": "Split 35 into 30 and 5. 248 times 30 is 7440.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "248 × 30 = 7440"
+     }
+    ]
+   },
+   {
+    "say": "248 times 10 is 2480, so 248 times 5 is half of that, 1240.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "248 × 10 = 2480"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "248 × 5 = 1240"
+     }
+    ]
+   },
+   {
+    "say": "7440 plus 1240 is 8680 mangoes in crates.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "7440 + 1240 = 8680"
+     }
+    ]
+   },
+   {
+    "say": "Is 8680 the answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes",
+      "No, add the 15 loose mangoes",
+      "No, take away 15"
+     ],
+     "answer": 1,
+     "ifNot": "The 15 loose mangoes grew in the orchard too. They did not fit in a crate, but they still count, so we add them on."
+    }
+   },
+   {
+    "say": "8680 plus 15 is 8695 mangoes in all.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "15 loose mangoes"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "8680 + 15 = 8695",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "8695"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Left over does not mean take away. Those 15 are extra mangoes, on top of the full crates."
+   },
+   {
+    "say": "Check the crates another way. 250 crates would hold 8750. We have 2 crates fewer, which is 70 mangoes, and 8750 minus 70 is 8680.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "250 × 35 = 8750"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "2 × 35 = 70"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "8750 − 70 = 8680"
+     }
+    ]
+   },
+   {
+    "say": "So the total is the full crates times the size of a crate, plus the loose ones."
+   }
+  ]
+ },
+ "AIGEN_grade5_6ee00e3c-a631-4e21-a24f-633e70e7916a": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ananya buys 48 packets with 25 diyas in each. She puts 12 diyas in every gift bag. How many bags can she make?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "48 packets × 25 diyas. Bags of 12 diyas",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What do we need to know before we fill any bags?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "how many diyas there are",
+      "how many bags there are",
+      "the price of a packet"
+     ],
+     "answer": 0,
+     "ifNot": "Bags are filled with diyas, so first we count the diyas: 48 packets of 25."
+    }
+   },
+   {
+    "say": "48 times 25. 4 times 25 is 100, and 48 is 4 times 12. So 48 times 25 is 12 hundreds, which is 1200 diyas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4 × 25 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "48 × 25 = 1200"
+     }
+    ]
+   },
+   {
+    "say": "Now put 12 diyas in each bag. How many 12s are in 1200? 12 hundreds, shared into 12s, gives 1 hundred. She can make 100 bags.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1200 ÷ 12 = 100",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "100"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the zeros when dividing 1200 by 12. Both zeros stay, so the answer is 100, not 10."
+   },
+   {
+    "say": "Check by multiplying back. 100 bags of 12 diyas is 1200 diyas, exactly what she bought.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "100 × 12 = 1200"
+     }
+    ]
+   },
+   {
+    "say": "So multiply to find how many there are altogether. Then divide to share them into equal bags."
+   }
+  ]
+ },
+ "AIGEN_grade5_73619f49-2ba0-45b9-8720-d860671f667d": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Raju's uncle packs 36 mangoes in a crate. He packed 215 crates on Monday and 148 on Tuesday, and then 12 crates were damaged. How many mangoes are ready to sell?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "36 in a crate. Crates: 215 + 148, then 12 damaged",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "All the crates first. 215 plus 148 is 363 crates.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "215 + 148 = 363"
+     }
+    ]
+   },
+   {
+    "say": "12 were damaged and thrown away. 12 of what?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "12 damaged"
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12 mangoes",
+      "12 crates",
+      "12 days"
+     ],
+     "answer": 1,
+     "ifNot": "The 12 that were damaged are whole crates, each one full of mangoes. So we take 12 away from the number of crates, before we count any mangoes."
+    }
+   },
+   {
+    "say": "363 minus 12 is 351 good crates.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "363 − 12 = 351"
+     }
+    ]
+   },
+   {
+    "say": "Each holds 36 mangoes. Split 36 into 30 and 6. 351 times 30 is 10530.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "351 × 30 = 10530"
+     }
+    ]
+   },
+   {
+    "say": "And 351 times 6 is 2106.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "351 × 6 = 2106"
+     }
+    ]
+   },
+   {
+    "say": "10530 plus 2106 is 12636 mangoes, ready to sell.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "10530 + 2106 = 12636",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "12636"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The slip to avoid is taking 12 off at the very end. 12 mangoes are not the same as 12 crates of mangoes."
+   },
+   {
+    "say": "Check another way. All 363 crates would hold 13068 mangoes. The 12 damaged crates held 432. And 13068 minus 432 is 12636.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "363 × 36 = 13068"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "12 × 36 = 432"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "13068 − 432 = 12636"
+     }
+    ]
+   },
+   {
+    "say": "So sort out the crates first: add what was packed, take off what was lost. Then multiply by the mangoes in one crate."
+   }
+  ]
+ },
+ "AIGEN_grade5_80fb143f-d584-42f0-ab8c-e74cf4dcc85f": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Raju's uncle packs 36 chanas in each packet. He sold 45 packets in the morning and 28 in the evening. How many chanas is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "36 chanas a packet. Packets: 45 + 28",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Every packet holds 36. So what is the quickest plan?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiply 45 by 28",
+      "add the packets, then × 36",
+      "add 36, 45 and 28"
+     ],
+     "answer": 1,
+     "ifNot": "Morning packets and evening packets are the same size. So count all the packets together, then multiply by 36 once."
+    }
+   },
+   {
+    "say": "45 plus 28 is 73 packets.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "45 + 28 = 73"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 73 is among the choices, but that counts packets. The question asks for chanas.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "73"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "73 times 36. Split 36 into 30 and 6. 73 times 30 is 2190, and 73 times 6 is 438.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "73 × 30 = 2190"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "73 × 6 = 438"
+     }
+    ]
+   },
+   {
+    "say": "2190 plus 438 is 2628 chanas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2190 + 438 = 2628",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "2628"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check morning and evening separately. 45 times 36 is 1620. 28 times 36 is 1008. And 1620 plus 1008 is 2628.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "45 × 36 = 1620"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "28 × 36 = 1008"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "1620 + 1008 = 2628"
+     }
+    ]
+   },
+   {
+    "say": "So when the groups are all the same size, add the groups first and multiply once."
+   }
+  ]
+ },
+ "AIGEN_grade5_87e1960d-9843-44b7-8f2f-d591c1e6d180": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "There are 18 teams of 15 players, and a jersey costs 245 rupees. But 3 teams already have jerseys. What is spent on new ones?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "18 teams, 15 players each, ₹245 a jersey. 3 teams skip",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "3 teams already have jerseys. What do we do about them first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "18 + 3 teams",
+      "18 − 3 teams need jerseys",
+      "leave the 3 teams in"
+     ],
+     "answer": 1,
+     "ifNot": "Those 3 teams buy nothing. So take them out before counting any players: 18 minus 3."
+    }
+   },
+   {
+    "say": "18 minus 3 is 15 teams.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "3 teams skip"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "18 − 3 = 15"
+     }
+    ]
+   },
+   {
+    "say": "Each of those teams has 15 players. 15 times 10 is 150, 15 times 5 is 75, and together that is 225 jerseys.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "15 × 10 = 150"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15 × 5 = 75"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "150 + 75 = 225"
+     }
+    ]
+   },
+   {
+    "say": "Each jersey costs 245 rupees. Split 245 into 200, 40 and 5, and let 225 multiply each part.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "225 × (200 + 40 + 5)"
+     },
+     {
+      "op": "arc",
+      "line": "l5",
+      "from": {
+       "text": "225"
+      },
+      "to": [
+       {
+        "text": "200"
+       },
+       {
+        "text": "40"
+       },
+       {
+        "text": "5",
+        "nth": 2
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "say": "225 times 200 is 45,000. 225 times 40 is 9,000. 225 times 5 is 1,125.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "225 × 200 = 45,000"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "225 × 40 = 9,000"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "225 × 5 = 1,125"
+     }
+    ]
+   },
+   {
+    "say": "Add them. 45,000 plus 9,000 plus 1,125 is 55,125 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "45,000 + 9,000 + 1,125 = 55,125",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "55,125"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Buying for all 18 teams would cost 66,150, and that is among the choices. The 3 teams have to come out first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "18 × 15 × 245 = 66,150"
+     }
+    ]
+   },
+   {
+    "say": "And that gives a check. The 3 teams we left out would have cost 11,025. 66,150 minus 11,025 is 55,125.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "3 × 15 × 245 = 11,025"
+     },
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "66,150 − 11,025 = 55,125"
+     }
+    ]
+   },
+   {
+    "say": "So decide who is buying first. Then it is teams times players times the price of one jersey."
+   }
+  ]
+ },
+ "AIGEN_grade5_964e6e9c-4d7e-497f-a253-3c737857326d": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Each gift box has 3 layers, each layer has 4 rows, and each row has 7 sweets. Grandmother made 15 boxes, gave 2 away, and sold every sweet in the rest for 12 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Box: 3 layers × 4 rows × 7 sweets. 15 boxes − 2. ₹12 each",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start small, with one layer. 4 rows of 7 is 28 sweets.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4 × 7 = 28"
+     }
+    ]
+   },
+   {
+    "say": "A box has 3 layers. 3 times 28 is 84 sweets in one box.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 28 = 84"
+     }
+    ]
+   },
+   {
+    "say": "She made 15 boxes but gave 2 away. How many boxes does she sell?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "17",
+      "13"
+     ],
+     "answer": 2,
+     "ifNot": "Boxes that were given away earn no money. 15 minus 2 leaves 13 boxes to sell."
+    }
+   },
+   {
+    "say": "13 boxes of 84. 10 boxes hold 840, and 3 boxes hold 252. Together, 1092 sweets.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15 − 2 = 13"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "10 × 84 = 840"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 × 84 = 252"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "840 + 252 = 1092"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 1092 is among the choices, but that counts sweets, not rupees. Each sweet sells for 12 rupees.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "1092"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "1092 times 10 is 10,920, and 1092 times 2 is 2,184. Together, 13,104 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "1092 × 10 = 10,920"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "1092 × 2 = 2,184"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "10,920 + 2,184 = 13,104",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "13,104"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Selling all 15 boxes would bring 15,120, which is also among the choices. But the 2 gift boxes earn nothing.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "15 × 84 × 12 = 15,120"
+     }
+    ]
+   },
+   {
+    "say": "Use that as a check. The 2 gift boxes would have earned 2,016. And 15,120 minus 2,016 is 13,104.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "2 × 84 × 12 = 2,016"
+     },
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "15,120 − 2,016 = 13,104"
+     }
+    ]
+   },
+   {
+    "say": "So build it up in layers: one box, then the boxes sold, then the money."
+   }
+  ]
+ },
+ "AIGEN_grade5_9be5361f-fa0a-4aeb-99d9-11c5cab81bf3": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ankit's family sold 1,548 cups of chai at 12 rupees each. Each cup cost 8 rupees to make. We want the profit for the day.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1,548 cups sold at ₹12. Each cup costs ₹8 to make",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The story also says each pot makes 36 cups. Do we need that to find the profit?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes, pots matter",
+      "No, we know the cups"
+     ],
+     "answer": 1,
+     "ifNot": "We already know how many cups were sold: 1,548. The pots do not change the money, so the 36 is extra information."
+    }
+   },
+   {
+    "say": "The profit on one cup is what it sells for, minus what it costs. 12 minus 8 is 4 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "12 − 8 = 4"
+     }
+    ]
+   },
+   {
+    "say": "So every cup brings 4 rupees of profit, and there are 1,548 cups.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1,548 × 4 = ?"
+     }
+    ]
+   },
+   {
+    "say": "Split 1,548 into 1500 and 48. 1500 times 4 is 6000. 48 times 4 is 192.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1500 × 4 = 6000"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "48 × 4 = 192"
+     }
+    ]
+   },
+   {
+    "say": "6000 plus 192 is 6192. The profit is 6,192 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "6000 + 192 = 6192",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "6192"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is stopping at the sales. 1,548 times 12 is all the money taken in, but 8 rupees of every 12 went on milk, sugar and tea leaves."
+   },
+   {
+    "say": "Check the long way. Money in is 18,576. Money out is 12,384. And 18,576 minus 12,384 is 6,192.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1,548 × 12 = 18,576"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "1,548 × 8 = 12,384"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "18,576 − 12,384 = 6,192"
+     }
+    ]
+   },
+   {
+    "say": "So find the profit on one cup, then multiply by the number of cups. And leave out numbers the question does not need."
+   }
+  ]
+ }
+}

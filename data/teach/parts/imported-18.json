@@ -1,0 +1,7067 @@
+{
+ "AIGEN_grade5_9abd6007-86c6-467f-b518-630d3c6e25fb": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi and his grandfather walk once round a park that is 400 metres long and 200 metres wide, at 3 kilometres an hour. We want the time in minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Park 400 m by 200 m, speed 3 km/hr, time in minutes?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "One full round means walking along the boundary. So what do we find first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "400 × 200, the area",
+      "2 × (400 + 200), the perimeter",
+      "400 + 200"
+     ],
+     "answer": 1,
+     "ifNot": "Walking round the park means going along all 4 sides. Two sides are 400 metres and two are 200 metres, so we need the perimeter."
+    }
+   },
+   {
+    "say": "One long side and one short side make 400 plus 200, which is 600. There are two of each, so 2 times 600 is 1200. One round is 1200 metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "400 + 200 = 600"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "2 × 600 = 1200"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "1200"
+      },
+      "text": "metres",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the trap. The distance is in metres, but the speed is in kilometres an hour. Before we divide, the units have to match.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "3 km/hr"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "3 kilometres is 3000 metres, and an hour is 60 minutes. So they walk 3000 metres in 60 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 km in 1 hr = 3000 m in 60 min",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How many metres do they walk in just 1 minute?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3000 ÷ 60",
+      "3000 × 60",
+      "60 ÷ 3"
+     ],
+     "answer": 0,
+     "ifNot": "The 3000 metres are spread equally over 60 minutes. So we share 3000 by 60 to find the metres in one minute."
+    }
+   },
+   {
+    "say": "3000 divided by 60 is 50. They walk 50 metres every minute.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3000 ÷ 60 = 50"
+     }
+    ]
+   },
+   {
+    "say": "So how many minutes for 1200 metres? 1200 divided by 50 is 24. One round takes 24 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "1200 ÷ 50 = 24",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "24"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 24 minutes at 50 metres a minute is 24 times 50, which is 1200 metres. That is exactly one round.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "24 × 50 = 1200"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: find the distance, make the units match, and then time is distance divided by speed."
+   }
+  ]
+ },
+ "AIGEN_grade5_9f8bd7db-3343-405c-b559-a286aa6f9dcb": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A train leaves at 7:30 in the morning and arrives at 12:30. It runs at 60 kilometres an hour for 2 hours, stops for 30 minutes, then runs at 90 kilometres an hour. How far is the whole trip?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "7:30 to 12:30: 60 km/hr for 2 hr, stop 30 min, 90 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The first part is ready to go. 60 kilometres an hour for 2 hours is 60 times 2, which is 120 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "60 × 2 = 120"
+     }
+    ]
+   },
+   {
+    "say": "For the second part we know the speed, 90, but not the time. So first: how long is the whole trip, from 7:30 to 12:30?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4 hours",
+      "5 hours",
+      "5 hours 30 minutes"
+     ],
+     "answer": 1,
+     "ifNot": "The minutes are the same at both ends, so just count the hours from 7 up to 12. That is 5 hours."
+    }
+   },
+   {
+    "say": "The whole trip is 5 hours. Take away the 2 hours of the first part, and the half hour at the station. 5 minus 2 minus a half leaves 2.5 hours, that is 2 and a half hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 − 2 − 0.5 = 2.5"
+     }
+    ]
+   },
+   {
+    "say": "Careful here: the 30 minutes at the station use up time, but the train covers no distance while it stands still.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "stop 30 min"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now the second part: 90 kilometres an hour for 2.5 hours. How do we find its distance?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "90 × 2.5",
+      "90 ÷ 2.5",
+      "90 × 5"
+     ],
+     "answer": 0,
+     "ifNot": "Distance is speed times time. The speed is 90, and the time for this part is 2.5 hours, not the whole 5."
+    }
+   },
+   {
+    "say": "2 hours at 90 is 180 kilometres. The extra half hour adds half of 90, which is 45. So the second part is 225 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "90 × 2 = 180"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "90 × 0.5 = 45"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "180 + 45 = 225"
+     }
+    ]
+   },
+   {
+    "say": "Add the two parts. 120 plus 225 is 345. The whole trip is 345 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "120 + 225 = 345",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "345"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the time: 2 hours, plus half an hour, plus 2.5 hours makes 5 hours, from 7:30 to 12:30. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "2 + 0.5 + 2.5 = 5"
+     }
+    ]
+   },
+   {
+    "say": "So when a trip comes in parts: find the time for each part, use speed times time for each distance, then add the distances."
+   }
+  ]
+ },
+ "AIGEN_grade5_9fab80d7-4e4f-464f-bccd-3901d2bbe536": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Neha and Kavitha run towards each other from the two ends of a 600 metre track. Neha runs 5 metres a second and Kavitha 3. When they meet, Neha turns and runs back to her start at 4 metres a second.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "600 m track: Neha 5 m/s, Kavitha 3 m/s; Neha back at 4 m/s",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "There are two stretches of time to find: the time until they meet, and the time Neha takes to run back. Then we add them."
+   },
+   {
+    "say": "Each second, Neha covers 5 metres and Kavitha covers 3. By how much does the gap between them shrink each second?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 + 3 = 8 metres",
+      "5 − 3 = 2 metres",
+      "5 × 3 = 15 metres"
+     ],
+     "answer": 0,
+     "ifNot": "They run towards each other, so both of them eat into the gap. Neha takes 5 metres off it and Kavitha takes 3, so it shrinks by 8 metres each second."
+    }
+   },
+   {
+    "say": "The gap starts at 600 metres and shrinks by 8 metres a second. 600 divided by 8 is 75, so they meet after 75 seconds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 + 3 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "600 ÷ 8 = 75"
+     }
+    ]
+   },
+   {
+    "say": "How far has Neha run by then? 5 metres a second for 75 seconds is 5 times 75, which is 375 metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 × 75 = 375"
+     }
+    ]
+   },
+   {
+    "say": "Now she turns and runs back to her start. How far does she have to run?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "600 metres",
+      "375 metres",
+      "225 metres"
+     ],
+     "answer": 1,
+     "ifNot": "She goes back the way she came. She is 375 metres from her starting point, so that is how far she runs back."
+    }
+   },
+   {
+    "say": "375 metres at 4 metres a second means 375 divided by 4. Half of 375 is 187.5, and half of that is 93.75. The run back takes 93.75 seconds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "375 ÷ 2 = 187.5"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "187.5 ÷ 2 = 93.75"
+     }
+    ]
+   },
+   {
+    "say": "Add the two times. 75 plus 93.75 is 168.75 seconds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "75 + 93.75 = 168.75",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "168.75"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is stopping at 75 seconds. That is only when the girls meet. The question asks for the time until Neha is back where she started."
+   },
+   {
+    "say": "Check the run back: 93.75 seconds at 4 metres a second is 375 metres, exactly as far as she ran out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "93.75 × 4 = 375"
+     }
+    ]
+   },
+   {
+    "say": "So when two runners come towards each other, add their speeds to see how fast the gap closes. Then take the story one stretch at a time."
+   }
+  ]
+ },
+ "AIGEN_grade5_a6765258-aa69-4276-8490-060e8e11c0d8": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya's train covers 120 kilometres at 60 kilometres an hour, then 80 at 40, then 100 at 50. Deepa's bus does the whole 300 kilometres at one steady speed and arrives at exactly the same time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Train: 120 km at 60, 80 km at 40, 100 km at 50. Bus: 300 km",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "For the bus's speed we need its distance, 300, and its time. Where will the time come from?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 60, 40 and 50",
+      "add the train's three times",
+      "300 ÷ 3"
+     ],
+     "answer": 1,
+     "ifNot": "Both arrive at the same moment, so the bus takes exactly as long as the train. So we find the train's time for each part and add them up."
+    }
+   },
+   {
+    "say": "Time is distance divided by speed. First part: 120 divided by 60 is 2 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "120 ÷ 60 = 2"
+     }
+    ]
+   },
+   {
+    "say": "Second part: 80 divided by 40 is 2 hours. Third part: 100 divided by 50 is 2 hours as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "80 ÷ 40 = 2"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "100 ÷ 50 = 2"
+     }
+    ]
+   },
+   {
+    "say": "So the train takes 2 plus 2 plus 2, which is 6 hours. The bus takes 6 hours too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 + 2 + 2 = 6"
+     }
+    ]
+   },
+   {
+    "say": "The bus covers 300 kilometres in 6 hours. 300 divided by 6 is 50, so the bus travels at 50 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "300 ÷ 6 = 50",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "50"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A word of warning. Never find a steady speed by just mixing the speeds 60, 40 and 50 together. Always use the whole distance divided by the whole time."
+   },
+   {
+    "say": "Check: 50 kilometres an hour for 6 hours is 50 times 6, which is 300 kilometres. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "50 × 6 = 300"
+     }
+    ]
+   },
+   {
+    "say": "So: arriving together means taking the same time. Find the total time, and then speed is distance divided by time."
+   }
+  ]
+ },
+ "AIGEN_grade5_a7714f4e-8b4a-40fd-945e-db3b1a1ec170": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya cycles 24 kilometres to the library at 12 kilometres an hour, and comes back the same way at 8 kilometres an hour. We want her average speed for the whole trip.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "24 km there at 12 km/hr, 24 km back at 8 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What do we work out to get an average speed?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "(12 + 8) ÷ 2",
+      "total distance ÷ total time",
+      "12 − 8"
+     ],
+     "answer": 1,
+     "ifNot": "It is tempting to take the number halfway between 12 and 8. But she spends longer riding at the slow speed, so we need the whole distance divided by the whole time."
+    }
+   },
+   {
+    "say": "Average speed is the whole distance divided by the whole time. The whole distance is there and back: 24 plus 24 is 48 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "24 + 24 = 48"
+     }
+    ]
+   },
+   {
+    "say": "Going: 24 kilometres at 12 an hour takes 24 divided by 12, which is 2 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "24 ÷ 12 = 2"
+     }
+    ]
+   },
+   {
+    "say": "Coming back: 24 divided by 8 is 3 hours. Slower, so it takes longer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "24 ÷ 8 = 3"
+     }
+    ]
+   },
+   {
+    "say": "The whole time is 2 plus 3, which is 5 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 + 3 = 5"
+     }
+    ]
+   },
+   {
+    "say": "Now 48 kilometres in 5 hours. 48 divided by 5 is 9.6, so her average speed is 9.6 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "48 ÷ 5 = 9.6",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "9.6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "See the trap? Halfway between 12 and 8 is 10, but the true answer is a little less. She rides at 8 for 3 hours and at 12 for only 2, so the slow speed pulls the average down."
+   },
+   {
+    "say": "Check: 9.6 times 5 is 48, the whole distance.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "9.6 × 5 = 48"
+     }
+    ]
+   },
+   {
+    "say": "So for an average speed, never average the speeds. Add up the distances, add up the times, and divide."
+   }
+  ]
+ },
+ "AIGEN_grade5_b1cb3843-2972-4747-99e6-6cf02d5cd394": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Deepak's train leaves at 6:15 in the morning. It covers 120 kilometres at 60 kilometres an hour, stops for 30 minutes, then covers 240 kilometres at 80 kilometres an hour. When does it arrive?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Leaves 6:15 AM: 120 km at 60, stop 30 min, 240 km at 80",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The arrival time is the leaving time plus all the time that passes. There are three pieces of time: the first run, the stop, and the second run."
+   },
+   {
+    "say": "First run: 120 kilometres at 60 an hour. Time is distance divided by speed, and 120 divided by 60 is 2 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "120 ÷ 60 = 2"
+     }
+    ]
+   },
+   {
+    "say": "Second run: 240 kilometres at 80 an hour. 240 divided by 80 is 3 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "240 ÷ 80 = 3"
+     }
+    ]
+   },
+   {
+    "say": "So how much time passes altogether, from leaving to arriving?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 hours",
+      "5 hours 30 minutes",
+      "6 hours"
+     ],
+     "answer": 1,
+     "ifNot": "2 hours and 3 hours of running make 5 hours. But the clock keeps ticking during the 30 minute stop, so that goes in as well."
+    }
+   },
+   {
+    "say": "2 hours, plus 3 hours, plus the 30 minute stop: that is 5 hours 30 minutes in all. Leaving out the stop is the classic slip here.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "2 hr + 3 hr + 30 min = 5 hr 30 min",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "30 min"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now add that to 6:15. First the 5 hours: 6:15 becomes 11:15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "6:15 AM + 5 hr = 11:15 AM",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Then the 30 minutes: 15 plus 30 is 45. So the train arrives at 11:45 in the morning.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "11:15 AM + 30 min = 11:45 AM",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "11:45 AM"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by going backwards. From 11:45, take off 30 minutes to reach 11:15, then take off 5 hours to reach 6:15. That is when the train left."
+   },
+   {
+    "say": "So for an arrival time: find each running time with distance divided by speed, add any stops, then add the total to the starting time."
+   }
+  ]
+ },
+ "AIGEN_grade5_b8e871d8-1266-48e3-a10a-c218966ff709": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Farhan rides 6 kilometres at 12 kilometres an hour, then 4 kilometres at 8 kilometres an hour. We want his average speed for the whole delivery trip.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "6 km at 12 km/hr, then 4 km at 8 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What two things do we need for an average speed?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the two speeds added: 12 + 8",
+      "total distance and total time",
+      "only the two distances"
+     ],
+     "answer": 1,
+     "ifNot": "Average speed is how far you went altogether, divided by how long it took altogether. So we need the whole distance and the whole time."
+    }
+   },
+   {
+    "say": "The whole distance is 6 plus 4, which is 10 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "6 + 4 = 10"
+     }
+    ]
+   },
+   {
+    "say": "Time for the first ride: 6 kilometres at 12 an hour. 6 is half of 12, so it takes half an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "6 ÷ 12 = 1/2"
+     }
+    ]
+   },
+   {
+    "say": "Second ride: 4 kilometres at 8 an hour. 4 is half of 8, so that is half an hour too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 ÷ 8 = 1/2"
+     }
+    ]
+   },
+   {
+    "say": "Two half hours make 1 whole hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1/2 + 1/2 = 1"
+     }
+    ]
+   },
+   {
+    "say": "10 kilometres in 1 hour. So his average speed is 10 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "10 ÷ 1 = 10",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "10",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here the answer happens to sit halfway between 12 and 8. That only works because he rode for the same time at each speed. It is not a rule you can trust."
+   },
+   {
+    "say": "Check: half an hour at 12 is 6 kilometres, and half an hour at 8 is 4 kilometres. That matches the story.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "12 × 1/2 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "8 × 1/2 = 4"
+     }
+    ]
+   },
+   {
+    "say": "So for an average speed: add up the distances, add up the times, and divide the first by the second."
+   }
+  ]
+ },
+ "AIGEN_grade5_bfca9ba2-08fe-452f-8f60-22e5cfdf8a40": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's boat goes downstream at 18 kilometres an hour for 40 minutes to reach a temple. It comes back the same way at 12 kilometres an hour. How many minutes does the trip back take?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "There: 18 km/hr for 40 min. Back: 12 km/hr, time?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We want the time for the trip back, and we know its speed. What else do we need?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the speed of the current",
+      "the distance to the temple",
+      "the 40 minutes again"
+     ],
+     "answer": 1,
+     "ifNot": "Time is distance divided by speed. We have the speed coming back, so the missing piece is how far away the temple is."
+    }
+   },
+   {
+    "say": "The trip there tells us the distance. An hour is 60 minutes, so 40 minutes is 40 out of 60, which is 2 thirds of an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "40/60 = 2/3"
+     }
+    ]
+   },
+   {
+    "say": "18 kilometres an hour for 2 thirds of an hour. A third of 18 is 6, so 2 thirds is 12. The temple is 12 kilometres away.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "18 × 2/3 = 12"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "12"
+      },
+      "text": "km to the temple",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Coming back, it is the same 12 kilometres, now at 12 kilometres an hour. 12 divided by 12 is 1, so the trip back takes 1 hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 ÷ 12 = 1"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the question asks for minutes, not hours. 1 hour is 60 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1 × 60 = 60",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "60",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice the trip back is longer than the 40 minutes going. Same distance, slower boat, more time. So 40 minutes could never be the answer."
+   },
+   {
+    "say": "Check: 12 kilometres an hour for 1 whole hour is 12 kilometres, exactly the distance to the temple.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 × 1 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So for a there and back trip: use the first leg to find the distance, then divide that distance by the speed coming back."
+   }
+  ]
+ },
+ "AIGEN_grade5_a954701c-ebae-486b-be8d-2cf78ac8a526": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Neha's family drive 450 kilometres from Pune to Goa. They do 75 kilometres an hour for the first 3 hours, stop 30 minutes for chai, then drive the rest at 50 kilometres an hour. We want the average speed, leaving the break out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "450 km: 75 km/hr for 3 hr, break 30 min, rest at 50 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Average speed is the whole distance divided by the whole driving time. We know the distance, 450 kilometres. So the real job is to find the time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First stretch: 75 kilometres an hour for 3 hours is 75 times 3, which is 225 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "75 × 3 = 225"
+     }
+    ]
+   },
+   {
+    "say": "How far is left for the second stretch?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "450 + 225",
+      "450 − 225",
+      "450 − 75"
+     ],
+     "answer": 1,
+     "ifNot": "The whole trip is 450 kilometres, and they have done 225 of them already. Take those away to see what is left."
+    }
+   },
+   {
+    "say": "450 minus 225 is 225. So 225 kilometres are still to go.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "450 − 225 = 225"
+     }
+    ]
+   },
+   {
+    "say": "225 kilometres at 50 an hour takes 225 divided by 50. Double both numbers to make it friendlier: 450 divided by 100, which is 4.5. So 4 and a half hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "225 ÷ 50 = 4.5"
+     },
+     {
+      "op": "note",
+      "line": "l3",
+      "target": {
+       "text": "225 ÷ 50"
+      },
+      "text": "450 ÷ 100",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, which times go into the whole driving time?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 + 4.5 + 0.5",
+      "3 + 4.5",
+      "only 4.5"
+     ],
+     "answer": 1,
+     "ifNot": "The question tells us to leave the chai break out. So we count only the hours spent driving: 3 hours and then 4.5 hours."
+    }
+   },
+   {
+    "say": "3 plus 4.5 is 7.5 hours of driving. The chai break is not in there, just as the question asked.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 + 4.5 = 7.5"
+     }
+    ]
+   },
+   {
+    "say": "450 kilometres in 7.5 hours. Double both again: 900 divided by 15, and that is 60. The average speed is 60 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4b",
+      "text": "900 ÷ 15 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "450 ÷ 7.5 = 60",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "60"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 60 kilometres an hour for 7.5 hours is 60 times 7.5, which is 450 kilometres. That is the whole trip.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "60 × 7.5 = 450"
+     }
+    ]
+   },
+   {
+    "say": "So: average speed is the whole distance over the whole time. Never just average the two speeds, and read carefully whether a break counts."
+   }
+  ]
+ },
+ "AIGEN_grade5_e6a88dda-9aac-4665-aedd-a8eb5d429699": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kavya and her mother drive 420 kilometres from Jaipur to Udaipur. They do 60 kilometres an hour for the first 3 hours, stop 30 minutes for lunch, then drive the rest at 80 kilometres an hour. We want the average speed, leaving lunch out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "420 km: 60 km/hr for 3 hr, lunch 30 min, rest at 80 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Average speed is the whole distance divided by the whole driving time. We know the distance, 420 kilometres. So the real job is to find the time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First stretch: 60 kilometres an hour for 3 hours is 60 times 3, which is 180 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "60 × 3 = 180"
+     }
+    ]
+   },
+   {
+    "say": "How far is left for the second stretch?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "420 + 180",
+      "420 − 180",
+      "420 − 60"
+     ],
+     "answer": 1,
+     "ifNot": "The whole trip is 420 kilometres, and they have done 180 of them already. Take those away to see what is left."
+    }
+   },
+   {
+    "say": "420 minus 180 is 240. So 240 kilometres are still to go.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "420 − 180 = 240"
+     }
+    ]
+   },
+   {
+    "say": "240 kilometres at 80 an hour takes 240 divided by 80, which is 3 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "240 ÷ 80 = 3"
+     }
+    ]
+   },
+   {
+    "say": "Now, which times go into the whole driving time?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 + 3 + 0.5",
+      "3 + 3",
+      "only 3"
+     ],
+     "answer": 1,
+     "ifNot": "The question tells us to leave the lunch break out. So we count only the hours spent driving: 3 hours and then 3 hours."
+    }
+   },
+   {
+    "say": "3 plus 3 is 6 hours of driving. The lunch break is not in there, just as the question asked.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 + 3 = 6"
+     }
+    ]
+   },
+   {
+    "say": "420 kilometres in 6 hours. 420 divided by 6 is 70, so the average speed is 70 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "420 ÷ 6 = 70",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "70"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 70 kilometres an hour for 6 hours is 70 times 6, which is 420 kilometres. That is the whole trip.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "70 × 6 = 420"
+     }
+    ]
+   },
+   {
+    "say": "So: average speed is the whole distance over the whole time. Never just average the two speeds, and read carefully whether a break counts."
+   }
+  ]
+ },
+ "AIGEN_grade5_b30339a8-4dda-4ae6-bd0f-f5558340ce4e": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Aarav's train runs at 90 kilometres an hour for 40 minutes, then 60 kilometres an hour for 30 minutes, then 120 kilometres an hour for 20 minutes. How far does it go altogether?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "90 km/hr 40 min, then 60 km/hr 30 min, 120 km/hr 20 min",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The speeds are in kilometres an hour, but the times are in minutes. What should we do with the minutes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiply them by the speeds",
+      "turn them into parts of an hour",
+      "add them all up"
+     ],
+     "answer": 1,
+     "ifNot": "A speed in kilometres an hour tells us what happens in one whole hour. So each time has to be written as a part of an hour before we multiply."
+    }
+   },
+   {
+    "say": "An hour is 60 minutes. So 40 minutes is 40 out of 60, which is 2 thirds of an hour. Then 30 minutes is half an hour, and 20 minutes is a third of an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f0",
+      "text": "40/60 = 2/3"
+     },
+     {
+      "op": "write",
+      "id": "f1",
+      "text": "30/60 = 1/2"
+     },
+     {
+      "op": "write",
+      "id": "f2",
+      "text": "20/60 = 1/3"
+     }
+    ]
+   },
+   {
+    "say": "First stretch: 90 kilometres an hour for 2 thirds of an hour. A third of 90 is 30, so 2 thirds is 60 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "90 × 2/3 = 60"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "2/3"
+      },
+      "text": "90 ÷ 3 = 30",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Second stretch: 60 kilometres an hour for half an hour. Half of 60 is 30, so that is 30 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 × 1/2 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Last stretch: 120 kilometres an hour for a third of an hour. How far is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "360 km",
+      "120 km",
+      "40 km"
+     ],
+     "answer": 2,
+     "ifNot": "A third of an hour is less than a whole hour, so the distance must be less than 120 kilometres. Share 120 into 3 equal parts."
+    }
+   },
+   {
+    "say": "A third of 120 is 40. So that stretch is 40 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "120 × 1/3 = 40"
+     }
+    ]
+   },
+   {
+    "say": "Now add the stretches. 60 plus 30 plus 40 is 130. The train covers 130 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "60 + 30 + 40 = 130",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "t",
+      "target": {
+       "text": "130"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the last stretch another way. 20 minutes fits into an hour 3 times, and 3 times 40 is 120, the speed we were given.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "3 × 40 = 120"
+     }
+    ]
+   },
+   {
+    "say": "The trap in this kind of question is multiplying a speed by the minutes as they stand. Kilometres an hour needs hours."
+   },
+   {
+    "say": "So when the time is in minutes and the speed is for an hour: turn the minutes into a part of an hour, multiply, then add the stretches."
+   }
+  ]
+ },
+ "AIGEN_grade5_e5f256fe-aa46-48e5-bdb7-1a6b0085e7db": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Rohan's auto goes at 15 kilometres an hour for 20 minutes through the lanes, then at 30 kilometres an hour for 30 minutes on the main road. How far is the station from his house?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "15 km/hr for 20 min, then 30 km/hr for 30 min",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The speeds are in kilometres an hour, but the times are in minutes. What should we do with the minutes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiply them by the speeds",
+      "turn them into parts of an hour",
+      "add them all up"
+     ],
+     "answer": 1,
+     "ifNot": "A speed in kilometres an hour tells us what happens in one whole hour. So each time has to be written as a part of an hour before we multiply."
+    }
+   },
+   {
+    "say": "An hour is 60 minutes. So 20 minutes is 20 out of 60, which is a third of an hour. And 30 minutes is half an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f0",
+      "text": "20/60 = 1/3"
+     },
+     {
+      "op": "write",
+      "id": "f1",
+      "text": "30/60 = 1/2"
+     }
+    ]
+   },
+   {
+    "say": "First stretch: 15 kilometres an hour for a third of an hour. A third of 15 is 5, so that is 5 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "15 × 1/3 = 5"
+     }
+    ]
+   },
+   {
+    "say": "Second stretch: 30 kilometres an hour for half an hour. How far is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "60 km",
+      "30 km",
+      "15 km"
+     ],
+     "answer": 2,
+     "ifNot": "Half an hour is less than a whole hour, so the distance must be less than 30 kilometres. Share 30 into 2 equal parts."
+    }
+   },
+   {
+    "say": "Half of 30 is 15. So that stretch is 15 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "30 × 1/2 = 15"
+     }
+    ]
+   },
+   {
+    "say": "Now add the stretches. 5 plus 15 is 20. The station is 20 kilometres from Rohan's house.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "5 + 15 = 20",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "t",
+      "target": {
+       "text": "20"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the last stretch another way. 30 minutes fits into an hour 2 times, and 2 times 15 is 30, the speed we were given.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "2 × 15 = 30"
+     }
+    ]
+   },
+   {
+    "say": "The trap in this kind of question is multiplying a speed by the minutes as they stand. Kilometres an hour needs hours."
+   },
+   {
+    "say": "So when the time is in minutes and the speed is for an hour: turn the minutes into a part of an hour, multiply, then add the stretches."
+   }
+  ]
+ },
+ "AIGEN_grade5_f2d37300-cb9d-44ee-9f66-16bb5fe2098b": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ananya's father drives at 30 kilometres an hour for the first 10 minutes, then at 60 kilometres an hour for the next 10 minutes. How far is the school from her home?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "30 km/hr for 10 min, then 60 km/hr for 10 min",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The speeds are in kilometres an hour, but the times are in minutes. What should we do with the minutes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiply them by the speeds",
+      "turn them into parts of an hour",
+      "add them all up"
+     ],
+     "answer": 1,
+     "ifNot": "A speed in kilometres an hour tells us what happens in one whole hour. So each time has to be written as a part of an hour before we multiply."
+    }
+   },
+   {
+    "say": "An hour is 60 minutes. So 10 minutes is 10 out of 60, which is a sixth of an hour. Both stretches last that long.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f0",
+      "text": "10/60 = 1/6"
+     }
+    ]
+   },
+   {
+    "say": "First stretch: 30 kilometres an hour for a sixth of an hour. A sixth of 30 is 5, so that is 5 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "30 × 1/6 = 5"
+     }
+    ]
+   },
+   {
+    "say": "Second stretch: 60 kilometres an hour for a sixth of an hour. How far is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "360 km",
+      "60 km",
+      "10 km"
+     ],
+     "answer": 2,
+     "ifNot": "A sixth of an hour is less than a whole hour, so the distance must be less than 60 kilometres. Share 60 into 6 equal parts."
+    }
+   },
+   {
+    "say": "A sixth of 60 is 10. So that stretch is 10 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 × 1/6 = 10"
+     }
+    ]
+   },
+   {
+    "say": "Now add the stretches. 5 plus 10 is 15. The school is 15 kilometres from Ananya's home.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "5 + 10 = 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "t",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the last stretch another way. 10 minutes fits into an hour 6 times, and 6 times 10 is 60, the speed we were given.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "6 × 10 = 60"
+     }
+    ]
+   },
+   {
+    "say": "The trap in this kind of question is multiplying a speed by the minutes as they stand. Kilometres an hour needs hours."
+   },
+   {
+    "say": "So when the time is in minutes and the speed is for an hour: turn the minutes into a part of an hour, multiply, then add the stretches."
+   }
+  ]
+ },
+ "AIGEN_grade5_cabecb79-a128-4dda-b5ee-2d5c24c3f7f8": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Rohan's train covers 360 kilometres in 5 hours. It runs at 90 kilometres an hour at first, then slows to 60 kilometres an hour for the rest. How many kilometres does it do at the slower speed?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "360 km in 5 hr: part at 90 km/hr, the rest at 60 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We don't know how long the train spent at each speed. So let's try a pretend trip: what if it had kept to 90 for the whole 5 hours?"
+   },
+   {
+    "say": "5 hours at 90 would be 5 times 90, which is 450 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 × 90 = 450"
+     }
+    ]
+   },
+   {
+    "say": "But the real trip is only 360. The pretend trip is too long by 450 minus 360, which is 90 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "450 − 360 = 90"
+     }
+    ]
+   },
+   {
+    "say": "Every hour the train goes at 60 when we pretended 90, how many kilometres does it lose?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "60",
+      "30",
+      "150"
+     ],
+     "answer": 1,
+     "ifNot": "In one hour at 90 it would cover 90 kilometres. At 60 it covers only 60. The gap between those two is what each slow hour loses."
+    }
+   },
+   {
+    "say": "90 minus 60 is 30. Every slow hour loses 30 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "90 − 60 = 30"
+     }
+    ]
+   },
+   {
+    "say": "We have 90 kilometres to lose, 30 at a time. 90 divided by 30 is 3, so the train spent 3 hours at the slower speed.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "90 ÷ 30 = 3"
+     },
+     {
+      "op": "note",
+      "line": "l4",
+      "target": {
+       "text": "3"
+      },
+      "text": "slow hours",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "3 hours at 60 kilometres an hour is 3 times 60, which is 180 kilometres at the slower speed.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 × 60 = 180",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "180"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the 3 is hours, and the question asks for kilometres. That is why we needed one more step."
+   },
+   {
+    "say": "Check: the other 2 hours were at 90, which is 180 kilometres as well. 180 plus 180 is 360, the whole trip.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "2 × 90 = 180"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "180 + 180 = 360"
+     }
+    ]
+   },
+   {
+    "say": "So when you know the total but not the split: pretend it was all one speed, see how far off you are, and put it right one hour at a time."
+   }
+  ]
+ },
+ "AIGEN_grade5_cd0b4e43-222d-47fc-9a45-b4631c319a09": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya and Kiran start from the same point on a 600 metre round track and run in opposite directions. Priya runs 5 metres a second and Kiran 3. When do they meet for the third time?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "600 m round track, opposite ways: 5 m/s and 3 m/s",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "They set off in opposite directions, so they come round to meet on the far side. Between them, they must cover one whole lap of 600 metres before they meet."
+   },
+   {
+    "say": "Each second, how many metres do the two of them cover between them?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 − 3 = 2",
+      "5 + 3 = 8",
+      "5 × 3 = 15"
+     ],
+     "answer": 1,
+     "ifNot": "Priya covers 5 metres of the lap, and Kiran covers 3 metres of it from the other side. Together that uses up 8 metres of the lap every second."
+    }
+   },
+   {
+    "say": "Together they cover 8 metres a second. 600 divided by 8 is 75, so they first meet after 75 seconds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5 + 3 = 8"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "600 ÷ 8 = 75"
+     }
+    ]
+   },
+   {
+    "say": "They pass each other and keep running. When do they meet again?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "after another 75 seconds",
+      "after another 600 seconds",
+      "never again"
+     ],
+     "answer": 0,
+     "ifNot": "From the moment they pass, it is the same story again: side by side, heading opposite ways, with one whole lap to cover between them. That takes 75 seconds again."
+    }
+   },
+   {
+    "say": "So they meet every 75 seconds. The first meeting is at 75 seconds, and the second is at 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "75 + 75 = 150"
+     }
+    ]
+   },
+   {
+    "say": "The third meeting is 75 seconds later still. 3 times 75 is 225 seconds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 × 75 = 225",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "225"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is stopping at 75. That is the first meeting, and the question asks for the third."
+   },
+   {
+    "say": "Check: in 225 seconds Priya runs 1125 metres and Kiran runs 675. Together that is 1800 metres, which is exactly 3 laps of 600.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 × 225 = 1125"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "3 × 225 = 675"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "1125 + 675 = 1800"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "3 × 600 = 1800"
+     }
+    ]
+   },
+   {
+    "say": "So on a round track, running opposite ways: add the speeds, find the time for one lap between you, and count one meeting for each lap."
+   }
+  ]
+ },
+ "AIGEN_grade5_e0aab10d-53f6-4e15-b3c9-090d5246eaa3": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Rohan and his dad drive 150 kilometres. They do 60 kilometres at 40 kilometres an hour, stop 30 minutes for chai, do 60 kilometres at 60, and the last 30 kilometres at 15. We want the average speed, with the stop counted.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "150 km: 60 at 40, stop 30 min, 60 at 60, 30 at 15",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Average speed is the whole distance divided by the whole time. The distance is 150 kilometres. So we need every piece of time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First stretch: 60 kilometres at 40 an hour. 60 divided by 40 is 1.5, so one and a half hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "60 ÷ 40 = 1.5"
+     }
+    ]
+   },
+   {
+    "say": "Second stretch: 60 kilometres at 60 an hour takes 1 hour. Last stretch: 30 kilometres at 15 an hour takes 2 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 ÷ 60 = 1"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "30 ÷ 15 = 2"
+     }
+    ]
+   },
+   {
+    "say": "The question says to include the chai stop. So which sum gives the whole time?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1.5 + 1 + 2",
+      "1.5 + 0.5 + 1 + 2",
+      "1.5 + 30 + 1 + 2"
+     ],
+     "answer": 1,
+     "ifNot": "This time the stop counts. And the stop is 30 minutes, which is half an hour, so it goes in as 0.5, in hours like all the others."
+    }
+   },
+   {
+    "say": "1.5 plus 0.5 is 2. Add 1 to get 3, and add 2 to get 5. The whole journey takes 5 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1.5 + 0.5 + 1 + 2 = 5"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "0.5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l4",
+      "target": {
+       "text": "0.5"
+      },
+      "text": "chai stop",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "150 kilometres in 5 hours. 150 divided by 5 is 30, so the average speed is 30 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "150 ÷ 5 = 30",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "30"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two traps here. One is forgetting the stop. The other is adding the 30 minutes as if it were 30 hours. Keep every time in hours."
+   },
+   {
+    "say": "Check: 30 kilometres an hour for 5 hours is 30 times 5, which is 150 kilometres. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "30 × 5 = 150"
+     }
+    ]
+   },
+   {
+    "say": "So for an average speed: add up every piece of time the question tells you to count, then divide the whole distance by it."
+   }
+  ]
+ },
+ "AIGEN_grade5_eae4d773-e97d-467f-91eb-84abe609cb03": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera walks to the market at 4 kilometres an hour and comes home by auto at 20 kilometres an hour. The round trip takes 3 hours. How far away is the market?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Walk there at 4 km/hr, auto back at 20 km/hr, 3 hr in all",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We don't know the distance. So let's think about just 1 kilometre of the road, and ask how long that 1 kilometre takes each way."
+   },
+   {
+    "say": "Walking: 4 kilometres take an hour, which is 60 minutes. So 1 kilometre takes 60 divided by 4, which is 15 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "60 ÷ 4 = 15"
+     }
+    ]
+   },
+   {
+    "say": "By auto, 20 kilometres take 60 minutes. How long does 1 kilometre take?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "20 minutes",
+      "3 minutes",
+      "80 minutes"
+     ],
+     "answer": 1,
+     "ifNot": "Share the 60 minutes equally over the 20 kilometres. 60 divided by 20 gives the minutes for each one."
+    }
+   },
+   {
+    "say": "60 divided by 20 is 3 minutes. So every kilometre of road costs her 15 minutes going and 3 minutes coming back: 18 minutes in all.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 ÷ 20 = 3"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15 + 3 = 18"
+     }
+    ]
+   },
+   {
+    "say": "The whole trip took 3 hours. In minutes, that is 3 times 60, which is 180 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 × 60 = 180"
+     }
+    ]
+   },
+   {
+    "say": "How many lots of 18 minutes fit into 180? 180 divided by 18 is 10. So the market is 10 kilometres away.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "180 ÷ 18 = 10",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "10"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: walking 10 kilometres at 4 an hour takes 2.5 hours. The auto does 10 kilometres at 20 an hour in half an hour. 2.5 plus 0.5 is 3 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "10 ÷ 4 = 2.5"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "10 ÷ 20 = 0.5"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "2.5 + 0.5 = 3"
+     }
+    ]
+   },
+   {
+    "say": "Notice the trap: she does not spend half the time each way. The walk takes most of the 3 hours, because walking is so much slower."
+   },
+   {
+    "say": "So when the distance is unknown: find the time for 1 kilometre there and back, then see how many of those fit into the total time."
+   }
+  ]
+ },
+ "AIGEN_grade5_ec5a09e1-2ca2-4258-8914-651929f1dfb6": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A houseboat goes downstream at 12 kilometres an hour for 1 hour 30 minutes to reach a temple. Arjun cycles the same one-way distance in 1 hour 12 minutes. What is Arjun's speed?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Boat: 12 km/hr for 1 hr 30 min. Arjun: 1 hr 12 min",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Arjun's speed needs his distance and his time. We have his time. Where does the distance come from?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the boat's trip back at 6",
+      "the boat's trip downstream",
+      "it cannot be found"
+     ],
+     "answer": 1,
+     "ifNot": "Arjun covers the same one-way distance as the boat. For the trip downstream we know both the speed and the time, so that trip gives us the distance."
+    }
+   },
+   {
+    "say": "The boat does 12 kilometres an hour for one and a half hours. The hour gives 12 kilometres, and the half hour gives 6 more. 12 plus 6 is 18 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "12 + 6 = 18"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "18"
+      },
+      "text": "km one way",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The trip back upstream at 6 kilometres an hour is only there to distract us. Arjun's ride has nothing to do with it."
+   },
+   {
+    "say": "Arjun takes 1 hour 12 minutes. In minutes, that is 60 plus 12, which is 72 minutes for the 18 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "60 + 12 = 72"
+     }
+    ]
+   },
+   {
+    "say": "72 minutes for 18 kilometres. How many minutes for each kilometre?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "54",
+      "4",
+      "90"
+     ],
+     "answer": 1,
+     "ifNot": "Share the 72 minutes equally over the 18 kilometres. 72 divided by 18 tells us the minutes for one kilometre."
+    }
+   },
+   {
+    "say": "72 divided by 18 is 4. He needs 4 minutes for every kilometre.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "72 ÷ 18 = 4"
+     }
+    ]
+   },
+   {
+    "say": "An hour has 60 minutes, and 60 divided by 4 is 15. So in one hour he rides 15 kilometres. His speed is 15 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "60 ÷ 4 = 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: at that speed, the first hour covers 15 kilometres. The last 12 minutes, at 4 minutes each, cover 3 more. 15 plus 3 is 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "12 ÷ 4 = 3"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "15 + 3 = 18"
+     }
+    ]
+   },
+   {
+    "say": "So pick out only what you need: one trip to find the distance, then that distance and the rider's own time to find the speed."
+   }
+  ]
+ },
+ "AIGEN_grade5_f181bd86-5d01-4cda-bc40-12e4894d07ee": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Grandfather sets off from home at 3 kilometres an hour. Ravi starts from the same place 20 minutes later, walking the same way at 5 kilometres an hour. How far from home does Ravi catch up?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Grandfather 3 km/hr. Ravi starts 20 min later at 5 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "When Ravi sets off, Grandfather is already ahead. So first: how far ahead is he?"
+   },
+   {
+    "say": "20 minutes is a third of an hour, because 3 lots of 20 make 60. In a third of an hour at 3 kilometres an hour, Grandfather walks 1 kilometre.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "20/60 = 1/3"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "3 × 1/3 = 1"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "1",
+       "nth": 2
+      },
+      "text": "km head start",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now both are walking. Each hour, by how much does Ravi close the gap?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 + 3 = 8 km",
+      "5 − 3 = 2 km",
+      "5 km"
+     ],
+     "answer": 1,
+     "ifNot": "They walk the same way. In an hour Ravi goes 5 kilometres, but Grandfather also moves on 3. So Ravi only gains the difference."
+    }
+   },
+   {
+    "say": "Ravi gains 2 kilometres every hour. The gap is 1 kilometre, which is half of 2, so he needs half an hour to catch up.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 − 3 = 2"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1 ÷ 2 = 1/2"
+     }
+    ]
+   },
+   {
+    "say": "How far from home is that? Ravi walks at 5 kilometres an hour for half an hour, and half of 5 is 2.5. He catches up 2.5 kilometres from home.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "5 × 1/2 = 2.5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "2.5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the 1 kilometre is only the head start, and the half hour is only a time. The question asks how far from home, so we need Ravi's distance."
+   },
+   {
+    "say": "Check with Grandfather. He walks 20 minutes and then 30 more, which is 50 minutes. He does 1 kilometre every 20 minutes, so that is 2.5 kilometres. The same spot!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "20 + 30 = 50"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "50 ÷ 20 = 2.5"
+     }
+    ]
+   },
+   {
+    "say": "So in a catch-up problem: find the head start, find how fast the gap closes, and that gives the time. Then use the chaser's speed to get the distance."
+   }
+  ]
+ },
+ "AIGEN_grade5_4018fb94-5a51-48e9-8353-5f51d2dd081e": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The coach has 225 players and wants them in equal rows and columns, a perfect square, for the photo. How many players stand in each row?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "225 players in a square: how many in each row?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "In a square, the number of rows and the number of players in a row are the same. So what are we looking for?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "half of 225",
+      "a number that times itself makes 225",
+      "225 shared by 4"
+     ],
+     "answer": 1,
+     "ifNot": "Rows times players in a row gives the total. In a square those two numbers are the same, so we need a number that, multiplied by itself, makes 225."
+    }
+   },
+   {
+    "say": "We want a number that, multiplied by itself, makes 225. That number is called the square root of 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "? × ? = 225"
+     }
+    ]
+   },
+   {
+    "say": "Start with easy numbers, to see roughly how big it is. 10 times 10 is 100, which is too small. 20 times 20 is 400, which is too big. So our number is between 10 and 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 × 20 = 400"
+     }
+    ]
+   },
+   {
+    "say": "Now look at the last digit of 225. Which number between 10 and 20 could work?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12",
+      "15",
+      "18"
+     ],
+     "answer": 1,
+     "ifNot": "225 ends in 5. A number times itself ends in 5 only when the number itself ends in 5. Between 10 and 20, that is 15."
+    }
+   },
+   {
+    "say": "225 ends in 5, so our number must end in 5 as well. Let's test 15. 15 times 10 is 150, and 15 times 5 is 75. 150 plus 75 is 225. It works!",
+    "board": [
+     {
+      "op": "write",
+      "id": "ma",
+      "text": "15 × 10 = 150"
+     },
+     {
+      "op": "write",
+      "id": "mb",
+      "text": "15 × 5 = 75"
+     },
+     {
+      "op": "write",
+      "id": "mc",
+      "text": "150 + 75 = 225"
+     }
+    ]
+   },
+   {
+    "say": "So the square root of 225 is 15. There are 15 players in each row, and 15 rows.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "√225 = 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the one just below, to be sure. 14 times 14 is 196, which is too small. So 15 is the only fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "14 × 14 = 196"
+     }
+    ]
+   },
+   {
+    "say": "One of the choices is 25, and it catches the eye because 225 ends in 25. But 25 times 25 is 625, which is far too big.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "25 × 25 = 625"
+     }
+    ]
+   },
+   {
+    "say": "So to undo a square: find the two tens it sits between, let the last digit narrow it down, then test by multiplying."
+   }
+  ]
+ },
+ "AIGEN_grade5_b5826a5e-9dbc-4728-9980-27b47d5d3f45": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi fills a square rangoli with 225 grains of coloured rice, in equal rows and columns. How many grains are along each side?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "225 grains fill a square: how many along each side?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "In a square, the number of rows and the number of grains in a row are the same. So what are we looking for?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "half of 225",
+      "a number that times itself makes 225",
+      "225 shared by 4"
+     ],
+     "answer": 1,
+     "ifNot": "Rows times grains in a row gives the total. In a square those two numbers are the same, so we need a number that, multiplied by itself, makes 225."
+    }
+   },
+   {
+    "say": "We want a number that, multiplied by itself, makes 225. That number is called the square root of 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "? × ? = 225"
+     }
+    ]
+   },
+   {
+    "say": "Start with easy numbers, to see roughly how big it is. 10 times 10 is 100, which is too small. 20 times 20 is 400, which is too big. So our number is between 10 and 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 × 20 = 400"
+     }
+    ]
+   },
+   {
+    "say": "Now look at the last digit of 225. Which number between 10 and 20 could work?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12",
+      "15",
+      "18"
+     ],
+     "answer": 1,
+     "ifNot": "225 ends in 5. A number times itself ends in 5 only when the number itself ends in 5. Between 10 and 20, that is 15."
+    }
+   },
+   {
+    "say": "225 ends in 5, so our number must end in 5 as well. Let's test 15. 15 times 10 is 150, and 15 times 5 is 75. 150 plus 75 is 225. It works!",
+    "board": [
+     {
+      "op": "write",
+      "id": "ma",
+      "text": "15 × 10 = 150"
+     },
+     {
+      "op": "write",
+      "id": "mb",
+      "text": "15 × 5 = 75"
+     },
+     {
+      "op": "write",
+      "id": "mc",
+      "text": "150 + 75 = 225"
+     }
+    ]
+   },
+   {
+    "say": "So the square root of 225 is 15. Ravi has 15 grains along each side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "√225 = 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the one just below, to be sure. 14 times 14 is 196, which is too small. So 15 is the only fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "14 × 14 = 196"
+     }
+    ]
+   },
+   {
+    "say": "Watch out for 25 among the choices. It looks tempting, sitting there at the end of 225, but 25 times 25 is 625. That is much more rice than Ravi has.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "25 × 25 = 625"
+     }
+    ]
+   },
+   {
+    "say": "So to undo a square: find the two tens it sits between, let the last digit narrow it down, then test by multiplying."
+   }
+  ]
+ },
+ "AIGEN_grade5_7034871d-5286-4b0f-a015-d38266802416": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya uses all of her 196 diyas to make one perfect square. How many diyas are along each side?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "196 diyas in a square: how many along each side?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "A square has as many rows as there are diyas in each row. So what kind of number are we hunting for?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "half of 196",
+      "a number that times itself makes 196",
+      "196 shared by 4"
+     ],
+     "answer": 1,
+     "ifNot": "Rows times diyas in a row gives the total. In a square those two numbers are the same, so we need a number that, multiplied by itself, makes 196."
+    }
+   },
+   {
+    "say": "We want a number that, multiplied by itself, makes 196. That number is called the square root of 196.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "? × ? = 196"
+     }
+    ]
+   },
+   {
+    "say": "Start with easy numbers, to see roughly how big it is. 10 times 10 is 100, which is too small. 20 times 20 is 400, which is too big. So our number is between 10 and 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 × 20 = 400"
+     }
+    ]
+   },
+   {
+    "say": "Now look at the last digit of 196. Which numbers between 10 and 20 could work?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "14 or 16",
+      "12 or 18"
+     ],
+     "answer": 1,
+     "ifNot": "196 ends in 6, so our number times itself must end in 6. Try the last digits: 4 times 4 ends in 6, and so does 6 times 6."
+    }
+   },
+   {
+    "say": "4 times 4 and 6 times 6 both end in 6, so it is 14 or 16. Test 14 first. 14 times 10 is 140, and 14 times 4 is 56. 140 plus 56 is 196. It works!",
+    "board": [
+     {
+      "op": "write",
+      "id": "ma",
+      "text": "14 × 10 = 140"
+     },
+     {
+      "op": "write",
+      "id": "mb",
+      "text": "14 × 4 = 56"
+     },
+     {
+      "op": "write",
+      "id": "mc",
+      "text": "140 + 56 = 196"
+     }
+    ]
+   },
+   {
+    "say": "So the square root of 196 is 14. Priya has 14 diyas along each side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "√196 = 14",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "14"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the other one, to be sure. 16 times 16 is 256, which is too big. So 14 is the only fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "16 × 16 = 256"
+     }
+    ]
+   },
+   {
+    "say": "One of the choices is 49. That is 196 shared by 4, as if the diyas only went round the edge. But they fill the whole square, so we need rows times columns.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "196 ÷ 4 = 49"
+     }
+    ]
+   },
+   {
+    "say": "So to undo a square: find the two tens it sits between, let the last digit narrow it down, then test by multiplying."
+   }
+  ]
+ },
+ "AIGEN_grade5_9634fbd4-d138-4fbe-96ab-2c5423b7c938": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The coach has 196 players and wants them in a perfect square for the group photo. How many players stand in each row?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "196 players in a square: how many in each row?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "A square has as many rows as there are players in each row. So what kind of number are we hunting for?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "half of 196",
+      "a number that times itself makes 196",
+      "196 shared by 4"
+     ],
+     "answer": 1,
+     "ifNot": "Rows times players in a row gives the total. In a square those two numbers are the same, so we need a number that, multiplied by itself, makes 196."
+    }
+   },
+   {
+    "say": "We want a number that, multiplied by itself, makes 196. That number is called the square root of 196.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "? × ? = 196"
+     }
+    ]
+   },
+   {
+    "say": "Start with easy numbers, to see roughly how big it is. 10 times 10 is 100, which is too small. 20 times 20 is 400, which is too big. So our number is between 10 and 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 × 20 = 400"
+     }
+    ]
+   },
+   {
+    "say": "Now look at the last digit of 196. Which numbers between 10 and 20 could work?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "14 or 16",
+      "12 or 18"
+     ],
+     "answer": 1,
+     "ifNot": "196 ends in 6, so our number times itself must end in 6. Try the last digits: 4 times 4 ends in 6, and so does 6 times 6."
+    }
+   },
+   {
+    "say": "4 times 4 and 6 times 6 both end in 6, so it is 14 or 16. Test 14 first. 14 times 10 is 140, and 14 times 4 is 56. 140 plus 56 is 196. It works!",
+    "board": [
+     {
+      "op": "write",
+      "id": "ma",
+      "text": "14 × 10 = 140"
+     },
+     {
+      "op": "write",
+      "id": "mb",
+      "text": "14 × 4 = 56"
+     },
+     {
+      "op": "write",
+      "id": "mc",
+      "text": "140 + 56 = 196"
+     }
+    ]
+   },
+   {
+    "say": "So the square root of 196 is 14. There are 14 players in each row.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "√196 = 14",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "14"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the other one, to be sure. 16 times 16 is 256, which is too big. So 14 is the only fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "16 × 16 = 256"
+     }
+    ]
+   },
+   {
+    "say": "The trap is guessing from the last digit alone. Both 14 and 16 looked possible, and only multiplying could tell them apart."
+   },
+   {
+    "say": "So to undo a square: find the two tens it sits between, let the last digit narrow it down, then test by multiplying."
+   }
+  ]
+ },
+ "AIGEN_grade5_3a6979fe-4e4c-43ab-9fa8-0c3727ec7112": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera has 225 water balloons in a square grid. Kiran asks: to add one more row and one more column, making a bigger square, how many more balloons are needed?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "225 balloons in a square. Add a row and a column: how many?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First we need the side of the square Meera has now. Which number, multiplied by itself, makes 225?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "25",
+      "15",
+      "45"
+     ],
+     "answer": 1,
+     "ifNot": "Test each one by multiplying it by itself. Only 15 times 15 comes to 225."
+    }
+   },
+   {
+    "say": "Let's test 15. 15 times 10 is 150, and 15 times 5 is 75. 150 plus 75 is 225. So the square is 15 by 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sa",
+      "text": "15 × 10 = 150"
+     },
+     {
+      "op": "write",
+      "id": "sb",
+      "text": "15 × 5 = 75"
+     },
+     {
+      "op": "write",
+      "id": "sc",
+      "text": "150 + 75 = 225"
+     }
+    ]
+   },
+   {
+    "say": "Now add one more row and one more column. How big is the new square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15 by 16",
+      "16 by 16",
+      "17 by 17"
+     ],
+     "answer": 1,
+     "ifNot": "One more row makes 16 rows. One more column makes 16 in each row. So each side grows by just 1."
+    }
+   },
+   {
+    "say": "The new square is 16 by 16. 16 times 10 is 160, and 16 times 6 is 96. 160 plus 96 is 256.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ma",
+      "text": "16 × 10 = 160"
+     },
+     {
+      "op": "write",
+      "id": "mb",
+      "text": "16 × 6 = 96"
+     },
+     {
+      "op": "write",
+      "id": "mc",
+      "text": "160 + 96 = 256"
+     }
+    ]
+   },
+   {
+    "say": "The extra balloons are the gap between the two squares. 256 minus 225 is 31. Meera needs 31 more balloons.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "256 − 225 = 31",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "31"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is a neat way to see it, and to check. The new row has 15, the new column has 15, and 1 more fills the corner. 15 plus 15 plus 1 is 31 as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "15 + 15 + 1 = 31"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "1",
+       "nth": 3
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "+ 1",
+       "nth": 2
+      },
+      "text": "corner",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The trap is forgetting the corner. A row of 15 and a column of 15 make 30, but that leaves a hole where they meet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "15 + 15 = 30"
+     }
+    ]
+   },
+   {
+    "say": "So the step from one square to the next is a row, a column and 1 corner. Find the side first, and the rest follows."
+   }
+  ]
+ },
+ "AIGEN_grade5_431b360d-b7ae-4ab9-b271-4df51d6beba5": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ankit fills a square tray with 196 samosas, in equal rows and columns. He wants one extra row and one extra column, to make a bigger square. How many more samosas does he need?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "196 samosas in a square. Add a row and a column: how many?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First we need the side of the square Ankit has now. Which number, multiplied by itself, makes 196?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "16",
+      "14",
+      "49"
+     ],
+     "answer": 1,
+     "ifNot": "Test each one by multiplying it by itself. Only 14 times 14 comes to 196."
+    }
+   },
+   {
+    "say": "Let's test 14. 14 times 10 is 140, and 14 times 4 is 56. 140 plus 56 is 196. So the square is 14 by 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sa",
+      "text": "14 × 10 = 140"
+     },
+     {
+      "op": "write",
+      "id": "sb",
+      "text": "14 × 4 = 56"
+     },
+     {
+      "op": "write",
+      "id": "sc",
+      "text": "140 + 56 = 196"
+     }
+    ]
+   },
+   {
+    "say": "Now add one more row and one more column. How big is the new square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "14 by 15",
+      "15 by 15",
+      "16 by 16"
+     ],
+     "answer": 1,
+     "ifNot": "One more row makes 15 rows. One more column makes 15 in each row. So each side grows by just 1."
+    }
+   },
+   {
+    "say": "The new square is 15 by 15. 15 times 10 is 150, and 15 times 5 is 75. 150 plus 75 is 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ma",
+      "text": "15 × 10 = 150"
+     },
+     {
+      "op": "write",
+      "id": "mb",
+      "text": "15 × 5 = 75"
+     },
+     {
+      "op": "write",
+      "id": "mc",
+      "text": "150 + 75 = 225"
+     }
+    ]
+   },
+   {
+    "say": "The extra samosas are the gap between the two squares. 225 minus 196 is 29. Ankit needs 29 more samosas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "225 − 196 = 29",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "29"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is a neat way to see it, and to check. The new row has 14, the new column has 14, and 1 more fills the corner. 14 plus 14 plus 1 is 29 as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "14 + 14 + 1 = 29"
+     },
+     {
+      "op": "mark",
+      "line": "c",
+      "target": {
+       "text": "1",
+       "nth": 3
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "+ 1",
+       "nth": 2
+      },
+      "text": "corner",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The trap is stopping at the size of the new tray, or forgetting the corner piece where the new row and the new column meet. The corner needs a samosa too."
+   },
+   {
+    "say": "So the step from one square to the next is a row, a column and 1 corner. Find the side first, and the rest follows."
+   }
+  ]
+ },
+ "AIGEN_grade5_0095ccb9-0d88-44c3-9fdb-b29654aa1edc": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya and her friends have diyas in a perfect square. With 57 more diyas, they could rearrange them all into the next larger perfect square. How many diyas do they have now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "A square of diyas + 57 more = the next larger square",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Picture a square of diyas. To grow it into the very next square, we add one more row along the bottom and one more column down the side."
+   },
+   {
+    "say": "The new row is as long as a side of the small square. So is the new column. And 1 more fills the corner where they meet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "extra = row + column + 1 corner",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "There are 57 extra diyas, and one of them is the corner. How many are left for the new row and the new column together?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "58",
+      "56",
+      "57"
+     ],
+     "answer": 1,
+     "ifNot": "The 57 extra ones are a row, a column and 1 corner piece. Take the corner away, and what is left is the row and the column."
+    }
+   },
+   {
+    "say": "57 minus 1 is 56. That is the row and the column together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "57 − 1 = 56"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "− 1"
+      },
+      "text": "the corner",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The row and the column are the same length, so we halve. 56 divided by 2 is 28. The small square has 28 diyas on each side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "56 ÷ 2 = 28"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "28"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So the small square holds 28 times 28. 28 times 20 is 560, and 28 times 8 is 224. 560 plus 224 is 784.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ma",
+      "text": "28 × 20 = 560"
+     },
+     {
+      "op": "write",
+      "id": "mb",
+      "text": "28 × 8 = 224"
+     },
+     {
+      "op": "write",
+      "id": "mc",
+      "text": "560 + 224 = 784"
+     }
+    ]
+   },
+   {
+    "say": "They started with 784 diyas. And the side, 28, is more than 10, just as the question said.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "28 × 28 = 784",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "784"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the next square is 29 times 29, which is 841. And 841 minus 784 is 57, just as the story says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "29 × 29 = 841"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "841 − 784 = 57"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 841 is among the choices too, but that is the bigger square. The question asks how many they had to begin with."
+   },
+   {
+    "say": "So remember how squares grow: a row, a column and 1 corner. Take the corner off the extra, halve what is left, and that is the side."
+   }
+  ]
+ },
+ "AIGEN_grade5_6bbe6abc-c0c0-42b4-926a-2a31c04afbf5": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi has tiles in a perfect square. He says that with 39 more tiles, he can make the next bigger perfect square. How many tiles does he have now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "A square of tiles + 39 more = the next bigger square",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Think how a square grows into the next one up. It gets one more row along the bottom, and one more column down the side."
+   },
+   {
+    "say": "The new row is as long as a side of the small square. So is the new column. And 1 more fills the corner where they meet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "extra = row + column + 1 corner",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "There are 39 extra tiles, and one of them is the corner. How many are left for the new row and the new column together?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "40",
+      "38",
+      "39"
+     ],
+     "answer": 1,
+     "ifNot": "The 39 extra ones are a row, a column and 1 corner piece. Take the corner away, and what is left is the row and the column."
+    }
+   },
+   {
+    "say": "39 minus 1 is 38. That is the row and the column together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "39 − 1 = 38"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "− 1"
+      },
+      "text": "the corner",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The row and the column are the same length, so we halve. 38 divided by 2 is 19. The small square has 19 tiles on each side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "38 ÷ 2 = 19"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "19"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So the small square holds 19 times 19. 19 times 10 is 190, and 19 times 9 is 171. 190 plus 171 is 361.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ma",
+      "text": "19 × 10 = 190"
+     },
+     {
+      "op": "write",
+      "id": "mb",
+      "text": "19 × 9 = 171"
+     },
+     {
+      "op": "write",
+      "id": "mc",
+      "text": "190 + 171 = 361"
+     }
+    ]
+   },
+   {
+    "say": "Ravi has 361 tiles now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "19 × 19 = 361",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "361"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the next square is 20 times 20, which is 400. And 400 minus 361 is 39, just as the story says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "20 × 20 = 400"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "400 − 361 = 39"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 400 is among the choices too, but that is the bigger square Ravi is dreaming of. The question asks what he has now."
+   },
+   {
+    "say": "So the jump from one square to the next is always a row, a column and 1 corner. Take off the 1, halve, and you have the side."
+   }
+  ]
+ },
+ "AIGEN_grade5_8328bb29-7e38-4413-80dd-d3d06b4adf46": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun makes a perfect square of diyas. Then he adds 45 more diyas and has the next bigger perfect square. How many diyas were in the first square?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "First square of diyas + 45 more = the next bigger square",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Picture a square of diyas. To grow it into the very next square, we add one more row along the bottom and one more column down the side."
+   },
+   {
+    "say": "The new row is as long as a side of the small square. So is the new column. And 1 more fills the corner where they meet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "extra = row + column + 1 corner",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "There are 45 extra diyas, and one of them is the corner. How many are left for the new row and the new column together?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "46",
+      "44",
+      "45"
+     ],
+     "answer": 1,
+     "ifNot": "The 45 extra ones are a row, a column and 1 corner piece. Take the corner away, and what is left is the row and the column."
+    }
+   },
+   {
+    "say": "45 minus 1 is 44. That is the row and the column together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "45 − 1 = 44"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "− 1"
+      },
+      "text": "the corner",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The row and the column are the same length, so we halve. 44 divided by 2 is 22. The small square has 22 diyas on each side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "44 ÷ 2 = 22"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "22"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So the small square holds 22 times 22. 22 times 20 is 440, and 22 times 2 is 44. 440 plus 44 is 484.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ma",
+      "text": "22 × 20 = 440"
+     },
+     {
+      "op": "write",
+      "id": "mb",
+      "text": "22 × 2 = 44"
+     },
+     {
+      "op": "write",
+      "id": "mc",
+      "text": "440 + 44 = 484"
+     }
+    ]
+   },
+   {
+    "say": "The first square had 484 diyas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "22 × 22 = 484",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "484"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the next square is 23 times 23, which is 529. And 529 minus 484 is 45, just as the story says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "23 × 23 = 529"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "529 − 484 = 45"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 529 is among the choices too, but that is the second square. The question asks about the first."
+   },
+   {
+    "say": "So the jump from one square to the next is always a row, a column and 1 corner. Take off the 1, halve, and you have the side."
+   }
+  ]
+ },
+ "AIGEN_grade5_ce55588b-dcc6-4b9b-8e0d-ebec13105471": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya has diyas arranged in a square. With 45 more diyas, she can form the next bigger perfect square. How many diyas does she have now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "A square of diyas + 45 more = the next bigger square",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Think how a square grows into the next one up. It gets one more row along the bottom, and one more column down the side."
+   },
+   {
+    "say": "The new row is as long as a side of the small square. So is the new column. And 1 more fills the corner where they meet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "extra = row + column + 1 corner",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "There are 45 extra diyas, and one of them is the corner. How many are left for the new row and the new column together?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "46",
+      "44",
+      "45"
+     ],
+     "answer": 1,
+     "ifNot": "The 45 extra ones are a row, a column and 1 corner piece. Take the corner away, and what is left is the row and the column."
+    }
+   },
+   {
+    "say": "45 minus 1 is 44. That is the row and the column together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "45 − 1 = 44"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "− 1"
+      },
+      "text": "the corner",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The row and the column are the same length, so we halve. 44 divided by 2 is 22. The small square has 22 diyas on each side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "44 ÷ 2 = 22"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "22"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So the small square holds 22 times 22. 22 times 20 is 440, and 22 times 2 is 44. 440 plus 44 is 484.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ma",
+      "text": "22 × 20 = 440"
+     },
+     {
+      "op": "write",
+      "id": "mb",
+      "text": "22 × 2 = 44"
+     },
+     {
+      "op": "write",
+      "id": "mc",
+      "text": "440 + 44 = 484"
+     }
+    ]
+   },
+   {
+    "say": "Priya has 484 diyas now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "22 × 22 = 484",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "484"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the next square is 23 times 23, which is 529. And 529 minus 484 is 45, just as the story says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "23 × 23 = 529"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "529 − 484 = 45"
+     }
+    ]
+   },
+   {
+    "say": "Two traps to name. 529 is the bigger square, not the one she has. And 22 is only the side: the question asks for all the diyas, so we had to square it."
+   },
+   {
+    "say": "So when you are told the gap between two squares that are neighbours: take away 1 for the corner, halve, and you have the smaller side."
+   }
+  ]
+ },
+ "AIGEN_grade5_9810a55e-70aa-440c-be5c-b09ea5a517f9": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya goes from one perfect square of diyas to the very next one, and needs exactly 45 extra diyas to do it. How many diyas are in the larger square?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Smaller square of diyas + 45 more = the next square",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Picture a square of diyas. To grow it into the very next square, we add one more row along the bottom and one more column down the side."
+   },
+   {
+    "say": "The new row is as long as a side of the small square. So is the new column. And 1 more fills the corner where they meet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "extra = row + column + 1 corner",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "There are 45 extra diyas, and one of them is the corner. How many are left for the new row and the new column together?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "46",
+      "44",
+      "45"
+     ],
+     "answer": 1,
+     "ifNot": "The 45 extra ones are a row, a column and 1 corner piece. Take the corner away, and what is left is the row and the column."
+    }
+   },
+   {
+    "say": "45 minus 1 is 44. That is the row and the column together.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "45 − 1 = 44"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "− 1"
+      },
+      "text": "the corner",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The row and the column are the same length, so we halve. 44 divided by 2 is 22. The small square has 22 diyas on each side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "44 ÷ 2 = 22"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "22"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "But the question asks about the larger square. Its side is 1 more: 22 plus 1 is 23.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "22 + 1 = 23"
+     }
+    ]
+   },
+   {
+    "say": "So the larger square holds 23 times 23. 23 times 20 is 460, and 23 times 3 is 69. 460 plus 69 is 529.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ma",
+      "text": "23 × 20 = 460"
+     },
+     {
+      "op": "write",
+      "id": "mb",
+      "text": "23 × 3 = 69"
+     },
+     {
+      "op": "write",
+      "id": "mc",
+      "text": "460 + 69 = 529"
+     }
+    ]
+   },
+   {
+    "say": "The larger square has 529 diyas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "23 × 23 = 529",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "529"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the smaller square is 22 times 22, which is 484. And 529 minus 484 is 45, just as the story says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "22 × 22 = 484"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "529 − 484 = 45"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 484 is among the choices too, but that is the smaller square. Always look back at which square the question asks for."
+   },
+   {
+    "say": "So the jump from one square to the next is always a row, a column and 1 corner. Take off the 1, halve, and you have the side."
+   }
+  ]
+ },
+ "AIGEN_grade5_0cdecfa8-87ec-4400-80d9-f03ad30f025a": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya has some tiles. With 25 more, she would have a perfect square number of tiles. With 11 fewer, she would also have a perfect square number. How many tiles does she have?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "tiles + 25 = a square; tiles − 11 = a square",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Two square numbers are hiding in this story: a bigger one, 25 above her tiles, and a smaller one, 11 below."
+   },
+   {
+    "say": "How far apart are those two square numbers?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "25 − 11 = 14",
+      "25 + 11 = 36",
+      "25"
+     ],
+     "answer": 1,
+     "ifNot": "Start at the smaller square. Climb 11 to reach her tiles, then climb 25 more to reach the bigger square. Two climbs, so we add them."
+    }
+   },
+   {
+    "say": "11 up, and then 25 up, makes 36. So we need two square numbers that are exactly 36 apart.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "11 + 25 = 36"
+     }
+    ]
+   },
+   {
+    "say": "Here are the square numbers in order. Somewhere in this list is a pair with a gap of 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sq",
+      "text": "1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Neighbours in the list are too close together, so try squares that are two places apart. 100 minus 64 is 36. There is our pair!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "100 − 64 = 36"
+     },
+     {
+      "op": "mark",
+      "line": "sq",
+      "target": {
+       "text": "64"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "sq",
+      "target": {
+       "text": "100"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The bigger square, 100, is 25 more than her tiles. So her tiles are 100 minus 25, which is 75.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "100 − 25 = 75",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "75"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the other clue: 75 minus 11 is 64, and 64 is 8 times 8. Both clues fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "75 − 11 = 64"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "8 × 8 = 64"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 36 itself. It is the gap between the two squares, and it happens to be a square number too, but it is not how many tiles Riya has."
+   },
+   {
+    "say": "So when a number sits between two squares: add the two steps to get the gap, find squares that far apart, then step back to the number."
+   }
+  ]
+ },
+ "AIGEN_grade5_11c4b58f-95a7-4b0c-b7d5-90d81de16586": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera squares her mystery number, takes away the square of 15, and gets 64. What is her number?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "?² − 15² = 64",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We will work backwards. But first we need the square of 15. 15 times 10 is 150, and 15 times 5 is 75. 150 plus 75 is 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "15 × 10 = 150"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "15 × 5 = 75"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15² = 225"
+     }
+    ]
+   },
+   {
+    "say": "So the story now reads: her number squared, take away 225, leaves 64.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "?² − 225 = 64"
+     }
+    ]
+   },
+   {
+    "say": "How do we get back to her number squared?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "225 − 64",
+      "64 + 225",
+      "64 ÷ 2"
+     ],
+     "answer": 1,
+     "ifNot": "She took 225 away and landed on 64. To undo taking away, we add it back on."
+    }
+   },
+   {
+    "say": "64 plus 225 is 289. So her number, squared, is 289.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "64 + 225 = 289"
+     }
+    ]
+   },
+   {
+    "say": "Which number times itself makes 289? 10 times 10 is 100 and 20 times 20 is 400, so it lies between 10 and 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "20 × 20 = 400"
+     }
+    ]
+   },
+   {
+    "say": "289 ends in 9. Which of these could the number be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15",
+      "13 or 17",
+      "16 or 19"
+     ],
+     "answer": 1,
+     "ifNot": "A number times itself ends in 9 only when the number ends in 3 or 7. 3 times 3 is 9, and 7 times 7 ends in 9 as well."
+    }
+   },
+   {
+    "say": "Test 17. 17 times 10 is 170, and 17 times 7 is 119. 170 plus 119 is 289. Yes!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "17 × 10 = 170"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "17 × 7 = 119"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "170 + 119 = 289"
+     }
+    ]
+   },
+   {
+    "say": "So the mystery number is 17. Careful not to stop at 289: that is her number squared, not her number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "√289 = 17",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l11",
+      "target": {
+       "text": "17"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 17 squared is 289, and 289 minus 225 is 64, just as Meera said.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "17² − 15² = 64"
+     }
+    ]
+   },
+   {
+    "say": "So work backwards: undo the take away by adding, then undo the squaring with a square root."
+   }
+  ]
+ },
+ "AIGEN_grade5_17f60309-f899-4a48-915b-349b90244ebb": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kavya fills a square card with stickers, 15 in each row. Her brother bets she used more than 200. How many stickers did she use?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "A square of stickers, 15 in each row: how many?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The card is a square. So how many rows of stickers are there?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "15",
+      "30"
+     ],
+     "answer": 1,
+     "ifNot": "A square is as tall as it is wide. If 15 stickers fit across, then 15 rows fit down."
+    }
+   },
+   {
+    "say": "15 rows, with 15 stickers in each. That is 15 times 15, which we call 15 squared.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "15² = 15 × 15"
+     }
+    ]
+   },
+   {
+    "say": "Split it up to make it easy. 15 times 10 is 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "15 × 10 = 150"
+     }
+    ]
+   },
+   {
+    "say": "And 15 times 5 is 75. Together, 150 plus 75 is 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15 × 5 = 75"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "150 + 75 = 225"
+     }
+    ]
+   },
+   {
+    "say": "So Kavya used 225 stickers. And her brother was right: 225 is more than 200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "15 × 15 = 225",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "225"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two slips to dodge. 15 times 4 is 60, but that only goes round the edge. And 15 plus 15 is 30, which is just two rows.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "15 × 4 = 60"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "15 + 15 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Check by dividing: 225 stickers put into rows of 15 make exactly 15 rows. A perfect square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "225 ÷ 15 = 15"
+     }
+    ]
+   },
+   {
+    "say": "So to fill a square, multiply the side by itself. That is what squaring a number means."
+   }
+  ]
+ },
+ "AIGEN_grade5_18d73e41-33b8-4678-9bfe-d40e06aea1c4": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A sweet shop has 3 square trays of gulab jamuns, all the same, holding 75 altogether. On each tray, the rows are as long as the number of rows. How many are in one row?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3 equal square trays, 75 in all: how many in each row?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What do we find first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the square root of 75",
+      "how many are on one tray",
+      "75 × 3"
+     ],
+     "answer": 1,
+     "ifNot": "The 75 are spread over 3 trays. The square is one single tray, so first we find how many sit on one tray."
+    }
+   },
+   {
+    "say": "75 shared equally among 3 trays. 75 divided by 3 is 25, so each tray holds 25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "75 ÷ 3 = 25"
+     }
+    ]
+   },
+   {
+    "say": "Each tray is a square: as many rows as there are in each row. So we need a number that, multiplied by itself, makes 25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "? × ? = 25"
+     }
+    ]
+   },
+   {
+    "say": "Which number times itself makes 25?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "5",
+      "6"
+     ],
+     "answer": 1,
+     "ifNot": "Multiply each one by itself and see which lands exactly on 25. 5 times 5 does."
+    }
+   },
+   {
+    "say": "5 times 5 is 25. So each row has 5 gulab jamuns.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 × 5 = 25"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "√25 = 5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "5",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with 25 among the choices. That is a whole tray, not one row."
+   },
+   {
+    "say": "Check: one tray is 5 rows of 5, which is 25. And 3 trays of 25 make 75. It all fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "3 × 25 = 75"
+     }
+    ]
+   },
+   {
+    "say": "So ask yourself what the square is. Here it was one tray, so we shared first and took the square root second."
+   }
+  ]
+ },
+ "AIGEN_grade5_1c64058c-db47-461e-8457-8a0ed3fbd305": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ananya's diyas are in a square grid. When she adds 17 more, she gets a new perfect square. Both squares have fewer than 100 diyas. How many did she start with?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "square + 17 = another square, both under 100",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Both numbers are square numbers below 100. There are not many of those, so let's write them all out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sq",
+      "text": "1, 4, 9, 16, 25, 36, 49, 64, 81",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We want two of them that are 17 apart. Look at the gaps between neighbours. From 1 to 4 is 3. From 4 to 9 is 5. From 9 to 16 is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4 − 1 = 3"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "9 − 4 = 5"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "16 − 9 = 7"
+     }
+    ]
+   },
+   {
+    "say": "The gaps go 3, 5, 7 and keep growing. So where should we look for a gap as big as 17?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "near the start of the list",
+      "near the end of the list",
+      "right in the middle"
+     ],
+     "answer": 1,
+     "ifNot": "The gaps keep growing as the squares get bigger. 17 is a large gap, so it must lie between two of the bigger squares."
+    }
+   },
+   {
+    "say": "Try the last pair. 81 minus 64 is 17. Found it!",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "81 − 64 = 17"
+     },
+     {
+      "op": "mark",
+      "line": "sq",
+      "target": {
+       "text": "64"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "sq",
+      "target": {
+       "text": "81"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "She started with the smaller one, and adding 17 took her to the bigger one. So she started with 64 diyas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "64 + 17 = 81",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "64"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 81 is among the choices as well. But 81 is what she has after adding. The question asks what she started with."
+   },
+   {
+    "say": "Check: 64 is 8 times 8, and 81 is 9 times 9. Both are perfect squares, and both are under 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "8 × 8 = 64"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "9 × 9 = 81"
+     }
+    ]
+   },
+   {
+    "say": "So when the numbers are small, list the squares and look at the gaps. The gaps between neighbours are the odd numbers, in order."
+   }
+  ]
+ },
+ "AIGEN_grade5_20aef6ce-b282-46c1-bba7-1510804545cd": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun has 196 players in a perfect square. The principal talks about the next perfect square. Arjun needs as many samosas as the gap between that next square and the one after it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "196, then the next square, then the one after: gap?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Three squares in a row, then. Start with the one we know. 14 times 10 is 140, 14 times 4 is 56, and 140 plus 56 is 196. So 196 is 14 times 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "14 × 10 = 140"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "14 × 4 = 56"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "14 × 14 = 196"
+     }
+    ]
+   },
+   {
+    "say": "Which two squares come next after 14 times 14?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "14 × 15 and 14 × 16",
+      "15 × 15 and 16 × 16",
+      "196 + 1 and 196 + 2"
+     ],
+     "answer": 1,
+     "ifNot": "A square number is a number times itself. After 14 times 14, the next ones use the next counting numbers: 15 times 15, and then 16 times 16."
+    }
+   },
+   {
+    "say": "15 times 15: 15 times 10 is 150, 15 times 5 is 75, and together that is 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "15 × 15 = 225"
+     },
+     {
+      "op": "note",
+      "line": "l4",
+      "target": {
+       "text": "15 × 15"
+      },
+      "text": "150 + 75",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "16 times 16: 16 times 10 is 160, 16 times 6 is 96, and together that is 256.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "16 × 16 = 256"
+     },
+     {
+      "op": "note",
+      "line": "l5",
+      "target": {
+       "text": "16 × 16"
+      },
+      "text": "160 + 96",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "We have 196, then 225, then 256. Which two do we subtract?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "225 − 196",
+      "256 − 225",
+      "256 − 196"
+     ],
+     "answer": 1,
+     "ifNot": "Read the story once more. The gap is between the next square, 225, and the one after it, 256. The 196 is only where we started."
+    }
+   },
+   {
+    "say": "256 minus 225 is 31. Arjun needs 31 samosas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "256 − 225 = 31",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "31"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 29. That is 225 minus 196, the gap from Arjun's own square to the next one. The question wanted the gap after that.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "225 − 196 = 29"
+     }
+    ]
+   },
+   {
+    "say": "Check another way. To grow a 15 by 15 square, you add a row of 15, a column of 15 and 1 for the corner. 15 plus 15 plus 1 is 31.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "15 + 15 + 1 = 31"
+     }
+    ]
+   },
+   {
+    "say": "So name the squares in order first, then subtract exactly the two the question points at."
+   }
+  ]
+ },
+ "AIGEN_grade5_23016ea9-2ce6-4898-a7f5-80e5a81e130a": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya's 2025 petals make a perfect square. She adds a border all the way round: one extra row on top, one on the bottom, one column on the left and one on the right. How many more petals is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "2025 petals in a square, then a border all round",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, the side of her square. 40 times 40 is 1600 and 50 times 50 is 2500, so the side is between 40 and 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "40 × 40 = 1600"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "50 × 50 = 2500"
+     }
+    ]
+   },
+   {
+    "say": "2025 ends in 5, so the side ends in 5. Test 45: 45 times 40 is 1800, 45 times 5 is 225, and 1800 plus 225 is 2025. The side is 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "45 × 40 = 1800"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "45 × 5 = 225"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "45 × 45 = 2025"
+     }
+    ]
+   },
+   {
+    "say": "The border adds a row on top and a row at the bottom, a column on the left and a column on the right. What is the new side?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "45 + 1 = 46",
+      "45 + 2 = 47",
+      "45 + 4 = 49"
+     ],
+     "answer": 1,
+     "ifNot": "Look at one direction at a time. Top and bottom make the square 2 taller. Left and right make it 2 wider. So each side grows by 2, not by 4."
+    }
+   },
+   {
+    "say": "Each side grows by 2, so the new square is 47 by 47. 47 times 40 is 1880, 47 times 7 is 329, and together that is 2209.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "47 × 40 = 1880"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "47 × 7 = 329"
+     },
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "47 × 47 = 2209"
+     }
+    ]
+   },
+   {
+    "say": "The border is the difference between the two squares. 2209 minus 2025 is 184. She needs 184 more petals.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "2209 − 2025 = 184",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l9",
+      "target": {
+       "text": "184"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 4 times 45, which is 180. Four strips of 45 miss the 4 petals at the corners of the border.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "4 × 45 = 180"
+     }
+    ]
+   },
+   {
+    "say": "And that gives us a check: 180 for the four strips, plus 4 for the corners, is 184.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "180 + 4 = 184"
+     }
+    ]
+   },
+   {
+    "say": "So for a border all round a square, the side grows by 2. Square the new side, and take away the old square."
+   }
+  ]
+ },
+ "AIGEN_grade5_31ca7208-ca49-4c95-90f3-ca89c7d76a0c": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Vikram's square garden uses 81 tiles. He wants a bigger square garden, with 5 more tiles along each side. How many more tiles must he buy?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Square of 81 tiles. New square: 5 more along each side",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "How many tiles are along each side of the garden he has now?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "20",
+      "9",
+      "41"
+     ],
+     "answer": 1,
+     "ifNot": "We need a number that, multiplied by itself, makes 81. That is 9, because 9 times 9 is 81."
+    }
+   },
+   {
+    "say": "9 times 9 is 81, so each side has 9 tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "9 × 9 = 81"
+     }
+    ]
+   },
+   {
+    "say": "The new garden has 5 more along each side. 9 plus 5 is 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "9 + 5 = 14"
+     }
+    ]
+   },
+   {
+    "say": "The new garden needs 14 times 14 tiles. 14 times 10 is 140, 14 times 4 is 56, and 140 plus 56 is 196.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "14 × 10 = 140"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "14 × 4 = 56"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "14 × 14 = 196"
+     }
+    ]
+   },
+   {
+    "say": "Is 196 our answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, 196 tiles",
+      "no: take away the 81 he has",
+      "no: add the 81 he has"
+     ],
+     "answer": 1,
+     "ifNot": "196 is the whole new garden. But Vikram already owns 81 of those tiles. The question asks how many more he must buy."
+    }
+   },
+   {
+    "say": "196 minus 81 is 115. Vikram must buy 115 more tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "196 − 81 = 115",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "115"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Another slip is to think that 5 more on each side means just 5 times 5, or 25, more tiles. But the new tiles also run along two whole sides of the old garden.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "5 × 5 = 25"
+     }
+    ]
+   },
+   {
+    "say": "Check: 81 plus 115 is 196, and 196 is 14 times 14. A perfect square again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "81 + 115 = 196"
+     }
+    ]
+   },
+   {
+    "say": "So: take the square root for the old side, add to get the new side, square it, then subtract the tiles he already had."
+   }
+  ]
+ },
+ "AIGEN_grade5_35be4d4b-bbdc-4eb5-aa9c-a67710a8b666": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A small square rangoli uses 81 tiles. Riya's rangoli is a bigger square, with 4 more rows and 4 more columns than the small one. How many tiles does Riya need?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Small square: 81 tiles. Riya's: 4 more rows and columns",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start with the small rangoli. Which number times itself makes 81? 9 times 9. So it has 9 rows and 9 columns.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "9 × 9 = 81"
+     }
+    ]
+   },
+   {
+    "say": "Riya's has 4 more rows and 4 more columns. So what is the side of her square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9 + 4 + 4 = 17",
+      "9 + 4 = 13",
+      "81 + 4 = 85"
+     ],
+     "answer": 1,
+     "ifNot": "The 4 more rows make it taller, and the 4 more columns make it wider. Each one changes a different direction, so each side goes up by 4 just once."
+    }
+   },
+   {
+    "say": "9 plus 4 is 13. Her rangoli is 13 by 13.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "9 + 4 = 13"
+     }
+    ]
+   },
+   {
+    "say": "Now 13 times 13. 13 times 10 is 130, and 13 times 3 is 39.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "13 × 10 = 130"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "13 × 3 = 39"
+     }
+    ]
+   },
+   {
+    "say": "130 plus 39 is 169. Riya needs 169 tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "130 + 39 = 169"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "13 × 13 = 169",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "169"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is adding the 4 to the 81 tiles. The 4 belongs with the side, 9, not with the total."
+   },
+   {
+    "say": "Check by dividing: 169 tiles put into rows of 13 make exactly 13 rows. A perfect square.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "169 ÷ 13 = 13"
+     }
+    ]
+   },
+   {
+    "say": "So rows and columns change the side of a square. Find the old side, change it, then square the new one."
+   }
+  ]
+ },
+ "AIGEN_grade5_433beb48-bc06-44eb-b701-2a7f1ca2c03c": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ananya's kitchen floor is a square of tiles. Her mother says a kitchen with 3 more tiles along each side would need 105 more tiles. How many tiles are along one edge now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Square floor. 3 more tiles on each side needs 105 more",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Call the number of tiles along one edge n. Now picture the bigger floor: the old square sits in one corner, and the new tiles wrap round two of its sides."
+   },
+   {
+    "say": "Along one side there is a strip 3 tiles wide and n tiles long, so it has 3 n tiles. Along the next side there is another strip just like it. Together, 6 n.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "3n + 3n = 6n"
+     }
+    ]
+   },
+   {
+    "say": "The two strips leave a gap in the corner where they meet. How many tiles fill that corner?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "6",
+      "9"
+     ],
+     "answer": 2,
+     "ifNot": "The corner is 3 tiles wide and 3 tiles long, a little square of its own. 3 times 3 is 9."
+    }
+   },
+   {
+    "say": "The corner is 3 by 3, so 9 tiles. The new tiles are the two strips and the corner, and there are 105 of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "6n + 9 = 105"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "9"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "l2",
+      "target": {
+       "text": "9"
+      },
+      "text": "corner",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now find n. Take the 9 corner tiles away from both sides. 105 minus 9 is 96, so 6 n is 96.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "l2",
+      "target": {
+       "text": "+ 9"
+      },
+      "note": "− 9"
+     },
+     {
+      "op": "both",
+      "line": "l2",
+      "text": "− 9"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "6n = 96"
+     }
+    ]
+   },
+   {
+    "say": "6 n means 6 times n, so divide both sides by 6. 96 divided by 6 is 16. There are 16 tiles along one edge.",
+    "board": [
+     {
+      "op": "divide",
+      "line": "l3",
+      "by": "6"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "n = 16",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "n = 16"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the floor now is 16 times 16, which is 256. The bigger one is 19 times 19, which is 361. And 361 minus 256 is 105.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "16 × 16 = 256"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "19 × 19 = 361"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "361 − 256 = 105"
+     }
+    ]
+   },
+   {
+    "say": "The trap is forgetting the corner. Without it you would share 105 by 6, and that does not come out as a whole number. A sign that something is missing."
+   },
+   {
+    "say": "So when a square grows by 3 on each side, the new tiles are two strips and a 3 by 3 corner. Take off the corner, then share between the strips."
+   }
+  ],
+  "check": {
+   "variable": "n",
+   "value": "16"
+  }
+ },
+ "AIGEN_grade5_4795774d-0053-45e7-9bed-8a0ea96b6b46": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya's rangoli is an 11 by 11 square of tiles. Counting the tiles in order, the 1st, 4th, 9th, 16th and every other square-number position is red. The rest are blue. How many are blue?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "11 × 11 tiles. Positions 1, 4, 9, 16, 25, ... are red",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Don't let the layers in the story distract you. All we need is how many tiles there are in all, and how many of them are red."
+   },
+   {
+    "say": "The total is 11 times 11, which is 121. So the tiles are numbered from 1 up to 121.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "11 × 11 = 121"
+     }
+    ]
+   },
+   {
+    "say": "The red tiles sit at the square numbers: 1 times 1, 2 times 2, 3 times 3, and so on up the list.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sq",
+      "text": "1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The very last tile is number 121. Is that one red or blue?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "blue, because it is the last tile",
+      "red, because 121 = 11 × 11",
+      "blue, because 121 is odd"
+     ],
+     "answer": 1,
+     "ifNot": "121 is 11 times 11, so it is a square number itself. That makes the very last tile red."
+    }
+   },
+   {
+    "say": "So the red positions run from 1 times 1 all the way to 11 times 11. That is one red tile for each number from 1 to 11, so 11 red tiles.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "sq",
+      "target": {
+       "text": "121"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "sq",
+      "target": {
+       "text": "121"
+      },
+      "text": "11 × 11",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The blue tiles are everything else. 121 minus 11 is 110 blue tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "121 − 11 = 110",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l2",
+      "target": {
+       "text": "110"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 111. That comes from stopping the reds at 100 and missing that 121 is a square number too.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "121 − 10 = 111"
+     }
+    ]
+   },
+   {
+    "say": "Check by counting the list on the board: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121. That is 11 numbers."
+   },
+   {
+    "say": "So to count the square numbers up to a square, take its square root. Up to 11 times 11 there are exactly 11 of them."
+   }
+  ]
+ },
+ "AIGEN_grade5_50b30071-3fdf-4d1d-9940-0b73a0416b99": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Raju tries his coins in a square with 8 on each side, and has 17 left over. Then he tries 9 on each side, and every coin fits with none to spare. How many coins does he have?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "8 on a side: 17 left over. 9 on a side: fits exactly",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Which clue gives us the answer straight away?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the 17 left over",
+      "the 9 by 9 square that fits exactly",
+      "8 + 9"
+     ],
+     "answer": 1,
+     "ifNot": "When the coins fill a 9 by 9 square with none left over, the number of coins is exactly the number of places in that square."
+    }
+   },
+   {
+    "say": "A square with 9 on each side has 9 rows of 9. 9 times 9 is 81. So Raju has 81 coins.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "9 × 9 = 81",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l1",
+      "target": {
+       "text": "81"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The first clue lets us check. A square with 8 on each side uses 8 times 8, which is 64 coins.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8 × 8 = 64"
+     }
+    ]
+   },
+   {
+    "say": "If he has 81 coins and the smaller square uses 64, how do we find how many are left over?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "81 + 64",
+      "81 − 64",
+      "64 − 17"
+     ],
+     "answer": 1,
+     "ifNot": "Left over means what remains once the square is made. So take the 64 that were used away from the 81 he has."
+    }
+   },
+   {
+    "say": "81 minus 64 is 17. Exactly the 17 left over in the story. Both clues agree.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "81 − 64 = 17"
+     }
+    ]
+   },
+   {
+    "say": "Name the traps. 64 is only the smaller square, with coins still in his hand. And adding 17 to 81 would count the leftover coins twice."
+   },
+   {
+    "say": "So when one clue says the square fits exactly, use that one to find the number. Then use the other clue as your check."
+   }
+  ]
+ },
+ "AIGEN_grade5_526036b1-7a9f-43bf-b605-10667a6b0fc8": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Coach Sharma's clue: take my number, find its square root, multiply that by 5, then add the square of 4, and you get 51. What is his number?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "number → square root → × 5 → + 4² → 51",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The coach did his steps in order and ended on 51. We start at 51 and undo them, the last one first."
+   },
+   {
+    "say": "The last thing he did was add the square of 4. 4 times 4 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "4² = 16"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "+ 4²"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "He added 16 and reached 51. How do we undo that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "51 + 16",
+      "51 − 16",
+      "51 ÷ 16"
+     ],
+     "answer": 1,
+     "ifNot": "Adding is undone by taking away. He added 16 to land on 51, so we take 16 off again."
+    }
+   },
+   {
+    "say": "51 minus 16 is 35. So before that last step, he had 35.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "51 − 16 = 35"
+     }
+    ]
+   },
+   {
+    "say": "Before that, he multiplied by 5. Divide undoes times, and 35 divided by 5 is 7. So the square root of his number is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "35 ÷ 5 = 7"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "× 5"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The square root of his number is 7. So what is his number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7 × 2 = 14",
+      "7 × 7 = 49",
+      "7 ÷ 2"
+     ],
+     "answer": 1,
+     "ifNot": "Taking a square root is undone by squaring, which means multiplying the number by itself. So we need 7 times 7."
+    }
+   },
+   {
+    "say": "7 times 7 is 49. The coach's secret number is 49.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "7 × 7 = 49",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "49"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with 35 among the choices. That is a number we passed on the way back, not the secret number."
+   },
+   {
+    "say": "Check forwards: the square root of 49 is 7. 7 times 5 is 35. And 35 plus 16 is 51. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "√49 × 5 + 4² = 51"
+     }
+    ]
+   },
+   {
+    "say": "So to find a hidden number, walk the steps backwards: take away to undo add, divide to undo times, square to undo square root."
+   }
+  ]
+ },
+ "AIGEN_grade5_532b6f1c-e072-4b9e-aa0c-e32d18bfb233": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's rangoli has as many dots as the first 15 odd numbers added together. Priya's has as many dots as the square root of Ravi's number. How many dots does Priya have?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Ravi: first 15 odd numbers added. Priya: its square root",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Adding 15 odd numbers one at a time would take a while. Let's look for a pattern with small cases first."
+   },
+   {
+    "say": "The first odd number on its own is 1. The first 2 add up to 4. The first 3 add up to 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "1 + 3 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "1 + 3 + 5 = 9"
+     }
+    ]
+   },
+   {
+    "say": "1, then 4, then 9. What do you notice about these totals?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "they are odd numbers",
+      "they are square numbers",
+      "they go up by 3 each time"
+     ],
+     "answer": 1,
+     "ifNot": "1 is 1 times 1. 4 is 2 times 2. 9 is 3 times 3. Each total is a square number."
+    }
+   },
+   {
+    "say": "Each total is a square. 2 odd numbers give 2 times 2, and 3 odd numbers give 3 times 3. Each new odd number wraps a row, a column and a corner round the square before.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "1 + 3 = 2 × 2"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "1 + 3 + 5 = 3 × 3"
+     }
+    ]
+   },
+   {
+    "say": "So the first 15 odd numbers add up to 15 times 15, which is 225. That is Ravi's number of dots.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "15 × 15 = 225"
+     }
+    ]
+   },
+   {
+    "say": "Priya's number is the square root of 15 times 15. What is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "225",
+      "15",
+      "30"
+     ],
+     "answer": 1,
+     "ifNot": "A square root asks: which number, times itself, gives this? Ravi's number is 15 times 15, so the answer is sitting right there."
+    }
+   },
+   {
+    "say": "The square root of 15 times 15 is simply 15. Priya's rangoli has 15 dots.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "√225 = 15",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "15"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 225. That is Ravi's number. Squaring and taking the square root undo each other, so we land back on 15."
+   },
+   {
+    "say": "Check the 225: 15 times 10 is 150, 15 times 5 is 75, and 150 plus 75 is 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "150 + 75 = 225"
+     }
+    ]
+   },
+   {
+    "say": "So remember the pattern: add up the first so many odd numbers, and you get that many squared."
+   }
+  ]
+ },
+ "AIGEN_grade5_5524f10a-fe86-4778-93d9-513c93e0c371": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Cricket balls are stacked in square layers. The bottom layer has 6 balls on each side, the next has 1 fewer on each side, and so on, up to a single ball on top. How many balls altogether?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Square layers: 6 on a side at the bottom, down to 1 on top",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "How many balls are in the bottom layer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6",
+      "6 × 4 = 24",
+      "6 × 6 = 36"
+     ],
+     "answer": 2,
+     "ifNot": "The layer is a full square, 6 rows of 6. So it holds 6 times 6 balls, not just the ones round the edge."
+    }
+   },
+   {
+    "say": "The bottom layer is 6 times 6, which is 36. The layer above has 5 on a side, so 5 times 5, which is 25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "6 × 6 = 36"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "5 × 5 = 25"
+     }
+    ]
+   },
+   {
+    "say": "Carry on up the stack. 4 times 4 is 16, 3 times 3 is 9, 2 times 2 is 4, and the top layer is just 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "4 × 4 = 16"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "3 × 3 = 9"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "2 × 2 = 4"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "1 × 1 = 1"
+     }
+    ]
+   },
+   {
+    "say": "Six layers, so six numbers to add.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "36 + 25 + 16 + 9 + 4 + 1"
+     }
+    ]
+   },
+   {
+    "say": "Add them in friendly pairs. 36 plus 4 is 40. 25 plus 16 is 41. 9 plus 1 is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "36 + 4 = 40"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "25 + 16 = 41"
+     },
+     {
+      "op": "write",
+      "id": "l10",
+      "text": "9 + 1 = 10"
+     }
+    ]
+   },
+   {
+    "say": "40 plus 41 is 81, and 10 more makes 91. There are 91 balls in the box.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l11",
+      "text": "40 + 41 = 81"
+     },
+     {
+      "op": "write",
+      "id": "l12",
+      "text": "81 + 10 = 91",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l12",
+      "target": {
+       "text": "91"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is losing a layer. Leave out the bottom layer of 36, and you get 55. Count your layers: there must be 6 of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l13",
+      "text": "91 − 36 = 55"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding in order, from the bottom up. The running total goes 36, 61, 77, 86, 90, and then 91. The same answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l14",
+      "text": "36 → 61 → 77 → 86 → 90 → 91",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So for a stack of square layers: square each side, from the biggest down to 1, and add them all up."
+   }
+  ]
+ },
+ "AIGEN_grade5_7a3ad5fa-f41b-4ebd-b11c-0258d8068800": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Coach Sharma lines up 196 players in a perfect square, in equal rows and columns. Then the last 2 rows sit down. How many players are still standing?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "196 players in a square. The last 2 rows sit down",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "To know how many sit down, what must we find first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "196 ÷ 2",
+      "how many players are in one row",
+      "196 − 2"
+     ],
+     "answer": 1,
+     "ifNot": "2 rows sit down, not 2 players. So we need to know how many players make up one row."
+    }
+   },
+   {
+    "say": "In a square, the number in a row times itself gives the total. 10 times 10 is 100 and 20 times 20 is 400, so the row is between 10 and 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "10 × 10 = 100"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "20 × 20 = 400"
+     }
+    ]
+   },
+   {
+    "say": "196 ends in 6, so try 14. 14 times 10 is 140, 14 times 4 is 56, and 140 plus 56 is 196. Each row has 14 players.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "14 × 10 = 140"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "14 × 4 = 56"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "14 × 14 = 196"
+     }
+    ]
+   },
+   {
+    "say": "2 rows sit down. 2 times 14 is 28 players sitting.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "2 × 14 = 28"
+     }
+    ]
+   },
+   {
+    "say": "Take them away from the total. 196 minus 28 is 168 players still standing.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "196 − 28 = 168",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "168"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 196 minus 2: taking away 2 players when 2 whole rows sat down. Each row is 14 players."
+   },
+   {
+    "say": "Check another way. 14 rows, less the 2 that sat, leaves 12 rows standing. And 12 rows of 14 is 168.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "14 − 2 = 12"
+     },
+     {
+      "op": "write",
+      "id": "l9",
+      "text": "12 × 14 = 168"
+     }
+    ]
+   },
+   {
+    "say": "So in a square of people, find the size of a row with a square root first. Then rows turn into people by multiplying."
+   }
+  ]
+ },
+ "AIGEN_grade5_7d88b8b1-a54a-4471-b01c-d449a771ab6e": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ananya fills a big square with small tiles: 15 along one row, and 15 along one column. Karan bets she used more than 200. Is he right, and how many did she use?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "15 tiles in a row, 15 in a column. More than 200?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "How do we find all the tiles in the square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15 + 15",
+      "15 × 15",
+      "15 × 4"
+     ],
+     "answer": 1,
+     "ifNot": "There are 15 in a row, and 15 rows going down. That is 15 lots of 15, so we multiply."
+    }
+   },
+   {
+    "say": "15 rows of 15 is 15 times 15, which we call 15 squared.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "15² = 15 × 15"
+     }
+    ]
+   },
+   {
+    "say": "Do it in two bites. 10 rows of 15 are 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 × 15 = 150"
+     }
+    ]
+   },
+   {
+    "say": "The other 5 rows of 15 are 75. And 150 plus 75 is 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "5 × 15 = 75"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "150 + 75 = 225"
+     }
+    ]
+   },
+   {
+    "say": "She used 225 tiles. So was Karan right that it is more than 200?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "no, 225 is less than 200",
+      "yes, 225 is more than 200"
+     ],
+     "answer": 1,
+     "ifNot": "Compare them. 200 is 2 hundreds exactly, and 225 is 2 hundreds with some more on top. So 225 is the bigger one."
+    }
+   },
+   {
+    "say": "Yes. 225 is more than 200, so Karan wins his bet, and Ananya used 225 tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "15 × 15 = 225",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "225"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "225 > 200"
+     }
+    ]
+   },
+   {
+    "say": "Some of the choices say yes but give a different count. Getting the yes right is not enough: the number has to be right too."
+   },
+   {
+    "say": "Check by dividing: 225 tiles in rows of 15 make exactly 15 rows.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "225 ÷ 15 = 15"
+     }
+    ]
+   },
+   {
+    "say": "So a square with 15 on a side holds 15 squared. Work out the number first, and only then answer the yes or no."
+   }
+  ]
+ },
+ "AIGEN_grade5_95408d7a-99df-4b42-9da6-728a79b04c27": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meena has two square frames. One has a side of the square root of 49 centimetres, the other the square root of 144 centimetres. She puts one light every 1 centimetre along both borders. How many lights?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Sides: √49 cm and √144 cm. One light per cm of border",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First turn those square roots into plain numbers. Which number times itself is 49? 7 times 7. So the first frame has a side of 7 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "√49 = 7"
+     }
+    ]
+   },
+   {
+    "say": "And 12 times 12 is 144, so the second frame has a side of 12 centimetres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "12 × 12 = 144"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "√144 = 12"
+     }
+    ]
+   },
+   {
+    "say": "The lights go along the border. So what do we need for each frame?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "its area: side × side",
+      "its perimeter: 4 × side",
+      "just its side"
+     ],
+     "answer": 1,
+     "ifNot": "The border is the edge all the way round, and a square has 4 equal sides. So we need 4 times the side. Area would be for lights filling the inside."
+    }
+   },
+   {
+    "say": "First frame: 4 times 7 is 28 centimetres of border, so 28 lights.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "4 × 7 = 28"
+     }
+    ]
+   },
+   {
+    "say": "Second frame: 4 times 12 is 48 centimetres of border, so 48 lights.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "4 × 12 = 48"
+     }
+    ]
+   },
+   {
+    "say": "Together, 28 plus 48 is 76 lights.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "28 + 48 = 76",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "76"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Two traps. Adding the sides, 7 plus 12, gives 19: that is one side of each frame and nothing more. And using 49 and 144 as the sides forgets the square roots.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "7 + 12 = 19"
+     }
+    ]
+   },
+   {
+    "say": "That 19 gives us a check, though. One side of each is 19 centimetres, and there are 4 sides. 4 times 19 is 76.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "4 × 19 = 76"
+     }
+    ]
+   },
+   {
+    "say": "So take the square roots first to get the sides. Then a border means perimeter: 4 times the side."
+   }
+  ]
+ },
+ "AIGEN_grade5_99d886e8-daf8-4711-acef-12a57e9a965d": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Coach Sharma has 64 players standing in a square. Then 17 more join. What is the least number of extra players needed so that everyone can stand in a perfect square again?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "64 players in a square, 17 more join. How many more needed?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, how many players are there now? 64 plus 17 is 81.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "64 + 17 = 81"
+     }
+    ]
+   },
+   {
+    "say": "Before we add anyone else, what should we check about 81?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "whether 81 is even",
+      "whether 81 is already a square number",
+      "how far 81 is from 100"
+     ],
+     "answer": 1,
+     "ifNot": "The least number to add could be none at all. So first we test whether 81 players can already make a square."
+    }
+   },
+   {
+    "say": "Is there a number that, multiplied by itself, makes 81? Yes: 9 times 9 is 81.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "9 × 9 = 81"
+     }
+    ]
+   },
+   {
+    "say": "So the 81 players can already stand in 9 rows of 9. Nobody else is needed, and the answer is 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "81 − 81 = 0",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "0"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "This question is a little sneaky. 17 and 81 are both among the choices, and both appear in our working. But the question asks how many more are needed, and that is none."
+   },
+   {
+    "say": "Here is why it worked out so neatly. The old square was 8 by 8. A row of 8, a column of 8 and 1 for the corner make 17, exactly what the next square needs.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "8 + 8 + 1 = 17"
+     }
+    ]
+   },
+   {
+    "say": "So before adding anything to reach a square, always check whether you are standing on one already."
+   }
+  ]
+ },
+ "AIGEN_grade5_a5b0faf0-a638-453d-8069-b01a7747fb12": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Rohan has two trays. One holds a perfect square number of samosas, and the other holds the very next perfect square number. Together they hold 85. How many are on the larger tray?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "a square + the next square = 85",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Let's write out the square numbers, so we can see the neighbours side by side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sq",
+      "text": "1, 4, 9, 16, 25, 36, 49, 64, 81",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The two trays hold nearly the same amount, and 85 together. Roughly how big is each one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "about 10 each",
+      "around 40 each, about half of 85",
+      "about 85 each"
+     ],
+     "answer": 1,
+     "ifNot": "Two numbers that are close together and add up to 85 must each be near half of 85, which is a little over 40."
+    }
+   },
+   {
+    "say": "So we want neighbours in the list that sit either side of 40 or so. That points at 36 and 49.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "sq",
+      "target": {
+       "text": "36"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "sq",
+      "target": {
+       "text": "49"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Test them. 36 plus 49 is 85. That's our pair.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "36 + 49 = 85"
+     }
+    ]
+   },
+   {
+    "say": "36 is 6 times 6 and 49 is 7 times 7, so they really are squares next door to each other. The larger tray holds 49 samosas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "6 × 6 = 36"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "7 × 7 = 49",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "49"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 36 is among the choices too. It is the smaller tray, and the question asks for the larger one."
+   },
+   {
+    "say": "Check the pairs on either side. 25 plus 36 is 61, too small. 49 plus 64 is 113, too big. Only 36 and 49 work.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "25 + 36 = 61"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "49 + 64 = 113"
+     }
+    ]
+   },
+   {
+    "say": "So when two neighbouring squares add up to a total, look near half of the total, then test the pair."
+   }
+  ]
+ },
+ "AIGEN_grade5_aa962e84-9236-4aec-9f62-77fac659d704": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's dots are in a perfect square. Meena says that with 25 more dots he would have 169 in all. How many dots are along each side of his square?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Ravi's square of dots + 25 = 169. Side?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "169 is what he would have. How do we find what he has now?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "169 + 25",
+      "169 − 25",
+      "the square root of 169"
+     ],
+     "answer": 1,
+     "ifNot": "The 169 already includes the 25 extra dots. To get back to what Ravi really has, take the 25 away."
+    }
+   },
+   {
+    "say": "169 minus 25 is 144. Ravi has 144 dots now.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "169 − 25 = 144"
+     }
+    ]
+   },
+   {
+    "say": "His 144 dots make a square, so we need a number that times itself is 144. 10 times 10 is 100, which is a bit too small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "10 × 10 = 100"
+     }
+    ]
+   },
+   {
+    "say": "144 ends in 4. Which number just above 10 could it be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "11",
+      "12",
+      "13"
+     ],
+     "answer": 1,
+     "ifNot": "Look at the last digits. 1 times 1 ends in 1, and 3 times 3 ends in 9. Only 2 times 2 ends in 4, so try 12."
+    }
+   },
+   {
+    "say": "12 times 10 is 120, and 12 times 2 is 24. 120 plus 24 is 144. So each side has 12 dots.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "12 × 10 = 120"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "12 × 2 = 24"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "120 + 24 = 144"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "√144 = 12",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 13. That is the square root of 169, the number with the extra dots in it. Ravi's own square is the 144.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "13 × 13 = 169"
+     }
+    ]
+   },
+   {
+    "say": "Check: 12 times 12 is 144, and 144 plus 25 is 169, just as Meena said.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "144 + 25 = 169"
+     }
+    ]
+   },
+   {
+    "say": "So first undo the extra to find what he really has. Then take the square root."
+   }
+  ]
+ },
+ "AIGEN_grade5_afcda5cb-5f01-4e9b-ad14-6f127bff29df": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera's square rangoli has 15 tiles on each side. Arjun's smaller square has 9 tiles on each side. How many more tiles does Meera use than Arjun?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Meera: 15 on each side. Arjun: 9 on each side. Gap?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What do we need to compare?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the sides: 15 − 9",
+      "the totals: 15 × 15 and 9 × 9",
+      "the borders: 4 × 15 and 4 × 9"
+     ],
+     "answer": 1,
+     "ifNot": "The question asks about tiles used, and the tiles fill each whole square. So we need each total first: side times side."
+    }
+   },
+   {
+    "say": "Meera's total: 15 times 10 is 150, 15 times 5 is 75, and 150 plus 75 is 225.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "15 × 10 = 150"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "15 × 5 = 75"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15 × 15 = 225"
+     }
+    ]
+   },
+   {
+    "say": "Arjun's total: 9 times 9 is 81.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "9 × 9 = 81"
+     }
+    ]
+   },
+   {
+    "say": "Now the difference. 225 minus 81 is 144. Meera uses 144 more tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "225 − 81 = 144",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "144"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The big trap is to start with 15 minus 9, which is 6, and square that to get 36. Squaring the difference is not the same as the difference of the squares.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "15 − 9 = 6"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "6 × 6 = 36"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 81 plus 144 is 225, Meera's total.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "81 + 144 = 225"
+     }
+    ]
+   },
+   {
+    "say": "So square first, subtract second. Never subtract the sides and then square."
+   }
+  ]
+ },
+ "AIGEN_grade5_b5495610-aeff-4c64-b3a6-d3658e9e4932": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun tiles a square courtyard with exactly 16 tiles in each row. His father said the total is more than the square of 15 but less than the square of 17. Then Arjun tiles a small path with 49 tiles. How many tiles in all?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Square courtyard, 16 in each row. Path: 49 tiles. Total?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The courtyard is a square with 16 tiles in each row. How many tiles does it need?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "16 × 4",
+      "16 × 16",
+      "16 + 16"
+     ],
+     "answer": 1,
+     "ifNot": "A square has as many rows as it has tiles in a row. So there are 16 rows of 16, and that means multiplying 16 by itself."
+    }
+   },
+   {
+    "say": "16 times 10 is 160, and 16 times 6 is 96. 160 plus 96 is 256 tiles for the courtyard.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "16 × 10 = 160"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "16 × 6 = 96"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "16 × 16 = 256"
+     }
+    ]
+   },
+   {
+    "say": "Now test the father's clue. The square of 15 is 225, and the square of 17 is 289. Is 256 between them? Yes, it is.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "15² = 225"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "17² = 289"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "225 < 256 < 289"
+     }
+    ]
+   },
+   {
+    "say": "Then the path adds 49 tiles. 256 plus 49 is 305 tiles in all.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "256 + 49 = 305",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l7",
+      "target": {
+       "text": "305"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is using the father's numbers as the answer. 225 is only the square of 15, the lower fence. The courtyard itself is 256."
+   },
+   {
+    "say": "Check by taking the path away again: 305 minus 49 is 256, the courtyard.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l8",
+      "text": "305 − 49 = 256"
+     }
+    ]
+   },
+   {
+    "say": "So pick out what the question asks for: square the row for the courtyard, then add the path. The father's clue was only there as a check."
+   }
+  ]
+ },
+ "AIGEN_grade5_c1429cf6-78e1-40bb-9fa8-b77c5ca16e08": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meena's small box holds 5 squared samosas and her large box holds 8 squared. She sells 3 small boxes and 2 large boxes. How many samosas is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "3 × 5² + 2 × 8²",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "What does 5 squared mean?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 × 2",
+      "5 × 5",
+      "5 + 5"
+     ],
+     "answer": 1,
+     "ifNot": "Squared means the number multiplied by itself, like a square with 5 rows of 5. So 5 squared is 5 times 5."
+    }
+   },
+   {
+    "say": "5 squared is 5 times 5, which is 25. A small box holds 25 samosas.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "5²"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "5² = 25"
+     }
+    ]
+   },
+   {
+    "say": "8 squared is 8 times 8, which is 64. A large box holds 64 samosas.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "8²"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "8² = 64"
+     }
+    ]
+   },
+   {
+    "say": "3 small boxes: 3 times 25 is 75 samosas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "3 × 25 = 75"
+     }
+    ]
+   },
+   {
+    "say": "2 large boxes: 2 times 64 is 128 samosas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "2 × 64 = 128"
+     }
+    ]
+   },
+   {
+    "say": "Altogether, 75 plus 128 is 203 samosas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "75 + 128 = 203",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "203"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The classic slip is reading 5 squared as 5 times 2. That would make a small box hold only 10, and the total would come out far too small."
+   },
+   {
+    "say": "Check by taking away: 203 minus 128 is 75, the samosas in the small boxes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "203 − 128 = 75"
+     }
+    ]
+   },
+   {
+    "say": "So do the squares first, then the times, then add."
+   }
+  ]
+ },
+ "AIGEN_grade5_c6ab10b2-4525-4d4d-a7bd-2b183f0da88f": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Raju's grandfather has a square garden. He adds 5 metres to each side, and the new square garden has an area of 576 square metres. How long was a side of the first garden?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Square garden, each side + 5 m → area 576 sq m",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Which do we find first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "576 − 5",
+      "the side of the new garden",
+      "576 ÷ 4"
+     ],
+     "answer": 1,
+     "ifNot": "The 5 metres were added to a side, not to the area. So we need the new side first, and then we can step back 5."
+    }
+   },
+   {
+    "say": "The new garden is a square, so its side times itself is 576. 20 times 20 is 400 and 30 times 30 is 900, so the side is between 20 and 30.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "20 × 20 = 400"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "30 × 30 = 900"
+     }
+    ]
+   },
+   {
+    "say": "576 ends in 6, so the side ends in 4 or 6. Try 24: 24 times 20 is 480, 24 times 4 is 96, and 480 plus 96 is 576. The new side is 24 metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "24 × 20 = 480"
+     },
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "24 × 4 = 96"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "24 × 24 = 576"
+     }
+    ]
+   },
+   {
+    "say": "The new side is the old side plus 5. So step back: 24 minus 5 is 19. The first garden had a side of 19 metres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "24 − 5 = 19",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l6",
+      "target": {
+       "text": "19"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is stopping at 24. That is the side after the garden grew. And adding another 5 would be going the opposite way."
+   },
+   {
+    "say": "Check: 19 plus 5 is 24, and 24 times 24 is 576. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "19 + 5 = 24"
+     }
+    ]
+   },
+   {
+    "say": "So work backwards: a square root gives the new side, then undo the change to get the old side."
+   }
+  ]
+ },
+ "AIGEN_grade5_d1258e2b-ee26-4aa6-96dd-b95e249144d9": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Aman tiles a square courtyard. The outermost ring of tiles, the border, has 76 tiles. How many tiles cover the whole courtyard?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Square courtyard. Border ring: 76 tiles. Total?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We need the number of tiles along one side. But count the border one side at a time, and something odd happens at the corners."
+   },
+   {
+    "say": "If we count all 4 sides in full, how many times is each corner tile counted?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "once",
+      "2 times",
+      "4 times"
+     ],
+     "answer": 1,
+     "ifNot": "A corner tile sits at the end of two sides: the one going across and the one going down. So it gets counted with both of them."
+    }
+   },
+   {
+    "say": "Each corner is counted 2 times, and there are 4 corners. So 4 full sides come to 4 more than the border: 76 plus 4 is 80.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "76 + 4 = 80"
+     },
+     {
+      "op": "note",
+      "line": "l1",
+      "target": {
+       "text": "+ 4"
+      },
+      "text": "corners, counted twice",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "4 full sides make 80, so one side is 80 divided by 4, which is 20 tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "80 ÷ 4 = 20"
+     }
+    ]
+   },
+   {
+    "say": "The whole courtyard is 20 rows of 20. 20 times 20 is 400 tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "20 × 20 = 400",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l3",
+      "target": {
+       "text": "400"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 76 divided by 4, which is 19, and then 19 times 19, which is 361. That forgets that the corners are shared.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "76 ÷ 4 = 19"
+     },
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "19 × 19 = 361"
+     }
+    ]
+   },
+   {
+    "say": "Check: 4 sides of 20 is 80. Take off the 4 corners that were counted double, and we get 76, just what Aman counted.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "4 × 20 − 4 = 76"
+     }
+    ]
+   },
+   {
+    "say": "So for the border of a square: add 4 for the shared corners, divide by 4 to get the side, then square the side for the total."
+   }
+  ]
+ },
+ "AIGEN_grade5_d6446615-ea54-4e31-8414-3703da1e62f2": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya has diyas in a square. With 45 more, she can make a bigger square that has 23 diyas on each side. How many diyas are in her first square?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "square + 45 = a bigger square with 23 on each side",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Where do we start?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "23 + 45",
+      "the bigger square: 23 × 23",
+      "45 − 23"
+     ],
+     "answer": 1,
+     "ifNot": "We know everything about the bigger square: 23 on each side. So we can count its diyas, and then step back to the first square."
+    }
+   },
+   {
+    "say": "23 times 20 is 460, and 23 times 3 is 69. 460 plus 69 is 529. The bigger square has 529 diyas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "23 × 20 = 460"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "23 × 3 = 69"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "23 × 23 = 529"
+     }
+    ]
+   },
+   {
+    "say": "The bigger square is the first square plus 45. So how do we get back to the first square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "529 + 45",
+      "529 − 45",
+      "529 ÷ 45"
+     ],
+     "answer": 1,
+     "ifNot": "The 45 were added to make the bigger square. To go back to the first square, take them off again."
+    }
+   },
+   {
+    "say": "529 minus 45 is 484. Her first square has 484 diyas.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "529 − 45 = 484",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l4",
+      "target": {
+       "text": "484"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The story says the first arrangement is a square too, so 484 should be a square number. 22 times 20 is 440, 22 times 2 is 44, and 440 plus 44 is 484. It is 22 times 22.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "22 × 20 = 440"
+     },
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "22 × 2 = 44"
+     },
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "22 × 22 = 484"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 529 is among the choices. That is the bigger square, after the 45 were added."
+   },
+   {
+    "say": "So when you know the bigger square, build it first, then take away what was added. And check that what is left is a square too."
+   }
+  ]
+ },
+ "AIGEN_grade5_dbdd5f42-8b96-4dfa-9670-86a9ad7f0b0e": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya has a square rangoli of tiles. With 7 more rows and 7 more columns, the bigger square would need 225 tiles in total. How many tiles are in the rangoli she has now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "her square with 7 more rows and columns = 225 tiles",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The bigger rangoli is a square of 225 tiles, so its side times itself is 225. 15 times 10 is 150, 15 times 5 is 75, and 150 plus 75 is 225. Its side is 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l1",
+      "text": "15 × 10 = 150"
+     },
+     {
+      "op": "write",
+      "id": "l2",
+      "text": "15 × 5 = 75"
+     },
+     {
+      "op": "write",
+      "id": "l3",
+      "text": "15 × 15 = 225"
+     }
+    ]
+   },
+   {
+    "say": "The bigger square has 7 more rows and 7 more columns than hers. So what is the side of her square?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "15 − 14 = 1",
+      "15 − 7 = 8",
+      "225 − 7 = 218"
+     ],
+     "answer": 1,
+     "ifNot": "7 more rows make it 7 taller, and 7 more columns make it 7 wider. Each side grew by 7 just once, so step each side back by 7."
+    }
+   },
+   {
+    "say": "15 minus 7 is 8. Her rangoli is 8 by 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l4",
+      "text": "15 − 7 = 8"
+     }
+    ]
+   },
+   {
+    "say": "So how many tiles does she have now?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8",
+      "8 × 8 = 64",
+      "8 × 4 = 32"
+     ],
+     "answer": 1,
+     "ifNot": "8 is only one side. The tiles fill the whole square, 8 rows of 8, so we multiply 8 by 8."
+    }
+   },
+   {
+    "say": "8 times 8 is 64. Her rangoli has 64 tiles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l5",
+      "text": "8 × 8 = 64",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "l5",
+      "target": {
+       "text": "64"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The trap is 7 times 7, which is 49. The 7 changes the side of the square. It is not a little square of tiles to take away.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l6",
+      "text": "7 × 7 = 49"
+     }
+    ]
+   },
+   {
+    "say": "Check: 8 plus 7 is 15, and 15 times 15 is 225. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l7",
+      "text": "8 + 7 = 15"
+     }
+    ]
+   },
+   {
+    "say": "So work backwards from the bigger square: square root for its side, step the side back, then square again."
+   }
+  ]
+ }
+}

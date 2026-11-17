@@ -1,0 +1,275 @@
+"""More festival and shop stories from batch 12."""
+from imported_12_lib import A, AL, B, CH, CIRC, E, G, LB, LESSON, MINUS, NOTE, STRIKE, UL, W, split_times  # noqa: F401
+
+P = "AIGEN_grade5_"
+
+LESSONS = {}
+
+# Boxes of 12, 36, 108: the next is 324; 15 of them.
+LESSONS[P + "d3bf5b24-eddd-4c72-97a4-c968b0985ce9"] = LESSON(
+    B("Ravi's uncle has boxes that hold 12, 36 and 108 ladoos. Each box holds 3 times as many as the one before. He wants an extra large box that carries the pattern on, and he needs 15 of them.",
+      G("q", "Boxes hold 12, 36, 108, ?   He needs 15 of the next size")),
+    B("Let's see the pattern on the board first. 12 times 3 is 36, and 36 times 3 is 108.",
+      E("p1", "12 × 3"), E("p2", "36 × 3")),
+    B("So how many ladoos does the extra large box hold?",
+      ask=CH(["108 + 3", "108 × 3", "108 + 72"], 1,
+             "The boxes grow by times 3 at each step, not by adding. So the next box holds 108 times 3.")),
+    B("100 times 3 is 300, and 8 times 3 is 24. So the extra large box holds 324 ladoos.",
+      E("x1", "100 × 3"), E("x2", "8 × 3"), E("x", "108 × 3"), UL("x", "324")),
+    split_times(324, 15, 10, "+", 5, "m",
+                "He needs 15 of these boxes, so we want 324 times 15. 15 is 10 plus 5, so we find 324 times 10 and 324 times 5.",
+                mid="324 times 10 is 3240. And 5 is half of 10, so 324 times 5 is half of 3240, which is 1620.",
+                end="3240 plus 1620 is 4860. He needs 4860 ladoos.", final=True),
+    B("Careful: 1620 is one of the choices. But that is only 5 boxes' worth, half way through the sum."),
+    B("A rough check: 300 times 15 is 4500. Our box holds a little more than 300, so 4860 is just what we should expect.",
+      E("k", "300 × 15")),
+    B("So first carry the pattern on to find the new box. Then multiply by the number of boxes."),
+)
+
+# 125 + 78 crates of 48 mangoes at ₹15 each.
+LESSONS[P + "daaa77eb-3cdf-410f-8499-cc4880bc3b68"] = LESSON(
+    B("Ravi's uncle packs 48 mangoes in a crate. He filled 125 crates on Monday and 78 on Tuesday, and sold every mango for 15 rupees. How much did he earn?",
+      G("q", "48 mangoes a crate; 125 + 78 crates; ₹15 a mango")),
+    B("Where shall we start?",
+      ask=CH(["125 + 78, the crates in all", "125 × 78", "125 − 78"], 0,
+             "Monday's crates and Tuesday's crates are being put together. Putting together is adding.")),
+    B("125 plus 78 is 203 crates.",
+      E("c", "125 + 78"), UL("c", "203")),
+    split_times(48, 203, 200, "+", 3, "m",
+                "Each crate holds 48, so we want 48 times 203. 203 is 200 plus 3, which makes this easy.",
+                mid="48 times 200 is 9600. And 48 times 3 is 144.",
+                end="9600 plus 144 is 9744. That is 9744 mangoes."),
+    B("Each mango sells for 15 rupees. Times 15 is times 10 and times 5 together. How do we get times 5 quickly from times 10?",
+      ask=CH(["halve it", "double it", "add 5"], 0,
+             "5 is half of 10. So 5 lots is half as much as 10 lots.")),
+    B("9744 times 10 is 97,440. Half of that is 48,720, and that is 9744 times 5.",
+      E("r1", "9744 × 10"), E("r2", "9744 × 5")),
+    B("Add the two: 97,440 plus 48,720 is 1,46,160. He earned 1,46,160 rupees.",
+      A("r", "97,440 + 48,720")),
+    B("The slip to avoid is stopping early. 9744 is mangoes, not rupees: the price still has to be multiplied in."),
+    B("Check another way. One crate of 48 mangoes earns 720 rupees. And 203 crates at 720 rupees each comes to 1,46,160 again.",
+      E("k1", "48 × 15"), E("k2", "203 × 720")),
+    B("So work in stages: crates, then mangoes, then rupees. And know what each number is counting."),
+)
+
+# 24 trays of 36 and 15 left over.
+LESSONS[P + "de38a656-d258-46dc-a44c-adc964528af9"] = LESSON(
+    B("Priya's grandmother fills 24 trays with 36 ladoos on each. Then 15 more ladoos are left over, not enough for another tray. How many did she make?",
+      G("q", "24 full trays × 36 ladoos, and 15 left over")),
+    B("Start with the full trays. Which sum gives the ladoos on them?",
+      ask=CH(["36 × 24", "36 + 24", "24 × 15"], 0,
+             "24 trays, each with 36 ladoos, is 24 equal lots of 36. Equal lots means we multiply.")),
+    split_times(36, 24, 20, "+", 4, "m",
+                "36 times 24. Split 24 into 20 and 4, and multiply 36 by each piece.",
+                mid="36 times 20 is 720. And 36 times 4 is 144.",
+                end="720 plus 144 is 864. The full trays hold 864 ladoos."),
+    B("864 is one of the choices. Are we finished?",
+      ask=CH(["Yes, 864 is the answer", "No, add the 15 left over"], 1,
+             "864 is only what sits on the trays. The 15 left over ladoos were made too, so they belong in the total.")),
+    B("864 plus 15 is 879. She made 879 ladoos.",
+      A("t", "864 + 15")),
+    B("Check by going backwards. Take the 15 extras off 879 and we are back at 864. And 864 shared over 24 trays is 36 on each.",
+      E("k1", "879 − 15"), E("k2", "864 ÷ 24")),
+    B("So full groups are a multiply, and the left over ones are added on at the end."),
+)
+
+# 24 + 36 + 15 pouches a packet, 145 packets.
+LESSONS[P + "e435ad0d-beb4-4dc3-ae23-0a79ada45a23"] = LESSON(
+    B("Meena's mother puts 24 red pouches, 36 yellow pouches and 15 white pouches into every rangoli packet. She makes 145 packets. How many pouches does she use?",
+      G("q", "One packet: 24 red + 36 yellow + 15 white; 145 packets")),
+    B("What should we find first?",
+      ask=CH(["24 × 36 × 15", "145 × 24, and stop there", "the pouches in one packet"], 2,
+             "Every packet is filled the same way. So find how many pouches go into one packet, and then we can multiply by the 145 packets.")),
+    B("24 and 36 make a friendly 60, and 15 more is 75. Every packet has 75 pouches.",
+      E("a1", "24 + 36"), E("a", "60 + 15"), UL("a", "75")),
+    B("Now 75 times 145. Split 145 into 100, 40 and 5, and multiply 75 by each piece.",
+      W("s", "75 × 145 = 75 × 100 + 75 × 40 + 75 × 5"), UL("s", "100"), UL("s", "40")),
+    B("75 times 100 is 7500. 75 times 40 is 3000. And 75 times 5 is 375.",
+      E("m1", "75 × 100"), E("m2", "75 × 40"), E("m3", "75 × 5")),
+    B("Add the three pieces. 7500 plus 3000 is 10,500, and 375 more makes 10,875 pouches.",
+      E("t1", "7500 + 3000"), A("t", "10,500 + 375")),
+    B("Two of the choices are 10,870 and 10,875, so look at the last digit. 75 ends in 5 and 145 ends in 5, and 5 times 5 is 25. So the answer has to end in 5.",
+      LB("ch", "Choices include 10,870 and 10,875"), E("k", "5 × 5")),
+    B("So find what goes into one packet, then multiply by the number of packets, one piece at a time."),
+)
+
+# 48 ladoos a box; 125 boxes and 87 boxes.
+LESSONS[P + "e9b6ea35-1cd5-4e73-a4fd-e8000ac0c990"] = LESSON(
+    B("Ravi's father packs 48 ladoos in every gift box. He sold 125 boxes on the first day and 87 on the second. How many ladoos did he sell?",
+      G("q", "48 ladoos in a box; 125 boxes, then 87 boxes")),
+    B("Every box is the same. What is a quick first step?",
+      ask=CH(["48 + 125 + 87", "125 + 87, the boxes in all", "125 × 87"], 1,
+             "The boxes all hold 48, so count the boxes first. 48 is ladoos and the other two numbers are boxes, so the three cannot simply be added together.")),
+    B("125 plus 87 is 212 boxes.",
+      E("b", "125 + 87"), UL("b", "212")),
+    split_times(212, 48, 50, MINUS, 2, "m",
+                "Now 212 boxes of 48. 48 is 2 less than 50, so we find 212 times 50 and take off 212 times 2.",
+                mid="212 times 50 is half of 212 hundreds, which is 10,600. And 212 times 2 is 424.",
+                end="10,600 minus 424 is 10,176. He sold 10,176 ladoos.", final=True),
+    B("Check day by day. The first day is 125 boxes of 48, which is 6000. The second day is 87 boxes, 4176. Together, 10,176 again.",
+      E("k1", "125 × 48"), E("k2", "87 × 48"), E("k3", "6000 + 4176")),
+    B("Notice that 6000 is among the choices. It is the first day on its own, so it leaves out 87 boxes."),
+    B("So when every box is the same size, add the boxes first. Then multiply once."),
+)
+
+# 12 + 8 batches of 15 samosas, boxes of 25.
+LESSONS[P + "ebcbdea9-74cd-45df-9fc5-cc993e85925f"] = LESSON(
+    B("Kiran's grandmother makes 15 samosas in a batch. She made 12 batches in the morning and 8 in the evening, then packed them all into boxes of 25. How many boxes did she fill completely?",
+      G("q", "15 samosas a batch; 12 + 8 batches; boxes of 25")),
+    B("First, the samosas. Which line finds how many she made?",
+      ask=CH(["12 + 8 + 15 = 35", "20 × 15 = 300", "12 × 8 × 15 = 1440"], 1,
+             "Morning and evening batches are added: 12 plus 8 is 20 batches. Each batch is 15 samosas, so we want 20 lots of 15.")),
+    B("12 plus 8 is 20 batches. And 20 times 15 is 300 samosas.",
+      E("a1", "12 + 8"), E("a", "20 × 15"), UL("a", "300")),
+    B("Now boxes of 25. A useful fact first: how many 25s make 100?",
+      W("b0", "25 × ? = 100"),
+      ask=CH(["5", "4", "25"], 1,
+             "Count up in 25s until you reach 100, and you will have counted 4 times.")),
+    B("4 lots of 25 make 100, so every 100 samosas fill 4 boxes. 300 is 3 hundreds, and 3 times 4 is 12 boxes.",
+      E("b1", "4 × 25"), E("b2", "3 × 4"), A("b", "300 ÷ 25")),
+    B("The question says filled completely. 12 boxes of 25 use up exactly 300 samosas, so nothing is left over and every box is full.",
+      E("k", "12 × 25")),
+    B("So find the total first, then divide by the box size. And always look to see whether anything is left over."),
+)
+
+# 215 cups a day for 4 weeks.
+LESSONS[P + "ee6a4df6-897b-4a79-a567-82a71cc347a9"] = LESSON(
+    B("Ravi's father sells exactly 215 cups of chai every day, and the stall is open every day of the week. How many cups does he sell in 4 complete weeks?",
+      G("q", "215 cups every day, for 4 complete weeks")),
+    B("The sales are for a day, but the time is in weeks. How many days are there in 4 weeks?",
+      ask=CH(["4 × 5 = 20", "4 × 7 = 28", "4 + 7 = 11"], 1,
+             "A week has 7 days, and the stall is open on every one of them. So 4 weeks is 4 lots of 7 days.")),
+    B("4 times 7 is 28. So he sells chai on 28 days.",
+      E("d", "4 × 7"), UL("d", "28")),
+    split_times(215, 28, 30, MINUS, 2, "m",
+                "Now 215 times 28. 28 is 2 less than 30, so we find 215 times 30 and take off 215 times 2.",
+                mid="215 times 30 is 6450. And 215 times 2 is 430.",
+                end="6450 minus 430 is 6020. He sells 6020 cups of chai.", final=True),
+    B("One of the choices is 860. That is 215 times 4, as if he sold 215 cups in a whole week. But 215 is what he sells each day.",
+      E("t", "215 × 4")),
+    B("Check by splitting 28 another way. 215 times 20 is 4300, 215 times 8 is 1720, and 4300 plus 1720 is 6020.",
+      E("k1", "215 × 20"), E("k2", "215 × 8"), E("k3", "4300 + 1720")),
+    B("So make the units match first, days with days. Then multiply."),
+)
+
+# 15 boxes × 3 layers × (4 × 7 − 2).
+LESSONS[P + "eea16dd8-e8a0-4095-89e9-f53d71792124"] = LESSON(
+    B("Each of Riya's grandmother's gift boxes has 3 layers. A layer is 4 rows with 7 sweets in a row. There are 15 boxes, but 2 sweets in every layer broke. How many good sweets are there?",
+      G("q", "15 boxes × 3 layers × 4 rows × 7 sweets; 2 broken a layer")),
+    B("Start small, with one layer. 4 rows of 7 is 28 sweets.",
+      E("a", "4 × 7")),
+    B("2 sweets broke in every layer. When is the best time to take them off?",
+      ask=CH(["now: 28 − 2 for each layer", "at the end: take 2 off the total", "take 2 off each box"], 0,
+             "The breakage happened in every single layer. Take 2 off one layer now, and every layer we count after this will already be right.")),
+    B("28 minus 2 is 26 good sweets in a layer.",
+      E("b", "28 − 2"), UL("b", "26")),
+    B("A box has 3 layers. 3 times 26 is 78 good sweets in a box.",
+      E("c", "3 × 26"), UL("c", "78")),
+    B("And there are 15 boxes. 10 boxes hold 780, 5 boxes hold half of that, 390, and together that is 1170 good sweets.",
+      E("d1", "10 × 78"), E("d2", "5 × 78"), A("d", "780 + 390")),
+    B("Check another way. 15 boxes of 3 layers is 45 layers. 45 layers of 28 is 1260 sweets, and they lose 2 each, which is 90. 1260 minus 90 is 1170.",
+      E("k1", "15 × 3"), E("k2", "45 × 28"), E("k3", "45 × 2"), E("k4", "1260 − 90")),
+    B("Did you spot 1260 in the choices? That is every sweet, broken ones included. The question asks for the good ones."),
+    B("So build up from the smallest piece: a layer, then a box, then all the boxes. Fix the layer first and the rest follows."),
+)
+
+# 72 sweets a box, ₹375 a box, ₹1,03,500 earned.
+LESSONS[P + "eee55d9a-ad57-4529-bc01-d3217416056b"] = LESSON(
+    B("Ravi's father sells gift boxes for 375 rupees each. A box has 3 layers, each with 4 rows of 6 sweets. He earned 1,03,500 rupees in all. How many sweets did he sell?",
+      G("q", "Box: 3 layers × 4 rows × 6 sweets; ₹375 each; ₹1,03,500")),
+    B("First, the sweets in one box. 4 rows of 6 is 24 in a layer, and 3 layers of 24 is 72 in a box.",
+      E("a1", "4 × 6"), E("a", "3 × 24"), UL("a", "72")),
+    B("We are not told how many boxes he sold. Which sum will tell us?",
+      ask=CH(["1,03,500 × 375", "1,03,500 ÷ 375", "1,03,500 ÷ 72"], 1,
+             "Each box brings in 375 rupees. So the number of boxes is how many 375s fit into the total earnings.")),
+    B("Dividing by 375 is awkward, so here is a trick. 4 boxes cost 4 times 375, which is 1500 rupees. That is a much friendlier number.",
+      E("b1", "4 × 375")),
+    B("How many 1500s are in 1,03,500? 60 of them make 90,000. That leaves 13,500.",
+      E("b2", "1500 × 60"), E("b3", "1,03,500 − 90,000")),
+    B("And 13,500 is 9 more lots of 1500. So there are 60 plus 9, which is 69 lots of 1500 rupees.",
+      E("b4", "1500 × 9"), E("b5", "60 + 9")),
+    B("Each lot of 1500 rupees is 4 boxes. 69 times 4 is 276. He sold 276 boxes.",
+      E("b", "69 × 4"), UL("b", "276")),
+    split_times(276, 72, 70, "+", 2, "m",
+                "Now the sweets: 276 boxes with 72 in each. Split 72 into 70 and 2.",
+                mid="276 times 70 is 19,320. And 276 times 2 is 552.",
+                end="19,320 plus 552 is 19,872. He sold 19,872 sweets.", final=True),
+    B("Check the boxes: 276 boxes at 375 rupees each does come to 1,03,500 rupees. And we used the whole box of 72, not just one layer of 24.",
+      E("k", "276 × 375")),
+    B("So when the money tells you how many were sold, divide to find the boxes. Then multiply by what is in each box."),
+)
+
+# Average 37 over 5 matches; balls at ₹12.
+LESSONS[P + "ef1e9e41-6324-4b11-aaf0-b1b852b32398"] = LESSON(
+    B("Arjun played 5 matches and his average was 37 runs a match. The school spends as many rupees as his total runs, on cricket balls costing 12 rupees each. How many balls, and how much is left?",
+      G("q", "5 matches, average 37 runs; balls cost ₹12 each")),
+    B("An average of 37 over 5 matches. How do we get his total runs?",
+      ask=CH(["37 ÷ 5", "37 + 5", "37 × 5"], 2,
+             "An average is the total shared out equally over the matches. To get back to the total we multiply: 37 runs for each of the 5 matches.")),
+    B("30 times 5 is 150, and 7 times 5 is 35. So his total is 185 runs, and the school has 185 rupees to spend.",
+      E("a1", "30 × 5"), E("a2", "7 × 5"), E("a", "37 × 5"), UL("a", "185")),
+    B("Now, how many 12 rupee balls can 185 rupees buy? 10 balls cost 120 and 5 more cost 60, so 15 balls cost 180 rupees.",
+      E("b1", "10 × 12"), E("b2", "5 × 12"), E("b", "15 × 12")),
+    B("185 minus 180 leaves 5 rupees.",
+      E("r", "185 − 180")),
+    B("5 rupees are left. Is that enough for one more ball?",
+      ask=CH(["Yes, so 16 balls", "No, a ball costs 12 rupees"], 1,
+             "A ball costs 12 rupees, and only 5 are left. So the 5 rupees stay as left over money.")),
+    B("So the school buys 15 balls and has 5 rupees left over.",
+      AL("ans", "15 balls, ₹5 left over", "15 balls")),
+    B("Check: 15 balls at 12 rupees is 180, and the 5 rupees left over bring us back to 185.",
+      E("k", "15 × 12 + 5")),
+    B("So a total is the average times how many. Then divide, and whatever cannot make a full group is the remainder."),
+)
+
+# 11 players × 35 runs × 18 matches; a certificate per 50 runs.
+LESSONS[P + "fc10a766-e28f-418f-b9e4-2c95bbbe4e53"] = LESSON(
+    B("Arjun's team has 11 players. In each match, every player scores an average of 35 runs, and they play 18 matches. The principal gives one certificate for every 50 runs. How many certificates?",
+      G("q", "11 players × 35 runs, 18 matches; 1 certificate per 50 runs")),
+    B("Start with one match. How many runs does the whole team score in a match?",
+      ask=CH(["11 + 35", "11 × 35", "35 ÷ 11"], 1,
+             "Each of the 11 players makes 35 runs. 11 lots of 35 is 11 times 35.")),
+    B("10 players make 350 runs, and 1 more player makes it 385 runs in a match.",
+      E("a1", "10 × 35"), E("a", "11 × 35"), UL("a", "385")),
+    split_times(385, 18, 20, MINUS, 2, "m",
+                "They play 18 matches, so we want 385 times 18. 18 is 2 less than 20, so find 385 times 20 and take off 385 times 2.",
+                mid="385 times 20 is 7700. And 385 times 2 is 770.",
+                end="7700 minus 770 is 6930. The team scores 6930 runs in all."),
+    B("Now the certificates, one for every 50 runs. 100 runs earn 2 certificates, and 6930 is 69 hundreds with 30 left over.",
+      E("c0", "100 ÷ 50"), E("c1", "69 × 100 + 30")),
+    B("69 hundreds earn 69 times 2, which is 138 certificates. And 30 runs are still left.",
+      E("c2", "69 × 2"), W("c3", "6930 = 138 × 50 + 30"), UL("c3", "30")),
+    B("30 runs are left over. Do they earn one more certificate?",
+      ask=CH(["Yes, round up to 139", "No, a certificate needs a full 50"], 1,
+             "A certificate is given only for a complete 50 runs. 30 is not a full 50, so it earns nothing.")),
+    B("So 138 certificates are given out.",
+      AL("ans", "138 certificates", "138")),
+    B("Check: 138 certificates use up 6900 runs, and the 30 spare runs make 6930. Notice 6930 is in the choices too, but that is the runs, not the certificates.",
+      E("k0", "138 × 50"), E("k", "6900 + 30")),
+    B("So multiply up to the total, divide by 50, and here the left over runs are simply dropped."),
+)
+
+# 375 ml a cup, 48 + 64 cups, 5 litre packets.
+LESSONS[P + "fffe0f67-9198-4d75-ab4c-e7adac4b5de1"] = LESSON(
+    B("Riya's grandfather uses 375 millilitres of milk for each cup of chai. He sold 48 cups on Monday and 64 on Tuesday. Milk comes in 5 litre packets. What is the smallest number of packets he needs?",
+      G("q", "375 ml a cup; 48 + 64 cups; milk in 5 litre packets")),
+    B("First the cups. 48 plus 64 is 112 cups.",
+      E("a", "48 + 64"), UL("a", "112")),
+    B("Each cup takes 375 millilitres. 100 cups take 37,500, and the other 12 cups take 4500. Altogether that is 42,000 millilitres.",
+      E("b1", "100 × 375"), E("b2", "12 × 375"), E("b", "37,500 + 4500")),
+    B("The milk is in millilitres, but the packets are in litres. How do we change millilitres into litres?",
+      ask=CH(["multiply by 1000", "divide by 100", "divide by 1000"], 2,
+             "1 litre holds 1000 millilitres. So we count how many thousands there are, and that means dividing by 1000.")),
+    B("42,000 divided by 1000 is 42. He needs 42 litres of milk.",
+      E("c", "42,000 ÷ 1000"), UL("c", "42", 2)),
+    B("Now the 5 litre packets. 8 packets hold 40 litres, and that leaves 2 litres still needed.",
+      E("d1", "8 × 5"), E("d2", "42 − 40")),
+    B("8 packets give 40 litres, but he needs 42. How many packets must he buy?",
+      ask=CH(["8 packets", "9 packets", "42 packets"], 1,
+             "8 packets leave him 2 litres short, and the shop does not sell part of a packet. So he has to buy one more whole packet.")),
+    B("8 packets and 1 more is 9 packets.",
+      A("e", "8 + 1")),
+    B("Check: 9 packets hold 45 litres, which covers the 42 he needs. 8 packets would not.",
+      E("k", "9 × 5")),
+    B("So get the total, change it into the packet's unit, divide, and go up to the next whole packet when some is still needed."),
+)

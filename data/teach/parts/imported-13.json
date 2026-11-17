@@ -1,0 +1,8267 @@
+{
+ "AIGEN_grade5_319c3185-ce17-4b9a-b681-79b100a1d81d": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Deepa is given 800 rupees. She spends 35 percent of it on a salwar kameez, and then buys 4 hair clips at 30 rupees each. How much is left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹800. 35% on a salwar kameez. 4 clips at ₹30.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The salwar kameez cost 35 percent of the money. What must we find before we can subtract anything?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "how many rupees 35% of 800 is",
+      "800 − 35",
+      "nothing: we can subtract straight away"
+     ],
+     "answer": 0,
+     "ifNot": "35 percent is not 35 rupees. It is a share of the 800, so first we must turn that share into rupees."
+    }
+   },
+   {
+    "say": "Percent means out of 100. So find 1 percent first: 800 divided by 100 is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pu",
+      "text": "1% of 800 = 800 ÷ 100 = 8"
+     }
+    ]
+   },
+   {
+    "say": "35 percent is 35 of those. 35 times 8 is 280.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "35% of 800 = 35 × 8 = 280"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 280"
+      },
+      "text": "salwar kameez",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 280 rupees went on the salwar kameez. What do we do with that 280?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "nothing: 280 is the answer",
+      "take it away from 800",
+      "add it to 800"
+     ],
+     "answer": 1,
+     "ifNot": "That 280 is money that has been spent. The question asks what is left, so it comes off the 800."
+    }
+   },
+   {
+    "say": "800 minus 280 is 520. That is what Deepa has after the salwar kameez.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "800 − 280 = 520"
+     }
+    ]
+   },
+   {
+    "say": "Next, the hair clips: 4 of them at 30 rupees each. 4 times 30 is 120.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i",
+      "text": "4 × 30 = 120"
+     },
+     {
+      "op": "note",
+      "line": "i",
+      "target": {
+       "text": "= 120"
+      },
+      "text": "hair clips",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Take that away too: 520 minus 120 is 400. So Deepa has 400 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "520 − 120 = ₹400",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹400"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 280 for the salwar kameez, 120 for the hair clips, and 400 left over. Together they make 800, all the money from the start.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "280 + 120 + 400 = 800"
+     }
+    ]
+   },
+   {
+    "say": "So: percent into rupees first, then subtract it. And when several things are bought at one price, multiply to get their cost before you subtract."
+   }
+  ]
+ },
+ "AIGEN_grade5_41d5719f-7015-4013-acad-ae4e3ff983b6": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun is given 750 rupees. He spends 40 percent of it on a cricket bat, and then 120 rupees on cricket balls. How much does he have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹750. 40% on a bat, then ₹120 on balls.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The bat cost 40 percent of the money. What must we find before we can subtract anything?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "750 − 40",
+      "how many rupees 40% of 750 is",
+      "nothing: we can subtract straight away"
+     ],
+     "answer": 1,
+     "ifNot": "40 percent is not 40 rupees. It is a share of the 750, so first we must turn that share into rupees."
+    }
+   },
+   {
+    "say": "Find 10 percent first, because that is easy: one tenth. 750 divided by 10 is 75.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 750 = 75"
+     }
+    ]
+   },
+   {
+    "say": "Now build up. 40 percent is 4 times as much, and 4 times 75 is 300.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "40% of 750 = 4 × 75 = 300"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 300"
+      },
+      "text": "bat",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 300 rupees went on the bat. What do we do with that 300?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "nothing: 300 is the answer",
+      "add it to 750",
+      "take it away from 750"
+     ],
+     "answer": 2,
+     "ifNot": "That 300 is money that has been spent. The question asks what is left, so it comes off the 750."
+    }
+   },
+   {
+    "say": "750 minus 300 is 450. That is what Arjun has after the bat.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "750 − 300 = 450"
+     }
+    ]
+   },
+   {
+    "say": "Then the cricket balls: 450 minus 120 is 330. So Arjun has 330 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "450 − 120 = ₹330",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹330"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 300 for the bat, 120 for the cricket balls, and 330 left over. Together they make 750, all the money from the start.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "300 + 120 + 330 = 750"
+     }
+    ]
+   },
+   {
+    "say": "Remember: a percent is a share, not a number of rupees. Change it into rupees, and the rest is plain subtraction."
+   }
+  ]
+ },
+ "AIGEN_grade5_47c823d7-cf82-4c7f-bb5a-ff6d5018232e": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Samira has 500 rupees at the Holi fair. She spends 40 percent on water balloons and colours, and then 75 rupees on gujiya. How much is left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹500. 40% on balloons and colours, ₹75 on gujiya.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The balloons and colours took 40 percent of her money. Is that the same as 40 rupees?",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "40% = 40 out of every 100",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes: take ₹40 away",
+      "No: it is a share of the ₹500"
+     ],
+     "answer": 1,
+     "ifNot": "Percent means out of every 100. So 40 percent is 40 rupees from every 100 rupees, and Samira has more than 100. It is a share of the whole 500."
+    }
+   },
+   {
+    "say": "Find 10 percent first, because that is easy: one tenth. 500 divided by 10 is 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 500 = 50"
+     }
+    ]
+   },
+   {
+    "say": "40 percent is 4 lots of 10 percent. 4 times 50 is 200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "40% of 500 = 4 × 50 = 200"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 200"
+      },
+      "text": "balloons, colours",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 200 rupees went on the balloons and colours. What do we do with that 200?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "nothing: 200 is the answer",
+      "take it away from 500",
+      "add it to 500"
+     ],
+     "answer": 1,
+     "ifNot": "That 200 is money that has been spent. The question asks what is left, so it comes off the 500."
+    }
+   },
+   {
+    "say": "500 minus 200 is 300. That is what Samira has after the balloons and colours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "500 − 200 = 300"
+     }
+    ]
+   },
+   {
+    "say": "Then the gujiya: 300 minus 75 is 225. So Samira has 225 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "300 − 75 = ₹225",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹225"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 200 for the balloons and colours, 75 for the gujiya, and 225 left over. Together they make 500, all the money from the start.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "200 + 75 + 225 = 500"
+     }
+    ]
+   },
+   {
+    "say": "So with a percent in a money story: turn the percent into rupees first, then take away everything that was spent."
+   }
+  ]
+ },
+ "AIGEN_grade5_487eff09-bb59-41f7-b4ec-b4f3ad05ab93": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Vikram goes to a book fair with 750 rupees. He buys an encyclopedia for 300 rupees, and then spends 20 percent of his remaining money on bookmarks. How much is left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹750. Book ₹300. Then 20% of the rest.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Follow the story, one step at a time. First comes the encyclopedia. 750 minus 300 is 450.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "750 − 300 = 450"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 450"
+      },
+      "text": "money left",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next, the bookmarks cost 20 percent of his remaining money. 20 percent of which amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "750, the money at the start",
+      "300, the price of the encyclopedia",
+      "450, the money left"
+     ],
+     "answer": 2,
+     "ifNot": "Listen to the words again: 20 percent of his remaining money. After the encyclopedia, Vikram has 450. So the percent is taken from 450, not from 750."
+    }
+   },
+   {
+    "say": "That is the trap in this question: taking the percent of 750. But only 450 is left, so we want 20 percent of 450.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "= 450"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Start small, with 10 percent. That is one tenth, so 450 divided by 10 is 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 450 = 45"
+     }
+    ]
+   },
+   {
+    "say": "Now build up. 20 percent is 2 times as much, and 2 times 45 is 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "20% of 450 = 2 × 45 = 90"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 90"
+      },
+      "text": "bookmarks",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So the bookmarks cost 90 rupees. Take that from the 450. 450 minus 90 leaves Vikram with 360 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "450 − 90 = ₹360",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹360"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 300 for the encyclopedia, 90 for the bookmarks, and 360 left. Add them, and we are back at 750.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "300 + 90 + 360 = 750"
+     }
+    ]
+   },
+   {
+    "say": "When a story says a percent of the money left, find what is left first. The percent is always taken from that."
+   }
+  ]
+ },
+ "AIGEN_grade5_53d85183-e50f-4999-97ab-5d8a145faf89": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kavya is given 1,200 rupees. She spends 25 percent on clothes, then 40 percent of the remaining money on sweets and snacks. The rest goes in her piggy bank. How much is that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹1,200. 25% on clothes, then 40% of the rest.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We take the story one step at a time, in order. First, the clothes: 25 percent of 1,200."
+   },
+   {
+    "say": "25 percent is a quarter, 1 of 4 equal parts. So we want 1,200 divided by 4, which is 300.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "25% of 1,200 = 1,200 ÷ 4 = 300"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 300"
+      },
+      "text": "clothes",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "1,200 minus 300 is 900. That is the money left after the clothes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "1,200 − 300 = 900"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 900"
+      },
+      "text": "money left",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next, 40 percent of the remaining money goes on sweets and snacks. 40 percent of which amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1,200, the money at the start",
+      "300, the cost of the clothes",
+      "900, the money left"
+     ],
+     "answer": 2,
+     "ifNot": "Listen for the words about what is left. After the clothes, only 900 remains. So this percent is taken from 900, not from 1,200."
+    }
+   },
+   {
+    "say": "That is the trap here: taking both percents of 1,200. The second percent is of the 900 that is left.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "= 900"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Start small, with 10 percent. That is one tenth, so 900 divided by 10 is 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "xt",
+      "text": "10% of 900 = 90"
+     }
+    ]
+   },
+   {
+    "say": "Now build up. 40 percent is 4 times as much, and 4 times 90 is 360.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "40% of 900 = 4 × 90 = 360"
+     },
+     {
+      "op": "note",
+      "line": "x",
+      "target": {
+       "text": "= 360"
+      },
+      "text": "sweets, snacks",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 360 rupees go on the sweets and snacks. 900 minus 360 leaves Kavya with 540 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "900 − 360 = ₹540",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹540"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 300 for the clothes, 360 for the sweets and snacks, and 540 left. Add them, and we are back at 1,200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "300 + 360 + 540 = 1,200"
+     }
+    ]
+   },
+   {
+    "say": "With two percents, always ask, percent of what? The first was of all 1,200. The second was only of what was left."
+   }
+  ]
+ },
+ "AIGEN_grade5_564c2f73-d05c-42b5-a029-9f2fbcccbd59": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Pooja is given 900 rupees. She spends 30 percent on a salwar suit, and then 135 rupees on a box of jalebi. How much does she have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹900. 30% on a suit, then ₹135 on jalebi.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The salwar suit cost 30 percent of the money. What must we find before we can subtract anything?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "900 − 30",
+      "how many rupees 30% of 900 is",
+      "nothing: we can subtract straight away"
+     ],
+     "answer": 1,
+     "ifNot": "30 percent is not 30 rupees. It is a share of the 900, so first we must turn that share into rupees."
+    }
+   },
+   {
+    "say": "Find 10 percent first, because that is easy: one tenth. 900 divided by 10 is 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 900 = 90"
+     }
+    ]
+   },
+   {
+    "say": "30 percent is 3 lots of 10 percent. 3 times 90 is 270.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "30% of 900 = 3 × 90 = 270"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 270"
+      },
+      "text": "suit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 270 rupees went on the salwar suit. What do we do with that 270?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "nothing: 270 is the answer",
+      "add it to 900",
+      "take it away from 900"
+     ],
+     "answer": 2,
+     "ifNot": "That 270 is money that has been spent. The question asks what is left, so it comes off the 900."
+    }
+   },
+   {
+    "say": "900 minus 270 is 630. That is what Pooja has after the salwar suit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "900 − 270 = 630"
+     }
+    ]
+   },
+   {
+    "say": "Then the jalebi: 630 minus 135 is 495. So Pooja has 495 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "630 − 135 = ₹495",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹495"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 270 for the salwar suit, 135 for the jalebi, and 495 left over. Together they make 900, all the money from the start.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "270 + 135 + 495 = 900"
+     }
+    ]
+   },
+   {
+    "say": "So with a percent in a money story: turn the percent into rupees first, then take away everything that was spent."
+   }
+  ]
+ },
+ "AIGEN_grade5_60a5eead-ea7a-4c98-9424-d010b06d1afa": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Farhan has 350 rupees. He buys a cricket cap for 80 rupees, and then spends 25 percent of the remaining money on samosas. How much does he have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹350. Cap ₹80. Then 25% of the rest.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Go in the order of the story. First the cap: 350 minus 80 is 270.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "350 − 80 = 270"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 270"
+      },
+      "text": "money left",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next, the samosas cost 25 percent of the remaining money. 25 percent of which amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "270, the money left",
+      "350, the money at the start",
+      "80, the price of the cap"
+     ],
+     "answer": 0,
+     "ifNot": "Listen to the words again: 25 percent of the remaining money. After the cap, Farhan has 270. So the percent is taken from 270, not from 350."
+    }
+   },
+   {
+    "say": "That is the trap in this question: taking the percent of 350. But only 270 is left, so we want 25 percent of 270.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "= 270"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "25 percent is one quarter. To find a quarter, halve, and then halve again: half of 270 is 135.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ph",
+      "text": "270 ÷ 2 = 135"
+     }
+    ]
+   },
+   {
+    "say": "And half of 135 is 67.50. That is 67 rupees and 50 paise.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "25% of 270 = 135 ÷ 2 = 67.50"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 67.50"
+      },
+      "text": "samosas",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pw",
+      "text": "₹67.50 = 67 rupees 50 paise",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So the samosas cost 67.50 rupees. Take that from the 270. 270 minus 67.50 leaves 202.50, which is 202 rupees and 50 paise.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "270 − 67.50 = ₹202.50",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹202.50"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "aw",
+      "text": "₹202.50 = 202 rupees 50 paise",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Check: 80 for the cap, 67.50 for the samosas, and 202.50 left. Add them, and we are back at 350.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "80 + 67.50 + 202.50 = 350"
+     }
+    ]
+   },
+   {
+    "say": "When a story says a percent of the remaining money, find what remains first. And do not worry if the answer has paise in it: money often does."
+   }
+  ]
+ },
+ "AIGEN_grade5_6c57d8cc-3e3c-49e8-b5ce-e9c43f37a749": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Neha goes to a Pongal fair with 600 rupees. She buys kolam stencils for 150 rupees, and then spends 20 percent of the money she has left on juice and snacks. How much remains?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹600. Stencils ₹150. Then 20% of the rest.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Follow the story, one step at a time. First comes the stencils. 600 minus 150 is 450.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "600 − 150 = 450"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 450"
+      },
+      "text": "money left",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next, the juice and snacks cost 20 percent of the money she has left. 20 percent of which amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "450, the money left",
+      "600, the money at the start",
+      "150, the price of the stencils"
+     ],
+     "answer": 0,
+     "ifNot": "Listen to the words again: 20 percent of the money she has left. After the stencils, Neha has 450. So the percent is taken from 450, not from 600."
+    }
+   },
+   {
+    "say": "That is the trap in this question: taking the percent of 600. But only 450 is left, so we want 20 percent of 450.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "= 450"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Find 10 percent first, because that is easy: one tenth. 450 divided by 10 is 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 450 = 45"
+     }
+    ]
+   },
+   {
+    "say": "20 percent is 2 lots of 10 percent. 2 times 45 is 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "20% of 450 = 2 × 45 = 90"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 90"
+      },
+      "text": "juice, snacks",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So the juice and snacks cost 90 rupees. Take that from the 450. 450 minus 90 leaves Neha with 360 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "450 − 90 = ₹360",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹360"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 150 for the stencils, 90 for the juice and snacks, and 360 left. Add them, and we are back at 600.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "150 + 90 + 360 = 600"
+     }
+    ]
+   },
+   {
+    "say": "When a story says a percent of the money left, find what is left first. The percent is always taken from that."
+   }
+  ]
+ },
+ "AIGEN_grade5_706626a4-55e9-4e67-a0ed-7d037c983e2f": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Amit is given 2,000 rupees. He spends 20 percent on a cricket bat, then 25 percent of the remaining amount on cricket balls, and gives 150 rupees to charity. How much is left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹2,000. 20% bat, 25% of the rest, ₹150 charity.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We take the story one step at a time, in order. First, the bat: 20 percent of 2,000."
+   },
+   {
+    "say": "Find 10 percent first, because that is easy: one tenth. 2,000 divided by 10 is 200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 2,000 = 200"
+     }
+    ]
+   },
+   {
+    "say": "20 percent is 2 lots of 10 percent. 2 times 200 is 400.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "20% of 2,000 = 2 × 200 = 400"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 400"
+      },
+      "text": "bat",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "2,000 minus 400 is 1,600. That is the money left after the bat.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "2,000 − 400 = 1,600"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 1,600"
+      },
+      "text": "money left",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next, 25 percent of the remaining amount goes on cricket balls. 25 percent of which amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2,000, the money at the start",
+      "400, the cost of the bat",
+      "1,600, the money left"
+     ],
+     "answer": 2,
+     "ifNot": "Listen for the words about what is left. After the bat, only 1,600 remains. So this percent is taken from 1,600, not from 2,000."
+    }
+   },
+   {
+    "say": "That is the trap here: taking both percents of 2,000. The second percent is of the 1,600 that is left.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "= 1,600"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "25 percent is a quarter, 1 of 4 equal parts. So we want 1,600 divided by 4, which is 400.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "25% of 1,600 = 1,600 ÷ 4 = 400"
+     },
+     {
+      "op": "note",
+      "line": "x",
+      "target": {
+       "text": "= 400"
+      },
+      "text": "balls",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 400 rupees go on the balls. 1,600 minus 400 is 1,200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "1,600 − 400 = 1,200"
+     }
+    ]
+   },
+   {
+    "say": "We are not done yet. Last come the 150 rupees for charity: 1,200 minus 150 leaves Amit with 1,050 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "1,200 − 150 = ₹1,050",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹1,050"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 400 for the bat, 400 for the balls, 150 for charity, and 1,050 left. Together they make 2,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "400 + 400 + 150 + 1,050 = 2,000"
+     }
+    ]
+   },
+   {
+    "say": "Three steps, in the order of the story. And each percent is taken from the money that is there at that moment, not always from the start."
+   }
+  ]
+ },
+ "AIGEN_grade5_7d96407d-06d1-4f88-97a7-798b112ed5b9": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera has 500 rupees. She buys 6 boxes of sparklers at 45 rupees each, and gets 10 percent off the bill. How much money does she have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹500. 6 boxes at ₹45 each. 10% off the bill.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, the bill before any discount. 6 boxes at 45 rupees each: 6 times 45 is 270.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "6 × 45 = 270"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "= 270"
+      },
+      "text": "bill",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The shop takes 10 percent off. 10 percent of which amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "500, Meera's money",
+      "45, the price of a box",
+      "270, the bill"
+     ],
+     "answer": 2,
+     "ifNot": "A discount comes off what you are asked to pay. The bill is 270, so the 10 percent is taken from 270."
+    }
+   },
+   {
+    "say": "10 percent is one tenth, so we divide by 10. 270 divided by 10 is 27.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "10% of 270 = 270 ÷ 10 = 27"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 27",
+       "nth": 2
+      },
+      "text": "discount",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "A discount makes the bill smaller. 270 minus 27 is 243, and that is what Meera pays.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pay",
+      "text": "270 − 27 = 243"
+     },
+     {
+      "op": "note",
+      "line": "pay",
+      "target": {
+       "text": "= 243"
+      },
+      "text": "she pays",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 243 is what she pays, and it is one of the choices. But the question asks what she has left.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "pay",
+      "target": {
+       "text": "= 243"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "So take 243 from her 500. 500 minus 243 leaves Meera with 257 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "500 − 243 = ₹257",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹257"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the 243 she paid and the 257 she kept should make 500 again. And they do.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "243 + 257 = 500"
+     }
+    ]
+   },
+   {
+    "say": "So: the full bill first, then take off the discount, then take what you pay from your money. Three small steps, in order."
+   }
+  ]
+ },
+ "AIGEN_grade5_805b7422-bbbe-473b-abe1-ce1e4247e16f": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Neha has 1,500 rupees. She puts 40 percent in the bank. From the money at home she spends 180 rupees on a storybook, then gives one third of what is left to her brother. How much is at home now?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹1,500. 40% to bank. Home: − ₹180, then give 1/3.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Take the story one step at a time. First the bank: 40 percent of 1,500."
+   },
+   {
+    "say": "Start small, with 10 percent. That is one tenth, so 1,500 divided by 10 is 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 1,500 = 150"
+     }
+    ]
+   },
+   {
+    "say": "40 percent is 4 lots of 10 percent. 4 times 150 is 600.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "40% of 1,500 = 4 × 150 = 600"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 600"
+      },
+      "text": "bank",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "1,500 minus 600 is 900. That is the money Neha keeps at home, and the rest of the story is about this 900.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "1,500 − 600 = 900"
+     },
+     {
+      "op": "note",
+      "line": "h",
+      "target": {
+       "text": "= 900"
+      },
+      "text": "at home",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Then the storybook: 900 minus 180 is 720.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "900 − 180 = 720"
+     }
+    ]
+   },
+   {
+    "say": "Her brother gets one third of what is left. To find one third, divide by 3: 720 divided by 3 is 240.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "1/3 of 720 = 720 ÷ 3 = 240"
+     },
+     {
+      "op": "note",
+      "line": "b",
+      "target": {
+       "text": "= 240"
+      },
+      "text": "brother",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 240 rupees go to her brother. How much does Neha keep at home?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "240",
+      "720 − 240",
+      "900 − 240"
+     ],
+     "answer": 1,
+     "ifNot": "240 is her brother's share. Neha keeps the rest of the 720, so we take the 240 away from 720."
+    }
+   },
+   {
+    "say": "720 minus 240 is 480. Neha has 480 rupees at home.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "720 − 240 = ₹480",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹480"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 600 in the bank, 180 for the book, 240 for her brother, and 480 kept. Together they make 1,500.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "600 + 180 + 240 + 480 = 1,500"
+     }
+    ]
+   },
+   {
+    "say": "A long story is just small steps in a row. Do them in order, and at the end check whose money the question is asking about."
+   }
+  ]
+ },
+ "AIGEN_grade5_80fcbd7d-dc32-47f5-aed1-53356d70258f": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kavya saved 1,200 rupees. She spends 25 percent of it on a storybook, and then gives 150 rupees to her brother. How much does she have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹1,200. 25% on a storybook, ₹150 to her brother.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The storybook cost 25 percent of her savings. Is that the same as 25 rupees?",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "25% = 25 out of every 100",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes: take ₹25 away",
+      "No: it is a share of the ₹1,200"
+     ],
+     "answer": 1,
+     "ifNot": "Percent means out of every 100. So 25 percent is 25 rupees from every 100 rupees, and Kavya has more than 100. It is a share of the whole 1,200."
+    }
+   },
+   {
+    "say": "25 percent is one quarter, so we divide by 4. 1,200 divided by 4 is 300.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "25% of 1,200 = 1,200 ÷ 4 = 300"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 300"
+      },
+      "text": "storybook",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 300 rupees went on the storybook. What do we do with that 300?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "take it away from 1,200",
+      "nothing: 300 is the answer",
+      "add it to 1,200"
+     ],
+     "answer": 0,
+     "ifNot": "That 300 is money that has been spent. The question asks what is left, so it comes off the 1,200."
+    }
+   },
+   {
+    "say": "1,200 minus 300 is 900. That is what Kavya has after the storybook.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "1,200 − 300 = 900"
+     }
+    ]
+   },
+   {
+    "say": "Then the gift to her brother: 900 minus 150 is 750. So Kavya has 750 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "900 − 150 = ₹750",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹750"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 300 for the storybook, 150 for the gift to her brother, and 750 left over. Together they make 1,200, all the money from the start.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "300 + 150 + 750 = 1,200"
+     }
+    ]
+   },
+   {
+    "say": "Remember: a percent is a share, not a number of rupees. Change it into rupees, and the rest is plain subtraction."
+   }
+  ]
+ },
+ "AIGEN_grade5_961784d1-eef0-482f-9709-42bd7ae234c5": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Sanya is given 500 rupees. She spends 35 percent on a jhumka set, and then 80 rupees on a box of kaju katli. How much does she have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹500. 35% on jhumkas, then ₹80 on kaju katli.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The jhumka set cost 35 percent of her money. Is that the same as 35 rupees?",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "35% = 35 out of every 100",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes: take ₹35 away",
+      "No: it is a share of the ₹500"
+     ],
+     "answer": 1,
+     "ifNot": "Percent means out of every 100. So 35 percent is 35 rupees from every 100 rupees, and Sanya has more than 100. It is a share of the whole 500."
+    }
+   },
+   {
+    "say": "Percent means out of 100. So find 1 percent first: 500 divided by 100 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pu",
+      "text": "1% of 500 = 500 ÷ 100 = 5"
+     }
+    ]
+   },
+   {
+    "say": "35 percent is 35 of those. 35 times 5 is 175.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "35% of 500 = 35 × 5 = 175"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 175"
+      },
+      "text": "jhumkas",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 175 rupees went on the jhumka set. What do we do with that 175?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "take it away from 500",
+      "nothing: 175 is the answer",
+      "add it to 500"
+     ],
+     "answer": 0,
+     "ifNot": "That 175 is money that has been spent. The question asks what is left, so it comes off the 500."
+    }
+   },
+   {
+    "say": "500 minus 175 is 325. That is what Sanya has after the jhumka set.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "500 − 175 = 325"
+     }
+    ]
+   },
+   {
+    "say": "Then the kaju katli: 325 minus 80 is 245. So Sanya has 245 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "325 − 80 = ₹245",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹245"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 175 for the jhumka set, 80 for the kaju katli, and 245 left over. Together they make 500, all the money from the start.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "175 + 80 + 245 = 500"
+     }
+    ]
+   },
+   {
+    "say": "The plan: find the percent as an amount of rupees, then subtract each thing that was spent, one at a time."
+   }
+  ]
+ },
+ "AIGEN_grade5_9a193d9f-f88d-424f-a5f7-564c229fd691": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kavya is given 1,200 rupees. She saves 25 percent in her piggy bank. From the rest she buys 8 packets of sparklers at 45 rupees each. How much is left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹1,200. Saves 25%. 8 packets at ₹45 each.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Kavya puts 25 percent of the money in her piggy bank. Is that the same as 25 rupees?",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "25% = 25 out of every 100",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes: take ₹25 away",
+      "No: it is a share of the ₹1,200"
+     ],
+     "answer": 1,
+     "ifNot": "Percent means out of every 100. So 25 percent is 25 rupees from every 100 rupees, and Kavya has more than 100. It is a share of the whole 1,200."
+    }
+   },
+   {
+    "say": "25 percent is one quarter, so we divide by 4. 1,200 divided by 4 is 300.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "25% of 1,200 = 1,200 ÷ 4 = 300"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 300"
+      },
+      "text": "saved",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 300 rupees went into the piggy bank. What do we do with that 300?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "take it away from 1,200",
+      "nothing: 300 is the answer",
+      "add it to 1,200"
+     ],
+     "answer": 0,
+     "ifNot": "That 300 is money put away in the piggy bank. The question asks what is left, so it comes off the 1,200."
+    }
+   },
+   {
+    "say": "1,200 minus 300 is 900. That is what Kavya has after saving.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "1,200 − 300 = 900"
+     }
+    ]
+   },
+   {
+    "say": "Next, the sparklers: 8 of them at 45 rupees each. 8 times 45 is 360.",
+    "board": [
+     {
+      "op": "write",
+      "id": "i",
+      "text": "8 × 45 = 360"
+     },
+     {
+      "op": "note",
+      "line": "i",
+      "target": {
+       "text": "= 360"
+      },
+      "text": "sparklers",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Take that away too: 900 minus 360 is 540. So Kavya has 540 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "900 − 360 = ₹540",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹540"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 300 for the piggy bank, 360 for the sparklers, and 540 left over. Together they make 1,200, all the money from the start.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "300 + 360 + 540 = 1,200"
+     }
+    ]
+   },
+   {
+    "say": "So: turn the percent into rupees, take it off, and then take off what was spent. Money saved and money spent both leave the purse."
+   }
+  ]
+ },
+ "AIGEN_grade5_9c324687-60cd-4e23-ac2c-e25e0afcb538": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Deepa has 360 rupees for her art project. She spends 25 percent on paint brushes, and then 95 rupees on a sketch pad. How much is left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹360. 25% on brushes, then ₹95 on a sketch pad.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The paint brushes cost 25 percent of the money. Is that the same as 25 rupees?",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "25% = 25 out of every 100",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No: it is a share of the ₹360",
+      "Yes: take ₹25 away"
+     ],
+     "answer": 0,
+     "ifNot": "Percent means out of every 100. So 25 percent is 25 rupees from every 100 rupees, and Deepa has more than 100. It is a share of the whole 360."
+    }
+   },
+   {
+    "say": "25 percent is one quarter, so we divide by 4. 360 divided by 4 is 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "25% of 360 = 360 ÷ 4 = 90"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 90"
+      },
+      "text": "brushes",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 90 rupees went on the paint brushes. What do we do with that 90?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "nothing: 90 is the answer",
+      "add it to 360",
+      "take it away from 360"
+     ],
+     "answer": 2,
+     "ifNot": "That 90 is money that has been spent. The question asks what is left, so it comes off the 360."
+    }
+   },
+   {
+    "say": "360 minus 90 is 270. That is what Deepa has after the paint brushes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "360 − 90 = 270"
+     }
+    ]
+   },
+   {
+    "say": "Then the sketch pad: 270 minus 95 is 175. So Deepa has 175 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "270 − 95 = ₹175",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹175"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 90 for the paint brushes, 95 for the sketch pad, and 175 left over. Together they make 360, all the money from the start.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "90 + 95 + 175 = 360"
+     }
+    ]
+   },
+   {
+    "say": "Remember: a percent is a share, not a number of rupees. Change it into rupees, and the rest is plain subtraction."
+   }
+  ]
+ },
+ "AIGEN_grade5_9e5ffbee-f49d-4a1d-a13e-dc3a6181980f": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kavya's dad buys 8 cups of chai at 15 rupees each, and 12 samosas at 20 rupees each. He gets 10 percent off the total bill. How much does he pay?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "8 chai at ₹15. 12 samosas at ₹20. 10% off.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the chai. 8 cups at 15 rupees each: 8 times 15 is 120.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ch",
+      "text": "8 × 15 = 120"
+     },
+     {
+      "op": "note",
+      "line": "ch",
+      "target": {
+       "text": "= 120"
+      },
+      "text": "chai",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the samosas. 12 of them at 20 rupees each: 12 times 20 is 240.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sa",
+      "text": "12 × 20 = 240"
+     },
+     {
+      "op": "note",
+      "line": "sa",
+      "target": {
+       "text": "= 240"
+      },
+      "text": "samosas",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Add the two for the whole bill. 120 plus 240 is 360.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "120 + 240 = 360"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "= 360"
+      },
+      "text": "total bill",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the 10 percent discount. What do we do with it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "subtract 10 from 360",
+      "find 10% of 360: that is the answer",
+      "find 10% of 360, then subtract it"
+     ],
+     "answer": 2,
+     "ifNot": "10 percent is not 10 rupees. It is one tenth of the bill. And a discount is taken off, so we subtract it from the 360."
+    }
+   },
+   {
+    "say": "10 percent is one tenth, so we divide by 10. 360 divided by 10 is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "10% of 360 = 360 ÷ 10 = 36"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 36",
+       "nth": 2
+      },
+      "text": "discount",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Take the discount off the bill. 360 minus 36 is 324, so Kavya's dad pays 324 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "360 − 36 = ₹324",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹324"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the 324 he pays and the 36 he saves should make the full bill of 360. And they do.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "324 + 36 = 360"
+     }
+    ]
+   },
+   {
+    "say": "So with a discount on a whole bill: add up the bill first, find the percent of that total, and take it off."
+   }
+  ]
+ },
+ "AIGEN_grade5_a3d81fb0-9a0f-45f8-bacf-5527a3cd1924": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera goes to a Diwali mela with 500 rupees. She spends 30 percent on bangles, and then 25 percent of the remaining money on sweets. How much does she have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹500. 30% on bangles, then 25% of the rest.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We take the story one step at a time, in order. First, the bangles: 30 percent of 500."
+   },
+   {
+    "say": "Start small, with 10 percent. That is one tenth, so 500 divided by 10 is 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 500 = 50"
+     }
+    ]
+   },
+   {
+    "say": "30 percent is 3 lots of 10 percent. 3 times 50 is 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "30% of 500 = 3 × 50 = 150"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 150"
+      },
+      "text": "bangles",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "500 minus 150 is 350. That is the money left after the bangles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "500 − 150 = 350"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 350"
+      },
+      "text": "money left",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next, 25 percent of the remaining money goes on sweets. 25 percent of which amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "500, the money at the start",
+      "150, the cost of the bangles",
+      "350, the money left"
+     ],
+     "answer": 2,
+     "ifNot": "Listen for the words about what is left. After the bangles, only 350 remains. So this percent is taken from 350, not from 500."
+    }
+   },
+   {
+    "say": "That is the trap here: taking both percents of 500. The second percent is of the 350 that is left.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "= 350"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "25 percent is one quarter. To find a quarter, halve, and then halve again: half of 350 is 175.",
+    "board": [
+     {
+      "op": "write",
+      "id": "xh",
+      "text": "350 ÷ 2 = 175"
+     }
+    ]
+   },
+   {
+    "say": "And half of 175 is 87.50. That is 87 rupees and 50 paise.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "25% of 350 = 175 ÷ 2 = 87.50"
+     },
+     {
+      "op": "note",
+      "line": "x",
+      "target": {
+       "text": "= 87.50"
+      },
+      "text": "sweets",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "xw",
+      "text": "₹87.50 = 87 rupees 50 paise",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So 87.50 rupees go on the sweets. 350 minus 87.50 leaves 262.50, which is 262 rupees and 50 paise.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "350 − 87.50 = ₹262.50",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹262.50"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "aw",
+      "text": "₹262.50 = 262 rupees 50 paise",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Check: 150 for the bangles, 87.50 for the sweets, and 262.50 left. Add them, and we are back at 500.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "150 + 87.50 + 262.50 = 500"
+     }
+    ]
+   },
+   {
+    "say": "With two percents, always ask, percent of what? The first was of all the money. The second was only of what was left."
+   }
+  ]
+ },
+ "AIGEN_grade5_a58d41ac-0ce9-4c99-b2a2-0705016115e8": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera goes to a Diwali mela with 500 rupees. She spends 30 percent on bangles, and then 40 percent of the remaining money on sweets. How much does she have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹500. 30% on bangles, then 40% of the rest.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We take the story one step at a time, in order. First, the bangles: 30 percent of 500."
+   },
+   {
+    "say": "Start small, with 10 percent. That is one tenth, so 500 divided by 10 is 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 500 = 50"
+     }
+    ]
+   },
+   {
+    "say": "Now build up. 30 percent is 3 times as much, and 3 times 50 is 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "30% of 500 = 3 × 50 = 150"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 150"
+      },
+      "text": "bangles",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "500 minus 150 is 350. That is the money left after the bangles.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "500 − 150 = 350"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 350"
+      },
+      "text": "money left",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next, 40 percent of the remaining money goes on sweets. 40 percent of which amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "500, the money at the start",
+      "150, the cost of the bangles",
+      "350, the money left"
+     ],
+     "answer": 2,
+     "ifNot": "Listen for the words about what is left. After the bangles, only 350 remains. So this percent is taken from 350, not from 500."
+    }
+   },
+   {
+    "say": "That is the trap here: taking both percents of 500. The second percent is of the 350 that is left.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "= 350"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Find 10 percent first, because that is easy: one tenth. 350 divided by 10 is 35.",
+    "board": [
+     {
+      "op": "write",
+      "id": "xt",
+      "text": "10% of 350 = 35"
+     }
+    ]
+   },
+   {
+    "say": "Now build up. 40 percent is 4 times as much, and 4 times 35 is 140.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "40% of 350 = 4 × 35 = 140"
+     },
+     {
+      "op": "note",
+      "line": "x",
+      "target": {
+       "text": "= 140"
+      },
+      "text": "sweets",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 140 rupees go on the sweets. 350 minus 140 leaves Meera with 210 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "350 − 140 = ₹210",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹210"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 150 for the bangles, 140 for the sweets, and 210 left. Add them, and we are back at 500.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "150 + 140 + 210 = 500"
+     }
+    ]
+   },
+   {
+    "say": "With two percents, always ask, percent of what? The first was of all the money. The second was only of what was left."
+   }
+  ]
+ },
+ "AIGEN_grade5_a65eca9e-d42d-4aa8-9d1a-e89afed624bb": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kavya is given 400 rupees. She spends 25 percent on rangoli powders, and then 90 rupees on a box of ladoos. How much does she have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹400. 25% on rangoli powders, ₹90 on ladoos.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The rangoli powders cost 25 percent of the gift. What must we find before we can subtract anything?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "how many rupees 25% of 400 is",
+      "400 − 25",
+      "nothing: we can subtract straight away"
+     ],
+     "answer": 0,
+     "ifNot": "25 percent is not 25 rupees. It is a share of the 400, so first we must turn that share into rupees."
+    }
+   },
+   {
+    "say": "25 percent is a quarter, 1 of 4 equal parts. So we want 400 divided by 4, which is 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "25% of 400 = 400 ÷ 4 = 100"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 100"
+      },
+      "text": "rangoli powders",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 100 rupees went on the rangoli powders. What do we do with that 100?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "take it away from 400",
+      "nothing: 100 is the answer",
+      "add it to 400"
+     ],
+     "answer": 0,
+     "ifNot": "That 100 is money that has been spent. The question asks what is left, so it comes off the 400."
+    }
+   },
+   {
+    "say": "400 minus 100 is 300. That is what Kavya has after the rangoli powders.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "400 − 100 = 300"
+     }
+    ]
+   },
+   {
+    "say": "Then the ladoos: 300 minus 90 is 210. So Kavya has 210 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "300 − 90 = ₹210",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹210"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 100 for the rangoli powders, 90 for the ladoos, and 210 left over. Together they make 400, all the money from the start.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "100 + 90 + 210 = 400"
+     }
+    ]
+   },
+   {
+    "say": "Remember: a percent is a share, not a number of rupees. Change it into rupees, and the rest is plain subtraction."
+   }
+  ]
+ },
+ "AIGEN_grade5_acbc7ff9-1e4d-461d-9187-7702d7f3dce7": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Farhan earns 1,200 rupees at the chai stall. He saves 50 percent, and then spends 25 percent of the remaining amount on a cricket ball. How much is left after that?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹1,200. Saves 50%, then 25% of the rest.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We take the story one step at a time, in order. First, the savings: 50 percent of 1,200."
+   },
+   {
+    "say": "50 percent is one half, and half of 1,200 is 600.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "50% of 1,200 = 1,200 ÷ 2 = 600"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 600"
+      },
+      "text": "saved",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "1,200 minus 600 is 600. That is the money left after saving.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "1,200 − 600 = 600"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 600"
+      },
+      "text": "money left",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next, 25 percent of the remaining amount goes on a cricket ball. 25 percent of which amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "600, the money left",
+      "1,200, the money at the start",
+      "25, because 25% is ₹25"
+     ],
+     "answer": 0,
+     "ifNot": "Listen for the words about what is left. After saving, only 600 remains. So this percent is taken from 600, not from 1,200."
+    }
+   },
+   {
+    "say": "That is the trap here: taking both percents of 1,200. The second percent is of the 600 that is left.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "= 600"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "25 percent is one quarter, so we divide by 4. 600 divided by 4 is 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "25% of 600 = 600 ÷ 4 = 150"
+     },
+     {
+      "op": "note",
+      "line": "x",
+      "target": {
+       "text": "= 150"
+      },
+      "text": "ball",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 150 rupees go on the cricket ball. 600 minus 150 leaves Farhan with 450 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "600 − 150 = ₹450",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹450"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 600 saved, 150 for the cricket ball, and 450 left. Add them, and we are back at 1,200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "600 + 150 + 450 = 1,200"
+     }
+    ]
+   },
+   {
+    "say": "So when a percent is of the remaining amount, find what remains first. Here that was the 600 left after saving, not the whole 1,200."
+   }
+  ]
+ },
+ "AIGEN_grade5_b5ebd9fb-4dd8-463e-aa40-e03f2c039ce4": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kiran is given 900 rupees. He spends 20 percent on a rakhi gift set, and then 180 rupees on a box of kaju katli. How much does he have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹900. 20% on a gift set, ₹180 on kaju katli.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The gift set cost 20 percent of the money. What must we find before we can subtract anything?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "900 − 20",
+      "nothing: we can subtract straight away",
+      "how many rupees 20% of 900 is"
+     ],
+     "answer": 2,
+     "ifNot": "20 percent is not 20 rupees. It is a share of the 900, so first we must turn that share into rupees."
+    }
+   },
+   {
+    "say": "Find 10 percent first, because that is easy: one tenth. 900 divided by 10 is 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 900 = 90"
+     }
+    ]
+   },
+   {
+    "say": "20 percent is 2 lots of 10 percent. 2 times 90 is 180.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "20% of 900 = 2 × 90 = 180"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 180"
+      },
+      "text": "gift set",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 180 rupees went on the gift set. What do we do with that 180?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "take it away from 900",
+      "nothing: 180 is the answer",
+      "add it to 900"
+     ],
+     "answer": 0,
+     "ifNot": "That 180 is money that has been spent. The question asks what is left, so it comes off the 900."
+    }
+   },
+   {
+    "say": "900 minus 180 is 720. That is what Kiran has after the gift set.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "900 − 180 = 720"
+     }
+    ]
+   },
+   {
+    "say": "Then the kaju katli: 720 minus 180 is 540. So Kiran has 540 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "720 − 180 = ₹540",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹540"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 180 for the gift set, 180 for the kaju katli, and 540 left over. Together they make 900, all the money from the start.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "180 + 180 + 540 = 900"
+     }
+    ]
+   },
+   {
+    "say": "Did you spot that both things cost 180 rupees? That was just chance. The plan stays the same: percent into rupees first, then subtract each thing."
+   }
+  ]
+ },
+ "AIGEN_grade5_ca7ef302-364f-4678-9615-8ee267f16ce2": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun goes to a stationery shop with 250 rupees. He buys a geometry box for 90 rupees, and then spends 40 percent of the money he has left on coloured pens. How much remains?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹250. Box ₹90. Then 40% of the rest.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Go in the order of the story. First the geometry box: 250 minus 90 is 160.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "250 − 90 = 160"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 160"
+      },
+      "text": "money left",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next, the pens cost 40 percent of the money he has left. 40 percent of which amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "160, the money left",
+      "250, the money at the start",
+      "90, the price of the geometry box"
+     ],
+     "answer": 0,
+     "ifNot": "Listen to the words again: 40 percent of the money he has left. After the geometry box, Arjun has 160. So the percent is taken from 160, not from 250."
+    }
+   },
+   {
+    "say": "That is the trap in this question: taking the percent of 250. But only 160 is left, so we want 40 percent of 160.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "= 160"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Find 10 percent first, because that is easy: one tenth. 160 divided by 10 is 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 160 = 16"
+     }
+    ]
+   },
+   {
+    "say": "Now build up. 40 percent is 4 times as much, and 4 times 16 is 64.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "40% of 160 = 4 × 16 = 64"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 64"
+      },
+      "text": "pens",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So the pens cost 64 rupees. Take that from the 160. 160 minus 64 leaves Arjun with 96 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "160 − 64 = ₹96",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹96"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 90 for the geometry box, 64 for the pens, and 96 left. Add them, and we are back at 250.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "90 + 64 + 96 = 250"
+     }
+    ]
+   },
+   {
+    "say": "So: follow the story in order, and always ask, percent of what? Here it was the money left, not the money at the start."
+   }
+  ]
+ },
+ "AIGEN_grade5_cd864b47-6c82-4efb-a819-785e8ae30e0a": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi goes to a cricket match with 400 rupees. His ticket costs 120 rupees, and then he spends 25 percent of the remaining money on snacks. How much is left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹400. Ticket ₹120. Then 25% of the rest.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Go in the order of the story. First the ticket: 400 minus 120 is 280.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "400 − 120 = 280"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 280"
+      },
+      "text": "money left",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next, the snacks cost 25 percent of the remaining money. 25 percent of which amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "280, the money left",
+      "400, the money at the start",
+      "120, the price of the ticket"
+     ],
+     "answer": 0,
+     "ifNot": "Listen to the words again: 25 percent of the remaining money. After the ticket, Ravi has 280. So the percent is taken from 280, not from 400."
+    }
+   },
+   {
+    "say": "That is the trap in this question: taking the percent of 400. But only 280 is left, so we want 25 percent of 280.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "= 280"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "25 percent is a quarter, 1 of 4 equal parts. So we want 280 divided by 4, which is 70.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "25% of 280 = 280 ÷ 4 = 70"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 70"
+      },
+      "text": "snacks",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So the snacks cost 70 rupees. Take that from the 280. 280 minus 70 leaves Ravi with 210 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "280 − 70 = ₹210",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹210"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 120 for the ticket, 70 for the snacks, and 210 left. Add them, and we are back at 400.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "120 + 70 + 210 = 400"
+     }
+    ]
+   },
+   {
+    "say": "When a story says a percent of the money left, find what is left first. The percent is always taken from that."
+   }
+  ]
+ },
+ "AIGEN_grade5_d4b9d3ae-0eee-4a23-a405-a782adfdd00c": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Neha sells 24 friendship bands at 15 rupees each. She gives 20 percent of her earnings to charity. How much money does she have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "24 bands at ₹15 each. 20% to charity.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, what did she earn? That is 24 times 15. Split the 15 into 10 and 5, to make it easy.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e0",
+      "text": "24 × 15 = 24 × 10 + 24 × 5"
+     },
+     {
+      "op": "mark",
+      "line": "e0",
+      "target": {
+       "text": "10"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "e0",
+      "target": {
+       "text": "5",
+       "nth": 2
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "24 times 10 is 240, and 24 times 5 is half of that, 120. Together, 360 rupees earned.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "240 + 120 = 360"
+     },
+     {
+      "op": "note",
+      "line": "e",
+      "target": {
+       "text": "= 360"
+      },
+      "text": "earned",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the charity gets 20 percent of the 360.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "= 360"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Start small, with 10 percent. That is one tenth, so 360 divided by 10 is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 360 = 36"
+     }
+    ]
+   },
+   {
+    "say": "Now build up. 20 percent is 2 times as much, and 2 times 36 is 72.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "20% of 360 = 2 × 36 = 72"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 72"
+      },
+      "text": "to charity",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 72 rupees go to charity. Is 72 our answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No: take 72 away from 360",
+      "Yes: 72 is the answer",
+      "No: add 72 to 360"
+     ],
+     "answer": 0,
+     "ifNot": "72 is the money Neha gives away. The question asks what she has left, so we take it from her 360."
+    }
+   },
+   {
+    "say": "360 minus 72 is 288. Neha has 288 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "360 − 72 = ₹288",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹288"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: the 288 she keeps and the 72 she gives should make 360 again. And they do.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "288 + 72 = 360"
+     }
+    ]
+   },
+   {
+    "say": "So: find the total, turn the percent into rupees, and then read the question once more. It asked for what is left, not what was given."
+   }
+  ]
+ },
+ "AIGEN_grade5_e07781ec-a4d8-4f97-84ba-e99a697457c3": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kavya is given 2,000 rupees. She saves 40 percent, spends 25 percent of the remaining amount on rangoli colours, and shares the rest equally on gifts for 3 friends. How much for each gift?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹2,000. Saves 40%. 25% of the rest. Then ÷ 3.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "We take the story one step at a time, in order. First, the savings: 40 percent of 2,000."
+   },
+   {
+    "say": "Find 10 percent first, because that is easy: one tenth. 2,000 divided by 10 is 200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 2,000 = 200"
+     }
+    ]
+   },
+   {
+    "say": "40 percent is 4 lots of 10 percent. 4 times 200 is 800.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "40% of 2,000 = 4 × 200 = 800"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 800"
+      },
+      "text": "saved",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "2,000 minus 800 is 1,200. That is the money left after saving.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "2,000 − 800 = 1,200"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 1,200"
+      },
+      "text": "money left",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next, 25 percent of the remaining amount goes on rangoli colours. 25 percent of which amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2,000, the money at the start",
+      "1,200, the money left",
+      "800, the money saved"
+     ],
+     "answer": 1,
+     "ifNot": "Listen for the words about what is left. After saving, only 1,200 remains. So this percent is taken from 1,200, not from 2,000."
+    }
+   },
+   {
+    "say": "That is the trap here: taking both percents of 2,000. The second percent is of the 1,200 that is left.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "= 1,200"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "25 percent is one quarter, so we divide by 4. 1,200 divided by 4 is 300.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "25% of 1,200 = 1,200 ÷ 4 = 300"
+     },
+     {
+      "op": "note",
+      "line": "x",
+      "target": {
+       "text": "= 300"
+      },
+      "text": "colours",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 300 rupees go on the colours. 1,200 minus 300 is 900.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "1,200 − 300 = 900"
+     }
+    ]
+   },
+   {
+    "say": "We are not done yet. The 900 rupees are shared equally among 3 friends. 900 divided by 3 is 300 rupees for each friend's gift.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "900 ÷ 3 = ₹300",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹300"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 800 saved, 300 for the colours, and 3 gifts of 300. Together they make 2,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "800 + 300 + 3 × 300 = 2,000"
+     }
+    ]
+   },
+   {
+    "say": "A long story, but each step is small. Take the steps in order, and take each percent from the money that is there at that moment."
+   }
+  ]
+ },
+ "AIGEN_grade5_e217c8f7-5bd1-487e-a8c4-e581dea4bc8f": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Amit has 450 rupees at the Navratri mela. He spends 20 percent on a dandiya set, and then 110 rupees on snacks. How much does he have left?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹450. 20% on a dandiya set, ₹110 on snacks.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The dandiya set cost 20 percent of his money. What must we find before we can subtract anything?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "450 − 20",
+      "how many rupees 20% of 450 is",
+      "nothing: we can subtract straight away"
+     ],
+     "answer": 1,
+     "ifNot": "20 percent is not 20 rupees. It is a share of the 450, so first we must turn that share into rupees."
+    }
+   },
+   {
+    "say": "Start small, with 10 percent. That is one tenth, so 450 divided by 10 is 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 450 = 45"
+     }
+    ]
+   },
+   {
+    "say": "20 percent is 2 lots of 10 percent. 2 times 45 is 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "20% of 450 = 2 × 45 = 90"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 90"
+      },
+      "text": "dandiya set",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So 90 rupees went on the dandiya set. What do we do with that 90?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "nothing: 90 is the answer",
+      "take it away from 450",
+      "add it to 450"
+     ],
+     "answer": 1,
+     "ifNot": "That 90 is money that has been spent. The question asks what is left, so it comes off the 450."
+    }
+   },
+   {
+    "say": "450 minus 90 is 360. That is what Amit has after the dandiya set.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "450 − 90 = 360"
+     }
+    ]
+   },
+   {
+    "say": "Then the snacks: 360 minus 110 is 250. So Amit has 250 rupees left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "360 − 110 = ₹250",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹250"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 90 for the dandiya set, 110 for the snacks, and 250 left over. Together they make 450, all the money from the start.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "90 + 110 + 250 = 450"
+     }
+    ]
+   },
+   {
+    "say": "Remember: a percent is a share, not a number of rupees. Change it into rupees, and the rest is plain subtraction."
+   }
+  ]
+ },
+ "AIGEN_grade5_ea70992b-c890-41a2-8c48-2006935776cc": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Aditya goes to a kite festival with 650 rupees. He buys a kite for 200 rupees, and then spends 30 percent of the money he has left on kite string. How much remains?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "₹650. Kite ₹200. Then 30% of the rest.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Follow the story, one step at a time. First comes the kite. 650 minus 200 is 450.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "650 − 200 = 450"
+     },
+     {
+      "op": "note",
+      "line": "r",
+      "target": {
+       "text": "= 450"
+      },
+      "text": "money left",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Next, the kite string cost 30 percent of the money he has left. 30 percent of which amount?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "650, the money at the start",
+      "200, the price of the kite",
+      "450, the money left"
+     ],
+     "answer": 2,
+     "ifNot": "Listen to the words again: 30 percent of the money he has left. After the kite, Aditya has 450. So the percent is taken from 450, not from 650."
+    }
+   },
+   {
+    "say": "That is the trap in this question: taking the percent of 650. But only 450 is left, so we want 30 percent of 450.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "= 450"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Start small, with 10 percent. That is one tenth, so 450 divided by 10 is 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 450 = 45"
+     }
+    ]
+   },
+   {
+    "say": "Now build up. 30 percent is 3 times as much, and 3 times 45 is 135.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "30% of 450 = 3 × 45 = 135"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 135"
+      },
+      "text": "kite string",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So the kite string cost 135 rupees. Take that from the 450. 450 minus 135 leaves Aditya with 315 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "450 − 135 = ₹315",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹315"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 200 for the kite, 135 for the kite string, and 315 left. Add them, and we are back at 650.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "200 + 135 + 315 = 650"
+     }
+    ]
+   },
+   {
+    "say": "So: follow the story in order, and always ask, percent of what? Here it was the money left, not the money at the start."
+   }
+  ]
+ },
+ "AIGEN_grade5_efabbd25-0656-49d7-a223-3e6f5c9d7ec0": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A shopkeeper buys a bat for 1,500 rupees and marks its price 40 percent higher. In a sale he gives 10 percent off the marked price. What is the selling price?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Cost ₹1,500. Marked 40% higher. Sale: 10% off.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, the marked price. It is 40 percent higher than the cost, so we need 40 percent of 1,500."
+   },
+   {
+    "say": "Start small, with 10 percent. That is one tenth, so 1,500 divided by 10 is 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pt",
+      "text": "10% of 1,500 = 150"
+     }
+    ]
+   },
+   {
+    "say": "40 percent is 4 lots of 10 percent. 4 times 150 is 600.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "40% of 1,500 = 4 × 150 = 600"
+     },
+     {
+      "op": "note",
+      "line": "p",
+      "target": {
+       "text": "= 600"
+      },
+      "text": "added on",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Higher means we add it on. 1,500 plus 600 is 2,100, and that is the price on the tag.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "1,500 + 600 = 2,100"
+     },
+     {
+      "op": "note",
+      "line": "m",
+      "target": {
+       "text": "= 2,100"
+      },
+      "text": "marked price",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the sale: 10 percent off. 10 percent of which price?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1,500, the cost price",
+      "2,100, the marked price",
+      "600, the amount added on"
+     ],
+     "answer": 1,
+     "ifNot": "A discount is taken off the price on the tag. The tag says 2,100, so we want 10 percent of 2,100."
+    }
+   },
+   {
+    "say": "Here is the trap. 40 percent up and 10 percent down is not 30 percent up, because the two percents are of different amounts.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "Trap: 40% up then 10% off is not 30% up",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "m",
+      "target": {
+       "text": "= 2,100"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "10 percent is one tenth, so we divide by 10. 2,100 divided by 10 is 210.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "10% of 2,100 = 2,100 ÷ 10 = 210"
+     },
+     {
+      "op": "note",
+      "line": "d",
+      "target": {
+       "text": "= 210"
+      },
+      "text": "discount",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Off means we subtract. 2,100 minus 210 is 1,890, so the bat sells for 1,890 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "2,100 − 210 = ₹1,890",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹1,890"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: put the discount back. 1,890 plus 210 is 2,100, the marked price.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "1,890 + 210 = 2,100"
+     }
+    ]
+   },
+   {
+    "say": "So: work out the marked price first, and take the discount from that. Each percent belongs to its own amount."
+   }
+  ]
+ },
+ "AIGEN_grade5_05e3dee5-df17-4b19-bfa5-f2b873646c7d": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya writes a 5-digit number and gives 5 clues. We must find the number, and then the sum of all its digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Place value of ten-thousands digit = 50,000",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "It is units + 3. Tens = 2 × units.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Thousands 7. Hundreds 0.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the place value clue: the digit in the ten-thousands place is worth 50,000. So what is that digit?",
+    "board": [
+     {
+      "op": "write",
+      "id": "g",
+      "text": "? × 10,000 = 50,000"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5",
+      "50",
+      "8"
+     ],
+     "answer": 0,
+     "ifNot": "A digit in the ten-thousands place is worth the digit times 10,000. And 5 times 10,000 makes 50,000, so the digit is 5."
+    }
+   },
+   {
+    "say": "5 times 10,000 is 50,000, so the ten-thousands digit is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "tt",
+      "text": "5 × 10,000 = 50,000"
+     }
+    ]
+   },
+   {
+    "say": "Careful here: that 5 is 3 more than the units digit, so the units digit is the smaller one. Go backwards and subtract: 5 minus 3 is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "u",
+      "text": "5 − 3 = 2"
+     },
+     {
+      "op": "note",
+      "line": "u",
+      "target": {
+       "text": "= 2"
+      },
+      "text": "units",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The tens digit is twice the units digit. 2 times 2 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "2 × 2 = 4"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "= 4"
+      },
+      "text": "tens",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The thousands digit is 7 and the hundreds digit is 0. So the number reads 5, 7, 0, 4, 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "57,042"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "57042"
+      }
+     }
+    ]
+   },
+   {
+    "say": "We are not done: the question asks for the sum of the digits. 5 plus 7 is 12, and the 0 adds nothing.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "5 + 7 + 0 = 12"
+     }
+    ]
+   },
+   {
+    "say": "12 plus 4 is 16, and 16 plus 2 is 18. The digits add up to 18.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "12 + 4 = 16"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "5 + 7 + 0 + 4 + 2 = 18",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "18"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the clues against 5, 7, 0, 4, 2. The first digit, 5, is 3 more than the last digit, 2. And the tens digit, 4, is twice 2."
+   },
+   {
+    "say": "So find the digits from the clues, seat them in order, and then answer what was asked. Here it was the sum of the digits, not the number."
+   }
+  ]
+ },
+ "AIGEN_grade5_0c3a73ba-62ba-4fd4-8249-9a65100e4bb7": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Vikram's jersey number is 90,517. He multiplies the place value of the 5 by the face value of the 9. What does he get?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "90,517",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "9"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "90517",
+       "highlight": [
+        "d0",
+        "d2"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Two different values are mixed here, so go slowly. First, the place value of the 5. Which place is the 5 in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the tens place",
+      "the thousands place",
+      "the hundreds place"
+     ],
+     "answer": 2,
+     "ifNot": "Count from the right, one digit at a time: 7 is in the ones, 1 in the tens, and 5 in the hundreds."
+    }
+   },
+   {
+    "say": "So the 5 means 5 hundreds. 5 times 100 is 500.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "text": "hundreds",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pv",
+      "text": "5 × 100 = 500"
+     },
+     {
+      "op": "note",
+      "line": "pv",
+      "target": {
+       "text": "= 500"
+      },
+      "text": "place value of 5",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the 9. Read carefully: the question asks for its face value. What is the face value of the 9?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9",
+      "90,000",
+      "9,000"
+     ],
+     "answer": 0,
+     "ifNot": "Face value is just the digit as you see it, wherever it sits. So the face value of the 9 is 9. The 90,000 is its place value, and we are not asked for that."
+    }
+   },
+   {
+    "say": "So we multiply 500 by 9. Start with 5 times 9, which is 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fv",
+      "text": "Face value of 9 = 9",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "m",
+      "text": "5 × 9 = 45"
+     }
+    ]
+   },
+   {
+    "say": "500 is 5 hundreds, so the answer is 45 hundreds. That is 4,500.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "500 × 9 = 4,500",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "4,500"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by dividing back: 4,500 divided by 9 is 500.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "4,500 ÷ 9 = 500"
+     }
+    ]
+   },
+   {
+    "say": "So read each word of the question. Place value is the digit times its place. Face value is just the digit."
+   }
+  ]
+ },
+ "AIGEN_grade5_0c7f86b9-d3fd-456e-bed7-4fa36bdb409c": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The crowd at the cricket matches was 83,147. We want the difference between the place value of the 3 and the face value of the 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "83,147",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "3"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "83147",
+       "highlight": [
+        "d1"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Face value is the easy one. It is just the digit itself, wherever it sits, so the face value of 3 is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fv",
+      "text": "Face value of 3 = 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Place value is different: it depends on the seat. Which place is the 3 sitting in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the hundreds place",
+      "the ten-thousands place",
+      "the thousands place"
+     ],
+     "answer": 2,
+     "ifNot": "Count from the right, one digit at a time: 7 is in the ones, 4 in the tens, 1 in the hundreds, and 3 in the thousands."
+    }
+   },
+   {
+    "say": "So this 3 means 3 thousands. 3 times 1,000 is 3,000.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "3"
+      },
+      "text": "thousands",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pv",
+      "text": "3 × 1,000 = 3,000"
+     },
+     {
+      "op": "note",
+      "line": "pv",
+      "target": {
+       "text": "= 3,000"
+      },
+      "text": "place value",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, the difference between the two values. Which sum is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3,000 + 3",
+      "3 − 3",
+      "3,000 − 3"
+     ],
+     "answer": 2,
+     "ifNot": "Difference means how far apart two numbers are, so we subtract. And the two numbers are the place value, 3,000, and the face value, 3."
+    }
+   },
+   {
+    "say": "3,000 minus 3 is 2,997. That is the difference.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "3,000 − 3 = 2,997",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "2,997"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 2,997 plus 3 is 3,000, the place value we started from.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "2,997 + 3 = 3,000"
+     }
+    ]
+   },
+   {
+    "say": "So: face value is the digit itself. Place value is the digit times the worth of its place. Find both, then do what the question asks."
+   }
+  ]
+ },
+ "AIGEN_grade5_0e7fdbc0-6472-4534-ba11-2b690bf40b2d": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun writes a secret 6-digit number and gives 6 clues. We want the difference between the place value of the lakhs digit and the place value of the tens digit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Lakhs = 2 × tens. Tens = units + 1. Units = 1.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Before we chase all 6 clues, look at what is asked. Only the lakhs digit and the tens digit matter, so we find those 2 first.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Lakhs"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Start at the end of the chain. The units digit is 1, and the tens digit is one more than that: 1 plus 1 is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "1 + 1 = 2"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "= 2"
+      },
+      "text": "tens digit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The lakhs digit is twice the tens digit. 2 times 2 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l",
+      "text": "2 × 2 = 4"
+     },
+     {
+      "op": "note",
+      "line": "l",
+      "target": {
+       "text": "= 4"
+      },
+      "text": "lakhs digit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The other clues give ten-thousands 5, thousands 4 and hundreds 3. So the whole number reads 4, 5, 4, 3, 2, 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "4,54,321"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "454321",
+       "highlight": [
+        "d0",
+        "d4"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The 4 sits in the lakhs place. What is its place value?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "4,00,000",
+      "40,000"
+     ],
+     "answer": 1,
+     "ifNot": "Place value is the digit times the worth of its place. In the lakhs place, a 4 is worth 4 lakh."
+    }
+   },
+   {
+    "say": "So the 4 is worth 4 lakh. And the 2 in the tens place is worth 2 times 10, which is 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "4 × 1,00,000 = 4,00,000"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "2 × 10 = 20"
+     }
+    ]
+   },
+   {
+    "say": "Careful: we subtract what the digits are worth, not the digits themselves. 4 lakh minus 20 is 3 lakh 99 thousand 980.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "4,00,000 − 20 = 3,99,980",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "3,99,980"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "3,99,980"
+      },
+      "text": "3 lakh 99 thousand 980",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 3 lakh 99 thousand 980 plus 20 makes 4 lakh.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "3,99,980 + 20 = 4,00,000"
+     }
+    ]
+   },
+   {
+    "say": "So in a clue puzzle, find the digit that the other clues lean on first. Then change digits into place values before you subtract."
+   }
+  ]
+ },
+ "AIGEN_grade5_1075cba6-ed27-49f0-a925-414a7d5d0d4d": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The big screen at the stadium shows 47,562. We want the difference between the place value of the 5 and the face value of the 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "47,562",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "47562",
+       "highlight": [
+        "d2"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Face value is the easy one. It is just the digit itself, wherever it sits, so the face value of 5 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fv",
+      "text": "Face value of 5 = 5",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Place value is different: it depends on the seat. Which place is the 5 sitting in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the tens place",
+      "the thousands place",
+      "the hundreds place"
+     ],
+     "answer": 2,
+     "ifNot": "Count from the right, one digit at a time: 2 is in the ones, 6 in the tens, and 5 in the hundreds."
+    }
+   },
+   {
+    "say": "So this 5 means 5 hundreds. 5 times 100 is 500.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "text": "hundreds",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pv",
+      "text": "5 × 100 = 500"
+     },
+     {
+      "op": "note",
+      "line": "pv",
+      "target": {
+       "text": "= 500"
+      },
+      "text": "place value",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, the difference between the two values. Which sum is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "500 + 5",
+      "5 − 5",
+      "500 − 5"
+     ],
+     "answer": 2,
+     "ifNot": "Difference means how far apart two numbers are, so we subtract. And the two numbers are the place value, 500, and the face value, 5."
+    }
+   },
+   {
+    "say": "500 minus 5 is 495. That is the difference.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "500 − 5 = 495",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "495"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 495 plus 5 is 500, the place value we started from.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "495 + 5 = 500"
+     }
+    ]
+   },
+   {
+    "say": "Remember the two values. Face value never changes. Place value grows with the seat: tens, hundreds, thousands. Then subtract as asked."
+   }
+  ]
+ },
+ "AIGEN_grade5_1793fb6c-a077-417e-af22-3f3fd11525a6": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya's cheque is for a 5-digit amount, and 5 clues tell us its digits. Let's build it, one seat at a time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Units 2. Thousands 7.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Ten-thousands = units + 3. Hundreds = half of 7, down.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Tens = units + hundreds.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "2 digits are simply told to us: the units digit is 2, and the thousands digit is 7.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The ten-thousands digit is 3 more than the units digit. 2 plus 3 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "tt",
+      "text": "2 + 3 = 5"
+     },
+     {
+      "op": "note",
+      "line": "tt",
+      "target": {
+       "text": "= 5"
+      },
+      "text": "ten-thousands",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The hundreds digit is half of the thousands digit, rounded down. Half of 7, rounded down, is what?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "3",
+      "3.5"
+     ],
+     "answer": 1,
+     "ifNot": "Half of 7 is 3 and a half. A digit has to be a whole number, and rounded down means we drop the half. So it is 3."
+    }
+   },
+   {
+    "say": "7 divided by 2 is 3.5. Rounding down drops the half, so the hundreds digit is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "7 ÷ 2 = 3.5"
+     },
+     {
+      "op": "note",
+      "line": "h",
+      "target": {
+       "text": "3.5"
+      },
+      "text": "round down: 3",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The tens digit is the units digit plus the hundreds digit. 2 plus 3 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "2 + 3 = 5"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "= 5"
+      },
+      "text": "tens",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Seat them in order, from the ten-thousands place: 5, 7, 3, 5, 2. The cheque is for 57,352 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "₹57,352",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹57,352"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "57352"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Look at the 4 choices: they are the same except for the tens digit. So that last clue, 2 plus 3, is the one that decides it.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "t",
+      "target": {
+       "text": "= 5"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "So in a clue puzzle, write down what you are told, find the digits that other clues lean on, and seat them in order at the end."
+   }
+  ]
+ },
+ "AIGEN_grade5_206b268a-69f9-4bb8-811b-f193929fff14": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "An old army had 74,086 soldiers. How many times the face value of the 8 is the place value of the 7?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "74,086",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "74086",
+       "highlight": [
+        "d0",
+        "d3"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Two different values are mixed here, so go slowly. First the 7: which place is it in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the ten-thousands place",
+      "the thousands place",
+      "the lakhs place"
+     ],
+     "answer": 0,
+     "ifNot": "Count from the right, one digit at a time: 6 is in the ones, 8 in the tens, 0 in the hundreds, 4 in the thousands, and 7 in the ten-thousands."
+    }
+   },
+   {
+    "say": "So the 7 means 7 ten-thousands. 7 times 10,000 is 70,000.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "text": "ten-thousands",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pv",
+      "text": "7 × 10,000 = 70,000"
+     },
+     {
+      "op": "note",
+      "line": "pv",
+      "target": {
+       "text": "= 70,000"
+      },
+      "text": "place value of 7",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the 8. Careful: it sits in the tens place, but the question asks only for its face value. Face value is just the digit, 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fv",
+      "text": "Face value of 8 = 8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now, how many times 8 is 70,000? Which operation tells us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "subtract: 70,000 − 8",
+      "divide: 70,000 ÷ 8",
+      "multiply: 70,000 × 8"
+     ],
+     "answer": 1,
+     "ifNot": "How many times asks how many lots of 8 fit into 70,000. Counting how many fit is dividing, not subtracting."
+    }
+   },
+   {
+    "say": "Dividing by 8 is the same as halving 3 times. Half of 70,000 is 35,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h1",
+      "text": "70,000 ÷ 2 = 35,000"
+     }
+    ]
+   },
+   {
+    "say": "Half of 35,000 is 17,500, and half of 17,500 is 8,750.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h2",
+      "text": "35,000 ÷ 2 = 17,500"
+     },
+     {
+      "op": "write",
+      "id": "h3",
+      "text": "17,500 ÷ 2 = 8,750"
+     }
+    ]
+   },
+   {
+    "say": "So 70,000 divided by 8 is 8,750. The place value of the 7 is 8,750 times the face value of the 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "70,000 ÷ 8 = 8,750",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "8,750"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by multiplying back: 8,750 times 8 is 70,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "8,750 × 8 = 70,000"
+     }
+    ]
+   },
+   {
+    "say": "So: read which value is wanted for each digit, place or face. And how many times always means divide."
+   }
+  ]
+ },
+ "AIGEN_grade5_20ea0eaf-d2fc-4e33-9d93-64ce1ba52ca1": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun thinks of a 6-digit number and gives 6 clues. We want the difference between the place value of the lakhs digit and the place value of the thousands digit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Lakhs = largest single-digit prime. Thousands = √81.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here is a tip: read the last line first. It asks only about the lakhs digit and the thousands digit, so those are the 2 we must find.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Lakhs"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The lakhs digit is the largest prime number that has just one digit. Which number is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7",
+      "9",
+      "8"
+     ],
+     "answer": 0,
+     "ifNot": "A prime has no factors except 1 and itself. But 9 is 3 times 3, and 8 is 2 times 4, so neither is prime. The largest one-digit prime is 7."
+    }
+   },
+   {
+    "say": "The one-digit primes are 2, 3, 5 and 7, so the lakhs digit is 7. That was the trap: 9 is the biggest digit, but it is not prime.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pr",
+      "text": "Primes below 10: 2, 3, 5, 7",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "pr",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "pr",
+      "target": {
+       "text": "7"
+      },
+      "text": "lakhs digit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The thousands digit is the square root of 81: the number that, times itself, makes 81. 9 times 9 is 81, so the digit is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sq",
+      "text": "9 × 9 = 81"
+     },
+     {
+      "op": "note",
+      "line": "sq",
+      "target": {
+       "text": "9"
+      },
+      "text": "thousands digit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The other clues, worked the same way, give 1 for the ten-thousands digit, then 3, 0 and 3. So the whole number reads 7, 1, 9, 3, 0, 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "7,19,303"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "719303",
+       "highlight": [
+        "d0",
+        "d2"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The 7 sits in the lakhs place. What is its place value?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7,00,000",
+      "7",
+      "70,000"
+     ],
+     "answer": 0,
+     "ifNot": "Place value is the digit times the worth of its place. In the lakhs place, a 7 is worth 7 lakh."
+    }
+   },
+   {
+    "say": "So the 7 is worth 7 lakh. And the 9 in the thousands place is worth 9 times 1,000, which is 9,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "7 × 1,00,000 = 7,00,000"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "9 × 1,000 = 9,000"
+     }
+    ]
+   },
+   {
+    "say": "Careful: we subtract what the digits are worth, not the digits themselves. 7 lakh minus 9,000 is 6 lakh 91 thousand.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7,00,000 − 9,000 = 6,91,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "6,91,000"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "6,91,000"
+      },
+      "text": "6 lakh 91 thousand",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 6 lakh 91 thousand plus 9,000 makes 7 lakh.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "6,91,000 + 9,000 = 7,00,000"
+     }
+    ]
+   },
+   {
+    "say": "So: let the question tell you which digits to find, crack those clues with care, and then subtract place values, not digits."
+   }
+  ]
+ },
+ "AIGEN_grade5_24226af4-0819-4663-bf24-a2fc1232fcec": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya's seat number is 57,482. One digit has a face value of 7 and a place value of 7,000. How many times its face value is its place value?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "57,482",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "57482",
+       "highlight": [
+        "d1"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "A face value of 7 means the digit is 7. Let's check its place value for ourselves. Which place is the 7 in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the hundreds place",
+      "the ten-thousands place",
+      "the thousands place"
+     ],
+     "answer": 2,
+     "ifNot": "Count from the right, one digit at a time: 2 is in the ones, 8 in the tens, 4 in the hundreds, and 7 in the thousands."
+    }
+   },
+   {
+    "say": "So the 7 means 7 thousands. 7 times 1,000 is 7,000, just as the question says.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "text": "thousands",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pv",
+      "text": "7 × 1,000 = 7,000"
+     },
+     {
+      "op": "note",
+      "line": "pv",
+      "target": {
+       "text": "= 7,000"
+      },
+      "text": "place value",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, how many times 7 is 7,000? Which operation tells us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "subtract: 7,000 − 7",
+      "divide: 7,000 ÷ 7",
+      "multiply: 7,000 × 7"
+     ],
+     "answer": 1,
+     "ifNot": "How many times asks how many lots of 7 fit into 7,000. Counting how many fit is dividing, not subtracting."
+    }
+   },
+   {
+    "say": "7,000 divided by 7. 7 divided by 7 is 1, and the 3 zeros stay, so we get 1,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7,000 ÷ 7 = 1,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Look at that answer. It is exactly the worth of the thousands place. A place value is always the face value times the worth of its place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "pv",
+      "target": {
+       "text": "1,000"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Check by multiplying back: 1,000 times 7 is 7,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "1,000 × 7 = 7,000"
+     }
+    ]
+   },
+   {
+    "say": "So how many times means divide. And a digit in the thousands place is always worth 1,000 times its face value."
+   }
+  ]
+ },
+ "AIGEN_grade5_2b3c80ef-88f2-4f2c-a505-dc3965e151f0": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The book fair sold 63,509 books. We want the difference between the place value of the 5 and the face value of the 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "63,509",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "63509",
+       "highlight": [
+        "d2"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Start with the face value. That is simply the digit as you see it, so the face value of 5 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fv",
+      "text": "Face value of 5 = 5",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Place value is different: it depends on the seat. Which place is the 5 sitting in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the tens place",
+      "the thousands place",
+      "the hundreds place"
+     ],
+     "answer": 2,
+     "ifNot": "Count from the right, one digit at a time: 9 is in the ones, 0 in the tens, and 5 in the hundreds."
+    }
+   },
+   {
+    "say": "So this 5 means 5 hundreds. 5 times 100 is 500.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "text": "hundreds",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pv",
+      "text": "5 × 100 = 500"
+     },
+     {
+      "op": "note",
+      "line": "pv",
+      "target": {
+       "text": "= 500"
+      },
+      "text": "place value",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, the difference between the two values. Which sum is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "500 + 5",
+      "5 − 5",
+      "500 − 5"
+     ],
+     "answer": 2,
+     "ifNot": "Difference means how far apart two numbers are, so we subtract. And the two numbers are the place value, 500, and the face value, 5."
+    }
+   },
+   {
+    "say": "500 minus 5 is 495. That is the difference.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "500 − 5 = 495",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "495"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 495 plus 5 is 500, the place value we started from.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "495 + 5 = 500"
+     }
+    ]
+   },
+   {
+    "say": "Remember the two values. Face value never changes. Place value grows with the seat: tens, hundreds, thousands. Then subtract as asked."
+   }
+  ]
+ },
+ "AIGEN_grade5_2d8f2714-399f-4b72-a474-5a82fa4b1a25": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera's code is 74,283. She divides the place value of the 7 by the place value of the 8, and multiplies the result by the face value of the 4. What does she get?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "74,283",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "74283",
+       "highlight": [
+        "d0",
+        "d3"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Three values to find, one at a time. First the 7: which place is it in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the ten-thousands place",
+      "the thousands place",
+      "the lakhs place"
+     ],
+     "answer": 0,
+     "ifNot": "Count from the right, one digit at a time: 3 is in the ones, 8 in the tens, 2 in the hundreds, 4 in the thousands, and 7 in the ten-thousands."
+    }
+   },
+   {
+    "say": "So the 7 means 7 ten-thousands. 7 times 10,000 is 70,000.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "text": "ten-thousands",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "7 × 10,000 = 70,000"
+     }
+    ]
+   },
+   {
+    "say": "Now the 8. It sits in the tens place, so it means 8 times 10, which is 80.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "8"
+      },
+      "text": "tens",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "8 × 10 = 80"
+     }
+    ]
+   },
+   {
+    "say": "Divide the first by the second. Both end in a zero, so cross 1 zero off each: 7,000 divided by 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "70,000 ÷ 80 = 7,000 ÷ 8"
+     }
+    ]
+   },
+   {
+    "say": "Dividing by 8 is halving 3 times. Half of 7,000 is 3,500, half of that is 1,750, and half of that is 875.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h1",
+      "text": "7,000 ÷ 2 = 3,500"
+     },
+     {
+      "op": "write",
+      "id": "h2",
+      "text": "3,500 ÷ 2 = 1,750"
+     },
+     {
+      "op": "write",
+      "id": "h3",
+      "text": "1,750 ÷ 2 = 875"
+     }
+    ]
+   },
+   {
+    "say": "Last, we multiply 875 by the face value of the 4. What is the face value of the 4?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "4,000",
+      "40"
+     ],
+     "answer": 0,
+     "ifNot": "Face value is just the digit itself, so it is 4. The 4,000 is its place value, and the question does not ask for that."
+    }
+   },
+   {
+    "say": "875 times 4. Times 4 is doubling twice: 875 doubled is 1,750, and 1,750 doubled is 3,500.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "875 × 4 = 3,500",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "3,500"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the division by multiplying back: 875 times 80 is 70,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "875 × 80 = 70,000"
+     }
+    ]
+   },
+   {
+    "say": "So in a long question, find each value on its own first, place or face as asked. Then do the sums in the order the question gives."
+   }
+  ]
+ },
+ "AIGEN_grade5_37ec9774-1a37-4d8b-81d9-79e57a46d036": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi writes a 6-digit number and gives 6 clues. We want the difference between the place value of the lakhs digit and the place value of the ten-thousands digit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Lakhs = tens + 3. Ten-thousands = half of hundreds.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Hundreds = 8. Tens = 4.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here is a tip: read the last line first. It asks only about the lakhs digit and the ten-thousands digit, so those are the 2 we must find.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Lakhs"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The lakhs digit is 3 more than the tens digit. The tens digit is 4, and 4 plus 3 is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l",
+      "text": "4 + 3 = 7"
+     },
+     {
+      "op": "note",
+      "line": "l",
+      "target": {
+       "text": "= 7"
+      },
+      "text": "lakhs digit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The ten-thousands digit is half the hundreds digit. The hundreds digit is 8, and half of 8 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "8 ÷ 2 = 4"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "= 4"
+      },
+      "text": "ten-thousands digit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The thousands digit is the tens digit plus the units digit: 4 plus 2 is 6. So the whole number reads 7, 4, 6, 8, 4, 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "7,46,842"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "746842",
+       "highlight": [
+        "d0",
+        "d1"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The 7 sits in the lakhs place. What is its place value?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7,00,000",
+      "7",
+      "70,000"
+     ],
+     "answer": 0,
+     "ifNot": "Place value is the digit times the worth of its place. In the lakhs place, a 7 is worth 7 lakh."
+    }
+   },
+   {
+    "say": "So the 7 is worth 7 lakh. And the 4 in the ten-thousands place is worth 4 times 10,000, which is 40,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "7 × 1,00,000 = 7,00,000"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "4 × 10,000 = 40,000"
+     }
+    ]
+   },
+   {
+    "say": "Careful: we subtract what the digits are worth, not the digits themselves. 7 lakh minus 40,000 is 6 lakh 60 thousand.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7,00,000 − 40,000 = 6,60,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "6,60,000"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "6,60,000"
+      },
+      "text": "6 lakh 60 thousand",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 6 lakh 60 thousand plus 40,000 makes 7 lakh.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "6,60,000 + 40,000 = 7,00,000"
+     }
+    ]
+   },
+   {
+    "say": "So in a clue puzzle, read the question first and find the digits it needs. Then turn each digit into its place value before you subtract."
+   }
+  ]
+ },
+ "AIGEN_grade5_43332488-b05e-4e16-87c5-0a02f0b1c989": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun has saved 76,482 rupees. We want the difference between the place value of the 7 and the place value of the 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "76,482",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "4"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "76482",
+       "highlight": [
+        "d0",
+        "d2"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Place value depends on where a digit sits. Start with the 7: which place is it in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the ten-thousands place",
+      "the thousands place",
+      "the lakhs place"
+     ],
+     "answer": 0,
+     "ifNot": "Count from the right, one digit at a time: 2 is in the ones, 8 in the tens, 4 in the hundreds, 6 in the thousands, and 7 in the ten-thousands."
+    }
+   },
+   {
+    "say": "So the 7 means 7 ten-thousands. 7 times 10,000 is 70,000.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "text": "ten-thousands",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "7 × 10,000 = 70,000"
+     },
+     {
+      "op": "note",
+      "line": "pa",
+      "target": {
+       "text": "= 70,000"
+      },
+      "text": "place value of 7",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the 4. It sits in the hundreds place, so it means 4 times 100, which is 400.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "4"
+      },
+      "text": "hundreds",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "4 × 100 = 400"
+     },
+     {
+      "op": "note",
+      "line": "pb",
+      "target": {
+       "text": "= 400"
+      },
+      "text": "place value of 4",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Which subtraction gives the difference between the place values?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "70,000 − 400",
+      "7 − 4",
+      "70,000 − 4"
+     ],
+     "answer": 0,
+     "ifNot": "The question asks about place values, so we use what each digit is worth: 70,000 and 400, not the bare digits 7 and 4."
+    }
+   },
+   {
+    "say": "70,000 minus 400 is 69,600. Take care with the zeros: we are taking away 4 hundreds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "70,000 − 400 = ₹69,600",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹69,600"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 69,600 plus 400 is 70,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "69,600 + 400 = 70,000"
+     }
+    ]
+   },
+   {
+    "say": "A digit is worth its face times its place. Work out both place values first, and the subtraction at the end is the easy part."
+   }
+  ]
+ },
+ "AIGEN_grade5_45aa0de4-ab33-4797-af61-e9ed6d841218": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's train ticket has the number 76,308. We want the difference between the place value of the 7 and the place value of the 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "76,308",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "3"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "76308",
+       "highlight": [
+        "d0",
+        "d2"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Place value depends on where a digit sits. Start with the 7: which place is it in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the ten-thousands place",
+      "the thousands place",
+      "the lakhs place"
+     ],
+     "answer": 0,
+     "ifNot": "Count from the right, one digit at a time: 8 is in the ones, 0 in the tens, 3 in the hundreds, 6 in the thousands, and 7 in the ten-thousands."
+    }
+   },
+   {
+    "say": "So the 7 means 7 ten-thousands. 7 times 10,000 is 70,000.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "text": "ten-thousands",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "7 × 10,000 = 70,000"
+     },
+     {
+      "op": "note",
+      "line": "pa",
+      "target": {
+       "text": "= 70,000"
+      },
+      "text": "place value of 7",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the 3. It sits in the hundreds place, so it means 3 times 100, which is 300.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "3"
+      },
+      "text": "hundreds",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "3 × 100 = 300"
+     },
+     {
+      "op": "note",
+      "line": "pb",
+      "target": {
+       "text": "= 300"
+      },
+      "text": "place value of 3",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Which subtraction gives the difference between the place values?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "70,000 − 300",
+      "7 − 3",
+      "70,000 − 3"
+     ],
+     "answer": 0,
+     "ifNot": "The question asks about place values, so we use what each digit is worth: 70,000 and 300, not the bare digits 7 and 3."
+    }
+   },
+   {
+    "say": "70,000 minus 300 is 69,700. Take care with the zeros: we are taking away 3 hundreds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "70,000 − 300 = 69,700",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "69,700"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 69,700 plus 300 is 70,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "69,700 + 300 = 70,000"
+     }
+    ]
+   },
+   {
+    "say": "So: find the place of each digit, turn each into its place value, and only then subtract. Never subtract the bare digits."
+   }
+  ]
+ },
+ "AIGEN_grade5_4602a73d-48b2-420f-b189-1dc06e5f1973": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The train number on the board is 52,483. We want the difference between the place value of the 2 and the face value of the 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "52,483",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "52483",
+       "highlight": [
+        "d1"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Face value is the easy one. It is just the digit itself, wherever it sits, so the face value of 2 is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fv",
+      "text": "Face value of 2 = 2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Place value is different: it depends on the seat. Which place is the 2 sitting in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the hundreds place",
+      "the ten-thousands place",
+      "the thousands place"
+     ],
+     "answer": 2,
+     "ifNot": "Count from the right, one digit at a time: 3 is in the ones, 8 in the tens, 4 in the hundreds, and 2 in the thousands."
+    }
+   },
+   {
+    "say": "So this 2 means 2 thousands. 2 times 1,000 is 2,000.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "text": "thousands",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pv",
+      "text": "2 × 1,000 = 2,000"
+     },
+     {
+      "op": "note",
+      "line": "pv",
+      "target": {
+       "text": "= 2,000"
+      },
+      "text": "place value",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, the difference between the two values. Which sum is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2,000 + 2",
+      "2,000 − 2",
+      "2 − 2"
+     ],
+     "answer": 1,
+     "ifNot": "Difference means how far apart two numbers are, so we subtract. And the two numbers are the place value, 2,000, and the face value, 2."
+    }
+   },
+   {
+    "say": "2,000 minus 2 is 1,998. That is the difference.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "2,000 − 2 = 1,998",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1,998"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 1,998 plus 2 is 2,000, the place value we started from.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "1,998 + 2 = 2,000"
+     }
+    ]
+   },
+   {
+    "say": "So: face value is the digit itself. Place value is the digit times the worth of its place. Find both, then do what the question asks."
+   }
+  ]
+ },
+ "AIGEN_grade5_474382c8-4700-4027-8e63-da3d237e70e0": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's code is 74,208. He imagines moving the 2 into the ten-thousands place. What is the difference between its new place value and its original place value?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "74,208",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "74208",
+       "highlight": [
+        "d2"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "First, where is the 2 right now? Which place is it in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the tens place",
+      "the thousands place",
+      "the hundreds place"
+     ],
+     "answer": 2,
+     "ifNot": "Count from the right, one digit at a time: 8 is in the ones, 0 in the tens, and 2 in the hundreds."
+    }
+   },
+   {
+    "say": "So at the moment the 2 means 2 hundreds. 2 times 100 is 200.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "text": "hundreds",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "old",
+      "text": "2 × 100 = 200"
+     },
+     {
+      "op": "note",
+      "line": "old",
+      "target": {
+       "text": "= 200"
+      },
+      "text": "original",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now picture the 2 in the ten-thousands place, where the 7 is. There it would mean 2 times 10,000, which is 20,000.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "new",
+      "text": "2 × 10,000 = 20,000"
+     },
+     {
+      "op": "note",
+      "line": "new",
+      "target": {
+       "text": "= 20,000"
+      },
+      "text": "new",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Which sum gives the difference between the new place value and the original one?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "20,000 − 2",
+      "20,000 + 200",
+      "20,000 − 200"
+     ],
+     "answer": 2,
+     "ifNot": "Difference means subtract. And we subtract the original place value, which is 200, not the bare digit 2."
+    }
+   },
+   {
+    "say": "20,000 minus 200 is 19,800. Take care with the zeros: we are taking away 2 hundreds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "20,000 − 200 = 19,800",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "19,800"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 19,800 plus 200 is 20,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "19,800 + 200 = 20,000"
+     }
+    ]
+   },
+   {
+    "say": "The digit stayed a 2 the whole time. Only its seat changed, and the seat decides what a digit is worth."
+   }
+  ]
+ },
+ "AIGEN_grade5_48dd3746-66b6-4dfc-becd-5cee5cffa096": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya's number has 5 digits. It has a 7 in the ten-thousands place and a 3 in the hundreds place, and every other digit is 0. What is the number?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "7 in ten-thousands, 3 in hundreds, rest 0",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The clue says the number is the sum of the two place values. So first, the 7 in the ten-thousands place: 7 times 10,000 is 70,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "7 × 10,000 = 70,000"
+     }
+    ]
+   },
+   {
+    "say": "Now the 3 in the hundreds place. What is it worth?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "300",
+      "30",
+      "3,000"
+     ],
+     "answer": 0,
+     "ifNot": "The hundreds place is the third seat from the right. A 3 sitting there means 3 hundreds, and that is 300."
+    }
+   },
+   {
+    "say": "3 times 100 is 300.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "3 × 100 = 300"
+     }
+    ]
+   },
+   {
+    "say": "Add the two place values. 70,000 plus 300 is 70,300.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "70,000 + 300 = 70,300",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "70,300"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "See it in the chart: 7, 0, 3, 0, 0. The zeros hold the empty seats, so the 3 stays in the hundreds place.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "70300",
+       "highlight": [
+        "d0",
+        "d2"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Careful with the other choices. They all use the same digits, but they put the 3 in the tens, the thousands or the ones place."
+   },
+   {
+    "say": "So a number is the sum of the place values of its digits. And zeros matter: they keep every digit in its proper seat."
+   }
+  ]
+ },
+ "AIGEN_grade5_54ce7dae-0b5f-4ae5-b4a7-ef9876cb50ea": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi writes a 6-digit number and gives 6 clues. We want the difference between the place value of the lakhs digit and the place value of the ten-thousands digit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Lakhs = tens + 3. Ten-thousands = half of hundreds.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Hundreds = 8. Tens = 2.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here is a tip: read the last line first. It asks only about the lakhs digit and the ten-thousands digit, so those are the 2 we must find.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Lakhs"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The lakhs digit is 3 more than the tens digit. The tens digit is 2, and 2 plus 3 is 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l",
+      "text": "2 + 3 = 5"
+     },
+     {
+      "op": "note",
+      "line": "l",
+      "target": {
+       "text": "= 5"
+      },
+      "text": "lakhs digit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The ten-thousands digit is half the hundreds digit. The hundreds digit is 8, and half of 8 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "8 ÷ 2 = 4"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "= 4"
+      },
+      "text": "ten-thousands digit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The thousands digit is 7, and the units digit is 4 plus 2, which is 6. So the whole number reads 5, 4, 7, 8, 2, 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "5,47,826"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "547826",
+       "highlight": [
+        "d0",
+        "d1"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The 5 sits in the lakhs place. What is its place value?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5",
+      "5,00,000",
+      "50,000"
+     ],
+     "answer": 1,
+     "ifNot": "Place value is the digit times the worth of its place. In the lakhs place, a 5 is worth 5 lakh."
+    }
+   },
+   {
+    "say": "So the 5 is worth 5 lakh. And the 4 in the ten-thousands place is worth 4 times 10,000, which is 40,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "5 × 1,00,000 = 5,00,000"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "4 × 10,000 = 40,000"
+     }
+    ]
+   },
+   {
+    "say": "Careful: we subtract what the digits are worth, not the digits themselves. 5 lakh minus 40,000 is 4 lakh 60 thousand.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "5,00,000 − 40,000 = 4,60,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "4,60,000"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "4,60,000"
+      },
+      "text": "4 lakh 60 thousand",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 4 lakh 60 thousand plus 40,000 makes 5 lakh.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "4,60,000 + 40,000 = 5,00,000"
+     }
+    ]
+   },
+   {
+    "say": "A digit is worth its face times its place. So find the digits from the clues, change them into place values, and only then subtract."
+   }
+  ]
+ },
+ "AIGEN_grade5_578a4973-9cc6-4c60-bf80-a19e9e9dbc5e": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi writes a 6-digit number and gives 6 clues. We want the difference between the place value of the lakhs digit and the place value of the ten-thousands digit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Lakhs = tens + 3. Ten-thousands = half of hundreds.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Hundreds = 8. Tens = 5.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Before we chase all 6 clues, look at what is asked. Only the lakhs digit and the ten-thousands digit matter, so we find those 2 first.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Lakhs"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The lakhs digit is 3 more than the tens digit. The tens digit is 5, and 5 plus 3 is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l",
+      "text": "5 + 3 = 8"
+     },
+     {
+      "op": "note",
+      "line": "l",
+      "target": {
+       "text": "= 8"
+      },
+      "text": "lakhs digit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The ten-thousands digit is half the hundreds digit. The hundreds digit is 8, and half of 8 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "8 ÷ 2 = 4"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "= 4"
+      },
+      "text": "ten-thousands digit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The thousands digit and the units digit are both 0. So the whole number reads 8, 4, 0, 8, 5, 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "8,40,850"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "840850",
+       "highlight": [
+        "d0",
+        "d1"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The 8 sits in the lakhs place. What is its place value?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8",
+      "8,00,000",
+      "80,000"
+     ],
+     "answer": 1,
+     "ifNot": "Place value is the digit times the worth of its place. In the lakhs place, a 8 is worth 8 lakh."
+    }
+   },
+   {
+    "say": "So the 8 is worth 8 lakh. And the 4 in the ten-thousands place is worth 4 times 10,000, which is 40,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "8 × 1,00,000 = 8,00,000"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "4 × 10,000 = 40,000"
+     }
+    ]
+   },
+   {
+    "say": "Careful: we subtract what the digits are worth, not the digits themselves. 8 lakh minus 40,000 is 7 lakh 60 thousand.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "8,00,000 − 40,000 = 7,60,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "7,60,000"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "7,60,000"
+      },
+      "text": "7 lakh 60 thousand",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 7 lakh 60 thousand plus 40,000 makes 8 lakh.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "7,60,000 + 40,000 = 8,00,000"
+     }
+    ]
+   },
+   {
+    "say": "So: let the question tell you which digits to find. Then it is place value minus place value, never digit minus digit."
+   }
+  ]
+ },
+ "AIGEN_grade5_6356a365-216c-45e4-b2e4-fe386fc1ca35": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kavya's lucky token says 60,508. We want the difference between the place value of the 6 and the place value of the 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "60,508",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "60508",
+       "highlight": [
+        "d0",
+        "d2"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Place value depends on where a digit sits. Start with the 6: which place is it in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the ten-thousands place",
+      "the thousands place",
+      "the lakhs place"
+     ],
+     "answer": 0,
+     "ifNot": "Count from the right, one digit at a time: 8 is in the ones, 0 in the tens, 5 in the hundreds, 0 in the thousands, and 6 in the ten-thousands."
+    }
+   },
+   {
+    "say": "So the 6 means 6 ten-thousands. 6 times 10,000 is 60,000.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "6"
+      },
+      "text": "ten-thousands",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "6 × 10,000 = 60,000"
+     },
+     {
+      "op": "note",
+      "line": "pa",
+      "target": {
+       "text": "= 60,000"
+      },
+      "text": "place value of 6",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the 5. It sits in the hundreds place, so it means 5 times 100, which is 500.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "text": "hundreds",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "5 × 100 = 500"
+     },
+     {
+      "op": "note",
+      "line": "pb",
+      "target": {
+       "text": "= 500"
+      },
+      "text": "place value of 5",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Which subtraction gives the difference between the place values?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "60,000 − 500",
+      "6 − 5",
+      "60,000 − 5"
+     ],
+     "answer": 0,
+     "ifNot": "The question asks about place values, so we use what each digit is worth: 60,000 and 500, not the bare digits 6 and 5."
+    }
+   },
+   {
+    "say": "60,000 minus 500 is 59,500. Take care with the zeros: we are taking away 5 hundreds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "60,000 − 500 = ₹59,500",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹59,500"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 59,500 plus 500 is 60,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "59,500 + 500 = 60,000"
+     }
+    ]
+   },
+   {
+    "say": "A digit is worth its face times its place. Work out both place values first, and the subtraction at the end is the easy part."
+   }
+  ]
+ },
+ "AIGEN_grade5_646a6965-a648-4131-a4f3-d89b3c3aa444": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun's father counts the money from the chai stall. The total is a 6-digit number, and 6 clues tell us its digits. Let's build it, one seat at a time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Ten-thousands 5. Hundreds 3. Units 1.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Lakhs = 2 × tens. Tens = units + 1.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "Thousands = hundreds + units.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "3 digits are simply told to us: 5 in the ten-thousands place, 3 in the hundreds place, and 1 in the units place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "1"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The lakhs digit is twice the tens digit. So which digit must we find before the lakhs digit?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the thousands digit",
+      "the hundreds digit",
+      "the tens digit"
+     ],
+     "answer": 2,
+     "ifNot": "The lakhs clue leans on the tens digit. Until we know the tens digit, there is nothing to double."
+    }
+   },
+   {
+    "say": "The tens digit is one more than the units digit. 1 plus 1 is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "1 + 1 = 2"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "= 2"
+      },
+      "text": "tens",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the lakhs digit: twice the tens digit. 2 times 2 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l",
+      "text": "2 × 2 = 4"
+     },
+     {
+      "op": "note",
+      "line": "l",
+      "target": {
+       "text": "= 4"
+      },
+      "text": "lakhs",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "And the thousands digit is the hundreds digit plus the units digit. 3 plus 1 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "th",
+      "text": "3 + 1 = 4"
+     },
+     {
+      "op": "note",
+      "line": "th",
+      "target": {
+       "text": "= 4"
+      },
+      "text": "thousands",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Seat them in order, starting from the lakhs place: 4, 5, 4, 3, 2, 1. That is 4 lakh 54 thousand 321 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "₹4,54,321",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹4,54,321"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "4,54,321"
+      },
+      "text": "4 lakh 54 thousand 321",
+      "place": "below"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "454321"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Careful with the choices: some use the very same digits in different seats. Say the clue for each seat as you check it."
+   },
+   {
+    "say": "Check 2 of the clues. The lakhs digit, 4, is twice the tens digit, 2. And the thousands digit, 4, is 3 plus 1. It all fits."
+   },
+   {
+    "say": "So in a clue puzzle, write down what you are told, then find each digit that the others lean on, and seat them in order at the end."
+   }
+  ]
+ },
+ "AIGEN_grade5_6e0d7632-233a-4473-b676-adaf27dff724": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun has 86,472 rupees. He divides the place value of the 8 by the place value of the 2, and then adds the face value of the 6. What number does he get?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "86,472",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "86472",
+       "highlight": [
+        "d0",
+        "d4"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Three values to find, one at a time. First the 8: which place is it in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the ten-thousands place",
+      "the thousands place",
+      "the lakhs place"
+     ],
+     "answer": 0,
+     "ifNot": "Count from the right, one digit at a time: 2 is in the ones, 7 in the tens, 4 in the hundreds, 6 in the thousands, and 8 in the ten-thousands."
+    }
+   },
+   {
+    "say": "So the 8 means 8 ten-thousands. 8 times 10,000 is 80,000.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "8"
+      },
+      "text": "ten-thousands",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "8 × 10,000 = 80,000"
+     }
+    ]
+   },
+   {
+    "say": "The 2 is the last digit, in the units place. 2 times 1 is 2, so here the place value is the same as the digit.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "text": "units",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "2 × 1 = 2"
+     }
+    ]
+   },
+   {
+    "say": "Divide the first by the second. 80,000 divided by 2 is half of 80,000, which is 40,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "80,000 ÷ 2 = 40,000"
+     }
+    ]
+   },
+   {
+    "say": "Now we add the face value of the 6. What is the face value of the 6?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6,000",
+      "6",
+      "60"
+     ],
+     "answer": 1,
+     "ifNot": "Face value is just the digit itself, so it is 6. The 6,000 is its place value, and the question does not ask for that."
+    }
+   },
+   {
+    "say": "40,000 plus 6 is 40,006. The 6 goes in the units place, and zeros hold the places in between.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "40,000 + 6 = 40,006",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "40,006"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by going backwards: 40,006 minus 6 is 40,000, and 40,000 times 2 is 80,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "40,006 − 6 = 40,000"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "40,000 × 2 = 80,000"
+     }
+    ]
+   },
+   {
+    "say": "So find each value on its own first, place or face as asked. Then do the sums in the order the question gives."
+   }
+  ]
+ },
+ "AIGEN_grade5_7dfbff5d-8316-45a3-ab9d-3aba8b1994d8": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya writes a 6-digit number and gives 6 clues. We want the difference between the place value of the lakhs digit and the face value of the ten-thousands digit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Lakhs = tens + 3. Ten-thousands = half of hundreds.",
+      "tone": "given",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "Hundreds = 8. Tens = 4.",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Here is a tip: read the last line first. It asks only about the lakhs digit and the ten-thousands digit, so those are the 2 we must find.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "Lakhs"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The lakhs digit is 3 more than the tens digit. The tens digit is 4, and 4 plus 3 is 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l",
+      "text": "4 + 3 = 7"
+     },
+     {
+      "op": "note",
+      "line": "l",
+      "target": {
+       "text": "= 7"
+      },
+      "text": "lakhs digit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The ten-thousands digit is half the hundreds digit. The hundreds digit is 8, and half of 8 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "8 ÷ 2 = 4"
+     },
+     {
+      "op": "note",
+      "line": "t",
+      "target": {
+       "text": "= 4"
+      },
+      "text": "ten-thousands digit",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The thousands digit is the units digit plus the tens digit: 1 plus 4 is 5. So the whole number reads 7, 4, 5, 8, 4, 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "7,45,841"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "745841",
+       "highlight": [
+        "d0",
+        "d1"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The 7 sits in the lakhs place. What is its place value?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7,00,000",
+      "7",
+      "70,000"
+     ],
+     "answer": 0,
+     "ifNot": "Place value is the digit times the worth of its place. In the lakhs place, a 7 is worth 7 lakh."
+    }
+   },
+   {
+    "say": "So the 7 is worth 7 lakh. For the 4 in the ten-thousands place, the question asks for face value, and that is just the digit, 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "7 × 1,00,000 = 7,00,000"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "Face value of 4 = 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Careful: face value this time, so we take away only 4, not what the 4 is worth in its place. 7 lakh minus 4 is 6 lakh 99 thousand 996.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7,00,000 − 4 = 6,99,996",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "6,99,996"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "6,99,996"
+      },
+      "text": "6 lakh 99 thousand 996",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 6 lakh 99 thousand 996 plus 4 makes 7 lakh.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "6,99,996 + 4 = 7,00,000"
+     }
+    ]
+   },
+   {
+    "say": "So read every word. Place value is the digit times its place, and face value is just the digit. This question wanted one of each."
+   }
+  ]
+ },
+ "AIGEN_grade5_7eab7fb8-c267-4184-b19e-c911814b45ed": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The chai stall collected 52,748 rupees. We want the difference between the place value of the 5 and the place value of the 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "52,748",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "52748",
+       "highlight": [
+        "d0",
+        "d2"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Place value depends on where a digit sits. Start with the 5: which place is it in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the ten-thousands place",
+      "the thousands place",
+      "the lakhs place"
+     ],
+     "answer": 0,
+     "ifNot": "Count from the right, one digit at a time: 8 is in the ones, 4 in the tens, 7 in the hundreds, 2 in the thousands, and 5 in the ten-thousands."
+    }
+   },
+   {
+    "say": "So the 5 means 5 ten-thousands. 5 times 10,000 is 50,000.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "text": "ten-thousands",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "5 × 10,000 = 50,000"
+     },
+     {
+      "op": "note",
+      "line": "pa",
+      "target": {
+       "text": "= 50,000"
+      },
+      "text": "place value of 5",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the 7. It sits in the hundreds place, so it means 7 times 100, which is 700.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "text": "hundreds",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "7 × 100 = 700"
+     },
+     {
+      "op": "note",
+      "line": "pb",
+      "target": {
+       "text": "= 700"
+      },
+      "text": "place value of 7",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Which subtraction gives the difference between the place values?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 − 7",
+      "50,000 − 7",
+      "50,000 − 700"
+     ],
+     "answer": 2,
+     "ifNot": "The question asks about place values, so we use what each digit is worth: 50,000 and 700, not the bare digits 5 and 7."
+    }
+   },
+   {
+    "say": "50,000 minus 700 is 49,300. Take care with the zeros: we are taking away 7 hundreds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "50,000 − 700 = ₹49,300",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹49,300"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 49,300 plus 700 is 50,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "49,300 + 700 = 50,000"
+     }
+    ]
+   },
+   {
+    "say": "So: find the place of each digit, turn each into its place value, and only then subtract. Never subtract the bare digits."
+   }
+  ]
+ },
+ "AIGEN_grade5_84e4d085-09e6-4cfb-a036-c9dd3fc658ff": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The firecrackers cost 56,482 rupees. How many times the place value of the 4 is the place value of the 5?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "56,482",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "4"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "56482",
+       "highlight": [
+        "d0",
+        "d2"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "We need two place values. Start with the 5: which place is it in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the ten-thousands place",
+      "the thousands place",
+      "the lakhs place"
+     ],
+     "answer": 0,
+     "ifNot": "Count from the right, one digit at a time: 2 is in the ones, 8 in the tens, 4 in the hundreds, 6 in the thousands, and 5 in the ten-thousands."
+    }
+   },
+   {
+    "say": "So the 5 means 5 ten-thousands. 5 times 10,000 is 50,000.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "5"
+      },
+      "text": "ten-thousands",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "5 × 10,000 = 50,000"
+     },
+     {
+      "op": "note",
+      "line": "pa",
+      "target": {
+       "text": "= 50,000"
+      },
+      "text": "place value of 5",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the 4. It sits in the hundreds place, so it means 4 times 100, which is 400.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "4"
+      },
+      "text": "hundreds",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "4 × 100 = 400"
+     },
+     {
+      "op": "note",
+      "line": "pb",
+      "target": {
+       "text": "= 400"
+      },
+      "text": "place value of 4",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "How many times 400 is 50,000? Which operation tells us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "divide: 50,000 ÷ 400",
+      "subtract: 50,000 − 400",
+      "divide the digits: 5 ÷ 4"
+     ],
+     "answer": 0,
+     "ifNot": "How many times asks how many lots of 400 fit into 50,000. Counting how many fit is dividing, not subtracting."
+    }
+   },
+   {
+    "say": "Both numbers end in zeros, so make the sum smaller. Cross 2 zeros off each, and we have 500 divided by 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "50,000 ÷ 400 = 500 ÷ 4"
+     },
+     {
+      "op": "strike",
+      "line": "d",
+      "target": {
+       "text": "00"
+      },
+      "note": "÷ 100"
+     },
+     {
+      "op": "strike",
+      "line": "d",
+      "target": {
+       "text": "00",
+       "nth": 2
+      },
+      "note": "÷ 100"
+     }
+    ]
+   },
+   {
+    "say": "To divide by 4, halve and halve again. Half of 500 is 250, and half of 250 is 125.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h1",
+      "text": "500 ÷ 2 = 250"
+     },
+     {
+      "op": "write",
+      "id": "h2",
+      "text": "250 ÷ 2 = 125"
+     }
+    ]
+   },
+   {
+    "say": "So the place value of the 5 is 125 times the place value of the 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "50,000 ÷ 400 = 125",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "125"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by multiplying back. 125 times 4 is 500, so 125 times 400 is 50,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "125 × 400 = 50,000"
+     }
+    ]
+   },
+   {
+    "say": "So: turn each digit into its place value, then divide. And crossing off the same number of zeros from both makes a big division small."
+   }
+  ]
+ },
+ "AIGEN_grade5_8c0fae1e-edf2-40ff-91b3-c909ad16c251": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Aarav's class collected 46,352 rupees. We want the difference between the place value of the 3 and the face value of the 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "46,352",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "3"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "46352",
+       "highlight": [
+        "d2"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Start with the face value. That is simply the digit as you see it, so the face value of 3 is 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fv",
+      "text": "Face value of 3 = 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Place value is different: it depends on the seat. Which place is the 3 sitting in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the tens place",
+      "the thousands place",
+      "the hundreds place"
+     ],
+     "answer": 2,
+     "ifNot": "Count from the right, one digit at a time: 2 is in the ones, 5 in the tens, and 3 in the hundreds."
+    }
+   },
+   {
+    "say": "So this 3 means 3 hundreds. 3 times 100 is 300.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "3"
+      },
+      "text": "hundreds",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pv",
+      "text": "3 × 100 = 300"
+     },
+     {
+      "op": "note",
+      "line": "pv",
+      "target": {
+       "text": "= 300"
+      },
+      "text": "place value",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, the difference between the two values. Which sum is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "300 + 3",
+      "3 − 3",
+      "300 − 3"
+     ],
+     "answer": 2,
+     "ifNot": "Difference means how far apart two numbers are, so we subtract. And the two numbers are the place value, 300, and the face value, 3."
+    }
+   },
+   {
+    "say": "300 minus 3 is 297. That is the difference.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "300 − 3 = ₹297",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "₹297"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 297 plus 3 is 300, the place value we started from.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "297 + 3 = 300"
+     }
+    ]
+   },
+   {
+    "say": "So: face value is the digit itself. Place value is the digit times the worth of its place. Find both, then do what the question asks."
+   }
+  ]
+ },
+ "AIGEN_grade5_98fdf2e6-d5a7-477d-8fea-58c99d7758e3": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya ordered 74,208 packets of coloured powder. How many times the face value of the 8 is the place value of the 7?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "74,208",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "74208",
+       "highlight": [
+        "d0",
+        "d4"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Two different values are mixed here, so go slowly. First the 7: which place is it in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the ten-thousands place",
+      "the thousands place",
+      "the lakhs place"
+     ],
+     "answer": 0,
+     "ifNot": "Count from the right, one digit at a time: 8 is in the ones, 0 in the tens, 2 in the hundreds, 4 in the thousands, and 7 in the ten-thousands."
+    }
+   },
+   {
+    "say": "So the 7 means 7 ten-thousands. 7 times 10,000 is 70,000.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "text": "ten-thousands",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pv",
+      "text": "7 × 10,000 = 70,000"
+     },
+     {
+      "op": "note",
+      "line": "pv",
+      "target": {
+       "text": "= 70,000"
+      },
+      "text": "place value of 7",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the 8. The question asks for its face value, and face value is just the digit itself, wherever it sits. So that is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fv",
+      "text": "Face value of 8 = 8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now, how many times 8 is 70,000? Which operation tells us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "subtract: 70,000 − 8",
+      "divide: 70,000 ÷ 8",
+      "multiply: 70,000 × 8"
+     ],
+     "answer": 1,
+     "ifNot": "How many times asks how many lots of 8 fit into 70,000. Counting how many fit is dividing, not subtracting."
+    }
+   },
+   {
+    "say": "Dividing by 8 is the same as halving 3 times. Half of 70,000 is 35,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h1",
+      "text": "70,000 ÷ 2 = 35,000"
+     }
+    ]
+   },
+   {
+    "say": "Half of 35,000 is 17,500, and half of 17,500 is 8,750.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h2",
+      "text": "35,000 ÷ 2 = 17,500"
+     },
+     {
+      "op": "write",
+      "id": "h3",
+      "text": "17,500 ÷ 2 = 8,750"
+     }
+    ]
+   },
+   {
+    "say": "So 70,000 divided by 8 is 8,750. The place value of the 7 is 8,750 times the face value of the 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "70,000 ÷ 8 = 8,750",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "8,750"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by multiplying back: 8,750 times 8 is 70,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "8,750 × 8 = 70,000"
+     }
+    ]
+   },
+   {
+    "say": "So: read which value is wanted for each digit, place or face. And how many times always means divide."
+   }
+  ]
+ },
+ "AIGEN_grade5_9de4023b-4f41-4da1-98f2-8d5387afc092": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Team Lotus has the code 63,242. The digit 2 is there twice, in the hundreds place and in the units place. How many times as big is the place value of the first 2?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "63,242",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "2",
+       "nth": 2
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "63242",
+       "highlight": [
+        "d2",
+        "d4"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Same digit, different seats. The 2 in the hundreds place means 2 hundreds: 2 times 100 is 200.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "text": "hundreds",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "2 × 100 = 200"
+     }
+    ]
+   },
+   {
+    "say": "The 2 at the end is in the units place. 2 times 1 is just 2.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "2",
+       "nth": 2
+      },
+      "text": "units",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "2 × 1 = 2"
+     }
+    ]
+   },
+   {
+    "say": "How many times 2 is 200? Which operation tells us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "divide: 200 ÷ 2",
+      "subtract: 200 − 2",
+      "neither: both are just 2"
+     ],
+     "answer": 0,
+     "ifNot": "How many times asks how many lots of 2 fit into 200. Counting how many fit is dividing, not subtracting."
+    }
+   },
+   {
+    "say": "200 divided by 2 is 100. The 2 in the hundreds place is worth 100 times the 2 in the units place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "200 ÷ 2 = 100",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "100"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is why. Each step to the left makes a digit 10 times bigger. From units to hundreds is 2 steps, and 10 times 10 is 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "w",
+      "text": "10 × 10 = 100"
+     }
+    ]
+   },
+   {
+    "say": "Check by multiplying back: 100 times 2 is 200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "100 × 2 = 200"
+     }
+    ]
+   },
+   {
+    "say": "So the same digit can be worth very different amounts. Its seat decides, and how many times means divide."
+   }
+  ]
+ },
+ "AIGEN_grade5_9e438cb2-44b2-4b99-95f4-a7f6dafda183": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya writes 76,258 on the board. We want the difference between the place value of the 6 and the place value of the 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "76,258",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "76258",
+       "highlight": [
+        "d1",
+        "d2"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Place value depends on where a digit sits. Start with the 6: which place is it in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the hundreds place",
+      "the ten-thousands place",
+      "the thousands place"
+     ],
+     "answer": 2,
+     "ifNot": "Count from the right, one digit at a time: 8 is in the ones, 5 in the tens, 2 in the hundreds, and 6 in the thousands."
+    }
+   },
+   {
+    "say": "So the 6 means 6 thousands. 6 times 1,000 is 6,000.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "6"
+      },
+      "text": "thousands",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pa",
+      "text": "6 × 1,000 = 6,000"
+     },
+     {
+      "op": "note",
+      "line": "pa",
+      "target": {
+       "text": "= 6,000"
+      },
+      "text": "place value of 6",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the 2. It sits in the hundreds place, so it means 2 times 100, which is 200.",
+    "board": [
+     {
+      "op": "note",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "text": "hundreds",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "pb",
+      "text": "2 × 100 = 200"
+     },
+     {
+      "op": "note",
+      "line": "pb",
+      "target": {
+       "text": "= 200"
+      },
+      "text": "place value of 2",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Which subtraction gives the difference between the place values?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6,000 − 200",
+      "6 − 2",
+      "6,000 − 2"
+     ],
+     "answer": 0,
+     "ifNot": "The question asks about place values, so we use what each digit is worth: 6,000 and 200, not the bare digits 6 and 2."
+    }
+   },
+   {
+    "say": "6,000 minus 200 is 5,800. Take care with the zeros: we are taking away 2 hundreds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "6,000 − 200 = 5,800",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "5,800"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 5,800 plus 200 is 6,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "5,800 + 200 = 6,000"
+     }
+    ]
+   },
+   {
+    "say": "So: find the place of each digit first. The 6 here was in the thousands, not the ten-thousands. Then subtract the place values."
+   }
+  ]
+ },
+ "AIGEN_grade5_a56730ce-48d8-4d2f-acef-d09c2c668917": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya writes 72,508. She swaps the digit in the thousands place with the digit in the tens place. What is the difference between the original number and the new one?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "72,508",
+      "tone": "given"
+     },
+     {
+      "op": "figure",
+      "id": "f",
+      "spec": {
+       "kind": "placeChart",
+       "number": "72508",
+       "highlight": [
+        "d1",
+        "d3"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Which two digits change seats?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the 7 and the 0",
+      "the 2 and the 0",
+      "the 2 and the 5"
+     ],
+     "answer": 1,
+     "ifNot": "Count from the right, one digit at a time: 8 is in the ones, 0 in the tens, 5 in the hundreds, and 2 in the thousands. So the 2 and the 0 change seats."
+    }
+   },
+   {
+    "say": "Swap them. The 0 goes to the thousands place and the 2 goes to the tens place. Every other digit stays, so the new number is 70,528.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "0"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "n",
+      "text": "70,528"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "70,528"
+      },
+      "text": "new number",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "We could subtract the long way. But look closer: only the 2 really moved, because the 0 is worth nothing in any seat.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "72,508 − 70,528 = ?"
+     }
+    ]
+   },
+   {
+    "say": "In the thousands place the 2 was worth 2,000. In the tens place it is worth only 20.",
+    "board": [
+     {
+      "op": "write",
+      "id": "v1",
+      "text": "2 × 1,000 = 2,000"
+     },
+     {
+      "op": "write",
+      "id": "v2",
+      "text": "2 × 10 = 20"
+     }
+    ]
+   },
+   {
+    "say": "So the number lost 2,000 and got 20 back. 2,000 minus 20 is 1,980.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "2,000 − 20 = 1,980"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the difference is not 2,000. The 2 did not vanish. It still counts for 20 in its new seat.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "72,508 − 70,528 = 1,980",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1,980"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 70,528 plus 1,980 is 72,508, the number Riya started with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "70,528 + 1,980 = 72,508"
+     }
+    ]
+   },
+   {
+    "say": "So when digits swap seats, ask what each one was worth before and after. The change in worth is the change in the number."
+   }
+  ]
+ }
+}

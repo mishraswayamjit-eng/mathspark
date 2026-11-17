@@ -1,0 +1,7752 @@
+{
+ "IPMTB_grade5_ch03_q013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "One of these six numbers does not belong. To catch it, we first find the rule the others follow.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "1, 8, 15, 22, 29, 38",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start at the front, with 1 and 8. How do we get from 1 to 8?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 8",
+      "add 7",
+      "add 6"
+     ],
+     "answer": 1,
+     "ifNot": "Look at 1 and 8 again. 8 is 7 more than 1, so the step is add 7."
+    }
+   },
+   {
+    "say": "8 minus 1 is 7, and 15 minus 8 is 7. So this series wants to go up by 7 each time. Now we test every jump.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "8 − 1 = 7"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "15 − 8 = 7"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "8"
+      },
+      "text": "+7",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "15"
+      },
+      "text": "+7",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "Carry on along the line. 22 minus 15 is 7; 29 minus 22 is 7; 38 minus 29 is 9, not 7. Every jump is 7 until the very last one.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "22 − 15 = 7"
+     },
+     {
+      "op": "write",
+      "id": "d4",
+      "text": "29 − 22 = 7"
+     },
+     {
+      "op": "write",
+      "id": "d5",
+      "text": "38 − 29 = 9"
+     },
+     {
+      "op": "mark",
+      "line": "d5",
+      "target": {
+       "text": "= 9"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So which number is spoiling the pattern?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "29",
+      "22",
+      "38"
+     ],
+     "answer": 2,
+     "ifNot": "Every number up to 29 follows the rule. The first jump that breaks it lands on 38, so 38 is the one to look at."
+    }
+   },
+   {
+    "say": "What should stand there? 29 plus 7 is 36. The series should end on 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r1",
+      "text": "29 + 7 = 36"
+     },
+     {
+      "op": "strike",
+      "line": "s",
+      "target": {
+       "text": "38"
+      },
+      "note": "36"
+     }
+    ]
+   },
+   {
+    "say": "So the odd one out, the number that does not belong, is 38.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Odd one out: 38",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "38"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So to find the odd one out: find the step, then test every jump, right to the end. The number where the step breaks is the one."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q014": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This series mixes fractions with one whole number, the 2. That 2 looks out of place, so let's see what it is hiding.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "1/2, 2/2, 3/2, 2, 5/2, __, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Look at the bottom numbers. They are all 2, so these fractions are halves. How many halves make the whole number 2?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2/2",
+      "4/2",
+      "1/2"
+     ],
+     "answer": 1,
+     "ifNot": "2 halves make just 1 whole. For 2 wholes we need twice as many, so that is 4 halves."
+    }
+   },
+   {
+    "say": "So 2 is the same as 4 over 2. Write the series again, all in halves, and the top numbers read 1, 2, 3, 4, 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "2 = 4/2"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "1/2, 2/2, 3/2, 4/2, 5/2",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "h",
+      "target": {
+       "text": "4/2"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The top goes up by 1 each time, and the bottom stays at 2. So the next two are 6 over 2, and 7 over 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "next: 6/2, 7/2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Careful, we are not finished yet. Can 6 over 2 be written more simply?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "no, leave it as 6/2",
+      "yes, it is 3",
+      "yes, it is 6"
+     ],
+     "answer": 1,
+     "ifNot": "6 over 2 means 6 divided by 2, and that is 3. When the top divides exactly by the bottom, the fraction is a whole number."
+    }
+   },
+   {
+    "say": "6 divided by 2 is 3. But 7 does not divide exactly by 2, so 7 over 2 stays just as it is.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "6/2 = 3"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "6/2"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So the next two numbers are 3, and 7 over 2. That matches the way the series wrote 4 over 2 as a plain 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Next two: 3, 7/2",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "3, 7/2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the step. Every number should be a half more than the one before. 5 over 2, plus a half, is 3. And 3, plus a half, is 7 over 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "5/2 + 1/2 = 3"
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "3 + 1/2 = 7/2"
+     }
+    ]
+   },
+   {
+    "say": "So when a series mixes fractions and whole numbers, write them all with the same bottom number first. Then the pattern shows itself."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is a series of fractions, and we want the next two. A fraction has two parts, a top and a bottom, so we look at each part on its own.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "1/2, 1/3, 1/4, 1/5, 1/6, __, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Read only the top numbers, all the way along. What do you notice?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "they go up by 1",
+      "they are always 1",
+      "they go down by 1"
+     ],
+     "answer": 1,
+     "ifNot": "Read just the tops once more: 1, 1, 1, 1, 1. The top number never changes."
+    }
+   },
+   {
+    "say": "The top stays at 1. Now read the bottom numbers: 2, 3, 4, 5, 6. They go up by 1 each time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "tops: 1, 1, 1, 1, 1",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "bottoms: 2, 3, 4, 5, 6",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So the next two bottom numbers are 6 plus 1, which is 7, and 7 plus 1, which is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b1",
+      "text": "6 + 1 = 7"
+     },
+     {
+      "op": "write",
+      "id": "b2",
+      "text": "7 + 1 = 8"
+     }
+    ]
+   },
+   {
+    "say": "So what are the next two numbers of the series?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7, 8",
+      "2/7, 2/8",
+      "1/7, 1/8"
+     ],
+     "answer": 2,
+     "ifNot": "7 and 8 are only the bottom numbers. Every number in this series is a fraction, with a 1 on top."
+    }
+   },
+   {
+    "say": "Keep the 1 on top, and put the 7 and the 8 underneath. The next two are 1 over 7, and 1 over 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Next two: 1/7, 1/8",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1/7, 1/8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Does that make sense? As the bottom number grows, the fraction shrinks. One roti shared among 8 gives smaller pieces than one roti shared among 7."
+   },
+   {
+    "say": "So for a series of fractions, read the tops and the bottoms as two separate patterns. Then put them back together."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q017": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "These are all tiny decimals, and each one has a single 1 in it. A star is hiding one of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "0.1, 0.01, 0.001, *, 0.00001",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Count the zeros between the point and the 1. 0.1 has none. 0.01 has 1. 0.001 has 2.",
+    "board": [
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "0.1"
+      },
+      "text": "no zeros",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "0.01"
+      },
+      "text": "1 zero",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "0.001"
+      },
+      "text": "2 zeros",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The number after the star, 0.00001, has 4 zeros. So how many zeros does the star need?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "3",
+      "4"
+     ],
+     "answer": 1,
+     "ifNot": "The zeros go none, 1, 2, then the star, then 4. The star sits between 2 and 4, so it needs 3 zeros."
+    }
+   },
+   {
+    "say": "3 zeros after the point, and then the 1. That makes 0.0001.",
+    "board": [
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "0.00001"
+      },
+      "text": "4 zeros",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "f",
+      "text": "* = 0.0001",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Why does one more zero appear each time? Because each number is the one before it, divided by 10. Dividing by 10 pushes the 1 one place to the right.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m1",
+      "text": "0.1 ÷ 10 = 0.01"
+     },
+     {
+      "op": "write",
+      "id": "m2",
+      "text": "0.01 ÷ 10 = 0.001"
+     }
+    ]
+   },
+   {
+    "say": "Check both sides of the star. 0.001 divided by 10 is 0.0001. And 0.0001 divided by 10 is 0.00001. It fits on both sides.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "0.001 ÷ 10 = 0.0001"
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "0.0001 ÷ 10 = 0.00001"
+     }
+    ]
+   },
+   {
+    "say": "So the star is 0.0001. Careful when you pick it out: its neighbours 0.001 and 0.00001 look almost the same, so count the zeros slowly.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "0.1, 0.01, 0.001, 0.0001, 0.00001",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "0.0001"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So with tiny decimals, count the zeros after the point. If one more appears each time, each number is the one before divided by 10."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q018": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is a series with two gaps in it. Before we can fill a gap, we need the rule the series follows.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "1, 3, 5, __, 9, __, 13, 15",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Look at 1 and then 3. What has been done to 1 to make 3?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 3",
+      "multiply by 3",
+      "add 2"
+     ],
+     "answer": 2,
+     "ifNot": "Look at 1 and 3 again. 3 is bigger than 1 by 2, so the step is add 2."
+    }
+   },
+   {
+    "say": "3 minus 1 is 2. One pair is never enough, so try another: 5 minus 3 is 2 as well. The rule is add 2, every time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "3 − 1 = 2"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "5 − 3 = 2"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "3"
+      },
+      "text": "+2",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "5"
+      },
+      "text": "+2",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "The number just before the first gap is 5. 5 plus 2 is 7. And 7 plus 2 is 9, the number that follows, so it fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f0",
+      "text": "5 + 2 = 7"
+     },
+     {
+      "op": "write",
+      "id": "c0",
+      "text": "7 + 2 = 9"
+     }
+    ]
+   },
+   {
+    "say": "Now the second gap. It sits just after 9. What goes in it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10",
+      "11",
+      "12"
+     ],
+     "answer": 1,
+     "ifNot": "The step is always add 2, and the number just before the gap is 9. So count on 2 from 9."
+    }
+   },
+   {
+    "say": "9 plus 2 is 11. And 11 plus 2 is 13, the number that follows, so it fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f1",
+      "text": "9 + 2 = 11"
+     },
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "11 + 2 = 13"
+     }
+    ]
+   },
+   {
+    "say": "So the missing numbers are 7 and 11.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "1, 3, 5, 7, 9, 11, 13, 15",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "7"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "11"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So for any series with gaps: find the step from two neighbours, test it on another pair, then step into each gap from the number before it."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This series starts at 0 and we want the next two numbers. So first, how does it grow?",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "0, 2, 4, 6, 8, 10, __, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Pick two neighbours we can see, 0 and 2. How do we get from 0 to 2?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 1",
+      "multiply by 2",
+      "add 2"
+     ],
+     "answer": 2,
+     "ifNot": "Look at 0 and 2 again. 2 is bigger than 0 by 2, so the step is add 2."
+    }
+   },
+   {
+    "say": "2 minus 0 is 2. Let's not trust a single pair: 4 minus 2 is 2 too. So the rule is add 2, all the way along.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "2 − 0 = 2"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "4 − 2 = 2"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "2"
+      },
+      "text": "+2",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "4"
+      },
+      "text": "+2",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "The number just before the first gap is 10. 10 plus 2 is 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f0",
+      "text": "10 + 2 = 12"
+     }
+    ]
+   },
+   {
+    "say": "One more to find. Which number do we add 2 to this time?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10",
+      "12"
+     ],
+     "answer": 1,
+     "ifNot": "Each number grows from the one just before it. We have just found 12, so the next one is 2 more than 12."
+    }
+   },
+   {
+    "say": "We have just found 12, and the second gap comes straight after it. 12 plus 2 is 14.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f1",
+      "text": "12 + 2 = 14"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards: 14 minus 2 is 12, right where we came from.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "14 − 2 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So the next two numbers are 12 and 14. These are the even numbers, counting up in 2s.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "0, 2, 4, 6, 8, 10, 12, 14",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "14"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So to carry a series on: find the step, check it, then keep adding it, each time to the newest number."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q020": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Somewhere in this series a number has sneaked in that should not be there. Let's find the pattern first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "7, 14, 21, 25, 35, 42",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start at the front, with 7 and 14. How do we get from 7 to 14?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 14",
+      "add 7",
+      "add 6"
+     ],
+     "answer": 1,
+     "ifNot": "Look at 7 and 14 again. 14 is 7 more than 7, so the step is add 7."
+    }
+   },
+   {
+    "say": "14 minus 7 is 7, and 21 minus 14 is 7. Going up in 7s, starting from 7: this is the 7 times table. Now we test every jump.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "14 − 7 = 7"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "21 − 14 = 7"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "14"
+      },
+      "text": "+7",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "21"
+      },
+      "text": "+7",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "Carry on along the line. 25 minus 21 is 4, not 7; 35 minus 25 is 10, not 7; 42 minus 35 is 7. Two jumps, side by side, do not fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "25 − 21 = 4"
+     },
+     {
+      "op": "mark",
+      "line": "d3",
+      "target": {
+       "text": "= 4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "d4",
+      "text": "35 − 25 = 10"
+     },
+     {
+      "op": "mark",
+      "line": "d4",
+      "target": {
+       "text": "= 10"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "d5",
+      "text": "42 − 35 = 7"
+     }
+    ]
+   },
+   {
+    "say": "So which number is spoiling the pattern?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "21",
+      "35",
+      "25"
+     ],
+     "answer": 2,
+     "ifNot": "Both of the jumps that do not fit touch 25. 21 and 35 get on perfectly well with their other neighbours."
+    }
+   },
+   {
+    "say": "What should stand there? 21 plus 7 is 28. And 28 plus 7 is 35, exactly the number that follows. So 28 belongs there.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r1",
+      "text": "21 + 7 = 28"
+     },
+     {
+      "op": "write",
+      "id": "r2",
+      "text": "28 + 7 = 35"
+     },
+     {
+      "op": "strike",
+      "line": "s",
+      "target": {
+       "text": "25"
+      },
+      "note": "28"
+     }
+    ]
+   },
+   {
+    "say": "So the odd one out, the number that does not belong, is 25.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Odd one out: 25",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "25"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So when one number in the middle does not fit, two jumps break. The odd one out is the number that sits in both of them."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q021": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Five numbers, and we want the one that comes next. Let's find out how this series moves.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "5, 12, 19, 26, 33, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Pick two neighbours we can see, 5 and 12. How do we get from 5 to 12?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 7",
+      "add 6",
+      "add 8"
+     ],
+     "answer": 0,
+     "ifNot": "Look at 5 and 12 again. 12 is bigger than 5 by 7, so the step is add 7."
+    }
+   },
+   {
+    "say": "12 minus 5 is 7. One pair is never enough, so try another: 19 minus 12 is 7 as well. The rule is add 7, every time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "12 − 5 = 7"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "19 − 12 = 7"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "12"
+      },
+      "text": "+7",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "19"
+      },
+      "text": "+7",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "So what comes after 33?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "36",
+      "40",
+      "37"
+     ],
+     "answer": 1,
+     "ifNot": "The step is add 7. Start at 33 and count on 7: that takes us past 37, all the way to 40."
+    }
+   },
+   {
+    "say": "33 plus 7 is 40.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f0",
+      "text": "33 + 7 = 40"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards: 40 minus 7 is 33, right where we came from.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "40 − 7 = 33"
+     }
+    ]
+   },
+   {
+    "say": "So the next number in the series is 40.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "5, 12, 19, 26, 33, 40",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "40"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the plan: subtract neighbours to find the step, check it on a second pair, then add it to the last number."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q022": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "These are strange numbers: 8888, then 666, then 44. Subtracting will not help much here. Look instead at how each number is built.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "8888, 666, 44, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Each number is one digit, written again and again. So there are two things to watch: which digit it is, and how many times it is written.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p1",
+      "text": "8888: digit 8, written 4 times",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "666: digit 6, written 3 times",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "p3",
+      "text": "44: digit 4, written 2 times",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Take the digits first: 8, then 6, then 4. Which digit comes next?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "2",
+      "0"
+     ],
+     "answer": 1,
+     "ifNot": "8, 6, 4 goes down by 2 each time. So the next digit is 4 minus 2, which is 2."
+    }
+   },
+   {
+    "say": "The digit drops by 2 each time, so the next digit is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "dg",
+      "text": "digits: 8, 6, 4, 2",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "4 − 2 = 2"
+     }
+    ]
+   },
+   {
+    "say": "Now the count: written 4 times, then 3 times, then 2 times. How many times is the next digit written?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2 times",
+      "1 time",
+      "3 times"
+     ],
+     "answer": 1,
+     "ifNot": "4, 3, 2: the count drops by 1 each time. So the next digit is written just once."
+    }
+   },
+   {
+    "say": "The count drops by 1 each time, so the next count is 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ct",
+      "text": "times written: 4, 3, 2, 1",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "2 − 1 = 1"
+     }
+    ]
+   },
+   {
+    "say": "So we write the digit 2, once. Careful: writing it twice would have the right digit, but the count has to drop to 1. The next number is simply 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "8888, 666, 44, 2",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So when numbers look odd, ask what they are made of. Here two small patterns, the digit and the count, ran side by side."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q023": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This series climbs slowly at first and then very fast: 1, 3, 9, 27, 81. That is a clue about its rule.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "1, 3, 9, 27, 81, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First the usual test: how big is the jump between neighbours? 3 minus 1 is 2, but 9 minus 3 is 6. The jumps are not equal, so this series does not add the same number each time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "j1",
+      "text": "3 − 1 = 2"
+     },
+     {
+      "op": "write",
+      "id": "j2",
+      "text": "9 − 3 = 6"
+     }
+    ]
+   },
+   {
+    "say": "So try another idea. What turns 1 into 3, and then 3 into 9?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiply by 3",
+      "add 2",
+      "multiply by 2"
+     ],
+     "answer": 0,
+     "ifNot": "Try it out: 1 times 3 is 3, and 3 times 3 is 9. The same move works both times: multiply by 3."
+    }
+   },
+   {
+    "say": "1 times 3 is 3, 3 times 3 is 9, and 9 times 3 is 27. Each number is the one before it, times 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m1",
+      "text": "1 × 3 = 3"
+     },
+     {
+      "op": "write",
+      "id": "m2",
+      "text": "3 × 3 = 9"
+     },
+     {
+      "op": "write",
+      "id": "m3",
+      "text": "9 × 3 = 27"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "3"
+      },
+      "text": "×3",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "9"
+      },
+      "text": "×3",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "The last number we can see is 81. What comes after it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "108",
+      "729",
+      "243"
+     ],
+     "answer": 2,
+     "ifNot": "The move is multiply by 3, and we do it just once. So we want 81 times 3."
+    }
+   },
+   {
+    "say": "81 times 3 is 243. So the next number in the series is 243.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "81 × 3 = 243",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "= 243"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by undoing the move: 243 divided by 3 is 81, back where we were.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "243 ÷ 3 = 81"
+     }
+    ]
+   },
+   {
+    "say": "So when the jumps keep growing, try dividing a number by the one before it. If the answer is the same each time, the rule is to multiply."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q024": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "49, 36, 25, 16. These are not just any numbers. Each one is a bit special, and that is the key to what comes next.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "49, 36, 25, 16, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "49 is 7 times 7. So what kind of numbers are 49, 36, 25 and 16?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiples of 7",
+      "square numbers",
+      "even numbers"
+     ],
+     "answer": 1,
+     "ifNot": "Each one is a number multiplied by itself. 7 times 7 is 49, and 6 times 6 is 36. Numbers like that are called square numbers."
+    }
+   },
+   {
+    "say": "49 is 7 times 7. 36 is 6 times 6. 25 is 5 times 5. And 16 is 4 times 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "49 = 7 × 7"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "36 = 6 × 6"
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "25 = 5 × 5"
+     },
+     {
+      "op": "write",
+      "id": "q4",
+      "text": "16 = 4 × 4"
+     }
+    ]
+   },
+   {
+    "say": "Now look only at the numbers being squared: 7, 6, 5, 4. They count down by 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "squaring: 7, 6, 5, 4, ?",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So which number gets squared next?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "3",
+      "4"
+     ],
+     "answer": 1,
+     "ifNot": "7, 6, 5, 4: one less each time. So after 4 comes 3."
+    }
+   },
+   {
+    "say": "It is 3. But careful: 3 is only the number being squared, not the answer. We want 3 times 3, which is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "3 × 3 = 9",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "= 9"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with the jumps. 49 minus 36 is 13, 36 minus 25 is 11, 25 minus 16 is 9, and 16 minus 9 is 7. The jumps shrink by 2 each time, with no break.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "49 − 36 = 13"
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "36 − 25 = 11"
+     },
+     {
+      "op": "write",
+      "id": "k3",
+      "text": "25 − 16 = 9"
+     },
+     {
+      "op": "write",
+      "id": "k4",
+      "text": "16 − 9 = 7"
+     }
+    ]
+   },
+   {
+    "say": "So when a series looks familiar, ask if the numbers are squares. Find what is being squared, follow that pattern, then square again."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q025": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We want the next two numbers after 26. This series has a small twist in it, so let's go carefully.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "2, 5, 10, 17, 26, __, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Measure the jump between neighbours. 5 minus 2 is 3, but 10 minus 5 is 5. The jumps are not equal, so there is no single number to add.",
+    "board": [
+     {
+      "op": "write",
+      "id": "j1",
+      "text": "5 − 2 = 3"
+     },
+     {
+      "op": "write",
+      "id": "j2",
+      "text": "10 − 5 = 5"
+     }
+    ]
+   },
+   {
+    "say": "Don't stop there. Measure the rest: 17 minus 10 is 7, and 26 minus 17 is 9. Now look at the jumps on their own: 3, 5, 7 and 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "j3",
+      "text": "17 − 10 = 7"
+     },
+     {
+      "op": "write",
+      "id": "j4",
+      "text": "26 − 17 = 9"
+     },
+     {
+      "op": "write",
+      "id": "jj",
+      "text": "Jumps: 3, 5, 7, 9",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The jumps have a pattern of their own. What will the next jump be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "11",
+      "9",
+      "10"
+     ],
+     "answer": 0,
+     "ifNot": "Read the jumps in order: 3, 5, 7 and 9. Each jump is 2 more than the one before, so after 9 comes 11."
+    }
+   },
+   {
+    "say": "Each jump is 2 more than the last, so the next jump is 11. 26 plus 11 is 37.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n1",
+      "text": "26 + 11 = 37"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the jump does not stay at 11. It changes again, to 13. 37 plus 13 is 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n2",
+      "text": "37 + 13 = 50"
+     }
+    ]
+   },
+   {
+    "say": "So the next two numbers are 37 and 50. And the jumps run 3, 5, 7, 9, 11 and 13, with no break in their pattern.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "2, 5, 10, 17, 26, 37, 50",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "37"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "50"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "jk",
+      "text": "Jumps: 3, 5, 7, 9, 11, 13",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So when the jumps are not equal, write the jumps down as a series of their own. Find their pattern, and it gives you the next jump."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q026": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Every number here uses the same three digits, 1, 2 and 3, just shuffled. So adding and subtracting are not the idea. Let's watch the shuffling.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "123, 132, 231, 213, 312, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Look at them in pairs. 123 and 132 both start with 1. Then 231 and 213 both start with 2.",
+    "board": [
+     {
+      "op": "group",
+      "line": "s",
+      "targets": [
+       {
+        "text": "123"
+       },
+       {
+        "text": "132"
+       }
+      ],
+      "label": "start with 1"
+     },
+     {
+      "op": "group",
+      "line": "s",
+      "targets": [
+       {
+        "text": "231"
+       },
+       {
+        "text": "213"
+       }
+      ],
+      "label": "start with 2"
+     }
+    ]
+   },
+   {
+    "say": "Inside a pair, what changes? Compare 123 with 132.",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the first digit changes",
+      "the last two digits swap",
+      "all three digits move"
+     ],
+     "answer": 1,
+     "ifNot": "Both numbers keep the 1 in front. Behind it, the 2 and the 3 have swapped places."
+    }
+   },
+   {
+    "say": "Yes: the first digit stays, and the last two swap. 231 turns into 213 in just the same way. The 2 stays, and the 3 and the 1 swap."
+   },
+   {
+    "say": "The last pair starts with 3, and its first number is 312. So keep the 3 in front, and swap the 1 and the 2.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s",
+      "target": {
+       "text": "312"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "w",
+      "text": "312: keep the 3, swap 1 and 2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "That gives 321. So the next number in the series is 321.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "123, 132, 231, 213, 312, 321",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "321"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check another way. Three different digits can be arranged in only 6 ways, and 321 is the one arrangement the series had not used yet.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "start with 1: 123, 132",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "start with 2: 213, 231",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "k3",
+      "text": "start with 3: 312, 321",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So when the same digits keep coming back, look at how they are arranged. Find what stays put and what swaps."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q027": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Look at these numbers: 123, then 234, then a gap. One number is missing, and we are going to find it.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "123, 234, __, 456, 567, 678",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Pick two neighbours we can see, 123 and 234. How do we get from 123 to 234?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 11",
+      "add 101",
+      "add 111"
+     ],
+     "answer": 2,
+     "ifNot": "Look at 123 and 234 again. 234 is bigger than 123 by 111, so the step is add 111."
+    }
+   },
+   {
+    "say": "234 minus 123 is 111. Let's not trust a single pair: 567 minus 456 is 111 too. So the rule is add 111, all the way along.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "234 − 123 = 111"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "567 − 456 = 111"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "234"
+      },
+      "text": "+111",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "567"
+      },
+      "text": "+111",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "The number just before the gap is 234. 234 plus 111 is 345. And 345 plus 111 is 456, the number that follows, so it fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f0",
+      "text": "234 + 111 = 345"
+     },
+     {
+      "op": "write",
+      "id": "c0",
+      "text": "345 + 111 = 456"
+     }
+    ]
+   },
+   {
+    "say": "So the missing number is 345. Look at its digits, 3, 4, 5: every digit climbs by 1 each time, which is what adding 111 does.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "123, 234, 345, 456, 567, 678",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "345"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So when a number is missing from the middle: find the step, step into the gap, and check that the next step lands on the number after it."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q028": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This series is missing a number at each end. The three in the middle will tell us the rule.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "__, 34, 51, 68, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Look at 34 and then 51. What has been done to 34 to make 51?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 15",
+      "add 34",
+      "add 17"
+     ],
+     "answer": 2,
+     "ifNot": "Look at 34 and 51 again. 51 is bigger than 34 by 17, so the step is add 17."
+    }
+   },
+   {
+    "say": "51 minus 34 is 17. One pair is never enough, so try another: 68 minus 51 is 17 as well. The rule is add 17, every time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "51 − 34 = 17"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "68 − 51 = 17"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "51"
+      },
+      "text": "+17",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "68"
+      },
+      "text": "+17",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "The first gap is in front of 34. To step backwards from 34, what do we do?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 17",
+      "take away 17"
+     ],
+     "answer": 1,
+     "ifNot": "Going forwards, we add 17. Going backwards, we undo that. So we take 17 away from 34."
+    }
+   },
+   {
+    "say": "The first gap is at the very front, so we walk backwards and undo the step. 34 minus 17 is 17.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f0",
+      "text": "34 − 17 = 17"
+     }
+    ]
+   },
+   {
+    "say": "The number just before the second gap is 68. 68 plus 17 is 85.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f1",
+      "text": "68 + 17 = 85"
+     }
+    ]
+   },
+   {
+    "say": "Check by walking backwards: 85 minus 17 is 68, right where we came from.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "85 − 17 = 68"
+     }
+    ]
+   },
+   {
+    "say": "So the missing numbers are 17 and 85. This is the 17 times table: 17, 34, 51, 68, 85.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "17, 34, 51, 68, 85",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "17"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "85"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So remember: to go forwards along a series, do the step. To go backwards, undo it."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q029": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two stars to find in this series. The numbers we can see, 125, 64 and 8, belong to a special family.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "125, 64, *, 8, *",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "125 is 5 times 5 times 5. A number multiplied by itself, three times over like this, is called a cube.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c5",
+      "text": "125 = 5 × 5 × 5"
+     }
+    ]
+   },
+   {
+    "say": "64 is a cube too. Which number, used three times, makes 64?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8",
+      "4",
+      "6"
+     ],
+     "answer": 1,
+     "ifNot": "8 times 8 is already 64, and that uses the 8 only twice. It takes a smaller number, used three times: 4 times 4, times 4 again."
+    }
+   },
+   {
+    "say": "64 is 4 times 4 times 4. And little 8 is 2 times 2 times 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c4",
+      "text": "64 = 4 × 4 × 4"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "8 = 2 × 2 × 2"
+     }
+    ]
+   },
+   {
+    "say": "So the numbers being cubed go 5, 4, a star, 2, a star. They count down by 1, so the stars are cubing 3 and 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "cubing: 5, 4, 3, 2, 1",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "r",
+      "target": {
+       "text": "1"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "First star. Careful to use the 3 three times: 3 times 3 is 9, and 9 times 3 is 27.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "3 × 3 × 3 = 27"
+     }
+    ]
+   },
+   {
+    "say": "Second star: 1 times 1 times 1 is still 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "1 × 1 × 1 = 1"
+     }
+    ]
+   },
+   {
+    "say": "So the stars are 27 and 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "125, 64, 27, 8, 1",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "27"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So if a series is not squares, try cubes: 1, 8, 27, 64, 125. Find the numbers being cubed, and follow their pattern."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q030": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Every number here is made only of 1s. So the pattern cannot be in the digit. It must be in how many 1s there are.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "1111111, 11111, 111, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Count them slowly, with a finger on each one. The first number has 7 ones, the second has 5, and the third has 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p1",
+      "text": "1111111 has 7 ones",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "11111 has 5 ones",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "p3",
+      "text": "111 has 3 ones",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "7, then 5, then 3. How many 1s will the next number have?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "1",
+      "0"
+     ],
+     "answer": 1,
+     "ifNot": "7, 5, 3 goes down by 2 each time. 3 minus 2 is 1, so the next number has a single 1."
+    }
+   },
+   {
+    "say": "7 minus 2 is 5, 5 minus 2 is 3, and 3 minus 2 is 1. Two of the 1s are rubbed out at every step.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "7 − 2 = 5"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "5 − 2 = 3"
+     },
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "3 − 2 = 1"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 11 is tempting, because it looks like the next one down. But 11 has 2 ones, and that is a drop of only 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "11 has 2 ones: a drop of only 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A number made of a single 1 is just 1. So the next number in the series is 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Next number: 1",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So when every number uses the same digit, count how many times it is written. The pattern is hiding in the count."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q031": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "These numbers are getting smaller: 88, 66, 44, 22. We want the one that comes next.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "88, 66, 44, 22, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start with 88 and 66, sitting side by side. What takes us from 88 to 66?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "take away 2",
+      "take away 22",
+      "take away 11"
+     ],
+     "answer": 1,
+     "ifNot": "Look at 88 and 66 again. 66 is smaller than 88 by 22, so the step is take away 22."
+    }
+   },
+   {
+    "say": "88 minus 66 is 22. Let's not trust a single pair: 66 minus 44 is 22 too. So the rule is take away 22, all the way along.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "88 − 66 = 22"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "66 − 44 = 22"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "66"
+      },
+      "text": "−22",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "44"
+      },
+      "text": "−22",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "The last number we can see is 22. 22 minus 22 is 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f0",
+      "text": "22 − 22 = 0"
+     }
+    ]
+   },
+   {
+    "say": "A quick check by undoing the step: 0 plus 22 is 22. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "0 + 22 = 22"
+     }
+    ]
+   },
+   {
+    "say": "The choices write zero as 00, with two digits, to match 88, 66, 44 and 22. So the missing number is 00, which is simply zero.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "88, 66, 44, 22, 00",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "00"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So for a series that goes down: subtract neighbours to find the step, then take that step away from the last number."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q033": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "These numbers shrink quickly: 32, 16, 8, 4. We want the one that comes next.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "32, 16, 8, 4, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First the usual test: how big is the jump between neighbours? 32 minus 16 is 16, but 16 minus 8 is 8. The jumps are not equal, so this series does not take away the same number each time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "j1",
+      "text": "32 − 16 = 16"
+     },
+     {
+      "op": "write",
+      "id": "j2",
+      "text": "16 − 8 = 8"
+     }
+    ]
+   },
+   {
+    "say": "So try another idea. What turns 32 into 16, and then 16 into 8?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "divide by 2",
+      "take away 16",
+      "divide by 4"
+     ],
+     "answer": 0,
+     "ifNot": "Try it out: 32 divided by 2 is 16, and 16 divided by 2 is 8. The same move works both times: divide by 2."
+    }
+   },
+   {
+    "say": "32 divided by 2 is 16, 16 divided by 2 is 8, and 8 divided by 2 is 4. Each number is the one before it, divided by 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m1",
+      "text": "32 ÷ 2 = 16"
+     },
+     {
+      "op": "write",
+      "id": "m2",
+      "text": "16 ÷ 2 = 8"
+     },
+     {
+      "op": "write",
+      "id": "m3",
+      "text": "8 ÷ 2 = 4"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "16"
+      },
+      "text": "÷2",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "8"
+      },
+      "text": "÷2",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "The last number we can see is 4. What comes after it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "0",
+      "2"
+     ],
+     "answer": 2,
+     "ifNot": "The move is divide by 2, and we do it just once. So we want half of 4."
+    }
+   },
+   {
+    "say": "4 divided by 2 is 2. So the next number in the series is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "4 ÷ 2 = 2",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "= 2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by undoing the move: 2 times 2 is 4, back where we were.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "2 × 2 = 4"
+     }
+    ]
+   },
+   {
+    "say": "So when a series shrinks by smaller and smaller jumps, test for halving, or dividing by the same number each time."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q034": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This question has two jobs in it. First find the next number in the series. Then square that number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "72, 63, 54, 45, __",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g",
+      "text": "Find the square of the next number",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Job one. How do we get from 72 to 63?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "take away 11",
+      "take away 9",
+      "add 9"
+     ],
+     "answer": 1,
+     "ifNot": "63 is smaller than 72, by 9. So the step is take away 9."
+    }
+   },
+   {
+    "say": "72 minus 63 is 9, 63 minus 54 is 9, and 54 minus 45 is 9. The series goes down by 9 every time. It is the 9 times table, backwards.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "72 − 63 = 9"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "63 − 54 = 9"
+     },
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "54 − 45 = 9"
+     }
+    ]
+   },
+   {
+    "say": "So the next number is 45 minus 9, which is 36.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "45 − 9 = 36"
+     }
+    ]
+   },
+   {
+    "say": "Is 36 our final answer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, 36 is the answer",
+      "no, we still have to square it"
+     ],
+     "answer": 1,
+     "ifNot": "Read the question once more. It asks for the square of the next number, so there is one more job to do."
+    }
+   },
+   {
+    "say": "Job two. Squaring means multiplying a number by itself, so 36 times 36. Split it up: 36 times 30 is 1080, and 36 times 6 is 216.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "g",
+      "target": {
+       "text": "square"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "p1",
+      "text": "36 × 30 = 1080"
+     },
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "36 × 6 = 216"
+     }
+    ]
+   },
+   {
+    "say": "1080 plus 216 is 1296. So the square of the next number is 1296.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p3",
+      "text": "1080 + 216 = 1296"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "36 × 36 = 1296",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1296"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "A quick check on the size. 36 is a little under 40, and 40 times 40 is 1600. So an answer a little under 1600 makes sense.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "40 × 40 = 1600"
+     }
+    ]
+   },
+   {
+    "say": "So read the question right to the end. Find the next number with the step, then do the extra job it asks for."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q036": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two gaps side by side this time, with 75 waiting at the end. The 15 and the 30 are our clue.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "15, 30, __, __, 75",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Look at 15 and then 30. What has been done to 15 to make 30?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 30",
+      "add 15",
+      "add 10"
+     ],
+     "answer": 1,
+     "ifNot": "Look at 15 and 30 again. 30 is bigger than 15 by 15, so the step is add 15."
+    }
+   },
+   {
+    "say": "30 minus 15 is 15, so the rule looks like add 15. We only have one pair to go on, so we will test the rule when we reach 75 at the far end.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "30 − 15 = 15"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "30"
+      },
+      "text": "+15",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "The number just before the first gap is 30. 30 plus 15 is 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f0",
+      "text": "30 + 15 = 45"
+     }
+    ]
+   },
+   {
+    "say": "Now the second gap. Which number do we add 15 to?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "30",
+      "45"
+     ],
+     "answer": 1,
+     "ifNot": "The second gap comes straight after the number we have just found. So we add 15 to 45, not to 30 again."
+    }
+   },
+   {
+    "say": "We have just found 45, and the second gap comes straight after it. 45 plus 15 is 60. And 60 plus 15 is 75, the number that follows, so it fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f1",
+      "text": "45 + 15 = 60"
+     },
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "60 + 15 = 75"
+     }
+    ]
+   },
+   {
+    "say": "So the missing numbers are 45 and 60, and the rule held all the way to 75.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "15, 30, 45, 60, 75",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "45"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "60"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So when the gaps sit together: find the step, fill them one after the other, and use the number after the gaps as your check."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q037": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "One fraction is missing from this series. The others will tell us what it must be.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "1/7, 1/6, 1/5, __, 1/3",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Read only the bottom numbers: 7, 6, 5, then the gap, then 3. What is happening to them?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "they go down by 1",
+      "they go up by 1",
+      "they go down by 2"
+     ],
+     "answer": 0,
+     "ifNot": "7, then 6, then 5. Each bottom number is 1 less than the one before it."
+    }
+   },
+   {
+    "say": "The bottoms count down by 1. 5 minus 1 is 4. And 4 minus 1 is 3, the bottom that comes after the gap, so 4 fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "bottoms: 7, 6, 5, __, 3",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "b1",
+      "text": "5 − 1 = 4"
+     },
+     {
+      "op": "write",
+      "id": "b2",
+      "text": "4 − 1 = 3"
+     }
+    ]
+   },
+   {
+    "say": "And the top numbers? Every one of them is 1. So the missing fraction has a 1 on top as well.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "tops: 1, 1, 1, __, 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So what goes in the gap?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "4/1",
+      "1/4"
+     ],
+     "answer": 2,
+     "ifNot": "4 is only the bottom number. The fraction needs its 1 on top, with the 4 underneath."
+    }
+   },
+   {
+    "say": "The missing number is 1 over 4, one quarter. Careful: 4 over 1 would mean 4 wholes, far too big to sit between a fifth and a third.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "1/7, 1/6, 1/5, 1/4, 1/3",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1/4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So in a series of fractions, find the pattern in the tops and the pattern in the bottoms. Then build the missing fraction from both."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q038": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Three numbers and a gap. Two are fractions and one is a whole number, so let's make them all look alike first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "1/4, 2/4, 1, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The fractions here are quarters. How many quarters make 1 whole?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3/4",
+      "4/4",
+      "1/4"
+     ],
+     "answer": 1,
+     "ifNot": "A whole cut into quarters has 4 pieces. So 1 whole is 4 quarters."
+    }
+   },
+   {
+    "say": "So 1 is the same as 4 over 4. Now the top numbers read 1, 2, 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "1 = 4/4"
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "1/4, 2/4, 4/4, __",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "It is tempting to say this series adds a quarter each time. But then 3 over 4 would come after 2 over 4, and it does not. The series jumps straight to 4 over 4."
+   },
+   {
+    "say": "So how do the tops get from 1 to 2, and from 2 to 4?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "they add 1",
+      "they double",
+      "they add 2"
+     ],
+     "answer": 1,
+     "ifNot": "1 doubled is 2, and 2 doubled is 4. Adding 1 would give 3 after 2, and that is not what we see."
+    }
+   },
+   {
+    "say": "Each top is double the one before. So the next top is 4 times 2, which is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m1",
+      "text": "1 × 2 = 2"
+     },
+     {
+      "op": "write",
+      "id": "m2",
+      "text": "2 × 2 = 4"
+     },
+     {
+      "op": "write",
+      "id": "m3",
+      "text": "4 × 2 = 8"
+     }
+    ]
+   },
+   {
+    "say": "That makes 8 over 4. And 8 over 4 means 8 divided by 4, which is 2. So the missing number is 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "8/4 = 2",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "= 2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check with the numbers themselves: a quarter, a half, 1, 2. Each one is double the one before.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "1/4 × 2 = 2/4"
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "2/4 × 2 = 1"
+     },
+     {
+      "op": "write",
+      "id": "k3",
+      "text": "1 × 2 = 2"
+     }
+    ]
+   },
+   {
+    "say": "So write everything with the same bottom number, then test the tops. If adding does not fit, try doubling."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q039": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "One number is missing from this series, and 121 is waiting at the end. Let's see what these numbers have in common.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "9, 25, 49, __, 121",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "They are all square numbers. 9 is 3 times 3. Which number, times itself, makes 25?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "5",
+      "6"
+     ],
+     "answer": 1,
+     "ifNot": "Try it: 5 times 5 is 25."
+    }
+   },
+   {
+    "say": "9 is 3 times 3, 25 is 5 times 5, 49 is 7 times 7, and at the far end 121 is 11 times 11.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "9 = 3 × 3"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "25 = 5 × 5"
+     },
+     {
+      "op": "write",
+      "id": "q3",
+      "text": "49 = 7 × 7"
+     },
+     {
+      "op": "write",
+      "id": "q4",
+      "text": "121 = 11 × 11"
+     }
+    ]
+   },
+   {
+    "say": "Look at what is being squared: 3, 5, 7, a gap, then 11. Those are odd numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "squaring: 3, 5, 7, __, 11",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So which number is squared in the gap?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8",
+      "9",
+      "10"
+     ],
+     "answer": 1,
+     "ifNot": "3, 5, 7 goes up by 2 each time. 7 plus 2 is 9, and 9 plus 2 is 11, which matches the end."
+    }
+   },
+   {
+    "say": "7 plus 2 is 9. And 9 plus 2 is 11, right on the number at the end, so 9 fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r1",
+      "text": "7 + 2 = 9"
+     },
+     {
+      "op": "write",
+      "id": "r2",
+      "text": "9 + 2 = 11"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the gap wants the square, not the 9 itself. 9 times 9 is 81. So the missing number is 81.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "9 × 9 = 81",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "81"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice that 64 and 100 are square numbers too. But they are 8 times 8 and 10 times 10, and this series squares only odd numbers.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "8 × 8 = 64"
+     },
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "10 × 10 = 100"
+     }
+    ]
+   },
+   {
+    "say": "So with a series of squares, write down what is being squared. Fill the gap in that small series first, then square it."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q040": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Three very small decimals, and we want the next three. Each has a single 1, so the story is in the zeros.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "0.000001, 0.00001, 0.0001, ?, ?, ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Count the zeros between the point and the 1. The first number has 5, the second has 4, and the third has 3.",
+    "board": [
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "0.000001"
+      },
+      "text": "5 zeros",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "0.00001"
+      },
+      "text": "4 zeros",
+      "place": "below"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "0.0001"
+      },
+      "text": "3 zeros",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "A zero disappears each time. So are the numbers getting bigger or smaller?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "smaller",
+      "bigger",
+      "staying the same"
+     ],
+     "answer": 1,
+     "ifNot": "Fewer zeros after the point means the 1 sits in a bigger place. So 0.0001 is bigger than 0.00001. The series is growing."
+    }
+   },
+   {
+    "say": "In fact each number is 10 times the one before. Multiplying by 10 moves the 1 one place to the left, and one zero drops away.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m1",
+      "text": "0.000001 × 10 = 0.00001"
+     },
+     {
+      "op": "write",
+      "id": "m2",
+      "text": "0.00001 × 10 = 0.0001"
+     }
+    ]
+   },
+   {
+    "say": "So keep going. 0.0001 times 10 is 0.001, with 2 zeros. Then 0.001 times 10 is 0.01, with just 1 zero.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n1",
+      "text": "0.0001 × 10 = 0.001"
+     },
+     {
+      "op": "write",
+      "id": "n2",
+      "text": "0.001 × 10 = 0.01"
+     }
+    ]
+   },
+   {
+    "say": "One more to find. What is 0.01 times 10?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "0.1",
+      "0.001"
+     ],
+     "answer": 1,
+     "ifNot": "Only one zero drops away at each step. 0.01 has 1 zero after the point, so the next number has none: 0.1."
+    }
+   },
+   {
+    "say": "0.01 times 10 is 0.1. Careful: it is tempting to leap to 1, but we only move one place at a time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n3",
+      "text": "0.01 × 10 = 0.1"
+     }
+    ]
+   },
+   {
+    "say": "So the next three numbers are 0.001, 0.01 and 0.1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Next three: 0.001, 0.01, 0.1",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "0.001, 0.01, 0.1"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So count the zeros after the point. Here one zero drops away each time, because every number is 10 times the one before."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q041": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Eight places in this series, and two of them are empty. Let's work out the rule, then fill them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "2, 4, 6, __, 10, __, 14, 16",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start with 2 and 4, sitting side by side. What takes us from 2 to 4?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 4",
+      "add 2",
+      "add 1"
+     ],
+     "answer": 1,
+     "ifNot": "Look at 2 and 4 again. 4 is bigger than 2 by 2, so the step is add 2."
+    }
+   },
+   {
+    "say": "4 minus 2 is 2. Let's not trust a single pair: 6 minus 4 is 2 too. So the rule is add 2, all the way along.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "4 − 2 = 2"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "6 − 4 = 2"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "4"
+      },
+      "text": "+2",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "6"
+      },
+      "text": "+2",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "The number just before the first gap is 6. 6 plus 2 is 8. And 8 plus 2 is 10, the number that follows, so it fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f0",
+      "text": "6 + 2 = 8"
+     },
+     {
+      "op": "write",
+      "id": "c0",
+      "text": "8 + 2 = 10"
+     }
+    ]
+   },
+   {
+    "say": "On to the second gap, the one after 10. What goes there?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "12",
+      "11",
+      "13"
+     ],
+     "answer": 0,
+     "ifNot": "The number before the gap is 10, and the step is add 2. So we want 2 more than 10."
+    }
+   },
+   {
+    "say": "10 plus 2 is 12. And 12 plus 2 is 14, the number that follows, so it fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f1",
+      "text": "10 + 2 = 12"
+     },
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "12 + 2 = 14"
+     }
+    ]
+   },
+   {
+    "say": "So the missing numbers are 8 and 12.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "2, 4, 6, 8, 10, 12, 14, 16",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "8"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "12"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the method is: find the step, test it, and fill each gap from the number just before it. Then check with the number just after."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q042": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "2, 4, 8, 16, 32. You may know these numbers already. Let's find the rule properly, then the number that comes next.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "2, 4, 8, 16, 32, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First the usual test: how big is the jump between neighbours? 4 minus 2 is 2, but 8 minus 4 is 4. The jumps are not equal, so this series does not add the same number each time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "j1",
+      "text": "4 − 2 = 2"
+     },
+     {
+      "op": "write",
+      "id": "j2",
+      "text": "8 − 4 = 4"
+     }
+    ]
+   },
+   {
+    "say": "So try another idea. What turns 2 into 4, and then 4 into 8?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "multiply by 2",
+      "add 2",
+      "multiply by 4"
+     ],
+     "answer": 0,
+     "ifNot": "Try it out: 2 times 2 is 4, and 4 times 2 is 8. The same move works both times: multiply by 2."
+    }
+   },
+   {
+    "say": "2 times 2 is 4, 4 times 2 is 8, and 8 times 2 is 16. Each number is the one before it, times 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m1",
+      "text": "2 × 2 = 4"
+     },
+     {
+      "op": "write",
+      "id": "m2",
+      "text": "4 × 2 = 8"
+     },
+     {
+      "op": "write",
+      "id": "m3",
+      "text": "8 × 2 = 16"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "4"
+      },
+      "text": "×2",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "8"
+      },
+      "text": "×2",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "The last number we can see is 32. What comes after it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "64",
+      "48",
+      "256"
+     ],
+     "answer": 0,
+     "ifNot": "The move is multiply by 2, and we do it just once. So we want double 32."
+    }
+   },
+   {
+    "say": "32 times 2 is 64. So the next number in the series is 64.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "32 × 2 = 64",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "= 64"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by undoing the move: 64 divided by 2 is 32, back where we were.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "64 ÷ 2 = 32"
+     }
+    ]
+   },
+   {
+    "say": "So if adding does not explain a series, try multiplying. Here every number is double the one before."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q043": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This series is still climbing, but look how it slows down: 6, 13, 19, 24, 28. Let's see what is going on.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "6, 13, 19, 24, 28, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Measure the jump between neighbours. 13 minus 6 is 7, but 19 minus 13 is 6. The jumps are not equal, so there is no single number to add.",
+    "board": [
+     {
+      "op": "write",
+      "id": "j1",
+      "text": "13 − 6 = 7"
+     },
+     {
+      "op": "write",
+      "id": "j2",
+      "text": "19 − 13 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Don't stop there. Measure the rest: 24 minus 19 is 5, and 28 minus 24 is 4. Now look at the jumps on their own: 7, 6, 5 and 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "j3",
+      "text": "24 − 19 = 5"
+     },
+     {
+      "op": "write",
+      "id": "j4",
+      "text": "28 − 24 = 4"
+     },
+     {
+      "op": "write",
+      "id": "jj",
+      "text": "Jumps: 7, 6, 5, 4",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The jumps have a pattern of their own. What will the next jump be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "4",
+      "5",
+      "3"
+     ],
+     "answer": 2,
+     "ifNot": "Read the jumps in order: 7, 6, 5 and 4. Each jump is 1 less than the one before, so after 4 comes 3."
+    }
+   },
+   {
+    "say": "Each jump is 1 less than the last, so the next jump is 3. 28 plus 3 is 31.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n1",
+      "text": "28 + 3 = 31"
+     }
+    ]
+   },
+   {
+    "say": "So the next number is 31. And the jumps run 7, 6, 5, 4 and 3, with no break in their pattern.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "6, 13, 19, 24, 28, 31",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "31"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "jk",
+      "text": "Jumps: 7, 6, 5, 4, 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So when a series slows down, write out its jumps. Here they shrink by 1 each time, and that tells us the next jump."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q044": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Six numbers, and we want the two that follow 16. The numbers spread out more and more as we go.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "1, 2, 4, 7, 11, 16, __, __",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Measure the jump between neighbours. 2 minus 1 is 1, but 4 minus 2 is 2. The jumps are not equal, so there is no single number to add.",
+    "board": [
+     {
+      "op": "write",
+      "id": "j1",
+      "text": "2 − 1 = 1"
+     },
+     {
+      "op": "write",
+      "id": "j2",
+      "text": "4 − 2 = 2"
+     }
+    ]
+   },
+   {
+    "say": "Don't stop there. Measure the rest: 7 minus 4 is 3, 11 minus 7 is 4, and 16 minus 11 is 5. Now look at the jumps on their own: 1, 2, 3, 4 and 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "j3",
+      "text": "7 − 4 = 3"
+     },
+     {
+      "op": "write",
+      "id": "j4",
+      "text": "11 − 7 = 4"
+     },
+     {
+      "op": "write",
+      "id": "j5",
+      "text": "16 − 11 = 5"
+     },
+     {
+      "op": "write",
+      "id": "jj",
+      "text": "Jumps: 1, 2, 3, 4, 5",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The jumps have a pattern of their own. What will the next jump be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5",
+      "6",
+      "10"
+     ],
+     "answer": 1,
+     "ifNot": "Read the jumps in order: 1, 2, 3, 4 and 5. Each jump is 1 more than the one before, so after 5 comes 6."
+    }
+   },
+   {
+    "say": "Each jump is 1 more than the last, so the next jump is 6. 16 plus 6 is 22.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n1",
+      "text": "16 + 6 = 22"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the jump does not stay at 6. It changes again, to 7. 22 plus 7 is 29.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n2",
+      "text": "22 + 7 = 29"
+     }
+    ]
+   },
+   {
+    "say": "So the next two numbers are 22 and 29. And the jumps run 1, 2, 3, 4, 5, 6 and 7, with no break in their pattern.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "1, 2, 4, 7, 11, 16, 22, 29",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "22"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "29"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "jk",
+      "text": "Jumps: 1, 2, 3, 4, 5, 6, 7",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So when the jumps keep changing, list them. If the jumps grow by 1 each time, keep them growing to find what comes next."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q045": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Three fractions, and we want the fourth. The top and the bottom each have a pattern of their own, so we take them one at a time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "2/1, 4/2, 6/3, ?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The tops first: 2, 4, 6. What comes next?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7",
+      "8",
+      "9"
+     ],
+     "answer": 1,
+     "ifNot": "2, 4, 6 goes up by 2 each time. So after 6 comes 6 plus 2, which is 8."
+    }
+   },
+   {
+    "say": "The tops go up by 2, so the next top is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "tops: 2, 4, 6, 8",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "6 + 2 = 8"
+     }
+    ]
+   },
+   {
+    "say": "Now the bottoms: 1, 2, 3. They go up by 1, so the next bottom is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "bottoms: 1, 2, 3, 4",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "b1",
+      "text": "3 + 1 = 4"
+     }
+    ]
+   },
+   {
+    "say": "Careful here: the top and the bottom follow different rules. The top goes up by 2, but the bottom only goes up by 1. Don't use one step for both."
+   },
+   {
+    "say": "Put the two parts together: 8 on top, 4 underneath. The next number is 8 over 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Next: 8/4",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "8/4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is a lovely check. 2 divided by 1 is 2, 4 divided by 2 is 2, 6 divided by 3 is 2, and 8 divided by 4 is 2. Every fraction here is worth 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "2/1 = 4/2 = 6/3 = 8/4 = 2"
+     }
+    ]
+   },
+   {
+    "say": "So split a fraction series into tops and bottoms, find each rule, and join them up again."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch03_q046": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Five of these numbers follow one rule and one of them breaks it. Let's find the rule first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "2, 10, 18, 26, 35, 42",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Start at the front, with 2 and 10. How do we get from 2 to 10?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "add 10",
+      "add 6",
+      "add 8"
+     ],
+     "answer": 2,
+     "ifNot": "Look at 2 and 10 again. 10 is 8 more than 2, so the step is add 8."
+    }
+   },
+   {
+    "say": "10 minus 2 is 8, and 18 minus 10 is 8. So this series wants to go up by 8 each time. Now we test every jump.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "10 − 2 = 8"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "18 − 10 = 8"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "10"
+      },
+      "text": "+8",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "18"
+      },
+      "text": "+8",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "Carry on along the line. 26 minus 18 is 8; 35 minus 26 is 9, not 8; 42 minus 35 is 7, not 8. Two jumps, side by side, do not fit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "26 − 18 = 8"
+     },
+     {
+      "op": "write",
+      "id": "d4",
+      "text": "35 − 26 = 9"
+     },
+     {
+      "op": "mark",
+      "line": "d4",
+      "target": {
+       "text": "= 9"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "d5",
+      "text": "42 − 35 = 7"
+     },
+     {
+      "op": "mark",
+      "line": "d5",
+      "target": {
+       "text": "= 7"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "So which number is spoiling the pattern?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "26",
+      "42",
+      "35"
+     ],
+     "answer": 2,
+     "ifNot": "Both of the jumps that do not fit touch 35. 26 and 42 get on perfectly well with their other neighbours."
+    }
+   },
+   {
+    "say": "What should stand there? 26 plus 8 is 34. And 34 plus 8 is 42, exactly the number that follows. So 34 belongs there.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r1",
+      "text": "26 + 8 = 34"
+     },
+     {
+      "op": "write",
+      "id": "r2",
+      "text": "34 + 8 = 42"
+     },
+     {
+      "op": "strike",
+      "line": "s",
+      "target": {
+       "text": "35"
+      },
+      "note": "34"
+     }
+    ]
+   },
+   {
+    "say": "So the odd one out, the number that does not belong, is 35.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Odd one out: 35",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "35"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So test every jump. When two jumps in a row do not fit, look for the number they share: that is the odd one out."
+   }
+  ]
+ },
+ "AIGEN_grade5_005fc3f8-e2b5-4c4a-85d9-7ce326980c6f": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Neha's trip has four parts: a drive, a chai break, a second drive, and one last stretch. We find how long each part takes, then count on from 7 o'clock.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "270 km in all, leaving at 7:00 AM",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "90 km at 60 km/hr → 30-minute break →",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g3",
+      "text": "120 km at 80 km/hr → the rest at 60 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "For a drive, time is distance divided by speed. First drive: 90 divided by 60 is 1 and a half, so 1 and a half hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Time = distance ÷ speed",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "90 ÷ 60 = 1.5"
+     },
+     {
+      "op": "note",
+      "line": "t1",
+      "target": {
+       "text": "1.5"
+      },
+      "text": "1½ hours",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Second drive: 120 divided by 80 is 1 and a half as well. Another 1 and a half hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "120 ÷ 80 = 1.5"
+     },
+     {
+      "op": "note",
+      "line": "t2",
+      "target": {
+       "text": "1.5"
+      },
+      "text": "1½ hours",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the last stretch. The question does not say how long it is. How can we find out?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "90 + 120",
+      "270 − 90 − 120",
+      "270 − 120"
+     ],
+     "answer": 1,
+     "ifNot": "The whole trip is 270 kilometres. Take away the 90 and the 120 already driven, and what is left is the last stretch."
+    }
+   },
+   {
+    "say": "270 minus 90 minus 120 leaves 60 kilometres. At 60 kilometres an hour, that takes exactly 1 hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "270 − 90 − 120 = 60"
+     },
+     {
+      "op": "write",
+      "id": "t3",
+      "text": "60 ÷ 60 = 1"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the chai break is not driving, but the clock keeps ticking. 30 minutes is half an hour, and it counts.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "g2",
+      "target": {
+       "text": "30-minute break"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "note",
+      "line": "g2",
+      "target": {
+       "text": "30-minute break"
+      },
+      "text": "0.5 hour",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Add up all four parts: 1 and a half, plus a half, plus 1 and a half, plus 1. That makes 4 and a half hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sum",
+      "text": "1.5 + 0.5 + 1.5 + 1 = 4.5"
+     }
+    ]
+   },
+   {
+    "say": "Now count on from 7 o'clock. 4 hours later is 11 o'clock, and half an hour more makes it 11 30 in the morning.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7:00 AM + 4 h 30 min = 11:30 AM",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "11:30 AM"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the distances: 90 plus 120 plus 60 is 270, the whole trip. Nothing has been left out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "90 + 120 + 60 = 270"
+     }
+    ]
+   },
+   {
+    "say": "So for a trip in parts: find the time for each part, remember any break, add them all up, and count on from the starting time."
+   }
+  ]
+ },
+ "AIGEN_grade5_008aeb36-e7d1-453c-8ac2-dd1777aad834": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya's train trip has three parts: a run, a stop at Vellore, and another run. We time each part, then count on from 6 o'clock.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "Leaves at 6:00 AM",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "120 km at 80 km/hr → stops 30 min →",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g3",
+      "text": "240 km at 120 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "While the train is moving, time is distance divided by speed. For the first run, which sum gives the time?",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Time = distance ÷ speed",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "80 ÷ 120",
+      "120 ÷ 80",
+      "120 × 80"
+     ],
+     "answer": 1,
+     "ifNot": "Time is distance divided by speed. The distance is 120 kilometres and the speed is 80, so it is 120 divided by 80."
+    }
+   },
+   {
+    "say": "120 divided by 80 is 1 and a half. The first 80 kilometres take 1 hour, and what is left takes half an hour more.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "120 ÷ 80 = 1.5"
+     },
+     {
+      "op": "note",
+      "line": "t1",
+      "target": {
+       "text": "1.5"
+      },
+      "text": "1½ hours",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Second run: 240 divided by 120 is 2. So that run takes 2 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "240 ÷ 120 = 2"
+     }
+    ]
+   },
+   {
+    "say": "Careful: don't forget the stop at Vellore. The train is standing still, but the clock is not. 30 minutes is half an hour.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "g2",
+      "target": {
+       "text": "stops 30 min"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "note",
+      "line": "g2",
+      "target": {
+       "text": "stops 30 min"
+      },
+      "text": "0.5 hour",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Add the three parts: 1 and a half, plus a half, plus 2. That makes 4 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sum",
+      "text": "1.5 + 0.5 + 2 = 4"
+     }
+    ]
+   },
+   {
+    "say": "The train left at 6 o'clock, and 4 hours later is 10 o'clock. It arrives in Bangalore at 10 in the morning.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "6:00 AM + 4 hours = 10:00 AM",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "10:00 AM"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Walk the clock through to check. The first run ends at half past 7. The stop ends at 8 o'clock. Then 2 more hours bring us to 10 o'clock.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "6:00 → 7:30 → 8:00 → 10:00",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So time each moving part with distance divided by speed, add in any stop, and count on from the starting time."
+   }
+  ]
+ },
+ "AIGEN_grade5_0275ee67-deaa-41e1-b4b9-ad89d80895a8": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's auto changes speed halfway to the station. So we time the two halves separately, and the answer has to be in minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "18 km to the station",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "first half at 36 km/hr, second half at 24 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "How long is each half of the trip?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "18 km",
+      "9 km",
+      "36 km"
+     ],
+     "answer": 1,
+     "ifNot": "The whole trip is 18 kilometres, and half of 18 is 9. So each half is 9 kilometres long."
+    }
+   },
+   {
+    "say": "Each half is 9 kilometres. First half: at 36 kilometres an hour, 9 kilometres is a quarter of an hour's driving.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "18 ÷ 2 = 9"
+     },
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "9 ÷ 36 = 1/4"
+     }
+    ]
+   },
+   {
+    "say": "We want minutes. An hour has 60 minutes, and a quarter of 60 is 15. So the first half takes 15 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "u",
+      "text": "1 hour = 60 minutes",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "m1",
+      "text": "1/4 × 60 = 15"
+     }
+    ]
+   },
+   {
+    "say": "Before we work it out: which half takes longer?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the first half",
+      "the second half",
+      "they take the same time"
+     ],
+     "answer": 1,
+     "ifNot": "Both halves are 9 kilometres, but the second one is driven more slowly. Slower over the same distance means more time."
+    }
+   },
+   {
+    "say": "Second half, at 24 kilometres an hour. 24 kilometres take 60 minutes, so 1 kilometre takes 60 divided by 24, which is 2.5 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "60 ÷ 24 = 2.5"
+     }
+    ]
+   },
+   {
+    "say": "9 kilometres take 9 times 2.5, which is 22.5 minutes. Longer than the first half, just as we expected.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m2",
+      "text": "9 × 2.5 = 22.5"
+     }
+    ]
+   },
+   {
+    "say": "Add the two halves: 15 plus 22.5 is 37.5. The whole trip takes 37.5 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "15 + 22.5 = 37.5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "37.5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: it is tempting to average the two speeds and use that for the whole trip. It does not work, because the slow half lasts longer than the fast half."
+   },
+   {
+    "say": "So when the speed changes, time each part on its own with distance divided by speed. Then add the times."
+   }
+  ]
+ },
+ "AIGEN_grade5_033e5e03-1780-45bd-b614-2ff77ce829e4": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This is a puzzle about average speed. Going, the two speeds share the distance equally. Coming back, they share the time equally. That small change matters.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "TO: half the distance at 40, half at 60 km/hr",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "BACK: half the time at 40, half at 60 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "No distance is given, so we may choose one that is easy to work with. Let's say the road is 240 kilometres long. Then each half is 120 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "Suppose the road is 240 km",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "h",
+      "text": "240 ÷ 2 = 120"
+     }
+    ]
+   },
+   {
+    "say": "Going there: 120 kilometres at 40 takes 3 hours. And 120 kilometres at 60 takes 2 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "120 ÷ 40 = 3"
+     },
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "120 ÷ 60 = 2"
+     }
+    ]
+   },
+   {
+    "say": "Average speed is the whole distance divided by the whole time. So which sum gives the average speed going there?",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "(40 + 60) ÷ 2",
+      "240 ÷ 5",
+      "240 ÷ 2"
+     ],
+     "answer": 1,
+     "ifNot": "The whole distance is 240 kilometres. The whole time is 3 hours plus 2 hours, which is 5 hours. So it is 240 divided by 5."
+    }
+   },
+   {
+    "say": "240 divided by 5 is 48. Going to Pondicherry, the average speed is 48 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t3",
+      "text": "3 + 2 = 5"
+     },
+     {
+      "op": "write",
+      "id": "to",
+      "text": "240 ÷ 5 = 48"
+     }
+    ]
+   },
+   {
+    "say": "Now coming back, with half the time at each speed. Picture any 2 hours of that drive: 1 hour at 40, and 1 hour at 60. Together that is 100 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b1",
+      "text": "40 × 1 + 60 × 1 = 100"
+     }
+    ]
+   },
+   {
+    "say": "100 kilometres in 2 hours is 50 kilometres an hour. So coming back, the average speed is 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b2",
+      "text": "100 ÷ 2 = 50"
+     }
+    ]
+   },
+   {
+    "say": "50 minus 48 is 2. Coming back is faster, by 2 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "50 − 48 = 2"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "BACK is faster, by 2 km/hr",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "2 km/hr"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Why the difference? Going there, the slow half took 3 hours and the fast half only 2. They spent more time going slowly, and that drags the average down."
+   },
+   {
+    "say": "So average speed is always whole distance divided by whole time. Equal distances are not equal times: the slower part always lasts longer."
+   }
+  ]
+ },
+ "AIGEN_grade5_10d2ce3d-f46f-486a-8d20-0dfa4359d91a": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two cyclists set off together. Deepa makes one steady trip. Arjun is faster, but he has to go there, come back for the sweets, and go there again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "Home to Grandmother's house: 30 km",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "Deepa: 10 km/hr.  Arjun: 15 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Deepa first. Time is distance divided by speed, and 30 divided by 10 is 3. Deepa takes 3 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Time = distance ÷ speed",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "30 ÷ 10 = 3"
+     }
+    ]
+   },
+   {
+    "say": "Now Arjun. How far does he cycle altogether before he arrives for the second time?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "30 km",
+      "60 km",
+      "90 km"
+     ],
+     "answer": 2,
+     "ifNot": "Count his trips: to Grandmother's house, back home, and to Grandmother's house again. That is 3 trips of 30 kilometres."
+    }
+   },
+   {
+    "say": "3 trips of 30 kilometres make 90 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a1",
+      "text": "30 × 3 = 90"
+     }
+    ]
+   },
+   {
+    "say": "At 15 kilometres an hour, 90 divided by 15 is 6. Arjun's whole ride takes 6 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a2",
+      "text": "90 ÷ 15 = 6"
+     }
+    ]
+   },
+   {
+    "say": "They started at the same time. Deepa arrives after 3 hours and Arjun after 6. 6 minus 3 is 3, so Arjun arrives 3 hours after Deepa.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "6 − 3 = 3",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "= 3"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "= 3"
+      },
+      "text": "hours later",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the easy slip is to count only 2 trips for Arjun, there and back. But he still has to carry the sweets to Grandmother's house, and that is the third trip."
+   },
+   {
+    "say": "Check with a timeline. Each trip takes Arjun 2 hours, so he is at Grandmother's at 2 hours, home at 4, and back at Grandmother's at 6. Deepa walked in at 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "30 ÷ 15 = 2"
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "Arjun: 2 h → 4 h → 6 h.   Deepa: 3 h",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So in a question like this, find each person's whole distance first, then their time. The gap between the times is the answer."
+   }
+  ]
+ },
+ "AIGEN_grade5_18327336-63b9-4b85-97e2-d9052a77bd67": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We want the average speed for Neha's whole journey, and the question says the chai break counts too. Keep that in mind.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "40 km/hr for 2 hours → chai for 30 minutes →",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "60 km/hr for 1 hour",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Average speed is the whole distance divided by the whole time. So we need two totals. Distance first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Distance is speed times time. 40 times 2 is 80 kilometres. Then 60 times 1 is 60 kilometres. Together, 80 plus 60 is 140 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "40 × 2 = 80"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "60 × 1 = 60"
+     },
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "80 + 60 = 140"
+     }
+    ]
+   },
+   {
+    "say": "Now the whole time. Remember, the chai break counts. So how long is the journey from start to finish?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 hours",
+      "3.5 hours",
+      "2.5 hours"
+     ],
+     "answer": 1,
+     "ifNot": "They drive for 2 hours and then 1 hour, which is 3 hours. The 30-minute break is half an hour more, so 3 and a half hours."
+    }
+   },
+   {
+    "say": "2 hours, plus half an hour, plus 1 hour, is 3 and a half hours. No distance is covered during the break, but the time still passes.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "g1",
+      "target": {
+       "text": "chai for 30 minutes"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "2 + 0.5 + 1 = 3.5"
+     }
+    ]
+   },
+   {
+    "say": "So we want 140 divided by 3 and a half. Double both numbers to get rid of the half: 280 divided by 7, and that is 40.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "140 ÷ 3.5 = 280 ÷ 7"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "280 ÷ 7 = 40",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "= 40"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the average speed for the whole journey is 40 kilometres an hour."
+   },
+   {
+    "say": "Careful: two slips are waiting here. One is to leave out the break. The other is to take the number halfway between 40 and 60, which is 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "(40 + 60) ÷ 2 = 50"
+     },
+     {
+      "op": "strike",
+      "line": "x",
+      "target": {
+       "text": "(40 + 60) ÷ 2 = 50"
+      },
+      "note": "not the average speed"
+     }
+    ]
+   },
+   {
+    "say": "Check: 40 kilometres an hour, kept up for 3 and a half hours, gives 140 kilometres. That is exactly the distance they covered.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "40 × 3.5 = 140"
+     }
+    ]
+   },
+   {
+    "say": "So for average speed: add up all the distance, add up all the time, breaks included if the question says so, and divide."
+   }
+  ]
+ },
+ "AIGEN_grade5_1f368230-2fc1-4206-bff3-18234b041e34": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The boat goes out to an island and comes back. We know how long the trip out takes, but not the trip back. That is the piece to find.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "Out: 6 km/hr for 20 minutes",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "Back, same route: 4 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "To time the trip back we need the distance to the island. Start here: 20 minutes is what fraction of an hour?",
+    "board": [
+     {
+      "op": "write",
+      "id": "u",
+      "text": "1 hour = 60 minutes",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1/2",
+      "1/3",
+      "1/4"
+     ],
+     "answer": 1,
+     "ifNot": "An hour has 60 minutes, and 20 goes into 60 exactly 3 times. So 20 minutes is one third of an hour."
+    }
+   },
+   {
+    "say": "20 minutes is a third of an hour. In a full hour the boat would go 6 kilometres, so in a third of an hour it goes a third of 6, which is 2 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fr",
+      "text": "20/60 = 1/3"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "6 × 1/3 = 2"
+     }
+    ]
+   },
+   {
+    "say": "The way back is the same route, so it is 2 kilometres too. At 4 kilometres an hour, 2 divided by 4 is a half: half an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "2 ÷ 4 = 1/2"
+     }
+    ]
+   },
+   {
+    "say": "Half an hour is half of 60 minutes, which is 30 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "1/2 × 60 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the trip back is not 20 minutes again. The distance is the same, but the boat is slower, so it takes longer."
+   },
+   {
+    "say": "20 minutes out, plus 30 minutes back, makes 50 minutes for the whole ride.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "20 + 30 = 50",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "= 50"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "= 50"
+      },
+      "text": "minutes",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Does 30 minutes back make sense? At 4 kilometres an hour, half an hour gives 2 kilometres, exactly the distance to the island.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "4 × 1/2 = 2"
+     }
+    ]
+   },
+   {
+    "say": "So for a there-and-back trip: use the leg you know fully to find the distance, then use that distance to time the other leg."
+   }
+  ]
+ },
+ "AIGEN_grade5_1fe16fb0-b0a5-4b97-b6d6-494f11811187": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's boat races downstream and crawls back upstream. We want its average speed for the whole trip.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "3 km downstream at 15 km/hr",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "3 km upstream at 5 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Here is a tempting shortcut: the number halfway between 15 and 5 is 10. Will that be the average speed?",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "(15 + 5) ÷ 2 = 10"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, halfway is the average",
+      "no, the slow part lasts longer"
+     ],
+     "answer": 1,
+     "ifNot": "The boat spends much longer crawling upstream than racing downstream. So the slow speed counts for more, and halfway will not do."
+    }
+   },
+   {
+    "say": "Average speed is the whole distance divided by the whole time. The distance is easy: 3 kilometres down and 3 back make 6 kilometres.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "x",
+      "target": {
+       "text": "(15 + 5) ÷ 2 = 10"
+      },
+      "note": "not the average speed"
+     },
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "3 + 3 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Time downstream: 3 divided by 15 is one fifth of an hour. One fifth of 60 minutes is 12 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "3 ÷ 15 = 1/5"
+     },
+     {
+      "op": "write",
+      "id": "m1",
+      "text": "1/5 × 60 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Time upstream: 3 divided by 5 is three fifths of an hour, and that is 36 minutes. Three times as long as the trip down!",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "3 ÷ 5 = 3/5"
+     },
+     {
+      "op": "write",
+      "id": "m2",
+      "text": "3/5 × 60 = 36"
+     }
+    ]
+   },
+   {
+    "say": "Together, 12 plus 36 is 48 minutes. In fifths, one fifth plus three fifths is four fifths of an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m3",
+      "text": "12 + 36 = 48"
+     },
+     {
+      "op": "write",
+      "id": "t3",
+      "text": "1/5 + 3/5 = 4/5"
+     }
+    ]
+   },
+   {
+    "say": "So the boat covers 6 kilometres in 4 fifths of an hour. In each fifth of an hour, that is 6 divided by 4, which is 1.5 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "6 ÷ 4 = 1.5"
+     }
+    ]
+   },
+   {
+    "say": "A whole hour is 5 fifths, and 5 times 1.5 is 7.5. So the average speed is 7.5 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "1.5 × 5 = 7.5"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "6 ÷ (4/5) = 7.5",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "7.5"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "It makes sense that 7.5 is nearer to 5 than to 15. The boat spent 36 minutes going slowly and only 12 minutes going fast."
+   },
+   {
+    "say": "So never average the two speeds. Find the whole distance and the whole time, and divide."
+   }
+  ]
+ },
+ "AIGEN_grade5_27632c7e-9b71-456a-a6b0-d35305b5b385": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi and his grandfather go up the river to a temple and come back down. We want the average speed on the water, with the prayer time left out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "Upstream: 6 km/hr for 2 hours",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "1 hour of prayers (not counted)",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g3",
+      "text": "Downstream, same route: 12 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Average speed is whole distance divided by whole time. First, how far is the temple? Distance is speed times time: 6 times 2 is 12 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "6 × 2 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Coming back is the same 12 kilometres, at 12 kilometres an hour. How long does that take?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "half an hour",
+      "1 hour",
+      "2 hours"
+     ],
+     "answer": 1,
+     "ifNot": "Time is distance divided by speed. 12 divided by 12 is 1, so the way back takes 1 hour."
+    }
+   },
+   {
+    "say": "12 divided by 12 is 1 hour. Twice the speed, so half the time of the trip up.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "12 ÷ 12 = 1"
+     }
+    ]
+   },
+   {
+    "say": "Whole distance: 12 kilometres there and 12 back make 24 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "12 + 12 = 24"
+     }
+    ]
+   },
+   {
+    "say": "Whole time. Careful: the question tells us to leave out the hour of prayers. So we count only the time on the water, 2 hours plus 1 hour, which is 3 hours.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "g2",
+      "target": {
+       "text": "1 hour of prayers"
+      },
+      "note": "leave out"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "2 + 1 = 3"
+     }
+    ]
+   },
+   {
+    "say": "24 divided by 3 is 8. The average speed is 8 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "24 ÷ 3 = 8",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "= 8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice it is not 9, the number halfway between 6 and 12. They spent 2 hours at the slow speed and only 1 hour at the fast speed, so the average sits nearer to 6."
+   },
+   {
+    "say": "Check: 8 kilometres an hour, for 3 hours, is 24 kilometres. That is the whole trip.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "8 × 3 = 24"
+     }
+    ]
+   },
+   {
+    "say": "So for average speed, total the distance, total the time the question wants counted, and divide."
+   }
+  ]
+ },
+ "AIGEN_grade5_2964efcc-7362-4bd3-bf12-d08dc12a1c73": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun's family drive fast before chai and slowly after it. We want the average speed for the driving, with the chai break left out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "150 km in all",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "first 75 km at 50 km/hr, the rest at 25 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "How far is the rest? 150 minus 75 leaves another 75 kilometres. So the trip is two equal halves.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "150 − 75 = 75"
+     }
+    ]
+   },
+   {
+    "say": "Average speed is whole distance divided by whole time, so we need the time for each half. First half: 75 divided by 50 is 1 and a half hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "75 ÷ 50 = 1.5"
+     },
+     {
+      "op": "note",
+      "line": "t1",
+      "target": {
+       "text": "1.5"
+      },
+      "text": "1½ hours",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The second half is the same distance at half the speed, 25 instead of 50. What happens to the time?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "it halves",
+      "it doubles",
+      "it stays the same"
+     ],
+     "answer": 1,
+     "ifNot": "At half the speed, every kilometre takes twice as long. So the time doubles."
+    }
+   },
+   {
+    "say": "75 divided by 25 is 3 hours, double the first half.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "75 ÷ 25 = 3"
+     }
+    ]
+   },
+   {
+    "say": "Whole time: 1 and a half plus 3 is 4 and a half hours. The chai break is left out, as the question says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "1.5 + 3 = 4.5"
+     }
+    ]
+   },
+   {
+    "say": "So the average speed is 150 divided by 4 and a half. Double both numbers to clear the half: 300 divided by 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "150 ÷ 4.5 = 300 ÷ 9"
+     }
+    ]
+   },
+   {
+    "say": "9 times 33 is 297, so 300 divided by 9 is 33 and a little bit more. As a decimal it is about 33.33 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "9 × 33 = 297"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "300 ÷ 9 ≈ 33.33",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "33.33"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: halfway between 50 and 25 is 37.5, and that is one of the choices. But they spent 3 hours going slowly and only 1 and a half going fast, so the average is pulled down.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "(50 + 25) ÷ 2 = 37.5"
+     },
+     {
+      "op": "strike",
+      "line": "x",
+      "target": {
+       "text": "(50 + 25) ÷ 2 = 37.5"
+      },
+      "note": "not the average speed"
+     }
+    ]
+   },
+   {
+    "say": "So with two speeds over equal distances, the slow half takes longer. Find both times, add them, and divide the whole distance by the whole time."
+   }
+  ]
+ },
+ "AIGEN_grade5_2ba5dc32-4f7d-4ba2-b99e-762057eb2571": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here we know the whole distance and the whole time, but not how long each speed lasted. That calls for a clever trick.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "240 km in 4 hours",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "first part at 80 km/hr, the rest at 40 km/hr",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g3",
+      "text": "How many km at 80 km/hr?",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The trick is to pretend. Pretend all 4 hours were driven at the slow speed, 40. Then they would cover 40 times 4, which is 160 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "Pretend: all 4 hours at 40 km/hr",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "p1",
+      "text": "40 × 4 = 160"
+     }
+    ]
+   },
+   {
+    "say": "But the real trip is 240 kilometres. So our pretend trip is 240 minus 160, which is 80 kilometres short. The missing kilometres come from the fast hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "240 − 160 = 80"
+     }
+    ]
+   },
+   {
+    "say": "Swap one slow hour for a fast hour. How many extra kilometres does that add?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "80",
+      "40",
+      "120"
+     ],
+     "answer": 1,
+     "ifNot": "In 1 hour at 80 they cover 80 kilometres, and in 1 hour at 40 they cover 40. So each fast hour adds 40 extra kilometres."
+    }
+   },
+   {
+    "say": "Each fast hour adds 80 minus 40, which is 40 kilometres. We are 80 short, and 80 divided by 40 is 2. So 2 of the hours were fast.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p3",
+      "text": "80 − 40 = 40"
+     },
+     {
+      "op": "write",
+      "id": "p4",
+      "text": "80 ÷ 40 = 2"
+     },
+     {
+      "op": "note",
+      "line": "p4",
+      "target": {
+       "text": "= 2"
+      },
+      "text": "hours at 80",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the question does not ask for hours. It asks how many kilometres were driven at 80. So what do we work out?",
+    "board": [
+     {
+      "op": "mark",
+      "line": "g3",
+      "target": {
+       "text": "How many km"
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "40 × 2",
+      "80 × 2",
+      "240 ÷ 2"
+     ],
+     "answer": 1,
+     "ifNot": "2 hours were driven at 80 kilometres an hour. Distance is speed times time, so it is 80 times 2."
+    }
+   },
+   {
+    "say": "80 times 2 is 160. They travelled 160 kilometres at 80 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "80 × 2 = 160",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "= 160"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "By chance, 160 was also the length of our pretend trip. Don't let that confuse you: this 160 is the real distance at the fast speed."
+   },
+   {
+    "say": "Check the whole trip. 160 kilometres at 80 takes 2 hours. The other 80 kilometres, at 40, take 2 hours too. 2 plus 2 is 4 hours, just as the question says.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "160 ÷ 80 = 2"
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "(240 − 160) ÷ 40 = 2"
+     },
+     {
+      "op": "write",
+      "id": "k3",
+      "text": "2 + 2 = 4"
+     }
+    ]
+   },
+   {
+    "say": "So when you know the whole time and two speeds: pretend it was all at one speed, see how far short you are, and let the gap between the speeds tell you the hours."
+   }
+  ]
+ },
+ "AIGEN_grade5_2d6440d7-34f6-4b72-9433-cc20a033d160": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kavya's boat goes down the river and back up again. This time the question hands us distances and times directly.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "18 km downstream in 2 hours",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "18 km upstream in 3 hours",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Average speed is the whole distance divided by the whole time. So what is the whole distance of the round trip?",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "18 km",
+      "36 km",
+      "9 km"
+     ],
+     "answer": 1,
+     "ifNot": "The boat goes 18 kilometres down the river, and then 18 kilometres back. Both legs count."
+    }
+   },
+   {
+    "say": "18 plus 18 is 36 kilometres. And the whole time is 2 hours plus 3 hours, which is 5 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "18 + 18 = 36"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "2 + 3 = 5"
+     }
+    ]
+   },
+   {
+    "say": "So we want 36 divided by 5. 5 times 7 is 35, which leaves 1 over.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "5 × 7 = 35"
+     },
+     {
+      "op": "write",
+      "id": "r",
+      "text": "36 − 35 = 1"
+     }
+    ]
+   },
+   {
+    "say": "That last 1, shared among 5, is 0.2. So 36 divided by 5 is 7.2. The average speed is 7.2 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r2",
+      "text": "1 ÷ 5 = 0.2"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "36 ÷ 5 = 7.2",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "7.2"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: some people find the two speeds first, 18 divided by 2 is 9, and 18 divided by 3 is 6, and then take the number halfway between, 7.5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "18 ÷ 2 = 9"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "18 ÷ 3 = 6"
+     },
+     {
+      "op": "write",
+      "id": "x",
+      "text": "(9 + 6) ÷ 2 = 7.5"
+     }
+    ]
+   },
+   {
+    "say": "That is close, but it is a trap. The boat spends 3 hours at the slow speed and only 2 at the fast one, so the true average is a little lower.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "x",
+      "target": {
+       "text": "(9 + 6) ÷ 2 = 7.5"
+      },
+      "note": "not the average speed"
+     }
+    ]
+   },
+   {
+    "say": "Check: 7.2 kilometres an hour, for 5 hours, is 36 kilometres. That is the full round trip.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "7.2 × 5 = 36"
+     }
+    ]
+   },
+   {
+    "say": "So for a round trip, add both distances, add both times, and divide. Never just average the two speeds."
+   }
+  ]
+ },
+ "AIGEN_grade5_479772a7-763e-438e-90f0-fd2916b35bc3": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A boat crosses a river and comes back more slowly. Notice the units here: metres and seconds, not kilometres and hours. The method is just the same.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "River: 600 m wide",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "across at 3 m/s, back at 2 m/s",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Average speed is whole distance divided by whole time. Going across, the time is 600 divided by 3, which is 200 seconds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "600 ÷ 3 = 200"
+     }
+    ]
+   },
+   {
+    "say": "Will the trip back take more time than 200 seconds, or less?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "less",
+      "more",
+      "the same"
+     ],
+     "answer": 1,
+     "ifNot": "The river is just as wide, but the boat is slower on the way back. Slower over the same distance means more time."
+    }
+   },
+   {
+    "say": "600 divided by 2 is 300 seconds. More time, as we expected.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "600 ÷ 2 = 300"
+     }
+    ]
+   },
+   {
+    "say": "Whole distance: 600 plus 600 is 1200 metres. Whole time: 200 plus 300 is 500 seconds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "600 + 600 = 1200"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "200 + 300 = 500"
+     }
+    ]
+   },
+   {
+    "say": "So we want 1200 divided by 500. Cross two zeros off each number, and it is 12 divided by 5, which is 2.4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "1200 ÷ 500 = 12 ÷ 5"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "12 ÷ 5 = 2.4",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "2.4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The average speed is 2.4 metres a second."
+   },
+   {
+    "say": "Careful: 2.5, halfway between 3 and 2, is the tempting answer. But the boat spends 300 seconds at the slow speed and only 200 at the fast one, so the average leans towards 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "(3 + 2) ÷ 2 = 2.5"
+     },
+     {
+      "op": "strike",
+      "line": "x",
+      "target": {
+       "text": "(3 + 2) ÷ 2 = 2.5"
+      },
+      "note": "not the average speed"
+     }
+    ]
+   },
+   {
+    "say": "Check: 2.4 metres a second, for 500 seconds, is 1200 metres. Exactly the round trip.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "2.4 × 500 = 1200"
+     }
+    ]
+   },
+   {
+    "say": "So across and back: time each crossing, add the distances, add the times, and divide."
+   }
+  ]
+ },
+ "AIGEN_grade5_4a0451d9-932e-40a5-b895-2ac2b7d2e2cd": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Neha's car spends part of the trip at 80 and part at 40. Before any sums, read the question very carefully.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "400 km in all",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "half the TIME at 80 km/hr, half the TIME at 40 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "It says half the time, not half the distance. That one word changes the whole question.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "g2",
+      "target": {
+       "text": "TIME"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "g2",
+      "target": {
+       "text": "TIME",
+       "nth": 2
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "When the time is shared equally, picture any 2 hours of the trip: 1 hour at 80, and 1 hour at 40. How far do they go in those 2 hours?",
+    "board": [
+     {
+      "op": "write",
+      "id": "p",
+      "text": "Any 2 hours: 1 hour at 80, 1 hour at 40",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "80 km",
+      "120 km",
+      "40 km"
+     ],
+     "answer": 1,
+     "ifNot": "In the hour at 80 they cover 80 kilometres. In the hour at 40 they cover 40 more. Add the two together."
+    }
+   },
+   {
+    "say": "80 plus 40 is 120 kilometres in 2 hours. That is 60 kilometres for every hour, on average.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "80 + 40 = 120"
+     },
+     {
+      "op": "write",
+      "id": "s",
+      "text": "120 ÷ 2 = 60"
+     }
+    ]
+   },
+   {
+    "say": "The whole trip is that same pattern, repeated. So the average speed for all 400 kilometres is 60 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Average speed = 60 km/hr",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "60 km/hr"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Now the trap. Suppose it had said half the distance at each speed. Each half would be 200 kilometres: 2 and a half hours at 80, but 5 hours at 40.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x1",
+      "text": "200 ÷ 80 = 2.5"
+     },
+     {
+      "op": "write",
+      "id": "x2",
+      "text": "200 ÷ 40 = 5"
+     }
+    ]
+   },
+   {
+    "say": "That would be 400 kilometres in 7 and a half hours, only about 53.3 kilometres an hour. It is one of the choices, but it answers a different question.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x3",
+      "text": "2.5 + 5 = 7.5"
+     },
+     {
+      "op": "write",
+      "id": "x4",
+      "text": "400 ÷ 7.5 ≈ 53.3"
+     },
+     {
+      "op": "strike",
+      "line": "x4",
+      "target": {
+       "text": "53.3"
+      },
+      "note": "half the distance"
+     }
+    ]
+   },
+   {
+    "say": "So with two speeds, look for the key word. Equal times: the average speed is halfway between, here 60. Equal distances: it comes out lower."
+   }
+  ]
+ },
+ "AIGEN_grade5_4b594e5a-c931-42a0-8c21-513758c9b397": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya and Kiran leave school together for a park. Priya rides at one steady speed. Kiran starts slowly and finishes fast.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "School to park: 60 km",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "Priya: 15 km/hr all the way",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g3",
+      "text": "Kiran: half the distance at 10, half at 20 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Priya first. Time is distance divided by speed, and 60 divided by 15 is 4. Priya takes 4 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Time = distance ÷ speed",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "p",
+      "text": "60 ÷ 15 = 4"
+     }
+    ]
+   },
+   {
+    "say": "Kiran's speeds are 10 and 20, and halfway between them is 15, the same as Priya's speed. So will they arrive together?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "yes, together",
+      "no, Kiran is later",
+      "no, Kiran is earlier"
+     ],
+     "answer": 1,
+     "ifNot": "Let's not guess. Kiran spends longer on his slow half than on his fast half, so we must work out his time properly."
+    }
+   },
+   {
+    "say": "Each half of the distance is 30 kilometres. Kiran's slow half: 30 divided by 10 is 3 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "60 ÷ 2 = 30"
+     },
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "30 ÷ 10 = 3"
+     }
+    ]
+   },
+   {
+    "say": "His fast half: 30 divided by 20 is 1 and a half hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "30 ÷ 20 = 1.5"
+     },
+     {
+      "op": "note",
+      "line": "k2",
+      "target": {
+       "text": "1.5"
+      },
+      "text": "1½ hours",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "So Kiran's whole time is 3 plus 1 and a half, which is 4 and a half hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k3",
+      "text": "3 + 1.5 = 4.5"
+     }
+    ]
+   },
+   {
+    "say": "Priya takes 4 hours and Kiran takes 4 and a half. Priya is first, by half an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "4.5 − 4 = 0.5"
+     }
+    ]
+   },
+   {
+    "say": "The question wants minutes. Half an hour is half of 60 minutes, which is 30 minutes. Priya reaches the park first, by 30 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "0.5 × 60 = 30"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Priya is first, by 30 minutes",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "30 minutes"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Why didn't Kiran's two speeds balance out? Because he rode slowly for 3 whole hours, and fast for only 1 and a half. The slow part counted for more."
+   },
+   {
+    "say": "So never trust the number halfway between two speeds. Time each part with distance divided by speed, then compare."
+   }
+  ]
+ },
+ "AIGEN_grade5_4c99bde9-c14b-4e70-aa8f-93924d069dfc": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kavita's bus has three stretches, each at its own speed. We want the average speed for the whole journey.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "60 km/hr for 45 min, 30 km/hr for 40 min,",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "15 km/hr for 20 min",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Average speed is whole distance divided by whole time. The speeds are for an hour but the times are in minutes. So, 45 minutes is what fraction of an hour?",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1/2",
+      "3/4",
+      "4/5"
+     ],
+     "answer": 1,
+     "ifNot": "An hour is 60 minutes. 15 minutes is one quarter of that, so 45 minutes is three quarters."
+    }
+   },
+   {
+    "say": "45 minutes is three quarters of an hour. Three quarters of 60 is 45, so the highway stretch is 45 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f1",
+      "text": "45/60 = 3/4"
+     },
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "60 × 3/4 = 45"
+     }
+    ]
+   },
+   {
+    "say": "40 minutes is two thirds of an hour. Two thirds of 30 is 20, so the ghat stretch is 20 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f2",
+      "text": "40/60 = 2/3"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "30 × 2/3 = 20"
+     }
+    ]
+   },
+   {
+    "say": "20 minutes is one third of an hour. One third of 15 is 5, so the town stretch is 5 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f3",
+      "text": "20/60 = 1/3"
+     },
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "15 × 1/3 = 5"
+     }
+    ]
+   },
+   {
+    "say": "Whole distance: 45 plus 20 plus 5 is 70 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "45 + 20 + 5 = 70"
+     }
+    ]
+   },
+   {
+    "say": "Whole time: 45 plus 40 plus 20 is 105 minutes. Every 15 minutes is a quarter of an hour, and 105 divided by 15 is 7. So that is 7 quarters of an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "45 + 40 + 20 = 105"
+     },
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "105 ÷ 15 = 7"
+     }
+    ]
+   },
+   {
+    "say": "70 kilometres in 7 quarter hours is 10 kilometres every quarter of an hour. 4 quarters make an hour, so that is 40 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q1",
+      "text": "70 ÷ 7 = 10"
+     },
+     {
+      "op": "write",
+      "id": "q2",
+      "text": "10 × 4 = 40"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "70 ÷ (7/4) = 40",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "= 40"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: adding the three speeds and dividing by 3 gives 35, one of the choices. But the bus spent a different time at each speed, so that does not work.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "(60 + 30 + 15) ÷ 3 = 35"
+     },
+     {
+      "op": "strike",
+      "line": "x",
+      "target": {
+       "text": "(60 + 30 + 15) ÷ 3 = 35"
+      },
+      "note": "not the average speed"
+     }
+    ]
+   },
+   {
+    "say": "So find the distance of every stretch, add them, add the times, and divide. The average speed here is 40 kilometres an hour."
+   }
+  ]
+ },
+ "AIGEN_grade5_54aca949-2fcf-42bd-9525-fa6bfec7cb40": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kavya's family drive, stop for chai, and drive again. We want the average speed of the whole journey, and this question counts the break.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "120 km in all",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "60 km at 60 km/hr → 30-minute break →",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g3",
+      "text": "60 km at 30 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Average speed is whole distance divided by whole time. The distance is given, 120 kilometres, so all the work is in the time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Highway: 60 divided by 60 is 1 hour. Ghat road: 60 divided by 30 is 2 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "60 ÷ 60 = 1"
+     },
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "60 ÷ 30 = 2"
+     }
+    ]
+   },
+   {
+    "say": "The question says to count the chai break. So what is the whole time, from start to finish?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 hours",
+      "3.5 hours",
+      "2.5 hours"
+     ],
+     "answer": 1,
+     "ifNot": "Driving takes 1 hour and then 2 hours, which is 3. The 30-minute break adds half an hour, making 3 and a half hours."
+    }
+   },
+   {
+    "say": "1 hour, plus half an hour, plus 2 hours, is 3 and a half hours. The car stands still during the break, but the journey is still going on.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "g2",
+      "target": {
+       "text": "30-minute break"
+      },
+      "shape": "box"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "1 + 0.5 + 2 = 3.5"
+     }
+    ]
+   },
+   {
+    "say": "So the average speed is 120 divided by 3 and a half. Double both numbers to clear the half: 240 divided by 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "120 ÷ 3.5 = 240 ÷ 7"
+     }
+    ]
+   },
+   {
+    "say": "7 times 34 is 238, which leaves just 2 over. So 240 divided by 7 is 34 and a little bit: approximately 34.3 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "7 × 34 = 238"
+     },
+     {
+      "op": "write",
+      "id": "r",
+      "text": "240 − 238 = 2"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "240 ÷ 7 ≈ 34.3",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "34.3"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: if you forget the break, you get 120 divided by 3, which is 40. That tempting 40 is among the choices, but it is the speed while driving, not for the whole journey.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "120 ÷ 3 = 40"
+     },
+     {
+      "op": "strike",
+      "line": "x",
+      "target": {
+       "text": "120 ÷ 3 = 40"
+      },
+      "note": "forgets the break"
+     }
+    ]
+   },
+   {
+    "say": "So read whether a break counts. If it does, it adds to the time but not to the distance, and the average speed drops."
+   }
+  ]
+ },
+ "AIGEN_grade5_57d787f5-2ed4-4fc2-9026-dac42c105c56": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Deepa's trip has three parts: a drive, a chai break, and a second drive. We want the whole time, break included.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "400 km in all",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "80 km/hr for 2 hours → chai for 30 minutes →",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g3",
+      "text": "the rest at 60 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We know the first drive takes 2 hours, and the break is 30 minutes. The missing piece is the second drive, and for that we need its distance.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "g3",
+      "target": {
+       "text": "the rest"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "First, how far do they go before chai? Distance is speed times time: 80 times 2 is 160 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "80 × 2 = 160"
+     }
+    ]
+   },
+   {
+    "say": "So how far is left to drive after chai?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "160 km",
+      "240 km",
+      "320 km"
+     ],
+     "answer": 1,
+     "ifNot": "The whole trip is 400 kilometres, and 160 are done. Take 160 away from 400."
+    }
+   },
+   {
+    "say": "400 minus 160 leaves 240 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "400 − 160 = 240"
+     }
+    ]
+   },
+   {
+    "say": "Time is distance divided by speed. 240 divided by 60 is 4, so the second drive takes 4 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "240 ÷ 60 = 4"
+     }
+    ]
+   },
+   {
+    "say": "Now add every part, break included: 2 hours, half an hour, and 4 hours. That is 6 and a half hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "2 + 0.5 + 4 = 6.5"
+     }
+    ]
+   },
+   {
+    "say": "6 and a half hours is 6 hours 30 minutes. That is how long the whole journey takes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Total time = 6 hours 30 minutes",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "6 hours 30 minutes"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: there are two easy slips. Leaving out the chai break gives only 6 hours. And using the whole 400 kilometres for the second drive gives far too long."
+   },
+   {
+    "say": "Check the distances: 160 plus 240 is 400. The whole road is covered.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "160 + 240 = 400"
+     }
+    ]
+   },
+   {
+    "say": "So when a part is described as the rest, find what is left first. Then time each part, add the break, and total it all."
+   }
+  ]
+ },
+ "AIGEN_grade5_597a64d3-34f5-4bb7-8a42-f7d971e33595": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Aarav rides in two stretches, one quick and one slow. We want the whole distance to his friend's house.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "10 km/hr for 30 minutes",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "6 km/hr for 20 minutes",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Distance is speed times time. But each speed is for a whole hour, and Aarav rides for less than that. So, 30 minutes is what fraction of an hour?",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Distance = speed × time",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "u",
+      "text": "1 hour = 60 minutes",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1/3",
+      "1/2",
+      "3/10"
+     ],
+     "answer": 1,
+     "ifNot": "An hour is 60 minutes, and 30 is half of 60. So 30 minutes is half an hour."
+    }
+   },
+   {
+    "say": "In a whole hour Aarav would ride 10 kilometres. In half an hour he rides half of 10, which is 5 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "10 × 1/2 = 5"
+     }
+    ]
+   },
+   {
+    "say": "Now the crowded market. 20 minutes goes into 60 three times, so 20 minutes is one third of an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fr",
+      "text": "20/60 = 1/3"
+     }
+    ]
+   },
+   {
+    "say": "In a whole hour at this speed he would ride 6 kilometres. A third of 6 is 2 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "6 × 1/3 = 2"
+     }
+    ]
+   },
+   {
+    "say": "5 plus 2 is 7. Aarav rides 7 kilometres altogether.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "5 + 2 = 7",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "= 7"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "note",
+      "line": "a",
+      "target": {
+       "text": "= 7"
+      },
+      "text": "km",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the big slip here is to multiply the speed by the minutes, like 10 times 30. The speed is for each hour, so the time must be in hours too."
+   },
+   {
+    "say": "So when the time is in minutes, turn it into a fraction of an hour first. Then distance is speed times time, one stretch at a time."
+   }
+  ]
+ },
+ "AIGEN_grade5_6c21fe21-0dd5-461b-9280-a9cb4a1aaf1c": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Vikram jogs to the cricket ground and walks home again. Same road both ways, but two different speeds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "Ground: 4 km from home",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "jogs there at 8 km/hr, walks back at 4 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "We time each way separately. For the jog, which sum gives the time?",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Time = distance ÷ speed",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 ÷ 4",
+      "4 ÷ 8",
+      "8 × 4"
+     ],
+     "answer": 1,
+     "ifNot": "Time is distance divided by speed. The distance is 4 kilometres and the speed is 8, so it is 4 divided by 8."
+    }
+   },
+   {
+    "say": "4 divided by 8 is one half. That makes sense: in a whole hour he would jog 8 kilometres, so 4 kilometres takes half an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "4 ÷ 8 = 1/2"
+     },
+     {
+      "op": "note",
+      "line": "t1",
+      "target": {
+       "text": "1/2"
+      },
+      "text": "½ hour",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the walk home. The same 4 kilometres, at 4 kilometres an hour. 4 divided by 4 is 1, so the walk takes 1 hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "4 ÷ 4 = 1"
+     },
+     {
+      "op": "note",
+      "line": "t2",
+      "target": {
+       "text": "= 1"
+      },
+      "text": "hour",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the way back is not another half hour. It is the same road, but at half the speed, so it takes twice as long."
+   },
+   {
+    "say": "Half an hour plus 1 hour is 1 and a half hours. And half an hour is 30 minutes, so that is 1 hour 30 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "0.5 + 1 = 1.5"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Total time = 1 hour 30 minutes",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1 hour 30 minutes"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check each way. Jogging at 8 for half an hour covers 4 kilometres. Walking at 4 for 1 hour covers 4 kilometres. Both match the distance to the ground.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "8 × 1/2 = 4"
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "4 × 1 = 4"
+     }
+    ]
+   },
+   {
+    "say": "So for a there-and-back trip at two speeds: time each way with distance divided by speed, then add the two times."
+   }
+  ]
+ },
+ "AIGEN_grade5_6ce388ca-8012-4430-aaed-00b85ef1bbd3": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Deepa sets off first, and Arjun chases her on a faster cycle. We want to know when he catches up, and how far they still have to go.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "Grandmother's house: 24 km away",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "Deepa: starts 8:00 AM, 8 km/hr",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g3",
+      "text": "Arjun: starts 8:30 AM, 12 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Deepa has a head start of 30 minutes, which is half an hour. How far does she get before Arjun even sets off?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 km",
+      "4 km",
+      "12 km"
+     ],
+     "answer": 1,
+     "ifNot": "In a whole hour Deepa cycles 8 kilometres. In half an hour she covers half of that."
+    }
+   },
+   {
+    "say": "Half of 8 is 4. So at half past 8, when Arjun starts, Deepa is 4 kilometres ahead.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "8 × 1/2 = 4"
+     },
+     {
+      "op": "note",
+      "line": "h",
+      "target": {
+       "text": "= 4"
+      },
+      "text": "km head start",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now both are moving. Each hour Arjun covers 12 kilometres and Deepa covers 8. So each hour Arjun gains 12 minus 8, which is 4 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "12 − 8 = 4"
+     },
+     {
+      "op": "note",
+      "line": "c",
+      "target": {
+       "text": "= 4"
+      },
+      "text": "km gained each hour",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The gap is 4 kilometres, and it shrinks by 4 kilometres every hour. How long until Arjun catches up?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "half an hour",
+      "1 hour",
+      "2 hours"
+     ],
+     "answer": 1,
+     "ifNot": "The gap is 4 kilometres wide and closes by 4 kilometres each hour. 4 divided by 4 is 1, so it takes 1 hour."
+    }
+   },
+   {
+    "say": "4 divided by 4 is 1 hour. Arjun started at half past 8, so he catches Deepa at half past 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "4 ÷ 4 = 1"
+     },
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "8:30 AM + 1 hour = 9:30 AM",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Where are they then? Arjun has cycled 1 hour at 12, so 12 kilometres. Deepa has cycled 1 and a half hours at 8, which is also 12 kilometres. They really are side by side.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p1",
+      "text": "12 × 1 = 12"
+     },
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "8 × 1.5 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the question asks how far they are from Grandmother's house, not from home. 24 minus 12 leaves 12 kilometres still to go.",
+    "board": [
+     {
+      "op": "write",
+      "id": "r",
+      "text": "24 − 12 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So Arjun catches up at 9 30 in the morning, and they are 12 kilometres away from Grandmother's house.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "9:30 AM, and 12 km from Grandmother's",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "9:30 AM"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "12 km"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So for a catching-up question: find the head start, find how fast the gap closes, and divide. Then read exactly what the question asks for."
+   }
+  ]
+ },
+ "AIGEN_grade5_71d92ff4-e747-4f87-84f7-ea9b483d01fc": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kabir's dad drives the first half of the way quickly, then traffic slows the second half. We want the time for the whole trip.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "Dhaba: 120 km away",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "first half at 60 km/hr, second half at 40 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Half of 120 is 60, so each half is 60 kilometres. The first half is 60 kilometres at 60 kilometres an hour, and that takes exactly 1 hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "120 ÷ 2 = 60"
+     },
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Time = distance ÷ speed",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "60 ÷ 60 = 1"
+     }
+    ]
+   },
+   {
+    "say": "Now the second half: 60 kilometres at 40 kilometres an hour. Which sum gives the time?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "40 ÷ 60",
+      "60 ÷ 40",
+      "120 ÷ 40"
+     ],
+     "answer": 1,
+     "ifNot": "Time is distance divided by speed. This half is 60 kilometres long and the speed is 40, so it is 60 divided by 40."
+    }
+   },
+   {
+    "say": "60 divided by 40 is 1 and a half. The first 40 kilometres take 1 hour, and what is left takes half an hour more.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "60 ÷ 40 = 1.5"
+     },
+     {
+      "op": "note",
+      "line": "t2",
+      "target": {
+       "text": "1.5"
+      },
+      "text": "1½ hours",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "1 hour plus 1 and a half hours is 2 and a half hours. That is 2 hours 30 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "1 + 1.5 = 2.5"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Total time = 2 hours 30 minutes",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "2 hours 30 minutes"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: it is tempting to average the speeds to 50, and divide 120 by 50. That gives a little under 2 and a half hours, and it is a trap. The slow half lasts longer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "(60 + 40) ÷ 2 = 50"
+     },
+     {
+      "op": "strike",
+      "line": "x",
+      "target": {
+       "text": "(60 + 40) ÷ 2 = 50"
+      },
+      "note": "a trap"
+     }
+    ]
+   },
+   {
+    "say": "Check the distance. 1 hour at 60 is 60 kilometres. 1 and a half hours at 40 is 60 kilometres as well. Together, 120 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "60 × 1 + 40 × 1.5 = 120"
+     }
+    ]
+   },
+   {
+    "say": "So when a trip is split into halves by distance, time each half on its own and add. Never average the two speeds."
+   }
+  ]
+ },
+ "AIGEN_grade5_760c2d33-3b78-477f-901a-99386bad9471": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's boat goes down the river to a temple and back up again. We want the average speed on the water, with the time at the temple left out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "Downstream: 18 km/hr for 40 minutes",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "30 minutes at the temple (not counted)",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g3",
+      "text": "Upstream, same route: 12 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First we need the distance to the temple. The speed is for an hour, so: 40 minutes is what fraction of an hour?",
+    "board": [
+     {
+      "op": "write",
+      "id": "u",
+      "text": "1 hour = 60 minutes",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3/4",
+      "2/3",
+      "4/10"
+     ],
+     "answer": 1,
+     "ifNot": "40 out of 60 is the same as 4 out of 6, and that is 2 out of 3. So 40 minutes is two thirds of an hour."
+    }
+   },
+   {
+    "say": "40 minutes is two thirds of an hour. Two thirds of 18 is 12, so the temple is 12 kilometres away.",
+    "board": [
+     {
+      "op": "write",
+      "id": "fr",
+      "text": "40/60 = 2/3"
+     },
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "18 × 2/3 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Coming back is the same 12 kilometres, at 12 kilometres an hour. 12 divided by 12 is 1, so the trip back takes 1 hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "12 ÷ 12 = 1"
+     }
+    ]
+   },
+   {
+    "say": "Whole distance: 12 kilometres there and 12 back make 24 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "12 + 12 = 24"
+     }
+    ]
+   },
+   {
+    "say": "Whole time, leaving out the temple as the question says: two thirds of an hour, plus 1 hour. In thirds, that is 5 thirds of an hour.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "g2",
+      "target": {
+       "text": "30 minutes at the temple"
+      },
+      "note": "leave out"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "2/3 + 1 = 5/3"
+     }
+    ]
+   },
+   {
+    "say": "So the boat covers 24 kilometres in 5 thirds of an hour. In each third of an hour, that is 24 divided by 5, which is 4.8 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "p",
+      "text": "24 ÷ 5 = 4.8"
+     }
+    ]
+   },
+   {
+    "say": "A whole hour is 3 thirds, and 3 times 4.8 is 14.4. The average speed is 14.4 kilometres an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "4.8 × 3 = 14.4"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "24 ÷ (5/3) = 14.4",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "14.4"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 15, halfway between 18 and 12, is one of the choices. But the boat spent a whole hour at the slow speed and only 40 minutes at the fast one, so the answer is below 15.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "(18 + 12) ÷ 2 = 15"
+     },
+     {
+      "op": "strike",
+      "line": "x",
+      "target": {
+       "text": "(18 + 12) ÷ 2 = 15"
+      },
+      "note": "not the average speed"
+     }
+    ]
+   },
+   {
+    "say": "So find the distance from the leg you know, time the other leg, then divide whole distance by whole time on the move."
+   }
+  ]
+ },
+ "AIGEN_grade5_7c4fc3bc-d48a-4421-952e-19b607aebd1b": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Suresh jogs to the park and walks back. Priya cycles there and back at one steady speed, and takes exactly as long as he does. We want her speed.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "Park: 6 km away",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "Suresh: there at 6 km/hr, back at 4 km/hr",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g3",
+      "text": "Priya: same total time, one steady speed",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Priya's time is the same as Suresh's, so we find his first. Jogging there: 6 divided by 6 is 1 hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Time = distance ÷ speed",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "6 ÷ 6 = 1"
+     }
+    ]
+   },
+   {
+    "say": "Walking back: 6 divided by 4 is 1 and a half hours. Altogether, 1 plus 1 and a half makes 2 and a half hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "6 ÷ 4 = 1.5"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "1 + 1.5 = 2.5"
+     }
+    ]
+   },
+   {
+    "say": "So Priya is out for 2 and a half hours too. How far does she cycle in that time?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6 km",
+      "12 km",
+      "10 km"
+     ],
+     "answer": 1,
+     "ifNot": "Priya goes to the park and back, just like Suresh. That is 6 kilometres, and then 6 more."
+    }
+   },
+   {
+    "say": "6 plus 6 is 12 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "6 + 6 = 12"
+     }
+    ]
+   },
+   {
+    "say": "Speed is distance divided by time: 12 divided by 2 and a half. Double both numbers to clear the half, and it becomes 24 divided by 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "12 ÷ 2.5 = 24 ÷ 5"
+     }
+    ]
+   },
+   {
+    "say": "5 times 4 is 20, which leaves 4 over. And 4 shared among 5 is 0.8. So 24 divided by 5 is 4.8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "5 × 4 = 20"
+     },
+     {
+      "op": "write",
+      "id": "r",
+      "text": "4 ÷ 5 = 0.8"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "24 ÷ 5 = 4.8",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "4.8"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Priya cycles at 4.8 kilometres an hour. Careful: 5, halfway between 6 and 4, is the tempting answer. But Suresh walks for longer than he jogs, so the true speed is a little under 5."
+   },
+   {
+    "say": "Check: 4.8 kilometres an hour, for 2 and a half hours, is 12 kilometres. There and back, exactly.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "4.8 × 2.5 = 12"
+     }
+    ]
+   },
+   {
+    "say": "So one steady speed that matches a whole trip is the whole distance divided by the whole time."
+   }
+  ]
+ },
+ "AIGEN_grade5_7dad391b-e598-40db-bb55-7906d0be05d0": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "A long story, so let's pick out what matters. The boat's trip back and Arjun's ride begin at the same moment. Whichever takes less time arrives first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "Boat: 12 km/hr for 1 h 30 min to the temple,",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "then back the same way at 8 km/hr",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g3",
+      "text": "Arjun: 20 km by road at 10 km/hr",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Arjun is the easy one. Time is distance divided by speed, and 20 divided by 10 is 2. He takes 2 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Time = distance ÷ speed",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "ar",
+      "text": "20 ÷ 10 = 2"
+     }
+    ]
+   },
+   {
+    "say": "For the boat's trip back we know the speed, 8. What else do we need?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "how long they stayed at the temple",
+      "how far the temple is by river",
+      "how fast Arjun cycles"
+     ],
+     "answer": 1,
+     "ifNot": "Time is distance divided by speed. We have the speed, so the missing piece is the river distance to the temple."
+    }
+   },
+   {
+    "say": "The trip out tells us. 12 kilometres an hour for 1 and a half hours: 12 for the hour and 6 more for the half hour. That is 18 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "12 × 1.5 = 18"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the river route is 18 kilometres, but the road is 20. They are different lengths. The boat uses 18, and only Arjun uses 20.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "d",
+      "target": {
+       "text": "18"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "g3",
+      "target": {
+       "text": "20 km"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Boat back: 18 divided by 8. 8 goes into 18 twice, with 2 left over, and 2 out of 8 is a quarter. So 2 and a quarter hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "bt",
+      "text": "18 ÷ 8 = 2.25"
+     },
+     {
+      "op": "note",
+      "line": "bt",
+      "target": {
+       "text": "2.25"
+      },
+      "text": "2¼ hours",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Arjun takes 2 hours and the boat takes 2 and a quarter. Arjun arrives first, by a quarter of an hour.",
+    "board": [
+     {
+      "op": "write",
+      "id": "df",
+      "text": "2.25 − 2 = 0.25"
+     }
+    ]
+   },
+   {
+    "say": "A quarter of an hour is a quarter of 60 minutes, which is 15 minutes. Arjun arrives first, by 15 minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "0.25 × 60 = 15"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Arjun is first, by 15 minutes",
+      "label": true,
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "15 minutes"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Notice what we never needed: how long they spent at the temple. Both trips start together afterwards, so that time makes no difference."
+   },
+   {
+    "say": "So in a long story problem, find the two things being compared, give each its own distance and speed, and compare the times."
+   }
+  ]
+ },
+ "AIGEN_grade5_8d081413-2efb-49c7-b56e-22c5f7f76efb": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ankit's train runs fast for an hour and then slower for half an hour. We want its average speed for the whole journey.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "90 km/hr for 1 hour",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "60 km/hr for 30 minutes",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Average speed is whole distance divided by whole time. First stretch: 90 kilometres an hour, for 1 hour, is 90 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "90 × 1 = 90"
+     }
+    ]
+   },
+   {
+    "say": "Second stretch: 60 kilometres an hour, but only for 30 minutes. How far does the train go?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "60 km",
+      "30 km",
+      "1800 km"
+     ],
+     "answer": 1,
+     "ifNot": "60 kilometres an hour means 60 kilometres in a full hour. 30 minutes is half an hour, so the train covers half of that."
+    }
+   },
+   {
+    "say": "Half of 60 is 30 kilometres. Careful: we multiply by a half, because the time has to be in hours, not minutes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "60 × 1/2 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Whole distance: 90 plus 30 is 120 kilometres. Whole time: 1 hour plus half an hour is 1 and a half hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "90 + 30 = 120"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "1 + 0.5 = 1.5"
+     }
+    ]
+   },
+   {
+    "say": "So we want 120 divided by 1 and a half. Double both numbers to clear the half: 240 divided by 3, which is 80.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "120 ÷ 1.5 = 240 ÷ 3"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "240 ÷ 3 = 80",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "= 80"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "The average speed is 80 kilometres an hour."
+   },
+   {
+    "say": "Careful: halfway between 90 and 60 is 75, and that is one of the choices. But the train ran at 90 for twice as long as it ran at 60, so the average sits nearer to 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "(90 + 60) ÷ 2 = 75"
+     },
+     {
+      "op": "strike",
+      "line": "x",
+      "target": {
+       "text": "(90 + 60) ÷ 2 = 75"
+      },
+      "note": "not the average speed"
+     }
+    ]
+   },
+   {
+    "say": "Check: 80 kilometres an hour, for 1 and a half hours, is 80 plus half of 80, which is 120 kilometres. That is the distance we found.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "80 × 1.5 = 120"
+     }
+    ]
+   },
+   {
+    "say": "So find the distance of each stretch, with the time in hours. Add the distances, add the times, and divide."
+   }
+  ]
+ },
+ "AIGEN_grade5_8e29fe73-a781-43bf-be05-6d8fc378eefd": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Kavya's family drive fast on the highway, then slowly up the mountain. We want the average speed for the whole journey.",
+    "board": [
+     {
+      "op": "write",
+      "id": "g1",
+      "text": "60 km/hr for 2 hours",
+      "label": true,
+      "tone": "given"
+     },
+     {
+      "op": "write",
+      "id": "g2",
+      "text": "30 km/hr for 1 hour",
+      "label": true,
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "The number halfway between 60 and 30 is 45. Before we work anything out: will the average speed be 45, more than 45, or less?",
+    "board": [
+     {
+      "op": "write",
+      "id": "x",
+      "text": "(60 + 30) ÷ 2 = 45"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "exactly 45",
+      "more than 45",
+      "less than 45"
+     ],
+     "answer": 1,
+     "ifNot": "They drive at 60 for 2 hours, but at 30 for only 1 hour. More of the trip is fast, so the average is pulled up above 45."
+    }
+   },
+   {
+    "say": "Let's prove it. Average speed is the whole distance divided by the whole time.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "x",
+      "target": {
+       "text": "(60 + 30) ÷ 2 = 45"
+      },
+      "note": "not the average speed"
+     },
+     {
+      "op": "write",
+      "id": "f",
+      "text": "Average speed = total distance ÷ total time",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Distance is speed times time. Highway: 60 times 2 is 120 kilometres. Mountain road: 30 times 1 is 30 kilometres.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "60 × 2 = 120"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "30 × 1 = 30"
+     }
+    ]
+   },
+   {
+    "say": "Whole distance: 120 plus 30 is 150 kilometres. Whole time: 2 hours plus 1 hour is 3 hours.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "120 + 30 = 150"
+     },
+     {
+      "op": "write",
+      "id": "t",
+      "text": "2 + 1 = 3"
+     }
+    ]
+   },
+   {
+    "say": "150 divided by 3 is 50. The average speed is 50 kilometres an hour, and yes, it is more than 45.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "150 ÷ 3 = 50",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "= 50"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Here is another way to see it. List the speed for each hour of the trip: 60, 60, then 30. Add them and share by 3, and you get 50 again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "(60 + 60 + 30) ÷ 3 = 50"
+     }
+    ]
+   },
+   {
+    "say": "So average speed is whole distance divided by whole time. A speed kept up for longer counts for more."
+   }
+  ]
+ }
+}

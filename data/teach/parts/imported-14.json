@@ -1,0 +1,7859 @@
+{
+ "AIGEN_grade5_b1c91564-cf56-4484-9be9-3c1173947993": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Team Superstars has the ID 52,752. It has two 2s. The coach asks how many times greater the 2 in the thousands place is than the 2 in the units place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "52,752",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "2",
+       "nth": 2
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Here is the number in a place-value chart. The 2 on the left sits in the thousands column. So what is it worth?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "52752",
+       "highlight": [
+        "d1",
+        "d4"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "2000",
+      "200"
+     ],
+     "answer": 1,
+     "ifNot": "Count the columns from the right: units, tens, hundreds, thousands. So this 2 means 2 thousands, and that is 2000."
+    }
+   },
+   {
+    "say": "2 times 1000 is 2000. That is the place value of the 2 on the left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "2 × 1000 = 2000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "2"
+      },
+      "text": "thousands",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "Now the 2 on the right. It is in the units column, so it is worth just 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "2 × 1 = 2"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "2",
+       "nth": 2
+      },
+      "text": "units",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "How many times greater is 2000 than 2? Which sum tells us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2000 − 2",
+      "2 ÷ 2",
+      "2000 ÷ 2"
+     ],
+     "answer": 2,
+     "ifNot": "How many times means divide. So we divide what the digits are worth: 2000 by 2."
+    }
+   },
+   {
+    "say": "2000 divided by 2 is 1000. That is just half of 2000. Careful: taking 2 away from 2000 would tell us how much more, not how many times.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "2000 ÷ 2 = 1000"
+     }
+    ]
+   },
+   {
+    "say": "Check by multiplying back: 1000 times 2 is 2000. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "1000 × 2 = 2000"
+     }
+    ]
+   },
+   {
+    "say": "So the 2 in the thousands place is worth 1000 times the 2 in the units place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "1000 times",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "1000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So for how many times: find what each digit is worth, then divide the bigger value by the smaller."
+   }
+  ]
+ },
+ "AIGEN_grade5_b68fd5df-2b16-46dd-b017-a532cefddda7": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The firecrackers cost 86,452 rupees. Arjun takes the place value of the 4 away from the place value of the 8. Let's find what he gets.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "86,452",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "4"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Here is the number in a place-value chart. The 8 sits in the ten-thousands column. So what is it worth?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "86452",
+       "highlight": [
+        "d0",
+        "d2"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8",
+      "80,000",
+      "8000"
+     ],
+     "answer": 1,
+     "ifNot": "Count the columns from the right: ones, tens, hundreds, thousands, ten-thousands. So this 8 means 8 ten-thousands, and that is 80,000."
+    }
+   },
+   {
+    "say": "So the 8 is worth 8 times 10,000, which is 80,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "8 × 10,000 = 80,000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "8"
+      },
+      "text": "ten-thousands",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "And the 4 sits in the hundreds column. 4 times 100 is 400.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "4 × 100 = 400"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "4"
+      },
+      "text": "hundreds",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Arjun subtracts the place value of the 4 from the place value of the 8. Which sum is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "80,000 − 400",
+      "80,000 + 400",
+      "8 − 4"
+     ],
+     "answer": 0,
+     "ifNot": "Difference means subtract. And we subtract what the digits are worth, 80,000 and 400, not the bare digits."
+    }
+   },
+   {
+    "say": "80,000 minus 400 is 79,600. Careful: 8 minus 4 would give just 4, and that forgets the columns completely.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "80,000 − 400 = 79,600"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 79,600 plus 400 is 80,000. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "79,600 + 400 = 80,000"
+     }
+    ]
+   },
+   {
+    "say": "So Arjun gets 79,600.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference = 79,600",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "79,600"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So: the place value of each digit first, from its column. Only then do we subtract."
+   }
+  ]
+ },
+ "AIGEN_grade5_be9ccf78-94f6-45c4-98a1-742afbccdbdf": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ananya's card shows 47,652. Her teacher asks for the difference between the place value of the 7 and the face value of the 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "47,652",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "A digit is worth more the further left it sits. In the chart, the 7 is in the thousands column. So what is it worth?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "47652",
+       "highlight": [
+        "d1"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7000",
+      "700",
+      "7"
+     ],
+     "answer": 0,
+     "ifNot": "Count the columns from the right: ones, tens, hundreds, thousands. So this 7 means 7 thousands, and that is 7000."
+    }
+   },
+   {
+    "say": "So the 7 is worth 7 times 1000, which is 7000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7 × 1000 = 7000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "text": "thousands",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "Now the face value of 7. Face value is just the digit as it looks, whatever column it sits in. So the face value of 7 is simply 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "Face value of 7 = 7",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now we want the difference between the two. Which sum is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7000 − 7",
+      "7 − 7",
+      "7000 + 7"
+     ],
+     "answer": 0,
+     "ifNot": "The place value is 7000 and the face value is 7. Difference means subtract, so it is 7000 minus 7."
+    }
+   },
+   {
+    "say": "7000 minus 7 is 6993. Careful: it is the same digit, but its place value and its face value are not the same, so the answer is not 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "7000 − 7 = 6993"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 6993 plus 7 is 7000. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "6993 + 7 = 7000"
+     }
+    ]
+   },
+   {
+    "say": "So the difference is 6993.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference = 6993",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6993"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So remember: place value depends on the column, and face value is just the digit. Find both, then subtract."
+   }
+  ]
+ },
+ "AIGEN_grade5_bededa81-f160-4900-acf0-be30c0a9d05c": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ravi's number has 5 digits, and five clues tell us what they are. We will fill the places one by one, then add up the digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "_ _ _ _ _    sum of the digits = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Clue 1 puts 7 in the ten-thousands place. Clues 3 and 4 put 5 in the tens place and 1 in the units place. Those three are simply given.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "7 _ _ 5 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Clue 5 says the place value of the thousands digit is 3000. So which digit sits in the thousands place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3000",
+      "30",
+      "3"
+     ],
+     "answer": 2,
+     "ifNot": "In the thousands place a digit counts thousands. It takes 3 thousands to make 3000, so the digit is 3."
+    }
+   },
+   {
+    "say": "3 times 1000 is 3000, so the thousands digit is 3. Careful: the digit is 3, not 3000. A place holds only one digit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "3 × 1000 = 3000"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "7 3 _ 5 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Clue 2 says the hundreds digit is twice the thousands digit. What is the hundreds digit?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6",
+      "3",
+      "5"
+     ],
+     "answer": 0,
+     "ifNot": "Twice means 2 times. The thousands digit is 3, and 2 times 3 is 6."
+    }
+   },
+   {
+    "say": "2 times 3 is 6. Now every place is filled, and Ravi's number is 73651.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "2 × 3 = 6"
+     },
+     {
+      "op": "write",
+      "id": "s3",
+      "text": "Ravi's number = 73651",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "73651"
+      }
+     }
+    ]
+   },
+   {
+    "say": "The question asks for the sum of the digits, not the number itself. 7 plus 3 is 10, and 6 more makes 16.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p1",
+      "text": "7 + 3 = 10"
+     },
+     {
+      "op": "write",
+      "id": "p2",
+      "text": "10 + 6 = 16"
+     }
+    ]
+   },
+   {
+    "say": "Then 16 plus 5 is 21, and 1 more makes 22. The digits add up to 22.",
+    "board": [
+     {
+      "op": "write",
+      "id": "p3",
+      "text": "16 + 5 = 21"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "7 + 3 + 6 + 5 + 1 = 22",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "22"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check the clues once more. 6 is twice 3, the tens digit is 5, the units digit is 1, and the 3 in the thousands place is worth 3000. All five fit."
+   },
+   {
+    "say": "So in a clue puzzle, draw the places as blanks, fill in what is given straight away, and leave the clues that depend on other digits for last."
+   }
+  ]
+ },
+ "AIGEN_grade5_cf809cdc-c593-4f99-a744-5c3a51752d51": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ananya's tile shows 63,842. She wonders how many times bigger the place value of the 3 is than the place value of the 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "63,842",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "2"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Look at the chart. The 3 is in the thousands column. What is it worth there?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "63842",
+       "highlight": [
+        "d1",
+        "d4"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3000",
+      "3",
+      "300"
+     ],
+     "answer": 0,
+     "ifNot": "Count the columns from the right: units, tens, hundreds, thousands. So this 3 means 3 thousands, and that is 3000."
+    }
+   },
+   {
+    "say": "3 times 1000 is 3000. That is the place value of the 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "3 × 1000 = 3000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "3"
+      },
+      "text": "thousands",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "Now the 2. It is in the units column, so it is worth just 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "2 × 1 = 2"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "2"
+      },
+      "text": "units",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "How many times 2 is 3000? Which sum tells us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 ÷ 2",
+      "3000 − 2",
+      "3000 ÷ 2"
+     ],
+     "answer": 2,
+     "ifNot": "How many times means divide. So we divide what the digits are worth: 3000 by 2."
+    }
+   },
+   {
+    "say": "3000 divided by 2 is 1500. That is just half of 3000. Careful: dividing the bare digits, 3 by 2, forgets that the 3 stands for thousands.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "3000 ÷ 2 = 1500"
+     }
+    ]
+   },
+   {
+    "say": "Check by multiplying back: 1500 times 2 is 3000. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "1500 × 2 = 3000"
+     }
+    ]
+   },
+   {
+    "say": "So the place value of the 3 is 1500 times the place value of the 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "1500 times",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "1500"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So for how many times: find what each digit is worth, then divide the bigger value by the smaller."
+   }
+  ]
+ },
+ "AIGEN_grade5_cf8eb684-7c68-419b-8814-6919efbdc6fe": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya's number is 73809. We want the difference between the place value of the 8 and the place value of the 3. Let's start with the 3, because it sits further left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "73809",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "8"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "A digit is worth more the further left it sits. In the chart, the 3 is in the thousands column. So what is it worth?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "73809",
+       "highlight": [
+        "d1",
+        "d2"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "3000",
+      "300"
+     ],
+     "answer": 1,
+     "ifNot": "Count the columns from the right: ones, tens, hundreds, thousands. So this 3 means 3 thousands, and that is 3000."
+    }
+   },
+   {
+    "say": "So the 3 is worth 3 times 1000, which is 3000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "3 × 1000 = 3000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "3"
+      },
+      "text": "thousands",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "And the 8 sits in the hundreds column. 8 times 100 is 800.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "8 × 100 = 800"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "8"
+      },
+      "text": "hundreds",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, the difference between 3000 and 800. Which sum gives it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3000 − 800",
+      "3000 + 800",
+      "8 − 3"
+     ],
+     "answer": 0,
+     "ifNot": "Difference means subtract. And we subtract what the digits are worth, 3000 and 800, not the bare digits."
+    }
+   },
+   {
+    "say": "3000 minus 800 is 2200. Careful: 8 is the bigger digit, but the 3 is worth more, because it sits further left. So the 800 comes off the 3000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "3000 − 800 = 2200"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by putting it back: 2200 plus 800 is 3000, just where we started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "2200 + 800 = 3000"
+     }
+    ]
+   },
+   {
+    "say": "So her friend should answer 2200.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference = 2200",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "2200"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So: the place value of each digit first, from its column. Only then do we subtract."
+   }
+  ]
+ },
+ "AIGEN_grade5_dbdee766-0e97-4938-86de-7dd493ff43d9": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Riya's number has 6 digits and six clues. Some clues give a digit straight away, and some depend on other digits. We start with the ones that are simply given.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "_ _ _ _ _ _    lakhs down to units",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The thousands digit is 7, the hundreds digit is 8 and the tens digit is 2. Write those in.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "_ _ 7 8 2 _",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The lakhs digit is 3 more than the tens digit. So what goes in the lakhs place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5",
+      "6",
+      "1"
+     ],
+     "answer": 0,
+     "ifNot": "The tens digit is 2. 3 more than 2 means 2 plus 3, and that is 5."
+    }
+   },
+   {
+    "say": "2 plus 3 is 5. And the ten-thousands digit is half of the hundreds digit: half of 8 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "l",
+      "text": "2 + 3 = 5"
+     },
+     {
+      "op": "write",
+      "id": "tt",
+      "text": "8 ÷ 2 = 4"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "5 4 7 8 2 _",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The units digit is the ten-thousands digit plus the tens digit. 4 plus 2 is 6. So the number is 5,47,826.",
+    "board": [
+     {
+      "op": "write",
+      "id": "u",
+      "text": "4 + 2 = 6"
+     },
+     {
+      "op": "write",
+      "id": "s3",
+      "text": "Riya's number = 5,47,826",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "547826",
+       "highlight": [
+        "d0",
+        "d5"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Now the question. First we need the place value of the 5 in the lakhs place. What is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "50,000",
+      "5,00,000",
+      "5"
+     ],
+     "answer": 1,
+     "ifNot": "The lakhs place is the sixth place from the right. A 5 there stands for 5 lakhs, and that is a 5 followed by five zeros: 5,00,000."
+    }
+   },
+   {
+    "say": "5 times 1,00,000 is 5,00,000. And the face value of the units digit is just the digit itself, 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pv",
+      "text": "5 × 1,00,000 = 5,00,000"
+     },
+     {
+      "op": "write",
+      "id": "fv",
+      "text": "Face value of 6 = 6",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The difference is 5,00,000 minus 6. Taking 6 away drops us just below 5 lakh, to 4,99,994.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "5,00,000 − 6 = 4,99,994",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "4,99,994"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: adding the 6 instead would give 5,00,006. But difference means subtract.",
+    "board": [
+     {
+      "op": "write",
+      "id": "no",
+      "text": "5,00,000 + 6 = 5,00,006"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 4,99,994 plus 6 is 5,00,000. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "4,99,994 + 6 = 5,00,000"
+     }
+    ]
+   },
+   {
+    "say": "So build the number from the clues first, given digits before linked ones. Then answer what was asked, using place value for one digit and face value for the other."
+   }
+  ]
+ },
+ "AIGEN_grade5_dfd627e9-76db-49e9-91db-6d63282073a9": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The chai stall collected 72,836 rupees. Priya subtracts the place value of the 2 from the place value of the 7. What does she get?",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "72,836",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "2"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Look at the chart. The 7 is in the ten-thousands column. What is it worth there?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "72836",
+       "highlight": [
+        "d0",
+        "d1"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "70,000",
+      "7",
+      "7000"
+     ],
+     "answer": 0,
+     "ifNot": "Count the columns from the right: ones, tens, hundreds, thousands, ten-thousands. So this 7 means 7 ten-thousands, and that is 70,000."
+    }
+   },
+   {
+    "say": "7 times 10,000 is 70,000. That is the place value of the 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7 × 10,000 = 70,000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "text": "ten-thousands",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "Now the 2. It is in the thousands column, so it is worth 2 times 1000, which is 2000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "2 × 1000 = 2000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "2"
+      },
+      "text": "thousands",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Priya takes the place value of the 2 away from the place value of the 7. Which sum is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7 − 2",
+      "70,000 + 2000",
+      "70,000 − 2000"
+     ],
+     "answer": 2,
+     "ifNot": "Difference means subtract. And we subtract what the digits are worth, 70,000 and 2000, not the bare digits."
+    }
+   },
+   {
+    "say": "70,000 minus 2000 is 68,000. Careful: 7 minus 2 gives 5, but that only compares the digits. The 7 stands for ten-thousands and the 2 for thousands.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "70,000 − 2000 = 68,000"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 68,000 plus 2000 is 70,000. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "68,000 + 2000 = 70,000"
+     }
+    ]
+   },
+   {
+    "say": "So Priya gets 68,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference = 68,000",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "68,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So: the place value of each digit first, from its column. Only then do we subtract."
+   }
+  ]
+ },
+ "AIGEN_grade5_e4f3ec79-bcf9-441c-a7c5-ea590866ec99": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Arjun has saved 76,308 rupees. He wonders how many times the place value of the 7 is greater than the face value of the 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "76,308",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "8"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "A digit is worth more the further left it sits. In the chart, the 7 is in the ten-thousands column. So what is it worth?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "76308",
+       "highlight": [
+        "d0",
+        "d4"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "70,000",
+      "7",
+      "7000"
+     ],
+     "answer": 0,
+     "ifNot": "Count the columns from the right: units, tens, hundreds, thousands, ten-thousands. So this 7 means 7 ten-thousands, and that is 70,000."
+    }
+   },
+   {
+    "say": "So the 7 is worth 7 times 10,000, which is 70,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7 × 10,000 = 70,000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "text": "ten-thousands",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "Now the face value of 8. Face value is just the digit as it looks, whatever column it sits in. So the face value of 8 is simply 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "Face value of 8 = 8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How many times 8 is 70,000? Which sum tells us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "70,000 − 8",
+      "70,000 × 8",
+      "70,000 ÷ 8"
+     ],
+     "answer": 2,
+     "ifNot": "How many times one number goes into another is a divide. So it is 70,000 divided by 8."
+    }
+   },
+   {
+    "say": "Dividing by 8 looks hard. But 8 is 2 times 2 times 2, so we can simply halve, 3 times over.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h0",
+      "text": "8 = 2 × 2 × 2"
+     }
+    ]
+   },
+   {
+    "say": "Half of 70,000 is 35,000. Half of 35,000 is 17,500. And half of 17,500 is 8750.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h1",
+      "text": "70,000 ÷ 2 = 35,000"
+     },
+     {
+      "op": "write",
+      "id": "h2",
+      "text": "35,000 ÷ 2 = 17,500"
+     },
+     {
+      "op": "write",
+      "id": "h3",
+      "text": "17,500 ÷ 2 = 8750"
+     }
+    ]
+   },
+   {
+    "say": "Three halvings make a divide by 8. So 70,000 divided by 8 is 8750.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "70,000 ÷ 8 = 8750"
+     }
+    ]
+   },
+   {
+    "say": "Check by multiplying back: 8750 times 8 is 70,000. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "8750 × 8 = 70,000"
+     }
+    ]
+   },
+   {
+    "say": "So the place value of the 7 is 8750 times the face value of the 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "8750 times",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "8750"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So remember: place value depends on the column, and face value is just the digit. Find both, then divide."
+   }
+  ]
+ },
+ "AIGEN_grade5_f4e5ebb5-48e9-4336-82ea-09cdcba6b3b0": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meena's family spent 86,473 rupees. We swap the digits 6 and 4, and ask by how much the number changes.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "86,473",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "4"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Here it is in the chart. The 6 is in the thousands place and the 4 is in the hundreds place. After the swap, what is the new number?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "86473",
+       "highlight": [
+        "d1",
+        "d2"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "86,743",
+      "84,673",
+      "48,673"
+     ],
+     "answer": 1,
+     "ifNot": "Only the 6 and the 4 change places. The 8 in front and the 7 and 3 at the end stay where they are. So it reads 8, 4, 6, 7, 3."
+    }
+   },
+   {
+    "say": "The new number is 84,673. The 4 has moved up to the thousands and the 6 has moved down to the hundreds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "m",
+      "text": "84,673"
+     },
+     {
+      "op": "mark",
+      "line": "m",
+      "target": {
+       "text": "4"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "m",
+      "target": {
+       "text": "6"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Is the new number bigger or smaller than 86,473?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "smaller",
+      "bigger"
+     ],
+     "answer": 0,
+     "ifNot": "Compare the thousands place. The old number has 6 thousands there, and the new one has only 4. So the new number is smaller."
+    }
+   },
+   {
+    "say": "Smaller. So the change is the old number minus the new one. The 8 in front and the 7 and 3 at the end are the same in both, so only the middle matters.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d0",
+      "text": "86,473 − 84,673 = ?"
+     }
+    ]
+   },
+   {
+    "say": "In the middle, the old number has 6 thousands and 4 hundreds, which is 6400. The new one has 4 thousands and 6 hundreds, which is 4600.",
+    "board": [
+     {
+      "op": "write",
+      "id": "o",
+      "text": "6000 + 400 = 6400"
+     },
+     {
+      "op": "write",
+      "id": "p",
+      "text": "4000 + 600 = 4600"
+     }
+    ]
+   },
+   {
+    "say": "6400 minus 4600 is 1800. So the number goes down by 1800 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "6400 − 4600 = 1800"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "86,473 − 84,673 = 1800",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "1800"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the answer is not 2000. The 6 and the 4 do differ by 2 in the thousands place, but the swap hands 2 hundreds back in the hundreds place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "2000 − 200 = 1800"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding: 84,673 plus 1800 is 86,473, the number we began with.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "84,673 + 1800 = 86,473"
+     }
+    ]
+   },
+   {
+    "say": "So when two digits swap, write the new number, see which one is bigger, and subtract. Only the places that changed matter."
+   }
+  ]
+ },
+ "AIGEN_grade5_fb264797-c1c7-4001-abf2-a47b8f7fb920": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Ananya has 76,482 rupees in her piggy bank. Her father asks: the place value of the 7 is how many times the face value of the 8?",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "76,482",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "8"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Look at the chart. The 7 is in the ten-thousands column. What is it worth there?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "76482",
+       "highlight": [
+        "d0",
+        "d3"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7",
+      "7000",
+      "70,000"
+     ],
+     "answer": 2,
+     "ifNot": "Count the columns from the right: ones, tens, hundreds, thousands, ten-thousands. So this 7 means 7 ten-thousands, and that is 70,000."
+    }
+   },
+   {
+    "say": "7 times 10,000 is 70,000. That is the place value of the 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7 × 10,000 = 70,000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "text": "ten-thousands",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "Now the face value of 8. In this number the 8 sits in the tens column, so its place value is 80. But face value is just the digit as it looks, so it is simply 8.",
+    "board": [
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "8"
+      },
+      "text": "place value 80",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "Face value of 8 = 8",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "How many times 8 is 70,000? Which sum tells us?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "70,000 ÷ 8",
+      "70,000 ÷ 80",
+      "70,000 − 8"
+     ],
+     "answer": 0,
+     "ifNot": "How many times means divide. And we divide by the face value of the 8, which is 8, not by 80."
+    }
+   },
+   {
+    "say": "Here is a neat way to divide by 8: halve, halve again, and halve once more. That works because 2 times 2 times 2 is 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h0",
+      "text": "2 × 2 × 2 = 8"
+     }
+    ]
+   },
+   {
+    "say": "70,000 halved is 35,000. Halve again: 17,500. And once more: 8750.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h1",
+      "text": "70,000 ÷ 2 = 35,000"
+     },
+     {
+      "op": "write",
+      "id": "h2",
+      "text": "35,000 ÷ 2 = 17,500"
+     },
+     {
+      "op": "write",
+      "id": "h3",
+      "text": "17,500 ÷ 2 = 8750"
+     }
+    ]
+   },
+   {
+    "say": "So 70,000 divided by 8 is 8750. Careful: dividing by 80, the place value of the 8, would give a much smaller answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "70,000 ÷ 8 = 8750"
+     }
+    ]
+   },
+   {
+    "say": "Check by multiplying back: 8750 times 8 is 70,000. It works.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "8750 × 8 = 70,000"
+     }
+    ]
+   },
+   {
+    "say": "So Ananya should say 8750 times.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "8750 times",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "8750"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So remember: place value depends on the column, and face value is just the digit. Find both, then divide."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch01_q041": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We need two even numbers: the one just before 50 and the one just after 50. Then we find the difference between them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "even number before 50, even number after 50",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Even numbers go up in twos. Here are the ones around 50.",
+    "board": [
+     {
+      "op": "write",
+      "id": "e",
+      "text": "46    48    50    52    54",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "50"
+      },
+      "shape": "box"
+     }
+    ]
+   },
+   {
+    "say": "Which even number comes just before 50?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "48",
+      "46",
+      "49"
+     ],
+     "answer": 0,
+     "ifNot": "49 is right next to 50, but it is odd. Even numbers are 2 apart, so the even number just before 50 is 48."
+    }
+   },
+   {
+    "say": "48. Careful: 49 is nearer, but it is odd, so it does not count.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "48"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "b",
+      "text": "50 − 2 = 48"
+     }
+    ]
+   },
+   {
+    "say": "In the same way, the even number just after 50 is 2 more than 50. That is 52.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "e",
+      "target": {
+       "text": "52"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "50 + 2 = 52"
+     }
+    ]
+   },
+   {
+    "say": "Now the difference between 52 and 48. What is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "100",
+      "4"
+     ],
+     "answer": 2,
+     "ifNot": "Difference means take the smaller from the bigger. From 48 it is 2 steps up to 50, and 2 more steps up to 52. That is 4 steps."
+    }
+   },
+   {
+    "say": "52 minus 48 is 4. That makes sense: 48 is 2 below 50 and 52 is 2 above it, and 2 plus 2 is 4.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "52 − 48 = 4",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "4",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: adding the two numbers gives 100. But the question asks for the difference, so we subtract.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "52 + 48 = 100"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 48 plus 4 is 52.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "48 + 4 = 52"
+     }
+    ]
+   },
+   {
+    "say": "So remember that even numbers are 2 apart. Find the one on each side, then subtract the smaller from the bigger."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch01_q042": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two numbers to find here: the 8th even number after 50, and the 8th even number before 100. Then we add them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "8th even after 50 + 8th even before 100",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Even numbers go up in twos. After 50 the first one is 52, then 54, then 56. Let's keep going until we have 8 of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "u",
+      "text": "52  54  56  58  60  62  64  66",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Count along the list. Which is the 8th even number after 50?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "66",
+      "58",
+      "68"
+     ],
+     "answer": 0,
+     "ifNot": "Start counting at 52, not at 50, because we want numbers after 50. Then 52 is the 1st, 54 is the 2nd, and the 8th one is 66."
+    }
+   },
+   {
+    "say": "66. Here is a quick way to see it: 8 even numbers means 8 jumps of 2, and that is 16. And 50 plus 16 is 66.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "u",
+      "target": {
+       "text": "66"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "j",
+      "text": "8 × 2 = 16"
+     },
+     {
+      "op": "write",
+      "id": "a1",
+      "text": "50 + 16 = 66"
+     }
+    ]
+   },
+   {
+    "say": "Now count backwards from 100. The 1st even number before it is 98, then 96, then 94, and on down.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "98  96  94  92  90  88  86  84",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "That is 8 jumps of 2 back from 100. Where do we land?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "82",
+      "92",
+      "84"
+     ],
+     "answer": 2,
+     "ifNot": "8 jumps of 2 make 16. Going back means subtract, and 100 minus 16 is 84."
+    }
+   },
+   {
+    "say": "100 minus 16 is 84, the last number in our list.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "d",
+      "target": {
+       "text": "84"
+      },
+      "shape": "circle"
+     },
+     {
+      "op": "write",
+      "id": "a2",
+      "text": "100 − 16 = 84"
+     }
+    ]
+   },
+   {
+    "say": "Now add the two. 60 plus 80 is 140, and 6 plus 4 is 10. So 66 plus 84 is 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "60 + 80 = 140"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "6 + 4 = 10"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "66 + 84 = 150",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "150"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 50 and 100 themselves are not counted. The question says after 50 and before 100, so the counting starts at 52 and at 98."
+   },
+   {
+    "say": "Check: 66 is 16 above 50, and 84 is 16 below 100. The two 16s cancel, so the sum is just 50 plus 100, which is 150.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "50 + 100 = 150"
+     }
+    ]
+   },
+   {
+    "say": "So for the 8th even number, make 8 jumps of 2, forwards or backwards. Then do what the question asks with the two numbers."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q001": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is 25,61,174, written with commas the Indian way. We want the place value of the digit 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "25,61,174",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "5"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Let's put it in a place-value chart and name the columns from the right: ones, tens, hundreds, thousands, ten-thousands, lakhs, ten-lakhs.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "2561174",
+       "highlight": [
+        "d1"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Which column is the 5 sitting in?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "lakhs",
+      "ten-thousands",
+      "ten-lakhs"
+     ],
+     "answer": 0,
+     "ifNot": "Count from the right. The 4 is in the ones, then 7, 1, 1 and 6 take the tens up to the ten-thousands. The 5 is the sixth digit, and the sixth place is lakhs."
+    }
+   },
+   {
+    "say": "The 5 is in the lakhs place. One lakh is 1,00,000, a 1 with five zeros.",
+    "board": [
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "5"
+      },
+      "text": "lakhs",
+      "place": "above"
+     },
+     {
+      "op": "write",
+      "id": "l",
+      "text": "1 lakh = 1,00,000",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So what is the 5 worth?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "50,000",
+      "50,00,000",
+      "5,00,000"
+     ],
+     "answer": 2,
+     "ifNot": "5 in the lakhs place means 5 lakhs. That is 5 times 1,00,000, so a 5 with five zeros: 5,00,000."
+    }
+   },
+   {
+    "say": "5 times 1,00,000 is 5,00,000. That is the place value of the 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "5 × 1,00,000 = 5,00,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "5,00,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful with the zeros. Five digits come after the 5 in the number, so five zeros come after the 5 in its place value. Not four, and not six."
+   },
+   {
+    "say": "Check with the commas. From the right, the first comma comes after the hundreds and the next after the ten-thousands. The 5 is the very next digit, so it is lakhs."
+   },
+   {
+    "say": "So to find a place value, find the digit's column. Then write the digit, with a zero for every place to its right."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q002": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "The number 48,183 has two 8s in it. We want the difference between their place values.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "48,183",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "8",
+       "nth": 2
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "A digit is worth more the further left it sits. In the chart, the 8 on the left is in the thousands column. So what is it worth?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "48183",
+       "highlight": [
+        "d1",
+        "d3"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8000",
+      "8",
+      "800"
+     ],
+     "answer": 0,
+     "ifNot": "Count the columns from the right: ones, tens, hundreds, thousands. So this 8 means 8 thousands, and that is 8000."
+    }
+   },
+   {
+    "say": "So the 8 on the left is worth 8 times 1000, which is 8000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "8 × 1000 = 8000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "8"
+      },
+      "text": "thousands",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "And the 8 on the right sits in the tens column. 8 times 10 is 80.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "8 × 10 = 80"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "8",
+       "nth": 2
+      },
+      "text": "tens",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, the difference between 8000 and 80. Which sum gives it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8000 − 80",
+      "8 − 8",
+      "8000 + 80"
+     ],
+     "answer": 0,
+     "ifNot": "Difference means subtract. And we subtract what the digits are worth, 8000 and 80, not the bare digits."
+    }
+   },
+   {
+    "say": "8000 minus 80 is 7920. Careful: the two 8s look alike, but they are not worth the same, so the difference is not 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "8000 − 80 = 7920"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 7920 plus 80 is 8000. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "7920 + 80 = 8000"
+     }
+    ]
+   },
+   {
+    "say": "So the difference between the two place values is 7920.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference = 7920",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "7920"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So every time: read each digit's column, write down what it is worth, then subtract."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q003": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We take the greatest 5 digit number and add one to it. First we need to know which number that is.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Greatest 5-digit number + 1 = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So, what is the greatest 5 digit number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "99,999",
+      "10,000",
+      "1,00,000"
+     ],
+     "answer": 0,
+     "ifNot": "The greatest 5 digit number has the biggest digit, 9, in all 5 places. That is 99,999."
+    }
+   },
+   {
+    "say": "Yes, five 9s: 99,999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Greatest 5-digit number = 99,999",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "99,999"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now we add 1. Before we work it out, how many digits will the answer have?",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "99,999 + 1 = ?"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5 digits",
+      "6 digits"
+     ],
+     "answer": 1,
+     "ifNot": "99,999 is already the greatest number that fits in 5 places. One more cannot fit, so it spills over into a 6th place."
+    }
+   },
+   {
+    "say": "Start in the ones place. 9 plus 1 is 10, so we write 0 and carry 1. That carry turns the next 9 into 10 as well, and so on, all the way along.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s",
+      "target": {
+       "text": "99,999"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "99,999"
+      },
+      "text": "every 9 becomes 0",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Every 9 becomes 0, and a new 1 appears in front. That is 1,00,000, which we call 1 lakh.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "99,999 + 1 = 1,00,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "1,00,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the 1 is not stuck on the end of the number, and it does not just swap places with the last 9. It is added to the ones, and the carry runs the whole way."
+   },
+   {
+    "say": "Check by stepping back: 1,00,000 minus 1 is 99,999. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "1,00,000 − 1 = 99,999"
+     }
+    ]
+   },
+   {
+    "say": "So one more than the greatest 5 digit number is the smallest 6 digit number. A row of 9s always rolls over to a 1 and zeros."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q004": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We take the largest 3 digit number and subtract one from it. First, which number is the largest with 3 digits?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Largest 3-digit number − 1 = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "What is the largest 3 digit number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "999",
+      "1000",
+      "100"
+     ],
+     "answer": 0,
+     "ifNot": "Count the digits. 1000 has 4 digits, so it is too long. The largest number with 3 digits has a 9 in every place: 999."
+    }
+   },
+   {
+    "say": "Yes, three 9s: 999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Largest 3-digit number = 999",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "999"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now, one is subtracted. Which way do we move from 999?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1 step down",
+      "1 step up"
+     ],
+     "answer": 0,
+     "ifNot": "Subtract means take away, so the number gets smaller. We step down from 999, not up."
+    }
+   },
+   {
+    "say": "One step down. Only the ones place changes: 9 ones take away 1 leaves 8 ones. The hundreds and the tens stay as they are.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "999 − 1 = 998",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "9",
+       "nth": 3
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "998"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: one step up would be 1000, and that is adding 1. Read the question word by word: it says subtracted."
+   },
+   {
+    "say": "Check by adding the 1 back: 998 plus 1 is 999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "998 + 1 = 999"
+     }
+    ]
+   },
+   {
+    "say": "So name the special number first, then do exactly what the question says. Here that gives 998."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q005": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We are adding two special numbers: the smallest 4 digit number and the greatest 5 digit number. Let's name each one before we add.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Greatest 5-digit number + smallest 4-digit number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, the greatest 5 digit number. Which one is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1,00,000",
+      "10,000",
+      "99,999"
+     ],
+     "answer": 2,
+     "ifNot": "The greatest 5 digit number has the biggest digit, 9, in all 5 places. That is 99,999. One more than that would need another digit."
+    }
+   },
+   {
+    "say": "Yes, a 9 in every one of the 5 places: 99,999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Greatest 5-digit number = 99,999",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "99,999"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now the other one. For the smallest 4 digit number, put a 1 in front, because a number cannot start with 0. Fill the other places with 0, and we get 1000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "Smallest 4-digit number = 1000",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "1000"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Here is a quick way to add 1000. Just 1 more lifts 99,999 up to 1,00,000, a round number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "99,999 + 1 = 1,00,000"
+     }
+    ]
+   },
+   {
+    "say": "We have used 1 of the 1000, so 999 are still to go on. 1,00,000 plus 999 is 1,00,999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "1000 − 1 = 999"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "1,00,000 + 999 = 1,00,999"
+     }
+    ]
+   },
+   {
+    "say": "So 99,999 plus 1000 is 1,00,999. Careful: the 1000 goes on at the thousands place. It is not just a 1 stuck on the front.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "99,999 + 1000 = 1,00,999"
+     }
+    ]
+   },
+   {
+    "say": "Check by taking it off again: 1,00,999 minus 1000 is 99,999. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "1,00,999 − 1000 = 99,999"
+     }
+    ]
+   },
+   {
+    "say": "So the two numbers add up to 1,00,999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum = 1,00,999",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "1,00,999"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So remember: the greatest is all 9s, the smallest is a 1 followed by zeros. Find both, then work out the sum."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q006": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two special numbers here: the greatest 4 digit number and the smallest 3 digit number. We find each one, then take the smaller from the bigger.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Greatest 4-digit number − smallest 3-digit number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The greatest 4 digit number has the biggest digit, 9, in every place. With 4 places that is 9999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Greatest 4-digit number = 9999",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "9999"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "And the smallest 3 digit number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "99",
+      "100",
+      "111"
+     ],
+     "answer": 1,
+     "ifNot": "A number cannot start with 0, so the smallest digit we can put in front is 1. Then every other place gets a 0. That makes 100."
+    }
+   },
+   {
+    "say": "That is it. A 1 to lead, and 0 in every other place: 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "Smallest 3-digit number = 100",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "100"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "9999 minus 100 is 9899. Only the hundreds change: 9 hundreds take away 1 hundred leaves 8 hundreds. Careful: taking away 1 instead of 100 is the slip here.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "9999 − 100 = 9899"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 9899 plus 100 is 9999. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "9899 + 100 = 9999"
+     }
+    ]
+   },
+   {
+    "say": "So the difference is 9899.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference = 9899",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "9899"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: name the two special numbers, write them down, and only then add or subtract."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q008": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This time both numbers must be even: the greatest 4 digit even number and the smallest 4 digit even number. An even number ends in 0, 2, 4, 6 or 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Greatest 4-digit even number − smallest 4-digit even number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "What is the greatest 4 digit even number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8888",
+      "9998",
+      "9999"
+     ],
+     "answer": 1,
+     "ifNot": "9999 is the greatest 4 digit number, but it ends in 9, so it is odd. One step down is 9998. It ends in 8, so it is even."
+    }
+   },
+   {
+    "say": "Yes. 9999 is odd, so we step down 1 to 9998, which ends in 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a0",
+      "text": "9999 − 1 = 9998"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Greatest 4-digit even number = 9998",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "9998"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now the other one. The smallest 4 digit number is 1000. It ends in 0, so it is even already. Nothing to change.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "Smallest 4-digit even number = 1000",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "1000"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "9998 minus 1000 is 8998. Only the thousands change: 9 thousands take away 1 thousand leaves 8 thousands. Careful: starting from 9999 instead would use an odd number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "9998 − 1000 = 8998"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing it: 8998 plus 1000 is 9998, right where we started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "8998 + 1000 = 9998"
+     }
+    ]
+   },
+   {
+    "say": "So the difference is 8998.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference = 8998",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "8998"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So when a number must be even, look at its last digit. Find the greatest and the smallest that end in an even digit, then subtract."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q009": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We want a digit whose place value is always the same as the digit itself, whichever column it sits in.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "place value = the digit itself, in every place?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Place value is the digit times its column. Let's test 5 in the tens column. 5 times 10 is 50, and 50 is not 5. So 5 is out.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t5",
+      "text": "5 × 10 = 50"
+     },
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "50",
+       "highlight": [
+        "d0"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "Now try 1, in the hundreds column. Is its place value still 1?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No, it is worth 100",
+      "Yes, it is worth 1"
+     ],
+     "answer": 0,
+     "ifNot": "1 in the hundreds column means one hundred. 1 times 100 is 100, not 1."
+    }
+   },
+   {
+    "say": "1 times 100 is 100. So 1 does not work either. And 9 goes the same way: in the tens column it is worth 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "1 × 100 = 100"
+     },
+     {
+      "op": "write",
+      "id": "t9",
+      "text": "9 × 10 = 90"
+     }
+    ]
+   },
+   {
+    "say": "Is there any digit that stays the same when it is multiplied by 10, by 100, or by any bigger column?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "there is none",
+      "0"
+     ],
+     "answer": 2,
+     "ifNot": "Think about 0. Zero lots of anything is still nothing. So 0 times 10 and 0 times 100 both come to 0, and so does every other column."
+    }
+   },
+   {
+    "say": "Zero! 0 times 10 is 0, 0 times 100 is 0, and 0 times 1000 is 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "z1",
+      "text": "0 × 10 = 0"
+     },
+     {
+      "op": "write",
+      "id": "z2",
+      "text": "0 × 100 = 0"
+     },
+     {
+      "op": "write",
+      "id": "z3",
+      "text": "0 × 1000 = 0"
+     }
+    ]
+   },
+   {
+    "say": "So the place value of 0 is 0 in every column, exactly its own value. The answer is 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "The digit 0",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "0"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: in the ones column every digit equals its place value. But the question says always, and only 0 passes that test."
+   },
+   {
+    "say": "So to test a rule that says always, try the digit in different columns. One column where it breaks is enough to rule that digit out."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q011": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We want the sum of the greatest 3 digit number and the smallest 4 digit number. Let's name them one at a time.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Greatest 3-digit number + smallest 4-digit number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, the greatest 3 digit number. Which one is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "100",
+      "999",
+      "1000"
+     ],
+     "answer": 1,
+     "ifNot": "The greatest 3 digit number has the biggest digit, 9, in all 3 places. That is 999. One more than that would need another digit."
+    }
+   },
+   {
+    "say": "That is it. All 3 places hold a 9, so it is 999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Greatest 3-digit number = 999",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "999"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now the other one. For the smallest 4 digit number, put a 1 in front, because a number cannot start with 0. Fill the other places with 0, and we get 1000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "Smallest 4-digit number = 1000",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "1000"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "999 plus 1000 is 1999. The 999 simply fills the three empty places after the 1. Careful: the smallest 4 digit number is a 1 with three zeros, not a row of 1s.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "999 + 1000 = 1999"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing it: 1999 minus 1000 is 999, right where we started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "1999 − 1000 = 999"
+     }
+    ]
+   },
+   {
+    "say": "So the sum is 1999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum = 1999",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "1999"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: name the two special numbers, write them down, and only then add or subtract."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q012": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two smallest numbers this time: the smallest 5 digit number and the smallest 4 digit number. We name each one, then add.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Smallest 5-digit number + smallest 4-digit number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, the smallest 5 digit number. Which one is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10,000",
+      "11,111",
+      "9999"
+     ],
+     "answer": 0,
+     "ifNot": "A number cannot start with 0, so the smallest digit we can put in front is 1. Then every other place gets a 0. That makes 10,000."
+    }
+   },
+   {
+    "say": "Yes: a 1 in front, then zeros. 10,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Smallest 5-digit number = 10,000",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "10,000"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now the other one. For the smallest 4 digit number, put a 1 in front, because a number cannot start with 0. Fill the other places with 0, and we get 1000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "Smallest 4-digit number = 1000",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "1000"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "10,000 plus 1000 is 11,000. The 1 thousand slots into the empty thousands place. Careful: the smallest numbers are a 1 with zeros, not a row of 1s.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "10,000 + 1000 = 11,000"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing it: 11,000 minus 1000 is 10,000, right where we started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "11,000 − 1000 = 10,000"
+     }
+    ]
+   },
+   {
+    "say": "So together they make 11,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum = 11,000",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "11,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: name the two special numbers, write them down, and only then add or subtract."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q013": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Two greatest numbers this time: the greatest 3 digit number and the greatest 4 digit number. Both are made the same way.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Greatest 4-digit number + greatest 3-digit number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The greatest 4 digit number has the biggest digit, 9, in every place. With 4 places that is 9999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Greatest 4-digit number = 9999",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "9999"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "And the greatest 3 digit number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "100",
+      "999",
+      "1000"
+     ],
+     "answer": 1,
+     "ifNot": "The greatest 3 digit number has the biggest digit, 9, in all 3 places. That is 999. One more than that would need another digit."
+    }
+   },
+   {
+    "say": "Yes, a 9 in every one of the 3 places: 999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "Greatest 3-digit number = 999",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "999"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Adding 999 is fiddly, but 999 is just 1 less than 1000. So let's add 1000 first. That gives 10,999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "999 = 1000 − 1"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "9999 + 1000 = 10,999"
+     }
+    ]
+   },
+   {
+    "say": "We added 1 too many, so take 1 back off. 10,999 minus 1 is 10,998. Careful: stopping at 10,999 is the slip here.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "10,999 − 1 = 10,998"
+     },
+     {
+      "op": "write",
+      "id": "c",
+      "text": "9999 + 999 = 10,998"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing it: 10,998 minus 999 is 9999, right where we started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "10,998 − 999 = 9999"
+     }
+    ]
+   },
+   {
+    "say": "So the sum is 10,998.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum = 10,998",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "10,998"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the greatest number with so many digits is all 9s. And to add a row of 9s, add the round number just above it, then take 1 off."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q015": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We have the digits 3, 0, 4, 8 and 7, and two jobs at once: the number must be odd, and it must be as small as possible.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits: 3, 0, 4, 8, 7    smallest odd number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "What makes a number odd?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "its first digit is odd",
+      "any one digit is odd",
+      "its last digit is odd"
+     ],
+     "answer": 2,
+     "ifNot": "Only the ones digit decides. If the last digit is 1, 3, 5, 7 or 9, the whole number is odd."
+    }
+   },
+   {
+    "say": "So the ones place needs an odd digit. Our odd digits are 3 and 7.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "For a small number, the first place wants the smallest digit it can have. Which digit goes first?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "0",
+      "4",
+      "3"
+     ],
+     "answer": 2,
+     "ifNot": "0 cannot lead, because then the number would really have only four digits. The smallest digit after 0 is 3, so 3 goes first."
+    }
+   },
+   {
+    "say": "3 goes in front. That uses up one odd digit, so the other one, 7, must go at the end to keep the number odd.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "3 _ _ _ 7",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The middle places take what is left, 0, 4 and 8, from smallest to biggest. That gives 30,487.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "30,487",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "30,487"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: starting with the 0 looks even smaller, but a 0 in front does not count as a digit. And with 3 at the end, a bigger digit would have to lead.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "with 3 at the end: 40,783",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "30,487 < 40,783"
+     }
+    ]
+   },
+   {
+    "say": "Check: it ends in 7, so it is odd. It uses 3, 0, 4, 8 and 7 once each. And the digits after the 3 are as small as they can be."
+   },
+   {
+    "say": "So fix the two ends first: an odd digit at the end, and the smallest digit that is not 0 in front. Then fill the middle from smallest to biggest."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q016": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Our digits are 2, 8, 7, 3 and 1. We want the greatest number they can make that is also even.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits: 2, 8, 7, 3, 1    greatest even number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "An even number ends in an even digit. Our even digits are 2 and 8, so one of them has to go last.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "8"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "We want the number as big as possible. Which even digit should we give up to the ones place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2, the smaller one",
+      "8, the bigger one"
+     ],
+     "answer": 0,
+     "ifNot": "The ones place is worth the least. So we spend the smaller even digit there, and save the 8 for the front, where it is worth far more."
+    }
+   },
+   {
+    "say": "2 goes last. Careful: putting 8 at the end is the trap, because then the number could only start with 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "_ _ _ _ 2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the other four digits: 8, 7, 3 and 1. In what order do they go?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8, 7, 3, 1",
+      "1, 3, 7, 8",
+      "7, 8, 3, 1"
+     ],
+     "answer": 0,
+     "ifNot": "For the greatest number, the biggest digit takes the biggest place. So they go from biggest to smallest: 8, 7, 3, 1."
+    }
+   },
+   {
+    "say": "Biggest first: 8, 7, 3, 1, and then the 2 at the end. Our number is 87,312.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "87,312",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "87,312"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Let's test the other way. With 8 at the end, the best we could make is 73,218. That is smaller, so 87,312 wins.",
+    "board": [
+     {
+      "op": "write",
+      "id": "o",
+      "text": "with 8 at the end: 73,218",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "cmp",
+      "text": "87,312 > 73,218"
+     }
+    ]
+   },
+   {
+    "say": "One more trap: 87,321 is bigger still, but it ends in 1, so it is odd and not allowed.",
+    "board": [
+     {
+      "op": "write",
+      "id": "odd",
+      "text": "87,321 ends in 1: odd",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "So for the greatest even number, put the smallest even digit at the end, then line up all the others from biggest to smallest."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q017": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Our digits are 7, 0, 3, 2 and 6. We want the greatest number they can make that is also odd.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits: 7, 0, 3, 2, 6    greatest odd number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "An odd number ends in an odd digit. Which of our digits are odd?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7 and 3",
+      "only 7",
+      "7, 3 and 0"
+     ],
+     "answer": 0,
+     "ifNot": "Odd digits are 1, 3, 5, 7 and 9. From our list that is 7 and 3. The 0, the 2 and the 6 are even."
+    }
+   },
+   {
+    "say": "7 and 3 are odd, so one of them must sit in the ones place.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "7"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "3"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Which one do we put at the end, to keep the number as big as possible?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "7"
+     ],
+     "answer": 0,
+     "ifNot": "7 is our biggest digit, so it is worth the most in the front place. We spend the smaller odd digit, 3, on the ones place."
+    }
+   },
+   {
+    "say": "3 goes last, and that saves the 7 for the front.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "_ _ _ _ 3",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The rest go from biggest to smallest: 7, 6, 2, 0. So the number is 76,203.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "76,203",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "76,203"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 76,320 is the greatest number these digits can make, but it ends in 0, so it is even. Moving the 3 to the end is what makes it odd.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "76,320 > 76,203"
+     }
+    ]
+   },
+   {
+    "say": "Check the other choice too. With 7 at the end, the best we could make is 63,207, and that is smaller.",
+    "board": [
+     {
+      "op": "write",
+      "id": "o",
+      "text": "with 7 at the end: 63,207",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "cmp",
+      "text": "76,203 > 63,207"
+     }
+    ]
+   },
+   {
+    "say": "So for the greatest odd number, put the smallest odd digit at the end, then line up the others from biggest to smallest."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q019": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We have four digits: 7, 4, 8 and 1. We build the greatest number they can make, then the smallest, and find the difference between the two.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits: 7, 4, 8, 1",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For the greatest number, which digit should go in the thousands place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "7",
+      "8"
+     ],
+     "answer": 2,
+     "ifNot": "The thousands place is worth the most, so it should get the biggest digit. The biggest of 7, 4, 8 and 1 is 8."
+    }
+   },
+   {
+    "say": "Biggest digit first, then the next biggest, all the way down: 8, 7, 4, 1. The greatest number is 8741.",
+    "board": [
+     {
+      "op": "write",
+      "id": "gr",
+      "text": "Greatest = 8741",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For the smallest number we do the opposite. Smallest digit first, then upwards: 1, 4, 7, 8. That makes 1478.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sm",
+      "text": "Smallest = 1478",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The question wants the difference between them. Which sum is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8741 − 1478",
+      "1478 − 8741",
+      "8741 + 1478"
+     ],
+     "answer": 0,
+     "ifNot": "Difference means subtract, and the smaller number comes off the bigger one. So it is 8741 minus 1478."
+    }
+   },
+   {
+    "say": "Let's take 1478 away one place at a time. First the 1000, which leaves 7741. Then the 400, which leaves 7341.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "8741 − 1000 = 7741"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "7741 − 400 = 7341"
+     }
+    ]
+   },
+   {
+    "say": "Next the 70, which leaves 7271. And last the 8: 7271 minus 8 is 7263.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "7341 − 70 = 7271"
+     },
+     {
+      "op": "write",
+      "id": "d4",
+      "text": "7271 − 8 = 7263"
+     }
+    ]
+   },
+   {
+    "say": "So the difference is 7263. Careful: adding the two numbers is the slip to watch for. Difference always means subtract.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "8741 − 1478 = 7263",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "7263"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 7263 plus 1478 is 8741, our greatest number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "7263 + 1478 = 8741"
+     }
+    ]
+   },
+   {
+    "say": "So: biggest digit first for the greatest number, smallest digit first for the smallest. Then subtract carefully, one place at a time."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q020": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "First we need the one digit prime numbers. A prime number has exactly two factors, 1 and itself.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "One-digit primes, each once: smallest even number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Which are the one digit primes?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2, 3, 5, 7, 9",
+      "1, 3, 5, 7",
+      "2, 3, 5, 7"
+     ],
+     "answer": 2,
+     "ifNot": "1 is not prime, because it has only one factor. 9 is not prime, because 3 times 3 is 9. That leaves 2, 3, 5 and 7."
+    }
+   },
+   {
+    "say": "2, 3, 5 and 7. Those are our four digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "Digits: 2, 3, 5, 7",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The number must be even. Which digit has to go in the ones place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "3",
+      "7"
+     ],
+     "answer": 0,
+     "ifNot": "An even number ends in an even digit. Of 2, 3, 5 and 7, only 2 is even. So 2 must go last."
+    }
+   },
+   {
+    "say": "2 is the only even one, so it goes last. Careful: the smallest arrangement of all, 2357, ends in 7, so it is odd and will not do.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "d",
+      "target": {
+       "text": "2"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "odd",
+      "text": "2357 ends in 7: odd",
+      "label": true
+     },
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "_ _ _ 2",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The other three, 3, 5 and 7, fill the front from smallest to biggest. That gives 3572.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "3572",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "3572"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 3572 ends in 2, so it is even. It uses 2, 3, 5 and 7 once each. And no digit smaller than 3 was free for the front."
+   },
+   {
+    "say": "So list the digits, lock the even digit at the end, then arrange the rest from smallest to biggest."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q021": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Five digits: 3, 0, 9, 2 and 4. We make the greatest number and the smallest number from them, subtract, and then look at the middle digit of the answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits: 3, 0, 9, 2, 4",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For the greatest number, the biggest digit goes first and we work down: 9, 4, 3, 2, 0. That is 94,320.",
+    "board": [
+     {
+      "op": "write",
+      "id": "gr",
+      "text": "Greatest = 94,320",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For the smallest number, the small digits go first. But which digit can go in the very first place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "0",
+      "9"
+     ],
+     "answer": 0,
+     "ifNot": "0 is the smallest digit, but a number cannot start with 0. If it did, only four digits would count. So the first place takes the next smallest digit, 2."
+    }
+   },
+   {
+    "say": "So 2 leads, because a 0 in front would not count. The 0 sits straight after it, and the rest go up in order: 3, 4, 9. The smallest number is 20,349.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sm",
+      "text": "Smallest = 20,349",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "sm",
+      "target": {
+       "text": "0"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now subtract, one place at a time. Take off the 20,000 first, which leaves 74,320. Then the 300, which leaves 74,020.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "94,320 − 20,000 = 74,320"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "74,320 − 300 = 74,020"
+     }
+    ]
+   },
+   {
+    "say": "Then the 40, which leaves 73,980. And last the 9: 73,980 minus 9 is 73,971.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "74,020 − 40 = 73,980"
+     },
+     {
+      "op": "write",
+      "id": "d4",
+      "text": "73,980 − 9 = 73,971"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "94,320 − 20,349 = 73,971"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 73,971 plus 20,349 is 94,320, our greatest number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "73,971 + 20,349 = 94,320"
+     }
+    ]
+   },
+   {
+    "say": "The answer, 73,971, has 5 digits. Which one is in the middle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7",
+      "9",
+      "3"
+     ],
+     "answer": 1,
+     "ifNot": "With 5 digits, the middle one is the 3rd, because it has 2 digits on each side. Counting along 7, 3, 9, 7, 1, the 3rd digit is 9."
+    }
+   },
+   {
+    "say": "The 3rd digit has two digits on its left and two on its right. So the middle digit is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Middle digit of 73,971 = 9",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "9",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So: greatest means digits from biggest to smallest. Smallest means smallest to biggest, but never with 0 in front. Then subtract, and read off what was asked."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q023": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We want the smallest three digit number. Three digits means three places to fill: hundreds, tens and ones.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Smallest three-digit number = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "To keep a number small we choose small digits. What is the smallest digit that can go in the hundreds place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "0",
+      "9"
+     ],
+     "answer": 0,
+     "ifNot": "With a 0 in the hundreds place, only two real digits would be left. So the smallest digit that can lead is 1."
+    }
+   },
+   {
+    "say": "So 1 goes in front. A 0 there would not count, because a number does not start with 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "hundreds: 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now the tens and the ones. Which digit keeps the number as small as it can be?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "0"
+     ],
+     "answer": 1,
+     "ifNot": "0 is smaller than 1, and 0 is allowed in the tens and ones places. Only the front place cannot be 0."
+    }
+   },
+   {
+    "say": "So both of them get a 0. Our number is 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "tens: 0    ones: 0",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "100"
+      }
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "100",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "100"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 111 looks small, but 100 is smaller, because 0 is a smaller digit than 1. And 999 is the greatest three digit number, not the smallest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "100 < 111"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "100 < 999"
+     }
+    ]
+   },
+   {
+    "say": "Check: go one step below 100 and we reach 99, which has only two digits. So nothing smaller has three.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "100 − 1 = 99"
+     }
+    ]
+   },
+   {
+    "say": "So the smallest number with so many digits is always a 1 followed by zeros."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q024": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is 1,21,753. We want the place value of the digit 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "1,21,753",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "2"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Count the places from the right. 3 is in the ones, 5 in the tens, 7 in the hundreds, and the 1 after the comma is in the thousands.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "121753",
+       "highlight": [
+        "d1"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The 2 comes next. Which place is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "ten-thousands",
+      "lakhs",
+      "thousands"
+     ],
+     "answer": 0,
+     "ifNot": "After ones, tens, hundreds and thousands comes ten-thousands. The 2 is the fifth digit from the right, so it is in the ten-thousands place."
+    }
+   },
+   {
+    "say": "The 2 is in the ten-thousands place, so it stands for 2 ten-thousands. One ten-thousand is written 10,000.",
+    "board": [
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "2"
+      },
+      "text": "ten-thousands",
+      "place": "above"
+     },
+     {
+      "op": "write",
+      "id": "tt",
+      "text": "ten-thousand = 10,000",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "What is 2 ten-thousands, written as a number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "20,000",
+      "2,00,000",
+      "2000"
+     ],
+     "answer": 0,
+     "ifNot": "Ten-thousand is 10,000. 2 times 10,000 is 20,000, a 2 with four zeros."
+    }
+   },
+   {
+    "say": "2 times 10,000 is 20,000. That is the place value of the 2.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "2 × 10,000 = 20,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "20,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 21,753 is the 2 together with all the digits after it. The place value is the 2 alone, with zeros where those other digits were.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "21,753 = 20,000 + 1753"
+     }
+    ]
+   },
+   {
+    "say": "Check by counting: four digits follow the 2 in the number, and four zeros follow the 2 in 20,000."
+   },
+   {
+    "say": "So find the column first, then write the digit with a zero for each place to its right. The other digits play no part."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q025": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is 3976217. The digit 7 appears twice, and we want the difference between its two place values.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "3976217",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "7",
+       "nth": 2
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Here is the number in a place-value chart. The 7 on the left sits in the ten-thousands column. So what is it worth?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "3976217",
+       "highlight": [
+        "d2",
+        "d6"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "70,000",
+      "7",
+      "7000"
+     ],
+     "answer": 0,
+     "ifNot": "Count the columns from the right: ones, tens, hundreds, thousands, ten-thousands. So this 7 means 7 ten-thousands, and that is 70,000."
+    }
+   },
+   {
+    "say": "So the 7 on the left is worth 7 times 10,000, which is 70,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7 × 10,000 = 70,000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "text": "ten-thousands",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "And the 7 on the right sits in the ones column, the smallest one. There it is worth just 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "7 × 1 = 7"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "7",
+       "nth": 2
+      },
+      "text": "ones",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, the difference between 70,000 and 7. Which sum gives it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7 − 7",
+      "70,000 + 7",
+      "70,000 − 7"
+     ],
+     "answer": 2,
+     "ifNot": "Difference means subtract. And we subtract what the digits are worth, 70,000 and 7, not the bare digits."
+    }
+   },
+   {
+    "say": "70,000 minus 7 is 69,993. Taking 7 away drops us just below 70,000. Careful: the two 7s look alike, but they are not worth the same, so the difference is not 0.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "70,000 − 7 = 69,993"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 69,993 plus 7 is 70,000. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "69,993 + 7 = 70,000"
+     }
+    ]
+   },
+   {
+    "say": "So the difference between the place values of the two 7s is 69,993.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference = 69,993",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "69,993"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the method is: find what each digit is worth in its own column, then take the smaller value from the bigger one."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q026": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "This one asks what we get when 1 is added to the greatest 6 digit number. So first, the number itself.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Greatest 6-digit number + 1 = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "What is the greatest 6 digit number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9,99,999",
+      "1,00,000",
+      "10,00,000"
+     ],
+     "answer": 0,
+     "ifNot": "For the greatest number, every place takes the biggest digit, 9. With 6 places that is 9,99,999."
+    }
+   },
+   {
+    "say": "Six 9s. With the commas placed the Indian way, it is 9,99,999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Greatest 6-digit number = 9,99,999",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "999999"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Now add 1. In the ones place, 9 plus 1 is 10, so we write 0 and carry 1. The carry meets a 9 in the tens place, and the same thing happens again.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "9,99,999 + 1 = ?"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "9,99,999"
+      },
+      "text": "every 9 becomes 0",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "The carry travels through all six places. What does it leave behind?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "a 1 and six zeros",
+      "a 1 and five zeros",
+      "six 9s and a 1"
+     ],
+     "answer": 0,
+     "ifNot": "Each of the six 9s turns into a 0 as the carry passes. Then the carry itself lands in a new place in front, as a 1."
+    }
+   },
+   {
+    "say": "A 1 followed by six zeros: 10,00,000. That is 10 lakh.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "9,99,999 + 1 = 10,00,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "10,00,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: adding 1 does not mean writing one more 9, or putting a 1 on the end. The number grows by just one step."
+   },
+   {
+    "say": "Check by stepping back: 10,00,000 minus 1 is 9,99,999. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "10,00,000 − 1 = 9,99,999"
+     }
+    ]
+   },
+   {
+    "say": "So the greatest 6 digit number plus 1 is the smallest 7 digit number. A row of 9s always rolls over to a 1 and zeros."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q027": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We take the smallest 4 digit number and subtract 1 from it. First we need that smallest number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Smallest 4-digit number − 1 = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "What is the smallest 4 digit number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1000",
+      "1111",
+      "1001"
+     ],
+     "answer": 0,
+     "ifNot": "A number cannot start with 0, so a 1 goes in front. Every other place can take a 0, the smallest digit. That makes 1000."
+    }
+   },
+   {
+    "say": "Yes: a 1 in front, then three zeros. 1000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Smallest 4-digit number = 1000",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1000"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now take away 1. Before we work it out, how many digits will the answer have?",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "1000 − 1 = ?"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3 digits",
+      "4 digits"
+     ],
+     "answer": 0,
+     "ifNot": "1000 is the very first number with 4 digits. Step back from it and we fall below, so only 3 digits are left."
+    }
+   },
+   {
+    "say": "We cannot take 1 from 0, so we borrow all the way from the 1 in front. Each 0 turns into a 9, and the 1 in front is used up.",
+    "board": [
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "1000"
+      },
+      "text": "borrow from the 1",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "That leaves three 9s: 999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "1000 − 1 = 999",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "999"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the answer is not still 1000, and the zeros do not just stay put. One less than a 1 with zeros is always a row of 9s."
+   },
+   {
+    "say": "Check by adding the 1 back: 999 plus 1 is 1000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "999 + 1 = 1000"
+     }
+    ]
+   },
+   {
+    "say": "So one less than the smallest 4 digit number is the greatest 3 digit number. They are neighbours on the number line."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q028": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We want the difference between the smallest 5 digit number and the greatest 4 digit number. Name them both first, and then something neat shows up.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Smallest 5-digit number − greatest 4-digit number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, the smallest 5 digit number. Which one is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9999",
+      "10,000",
+      "11,111"
+     ],
+     "answer": 1,
+     "ifNot": "A number cannot start with 0, so the smallest digit we can put in front is 1. Then every other place gets a 0. That makes 10,000."
+    }
+   },
+   {
+    "say": "Yes: a 1 in front, then zeros. 10,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Smallest 5-digit number = 10,000",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "10,000"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "And the greatest 4 digit number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9999",
+      "10,000",
+      "1000"
+     ],
+     "answer": 0,
+     "ifNot": "The greatest 4 digit number has the biggest digit, 9, in all 4 places. That is 9999. One more than that would need another digit."
+    }
+   },
+   {
+    "say": "Yes, a 9 in every one of the 4 places: 9999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "Greatest 4-digit number = 9999",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "9999"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "10,000 minus 9999 is 1. 9999 is the very last 4 digit number, and 10,000 is the very next number after it. They are neighbours, so they are just 1 apart.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "10,000 − 9999 = 1"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 1 plus 9999 is 10,000. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "1 + 9999 = 10,000"
+     }
+    ]
+   },
+   {
+    "say": "So the difference is only 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference = 1",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "1"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the smallest number with 5 digits comes straight after the greatest number with 4 digits. Neighbours are always 1 apart."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q029": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We are adding the smallest 3 digit number and the greatest 4 digit number. Let's name each one first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Greatest 4-digit number + smallest 3-digit number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The greatest 4 digit number has the biggest digit, 9, in every place. With 4 places that is 9999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Greatest 4-digit number = 9999",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "9999"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "And the smallest 3 digit number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "99",
+      "100",
+      "111"
+     ],
+     "answer": 1,
+     "ifNot": "A number cannot start with 0, so the smallest digit we can put in front is 1. Then every other place gets a 0. That makes 100."
+    }
+   },
+   {
+    "say": "That is it. A 1 to lead, and 0 in every other place: 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "Smallest 3-digit number = 100",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "100"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "To add 100 to 9999, use just 1 of the 100 first. That lifts 9999 up to 10,000, a round number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "9999 + 1 = 10,000"
+     }
+    ]
+   },
+   {
+    "say": "That leaves 99 still to add. 10,000 plus 99 is 10,099.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "100 − 1 = 99"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "10,000 + 99 = 10,099"
+     }
+    ]
+   },
+   {
+    "say": "So 9999 plus 100 is 10,099. Careful with the zeros: the 99 sits in the tens and ones places, so a 0 stays in the hundreds.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "9999 + 100 = 10,099"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing it: 10,099 minus 100 is 9999, right where we started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "10,099 − 100 = 9999"
+     }
+    ]
+   },
+   {
+    "say": "So the sum is 10,099.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum = 10,099",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "10,099"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So in a question like this, write down each special number first: 9s for the greatest, a 1 and zeros for the smallest. Then do the sum."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q030": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Add 1 to the greatest 5 digit number. Think of the counter on a scooter that shows how far it has gone, with every wheel showing its biggest digit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Greatest 5-digit number + 1 = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The biggest digit is 9, and we have 5 places. So the greatest 5 digit number is 99,999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Greatest 5-digit number = 99,999",
+      "label": true
+     },
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "99999"
+      }
+     }
+    ]
+   },
+   {
+    "say": "Now add 1 in the ones place. 9 plus 1 makes 10. What do we do with that 10?",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "99,999 + 1 = ?"
+     },
+     {
+      "op": "mark",
+      "line": "s",
+      "target": {
+       "text": "9",
+       "nth": 5
+      },
+      "shape": "underline"
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "write 10 at the end",
+      "write 1 at the end",
+      "write 0, carry 1"
+     ],
+     "answer": 2,
+     "ifNot": "A place can only hold one digit. So of the 10, the 0 stays in the ones place and the 1 is carried to the tens."
+    }
+   },
+   {
+    "say": "Write 0, carry 1. But in the tens place that carry meets another 9, and 9 plus 1 is 10 again. Write 0, carry 1 once more.",
+    "board": [
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "9",
+       "nth": 5
+      },
+      "text": "+1",
+      "place": "above"
+     },
+     {
+      "op": "note",
+      "line": "s",
+      "target": {
+       "text": "9",
+       "nth": 4
+      },
+      "text": "+1",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "The same thing happens in every place, like wheels on the counter clicking over one after another. In the end the carry has nowhere to go, so it opens a new place in front."
+   },
+   {
+    "say": "So we get a 1 followed by five zeros: 1,00,000. That is 1 lakh.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "99,999 + 1 = 1,00,000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "1,00,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the answer has 6 digits, not 5. Count the zeros after the 1, and there should be five of them."
+   },
+   {
+    "say": "Check by going back one step: 1,00,000 minus 1 is 99,999, our five 9s.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "1,00,000 − 1 = 99,999"
+     }
+    ]
+   },
+   {
+    "say": "So adding 1 to a row of 9s turns every 9 into 0 and puts a 1 in front. The greatest 5 digit number plus 1 is the smallest 6 digit number."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q031": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Both numbers must be even here: the greatest 5 digit even number and the smallest 4 digit even number. Then we subtract.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Greatest 5-digit even number − smallest 4-digit even number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First, the greatest 5 digit even number. Which one is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "88,888",
+      "99,998",
+      "99,999"
+     ],
+     "answer": 1,
+     "ifNot": "99,999 is the greatest 5 digit number, but it ends in 9, so it is odd. One step down is 99,998. It ends in 8, so it is even."
+    }
+   },
+   {
+    "say": "Yes. 99,999 is odd, so we step down 1 to 99,998, which ends in 8.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a0",
+      "text": "99,999 − 1 = 99,998"
+     },
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Greatest 5-digit even number = 99,998",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "99,998"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now the other one. The smallest 4 digit number is 1000. It ends in 0, so it is even already. Nothing to change.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "Smallest 4-digit even number = 1000",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "1000"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "99,998 minus 1000 is 98,998. Only the thousands change: 9 thousands take away 1 thousand leaves 8 thousands.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "99,998 − 1000 = 98,998"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 98,998 plus 1000 is 99,998. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "98,998 + 1000 = 99,998"
+     }
+    ]
+   },
+   {
+    "say": "Now look at the three numbers on offer: 98,999, then 99,900, then 98,099. Is our 98,998 one of them?",
+    "board": [
+     {
+      "op": "write",
+      "id": "opts",
+      "text": "98,999    99,900    98,099",
+      "label": true
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No, none of them match",
+      "Yes, the last one",
+      "Yes, the first one"
+     ],
+     "answer": 0,
+     "ifNot": "Look at the very last digit. Ours ends in 8, and 98,999 ends in 9. Close, but not the same number."
+    }
+   },
+   {
+    "say": "None of them is 98,998. The first is 1 too big, because it uses the odd number 99,999. So the right choice is none of these.",
+    "board": [
+     {
+      "op": "strike",
+      "line": "opts",
+      "target": {
+       "text": "98,999"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "opts",
+      "target": {
+       "text": "99,900"
+      }
+     },
+     {
+      "op": "strike",
+      "line": "opts",
+      "target": {
+       "text": "98,099"
+      }
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "98,998 is not listed: None of these",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "None of these"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So trust your own working. If your answer is checked and it is not in the list, none of these is the right choice."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q033": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is 17,32,727. The digit 7 appears more than once, and we want the greatest of its place values.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "17,32,727",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "First, how many 7s are in the number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2",
+      "4",
+      "3"
+     ],
+     "answer": 2,
+     "ifNot": "Go through the digits one at a time: 1, 7, 3, 2, 7, 2, 7. The 7 turns up 3 times."
+    }
+   },
+   {
+    "say": "Three 7s. Here they are in the chart: one in the ones, one in the hundreds and one in the lakhs.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "7",
+       "nth": 2
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "7",
+       "nth": 3
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "1732727",
+       "highlight": [
+        "d1",
+        "d4",
+        "d6"
+       ]
+      }
+     }
+    ]
+   },
+   {
+    "say": "The 7 in the ones place is worth just 7. The 7 in the hundreds place is worth 7 times 100, which is 700.",
+    "board": [
+     {
+      "op": "write",
+      "id": "v1",
+      "text": "7 × 1 = 7"
+     },
+     {
+      "op": "write",
+      "id": "v2",
+      "text": "7 × 100 = 700"
+     }
+    ]
+   },
+   {
+    "say": "And the 7 in the lakhs place. What is that one worth?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "70,000",
+      "7,00,000",
+      "70,00,000"
+     ],
+     "answer": 1,
+     "ifNot": "7 in the lakhs place means 7 lakhs. A lakh has five zeros, so write 7 and then five zeros: 7,00,000."
+    }
+   },
+   {
+    "say": "7 times 1,00,000 is 7,00,000. Same digit, three very different values.",
+    "board": [
+     {
+      "op": "write",
+      "id": "v3",
+      "text": "7 × 1,00,000 = 7,00,000"
+     }
+    ]
+   },
+   {
+    "say": "The greatest of the three is 7,00,000. It comes from the 7 furthest to the left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "cmp",
+      "text": "7,00,000 > 700 > 7"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Greatest place value of 7 = 7,00,000",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "7,00,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: this 7 is not in the ten-lakhs place. The 1 in front holds that place, so the 7 stands for lakhs and not for ten times as much."
+   },
+   {
+    "say": "So the same digit is worth the most in the place furthest left. Find every copy of the digit, and take the leftmost one."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q034": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is 4,37,896. Every digit in it has a place value. We want the digit whose place value is the smallest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "4,37,896",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Place value depends on the column. Each step to the left makes a digit worth 10 times more, so the columns on the right are worth the least.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "437896"
+      }
+     }
+    ]
+   },
+   {
+    "say": "So which column gives the smallest place value?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "wherever the smallest digit is",
+      "the lakhs, far left",
+      "the ones, far right"
+     ],
+     "answer": 2,
+     "ifNot": "The size of the digit is not what matters here. A digit in the ones place is worth only itself, and every place to the left multiplies it by 10 or more."
+    }
+   },
+   {
+    "say": "The ones place. The digit there is 6, and it is worth just 6.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "6"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "6"
+      },
+      "text": "ones",
+      "place": "below"
+     },
+     {
+      "op": "write",
+      "id": "v1",
+      "text": "6 × 1 = 6"
+     }
+    ]
+   },
+   {
+    "say": "Let's test the digit that looks smallest, the 3. It sits in the ten-thousands place, so it is worth 30,000.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "v2",
+      "text": "3 × 10,000 = 30,000"
+     }
+    ]
+   },
+   {
+    "say": "Which is smaller: the place value of the 6, or the place value of the 3?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "30,000, from the digit 3",
+      "6, from the digit 6"
+     ],
+     "answer": 1,
+     "ifNot": "Compare what they are worth, not how the digits look. 6 is far smaller than 30,000."
+    }
+   },
+   {
+    "say": "6 is much less than 30,000. Even the 9 next door is worth more than our 6: it is in the tens place, so it is worth 90.",
+    "board": [
+     {
+      "op": "write",
+      "id": "cmp",
+      "text": "6 < 30,000"
+     },
+     {
+      "op": "write",
+      "id": "v3",
+      "text": "9 × 10 = 90"
+     }
+    ]
+   },
+   {
+    "say": "So the digit with the smallest place value is 6.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Digit with the least place value: 6",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: don't hunt for the smallest digit. Hunt for the smallest column, and read the digit that sits there."
+   },
+   {
+    "say": "So place value is about the column, not the size of the digit. Here the ones place holds the least, and the lakhs place holds the most."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q035": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is 9,37,451. We want the greatest place value in it, the smallest place value in it, and then the difference between the two.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "9,37,451",
+      "tone": "given"
+     }
+    ]
+   },
+   {
+    "say": "Place value comes from the column. The column furthest left is worth the most, and the column furthest right is worth the least.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "937451",
+       "highlight": [
+        "d0",
+        "d5"
+       ]
+      }
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "9"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "1"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "The 9 is furthest left, in the lakhs place. What is it worth?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9",
+      "90,000",
+      "9,00,000"
+     ],
+     "answer": 2,
+     "ifNot": "9 in the lakhs place means 9 lakhs. A lakh has five zeros, so write 9 and then five zeros: 9,00,000."
+    }
+   },
+   {
+    "say": "9 times 1,00,000 is 9,00,000. That is the greatest place value in the number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "mx",
+      "text": "9 × 1,00,000 = 9,00,000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "9"
+      },
+      "text": "greatest",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "The digit furthest right is the 1, in the ones place. It is worth just 1, the smallest place value.",
+    "board": [
+     {
+      "op": "write",
+      "id": "mn",
+      "text": "1 × 1 = 1"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "1"
+      },
+      "text": "least",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the difference. Which sum is it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9,00,000 − 1",
+      "9 − 1",
+      "9,00,000 + 1"
+     ],
+     "answer": 0,
+     "ifNot": "Difference means subtract. And we subtract the place values, 9,00,000 and 1, not the bare digits."
+    }
+   },
+   {
+    "say": "Take 1 away from 9,00,000. The 9 in front drops to 8, and every zero turns into a 9. That gives 8,99,999.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "9,00,000 − 1 = 8,99,999",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "8,99,999"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 9,00,000 on its own is only the greatest place value. And count the 9s in the answer: there should be five of them after the 8."
+   },
+   {
+    "say": "Check by adding the 1 back: 8,99,999 plus 1 is 9,00,000. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "8,99,999 + 1 = 9,00,000"
+     }
+    ]
+   },
+   {
+    "say": "So the greatest place value belongs to the digit furthest left, and the least to the digit furthest right. Find both, then subtract."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q036": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is 58,70,257, with the commas placed the Indian way. It has two 7s, and we want the difference between their place values.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "58,70,257",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "7",
+       "nth": 2
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "A digit is worth more the further left it sits. In the chart, the 7 on the left is in the ten-thousands column. So what is it worth?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "5870257",
+       "highlight": [
+        "d2",
+        "d6"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7000",
+      "70,000",
+      "7"
+     ],
+     "answer": 1,
+     "ifNot": "Count the columns from the right: ones, tens, hundreds, thousands, ten-thousands. So this 7 means 7 ten-thousands, and that is 70,000."
+    }
+   },
+   {
+    "say": "7 times 10,000 is 70,000. That is the place value of the 7 on the left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7 × 10,000 = 70,000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "text": "ten-thousands",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "Now the 7 on the right. It is in the ones column, so it is worth just 7.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "7 × 1 = 7"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "7",
+       "nth": 2
+      },
+      "text": "ones",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, the difference between 70,000 and 7. Which sum gives it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "70,000 − 7",
+      "7 − 7",
+      "70,000 + 7"
+     ],
+     "answer": 0,
+     "ifNot": "Difference means subtract. And we subtract what the digits are worth, 70,000 and 7, not the bare digits."
+    }
+   },
+   {
+    "say": "70,000 minus 7 is 69,993. Careful: 70,000 itself is one of the choices, but that is only the bigger place value. The 7 still has to come off.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "70,000 − 7 = 69,993"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by putting it back: 69,993 plus 7 is 70,000, just where we started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "69,993 + 7 = 70,000"
+     }
+    ]
+   },
+   {
+    "say": "So the difference is 69,993.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference = 69,993",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "69,993"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the method is: find what each digit is worth in its own column, then take the smaller value from the bigger one."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q037": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Here is 897923. The digit 9 appears twice, and we want the sum of its two place values.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "897923",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "9"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "9",
+       "nth": 2
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Look at the chart. The 9 on the left is in the ten-thousands column. What is it worth there?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "897923",
+       "highlight": [
+        "d1",
+        "d3"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9000",
+      "9",
+      "90,000"
+     ],
+     "answer": 2,
+     "ifNot": "Count the columns from the right: ones, tens, hundreds, thousands, ten-thousands. So this 9 means 9 ten-thousands, and that is 90,000."
+    }
+   },
+   {
+    "say": "9 times 10,000 is 90,000. That is the place value of the 9 on the left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "9 × 10,000 = 90,000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "9"
+      },
+      "text": "ten-thousands",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "And the 9 on the right sits in the hundreds column. 9 times 100 is 900.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "9 × 100 = 900"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "9",
+       "nth": 2
+      },
+      "text": "hundreds",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now we put 90,000 and 900 together. Which line gives their sum?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9 + 9",
+      "90,000 − 900",
+      "90,000 + 900"
+     ],
+     "answer": 2,
+     "ifNot": "Sum means add. And we add what the digits are worth, 90,000 and 900, not the bare digits."
+    }
+   },
+   {
+    "say": "90,000 plus 900 is 90,900. The 900 slots straight into the empty hundreds place. Careful: 9 plus 9 would add the bare digits and forget their columns.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "90,000 + 900 = 90,900"
+     }
+    ]
+   },
+   {
+    "say": "Check by taking it off again: 90,900 minus 900 is 90,000. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "90,900 − 900 = 90,000"
+     }
+    ]
+   },
+   {
+    "say": "So the sum of the place values of the two 9s is 90,900.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum = 90,900",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "90,900"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So every time: read each digit's column, write down what it is worth, then add."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q038": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We want the sum of the greatest 2 digit number and the smallest 4 digit number. Let's name each one first.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Smallest 4-digit number + greatest 2-digit number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The smallest 4 digit number starts with 1, since a number cannot start with 0. Every other place takes a 0. That gives 1000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "Smallest 4-digit number = 1000",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "a",
+      "target": {
+       "text": "1000"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "And the greatest 2 digit number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "100",
+      "10",
+      "99"
+     ],
+     "answer": 2,
+     "ifNot": "The greatest 2 digit number has the biggest digit, 9, in all 2 places. That is 99. One more than that would need another digit."
+    }
+   },
+   {
+    "say": "Yes, a 9 in every one of the 2 places: 99.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "Greatest 2-digit number = 99",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "b",
+      "target": {
+       "text": "99"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "1000 plus 99 is 1099. Careful with the hundreds place: it stays 0, because the 99 only fills the tens and the ones.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "1000 + 99 = 1099"
+     }
+    ]
+   },
+   {
+    "say": "Let's check by undoing it: 1099 minus 99 is 1000, right where we started.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "1099 − 99 = 1000"
+     }
+    ]
+   },
+   {
+    "say": "So the sum is 1099.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum = 1099",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "1099"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the plan is: name the two special numbers, write them down, and only then add or subtract."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q040": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Our digits are 1, 2, 4, 0 and 6. We want the smallest number they can make that is also odd.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits: 1, 2, 4, 0, 6    smallest odd number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "An odd number must end in an odd digit. Which of our digits can go in the ones place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "only 1",
+      "1 or 0",
+      "any of them"
+     ],
+     "answer": 0,
+     "ifNot": "Check each digit. 2, 4, 0 and 6 are all even. The only odd digit we have is 1, so 1 must go last."
+    }
+   },
+   {
+    "say": "So 1 is locked into the ones place, even though it is our smallest digit apart from 0 and we would love to put it in front.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "q",
+      "target": {
+       "text": "1"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "_ _ _ _ 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Four digits are left: 2, 4, 0 and 6. Which one goes in the first place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "6",
+      "0",
+      "2"
+     ],
+     "answer": 2,
+     "ifNot": "0 cannot lead a number. So the first place takes the smallest digit that is not 0, and that is 2."
+    }
+   },
+   {
+    "say": "2 goes first. Now the 0 can sit right behind it, in the thousands place, where it keeps the number small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "2 0 _ _ 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The last two, 4 and 6, go in order, smaller first. That gives 20,461.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "20,461",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "20,461"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 20,641 looks almost the same, but it has the 6 before the 4. The smaller digit must take the bigger place.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "20,461 < 20,641"
+     }
+    ]
+   },
+   {
+    "say": "Check: it ends in 1, so it is odd. It does not start with 0. And after the 2, the digits run 0, 4, 6, from smallest to biggest."
+   },
+   {
+    "say": "So lock the odd digit at the end, put the smallest digit that is not 0 in front, then line up the rest from smallest to biggest."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q043": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We have four digits: 3, 1, 4 and 7. We build the greatest number they can make, then the smallest, and find the difference between the two.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits: 3, 1, 4, 7",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For the greatest number, which digit should go in the thousands place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1",
+      "3",
+      "7"
+     ],
+     "answer": 2,
+     "ifNot": "The thousands place is worth the most, so it should get the biggest digit. The biggest of 3, 1, 4 and 7 is 7."
+    }
+   },
+   {
+    "say": "Biggest digit first, then the next biggest, all the way down: 7, 4, 3, 1. The greatest number is 7431.",
+    "board": [
+     {
+      "op": "write",
+      "id": "gr",
+      "text": "Greatest = 7431",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For the smallest number we do the opposite. Smallest digit first, then upwards: 1, 3, 4, 7. That makes 1347.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sm",
+      "text": "Smallest = 1347",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "The question wants the difference between them. Which sum is that?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7431 − 1347",
+      "1347 − 7431",
+      "7431 + 1347"
+     ],
+     "answer": 0,
+     "ifNot": "Difference means subtract, and the smaller number comes off the bigger one. So it is 7431 minus 1347."
+    }
+   },
+   {
+    "say": "Let's take 1347 away one place at a time. First the 1000, which leaves 6431. Then the 300, which leaves 6131.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "7431 − 1000 = 6431"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "6431 − 300 = 6131"
+     }
+    ]
+   },
+   {
+    "say": "Next the 40, which leaves 6091. And last the 7: 6091 minus 7 is 6084.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "6131 − 40 = 6091"
+     },
+     {
+      "op": "write",
+      "id": "d4",
+      "text": "6091 − 7 = 6084"
+     }
+    ]
+   },
+   {
+    "say": "So the difference is 6084. Careful with the 0 in the hundreds place. It has to be written, or the number shrinks to three digits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "7431 − 1347 = 6084",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "6084"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 6084 plus 1347 is 7431, our greatest number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "6084 + 1347 = 7431"
+     }
+    ]
+   },
+   {
+    "say": "So the greatest number runs from the biggest digit down, and the smallest runs from the smallest digit up. Then take one from the other."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q044": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We need the one digit prime numbers first. Then we make the smallest odd number that uses all of them.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "All one-digit primes: smallest odd number",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's begin with a tricky one. Is 1 a prime number?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "Yes",
+      "No"
+     ],
+     "answer": 1,
+     "ifNot": "A prime number has exactly two different factors. 1 has only one factor, itself, so it is not prime."
+    }
+   },
+   {
+    "say": "So the one digit primes are 2, 3, 5 and 7. Not 1, and not 9, because 3 times 3 is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "Digits: 2, 3, 5, 7",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For the smallest number, the smallest digit takes the biggest place, and we work upwards: 2, 3, 5, 7. That makes 2357.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s",
+      "text": "2357"
+     }
+    ]
+   },
+   {
+    "say": "But the number must be odd. Is 2357 odd?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "No, it starts with 2",
+      "Yes, it ends in 7"
+     ],
+     "answer": 1,
+     "ifNot": "Only the last digit decides odd or even. 2357 ends in 7, and 7 is odd, so the whole number is odd."
+    }
+   },
+   {
+    "say": "It ends in 7, so it is odd already. The smallest arrangement passes the test, and nothing needs to move.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "s",
+      "target": {
+       "text": "7"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Smallest odd number = 2357",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "2357"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: the 2 in front does not make the number even. Odd or even is decided by the ones place alone."
+   },
+   {
+    "say": "Check: any other order, such as 3527, starts with a bigger digit, so it is a bigger number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "2357 < 3527"
+     }
+    ]
+   },
+   {
+    "say": "So make the smallest number first, then test the condition. If it already passes, you are done."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q046": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "We need to write the smallest four digit number. Four digits means four places: thousands, hundreds, tens and ones.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Smallest four-digit number = ?",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Let's fill the places from the left. Which digit goes in the thousands place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "0",
+      "1",
+      "9"
+     ],
+     "answer": 1,
+     "ifNot": "A 0 in the thousands place would leave only three real digits. The smallest digit that can stand in front is 1."
+    }
+   },
+   {
+    "say": "A 1 in the thousands place. That is the smallest start a four digit number can have.",
+    "board": [
+     {
+      "op": "write",
+      "id": "h",
+      "text": "thousands: 1",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Three places are left. To stay as small as possible, what goes in each of them?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "1 in all three",
+      "0 in all three",
+      "0, 0 and then 1"
+     ],
+     "answer": 1,
+     "ifNot": "Any digit bigger than 0 makes the number bigger. And 0 is allowed everywhere except the front. So all three places get a 0."
+    }
+   },
+   {
+    "say": "So we have a 1 and three zeros: 1000.",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "1000"
+      }
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "1000",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "1000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 1001 and 1111 both start the right way, but each one is bigger than 1000. And 9999 is the greatest, at the other end.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "1000 < 1001"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "1000 < 1111"
+     },
+     {
+      "op": "write",
+      "id": "c3",
+      "text": "1000 < 9999"
+     }
+    ]
+   },
+   {
+    "say": "Check: one step below 1000 is 999, and that has only three digits. So 1000 really is the first four digit number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "1000 − 1 = 999"
+     }
+    ]
+   },
+   {
+    "say": "So for the smallest number with so many digits: a 1 in front, and 0 in every other place."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q047": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Three things to sort out here: which digits we may use, what divisible by 5 tells us, and how to keep the number small.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "First three one-digit primes: odd, divisible by 5",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "What are the first three one digit prime numbers?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "2, 3, 5",
+      "3, 5, 7",
+      "1, 2, 3"
+     ],
+     "answer": 0,
+     "ifNot": "1 is not prime, so the primes start at 2. Counting up, the first three are 2, 3 and 5."
+    }
+   },
+   {
+    "say": "2, 3 and 5. Careful: 1 is not a prime, and 7 is the fourth prime, so neither of them is allowed.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d",
+      "text": "Digits: 2, 3, 5",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A number that divides exactly by 5 ends in 0 or 5. So which of our digits goes in the ones place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3",
+      "2",
+      "5"
+     ],
+     "answer": 2,
+     "ifNot": "We have no 0. So the only way to end in 0 or 5 is to put the 5 last."
+    }
+   },
+   {
+    "say": "5 goes last. And a number ending in 5 is odd as well, so both conditions are taken care of at once.",
+    "board": [
+     {
+      "op": "mark",
+      "line": "d",
+      "target": {
+       "text": "5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "_ _ 5",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Now make it small. Of 2 and 3, the smaller one goes in the hundreds place. That gives 235.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "235",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "235"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Check: 235 divided by 5 is 47, with nothing left over. It ends in 5, so it is odd. And it uses 2, 3 and 5 once each.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "235 ÷ 5 = 47"
+     }
+    ]
+   },
+   {
+    "say": "The other order, 325, passes the tests too, but it is bigger. We were asked for the smallest.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "235 < 325"
+     }
+    ]
+   },
+   {
+    "say": "So let the conditions fix the last digit first. Then arrange the remaining digits from smallest to biggest."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch02_q048": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Five digits: 1, 5, 0, 9 and 7. We make the greatest number and the smallest number from them, subtract, and then look at the middle digit of the answer.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Digits: 1, 5, 0, 9, 7",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For the greatest number, the biggest digit goes first and we work down: 9, 7, 5, 1, 0. That is 97,510.",
+    "board": [
+     {
+      "op": "write",
+      "id": "gr",
+      "text": "Greatest = 97,510",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "For the smallest number, the small digits go first. But which digit can go in the very first place?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5",
+      "0",
+      "1"
+     ],
+     "answer": 2,
+     "ifNot": "0 is the smallest digit, but a number cannot start with 0. If it did, only four digits would count. So the first place takes the next smallest digit, 1."
+    }
+   },
+   {
+    "say": "So 1 leads, because a 0 in front would not count. The 0 sits straight after it, and the rest go up in order: 5, 7, 9. The smallest number is 10,579.",
+    "board": [
+     {
+      "op": "write",
+      "id": "sm",
+      "text": "Smallest = 10,579",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "sm",
+      "target": {
+       "text": "0"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Now subtract, one place at a time. Take off the 10,000 first, which leaves 87,510. Then the 500, which leaves 87,010.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d1",
+      "text": "97,510 − 10,000 = 87,510"
+     },
+     {
+      "op": "write",
+      "id": "d2",
+      "text": "87,510 − 500 = 87,010"
+     }
+    ]
+   },
+   {
+    "say": "Then the 70, which leaves 86,940. And last the 9: 86,940 minus 9 is 86,931.",
+    "board": [
+     {
+      "op": "write",
+      "id": "d3",
+      "text": "87,010 − 70 = 86,940"
+     },
+     {
+      "op": "write",
+      "id": "d4",
+      "text": "86,940 − 9 = 86,931"
+     },
+     {
+      "op": "write",
+      "id": "d",
+      "text": "97,510 − 10,579 = 86,931"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 86,931 plus 10,579 is 97,510, our greatest number.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "86,931 + 10,579 = 97,510"
+     }
+    ]
+   },
+   {
+    "say": "The answer, 86,931, has 5 digits. Which one is in the middle?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "9",
+      "6",
+      "3"
+     ],
+     "answer": 0,
+     "ifNot": "With 5 digits, the middle one is the 3rd, because it has 2 digits on each side. Counting along 8, 6, 9, 3, 1, the 3rd digit is 9."
+    }
+   },
+   {
+    "say": "The 3rd digit has two digits on its left and two on its right. So the middle digit is 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Middle digit of 86,931 = 9",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "9",
+       "nth": 2
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So remember the 0. It cannot lead the smallest number, so it goes second. Then subtract carefully and pick out the digit the question wants."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q020": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In 73,46,125 we want the sum of the place values of the 7 and the 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "73,46,125",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "1"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Look at the chart. The 7 is in the ten-lakhs column. What is it worth there?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "7346125",
+       "highlight": [
+        "d0",
+        "d4"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7",
+      "7,00,000",
+      "70,00,000"
+     ],
+     "answer": 2,
+     "ifNot": "Count the columns from the right: ones, tens, hundreds, thousands, ten-thousands, lakhs, ten-lakhs. So this 7 means 7 ten-lakhs, and that is 70,00,000."
+    }
+   },
+   {
+    "say": "So the 7 is worth 7 times 10,00,000, which is 70,00,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "7 × 10,00,000 = 70,00,000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "7"
+      },
+      "text": "ten-lakhs",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "And the 1 sits in the hundreds column. 1 times 100 is 100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "1 × 100 = 100"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "1"
+      },
+      "text": "hundreds",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now we put 70,00,000 and 100 together. Which line gives their sum?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "7 + 1",
+      "70,00,000 − 100",
+      "70,00,000 + 100"
+     ],
+     "answer": 2,
+     "ifNot": "Sum means add. And we add what the digits are worth, 70,00,000 and 100, not the bare digits."
+    }
+   },
+   {
+    "say": "70,00,000 plus 100 is 70,00,100. The 100 drops into the empty hundreds place. Careful with the zeros: the 1 belongs in the hundreds place, not the thousands.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "70,00,000 + 100 = 70,00,100"
+     }
+    ]
+   },
+   {
+    "say": "Check by taking it off again: 70,00,100 minus 100 is 70,00,000. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "70,00,100 − 100 = 70,00,000"
+     }
+    ]
+   },
+   {
+    "say": "So the sum is 70,00,100.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum = 70,00,100",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "70,00,100"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So every time: read each digit's column, write down what it is worth, then add."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q021": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In 25,69,183 we want the difference between the place values of the 5 and the 9.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "25,69,183",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "5"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "9"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Here is the number in a place-value chart. The 5 sits in the lakhs column. So what is it worth?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "2569183",
+       "highlight": [
+        "d1",
+        "d3"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5",
+      "50,000",
+      "5,00,000"
+     ],
+     "answer": 2,
+     "ifNot": "Count the columns from the right: ones, tens, hundreds, thousands, ten-thousands, lakhs. So this 5 means 5 lakhs, and that is 5,00,000."
+    }
+   },
+   {
+    "say": "5 times 1,00,000 is 5,00,000. That is the place value of the 5.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "5 × 1,00,000 = 5,00,000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "5"
+      },
+      "text": "lakhs",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "Now the 9. It is in the thousands column, so it is worth 9 times 1000, which is 9000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "9 × 1000 = 9000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "9"
+      },
+      "text": "thousands",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, the difference between 5,00,000 and 9000. Which sum gives it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "5,00,000 + 9000",
+      "9 − 5",
+      "5,00,000 − 9000"
+     ],
+     "answer": 2,
+     "ifNot": "Difference means subtract. And we subtract what the digits are worth, 5,00,000 and 9000, not the bare digits."
+    }
+   },
+   {
+    "say": "5,00,000 minus 9000 is 4,91,000. Careful: 9 is the bigger digit, but the 5 is worth far more, because it sits further left.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "5,00,000 − 9000 = 4,91,000"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 4,91,000 plus 9000 is 5,00,000. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "4,91,000 + 9000 = 5,00,000"
+     }
+    ]
+   },
+   {
+    "say": "So the difference is 4,91,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference = 4,91,000",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "4,91,000"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So every time: read each digit's column, write down what it is worth, then subtract."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q045": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In 987321 we want the sum of the place values of the 8 and the 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "987321",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "8"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "1"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Look at the chart. The 8 is in the ten-thousands column. What is it worth there?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "987321",
+       "highlight": [
+        "d1",
+        "d5"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8",
+      "80,000",
+      "8000"
+     ],
+     "answer": 1,
+     "ifNot": "Count the columns from the right: ones, tens, hundreds, thousands, ten-thousands. So this 8 means 8 ten-thousands, and that is 80,000."
+    }
+   },
+   {
+    "say": "So the 8 is worth 8 times 10,000, which is 80,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "8 × 10,000 = 80,000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "8"
+      },
+      "text": "ten-thousands",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "And the 1 sits in the ones column, the smallest one. There it is worth just 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "1 × 1 = 1"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "1"
+      },
+      "text": "ones",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now we put 80,000 and 1 together. Which line gives their sum?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "8 + 1",
+      "80,000 + 1",
+      "80,000 − 1"
+     ],
+     "answer": 1,
+     "ifNot": "Sum means add. And we add what the digits are worth, 80,000 and 1, not the bare digits."
+    }
+   },
+   {
+    "say": "80,000 plus 1 is 80,001. The 1 drops into the empty ones place. Careful: sum means add. Taking the 1 away instead would land just below 80,000.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "80,000 + 1 = 80,001"
+     }
+    ]
+   },
+   {
+    "say": "Check by taking it off again: 80,001 minus 1 is 80,000. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "80,001 − 1 = 80,000"
+     }
+    ]
+   },
+   {
+    "say": "So the sum is 80,001.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Sum = 80,001",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "80,001"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So: the place value of each digit first, from its column. Only then do we add."
+   }
+  ]
+ },
+ "IPMTB_grade5_ch05_q046": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "In 23516 we want the difference between the place values of the 3 and the 1.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "23516",
+      "tone": "given"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "3"
+      },
+      "shape": "underline"
+     },
+     {
+      "op": "mark",
+      "line": "n",
+      "target": {
+       "text": "1"
+      },
+      "shape": "underline"
+     }
+    ]
+   },
+   {
+    "say": "Look at the chart. The 3 is in the thousands column. What is it worth there?",
+    "board": [
+     {
+      "op": "figure",
+      "id": "chart",
+      "spec": {
+       "kind": "placeChart",
+       "number": "23516",
+       "highlight": [
+        "d1",
+        "d3"
+       ]
+      }
+     }
+    ],
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "300",
+      "3",
+      "3000"
+     ],
+     "answer": 2,
+     "ifNot": "Count the columns from the right: ones, tens, hundreds, thousands. So this 3 means 3 thousands, and that is 3000."
+    }
+   },
+   {
+    "say": "3 times 1000 is 3000. That is the place value of the 3.",
+    "board": [
+     {
+      "op": "write",
+      "id": "a",
+      "text": "3 × 1000 = 3000"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "3"
+      },
+      "text": "thousands",
+      "place": "above"
+     }
+    ]
+   },
+   {
+    "say": "And the 1 sits in the tens column. 1 times 10 is 10.",
+    "board": [
+     {
+      "op": "write",
+      "id": "b",
+      "text": "1 × 10 = 10"
+     },
+     {
+      "op": "note",
+      "line": "n",
+      "target": {
+       "text": "1"
+      },
+      "text": "tens",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now, the difference between 3000 and 10. Which sum gives it?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "3000 − 10",
+      "3000 + 10",
+      "3 − 1"
+     ],
+     "answer": 0,
+     "ifNot": "Difference means subtract. And we subtract what the digits are worth, 3000 and 10, not the bare digits."
+    }
+   },
+   {
+    "say": "3000 minus 10 is 2990. Careful: 3 minus 1 is only 2, and that forgets the columns. The 3 stands for thousands and the 1 for tens.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c",
+      "text": "3000 − 10 = 2990"
+     }
+    ]
+   },
+   {
+    "say": "Check by adding back: 2990 plus 10 is 3000. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "2990 + 10 = 3000"
+     }
+    ]
+   },
+   {
+    "say": "So the difference is 2990.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Difference = 2990",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "2990"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "So the method is: find what each digit is worth in its own column, then take the smaller value from the bigger one."
+   }
+  ]
+ },
+ "AIGEN_grade5_00942e8a-69f6-4e0d-bdd7-4b962326513b": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Meera spends 250 rupees on ingredients and 50 rupees on plates. She makes 60 samosas to sell at 8 rupees each, but 10 are left over and given away. We want her profit or loss as a percentage of her cost.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Cost ₹250 + ₹50; 60 made, 10 unsold, ₹8 each",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "Start with the cost. 250 plus 50 is 300 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "cp",
+      "text": "250 + 50 = 300"
+     },
+     {
+      "op": "note",
+      "line": "cp",
+      "target": {
+       "text": "300"
+      },
+      "text": "total cost",
+      "place": "below"
+     }
+    ]
+   },
+   {
+    "say": "Now the money that comes in. How many samosas actually earn her money?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "10",
+      "60",
+      "50"
+     ],
+     "answer": 2,
+     "ifNot": "The 10 given away bring in nothing. Only the ones she sells count, and that is 60 minus 10, which is 50."
+    }
+   },
+   {
+    "say": "60 minus 10 is 50 sold. At 8 rupees each, 50 times 8 is 400 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "60 − 10 = 50"
+     },
+     {
+      "op": "write",
+      "id": "sp",
+      "text": "50 × 8 = 400"
+     }
+    ]
+   },
+   {
+    "say": "She took in 400 and spent 300, so she made a profit. 400 minus 300 is 100 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pr",
+      "text": "400 − 300 = 100"
+     }
+    ]
+   },
+   {
+    "say": "For the percentage, we compare the profit with something. With what?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "the 60 samosas",
+      "the money taken in, 400",
+      "the cost, 300"
+     ],
+     "answer": 2,
+     "ifNot": "The question says percentage on the total cost. So the profit, 100, is compared with the cost, 300."
+    }
+   },
+   {
+    "say": "100 out of 300 is the fraction 100 over 300, and that is one third.",
+    "board": [
+     {
+      "op": "write",
+      "id": "f",
+      "text": "100/300 = 1/3"
+     }
+    ]
+   },
+   {
+    "say": "One third as a percentage is one third of 100. 100 divided by 3 is 33 and a third. So her profit is 33 and a third percent.",
+    "board": [
+     {
+      "op": "write",
+      "id": "pc",
+      "text": "100 ÷ 3 = 33 + 1/3"
+     },
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "Profit = 33⅓%",
+      "tone": "answer",
+      "label": true
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "33⅓%"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: counting all 60 samosas would give 480 rupees and a much bigger profit. But the 10 unsold ones earned nothing.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "60 × 8 = 480"
+     }
+    ]
+   },
+   {
+    "say": "Check: one third of the cost, 300, is 100. And 100 rupees is exactly her profit.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "300 ÷ 3 = 100"
+     }
+    ]
+   },
+   {
+    "say": "So: find the total cost, then the money from what was really sold, then the difference. Last, put that difference over the cost to get the percentage."
+   }
+  ]
+ },
+ "AIGEN_grade5_017769ba-51ca-44c3-ab61-9531a2549540": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya's uncle spends 120 rupees on potatoes, 230 on spices and flour, and 150 on oil. He makes 200 samosas, gives 20 away as samples, and sells the rest at 5 rupees each. What is his profit?",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "Costs ₹120, ₹230, ₹150; 200 made, 20 free, ₹5 each",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "First the total cost. 120 plus 230 is 350, and 150 more makes 500 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "c1",
+      "text": "120 + 230 = 350"
+     },
+     {
+      "op": "write",
+      "id": "c2",
+      "text": "350 + 150 = 500"
+     }
+    ]
+   },
+   {
+    "say": "How many samosas does he actually sell?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "180",
+      "220",
+      "200"
+     ],
+     "answer": 0,
+     "ifNot": "The 20 samples are given away free, so they come off the 200. 200 minus 20 is 180."
+    }
+   },
+   {
+    "say": "200 minus 20 is 180. The free samples cost him money to make, but they bring none in.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "200 − 20 = 180"
+     }
+    ]
+   },
+   {
+    "say": "Each one sells for 5 rupees. For 180 times 5, split the 180: 100 fives are 500, and 80 fives are 400. Together that is 900 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "100 × 5 = 500"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "80 × 5 = 400"
+     },
+     {
+      "op": "write",
+      "id": "sp",
+      "text": "180 × 5 = 900"
+     }
+    ]
+   },
+   {
+    "say": "He took in 900 rupees and spent 500. How do we find the profit?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "900 − 500",
+      "it is the whole 900",
+      "900 + 500"
+     ],
+     "answer": 0,
+     "ifNot": "Profit is what is left after the costs are paid back. So we take the cost away from the money taken in: 900 minus 500."
+    }
+   },
+   {
+    "say": "900 minus 500 is 400. His profit is 400 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "900 − 500 = 400",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "400"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: 900 is the money he collected, not his profit. And selling all 200 would have brought in 1000, but 20 of them were never sold.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t",
+      "text": "200 × 5 = 1000"
+     }
+    ]
+   },
+   {
+    "say": "Check: cost plus profit should give the money taken in. 500 plus 400 is 900. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "500 + 400 = 900"
+     }
+    ]
+   },
+   {
+    "say": "So in a profit story: add up every cost, count only what was really sold, then take the cost away from the money that came in."
+   }
+  ]
+ },
+ "AIGEN_grade5_0937e6f4-93a6-47f5-bc0b-2e01667f95e8": {
+  "origin": "authored",
+  "beats": [
+   {
+    "say": "Priya's father buys 8 kilograms of kaju katli at 800 rupees a kilogram, and 12 kilograms of gulab jamun at 300. He spends 600 on boxes and 200 on ribbons. He makes 40 gift boxes to sell at 350 rupees each, and 5 stay unsold.",
+    "board": [
+     {
+      "op": "write",
+      "id": "q",
+      "text": "8 kg × ₹800, 12 kg × ₹300, ₹600, ₹200; 40 boxes, 5 unsold",
+      "tone": "given",
+      "label": true
+     }
+    ]
+   },
+   {
+    "say": "A long story, so we take it in parts. First the sweets. 8 times 800 is 6400, and 12 times 300 is 3600.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k1",
+      "text": "8 × 800 = 6400"
+     },
+     {
+      "op": "write",
+      "id": "k2",
+      "text": "12 × 300 = 3600"
+     }
+    ]
+   },
+   {
+    "say": "Now add the boxes and the ribbons. 6400 plus 3600 is 10,000, and 600 plus 200 is 800. So the total cost is 10,800 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "t1",
+      "text": "6400 + 3600 = 10,000"
+     },
+     {
+      "op": "write",
+      "id": "t2",
+      "text": "600 + 200 = 800"
+     },
+     {
+      "op": "write",
+      "id": "t3",
+      "text": "10,000 + 800 = 10,800"
+     }
+    ]
+   },
+   {
+    "say": "Now the money coming in. How many boxes does he get paid for?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "35",
+      "40",
+      "45"
+     ],
+     "answer": 0,
+     "ifNot": "He made 40 boxes, but 5 were given away as gifts. Only sold boxes bring in money, and 40 minus 5 is 35."
+    }
+   },
+   {
+    "say": "40 minus 5 is 35 boxes sold, at 350 rupees each.",
+    "board": [
+     {
+      "op": "write",
+      "id": "n",
+      "text": "40 − 5 = 35"
+     }
+    ]
+   },
+   {
+    "say": "For 35 times 350, split the 35. 30 times 350 is 10,500, and 5 times 350 is 1750. Together that is 12,250 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "s1",
+      "text": "30 × 350 = 10,500"
+     },
+     {
+      "op": "write",
+      "id": "s2",
+      "text": "5 × 350 = 1750"
+     },
+     {
+      "op": "write",
+      "id": "sp",
+      "text": "10,500 + 1750 = 12,250"
+     }
+    ]
+   },
+   {
+    "say": "He took in 12,250 and spent 10,800. Is that a profit or a loss?",
+    "ask": {
+     "kind": "choose",
+     "choices": [
+      "a profit",
+      "a loss"
+     ],
+     "answer": 0,
+     "ifNot": "Compare the two amounts. He took in more than he spent, so money is left over. That is a profit."
+    }
+   },
+   {
+    "say": "More came in than went out, so it is a profit. 12,250 minus 10,800 is 1450 rupees.",
+    "board": [
+     {
+      "op": "write",
+      "id": "ans",
+      "text": "12,250 − 10,800 = 1450",
+      "tone": "answer"
+     },
+     {
+      "op": "mark",
+      "line": "ans",
+      "target": {
+       "text": "1450"
+      },
+      "shape": "circle"
+     }
+    ]
+   },
+   {
+    "say": "Careful: counting all 40 boxes is the classic slip here. The 5 gift boxes cost money to fill, but they earned nothing."
+   },
+   {
+    "say": "Check: cost plus profit should equal the money taken in. 10,800 plus 1450 is 12,250. It fits.",
+    "board": [
+     {
+      "op": "write",
+      "id": "k",
+      "text": "10,800 + 1450 = 12,250"
+     }
+    ]
+   },
+   {
+    "say": "So in a profit story: add up every cost, count only what was really sold, then compare the two totals."
+   }
+  ]
+ }
+}
