@@ -14,7 +14,7 @@
  *     because the form is then what the question asks for;
  *   - where the answer is a number with a unit or words ("3 hours 15 minutes"),
  *     the same numbers in the same order are accepted with or without the
- *     units; words the child does type must match the answer's own words
+ *     units (but a month or weekday in the answer must be typed too); words the child does type must match the answer's own words
  *     ("min" for "minutes", but not "July" for "August" or "PM" for "AM");
  *   - an answer that starts "Yes," or "No," is right when the child's answer
  *     starts with the same word.
@@ -122,6 +122,12 @@ function numberTokens(text: string): Rational[] {
 const FILLER = ['and', 'the', 'of', 'a', 'an', 'is', 'it', 'at', 'in', 'on', 'about', 'equals', 'answer', 'to'];
 // Words that are the point of the answer: when the stored answer has one, the child's must too.
 const REQUIRED = ['am', 'pm', 'yes', 'no'];
+// Words that say WHICH one (a month, a weekday): when the stored answer has one, a bare number
+// is not enough ("15" is not "15 August").
+const NAMING = [
+  'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october',
+  'november', 'december', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday',
+];
 // Words that change the size of a number. Never ignored after a bare number.
 const MAGNITUDE = [
   'ten', 'tens', 'hundred', 'hundreds', 'thousand', 'thousands', 'lakh', 'lakhs', 'crore', 'crores',
@@ -201,6 +207,16 @@ function matchOne(typedFolded: string, storedFolded: string): boolean {
   const typedWords = wordTokens(typed);
   for (let i = 0; i < storedWords.length; i++) {
     if (has(REQUIRED, storedWords[i]) && !has(typedWords, storedWords[i])) return false;
+    if (has(NAMING, storedWords[i])) {
+      let named = false;
+      for (let k = 0; k < typedWords.length; k++) {
+        if (wordsAlike(typedWords[k], storedWords[i])) {
+          named = true;
+          break;
+        }
+      }
+      if (!named) return false;
+    }
   }
   for (let i = 0; i < typedWords.length; i++) {
     let alike = false;

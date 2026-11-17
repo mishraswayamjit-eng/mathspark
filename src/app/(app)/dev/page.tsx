@@ -80,7 +80,7 @@ function StudentCard({ s }: { s: TestStudent }) {
         const createRes = await fetch('/api/students', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: s.name, grade: s.grade, pin: DEV_PIN }),
+          body: JSON.stringify({ name: s.name, grade: s.grade, pin: DEV_PIN, parentEmail: 'dev-tester@example.com' }),
         });
         if (!createRes.ok) { setError('Failed to create test student'); setBusy(false); return; }
         const created = await createRes.json();

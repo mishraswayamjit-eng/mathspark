@@ -42,7 +42,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'name is required' }, { status: 400 });
     }
     const cleanEmail = typeof parentEmail === 'string' ? parentEmail.trim().toLowerCase().slice(0, 254) : '';
-    if (cleanEmail && !EMAIL_RE.test(cleanEmail)) {
+    // Required: the parent email is the only way a child signs in again later
+    // (new phone, after logging out, or when the 30-day session ends).
+    if (!cleanEmail || !EMAIL_RE.test(cleanEmail)) {
       return NextResponse.json({ error: 'Please check the parent email address.' }, { status: 400 });
     }
     const cleanExamName = typeof examName === 'string' ? examName.trim().slice(0, 100) : '';

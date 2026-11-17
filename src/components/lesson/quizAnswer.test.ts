@@ -70,6 +70,8 @@ describe('isQuizAnswerRight', () => {
   it('does not let a different word through', () => {
     expect(isQuizAnswerRight('15 July', '15 August')).toBe(false);
     expect(isQuizAnswerRight('15th August', '15 August')).toBe(true);
+    expect(isQuizAnswerRight('15 Aug', '15 August')).toBe(true);
+    expect(isQuizAnswerRight('15', '15 August')).toBe(false);
     expect(isQuizAnswerRight('25 hours', '25 minutes')).toBe(false);
   });
 

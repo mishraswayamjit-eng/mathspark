@@ -1,5 +1,6 @@
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
+import { prisma } from '@/lib/db';
 
 const COOKIE_NAME = 'mathspark_student_token';
 const EXPIRY = '30d';
@@ -38,7 +39,43 @@ export async function getAuthenticatedStudentId(): Promise<string | null> {
   const cookieStore = cookies();
   const token = cookieStore.get(COOKIE_NAME)?.value;
   if (!token) return null;
-  return verifyStudentToken(token);
+  const studentId = await verifyStudentToken(token);
+  if (!studentId) return null;
+  return (await isActiveStudent(studentId)) ? studentId : null;
+}
+
+// A child a parent has removed keeps a signed cookie for up to 30 days, so the
+// token alone is not enough: the account must still exist and not be removed.
+// The answer is remembered per server instance for a minute, so this costs one
+// small indexed read per child per minute, not one per request.
+const ACTIVE_TTL_MS = 60_000;
+const ACTIVE_CACHE_MAX = 5000;
+let activeCache: Record<string, { ok: boolean; at: number }> = {};
+let activeCacheSize = 0;
+
+async function isActiveStudent(studentId: string): Promise<boolean> {
+  const now = Date.now();
+  const hit = activeCache[studentId];
+  if (hit && now - hit.at < ACTIVE_TTL_MS) return hit.ok;
+  try {
+    const row = await prisma.student.findFirst({
+      where: { id: studentId, deletedAt: null },
+      select: { id: true },
+    });
+    if (!hit) {
+      if (activeCacheSize >= ACTIVE_CACHE_MAX) {
+        activeCache = {};
+        activeCacheSize = 0;
+      }
+      activeCacheSize += 1;
+    }
+    activeCache[studentId] = { ok: !!row, at: now };
+    return !!row;
+  } catch {
+    // The database could not be reached: let the route itself report that,
+    // rather than signing every child out.
+    return true;
+  }
 }
 
 export { COOKIE_NAME };

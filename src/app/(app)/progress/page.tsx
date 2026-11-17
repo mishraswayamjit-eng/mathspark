@@ -47,8 +47,14 @@ interface TopicEntry {
 /** Sign-in is gone: forget this device's child and ask them to log in again. */
 function clearChildFromDevice(): void {
   try {
+    // Only who is signed in is forgotten. Progress kept on this device (plan
+    // ticks, drill unlocks, voice choice) stays for when the same child logs
+    // back in; a real "Log out" from Profile clears everything.
     Object.keys(localStorage)
-      .filter((k) => k.indexOf('mathspark_') === 0)
+      .filter((k) =>
+        k === 'mathspark_student_id' || k === 'mathspark_student_name' ||
+        k === 'mathspark_student_grade' || k === 'mathspark_subscription_tier' ||
+        k.indexOf('mathspark_dashboard_') === 0)
       .forEach((k) => localStorage.removeItem(k));
   } catch {
     // Storage blocked: nothing to forget.

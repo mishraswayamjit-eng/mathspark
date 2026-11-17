@@ -1,3 +1,5 @@
+import { isCleanWord } from '@/lib/profanityFilter';
+
 /** Canonical topic ordering for consistent display across all pages */
 export const TOPIC_ORDER: readonly string[] = [
   'ch01-05','ch06','ch07-08','ch09-10','ch11','ch12',
@@ -111,7 +113,11 @@ export function gradeInRange(gradeRange: unknown, grade: number): boolean {
  * otherwise fall back to the first token of the full name.
  */
 export function getDisplayName(name: string, displayName?: string | null): string {
-  return displayName ?? name.split(' ')[0];
+  if (displayName) return displayName;
+  // The first name is typed freely at sign-up and is not filtered there, so it
+  // is not shown to other children when the whole word is a blocked one.
+  const first = name.split(' ')[0];
+  return isCleanWord(first) ? first : 'Student';
 }
 
 /**

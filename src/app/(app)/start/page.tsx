@@ -33,6 +33,8 @@ function getDiagnosticPlan(grade: number): DiagnosticPlan[] {
 }
 
 const TOTAL = 5;
+// Same shape the server checks; the parent email is how a child logs in again.
+const SIGNUP_EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const TOPIC_NAMES: Record<string, string> = {
   'ch01-05': 'Number System',
@@ -340,6 +342,10 @@ export default function StartPage() {
     if (!name.trim() || !selectedGrade) return;
     if (!/^\d{4}$/.test(pin)) {
       setError('Please set a 4-digit PIN to protect your account.');
+      return;
+    }
+    if (!SIGNUP_EMAIL_RE.test(parentEmail.trim())) {
+      setError("Please ask a grown-up to type their email, so you can log in again later.");
       return;
     }
     setLoading(true);
@@ -814,29 +820,29 @@ export default function StartPage() {
             <p className="text-xs text-gray-500 font-medium mt-1">You'll need this to log in — keep it safe!</p>
           </div>
 
-          <details className="group">
-            <summary className="text-xs font-extrabold text-gray-500 uppercase tracking-wide cursor-pointer select-none list-none flex items-center gap-1 min-h-[48px]">
-              <span className="text-gray-400 group-open:rotate-90 transition-transform">▶</span>
-              Add parent email (to log in again later)
-            </summary>
-            <div className="mt-2 space-y-1">
-              <input
-                type="email"
-                value={parentEmail}
-                onChange={(e) => setParentEmail(e.target.value)}
-                placeholder="parent@email.com"
-                aria-label="Parent email"
-                className="w-full border-2 border-line rounded-control px-3 py-2.5 text-sm font-medium text-gray-800 outline-none focus:border-action transition-colors"
-              />
-              <p className="text-xs text-gray-500 font-medium">
-                You&apos;ll use this email and your PIN to log in on another phone or after logging out. It is also where weekly progress reports go.
-              </p>
-            </div>
-          </details>
+          <div>
+            <label htmlFor="signup-parent-email" className="text-xs font-extrabold text-gray-500 uppercase tracking-wide">
+              A parent&apos;s email
+            </label>
+            <input
+              id="signup-parent-email"
+              type="email"
+              inputMode="email"
+              autoComplete="email"
+              value={parentEmail}
+              onChange={(e) => { setParentEmail(e.target.value); setError(''); }}
+              placeholder="parent@email.com"
+              maxLength={254}
+              className="w-full mt-1.5 min-h-[48px] border-2 border-line rounded-control px-3 py-2.5 text-base font-medium text-gray-800 outline-none focus:border-action transition-colors"
+            />
+            <p className="text-xs text-gray-500 font-medium mt-1">
+              Ask a grown-up to type this. You&apos;ll use this email and your PIN to log in again on another phone or after logging out.
+            </p>
+          </div>
 
           {error && <p className="text-retry text-sm text-center font-semibold">{error}</p>}
 
-          <DuoButton variant="green" fullWidth onClick={handleSignUp} loading={loading} disabled={!name.trim() || pin.length !== 4}>
+          <DuoButton variant="green" fullWidth onClick={handleSignUp} loading={loading} disabled={!name.trim() || pin.length !== 4 || !SIGNUP_EMAIL_RE.test(parentEmail.trim())}>
             Create Free Account
           </DuoButton>
         </div>
