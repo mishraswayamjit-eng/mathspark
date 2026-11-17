@@ -58,7 +58,7 @@ export function CorrectPanel({
         <div>
           <button
             onClick={() => setShowWhy(!showWhy)}
-            className="text-sm font-extrabold text-success underline underline-offset-2 min-h-[44px] flex items-center"
+            className="text-sm font-extrabold text-success underline underline-offset-2 min-h-[48px] flex items-center"
           >
             {showWhy ? 'Hide explanation ▲' : 'Why? ▼'}
           </button>
@@ -81,7 +81,7 @@ export function CorrectPanel({
       {canTrySimilar && (
         <button
           onClick={onTrySimilar}
-          className="w-full text-ink-muted font-bold text-sm flex items-center justify-center gap-1 min-h-[44px]"
+          className="w-full text-ink-muted font-bold text-sm flex items-center justify-center gap-1 min-h-[48px]"
         >
           🔄 Try a Similar Question
         </button>

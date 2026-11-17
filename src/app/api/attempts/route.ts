@@ -8,6 +8,11 @@ import { validateInteractiveAnswer } from '@/lib/interactiveGrading';
 import { validateBody, ValidationError } from '@/lib/validateBody';
 import { logError } from '@/lib/logger';
 
+// India has one time zone and no daylight saving: UTC + 5:30.
+const IST_OFFSET_MS = 330 * 60 * 1000;
+/** XP for a right answer on a question already tried earlier the same day. */
+const REVIEW_XP = 10;
+
 // POST /api/attempts
 // body: { questionId, topicId, selected, isCorrect, hintUsed?, timeTakenMs?, isBonusQuestion? }
 export async function POST(req: Request) {
@@ -115,6 +120,19 @@ export async function POST(req: Request) {
     });
     const serverElapsedMs = lastAttempt ? Date.now() - lastAttempt.createdAt.getTime() : undefined;
 
+    // A second try at the same question on the same India-time day (the review
+    // round, "review mistakes") comes after the correct answer has been shown,
+    // so it earns the review amount, not the full amount. Worked out here from
+    // the recorded attempts: the client is not asked.
+    const istNow = new Date(Date.now() + IST_OFFSET_MS);
+    istNow.setUTCHours(0, 0, 0, 0);
+    const indiaDayStart = new Date(istNow.getTime() - IST_OFFSET_MS);
+    const earlierToday = await prisma.attempt.findFirst({
+      where:  { studentId, questionId, createdAt: { gte: indiaDayStart } },
+      select: { id: true },
+    });
+    const isRepeatToday = earlierToday !== null;
+
     // ── Atomic core: create attempt + count daily usage + cap XP + league/lifetime XP ─
     const { attempt, xpAwarded } = await prisma.$transaction(async (tx) => {
       // Validate student exists
@@ -136,7 +154,8 @@ export async function POST(req: Request) {
       });
 
       // Compute and atomically cap daily XP within the same transaction
-      const rawXP = computeXPForAttempt(serverIsCorrect, isBonusQuestion, serverElapsedMs);
+      const fullXP = computeXPForAttempt(serverIsCorrect, isBonusQuestion, serverElapsedMs);
+      const rawXP = isRepeatToday ? Math.min(fullXP, REVIEW_XP) : fullXP;
       let awarded = 0;
 
       if (rawXP > 0) {

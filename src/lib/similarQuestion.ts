@@ -80,15 +80,27 @@ export async function findSimilarQuestion(
   };
   const keys = topicKeysFor(topicId, subTopic);
 
+  // The topic the question itself names (`nodeId`), when it names one. A label
+  // can match two topics ("Fraction addition" matches both Fractions and
+  // Addition & Subtraction); a question that names its topic is only ever
+  // offered in exchange for one of the same topic. Where either side has no
+  // `nodeId`, the label decides, as before.
+  const origin = questionId
+    ? await prisma.question.findUnique({ where: { id: questionId }, select: { nodeId: true } })
+    : null;
+  const ownNodeId = origin && origin.nodeId ? origin.nodeId : '';
+  const sameNode = (q: { nodeId: string | null }): boolean =>
+    !ownNodeId || !q.nodeId || q.nodeId === ownNodeId;
+
   // A generated variant names its family in its id (VAR_G5_vary_hcf_lcm_V07),
   // and some carry only the label "Auto-generated variant", which says nothing
   // about the topic. Its siblings in the same family are the same concept.
   const family = /^(VAR_G\d+_vary_.+_V)\d+/.exec(questionId);
   if (family) {
-    const siblings = await prisma.question.findMany({
+    const siblings = (await prisma.question.findMany({
       where: { ...base, id: { notIn: excluded, startsWith: family[1] } },
       take: 60,
-    });
+    })).filter(sameNode);
     const atLevel = siblings.filter((q) => allowedDiff.indexOf(q.difficulty) !== -1);
     if (atLevel.length > 0) return pickRandom(atLevel);
     if (siblings.length > 0) return pickRandom(siblings);
@@ -123,9 +135,12 @@ export async function findSimilarQuestion(
       : none(),
   ]);
 
-  if (sameLabel.length > 0) return pickRandom(sameLabel);
+  const sameLabelInNode = sameLabel.filter(sameNode);
+  if (sameLabelInNode.length > 0) return pickRandom(sameLabelInNode);
 
-  const inTopic = sameTopic.filter((q) => keys.some((key) => matchesSubTopicKey(q.subTopic, key)));
+  const inTopic = sameTopic.filter(
+    (q) => sameNode(q) && keys.some((key) => matchesSubTopicKey(q.subTopic, key)),
+  );
   const inTopicAtLevel = inTopic.filter((q) => allowedDiff.indexOf(q.difficulty) !== -1);
   if (inTopicAtLevel.length > 0) return pickRandom(inTopicAtLevel);
   if (inTopic.length > 0) return pickRandom(inTopic);

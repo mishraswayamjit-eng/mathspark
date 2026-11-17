@@ -71,6 +71,33 @@ function pickBest<T extends { source: string }>(pool: T[]): T | null {
   return pool[Math.floor(Math.random() * pool.length)];
 }
 
+// India has one time zone and no daylight saving: UTC + 5:30.
+const IST_OFFSET_MS = 330 * 60 * 1000;
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+/** Midnight in India at the start of the day `now` falls on, as a real instant. */
+function indiaDayStart(now: Date): Date {
+  const shifted = new Date(now.getTime() + IST_OFFSET_MS);
+  shifted.setUTCHours(0, 0, 0, 0);
+  return new Date(shifted.getTime() - IST_OFFSET_MS);
+}
+
+/**
+ * The topic-tree node a sub-topic key names in a keyed grade ("grade5" +
+ * "fraction" → "gr5_fractions"), or '' when there is none (a chapter topic, no
+ * key, or a key that is not one of the grade's topics).
+ */
+function nodeIdForKey(topicId: string, key: string): string {
+  const grade = /^grade(\d+)$/.exec(topicId);
+  if (!grade || !key) return '';
+  const wanted = key.trim().toLowerCase();
+  const nodes = getTopicsForGrade(Number(grade[1]));
+  for (let i = 0; i < nodes.length; i++) {
+    if ((nodes[i].subTopicKey ?? '').toLowerCase() === wanted) return nodes[i].id;
+  }
+  return '';
+}
+
 // ── Main export ───────────────────────────────────────────────────────────────
 
 /**
@@ -125,10 +152,9 @@ export async function getNextQuestionWithLadder(
   confidence?: 'low' | 'high',
 ) {
   // Session window: midnight today → midnight tomorrow (drives streak/difficulty).
-  const todayStart = new Date();
-  todayStart.setHours(0, 0, 0, 0);
-  const tomorrowStart = new Date(todayStart);
-  tomorrowStart.setDate(tomorrowStart.getDate() + 1);
+  // "Today" is the child's day in India, not the server's (which runs in UTC).
+  const todayStart = indiaDayStart(new Date());
+  const tomorrowStart = new Date(todayStart.getTime() + DAY_MS);
 
   // Seen-exclusion window: a rolling multi-day span so a student practising the
   // same topic across days doesn't get the same questions back. Streak logic still
@@ -136,8 +162,7 @@ export async function getNextQuestionWithLadder(
   // avoid starving small sub-topic pools (the absolute fallback re-serves if a pool
   // is genuinely exhausted).
   const SEEN_WINDOW_DAYS = 14;
-  const seenWindowStart = new Date(todayStart);
-  seenWindowStart.setDate(seenWindowStart.getDate() - SEEN_WINDOW_DAYS);
+  const seenWindowStart = new Date(todayStart.getTime() - SEEN_WINDOW_DAYS * DAY_MS);
 
   // Scoped selection for a single sub-topic key (empty key = whole pool). This is
   // the original `getNextQuestion` body verbatim — same queries, same order.
@@ -149,10 +174,17 @@ export async function getNextQuestionWithLadder(
       ? { subTopic: { contains: key, mode: 'insensitive' as const } }
       : {};
 
+    // `take: 200` keeps the read small, but a topic can hold more than 200
+    // questions. Reading from either end of the id order (chosen at random each
+    // time) reaches every question of a topic of up to 400, where one fixed
+    // order would never serve the rest.
+    const idOrder: 'asc' | 'desc' = Math.random() < 0.5 ? 'asc' : 'desc';
+
     // Parallel DB reads
     const [fetchedQuestions, sessionAttempts, progress, misconceptionAttempts] = await Promise.all([
       prisma.question.findMany({
         where: { topicId, ...subTopicFilter, ...USABLE_QUESTION_FILTER, ...aiSourceFilter() },
+        orderBy: { id: idOrder },
         take: 200,
       }),
 
@@ -183,8 +215,15 @@ export async function getNextQuestionWithLadder(
 
     // Precise word-boundary filter on the served pool (the DB query above only
     // narrowed it to a substring superset).
+    // A question that names its own topic (`nodeId`) is served only there: a
+    // "Fraction addition" question belongs to Fractions, though its label also
+    // matches the key of Addition & Subtraction. Without a `nodeId` (or when the
+    // key names no topic of the grade) the label decides, as before.
+    const ownNodeId = nodeIdForKey(topicId, key);
     const allQuestions = key
-      ? fetchedQuestions.filter((q) => matchesSubTopicKey(q.subTopic, key))
+      ? fetchedQuestions.filter((q) =>
+          ownNodeId && q.nodeId ? q.nodeId === ownNodeId : matchesSubTopicKey(q.subTopic, key),
+        )
       : fetchedQuestions;
 
     // Compute boosted subTopics (3+ misconception attempts → higher priority)
@@ -327,28 +366,32 @@ export async function getNextQuestionWithLadder(
   // child's answers, and choose inside the band the ladder asks for. The seen
   // window, the usable-question filter, the generated-source kill-switches and
   // the source ranking (`pickBest`) all still apply.
-  async function pickOnLadder(key: string, topicLabel: string, gradeNum: number) {
+  async function pickOnLadder(key: string, topicLabel: string, gradeNum: number, ownNodeId: string) {
     // Generated questions whose topic is only in their id (see ladder.ts).
     const idPrefixes = variantIdPrefixes(gradeNum, key);
     const inTopic = {
       topicId,
       OR: [
+        { nodeId: ownNodeId },
         { subTopic: { contains: key, mode: 'insensitive' as const } },
         ...idPrefixes.map((p) => ({ id: { startsWith: p } })),
       ],
     };
-    const belongs = (id: string, subTopic: string) =>
-      matchesSubTopicKey(subTopic, key) || idPrefixes.some((p) => id.indexOf(p) === 0);
+    // A question that names its own topic (`nodeId`) belongs only there; one
+    // without it is placed by its label or its id, as before.
+    const belongs = (id: string, subTopic: string, nodeId?: string | null) =>
+      nodeId
+        ? nodeId === ownNodeId
+        : matchesSubTopicKey(subTopic, key) || idPrefixes.some((p) => id.indexOf(p) === 0);
 
-    const ladderWindowStart = new Date(todayStart);
-    ladderWindowStart.setDate(ladderWindowStart.getDate() - LADDER_WINDOW_DAYS);
+    const ladderWindowStart = new Date(todayStart.getTime() - LADDER_WINDOW_DAYS * DAY_MS);
 
     const [lightPool, windowAttempts] = await Promise.all([
       // The whole topic, light columns only: the ladder needs every band's size,
       // and `take: 200` on full rows would cut large topics short.
       prisma.question.findMany({
         where: { ...inTopic, ...USABLE_QUESTION_FILTER, ...aiSourceFilter() },
-        select: { id: true, subTopic: true, difficulty: true, source: true },
+        select: { id: true, subTopic: true, difficulty: true, source: true, nodeId: true },
       }),
       prisma.attempt.findMany({
         where: {
@@ -361,14 +404,14 @@ export async function getNextQuestionWithLadder(
           questionId: true,
           isCorrect: true,
           createdAt: true,
-          question: { select: { subTopic: true, difficulty: true, source: true } },
+          question: { select: { subTopic: true, difficulty: true, source: true, nodeId: true } },
         },
       }),
     ]);
 
-    const pool = lightPool.filter((q) => belongs(q.id, q.subTopic));
+    const pool = lightPool.filter((q) => belongs(q.id, q.subTopic, q.nodeId));
     if (pool.length === 0) return null;
-    const topicAttempts = windowAttempts.filter((a) => belongs(a.questionId, a.question.subTopic));
+    const topicAttempts = windowAttempts.filter((a) => belongs(a.questionId, a.question.subTopic, a.question.nodeId));
 
     // "Already doing well": the child's last 10 answers in this grade before
     // they began this topic (or up to now, if they have not begun). Fixed once
@@ -425,7 +468,7 @@ export async function getNextQuestionWithLadder(
       (n) => (n.subTopicKey ?? '').toLowerCase() === wanted,
     )[0];
     if (node) {
-      const onLadder = await pickOnLadder(wanted, node.name, gradeNum);
+      const onLadder = await pickOnLadder(wanted, node.name, gradeNum, node.id);
       if (onLadder) return onLadder;
       // No questions for this topic: the scoped pick below decides what happens.
     }

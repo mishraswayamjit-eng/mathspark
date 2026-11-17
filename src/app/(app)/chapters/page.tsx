@@ -10,7 +10,7 @@ import { computeNudge, markMasteryShown, type Nudge } from '@/lib/nudges';
 import { getAccessibleGrades, isGradeAccessible } from '@/lib/gradeAccess';
 import { MONETIZATION_ENABLED, UNLIMITED_TIER } from '@/lib/monetization';
 import { TOPIC_ORDER } from '@/lib/sharedUtils';
-import TopicList from '@/components/topics/TopicList';
+import TopicList, { getListedTopics } from '@/components/topics/TopicList';
 import { progressByTopicId } from '@/components/topics/useTopicProgress';
 import ChaptersSkeleton from './ChaptersSkeleton';
 import { useStudent } from '@/components/shell/StudentProvider';
@@ -179,7 +179,7 @@ export default function ChaptersPage() {
     <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
       <p className="text-ink font-extrabold text-lg">Oops! Sparky tripped over a number</p>
       <p className="text-ink-muted text-sm">Could not load chapters. Check your connection.</p>
-      <button onClick={() => window.location.reload()} className="bg-action hover:bg-action-dark text-white font-extrabold px-6 py-2.5 rounded-control border-2 border-ink shadow-hard-sm text-sm active:scale-95 transition-transform">
+      <button onClick={() => window.location.reload()} className="min-h-[48px] bg-action hover:bg-action-dark text-white font-extrabold px-6 py-2.5 rounded-control border-2 border-ink shadow-hard-sm text-sm active:scale-95 transition-transform">
         Retry
       </button>
     </div>
@@ -190,6 +190,20 @@ export default function ChaptersPage() {
   const xp               = data.stats.totalLifetimeXP;
   const todayCorrect     = data.weeklyData?.[data.weeklyData.length - 1]?.count ?? 0;
   const goalMet          = todayCorrect >= DAILY_GOAL;
+
+  // In a keyed grade (Grade 5 and the like) every topic shares ONE progress
+  // record, for the whole grade. A count of "topics started" worked out from it
+  // would say 1 of 1 after five questions, so it is not shown for such a grade,
+  // and "Recommended for You" must name one topic, not the whole grade.
+  const sharesProgress = getListedTopics(selectedGrade).some((n) => Boolean(n.subTopicKey));
+  // The weakest single topic, as the dashboard already works it out: a link
+  // that opens exactly that topic (it carries `subTopic=`), and its name.
+  const weakest = data as unknown as { weakestTopicHref?: string | null; weakestTopicLabel?: string | null };
+  const weakTopicHref =
+    typeof weakest.weakestTopicHref === 'string' && weakest.weakestTopicHref.indexOf('subTopic=') !== -1
+      ? weakest.weakestTopicHref
+      : null;
+  const weakTopicLabel = typeof weakest.weakestTopicLabel === 'string' ? weakest.weakestTopicLabel : '';
 
   function handleGradeTabClick(g: number) {
     const access = isGradeAccessible(g, studentGrade, subscriptionTier);
@@ -279,7 +293,7 @@ export default function ChaptersPage() {
           const isSelected = selectedGrade === g;
           const isEnrolled = g === studentGrade;
 
-          let tabCls = 'flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-extrabold border-2 transition-colors min-h-0 ';
+          let tabCls = 'flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-extrabold border-2 transition-colors min-h-[48px] ';
           if (isSelected) {
             tabCls += 'bg-action border-action text-white';
           } else if (access.full) {
@@ -310,6 +324,8 @@ export default function ChaptersPage() {
       </div>
 
       {/* ── Syllabus Coverage Bar ────────────────────────────────────────── */}
+      {/* Only where each topic has its own progress record (see `sharesProgress`). */}
+      {!sharesProgress && (
       <div className="px-4 pb-3">
         <div className="flex items-center justify-between text-xs font-extrabold text-ink-muted mb-1.5">
           <span>Syllabus Coverage</span>
@@ -325,9 +341,30 @@ export default function ChaptersPage() {
           />
         </div>
       </div>
+      )}
+
+      {/* ── Recommended topic, keyed grade: the one weakest topic, by name ── */}
+      {selectedGrade === (data.student.grade ?? 4) && sharesProgress && weakTopicHref && weakTopicLabel && (
+        <div className="px-4 pb-3">
+          <p className="text-xs font-extrabold mb-2 text-ink-muted">
+            <span aria-hidden="true">🎯 </span>Recommended for You
+          </p>
+          <button
+            onClick={() => router.push(weakTopicHref)}
+            className="w-full min-h-[48px] flex items-center gap-3 bg-white rounded-card px-3 py-3 border-2 border-line border-l-[10px] border-l-action active:scale-[0.98] transition-transform text-left"
+          >
+            <span className="text-xl shrink-0" aria-hidden="true">📚</span>
+            <div className="flex-1 min-w-0">
+              <p className="text-ink font-extrabold text-sm truncate">{weakTopicLabel}</p>
+              <p className="text-ink-muted text-xs font-medium">A little more practice will help here</p>
+            </div>
+            <span className="text-action text-xs font-extrabold shrink-0">Practice →</span>
+          </button>
+        </div>
+      )}
 
       {/* ── Recommended Topics (from weak + low-coverage topics) ──────────── */}
-      {selectedGrade === (data.student.grade ?? 4) && weakTopics.length > 0 && (
+      {selectedGrade === (data.student.grade ?? 4) && !sharesProgress && weakTopics.length > 0 && (
         <div className="px-4 pb-3">
           <p className="text-xs font-extrabold mb-2 text-ink-muted">
             <span aria-hidden="true">🎯 </span>Recommended for You
@@ -464,8 +501,7 @@ export default function ChaptersPage() {
             </button>
             <button
               onClick={() => setShowUpgradeModal(false)}
-              style={{ minHeight: 0 }}
-              className="w-full text-center text-ink-muted text-sm font-semibold py-2"
+              className="w-full min-h-[48px] text-center text-ink-muted text-sm font-semibold py-2"
             >
               Not now
             </button>

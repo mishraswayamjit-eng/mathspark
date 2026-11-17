@@ -114,8 +114,11 @@ export default function WorkPane({
 
   // The lesson keeps its place in the tree across answering, so it carries on
   // playing if the child answers while it is open.
+  // Keyed by the question, so a lesson that has finished (or is half-way) is
+  // never carried over to, or logged against, the next question.
   const lesson = lessonOpen ? (
     <TeachPlayer
+      key={question.id}
       questionId={question.id}
       onClose={() => setView('choice')}
       closeLabel="Back to the question"

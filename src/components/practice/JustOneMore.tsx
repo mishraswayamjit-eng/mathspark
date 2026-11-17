@@ -66,8 +66,7 @@ export default function JustOneMore({
 
       <button
         onClick={onDecline}
-        className="w-full text-center text-ink-muted text-sm font-bold py-1 hover:text-ink transition-colors"
-        style={{ minHeight: 0 }}
+        className="w-full min-h-[48px] text-center text-ink-muted text-sm font-bold py-1 hover:text-ink transition-colors"
       >
         Not now
       </button>

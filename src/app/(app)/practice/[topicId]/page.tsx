@@ -40,9 +40,50 @@ import VoiceSettingsButton from '@/components/voice/VoiceSettingsButton';
 import type { LadderInfo } from '@/lib/practice/ladderTypes';
 import { ladderAfterAnswer } from '@/lib/practice/ladder';
 import { TOPIC_TREE } from '@/data/topicTree';
+import { buildPracticeUrl } from '@/lib/brain/practiceUrl';
+import { useStudent } from '@/components/shell/StudentProvider';
 
 /** How long an open question can sit untouched before the tutor says something, once. */
 const IDLE_SECONDS = 40;
+
+/**
+ * How long the next question waits for the answer just given to be saved
+ * before it is fetched anyway. The server picks the next question from the
+ * recorded answers, so fetching after the save keeps it in step; the cap keeps
+ * a slow save from holding the child up.
+ */
+const PREFETCH_WAIT_MS = 800;
+
+/** Where answers given offline wait until they can be sent. */
+const ATTEMPT_QUEUE_KEY = 'mathspark_attempt_queue';
+
+/**
+ * The next question could not be fetched (no connection, a timeout, a server
+ * hiccup, signed out). Not the same as "no questions left", which is `null`.
+ */
+function questionFetchFailure(why: string): Error {
+  return new Error(`question fetch did not succeed: ${why}`);
+}
+
+/** True when both ladders show the same place (step and count). */
+function sameLadderPlace(a: LadderInfo, b: LadderInfo): boolean {
+  return a.current === b.current && a.got === b.got && a.needed === b.needed && a.complete === b.complete;
+}
+
+/**
+ * The ids of the questions still missed: each id once, in the order first met,
+ * kept only when the child's LATEST answer to it was a miss.
+ */
+function stillMissedIds(all: QuestionResult[]): string[] {
+  const order: string[] = [];
+  const latest: Record<string, boolean> = Object.create(null);
+  for (let i = 0; i < all.length; i++) {
+    const id = all[i].questionId;
+    if (order.indexOf(id) === -1) order.push(id);
+    latest[id] = all[i].wasCorrect;
+  }
+  return order.filter((id) => !latest[id]);
+}
 
 /**
  * A question as `/api/questions/next` sends it: when the child is practising
@@ -88,6 +129,21 @@ export default function PracticePage() {
   const conceptId     = searchParams.get('from') === 'concept' ? searchParams.get('conceptId') : null;
   const SAMPLE_LIMIT  = 5;
   const { playCorrect, playWrong, playStreak, muted, toggleMute } = useSounds();
+  // The signed-in child, as the app shell loaded it (the source of truth for the grade).
+  const { student: shellStudent } = useStudent();
+
+  // The one topic being practised, when the link named one: the topic-tree node
+  // the `subTopic` parameter points at. Every screen of the session names this
+  // topic (not the whole grade), and "one more lesson" comes back to it.
+  const wantedKey = subTopicParam.trim().toLowerCase();
+  const focusNode = wantedKey
+    ? TOPIC_TREE.filter((n) => n.dbTopicId === topicId && (n.subTopicKey ?? '').toLowerCase() === wantedKey)[0]
+    : undefined;
+  const practiceHref = buildPracticeUrl(topicId, subTopicParam || null);
+  // One topic of a keyed grade is served by the topic ladder, which sets the
+  // difficulty itself: the "could you solve these?" question has no say there.
+  const onLadderPath = focusNode !== undefined && /^grade\d+$/.test(topicId);
+  const confidenceKey = `mathspark_confidence_${topicId}${wantedKey ? `_${wantedKey}` : ''}`;
 
   // ── Core state ─────────────────────────────────────────────────────────────
   const [studentId,   setStudentId]   = useState<string | null>(null);
@@ -102,6 +158,10 @@ export default function PracticePage() {
   // one arrives. The next question is fetched while that answer is still being
   // saved, so the ladder that comes with it can be one answer behind.
   const answeredLadderRef = useRef<LadderInfo | null>(null);
+  // The ladder as it stood just BEFORE that answer. A server ladder that is
+  // exactly this one has not caught up with the answer yet; any other one is
+  // the server's word (a step back included) and is shown.
+  const preAnswerLadderRef = useRef<LadderInfo | null>(null);
 
   // Current question tracking
   const [qIndex,      setQIndex]      = useState(0);
@@ -169,6 +229,11 @@ export default function PracticePage() {
   const [showCoach, setShowCoach] = useState(false);
   // Fetch with 5s timeout + retry tracking
   const [fetchRetry, setFetchRetry] = useState(false);
+  // The fetch that did not work was the first question of a restarted lesson
+  // ("Try again" after the hearts ran out): Retry starts that lesson again.
+  const retryRestartsRef = useRef(false);
+  // The session could not be loaded at all (as opposed to: this topic has no questions).
+  const [loadFailed, setLoadFailed] = useState(false);
 
   // Animated walkthrough
   const [showWalkthrough,    setShowWalkthrough]    = useState(false);
@@ -215,7 +280,7 @@ export default function PracticePage() {
   const tutorTopicRef     = useRef('');
   tutorNameRef.current  = shareInfo.studentName;
   // The topic's name, not its id (the name falls back to the id when it is not found).
-  tutorTopicRef.current = topicName !== topicId ? topicName : '';
+  tutorTopicRef.current = focusNode ? focusNode.name : topicName !== topicId ? topicName : '';
   const tutorFirstRef     = useRef(true);
   const questionShownAtRef = useRef(0);
   // Time the page was hidden (another tab, a locked screen) while this question
@@ -278,46 +343,74 @@ export default function PracticePage() {
 
   // Fetch one adaptive question from the server.
   // Passes the full set of seen question IDs so the server excludes them too.
+  //
+  // Resolves with the question, or with `null` when the server says there are
+  // no more questions (HTTP 404). REJECTS when the question could not be
+  // fetched at all (no connection, a timeout, signed out, a server hiccup):
+  // that is never "the lesson is finished", so callers show the Retry screen.
   const fetchOneAdaptive = useCallback(async (): Promise<Question | null> => {
     const sid = studentIdRef.current;
     if (!sid) return null;
+    const excludeParam = Array.from(seenQuestionIdsRef.current).join(',');
+    const subTopicEncoded = subTopicParam ? `&subTopic=${encodeURIComponent(subTopicParam)}` : '';
+    const confidence = confidenceRef.current;
+    const confidenceEncoded = confidence === 'low' || confidence === 'high' ? `&confidence=${confidence}` : '';
+    const url = `/api/questions/next?topicId=${topicId}${subTopicEncoded}${confidenceEncoded}${excludeParam ? `&exclude=${excludeParam}` : ''}`;
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 5000);
+    let res: Response;
     try {
-      const excludeParam = Array.from(seenQuestionIdsRef.current).join(',');
-      const subTopicEncoded = subTopicParam ? `&subTopic=${encodeURIComponent(subTopicParam)}` : '';
-      const confidence = confidenceRef.current;
-      const confidenceEncoded = confidence === 'low' || confidence === 'high' ? `&confidence=${confidence}` : '';
-      const url = `/api/questions/next?topicId=${topicId}${subTopicEncoded}${confidenceEncoded}${excludeParam ? `&exclude=${excludeParam}` : ''}`;
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 5000);
-      const res = await fetch(url, { signal: controller.signal });
+      res = await fetch(url, { signal: controller.signal });
+    } catch (err) {
+      // No connection, or the five seconds ran out.
       clearTimeout(timer);
-      if (!res.ok) return null;
-      const q = (await res.json()) as PracticeQuestion;
-      // Keep the newest ladder the server sent (display only).
-      const nextLadder = ladderOf(q);
-      if (nextLadder) {
-        const answered = answeredLadderRef.current;
-        answeredLadderRef.current = null;
-        // Only the first ladder after an answer can be behind; after that the server's is the truth.
-        if (!answered || !ladderBehind(nextLadder, answered)) setLadder(nextLadder);
-      }
-      // Client-side duplicate guard: reject if we've already shown this question
-      if (seenQuestionIdsRef.current.has(q.id)) return null;
-      return q;
-    } catch {
-      return null;
+      throw err;
     }
-  }, [topicId, subTopicParam]);
+    clearTimeout(timer);
+    // The server's "no more questions": the one case that ends the lesson.
+    if (res.status === 404) return null;
+    if (res.status === 401) {
+      // Signed out: the child signs in again and comes back.
+      router.replace('/student/login');
+      throw questionFetchFailure('signed out');
+    }
+    if (!res.ok) throw questionFetchFailure(`status ${res.status}`);
+    const q = (await res.json()) as PracticeQuestion;
+    // Keep the newest ladder the server sent (display only).
+    const nextLadder = ladderOf(q);
+    if (nextLadder) {
+      const answered = answeredLadderRef.current;
+      const before = preAnswerLadderRef.current;
+      answeredLadderRef.current = null;
+      preAnswerLadderRef.current = null;
+      // The next question can be picked before the answer just given is saved.
+      // Then the server's ladder is exactly the one from before that answer:
+      // keep the moved-on one. Any other ladder is the server's word, a step
+      // back included, and is shown.
+      const notCaughtUp =
+        answered !== null && before !== null &&
+        sameLadderPlace(nextLadder, before) && ladderBehind(nextLadder, answered);
+      if (!notCaughtUp) setLadder(nextLadder);
+    }
+    // Client-side duplicate guard: reject if we've already shown this question
+    if (seenQuestionIdsRef.current.has(q.id)) return null;
+    return q;
+  }, [topicId, subTopicParam, router]);
 
-  // Ask the confidence question at most once per topic per day.
+  // Ask the confidence question at most once per topic per day, and never on
+  // the topic ladder (it would change nothing there).
   useEffect(() => {
+    if (onLadderPath) {
+      setAskConfidence(false);
+      return;
+    }
     try {
-      const askedOn = localStorage.getItem(`mathspark_confidence_${topicId}`);
+      const askedOn = localStorage.getItem(confidenceKey);
       setAskConfidence(askedOn !== new Date().toDateString());
     } catch {
       setAskConfidence(false);
     }
-  }, [topicId]);
+  }, [confidenceKey, onLadderPath]);
 
   // Kick off a background prefetch of the next question.
   const prefetchNext = useCallback(() => {
@@ -337,6 +430,13 @@ export default function PracticePage() {
         } else {
           prefetchRef.current  = q;
         }
+        isFetchingRef.current = false;
+      }).catch(() => {
+        // The fetch ahead did not work. Nothing is shown for that: the question
+        // is fetched again when the child moves on, and a miss there brings up
+        // the Retry screen.
+        discardPrefetchRef.current = false;
+        prefetchRef.current   = null;
         isFetchingRef.current = false;
       });
     };
@@ -380,40 +480,83 @@ export default function PracticePage() {
     timeTakenMs?: number;
   }
 
+  /** The answers waiting to be sent. An unreadable store counts as empty. */
+  function readAttemptQueue(): AttemptPayload[] {
+    try {
+      const parsed: unknown = JSON.parse(localStorage.getItem(ATTEMPT_QUEUE_KEY) ?? '[]');
+      return Array.isArray(parsed) ? (parsed as AttemptPayload[]) : [];
+    } catch {
+      return [];
+    }
+  }
+
   function queueAttempt(p: AttemptPayload) {
-    const q: AttemptPayload[] = JSON.parse(localStorage.getItem('mathspark_attempt_queue') ?? '[]');
-    localStorage.setItem('mathspark_attempt_queue', JSON.stringify([...q, p]));
+    try {
+      localStorage.setItem(ATTEMPT_QUEUE_KEY, JSON.stringify(readAttemptQueue().concat([p])));
+    } catch (err) {
+      logError('[practice] queue attempt', err);
+    }
   }
 
+  /**
+   * True when sending the same answer again later could work: the server was
+   * busy, or the child was signed out. A 400 or 404 will never be accepted.
+   */
+  function worthSendingAgain(status: number): boolean {
+    return status === 401 || status === 408 || status === 429 || status >= 500;
+  }
+
+  // Sends the waiting answers. Each one leaves the queue only when the server
+  // has taken it (or has said it never will); the rest wait for the next time.
   function flushAttemptQueue() {
-    const q: AttemptPayload[] = JSON.parse(localStorage.getItem('mathspark_attempt_queue') ?? '[]');
-    if (!q.length) return;
-    Promise.all(
-      q.map((p) =>
-        fetch('/api/attempts', {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
-          body: JSON.stringify(p),
-        }),
-      ),
-    )
-      .then(() => localStorage.removeItem('mathspark_attempt_queue'))
-      .catch((err) => logError('[fetch]', err));
-  }
-
-  function submitAttempt(payload: AttemptPayload, onXpAwarded?: (xp: number) => void) {
-    if (navigator.onLine) {
+    const waiting = readAttemptQueue();
+    if (!waiting.length) return;
+    // Taken out first, so two flushes close together never send an answer twice.
+    try { localStorage.removeItem(ATTEMPT_QUEUE_KEY); } catch { /* storage unavailable */ }
+    waiting.forEach((p) => {
       fetch('/api/attempts', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(p),
       })
-        .then((r) => r.ok ? r.json() : null)
-        .then((data) => { if (onXpAwarded && data?.xpAwarded) onXpAwarded(data.xpAwarded); })
-        .catch((err) => { logError('[practice] save attempt', err); queueAttempt(payload); });
-    } else {
+        .then((r) => { if (!r.ok && worthSendingAgain(r.status)) queueAttempt(p); })
+        .catch((err) => { logError('[practice] send queued attempt', err); queueAttempt(p); });
+    });
+  }
+
+  // Resolves once the answer has been saved, or has been put in the queue
+  // (never rejects), so the caller can fetch the next question after it.
+  function submitAttempt(payload: AttemptPayload, onXpAwarded?: (xp: number) => void): Promise<void> {
+    if (!navigator.onLine) {
       queueAttempt(payload);
+      return Promise.resolve();
     }
+    return fetch('/api/attempts', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+      .then((r) => {
+        if (r.ok) return r.json();
+        if (worthSendingAgain(r.status)) queueAttempt(payload);
+        return null;
+      })
+      .then((data) => { if (onXpAwarded && data?.xpAwarded) onXpAwarded(data.xpAwarded); })
+      .catch((err) => { logError('[practice] save attempt', err); queueAttempt(payload); });
+  }
+
+  // Fetch the next question ahead of time, once the answer just given has been
+  // saved (so the server picks from the up-to-date record), or after a short
+  // wait if the save is slow.
+  function prefetchAfter(saved: Promise<void>) {
+    let started = false;
+    const go = () => {
+      if (started) return;
+      started = true;
+      prefetchNext();
+    };
+    const cap = setTimeout(go, PREFETCH_WAIT_MS);
+    saved.then(() => { clearTimeout(cap); go(); });
   }
 
   // ── Online / offline listeners ─────────────────────────────────────────────
@@ -699,10 +842,21 @@ export default function PracticePage() {
     // Not in a speed drill: its timer would run under the lesson.
     const wantLinked = teachId !== '' && teachId.length <= 50 && !isSpeedMode;
 
-    // First question from the adaptive engine
+    // Answers given offline last time (or not taken by the server) go out now.
+    if (navigator.onLine) flushAttemptQueue();
+
+    // First question from the adaptive engine. A 404 means the topic has no
+    // questions; anything else that is not OK means it could not be loaded.
+    let topicIsEmpty = false;
     const fetchFirst = (): Promise<PracticeQuestion> =>
       fetch(`/api/questions/next?topicId=${topicId}${subTopicParam ? `&subTopic=${encodeURIComponent(subTopicParam)}` : ''}`)
-        .then((r) => { if (!r.ok) throw new Error('fetch failed'); return r.json() as Promise<PracticeQuestion>; });
+        .then((r) => {
+          if (r.status === 404) topicIsEmpty = true;
+          // Signed out: the child signs in again and comes back.
+          if (r.status === 401) router.replace('/student/login');
+          if (!r.ok) throw new Error('fetch failed');
+          return r.json() as Promise<PracticeQuestion>;
+        });
 
     // With a `teach` link, the question to explain comes first. If it cannot be
     // served (unknown, switched off, no lesson, a test in progress, or the
@@ -774,7 +928,11 @@ export default function PracticePage() {
         // Immediately prefetch the second question
         prefetchNext();
       })
-      .catch((err) => { logError('[practice] init fetch', err); setPhase('error'); });
+      .catch((err) => {
+        logError('[practice] init fetch', err);
+        setLoadFailed(!topicIsEmpty);
+        setPhase('error');
+      });
 
     return () => {
       if (advanceTimer.current) clearTimeout(advanceTimer.current);
@@ -861,9 +1019,14 @@ export default function PracticePage() {
           setPhase('loading');
           fetchOneAdaptive().then((q) => {
             if (!q) {
-              // Topic exhausted — end lesson with a celebration
-              setShowConfetti(true);
-              setPhase('complete');
+              // The topic has no more questions: the lesson ends here, with
+              // the review of any misses first, as at its usual end.
+              if (reviewQueueRef.current.length > 0) {
+                setPhase('review_intro');
+              } else {
+                setShowConfetti(true);
+                setPhase('complete');
+              }
               return;
             }
             setQuestions((prev) => [...prev, q]);
@@ -871,7 +1034,9 @@ export default function PracticePage() {
             setPhase('answering');
           }).catch((err) => {
             logError('[practice] fetch adaptive question', err);
-            // Fetch failed — show retry option instead of a dead screen
+            // The question could not be fetched: offer Retry. Never "Lesson
+            // Complete!", which is only for a lesson that really is finished.
+            retryRestartsRef.current = false;
             setFetchRetry(true);
             setPhase('loading');
             isAdvancingRef.current = false;
@@ -892,6 +1057,7 @@ export default function PracticePage() {
     // Move the topic ladder on straight away, so the strip keeps up with the child.
     if (ladder && !isReviewing) {
       const moved = ladderAfterAnswer(ladder, correct);
+      preAnswerLadderRef.current = ladder;
       answeredLadderRef.current = moved;
       setLadder(moved);
     }
@@ -977,8 +1143,9 @@ export default function PracticePage() {
     }
 
     // Record attempt (offline-aware); show XP float only when server confirms XP was awarded
+    let saved: Promise<void> = Promise.resolve();
     if (studentId) {
-      submitAttempt(
+      saved = submitAttempt(
         {
           questionId: currentQuestion.id,
           topicId,
@@ -1009,10 +1176,11 @@ export default function PracticePage() {
     // Analytics
     track('question_answered', { topicId, correct });
 
-    // Pre-fetch next adaptive question now (during result display window)
-    // so advance() finds it ready and shows no loading gap.
+    // Pre-fetch next adaptive question during the result display window, so
+    // advance() finds it ready and shows no loading gap. It is fetched once the
+    // answer above has been saved: the server chooses from the recorded answers.
     if (!isReviewing && qIndex + 1 < LESSON_SIZE) {
-      prefetchNext();
+      prefetchAfter(saved);
     }
 
     // Auto-advance for correct answers, on phones and tablets only. On wide screens
@@ -1026,6 +1194,17 @@ export default function PracticePage() {
 
   function handleGotIt() {
     advance(hearts);
+  }
+
+  // The topic has no more questions: the lesson ends here, with the review of
+  // any misses first, as at its usual end.
+  function finishMainLesson() {
+    if (reviewQueueRef.current.length > 0) {
+      setPhase('review_intro');
+    } else {
+      setShowConfetti(true);
+      setPhase('complete');
+    }
   }
 
   /** Whole seconds since the question on screen appeared. */
@@ -1139,7 +1318,8 @@ export default function PracticePage() {
     if (!bonusQuestion) return;
     const correct   = key === bonusQuestion.correctAnswer;
     const newStreak = correct ? streak + 1 : 0;
-    const earnedXp  = correct ? XP_CORRECT : 0;
+    // A bonus question earns the smaller amount, as the server awards it.
+    const earnedXp  = correct ? XP_REVIEW : 0;
     const heartLost = !correct && !bonusHintUsed;
     const newHearts = heartLost ? hearts - 1 : hearts;
 
@@ -1254,12 +1434,20 @@ export default function PracticePage() {
     seenQuestionIdsRef.current = new Set();
     missesInARowRef.current = 0;
 
+    retryRestartsRef.current = false;
+    setFetchRetry(false);
     setPhase('loading');
     fetchOneAdaptive().then((q) => {
       if (!q) { router.replace('/chapters'); return; }
       setQuestions([q]);
       setPhase('answering');
       prefetchNext();
+    }).catch((err) => {
+      // The first question of the new lesson could not be fetched: offer Retry
+      // (which starts the lesson again) instead of leaving the child waiting.
+      logError('[practice] restart lesson', err);
+      retryRestartsRef.current = true;
+      setFetchRetry(true);
     });
   }
 
@@ -1271,12 +1459,26 @@ export default function PracticePage() {
         <div className="animate-sparky-bounce">
           <Sparky mood="thinking" size={120} />
         </div>
-        <div className="text-center space-y-2">
-          <h2 className="text-heading text-ink">📭 No questions available yet</h2>
-          <p className="text-ink-muted font-semibold">
-            This lesson doesn&apos;t have questions yet. Check back soon!
-          </p>
-        </div>
+        {loadFailed ? (
+          <div className="text-center space-y-2">
+            <h2 className="text-heading text-ink">Your lesson didn&apos;t load</h2>
+            <p className="text-ink-muted font-semibold">
+              Check your internet, then let&apos;s try again.
+            </p>
+          </div>
+        ) : (
+          <div className="text-center space-y-2">
+            <h2 className="text-heading text-ink">📭 No questions available yet</h2>
+            <p className="text-ink-muted font-semibold">
+              This lesson doesn&apos;t have questions yet. Check back soon!
+            </p>
+          </div>
+        )}
+        {loadFailed && (
+          <DuoButton variant="blue" fullWidth onClick={() => window.location.reload()}>
+            Try again →
+          </DuoButton>
+        )}
         <DuoButton variant="white" fullWidth onClick={() => router.push('/practice')}>
           Back to Chapters →
         </DuoButton>
@@ -1290,12 +1492,16 @@ export default function PracticePage() {
         {fetchRetry ? (
           <>
             <Sparky mood="encouraging" size={100} />
-            <p className="text-ink font-bold text-center">Oops! Let&apos;s try again 🔄</p>
+            <p className="text-ink font-bold text-center">
+              The next question didn&apos;t load. Check your internet, then let&apos;s try again 🔄
+            </p>
             <DuoButton variant="blue" onClick={() => {
               setFetchRetry(false);
               isAdvancingRef.current = false;
+              // The lesson was being started again: do that again, from the top.
+              if (retryRestartsRef.current) { resetLesson(); return; }
               fetchOneAdaptive().then((q) => {
-                if (!q) { setShowConfetti(true); setPhase('complete'); return; }
+                if (!q) { finishMainLesson(); return; }
                 setQuestions((prev) => [...prev, q]);
                 setQIndex((prev) => prev + 1);
                 setPhase('answering');
@@ -1323,13 +1529,13 @@ export default function PracticePage() {
   if (phase === 'intro') {
     return (
       <LessonIntro
-        topicName={topicName}
-        topicEmoji={TOPIC_EMOJI[topicId] ?? '📚'}
+        topicName={focusNode ? focusNode.name : topicName}
+        topicEmoji={focusNode ? focusNode.emoji : (TOPIC_EMOJI[topicId] ?? '📚')}
         questionCount={LESSON_SIZE}
         onStart={() => setPhase('answering')}
         onConfidence={askConfidence ? (confidence) => {
           confidenceRef.current = confidence;
-          try { localStorage.setItem(`mathspark_confidence_${topicId}`, new Date().toDateString()); } catch { /* storage unavailable */ }
+          try { localStorage.setItem(confidenceKey, new Date().toDateString()); } catch { /* storage unavailable */ }
           // The second question was picked before we knew this: pick it again with the signal.
           if (confidence !== 'medium') {
             if (isFetchingRef.current) {
@@ -1375,17 +1581,24 @@ export default function PracticePage() {
       );
     }
 
-    const hasReviewMistakes = reviewResults.some((r) => !r.wasCorrect);
-
     // Compute grade progression CTA
     const allR         = [...results, ...reviewResults];
+    // The questions whose latest answer is still a miss, each once. There is
+    // something left to review only after a review round that left one behind.
+    const stillMissed       = stillMissedIds(allR);
+    const hasReviewMistakes = reviewResults.length > 0 && stillMissed.length > 0;
     const correctCount = allR.filter((r) => r.wasCorrect).length;
     const pctScore     = allR.length > 0 ? Math.round((correctCount / allR.length) * 100) : 100;
     const topicGrade   = getTopicGrade(topicId);
-    const studentGrade = parseInt(
+    // The child's grade: from the app shell (the server's word), then from the
+    // copy this device keeps, then Grade 4.
+    const storedGrade  = parseInt(
       typeof window !== 'undefined' ? (localStorage.getItem('mathspark_student_grade') ?? '4') : '4',
       10,
     );
+    const studentGrade = shellStudent && shellStudent.grade >= 2 && shellStudent.grade <= 9
+      ? shellStudent.grade
+      : storedGrade;
     const subTier = MONETIZATION_ENABLED
       ? parseInt(
           typeof window !== 'undefined' ? (localStorage.getItem('mathspark_subscription_tier') ?? '0') : '0',
@@ -1415,7 +1628,8 @@ export default function PracticePage() {
         hasReviewMistakes={hasReviewMistakes}
         gradeUpCta={gradeUpCta}
         topicId={topicId}
-        topicName={topicName}
+        topicName={focusNode ? focusNode.name : topicName}
+        practiceHref={practiceHref}
         onComplete={() => {
           // Show streak commitment if not yet set
           if (typeof window !== 'undefined' && !localStorage.getItem('mathspark_streakGoalSet')) {
@@ -1428,20 +1642,20 @@ export default function PracticePage() {
         shareData={studentId ? {
           studentId,
           studentName:    shareInfo.studentName,
-          topicName,
-          topicEmoji:     TOPIC_EMOJI[topicId] ?? '📚',
+          topicName:      focusNode ? focusNode.name : topicName,
+          topicEmoji:     focusNode ? focusNode.emoji : (TOPIC_EMOJI[topicId] ?? '📚'),
           parentEmail:    shareInfo.parentEmail,
           parentWhatsApp: shareInfo.parentWhatsApp,
         } : undefined}
         onReviewMistakes={() => {
-          // Restart lesson in review-only mode with wrong ones
-          const wrongs = [...results, ...reviewResults].filter((r) => !r.wasCorrect);
-          const wrongQs = wrongs
-            .map((r) => questions.find((q) => q.id === r.questionId) ?? reviewQueue.find((q) => q.id === r.questionId))
+          // Another review round, with only the questions still missed: each
+          // one once, and none that was put right in an earlier round. (The
+          // earlier review answers are kept, so "put right" stays known.)
+          const wrongQs = stillMissed
+            .map((id) => questions.find((q) => q.id === id) ?? reviewQueue.find((q) => q.id === id))
             .filter(Boolean) as Question[];
           reviewQueueRef.current = wrongQs;
           setReviewQueue(wrongQs);
-          setReviewResults([]);
           setReviewIndex(0);
           setShowConfetti(false);
           setPhase('review_intro');
@@ -1538,10 +1752,6 @@ export default function PracticePage() {
   // The header names the topic being practised when one was chosen: the
   // ladder's topic, or the topic-tree node the `subTopic` parameter points at.
   // Otherwise it is the chapter or grade name, as before.
-  const wantedKey = subTopicParam.trim().toLowerCase();
-  const focusNode = wantedKey
-    ? TOPIC_TREE.filter((n) => n.dbTopicId === topicId && (n.subTopicKey ?? '').toLowerCase() === wantedKey)[0]
-    : undefined;
   const focusTitle = ladder ? ladder.topicLabel : focusNode ? focusNode.name : '';
   const barTitle = focusTitle || topicName;
 
@@ -1648,7 +1858,7 @@ export default function PracticePage() {
       <div className="bg-ink px-4 h-14 flex items-center gap-2 sticky top-0 z-30 flex-shrink-0">
         <button
           onClick={() => router.push('/practice')}
-          className="text-white/70 hover:text-white font-bold text-xl min-h-[44px] min-w-[44px] flex items-center justify-center flex-shrink-0"
+          className="text-white/70 hover:text-white font-bold text-xl min-h-[48px] min-w-[48px] flex items-center justify-center flex-shrink-0"
           aria-label="Back"
         >
           ←
@@ -1668,7 +1878,7 @@ export default function PracticePage() {
       {/* ── Offline banner ── */}
       {!isOnline && (
         <div className="bg-hint border-b-2 border-hint-ink/30 px-4 py-2 text-xs font-bold text-hint-ink text-center">
-          📶 You&apos;re offline — practising with cached questions!
+          📶 You&apos;re offline. Your answers are kept safe and sent when you&apos;re back online. New questions need the internet.
         </div>
       )}
 
@@ -1795,6 +2005,9 @@ export default function PracticePage() {
       {phase === 'result' && (
         <div
           ref={resultSheetRef}
+          // Any touch inside the result (reading "Why?", opening a hint) means
+          // the child is busy here: stay on this question until Continue.
+          onPointerDown={pauseAutoAdvance}
           className={`fixed bottom-0 left-0 right-0 max-w-lg mx-auto z-[60] max-h-[72vh] animate-slide-up overflow-y-auto rounded-t-card border-2 border-b-0 border-ink lg:static lg:z-auto lg:max-w-none lg:mx-0 lg:max-h-none lg:overflow-visible lg:rounded-card lg:border-b-2 lg:scroll-mb-6 ${
             lastCorrect
               ? 'bg-success-soft'
@@ -1922,7 +2135,7 @@ export default function PracticePage() {
           style={{ bottom: 'calc(72vh + 12px)', animationDelay: '1.2s', animationFillMode: 'backwards' }}
         >
           <button
-            onClick={() => requestOpenSparky()}
+            onClick={() => { pauseAutoAdvance(); requestOpenSparky(); }}
             className="flex flex-col items-end gap-1"
             aria-label="Ask Sparky"
           >
@@ -1952,7 +2165,7 @@ export default function PracticePage() {
             <div className="px-4 h-14 flex items-center gap-2 lg:w-full lg:max-w-[60rem] xl:max-w-[72rem] lg:mx-auto">
               <button
                 onClick={handleBonusGotIt}
-                className="text-white/70 hover:text-white font-bold text-sm whitespace-nowrap min-h-[44px] min-w-[44px] flex items-center gap-1 flex-shrink-0"
+                className="text-white/70 hover:text-white font-bold text-sm whitespace-nowrap min-h-[48px] min-w-[48px] flex items-center gap-1 flex-shrink-0"
               >
                 ← Back
               </button>

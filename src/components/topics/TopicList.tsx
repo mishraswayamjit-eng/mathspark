@@ -143,9 +143,13 @@ export default function TopicList({ grade, from, progress, sample }: TopicListPr
 
   // Every topic is open. Once progress is known, the first exam topic that is
   // not mastered yet is suggested as the place to start.
+  // Not where the topics share one progress record (a keyed grade): that record
+  // describes the whole grade, so it cannot say which topic to start with, and
+  // the pin would sit on the first topic whatever the child had practised.
   let suggestedId: string | null = null;
   if (known) {
     for (let i = 0; i < exam.length; i++) {
+      if (exam[i].subTopicKey) continue;
       const p = Object.prototype.hasOwnProperty.call(known, exam[i].dbTopicId) ? known[exam[i].dbTopicId] : null;
       if (!p || p.mastery !== 'Mastered') { suggestedId = exam[i].id; break; }
     }

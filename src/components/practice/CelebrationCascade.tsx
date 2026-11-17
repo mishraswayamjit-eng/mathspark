@@ -10,6 +10,7 @@ import type { WhatsNextSuggestion } from '@/lib/whatsNext';
 import JustOneMore, { incrementTodayLessons } from './JustOneMore';
 import NextActionCard from '@/components/home/NextActionCard';
 import type { NextAction } from '@/lib/brain/nextAction';
+import { XP_CORRECT, XP_REVIEW } from './constants';
 import type { QuestionResult, GradeUpCta } from './constants';
 
 type Stage = 1 | 2 | 3 | 4;
@@ -26,6 +27,8 @@ interface CelebrationCascadeProps {
   whatsNextSuggestions?: WhatsNextSuggestion[];
   topicId?: string;
   topicName?: string;
+  /** Link that starts this same practice again (it keeps the chosen sub-topic). */
+  practiceHref?: string;
   shareData?: {
     studentId: string;
     studentName: string;
@@ -48,6 +51,7 @@ export default function CelebrationCascade({
   whatsNextSuggestions,
   topicId,
   topicName,
+  practiceHref,
   shareData,
 }: CelebrationCascadeProps) {
   const [stage, setStage] = useState<Stage>(1);
@@ -120,7 +124,25 @@ export default function CelebrationCascade({
     return () => { live = false; };
   }, [stage]);
 
-  const wrongOnes = allResults.filter((r) => !r.wasCorrect);
+  // Each missed question once, however many times it was missed (lesson, then review).
+  const wrongOnes: QuestionResult[] = [];
+  const wrongIds: string[] = [];
+  for (let i = 0; i < allResults.length; i++) {
+    const r = allResults[i];
+    if (r.wasCorrect || wrongIds.indexOf(r.questionId) !== -1) continue;
+    wrongIds.push(r.questionId);
+    wrongOnes.push(r);
+  }
+
+  // The XP tally, line by line. A lesson answer earns XP_CORRECT; a review
+  // answer and a bonus answer earn XP_REVIEW each (as the server awards them).
+  // Bonus answers are not in the results, so they are what is left of the total.
+  const mainCorrect = mainResults.filter((r) => r.wasCorrect).length;
+  const reviewCorrect = reviewResults.filter((r) => r.wasCorrect).length;
+  const bonusCorrect = Math.max(
+    0,
+    Math.round((totalXp - mainCorrect * XP_CORRECT - reviewCorrect * XP_REVIEW) / XP_REVIEW),
+  );
 
   // ── Stage 1: Skill Check ──
   if (stage === 1) {
@@ -209,10 +231,15 @@ export default function CelebrationCascade({
           <p className="text-4xl font-extrabold text-ink animate-count-pulse">+{displayXp} <span aria-hidden="true">⭐</span></p>
         </div>
 
+        {/* The lines add up to the total above: lesson answers, then review
+            answers, then bonus ("try a similar one") answers. */}
         <div className="mt-4 text-sm text-ink-muted font-semibold space-y-1 text-center">
-          <p>{correct} correct × 20 XP</p>
-          {reviewResults.length > 0 && (
-            <p>{reviewResults.filter((r) => r.wasCorrect).length} review × 10 XP</p>
+          <p>{mainCorrect} correct × {XP_CORRECT} XP</p>
+          {reviewCorrect > 0 && (
+            <p>{reviewCorrect} review × {XP_REVIEW} XP</p>
+          )}
+          {bonusCorrect > 0 && (
+            <p>{bonusCorrect} bonus × {XP_REVIEW} XP</p>
           )}
         </div>
 
@@ -281,7 +308,8 @@ export default function CelebrationCascade({
           streak={streak}
           onAccept={() => {
             incrementTodayLessons();
-            window.location.href = `/practice/${topicId}`;
+            // The same topic again: `practiceHref` keeps the chosen sub-topic.
+            window.location.href = practiceHref || `/practice/${topicId}`;
           }}
           onDecline={onComplete}
         />

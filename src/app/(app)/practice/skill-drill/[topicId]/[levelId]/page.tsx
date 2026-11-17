@@ -16,6 +16,7 @@ import { publishScreenContext, clearScreenContext } from '@/lib/sparkyContext';
 import { logContentView } from '@/lib/contentView';
 import { availableDrillLevels, isDrillLevelOpen, type DrillLevelProgress } from '@/lib/drillUnlock';
 import SkillDrillLevelSkeleton from '../SkillDrillLevelSkeleton';
+import { useStudent } from '@/components/shell/StudentProvider';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -202,10 +203,15 @@ export default function SkillDrillSessionPage() {
   const [showConfetti, setShowConfetti] = useState(false);
 
   // ── Load sessions list ───────────────────────────────────────────────────────
+  // The child's grade: from the app shell (the server's word) when it is known,
+  // otherwise from the copy this device keeps, otherwise Grade 4.
+  const { student: shellStudent } = useStudent();
+  const shellGrade = shellStudent && shellStudent.grade >= 2 && shellStudent.grade <= 9 ? shellStudent.grade : null;
+
   useEffect(() => {
     setProgress(loadProgress());
 
-    const grade = localStorage.getItem('mathspark_student_grade') || '4';
+    const grade = shellGrade !== null ? String(shellGrade) : (localStorage.getItem('mathspark_student_grade') || '4');
     Promise.all([
       fetch(`/api/skill-drills?grade=${grade}`).then((r) => { if (!r.ok) throw new Error('Skill drills fetch failed'); return r.json(); }),
       fetch(`/api/skill-drills?topic=${topicId}&level=${levelId}&grade=${grade}`).then((r) => { if (!r.ok) throw new Error('Session fetch failed'); return r.json(); }),
@@ -216,9 +222,9 @@ export default function SkillDrillSessionPage() {
         setLevelMeta(topicsData.meta?.levelLabels ?? {});
         setSessions(sessionsData.sessions ?? []);
       })
-      .catch((err) => { logError('[skill-drill] fetch drill data', err); setError('Failed to load drill data.'); })
+      .catch((err) => { logError('[skill-drill] fetch drill data', err); setError('This drill didn\'t load. Check your internet and try again.'); })
       .finally(() => setLoading(false));
-  }, [topicId, levelId]);
+  }, [topicId, levelId, shellGrade]);
 
   // ── Start a session ──────────────────────────────────────────────────────────
   const startSession = useCallback((sessionNum: number) => {
@@ -238,7 +244,7 @@ export default function SkillDrillSessionPage() {
           setError('Session not found.');
         }
       })
-      .catch((err) => { logError('[skill-drill] fetch session', err); setError('Failed to load session.'); })
+      .catch((err) => { logError('[skill-drill] fetch session', err); setError('This session didn\'t load. Check your internet and try again.'); })
       .finally(() => setLoading(false));
   }, [topicId, levelId]);
 

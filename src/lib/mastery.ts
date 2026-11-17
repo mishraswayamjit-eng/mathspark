@@ -7,19 +7,62 @@ import type { MasteryLevel } from '@/types';
  *   >= 40% correct → Practicing
  *   <  40% correct → NotStarted
  */
+// India has one time zone and no daylight saving: UTC + 5:30.
+const IST_OFFSET_MS = 330 * 60 * 1000;
+
+/** How many recent attempts are read to find the last 10 first tries. */
+const RECENT_READ = 40;
+
+/** One recent attempt, as read for mastery. */
+interface RecentAttempt {
+  isCorrect: boolean;
+  questionId?: string;
+  createdAt?: Date | string;
+}
+
+/** The calendar day in India an attempt was made on, e.g. "2026-11-17". */
+function indiaDay(when: Date | string): string {
+  return new Date(new Date(when).getTime() + IST_OFFSET_MS).toISOString().slice(0, 10);
+}
+
+/**
+ * The last 10 attempts that count for mastery, from a newest-first list.
+ *
+ * Only the FIRST attempt at a question on a given India-time day counts. Later
+ * tries at the same question that day (the review round, "review mistakes")
+ * are made after the correct answer has been shown, so they say little about
+ * what the child knows. A row without a question id or a time is always kept.
+ */
+export function lastTenFirstTries<T extends RecentAttempt>(newestFirst: T[]): T[] {
+  const seen: Record<string, boolean> = Object.create(null);
+  const kept: T[] = [];
+  // Oldest first, so the first try of the day is the one that is kept.
+  for (let i = newestFirst.length - 1; i >= 0; i--) {
+    const a = newestFirst[i];
+    if (a.questionId && a.createdAt) {
+      const key = a.questionId + '|' + indiaDay(a.createdAt);
+      if (seen[key]) continue;
+      seen[key] = true;
+    }
+    kept.push(a);
+  }
+  return kept.slice(-10);
+}
+
 export async function calculateMastery(
   studentId: string,
   topicId: string,
 ): Promise<MasteryLevel> {
-  const recent = await prisma.attempt.findMany({
+  const read = await prisma.attempt.findMany({
     where: {
       studentId,
       question: { topicId },
     },
     orderBy: { createdAt: 'desc' },
-    take: 10,
-    select: { isCorrect: true },
+    take: RECENT_READ,
+    select: { isCorrect: true, questionId: true, createdAt: true },
   });
+  const recent = lastTenFirstTries(read);
 
   if (recent.length === 0) return 'NotStarted';
 
@@ -40,18 +83,19 @@ const inFlightProgress = new Map<string, boolean>(); // key -> dirty
 async function recomputeProgress(studentId: string, topicId: string): Promise<void> {
   const where = { studentId, question: { topicId } };
 
-  const [recent, attempted, correct] = await prisma.$transaction([
+  const [read, attempted, correct] = await prisma.$transaction([
     prisma.attempt.findMany({
       where,
       orderBy: { createdAt: 'desc' },
-      take: 10,
-      select: { isCorrect: true },
+      take: RECENT_READ,
+      select: { isCorrect: true, questionId: true, createdAt: true },
     }),
     prisma.attempt.count({ where }),
     prisma.attempt.count({ where: { studentId, question: { topicId }, isCorrect: true } }),
   ]);
 
-  // Derive mastery from recent 10 attempts
+  // Derive mastery from the last 10 first tries (see lastTenFirstTries)
+  const recent = lastTenFirstTries(read);
   let mastery: MasteryLevel = 'NotStarted';
   if (recent.length > 0) {
     const ratio = recent.filter((a) => a.isCorrect).length / recent.length;

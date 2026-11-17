@@ -11,6 +11,7 @@ import {
   type DrillLevelProgress,
 } from '@/lib/drillUnlock';
 import SkillDrillTopicsSkeleton from './SkillDrillTopicsSkeleton';
+import { useStudent } from '@/components/shell/StudentProvider';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -87,11 +88,15 @@ export default function SkillDrillTopicsPage() {
   const [meta, setMeta] = useState<Meta | null>(null);
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState<DrillProgress>({});
+  // The child's grade: from the app shell (the server's word) when it is known,
+  // otherwise from the copy this device keeps, otherwise Grade 4.
+  const { student: shellStudent } = useStudent();
+  const shellGrade = shellStudent && shellStudent.grade >= 2 && shellStudent.grade <= 9 ? shellStudent.grade : null;
 
   useEffect(() => {
     setProgress(loadProgress());
 
-    const grade = localStorage.getItem('mathspark_student_grade') || '4';
+    const grade = shellGrade !== null ? String(shellGrade) : (localStorage.getItem('mathspark_student_grade') || '4');
     fetch(`/api/skill-drills?grade=${grade}`)
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((d: { meta: Meta; topics: Record<string, TopicInfo> }) => {
@@ -100,7 +105,7 @@ export default function SkillDrillTopicsPage() {
       })
       .catch((err) => logError('[fetch]', err))
       .finally(() => setLoading(false));
-  }, []);
+  }, [shellGrade]);
 
   if (loading) {
     return <SkillDrillTopicsSkeleton />;
