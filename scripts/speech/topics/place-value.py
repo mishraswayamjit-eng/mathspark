@@ -29,6 +29,42 @@ for name in ("place_value_hand_fp_a", "place_value_hand_fp_b", "place_value_hand
     except ImportError:
         pass
 
+# Imported questions (AI-written word problems, IPM textbook, IPM 2020 paper): narrated by the
+# rules in place_value_imported_rules.py; single strings are replaced by hand in the
+# place_value_imported_*.py tables: {id: {"q": "...", "options": {i: "..."}, "hints": {i: "..."}, "steps": {i: "..."}}}.
+import place_value_imported_rules as imported  # noqa: E402
+
+IMPORTED_PREFIXES = ("AIGEN_grade5_", "IPMTB_grade5_", "IPM2020_G5_")
+IMPORTED_HAND = {}
+for name in ("place_value_imported_a", "place_value_imported_b", "place_value_imported_c", "place_value_imported_d"):
+    try:
+        IMPORTED_HAND.update(__import__(name).HAND)
+    except ImportError:
+        pass
+HAND_STRINGS = [0]
+
+
+def narrate_imported(q):
+    src = source_strings(q)
+    own = q.get("stepByStep") or []
+    entry = {
+        "q": imported.sentence(src["q"]),
+        "options": [imported.option(o) for o in src["options"]],
+        "hints": [imported.sentence(h) for h in src["hints"]],
+        "steps": [imported.step(s, own[i].get("latex", "") if i < len(own) else "") for i, s in enumerate(src["steps"])],
+    }
+    hand = IMPORTED_HAND.get(q["id"], {})
+    for key, value in hand.items():
+        if key == "q":
+            entry["q"] = value
+            HAND_STRINGS[0] += 1
+            continue
+        for i, said in value.items():
+            entry[key][i] = said
+            HAND_STRINGS[0] += 1
+    return entry
+
+
 _PLAIN = re.compile(r"^[A-Za-z0-9 .,?'’-]+$")
 
 
@@ -47,6 +83,8 @@ def option(text):
 
 
 def narrate(q):
+    if q["id"].startswith(IMPORTED_PREFIXES):
+        return narrate_imported(q)
     src = source_strings(q)
     hand = HAND.get(q["id"])
     if hand:
@@ -82,6 +120,9 @@ def main():
         json.dump(part, f, ensure_ascii=False, indent=1)
         f.write("\n")
     print("wrote %d of %d questions (%d by hand)" % (len(part), len(questions), sum(1 for k in part if k in HAND)))
+    new = [k for k in part if k.startswith(IMPORTED_PREFIXES)]
+    print("imported: %d questions, %d strings replaced by hand in %d of them" % (
+        len(new), HAND_STRINGS[0], sum(1 for k in new if k in IMPORTED_HAND)))
     if missing:
         print("not yet narrated: %d" % len(missing))
         print("  " + " ".join(missing))

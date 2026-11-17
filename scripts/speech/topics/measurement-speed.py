@@ -21,16 +21,28 @@ import measurement_speed_hand2 as hand2  # noqa: E402
 import measurement_speed_hand3 as hand3  # noqa: E402
 from measurement_speed_rules import say, say_option  # noqa: E402
 
+import measurement_speed_imported as imported  # noqa: E402
+
 SLUG = "measurement-speed"
 
 HAND = {}
 for module in (hand1, hand2, hand3):
     HAND.update(module.HAND)
 
+# Hand-written lines for the imported questions (AIGEN_, IPMTB_, IPM2020_): per string, not per question.
+IMPORTED_HAND = {}
+for name in ("measurement_speed_imported_hand1", "measurement_speed_imported_hand2", "measurement_speed_imported_hand3"):
+    try:
+        IMPORTED_HAND.update(__import__(name).HAND)
+    except ImportError:
+        pass
+
 
 def narrate(q):
     if q["id"] in HAND:
         return HAND[q["id"]]
+    if imported.is_imported(q):
+        return imported.narrate(q, IMPORTED_HAND.get(q["id"]))
     src = source_strings(q)
     return {
         "q": say(src["q"]),

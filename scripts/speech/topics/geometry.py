@@ -18,13 +18,20 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, ".."))
 sys.path.insert(0, HERE)
-from common import PARTS, load_grade5, source_strings, topic_of  # noqa: E402
+from common import PARTS, load_grade5, number_tokens, source_strings, topic_of  # noqa: E402
 from geometry_hand1 import HAND as HAND1  # noqa: E402
 from geometry_hand2 import HAND as HAND2  # noqa: E402
 from geometry_hand3 import HAND as HAND3  # noqa: E402
 from geometry_lines import LINES  # noqa: E402
+from geometry_imported_rules import IMPORTED_PREFIXES, maths_line, say_imported  # noqa: E402
+from geometry_imported_hand1 import LINES as IMP_LINES1, SLOTS as IMP_SLOTS1  # noqa: E402
 
 SLUG = "geometry"
+IMP_SLOTS = {}
+IMP_LINES = {}
+for slots, lines in ((IMP_SLOTS1, IMP_LINES1),):
+    IMP_SLOTS.update(slots)
+    IMP_LINES.update(lines)
 HAND = {}
 for part in (HAND1, HAND2, HAND3):
     HAND.update(part)
@@ -105,6 +112,57 @@ def say_maths_line(latex):
     return say(s)
 
 
+def _is_subsequence(small, big):
+    it = iter(big)
+    return all(x in it for x in small)
+
+
+def narrate_imported(q, counts, used):
+    """The imported one-off questions: hand-written slots and lines first, then say_imported.
+
+    A step's maths line is read after its text when it adds working the text does not already say.
+    """
+    src = source_strings(q)
+    own = q.get("stepByStep") or []
+
+    def line(text, slot, sentence=True, latex=None):
+        if not text.strip():
+            return ""
+        key = "%s:%s" % (q["id"], slot)
+        if key in IMP_SLOTS:
+            counts["imp_hand"] += 1
+            used.add(key)
+            return IMP_SLOTS[key]
+        if text in IMP_LINES:
+            counts["imp_hand"] += 1
+            used.add(text)
+            return IMP_LINES[text]
+        counts["imp_rule"] += 1
+        spoken = say_imported(text, sentence)
+        plain = maths_line(latex) if latex else None
+        if plain and re.search(r"[=×÷+−<>≠≈→]", plain):
+            extra = number_tokens(plain)
+            told = number_tokens(text)
+            repeat = _is_subsequence(extra, told) if extra else "=" in text
+            # A text that ends with a colon is waiting for its maths line, repeat or not.
+            if not repeat or text.rstrip().endswith(":"):
+                both = "%s %s" % (spoken, say_imported(plain, maths=True))
+                allowed = number_tokens("%s %s" % (text, re.sub(r"\\[a-zA-Z]+", " ", latex)))
+                if len(both) <= 700 and number_tokens(both) == allowed:
+                    spoken = both
+        return spoken
+
+    steps = []
+    for i, t in enumerate(src["steps"]):
+        steps.append(line(t, "s%d" % i, latex=own[i].get("latex") if i < len(own) else None))
+    return {
+        "q": line(src["q"], "q"),
+        "options": [line(t, "o%d" % i, sentence=False) for i, t in enumerate(src["options"])],
+        "hints": [line(t, "h%d" % i) for i, t in enumerate(src["hints"])],
+        "steps": steps,
+    }
+
+
 def narrate(q, counts):
     src = source_strings(q)
     hand = HAND.get(q["id"])
@@ -142,18 +200,30 @@ def narrate(q, counts):
 
 
 def main():
-    counts = {"hand": 0, "rule": 0}
+    counts = {"hand": 0, "rule": 0, "imp_hand": 0, "imp_rule": 0}
     questions = sorted((q for q in load_grade5() if topic_of(q) == SLUG), key=lambda q: q["id"])
     unknown = sorted(set(HAND) - {q["id"] for q in questions})
     if unknown:
         sys.exit("hand entries for ids not in this topic: %s" % ", ".join(unknown))
-    part = {q["id"]: narrate(q, counts) for q in questions}
+    used = set()
+    part = {}
+    imported = 0
+    for q in questions:
+        if q["id"].startswith(IMPORTED_PREFIXES):
+            imported += 1
+            part[q["id"]] = narrate_imported(q, counts, used)
+        else:
+            part[q["id"]] = narrate(q, counts)
+    unused = sorted((set(IMP_SLOTS) | set(IMP_LINES)) - used)
+    if unused:
+        sys.exit("imported hand entries that match nothing:\n  %s" % "\n  ".join(u[:120] for u in unused))
     os.makedirs(PARTS, exist_ok=True)
     path = os.path.join(PARTS, SLUG + ".json")
     with io.open(path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(part, f, ensure_ascii=False, indent=1)
         f.write("\n")
     print("wrote %d questions: %d lines by hand, %d by rule" % (len(part), counts["hand"], counts["rule"]))
+    print("of which %d imported questions: %d lines by hand, %d by rule" % (imported, counts["imp_hand"], counts["imp_rule"]))
 
 
 if __name__ == "__main__":

@@ -21,4 +21,17 @@ LINES = {
     "Third = 180° − 41° − 71° = 68°":
         "The third angle equals 180 degrees, minus 41 degrees, minus 71 degrees, which is 68 degrees.",
     "This is called 'vertically opposite angles'.": "This is called vertically opposite angles.",
+    # Lines of the worksheet variants as they stand in the part file (the rules alone give a flatter reading).
+    "Try a smaller one: a rectangle 5 cm long and 3 cm wide has an area of 5 × 3 = 15 sq.cm.":
+        "Try a smaller one. A rectangle 5 centimetres long, and 3 centimetres wide, has an area of 5 times 3, which equals 15 square centimetres.",
+    "Try a smaller one: a rectangle 4 cm long and 2 cm wide has an area of 4 × 2 = 8 sq.cm.":
+        "Try a smaller one. A rectangle 4 centimetres long, and 2 centimetres wide, has an area of 4 times 2, which equals 8 square centimetres.",
+    "Try a smaller one: a rectangle 5 cm long and 2 cm wide has a perimeter of 2 × (5 + 2) = 14 cm.":
+        "Try a smaller one. A rectangle 5 centimetres long, and 2 centimetres wide, has a perimeter of 2 times, open bracket, 5 plus 2, close bracket, which equals 14 centimetres.",
+    "Try a smaller one: a square with side 4 cm has an area of 4 × 4 = 16 sq.cm.":
+        "Try a smaller one. A square with side 4 centimetres has an area of 4 times 4, which equals 16 square centimetres.",
+    "Try a smaller one: a square with side 3 cm has a perimeter of 4 × 3 = 12 cm.":
+        "Try a smaller one. A square with side 3 centimetres has a perimeter of 4 times 3, which equals 12 centimetres.",
+    "Perimeter of a rectangle = 2 × (length + width).":
+        "Perimeter of a rectangle equals 2 times, open bracket, length plus width, close bracket.",
 }

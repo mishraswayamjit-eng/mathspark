@@ -28,7 +28,7 @@ from common import PARTS, load_grade5, source_strings, speak, topic_of  # noqa: 
 SLUG = "ratio-word-problems"
 
 HAND = {}
-for _name in ("ratio_word_problems_hand1", "ratio_word_problems_hand2", "ratio_word_problems_hand3"):
+for _name in ("ratio_word_problems_hand1", "ratio_word_problems_hand2", "ratio_word_problems_hand3", "ratio_word_problems_hand4"):
     try:
         HAND.update(__import__(_name).HAND)
     except ImportError:
@@ -199,9 +199,75 @@ def narrate(q):
     return entry
 
 
+# ── Imported questions (AIGEN_, IPMTB_, IPM2020_): their own rules and hand lines ──
+# Kept apart from everything above, so the narration of the older questions never changes.
+
+IMPORTED_PREFIXES = ("AIGEN_grade5_", "IPMTB_grade5_", "IPM2020_G5_")
+IMPORTED_HAND = {}
+for _name in ("ratio_imported_hand1", "ratio_imported_hand2", "ratio_imported_hand3", "ratio_imported_hand4"):
+    try:
+        IMPORTED_HAND.update(__import__(_name).HAND)
+    except ImportError:
+        pass
+from ratio_imported_rules import say_imported, with_maths  # noqa: E402
+from common import number_tokens  # noqa: E402
+
+NEW_STATS = {"questions": 0, "rule": 0, "hand": 0, "maths": 0, "option_rule": 0, "option_hand": 0}
+
+
+def narrate_imported(q):
+    """Hand lines may be a full list, or a dict {index: line} for the few lines a rule gets wrong."""
+    src = source_strings(q)
+    hand = IMPORTED_HAND.get(q["id"], {})
+    own = q.get("stepByStep") or []
+    NEW_STATS["questions"] += 1
+
+    def pick(key, i, text):
+        if not text.strip():
+            return ""
+        got = hand.get(key)
+        line = None
+        if key == "q":
+            line = got
+        elif isinstance(got, dict):
+            line = got.get(i)
+        elif got is not None and i < len(got):
+            line = got[i]
+        if line is not None:
+            NEW_STATS["hand"] += 1
+            return line
+        NEW_STATS["rule"] += 1
+        said = say_imported(text)
+        latex = own[i].get("latex", "") if key == "steps" and i < len(own) else ""
+        if latex.strip() and text.rstrip().endswith(":"):
+            # "Now the expression becomes:" is only half a sentence; its maths line finishes it.
+            full = with_maths(said, latex)
+            also = "%s %s" % (text, re.sub(r"\\[a-zA-Z]+", " ", latex))
+            if number_tokens(full) == number_tokens(also) and len(full) <= 700:
+                NEW_STATS["maths"] += 1
+                return full
+        return said
+
+    def option(i, text):
+        got = hand.get("options")
+        line = got.get(i) if isinstance(got, dict) else (got[i] if got is not None else None)
+        if line is not None:
+            NEW_STATS["option_hand"] += 1
+            return line
+        NEW_STATS["option_rule"] += 1
+        return say_option(text)
+
+    return {
+        "q": pick("q", 0, src["q"]),
+        "options": [option(i, t) for i, t in enumerate(src["options"])],
+        "hints": [pick("hints", i, t) for i, t in enumerate(src["hints"])],
+        "steps": [pick("steps", i, t) for i, t in enumerate(src["steps"])],
+    }
+
+
 def main():
     questions = sorted((q for q in load_grade5() if topic_of(q) == SLUG), key=lambda q: q["id"])
-    part = {q["id"]: narrate(q) for q in questions}
+    part = {q["id"]: (narrate_imported(q) if q["id"].startswith(IMPORTED_PREFIXES) else narrate(q)) for q in questions}
     os.makedirs(PARTS, exist_ok=True)
     path = os.path.join(PARTS, SLUG + ".json")
     with io.open(path, "w", encoding="utf-8", newline="\n") as f:
@@ -209,6 +275,7 @@ def main():
         f.write("\n")
     print("wrote %d questions to %s" % (len(part), path))
     print("lines: %(hand)d by hand, %(rule)d by family rule, %(fallback)d by general fallback, %(option)d answer choices by rule" % STATS)
+    print("imported: %(questions)d questions; lines: %(hand)d by hand, %(rule)d by rule (%(maths)d of them finished with the step's maths line); answer choices: %(option_hand)d by hand, %(option_rule)d by rule" % NEW_STATS)
     if FALLBACKS:
         print("general fallback used for: " + ", ".join(FALLBACKS[:40]))
 
