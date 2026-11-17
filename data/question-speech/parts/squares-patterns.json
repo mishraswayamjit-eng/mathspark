@@ -390,10 +390,10 @@
    "Here's a similar problem: Suppose Anu scores 10, 15, 20 in 3 matches and Ben scores 4, 7, 10 in 3 matches. Anu's total equals 3 times, open bracket, 10 plus 20, close bracket, divided by 2, which equals 45. Ben's total equals 3 times, open bracket, 4 plus 10, close bracket, divided by 2, which equals 21. Difference equals 45 minus 21, which equals 24. Now try the same approach with Rohit and Virat's scores!"
   ],
   "steps": [
-   "Find Rohit's total runs using the arithmetic series sum formula. S R equals 6 times, open bracket, 15 plus 45, close bracket, all divided by 2, which equals 6 times 60, all divided by 2, which equals 360 over 2, which equals 180.",
-   "Find Virat's total runs using the same formula. S V equals 6 times, open bracket, 10 plus 30, close bracket, all divided by 2, which equals 6 times 40, all divided by 2, which equals 240 over 2, which equals 120.",
-   "Find the difference between their totals. 180 minus 120 equals 60.",
-   "So the difference between Rohit's total runs and Virat's total runs is 60!"
+   "Pair Rohit's scores from the outside in: 15 and 45, 21 and 39, 27 and 33. Each pair makes 60. 15 plus 45 equals 60.",
+   "Three pairs of 60 give Rohit's total. 3 times 60 equals 180.",
+   "Virat's pairs are 10 and 30, 14 and 26, 18 and 22. Each pair makes 40, so his total is 120. 3 times 40 equals 120.",
+   "The difference between the totals is 60 runs. 180 minus 120 equals 60."
   ]
  },
  "AIGEN_grade5_431b360d-b7ae-4ab9-b271-4df51d6beba5": {
@@ -585,10 +585,10 @@
    "Here's a similar problem: If Ravi arranges 144 marbles in a perfect square, how many marbles are on each side? Well, 12 times 12 equals 144, so the square root of 144 equals 12. There are 12 marbles along each side."
   ],
   "steps": [
-   "We know that 196 diyas are arranged in a perfect square. So the total diyas equals side times side.",
-   "We need to find s, which means finding the square root of 196.",
-   "Let's check some values: 13 times 13 equals 169 (too small), 14 times 14 equals 196, 15 times 15 equals 225 (too big).",
-   "So the square root of 196 is 14. Priya places 14 diyas along each side of her square rangoli!"
+   "A square has as many rows as diyas in each row. We want the number that, multiplied by itself, makes 196.",
+   "10 times 10 is only 100, and 20 times 20 is 400. So the number is between 10 and 20.",
+   "196 ends in 6, and 4 times 4 ends in 6, so try 14. 14 times 14 equals 196.",
+   "Priya has 14 diyas along each side."
   ]
  },
  "AIGEN_grade5_7a3ad5fa-f41b-4ebd-b11c-0258d8068800": {
@@ -752,12 +752,10 @@
    "Here's a similar problem: If two consecutive perfect squares add up to 61, which are they? Check: 16 plus 25 equals 41, 25 plus 36 equals 61! So the squares are 25 and 36, and the larger one is 36."
   ],
   "steps": [
-   "List out perfect square numbers: 1, 4, 9, 16, 25, 36, 49, 64, 81, and so on.",
-   "We need two consecutive perfect squares that add up to 85. Let's try pairs.",
-   "Try 25 plus 36 equals 61. Nope, too small.",
-   "Try 36 plus 49 equals 85. Yes! That's exactly 85!",
-   "Here, 36 equals 6 squared and 49 equals 7 squared. These are consecutive perfect squares (6 squared and 7 squared).",
-   "The larger tray has 49 samosas."
+   "Write out the square numbers: 1, 4, 9, 16, 25, 36, 49, 64, 81.",
+   "The two trays hold nearly the same amount and 85 together. So look for neighbours either side of 40: they are 36 and 49.",
+   "Test the pair. 36 plus 49 equals 85.",
+   "36 is 6 times 6 and 49 is 7 times 7, so they are squares next to each other. The larger tray holds 49 samosas."
   ]
  },
  "AIGEN_grade5_aa962e84-9236-4aec-9f62-77fac659d704": {
@@ -2898,13 +2896,13 @@
    "Here's a similar problem: Fill in the blanks in 2, 4, 6, blank, 10, blank, 14. The difference between each number is 2, so the blanks are 8 and 12. Now try the same approach with your sequence!"
   ],
   "steps": [
-   "Let's find the pattern by looking at the differences between consecutive numbers we already know. 3 minus 1 equals 2, 5 minus 3 equals 2.",
-   "Great! The common difference is 2. Each number is 2 more than the previous one. This is a sequence of odd numbers!",
-   "Now let's fill in the first blank. The number before it is 5, so we add 2. 5 plus 2 equals 7.",
-   "Let's check: does 7 fit? The next given number is 9, and 9 minus 7 equals 2. Perfect!",
-   "Now for the second blank. The number before it is 9, so we add 2. 9 plus 2 equals 11.",
-   "Let's check: does 11 fit? The next given number is 13, and 13 minus 11 equals 2. Perfect!",
-   "So the sequence is: 1, 3, 5, 7, 9, 11, 13 and 15. The blanks are 7 and 11, which is option B!"
+   "Find the rule from two pairs of neighbours: 3 minus 1 equals 2, and 5 minus 3 equals 2.",
+   "The rule is add 2, every time.",
+   "The number before the first gap is 5, so add 2. 5 plus 2 equals 7.",
+   "Check: 7 plus 2 is 9, the number that follows. It fits.",
+   "The number before the second gap is 9, so add 2. 9 plus 2 equals 11.",
+   "Check: 11 plus 2 is 13, the number that follows. It fits.",
+   "The series is 1, 3, 5, 7, 9, 11, 13, 15. The missing numbers are 7 and 11."
   ]
  },
  "IPMTB_grade5_ch03_q019": {
@@ -3473,11 +3471,10 @@
    "Here's a similar problem: Is 85 a square number? Well, 9 squared equals 81 and 10 squared equals 100. Since 85 falls between 81 and 100, and no whole number squared gives 85, it's not a square number!"
   ],
   "steps": [
-   "Let's check each option one by one! First, option B: 144. We know that 12 times 12 equals 144. So 144 is a perfect square.",
-   "Now option D: 625. We know that 25 times 25 equals 625. So 625 is a perfect square.",
-   "Now option A: 529. Let's think, 23 times 23 equals 529. So 529 is a perfect square! (Tip: 20 squared equals 400, so we try numbers in the 20s.)",
-   "Finally, option C: 117. Let's check! 10 squared equals 100, 11 squared equals 121. Since 117 falls between 100 and 121, and no whole number squared gives 117, it is not a perfect square!",
-   "So 117 is the only number in the list that is not a square number. The answer is C!"
+   "A square number can only end in 0, 1, 4, 5, 6 or 9. 117 ends in 7, so it cannot be a square.",
+   "Make sure: 10 times 10 equals 100, and 11 times 11 equals 121. 117 sits between them, so no whole number times itself gives 117.",
+   "The other three are squares: 12 times 12 equals 144, 23 times 23 equals 529, and 25 times 25 equals 625.",
+   "So the number that is not a square number is 117."
   ]
  },
  "IPMTB_grade5_ch04_q002": {
@@ -3494,13 +3491,11 @@
    "Here's a similar problem: Is 196 a square number? Let's check, 13 times 13 equals 169 (too small), 14 times 14 equals 196. Yes! So 196 is a perfect square because 14 times 14 equals 196. Try the same approach with the options in your question!"
   ],
   "steps": [
-   "We need to find which option is a perfect square, a number that equals some whole number multiplied by itself.",
-   "Let's estimate the range. All options are roughly between 50 and 560. So we need squares of numbers around 7 to 24. 7 squared equals 49, 24 squared equals 576.",
-   "Let's check Option A: 554. We know 23 squared equals 529 and 24 squared equals 576. Since 554 is between these, it's not a perfect square.",
-   "Let's check Option B: 289. We try 17 squared equals 289. That's a match!",
-   "Let's verify the others just to be sure. Option C: 111. We know 10 squared equals 100 and 11 squared equals 121. Since 111 is between them, it's not a perfect square.",
-   "Option D: 69. We know 8 squared equals 64 and 9 squared equals 81. Since 69 is between them, it's not a perfect square.",
-   "So the only square number among the options is 289, because 17 times 17 equals 289. The answer is B!"
+   "Trap each number between two squares that are next to each other. 69 lies between 8 times 8, which is 64, and 9 times 9, which is 81, so it is not a square.",
+   "111 lies between 10 times 10, which is 100, and 11 times 11, which is 121, so it is not a square.",
+   "289 is less than 20 times 20, which is 400, and ends in 9, so try 17. 17 times 17 equals 289.",
+   "554 lies between 23 times 23, which is 529, and 24 times 24, which is 576, so it is not a square.",
+   "The square number is 289."
   ]
  },
  "IPMTB_grade5_ch04_q005": {
@@ -3538,11 +3533,11 @@
    "Here's a similar problem: which digits can be in the unit's place of an odd number? Look at 1, 3, 5, 7, 9, 11 and 13. The last digits are 1, 3, 5, 7, 9, and then they repeat. So 4 can never be in the unit's place of an odd number. Now do the same for square numbers!"
   ],
   "steps": [
-   "Let's square every single digit from 0 to 9 and note the unit's place digit of each result: 0 squared equals 0, 1 squared equals 1, 2 squared equals 4, 3 squared equals 9, 4 squared equals 16, 5 squared equals 25, 6 squared equals 36, 7 squared equals 49, 8 squared equals 64, 9 squared equals 81.",
-   "Now let's collect just the unit's digits from those squares: 0, 1, 4, 9, 6, 5, 6, 9, 4 and 1.",
-   "So the only digits that can appear in the unit's place of a perfect square are: 0, 1, 4, 5, 6, and 9. That's it! No matter how big the number, the unit's digit of its square depends only on the unit's digit of the original number.",
-   "Now let's check each option. C, 2: not in our list. B, 3: not in our list. C, 0: yes, it's in our list! For example, 10 squared equals 100. D, 7: not in our list.",
-   "So the answer is C, 0. For example, 10 squared equals 100, 20 squared equals 400, 30 squared equals 900, all end in 0!"
+   "The last digit of a square depends only on the last digit of the number you square. So we only need to square 0 to 9.",
+   "0 times 0 equals 0, 1 times 1 equals 1, 2 times 2 equals 4, 3 times 3 equals 9, and 4 times 4 equals 16.",
+   "5 times 5 equals 25, 6 times 6 equals 36, 7 times 7 equals 49, 8 times 8 equals 64, and 9 times 9 equals 81.",
+   "The last digits that turn up are 0, 1, 4, 5, 6 and 9.",
+   "2, 3 and 7 are not on that list, but 0 is. A square number can end in 0. 10 times 10 equals 100."
   ]
  },
  "IPMTB_grade5_ch04_q007": {
@@ -3621,12 +3616,12 @@
    "Let's try a similar problem! If a square has a side of 12 centimetres, its area equals 12 times 12, which is 144 square centimetres. Notice how we write square centimetres for area, not just centimetres! That's because area covers a flat surface, like a rangoli pattern on the floor."
   ],
   "steps": [
-   "Write down what we know: each side of the square is 21 centimetres.",
-   "Recall the formula for the area of a square: Area equals side times side.",
-   "Plug in the value of the side: Area equals 21 times 21.",
-   "Let's break this multiplication into easier parts: 21 times 21 equals 21 times 20 plus 21 times 1, which equals 420 plus 21, which equals 441.",
-   "Now, don't forget the units! Since area measures a surface, like the floor of a room, we use square centimetres, not just centimetres. The area equals 441 square centimetres.",
-   "So the answer is 441 square centimetres."
+   "Each side of the square is 21 centimetres.",
+   "The area of a square is side times side.",
+   "Put in the side. The area equals 21 times 21.",
+   "Split one 21 into 20 and 1 to make the sum easy. 21 times 21 equals 21 times 20, plus 21 times 1. That equals 420 plus 21, which equals 441.",
+   "The sides are in centimetres, so the area is in square centimetres.",
+   "The area is 441 square centimetres."
   ]
  },
  "IPMTB_grade5_ch04_q011": {
@@ -3664,12 +3659,10 @@
    "Here's a similar problem: Find the largest 3 digit number that is a perfect square. The largest 3 digit number is 999. The square root of 999 is about 31.6, so we take 31. Then 31 squared equals 961. So the answer would be 961! Now try the same approach for 4 digit numbers."
   ],
   "steps": [
-   "The largest 4 digit number is 9,999. We need to find the largest perfect square that is less than or equal to 9,999.",
-   "Take the square root of 9,999. The square root of 9999 is about 99.995.",
-   "Since we need a whole number, we round down to 99.",
-   "Now square 99 to get our answer. 99 squared equals 99 times 99.",
-   "Let's compute: 99 times 99. A neat trick: 99 times 99 equals, open bracket, 100 minus 1, close bracket, times, open bracket, 100 minus 1, close bracket, which equals 10,000 minus 200 plus 1, which equals 9,801.",
-   "9,801 is a 4 digit number and it's a perfect square. The next perfect square would be 100 squared, which equals 10,000, which is a 5 digit number. So 9,801 is the largest 4 digit perfect square!"
+   "The largest 4 digit number is 9,999. The next number, 10,000, has 5 digits.",
+   "10,000 is a square, but it is too big. 100 times 100 equals 10,000.",
+   "The square just before it is 99 times 99. 100 lots of 99 make 9,900, so take one 99 away. 9,900 minus 99 equals 9,801.",
+   "The largest 4 digit perfect square is 9,801."
   ]
  },
  "IPMTB_grade5_ch04_q013": {
@@ -3815,11 +3808,11 @@
    "Here's a similar problem: If 12 samosas are on each plate and there are 12 plates, how many samosas in total? That's 12 times 12 equals 144. We just squared 12!"
   ],
   "steps": [
-   "Understand what we need: 34 boys per room times 34 rooms equals total boys. That's 34 times 34, which is 34 squared!",
-   "Let's break 34 into 30 plus 4 and use the identity A plus b, all squared, equals A squared plus 2 A b plus b squared. 30 plus 4, all squared, equals 30 squared plus 2 times 30 times 4 plus 4 squared.",
-   "Calculate each part: 30 squared equals 900, 2 times 30 times 4 equals 240, and 4 squared equals 16.",
-   "Add them all up: 900 plus 240 equals 1140, then 1140 plus 16 equals 1156.",
-   "So the total number of boys is 1,156. That's our answer, option C!"
+   "There are 34 equal groups of 34, so multiply. 34 times 34.",
+   "Split one 34 into 30 and 4. First, 34 times 30. 34 times 30 equals 1020.",
+   "Next, 34 times 4. 34 times 4 equals 136.",
+   "Add the two parts to find how many boys there are in all. 1020 plus 136 equals 1156.",
+   "The total number of boys is 1,156."
   ]
  },
  "IPMTB_grade5_ch04_q025": {
@@ -3921,12 +3914,12 @@
    "Here's a similar problem: If a square has a side of 15 centimetres, its area equals 15 times 15, which is 225 square centimetres. Notice the unit is square centimetres, because we multiplied centimetres by centimetres!"
   ],
   "steps": [
-   "Write down the formula for the area of a square. Area equals side times side, which equals side squared.",
-   "Plug in the given side length of 26 centimetres. Area equals 26 times 26.",
-   "Let's break 26 times 26 into easier parts using the identity A plus b, all squared, equals A squared plus 2 A b plus b squared. Here A equals 20 and b equals 6.",
-   "Calculate each part: 20 squared equals 400, 2 times 20 times 6 equals 240, 6 squared equals 36. 400 plus 240 plus 36 equals 676.",
-   "Now add the correct unit. Since we multiplied centimetres by centimetres, the unit is square centimetres. The area equals 676 square centimetres.",
-   "The answer is 676 square centimetres, which matches option C!"
+   "The area of a square is side times side.",
+   "The side is 26 centimetres. The area equals 26 times 26.",
+   "Split one 26 into 20 and 6. 26 times 20 is 520. 26 times 6 equals 156.",
+   "Add the two parts to get the area. 520 plus 156 equals 676.",
+   "The sides are in centimetres, so the area is in square centimetres.",
+   "The area is 676 square centimetres."
   ]
  },
  "IPMTB_grade5_ch04_q030": {
@@ -3943,11 +3936,10 @@
    "Here's a similar problem: form the smallest three-digit square number using the digits 1, 6 and 9. The numbers you can make are 169, 196, 619, 691, 916 and 961. Start from the smallest: 13 times 13 equals 169, so the answer is 169."
   ],
   "steps": [
-   "We need a four-digit number using digits 2, 4, 0, 1 (each exactly once) that is a perfect square. Let's think about which perfect squares use exactly these digits.",
-   "The smallest four-digit number is 1000, and the largest using these digits would be 4210. So we need perfect squares between 1000 and 4210. The square root of 1000 is about 31.6, and the square root of 4210 is about 64.9.",
-   "So we check squares of numbers from 32 to 64. We want the smallest such square that uses exactly the digits 2, 4, 0 and 1.",
-   "Let's check: 32 squared equals 1024. The digits of 1024 are 1, 0, 2 and 4. That's exactly our set of digits!",
-   "Since 32 is the smallest integer whose square is a four-digit number using these digits, 1024 is our answer. Let's verify: 32 times 32 equals 1024, and the digits are 1, 0, 2, 4."
+   "The number must use all four digits and be a square. 412 has only 3 digits, so it is out.",
+   "1240 and 2410 end in just one zero. A square that ends in 0 ends in two zeros, like 10 times 10 equals 100, so they are out.",
+   "That leaves 1,024. It is a little more than 30 times 30, which is 900, and ends in 4, so try 32. 32 times 32 equals 1024.",
+   "The square before it, 31 times 31, which is 961, has only 3 digits. So the smallest four digit square is 1,024."
   ]
  },
  "IPMTB_grade5_ch04_q031": {

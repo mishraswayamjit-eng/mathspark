@@ -59,13 +59,11 @@
    "Here's a similar problem. Meena had some money. She spent one third on books, then one half of the remaining on a bag, and had 100 rupees left. Remaining after books is two thirds of the total. After the bag, it is one half times two thirds, which is one third of the total. So one third of the total is 100 rupees, meaning the total is 300 rupees. Use the same approach for Arjun's problem!"
   ],
   "steps": [
-   "Let the total money collected be T.",
-   "Arjun spent 2 over 5 of T on cricket balls. So the remaining money after buying balls is: T minus 2 over 5 T, which equals 3 over 5 T.",
-   "From this remaining amount, he spent three quarters on a bat. So the amount spent on the bat is: three quarters times 3 over 5 T, which equals 9 over 20 T.",
-   "The money left after both purchases is the remaining one quarter of the leftover amount: one quarter times 3 over 5 T, which equals 3 over 20 T.",
-   "We know this leftover equals 90 rupees: 3 over 20 T equals 90.",
-   "Solve for T by multiplying both sides by 20 over 3: T equals 90 times 20 over 3. 90 times 20 over 3 is 30 times 20, which is 600.",
-   "So Arjun collected 600 rupees in total! Let's verify. Balls: 2 over 5 times 600 is 240 rupees. Remaining: 360 rupees. Bat: three quarters times 360 is 270 rupees. Left: 360 minus 270, which is 90 rupees."
+   "We know the end, so work backwards. Arjun spent three quarters of the remaining money on the bat, so the 90 rupees left is one quarter of it.",
+   "All 4 quarters make the money he had after buying the balls. 90 times 4 equals 360.",
+   "He spent 2 over 5 of the total on balls, so 360 rupees is 3 over 5 of the total. Divide by 3 to find 1 over 5 of the total. 360 divided by 3 equals 120.",
+   "The total is 5 fifths, so multiply by 5. 120 times 5 equals 600.",
+   "Arjun collected 600 rupees in total."
   ]
  },
  "BOOST_EXT_G5_WS_B7_001_05": {

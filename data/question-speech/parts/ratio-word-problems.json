@@ -651,12 +651,12 @@
    "Here's a similar problem. If A is to B, as 2 is to 3, and B is to C, as 5 is to 8, and A equals 100, then B equals 100 times 3 over 2, which is 150. Now, using B is to C, as 5 is to 8, we get C equals 150 times 8 over 5, which is 240. Notice how we found B first, then used it to find C!"
   ],
   "steps": [
-   "We know Kabir is to Lakshmi, as 3 is to 5, and Kabir has 360 rupees. Let's find Lakshmi's amount first.",
-   "Substitute Kabir equals 360 into the ratio: 360 over Lakshmi equals 3 over 5.",
-   "Cross multiply to find Lakshmi's amount: Lakshmi equals 360 times 5, divided by 3. That is 1800 divided by 3, which equals 600.",
-   "Now we use the second ratio: Lakshmi is to Neha, as 4 is to 7, and Lakshmi has 600 rupees.",
-   "Cross multiply to find Neha's amount: Neha equals 600 times 7, divided by 4. That is 4200 divided by 4, which equals 1050.",
-   "So Neha collected 1050 rupees!"
+   "Kabir and Lakshmi are in the ratio 3 is to 5, and Kabir collected 360 rupees. Start with that ratio.",
+   "Kabir's 3 parts are 360 rupees, so one part is 120 rupees. 360 divided by 3 equals 120.",
+   "Lakshmi has 5 of those parts, so she collected 600 rupees. 5 times 120 equals 600.",
+   "In the other ratio, 4 is to 7, Lakshmi's 4 parts are 600 rupees, so one part is 150 rupees. 600 divided by 4 equals 150.",
+   "Neha has 7 of these parts. 7 times 150 equals 1050.",
+   "Neha collected 1050 rupees."
   ]
  },
  "AIGEN_grade5_82f232bb-eec4-49fb-bffb-8a2a8ceeb543": {
@@ -1044,10 +1044,10 @@
    "Here's a similar problem. If blue and green paint are mixed in the ratio 2 is to 7, and you use 21 litres of green, then blue over 21 equals 2 over 7. So blue equals 2 times 21, divided by 7, which is 6 litres. Try the same method with your numbers!"
   ],
   "steps": [
-   "Identify what each part of the ratio represents. The ratio is red is to yellow, as 3 is to 5. So red corresponds to 3 and yellow corresponds to 5.",
-   "We know yellow paint is 24 litres. Set up the proportion to find red paint.",
-   "Cross multiply and solve: red equals 3 times 24, divided by 5. That is 72 divided by 5, which equals 14.4 litres.",
-   "Let's verify: 14.4 is to 24 is 14.4 divided by 24, which equals 0.6, and 3 over 5 equals 0.6. The ratio checks out! So the answer is 14.4 litres."
+   "The ratio means 3 equal parts of red for every 5 parts of yellow.",
+   "The 24 litres fill yellow's 5 parts, so one part is 4.8 litres. 24 divided by 5 equals 4.8.",
+   "Red has 3 parts. 3 times 4.8 equals 14.4.",
+   "They used 14.4 litres of red paint."
   ]
  },
  "AIGEN_grade5_c95ebc37-14a9-4005-879a-6c281a37a100": {
@@ -2779,11 +2779,9 @@
    "Here's a similar problem. Open bracket, 48 plus 37 minus 19, close bracket, times 0, plus 6. Any number times 0 is 0, so the bracket part becomes 0 with no working needed. Then 0 plus 6 equals 6."
   ],
   "steps": [
-   "Let's look at the structure of the expression. We have something in parentheses, multiplied by 0: open bracket, 7 plus 2, minus 14 times one half, minus 5, minus 2, close bracket, times 0.",
-   "The entire expression inside the parentheses is being multiplied by 0. Remember the Zero Property of Multiplication: any number times 0 equals 0. It doesn't matter what the value inside the brackets is!",
-   "But just to be thorough, let's verify the inside isn't undefined, like dividing by zero. Using BODMAS inside the brackets, first do multiplication: 14 times one half equals 7.",
-   "The value inside the brackets is minus 5. Now multiply by 0: minus 5 times 0 equals 0.",
-   "So the final answer is 0. The zero outside wipes everything out, like erasing a whole chalkboard in one swipe!"
+   "Look at the whole line before you start. The whole bracket is multiplied by 0. Open bracket, 7 plus 2, minus 14 times one half, minus 5, minus 2, close bracket, times 0.",
+   "Any number times 0 is 0. So we do not need to work out the bracket.",
+   "The answer is 0."
   ]
  },
  "IPMTB_grade5_ch07_q027": {
@@ -2823,15 +2821,14 @@
    "Here's a similar problem. Is 6 divided by 2, times 3, minus 1, plus 2, equals 2, true? Go left to right. 6 divided by 2 equals 3, then 3 times 3 equals 9, then 9 minus 1 equals 8, then 8 plus 2 equals 10. Since 10 is not 2, that expression is not true."
   ],
   "steps": [
-   "Let's check Option A: 1 over 5 of 125, divided by 25, minus 1. Of means multiplication. By BODMAS, we handle division and multiplication left to right.",
-   "Let's check Option B: open curly bracket, 9 minus 3 minus, open bracket, 7 plus 6, minus 6, minus 6, minus 7, close bracket, close curly bracket, times 0. First solve the inner bracket.",
-   "Continue with Option B. Now the curly bracket becomes 9 minus 3 minus, open bracket, minus 6, close bracket. That is 9 minus 3 plus 6, which equals 12. Then 12 times 0 equals 0.",
-   "Now let's check Option C: 8 divided by 2 times 6, minus 3 divided by 9, plus 27. Remember: division and multiplication go left to right, then addition and subtraction go left to right.",
-   "Next multiplication, going left to right: 4 times 6 equals 24. Then handle the next division: 3 divided by 9 equals one third.",
-   "Now do addition and subtraction left to right: 24 minus one third plus 27, equals 51 minus one third, which is 50 and two thirds. This is definitely not equal to 3!",
-   "Let's verify Option D, just to be thorough: one quarter, divided by three quarters, divided by 2 over 4, times 4 over 3. Division by a fraction means multiply by its reciprocal. Going left to right: one quarter divided by three quarters, equals one quarter times 4 over 3, which is one third.",
-   "Continue Option D: one third divided by 2 over 4, equals one third times 4 over 2, which is one third times 2, which is two thirds. Then two thirds times 4 over 3 equals 8 over 9.",
-   "So Options A, B, and D all give correct results. Only Option C gives 50 and two thirds, instead of 3. That's our answer. C is the incorrect expression!"
+   "Check each sentence. In the first one, of means times, and 1 over 5 of 125 is 25. Then we get 0, so it is true. 25 divided by 25, minus 1, equals 0.",
+   "The second sentence ends in times 0. Anything times 0 is 0, so it is true.",
+   "In the third sentence, work from left to right. 8 divided by 2 is 4, and 4 times 6 is 24. 8 divided by 2, times 6, equals 24.",
+   "Next, 3 divided by 9 is one third. 3 divided by 9 equals one third.",
+   "24 plus 27 is 51, and taking away one third leaves more than 50. That is nowhere near 3, so the third sentence is not true. 24 plus 27 equals 51.",
+   "Check the last sentence. One quarter divided by three quarters is one third. Then one third divided by 2 over 4 is two thirds. One third divided by 2 over 4 equals two thirds.",
+   "Last, two thirds times 4 over 3 is 8 over 9, so that sentence is true. Two thirds times 4 over 3 equals 8 over 9.",
+   "So the expression that is not correct is 8 divided by 2, times 6, minus 3 divided by 9, plus 27, equals 3."
   ]
  },
  "IPMTB_grade5_ch07_q032": {

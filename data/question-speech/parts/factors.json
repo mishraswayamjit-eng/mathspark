@@ -383,14 +383,11 @@
    "Here's a similar problem: Suppose you have 1155 items and test divisibility by 3, 5, and 7. We find 1155 divided by 3 equals 385, 1155 divided by 5 equals 231, 1155 divided by 7 equals 165. So all three work, the answer would be 3. Now apply the same idea to 2023 with 7, 11, and 17!"
   ],
   "steps": [
-   "Check if 2023 is divisible by 7. 2023 divided by 7 equals 289.",
-   "289 is a whole number, so yes, 2023 is divisible by 7!",
-   "Check if 2023 is divisible by 11. Use the divisibility rule for 11: alternating sum of digits equals 2 minus 0 plus 2 minus 3, which is 1. Since 1 is not divisible by 11, 2023 is not divisible by 11.",
-   "We can verify: 2023 divided by 11 equals 183 remainder 10. So 11 does not divide 2023.",
-   "Check if 2023 is divisible by 17. 2023 divided by 17 equals 119.",
-   "Let's verify: 17 times 119 equals 17 times 120 minus 17, which is 2040 minus 17, which is 2023. Yes!",
-   "So 2023 is divisible by 7 and 17, but not by 11. That means 2 out of the 3 row sizes work.",
-   "In fact, 2023 equals 7 times 17 times 17, which is 7 times 289. Pretty cool! The answer is 2."
+   "A row size works only if it divides 2023 exactly. Start with 7. 2023 is 2100 minus 77. 2023 equals 2100 minus 77.",
+   "7 goes into 2100 exactly 300 times, and into 77 exactly 11 times. So 7 divides 2023 exactly. 2023 divided by 7 equals 300 minus 11, which equals 289.",
+   "Now 11. Take the digits of 2023 in turn, subtracting and adding. 11 divides a number only when this gives 0 or a multiple of 11. We get 1, so 11 does not divide 2023. 2 minus 0 plus 2 minus 3 equals 1.",
+   "Last, 17. We found that 2023 is 7 times 289, and 289 is 17 times 17. So 17 divides 2023 exactly. 2023 divided by 17 equals 119.",
+   "7 and 17 leave no diyas over, but 11 does not divide 2023. So the number of row sizes that fit is 2."
   ]
  },
  "AIGEN_grade5_5ba10b20-1546-4183-a2c5-2d5847b4866d": {
@@ -625,16 +622,11 @@
    "Here's a similar problem. Find the sum of the prime factors of 70. A factor tree gives 70 equals 2 times 5 times 7. The prime factors are 2, 5 and 7, and their sum is 2 plus 5 plus 7, which equals 14."
   ],
   "steps": [
-   "Let's find the prime factorization of 720 using a factor tree. 720 equals 2 times 360.",
-   "Keep dividing by 2: 360 equals 2 times 180.",
-   "Continue: 180 equals 2 times 90.",
-   "Continue: 90 equals 2 times 45.",
-   "Now 45 is odd, so we try 3: 45 equals 3 times 15.",
-   "Continue with 3: 15 equals 3 times 5.",
-   "So the full prime factorization is: 720 equals 2 to the power of 4, times 3 squared, times 5.",
-   "The distinct prime factors of 720 are 2, 3, and 5.",
-   "Add them up: 2 plus 3 plus 5 equals 10.",
-   "Riya's sum is 10!"
+   "Break 720 down until only prime numbers are left. Start with 72 times 10. 720 equals 72 times 10.",
+   "10 is 2 times 5, and 72 is 8 times 9. 72 equals 8 times 9.",
+   "8 is 2 times 2 times 2, and 9 is 3 times 3. Now every piece is prime. 720 equals 2 times 2 times 2 times 2, times 3 times 3, times 5.",
+   "Riya writes each prime factor once. Her list is 2, 3 and 5.",
+   "Add them up. Riya's sum is 10. 2 plus 3 plus 5 equals 10."
   ]
  },
  "AIGEN_grade5_99711e80-fa5f-46f2-8846-8ca00218f5ab": {

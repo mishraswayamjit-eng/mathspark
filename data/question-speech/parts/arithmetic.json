@@ -118,11 +118,10 @@
    "Here's a similar problem: If 30 bags of 20 mangoes are packed on Day 1, and the two-day total is 1,200 mangoes, then Day 2 had 1,200 minus 600 equals 600 mangoes. If all 1,200 mangoes are repacked into crates of 25, you get 1,200 divided by 25 equals 48 crates. Now try the original problem with its own numbers!"
   ],
   "steps": [
-   "Find the number of laddoos packed on Monday.",
-   "Find the number of laddoos packed on Tuesday by subtracting Monday's count from the total.",
-   "Optional check, Find how many boxes were packed on Tuesday.",
-   "Now repack all 2,880 laddoos into gift hampers of 45 each.",
-   "So Ravi's father made 64 gift hampers."
+   "The question gives the total: 2,880 laddoos. All of them go into hampers of 45, so we divide 2,880 by 45.",
+   "45 is 5 times 9, so divide by 5 first. 2880 divided by 5 equals 576.",
+   "Then divide by 9. 576 divided by 9 equals 64.",
+   "He made 64 gift hampers. 2880 divided by 45 equals 64."
   ]
  },
  "AIGEN_grade5_078d2c63-53bc-489d-9bd6-5fc5110dbe17": {
@@ -139,11 +138,11 @@
    "Here's a similar problem: If you buy 130 boxes of 25 sweets and 150 boxes of 20 sweets, total sweets equals 130 times 25, plus 150 times 20, that is 3250 plus 3000, which is 6250. See how we multiply each separately and then add? Try the same approach with your numbers!"
   ],
   "steps": [
-   "Find the total number of rockets by multiplying 125 times 48.",
-   "Break it down: 125 times 48 equals 125 times, open bracket, 50 minus 2, close bracket, that is 125 times 50, minus 125 times 2, that is 6250 minus 250, which is 6000.",
-   "Find the total number of sparklers by multiplying 175 times 36.",
-   "Break it down: 175 times 36 equals 175 times, open bracket, 40 minus 4, close bracket, that is 175 times 40, minus 175 times 4, that is 7000 minus 700, which is 6300.",
-   "Add the two totals together: 6000 plus 6300 equals 12300. That's the total number of fireworks items!"
+   "Rockets: 125 boxes of 48. Split 48 into 8 times 6, because 125 times 8 is a round number. 125 times 8 equals 1000.",
+   "So the rockets come to 1000 times 6. 1000 times 6 equals 6000.",
+   "Sparklers: 175 boxes of 36. Think of 36 as 40 minus 4. 175 times 40 equals 7000.",
+   "Take away 175 times 4, which is 700. 7000 minus 700 equals 6300.",
+   "Add the two kinds. They bought 12300 fireworks items in total. 6000 plus 6300 equals 12300."
   ]
  },
  "AIGEN_grade5_08d11006-5566-483e-a79a-bbbd3f407726": {
@@ -795,12 +794,11 @@
    "Here's a similar problem: Priya sold 50 bangles at 8 rupees each and 30 bangles at 10 rupees each. She spent 500 rupees on materials. Profit equals, open bracket, 50 times 8, plus 30 times 10, close bracket, minus 500, that is, open bracket, 400 plus 300, close bracket, minus 500, which is 200 rupees. Use the same approach for Ravi's problem!"
   ],
   "steps": [
-   "Calculate Day 1 earnings: 148 samosas times 12 rupees each.",
-   "Calculate Day 2 earnings: 237 samosas times 12 rupees each.",
-   "Calculate Day 3 earnings: 115 special samosas times 15 rupees each.",
-   "Find total revenue by adding all three days' earnings.",
-   "Subtract the total ingredient cost to find profit.",
-   "Ravi's profit over the three days is 2,595 rupees."
+   "The first two days have the same price, 12 rupees. Add their samosas. 148 plus 237 equals 385.",
+   "385 times 10 is 3850 and 385 times 2 is 770. Add them for the money from these days. 3850 plus 770 equals 4620.",
+   "Day 3: 115 times 10 is 1150 and 115 times 5 is 575. 1150 plus 575 equals 1725.",
+   "Add up all the earnings. 4620 plus 1725 equals 6345.",
+   "Take away the 3,750 rupees spent on ingredients. Ravi's profit is 2,595 rupees. 6345 minus 3750 equals 2595."
   ]
  },
  "AIGEN_grade5_30f964e1-aa7c-4b8c-8e34-9fa245732030": {
@@ -838,12 +836,10 @@
    "Here's a similar problem: If you have 1.8 litres and each cup needs 0.5 litres, then 1.8 divided by 0.5 equals 3.6, so you can make 3 full cups. Leftover equals 1.8 minus 3 times 0.5, that is 1.8 minus 1.5, which is 0.3 litres. Now try the same approach with Priya's numbers!"
   ],
   "steps": [
-   "Find how many glasses Priya can make by dividing total pulp by pulp per glass.",
-   "To make the division easier, multiply both numbers by 1000 to remove decimals.",
-   "Perform the division: 375 times 6 equals 2250, and 375 times 7 equals 2625, which is more than 2500. So Priya can make 6 full glasses.",
-   "Calculate the pulp used for 6 glasses.",
-   "Subtract the pulp used from the total to find the leftover.",
-   "So Priya has 0.250 litres, or 250 millilitres, of mango pulp left over."
+   "Count up in glasses. 6 glasses use 2.25 litres, which is less than 2.5 litres. 6 times 0.375 equals 2.25.",
+   "A 7th glass would bring the total to 2.625 litres, which is more than 2.5 litres. So Priya makes 6 full glasses. 7 times 0.375 equals 2.625.",
+   "Take the 2.25 litres she uses away from 2.5 litres. 2.50 minus 2.25 equals 0.25.",
+   "So 0.250 litres of mango pulp will be left over."
   ]
  },
  "AIGEN_grade5_321a7e1c-9ab9-466f-96b4-afe1f6e12b8a": {
@@ -1277,12 +1273,12 @@
    "Here's a similar problem: Priya has 3,000 rupees. She spends 800 rupees on books and 450 rupees on pens. Her mom gives her 600 rupees. She donates 200 rupees. Running total: 3000 minus 800 equals 2200, then 2200 minus 450 equals 1750, then 1750 plus 600 equals 2350, then 2350 minus 200 equals 2,150 rupees. Follow the same pattern for Ravi's problem!"
   ],
   "steps": [
-   "Ravi starts with his Diwali gift.",
-   "He spends 1,285 rupees on crackers. Subtract this.",
-   "He spends 968 rupees on sweets. Subtract this.",
-   "His uncle gives him 1,150 rupees. Add this.",
-   "He donates 500 rupees to charity. Subtract this.",
-   "Ravi now has 3,147 rupees!"
+   "Sort the money. In: 4,750 rupees and 1,150 rupees. Out: 1,285 rupees, 968 rupees and 500 rupees.",
+   "Add up the money that came in. 4750 plus 1150 equals 5900.",
+   "Add up the money that went out, starting with the crackers and sweets. 1285 plus 968 equals 2253.",
+   "Add the donation too. 2253 plus 500 equals 2753.",
+   "Take the money that went out away from the money that came in. 5900 minus 2753 equals 3147.",
+   "Ravi has 3,147 rupees now."
   ]
  },
  "AIGEN_grade5_555fbc6a-c850-4337-9d81-0fec7f9e3059": {
@@ -1320,11 +1316,9 @@
    "A similar problem: someone's average over 4 tests is 45.5, so the total is 45.5 times 4, which is 182 marks. One score should have been 4 marks higher, so the new total is 182 plus 4, which is 186. The new average is 186 divided by 4, which is 46.5."
   ],
   "steps": [
-   "Find the total runs after 4 matches using the first average.",
-   "Find the total runs after 5 matches using the updated average, before the scorer's correction.",
-   "So Arjun scored 173 minus 131 equals 42 runs in the 5th match. Good to know, but we actually need the corrected total!",
-   "Now apply the scorer's correction: the 3rd match score was 2.5 runs more than recorded. So the corrected total increases by 2.5.",
-   "Find the corrected average across all 5 matches."
+   "Only the average after 5 matches is needed. Average times matches gives the recorded total. 34.6 times 5 equals 173.",
+   "The 3rd match score goes up by 2.5, so the total goes up by 2.5 too. 173 plus 2.5 equals 175.5.",
+   "Divide the corrected total by the 5 matches. The corrected average is 35.1. 175.5 divided by 5 equals 35.1."
   ]
  },
  "AIGEN_grade5_5ce76247-8d7c-4031-8b8a-0a46da1e2439": {
@@ -1695,12 +1689,12 @@
    "Here's a similar problem: If someone scored 10.5, 7.25, and 12.75 in three innings and needs 35 total, first add: 10.5 plus 7.25 equals 17.75, then 17.75 plus 12.75 equals 30.50. Runs needed equals 35 minus 30.50, which is 4.50. Now try the same approach with Ananya's five scores!"
   ],
   "steps": [
-   "Add the first two innings: 12.50 plus 8.75 equals 21.25.",
-   "Add the third inning: 21.25 plus 15.25 equals 36.50.",
-   "Add the fourth inning: 36.50 plus 9.50 equals 46.00.",
-   "Add the fifth inning: 46.00 plus 14.00 equals 60.00.",
-   "Ananya's total across 5 innings is 60.00 runs. Now subtract from 65: 65.00 minus 60.00 equals 5.00.",
-   "Ananya needs exactly 5.00 more runs to reach 65. The answer is A!"
+   "Add the 5 scores first. Look for pairs whose decimal parts make a whole.",
+   "0.75 and 0.25 make 1 whole. So 8.75 plus 15.25 is 24. 8.75 plus 15.25 equals 24.",
+   "0.5 and 0.50 make 1 whole too. So 12.5 plus 9.50 is 22. 12.5 plus 9.50 equals 22.",
+   "Add the two pairs and the last score, 14. 24 plus 22 plus 14 equals 60.",
+   "Ananya has 60 runs and needs 65. 65 minus 60 equals 5.",
+   "Ananya needs 5.00 more runs to reach 65."
   ]
  },
  "AIGEN_grade5_7a67b583-64a0-4f43-8fb2-d843df1ba190": {
@@ -2531,10 +2525,10 @@
    "Here's a similar problem: If you buy 20 boxes of 50 chocolates each, and pack them into bags of 10, first find total chocolates equals 20 times 50, which is 1000, then divide 1000 divided by 10 equals 100 bags. Easy peasy!"
   ],
   "steps": [
-   "Find the total number of sparklers by multiplying the number of packets by sparklers per packet.",
-   "Break this multiplication into simpler parts: 48 times 125 equals 48 times 1000 divided by 8, that is 48000 divided by 8, which is 6000. Or simply: 48 times 125 equals, open bracket, 50 minus 2, close bracket, times 125, that is 6250 minus 250, which is 6000.",
-   "Now divide the total sparklers by 25 to find the number of gift bags.",
-   "Calculate: 6000 divided by 25 equals 240. So Priya can fill 240 gift bags!"
+   "First find all the sparklers. A useful fact: 8 packets hold 1000. 8 times 125 equals 1000.",
+   "48 is 6 lots of 8, so 48 packets hold 6 thousands. 48 times 125 equals 6000.",
+   "4 bags of 25 use up 100 sparklers, and 6000 is 60 hundreds. 60 times 4 equals 240.",
+   "Priya can fill 240 gift bags. 6000 divided by 25 equals 240."
   ]
  },
  "AIGEN_grade5_d383d448-cc1a-4b38-a85b-1a3ed618cabb": {
@@ -2894,11 +2888,13 @@
    "Here's a similar problem: If a box has 2 layers, each with 5 rows of 3 chocolates, that's 2 times 5 times 3 equals 30 chocolates per box. If total sales were 8,000 rupees at 200 rupees per box, that's 8000 divided by 200 equals 40 boxes. Total chocolates equals 40 times 30, which is 1,200. Now try the original problem the same way!"
   ],
   "steps": [
-   "Find the number of sweets in one gift box. Each box has 3 layers, each layer has 4 rows, and each row has 6 sweets.",
-   "Find the number of gift boxes sold by dividing total earnings by the price of each box.",
-   "Let's verify the division: 375 times 276 equals 375 times 200, plus 375 times 76, that is 75,000 plus 28,500, which is 1,03,500.",
-   "Now multiply the number of boxes by the number of sweets per box to get the total sweets sold.",
-   "Let's verify: 276 times 72 equals 276 times 70, plus 276 times 2, that is 19,320 plus 552, which is 19,872."
+   "First find the sweets in one box. 4 rows of 6 make 24 in a layer, and 3 layers of 24 make 72. 3 times 24 equals 72.",
+   "Next find how many boxes he sold. Dividing by 375 is awkward, but 4 boxes cost a friendlier amount. 4 times 375 equals 1500.",
+   "60 lots of 1500 rupees make 90,000 rupees. Take that away from 1,03,500 rupees. 1,03,500 minus 90,000 equals 13,500.",
+   "The 13,500 rupees left over is 9 more lots of 1500 rupees. That makes 69 lots in all. 60 plus 9 equals 69.",
+   "Each lot of 1500 rupees is 4 boxes, so he sold 276 boxes. 69 times 4 equals 276.",
+   "Now multiply 276 boxes by 72 sweets. Split 72 into 70 and 2. 276 times 70 equals 19,320, and 276 times 2 equals 552.",
+   "Add the two parts. He sold 19,872 sweets in total. 19,320 plus 552 equals 19,872."
   ]
  },
  "AIGEN_grade5_eef4d432-89b7-4196-b5f5-0fd67cfc9e65": {
@@ -5624,11 +5620,11 @@
    "Here's a similar problem: What should be added to 45,123 to get 88,888? We subtract: 88,888 minus 45,123 equals 43,765. So 43,765 should be added. Now try the same approach with your numbers!"
   ],
   "steps": [
-   "We need to find the number that, when added to 70,369, gives 99,999. Let's call it x.",
-   "To find x, subtract 70,369 from 99,999.",
-   "Let's subtract column by column from right to left: Ones: 9 minus 9 equals 0. Tens: 9 minus 6 equals 3. Hundreds: 9 minus 3 equals 6. Thousands: 9 minus 0 equals 9. Ten-thousands: 9 minus 7 equals 2.",
-   "Putting the digits together, we get.",
-   "Let's verify: 70,369 plus 29,630 equals 99,999. Perfect!"
+   "We know the total, 99,999, and one part, 70,369. We want the missing part.",
+   "To find the missing part, subtract the part we know from the total.",
+   "Every digit on top is a 9, so there is no borrowing. Ones: 9 minus 9 is 0. Tens: 9 minus 6 is 3. Hundreds: 9 minus 3 is 6. Thousands: 9 minus 0 is 9. Ten-thousands: 9 minus 7 is 2.",
+   "Put the digits together: 29,630. 99999 minus 70369 equals 29630.",
+   "Check by adding. So 29,630 should be added. 70369 plus 29630 equals 99999."
   ]
  },
  "IPMTB_grade5_ch05_q010": {
@@ -5666,14 +5662,11 @@
    "Here's a similar problem: Ravi is 5 years older than Amit. The sum of their ages after 8 years will be 45. Find their present ages. Let Amit's age equals x, so Ravi's age equals x plus 5. After 8 years: open bracket, x plus 8, close bracket, plus, open bracket, x plus 5 plus 8, close bracket, equals 45. 2 x plus 21 equals 45. 2 x equals 24. x equals 12. So Amit is 12 and Ravi is 17."
   ],
   "steps": [
-   "Let's call Madhuri's present age M. Since Sujata is 7 years older, Sujata's present age is M plus 7.",
-   "After 10 years, Madhuri's age will be M plus 10, and Sujata's age will be, open bracket, M plus 7, close bracket, plus 10, equals M plus 17.",
-   "The sum of their ages after 10 years is 67: open bracket, M plus 10, close bracket, plus, open bracket, M plus 17, close bracket, equals 67.",
-   "Combine like terms: 2 M plus 27 equals 67.",
-   "Subtract 27 from both sides: 2 M equals 67 minus 27, which is 40.",
-   "Divide both sides by 2: M equals 20.",
-   "So Madhuri's present age is 20 years, and Sujata's present age is 20 plus 7, which is 27 years.",
-   "Quick check: After 10 years, Madhuri equals 30, Sujata equals 37. Sum equals 30 plus 37, which is 67. Perfect!"
+   "In 10 years each girl is 10 years older, so together they are 20 years older. 2 times 10 equals 20.",
+   "Take that off to get the sum of their ages today. 67 minus 20 equals 47.",
+   "Sujata is 7 years older. Take away her 7 extra years, and two equal ages are left. 47 minus 7 equals 40.",
+   "Each of the equal ages is Madhuri's age. Madhuri is 20 years old. 40 divided by 2 equals 20.",
+   "Sujata is 7 years older than Madhuri. So Sujata is 27 years and Madhuri is 20 years. 20 plus 7 equals 27."
   ]
  },
  "IPMTB_grade5_ch05_q014": {
@@ -5730,12 +5723,12 @@
    "Here's a similar problem: Ravi has 12.50 rupees, Sita has 23.30 rupees, and Kiran has 5.25 rupees. How much do they have in all? Step 1: Add paise: 50 plus 30 plus 25 equals 105 paise, which is 1.05 rupees. Step 2: Add rupees: 12 plus 23 plus 5 equals 40. Step 3: Total equals 40 plus 1.05, which is 41.05 rupees."
   ],
   "steps": [
-   "Write down all three amounts, lining up the decimal points.",
-   "Add the hundredths, paise, column: 5 plus 5 plus 5 equals 15. Write 5, carry 1.",
-   "Add the tenths column, including the carry: 7 plus 2 plus 0 plus 1, equals 10. Write 0, carry 1.",
-   "Add the ones column, including the carry: 6 plus 5 plus 9 plus 1, equals 21. Write 1, carry 2.",
-   "Add the tens column, including the carry: 1 plus 2 plus 0 plus 2, equals 5.",
-   "Put it all together: the total is 51.05 rupees."
+   "In money, the part before the point is rupees and the part after it is paise. Add the rupees and the paise separately.",
+   "Add the rupees. 16 plus 25 plus 9 equals 50.",
+   "Add the paise. 75 plus 25 plus 5 equals 105.",
+   "100 paise make 1 rupee. So 105 paise is 1.05 rupees.",
+   "Put the rupees and the paise together. 50 plus 1.05 equals 51.05.",
+   "In all they have 51.05 rupees. 16.75 plus 25.25 plus 9.05 equals 51.05."
   ]
  },
  "IPMTB_grade5_ch05_q017": {
@@ -5752,11 +5745,11 @@
    "Here's a similar problem: A cricket academy starts with 200 players. During the season, 10 players leave and 30 new players join. If 205 players pass the fitness test, how many did not pass? The total is 200 minus 10 plus 30, which equals 220. The number who did not pass is 220 minus 205, which equals 15."
   ],
   "steps": [
-   "Start with the number of students at the beginning of the year.",
-   "17 students left during the year, so subtract them.",
-   "49 students joined during the year, so add them.",
-   "Now we know there were 1039 students at the time of the final examination. Out of these, 1000 passed. So the number who failed is: 1039 minus 1000 equals 39.",
-   "So 39 students failed the examination. The answer is A, 39!"
+   "The school starts the year with 1007 students.",
+   "17 students left, so take them away. 1007 minus 17 equals 990.",
+   "49 students joined, so add them. 990 plus 49 equals 1039.",
+   "So 1039 students took the final examination and 1000 passed. The rest did not pass. 1039 minus 1000 equals 39.",
+   "So 39 students did not pass."
   ]
  },
  "IPMTB_grade5_ch05_q019": {
@@ -6068,11 +6061,11 @@
    "Here's a similar problem: A cricket club starts with 500 members. During the season, 40 members leave and 25 new members join. If 350 members attended the final match, how many didn't attend? First: 500 minus 40 plus 25 equals 485 members total. Then: 485 minus 350 equals 135 members didn't attend. See how we tracked the changes step by step?"
   ],
   "steps": [
-   "Start with the number of students at the beginning of the year.",
-   "170 students left the school during the year, so we subtract them.",
-   "143 new students joined the school, so we add them.",
-   "So at exam time, there were 1873 students in the school. Out of these, 1300 passed. The rest failed.",
-   "So 573 students failed the final examination. The answer is B!"
+   "The school starts the year with 1900 students.",
+   "170 students left, so take them away. 1900 minus 170 equals 1730.",
+   "143 students joined, so add them. 1730 plus 143 equals 1873.",
+   "So 1873 students took the final examination and 1300 passed. The rest did not pass. 1873 minus 1300 equals 573.",
+   "So 573 students did not pass."
   ]
  },
  "IPMTB_grade5_ch06_q001": {
@@ -6262,13 +6255,11 @@
    "Here's a similar problem: 12 students share a total expense of 3,660 rupees equally. Each student's share is 3,660 divided by 12, which equals 305 rupees. Now try the same approach with your numbers!"
   ],
   "steps": [
-   "We need to find how much each student contributes. That means we divide the total expenditure by the number of students.",
-   "Let's simplify by dividing both numerator and denominator by 5 to make things easier.",
-   "Now divide 1414 by 7. Start from the left: 7 goes into 14 exactly 2 times.",
-   "Bring down the next digit: 1. 7 goes into 1 zero times, so we write 0 and bring down the next digit to get 14.",
-   "7 goes into 14 exactly 2 times again!",
-   "So 1414 divided by 7 equals 202. Each student contributes 202 rupees!",
-   "Let's verify: 202 times 35 equals 202 times 35. We can check: 202 times 30 equals 6060 and 202 times 5 equals 1010. Adding: 6060 plus 1010 equals 7070."
+   "Each student pays the same, so divide the total by the number of students. 7070 divided by 35.",
+   "Split 7070 into two parts that are friendly to 35. 7070 equals 7000 plus 70.",
+   "35 times 200 equals 7000, so the 7000 gives each student 200 rupees.",
+   "35 times 2 equals 70, so the 70 gives each student 2 rupees more.",
+   "Add the two parts. Each student will have to contribute 202 rupees. 200 plus 2 equals 202."
   ]
  },
  "IPMTB_grade5_ch06_q012": {
@@ -6307,11 +6298,11 @@
    "Here's a similar problem: The product of three numbers is 1,800. Two of the numbers are 5 and 12. First, 5 times 12 equals 60. Then, 1,800 divided by 60 equals 30. So the third number is 30!"
   ],
   "steps": [
-   "We know that three numbers multiplied together give 13,600, and two of those numbers are 16 and 34. Let's call the unknown third number 'n'.",
-   "First, let's multiply the two known numbers together: 16 times 34.",
-   "Now our equation looks simpler! We have 544 times n equals 13,600.",
-   "To find 'n', we divide 13,600 by 544. Think of it like sharing samosas equally!",
-   "Let's verify: 16 times 34 times 25 equals 544 times 25, which is 13,600. Perfect match!"
+   "First multiply the two numbers we know. 16 times 34 equals 544.",
+   "So 544 times the third number is 13,600. Find how many lots of 544 fit into 13,600.",
+   "20 lots of 544 make 10,880. Take that away from 13,600. 13,600 minus 10,880 equals 2720.",
+   "The 2720 left over is 5 more lots of 544. 544 times 5 equals 2720.",
+   "20 lots and 5 lots make 25 lots. The third number is 25. 20 plus 5 equals 25."
   ]
  },
  "IPMTB_grade5_ch06_q015": {
@@ -6328,11 +6319,11 @@
    "Here's a similar problem: A student divided by 15 instead of 12 and got 240. What's the correct answer? Dividend equals 15 times 240, which is 3600. Correct answer equals 3600 divided by 12, which is 300. See how we first recovered the dividend, then divided by the right number? Try the same approach with your problem!"
   ],
   "steps": [
-   "The student used 32 as the divisor instead of 23, and got 1380. The dividend, the number being divided, is the same in both cases. Let's find the dividend first!",
-   "Let's compute 32 times 1380. Break it down: 32 times 1000 equals 32,000 and 32 times 380 equals 12,160. Add them up!",
-   "So the dividend is 44,160. Now we divide by the correct divisor, which is 23.",
-   "Let's do the division: 23 times 1920 equals 23 times 1900, plus 23 times 20, that is 43,700 plus 460, which is 44,160. It matches!",
-   "The correct answer is 1920! The student's answer was smaller because they divided by a bigger number, 32 instead of 23. Makes sense, right? Dividing by a bigger number gives a smaller result!"
+   "The number being divided never changed. To get it back, multiply his answer by the divisor he used. 1380 times 32.",
+   "Split 32 into 30 and 2. 1380 times 30 equals 41,400, and 1380 times 2 equals 2760.",
+   "Add the two parts. The number he was dividing is 44,160. 41,400 plus 2760 equals 44,160.",
+   "Now divide 44,160 by 23. Try 2000 lots of 23. That is 46,000, which is 1840 too many. 46,000 minus 44,160 equals 1840.",
+   "23 times 80 equals 1840, so take 80 lots back off. The correct answer is 1920. 2000 minus 80 equals 1920."
   ]
  },
  "IPMTB_grade5_ch06_q017": {
@@ -6432,12 +6423,10 @@
    "Here's a similar problem: A student divided a number by 12 and got quotient 5 and remainder 7. What's the number? Using the formula: Number equals 12 times 5 plus 7, that is 60 plus 7, which is 67. Easy peasy!"
   ],
   "steps": [
-   "Recall the division formula that connects all the parts: Dividend equals Divisor times Quotient plus Remainder.",
-   "Write down what we know from the problem: Divisor equals 15, Quotient equals 6, Remainder equals 13.",
-   "Plug these values into the formula: Number equals 15 times 6 plus 13.",
-   "First, multiply 15 times 6: 15 times 6 equals 90.",
-   "Now add the remainder: 90 plus 13 equals 103.",
-   "So the number is 103! Let's verify: 103 divided by 15 equals 6, remainder 13. That checks out perfectly!"
+   "The number was put into groups of 15. That made 6 full groups, with 13 left over.",
+   "To rebuild the number, multiply the divisor by the quotient and add the remainder. The number equals 15 times 6, plus 13.",
+   "6 groups of 15 make 90. 15 times 6 equals 90.",
+   "Now add the 13 left over. The number is 103. 90 plus 13 equals 103."
   ]
  },
  "IPMTB_grade5_ch06_q023": {
@@ -6539,10 +6528,10 @@
    "Here's a similar problem: 25 friends share 500 rupees equally. Each friend's share equals 500 divided by 25, which is 20 rupees. Now try the same approach with 990 and 33!"
   ],
   "steps": [
-   "We need to find each student's share. Since 33 students share 990 rupees equally, we divide the total by the number of students.",
-   "Let's simplify! Both 990 and 33 are divisible by 3. Divide numerator and denominator by 3.",
-   "Now divide 330 by 11. Think: 11 times 30 equals 330.",
-   "So each student's share is 30 rupees! You can verify: 33 times 30 equals 990. Perfect match!"
+   "Each student pays the same, so divide the total by the number of students. 990 divided by 33.",
+   "Start from a times fact we know. 33 times 3 equals 99.",
+   "990 is 10 times 99, so 30 lots of 33 make 990. 33 times 30 equals 990.",
+   "So the share of each student is 30 rupees. 990 divided by 33 equals 30."
   ]
  },
  "IPMTB_grade5_ch06_q030": {
@@ -6625,12 +6614,10 @@
    "Here's a similar problem: If you divide a number by 12 and get quotient 5 and remainder 7, then the number is 12 times 5, plus 7. That is 60 plus 7, which equals 67. See how we just multiply and add? Try the same approach with your problem!"
   ],
   "steps": [
-   "Recall the division formula that connects all the parts: Number equals Divisor times Quotient plus Remainder.",
-   "Write down what we know from the problem: Divisor equals 15, Quotient equals 6, Remainder equals 14.",
-   "Plug these values into the formula: Number equals 15 times 6 plus 14.",
-   "First, multiply 15 times 6: 15 times 6 equals 90.",
-   "Now add the remainder: 90 plus 14 equals 104.",
-   "So the number is 104! Let's verify: 104 divided by 15 equals 6, remainder 14. That's because 15 times 6 equals 90, and 104 minus 90 equals 14. Perfect!"
+   "The number was put into groups of 15. That made 6 full groups, with 14 left over.",
+   "To rebuild the number, multiply the divisor by the quotient and add the remainder. The number equals 15 times 6, plus 14.",
+   "6 groups of 15 make 90. 15 times 6 equals 90.",
+   "Now add the 14 left over. The number is 104. 90 plus 14 equals 104."
   ]
  },
  "IPMTB_grade5_ch06_q036": {
@@ -6647,12 +6634,10 @@
    "Here's a similar problem: A shopkeeper buys 123 cricket bats at 415 rupees each. Total cost equals 123 times 415. Break it up: 123 times 400 equals 49,200 and 123 times 15 equals 1,845. So total equals 49,200 plus 1,845, which is 51,045 rupees. Now try the same approach with your numbers!"
   ],
   "steps": [
-   "Write down what we need to find: Total cost equals Number of radios times Cost per radio.",
-   "Let's break 525 into friendlier parts: 525 equals 500 plus 25. This makes multiplication easier!",
-   "First, calculate 137 times 500. That's the same as 137 times 5 times 100.",
-   "Next, calculate 137 times 25. A neat trick: 25 equals 100 divided by 4, so 137 times 25 equals 137 times 100 divided by 4, which is 13700 divided by 4.",
-   "Now add the two results together to get the total cost.",
-   "So the cost of all 137 radios is 71,925 rupees!"
+   "The total cost is 137 times 525. Split 525 into 500 and 25. 137 times 525 equals 137 times 500, plus 137 times 25.",
+   "137 times 5 equals 685, so write two zeros on the end for 137 times 500. 137 times 500 equals 68,500.",
+   "For 137 times 25, add 137 times 20, which equals 2740, and 137 times 5, which equals 685. 2740 plus 685 equals 3425.",
+   "Add the two parts. The cost of all the radios is 71,925 rupees. 68,500 plus 3425 equals 71,925."
   ]
  },
  "IPMTB_grade5_ch06_q037": {
@@ -6669,14 +6654,12 @@
    "Here's a similar problem: Multiply the sum of 300 and 150 by their difference. Sum equals 300 plus 150, which is 450. Difference equals 300 minus 150, which is 150. Product equals 450 times 150, which is 67,500. See? Two quick steps, then one multiplication! Now try the original problem the same way."
   ],
   "steps": [
-   "Find the sum of 470 and 245.",
-   "Find the difference of 470 and 245.",
-   "Now multiply the sum by the difference.",
-   "Let's break this multiplication into smaller parts using the distributive property.",
-   "Calculate 715 times 200.",
-   "Calculate 715 times 25. A neat trick: 715 times 25 equals 715 times 100 divided by 4, that is 71500 divided by 4, which is 17875.",
-   "Add the two partial products together.",
-   "So the answer is 160,875!"
+   "First find the sum. 470 plus 245 equals 715.",
+   "Now find the difference. 470 minus 245 equals 225.",
+   "Multiply the sum by the difference. Split 225 into 200, 20 and 5. 715 times 225 equals 715 times 200, plus 715 times 20, plus 715 times 5.",
+   "715 times 200 equals 1,43,000. 715 times 20 equals 14,300. 715 times 5 equals 3575.",
+   "Add the first two parts. 1,43,000 plus 14,300 equals 1,57,300.",
+   "Add the last part. The answer is 1,60,875. 1,57,300 plus 3575 equals 1,60,875."
   ]
  },
  "IPMTB_grade5_ch06_q038": {
@@ -6736,11 +6719,10 @@
    "Here's a similar problem: Find the product of the greatest 2-digit number and the smallest 4-digit number. Greatest 2-digit number equals 99. Smallest 4-digit number equals 1,000. Product equals 99 times 1,000, which is 99,000. See how we used the same idea? Now try it with 3-digit and 5-digit numbers!"
   ],
   "steps": [
-   "Identify the greatest 3-digit number. The biggest number you can make with 3 digits is 999.",
-   "Identify the smallest 5-digit number. The smallest number with exactly 5 digits is 10,000.",
-   "Now multiply them together. A neat trick: 999 times 10,000 equals, open bracket, 1000 minus 1, close bracket, times 10,000.",
-   "Expand using the distributive property: 1000 times 10,000 equals 1,00,00,000 and 1 times 10,000 equals 10,000.",
-   "Subtract to get the final answer: 1,00,00,000 minus 10,000 equals 99,90,000. That's our answer!"
+   "The greatest 3 digit number has 9 in every place. The greatest 3 digit number equals 999.",
+   "The smallest 5 digit number is a 1 followed by four zeros. The smallest 5 digit number equals 10,000.",
+   "Product means multiply. To multiply 999 by 10,000, write 999 and then four zeros. 999 times 10,000 equals 99,90,000.",
+   "So the product is 99,90,000."
   ]
  },
  "VAR_EXT_G5_WS_B2_012_01": {

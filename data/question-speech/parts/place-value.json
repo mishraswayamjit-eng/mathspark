@@ -489,10 +489,10 @@
    "Here's a similar problem: In 45,613, swapping the hundreds digit, 6, and the units digit, 3, gives 45,316. The difference is 45,613 minus 45,316, which is 297. Now try the same approach with Riya's number!"
   ],
   "steps": [
-   "Identify the digits and their places in 72,508: 7 is in the ten-thousands place, 2 is in the thousands place, 5 is in the hundreds place, 0 is in the tens place, and 8 is in the units place.",
-   "The thousands digit is 2 and the tens digit is 0. Swap them to form the new number.",
-   "Now find the difference between the original and the new number.",
-   "So the difference is 1,980. That's our answer!"
+   "In 72,508 the thousands digit is 2 and the tens digit is 0. Swap them to get the new number, 70,528.",
+   "The 0 is worth nothing in any place, so only the 2 changed its worth. In the thousands place it was worth 2,000. 2 times 1,000 equals 2,000.",
+   "In the tens place the 2 is worth only 20. 2 times 10 equals 20.",
+   "The number lost 2,000 and got 20 back. The difference is 1,980. 2,000 minus 20 equals 1,980."
   ]
  },
  "AIGEN_grade5_b1c91564-cf56-4484-9be9-3c1173947993": {
@@ -678,10 +678,10 @@
    "Here's a similar problem: In the number 53,271, if we swap digits 3 and 2, the original has 3 in thousands, worth 3,000, and 2 in hundreds, worth 200. After swapping we get 52,371. The difference is 53,271 minus 52,371, which is 900. Notice: 3 minus 2, times 1,000, take away 3 minus 2, times 100. That is 1,000 minus 100, which is 900."
   ],
   "steps": [
-   "Identify the positions of the digits being swapped in 86,473. 6 is in the thousands place, and 4 is in the hundreds place.",
-   "Write the original number and the new number after swapping 6 and 4.",
-   "Find the difference between the two numbers.",
-   "We can also verify using place value logic: moving 6 from thousands to hundreds means it loses 6 times 1000, minus 6 times 100, which is 5,400 in value. Moving 4 from hundreds to thousands means it gains 4 times 1000, minus 4 times 100, which is 3,600 in value. The net change is 5,400 minus 3,600, which is 1,800. The number decreases by 1,800 rupees."
+   "In 86,473 the 6 is in the thousands place and the 4 is in the hundreds place. Swap them to get the new number, 84,673.",
+   "The new number is smaller, so subtract it from the old one. Only the thousands and hundreds are different. 86,473 minus 84,673.",
+   "The old number has 6 thousands and 4 hundreds, which is 6400. The new one has 4 thousands and 6 hundreds, which is 4600.",
+   "Subtract. The number changes by 1,800 rupees. 6400 minus 4600 equals 1800."
   ]
  },
  "AIGEN_grade5_fb264797-c1c7-4001-abf2-a47b8f7fb920": {
@@ -2451,12 +2451,11 @@
    "Here's an example with the digit 4. In 345 it is in the tens place, so its place value is 4 times 10 equals 40. In 4,321 it is in the thousands place, so its place value is 4 times 1,000 equals 4,000. The place value of 4 changes with its place, so look for a digit whose place value never changes."
   ],
   "steps": [
-   "Let's recall two important ideas: Face value of a digit is just the digit itself. Place value of a digit is digit times value of its position.",
-   "Now let's test the digit 0. Put it anywhere, ones, tens, hundreds, thousands, and calculate its place value. 0 times 1 equals 0. 0 times 10 equals 0. 0 times 100 equals 0. 0 times 1000 equals 0.",
-   "The face value of 0 is always 0. The place value of 0 is always 0, since 0 multiplied by anything is 0. So the place value always equals its face value!",
-   "Let's check why other digits don't work. Take the digit 5: its face value is always 5, but if 5 is in the tens place, its place value is 50, which is not equal to 5.",
-   "The same problem happens for 1 and 9. For example, 1 in the hundreds place has place value 100, and 9 in the tens place has place value 90. Only 0 stays the same everywhere!",
-   "So the answer is 0, the only digit whose place value is always equal to its own face value."
+   "The place value of a digit is the digit times the value of its place. Test each digit in different places.",
+   "Try 5 in the tens place. Its place value is 50, not 5. 5 times 10 equals 50.",
+   "Try 1 in the hundreds place and 9 in the tens place. They change too. 1 times 100 equals 100, and 9 times 10 equals 90.",
+   "Now try 0. In every place its value stays 0. 0 times 10 equals 0. 0 times 100 equals 0. 0 times 1000 equals 0.",
+   "So 0 is the number whose place value is always equal to its own value."
   ]
  },
  "IPMTB_grade5_ch02_q011": {
@@ -2513,11 +2512,9 @@
    "Here's a similar problem: Find the sum of the greatest 2-digit number and the greatest 3-digit number. The greatest 2-digit number is 99, and the greatest 3-digit number is 999. Sum is 99 plus 999, which is 1,098. Now try the same idea with 3-digit and 4-digit numbers!"
   ],
   "steps": [
-   "Identify the greatest 3-digit number. A 3-digit number has a hundreds place, a tens place, and a ones place. To make it the greatest, put 9 in every place.",
-   "Identify the greatest 4-digit number. A 4-digit number has a thousands place, hundreds place, tens place, and ones place. Again, put 9 in every place.",
-   "Now add them together! 999 plus 9999.",
-   "Let's add step by step. Start from the ones place: Ones: 9 plus 9 equals 18, so write 8, carry 1. Tens: 9 plus 9 plus 1 equals 19, so write 9, carry 1. Hundreds: 9 plus 9 plus 1 equals 19, so write 9, carry 1. Thousands: 0 plus 9 plus 1 equals 10, so write 10.",
-   "So the sum of the greatest 3-digit number and the greatest 4-digit number is 10,998."
+   "The greatest 4 digit number has 9 in every place, 9999. The greatest 3 digit number is 999.",
+   "999 is 1 less than 1000, so add 1000 first. 9999 plus 1000 equals 10,999.",
+   "That added 1 too many, so take 1 back off. The sum is 10,998. 10,999 minus 1 equals 10,998."
   ]
  },
  "IPMTB_grade5_ch02_q015": {
@@ -2556,12 +2553,11 @@
    "Here's a similar problem: Form the greatest even number using 5, 4, 6, 9, 3. The even digits are 4 and 6. If we put 4 at the end, the remaining digits, 5, 6, 9, 3, arranged largest to smallest give us 96,534. If we put 6 at the end, the remaining digits, 5, 4, 9, 3, give us 95,436. Comparing: 96,534 is greater than 95,436, so the answer is 96,534!"
   ],
   "steps": [
-   "Identify the even digits from 2, 8, 7, 3, 1. Even digits are divisible by 2. The even digits are 2 and 8.",
-   "The number must be even, so the last digit, ones place, must be an even digit. We have two choices: 2 or 8. Let's try both and see which gives a bigger number!",
-   "Option A, Put 2 in the ones place. Remaining digits: 8, 7, 3, 1. Arrange them largest to smallest in the other positions.",
-   "Option B, Put 8 in the ones place. Remaining digits: 2, 7, 3, 1. Arrange them largest to smallest.",
-   "Now compare the two numbers: 87,312 versus 73,218. Since 87,312 starts with 8 and 73,218 starts with 7, we know 87,312 is greater!",
-   "So the greatest even number using digits 2, 8, 7, 3, 1 is 87,312, which matches option C!"
+   "An even number ends in an even digit. Our even digits are 2 and 8, so one of them must go last.",
+   "Put the smaller even digit, 2, in the ones place. That saves the 8 for the front.",
+   "Line up the other digits from biggest to smallest: 8, 7, 3, 1. Then put the 2 at the end. That makes 87,312.",
+   "With 8 at the end, the best we could make is 73,218, and that is smaller than 87,312.",
+   "So the greatest even number is 87,312."
   ]
  },
  "IPMTB_grade5_ch02_q017": {
@@ -2621,10 +2617,11 @@
    "Here's a similar problem: Find the difference between the greatest and smallest numbers formed using digits 5, 2, 9, 3. Greatest: 9532, digits in descending order. Smallest: 2359, digits in ascending order. Difference: 9532 minus 2359 equals 7173. Now try the same method with 7, 4, 8, 1!"
   ],
   "steps": [
-   "First, let's arrange the digits 7, 4, 8, 1 in descending order to form the greatest number.",
-   "Now arrange the digits in ascending order to form the smallest number.",
-   "Now subtract the smallest from the greatest to find the difference. 8741 minus 1478 equals 7263.",
-   "Let's verify the subtraction step by step: Ones: 11 minus 8 equals 3, borrow 1. Tens: 3 minus 7, so borrow again: 13 minus 7 equals 6. Hundreds: 6 minus 4 equals 2, after the borrow. Thousands: 8 minus 1 equals 7. So the answer is 7,263!"
+   "For the greatest number, put the biggest digit first, 8741. For the smallest, put the smallest digit first, 1478.",
+   "Difference means subtract. Take 1478 away from 8741 a place at a time, starting with the 1000. 8741 minus 1000 equals 7741.",
+   "Next take away the 400. 7741 minus 400 equals 7341.",
+   "Then take away the 70. 7341 minus 70 equals 7271.",
+   "Last, take away the 8. The difference is 7,263. 7271 minus 8 equals 7263."
   ]
  },
  "IPMTB_grade5_ch02_q020": {
@@ -2848,11 +2845,10 @@
    "Here's a similar problem: Find the difference between the greatest 3-digit even number and the smallest 2-digit even number. Greatest 3-digit even number is 998. Smallest 2-digit even number is 10. Difference is 998 minus 10, which is 988. Now apply the same logic to 5-digit and 4-digit even numbers!"
   ],
   "steps": [
-   "Identify the greatest 5-digit even number. The greatest 5-digit number is 99,999, but that's odd, ends in 9. The next number down that's even is 99,998.",
-   "Identify the smallest 4-digit even number. The smallest 4-digit number is 1,000. Is it even? Yes! 1,000 ends in 0, which is even.",
-   "Now find the difference: 99998 minus 1000 equals 98998.",
-   "Let's check the options: A, 98,999, nope! B, 99,900, nope! C, 98,099, nope! The correct answer 98,998 is not listed among A, B, or C.",
-   "Since 98,998 doesn't match any of the given options, the answer is D, None of these."
+   "The greatest 5 digit number is 99,999, but it is odd. Step down 1 to reach the greatest 5 digit even number. 99,999 minus 1 equals 99,998.",
+   "The smallest 4 digit number is 1000. It ends in 0, so it is even already.",
+   "Subtract to find the difference. 99,998 minus 1000 equals 98,998.",
+   "98,998 is not one of the three numbers on offer, so the answer is None of these."
   ]
  },
  "IPMTB_grade5_ch02_q033": {
@@ -2892,14 +2888,10 @@
    "Here's a similar problem: In the number 5,62,413, the digit 3 is in the ones place, value is 3, digit 1 is in the tens place, value is 10, digit 4 is in the hundreds place, value is 400, and so on. The digit with the minimum place value is 3 because it sits in the ones place, the smallest position!"
   ],
   "steps": [
-   "Let's write out the number 4,37,896 and label each digit's place from left to right.",
-   "Digit 4 is in the Lakhs place, so place value is 4,00,000.",
-   "Digit 3 is in the Ten-thousands place, so place value is 30,000.",
-   "Digit 7 is in the Thousands place, so place value is 7,000.",
-   "Digit 8 is in the Hundreds place, so place value is 800.",
-   "Digit 9 is in the Tens place, so place value is 90.",
-   "Digit 6 is in the Ones place, so place value is 6.",
-   "Now compare all the place values: 4,00,000 is greater than 30,000, which is greater than 7,000, which is greater than 800, which is greater than 90, which is greater than 6. The minimum, or smallest, place value is 6, which belongs to the digit 6!"
+   "Place value depends on the column. The ones place, on the far right, is worth the least.",
+   "In 4,37,896 the digit in the ones place is 6, so its place value is 6. 6 times 1 equals 6.",
+   "Compare it with the 3, which is in the ten thousands place. That digit is worth far more. 3 times 10,000 equals 30,000.",
+   "So the digit with the minimum place value is 6."
   ]
  },
  "IPMTB_grade5_ch02_q035": {
@@ -2937,12 +2929,12 @@
    "Here's a similar problem: In the number 3,45,636, the digit 3 appears twice. The first 3 is in the lakhs place, value is 3,00,000, and the second 3 is in the tens place, value is 30. The difference is 3,00,000 minus 30, which is 2,99,970. See how we subtract the smaller place value from the larger one?"
   ],
   "steps": [
-   "Write out the number and label each digit's place. The number is 58,70,257.",
-   "Find all the positions where the digit 7 appears. It appears in the ten-thousands place and in the ones place.",
-   "Find the place value of the first 7, ten-thousands place.",
-   "Find the place value of the second 7, ones place. 7 times 1 equals 7.",
-   "Now find the difference between these two place values.",
-   "The difference between the place values of the digit 7 is 69,993. That's option D!"
+   "The number is 58,70,257. We want what each 7 in it is worth.",
+   "The digit 7 appears twice: in the ten thousands place and in the ones place.",
+   "The 7 on the left is in the ten thousands place. 7 times 10,000 equals 70,000.",
+   "The 7 on the right is in the ones place. 7 times 1 equals 7.",
+   "Take the smaller place value from the bigger one. 70,000 minus 7 equals 69,993.",
+   "The difference between the place values is 69,993."
   ]
  },
  "IPMTB_grade5_ch02_q037": {
@@ -3085,10 +3077,10 @@
    "Here's a similar problem: 'Find the smallest even number using digits 1, 3, 5, 6.' The smallest arrangement is 1,356. Is it even? Yes, because it ends in 6! So 1,356 is the answer. Now apply the same thinking to your problem!"
   ],
   "steps": [
-   "Identify all one-digit prime numbers. A prime number has exactly 2 factors. So: 2, with factors 1 and 2. 3, with factors 1 and 3. 5, with factors 1 and 5. 7, with factors 1 and 7. Note: 1 is not prime, it has only 1 factor, and 4, 6, 8, 9 are not prime.",
-   "To make the smallest 4-digit number, we want the smallest digit in the thousands place, then the next smallest, and so on. The smallest arrangement would be 2, 3, 5, 7, giving us 2,357.",
-   "Now check: is 2,357 an odd number? A number is odd if its last digit is odd, 1, 3, 5, 7, or 9. The last digit here is 7, which is odd.",
-   "So 2,357 is the smallest number formed using all one-digit primes and it's odd. That's our answer!"
+   "The one digit prime numbers are 2, 3, 5 and 7. The number 1 is not prime.",
+   "For the smallest number, the smallest digit takes the biggest place: 2, 3, 5, 7. That makes 2357.",
+   "2357 ends in 7, so it is odd already. Nothing needs to move.",
+   "The smallest odd number is 2,357."
   ]
  },
  "IPMTB_grade5_ch02_q045": {
@@ -3127,11 +3119,10 @@
    "Here's a similar problem: What's the smallest non-zero three-digit number? Well, the smallest digit for the hundreds place is 1, and we fill the tens and ones places with 0s. So it's 100! Now apply the same thinking to four digits."
   ],
   "steps": [
-   "A four-digit number ranges from 1,000 to 9,999. We need the smallest one that is non-zero, meaning the number itself isn't zero.",
-   "The thousands place is the most important, it has the highest place value. The smallest non-zero digit we can put there is 1.",
-   "For the hundreds, tens, and ones places, we want the smallest digits possible to keep the number small. The smallest digit is 0.",
-   "Putting it all together, the smallest non-zero four-digit number is:",
-   "Let's verify: Is 1,000 a four-digit number? Yes! Is it non-zero? Yes! Is there any four-digit number smaller than 1,000? Nope, 999 is only three digits. So 1,000 is our answer!"
+   "A four digit number has four places. The thousands place cannot hold 0, so the smallest digit that can go there is 1.",
+   "To keep the number small, put 0 in each of the other three places. That makes 1000.",
+   "One step below it is 999, which has only three digits. 1000 minus 1 equals 999.",
+   "So the smallest four digit number is 1,000."
   ]
  },
  "IPMTB_grade5_ch02_q047": {

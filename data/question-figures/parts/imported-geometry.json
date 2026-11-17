@@ -6147,50 +6147,7 @@
     "c": "second + 15°"
    },
    "note": "What type of triangle is it?"
-  },
-  "stepFigures": [
-   {
-    "kind": "triangle",
-    "shape": "scalene",
-    "angles": {
-     "a": "(x + 25)°",
-     "b": "x°",
-     "c": "(x + 15)°"
-    }
-   },
-   {
-    "kind": "triangle",
-    "shape": "scalene",
-    "angles": {
-     "a": "(x + 25)°",
-     "b": "x°",
-     "c": "(x + 15)°"
-    },
-    "note": "(x + 15) + x + (x + 25) = 180"
-   },
-   null,
-   null,
-   {
-    "kind": "triangle",
-    "shape": "scalene",
-    "angles": {
-     "a": "71⅔°",
-     "b": "46⅔°",
-     "c": "61⅔°"
-    }
-   },
-   null,
-   {
-    "kind": "triangle",
-    "shape": "scalene",
-    "angles": {
-     "a": "71⅔°",
-     "b": "46⅔°",
-     "c": "61⅔°"
-    },
-    "note": "Every angle is less than 90°: an acute-angled triangle"
-   }
-  ]
+  }
  },
  "AIGEN_grade5_d157d455-f536-4b7d-ae81-d99bd91141f2": {
   "origin": "rule",
@@ -11765,36 +11722,6 @@
      "breadth"
     ]
    }
-  ]
- },
- "IPMTB_grade5_ch20_q014": {
-  "origin": "authored",
-  "stepFigures": [
-   {
-    "kind": "rectangle",
-    "square": true,
-    "length": "a",
-    "breadth": "a",
-    "inside": "a × a"
-   },
-   null,
-   null,
-   {
-    "kind": "rectangle",
-    "length": "a + half of a",
-    "breadth": "half of a",
-    "proportion": 3.0,
-    "note": "One side grows by half, the other shrinks by half"
-   },
-   null,
-   {
-    "kind": "rectangle",
-    "length": "15",
-    "breadth": "5",
-    "proportion": 3.0,
-    "note": "Try a = 10: 15 × 5 = 75, smaller than 10 × 10 = 100"
-   },
-   null
   ]
  },
  "IPMTB_grade5_ch20_q017": {

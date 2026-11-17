@@ -33,11 +33,11 @@
    "A similar problem: 2,000 rupees is deposited at 4 percent for 3 years, so the interest is 2000 times 4 times 3, divided by 100, which is 240 rupees. Another 1,000 rupees is deposited at 5 percent for 3 years, so the interest is 1000 times 5 times 3, divided by 100, which is 150 rupees. The total interest is 240 plus 150, which is 390 rupees."
   ],
   "steps": [
-   "Find the amount deposited in Bank B.",
-   "Calculate simple interest from Bank A using simple interest equals P times R times T, divided by 100.",
-   "Calculate simple interest from Bank B.",
-   "Add both interests to get the total interest earned.",
-   "Ravi earned a total of 420 rupees in interest from both banks combined!"
+   "Find the amount deposited in Bank B. 3000 minus 1800 equals 1200.",
+   "Bank A: 1,800 rupees is 18 hundreds, and each hundred earns 5 rupees a year. Over 2 years that is 180 rupees. 18 times 5 times 2 equals 180.",
+   "Bank B: 1,200 rupees is 12 hundreds, and each hundred earns 10 rupees a year. Over 2 years that is 240 rupees. 12 times 10 times 2 equals 240.",
+   "Add the interest from the two banks. 180 plus 240 equals 420.",
+   "Ravi earned 420 rupees in total interest from both banks."
   ]
  },
  "AIGEN_grade5_0907882b-c663-4775-972c-b7ce060504a8": {
@@ -122,15 +122,12 @@
    "Here's a similar problem: Raj buys pens at 5 rupees each and spends 50 rupees on packaging. He sells 60 percent of them at 15 rupees each and the other 40 percent at 10 rupees each, and makes a profit of 350 rupees. Try 50 pens: the cost is 50 times 5, plus 50, which is 300 rupees, and the sales are 30 times 15, plus 20 times 10, which is 650 rupees. The profit is 650 minus 300, which is 350 rupees, so Raj bought 50 pens."
   ],
   "steps": [
-   "Let the total number of diyas Priya's father bought be N.",
-   "Calculate total cost: cost of diyas plus paints plus glitter.",
-   "He sells 80 percent of N diyas at 12 rupees each.",
-   "He sells the remaining 20 percent of N diyas at 7 rupees each.",
-   "Total selling price is the sum of both revenues.",
-   "Profit equals Total Selling minus Total Cost. We know profit is 500 rupees.",
-   "Simplify the equation.",
-   "Solve for N.",
-   "So Priya's father originally bought 100 diyas! Let's verify: Cost equals 3 times 100, plus 300, which is 600 rupees. Sold 80 at 12 rupees equals 960 rupees, sold 20 at 7 rupees equals 140 rupees. Total selling equals 1100 rupees. Profit equals 1100 minus 600, which is 500 rupees."
+   "Take a group of 10 diyas. 80 percent of them is 8 diyas, and 20 percent is 2 diyas.",
+   "The 8 diyas at 12 rupees each and the 2 diyas at 7 rupees each bring in 110 rupees. 8 times 12, plus 2 times 7, equals 110.",
+   "Those 10 diyas cost 3 rupees each to buy, so each group leaves 80 rupees. 110, minus 10 times 3, equals 80.",
+   "All the groups together must cover the paints, the glitter and the profit. 200 plus 100 plus 500 equals 800.",
+   "Each group gives 80 rupees, so he needs 10 groups. 800 divided by 80 equals 10.",
+   "10 groups of 10 diyas make 100 diyas. He bought 100 diyas. 10 times 10 equals 100."
   ]
  },
  "AIGEN_grade5_0f4c01ab-e40a-44d9-9b24-49274e251590": {
@@ -147,12 +144,11 @@
    "A similar problem: someone borrows 10,000 rupees and pays back 11,000 rupees after 2 years. The interest is 1,000 rupees, so the rate is 1000 times 100, divided by 10000 times 2, which is 5 percent a year. Another person deposits 8,000 rupees at 5 percent, which earns 400 rupees each year. To earn 2,400 rupees takes 2400 divided by 400, which is 6 years."
   ],
   "steps": [
-   "Find the total interest paid by Meera's father.",
-   "Use the Simple Interest formula to find the rate of interest. We know simple interest equals 7,200 rupees, P equals 24,000 rupees, and T equals 3 years.",
-   "Solve for R.",
-   "Now use this rate to find how many years Meera's mother needs to earn 4,500 rupees interest on 15,000 rupees.",
-   "Simplify and solve for T.",
-   "So Meera's mother will earn 4,500 rupees as interest after 3 years!"
+   "The extra money Meera's father paid back is the interest. 31200 minus 24000 equals 7200.",
+   "That interest built up over 3 years, so find the interest for 1 year. 7200 divided by 3 equals 2400.",
+   "24,000 rupees is 240 hundreds. Share the 2,400 rupees among them: each hundred earns 10 rupees a year, so the rate is 10 percent. 2400 divided by 240 equals 10.",
+   "Meera's mother has 15,000 rupees, which is 150 hundreds. Each hundred earns 10 rupees a year. 150 times 10 equals 1500.",
+   "She earns 1,500 rupees each year and wants 4,500 rupees. So she needs 3 years. 4500 divided by 1500 equals 3."
   ]
  },
  "AIGEN_grade5_13bca1d7-baa4-4230-8e4f-a74a314fcdf7": {
@@ -193,14 +189,11 @@
    "A similar problem: 5,000 rupees is split between 4 percent and 6 percent for 2 years and earns 480 rupees in all. If all of it were at 4 percent, the interest would be 5000 times 4 times 2, divided by 100, which is 400 rupees, so the extra is 80 rupees. Every 100 rupees at 6 percent earns 4 rupees extra in 2 years, so 80 divided by 4 gives 20 hundreds, which is 2,000 rupees, at 6 percent."
   ],
   "steps": [
-   "Let the amount deposited in Account B be x rupees. Then the amount in Account A is 12,000 minus x rupees.",
-   "Calculate simple interest from Account A for 3 years at 5 percent.",
-   "Calculate simple interest from Account B for 3 years at 8 percent.",
-   "The total interest equals 2,340 rupees. Set up the equation.",
-   "Multiply both sides by 100 to clear the denominator.",
-   "Expand and simplify.",
-   "Solve for x.",
-   "So Ravi deposited 6,000 rupees in Account B. Quick check: Account A equals 6,000 rupees at 5 percent for 3 years, which is 900 rupees. Account B equals 6,000 rupees at 8 percent for 3 years, which is 1,440 rupees. Total equals 900 rupees plus 1,440 rupees, which is 2,340 rupees. Perfect!"
+   "Pretend all 12,000 rupees went into Account A at 5 percent. That is 120 hundreds, each earning 5 rupees a year for 3 years. 120 times 5 times 3 equals 1800.",
+   "The real interest was 2,340 rupees. The extra comes from the money in Account B. 2340 minus 1800 equals 540.",
+   "Each hundred in Account B earns 8 rupees instead of 5 rupees, which is 3 rupees extra a year. Over 3 years that is 9 rupees extra. 3 times 3 equals 9.",
+   "Divide the extra by 9 to find how many hundreds are in Account B. 540 divided by 9 equals 60.",
+   "60 hundreds is 6,000 rupees. Ravi deposited 6,000 rupees in Account B. 60 times 100 equals 6000."
   ]
  },
  "AIGEN_grade5_179ea186-fd7e-4b56-9945-0b0aa83d8652": {
@@ -285,9 +278,9 @@
    "Here's a similar problem: If you have 500 rupees and spend 10 percent on a cap, that's 50 rupees on the cap. Then if you buy a drink for 30 rupees, you have 500 rupees minus 50 rupees minus 30 rupees equals 420 rupees left. Now try the same approach with your numbers!"
   ],
   "steps": [
-   "Find 15 percent of 800 rupees, the cost of batting gloves.",
-   "So Kiran spent 120 rupees on gloves and 95 rupees on a cricket ball. Add both expenses.",
-   "Subtract the total spending from 800 rupees to find the money left.",
+   "Find 15 percent of 800 rupees in two parts. 10 percent of 800 is 80, and 5 percent of 800 is 40.",
+   "Add the two parts. 15 percent of 800 rupees is 120 rupees, the cost of the gloves. 80 plus 40 equals 120.",
+   "800 minus 120 equals 680, so 680 rupees is left after the gloves. Then take away 95 rupees for the ball. 680 minus 95 equals 585.",
    "Kiran has 585 rupees left."
   ]
  },
@@ -305,9 +298,9 @@
    "Here's a similar problem: If 1,000 rupees is deposited at 5 percent for 3 years and 2,000 rupees at 3 percent for 3 years, then Interest one equals 1000 times 5 times 3, divided by 100, which is 150 rupees, and Interest two equals 2000 times 3 times 3, divided by 100, which is 180 rupees. Total equals 150 rupees plus 180 rupees, which is 330 rupees."
   ],
   "steps": [
-   "Find the simple interest from Bank A using the formula simple interest equals P times R times T, divided by 100.",
-   "Find the simple interest from Bank B using the same formula.",
-   "Add both interests together to get the total interest Rahul earns."
+   "Bank A: 3,000 rupees is 30 hundreds, and each hundred earns 4 rupees a year. Over 2 years that is 240 rupees. 30 times 4 times 2 equals 240.",
+   "Bank B: 2,000 rupees is 20 hundreds, and each hundred earns 7 rupees a year. Over 2 years that is 280 rupees. 20 times 7 times 2 equals 280.",
+   "Add the two. Rahul earns 520 rupees in total interest. 240 plus 280 equals 520."
   ]
  },
  "AIGEN_grade5_20e7bc3c-6c20-4817-9589-5aad512377a4": {
@@ -369,16 +362,10 @@
    "Similar example: Ravi buys 10 pens at 5 rupees each and sells 7 at 9 rupees each. He loses 3 pens. If he had sold all 10, extra profit equals 3 times 9 rupees, which is 27 rupees more revenue. Since the cost is already paid either way, the extra profit is simply the revenue from the unsold items equals 27 rupees."
   ],
   "steps": [
-   "Let's figure out what Deepa actually spent, total cost.",
-   "Cost of rose garlands.",
-   "Total cost including extras.",
-   "Now let's find her actual revenue, what she really sold.",
-   "Rose garland revenue, only 60 sold.",
-   "Actual total revenue and profit.",
-   "Now let's find the imaginary revenue if all 80 rose garlands were sold.",
-   "Imaginary total revenue and profit.",
-   "The extra profit she would have made.",
-   "Shortcut check: The 20 unsold garlands would have brought in 20 times 40 rupees equals 800 rupees extra revenue. Since costs stay the same, extra profit equals 800 rupees."
+   "Compare the real day with a day when every rose garland sells. She paid for all 80 rose garlands either way, so the costs stay the same.",
+   "The only change is 20 more rose garlands sold at 40 rupees each. 20 times 40 equals 800.",
+   "Check with the rose sales: 80 garlands sold instead of 60, at 40 rupees each. 80 times 40, minus 60 times 40, equals 800.",
+   "She would have made 800 rupees more profit."
   ]
  },
  "AIGEN_grade5_24b08eb7-b9a1-4283-a59d-7d4c85adc075": {
@@ -530,10 +517,11 @@
    "Here's a similar problem: Suppose 1,000 rupees is deposited at 6 percent for 3 years. Interest equals 1000 times 6 times 3, divided by 100, which is 180 rupees. If another deposit of 3,000 rupees also earns 180 rupees in 3 years, then 180 equals 3000 times R times 3, divided by 100, so R equals 18000 over 9000, which is 2 percent. See how we set the two interests equal? Try the same approach with your problem!"
   ],
   "steps": [
-   "Find how much Anita deposited in Bank B. She had 6,000 rupees total and put 2,000 rupees in Bank A, so Bank B gets the remaining amount.",
-   "Calculate the simple interest earned from Bank A over 4 years at 5 percent per annum.",
-   "Since both banks gave the same interest, Bank B also gave 400 rupees interest. Now set up the equation for Bank B's interest with unknown rate R.",
-   "Solve for R by simplifying the equation."
+   "Find how much Anita put in Bank B. 6000 minus 2000 equals 4000.",
+   "Bank A: 2,000 rupees is 20 hundreds, and each hundred earns 5 rupees a year. 20 times 5 equals 100.",
+   "Both banks paid the same interest over the same 4 years. So Bank B also pays 100 rupees a year.",
+   "Bank B's 4,000 rupees is 40 hundreds. Share the 100 rupees among them to find what each hundred earns in a year. 100 divided by 40 equals 2.5.",
+   "Each hundred earns 2.50 rupees a year, so Bank B's rate is 2.5 percent."
   ]
  },
  "AIGEN_grade5_319c3185-ce17-4b9a-b681-79b100a1d81d": {
@@ -571,11 +559,11 @@
    "Here's a similar problem: If 2,000 rupees becomes 2,600 rupees in 2 years, then Interest equals 600 rupees. Rate equals 600 times 100, divided by, open bracket, 2000 times 2, close bracket, which is 15 percent. Now if someone else deposits 3,000 rupees at 15 percent for 3 years, their interest equals 3000 times 15 times 3, divided by 100, which is 1,350 rupees. See the pattern?"
   ],
   "steps": [
-   "Find Ravi's simple interest by subtracting the principal from the total amount.",
-   "Use the simple interest formula to find the rate of interest. We know simple interest equals 1,350 rupees, P equals 4,500 rupees, and T equals 3 years.",
-   "Solve for R.",
-   "Now calculate Meena's interest with P equals 6,000 rupees, R equals 10 percent, and T equals 4 years.",
-   "Meena will earn 2,400 rupees as interest after 4 years!"
+   "Find Ravi's interest: take what he put in away from what he got back. 5850 minus 4500 equals 1350.",
+   "That built up over 3 years, so find the interest for 1 year. 1350 divided by 3 equals 450.",
+   "4,500 rupees is 45 hundreds. Share the 450 rupees among them: each hundred earns 10 rupees a year, so the rate is 10 percent. 450 divided by 45 equals 10.",
+   "Meera's 6,000 rupees is 60 hundreds, each earning 10 rupees a year. 60 times 10 equals 600.",
+   "Over 4 years, Meera will earn 2,400 rupees in interest. 600 times 4 equals 2400."
   ]
  },
  "AIGEN_grade5_35a7e6d5-6a48-435a-bcb1-295eeed4ec27": {
@@ -614,14 +602,11 @@
    "Here's a similar problem: Suppose 10,000 rupees is split between two banks at 4 percent and 6 percent for 3 years, and total interest is 1,560 rupees. If Bank A gets x rupees, then: x times 4 times 3, divided by 100. Plus, open bracket, 10000 minus x, close bracket, times 6 times 3, divided by 100. That equals 1560. Solving: 12 x over 100, plus, open bracket, 180000 minus 18 x, close bracket, over 100, equals 1560. So 180000 minus 6 x equals 156000. So 6 x equals 24000. So x equals 4,000 rupees in Bank A."
   ],
   "steps": [
-   "Let the amount deposited in Bank A equal x rupees. Then the amount in Bank B equals 12,000 minus x rupees.",
-   "Calculate Simple Interest from Bank A for 4 years at 5 percent.",
-   "Calculate Simple Interest from Bank B for 4 years at 8 percent.",
-   "The total interest from both banks equals 2,880 rupees. Set up the equation.",
-   "Multiply both sides by 100 to clear the denominator.",
-   "Expand and simplify.",
-   "Solve for x.",
-   "So 8,000 rupees was deposited in Bank A and 4,000 rupees in Bank B. Let's verify: simple interest from A equals 8000 times 5 times 4, divided by 100, which is 1,600 rupees. Simple interest from B equals 4000 times 8 times 4, divided by 100, which is 1,280 rupees. Total equals 1,600 rupees plus 1,280 rupees, which is 2,880 rupees."
+   "Pretend all 12,000 rupees went into Bank B at 8 percent. That is 120 hundreds, each earning 8 rupees a year for 4 years. 120 times 8 times 4 equals 3840.",
+   "The real interest was only 2,880 rupees. The shortfall comes from the money in Bank A. 3840 minus 2880 equals 960.",
+   "Each hundred in Bank A earns 5 rupees instead of 8 rupees, which is 3 rupees less a year. Over 4 years that is 12 rupees less. 3 times 4 equals 12.",
+   "Divide the shortfall by 12 to find how many hundreds are in Bank A. 960 divided by 12 equals 80.",
+   "80 hundreds is 8,000 rupees. Grandfather deposited 8,000 rupees in Bank A. 80 times 100 equals 8000."
   ]
  },
  "AIGEN_grade5_3c4c96a1-3ec9-4a7e-a592-1ed93a6784c3": {
@@ -883,14 +868,13 @@
    "Here's a similar problem: Suppose you buy 20 items at 10 rupees each, total 200 rupees. You sell 15 at 30 percent profit, so 15 times 13 rupees equals 195 rupees. You sell 5 at 20 percent discount on cost, so 5 times 8 rupees equals 40 rupees. Total revenue equals 235 rupees. If rent is 20 rupees, total cost equals 220 rupees. Profit equals 235 rupees minus 220 rupees, which is 15 rupees. Follow the same approach for the actual question!"
   ],
   "steps": [
-   "Find the cost of buying all samosa plates.",
-   "Add the stall rent to get the total cost.",
-   "Find the selling price of each plate sold at 25 percent profit.",
-   "Find total revenue from the 35 plates sold at profit.",
-   "Find the selling price of each plate sold at 10 percent discount on cost price.",
-   "Find total revenue from the 15 discounted plates.",
-   "Find the total revenue from all sales.",
-   "Calculate the overall profit."
+   "She buys 50 plates at 24 rupees each and pays 100 rupees rent. 50 times 24, plus 100, equals 1300.",
+   "25 percent of 24 rupees is 6 rupees, so each of the 35 plates sells for 30 rupees. 24 plus 6 equals 30.",
+   "The 35 plates bring in 1,050 rupees. 35 times 30 equals 1050.",
+   "Take the other 15 plates together. They cost 360 rupees. 15 times 24 equals 360.",
+   "10 percent of 360 rupees is 36 rupees, so she gets 324 rupees for them. 360 minus 36 equals 324.",
+   "Altogether she earns 1,374 rupees. 1050 plus 324 equals 1374.",
+   "Take away what she spent. She makes 74 rupees profit. 1374 minus 1300 equals 74."
   ]
  },
  "AIGEN_grade5_51bc47d4-d0e7-4ebb-9b3c-4d75ec1b0999": {
@@ -907,12 +891,11 @@
    "Here's a similar problem: If 5,000 rupees is deposited at 10 percent simple interest for 3 years, interest equals 5000 times 10 times 3, divided by 100, which is 1,500 rupees. If another 5,000 rupees is at 6 percent for 3 years, interest equals 5000 times 6 times 3, divided by 100, which is 900 rupees. The difference equals 1,500 rupees minus 900 rupees, which is 600 rupees."
   ],
   "steps": [
-   "Find the amount deposited in each bank.",
-   "Find the time period. From age 10 to age 14 is 4 years.",
-   "Calculate simple interest from Bank A at 8 percent per annum.",
-   "Calculate simple interest from Bank B at 5 percent per annum.",
-   "Find the difference in interest earned.",
-   "So Meena earns 720 rupees more from Bank A than from Bank B. The answer is C!"
+   "Each bank gets an equal share of the 12,000 rupees. 12000 divided by 2 equals 6000.",
+   "The money stays in the bank from age 10 to age 14. 14 minus 10 equals 4 years.",
+   "Bank A: 6,000 rupees is 60 hundreds, and each hundred earns 8 rupees a year. 60 times 8 is 480 rupees a year. 480 times 4 equals 1920.",
+   "Bank B: each hundred earns 5 rupees a year. 60 times 5 is 300 rupees a year. 300 times 4 equals 1200.",
+   "Subtract to compare. Bank A pays 720 rupees more interest than Bank B. 1920 minus 1200 equals 720."
   ]
  },
  "AIGEN_grade5_53d85183-e50f-4999-97ab-5d8a145faf89": {
@@ -1078,13 +1061,13 @@
    "Here's a similar problem: Raj buys 20 kites at 50 rupees each, total cost equals 1000 rupees. He sells 15 at 30 percent profit, so selling price equals 65 rupees each, so revenue equals 975 rupees. He sells 5 at 20 percent loss, so selling price equals 40 rupees each, so revenue equals 200 rupees. Total revenue equals 1175 rupees. Profit equals 1175 rupees minus 1000 rupees, which is 175 rupees. Use the same approach for Meera's problem!"
   ],
   "steps": [
-   "Find the total cost price of all 40 boxes.",
-   "Find the selling price per box for the 30 boxes sold at 20 percent profit.",
-   "Find total revenue from the 30 boxes.",
-   "Find the selling price per box for the 10 damp boxes sold at 10 percent below cost.",
-   "Find total revenue from the 10 boxes.",
-   "Find total revenue from all 40 boxes.",
-   "Calculate overall profit."
+   "Find the total cost of all 40 boxes. 40 times 75 equals 3000.",
+   "20 percent of 75 rupees is 15 rupees, so each of the 30 boxes sells for 90 rupees. 75 plus 15 equals 90.",
+   "Find the money from the 30 boxes sold at a profit. 30 times 90 equals 2700.",
+   "Take the 10 damp boxes together. They cost 750 rupees. 10 times 75 equals 750.",
+   "10 percent of 750 rupees is 75 rupees, so she gets 675 rupees for the 10 boxes sold below cost. 750 minus 75 equals 675.",
+   "Add up the money from all 40 boxes. 2700 plus 675 equals 3375.",
+   "Take away the cost. Meera makes 375 rupees profit. 3375 minus 3000 equals 375."
   ]
  },
  "AIGEN_grade5_6b41bc80-03d0-4854-bcaa-97cef5b1f528": {
@@ -1186,10 +1169,9 @@
    "Here's a similar problem: Meera deposits 3,000 rupees at 5 percent per annum and earns 600 rupees as interest. Total amount equals 3,000 rupees plus 600 rupees, which is 3,600 rupees. If she spends 1,500 rupees on books, she has 3,600 rupees minus 1,500 rupees equals 2,100 rupees left."
   ],
   "steps": [
-   "Identify the given values: Principal, P, equals 4,500 rupees, Rate, R, equals 6 percent per annum, Interest, S I, equals 1,080 rupees.",
-   "We can verify the time period using the simple interest formula, though it's not needed for the final answer.",
-   "Calculate the total amount Ravi withdraws from the bank.",
-   "Subtract the cost of cricket gear from the total amount."
+   "The interest is already given: 1,080 rupees. So the 6 percent rate is not needed here.",
+   "Ravi withdraws his deposit and the interest together. 4500 plus 1080 equals 5580.",
+   "He spends 2,000 rupees on cricket gear. Ravi has 3,580 rupees left. 5580 minus 2000 equals 3580."
   ]
  },
  "AIGEN_grade5_7d389314-63a2-4744-b463-67b7ca1f5260": {
@@ -1267,10 +1249,11 @@
    "Here's a similar problem: Suppose 5,000 rupees is in Bank X at 6 percent and some amount in Bank Y at 10 percent. After 3 years, total interest is 2,700 rupees. Bank X gives simple interest equals 5000 times 6 times 3, divided by 100, which is 900 rupees. So Bank Y gives 2700 minus 900 equals 1,800 rupees. Then P equals 1800 times 100, divided by, open bracket, 10 times 3, close bracket, which is 6,000 rupees in Bank Y. See the pattern? Now try your question!"
   ],
   "steps": [
-   "Calculate the simple interest earned from Bank A.",
-   "Find the interest earned from Bank B by subtracting Bank A's interest from the total interest.",
-   "Now use the simple interest formula in reverse to find the principal deposited in Bank B. We know simple interest for B equals 2880 rupees, R equals 8 percent, T equals 4 years.",
-   "So Meera's father deposited 9,000 rupees in Bank B. Let's verify: Bank A gives 1,600 rupees interest and Bank B gives 2,880 rupees interest. Total equals 1,600 rupees plus 2,880 rupees, which is 4,480 rupees."
+   "Bank A: 8,000 rupees is 80 hundreds, and each hundred earns 5 rupees a year. 80 times 5 is 400 rupees a year. 400 times 4 equals 1600.",
+   "Bank B paid the rest of the 4,480 rupees interest. 4480 minus 1600 equals 2880.",
+   "In Bank B, each 100 rupees earns 8 rupees a year. Over 4 years it earns 32 rupees. 8 times 4 equals 32.",
+   "Divide Bank B's interest by 32 to count the hundreds in it. 2880 divided by 32 equals 90.",
+   "90 hundreds is 9,000 rupees. He deposited 9,000 rupees in Bank B. 90 times 100 equals 9000."
   ]
  },
  "AIGEN_grade5_8007f356-6258-4e1e-b107-7a5e59e46551": {
@@ -1287,10 +1270,11 @@
    "A similar problem: 5,000 rupees at 4 percent for 3 years earns 5000 times 4 times 3, divided by 100, which is 600 rupees. The total interest from two deposits is 1,500 rupees, so the second deposit earned 1500 minus 600, which is 900 rupees. The second deposit was 3,000 rupees, so its rate is 900 times 100, divided by 3000 times 3, which is 10 percent."
   ],
   "steps": [
-   "Calculate the simple interest from Bank A using simple interest equals P times R times T, divided by 100.",
-   "Find the interest earned from Bank B by subtracting Bank A's interest from the total interest.",
-   "Now use the simple interest formula to find the rate for Bank B. We know simple interest for B equals 1920 rupees, Principal equals 6000 rupees, Time equals 4 years.",
-   "Solve for R by rearranging the equation."
+   "Bank A: 8,000 rupees is 80 hundreds, and each hundred earns 5 rupees a year. 80 times 5 is 400 rupees a year. 400 times 4 equals 1600.",
+   "Bank B paid the rest of the 3,520 rupees interest. 3520 minus 1600 equals 1920.",
+   "That interest built up over 4 years, the same each year. 1920 divided by 4 equals 480.",
+   "Bank B holds 6,000 rupees, which is 60 hundreds. Share the 480 rupees among them. 480 divided by 60 equals 8.",
+   "Each 100 rupees earns 8 rupees a year. So Bank B's rate is 8 percent per annum."
   ]
  },
  "AIGEN_grade5_805b7422-bbbe-473b-abe1-ce1e4247e16f": {
@@ -1391,11 +1375,11 @@
    "Here's a similar problem: Suppose 10,000 rupees is in Bank X at 5 percent and the rest in Bank Y at 8 percent. After 3 years, total interest equals 5,100 rupees. Interest from X equals 10000 times 5 times 3, divided by 100, which is 1,500 rupees. Interest from Y equals 5100 minus 1500, which is 3,600 rupees. So principal in Y equals 3600 times 100, divided by, open bracket, 8 times 3, close bracket, which is 15,000 rupees. Try the same approach for the original question!"
   ],
   "steps": [
-   "Calculate the simple interest earned from Bank Desh.",
-   "Find the interest earned from Bank Bharat by subtracting Bank Desh's interest from the total.",
-   "Now use the simple interest formula in reverse to find the principal deposited in Bank Bharat. We know simple interest equals 4800 rupees, R equals 10 percent, T equals 4 years.",
-   "Calculate the principal.",
-   "So Arjun's father deposited 12,000 rupees in Bank Bharat."
+   "Bank Desh: 15,000 rupees is 150 hundreds, and each hundred earns 6 rupees a year. 150 times 6 is 900 rupees a year. 900 times 4 equals 3600.",
+   "Bank Bharat paid the rest of the 8,400 rupees interest. 8400 minus 3600 equals 4800.",
+   "In Bank Bharat, each 100 rupees earns 10 rupees a year. Over 4 years it earns 40 rupees. 10 times 4 equals 40.",
+   "Divide Bank Bharat's interest by 40 to count the hundreds in it. 4800 divided by 40 equals 120.",
+   "120 hundreds is 12,000 rupees. He deposited 12,000 rupees in Bank Bharat. 120 times 100 equals 12000."
   ]
  },
  "AIGEN_grade5_83b1192f-f4f5-4499-b83b-53e048bd7938": {
@@ -1432,11 +1416,11 @@
    "Here's a similar problem: If 4,000 rupees is put at 5 percent for 3 years, simple interest equals 4000 times 5 times 3, divided by 100, which is 600 rupees. If another 4,000 rupees is at 7 percent for 3 years, simple interest equals 4000 times 7 times 3, divided by 100, which is 840 rupees. Total interest equals 600 plus 840, which is 1,440 rupees. Now try the original problem the same way!"
   ],
   "steps": [
-   "Find the amount deposited in each bank. Priya's father splits 12,000 rupees equally.",
-   "Find the time period. From age 10 to age 15 is 5 years.",
-   "Calculate simple interest from Bank A at 6 percent per annum.",
-   "Calculate simple interest from Bank B at 8 percent per annum.",
-   "Add the interest from both banks to find the total interest available for the bicycle!"
+   "Each bank gets an equal share of the 12,000 rupees. 12000 divided by 2 equals 6000.",
+   "The money stays in the bank from age 10 to age 15. 15 minus 10 equals 5 years.",
+   "Bank A: 6,000 rupees is 60 hundreds, and each hundred earns 6 rupees a year. 60 times 6 is 360 rupees a year. 360 times 5 equals 1800.",
+   "Bank B: each hundred earns 8 rupees a year. 60 times 8 is 480 rupees a year. 480 times 5 equals 2400.",
+   "Add the interest from both banks. Priya will have 4,200 rupees to spend on the bicycle. 1800 plus 2400 equals 4200."
   ]
  },
  "AIGEN_grade5_8f54931a-66b3-412e-a072-d2266623d882": {
@@ -1514,12 +1498,12 @@
    "Here's a similar problem: Ravi borrows 10,000 rupees and pays back 13,000 rupees after 2 years. Interest equals 3,000 rupees. Using simple interest equals P times R times T, divided by 100, so 3000 equals 10000 times R times 2, divided by 100, so R equals 15 percent. If his sister earns 4,500 rupees interest in 3 years at the same rate, then 4500 equals P times 15 times 3, divided by 100, so P equals 4500 times 100, divided by 45, which is 10,000 rupees."
   ],
   "steps": [
-   "Find the interest paid by Priya's father.",
-   "Use the Simple Interest formula to find the rate of interest. We know P equals 24,000 rupees, simple interest equals 7,200 rupees, and T equals 3 years.",
-   "Solve for R.",
-   "Now use the same rate, 10 percent, for Priya's mother. We know simple interest equals 6,000 rupees, R equals 10 percent, T equals 5 years. Find P, the deposit.",
-   "Solve for P.",
-   "So Priya's mother originally deposited 12,000 rupees in the bank."
+   "The extra money the father paid back is the interest. 31200 minus 24000 equals 7200.",
+   "That interest built up over 3 years, the same each year. 7200 divided by 3 equals 2400.",
+   "24,000 rupees is 240 hundreds. Share the 2,400 rupees among them to see what each hundred earns in a year. 2400 divided by 240 equals 10.",
+   "So the rate is 10 percent a year. The mother's 6,000 rupees of interest built up over 5 years. 6000 divided by 5 equals 1200.",
+   "At 10 percent, each 100 rupees earns 10 rupees a year. Divide to count her hundreds. 1200 divided by 10 equals 120.",
+   "120 hundreds is 12,000 rupees. Priya's mother deposited 12,000 rupees. 120 times 100 equals 12000."
   ]
  },
  "AIGEN_grade5_94a89f10-62f1-4d27-a64d-3054d87f4258": {
@@ -1536,11 +1520,9 @@
    "Here's a similar problem: If 5,000 rupees is deposited at 5 percent per year and the interest earned is 1,250 rupees, then T equals 1250 times 100, divided by, open bracket, 5000 times 5, close bracket, which is 125000 divided by 25000, that is 5 years. Use the same approach for your problem!"
   ],
   "steps": [
-   "Write down what we know: Principal, P, equals 6,000 rupees, Rate, R, equals 4 percent per year, Simple Interest, S I, equals 1,440 rupees. We need to find Time, T.",
-   "Use the Simple Interest formula and rearrange it to find T.",
-   "Substitute the values.",
-   "Simplify the fraction.",
-   "So Priya kept her money in the bank for 6 years!"
+   "6,000 rupees is 60 hundreds, and each hundred earns 4 rupees a year. 60 times 4 equals 240.",
+   "So every year adds 240 rupees of interest. Divide the 1,440 rupees by 240 to count the years. 1440 divided by 240 equals 6.",
+   "Priya kept her money in the bank for 6 years."
   ]
  },
  "AIGEN_grade5_98c88c51-0e75-4858-a7fa-e778105f4461": {
@@ -1825,12 +1807,12 @@
    "Similar problem: If 20,000 rupees earns 3,000 rupees interest in 3 years, then R equals 3000 times 100, divided by, open bracket, 20000 times 3, close bracket, which is 5 percent. If you then deposit 21,500 rupees at 5 percent for 2 years, interest equals 21500 times 5 times 2, divided by 100, which is 2,150 rupees. Follow the same approach for Ananya's problem!"
   ],
   "steps": [
-   "Find the total interest earned from the first deposit. Ananya spent 4,200 rupees on books and had 1,800 rupees left over, both from the interest.",
-   "Use the Simple Interest formula to find the rate of interest. We know P equals 30,000 rupees, T equals 4 years, simple interest equals 6,000 rupees.",
-   "Solve for R.",
-   "Find the new principal for the second deposit. Ananya deposits the original 30,000 rupees plus the remaining interest of 1,800 rupees.",
-   "Calculate the simple interest on the second deposit for 3 years at 5 percent.",
-   "So Ananya earns 4,770 rupees as interest from her second deposit!"
+   "The first interest is what she spent plus what was left. 4200 plus 1800 equals 6000.",
+   "That interest took 4 years, the same each year. 6000 divided by 4 equals 1500.",
+   "30,000 rupees is 300 hundreds. Sharing the 1,500 rupees among them gives the rate: 5 percent a year. 1500 divided by 300 equals 5.",
+   "The second deposit is the 30,000 rupees and the 1,800 rupees together. 30000 plus 1800 equals 31800.",
+   "31,800 rupees is 318 hundreds, and each hundred earns 5 rupees a year. 318 times 5 equals 1590.",
+   "The second deposit stays for 3 years. She will earn 4,770 rupees of interest. 1590 times 3 equals 4770."
   ]
  },
  "AIGEN_grade5_acbc7ff9-1e4d-461d-9187-7702d7f3dce7": {
@@ -1868,12 +1850,9 @@
    "Here's a similar problem: If the simple interest on some amount at 6 percent per year for 3 years is 540 rupees, then Principal equals 540 times 100, divided by, open bracket, 6 times 3, close bracket, which is 54000 divided by 18, that is 3,000 rupees. Use the same method for your question!"
   ],
   "steps": [
-   "Write down what we know: Simple Interest, S I, equals 800 rupees, Rate, R, equals 5 percent per year, Time, T, equals 4 years.",
-   "Recall the simple interest formula.",
-   "Rearrange to find the Principal, P.",
-   "Substitute the values.",
-   "Calculate the result.",
-   "So Sanya's mother originally deposited 4,000 rupees in the bank."
+   "The 800 rupees came over 4 years, the same each year. 800 divided by 4 equals 200.",
+   "At 5 percent, each 100 rupees earns 5 rupees a year. Divide to count the hundreds. 200 divided by 5 equals 40.",
+   "40 hundreds is 4,000 rupees. Sanya's mother deposited 4,000 rupees. 40 times 100 equals 4000."
   ]
  },
  "AIGEN_grade5_b1a13a45-5076-4ae2-9412-4d7dc3aee230": {
@@ -1890,11 +1869,11 @@
    "Here's a similar problem: If 2,000 rupees is deposited at 10 percent per year and the total becomes 2,800 rupees, then Interest equals 2,800 rupees minus 2,000 rupees, which is 800 rupees. Using simple interest equals P times R times T, divided by 100, we get 800 equals 2000 times 10 times T, divided by 100, so 800 equals 200 times T, giving T equals 4 years. Try the same steps for your problem!"
   ],
   "steps": [
-   "Find the interest earned. Interest equals Total Amount minus Principal.",
-   "Write down the Simple Interest formula.",
-   "Plug in the known values: simple interest equals 1,500 rupees, P equals 5,000 rupees, R equals 6 percent.",
-   "Simplify the right side: 5000 times 6 equals 30,000, and 30,000 divided by 100 equals 300.",
-   "Solve for T by dividing both sides by 300."
+   "Find the interest: the total amount minus the deposit. 6500 minus 5000 equals 1500.",
+   "At 6 percent, each 100 rupees earns 6 rupees a year. Count the hundreds in 5,000 rupees. 5000 divided by 100 equals 50.",
+   "Each of the 50 hundreds earns 6 rupees, so 1 year brings 300 rupees. All the interest, 1,500 rupees, built up this way. 50 times 6 equals 300.",
+   "Divide all the interest by the interest for 1 year. 1500 divided by 300 equals 5.",
+   "The money was deposited for 5 years."
   ]
  },
  "AIGEN_grade5_b47ed985-d181-40b0-91be-8aef3f1dbbc4": {
@@ -1911,12 +1890,12 @@
    "A similar problem: 5,000 rupees at 6 percent earns 1,500 rupees in 5 years. The interest from two accounts together is 2,500 rupees, so the second account earned 2,500 rupees minus 1,500 rupees, which is 1,000 rupees. The second account had 4,000 rupees for 5 years, so its rate is 1000 times 100, divided by 4000 times 5, which is 5 percent."
   ],
   "steps": [
-   "Calculate the simple interest from Bank A using the formula simple interest equals P times R times T, divided by 100.",
-   "The total interest from both banks is 9,300 rupees. So the interest from Bank B alone is.",
-   "Now use the simple interest formula for Bank B. We know simple interest for B equals 4,500 rupees, Principal equals 9,000 rupees, and Time equals 5 years. We need to find Rate, R.",
-   "Simplify the equation.",
-   "Solve for R.",
-   "So the rate of simple interest offered by Bank B is 10 percent per annum!"
+   "Bank A: 12,000 rupees is 120 hundreds, and each hundred earns 8 rupees a year. 120 times 8 equals 960.",
+   "Over 5 years, Bank A pays 5 times that. 960 times 5 equals 4800.",
+   "Bank B paid the rest of the 9,300 rupees interest. 9300 minus 4800 equals 4500.",
+   "That is for 5 years, so divide by 5 for 1 year. 4500 divided by 5 equals 900.",
+   "Bank B holds 9,000 rupees, which is 90 hundreds. Share the 900 rupees among them. 900 divided by 90 equals 10.",
+   "Each 100 rupees earns 10 rupees a year. So Bank B's rate is 10 percent per annum."
   ]
  },
  "AIGEN_grade5_b9233dff-d528-458a-82d3-73a188067064": {
@@ -1933,10 +1912,11 @@
    "A similar problem: 4,000 rupees at 5 percent for 3 years earns 4000 times 5 times 3, divided by 100, which is 600 rupees. Another deposit of 2,000 rupees also earns 600 rupees in 3 years, so its rate is 600 times 100, divided by 2000 times 3, which is 10 percent."
   ],
   "steps": [
-   "Find the amount deposited in Bank Q.",
-   "Calculate the simple interest from Bank P for 2 years at 4 percent.",
-   "Since both banks gave the same interest, Bank Q also gave 720 rupees in 2 years. Now use the simple interest formula to find the rate for Bank Q.",
-   "Solve for R."
+   "Bank Q gets the rest of the 15,000 rupees. 15000 minus 9000 equals 6000.",
+   "Bank P for 1 year: 9,000 rupees is 90 hundreds, and each hundred earns 4 rupees. 90 times 4 equals 360.",
+   "Both banks pay the same interest over the same 2 years. So Bank Q also pays 360 rupees in 1 year.",
+   "Bank Q holds 6,000 rupees, which is 60 hundreds. Share the 360 rupees among them. 360 divided by 60 equals 6.",
+   "Each 100 rupees earns 6 rupees a year. So Bank Q's rate is 6 percent per annum."
   ]
  },
  "AIGEN_grade5_b9edb79f-db06-4b5b-b91b-3c9e5c359547": {
@@ -1973,10 +1953,9 @@
    "Here's a similar problem: Priya deposits 3,000 rupees at 5 percent per annum and earns 450 rupees in interest. Total equals 3,000 rupees plus 450 rupees, which is 3,450 rupees. If she spends 1,200 rupees on books, she has 3,450 rupees minus 1,200 rupees equals 2,250 rupees left."
   ],
   "steps": [
-   "Identify the given values: Principal, P, equals 4,500 rupees, Rate, R, equals 6 percent per annum, and Interest, I, equals 810 rupees.",
-   "We can verify the time period using the Simple Interest formula, just to make sure everything is consistent. Simple interest equals P times R times T, divided by 100, so T equals simple interest times 100, divided by, open bracket, P times R, close bracket.",
-   "Calculate the total amount Ravi has after earning interest: Amount equals Principal plus Interest.",
-   "Subtract the cost of cricket gear from the total amount to find how much Ravi has left."
+   "The interest is already given: 810 rupees. So the 6 percent rate is not needed here.",
+   "Ravi withdraws his deposit and the interest together. 4500 plus 810 equals 5310.",
+   "He spends 2,000 rupees on cricket gear. Ravi has 3,310 rupees left. 5310 minus 2000 equals 3310."
   ]
  },
  "AIGEN_grade5_bb4d5081-3827-4bb8-88ff-cb56a9c75ce3": {
@@ -2056,11 +2035,11 @@
    "Here's a similar problem: If 1,000 rupees is deposited at 5 percent for 3 years, simple interest equals 1000 times 5 times 3, divided by 100, which is 150 rupees. Total amount equals 1000 plus 150, which is 1,150 rupees. Now imagine doing this for two banks and adding the results!"
   ],
   "steps": [
-   "Find Simple Interest from Bank A.",
-   "Find Simple Interest from Bank B.",
-   "Find the total amount from Bank A, Principal plus Interest.",
-   "Find the total amount from Bank B, Principal plus Interest.",
-   "Add both amounts to get the total money Ankit's mother receives."
+   "Bank A: 2,000 rupees is 20 hundreds, and each hundred earns 10 rupees a year. 20 times 10 is 200 rupees a year. 200 times 2 equals 400.",
+   "Bank B: 3,000 rupees is 30 hundreds, and each hundred earns 6 rupees a year. 30 times 6 is 180 rupees a year. 180 times 2 equals 360.",
+   "Bank A gives back the deposit and its interest. 2000 plus 400 equals 2400.",
+   "Bank B gives back the deposit and its interest. 3000 plus 360 equals 3360.",
+   "Add the two banks. She receives 5,760 rupees in all. 2400 plus 3360 equals 5760."
   ]
  },
  "AIGEN_grade5_ca7ef302-364f-4678-9615-8ee267f16ce2": {
@@ -2136,10 +2115,11 @@
    "Here's a similar problem: If 2,000 rupees grows to 2,400 rupees in 2 years at simple interest, the interest is 400 rupees. Rate equals 400 times 100, divided by, open bracket, 2000 times 2, close bracket, which is 10 percent. Then for 3,000 rupees at 10 percent for 5 years, interest equals 3000 times 10 times 5, divided by 100, which is 1,500 rupees. Try the same approach for Ravi and Meena!"
   ],
   "steps": [
-   "Find Ravi's interest earned.",
-   "Use the simple interest formula to find the rate of interest.",
-   "Now calculate Meena's interest using the same rate, 6 percent, for 4 years.",
-   "So Meena will earn 1,440 rupees as interest after 4 years."
+   "Ravi's interest is what he received minus what he deposited. 5310 minus 4500 equals 810.",
+   "That is for 3 years, so divide by 3 for 1 year. 810 divided by 3 equals 270.",
+   "4,500 rupees is 45 hundreds. Sharing the 270 rupees among them gives the rate: 6 percent a year. 270 divided by 45 equals 6.",
+   "Meena: 6,000 rupees is 60 hundreds, and each hundred earns 6 rupees a year. 60 times 6 equals 360.",
+   "Her money stays for 4 years. Meena will earn 1,440 rupees of interest. 360 times 4 equals 1440."
   ]
  },
  "AIGEN_grade5_d4b9d3ae-0eee-4a23-a405-a782adfdd00c": {
@@ -2262,11 +2242,12 @@
    "A similar problem: 5,000 rupees earns 600 rupees interest in 2 years, so the rate is 600 times 100, divided by 5000 times 2, which is 6 percent. If it stays for 4 years in all, it earns 5000 times 6 times 4, divided by 100, which is 1,200 rupees. A second deposit of 3,000 rupees at 6 percent for 2 years earns 3000 times 6 times 2, divided by 100, which is 360 rupees. The total interest is 1200 plus 360, which is 1,560 rupees."
   ],
   "steps": [
-   "Find the rate of interest using the first deposit's data.",
-   "Solve for R.",
-   "Calculate total interest on the first deposit, 12,000 rupees, for 6 years, age 10 to age 16.",
-   "Calculate interest on the second deposit, 8,000 rupees, for 3 years, age 13 to age 16.",
-   "Add both interests to get the total interest earned by age 16."
+   "The first deposit earned 2,880 rupees in 3 years. Find the interest for 1 year. 2880 divided by 3 equals 960.",
+   "The 12,000 rupees stays from age 10 to age 16, which is 6 years. 960 times 6 equals 5760.",
+   "For the rate: 12,000 rupees is 120 hundreds, earning 960 rupees a year. So each hundred earns 8 rupees a year. 960 divided by 120 equals 8.",
+   "The 8,000 rupees is 80 hundreds, and each hundred earns 8 rupees a year. 80 times 8 equals 640.",
+   "The second deposit stays for 3 years. 640 times 3 equals 1920.",
+   "Add the interest from both deposits. Ravi earns 7,680 rupees in total. 5760 plus 1920 equals 7680."
   ]
  },
  "AIGEN_grade5_e4a7c5df-e422-4e96-add0-5abd4db084cb": {
@@ -2345,10 +2326,11 @@
    "Here's a similar problem: If 3,000 rupees is deposited at 6 percent for 3 years and 4,000 rupees at 4 percent for 3 years, then Interest one equals 3000 times 6 times 3, divided by 100, which is 540 rupees and Interest two equals 4000 times 4 times 3, divided by 100, which is 480 rupees. Total amount equals 3000 plus 4000 plus 540 plus 480, which is 8,020 rupees. Use the same approach for Ankit's problem!"
   ],
   "steps": [
-   "Find the simple interest from Bank A. P equals 5,000 rupees, R equals 8 percent, T equals 2 years.",
-   "Find the simple interest from Bank B. P equals 7,000 rupees, R equals 5 percent, T equals 2 years.",
-   "Find the total interest earned from both banks.",
-   "Add the total interest to the total principal, money deposited, to get the total amount received."
+   "Bank A: 5,000 rupees is 50 hundreds, and each hundred earns 8 rupees a year. 50 times 8 is 400 rupees a year. 400 times 2 equals 800.",
+   "Bank B: 7,000 rupees is 70 hundreds, and each hundred earns 5 rupees a year. 70 times 5 is 350 rupees a year. 350 times 2 equals 700.",
+   "Add the two deposits. 5000 plus 7000 equals 12000.",
+   "Add the interest from the two banks. 800 plus 700 equals 1500.",
+   "Deposits and interest together: he received 13,500 rupees. 12000 plus 1500 equals 13500."
   ]
  },
  "AIGEN_grade5_efabbd25-0656-49d7-a223-3e6f5c9d7ec0": {
@@ -2386,11 +2368,11 @@
    "Here's a similar problem: If 4,000 rupees is deposited at 5 percent for 3 years, simple interest equals 4000 times 5 times 3, divided by 100, which is 600 rupees. If 3,000 rupees is deposited at 8 percent for 3 years, simple interest equals 3000 times 8 times 3, divided by 100, which is 720 rupees. Total interest equals 600 rupees plus 720 rupees, which is 1,320 rupees. If you spend 1,000 rupees, you have 320 rupees left."
   ],
   "steps": [
-   "Find the amount deposited in Bank B.",
-   "Calculate simple interest from Bank A for 2 years.",
-   "Calculate simple interest from Bank B for 2 years.",
-   "Find total interest earned from both banks.",
-   "Subtract the cost of the cricket bat to find how much Raju has left."
+   "Bank B gets the rest of the 15,000 rupees. 15000 minus 9000 equals 6000.",
+   "Bank A: 9,000 rupees is 90 hundreds, and each hundred earns 6 rupees a year. 90 times 6 is 540 rupees a year. 540 times 2 equals 1080.",
+   "Bank B: 6,000 rupees is 60 hundreds, and each hundred earns 10 rupees a year. 60 times 10 is 600 rupees a year. 600 times 2 equals 1200.",
+   "Add the interest from the two banks. 1080 plus 1200 equals 2280.",
+   "The bat costs 2,000 rupees. Raju has 280 rupees of the interest left. 2280 minus 2000 equals 280."
   ]
  },
  "AIGEN_grade5_fdc29a8b-60f6-4ded-ae1d-568651f8f26e": {

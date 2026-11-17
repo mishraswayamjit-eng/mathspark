@@ -78,13 +78,12 @@
    "Here's a similar problem. A cyclist rides 30 kilometres at 10 kilometres per hour, and 30 kilometres at 30 kilometres per hour. That takes 3 plus 1, which is 4 hours, for 60 kilometres, so the average speed is 60 divided by 4, which is 15 kilometres per hour. If the cyclist instead rides 2 hours at 10 kilometres per hour and 2 hours at 30 kilometres per hour, the distance is 20 plus 60, which is 80 kilometres, in 4 hours, so the average speed is 80 divided by 4, which is 20 kilometres per hour. Here the equal time trip is faster by 20 minus 15, which is 5 kilometres per hour."
   ],
   "steps": [
-   "Let's pick a convenient total distance for the one-way trip. Let the total distance be 120 kilometres, Chennai to Pondicherry.",
-   "Going to Pondicherry, with the distance split equally. First half: 60 kilometres at 40 kilometres per hour. Second half: 60 kilometres at 60 kilometres per hour. Time 1 equals 60 divided by 40, which is 1.5 hours. Time 2 equals 60 divided by 60, which is 1 hour.",
-   "Total time going there equals 1.5 plus 1, which is 2.5 hours. Average speed going there: 120 divided by 2.5, which is 48 kilometres per hour.",
-   "Coming back, equal time split: They drive at 40 kilometres per hour for half the time and 60 kilometres per hour for the other half. Let total time be T hours. Distance covered equals 40 times T over 2 plus 60 times T over 2, which is 20 T plus 30 T, which is 50 T kilometres.",
-   "But the return distance is also 120 kilometres, so 50 T equals 120, giving T equals 2.4 hours. Average speed coming back equals 120 divided by 2.4, which is 50 kilometres per hour.",
-   "We can also see this directly: when time is split equally, the average speed is simply the arithmetic mean of the two speeds. Average speed coming back equals 40 plus 60, all divided by 2, which is 50 kilometres per hour.",
-   "Comparing: Coming back, 50 kilometres per hour, is faster than going to, 48 kilometres per hour, by 50 minus 48, which is 2 kilometres per hour."
+   "No distance is given, so choose an easy one: 240 kilometres. Each half is then 120 kilometres. 240 divided by 2 equals 120.",
+   "Going there, the first half at 40 kilometres per hour takes 3 hours. 120 divided by 40 equals 3.",
+   "The second half at 60 kilometres per hour takes 2 hours. 120 divided by 60 equals 2.",
+   "Going takes 5 hours in all, so the average speed going is 48 kilometres per hour. 240 divided by 5 equals 48.",
+   "Coming back, picture any 2 hours: 1 hour at 40 kilometres per hour and 1 hour at 60 kilometres per hour. That is 100 kilometres, so the average speed is 50 kilometres per hour. 100 divided by 2 equals 50.",
+   "Coming back is faster by 2 kilometres per hour. 50 minus 48 equals 2."
   ]
  },
  "AIGEN_grade5_10d2ce3d-f46f-486a-8d20-0dfa4359d91a": {
@@ -205,11 +204,11 @@
    "Here's a similar problem. A car travels 180 kilometres in 4 hours, part at 60 kilometres per hour and the rest at 30 kilometres per hour. Let the first distance be x. Then x divided by 60, plus, open bracket 180 minus x close bracket, divided by 30, equals 4. Multiply everything by 60. We get x plus 2 times, open bracket 180 minus x close bracket, equals 240. So 360 minus x equals 240, and x equals 120 kilometres."
   ],
   "steps": [
-   "Let the distance travelled at 80 kilometres per hour be d kilometres. Then the distance at 40 kilometres per hour is 240 minus d kilometres. d, plus 240 minus d, equals 240.",
-   "Write the time equation. Time equals distance divided by speed. Total time is 4 hours. d over 80, plus, open bracket, 240 minus d, close bracket, over 40, equals 4.",
-   "Multiply every term by 80, the L C M of 80 and 40, to clear the fractions. d plus 2 times, open bracket, 240 minus d, close bracket, equals 320.",
-   "Expand and simplify. d plus 480 minus 2 d equals 320, so minus d equals 320 minus 480, which is minus 160, so d equals 160.",
-   "So they travelled 160 kilometres at 80 kilometres per hour and 80 kilometres at 40 kilometres per hour. Let's verify: 160 divided by 80 equals 2 hours, 80 divided by 40 equals 2 hours, total equals 4 hours."
+   "Pretend all 4 hours were driven at 40 kilometres per hour. 40 times 4 equals 160.",
+   "The real trip is 240 kilometres, so the pretend trip is 80 kilometres short. 240 minus 160 equals 80.",
+   "Each hour at 80 kilometres per hour instead of 40 kilometres per hour adds 40 kilometres. 80 minus 40 equals 40.",
+   "So 2 of the hours were at the fast speed. 80 divided by 40 equals 2.",
+   "They travelled 160 kilometres at 80 kilometres per hour. 80 times 2 equals 160."
   ]
  },
  "AIGEN_grade5_2d6440d7-34f6-4b72-9433-cc20a033d160": {
@@ -542,11 +541,11 @@
    "Here's a similar problem: A square garden has sides of 250 metres. Someone walks around it at 2 kilometres per hour. Perimeter equals 4 times 250, which is 1000 metres, which is 1 kilometre. Time equals 1 divided by 2, which is 0.5 hours, which is 30 minutes. See how we converted metres to kilometres first? Try the same approach!"
   ],
   "steps": [
-   "Find the perimeter of the rectangular park. Perimeter equals 2 times, open bracket, 400 plus 200, close bracket, which is 2 times 600, which is 1200 metres.",
-   "Convert the perimeter from metres to kilometres. 1200 metres equals 1200 divided by 1000, which is 1.2 kilometres.",
-   "Use the formula Time equals Distance divided by Speed to find the time in hours. Time equals 1.2 divided by 3, which is 0.4 hours.",
-   "Convert hours to minutes by multiplying by 60. 0.4 times 60 equals 24 minutes.",
-   "So Ravi and his grandfather take 24 minutes to complete one full round."
+   "One full round is the boundary: two lengths and two breadths. 2 times, open bracket, 400 plus 200, close bracket, equals 1200.",
+   "Make the units match. 3 kilometres in 1 hour is 3000 metres in 60 minutes.",
+   "So they walk 50 metres every minute. 3000 divided by 60 equals 50.",
+   "Divide the distance by the metres walked each minute. 1200 divided by 50 equals 24.",
+   "One full round takes 24 minutes."
   ]
  },
  "AIGEN_grade5_9f8bd7db-3343-405c-b559-a286aa6f9dcb": {
@@ -755,15 +754,11 @@
    "Here's a similar problem. A car travels 150 kilometres in 3 hours, part at 60 kilometres per hour and the rest at 30 kilometres per hour. If the fast part is d kilometres, then d divided by 60, plus, open bracket 150 minus d close bracket, divided by 30, equals 3. Multiply everything by 60. We get d plus 2 times, open bracket 150 minus d close bracket, equals 180. So 300 minus d equals 180, and d equals 120. The slower part is 150 minus 120, which is 30 kilometres."
   ],
   "steps": [
-   "Let the distance travelled at 90 kilometres per hour be d one and the distance at 60 kilometres per hour be d two. d 1 plus d 2 equals 360.",
-   "Write the total time equation, using time equals distance divided by speed. d 1 over 90, plus d 2 over 60, equals 5.",
-   "From the first equation, express d one in terms of d two. d 1 equals 360 minus d 2.",
-   "Substitute into the time equation. Open bracket, 360 minus d 2, close bracket, over 90, plus d 2 over 60, equals 5.",
-   "Multiply every term by 180, the L C M of 90 and 60, to clear the fractions. 2 times, open bracket, 360 minus d 2, close bracket, plus 3 d 2 equals 900.",
-   "Expand and simplify. 720 minus 2 d 2 plus 3 d 2 equals 900.",
-   "Combine like terms. 720 plus d 2 equals 900.",
-   "Solve for d two. d 2 equals 900 minus 720, which is 180.",
-   "So the train travelled 180 kilometres at the slower speed of 60 kilometres per hour. Let's verify: d one equals 360 minus 180, which is 180 kilometres. Time equals 180 divided by 90 plus 180 divided by 60, which is 2 plus 3, which is 5 hours. It checks out!"
+   "Pretend the train kept to 90 kilometres per hour for all 5 hours. 5 times 90 equals 450.",
+   "The real trip is 360 kilometres, so the pretend trip is 90 kilometres too long. 450 minus 360 equals 90.",
+   "Each hour at 60 kilometres per hour loses 30 kilometres. 90 minus 60 equals 30.",
+   "So the train spent 3 hours at the slower speed. 90 divided by 30 equals 3.",
+   "At the slower speed the train travelled 180 kilometres. 3 times 60 equals 180."
   ]
  },
  "AIGEN_grade5_cd0b4e43-222d-47fc-9a45-b4631c319a09": {
@@ -891,10 +886,10 @@
    "Similar problem: A boat goes 20 kilometres downstream in 2 hours. A cyclist covers the same 20 kilometres in 2 hours 30 minutes. Cyclist's speed equals 20 divided by 2.5, which is 8 kilometres per hour. Notice how you first find the distance using the boat's info, then use it for the cyclist!"
   ],
   "steps": [
-   "Find the one-way distance using the houseboat's downstream trip. Distance equals Speed times Time. Distance equals 12 times 1.5, which is 18 kilometres.",
-   "Convert Arjun's travel time to hours. 1 hour 12 minutes equals 1 plus 12 over 60 hours. So 1 hour 12 minutes is 1 plus 12 divided by 60, which is 1.2 hours.",
-   "Arjun covers the same 18-kilometre distance in 1.2 hours. Use Speed equals Distance divided by Time. Speed equals 18 divided by 1.2, which is 15 kilometres per hour.",
-   "So Arjun's cycling speed is 15 kilometres per hour!"
+   "The boat goes 12 kilometres in the first hour and 6 kilometres more in the next 30 minutes. The one way distance is 18 kilometres. 12 plus 6 equals 18.",
+   "Arjun takes 1 hour 12 minutes, which is 72 minutes. 60 plus 12 equals 72.",
+   "He rides 18 kilometres in 72 minutes, so each kilometre takes 4 minutes. 72 divided by 18 equals 4.",
+   "An hour has 60 minutes, so he rides 15 kilometres in an hour. Arjun's speed is 15 kilometres per hour. 60 divided by 4 equals 15."
   ]
  },
  "AIGEN_grade5_f181bd86-5d01-4cda-bc40-12e4894d07ee": {
