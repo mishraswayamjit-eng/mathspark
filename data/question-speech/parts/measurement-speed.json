@@ -64,28 +64,6 @@
    "Total time equals 15 plus 22.5, which is 37.5 minutes."
   ]
  },
- "AIGEN_grade5_033e5e03-1780-45bd-b614-2ff77ce829e4": {
-  "q": "During the Republic Day celebrations, Priya and her family take a road trip from Chennai to Pondicherry. For the first part of the journey, they drive at 40 kilometres per hour and cover half the total distance. For the second part, they drive at 60 kilometres per hour and cover the remaining half of the total distance. On the way back, they drive at 40 kilometres per hour for half the total time, and at 60 kilometres per hour for the other half of the total time. Is the average speed higher going to Pondicherry or coming back, and by how much?",
-  "options": [
-   "Going to Pondicherry is faster by 2 kilometres per hour",
-   "Coming back is faster by 2 kilometres per hour",
-   "Both average speeds are exactly the same",
-   "Coming back is faster by 1 kilometre per hour"
-  ],
-  "hints": [
-   "Think carefully: splitting a journey by equal distance versus splitting by equal time gives different average speeds. Which method gives a higher average?",
-   "For the trip to Pondicherry, use the formula: Average speed equals Total distance divided by Total time. Pick a convenient total distance like 120 kilometres to make the fractions easy.",
-   "Here's a similar problem. A cyclist rides 30 kilometres at 10 kilometres per hour, and 30 kilometres at 30 kilometres per hour. That takes 3 plus 1, which is 4 hours, for 60 kilometres, so the average speed is 60 divided by 4, which is 15 kilometres per hour. If the cyclist instead rides 2 hours at 10 kilometres per hour and 2 hours at 30 kilometres per hour, the distance is 20 plus 60, which is 80 kilometres, in 4 hours, so the average speed is 80 divided by 4, which is 20 kilometres per hour. Here the equal time trip is faster by 20 minus 15, which is 5 kilometres per hour."
-  ],
-  "steps": [
-   "No distance is given, so choose an easy one: 240 kilometres. Each half is then 120 kilometres. 240 divided by 2 equals 120.",
-   "Going there, the first half at 40 kilometres per hour takes 3 hours. 120 divided by 40 equals 3.",
-   "The second half at 60 kilometres per hour takes 2 hours. 120 divided by 60 equals 2.",
-   "Going takes 5 hours in all, so the average speed going is 48 kilometres per hour. 240 divided by 5 equals 48.",
-   "Coming back, picture any 2 hours: 1 hour at 40 kilometres per hour and 1 hour at 60 kilometres per hour. That is 100 kilometres, so the average speed is 50 kilometres per hour. 100 divided by 2 equals 50.",
-   "Coming back is faster by 2 kilometres per hour. 50 minus 48 equals 2."
-  ]
- },
  "AIGEN_grade5_10d2ce3d-f46f-486a-8d20-0dfa4359d91a": {
   "q": "Deepa and her brother Arjun start cycling from their home to their grandmother's house, which is 30 kilometres away. Deepa cycles the entire distance at a constant speed of 10 kilometres per hour. Arjun starts at the same time but cycles at 15 kilometres per hour. However, after reaching grandmother's house, Arjun realizes he forgot the box of sweets at home! He immediately turns around, cycles back home at 15 kilometres per hour, picks up the sweets, and cycles back to grandmother's house at 15 kilometres per hour. By how many hours does Arjun arrive, the second time, after Deepa?",
   "options": [
@@ -188,27 +166,6 @@
    "Calculate the total distance for the entire journey, both ways. Total distance equals 12 plus 12, which is 24 kilometres.",
    "Calculate the total travel time, excluding prayer time, as the question says. Total time equals 2 plus 1, which is 3 hours.",
    "Now find the average speed using the formula. Average speed equals 24 divided by 3, which is 8 kilometres per hour."
-  ]
- },
- "AIGEN_grade5_2ba5dc32-4f7d-4ba2-b99e-762057eb2571": {
-  "q": "Neha and her brother Arjun are going from their house to their grandmother's village for Pongal celebrations. The total distance is 240 kilometres. Their father drives at 80 kilometres per hour for the first part of the journey and then hits a bullock-cart zone where he slows down to 40 kilometres per hour for the remaining distance. If the total journey takes 4 hours, how many kilometres did they travel at 80 kilometres per hour?",
-  "options": [
-   "80 kilometres",
-   "120 kilometres",
-   "200 kilometres",
-   "160 kilometres"
-  ],
-  "hints": [
-   "Think about it this way. If you call the distance at 80 kilometres per hour d, then the remaining distance at 40 kilometres per hour is 240 minus d. The total time for both parts equals 4 hours.",
-   "Write the time equation: d divided by 80, plus, open bracket, 240 minus d, close bracket, divided by 40, equals 4. Now try to solve for d!",
-   "Here's a similar problem. A car travels 180 kilometres in 4 hours, part at 60 kilometres per hour and the rest at 30 kilometres per hour. Let the first distance be x. Then x divided by 60, plus, open bracket 180 minus x close bracket, divided by 30, equals 4. Multiply everything by 60. We get x plus 2 times, open bracket 180 minus x close bracket, equals 240. So 360 minus x equals 240, and x equals 120 kilometres."
-  ],
-  "steps": [
-   "Pretend all 4 hours were driven at 40 kilometres per hour. 40 times 4 equals 160.",
-   "The real trip is 240 kilometres, so the pretend trip is 80 kilometres short. 240 minus 160 equals 80.",
-   "Each hour at 80 kilometres per hour instead of 40 kilometres per hour adds 40 kilometres. 80 minus 40 equals 40.",
-   "So 2 of the hours were at the fast speed. 80 divided by 40 equals 2.",
-   "They travelled 160 kilometres at 80 kilometres per hour. 80 times 2 equals 160."
   ]
  },
  "AIGEN_grade5_2d6440d7-34f6-4b72-9433-cc20a033d160": {
@@ -738,27 +695,6 @@
    "Find the distance to the temple using Distance equals Speed times Time. Distance equals 18 times two thirds, which is 12 kilometres.",
    "The return trip covers the same 12 kilometres, but at the upstream speed of 12 kilometres per hour. Find the time. Time equals Distance divided by Speed, which is 12 divided by 12, which is 1 hour.",
    "Convert the answer back to minutes. 1 hour equals 60 minutes."
-  ]
- },
- "AIGEN_grade5_cabecb79-a128-4dda-b5ee-2d5c24c3f7f8": {
-  "q": "Rohan and his dad are taking a train from Chennai to Bengaluru. The total distance is 360 kilometres. The train travels at 90 kilometres per hour for the first part of the journey, but then slows down to 60 kilometres per hour for the remaining distance due to track repairs. If the entire journey takes 5 hours, how many kilometres did the train travel at the slower speed?",
-  "options": [
-   "180 kilometres",
-   "240 kilometres",
-   "200 kilometres",
-   "120 kilometres"
-  ],
-  "hints": [
-   "Let the distance at 90 kilometres per hour be 'd one' and at 60 kilometres per hour be 'd two'. You know two things: d one plus d two equals 360, and the total time equals 5 hours. Can you write the time equation?",
-   "Time equals Distance divided by Speed. So the time for the first part is d one divided by 90 and for the second part is d two divided by 60. Their sum equals 5 hours.",
-   "Here's a similar problem. A car travels 150 kilometres in 3 hours, part at 60 kilometres per hour and the rest at 30 kilometres per hour. If the fast part is d kilometres, then d divided by 60, plus, open bracket 150 minus d close bracket, divided by 30, equals 3. Multiply everything by 60. We get d plus 2 times, open bracket 150 minus d close bracket, equals 180. So 300 minus d equals 180, and d equals 120. The slower part is 150 minus 120, which is 30 kilometres."
-  ],
-  "steps": [
-   "Pretend the train kept to 90 kilometres per hour for all 5 hours. 5 times 90 equals 450.",
-   "The real trip is 360 kilometres, so the pretend trip is 90 kilometres too long. 450 minus 360 equals 90.",
-   "Each hour at 60 kilometres per hour loses 30 kilometres. 90 minus 60 equals 30.",
-   "So the train spent 3 hours at the slower speed. 90 divided by 30 equals 3.",
-   "At the slower speed the train travelled 180 kilometres. 3 times 60 equals 180."
   ]
  },
  "AIGEN_grade5_cd0b4e43-222d-47fc-9a45-b4631c319a09": {

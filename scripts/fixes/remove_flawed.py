@@ -45,6 +45,16 @@ FLAWED = {
     "AIGEN_grade5_b22920c0": "two rectangular tiles cannot meet at 65 degrees",
     "AIGEN_grade5_54aca949": "two of the options are the same value, one with its working shown",
     "AIGEN_grade5_e4f3ec79": "fourth copy of 'place value of 7 against face value of 8' (8,750)",
+    # removed at the owner's request, 17 Nov 2026
+    "AIGEN_grade5_9d213c43": "trick question whose answer is 'Never'",
+    "AIGEN_grade5_383296a4": "answer is half a paisa (157.075 rupees)",
+    "AIGEN_grade5_acf07f25": "answer is rounded to 57.19 rupees without the question saying so",
+    "AIGEN_grade5_0b810d43": "needs an equation in an unknown number of diyas, above Grade 5",
+    "AIGEN_grade5_2c17fea1": "needs an equation in an unknown number of diyas, above Grade 5",
+    "AIGEN_grade5_033e5e03": "average-speed reasoning above Grade 5",
+    "AIGEN_grade5_2ba5dc32": "needs algebra on two legs of a journey, above Grade 5",
+    "AIGEN_grade5_cabecb79": "needs algebra on two legs of a journey, above Grade 5",
+    "AIGEN_grade5_0cdecfa8": "needs algebra on square numbers, above Grade 5",
 }
 
 # Repeated templates thinned by reviewers: { id: "topic: template" }, written by

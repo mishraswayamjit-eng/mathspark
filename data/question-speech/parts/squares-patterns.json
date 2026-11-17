@@ -41,30 +41,6 @@
    "Priya started with 424 diyas!"
   ]
  },
- "AIGEN_grade5_0cdecfa8-87ec-4400-80d9-f03ad30f025a": {
-  "q": "Riya is making a square rangoli for Diwali using small tiles. She notices that if she adds 25 more tiles to her current collection, she would have a perfect square number of tiles, enough to make a bigger square rangoli. She also notices that if she removes 11 tiles from her current collection, she would again have a perfect square number of tiles, enough to make a smaller square rangoli. How many tiles does Riya currently have?",
-  "options": [
-   "36",
-   "75",
-   "47",
-   "156"
-  ],
-  "hints": [
-   "You need to find a number where both number plus 25 and number minus 11 are perfect squares. Try listing out perfect squares and checking!",
-   "Start by listing perfect squares: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, and so on. If the number plus 25 equals one perfect square, and the number minus 11 equals another, the two perfect squares must differ by exactly 36.",
-   "Here's a similar problem. Suppose adding 10 gives a perfect square and removing 6 also gives a perfect square. The two perfect squares differ by 10 plus 6, which is 16. From the list, 25 minus 9 equals 16, so the number is 25 minus 10, which is 15. Check: 15 plus 10 equals 25, and 15 minus 6 equals 9, and both are perfect squares."
-  ],
-  "steps": [
-   "Let Riya's current number of tiles be n. We need both n plus 25 and n minus 11 to be perfect squares.",
-   "Notice that the difference between these two perfect squares is: Open bracket, n plus 25, close bracket, minus, open bracket, n minus 11, close bracket, equals 36.",
-   "So we need two perfect squares that differ by 36. Let's call them A squared and b squared where A squared minus b squared equals 36.",
-   "Find factor pairs of 36 where both A plus b and A minus b are either both even or both odd (so A and b are whole numbers): 36 equals 2 times 18, 4 times 9 (rejected, different parity), 6 times 6.",
-   "For A plus b equals 18 and A minus b equals 2: solving gives A equals 10, b equals 8. So A squared equals 100 and b squared equals 64.",
-   "For A plus b equals 6 and A minus b equals 6: solving gives A equals 6, b equals 0. So A squared equals 36 and b squared equals 0. This means n minus 11 equals 0, so n equals 11. Check: 11 plus 25 equals 36 but n minus 11 equals 0, technically 0 is a perfect square, but Riya can't make a rangoli with 0 tiles, so this doesn't make practical sense.",
-   "Using A equals 10, b equals 8: n plus 25 equals 100, so n equals 75. Check: 75 plus 25 equals 100, which equals 10 squared and 75 minus 11 equals 64, which equals 8 squared.",
-   "Riya currently has 75 tiles!"
-  ]
- },
  "AIGEN_grade5_11c4b58f-95a7-4b0c-b7d5-90d81de16586": {
   "q": "During a school math fair, Meera and Arjun play a number game. Meera picks a mystery number, squares it, and then subtracts the square of 15 from her result. She tells Arjun that the answer is 64. What is Meera's mystery number?",
   "options": [

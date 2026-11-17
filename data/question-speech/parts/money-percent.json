@@ -108,28 +108,6 @@
    "So Meera made a profit of 33 and one third percent on her investment. Great job, Meera!"
   ]
  },
- "AIGEN_grade5_0b810d43-3f69-42aa-85ef-e3b073d1c322": {
-  "q": "Priya's father runs a small diya, lamp, business during Diwali. He buys clay diyas at 3 rupees each and paints them beautifully. He spends 200 rupees on paints and 100 rupees on glitter. He paints all the diyas and sells 80 percent of them at 12 rupees each and the remaining 20 percent at a discounted price of 7 rupees each, since they have minor paint smudges. After selling everything, he makes a total profit of 500 rupees. How many diyas did he originally buy?",
-  "options": [
-   "80",
-   "100",
-   "90",
-   "75"
-  ],
-  "hints": [
-   "Think about what the total selling price must be, given that profit equals total selling price minus total cost. Then express everything in terms of the number of diyas.",
-   "Let the number of diyas be N. Total cost equals 3 N plus 200 plus 100. Total selling equals 0.8 N times 12, plus 0.2 N times 7. Set up: Selling minus Cost equals 500.",
-   "Here's a similar problem: Raj buys pens at 5 rupees each and spends 50 rupees on packaging. He sells 60 percent of them at 15 rupees each and the other 40 percent at 10 rupees each, and makes a profit of 350 rupees. Try 50 pens: the cost is 50 times 5, plus 50, which is 300 rupees, and the sales are 30 times 15, plus 20 times 10, which is 650 rupees. The profit is 650 minus 300, which is 350 rupees, so Raj bought 50 pens."
-  ],
-  "steps": [
-   "Take a group of 10 diyas. 80 percent of them is 8 diyas, and 20 percent is 2 diyas.",
-   "The 8 diyas at 12 rupees each and the 2 diyas at 7 rupees each bring in 110 rupees. 8 times 12, plus 2 times 7, equals 110.",
-   "Those 10 diyas cost 3 rupees each to buy, so each group leaves 80 rupees. 110, minus 10 times 3, equals 80.",
-   "All the groups together must cover the paints, the glitter and the profit. 200 plus 100 plus 500 equals 800.",
-   "Each group gives 80 rupees, so he needs 10 groups. 800 divided by 80 equals 10.",
-   "10 groups of 10 diyas make 100 diyas. He bought 100 diyas. 10 times 10 equals 100."
-  ]
- },
  "AIGEN_grade5_0f4c01ab-e40a-44d9-9b24-49274e251590": {
   "q": "Meera's father took a loan of 24,000 rupees from a bank at a certain rate of simple interest per annum. After 3 years, he paid back 31,200 rupees to the bank to clear the loan completely. Using the same rate of interest, Meera's mother deposited 15,000 rupees in another bank. After how many years will Meera's mother earn 4,500 rupees as interest on her deposit?",
   "options": [
@@ -434,30 +412,6 @@
    "Calculate the 10 percent discount on the total bill.",
    "Find the discounted bill, amount Riya actually pays.",
    "Subtract the bill from 1,000 rupees to find the money left."
-  ]
- },
- "AIGEN_grade5_2c17fea1-443d-4f0b-83ec-fec239020df3": {
-  "q": "Priya's father runs a small diya, clay lamp, business during Diwali. He buys plain diyas from a potter at 3 rupees each and paints them at home. He spends 400 rupees on paints and 200 rupees on glitter and decorations. He also hires a tempo to transport the diyas to the market for 300 rupees. He paints and sells all the diyas at 8 rupees each and makes a total profit of 600 rupees. How many diyas did he buy from the potter?",
-  "options": [
-   "180",
-   "200",
-   "300",
-   "260"
-  ],
-  "hints": [
-   "Think about what profit means: Profit equals Total Selling Price minus Total Cost Price. Write expressions for both sides using the number of diyas as the unknown!",
-   "Let the number of diyas be N. Total cost equals 3 times N, plus 400, plus 200, plus 300. Total selling price equals 8 times N. Now use the profit equation!",
-   "Here's a similar problem: Ravi buys pens at 5 rupees each, spends 100 rupees on boxes, and sells each pen at 12 rupees. If his profit is 250 rupees, then: 12 times N, minus, open bracket, 5 times N, plus 100, close bracket, equals 250, so 7 N minus 100 equals 250, so 7 N equals 350, so N equals 50 pens. Use the same approach for the diya problem!"
-  ],
-  "steps": [
-   "Let the number of diyas be N.",
-   "Calculate the total cost price, C P.",
-   "Calculate the total selling price, S P.",
-   "Use the profit formula: Profit equals selling price minus cost price.",
-   "Simplify the equation.",
-   "Add 900 to both sides.",
-   "Divide both sides by 5.",
-   "So Priya's father bought 300 diyas from the potter! Let's verify: Cost equals 3 times 300, plus 900, which is 1800 rupees. Selling equals 8 times 300, which is 2400 rupees. Profit equals 2400 minus 1800, which is 600 rupees."
   ]
  },
  "AIGEN_grade5_2d5f2d51-7ff9-4342-874b-8b380c7e73c1": {
@@ -1625,27 +1579,6 @@
    "So Deepa spent 90 rupees on paint brushes and 95 rupees on a sketch pad. Let's find the total spent.",
    "Now subtract the total spent from the money she started with.",
    "Deepa has 175 rupees left!"
-  ]
- },
- "AIGEN_grade5_9d213c43-daf5-4358-8a6f-e4ca823aa429": {
-  "q": "Ravi deposited 4,500 rupees in a bank that gives simple interest at 6 percent per annum. His sister Priya deposited 3,500 rupees in another bank at 8 percent per annum simple interest. After how many years will both of them have earned the same total interest?",
-  "options": [
-   "3 years",
-   "5 years",
-   "Never, they can never earn equal interest",
-   "4 years"
-  ],
-  "hints": [
-   "Write out the simple interest formula for both Ravi and Priya, then set them equal and see what happens when you try to solve for the number of years.",
-   "Simple Interest equals Principal times Rate times Time, divided by 100. For Ravi: 4500 times 6 times T, divided by 100. For Priya: 3500 times 8 times T, divided by 100. Set them equal!",
-   "Similar problem: Suppose Amit deposits 2,000 rupees at 5 percent and Neha deposits 2,000 rupees at 7 percent. Setting their interests equal: 2000 times 5 times T, divided by 100, equals 2000 times 7 times T, divided by 100, so 100 T equals 140 T, so 40 T equals 0, so T equals 0. Since both principals are the same but rates differ, they only match at T equals 0, in other words, before any time passes. Now think about your problem, are the yearly interests the same or different?"
-  ],
-  "steps": [
-   "Write the simple interest formula for Ravi.",
-   "Write the simple interest formula for Priya.",
-   "Set them equal to find when both earn the same interest.",
-   "Subtract 270 T from both sides.",
-   "This gives T equals 0, which means the only time their interests are equal is at the very start, when both have earned 0 rupees. Since Priya earns 280 rupees per year and Ravi earns 270 rupees per year, Priya's interest is always more than Ravi's for any T greater than 0. So they can never earn equal interest after depositing!"
   ]
  },
  "AIGEN_grade5_9e5ffbee-f49d-4a1d-a13e-dc3a6181980f": {
