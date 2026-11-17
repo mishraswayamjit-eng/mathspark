@@ -11,7 +11,14 @@ import { recomputeStudentAnalytics } from '@/lib/brain/recompute';
 import type { ComputedAnalytics } from '@/lib/brain/recompute';
 import { endOfIstDay } from '@/lib/brain/rules';
 import { getTopicsCached } from '@/lib/topicCache';
-import { computeStreak, buildTopicNameMap, matchesSubTopicKey } from '@/lib/sharedUtils';
+import {
+  computeStreak,
+  buildTopicNameMap,
+  istDayNumber,
+  istDayStart,
+  matchesSubTopicKey,
+} from '@/lib/sharedUtils';
+import { loadStreakAttempts } from '@/lib/student/streakData';
 import { MONETIZATION_ENABLED, UNLIMITED_TIER } from '@/lib/monetization';
 import { logError } from '@/lib/logger';
 import { getWeekBounds, TIER_NAMES } from '@/lib/leaderboard';
@@ -54,6 +61,7 @@ export interface HomeStudent {
 export interface HomeRecentActivity {
   /** DB topic id (Question.topicId), e.g. "ch11" or "grade5". */
   topicId: string;
+  /** The topic-tree node's name ("Fractions") when the questions belong to one. */
   topicName: string;
   correct: number;
   attempted: number;
@@ -63,7 +71,14 @@ export interface HomeRecentActivity {
 
 export interface HomeData {
   student: HomeStudent;
+  /**
+   * Days practised in a row (India-time days). Before today's first answer it
+   * is the run that ended yesterday, so it does not drop to 0 overnight.
+   */
   streak: number;
+  /** True once the child has answered a question today (India time). */
+  practisedToday: boolean;
+  /** Right answers today (India time). */
   todayCorrect: number;
   topicMastery: TopicMasteryEntry[];
   examReadiness: ExamReadinessResult;
@@ -104,10 +119,13 @@ function safeJson<T>(val: unknown, fallback: T): T {
 // Grade 4 chapters map one-to-one; keyed grades (e.g. Grade 5) share one DB
 // topic across many nodes, told apart by `subTopicKey`.
 const NODES_BY_DB_TOPIC: Record<string, TopicNode[]> = {};
+/** Topic-tree node id → its name ("Fractions"). */
+const NODE_NAME_BY_ID: Record<string, string> = {};
 TOPIC_TREE.forEach((node) => {
   const list = NODES_BY_DB_TOPIC[node.dbTopicId] || [];
   list.push(node);
   NODES_BY_DB_TOPIC[node.dbTopicId] = list;
+  NODE_NAME_BY_ID[node.id] = node.name;
 });
 
 /** Which topic-tree node an attempted question belongs to (null if none). */
@@ -203,8 +221,11 @@ async function freshAnalytics(
  * Returns null when the student does not exist. Throws on database failure.
  */
 export async function loadHomeData(studentId: string): Promise<HomeData | null> {
+  const now = new Date();
   // All queries run at the same time.
-  const [student, attempts, allTopics, currentMembership, todayUsage] = await Promise.all([
+  const [
+    student, attempts, allTopics, currentMembership, todayUsage, streakAttempts, todayCorrect,
+  ] = await Promise.all([
     prisma.student.findUnique({
       where: { id: studentId },
       select: {
@@ -261,6 +282,13 @@ export async function loadHomeData(studentId: string): Promise<HomeData | null> 
         select: { xpEarned: true },
       });
     })(),
+    // When the child answered (times only), for the streak. Not the 100 rows
+    // above: a child who answers 20 a day would never get past a 5-day streak.
+    loadStreakAttempts(studentId, now),
+    // Right answers since the India-time day began.
+    prisma.attempt.count({
+      where: { studentId, isCorrect: true, createdAt: { gte: istDayStart(now) } },
+    }),
     // SLOT: NextActionCard — load its data here (add to this Promise.all and to HomeData).
     // SLOT: NudgeStrip — the engine's nudges are already returned below as `nudges`;
     //       load anything extra the strip needs here.
@@ -292,24 +320,34 @@ export async function loadHomeData(studentId: string): Promise<HomeData | null> 
     ? await freshAnalytics(studentId, isOld ? 'background' : 'skip')
     : null;
 
-  const streak = computeStreak(attempts);
+  // India-time days; keeps yesterday's run until today's first answer.
+  const streak = computeStreak(streakAttempts, false, now);
+  // `streakAttempts` is newest first.
+  const practisedToday =
+    streakAttempts.length > 0 && istDayNumber(streakAttempts[0].createdAt) === istDayNumber(now);
 
-  const todayStr = new Date().toDateString();
-  const todayCorrect = attempts.filter(
-    (a) => a.isCorrect && new Date(a.createdAt).toDateString() === todayStr,
-  ).length;
-
-  // Recent activity, grouped by DB topic and day
+  // Recent activity, grouped by topic and India-time day. The topic is the
+  // topic-tree node ("Fractions"): for a keyed grade every question shares one
+  // database topic ("Grade 5 — IPM Practice"), which says nothing to a child.
   const recentAttempts = attempts.slice(0, 50);
   const topicMap = buildTopicNameMap(allTopics);
 
   const groups = new Map<string, {
-    topicId: string; attempted: number; correct: number; latest: Date;
+    topicId: string; name: string; attempted: number; correct: number; latest: Date;
   }>();
   for (const a of recentAttempts) {
-    const key = `${a.question.topicId}__${new Date(a.createdAt).toDateString()}`;
+    const dbTopicId = a.question.topicId;
+    const treeId = resolveTreeTopicId(dbTopicId, a.question.subTopic);
+    const key = `${treeId ?? dbTopicId}__${istDayNumber(a.createdAt)}`;
     if (!groups.has(key)) {
-      groups.set(key, { topicId: a.question.topicId, attempted: 0, correct: 0, latest: new Date(a.createdAt) });
+      const nodeName = treeId ? NODE_NAME_BY_ID[treeId] : undefined;
+      groups.set(key, {
+        topicId: dbTopicId,
+        name: nodeName ?? topicMap.get(dbTopicId) ?? dbTopicId,
+        attempted: 0,
+        correct: 0,
+        latest: new Date(a.createdAt),
+      });
     }
     const g = groups.get(key)!;
     g.attempted++;
@@ -325,7 +363,7 @@ export async function loadHomeData(studentId: string): Promise<HomeData | null> 
       const timeAgo = diffD > 0 ? `${diffD}d ago` : diffH > 0 ? `${diffH}h ago` : 'just now';
       return {
         topicId:   g.topicId,
-        topicName: topicMap.get(g.topicId) ?? g.topicId,
+        topicName: g.name,
         correct:   g.correct,
         attempted: g.attempted,
         pct:       g.attempted > 0 ? Math.round(g.correct / g.attempted * 100) : 0,
@@ -361,7 +399,9 @@ export async function loadHomeData(studentId: string): Promise<HomeData | null> 
   const trialDaysLeft  = trialExpiresAt
     ? Math.max(0, Math.ceil((new Date(trialExpiresAt).getTime() - Date.now()) / MS_PER_DAY))
     : null;
-  const trialActive = trialDaysLeft !== null && trialDaysLeft > 0;
+  // Every new child is given a trial end date. With payments switched off there
+  // is no trial to show (and /pricing only bounces back), so it is not active.
+  const trialActive = MONETIZATION_ENABLED && trialDaysLeft !== null && trialDaysLeft > 0;
 
   // Just recomputed when there is a fresh result; otherwise the stored row.
   const parsedMastery    = fresh ? fresh.topicMastery
@@ -399,6 +439,7 @@ export async function loadHomeData(studentId: string): Promise<HomeData | null> 
       dailyGoalMins: student.dailyGoalMins,
     },
     streak,
+    practisedToday,
     todayCorrect,
     topicMastery:    parsedMastery,
     examReadiness:   parsedReadiness,

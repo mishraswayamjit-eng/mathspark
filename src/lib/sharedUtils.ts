@@ -4,32 +4,64 @@ export const TOPIC_ORDER: readonly string[] = [
   'ch13','ch14','ch15','ch16','ch17','ch18','ch19','ch20','ch21','dh',
 ];
 
+// ── India-time days ───────────────────────────────────────────────────────────
+// The children are in India (UTC+5:30); the server's own clock is not. Every
+// "today", "this week" and streak is counted in India-time calendar days.
+
+const IST_OFFSET_MS = 5.5 * 3_600_000;
+const DAY_MS = 86_400_000;
+
 /**
- * Compute consecutive day streak counting backwards from today.
+ * The India-time calendar day a moment falls on, as a whole number of days
+ * since 1 January 1970. Two moments are on the same India day exactly when
+ * their numbers are equal, and yesterday is the number minus one.
+ */
+export function istDayNumber(when: Date | string | number): number {
+  return Math.floor((new Date(when).getTime() + IST_OFFSET_MS) / DAY_MS);
+}
+
+/** The first instant (as a UTC Date) of the India-time day that `when` falls on. */
+export function istDayStart(when: Date | string | number): Date {
+  return new Date(istDayNumber(when) * DAY_MS - IST_OFFSET_MS);
+}
+
+/**
+ * Days practised in a row, in India-time days.
+ *
+ * The run ends today when the child has practised today. When they have not
+ * yet, it ends YESTERDAY: a streak is not shown as lost just because today's
+ * first answer has not been given yet. It is 0 only when neither today nor
+ * yesterday has an attempt.
+ *
+ * Feed it attempts that are not cut off after a fixed number of rows (see
+ * `loadStreakAttempts` in src/lib/student/streakData.ts): the streak can never
+ * be longer than the days the given attempts cover.
+ *
  * @param attempts - Array of items with createdAt dates (and optionally isCorrect)
  * @param filterCorrect - If true, only count days with at least 1 correct attempt
+ * @param now - The current moment (for tests)
  */
 export function computeStreak(
   attempts: Array<{ createdAt: Date; isCorrect?: boolean }>,
   filterCorrect = false,
+  now: Date = new Date(),
 ): number {
   if (attempts.length === 0) return 0;
 
-  const filtered = filterCorrect
-    ? attempts.filter((a) => a.isCorrect)
-    : attempts;
+  const days: Record<number, boolean> = {};
+  for (let i = 0; i < attempts.length; i++) {
+    const a = attempts[i];
+    if (filterCorrect && !a.isCorrect) continue;
+    const day = istDayNumber(a.createdAt);
+    if (!isNaN(day)) days[day] = true;
+  }
 
-  const days = new Set(
-    filtered.map((a) => new Date(a.createdAt).toDateString()),
-  );
-
-  const today = new Date();
+  const today = istDayNumber(now);
+  let day = days[today] ? today : today - 1;
   let streak = 0;
-  for (let i = 0; i < 365; i++) {
-    const d = new Date(today);
-    d.setDate(d.getDate() - i);
-    if (days.has(d.toDateString())) streak++;
-    else break;
+  while (days[day]) {
+    streak++;
+    day--;
   }
   return streak;
 }

@@ -3,6 +3,7 @@ import { prisma } from '@/lib/db';
 import { TOPIC_TREE, getTopicsForGrade, isExtraTopicId } from '@/data/topicTree';
 import { parseStringArray } from '@/lib/jsonFields';
 import { computeStreak, matchesSubTopicKey } from '@/lib/sharedUtils';
+import { loadStreakAttempts } from '@/lib/student/streakData';
 import { practiceUrlForNode, practiceUrlForNodeId } from './practiceUrl';
 import {
   buildNudges,
@@ -111,6 +112,10 @@ interface StudentRecord {
  */
 const MASTERY_ATTEMPT_WINDOW = 1000;
 
+/** Fewest answers on a topic before it can be called "strong" / "mastered". */
+export const STRONG_MIN_ATTEMPTS = 5;
+export const MASTERED_MIN_ATTEMPTS = 8;
+
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 function clamp(v: number, min: number, max: number): number {
@@ -188,9 +193,11 @@ export async function computeTopicMastery(
 
     const mastery = accuracy * 0.4 + coverage * 0.3 + speed * 0.2 + recency * 0.1;
 
+    // One quick right answer already scores about 0.7 (accuracy 1, recency 1), so
+    // "strong" and "mastered" also need enough answers to mean something.
     let status: TopicStatus;
-    if (mastery >= 0.8) status = 'mastered';
-    else if (mastery >= 0.6) status = 'strong';
+    if (mastery >= 0.8 && count >= MASTERED_MIN_ATTEMPTS) status = 'mastered';
+    else if (mastery >= 0.6 && count >= STRONG_MIN_ATTEMPTS) status = 'strong';
     else if (mastery >= 0.35) status = 'developing';
     else if (count > 0) status = 'weak';
     else status = 'not_started';
@@ -442,7 +449,15 @@ export async function generateDailyPlan(
     ? (Date.now() - new Date(latestMock.startedAt).getTime()) / MS_PER_DAY
     : Infinity;
 
-  if (daysSinceMock > 7) {
+  // A practice test is only suggested once the child has answered something:
+  // a brand-new child is not sent to a 20-minute test on day one.
+  const m = masteries ?? await computeTopicMastery(studentId);
+  let hasPractised = false;
+  for (let i = 0; i < m.length; i++) {
+    if (m[i].attemptsCount > 0) { hasPractised = true; break; }
+  }
+
+  if (daysSinceMock > 7 && hasPractised) {
     items.push({
       id: 'plan_mock',
       action: 'Quick Mock Test',
@@ -455,7 +470,6 @@ export async function generateDailyPlan(
   }
 
   // Coverage gap
-  const m = masteries ?? await computeTopicMastery(studentId);
   // Deduped on the node id. (It used to test whether a plan link contained the
   // database topic id, which is the same "grade5" for every Grade 5 node, so
   // this item could never appear for a keyed grade.)
@@ -507,17 +521,9 @@ export async function generateNudges(
 
   const [streakAttempts, twoWeekAttempts, latestMock] = await Promise.all([
     // Days practised, for the streak. `Student.currentStreak` is never
-    // updated, so the streak is worked out from the attempts themselves, the
-    // way the rest of the app does it (`computeStreak`).
-    prisma.attempt.findMany({
-      where: {
-        studentId,
-        createdAt: { gte: new Date(now.getTime() - STREAK_LOOKBACK_DAYS * MS_PER_DAY) },
-      },
-      select: { createdAt: true },
-      orderBy: { createdAt: 'desc' },
-      take: STREAK_ATTEMPT_WINDOW,
-    }),
+    // updated, so the streak is worked out from the attempts themselves, from
+    // the same query as Home, Progress and Profile (`loadStreakAttempts`).
+    loadStreakAttempts(studentId, now),
     // The last fortnight in this grade's topics, WITH the sub-topic, so a
     // drop in accuracy is found per node and not for the whole grade.
     prisma.attempt.findMany({
@@ -547,19 +553,22 @@ export async function generateNudges(
     ? (now.getTime() - new Date(latestMock.startedAt).getTime()) / MS_PER_DAY
     : null;
 
+  // `computeStreak` keeps yesterday's run alive until today's first answer. The
+  // nudge rules need to know whether the child HAS practised today: only then
+  // is the run one day longer than the run that ended yesterday.
+  const runBeforeToday = streakBeforeToday(streakAttempts, now);
+  const runNow = computeStreak(streakAttempts, false, now);
+  const streakToday = runNow > runBeforeToday ? runNow : 0;
+
   // All wording, conditions and the order nudges win in live in ./rules (pure, unit-tested).
   return buildNudges({
     now,
     masteries: m,
     topPriorityNodeId: priorities[0]?.topicId ?? null,
-    streakToday: computeStreak(streakAttempts),
-    streakBeforeToday: streakBeforeToday(streakAttempts, now),
+    streakToday,
+    streakBeforeToday: runBeforeToday,
     accuracyDropNodeIds: findAccuracyDropNodeIds(nodes, twoWeekAttempts, now),
     daysUntilExam,
     daysSinceMock,
   });
 }
-
-/** How far back, and how many answers, the streak looks. */
-const STREAK_LOOKBACK_DAYS = 120;
-const STREAK_ATTEMPT_WINDOW = 3000;

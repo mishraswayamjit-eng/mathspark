@@ -2,28 +2,48 @@
  * Shared dashboard computation helpers used by /api/dashboard and /api/home.
  */
 import type { RecentSession } from '@/types';
+import { istDayNumber, istDayStart } from '@/lib/sharedUtils';
+import { MS_PER_DAY } from '@/lib/timeConstants';
+
+// Day number 0 (1 January 1970) was a Thursday.
+const WEEKDAY_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 /**
- * Compute weekly chart data: attempts per day for last 7 days.
+ * The first instant of the 7-day window the weekly chart covers (India-time
+ * days, today included). Use it as the lower bound of the attempts query.
+ */
+export function weeklyWindowStart(now: Date = new Date()): Date {
+  return new Date(istDayStart(now).getTime() - 6 * MS_PER_DAY);
+}
+
+/**
+ * Compute weekly chart data: attempts per day for the last 7 India-time days.
+ * Feed it every attempt since `weeklyWindowStart()`, not a fixed number of
+ * rows: a row limit cuts the bars short for a child who answers a lot.
  * @param onlyCorrect If true, count only correct attempts
  */
 export function computeWeeklyData(
   attempts: Array<{ createdAt: Date; isCorrect?: boolean }>,
   onlyCorrect = false,
+  now: Date = new Date(),
 ) {
-  const today = new Date();
-  return Array.from({ length: 7 }, (_, i) => {
-    const d = new Date(today);
-    d.setDate(d.getDate() - (6 - i));
-    const dateStr = d.toDateString();
-    return {
-      date:  d.toLocaleDateString('en-IN', { weekday: 'short' }),
-      count: attempts.filter((a) => {
-        if (onlyCorrect && !a.isCorrect) return false;
-        return new Date(a.createdAt).toDateString() === dateStr;
-      }).length,
-    };
-  });
+  const today = istDayNumber(now);
+  const counts: Record<number, number> = {};
+  for (let i = 0; i < attempts.length; i++) {
+    const a = attempts[i];
+    if (onlyCorrect && !a.isCorrect) continue;
+    const day = istDayNumber(a.createdAt);
+    counts[day] = (counts[day] || 0) + 1;
+  }
+  const out: Array<{ date: string; count: number }> = [];
+  for (let back = 6; back >= 0; back--) {
+    const day = today - back;
+    out.push({
+      date:  WEEKDAY_SHORT[(((day + 4) % 7) + 7) % 7],
+      count: counts[day] || 0,
+    });
+  }
+  return out;
 }
 
 /**
@@ -38,7 +58,7 @@ export function computeRecentActivity(
 
   for (const a of attempts) {
     const topicId = a.question.topicId;
-    const dayKey  = new Date(a.createdAt).toDateString();
+    const dayKey  = istDayNumber(a.createdAt);
     const key     = `${topicId}__${dayKey}`;
 
     if (!groups.has(key)) {

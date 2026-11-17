@@ -3,6 +3,7 @@ import { prisma } from '@/lib/db';
 import type { PublicProfile, WeeklyAwardData } from '@/types';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { logError } from '@/lib/logger';
+import { loadStreakDays } from '@/lib/student/streakData';
 
 // GET /api/profile/[studentId] — public profile (no PII)
 export async function GET(
@@ -18,8 +19,10 @@ export async function GET(
 
     const { studentId } = params;
 
-    const student = await prisma.student.findUnique({
-      where:  { id: studentId },
+    // `findFirst`, so the soft-delete filter can sit beside the id: a deleted
+    // child's profile is gone, the same as one that never existed.
+    const student = await prisma.student.findFirst({
+      where:  { id: studentId, deletedAt: null },
       select: {
         id:                    true,
         name:                  true,
@@ -29,7 +32,6 @@ export async function GET(
         totalLifetimeXP:       true,
         hiddenFromLeaderboard: true,
         createdAt:             true,
-        currentStreak:         true,
       },
     });
 
@@ -38,7 +40,7 @@ export async function GET(
     }
 
     // Stats from attempts — use _count aggregate to reduce from 4 to 2 queries
-    const [attemptCounts, masteredCount, awards] = await Promise.all([
+    const [attemptCounts, masteredCount, awards, streakDays] = await Promise.all([
       prisma.attempt.groupBy({
         by: ['isCorrect'],
         where: { studentId },
@@ -51,6 +53,9 @@ export async function GET(
         take:    10,
         select:  { awardType: true, value: true, studentId: true },
       }),
+      // Counted from the attempts, as everywhere else. `Student.currentStreak`
+      // is a column nothing ever writes, so it was always 0 here.
+      loadStreakDays(student.id),
     ]);
     const totalCorrect  = attemptCounts.find((g) => g.isCorrect)?._count ?? 0;
     const totalAttempts  = attemptCounts.reduce((sum, g) => sum + g._count, 0);
@@ -63,7 +68,7 @@ export async function GET(
       totalLifetimeXP:  student.totalLifetimeXP,
       totalSolved:      totalCorrect,
       topicsMastered:   masteredCount,
-      currentStreak:    student.currentStreak,
+      currentStreak:    streakDays,
       joinedAt:         student.createdAt.toISOString(),
       awards:           awards.map((a) => ({
         awardType:   a.awardType as WeeklyAwardData['awardType'],

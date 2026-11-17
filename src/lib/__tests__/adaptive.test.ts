@@ -355,6 +355,35 @@ describe('getNextQuestionWithLadder', () => {
     }
   });
 
+  it('a question that names its own topic is served only there, whatever its label matches', async () => {
+    // "Fraction addition" matches the key "addition" by its label, but it is a
+    // Fractions question (nodeId). Addition & Subtraction must never serve it.
+    const pool = [
+      { ...hcfQuestion('fa', 'Easy', GEN, 'Grade 5 — Fraction addition'), nodeId: 'gr5_fractions' },
+      { ...hcfQuestion('a1', 'Easy', GEN, 'Grade 5 — Addition and subtraction'), nodeId: 'gr5_operations1' },
+    ];
+    mockLadderReads(pool, []);
+
+    for (let i = 0; i < 10; i++) {
+      const picked = await getNextQuestionWithLadder('s1', 'grade5', [], 'addition');
+      expect(picked.question!.id).toBe('a1');
+    }
+
+    // The same holds with the ladder switched off (the scoped pick).
+    prisma.question.findMany.mockResolvedValue(pool);
+    mockAttemptReads([]);
+    prisma.progress.findUnique.mockResolvedValue(null);
+    process.env.TOPIC_LADDER = 'off';
+    try {
+      for (let i = 0; i < 10; i++) {
+        const picked = await getNextQuestionWithLadder('s1', 'grade5', [], 'addition');
+        expect(picked.question!.id).toBe('a1');
+      }
+    } finally {
+      delete process.env.TOPIC_LADDER;
+    }
+  });
+
   it('has no ladder for a chapter topic, for whole-grade practice, or for an unknown topic key', async () => {
     prisma.question.findMany.mockResolvedValue([makeQuestion('q1', 'Easy'), makeQuestion('q2', 'Medium')]);
     mockAttemptReads([]);

@@ -5,7 +5,7 @@
 // here is deterministic so it can be unit-tested without a database.
 
 import { MS_PER_DAY, MS_PER_HOUR } from '@/lib/timeConstants';
-import { matchesSubTopicKey } from '@/lib/sharedUtils';
+import { istDayNumber, matchesSubTopicKey } from '@/lib/sharedUtils';
 import { practiceUrlForNodeId } from './practiceUrl';
 import type { Nudge, NudgeKind, TopicMasteryEntry } from './engine';
 
@@ -39,25 +39,24 @@ export function speedScore(timesMs: number[]): number {
 // ── Streak ────────────────────────────────────────────────────────────────────
 
 /**
- * How many days in a row the child practised, ending YESTERDAY. `computeStreak`
- * (sharedUtils) counts back from today, so it is 0 until today's first answer;
- * this is the run that is still open for today. Same day boundaries as
- * `computeStreak` (the server's local date).
+ * How many days in a row the child practised, ending YESTERDAY: the run that
+ * is still open for today. Same day boundaries as `computeStreak` (sharedUtils):
+ * India-time calendar days.
  */
 export function streakBeforeToday(
   attempts: Array<{ createdAt: Date }>,
   now: Date = new Date(),
 ): number {
-  const days: Record<string, boolean> = {};
+  const days: Record<number, boolean> = {};
   for (let i = 0; i < attempts.length; i++) {
-    days[new Date(attempts[i].createdAt).toDateString()] = true;
+    const day = istDayNumber(attempts[i].createdAt);
+    if (!isNaN(day)) days[day] = true;
   }
   let streak = 0;
-  for (let back = 1; back <= 365; back++) {
-    const d = new Date(now);
-    d.setDate(d.getDate() - back);
-    if (days[d.toDateString()]) streak++;
-    else break;
+  let day = istDayNumber(now) - 1;
+  while (days[day]) {
+    streak++;
+    day--;
   }
   return streak;
 }
@@ -170,7 +169,7 @@ export interface NudgeFacts {
   masteries: TopicMasteryEntry[];
   /** The node the plan puts first (a topic-tree node id), if any. */
   topPriorityNodeId: string | null;
-  /** `computeStreak`: days in a row INCLUDING today (0 until today's first answer). */
+  /** Days in a row INCLUDING today; 0 until today's first answer (see `generateNudges`). */
   streakToday: number;
   /** `streakBeforeToday`: days in a row ending yesterday. */
   streakBeforeToday: number;

@@ -3,18 +3,29 @@ import { prisma } from '@/lib/db';
 import { getTopicsCached } from '@/lib/topicCache';
 import { TOPIC_ORDER, computeStreak, buildLookupMap } from '@/lib/sharedUtils';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
-import { computeWeeklyData } from '@/lib/studentDashboard';
+import { computeWeeklyData, weeklyWindowStart } from '@/lib/studentDashboard';
+import { loadStreakAttempts } from '@/lib/student/streakData';
 import { logError } from '@/lib/logger';
+
+// Per-child data: never stored by the browser or any shared cache.
+const NO_STORE = { 'Cache-Control': 'private, no-store' };
+
+/** How many of the latest answers the longest run of right answers is looked for in. */
+const RUN_ATTEMPT_WINDOW = 1000;
 
 // GET /api/profile
 export async function GET() {
   try {
     const studentId = await getAuthenticatedStudentId();
     if (!studentId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401, headers: NO_STORE });
     }
 
-    const [student, progress, attempts, allTopics] = await Promise.all([
+    const now = new Date();
+    const [
+      student, progress, attempts, allTopics,
+      streakAttempts, weekAttempts, totalSolved, totalAttempted, fastCorrects,
+    ] = await Promise.all([
       prisma.student.findUnique({
         where: { id: studentId },
         select: {
@@ -27,33 +38,45 @@ export async function GET() {
         },
       }),
       prisma.progress.findMany({ where: { studentId }, include: { topic: true } }),
+      // The child's latest answers, newest first, for the longest run of right
+      // answers. (This used to be the OLDEST 300 answers ever, so nothing a
+      // child did after their first 300 questions showed on the profile.)
       prisma.attempt.findMany({
         where: { studentId },
-        select: { isCorrect: true, createdAt: true, timeTakenMs: true },
-        orderBy: { createdAt: 'asc' }, // asc for consecutive-streak computation
-        take: 300,
+        select: { isCorrect: true },
+        orderBy: { createdAt: 'desc' },
+        take: RUN_ATTEMPT_WINDOW,
       }),
       getTopicsCached(),
+      // When the child answered (times only): the day streak, counted the same
+      // way as on Home and Progress.
+      loadStreakAttempts(studentId, now),
+      // Every answer in the weekly chart's seven India-time days.
+      prisma.attempt.findMany({
+        where: { studentId, createdAt: { gte: weeklyWindowStart(now) } },
+        select: { isCorrect: true, createdAt: true },
+      }),
+      // Totals are counted in the database, not from a slice of rows.
+      prisma.attempt.count({ where: { studentId, isCorrect: true } }),
+      prisma.attempt.count({ where: { studentId } }),
+      // Correct answers completed under 10 seconds (timeTakenMs must be recorded > 0)
+      prisma.attempt.count({
+        where: { studentId, isCorrect: true, timeTakenMs: { gt: 0, lt: 10_000 } },
+      }),
     ]);
 
     if (!student) {
-      return NextResponse.json({ error: 'Student not found' }, { status: 404 });
+      return NextResponse.json({ error: 'Student not found' }, { status: 404, headers: NO_STORE });
     }
 
-    // Max consecutive correct answers
+    // Max consecutive correct answers (within the latest RUN_ATTEMPT_WINDOW answers).
+    // The rows are newest first; a run is the same length read in either direction.
     let maxConsecutive = 0;
     let current = 0;
-    for (const a of attempts) {
-      if (a.isCorrect) { current++; maxConsecutive = Math.max(maxConsecutive, current); }
+    for (let i = 0; i < attempts.length; i++) {
+      if (attempts[i].isCorrect) { current++; maxConsecutive = Math.max(maxConsecutive, current); }
       else current = 0;
     }
-
-    // Correct answers completed under 10 seconds (timeTakenMs must be recorded > 0)
-    const fastCorrects = attempts.filter(
-      (a) => a.isCorrect && a.timeTakenMs > 0 && a.timeTakenMs < 10_000,
-    ).length;
-
-    const correctAttempts = attempts.filter((a) => a.isCorrect);
 
     const progressMap = buildLookupMap(progress, 'topicId');
     const topics = allTopics
@@ -76,25 +99,21 @@ export async function GET() {
       {
         student,
         stats: {
-          totalSolved:            correctAttempts.length,
-          totalAttempted:         attempts.length,
+          totalSolved,
+          totalAttempted,
           topicsMastered:         progress.filter((p) => p.mastery === 'Mastered').length,
-          streakDays:             computeStreak(correctAttempts),
+          streakDays:             computeStreak(streakAttempts, false, now),
           maxConsecutiveCorrect:  maxConsecutive,
           fastCorrects,
         },
         topics,
-        weeklyData:     computeWeeklyData(attempts, true),
+        weeklyData:     computeWeeklyData(weekAttempts, true, now),
         weakestTopicId: weakest?.id ?? topics[0]?.id ?? null,
       },
-      {
-        headers: {
-          'Cache-Control': 'private, no-store',
-        },
-      },
+      { headers: NO_STORE },
     );
   } catch (err) {
     logError('[profile] error:', err);
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500, headers: NO_STORE });
   }
 }

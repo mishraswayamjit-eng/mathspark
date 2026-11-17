@@ -71,13 +71,20 @@ const STRATEGY_REF = /^STR_\d{1,4}$/;
 
 describe('rankNextActions', () => {
   describe('a brand-new child', () => {
-    it('gets one starting action on the first sub-topic', () => {
-      const out = rankNextActions(input([placeValue(), fractions()], { totalAttempts: 0 }));
+    it('gets one starting action on the top-priority sub-topic', () => {
+      const out = rankNextActions(input([fractions(), placeValue({ priority: 0.7 })], { totalAttempts: 0 }));
       expect(out).toHaveLength(1);
       expect(out[0].ruleId).toBe('new_start');
       expect(out[0].actionType).toBe('practice');
       expect(out[0].nodeId).toBe('gr5_placevalue');
       expect(out[0].href).toBe('/practice/grade5?subTopic=place+value');
+    });
+
+    it('starts where the exam weight is highest when no priorities are known yet', () => {
+      const out = rankNextActions(input([placeValue(), fractions({ examWeight: 0.14 })], { totalAttempts: 0 }));
+      expect(out).toHaveLength(1);
+      expect(out[0].nodeId).toBe('gr5_fractions');
+      expect(out[0].href).toBe('/practice/grade5?subTopic=fraction');
     });
 
     it('is pointed at the chapter list when the grade has no topic tree', () => {

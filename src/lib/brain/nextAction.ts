@@ -20,9 +20,9 @@
  *                          There is no deep link that opens a lesson for a given
  *                          question yet, so this sends the child to practice on
  *                          that sub-topic (see practiceHref / explainHref).
- *  3 review_idle           A sub-topic that was strong (mastery 0.6+, or accuracy
- *                          75%+ over 8+ attempts) and has not been touched for
- *                          IDLE_DAYS (14) or more.
+ *  3 review_idle           A sub-topic that was strong (mastery 0.6+ over 5+ attempts,
+ *                          or accuracy 75%+ over 8+ attempts) and has not been
+ *                          touched for IDLE_DAYS (14) or more.
  *    review_dropped        Accuracy over the last 7 days is DROP_SIZE (0.2) or more
  *                          below the two weeks before (which were 75%+), with at
  *                          least 4 recent and 5 earlier attempts.
@@ -44,7 +44,8 @@
  *    mock_coverage         COVERAGE_FOR_MOCK (half) of the sub-topics have 5+
  *                          attempts and there has been no mock for 7 days.
  *  8 continue_top          Otherwise: keep going with the top-priority sub-topic.
- *    new_start             A child with no attempts at all gets this one action.
+ *    new_start             A child with no attempts at all gets this one action,
+ *                          on the top-priority sub-topic (as Today's Plan does).
  *
  * Ties inside a rule break on a rule-specific score, then exam weight, then node
  * id, so the same data always gives the same list.
@@ -81,6 +82,14 @@ export const EXAM_SOON_DAYS = 30;
 export const COVERAGE_FOR_MOCK = 0.5;
 export const SUPPRESS_SHOWN_DAYS = 2;
 export const SUPPRESS_WINDOW_DAYS = 3;
+/** Fewest answers on a sub-topic before its mastery can make it count as "strong". */
+export const STRONG_MIN_ATTEMPTS = 5;
+/**
+ * Most answers read from the last 21 days. It was 400, which a child answering
+ * 20 or more a day fills in under three weeks: a sub-topic practised 12 days
+ * ago then fell outside it and was treated as untouched for 21 days.
+ */
+const RECENT_ATTEMPT_WINDOW = 2000;
 export const DEFAULT_LIMIT = 3;
 
 // ── Types ────────────────────────────────────────────────────────────────────
@@ -326,8 +335,10 @@ export function rankNextActions(input: RankInput): NextAction[] {
   const nodes = input.nodes;
 
   // A brand-new child: one gentle place to begin.
+  // The top-priority sub-topic, the same one Today's Plan puts first, so the
+  // card and the plan never name two different places to start.
   if (input.totalAttempts <= 0) {
-    const first = nodes.length > 0 ? nodes[0] : null;
+    const first = nodes.length > 0 ? byPriority(nodes)[0] : null;
     if (!first) {
       return [makeAction(
         'new_start', 'practice', 'Pick your first topic',
@@ -395,7 +406,9 @@ export function rankNextActions(input: RankInput): NextAction[] {
     }
 
     // ── Rule 3: a strong sub-topic gone quiet, or one that has slipped ──
-    const wasStrong = n.mastery >= 0.6 || (n.attempts >= 8 && n.accuracy >= 0.75);
+    // Mastery alone is not enough: one quick right answer already scores about 0.7.
+    const wasStrong =
+      (n.mastery >= 0.6 && n.attempts >= STRONG_MIN_ATTEMPTS) || (n.attempts >= 8 && n.accuracy >= 0.75);
     const recentAcc = ratio(n.recentCorrect, n.recentAttempts);
     const priorAcc = ratio(n.priorCorrect, n.priorAttempts);
     const drop = priorAcc - recentAcc;
@@ -630,7 +643,7 @@ export async function getNextActions(
         question: { select: { topicId: true, subTopic: true } },
       },
       orderBy: { createdAt: 'desc' },
-      take: 400,
+      take: RECENT_ATTEMPT_WINDOW,
     }),
     prisma.lessonProgress.findMany({
       where: { studentId },

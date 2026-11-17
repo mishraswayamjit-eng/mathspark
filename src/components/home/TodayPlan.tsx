@@ -50,9 +50,12 @@ export default function TodayPlan({ items }: { items: PlanRow[] }) {
     if (saved.length > 0) setDone(saved);
   }, []);
 
-  const toggle = useCallback((id: string) => {
+  // Opening a row ticks it. It only ever ticks: opening a finished row again
+  // (to practise some more) must not take the tick away.
+  const markDone = useCallback((id: string) => {
     setDone((prev) => {
-      const next = prev.indexOf(id) !== -1 ? prev.filter((x) => x !== id) : prev.concat(id);
+      if (prev.indexOf(id) !== -1) return prev;
+      const next = prev.concat(id);
       try {
         localStorage.setItem(planKey(), JSON.stringify(next));
       } catch {
@@ -97,7 +100,7 @@ export default function TodayPlan({ items }: { items: PlanRow[] }) {
           <Link
             key={item.id}
             href={item.targetUrl}
-            onClick={() => toggle(item.id)}
+            onClick={() => markDone(item.id)}
             data-plan-id={item.id}
             data-done={isDone ? 'true' : undefined}
             suppressHydrationWarning
@@ -106,6 +109,8 @@ export default function TodayPlan({ items }: { items: PlanRow[] }) {
             <span className="w-6 h-6 rounded-full border-2 border-line shrink-0 flex items-center justify-center text-xs text-white group-data-[done=true]:bg-success group-data-[done=true]:border-success">
               <span className="hidden group-data-[done=true]:inline" aria-hidden="true">✓</span>
             </span>
+            {/* The tick is a picture; this says it in words to a screen reader. */}
+            <span className="sr-only hidden group-data-[done=true]:inline">Done: </span>
             <span className="text-lg shrink-0" aria-hidden="true">{iconFor(item.type)}</span>
             <span className="flex-1 min-w-0">
               <span className="block text-sm font-bold text-ink truncate group-data-[done=true]:line-through">

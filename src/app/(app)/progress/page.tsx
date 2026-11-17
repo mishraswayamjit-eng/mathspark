@@ -10,15 +10,52 @@ import { logError } from '@/lib/logger';
 
 // ── Mastery helpers ───────────────────────────────────────────────────────────
 
+/**
+ * One topic as GET /api/dashboard reports it for a keyed grade (Grade 5 and
+ * the other grades whose topics share one database topic): a topic-tree node
+ * with the Brain Engine's stored numbers.
+ */
+interface NodeTopic {
+  id: string;
+  name: string;
+  emoji: string;
+  href: string;
+  extra: boolean;
+  attempted: number;
+  correct: number;
+  accuracy: number;
+  mastery: number;
+  status: string;
+}
+
+/** The dashboard response, with the per-topic rows keyed grades also get. */
+type ProgressData = DashboardData & {
+  nodeTopics?: NodeTopic[] | null;
+  nodeTopicsMastered?: number | null;
+};
+
+/** One topic on this page, whichever source it came from. */
 interface TopicEntry {
   id: string;
   name: string;
   attempted: number;
   correct: number;
-  mastery: string;
+  /** Practice link that opens exactly this topic. */
+  href: string;
 }
 
-function accuracyPct(t: TopicEntry) {
+/** Sign-in is gone: forget this device's child and ask them to log in again. */
+function clearChildFromDevice(): void {
+  try {
+    Object.keys(localStorage)
+      .filter((k) => k.indexOf('mathspark_') === 0)
+      .forEach((k) => localStorage.removeItem(k));
+  } catch {
+    // Storage blocked: nothing to forget.
+  }
+}
+
+function accuracyPct(t: { attempted: number; correct: number }) {
   return t.attempted > 0 ? Math.round((t.correct / t.attempted) * 100) : 0;
 }
 
@@ -53,7 +90,7 @@ interface MistakePattern {
 
 export default function ProgressPage() {
   const router = useRouter();
-  const [data, setData] = useState<DashboardData | null>(null);
+  const [data, setData] = useState<ProgressData | null>(null);
   const [mistakes, setMistakes] = useState<MistakePattern[]>([]);
   const [loading, setLoading] = useState(true);
   const [fetchError, setFetchError] = useState(false);
@@ -62,20 +99,65 @@ export default function ProgressPage() {
     const studentId = localStorage.getItem('mathspark_student_id');
     if (!studentId) { router.replace('/start'); return; }
 
+    // The sign-in has run out (or the account is gone). That is not a connection
+    // problem: send the child to log in again, and keep the loading screen up
+    // meanwhile instead of telling them to check their connection.
+    let signedOut = false;
+
     Promise.all([
-      fetch('/api/dashboard').then((r) => { if (!r.ok) throw new Error('Dashboard fetch failed'); return r.json(); }),
+      fetch('/api/dashboard').then((r) => {
+        if (r.status === 401 || r.status === 404) {
+          signedOut = true;
+          throw new Error('Signed out');
+        }
+        if (!r.ok) throw new Error('Dashboard fetch failed');
+        return r.json();
+      }),
       fetch('/api/mistake-patterns').then((r) => r.ok ? r.json() : { patterns: [] }).catch((err) => { logError('[progress] fetch mistake-patterns', err); return { patterns: [] }; }),
     ])
       .then(([dashData, mistakeData]) => {
         setData(dashData);
         setMistakes(mistakeData.patterns ?? []);
+        setLoading(false);
       })
-      .catch((err) => { logError('[fetch]', err); setFetchError(true); })
-      .finally(() => setLoading(false));
+      .catch((err) => {
+        if (signedOut) {
+          clearChildFromDevice();
+          router.replace('/student/login');
+          return;
+        }
+        logError('[fetch]', err);
+        setFetchError(true);
+        setLoading(false);
+      });
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   const topics = data?.topics ?? [];
   const streakDays = data?.stats?.streakDays ?? 0;
+
+  // The topics this page lists. A keyed grade (Grade 5 …) keeps all its
+  // questions under ONE database topic, so `topics` is a single row for the
+  // whole grade; its real topics come as `nodeTopics`, each with its own link.
+  const nodeTopics = data?.nodeTopics;
+  const hasNodeTopics = Array.isArray(nodeTopics) && nodeTopics.length > 0;
+  const topicRows: TopicEntry[] = useMemo(() => {
+    if (Array.isArray(nodeTopics) && nodeTopics.length > 0) {
+      return nodeTopics.map((t) => ({
+        id: t.id,
+        name: t.name,
+        attempted: t.attempted,
+        correct: t.correct,
+        href: t.href,
+      }));
+    }
+    return topics.map((t) => ({
+      id: t.id,
+      name: t.name,
+      attempted: t.attempted,
+      correct: t.correct,
+      href: `/practice/${t.id}`,
+    }));
+  }, [nodeTopics, topics]);
 
   const maxBar = useMemo(
     () => Math.max(...(data?.weeklyData ?? []).map((d) => d.count), 1),
@@ -91,13 +173,14 @@ export default function ProgressPage() {
   }, [topics]);
 
   const attemptedTopics = useMemo(
-    () => topics.filter((t) => t.attempted > 0),
-    [topics],
+    () => topicRows.filter((t) => t.attempted > 0),
+    [topicRows],
   );
 
+  // Coverage: how many of the grade's topics the child has started.
   const practiceConsistency = Math.min(100, Math.round((streakDays / 7) * 100));
-  const readinessScore = attemptedTopics.length > 0
-    ? Math.round(overallAccuracy * 0.6 + practiceConsistency * 0.25 + Math.min(100, (attemptedTopics.length / topics.length) * 100) * 0.15)
+  const readinessScore = attemptedTopics.length > 0 && topicRows.length > 0
+    ? Math.round(overallAccuracy * 0.6 + practiceConsistency * 0.25 + Math.min(100, (attemptedTopics.length / topicRows.length) * 100) * 0.15)
     : 0;
   const readiness = readinessLabel(readinessScore);
 
@@ -138,14 +221,14 @@ export default function ProgressPage() {
       recs.push({
         emoji: '🎯',
         text: `Practice ${weakAreas[0].name} — you're at ${accuracyPct(weakAreas[0])}%. A few drills will help!`,
-        link: `/practice/${weakAreas[0].id}`,
+        link: weakAreas[0].href,
       });
     }
     if (strengths.length > 0) {
       recs.push({
         emoji: '⭐',
         text: `Keep ${strengths[0].name} sharp with a quick review this week!`,
-        link: `/practice/${strengths[0].id}`,
+        link: strengths[0].href,
       });
     }
     if (recs.length < 3) {
@@ -192,6 +275,11 @@ export default function ProgressPage() {
   }
 
   const { student, stats, weeklyData } = data;
+  // Topics mastered. For a keyed grade the Progress table has one row for the
+  // whole grade, so the count comes from the per-topic rows instead.
+  const masteredCount = hasNodeTopics && typeof data.nodeTopicsMastered === 'number'
+    ? data.nodeTopicsMastered
+    : stats.topicsMastered;
 
   return (
     <div className="min-h-screen bg-paper pb-24">
@@ -230,10 +318,10 @@ export default function ProgressPage() {
               { value: stats.totalSolved, label: 'Solved', emoji: '✅', color: '#12805c' },
               { value: `${overallAccuracy}%`, label: 'Accuracy', emoji: '🎯', color: overallAccuracy >= 70 ? '#12805c' : '#5a4300' },
               { value: `${stats.streakDays}d`, label: 'Streak', emoji: '🔥', color: '#1d2a4d' },
-              { value: `${stats.topicsMastered}`, label: 'Mastered', emoji: '⭐', color: '#12805c' },
+              { value: `${masteredCount}`, label: 'Mastered', emoji: '⭐', color: '#12805c' },
             ].map((s) => (
               <div key={s.label} className="text-center">
-                <span className="text-lg">{s.emoji}</span>
+                <span className="text-lg" aria-hidden="true">{s.emoji}</span>
                 <p className="text-lg font-extrabold" style={{ color: s.color }}>{s.value}</p>
                 <p className="text-xs font-bold text-ink-muted">{s.label}</p>
               </div>
@@ -262,7 +350,7 @@ export default function ProgressPage() {
           <div>
             <p className="text-sm font-extrabold text-ink">Exam Readiness</p>
             <p className="text-xs text-ink-muted font-medium mt-0.5">
-              {readiness.emoji} {readiness.text}
+              <span aria-hidden="true">{readiness.emoji} </span>{readiness.text}
             </p>
           </div>
         </div>
@@ -294,7 +382,7 @@ export default function ProgressPage() {
         {strengths.length > 0 && (
           <div className="bg-white rounded-card p-4 border-2 border-line">
             <h2 className="text-title text-ink mb-3">
-              💪 Strengths — What You&apos;re Great At
+              <span aria-hidden="true">💪 </span>Strengths — What You&apos;re Great At
             </h2>
             <div className="space-y-2">
               {strengths.slice(0, 4).map((t) => {
@@ -317,7 +405,7 @@ export default function ProgressPage() {
         {weakAreas.length > 0 && (
           <div className="bg-white rounded-card p-4 border-2 border-line">
             <h2 className="text-title text-ink mb-3">
-              🎯 Areas to Strengthen
+              <span aria-hidden="true">🎯 </span>Areas to Strengthen
             </h2>
             <div className="space-y-2">
               {weakAreas.slice(0, 4).map((t) => {
@@ -325,7 +413,7 @@ export default function ProgressPage() {
                 return (
                   <Link
                     key={t.id}
-                    href={`/practice/${t.id}`}
+                    href={t.href}
                     className="flex items-center gap-3 bg-hint rounded-control px-3 py-2.5 border-2 border-hint-ink active:bg-white transition-colors"
                   >
                     <div className="flex-1 min-w-0">
@@ -345,7 +433,7 @@ export default function ProgressPage() {
           <div className="bg-white rounded-card p-4 border-2 border-line">
             <div className="flex items-center justify-between mb-3">
               <h2 className="text-title text-ink">
-                🔍 Mistakes to Watch For
+                <span aria-hidden="true">🔍 </span>Mistakes to Watch For
               </h2>
               <Link href="/learn/mistakes" className="text-xs font-bold text-action">See all →</Link>
             </div>
@@ -353,7 +441,7 @@ export default function ProgressPage() {
               {topMistakes.map((m) => (
                 <div key={m.id} className="bg-soft rounded-control p-3 border-2 border-line">
                   <div className="flex items-start gap-2">
-                    <span className="text-lg shrink-0">{m.emoji}</span>
+                    <span className="text-lg shrink-0" aria-hidden="true">{m.emoji}</span>
                     <div className="flex-1">
                       <p className="text-xs font-extrabold text-ink">{m.name}</p>
                       <p className="text-xs text-ink-muted font-medium mt-0.5 line-clamp-2">{m.description}</p>
@@ -369,7 +457,7 @@ export default function ProgressPage() {
         {/* ── TOPIC MASTERY HEATMAP ────────────────────────────────── */}
         <div className="bg-white rounded-card p-4 border-2 border-line">
           <h2 className="text-title text-ink mb-3">
-            🗺️ Topic Mastery Map
+            <span aria-hidden="true">🗺️ </span>Topic Mastery Map
           </h2>
           {/* Legend */}
           <div className="flex gap-2 mb-3 flex-wrap">
@@ -377,7 +465,7 @@ export default function ProgressPage() {
               { label: 'Mastered', color: '#12805c' },
               { label: 'Strong', color: '#0e7490' },
               { label: 'Developing', color: '#5a4300' },
-              { label: 'Needs Work', color: '#c62f3d' },
+              { label: 'Keep practising', color: '#c62f3d' },
               { label: 'Not Started', color: '#d3deee' },
             ].map((l) => (
               <div key={l.label} className="flex items-center gap-1">
@@ -388,7 +476,7 @@ export default function ProgressPage() {
           </div>
           {/* Heatmap grid */}
           <div className="grid grid-cols-4 gap-1.5">
-            {topics.map((t) => {
+            {topicRows.map((t) => {
               const pct = accuracyPct(t);
               const level = t.attempted === 0
                 ? { color: '#d3deee', label: 'Not started', emoji: '—', bg: '#ffffff' }
@@ -396,11 +484,12 @@ export default function ProgressPage() {
               return (
                 <Link
                   key={t.id}
-                  href={`/practice/${t.id}`}
+                  href={t.href}
                   className="rounded-tile p-2 text-center transition-transform active:scale-95"
                   style={{ backgroundColor: level.bg, border: `1.5px solid ${level.color}` }}
                 >
-                  <span className="text-sm">{level.emoji}</span>
+                  <span className="text-sm" aria-hidden="true">{level.emoji}</span>
+                  <span className="sr-only">{level.label}: </span>
                   <p className="text-xs font-bold text-ink leading-tight mt-0.5 line-clamp-2 break-words">
                     {t.name.length > 16 ? t.name.slice(0, 14) + '…' : t.name}
                   </p>
@@ -416,7 +505,7 @@ export default function ProgressPage() {
         {/* ── RECOMMENDATIONS ──────────────────────────────────────── */}
         <div className="bg-white rounded-card p-4 border-2 border-line">
           <h2 className="text-title text-ink mb-3">
-            📋 What to Do This Week
+            <span aria-hidden="true">📋 </span>What to Do This Week
           </h2>
           <div className="space-y-2">
             {recommendations.slice(0, 3).map((rec, i) => (
@@ -425,7 +514,7 @@ export default function ProgressPage() {
                 href={rec.link}
                 className="flex items-center gap-3 bg-soft rounded-control px-3 py-3 border-2 border-line active:border-ink transition-colors"
               >
-                <span className="text-lg shrink-0">{rec.emoji}</span>
+                <span className="text-lg shrink-0" aria-hidden="true">{rec.emoji}</span>
                 <p className="text-xs font-medium text-ink flex-1">{rec.text}</p>
                 <span className="text-xs text-action font-bold shrink-0">Go →</span>
               </Link>

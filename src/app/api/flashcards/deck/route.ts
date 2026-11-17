@@ -12,6 +12,9 @@ import type { FlashCard } from '@/types';
 
 export const dynamic = 'force-dynamic';
 
+// Per-child data: never stored by the browser or any shared cache.
+const NO_STORE = { 'Cache-Control': 'private, no-store' };
+
 // Leitner box → review interval in days
 const BOX_INTERVALS = [0, 1, 2, 5, 14, 30]; // index 0 unused; box 1→1d, box 2→2d, etc.
 
@@ -101,20 +104,22 @@ export async function GET(req: Request) {
   let deck: FlashCard[];
 
   if (deckId === 'due') {
-    // Cards due for review: nextReviewAt <= now OR never seen
-    deck = candidates
-      .filter((c) => {
-        const p = progressMap.get(c.id);
-        return !p || new Date(p.nextReviewAt) <= now;
-      })
-      .sort((a, b) => {
-        const pa = progressMap.get(a.id);
-        const pb = progressMap.get(b.id);
-        // Lowest box first (most urgent)
-        return (pa?.leitnerBox ?? 0) - (pb?.leitnerBox ?? 0);
-      });
+    // Cards the child has seen before that are due now come FIRST, lowest box
+    // first (most urgent). Never-seen cards only fill what is left of the 20.
+    // (They used to sort in front, as "box 0": a child with 12 cards due and
+    // 20 or more unseen got 20 new cards, the due ones were never reviewed,
+    // and "Flashcards are ready" on Home could never clear.)
+    const seenDue: FlashCard[] = [];
+    const neverSeen: FlashCard[] = [];
+    for (let i = 0; i < candidates.length; i++) {
+      const c = candidates[i];
+      const p = progressMap.get(c.id);
+      if (!p) neverSeen.push(c);
+      else if (new Date(p.nextReviewAt) <= now) seenDue.push(c);
+    }
+    seenDue.sort((a, b) => (progressMap.get(a.id)?.leitnerBox ?? 0) - (progressMap.get(b.id)?.leitnerBox ?? 0));
     // Cap at 20 per session to avoid anxiety
-    deck = deck.slice(0, 20);
+    deck = seenDue.concat(neverSeen).slice(0, 20);
   } else if (deckId === 'quick') {
     // Smart selection: prioritize box 1-2 due cards, then unseen, pad with box 3-4
     const due = candidates.filter((c) => {
@@ -207,16 +212,23 @@ export async function GET(req: Request) {
   else if (deckId === 'voice') deckName = 'Voice Recall';
   else if (deck.length > 0) deckName = deck[0].topicName;
 
-  return NextResponse.json({
-    cards: cardsWithProgress,
-    deckName,
-    totalInDeck: candidates.length,
-    newCardsSeenToday,
-    newCardBudget,
-  });
+  return NextResponse.json(
+    {
+      cards: cardsWithProgress,
+      deckName,
+      totalInDeck: candidates.length,
+      newCardsSeenToday,
+      newCardBudget,
+    },
+    { headers: NO_STORE },
+  );
 
   } catch (err) {
     logError('[flashcards/deck] Error:', err);
-    return NextResponse.json({ cards: [], deckName: 'Error', error: String(err) }, { status: 500 });
+    // No raw message and no "Error" in a name a child could be shown.
+    return NextResponse.json(
+      { cards: [], deckName: 'Flashcards', error: 'Could not load the deck' },
+      { status: 500, headers: NO_STORE },
+    );
   }
 }

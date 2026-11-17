@@ -8,6 +8,7 @@ import HomeSignedOut from '@/components/home/HomeSignedOut';
 import HomeRetry from '@/components/home/HomeRetry';
 import NextActionCard from '@/components/home/NextActionCard';
 import NudgeStrip from '@/components/home/NudgeStrip';
+import HomeRefresher from '@/components/home/HomeRefresher';
 import { getNextActions } from '@/lib/brain/nextAction';
 import type { NextAction } from '@/lib/brain/nextAction';
 import { getAuthenticatedStudentId } from '@/lib/studentAuth';
@@ -67,7 +68,17 @@ function StatsBar({ data }: { data: HomeData }) {
     <div className="flex items-center gap-2 flex-wrap">
       <div className="flex items-center gap-1.5 bg-card rounded-tile px-3 py-1.5 border-2 border-line">
         <span className="text-sm" aria-hidden="true">🔥</span>
-        <span className="text-sm font-extrabold text-ink">{data.streak > 0 ? data.streak : '—'}</span>
+        {data.streak > 0 ? (
+          <span className="text-sm font-extrabold text-ink">
+            {data.streak}
+            <span className="sr-only">{data.streak === 1 ? ' day streak' : ' days streak'}</span>
+          </span>
+        ) : (
+          <span className="text-sm font-extrabold text-ink">
+            <span aria-hidden="true">—</span>
+            <span className="sr-only">No streak yet</span>
+          </span>
+        )}
       </div>
       <div className="flex items-center gap-1.5 bg-card rounded-tile px-3 py-1.5 border-2 border-line">
         <span className="text-sm" aria-hidden="true">⭐</span>
@@ -151,16 +162,18 @@ export default async function HomePage() {
   let actions: NextAction[] = [];
   let loadFailed = false;
   try {
-    // The suggestion is an extra: if it cannot be worked out, Home still shows.
-    const loaded = await Promise.all([
-      loadHomeData(studentId),
-      getNextActions(studentId, { limit: 3 }).catch((err) => {
+    // One after the other, on purpose. `loadHomeData` brings the stored
+    // analytics up to date (the child may just have practised); the suggestion
+    // reads those analytics, so it must not start before they are written.
+    // Side by side, the card was always one visit behind Today's Plan.
+    data = await loadHomeData(studentId);
+    if (data) {
+      // The suggestion is an extra: if it cannot be worked out, Home still shows.
+      actions = await getNextActions(studentId, { limit: 3 }).catch((err) => {
         logError('[home] could not work out the next action', err);
         return [] as NextAction[];
-      }),
-    ]);
-    data = loaded[0];
-    actions = loaded[1];
+      });
+    }
   } catch (err) {
     logError('[home] could not load home data', err);
     loadFailed = true;
@@ -180,7 +193,11 @@ export default async function HomePage() {
   const continueTopic = pickContinueTopic(data);
   const displayTopics = pickDisplayTopics(data);
 
-  const milestone = STREAK_MILESTONES.find((m) => m.days === streak) ?? null;
+  // Only on the day the milestone is reached: the streak now carries over to the
+  // next morning, and yesterday's milestone must not be cheered a second time.
+  const milestone = data.practisedToday
+    ? STREAK_MILESTONES.find((m) => m.days === streak) ?? null
+    : null;
 
   const recentWin = recentActivity[0];
   const showRecentWin = !!recentWin && recentWin.pct >= 85 && isRecentWin(recentWin.timeAgo);
@@ -189,7 +206,12 @@ export default async function HomePage() {
   const planRows: PlanRow[] = (Array.isArray(data.dailyPlan) ? data.dailyPlan : [])
     .slice(0, 3)
     .map((item) => ({
-      id: String(item.id),
+      // What the row is ABOUT, not its place in the list: after practice the
+      // plan is worked out again, and a tick must not move on to a new topic
+      // that happens to take the same place.
+      id: typeof item.topicId === 'string' && item.topicId
+        ? `${String(item.type ?? 'practice')}:${item.topicId}`
+        : String(item.id),
       action: String(item.action ?? ''),
       type: String(item.type ?? 'practice'),
       targetUrl: isAppPath(item.targetUrl) ? item.targetUrl : '/chapters',
@@ -239,7 +261,9 @@ export default async function HomePage() {
           <div className="bg-hint border-2 border-hint-ink rounded-card px-4 py-2.5 flex items-center justify-between">
             <div>
               <p className="text-hint-ink font-extrabold text-sm"><span aria-hidden="true">🎉 </span>Pro Trial Active</p>
-              <p className="text-hint-ink text-xs font-medium">{`${student.trialDaysLeft} days left`}</p>
+              <p className="text-hint-ink text-xs font-medium">
+                {`${student.trialDaysLeft} ${student.trialDaysLeft === 1 ? 'day' : 'days'} left`}
+              </p>
             </div>
             <Link
               href="/pricing"
@@ -343,6 +367,9 @@ export default async function HomePage() {
         )}
 
       </div>
+
+      {/* Asks the server for this page again when the child comes back to an old copy of it. */}
+      <HomeRefresher token={String(Date.now())} />
 
       {/* Restores localStorage-only state (plan ticks, milestone) before first paint. */}
       <script dangerouslySetInnerHTML={{ __html: RESTORE_SCRIPT }} />
