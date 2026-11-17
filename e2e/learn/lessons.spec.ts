@@ -424,8 +424,17 @@ async function completeQuiz(page: import('@playwright/test').Page): Promise<bool
 
     await checkBtn.click();
 
-    // Wait for auto-advance (1200ms + buffer)
-    await page.waitForTimeout(2_000);
+    // A right answer moves on by itself; after a miss the child taps
+    // "Next question" (or "Finish" on the last one).
+    await page.waitForTimeout(600);
+    const nextBtn = page
+      .locator('button')
+      .filter({ hasText: /^(next question|finish)$/i })
+      .first();
+    if (await nextBtn.isVisible({ timeout: 1_500 }).catch(() => false)) {
+      await nextBtn.click();
+    }
+    await page.waitForTimeout(1_500);
 
     // Check if we reached the complete screen
     const completeText = page.getByText(/great job|keep practicing|perfect score/i).first();

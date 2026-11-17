@@ -225,7 +225,9 @@ test.describe('Profile — account section', () => {
     expect(hasGrade).toBeTruthy();
   });
 
-  test('subscription plan visible with upgrade link', async ({ authenticatedPage: page }) => {
+  // Payments are switched off (MONETIZATION_ENABLED = false), so the profile
+  // shows no plan or upgrade row. Re-enable this when the switch is turned on.
+  test.skip('subscription plan visible with upgrade link', async ({ authenticatedPage: page }) => {
     await page.goto('/profile', { waitUntil: 'domcontentloaded' });
     await waitForDataLoad(page);
 

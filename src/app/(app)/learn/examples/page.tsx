@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Sparky from '@/components/Sparky';
 import { logError } from '@/lib/logger';
@@ -74,6 +74,8 @@ export default function WorkedExamplesPage() {
   const [ready, setReady] = useState(false);
   // The child's grade from the app shell (null for a moment when it is not known yet).
   const studentGrade = useStudentGrade();
+  // True once the first list has been shown (or the empty-grade fallback used).
+  const fellBackRef = useRef(false);
 
   // The list opens on the child's own grade. A link from a topic page
   // (/learn/examples?topic=bodmas&grade=5) opens on that topic and grade.
@@ -91,6 +93,7 @@ export default function WorkedExamplesPage() {
   useEffect(() => {
     if (!ready) return;
     let live = true;
+    let refetching = false;
     const params = new URLSearchParams();
     if (selectedTopic) params.set('topic', selectedTopic);
     if (selectedGrade) params.set('grade', String(selectedGrade));
@@ -100,12 +103,20 @@ export default function WorkedExamplesPage() {
       .then((r) => { if (!r.ok) throw new Error("Fetch failed"); return r.json(); })
       .then((data) => {
         if (!live) return;
+        // A grade with no examples of its own opens on every grade instead of an empty page.
+        if (!fellBackRef.current && selectedGrade !== null && !selectedTopic && (data.examples ?? []).length === 0) {
+          fellBackRef.current = true;
+          refetching = true;
+          setSelectedGrade(null);
+          return;
+        }
+        fellBackRef.current = true;
         setExamples(data.examples ?? []);
         // The topic chips are the topics that have examples for the chosen grade.
         setTopics(data.topics ?? []);
       })
       .catch((err) => logError('[fetch]', err))
-      .finally(() => { if (live) setLoading(false); });
+      .finally(() => { if (live && !refetching) setLoading(false); });
     return () => { live = false; };
   }, [ready, selectedTopic, selectedGrade]);
 
@@ -119,7 +130,9 @@ export default function WorkedExamplesPage() {
         <Link href="/learn" aria-label="Back" className="text-white/70 hover:text-white text-lg font-bold min-h-[48px] min-w-[48px] flex items-center justify-center">&larr;</Link>
         <div className="flex-1">
           <h1 className="text-white text-title">Sparky Explains</h1>
-          <p className="text-white/70 text-sm font-medium">Worked examples with step-by-step solutions</p>
+          <p className="text-white/70 text-sm font-medium">
+            {loading ? 'Worked examples' : `${examples.length} worked examples`} with step-by-step solutions
+          </p>
         </div>
         <span className="text-2xl" aria-hidden="true">💡</span>
       </div>
@@ -164,7 +177,7 @@ export default function WorkedExamplesPage() {
         </div>
 
         {/* Topic chips */}
-        {topics.length > 0 && (
+        {(
           <div className="flex gap-1.5 mb-5 overflow-x-auto pb-1 flex-wrap">
             <button
               onClick={() => { setSelectedTopic(null); setLoading(true); }}
