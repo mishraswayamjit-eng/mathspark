@@ -1,0 +1,932 @@
+{
+ "BOOST_EXT_G4_FP_2017_009_07": {
+  "action": "remove",
+  "why": "variant: key says C (32); 16 / 6 is not whole, true value 32 2/3, no option is right"
+ },
+ "BOOST_EXT_G4_FP_2019_002_06": {
+  "action": "remove",
+  "why": "variant: answer is negative (-9); negative numbers are not Grade 4 work"
+ },
+ "BOOST_EXT_G4_FP_2023_039_07": {
+  "action": "remove",
+  "why": "variant: key says C (19); true answer 39/2 (= 19.5) is not among the options; 30 ÷ 4 does not divide exactly"
+ },
+ "BOOST_EXT_G4_FP_2025_001_07": {
+  "action": "remove",
+  "why": "variant: answer is 0.7 \"times\" (7000 / 10000); smaller-over-larger comparison is awkward for Grade 4"
+ },
+ "EXT_G4_FP_2016_003": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says B (2); 98 = 1 x 98 = 2 x 49 = 7 x 14, three ways (2 only if 1 x 98 is left out, which the question does not say) | 98 = 1x98 = 2x49 = 7x14, so 3 ways"
+ },
+ "EXT_G4_FP_2016_005": {
+  "action": "remove",
+  "why": "typo: \"6000 times\" should be \"1000 times\"; in all three numbers one 6 is worth 1000 times the other, so the key D is right only after that fix | In A, B and C the place values of the 6s are 1000 times apart, never 6000; if the question meant 1000 times, D (all) would fit"
+ },
+ "EXT_G4_FP_2016_006": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C (7); the primes with a 2 in them are 2, 23 and 29, so the key is pressed 3 times | Primes with a 2: 2, 23, 29, so 3 presses"
+ },
+ "EXT_G4_FP_2016_007": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says B (7); p = 21 / 3 = 7, so m / p = 21 / 7 = 3 | p = 21/3 = 7, m/p = 21/7 = 3"
+ },
+ "EXT_G4_FP_2016_010": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says B (2019); they are 7 years apart, so Sarika is twice as old when Surya is 7, in 2020 | Age gap 7, so Surya 7 and Sarika 14 in 2020"
+ },
+ "EXT_G4_FP_2016_013": {
+  "action": "remove",
+  "why": "unclear wording: question text is cut off; the same symbol needs two different digits (572 and 539) and \"greatest number\" is not explained | 517, 572, 539 give digits 1, 2, 3 (and the heart would be both 2 and 3); no option can be made from them, so the text is damaged"
+ },
+ "EXT_G4_FP_2016_014": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C; from South to North-East is 135 degrees anticlockwise (225 clockwise) | South to North-East is 135 deg anticlockwise (or 225 deg clockwise)"
+ },
+ "EXT_G4_FP_2016_016": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A (9); 18 oranges and 6 bananas, 9 dropped as 6 oranges and 3 bananas, so 12 oranges reach home | 18 oranges, 6 bananas; 9 dropped = 6 oranges + 3 bananas; 18 - 6 = 12"
+ },
+ "EXT_G4_FP_2016_018": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says A (9); V appears in IV, V, VI, VII, VIII and XIV, XV, XVI, XVII, XVIII, 10 times | V appears in 4-8 and 14-18, so 10 times"
+ },
+ "EXT_G4_FP_2016_022": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says D (80); the other angles can be 80 and 20, or 50 and 50, so 70 is the one that cannot occur | Triangles are 80,80,20 or 80,50,50; 70 deg is impossible"
+ },
+ "EXT_G4_FP_2016_023": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says C (21.5); for circles touching in a row the distance is 5 + 15 + 9 = 29 cm; needs a picture that is missing | Circles touching in a row: 5 + 15 + 9 = 29 cm"
+ },
+ "EXT_G4_FP_2016_024": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A (4 cm); four 1 cm squares have perimeters 16 cm, the rectangle 10 cm, difference 6 cm | Squares 4 x 4 = 16, rectangle 10, difference 6 cm"
+ },
+ "EXT_G4_FP_2016_027": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says D (2022); 26 Jan moves Tue 2016, Thu 2017, Fri 2018, Sat 2019, Sun 2020 | 26 Jan: 2017 Thu, 2018 Fri, 2019 Sat, 2020 Sun"
+ },
+ "EXT_G4_FP_2016_037": {
+  "action": "remove",
+  "why": "needs a picture that is missing | The magic square picture is missing"
+ },
+ "EXT_G4_FP_2017_002": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says B (81); MN - NM = 9 x (M - N), and with non-zero digits the most is 9 x 8 = 72 (91 - 19) | MN - NM = 9(M - N), largest 9 x 8 = 72"
+ },
+ "EXT_G4_FP_2017_004": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says D (10750); 122.5 cm / 5 cm = 24.5 reams, x 500 = 12250 sheets | 122.5 cm / 5 cm = 24.5 reams x 500 = 12250 sheets"
+ },
+ "EXT_G4_FP_2017_008": {
+  "action": "remove",
+  "why": "needs a picture that is missing (third scale not described) | The third scale is not described (picture missing)"
+ },
+ "EXT_G4_FP_2017_009": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says B; 5 x (7 + 3) - 10 = 40, while 5 x (7 + 3 - 10) = 0 | 5 x (7+3) - 10 = 40"
+ },
+ "EXT_G4_FP_2017_011": {
+  "action": "correct",
+  "to": "A",
+  "why": "unclear wording: question text is garbled; read as 5a + 10b = 55 and 5a + 20b = 105 it gives one 5p stamp (A), not the keyed B (3) | 5a + 10b = 55 and 5a + 20b = 105 give b = 5, a = 1"
+ },
+ "EXT_G4_FP_2017_012": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C (16); (113 - 1) / 7 + 1 = 17 terms | (113 - 1)/7 + 1 = 17 terms"
+ },
+ "EXT_G4_FP_2017_019": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A (216); 216 is not a multiple of 48; LCM of 48 and 54 is 432 | LCM(48,54) = 432"
+ },
+ "EXT_G4_FP_2017_023": {
+  "action": "remove",
+  "why": "reviewers differ; key A; first cannot (unclear wording: question text is garbled (IX to VI is 45 minutes, not 50); if it asks which move takes 50 minutes the answer would be D, not the keyed A); blind D likely (Read as: which move takes 50 minutes? VI to IV is 10 numbers = 50 min (IX to VI itself is 45))"
+ },
+ "EXT_G4_FP_2017_025": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C (6); d can be 5, 6, 7, 8 or 9, five values (2.0045 is less than 2.005) | d = 5,6,7,8,9 work (2.0055 > 2.005), so 5 values"
+ },
+ "EXT_G4_FP_2017_027": {
+  "action": "remove",
+  "why": "needs a picture that is missing; unclear wording: asks for A+B but options give A and B separately | The magic square picture is missing"
+ },
+ "EXT_G4_FP_2017_028": {
+  "action": "remove",
+  "why": "needs a picture that is missing | The figure is missing; if the L fits a 7 x 9 box the perimeter would be 32 cm, but that cannot be checked"
+ },
+ "EXT_G4_FP_2017_029": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says D (0); 9 - 6 + (8 - 5) = 6 | 9 - 6 + (8 - 5) = 6"
+ },
+ "EXT_G4_FP_2017_036": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says B (4); equal sides 6, 7, 8, 9, 10 or 11 with base 11, 9, 7, 5, 3 or 1 give 6 triangles | Equal sides 6 to 11 with base 11,9,7,5,3,1: 6 triangles"
+ },
+ "EXT_G4_FP_2017_037": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says C (108, which is the 8th term); differences 15, 14, 13, ... give 10th term 123 | Differences 15,14,13,...: 78,89,99,108,116,123"
+ },
+ "EXT_G4_FP_2017_039": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A (144); 7 x (11 + 13 - 6 + 2) = 7 x 20 = 140 | 7 x (11+13-6+2) = 140"
+ },
+ "EXT_G4_FP_2018_007": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A (11558); the product must end in 6 and be at least 108 x 107 = 11556, so only 36846 (138 x 267) fits | Must end in 6 and lie between 11556 and 995006: 36846 = 138 x 267"
+ },
+ "EXT_G4_FP_2018_011": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says B; XXXXIX and XXLIV are not valid Roman numerals, and of the valid ones XXXIX (39) is the largest | XXXIX = 39 and XXVIII = 28 are proper numerals; XXXXIX and XXLIV are not valid Roman numerals"
+ },
+ "EXT_G4_FP_2018_015": {
+  "action": "remove",
+  "why": "needs a picture that is missing | The figure is missing"
+ },
+ "EXT_G4_FP_2018_016": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C (5); digit sum 10 + 2 x star must be a multiple of 9, so star = 4 (8424 = 9 x 936) | 8+2+2x must be a multiple of 9: x = 4 (8424 = 9 x 936)"
+ },
+ "EXT_G4_FP_2018_020": {
+  "action": "remove",
+  "why": "needs a picture that is missing (price list) | The price list is missing"
+ },
+ "EXT_G4_FP_2018_022": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says C (14); 6 numbers end in 0 and 4 end in 4, so 10 | Ending 0: 6; ending 4: 4; total 10"
+ },
+ "EXT_G4_FP_2018_023": {
+  "action": "remove",
+  "why": "key says A (258); 17 rows x 14 people = 238, which is not offered (typo: 258 is probably 238) | 17 rows x 14 filled seats = 238 -- not among the options"
+ },
+ "EXT_G4_FP_2018_024": {
+  "action": "remove",
+  "why": "reviewers differ; key A; first cannot (needs a picture that is missing; no 3-digit and 2-digit number made of 4s and 9s differ by the keyed 359 (450 is possible, 499 - 49)); blind B guess (The sum to be completed is missing; 450 (499 - 49 or 494 - 44) is the only option any 3-digit and 2-digit number from these cards"
+ },
+ "EXT_G4_FP_2018_030": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C (100); LCM 96 + HCF 8 = 104 | LCM 96 + HCF 8 = 104"
+ },
+ "EXT_G4_FP_2018_033": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A (9); the palindrome is 424 (424 + 2018 = 2442), digit sum 10 | 424 + 2018 = 2442; 4+2+4 = 10"
+ },
+ "EXT_G4_FP_2018_036": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A; 91 + 19 = 110 is not a square, 157 + 68 = 225 = 15 x 15 | Only this pair adds to a square: 225 = 15 squared"
+ },
+ "EXT_G4_FP_2018_038": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says B (45); the numbers go down by 121, so 156 - 121 = 35 | Each term is 121 less: 156 - 121 = 35"
+ },
+ "EXT_G4_FP_2018_039": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A (3 cm); three 1 cm squares have perimeters 12 cm, the rectangle 8 cm, difference 4 cm | Squares 3 x 4 = 12, rectangle 8, difference 4 cm"
+ },
+ "EXT_G4_FP_2018_040": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says B; equal angles are 57° and 57° (third 66°) or (180 − 57) ÷ 2 = 61.5° each; 123° is impossible | Either 57,57,66 or 57,61.5,61.5; only 61.5 deg is listed"
+ },
+ "EXT_G4_FP_2019_010": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says B (8); both numbers have 4 in the ten-thousands place so the difference is 0; unclear wording (if the numbers are subtracted first the digit is 9, also not 8) | 97,43,753 and 49,682 both have 4 in the ten-thousands place: difference 0"
+ },
+ "EXT_G4_FP_2019_011": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A; 9 is not prime, so the greatest odd number from 2, 3, 5, 7 is 7523 | One-digit primes 2,3,5,7: greatest odd arrangement is 7523 (9 is not prime)"
+ },
+ "EXT_G4_FP_2019_012": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says B; swapping 2 and 1 gives 73152 (even, digit sum 18) which is divisible by 6; 73215 is odd | Digit sum 18 already divisible by 3; swapping 2 and 1 gives 73152, which is even"
+ },
+ "EXT_G4_FP_2019_014": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A; 93 + 17 = 110 is not a square, 57 + 24 = 81 = 9² | Only this pair adds to a square: 81 = 9 squared"
+ },
+ "EXT_G4_FP_2019_016": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says C (6); there are 8: 5347, 5437, 5473, 5743, 7345, 7435, 7453, 7543 | Start 5: end 3 or 7 (4 numbers); start 7: end 3 or 5 (4 numbers); total 8"
+ },
+ "EXT_G4_FP_2019_017": {
+  "action": "remove",
+  "why": "needs a picture that is missing | The figure is missing"
+ },
+ "EXT_G4_FP_2019_019": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says C; 0.0357 × 100 = 3.57 | 0.0357 x 100 = 3.57"
+ },
+ "EXT_G4_FP_2019_024": {
+  "action": "remove",
+  "why": "needs a picture that is missing (the magic square grid cannot be rebuilt from the text) | The magic square is garbled; its layout cannot be recovered from the text"
+ },
+ "EXT_G4_FP_2019_032": {
+  "action": "remove",
+  "why": "question text is garbled; a product of numbers ending in 7 and 9 must end in 3 and no option does | A number ending in 7 times one ending in 9 must end in 3; no option ends in 3"
+ },
+ "EXT_G4_FP_2019_040": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says B; at 2:30 the angle is 105°, at 7:30 it is 45° | At 7:30 the hour hand is at 225 deg and the minute hand at 180 deg: 45 deg"
+ },
+ "EXT_G4_FP_2020_009": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A; 17th Saturday means 3rd Saturday, so the 1st is Thursday | 17th, 10th, 3rd are Saturdays, so the 1st is Thursday"
+ },
+ "EXT_G4_FP_2020_011": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says A; a = 0, so 2 + 1 + 3 + 0 + b = 13 gives b = 7 | Remainder under 10 means a = 0; 2+1+3+0+b = 13 gives b = 7"
+ },
+ "EXT_G4_FP_2020_013": {
+  "action": "remove",
+  "why": "needs a picture that is missing (the magic square grid cannot be rebuilt from the text) | The magic square is garbled; its layout cannot be recovered from the text"
+ },
+ "EXT_G4_FP_2020_014": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says A; 5776 has digit sum 25; 6228 has digit sum 18 and is divisible by 9 | 6228: digit sum 18, 6228 = 9 x 692"
+ },
+ "EXT_G4_FP_2020_016": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says D; 16 = 3 + 13 = 5 + 11 (two ways), 25 = 2 + 23 only | 16 = 3+13 = 5+11; 4, 9 and 25 have only one way each"
+ },
+ "EXT_G4_FP_2020_021": {
+  "action": "remove",
+  "why": "needs a picture that is missing | The picture of the circles is missing"
+ },
+ "EXT_G4_FP_2020_023": {
+  "action": "remove",
+  "why": "reviewers differ; key C; first none (question text is garbled; as written ★ would be −5; if it was 11 ★/9 = 12 4/9 the answer is 13 (A), not the keyed 10); blind A likely (Read as mixed numbers: 11 and x/9 = 12 and 4/9 gives x = 13 (as a subtraction it would need -5))"
+ },
+ "EXT_G4_FP_2020_024": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C; 13 − 6 + 5 = 12 | 13 - 6 + 5 = 12"
+ },
+ "EXT_G4_FP_2020_025": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says B; 135° left then 225° right is a net 90° right turn, so he faces East | Net turn 225 - 135 = 90 deg right of north: East"
+ },
+ "EXT_G4_FP_2021_001": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C; 117/156 = 3/4 (divide both by 39) | 117/156, divide by 39 = 3/4"
+ },
+ "EXT_G4_FP_2021_012": {
+  "action": "remove",
+  "why": "question text is cut off: no measurement is given (the figure with the breadth is missing) | No length, breadth or area is given (figure or data missing)"
+ },
+ "EXT_G4_FP_2021_013": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says C; 108 is the 8th term, the 10th term is 123 | Differences 15,14,13,...: 78,89,99,108,116,123"
+ },
+ "EXT_G4_FP_2021_018": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A; 91 + 19 = 110 is not a square, 157 + 68 = 225 = 15² | Only this pair adds to a square: 225 = 15 squared"
+ },
+ "EXT_G4_FP_2021_020": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says B; swapping 2 and 1 gives 73152 which is divisible by 6; same question as EXT_G4_FP_2019_012 | Digit sum 18 already divisible by 3; swapping 2 and 1 gives 73152, which is even"
+ },
+ "EXT_G4_FP_2021_022": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says B; at 2:30 the angle is 105°, at 7:30 it is 45°; same question as EXT_G4_FP_2019_040 | At 7:30 the hour hand is at 225 deg and the minute hand at 180 deg: 45 deg"
+ },
+ "EXT_G4_FP_2021_025": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says A; the LCM is 280 (560 is a common multiple but not the least) | LCM = 2x2x2 x 5 x 7 = 280"
+ },
+ "EXT_G4_FP_2021_027": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A; 1 to 27 has 14 odd numbers, sum = 196 = 14² | 14 odd numbers, sum 196 = 14 squared"
+ },
+ "EXT_G4_FP_2021_031": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A; the difference is ★ × 9990, and only 69930 (★ = 7) fits; 49990 is not a multiple of 9990 (possible typo for 49950) | Difference = digit x (10000 - 10) = 9990 x digit; only 69930 fits (digit 7)"
+ },
+ "EXT_G4_FP_2021_036": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says B; 1/x = 4 − 5/6 = 19/6, so x = 6/19 | 1/x = 4 - 5/6 = 19/6, so x = 6/19"
+ },
+ "EXT_G4_FP_2021_038": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A; a = 7 cm, so the rectangle is 21 × 14 = 294 cm², which is \"None\" | a = 7 cm, area = 21 x 14 = 294 sq cm, not listed, so None"
+ },
+ "EXT_G4_FP_2022_002": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A; 2a = 10 so a = 5, which is \"None of these\" | 2a = 10, a = 5, not listed, so None of these"
+ },
+ "EXT_G4_FP_2022_005": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says D; the product must end in 6, and 97706 = 98 × 997 | Must end in 6 and be at most 98 x 997 = 97706; 97706 = 98 x 997"
+ },
+ "EXT_G4_FP_2022_006": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says D; with equal numerators the largest denominator (29) gives the smallest fraction | Same numerator: the largest denominator, 29, gives the smallest fraction"
+ },
+ "EXT_G4_FP_2022_012": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C; the greatest number is 47659, where 6 stands for 600 | Greatest is 47659; 6 is in the hundreds place: 600"
+ },
+ "EXT_G4_FP_2022_015": {
+  "action": "remove",
+  "why": "reviewers differ; key C; first cannot (needs a picture that is missing; 5 rays from a point give 10 angles, the keyed 15 needs 6 rays); blind A likely (5 rays from one point: 5 x 4 / 2 = 10 angles (figure not shown))"
+ },
+ "EXT_G4_FP_2022_016": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says D; 7532 − 2357 = 5175 | 7532 - 2357 = 5175"
+ },
+ "EXT_G4_FP_2022_021": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says B; 12.1212 + 17.005 − 9.1102 = 20.0160 | 29.1262 - 9.1102 = 20.0160"
+ },
+ "EXT_G4_FP_2022_022": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A; 588 = 2² × 3 × 7², so the least multiplier is 3, which is \"None of these\" | 588 = 2x2 x 3 x 7x7, needs x 3 (1764 = 42 squared); 3 not listed, so None of these"
+ },
+ "EXT_G4_FP_2022_024": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A; descending order is 0.219, 0.082, 0.07, 0.008, 0.0075, so 0.219 + 0.008 = 0.227 | Order 0.219, 0.082, 0.07, 0.008, 0.0075; 0.219 + 0.008 = 0.227"
+ },
+ "EXT_G4_FP_2022_028": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says A; (7 − 3)² = 16, (13 − 6)² = 49, so (24 − Z)² = 169 gives Z = 11; grid layout taken from the text (picture missing) | Each column: (top - middle) squared = bottom; (24 - Z) squared = 169 gives Z = 11"
+ },
+ "EXT_G4_FP_2022_030": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A; the gaps are the primes 2, 3, 5, 7, 11, 13, ... so the 12th term is 173 | Add the primes 2,3,5,7,11,13,...: 54,71,90,113,142,173"
+ },
+ "EXT_G4_FP_2022_034": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A; LCM 144 − HCF 4 = 140 | LCM 144 - HCF 4 = 140"
+ },
+ "EXT_G4_FP_2022_035": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says B; present ages are 23 and 21, so Vipul is 23 after 2 years | Now 44 together: Nirav 23, Vipul 21; Vipul in 2 years = 23"
+ },
+ "EXT_G4_FP_2022_036": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A; 9434 is not divisible by 11; the digit is 6 (9636 = 11 × 876), which is \"None of these\" | (9+3) - 2x must be a multiple of 11: x = 6 (9636 = 11 x 876); not listed, so None of these"
+ },
+ "EXT_G4_FP_2023_005": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A; LCM 455 + HCF 13 = 468 | LCM 455 + HCF 13 = 468"
+ },
+ "EXT_G4_FP_2023_006": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C; 108 pens in all, so 72 and 36; Mishti gives 97 − 72 = 25 | 97 - x = 2(11 + x), x = 25 (72 and 36)"
+ },
+ "EXT_G4_FP_2023_007": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says A; 1854 is too small for a 3-digit × 2-digit product; 51684 = 876 × 59 fits if the A digits may differ; unclear wording (if every A is the same digit no option fits) | With A standing for any digits: 51684 = 876 x 59; the others end wrong or are out of range (no option works if every A is t"
+ },
+ "EXT_G4_FP_2023_009": {
+  "action": "remove",
+  "why": "needs a picture that is missing (the magic square grid cannot be rebuilt from the text) | The magic square is garbled; its layout cannot be recovered from the text"
+ },
+ "EXT_G4_FP_2023_010": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says C; 2592 ÷ 144 = Rs.18 each, 68 × 18 = Rs.1224 | 1 gross = 144; 2592/144 = Rs 18 each; 18 x 68 = 1224"
+ },
+ "EXT_G4_FP_2023_011": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says B; 3x = 31, so 6x + 7 = 69, which is \"none of these\" (x is not a whole number; possible typo in the question) | 3x = 31, 6x = 62, 6x + 7 = 69; not listed, so none of these"
+ },
+ "EXT_G4_FP_2023_014": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says B; 162/126 = 18/14, so 3M = 18 and M = 6 | 3M/14 = 162/126 = 18/14, M = 6"
+ },
+ "EXT_G4_FP_2023_015": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C; 24 + 27 × 17 = 483 | 24 + 27 x 17 = 483"
+ },
+ "EXT_G4_FP_2023_017": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says C; 178 − [15 + 6 × 11] = 178 − 81 = 97 | 178 - (15 + 6 x 11) = 178 - 81 = 97"
+ },
+ "EXT_G4_FP_2023_020": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A; for N = 8, 3N − 14 = 10 but N + 3 = 11; 44 − 4N = 12 = 3N − 12 | N=8: 44-32=12 and 24-12=12; A gives 10 vs 11, C gives 86 vs 90"
+ },
+ "EXT_G4_FP_2023_022": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says B; 1234 + 25 = 1259 is not a square, 1234 + 62 = 1296 = 36² | 1234+62 = 1296 = 36^2; other options do not give squares"
+ },
+ "EXT_G4_FP_2023_026": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says D (246); the sum 11 + 13 + ... + 43 is 264 = CCLXIV | 11+13+17+19+23+29+31+37+41+43 = 264 = CCLXIV"
+ },
+ "EXT_G4_FP_2023_028": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A; m + n + p = 39, so p = 39 − 18 = 21, which is \"none of these\" | m+n+p = 78/2 = 39, p = 39-18 = 21, not 18/15/16"
+ },
+ "EXT_G4_FP_2023_029": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says D; the middle row is 3 × the top row and the bottom row is its square, so Q = 24² = 576 | Row 2 = 3 x row 1, row 3 = square of row 2: 24^2 = 576"
+ },
+ "EXT_G4_FP_2023_030": {
+  "action": "remove",
+  "why": "question text is cut off: the sum M48 + 32N = 1638 has no digit A and cannot be right as written (picture missing) | Garbled: no digit A in the sum, and M48+32N=1638 forces N=0. If a third addend 3A3 was lost, D fits (948+327+363=1638)"
+ },
+ "EXT_G4_FP_2023_036": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says B; 9672 has digit sum 24; 9486 is even with digit sum 27, so it is divisible by 18 | 9486 is even with digit sum 27; 9486/18 = 527"
+ },
+ "EXT_G4_FP_2023_038": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A; 26 January is Friday in 2024, Sunday in 2025, Monday in 2026 and Tuesday in 2027 | 26 Jan: 2023 Thu, 2024 Fri, 2025 Sun, 2026 Mon, 2027 Tue"
+ },
+ "EXT_G4_FP_2023_039": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says D; (16 + 24 ÷ 4) + 6 × 2 = 34; the bracket that works is (24 ÷ 4 + 6), which is \"none of these\" | A gives 22, B gives 17.5, D gives 34; only 16+(24/4+6)x2 = 40, which is not offered"
+ },
+ "EXT_G4_FP_2024_002": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says B; x + 9 is odd, so the 12th even number after it is x + 10 + 22 = x + 32 (x + 33 is odd) | x+9 is odd; even numbers after it are x+10, x+12, ...; 12th = x+10+22 = x+32"
+ },
+ "EXT_G4_FP_2024_003": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says B; 42° + 132° = 174°; same question as EXT_G4_FP_2023_008 (options in a different order) | (90-48)+(180-48) = 42+132 = 174"
+ },
+ "EXT_G4_FP_2024_006": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says C; 3 × 25 − (13 + 4) = 58; 3 × (25 − 13) + 4 = 40 | 3x(25-13)+4 = 36+4 = 40; B gives 48, C gives 58"
+ },
+ "EXT_G4_FP_2024_008": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A; 2 + 3 + 5 + 7 = 17 and 17² = 289, which is \"None of these\" (361 wrongly counts 1 or 9 as prime) | (2+3+5+7)^2 = 17^2 = 289, not offered"
+ },
+ "EXT_G4_FP_2024_015": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says C (28); grid as written gives centre 11, m = 18, n = 13, so m+n = 31; needs the picture of the grid, which is missing | Centre x: 16+x+6 = 3x so x=11, sum 33; n = 33-20 = 13, m = 33-15 = 18; m+n = 31"
+ },
+ "EXT_G4_FP_2024_018": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A (1658); only 43928 = 578 x 76 fits (1658 is too small and has no such factors) | Must end in 8 and lie in 3-digit x 2-digit range; 578 x 76 = 43928; 1658 and 980808 have no such factors"
+ },
+ "EXT_G4_FP_2024_021": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C (729); A=4, B=2, C=3, greatest odd number is 423 | A=4 (459), B=2 (522), C=3 (639); greatest odd from 4,2,3 = 423"
+ },
+ "EXT_G4_FP_2024_023": {
+  "action": "remove",
+  "why": "needs a picture that is missing | Figure missing; the four angles cannot be related without it"
+ },
+ "EXT_G4_FP_2024_024": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says A (256); 8 touching circles of diameter 8 cm in a 4x2 (or 8x1) grid give 32 x 16 = 512; needs a picture that is missing | Picture missing, but 2x4 (16x32) and 1x8 (8x64) both give 512"
+ },
+ "EXT_G4_FP_2024_025": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says B; 42 turns = 42 hours, 21 Apr 10:30 am + 42 h = 23 Apr 4:30 am | 42 turns = 42 hours; 21 Apr 10:30am + 42h = 23 Apr 4:30am"
+ },
+ "EXT_G4_FP_2024_026": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A (31); 49 - 36 + 2 + 14 = 29 | 49-36+2+(7x2) = 29"
+ },
+ "EXT_G4_FP_2024_027": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A (6); 2A - 4 must be a multiple of 11, so A = 2, which is not listed (60486 is not divisible by 11) | A-0+4-8+A = 2A-4 must be a multiple of 11, so A=2 (20482 = 11x1862); not 6, 3 or 1"
+ },
+ "EXT_G4_FP_2024_028": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says C (202); numbers are 7 and 9, 49 + 81 = 130 | 7 and 9: 49+81 = 130"
+ },
+ "EXT_G4_FP_2024_038": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says B (225); clockwise from south-west to north is 135 degrees (225 is the anticlockwise turn) | South-west to north clockwise = 45 (to west) + 90 = 135 degrees, not offered"
+ },
+ "EXT_G4_FP_2024_039": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A (85); differences 11, 10, 9, 8, 7, 6, 5, 4 give 9th term 72 | Differences 11,10,9,8,7,6,5,4: 12,23,33,42,50,57,63,68,72"
+ },
+ "EXT_G4_FP_2025_002": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A (CCXXXIII); MDCLXVI - MCDXLIV = 1666 - 1444 = 222 = CCXXII (also 666 - 444 if only I to D are used); unclear wording | Each of I,V,X,L,C,D,M once: greatest MDCLXVI=1666, smallest MCDXLIV=1444; 222 = CCXXII"
+ },
+ "EXT_G4_FP_2025_006": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says B (181); 7 squared + 11 squared = 49 + 121 = 170 | 7^2 + 11^2 = 49+121 = 170"
+ },
+ "EXT_G4_FP_2025_008": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says B; HCFs are 15, 15, 15, 30, so 30 and 90 is the odd one | HCFs are 15, 15, 15 and 30"
+ },
+ "EXT_G4_FP_2025_009": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A (3); 81 ÷ 16 = 5 remainder 1 | 81 = 16x5 + 1"
+ },
+ "EXT_G4_FP_2025_013": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says D (57); hour hand at 159, minute hand at 108, angle 51 degrees | Hour hand 150+9 = 159, minute hand 108; difference 51"
+ },
+ "EXT_G4_FP_2025_022": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A (5/18); there are 21 two-digit primes, 21/90 = 7/30 (5/18 counts the one-digit primes too) | 21 two-digit primes out of 90 two-digit numbers = 7/30"
+ },
+ "EXT_G4_FP_2025_023": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A (Rs.349.50); 12 oranges = Rs.78, 17 apples = Rs.255, total Rs.333, so \"None\" | Orange 130/20 = 6.50, apple 180/12 = 15; 12x6.50 + 17x15 = 78+255 = Rs.333, not offered"
+ },
+ "EXT_G4_FP_2025_026": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C (9604); greatest 2-digit multiple of 13 is 91, 91 squared = 8281 | 91^2 = 8281"
+ },
+ "EXT_G4_FP_2025_027": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says B (Monday); unclear wording (asks \"which month\" but options are days); in August 2024 Thursday, Friday and Saturday come 5 times, so Saturday | Wording garbled (asks 'which month' but options are days); read as which day came 5 times in Aug 2024: Thu, Fri, Sat; only Saturday offered"
+ },
+ "EXT_G4_FP_2025_028": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says C (172); length = 26 - 12 = 14, area = 14 x 12 = 168 | Length = 26-12 = 14; 14x12 = 168"
+ },
+ "EXT_G4_FP_2025_029": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says D (10:26); buses at 7:00, 7:36, 8:12, 8:48, 9:24, so next is 9:24 am | Buses 7:00, 7:36, 8:12, 8:48, 9:24; first after 8:50 is 9:24"
+ },
+ "EXT_G4_FP_2025_032": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A; 80 ÷ (10 + 2×3) + 12 = 5 + 12 = 17, while (80÷10+2)×3+12 = 42 | 80/(10+2x3)+12 = 5+12 = 17"
+ },
+ "EXT_G4_FP_2025_033": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says C (=); 2+4+6+8+12+16 = 48, which is less than 56 | 48 < 56"
+ },
+ "EXT_G4_FP_2025_035": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says C (35); m = 7, 2m + 25 = 39 | m=7; 14+25 = 39"
+ },
+ "EXT_G4_FP_2025_038": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says D (all same); a = 7, y = 9, values are 7, 10, 6, so 3p+a−y is greatest | a=7, y=9: A=7, B=10, C=6"
+ },
+ "EXT_G4_WS2_CH15_001": {
+  "action": "remove",
+  "why": "reviewers differ; key C; first cannot (needs a picture that is missing (magic square grid given only as a list)); blind C likely (Layout not shown; top row 11,7,21 (sum 39) with 3 at middle-right gives 11,7,21/23,13,3/5,19,15, so 17 is unused. 3 cannot be the centre (centre must be 13))"
+ },
+ "EXT_G4_WS2_CH15_003": {
+  "action": "remove",
+  "why": "needs a picture that is missing | Magic square picture missing; X, Y, Z not given"
+ },
+ "EXT_G4_WS2_CH15_004": {
+  "action": "remove",
+  "why": "needs a picture that is missing; two options are the same (A and C are both 5) | Magic square picture missing; also options A and C are both '5'"
+ },
+ "EXT_G4_WS2_CH16_008": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says B (163); differences 7, 8, 9, ... give 10th term 53 + 99 = 152 | Differences 7,8,9,...,15: 53,60,68,77,87,98,110,123,137,152"
+ },
+ "EXT_G4_WS2_CH16_010": {
+  "action": "remove",
+  "why": "reviewers differ; key A; first none (typo: 4th term is probably 1 2/5 (steps of 1/5, 2/5, 3/5), which would make the answer B (2 1/5); as written no option follows and the key 7/5 does not fit); blind B guess (As typed (1,2,4,6 fifths) there is no clear rule; if the 4th term is really 1 2/5 the differences are 1,2,3,"
+ },
+ "EXT_G4_WS2_CH16_016": {
+  "action": "remove",
+  "why": "needs a picture that is missing; if the pattern is the triangular numbers as the text says, the 8th is 36, which is not offered | 8th triangular number = 36, not offered; picture missing, so the real pattern may differ from the typed note"
+ },
+ "EXT_G4_WS2_CH17_004": {
+  "action": "remove",
+  "why": "reviewers differ; key B; first none (key says B (40); hours 10+11+12+1+2+3 = 29 plus 5 half-hours = 34, which is not offered); blind D likely (Hour strikes 10+11+12+1+2+3 = 39 (both ends counted) plus 5 half-hour strikes = 44)"
+ },
+ "EXT_G4_WS2_CH17_006": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says A (5:50); 5 hours x 10 min lost = 50 min, so the clock shows 5:10 am | Loses 5x10 = 50 min in 5 hours; shows 5:10 am"
+ },
+ "PH3_EXT_G4_FP_2020_037_04_b": {
+  "action": "remove",
+  "why": "variant: ratio 3:3:3: all three angles equal, so there is no \"largest\"; ratio not in lowest terms"
+ },
+ "PH3_EXT_G4_WS2_CH18_004_02_b": {
+  "action": "remove",
+  "why": "variant: ratio given as 24:66, which is just the two angles themselves; gives the answer away and the ratio is not simplified"
+ },
+ "PH3_EXT_G4_WS2_CH18_005_02_b": {
+  "action": "remove",
+  "why": "variant: ratio given as 42:48, which is just the two angles themselves; gives the answer away and the ratio is not simplified"
+ },
+ "PH3_EXT_G4_WS2_CH18_006_04_b": {
+  "action": "remove",
+  "why": "variant: ratio 2:2:2 means all angles equal, so there is no largest angle; ratio not simplified"
+ },
+ "PYQ_2016_Q21": {
+  "action": "remove",
+  "why": "needs a picture that is missing (side lengths of the rectangle) | Rectangle picture with side lengths missing"
+ },
+ "PYQ_2016_Q22": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says A; 80, 80, 20 and 80, 50, 50 are both possible, so 20, 50 and 80 can all occur; only 70 cannot | Other two angles are 80 and 20, or 50 and 50; 70 is impossible"
+ },
+ "PYQ_2016_Q23": {
+  "action": "remove",
+  "why": "reviewers differ; key B; first cannot (needs a picture that is missing; if the circles touch in the order given the distance is 5 + 15 + 9 = 29 cm (D), so the key B (22.5) looks wrong); blind D likely (Picture missing; circles touching in a row: 5 + 15 + 9 = 29 cm)"
+ },
+ "PYQ_2016_Q29": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says B; same perimeter shared over 4 sides gives a shorter side than over 3 sides, so side of square < side of triangle | 4s = 3t so s = 3t/4 < t"
+ },
+ "PYQ_2016_Q37": {
+  "action": "remove",
+  "why": "needs a picture that is missing (the magic square) | Magic square picture missing"
+ },
+ "PYQ_2017_Q08": {
+  "action": "remove",
+  "why": "needs a picture that is missing (the three balance scales) | Balance-scale pictures missing"
+ },
+ "PYQ_2017_Q27": {
+  "action": "remove",
+  "why": "needs a picture that is missing (the magic square) | Magic square picture missing"
+ },
+ "PYQ_2017_Q28": {
+  "action": "remove",
+  "why": "needs a picture that is missing (the figure and its side lengths) | Figure missing"
+ },
+ "PYQ_2017_Q36": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says B; equal sides 6, 7, 8, 9, 10, 11 with base 11, 9, 7, 5, 3, 1 all work, so there are 6 | 2a+b = 23 with b < 2a: b = 1,3,5,7,9,11 gives 6 triangles"
+ },
+ "PYQ_2018_Q15": {
+  "action": "remove",
+  "why": "needs a picture that is missing | Figure missing"
+ },
+ "PYQ_2018_Q19": {
+  "action": "remove",
+  "why": "needs a picture that is missing (the magic square) | Magic square picture missing"
+ },
+ "PYQ_2018_Q20": {
+  "action": "remove",
+  "why": "needs a picture that is missing (the price list of the books) | Price list missing"
+ },
+ "PYQ_2018_Q23": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says C; A to Q is 17 rows, 17 x 17 = 289 seats, 3 x 8 = 24 vacant, 289 - 24 = 265 | 17 rows (A to Q) x 17 = 289; minus 8x3 = 24 vacant = 265"
+ },
+ "PYQ_2018_Q25": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A; 19 + 17 = 36 and 36 / 18 = 2, so the number is 18 | 36/star = 2, star = 18"
+ },
+ "PYQ_2018_Q34": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says D; half a kilogram is 500 g and 500 / 2.5 = 200 beans | 500 g / 2.5 g = 200"
+ },
+ "PYQ_2018_Q36": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C; 59 + 52 = 111 is not a square, 157 + 68 = 225 = 15 x 15 | 157+68 = 225 = 15^2; others 110, 111, 154"
+ },
+ "PYQ_2018_Q37": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says C; 4 x (3a + 2b) = 12a + 8b = 2(6a + 4b) | 4(3a+2b) = 12a+8b = 2(6a+4b)"
+ },
+ "PYQ_2018_Q39": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C; three 1 cm squares have perimeters 3 x 4 = 12 cm, rectangle 8 cm, difference 4 cm | Three 1 cm squares: 3x4 = 12; rectangle 2(3+1) = 8; 4 cm more"
+ },
+ "PYQ_2019_Q11": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A; 9 is not prime, the one-digit primes are 2, 3, 5, 7 and the greatest odd number from them is 7523 | Digits 2,3,5,7: greatest odd arrangement is 7523"
+ },
+ "PYQ_2019_Q14": {
+  "action": "remove",
+  "why": "no pair has squares that add to a square (key C: 83x83 + 63x63 = 10858); question text looks mistranscribed, if it means the plain sum then D (57 + 24 = 81) is right | Sums of squares 8938, 8692, 10858, 3825: none is a perfect square (57 & 76 would give 95^2, so a pair is probably mistyped)"
+ },
+ "PYQ_2019_Q17": {
+  "action": "remove",
+  "why": "needs a picture that is missing | Figure missing"
+ },
+ "PYQ_2019_Q19": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says D; 0.0357 x 100 = 3.57 | 0.0357 x 100 = 3.57"
+ },
+ "PYQ_2019_Q24": {
+  "action": "remove",
+  "why": "needs a picture that is missing (the magic square) | Magic square picture missing"
+ },
+ "PYQ_2019_Q25": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A; 55 + 45 = 100, 65 + 25 = 90 | 65+25 = 90"
+ },
+ "PYQ_2019_Q32": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says C; two 3-digit numbers give at most 6 digits and the product must end in 2, so 312312 (= 507 x 616) | Must end in 2 and have 5 or 6 digits; 507 x 616 = 312312"
+ },
+ "PYQ_2019_Q33": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says D; 15 April 2020 is Wednesday (leap year, +2) and 15 April 2021 is Thursday | 15 Apr 2021 is a Thursday (Mon +2 for leap year 2020, +1 for 2021)"
+ },
+ "PYQ_2019_Q34": {
+  "action": "correct",
+  "to": "C",
+  "why": "key says D; 55 and 70 leave 55, giving two equal angles; 60 and 40 leave 80 | 55 and 70 leave a third angle of 55; the others leave 40, 60, 80 with no repeat"
+ },
+ "Q_CH01_016": {
+  "action": "correct",
+  "to": "B",
+  "why": "key says A (4); even numbers between 11 and 21 are 12, 14, 16, 18, 20, so 5 | 12, 14, 16, 18, 20"
+ },
+ "Q_CH01_030": {
+  "action": "remove",
+  "why": "key says A (52,342); the clues give 52,422 (tens = thousands = 2, hundreds = 4), which is not among the options | Clues force 5 _ 4 _ 2 with equal tens and thousands and digit sum 15: 52,422, not offered"
+ },
+ "Q_CH09_017": {
+  "action": "correct",
+  "to": "A",
+  "why": "key says B (5); 157 = 26 x 6 + 1, remainder 1 (the stored steps contradict themselves) | 157 = 6x26 + 1"
+ },
+ "Q_CH15_005": {
+  "action": "remove",
+  "why": "grid as shown is impossible (3 in the centre while the top row adds to 39, so the centre must be 13); if the 3 belongs in the right-hand cell of the middle row the key C (17) is right; unclear wording (\"from a set\") and the written steps are muddled | Grid as typed is impossible: top row sums to 39 "
+ },
+ "Q_CH15_012": {
+  "action": "remove",
+  "why": "reviewers differ; key A; first cannot (unclear pattern: row 3 gives 21 + 15 = 36 but row 1 gives 54 + 46 = 100, not 10 (likely typo, 10 should be 100; then key A = 64 is right); written steps are muddled); blind A likely (Row 3: 21+15 = 36, so third = sum of first two; 40+24 = 64. Row 1 gives 100, so the typed 10 loo"
+ },
+ "Q_CH15_015": {
+  "action": "remove",
+  "why": "needs a picture that is missing; the natural rule (3x5 + 5x7 + 7x3 = 71) gives 44, which is not an option; the written steps admit they cannot justify the key 41 | Best-fitting rule is sum of pairwise products (15+35+21 = 71), giving 8+24+12 = 44, not offered; no rule found that reaches an option"
+ },
+ "Q_CH15_016": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A (2); the top-left corner can be 2, 4, 6 or 8 depending on how the square is turned, so only D (any even number) is right | With 5 in the centre every corner is even, and 2, 4, 6 or 8 can each be top-left"
+ },
+ "Q_CH17_022": {
+  "action": "correct",
+  "to": "D",
+  "why": "key says A (7th); 3 Aug 2016 (7th birthday) was a Wednesday and 3 Aug 2017 (8th birthday) was a Thursday; the written steps also reach 8th and then override it | 3 Aug: 2015 Mon, 2016 Wed, 2017 Thu, which is the 8th birthday"
+ },
+ "Q_CH21_002": {
+  "action": "remove",
+  "why": "reviewers differ; key C; first cannot (unclear wording: a circle is usually said to have 0 sides, so A and C are both defensible; the solution steps admit this); blind A likely (A circle has no corners and no straight sides (school convention))"
+ },
+ "Q_DH_003": {
+  "action": "remove",
+  "why": "needs a picture that is missing: the tally strike-through is not shown; as printed (IIII III) it reads as 7 (option A), the key 8 assumes a crossed bundle of five | Tally typed without its strike: 4+3 = 7 as typed (A), but if the first group is a crossed bundle of five it is 8 (B)"
+ },
+ "VAR2_EXT_G4_WS2_CH12_001_02": {
+  "action": "remove",
+  "why": "variant: 8000 ml / 300 ml does not divide evenly (26 full glasses, 200 ml over); steps wrongly say 8000 / 300 = 26"
+ },
+ "VAR_EXT_G4_FP_2016_005_04": {
+  "action": "remove",
+  "why": "variant: \"how many times\" gives 0.6 (60 / 100); a fractional \"times\" is a silly question for Grade 4"
+ },
+ "VAR_EXT_G4_FP_2021_039_03": {
+  "action": "remove",
+  "why": "variant: key says B (20); 16 ÷ 6 + 3 × 6 = 20 2/3, not among the options; 16 ÷ 6 does not come out whole"
+ },
+ "VAR_EXT_G4_FP_2022_011_04": {
+  "action": "remove",
+  "why": "variant: answer is a decimal less than 1 \"times\" (0.9); smaller value compared to larger"
+ },
+ "VAR_EXT_G4_FP_2022_012_01": {
+  "action": "remove",
+  "why": "variant: answer is a decimal less than 1 \"times\" (0.5); smaller value compared to larger"
+ },
+ "VAR_EXT_G4_FP_2023_023_03": {
+  "action": "remove",
+  "why": "variant: key says B (14); true answer 44/3 (= 14.667) is not among the options; 16 ÷ 6 does not divide exactly"
+ },
+ "VAR_EXT_G4_FP_2023_039_03": {
+  "action": "remove",
+  "why": "variant: key says A (16); true answer 33/2 (= 16.5) is not among the options; 18 ÷ 4 does not divide exactly"
+ },
+ "VAR_EXT_G4_FP_2025_007_02": {
+  "action": "remove",
+  "why": "variant: answer is negative (23 - 50 + 2 = -25) and all distractors negative; not Grade 4 material"
+ },
+ "VAR_EXT_G4_FP_2025_018_04_b2": {
+  "action": "remove",
+  "why": "variant: answer is 0.6 \"times\" (60 / 100); smaller-over-larger comparison is awkward for Grade 4"
+ },
+ "VAR_EXT_G4_FP_2025_032_03": {
+  "action": "remove",
+  "why": "variant: key says A (27); 30 / 4 + 5 x 4 = 27.5, no option is right; 30 is not divisible by 4"
+ },
+ "VAR_EXT_G4_WS2_CH11_008_04": {
+  "action": "remove",
+  "why": "variant: answer is 0.1 \"times\" (90 / 900); smaller-over-larger comparison is awkward for Grade 4"
+ }
+}
