@@ -227,9 +227,10 @@ export function buildGradeBlueprint(grade: number, cfg: PaperConfig): BlueprintS
  * more than one grade. `fullSize` is the number of questions on the real paper.
  * Grades 2 and 7 have no papers split by year.
  */
-const PAST_PAPER_FAMILY: Record<number, { prefix: string; topicId?: string; fullSize: number }> = {
+const PAST_PAPER_FAMILY: Record<number, { prefix: string; alsoPrefix?: string; topicId?: string; fullSize: number }> = {
   3: { prefix: 'g3_mega_final_', topicId: 'grade3', fullSize: 15 },
-  4: { prefix: 'previous_year_', fullSize: 40 },
+  // Grade 4's papers came in two batches: 2016-2019 as previous_year_, 2020 onwards as g4_mse_final_.
+  4: { prefix: 'previous_year_', alsoPrefix: 'g4_mse_final_', fullSize: 40 },
   5: { prefix: 'g5_final_', topicId: 'grade5', fullSize: 40 },
   6: { prefix: 'g6_final_', topicId: 'grade6', fullSize: 40 },
   8: { prefix: 'mega_final_', topicId: 'grade8', fullSize: 15 },
@@ -254,29 +255,42 @@ function pastPaperMinutes(questions: number): number {
   return Math.ceil((questions * PAST_PAPER_MS_PER_QUESTION) / 60000);
 }
 
+function pastPaperPrefixes(family: { prefix: string; alsoPrefix?: string }): string[] {
+  return family.alsoPrefix ? [family.prefix, family.alsoPrefix] : [family.prefix];
+}
+
 /** The real past papers that can be offered to a grade, newest first. */
 export async function listPastPapers(grade: number): Promise<PastPaperInfo[]> {
   const family = PAST_PAPER_FAMILY[grade];
   if (!family) return [];
 
+  const prefixes = pastPaperPrefixes(family);
   const groups = await prisma.question.groupBy({
     by: ['source'],
     where: {
-      source: { startsWith: family.prefix },
+      OR: prefixes.map((p) => ({ source: { startsWith: p } })),
       ...(family.topicId ? { topicId: family.topicId } : {}),
       ...USABLE_QUESTION_FILTER,
     },
     _count: { _all: true },
   });
 
+  // One paper per year; if both batches hold a year, the first prefix wins.
   const papers: PastPaperInfo[] = [];
-  for (let i = 0; i < groups.length; i++) {
-    const source = groups[i].source;
-    const tail = source.slice(family.prefix.length);
-    if (!/^\d{4}$/.test(tail)) continue;
-    const questions = groups[i]._count._all;
-    if (questions < family.fullSize * PAST_PAPER_MIN_SHARE) continue;
-    papers.push({ year: parseInt(tail, 10), questions, fullSize: family.fullSize, minutes: pastPaperMinutes(questions) });
+  const seenYears: Record<number, boolean> = {};
+  for (let p = 0; p < prefixes.length; p++) {
+    for (let i = 0; i < groups.length; i++) {
+      const source = groups[i].source;
+      if (source.indexOf(prefixes[p]) !== 0) continue;
+      const tail = source.slice(prefixes[p].length);
+      if (!/^\d{4}$/.test(tail)) continue;
+      const year = parseInt(tail, 10);
+      if (seenYears[year]) continue;
+      const questions = groups[i]._count._all;
+      if (questions < family.fullSize * PAST_PAPER_MIN_SHARE) continue;
+      seenYears[year] = true;
+      papers.push({ year, questions, fullSize: family.fullSize, minutes: pastPaperMinutes(questions) });
+    }
   }
   papers.sort((a, b) => b.year - a.year);
   return papers;
@@ -291,10 +305,10 @@ export async function generatePYQPaper(year: PYQYear, grade: number = 4) {
   if (!family) {
     throw new Error(`No past papers for grade ${grade}`);
   }
-  const source = `${family.prefix}${year}`;
+  const sources = pastPaperPrefixes(family).map((p) => `${p}${year}`);
 
-  const questions = await prisma.question.findMany({
-    where: { source, ...(family.topicId ? { topicId: family.topicId } : {}), ...USABLE_QUESTION_FILTER },
+  const found = await prisma.question.findMany({
+    where: { source: { in: sources }, ...(family.topicId ? { topicId: family.topicId } : {}), ...USABLE_QUESTION_FILTER },
     // Ids carry the question number (PYQ_2016_Q01, EXT_G5_FP_2016_002), so this is the paper's order.
     orderBy: { id: 'asc' },
     select: {
@@ -307,6 +321,10 @@ export async function generatePYQPaper(year: PYQYear, grade: number = 4) {
       subTopic: true, year: true, questionNumber: true,
     },
   });
+
+  // If both batches hold this year, the first prefix's paper is the one offered.
+  const first = found.filter((q) => q.source === sources[0]);
+  const questions = first.length > 0 ? first : found;
 
   if (questions.length === 0) {
     throw new Error(`No PYQ questions found for year ${year}`);
@@ -324,7 +342,10 @@ export async function generatePYQPaper(year: PYQYear, grade: number = 4) {
 
 // ── IPM Blueprint Paper Generator ─────────────────────────────────────────────
 
-const PYQ_SOURCES = ['previous_year_2016', 'previous_year_2017', 'previous_year_2018', 'previous_year_2019'];
+const PYQ_SOURCES = [
+  'previous_year_2016', 'previous_year_2017', 'previous_year_2018', 'previous_year_2019',
+  'g4_mse_final_2020', 'g4_mse_final_2021', 'g4_mse_final_2022', 'g4_mse_final_2023', 'g4_mse_final_2024', 'g4_mse_final_2025',
+];
 
 /**
  * Sources excluded from generated mock papers. PYQ pools are always reserved for

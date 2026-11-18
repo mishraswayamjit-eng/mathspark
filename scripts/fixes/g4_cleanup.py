@@ -49,7 +49,8 @@ def value(text):
             return round(float(m.group(1)) / float(m.group(2)), 9)
         return round(float(t), 9)
     except ValueError:
-        return norm(text)
+        # Not a number: compare the text itself, keeping signs and symbols (5x-10 is not 5x+10).
+        return re.sub(r"\s+", "", (text or "").lower())
 
 
 def is_real(q):
