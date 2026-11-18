@@ -55,7 +55,16 @@ def main():
         dump("g4-in-%d.json" % (i + 1), [brief(q, names4) for q in chunk])
         print("g4-in-%d.json  %d questions" % (i + 1, len(chunk)))
 
+    # Grade 5, in full: for re-rating every question the same way.
     names5 = {n["id"]: n["name"] for n in bank.tree_nodes(5)}
+    rows5 = sorted(bank.load_bank(5), key=lambda q: mix(q["id"]))
+    parts5 = 7
+    size5 = (len(rows5) + parts5 - 1) // parts5
+    for i in range(parts5):
+        chunk = rows5[i * size5:(i + 1) * size5]
+        dump("g5-in-%d.json" % (i + 1), [brief(q, names5) for q in chunk])
+        print("g5-in-%d.json  %d questions" % (i + 1, len(chunk)))
+
     thirds = {1: [], 2: [], 3: []}
     for q in sorted(bank.load_bank(5), key=lambda q: mix(q["id"])):
         m = re.search(r"_(\d{1,3})$", q["id"])

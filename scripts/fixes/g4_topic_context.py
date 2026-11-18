@@ -21,6 +21,7 @@ def main():
         g4.dump("topic-%s.json" % n["id"], [{
             "id": q["id"], "source": q.get("source"),
             "real": (q.get("source") or "").startswith(("g4_mse_final", "previous_year")),
+            "newlyWritten": q.get("source") == "g4_authored",
             "difficulty": q.get("difficulty"), "question": q.get("questionText"),
             "options": [o["text"] for o in q["options"]],
             "rightAnswer": next((o["text"] for o in q["options"] if o["id"] == q.get("correctAnswer")), ""),

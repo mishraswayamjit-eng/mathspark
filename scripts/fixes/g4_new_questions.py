@@ -46,7 +46,8 @@ def written():
     """Every new question, with its id, in a fixed order."""
     out = []
     counters = collections.Counter()
-    for path in sorted(glob.glob(os.path.join(G4, "new-[0-9].json"))):
+    paths = [p for p in glob.glob(os.path.join(G4, "new-*.json")) if re.search(r"new-(\d+)\.json$", p)]
+    for path in sorted(paths, key=lambda p: int(re.search(r"new-(\d+)\.json$", p).group(1))):
         for p in load(path):
             counters[p["topic"]] += 1
             qid = "G4A_%s_%03d" % (p["topic"].replace("gr4_", "").upper(), counters[p["topic"]])
