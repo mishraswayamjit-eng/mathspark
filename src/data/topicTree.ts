@@ -36,7 +36,14 @@ const GRADE4_TOPICS: TopicNode[] = [
   { id: 'gr4_quads',      name: 'Quadrilaterals',              emoji: '⬜', grade: 4, examWeight: 0.05, dbTopicId: 'ch20' },
   { id: 'gr4_circle',     name: 'Circle',                      emoji: '⭕', grade: 4, examWeight: 0.03, dbTopicId: 'ch21' },
   { id: 'gr4_data',       name: 'Data Handling & Graphs',      emoji: '📈', grade: 4, examWeight: 0.00, dbTopicId: 'dh' },
-  { id: 'gr4_ipm',        name: 'IPM Past Papers',             emoji: '🎓', grade: 4, examWeight: 0.20, dbTopicId: 'grade4' },
+  // Topics the real papers test that are not chapters of the Grade 4 book. They share the
+  // 'grade4' pool and are told apart by the question's label, as in Grades 5 and up.
+  // (The old "IPM Past Papers" topic is gone: past-paper questions are filed under the
+  // topic they test, and the papers themselves are offered as tests.)
+  { id: 'gr4_squares',    name: 'Squares & Square Roots',      emoji: '⏹️', grade: 4, examWeight: 0.05, dbTopicId: 'grade4', subTopicKey: 'square' },
+  { id: 'gr4_ratio',      name: 'Ratio & Proportion',          emoji: '⚖️', grade: 4, examWeight: 0.03, dbTopicId: 'grade4', subTopicKey: 'ratio' },
+  { id: 'gr4_ages',       name: 'Age Problems',                emoji: '🎂', grade: 4, examWeight: 0.03, dbTopicId: 'grade4', subTopicKey: 'age' },
+  { id: 'gr4_counting',   name: 'Counting & Arrangements',     emoji: '🔟', grade: 4, examWeight: 0.04, dbTopicId: 'grade4', subTopicKey: 'counting' },
 ];
 
 // ── Grade 2 ───────────────────────────────────────────────────────────────────

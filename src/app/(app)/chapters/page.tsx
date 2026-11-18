@@ -142,60 +142,13 @@ export default function ChaptersPage() {
     return allT.filter((t) => t.id === `grade${selectedGrade}`);
   }, [data?.topics, selectedGrade]);
 
-  // Grade 4 IPM pool card (separate from ch-series grid)
-  const grade4PoolTopic = useMemo(
-    () => selectedGrade === 4 ? (data?.topics ?? []).find((t) => t.id === 'grade4') ?? null : null,
-    [data?.topics, selectedGrade],
-  );
-
-  // "Also accessible" lower grades (only shown for non-grade-4 selected tabs)
-  const lowerGrades = useMemo(
-    () => selectedGrade !== 4 ? fullAccess.filter((g) => g < selectedGrade).sort((a, b) => b - a) : [],
-    [fullAccess, selectedGrade],
-  );
-
-  // Progress by database topic id, for the shared topic list. The dashboard
-  // only reports the child's own grade, so another grade's tab shows no numbers.
-  const topicProgress = useMemo(() => progressByTopicId(data?.topics), [data?.topics]);
-
-  // Syllabus coverage stats (used by the coverage bar)
-  const syllabusCoverage = useMemo(() => {
-    const started = topicsForGrade.filter((t) => t.attempted >= 5).length;
-    const total = topicsForGrade.length || 1;
-    const pct = Math.round(started / total * 100);
-    return { started, total, pct };
-  }, [topicsForGrade]);
-
-  // Weak topics for recommendations
-  const weakTopics = useMemo(() => {
-    return [...topicsForGrade]
-      .filter((t) => t.attempted > 0 && t.mastery !== 'Mastered')
-      .sort((a, b) => (a.correct / Math.max(a.attempted, 1)) - (b.correct / Math.max(b.attempted, 1)))
-      .slice(0, 2);
-  }, [topicsForGrade]);
-
-  if (loading) return <ChaptersSkeleton />;
-  if (fetchError || !data) return (
-    <div className="min-h-screen bg-paper flex flex-col items-center justify-center gap-4 pb-24">
-      <p className="text-ink font-extrabold text-lg">Oops! Sparky tripped over a number</p>
-      <p className="text-ink-muted text-sm">Could not load chapters. Check your connection.</p>
-      <button onClick={() => window.location.reload()} className="min-h-[48px] bg-action hover:bg-action-dark text-white font-extrabold px-6 py-2.5 rounded-control border-2 border-ink shadow-hard-sm text-sm active:scale-95 transition-transform">
-        Retry
-      </button>
-    </div>
-  );
-
-  const studentName      = data.student.name;
-  const streakDays       = data.stats.streakDays;
-  const xp               = data.stats.totalLifetimeXP;
-  const todayCorrect     = data.weeklyData?.[data.weeklyData.length - 1]?.count ?? 0;
-  const goalMet          = todayCorrect >= DAILY_GOAL;
-
   // In a keyed grade (Grade 5 and the like) every topic shares ONE progress
   // record, for the whole grade. A count of "topics started" worked out from it
   // would say 1 of 1 after five questions, so it is not shown for such a grade,
   // and "Recommended for You" must name one topic, not the whole grade.
-  const sharesProgress = getListedTopics(selectedGrade).some((n) => Boolean(n.subTopicKey));
+  // (Grade 4 has both kinds: chapters with their own record, and a few added topics that
+  // share one. Its chapters still count, so this is true only when EVERY topic shares.)
+  const sharesProgress = getListedTopics(selectedGrade).every((n) => Boolean(n.subTopicKey));
   // The weakest single topic, as the dashboard already works it out: a link
   // that opens exactly that topic (it carries `subTopic=`), and its name.
   const weakest = data as unknown as { weakestTopicHref?: string | null; weakestTopicLabel?: string | null };
@@ -423,27 +376,24 @@ export default function ChaptersPage() {
 
         {selectedGrade === 4 ? (
           <>
-            {/* Grade 4 IPM Past Papers card (the whole-grade pool, not a topic) */}
-            {grade4PoolTopic && (
-              <div className="mt-6">
-                <p className="text-xs font-extrabold mb-2 text-ink-muted">
-                  <span aria-hidden="true">📄 </span>IPM Past Papers
-                </p>
-                <button
-                  onClick={() => router.push('/practice/grade4')}
-                  className="w-full text-left bg-white border-2 border-line rounded-card p-4 flex items-center gap-4 active:scale-[0.98] transition-transform"
-                >
-                  <span className="text-3xl" aria-hidden="true">🏆</span>
-                  <div className="flex-1">
-                    <p className="text-ink font-extrabold text-sm">Grade 4 — IPM Past Papers</p>
-                    <p className="text-ink-muted text-xs mt-0.5">
-                      {grade4PoolTopic.correct} correct · {grade4PoolTopic.mastery === 'Mastered' ? '✅ Mastered' : grade4PoolTopic.mastery === 'Practicing' ? '🟡 In progress' : 'Not started'}
-                    </p>
-                  </div>
-                  <span className="text-ink-muted text-sm">→</span>
-                </button>
-              </div>
-            )}
+            {/* Past papers are taken as tests. Their questions are also filed under the
+                topic each one tests, so every topic above ends on real exam questions. */}
+            <div className="mt-6">
+              <p className="text-xs font-extrabold mb-2 text-ink-muted">
+                <span aria-hidden="true">📄 </span>IPM Past Papers
+              </p>
+              <button
+                onClick={() => router.push('/test')}
+                className="w-full text-left bg-white border-2 border-line rounded-card p-4 min-h-[48px] flex items-center gap-4 active:scale-[0.98] transition-transform"
+              >
+                <span className="text-3xl" aria-hidden="true">🏆</span>
+                <div className="flex-1">
+                  <p className="text-ink font-extrabold text-sm">Try a real IPM paper</p>
+                  <p className="text-ink-muted text-xs mt-0.5">Past papers, timed like the real exam</p>
+                </div>
+                <span className="text-ink-muted text-sm" aria-hidden="true">→</span>
+              </button>
+            </div>
           </>
         ) : (
           // Other grades: lower-grade tiles
