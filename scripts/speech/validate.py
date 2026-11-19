@@ -4,7 +4,14 @@
     python -X utf8 scripts/speech/validate.py --topic fractions
     python -X utf8 scripts/speech/validate.py --build         # check, then write src/data/questionSpeech/speech.json
 
-A part file is data/question-speech/parts/<topic>.json:
+    python -X utf8 scripts/speech/validate.py --g4 gr4_fractions   # check one Grade 4 part
+
+Grade 5 parts are data/question-speech/parts/<topic>.json (ten topics by subject).
+Grade 4 parts are data/question-speech/parts-g4/<topic id>.json, one per topic of the
+tree (gr4_fractions, gr4_angles, ...); a question's part is the topic it is filed under.
+Both grades are checked by the same rules and built into the one served file.
+
+A part file is:
     { "<question id>": { "q": "...", "options": ["...", "...", "...", "..."], "hints": ["...", "...", "..."], "steps": ["...", ...] } }
 
 What is enforced, for every string:
@@ -24,7 +31,10 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import common  # noqa: E402
 from common import PARTS, ROOT, TOPICS, load_grade5, number_tokens, source_strings, topic_of  # noqa: E402
+
+PARTS_G4 = os.path.join(ROOT, "data", "question-speech", "parts-g4")
 
 OUT = os.path.join(ROOT, "src", "data", "questionSpeech", "speech.json")
 MAX_CHARS = 700
@@ -87,15 +97,18 @@ def check_entry(qid, entry, q):
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument("--topic", choices=TOPICS, help="check only this topic's part file")
+    parser.add_argument("--g4", metavar="TOPIC_ID", help="check only this Grade 4 part (for example gr4_fractions)")
     parser.add_argument("--build", action="store_true", help="write the merged file the app serves")
     parser.add_argument("--max", type=int, default=60, help="how many problems to print")
     args = parser.parse_args()
-    if args.build and args.topic:
-        sys.exit("--build always uses every part; drop --topic")
+    if args.build and (args.topic or args.g4):
+        sys.exit("--build always uses every part; drop --topic / --g4")
 
     questions = {q["id"]: q for q in load_grade5()}
     totals = collections.Counter(topic_of(q) for q in questions.values())
     files = [os.path.join(PARTS, args.topic + ".json")] if args.topic else sorted(glob.glob(os.path.join(PARTS, "*.json")))
+    if args.g4:
+        files = []
 
     merged = {}
     covered = collections.Counter()
@@ -123,9 +136,48 @@ def main():
                     merged[qid] = entry
                     covered[slug] += 1
 
-    for slug in ([args.topic] if args.topic else TOPICS):
-        print("  %-22s %4d of %4d questions pass" % (slug, covered[slug], totals[slug]))
-    print("  %-22s %4d of %4d" % ("total", sum(covered.values()), sum(totals[s] for s in ([args.topic] if args.topic else TOPICS))))
+    # Grade 4: one part per topic of the tree.
+    g4_nodes = [n["id"] for n in common.bank.tree_nodes(4)]
+    g4_questions = {q["id"]: q for q in common.bank.load_bank(4)}
+    g4_totals = collections.Counter(q.get("node") for q in g4_questions.values())
+    g4_covered = collections.Counter()
+    g4_files = []
+    if args.g4:
+        g4_files = [os.path.join(PARTS_G4, args.g4 + ".json")]
+    elif not args.topic:
+        g4_files = sorted(glob.glob(os.path.join(PARTS_G4, "*.json")))
+    for path in g4_files:
+        node = os.path.splitext(os.path.basename(path))[0]
+        if node not in g4_nodes:
+            problems.append("%s: not a Grade 4 topic id" % os.path.basename(path))
+            continue
+        if not os.path.exists(path):
+            problems.append("%s: no part file yet" % node)
+            continue
+        with io.open(path, encoding="utf-8") as f:
+            part = json.load(f)
+        for qid, entry in part.items():
+            q = g4_questions.get(qid)
+            if q is None:
+                problems.append("%s: %s is not a Grade 4 question" % (node, qid))
+            elif q.get("node") != node:
+                problems.append("%s: %s belongs to topic %s" % (node, qid, q.get("node")))
+            else:
+                found = check_entry(qid, entry, q)
+                problems += found
+                if not found:
+                    merged[qid] = entry
+                    g4_covered[node] += 1
+
+    if not args.g4:
+        for slug in ([args.topic] if args.topic else TOPICS):
+            print("  %-22s %4d of %4d questions pass" % (slug, covered[slug], totals[slug]))
+        print("  %-22s %4d of %4d" % ("total", sum(covered.values()), sum(totals[s] for s in ([args.topic] if args.topic else TOPICS))))
+    if not args.topic:
+        shown = [args.g4] if args.g4 else g4_nodes
+        for node in shown:
+            print("  %-22s %4d of %4d questions pass" % (node, g4_covered[node], g4_totals[node]))
+        print("  %-22s %4d of %4d" % ("Grade 4 total", sum(g4_covered.values()), sum(g4_totals[n] for n in shown)))
 
     if problems:
         print("\n%d PROBLEMS" % len(problems))
