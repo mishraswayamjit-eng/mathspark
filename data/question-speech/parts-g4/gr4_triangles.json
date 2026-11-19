@@ -833,16 +833,15 @@
    "50 degrees"
   ],
   "hints": [
-   "In an isosceles triangle two angles are equal. There are three ways to choose the equal pair. Test each one against what the question says about angle B.",
-   "Angle B is bigger than both other angles, so angle B cannot be one of the equal pair. Which two angles must be equal, then?",
-   "Similar problem: triangle P Q R is isosceles, angle P is 40 degrees, and angle Q is bigger than both other angles. Angle Q cannot be in the equal pair, so angle R equals angle P, which is 40 degrees. Then angle Q is 180 minus 40 minus 40, which is 100 degrees."
+   "This is about an isosceles triangle, which has two equal angles. Use what the question says about angle B to work out which two angles are the equal pair.",
+   "Angle B is bigger than each of the other two angles, so it cannot be equal to either of them. Ask yourself which two angles are left to be the equal pair.",
+   "Here is a similar problem. Triangle P Q R is isosceles, angle P is 40 degrees, and angle Q is bigger than both other angles. Angle Q cannot be in the equal pair, so angle R equals angle P, which is 40 degrees. Then angle Q is 180 minus 40 minus 40, which is 100 degrees."
   ],
   "steps": [
-   "Angle B is bigger than each of the other two, so angle B is not equal to either of them.",
-   "The equal pair must be angle A and angle C.",
-   "So angle C is 50 degrees, and angle B is what is left. 180 minus 50 minus 50 equals 80.",
-   "Check: 80 degrees is bigger than 50 degrees, as the question says.",
-   "So angle C is 50 degrees."
+   "An isosceles triangle has two equal angles.",
+   "Angle B is bigger than angle A and bigger than angle C, so angle B is not equal to either of them. The equal pair must be angle A and angle C.",
+   "Check that this fits: angle B would be 180 minus 50 minus 50, which is 80 degrees, which is bigger than 50 degrees.",
+   "So angle C is equal to angle A, which is 50 degrees."
   ]
  },
  "G4A_TRIANGLES_030": {
@@ -912,13 +911,14 @@
    "48"
   ],
   "hints": [
-   "The area of a triangle is half of base times height.",
-   "Multiply 12 times 4, then divide by 2.",
-   "Don't forget the half!"
+   "This is an area of a triangle problem. A triangle covers half the space of a rectangle that has the same base and height.",
+   "First multiply the base by the height, 12 times 4. Then remember that the triangle is only half of that rectangle.",
+   "Here is a similar problem: a triangle with base 10 centimetres and height 6 centimetres. Base times height is 10 times 6, which is 60. Half of 60 is 30, so the area is 30 square centimetres."
   ],
   "steps": [
-   "The area of a triangle is half of base times height.",
-   "That equals half of 12 times 4, which is 24 square centimetres."
+   "The area of a triangle is half of its base times its height.",
+   "Base times height is 12 times 4, which is 48.",
+   "Half of 48 is 24. So the area is 24 square centimetres. 48 divided by 2 equals 24."
   ]
  },
  "PH3_EXT_G4_FP_2018_039_02": {
@@ -1041,13 +1041,14 @@
    "160"
   ],
   "hints": [
-   "The area of a triangle is half of base times height.",
-   "Multiply 16 times 20, then divide by 2.",
-   "Don't forget the half!"
+   "This is an area of a triangle problem. A triangle covers half the space of a rectangle that has the same base and height.",
+   "First multiply the base by the height, 16 times 20. Then remember that the triangle is only half of that rectangle.",
+   "Here is a similar problem: a triangle with base 14 centimetres and height 10 centimetres. Base times height is 14 times 10, which is 140. Half of 140 is 70, so the area is 70 square centimetres."
   ],
   "steps": [
-   "The area of a triangle is half of base times height.",
-   "That equals half of 16 times 20, which is 160 square centimetres."
+   "The area of a triangle is half of its base times its height.",
+   "Base times height is 16 times 20, which is 320.",
+   "Half of 320 is 160. So the area is 160 square centimetres. 320 divided by 2 equals 160."
   ]
  },
  "PH3_EXT_G4_FP_2024_030_03_b": {
@@ -1226,12 +1227,15 @@
    "40 centimetres"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 10.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "This is a perimeter problem about a shape made by joining two triangles. The perimeter is only the outside boundary, so think about which sides end up inside the new figure.",
+   "First find the length of one side of a triangle. An equilateral triangle has 3 equal sides, and its perimeter is 24 centimetres.",
+   "Here is a similar problem. Two equal squares, each with a perimeter of 20 centimetres, are joined along one full side. Each side is 20 divided by 4, which is 5 centimetres. The two joined sides are hidden inside, so 8 minus 2 equals 6 sides are left on the outside. The perimeter is 6 times 5, which is 30 centimetres."
   ],
   "steps": [
-   "The correct answer is option 3, which is 32 centimetres."
+   "Each triangle has 3 equal sides and a perimeter of 24 centimetres, so each side is 24 divided by 3, which is 8 centimetres.",
+   "The triangles are joined along one full side. Those two sides now lie inside the new figure, so they are not part of its boundary.",
+   "The two triangles have 6 sides in all. Taking away the 2 joined sides leaves 4 sides on the outside. 6 minus 2 equals 4.",
+   "The perimeter of the new figure is 4 times 8, which is 32 centimetres. The trap is to add 24 and 24 without removing the hidden sides."
   ]
  },
  "PYQ_2017_Q36": {
@@ -1264,12 +1268,15 @@
    "33 degrees"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 40.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "This is an angle problem about an isosceles triangle, which has two equal angles, and the three angles of any triangle add up to 180 degrees. The given angle could be one of the equal pair or the odd one out, so try both cases.",
+   "First suppose 57 degrees is one of the two equal angles and find the third angle. Then suppose 57 degrees is the odd angle and share what is left equally between the other two.",
+   "Here is a similar problem. One angle of an isosceles triangle is 40 degrees. If 40 degrees is one of the equal pair, the angles are 40 degrees, 40 degrees and 180 minus 40 minus 40, which is 100 degrees. If 40 degrees is the odd one, the other two share 180 minus 40, which is 140 degrees, equally, so each is 70 degrees. So another angle can be 40 degrees, 100 degrees or 70 degrees."
   ],
   "steps": [
-   "The correct answer is option 3, which is 61.5 degrees."
+   "An isosceles triangle has two equal angles, and the three angles add up to 180 degrees. The angle of 57 degrees could be one of the equal pair or the odd one out.",
+   "Case one: 57 degrees is one of the equal pair. Then the angles are 57 degrees, 57 degrees and 180 minus 57 minus 57, which is 66 degrees.",
+   "Case two: 57 degrees is the odd angle. The other two share 180 minus 57, which is 123 degrees, equally, so each is half of 123 degrees.",
+   "Half of 123 is 61.5. Of the choices given, only this one fits, so the other angle can be 61.5 degrees. 123 divided by 2 equals 61.5."
   ]
  },
  "PYQ_2019_Q34": {
@@ -1492,14 +1499,14 @@
    "90 degrees"
   ],
   "hints": [
-   "In an equilateral triangle, all three angles are equal.",
-   "The sum of angles in any triangle is 180 degrees. If all 3 are equal: 180 degrees divided by 3 equals what?",
-   "180 degrees divided by 3 equals 60 degrees. Each angle is 60 degrees."
+   "This is about the angles of a triangle. In an equilateral triangle all three angles are equal, and the angles of any triangle add up to the same total.",
+   "The three angles of a triangle add up to 180 degrees. Think about how to share 180 degrees equally among 3 angles.",
+   "Here is a similar problem. A square has four equal angles, and they add up to 360 degrees. Each angle is 360 divided by 4, which is 90 degrees."
   ],
   "steps": [
-   "All 3 angles are equal. The sum is 180 degrees.",
-   "Each angle is 180 degrees divided by 3, which is 60 degrees.",
-   "Each angle is 60 degrees."
+   "The three angles of any triangle add up to 180 degrees.",
+   "In an equilateral triangle all three angles are equal, so we share 180 degrees equally among 3 angles.",
+   "180 divided by 3 equals 60. So each angle measures 60 degrees."
   ]
  },
  "Q_CH19_002": {
@@ -1511,13 +1518,13 @@
    "49 centimetres"
   ],
   "hints": [
-   "The perimeter is the sum of all sides. An equilateral triangle has 3 equal sides.",
-   "The perimeter is 3 times the side, which is 3 times 7.",
-   "That equals 21 centimetres."
+   "This is a perimeter problem. Perimeter is the total distance around a shape, and an equilateral triangle has three equal sides.",
+   "All three sides are 7 centimetres long. Add the three sides together, or multiply the side by 3.",
+   "Here is a similar problem: an equilateral triangle with side 9 centimetres. Its three sides are all 9 centimetres, so the perimeter is 3 times 9, which is 27 centimetres."
   ],
   "steps": [
-   "Equilateral means all sides are equal, each 7 centimetres.",
-   "The perimeter is 3 times 7, which is 21 centimetres."
+   "An equilateral triangle has 3 equal sides, so each side is 7 centimetres.",
+   "The perimeter is the sum of all the sides, 7 plus 7 plus 7, which is 3 times 7 equals 21. So the perimeter is 21 centimetres."
   ]
  },
  "Q_CH19_003": {
@@ -1529,14 +1536,14 @@
    "100 degrees"
   ],
   "hints": [
-   "The sum of all three angles in a triangle is 180 degrees.",
-   "The third angle is 180 degrees minus 35 degrees minus 65 degrees.",
-   "That equals 180 degrees minus 100 degrees, which is 80 degrees."
+   "This is a missing-angle problem. The three angles of any triangle always add up to the same total.",
+   "The three angles add up to 180 degrees. Start by adding the two angles you know, 35 degrees and 65 degrees.",
+   "Here is a similar problem. Two angles of a triangle are 50 degrees and 70 degrees. Together they make 50 plus 70, which is 120 degrees. The third angle is 180 minus 120, which is 60 degrees."
   ],
   "steps": [
-   "The sum is 180 degrees. 35 degrees plus 65 degrees plus what equals 180 degrees?",
-   "The missing angle is 180 degrees minus 35 degrees minus 65 degrees. That is 180 degrees minus 100 degrees, which is 80 degrees.",
-   "The third angle is 80 degrees."
+   "The three angles of a triangle add up to 180 degrees.",
+   "The two known angles add up to 35 plus 65, which is 100 degrees.",
+   "The third angle is what is left: 180 minus 100 equals 80. So the third angle is 80 degrees."
   ]
  },
  "Q_CH19_003_V06": {
@@ -1567,14 +1574,15 @@
    "cannot be determined"
   ],
   "hints": [
-   "First find the third angle: 180 degrees minus 28 degrees minus 45 degrees equals what?",
-   "The third angle is 107 degrees. Is 107 degrees acute, right, or obtuse?",
-   "107 degrees is greater than 90 degrees, so it's obtuse. The triangle is obtuse-angled."
+   "This asks you to name a triangle by its angles. A triangle is acute-angled if all its angles are less than 90 degrees, right-angled if one angle is exactly 90 degrees, and obtuse-angled if one angle is more than 90 degrees. You need all three angles to decide.",
+   "The three angles of a triangle add up to 180 degrees. First find the third angle by adding 28 degrees and 45 degrees and taking the sum away from 180 degrees.",
+   "Here is a similar problem. Two angles of a triangle are 60 degrees and 50 degrees. Together they make 110 degrees, so the third angle is 180 minus 110, which is 70 degrees. All three angles are less than 90 degrees, so that triangle is acute-angled."
   ],
   "steps": [
-   "The third angle is 180 degrees minus 28 degrees minus 45 degrees, which is 107 degrees. 180 degrees minus 73 degrees equals 107 degrees.",
-   "107 degrees is greater than 90 degrees, so it is an obtuse angle.",
-   "The triangle is obtuse-angled."
+   "The two known angles add up to 28 plus 45, which is 73 degrees.",
+   "The three angles add up to 180 degrees, so the third angle is 180 minus 73, which is 107 degrees.",
+   "107 degrees is more than 90 degrees, so it is an obtuse angle.",
+   "A triangle with one obtuse angle is an obtuse-angled triangle."
   ]
  },
  "Q_CH19_005": {
@@ -1586,16 +1594,15 @@
    "all of these"
   ],
   "hints": [
-   "Triangle inequality rule: the sum of any two sides must be greater than the third side.",
-   "A: 2 plus 5 equals 7, which is less than 9. It fails! B: 6 plus 8 equals 14, which is greater than 12. 6 plus 12 equals 18, which is greater than 8. 8 plus 12 equals 20, which is greater than 6. C: 1 plus 5 equals 6, which is equal to 6, not greater.",
-   "Only B works!"
+   "This is about which three lengths can make a triangle. The two shorter sides together must be longer than the longest side, or they cannot meet.",
+   "For each set, add the two shorter lengths and compare the sum with the longest length. Start with 2 centimetres, 5 centimetres and 9 centimetres.",
+   "Here is a similar problem. Can 3 centimetres, 4 centimetres and 9 centimetres make a triangle? 3 plus 4 equals 7, which is less than 9, so they cannot. Can 4 centimetres, 7 centimetres and 10 centimetres make a triangle? 4 plus 7 equals 11, which is more than 10, so they can."
   ],
   "steps": [
-   "The rule: the sum of any 2 sides is greater than the third side. a plus b is greater than c.",
-   "A: 2 plus 5 equals 7, which is less than 9. It fails.",
-   "B: 6 plus 8 equals 14, which is greater than 12. All pairs work.",
-   "C: 1 plus 5 equals 6, which is equal to 6. It must be strictly greater.",
-   "Only B is valid."
+   "Three lengths make a triangle only when the two shorter sides together are longer than the longest side.",
+   "For 2 centimetres, 5 centimetres and 9 centimetres: 2 plus 5 equals 7, which is less than 9, so the short sides cannot meet.",
+   "For 1 centimetre, 5 centimetres and 6 centimetres: 1 plus 5 equals 6, which is only equal to the longest side, so the short sides would lie flat along it.",
+   "For 6 centimetres, 8 centimetres and 12 centimetres: 6 plus 8 equals 14, which is more than 12. So the lengths that can make a triangle are 6 centimetres, 8 centimetres and 12 centimetres."
   ]
  },
  "Q_CH19_006": {
@@ -1607,14 +1614,15 @@
    "30 degrees, 75 degrees, 75 degrees"
   ],
   "hints": [
-   "Isosceles means at least two angles must be equal.",
-   "Check: A has 30, 60, 90, none equal. B has 50, 90, 40, none equal. C has 40, 120, 20, none equal. D has 30, 75, 75, two equal!",
-   "D is isosceles. Check the sum: 30 plus 75 plus 75 equals 180 degrees."
+   "An isosceles triangle has two equal sides, and so it also has two equal angles. Look for a set of angles with a matching pair.",
+   "Go through each set and see whether any angle appears twice. Start with 30 degrees, 60 degrees and 90 degrees.",
+   "Here is a similar problem. Which is isosceles: a triangle with angles 50 degrees, 60 degrees, 70 degrees or one with angles 40 degrees, 40 degrees, 100 degrees? The first has three different angles. The second has two angles of 40 degrees, and 40 plus 40 plus 100, which is 180, so the second one is isosceles."
   ],
   "steps": [
-   "Isosceles needs at least 2 equal angles.",
-   "Only D has two equal angles: 75 degrees and 75 degrees.",
-   "D is isosceles."
+   "An isosceles triangle has two equal angles.",
+   "In 30 degrees, 60 degrees, 90 degrees, in 40 degrees, 120 degrees, 20 degrees and in 50 degrees, 90 degrees, 40 degrees, all three angles are different.",
+   "In the remaining set two angles are both 75 degrees, and the three angles add up to 180 degrees. 30 plus 75 plus 75 equals 180.",
+   "So the angles of an isosceles triangle are 30 degrees, 75 degrees, 75 degrees."
   ]
  },
  "Q_CH19_006_V09": {
@@ -1645,14 +1653,14 @@
    "90 degrees"
   ],
   "hints": [
-   "In a right triangle, one angle is 90 degrees. The other two must add up to 90 degrees, since the total is 180 degrees.",
-   "The two acute angles are complementary: they add to 90 degrees.",
-   "The other angle is 90 degrees minus 27 degrees, which is 63 degrees."
+   "This is a missing-angle problem in a right-angled triangle. One angle is 90 degrees, and the three angles of a triangle add up to 180 degrees.",
+   "Since one angle is 90 degrees, the two acute angles share the other 90 degrees between them. Take the acute angle you know away from 90 degrees.",
+   "Here is a similar problem. One acute angle of a right-angled triangle is 35 degrees. The two acute angles add up to 90 degrees, so the other is 90 minus 35, which is 55 degrees. Check: 90 plus 35 plus 55 equals 180."
   ],
   "steps": [
-   "In a right triangle, 90 degrees plus the two acute angles equals 180 degrees.",
-   "The other acute angle is 90 degrees minus 27 degrees, which is 63 degrees.",
-   "The answer is 63 degrees."
+   "A right-angled triangle has one angle of 90 degrees. The three angles add up to 180 degrees, so the two acute angles together make 180 minus 90, which is 90 degrees.",
+   "One acute angle is 27 degrees, so the other is 90 minus 27, which is 63.",
+   "So the other acute angle is 63 degrees."
   ]
  },
  "Q_CH19_007_V04": {
@@ -1683,14 +1691,14 @@
    "40 degrees"
   ],
   "hints": [
-   "One angle is 90 degrees, the right angle. The other two are equal, because it is isosceles.",
-   "Two equal angles plus 90 degrees equals 180 degrees. So 2 x plus 90 degrees equals 180 degrees. 2 x equals 90 degrees.",
-   "x equals 45 degrees. Each equal angle is 45 degrees."
+   "This triangle is both right-angled and isosceles. So one angle is 90 degrees and the other two angles are equal.",
+   "The three angles add up to 180 degrees. First take away the right angle to find what the two equal angles share.",
+   "Here is a similar problem. An isosceles triangle has one angle of 110 degrees and two equal angles. The two equal angles share 180 minus 110, which is 70 degrees, so each one is 70 divided by 2, which is 35 degrees."
   ],
   "steps": [
-   "90 degrees plus 2 x equals 180 degrees: the right angle plus two equal angles. So 2 x equals 180 degrees minus 90 degrees, which is 90 degrees.",
-   "x equals 45 degrees. x equals 90 degrees divided by 2, which is 45 degrees.",
-   "Each equal angle is 45 degrees."
+   "One angle is 90 degrees. The three angles add up to 180 degrees, so the other two together make 180 minus 90, which is 90 degrees.",
+   "The other two angles are equal, so each is half of 90 degrees. 90 divided by 2 equals 45.",
+   "So each of the equal angles measures 45 degrees."
   ]
  },
  "Q_CH19_009": {
@@ -1721,14 +1729,15 @@
    "150 degrees, 15 degrees, 15 degrees"
   ],
   "hints": [
-   "Obtuse means one angle is greater than 90 degrees. Scalene means all three angles are different.",
-   "A has 90 degrees, so it is right, not obtuse. B has 90 degrees, so it is right. C: 120 degrees is greater than 90 degrees, so it is obtuse, and all angles are different, so it is scalene! D has two 15 degree angles, so it is isosceles, not scalene.",
-   "C is the answer: 40 degrees, 120 degrees, 20 degrees is obtuse scalene."
+   "Two things must both be true here. Obtuse-angled means one angle is more than 90 degrees, and scalene means all three angles are different.",
+   "First set aside any set that has no angle bigger than 90 degrees. Then, in the sets that are left, see whether all three angles are different.",
+   "Here is a similar problem. Which is an acute-angled isosceles triangle: 70 degrees, 70 degrees, 40 degrees or 100 degrees, 40 degrees, 40 degrees? Both have two equal angles, so both are isosceles. Only in the first are all the angles less than 90 degrees, so 70 degrees, 70 degrees, 40 degrees is the acute-angled isosceles triangle."
   ],
   "steps": [
-   "We need one angle greater than 90 degrees, which is obtuse, and all angles different, which is scalene.",
-   "C: 120 degrees is greater than 90 degrees, so it is obtuse. 40 degrees, 120 degrees and 20 degrees are all different, so it is scalene.",
-   "C is obtuse-angled scalene."
+   "An obtuse-angled triangle has one angle more than 90 degrees. A scalene triangle has three different angles.",
+   "The sets 30 degrees, 60 degrees, 90 degrees and 50 degrees, 90 degrees, 40 degrees each have a largest angle of exactly 90 degrees, so they are right-angled, not obtuse-angled.",
+   "The set 150 degrees, 15 degrees, 15 degrees has an obtuse angle, but two of its angles are equal, so it is isosceles, not scalene.",
+   "In the last set, 120 degrees is more than 90 degrees and all three angles are different. So the obtuse-angled scalene triangle is 40 degrees, 120 degrees, 20 degrees."
   ]
  },
  "Q_CH19_011": {
@@ -1740,14 +1749,14 @@
    "110 degrees"
   ],
   "hints": [
-   "The exterior angle of a triangle equals the sum of the two non-adjacent interior angles.",
-   "The exterior angle is 55 degrees plus 70 degrees.",
-   "That equals 125 degrees."
+   "This is about an exterior angle of a triangle. An exterior angle and the interior angle next to it lie on a straight line, so together they make 180 degrees.",
+   "First find the third interior angle. The three interior angles add up to 180 degrees, so take 55 degrees and 70 degrees away from 180 degrees.",
+   "Here is a similar problem. Two interior angles of a triangle are 40 degrees and 60 degrees. The third interior angle is 180 minus 40 minus 60, which is 80 degrees. The exterior angle next to it is 180 minus 80, which is 100 degrees. Notice that this is the same as 40 plus 60."
   ],
   "steps": [
-   "The exterior angle theorem: the exterior angle equals the sum of the two remote interior angles. That is 55 degrees plus 70 degrees.",
-   "That equals 125 degrees.",
-   "Verify: the third interior angle is 180 degrees minus 55 degrees minus 70 degrees, which is 55 degrees. The exterior angle is 180 degrees minus 55 degrees, which is 125 degrees."
+   "The three interior angles add up to 180 degrees, so the third interior angle is 180 minus 55 minus 70, which is 55 degrees.",
+   "The exterior angle and the third interior angle lie on a straight line, so together they make 180 degrees.",
+   "180 minus 55 equals 125, which is the same as 55 plus 70. So the exterior angle is 125 degrees."
   ]
  },
  "Q_CH19_012": {
@@ -1759,14 +1768,14 @@
    "80 degrees"
   ],
   "hints": [
-   "The exterior angle equals the sum of the two remote interior angles.",
-   "130 degrees equals 50 degrees plus what?",
-   "The missing angle is 130 degrees minus 50 degrees, which is 80 degrees."
+   "This uses a fact about triangles: an exterior angle is equal to the sum of the two interior angles opposite it, the ones that are not next to it.",
+   "The two opposite interior angles add up to 130 degrees. One of them is 50 degrees, so think about what must be added to 50 degrees to make 130 degrees.",
+   "Here is a similar problem. An exterior angle of a triangle is 110 degrees, and one of the opposite interior angles is 45 degrees. The two opposite interior angles add up to 110 degrees, so the other is 110 minus 45, which is 65 degrees."
   ],
   "steps": [
-   "The exterior angle equals the sum of the remote interior angles: 130 degrees equals 50 degrees plus what?",
-   "The missing angle is 130 degrees minus 50 degrees, which is 80 degrees.",
-   "The other remote interior angle is 80 degrees."
+   "An exterior angle of a triangle equals the sum of the two opposite interior angles. So those two angles add up to 130 degrees.",
+   "One of them is 50 degrees, so the other is 130 minus 50, which is 80.",
+   "Check: the interior angle beside the exterior angle is 180 minus 130, which is 50 degrees, and 50 plus 50 plus 80, which is 180. So the other angle is 80 degrees."
   ]
  },
  "Q_CH19_013": {
@@ -1778,13 +1787,14 @@
    "40 degrees"
   ],
   "hints": [
-   "The sum of the angles is 180 degrees. Both base angles are 70 degrees.",
-   "The vertex angle is 180 degrees minus 70 degrees minus 70 degrees.",
-   "That equals 180 degrees minus 140 degrees, which is 40 degrees."
+   "This is a missing-angle problem. An isosceles triangle has two equal base angles and one vertex angle, and the three angles add up to 180 degrees.",
+   "Both base angles are 70 degrees. First add the two base angles together.",
+   "Here is a similar problem. Each base angle of an isosceles triangle is 65 degrees. The two base angles make 65 plus 65, which is 130 degrees. The vertex angle is 180 minus 130, which is 50 degrees."
   ],
   "steps": [
-   "The sum is 180 degrees. The base angles are 70 degrees each. 70 degrees plus 70 degrees plus the vertex angle equals 180 degrees.",
-   "The vertex angle is 180 degrees minus 140 degrees, which is 40 degrees."
+   "The two base angles are 70 degrees each, so together they make 70 plus 70, which is 140 degrees.",
+   "The three angles add up to 180 degrees, so the vertex angle is 180 minus 140, which is 40.",
+   "So the vertex angle is 40 degrees."
   ]
  },
  "Q_CH19_013_V04": {
@@ -1815,14 +1825,14 @@
    "65 degrees"
   ],
   "hints": [
-   "The two base angles are equal. The vertex angle plus 2 times a base angle equals 180 degrees.",
-   "2 times the base angle is 180 degrees minus 50 degrees, which is 130 degrees.",
-   "The base angle is 130 degrees divided by 2, which is 65 degrees."
+   "This is a missing-angle problem. An isosceles triangle has one vertex angle and two equal base angles, and the three angles add up to 180 degrees.",
+   "First take the vertex angle of 50 degrees away from 180 degrees to find what the two base angles share.",
+   "Here is a similar problem. The vertex angle of an isosceles triangle is 40 degrees. The two base angles share 180 minus 40, which is 140 degrees. They are equal, so each one is 140 divided by 2, which is 70 degrees."
   ],
   "steps": [
-   "50 degrees plus 2 b equals 180 degrees. So 2 b equals 180 degrees minus 50 degrees, which is 130 degrees.",
-   "b equals 130 degrees divided by 2, which is 65 degrees.",
-   "Each base angle is 65 degrees."
+   "The three angles add up to 180 degrees, so the two base angles together make 180 minus 50, which is 130 degrees.",
+   "The base angles are equal, so each is half of 130 degrees. 130 divided by 2 equals 65.",
+   "So each base angle is 65 degrees."
   ]
  },
  "Q_CH19_015": {
@@ -1852,14 +1862,14 @@
    "2"
   ],
   "hints": [
-   "A scalene triangle has no equal sides and no equal angles.",
-   "Symmetry requires at least two equal parts. With all sides different...",
-   "There is no axis of symmetry. The count is 0."
+   "An axis of symmetry is a fold line that makes the two halves of a shape match exactly. For a triangle, think about which sides would have to land on each other.",
+   "Remember what scalene means: all three sides have different lengths. Imagine folding the triangle through each corner and ask whether the two halves would match.",
+   "Here is a similar problem. How many axes of symmetry does a triangle with exactly two equal sides have? Folding through the corner where the two equal sides meet lays one equal side on the other, so that fold line is an axis of symmetry. A fold through either of the other corners would put a longer side on a shorter one. So it has 1 axis of symmetry."
   ],
   "steps": [
-   "Scalene: all sides different, all angles different.",
-   "No line can divide it into two mirror halves.",
-   "The answer is 0."
+   "An axis of symmetry is a fold line that makes the two halves match exactly.",
+   "In a triangle, a fold through a corner makes matching halves only when the two sides that meet at that corner are equal.",
+   "A scalene triangle has three different sides, so no two sides are equal and no fold gives matching halves. So a scalene triangle has 0 axes of symmetry."
   ]
  },
  "Q_CH19_017": {
@@ -1871,13 +1881,14 @@
    "44 centimetres"
   ],
   "hints": [
-   "The perimeter is the sum of all three sides.",
-   "8 plus 11 plus 15 equals what?",
-   "That equals 34 centimetres."
+   "This is a perimeter problem. The perimeter of a shape is the total distance around it.",
+   "Add the three sides. Start with 8 plus 11, then add 15 to that.",
+   "Here is a similar problem. A triangle has sides 6 centimetres, 9 centimetres and 13 centimetres. 6 plus 9 equals 15, and 15 plus 13 equals 28. Its perimeter is 28 centimetres."
   ],
   "steps": [
-   "The perimeter is the first side, plus the second side, plus the third side. 8 plus 11 plus 15.",
-   "That equals 34 centimetres."
+   "The perimeter is the sum of the three sides.",
+   "First add two of the sides: 8 plus 11 equals 19.",
+   "Then add the third side: 19 plus 15 equals 34. So the perimeter is 34 centimetres."
   ]
  },
  "Q_CH19_018": {
@@ -1889,13 +1900,14 @@
    "15 centimetres"
   ],
   "hints": [
-   "The perimeter is the sum of all sides. 36 equals 12 plus 9 plus the third side.",
-   "The third side is 36 minus 12 minus 9.",
-   "That equals 36 minus 21, which is 15 centimetres."
+   "This is a perimeter problem worked backwards. The perimeter is the total of all three sides, and you know two of them.",
+   "First add the two sides you know, 12 centimetres and 9 centimetres. The third side is whatever is still needed to reach 36 centimetres.",
+   "Here is a similar problem. The perimeter of a triangle is 40 centimetres and two sides are 14 centimetres and 10 centimetres. The two known sides add up to 14 plus 10, which is 24 centimetres. The third side is 40 minus 24, which is 16 centimetres."
   ],
   "steps": [
-   "36 equals 12 plus 9 plus what? The missing side is 36 minus 12 minus 9.",
-   "The missing side is 15 centimetres."
+   "The perimeter is the sum of the three sides, so the three sides add up to 36 centimetres.",
+   "The two known sides add up to 12 plus 9, which is 21 centimetres.",
+   "The third side is what is left: 36 minus 21 equals 15. So the third side is 15 centimetres."
   ]
  },
  "Q_CH19_019": {
@@ -1907,14 +1919,14 @@
    "48 square centimetres"
   ],
   "hints": [
-   "The area of a right triangle is half of base times height. The two legs are the base and height!",
-   "The area is half of 6 times 8.",
-   "That equals half of 48, which is 24 square centimetres."
+   "This is an area problem for a right-angled triangle. The two legs meet at the right angle, so one is the base and the other is the height. The triangle is half of the rectangle made with them.",
+   "Multiply the two legs, 6 times 8, to get the area of the rectangle. Then remember that the triangle is half of it.",
+   "Here is a similar problem. A right-angled triangle has legs of 10 centimetres and 6 centimetres. The rectangle made with them has area 10 times 6, which is 60 square centimetres. The triangle is half of that, so its area is 30 square centimetres."
   ],
   "steps": [
-   "In a right triangle, the legs form the right angle, so they are the base and height. The area is half of base times height.",
-   "The area is half of 6 times 8, which is 24 square centimetres.",
-   "The area is 24 square centimetres."
+   "The legs meet at the right angle, so one leg is the base and the other is the height.",
+   "Base times height is 6 times 8, which is 48.",
+   "The triangle is half of that rectangle: 48 divided by 2 equals 24. So the area is 24 square centimetres."
   ]
  },
  "Q_CH19_020": {
@@ -1926,13 +1938,14 @@
    "end point"
   ],
   "hints": [
-   "'Median' comes from 'middle.' It connects a corner to the middle of the opposite side.",
-   "The midpoint divides the opposite side into two equal halves.",
-   "A triangle has 3 medians, one from each vertex."
+   "This is about the meaning of a word. The word median is related to the word middle.",
+   "Picture a line drawn from one corner of a triangle across to the opposite side. Think about which special point on that side would cut the side into two equal parts.",
+   "Here is an example. In triangle P Q R, side Q R is 10 centimetres long. The point M on Q R is 5 centimetres from Q and 5 centimetres from R. The line from P to M is a median of the triangle, because M cuts Q R into two equal parts."
   ],
   "steps": [
-   "A median goes from a vertex to the midpoint of the opposite side.",
-   "The answer is midpoint."
+   "A median starts at a vertex of the triangle and goes across to the opposite side.",
+   "It meets that side exactly in the middle, cutting it into two equal parts. The point in the middle of a side is called its midpoint.",
+   "So a median joins a vertex to the midpoint of the opposite side."
   ]
  },
  "Q_CH19_021": {
@@ -1944,13 +1957,14 @@
    "3"
   ],
   "hints": [
-   "A median goes from each vertex to the midpoint of the opposite side.",
-   "A triangle has 3 vertices, so...",
-   "3 medians, one from each vertex. They all meet at one point called the centroid."
+   "A median joins a vertex of a triangle to the middle of the opposite side. Think about how many different vertices a median can start from.",
+   "Count the vertices of a triangle. One median can be drawn from each vertex.",
+   "Here is a similar problem. How many diagonals does a rectangle have? A diagonal joins two opposite corners. A rectangle has 4 corners, which make 2 pairs of opposite corners, so it has 2 diagonals."
   ],
   "steps": [
-   "There is one median from each vertex. A triangle has 3 vertices. So 3 vertices give 3 medians.",
-   "The answer is 3 medians."
+   "A median joins a vertex to the midpoint of the opposite side.",
+   "A triangle has 3 vertices, and each vertex has exactly one opposite side, so each vertex gives one median.",
+   "So a triangle has 3 medians."
   ]
  },
  "Q_CH19_022": {
@@ -1999,13 +2013,14 @@
    "22.5 centimetres"
   ],
   "hints": [
-   "Equilateral means all 3 sides are equal. The perimeter is 3 times the side.",
-   "The side is the perimeter divided by 3, which is 45 divided by 3.",
-   "That equals 15 centimetres."
+   "This is a perimeter problem worked backwards. An equilateral triangle has three equal sides, and the perimeter is the total of all three.",
+   "The three equal sides add up to 45 centimetres. Think about how to share 45 centimetres equally among 3 sides.",
+   "Here is a similar problem. The perimeter of an equilateral triangle is 36 centimetres. Its three sides are equal, so each side is 36 divided by 3, which is 12 centimetres."
   ],
   "steps": [
-   "The perimeter is 3 times the side. So 45 equals 3 times the side.",
-   "The side is 45 divided by 3, which is 15 centimetres."
+   "An equilateral triangle has 3 equal sides, and together they make the perimeter of 45 centimetres.",
+   "Share 45 centimetres equally among the 3 sides: 45 divided by 3 equals 15.",
+   "So each side is 15 centimetres long."
   ]
  },
  "Q_CH19_025": {

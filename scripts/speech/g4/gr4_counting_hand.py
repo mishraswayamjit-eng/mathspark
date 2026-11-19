@@ -59,13 +59,4 @@ HAND = {
         "h": {2: "A similar problem: 9 children are in a queue and Arun is at the very front. "
                  "The other children, 9 minus 1, which is 8, are behind him."},
     },
-
-    # ── Older chapter question printed as notes ──
-    "Q_CH21_013": {
-        "h": {1: "Count systematically. Point A connects to B, C, D and E: 4 chords. Point B to C, D and E: 3 new. "
-                 "Point C to D and E: 2 new. Point D to E: 1 new."},
-        "s": {0: "From A, 4 chords. From B, 3 new. From C, 2 new. From D, 1 new.",
-              1: "The total is 10 chords.",
-              2: "The formula gives 5 factorial, divided by 2 factorial times 3 factorial, which equals 10."},
-    },
 }

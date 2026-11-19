@@ -33,14 +33,18 @@ REMOVE = {
     "EXT_G4_WS2_CH11_008": "0.545 has two 5s and both matching options are offered",
     "EXT_G4_FP_2020_038": "text garbled; states the answer inside the question",
     "Q_CH09_020_V03": "working goes below zero part-way (16 - 3 x 8 + 11)",
+    "VAR_EXT_G4_FP_2021_039_02": "working goes below zero part-way (45 - 5 x 10 + 5)",
+    "Q_CH12_010": "same ribbon question as Q_CH11_018, in the same topic",
 }
 # Repairs that need more than one option changed, or that the checker's first version refused.
 EXTRA_OPTIONS = {
     "Q_CH13_017": {"C": "8 + x"},
     "EXT_G4_WS2_CH11_001": {"B": "2/8", "C": "7/50"},
     "Q_CH07_012": {"B": "9/8", "C": "6/12"},
+    "Q_CH07_016": {"A": "3 3/6"},  # was 3 3/3, the same value as the keyed 4
 }
 REWORD = {
+    "PYQ_2017_Q17": "Instead of writing 9.7, a student wrote 0.97. By how much was his number off?",
     "EXT_G4_FP_2025_027": "15th August 2024 was a Thursday. Which of these days came 5 times in that month?",
 }
 STALE_NOTE = "Not quite. Work through the steps once more and compare your answer with this one."

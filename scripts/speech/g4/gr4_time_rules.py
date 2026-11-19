@@ -32,7 +32,8 @@ def clock(m):
 
 def meridiem(m):
     """'8:00 a.m.' is '8:00 a m'; the last dot is kept only where it also ends the sentence."""
-    ends = m.group(2) and re.match(r"\s+[A-Z]", m.string[m.end():])
+    rest = m.string[m.end():]
+    ends = m.group(2) and (re.match(r"\s+[A-Z]", rest) or (not rest and len(m.string) > 12))
     return " %s m%s" % (m.group(1), "." if ends else "")
 
 

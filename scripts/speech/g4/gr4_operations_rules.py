@@ -154,6 +154,8 @@ def side(items, box):
             out.append(BINARY[it[1]])
         elif kind == "QM":
             out.append("what")
+        elif kind == "GROUP" and hidden_digits(it):
+            out.append(hidden_digits(it) + ("" if last else ","))
         elif kind == "GROUP":
             name = BRACKET[it[1]]
             out.append("open %s, %s, close %s%s" % (name, expression(it[2], box), name, "" if last else ","))
@@ -194,8 +196,16 @@ def expression(items, box="blank", which=False):
     return out.strip()
 
 
-def span(toks, before, at_end, kind, box):
-    """Speech for one run of maths tokens. `before` is the text spoken so far."""
+def hidden_digits(group):
+    """A number printed with stars for its hidden digits, "(★★7)": "star, star, 7". None if it is not one."""
+    inner = group[2]
+    if inner and all(i[0] in ("BOX", "NUM") for i in inner) and any(i == ["BOX", "★"] for i in inner):
+        return ", ".join("star" if i[0] == "BOX" else number(i[1]) for i in inner)
+    return None
+
+
+def span(toks, before, at_end, kind, box, after=""):
+    """Speech for one run of maths tokens. `before` is the text spoken so far, `after` the print still to come."""
     solid = [t for t in toks if t[0] != "WS"]
     kinds = [t[0] for t in solid]
     # Signs on their own are named.
@@ -211,10 +221,14 @@ def span(toks, before, at_end, kind, box):
         return box
     items = tree(solid)
     # A bracket on its own: a choice of where the bracket goes.
+    if len(items) == 1 and items[0][0] == "GROUP" and hidden_digits(items[0]):
+        return hidden_digits(items[0])
     if len(items) == 1 and items[0][0] == "GROUP" and items[0][1] == "(" and not any(i[0] == "GROUP" for i in items[0][2]):
         inner = expression(items[0][2], box)
         if re.search(r"\baround\s*$", before):
             return inner
+        if re.search(r"\bwritten\s*$", before):      # "written (8 − 2)": how it looks on the page
+            return "open bracket, %s, close bracket" % inner
         return ("a %s around " % BRACKET[items[0][1]]) + inner
     # "... = ?" at the end of the string.
     if at_end and len(items) >= 3 and items[-1][0] == "QM" and items[-2] == ["OP", "="]:
@@ -232,6 +246,10 @@ def span(toks, before, at_end, kind, box):
     which = bool(re.search(r"\b(?:is|are|was|be|costs?|gives?|by|gets?|got|makes?|means|ha[ds]|have|needs?|adds?|with|from|to|least|than)(?: also)?\s*$", before))
     if re.search(r"\bwhich is\s*$", before):
         which = "or"            # "which is 6 × 12 = 72": not "which is ..., which is ..."
+    if re.search(r"\b(?:means|we get)\s*$", before) and re.match(r"\s*[.,]", after):
+        which = False           # "That means 216 ÷ 24 = 9.": the conclusion, said plainly
+    if re.match(r"\s*(?:,\s*which\b|true\b|both\b|each\b|is\b)", after):
+        which = False           # "= 240, which is Rs.240", "= 27 true?": keep a plain "equals"
     return expression(items, box, which)
 
 
@@ -307,7 +325,7 @@ def say(text, kind="text", box=None):
                     end = j + 1
                 j += 1
             at_end = not "".join(t[1] for t in toks[end:]).strip()
-            spoken = span(toks[i:end], out, at_end, kind, box)
+            spoken = span(toks[i:end], out, at_end, kind, box, "".join(t[1] for t in toks[end:]))
             lone = end - i == 1 and toks[i][0] == "NUM" and toks[i][1][0].isdigit()
             if out and out[-1].isalnum() and not lone:
                 out += " "
@@ -335,7 +353,7 @@ def from_latex(latex):
     s = re.sub(r"\\text\{([^}]*)\}", r"\1", s)
     s = re.sub(r"\\frac\{([^}]*)\}\{([^}]*)\}", r"\1/\2", s)
     s = s.replace("\\times", "×").replace("\\div", "÷").replace("\\,", " ")
-    s = re.sub(r"(?<=\d)\s*-\s*(?=[\d(])", " − ", s)
+    s = re.sub(r"(?<=[\d)\]}])\s*-\s*(?=[\d(\[{])", " − ", s)
     return s
 
 

@@ -41,7 +41,9 @@ def _units(s):
     s = re.sub(r"(\d) cm (?=square\b|pieces\b|edges\b|piece\b)", r"\1 centimetre ", s)
     s = re.sub(r"\bcm\b", "centimetres", s)
     s = re.sub(r"\bkm\b", "kilometres", s)
+    s = re.sub(r"\b1 kg\b", "1 kilogram", s)
     s = re.sub(r"\bkg\b", "kilograms", s)
+    s = re.sub(r"(\d) g\b(?!\s*[=+−×÷])", r"\1 grams", s)
     # m is a metre only straight after a bracket or a number, and not inside a sum.
     s = re.sub(r"\)\s+m\b(?!\s*[=+−×÷])", ") metres", s)
     s = re.sub(r"(\d) m\b(?=\s+(?:long|wide|and|with)\b|[.,]|$)", r"\1 metres", s)
@@ -80,7 +82,7 @@ def _brackets(s):
         # "(d is more than 1)" is an aside; "(length + breadth)" is grouping.
         wordy = bool(re.search(r"[,:=→✓✗?!]", bare)) or (bool(re.search(r"[A-Za-z]{3,}", bare)) and not has_op)
         compound = (not wordy) and has_op and not simple
-        unit_next = bool(re.match(r"\s*(?:centimetres?|metres|kilograms|kilometres|rupees|years|pages)\b", s[m.end():]))
+        unit_next = bool(re.match(r"\s*(?:centimetres?|metres|kilograms|grams|kilometres|rupees|years|pages)\b", s[m.end():]))
         implicit = adjacent and (pc.isalnum() or pc == CLOSE or pc == "²")
         near_op = (pc != "" and pc in OPS) or (nc != "" and nc in OPS)
         after_times = bool(re.search(r"\btimes\s*$", s[:m.start()]))
@@ -120,7 +122,7 @@ def _letters(s):
 
 
 # Words that can follow the letter a when it is a variable, and never follow the word "a".
-_AFTER_A = r"(?:terms|times|multiplied|means|and|is|centimetres|from|first|when|before|by|with|squared|cubed|b)\b"
+_AFTER_A = r"(?:terms|times|multiplied|on its own|means|and|is|centimetres|from|first|when|before|by|with|squared|cubed|b)\b"
 
 
 def _variable_a(s):
@@ -189,7 +191,8 @@ def _tidy(s, sentence):
         s = re.sub(r"\.\s*\.", ".", s)
         s = re.sub(r"([!?])\s*\.", r"\1", s)
         s = re.sub(r":\s*\.", ".", s)
-    s = re.sub(r"\b(equals|is|times|plus|minus|by|over|of),\s+(?!open bracket)", r"\1 ", s)
+    s = re.sub(r"\b(equals|is|times|plus|minus|by),\s+(?!open bracket)", r"\1 ", s)
+    s = re.sub(r"(?<!left )\bover,\s+(?=[\dA-Za-z]\b)", "over ", s)
     s = s.strip(" ,")
     s = re.sub(r"\s*:$", "", s)                     # "its perimeter will be:"
     # Breaths in long working: "5 times 6, plus 10" and "3 times 7, minus 3".
@@ -199,7 +202,7 @@ def _tidy(s, sentence):
     s = re.sub(r"\b(\d+ times \d+, (?:plus|minus) \d+ times \d+(?:, (?:plus|minus) \d+ times \d+)?) equals\b", r"\1, equals", s)
     s = re.sub(r"\b(close bracket, (?:times|divided by) \w+) (equals|has)\b", r"\1, \2", s)
     s = re.sub(r"\b(all over \S+) (equals|and)\b", r"\1, \2", s)
-    s = re.sub(r"\b(which is [\d.]*\d) (and|but)\b", r"\1, \2", s)
+    s = re.sub(r"\b(which is [\d.]*\d) (and|but)\b(?! \d+ over\b)", r"\1, \2", s)
     if sentence and s:
         if s[-1] not in ".?!":
             s += "."
@@ -255,7 +258,9 @@ def maths_line(latex):
     s = re.sub(r"\\frac\{([^{}]*)\}\{([^{}]*)\}", frac, s)
     s = re.sub(r"\\boxed\{([^{}]*)\}", r"\1", s)
     s = re.sub(r"\\mathbf\{([^{}]*)\}", r"\1", s)
-    s = s.replace("\\times", "×").replace("\\div", "÷").replace("\\,", " ").replace("\\quad", " ")
+    # \quad sets equations side by side: each is said as its own short sentence.
+    s = re.sub(r"\s*,?\s*\\q?quad\s*", ". ", s)
+    s = s.replace("\\times", "×").replace("\\div", "÷").replace("\\,", " ")
     s = s.replace("\\checkmark", " ").replace("\\ldots", "...").replace("\\neq", "≠")
     s = re.sub(r"\^\{?2\}?", "²", s)
     return re.sub(r"(?<=[\w )])\s*-\s*(?=[\w (])", " − ", s)

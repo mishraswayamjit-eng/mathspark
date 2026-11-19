@@ -88,33 +88,18 @@ HAND = {
     },
     "Q_CH14_001": {
         "q": "Find the value of A: A plus 5 equals 12.",
-        "hints": ["To find A, you need to get A alone on one side. What can you do to both sides?"],
-        "steps": ["We need to isolate A. Subtract 5 from both sides. A plus 5 minus 5 equals 12 minus 5."],
+        "hints": [N, "5 has been added to A to make 12. Undo the adding by taking 5 away from 12."],
+        "steps": ["5 was added to A to get 12, so take 5 away from 12 to find A. 12 minus 5 equals 7."],
     },
-    "Q_CH14_007": {
-        "hints": ["32 divided by g equals 4. If 32 divided by what, equals 4, what number goes in the blank?",
-                  "Think: 4 times what, equals 32?"],
+    "PYQ_2018_Q27": {
+        "steps": [N, N, N, "Check: 97, minus 17 times 3, equals 46. And 5 times 3, plus 31, equals 46, so both sides match. The value of x is 3."],
     },
     "Q_CH14_014": {
         "q": "Find the value of A: 6 A minus 32 equals 2 A.",
-        "hints": ["Get all A terms on one side: subtract 2 A from both sides."],
-        "steps": ["Subtract 2 A from both sides: 6 A minus 2 A minus 32 equals 0. So 4 A minus 32 equals 0."],
-    },
-    "Q_CH14_017": {
-        "hints": ["Substitute x equals 5 into each equation, and check which one makes the left side equal the right side.",
-                  "A: 3 times 5, plus 2, equals 17, which is not 18. B: 2 times 5, minus 3, equals 7. That is correct. C: 4 times 5, plus 1, equals 21, which is not 20. D: 5 plus 10 equals 15, which is not 16.",
-                  "Only B is true: 2 times 5, minus 3, equals 10 minus 3, which is 7. That is correct."],
-        "steps": ["Check A: 3 times 5, plus 2, equals 15 plus 2, which is 17. That is not equal to 18.",
-                  "Check B: 2 times 5, minus 3, equals 10 minus 3, which is 7, the same as 7. That is correct."],
-    },
-    "Q_CH14_021": {
-        "hints": ["Let brother's age be x. Riya's age is twice brother's age plus 3, which is 2 x plus 3. And Riya is 17."],
-    },
-    "Q_CH14_025": {
-        "hints": ["Let the three consecutive numbers be n, n plus 1, and n plus 2. Their sum equals 36.",
-                  "n, plus n plus 1, plus n plus 2, equals 36. So 3 n plus 3 equals 36."],
-        "steps": ["Let the numbers be n, n plus 1, and n plus 2. n, plus n plus 1, plus n plus 2, equals 36.",
-                  N, N, "Divide by 3: n equals 11. The numbers are 11, 12 and 13."],
+        "hints": ["This equation has the letter A on both sides. Collect the A terms together so that A appears only once.",
+                  "Taking 32 away from 6 A leaves 2 A. So 32 must be the difference between 6 A and 2 A. Work out how many A that is."],
+        "steps": [N, N, "Divide 32 by 4 to find A. 32 divided by 4 equals 8.",
+                  "Check: 6 times 8, minus 32, equals 16, and 2 times 8 equals 16, so both sides match. The value of A is 8."],
     },
 }
 

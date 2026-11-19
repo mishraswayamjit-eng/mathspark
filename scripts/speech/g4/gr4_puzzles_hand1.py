@@ -39,25 +39,13 @@ HAND = {
     "Q_CH15_003": {
         "hints": {1: "Magic constant equals 3 times centre. So total equals 3 times, 3 times centre, which is 9 times centre."},
     },
-    "Q_CH15_011": {
-        "hints": {1: "Column 1: 4 plus 3 equals 7, and 7 squared equals 49. Column 2: 6 plus 4 equals 10, and 10 squared equals 100. Check: is the 3rd row equal to row 1 plus row 2, all squared?"},
+    "PYQ_2018_Q33": {
+        "hints": {2: "Here is a similar one: a three-digit palindrome is added to 1009 to make a four-digit palindrome. Try a total that begins and ends with 1. Since 9 plus 2 equals 11, which ends in 1, the palindrome looks like 2, star, 2. Trying the middle digit, 212 plus 1009 equals 1221, which reads the same backwards. The digits of 212 add up to 2 plus 1 plus 2, which is 5."},
         "steps": {
-            0: "Find the pattern. Row 3 equals Row 1 plus Row 2, all squared.",
-            1: "Check column 2: 6 plus 4, all squared, equals 10 squared, which is 100.",
-            2: "Column 3: 8 plus what number, all squared, equals 169. The square root of 169 equals 13. So 8 plus the missing number equals 13.",
-        },
-    },
-    "Q_CH15_013": {
-        "hints": {
-            1: "Row 1: 3, 4, 25. Is 25 equal to 3 squared plus 4 squared? 9 plus 16 equals 25! Row 2: 5 squared plus 7 squared? No. 25 plus 49 equals 74, not 71. Try: 3 times 4 times 2 plus 1 equals 25. 5 times 7 times 2 plus 1 equals 71!",
-            2: "Pattern: column 3 equals column 1 times column 2, times 2, plus 1. So the missing number equals 6 times 8 times 2 plus 1, which is 97.",
-        },
-    },
-    "Q_CH15_014": {
-        "steps": {
-            0: "Pattern: the result is a minus b, joined with a plus b.",
-            1: "Check: 9 minus 1, joined with 9 plus 1, gives 8 and 10, which makes 810.",
-            2: "Apply: 5 minus 4, joined with 5 plus 4, gives 1 and 9, which makes 19.",
+            0: "A three-digit number added to 2018 gives a total between 2119 and 3017. The only palindrome there that begins with 3 is 3003, and 3003 minus 2018 equals 985, which is not a palindrome. So the total begins with 2 and ends in 2.",
+            1: "Look at the ones digits. 2018 ends in 8, and 8 plus 4 equals 12, which ends in 2, so the three-digit palindrome ends in 4. It starts with the same digit, so it looks like 4, star, 4.",
+            2: "Now try the middle digit. 404 plus 2018 equals 2422, and 414 plus 2018 equals 2432. These are not palindromes. But 424 plus 2018 equals 2442, which is.",
+            3: "The three-digit palindrome is 424. Its digits add up to 4 plus 2 plus 4, which is 10, so the answer is 10.",
         },
     },
     "Q_CH15_020": {
@@ -67,19 +55,6 @@ HAND = {
     "Q_CH15_022": {
         "hints": {2: "Sum of each line equals 25 plus 5, divided by 2, which is 15. Line with 1: 1 plus 5 plus what number equals 15. So the missing number equals 9."},
         "steps": {1: "Each line equals total plus centre, divided by 2. That is 25 plus 5, over 2, which is 15."},
-    },
-    "Q_CH15_024": {
-        "hints": {
-            0: "Add all three equations together: A plus B, plus B plus C, plus A plus C, equals 10 plus 15 plus 11.",
-            1: "Left side: 2 A plus 2 B plus 2 C equals 36. So 2 times, A plus B plus C, equals 36.",
-        },
-        "steps": {
-            0: "Add all three equations. A plus B, plus B plus C, plus A plus C, equals 10 plus 15 plus 11, which is 36.",
-            1: "Left side equals 2 A plus 2 B plus 2 C, which is 2 times, A plus B plus C.",
-        },
-    },
-    "Q_CH15_025": {
-        "hints": {2: "The centre of a magic square with consecutive numbers is always the middle number, which is 13."},
     },
 }
 

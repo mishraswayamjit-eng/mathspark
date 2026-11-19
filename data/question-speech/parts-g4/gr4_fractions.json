@@ -963,13 +963,13 @@
   "hints": [
    "All four fractions are a little more than one half, so you need an exact way to compare them, such as cross-multiplying two at a time.",
    "Start with 4 over 7 and 5 over 9: compare 4 times 9 with 5 times 7. The fraction whose top number gives the bigger product is the bigger fraction.",
-   "A similar one: order 2 over 3, 3 over 5 and 5 over 8. For 3 over 5 and 5 over 8: 3 times 8 equals 24 and 5 times 5 equals 25, so 3 over 5 is smaller. For 5 over 8 and 2 over 3: 5 times 3 equals 15 and 2 times 8 equals 16, so 5 over 8 is smaller. The order is 3 over 5, 5 over 8, 2 over 3."
+   "A similar one: order 2 over 3, 3 over 5 and 5 over 8. For 3 over 5 and 5 over 8: 3 times 8 equals 24 and 5 times 5 equals 25, so 3 over 5 is smaller. For 5 over 8 and 2 over 3: 5 times 3 equals 15 and 2 times 8 equals 16, so 5 over 8 is smaller. The order is 3 over 5, 5 over 8 and 2 over 3."
   ],
   "steps": [
    "Compare 5 over 9 and 4 over 7 by cross-multiplying: 5 times 7 equals 35 and 4 times 9 equals 36, so 5 over 9 is smaller than 4 over 7.",
    "Compare 4 over 7 and 7 over 12: 4 times 12 equals 48 and 7 times 7 equals 49, so 4 over 7 is smaller than 7 over 12.",
    "Compare 7 over 12 and 3 over 5: 7 times 5 equals 35 and 3 times 12 equals 36, so 7 over 12 is smaller than 3 over 5.",
-   "The order is 5 over 9, 4 over 7, 7 over 12, 3 over 5, so the third fraction is 7 over 12."
+   "The order is 5 over 9, 4 over 7, 7 over 12 and 3 over 5, so the third fraction is 7 over 12."
   ]
  },
  "G4A_FRACTIONS_024": {
@@ -1213,7 +1213,7 @@
   ]
  },
  "PYQ_2016_Q08": {
-  "q": "Simplify: 1 over 4, plus 2 over 3 and minus 1 over 2.",
+  "q": "Simplify: 1 over 4, plus 2 over 3, minus 1 over 2.",
   "options": [
    "5 over 12",
    "1 over 12",
@@ -1221,12 +1221,15 @@
    "2 over 5"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 8.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "The three fractions have different bottom numbers. They must all be changed to the same bottom number before you add or subtract.",
+   "Find the smallest number that 4, 3 and 2 all divide into. Change each fraction so that it has that number at the bottom.",
+   "Example: 1 over 2, plus 1 over 3, minus 1 over 6. All three can be written in sixths: 3 over 6, plus 2 over 6, minus 1 over 6. The tops give 3 plus 2 minus 1, which is 4, so the result is 4 over 6, which simplifies to 2 over 3."
   ],
   "steps": [
-   "The correct answer is option 1, 5 over 12."
+   "The smallest number that 4, 3 and 2 all divide into is 12. So change every fraction into twelfths.",
+   "1 over 4 equals 3 over 12, 2 over 3 equals 8 over 12 and 1 over 2 equals 6 over 12.",
+   "Now work on the tops and keep 12 below: 3 plus 8 minus 6 equals 5. 3 over 12, plus 8 over 12, minus 6 over 12, equals 5 over 12.",
+   "So 1 over 4, plus 2 over 3, minus 1 over 2, equals 5 over 12."
   ]
  },
  "PYQ_2016_Q11": {
@@ -1238,12 +1241,14 @@
    "3 and 1 over 7"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 11.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "An improper fraction becomes a mixed fraction by division. The top number is shared out by the bottom number.",
+   "Divide 57 by 17. Find how many whole 17s fit into 57 and how much is left over.",
+   "Example: 53 over 12. 12 times 4 equals 48, so 12 fits 4 times with 53 minus 48, which is 5 left over. So 53 over 12 equals 4 and 5 over 12."
   ],
   "steps": [
-   "The correct answer is option 2, 3 and 6 over 17."
+   "Divide 57 by 17. 17 times 3 equals 51 and 17 times 4 equals 68, so 17 fits into 57 three whole times.",
+   "The remainder is 57 minus 51, which is 6.",
+   "The whole part is 3, the remainder 6 goes on top, and the bottom stays 17. So 57 over 17 equals 3 and 6 over 17."
   ]
  },
  "PYQ_2016_Q25": {
@@ -1255,12 +1260,14 @@
    "6"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 25.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "Each friend eats one part of a pizza that is cut into equal parts. Think about how many friends one whole pizza can feed.",
+   "Work out how many friends one whole pizza feeds, if each friend eats one third of it.",
+   "Example: 20 children each eat one quarter of a cake. One cake feeds 4 children, and 20 divided by 4 equals 5, so they need 5 cakes."
   ],
   "steps": [
-   "The correct answer is option 3, 4."
+   "Each friend eats one third of a pizza, so one whole pizza feeds 3 friends.",
+   "Count the groups of 3 among the 12 friends: 12 divided by 3 equals 4.",
+   "They should order 4 pizzas."
   ]
  },
  "PYQ_2017_Q03": {
@@ -1272,12 +1279,15 @@
    "19 over 20"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 3.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "In each fraction the top is just 1 less than the bottom. So each one is a whole with one small piece missing. Think about which missing piece is the smallest.",
+   "Write down how much each fraction is short of 1. For example, 17 over 18 is 1 over 18 short of a whole. Then compare those missing pieces.",
+   "Example: which is larger, 5 over 6 or 7 over 8? 5 over 6 is 1 over 6 short of 1, and 7 over 8 is 1 over 8 short of 1. 1 over 8 is the smaller piece, so 7 over 8 is closer to 1 and is the larger fraction."
   ],
   "steps": [
-   "The correct answer is option 4, 19 over 20."
+   "Each fraction is one piece short of a whole. 16 over 17 is short by 1 over 17, 17 over 18 by 1 over 18, 18 over 19 by 1 over 19 and 19 over 20 by 1 over 20.",
+   "When a whole is cut into more parts, each part is smaller. So 1 over 20 is the smallest of the missing pieces.",
+   "The key idea is that the fraction with the smallest piece missing is the closest to 1, so it is the largest.",
+   "The largest fraction is 19 over 20."
   ]
  },
  "PYQ_2017_Q26": {
@@ -1289,12 +1299,14 @@
    "14 and 3 over 8"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 26.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "To change an improper fraction into a mixed fraction, divide the top by the bottom. The quotient is the whole part and the remainder goes over the bottom number.",
+   "Divide 115 by 8. It may help to take out 80 first, which is 8 times 10, and then deal with what is left.",
+   "Example: 97 over 6. 6 times 16 equals 96, so 6 fits 16 times with 97 minus 96, which is 1 left over. So 97 over 6 equals 16 and 1 over 6."
   ],
   "steps": [
-   "The correct answer is option 4, 14 and 3 over 8."
+   "Divide 115 by 8. First, 8 times 10 equals 80, which leaves 115 minus 80, which is 35.",
+   "Next, 8 times 4 equals 32, which leaves 35 minus 32, which is 3. So 8 fits 10 plus 4, which is 14 times, with remainder 3. 8 times 14 equals 112.",
+   "The whole part is 14 and the remainder 3 goes over 8. So 115 over 8 equals 14 and 3 over 8."
   ]
  },
  "PYQ_2018_Q13": {
@@ -1306,12 +1318,15 @@
    "7 over 25 and 15 over 50"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 13.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "Equivalent fractions show the same amount. Two fractions are equivalent if both simplify to the same fraction.",
+   "Take the pairs one at a time. Simplify each fraction to its lowest terms, starting with 15 over 20 and 9 over 12, and see whether the two match.",
+   "Example: are 6 over 8 and 9 over 12 equivalent? 6 over 8 simplifies to 3 over 4 and 9 over 12 also simplifies to 3 over 4, so yes. Are 3 over 10 and 5 over 20? 5 over 20 simplifies to 1 over 4, which is not 3 over 10, so no."
   ],
   "steps": [
-   "The correct answer is option 4, 7 over 25, 15 over 50."
+   "15 over 20 and 9 over 12 both simplify to 3 over 4, so they are equivalent.",
+   "16 over 24 simplifies to 2 over 3. Also 33 over 55 and 15 over 25 both simplify to 3 over 5. So those two pairs are equivalent too.",
+   "7 over 25 cannot be simplified. To compare, write it with 50 below: 7 over 25 equals 14 over 50, which is not the same as 15 over 50.",
+   "So the pair that is not equivalent is 7 over 25 and 15 over 50."
   ]
  },
  "PYQ_2018_Q35": {
@@ -1323,12 +1338,15 @@
    "None"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 35.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "The second amount is a fraction of what was left, not of the whole cake. Keep track of how much cake remains after each day.",
+   "First find what fraction of the cake is left after Saturday. Then think of that remainder as three equal parts, because James eats two of the three on Sunday.",
+   "Example: Meena eats half a pizza, then three quarters of the remainder. The remainder is 1 over 2, and she leaves one quarter of it. A quarter of 1 over 2 is 1 over 8, so 1 over 8 of the pizza is left."
   ],
   "steps": [
-   "The correct answer is option 3, 1 over 6."
+   "After Saturday, half of the cake is left. 1 minus 1 over 2, equals 1 over 2.",
+   "On Sunday James eats two thirds of that half, so one third of the half is left. The trap is to take two thirds of the whole cake instead.",
+   "Cut the half into 3 equal parts. Each part is 1 over 6 of the whole cake, because 6 such parts make the whole cake.",
+   "The fraction of the cake left for Monday is 1 over 6."
   ]
  },
  "PYQ_2019_Q09": {
@@ -1340,12 +1358,15 @@
    "None of these"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 9.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "Equivalent fractions show the same amount. In an equivalent pair, the top and the bottom have both been multiplied or divided by the same number.",
+   "Take the pairs one at a time. Simplify both fractions in a pair to their lowest terms and see whether they match.",
+   "Example: are 4 over 6 and 10 over 15 equivalent? Both simplify to 2 over 3, so yes. Are 3 over 8 and 6 over 24? 6 over 24 simplifies to 1 over 4, which is not 3 over 8, so no."
   ],
   "steps": [
-   "The correct answer is option 2, 7 over 15, 14 over 45."
+   "14 over 21 and 8 over 12 both simplify to 2 over 3, so they are equivalent.",
+   "15 over 20 and 9 over 12 both simplify to 3 over 4, so they are equivalent.",
+   "From 7 over 15 to 14 over 45, the top was doubled but the bottom was multiplied by 3. Doubling both gives 7 over 15 equals 14 over 30, not 14 over 45.",
+   "So the pair that is not equivalent is 7 over 15 and 14 over 45."
   ]
  },
  "PYQ_2019_Q18": {
@@ -1357,12 +1378,14 @@
    "119"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 18.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "The right side is a mixed fraction and the left side is an improper fraction with the same bottom number. Change the mixed fraction into an improper fraction.",
+   "Each whole is 19 nineteenths. Start by finding how many nineteenths there are in 6 wholes.",
+   "Example: 4 and 5 over 12 as an improper fraction. 4 wholes are 4 times 12, which is 48 twelfths. Adding the 5 extra twelfths gives 48 plus 5, which is 53, so 4 and 5 over 12 equals 53 over 12."
   ],
   "steps": [
-   "The correct answer is option 3, 129."
+   "One whole is 19 nineteenths. So 6 wholes are 6 times 19, which is 114 nineteenths.",
+   "Add the 15 extra nineteenths: 114 plus 15 equals 129.",
+   "So 6 and 15 over 19 equals 129 over 19, and the star represents 129."
   ]
  },
  "Q_CH07_001": {
@@ -1374,13 +1397,14 @@
    "3 over 7, 5 over 9 and 2 over 11"
   ],
   "hints": [
-   "Like fractions have the same denominator.",
-   "Option A: all have denominator 5.",
-   "Options B, C and D all have different denominators."
+   "Like fractions are fractions whose bottom numbers are all the same. The top numbers can be different.",
+   "Look only at the bottom numbers in each group. Find the group where they all match.",
+   "Example: 1 over 9, 4 over 9 and 7 over 9 are like fractions because every bottom number is 9. But 1 over 3, 1 over 5 and 1 over 8 are not, because their bottom numbers are different."
   ],
   "steps": [
-   "Option A: all have denominator 5.",
-   "The answer is A."
+   "Like fractions have the same bottom number, which is called the denominator.",
+   "In 1 over 2, 1 over 3 and 1 over 4, the tops match, but the bottoms are 2, 3 and 4. The groups 2 over 3, 4 over 5, 1 over 6, and 3 over 7, 5 over 9, 2 over 11, have different bottoms as well.",
+   "Only one group has the same bottom number, 5, in every fraction. The like fractions are 2 over 5, 3 over 5 and 4 over 5."
   ]
  },
  "Q_CH07_002": {
@@ -1392,13 +1416,14 @@
    "6 over 7"
   ],
   "hints": [
-   "The denominators are the same, so compare the numerators.",
-   "The largest numerator is 6.",
-   "6 over 7 is the largest."
+   "All four fractions have the same bottom number, so the pieces are all the same size. Only the number of pieces differs.",
+   "Compare the top numbers 3, 5, 2 and 6. More pieces of the same size make a bigger fraction.",
+   "Example: in 2 over 9, 8 over 9, 4 over 9 and 5 over 9 the pieces are all ninths. 8 is the biggest top number, so 8 over 9 is the largest."
   ],
   "steps": [
-   "The largest numerator is 6.",
-   "The answer is D."
+   "Every fraction has 7 below, so each one counts sevenths, and the pieces are the same size.",
+   "The tops are 3, 5, 2 and 6. The biggest top number is 6, which means the most pieces.",
+   "The largest fraction is 6 over 7."
   ]
  },
  "Q_CH07_003": {
@@ -1410,13 +1435,14 @@
    "3 over 2"
   ],
   "hints": [
-   "The numerators are the same, so the larger denominator gives the smaller fraction.",
-   "The largest denominator is 8.",
-   "3 over 8 is the smallest."
+   "All four fractions have the same top number, so each has the same number of pieces. What changes is the size of each piece.",
+   "Think about cutting a whole into 2, 4, 5 or 8 equal pieces. Decide which cut gives the smallest pieces.",
+   "Example: in 2 over 3, 2 over 9, 2 over 5 and 2 over 7, each fraction has 2 pieces. Ninths are the smallest pieces, so 2 over 9 is the smallest fraction."
   ],
   "steps": [
-   "The largest denominator is 8.",
-   "The answer is B."
+   "Every fraction has 3 pieces. The bottom number tells how many equal pieces the whole is cut into.",
+   "The more pieces a whole is cut into, the smaller each piece is. Eighths are smaller than fifths, quarters and halves.",
+   "So 3 eighths is the least amount. The smallest fraction is 3 over 8."
   ]
  },
  "Q_CH07_004": {
@@ -1428,13 +1454,14 @@
    "11 over 5"
   ],
   "hints": [
-   "Multiply the whole number by the denominator, then add the numerator.",
-   "3 times 5, plus 2, equals 17. Keep the denominator.",
-   "That gives 17 over 5."
+   "An improper fraction counts everything in the same size of piece. Here that means turning the whole numbers into fifths too.",
+   "Each whole is 5 fifths. Find how many fifths there are in 3 wholes.",
+   "Example: 2 and three quarters. Two wholes are 2 times 4, which is 8 quarters. Adding the 3 extra quarters gives 8 plus 3, which is 11, so 2 and three quarters equals 11 over 4."
   ],
   "steps": [
-   "3 times 5, plus 2, equals 17. Keep the denominator.",
-   "The answer is A."
+   "Each whole is 5 fifths, so 3 wholes are 3 times 5, which is 15 fifths.",
+   "Add the 2 extra fifths: 15 plus 2 equals 17 fifths.",
+   "So 3 and 2 over 5 equals 17 over 5."
   ]
  },
  "Q_CH07_005": {
@@ -1446,13 +1473,14 @@
    "4 and three quarters"
   ],
   "hints": [
-   "23 divided by 4 equals 5, remainder 3.",
-   "That gives 5 and three quarters.",
-   "Check: 5 times 4, plus 3, equals 23."
+   "To change an improper fraction into a mixed number, divide the top by the bottom. The quotient is the whole part and the remainder becomes the new top.",
+   "Divide 23 by 4. Find how many whole 4s fit into 23 and how much is left over.",
+   "Example: 19 over 6. 6 times 3 equals 18, so 6 fits 3 times with 19 minus 18, which is 1 left over. So 19 over 6 equals 3 and 1 over 6."
   ],
   "steps": [
-   "That gives 5 and three quarters.",
-   "The answer is B."
+   "Divide 23 by 4. 4 times 5 equals 20 and 4 times 6 equals 24, so 4 fits into 23 five whole times.",
+   "The remainder is 23 minus 20, which is 3.",
+   "The whole part is 5 and the 3 left over are quarters. So 23 over 4 equals 5 and three quarters."
   ]
  },
  "Q_CH07_006": {
@@ -1464,13 +1492,13 @@
    "15 over 8"
   ],
   "hints": [
-   "The denominators are the same, so add the numerators. 3 plus 5 equals 8.",
-   "8 over 8 equals 1.",
-   "The answer is 1, which is also 8 over 8."
+   "Both fractions are eighths, so the pieces are the same size. Adding them means counting the pieces altogether.",
+   "Add the top numbers 3 and 5 and keep 8 at the bottom. Then look at what that fraction equals.",
+   "Example: 2 over 6, plus 3 over 6. The tops give 2 plus 3, which is 5, and the bottom stays 6, so the sum is 5 over 6."
   ],
   "steps": [
-   "8 over 8 equals 1.",
-   "The answer is B."
+   "Both fractions are eighths. Add the tops and keep the bottom: 3 plus 5 equals 8, so the sum is 8 over 8. 3 over 8, plus 5 over 8, equals 8 over 8.",
+   "8 eighths make one whole. So 3 over 8, plus 5 over 8, equals 1."
   ]
  },
  "Q_CH07_007": {
@@ -1482,13 +1510,14 @@
    "2 over 12"
   ],
   "hints": [
-   "Find the L C M of 3 and 4, which is 12.",
-   "1 over 3 equals 4 over 12. 1 over 4 equals 3 over 12. The sum is 7 over 12.",
-   "7 over 12."
+   "Thirds and quarters are pieces of different sizes. Before adding, both fractions must be changed to the same bottom number.",
+   "Find the smallest number that both 3 and 4 divide into. Change each fraction so that it has that number at the bottom.",
+   "Example: 1 over 2, plus 1 over 3. Both can be written in sixths: 1 over 2 equals 3 over 6 and 1 over 3 equals 2 over 6. Then 3 over 6, plus 2 over 6, equals 5 over 6."
   ],
   "steps": [
-   "1 over 3 equals 4 over 12. 1 over 4 equals 3 over 12. The sum is 7 over 12.",
-   "The answer is B."
+   "Thirds and quarters are different sizes, so change both into twelfths, because 3 times 4 equals 12.",
+   "1 over 3 equals 4 over 12 and 1 over 4 equals 3 over 12.",
+   "Add the tops and keep the bottom: 4 plus 3 equals 7. So 1 over 3, plus 1 over 4, equals 7 over 12. 4 over 12, plus 3 over 12, equals 7 over 12."
   ]
  },
  "Q_CH07_008": {
@@ -1500,13 +1529,14 @@
    "7 over 6"
   ],
   "hints": [
-   "The L C M of 6 and 3 is 6. 1 over 3 equals 2 over 6.",
-   "5 over 6, minus 2 over 6, equals 3 over 6, which is 1 over 2.",
-   "1 over 2."
+   "The two fractions have different bottom numbers. Make the bottoms the same before you subtract.",
+   "6 is a multiple of 3. Change 1 over 3 into sixths by multiplying its top and bottom by 2.",
+   "Example: 7 over 8, minus 1 over 4. Change 1 over 4 into eighths: 1 over 4 equals 2 over 8. Then 7 over 8, minus 2 over 8, equals 5 over 8."
   ],
   "steps": [
-   "5 over 6, minus 2 over 6, equals 3 over 6, which is 1 over 2.",
-   "The answer is B."
+   "Change 1 over 3 into sixths. Multiply its top and bottom by 2 to get 2 over 6.",
+   "Subtract the tops and keep the bottom: 5 minus 2 equals 3, so the result is 3 over 6. 5 over 6, minus 2 over 6, equals 3 over 6.",
+   "Simplify by dividing the top and bottom by 3. So 5 over 6, minus 1 over 3, equals 1 over 2."
   ]
  },
  "Q_CH07_009": {
@@ -1519,13 +1549,13 @@
   ],
   "hints": [
    "Multiplying a fraction by a whole number is the same as finding that fraction of the number.",
-   "Find one fifth of 10 first by dividing 10 by 5. Then take 3 of those parts.",
-   "Example: 2 over 3, times 12. 12 divided by 3 equals 4, and 4 times 2 equals 8. So 2 over 3, times 12 is 8."
+   "Find one fifth of 10 first, by dividing 10 by 5. Then take 3 of those parts.",
+   "Example: 2 over 3, times 12. One third of 12 is 12 divided by 3, which is 4. Two thirds is 2 times 4, which is 8. So 2 over 3, times 12, equals 8."
   ],
   "steps": [
-   "One fifth of 10 is 2. 10 divided by 5 equals 2.",
-   "Three fifths is 3 of these parts. 2 times 3 equals 6.",
-   "The answer is 6. 3 over 5, times 10, equals 6."
+   "3 over 5, times 10, means three fifths of 10. One fifth of 10 is 10 divided by 5, which is 2.",
+   "Three fifths is 3 of those parts: 3 times 2 equals 6.",
+   "So 3 over 5, times 10, equals 6."
   ]
  },
  "Q_CH07_010": {
@@ -1747,13 +1777,15 @@
    "1 over 2, 3 over 4, 2 over 3 and 5 over 6"
   ],
   "hints": [
-   "The L C M of 3, 4, 6 and 2 is 12. Convert: 8 over 12, 9 over 12, 10 over 12 and 6 over 12.",
-   "In ascending order: 6 over 12, then 8 over 12, then 9 over 12, then 10 over 12.",
-   "That is 1 over 2, 2 over 3, 3 over 4 and 5 over 6."
+   "Ascending means from smallest to largest. To compare fractions with different bottom numbers, change them all to the same bottom number.",
+   "Find the smallest number that 3, 4, 6 and 2 all divide into. Write every fraction with that number below.",
+   "Example: arrange 1 over 2, 3 over 8 and 3 over 4 in ascending order. In eighths they are 4 over 8, 3 over 8 and 6 over 8. From smallest to largest that is 3 over 8, 1 over 2 and 3 over 4."
   ],
   "steps": [
-   "In ascending order: 6 over 12, then 8 over 12, then 9 over 12, then 10 over 12.",
-   "The answer is A."
+   "The smallest number that 3, 4, 6 and 2 all divide into is 12. So change every fraction into twelfths.",
+   "2 over 3 equals 8 over 12, 3 over 4 equals 9 over 12, 5 over 6 equals 10 over 12 and 1 over 2 equals 6 over 12.",
+   "Put the tops in order from smallest to largest: 6 over 12, 8 over 12, 9 over 12 and 10 over 12.",
+   "In ascending order the fractions are 1 over 2, 2 over 3, 3 over 4 and 5 over 6."
   ]
  },
  "Q_CH07_015": {
@@ -1765,14 +1797,14 @@
    "1 over 5"
   ],
   "hints": [
-   "To multiply two fractions, multiply the tops together and the bottoms together. Then simplify.",
+   "To multiply two fractions, multiply the tops together and the bottoms together. Then simplify the result.",
    "Multiply 2 by 3 for the new top and 3 by 5 for the new bottom. Then look for a number that divides both.",
    "Example: 3 over 4, times 2 over 3. Tops: 3 times 2 equals 6. Bottoms: 4 times 3 equals 12. Then 6 over 12 simplifies to 1 over 2."
   ],
   "steps": [
-   "Multiply the tops and multiply the bottoms: 2 times 3 equals 6 and 3 times 5 equals 15. 2 over 3, times 3 over 5, equals 6 over 15.",
-   "Simplify by dividing the top and bottom by 3. 6 over 15 equals 2 over 5.",
-   "The answer is 2 over 5."
+   "Multiply the tops: 2 times 3 equals 6. Multiply the bottoms: 3 times 5 equals 15. That gives 6 over 15.",
+   "Both 6 and 15 can be divided by 3: 6 divided by 3 equals 2 and 15 divided by 3 equals 5.",
+   "So 2 over 3, times 3 over 5, equals 2 over 5. 6 over 15 equals 2 over 5."
   ]
  },
  "Q_CH07_015_V07": {
@@ -1797,21 +1829,20 @@
  "Q_CH07_016": {
   "q": "2 and a third plus 1 and two thirds equals what?",
   "options": [
-   "3 and 3 over 3",
+   "3 and 3 over 6",
    "4",
    "3 and a third",
    "3 and two thirds"
   ],
   "hints": [
    "To add mixed numbers, add the whole numbers and the fractions separately. Then see if the fractions make another whole.",
-   "Add the wholes: 2 and 1. Then add the fraction parts, which both have 3 below.",
-   "Example: 3 and a quarter plus 2 and three quarters. Wholes: 3 plus 2 equals 5. Fractions: 1 over 4, plus 3 over 4, equals 4 over 4, which is 1. Total: 5 plus 1 equals 6."
+   "Add the wholes, 2 and 1. Then add the fraction parts, which both have 3 below.",
+   "Example: 2 and 2 over 5, plus 3 and 3 over 5. Wholes: 2 plus 3 equals 5. Fractions: 2 over 5, plus 3 over 5, equals 5 over 5, which is 1 whole. Total: 5 plus 1 equals 6."
   ],
   "steps": [
-   "Add the whole numbers. 2 plus 1 equals 3.",
-   "Add the fractions. 3 over 3 is one whole. 1 over 3, plus 2 over 3, equals 1.",
-   "Add the two results. 3 plus 1 equals 4.",
-   "The answer is 4."
+   "Add the whole numbers: 2 plus 1 equals 3.",
+   "Add the fractions: 1 over 3, plus 2 over 3, equals 3 over 3, which is one whole.",
+   "Add the extra whole: 3 plus 1 equals 4. So 2 and a third plus 1 and two thirds equals 4."
   ]
  },
  "Q_CH07_017": {
@@ -2570,12 +2601,12 @@
   "hints": [
    "The two fractions have different bottom numbers. Make the bottoms the same before you add.",
    "15 is a multiple of 3. Change 2 over 3 into fifteenths by multiplying its top and bottom by 5.",
-   "Example: 3 over 8, plus 1 over 4. Change 1 over 4 into eighths: 1 over 4 equals 2 over 8. Then 3 over 8, plus 2 over 8, equals 5 over 8."
+   "Example: 5 over 8, plus 3 over 4. Change 3 over 4 into eighths: 3 over 4 equals 6 over 8. Then 5 over 8, plus 6 over 8, equals 11 over 8. The sum is more than 1, and that is fine."
   ],
   "steps": [
-   "3 times 5 equals 15, so change 2 over 3 into fifteenths. 2 over 3 equals 10 over 15.",
-   "Add the tops and keep the bottom. 13 over 15, plus 10 over 15, equals 23 over 15.",
-   "The answer is 23 over 15."
+   "15 is a multiple of 3, so change 2 over 3 into fifteenths. Multiply its top and bottom by 5: 2 over 3 equals 10 over 15.",
+   "Add the tops and keep the bottom: 13 plus 10 equals 23. 13 over 15, plus 10 over 15, equals 23 over 15.",
+   "23 and 15 share no factor except 1, so it cannot be simplified. So 13 over 15, plus 2 over 3, equals 23 over 15."
   ]
  },
  "VAR_G4_vary_fraction_arithmetic_V138": {
@@ -2589,12 +2620,12 @@
   "hints": [
    "The two fractions have different bottom numbers. Make the bottoms the same before you subtract.",
    "15 is a multiple of 5. Change 2 over 5 into fifteenths by multiplying its top and bottom by 3.",
-   "Example: 7 over 8, minus 1 over 4. Change 1 over 4 into eighths: 1 over 4 equals 2 over 8. Then 7 over 8, minus 2 over 8, equals 5 over 8."
+   "Example: 7 over 9, minus 1 over 3. Change 1 over 3 into ninths: 1 over 3 equals 3 over 9. Then 7 over 9, minus 3 over 9, equals 4 over 9."
   ],
   "steps": [
-   "5 times 3 equals 15, so change 2 over 5 into fifteenths. 2 over 5 equals 6 over 15.",
-   "Subtract the tops and keep the bottom. 13 over 15, minus 6 over 15, equals 7 over 15.",
-   "The answer is 7 over 15."
+   "15 is a multiple of 5, so change 2 over 5 into fifteenths. Multiply its top and bottom by 3: 2 over 5 equals 6 over 15.",
+   "Subtract the tops and keep the bottom: 13 minus 6 equals 7. 13 over 15, minus 6 over 15, equals 7 over 15.",
+   "7 and 15 share no factor except 1, so it cannot be simplified. So 13 over 15, minus 2 over 5, equals 7 over 15."
   ]
  },
  "VAR_G4_vary_fraction_arithmetic_V169": {
@@ -2607,13 +2638,12 @@
   ],
   "hints": [
    "The two fractions already have the same bottom number. So only the tops need adding.",
-   "Add 3 and 7 for the new top. Keep 10 as the bottom. Then see if the answer can be made simpler.",
-   "Example: 2 over 9, plus 4 over 9. Tops: 2 plus 4 equals 6. The sum is 6 over 9, which simplifies to 2 over 3."
+   "Add 3 and 7 for the new top and keep 10 as the bottom. Then see if the result can be made simpler.",
+   "Example: 2 over 9, plus 4 over 9. The tops give 2 plus 4, which is 6, so the sum is 6 over 9, which simplifies to 2 over 3."
   ],
   "steps": [
-   "Add the tops and keep the bottom. 3 over 10, plus 7 over 10, equals 10 over 10.",
-   "10 tenths make one whole. 10 over 10 equals 1.",
-   "The answer is 1."
+   "Both fractions are tenths, so add the tops and keep the bottom: 3 plus 7 equals 10. 3 over 10, plus 7 over 10, equals 10 over 10.",
+   "10 tenths make one whole. So 3 over 10, plus 7 over 10, equals 1."
   ]
  },
  "VAR_G4_vary_fraction_arithmetic_V17": {
@@ -2626,13 +2656,13 @@
   ],
   "hints": [
    "The two fractions already have the same bottom number. So only the tops need subtracting.",
-   "Take 3 away from 9 for the new top. Keep 10 as the bottom. Then see if the answer can be made simpler.",
-   "Example: 7 over 8, minus 3 over 8. Tops: 7 minus 3 equals 4. The result is 4 over 8, which simplifies to 1 over 2."
+   "Take 3 away from 9 for the new top and keep 10 as the bottom. Then see if the result can be made simpler.",
+   "Example: 7 over 8, minus 3 over 8. The tops give 7 minus 3, which is 4, so the result is 4 over 8, which simplifies to 1 over 2."
   ],
   "steps": [
-   "Subtract the tops and keep the bottom. 9 over 10, minus 3 over 10, equals 6 over 10.",
-   "Simplify by dividing the top and bottom by 2. 6 over 10 equals 3 over 5.",
-   "The answer is 3 over 5."
+   "Both fractions are tenths, so subtract the tops and keep the bottom: 9 minus 3 equals 6. 9 over 10, minus 3 over 10, equals 6 over 10.",
+   "6 over 10 can be made simpler. Divide the top and bottom by 2: 6 divided by 2 equals 3 and 10 divided by 2 equals 5.",
+   "So 9 over 10, minus 3 over 10, equals 3 over 5. 6 over 10 equals 3 over 5."
   ]
  },
  "VAR_G4_vary_fraction_arithmetic_V176": {
@@ -2646,12 +2676,12 @@
   "hints": [
    "The two fractions have different bottom numbers. Make the bottoms the same before you subtract.",
    "12 is a multiple of 2. Change 1 over 2 into twelfths by multiplying its top and bottom by 6.",
-   "Example: 9 over 10, minus 1 over 2. Change 1 over 2 into tenths: 1 over 2 equals 5 over 10. Then 9 over 10, minus 5 over 10, equals 4 over 10, which simplifies to 2 over 5."
+   "Example: 7 over 8, minus 1 over 2. Change 1 over 2 into eighths: 1 over 2 equals 4 over 8. Then 7 over 8, minus 4 over 8, equals 3 over 8."
   ],
   "steps": [
-   "2 times 6 equals 12, so change 1 over 2 into twelfths. 1 over 2 equals 6 over 12.",
-   "Subtract the tops and keep the bottom. 11 over 12, minus 6 over 12, equals 5 over 12.",
-   "The answer is 5 over 12."
+   "12 is a multiple of 2, so change 1 over 2 into twelfths. Multiply its top and bottom by 6: 1 over 2 equals 6 over 12.",
+   "Subtract the tops and keep the bottom: 11 minus 6 equals 5. 11 over 12, minus 6 over 12, equals 5 over 12.",
+   "So 11 over 12, minus 1 over 2, equals 5 over 12."
   ]
  },
  "VAR_G4_vary_fraction_arithmetic_V188": {
@@ -2663,14 +2693,14 @@
    "1 over 3"
   ],
   "hints": [
-   "The two fractions already have the same bottom number. So only the tops need subtracting.",
-   "Take 7 away from 11 for the new top. Keep 12 as the bottom. Then see if the answer can be made simpler.",
-   "Example: 8 over 9, minus 2 over 9. Tops: 8 minus 2 equals 6. The result is 6 over 9, which simplifies to 2 over 3."
+   "Both fractions have the same bottom number, so this is a take-away of like fractions. Only the top numbers change, and the result may need making simpler at the end.",
+   "Take the second top number away from the first top number and keep 12 as the bottom. Then look for a number that divides both the top and the bottom.",
+   "Here is a similar one: 8 over 9, minus 2 over 9. The tops give 8 minus 2, which is 6, so the result is 6 over 9. Dividing the top and the bottom by 3 gives 2 over 3."
   ],
   "steps": [
-   "Subtract the tops and keep the bottom. 11 over 12, minus 7 over 12, equals 4 over 12.",
-   "Simplify by dividing the top and bottom by 4. 4 over 12 equals 1 over 3.",
-   "The answer is 1 over 3."
+   "The bottoms are both 12, so subtract only the tops: 11 minus 7 equals 4. That gives 4 over 12. 11 over 12, minus 7 over 12, equals 4 over 12.",
+   "Both 4 and 12 can be divided by 4. 4 divided by 4 equals 1 and 12 divided by 4 equals 3.",
+   "So 11 over 12, minus 7 over 12, is 1 over 3 in its simplest form."
   ]
  },
  "VAR_G4_vary_fraction_arithmetic_V28": {
@@ -2682,14 +2712,14 @@
    "19 over 24"
   ],
   "hints": [
-   "The two fractions have different bottom numbers. Make the bottoms the same before you add.",
-   "12 is a multiple of 3. Change 2 over 3 into twelfths by multiplying its top and bottom by 4.",
-   "Example: 5 over 6, plus 1 over 3. Change 1 over 3 into sixths: 1 over 3 equals 2 over 6. Then 5 over 6, plus 2 over 6, equals 7 over 6."
+   "The two fractions have different bottom numbers. Fractions can only be added when the bottoms match, so one of them has to be renamed first.",
+   "12 is a multiple of 3, so change 2 over 3 into twelfths. Multiply its top and its bottom by the same number so that the bottom becomes 12.",
+   "Here is a similar one: 5 over 6, plus 1 over 3. Change 1 over 3 into sixths by multiplying its top and bottom by 2, which gives 2 over 6. Then 5 over 6, plus 2 over 6, equals 7 over 6."
   ],
   "steps": [
-   "3 times 4 equals 12, so change 2 over 3 into twelfths. 2 over 3 equals 8 over 12.",
-   "Add the tops and keep the bottom. 11 over 12, plus 8 over 12, equals 19 over 12.",
-   "The answer is 19 over 12."
+   "3 times 4 equals 12, so multiply the top and the bottom of 2 over 3 by 4. That makes 8 over 12.",
+   "Now the bottoms match, so add the tops: 11 plus 8 equals 19. The bottom stays 12. 11 over 12, plus 8 over 12, equals 19 over 12.",
+   "So 11 over 12, plus 2 over 3, equals 19 over 12. The top is bigger than the bottom because the total is more than one whole."
   ]
  }
 }

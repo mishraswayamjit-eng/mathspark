@@ -39,6 +39,12 @@ def main(node=NODE):
         with io.open(path, encoding="utf-8") as f:
             part = json.load(f)
     grep = [a[7:] for a in flags if a.startswith("--grep=")]
+    if "--changed" in flags:
+        # Only the questions whose hints and steps were rewritten in the bank.
+        with io.open(os.path.join(common.ROOT, "data", "bank-import", "g4", "renarrate.json"), encoding="utf-8") as f:
+            listed = set(json.load(f).get(node, []))
+        questions = [q for q in questions if q["id"] in listed]
+        flags.add("--help-only")
     for n, q in enumerate(questions[start:start + count], start):
         if grep and e_has(part.get(q["id"]), grep[0]) is False:
             continue
@@ -56,9 +62,12 @@ def main(node=NODE):
             print("%s: %s" % (tag, text.replace("\n", " // ")))
             if spoken is not None:
                 print("%s> %s" % (" " * (len(tag) - 1), spoken))
-        show("Q", src["q"], e["q"] if e else None)
-        for i, t in enumerate(src["options"]):
-            show("O%d" % i, t, e["options"][i] if e else None)
+        if "--help-only" in flags:
+            print("Q: %s" % src["q"].replace("\n", " // "))
+        else:
+            show("Q", src["q"], e["q"] if e else None)
+            for i, t in enumerate(src["options"]):
+                show("O%d" % i, t, e["options"][i] if e else None)
         for i, t in enumerate(src["hints"]):
             show("H%d" % i, t, e["hints"][i] if e else None)
         for i, t in enumerate(src["steps"]):

@@ -59,7 +59,7 @@ def _unit(m):
 _VERBS = {
     "is", "are", "be", "was", "cost", "costs", "gained", "give", "gives", "gave", "by", "takes", "has", "have",
     "had", "won", "weigh", "weighs", "in", "gets", "get", "turns", "total", "totalled", "after", "then",
-    "still", "always", "of",
+    "still", "always", "of", "with", "leaves", "make", "year",
 }
 
 
@@ -110,6 +110,8 @@ def say(text, stop=True):
     s = re.sub(r"(?<=\s)-(?=\s)", "−", s)                      # " - "
     s = s.replace("—", ", ")
 
+    # "(100 − 12) ÷ 4 = 22": the bracket is worked out first, so say it first.
+    s = re.sub(r"\(([^()]+)\)\s*÷\s*(\d+)\s*=", r"\1, then ÷ \2, equals ", s)
     # Blanks, then "=" while the sums are still in print.
     s = re.sub(r"(\d)\((\d+)\)", r"\1 × \2", s)                        # 3(5)
     s = re.sub(r"\bleft side\s*=\s*", "the left side is ", s)
@@ -153,8 +155,8 @@ def say(text, stop=True):
     s = re.sub(r"(equals \d+) and (?=\d)", r"\1, and ", s)
     # The letter a, used as a number's name, is said as a letter.
     s = re.sub(r"(which is \d+) and ", r"\1, and ", s)
-    s = re.sub(r"(?<=\d )a(?= (?:plus|minus|equals|times|over|from|away|are|on|and)\b|[.,?:])", "A", s)
-    s = re.sub(r"\ba(?= (?:plus|minus|equals|times|over)\b)", "A", s)
+    s = re.sub(r"(?<=\d )a\b(?! (?:year|day|week|month|time)s?\b)", "A", s)
+    s = re.sub(r"\ba(?= (?:plus|minus|equals|over)\b| times (?!table))", "A", s)
 
     # Brackets and quotes that are only punctuation.
     s = re.sub(r"(?<![A-Za-z])'([A-Za-z ]+)'(?![A-Za-z])", r"\1", s)

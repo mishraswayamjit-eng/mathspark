@@ -1229,12 +1229,15 @@
    "324"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 31.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "If a hall has as many chairs in each row as in each column, the total number of chairs is a number multiplied by itself. Look for the choice that is a square number.",
+   "Start from squares you know, such as 10 times 10 equals 100 and 20 times 20 equals 400. Try numbers in between and see which choice you can land on exactly.",
+   "Here is a similar one. Can 196 children sit in a square of rows and columns? 13 times 13 equals 169, which is too small, and 15 times 15 equals 225, which is too big. 14 times 14 equals 196, which fits exactly, so 196 is a square number."
   ],
   "steps": [
-   "Correct answer: option 4, 324."
+   "The hall has the same number of chairs in a row as in a column, so the number of chairs is a number times itself. The hall was full, so the number of men is a square number.",
+   "Try 18. 18 times 18 is 324, so 324 is a square number.",
+   "The other numbers fall between squares. 131 lies between 11 times 11, which is 121, and 12 times 12, which is 144, and 275 lies between 16 times 16, which is 256, and 17 times 17, which is 289. 325 is just past 324, and the next square is 19 times 19, which is 361.",
+   "So the number of men in the hall can be 324."
   ]
  },
  "PYQ_2017_Q34": {
@@ -1246,12 +1249,15 @@
    "6 and 8."
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 34.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "For each pair, square both numbers and add the two squares. Then ask whether the total is itself a square number.",
+   "Start with 2 and 3. Their squares are 4 and 9. Add them and decide whether the total is a square number, then test the other pairs the same way.",
+   "Here is a similar one. Try 3 and 4. 3 times 3 equals 9 and 4 times 4 equals 16, and 9 plus 16 equals 25. Since 25 is 5 times 5, the squares of 3 and 4 add up to a square number."
   ],
   "steps": [
-   "Correct answer: option 4, 6 and 8."
+   "Test 2 and 3. Their squares are 4 and 9, and 4 plus 9 equals 13. 13 is not a square number.",
+   "Test 5 and 6: 25 plus 36 equals 61. Test 4 and 6: 16 plus 36 equals 52. Both totals lie between 7 times 7, which is 49, and 8 times 8, which is 64, so neither is a square number.",
+   "Test 6 and 8. Their squares are 36 and 64, which add up to 100.",
+   "100 is 10 times 10, which is a square number. So the two numbers are 6 and 8. 10 times 10 equals 100."
   ]
  },
  "PYQ_2017_Q38": {
@@ -1263,12 +1269,14 @@
    "6"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 38.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "A square number is a number multiplied by itself. List the square numbers that have two digits, then pick out the even ones.",
+   "Start with 4 times 4, which is the first square with two digits. Carry on with 5 times 5, 6 times 6 and so on until the answer has three digits.",
+   "Here is a similar one. How many odd square numbers are less than 100? The squares below 100 are 1, 4, 9, 16, 25, 36, 49, 64 and 81. The odd ones are 1, 9, 25, 49 and 81, so there are 5."
   ],
   "steps": [
-   "Correct answer: option 1, 3."
+   "List the square numbers with two digits: 4 times 4 equals 16, 5 times 5 equals 25, 6 times 6 equals 36, 7 times 7 equals 49, 8 times 8 equals 64 and 9 times 9 equals 81. The next one, 10 times 10 equals 100, has three digits.",
+   "Pick out the even ones. They are 16, 36 and 64.",
+   "So there are 3 even two-digit square numbers."
   ]
  },
  "PYQ_2018_Q36": {
@@ -1301,12 +1309,15 @@
    "31"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 26.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "You need the square number that comes just after 710. Find it by multiplying numbers by themselves, then see how far it is from 710.",
+   "Start with a square you know: 25 times 25 equals 625, which is less than 710. Try the next numbers after 25 until the square goes past 710.",
+   "Here is a similar one. What must be added to 300 to make a square number? 17 times 17 equals 289, which is too small, and the next square is 18 times 18, which is 324. 324 minus 300 equals 24, so add 24."
   ],
   "steps": [
-   "Correct answer: option 1, 19."
+   "Find the squares near 710. 26 times 26 equals 676, which is less than 710, and 27 times 27 equals 729, which is more than 710.",
+   "So 729 is the first square number after 710. Find the gap between them. 729 minus 710 equals 19.",
+   "Test the other choices so that you are sure: 710 plus 15 equals 725, 710 plus 25 equals 735 and 710 plus 31 equals 741. None of these is a square, because the square after 729 is 28 times 28, which is 784.",
+   "So 19 should be added to 710, which gives the square number 729."
   ]
  },
  "VAR2_EXT_G4_FP_2016_031_01": {
@@ -1318,13 +1329,14 @@
    "23"
   ],
   "hints": [
-   "Square root asks: what number times itself gives this?",
-   "Try numbers: is it 23? 23 times 23 equals 529. No.",
-   "Try 24: 24 times 24 equals 576. Yes!"
+   "The square root of a number is the number that gives it when multiplied by itself. Use squares you know to get close, then use the last digit to decide.",
+   "20 times 20 equals 400 and 30 times 30 equals 900, so the square root is between 20 and 30. Now think about which last digits give a square ending in 6.",
+   "Here is a similar one: the square root of 324. 10 times 10 equals 100 and 20 times 20 equals 400, so it lies between 10 and 20. A square ending in 4 comes from a number ending in 2 or 8. 12 times 12 equals 144, which is too small, and 18 times 18 equals 324, so the square root is 18."
   ],
   "steps": [
-   "We need: what number times itself equals 576?",
-   "The square root of 576 is 24, because 24 times 24 equals 576."
+   "20 times 20 equals 400 and 30 times 30 equals 900. 576 lies between them, so its square root is between 20 and 30.",
+   "576 ends in 6. A number ending in 4 or 6 gives a square ending in 6, so the number to try is 24 or 26.",
+   "24 times 24 is 576, so the square root of 576 is 24."
   ]
  },
  "VAR2_EXT_G4_FP_2020_003_01": {
@@ -1354,13 +1366,14 @@
    "528"
   ],
   "hints": [
-   "Squaring means multiplying a number by itself.",
-   "So 23 squared equals 23 times 23.",
-   "Multiply carefully!"
+   "The square of a number is the number multiplied by itself. This is a two-digit multiplication, so break it into easier parts.",
+   "Write the sum as 23 times 23. Split one 23 into 20 and 3, and multiply 23 by each part.",
+   "Here is a similar one. The square of 14 is 14 times 14. Split it: 14 times 10 equals 140 and 14 times 4 equals 56. Then 140 plus 56 equals 196, so the square of 14 is 196."
   ],
   "steps": [
-   "The square of 23 equals 23 times 23.",
-   "That equals 529."
+   "The square of 23 means 23 times 23.",
+   "Split the second 23 into 20 and 3. 23 times 20 equals 460 and 23 times 3 equals 69.",
+   "Add the two parts together. The square of 23 is 529. 460 plus 69 equals 529."
   ]
  }
 }

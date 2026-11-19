@@ -7,7 +7,7 @@ from_latex(tex)  a step's maths line as print, ready for say()
 import re
 
 _MATHS_ONLY = re.compile(r"[\d\s×÷+−\-()]*")
-_LEAD = {"is", "gives", "to"}
+_LEAD = {"is", "gives", "give", "to"}
 
 # A digit pattern with letters or stars standing for digits: 1A9A5, 2★1★, 25N48, A59.
 _PATTERN = re.compile(r"(?<![0-9A-Za-z★])(?=[0-9A-Z★]*[A-Z★])(?=[0-9A-Z★]*\d)[0-9A-Z★]{2,}(?![0-9A-Za-z★])")
@@ -50,7 +50,10 @@ def _time(m):
 
 def say(text):
     s = text or ""
+    # "H.C.F." closing a sentence keeps its full stop.
+    s = re.sub(r"\b(H\.C\.F|L\.C\.M)\.(?=\s+[A-Z]|\s*$)", lambda m: m.group(1).replace(".", "") + ".", s)
     s = s.replace("H.C.F.", "HCF").replace("L.C.M.", "LCM")
+    s = s.replace("♥", " heart ").replace("Ψ", " psi ").replace("□", " blank ")
     s = re.sub(r"\b(HCF|LCM)\s*\(\s*(\w+)\s*,\s*(\w+)\s*\)", r"the \1 of \2 and \3", s)
     s = re.sub(r"\bExample: (HCF|LCM) of\b", r"Example: the \1 of", s)
     s = re.sub(r"\bIf (HCF|LCM) of\b", r"If the \1 of", s)
@@ -88,6 +91,7 @@ def say(text):
     s = re.sub(r"\s+([.,?!:;])", r"\1", s)
     s = re.sub(r",([.:;?!])", r"\1", s)
     s = re.sub(r",,+", ",", s)
+    s = re.sub(r"(, which is \d[\d,]*) and\b", r"\1, and", s)
     if s.endswith("and so on"):
         s += "."
     return s

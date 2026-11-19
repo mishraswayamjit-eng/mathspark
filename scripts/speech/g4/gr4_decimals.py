@@ -45,7 +45,8 @@ def configure(node, rules_module, hand_modules):
             module = __import__(name)
         except ImportError:
             continue
-        HAND.update(module.HAND)
+        for qid, lines in module.HAND.items():
+            HAND.setdefault(qid, {}).update(lines)
         LINES.update(getattr(module, "LINES", {}))
 
 
@@ -185,8 +186,13 @@ def main():
     if "--show" in sys.argv:
         i = sys.argv.index("--show")
         a, b = int(sys.argv[i + 1]), int(sys.argv[i + 2])
+        only = None
+        if "--renarrate" in sys.argv:     # only the questions whose help was rewritten
+            with io.open(os.path.join(common.ROOT, "data", "bank-import", "g4", "renarrate.json"), encoding="utf-8") as f:
+                only = set(json.load(f).get(NODE, []))
         for n, q in enumerate(questions[a:b], a):
-            show(q, part[q["id"]], n, "--diff" in sys.argv)
+            if only is None or q["id"] in only:
+                show(q, part[q["id"]], n, "--diff" in sys.argv)
     for p in failures[:80]:
         print("  FAIL " + p)
 

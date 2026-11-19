@@ -5,14 +5,8 @@ LINES: a printed line (exactly as in the bank) -> its spoken form, wherever it a
 """
 
 LINES = {
-    "Total cost = Price × Quantity": "Total cost equals price times quantity.",
-    "Cost of 1 = Total ÷ Quantity": "The cost of 1 equals the total divided by the quantity.",
     "Selling price = Cost price + Profit.": "Selling price equals cost price plus profit.",
     "Selling price = Cost price − Loss.": "Selling price equals cost price minus loss.",
-    "Follow BODMAS: Brackets, Orders, Division/Multiplication, Addition/Subtraction":
-        "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-    "Don't just go left to right — check for × and ÷ first!":
-        "Don't just go left to right. Check for times and divide first!",
     "The signs + × − make the sum equal 20.": "The signs plus, times and minus make the sum equal 20.",
 }
 
@@ -23,6 +17,12 @@ HAND = {
     },
     "PYQ_2017_Q09": {
         "q": "Where should the bracket be put to make the following equation true: 5 times 7 plus 3 minus 10 equals 40?",
+        # Rewritten help (Nov 2026): "to make 4 × 6 + 2 − 5 = 27 true?" reads badly word for word.
+        "hints": [None, None,
+                  "Here is a similar one: where should the bracket go to make it true that 4 times 6 plus 2 minus 5 equals 27? "
+                  "Without a bracket the left side is 24 plus 2 minus 5, which is 21. "
+                  "With a bracket around 6 plus 2 it becomes 4 times 8 minus 5, and 32 minus 5 equals 27. "
+                  "So the bracket goes around 6 plus 2."],
     },
     "PYQ_2018_Q07": {
         "q": "Which of the following can be the product of star, star, 8 and star, star, 7, where star denotes digits, not necessarily the same?",
@@ -83,25 +83,5 @@ HAND = {
         "hints": [None, None,
                   "Here is a similar one: 8 times a missing number equals 120. Divide 120 by 8. "
                   "80 divided by 8 equals 10 and 40 divided by 8 equals 5, so the missing number is 10 plus 5, which is 15."],
-    },
-    "Q_CH12_025": {
-        "steps": [None, None, "What is left equals 432 minus 60, which equals 372 pencils."],
-    },
-    "Q_CH14_024": {
-        "hints": ["72 chocolates divided by n students equals 6 each. So 72 over n equals 6.",
-                  "n equals 72 divided by 6.",
-                  "n equals 12 students."],
-        "steps": ["Form an equation: 72 divided by n equals 6.",
-                  "Rearrange: n equals 72 divided by 6, which equals 12.",
-                  "There are 12 students. Verify: 72 divided by 12 equals 6."],
-    },
-    "Q_CH15_019": {
-        "hints": [None,
-                  "14 times 14 equals 14 times 10 plus 14 times 4, which equals 140 plus 56.",
-                  "That equals 196."],
-        "steps": ["14 times 14 equals 14 times 10, plus 14 times 4. So 14 times 14 equals 140 plus 56.",
-                  "That equals 196.",
-                  "Pattern check: 144, 169, 196. The differences are 25 and 27, increasing by 2. "
-                  "169 minus 144 equals 25, and 196 minus 169 equals 27."],
     },
 }

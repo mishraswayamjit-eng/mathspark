@@ -43,7 +43,7 @@ def prepare(text):
     s = re.sub(r"\b(\d+)\s*:\s*(\d+)\s*:\s*(\d+)\b", r"\1 is to \2 is to \3", s)
     # Named triangles and sides: triangle ABC, side AB.
     s = re.sub(r"\b([Tt]riangle|△)\s*([A-Z])([A-Z])([A-Z])\b", r"\1 \2 \3 \4", s)
-    s = re.sub(r"\b([Ss]ides?|[Ll]ine) ([A-Z])([A-Z])\b", r"\1 \2 \3", s)
+    s = re.sub(r"\b([Ss]ides?|[Ll]ine|on|cuts) ([A-Z])([A-Z])\b", r"\1 \2 \3", s)
     # Comparisons in the triangle rule: 3 + 4 > 5.
     s = s.replace("≠", " is not equal to ").replace("≤", " is at most ").replace("≥", " is at least ")
     s = re.sub(r"\s*>\s*", " is greater than ", s)

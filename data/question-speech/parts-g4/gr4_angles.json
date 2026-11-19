@@ -505,7 +505,7 @@
   "hints": [
    "The complement of an angle is what must be added to make 90 degrees. The supplement is what must be added to make 180 degrees. You can test each choice.",
    "The supplement is always 90 degrees more than the complement. If the supplement is 3 times the complement, then that extra 90 degrees is 2 times the complement.",
-   "A similar one: the supplement of an angle is 7 times its complement. Try 75 degrees: its supplement is 105 degrees and its complement is 15 degrees, and 105 equals 7 times 15. So that angle is 75 degrees."
+   "A similar one: the supplement of an angle is 7 times its complement. Try 75 degrees: its supplement is 105 degrees and its complement is 15 degrees, and 105, which is 7 times 15. So that angle is 75 degrees."
   ],
   "steps": [
    "The supplement is 90 degrees more than the complement, because 180 degrees is 90 degrees more than 90 degrees.",
@@ -1102,12 +1102,16 @@
    "He turned 270 degrees in the anticlockwise direction"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 14.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "This is about turning between compass directions. Picture the eight directions around a compass and think about the angle between two neighbours.",
+   "The 8 directions share a full turn of 360 degrees, so each step to the next direction is 45 degrees. Count the steps from South to North-East, going each way round.",
+   "Similar example: a girl faces North-West and then faces South-West. Going anticlockwise she passes West and reaches South-West, which is 2 steps of 45 degrees. 2 times 45 equals 90, so she turned 90 degrees anticlockwise. Going clockwise would take 6 steps, which is 270 degrees."
   ],
   "steps": [
-   "The correct answer is option 2. He turned 135 degrees in the anticlockwise direction."
+   "The 8 compass directions share a full turn of 360 degrees, so each step from one direction to the next is 45 degrees. 360 divided by 8 equals 45.",
+   "Going anticlockwise from South, the man passes South-East, then East, and reaches North-East. That is 3 steps.",
+   "Three steps of 45 degrees make 135 degrees. 3 times 45 equals 135.",
+   "Going clockwise he would pass South-West, West, North-West and North before reaching North-East. That is 5 steps, or 225 degrees, and none of the choices says that. 5 times 45 equals 225.",
+   "The trap is to mix up the two ways round. He turned 135 degrees in the anticlockwise direction."
   ]
  },
  "PYQ_2016_Q34": {
@@ -1119,12 +1123,15 @@
    "122 and three quarters degrees"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 34.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "Supplementary angles are two angles that add up to 180 degrees. So you need the angle that is still missing to reach 180 degrees.",
+   "Subtract 57 and one quarter from 180. It helps to take away the whole number 57 first, and then take away the extra quarter.",
+   "Similar example: the supplementary angle of 40 and a half degrees. First 180 minus 40 equals 140. Then take away the extra half, which leaves 139 and a half. So the angle is 139 and a half degrees."
   ],
   "steps": [
-   "The correct answer is option 4, which is 122 and three quarters degrees."
+   "Supplementary angles add up to 180 degrees, so subtract 57 and one quarter from 180.",
+   "Take away the whole number first. 180 minus 57 equals 123.",
+   "Now take away the extra quarter. One quarter less than 123 is 122 and three quarters.",
+   "Check by adding: 57 and one quarter and 122 and three quarters make 180. So the supplementary angle is 122 and three quarters degrees."
   ]
  },
  "PYQ_2017_Q20": {
@@ -1136,12 +1143,14 @@
    "15"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 20.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "This question mixes time and angles. Change the seconds into minutes, and think about how far the minute hand turns in a full hour.",
+   "First change 300 seconds into minutes, using 60 seconds in 1 minute. Then find how many degrees the minute hand turns in 1 minute.",
+   "Similar example: in 600 seconds, 600 divided by 60 equals 10 minutes pass. The minute hand turns 360 degrees in 60 minutes, so it turns 360 divided by 60, which is 6 degrees, each minute. In 10 minutes it turns 10 times 6, which is 60 degrees."
   ],
   "steps": [
-   "The correct answer is option 3, which is 30."
+   "Change the seconds to minutes. There are 60 seconds in a minute. 300 divided by 60 equals 5.",
+   "The minute hand goes once round the clock, which is 360 degrees, in 60 minutes. So it turns 6 degrees each minute. 360 divided by 60 equals 6.",
+   "In 5 minutes it turns 5 times 6 degrees. The minute hand moves 30 degrees. 5 times 6 equals 30."
   ]
  },
  "PYQ_2017_Q40": {
@@ -1153,12 +1162,15 @@
    "34 degrees and 66 degrees"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 40.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "Complementary angles are two angles that add up to 90 degrees. Test each pair by adding.",
+   "Add the two angles in the first pair and see whether the total is 90 degrees. Do the same for each of the other pairs.",
+   "Similar example: are 35 degrees and 55 degrees complementary? 35 plus 55 equals 90, so yes. Are 50 degrees and 50 degrees complementary? 50 plus 50 equals 100, so no."
   ],
   "steps": [
-   "The correct answer is option 3, which is 22 degrees and 68 degrees."
+   "Complementary angles add up to 90 degrees. Add each pair and compare with 90.",
+   "30 degrees and 30 degrees make 60 degrees, and 40 degrees and 30 degrees make 70 degrees. Both are too small.",
+   "34 degrees and 66 degrees make 100 degrees, which is too big. 34 plus 66 equals 100.",
+   "22 and 68 add up to 90. So the complementary pair is 22 degrees and 68 degrees. 22 plus 68 equals 90."
   ]
  },
  "PYQ_2018_Q29": {
@@ -1170,12 +1182,14 @@
    "165 degrees"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 29.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "This uses two angle facts. Complementary angles add up to 90 degrees, and supplementary angles add up to 180 degrees.",
+   "Find the complementary angle of 35 degrees by subtracting it from 90 degrees. Then find its supplementary angle in the same way, using 180 degrees.",
+   "Similar example: for an angle of 20 degrees, the complementary angle is 90 minus 20, which is 70 degrees, and the supplementary angle is 180 minus 20, which is 160 degrees. Their sum is 70 plus 160, which is 230 degrees."
   ],
   "steps": [
-   "The correct answer is option 1, which is 200 degrees."
+   "The complementary angle and 35 degrees make 90 degrees. 90 minus 35 equals 55.",
+   "The supplementary angle and 35 degrees make 180 degrees. 180 minus 35 equals 145.",
+   "Add the two angles you found. The sum is 200 degrees. 55 plus 145 equals 200."
   ]
  },
  "PYQ_2019_Q25": {
@@ -1209,12 +1223,16 @@
    "7 30"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 40.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "This is about the angle between the hands of a clock. The 12 numbers split the clock into 12 equal gaps, and the hour hand keeps moving slowly between the numbers.",
+   "Each gap between two numbers on the clock is 360 divided by 12, which is 30 degrees. For each time, find where the minute hand points and where the hour hand has moved to, then count the gaps between them.",
+   "Similar example: at 3 30 the minute hand is on 6 and the hour hand is halfway between 3 and 4. From there to 6 is 2 and a half gaps. Two gaps are 60 degrees and half a gap is 15 degrees, so the angle is 60 plus 15, which is 75 degrees."
   ],
   "steps": [
-   "The correct answer is option 4, which is 7 30."
+   "Each gap between two numbers on a clock is 30 degrees. 360 divided by 12 equals 30.",
+   "An angle of 45 degrees is 1 and a half gaps. 30 plus 15 equals 45.",
+   "At half past, the minute hand is on 6 and the hour hand is halfway between two numbers. The trap is to forget that the hour hand has moved on.",
+   "At 7 30 the hour hand is halfway between 7 and 8. From 6 to 7 is one gap, and then there is half a gap more. That makes 45 degrees.",
+   "At 2 30 there are 3 and a half gaps and at 8 30 there are 2 and a half gaps, and at 1 15 the angle is a little more than 45 degrees. So the time is 7 30."
   ]
  },
  "Q_CH09_011_V08": {
@@ -1321,13 +1339,14 @@
    "reflex"
   ],
   "hints": [
-   "Remember the angle types. Acute is less than 90 degrees. Right is exactly 90 degrees. Obtuse is between 90 degrees and 180 degrees. Straight is 180 degrees. Reflex is more than 180 degrees.",
-   "The angle is more than 90 degrees but less than 180 degrees.",
-   "That's an obtuse angle."
+   "This question is about the names of angles. Each name goes with a size, so think about where this angle sits compared with 90 degrees and 180 degrees.",
+   "Picture the corner of a book, which is 90 degrees, and a flat straight line, which is 180 degrees. This angle is wider than the corner of the book but has not opened out flat. Which name belongs to an angle like that?",
+   "A similar example: an angle of 40 degrees is smaller than 90 degrees, the corner of a book. Angles smaller than 90 degrees are called acute, so a 40 degree angle is an acute angle."
   ],
   "steps": [
-   "Acute means the angle is more than 0 degrees and less than 90 degrees. Right means the angle is 90 degrees. Obtuse means the angle is more than 90 degrees and less than 180 degrees.",
-   "The answer is an obtuse angle."
+   "An angle smaller than 90 degrees is called acute, and an angle of exactly 90 degrees is called a right angle.",
+   "An angle bigger than 180 degrees is called a reflex angle.",
+   "That leaves the angles in between. An angle that measures more than 90 degrees but less than 180 degrees is called obtuse."
   ]
  },
  "Q_CH18_002": {
@@ -1357,13 +1376,14 @@
    "set square"
   ],
   "hints": [
-   "A protractor has degree markings from 0 degrees to 180 degrees arranged in a semicircle.",
-   "Dividers measure distance. Set squares draw specific angles, 45 degrees or 60 degrees. A compass draws circles.",
-   "A protractor measures any angle."
+   "This question is about the tools in a geometry box. Each tool has one main job, so think about what each one is used for.",
+   "Angles are measured in degrees. Think about which tool in the box has degrees, from 0 degrees to 180 degrees, marked around its curved edge.",
+   "A similar example: to measure how long a line is, we use a ruler, because a ruler has centimetres marked along its edge. In the same way, the tool for measuring an angle is the one with degrees marked on it."
   ],
   "steps": [
-   "A protractor is the standard tool for measuring angles.",
-   "The answer is a protractor."
+   "Angles are measured in degrees, so we need a tool with degrees marked on it.",
+   "A compass draws circles, a pair of dividers compares lengths, and a set square helps draw a few fixed angles.",
+   "The half-circle tool marked from 0 degrees to 180 degrees is the one used to measure an angle. It is the protractor."
   ]
  },
  "Q_CH18_004": {
@@ -1375,14 +1395,15 @@
    "23 and a half degrees"
   ],
   "hints": [
-   "Complementary angles add up to 90 degrees.",
-   "The complement is 90 degrees minus 67 and a half degrees.",
-   "90 degrees minus 67.5 degrees equals 22.5 degrees, which is 22 and a half degrees."
+   "This question is about complementary angles. Remember what two complementary angles add up to, and then find the missing part.",
+   "Two complementary angles add up to 90 degrees. So take 67 and a half degrees away from 90 degrees. It is easier to take away the 67 degrees first and the half degree after that.",
+   "A similar example: find the complementary angle of 34 and a half degrees. First 90 degrees minus 34 degrees equals 56 degrees. Then take away the extra half degree, which leaves 55 and a half degrees. So the complementary angle of 34 and a half degrees is 55 and a half degrees."
   ],
   "steps": [
-   "Complementary angles sum to 90 degrees.",
-   "The complement is 90 degrees minus 67 and a half degrees, which is 22 and a half degrees.",
-   "The answer is 22 and a half degrees."
+   "Two complementary angles add up to 90 degrees. So we take 67 and a half degrees away from 90 degrees.",
+   "Take away the whole degrees first. 90 degrees take away 67 degrees leaves 23 degrees. 90 degrees minus 67 degrees equals 23 degrees.",
+   "Now take away the extra half of a degree. 23 degrees take away half a degree leaves 22 and a half degrees.",
+   "The complementary angle of 67 and a half degrees is 22 and a half degrees."
   ]
  },
  "Q_CH18_005": {
@@ -1394,14 +1415,14 @@
    "305 degrees"
   ],
   "hints": [
-   "Supplementary angles add up to 180 degrees.",
-   "The supplement is 180 degrees minus 55 degrees.",
-   "That equals 125 degrees."
+   "This question is about supplementary angles. Remember what two supplementary angles add up to, and then find the missing part.",
+   "Two supplementary angles add up to 180 degrees, a straight line. So take 55 degrees away from 180 degrees.",
+   "A similar example: find the supplementary angle of 70 degrees. Supplementary angles add up to 180 degrees, and 180 degrees minus 70 degrees, which is 110 degrees. So the supplementary angle of 70 degrees is 110 degrees."
   ],
   "steps": [
-   "Supplementary angles sum to 180 degrees.",
-   "The supplement is 180 degrees minus 55 degrees, which is 125 degrees.",
-   "The answer is 125 degrees."
+   "Two supplementary angles add up to 180 degrees, like the two angles on a straight line.",
+   "Take 55 degrees away from 180 degrees to find the other angle. 180 degrees minus 55 degrees equals 125 degrees.",
+   "The supplementary angle of 55 degrees is 125 degrees."
   ]
  },
  "Q_CH18_005_V08": {
@@ -1432,14 +1453,14 @@
    "90 degrees"
   ],
   "hints": [
-   "First find x from the equation x plus 35 degrees equals 90 degrees.",
-   "x equals 90 degrees minus 35 degrees, which is 55 degrees. Now find the supplement of 55 degrees.",
-   "The supplement is 180 degrees minus 55 degrees, which is 125 degrees."
+   "This question has two parts. First find the angle x, and then find its supplement. Supplementary angles add up to 180 degrees.",
+   "Start with x plus 35 degrees equals 90 degrees. Ask yourself what must be added to 35 degrees to make 90 degrees. That number is x, and you still need its supplement after that.",
+   "A similar example: if y plus 20 degrees equals 90 degrees, then y equals 90 degrees minus 20 degrees, which is 70 degrees. The supplement of y is what you add to 70 degrees to make 180 degrees, and 180 degrees minus 70 degrees, which is 110 degrees. So the supplement of y is 110 degrees."
   ],
   "steps": [
-   "Find x. x equals 90 degrees minus 35 degrees, which is 55 degrees.",
-   "The supplement of x is 180 degrees minus 55 degrees, which is 125 degrees.",
-   "The answer is 125 degrees."
+   "First find x. It is the angle that adds to 35 degrees to make 90 degrees, so take 35 degrees away from 90 degrees. That gives x equals 55 degrees.",
+   "The question asks for the supplement of x, not x itself. Supplementary angles add up to 180 degrees.",
+   "Take 55 degrees away from 180 degrees. The supplement of x is 125 degrees. 180 degrees minus 55 degrees equals 125 degrees."
   ]
  },
  "Q_CH18_007": {
@@ -1451,14 +1472,14 @@
    "65 degrees"
   ],
   "hints": [
-   "First find the angle. The angle is 180 degrees minus 125 degrees, which is 55 degrees.",
-   "Now find its complement: 90 degrees minus 55 degrees equals 35 degrees.",
-   "The complement is 35 degrees."
+   "This question uses two ideas together. A supplement is measured against 180 degrees and a complement is measured against 90 degrees. You need to find the angle itself first.",
+   "The angle and its supplement add up to 180 degrees. So take 125 degrees away from 180 degrees to find the angle. After that, find what must be added to the angle to make 90 degrees.",
+   "A similar example: the supplement of an angle is 110 degrees. The angle is 180 degrees minus 110 degrees, which is 70 degrees. Its complement is 90 degrees minus 70 degrees, which is 20 degrees. So the complement is 20 degrees."
   ],
   "steps": [
-   "Find the angle: 180 degrees minus 125 degrees equals 55 degrees.",
-   "Find the complement: 90 degrees minus 55 degrees equals 35 degrees.",
-   "The complement is 35 degrees."
+   "An angle and its supplement add up to 180 degrees. So the angle is 180 degrees take away 125 degrees, which is 55 degrees. 180 degrees minus 125 degrees equals 55 degrees.",
+   "An angle and its complement add up to 90 degrees. So take 55 degrees away from 90 degrees. 90 degrees minus 55 degrees equals 35 degrees.",
+   "The complement of the angle is 35 degrees."
   ]
  },
  "Q_CH18_008": {
@@ -1470,14 +1491,14 @@
    "1"
   ],
   "hints": [
-   "When two lines cross, they form 4 angles. How do these angles pair up?",
-   "Opposite angles are equal. There are 2 pairs: one pair of equal angles, and another pair of equal angles.",
-   "So there are 2 pairs of vertically opposite angles."
+   "This question is about the angles made when two straight lines cross, like the letter X. Vertically opposite angles are the ones that face each other across the crossing point.",
+   "Draw two lines crossing and number the angles 1, 2, 3 and 4 going round the point. Now match each angle with the one directly across from it, and count the matches.",
+   "A similar example: the same two crossing lines also make pairs of angles that sit side by side. Going round the point, these are angles 1 and 2, 2 and 3, 3 and 4, and 4 and 1, so there are 4 side by side pairs. Count the pairs that sit across from each other in the same careful way."
   ],
   "steps": [
-   "Two intersecting lines create 4 angles.",
-   "Angles across from each other are equal: 2 pairs.",
-   "The answer is 2 pairs."
+   "Two crossing lines make 4 angles around the point where they cross. Number them 1, 2, 3 and 4 going round.",
+   "Angle 1 is directly across from angle 3, so they make one pair. Angle 2 is directly across from angle 4, so they make another pair.",
+   "Every angle is now in a pair. So 2 pairs of vertically opposite angles are formed. 4 divided by 2 equals 2."
   ]
  },
  "Q_CH18_009": {
@@ -1526,13 +1547,14 @@
    "295 degrees"
   ],
   "hints": [
-   "A linear pair of angles adds up to 180 degrees. They form a straight line together.",
-   "The other angle is 180 degrees minus 65 degrees.",
-   "That equals 115 degrees."
+   "This question is about a linear pair. The two angles sit side by side on a straight line, so think about what they add up to together.",
+   "A straight line makes an angle of 180 degrees. The two angles share it, so take 65 degrees away from 180 degrees.",
+   "A similar example: two angles form a linear pair and one of them is 110 degrees. Together they make 180 degrees, so the other is 180 degrees minus 110 degrees, which is 70 degrees."
   ],
   "steps": [
-   "In a linear pair, the sum is 180 degrees. 65 degrees plus what equals 180 degrees?",
-   "The other angle is 180 degrees minus 65 degrees, which is 115 degrees."
+   "The two angles of a linear pair sit on a straight line, so they add up to 180 degrees.",
+   "Take 65 degrees away from 180 degrees to find the other angle. 180 degrees minus 65 degrees equals 115 degrees.",
+   "The other angle is 115 degrees."
   ]
  },
  "Q_CH18_011": {
@@ -1544,14 +1566,14 @@
    "60 degrees"
   ],
   "hints": [
-   "At 3 o'clock, the minute hand is at 12 and the hour hand is at 3.",
-   "The clock face is a circle, 360 degrees, divided into 12 hours. Each hour is 360 degrees divided by 12, which is 30 degrees.",
-   "From 12 to 3 is 3 spaces, times 30 degrees, which is 90 degrees."
+   "This question is about the angle between the hands of a clock. The 12 numbers split the clock face into 12 equal gaps, so first think about how big one gap is.",
+   "A full turn is 360 degrees and the clock has 12 equal gaps, so each gap is 360 degrees divided by 12, which is 30 degrees. At 3 o'clock the minute hand points at 12 and the hour hand points at 3. Count the gaps between them.",
+   "A similar example: at 5 o'clock the minute hand points at 12 and the hour hand points at 5. That is 5 gaps, and each gap is 30 degrees, so the angle is 5 times 30 degrees, which is 150 degrees."
   ],
   "steps": [
-   "Each hour mark is 360 degrees divided by 12, which is 30 degrees.",
-   "At 3 o'clock, 3 spaces times 30 degrees equals 90 degrees.",
-   "The angle is 90 degrees, a right angle!"
+   "The clock face is a full turn of 360 degrees, split into 12 equal gaps. Each gap is 30 degrees. 360 degrees divided by 12 equals 30 degrees.",
+   "At 3 o'clock the minute hand points at 12 and the hour hand points at 3. There are 3 gaps between them.",
+   "Three gaps of 30 degrees make 90 degrees. The angle between the hands at 3 o'clock is 90 degrees. 3 times 30 degrees equals 90 degrees."
   ]
  },
  "Q_CH18_012": {
@@ -1563,15 +1585,15 @@
    "none of these"
   ],
   "hints": [
-   "At 9 30, the minute hand is at 6, pointing down. Where is the hour hand?",
-   "At 9 30, the hour hand is between 9 and 10. It's halfway, so at the 9 and a half position.",
-   "From 6 to 9 and a half is 3.5 spaces, times 30 degrees, which is 105 degrees."
+   "This is a clock angle question with a catch. At half past the hour, the hour hand is no longer pointing exactly at a number, so think about where each hand really is.",
+   "At 9 30 the minute hand points at 6. The hour hand has moved halfway from 9 to 10. Count the gaps from 6 up to that halfway point, remembering that each full gap is 30 degrees.",
+   "A similar example: at 7 30 the minute hand points at 6 and the hour hand is halfway between 7 and 8. From 6 to 7 is 1 full gap, which is 30 degrees. Half a gap more is 15 degrees. So the angle is 30 degrees plus 15 degrees, which is 45 degrees."
   ],
   "steps": [
-   "The minute hand is at 6. 30 minutes is the 6 o'clock position.",
-   "The hour hand at 9 30 is halfway between 9 and 10, which is the 9.5 position.",
-   "The gap is 9.5 minus 6, which is 3.5 spaces. The angle is 3.5 times 30 degrees, which is 105 degrees.",
-   "The angle is 105 degrees."
+   "At 9 30 the minute hand points at 6. The hour hand does not point at 9. In half an hour it has moved halfway from 9 to 10.",
+   "Each gap between two numbers is 30 degrees. From 6 to 9 is 3 gaps, which is 90 degrees. 3 times 30 degrees equals 90 degrees.",
+   "The hour hand is half a gap past 9. Half of 30 degrees is 15 degrees.",
+   "Add the two parts together. The angle between the hands at 9 30 is 105 degrees. 90 degrees plus 15 degrees equals 105 degrees."
   ]
  },
  "Q_CH18_012_V08": {
@@ -1602,14 +1624,16 @@
    "6:00"
   ],
   "hints": [
-   "Obtuse means between 90 degrees and 180 degrees. Calculate the angle at each time.",
-   "At 10:00, 2 spaces make 60 degrees, which is acute. At 4:00, 4 spaces make 120 degrees, which is obtuse! At 3 30, it is about 75 degrees, which is acute. At 6:00, 6 spaces make 180 degrees, which is straight.",
-   "4:00 gives 120 degrees, which is obtuse."
+   "This question joins two ideas, clock angles and the names of angles. An obtuse angle is more than 90 degrees but less than 180 degrees, so you need the angle at each time.",
+   "Each gap between two numbers on the clock is 30 degrees. Start with the o'clock times, where the hour hand points exactly at a number, and count the gaps between the two hands.",
+   "A similar example: at 5:00 the minute hand points at 12 and the hour hand points at 5. That is 5 gaps, and 5 times 30 degrees equals 150 degrees. Since 150 degrees is between 90 degrees and 180 degrees, the angle at 5:00 is obtuse. Test each time in the list in the same way."
   ],
   "steps": [
-   "At 10:00, from 12 to 10 is 2 spaces, which is 60 degrees. That is acute.",
-   "At 4:00, 4 spaces make 120 degrees. That is obtuse!",
-   "At 3 30, it is about 75 degrees, which is acute. At 6:00, it is 180 degrees, which is straight, not obtuse."
+   "Each gap between two numbers on a clock is 30 degrees. An obtuse angle is more than 90 degrees and less than 180 degrees.",
+   "At 10:00 the hands are 2 gaps apart, which is 60 degrees. That is less than 90 degrees, so it is acute. 2 times 30 degrees equals 60 degrees.",
+   "At 6:00 the hands are 6 gaps apart, which is 180 degrees. That is a straight angle, not an obtuse one. 6 times 30 degrees equals 180 degrees.",
+   "At 3 30 the minute hand is on 6 and the hour hand is halfway between 3 and 4. That is 2 and a half gaps, which is 75 degrees, so it is acute. 2 times 30 degrees, plus 15 degrees, equals 75 degrees.",
+   "At 4:00 the hands are 4 gaps apart, which is 120 degrees. That is between 90 degrees and 180 degrees, so the angle is obtuse at 4:00. 4 times 30 degrees equals 120 degrees."
   ]
  },
  "Q_CH18_014": {
@@ -1621,14 +1645,15 @@
    "all of these"
   ],
   "hints": [
-   "A straight angle means the hands point in exactly opposite directions.",
-   "At 6:00, the minute hand is at 12 and the hour hand is at 6. They are directly opposite, which is 180 degrees.",
-   "At 3 45, the angle is about 157.5 degrees, not exactly 180 degrees. At 9 15, it's about 172.5 degrees."
+   "This is a clock angle question. A straight angle means the two hands point in exactly opposite directions, so think carefully about where the hour hand really is at each time.",
+   "The hour hand points exactly at a number only at an o'clock time. At 3 45 and at 9 15 it has already moved away from its number. Check whether the hands are still exactly opposite at those times.",
+   "A similar example: at 3:00 the minute hand is on 12 and the hour hand is exactly on 3, so the angle is 3 times 30 degrees, which is 90 degrees. At 12 15 the minute hand is on 3, but the hour hand has crept a little past 12, so the angle is a little less than 90 degrees."
   ],
   "steps": [
-   "At 6:00, the minute hand is at 12 and the hour hand is at 6. That is 6 spaces, which is 180 degrees.",
-   "At 3 45, the hands are close to opposite, but not exactly 180 degrees.",
-   "Only 6:00 gives exactly 180 degrees."
+   "At 6:00 the minute hand is on 12 and the hour hand is exactly on 6. They are 6 gaps apart, and each gap is 30 degrees, so the angle is 180 degrees. 6 times 30 degrees equals 180 degrees.",
+   "At 3 45 the minute hand is on 9, but the hour hand has moved most of the way from 3 to 4. The hands are not exactly opposite.",
+   "At 9 15 the minute hand is on 3, but the hour hand has moved a little past 9. The hands are not exactly opposite here either.",
+   "So the hands form a straight angle only at 6:00."
   ]
  },
  "Q_CH18_015": {
@@ -1719,14 +1744,15 @@
    "45 degrees"
   ],
   "hints": [
-   "Draw a compass: North is up, East is right, South is down, West is left. North-East is between North and East.",
-   "North to East is 90 degrees. North to North-East is 45 degrees, halfway. So North-East is at 45 degrees from North.",
-   "North-East to South: from 45 degrees to 180 degrees is 135 degrees."
+   "This question is about directions on a compass. The four main directions are a quarter turn apart, and the in-between directions sit exactly halfway.",
+   "North, East, South and West are 90 degrees apart. North-East is halfway between North and East. Go from North-East to East first, and then on from East to South.",
+   "A similar example: find the angle between North-East and North-West. From North-East to North is half of 90 degrees, which is 45 degrees. From North to North-West is another 45 degrees. So the angle is 45 degrees plus 45 degrees, which is 90 degrees."
   ],
   "steps": [
-   "North-East is at 45 degrees from North, clockwise.",
-   "South is at 180 degrees from North.",
-   "The angle from North-East to South is 180 degrees minus 45 degrees, which is 135 degrees."
+   "North, East, South and West are each 90 degrees apart. North-East is exactly halfway between North and East.",
+   "From North-East to East is half of 90 degrees, which is 45 degrees.",
+   "From East to South is one quarter turn, which is 90 degrees.",
+   "Add the two parts. The angle between North-East and South is 135 degrees. 45 degrees plus 90 degrees equals 135 degrees."
   ]
  },
  "Q_CH18_018": {
@@ -1738,13 +1764,14 @@
    "60 degrees"
   ],
   "hints": [
-   "The hour hand goes around the whole clock, 360 degrees, in 12 hours.",
-   "Per hour, that is 360 degrees divided by 12.",
-   "That equals 30 degrees per hour."
+   "This question is about how fast the hour hand turns. Think about how long the hour hand takes to go once all the way round the clock.",
+   "The hour hand makes one full turn of 360 degrees in 12 hours. Share 360 degrees equally among the 12 hours.",
+   "A similar example: how far does the hour hand turn in 3 hours? It turns 360 degrees in 12 hours, and 3 hours is one quarter of 12 hours. One quarter of 360 degrees is 360 degrees divided by 4, which is 90 degrees. So it turns 90 degrees in 3 hours."
   ],
   "steps": [
-   "A full rotation is 360 degrees. The time for a full rotation is 12 hours. 360 degrees divided by 12 equals 30 degrees.",
-   "The hour hand moves 30 degrees per hour."
+   "The hour hand goes once round the clock in 12 hours. One full turn is 360 degrees.",
+   "Share 360 degrees equally among the 12 hours. 360 degrees divided by 12 equals 30 degrees.",
+   "The hour hand moves 30 degrees in one hour."
   ]
  },
  "Q_CH18_018_V04": {
@@ -1775,13 +1802,14 @@
    "6 degrees"
   ],
   "hints": [
-   "The minute hand goes around the whole clock, 360 degrees, in 60 minutes.",
-   "Per minute, that is 360 degrees divided by 60.",
-   "That equals 6 degrees per minute."
+   "This question is about how fast the minute hand turns. Think about how long the minute hand takes to go once all the way round the clock.",
+   "The minute hand makes one full turn of 360 degrees in 60 minutes. Share 360 degrees equally among the 60 minutes.",
+   "A similar example: how far does the minute hand turn in 15 minutes? It turns 360 degrees in 60 minutes, and 15 minutes is one quarter of that time. One quarter of 360 degrees is 360 degrees divided by 4, which is 90 degrees. So it turns 90 degrees in 15 minutes."
   ],
   "steps": [
-   "A full rotation is 360 degrees. The time is 60 minutes. 360 degrees divided by 60 equals 6 degrees.",
-   "The minute hand moves 6 degrees per minute."
+   "The minute hand goes once round the clock in 60 minutes. One full turn is 360 degrees.",
+   "Share 360 degrees equally among the 60 minutes. 360 degrees divided by 60 equals 6 degrees.",
+   "The minute hand moves 6 degrees in 1 minute."
   ]
  },
  "Q_CH18_020": {
@@ -1793,14 +1821,15 @@
    "30 degrees"
   ],
   "hints": [
-   "Complementary means the sum is 90 degrees. The ratio is 2 is to 3, so the total parts are 2 plus 3, which is 5.",
-   "Each part is 90 degrees divided by 5, which is 18 degrees.",
-   "The smaller angle is 2 times 18 degrees, which is 36 degrees."
+   "This question joins complementary angles with a ratio. First decide what the two angles add up to, and then share that total in the ratio.",
+   "Complementary angles add up to 90 degrees. The ratio 2 is to 3 means 2 equal parts and 3 equal parts, so there are 5 equal parts altogether. Find the size of one part first.",
+   "A similar example: two complementary angles are in the ratio 4 is to 5. There are 4 plus 5, which is 9 parts, so one part is 90 degrees divided by 9, which is 10 degrees. The smaller angle is 4 times 10 degrees, which is 40 degrees, and the larger is 5 times 10 degrees, which is 50 degrees."
   ],
   "steps": [
-   "The total is 90 degrees, because they are complementary. The parts are 2 plus 3, which is 5. 90 degrees divided by 5 equals 18 degrees per part.",
-   "The smaller is 2 times 18 degrees, which is 36 degrees. The larger is 3 times 18 degrees, which is 54 degrees.",
-   "Verify: 36 degrees plus 54 degrees equals 90 degrees."
+   "Complementary angles add up to 90 degrees. The ratio 2 is to 3 means there are 5 equal parts altogether. 2 plus 3 equals 5.",
+   "Find one part by sharing 90 degrees into 5 equal parts. 90 degrees divided by 5 equals 18 degrees.",
+   "The smaller angle has 2 of these parts. 2 times 18 degrees equals 36 degrees.",
+   "The larger angle is 3 times 18 degrees, which is 54 degrees, and 36 degrees plus 54 degrees, which is 90 degrees. So the smaller angle is 36 degrees."
   ]
  },
  "Q_CH18_020_V07": {
@@ -1831,14 +1860,15 @@
    "80 degrees"
   ],
   "hints": [
-   "Let the angles be x, and x plus 40 degrees. They're supplementary, so x, plus x plus 40 degrees, equals 180 degrees.",
-   "2 x plus 40 degrees equals 180 degrees. 2 x equals 140 degrees. x equals 70 degrees.",
-   "The larger is 70 degrees plus 40 degrees, which is 110 degrees."
+   "This is a sum and difference question. You know what the two angles add up to and how far apart they are, and you need the bigger one.",
+   "Supplementary angles add up to 180 degrees. Take the extra 40 degrees away from 180 degrees first. What is left is two equal shares, one for each angle.",
+   "A similar example: two supplementary angles differ by 30 degrees. Take away the extra, 180 degrees minus 30 degrees equals 150 degrees. Halve it to get the smaller angle, 150 degrees divided by 2 equals 75 degrees. The larger is 75 degrees plus 30 degrees, which is 105 degrees. Check: 105 degrees plus 75 degrees equals 180 degrees."
   ],
   "steps": [
-   "Let the smaller be x, and the larger be x plus 40 degrees. So x, plus x plus 40 degrees, equals 180 degrees.",
-   "2 x equals 140 degrees, so x equals 70 degrees.",
-   "The larger is 70 degrees plus 40 degrees, which is 110 degrees."
+   "Supplementary angles add up to 180 degrees. The larger angle is the smaller angle with 40 degrees extra.",
+   "Take the extra 40 degrees away from the total. What is left is two copies of the smaller angle. 180 degrees minus 40 degrees equals 140 degrees.",
+   "Halve 140 degrees to find the smaller angle. 140 degrees divided by two equals 70 degrees.",
+   "Add the extra 40 degrees back to get the larger angle. Check that 110 degrees plus 70 degrees equals 180 degrees. The larger angle is 110 degrees. 70 degrees plus 40 degrees equals 110 degrees."
   ]
  },
  "Q_CH18_022": {
@@ -1850,14 +1880,15 @@
    "165 degrees"
   ],
   "hints": [
-   "Angles around a point add up to 360 degrees.",
-   "110 degrees plus 85 degrees plus x degrees equals 360 degrees. So x equals 360 degrees minus 110 degrees minus 85 degrees.",
-   "x equals 360 degrees minus 195 degrees, which is 165 degrees."
+   "This question is about angles that meet at a point. Together they go all the way round the point, so think about what a full turn measures.",
+   "Angles around a point add up to 360 degrees. Add the two angles you know, 110 degrees and 85 degrees, and then take that total away from 360 degrees.",
+   "A similar example: three angles meeting at a point are 120 degrees, 100 degrees and y degrees. The two known angles add up to 120 degrees plus 100 degrees, which is 220 degrees. So y equals 360 degrees minus 220 degrees, which is 140 degrees."
   ],
   "steps": [
-   "Angles around a point add up to 360 degrees. 110 degrees plus 85 degrees plus x degrees equals 360 degrees.",
-   "x equals 360 degrees minus 195 degrees, which is 165 degrees.",
-   "x equals 165 degrees."
+   "The three angles go all the way round the point, so they add up to 360 degrees.",
+   "Add the two angles you know. 110 degrees plus 85 degrees equals 195 degrees.",
+   "Take this away from the full turn to find the third angle. 360 degrees minus 195 degrees equals 165 degrees.",
+   "So x is 165 degrees."
   ]
  },
  "Q_CH18_022_V05": {
@@ -1888,14 +1919,15 @@
    "60 degrees"
   ],
   "hints": [
-   "Angles on a straight line add up to 180 degrees.",
-   "x plus 2 x plus 3 x equals 180 degrees. So 6 x equals 180 degrees.",
-   "x equals 30 degrees."
+   "This question is about angles on a straight line. Think about what they add up to, and how many equal shares of x there are altogether.",
+   "Angles on a straight line add up to 180 degrees. The angles are 1 lot of x, 2 lots of x and 3 lots of x. Count how many lots of x that is altogether.",
+   "A similar example: the angles on a straight line are y degrees and 4 y degrees. That is 1 plus 4, which is 5 lots of y, and they add up to 180 degrees. So y equals 180 degrees divided by 5, which is 36 degrees. Check: 36 degrees plus 144 degrees equals 180 degrees."
   ],
   "steps": [
-   "The sum is 180 degrees, a straight line. x plus 2 x plus 3 x equals 180 degrees.",
-   "6 x equals 180 degrees.",
-   "x equals 30 degrees."
+   "Angles on a straight line add up to 180 degrees.",
+   "The angles are 1 lot of x, 2 lots of x and 3 lots of x. That is 6 lots of x altogether. 1 plus 2 plus 3 equals 6.",
+   "Six lots of x make 180 degrees, so share 180 degrees into 6 equal parts. 180 degrees divided by 6 equals 30 degrees.",
+   "Check: the angles are 30 degrees, 60 degrees and 90 degrees, and they add up to 180 degrees. So x is 30 degrees. 30 degrees plus 60 degrees plus 90 degrees equals 180 degrees."
   ]
  },
  "Q_CH18_024": {
@@ -1907,14 +1939,15 @@
    "75 degrees"
   ],
   "hints": [
-   "At 4 30, the minute hand is at 6, pointing down. The hour hand is between 4 and 5. Halfway is 4.5.",
-   "From 4.5 to 6 is 1.5 spaces.",
-   "1.5 times 30 degrees equals 45 degrees."
+   "This is a clock angle question with a catch. At half past the hour, the hour hand is no longer pointing exactly at a number, so think about where each hand really is.",
+   "At 4 30 the minute hand points at 6. The hour hand has moved halfway from 4 to 5. Count the gaps from that halfway point to 6, remembering that each full gap is 30 degrees.",
+   "A similar example: at 1 30 the minute hand points at 6 and the hour hand is halfway between 1 and 2. From 2 to 6 is 4 full gaps, which is 4 times 30 degrees equals 120 degrees. Half a gap more is 15 degrees. So the angle is 120 degrees plus 15 degrees, which is 135 degrees."
   ],
   "steps": [
-   "The minute hand is at 6. The hour hand is at 4.5, halfway between 4 and 5. The gap is 6 minus 4.5, which is 1.5 spaces.",
-   "The angle is 1.5 times 30 degrees, which is 45 degrees.",
-   "The angle at 4 30 is 45 degrees."
+   "At 4 30 the minute hand points at 6. The hour hand does not point at 4. In half an hour it has moved halfway from 4 to 5.",
+   "Each gap between two numbers is 30 degrees. From 5 to 6 is 1 full gap, which is 30 degrees.",
+   "From the hour hand to 5 is half a gap. Half of 30 degrees is 15 degrees.",
+   "Add the two parts together. The angle between the hands at 4 30 is 45 degrees. 30 degrees plus 15 degrees equals 45 degrees."
   ]
  },
  "Q_CH18_025": {

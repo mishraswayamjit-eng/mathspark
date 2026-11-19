@@ -67,54 +67,16 @@ HAND = {
     "Q_CH13_004": {
         "hints": {0: "The whole expression, A plus 12, is divided by 3. First calculate A plus 12."},
     },
-    "Q_CH13_008": {
-        "hints": {1: "4 A equals 4 times 3, which is 12. Now add b, which is 5."},
-    },
-    "Q_CH13_012": {
-        "hints": {0: "Break it down: first, the square of t means t squared. Then, half of, means divide by 2."},
-    },
     "Q_CH13_018": {
         "hints": {0: "The pencil is x rupees. The pen costs thrice that, so 3 times x, which is 3 x."},
         "steps": {0: "The pencil is x rupees. The pen is 3 times x, which is 3 x rupees."},
     },
     "Q_CH13_019": {
         "options": {3: "x y metres"},
-        "hints": {1: "Cutting means subtraction. Remaining equals total, minus cut piece."},
-    },
-    "Q_CH13_020": {
-        "steps": {0: "Convert metres to centimetres: x metres equals 100 x centimetres."},
     },
     "Q_CH13_021": {
         "options": {3: "A 6"},
-        "steps": {
-            0: "A equals 1 A. The coefficient is 1.",
-            1: "Add like terms: 5 A plus 1 A equals 6 A.",
-        },
-    },
-    "Q_CH13_022": {
-        "hints": {0: "Add the x terms together, and the y terms together. They are like terms!"},
-        "steps": {0: "Group like terms. 3 x plus x, and 4 y plus 2 y."},
-    },
-    "Q_CH13_023": {
-        "hints": {
-            0: "Add the A terms: 7 A plus 3 A equals what? Add the b terms: 5 b plus, minus b, equals what?",
-            1: "7 A plus 3 A equals 10 A. For b: 5 b plus, minus b, equals 5 b minus b, which is 4 b.",
-        },
-        "steps": {
-            0: "Add the A terms: 7 A plus 3 A equals 10 A.",
-            1: "Add the b terms: 5 b plus, minus b, equals 5 b minus 1 b, which is 4 b.",
-        },
-    },
-    "Q_CH13_024": {
-        "hints": {
-            1: "Check each pair: 5 A and 3 A have the same variable, A. 4 m and 3 n have different variables, m and n!",
-        },
-        "steps": {
-            1: "5 A and 3 A: both A, so like. 4 m and 3 n: m and n, so unlike!",
-        },
     },
 }
 
-TEXT = {
-    "Think step by step.": "Think step by step.",
-}
+TEXT = {}

@@ -985,13 +985,14 @@
    "9.5 centimetres"
   ],
   "hints": [
-   "The diameter is always twice the radius.",
-   "D equals 2 times r, which is 2 times 9.5",
-   "That equals 19 centimetres"
+   "This question is about two parts of a circle. The radius goes from the centre to the edge, and the diameter goes all the way across through the centre.",
+   "The diameter is made of two radii laid end to end. So the diameter is 2 times the radius. Work out 2 times 9.5.",
+   "A similar example: if the radius of a circle is 6.5 centimetres, the diameter is 2 times 6.5, which is 13 centimetres."
   ],
   "steps": [
-   "D equals 2 r. D equals 2 times 9.5.",
-   "D equals 19 centimetres"
+   "The diameter goes right across the circle through the centre, so it is as long as two radii.",
+   "Multiply the radius by 2. 2 times 9.5 equals 19.",
+   "The diameter is 19 centimetres."
   ]
  },
  "Q_CH21_004": {
@@ -1003,13 +1004,14 @@
    "Diameter"
   ],
   "hints": [
-   "A chord is a line segment with both endpoints on the circle.",
-   "The longest possible chord passes through the centre.",
-   "A chord through the centre is a diameter. It's the longest chord."
+   "This question is about the names of the parts of a circle. A chord is a straight line that joins two points on the circle.",
+   "Picture a chord sliding across the circle. It gets longer as it moves towards the middle. Think about where it is longest, and what that line is called.",
+   "A similar example: a straight line from the centre of a circle to its edge is called the radius. It reaches only halfway across. Now think of the name for the straight line that goes all the way across, through the centre."
   ],
   "steps": [
-   "A chord through the centre is the longest chord possible.",
-   "Answer: diameter"
+   "A chord is a straight line joining two points on a circle.",
+   "A chord gets longer as it moves closer to the centre. It is longest when it passes right through the centre.",
+   "A chord that passes through the centre is called the diameter. So the longest chord of a circle is the diameter."
   ]
  },
  "Q_CH21_005": {
@@ -1021,13 +1023,14 @@
    "4"
   ],
   "hints": [
-   "Every diameter divides the circle into two equal halves.",
-   "How many diameters can you draw? You can draw one in any direction!",
-   "Infinite diameters means infinite axes of symmetry."
+   "This question is about symmetry. An axis of symmetry is a fold line that makes the two halves of a shape match exactly.",
+   "Think about folding a paper circle in half. Any fold through the centre works. Now think about how many different folds through the centre you could make.",
+   "A similar example: a square can be folded exactly in half in 4 ways, two through the middles of opposite sides and two through opposite corners. So a square has 4 axes of symmetry. A circle is different, because it looks the same whichever way you turn it."
   ],
   "steps": [
-   "Every diameter is an axis of symmetry.",
-   "Infinite diameters, so infinite axes."
+   "An axis of symmetry is a line that cuts a shape into two matching halves.",
+   "Every line through the centre of a circle, which is every diameter, cuts it into two matching halves.",
+   "You can draw a diameter in any direction, and there is no end to the directions. So the number of axes of symmetry of a circle is infinite."
   ]
  },
  "Q_CH21_006": {
@@ -1039,14 +1042,15 @@
    "264 centimetres"
   ],
   "hints": [
-   "Circumference equals 2 times pi times r, which is 2 times 22 over 7 times 21.",
-   "Simplify: 21 divided by 7 equals 3. So C equals 2 times 22 times 3.",
-   "That equals 132 centimetres."
+   "This question is about the circumference, the distance all the way round a circle. It is found from the diameter and pi.",
+   "The circumference is pi times the diameter. The radius is 21 centimetres, so first double it to get the diameter.",
+   "A similar example: a circle has radius 14 centimetres. The diameter is 2 times 14, which is 28 centimetres. The circumference is 22 over 7 times 28. Since 28 divided by 7 equals 4, this is 22 times 4, which is 88 centimetres."
   ],
   "steps": [
-   "C equals 2 pi r, which is 2 times 22 over 7 times 21",
-   "21 divided by 7 equals 3. So C equals 2 times 22 times 3, which is 132",
-   "Circumference equals 132 centimetres"
+   "The circumference is pi times the diameter. First find the diameter by doubling the radius. 2 times 21 equals 42.",
+   "Now multiply the diameter by 22 over 7. Divide 42 by 7 first, which gives 6.",
+   "Then multiply 22 by 6. 22 times 6 equals 132.",
+   "The circumference is 132 centimetres. 22 over 7 times 42 equals 132."
   ]
  },
  "Q_CH21_006_V01": {
@@ -1138,14 +1142,14 @@
    "22 centimetres"
   ],
   "hints": [
-   "Circumference equals pi times d, which is 22 over 7 times 14.",
-   "14 divided by 7 equals 2. So C equals 22 times 2, which is 44.",
-   "Circumference equals 44 centimetres."
+   "This question is about the circumference, the distance all the way round a circle. It is found from the diameter and pi.",
+   "The circumference is pi times the diameter, and here you are given the diameter. Multiply 14 by 22 over 7, dividing by 7 first to keep the numbers small.",
+   "A similar example: a circle has diameter 21 centimetres. The circumference is 22 over 7 times 21. Since 21 divided by 7 equals 3, this is 22 times 3, which is 66 centimetres."
   ],
   "steps": [
-   "C equals pi d, which is 22 over 7 times 14",
-   "14 divided by 7 equals 2. C equals 22 times 2, which is 44",
-   "Circumference equals 44 centimetres"
+   "The circumference is pi times the diameter, so we need 22 over 7 times 14.",
+   "Divide 14 by 7 first, which gives 2.",
+   "Then multiply 22 by 2. The circumference is 44 centimetres."
   ]
  },
  "Q_CH21_007_V01": {
@@ -1197,14 +1201,15 @@
    "220 metres"
   ],
   "hints": [
-   "C equals 2 pi r. So r equals C divided by 2 pi, which is 440, divided by 2 times 22 over 7.",
-   "2 times 22 over 7 equals 44 over 7. So r equals 440 divided by 44 over 7, which is 440 times 7 over 44.",
-   "440 divided by 44 equals 10. 10 times 7 equals 70 metres."
+   "This question works backwards. You know the distance round the circle and must find the radius. Think about how the circumference is made from the diameter.",
+   "The circumference is 22 over 7 times the diameter. So for every 22 metres round the circle there are 7 metres across it. Start by dividing 440 by 22.",
+   "A similar example: the circumference of a circle is 88 metres. Dividing, 88 divided by 22 equals 4, so the diameter is 4 times 7, which is 28 metres. The radius is half of the diameter, so it is 28 divided by 2, which is 14 metres."
   ],
   "steps": [
-   "C equals 2 pi r, so r equals C over 2 pi. So r equals 440, divided by 2 times 22 over 7.",
-   "That equals 440 times 7 over 44, which is 10 times 7, which is 70",
-   "Radius equals 70 metres"
+   "The circumference is 22 over 7 times the diameter. So the circumference is 22 equal parts when the diameter is 7 of the same parts.",
+   "Find one part by dividing the circumference by 22. 440 divided by 22 equals 20.",
+   "The diameter is 7 parts, which is 140 metres. 7 times 20 equals 140.",
+   "Be careful here, because 140 metres is the diameter and the question asks for the radius. Halve it. The radius is 70 metres. 140 divided by 2 equals 70."
   ]
  },
  "Q_CH21_009": {
@@ -1216,14 +1221,15 @@
    "56 metres"
   ],
   "hints": [
-   "C equals pi d. So d equals C divided by pi, which is 176 divided by 22 over 7.",
-   "176 divided by 22 over 7 equals 176 times 7 over 22.",
-   "176 divided by 22 equals 8. 8 times 7 equals 56 metres."
+   "This question works backwards. You know the distance round the park and must find the distance straight across it.",
+   "The circumference is 22 over 7 times the diameter. So for every 22 metres round the circle there are 7 metres across it. Start by dividing 176 by 22.",
+   "A similar example: the circumference of a circular pond is 132 metres. Dividing, 132 divided by 22 equals 6. The diameter is 6 times 7, which is 42 metres."
   ],
   "steps": [
-   "C equals pi d, so d equals C over pi. So d equals 176 divided by 22 over 7, which is 176 times 7 over 22.",
-   "176 divided by 22 equals 8. Then 8 times 7 equals 56.",
-   "Diameter equals 56 metres"
+   "The circumference is 22 over 7 times the diameter. So the circumference is 22 equal parts when the diameter is 7 of the same parts.",
+   "Find one part by dividing the circumference by 22. 176 divided by 22 equals 8.",
+   "The diameter is 7 of these parts. 7 times 8 equals 56.",
+   "The diameter of the park is 56 metres."
   ]
  },
  "Q_CH21_010": {
@@ -1235,14 +1241,14 @@
    "22 square centimetres"
   ],
   "hints": [
-   "Area equals pi times r squared, which is 22 over 7 times 7 times 7.",
-   "One 7 cancels: 22 over 7 times 7 equals 22. Then 22 times 7 equals 154.",
-   "Area equals 154 square centimetres."
+   "This question is about the area of a circle, the space inside it. The area is found from the radius and pi.",
+   "The area of a circle is pi times the radius times the radius. Start by working out 7 times 7.",
+   "A similar example: a circle has radius 14 centimetres. First 14 times 14 equals 196. The area is 22 over 7 times 196. Since 196 divided by 7 equals 28, this is 22 times 28, which is 616 square centimetres."
   ],
   "steps": [
-   "A equals pi r squared, which is 22 over 7 times 7 squared. 22 over 7 times 7 times 7.",
-   "That equals 22 times 7, which is 154",
-   "Area equals 154 square centimetres"
+   "The area of a circle is pi times the radius times the radius. First multiply the radius by itself. 7 times 7 equals 49.",
+   "Now multiply 49 by 22 over 7. Divide 49 by 7 first, which gives 7.",
+   "Then multiply 22 by 7. The area is 154 square centimetres."
   ]
  },
  "Q_CH21_011": {
@@ -1254,14 +1260,15 @@
    "616 square centimetres"
   ],
   "hints": [
-   "First find radius: r equals d over 2, which is 14 over 2, which is 7 centimetres.",
-   "Area equals pi r squared, which is 22 over 7 times 7 times 7, which is 154 square centimetres.",
-   "Same as the previous problem! Diameter 14, so radius 7, so area 154."
+   "This question is about the area of a circle. The area is found from the radius, so look carefully at which length you have been given.",
+   "You are given the diameter, 14 centimetres. Halve it to find the radius first. Then the area is pi times the radius times the radius.",
+   "A similar example: a circle has diameter 42 centimetres. The radius is 42 divided by 2, which is 21 centimetres. Then 21 times 21 equals 441. The area is 22 over 7 times 441. Since 441 divided by 7 equals 63, this is 22 times 63, which is 1386 square centimetres."
   ],
   "steps": [
-   "R equals d over 2, which is 14 over 2, which is 7 centimetres",
-   "A equals pi r squared, which is 22 over 7 times 49, which is 154 square centimetres",
-   "Area equals 154 square centimetres"
+   "The area uses the radius, and we are given the diameter. Halve the diameter to find the radius. 14 divided by 2 equals 7.",
+   "Multiply the radius by itself. 7 times 7 equals 49.",
+   "Now multiply 49 by 22 over 7. Since 49 divided by 7 equals 7, this is 22 times 7. 22 times 7 equals 154.",
+   "The area is 154 square centimetres."
   ]
  },
  "Q_CH21_012": {
@@ -1273,13 +1280,14 @@
    "440 metres"
   ],
   "hints": [
-   "1 lap equals the circumference, which is 2 pi r. That is 2 times 22 over 7 times 35.",
-   "35 divided by 7 equals 5. So C equals 2 times 22 times 5, which is 220 metres. That's 1 lap.",
-   "3 laps equals 3 times 220, which is 660 metres."
+   "This is a two-part question. One lap of a circular track is the circumference of the circle, and the runner goes round more than once.",
+   "Find one lap first. The circumference is pi times the diameter, and the diameter is 2 times 35, which is 70 metres. After that, remember there are 3 laps.",
+   "A similar example: a circular track has radius 14 metres and a runner does 2 laps. The diameter is 28 metres, so one lap is 22 over 7 times 28, which is 88 metres. Two laps are 2 times 88, which is 176 metres."
   ],
   "steps": [
-   "1 lap equals C, which is 2 pi r. That is 2 times 22 over 7 times 35, which is 220 metres. 2 times 22 times 5 equals 220.",
-   "3 laps equals 3 times 220, which is 660 metres"
+   "One lap is the circumference. First double the radius to get the diameter. 2 times 35 equals 70.",
+   "The circumference is 22 over 7 times the diameter. Since 70 divided by 7 equals 10, one lap is 22 times 10, which is 220 metres.",
+   "The runner does 3 laps, so multiply by 3. The runner goes 660 metres. 3 times 220 equals 660."
   ]
  },
  "Q_CH21_012_V02": {
@@ -1311,13 +1319,14 @@
    "Arc"
   ],
   "hints": [
-   "Semi means half. So semicircle means half circle.",
-   "A diameter passes through the centre and divides the circle into exactly 2 equal halves.",
-   "Each half is a semicircle."
+   "This question is about the names of the parts of a circle. Think about what fraction of the circle each part is.",
+   "A diameter passes through the centre and cuts the circle into two equal parts, so each part is half of the circle. Think of the word that means half a circle.",
+   "A similar example: two diameters that cross at right angles cut a circle into four equal parts. Each part is a quarter of the circle, so it is called a quarter circle. One diameter makes only two parts, so here each part is a half."
   ],
   "steps": [
-   "Diameter splits circle into 2 equal halves.",
-   "Answer: semicircle"
+   "A diameter passes through the centre of the circle, so the two parts it makes are equal.",
+   "Each part is exactly half of the circle. The word semi means half.",
+   "So each of the two equal parts is called a semicircle."
   ]
  },
  "Q_CH21_015": {
@@ -1348,13 +1357,14 @@
    "Congruent circles"
   ],
   "hints": [
-   "Concentric means: with the same centre.",
-   "Like rings on a target board, same centre, different sizes.",
-   "These are concentric circles."
+   "This question is about a special name for a set of circles. Look closely at what the circles share and what is different about them.",
+   "Picture the rings on a target board, or the ripples when a stone drops into a pond. The rings all have the same middle point but different sizes. Think of the word that means sharing a centre.",
+   "A similar example: circles that have the same radius are exactly the same size, so they are called equal or congruent circles. Here it is the other way round, because the sizes are different and the centre is the same."
   ],
   "steps": [
-   "Same centre, plus different radii, gives concentric circles.",
-   "Answer: concentric circles"
+   "These circles have different radii, so they are different sizes. They cannot be equal or congruent.",
+   "They all share one centre, like the rings on a target board.",
+   "Circles with the same centre but different radii are called concentric circles."
   ]
  },
  "Q_CH21_017": {
@@ -1366,14 +1376,16 @@
    "196 centimetres"
   ],
   "hints": [
-   "A equals pi r squared. So r squared equals A over pi, which is 616 divided by 22 over 7, which is 616 times 7 over 22.",
-   "616 divided by 22 equals 28. Then 28 times 7 equals 196. So r squared equals 196.",
-   "R equals the square root of 196, which is 14 centimetres."
+   "This question works backwards. You know the area of the circle and must find the radius. Think about how the area is made from the radius.",
+   "The area is 22 over 7 times the radius times the radius. Undo the 22 over 7 first by dividing 616 by 22 and then multiplying by 7. That gives the radius times itself.",
+   "A similar example: the area of a circle is 1386 square centimetres. Dividing, 1386 divided by 22 equals 63, and 63 times 7 equals 441. So the radius times itself is 441. Since 21 times 21 equals 441, the radius is 21 centimetres."
   ],
   "steps": [
-   "R squared equals A over pi, which is 616 times 7 over 22. R squared equals 616 times 7 over 22, which is 196.",
-   "R equals the square root of 196, which is 14",
-   "Radius equals 14 centimetres"
+   "The area is 22 over 7 times the radius times the radius. Undo the 22 over 7 by dividing by 22 and then multiplying by 7.",
+   "Divide the area by 22. 616 divided by 22 equals 28.",
+   "Multiply by 7. This is the radius times itself. 28 times 7 equals 196.",
+   "Do not stop at 196. We need the number that gives 196 when it is multiplied by itself. It is between 10 and 20, because 10 times 10 equals 100 and 20 times 20 equals 400.",
+   "Trying 14 gives 14 times 14, which is 196. The radius is 14 centimetres."
   ]
  },
  "Q_CH21_018": {
@@ -1385,13 +1397,14 @@
    "Cannot be compared"
   ],
   "hints": [
-   "C equals 2 pi r, which is 2 times 22 over 7 times 7, which is 44. A equals pi r squared, which is 22 over 7 times 49, which is 154.",
-   "Numerically: 154 is greater than 44.",
-   "The area, 154, is larger than the circumference, 44. But note: they have different units!"
+   "This question asks you to find two measurements of the same circle and compare the numbers. One is the distance round it and the other is the space inside it.",
+   "Work out both. The circumference is pi times the diameter, and the diameter is 14 centimetres. The area is pi times the radius times the radius. Then see which number is bigger.",
+   "A similar example: for a circle with radius 14 centimetres, the circumference is 22 over 7 times 28, which is 88 and the area is 22 over 7 times 14 times 14, which is 616. As numbers, 616 is larger than 88, so the area is the larger number."
   ],
   "steps": [
-   "C equals 44 centimetres. A equals 154 square centimetres.",
-   "154 is greater than 44 numerically."
+   "The diameter is 2 times 7, which is 14 centimetres. The circumference is 22 over 7 times the diameter, which is 44. 22 over 7 times 14 equals 44.",
+   "The area is 22 over 7 times the radius times the radius, which is 154. 22 over 7 times 7 times 7 equals 154.",
+   "Looking only at the numbers, 154 is greater than 44. So the area is larger, since 154 is greater than 44."
   ]
  },
  "Q_CH21_019": {
@@ -1403,14 +1416,14 @@
    "Infinite radii, infinite diameters"
   ],
   "hints": [
-   "A radius can go from the centre to any point on the circle. How many points are on a circle?",
-   "Infinite points, so infinite radii. And since every diameter passes through the centre in any direction.",
-   "Infinite diameters too! Both are infinite."
+   "This question is about counting the lines you could draw in a circle. A radius joins the centre to a point on the circle, and a diameter goes right across through the centre.",
+   "Think about how many points there are on the circle that a radius could reach. Then think about how many directions a line through the centre could take.",
+   "A similar example: how many points are there on a circle? Between any two points on the curve you can always mark another one, so the count never ends. We say a circle has infinite points. Use the same idea for the lines drawn from the centre and through the centre."
   ],
   "steps": [
-   "Infinite points on circle, so infinite radii",
-   "Infinite directions through centre, so infinite diameters",
-   "Both are infinite."
+   "A radius joins the centre to a point on the circle. There is no end to the points on a circle, so there is no end to the radii.",
+   "A diameter is a straight line through the centre. It can point in any direction, and there is no end to the directions, so there is no end to the diameters.",
+   "So a circle can have infinite radii, infinite diameters."
   ]
  },
  "Q_CH21_020": {
@@ -1422,14 +1435,15 @@
    "58 centimetres"
   ],
   "hints": [
-   "Perimeter of a semicircle equals half the circumference plus the diameter, the straight edge.",
-   "Half the circumference equals pi d over 2. That is 22 over 7 times 14 over 2, which is 22 over 7 times 7, or 22 centimetres.",
-   "Perimeter equals 22 plus 14, which is 36 centimetres."
+   "This question is about the perimeter of a semicircle, the distance all the way round its edge. Look at the shape carefully, because the edge has more than one part.",
+   "A semicircle has a curved edge and a straight edge. Start with the curved edge, which is half of the circumference of the whole circle. Then think about the straight edge.",
+   "A similar example: a semicircle has diameter 42 centimetres. The whole circumference would be 22 over 7 times 42, which is 132 centimetres, so the curved edge is 132 divided by 2, which is 66 centimetres. The straight edge is the diameter, 42 centimetres. The perimeter is 66 plus 42, which is 108 centimetres."
   ],
   "steps": [
-   "Curved part equals pi d over 2, which is 22 over 7 times 14 divided by 2, which is 22 centimetres. Pi d over 2 equals 22 over 7 times 7, which is 22.",
-   "Straight part equals diameter, which is 14 centimetres",
-   "Perimeter equals 22 plus 14, which is 36 centimetres"
+   "The circumference of the whole circle is 22 over 7 times the diameter. 22 over 7 times 14 equals 44.",
+   "The curved edge of the semicircle is half of this. 44 divided by 2 equals 22.",
+   "The perimeter goes all the way round, so it also includes the straight edge. The straight edge is the diameter, 14 centimetres.",
+   "Add the curved edge and the straight edge. The perimeter is 36 centimetres. 22 plus 14 equals 36."
   ]
  }
 }

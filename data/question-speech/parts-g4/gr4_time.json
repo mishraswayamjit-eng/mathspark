@@ -766,12 +766,16 @@
    "2022"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 27.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "A date moves forward by 1 day of the week after an ordinary year, because 365 days is 52 weeks and 1 day. It moves forward by 2 days when a 29 February falls in between.",
+   "Republic Day is 26 January. 2016 is a leap year, and its 29 February comes after Republic Day. So first work out the day for 26 January 2017, then go on year by year.",
+   "Here is a similar one. 15 August 2010 was a Sunday. An ordinary year pushes the day on by 1, so 15 August 2011 was a Monday. Between 15 August 2011 and 15 August 2012 there is a 29 February, so the day moves on by 2, to Wednesday."
   ],
   "steps": [
-   "The correct answer is option 1: 2020"
+   "Republic Day is 26 January. A year of 365 days is 52 weeks and 1 day, so the day of the week moves on by 1. If a 29 February falls in between, it moves on by 2.",
+   "2016 is a leap year and its 29 February comes after 26 January. So from 2016 to 2017 the day moves on by 2: Tuesday becomes Thursday. This is the step that is easy to miss.",
+   "From 2017 to 2018 the day moves on by 1 to Friday, and from 2018 to 2019 it moves on by 1 to Saturday.",
+   "From 26 January 2019 to 26 January 2020 there is no 29 February in between, because the leap day of 2020 comes later. The day moves on by 1 to Sunday.",
+   "So Republic Day falls on a Sunday in 2020."
   ]
  },
  "PYQ_2017_Q13": {
@@ -783,12 +787,15 @@
    "Tuesday"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 13.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "All Fool's Day is 1 April and Teachers' Day is 5 September. Count the days from one to the other, then see how many are left over after full weeks.",
+   "Count the days left in April after the 1st, then all of May, June, July and August, then the 5 days of September. Remember which months have 30 days and which have 31.",
+   "Here is a similar one. If 1 March is a Monday, what day is 10 April? There are 30 more days in March and 10 in April, which is 40 days. 40 days is 5 weeks and 5 days, and 5 days after Monday is Saturday."
   ],
   "steps": [
-   "The correct answer is option 4: Tuesday"
+   "Teachers' Day is 5 September. Count the days after 1 April: 29 more in April, 31 in May, 30 in June, 31 in July, 31 in August and 5 in September.",
+   "Add them up to get 157 days. 29 plus 31 plus 30 plus 31 plus 31 plus 5 equals 157.",
+   "Every 7 days brings back the same day of the week. 22 weeks is 22 times 7 equals 154 days, so 157 days is 22 weeks and 3 days.",
+   "Three days after Saturday is Tuesday. Teachers' Day fell on a Tuesday."
   ]
  },
  "PYQ_2017_Q23": {
@@ -800,12 +807,15 @@
    "Six to four"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 23.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "On a clock face, the minute hand takes 5 minutes to move from one number to the next. Count the steps the hand moves, always going forward the way a clock turns.",
+   "Work out how many 5-minute steps make 50 minutes. Then count the steps for each choice, going forward past twelve where you need to.",
+   "Here is a similar one. How long does the minute hand take to go from eight to two? Going forward, it passes nine, ten, eleven, twelve, one and two, which is 6 steps. 6 times 5 equals 30, so it takes 30 minutes."
   ],
   "steps": [
-   "The correct answer is option 4: six to four"
+   "The minute hand takes 5 minutes to go from one number to the next. So 50 minutes is 10 steps. 50 divided by 5 equals 10.",
+   "From nine forward to three, the hand passes 12 and moves 6 steps, which is 30 minutes. From ten to six is 8 steps and from four to twelve is 8 steps, which is 40 minutes each.",
+   "From six, the hand moves 6 steps up to twelve and then 4 more steps on to four. That is 10 steps.",
+   "10 steps of 5 minutes make 50 minutes. So the movement of 50 minutes is six to four."
   ]
  },
  "PYQ_2017_Q32": {
@@ -817,12 +827,15 @@
    "8:02 p m"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 32.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "A watch that gains runs a little ahead of the real time. Find how much it gains altogether, then decide whether to add that or take it away.",
+   "Count the hours from 8:00 a m to 8:00 p m. The watch gains 2 minutes in each of those hours.",
+   "Here is a similar one. A clock gains 3 minutes every hour and is set right at 6:00 a m. By 11:00 a m, 5 hours have passed, so it has gained 5 times 3 equals 15 minutes. It shows 11 15 a m."
   ],
   "steps": [
-   "The correct answer is option 3: 8 24 p m"
+   "From 8:00 a m to 8:00 p m is 12 hours.",
+   "The watch gains 2 minutes in every hour, so in 12 hours it gains 24 minutes. 12 times 2 equals 24.",
+   "A watch that gains is ahead of the real time, so the 24 minutes are added. Taking them away is the trap here.",
+   "24 minutes after 8:00 p m is 8 24 p m. The watch shows 8 24 p m."
   ]
  },
  "PYQ_2018_Q14": {
@@ -834,12 +847,15 @@
    "10:07 p m"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 14.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "A watch that runs slow falls a little behind the real time. Find how much it loses altogether, then decide whether to add that or take it away.",
+   "Count the hours from 8:00 a m to 10:00 p m. The watch loses 30 seconds in each of those hours, so find the total in seconds and change it to minutes.",
+   "Here is a similar one. A clock loses 20 seconds every hour and is set right at 6:00 a m. By 3:00 p m, 9 hours have passed, so it has lost 9 times 20 equals 180 seconds, which is 3 minutes. It shows 2 57 p m."
   ],
   "steps": [
-   "The correct answer is option 3: 9 53 p m"
+   "From 8:00 a m to noon is 4 hours, and from noon to 10:00 p m is 10 hours. That is 14 hours. 4 plus 10 equals 14.",
+   "The watch loses 30 seconds in each hour, so in 14 hours it loses 420 seconds. 14 times 30 equals 420.",
+   "Change the seconds to minutes. 420 seconds is 7 minutes. 420 divided by 60 equals 7.",
+   "A slow watch is behind the real time, so the 7 minutes are taken away, not added. 7 minutes before 10:00 p m is 9 53 p m, so the watch shows 9 53 p m."
   ]
  },
  "PYQ_2018_Q18": {
@@ -851,12 +867,15 @@
    "3.045 hours"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 18.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "A decimal shows parts out of 10 or 100, but minutes are parts out of 60. Work out what fraction of an hour the minutes make before you write a decimal.",
+   "Keep the 3 whole hours as they are. Write 45 minutes as a fraction of 60 minutes and make that fraction as simple as you can.",
+   "Here is a similar one. Write 2 hours 30 minutes as a decimal. 30 minutes out of 60 is 30 over 60, which is 1 over 2 of an hour, or 0.5 of an hour. So it is 2.5 hours."
   ],
   "steps": [
-   "The correct answer is option 3: 3.75 hours"
+   "An hour has 60 minutes, so 45 minutes is 45 over 60 of an hour.",
+   "Make the fraction simpler by dividing the top and the bottom by 15. 45 over 60 is the same as 3 over 4.",
+   "3 over 4 is the same as 75 over 100, which is 0.75 as a decimal.",
+   "Add this to the 3 whole hours. 3 hours 45 minutes is 3.75 hours. 3 plus 0.75 equals 3.75."
   ]
  },
  "PYQ_2018_Q28": {
@@ -868,12 +887,15 @@
    "Friday"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 28.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "A date moves forward by 1 day of the week after an ordinary year, because 365 days is 52 weeks and 1 day. After a leap year of 366 days it moves forward by 2 days.",
+   "List the four years that pass: 2006, 2007, 2008 and 2009. Decide which of them is a leap year by checking which one divides exactly by 4.",
+   "Here is a similar one. 1 January 2014 was a Wednesday. 2014 and 2015 are ordinary years, so 1 January 2015 was a Thursday and 1 January 2016 was a Friday. 2016 is a leap year, so the day moves on by 2, and 1 January 2017 was a Sunday."
   ],
   "steps": [
-   "The correct answer is option 4: Friday"
+   "An ordinary year has 365 days, which is 52 weeks and 1 day. So 1 January moves on by 1 day after an ordinary year and by 2 days after a leap year.",
+   "2006 and 2007 are ordinary years. So 1 January 2007 was a Monday and 1 January 2008 was a Tuesday.",
+   "2008 is a leap year, because it divides exactly by 4. So the day moves on by 2, and 1 January 2009 was a Thursday. This is the step that is easy to miss. 2008 divided by 4 equals 502.",
+   "2009 is an ordinary year, so the day moves on by 1. 1st January 2010 fell on a Friday."
   ]
  },
  "PYQ_2019_Q08": {
@@ -885,12 +907,15 @@
    "Sunday and Monday"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 8.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "A month of 30 days is 4 full weeks and 2 extra days. Every day of the week comes 4 times and the days that fall on the first two dates come a fifth time.",
+   "Go back from the 19th in steps of 7 to find a Thursday early in April. Then work out what day the 1st was.",
+   "Here is a similar one. Suppose 17 June is a Friday. Going back in 7s, 10 June and 3 June are Fridays too, so 1 June is a Wednesday. June has 30 days, so the days on the 1st and 2nd, Wednesday and Thursday, come 5 times."
   ],
   "steps": [
-   "The correct answer is option 4: Sunday and Monday"
+   "Go back from Thursday 19 April in steps of 7. The 12th and the 5th of April are Thursdays too.",
+   "Count back from Thursday the 5th. The 4th is a Wednesday, the 3rd a Tuesday, the 2nd a Monday and the 1st a Sunday.",
+   "April has 30 days, which is 4 weeks and 2 days. The 29th and 30th fall on the same days as the 1st and 2nd. 30 minus 28 equals 2.",
+   "Only the days of the 1st and 2nd come 5 times and every other day comes 4 times. The days that appeared 5 times are Sunday and Monday."
   ]
  },
  "PYQ_2019_Q33": {
@@ -922,14 +947,15 @@
    "2023"
   ],
   "hints": [
-   "A leap year is divisible by 4. But century years, ending in 00, must be divisible by 400.",
-   "2023 divided by 4 equals 505.75, not leap. 2024 divided by 4 equals 506, leap! 2100 divided by 400 equals 5.25, not leap. 1900 divided by 400 equals 4.75, not leap.",
-   "2024 is the only leap year."
+   "A leap year is a year that divides exactly by 4. Years that end in 00 are special: they are leap years only if they divide exactly by 400.",
+   "Sort the four years into two groups: those that end in 00 and those that do not. Test the 00 years with 400 and the others with 4.",
+   "Here is a similar one. Is 2016 a leap year? 2016 divided by 4 equals 504 with nothing left over, and it does not end in 00, so 2016 is a leap year. But 1800 ends in 00 and does not divide exactly by 400, so 1800 is not a leap year."
   ],
   "steps": [
-   "Rule: divisible by 4 means a leap year. But century years must be divisible by 400.",
-   "2024 divided by 4 equals 506. 2100 divided by 400 is not a whole number. 1900 divided by 400 is not a whole number.",
-   "2024 is a leap year."
+   "A year is a leap year if it divides exactly by 4. Years ending in 00 must divide exactly by 400 instead.",
+   "2023 is an odd number, so it does not divide exactly by 4. It is not a leap year.",
+   "2100 and 1900 end in 00, and neither divides exactly by 400. So they are not leap years, even though they divide by 4. This is the trap.",
+   "2024 divides exactly by 4 and does not end in 00. So the leap year is 2024. 2024 divided by 4 equals 506."
   ]
  },
  "Q_CH17_002": {
@@ -941,15 +967,15 @@
    "60"
   ],
   "hints": [
-   "Count the days in each month: March has 31 days, April has 30 days.",
-   "1 March to 31 March equals 31 days. 1 April to 30 April equals 30 days. Plus 1 May equals 1 day.",
-   "31 plus 30 plus 1 equals 62 days"
+   "Count the days month by month. Remember how many days each month has, and notice that both the first date and the last date are to be counted.",
+   "Start with March: count every day from the 1st to the 31st. Then think about how many days April has, and what is still left to count after April.",
+   "Here is a similar one. How many days are there from 1 April to 10 May, counting both dates? April has 30 days, and then there are 10 days in May. 30 plus 10 equals 40, so there are 40 days."
   ],
   "steps": [
-   "March: 31 days, 1st to 31st",
-   "April: 30 days",
-   "May 1st: 1 day",
-   "Total equals 31 plus 30 plus 1, which is 62"
+   "Count all of March. From the 1st to the 31st is 31 days.",
+   "Count all of April, which has 30 days.",
+   "Then count 1 May itself, because both dates are included. That is 1 more day.",
+   "Add the three parts. There are 62 days. 31 plus 30 plus 1 equals 62."
   ]
  },
  "Q_CH17_003": {
@@ -961,14 +987,14 @@
    "Monday"
   ],
   "hints": [
-   "2023 is not a leap year, so it has 365 days. How many weeks is that?",
-   "365 divided by 7 equals 52 weeks and 1 extra day.",
-   "1 extra day means the day advances by 1: from Sunday to Monday."
+   "From 1 January of one year to 1 January of the next is one whole year. Find how many days that is, then see how many are left over after full weeks.",
+   "Decide whether 2023 is a leap year by checking if it divides exactly by 4. That tells you how many days pass.",
+   "Here is a similar one. 1 January 2021 was a Friday. 2021 is not a leap year, so 365 days pass, which is 52 weeks and 1 day. The day moves on by 1, so 1 January 2022 was a Saturday."
   ],
   "steps": [
-   "2023 has 365 days, not a leap year. 365 divided by 7 equals 52 weeks plus 1 day.",
-   "1 extra day: Sunday plus 1 is Monday",
-   "1st January 2024 is Monday."
+   "From 1 January 2023 to 1 January 2024 is the whole of 2023. 2023 is not a leap year, so that is 365 days.",
+   "52 weeks is 52 times 7 equals 364 days. So 365 days is 52 weeks and 1 day.",
+   "After 52 full weeks it is Sunday again. One more day makes it Monday, so 1st January 2024 was a Monday."
   ]
  },
  "Q_CH17_004": {
@@ -1019,14 +1045,14 @@
    "Sunday"
   ],
   "hints": [
-   "2007 is not a leap year. So 1st January to 1st January advances by 1 day.",
-   "But wait, is 2008 a leap year? Yes! Does the leap day, 29 February, matter? Republic Day is 26 January, before February 29.",
-   "Since we're going from 26 January 2007 to 26 January 2008, and 2007 has 365 days: advance 1 day. Friday plus 1 is Saturday."
+   "Count the days from one Republic Day to the next, then see how many are left over after full weeks. Check whether a 29 February falls between the two dates.",
+   "Republic Day is 26 January. 2008 is a leap year, but its 29 February comes after 26 January. So decide how many days there are from 26 January 2007 to 26 January 2008.",
+   "Here is a similar one. 15 August 2013 was a Thursday. No 29 February lies between that day and 15 August 2014, so 365 days pass. That is 52 weeks and 1 day, so the day moves on by 1, to Friday."
   ],
   "steps": [
-   "2007 has 365 days, not a leap year. 365 divided by 7 equals 52 remainder 1.",
-   "Advance by 1 day: Friday plus 1 is Saturday",
-   "26 January 2008 is Saturday."
+   "Republic Day is 26 January. Between 26 January 2007 and 26 January 2008 there is no 29 February, because the leap day of 2008 comes later, in February.",
+   "So 365 days pass. 52 weeks is 364 days, so that is 52 weeks and 1 day. 365 minus 364 equals 1.",
+   "The day moves on by 1, from Friday to Saturday. In 2008, Republic Day was celebrated on a Saturday."
   ]
  },
  "Q_CH17_007": {
@@ -1058,15 +1084,15 @@
    "31st July"
   ],
   "hints": [
-   "July has 31 days, which is 4 weeks plus 3 extra days. Those 3 extra days occur 5 times.",
-   "The 3 consecutive days that occur 5 times are Wednesday, Thursday, Friday. So July 1st must be a Wednesday.",
-   "If July 1 is Wednesday, then Sundays fall on: 5, 12, 19, 26. Check which option matches."
+   "A month of 31 days is 4 full weeks and 3 extra days. The days that come 5 times are the days that fall on the 1st, 2nd and 3rd.",
+   "Wednesday, Thursday and Friday come 5 times so decide which of them falls on 1 July. Then count forward to the first Sunday.",
+   "Here is a similar one. In a month of 30 days, Monday and Tuesday come 5 times. The two extra days, the 29th and 30th, match the 1st and 2nd, so the 1st is a Monday. The first Sunday is then the 7th, and the other Sundays are the 14th, 21st and 28th."
   ],
   "steps": [
-   "31 equals 4 times 7 plus 3. Three days occur 5 times. Those 3 days are Wednesday, Thursday, Friday.",
-   "The first 3 days of the month are Wednesday, Thursday, Friday. So July 1 is Wednesday.",
-   "Sundays: 1 plus 4 equals 5th, 12th, 19th, 26th.",
-   "26th July is a Sunday."
+   "July has 31 days, which is 4 weeks and 3 days. The three extra days, the 29th, 30th and 31st, fall on the same days as the 1st, 2nd and 3rd. 31 minus 28 equals 3.",
+   "The days that come 5 times are Wednesday, Thursday and Friday. So 1 July is a Wednesday, 2 July a Thursday and 3 July a Friday. Seeing this is the key to the question.",
+   "Then 4 July is a Saturday and 5 July is the first Sunday.",
+   "Add 7 each time to find the other Sundays: the 12th, the 19th and the 26th. The date that fell on a Sunday is 26th July. 19 plus 7 equals 26."
   ]
  },
  "Q_CH17_009": {
@@ -1116,14 +1142,13 @@
    "180"
   ],
   "hints": [
-   "Convert hours to minutes first: 1 hour equals 60 minutes.",
-   "3 hours equals 3 times 60, which is 180 minutes. Add 45 more.",
-   "180 plus 45 equals 225 minutes."
+   "Hours and minutes are different units. Change the hours into minutes first, then put all the minutes together.",
+   "One hour is 60 minutes. Work out how many minutes there are in 3 hours.",
+   "Here is a similar one. How many minutes are in 2 hours 20 minutes? 2 hours is 2 times 60 equals 120 minutes. Add the 20 minutes: 120 plus 20 equals 140 minutes."
   ],
   "steps": [
-   "3 hours equals 3 times 60, which is 180 minutes",
-   "Add 45 minutes: 180 plus 45 equals 225",
-   "3 hours 45 minutes equals 225 minutes"
+   "One hour is 60 minutes, so 3 hours is 180 minutes. 3 times 60 equals 180.",
+   "Add the extra 45 minutes. There are 225 minutes in 3 hours 45 minutes. 180 plus 45 equals 225."
   ]
  },
  "Q_CH17_012": {
@@ -1135,14 +1160,15 @@
    "2 hours 10 minutes"
   ],
   "hints": [
-   "From 2 40 to 5 10. Count the hours first, then adjust the minutes.",
-   "2 40 to 5 40 equals 3 hours. But we need 5 10, which is 30 minutes less than 5 40.",
-   "3 hours minus 30 minutes equals 2 hours 30 minutes."
+   "To find how long something lasts, count up from the start time to the end time. Counting up in easy jumps is safer than subtracting.",
+   "Start at 2 40 p m and jump to the next full hour, 3:00 p m. Note how many minutes that jump is, then carry on to 5 10 p m.",
+   "Here is a similar one. A class starts at 9 50 a m and ends at 12 15 p m. From 9 50 to 10:00 is 10 minutes, from 10:00 to 12:00 is 2 hours, and from 12:00 to 12 15 is 15 minutes. That is 2 hours and 10 plus 15 equals 25 minutes."
   ],
   "steps": [
-   "Hours: 5 minus 2 equals 3 hours. Minutes: 10 minus 40 equals minus 30, which is negative!",
-   "Borrow 1 hour: 2 hours, and 60 plus 10, minus 40, equals 2 hours 30 minutes.",
-   "Movie is 2 hours 30 minutes long."
+   "Count up from 2 40 p m in easy jumps. From 2 40 to 3:00 is 20 minutes.",
+   "From 3:00 to 5:00 is 2 hours.",
+   "From 5:00 to 5 10 is 10 minutes.",
+   "Put the jumps together: 2 hours, and 20 minutes plus 10 minutes. The movie is 2 hours 30 minutes long. 20 plus 10 equals 30."
   ]
  },
  "Q_CH17_013": {
@@ -1154,13 +1180,14 @@
    "15 45"
   ],
   "hints": [
-   "For p m times after noon, add 12 to the hour.",
-   "3 p m equals 3 plus 12, which is 15. So 3 45 p m equals 15 45.",
-   "Note: 12 p m stays as 12:00, and 12 a m becomes 00:00."
+   "In 24-hour time the hours do not start again after noon. They carry on counting past 12, all the way to 23.",
+   "For a p m time, add 12 to the hours and leave the minutes as they are. Do that with the 3 in 3 45 p m.",
+   "Here is a similar one. Write 7 20 p m in 24-hour time. For a p m time, add 12 to the hours: 7 plus 12 equals 19. The minutes stay the same, so it is 19 20."
   ],
   "steps": [
-   "For p m, add 12 to the hour. 3 plus 12 equals 15.",
-   "3 45 p m equals 15 45"
+   "In 24-hour time the hours carry on counting after 12 noon. For a p m time, add 12 to the hours.",
+   "Add 12 to the 3 hours to get hour 15. 3 plus 12 equals 15.",
+   "The minutes stay the same. So 3 45 p m is 15 45."
   ]
  },
  "Q_CH17_014": {
@@ -1172,13 +1199,15 @@
    "1"
   ],
   "hints": [
-   "In 100 years: 76 normal years, giving 76 odd days, plus 24 leap years, giving 48 odd days, equals 124 odd days. But wait, the century year might not be leap.",
-   "100 years equals 5 odd days, after careful calculation. 400 years equals 4 times 5, plus 1 for the extra leap day from the 400th year, which is 20 plus 1, which is 21. 21 divided by 7 equals 3 weeks, which is 0 odd days.",
-   "400 years equals 0 odd days! The calendar repeats exactly every 400 years."
+   "Odd days are the days left over after you take out all the full weeks. Count the odd days that the ordinary years and the leap years give, then take out full weeks again.",
+   "An ordinary year has 1 odd day and a leap year has 2. First find how many leap years there are in 400 years, remembering that a year ending in 00 is a leap year only if it divides exactly by 400.",
+   "Here is a similar one. How many odd days are there in 5 years, if one of them is a leap year? The four ordinary years give 4 odd days and the leap year gives 2. 4 plus 2 equals 6, which is less than a full week, so there are 6 odd days."
   ],
   "steps": [
-   "This is a well-known calendar fact. 400 years equals 0 odd days.",
-   "The calendar repeats exactly every 400 years."
+   "An ordinary year is 52 weeks and 1 day, so it has 1 odd day. A leap year is 52 weeks and 2 days, so it has 2 odd days.",
+   "In 400 years, every 4th year makes 100 years. Three of the four years ending in 00 are not leap years, so there are 97 leap years and 303 ordinary years. 100 minus 3 equals 97.",
+   "The ordinary years give 303 odd days and the leap years give 97 times 2 equals 194 odd days. Together that is 497 days.",
+   "497 days is exactly 71 weeks, with nothing left over. So there are 0 odd days in 400 years. 497 divided by 7 equals 71."
   ]
  },
  "Q_CH17_015": {
@@ -1209,14 +1238,15 @@
    "Thursday"
   ],
   "hints": [
-   "From 1 April 2003 to 1 April 2004: does it cross February 29?",
-   "February 2004 has 29 days, leap year. So 2003 to 2004 has 366 days from this April to next April.",
-   "Wait, count properly: April 2003 to April 2004 crosses February 2004. 366 days? No: it's 365 plus 1, for the leap day, equals 366. 366 divided by 7 equals 52 remainder 2. Tuesday plus 2 is Thursday."
+   "This is a calendar problem. The same date moves forward by a day or two of the week each year, so think about how many days lie between the two dates and whether a 29th of February falls between them.",
+   "Check whether 2004 is a leap year and whether its February comes before 1st April 2004. Then find how many days are left over after full weeks from 1st April 2003 to 1st April 2004.",
+   "Here is a similar problem. 15th August 2015 was a Saturday. Between 15th August 2015 and 15th August 2016 there is a 29th of February, because 2016 is a leap year, so there are 366 days. 366 days make 52 weeks and 2 days left over. Two days after Saturday is Monday, so 15th August 2016 was a Monday."
   ],
   "steps": [
-   "1 April 2003 to 1 April 2004 crosses February 29, 2004, leap year.",
-   "Total equals 366 days. 366 divided by 7 equals 52 remainder 2.",
-   "Tuesday plus 2 is Thursday."
+   "From 1st April 2003 to 1st April 2004 is one full year. The year 2004 is a leap year and its 29th of February comes before 1st April, so this stretch has 366 days.",
+   "A week has 7 days. 366 days make 52 full weeks with 2 days left over. 366 equals 52 times 7 plus 2.",
+   "Full weeks bring us back to the same day, so only the 2 extra days matter. This is the trap: an ordinary year moves the day forward by 1, but the leap day makes it 2.",
+   "Two days after Tuesday is Thursday. So in 2004 it was celebrated on Thursday."
   ]
  },
  "Q_CH17_017": {
@@ -1247,14 +1277,15 @@
    "none of these"
   ],
   "hints": [
-   "April has 30 days, which is 4 weeks plus 2 extra days. So exactly 2 days will occur 5 times.",
-   "If 9th is Monday, then 2nd is Monday, so 1st is Sunday. April starts on Sunday.",
-   "The first 2 days, Sunday and Monday, occur 5 times: Sundays on 1, 8, 15, 22, 29 and Mondays on 2, 9, 16, 23, 30."
+   "This is a calendar problem. Every month has four full weeks plus a few extra days, and only the days of the week that land on those extra days come five times.",
+   "April has 30 days. Start by finding which day of the week the 1st of April was, by counting back in sevens from the 9th.",
+   "Here is a similar problem. Suppose 12th July is a Friday. Seven days earlier, the 5th is also a Friday, so the 4th is Thursday, the 3rd is Wednesday, the 2nd is Tuesday and the 1st is Monday. July has 31 days, which is 4 weeks and 3 days, so the first three days of the month, Monday, Tuesday and Wednesday, come five times."
   ],
   "steps": [
-   "April has 30 days, which is 4 weeks plus 2 days. Two days occur 5 times.",
-   "9 April is Monday, so 2 April is Monday, so 1 April is Sunday",
-   "First 2 days of the month, Sunday, Monday, occur 5 times."
+   "Counting back 7 days from Monday the 9th gives Monday the 2nd. The day before that, the 1st of April, was a Sunday. 9 minus 7 equals 2.",
+   "April has 30 days. That is 4 full weeks and 2 days more. 30 equals 4 times 7 plus 2.",
+   "In 4 full weeks every day of the week comes 4 times. The 2 extra days are the 29th and 30th, which fall on the same days as the 1st and 2nd.",
+   "Sundays fall on 1, 8, 15, 22 and 29, and Mondays fall on 2, 9, 16, 23 and 30. So the days that occurred five times are Sunday and Monday."
   ]
  },
  "Q_CH17_019": {
@@ -1286,14 +1317,15 @@
    "50"
   ],
   "hints": [
-   "Count remaining days in August, all of September, and 2 days in October.",
-   "August: 31 minus 15 equals 16 days. September: 30 days. October: 2 days.",
-   "16 plus 30 plus 2 equals 48 days."
+   "This is a counting-days problem that runs across three months. Split it into the days left in the first month, the whole of the middle month, and the days used in the last month.",
+   "August has 31 days. Since 15th August is not counted, first find how many days are left in August after the 15th.",
+   "Here is a similar problem: the days from 20th March to 5th May, not counting 20th March. March has 31 days, so 31 minus 20 equals 11 days are left in March. April has 30 days, and May gives 5 days. 11 plus 30 plus 5 equals 46 days."
   ],
   "steps": [
-   "August remaining, not counting 15th: 31 minus 15 equals 16",
-   "September equals 30, October equals 2",
-   "Total equals 16 plus 30 plus 2, which is 48"
+   "August has 31 days. Leaving out the 15th, we count the 16th to the 31st, which is 16 days.",
+   "September has 30 days, and all of them are counted.",
+   "In October we count the 1st and the 2nd, which is 2 days. Take care here: the 15th of August is left out, but the 2nd of October is counted.",
+   "Add the three parts: 16 plus 30 plus 2 equals 48. So there are 48 days."
   ]
  },
  "Q_CH17_021": {
@@ -1344,13 +1376,14 @@
    "120"
   ],
   "hints": [
-   "1 hour equals 60 minutes. 1 minute equals 60 seconds.",
-   "1 hour equals 60 times 60, which is 3600 seconds.",
-   "2 hours equals 2 times 3600, which is 7200 seconds."
+   "This is a time conversion with two jumps: hours to minutes, then minutes to seconds. Remember how many of the smaller unit make one of the bigger unit each time.",
+   "Start by changing 2 hours into minutes. One hour has 60 minutes.",
+   "Here is a similar problem: how many seconds are there in 3 hours? 3 hours is 3 times 60 equals 180 minutes. 180 minutes is 180 times 60 equals 10800 seconds."
   ],
   "steps": [
-   "1 hour equals 60 times 60, which is 3600 seconds",
-   "2 hours equals 2 times 3600, which is 7200 seconds"
+   "One hour has 60 minutes, so 2 hours have 2 times 60 equals 120 minutes.",
+   "One minute has 60 seconds, so 120 minutes have 120 times 60 equals 7200 seconds.",
+   "So there are 7200 seconds in 2 hours."
   ]
  },
  "Q_CH17_024": {
@@ -1380,14 +1413,15 @@
    "2006"
   ],
   "hints": [
-   "We need to go backwards 1 day, from Monday to Sunday, which means we need total odd days equal to 6, or 7 minus 1.",
-   "Odd days: 2000 has 2, a leap year. 2001 has 1. 2002 has 1. 2003 has 1. 2004 has 2, a leap year. After 2000: 2 odd days, so Wednesday. After 2001: plus 1 makes 3, so Thursday. After 2002: plus 1 makes 4, so Friday. After 2003: plus 1 makes 5, so Saturday. After 2004: plus 2 makes 7, which is 0, so Monday again. Hmm.",
-   "Wait: from 2000 to 2001, 2 October falls after February, so the leap year effect depends on position. 2000: advance 1, because October is after February, so there is only 1 odd day from October to October in a year where the leap day is before. Monday plus 1 is Tuesday, in 2001. Plus 1 is Wednesday, in 2002. Plus 1 is Thursday, in 2003. Plus 2 is Saturday, in 2004, a leap year crossed. Plus 1 is Sunday, in 2005."
+   "This is a calendar problem. The same date moves forward one day of the week after an ordinary year, and two days when a 29th of February falls in between. Follow the date year by year.",
+   "Start from Monday in 2000 and find the day for 2nd October 2001. The leap day of 2000 came in February, before October, so check whether any 29th of February lies between October 2000 and October 2001.",
+   "Here is a similar problem. 5th July 2010 was a Monday, and we want the first later year when 5th July fell on a Friday. In 2011 it was Tuesday. In 2012 it was Thursday, because 29th February 2012 falls in between and moves it 2 days. In 2013 it was Friday. So the year is 2013."
   ],
   "steps": [
-   "2 October 2000 is Monday",
-   "Year by year: 2001 is Tuesday, 2002 is Wednesday, 2003 is Thursday, 2004 is Saturday, because the leap year adds 2, and 2005 is Sunday.",
-   "First Sunday equals 2005"
+   "From one 2nd October to the next is usually 365 days, which is 52 weeks and 1 day, so the day moves forward by 1. 365 equals 52 times 7 plus 1.",
+   "The leap day of 2000 was in February, before October, so it does not count here. In 2001 the day was Tuesday, in 2002 Wednesday and in 2003 Thursday.",
+   "Between October 2003 and October 2004 comes 29th February 2004. That stretch has 366 days, so the day jumps 2 days, from Thursday to Saturday. This is the trap: Friday is skipped.",
+   "One more ordinary year moves Saturday on to Sunday. So it was first celebrated on Sunday in 2005."
   ]
  }
 }

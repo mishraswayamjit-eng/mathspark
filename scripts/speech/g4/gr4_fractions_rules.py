@@ -239,7 +239,7 @@ def say(text, sentence=False):
     # balance the pauses in a sum of fractions: '1 over 7, plus 2 over 7, equals 3 over 7'
     s = re.sub(r"((?:plus|minus|times|divided by) \d+ over \d+) equals\b", r"\1, equals", s)
     s = re.sub(r"(all over \d+) equals\b", r"\1, equals", s)
-    s = re.sub(r"(, (?:plus|minus|times|divided by) [^,.;:?]*?) equals\b", r"\1, equals", s)
+    s = re.sub(r"(, (?:plus|minus|times|divided by) [^,.;:?]*?) (equals|means|is)\b", r"\1, \2", s)
     s = re.sub(r"(, all over [^,.;:?]*?) equals\b", r"\1, equals", s)
     s = re.sub(r"\b(\d+ divided by \d+) times (\d+)", r"\1, times \2,", s)
     s = re.sub(r"(, which is [^,.;:?]+), which is ", r"\1, or ", s)
@@ -254,6 +254,9 @@ def say(text, sentence=False):
     s = re.sub(r"\bNOT\b", "not", s)
     s = re.sub(r"[,;:]$", "", s)
     s = tidy(_and_list(s))
+    # a run of fractions inside a sentence: '1 over 2, 1 over 3, 1 over 4 the tops match'
+    s = re.sub(r"(?<!and )(?<!or )(?<!by )((?:\b\d+ over \d+, )+)(\d+ over \d+)\b(?!,? (?:and|or|plus|minus|times|divided|equals|is|by)\b)(?!, \d)",
+               lambda m: m.group(1)[:-2] + " and " + m.group(2), s)
     if sentence and " " in s and s[-1].isalnum():
         s += "."
     return s
@@ -269,7 +272,8 @@ def _and_list(s):
     if not m:
         return s
     items = m.group(1).split(", ")
-    if any(len(i.split()) > 6 or re.search(r"\b(?:or|so|is|equals)\b", i) for i in items) or " and " in items[-1]:
+    if any(len(i.split()) > 6 or re.search(r"\b(?:or|so|is|equals)\b", i) or re.match(r"(?:plus|minus|times|divided)\b", i)
+           for i in items) or " and " in items[-1]:
         return s
     if any(" and " in i for i in items) and not all(re.search(r"\d and ", i) for i in items if " and " in i):
         return s

@@ -206,9 +206,11 @@ def say(text, pre_hook=None):
     s = re.sub(r"(%s)\s*(%s)\b(?!\.\d)" % (_NUM, _UNIT_ALT), _unit, s)
     s = re.sub(r"\bper (%s)\b" % _UNIT_ALT, lambda m: "per " + UNITS[m.group(1)][0], s)
     # a two-letter (or longer) abbreviation standing alone: 'in kg', 'cm'
+    s = re.sub(r"\b((?:a|one|each|every) )(km|kg|Kg|cm|mm|ml|mL|mg|dm|hm|hg|dag|dg|dl|hl|kl|kL|gm)\b(?!\.\d)",
+               lambda m: m.group(1) + UNITS[m.group(2)][0], s)          # 'half a kg' is 'half a kilogram'
     s = re.sub(r"\b(km|kg|Kg|cm|mm|ml|mL|mg|dm|hm|hg|dag|dg|dl|hl|kl|kL|gm|gms)\b(?!\.\d)", lambda m: UNITS[m.group(1)][1], s)
     # a one-letter unit named in a conversion: 'convert g to kg', 'divide m by 1000', 'from mg to g'
-    s = re.sub(r"\b([Cc]onvert|[Dd]ivide|[Mm]ultiply|to|from|into) (m|g|l)\b(?!['.]\w)", lambda m: "%s %s" % (m.group(1), UNITS[m.group(2)][1]), s)
+    s = re.sub(r"\b([Cc]onvert|[Dd]ivide|[Mm]ultiply|to|from|into|many) (m|g|l)\b(?!['.]\w)", lambda m: "%s %s" % (m.group(1), UNITS[m.group(2)][1]), s)
     for pat, rep in _WORD_SUBS:
         s = re.sub(pat, rep, s)
     # 'divide 126.4 ÷ 4' and 'multiply 0.25 × 0.4' (with no result after them) read as 'by'

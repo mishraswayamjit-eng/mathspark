@@ -11,7 +11,9 @@ import common
 _TERM = r"(?:\d[\d.]*½?x?°?|x°?)"
 _EXPR = _TERM + r"(?:\s*[+−×÷]\s*" + _TERM + r")*"
 # After these words a sum is being described, so its result reads ", which is".
-_WHICH = {"is", "are", "be", "turns", "turned", "leave", "make", "makes", "share", "has", "give", "gives", "it's", "of", "than"}
+_WHICH = {"is", "are", "be", "turns", "turned", "leave", "make", "makes", "share", "has", "give", "gives", "it's", "of", "than", "to", "area"}
+# After the result of such a sum, these words carry the sentence on, so a comma closes the aside.
+_JOIN = "and|so|to|from|with|in|each|more|past|for|before|after|plus|too|on|at|or|but|equally"
 
 
 def _time(m):
@@ -41,10 +43,15 @@ def _equals(s):
         chain = i >= 1 and re.fullmatch(_EXPR, before)
         if nxt.strip().startswith("?"):
             nxt = re.sub(r"^\s*\?", "what?", nxt)
-        if chain or (m and m.group(1).lower() in _WHICH):
-            # Close the aside with a comma, after the unit if there is one.
+        inside = m and m.group(1).lower() in _WHICH and re.search(r"\d", m.group(0).split(None, 1)[1])
+        if inside and re.search(r"\bwhich is\s+" + "(?:" + _EXPR + ")$", before):
+            inside = False      # "which is 4 × 30° = 120°": one "which is" is enough
+        if re.search(r"°,?\s+and\s+(?:" + _EXPR + ")$", before):
+            inside = True       # the last of a list of angles: "40°, 40° and 180 − 40 − 40 = 100°"
+        if chain or inside:
+            # Close the aside with a comma: after the unit if there is one, or before a joining word.
             nxt = re.sub(r"^(" + _EXPR + r"\s+(?:square )?(?:centimetres?|metres?))(\s+[a-z])", r"\1,\2", nxt)
-            nxt = re.sub(r"^(" + _EXPR + r")(?![\d.°x])(?!\s+(?:square|centimetres?|metres?)\b)(\s+[a-z])", r"\1,\2", nxt)
+            nxt = re.sub(r"^(" + _EXPR + r")(?![\d.°x])(\s+(?:" + _JOIN + r")\b)", r"\1,\2", nxt)
             out += ", which is " + nxt
         else:
             out += " equals " + nxt
@@ -89,7 +96,9 @@ def say(text, sentence=True):
     s = re.sub(r"(\d°?)\s+-\s+(?=\d)", r"\1 − ", s)
     s = re.sub(r"(^|(?<=\s))-(?=\d)", "minus ", s)
     s = _equals(s)
-    # Mixed numbers and halves.
+    # Mixed numbers and halves. A half degree on its own: "the ½°", "take away ½°".
+    s = re.sub(r"\b(the|extra) ½°", r"\1 half degree", s)
+    s = re.sub(r"(?<![\d ])½°|(?<=[a-z] )½°", "half a degree", s)
     s = re.sub(r"(\d)\s*½", r"\1 and a half", s)
     s = re.sub(r"(\d+) 1/4\b", r"\1 and one quarter", s)
     s = re.sub(r"(\d+) 3/4\b", r"\1 and three quarters", s)

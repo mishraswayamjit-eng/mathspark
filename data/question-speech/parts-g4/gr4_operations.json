@@ -8,13 +8,15 @@
    "300"
   ],
   "hints": [
-   "Multiply the price of one item by the number of items.",
-   "Each sticker costs 25 rupees.",
-   "Siya is buying 11 of them."
+   "Every sticker costs the same, so this is a multiplication problem. The total cost is the price of one item times the number of items.",
+   "Multiply 25 by 11. A handy way is to find 10 lots of 25 first and then add 1 more lot.",
+   "Here is a similar one: 12 pencils at 20 rupees each. 10 times 20 equals 200 and 2 times 20 equals 40, so the total is 200 plus 40 equals 240, which is 240 rupees."
   ],
   "steps": [
-   "Total cost equals price times quantity.",
-   "That is 25 rupees times 11, which equals 275 rupees."
+   "Each sticker costs 25 rupees and Siya buys 11 of them, so multiply 25 by 11.",
+   "Split 11 into 10 and 1. 10 times 25 equals 250 and 1 times 25 equals 25.",
+   "Add the two parts: 250 plus 25 equals 275. 25 times 11 equals 275.",
+   "The total cost is 275 rupees."
   ]
  },
  "BOOST_EXT_G4_FP_2016_016_05": {
@@ -26,13 +28,15 @@
    "195"
   ],
   "hints": [
-   "Multiply the price of one item by the number of items.",
-   "Each eraser costs 15 rupees.",
-   "Siddharth is buying 12 of them."
+   "Every eraser costs the same, so this is a multiplication problem. The total cost is the price of one item times the number of items.",
+   "Multiply 15 by 12. You can split 12 into 10 and 2, multiply each part by 15, and add the results.",
+   "Here is a similar one: 13 balloons at 12 rupees each. 10 times 12 equals 120 and 3 times 12 equals 36, so the total is 120 plus 36 equals 156, which is 156 rupees."
   ],
   "steps": [
-   "Total cost equals price times quantity.",
-   "That is 15 rupees times 12, which equals 180 rupees."
+   "Each eraser costs 15 rupees and Siddharth buys 12 of them, so multiply 15 by 12.",
+   "Split 12 into 10 and 2. 10 times 15 equals 150 and 2 times 15 equals 30.",
+   "Add the two parts: 150 plus 30 equals 180. 15 times 12 equals 180.",
+   "The total cost is 180 rupees."
   ]
  },
  "BOOST_EXT_G4_FP_2017_021_05": {
@@ -44,13 +48,14 @@
    "100"
   ],
   "hints": [
-   "Multiply the price of one item by the number of items.",
-   "Each pen costs 10 rupees.",
-   "Isha is buying 10 of them."
+   "Every pen costs the same, so this is a multiplication problem. The total cost is the price of one item times the number of items.",
+   "Multiply the price of one pen by the number of pens. Multiplying a number by 10 moves each digit one place to the left and puts a 0 in the ones place.",
+   "Here is a similar one: 7 erasers at 10 rupees each cost 7 times 10 equals 70, which is 70 rupees."
   ],
   "steps": [
-   "Total cost equals price times quantity.",
-   "That is 10 rupees times 10, which equals 100 rupees."
+   "Each pen costs 10 rupees and Isha buys 10 of them, so multiply 10 by 10.",
+   "Ten tens make one hundred. 10 times 10 equals 100.",
+   "The total cost is 100 rupees."
   ]
  },
  "BOOST_EXT_G4_FP_2017_021_07": {
@@ -80,13 +85,14 @@
    "14"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum mixes division, addition and multiplication. The order matters: division and multiplication are done before addition.",
+   "Work out the division 20 divided by 2 and the multiplication 4 times 2 separately first. Then add the two results.",
+   "Here is a similar one: 24 divided by 4 plus 5 times 3. First 24 divided by 4 equals 6 and 5 times 3 equals 15. Then 6 plus 15 equals 21."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 18."
+   "Do the division first. 20 divided by 2 equals 10.",
+   "Do the multiplication next. 4 times 2 equals 8.",
+   "Now add the two results: 10 plus 8 equals 18. So 20 divided by 2 plus 4 times 2 equals 18."
   ]
  },
  "BOOST_EXT_G4_FP_2018_017_08": {
@@ -98,13 +104,14 @@
    "85"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has an addition and a multiplication. Multiplication is done before addition, even when the addition is written first.",
+   "Work out 6 times 7 first. Then add that result to 43.",
+   "Here is a similar one: 25 plus 4 times 9. First 4 times 9 equals 36. Then 25 plus 36 equals 61."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 85."
+   "Multiply first, even though the addition is written first. 6 times 7 equals 42.",
+   "Now add: 43 plus 42 equals 85.",
+   "So 43 plus 6 times 7 equals 85."
   ]
  },
  "BOOST_EXT_G4_FP_2019_020_06": {
@@ -116,13 +123,15 @@
    "18"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has subtraction, multiplication and addition. Multiplication is done first; after that, addition and subtraction are done from left to right.",
+   "Work out 4 times 7 first. Then go from left to right: take that result away from 44, and add 2 last.",
+   "Here is a similar one: 50 minus 6 times 5 plus 4. First 6 times 5 equals 30. Then 50 minus 30 equals 20, and 20 plus 4 equals 24."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 18."
+   "Multiply first. 4 times 7 equals 28.",
+   "Now go from left to right. Subtract first. 44 minus 28 equals 16.",
+   "Then add the 2. 16 plus 2 equals 18.",
+   "So 44 minus 4 times 7 plus 2 equals 18."
   ]
  },
  "BOOST_EXT_G4_FP_2019_020_07": {
@@ -134,13 +143,14 @@
    "375"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a multiplication and a subtraction. Multiplication is done before subtraction.",
+   "Work out 27 times 2 first. Then take 15 away from that result.",
+   "Here is a similar one: 34 times 2 minus 18. First 34 times 2 equals 68. Then 68 minus 18 equals 50."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 39."
+   "Multiply first. 27 times 2 equals 54.",
+   "Now subtract: 54 minus 15 equals 39.",
+   "So 27 times 2 minus 15 equals 39."
   ]
  },
  "BOOST_EXT_G4_FP_2021_039_06": {
@@ -152,13 +162,15 @@
    "45"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has subtraction, multiplication and addition. Multiplication is done first; after that, addition and subtraction are done from left to right.",
+   "Work out 3 times 5 first. Then go from left to right: take that result away from 63, and add 1 last.",
+   "Here is a similar one: 70 minus 8 times 5 plus 3. First 8 times 5 equals 40. Then 70 minus 40 equals 30, and 30 plus 3 equals 33."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 49."
+   "Multiply first. 3 times 5 equals 15.",
+   "Now go from left to right. Subtract first. 63 minus 15 equals 48.",
+   "Then add the 1. 48 plus 1 equals 49.",
+   "So 63 minus 3 times 5 plus 1 equals 49."
   ]
  },
  "BOOST_EXT_G4_FP_2021_039_08": {
@@ -170,13 +182,14 @@
    "77"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a multiplication and an addition. Multiplication is done before addition.",
+   "Work out 7 times 7 first. Then add 4 to that result.",
+   "Here is a similar one: 8 times 8 plus 3. First 8 times 8 equals 64. Then 64 plus 3 equals 67."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 53."
+   "Multiply first. 7 times 7 equals 49.",
+   "Now add: 49 plus 4 equals 53.",
+   "So 7 times 7 plus 4 equals 53."
   ]
  },
  "BOOST_EXT_G4_FP_2023_017_07": {
@@ -188,13 +201,14 @@
    "310"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a multiplication and an addition. Multiplication is done before addition.",
+   "Work out 22 times 9 first. You can split 22 into 20 and 2 to make it easier. Then add 10 to the result.",
+   "Here is a similar one: 15 times 6 plus 20. First 15 times 6 equals 90. Then 90 plus 20 equals 110."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 208."
+   "Multiply first. Split 22 into 20 and 2: 20 times 9 equals 180 and 2 times 9 equals 18, and 180 plus 18 equals 198. 22 times 9 equals 198.",
+   "Now add: 198 plus 10 equals 208.",
+   "So 22 times 9 plus 10 equals 208."
   ]
  },
  "BOOST_EXT_G4_FP_2023_017_08": {
@@ -206,13 +220,14 @@
    "98"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has an addition and a multiplication. Multiplication is done before addition, even when the addition is written first.",
+   "Work out 8 times 2 first. Then add that result to 41.",
+   "Here is a similar one: 52 plus 9 times 4. First 9 times 4 equals 36. Then 52 plus 36 equals 88."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 57."
+   "Multiply first, even though the addition is written first. 8 times 2 equals 16.",
+   "Now add: 41 plus 16 equals 57.",
+   "So 41 plus 8 times 2 equals 57."
   ]
  },
  "BOOST_EXT_G4_FP_2024_014_05": {
@@ -224,13 +239,14 @@
    "24"
   ],
   "hints": [
-   "Multiply the price of one item by the number of items.",
-   "Each book costs 3 rupees.",
-   "Rohan is buying 8 of them."
+   "Every book costs the same, so this is a multiplication problem. The total cost is the price of one item times the number of items.",
+   "Multiply the price of one book by the number of books. This is a fact from the 3 times table.",
+   "Here is a similar one: 6 toys at 7 rupees each cost 6 times 7 equals 42, which is 42 rupees."
   ],
   "steps": [
-   "Total cost equals price times quantity.",
-   "That is 3 rupees times 8, which equals 24 rupees."
+   "Each book costs 3 rupees and Rohan buys 8 of them, so multiply 3 by 8.",
+   "Eight threes are twenty-four. 3 times 8 equals 24.",
+   "The total cost is 24 rupees."
   ]
  },
  "BOOST_EXT_G4_FP_2024_040_05": {
@@ -242,13 +258,15 @@
    "19"
   ],
   "hints": [
-   "Multiply the price of one item by the number of items.",
-   "Each sticker costs 15 rupees.",
-   "Karan is buying 4 of them."
+   "Every sticker costs the same, so this is a multiplication problem. The total cost is the price of one item times the number of items.",
+   "Multiply 15 by 4. You can split 15 into 10 and 5, multiply each part by 4, and add the results.",
+   "Here is a similar one: 5 badges at 14 rupees each. 5 times 10 equals 50 and 5 times 4 equals 20, so the total is 50 plus 20 equals 70, which is 70 rupees."
   ],
   "steps": [
-   "Total cost equals price times quantity.",
-   "That is 15 rupees times 4, which equals 60 rupees."
+   "Each sticker costs 15 rupees and Karan buys 4 of them, so multiply 15 by 4.",
+   "Split 15 into 10 and 5. 4 times 10 equals 40 and 4 times 5 equals 20.",
+   "Add the two parts: 40 plus 20 equals 60. 15 times 4 equals 60.",
+   "The total cost is 60 rupees."
   ]
  },
  "BOOST_EXT_G4_FP_2024_040_07": {
@@ -300,13 +318,13 @@
   "hints": [
    "This sum mixes four operations. Multiplication and division are done before addition and subtraction.",
    "Find the multiplication and the division in the sum and work those two out first. Then go from left to right with what is left.",
-   "Here is a similar one: 30, minus 4 times 5, plus 18 divided by 6. First 4 times 5 equals 20 and 18 divided by 6 equals 3. Then 30 minus 20 plus 3 equals 13."
+   "Here is a similar one: 30, minus 4 times 5, plus 18 divided by 6. First 4 times 5 equals 20 and 18 divided by 6 equals 3. Then 30 minus 20 equals 10, and 10 plus 3 equals 13."
   ],
   "steps": [
    "Do the multiplication first. 2 times 3 equals 6.",
    "Do the division next. 15 divided by 3 equals 5.",
-   "Now go from left to right. 13 minus 6 plus 5 equals 12.",
-   "The answer is 12."
+   "The sum is now 13 minus 6 plus 5. Go from left to right: 13 minus 6 equals 7, and then 7 plus 5 equals 12. 13 minus 6 plus 5 equals 12.",
+   "So 13, minus 2 times 3, plus 15 divided by 3, equals 12."
   ]
  },
  "EXT_G4_FP_2020_030": {
@@ -359,13 +377,13 @@
   "hints": [
    "This sum mixes four operations. Multiplication and division are done before addition and subtraction.",
    "Find the multiplication and the division in the sum and work those two out first. Then go from left to right with what is left.",
-   "Here is a similar one: 5, plus 6 times 2, minus 9 divided by 3. First 6 times 2 equals 12 and 9 divided by 3 equals 3. Then 5 plus 12 minus 3 equals 14."
+   "Here is a similar one: 5, plus 6 times 2, minus 9 divided by 3. First 6 times 2 equals 12 and 9 divided by 3 equals 3. Then 5 plus 12 equals 17, and 17 minus 3 equals 14."
   ],
   "steps": [
    "Do the multiplication first. 9 times 3 equals 27.",
    "Do the division next. 8 divided by 2 equals 4.",
-   "Now go from left to right. 7 plus 27 minus 4 equals 30.",
-   "The answer is 30."
+   "The sum is now 7 plus 27 minus 4. Go from left to right: 7 plus 27 equals 34, and then 34 minus 4 equals 30. 7 plus 27 minus 4 equals 30.",
+   "So 7, plus 9 times 3, minus 8 divided by 2, equals 30."
   ]
  },
  "EXT_G4_FP_2022_001": {
@@ -498,14 +516,14 @@
   "hints": [
    "This has a bracket inside a bracket. Start with the innermost bracket and work outwards. The word 'of' means multiply.",
    "Begin inside the round bracket, 35 minus 2 times 12. Multiply before you subtract.",
-   "Here is a similar one: 100 minus open square bracket, 10 plus 3 of open bracket, 20 minus 2 times 5, close bracket, close square bracket. Inside, 2 times 5 equals 10 and 20 minus 10 equals 10. Then 3 of 10 is 30, and 10 plus 30 equals 40. Last, 100 minus 40 equals 60."
+   "Here is a similar one: 100 minus open square bracket, 10 plus 3 of open bracket, 20 minus 2 times 5, close bracket, close square bracket. Inside the round bracket, 2 times 5 equals 10 and 20 minus 10 equals 10. Then 3 of 10 is 30, and 10 plus 30 equals 40. Last, 100 minus 40 equals 60."
   ],
   "steps": [
-   "Round bracket first. Multiply, then subtract. 35 minus 2 times 12 equals 11.",
-   "6 of 11 means 6 times 11. 6 times 11 equals 66.",
+   "Start inside the round bracket and multiply before subtracting: 2 times 12 equals 24, then 35 minus 24 equals 11. 35 minus 2 times 12 equals 11.",
+   "The word of means multiply, so 6 of 11 is 6 times 11. 6 times 11 equals 66.",
    "Finish the square bracket. 15 plus 66 equals 81.",
-   "Subtract from 178. 178 minus 81 equals 97.",
-   "The answer is 97."
+   "Take the square bracket away from 178. 178 minus 81 equals 97.",
+   "Working from the innermost bracket outwards, the answer is 97."
   ]
  },
  "EXT_G4_FP_2023_023": {
@@ -596,14 +614,14 @@
   ],
   "hints": [
    "Brackets come first, then multiplication, then addition and subtraction from left to right.",
-   "Start inside the round bracket, 8 plus 5 minus 6. Then multiply that by 2. Also work out 7 times 7.",
-   "Here is a similar one: 6 times 6, minus 20, plus 1, plus open curly bracket, open bracket, 7 plus 4 minus 5, close bracket, times 3, close curly bracket. The round bracket is 6, and 6 times 3 equals 18. Then 36 minus 20 plus 1 plus 18 equals 35."
+   "Start inside the round bracket, 8 plus 5 minus 6. Then multiply that result by 2 to finish the curly bracket. Also work out 7 times 7.",
+   "Here is a similar one: 6 times 6, minus 20, plus 1, plus open curly bracket, open bracket, 7 plus 4 minus 5, close bracket, times 3, close curly bracket. The round bracket is 6, and 6 times 3 equals 18. Also 6 times 6 equals 36. Then 36 minus 20 equals 16, 16 plus 1 equals 17 and 17 plus 18 equals 35."
   ],
   "steps": [
    "Round bracket first. 8 plus 5 minus 6 equals 7.",
    "Finish the curly bracket. 7 times 2 equals 14.",
    "Do the multiplication at the start. 7 times 7 equals 49.",
-   "Now go from left to right. 49 minus 36 plus 2 plus 14 equals 29.",
+   "The sum is now 49 minus 36 plus 2 plus 14. Go from left to right: 49 minus 36 equals 13, then 13 plus 2 equals 15, then 15 plus 14 equals 29. 49 minus 36 plus 2 plus 14 equals 29.",
    "The answer is 29."
   ]
  },
@@ -1162,12 +1180,14 @@
    "None of these"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 4.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "To choose the sign, you need the value of each side. Work out the left side and the right side separately, and then compare the two numbers.",
+   "Add the numbers from 1 to 9. A quick way is to pair them so that each pair makes 10, such as 1 and 9, or 2 and 8. Then work out 5 times 7.",
+   "Here is a similar one: compare 1 plus 2 plus 3 plus 4 plus 5 plus 6 with 4 times 6. The left side is 21 and the right side is 24. Since 21 is less than 24, the sign would be less than."
   ],
   "steps": [
-   "The correct answer is option 2: the greater than sign."
+   "On the left side, pair the numbers to make tens: 1 and 9, 2 and 8, 3 and 7, 4 and 6. That is four tens, which is 40, and the 5 in the middle makes 45. 1 plus 2 plus 3 plus 4 plus 5 plus 6 plus 7 plus 8 plus 9, equals 45.",
+   "On the right side, multiply. 5 times 7 equals 35.",
+   "45 is greater than 35, so the sign in the box is greater than."
   ]
  },
  "PYQ_2016_Q09": {
@@ -1179,12 +1199,14 @@
    "5 days"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 9.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "The syrup is used up in equal amounts each day. Finding how many equal parts fit into a total is a division problem.",
+   "Divide the amount in the bottle, 150 millilitres, by the amount taken each day, 25 millilitres. You can also count up in 25s until you reach 150.",
+   "Here is a similar one: a bottle holds 120 millilitres and 30 millilitres is taken each day. 120 divided by 30 equals 4, so that bottle lasts for 4 days."
   ],
   "steps": [
-   "The correct answer is option 2: 6 days."
+   "The bottle holds 150 millilitres and 25 millilitres is taken each day, so divide 150 by 25.",
+   "Count up in 25s: 25, 50, 75, 100, 125, 150. That is 6 lots of 25. 150 divided by 25 equals 6.",
+   "The cough syrup will last for 6 days."
   ]
  },
  "PYQ_2016_Q12": {
@@ -1196,12 +1218,16 @@
    "None of these"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 12.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "This is a word problem with several steps. One basket is known, and the other two are described by comparing them with it, so work out the baskets one at a time.",
+   "Start with basket C, which has 22 oranges, and use it to find basket A. Basket B depends on A and C together, so leave it until last.",
+   "Here is a similar one with three boxes of pencils, P, Q and R. R has 10. P has 5 more than R, so P has 15. Q has 4 more than the sum of P and R, so Q has 15 plus 10 plus 4, which is 29. Altogether there are 15 plus 29 plus 10, which is 54 pencils."
   ],
   "steps": [
-   "The correct answer is option 1: 132."
+   "Basket C has 22 oranges. Basket A has 16 more than C. 22 plus 16 equals 38.",
+   "Find the sum of A and C. 38 plus 22 equals 60.",
+   "Basket B has 12 more than that sum. 60 plus 12 equals 72.",
+   "Add all three baskets. 38 plus 72 plus 22 equals 132.",
+   "The trap is that B is compared with A and C together, not with just one of them. The fruit seller purchased 132 oranges."
   ]
  },
  "PYQ_2016_Q26": {
@@ -1213,12 +1239,15 @@
    "36"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 26.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "This problem uses two counting words. A dozen is 12 things, and a gross is 12 dozen.",
+   "Since one gross is 12 dozen, work out how many dozens there are in 6 gross. Each box holds exactly one dozen.",
+   "Here is a similar one: 4 gross of erasers are packed in boxes of a dozen. One gross is 12 dozen, so 4 gross is 4 times 12, which is 48 dozen, and 48 boxes are needed."
   ],
   "steps": [
-   "The correct answer is option 2: 72."
+   "One gross is 12 dozen, and a dozen is 12. So one gross is 12 times 12, which is 144 pencils.",
+   "6 gross is 6 lots of 144 pencils. 6 times 144 equals 864.",
+   "Each box holds a dozen, which is 12 pencils, so divide by 12. 864 divided by 12 equals 72.",
+   "A quicker way is to see that 6 gross is 6 times 12, which is 72 dozen, and each dozen fills one box. So 72 boxes will be packed."
   ]
  },
  "PYQ_2016_Q32": {
@@ -1230,12 +1259,16 @@
    "9950006"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 32.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "You cannot know the two numbers, but you can still tell things about their product. Think about what its last digit must be, and about how big or how small it can be.",
+   "The numbers end in 7 and 8, so find the last digit of 7 times 8. Then think about how many digits the product of two three-digit numbers can have.",
+   "Here is a similar one with two-digit numbers star, 3 and star, 4. Since 3 times 4 equals 12, the product ends in 2. Two two-digit numbers multiply to at least 10 times 10, which is 100, and to less than 100 times 100, which is 10000, so the product has three or four digits. A number like 552 fits, and in fact 23 times 24 equals 552."
   ],
   "steps": [
-   "The correct answer is option 3: 308256."
+   "The last digit of a product comes from the last digits of the two numbers. 7 times 8 equals 56, so the product must end in 6. That rules out 10552, which ends in 2.",
+   "Both numbers have three digits, so each is at least 100. Their product is at least 100 times 100 equals 10000, which has five digits. That rules out 9786, which has only four digits.",
+   "Each number is less than 1000, so the product is less than 1000 times 1000, which is 1000000. That rules out 9950006, which has seven digits.",
+   "The only number left ends in 6 and is the right size. In fact it can be made. 507 times 608 equals 308256.",
+   "Checking the last digit and the number of digits shows that the product can be 308256."
   ]
  },
  "PYQ_2016_Q35": {
@@ -1247,12 +1280,15 @@
    "13"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 35.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "This sum mixes four operations. Multiplication and division are done before addition and subtraction.",
+   "Find the multiplication and the division in the sum and work those two out first. Then go from left to right with what is left.",
+   "Here is a similar one: 8, plus 3 times 6, minus 10 divided by 5. First 3 times 6 equals 18 and 10 divided by 5 equals 2. Then 8 plus 18 equals 26, and 26 minus 2 equals 24."
   ],
   "steps": [
-   "The correct answer is option 3: 23."
+   "Do the multiplication first. 5 times 4 equals 20.",
+   "Do the division next. 6 divided by 2 equals 3.",
+   "The sum is now 6 plus 20 minus 3. Go from left to right: 6 plus 20 equals 26, and then 26 minus 3 equals 23. 6 plus 20 minus 3 equals 23.",
+   "So 6, plus 5 times 4, minus 6 divided by 2, equals 23."
   ]
  },
  "PYQ_2017_Q09": {
@@ -1264,12 +1300,16 @@
    "A bracket around 7 plus 3"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 9.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "Brackets change the order of a sum, because whatever is inside a bracket is done first. The task is to find the bracket that makes the left side come to 40.",
+   "Try each way of placing the bracket in turn. Work out the bracket first, and then follow the usual order: multiplication before addition and subtraction. See which one gives 40.",
+   "Here is a similar one: where should the bracket go to make it true that 4 times 6 plus 2 minus 5 equals 27? Without a bracket the left side is 24 plus 2 minus 5, which is 21. With a bracket around 6 plus 2 it becomes 4 times 8 minus 5, and 32 minus 5 equals 27. So the bracket goes around 6 plus 2."
   ],
   "steps": [
-   "The correct answer is option 4: a bracket around 7 plus 3."
+   "Without any bracket, 5 times 7 equals 35 is done first, and 35 plus 3 minus 10 equals 28. That is not 40.",
+   "A bracket around 5 times 7, or around 5 times 7 plus 3, does not change the order, so the result is still 28.",
+   "A bracket around 7 plus 3 minus 10 comes to 0, and 5 times 0 equals 0.",
+   "A bracket around 7 plus 3 comes to 10. Then 5 times 10 equals 50, and 50 minus 10 equals 40. 5 times open bracket, 7 plus 3, close bracket, minus 10, equals 40.",
+   "The bracket has to make the addition happen before the multiplication. So the bracket goes around 7 plus 3."
   ]
  },
  "PYQ_2017_Q29": {
@@ -1281,12 +1321,16 @@
    "0"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 29.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "This sum has a bracket and four operations. The bracket is done first, and inside it the usual order still applies: multiply and divide before you add or subtract.",
+   "Start inside the bracket with 2 times 4 and 15 divided by 3, and then subtract. After that, look outside the bracket and do the multiplication before going from left to right.",
+   "Here is a similar one: 20 minus 4 times 3 plus open bracket, 2 times 5 minus 8 divided by 4, close bracket. Inside the bracket, 2 times 5 equals 10 and 8 divided by 4 equals 2, so the bracket is 10 minus 2, which is 8. Outside, 4 times 3 equals 12. Then 20 minus 12 equals 8, and 8 plus 8 equals 16."
   ],
   "steps": [
-   "The correct answer is option 2: 6."
+   "Start inside the bracket, with the multiplication and the division: 2 times 4 equals 8 and 15 divided by 3 equals 5.",
+   "Finish the bracket. 8 minus 5 equals 3.",
+   "Outside the bracket, multiply. 3 times 2 equals 6.",
+   "The sum is now 9 minus 6 plus 3. Go from left to right: 9 minus 6 equals 3, and then 3 plus 3 equals 6. 9 minus 6 plus 3 equals 6.",
+   "The trap is to do 9 minus 3 first, or to take the bracket away instead of adding it. The answer is 6."
   ]
  },
  "PYQ_2017_Q39": {
@@ -1298,12 +1342,15 @@
    "224"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 39.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "Every part of this sum is a number multiplied by 7. When the same number is multiplied each time, you can collect the other numbers first and multiply by 7 just once.",
+   "Either work out each of the four products and then add and subtract from left to right, or count how many 7s there are altogether: 11 sevens and 13 sevens, take away 6 sevens, and 2 sevens more.",
+   "Here is a similar one: 9 times 5, plus 6 times 5, minus 5 times 4, plus 1 times 5. Count the fives: 9 plus 6 minus 4 plus 1 equals 12. Then 12 times 5 equals 60."
   ],
   "steps": [
-   "The correct answer is option 2: 140."
+   "Work out each product: 11 times 7 equals 77, 13 times 7 equals 91, 7 times 6 equals 42 and 2 times 7 equals 14.",
+   "Now go from left to right: 77 plus 91 equals 168, then 168 minus 42 equals 126, then 126 plus 14 equals 140. 77 plus 91 minus 42 plus 14 equals 140.",
+   "As a quick check, there are 11 plus 13 minus 6 plus 2, which is 20 sevens altogether. 20 times 7 equals 140.",
+   "Both ways give the same result, so the answer is 140."
   ]
  },
  "PYQ_2018_Q05": {
@@ -1315,12 +1362,15 @@
    "None of these"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 5.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "Each choice is a little sum with a result. To test one, work out its left side yourself in the BODMAS order and see whether you get the number shown.",
+   "Take the statements one at a time. Do brackets first, then multiplication and division, then addition and subtraction. Compare your result with the number after the equals sign.",
+   "Here is a similar one: is it true that 3 plus 4 times 5 comes to 35? Multiply first: 4 times 5 equals 20, and then 3 plus 20 equals 23. So that statement is not true; 35 comes from adding first."
   ],
   "steps": [
-   "The correct answer is option 4: none of these."
+   "In 2 times 7 minus 5, multiply first: 2 times 7 is 14, and 14 minus 5 equals 9. The statement says 4, so it is not true.",
+   "In 5 plus 5 times 25, multiply first: 5 times 25 is 125, and 5 plus 125 equals 130. The statement says 250, so it is not true.",
+   "In open bracket, 18 plus 7, close bracket, divided by 7, the bracket is 25, and 25 divided by 7 is 3 with 4 left over. The statement says 19, so it is not true.",
+   "Not one of the three statements is true, so the answer is None of these."
   ]
  },
  "PYQ_2018_Q07": {
@@ -1332,12 +1382,16 @@
    "36846"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 7.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "You do not need to find the hidden digits. Think about what the last digit of the product must be, and about how small or how big the product of two three-digit numbers can be.",
+   "Multiply just the two last digits, 8 and 7, to see which digit the product must end in. Set aside any choice that ends in a different digit, and then test the sizes of the ones that are left.",
+   "Here is a similar one with two-digit numbers: which of 96, 152 and 312 can be star, 3, times star, 4? Since 3 times 4 equals 12, the product must end in 2, so 96 is out. The smallest such product is 13 times 14, which is 182, so 152 is too small. That leaves 312, and 13 times 24 equals 312."
   ],
   "steps": [
-   "The correct answer is option 4: 36846."
+   "The last digit of a product comes only from the last digits of the two numbers. Here 8 times 7 equals 56, so the product must end in 6.",
+   "11558 ends in 8, so it cannot be the product. The other three numbers all end in 6, so now look at their sizes.",
+   "Both numbers have three digits, so the smallest they can be is 108 and 107. Their product is 11556, so 10556 is too small.",
+   "Both numbers are less than 1000, so their product is less than 1000 times 1000, which is 1000000. The number 9995006 is bigger than that, so it is too big.",
+   "Only 36846 is left, and it really can be made: 178 times 207 equals 36846. So the product can be 36846."
   ]
  },
  "PYQ_2018_Q17": {
@@ -1349,12 +1403,14 @@
    "27"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 17.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "This sum has a bracket, a division, a multiplication and two additions. Remember the order: the bracket first, then dividing and multiplying, and adding last.",
+   "Start inside the bracket. Even in there, do 3 times 2 before you add it to 19.",
+   "Here is a similar one: open bracket, 14 plus 2 times 5, close bracket, divided by 6 plus 3 times 2. Inside the bracket, 2 times 5 equals 10 and 14 plus 10 equals 24. Then 24 divided by 6 equals 4 and 3 times 2 equals 6. Last, 4 plus 6 equals 10."
   ],
   "steps": [
-   "The correct answer is option 1: 17."
+   "Start inside the bracket, and multiply before you add: 3 times 2 equals 6, and then 19 plus 6 equals 25. 19 plus 3 times 2 equals 25.",
+   "Now the sum reads 25 divided by 5 plus 4 times 3. The trap is to add the 4 too early. Divide and multiply first: 25 divided by 5 equals 5 and 4 times 3 equals 12.",
+   "Add the two results last: 5 plus 12 equals 17. The answer is 17."
   ]
  },
  "PYQ_2018_Q23": {
@@ -1387,12 +1443,16 @@
    "A bracket around 2 plus 5"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 2.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "A bracket changes which part of a sum is done first. Try the bracket around each possible part and see which one makes the sum come to 13.",
+   "First work the sum out with no bracket at all, to see what it gives. Then ask which part, if it were done first, would make the total bigger.",
+   "Here is a similar one: put a bracket in 36 divided by 6 minus 2 plus 1 so that it equals 10. With a bracket around 6 minus 2, the sum becomes 36 divided by 4 plus 1. Then 36 divided by 4 equals 9 and 9 plus 1 equals 10, so the bracket goes around 6 minus 2."
   ],
   "steps": [
-   "The correct answer is option 2: a bracket around 8 minus 2."
+   "With no bracket, the division comes first: 48 divided by 8 equals 6, then 6 minus 2 equals 4 and 4 plus 5 equals 9. That is not 13, so the bracket must change the order.",
+   "A bracket around 48 divided by 8 minus 2, or around 48 divided by 8, changes nothing, because those parts were already done first. The sum still comes to 9.",
+   "A bracket around 2 plus 5 turns the sum into 48 divided by 8 minus 7. That is 6 take away 7, which is less than zero, so it cannot be 13.",
+   "A bracket around 8 minus 2 turns the sum into 48 divided by 6 plus 5. Then 48 divided by 6 equals 8 and 8 plus 5 equals 13, which is what we want. 48 divided by open bracket, 8 minus 2, close bracket, plus 5, equals 13.",
+   "So the bracket goes around 8 minus 2, written open bracket, 8 minus 2, close bracket."
   ]
  },
  "PYQ_2019_Q20": {
@@ -1404,12 +1464,14 @@
    "71"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 20.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "Every number here is 8, so the only thing to watch is the order of the four signs. Multiplying and dividing are done before adding and subtracting.",
+   "Find the multiplication and the division in the sum and work those two parts out first. Leave the adding and the subtracting until afterwards.",
+   "Here is a similar one: 6, plus 6 times 6, minus 6 divided by 6. First 6 times 6 equals 36 and 6 divided by 6 equals 1. Now the sum reads 6 plus 36 minus 1. Then 6 plus 36 equals 42 and 42 minus 1 equals 41."
   ],
   "steps": [
-   "The correct answer is option 4: 71."
+   "Do the multiplication and the division first: 8 times 8 equals 64 and 8 divided by 8 equals 1.",
+   "Now the sum reads 8 plus 64 minus 1. Go from left to right: 8 plus 64 equals 72.",
+   "Then take away the 1: 72 minus 1 equals 71. The answer is 71."
   ]
  },
  "PYQ_2019_Q32": {
@@ -1441,12 +1503,14 @@
    "28"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 38.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "A dozen is a fixed number of things. Think of the amount in two parts: the whole dozens, and the quarter of a dozen.",
+   "Remember that one dozen is 12. Find how many are in 3 whole dozens, and then find a quarter of one dozen.",
+   "Here is a similar one: how many is two and a half dozen? Two dozen is 2 times 12, which is 24. Half a dozen is 12 divided by 2, which is 6. Together that is 24 plus 6, which is 30."
   ],
   "steps": [
-   "The correct answer is option 1: 39."
+   "One dozen is 12, so 3 dozen is 3 times 12, which is 36.",
+   "A quarter means one of 4 equal parts. A quarter of a dozen is 12 divided by 4, which is 3.",
+   "Add the two parts: 36 plus 3 equals 39. Three and a quarter dozen is 39 articles."
   ]
  },
  "Q_CH01_009_V07": {
@@ -1458,15 +1522,14 @@
    "151"
   ],
   "hints": [
-   "This sum mixes subtraction, multiplication and addition. Multiplication is done first.",
-   "Work out 3 times 7 first. Then go from left to right with the subtraction and the addition.",
-   "Here is a similar one: 30 minus 4 times 5 plus 6. First 4 times 5 equals 20. Then 30 minus 20 equals 10, and 10 plus 6 equals 16."
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 3 times 7 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Do the multiplication first. 3 times 7 equals 21.",
-   "Now go from left to right. Subtract. 48 minus 21 equals 27.",
-   "Then add. 27 plus 14 equals 41.",
-   "The answer is 41."
+   "Multiplication is done before subtraction and addition, so start with 3 times 7, which is 21.",
+   "Now the sum reads 48 minus 21 plus 14. Go from left to right and subtract first: 48 minus 21 equals 27.",
+   "Then add the 14: 27 plus 14 equals 41. The answer is 41."
   ]
  },
  "Q_CH01_021_V03": {
@@ -1478,15 +1541,14 @@
    "5"
   ],
   "hints": [
-   "This sum mixes subtraction, multiplication and addition. Multiplication is done first.",
-   "Work out 3 times 7 first. Then go from left to right with the subtraction and the addition.",
-   "Here is a similar one: 30 minus 4 times 5 plus 6. First 4 times 5 equals 20. Then 30 minus 20 equals 10, and 10 plus 6 equals 16."
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 3 times 7 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 50 minus 3 times 9 plus 2. Multiply first: 3 times 9 equals 27. Now the sum reads 50 minus 27 plus 2. Going from left to right, 50 minus 27 equals 23, and then 23 plus 2 equals 25."
   ],
   "steps": [
-   "Do the multiplication first. 3 times 7 equals 21.",
-   "Now go from left to right. Subtract. 25 minus 21 equals 4.",
-   "Then add. 4 plus 1 equals 5.",
-   "The answer is 5."
+   "Multiplication is done before subtraction and addition, so start with 3 times 7, which is 21.",
+   "Now the sum reads 25 minus 21 plus 1. Go from left to right and subtract first: 25 minus 21 equals 4.",
+   "Then add the 1: 4 plus 1 equals 5. The answer is 5."
   ]
  },
  "Q_CH06_001_V04": {
@@ -1802,15 +1864,14 @@
    "32"
   ],
   "hints": [
-   "This sum mixes subtraction, multiplication and addition. Multiplication is done first.",
-   "Work out 3 times 7 first. Then go from left to right with the subtraction and the addition.",
-   "Here is a similar one: 30 minus 4 times 5 plus 6. First 4 times 5 equals 20. Then 30 minus 20 equals 10, and 10 plus 6 equals 16."
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 3 times 7 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Do the multiplication first. 3 times 7 equals 21.",
-   "Now go from left to right. Subtract. 41 minus 21 equals 20.",
-   "Then add. 20 plus 12 equals 32.",
-   "The answer is 32."
+   "Multiplication is done before subtraction and addition, so start with 3 times 7, which is 21.",
+   "Now the sum reads 41 minus 21 plus 12. Go from left to right and subtract first: 41 minus 21 equals 20.",
+   "Then add the 12: 20 plus 12 equals 32. The answer is 32."
   ]
  },
  "Q_CH07_014_V08": {
@@ -1822,15 +1883,14 @@
    "29"
   ],
   "hints": [
-   "This sum mixes subtraction, multiplication and addition. Multiplication is done first.",
-   "Work out 7 times 2 first. Then go from left to right with the subtraction and the addition.",
-   "Here is a similar one: 30 minus 4 times 5 plus 6. First 4 times 5 equals 20. Then 30 minus 20 equals 10, and 10 plus 6 equals 16."
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 7 times 2 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Do the multiplication first. 7 times 2 equals 14.",
-   "Now go from left to right. Subtract. 16 minus 14 equals 2.",
-   "Then add. 2 plus 1 equals 3.",
-   "The answer is 3."
+   "Multiplication is done before subtraction and addition, so start with 7 times 2, which is 14.",
+   "Now the sum reads 16 minus 14 plus 1. Go from left to right and subtract first: 16 minus 14 equals 2.",
+   "Then add the 1: 2 plus 1 equals 3. The answer is 3."
   ]
  },
  "Q_CH09_001": {
@@ -1842,15 +1902,14 @@
    "378"
   ],
   "hints": [
-   "This sum mixes subtraction, multiplication and addition. Multiplication is done first.",
-   "Work out 3 times 8 first. Then go from left to right with the subtraction and the addition.",
-   "Here is a similar one: 40 minus 4 times 6 plus 5. First 4 times 6 equals 24. Then 40 minus 24 equals 16, and 16 plus 5 equals 21."
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 3 times 8 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Do the multiplication first. 3 times 8 equals 24.",
-   "Now go from left to right. Subtract. 50 minus 24 equals 26.",
-   "Then add. 26 plus 2 equals 28.",
-   "The answer is 28."
+   "Multiplication is done before subtraction and addition, so start with 3 times 8, which is 24.",
+   "Now the sum reads 50 minus 24 plus 2. Go from left to right and subtract first: 50 minus 24 equals 26.",
+   "Then add the 2: 26 plus 2 equals 28. The answer is 28."
   ]
  },
  "Q_CH09_001_V09": {
@@ -1862,15 +1921,14 @@
    "16"
   ],
   "hints": [
-   "This sum mixes subtraction, multiplication and addition. Multiplication is done first.",
-   "Work out 7 times 3 first. Then go from left to right with the subtraction and the addition.",
-   "Here is a similar one: 40 minus 6 times 5 plus 4. First 6 times 5 equals 30. Then 40 minus 30 equals 10, and 10 plus 4 equals 14."
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 7 times 3 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 50 minus 3 times 9 plus 2. Multiply first: 3 times 9 equals 27. Now the sum reads 50 minus 27 plus 2. Going from left to right, 50 minus 27 equals 23, and then 23 plus 2 equals 25."
   ],
   "steps": [
-   "Do the multiplication first. 7 times 3 equals 21.",
-   "Now go from left to right. Subtract. 29 minus 21 equals 8.",
-   "Then add. 8 plus 8 equals 16.",
-   "The answer is 16."
+   "Multiplication is done before subtraction and addition, so start with 7 times 3, which is 21.",
+   "Now the sum reads 29 minus 21 plus 8. Go from left to right and subtract first: 29 minus 21 equals 8.",
+   "Then add the 8: 8 plus 8 equals 16. The answer is 16."
   ]
  },
  "Q_CH09_002": {
@@ -1882,14 +1940,13 @@
    "20"
   ],
   "hints": [
-   "There is a bracket in this sum. The bracket is always done first.",
-   "Add the two numbers inside the bracket. Then multiply your answer by 3.",
-   "Here is a similar one: open bracket, 12 plus 8, close bracket, times 4. The bracket is 12 plus 8, which is 20. Then 20 times 4 equals 80."
+   "This sum has a bracket and a multiplication. Think about which part must always be done first.",
+   "Add the two numbers inside the bracket first. Only then multiply by the number outside.",
+   "Here is a similar one: open bracket, 7 plus 2, close bracket, times 4. The bracket is 7 plus 2, which is 9. Then 9 times 4 equals 36."
   ],
   "steps": [
-   "Do the bracket first. 15 plus 5 equals 20.",
-   "Multiply by 3. 20 times 3 equals 60.",
-   "The answer is 60."
+   "The bracket is always done first: 15 plus 5 equals 20.",
+   "Now multiply by the 3 outside the bracket: 20 times 3 equals 60. The answer is 60."
   ]
  },
  "Q_CH09_003": {
@@ -1901,14 +1958,13 @@
    "20"
   ],
   "hints": [
-   "This sum has a division and an addition. Division is done before addition.",
-   "Work out 36 divided by 6 first. Then add 14.",
+   "This sum has a division and an addition. Think about which of the two is done first.",
+   "Work out 36 divided by 6 first. After that, add the 14.",
    "Here is a similar one: 48 divided by 8 plus 11. First 48 divided by 8 equals 6. Then 6 plus 11 equals 17."
   ],
   "steps": [
-   "Do the division first. 36 divided by 6 equals 6.",
-   "Then add 14. 6 plus 14 equals 20.",
-   "The answer is 20."
+   "Division is done before addition, so start with 36 divided by 6, which is 6.",
+   "Now add the 14: 6 plus 14 equals 20. The answer is 20."
   ]
  },
  "Q_CH09_003_V07": {
@@ -1938,15 +1994,14 @@
    "24"
   ],
   "hints": [
-   "Do the bracket first. After that, division and multiplication are done in order from left to right.",
-   "Add inside the bracket. Then divide 48 by that number before you multiply by 2.",
-   "Here is a similar one: 36 divided by open bracket, 2 plus 4, close bracket, times 3. The bracket is 6. Then 36 divided by 6 equals 6, and 6 times 3 equals 18."
+   "There is a bracket, a division and a multiplication. The bracket comes first, and then division and multiplication are done in order from left to right.",
+   "Add the numbers inside the bracket first. Then divide 48 by that number before you do any multiplying.",
+   "Here is a similar one: 36 divided by open bracket, 2 plus 4, close bracket, times 3. The bracket is 2 plus 4, which is 6. Then 36 divided by 6 equals 6, and 6 times 3 equals 18."
   ],
   "steps": [
-   "Do the bracket first. 4 plus 4 equals 8.",
-   "Go from left to right. Divide. 48 divided by 8 equals 6.",
-   "Then multiply. 6 times 2 equals 12.",
-   "The answer is 12."
+   "Do the bracket first: 4 plus 4 equals 8.",
+   "Now the sum reads 48 divided by 8 times 2. Division and multiplication go from left to right, so divide first: 48 divided by 8 equals 6.",
+   "Then multiply: 6 times 2 equals 12. The answer is 12."
   ]
  },
  "Q_CH09_004_V04": {
@@ -1958,15 +2013,14 @@
    "42"
   ],
   "hints": [
-   "This sum mixes subtraction, multiplication and addition. Multiplication is done first.",
-   "Work out 7 times 2 first. Then go from left to right with the subtraction and the addition.",
-   "Here is a similar one: 30 minus 4 times 5 plus 6. First 4 times 5 equals 20. Then 30 minus 20 equals 10, and 10 plus 6 equals 16."
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 7 times 2 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Do the multiplication first. 7 times 2 equals 14.",
-   "Now go from left to right. Subtract. 23 minus 14 equals 9.",
-   "Then add. 9 plus 10 equals 19.",
-   "The answer is 19."
+   "Multiplication is done before subtraction and addition, so start with 7 times 2, which is 14.",
+   "Now the sum reads 23 minus 14 plus 10. Go from left to right and subtract first: 23 minus 14 equals 9.",
+   "Then add the 10: 9 plus 10 equals 19. The answer is 19."
   ]
  },
  "Q_CH09_004_V09": {
@@ -1978,15 +2032,14 @@
    "21"
   ],
   "hints": [
-   "This sum mixes subtraction, multiplication and addition. Multiplication is done first.",
-   "Work out 8 times 3 first. Then go from left to right with the subtraction and the addition.",
-   "Here is a similar one: 30 minus 4 times 5 plus 6. First 4 times 5 equals 20. Then 30 minus 20 equals 10, and 10 plus 6 equals 16."
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 8 times 3 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Do the multiplication first. 8 times 3 equals 24.",
-   "Now go from left to right. Subtract. 36 minus 24 equals 12.",
-   "Then add. 12 plus 9 equals 21.",
-   "The answer is 21."
+   "Multiplication is done before subtraction and addition, so start with 8 times 3, which is 24.",
+   "Now the sum reads 36 minus 24 plus 9. Go from left to right and subtract first: 36 minus 24 equals 12.",
+   "Then add the 9: 12 plus 9 equals 21. The answer is 21."
   ]
  },
  "Q_CH09_005": {
@@ -1998,15 +2051,14 @@
    "20"
   ],
   "hints": [
-   "There are three kinds of brackets. Start with the innermost round bracket and work outwards.",
-   "Work out 3 plus 2 first. Then use that answer inside the curly bracket.",
+   "There are three kinds of bracket here, one inside another. Start with the innermost bracket and work your way outwards.",
+   "Work out the round bracket, 3 plus 2, first. Then use that number inside the curly bracket.",
    "Here is a similar one: open square bracket, 30 minus open curly bracket, 12 minus open bracket, 4 plus 1, close bracket, close curly bracket, close square bracket. First 4 plus 1 equals 5. Then 12 minus 5 equals 7. Last, 30 minus 7 equals 23."
   ],
   "steps": [
-   "Round bracket first. 3 plus 2 equals 5.",
-   "Curly bracket next. 10 minus 5 equals 5.",
-   "Square bracket last. 25 minus 5 equals 20.",
-   "The answer is 20."
+   "Start with the round bracket in the middle: 3 plus 2 equals 5.",
+   "Next comes the curly bracket: 10 minus 5 equals 5.",
+   "Last comes the square bracket: 25 minus 5 equals 20. The answer is 20."
   ]
  },
  "Q_CH09_006": {
@@ -2018,14 +2070,14 @@
    "2"
   ],
   "hints": [
-   "This sum has an addition and a multiplication. Multiplication is done first, even with fractions.",
-   "Work out one third times 6 first. It means one third of 6. Then add the half.",
-   "Here is a similar one: one half plus 1 over 5, times 20. First, one fifth of 20 is 4. Then a half plus 4 is 4 and a half, which is 4.5."
+   "This sum has an addition and a multiplication. Multiplication is done first, even when the numbers are fractions.",
+   "Work out one third times 6 first. It means one third of 6. Leave the half until afterwards.",
+   "Here is a similar one: one half plus 1 over 5, times 20. First, one fifth of 20 is 20 divided by 5, which is 4. Then add the half to get 4 and a half, which is 4.5 as a decimal."
   ],
   "steps": [
-   "Multiply first. One third of 6 is 2.",
-   "Now add the half. 2 and a half is 2.5 as a decimal. One half plus 2 equals 2.5.",
-   "The answer is 2.5."
+   "Multiply first. One third times 6 means one third of 6, and 6 divided by 3 equals 2. One third times 6 equals 2.",
+   "Now add the half. That makes 2 and a half.",
+   "A half is 0.5 as a decimal, so 2 and a half is 2.5. The answer is 2.5."
   ]
  },
  "Q_CH09_007": {
@@ -2037,15 +2089,14 @@
    "80"
   ],
   "hints": [
-   "Division and multiplication come before subtraction. Do them in order from left to right.",
-   "Start with 50 divided by 5. Then multiply that answer by 2. Leave the subtraction until last.",
+   "This sum has a subtraction, a division and a multiplication. Division and multiplication come before subtraction, and they are done in order from left to right.",
+   "Start with 50 divided by 5. Then multiply that answer by 2. Leave the subtraction until the very end.",
    "Here is a similar one: 90 minus 40 divided by 4 times 3. First 40 divided by 4 equals 10. Then 10 times 3 equals 30. Last, 90 minus 30 equals 60."
   ],
   "steps": [
-   "Divide first. 50 divided by 5 equals 10.",
-   "Then multiply. 10 times 2 equals 20.",
-   "Subtract last. 100 minus 20 equals 80.",
-   "The answer is 80."
+   "Division and multiplication come before subtraction. Going from left to right, divide first: 50 divided by 5 equals 10.",
+   "Then multiply: 10 times 2 equals 20.",
+   "Now subtract: 100 minus 20 equals 80. The answer is 80."
   ]
  },
  "Q_CH09_007_V04": {
@@ -2057,15 +2108,14 @@
    "30"
   ],
   "hints": [
-   "This sum mixes subtraction, multiplication and addition. Multiplication is done first.",
-   "Work out 2 times 5 first. Then go from left to right with the subtraction and the addition.",
-   "Here is a similar one: 30 minus 4 times 5 plus 6. First 4 times 5 equals 20. Then 30 minus 20 equals 10, and 10 plus 6 equals 16."
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 2 times 5 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Do the multiplication first. 2 times 5 equals 10.",
-   "Now go from left to right. Subtract. 17 minus 10 equals 7.",
-   "Then add. 7 plus 1 equals 8.",
-   "The answer is 8."
+   "Multiplication is done before subtraction and addition, so start with 2 times 5, which is 10.",
+   "Now the sum reads 17 minus 10 plus 1. Go from left to right and subtract first: 17 minus 10 equals 7.",
+   "Then add the 1: 7 plus 1 equals 8. The answer is 8."
   ]
  },
  "Q_CH09_007_V09": {
@@ -2077,15 +2127,14 @@
    "31"
   ],
   "hints": [
-   "This sum mixes subtraction, multiplication and addition. Multiplication is done first.",
-   "Work out 6 times 4 first. Then go from left to right with the subtraction and the addition.",
-   "Here is a similar one: 30 minus 4 times 5 plus 6. First 4 times 5 equals 20. Then 30 minus 20 equals 10, and 10 plus 6 equals 16."
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 6 times 4 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Do the multiplication first. 6 times 4 equals 24.",
-   "Now go from left to right. Subtract. 47 minus 24 equals 23.",
-   "Then add. 23 plus 8 equals 31.",
-   "The answer is 31."
+   "Multiplication is done before subtraction and addition, so start with 6 times 4, which is 24.",
+   "Now the sum reads 47 minus 24 plus 8. Go from left to right and subtract first: 47 minus 24 equals 23.",
+   "Then add the 8: 23 plus 8 equals 31. The answer is 31."
   ]
  },
  "Q_CH09_007_V10": {
@@ -2097,15 +2146,14 @@
    "375"
   ],
   "hints": [
-   "This sum mixes subtraction, multiplication and addition. Multiplication is done first.",
-   "Work out 5 times 9 first. Then go from left to right with the subtraction and the addition.",
-   "Here is a similar one: 30 minus 4 times 5 plus 6. First 4 times 5 equals 20. Then 30 minus 20 equals 10, and 10 plus 6 equals 16."
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 5 times 9 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Do the multiplication first. 5 times 9 equals 45.",
-   "Now go from left to right. Subtract. 45 minus 45 equals 0.",
-   "Then add. 0 plus 15 equals 15.",
-   "The answer is 15."
+   "Multiplication is done before subtraction and addition, so start with 5 times 9, which is 45.",
+   "Now the sum reads 45 minus 45 plus 15. Go from left to right and subtract first: 45 minus 45 equals 0.",
+   "Then add the 15: 0 plus 15 equals 15. The answer is 15."
   ]
  },
  "Q_CH09_008": {
@@ -2176,16 +2224,15 @@
    "7"
   ],
   "hints": [
-   "Division and multiplication come first, from left to right. Then subtraction and addition, from left to right.",
-   "Start with 72 divided by 8. Then multiply by 3. After that do the subtraction and the addition in order.",
+   "This sum has four signs. Division and multiplication come first, from left to right. Then subtraction and addition, also from left to right.",
+   "Start with 72 divided by 8, then multiply that answer by 3. After that, do the subtraction and the addition in order.",
    "Here is a similar one: 54 divided by 6 times 2, minus 5, plus 3. First 54 divided by 6 equals 9. Then 9 times 2 equals 18. Then 18 minus 5 equals 13, and 13 plus 3 equals 16."
   ],
   "steps": [
-   "Divide first. 72 divided by 8 equals 9.",
-   "Then multiply. 9 times 3 equals 27.",
-   "Now subtract. 27 minus 6 equals 21.",
-   "Then add. 21 plus 4 equals 25.",
-   "The answer is 25."
+   "Divide first: 72 divided by 8 equals 9.",
+   "Then multiply: 9 times 3 equals 27.",
+   "Now the sum reads 27 minus 6 plus 4. Go from left to right and subtract: 27 minus 6 equals 21.",
+   "Then add: 21 plus 4 equals 25. The answer is 25."
   ]
  },
  "Q_CH09_012": {
@@ -2489,15 +2536,14 @@
    "144"
   ],
   "hints": [
-   "This sum mixes subtraction, multiplication and addition. Multiplication is done first.",
-   "Work out 4 times 7 first. Then go from left to right with the subtraction and the addition.",
-   "Here is a similar one: 30 minus 4 times 5 plus 6. First 4 times 5 equals 20. Then 30 minus 20 equals 10, and 10 plus 6 equals 16."
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 4 times 7 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Do the multiplication first. 4 times 7 equals 28.",
-   "Now go from left to right. Subtract. 37 minus 28 equals 9.",
-   "Then add. 9 plus 3 equals 12.",
-   "The answer is 12."
+   "Multiplication is done before subtraction and addition, so start with 4 times 7, which is 28.",
+   "Now the sum reads 37 minus 28 plus 3. Go from left to right and subtract first: 37 minus 28 equals 9.",
+   "Then add the 3: 9 plus 3 equals 12. The answer is 12."
   ]
  },
  "Q_CH09_024_V06": {
@@ -2509,15 +2555,14 @@
    "4"
   ],
   "hints": [
-   "This sum mixes subtraction, multiplication and addition. Multiplication is done first.",
-   "Work out 2 times 2 first. Then go from left to right with the subtraction and the addition.",
-   "Here is a similar one: 30 minus 4 times 5 plus 6. First 4 times 5 equals 20. Then 30 minus 20 equals 10, and 10 plus 6 equals 16."
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 2 times 2 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Do the multiplication first. 2 times 2 equals 4.",
-   "Now go from left to right. Subtract. 14 minus 4 equals 10.",
-   "Then add. 10 plus 14 equals 24.",
-   "The answer is 24."
+   "Multiplication is done before subtraction and addition, so start with 2 times 2, which is 4.",
+   "Now the sum reads 14 minus 4 plus 14. Go from left to right and subtract first: 14 minus 4 equals 10.",
+   "Then add the 14: 10 plus 14 equals 24. The answer is 24."
   ]
  },
  "Q_CH09_024_V09": {
@@ -2529,15 +2574,14 @@
    "256"
   ],
   "hints": [
-   "This sum mixes subtraction, multiplication and addition. Multiplication is done first.",
-   "Work out 6 times 3 first. Then go from left to right with the subtraction and the addition.",
-   "Here is a similar one: 30 minus 4 times 5 plus 6. First 4 times 5 equals 20. Then 30 minus 20 equals 10, and 10 plus 6 equals 16."
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 6 times 3 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Do the multiplication first. 6 times 3 equals 18.",
-   "Now go from left to right. Subtract. 42 minus 18 equals 24.",
-   "Then add. 24 plus 7 equals 31.",
-   "The answer is 31."
+   "Multiplication is done before subtraction and addition, so start with 6 times 3, which is 18.",
+   "Now the sum reads 42 minus 18 plus 7. Go from left to right and subtract first: 42 minus 18 equals 24.",
+   "Then add the 7: 24 plus 7 equals 31. The answer is 31."
   ]
  },
  "Q_CH09_025": {
@@ -2884,14 +2928,14 @@
    "432"
   ],
   "hints": [
-   "Convert everything to individual pencils. 1 gross equals 144. 1 dozen equals 12.",
-   "3 gross equals 3 times 144, which equals 432 pencils. 5 dozen equals 5 times 12, which equals 60 pencils.",
-   "432 minus 60 equals 372 pencils."
+   "A gross and a dozen are both fixed numbers of things. Change both amounts into single pencils before you compare them.",
+   "Remember that 1 dozen is 12 and 1 gross is 12 dozen, which is 144. Start by finding how many pencils there are in 3 gross.",
+   "Here is a similar one: a box has 2 gross of buttons and 4 dozen are used. 2 gross is 2 times 144, which is 288 buttons. 4 dozen is 4 times 12, which is 48 buttons. So 288 minus 48 equals 240 buttons are left."
   ],
   "steps": [
-   "3 gross equals 3 times 144, which equals 432 pencils.",
-   "5 dozen equals 5 times 12, which equals 60 pencils.",
-   "What is left equals 432 minus 60, which equals 372 pencils."
+   "One gross is 12 dozen, which is 12 times 12, or 144. So 3 gross is 3 times 144, which is 432 pencils.",
+   "One dozen is 12, so 5 dozen is 5 times 12, which is 60 pencils.",
+   "Take away the pencils that were given away: 432 minus 60 equals 372. So 372 pencils are left."
   ]
  },
  "Q_CH13_021_V01": {
@@ -3013,14 +3057,14 @@
    "12"
   ],
   "hints": [
-   "72 chocolates divided by n students equals 6 each. So 72 over n equals 6.",
-   "n equals 72 divided by 6.",
-   "n equals 12 students."
+   "The chocolates are shared equally, and you know how many each student gets. Think about which operation tells you how many equal groups there are.",
+   "Each student gets a group of 6 chocolates. Find how many groups of 6 can be made from 72.",
+   "Here is a similar one: 45 stickers are shared equally and each child gets 5. The number of children is 45 divided by 5, which is 9, and you can check with 9 times 5, which is 45."
   ],
   "steps": [
-   "Form an equation: 72 divided by n equals 6.",
-   "Rearrange: n equals 72 divided by 6, which equals 12.",
-   "There are 12 students. Verify: 72 divided by 12 equals 6."
+   "Every student gets 6 chocolates, so count how many groups of 6 there are in 72. That is the division 72 divided by 6.",
+   "60 is 10 groups of 6, and the other 12 is 2 groups of 6. That makes 12 groups, so 72 divided by 6 equals 12.",
+   "Check by multiplying: 12 times 6 equals 72. So there are 12 students."
   ]
  },
  "Q_CH15_014_V03": {
@@ -3070,14 +3114,14 @@
    "186"
   ],
   "hints": [
-   "This is just 14 times 14. You can calculate it directly or use a pattern.",
-   "14 times 14 equals 14 times 10 plus 14 times 4, which equals 140 plus 56.",
-   "That equals 196."
+   "The two facts given show a number multiplied by itself. You can carry the pattern on, or simply multiply 14 by 14 in two easy parts.",
+   "Split one of the 14s into 10 and 4. Work out 14 times 10 and 14 times 4 separately, and then add them.",
+   "Here is a similar one: 16 times 16. Split it into 16 times 10 equals 160 and 16 times 6 equals 96. Then 160 plus 96 equals 256."
   ],
   "steps": [
-   "14 times 14 equals 14 times 10, plus 14 times 4. So 14 times 14 equals 140 plus 56.",
-   "That equals 196.",
-   "Pattern check: 144, 169, 196. The differences are 25 and 27, increasing by 2. 169 minus 144 equals 25, and 196 minus 169 equals 27."
+   "Split 14 times 14 into two easy parts: 14 times 10 equals 140 and 14 times 4 equals 56.",
+   "Add the two parts: 140 plus 56 equals 196.",
+   "The pattern agrees. From 144 to 169 is a jump of 25, the next jump is 2 more, which is 27, and 169 plus 27 equals 196. So 14 times 14 equals 196."
   ]
  },
  "Q_CH16_002_V03": {
@@ -3240,13 +3284,14 @@
    "240"
   ],
   "hints": [
-   "To find the price of one item, divide total cost by quantity.",
-   "Total cost is 216 rupees for 24 items.",
-   "Divide: 216 divided by 24."
+   "You know what several pencils cost together and you need the cost of just one. Think about which operation shares a total into equal parts.",
+   "All the pencils cost the same. Share the 216 rupees equally among the 24 pencils, and write that as a division sum.",
+   "Here is a similar one: 5 erasers cost 35 rupees. All the erasers cost the same, so one eraser costs 35 divided by 5, which is 7 rupees. You can check with 5 times 7, which is 35."
   ],
   "steps": [
-   "The cost of 1 equals the total divided by the quantity.",
-   "That is 216 rupees divided by 24, which equals 9 rupees."
+   "All 24 pencils cost the same, so share the 216 rupees equally among 24. That is the division 216 divided by 24.",
+   "24 times 10 equals 240 is one lot of 24 too many, and 240 minus 24 equals 216, so 24 times 9 equals 216. That means 216 divided by 24 equals 9.",
+   "So one pencil costs 9 rupees."
   ]
  },
  "VAR2_EXT_G4_FP_2017_002_03": {
@@ -3294,13 +3339,14 @@
    "9"
   ],
   "hints": [
-   "To find the price of one item, divide total cost by quantity.",
-   "Total cost is 64 rupees for 8 items.",
-   "Divide: 64 divided by 8."
+   "You know what several pencils cost together and you need the cost of just one. Think about which operation shares a total into equal parts.",
+   "All the pencils cost the same. Share the 64 rupees equally among the 8 pencils, and write that as a division sum.",
+   "Here is a similar one: 5 erasers cost 35 rupees. All the erasers cost the same, so one eraser costs 35 divided by 5, which is 7 rupees. You can check with 5 times 7, which is 35."
   ],
   "steps": [
-   "The cost of 1 equals the total divided by the quantity.",
-   "That is 64 rupees divided by 8, which equals 8 rupees."
+   "All 8 pencils cost the same, so share the 64 rupees equally among 8. That is the division 64 divided by 8.",
+   "Think of the number that makes 64 when it is multiplied by 8. Since 8 times 8 equals 64, we get 64 divided by 8 equals 8.",
+   "So one pencil costs 8 rupees."
   ]
  },
  "VAR2_EXT_G4_FP_2018_020_04": {
@@ -3312,13 +3358,14 @@
    "96"
   ],
   "hints": [
-   "To find the price of one item, divide total cost by quantity.",
-   "Total cost is 84 rupees for 12 items.",
-   "Divide: 84 divided by 12."
+   "You know what several rulers cost together and you need the cost of just one. Think about which operation shares a total into equal parts.",
+   "All the rulers cost the same. Share the 84 rupees equally among the 12 rulers, and write that as a division sum.",
+   "Here is a similar one: 4 balls cost 48 rupees. All the balls cost the same, so one ball costs 48 divided by 4, which is 12 rupees. You can check with 4 times 12, which is 48."
   ],
   "steps": [
-   "The cost of 1 equals the total divided by the quantity.",
-   "That is 84 rupees divided by 12, which equals 7 rupees."
+   "All 12 rulers cost the same, so share the 84 rupees equally among 12. That is the division 84 divided by 12.",
+   "Think of the number that makes 84 when it is multiplied by 12. Since 12 times 7 equals 84, we get 84 divided by 12 equals 7.",
+   "So one ruler costs 7 rupees."
   ]
  },
  "VAR2_EXT_G4_FP_2022_011_04": {
@@ -3330,13 +3377,14 @@
    "7"
   ],
   "hints": [
-   "To find the price of one item, divide total cost by quantity.",
-   "Total cost is 140 rupees for 20 items.",
-   "Divide: 140 divided by 20."
+   "You know what several crayons cost together and you need the cost of just one. Think about which operation shares a total into equal parts.",
+   "All the crayons cost the same. Share the 140 rupees equally among the 20 crayons, and write that as a division sum.",
+   "Here is a similar one: 4 balls cost 48 rupees. All the balls cost the same, so one ball costs 48 divided by 4, which is 12 rupees. You can check with 4 times 12, which is 48."
   ],
   "steps": [
-   "The cost of 1 equals the total divided by the quantity.",
-   "That is 140 rupees divided by 20, which equals 7 rupees."
+   "All 20 crayons cost the same, so share the 140 rupees equally among 20. That is the division 140 divided by 20.",
+   "Think of the number that makes 140 when it is multiplied by 20. Since 20 times 7 equals 140, we get 140 divided by 20 equals 7.",
+   "So one crayon costs 7 rupees."
   ]
  },
  "VAR2_EXT_G4_FP_2023_010_04": {
@@ -3348,13 +3396,14 @@
    "54"
   ],
   "hints": [
-   "To find the price of one item, divide total cost by quantity.",
-   "Total cost is 54 rupees for 6 items.",
-   "Divide: 54 divided by 6."
+   "You know what several notebooks cost together and you need the cost of just one. Think about which operation shares a total into equal parts.",
+   "All the notebooks cost the same. Share the 54 rupees equally among the 6 notebooks, and write that as a division sum.",
+   "Here is a similar one: 5 erasers cost 35 rupees. All the erasers cost the same, so one eraser costs 35 divided by 5, which is 7 rupees. You can check with 5 times 7, which is 35."
   ],
   "steps": [
-   "The cost of 1 equals the total divided by the quantity.",
-   "That is 54 rupees divided by 6, which equals 9 rupees."
+   "All 6 notebooks cost the same, so share the 54 rupees equally among 6. That is the division 54 divided by 6.",
+   "Think of the number that makes 54 when it is multiplied by 6. Since 6 times 9 equals 54, we get 54 divided by 6 equals 9.",
+   "So one notebook costs 9 rupees."
   ]
  },
  "VAR2_EXT_G4_FP_2023_028_03": {
@@ -3402,13 +3451,14 @@
    "104"
   ],
   "hints": [
-   "Multiply the price of one item by the number of items.",
-   "Each book costs 8 rupees.",
-   "Riya is buying 13 of them."
+   "Every book costs the same amount. Think about which operation finds the total of many equal amounts.",
+   "Each book costs 8 rupees and there are 13 books. Write a multiplication sum with those two numbers.",
+   "Here is a similar one: 12 pens at 6 rupees each. The total is 12 times 6. Split it into 10 times 6 equals 60 and 2 times 6 equals 12, and then 60 plus 12 equals 72 rupees."
   ],
   "steps": [
-   "Total cost equals price times quantity.",
-   "That is 8 rupees times 13, which equals 104 rupees."
+   "There are 13 books at 8 rupees each, so the total cost is 13 times 8.",
+   "Split 13 into 10 and 3: 10 times 8 equals 80 and 3 times 8 equals 24.",
+   "Add the two parts: 80 plus 24 equals 104. The total cost is 104 rupees. 13 times 8 equals 104."
   ]
  },
  "VAR2_EXT_G4_WS2_CH13_005_03": {
@@ -3438,13 +3488,14 @@
    "21"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a division, an addition and a multiplication. Think about which two of them are done before the third.",
+   "Work out 18 divided by 6 and 3 times 6 first, each on its own. Leave the adding until the end.",
+   "Here is a similar one: 20 divided by 4 plus 3 times 5. Divide and multiply first: 20 divided by 4 equals 5 and 3 times 5 equals 15. Then add the two results: 5 plus 15 equals 20."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 21."
+   "Division and multiplication are done before addition. Divide first: 18 divided by 6 equals 3.",
+   "Then multiply: 3 times 6 equals 18.",
+   "Now add the two results: 3 plus 18 equals 21. The answer is 21."
   ]
  },
  "VAR_EXT_G4_FP_2017_009_05_b2": {
@@ -3456,13 +3507,14 @@
    "96"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a division, an addition and a multiplication. Think about which two of them are done before the third.",
+   "Work out 24 divided by 6 and 4 times 6 first, each on its own. Leave the adding until the end.",
+   "Here is a similar one: 20 divided by 4 plus 3 times 5. Divide and multiply first: 20 divided by 4 equals 5 and 3 times 5 equals 15. Then add the two results: 5 plus 15 equals 20."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 28."
+   "Division and multiplication are done before addition. Divide first: 24 divided by 6 equals 4.",
+   "Then multiply: 4 times 6 equals 24.",
+   "Now add the two results: 4 plus 24 equals 28. The answer is 28."
   ]
  },
  "VAR_EXT_G4_FP_2017_029_01": {
@@ -3474,13 +3526,13 @@
    "504"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has an addition and a multiplication. Think about which one is done first, even though the addition is written first.",
+   "Work out 7 times 9 first. Then add your answer to 49.",
+   "Here is a similar one: 15 plus 4 times 6. Multiply first: 4 times 6 equals 24. Then add: 15 plus 24 equals 39."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 112."
+   "Multiplication is done before addition, even though the addition is written first. So start with 7 times 9, which is 63.",
+   "Now add: 49 plus 63 equals 112. The answer is 112."
   ]
  },
  "VAR_EXT_G4_FP_2017_029_03": {
@@ -3492,13 +3544,14 @@
    "35"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a division, an addition and a multiplication. Think about which two of them are done before the third.",
+   "Work out 30 divided by 6 and 5 times 6 first, each on its own. Leave the adding until the end.",
+   "Here is a similar one: 20 divided by 4 plus 3 times 5. Divide and multiply first: 20 divided by 4 equals 5 and 3 times 5 equals 15. Then add the two results: 5 plus 15 equals 20."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 35."
+   "Division and multiplication are done before addition. Divide first: 30 divided by 6 equals 5.",
+   "Then multiply: 5 times 6 equals 30.",
+   "Now add the two results: 5 plus 30 equals 35. The answer is 35."
   ]
  },
  "VAR_EXT_G4_FP_2017_039_04": {
@@ -3510,13 +3563,13 @@
    "23"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a multiplication and a subtraction. Think about which of the two is done first.",
+   "Work out 7 times 4 first. Then take 5 away from your answer.",
+   "Here is a similar one: 6 times 5 minus 4. Multiply first: 6 times 5 equals 30. Then subtract: 30 minus 4 equals 26."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 23."
+   "Multiplication is done before subtraction, so start with 7 times 4, which is 28.",
+   "Then subtract: 28 minus 5 equals 23. The answer is 23."
   ]
  },
  "VAR_EXT_G4_FP_2018_005_01": {
@@ -3528,13 +3581,13 @@
    "18"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has an addition and a multiplication. Think about which one is done first, even though the addition is written first.",
+   "Work out 2 times 4 first. Then add your answer to 12.",
+   "Here is a similar one: 15 plus 4 times 6. Multiply first: 4 times 6 equals 24. Then add: 15 plus 24 equals 39."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 20."
+   "Multiplication is done before addition, even though the addition is written first. So start with 2 times 4, which is 8.",
+   "Now add: 12 plus 8 equals 20. The answer is 20."
   ]
  },
  "VAR_EXT_G4_FP_2018_017_02": {
@@ -3546,13 +3599,14 @@
    "21"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 3 times 1 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 23."
+   "Multiplication is done before subtraction and addition, so start with 3 times 1, which is 3.",
+   "Now the sum reads 25 minus 3 plus 1. Go from left to right and subtract first: 25 minus 3 equals 22.",
+   "Then add the 1: 22 plus 1 equals 23. The answer is 23."
   ]
  },
  "VAR_EXT_G4_FP_2018_017_04": {
@@ -3564,13 +3618,13 @@
    "Minus 16"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a multiplication and a subtraction. Think about which of the two is done first.",
+   "Work out 8 times 8 first. Then take 10 away from your answer.",
+   "Here is a similar one: 6 times 5 minus 4. Multiply first: 6 times 5 equals 30. Then subtract: 30 minus 4 equals 26."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 54."
+   "Multiplication is done before subtraction, so start with 8 times 8, which is 64.",
+   "Then subtract: 64 minus 10 equals 54. The answer is 54."
   ]
  },
  "VAR_EXT_G4_FP_2019_002_04": {
@@ -3582,13 +3636,13 @@
    "51"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a multiplication and an addition. Think about which of the two is done first.",
+   "Work out 28 times 8 first. Then add 15 to your answer.",
+   "Here is a similar one: 7 times 6 plus 5. Multiply first: 7 times 6 equals 42. Then add: 42 plus 5 equals 47."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 239."
+   "Multiplication is done before addition, so start with 28 times 8. Split 28 into 20 and 8: 20 times 8 equals 160 and 8 times 8 equals 64, and 160 plus 64 equals 224. 28 times 8 equals 224.",
+   "Then add: 224 plus 15 equals 239. The answer is 239."
   ]
  },
  "VAR_EXT_G4_FP_2019_002_05_b2": {
@@ -3600,13 +3654,14 @@
    "55"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 2 times 8 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 67."
+   "Multiplication is done before subtraction and addition, so start with 2 times 8, which is 16.",
+   "Now the sum reads 79 minus 16 plus 4. Go from left to right and subtract first: 79 minus 16 equals 63.",
+   "Then add the 4: 63 plus 4 equals 67. The answer is 67."
   ]
  },
  "VAR_EXT_G4_FP_2020_004_02": {
@@ -3618,13 +3673,14 @@
    "54"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 2 times 7 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 56."
+   "Multiplication is done before subtraction and addition, so start with 2 times 7, which is 14.",
+   "Now the sum reads 69 minus 14 plus 1. Go from left to right and subtract first: 69 minus 14 equals 55.",
+   "Then add the 1: 55 plus 1 equals 56. The answer is 56."
   ]
  },
  "VAR_EXT_G4_FP_2020_024_03": {
@@ -3636,13 +3692,14 @@
    "11"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a division, an addition and a multiplication. Think about which two of them are done before the third.",
+   "Work out 12 divided by 2 and 5 times 2 first, each on its own. Leave the adding until the end.",
+   "Here is a similar one: 20 divided by 4 plus 3 times 5. Divide and multiply first: 20 divided by 4 equals 5 and 3 times 5 equals 15. Then add the two results: 5 plus 15 equals 20."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 16."
+   "Division and multiplication are done before addition. Divide first: 12 divided by 2 equals 6.",
+   "Then multiply: 5 times 2 equals 10.",
+   "Now add the two results: 6 plus 10 equals 16. The answer is 16."
   ]
  },
  "VAR_EXT_G4_FP_2020_024_04": {
@@ -3654,31 +3711,13 @@
    "30"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a multiplication and an addition. Think about which of the two is done first.",
+   "Work out 18 times 10 first. Then add 2 to your answer.",
+   "Here is a similar one: 7 times 6 plus 5. Multiply first: 7 times 6 equals 42. Then add: 42 plus 5 equals 47."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 182."
-  ]
- },
- "VAR_EXT_G4_FP_2021_039_02": {
-  "q": "Simplify: 45 minus 5 times 10 plus 5.",
-  "options": [
-   "0",
-   "Minus 30",
-   "Minus 10",
-   "405"
-  ],
-  "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
-  ],
-  "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 0."
+   "Multiplication is done before addition, so start with 18 times 10, which is 180.",
+   "Then add: 180 plus 2 equals 182. The answer is 182."
   ]
  },
  "VAR_EXT_G4_FP_2022_007_01": {
@@ -3690,13 +3729,13 @@
    "44"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has an addition and a multiplication. Think about which one is done first, even though the addition is written first.",
+   "Work out 2 times 4 first. Then add your answer to 20.",
+   "Here is a similar one: 15 plus 4 times 6. Multiply first: 4 times 6 equals 24. Then add: 15 plus 24 equals 39."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 28."
+   "Multiplication is done before addition, even though the addition is written first. So start with 2 times 4, which is 8.",
+   "Now add: 20 plus 8 equals 28. The answer is 28."
   ]
  },
  "VAR_EXT_G4_FP_2023_017_01": {
@@ -3708,13 +3747,13 @@
    "42"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has an addition and a multiplication. Think about which one is done first, even though the addition is written first.",
+   "Work out 8 times 4 first. Then add your answer to 30.",
+   "Here is a similar one: 15 plus 4 times 6. Multiply first: 4 times 6 equals 24. Then add: 15 plus 24 equals 39."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 62."
+   "Multiplication is done before addition, even though the addition is written first. So start with 8 times 4, which is 32.",
+   "Now add: 30 plus 32 equals 62. The answer is 62."
   ]
  },
  "VAR_EXT_G4_FP_2023_023_01": {
@@ -3726,13 +3765,13 @@
    "160"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has an addition and a multiplication. Think about which one is done first, even though the addition is written first.",
+   "Work out 6 times 4 first. Then add your answer to 26.",
+   "Here is a similar one: 15 plus 4 times 6. Multiply first: 4 times 6 equals 24. Then add: 15 plus 24 equals 39."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 50."
+   "Multiplication is done before addition, even though the addition is written first. So start with 6 times 4, which is 24.",
+   "Now add: 26 plus 24 equals 50. The answer is 50."
   ]
  },
  "VAR_EXT_G4_FP_2024_006_03": {
@@ -3744,13 +3783,14 @@
    "36"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a division, an addition and a multiplication. Think about which two of them are done before the third.",
+   "Work out 18 divided by 2 and 2 times 2 first, each on its own. Leave the adding until the end.",
+   "Here is a similar one: 20 divided by 4 plus 3 times 5. Divide and multiply first: 20 divided by 4 equals 5 and 3 times 5 equals 15. Then add the two results: 5 plus 15 equals 20."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 13."
+   "Division and multiplication are done before addition. Divide first: 18 divided by 2 equals 9.",
+   "Then multiply: 2 times 2 equals 4.",
+   "Now add the two results: 9 plus 4 equals 13. The answer is 13."
   ]
  },
  "VAR_EXT_G4_FP_2024_026_01": {
@@ -3762,13 +3802,13 @@
    "31"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has an addition and a multiplication. Think about which one is done first, even though the addition is written first.",
+   "Work out 7 times 4 first. Then add your answer to 20.",
+   "Here is a similar one: 15 plus 4 times 6. Multiply first: 4 times 6 equals 24. Then add: 15 plus 24 equals 39."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 48."
+   "Multiplication is done before addition, even though the addition is written first. So start with 7 times 4, which is 28.",
+   "Now add: 20 plus 28 equals 48. The answer is 48."
   ]
  },
  "VAR_EXT_G4_FP_2025_032_04": {
@@ -3780,13 +3820,13 @@
    "Minus 16"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a multiplication and a subtraction. Think about which of the two is done first.",
+   "Work out 16 times 9 first. Then take 10 away from your answer.",
+   "Here is a similar one: 6 times 5 minus 4. Multiply first: 6 times 5 equals 30. Then subtract: 30 minus 4 equals 26."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 134."
+   "Multiplication is done before subtraction, so start with 16 times 9. Split 16 into 10 and 6: 10 times 9 equals 90 and 6 times 9 equals 54, and 90 plus 54 equals 144. 16 times 9 equals 144.",
+   "Then subtract: 144 minus 10 equals 134. The answer is 134."
   ]
  },
  "VAR_EXT_G4_WS2_CH13_008_02": {
@@ -3798,13 +3838,14 @@
    "Minus 1"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 3 times 9 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 30 minus 4 times 5 plus 6. Multiply first: 4 times 5 equals 20. Now the sum reads 30 minus 20 plus 6. Going from left to right, 30 minus 20 equals 10, and then 10 plus 6 equals 16."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 1."
+   "Multiplication is done before subtraction and addition, so start with 3 times 9, which is 27.",
+   "Now the sum reads 27 minus 27 plus 1. Go from left to right and subtract first: 27 minus 27 equals 0.",
+   "Then add the 1: 0 plus 1 equals 1. The answer is 1."
   ]
  },
  "VAR_EXT_G4_WS2_CH13_008_05_b2": {
@@ -3816,13 +3857,14 @@
    "170"
   ],
   "hints": [
-   "Remember BODMAS! Do multiplication and division before addition and subtraction.",
-   "Work from left to right for operations of the same level.",
-   "Don't just go left to right. Check for times and divide first!"
+   "This sum has a subtraction, a multiplication and an addition all together. Think about which of the three has to be done first, before you go from left to right.",
+   "Work out 2 times 5 first and put that number in its place. Then do the subtraction and the addition in order from left to right.",
+   "Here is a similar one: 50 minus 3 times 9 plus 2. Multiply first: 3 times 9 equals 27. Now the sum reads 50 minus 27 plus 2. Going from left to right, 50 minus 27 equals 23, and then 23 plus 2 equals 25."
   ],
   "steps": [
-   "Follow BODMAS: brackets, orders, division and multiplication, addition and subtraction.",
-   "The answer is 30."
+   "Multiplication is done before subtraction and addition, so start with 2 times 5, which is 10.",
+   "Now the sum reads 35 minus 10 plus 5. Go from left to right and subtract first: 35 minus 10 equals 25.",
+   "Then add the 5: 25 plus 5 equals 30. The answer is 30."
   ]
  }
 }

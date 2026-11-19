@@ -98,13 +98,14 @@
    "1"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The ten-thousands place has value 10000.",
-   "Multiply 1 by 10000."
+   "Place value tells how much a digit is worth because of where it sits in the number. It is the digit multiplied by the value of its place.",
+   "Count the places from the right: ones, tens, hundreds, thousands, ten-thousands. Find which place the 1 sits in, then multiply 1 by the value of that place.",
+   "Here is a similar one: in 3,582 the digit 3 is in the thousands place. Its place value is 3 times 1000, which is 3000."
   ],
   "steps": [
-   "The digit 1 is in the ten-thousands place.",
-   "Place value equals 1 times 10000, which is 10000."
+   "Count the places in 16378 from the right: 8 is ones, 7 is tens, 3 is hundreds, 6 is thousands and 1 is ten-thousands.",
+   "Multiply the digit by the value of its place. 1 times 10000 equals 10000.",
+   "The place value of the digit 1 is 10000."
   ]
  },
  "BOOST_EXT_G4_FP_2023_019_07": {
@@ -1054,12 +1055,16 @@
    "All of them."
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 5.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "This is about place value. Each place is worth ten times the place on its right, so think about how many places apart two digits must be for one to be worth a thousand times the other.",
+   "In each number, find the two 6s and name the place each one sits in. Write the place value of each 6 and compare them. Test every number, not just the first one that fits.",
+   "Here is a similar one with the digit 4. In 40,040 one 4 is in the ten-thousands place and is worth 40,000. The other 4 is in the tens place and is worth 40. Since 40 times 1000 equals 40,000, one is a thousand times the other."
   ],
   "steps": [
-   "Correct answer: option 4, All of them."
+   "A thousand times means three places to the left, because 10 times 10 times 10 equals 1000. So look for two 6s that are three places apart.",
+   "In 576006 the 6s are worth 6000 and 6. 6 times 1000 equals 6000.",
+   "In 567060 the 6s are worth 60000 and 60. 60 times 1000 equals 60000.",
+   "In 657600 the 6s are worth 600000 and 600. 600 times 1000 equals 600000.",
+   "The rule works in every number, so the answer is All of them. The trap is stopping at the first number that fits."
   ]
  },
  "PYQ_2016_Q18": {
@@ -1071,12 +1076,15 @@
    "12"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 18.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "This is a careful counting problem with Roman numerals. The symbol V appears in some numbers and not in others, so the safest way is to go through the numbers in order.",
+   "Write the Roman numerals from I to X first and mark every one that has a V in it. Then notice that X I to X X are the same numerals with an X in front.",
+   "Here is a similar one: how many times is the symbol I used in writing I to V? I has one, I I has two, I I I has three, I V has one and V has none. That is 1 plus 2 plus 3 plus 1, which is 7 times."
   ],
   "steps": [
-   "Correct answer: option 3, 10."
+   "From I to X, the numerals with a V are I V, V, V I, V I I and V I I I. Each has one V, so that is 5 times.",
+   "From X I to X X the same pattern repeats with an X in front: X I V, X V, X V I, X V I I and X V I I I. That is 5 more.",
+   "I X, X I X and X X are written with X and have no V at all. It is also easy to miss I V and X I V, where the V hides after an I.",
+   "Add the two groups. The symbol V is used 10 times. 5 plus 5 equals 10."
   ]
  },
  "PYQ_2016_Q33": {
@@ -1088,12 +1096,15 @@
    "M C M X X X V I"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 33.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "To write a number in Roman numerals, split it into thousands, hundreds, tens and ones. Then write each part with its own symbols, biggest part first.",
+   "Split 1946 into 1000 plus 900 plus 40 plus 6. Remember that 900 and 40 are each written by putting a smaller symbol before a bigger one.",
+   "Here is a similar one: 1494 equals 1000 plus 400 plus 90 plus 4. These parts are M, C D, X C and I V, so 1494 is M C D X C I V."
   ],
   "steps": [
-   "Correct answer: option 2, M C M X L V I."
+   "Split the number by place. 1946 equals 1000 plus 900 plus 40 plus 6.",
+   "1000 is M. 900 is 100 less than 1000, so it is C M.",
+   "40 is 10 less than 50, so it is X L. 6 is 5 and 1 more, so it is V I.",
+   "Join the parts in order: M, C M, X L and V I. So 1946 is M C M X L V I."
   ]
  },
  "PYQ_2016_Q40": {
@@ -1105,12 +1116,14 @@
    "111110"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 40.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "This is about writing a number name in figures. In the Indian system the periods are lakhs, then thousands, then the last three digits for hundreds, tens and ones.",
+   "Write each part on its own: how many lakhs, how many thousands, and what the last three digits are. The thousands period needs two digits, so use a zero to fill an empty place.",
+   "Here is a similar one: two lakh five thousand three hundred forty. There are 2 lakhs, 05 thousands and 340 at the end, so it is written 2,05,340."
   ],
   "steps": [
-   "Correct answer: option 3, 101110."
+   "One lakh is 1,00,000. One thousand is 1,000. One hundred ten is 110.",
+   "Add the three parts. 100000 plus 1000 plus 110 equals 101110.",
+   "The thousands period shows 01 because there is only one thousand. So the number in figures is 101110."
   ]
  },
  "PYQ_2017_Q02": {
@@ -1122,12 +1135,15 @@
    "54"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 2.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "This is a puzzle about a two-digit number and the number made by swapping its digits. The difference between them depends on how far apart the two digits are.",
+   "To make M N minus N M as large as possible, make M as big as you can and N as small as you can. Read the rules carefully: neither digit may be zero.",
+   "Here is a similar one. Suppose the digits could only be chosen from 2, 3, 4, 5 and 6. The biggest gap is between 6 and 2, so the numbers are 62 and 26, and 62 minus 26 equals 36."
   ],
   "steps": [
-   "Correct answer: option 1, 72."
+   "M N has tens digit M and units digit N, and N M is the same two digits swapped. For a large difference, M N should be big and N M should be small.",
+   "The biggest digit is 9, so M is 9. The smallest digit allowed is 1, because the digits cannot be zero. So N is 1.",
+   "The two numbers are 91 and 19. 91 minus 19 equals 72.",
+   "The trap is choosing 0 for N, which is not allowed. With 9 and 1, the largest possible value is 72."
   ]
  },
  "PYQ_2017_Q31": {
@@ -1139,12 +1155,15 @@
    "65590"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 31.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "This question uses place value twice and then asks for a difference. Difference means you subtract the smaller value from the bigger one.",
+   "Find which place the 7 sits in and which place the 5 sits in, in 978652. Write the place value of each digit before you subtract.",
+   "Here is a similar one: in 483926, find the difference between the place values of 8 and 2. The 8 is worth 80000 and the 2 is worth 20, so the difference is 80000 minus 20, which is 79980."
   ],
   "steps": [
-   "Correct answer: option 2, 69950."
+   "In 978652 the 7 is in the ten-thousands place, so it is worth 70000.",
+   "The 5 is in the tens place, so it is worth 50.",
+   "Subtract the smaller value from the bigger one. 70000 minus 50 equals 69950.",
+   "The difference between the two place values is 69950."
   ]
  },
  "PYQ_2017_Q33": {
@@ -1176,12 +1195,16 @@
    "5 m n"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 3.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "This is about odd and even numbers. You do not need to know m and n exactly. You only need the rules for what happens when odd and even numbers are multiplied and added.",
+   "Remember that any number times an even number is even, and odd times odd is odd. Decide whether each part of an expression is odd or even, then think about adding the parts.",
+   "Here is a similar one. Suppose p is even and q is odd, and we look at 7 p plus q. 7 p is even because p is even, and even plus odd is odd. Trying p equals 2 and q equals 3 gives 14 plus 3, which is 17, and that is odd."
   ],
   "steps": [
-   "Correct answer: option 2, m plus 3 n."
+   "Any number times an even number is even, and odd times odd is odd. Also even plus even is even, and even plus odd is odd.",
+   "In m plus 3 n, m is even. 3 n is odd times odd, so it is odd. Even plus odd is odd.",
+   "In 3 m plus 4 n, and in 5 m plus 6 n, both parts are even, so the totals are even. 5 m n has the even number m as a factor, so it is even too.",
+   "Check with m equals 2 and n equals 1. 2 plus 3 times 1 equals 5.",
+   "5 is odd, so the expression that is always odd is m plus 3 n."
   ]
  },
  "PYQ_2018_Q11": {
@@ -1193,12 +1216,15 @@
    "X X V I I I"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 11.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "Before comparing Roman numerals, check that each one is written by the rules. A numeral that breaks the rules is not a proper number, so it cannot be the answer.",
+   "Remember two rules: a symbol may be repeated at most three times in a row, and only one smaller symbol may be placed before a bigger one to subtract. Set aside any numeral that breaks a rule, then work out the value of the rest.",
+   "Here is a similar one: compare X X I V and X V I I I. X X I V is 10 plus 10 plus 4, which is 24, and X V I I I is 10 plus 5 plus 3, which is 18. Both follow the rules, so X X I V is larger. A numeral like I I I I would not count, because I is repeated four times."
   ],
   "steps": [
-   "Correct answer: option 1, X X X I X."
+   "X X X X I X repeats X four times in a row, which is not allowed. X X L I V puts two Xs before L, which is not allowed either. So neither is a proper Roman numeral.",
+   "X X X I X is three tens and a nine. 10 plus 10 plus 10 plus 9 equals 39.",
+   "X X V I I I is two tens, a five and three ones. 10 plus 10 plus 5 plus 3 equals 28.",
+   "39 is more than 28, so the largest proper numeral is X X X I X. The trap is picking the longest numeral without checking the rules."
   ]
  },
  "PYQ_2018_Q22": {
@@ -1210,12 +1236,15 @@
    "18"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 22.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "This is a counting problem with two rules to obey at once. An even number must end in an even digit, and a four-digit number cannot begin with 0.",
+   "The even digits here are 0 and 4, so sort the numbers into two groups: those ending in 0 and those ending in 4. Count each group separately, taking care with the first digit.",
+   "Here is a similar one: using 5, 2 and 0 once each, how many three-digit even numbers are there? Ending in 0 there are 250 and 520. Ending in 2 there is only 502, because 052 begins with 0. That makes 2 plus 1, which is 3 numbers."
   ],
   "steps": [
-   "Correct answer: option 1, 10."
+   "Even numbers here end in 0 or 4. If the last digit is 0, the digits 7, 4 and 3 fill the other three places. 3 times 2 times 1 equals 6.",
+   "If the last digit is 4, the first digit cannot be 0, so it is 7 or 3. The two digits left can fill the middle places in 2 ways. 2 times 2 equals 4.",
+   "Those four numbers are 7034, 7304, 3074 and 3704. Numbers like 0374 begin with 0, so they are not four-digit numbers. That is the trap.",
+   "Add the two groups. So 10 four-digit even numbers can be formed. 6 plus 4 equals 10."
   ]
  },
  "PYQ_2018_Q32": {
@@ -1227,12 +1256,15 @@
    "M D C C L X X X I X"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 32.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "Roman numerals are built part by part. Split the year into thousands, hundreds, tens and ones, and write each part with its own symbols, biggest part first.",
+   "Split 1789 into 1000 plus 700 plus 80 plus 9. Think about how 700 is built from 500 and some hundreds, and how 80 is built from 50 and some tens.",
+   "Here is a similar one: 1678 equals 1000 plus 600 plus 70 plus 8. These parts are M, D C, L X X and V I I I, so 1678 is M D C L X X V I I I."
   ],
   "steps": [
-   "Correct answer: option 4, M D C C L X X X I X."
+   "Split the number by place. 1789 equals 1000 plus 700 plus 80 plus 9.",
+   "1000 is M. 700 is 500 plus 100 plus 100, so it is D C C.",
+   "80 is 50 plus 10 plus 10 plus 10, so it is L X X X. 9 is 1 less than 10, so it is I X.",
+   "Join the parts in order: M, D C C, L X X X and I X. So 1789 is M D C C L X X X I X."
   ]
  },
  "PYQ_2019_Q06": {
@@ -1244,12 +1276,15 @@
    "C C D"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 6.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "Some of these Roman numerals may not be written by the rules. Check each one first, because a numeral that breaks the rules is not a proper number and cannot be the answer.",
+   "Use two rules: a symbol may be repeated at most three times in a row, and only one smaller symbol may stand before a bigger one to subtract. Set aside the numerals that break a rule and find the value of the rest.",
+   "Here is a similar one: compare X L I V and X X X V I. X L I V is 40 plus 4, which is 44, and X X X V I is 30 plus 6, which is 36. Both follow the rules, so X L I V is larger. A numeral like V V would not count, because V is never repeated."
   ],
   "steps": [
-   "Correct answer: option 3, X L V I."
+   "X X X X I X repeats X four times in a row, which is not allowed. C C D puts two Cs before D, which is not allowed either. So neither is a proper Roman numeral.",
+   "In X L V I, X L means 10 less than 50, which is 40. V I is 6. 40 plus 6 equals 46.",
+   "X X V I I I is two tens, a five and three ones. 10 plus 10 plus 5 plus 3 equals 28.",
+   "46 is more than 28, so the largest proper numeral is X L V I. The trap is picking the longest numeral, or the one with the biggest symbols, without checking the rules."
   ]
  },
  "PYQ_2019_Q10": {
@@ -1261,12 +1296,15 @@
    "1"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 10.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "There are two jobs here: write both number names in figures, then subtract. After that, pick out the digit in the ten thousands place of your result.",
+   "Write the first number as 97,43,753 and the second as 49,682. Line them up by their ones digits and subtract, borrowing carefully.",
+   "Here is a similar one: find the hundreds digit of the difference of five thousand two hundred thirty one and six hundred forty five. In figures, 5231 minus 645 equals 4586, and the digit in the hundreds place is 5."
   ],
   "steps": [
-   "Correct answer: option 3, 9."
+   "Ninety Seven Lakh Forty Three Thousand Seven Hundred Fifty Three is 97,43,753. Forty Nine Thousand Six Hundred Eighty Two is 49,682.",
+   "Line up the digits by place and subtract. 9743753 minus 49682 equals 9694071.",
+   "In 96,94,071 the places from the right are 1 in the ones, 7 in the tens, 0 in the hundreds, 4 in the thousands and 9 in the ten thousands.",
+   "So the digit in the ten thousands place of the difference is 9."
   ]
  },
  "PYQ_2019_Q16": {
@@ -1278,12 +1316,15 @@
    "4"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 16.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "This is a counting problem with two conditions. The number must be greater than 5000, which limits the first digit, and it must be odd, which limits the last digit.",
+   "All four digits are used, so every number has four digits. Decide which digits may go first. Then, for each of those, count which odd digits are still free to go last.",
+   "Here is a similar one: using 1, 2, 3 and 6 once each, how many odd numbers are greater than 3000? With 3 in front, the last digit must be 1, and the middle can be filled in 2 ways. With 6 in front, the last digit can be 1 or 3, which gives 2 times 2, which is 4 ways. That makes 2 plus 4, which is 6 numbers."
   ],
   "steps": [
-   "Correct answer: option 1, 8."
+   "To be greater than 5000 the first digit must be 5 or 7. To be odd the last digit must be 3, 5 or 7.",
+   "If the first digit is 5, the last digit can be 3 or 7. The two digits left can fill the middle in 2 ways. 2 times 2 equals 4.",
+   "If the first digit is 7, the last digit can be 3 or 5. Again the middle can be filled in 2 ways. 2 times 2 equals 4.",
+   "The key idea is that the digit used in front cannot be used again at the end. Adding the two groups, 8 such numbers can be made. 4 plus 4 equals 8."
   ]
  },
  "PYQ_2019_Q23": {
@@ -1295,12 +1336,15 @@
    "M C M X C V I I"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 23.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "To write a number in Roman numerals, split it into thousands, hundreds, tens and ones. Write each part with its own symbols, and never repeat a symbol more than three times.",
+   "Split 1997 into 1000 plus 900 plus 90 plus 7. Both 900 and 90 are written by putting a smaller symbol before a bigger one.",
+   "Here is a similar one: 1894 equals 1000 plus 800 plus 90 plus 4. These parts are M, D C C C, X C and I V, so 1894 is M D C C C X C I V."
   ],
   "steps": [
-   "Correct answer: option 4, M C M X C V I I."
+   "Split the number by place. 1997 equals 1000 plus 900 plus 90 plus 7.",
+   "1000 is M. 900 is 100 less than 1000, so it is C M.",
+   "90 is 10 less than 100, so it is X C. 7 is 5 and 2 more, so it is V I I.",
+   "Join the parts in order: M, C M, X C and V I I. So 1997 is M C M X C V I I."
   ]
  },
  "Q_CH01_001": {
@@ -1312,13 +1356,14 @@
    "6,000"
   ],
   "hints": [
-   "Find which place 6 is in. Count from the right: 9 ones, 8 tens, 4 hundreds, 2 thousands, 6 ten-thousands.",
-   "6 is in the ten-thousands place. Place value equals 6 times 10,000.",
-   "That equals 60,000."
+   "The place value of a digit is what it is worth because of where it sits. It is the digit multiplied by the value of its place.",
+   "Count the places in 3,62,489 from the right: ones, tens, hundreds, thousands, ten-thousands, lakhs. Find the place where the 6 sits.",
+   "Here is a similar one: in 7,25,318 the digit 5 is in the thousands place. Its place value is 5 times 1,000, which is 5,000."
   ],
   "steps": [
-   "6 is in the ten-thousands place.",
-   "Place value equals 60,000."
+   "Count the places in 3,62,489 from the right: 9 is ones, 8 is tens, 4 is hundreds, 2 is thousands and 6 is ten-thousands.",
+   "Multiply the digit by the value of its place. 6 times 10000 equals 60000.",
+   "The place value of 6 is 60,000."
   ]
  },
  "Q_CH01_002": {
@@ -1330,13 +1375,14 @@
    "10,00,000"
   ],
   "hints": [
-   "Successor means the next number. Add 1.",
-   "99,999 plus 1 equals what?",
-   "That equals 1,00,000, one lakh!"
+   "The successor of a number is the number that comes just after it. This one needs care because every digit is a 9.",
+   "Add 1 to 99,999. Each 9 turns into 0 and passes 1 on to the next place, so think about how many digits the result will have.",
+   "Here is a similar one: the successor of 9,999 is 9,999 plus 1, which is 10,000. All the 9s become 0s and a new 1 appears in front."
   ],
   "steps": [
-   "Successor equals the number plus 1.",
-   "Answer: 1,00,000."
+   "Successor means the next number, so add 1. 99999 plus 1 equals 100000.",
+   "Every 9 becomes 0 and a new 1 appears in front, so the result has six digits.",
+   "The successor of 99,999 is 1,00,000, which is one lakh."
   ]
  },
  "Q_CH01_003": {
@@ -1366,15 +1412,15 @@
    "544"
   ],
   "hints": [
-   "Break it down. C D equals 400: D equals 500, and C before D means 500 minus 100. X L equals 40: L equals 50, and X before L means 50 minus 10. I V equals 4.",
-   "400 plus 40 plus 4 equals what?",
-   "That equals 444."
+   "To read a Roman numeral, look for a smaller symbol standing before a bigger one. That pair means subtract, and the pairs are then added together.",
+   "Split C D X L I V into three pairs: C D, X L and I V. Work out the value of each pair, remembering that the smaller symbol in front is taken away.",
+   "Here is a similar one: C M X C I X splits into C M, X C and I X. C M is 900, X C is 90 and I X is 9, so the number is 900 plus 90 plus 9, which is 999."
   ],
   "steps": [
-   "C D equals 500 minus 100, which is 400.",
-   "X L equals 50 minus 10, which is 40.",
-   "I V equals 5 minus 1, which is 4.",
-   "Total equals 400 plus 40 plus 4, which is 444."
+   "C D is C before D, so take 100 away from 500. 500 minus 100 equals 400.",
+   "X L is X before L, so take 10 away from 50. 50 minus 10 equals 40.",
+   "I V is I before V, so take 1 away from 5. 5 minus 1 equals 4.",
+   "Add the three parts. C D X L I V is 444. 400 plus 40 plus 4 equals 444."
   ]
  },
  "Q_CH01_005": {
@@ -1406,13 +1452,14 @@
    "5,000"
   ],
   "hints": [
-   "Look at the tens digit, 6. If it's 5 or more, round up.",
-   "6 is greater than or equal to 5, so round up: 4,500 becomes 4,600.",
-   "4,567 is about 4,600."
+   "Rounding to the nearest hundred means finding which hundred the number is closest to. The digit just to the right of the hundreds place decides.",
+   "4,567 lies between 4,500 and 4,600. Look at its tens digit: if it is 5 or more, round up, and if it is less than 5, round down.",
+   "Here is a similar one: round 3,842 to the nearest hundred. It lies between 3,800 and 3,900. The tens digit is 4, which is less than 5, so it rounds down to 3,800."
   ],
   "steps": [
-   "The tens digit is 6, which is greater than or equal to 5, so round up.",
-   "4,567 is about 4,600."
+   "4,567 lies between the hundreds 4,500 and 4,600.",
+   "The tens digit is 6. That is 5 or more, so the number is closer to the higher hundred and we round up.",
+   "4,567 rounded to the nearest hundred is 4,600."
   ]
  },
  "Q_CH01_007": {
@@ -1424,13 +1471,14 @@
    "10"
   ],
   "hints": [
-   "Remove the commas and count: 54321678.",
-   "Count digit by digit: 5, 4, 3, 2, 1, 6, 7, 8. Wait, that's only 8. Let me recount: 5,43,21,678 equals 54321678. That's 8 digits.",
-   "Actually: 5, 43, 21, 678 gives 5,43,21,678, which is 5 crore 43 lakh 21 thousand 678. That is 54321678, which has 8 digits. Hmm, but with the comma pattern shown, it could be 9 digits: 5,43,21,678 in the Indian system, with one initial digit. Let me check: 5 crore is 5,00,00,000, which has 8 digits. Is 5,43,21,678 9 digits? No: 5 crore 43 lakh 21 thousand 678 is 5,43,21,678. Count: 5, 4, 3, 2, 1, 6, 7, 8. That is 8 digits."
+   "Commas only help us read a big number. They are not digits. To find how many digits a number has, count every digit and skip the commas.",
+   "The commas split 5,43,21,678 into groups. Count the digits in each group and add the counts.",
+   "Here is a similar one: 2,45,301 has the groups 2, 45 and 301. That is 1 plus 2 plus 3, which is 6 digits."
   ],
   "steps": [
-   "Write without commas: 54321678.",
-   "Count the digits: 5, 4, 3, 2, 1, 6, 7, 8. That is 8 digits."
+   "The commas split the number into the groups 5, 43, 21 and 678.",
+   "These groups have 1, 2, 2 and 3 digits. Add the counts. 1 plus 2 plus 2 plus 3 equals 8.",
+   "The number 5,43,21,678 has 8 digits."
   ]
  },
  "Q_CH01_008": {
@@ -1442,13 +1490,14 @@
    "30,000 plus 50 plus 7."
   ],
   "hints": [
-   "Break each digit by its place value: 3 is in ten-thousands, 0 in thousands, 5 in hundreds, 0 in tens, 7 in ones.",
-   "That equals 30,000 plus 0 plus 500 plus 0 plus 7.",
-   "That equals 30,000 plus 500 plus 7."
+   "Expanded form writes a number as the sum of the place values of its digits. A digit of 0 adds nothing, so it can be left out.",
+   "Name the place of each digit in 30,507 from the left: ten-thousands, thousands, hundreds, tens, ones. Write the value of every digit that is not 0.",
+   "Here is a similar one: in 40,209 the 4 is worth 40,000, the 2 is worth 200 and the 9 is worth 9. The zeros add nothing, so 40,209 is 40,000 plus 200 plus 9."
   ],
   "steps": [
-   "3 times 10000, plus 0 times 1000, plus 5 times 100, plus 0 times 10, plus 7 times 1. That is 30000 plus 0 plus 500 plus 0 plus 7.",
-   "That equals 30,000 plus 500 plus 7."
+   "The 3 is in the ten-thousands place, so it is worth 30,000. The 0 in the thousands place adds nothing.",
+   "The 5 is in the hundreds place, so it is worth 500. The 0 in the tens place adds nothing, and the 7 is worth 7.",
+   "So 30,507 in expanded form is 30,000 plus 500 plus 7."
   ]
  },
  "Q_CH01_009": {
@@ -1478,13 +1527,14 @@
    "5,730"
   ],
   "hints": [
-   "For the largest number, arrange digits in descending order.",
-   "7 is greater than 5, which is greater than 3, which is greater than 0.",
-   "The largest is 7,530."
+   "To make the largest number, the biggest digits must sit in the places that are worth the most. The thousands place matters most, then hundreds, then tens, then ones.",
+   "Put the digits 7, 0, 3 and 5 in order from biggest to smallest. Then write them from left to right in that order.",
+   "Here is a similar one with the digits 4, 9, 0 and 6. From biggest to smallest they are 9, 6, 4, 0, so the largest number is 9,640."
   ],
   "steps": [
-   "Descending order: 7, 5, 3, 0.",
-   "The largest is 7,530."
+   "Order the digits from biggest to smallest: 7, 5, 3, 0.",
+   "Put the biggest digit in the thousands place and carry on in order: 7 thousands, 5 hundreds, 3 tens and 0 ones.",
+   "The largest 4-digit number is 7,530."
   ]
  },
  "Q_CH01_011": {
@@ -1610,14 +1660,14 @@
    "01,379"
   ],
   "hints": [
-   "Smallest number: put the smallest digit first. But the first digit can't be 0!",
-   "The smallest non-zero digit is 1. Then arrange the rest in ascending order: 0, 3, 7, 9.",
-   "That equals 10,379."
+   "To make the smallest number, the smallest digits go in the places that are worth the most. There is one catch: a number cannot begin with 0.",
+   "Choose the smallest digit that is not 0 for the first place. Then write the remaining digits from smallest to biggest. 0 can be used now.",
+   "Here is a similar one with the digits 6, 0, 2, 8 and 4. The first digit is 2, the smallest that is not 0. The rest in order are 0, 4, 6, 8, so the smallest number is 20,468."
   ],
   "steps": [
-   "First digit: the smallest non-zero digit, which is 1.",
-   "Remaining digits ascending: 0, 3, 7, 9.",
-   "The smallest is 10,379."
+   "The first digit cannot be 0, so use the next smallest digit, which is 1.",
+   "Write the digits that are left from smallest to biggest: 0, 3, 7, 9.",
+   "The smallest 5-digit number is 10,379."
   ]
  },
  "Q_CH01_019": {
@@ -1629,12 +1679,15 @@
    "10,00,000"
   ],
   "hints": [
-   "The smallest 6-digit number has a 1 followed by five 0s.",
-   "That equals 1,00,000, one lakh.",
-   "The largest 5-digit number is 99,999. Add 1 to get the smallest 6-digit number."
+   "The smallest number with a given number of digits has the smallest digit allowed in front, and every other digit as small as possible.",
+   "A number cannot begin with 0, so the first digit must be 1. Fill every other place with the smallest digit there is, and check that you have six digits.",
+   "Here is a similar one: the smallest 4-digit number is a 1 followed by three 0s, which is 1,000. It is 1 more than 999, the largest 3-digit number."
   ],
   "steps": [
-   "The smallest 6-digit number is 100000, which is 1 lakh."
+   "The first digit must be 1, because a number cannot begin with 0.",
+   "Each of the other five places gets the smallest digit, 0. That gives a 1 followed by five 0s.",
+   "As a check, it is 1 more than the largest 5-digit number. 99999 plus 1 equals 100000.",
+   "The smallest 6-digit number is 1,00,000, which is one lakh."
   ]
  },
  "Q_CH01_020": {
@@ -1780,14 +1833,14 @@
    "5,318"
   ],
   "hints": [
-   "Even number means the last digit must be even. The only even digit available is 8.",
-   "Wait, but if 8 is in the ones place, the remaining digits are 5, 3, 1. The largest is 531, then a blank. 5318.",
-   "Actually: we need the largest number. Start with 8, the largest. But must 8 be in the ones place for even? No, 8 can be the first digit if another even digit is last. The only even digit is 8. So 8 must be the last digit. Remaining: 5, 3, 1. Largest first is 5, 3, 1, which gives 5318. But option C is 8538, which uses 8 twice. Since each digit is used once and only 8 is even, the answer is 5,318. Wait, let me recheck the options. Actually, with digits 5, 3, 8, 1: even means the last digit is 8. The remaining 5, 3, 1 in descending order make 531. The number is 5318. That's option D. Hmm, but option C has 8538, which repeats 8. Let me pick D."
+   "There are two conditions: the number must be even, and it must be as large as possible. Deal with the even condition first, because it fixes one of the places.",
+   "An even number ends in an even digit. Find the even digits among 5, 3, 8 and 1 and decide what must go in the ones place. Then arrange the rest from biggest to smallest.",
+   "Here is a similar one with the digits 7, 9, 4 and 3. The only even digit is 4, so it goes in the ones place. The rest from biggest to smallest are 9, 7, 3, so the largest even number is 9,734."
   ],
   "steps": [
-   "Even means the last digit must be 8, the only even digit.",
-   "The remaining digits 5, 3, 1 in descending order: 5, 3, 1.",
-   "The largest is 5,318."
+   "An even number ends in an even digit. Among 5, 3, 8 and 1 the only even digit is 8, so 8 must go in the ones place.",
+   "Arrange the other digits in front from biggest to smallest: 5, 3, 1.",
+   "The largest 4-digit even number is 5,318. Putting 8 first would leave an odd digit at the end."
   ]
  },
  "Q_CH01_029": {
@@ -1799,13 +1852,15 @@
    "X L I I"
   ],
   "hints": [
-   "X I V equals 14. X X V I I I equals 28. Sum equals 14 plus 28, which is 42.",
-   "42 in Roman numerals: 40 is X L, and 2 is I I.",
-   "That equals X L I I."
+   "Roman numerals are hard to add as they stand. Change each one into ordinary numbers, add, and then change the total back.",
+   "Read X I V as a ten and then I V. Read X X V I I I as two tens, a five and three ones. Add the two numbers you get.",
+   "Here is a similar one: X V I plus X X I X. X V I is 16 and X X I X is 29, and 16 plus 29 equals 45. Then 45 is 40 and 5, which is X L and V, so the total is X L V."
   ],
   "steps": [
-   "14 plus 28 equals 42.",
-   "42 equals X L plus I I, which is X L I I."
+   "X I V is a ten and a four. 10 plus 4 equals 14.",
+   "X X V I I I is two tens, a five and three ones. 10 plus 10 plus 5 plus 3 equals 28.",
+   "Add the two numbers. 14 plus 28 equals 42.",
+   "42 is 40 and 2. 40 is X L and 2 is I I, so the total is X L I I."
   ]
  },
  "VAR_EXT_G4_FP_2016_005_01": {
@@ -1907,13 +1962,14 @@
    "1000"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The hundreds place has value 100.",
-   "Multiply 1 by 100."
+   "Place value is how much a digit is worth in its position. The same digit is worth more the further left it sits.",
+   "Count the places in 77108 from the right: ones, tens, hundreds. Check which digit sits in the hundreds place, then multiply it by the value of that place.",
+   "Here is a similar one: in 5,274 the digit 7 is in the tens place. Its place value is 7 times 10, which is 70."
   ],
   "steps": [
-   "The digit 1 is in the hundreds place.",
-   "Place value equals 1 times 100, which is 100."
+   "Count the places in 77108 from the right: 8 is ones, 0 is tens and 1 is hundreds.",
+   "Multiply the digit by the value of its place. 1 times 100 equals 100.",
+   "The place value of the digit 1 is 100."
   ]
  },
  "VAR_EXT_G4_FP_2017_031_04": {
@@ -2141,13 +2197,14 @@
    "1001"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The thousands place has value 1000.",
-   "Multiply 1 by 1000."
+   "Place value is how much a digit is worth in its position. This number has the digit 1 in more than one place, so be sure which 1 is meant.",
+   "Count the places in 71411 from the right: ones, tens, hundreds, thousands. Find the 1 in the thousands place and multiply it by the value of that place.",
+   "Here is a similar one: in 9,325 the digit 3 is in the hundreds place. Its place value is 3 times 100, which is 300."
   ],
   "steps": [
-   "The digit 1 is in the thousands place.",
-   "Place value equals 1 times 1000, which is 1000."
+   "Count the places in 71411 from the right: 1 is ones, 1 is tens, 4 is hundreds, 1 is thousands and 7 is ten-thousands.",
+   "The question asks about the 1 in the thousands place. Multiply it by the value of that place. 1 times 1000 equals 1000.",
+   "The place value of that digit 1 is 1000."
   ]
  },
  "VAR_EXT_G4_FP_2025_001_02_b2": {
@@ -2177,13 +2234,14 @@
    "101"
   ],
   "hints": [
-   "Place value equals the digit, times the value of its position.",
-   "The hundreds place has value 100.",
-   "Multiply 1 by 100."
+   "Place value is how much a digit is worth in its position. This number has the digit 1 in two places, so be sure which 1 is meant.",
+   "Count the places in 62121 from the right: ones, tens, hundreds. Find the 1 in the hundreds place and multiply it by the value of that place.",
+   "Here is a similar one: in 6,947 the digit 4 is in the tens place. Its place value is 4 times 10, which is 40."
   ],
   "steps": [
-   "The digit 1 is in the hundreds place.",
-   "Place value equals 1 times 100, which is 100."
+   "Count the places in 62121 from the right: 1 is ones, 2 is tens, 1 is hundreds, 2 is thousands and 6 is ten-thousands.",
+   "The question asks about the 1 in the hundreds place. Multiply it by the value of that place. 1 times 100 equals 100.",
+   "The place value of that digit 1 is 100."
   ]
  },
  "VAR_EXT_G4_FP_2025_018_03": {

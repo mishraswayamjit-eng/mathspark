@@ -52,22 +52,14 @@ HAND = {
         "h2": "A similar problem: a crayon 8 centimetres long and a chalk 6 centimetres long, end to end, make a line 8 plus 6, which is 14 centimetres long.",
     },
     # Hand-crafted chapter questions, whose hints and steps are written as terse notes
-    "Q_CH11_018": {
-        "s1": "Divide by the piece length: 690 divided by 3. And 690 divided by 3 is 230.",
-    },
-    "Q_CH11_019": {
-        "s1": "Divide the total millilitres by the millilitres per bottle. 2500 divided by 125.",
-    },
+    # (no hint or step line is kept here for the questions in data/bank-import/g4/renarrate.json:
+    #  their help was rewritten, and the rules read the new sentences)
     "Q_CH12_001": {
         "s0": "Perimeter is the total length around a shape.",
         "s1": "Litre is for capacity or volume, kilogram is for mass or weight, and metre is for length.",
     },
     "Q_CH12_003": {
         "q": "How do we convert decametre to decimetre?",
-        "h0": "Use the metric ladder: Kilo, Hecto, Deca, Unit, Deci, Centi, Milli. Count the steps!",
-        "h2": "2 steps down means multiply by 10 times 10, which is 100.",
-        "s0": "Place them on the metric ladder: Deca is above the unit, Deci is below.",
-        "s1": "Deca to Deci is 2 steps down, so multiply by 10 times 10. 10 times 10 equals 100.",
     },
     "Q_CH12_004": {
         "h1": "Centi means 1 over 100. So a centilitre is 1 over 100 of a litre!",
@@ -86,27 +78,6 @@ HAND = {
     },
     "Q_CH12_009": {
         "q": "4 kilometres, plus 40 metres, plus 400 centimetres, equals how many metres?",
-        "h0": "Convert everything to metres first. 1 kilometre equals how many metres? And 1 centimetre equals how many metres?",
-        "s0": "Convert kilometres to metres: 4 kilometres equals 4 times 1000, which is 4000 metres.",
-        "s1": "Convert centimetres to metres: 400 centimetres equals 400 divided by 100, which is 4 metres.",
-    },
-    "Q_CH12_010": {
-        "s0": "Convert the ribbon to centimetres: 6.9 metres equals 690 centimetres. 6.9 times 100 equals 690 centimetres.",
-        "s1": "Divide by the piece length: 690 divided by 3. And 690 divided by 3 is 230.",
-    },
-    "Q_CH12_012": {
-        "h1": "Each step down means multiply by 10. So 3 steps means 10 times 10, times 10, which is 1000.",
-        "s0": "Count the steps: Hecto, then Deca, then Unit, then Deci. That is 3 steps down.",
-        "s1": "Multiply by 10 cubed, which is 1000. 5 times 1000 equals 5000.",
-    },
-    "Q_CH12_013": {
-        "h1": "Going from a smaller unit to a larger unit means divide. 1 kilogram equals 1000 grams.",
-    },
-    "Q_CH12_014": {
-        "s1": "Move the decimal 3 places left: 80 becomes 8.0, then 0.80, then 0.080. So 80 divided by 1000 equals 0.08.",
-    },
-    "Q_CH12_021": {
-        "h0": "1 tonne equals 1000 kilograms. To convert kilograms to tonnes, divide by 1000.",
     },
 }
 

@@ -31,6 +31,31 @@ def main():
         for i, q in enumerate(qs):
             print("%3d %-28s %s" % (i, q["id"], q.get("questionText", "").replace("\n", " // ")[:110]))
         return
+    if args and args[0] == "re":
+        # The questions whose help was rewritten: new source of hints and steps, with narration under each.
+        with io.open(os.path.join(common.ROOT, "data", "bank-import", "g4", "renarrate.json"), encoding="utf-8") as f:
+            listed = set(json.load(f).get(NODE, []))
+        part = {}
+        if os.path.exists(OUT):
+            with io.open(OUT, encoding="utf-8") as f:
+                part = json.load(f)
+        chosen = [q for q in qs if q["id"] in listed]
+        lo, hi = (int(args[1]), int(args[2])) if len(args) > 2 else (0, len(chosen))
+        print("%d listed, %d found" % (len(listed), len(chosen)))
+        for q in chosen[lo:hi]:
+            src = common.source_strings(q)
+            own = q.get("stepByStep") or []
+            e = part.get(q["id"])
+            print("=== %s" % q["id"])
+            print("Q : %s" % src["q"])
+            print("O : %s" % " | ".join(src["options"]))
+            for key, tag in (("hints", "H"), ("steps", "S")):
+                for j, t in enumerate(src[key]):
+                    lx = own[j].get("latex") if key == "steps" and j < len(own) else None
+                    print("%s%d: %s%s" % (tag, j, json.dumps(t, ensure_ascii=False), ("   [latex: %s]" % lx) if lx else ""))
+                    if e and j < len(e[key]):
+                        print("  > " + e[key][j])
+        return
     if args and args[0] == "nar":
         # Narration only, for reading back as the voice would say it.
         with io.open(OUT, encoding="utf-8") as f:

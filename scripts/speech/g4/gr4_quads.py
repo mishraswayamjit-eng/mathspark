@@ -177,6 +177,47 @@ def main():
                     seen[key] = (a, b, q["id"])
         for a, b, qid in seen.values():
             print("P: %s\nS: %s   [%s]\n" % (json.dumps(a, ensure_ascii=False), json.dumps(b, ensure_ascii=False), qid))
+    # hand lines keyed by a printed line that no longer appears anywhere in the topic
+    printed = set()
+    for q in questions:
+        src = common.source_strings(q)
+        printed.update(t.strip() for t in [src["q"]] + src["options"] + src["hints"] + src["steps"])
+    for key in LINES:
+        if key not in printed:
+            print("UNUSED hand line: %s" % json.dumps(key, ensure_ascii=False))
+    if "--renarrate" in sys.argv:
+        # the hints and steps of the questions whose teaching help was rewritten
+        with io.open(os.path.join(common.ROOT, "data", "bank-import", "g4", "renarrate.json"), encoding="utf-8") as f:
+            listed = set(json.load(f).get(NODE, []))
+        i = sys.argv.index("--renarrate")
+        lo = int(sys.argv[i + 1]) if len(sys.argv) > i + 1 and sys.argv[i + 1].isdigit() else 0
+        hi = int(sys.argv[i + 2]) if len(sys.argv) > i + 2 and sys.argv[i + 2].isdigit() else 10 ** 6
+        chosen = [q for q in questions if q["id"] in listed]
+        print("listed for %s: %d, found in the topic: %d" % (NODE, len(listed), len(chosen)))
+        print("hint and step lines of the listed questions:", dict(
+            (k, sum(1 for q in chosen for w, v in kinds.items()
+                    if w.startswith(q["id"] + ".") and (".hints[" in w or ".steps[" in w) and v == k))
+            for k in ("hand", "rule", "base", "FAILED")))
+        missing = sorted(listed - set(part))
+        if missing:
+            print("listed but not in the topic:", missing)
+        for n, q in enumerate(chosen[lo:hi], lo):
+            src = common.source_strings(q)
+            own = q.get("stepByStep") or []
+            e = part[q["id"]]
+            print("=" * 20, n, q["id"], "| Q:", src["q"].replace("\n", " // ")[:90])
+            for key in ("hints", "steps"):
+                for j, a in enumerate(src[key]):
+                    if not a.strip():
+                        continue
+                    where = "%s.%s[%d]" % (q["id"], key, j)
+                    lx = own[j].get("latex") if key == "steps" and j < len(own) else ""
+                    if a.strip() == e[key][j]:
+                        print(" %s[%d] SAME %s" % (key[0], j, json.dumps(a, ensure_ascii=False)))
+                    else:
+                        print(" %s[%d] [%s] P: %s%s\n        S: %s" % (
+                            key[0], j, kinds.get(where, ""), json.dumps(a, ensure_ascii=False),
+                            ("  {%s}" % lx) if lx else "", json.dumps(e[key][j], ensure_ascii=False)))
     if "--odd" in sys.argv:
         # lines worth a second look: two numbers with nothing between them, or a stray lone letter or mark
         for q in questions:

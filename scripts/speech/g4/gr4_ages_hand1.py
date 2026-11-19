@@ -16,6 +16,9 @@ HAND = {
         "hints": [N, N, "Similar example: 2 years ago the ages of Asha and Ravi added up to 26. Now the sum is 26 plus 2 times 2, which is 30. Ravi is 4 years younger, so take 4 away and halve: 30 minus 4, then divided by 2, is 13. Ravi is 13 now. After 3 years he will be 13 plus 3, which is 16."],
         "steps": [N, "Vipul is 2 years younger. Take away Nirav's 2 extra years, then share equally. 44 minus 2, then divided by 2, equals 21."],
     },
+    "PYQ_2016_Q10": {
+        "steps": [N, N, N, "Check: in 2020 Sarika is 14 and Surya is 7, and 14 is twice 7. So the year is 2020."],
+    },
     "PYQ_2019_Q05": {
         "q": "The sum of the ages of a husband and wife 6 years ago was 48 years. The sum of the ages of the husband, wife and son at present is 63 years. What will be the age of the son, 6 years hence?",
     },

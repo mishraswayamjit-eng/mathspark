@@ -48,8 +48,8 @@ _OPS = [("×", " times "), ("÷", " divided by "), ("+", " plus "), ("−", " mi
         ("<", " is less than "), (">", " is greater than "), ("≠", " is not equal to "),
         ("≤", " is at most "), ("≥", " is at least "), ("∥", " is parallel to "), ("⊥", " is perpendicular to ")]
 
-_EXPR_TAIL = re.compile(r"^(.*[A-Za-z,])\s+((?:\d[\d.,]*|[()×÷+−/\s])+)$")
-_NOT_INSIDE = re.compile(r"\b(?:Use|Check|Verify|Try|First|Then|Now|Next|Since|Here|and|so|because|since)$")
+_EXPR_TAIL = re.compile(r"^(.*[A-Za-z,])\s+((?:\d[\d.,]*(?: degrees)?|[()×÷+−/\s])+)$")
+_NOT_INSIDE = re.compile(r"\b(?:Use|Check|Verify|Try|First|Then|Now|Next|Since|Here|So|that|and|so|because|since)$")
 _VERB = re.compile(r"\b(?:is|are|was|were|has|have|had|gives?|makes?|gets?|be|costs?|means|becomes)\s+(?:about\s+)?[\d(]")
 
 
@@ -202,4 +202,7 @@ def say(text):
     s = re.sub(r"[()\[\]{}]", ", ", s)
     s = s.replace("/", " or ").replace("*", "").replace("|", ", ").replace("π", " pi ")
     s = re.sub(r"[\"“”]", "", s).replace("\x02", "m")
-    return tidy(s)
+    s = tidy(s)
+    # '10 x 10 = 100 is too small': a pause before the remark about the result
+    s = re.sub(r"(equals \d[\d,.]*) is (too|still|not)\b", r"\1, which is \2", s)
+    return s

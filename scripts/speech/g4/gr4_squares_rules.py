@@ -102,6 +102,7 @@ def say(text):
                r"between \1 times \2, which is \3, and \4 times \5, which is \6", s)
     s = re.sub(r"\bequals (%s) (is|fits|has)\b" % NUM, r"equals \1, which \2", s)
     s = re.sub(r"\bequals (%s) (must|would)\b" % NUM, r", which is \1, \2", s)
+    s = re.sub(r"(, which is too (?:small|big)) and ", r"\1, and ", s)
     s = re.sub(r"\s+,", ",", s)
     s = s[0].upper() + s[1:]
     if " " in s and re.search(r"[a-z]", s) and s[-1] not in ".?!:":

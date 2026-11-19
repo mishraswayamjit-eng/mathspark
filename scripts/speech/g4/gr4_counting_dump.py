@@ -26,6 +26,11 @@ def main():
     args = sys.argv[1:]
     side = False
     brief = False
+    if args and args[0] == "new":            # new: only the questions whose help was rewritten, side by side
+        with io.open(os.path.join(common.ROOT, "data", "bank-import", "g4", "renarrate.json"), encoding="utf-8") as f:
+            listed = set(json.load(f)[NODE])
+        qs = [q for q in qs if q["id"] in listed]
+        args = ["out", "0", str(len(qs))]
     if args and args[0] in ("out", "say"):
         side = True
         brief = args[0] == "say"

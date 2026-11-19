@@ -104,14 +104,14 @@
    "20.0160"
   ],
   "hints": [
-   "This is adding and subtracting decimals. The key is to keep the decimal points lined up.",
-   "Write 17.005 as 17.0050 so every number has four decimal places. Then do the addition first.",
-   "A similar example: 5.25 plus 3.1, minus 2.05. Write 3.1 as 3.10. First 5.25 plus 3.10 equals 8.35. Then 8.35 minus 2.05 equals 6.30, which is 6.3."
+   "This is adding and subtracting decimals. The key is to line up the decimal points so that each digit sits in its own place.",
+   "The numbers do not all have the same number of decimal places. Write 17.005 as 17.0050 so that every number has four decimal places. Then add the first two numbers.",
+   "A similar example: 4.36 plus 2.5, minus 1.12. Write 2.5 as 2.50. First add: 4.36 plus 2.50 equals 6.86. Then subtract: 6.86 minus 1.12 equals 5.74."
   ],
   "steps": [
-   "Write every number with four decimal places. 17.005 becomes 17.0050.",
-   "Add the first two numbers. 12.1212 plus 17.0050 equals 29.1262.",
-   "Now subtract. 29.1262 minus 9.1102 equals 20.0160.",
+   "Give every number four decimal places so the decimal points line up. 17.005 becomes 17.0050.",
+   "Add the first two numbers, column by column. 12.1212 plus 17.0050 equals 29.1262.",
+   "Now subtract the third number from that total. 29.1262 minus 9.1102 equals 20.0160.",
    "The answer is 20.0160."
   ]
  },
@@ -144,13 +144,13 @@
    "23.2286"
   ],
   "hints": [
-   "This is adding and subtracting decimals. The key is to keep the decimal points lined up and work one step at a time.",
-   "Work from left to right. Do the subtraction 23.2323 minus 14.4141 first, with the decimal points lined up.",
-   "A similar example: 9.45 minus 3.21, plus 2.3. First 9.45 minus 3.21 equals 6.24. Then 6.24 plus 2.30 equals 8.54."
+   "This is subtracting and adding decimals. The key is to line up the decimal points and work one step at a time.",
+   "All three numbers already have four decimal places. Work from left to right, so start with 23.2323 minus 14.4141 and watch the borrowing.",
+   "A similar example: 8.52 minus 3.71, plus 2.4. First subtract: 8.52 minus 3.71 equals 4.81. Then write 2.4 as 2.40 and add: 4.81 plus 2.40 equals 7.21."
   ],
   "steps": [
-   "Work from left to right, keeping the points lined up. Subtract first. 23.2323 minus 14.4141 equals 8.8182.",
-   "Now add the last number. 8.8182 plus 13.0423 equals 21.8605.",
+   "Work from left to right with the decimal points lined up. Subtract first, borrowing where a digit on top is too small. 23.2323 minus 14.4141 equals 8.8182.",
+   "Now add the last number to that result. 8.8182 plus 13.0423 equals 21.8605.",
    "The answer is 21.8605."
   ]
  },
@@ -183,14 +183,14 @@
    "2.1"
   ],
   "hints": [
-   "This is a chain of adding and subtracting decimals. You can go left to right, or collect all the numbers to add and all the numbers to take away.",
-   "Add the three numbers with a plus: 1.8, 2.3 and 2.7. Then add the two numbers being taken away. Subtract at the end.",
-   "A similar example: 2.5 plus 1.4, minus 0.8, plus 1.1, minus 2.0. The plus numbers make 2.5 plus 1.4, plus 1.1, which is 5.0. The minus numbers make 0.8 plus 2.0, which is 2.8. Then 5.0 minus 2.8 equals 2.2."
+   "This is a chain of adding and subtracting decimals. You can collect the numbers that are added into one group and the numbers that are taken away into another.",
+   "The numbers with a plus in front are 1.8, 2.3 and 2.7. The numbers with a minus in front are 1.9 and 3.2. Add up each group first.",
+   "A similar example: 3.4 plus 1.2, minus 0.9, plus 2.1, minus 1.5. The numbers added make 3.4 plus 1.2, plus 2.1, which is 6.7. The numbers taken away make 0.9 plus 1.5, which is 2.4. Then 6.7 minus 2.4 equals 4.3."
   ],
   "steps": [
-   "Add the numbers that are being added. 1.8 plus 2.3, plus 2.7, equals 6.8.",
-   "Add the numbers that are being taken away. 1.9 plus 3.2 equals 5.1.",
-   "Subtract. 6.8 minus 5.1 equals 1.7.",
+   "Add up the numbers that are being added. 1.8 plus 2.3, plus 2.7, equals 6.8.",
+   "Add up the numbers that are being taken away. 1.9 plus 3.2 equals 5.1.",
+   "Take the second total away from the first. 6.8 minus 5.1 equals 1.7.",
    "The answer is 1.7."
   ]
  },
@@ -341,15 +341,14 @@
    "18"
   ],
   "hints": [
-   "This is multiplying decimals. Multiply as if they were whole numbers, then decide where the decimal point goes.",
-   "First multiply 6 by 3. Then count how many decimal places the two numbers have altogether.",
-   "A similar example: 0.4 times 0.2. First 4 times 2 equals 8. The two numbers have 2 decimal places altogether, so the answer needs 2 decimal places. That gives 0.08."
+   "This is multiplying two decimals. Multiply as if they were whole numbers, and then decide where the decimal point goes.",
+   "First multiply 6 by 3. Then count how many digits come after the decimal point in 0.6 and in 0.3 altogether.",
+   "A similar example: 0.7 times 0.5. First 7 times 5 equals 35. The two numbers have 2 decimal places altogether, so the answer needs 2 decimal places. That gives 0.35."
   ],
   "steps": [
    "Multiply the digits as whole numbers. 6 times 3 equals 18.",
-   "0.6 has 1 decimal place and 0.3 has 1 decimal place. That is 2 altogether.",
-   "Place the point so the answer has 2 decimal places. 0.6 times 0.3 equals 0.18.",
-   "The answer is 0.18."
+   "0.6 has 1 decimal place and 0.3 has 1 decimal place. That is 2 decimal places altogether.",
+   "Place the decimal point so that 18 has 2 digits after it. The answer is 0.18. 0.6 times 0.3 equals 0.18."
   ]
  },
  "EXT_G4_WS2_CH11_007": {
@@ -664,13 +663,13 @@
    "450"
   ],
   "hints": [
-   "Multiplying by 10, 100 or 1000 moves the digits to the left. Dividing moves them to the right.",
-   "First multiply 0.045 by 1000 by moving every digit three places to the left. Then divide that answer by 10.",
-   "A similar one: 0.032 times 100, divided by 10. Times 100 moves the digits two places left, giving 3.2. Dividing by 10 moves them one place right, giving 0.32."
+   "This question multiplies and divides by 10, 100 or 1000. Multiplying makes the digits move to the left, and dividing makes them move to the right.",
+   "Work from left to right. First multiply 0.045 by 1000, which moves every digit three places to the left. Then divide that result by 10.",
+   "A similar example: 0.07 times 1000, divided by 100. Multiplying by 1000 moves the digits three places to the left, giving 70. Dividing by 100 moves them two places to the right, giving 0.7."
   ],
   "steps": [
-   "Multiply by 1000: every digit moves three places to the left. 0.045 times 1000 equals 45.",
-   "Divide by 10: every digit moves one place to the right. 45 divided by 10 equals 4.5.",
+   "Multiply by 1000 first. Every digit moves three places to the left. 0.045 times 1000 equals 45.",
+   "Now divide by 10. Every digit moves one place to the right. 45 divided by 10 equals 4.5.",
    "The answer is 4.5."
   ]
  },
@@ -1393,12 +1392,14 @@
    "1.07"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 2.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "The word difference tells you to subtract. With decimals, the key is to line up the decimal points first.",
+   "The two numbers do not have the same number of decimal places. Write 7.9 as 7.90, and then take it away from 9.07.",
+   "A similar example: find the difference between 8.03 and 5.6. Write 5.6 as 5.60. Then 8.03 minus 5.60 equals 2.43."
   ],
   "steps": [
-   "The correct answer is option 2, 1.17."
+   "To find the difference, subtract the smaller number from the bigger one. Write 7.9 as 7.90 so both numbers have two decimal places.",
+   "Subtract with the decimal points lined up. The 0 tenths cannot give 9 tenths, so borrow from the ones. 9.07 minus 7.90 equals 1.17.",
+   "Check by adding back: 7.90 plus 1.17 equals 9.07. The difference is 1.17."
   ]
  },
  "PYQ_2016_Q30": {
@@ -1410,12 +1411,15 @@
    "0.0046"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 30.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "This question has two parts. First compare the decimals to find the smallest and the greatest, and then add those two together.",
+   "The numbers all use the digits 2 and 3, but in different places. Write each one with four decimal places so that they are easy to compare.",
+   "A similar example: for 0.5, 0.05, 5.5 and 0.005, the smallest is 0.005 and the greatest is 5.5. Their sum is 5.500 plus 0.005, which is 5.505."
   ],
   "steps": [
-   "The correct answer is option 3, 2.3023."
+   "Write every number with four decimal places: 0.0230, 0.2300, 0.0023 and 2.3000.",
+   "The greatest is 2.3, the only one with a whole number part. The smallest is 0.0023, where the first digit that is not zero comes latest.",
+   "Add the smallest and the greatest with the decimal points lined up. 2.3000 plus 0.0023 equals 2.3023.",
+   "The sum is 2.3023."
   ]
  },
  "PYQ_2017_Q07": {
@@ -1427,16 +1431,19 @@
    "11.56 rupees"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 7.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "This is a question about change. The cashier returns the difference between the money given and the cost of the groceries.",
+   "You need 50 rupees take away 39.46 rupees. One easy way is to count up from 39.46. Start by finding how much takes you to 40 rupees.",
+   "A similar example: a bill is 27.35 rupees and it is paid with 40 rupees. From 27.35 to 28 is 0.65. From 28 to 40 is 12. So the change is 12 plus 0.65, which is 12.65 rupees."
   ],
   "steps": [
-   "The correct answer is option 3, 10.54 rupees."
+   "The change is 50 rupees take away 39.46 rupees. Count up from 39.46 to 50.",
+   "From 39.46 up to 40 is 0.54. 39.46 plus 0.54 equals 40.",
+   "From 40 up to 50 is 10. 40 plus 10 equals 50.",
+   "Add the two jumps. The cashier needs to return 10.54 rupees. 10 plus 0.54 equals 10.54."
   ]
  },
  "PYQ_2017_Q17": {
-  "q": "Instead of writing 9.7, a student wrote 0.97. By how much was he wrong?",
+  "q": "Instead of writing 9.7, a student wrote 0.97. By how much was his number off?",
   "options": [
    "8.73",
    "0.873",
@@ -1444,12 +1451,14 @@
    "0.097"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 17.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "This question asks how far apart two decimals are. To find how far apart two numbers are, subtract the smaller from the bigger.",
+   "The student should have written 9.7 but wrote 0.97. Write 9.7 as 9.70 so both numbers have two decimal places, and line up the decimal points.",
+   "A similar example: instead of writing 6.4, a student wrote 0.64. Write 6.4 as 6.40. Then 6.40 minus 0.64 equals 5.76, so the student's number was 5.76 too small."
   ],
   "steps": [
-   "The correct answer is option 1, 8.73."
+   "We need the difference between the number he should have written, 9.7, and the number he wrote, 0.97.",
+   "Write 9.7 as 9.70 so that the decimal points line up, and subtract. 9.70 minus 0.97 equals 8.73.",
+   "Check by adding back: 0.97 plus 8.73 equals 9.70. His number was off by 8.73."
   ]
  },
  "PYQ_2017_Q25": {
@@ -1461,12 +1470,16 @@
    "8"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 25.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "This question is about comparing decimals. Decimals are compared one place at a time, starting from the left, so both numbers should have the same number of places.",
+   "Write 2.005 as 2.0050 so that it has four decimal places, like 2.00 d 5. The two numbers match until the thousandths place, where one has d and the other has 5. Test the digits there.",
+   "A similar example: for how many digits d is 3.0 d 2 greater than 3.07? Write 3.07 as 3.070. If d is 8 or 9 the number is bigger. If d is 7 we get 3.072, which is also bigger than 3.070. Any smaller digit makes it smaller. So there are 3 values: 7, 8 and 9."
   ],
   "steps": [
-   "The correct answer is option 2, 5."
+   "Write 2.005 as 2.0050 so that both numbers have four decimal places.",
+   "Compare 2.00 d 5 with 2.0050 from the left. The ones, tenths and hundredths match. In the thousandths place we compare d with 5.",
+   "If d is 6, 7, 8 or 9, then d is more than 5, so 2.00 d 5 is greater. That is 4 values.",
+   "Do not forget when d is 5. Then the number is 2.0055, and 2.0055 is greater than 2.0050 because of its last digit. If d is 4 or less, the number is smaller.",
+   "So d can be 5, 6, 7, 8 or 9. That is 5 values. 4 plus 1 equals 5."
   ]
  },
  "PYQ_2018_Q06": {
@@ -1478,12 +1491,14 @@
    "0.70"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 6.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "This question is about comparing decimals. A decimal is not smaller just because it has fewer digits, so look at the place where each 7 sits.",
+   "Write every number with three decimal places so that they are easy to compare. Then look at the whole number part first, then the tenths, then the hundredths.",
+   "A similar example: for 0.5, 0.05, 5.05 and 0.005, write them as 0.500, 0.050, 5.050 and 0.005. These are 500, 50, 5050 and 5 thousandths. The smallest is 5 thousandths, which is 0.005."
   ],
   "steps": [
-   "The correct answer is option 1, 0.007."
+   "Write each number with three decimal places: 0.007, 0.070, 7.070 and 0.700.",
+   "7.07 has 7 ones, so it is the biggest. The others are 7 thousandths, 70 thousandths and 700 thousandths.",
+   "7 thousandths is the least. The smallest decimal fraction is 0.007."
   ]
  },
  "PYQ_2018_Q08": {
@@ -1495,12 +1510,14 @@
    "5 over 1000"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 8.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "This question is about place value in a decimal. After the decimal point, the places are tenths, hundredths and thousandths, in that order.",
+   "Find the digit 5 in 7.256 and count how many places it is after the decimal point. The name of that place tells you its value.",
+   "A similar example: in 8.371, the digit 3 is the first digit after the decimal point. That is the tenths place, so the place value of 3 is 3 tenths, written 3 over 10."
   ],
   "steps": [
-   "The correct answer is option 3, 5 over 100."
+   "In 7.256, the 7 is in the ones place. The digits after the decimal point are 2, 5 and 6.",
+   "The first place after the point is tenths, the second is hundredths and the third is thousandths. So 2 is in the tenths place and 5 is in the hundredths place.",
+   "The digit 5 stands for 5 hundredths. Its place value is 5 over 100."
   ]
  },
  "PYQ_2019_Q01": {
@@ -1512,12 +1529,15 @@
    "9.815"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 1.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "This question changes a mixed number into a decimal. The whole number part stays as it is, and only the fraction part needs changing.",
+   "Keep the 9 as the whole number part. To change 1 over 8 into a decimal, turn it into a fraction out of 1000. Think about what 8 must be multiplied by to make 1000.",
+   "A similar example: change 6 and 3 over 8 into a decimal. Since 8 times 125 equals 1000, multiply top and bottom by 125 to get 3 over 8, which is 375 over 1000, which is 0.375. So 6 and 3 over 8 equals 6.375."
   ],
   "steps": [
-   "The correct answer is option 3, 9.125."
+   "The whole number part, 9, stays the same. We only need to change 1 over 8 into a decimal.",
+   "Since 8 times 125 equals 1000, multiply the top and the bottom of 1 over 8 by 125. 1 over 8 equals 125 over 1000.",
+   "125 thousandths is written 0.125. 125 over 1000 equals 0.125.",
+   "Put the whole number and the decimal part together. 9 and 1 over 8 as a decimal is 9.125. 9 plus 0.125 equals 9.125."
   ]
  },
  "PYQ_2019_Q19": {
@@ -1586,13 +1606,14 @@
    "0.125"
   ],
   "hints": [
-   "Count the zeros in 10000. That's how many places the decimal moves.",
-   "10000 has 4 zeros, so move the decimal 4 places to the left.",
-   "Start at 12.5 and move left 4 times: 1.25, then 0.125, then 0.0125, then 0.00125."
+   "This question divides a decimal by 1 followed by zeros. Dividing like this makes the number smaller, and the digits move to the right.",
+   "Count the zeros in 10000. That tells you how many places each digit moves to the right. Fill any empty places with zeros.",
+   "A similar example: 36.4 divided by 1000. There are 3 zeros in 1000, so the digits move 3 places to the right: 36.4 becomes 3.64, then 0.364, then 0.0364. So 36.4 divided by 1000 equals 0.0364."
   ],
   "steps": [
-   "We need to find 12.5 divided by 10000.",
-   "10000 has 4 zeros, so we move the decimal 4 places to the left. 12.5 becomes 1.25, then 0.125, then 0.0125, then 0.00125.",
+   "10000 has 4 zeros, so dividing by 10000 is the same as dividing by 10 four times. Each time, the digits move one place to the right.",
+   "Dividing by 10 once gives 1.25, and dividing by 10 again gives 0.125. 12.5 divided by 10, divided by 10, equals 0.125.",
+   "Dividing by 10 a third time gives 0.0125, and a fourth time gives 0.00125. 0.125 divided by 10, divided by 10, equals 0.00125.",
    "So 12.5 divided by 10000 equals 0.00125."
   ]
  },
@@ -1605,15 +1626,15 @@
    "6.2"
   ],
   "hints": [
-   "5 times 5 equals 25, so 5 goes into 28 how many times with what remainder?",
-   "5 times 5 equals 25, and the remainder is 3. Now bring down a 0: 30 divided by 5 equals 6.",
-   "Using long division: 28.0 divided by 5. 5 into 28 is 5, remainder 3. Then 30 divided by 5 equals 6. The answer is 5.6."
+   "This is a division that does not come out as a whole number. After the whole number part, the remainder can be shared out too, as tenths.",
+   "Find how many whole times 5 goes into 28 and what is left over. Then think of the remainder as tenths and share those by 5 as well.",
+   "A similar example: 34 divided by 5. 5 goes into 34 six times, since 5 times 6 equals 30, with 4 left over. The 4 left over is 40 tenths, and 40 tenths divided by 5 equals 8 tenths. So 34 divided by 5 equals 6.8."
   ],
   "steps": [
-   "Set up the long division: 28.0 divided by 5.",
-   "5 times 5 equals 25. Put 5 above. Subtract: 28 minus 25 equals 3.",
-   "Bring down 0 to get 30. 5 times 6 equals 30. Put 6 after the decimal.",
-   "So 28 divided by 5 equals 5.6."
+   "5 goes into 28 five whole times, because 5 times 5 equals 25. There are 3 left over.",
+   "Change the 3 left over into tenths. 3 ones are 30 tenths.",
+   "Share the 30 tenths by 5. That gives 6 tenths.",
+   "Put the 5 ones and 6 tenths together. So 28 divided by 5 equals 5.6. 5.6 times 5 equals 28."
   ]
  },
  "Q_CH11_005": {
@@ -1625,15 +1646,15 @@
    "2.8"
   ],
   "hints": [
-   "Start with long division. How many times does 4 go into 11?",
-   "4 times 2 equals 8, so 4 goes into 11 twice with remainder 3. Bring down the 2 to get 32.",
-   "32 divided by 4 equals 8. So the answer is 2.8."
+   "This is dividing a decimal by a whole number. Divide just as you would with whole numbers, and keep the decimal point in the answer above the one in the question.",
+   "Start with the whole number part. Find how many times 4 goes into 11 and what is left over. The left over ones join the 2 tenths.",
+   "A similar example: 13.5 divided by 3. 3 goes into 13 four times, since 3 times 4 equals 12, with 1 left over. The 1 one and the 5 tenths make 15 tenths, and 15 tenths divided by 3 equals 5 tenths. So 13.5 divided by 3 equals 4.5."
   ],
   "steps": [
-   "Set up: 11.2 divided by 4.",
-   "4 into 11 goes 2 times, since 4 times 2 is 8. The remainder is 11 minus 8, which is 3.",
-   "Bring down 2 to get 32. 4 into 32 goes 8 times, since 4 times 8 is 32.",
-   "So 11.2 divided by 4 equals 2.8."
+   "4 goes into 11 two whole times, because 4 times 2 equals 8. There are 3 ones left over.",
+   "The 3 ones left over are 30 tenths. With the 2 tenths already there, that makes 32 tenths.",
+   "Share the 32 tenths by 4. That gives 8 tenths.",
+   "Put the 2 ones and 8 tenths together. So 11.2 divided by 4 equals 2.8. 2.8 times 4 equals 11.2."
   ]
  },
  "Q_CH11_006": {
@@ -1645,15 +1666,15 @@
    "3.16"
   ],
   "hints": [
-   "When dividing by a decimal, first make the divisor a whole number. How?",
-   "Multiply both numbers by 100: 1.264 times 100 equals 126.4, and 0.04 times 100 equals 4. Now divide 126.4 by 4.",
-   "126.4 divided by 4: 4 into 12 is 3. 4 into 6 is 1, remainder 2. Bring down the 4, and 24 divided by 4 is 6. The answer is 31.6."
+   "This is dividing by a decimal. It is much easier to divide by a whole number, and you can change the question without changing the answer.",
+   "Multiply both numbers by 100 so that 0.04 becomes the whole number 4. The other number must be multiplied by 100 too. Then divide.",
+   "A similar example: 1.356 divided by 0.06. Multiply both numbers by 100 to get 135.6 divided by 6. Then 120 divided by 6 equals 20 and 15.6 divided by 6 equals 2.6. So the answer is 20 plus 2.6, which is 22.6."
   ],
   "steps": [
-   "Convert: multiply both by 100 to make the divisor whole. 1.264 divided by 0.04 equals 1.264 times 100, over 0.04 times 100, which is 126.4 divided by 4.",
-   "Now divide 126.4 by 4 using long division.",
-   "4 into 12 is 3. 4 into 6 is 1, remainder 2. Bring down the 4: 24 divided by 4 is 6. So 126.4 divided by 4 equals 31.6.",
-   "So 1.264 divided by 0.04 equals 31.6."
+   "Multiply both numbers by 100 so that we divide by a whole number. The answer does not change. The question becomes 126.4 divided by 4. 1.264 times 100 equals 126.4.",
+   "Split 126.4 into 120 and 6.4. First, 120 divided by 4 equals 30.",
+   "Next, 6.4 divided by 4 equals 1.6.",
+   "Add the two parts. So 1.264 divided by 0.04 equals 31.6. 30 plus 1.6 equals 31.6."
   ]
  },
  "Q_CH11_007": {
@@ -1665,15 +1686,15 @@
    "490"
   ],
   "hints": [
-   "Make 0.07 into a whole number by multiplying both numbers by the same amount.",
-   "Multiply both by 100: 3.43 times 100 equals 343, and 0.07 times 100 equals 7. Now divide 343 by 7.",
-   "343 divided by 7: 7 times 49 equals 343. So the answer is 49."
+   "This is dividing by a decimal. It is much easier to divide by a whole number, and you can change the question without changing the answer.",
+   "Multiply both numbers by 100 so that 0.07 becomes the whole number 7. The other number must be multiplied by 100 too. Then divide.",
+   "A similar example: 2.56 divided by 0.08. Multiply both numbers by 100 to get 256 divided by 8. Since 8 times 32 equals 256, the answer is 32."
   ],
   "steps": [
-   "Make the divisor whole: multiply both by 100. 3.43 divided by 0.07 equals 343 over 7.",
-   "Now divide: 343 divided by 7.",
-   "7 times 4 is 28, and 34 minus 28 is 6. Bring down the 3: 63 divided by 7 is 9. So 343 divided by 7 equals 49.",
-   "So 3.43 divided by 0.07 equals 49."
+   "Multiply both numbers by 100 so that we divide by a whole number. The answer does not change. The question becomes 343 divided by 7. 3.43 times 100 equals 343.",
+   "7 times 40 equals 280. Taking 280 from 343 leaves 63. 343 minus 280 equals 63.",
+   "63 divided by 7 equals 9. So 7 goes into 343 exactly 40 plus 9 times.",
+   "So 3.43 divided by 0.07 equals 49. 343 divided by 7 equals 49."
   ]
  },
  "Q_CH11_008": {
@@ -1685,13 +1706,13 @@
    "70.6"
   ],
   "hints": [
-   "Dividing by 10 means moving the decimal point. Which direction?",
-   "Move the decimal 1 place to the left.",
-   "7.06: move the decimal 1 place left, to get 0.706."
+   "This question divides a decimal by 10. Dividing by 10 makes a number ten times smaller, so think about which way the digits move.",
+   "When you divide by 10, every digit moves one place to the right. The 7 ones become 7 tenths. Move the other digits in the same way.",
+   "A similar example: 5.08 divided by 10. Every digit moves one place to the right, so the 5 ones become 5 tenths. That gives 0.508."
   ],
   "steps": [
-   "We divide 7.06 by 10.",
-   "Move the decimal point 1 place to the left. 7.06 becomes 0.706.",
+   "Dividing by 10 makes the number ten times smaller. Every digit moves one place to the right.",
+   "The 7 ones become 7 tenths, the 0 tenths become 0 hundredths, and the 6 hundredths become 6 thousandths.",
    "So 7.06 divided by 10 equals 0.706."
   ]
  },
@@ -1704,13 +1725,13 @@
    "6.527"
   ],
   "hints": [
-   "How many zeros in 100? Move the decimal that many places to the left.",
-   "100 has 2 zeros, so move the decimal 2 places left.",
-   "652.7 becomes 65.27, then 6.527. The answer is 6.527."
+   "This is a decimal divided by 100. Dividing by 10, 100 or 1000 keeps the same digits and only moves the decimal point.",
+   "Count the zeros in 100. Then move the decimal point in 652.7 that many places to the left.",
+   "Here is a similar one: 483.9 divided by 100. There are two zeros in 100, so the point moves two places to the left, and the result is 4.839."
   ],
   "steps": [
-   "We divide 652.7 by 100.",
-   "100 has 2 zeros, so move the decimal 2 places to the left. 652.7 becomes 65.27, then 6.527.",
+   "100 has two zeros, so dividing by 100 moves the decimal point two places to the left.",
+   "Move the point one place and 652.7 becomes 65.27. Move it one more place and it becomes 6.527.",
    "So 652.7 divided by 100 equals 6.527."
   ]
  },
@@ -1723,13 +1744,14 @@
    "38"
   ],
   "hints": [
-   "Dividing by 100 means the decimal moves how many places?",
-   "2 places to the left, because 100 has 2 zeros.",
-   "3.8 becomes 0.38, then 0.038."
+   "This is a decimal divided by 100. The digits stay the same and the decimal point moves to the left.",
+   "There are two zeros in 100, so move the point in 3.8 two places to the left. If you run out of digits, fill the empty place with a zero.",
+   "Here is a similar one: 5.2 divided by 100. Moving the point one place gives 0.52, and one more place needs an extra zero, giving 0.052."
   ],
   "steps": [
-   "We divide 3.8 by 100.",
-   "Move the decimal 2 places left. Add a zero placeholder. 3.8 becomes 0.38, then 0.038.",
+   "Dividing by 100 moves the decimal point two places to the left, because 100 has two zeros.",
+   "Move the point one place and 3.8 becomes 0.38.",
+   "Move it one more place. There is no digit left in front of the 3, so a zero fills the gap and 0.38 becomes 0.038.",
    "So 3.8 divided by 100 equals 0.038."
   ]
  },
@@ -1742,14 +1764,14 @@
    "0.25"
   ],
   "hints": [
-   "To convert a fraction to decimal, divide the top number by the bottom number.",
-   "What is 3 divided by 4? Think: 4 times 7 is 28, so 4 goes into 30 seven times, with remainder 2.",
-   "3 divided by 4 equals 0.75. That is because, for 3.00 divided by 4, 4 into 30 is 7 remainder 2, and 4 into 20 is 5."
+   "A fraction is a division waiting to be done. The top number is divided by the bottom number.",
+   "Divide 3 by 4. Since 4 does not go into 3, write 3 as 3.00 and begin by dividing 30 tenths by 4.",
+   "Here is a similar one: to change 2 over 5 into a decimal, divide 2 by 5. Write 2 as 2.0. Then 5 goes into 20 tenths exactly 4 times, so 2 over 5 equals 0.4."
   ],
   "steps": [
-   "To convert three quarters, we divide 3 by 4.",
-   "4 into 3.00: 4 into 30 is 7, because 4 times 7 is 28, with remainder 2.",
-   "Bring down 0: 20 divided by 4 equals 5.",
+   "To change three quarters into a decimal, divide 3 by 4. Write 3 as 3.00 so there are digits to divide.",
+   "4 goes into 30 tenths 7 times, because 4 times 7 equals 28. That leaves 2 tenths, which is the same as 20 hundredths.",
+   "4 goes into 20 hundredths exactly 5 times, so the digits after the point are 7 and 5. 20 divided by 4 equals 5.",
    "So three quarters equals 0.75."
   ]
  },
@@ -1762,15 +1784,15 @@
    "One quarter"
   ],
   "hints": [
-   "0.125 has 3 decimal places, so write it over 1000.",
-   "0.125 equals 125 over 1000. Now simplify. What is the H C F of 125 and 1000?",
-   "125 divided by 125 equals 1, and 1000 divided by 125 equals 8. So 125 over 1000 equals 1 over 8."
+   "A decimal can be written as a fraction over 10, 100 or 1000, depending on how many digits come after the point. Then the fraction is made as simple as it can be.",
+   "0.125 has three digits after the point, so write it as 125 over 1000. Then look for a number that divides both 125 and 1000.",
+   "Here is a similar one: 0.075 has three digits after the point, so it is 75 over 1000. Dividing the top and the bottom by 25 gives 3 over 40, which cannot be made simpler."
   ],
   "steps": [
-   "Write it as a fraction: 3 decimal places means over 1000. 0.125 equals 125 over 1000.",
-   "Find the H C F of 125 and 1000. Both are divisible by 125.",
-   "Divide both by 125. 125 divided by 125, over 1000 divided by 125, equals 1 over 8.",
-   "So 0.125 equals 1 over 8."
+   "0.125 has three digits after the decimal point, so it is 125 thousandths. 0.125 equals 125 over 1000.",
+   "Divide the top and the bottom by 25. 125 divided by 25 equals 5 and 1000 divided by 25 equals 40, so the fraction becomes 5 over 40.",
+   "Divide the top and the bottom by 5. The fraction becomes 1 over 8, and it cannot be made any simpler. 5 over 40 equals 1 over 8.",
+   "So 0.125 in simplest form is 1 over 8."
   ]
  },
  "Q_CH11_013": {
@@ -1801,15 +1823,15 @@
    "42.3604"
   ],
   "hints": [
-   "Line up the decimal points! Make all numbers the same decimal length first.",
-   "34.560 plus 7.800, plus 0.004. Now add column by column from the right.",
-   "Thousandths: 0 plus 0, plus 4, equals 4. Hundredths: 6 plus 0, plus 0, equals 6. Tenths: 5 plus 8 equals 13, carry 1. Ones: 4 plus 7, plus 1, equals 12."
+   "This is an addition of decimals with different numbers of decimal places. The digits must be lined up by place value before adding.",
+   "Write the three numbers one below the other with the decimal points in a straight line. Fill the empty places with zeros so each number has three digits after the point.",
+   "Here is a similar one: 12.45 plus 3.7, plus 0.006. Write them as 12.450, 3.700 and 0.006. Adding the columns gives 16.156."
   ],
   "steps": [
-   "Align the decimal points and add zeros.",
-   "Add from the right: thousandths, 4. Hundredths, 6. Tenths, 13: write 3, carry 1.",
-   "Ones: 4 plus 7, plus the carried 1, equals 12. Tens: 3.",
-   "The answer is 42.364."
+   "Line up the decimal points and fill the empty places with zeros. The numbers become 34.560, 7.800 and 0.004.",
+   "Add 34.560 and 7.800 first. The tenths give 5 plus 8, which is 13, so write 3 and carry 1 to the ones. 34.560 plus 7.800 equals 42.360.",
+   "Now add 0.004, which puts a 4 in the thousandths place. 42.360 plus 0.004 equals 42.364.",
+   "So 34.56 plus 7.8, plus 0.004, equals 42.364."
   ]
  },
  "Q_CH11_015": {
@@ -1821,15 +1843,15 @@
    "27.25"
   ],
   "hints": [
-   "Write 50 as 50.00 first, then subtract column by column.",
-   "50.00 minus 23.75: start from the hundredths. 0 minus 5? You'll need to borrow!",
-   "Borrow step by step: 50.00 becomes 49.9, with 10 in the hundredths place. Then 10 minus 5 is 5, 9 minus 7 is 2, 9 minus 3 is 6, and 4 minus 2 is 2."
+   "This is a subtraction of a decimal from a whole number. A whole number can be written with zeros after a decimal point so the places match.",
+   "Write 50 as 50.00 and put 23.75 below it with the decimal points lined up. Then subtract, starting from the right, or take away the whole part first and the decimal part after.",
+   "Here is a similar one: 40 minus 16.35. Write 40 as 40.00. Taking away 16 leaves 24.00, and taking away 0.35 more leaves 23.65."
   ],
   "steps": [
-   "Write 50 as 50.00. 50.00 minus 23.75.",
-   "Hundredths: 0 minus 5 needs a borrow, so 10 minus 5 equals 5.",
-   "Tenths: 9 minus 7 equals 2. Ones: 9 minus 3 equals 6. Tens: 4 minus 2 equals 2.",
-   "The answer is 26.25."
+   "Write 50 as 50.00 so that both numbers have two decimal places.",
+   "Take away the whole part of 23.75 first. 50.00 minus 23 equals 27.00.",
+   "Now take away the 0.75 that is still left. One whole less 0.75 is 0.25, so 27.00 drops to 26.25. 27.00 minus 0.75 equals 26.25.",
+   "So 50 minus 23.75 equals 26.25."
   ]
  },
  "Q_CH11_016": {
@@ -1841,14 +1863,14 @@
    "100"
   ],
   "hints": [
-   "First multiply without the decimals: what is 25 times 4?",
-   "25 times 4 equals 100. Now count the total decimal places in both numbers: 1 plus 1 equals 2.",
-   "Put 2 decimal places in 100, to get 1.00, which is 1.0."
+   "This multiplies two decimals. Multiply as if they were whole numbers, then put the decimal point back by counting decimal places.",
+   "Leave out the decimal points and multiply 25 by 4. Then count the digits after the point in 2.5 and in 0.4 together.",
+   "Here is a similar one: 1.5 times 0.6. First 15 times 6 equals 90. The two numbers have two decimal places altogether, so 90 becomes 0.90, which is 0.9."
   ],
   "steps": [
-   "Ignore the decimals and multiply: 25 times 4 equals 100.",
-   "Count the decimal places: 2.5 has 1, and 0.4 has 1. The total is 2.",
-   "Place the decimal: 100 becomes 1.00, which is 1.0."
+   "Leave out the decimal points and multiply 25 by 4. 25 times 4 equals 100.",
+   "2.5 has one digit after the point and 0.4 has one digit after the point, so the product needs two digits after the point.",
+   "Put the point two places from the right in 100. That gives 1.00, which is the same as 1.0. 2.5 times 0.4 equals 1.0."
   ]
  },
  "Q_CH11_017": {
@@ -1860,14 +1882,14 @@
    "0.0018"
   ],
   "hints": [
-   "Multiply the numbers without decimals first: what is 3 times 6?",
-   "3 times 6 equals 18. Now count the decimal places: 0.03 has 2 places, and 0.6 has 1 place. The total is 3.",
-   "Put 3 decimal places in 18, to get 0.018."
+   "This multiplies two decimals. Multiply the digits as whole numbers, then count decimal places to put the point back.",
+   "Leave out the decimal points and the zeros in front, and multiply 3 by 6. Then count the digits after the point in 0.03 and in 0.6 together.",
+   "Here is a similar one: 0.04 times 0.7. First 4 times 7 equals 28. The numbers have two and one decimal places, three altogether, so 28 becomes 0.028."
   ],
   "steps": [
-   "Multiply without decimals: 3 times 6 equals 18.",
-   "Count the decimal places: 0.03 has 2, and 0.6 has 1. That makes 3 in total.",
-   "Place 3 decimal places: 18 becomes 0.018."
+   "Multiply the digits without the decimal points. 3 times 6 equals 18.",
+   "0.03 has two digits after the point and 0.6 has one, so the product needs three digits after the point. 2 plus 1 equals 3.",
+   "18 has only two digits, so a zero goes in front to make three decimal places. So 0.03 times 0.6 equals 0.018."
   ]
  },
  "Q_CH11_020": {
@@ -1898,14 +1920,14 @@
    "0.06"
   ],
   "hints": [
-   "First find which place the 6 is in. Count from the decimal point.",
-   "After the decimal: 0 is in the tenths, 6 in the hundredths, 3 in the thousandths, and 9 in the ten-thousandths.",
-   "6 is in the hundredths place. Its value is 6 times 0.01, which is 0.06."
+   "The value of a digit depends on the place it sits in. After the decimal point the places are tenths, hundredths, thousandths, and so on.",
+   "Name the place of each digit after the point in 2.0639, starting with the tenths, until you reach the 6.",
+   "Here is a similar one: in 5.0274 the digit 7 is the third digit after the point, so it is in the thousandths place. Its value is 7 thousandths, which is 0.007."
   ],
   "steps": [
-   "Identify the place of the 6 in 2.0639.",
-   "6 is in the hundredths place. One hundredth is 1 over 100, which is 0.01.",
-   "The value is 6 times 0.01, which is 0.06."
+   "In 2.0639 the digits after the point are 0 in the tenths place, 6 in the hundredths place, 3 in the thousandths place and 9 in the ten-thousandths place.",
+   "The 6 is in the hundredths place, so its value is 6 hundredths. 6 over 100 equals 0.06.",
+   "The value of 6 in 2.0639 is 0.06."
   ]
  },
  "Q_CH11_022": {
@@ -1917,14 +1939,14 @@
    "350 rupees"
   ],
   "hints": [
-   "Calculate the cost of apples and oranges separately, then add.",
-   "Apples: what is 2.5 times 120? Oranges: what is 1.25 times 80?",
-   "Apples: 2.5 times 120 equals 300. Oranges: 1.25 times 80 equals 100. The total is 300 plus 100, which is 400."
+   "This is a two-part cost problem. Each fruit has its own weight and its own price per kilogram, so find each cost and then combine them.",
+   "Start with the apples. Multiply 2.5 by 120, which you can do as 2 kilograms plus half a kilogram. Then do the same kind of sum for the oranges.",
+   "Here is a similar one: 1.5 kilograms of rice at 60 rupees per kilogram costs 1.5 times 60, which is 90 rupees, and 2.5 kilograms of sugar at 40 rupees per kilogram costs 2.5 times 40, which is 100 rupees. The total is 90 plus 100, which is 190 rupees."
   ],
   "steps": [
-   "The cost of the apples is 2.5 times 120. And 2.5 times 120 is 300.",
-   "The cost of the oranges is 1.25 times 80. And 1.25 times 80 is 100.",
-   "The total is 300 plus 100, which is 400."
+   "Apples: 2 kilograms cost 240 rupees and half a kilogram costs 60 rupees, so 2.5 kilograms cost 300 rupees. 2.5 times 120 equals 300.",
+   "Oranges: 1 kilogram costs 80 rupees and a quarter of a kilogram costs 20 rupees, so 1.25 kilograms cost 100 rupees. 1.25 times 80 equals 100.",
+   "Add the two costs. Riya spent 400 rupees in total. 300 plus 100 equals 400."
   ]
  },
  "Q_CH11_023": {
@@ -1936,13 +1958,13 @@
    "8.09"
   ],
   "hints": [
-   "Dividing by 10 moves the decimal 1 place to the left.",
-   "809 can be written as 809.0. Now move the decimal 1 place left.",
-   "809.0 becomes 80.9."
+   "This is a whole number divided by 10. The digits stay the same and the decimal point moves.",
+   "A whole number has its decimal point at the end, so 809 is the same as 809.0. Move the point one place to the left because 10 has one zero.",
+   "Here is a similar one: 406 divided by 10. Write 406 as 406.0 and move the point one place to the left, which gives 40.6."
   ],
   "steps": [
-   "Write 809 as 809.0.",
-   "Divide by 10: move the decimal 1 place left. 809.0 becomes 80.9.",
+   "Write 809 as 809.0, with the decimal point at the end of the whole number.",
+   "10 has one zero, so dividing by 10 moves the point one place to the left. Every digit stays, including the 0 in the middle.",
    "So 809 divided by 10 equals 80.9."
   ]
  },
@@ -1974,13 +1996,13 @@
    "0.008"
   ],
   "hints": [
-   "Do it step by step. First multiply 0.25 by 0.4, then multiply the result by 0.8.",
-   "0.25 times 0.4: multiply 25 times 4 to get 100. The decimal places are 2 plus 1, which is 3. So we get 0.100, which is 0.1.",
-   "Now 0.1 times 0.8: multiply 1 times 8 to get 8. The decimal places are 1 plus 1, which is 2. So we get 0.08."
+   "This is a product of three decimals. Multiply two of them first, then multiply the result by the third, counting decimal places each time.",
+   "Begin with 0.25 times 0.4. Multiply 25 by 4, then count the digits after the point in 0.25 and 0.4 together to place the point.",
+   "Here is a similar one: 0.5 times 0.2, times 0.6. First 0.5 times 0.2 equals 0.10, which is 0.1. Then 0.1 times 0.6 equals 0.06."
   ],
   "steps": [
-   "First: 0.25 times 0.4. 25 times 4 equals 100. 2 plus 1 makes 3 decimal places, so we get 0.100, which is 0.1.",
-   "Then: 0.1 times 0.8. 1 times 8 equals 8. 1 plus 1 makes 2 decimal places, so we get 0.08.",
+   "Multiply the first two numbers. 25 times 4 equals 100, and 0.25 and 0.4 have three decimal places together, so the product is 0.100, which is 0.1.",
+   "Now multiply 0.1 by 0.8. 1 times 8 equals 8, and there are two decimal places together, so the product is 0.08.",
    "So 0.25 times 0.4, times 0.8, equals 0.08."
   ]
  },
@@ -1993,14 +2015,15 @@
    "2.25"
   ],
   "hints": [
-   "If 1 dollar equals 40 rupees, then to find how many dollars 100 rupees makes, divide!",
-   "The number of dollars is 100 divided by 40.",
-   "100 divided by 40 equals 2.5 dollars."
+   "This is about changing money. Each dollar is worth a fixed number of rupees, so you need to find how many groups of that size fit into the rupees you have.",
+   "Each dollar needs 40 rupees. Work out how many 40s there are in 100 by dividing 100 by 40.",
+   "Here is a similar one: if 1 dollar equals 20 rupees, then for 70 rupees you get 70 divided by 20 dollars. Three dollars use 60 rupees and the 10 rupees left are half a dollar, so you get 3.5 dollars."
   ],
   "steps": [
-   "1 dollar equals 40 rupees. We have 100 rupees.",
-   "Divide rupees by the exchange rate. 100 divided by 40 equals 2.5.",
-   "So 100 rupees equals 2.5 dollars."
+   "Each dollar costs 40 rupees, so split 100 rupees into groups of 40.",
+   "Two dollars use 80 rupees, and that leaves 20 rupees. 100 minus 80 equals 20.",
+   "20 rupees is half of 40 rupees, so it buys half a dollar, which is 0.5 of a dollar.",
+   "So 100 rupees give 2.5 dollars. 100 divided by 40 equals 2.5."
   ]
  },
  "Q_CH12_022": {
@@ -2012,14 +2035,14 @@
    "0.240"
   ],
   "hints": [
-   "1 rupee equals 100 paise. To convert paise to rupees, divide by 100.",
-   "What is 240 divided by 100?",
-   "240 divided by 100 equals 2.40 rupees."
+   "This changes a small unit of money into a bigger one. Remember how many paise make one rupee.",
+   "100 paise make 1 rupee, so divide 240 by 100. Dividing by 100 moves the decimal point two places to the left.",
+   "Here is a similar one: 375 paise. 300 paise are 3 rupees and 75 paise are left over, so 375 paise equals 3.75 rupees."
   ],
   "steps": [
-   "1 rupee equals 100 paise.",
-   "240 divided by 100 equals 2.40.",
-   "240 paise equals 2.40 rupees."
+   "100 paise make 1 rupee, so paise are changed into rupees by dividing by 100.",
+   "200 paise make 2 rupees, and 40 paise are left over. The paise are written after the decimal point.",
+   "So 240 paise equals 2.40 rupees. 240 divided by 100 equals 2.40."
   ]
  },
  "Q_CH12_023": {
@@ -2031,14 +2054,14 @@
    "4.06"
   ],
   "hints": [
-   "To convert rupees to paise, multiply by 100.",
-   "What is 4.06 times 100?",
-   "4.06 times 100 equals 406 paise."
+   "This changes rupees into paise, a bigger unit into a smaller one. Remember how many paise make one rupee.",
+   "1 rupee is 100 paise, so multiply 4.06 by 100. Multiplying by 100 moves the decimal point two places to the right.",
+   "Here is a similar one: 7.05 rupees is 7 rupees and 5 paise. 7 rupees are 700 paise, so 7.05 rupees equals 705 paise."
   ],
   "steps": [
-   "1 rupee equals 100 paise, so multiply by 100. 4.06 rupees times 100.",
-   "Move the decimal 2 places right: 4.06 becomes 406. 4.06 times 100 equals 406.",
-   "4.06 rupees equals 406 paise."
+   "1 rupee is 100 paise, so 4 rupees are 400 paise. 4 times 100 equals 400.",
+   "The two digits after the point show the paise. Here they are 06, which means 6 paise.",
+   "So 4.06 rupees equals 406 paise. 400 plus 6 equals 406."
   ]
  },
  "VAR2_EXT_G4_FP_2016_012_01": {

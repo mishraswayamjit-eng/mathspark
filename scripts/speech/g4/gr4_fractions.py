@@ -162,6 +162,15 @@ def main():
         a, b = int(sys.argv[i + 1]), int(sys.argv[i + 2])
         for n, q in enumerate(questions[a:b], a):
             show(q, part[q["id"]], n)
+    if "--renarrate" in sys.argv:      # the questions whose hints and steps were rewritten in the bank
+        with io.open(os.path.join(common.ROOT, "data", "bank-import", "g4", "renarrate.json"), encoding="utf-8") as f:
+            listed = set(json.load(f).get(NODE, []))
+        i = sys.argv.index("--renarrate")
+        a, b = int(sys.argv[i + 1]), int(sys.argv[i + 2])
+        chosen = [q for q in questions if q["id"] in listed]
+        print("listed for %s: %d, in the topic: %d" % (NODE, len(listed), len(chosen)))
+        for n, q in enumerate(chosen[a:b], a):
+            show(q, part[q["id"]], n)
     for p in failures[:int(os.environ.get("MAXFAIL", "80"))]:
         print("  FAIL " + p)
 

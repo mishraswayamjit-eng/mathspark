@@ -27,13 +27,14 @@
    "20"
   ],
   "hints": [
-   "Replace x with 2 and y with 4.",
-   "Calculate 2 times 2, and 4 times 4, separately.",
-   "Then add them up."
+   "This is a substitution question. A number written next to a letter means multiply, so swap each letter for its value and multiply.",
+   "Start with 2 x. Put 2 in place of x and multiply. Do the same for 4 y with y equals 4, and only then add the two parts.",
+   "Similar example: if x equals 5 and y equals 4, find 3 x plus 2 y. First 3 x is 3 times 5, which is 15, and 2 y is 2 times 4, which is 8. Adding them gives 15 plus 8, which is 23."
   ],
   "steps": [
-   "Substitute: 2 times 2, plus 4 times 4.",
-   "That equals 4 plus 16, which is 20."
+   "2 x means 2 times x. Put 2 in place of x. 2 times 2 equals 4.",
+   "4 y means 4 times y. Put 4 in place of y. 4 times 4 equals 16.",
+   "Add the two parts. So 2 x plus 4 y equals 20. 4 plus 16 equals 20."
   ]
  },
  "BOOST_EXT_G4_FP_2022_038_05": {
@@ -45,13 +46,14 @@
    "11"
   ],
   "hints": [
-   "Replace x with 2 and y with 1.",
-   "Calculate 3 times 2, and 4 times 1, separately.",
-   "Then add them up."
+   "This is a substitution question. A number written next to a letter means multiply, so swap each letter for its value and multiply.",
+   "Start with 3 x. Put 2 in place of x and multiply. Do the same for 4 y with y equals 1, and only then add the two parts.",
+   "Similar example: if x equals 4 and y equals 3, find 2 x plus 5 y. First 2 x is 2 times 4, which is 8, and 5 y is 5 times 3, which is 15. Adding them gives 8 plus 15, which is 23."
   ],
   "steps": [
-   "Substitute: 3 times 2, plus 4 times 1.",
-   "That equals 6 plus 4, which is 10."
+   "3 x means 3 times x. Put 2 in place of x. 3 times 2 equals 6.",
+   "4 y means 4 times y. Put 1 in place of y. 4 times 1 equals 4.",
+   "Add the two parts. So 3 x plus 4 y equals 10. 6 plus 4 equals 10."
   ]
  },
  "BOOST_EXT_G4_FP_2023_006_05": {
@@ -63,13 +65,14 @@
    "40"
   ],
   "hints": [
-   "Replace x with 6 and y with 4.",
-   "Calculate 4 times 6, and 4 times 4, separately.",
-   "Then add them up."
+   "This is a substitution question. A number written next to a letter means multiply, so swap each letter for its value and multiply.",
+   "Start with 4 x. Put 6 in place of x and multiply. Do the same for 4 y with y equals 4, and only then add the two parts.",
+   "Similar example: if x equals 5 and y equals 6, find 3 x plus 2 y. First 3 x is 3 times 5, which is 15, and 2 y is 2 times 6, which is 12. Adding them gives 15 plus 12, which is 27."
   ],
   "steps": [
-   "Substitute: 4 times 6, plus 4 times 4.",
-   "That equals 24 plus 16, which is 40."
+   "4 x means 4 times x. Put 6 in place of x. 4 times 6 equals 24.",
+   "4 y means 4 times y. Put 4 in place of y. 4 times 4 equals 16.",
+   "Add the two parts. So 4 x plus 4 y equals 40. 24 plus 16 equals 40."
   ]
  },
  "BOOST_EXT_G4_FP_2024_001_07": {
@@ -81,13 +84,14 @@
    "72"
   ],
   "hints": [
-   "Replace x with the given value.",
-   "Then do the arithmetic: 5 times 6, plus 10, minus 8.",
-   "Follow Bodmas!"
+   "This is a substitution question. A number written next to a letter means multiply, so swap the letter for its value first.",
+   "Start with 5 x. Put 6 in place of x and multiply. After that, do the adding and the subtracting from left to right.",
+   "Similar example: if x equals 5, find 4 x plus 9 minus 3. First 4 x is 4 times 5, which is 20. Then 20 plus 9 equals 29, and 29 minus 3 equals 26."
   ],
   "steps": [
-   "Substitute x equals 6: 5 times 6, plus 10, minus 8.",
-   "That equals 30 plus 10 minus 8, which is 32."
+   "5 x means 5 times x. Put 6 in place of x. 5 times 6 equals 30.",
+   "Now work from left to right. Add 10 first. 30 plus 10 equals 40.",
+   "Then subtract 8. So 5 x plus 10 minus 8 equals 32. 40 minus 8 equals 32."
   ]
  },
  "BOOST_EXT_G4_FP_2025_038_06": {
@@ -99,13 +103,14 @@
    "17"
   ],
   "hints": [
-   "Replace x with the given value.",
-   "Then do the arithmetic: 7 times 3, plus 8, minus 1.",
-   "Follow Bodmas!"
+   "This is a substitution question. A number written next to a letter means multiply, so swap the letter for its value first.",
+   "Start with 7 x. Put 3 in place of x and multiply. After that, do the adding and the subtracting from left to right.",
+   "Similar example: if x equals 4, find 6 x plus 5 minus 2. First 6 x is 6 times 4, which is 24. Then 24 plus 5 equals 29, and 29 minus 2 equals 27."
   ],
   "steps": [
-   "Substitute x equals 3: 7 times 3, plus 8, minus 1.",
-   "That equals 21 plus 8 minus 1, which is 28."
+   "7 x means 7 times x. Put 3 in place of x. 7 times 3 equals 21.",
+   "Now work from left to right. Add 8 first. 21 plus 8 equals 29.",
+   "Then subtract 1. So 7 x plus 8 minus 1 equals 28. 29 minus 1 equals 28."
   ]
  },
  "EXT_G4_FP_2020_018": {
@@ -1017,12 +1022,15 @@
    "7 m minus 5 n"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 19.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "This is a substitution question. Put the values of m and n into each expression and see which one comes to 70.",
+   "Start with the first expression. A number next to a letter means multiply, so work out each part with m equals 5 and n equals 7, then add or subtract.",
+   "Similar example: which is 22 when A equals 2 and b equals 3: 2 A plus 3 b or 5 A plus 4 b? For 2 A plus 3 b, 4 plus 9 equals 13. For 5 A plus 4 b, 10 plus 12 equals 22. So 5 A plus 4 b is the one."
   ],
   "steps": [
-   "Correct answer: Option 2, 7 m plus 5 n."
+   "Try 5 m plus 7 n. 5 times 5 is 25 and 7 times 7 is 49. This gives 74, not 70. 25 plus 49 equals 74.",
+   "Try 7 m plus 5 n. 7 times 5 is 35 and 5 times 7 is 35. This gives 70. 35 plus 35 equals 70.",
+   "The two expressions with a minus sign are much smaller. 5 m minus 7 n takes 49 away from 25, and 7 m minus 5 n takes 35 away from 35. 35 minus 35 equals 0.",
+   "So the expression with a value of 70 is 7 m plus 5 n."
   ]
  },
  "PYQ_2016_Q20": {
@@ -1034,12 +1042,15 @@
    "P minus 33"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 20.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "This is about the pattern of odd numbers. Think about how far apart two odd numbers next to each other are.",
+   "Try it with a real odd number such as 1. Count on to the next odd number and see how much you add for each jump.",
+   "Similar example: the 4th odd number after 5. The odd numbers after 5 are 7, 9, 11 and 13. Each jump adds 2, so 4 jumps add 4 times 2 equals 8, and 5 plus 8 equals 13. For an odd number N, the 4th odd number after it is N plus 8."
   ],
   "steps": [
-   "Correct answer: Option 1, P plus 34."
+   "Odd numbers go up in jumps of 2. After 1 come 3, 5, 7 and so on.",
+   "The 1st odd number after P is P plus 2, the 2nd is P plus 4 and the 3rd is P plus 6. Each one adds 2 more.",
+   "The 17th odd number after P needs 17 jumps of 2. 17 times 2 equals 34.",
+   "The trap is to add only 17. An odd number plus 17 is even, so it cannot be right. The 17th odd number after P is P plus 34."
   ]
  },
  "PYQ_2016_Q39": {
@@ -1051,12 +1062,15 @@
    "None of these"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 39.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "This is a substitution question with a chain. Some letters are given in terms of other letters, so find the value of every letter before you touch the expression.",
+   "You know x equals 3. Use it to find y from y equals x minus 1. Then use both of them to find z from z equals x plus y.",
+   "Similar example: find 2 A plus 3 b when A equals 4 and b equals A minus 2. First b equals 4 minus 2, which is 2. Then 2 A is 2 times 4, which is 8, and 3 b is 3 times 2, which is 6. Adding them gives 8 plus 6, which is 14."
   ],
   "steps": [
-   "Correct answer: Option 1, 37."
+   "Find y. It is 1 less than x. 3 minus 1 equals 2.",
+   "Find z. It is x and y added together. 3 plus 2 equals 5.",
+   "Work out each part of the expression. 6 x is 18, 3 y is 6 and 5 z is 25. 6 times 3 equals 18. 3 times 2 equals 6. 5 times 5 equals 25.",
+   "Go from left to right: 18 minus 6 equals 12, and 12 plus 25 equals 37. The value is 37. 18 minus 6 plus 25 equals 37."
   ]
  },
  "PYQ_2017_Q18": {
@@ -1068,12 +1082,15 @@
    "5 x plus 10"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 18.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "This is about a sum of two ages moving through time. When years pass, both people grow older, so the sum grows by those years twice.",
+   "First go from 5 years ago to today. The mother is 5 years older and the daughter is 5 years older, so work out how much their sum has grown.",
+   "Similar example: 2 years ago the sum of two brothers' ages was 3 y. Today each brother is 2 years older, so the sum is 3 y plus 4. In 2 more years each is 2 years older again, so the sum is 3 y plus 8."
   ],
   "steps": [
-   "Correct answer: Option 3, 5 x plus 20."
+   "From 5 years ago to today, the mother is 5 years older and the daughter is 5 years older. So their sum today is 5 x plus 10.",
+   "From today to 5 years hence, each of them grows 5 years older again. The sum grows by another 10.",
+   "Altogether the sum grows by 20 from 5 years ago to 5 years hence. 10 plus 10 equals 20.",
+   "The trap is to count the years for only one person, or to stop at today. The sum of their ages 5 years hence is 5 x plus 20."
   ]
  },
  "PYQ_2017_Q22": {
@@ -1085,12 +1102,15 @@
    "7 m minus 6 n"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 22.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "This is a perimeter question. Think about how many sides an equilateral triangle has and what is special about them.",
+   "An equilateral triangle has 3 equal sides. Write the side 7 m minus 2 n, three times and add, or multiply every part of it by 3.",
+   "Similar example: the side of an equilateral triangle is 4 A minus 5 b. The perimeter is 3 times the side. 3 times 4 A is 12 A and 3 times 5 b is 15 b, so the perimeter is 12 A minus 15 b."
   ],
   "steps": [
-   "Correct answer: Option 3, 21 m minus 6 n."
+   "An equilateral triangle has 3 equal sides, so the perimeter is 3 times one side.",
+   "Multiply the m part by 3. 3 times 7 m is 21 m.",
+   "Multiply the n part by 3. 3 times 2 n is 6 n, and it is still being taken away.",
+   "So the perimeter is 21 m minus 6 n."
   ]
  },
  "PYQ_2017_Q24": {
@@ -1102,12 +1122,14 @@
    "2 P plus 3"
   ],
   "hints": [
-   "This is from the 2017 I P M exam, question 24.",
-   "Think step by step.",
-   "Try working backwards from the options."
+   "This is about the pattern of even numbers. Think about how far apart two even numbers next to each other are, and whether going before means adding or subtracting.",
+   "Try it with a real even number such as 20. Count back to the even number just before it and see how much you take away for each jump.",
+   "Similar example: the 4th even number before 30. Counting back gives 28, 26, 24 and 22. Each jump takes away 2, so 4 jumps take away 4 times 2 equals 8, and 30 minus 8 equals 22. For an even number N, that is N minus 8."
   ],
   "steps": [
-   "Correct answer: Option 1, P minus 6."
+   "Even numbers are 2 apart. The even number just before P is P minus 2.",
+   "The 2nd even number before P is P minus 4, and the 3rd is 3 jumps of 2 back. 3 times 2 equals 6.",
+   "Check with 20: the even numbers before it are 18, 16 and 14, and 20 minus 6 equals 14. So the 3rd even number before P is P minus 6."
   ]
  },
  "PYQ_2018_Q04": {
@@ -1119,12 +1141,15 @@
    "14 plus 2 A plus 5 b centimetres"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 4.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "This is a perimeter question. Remember which sides of a rectangle are equal and how many of each there are.",
+   "A rectangle has 2 lengths and 2 breadths. Start by doubling the length 2 A plus 5 b, which means doubling each part of it.",
+   "Similar example: a rectangle has length 3 p plus q centimetres and breadth 6 centimetres. Two lengths are 6 p plus 2 q and two breadths are 12. The perimeter is 6 p plus 2 q plus 12 centimetres."
   ],
   "steps": [
-   "Correct answer: Option 3, 4 A plus 10 b plus 14 centimetres."
+   "The perimeter of a rectangle is 2 lengths and 2 breadths added together.",
+   "Two lengths: double each part of 2 A plus 5 b. That gives 4 A plus 10 b. 2 times 2 equals 4. 2 times 5 equals 10.",
+   "Two breadths: double 7. 2 times 7 equals 14.",
+   "Add them together. The perimeter is 4 A plus 10 b plus 14 centimetres."
   ]
  },
  "PYQ_2018_Q21": {
@@ -1136,12 +1161,15 @@
    "G plus 6"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 21.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "This is about the pattern of even numbers. Even numbers are 2 apart, and prior means going back to smaller numbers.",
+   "Work out how much you go back in 6 jumps from one even number to the one before it. Then take that amount away from G plus 12.",
+   "Similar example: K plus 8 is an even number. The 3rd even number before it is 3 jumps of 2 back, which is 6 less. Taking 6 away from K plus 8 leaves K plus 2."
   ],
   "steps": [
-   "Correct answer: Option 3, G."
+   "Even numbers are 2 apart, so each step back to the even number before takes away 2.",
+   "Six steps back take away 12. 6 times 2 equals 12.",
+   "Start from G plus 12 and take away 12. Adding 12 and then taking 12 away leaves nothing extra. 12 minus 12 equals 0.",
+   "The trap is to count back from G when the even number is G plus 12. The 6th even number prior to G plus 12 is G."
   ]
  },
  "PYQ_2018_Q37": {
@@ -1173,12 +1201,14 @@
    "12 m plus 5 n"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 3.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "This is adding two expressions. Only like terms can be put together: m terms with m terms, and n terms with n terms.",
+   "Start with the m terms by putting 5 m and 7 m together. Then look at the n terms, and notice that both of them are being taken away.",
+   "Similar example: add 4 A minus 2 b, and 5 A minus 6 b. The A terms give 4 A plus 5 A equals 9 A. The b terms are both taken away, 2 b and then 6 b, so 8 b is taken away. The sum is 9 A minus 8 b."
   ],
   "steps": [
-   "Correct answer: Option 3, 12 m minus 5 n."
+   "Add the m terms. 5 m and 7 m make 12 m.",
+   "Now the n terms. 3 n is taken away and then 2 n more is taken away, so 5 n is taken away altogether.",
+   "So the sum is 12 m minus 5 n."
   ]
  },
  "PYQ_2019_Q27": {
@@ -1190,12 +1220,15 @@
    "52"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 27.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "This is a substitution question with a chain. One letter is given in terms of the other, so find both values before working out the expression.",
+   "You know p equals 7. Use it to find q from q equals p minus 3. Then put both values into the expression.",
+   "Similar example: find 3 A plus 2 b minus 5 when A equals 6 and b equals A minus 4. First b equals 6 minus 4, which is 2. Then 3 A is 18 and 2 b is 4. Adding gives 18 plus 4, which is 22, and 22 minus 5 equals 17."
   ],
   "steps": [
-   "Correct answer: Option 3, 47."
+   "Find q. It is 3 less than p. 7 minus 3 equals 4.",
+   "Work out 5 p. 5 times 7 equals 35.",
+   "Work out 6 q. 6 times 4 equals 24.",
+   "Add the two parts, then subtract 12. The value is 47. 35 plus 24 minus 12 equals 47."
   ]
  },
  "PYQ_2019_Q36": {
@@ -1207,12 +1240,15 @@
    "16 x minus 12 y centimetres"
   ],
   "hints": [
-   "This is from the 2019 I P M exam, question 36.",
-   "Identify the key concept first.",
-   "Eliminate obviously wrong options."
+   "This is a perimeter question. Think about how many sides a square has and what is special about them.",
+   "A square has 4 equal sides. Multiply every part of the side 4 x minus 3 y, by 4.",
+   "Similar example: the side of a square is 2 A minus 5 b centimetres. The perimeter is 4 times the side. 4 times 2 A is 8 A and 4 times 5 b is 20 b, so the perimeter is 8 A minus 20 b centimetres."
   ],
   "steps": [
-   "Correct answer: Option 4, 16 x minus 12 y centimetres."
+   "A square has 4 equal sides, so the perimeter is 4 times one side.",
+   "Multiply the x part by 4. 4 times 4 x is 16 x.",
+   "Multiply the y part by 4. 4 times 3 y is 12 y, and it is still being taken away.",
+   "So the perimeter is 16 x minus 12 y centimetres."
   ]
  },
  "Q_CH13_001": {
@@ -1318,14 +1354,13 @@
    "43"
   ],
   "hints": [
-   "4 A means 4 times A. What is the value of A?",
-   "A equals 3, so 4 A equals 4 times 3.",
-   "4 times 3 equals 12."
+   "When a number is written right next to a letter, there is a hidden sign between them. Think about which sign it is.",
+   "4 A means 4 times A. Put 3 in place of A and multiply.",
+   "Similar example: if b equals 5, find 3 b. 3 b means 3 times b, so it is 3 times 5, which is 15."
   ],
   "steps": [
-   "4 A means 4 multiplied by A.",
-   "Substitute A equals 3. 4 times 3 equals 12.",
-   "So 4 A equals 12."
+   "4 A means 4 times A.",
+   "Put 3 in place of A and multiply. So 4 A equals 12. 4 times 3 equals 12."
   ]
  },
  "Q_CH13_002_V01": {
@@ -1637,14 +1672,13 @@
    "12"
   ],
   "hints": [
-   "4 A squared means 4 times A squared. First find A squared, then multiply by 4.",
-   "A squared equals 3 times 3, which is 9. Now multiply: 4 times 9 equals what?",
-   "4 times 9 equals 36."
+   "The small 2 means squared, which is a number multiplied by itself. Look carefully at which part the small 2 belongs to.",
+   "The small 2 belongs only to A. First work out A times A with A equals 3, and only then multiply by 4.",
+   "Similar example: if b equals 2, find 5 b squared. First b squared is 2 times 2, which is 4. Then multiply by 5, and 5 times 4 equals 20."
   ],
   "steps": [
-   "First calculate A squared: 3 times 3 equals 9.",
-   "Multiply by 4: 4 times 9 equals 36.",
-   "So 4 A squared equals 36."
+   "A squared means A times A. With A equals 3, that is 9. 3 times 3 equals 9.",
+   "Now multiply by 4. So 4 A squared equals 36. 4 times 9 equals 36."
   ]
  },
  "Q_CH13_006_V02": {
@@ -1693,14 +1727,14 @@
    "12"
   ],
   "hints": [
-   "4 A b means 4 times A times b. Substitute the values.",
-   "4 times 3 times 5 equals what?",
-   "4 times 3 equals 12, then 12 times 5 equals 60."
+   "Letters and numbers written next to each other, with no sign between them, are all multiplied together.",
+   "4 A b means 4 times A times b. Put 3 in place of A and 5 in place of b, then multiply two of the numbers first.",
+   "Similar example: if p equals 2 and q equals 6, find 3 p q. It means 3 times 2 times 6. First 3 times 2 equals 6, and then 6 times 6 equals 36."
   ],
   "steps": [
-   "4 A b equals 4 times A times b.",
-   "Substitute: 4 times 3 times 5.",
-   "That equals 12 times 5, which is 60."
+   "4 A b means 4 times A times b. With A equals 3 and b equals 5, that is 4 times 3 times 5.",
+   "Multiply 4 by 3. 4 times 3 equals 12.",
+   "Multiply that by 5. So 4 A b equals 60. 12 times 5 equals 60."
   ]
  },
  "Q_CH13_007_V01": {
@@ -1731,14 +1765,13 @@
    "35"
   ],
   "hints": [
-   "4 A means 4 times A. Calculate that first, then add b.",
-   "4 A equals 4 times 3, which is 12. Now add b, which is 5.",
-   "12 plus 5 equals 17."
+   "This is a substitution question. A number next to a letter means multiply, and the plus sign tells you to add after that.",
+   "Work out 4 A first by putting 3 in place of A. Then add the value of b.",
+   "Similar example: if p equals 2 and q equals 9, find 5 p plus q. First 5 p is 5 times 2, which is 10. Then 10 plus 9 equals 19."
   ],
   "steps": [
-   "Calculate 4 A: 4 times 3 equals 12.",
-   "Add b: 12 plus 5 equals 17.",
-   "So 4 A plus b equals 17."
+   "4 A means 4 times A. Put 3 in place of A. 4 times 3 equals 12.",
+   "Now add b, which is 5. So 4 A plus b equals 17. 12 plus 5 equals 17."
   ]
  },
  "Q_CH13_008_V02": {
@@ -1787,14 +1820,14 @@
    "2"
   ],
   "hints": [
-   "Calculate 6 b and 4 A separately, then subtract.",
-   "6 b equals 6 times 5, which is 30. 4 A equals 4 times 3, which is 12.",
-   "30 minus 12 equals 18."
+   "This expression has two parts with a minus sign between them. Work out each part before you subtract.",
+   "Find 6 b by putting 5 in place of b. Find 4 A by putting 3 in place of A. Keep the two parts in the same order as in the expression.",
+   "Similar example: if p equals 2 and q equals 4, find 5 q minus 3 p. First 5 q is 5 times 4, which is 20, and 3 p is 3 times 2, which is 6. Then 20 minus 6 equals 14."
   ],
   "steps": [
-   "Calculate 6 b: 6 times 5 equals 30.",
-   "Calculate 4 A: 4 times 3 equals 12.",
-   "Subtract: 30 minus 12 equals 18."
+   "6 b means 6 times b. Put 5 in place of b. 6 times 5 equals 30.",
+   "4 A means 4 times A. Put 3 in place of A. 4 times 3 equals 12.",
+   "Subtract the second part from the first. So 6 b minus 4 A equals 18. 30 minus 12 equals 18."
   ]
  },
  "Q_CH13_009_V03": {
@@ -1844,14 +1877,13 @@
    "32"
   ],
   "hints": [
-   "The bracket means add A and b first, then multiply by 4.",
-   "A plus b equals 3 plus 5, which is 8. Now multiply: 4 times 8 equals what?",
-   "4 times 8 equals 32."
+   "A bracket means that part is worked out first. The number just outside the bracket then multiplies the whole bracket.",
+   "Add A and b inside the bracket first, using A equals 3 and b equals 5. Then multiply the result by 4.",
+   "Similar example: if p equals 2 and q equals 7, find 3 times, open bracket, p plus q, close bracket. The bracket is 2 plus 7, which is 9. Then 3 times 9 equals 27."
   ],
   "steps": [
-   "Calculate inside the bracket: A plus b equals 3 plus 5, which is 8.",
-   "Multiply: 4 times 8 equals 32.",
-   "So 4 times, open bracket, A plus b, close bracket, equals 32."
+   "Work out the bracket first. Add A and b. 3 plus 5 equals 8.",
+   "Multiply the bracket by 4. So 4 times, open bracket, A plus b, close bracket, equals 32. 4 times 8 equals 32."
   ]
  },
  "Q_CH13_011_V05": {
@@ -1882,14 +1914,15 @@
    "open bracket, t over 2, close bracket, squared"
   ],
   "hints": [
-   "Break it down: first, the square of t means t squared. Then, half of, means divide by 2.",
-   "Square of t equals t squared. Half of t squared equals t squared divided by 2.",
-   "So the answer is t squared over 2."
+   "Turn the words into maths one piece at a time. Decide which thing happens first: the squaring or the halving.",
+   "Start with the square of t. Squaring means multiplying a number by itself. Write that down before you take half of it.",
+   "Similar example: one third of the square of k. The square of k is k times k, written k squared. One third of it means dividing by 3, so it is k squared over 3."
   ],
   "steps": [
-   "Square of t equals t squared.",
-   "Half of t squared equals t squared over 2.",
-   "Answer: t squared over 2."
+   "The square of t is t times t, which is written t squared.",
+   "Half of something means dividing it by 2.",
+   "Try it with t equals 4. The square is 16, and half of 16 is 8. 4 times 4 equals 16. 16 divided by 2 equals 8.",
+   "So half of the square of t is t squared over 2."
   ]
  },
  "Q_CH13_013": {
@@ -1901,14 +1934,15 @@
    "d squared"
   ],
   "hints": [
-   "The successor of a number is the next number. So the successor of d is d plus 1.",
-   "Now add d and d plus 1.",
-   "d plus d plus 1 equals 2 d plus 1."
+   "The successor of a number is the number that comes just after it. Write the successor using d, then add.",
+   "The successor of d is 1 more than d. Write that down, and then add d to it.",
+   "Similar example: the sum of k and the number that is 3 more than k. The second number is k plus 3. Adding gives k plus k plus 3, and two k's make 2 k, so the sum is 2 k plus 3."
   ],
   "steps": [
-   "Successor of d equals d plus 1.",
-   "Sum equals d plus d plus 1, which is 2 d plus 1.",
-   "Answer: 2 d plus 1."
+   "The successor is the next number, so the successor of d is d plus 1.",
+   "Add d and its successor. That is d plus d plus 1.",
+   "d and d together make 2 d.",
+   "Check with d equals 5: the successor is 6, and 5 plus 6 equals 11, which is 1 more than 2 times 5. So the sum is 2 d plus 1."
   ]
  },
  "Q_CH13_014": {
@@ -1920,14 +1954,14 @@
    "m over 10 rupees"
   ],
   "hints": [
-   "Each note is worth 10 rupees, and she has m notes. Total equals value times number of notes.",
-   "Total equals 10 times m.",
-   "That equals 10 m rupees."
+   "Think about how you find the total value of several notes that are all the same.",
+   "Each note is worth 10 rupees and there are m of them. Decide whether to add, subtract, multiply or divide.",
+   "Similar example: Ravi has k five-rupee coins. With 3 coins he would have 5 times 3 equals 15 rupees. With k coins he has 5 times k rupees, which is written 5 k rupees."
   ],
   "steps": [
-   "Each note equals 10 rupees, number of notes equals m.",
-   "Total equals 10 times m, which is 10 m.",
-   "Total amount equals 10 m rupees."
+   "Each note is worth 10 rupees. With 2 notes Diya has 20 rupees, and with 3 notes she has 30 rupees. 10 times 3 equals 30.",
+   "So the total is always 10 times the number of notes.",
+   "With m notes the total is 10 times m, which is written 10 m rupees."
   ]
  },
  "Q_CH13_015": {
@@ -1939,14 +1973,14 @@
    "10 m plus 5 n rupees"
   ],
   "hints": [
-   "Calculate the value of ten-rupee notes and five-rupee notes separately, then add.",
-   "Ten-rupee notes: 10 times m equals 10 m. Five-rupee notes: 5 times n equals 5 n.",
-   "Total equals 10 m plus 5 n."
+   "There are two kinds of notes. Find the value of each kind on its own, then put the two values together.",
+   "Start with the ten-rupee notes: there are m of them, each worth 10 rupees. Write their value, then do the same for the five-rupee notes.",
+   "Similar example: Ravi has p twenty-rupee notes and q two-rupee coins. The notes are worth 20 times p, which is 20 p. The coins are worth 2 times q, which is 2 q. The total is 20 p plus 2 q rupees."
   ],
   "steps": [
-   "Value of ten-rupee notes: 10 times m equals 10 m.",
-   "Value of five-rupee notes: 5 times n equals 5 n.",
-   "Total equals 10 m plus 5 n."
+   "The m ten-rupee notes are worth 10 times m, which is 10 m.",
+   "The n five-rupee notes are worth 5 times n, which is 5 n.",
+   "Add the two values. The total amount is 10 m plus 5 n rupees."
   ]
  },
  "Q_CH13_016": {
@@ -1958,14 +1992,14 @@
    "m minus 120"
   ],
   "hints": [
-   "She had m notes. She spent 12 notes. How many are left?",
-   "Notes left equals total notes minus notes spent.",
-   "That equals m minus 12."
+   "Read carefully what is being counted. The question asks for a number of notes, not an amount of money.",
+   "Diya starts with m notes and gives some of them away. Decide which operation shows notes being given away.",
+   "Similar example: Ravi has k stickers and gives 7 of them to a friend. He has fewer now, so subtract. He has k minus 7 stickers left."
   ],
   "steps": [
-   "Total notes equals m.",
-   "Notes spent equals 12.",
-   "Notes left equals m minus 12."
+   "Diya starts with m notes.",
+   "She spends 12 notes, so take 12 away from m.",
+   "The value of each note, 10 rupees, is not needed, because we are counting notes and not rupees. So m minus 12 notes are left."
   ]
  },
  "Q_CH13_017": {
@@ -1977,14 +2011,14 @@
    "8 minus x plus y"
   ],
   "hints": [
-   "x years ago he was 8. So his present age equals 8 plus x.",
-   "y years from now equals present age plus y.",
-   "That equals 8 plus x plus y."
+   "This is an age question with letters. Move along the timeline in two moves: from the past to now, and then from now to the future.",
+   "First find Soham's age now. He was 8 years old x years ago, so think about whether to add x or subtract x.",
+   "Similar example: p years ago Tina was 5. She has grown p years older, so now she is 5 plus p. In q years she will be 5 plus p plus q."
   ],
   "steps": [
-   "x years ago he was 8, so present age equals 8 plus x.",
-   "y years hence equals present age plus y. 8 plus x, plus y equals 8 plus x plus y.",
-   "Age y years hence equals 8 plus x plus y."
+   "Soham was 8 years old x years ago. He has grown x years older since then, so his age now is 8 plus x.",
+   "y years hence means y years from now, so add y to his age now.",
+   "His age y years hence will be 8 plus x plus y."
   ]
  },
  "Q_CH13_018": {
@@ -2015,14 +2049,14 @@
    "x y metres"
   ],
   "hints": [
-   "You start with x metres and cut away y metres. What operation is that?",
-   "Cutting means subtraction. Remaining equals total, minus cut piece.",
-   "That equals x minus y."
+   "Think about what happens to the length of a rope when a piece is cut off.",
+   "The rope starts at x metres. Decide which operation shows a piece of y metres being removed, and which length comes first.",
+   "Similar example: a ribbon is p metres long and q metres is cut off. If it were 10 metres with 3 metres cut off, 10 minus 3 equals 7 metres would stay. With letters, p minus q metres stay."
   ],
   "steps": [
-   "Total rope equals x metres.",
-   "Piece cut equals y metres.",
-   "Remaining equals x minus y."
+   "The whole rope is x metres long.",
+   "Cutting off a piece makes the rope shorter, so subtract the piece of y metres from the whole.",
+   "The remaining piece is x minus y metres."
   ]
  },
  "Q_CH13_020": {
@@ -2034,14 +2068,14 @@
    "x minus y centimetres"
   ],
   "hints": [
-   "The wire is in metres but the cut piece is in centimetres. Convert to the same unit!",
-   "x metres equals x times 100, which is 100 x centimetres.",
-   "Left equals 100 x minus y centimetres."
+   "Look at the units. One length is in metres and the other is in centimetres, so they must be in the same unit before you subtract.",
+   "The answer is wanted in centimetres. Change x metres into centimetres first. How many centimetres are there in 1 metre?",
+   "Similar example: from a bag holding p kilograms of flour, q grams is used. 1 kilogram is 1000 grams, so the bag holds 1000 p grams. After q grams is used, 1000 p minus q grams is left."
   ],
   "steps": [
-   "Convert metres to centimetres: x metres equals 100 x centimetres.",
-   "Subtract cut piece: 100 x minus y.",
-   "Wire left equals 100 x minus y centimetres."
+   "1 metre is 100 centimetres, so x metres is 100 times x, which is 100 x centimetres.",
+   "Now both lengths are in centimetres. Take away the y centimetres that was cut.",
+   "The wire left is 100 x minus y centimetres."
   ]
  },
  "Q_CH13_021": {
@@ -2053,14 +2087,14 @@
    "A 6"
   ],
   "hints": [
-   "A by itself is the same as 1 A. So you're adding 5 A plus 1 A.",
-   "Like terms can be added: 5 A plus 1 A equals, open bracket, 5 plus 1, close bracket, times A.",
-   "That equals 6 A."
+   "These are like terms because both have the same letter. Like terms are added by counting how many of the letter there are.",
+   "A letter on its own means one of it, so A is the same as 1 A. Now count how many A's there are altogether.",
+   "Similar example: 3 b plus b. The b on its own is 1 b, so there are 3 plus 1 equals 4 of them. That makes 4 b."
   ],
   "steps": [
-   "A equals 1 A. The coefficient is 1.",
-   "Add like terms: 5 A plus 1 A equals 6 A.",
-   "Answer: 6 A."
+   "The A on its own means 1 A.",
+   "Add the numbers in front of the letters. 5 plus 1 equals 6.",
+   "It is like 5 apples and 1 more apple making 6 apples. So 5 A plus A equals 6 A."
   ]
  },
  "Q_CH13_022": {
@@ -2072,15 +2106,14 @@
    "3 x plus 6 y"
   ],
   "hints": [
-   "Add the x terms together, and the y terms together. They are like terms!",
-   "x terms: 3 x plus x equals 4 x. y terms: 4 y plus 2 y equals 6 y.",
-   "Answer: 4 x plus 6 y."
+   "Only like terms can be added together: x terms with x terms, and y terms with y terms.",
+   "Start with the x terms, 3 x and x. Remember that x on its own means 1 x. Then add the y terms.",
+   "Similar example: add 2 A plus 5 b, and A plus 3 b. The A terms give 2 A plus 1 A, which is 3 A. The b terms give 5 b plus 3 b, which is 8 b. The sum is 3 A plus 8 b."
   ],
   "steps": [
-   "Group like terms. 3 x plus x, and 4 y plus 2 y.",
-   "Add x terms: 3 x plus x equals 4 x.",
-   "Add y terms: 4 y plus 2 y equals 6 y.",
-   "Answer: 4 x plus 6 y."
+   "Add the x terms. The x on its own is 1 x, so 3 x and 1 x make 4 x.",
+   "Add the y terms. 4 y and 2 y make 6 y.",
+   "x and y are different letters, so they stay as two parts. The sum is 4 x plus 6 y."
   ]
  },
  "Q_CH13_023": {
@@ -2092,14 +2125,14 @@
    "10 A minus 4 b"
   ],
   "hints": [
-   "Add the A terms: 7 A plus 3 A equals what? Add the b terms: 5 b plus, minus b, equals what?",
-   "7 A plus 3 A equals 10 A. For b: 5 b plus, minus b, equals 5 b minus b, which is 4 b.",
-   "Answer: 10 A plus 4 b."
+   "Only like terms can be put together. Watch the minus sign in front of one of the b terms.",
+   "Start with the A terms, 7 A and 3 A. Then look at the b terms: 5 b is added and b is taken away.",
+   "Similar example: add 6 p plus 8 q, and 2 p minus q. The p terms give 6 p plus 2 p, which is 8 p. For the q terms, 8 q with 1 q taken away leaves 7 q. The sum is 8 p plus 7 q."
   ],
   "steps": [
-   "Add the A terms: 7 A plus 3 A equals 10 A.",
-   "Add the b terms: 5 b plus, minus b, equals 5 b minus 1 b, which is 4 b.",
-   "Answer: 10 A plus 4 b."
+   "Add the A terms. 7 A and 3 A make 10 A.",
+   "Now the b terms. There are 5 b, and b, which is 1 b, is taken away. That leaves 4 b.",
+   "So the sum is 10 A plus 4 b."
   ]
  },
  "Q_CH13_024": {
@@ -2111,14 +2144,14 @@
    "4 m and 3 n"
   ],
   "hints": [
-   "Like terms have the same variable. Unlike terms have different variables.",
-   "Check each pair: 5 A and 3 A have the same variable, A. 4 m and 3 n have different variables, m and n!",
-   "4 m and 3 n are unlike terms because m is not equal to n."
+   "Like terms have exactly the same letter. Unlike terms have different letters. The numbers in front do not matter.",
+   "Look only at the letters in each pair. Find the pair in which the two letters are not the same.",
+   "Similar example: 8 p and 2 p are like terms because both have the letter p. 6 p and 9 q are unlike terms because one has p and the other has q."
   ],
   "steps": [
-   "Like terms: same variable letter. Unlike terms: different variable letters.",
-   "5 A and 3 A: both A, so like. 4 m and 3 n: m and n, so unlike!",
-   "4 m and 3 n are unlike terms."
+   "Like terms have the same letter. Unlike terms have different letters.",
+   "5 A and 3 A both have A. y and 12 y both have y. 7 x and minus 2 x both have x. These three pairs are like terms.",
+   "4 m has the letter m, but 3 n has the letter n. The letters are different, so the unlike terms are 4 m and 3 n."
   ]
  },
  "Q_CH13_025": {
@@ -2130,15 +2163,15 @@
    "3 x minus 4"
   ],
   "hints": [
-   "Be careful with the order! Subtract A from B means B minus A.",
-   "5 x plus 7, minus, open bracket, 2 x plus 3, close bracket, equals 5 x plus 7 minus 2 x minus 3.",
-   "x terms: 5 x minus 2 x equals 3 x. Constants: 7 minus 3 equals 4. Answer: 3 x plus 4."
+   "Order matters in subtraction. When you subtract one thing from another, you start with the second one and take the first one away. Then subtract like terms.",
+   "Start with 5 x plus 7. Take the x term of 2 x plus 3, away from 5 x first. Then deal with the plain numbers.",
+   "Similar example: subtract 3 A plus 2, from 9 A plus 8. Start with 9 A plus 8. For the A terms, 9 A take away 3 A is 6 A. For the numbers, 8 minus 2 equals 6. The result is 6 A plus 6."
   ],
   "steps": [
-   "Set up: 5 x plus 7, minus, open bracket, 2 x plus 3, close bracket.",
-   "Remove brackets, distribute the minus: 5 x plus 7 minus 2 x minus 3.",
-   "Combine: x terms: 5 x minus 2 x equals 3 x. Constants: 7 minus 3 equals 4.",
-   "Answer: 3 x plus 4."
+   "Start with 5 x plus 7, and take 2 x plus 3, away from it.",
+   "Subtract the x terms. 5 x take away 2 x is 3 x.",
+   "Subtract the plain numbers. 7 minus 3 equals 4.",
+   "So the result is 3 x plus 4."
   ]
  },
  "VAR2_EXT_G4_FP_2016_007_01": {
@@ -2169,13 +2202,14 @@
    "1"
   ],
   "hints": [
-   "Replace x with the given value.",
-   "Then do the arithmetic: 2 times 4, plus 3, minus 8.",
-   "Follow Bodmas!"
+   "This is a substitution question. A number written next to a letter means multiply, so swap the letter for its value first.",
+   "Start with 2 x. Put 4 in place of x and multiply. After that, do the adding and the subtracting from left to right.",
+   "Similar example: if x equals 4, find 5 x plus 2 minus 6. First 5 x is 5 times 4, which is 20. Then 20 plus 2 equals 22, and 22 minus 6 equals 16."
   ],
   "steps": [
-   "Substitute x equals 4: 2 times 4, plus 3, minus 8.",
-   "That equals 8 plus 3 minus 8, which is 3."
+   "2 x means 2 times x. Put 4 in place of x. 2 times 4 equals 8.",
+   "Now work from left to right. Add 3 first. 8 plus 3 equals 11.",
+   "Then subtract 8. So 2 x plus 3 minus 8 equals 3. 11 minus 8 equals 3."
   ]
  },
  "VAR2_EXT_G4_FP_2016_019_01": {
@@ -2244,13 +2278,14 @@
    "112"
   ],
   "hints": [
-   "Replace x with 7 and y with 2.",
-   "Calculate 2 times 7, and 4 times 2, separately.",
-   "Then add them up."
+   "This is a substitution question. A number written next to a letter means multiply, so swap each letter for its value and multiply.",
+   "Start with 2 x. Put 7 in place of x and multiply. Do the same for 4 y with y equals 2, and only then add the two parts.",
+   "Similar example: if x equals 6 and y equals 2, find 3 x plus 5 y. First 3 x is 3 times 6, which is 18, and 5 y is 5 times 2, which is 10. Adding them gives 18 plus 10, which is 28."
   ],
   "steps": [
-   "Substitute: 2 times 7, plus 4 times 2.",
-   "That equals 14 plus 8, which is 22."
+   "2 x means 2 times x. Put 7 in place of x. 2 times 7 equals 14.",
+   "4 y means 4 times y. Put 2 in place of y. 4 times 2 equals 8.",
+   "Add the two parts. So 2 x plus 4 y equals 22. 14 plus 8 equals 22."
   ]
  },
  "VAR2_EXT_G4_FP_2020_039_04": {
@@ -2262,13 +2297,14 @@
    "99"
   ],
   "hints": [
-   "Replace x with the given value.",
-   "Then do the arithmetic: 8 times 5, plus 8, minus 5.",
-   "Follow Bodmas!"
+   "This is a substitution question. A number written next to a letter means multiply, so swap the letter for its value first.",
+   "Start with 8 x. Put 5 in place of x and multiply. After that, do the adding and the subtracting from left to right.",
+   "Similar example: if x equals 3, find 6 x plus 7 minus 4. First 6 x is 6 times 3, which is 18. Then 18 plus 7 equals 25, and 25 minus 4 equals 21."
   ],
   "steps": [
-   "Substitute x equals 5: 8 times 5, plus 8, minus 5.",
-   "That equals 40 plus 8 minus 5, which is 43."
+   "8 x means 8 times x. Put 5 in place of x. 8 times 5 equals 40.",
+   "Now work from left to right. Add 8 first. 40 plus 8 equals 48.",
+   "Then subtract 5. So 8 x plus 8 minus 5 equals 43. 48 minus 5 equals 43."
   ]
  },
  "VAR2_EXT_G4_FP_2021_028_02": {
@@ -2280,13 +2316,14 @@
    "55"
   ],
   "hints": [
-   "Replace x with 7 and y with 5.",
-   "Calculate 5 times 7, and 4 times 5, separately.",
-   "Then add them up."
+   "This is a substitution question. A number written next to a letter means multiply, so swap each letter for its value and multiply.",
+   "Start with 5 x. Put 7 in place of x and multiply. Do the same for 4 y with y equals 5, and only then add the two parts.",
+   "Similar example: if x equals 8 and y equals 4, find 2 x plus 3 y. First 2 x is 2 times 8, which is 16, and 3 y is 3 times 4, which is 12. Adding them gives 16 plus 12, which is 28."
   ],
   "steps": [
-   "Substitute: 5 times 7, plus 4 times 5.",
-   "That equals 35 plus 20, which is 55."
+   "5 x means 5 times x. Put 7 in place of x. 5 times 7 equals 35.",
+   "4 y means 4 times y. Put 5 in place of y. 4 times 5 equals 20.",
+   "Add the two parts. So 5 x plus 4 y equals 55. 35 plus 20 equals 55."
   ]
  },
  "VAR2_EXT_G4_FP_2022_012_01": {
@@ -2355,13 +2392,14 @@
    "42"
   ],
   "hints": [
-   "Replace x with 7 and y with 1.",
-   "Calculate 3 times 7, and 2 times 1, separately.",
-   "Then add them up."
+   "This is a substitution question. A number written next to a letter means multiply, so swap each letter for its value and multiply.",
+   "Start with 3 x. Put 7 in place of x and multiply. Do the same for 2 y with y equals 1, and only then add the two parts.",
+   "Similar example: if x equals 5 and y equals 2, find 4 x plus 3 y. First 4 x is 4 times 5, which is 20, and 3 y is 3 times 2, which is 6. Adding them gives 20 plus 6, which is 26."
   ],
   "steps": [
-   "Substitute: 3 times 7, plus 2 times 1.",
-   "That equals 21 plus 2, which is 23."
+   "3 x means 3 times x. Put 7 in place of x. 3 times 7 equals 21.",
+   "2 y means 2 times y. Put 1 in place of y. 2 times 1 equals 2.",
+   "Add the two parts. So 3 x plus 2 y equals 23. 21 plus 2 equals 23."
   ]
  },
  "VAR2_EXT_G4_FP_2024_009_01": {
@@ -2411,13 +2449,14 @@
    "16"
   ],
   "hints": [
-   "Replace x with 7 and y with 3.",
-   "Calculate 3 times 7, and 1 times 3, separately.",
-   "Then add them up."
+   "This is a substitution question. A number written next to a letter means multiply, so swap each letter for its value and multiply.",
+   "Start with 3 x. Put 7 in place of x and multiply. Do the same for 1 y with y equals 3, and only then add the two parts.",
+   "Similar example: if x equals 9 and y equals 5, find 2 x plus 1 y. First 2 x is 2 times 9, which is 18, and 1 y is 1 times 5, which is 5. Adding them gives 18 plus 5, which is 23."
   ],
   "steps": [
-   "Substitute: 3 times 7, plus 1 times 3.",
-   "That equals 21 plus 3, which is 24."
+   "3 x means 3 times x. Put 7 in place of x. 3 times 7 equals 21.",
+   "1 y means 1 times y. Put 3 in place of y. 1 times 3 equals 3.",
+   "Add the two parts. So 3 x plus 1 y equals 24. 21 plus 3 equals 24."
   ]
  },
  "VAR2_EXT_G4_FP_2025_035_01": {
@@ -2448,13 +2487,14 @@
    "57"
   ],
   "hints": [
-   "Replace x with the given value.",
-   "Then do the arithmetic: 6 times 9, plus 13, minus 10.",
-   "Follow Bodmas!"
+   "This is a substitution question. A number written next to a letter means multiply, so swap the letter for its value first.",
+   "Start with 6 x. Put 9 in place of x and multiply. After that, do the adding and the subtracting from left to right.",
+   "Similar example: if x equals 8, find 4 x plus 12 minus 10. First 4 x is 4 times 8, which is 32. Then 32 plus 12 equals 44, and 44 minus 10 equals 34."
   ],
   "steps": [
-   "Substitute x equals 9: 6 times 9, plus 13, minus 10.",
-   "That equals 54 plus 13 minus 10, which is 57."
+   "6 x means 6 times x. Put 9 in place of x. 6 times 9 equals 54.",
+   "Now work from left to right. Add 13 first. 54 plus 13 equals 67.",
+   "Then subtract 10. So 6 x plus 13 minus 10 equals 57. 67 minus 10 equals 57."
   ]
  },
  "VAR2_EXT_G4_WS2_CH13_004_04_p2b": {
@@ -2466,13 +2506,14 @@
    "21"
   ],
   "hints": [
-   "Replace x with the given value.",
-   "Then do the arithmetic: 3 times 5, plus 3, minus 3.",
-   "Follow Bodmas!"
+   "This is a substitution question. A number written next to a letter means multiply, so swap the letter for its value first.",
+   "Start with 3 x. Put 5 in place of x and multiply. After that, do the adding and the subtracting from left to right.",
+   "Similar example: if x equals 7, find 4 x plus 6 minus 6. First 4 x is 4 times 7, which is 28. Then 28 plus 6 equals 34, and 34 minus 6 equals 28."
   ],
   "steps": [
-   "Substitute x equals 5: 3 times 5, plus 3, minus 3.",
-   "That equals 15 plus 3 minus 3, which is 15."
+   "3 x means 3 times x. Put 5 in place of x. 3 times 5 equals 15.",
+   "Now work from left to right. Add 3 first. 15 plus 3 equals 18.",
+   "Then subtract 3. So 3 x plus 3 minus 3 equals 15. 18 minus 3 equals 15."
   ]
  },
  "VAR2_EXT_G4_WS2_CH13_005_02": {
@@ -2484,13 +2525,14 @@
    "63"
   ],
   "hints": [
-   "Replace x with 6 and y with 3.",
-   "Calculate 4 times 6, and 3 times 3, separately.",
-   "Then add them up."
+   "This is a substitution question. A number written next to a letter means multiply, so swap each letter for its value and multiply.",
+   "Start with 4 x. Put 6 in place of x and multiply. Do the same for 3 y with y equals 3, and only then add the two parts.",
+   "Similar example: if x equals 4 and y equals 7, find 5 x plus 2 y. First 5 x is 5 times 4, which is 20, and 2 y is 2 times 7, which is 14. Adding them gives 20 plus 14, which is 34."
   ],
   "steps": [
-   "Substitute: 4 times 6, plus 3 times 3.",
-   "That equals 24 plus 9, which is 33."
+   "4 x means 4 times x. Put 6 in place of x. 4 times 6 equals 24.",
+   "3 y means 3 times y. Put 3 in place of y. 3 times 3 equals 9.",
+   "Add the two parts. So 4 x plus 3 y equals 33. 24 plus 9 equals 33."
   ]
  },
  "VAR2_EXT_G4_WS2_CH13_005_04": {
@@ -2502,13 +2544,14 @@
    "32"
   ],
   "hints": [
-   "Replace x with the given value.",
-   "Then do the arithmetic: 3 times 2, plus 11, minus 7.",
-   "Follow Bodmas!"
+   "This is a substitution question. A number written next to a letter means multiply, so swap the letter for its value first.",
+   "Start with 3 x. Put 2 in place of x and multiply. After that, do the adding and the subtracting from left to right.",
+   "Similar example: if x equals 3, find 4 x plus 9 minus 5. First 4 x is 4 times 3, which is 12. Then 12 plus 9 equals 21, and 21 minus 5 equals 16."
   ],
   "steps": [
-   "Substitute x equals 2: 3 times 2, plus 11, minus 7.",
-   "That equals 6 plus 11 minus 7, which is 10."
+   "3 x means 3 times x. Put 2 in place of x. 3 times 2 equals 6.",
+   "Now work from left to right. Add 11 first. 6 plus 11 equals 17.",
+   "Then subtract 7. So 3 x plus 11 minus 7 equals 10. 17 minus 7 equals 10."
   ]
  },
  "VAR2_EXT_G4_WS2_CH13_006_04": {
@@ -2520,13 +2563,14 @@
    "62"
   ],
   "hints": [
-   "Replace x with the given value.",
-   "Then do the arithmetic: 7 times 7, plus 8, minus 5.",
-   "Follow Bodmas!"
+   "This is a substitution question. A number written next to a letter means multiply, so swap the letter for its value first.",
+   "Start with 7 x. Put 7 in place of x and multiply. After that, do the adding and the subtracting from left to right.",
+   "Similar example: if x equals 5, find 9 x plus 6 minus 4. First 9 x is 9 times 5, which is 45. Then 45 plus 6 equals 51, and 51 minus 4 equals 47."
   ],
   "steps": [
-   "Substitute x equals 7: 7 times 7, plus 8, minus 5.",
-   "That equals 49 plus 8 minus 5, which is 52."
+   "7 x means 7 times x. Put 7 in place of x. 7 times 7 equals 49.",
+   "Now work from left to right. Add 8 first. 49 plus 8 equals 57.",
+   "Then subtract 5. So 7 x plus 8 minus 5 equals 52. 57 minus 5 equals 52."
   ]
  }
 }

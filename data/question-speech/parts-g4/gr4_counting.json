@@ -1057,12 +1057,15 @@
    "14"
   ],
   "hints": [
-   "This is from the 2016 I P M exam, question 17.",
-   "Think carefully about what the question is asking.",
-   "Try working backwards from the options."
+   "This is a counting question about pairs. A game of chess needs two players, so think about how many different pairs of players there are.",
+   "List every pair of players carefully, starting with A and B, then A and C, and so on. Make sure no pair is listed twice. After that, remember each pair plays two games.",
+   "A similar example: P, Q and R play a game, and each player plays three games with every other player. The pairs are P and Q, P and R, and Q and R, which is 3 pairs. Each pair plays 3 games, so there are 3 times 3, which is 9 games altogether."
   ],
   "steps": [
-   "The correct answer is option 1, which is 12."
+   "Each game is played by a pair of players. List the pairs with A first: A and B, A and C, A and D. That is 3 pairs.",
+   "Now list the new pairs with B: B and C, B and D. Then the last new pair is C and D. The pair B and A is not new, because it is the same as A and B.",
+   "Count the pairs. 3 plus 2 plus 1 equals 6.",
+   "Each pair played two games. So 12 games were played altogether. 6 times 2 equals 12."
   ]
  },
  "PYQ_2018_Q12": {
@@ -1074,12 +1077,15 @@
    "7"
   ],
   "hints": [
-   "This is from the 2018 I P M exam, question 12.",
-   "Break the problem into smaller steps.",
-   "Check your answer by substituting back."
+   "This is a counting question about joining points in pairs. Every line segment joins two of the points, so think about how the number of segments grows as points are added.",
+   "Build up slowly. With 2 points there is 1 segment. A 3rd point can be joined to both of the earlier points, so it adds 2 more. Keep adding points until the total reaches 15.",
+   "A similar example: suppose the most segments that can be drawn is 28. The 2nd point adds 1 segment, the 3rd adds 2, and so on. Adding 1 plus 2 plus 3 plus 4 plus 5 plus 6 plus 7 gives 28, and the point that adds 7 segments is the 8th. So there are 8 points."
   ],
   "steps": [
-   "The correct answer is option 2, which is 6."
+   "With 2 points there is 1 line segment. Each new point can be joined to every point already there.",
+   "The 3rd point adds 2 segments, making 3. The 4th point adds 3 segments, making 6. 1 plus 2 plus 3 equals 6.",
+   "The 5th point adds 4 segments, making 10. The 6th point adds 5 segments, making 15. 1 plus 2 plus 3 plus 4 plus 5 equals 15.",
+   "The total reaches 15 with the 6th point. So there were 6 points on the circle."
   ]
  },
  "PYQ_2019_Q07": {
@@ -1111,14 +1117,15 @@
    "10"
   ],
   "hints": [
-   "Each chord connects 2 points. How many ways can you choose 2 points from 5?",
-   "Count systematically. Point A connects to B, C, D and E: 4 chords. Point B to C, D and E: 3 new. Point C to D and E: 2 new. Point D to E: 1 new.",
-   "4 plus 3 plus 2 plus 1 equals 10 chords."
+   "This is a counting question about joining points in pairs. Every chord joins two of the points, so you need to count the pairs without counting any chord twice.",
+   "Name the points A, B, C, D and E. Start at A and count the chords it makes with the other points. Then move to B and count only the chords that are new.",
+   "A similar example: 4 points P, Q, R and S are marked on a circle. P joins to Q, R and S, which is 3 chords. Q joins to R and S, which is 2 new chords. R joins to S, which is 1 new chord. That makes 3 plus 2 plus 1, which is 6 chords."
   ],
   "steps": [
-   "From A, 4 chords. From B, 3 new. From C, 2 new. From D, 1 new.",
-   "The total is 10 chords.",
-   "The formula gives 5 factorial, divided by 2 factorial times 3 factorial, which equals 10."
+   "Name the points A, B, C, D and E. From A we can draw chords to B, C, D and E. That is 4 chords.",
+   "From B the chord to A is already drawn, so only the chords to C, D and E are new. That is 3 more.",
+   "From C there are 2 new chords, to D and E. From D there is 1 new chord, to E. From E every chord is already drawn.",
+   "Add them up. So 10 chords can be drawn. 4 plus 3 plus 2 plus 1 equals 10."
   ]
  }
 }

@@ -28,7 +28,7 @@ def _equals(s):
             out += piece
             continue
         clause = re.split(r"[.?!:;(]\s|, | and | so | because ", out)[-1]
-        if re.search(r"\b(is|are|equals|gives)\b", clause):
+        if re.search(r"\b(is|are|equals|gives|makes)\b", clause):
             out = out.rstrip() + ", which is "
         else:
             out = out.rstrip() + " equals "
@@ -122,7 +122,11 @@ def say(text):
     s = re.sub(r"(\d)\s*[-–]\s*(?=\d)", r"\1 minus ", s)
     s = re.sub(r"\bvs\b\.?", "versus", s)
     s = s.replace("★", " star ").replace("—", ", ")
+    # a semicolon between sentences is a full stop; between numbers in a list it is a comma
+    s = re.sub(r"(?<=[A-Za-z]);\s+(\S)", lambda m: ". " + m.group(1).upper(), s)
     s = re.sub(r";\s*", ", ", s)
+    # algebra: 3m, 5mn are said letter by letter
+    s = re.sub(r"(?<![\d,.])(\d)([mnpq]{1,2})\b", lambda m: m.group(1) + " " + " ".join(m.group(2)), s)
     # words printed in capitals for emphasis (NOT, NEVER) are said as ordinary words
     s = re.sub(r"\b(?![IVXLCDM]+\b)(?!IPM\b|HCF\b|LCM\b)[A-Z]{3,}(?:'[A-Z])?\b", lambda m: m.group(0).lower(), s)
     s = re.sub(r"\bIPM\b", "I P M", s)
@@ -131,6 +135,8 @@ def say(text):
     s = re.sub(r"\s+", " ", s).strip()
     s = re.sub(r"\s+([.,?!:;])", r"\1", s)
     s = re.sub(r",\s*,", ",", s)
+    # "X X I V is 10 plus 10 plus 4, which is 24 and X V I I I is ..." needs a pause after the total
+    s = re.sub(r"(, which is \d+(?:,\d+)*) and ", r"\1, and ", s)
     if " " in s and re.search(r"[a-z]", s) and s[-1] not in ".?!:":
         s += "."
     return s

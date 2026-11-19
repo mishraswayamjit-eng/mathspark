@@ -33,7 +33,9 @@ for name in ("gr4_numbers_hand1", "gr4_numbers_hand2", "gr4_numbers_hand3", "gr4
         module = __import__(name)
     except ImportError:
         continue
-    HAND.update(module.HAND)
+    for qid, lines in module.HAND.items():
+        # a later file adds to an earlier one, key by key (q, options, hints, steps)
+        HAND.setdefault(qid, {}).update(lines)
     LINES.update(getattr(module, "LINES", {}))
 
 stats = {"hand": 0, "rule": 0, "base": 0, "failed": 0}
@@ -47,7 +49,10 @@ def with_maths(source, latex):
     if not maths:
         return None
     mt, st = common.number_tokens(maths), common.number_tokens(source)
-    if not mt or (len(mt) <= len(st) and st[-len(mt):] == mt):
+    if not mt or sorted(mt) == sorted(st):
+        return None
+    # already said in the text, as a run of the same numbers
+    if any(st[i:i + len(mt)] == mt for i in range(len(st) - len(mt) + 1)):
         return None
     text = rules.say(source)
     spoken = rules.say(maths)
@@ -154,6 +159,20 @@ def main():
         a, b = int(sys.argv[i + 1]), int(sys.argv[i + 2])
         for n, q in enumerate(questions[a:b], a):
             show(q, part[q["id"]], n)
+    if "--renarrate" in sys.argv:
+        # the questions whose hints and steps were rewritten: print beside speech, with hand/rule counts
+        with io.open(os.path.join(common.ROOT, "data", "bank-import", "g4", "renarrate.json"), encoding="utf-8") as f:
+            listed = set(json.load(f).get(NODE, []))
+        tally = {}
+        for n, q in enumerate(questions):
+            if q["id"] not in listed:
+                continue
+            show(q, part[q["id"]], n)
+            for where, kind in kinds.items():
+                if where.startswith(q["id"] + ".hints") or where.startswith(q["id"] + ".steps"):
+                    tally[kind] = tally.get(kind, 0) + 1
+        print("listed ids in this topic: %d of %d; their hint and step lines: %s" % (
+            len([q for q in questions if q["id"] in listed]), len(listed), tally))
     if "--spoken" in sys.argv:
         # only the narration, for reading back as the voice would say it
         i = sys.argv.index("--spoken")

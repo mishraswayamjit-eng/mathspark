@@ -37,10 +37,7 @@ def ratios(s):
 
 _FAMILY = [
     (r"Ratio = (\d+):(\d+), (\w+) = (\d+)",
-     lambda m: "The ratio is %s is to %s, and %s is %s." % m.groups()),
-    (r"Compute the answer: (\d+)",
-     lambda m: "Work out the answer. It is %s." % m.groups()),
-]
+     lambda m: "The ratio is %s is to %s, and %s is %s." % m.groups()),]
 
 
 def labels(s):

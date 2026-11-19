@@ -47,8 +47,8 @@ def with_maths(source, latex, box=None):
     if not latex:
         return None
     mt, st = common.number_tokens(rules.from_latex(latex)), common.number_tokens(source)
-    if not mt or (len(mt) <= len(st) and st[-len(mt):] == mt):
-        return None
+    if not mt or any(st[k:k + len(mt)] == mt for k in range(len(st) - len(mt) + 1)):
+        return None             # the text already says this sum
     text = rules.say(source, "text", box)
     spoken = rules.say_maths(latex)
     if not text or not spoken:
@@ -159,6 +159,13 @@ def main():
         f.write("\n")
     print("wrote %d questions to %s" % (len(part), OUT))
     print("lines:", stats)
+    printed = set()
+    for q in questions:
+        src = common.source_strings(q)
+        printed.update(t.strip() for t in [src["q"]] + src["options"] + src["hints"] + src["steps"])
+    unused = sorted(set(LINES) - printed)
+    if unused:
+        print("LINES entries no longer printed anywhere:", unused)
     unknown = sorted(set(HAND) - set(part))
     if unknown:
         print("hand entries for unknown ids:", unknown)
@@ -170,6 +177,38 @@ def main():
         a, b = int(sys.argv[i + 1]), int(sys.argv[i + 2])
         for n, q in enumerate(questions[a:b], a):
             show(q, part[q["id"]], n)
+    if "--listed" in sys.argv:   # the questions whose help was rewritten (renarrate.json): print beside speech
+        with io.open(os.path.join(common.ROOT, "data", "bank-import", "g4", "renarrate.json"), encoding="utf-8") as f:
+            listed = json.load(f).get(NODE, [])
+        mine = [q for q in questions if q["id"] in set(listed)]
+        print("listed: %d, in topic now: %d" % (len(listed), len(mine)))
+        print("listed but not in topic:", sorted(set(listed) - set(part)))
+        print("hand entries with hints or steps for listed ids:",
+              sorted(i for i in listed if i in HAND and (HAND[i].get("hints") or HAND[i].get("steps"))))
+        count = {"hand": 0, "rule": 0, "base": 0, "FAILED": 0}
+        for q in mine:
+            src = common.source_strings(q)
+            for key in ("hints", "steps"):
+                for j, t in enumerate(src[key]):
+                    if t.strip():
+                        count[kinds.get("%s.%s[%d]" % (q["id"], key, j), "FAILED")] += 1
+        print("hint and step lines of listed ids:", count)
+        i = sys.argv.index("--listed")
+        if len(sys.argv) > i + 2:
+            a, b = int(sys.argv[i + 1]), int(sys.argv[i + 2])
+            for n, q in enumerate(mine[a:b], a):
+                src = common.source_strings(q)
+                own = q.get("stepByStep") or []
+                e = part[q["id"]]
+                print("== %d %s" % (n, q["id"]))
+                print(" Q: " + src["q"].replace("\n", " // "))
+                for key in ("hints", "steps"):
+                    for j, t in enumerate(src[key]):
+                        latex = own[j].get("latex", "") if key == "steps" and j < len(own) else ""
+                        k = kinds.get("%s.%s[%d]" % (q["id"], key, j), "")
+                        print(" %s%d P: %s%s" % (key[0], j, t.replace("\n", " // "), "   {%s}" % latex if latex else ""))
+                        print("  [%s] S: %s" % (k[:1], e[key][j]))
+        return
     if "--grep" in sys.argv:     # every spoken line matching a pattern, once each
         pattern = re.compile(sys.argv[sys.argv.index("--grep") + 1])
         seen = set()
